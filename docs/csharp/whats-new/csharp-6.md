@@ -3,11 +3,11 @@ title: Co je nového v jazyce C# 6 – Průvodce v C#
 description: Informace o nových funkcích v C# verze 6
 ms.date: 09/22/2016
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
-ms.openlocfilehash: 00aeb3ed940acfca748a1a9eb876fd0133baf6c0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d9f5c5ca94c04a873e4e98863f9fea3b8f477c1c
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="whats-new-in-c-6"></a>Co je nového v jazyce C# 6
 
@@ -351,7 +351,7 @@ Teď můžete také použít je s <xref:System.Collections.Generic.Dictionary%60
 
 Tato funkce znamená, že asociativní kontejnery můžete inicializovat pomocí syntaxe podobná co bylo nastavené pro kontejnery pořadí pro několik verzí.
 
-### <a name="extension-add-methods-in-collection-initializers"></a>Rozšíření `Add` metody v Inicializátory kolekcí
+## <a name="extension-add-methods-in-collection-initializers"></a>Rozšíření `Add` metody v Inicializátory kolekcí
 
 Další funkce, která usnadňuje inicializace kolekce je schopnost používat *metoda rozšíření* pro `Add` metoda. Tato funkce byla přidána parita s jazykem Visual Basic. 
 
@@ -370,10 +370,7 @@ Teď můžete, ale jenom v případě, že vytvoříte metody rozšíření, kte
 
 [!code-csharp[ExtensionAdd](../../../samples/snippets/csharp/new-in-6/classList.cs#ExtensionAdd)]
 
-Co dělají pomocí této funkce je k mapování libovolné metody přidá položky do kolekce na metodu s názvem `Add` vytvořením metody rozšíření: 
-
-[!code-csharp[Enrollment](../../../samples/snippets/csharp/new-in-6/enrollment.cs#Enrollment)]
-[!code-csharp[ExtensionAddSample](../../../samples/snippets/csharp/new-in-6/classList.cs#ExtensionAddSample)]
+Co dělají pomocí této funkce je k mapování libovolné metody přidá položky do kolekce na metodu s názvem `Add` vytvořením metody rozšíření.
 
 ## <a name="improved-overload-resolution"></a>Vylepšené přetížení řešení
 

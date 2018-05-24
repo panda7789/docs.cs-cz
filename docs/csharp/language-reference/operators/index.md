@@ -18,11 +18,11 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: d4b570c93b4bf5f612a74de80fc2cceea2063cc0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2b0441dfebb6692cbea0d1ab7909d7b8f04490cb
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="c-operators"></a>Operátory jazyka C#
 C# poskytuje mnoho operátory, které jsou symboly, které určují, které operace (matematické, indexování, volání funkce atd.) provést ve výrazu. Můžete [přetížení](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md) řada operátorů změnit jejich význam při aplikování uživatelem definovaného typu.  
@@ -160,7 +160,7 @@ C# poskytuje mnoho operátory, které jsou symboly, které určují, které oper
 ## <a name="null-coalescing-operator"></a>Slučování Null – operátor  
  Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.  
   
- [x?? y](../../../csharp/language-reference/operators/null-conditional-operator.md) – vrátí `x` Pokud je jinou hodnotu než`null`, jinak vrátí `y`.  
+ [x?? y](../../../csharp/language-reference/operators/null-coalescing-operator.md) – vrátí `x` Pokud je jinou hodnotu než`null`, jinak vrátí `y`.  
   
 ## <a name="conditional-operator"></a>Podmíněný operátor  
  Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.  

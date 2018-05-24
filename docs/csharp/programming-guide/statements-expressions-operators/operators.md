@@ -6,11 +6,11 @@ helpviewer_keywords:
 - C# language, operators
 - operators [C#], about operators
 ms.assetid: 214e7b83-1a41-4f7c-9867-64e9c0bab39f
-ms.openlocfilehash: d2eace5782b3a070a22acf751fd68340fa939a0b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 76371985e340945793310247ec48d9b0cb747aed
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="operators-c-programming-guide"></a>Operátory (Průvodce programováním v C#)
 V jazyce C# *operátor* je element program, který se použije na jeden nebo více *operandy* v výraz nebo příkaz. Operátory, které s jedním operandem, jako je například operátor přírůstku (`++`) nebo `new`, se označují jako *unární* operátory. Operátory, které provést dva operandy, jako je například aritmetické operátory (`+`,`-`,`*`,`/`), se označují jako *binární* operátory. Jeden operátor, operátor podmíněného (`?:`), má tři operandy a je jedinou Ternární operátor v jazyce C#.  
@@ -114,7 +114,7 @@ V jazyce C# *operátor* je element program, který se použije na jeden nebo ví
 |Logický operátor OR|x [&#124;](../../../csharp/language-reference/operators/or-operator.md) y|Bitový operátor OR celého čísla, logická hodnota operátoru OR|  
 |Podmiňovací operátor AND|x [ && ](../../../csharp/language-reference/operators/conditional-and-operator.md) y|Vyhodnocuje y pouze v případě, že x má hodnotu true|  
 |Podmiňovací operátor OR|x [ &#124; &#124; ](../../../csharp/language-reference/operators/conditional-or-operator.md) y|Vyhodnocuje y pouze v případě, že x má hodnotu false|  
-|Nulové sloučení|x [??](../../../csharp/language-reference/operators/null-conditional-operator.md) y|Vyhodnotí y, pokud x má hodnotu null, jinak vyhodnotí x|  
+|Nulové sloučení|x [??](../../../csharp/language-reference/operators/null-coalescing-operator.md) y|Vyhodnotí y, pokud x má hodnotu null, jinak vyhodnotí x|  
 |Podmiňovací operátor|x [?](../../../csharp/language-reference/operators/conditional-operator.md) y: z|Vyhodnotí y, pokud x má hodnotu true; vyhodnotí z, pokud x má hodnotu false|  
   
  **Přiřazení a anonymní operátory**  

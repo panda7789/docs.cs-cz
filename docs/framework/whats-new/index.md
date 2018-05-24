@@ -10,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1c0f831426762ddcb21e4c1c1191e20435a13deb
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: b1e54aa8a9751a01e8856a3e9e71d63b55772f2c
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 <a name="introduction"></a>Tento článek shrnuje hlavní nové funkce a vylepšení v následujících verzích rozhraní .NET Framework:  
@@ -657,8 +657,6 @@ End Class
 | Název                                 | Hodnota                                     |
 | ------------------------------------ | ----------------------------------------- |
 | Hodnocení musí být mezi 1 a 10. | Poznámka: la provedení être tvoří entre 1 et 10. |
-
- Tento soubor pak můžete
 
  Kromě toho je rozšiřitelný lokalizace poznámky data. Vývojářům můžete zařadit vlastní řetězec lokalizátora zprostředkovatele implementací <xref:System.Web.Globalization.IStringLocalizerProvider> rozhraní uložení řetězce lokalizace někde jinak než v souboru prostředků.
 
@@ -1488,7 +1486,7 @@ SqlClient nyní automaticky poskytuje rychlejší připojení dostupnosti skupin
 
 - **Podpora pro kódování kódu stránky**
 
-      [!INCLUDE[net_core](../../../includes/net-core-md.md)] primarily supports the Unicode encodings and by default provides limited support for code page encodings. You can add support for code page encodings available in the .NET Framework but unsupported in [!INCLUDE[net_core](../../../includes/net-core-md.md)] by registering code page encodings with the <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType> method. For more information, see <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
+     [!INCLUDE[net_core](../../../includes/net-core-md.md)] především podporuje kódování Unicode a ve výchozím nastavení poskytuje omezenou podporu pro kódování kódu stránky. Můžete přidat podporu pro kódování stránky kód k dispozici v rozhraní .NET Framework, ale nepodporované v [!INCLUDE[net_core](../../../includes/net-core-md.md)] kódování kódu stránky s registrací <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType> metoda. Další informace naleznete v tématu <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
 
 - **.NET Native**
 

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 1d6487f4136b5a3f8bfc2e1721ae268e06f5ba98
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b5ad639309238912aa27b58c95466b4f37052699
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Omezení parametrů typů (C# Průvodce programováním)
 
@@ -18,7 +18,7 @@ Omezení kompilátoru informovat o funkcích, které musí mít argument typu. B
 
 |Omezení|Popis|
 |----------------|-----------------|
-|`where T: struct`|Argument typu musí být typ hodnoty. Některé hodnoty typ s výjimkou <xref:System.Nullable> lze zadat. Další informace najdete v tématu [pomocí typy s možnou hodnotou Null](../nullable-types/using-nullable-types.md).|
+|`where T : struct`|Argument typu musí být typ hodnoty. Některé hodnoty typ s výjimkou <xref:System.Nullable> lze zadat. Další informace najdete v tématu [pomocí typy s možnou hodnotou Null](../nullable-types/using-nullable-types.md).|
 |`where T : class`|Argument typu musí být odkazového typu. Toto omezení platí také pro třídu, rozhraní, delegát nebo typ pole.|
 |`where T : unmanaged`|Argument typu nesmí být odkazového typu a nesmí obsahovat žádné členy typu odkaz na libovolnou úroveň vnoření.|
 |`where T : new()`|Argument typu musí mít konstruktor public bez parametrů. Při použití spolu s jiná omezení `new()` omezení musí být uvedený jako poslední.|

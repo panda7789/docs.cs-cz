@@ -3,13 +3,13 @@ title: Metody – Průvodce C#
 description: Přehled metod, metoda parametry a návratové hodnoty – metoda
 author: rpetrusha
 ms.author: ronpet
-ms.date: 10/26/2016
+ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 6a99ccc0157b044eb1a9ed7189de94ca69225d1b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a9d78ecfc3911cf959333c098a66614239609c4e
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="methods"></a>Metody #
 
@@ -80,7 +80,7 @@ Můžete vyvolat metodu pomocí obou argumentů umístění a pojmenované argum
 [!code-csharp[csSnippets.Methods#46](../../samples/snippets/csharp/concepts/methods/named2.cs#46)]
 
  <a name="inherited"></a>
- ##<a name="inherited-and-overridden-methods"></a>Zděděné a přepsané metody ##
+ ## <a name="inherited-and-overridden-methods"></a>Zděděné a přepsané metody ##
 
 Kromě členů, které jsou explicitně definované v typu zdědí typu členy definované v jeho základních tříd. Vzhledem k tomu, že všechny typy v systému spravovaný typ dědí přímo nebo nepřímo <xref:System.Object> třída, všechny typy dědit jejích členů, například <xref:System.Object.Equals(System.Object)>, <xref:System.Object.GetType>, a <xref:System.Object.ToString>. V následujícím příkladu definuje `Person` třídy, vytvoří dvě instance `Person` objekty a volá `Person.Equals` metoda k určení, zda jsou oba objekty stejné. `Equals` Metoda, však není definován v `Person` třídy; je zděděn z <xref:System.Object>.
 
@@ -258,7 +258,7 @@ Pokud označíte metodu s [asynchronní](language-reference/keywords/async.md) m
 > [!NOTE]
 > Asynchronní metody vrátí volající, pokud zjistí první awaited objekt, který ještě není dokončena nebo získá na konec asynchronní metody, cokoliv nastane dříve.
 
-Asynchronní metody může mít návratový typ <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>, nebo `void`. `void` Vrátí typ se používá hlavně k definování obslužné rutiny událostí, kde `void` návratový typ je požadovaná. Asynchronní metody, která vrací `void` nemůže být očekáváno, a volající metody vrácení void nelze catch výjimky, které vyvolá metoda. C# 7.0, po vydání, bude usnadňují toto omezení umožňující použití asynchronní metody [vrátit jakýkoli typ úlohy jako](https://github.com/ljw1004/roslyn/blob/features/async-return/docs/specs/feature%20-%20arbitrary%20async%20returns.md).
+Asynchronní metody může mít návratový typ <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>, nebo `void`. `void` Vrátí typ se používá hlavně k definování obslužné rutiny událostí, kde `void` návratový typ je požadovaná. Asynchronní metody, která vrací `void` nemůže být očekáváno, a volající metody vrácení void nelze catch výjimky, které vyvolá metoda. Od verze 7.0 C#, může mít použití asynchronní metody [všech úkolů jako návratový typ](./whats-new/csharp-7.md#generalized-async-return-types).
 
 V následujícím příkladu `DelayAsync` je asynchronní metody, který má návratový příkaz, který vrátí celé číslo. Protože je asynchronní metody, jeho metoda deklarace musí mít návratový typ `Task<int>`. Vzhledem k tomu, že je návratový typ `Task<int>`, vyhodnocení `await` výrazu v `DoSomethingAsync` vytváří celé jako následující `int result = await delayTask` ukazuje příkaz.
 

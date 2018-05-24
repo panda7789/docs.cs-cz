@@ -5,11 +5,11 @@ helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-ms.openlocfilehash: ca70f0c8237a5d9cc4ad9e0bb8c1947c871ce064
-ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
+ms.openlocfilehash: 659562864ad323162f15351aa960c2a54164c77d
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="processing-the-xml-file-c-programming-guide"></a>Zpracování souboru XML (Průvodce programováním v C#)
 Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který se označí ke generování dokumentace. (Informace o tom, jak označit kódu najdete v tématu [doporučené značky pro dokumentační komentáře](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md).) ID řetězec jednoznačně identifikuje konstruktu. Programy, které zpracovávají souboru XML slouží k identifikaci příslušnou položku metadata nebo reflexe rozhraní .NET Framework, která se použije v dokumentaci k ID řetězec.  
@@ -40,7 +40,7 @@ Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který
   
     -   Vnitřní typy (například ELEMENT_TYPE_I4, ELEMENT_TYPE_OBJECT, ELEMENT_TYPE_STRING, ELEMENT_TYPE_TYPEDBYREF. a ELEMENT_TYPE_VOID) jsou reprezentovány jako plně kvalifikovaný název typu odpovídající úplné. Například System.Int32 nebo System.TypedReference.  
   
-    -   ELEMENT_TYPE_PTR je reprezentován jako ' *' následující změny typu.  
+    -   ELEMENT_TYPE_PTR je reprezentován jako '\*' následující změny typu.  
   
     -   Typu ELEMENT_TYPE_BYREF je reprezentován jako '\@' následující změny typu.  
   
@@ -68,11 +68,11 @@ Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který
   
 -   Pro převod operátory pouze (op_Implicit a op_Explicit) návratovou hodnotu metody zakódován ' ~' následuje návratový typ, jako kódování výše.  
   
--   Pro obecné typy název typu bude následovat back značek a pak číslo určující počet parametrů obecného typu.  Například  
+-   Pro obecné typy je název typu následovaný backtick a potom číslo určující počet parametrů obecného typu. Příklad:
   
      ``<member name="T:SampleClass`2">`` je značky pro typ, který je definován jako `public class SampleClass<T, U>`.  
   
-     Pro metody trvá obecné typy jako parametry, jsou parametry obecného typu zadané jako čísla, kterými back rysky (například \`0, 1).  Každý číslo představující zápis pole s nulovým základem pro obecné parametry typu.  
+     Pro metody trvá obecné typy jako parametry, jsou parametry obecného typu zadané jako čísla, kterými backticks (například \`0,\`1). Každý číslo představující zápis pole s nulovým základem pro obecné parametry typu.  
   
 ## <a name="examples"></a>Příklady  
  Následující příklady ukazují, jak ID řetězce pro třídu a její členy by vytvořilo:  

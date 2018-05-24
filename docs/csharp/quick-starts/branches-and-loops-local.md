@@ -3,11 +3,11 @@ title: Kurz větve a smyčky – C# místní – elementy QuickStart
 description: V tento rychlý start o větve a smyčky můžete napsat kód C# a prozkoumejte syntaxi jazyka, která podporuje podmíněného větvení a smyčky provést příkazy opakovaně.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: 711cc9b40284076d28b5003935bbbbb77dc36664
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a25ea7f266405a017f6f4576659195b2ac1afbf4
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="branches-and-loops"></a>Větve a smyčky
 
@@ -39,7 +39,7 @@ int b = 3;
 Typ `dotnet run` znovu. Protože odpověď je menší než 10, nic vytisknout. **Podmínku** jste testování je false. Nemáte žádný kód provést, protože jste zapsat pouze jedním z možných větve pro `if` příkaz: true větev.
 
 > [!TIP]
-> Jak můžete prozkoumat jazyka C# (nebo žádný programovací jazyk), uděláte budete chyby při psaní kódu. Kompilátor vyhledá a ohlásit chyby. Prohlédněte si blíže výstup chyba a kód, který vytvořil chybu. Chyba compler obvykle vám může pomoci najít problém.
+> Jak můžete prozkoumat jazyka C# (nebo žádný programovací jazyk), uděláte budete chyby při psaní kódu. Kompilátor vyhledá a ohlásit chyby. Prohlédněte si blíže výstup chyba a kód, který vytvořil chybu. Chyba kompilátoru obvykle vám může pomoci najít problém.
 
 Tento první příklad ukazuje možnosti `if` a Boolean typy. A *Boolean* je proměnná, která může mít jednu ze dvou hodnot: `true` nebo `false`. C# definuje speciální typ `bool` pro logická hodnota proměnné. `if` Příkaz kontroluje hodnotu `bool`. Pokud je hodnota `true`, následující příkaz `if` provede. Jinak se přeskočí.
 

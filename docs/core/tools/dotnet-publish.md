@@ -4,11 +4,11 @@ description: Příkaz Publikovat dotnet publikuje do adresáře projektu .NET Co
 author: mairaw
 ms.author: mairaw
 ms.date: 03/10/2018
-ms.openlocfilehash: f4c422eab20f5fe2d1b0c09133953f22a539474e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8509f1a721c0b4b4c05d68e0f98f9b856bcc5a8e
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="dotnet-publish"></a>publikování DotNet.
 
@@ -89,7 +89,7 @@ Neprovede implicitní obnovení, při spuštění příkazu.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Určuje cestu k výstupnímu adresáři. Pokud není zadáno, je standardně *./bin/[configuration]/[framework]/* pro nasazení závislé na framework nebo *./bin/[configuration]/[framework]/[runtime]* samostatná nasazení.
+Určuje cestu k výstupnímu adresáři. Pokud není zadáno, je standardně *./bin/[configuration]/[framework]/publish/* pro nasazení závislé na framework nebo *./bin/[configuration]/[framework]/[runtime]/publish/* pro samostatná nasazení.
 Pokud je zadaný na relativní cestu, výstupní adresář generované je relativní k umístění souboru projektu, není pro aktuální pracovní adresář.
 
 `--self-contained`
@@ -128,7 +128,7 @@ Určuje jeden nebo několik [cíle manifesty](../deploying/runtime-store.md) slo
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Určuje cestu k výstupnímu adresáři. Pokud není zadáno, je standardně *./bin/[configuration]/[framework]/* pro nasazení závislé na framework nebo *./bin/[configuration]/[framework]/[runtime]* samostatná nasazení.
+Určuje cestu k výstupnímu adresáři. Pokud není zadáno, je standardně *./bin/[configuration]/[framework]/publish/* pro nasazení závislé na framework nebo *./bin/[configuration]/[framework]/[runtime]/publish/* pro samostatná nasazení.
 Pokud je zadaný na relativní cestu, výstupní adresář generované je relativní k umístění souboru projektu, není pro aktuální pracovní adresář.
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`

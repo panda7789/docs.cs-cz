@@ -15,11 +15,11 @@ helpviewer_keywords:
 - characters [WPF], curly brace
 - DynamicResource markup extensions [WPF]
 ms.assetid: 618dc745-8b14-4886-833f-486d2254bb78
-ms.openlocfilehash: f18a369157c1e37411a3c8d8b6dfcce99bc347c6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e2fb1e64f957b49743d8dfb19091bca50303e2d2
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>Rozšíření značek a WPF XAML
 Toto téma zavádí koncepci rozšíření značek pro jazyk XAML, včetně jejich syntaxe pravidel, účel a objektový model třídy, který je základem je. Rozšíření značek jsou obecné funkce jazyka XAML a implementace rozhraní .NET XAML services. Toto téma konkrétně podrobnosti rozšíření značek pro použití v jazyce XAML WPF.  
@@ -64,7 +64,7 @@ Toto téma zavádí koncepci rozšíření značek pro jazyk XAML, včetně jeji
   
 -   `RelativeSource` poskytuje informace o zdroji pro <xref:System.Windows.Data.Binding> , můžete přejít několik možných relací ve stromové struktuře běhového objektu. To poskytuje specializované sourcing u vazeb, které jsou vytvořena v rámci více použití šablon nebo v kódu bez úplné znalosti okolního stromu objektů. Podrobnosti najdete v tématu [RelativeSource MarkupExtension](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md).  
   
--   `TemplateBinding` umožňuje řízení šablonu, která má použít pro šablonované vlastnosti, které pocházejí z objektu modelu definované vlastnosti třídy, která bude použita šablona hodnoty. Jinými slovy vlastnost v definici šablony mají přístup k kontext, který existuje pouze po bude použita šablona. Podrobnosti najdete v tématu [TemplateBinding – rozšíření značek](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md). Další informace o praktická použití `TemplateBinding`, najdete v části [styly s ukázkou ControlTemplates](http://go.microsoft.com/fwlink/?LinkID=160041).  
+-   `TemplateBinding` umožňuje řízení šablonu, která má použít pro šablonované vlastnosti, které pocházejí z objektu modelu definované vlastnosti třídy, která bude použita šablona hodnoty. Jinými slovy vlastnost v definici šablony mají přístup k kontext, který existuje pouze po bude použita šablona. Podrobnosti najdete v tématu [TemplateBinding – rozšíření značek](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md). Další informace o praktická použití `TemplateBinding`, najdete v části [styly s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
 -   `ColorConvertedBitmap` podporuje scénáři relativně pokročilé vytváření bitové kopie. Podrobnosti najdete v tématu [ColorConvertedBitmap – rozšíření značek](../../../../docs/framework/wpf/advanced/colorconvertedbitmap-markup-extension.md).  
   

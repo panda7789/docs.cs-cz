@@ -15,11 +15,11 @@ helpviewer_keywords:
 - styles [WPF], triggers
 - styles [WPF], event triggers
 ms.assetid: 481765e5-5467-4a75-9f7b-e10e2ac410d9
-ms.openlocfilehash: 85911647c089d51bafe2d65d1c5db907599b06d4
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.openlocfilehash: 9c2c38020bb57a008d0948a360a5b2cbe401089d
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="styling-and-templating"></a>Styly a šablony
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] stylů a ukázka odkazují na sadu funkcí (styly, šablony, aktivační události a scénářů), které umožňují vývojářů a návrhářů, k vytvoření zajímavé vizuální efekty a k vytvoření konzistentního vzhledu jejich produktu. I když vývojáři a nebo Návrháři můžete přizpůsobit vzhled hojně na základě aplikace aplikace, je nutné povolit sdílení výskytu v rámci i mezi aplikacemi a údržby silné stylů a Ukázka modelu. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje tento model.  
@@ -28,10 +28,8 @@ ms.lasthandoff: 05/15/2018
   
  Tento přehled se zaměřuje na aspekty stylů a Ukázka aplikace a neobsahuje informace o všech koncepty vazby dat. Informace o vazbě dat najdete v tématu [přehled vazby dat](../../../../docs/framework/wpf/data/data-binding-overview.md).  
   
- Kromě toho je důležité si uvědomit, zdroje, které jsou co Povolit styly a šablony znovu použije. Další informace o prostředcích najdete v tématu [XAML prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
-  
- 
-  
+ Kromě toho je důležité si uvědomit, zdroje, které jsou co Povolit styly a šablony znovu použije. Další informace o prostředcích najdete v tématu [XAML prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md).
+
 <a name="styling_and_templating_sample"></a>   
 ## <a name="styling-and-templating-sample"></a>Stylů a ukázkové ukázka  
  Příklady kódu použít v tomto přehledu jsou založeny na ukázku jednoduché fotografií vidět na následujícím obrázku:  
@@ -183,9 +181,9 @@ ms.lasthandoff: 05/15/2018
   
  Můžete definovat slovnících prostředků jako jednotlivé soubory, které vám umožní použít motiv napříč různými aplikacemi. Můžete také vytvořit swappable motivy definováním více slovnících prostředků, které poskytují stejné typy prostředků, ale s různými hodnotami. Opětovná definice tyto styly nebo jiným prostředkům na úrovni aplikace se o doporučený postup pro změny vzhledu aplikace.  
   
- Chcete-li sdílet sadu prostředků, včetně styly a šablony a ve všech aplikacích, můžete vytvořit [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru a definovat <xref:System.Windows.ResourceDictionary>. Například, podívejte se na následující obrázek, který ukazuje součástí [styly s ukázkou ControlTemplates](http://go.microsoft.com/fwlink/?LinkID=160041):  
-  
- ![Řízení šablony příklady](../../../../docs/framework/wpf/controls/media/stylingintro-controltemplateexamples.png "StylingIntro_ControlTemplateExamples")  
+ Chcete-li sdílet sadu prostředků, včetně styly a šablony a ve všech aplikacích, můžete vytvořit [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru a definovat <xref:System.Windows.ResourceDictionary>. Například, podívejte se na následující obrázek, který ukazuje součástí [styly s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating):
+
+![Řízení šablony příklady](../../../../docs/framework/wpf/controls/media/stylingintro-controltemplateexamples.png "StylingIntro_ControlTemplateExamples")  
   
  Pokud se podíváte [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory ve vzorku, si všimnete, že všechny soubory obsahují následující:  
   

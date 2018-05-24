@@ -11,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 319a4df6f52768cf256c0ad92ca65607b99ce32c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c7e944f224ff9bf6dc3b8cefc293182bb79f74f2
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="throw-c-reference"></a>throw (Referenční dokumentace jazyka C#)
 Signály výskytem výjimku při spuštění programu.  
@@ -52,7 +52,7 @@ Od verze jazyka C# 7.0, `throw` lze použít jako výraz, jakož i příkaz. To 
 
    [!code-csharp[csrefKeyword#4](../../../../samples/snippets/csharp/language-reference/keywords/throw/conditional.cs#1)]  
   
-- [operátor slučování null](../operators/null-conditional-operator.md). V následujícím příkladu `throw` výraz se používá s operátorem se slučování null vyvolá výjimku, pokud řetězec přiřazené `Name` vlastnost je `null`.
+- [operátor slučování null](../operators/null-coalescing-operator.md). V následujícím příkladu `throw` výraz se používá s operátorem se slučování null vyvolá výjimku, pokud řetězec přiřazené `Name` vlastnost je `null`.
  
    [!code-csharp[csrefKeyword#5](../../../../samples/snippets/csharp/language-reference/keywords/throw/coalescing.cs#1)]  
  

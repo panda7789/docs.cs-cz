@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 51b4758690257b999cce51f3e80fd263a6d5e275
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 846d41c31687df98b019f103e42cf586a23d8ff1
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Psaní velkých a pohotově reagujících aplikací .NET Framework
 Tento článek obsahuje tipy pro zvýšení výkonu velkých aplikací rozhraní .NET Framework, nebo aplikace, které zpracovávají velké množství dat, jako jsou soubory nebo databáze. Tyto tipy pocházet z přepisování C# a Visual Basic kompilátory ve spravovaném kódu a tento článek obsahuje několik příkladů skutečné z kompilátoru C#.  
@@ -433,7 +433,7 @@ class Compilation { /*...*/
 }  
 ```  
   
- Tento kód změní typ `cachedResult` k `Task<SyntaxTree>` a využívá `async` pomocné funkce, která obsahuje původní kód `GetSyntaxTreeAsync()`.  `GetSyntaxTreeAsync()` Teď používá [null slučovací operátor](~/docs/csharp/language-reference/operators/null-conditional-operator.md) vrátit `cachedResult` , pokud není null.  Pokud `cachedResult` má hodnotu null, pak `GetSyntaxTreeAsync()` volání `GetSyntaxTreeUncachedAsync()` a ukládá do mezipaměti výsledek.  Všimněte si, že `GetSyntaxTreeAsync()` není await volání `GetSyntaxTreeUncachedAsync()` jako kód běžným způsobem.  Nepoužíváte await znamená že v případě `GetSyntaxTreeUncachedAsync()` vrátí jeho <xref:System.Threading.Tasks.Task> objekt, `GetSyntaxTreeAsync()` hned vrátí <xref:System.Threading.Tasks.Task>.  Nyní v mezipaměti výsledkem je, <xref:System.Threading.Tasks.Task>, takže neexistují žádné přidělení vrátit výsledky uložené v mezipaměti.  
+ Tento kód změní typ `cachedResult` k `Task<SyntaxTree>` a využívá `async` pomocné funkce, která obsahuje původní kód `GetSyntaxTreeAsync()`.  `GetSyntaxTreeAsync()` Teď používá [null slučovací operátor](../../csharp/language-reference/operators/null-coalescing-operator.md) vrátit `cachedResult` , pokud není null.  Pokud `cachedResult` má hodnotu null, pak `GetSyntaxTreeAsync()` volání `GetSyntaxTreeUncachedAsync()` a ukládá do mezipaměti výsledek.  Všimněte si, že `GetSyntaxTreeAsync()` není await volání `GetSyntaxTreeUncachedAsync()` jako kód běžným způsobem.  Nepoužíváte await znamená že v případě `GetSyntaxTreeUncachedAsync()` vrátí jeho <xref:System.Threading.Tasks.Task> objekt, `GetSyntaxTreeAsync()` hned vrátí <xref:System.Threading.Tasks.Task>.  Nyní v mezipaměti výsledkem je, <xref:System.Threading.Tasks.Task>, takže neexistují žádné přidělení vrátit výsledky uložené v mezipaměti.  
   
 ### <a name="additional-considerations"></a>Další informace  
  Zde naleznete několik více bodů o možných problémech ve velkých aplikací nebo aplikace, které zpracovávají velké množství dat.  

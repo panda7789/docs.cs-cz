@@ -2,11 +2,11 @@
 title: 'Pokyny pro návrh součást F #'
 description: 'Přečtěte si pokyny pro tvorbu F # součásti určené pro používání jiných volající.'
 ms.date: 05/14/2018
-ms.openlocfilehash: 7859baac76be01b2cfbdc8602b6cc417cfe5106f
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.openlocfilehash: 7e71710b1bc2fe3e8d7a5a091513a1432650dc04
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="f-component-design-guidelines"></a>Pokyny pro návrh součást F #
 
@@ -483,7 +483,7 @@ Ale logické tečkami operace u tohoto typu nejsou stejná jako operace na mapě
 
 Při navrhování knihovny pro použití jiných jazyků .NET, je potřeba dodržovat [pokynů pro návrh knihovny .NET](../../standard/design-guidelines/index.md). V tomto dokumentu tyto knihovny jsou označeny jako vanilla knihovny .NET, a F #-facing knihovny, které používají F # vytvoří bez omezení. Navrhování vanilla knihovny .NET znamená poskytující známé a idiomatickou rozhraní API konzistentní se zbytkem rozhraní .NET Framework pomocí minimalizace použití F # – konkrétní konstrukce v veřejné rozhraní API. Pravidla jsou vysvětlené v následujících částech.
 
-### <a name="namespace-and-type-sesign-for-libraries-for-use-from-other-net-languages"></a>Namespace a typ sesign (pro knihovny pro použití jiných jazyků .NET)
+### <a name="namespace-and-type-design-for-libraries-for-use-from-other-net-languages"></a>Návrh Namespace a typ (pro knihovny pro použití jiných jazyků .NET)
 
 #### <a name="apply-the-net-naming-conventions-to-the-public-api-of-your-components"></a>Použít zásady vytváření názvů .NET pro veřejné rozhraní API komponent
 

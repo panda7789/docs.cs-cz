@@ -2,11 +2,11 @@
 title: 'F # – konvence kódování'
 description: 'Další obecné pokyny a idioms při psaní kódu pro jazyk F #.'
 ms.date: 05/14/2018
-ms.openlocfilehash: 4db1e2b4fef97fc060f717a080cd762f9fe08ee0
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
-ms.translationtype: HT
+ms.openlocfilehash: f3d16f735ddc1901aeaa5ebb39e2fa2b70a3d836
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="f-coding-conventions"></a>F # – konvence kódování
 
@@ -91,7 +91,7 @@ let parsed = StringTokenization.parse s // Must qualify to use 'parse'
 
 V jazyce F #, záleží na pořadí deklarace, včetně s `open` příkazy. To je rozdíl oproti C#, kde účinku `using` a `using static` je nezávislá řazení tyto příkazy v souboru.
 
-V F # protože elementy otevřít do oboru můžete stínové ostatní již přítomen. To znamená, že změna `open` příkazy se může změnit význam kódu. V důsledku toho řazení alfanumericky (nebo pseudorandomly) se obecně nedoporučuje, přidejte generovat různé chování, které by se dalo očekávat.
+V F # elementy otevřít do oboru stínové ostatní již existuje. To znamená, že změna `open` příkazy může změnit význam kódu. V důsledku toho všechny libovolný řazení všech `open` příkazy (například, alfanumericky) se obecně nedoporučuje, přidejte generovat různé chování, které by se dalo očekávat.
 
 Místo toho doporučujeme řazení je [topologically](https://en.wikipedia.org/wiki/Topological_sorting); to znamená, pořadí vaše `open` příkazy v pořadí, ve kterém _vrstvy_ jsou definovány vašeho systému. Provádění alfanumerické řazení v rámci různých úrovní topologické může také zvážit.
 
@@ -108,12 +108,11 @@ open System.IO
 open System.Reflection
 open System.Text
 
-open Microsoft.FSharp.Core.Printf
 open Microsoft.FSharp.Compiler
 open Microsoft.FSharp.Compiler.AbstractIL
+open Microsoft.FSharp.Compiler.AbstractIL.Diagnostics
 open Microsoft.FSharp.Compiler.AbstractIL.IL
 open Microsoft.FSharp.Compiler.AbstractIL.ILBinaryReader
-open Microsoft.FSharp.Compiler.AbstractIL.Diagnostics
 open Microsoft.FSharp.Compiler.AbstractIL.Internal
 open Microsoft.FSharp.Compiler.AbstractIL.Internal.Library
 
@@ -123,24 +122,23 @@ open Microsoft.FSharp.Compiler.CompileOps
 open Microsoft.FSharp.Compiler.CompileOptions
 open Microsoft.FSharp.Compiler.Driver
 open Microsoft.FSharp.Compiler.ErrorLogger
+open Microsoft.FSharp.Compiler.Infos
+open Microsoft.FSharp.Compiler.InfoReader
+open Microsoft.FSharp.Compiler.Lexhelp
+open Microsoft.FSharp.Compiler.Layout
 open Microsoft.FSharp.Compiler.Lib
+open Microsoft.FSharp.Compiler.NameResolution
 open Microsoft.FSharp.Compiler.PrettyNaming
 open Microsoft.FSharp.Compiler.Parser
 open Microsoft.FSharp.Compiler.Range
-open Microsoft.FSharp.Compiler.Lexhelp
-open Microsoft.FSharp.Compiler.Layout
 open Microsoft.FSharp.Compiler.Tast
 open Microsoft.FSharp.Compiler.Tastops
 open Microsoft.FSharp.Compiler.TcGlobals
-open Microsoft.FSharp.Compiler.Infos
-open Microsoft.FSharp.Compiler.InfoReader
-open Microsoft.FSharp.Compiler.NameResolution
 open Microsoft.FSharp.Compiler.TypeChecker
 open Microsoft.FSharp.Compiler.SourceCodeServices.SymbolHelpers
 
 open Internal.Utilities
 open Internal.Utilities.Collections
-open Microsoft.FSharp.Compiler.Layout.TaggedTextOps
 ```
 
 Všimněte si, že konec řádku odděluje jednotlivé úrovně řazen alfanumericky později topologické vrstvy. To ještě jednou organizuje kód bez omylem stínový provoz hodnoty.
@@ -154,7 +152,9 @@ Existují tolikrát, kolikrát po inicializaci hodnotu může mít vedlejší ú
 module MyApi =
     let dep1 = File.ReadAllText "/Users/{your name}/connectionstring.txt"
     let dep2 = Environment.GetEnvironmentVariable "DEP_2"
-    let dep3 = Random().Next() // Random is not thread-safe
+
+    let private r = Random()
+    let dep3() = r.Next() // Problematic if multiple threads use this
 
     let function1 arg = doStuffWith dep1 dep2 dep3 arg
     let function2 arg = doSutffWith dep1 dep2 dep3 arg
@@ -162,7 +162,9 @@ module MyApi =
 
 Toto je často vhodné z několika důvodů:
 
-Nejprve umožňuje rozhraní API, samotné závisí na sdílený stav. Například může být několik volání vláken Probíhá pokus o přístup k `dep3` hodnotu (a není bezpečné pro přístup z více vláken). Za druhé vynutí konfigurace aplikace do základu kódu sám sebe. Toto je obtížné pro větší základy kódu.
+Nejprve je konfigurace aplikace vložena do základu kódu s `dep1` a `dep2`. Toto je obtížné v, že větší základy kódu.
+
+Druhý, staticky inicializovaného data nesmí obsahovat hodnoty, které nejsou bezpečné pro přístup z více vláken, pokud samotné příslušné součásti bude používat více vláken. To jasně porušení podle `dep3`.
 
 Nakonec inicializace modulu zkompiluje do statického konstruktoru pro celý kompilace jednotku. V případě chyby inicializace vázané na umožňují hodnotu v tomto modulu manifesty jako `TypeInitializationException` pak mezipaměti po celou dobu života aplikace. To může být obtížné diagnostikovat. Obvykle je vnitřní výjimka, která můžete se pokusit o důvodu, ale pokud není, nejsou k dispozici žádné o tom, co je hlavní příčinu.
 
@@ -318,7 +320,7 @@ Typy, jako `Result<'Success, 'Error>` jsou vhodné pro základní operace, kde b
 
 ## <a name="partial-application-and-point-free-programming"></a>Částečné aplikace a bez bodu programování
 
-F # podporuje částečné aplikace a proto různé způsoby, jak program ve stylu volného bodu. To může být užitečné pro opakované použití kódu v modulu nebo implementace něco, ale obecně se něco vystavit veřejně. Obecně platí bez bodu programování není důsledku v a sám sebe a můžete přidat kognitivní představují významnou překážkou pro uživatele, kteří nejsou ponořena ve stylu. Bez bodu programování v F # je základní pro dobře matematikovi, ale může být složité pro uživatele, kteří se s lambda calculus.
+F # podporuje částečné aplikace a proto různé způsoby, jak program ve stylu volného bodu. To může být užitečné pro opakované použití kódu v modulu nebo implementace něco, ale obecně se něco vystavit veřejně. Obecně platí bez bodu programování není důsledku v a sám sebe a můžete přidat kognitivní představují významnou překážkou pro uživatele, kteří nejsou ponořena ve stylu.
 
 ### <a name="do-not-use-partial-application-and-currying-in-public-apis"></a>Nepoužívejte částečné aplikace a currying veřejné rozhraní API
 

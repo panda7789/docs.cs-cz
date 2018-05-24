@@ -11,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ed306098852e93d43a4055fd1d9b8cf97a01766
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f5fef84250f9dbc10a921a6844f7020c72835cea
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
 Zařazování spolupráce funguje v pravidlech že tu určují chování data související s parametry metody jak předává mezi spravovanými a nespravovanými paměti. Tyto vestavěné pravidla řízení takové zařazování aktivitám v podobě transformace typu dat, zda volaný můžete změnit data do ní předán a tyto změny vrátit volajícímu, a pod kterým okolností zařazování poskytuje optimalizace výkonu.  
@@ -345,7 +345,7 @@ interface _Graphics {
 }  
 ```  
   
- Stejná pravidla použitý k zařazování hodnoty a odkazy na platformě vyvolat volání se používají při zařazování prostřednictvím rozhraní modelu COM. Například když instanci `Point` typ hodnoty je předán z rozhraní .NET Framework do modelu COM, `Point` je předaná hodnota. Pokud `Point` typ hodnoty je předán odkazem ukazatel na `Point` je předán v zásobníku. Spolupráce vláken nepodporuje vyšší úrovně dereference (**bodu \* \*** ) v obou směrech.  
+ Stejná pravidla použitý k zařazování hodnoty a odkazy na platformě vyvolat volání se používají při zařazování prostřednictvím rozhraní modelu COM. Například když instanci `Point` typ hodnoty je předán z rozhraní .NET Framework do modelu COM, `Point` je předaná hodnota. Pokud `Point` typ hodnoty je předán odkazem ukazatel na `Point` je předán v zásobníku. Spolupráce vláken nepodporuje vyšší úrovně dereference (**bodu** \* \*) v obou směrech.  
   
 > [!NOTE]
 >  Struktury, že <xref:System.Runtime.InteropServices.LayoutKind> nastavena na hodnotu výčtu **explicitní** nelze použít v zprostředkovatel komunikace s objekty COM, protože knihovny exportovaný typů nelze express explicitní rozložení.  

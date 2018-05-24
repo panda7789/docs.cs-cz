@@ -3,11 +3,11 @@ title: Úvod do třídy kurz – C# místní – elementy QuickStart
 description: Vytvoření vaší první programu C# a prozkoumat objektově orientované koncepty
 ms.date: 10/11/2017
 ms.custom: mvc
-ms.openlocfilehash: 5d3363a34fb684985b3b060dce2784090f25a1b9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a951c84396e187b5ef1a832705b7722f818c990b
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="introduction-to-classes"></a>Úvod do třídy
 
@@ -72,7 +72,7 @@ namespace classes
 
 Před přechodem, Podívejme se na co jste vytvořili.  `namespace` Deklarace poskytuje způsob, jak logicky uspořádat vašeho kódu. Tento rychlý start je poměrně malý, takže všechny kód budete chápat jeden obor názvů. 
 
-`public class BankAccount` definuje třídu, nebo typu, kterou vytváříte. Všechno uvnitř `{` a `}` třídy, které následuje deklarace definuje chování třídy. Existují pět ***členy*** z `BankAccount` třídy. První tři ***vlastnosti***. Vlastnosti jsou datové prvky a může mít kód, který vynucuje ověřování nebo jinými pravidly. Poslední dva jsou ***metody***. Metody jsou bloky kódu, že či jedné funkce. Čtení názvy všech členů, měl by poskytnout dostatek informací pro vás nebo jiné vývojář zjistit, jaké jsou třídy.
+`public class BankAccount` definuje třídu, nebo typu, kterou vytváříte. Všechno uvnitř `{` a `}` třídy, které následuje deklarace definuje chování třídy. Existují pět ***členy*** z `BankAccount` třídy. První tři ***vlastnosti***. Vlastnosti jsou datové prvky a může mít kód, který vynucuje ověřování nebo jinými pravidly. Poslední dva jsou ***metody***. Metody jsou bloky kódu, které provádějí jedné funkce. Čtení názvy všech členů, měl by poskytnout dostatek informací pro vás nebo jiné vývojář zjistit, jaké jsou třídy.
 
 ## <a name="open-a-new-account"></a>Otevřete nový účet
 

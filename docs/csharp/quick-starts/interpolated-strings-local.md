@@ -5,11 +5,11 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 04/14/2018
 ms.custom: mvc
-ms.openlocfilehash: 314626e276f50178e2855b8c8a1edc104546d574
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: a4e8434b3e7f945ad002984ad7861c0e103c0cf2
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="string-interpolation"></a>Řetězec interpolace
 
@@ -48,13 +48,13 @@ Nyní si vyzkoušíte několik další příklady interpolace řetězce, pomocí
 
 V předchozí části použít řetězec interpolace vložit jeden řetězec uvnitř jiného. Výsledek interpolované výraz může být jakékoli datového typu, ale. Umožňuje zahrnout hodnoty různých datových typů v interpolované řetězce.
 
-V následujícím příkladu se nejdřív jsme definovali vlastní datový typ `Vegetable` který má `Name` [vlastnost](../properties.md) a `ToString` metoda. Kód klienta tuto metodu můžete použít k získání řetězcovou reprezentaci `Vegetable` instance. V příkladu `Vegetable.ToString` metoda vrátí hodnotu `Name` vlastnost, která je inicializován v `Vegetable` konstruktor:
+V následujícím příkladu se nejdřív jsme definovali [– třída](../programming-guide/classes-and-structs/classes.md) datový typ `Vegetable` který má `Name` [vlastnost](../properties.md) a `ToString` [metoda](../methods.md), které [přepsání](../language-reference/keywords/override.md) chování <xref:System.Object.ToString?displayProperty=nameWithType> metoda. [ `public` – Modifikátor přístupu](../language-reference/keywords/public.md) zpřístupní dané metody žádný kód klienta získat řetězcovou reprezentaci `Vegetable` instance. V příkladu `Vegetable.ToString` metoda vrátí hodnotu `Name` vlastnost, která je inicializován v `Vegetable` [konstruktor](../programming-guide/classes-and-structs/constructors.md):
 
 ```csharp
 public Vegetable(string name) => Name = name;
 ```
 
-Nemůžeme vytvořit instanci `Vegetable` typu pomocí `new` – klíčové slovo a poskytuje název parametr pro konstruktor `Vegetable`:
+Poté vytvoříme instanci `Vegetable` pomocí [ `new` – klíčové slovo](../language-reference/keywords/new-operator.md) a poskytuje název parametr pro konstruktor `Vegetable`:
 
 ```csharp
 var item = new Vegetable("eggplant");

@@ -12,11 +12,11 @@ helpviewer_keywords:
 - ?[] operator [C#]
 - ?[] operator [Visual Basic]
 ms.assetid: 9c7b2c8f-a785-44ca-836c-407bfb6d27f5
-ms.openlocfilehash: da771fa4a2a89dca308508ea81ef8e0060efa7f0
-ms.sourcegitcommit: e5bb395ec86f536e114314184288f40a8c745e2e
+ms.openlocfilehash: 28cf2633d74f047a751ffdad11f1e1db8328cd6f
+ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="-and--null-conditional-operators-c-and-visual-basic"></a>?. a? [] null podmíněné operátory (C# a Visual Basic)
 Testuje hodnotu levé operand pro hodnotu null, před provedením přístup ke členu (`?.`) nebo index (`?[]`) operaci; vrátí `null` Pokud je výsledkem levé operand `null`. 
@@ -79,7 +79,7 @@ PropertyChanged?.Invoke(…)
  Další informace najdete v tématu [referenční dokumentace jazyka Visual Basic](../../../visual-basic/language-reference/index.md).  
   
 ## <a name="see-also"></a>Viz také  
- [?? (operátor slučování null)](null-conditional-operator.md)  
+ [?? (operátor slučování null)](null-coalescing-operator.md)  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
  [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Průvodce programováním v jazyce Visual Basic](../../../visual-basic/programming-guide/index.md)
