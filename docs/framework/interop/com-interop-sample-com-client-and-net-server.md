@@ -1,13 +1,6 @@
 ---
-title: "Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET"
-ms.custom: 
+title: 'Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,22 +8,19 @@ helpviewer_keywords:
 - interoperation with unmanaged code, samples
 - COM interop, samples
 ms.assetid: a219cb2c-9fa2-4c90-9b26-939e0788f178
-caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 7bf7bed76503f9ee0919826d39fe3df502a55511
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 26963a6dc057c979b43e9697ec7a85a60fd3932d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
 ---
-# <a name="com-interop-sample-com-client-and-net-server"></a><span data-ttu-id="268a0-102">Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET</span><span class="sxs-lookup"><span data-stu-id="268a0-102">COM Interop Sample: COM Client and .NET Server</span></span>
-<span data-ttu-id="268a0-103">Tento příklad znázorňuje vzájemná spolupráce z [klient COM](#cpconcominteropsamplecomclientnetserveranchor1) a [.NET Server](#cpconcominteropsamplecomclientnetserveranchor2) který provede výpočty hypotéky.</span><span class="sxs-lookup"><span data-stu-id="268a0-103">This sample demonstrates the interoperation of a [COM Client](#cpconcominteropsamplecomclientnetserveranchor1) and a [.NET Server](#cpconcominteropsamplecomclientnetserveranchor2) that performs mortgage calculations.</span></span> <span data-ttu-id="268a0-104">V tomto příkladu klient vytvoří a volá instanci spravovaný `Loan` třídy, předá čtyři argumenty (jeden z těchto čtyř se rovná nule) na instance a zobrazí výpočtů.</span><span class="sxs-lookup"><span data-stu-id="268a0-104">In this example, the client creates and calls an instance of the managed `Loan` class, passes four arguments (one of those four being equal to zero) to the instance, and displays the computations.</span></span> <span data-ttu-id="268a0-105">Příklady kódu od této ukázky se zobrazí v této části.</span><span class="sxs-lookup"><span data-stu-id="268a0-105">Code examples from this sample appear throughout this section.</span></span>  
+# <a name="com-interop-sample-com-client-and-net-server"></a><span data-ttu-id="9c2d2-102">Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET</span><span class="sxs-lookup"><span data-stu-id="9c2d2-102">COM Interop Sample: COM Client and .NET Server</span></span>
+<span data-ttu-id="9c2d2-103">Tento příklad znázorňuje vzájemná spolupráce z [klient COM](#cpconcominteropsamplecomclientnetserveranchor1) a [.NET Server](#cpconcominteropsamplecomclientnetserveranchor2) který provede výpočty hypotéky.</span><span class="sxs-lookup"><span data-stu-id="9c2d2-103">This sample demonstrates the interoperation of a [COM Client](#cpconcominteropsamplecomclientnetserveranchor1) and a [.NET Server](#cpconcominteropsamplecomclientnetserveranchor2) that performs mortgage calculations.</span></span> <span data-ttu-id="9c2d2-104">V tomto příkladu klient vytvoří a volá instanci spravovaný `Loan` třídy, předá čtyři argumenty (jeden z těchto čtyř se rovná nule) na instance a zobrazí výpočtů.</span><span class="sxs-lookup"><span data-stu-id="9c2d2-104">In this example, the client creates and calls an instance of the managed `Loan` class, passes four arguments (one of those four being equal to zero) to the instance, and displays the computations.</span></span> <span data-ttu-id="9c2d2-105">Příklady kódu od této ukázky se zobrazí v této části.</span><span class="sxs-lookup"><span data-stu-id="9c2d2-105">Code examples from this sample appear throughout this section.</span></span>  
   
 <a name="cpconcominteropsamplecomclientnetserveranchor1"></a>   
-## <a name="com-client"></a><span data-ttu-id="268a0-106">Klient COM</span><span class="sxs-lookup"><span data-stu-id="268a0-106">COM Client</span></span>  
+## <a name="com-client"></a><span data-ttu-id="9c2d2-106">Klient COM</span><span class="sxs-lookup"><span data-stu-id="9c2d2-106">COM Client</span></span>  
   
 ```cpp  
 // ConLoan.cpp : Defines the entry point for the console application.  
@@ -97,7 +87,7 @@ int main(int argc, char* argv[])
 ```  
   
 <a name="cpconcominteropsamplecomclientnetserveranchor2"></a>   
-## <a name="net-server"></a><span data-ttu-id="268a0-107">Rozhraní .NET serveru</span><span class="sxs-lookup"><span data-stu-id="268a0-107">.NET Server</span></span>  
+## <a name="net-server"></a><span data-ttu-id="9c2d2-107">Rozhraní .NET serveru</span><span class="sxs-lookup"><span data-stu-id="9c2d2-107">.NET Server</span></span>  
   
 ```vb  
 Imports System  
@@ -398,5 +388,5 @@ namespace LoanLib {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="268a0-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="268a0-108">See Also</span></span>  
- [<span data-ttu-id="268a0-109">Vystavení komponent architektury .NET Framework pro COM</span><span class="sxs-lookup"><span data-stu-id="268a0-109">Exposing .NET Framework Components to COM</span></span>](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
+## <a name="see-also"></a><span data-ttu-id="9c2d2-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="9c2d2-108">See Also</span></span>  
+ [<span data-ttu-id="9c2d2-109">Vystavení komponent architektury .NET Framework pro COM</span><span class="sxs-lookup"><span data-stu-id="9c2d2-109">Exposing .NET Framework Components to COM</span></span>](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
