@@ -7,11 +7,11 @@ ms.date: 08/07/2017
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 24d0f1366a8e4309bbfb5b548af7407de50eaf76
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1733f3fc66d79dafb9bc6f983773f043be6c1006
+ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="testing-a-class-library-with-net-core-in-visual-studio-2017"></a>Testování knihovny tříd s .NET Core v Visual Studio 2017
 
@@ -24,12 +24,12 @@ Vytvoření projektu testů jednotek, postupujte takto:
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 1. V **Průzkumníku řešení**, otevřete kontextovou nabídku **ClassLibraryProjects** řešení uzel a vyberte možnost **přidat** > **nový projekt**.
 
-1. V **přidat nový projekt** dialogovém okně, vyberte **Visual C#** uzlu. Vyberte **.NET Core** následuje uzlu **projektu testování částí (.NET Core)** šablona projektu. V **název** textové pole, jako název projektu zadejte "StringLibraryTest". Vyberte **OK** k vytvoření projektu testování částí.
+1. V **přidat nový projekt** dialogovém okně, vyberte **Visual C#** uzlu. Vyberte **.NET Core** následuje uzlu **Mstestu testovacího projektu (.NET Core)** šablona projektu. V **název** textové pole, jako název projektu zadejte "StringLibraryTest". Vyberte **OK** k vytvoření projektu testování částí.
 
    ![Přidat dialogové okno Nový projekt](./media/testing-library-with-visual-studio/testproject.png)
 
    > [!NOTE]  
-   > Kromě jednotkové testování projektu můžete také použít Visual Studio k vytvoření projektu testů xUnit pro .NET Core.
+   > Kromě projektu Mstestu testu můžete taky Visual Studio k vytvoření projektu testů xUnit pro .NET Core.
 
 1. Visual Studio vytvoří projekt a otevře *UnitTest1.cs* souborů v okně kód.
 
@@ -53,12 +53,12 @@ Vytvoření projektu testů jednotek, postupujte takto:
 # <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic) 
 1. V **Průzkumníku řešení**, otevřete kontextovou nabídku **ClassLibraryProjects** řešení uzel a vyberte možnost **přidat** > **nový projekt**.
 
-1. V **přidat nový projekt** dialogovém okně, vyberte **jazyka Visual Basic** uzlu. Vyberte **.NET Core** následuje uzlu **projektu testování částí (.NET Core)** šablona projektu. V **název** textové pole, jako název projektu zadejte "StringLibraryTest". Vyberte **OK** k vytvoření projektu testování částí.
+1. V **přidat nový projekt** dialogovém okně, vyberte **jazyka Visual Basic** uzlu. Vyberte **.NET Core** následuje uzlu **Mstestu testovacího projektu (.NET Core)** šablona projektu. V **název** textové pole, jako název projektu zadejte "StringLibraryTest". Vyberte **OK** k vytvoření projektu testování částí.
 
    ![Přidat dialogové okno Nový projekt](./media/testing-library-with-visual-studio/vb-testproject.png)
 
    > [!NOTE]  
-   > Kromě jednotkové testování projektu můžete také použít Visual Studio k vytvoření projektu testů xUnit pro .NET Core.
+   > Kromě projektu Mstestu testu můžete taky Visual Studio k vytvoření projektu testů xUnit pro .NET Core.
 
 1. Visual Studio vytvoří projekt a otevře *UnitTest1.vb* souborů v okně kód.
 

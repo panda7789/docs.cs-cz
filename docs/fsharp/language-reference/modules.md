@@ -2,11 +2,11 @@
 title: Moduly (F#)
 description: 'Zjistěte, jak modul F # je seskupení F # kódu, například hodnoty, typy a hodnoty funkce v programu F #.'
 ms.date: 04/24/2017
-ms.openlocfilehash: ddb6a0762171f8acc94f0ba0cf29c4b6b3e4990e
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: 9a1416321e392f7a06551b4a7e3429e3a2d023bd
+ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="modules"></a>Moduly
 
@@ -131,6 +131,6 @@ Tato funkce je také možné v [obory názvů](namespaces.md) s F # 4.1.
 
 ## <a name="see-also"></a>Viz také
 
-[Referenční dokumentace jazyka F #](index.md)
-[obory názvů](namespaces.md)
-[F # RFC 1009 FS - povolit vzájemně referenční typy a moduly přes větší oborů v rámci soubory](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.1/FS-1009-mutually-referential-types-and-modules-single-scope.md)
+[Referenční dokumentace jazyka F#](index.md)  
+[Obory názvů](namespaces.md)  
+[1009-F # RFC FS - povolit vzájemně referenční typy a moduly přes větší oborů v rámci soubory](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.1/FS-1009-mutually-referential-types-and-modules-single-scope.md)  

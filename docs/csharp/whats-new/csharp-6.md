@@ -3,11 +3,11 @@ title: Co je nového v jazyce C# 6 – Průvodce v C#
 description: Informace o nových funkcích v C# verze 6
 ms.date: 09/22/2016
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
-ms.openlocfilehash: d9f5c5ca94c04a873e4e98863f9fea3b8f477c1c
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: c23d4f45441451fbf8a2ad2f939bdb1ed6144154
+ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="whats-new-in-c-6"></a>Co je nového v jazyce C# 6
 
@@ -341,11 +341,11 @@ Podrobnosti implementace pro přidání `await` podporu uvnitř `catch` a `final
 
 ## <a name="index-initializers"></a>Inicializátory indexu
 
-*Inicializátory index* je jednou ze dvou funkcí, které byly víc konzistentní Inicializátory kolekcí. V dřívějších verzích jazyka C#, můžete použít *Inicializátory kolekcí* pouze s kolekcemi styl pořadí:
+*Inicializátory index* je jednou ze dvou funkcí Inicializátory kolekcí více konzistentní s využití index. V dřívějších verzích jazyka C#, můžete použít *Inicializátory kolekcí* pouze s kolekcemi styl pořadí, včetně <xref:System.Collections.Generic.Dictionary%602> přidáním složené závorky kolem dvojice klíče a hodnoty:
 
 [!code-csharp[ListInitializer](../../../samples/snippets/csharp/new-in-6/initializers.cs#ListInitializer)]
 
-Teď můžete také použít je s <xref:System.Collections.Generic.Dictionary%602> kolekce a podobné typy:
+Teď můžete použít je s <xref:System.Collections.Generic.Dictionary%602> kolekce a podobné typy. Nové syntaxe podporuje přiřazení do kolekce pomocí indexu:
 
 [!code-csharp[DictionaryInitializer](../../../samples/snippets/csharp/new-in-6/initializers.cs#DictionaryInitializer)]
 

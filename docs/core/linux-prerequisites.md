@@ -4,11 +4,11 @@ description: Podporované verze systému Linux a závislostí .NET Core k vývoj
 author: jralexander
 ms.author: johalex
 ms.date: 05/08/2018
-ms.openlocfilehash: 41656bf8f18c2b66c35f0a65e4af0949db4464f9
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: 4890f682ee2d0b55dc5059d8f1d3091def07a8a5
+ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Předpoklady pro .NET Core v systému Linux
 
@@ -65,29 +65,36 @@ Následující by měla být příklady. Přesné verze a názvy se mohou mírn�
 
 Ubuntu distribuce vyžadovat nainstalované následující knihovny:
 
-* libunwind8
 * liblttng ust0
 * libcurl3
 * libssl1.0.0
-* libuuid1
 * libkrb5-3
 * zlib1g
 * libicu52 (pro 14.x)
 * libicu55 (pro 16.x)
 * libicu57 (pro 17.x)
+* libicu60 (pro 18.x)
+
+Verze starší než .NET Core 2.1, následující závislosti jsou také vyžaduje:
+
+* libunwind8
+* libuuid1
 
 ### <a name="centos"></a>CentOS
 
 Distribuce centOS vyžadovat nainstalované následující knihovny:
 
-* libunwind
 * Upravit lttng
 * libcurl
 * knihovny OpenSSL
-* libuuid
 * krb5 knihovny
 * libicu
 * zlib
+
+Verze starší než .NET Core 2.1, následující závislosti jsou také vyžaduje:
+
+* libunwind
+* libuuid
 
 Další informace o závislostech najdete v tématu [aplikace Self-contained Linux](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md).
 
