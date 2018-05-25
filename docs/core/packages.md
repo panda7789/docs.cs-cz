@@ -4,11 +4,11 @@ description: Přečtěte si terminologie pro balíčky, metapackages a architekt
 author: richlander
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.openlocfilehash: 915ccadbb4d2cca50fd1caa53d90aa05d83d9378
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f10965a8f5f2848f2b942b92577adf3185d8bd3c
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Balíčky, metapackages a architektury
 
@@ -96,9 +96,10 @@ Je obousměrný vztah mezi architektury a balíčků. První část je definice 
 
 Druhá část relace je výběr majetku. Balíčky mohou obsahovat prostředky pro více rozhraní. Zadaný odkaz na sadu balíčky nebo metapackages, rozhraní je potřeba určit, které prostředek měla by být vybrána, například `net46` nebo `netstandard1.3`. Je důležité vybrat správnou asset. Například `net46` asset není pravděpodobné, aby byl kompatibilní s rozhraní .NET Framework 4.0 nebo .NET Core 1.0.
 
-![Na základě balíčku Framework složení](./media/packages/package-framework.png)
 
-Tento vztah na obrázku výše vidíte. *Rozhraní API* cílí a definuje *framework*. *Framework* se používá pro *asset výběr*. *Asset* poskytuje rozhraní API.
+Tento vztah na následujícím obrázku vidíte. *Rozhraní API* cílí a definuje *framework*. *Framework* se používá pro *asset výběr*. *Asset* poskytuje rozhraní API.
+
+![Na základě balíčku Framework složení](./media/packages/package-framework.png)
 
 Dvě primární založené na balíček rozhraní použít s .NET Core jsou:
 

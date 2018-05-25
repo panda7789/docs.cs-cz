@@ -1,6 +1,6 @@
 ---
 title: -keycontainer (možnosti kompilátoru C#)
-ms.date: 07/20/2015
+ms.date: 05/16/2018
 f1_keywords:
 - /keycontainer
 helpviewer_keywords:
@@ -8,11 +8,11 @@ helpviewer_keywords:
 - keycontainer compiler option [C#]
 - -keycontainer compiler option [C#]
 ms.assetid: b3982b6d-2382-4f7e-bebd-ce98eaa30763
-ms.openlocfilehash: edb50dafa376abe55fbeeb312ca5bb8f34c83e7f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5a7b378cad7a1df9249fcbefa28bb9aa9a6a3da4
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="-keycontainer-c-compiler-options"></a>-keycontainer (možnosti kompilátoru C#)
 Určuje název kontejneru kryptografických klíčů.  
@@ -28,7 +28,7 @@ Určuje název kontejneru kryptografických klíčů.
  Název kontejneru klíčů silným názvem.  
   
 ## <a name="remarks"></a>Poznámky  
- Když **- keycontainer** možnost, kompilátor vytvoří komponentu lze sdílet vložením veřejný klíč ze zadaného kontejneru do manifestu a podepíše konečné sestavení s privátním klíčem. Chcete-li vygenerovat soubor klíče, zadejte sn -k `file` na příkazovém řádku. sn -i nainstaluje pár klíčů do kontejneru.  
+ Když **- keycontainer** možnost, kompilátor vytvoří komponentu lze sdílet. Kompilátor vloží veřejný klíč ze zadaného kontejneru do manifestu a podepíše konečné sestavení s privátním klíčem. Chcete-li vygenerovat soubor klíče, zadejte `sn -k file` na příkazovém řádku. `sn -i` nainstaluje páru klíčů do kontejneru. Tato možnost není podporovaná, když kompilátor běží na CoreCLR. Chcete-li při sestavování na CoreCLR podepsání sestavení, použijte [- keyfile](keyfile-compiler-option.md) možnost.
   
  Pokud je kompilovat s [-target: module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md), název souboru klíče je udržován v modulu a začleněn do sestavení při kompilaci tohoto modulu do sestavení s [- addmodule](../../../csharp/language-reference/compiler-options/addmodule-compiler-option.md).  
   
@@ -45,5 +45,5 @@ Určuje název kontejneru kryptografických klíčů.
  Prostřednictvím kódu programu přístup k této možnosti kompilátoru s <xref:VSLangProj.ProjectProperties.AssemblyKeyContainerName%2A>.  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [-Keyfile – možnost kompilátor jazyka C#](keyfile-compiler-option.md) [možnosti kompilátoru C#](index.md)  
  [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

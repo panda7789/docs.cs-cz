@@ -4,11 +4,11 @@ description: Příkaz Publikovat dotnet publikuje do adresáře projektu .NET Co
 author: mairaw
 ms.author: mairaw
 ms.date: 03/10/2018
-ms.openlocfilehash: 8509f1a721c0b4b4c05d68e0f98f9b856bcc5a8e
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: 5e7ce5ce1240f03f53f6e120dfce53d15917425f
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="dotnet-publish"></a>publikování DotNet.
 
@@ -90,7 +90,7 @@ Neprovede implicitní obnovení, při spuštění příkazu.
 `-o|--output <OUTPUT_DIRECTORY>`
 
 Určuje cestu k výstupnímu adresáři. Pokud není zadáno, je standardně *./bin/[configuration]/[framework]/publish/* pro nasazení závislé na framework nebo *./bin/[configuration]/[framework]/[runtime]/publish/* pro samostatná nasazení.
-Pokud je zadaný na relativní cestu, výstupní adresář generované je relativní k umístění souboru projektu, není pro aktuální pracovní adresář.
+Pokud je relativní cesta, výstupní adresář generované je relativní k umístění souboru projektu, není pro aktuální pracovní adresář.
 
 `--self-contained`
 
@@ -129,7 +129,7 @@ Určuje jeden nebo několik [cíle manifesty](../deploying/runtime-store.md) slo
 `-o|--output <OUTPUT_DIRECTORY>`
 
 Určuje cestu k výstupnímu adresáři. Pokud není zadáno, je standardně *./bin/[configuration]/[framework]/publish/* pro nasazení závislé na framework nebo *./bin/[configuration]/[framework]/[runtime]/publish/* pro samostatná nasazení.
-Pokud je zadaný na relativní cestu, výstupní adresář generované je relativní k umístění souboru projektu, není pro aktuální pracovní adresář.
+Pokud je relativní cesta, výstupní adresář generované je relativní k umístění souboru projektu, není pro aktuální pracovní adresář.
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 

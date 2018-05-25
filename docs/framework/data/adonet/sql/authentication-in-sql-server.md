@@ -1,12 +1,12 @@
 ---
 title: Ověřování v systému SQL Server
-ms.date: 03/30/2017
+ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-ms.openlocfilehash: 8fc6f17cd008fe24e041c52b4e5ee8fd4d261f40
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f2d290d22d27c43cf7fb3250bf7898e8260dce2b
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="authentication-in-sql-server"></a>Ověřování v systému SQL Server
 Systém SQL Server podporuje dva režimy ověřování a smíšený režim a režim ověřování systému Windows.  
@@ -16,7 +16,7 @@ Systém SQL Server podporuje dva režimy ověřování a smíšený režim a re�
 -   Smíšený režim podporuje ověřování Windows a systémem SQL Server. Dvojice název a heslo uživatele se udržují v systému SQL Server.  
   
 > [!IMPORTANT]
->  Doporučujeme použít ověřování systému Windows, pokud je to možné. Ověřování systému Windows používá řadu šifrované zprávy k ověřování uživatelů v systému SQL Server. Když se použije přihlášení serveru SQL, systému SQL Server přihlašovacích jmen a hesel se předávají v síti, který je méně bezpečné.  
+>  Doporučujeme použít ověřování systému Windows, pokud je to možné. Ověřování systému Windows používá řadu šifrované zprávy k ověřování uživatelů v systému SQL Server. Při přihlášení serveru SQL se používají, přihlašovacích jmen systému SQL Server a šifrované hesla se předávají v síti, který je méně bezpečné.  
   
  Pomocí ověřování systému Windows uživatelé jsou již přihlášeni k systému Windows a nemají samostatně přihlásit k systému SQL Server. Následující `SqlConnection.ConnectionString` Určuje ověřování systému Windows bez nutnosti uživatelské jméno nebo heslo.  
   

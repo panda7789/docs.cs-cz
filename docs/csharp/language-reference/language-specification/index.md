@@ -1,6 +1,6 @@
 ---
-title: C# 6.0 koncept specifikace jazyka
-ms.date: 07/01/2017
+title: Specifikace jazyka C# 6.0 konceptu
+ms.date: 05/22/2018
 ms.topic: language-reference
 helpviewer_keywords:
 - C# language, specification
@@ -8,23 +8,24 @@ helpviewer_keywords:
 - Visual C#, C# language specification
 - language specification [C#]
 ms.assetid: e5d5a5cc-636b-4bff-b9c8-a8edc6207c22
-ms.openlocfilehash: 66ee5534d87da90fe4bce793a3841b13ff7cc04e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5ed035d5e1e524de9f86254d03e3276966293bf6
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/24/2018
 ---
-# <a name="c-60-draft-language-specification"></a>C# 6.0 koncept specifikace jazyka
-Specifikace jazyka C# je rozhodujícím zdrojem pro syntaxi a použití jazyka C#. Tato specifikace obsahuje podrobné informace o všech aspektech jazyka, včetně mnoha body, které nezahrnuje dokumentace pro Visual C#.
+# <a name="c-60-draft-language-specification"></a>Specifikace jazyka C# 6.0 konceptu
 
-Můžete si stáhnout verzi 5.0 této specifikaci z [Microsoft Download Center](http://www.microsoft.com/download/details.aspx?id=7029). Pokud jste nainstalovali Visual Studio 2015, můžete také získat specifikaci ve vašem počítači ve složce Program Files (x86) nebo Microsoft Visual Studio 14.0/VC#/Specifications/1033. Pokud máte jinou verzi nainstalovanou sadu Visual Studio nebo pokud jste nainstalovali Visual Studio v jiných jazycích než angličtině, změňte cestu podle potřeby.
+Specifikace jazyka C# je rozhodujícím zdrojem pro syntaxi a použití jazyka C#. Tato specifikace obsahuje podrobné informace o všech aspektech jazyka, včetně mnoha body, které nezahrnuje dokumentace pro jazyk C#.
+
+Verze 5.0 specifikace byla vydána v prosinec 2017 jako [standardní ECMA-334 5. edice](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf) dokumentu.
 
 Verze 6.0 specifikace nebyla schválena jako standard. Tento web obsahuje [ *koncept* specifikace jazyka C# 6.0](../../../../_csharplang/spec/introduction.md). Je sestaven z obsažené v souborech markdownu [úložiště GitHub dotnet/csharplang](https://github.com/dotnet/csharplang/blob/master/spec/README.md).
 
 Problémy na specifikaci konceptu by měl být vytvořen v [dotnet/csharplang](https://github.com/dotnet/csharplang/issues) úložiště. Nebo, pokud vás zajímá opravení chyb narazíte, můžete odeslat [žádost o přijetí změn](https://github.com/dotnet/csharplang/pulls) do stejného úložiště.
 
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../language-reference/index.md)  
+## <a name="see-also"></a>Viz také
+ [Referenční dokumentace jazyka C#](../index.md)  
  [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 
 >[!div class="step-by-step"]

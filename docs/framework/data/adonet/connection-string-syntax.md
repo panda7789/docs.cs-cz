@@ -1,12 +1,12 @@
 ---
 title: Syntaxi připojovacího řetězce
-ms.date: 03/30/2017
+ms.date: 05/22/2018
 ms.assetid: 0977aeee-04d1-4cce-bbed-750c77fce06e
-ms.openlocfilehash: ac7053d1b1b0865f33ae1bcd955493b4c62c7be6
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 1df49a9ed5d45a1a1ee50145ff036c98ec72cca8
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="connection-string-syntax"></a>Syntaxi připojovacího řetězce
 Má každý zprostředkovatel dat .NET Framework `Connection` objekt, který dědí z <xref:System.Data.Common.DbConnection> a také konkrétního zprostředkovatele <xref:System.Data.Common.DbConnection.ConnectionString%2A> vlastnost. Syntaxi konkrétní připojovacího řetězce pro každého zprostředkovatele je popsána v jeho `ConnectionString` vlastnost. Následující tabulka uvádí zprostředkovatelé čtyři dat, které jsou zahrnuty v rozhraní .NET Framework.  
@@ -112,11 +112,11 @@ Můžete také nastavit <xref:System.Data.SqlClient.SqlConnectionStringBuilder.D
 |----------------------------------------------|---------------------------------------------|-------------------------------------------------------------------|-----------------------------------------------------------|------------|  
 |Ne|Není k dispozici|Žádný (výchozí)|Ignorováno|Žádné šifrování probíhá.|  
 |Ne|Není k dispozici|Ano|Žádný (výchozí)|Šifrování probíhá pouze v případě, že je ověřit certifikát serveru, jinak se nezdaří pokus o připojení.|  
-|Ne|Není k dispozici|Ano|Ano|Šifrování probíhá pouze v případě, že je ověřit certifikát serveru, jinak se nezdaří pokus o připojení.|  
-|Ano|Ne|Ignorováno|Ignorováno|Šifrování probíhá pouze v případě, že je ověřit certifikát serveru, jinak se nezdaří pokus o připojení.|  
-|Ano|Ano|Žádný (výchozí)|Ignorováno|Šifrování probíhá pouze v případě, že je ověřit certifikát serveru, jinak se nezdaří pokus o připojení.|  
-|Ano|Ano|Ano|Žádný (výchozí)|Šifrování probíhá pouze v případě, že je ověřit certifikát serveru, jinak se nezdaří pokus o připojení.|  
-|Ano|Ano|Ano|Ano|Šifrování probíhá pouze v případě, že je ověřit certifikát serveru, jinak se nezdaří pokus o připojení.|  
+|Ne|Není k dispozici|Ano|Ano|Šifrování vždy dojde, ale mohou použít certifikát podepsaný svým držitelem serveru.|  
+|Ano|Ne|Ignorováno|Ignorováno|Šifrování probíhá pouze v případě, že je certifikát ověřit server; Pokus o připojení, jinak selže.|  
+|Ano|Ano|Žádný (výchozí)|Ignorováno|Šifrování vždy dojde, ale mohou použít certifikát podepsaný svým držitelem serveru.|  
+|Ano|Ano|Ano|Žádný (výchozí)|Šifrování probíhá pouze v případě, že je certifikát ověřit server; Pokus o připojení, jinak selže.|  
+|Ano|Ano|Ano|Ano|Šifrování vždy dojde, ale mohou použít certifikát podepsaný svým držitelem serveru.|  
   
  Další informace najdete v tématu [pomocí šifrování bez ověření](http://go.microsoft.com/fwlink/?LinkId=120500) v SQL Server Books Online.  
   

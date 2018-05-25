@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Help, Visual C# documentation
 - C# language
 - Visual C#
-ms.openlocfilehash: 4d349f8aff5e3d48a2bc738e848d2a251805e260
-ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
+ms.openlocfilehash: 15c10d8891e87ab241104e6aa760c221e8b9e249
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="c-guide"></a>Průvodce jazykem C#
 
@@ -61,7 +61,7 @@ V Průvodci C# jsou několika oddílů. Můžete číst je popořadě, nebo pře
   * Tato část obsahuje referenční materiály pro jazyk C#. Tomto materiálu vám pomůže pochopit syntaxe a sémantiku jazyka C#. Zahrnuje také referenčního materiálu pro typy, operátory, atributy, preprocesor – direktivy, přepínače kompilátoru, kompilátoru chyby a upozornění kompilátoru.
 
 * [Specifikace jazyka C#](../csharp/language-reference/language-specification/index.md)
-  * Propojení s nejnovější verzí specifikace jazyka C# ve formátu aplikace Microsoft Word.
+  * Odkazy na nejnovější verzi specifikace jazyka C#.
 
 ## <a name="see-also"></a>Viz také
 

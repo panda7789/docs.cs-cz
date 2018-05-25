@@ -1,6 +1,6 @@
 ---
 title: Winres.exe (editor prostředků Windows Forms)
-ms.date: 05/21/2018
+ms.date: 03/30/2017
 helpviewer_keywords:
 - Winres.exe
 - Windows Forms Resource Editor
@@ -12,20 +12,17 @@ helpviewer_keywords:
 ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 14e90916261250452c1f07e66a46bee400da0428
-ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
+ms.openlocfilehash: 69ba816e5b7cf05ef094153b7ff044d573ac1760
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="winresexe-windows-forms-resource-editor"></a>Winres.exe (editor prostředků Windows Forms)
 Windows Forms Resource Editor (Winres.exe) je nástroj pro tvorbu vizuálního rozložení, který pomáhá odborníkům přes lokalizaci lokalizovat prostředky uživatelského rozhraní (UI) nástroje Windows Forms používané formuláři. Soubor prostředků .resx nebo .resources sloužící jako vstup do nástroje Winres.exe lze vytvořit pomocí prostředí pro vizuální návrh, jako je například sada Microsoft Visual Studio. Informace o nasazení prostředků v aplikacích rozhraní .NET Framework, najdete v části [prostředků v aplikacích plochy](../../../docs/framework/resources/index.md).  
   
  Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit tento nástroj, použijte příkazový řádek vývojáře (nebo příkazový řádek Visual Studio v systému Windows 7). Další informace najdete v tématu [příkazového řádku](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
-
-> [!IMPORTANT]
-> Byste měli zavést pouze a použití resx soubory z důvěryhodného zdroje. Soubory ResX může obsahovat spustitelného kódu a zacházeno jako spustitelný soubor (.exe) z hlediska zabezpečení.
-
+  
  V příkazovém řádku zadejte následující:  
   
 ## <a name="syntax"></a>Syntaxe  

@@ -5,69 +5,72 @@ helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-ms.openlocfilehash: 6c7e30d23868959145e8941057f1c633fe6e374e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d7f1f51040033cf25f7f1aefb04d249e6e028ca3
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="how-to-use-the-xml-documentation-features-c-programming-guide"></a>Postupy: Použití funkcí dokumentace XML (Průvodce programováním v C#)
 Následující příklad obsahuje základní přehled typu, který byly dokumentovány.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideDocComments#15](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/how-to-use-the-xml-documentation-features_1.cs)]  
-  
- **Tento soubor .xml se vygeneroval s předchozí ukázka kódu.**  
-**\<? xml verze = "1.0"? >**  
-**\<doc >**  
- **\<sestavení >**  
- **\<název > xmlsample \< /name >**  
- **\</Assembly >**  
- **\<členy >**  
- **\<Název člena = "T:SomeClass" >**  
- **\<Souhrn >**  
- **Sem zadejte třída úrovni souhrnu dokumentace. \<nebo souhrnných >**  
- **\<Poznámky >**  
- **Může být přidružen typ nebo člen delší komentáře**  
- **pomocí značky poznámky \< /remarks >**  
- **\</member >**  
- **\<člen name="F:SomeClass.m_Name" >**  
- **\<Souhrn >**  
- **Úložiště pro vlastnost název\<nebo souhrnných >**  
- **\</member >**  
- **\<Název člena = "M:SomeClass. #ctor" >**  
- **\<Souhrn > konstruktoru třídy. \<nebo souhrnných >**  
- **\</member >**  
- **\<člen name="M:SomeClass.SomeMethod(System.String)" >**  
- **\<Souhrn >**  
- **Popis SomeMethod. \<nebo souhrnných >**  
- **\<Název parametru = "s" > zde bude parametr popis s\</param >**  
- **\<Viz také cref="T:System.String" >**  
- **Cref – atribut v libovolné značky můžete použít tak, aby odkazovaly na typ nebo člen**  
- **a kompilátor zkontroluje, zda existuje odkaz na. \</seealso >**  
- **\</member >**  
- **\<člen name="M:SomeClass.SomeOtherMethod" >**  
- **\<Souhrn >**  
- **Jiné metody. \<nebo souhrnných >**  
- **\<Vrátí >**  
- **Jsou vráceny výsledky popsané prostřednictvím vrátí značky.  \< /vrátí >**  
- **\<Viz také cref="M:SomeClass.SomeMethod(System.String)" >**  
- **Všimněte si použití atributu cref – Chcete-li konkrétní metody \</seealso >**  
- **\</member >**  
- **\<člen name="M:SomeClass.Main(System.String[])" >**  
- **\<Souhrn >**  
- **Vstupní bod pro aplikaci.**  
- **\</ souhrnné >**  
- **\<Název parametru = "argumentů" > seznam argumentů příkazového řádku\</param >**  
- **\</member >**  
- **\<člen name="P:SomeClass.Name" >**  
- **\<Souhrn >**  
- **Name – vlastnost \<nebo souhrnných >**  
- **\<Hodnota >**  
- **Hodnota značky je používán k popisu hodnota vlastnosti \< /value >**  
- **\</member >**  
- **\</Members >**  
-**\</ doc >**   
+
+V příkladu generuje soubor .xml s tímto obsahem:
+
+```xml  
+<?xml version="1.0"?>  
+<doc>  
+ <assembly>  
+ <name>xmlsample</name>  
+ </assembly>  
+ <members>  
+ <member name="T:SomeClass">  
+ <summary>  
+ Class level summary documentation goes here.</summary>  
+ <remarks>  
+ Longer comments can be associated with a type or member  
+ through the remarks tag</remarks>  
+ </member>  
+ <member name="F:SomeClass.m_Name">  
+ <summary>  
+ Store for the name property</summary>  
+ </member>  
+ <member name="M:SomeClass.#ctor">  
+ <summary>The class constructor.</summary>  
+ </member>  
+ <member name="M:SomeClass.SomeMethod(System.String)">  
+ <summary>  
+ Description for SomeMethod.</summary>  
+ <param name="s"> Parameter description for s goes here</param>  
+ <seealso cref="T:System.String">  
+ You can use the cref attribute on any tag to reference a type or member  
+ and the compiler will check that the reference exists. </seealso>  
+ </member>  
+ <member name="M:SomeClass.SomeOtherMethod">  
+ <summary>  
+ Some other method. </summary>  
+ <returns>  
+ Return results are described through the returns tag.</returns>  
+ <seealso cref="M:SomeClass.SomeMethod(System.String)">  
+ Notice the use of the cref attribute to reference a specific method </seealso>  
+ </member>  
+ <member name="M:SomeClass.Main(System.String[])">  
+ <summary>  
+ The entry point for the application.  
+ </summary>  
+ <param name="args"> A list of command line arguments</param>  
+ </member>  
+ <member name="P:SomeClass.Name">  
+ <summary>  
+ Name property </summary>  
+ <value>A value tag is used to describe the property value</value>  
+ </member>  
+ </members>  
+</doc>   
+```
+
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Kompilace v příkladu, zadejte následující příkaz:  
   
@@ -80,7 +83,7 @@ Následující příklad obsahuje základní přehled typu, který byly dokument
   
 -   V dokumentaci musí být ve správném formátu XML. Pokud není ve správném formátu XML, se generuje upozornění a dokumentaci soubor bude obsahovat komentář, který uvádí, že došlo k chybě.  
   
--   Vývojáři mohou vytvořit vlastní sadu značky. Existuje sada doporučené značky (naleznete v části Další čtení). Některé z doporučené značky mají zvláštní význam:  
+-   Vývojáři mohou vytvořit vlastní sadu značky. Je doporučené sadu značky (viz [doporučené značky pro dokumentační komentáře](recommended-tags-for-documentation-comments.md)). Některé z doporučené značky mají zvláštní význam:  
   
     -   \<Param > Značka se používá k popisu parametry. Pokud se používá, kompilátor ověří, zda parametr existuje a že všechny parametry jsou popsané v dokumentaci. Pokud ověření selže, vydá upozornění.  
   

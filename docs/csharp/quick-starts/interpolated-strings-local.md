@@ -5,11 +5,11 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 04/14/2018
 ms.custom: mvc
-ms.openlocfilehash: a4e8434b3e7f945ad002984ad7861c0e103c0cf2
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: 80b7a2c39094f1101e714b47f0e77f0a7c4907f2
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="string-interpolation"></a>Řetězec interpolace
 
@@ -93,7 +93,7 @@ Všimněte si, že interpolované výraz `item` interpolované řetězce přelo�
 
 - Pokud je výsledkem výrazu interpolované `null`, prázdný řetězec ("", nebo <xref:System.String.Empty?displayProperty=nameWithType>) se používá.
 
-- Pokud není vyhodnocení interpolované výraz `null`, obvykle `ToString` je volána metoda typ výsledku. Toto můžete otestovat aktualizací implementace `Vegetable.ToString` metoda. Může i není implementovat `ToString` metoda vzhledem k tomu, že každý typ dat C# má některé implementace této metody. Otestujte, jestli, komentář definice `Vegetable.ToString` metoda v příkladu (k tomu, put symbol komentáře `//` úrovních před ním). Ve výstupu řetězec "Lilek" nahrazuje plně kvalifikovaného názvu ("rostlinné" v tomto příkladu), což je výchozí chování z <xref:System.Object.ToString?displayProperty=nameWithType> metoda. Výchozí chování `ToString` metodou pro typ výčtu je vrátí řetězcovou reprezentaci hodnoty použít v definici výčtu.
+- Pokud není vyhodnocení interpolované výraz `null`, obvykle `ToString` je volána metoda typ výsledku. Toto můžete otestovat aktualizací implementace `Vegetable.ToString` metoda. Nemusí i potřebujete implementovat `ToString` metoda vzhledem k tomu, že každý typ má některé implementace této metody. Abyste to mohli otestovat, komentář definice `Vegetable.ToString` metoda v příkladu (k tomu, put symbol komentáře `//`, úrovních před ním). Ve výstupu řetězec "Lilek" nahrazuje plně kvalifikovaného názvu ("rostlinné" v tomto příkladu), což je výchozí chování z <xref:System.Object.ToString?displayProperty=nameWithType> metoda. Výchozí chování `ToString` metodou pro hodnotu výčtu je vrátí řetězcovou reprezentaci hodnoty.
 
 Ve výstupu z tohoto příkladu datum je příliš přesné (cenu lilek nemění za sekundu) a hodnotu ceny neznamená jednotku měny. V další části dozvíte, jak vyřešit tyto problémy kontrolou formát řetězcové vyjádření výsledků výrazu.
 

@@ -3,11 +3,11 @@ title: Lokální funkce oproti výrazy lambda
 description: Zjistěte, proč lokální funkce může být vhodnější než výrazy lambda.
 ms.date: 06/27/2016
 ms.assetid: 368d1752-3659-489a-97b4-f15d87e49ae3
-ms.openlocfilehash: 5280605a7101a5b89c062fcf736909173bebf78c
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: 4fb8ea78b783871a19a8d5578d571e00da37642a
+ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="local-functions-compared-to-lambda-expressions"></a>Lokální funkce ve srovnání s výrazy lambda
 
@@ -26,7 +26,7 @@ Místní funkce mají názvy. Anonymní metody, které jsou přiřazeny k promě
 Místní funkce mají různá pravidla pro jednoznačné přiřazení než výrazy lambda. Deklarace místní funkce lze odkazovat z libovolného místa kódu, kde se nachází v oboru. Výraz lambda musí být přiřazený k proměnné delegáta předtím, než může být přístup (nebo zavolaném prostřednictvím delgate odkazující na výrazu lambda.) Všimněte si, že verze pomocí výrazu lambda musí deklarovat a inicializace výrazu lambda `nthFactorial` před definováním ho. Proti tomu má za následek chybu v době kompilace pro odkazování na `nthFactorial` před jeho přiřazení.
 Tyto rozdíly znamená, že rekurzivní algoritmů je snazší vytvářet pomocí místní funkcí. Můžete deklarovat a definovat místní funkci, která volá sám sebe. Lambda – výrazy musí být deklarován a přiřazené výchozí hodnotu, než můžou být znovu přiřazen k obsahu, která odkazuje na stejný výraz lambda.
 
-Pravidla jednoznačné přiřazení ovlivní také jakékoli proměnné, které jsou zachyceny místní funkce nebo lamdba výraz. Místní funkce a pravidel výrazu lambda požadovat, aby všechny zaznamenané proměnné výborný přiřazené v bodě při převodu místní funkce nebo lambda výraz delegáta. Rozdíl je, že výrazy lambda se převedou na delegáti, když jsou deklarovány. Lokální funkce se převedou na delegáty jenom v případě, že se používá jako delegáta. Pokud deklarovat místní funkce a odkazovat pouze na ho voláním jako metodu, nebudou převedeny na delegáta. Toto pravidlo umožňuje deklarovat místní funkce v libovolném vhodného umístění v jeho nadřazeného oboru. Je běžné deklarovat místní funkce na konci nadřazenou metodu po všech příkazech return.
+Pravidla jednoznačné přiřazení ovlivní také jakékoli proměnné, které jsou zachyceny místní funkce nebo lambda výraz. Místní funkce a pravidel výrazu lambda požadovat, aby všechny zaznamenané proměnné výborný přiřazené v bodě při převodu místní funkce nebo lambda výraz delegáta. Rozdíl je, že výrazy lambda se převedou na delegáti, když jsou deklarovány. Lokální funkce se převedou na delegáty jenom v případě, že se používá jako delegáta. Pokud deklarovat místní funkce a odkazovat pouze na ho voláním jako metodu, nebudou převedeny na delegáta. Toto pravidlo umožňuje deklarovat místní funkce v libovolném vhodného umístění v jeho nadřazeného oboru. Je běžné deklarovat místní funkce na konci nadřazenou metodu po všech příkazech return.
 
 Kompilátor třetí, můžete provést statické analýzy, která umožňuje místní funkce výborný přiřadit zaznamenané proměnné ve vymezeném oboru. Vezměte v úvahu v tomto příkladu:
 
