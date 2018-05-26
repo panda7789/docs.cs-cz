@@ -47,7 +47,6 @@
 ## [Inicializátory objektu a kolekce](object-and-collection-initializers.md)
 ### [Postupy: Inicializace objektů pomocí inicializátoru objektů](how-to-initialize-objects-by-using-an-object-initializer.md)
 ### [Postupy: Inicializace slovníku pomocí inicializátoru kolekce](how-to-initialize-a-dictionary-with-a-collection-initializer.md)
-## [Postupy: Přístup ke třídě kolekce pomocí příkazu foreach](how-to-access-a-collection-class-with-foreach.md)
 ## [Vnořené typy](nested-types.md)
 ## [Částečné třídy a metody](partial-classes-and-methods.md)
 ## [Anonymní typy](anonymous-types.md)
