@@ -3,11 +3,11 @@ title: Mikroslužeb hostované v Docker - C#
 description: Naučte se vytvořit základní služby, které běží v kontejnerech Docker asp.net
 ms.date: 02/03/2017
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
-ms.openlocfilehash: eacfa87e465e5f7737dbd2bfc4c6a77ffc5531c3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7428051c1d9a29ba98ca1f28288b3c50ea36ae1a
+ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="microservices-hosted-in-docker"></a>Mikroslužeb hostované v Docker
 
@@ -237,7 +237,7 @@ WORKDIR /app
 
 # copy csproj and restore as distinct layers
 
-COPY WeatherMicroservice.csproj .
+COPY WeatherMicroService.csproj .
 RUN dotnet restore 
 
 # copy and build everything else
@@ -255,7 +255,7 @@ To se zkopírovat soubor projektu z aktuálního adresáře na virtuální poč�
 Poslední řádek souboru spustí aplikaci:
 
 ```
-ENTRYPOINT ["dotnet", "out/WeatherMicroservice.dll", "--server.urls", "http://0.0.0.0:5000"]
+ENTRYPOINT ["dotnet", "out/WeatherMicroService.dll", "--server.urls", "http://0.0.0.0:5000"]
 ```
 
 Tento port nakonfigurovaný odkazuje `--server.urls` argument `dotnet` na posledním řádku soubor Docker. `ENTRYPOINT` Příkaz informuje Docker jaké příkaz a možnosti příkazového řádku spusťte službu. 

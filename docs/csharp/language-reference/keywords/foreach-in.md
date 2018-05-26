@@ -1,6 +1,6 @@
 ---
 title: foreach, in (Referenční dokumentace jazyka C#)
-ms.date: 10/11/2017
+ms.date: 05/24/2018
 f1_keywords:
 - foreach
 - foreach_CSharpKeyword
@@ -9,61 +9,43 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: c0b1481988a2e3199fc6d06ca30cb5194ab2f44c
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: b6b7dc0a4d3970ddfbbb6635ccebbbd5b75671e4
+ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="foreach-in-c-reference"></a>foreach, in (Referenční dokumentace jazyka C#)
 
-`foreach` Příkaz opakuje skupinu embedded příkazy pro každý prvek v pole nebo kolekci objekt, který implementuje <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> rozhraní. [Foreach – příkaz](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement) se používá k procházení kolekce se získat informace, které, ale nelze použít k přidání nebo odebrání položky z kolekce zdroj předejdete nepředvídatelným vedlejší účinky. Pokud potřebujete přidat nebo odebrat položky z kolekce zdroje, použijte [pro](for.md) smyčky.
-  
- Vložené příkazů pokračovat provést pro každý prvek v poli nebo kolekce. Po dokončení iterace pro všechny elementy v kolekci, je ovládací prvek přenesen na další následující příkaz `foreach` bloku.
-  
- Kdykoli bodu v rámci `foreach` bloku, můžete rozdělit mimo smyčky pomocí [zalomení](break.md) – klíčové slovo nebo krok do další iterace ve smyčce pomocí [pokračovat](continue.md) – klíčové slovo.
+`foreach` Příkaz spustí příkaz nebo blok příkazů pro jednotlivé elementy v instanci typu, který implementuje <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> rozhraní. `foreach` Příkaz není omezen na tyto typy a dají se použít k instanci žádný typ, který splňuje tyto podmínky:
 
- A `foreach` smyčky můžete také měly být byl ukončen ve [goto](goto.md), [vrátit](return.md), nebo [throw](throw.md) příkazy.
+- má public bez parametrů `GetEnumerator` metoda, jejíž návratový typ je třída, struktura nebo typ rozhraní
+- Návratový typ `GetEnumerator` metoda má veřejnosti `Current` vlastnost a public bez parametrů `MoveNext` metoda s návratovým typem <xref:System.Boolean>.
 
- Další informace o `foreach` – klíčové slovo a ukázky kódu, najdete v následujících tématech:  
+Kdykoli bodu v rámci `foreach` příkaz bloku, může dojít k narušení mimo smyčky pomocí [zalomení](break.md) – klíčové slovo nebo krok do další iterace ve smyčce pomocí [pokračovat](continue.md) – klíčové slovo. Také můžete ukončit `foreach` cykly pomocí [goto](goto.md), [vrátit](return.md), nebo [throw](throw.md) příkazy.
 
- [Použití příkazu foreach s poli](../../programming-guide/arrays/using-foreach-with-arrays.md)  
+## <a name="examples"></a>Příklady
 
- [Postupy: Přístup ke třídě kolekce pomocí příkazu foreach](../../programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)  
+[!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-## <a name="example"></a>Příklad
+Následující příklad ukazuje použití `foreach` příkaz s instanci <xref:System.Collections.Generic.List%601> typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní:
 
-Následující kód ukazuje tři příklady:
+[!code-csharp-interactive[list example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#1)]
 
-> [!TIP]
-> Příklady a experimentovat s syntaxe zkuste jinou použití, které se více podobají váš případ použití, můžete upravit. Stisknutím klávesy "Spustit" spustit kód, potom upravit a znovu stiskněte "Spustit".
+Další příklad používá `foreach` příkaz s instanci <xref:System.Span%601?displayProperty=nameWithType> typu, který neimplementuje žádné rozhraní:
 
--   Typické `foreach` smyčky, která zobrazí obsah pole celých čísel
+[!code-csharp-interactive[span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#2)]
 
-[!code-csharp-interactive[csrefKeywordsIteration#4](./codesnippet/CSharp/foreach-in_1.cs#L12-L26)]
-
--   [pro](../../../csharp/language-reference/keywords/for.md) smyčky, která má stejnou funkci
-
-[!code-csharp-interactive[csrefKeywordsIteration#4](./codesnippet/CSharp/foreach-in_1.cs#L31-L46)]
-
--   `foreach` smyčky, která udržuje počet prvků v poli
-
-[!code-csharp-interactive[csrefKeywordsIteration#4](./codesnippet/CSharp/foreach-in_1.cs#L51-L69)]
- 
 ## <a name="c-language-specification"></a>Specifikace jazyka C#
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také
 
-[Foreach – příkaz (specifikace jazyka C#)](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement)
-
-[Referenční dokumentace jazyka C#](../index.md)
-
-[Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-
-[Klíčová slova jazyka C#](index.md)
-
-[Příkazy iterace](iteration-statements.md)
-
-[for](for.md)
+[Foreach – příkaz (specifikace jazyka C#)](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement)  
+[Použití příkazu foreach s poli](../../programming-guide/arrays/using-foreach-with-arrays.md)  
+[for](for.md)  
+[Příkazy iterace](iteration-statements.md)  
+[Klíčová slova jazyka C#](index.md)  
+[Referenční dokumentace jazyka C#](../index.md)  
+[Průvodce programováním v jazyce C#](../../programming-guide/index.md)  

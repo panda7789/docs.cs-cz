@@ -2,11 +2,11 @@
 title: Postup články (Průvodce C#)
 description: Kolekce rychlé tipy a krátké, zaměřuje ukázky kódu
 ms.date: 12/20/2017
-ms.openlocfilehash: b8164abd84647fc9118acc6e0b84e7fd46838fe9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 209af8858de1a791997d254f5a2ddd5dd1803bff
+ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="how-to-c"></a>Postup (C#)
 
@@ -43,9 +43,8 @@ Vytváření tříd a struktur k implementaci vašeho programu. Tyto postupy bě
 Tyto články vám pomohou při práci s kolekcí dat.
 
 - [Inicializace slovníku pomocí inicializátoru kolekce](../programming-guide/classes-and-structs/how-to-initialize-a-dictionary-with-a-collection-initializer.md).
-- [Přístup k všechny elementy v kolekci pomocí `foreach` ](../programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md).
 
-## <a name="strings"></a>řetězce
+## <a name="working-with-strings"></a>Práce s řetězci
 
 Řetězce jsou základní datový typ používaný můžete zobrazit nebo upravit text. Tyto články ukazují obvyklé postupy s řetězci.
 

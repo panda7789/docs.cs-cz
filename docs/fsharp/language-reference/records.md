@@ -2,11 +2,11 @@
 title: Záznamy (F#)
 description: 'Zjistěte, jak F # záznamy představují jednoduché agregace pojmenovaných hodnot, případně se členy.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 5bd1f76937bf5839b7da5cae7dea578747ec9b99
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ffb853ee11ff8cacb45dadf6ef14a4f29400aad4
+ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="records"></a>Záznamy
 
@@ -16,15 +16,15 @@ Záznamy představují jednoduché agregace pojmenovaných hodnot, případně s
 
 ```fsharp
 [ attributes ]
-type [accessibility-modifier] typename = {
-    [ mutable ] label1 : type1;
-    [ mutable ] label2 : type2;
-    ...
-}
+type [accessibility-modifier] typename =
+    { [ mutable ] label1 : type1;
+      [ mutable ] label2 : type2;
+      ... }
     [ member-list ]
 ```
 
 ## <a name="remarks"></a>Poznámky
+
 V předchozích syntaxi *typename* je název typu záznamu, *label1* a *label2* jsou názvy hodnot, označuje jako *popisky*, a *type1* a *type2* jsou typy tyto hodnoty. *seznam členů* je volitelný seznam členů pro typ.  Můžete použít `[<Struct>]` atributů k vytvoření záznamu struktura místo záznam, který je typu odkazu.
 
 Tady jsou některé příklady.
@@ -48,6 +48,7 @@ Popisky nedávno deklarovaný typ mají přednost před těch, které dříve de
 Metody lze definovat pro typy záznamů stejně jako typy tříd.
 
 ## <a name="creating-records-by-using-record-expressions"></a>Vytvoření záznamů pomocí záznamu výrazy
+
 Záznamy lze inicializovat pomocí štítků, které jsou definovány v záznamu. Výraz, který to se označuje jako *záznam výraz*. Použijte složené závorky a vložte jej záznam použít středník jako oddělovač.
 
 Následující příklad ukazuje, jak vytvořit záznam.
@@ -77,20 +78,19 @@ Nepoužívejte atribut DefaultValue s polí záznamu. Lepší přístup je defin
 ```fsharp
 // Rather than use [<DefaultValue>], define a default record.
 type MyRecord =
-{
-    field1 : int
-    field2 : int
-}
+    { Field1 : int
+      Field2 : int }
 
-let defaultRecord1 = { field1 = 0; field2 = 0 }
-let defaultRecord2 = { field1 = 1; field2 = 25 }
+let defaultRecord1 = { Field1 = 0; Field2 = 0 }
+let defaultRecord2 = { Field1 = 1; Field2 = 25 }
 
 // Use the with keyword to populate only a few chosen fields
 // and leave the rest with default values.
-let rr3 = { defaultRecord1 with field2 = 42 }
+let rr3 = { defaultRecord1 with Field2 = 42 }
 ```
 
 ## <a name="pattern-matching-with-records"></a>Pro porovnávání se záznamy
+
 Záznamy lze použít s porovnávání vzorů. Můžete explicitně zadat některá pole a zadejte proměnné pro další pole, které budou přiřazeny, pokud je nalezena shoda. Následující příklad kódu to dokládá.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1910.fs)]
@@ -104,17 +104,25 @@ Point is at (10.000000, 0.000000, -1.000000).
 ```
 
 ## <a name="differences-between-records-and-classes"></a>Rozdíly mezi záznamy a třídy
+
 Polí záznamů se liší od třídy, že jsou automaticky zveřejněné jako vlastnosti, které mají použít při vytváření nebo kopírování záznamů. Vytváření záznamů se také liší od třídy konstrukce. V záznamu typu nelze definovat konstruktor. Místo toho použije syntaxe vytváření popsaných v tomto tématu. Třídy mají žádné přímé vztah mezi konstruktor parametry, polí a vlastností.
 
 Jako typy union a struktura mají záznamy sémantiku strukturální rovnosti. Třídy mají referenční rovnosti sémantiku. Následující příklad kódu ukazuje to.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1911.fs)]
 
+Výstup tohoto kódu je následující:
+
+```
+The records are equal.
+```
+
 Pokud píšete stejný kód s třídami, objekty dvou tříd by nerovné, protože tyto dvě hodnoty by představují dva objekty v haldě a pouze adresy by být porovnána (Pokud přepíše typu třídy `System.Object.Equals` metoda).
 
 Pokud třeba referenční rovnost pro záznamy, přidejte atribut `[<ReferenceEquality>]` výše záznamu.
 
 ## <a name="see-also"></a>Viz také
+
 [Typy F#](fsharp-types.md)
 
 [Třídy](classes.md)
