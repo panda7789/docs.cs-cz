@@ -109,6 +109,9 @@
       },
     "externalReference": [],
     "globalMetadata": {
+      "feedback_system": "GitHub",
+      "feedback_github_repo": "dotnet/docs.cs-cz",
+      "feedback_product_url": "https://developercommunity.visualstudio.com/spaces/61/index.html",
       "breadcrumb_path": "/dotnet/breadcrumb/toc.json",
       "_displayLangs": [
         "csharp"
