@@ -2,11 +2,11 @@
 title: Kolekce (C#)
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-ms.openlocfilehash: 85cbabf74a702a4d6442a29c3cf3d7b726ab38da
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7400d4eee4df99cb1e255e428f83028fddf481f4
+ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="collections-c"></a>Kolekce (C#)
 Mnoho aplikací budete chtít vytvořit a spravovat skupiny související objekty. Existují dva způsoby do objektů skupiny: vytvořením pole objektů a vytvořením kolekce objektů.  
@@ -460,7 +460,7 @@ public class Car : IComparable<Car>
   
 <a name="BKMK_CustomCollection"></a>
 ## <a name="defining-a-custom-collection"></a>Definice vlastní kolekce  
- Kolekce můžete definovat implementací <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Collections.IEnumerable> rozhraní. Další informace najdete v tématu [postupy: přístup ke třídě kolekce pomocí příkazu foreach](../../../csharp/programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md).  
+ Kolekce můžete definovat implementací <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Collections.IEnumerable> rozhraní.  
   
  I když můžete definovat vlastní kolekce, je obvykle lepší místo toho použít kolekce, které jsou zahrnuty v rozhraní .NET Framework, která jsou popsaná v [typy kolekcí](#BKMK_KindsOfCollections) výše v tomto tématu.  
   
@@ -585,4 +585,3 @@ private static IEnumerable<int> EvenSequence(
  [Výběr třídy kolekce](../../../standard/collections/selecting-a-collection-class.md)  
  [Porovnávání a řazení v kolekcích](../../../standard/collections/comparisons-and-sorts-within-collections.md)  
  [Kdy použít generické kolekce](../../../standard/collections/when-to-use-generic-collections.md)  
- [Postupy: Přístup ke třídě kolekce pomocí příkazu foreach](../../../csharp/programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)
