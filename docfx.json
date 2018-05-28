@@ -125,6 +125,9 @@
       "apiPlatform": "dotnet"
     },
     "fileMetadata": {
+      "feedback_product_url": {
+        "docs/fsharp/**/**.md": "https://github.com/Microsoft/visualfsharp"
+      },
       "ms.prod": {
         "api/**.yml": ".net",
         "_csharplang/spec/*.md": ".net",
