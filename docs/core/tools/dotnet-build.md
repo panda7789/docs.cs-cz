@@ -3,12 +3,13 @@ title: DotNet sestavení command - .NET Core rozhraní příkazového řádku
 description: Dotnet sestavení příkaz sestavení projektu a všechny jeho závislé součásti.
 author: mairaw
 ms.author: mairaw
-ms.date: 03/10/2018
-ms.openlocfilehash: 4fc93e013c271fdf856f5c73affffd3880d0dbea
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/25/2018
+ms.openlocfilehash: 6b0b7bc11b560d8632b38f1dfa4e7eb3ce6c54d2
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34697128"
 ---
 # <a name="dotnet-build"></a>sestavení pro DotNet.
 
@@ -40,15 +41,15 @@ dotnet build [-h|--help]
 
 Pokud projekt má závislosti třetích stran, například knihoven z NuGet, se z mezipaměti NuGet rozpoznána a nejsou k dispozici integrované výstup projektu. Si uvědomit, produkt `dotnet build` není připraven k přesunu do jiného počítače ke spuštění. Tím se liší od chování rozhraní .NET Framework v které vytváření spustitelný projekt (aplikace) vytváří výstup, který je spustitelného na libovolném počítači nainstalovanou rozhraní .NET Framework. Pokud chcete, aby na podobném principu s .NET Core, budete muset použít [dotnet publikování](dotnet-publish.md) příkaz. Další informace najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
 
-Vytváření vyžaduje *project.assets.json* souboru, který uvádí závislosti vaší aplikace. Soubor je vytvořen, když [ `dotnet restore` ](dotnet-restore.md) se spustí. Bez souboru prostředků v místě nelze nástroji vyřešit referenční sestavení, což vede k chybám. S .NET Core 1.x SDK, je potřebné k explicitily spustit `dotnet restore` dřív, než spustíte `dotnet build`. Od verze rozhraní .NET Core SDK 2.0, `dotnet restore` spouští implicitily při spuštění `dotnet build`. Pokud chcete zakázat implicitní obnovení při spuštění příkazu sestavení, můžete předat `--no-restore` možnost.
+Vytváření vyžaduje *project.assets.json* souboru, který uvádí závislosti vaší aplikace. Soubor je vytvořen, když [ `dotnet restore` ](dotnet-restore.md) se spustí. Bez souboru prostředků v místě nelze nástroji vyřešit referenční sestavení, což vede k chybám. S .NET Core 1.x SDK potřebné ke spuštění explicitně `dotnet restore` dřív, než spustíte `dotnet build`. Od verze rozhraní .NET Core SDK 2.0, `dotnet restore` implicitně spouští při spuštění `dotnet build`. Pokud chcete zakázat implicitní obnovení při spuštění příkazu sestavení, můžete předat `--no-restore` možnost.
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
-`dotnet build` pomocí nástroje MSBuild projektu. proto podporuje paralelní i přírůstkové sestavení. Odkazovat na [přírůstková sestavení](/visualstudio/msbuild/incremental-builds) Další informace.
+`dotnet build` používá pro sestavení projektu MSBuild, takže podporuje paralelní i přírůstkové sestavení. Další informace najdete v tématu [přírůstková sestavení](/visualstudio/msbuild/incremental-builds).
 
-Kromě jeho možností `dotnet build` příkaz přijímá MSBuild možnosti, jako například `/p` pro nastavení vlastností nebo `/l` k definování protokolovacího nástroje. Další informace o těchto možnostech v [Reference k příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). 
+Kromě jeho možností `dotnet build` příkaz přijímá MSBuild možnosti, jako například `/p` pro nastavení vlastností nebo `/l` k definování protokolovacího nástroje. Další informace o těchto možnostech najdete v tématu [Reference k příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference).
 
-Jestli je projekt spustitelný soubor nebo ne je dáno `<OutputType>` vlastnost v souboru projektu. Následující příklad ukazuje projekt, který vytvoří spustitelného kódu:
+Jestli je projekt spustitelný soubor nebo ne je dáno `<OutputType>` vlastnost v souboru projektu. Následující příklad ukazuje projekt, který vytváří spustitelného kódu:
 
 ```xml
 <PropertyGroup>
@@ -56,7 +57,7 @@ Jestli je projekt spustitelný soubor nebo ne je dáno `<OutputType>` vlastnost 
 </PropertyGroup>
 ```
 
-Chcete-li vytvořit knihovnu, vynechejte `<OutputType>` vlastnost. Hlavní rozdíl ve vytvořené výstupu je, že IL DLL pro knihovnu neobsahuje vstupní body a nelze provést. 
+Chcete-li vytvořit knihovnu, vynechejte `<OutputType>` vlastnost. Hlavní rozdíl ve vytvořené výstupu je, že IL DLL pro knihovnu neobsahuje vstupní body a nelze provést.
 
 ## <a name="arguments"></a>Arguments
 
@@ -78,7 +79,7 @@ Zkompiluje pro konkrétní [framework](../../standard/frameworks.md). Rozhraní 
 
 `--force`
 
- Vynutí všechny závislosti pro přeloženy i v případě, že poslední obnovení bylo úspěšné. Jde o ekvivalent odstraňování *project.assets.json* souboru.
+Vynutí všechny závislosti pro přeloženy i v případě, že poslední obnovení bylo úspěšné. Zadáním tohoto příznaku je stejný jako odstranění *project.assets.json* souboru.
 
 `-h|--help`
 
@@ -86,15 +87,15 @@ Vytiskne krátké nápovědy pro příkaz.
 
 `--no-dependencies`
 
-Ignoruje odkazů (P2P) projekt na projekt a pouze sestavení projektu kořenové zadaná k vytvoření.
+Ignoruje odkazů (P2P) projekt na projekt a pouze sestavení projektu zadaný kořenový.
 
 `--no-incremental`
 
-Označí sestavení jako bezpečné pro přírůstkové sestavení. To vypne přírůstkové kompilace a vynutí čistou opětovné sestavení grafu závislostí projektu.
+Označí sestavení jako bezpečné pro přírůstkové sestavení. Tento příznak vypne přírůstkové kompilace a vynutí čistou opětovné sestavení grafu závislostí projektu.
 
 `--no-restore`
 
-Nepodporuje provedení implicitní obnovení během vytváření sestavení.
+Neprovede implicitní obnovení během vytváření sestavení.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
@@ -128,11 +129,11 @@ Vytiskne krátké nápovědy pro příkaz.
 
 `--no-dependencies`
 
-Ignoruje odkazů (P2P) projekt na projekt a pouze sestavení projektu kořenové zadaná k vytvoření.
+Ignoruje odkazů (P2P) projekt na projekt a pouze sestavení projektu zadaný kořenový.
 
 `--no-incremental`
 
-Označí sestavení jako bezpečné pro přírůstkové sestavení. To vypne přírůstkové kompilace a vynutí čistou opětovné sestavení grafu závislostí projektu.
+Označí sestavení jako bezpečné pro přírůstkové sestavení. Tento příznak vypne přírůstkové kompilace a vynutí čistou opětovné sestavení grafu závislostí projektu.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 

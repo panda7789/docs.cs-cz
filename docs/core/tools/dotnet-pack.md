@@ -3,12 +3,13 @@ title: příkaz pack DotNet - .NET Core rozhraní příkazového řádku
 description: Příkaz pack dotnet vytvoří balíčky NuGet pro projekt .NET Core.
 author: mairaw
 ms.author: mairaw
-ms.date: 03/10/2018
-ms.openlocfilehash: 6e6136e22c4bac201cfa0e4af321329432c04936
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/29/2018
+ms.openlocfilehash: 8c2569ec7598b21fe9b673176143d0e54b9eb065
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696816"
 ---
 # <a name="dotnet-pack"></a>pack DotNet.
 
@@ -21,16 +22,15 @@ ms.lasthandoff: 05/04/2018
 ## <a name="synopsis"></a>Stručný obsah
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
-
 ```
 dotnet pack [<PROJECT>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--no-build] [--no-dependencies]
     [--no-restore] [-o|--output] [--runtime] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
-
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
 ```
-dotnet pack [<PROJECT>] [-c|--configuration] [--include-source] [--include-symbols] [--no-build] [-o|--output] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
+dotnet pack [<PROJECT>] [-c|--configuration] [--include-source] [--include-symbols] [--no-build] [-o|--output]
+    [-s|--serviceable] [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
 ---
@@ -41,7 +41,7 @@ dotnet pack [-h|--help]
 
 Závislosti NuGet sbalené projektu se přidají do *příponou .nuspec* souboru tak, aby správně přeložit, když je balíček nainstalován. Odkazy na projekt na projekt nejsou zabalené do projektu. V současné době musí mít balíček podle projektů, pokud máte závislosti projektu k projektu.
 
-Ve výchozím nastavení `dotnet pack` nejprve sestavení projektu. Pokud chcete-li se tomu vyhnout, předat `--no-build` možnost. Toto je často užitečný ve scénářích sestavení nepřetržité integrace (CI), které víte, že kód byl dříve vytvořený.
+Ve výchozím nastavení `dotnet pack` nejprve sestavení projektu. Pokud chcete-li se tomu vyhnout, předat `--no-build` možnost. Tato možnost je často užitečný ve scénářích sestavení nepřetržité integrace (CI), které víte, že kód byl dříve vytvořený.
 
 Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkazu pro proces okolních. Další informace najdete v tématu [NuGet metadata vlastnosti](csproj.md#nuget-metadata-properties) a [Reference k příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). [Příklady](#examples) část ukazuje způsob použití nástroje MSBuild přepínače pro několik různých scénářů.
 
@@ -51,7 +51,7 @@ Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkazu pro proces
 
 `PROJECT`
 
-Projekt pack. Je buď cestu k [csproj souboru](csproj.md) nebo do adresáře. Při vynechání je použita k aktuálnímu adresáři.
+Projekt pack. Je buď cestu k [csproj souboru](csproj.md) nebo do adresáře. Pokud není zadáno, výchozí hodnoty k aktuálnímu adresáři.
 
 ## <a name="options"></a>Možnosti
 
@@ -61,7 +61,9 @@ Projekt pack. Je buď cestu k [csproj souboru](csproj.md) nebo do adresáře. P�
 
 Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`.
 
-`--force` Vynutí všechny závislosti pro přeloženy i v případě, že poslední obnovení bylo úspěšné. Jde o ekvivalent odstraňování *project.assets.json* souboru.
+`--force`
+
+Vynutí všechny závislosti pro přeloženy i v případě, že poslední obnovení bylo úspěšné. Zadáním tohoto příznaku je stejný jako odstranění *project.assets.json* souboru.
 
 `-h|--help`
 
@@ -77,7 +79,7 @@ Generuje symboly `nupkg`.
 
 `--no-build`
 
-Není sestavení projektu před okolních.
+Není sestavení projektu před okolních. Také implicitní nastaví `--no-restore` příznak.
 
 `--no-dependencies`
 
@@ -85,13 +87,13 @@ Ignoruje odkazy na projekt na projekt a obnoví pouze kořenové projektu.
 
 `--no-restore`
 
-Neprovede implicitní obnovení, při spuštění příkazu.
+Implicitní obnovení není spustit, když spustíte příkaz.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
 Zadaný adresář umístí připravené balíčky.
 
-`-r|--runtime <RUNTIME_IDENTIFIER>`
+`--runtime <RUNTIME_IDENTIFIER>`
 
 Určuje cílový modul runtime pro obnovení balíčků pro. Seznam Runtime identifikátorů (RID), najdete v článku [identifikátorů RID katalogu](../rid-catalog.md).
 

@@ -3,12 +3,13 @@ title: příkaz odkaz DotNet remove - .NET Core rozhraní příkazového řádku
 description: Příkaz dotnet odebrat odkaz poskytuje vhodnou možnost odebrat odkazy na projekt na projekt.
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
-ms.openlocfilehash: 209f1ad62221e8a80efa161354a2c074d74b7c5e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/29/2018
+ms.openlocfilehash: b281b255be7f49a99a6b4928c340cd4fb085f085
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696228"
 ---
 # <a name="dotnet-remove-reference"></a>Odebrat odkaz DotNet.
 
@@ -34,7 +35,7 @@ Cílový soubor projektu. Pokud není zadaný, hledá příkaz aktuální adres�
 
 `PROJECT_REFERENCES`
 
-Projekt do projektu (P2P odkazy na odebrat. Můžete určit jeden nebo více projektů. [Vzory glob](https://en.wikipedia.org/wiki/Glob_(programming)) jsou podporovány v systému Unix/Linux, na základě terminály.
+Chcete-li odebrat odkazuje na projekt na projekt (P2P). Můžete určit jeden nebo více projektů. [Vzory glob](https://en.wikipedia.org/wiki/Glob_(programming)) jsou podporovány v systému Unix/Linux, na základě terminály.
 
 ## <a name="options"></a>Možnosti
 

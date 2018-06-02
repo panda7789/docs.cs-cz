@@ -3,12 +3,13 @@ title: příkaz odkaz DotNet seznamu - .NET Core rozhraní příkazového řádk
 description: Příkaz dotnet seznamu odkaz poskytuje vhodnou možnost do seznamu odkazy na projekt na projekt.
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
-ms.openlocfilehash: 24cb1124fc3f8707afe727e6a73d35d5dde39937
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/25/2018
+ms.openlocfilehash: 821e6d276af44bf984c8ac1b42b4e954dbe69556
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34697180"
 ---
 # <a name="dotnet-list-reference"></a>referenční seznam DotNet.
 
@@ -16,7 +17,7 @@ ms.lasthandoff: 05/04/2018
 
 ## <a name="name"></a>Název
 
-`dotnet list reference` -Obsahuje seznam odkazů projektu do projektu.
+`dotnet list reference` -Obsahuje seznam odkazů projektu projektu.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -30,7 +31,7 @@ ms.lasthandoff: 05/04/2018
 
 `PROJECT`
 
-Určuje soubor projektu pro výpis odkazy. Pokud není zadáno, bude příkaz Hledat aktuální adresář pro soubor projektu.
+Určuje soubor projektu pro výpis odkazy. Pokud není zadaný, hledá příkaz aktuální adresář pro soubor projektu.
 
 ## <a name="options"></a>Možnosti
 

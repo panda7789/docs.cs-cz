@@ -3,11 +3,12 @@ title: Historie jazyka C# – průvodce v C#
 description: Co vzhledu jazyk líbí v nejstarších verzích, a jak vyvinul od?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 1c7b91a3a5c77059ca8d7acef95252b4a3557b28
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e659f2438e9785a02f7016e49b78015ad46b9133
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696972"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C# #
 
@@ -53,7 +54,7 @@ C# 3.0 verze byla v pozdní 2007, společně s Visual Studio 2008, i když úpln
 
 V retrospect mnoho z těchto funkcí pravděpodobně nevyhnutelné i nelze oddělit. Všechny zapadají strategicky. Obecně je představit, že používání funkce jazyka C# verze byla výrazu dotazu, také známé jako Language-Integrated Query (LINQ).
 
-Zobrazení více nuanced prověří tress výrazu lambda – výrazy a anonymní typy jako základ, na kterém je vytvořený LINQ. Ale v obou případech C# 3.0 zobrazí revoluční koncept. C# 3.0 bylo zahájeno jen pro vypnutí C# do hybridním objektově orientované / funkční jazyk.
+Zobrazení více nuanced prověří stromů výrazů lambda – výrazy a anonymní typy jako základ, na kterém je vytvořený LINQ. Ale v obou případech C# 3.0 zobrazí revoluční koncept. C# 3.0 bylo zahájeno jen pro vypnutí C# do hybridním objektově orientované / funkční jazyk.
 
 Konkrétně může zapisovat teď stylu SQL, deklarativní dotazy k provádění operací na kolekce, mimo jiné. Místo psaní `for` cykly k výpočtu průměru seznam celých čísel, můžete to teď udělat jako jednoduše jako `list.Average()`. Kombinace výrazy dotazů a rozšiřující metody provedené se zdát, že tento seznam celých čísel byl zadán mnoho efektivněji.
 
@@ -98,7 +99,7 @@ Verze 3.0 a 5.0 C# měl přidat některé působivé funkce v jazyce objektově 
 - [Šiřitel hodnotu Null.](https://davefancher.com/2014/08/14/c-6-0-null-propagation-operator/)
 - [Interpolace řetězců](../language-reference/tokens/interpolated.md)
 - [nameof – operátor](https://stackoverflow.com/questions/31695900/what-is-the-purpose-of-nameof)
-- [Slovník inicializátoru](../programming-guide/classes-and-structs/how-to-initialize-a-dictionary-with-a-collection-initializer.md)
+- [Inicializátory indexu](csharp-6.md#index-initializers)
 
 Každá z těchto funkcí je zajímavé v sobě. Ale pokud si prohlédnete je zcela, zobrazí zajímavé vzor. V této verzi jazyka C# eliminovat standardní jazyk, aby kód víc ve formátu Terse zasílaná a čitelné. Proto ventilátory čistá, jednoduchého kódu, tato verze jazyka nemohla obrovské win.
 

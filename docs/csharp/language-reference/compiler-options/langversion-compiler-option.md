@@ -8,11 +8,12 @@ helpviewer_keywords:
 - -langversion compiler option [C#]
 - langversion compiler option [C#]
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: 299ff121bab87482b7cdcaebc8b43cb8a1b559ec
-ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
+ms.openlocfilehash: 2a9501c883fec7478932b22ea2cdcad70865e0fd
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696283"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion (možnosti kompilátoru C#)
 Způsobí, že kompilátor tak, aby přijímal pouze syntaxi, která je součástí vybrané specifikace jazyka C#.  
@@ -52,19 +53,11 @@ Způsobí, že kompilátor tak, aby přijímal pouze syntaxi, která je součás
   
  Protože každá verze kompilátoru jazyka C# obsahuje rozšíření pro specifikaci jazyka **- langversion** nezískáte ekvivalentní funkce kompilátoru starší verze.  
  
- Kromě toho při aktualizace verzí jazyka C# obecně neshoduje se hlavní rozhraní .net Framework verze, nové syntaxe a funkce nejsou se nevztahuje na danou verzi konkrétní framework. Při nových funkcí bude vyžadovat výborný nové aktualizace kompilátoru, která je také vydané spolu s revize C#, každou konkrétní funkci má svou vlastní minimální rozhraní API .net nebo běžné požadavky modulu runtime jazyka, které může povolit jeho spuštění v nižší úrovně rozhraní pomocí včetně balíčky NuGet, nebo jiné knihovny.
+ Kromě toho při aktualizace verzí jazyka C# obecně neshoduje se hlavní verze rozhraní .NET Framework, nové syntaxe a funkce nejsou se nevztahuje na danou verzi konkrétní framework. Zatímco nové funkce výborný vyžadují nové aktualizace kompilátoru, která je také vydané spolu s revize C#, každou konkrétní funkci má svou vlastní minimální .NET API nebo běžné požadavky modulu runtime jazyka, které může povolit jeho spuštění v nižší úrovně rozhraní zahrnutím Balíčky NuGet, nebo jiné knihovny.
   
  Bez ohledu na to, které **- langversion** nastavení použijete, bude použita aktuální verzí common language runtime pro vytvoření .exe nebo .dll. Jedinou výjimkou je přátelských sestavení a [- moduleassemblyname (možnost kompilátoru C#)](../../../csharp/language-reference/compiler-options/moduleassemblyname-compiler-option.md), které pracovní pod **- langversion: ISO-1**.  
-  
-### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
-  
-1.  Otevření projektu **vlastnosti** stránky.  
-  
-2.  Klikněte **sestavení** stránku vlastností.  
-  
-3.  Klikněte **Upřesnit** tlačítko.  
-  
-4.  Změnit **jazyková verze** vlastnost.  
+ 
+ Další způsoby zadejte verzi jazyka C#, najdete v článku [vyberte verzi jazyka C#](../configure-language-version.md) tématu.
   
  Informace o tom, jak nastavení této možnosti kompilátoru programu najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.LanguageVersion%2A>.  
     

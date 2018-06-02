@@ -3,12 +3,13 @@ title: příkaz místní hodnoty – DotNet nuget - .NET Core rozhraní příkaz
 description: Příkaz dotnet nuget místní hodnoty – vymaže nebo vypíše místní prostředky NuGet například mezipaměti požadavek http, dočasnou vyrovnávací paměť nebo složku globální balíčky celého systému.
 author: karann-msft
 ms.author: mairaw
-ms.date: 08/14/2017
-ms.openlocfilehash: d0c900a06b00fd5e6b7ad66527c6582483222c45
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/29/2018
+ms.openlocfilehash: 799acb92d6ab7439e15c23c9f0b7b572c966adda
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696868"
 ---
 # <a name="dotnet-nuget-locals"></a>místní hodnoty nuget DotNet.
 
@@ -20,7 +21,10 @@ ms.lasthandoff: 05/04/2018
 
 ## <a name="synopsis"></a>Stručný obsah
 
-`dotnet nuget locals <CACHE_LOCATION> [(-c|--clear)|(-l|--list)] [--force-english-output] [-h|--help]`
+```
+dotnet nuget locals <CACHE_LOCATION> [(-c|--clear)|(-l|--list)] [--force-english-output]
+dotnet nuget locals [-h|--help]
+```
 
 ## <a name="description"></a>Popis
 
@@ -30,7 +34,7 @@ ms.lasthandoff: 05/04/2018
 
 `CACHE_LOCATION`
 
-Jedna z následujících hodnot:
+Umístění mezipaměti k zobrazení seznamu nebo vymazat. Přijme jeden z následujících hodnot:
 
 * `all` -Určuje, že zadaná operace platí pro všechny typy mezipaměti: mezipaměti požadavek http, globální balíčky mezipaměti a dočasnou vyrovnávací paměť.
 * `http-cache` -Určuje, že zadaná operace platí pouze do mezipaměti v požadavku http. Ovlivněné nejsou jiných umístění mezipaměti.
@@ -39,21 +43,21 @@ Jedna z následujících hodnot:
 
 ## <a name="options"></a>Možnosti
 
+`--force-english-output`
+
+Vynutí spuštění pomocí invariantní, na základě angličtina jazykové verze aplikace.
+
 `-h|--help`
 
 Vytiskne krátké nápovědy pro příkaz.
 
 `-c|--clear`
 
-Zrušte možnost provádí zrušte operaci na zadaný mezipaměti typu. Obsah mezipaměti adresáře jsou odstraněné rekurzivně. Provádění uživatel nebo skupina musí mít oprávnění k souborům v adresáři mezipaměti. Pokud ne, zobrazí se chybová zpráva, která udává, soubory a složky, které nejsou vymazána.
+Zrušte možnost provede zrušte operaci na zadaný mezipaměti typu. Obsah mezipaměti adresáře jsou odstraněné rekurzivně. Provádění uživatel nebo skupina musí mít oprávnění k souborům v adresáři mezipaměti. Pokud ne, zobrazí se chybová zpráva označující, soubory a složky, které nejsou vymazána.
 
 `-l|--list`
 
-V seznamu možnost se používá pro zobrazení umístění mezipaměti zadaného typu. 
-
-`--force-english-output`
-
-Vynutí příkazového řádku výstup v angličtině.
+V seznamu možnost se používá pro zobrazení umístění mezipaměti zadaného typu.
 
 ## <a name="examples"></a>Příklady
 

@@ -3,13 +3,14 @@ title: Analyzátor rozhraní API .NET
 description: Zjistěte, jak analyzátor rozhraní API .NET vám mohou pomoci rozpoznat nepoužívané rozhraní API a problémy s kompatibilitou platformy.
 author: oliag
 ms.author: mairaw
-ms.date: 01/30/2018
+ms.date: 05/31/2018
 ms.technology: dotnet-standard
-ms.openlocfilehash: ac0e777e1df837ff7e9fbe185c462f56765e47bf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4394bc77b499db1960d61bad5e828f77f1144c65
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696881"
 ---
 # <a name="net-api-analyzer"></a>Analyzátor rozhraní API .NET
 
@@ -70,11 +71,11 @@ Globální potlačení je doporučeným způsobem, aby byla zaručena konzistenc
 
 ## <a name="discovering-cross-platform-issues"></a>Zjišťování problémů a platformy
 
-Podobně jako zastaralé rozhraní API, nástroje analyzer identifikuje všechna rozhraní API, které nejsou napříč platformami. Například <xref:System.Console.WindowWidth?displayProperty=nameWithType> funguje v systému Windows, ale ne na Linuxu a systému macOS. ID diagnostiky se zobrazí v **seznam chyb** okno. Že upozornění můžete potlačit tím, že kliknete pravým tlačítkem a vyberete **rychlé akce a refaktoring**. Na rozdíl od vyřazení případy, kdy máte dvě možnosti (zachovat pomocí nepoužívané člen a potlačení upozornění nebo ji nepoužívat vůbec), zde Pokud vyvíjíte kódu jenom pro některé platformy, můžete potlačit všech upozornění pro jiné platformy, ne plán pro spouštění vašeho kódu. Uděláte to tak, stačí upravit soubor projektu a přidat `PlatformCompatIgnore` vlastnost, která obsahuje seznam všech platformách budou ignorovány. Možné hodnoty jsou: `Linux`, `MacOSX`, a `Windows`.
+Podobně jako zastaralé rozhraní API, nástroje analyzer identifikuje všechna rozhraní API, které nejsou napříč platformami. Například <xref:System.Console.WindowWidth?displayProperty=nameWithType> funguje v systému Windows, ale ne na Linuxu a systému macOS. ID diagnostiky se zobrazí v **seznam chyb** okno. Že upozornění můžete potlačit tím, že kliknete pravým tlačítkem a vyberete **rychlé akce a refaktoring**. Na rozdíl od vyřazení případy, kdy máte dvě možnosti (zachovat pomocí nepoužívané člen a potlačení upozornění nebo ji nepoužívat vůbec), zde Pokud vyvíjíte kódu jenom pro některé platformy, můžete potlačit všech upozornění pro jiné platformy, ne plán pro spouštění vašeho kódu. Uděláte to tak, stačí upravit soubor projektu a přidat `PlatformCompatIgnore` vlastnost, která obsahuje seznam všech platformách budou ignorovány. Možné hodnoty jsou: `Linux`, `macOS`, a `Windows`.
 
 ```xml
 <PropertyGroup>
-    <PlatformCompatIgnore>Linux;MacOS</PlatformCompatIgnore>
+    <PlatformCompatIgnore>Linux;macOS</PlatformCompatIgnore>
 </PropertyGroup>
 ```
 
@@ -109,7 +110,7 @@ Uživatel rozhodne, jak by měly být považovány diagnostiku: upozornění, ch
 
 !["Snímek obrazovky zobrazující diagnostiky a automaticky otevíraný dialog se závažností nastavit pravidlo Průzkumníku řešení"](media/api-analyzer/disable-notifications.jpg)
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 * [Úvod do rozhraní API analyzátor](https://blogs.msdn.microsoft.com/dotnet/2017/10/31/introducing-api-analyzer/) příspěvku na blogu.
 * [Rozhraní API analyzátor](https://youtu.be/eeBEahYXGd0) ukázku video na YouTube.

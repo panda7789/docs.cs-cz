@@ -3,12 +3,13 @@ title: příkaz msbuild DotNet - .NET Core rozhraní příkazového řádku
 description: Příkaz msbuild dotnet poskytuje přístup k MSBuild příkazového řádku.
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
-ms.openlocfilehash: c51c058391de4925afd4339fe84e28500d692e1a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/25/2018
+ms.openlocfilehash: 58aac2a5314758b8711c0b014154022168fb671c
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696842"
 ---
 # <a name="dotnet-msbuild"></a>msbuild DotNet.
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 05/04/2018
 
 `dotnet msbuild` Příkaz umožňuje přístup k plně funkční MSBuild.
 
-Příkaz má přesný stejné schopnosti jako existující klient nástroje MSBuild příkazového řádku. Možnosti jsou všechny byly stejné. Použití [Reference k příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference) získávat informace o dostupných možností. 
+Příkaz má přesný stejné schopnosti jako existující klient nástroje MSBuild příkazového řádku. Možnosti jsou všechny byly stejné. Další informace o dostupných možnostech najdete v tématu [Reference k příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference).
 
 ## <a name="examples"></a>Příklady
 

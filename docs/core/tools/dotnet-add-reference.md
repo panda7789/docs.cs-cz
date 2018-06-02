@@ -3,12 +3,13 @@ title: DotNet – přidat odkaz na příkaz - .NET Core rozhraní příkazového
 description: Dotnet přidat odkaz na příkaz poskytuje vhodnou možnost přidat odkazy na projekt na projekt.
 author: mairaw
 ms.author: mairaw
-ms.date: 09/19/2017
-ms.openlocfilehash: ee9c058b83238655bd90a4bf5c809a9d0e4c13d6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/25/2018
+ms.openlocfilehash: 3398d4dc7bf70eaadcdd92269dbd3b784079c22d
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696959"
 ---
 # <a name="dotnet-add-reference"></a>DotNet – přidání odkazu
 

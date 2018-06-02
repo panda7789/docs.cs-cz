@@ -3,12 +3,13 @@ title: příkaz Obnovit DotNet - .NET Core rozhraní příkazového řádku
 description: Zjistěte, jak obnovit závislosti a specifické pro projekt nástroje pomocí příkazu restore dotnet.
 author: mairaw
 ms.author: mairaw
-ms.date: 11/30/2017
-ms.openlocfilehash: 6f8aaa2060ab7e6b2e9b99ce4d35588c2bf54d36
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/29/2018
+ms.openlocfilehash: fcfa3f2f7133c3add2b02823937dd26fce690453
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696582"
 ---
 # <a name="dotnet-restore"></a>obnovení DotNet.
 
@@ -21,30 +22,28 @@ ms.lasthandoff: 05/04/2018
 ## <a name="synopsis"></a>Stručný obsah
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
-
 ```
-dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--force] [--ignore-failed-sources] [--no-cache] [--no-dependencies] [--packages] [-r|--runtime] [-s|--source] [-v|--verbosity]
+dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--force] [--ignore-failed-sources] [--no-cache]
+    [--no-dependencies] [--packages] [-r|--runtime] [-s|--source] [-v|--verbosity]
 dotnet restore [-h|--help]
 ```
-
 # <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
-
 ```
-dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--ignore-failed-sources] [--no-cache] [--no-dependencies] [--packages] [-r|--runtime] [-s|--source] [-v|--verbosity]
+dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--ignore-failed-sources] [--no-cache]
+    [--no-dependencies] [--packages] [-r|--runtime] [-s|--source] [-v|--verbosity]
 dotnet restore [-h|--help]
 ```
-
 ---
 
 ## <a name="description"></a>Popis
 
-`dotnet restore` Příkaz používá NuGet Obnovit závislosti, jakož i projektu konkrétní nástroje, které jsou určené v souboru projektu. Ve výchozím nastavení jsou v paralelní provést obnovení závislosti a nástroje.
+`dotnet restore` Příkaz používá NuGet Obnovit závislosti, jakož i projektu konkrétní nástroje, které jsou určené v souboru projektu. Ve výchozím nastavení jsou paralelně spustit obnovení závislosti a nástroje.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 Chcete-li obnovit závislosti, musí NuGet informační kanály, kde se nachází balíčky. Informační kanály se obvykle poskytují prostřednictvím *NuGet.config* konfigurační soubor. Výchozí konfigurační soubor je zadat při instalaci nástrojů příkazového řádku. Zadejte další informační kanály tak, že vytvoříte vlastní *NuGet.config* soubor v adresáři projektu. Můžete také určit další kanály pro volání na příkazovém řádku.
 
-Závislosti, zadáte umístění obnoveného balíčky během obnovení operace pomocí `--packages` argument. Pokud není zadáno, výchozí mezipaměti balíček NuGet se používá, který se nachází v `.nuget/packages` adresář v domovském adresáři uživatele ve všech operačních systémů (například */home/user1* v systému Linux nebo *C:\Users\user1*  v systému Windows).
+Závislosti, zadáte umístění obnoveného balíčky během obnovení operace pomocí `--packages` argument. Pokud není zadáno, výchozí mezipaměti balíček NuGet se používá, který se nachází v `.nuget/packages` adresář v domovském adresáři uživatele ve všech operačních systémech. Například */home/user1* v systému Linux nebo *C:\Users\user1* v systému Windows.
 
 Pro konkrétní projekt nástrojů, `dotnet restore` nejprve obnoví balíček, ve kterém se nástroj nachází v balení a potom pokračuje k obnovení nástroje závislosti uvedeného v souboru projektu.
 
@@ -56,14 +55,15 @@ Od verze rozhraní .NET 2.0 jádra, `dotnet restore` spuštění implicitně v p
 
 - [`dotnet new`](dotnet-new.md)
 - [`dotnet build`](dotnet-build.md)
+- [`dotnet build server`](dotnet-build-server.md)
 - [`dotnet run`](dotnet-run.md)
 - [`dotnet test`](dotnet-test.md)
 - [`dotnet publish`](dotnet-publish.md)
 - [`dotnet pack`](dotnet-pack.md)
 
-Ve většině případů potřebujete už explicitně použít `dotnet restore` příkaz. 
+Ve většině případů potřebujete už explicitně použít `dotnet restore` příkaz.
 
-V některých případech je nepohodlná pro `dotnet restore` ke spuštění implicitně. Například některé automatizované systémy, jako je například systémy sestavení muset volat `dotnet restore` explicitně k řízení, když dojde k obnovení, abyste se mohli řídit využití sítě. Aby se zabránilo `dotnet restore` ve spuštění implicitně, můžete použít `--no-restore` přepínače s žádným z těchto příkazů zakázat implicitní obnovení.
+V některých případech může být praktické, že lze spustit `dotnet restore` implicitně. Například některé automatizované systémy, jako je například systémy sestavení muset volat `dotnet restore` explicitně k řízení, když dojde k obnovení, abyste se mohli řídit využití sítě. Aby se zabránilo `dotnet restore` ve spuštění implicitně, můžete použít `--no-restore` příznak s žádným z těchto příkazů zakázat implicitní obnovení.
 
 ## <a name="arguments"></a>Arguments
 
@@ -85,7 +85,7 @@ Zakáže obnovení více projektů současně.
 
 `--force`
 
-Vynutí všechny závislosti pro přeloženy i v případě, že poslední obnovení bylo úspěšné. Jde o ekvivalent odstraňování *project.assets.json* souboru.
+Vynutí všechny závislosti pro přeloženy i v případě, že poslední obnovení bylo úspěšné. Zadáním tohoto příznaku je stejný jako odstranění *project.assets.json* souboru.
 
 `-h|--help`
 
@@ -113,7 +113,7 @@ Určuje modul runtime pro obnovení balíčků. Slouží k obnovení balíčků 
 
 `-s|--source <SOURCE>`
 
-Určuje zdroj balíčku NuGet k použití během operace obnovení. Všechny zdroje, zadaný v přepíše *NuGet.config* soubory. Zadáním více než jednou. tuto možnost lze zadat více zdrojů.
+Určuje zdroj balíčku NuGet k použití během operace obnovení. Toto nastavení potlačí všechny zdroje, zadaný v *NuGet.config* soubory. Zadáním více než jednou. tuto možnost lze zadat více zdrojů.
 
 `--verbosity <LEVEL>`
 

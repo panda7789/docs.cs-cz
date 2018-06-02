@@ -6,11 +6,12 @@ ms.author: johalex
 ms.date: 11/06/2017
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: f539efe15ce68a77890538430a170da64ff325e0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d26bd102d30c48785196322b9631e568a5002135
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34697271"
 ---
 # <a name="building-docker-images-for-net-core-applications"></a>Vytváření Imagí Dockeru pro aplikace .NET Core
 
@@ -215,11 +216,11 @@ Ethernet adapter Ethernet:
 Může vytvářet aplikace, která je připravená k nasazení do produkčního prostředí místně pomocí [dotnet publikování](../tools/dotnet-publish.md) příkaz.
 
 ```console
-dotnet publish -c release -o published
+dotnet publish -c Release -o published
 ```
 
 > [!NOTE]
-> -C argument verze sestavení aplikace v režimu vydání (výchozí hodnota je režim ladění). Další informace najdete v tématu [dotnet. Spusťte odkaz](../tools/dotnet-run.md) na parametry příkazového řádku.
+> - C argument verze sestavení aplikace v režimu vydání (výchozí hodnota je režim ladění). Další informace najdete v tématu [dotnet. Spusťte odkaz](../tools/dotnet-run.md) na parametry příkazového řádku.
 
 Spuštění aplikace na **Windows** pomocí následujícího příkazu.
 

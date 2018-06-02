@@ -2,11 +2,12 @@
 title: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-ms.openlocfilehash: 7154ea12f2660074e3ad8251b9baaa3eeb3d453c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 535b431fcf8ab5dafa134b8a3c1e2f7eacd6b427
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696504"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)
 Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifikátoru async/await funkcí. Můžete napsat asynchronní kód, který vypadá jako synchronní kódu a nechat kompilátoru zpracování funkce zpětného volání obtížné a pokračování, které obvykle zahrnuje asynchronní kódu.  
@@ -15,7 +16,7 @@ Asynchronní programy můžete napsat snadno a intuitivně najít pomocí modifi
   
  Tento názorný postup začíná synchronní aplikace Windows Presentation Foundation (WPF), který sčítá počet bajtů v seznamu webů. Průvodce potom převede aplikace pro asynchronní řešení pomocí nové funkce.  
   
- Pokud nechcete, aby k vytváření aplikací, můžete stáhnout "asynchronní ukázka: přístup k webové návod (C# a Visual Basic)" z [ukázky kódu vývojáře](http://go.microsoft.com/fwlink/?LinkId=255191).  
+ Pokud nechcete, aby k vytváření aplikací, můžete stáhnout "asynchronní ukázka: přístup k webové návod (C# a Visual Basic)" z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).  
   
  V tomto návodu dokončit následující úlohy:  
   
@@ -673,7 +674,7 @@ End Class
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázka asynchronního: Přístup k webové návod (C# a Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=255191)  
+ [Ukázka asynchronního: Přístup k webové návod (C# a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)  
  [Operátor Await](../../../../visual-basic/language-reference/operators/await-operator.md)  
  [Async](../../../../visual-basic/language-reference/modifiers/async.md)  
  [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)  

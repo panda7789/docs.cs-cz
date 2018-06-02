@@ -3,12 +3,13 @@ title: příkaz - .NET Core rozhraní příkazového řádku vyčistit DotNet.
 description: Příkaz clean dotnet vyčistí aktuální adresář.
 author: mairaw
 ms.author: mairaw
-ms.date: 08/13/2017
-ms.openlocfilehash: 412f3aa3a942d2f48cd684af341227d193a6db02
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/25/2018
+ms.openlocfilehash: 9e68781fe00590f3c8d429631a3f72d525d29fa9
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34697028"
 ---
 # <a name="dotnet-clean"></a>Vyčištění DotNet.
 

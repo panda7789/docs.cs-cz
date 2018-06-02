@@ -2,11 +2,12 @@
 title: Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: ef3dc73d-13fb-4c5f-a686-6b84148bbffe
-ms.openlocfilehash: bf4794385019e91a25026b0d2b3c1839fc77869a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4b899a695fef0e626eb9db3d376a74acba17b086
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34697154"
 ---
 # <a name="handling-reentrancy-in-async-apps-visual-basic"></a>Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (Visual Basic)
 Když zahrnete asynchronní kód ve vaší aplikaci, musí vzít v úvahu a pravděpodobně zabránit vícenásobný přístup, který odkazuje na nutnosti opětovného zadávání asynchronní operace předtím, než byla dokončena. Pokud nemáte identifikovat a zpracování možnosti pro vícenásobný přístup, může to způsobit neočekávané výsledky.  
@@ -103,7 +104,7 @@ TOTAL bytes returned:  890591
 ###  <a name="BKMK_DisableTheStartButton"></a> Zakázat tlačítko Start  
  Můžete blokovat **spustit** tlačítko spuštěného operace zakázáním tlačítka v horní části `StartButton_Click` obslužné rutiny události. Pak opětovného povolení tlačítko uvnitř `Finally` blokovat po dokončení operace tak, aby uživatelé znovu spusťte aplikaci.  
   
- Následující kód ukazuje tyto změny, které jsou označeny pomocí hvězdiček. Změny můžete přidat do kód na konci tohoto tématu nebo dokončení aplikaci si můžete stáhnout [ukázky asynchronní: vícenásobný přístup v aplikacích .NET plochy](http://go.microsoft.com/fwlink/?LinkId=266571). Název projektu je DisableStartButton.  
+ Následující kód ukazuje tyto změny, které jsou označeny pomocí hvězdiček. Změny můžete přidat do kód na konci tohoto tématu nebo dokončení aplikaci si můžete stáhnout [ukázky asynchronní: vícenásobný přístup v aplikacích .NET plochy](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název projektu je DisableStartButton.  
   
 ```vb  
 Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)  
@@ -133,7 +134,7 @@ End Sub
   
  Další informace o zrušení najdete v tématu [Fine-Tuning vaše asynchronní aplikace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md).  
   
- Nastavit tento scénář, proveďte následující změny k základní kód, který je součástí [kontrolu a spuštění aplikace příklad](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645). Také můžete stáhnout dokončení aplikace z [ukázky asynchronní: vícenásobný přístup v aplikacích .NET plochy](http://go.microsoft.com/fwlink/?LinkId=266571). Název tohoto projektu je CancelAndRestart.  
+ Nastavit tento scénář, proveďte následující změny k základní kód, který je součástí [kontrolu a spuštění aplikace příklad](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645). Také můžete stáhnout dokončení aplikace z [ukázky asynchronní: vícenásobný přístup v aplikacích .NET plochy](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název tohoto projektu je CancelAndRestart.  
   
 1.  Deklarace <xref:System.Threading.CancellationTokenSource> proměnnou, `cts`, který je v oboru pro všechny metody.  
   
@@ -534,7 +535,7 @@ End Function
   
 ###  <a name="BKMK_DownloadingTheApp"></a> Stažení aplikace  
   
-1.  Stáhněte si komprimovaný soubor z [ukázky asynchronní: vícenásobný přístup v aplikacích .NET plochy](http://go.microsoft.com/fwlink/?LinkId=266571).  
+1.  Stáhněte si komprimovaný soubor z [ukázky asynchronní: vícenásobný přístup v aplikacích .NET plochy](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06).  
   
 2.  Dekomprimovat soubor, který jste stáhli a pak spusťte Visual Studio.  
   

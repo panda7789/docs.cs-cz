@@ -7,16 +7,17 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: f5566eacaabb5d3eb5579d015fad8149a2ed4f3c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 62bf3ce4bc7a0ff8109ec34fba77dd854c7679b8
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34697115"
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 Do programu zabezpečení Windows Communication Foundation (WCF), digitální certifikáty X.509 běžně se používají k ověřování klientů a serverů, šifrování a digitálnímu podepisování zpráv. Toto téma stručně popisuje funkce digitální certifikát X.509 a jejich použití v WCF a obsahuje odkazy na témata, která popisují tyto další koncepty nebo která ukazují, jak provádět běžné úlohy pomocí WCF a certifikáty.  
   
- Stručně řečeno, digitální certifikát je součástí *infrastruktury veřejných klíčů* (PKI), který je systém digitální certifikáty, certifikačních autorit a dalších registračním autoritám, které k ověřování platnosti každé strany zúčastněné v elektronické transakce pomocí kryptografie využívající veřejného klíče. Certifikační autorita vydává certifikáty a každý certifikát má sadu pole, které obsahují data, jako například *subjektu* (entit, ke kterému je certifikát vystavený), data platnosti (Pokud je certifikát platný), vystavitele (na Entita, která vydala certifikát) a veřejný klíč. Ve službě WCF, každý z těchto vlastností zpracovávány jako <xref:System.IdentityModel.Claims.Claim>, a jednotlivých deklarací identity se dále dělí do dvou typů: identity a doprava. Další informace o X.509 certifikátů najdete v části [veřejný klíč certifikáty X.509](http://go.microsoft.com/fwlink/?LinkId=209952)Další informace o deklaracích identity a autorizace ve WCF najdete [správa deklarací a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md). Další informace o implementaci infrastruktury veřejných KLÍČŮ najdete v tématu [Windows Server 2008 R2 - Certificate Services](http://go.microsoft.com/fwlink/?LinkId=209949).  
+ Stručně řečeno, digitální certifikát je součástí *infrastruktury veřejných klíčů* (PKI), který je systém digitální certifikáty, certifikačních autorit a dalších registračním autoritám, které k ověřování platnosti každé strany zúčastněné v elektronické transakce pomocí kryptografie využívající veřejného klíče. Certifikační autorita vydává certifikáty a každý certifikát má sadu pole, které obsahují data, jako například *subjektu* (entit, ke kterému je certifikát vystavený), data platnosti (Pokud je certifikát platný), vystavitele (na Entita, která vydala certifikát) a veřejný klíč. Ve službě WCF, každý z těchto vlastností zpracovávány jako <xref:System.IdentityModel.Claims.Claim>, a jednotlivých deklarací identity se dále dělí do dvou typů: identity a doprava. Další informace o X.509 certifikátů najdete v části [veřejný klíč certifikáty X.509](http://go.microsoft.com/fwlink/?LinkId=209952). Další informace o deklaracích identity a autorizace ve WCF najdete v části [správa deklarací a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md). Další informace o implementaci infrastruktury veřejných KLÍČŮ najdete v tématu [Windows Server 2008 R2 - Certificate Services](http://go.microsoft.com/fwlink/?LinkId=209949).  
   
  Primární funkce certifikátu je ověřovat identitu vlastníka certifikátu ostatním uživatelům. Obsahuje certifikát *veřejný klíč* vlastníka, zatímco vlastník uchovává privátní klíč. Veřejný klíč slouží k šifrování zpráv posílaných vlastník certifikátu. Pouze vlastník má přístup k privátnímu klíči, takže pouze vlastník může dešifrovat tyto zprávy.  
   

@@ -3,12 +3,13 @@ title: příkaz balíček - .NET Core rozhraní příkazového řádku přidejte
 description: Příkaz 'dotnet. Přidejte balíček' poskytuje vhodnou možnost Přidat odkaz na balíček NuGet do projektu.
 author: mairaw
 ms.author: mairaw
-ms.date: 08/11/2017
-ms.openlocfilehash: fd3704bbb941835421d78e19f196fa52b3767c34
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/25/2018
+ms.openlocfilehash: 31dda9dbb101238b3a33d8b0d9a17765744480e0
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696296"
 ---
 # <a name="dotnet-add-package"></a>Přidejte balíček DotNet.
 
@@ -20,7 +21,7 @@ ms.lasthandoff: 05/04/2018
 
 ## <a name="synopsis"></a>Stručný obsah
 
-`dotnet add [<PROJECT>] package <PACKAGE_NAME> [-h|--help] [-v|--version] [-f|--framework] [-n|--no-restore] [-s|--source] [--package-directory]`
+`dotnet add [<PROJECT>] package <PACKAGE_NAME> [-h|--help] [-f|--framework] [-n|--no-restore] [--package-directory] [-s|--source] [-v|--version]`
 
 ## <a name="description"></a>Popis
 
@@ -30,7 +31,7 @@ ms.lasthandoff: 05/04/2018
 
 Například přidání `Newtonsoft.Json` k *ToDo.csproj* výstup v následujícím příkladu:
 
-```
+```console
   Writing C:\Users\mairaw\AppData\Local\Temp\tmp95A8.tmp
 info : Adding PackageReference for package 'Newtonsoft.Json' into project 'C:\projects\ToDo\ToDo.csproj'.
 log  : Restoring packages for C:\projects\ToDo\ToDo.csproj...
@@ -62,10 +63,6 @@ Odkaz na balíček přidat.
 
 Vytiskne krátké nápovědy pro příkaz.
 
-`-v|--version <VERSION>`
-
-Verze balíčku.
-
 `-f|--framework <FRAMEWORK>`
 
 Přidá odkaz na balíček jenom při cílení na konkrétní [framework](../../standard/frameworks.md).
@@ -74,13 +71,17 @@ Přidá odkaz na balíček jenom při cílení na konkrétní [framework](../../
 
 Přidá odkaz na balíček bez provedení kontroly obnovení preview a kompatibility.
 
+`--package-directory <PACKAGE_DIRECTORY>`
+
+Obnoví balíček do zadaného adresáře.
+
 `-s|--source <SOURCE>`
 
 Během operace obnovení používá konkrétního zdroje balíčku NuGet.
 
-`--package-directory <PACKAGE_DIRECTORY>`
+`-v|--version <VERSION>`
 
-Obnoví balíček do zadaného adresáře.
+Verze balíčku.
 
 ## <a name="examples"></a>Příklady
 

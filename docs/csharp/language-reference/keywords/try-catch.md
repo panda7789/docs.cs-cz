@@ -10,11 +10,12 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: f917d662366dc8ff540cdee6222199fe8f5606c9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d6dfdf14b518582388e655ec5616904928dfd8b5
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696436"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (Referenční dokumentace jazyka C#)
 Try-catch – příkaz se skládá z `try` bloku, za nímž následuje jeden nebo více `catch` klauzule, které určují obslužné rutiny pro různé výjimky.  
@@ -42,7 +43,7 @@ catch (InvalidCastException e)
   
  Je možné použít více než jeden konkrétní `catch` klauzule v jednom příkazu try-catch. V tomto případě pořadí `catch` klauzule je důležité, protože `catch` klauzule se zkontrolují v pořadí. Před méně konkrétní ty catch konkrétnější výjimky. Kompilátor vyvolá chybu, je-li pořadí, že vaše catch blokuje tak, aby nikdy dostupný novější blok.  
   
- Pomocí `catch` argumentů je jeden způsob, jak filtrovat výjimky, které chcete zpracovávat.  Můžete také použít výraz predikátu, která prověřuje další výjimka můžete rozhodnout, jestli se nezdařilo.  Výraz predikátu vrací hodnotu false, potom pokračuje hledání pro obslužnou rutinu.  
+ Pomocí `catch` argumentů je jeden způsob, jak filtrovat výjimky, které chcete zpracovávat.  Můžete také použít filtr výjimek, která prověřuje další výjimka můžete rozhodnout, jestli se nezdařilo.  Filtr výjimek vrací hodnotu false, potom pokračuje hledání pro obslužnou rutinu.  
   
 ```csharp  
 catch (ArgumentException e) when (e.ParamName == "…")  
@@ -50,7 +51,7 @@ catch (ArgumentException e) when (e.ParamName == "…")
 }  
 ```  
   
- Filtry výjimek, je vhodnější zachytávání a opětné vyvolání (vysvětleno níže), protože zásobník nepoškozená nechte filtry.  Pokud obslužnou rutinu novější výpisy zásobníku, uvidíte, kde výjimka původně pochází, nikoli pouze poslední, který byl znovu vyvolány místo.  Běžně se používají výrazy filtru výjimek je protokolování.  Můžete vytvořit predikátem funkci, která vždy vrátí hodnotu false, který také výstupy do protokolů, jako přejde bez nutnosti mohli je zpracovat a opětovné můžete protokolovat výjimky.  
+ Filtry výjimek, je vhodnější zachytávání a opětné vyvolání (vysvětleno níže), protože zásobník nepoškozená nechte filtry.  Pokud obslužnou rutinu novější výpisy zásobníku, uvidíte, kde výjimka původně pochází, nikoli pouze poslední, který byl znovu vyvolány místo.  Běžně se používají výrazy filtru výjimek je protokolování.  Můžete vytvořit filtr, který vždy vrátí hodnotu false, který také výstupy do protokolů, jako přejde bez nutnosti mohli je zpracovat a opětovné můžete protokolovat výjimky.  
   
  A [throw](../../../csharp/language-reference/keywords/throw.md) příkaz lze použít v `catch` blok k znovu vyvolání výjimky, která bude zachycena `catch` příkaz. Následující příklad extrahuje informace o zdroji ze <xref:System.IO.IOException> výjimka a potom vyvolá výjimku pro nadřazenou metodu.  
   
@@ -92,9 +93,19 @@ catch (InvalidCastException e)
     {  
         // Take some action.  
     }  
- }  
+}  
 ```  
-  
+
+> [!NOTE]
+> Je také možné používat k získání výsledku podobně jako v často čisticí způsobem (stejně jako není úprava zásobníku, jak je popsáno výše v tomto dokumentu) filtru výjimek. Následující příklad obsahuje podobné chování pro volající jako předchozí příklad. Funkce vyvolá `InvalidCastException` zpět do volající při `e.Data` je `null`.
+> 
+> ```csharp
+> catch (InvalidCastException e) when (e.Data != null)   
+> {  
+>     // Take some action.  
+> }
+> ```   
+
  Z uvnitř `try` blokovat, inicializovat pouze proměnné, které jsou deklarované v něm. Výjimku, jinak může dojít, než bude dokončeno spuštění bloku. Například v následujícím příkladu kódu proměnnou `n` je inicializován uvnitř `try` bloku. Pokus o použití této proměnné mimo `try` blokovat `Write(n)` příkaz vygeneruje se chybová zpráva kompilátoru.  
   
 ```csharp  

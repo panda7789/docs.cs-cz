@@ -7,11 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 8b36f94e9476b857066c292feb9e77e9c2199b7e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a4d5719bccd240658880cc5c6e549e8c912ca1b9
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696391"
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 
@@ -124,9 +125,10 @@ Pokud má volající ukládá hodnoty vrácené `GetBookByTitle` metoda jako mí
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Předávání parametrů](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)  
- [Parametry metody](../../../csharp/language-reference/keywords/method-parameters.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
+## <a name="see-also"></a>Viz také:  
+ [Referenční sémantika s typy hodnot](../../reference-semantics-with-value-types.md)  
+ [Předávání parametrů](../../programming-guide/classes-and-structs/passing-parameters.md)  
+ [Parametry metody](method-parameters.md)  
+ [Referenční dokumentace jazyka C#](../index.md)  
+ [Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
+ [Klíčová slova jazyka C#](index.md)

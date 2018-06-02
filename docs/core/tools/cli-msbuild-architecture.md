@@ -3,11 +3,12 @@ title: Architektura nástrojů příkazového řádku .NET core
 description: Další informace o .NET Core tooling vrstvy a co se změnilo v nejnovější verze.
 author: blackdwarf
 ms.date: 03/06/2017
-ms.openlocfilehash: 50ccaa490f079c62901c57eb9cf91690ee655bf2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1d96a0b1e19bf84af0ab645ebd104afc899ae656
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696540"
 ---
 # <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Přehled změn v nástrojích pro .NET Core
 
@@ -66,4 +67,5 @@ Tento příkaz je publikování aplikace do aplikace `pub` složku pomocí konfi
 
 Významné výjimkou tohoto pravidla jsou `new` a `run` příkazy, protože nejsou implementované jako cíle MSBuild.
 
-<a name="dotnet-restore-note"></a> [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+<a name="dotnet-restore-note"></a>  
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

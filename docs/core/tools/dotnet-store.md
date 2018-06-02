@@ -3,12 +3,13 @@ title: příkaz úložiště DotNet.
 description: Příkaz 'dotnet úložiště, ukládá na zadaná sestavení v úložišti balíček modulu runtime.
 author: bleroy
 ms.author: mairaw
-ms.date: 08/14/2017
-ms.openlocfilehash: f819444c92afde0e1a5349a58918f993868a0143
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/29/2018
+ms.openlocfilehash: 54654522207157f7d49bb86223b7986acccf51ee
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696322"
 ---
 # <a name="dotnet-store"></a>úložiště DotNet.
 
@@ -34,7 +35,7 @@ Určuje, [cílové rozhraní](../../standard/frameworks.md).
 
 `-m|--manifest <PATH_TO_MANIFEST_FILE>`
 
-*Souboru manifestu balíčku úložiště* je soubor XML, který obsahuje seznam balíčků pro uložení. Je kompatibilní s formátem souboru manifestu *csproj* formátu. Ano *csproj* soubor projektu, který odkazuje na požadované balíčky lze použít s `-m|--manifest` možnost ukládat sestavení v úložišti balíček modulu runtime. Pokud chcete zadat více souborů manifestu, opakujte pro každý soubor možnost a cestu: `--manifest packages1.csproj --manifest packages2.csproj`.
+*Souboru manifestu balíčku úložiště* je soubor XML, který obsahuje seznam balíčků pro uložení. Formát souboru manifestu není kompatibilní s formátem stylu SDK projektu. Ano, dá použít soubor projektu, který odkazuje na požadované balíčky s `-m|--manifest` možnost ukládat sestavení v úložišti balíček modulu runtime. Pokud chcete zadat více souborů manifestu, opakujte pro každý soubor možnost a cestu. Příklad: `--manifest packages1.csproj --manifest packages2.csproj`.
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
@@ -80,6 +81,6 @@ Ukládat balíčky v zadané *packages.csproj* bez optimalizace:
 
 `dotnet store --manifest packages.csproj --skip-optimization`
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Úložiště balíčků modulu runtime](../deploying/runtime-store.md)   
+[Úložiště balíčků modulu runtime](../deploying/runtime-store.md)

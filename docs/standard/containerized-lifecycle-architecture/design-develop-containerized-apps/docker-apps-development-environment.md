@@ -4,11 +4,12 @@ description: Kontejnerizované Docker životního cyklu aplikací s Microsoft pl
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 8db9f37e4fa8df63060982857d457c9e1ce90f60
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4adbdd7099dfc1c5ef13d5bbb4370ae2f14aba1e
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696777"
 ---
 # <a name="development-environment-for-docker-apps"></a>Vývojové prostředí pro Docker aplikace
 
@@ -23,7 +24,7 @@ Pokud dáváte přednost lightweight, napříč platformami editor podpora žád
 > [!NOTE]
 > Chcete-li stáhnout Visual Studio Code, přejděte na <https://code.visualstudio.com/download>.
 
-Chcete-li stáhnout Docker pro Mac a Windows, přejděte na <http://www.docker.com/products/docker>.
+Chcete-li stáhnout Docker pro Mac a Windows, přejděte na <https://www.docker.com/products/docker>.
 
 ### <a name="visual-studio-with-docker-tools"></a>Visual Studio s nástroji Docker
 
@@ -37,15 +38,10 @@ Pokud používáte Visual Studio 2015 můžete nainstalovat nástroje rozšíře
 Můžete vyvíjet aplikace Docker a nástroje Microsoft s většina moderních jazyků. Toto je počáteční seznam, ale nejste omezeni na ni:
 
 -   .NET core a ASP.NET Core
-
 -   Node.js
-
 -   Golang
-
 -   Java
-
 -   Ruby
-
 -   Python
 
 V podstatě můžete použít jakýkoli moderní jazyk podporuje Docker v systému Linux nebo Windows.

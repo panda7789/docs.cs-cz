@@ -3,12 +3,13 @@ title: příkaz nabízené DotNet nuget - .NET Core rozhraní příkazového ř�
 description: Příkaz dotnet nuget nabízené nabízených oznámení balíček na server a vydává je.
 author: karann-msft
 ms.author: mairaw
-ms.date: 08/14/2017
-ms.openlocfilehash: 090b11646a81859eeadb5fe9d36b43721fc70a5f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/29/2018
+ms.openlocfilehash: c835b1b9d44b9ed12dc0ea4568414a83c926ae4f
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696491"
 ---
 # <a name="dotnet-nuget-push"></a>nabízená nuget DotNet.
 
@@ -20,7 +21,25 @@ ms.lasthandoff: 05/04/2018
 
 ## <a name="synopsis"></a>Stručný obsah
 
-`dotnet nuget push [<ROOT>] [-s|--source] [-ss|--symbol-source] [-t|--timeout] [-k|--api-key] [-sk|--symbol-api-key] [-d|--disable-buffering] [-n|--no-symbols] [--force-english-output] [-h|--help]`
+# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+```
+dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [-k|--api-key] [-n|--no-symbols]
+    [--no-service-endpoint] [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
+dotnet nuget push [-h|--help]
+```
+# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
+```
+dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [-k|--api-key] [-n|--no-symbols]
+    [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
+dotnet nuget push [-h|--help]
+```
+# <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
+```
+dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [-k|--api-key] [-n|--no-symbols]
+    [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
+dotnet nuget push [-h|--help]
+```
+---
 
 ## <a name="description"></a>Popis
 
@@ -34,15 +53,41 @@ Určuje cestu k souboru na balíček, který chcete poslat.
 
 ## <a name="options"></a>Možnosti
 
+# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+
+`-d|--disable-buffering`
+
+Zakáže ukládání do vyrovnávací paměti při nabízení do serveru protokolu HTTP (S) ke snížení využití paměti.
+
+`--force-english-output`
+
+Vynutí spuštění pomocí invariantní, na základě angličtina jazykové verze aplikace.
+
 `-h|--help`
 
 Vytiskne krátké nápovědy pro příkaz.
+
+`-k|--api-key <API_KEY>`
+
+Klíč rozhraní API pro server.
+
+`-n|--no-symbols`
+
+Není push symboly (i pokud existuje).
+
+`--no-service-endpoint`
+
+Není připojit "v2/api/packages" na adresu URL zdroje.
 
 `-s|--source <SOURCE>`
 
 Určuje adresu URL serveru. Tato možnost je povinná, pokud `DefaultPushSource` konfigurační hodnota je nastavena v konfiguračním souboru NuGet.
 
-`--symbol-source <SOURCE>`
+`-sk|--symbol-api-key <API_KEY>`
+
+Klíč rozhraní API pro symbol server.
+
+`-ss|--symbol-source <SOURCE>`
 
 Určuje adresu URL serveru symbol.
 
@@ -50,33 +95,91 @@ Určuje adresu URL serveru symbol.
 
 Určuje časový limit pro vkládání na server v sekundách. Výchozí hodnota je 300 sekund (5 minut). Zadáním 0 (nula sekund) platí výchozí hodnota.
 
-`-k|--api-key <API_KEY>`
-
-Klíč rozhraní API pro server.
-
-`--symbol-api-key <API_KEY>`
-
-Klíč rozhraní API pro symbol server.
+# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
 
 `-d|--disable-buffering`
 
-Zakáže ukládání do vyrovnávací paměti při nabízení do serveru protokolu HTTP (S), jak snížit využití paměti.
+Zakáže ukládání do vyrovnávací paměti při nabízení do serveru protokolu HTTP (S) ke snížení využití paměti.
+
+`--force-english-output`
+
+Vynutí spuštění pomocí invariantní, na základě angličtina jazykové verze aplikace.
+
+`-h|--help`
+
+Vytiskne krátké nápovědy pro příkaz.
+
+`-k|--api-key <API_KEY>`
+
+Klíč rozhraní API pro server.
 
 `-n|--no-symbols`
 
 Není push symboly (i pokud existuje).
 
+`-s|--source <SOURCE>`
+
+Určuje adresu URL serveru. Tato možnost je povinná, pokud `DefaultPushSource` konfigurační hodnota je nastavena v konfiguračním souboru NuGet.
+
+`-sk|--symbol-api-key <API_KEY>`
+
+Klíč rozhraní API pro symbol server.
+
+`-ss|--symbol-source <SOURCE>`
+
+Určuje adresu URL serveru symbol.
+
+`-t|--timeout <TIMEOUT>`
+
+Určuje časový limit pro vkládání na server v sekundách. Výchozí hodnota je 300 sekund (5 minut). Zadáním 0 (nula sekund) platí výchozí hodnota.
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
+
+`-d|--disable-buffering`
+
+Zakáže ukládání do vyrovnávací paměti při nabízení do serveru protokolu HTTP (S) ke snížení využití paměti.
+
 `--force-english-output`
 
-Vynutí protokolovat výstup v angličtině.
+Vynutí spuštění pomocí invariantní, na základě angličtina jazykové verze aplikace.
+
+`-h|--help`
+
+Vytiskne krátké nápovědy pro příkaz.
+
+`-k|--api-key <API_KEY>`
+
+Klíč rozhraní API pro server.
+
+`-n|--no-symbols`
+
+Není push symboly (i pokud existuje).
+
+`-s|--source <SOURCE>`
+
+Určuje adresu URL serveru. Tato možnost je povinná, pokud `DefaultPushSource` konfigurační hodnota je nastavena v konfiguračním souboru NuGet.
+
+`-sk|--symbol-api-key <API_KEY>`
+
+Klíč rozhraní API pro symbol server.
+
+`-ss|--symbol-source <SOURCE>`
+
+Určuje adresu URL serveru symbol.
+
+`-t|--timeout <TIMEOUT>`
+
+Určuje časový limit pro vkládání na server v sekundách. Výchozí hodnota je 300 sekund (5 minut). Zadáním 0 (nula sekund) platí výchozí hodnota.
+
+---
 
 ## <a name="examples"></a>Příklady
 
-Nabízených oznámení *foo.nupkg* ke zdroji nabízené výchozí poskytování klíč rozhraní API:
+Nabízených oznámení *foo.nupkg* ke zdroji nabízené výchozí zadání klíč rozhraní API:
 
 `dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a`
 
-Nabízená *foo.nupkg* ke zdroji vlastní nabízené `http://customsource`, poskytuje klíč rozhraní API:
+Nabízená *foo.nupkg* ke zdroji vlastní nabízené `http://customsource`, zadání klíč rozhraní API:
 
 `dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s http://customsource/`
 
@@ -88,7 +191,7 @@ Nabízených oznámení *foo.symbols.nupkg* ke zdroji výchozí symboly:
 
 `dotnet nuget push foo.symbols.nupkg`
 
-Nabízených oznámení *foo.nupkg* ke zdroji nabízené výchozí zadání 360 druhý vypršení časového limitu:
+Nabízených oznámení *foo.nupkg* ke zdroji nabízené výchozí zadání vypršení časového limitu 360 sekundu:
 
 `dotnet nuget push foo.nupkg --timeout 360`
 

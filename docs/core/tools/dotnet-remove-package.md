@@ -3,12 +3,13 @@ title: DotNet odebrat balíček příkaz - .NET Core rozhraní příkazového ř
 description: Příkaz dotnet odebrat balíček poskytuje vhodnou možnost odebrat odkaz na balíček NuGet do projektu.
 author: mairaw
 ms.author: mairaw
-ms.date: 08/14/2017
-ms.openlocfilehash: 6a18be1a853119be245623e8fa0a0e44ed819e8b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 05/29/2018
+ms.openlocfilehash: ed6086bfdfadaa06494c857fc74687f1273af971
+ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34696855"
 ---
 # <a name="dotnet-remove-package"></a>Odebrat balíček DotNet.
 
@@ -30,7 +31,7 @@ ms.lasthandoff: 05/04/2018
 
 `PROJECT`
 
-Určuje soubor projektu. Pokud není zadáno, bude příkaz hledání aktuální adresář pro jednu.
+Určuje soubor projektu. Pokud není zadaný, hledá příkaz aktuální adresář pro jednu.
 
 `PACKAGE_NAME`
 
