@@ -2,11 +2,12 @@
 title: Zabezpečení aplikací ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 005a1d43-6ee5-471e-ad98-1d30a44d49d5
-ms.openlocfilehash: 5e4363ada4ebdb94801378bc61139f68085b462d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: efe25082b4e4de9170179ebeff6a1dca8f67446c
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728599"
 ---
 # <a name="securing-adonet-applications"></a>Zabezpečení aplikací ADO.NET
 Zápis zabezpečené aplikace ADO.NET zahrnuje více než zabraňující běžné kódování nástrahy například není ověřování uživatelského vstupu. Aplikace, která přistupuje k datům má mnoho potenciální body selhání, které může útočník zneužít k načtení, manipulaci nebo destroy citlivá data. Proto je důležité si uvědomit, všechny aspekty zabezpečení, z procesu modelování během fáze návrhu vaší aplikace, jeho případné nasazení a následné údržbě hrozeb.  
@@ -39,7 +40,7 @@ Zápis zabezpečené aplikace ADO.NET zahrnuje více než zabraňující běžn�
  Popisuje zabezpečení pro aplikace rozhraní Entity Framework.  
   
  [Zabezpečení](../../../../docs/standard/security/index.md)  
- Obsahuje odkazy na témata s popisem všechny aspekty zabezpečení v rozhraní .NET Framework.  
+ Obsahuje odkazy na témata s popisem všechny aspekty zabezpečení v rozhraní .NET.  
   
  [Nástroje zabezpečení](http://msdn.microsoft.com/library/2a3eb98a-2de6-4fba-b41c-01a74d354c11)  
  Rozhraní .NET framework – nástroje pro zabezpečení a správu zásad zabezpečení.  

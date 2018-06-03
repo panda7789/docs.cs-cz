@@ -2,11 +2,12 @@
 title: Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: a9ee1b71-5bec-4736-a1e9-448042dd7215
-ms.openlocfilehash: 74f0c1c4653709497cb264aac18b49f4fee4eefa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2823514bc462f198a43316b40eb05bc1ffed0e72
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728664"
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)
 Můžete nastavit tlačítko, které můžete zrušit asynchronní aplikace, pokud nechcete čekat na dokončení. Pomocí následujících příkladech v tomto tématu, můžete přidat tlačítko zrušení k aplikaci, která stahuje obsah jeden web nebo seznam webů.  
@@ -20,7 +21,7 @@ Můžete nastavit tlačítko, které můžete zrušit asynchronní aplikace, pok
  V prvním příkladu přidruží **zrušit** tlačítka s jeden stahování. Pokud si zvolíte tlačítko, zatímco aplikace je stahování obsahu, stahování je zrušeno.  
   
 ### <a name="downloading-the-example"></a>Stažení příkladu  
- Stáhnete dokončený projekt Windows Presentation Foundation (WPF) z [asynchronní ukázka: jemné ladění vaše aplikace](http://go.microsoft.com/fwlink/?LinkId=255046) a pak postupujte podle těchto kroků.  
+ Stáhnete dokončený projekt Windows Presentation Foundation (WPF) z [asynchronní ukázka: jemné ladění vaše aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.  
   
 1.  Dekomprimovat soubor, který jste stáhli a pak spusťte Visual Studio.  
   
@@ -138,7 +139,7 @@ Můžete nastavit tlačítko, které můžete zrušit asynchronní aplikace, pok
  Můžete rozšířit předchozí příklad zrušit celou řadu úloh tím, že přidružíte stejné `CancellationTokenSource` instance s každý úkol. Pokud se rozhodnete **zrušit** tlačítko Zrušit všechny úlohy, které ještě nejsou úplné.  
   
 ### <a name="downloading-the-example"></a>Stažení příkladu  
- Stáhnete dokončený projekt Windows Presentation Foundation (WPF) z [asynchronní ukázka: jemné ladění vaše aplikace](http://go.microsoft.com/fwlink/?LinkId=255046) a pak postupujte podle těchto kroků.  
+ Stáhnete dokončený projekt Windows Presentation Foundation (WPF) z [asynchronní ukázka: jemné ladění vaše aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.  
   
 1.  Dekomprimovat soubor, který jste stáhli a pak spusťte Visual Studio.  
   
@@ -249,7 +250,7 @@ Můžete nastavit tlačítko, které můžete zrušit asynchronní aplikace, pok
 ##  <a name="BKMK_CompleteExamples"></a> Dokončit příklady  
  Kód pro každou z předchozích příkladech v následujících částech. Všimněte si, že je nutné přidat odkaz pro <xref:System.Net.Http>.  
   
- Si můžete stáhnout z projektů [asynchronní ukázka: jemné ladění vaše aplikace](http://go.microsoft.com/fwlink/?LinkId=255046).  
+ Si můžete stáhnout z projektů [asynchronní ukázka: jemné ladění vaše aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).  
   
 ### <a name="cancel-a-task-example"></a>Příklad zrušení úlohy  
  Následující kód je soubor MainWindow.xaml.vb kompletní příklad, který zruší jeden úkol.  
@@ -458,4 +459,4 @@ End Class
  <xref:System.Threading.CancellationToken>  
  [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)  
  [Vyladění s modifikátorem Async aplikace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)  
- [Ukázka asynchronního: Jemnou ladění aplikace](http://go.microsoft.com/fwlink/?LinkId=255046)
+ [Ukázka asynchronního: Jemnou ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

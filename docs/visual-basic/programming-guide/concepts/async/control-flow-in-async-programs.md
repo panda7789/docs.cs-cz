@@ -2,11 +2,12 @@
 title: Řízení toku v asynchronních programech (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: b0443af7-c586-4cb0-b476-742ae4098a96
-ms.openlocfilehash: 2de9c00e5094a1c40e64bdf5215157867372be8c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a6783373f4b556694fd79401546665b09f55919d
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728502"
 ---
 # <a name="control-flow-in-async-programs-visual-basic"></a>Řízení toku v asynchronních programech (Visual Basic)
 Můžete napsat a udržovat asynchronní programy snadněji pomocí `Async` a `Await` klíčová slova. Ale výsledky může ať vás překvapí Pokud nevíte, jak funguje vašeho programu. Toto téma trasování, které toku řízení prostřednictvím programu jednoduché asynchronní tak, aby zobrazovalo při řízení přechází z jedné metody na jiný a jaké informace se přenáší pokaždé, když.  
@@ -97,7 +98,7 @@ Length of the downloaded string: 33946.
 >  Pokud chcete spustit v příkladu, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalovaná ve vašem počítači.  
   
 ### <a name="download-the-program"></a>Stažení programu  
- Si můžete stáhnout aplikaci pro toto téma z [asynchronní ukázka: řízení toku v asynchronních programech](http://go.microsoft.com/fwlink/?LinkId=255285). Následující kroky otevřete a spusťte program.  
+ Si můžete stáhnout aplikaci pro toto téma z [asynchronní ukázka: řízení toku v asynchronních programech](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0). Následující kroky otevřete a spusťte program.  
   
 1.  Rozbalte stažený soubor a pak spusťte Visual Studio.  
   
@@ -361,4 +362,4 @@ Dim contentLength As Integer = Await getLengthTask
  [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)  
  [Asynchronní návratové typy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)  
  [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
- [Ukázka asynchronního: Řízení toku v asynchronních programech (C# a Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=255285)
+ [Ukázka asynchronního: Řízení toku v asynchronních programech (C# a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)

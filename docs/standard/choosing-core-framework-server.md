@@ -4,11 +4,12 @@ description: Průvodce, na které implementace rozhraní .NET, byste měli zvá�
 author: cartermp
 ms.author: mairaw
 ms.date: 03/15/2018
-ms.openlocfilehash: 5626c6c1687fe0b8d558df8772fc69c32981787c
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: 39d07417a3e901c68dbbd8e9e217fb716edec881
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728716"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a rozhraní .NET Framework pro server aplikace
 
@@ -65,7 +66,7 @@ Chcete-li nainstalovat aplikace se závislostmi na různé verze rozhraní .NET,
 
 ## <a name="when-to-choose-net-framework"></a>Kdy použít rozhraní .NET Framework
 
-.NET core nabízí významné výhody pro nové aplikace a aplikace vzory. Nadále se přirozeně volba pro mnoho scénářů s existující a jako takový však rozhraní .NET Framework. Rozhraní .NET Framework není nahrazena .NET Core pro všechny serverové aplikace.
+.NET core nabízí významné výhody pro nové aplikace a aplikace vzory. Ale rozhraní .NET Framework je stále přirozené volba pro mnoho scénářů s existující a jako takový není rozhraní .NET Framework nahrazena .NET Core pro všechny serverové aplikace.
 
 ### <a name="current-net-framework-applications"></a>Aktuální aplikace rozhraní .NET Framework
 
@@ -102,7 +103,7 @@ Kromě oficiální plán jsou ostatní platformy přenést na .NET Core. Úplný
 
 Některé společnosti Microsoft nebo třetích stran platformy nepodporují .NET Core. Například některé Azure služby, jako je Service Fabric stavové služby Reliable Services a Reliable Actors prostředků infrastruktury služby vyžadují rozhraní .NET Framework. Některé jiné služby zadejte ještě není k dispozici pro používání sady SDK na .NET Core. Jedná se přechodném okolnosti, protože všechny služby Azure pomocí .NET Core. Do té doby mohou vždy použít ekvivalentní REST API místo klienta SDK.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
  [Zvolte mezi ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework)  
  [Průvodce platformou .NET Core](../core/index.md)  
  [Portování z rozhraní .NET Framework na .NET Core](../core/porting/index.md)  

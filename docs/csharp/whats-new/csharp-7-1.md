@@ -2,17 +2,18 @@
 title: Co je nového v C# 7.1
 description: Přehled nových funkcí v C# 7.1.
 ms.date: 08/16/2017
-ms.openlocfilehash: 00baec45d7582d3ac12c7b0865241f5cd8159246
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 565db102284424f9d8f6fa04ec9c74b52c9da0e6
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728651"
 ---
 # <a name="whats-new-in-c-71"></a>Co je nového v C# 7.1
 
 C# 7.1 je první bod release to jazyka C#. Označuje vyšší verzi cadence pro jazyk. Můžete vytvořit nové funkce dříve, v ideálním případě při každé nové funkce je připraven. C# 7.1 přidá možnost konfigurace kompilátoru tak, aby odpovídaly zadaná verze jazyka. Která umožňuje oddělit rozhodnutí pro upgrade nástroje z rozhodnutí o upgrade jazykové verze.
 
-C# 7.1 přidá [výběr verze jazyka](#language-version-selection) konfigurační prvek, tři nové jazykové funkce a nové chování kompilátoru.
+C# 7.1 přidá [výběr verze jazyka](../language-reference/configure-language-version.md) konfigurační prvek, tři nové jazykové funkce a nové chování kompilátoru.
 
 Mezi nové jazykové funkce v této verzi jsou:
 
@@ -25,51 +26,7 @@ Mezi nové jazykové funkce v této verzi jsou:
 
 Nakonec kompilátor má dvě možnosti `/refout` a `/refonly` tuto kontrolu [odkazovat vytváření sestavení](#reference-assembly-generation).
 
-## <a name="language-version-selection"></a>Výběr verze jazyka
-
-Kompilátor jazyka C# podporuje C# 7.1 od verze Visual Studio 2017 verze 15.3 nebo .NET Core SDK 2.0. Ale 7.1 funkce jsou ve výchozím nastavení vypnuté. K zajištění funkcí, 7.1, budete muset změnit nastavení jazykové verze pro svůj projekt.
-
-V sadě Visual Studio, klikněte pravým tlačítkem na uzel projektu v Průzkumníku řešení a vyberte **vlastnosti**. Vyberte **sestavení** a vyberte **Upřesnit** tlačítko. V rozevírací nabídce, a vyberte **C# nejnovější podverzi (nejnovější)**, nebo na konkrétní verzi **C# 7.1** jak ukazuje následující obrázek. `latest` Hodnota znamená, že chcete používat nejnovější podverzi, do aktuálního počítače. `C# 7.1` Znamená, že chcete použít C# 7.1, i když jsou vydávány novější podverze.
-
-![Nastavení jazykové verze](./media/csharp-7-1/advanced-build-settings.png)
-
-Alternativně můžete upravit soubor "csproj" a přidat nebo upravit následující řádky:
-
-```xml
-<PropertyGroup>
-  <LangVersion>latest</LangVersion>
-</PropertyGroup>
-```
-
-> [!NOTE]
-> Pokud používáte Visual Studio IDE aktualizace souborů csproj, rozhraní IDE vytvoří samostatné uzly pro každou konfiguraci sestavení. Budete obvykle nastavíte hodnotu stejné ve všech konfigurací sestavení, ale je potřeba explicitně nastaven pro každou konfiguraci sestavení, nebo vyberte "Všechny konfigurace" při změně tohoto nastavení. V souboru csproj se zobrazí následující:
-
-```xml
-<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-  <LangVersion>latest</LangVersion>
-</PropertyGroup>
-
-<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-  <LangVersion>latest</LangVersion>
-</PropertyGroup>
-```
-
-Platná nastavení pro `LangVersion` element jsou:
-
-* `ISO-1`
-* `ISO-2`
-* `3`
-* `4`
-* `5`
-* `6`
-* `7`
-* `7.1`
-* `default`
-* `latest`
-
-Speciální řetězce `default` a `latest` odkazující na nejnovější verzi hlavní a podverze jazyk nainstalovaný v počítači sestavení v uvedeném pořadí.
-
-Toto nastavení oddělí instalaci nové verze sady SDK a nástroje ve vašem vývojovém prostředí z rozhodnete začlenit nové jazykové funkce v projektu. Nejnovější sady SDK a nástrojů můžete nainstalovat na počítači pro sestavení. Každý projekt, lze nakonfigurovat k využívání na konkrétní verzi jazyka pro jeho sestavení.
+Chcete-li použít nejnovější funkce ve verzi bod, je potřeba [konfigurace jazyková verze kompilátoru](../language-reference/configure-language-version.md) a vyberte verzi.
 
 ## <a name="async-main"></a>Asynchronní hlavní
 

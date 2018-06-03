@@ -8,11 +8,12 @@ helpviewer_keywords:
 - service contracts [WCF], synchronous operations
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
-ms.openlocfilehash: 6c464dc79e0f38b72f724fafcef59916d766e2d0
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 8f2d962f40f2b56b1d1dda68129f477e4277ae1d
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728349"
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>Synchronní a asynchronní operace
 Toto téma popisuje implementace a volání operace asynchronní služby.  
@@ -136,11 +137,21 @@ Function DoWork(ByVal data As String, ByRef inout As String, _out outonly As out
  Pokud chcete vytvořit asynchronní operaci, by se tyto dvě metody:  
   
 ```csharp  
-[OperationContract(AsyncPattern=true)]IAsyncResult BeginDoWork(string data,                           ref string inout,                           AsyncCallback callback,                           object state);int EndDoWork(ref string inout, out string outonly, IAsyncResult result);  
+[OperationContract(AsyncPattern=true)]
+IAsyncResult BeginDoWork(string data,
+                         ref string inout,
+                         AsyncCallback callback,
+                         object state);
+int EndDoWork(ref string inout, out string outonly, IAsyncResult result);  
 ```  
   
 ```vb  
-<OperationContract(AsyncPattern := True)>  _Function BeginDoWork(ByVal data As String, _                 ByRef inout As String, _                 ByVal callback As AsyncCallback, _                 ByVal state As Object) _As IAsyncResult Function EndDoWork(ByRef inout As String, _        ByRef outonly As String, _        ByVal result As IAsyncResult) _As Integer  
+<OperationContract(AsyncPattern := True)>
+Function BeginDoWork(ByVal data As String, _
+                     ByRef inout As String, _
+                     ByVal callback As AsyncCallback, _
+                     ByVal state As Object) As IAsyncResult
+Function EndDoWork(ByRef inout As String, ByRef outonly As String, ByVal result As IAsyncResult) As Integer  
 ```  
   
 > [!NOTE]

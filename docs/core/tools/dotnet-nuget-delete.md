@@ -3,13 +3,13 @@ title: příkaz - .NET Core rozhraní příkazového řádku odstranit nuget Dot
 description: Příkaz dotnet-nuget-delete Odstraní nebo unlists balíčku ze serveru.
 author: karann-msft
 ms.author: mairaw
-ms.date: 05/29/2018
-ms.openlocfilehash: a56ddaba72f8e1a76db810231e64993c657e908e
-ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
+ms.date: 06/01/2018
+ms.openlocfilehash: 1b58136d0bc04947f0a5baba320e5e6b3e45e2f1
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34697239"
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728411"
 ---
 # <a name="dotnet-nuget-delete"></a>odstranění nuget DotNet.
 
@@ -71,7 +71,7 @@ Vytiskne krátké nápovědy pro příkaz.
 
 Klíč rozhraní API pro server.
 
-` --no-service-endpoint` Není připojit "v2/api/packages" na adresu URL zdroje.
+`--no-service-endpoint` Není připojit "v2/api/balíček" na adresu URL zdroje.
 
 `--non-interactive`
 

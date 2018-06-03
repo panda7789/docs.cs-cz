@@ -5,19 +5,24 @@ author: mlacouture
 ms.author: johalex
 ms.date: 01/19/2018
 ms.custom: mvc
-ms.openlocfilehash: 578d42e5a0a11ae76410289142d47c8d65abe7aa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a842224a76962a9d6db820149a75f1255204e9b7
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728560"
 ---
 # <a name="net-core-additional-tools"></a>Další nástroje .NET core
 
 Tato část zkompiluje o seznam nástrojů, které podporují a rozšířit funkci .NET Core kromě [.NET Core rozhraní příkazového řádku (CLI)](..\tools\index.md) nástroje.
 
-## <a name="wcf-web-service-reference-toolwcf-web-service-reference-guidemd"></a>[Nástroj odkaz na službu WCF webu](wcf-web-service-reference-guide.md)
+## <a name="wcf-web-service-reference-toolwcf-web-service-reference-guidemd"></a>[Odkaz na službu WCF webové nástroje](wcf-web-service-reference-guide.md)
 
-Odkaz na službu WCF Web je poskytovatel připojené služby Visual Studio, který provedené v jeho debut [Visual Studio 2017 verze 15,5](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes#WCFTools). Tento nástroj získává metadata z webové služby v aktuálním řešení v umístění v síti, nebo ze souboru WSDL a vytvoří soubor kompatibilní zdroj .NET Core obsahující kód proxy serveru klienta Windows Communication Foundation (WCF), který můžete použít pro přístup k webu Služba.
+Odkaz webové služby WCF (Windows Communication Foundation) je poskytovatel připojené služby Visual Studio, který provedené v jeho debut [Visual Studio 2017 verze 15,5](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes#WCFTools). Tento nástroj získává metadata z webové služby v aktuálním řešení v umístění v síti, nebo ze souboru WSDL a generuje zdrojový soubor, který je kompatibilní s .NET Core, definování třídu proxy WCF pomocí metody, které můžete použít pro přístup k operace webové služby.
+
+## <a name="wcf-dotnet-svcutil-tooldotnet-svcutil-guidemd"></a>[Nástroj dotnet svcutil WCF](dotnet-svcutil-guide.md)
+
+Nástroj dotnet svcutil WCF (Windows Communication Foundation) je nástroj .NET Core rozhraní příkazového řádku, který získává metadata z webové služby v umístění v síti nebo ze souboru WSDL a generuje zdrojový soubor, který je kompatibilní s .NET Core, definování třídu proxy WCF pomocí metody používané pro přístup k operace webové služby. **Dotnet svcutil** nástroj je alternativní možnost [ **odkaz na službu WCF Web** ](/dotnet/core/additional-tools/wcf-web-service-reference-guide) Visual Studio připojené poskytovatele služeb, které první dodaný pomocí sady Visual Studio 2017 v15.5. **Dotnet svcutil** nástroj jako nástroj pro .NET Core rozhraní příkazového řádku, je k dispozici platformy Linux, systému macOS a systému Windows.
 
 ## <a name="xml-serializer-generatorxml-serializer-generatormd"></a>[XML Serializer Generator](xml-serializer-generator.md)
 

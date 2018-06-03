@@ -8,11 +8,12 @@ helpviewer_keywords:
 ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b75429d0de69c60e7c24551bf1d9218e74d0c5ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 31d14a8ef6a4b17eea1b9160e811bb92946d775b
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728638"
 ---
 # <a name="application-compatibility-in-the-net-framework"></a>Kompatibilita aplikací v rozhraní .NET Framework
 
@@ -25,7 +26,7 @@ Každá aplikace cílí na konkrétní verzi rozhraní .NET Framework, který m�
 * Určení cílové rozhraní v souboru projektu.
 * Použití <xref:System.Runtime.Versioning.TargetFrameworkAttribute> ke zdrojovému kódu.
 
-Když se používá novější verze, než jaké byla cílem, rozhraní .NET Framework použije quirked chování tak, aby napodoboval starší cílovou verzi. Jinými slovy aplikace bude spouštět na novější verzi rozhraní Framework, ale fungovat jako, pokud je spuštěn na starší verzi. Prostřednictvím tohoto modelu quirking jsou omezeny řadu problémy s kompatibilitou mezi verze rozhraní .NET Framework.
+Když se používá novější verze, než jaké byla cílem, rozhraní .NET Framework použije quirked chování tak, aby napodoboval starší cílovou verzi. Jinými slovy aplikace bude spouštět na novější verzi rozhraní Framework, ale fungovat jako, pokud je spuštěn na starší verzi. Prostřednictvím tohoto modelu quirking jsou omezeny řadu problémy s kompatibilitou mezi verze rozhraní .NET Framework. Verze rozhraní .NET Framework aplikace cílena určené aplikací cílovou verzi sady položku sestavení pro doménu aplikace, na kterém kód běží v. Všechny další sestavení načíst v této cílové domény aplikace této verze rozhraní .NET Framework. Například v případě spustitelný soubor, rozhraní cíle pro spustitelný soubor je režim kompatibility AppDomain všechna sestavení v tom, že budou spouštěny pod.
 
 ## <a name="runtime-changes"></a>Změny v modulu runtime
 

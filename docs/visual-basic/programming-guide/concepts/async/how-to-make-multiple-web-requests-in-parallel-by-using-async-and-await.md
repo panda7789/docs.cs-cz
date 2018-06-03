@@ -2,11 +2,12 @@
 title: 'Postupy: paralelní provádění vícenásobných webových dotazů pomocí modifikátoru Async a operátoru Await (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a894b99b-7cfd-4a38-adfb-20d24f986730
-ms.openlocfilehash: 1b98a0f29409fa49af1c9c8f7c91f2170981f7cc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4d4ccda6657dd4d889e8495fa000715c1f7a5ba6
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728440"
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-visual-basic"></a>Postupy: paralelní provádění vícenásobných webových dotazů pomocí modifikátoru Async a operátoru Await (Visual Basic)
 V asynchronní metody když vytváří se spustí úlohy. [Await](../../../../visual-basic/language-reference/operators/await-operator.md) operátor se použije pro úlohu v okamžiku v metodě kde zpracování nemůže pokračovat, dokud na dokončení úlohy. Úloha je často očekáváno, jakmile je vytvořen, jako ukazuje následující příklad.  
@@ -39,7 +40,7 @@ Dim result = Await myTask
   
  Další příklad, která se spouští ve stejnou dobu více úloh, najdete v části [postupy: rozšíření návodu asynchronních podle pomocí metody Task.WhenAll (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).  
   
- Si můžete stáhnout kód v tomto příkladu z [ukázky kódu vývojáře](http://go.microsoft.com/fwlink/?LinkId=254906).  
+ Si můžete stáhnout kód v tomto příkladu z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e).  
   
 ### <a name="to-set-up-the-project"></a>Vytvoření projektu  
   

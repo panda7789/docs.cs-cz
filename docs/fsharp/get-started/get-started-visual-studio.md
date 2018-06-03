@@ -2,11 +2,12 @@
 title: 'Začínáme s F # v sadě Visual Studio'
 description: 'Další informace o použití F # pomocí sady Visual Studio.'
 ms.date: 02/13/2017
-ms.openlocfilehash: d392e3a93d5b13206f654e35a266e9d9569942fc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 22fbe8086ec133605e1d9b4b28e524fe2ed8ac28
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728531"
 ---
 # <a name="get-started-with-f-in-visual-studio"></a>Začínáme s F # v sadě Visual Studio
 
@@ -72,63 +73,11 @@ Teď byste měli vidět následující vytisknout do okna konzoly, která sada V
 
 Blahopřejeme!  Jste vytvořili svůj první projekt F # v sadě Visual Studio, zapisovat že funkce F # vytisknout výsledky volání této funkce a spusťte projekt zobrazíte některé výsledky.
 
-## <a name="using-f-interactive"></a>Pomocí F # interaktivní
-
-Jedním z nejlepší funkce z Visual F # nástrojů v sadě Visual Studio je interaktivních okna F #.  Umožňuje odeslat kód prostřednictvím procesu, kde můžete volat tento kód a zobrazit výsledky interaktivně.
-
-Chcete-li začít používat ji, zvýrazněte `square` funkci definovanou v kódu.  V dalším kroku uložení **Alt** klíč a stiskněte klávesu **Enter**.  To spustí kód v okně interaktivní F #.  Měli byste vidět F # interaktivních okna zobrazují se v něm následující:
-
-```
->
-
-val square : x:int -> int
-
->
-```
-
-Zobrazí se stejným podpisem funkce pro `square` funkce, které jste předtím viděli při při přechodu myší nad funkce.  Protože `square` je nyní definována v F # interaktivní proces, můžete ji volat s různými hodnotami:
-
-```
-> square 12;;
-val it : int = 144
->square 13;;
-val it : int = 169
-```
-
-Tato funkce spustí, váže výsledek na nový název `it`a zobrazí typu a hodnoty `it`.  Všimněte si, že musí být ukončen každý řádek s `;;`.  Toto je, jak F # interaktivní zná dokončení volání funkce.  Můžete také definovat nové funkce v F # interaktivní:
-
-```
-> let isOdd x = x % 2 <> 0;;
-
-val isOdd : x:int -> bool
-
-> isOdd 12;;
-val it : bool = false
-```
-
-Výše definuje novou funkci, `isOdd`, které trvá `int` a kontroluje, zda se jedná o liché! Můžete volat této funkci můžete zjistit, co vrací s různými vstupy.  Můžete volat funkce v rámci volání funkce:
-
-```
-> isOdd (square 15);;
-val it : bool = true
-```
-
-Můžete také [operátor kanálu dopředného](../language-reference/symbol-and-operator-reference/index.md) do kanálu hodnotu do dvě funkce:
-
-```
-> 15 |> square |> isOdd;;
-val it : bool = true
-```
-
-Operátor kanálu dopředného a další, jsou popsané v dalších kurzech.
-
-Toto je pouze balíčku glimpse do co můžete dělat s F # interaktivní. Další informace, podívejte se na [interaktivní programování s F #](../tutorials/fsharp-interactive/index.md).
-
 ## <a name="next-steps"></a>Další kroky
 
 Pokud jste to ještě neudělali, podívejte se [prohlídka z F #](../tour.md), které zahrnuje některé základní funkce jazyka F #.  Bude vám poskytl přehled některých možností F # a zadejte ukázky dostatečným kódu, které můžete zkopírovat do sady Visual Studio a spustit.  Existují také některé skvělé externím prostředkům, můžete použít, showcased v [Průvodce F #](../index.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
  [Visual F#](index.md)  
  [Prohlídka jazyka F#](../tour.md)  
  [Referenční dokumentace jazyka F #](../language-reference/index.md)  

@@ -3,13 +3,13 @@ title: příkaz nabízené DotNet nuget - .NET Core rozhraní příkazového ř�
 description: Příkaz dotnet nuget nabízené nabízených oznámení balíček na server a vydává je.
 author: karann-msft
 ms.author: mairaw
-ms.date: 05/29/2018
-ms.openlocfilehash: c835b1b9d44b9ed12dc0ea4568414a83c926ae4f
-ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
+ms.date: 06/01/2018
+ms.openlocfilehash: 8a64f9cdc11d03bed82a132265c3b4e1de290807
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34696491"
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728573"
 ---
 # <a name="dotnet-nuget-push"></a>nabízená nuget DotNet.
 
@@ -77,7 +77,7 @@ Není push symboly (i pokud existuje).
 
 `--no-service-endpoint`
 
-Není připojit "v2/api/packages" na adresu URL zdroje.
+Není připojit "v2/api/balíček" na adresu URL zdroje.
 
 `-s|--source <SOURCE>`
 

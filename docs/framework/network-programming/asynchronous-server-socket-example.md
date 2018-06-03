@@ -12,11 +12,12 @@ ms.assetid: 13624cd3-f5c5-4950-8cda-31273b1fa6d1
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 9a8b7d4ef356c5d763f3ed90763bf74702938056
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9b770101e4295ea0c254905dd31f0e57527346fa
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728398"
 ---
 # <a name="asynchronous-server-socket-example"></a>Příklad soketu asynchronní serveru
 V následujícím příkladu programu vytvoří server, který přijímá požadavky na připojení od klientů. Server je vytvořené s asynchronní soketu a spuštění aplikace server není pozastaven, kdy čeká připojení z klienta. Aplikace obdrží řetězec z klienta, zobrazí řetězec v konzole a pak vrátí řetězec zpět do klienta. Řetězec z klienta musí obsahovat řetězec "\<EOF >" signál konec zprávy.  
@@ -51,9 +52,6 @@ Public Class AsynchronousSocketListener
     ' echo that data back to the connected client.  
     ' It then disconnects from the client and waits for another client.   
     Public Shared Sub Main()  
-        ' Data buffer for incoming data.  
-        Dim bytes() As Byte = New [Byte](1023) {}  
-  
         ' Establish the local endpoint for the socket.  
         Dim ipHostInfo As IPHostEntry = Dns.GetHostEntry(Dns.GetHostName())  
         Dim ipAddress As IPAddress = ipHostInfo.AddressList(0)  
@@ -173,9 +171,6 @@ public class AsynchronousSocketListener {
     }  
   
     public static void StartListening() {  
-        // Data buffer for incoming data.  
-        byte[] bytes = new Byte[1024];  
-  
         // Establish the local endpoint for the socket.  
         // The DNS name of the computer  
         // running the listener is "host.contoso.com".  
@@ -244,7 +239,7 @@ public class AsynchronousSocketListener {
         if (bytesRead > 0) {  
             // There  might be more data, so store the data received so far.  
             state.sb.Append(Encoding.ASCII.GetString(  
-                state.buffer,0,bytesRead));  
+                state.buffer, 0, bytesRead));  
   
             // Check for end-of-file tag. If it is not there, read   
             // more data.  
