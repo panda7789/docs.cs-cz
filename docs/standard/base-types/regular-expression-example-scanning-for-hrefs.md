@@ -15,11 +15,12 @@ helpviewer_keywords:
 ms.assetid: fae2c15b-7adf-4b15-b118-58eb3906994f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9df41a404c091bb76490d762b55580c36cf33f62
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b270559e9e73e18bebb29e36b815268d5426a940
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34728677"
 ---
 # <a name="regular-expression-example-scanning-for-hrefs"></a>Regulární výraz příklad: Vyhledávání atributů href
 Následující příklad prohledá vstupní řetězec a zobrazí všechny href = "..." a jejich umístění v řetězci.  
@@ -43,9 +44,9 @@ Následující příklad prohledá vstupní řetězec a zobrazí všechny href =
 |`\s*`|Porovná žádný nebo více prázdných znaků.|  
 |`=`|Odpovídat symbolem rovná se.|  
 |`\s*`|Porovná žádný nebo více prázdných znaků.|  
-|<code>(?:\["'\](?<1>\[^"'\]*)"&#124;(?<1>\S+))</code>|Shodovat s jedním z následujících akcí bez výsledek přiřazení k zaznamenané skupiny:<br /> <ul><li><p>Dvojité uvozovky nebo apostrof, za nímž následuje nula nebo více výskytů libovolného znaku než uvozovky nebo apostrof, za nímž následuje znak uvozovek nebo apostrof. Skupina s názvem `1` je součástí tohoto vzoru.</p></li><li><p>Jeden nebo více znaků prázdné znaky. Skupina s názvem `1` je součástí tohoto vzoru.</p></li></ul>|  
+|<code>(?:\["'\](?<1>\[^"'\]*)["']&#124;(?<1>\S+))</code>|Shodovat s jedním z následujících akcí bez výsledek přiřazení k zaznamenané skupiny:<br /> <ul><li><p>Dvojité uvozovky nebo apostrof, za nímž následuje nula nebo více výskytů libovolného znaku než uvozovky nebo apostrof, za nímž následuje znak uvozovek nebo apostrof. Skupina s názvem `1` je součástí tohoto vzoru.</p></li><li><p>Jeden nebo více znaků prázdné znaky. Skupina s názvem `1` je součástí tohoto vzoru.</p></li></ul>|  
 |`(?<1>[^"']*)`|Přiřadit nula nebo více výskytů libovolného znaku než uvozovky nebo apostrofu zachycující skupiny s názvem `1`.|  
-|`"(?<1>\S+)`|Přiřadit jeden nebo více znaků prázdné znaky zachycující skupiny s názvem `1`.|  
+|`(?<1>\S+)`|Přiřadit jeden nebo více znaků prázdné znaky zachycující skupiny s názvem `1`.|  
   
 ## <a name="match-result-class"></a>Porovnávání třídy výsledků  
  Výsledky hledání jsou uloženy v <xref:System.Text.RegularExpressions.Match> třídy, která poskytuje přístup ke všem dílčím řetězcům extrahovaným při hledání. Pamatuje také řetězec a regulární výraz, který používají, aby bylo možno zavolat <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metodu za účelem dalšího vyhledávání od kde skončilo poslední.  
