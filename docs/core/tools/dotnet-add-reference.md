@@ -5,27 +5,27 @@ author: mairaw
 ms.author: mairaw
 ms.date: 05/25/2018
 ms.openlocfilehash: 3398d4dc7bf70eaadcdd92269dbd3b784079c22d
-ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34696959"
 ---
-# <a name="dotnet-add-reference"></a><span data-ttu-id="20946-103">DotNet – přidání odkazu</span><span class="sxs-lookup"><span data-stu-id="20946-103">dotnet-add reference</span></span>
+# <a name="dotnet-add-reference"></a><span data-ttu-id="22160-103">DotNet – přidání odkazu</span><span class="sxs-lookup"><span data-stu-id="22160-103">dotnet-add reference</span></span>
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a><span data-ttu-id="20946-104">Název</span><span class="sxs-lookup"><span data-stu-id="20946-104">Name</span></span>
+## <a name="name"></a><span data-ttu-id="22160-104">Název</span><span class="sxs-lookup"><span data-stu-id="22160-104">Name</span></span>
 
-<span data-ttu-id="20946-105">`dotnet add reference` -Přidá odkazy na projekt na projekt (P2P).</span><span class="sxs-lookup"><span data-stu-id="20946-105">`dotnet add reference` - Adds project-to-project (P2P) references.</span></span>
+<span data-ttu-id="22160-105">`dotnet add reference` -Přidá odkazy na projekt na projekt (P2P).</span><span class="sxs-lookup"><span data-stu-id="22160-105">`dotnet add reference` - Adds project-to-project (P2P) references.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="20946-106">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="20946-106">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="22160-106">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="22160-106">Synopsis</span></span>
 
 `dotnet add [<PROJECT>] reference [-f|--framework] <PROJECT_REFERENCES> [-h|--help]`
 
-## <a name="description"></a><span data-ttu-id="20946-107">Popis</span><span class="sxs-lookup"><span data-stu-id="20946-107">Description</span></span>
+## <a name="description"></a><span data-ttu-id="22160-107">Popis</span><span class="sxs-lookup"><span data-stu-id="22160-107">Description</span></span>
 
-<span data-ttu-id="20946-108">`dotnet add reference` Příkaz poskytuje vhodnou možnost přidat odkazy na projekt na projekt.</span><span class="sxs-lookup"><span data-stu-id="20946-108">The `dotnet add reference` command provides a convenient option to add project references to a project.</span></span> <span data-ttu-id="20946-109">Po spuštění příkazu [ `<ProjectReference>` ](/visualstudio/msbuild/common-msbuild-project-items) prvky jsou přidány do souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="20946-109">After running the command, the [`<ProjectReference>`](/visualstudio/msbuild/common-msbuild-project-items) elements are added to the project file.</span></span>
+<span data-ttu-id="22160-108">`dotnet add reference` Příkaz poskytuje vhodnou možnost přidat odkazy na projekt na projekt.</span><span class="sxs-lookup"><span data-stu-id="22160-108">The `dotnet add reference` command provides a convenient option to add project references to a project.</span></span> <span data-ttu-id="22160-109">Po spuštění příkazu [ `<ProjectReference>` ](/visualstudio/msbuild/common-msbuild-project-items) prvky jsou přidány do souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="22160-109">After running the command, the [`<ProjectReference>`](/visualstudio/msbuild/common-msbuild-project-items) elements are added to the project file.</span></span>
 
 ```xml
 <ItemGroup>
@@ -35,36 +35,36 @@ ms.locfileid: "34696959"
 </ItemGroup>
 ```
 
-## <a name="arguments"></a><span data-ttu-id="20946-110">Arguments</span><span class="sxs-lookup"><span data-stu-id="20946-110">Arguments</span></span>
+## <a name="arguments"></a><span data-ttu-id="22160-110">Arguments</span><span class="sxs-lookup"><span data-stu-id="22160-110">Arguments</span></span>
 
 `PROJECT`
 
-<span data-ttu-id="20946-111">Určuje soubor projektu.</span><span class="sxs-lookup"><span data-stu-id="20946-111">Specifies the project file.</span></span> <span data-ttu-id="20946-112">Pokud není zadaný, hledá příkaz aktuální adresář pro jednu.</span><span class="sxs-lookup"><span data-stu-id="20946-112">If not specified, the command searches the current directory for one.</span></span>
+<span data-ttu-id="22160-111">Určuje soubor projektu.</span><span class="sxs-lookup"><span data-stu-id="22160-111">Specifies the project file.</span></span> <span data-ttu-id="22160-112">Pokud není zadaný, hledá příkaz aktuální adresář pro jednu.</span><span class="sxs-lookup"><span data-stu-id="22160-112">If not specified, the command searches the current directory for one.</span></span>
 
 `PROJECT_REFERENCES`
 
-<span data-ttu-id="20946-113">Chcete-li přidat odkazuje na projekt na projekt (P2P).</span><span class="sxs-lookup"><span data-stu-id="20946-113">Project-to-project (P2P) references to add.</span></span> <span data-ttu-id="20946-114">Zadejte jeden nebo více projektů.</span><span class="sxs-lookup"><span data-stu-id="20946-114">Specify one or more projects.</span></span> <span data-ttu-id="20946-115">[Vzory glob](https://en.wikipedia.org/wiki/Glob_(programming)) jsou podporovány v systémech UNIX/Linux.</span><span class="sxs-lookup"><span data-stu-id="20946-115">[Glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)) are supported on Unix/Linux-based systems.</span></span>
+<span data-ttu-id="22160-113">Chcete-li přidat odkazuje na projekt na projekt (P2P).</span><span class="sxs-lookup"><span data-stu-id="22160-113">Project-to-project (P2P) references to add.</span></span> <span data-ttu-id="22160-114">Zadejte jeden nebo více projektů.</span><span class="sxs-lookup"><span data-stu-id="22160-114">Specify one or more projects.</span></span> <span data-ttu-id="22160-115">[Vzory glob](https://en.wikipedia.org/wiki/Glob_(programming)) jsou podporovány v systémech UNIX/Linux.</span><span class="sxs-lookup"><span data-stu-id="22160-115">[Glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)) are supported on Unix/Linux-based systems.</span></span>
 
-## <a name="options"></a><span data-ttu-id="20946-116">Možnosti</span><span class="sxs-lookup"><span data-stu-id="20946-116">Options</span></span>
+## <a name="options"></a><span data-ttu-id="22160-116">Možnosti</span><span class="sxs-lookup"><span data-stu-id="22160-116">Options</span></span>
 
 `-h|--help`
 
-<span data-ttu-id="20946-117">Vytiskne krátké nápovědy pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="20946-117">Prints out a short help for the command.</span></span>
+<span data-ttu-id="22160-117">Vytiskne krátké nápovědy pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="22160-117">Prints out a short help for the command.</span></span>
 
 `-f|--framework <FRAMEWORK>`
 
-<span data-ttu-id="20946-118">Přidá odkazy na projekt jenom při cílení na konkrétní [framework](../../standard/frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="20946-118">Adds project references only when targeting a specific [framework](../../standard/frameworks.md).</span></span>
+<span data-ttu-id="22160-118">Přidá odkazy na projekt jenom při cílení na konkrétní [framework](../../standard/frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="22160-118">Adds project references only when targeting a specific [framework](../../standard/frameworks.md).</span></span>
 
-## <a name="examples"></a><span data-ttu-id="20946-119">Příklady</span><span class="sxs-lookup"><span data-stu-id="20946-119">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="22160-119">Příklady</span><span class="sxs-lookup"><span data-stu-id="22160-119">Examples</span></span>
 
-<span data-ttu-id="20946-120">Přidáte odkaz na projekt:</span><span class="sxs-lookup"><span data-stu-id="20946-120">Add a project reference:</span></span>
+<span data-ttu-id="22160-120">Přidáte odkaz na projekt:</span><span class="sxs-lookup"><span data-stu-id="22160-120">Add a project reference:</span></span>
 
 `dotnet add app/app.csproj reference lib/lib.csproj`
 
-<span data-ttu-id="20946-121">Přidání více odkazy na projekt na projekt v aktuálním adresáři:</span><span class="sxs-lookup"><span data-stu-id="20946-121">Add multiple project references to the project in the current directory:</span></span>
+<span data-ttu-id="22160-121">Přidání více odkazy na projekt na projekt v aktuálním adresáři:</span><span class="sxs-lookup"><span data-stu-id="22160-121">Add multiple project references to the project in the current directory:</span></span>
 
 `dotnet add reference lib1/lib1.csproj lib2/lib2.csproj`
 
-<span data-ttu-id="20946-122">Přidání více odkazů projektu pomocí vzoru expanze názvů v systému Linux nebo Unix:</span><span class="sxs-lookup"><span data-stu-id="20946-122">Add multiple project references using a globbing pattern on Linux/Unix:</span></span>
+<span data-ttu-id="22160-122">Přidání více odkazů projektu pomocí vzoru expanze názvů v systému Linux nebo Unix:</span><span class="sxs-lookup"><span data-stu-id="22160-122">Add multiple project references using a globbing pattern on Linux/Unix:</span></span>
 
 `dotnet add app/app.csproj reference **/*.csproj`

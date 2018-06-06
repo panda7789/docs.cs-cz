@@ -16,11 +16,11 @@ ms.openlocfilehash: 9b770101e4295ea0c254905dd31f0e57527346fa
 ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34728398"
 ---
-# <a name="asynchronous-server-socket-example"></a><span data-ttu-id="1b9d3-102">Příklad soketu asynchronní serveru</span><span class="sxs-lookup"><span data-stu-id="1b9d3-102">Asynchronous Server Socket Example</span></span>
-<span data-ttu-id="1b9d3-103">V následujícím příkladu programu vytvoří server, který přijímá požadavky na připojení od klientů.</span><span class="sxs-lookup"><span data-stu-id="1b9d3-103">The following example program creates a server that receives connection requests from clients.</span></span> <span data-ttu-id="1b9d3-104">Server je vytvořené s asynchronní soketu a spuštění aplikace server není pozastaven, kdy čeká připojení z klienta.</span><span class="sxs-lookup"><span data-stu-id="1b9d3-104">The server is built with an asynchronous socket, so execution of the server application is not suspended while it waits for a connection from a client.</span></span> <span data-ttu-id="1b9d3-105">Aplikace obdrží řetězec z klienta, zobrazí řetězec v konzole a pak vrátí řetězec zpět do klienta.</span><span class="sxs-lookup"><span data-stu-id="1b9d3-105">The application receives a string from the client, displays the string on the console, and then echoes the string back to the client.</span></span> <span data-ttu-id="1b9d3-106">Řetězec z klienta musí obsahovat řetězec "\<EOF >" signál konec zprávy.</span><span class="sxs-lookup"><span data-stu-id="1b9d3-106">The string from the client must contain the string "\<EOF>" to signal the end of the message.</span></span>  
+# <a name="asynchronous-server-socket-example"></a><span data-ttu-id="69445-102">Příklad soketu asynchronní serveru</span><span class="sxs-lookup"><span data-stu-id="69445-102">Asynchronous Server Socket Example</span></span>
+<span data-ttu-id="69445-103">V následujícím příkladu programu vytvoří server, který přijímá požadavky na připojení od klientů.</span><span class="sxs-lookup"><span data-stu-id="69445-103">The following example program creates a server that receives connection requests from clients.</span></span> <span data-ttu-id="69445-104">Server je vytvořené s asynchronní soketu a spuštění aplikace server není pozastaven, kdy čeká připojení z klienta.</span><span class="sxs-lookup"><span data-stu-id="69445-104">The server is built with an asynchronous socket, so execution of the server application is not suspended while it waits for a connection from a client.</span></span> <span data-ttu-id="69445-105">Aplikace obdrží řetězec z klienta, zobrazí řetězec v konzole a pak vrátí řetězec zpět do klienta.</span><span class="sxs-lookup"><span data-stu-id="69445-105">The application receives a string from the client, displays the string on the console, and then echoes the string back to the client.</span></span> <span data-ttu-id="69445-106">Řetězec z klienta musí obsahovat řetězec "\<EOF >" signál konec zprávy.</span><span class="sxs-lookup"><span data-stu-id="69445-106">The string from the client must contain the string "\<EOF>" to signal the end of the message.</span></span>  
   
 ```vb  
 Imports System  
@@ -292,7 +292,7 @@ public class AsynchronousSocketListener {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="1b9d3-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="1b9d3-107">See Also</span></span>  
- [<span data-ttu-id="1b9d3-108">Příklad asynchronního klientského soketu</span><span class="sxs-lookup"><span data-stu-id="1b9d3-108">Asynchronous Client Socket Example</span></span>](../../../docs/framework/network-programming/asynchronous-client-socket-example.md)  
- [<span data-ttu-id="1b9d3-109">Použití asynchronního serverového soketu</span><span class="sxs-lookup"><span data-stu-id="1b9d3-109">Using an Asynchronous Server Socket</span></span>](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
- [<span data-ttu-id="1b9d3-110">Příklady kódu soketu</span><span class="sxs-lookup"><span data-stu-id="1b9d3-110">Socket Code Examples</span></span>](../../../docs/framework/network-programming/socket-code-examples.md)
+## <a name="see-also"></a><span data-ttu-id="69445-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="69445-107">See Also</span></span>  
+ [<span data-ttu-id="69445-108">Příklad asynchronního klientského soketu</span><span class="sxs-lookup"><span data-stu-id="69445-108">Asynchronous Client Socket Example</span></span>](../../../docs/framework/network-programming/asynchronous-client-socket-example.md)  
+ [<span data-ttu-id="69445-109">Použití asynchronního serverového soketu</span><span class="sxs-lookup"><span data-stu-id="69445-109">Using an Asynchronous Server Socket</span></span>](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
+ [<span data-ttu-id="69445-110">Příklady kódu soketu</span><span class="sxs-lookup"><span data-stu-id="69445-110">Socket Code Examples</span></span>](../../../docs/framework/network-programming/socket-code-examples.md)
