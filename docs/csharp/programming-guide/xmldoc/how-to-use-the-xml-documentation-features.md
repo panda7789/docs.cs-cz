@@ -9,7 +9,7 @@ ms.openlocfilehash: b82f92cc034a13e8867cfb56866200101ab77b9b
 ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34728729"
 ---
 # <a name="how-to-use-the-xml-documentation-features"></a>Postupy: použití funkcí dokumentace XML

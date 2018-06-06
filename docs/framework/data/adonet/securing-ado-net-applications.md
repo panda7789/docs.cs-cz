@@ -6,7 +6,7 @@ ms.openlocfilehash: efe25082b4e4de9170179ebeff6a1dca8f67446c
 ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34728599"
 ---
 # <a name="securing-adonet-applications"></a>Zabezpečení aplikací ADO.NET

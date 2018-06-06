@@ -2,11 +2,12 @@
 title: Zápis zabezpečené dynamické SQL v systému SQL Server
 ms.date: 03/30/2017
 ms.assetid: df5512b0-c249-40d2-82f9-f9a2ce6665bc
-ms.openlocfilehash: 0dc372b4e5554623d51a4add9a43f33d4a320f18
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cbfbfd59d78cb5504679fd8ae78f79d0c180dc4d
+ms.sourcegitcommit: d8bf4976eafe3289275be3811e7cb721bfff7e1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753471"
 ---
 # <a name="writing-secure-dynamic-sql-in-sql-server"></a>Zápis zabezpečené dynamické SQL v systému SQL Server
 Injektáž SQL je proces, pomocí kterého uživatel se zlými úmysly zadá příkazy jazyka Transact-SQL místo platný vstup. Pokud vstup je předán přímo k serveru bez ověřování a aplikace nechtěně spustí kód vložený, se útoku může dojít k poškození nebo zničení data.  
@@ -63,8 +64,7 @@ Injektáž SQL je proces, pomocí kterého uživatel se zlými úmysly zadá př
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Uložené procedury](http://go.microsoft.com/fwlink/?LinkId=98233) a [Injektáž SQL](http://go.microsoft.com/fwlink/?LinkId=98234) v Online knihách serveru SQL|Témata popisují, jak vytvořit uložené procedury a jak funguje Injektáž SQL.|  
-|[Nové útoky zkrácení SQL a jak se vyhnout jejich](http://msdn.microsoft.com/msdnmag/issues/06/11/SQLSecurity/) v časopise MSDN.|Popisuje, jak lze omezit znaky a řetězce, Injektáž SQL a úpravy pomocí zkrácení útoky.|  
+|[Uložené procedury](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) a [Injektáž SQL](/sql/relational-databases/security/sql-injection) v Online knihách serveru SQL|Témata popisují, jak vytvořit uložené procedury a jak funguje Injektáž SQL.|  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  

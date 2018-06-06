@@ -6,10 +6,10 @@ ms.author: mairaw
 ms.date: 05/31/2018
 ms.technology: dotnet-standard
 ms.openlocfilehash: 4394bc77b499db1960d61bad5e828f77f1144c65
-ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34696881"
 ---
 # <a name="net-api-analyzer"></a>Analyzátor rozhraní API .NET

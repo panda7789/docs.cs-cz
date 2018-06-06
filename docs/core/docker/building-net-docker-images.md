@@ -7,10 +7,10 @@ ms.date: 11/06/2017
 ms.topic: tutorial
 ms.custom: mvc
 ms.openlocfilehash: d26bd102d30c48785196322b9631e568a5002135
-ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
-ms.translationtype: MT
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34697271"
 ---
 # <a name="building-docker-images-for-net-core-applications"></a>Vytváření Imagí Dockeru pro aplikace .NET Core

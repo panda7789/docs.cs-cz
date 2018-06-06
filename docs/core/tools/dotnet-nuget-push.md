@@ -8,7 +8,7 @@ ms.openlocfilehash: 8a64f9cdc11d03bed82a132265c3b4e1de290807
 ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34728573"
 ---
 # <a name="dotnet-nuget-push"></a>nabízená nuget DotNet.

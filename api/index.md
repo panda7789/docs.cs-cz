@@ -11,7 +11,7 @@ ms.openlocfilehash: c5253472b987496b39f48af2e89e902c8b2a2aea
 ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34728703"
 ---
 # <a name="net-api-browser"></a>Prohlížeč rozhraní API pro .NET

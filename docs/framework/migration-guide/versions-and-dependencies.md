@@ -11,7 +11,7 @@ ms.openlocfilehash: 7c2c3ca038508b63533a7e17f6ceb6ebf1ad6842
 ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34728612"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>Verze a závislosti rozhraní .NET Framework

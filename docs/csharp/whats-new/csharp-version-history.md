@@ -4,10 +4,10 @@ description: Co vzhledu jazyk líbí v nejstarších verzích, a jak vyvinul od?
 author: erikdietrich
 ms.date: 09/20/2017
 ms.openlocfilehash: e659f2438e9785a02f7016e49b78015ad46b9133
-ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34696972"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C# #

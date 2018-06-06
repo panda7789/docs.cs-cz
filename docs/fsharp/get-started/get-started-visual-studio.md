@@ -6,7 +6,7 @@ ms.openlocfilehash: 22fbe8086ec133605e1d9b4b28e524fe2ed8ac28
 ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34728531"
 ---
 # <a name="get-started-with-f-in-visual-studio"></a>Začínáme s F # v sadě Visual Studio

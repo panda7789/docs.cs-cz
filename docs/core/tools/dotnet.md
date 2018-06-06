@@ -3,13 +3,13 @@ title: příkaz DotNet - .NET Core rozhraní příkazového řádku
 description: Další informace o příkazu dotnet (obecný ovladač pro rozhraní .NET Core rozhraní příkazového řádku nástroje) a jeho použití.
 author: mairaw
 ms.author: mairaw
-ms.date: 05/30/2018
-ms.openlocfilehash: 4087cbc666bb837e6048695a2ebbd6f4821b528a
-ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
-ms.translationtype: MT
+ms.date: 06/04/2018
+ms.openlocfilehash: 6e9f37dbbf94d56266a7b424601845d4429b4a04
+ms.sourcegitcommit: d8bf4976eafe3289275be3811e7cb721bfff7e1e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34696404"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753536"
 ---
 # <a name="dotnet-command"></a>příkaz DotNet.
 
@@ -261,13 +261,13 @@ Příkaz | Funkce
 
 Od verze rozhraní .NET Core SDK 2.1.300, několik nástrojů, které byly k dispozici pouze na jednotlivých projektů za použití `DotnetCliToolReference` jsou nyní k dispozici jako součást .NET Core SDK. Mezi tyto nástroje patří:
 
-| Nástroj                                    | Funkce                                                     |
-| --------------------------------------- | ------------------------------------------------------------ |
-| dev certifikátů                               | Vytváří a spravuje certifikáty vývoj.                |
-| [EF](/ef/core/miscellaneous/cli/dotnet) | Nástroje příkazového řádku Entity Framework Core.                    |
-| ukládání do mezipaměti SQL                               | Nástroje příkazového řádku systému SQL Server mezipaměti.                         |
-| uživatel-tajné klíče                            | Spravuje uživatele vývoj tajných klíčů.                            |
-| Sledování                                   | Spustí soubor sledovacího procesu, který spouští příkaz změna souborů. |
+| Nástroj                                              | Funkce                                                     |
+| ------------------------------------------------- | ------------------------------------------------------------ |
+| dev certifikátů                                         | Vytváří a spravuje certifikáty vývoj.                |
+| [EF](/ef/core/miscellaneous/cli/dotnet)           | Nástroje příkazového řádku Entity Framework Core.                    |
+| ukládání do mezipaměti SQL                                         | Nástroje příkazového řádku systému SQL Server mezipaměti.                         |
+| [uživatel-tajné klíče](/aspnet/core/security/app-secrets) | Spravuje uživatele vývoj tajných klíčů.                            |
+| [Sledování](/aspnet/core/tutorials/dotnet-watch)      | Spustí soubor sledovacího procesu, který spouští příkaz změna souborů. |
 
 Další informace o nástroji pro každé provedení `dotnet <tool-name> --help`.
 

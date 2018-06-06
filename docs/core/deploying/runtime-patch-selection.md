@@ -5,10 +5,10 @@ author: jralexander
 ms.author: kdollard
 ms.date: 05/31/2018
 ms.openlocfilehash: 40d28e81e2ac1b27e7fd89e16d2d906a080fd18b
-ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
+ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34697249"
 ---
 # <a name="self-contained-deployment-runtime-roll-forward"></a>Samostatná nasazení runtime dopředné posunutí

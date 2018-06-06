@@ -9,7 +9,7 @@ ms.openlocfilehash: a842224a76962a9d6db820149a75f1255204e9b7
 ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34728560"
 ---
 # <a name="net-core-additional-tools"></a>Další nástroje .NET core

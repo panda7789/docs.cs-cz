@@ -2,16 +2,17 @@
 title: 'Postupy: Úprava dokumentu systému Office Open XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 1cefd7f5-8e39-44c4-869c-f8021538a777
-ms.openlocfilehash: 97e754f37580af990b1aaa64f389de5cbce91d60
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8d4ecdf89606190eed16b5374a5e43421d1260b7
+ms.sourcegitcommit: d8bf4976eafe3289275be3811e7cb721bfff7e1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753390"
 ---
 # <a name="how-to-modify-an-office-open-xml-document-visual-basic"></a>Postupy: Úprava dokumentu systému Office Open XML (Visual Basic)
 Toto téma představuje příklad, který otevře dokument Office Open XML, upraví se a uloží ho.  
   
- Další informace o Office Open XML, najdete v části [www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573).  
+ Další informace o Office Open XML, najdete v části [Tomáš prázdné Blog](http://www.ericwhite.com).  
   
 ## <a name="example"></a>Příklad  
  Tento příklad vyhledá první element odstavce do dokumentu. Načte text z odstavce a pak odstranění veškerého textu spustí v odstavci. Vytvoří nový text spuštění, který se skládá z první text odstavce, který byl převeden na velká písmena. Poté serializuje změněné XML do balíčku Open XML a zavře.  

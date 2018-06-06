@@ -8,7 +8,7 @@ ms.openlocfilehash: 1b58136d0bc04947f0a5baba320e5e6b3e45e2f1
 ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34728411"
 ---
 # <a name="dotnet-nuget-delete"></a>odstranění nuget DotNet.

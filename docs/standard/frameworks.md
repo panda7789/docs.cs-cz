@@ -10,7 +10,7 @@ ms.openlocfilehash: 346eece8fdb391fd62b369db6ef65964fcd6e67a
 ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34728313"
 ---
 # <a name="target-frameworks"></a>Cílové rozhraní
