@@ -12,11 +12,12 @@ helpviewer_keywords:
 - deferred execution
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
-ms.openlocfilehash: ae59cb4d6b812ba956ce55723e034f381db14aa1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7e6d299bafff2a5a34a8f0942ba6dc9c25fcdd83
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805734"
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Představení technologie LINQ v jazyce Visual Basic
 Language-Integrated Query (LINQ) přidá možnosti dotazu jazyka Visual Basic a poskytuje jednoduché a výkonné možnosti při práci s všechny typy dat. Místo odesílání dotazu na databázi zpracovat nebo práci s syntaxe různých dotazu pro každý typ dat, které hledáte, představuje LINQ dotazů v rámci jazyka Visual Basic. Použije jednotná syntaxe bez ohledu na typ dat:  
@@ -189,7 +190,7 @@ Language-Integrated Query (LINQ) přidá možnosti dotazu jazyka Visual Basic a 
  [Postupy: přiřazení uložené procedury k provedení aktualizací, vložení a odstranění (Návrhář relací objektů)](http://msdn.microsoft.com/library/e88224ab-ff61-4a3a-b6b8-6f3694546cac)  
   
 ## <a name="featured-book-chapters"></a>Doporučené kapitoly knihy  
- [Kapitoly 17: LINQ](http://go.microsoft.com/fwlink/?LinkId=195277) v [programování Visual Basic 2008](http://go.microsoft.com/fwlink/?LinkId=195383)  
+ [Kapitoly 17: LINQ](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652502(v=orm.10)) v [programování Visual Basic 2008](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652504(v=orm.10))  
   
 ## <a name="see-also"></a>Viz také  
  [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  

@@ -13,11 +13,12 @@ helpviewer_keywords:
 - commanding [WPF]
 - CommandManager [WPF]
 ms.assetid: bc208dfe-367d-426a-99de-52b7e7511e81
-ms.openlocfilehash: 0d426d8cf174a61c724e97b5e7af5c1428679716
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0801b3d2a0e34c1ac28569a164e140010ba36ab7
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805669"
 ---
 # <a name="commanding-overview"></a>Přehled příkazů
 <a name="introduction"></a> Tvorba příkazů je mechanismus vstupní v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] která poskytuje vstup zpracování více sémantického úrovni, než zařízení vstup. Příklady příkazů **kopie**, **Vyjmout**, a **vložení** nalézt operace v mnoha aplikacích.  
@@ -180,7 +181,7 @@ ms.lasthandoff: 05/04/2018
 ## <a name="creating-custom-commands"></a>Vytváření vlastních příkazů  
  Pokud se příkazy ve třídách knihovny příkaz nevyhovuje vašim potřebám, můžete vytvořit vlastní příkazy.  Existují dva způsoby vytvoření vlastního příkazu.  První je spuštění od základů a implementovat <xref:System.Windows.Input.ICommand> rozhraní.  Druhý způsob a častější přístup, je vytvoření <xref:System.Windows.Input.RoutedCommand> nebo <xref:System.Windows.Input.RoutedUICommand>.  
   
- Pro příklad vytvoření vlastní <xref:System.Windows.Input.RoutedCommand>, najdete v části [vytvořit vlastní vzorek RoutedCommand](http://go.microsoft.com/fwlink/?LinkID=159980).  
+ Pro příklad vytvoření vlastní <xref:System.Windows.Input.RoutedCommand>, najdete v části [vytvořit vlastní vzorek RoutedCommand](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Input.RoutedCommand>  
@@ -191,4 +192,4 @@ ms.lasthandoff: 05/04/2018
  [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
  [Implementace rozhraní ICommandSource](../../../../docs/framework/wpf/advanced/how-to-implement-icommandsource.md)  
  [Postupy: přidání příkazu do MenuItem](http://msdn.microsoft.com/library/013d68a0-5373-4a68-bd91-5de574307370)  
- [Vytvořit vlastní RoutedCommand vzorek](http://go.microsoft.com/fwlink/?LinkID=159980)
+ [Vytvořit vlastní RoutedCommand vzorek](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand)

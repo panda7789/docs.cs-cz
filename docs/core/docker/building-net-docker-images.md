@@ -6,12 +6,12 @@ ms.author: johalex
 ms.date: 11/06/2017
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: d26bd102d30c48785196322b9631e568a5002135
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
-ms.translationtype: HT
+ms.openlocfilehash: ad143b16689a7d2d858dbadc92b5099f651548cc
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34697271"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805630"
 ---
 # <a name="building-docker-images-for-net-core-applications"></a>Vytváření Imagí Dockeru pro aplikace .NET Core
 
@@ -58,7 +58,7 @@ Když se více aplikací používat běžné bitové kopie na stejném počíta�
 
 K dosažení výše uvedené cíle, poskytujeme variant bitové kopie v rámci [ `microsoft/dotnet` ](https://hub.docker.com/r/microsoft/dotnet/).
 
-* `microsoft/dotnet:<version>-sdk`(`microsoft/dotnet:2.0.0-sdk`) Tato bitová kopie obsahuje .NET Core SDK, která zahrnuje .NET Core a nástroje příkazového řádku (CLI). Tuto bitovou kopii se mapuje **vývoj scénář**. Můžete použít tuto bitovou kopii pro místní vývoj, ladění a testování částí. Tuto bitovou kopii lze také použít pro vaše **sestavení** scénáře. Pomocí `microsoft/dotnet:sdk` vždy obsahuje nejnovější verzi.
+* `microsoft/dotnet:<version>-sdk`(`microsoft/dotnet:2.1-sdk`) Tato bitová kopie obsahuje .NET Core SDK, která zahrnuje .NET Core a nástroje příkazového řádku (CLI). Tuto bitovou kopii se mapuje **vývoj scénář**. Můžete použít tuto bitovou kopii pro místní vývoj, ladění a testování částí. Tuto bitovou kopii lze také použít pro vaše **sestavení** scénáře. Pomocí `microsoft/dotnet:sdk` vždy obsahuje nejnovější verzi.
 
 > [!TIP]
 > Pokud si nejste jistí o vašim potřebám, kterou chcete použít `microsoft/dotnet:<version>-sdk` bitové kopie. Jako "de facto" bitovou kopii, je určený pro použití jako throw tokeny kontejneru (připojit zdrojový kód a spusťte kontejner a spusťte aplikaci) a jako základní bitovou kopii k vytvoření jiných obrázků z.
@@ -80,9 +80,9 @@ Nejnovější verze jednotlivých variant:
 
 ## <a name="samples-to-explore"></a>Ukázky a prozkoumejte
 
-* [Tato ukázka ASP.NET Core Docker](https://github.com/dotnet/dotnet-docker-samples/tree/master/aspnetapp) ukazuje osvědčených postupů vzor pro vytváření imagí Dockeru pro ASP.NET Core aplikace pro produkční prostředí. Ukázka funguje s kontejnery Linux a Windows.
+* [Tato ukázka ASP.NET Core Docker](https://github.com/dotnet/dotnet-docker/tree/master/samples/aspnetapp) ukazuje osvědčených postupů vzor pro vytváření imagí Dockeru pro ASP.NET Core aplikace pro produkční prostředí. Ukázka funguje s kontejnery Linux a Windows.
 
-* Tento příklad .NET Core Docker znázorňuje osvědčených postupů vzor [vytváření imagí Dockeru pro aplikace .NET Core pro produkční prostředí.](https://github.com/dotnet/dotnet-docker-samples/tree/master/dotnetapp-prod)
+* Tento příklad .NET Core Docker znázorňuje osvědčených postupů vzor [vytváření imagí Dockeru pro aplikace .NET Core pro produkční prostředí.](https://github.com/dotnet/dotnet-docker/tree/master/samples/dotnetapp)
 
 ## <a name="your-first-aspnet-core-docker-app"></a>První aplikace ASP.NET Core Docker
 
@@ -102,9 +102,9 @@ Použije [Docker více fáze sestavení funkce](https://docs.docker.com/engine/u
 
 Sestavení a spuštění, nainstalujte následující položky:
 
-#### <a name="net-core-20-sdk"></a>Základní rozhraní .NET 2.0 SDK
+#### <a name="net-core-21-sdk"></a>.NET core 2.1 SDK
 
-* Nainstalujte [.NET Core SDK 2.0](https://www.microsoft.com/net/core).
+* Nainstalujte [.NET Core SDK 2.1](https://www.microsoft.com/net/core).
 
 * Pokud jste to ještě neudělali, nainstalujte editor vaše oblíbené kódu.
 
@@ -113,7 +113,7 @@ Sestavení a spuštění, nainstalujte následující položky:
 
 #### <a name="installing-docker-client"></a>Instalace klienta Docker
 
-Nainstalujte [Docker 17.06](https://docs.docker.com/release-notes/docker-ce/) nebo novější Docker klienta.
+Nainstalujte [Docker 18.03](https://docs.docker.com/release-notes/docker-ce/) nebo novější Docker klienta.
 
 Klient Docker může být nainstalován v:
 
@@ -137,22 +137,26 @@ Klient Docker může být nainstalován v:
 
 ### <a name="getting-the-sample-application"></a>Získávání ukázkové aplikace
 
-Nejjednodušší způsob, jak získat ukázce je klonováním [ukázky úložiště](https://github.com/dotnet/dotnet-docker-samples) s gitem, pomocí následujících pokynů: 
+Nejjednodušší způsob, jak získat ukázce je klonováním [úložiště .NET Core Docker](https://github.com/dotnet/dotnet-docker) s gitem, pomocí následujících pokynů: 
 
 ```console
-git clone https://github.com/dotnet/dotnet-docker-samples/
+git clone https://github.com/dotnet/dotnet-docker
 ```
 
-Můžete také stáhnout úložiště (je malý) jako zip z ukázky úložiště .NET Core Docker.
+Můžete také stáhnout úložiště (je malý) jako zip z úložiště .NET Core Docker.
 
 ### <a name="run-the-aspnet-app-locally"></a>Místní spuštění aplikace ASP.NET
 
 Jako referenční bod před jsme containerize aplikace, nejprve spustíte aplikaci místně.
 
-Můžete sestavit a spustit aplikaci místně s .NET Core SDK 2.0 pomocí následujících příkazů (pokyny předpokládají kořenovém adresáři úložiště):
+Můžete sestavit a spustit aplikaci místně pomocí .NET SDK 2.1 základní pomocí následujících příkazů (pokyny předpokládají kořenovém adresáři úložiště):
 
 ```console
-cd aspnetapp
+cd dotnet-docker
+cd samples
+cd aspnetapp // solution scope where the dockerfile is located
+cd aspnetapp // project scope
+
 dotnet run
 ```
 
@@ -163,7 +167,10 @@ Po spuštění aplikace, navštivte **http://localhost:5000** ve webovém prohl�
 Můžete sestavit a spustit ukázku v Docker použití kontejnerů Linux pomocí následujících příkazů (pokyny předpokládají kořenovém adresáři úložiště):
 
 ```console
-cd aspnetapp
+cd dotnet-docker
+cd samples
+cd aspnetapp // solution scope where the dockerfile is located
+
 docker build -t aspnetapp .
 docker run -it --rm -p 5000:80 --name aspnetcore_sample aspnetapp
 ```
@@ -178,7 +185,10 @@ Po spuštění aplikace, navštivte **http://localhost:5000** ve webovém prohl�
 Můžete sestavit a spustit ukázku v Docker použití Windows kontejnerů pomocí následujících příkazů (pokyny předpokládají kořenovém adresáři úložiště):
 
 ```console
-cd aspnetapp
+cd dotnet-docker
+cd samples
+cd aspnetapp // solution scope where the dockerfile is located
+
 docker build -t aspnetapp .
 docker run -it --rm --name aspnetcore_sample aspnetapp
 ```
@@ -236,10 +246,10 @@ dotnet published/aspnetapp.dll
 
 ### <a name="docker-images-used-in-this-sample"></a>Docker obrázků použitých v této ukázce
 
-V této ukázce se používají na následujících obrázcích Docker
+V této ukázce soubor docker se používají následující imagí Dockeru.
 
-* `microsoft/aspnetcore-build:2.0`
-* `microsoft/aspnetcore:2.0`
+* `microsoft/dotnet:2.1-sdk`
+* `microsoft/dotnet:2.1-aspnetcore-runtime`
 
 Blahopřejeme! máte právě:
 > [!div class="checklist"]

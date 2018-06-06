@@ -7,11 +7,12 @@ helpviewer_keywords:
 - Await operator [Visual Basic]
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
-ms.openlocfilehash: b24b637969ced9b30644abda022db086dc91c1e3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8e1462c7e0097bb2f04c6833a1bb279611b24133
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805507"
 ---
 # <a name="await-operator-visual-basic"></a>Await – operátor (Visual Basic)
 Můžete použít `Await` operátor a operand ve výrazu asynchronní metody nebo lambda pozastavit provádění metody až do dokončení awaited úloh. Úloha reprezentuje probíhající práce.  
@@ -42,7 +43,7 @@ End Function
 ```  
   
 > [!IMPORTANT]
->  Úplný příklad najdete v tématu [návod: přístup k webu pomocí modifikátoru Async a Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Si můžete stáhnout ukázkový z [ukázky kódu vývojáře](http://go.microsoft.com/fwlink/?LinkID=255191&clcid=0x409) na webu společnosti Microsoft. Příkladem je v AsyncWalkthrough_HttpClient projektu.  
+>  Úplný příklad najdete v tématu [návod: přístup k webu pomocí modifikátoru Async a Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Si můžete stáhnout ukázkový z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) na webu společnosti Microsoft. Příkladem je v AsyncWalkthrough_HttpClient projektu.  
   
  Pokud `Await` se použije na výsledek volání metody, která vrátí `Task(Of TResult)`, typ `Await` TResult je výraz. Pokud `Await` se použije na výsledek volání metody, která vrátí `Task`, `Await` výraz nevrací hodnotu. Následující příklad ukazuje rozdíl.  
   

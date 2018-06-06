@@ -5,11 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-ms.openlocfilehash: a4876d3b794282852b364f58cc84b58546567d80
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 629d08b60330125a7bb491a58499b5e2bc7d2091
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805682"
 ---
 # <a name="connection-strings-and-configuration-files"></a>Připojovací řetězce a konfigurační soubory
 Vložení připojovacích řetězců v kódu aplikace může vést k ohrožení zabezpečení a problémy při údržbě. Nezašifrované připojovací řetězce zkompilovat do zdrojového kódu aplikace lze zobrazit pomocí [Ildasm.exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nástroj. Navíc pokud se připojovací řetězec někdy změní, musí zopakovat vaší aplikace. Z těchto důvodů doporučujeme ukládání připojovacích řetězců v konfiguračním souboru aplikace.  
@@ -135,8 +136,8 @@ Vložení připojovacích řetězců v kódu aplikace může vést k ohrožení 
   
 |Zprostředkovatel|Popis|  
 |--------------|-----------------|  
-|<!--zz<xref:System.Configuration.RSAProtectedConfigurationProvider>-->`System.Configuration.RSAProtectedConfigurationProvider`|K šifrování a dešifrování dat používá algoritmus šifrování RSA. Algoritmus RSA lze použít pro šifrování pomocí veřejného klíče a digitální podpisy. Je také známé jako "veřejný klíč" nebo asymetrické šifrování protože aktivuje dva různé klíče. Můžete použít [ASP.NET IIS Registration Tool (Aspnet_regiis.exe)](http://msdn.microsoft.com/library/6491c41e-e2b0-481f-9863-db3614d5f96b) k šifrování oddílů v souboru Web.config a správu šifrovacích klíčů. ASP.NET dešifruje konfigurační soubor při zpracování souboru. Identita aplikace ASP.NET musí mít přístup pro čtení k šifrovací klíč, který se používá k šifrování a dešifrování šifrovaných oddílů.|  
-|<!--zz<xref:System.Configuration.DPAPIProtectedConfigurationProvider>-->`System.Configuration.DPAPIProtectedConfigurationProvider`|Rozhraní Windows Data Protection API (DPAPI) používá k šifrování konfiguračních oddílů. Pomocí předdefinovaných kryptografických služeb systému Windows a mohou být konfigurovány pro konkrétní počítač nebo konkrétního uživatele účtu ochranu. Je užitečné pro několik aplikací na stejném serveru, který potřebujete sdílet informace specifické pro počítač ochrany. Uživatelská účet ochrany lze použít s služby, které běží s specifická identita uživatele, jako je například sdíleném hostitelském prostředí. Každá aplikace kompatibilní se samostatnou identitu, která omezuje přístup k prostředkům, například soubory a databáze.|  
+|<xref:System.Configuration.RsaProtectedConfigurationProvider>|K šifrování a dešifrování dat používá algoritmus šifrování RSA. Algoritmus RSA lze použít pro šifrování pomocí veřejného klíče a digitální podpisy. Je také známé jako "veřejný klíč" nebo asymetrické šifrování protože aktivuje dva různé klíče. Můžete použít [ASP.NET IIS Registration Tool (Aspnet_regiis.exe)](http://msdn.microsoft.com/library/6491c41e-e2b0-481f-9863-db3614d5f96b) k šifrování oddílů v souboru Web.config a správu šifrovacích klíčů. ASP.NET dešifruje konfigurační soubor při zpracování souboru. Identita aplikace ASP.NET musí mít přístup pro čtení k šifrovací klíč, který se používá k šifrování a dešifrování šifrovaných oddílů.|  
+|<xref:System.Configuration.DpapiProtectedConfigurationProvider>|Rozhraní Windows Data Protection API (DPAPI) používá k šifrování konfiguračních oddílů. Pomocí předdefinovaných kryptografických služeb systému Windows a mohou být konfigurovány pro konkrétní počítač nebo konkrétního uživatele účtu ochranu. Je užitečné pro několik aplikací na stejném serveru, který potřebujete sdílet informace specifické pro počítač ochrany. Uživatelská účet ochrany lze použít s služby, které běží s specifická identita uživatele, jako je například sdíleném hostitelském prostředí. Každá aplikace kompatibilní se samostatnou identitu, která omezuje přístup k prostředkům, například soubory a databáze.|  
   
  Oba poskytovatelé nabízejí silné šifrování dat. Ale pokud máte v úmyslu použít stejný soubor šifrované konfigurace na více serverech, jako jsou webové farmy, jenom `RsaProtectedConfigurationProvider` umožňuje exportovat šifrovací klíče používá k šifrování dat a importovat je na jiný server. Další informace najdete v tématu [import a export chráněné konfigurace RSA klíč kontejnery](http://msdn.microsoft.com/library/f3022b39-f17f-48c1-b067-025eab0ce8bc).  
   

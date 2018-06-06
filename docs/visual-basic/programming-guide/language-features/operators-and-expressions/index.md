@@ -10,11 +10,12 @@ helpviewer_keywords:
 - operands
 - expressions [Visual Basic]
 ms.assetid: b86f3131-94ee-448f-96cd-79611e028b26
-ms.openlocfilehash: 06397cf05fc4da977cfecb8e412f12766a2a342d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a0f6d026714f8e933dc75dbb7c3a5e6e8e1bd795
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805445"
 ---
 # <a name="operators-and-expressions-in-visual-basic"></a>Operátory a výrazy v jazyce Visual Basic
 *Operátor* je element kódu, který provede operaci na jeden nebo více elementy kódu, které mají hodnoty. Například prvky hodnotu proměnné, konstanty, literály, vlastnosti, vrátí z `Function` a `Operator` procedury a výrazy.  
@@ -61,7 +62,7 @@ ms.lasthandoff: 05/04/2018
   
  V předchozím příkladu, Visual Basic provádí operace ve výrazu na pravé straně operátoru přiřazení (`=`), potom přiřadí výsledná hodnota proměnné `x` na levé straně. Neexistuje žádné praktické omezení počtu operátory, které lze spojit do výrazu, ale k pochopení [operátorů v jazyce Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md) je nutné zajistit, že dostanete očekáváte, že výsledky.  
   
- Další informace a příklady naleznete v tématu [operátor přetížení Visual Basic 2005](http://go.microsoft.com/fwlink/?LinkId=101703).  
+ Další informace a příklady naleznete v tématu [operátor přetížení Visual Basic 2005](https://msdn.microsoft.com/library/ms379613(v=vs.80).aspx).  
   
 ## <a name="see-also"></a>Viz také  
  [Operátory](../../../../visual-basic/language-reference/operators/index.md)  

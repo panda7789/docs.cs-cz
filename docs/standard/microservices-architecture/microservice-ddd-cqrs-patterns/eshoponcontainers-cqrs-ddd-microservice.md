@@ -4,17 +4,18 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 6be8b52f42e3e37ff03e561af45c46f4dd283d9e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fa26aa86e09f7a5d390336e460fa0272f76e17a4
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805471"
 ---
 # <a name="applying-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>Použití CQRS a CQS přístupů DDD mikroslužbu v eShopOnContainers
 
 Návrh řazení mikroslužbu v eShopOnContainers referenční aplikace je založena na CQRS zásady. Ale používá nejjednodušší přístup, který je právě oddělení dotazy z příkazů a pomocí stejné databáze pro obě akce.
 
-Podstatu tyto vzorce a zde bodem důležité je, že dotazy jsou idempotent: bez ohledu na to, kolikrát dotaz systém, stavu systému, že nedojde ke změně můžete i použít datový model různých "čtení" než logice transakcí "zápisy" model domény, i když řazení mikroslužeb používá stejnou databázi. Toto je proto jednodušší přístup CQRS.
+Podstatu tyto vzorce a zde bodem důležité je, že dotazy jsou idempotent: bez ohledu na to, kolikrát dotaz systém, nedojde ke změně stavu tohoto systému. Můžete i použít datový model různých "čtení" než logice transakcí "zapíše" modelu domény, i když řazení mikroslužeb používá stejnou databázi. Toto je proto jednodušší přístup CQRS.
 
 Na druhé straně příkazy, které aktivují transakce a aktualizace dat, změňte stav v systému. Pomocí příkazů, budete muset pečlivě, kdy se zabývají složitost a proměnlivých obchodní pravidla. To je případě, kdy chcete použít techniky DDD tak, aby měl lépe Modelovaný systému.
 
@@ -46,7 +47,7 @@ Existuje jenom jedna aplikace architektura: architektura systému nebo začátku
 -   **Gregu Young. CQS vs. CQRS**
     [*http://codebetter.com/gregyoung/2009/08/13/command-query-separation/*](http://codebetter.com/gregyoung/2009/08/13/command-query-separation/)
 
--   **Gregu Young. Dokumenty CQRS**
+-   **Gregu Young. CQRS dokumenty**
     [*https://cqrs.files.wordpress.com/2010/11/cqrs\_documents.pdf*](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf)
 
 -   **Gregu Young. CQRS, úkolů na základě uživatelská rozhraní a zdroje událostí**

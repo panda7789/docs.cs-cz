@@ -4,12 +4,12 @@ description: Další informace o příkazu dotnet (obecný ovladač pro rozhran�
 author: mairaw
 ms.author: mairaw
 ms.date: 06/04/2018
-ms.openlocfilehash: 6e9f37dbbf94d56266a7b424601845d4429b4a04
-ms.sourcegitcommit: d8bf4976eafe3289275be3811e7cb721bfff7e1e
-ms.translationtype: HT
+ms.openlocfilehash: 788dc746705f9328683019ab3ad9836204a1ea63
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753536"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805656"
 ---
 # <a name="dotnet-command"></a>příkaz DotNet.
 
@@ -248,7 +248,7 @@ Příkaz | Funkce
 
 ### <a name="global-tools-commands"></a>Globální příkazy nástroje
 
-[.NET core globální nástroje](global-tools.md) jsou k dispozici strating s .NET Core SDK 2.1.300:
+[.NET core globální nástroje](global-tools.md) jsou dostupné od verze rozhraní .NET Core SDK 2.1.300:
 
 Příkaz | Funkce
 --- | ---

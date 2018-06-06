@@ -4,11 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 083d2a8c6a0d1649f8bfb2c21a92fb43381fe9ad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eb6d412ee91ab8d2c97a4917f23ee914e3fb9068
+ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34805565"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>Implementace úlohy na pozadí v mikroslužeb s IHostedService a BackgroundService – třída
 
@@ -26,7 +27,7 @@ Všimněte si rozdílu mezi `WebHost` a `Host`. A `WebHost` (základní třída 
 
 A `Host` (základní třída implementace `IHost`), ale je něco v rozhraní .NET Core 2.1 nového. V podstatě `Host` umožňuje mít podobné infrastrukturu než máte s `WebHost` (vkládání závislostí, hostovaných služeb atd.), ale v takovém případě stačí chcete mít jednoduché a světlejší proces jako hostitel, s nic související s MVC , Webové rozhraní API nebo HTTP funkce serveru.
 
-Proto můžete vybrat a buď vytvořit specializované hostitelský proces s IHost pro zpracování hostované služby a nic jiného, takové mikroslužbu, jenom pro hostování `IHostedServices`, nebo můžete alternatevely rozšířit existující ASP.NET Core `WebHost` , jako je například stávající aplikace webového rozhraní API ASP.NET Core nebo MVC. 
+Proto můžete vybrat a buď vytvořit specializované hostitelský proces s IHost pro zpracování hostované služby a nic jiného, takové mikroslužbu, jenom pro hostování `IHostedServices`, nebo můžete případně rozšířit existující ASP.NET Core `WebHost` , jako je například stávající aplikace webového rozhraní API ASP.NET Core nebo MVC. 
 
 Každý přístup má výhody a nevýhody podle potřeby firmy a škálovatelnost. Dolní řádek je v podstatě, pokud vaše úlohy na pozadí nemají co dělat s byste měli používat protokol HTTP (IWebHost) a IHost, pokud je k dispozici v rozhraní .NET Core 2.1.
 
@@ -99,7 +100,7 @@ Jako vývojář je zodpovědná za zpracování akce zastavení nebo vašim slu�
 
 Můžete ihned začít a vytvořit vlastní hostovanou službu třída od začátku a implementovat `IHostedService`, jako je třeba provést při použití rozhraní .NET 2.0 jádra. 
 
-Ale vzhledem k tomu, že většina úlohy na pozadí bude mít podobné potřeby správy zrušení tokenů a dalších tipical operací, .NET Core 2.1 bude poskytovat velmi praktické abstraktní základní třída, kterou můžete odvozena od, s názvem BackgroundService.
+Ale vzhledem k tomu, že většina úlohy na pozadí bude mít podobné potřeby správy zrušení tokenů a dalších typických operací, .NET Core 2.1 bude poskytovat velmi praktické abstraktní základní třída, kterou můžete odvozena od, s názvem BackgroundService.
 
 Třídy poskytuje hlavní práce potřebné k nastavení úlohy na pozadí. Všimněte si, že tato třída, vrátí se v knihovně .NET Core 2.1, nemusíte ho zapsat.
 
@@ -193,7 +194,7 @@ public class GracePeriodManagerService : BackgroundService
             {
                 _logger.LogDebug($"GracePeriod task doing background work.");
 
-                // This eShopOnContainers method is quering a database table 
+                // This eShopOnContainers method is querying a database table 
                 // and publishing events into the Event Bus (RabbitMS / ServiceBus)
                 CheckConfirmedGracePeriodOrders();
 
@@ -211,7 +212,7 @@ public class GracePeriodManagerService : BackgroundService
 }
 ```
 
-V tomto konkrétním případě pro eShopOnContainers je prováděna metodu aplikace, která je quering databázové tabulky hledá řadí s konkrétním stavem a při použití změn, publikování události integrace přes sběrnici událostí (dole, může to být pomocí RabbitMQ nebo Azure Service Bus). 
+V tomto konkrétním případě pro eShopOnContainers je prováděna metodu aplikace, který se dotazuje tabulku databáze, hledá příkazy se určitý stav a při použití změn, publikování události integrace přes sběrnici událostí (dole, může to být pomocí RabbitMQ nebo Azure Service Bus). 
 
 Samozřejmě může spustit jakékoli jiné obchodní úlohy na pozadí, místo toho.
 
