@@ -2,11 +2,12 @@
 title: 'Prohlídka F #'
 description: 'Zkontrolujte některé z klíčových funkcích služby programovací jazyk v této ukázky s ukázky kódu F #.'
 ms.date: 02/28/2018
-ms.openlocfilehash: 2ce251b90d5c202996e0b1673e8f7f378a38af5f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 63c38d59376a148c439482fcf47488fc72b7b8aa
+ms.sourcegitcommit: d8bf4976eafe3289275be3811e7cb721bfff7e1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753484"
 ---
 # <a name="tour-of-f"></a>Prohlídka F # #
 
@@ -54,11 +55,11 @@ Je důležité si uvědomit, že protože `struct` řazených kolekcí členů j
 
 ## <a name="pipelines-and-composition"></a>Zřetězením příkazů a sestavení
 
-Přesměrováním operátory (`|>`, `<|`, `||>`, `<||`, `|||>`, `<|||`) a složení operátory (`>>` a `<<`) jsou používány při zpracování dat v jazyce F #.  Tyto operátory jsou funkce, které umožňují flexibilně navázat "kanály" funkcí.  V následujícím příkladu se provede jak může využít výhod těchto operátorů k vytvoření jednoduché funkční kanálu.
+Například prostřednictvím kanálu operátory `|>` jsou používány při zpracování dat v jazyce F #. Tyto operátory jsou funkce, které umožňují flexibilně stanovit "kanály" funkcí. V následujícím příkladu se provede jak můžete využít výhod těchto operátorů k vytvoření jednoduché funkční kanál:
 
-[!code-fsharp[Pipelines](../../samples/snippets/fsharp/tour.fs#L227-L300)]
+[!code-fsharp[Pipelines](../../samples/snippets/fsharp/tour.fs#L227-L282)]
 
-Ukázka výše provedené použití mnoha funkcí jazyka F #, včetně seznamu zpracování funkce, prvotřídní funkce a [částečné aplikace](language-reference/functions/index.md#partial-application-of-arguments).  I když se může stát poněkud pokročilé hluboké znalosti tyto koncepty, je nutné vymazat jak snadno funkce slouží ke zpracování dat, při vytváření kanálů.
+V předchozím příkladu provedené použití mnoha funkcí jazyka F #, včetně seznamu zpracování funkce, prvotřídní funkce a [částečné aplikace](language-reference/functions/index.md#partial-application-of-arguments). I když se může stát poněkud pokročilé hluboké znalosti tyto koncepty, je nutné vymazat jak snadno funkce slouží ke zpracování dat, při vytváření kanálů.
 
 ## <a name="lists-arrays-and-sequences"></a>Pořadí, seznamy a pole
 
