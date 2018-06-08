@@ -216,7 +216,7 @@
               topicHref: /dotnet/framework/performance/index
             - name: Dynamické programování v rozhraní .NET Framework
               tocHref: /dotnet/framework/reflection-and-codedom/
-              topicHref: /dotnet/framework/framework/reflection-and-codedom/index
+              topicHref: /dotnet/framework/reflection-and-codedom/index
             - name: Prostředky v aplikacích klasické pracovní plochy
               tocHref: /dotnet/framework/resources/
               topicHref: /dotnet/framework/resources/index
