@@ -3,11 +3,12 @@ title: Obecné vzory pro delegáti
 description: Další informace o obecné vzory pro použití delegátů ve vašem kódu předejdete silné párování mezi vaší součásti.
 ms.date: 06/20/2016
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
-ms.openlocfilehash: b9762841656aa362589d01ed011407aeedfe4a20
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: 20d55a1aba345b962c506bbc3f82248a817923ea
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34827017"
 ---
 # <a name="common-patterns-for-delegates"></a>Obecné vzory pro delegáti
 
@@ -53,32 +54,15 @@ V tomto návrhu může být primární protokolu součásti nevirtuálních, i z
 
 Začněme malé: počáteční implementace přijmout nové zprávy a zapsat je pomocí všechny připojené delegáta. Můžete začít s jeden delegáta, který zapíše zpráv do konzoly.
 
-```csharp
-public static class Logger
-{
-    public static Action<string> WriteMessage;
-    
-    public static void LogMessage(string msg)
-    {
-        WriteMessage(msg);
-    }
-}
-```
+[!code-csharp[LoggerImplementation](../../samples/csharp/delegates-and-events/Logger.cs#FirstImplementation "A first Logger implementation.")]
 
 Statická třída výše je nejjednodušší věcí, které může fungovat. Je potřeba zapsat jediná implementace pro metody, která zapisuje zpráv do konzoly: 
 
-```csharp
-public static void LogToConsole(string message)
-{
-    Console.Error.WriteLine(message);
-}
-```
+[!code-csharp[LogToConsole](../../samples/csharp/delegates-and-events/Program.cs#LogToConsole "A Console logger.")]
 
 Nakonec můžete spojit delegát připojením k WriteMessage delegáta deklarovat v protokolovacího nástroje:
 
-```csharp
-Logger.WriteMessage += LogToConsole;
-```
+[!code-csharp[ConnectDelegate](../../samples/csharp/delegates-and-events/Program.cs#ConnectDelegate "Connect to the delegate")]
 
 ## <a name="practices"></a>Postupy
 
@@ -94,49 +78,13 @@ Můžeme zpřístupnit tento první verzi bit robustnější a poté spusťte vy
 
 V dalším kroku přidejme několik argumenty, které mají `LogMessage()` metoda tak, aby třídě protokolu vytváří více strukturovaných zprávy:
 
-```csharp
-// Logger implementation two
-public enum Severity
-{
-    Verbose,
-    Trace,
-    Information,
-    Warning,
-    Error,
-    Critical
-}
-
-public static class Logger
-{
-    public static Action<string> WriteMessage;
-    
-    public static void LogMessage(Severity s, string component, string msg)
-    {
-        var outputMsg = $"{DateTime.Now}\t{s}\t{component}\t{msg}";
-        WriteMessage(outputMsg);
-    }
-}
-```
+[!code-csharp[Severity](../../samples/csharp/delegates-and-events/Logger.cs#Severity "Define severities")]
+[!code-csharp[NextLogger](../../samples/csharp/delegates-and-events/Logger.cs#LoggerTwo "Refine the Logger")]
 
 V dalším kroku provedeme pomocí této `Severity` výstupu argument k filtrování zprávy, které se odesílají do protokolu. 
 
-```csharp
-public static class Logger
-{
-    public static Action<string> WriteMessage;
-    
-    public static Severity LogLevel {get;set;} = Severity.Warning;
-    
-    public static void LogMessage(Severity s, string component, string msg)
-    {
-        if (s < LogLevel)
-            return;
-            
-        var outputMsg = $"{DateTime.Now}\t{s}\t{component}\t{msg}";
-        WriteMessage(outputMsg);
-    }
-}
-```
+[!code-csharp[FinalLogger](../../samples/csharp/delegates-and-events/Logger.cs#LoggerFinal "Finish the Logger")]
+
 ## <a name="practices"></a>Postupy
 
 Přidali jste nové funkce protokolování infrastruktury. Vzhledem k tomu, že komponenta protokolovacího nástroje je velmi volně vázány do jakéhokoli výstupu mechanismu, mohou být přidány tyto nové funkce bez dopadu na kód implementace delegáta protokolovacího nástroje.
@@ -149,41 +97,12 @@ Součásti protokolu pochází podél také. Umožňuje přidat jeden další mo
 
 Tady je tento soubor na základě protokoly:
 
-```csharp
-public class FileLogger
-{
-    private readonly string logPath;
-    public FileLogger(string path)
-    {
-        logPath = path;
-        Logger.WriteMessage += LogMessage;
-    }
-    
-    public void DetachLog() => Logger.WriteMessage -= LogMessage;
+[!code-csharp[FileLogger](../../samples/csharp/delegates-and-events/FileLogger.cs#FileLogger "Log to files")]
 
-    // make sure this can't throw.
-    private void LogMessage(string msg)
-    {
-        try {
-            using (var log = File.AppendText(logPath))
-            {
-                log.WriteLine(msg);
-                log.Flush();
-            }
-        } catch (Exception e)
-        {
-            // Hmm. Not sure what to do.
-            // Logging is failing...
-        }
-    }
-}
-```
 
 Po vytvoření této třídy, můžete vytvořit jeho instanci a jeho LogMessage – metoda přiloží k komponenta protokolovacího nástroje:
 
-```csharp
-var file = new FileLogger("log.txt");
-```
+[!code-csharp[FileLogger](../../samples/csharp/delegates-and-events/Program.cs#FileLogger "Log to files")]
 
 Tyto dva se vzájemně nevylučují. Můžete připojit obě metody protokolu a generovat zpráv do konzoly a soubor:
 

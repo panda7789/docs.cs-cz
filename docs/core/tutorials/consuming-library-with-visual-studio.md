@@ -1,21 +1,22 @@
 ---
-title: Použití knihovny tříd s .NET Core v Visual Studio 2017
+title: Použití rozhraní .NET standardní knihovny v Visual Studio 2017
 description: Zjistěte, jak volat členy v knihovny tříd s Visual Studio 2017.
 author: BillWagner
 ms.author: wiwagn
-ms.date: 08/07/2017
+ms.date: 06/05/2018
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 0a7002f2a5dba5a5aad32a83a43a933cd2cc5722
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1e71001ee8595741119293304190fd9ef4251148
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34827310"
 ---
-# <a name="consuming-a-class-library-with-net-core-in-visual-studio-2017"></a>Použití knihovny tříd s .NET Core v Visual Studio 2017
+# <a name="consuming-a-net-standard-library-in-visual-studio-2017"></a>Použití rozhraní .NET standardní knihovny v Visual Studio 2017
 
-Po vytvoření knihovny tříd podle kroků v [vytvoření knihovny tříd jazyka C# s .NET Core ve Visual Studio 2017](./library-with-visual-studio.md) nebo [vytvoření knihovny tříd jazyka Visual Basic s .NET Core ve Visual Studio 2017](vb-library-with-visual-studio.md), testování v [testování knihovny tříd s .NET Core ve Visual Studio 2017](testing-library-with-visual-studio.md), a vytvořili verzi knihovny, je dalším krokem a zpřístupněte ji volající. Můžete provést dvěma způsoby:
+Po vytvoření knihovny tříd rozhraní .NET standardní podle kroků v [vytvoření knihovny tříd jazyka C# s .NET Core ve Visual Studio 2017](./library-with-visual-studio.md) nebo [vytvoření knihovny tříd jazyka Visual Basic s .NET Core v Visual Studio 2017 ](vb-library-with-visual-studio.md), otestovat ji v [testování knihovny tříd s .NET Core ve Visual Studio 2017](testing-library-with-visual-studio.md), a vytvořili verzi knihovny, je dalším krokem a zpřístupněte ji volající. Můžete provést dvěma způsoby:
 
 * Pokud knihovny použije jedno řešení (například pokud je součástí jedné velké aplikace), můžete ho jako projekt zahrnout ve vašem řešení.
 
@@ -48,7 +49,7 @@ Stejně jako jste zahrnuli testy jednotek ve stejném řešení jako knihovny t�
 
    [!CODE-csharp[UsingClassLib#1](../../../samples/snippets/csharp/getting_started/with_visual_studio_2017/showcase.cs)]
 
-   Kód používá [Console.WindowHeight](xref:System.Console.WindowHeight) vlastnosti k určení počtu řádků v okně konzoly. Vždy, když [Console.CursorTop](xref:System.Console.CursorTop) vlastnost je větší než nebo rovná počtu řádků v okně konzoly, kód vymaže v okně konzoly a zobrazí zprávu pro uživatele.
+   Kód používá `row` proměnná udržovat počet řádků dat zapsaných do okna konzoly. Vždy, když je větší než nebo roven 25, kód vymaže v okně konzoly a zobrazí zprávu pro uživatele.
 
    Program zobrazí výzvu k zadání řetězec. Označuje, zda text začíná velké písmeno. Pokud uživatel stiskne klávesu Enter bez zadávání řetězec, ukončí aplikaci a zavření okna konzoly.
 
@@ -78,7 +79,7 @@ Stejně jako jste zahrnuli testy jednotek ve stejném řešení jako knihovny t�
 
     [!CODE-vb[UsingClassLib#1](../../../samples/snippets/core/tutorials/vb-library-with-visual-studio/showcase.vb)]
 
-   Kód používá [Console.WindowHeight](xref:System.Console.WindowHeight) vlastnosti k určení počtu řádků v okně konzoly. Vždy, když [Console.CursorTop](xref:System.Console.CursorTop) vlastnost je větší než nebo rovná počtu řádků v okně konzoly, kód vymaže v okně konzoly a zobrazí zprávu pro uživatele.
+   Kód používá `row` proměnná udržovat počet řádků dat zapsaných do okna konzoly. Vždy, když je větší než nebo roven 25, kód vymaže v okně konzoly a zobrazí zprávu pro uživatele.
 
    Program zobrazí výzvu k zadání řetězec. Označuje, zda text začíná velké písmeno. Pokud uživatel stiskne klávesu Enter bez zadávání řetězec, ukončí aplikaci a zavření okna konzoly.
 

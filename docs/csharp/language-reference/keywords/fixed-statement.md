@@ -6,11 +6,12 @@ f1_keywords:
 - fixed
 helpviewer_keywords:
 - fixed keyword [C#]
-ms.openlocfilehash: e26e7e7f15dd48cf029d5f67bf5ef0de3e19b7bb
-ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
+ms.openlocfilehash: 28c8e9bd078e07a185f541214aa5b5ff79018ff5
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34826991"
 ---
 # <a name="fixed-statement-c-reference"></a>fixed – příkaz (Referenční dokumentace jazyka C#)
 
@@ -24,11 +25,11 @@ Ukazatel lze inicializovat pomocí pole, řetězec, vyrovnávací paměti pevné
 
 [!code-csharp[Initializing fixed size buffers](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#2)]
 
-Od verze jazyka C# 7.3, `fixed` příkaz funguje na další typy nad rámec pole řetězce, vyrovnávací paměti pevné velikosti nebo nespravované proměnné. Žádný typ, který implementuje metodu s názvem `DangerousGetPinnableReference` lze připojit. `DangerousGetPinnableReference` Musí vrátit `ref` nespravovaný typ proměnné. Podívejte se na téma na [typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md) Další informace. Typy .NET <xref:System.Span%601?displayProperty=nameWithType> a <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> byla zavedená v rozhraní .NET 2.0 základní zkontrolujte pomocí tohoto vzoru a může být připnutý. To je ukázáno v následujícím příkladu:
+Od verze jazyka C# 7.3, `fixed` příkaz funguje na další typy nad rámec pole řetězce, vyrovnávací paměti pevné velikosti nebo nespravované proměnné. Žádný typ, který implementuje metodu s názvem `GetPinnableReference` lze připojit. `GetPinnableReference` Musí vrátit `ref` nespravovaný typ proměnné. Podívejte se na téma na [typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md) Další informace. Typy .NET <xref:System.Span%601?displayProperty=nameWithType> a <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> byla zavedená v rozhraní .NET 2.0 základní zkontrolujte pomocí tohoto vzoru a může být připnutý. To je ukázáno v následujícím příkladu:
 
 [!code-csharp[Accessing fixed memory](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#FixedSpan)]
 
-Pokud vytváříte typy, které by se měly podílet v tomto vzoru, přečtěte si téma <xref:System.Span%601.DangerousGetPinnableReference?displayProperty=nameWithType> příklad implementace vzoru.
+Pokud vytváříte typy, které by se měly podílet v tomto vzoru, přečtěte si téma <xref:System.Span%601.GetPinnableReference?displayProperty=nameWithType> příklad implementace vzoru.
 
 Více ukazatele jde inicializovat na jeden příkaz Pokud jsou všechny stejného typu:
 

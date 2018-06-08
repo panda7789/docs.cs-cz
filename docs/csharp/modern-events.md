@@ -3,11 +3,12 @@ title: Vzor aktualizované .NET Core událostí
 description: Zjistěte, jak vzor událostí .NET Core umožňuje flexibilitu s zpětné kompatibility a jak implementovat zpracování událostí bezpečné s async odběratele.
 ms.date: 06/20/2016
 ms.assetid: 9aa627c3-3222-4094-9ca8-7e88e1071e06
-ms.openlocfilehash: d0ad85479265041d895039d6c72f1f9909ea5fa8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8f28c3ea9d8cf3e8fc68953c79def5744eb5abe4
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34827177"
 ---
 # <a name="the-updated-net-core-event-pattern"></a>Vzor aktualizované .NET Core událostí
 
@@ -20,24 +21,9 @@ Zda metoda musí používat reflexe kvůli implementaci jeho funkce pro všechny
 Ve skutečnosti, můžete změny definice `FileFoundArgs` a `SearchDirectoryArgs` tak, aby není odvozena od `EventArgs`.
 Tento program bude fungovat stejně.
 
-Můžete také změnit `SearchDirectoryArgs` do struktury, pokud jste provedli také jeden další změny:
+Můžete také změnit `SearchDirectoryArgs` do struktury, pokud jste provedli jednu další změny:
 
-```csharp  
-internal struct SearchDirectoryArgs  
-{  
-    internal string CurrentSearchDirectory { get; }  
-    internal int TotalDirs { get; }  
-    internal int CompletedDirs { get; }  
-    
-    internal SearchDirectoryArgs(string dir, int totalDirs, 
-        int completedDirs) : this()  
-    {  
-        CurrentSearchDirectory = dir;  
-        TotalDirs = totalDirs;  
-        CompletedDirs = completedDirs;  
-    }  
-}  
-```   
+[!code-csharp[SearchDir](../../samples/csharp/events/Program.cs#DeclareSearchEvent "Define search directory event")]
 
 Další změnou je volat výchozí konstruktor před vstupem konstruktor, který inicializuje všechna pole. Bez přidání by pravidla jazyka C# hlásit, že vlastnosti přistupuje předtím, než byla přiřazena.
 

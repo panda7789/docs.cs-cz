@@ -1,7 +1,7 @@
 ---
 title: Přehled vlastností závislostí
 description: Vlastnost, kterou je zajištěna WPF vlastnost systému se označuje jako vlastnost závislosti. Tento přehled popisuje vlastnosti systému WPF a možností vlastnost závislosti.
-ms.date: 03/30/2017
+ms.date: 06/06/2018
 dev_langs:
 - csharp
 - vb
@@ -14,36 +14,37 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 196e858c52c06c96d652209e86039bfcc81a785a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 36370eb54e75df9bf2bf8eb9e073bbbee995e287
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34827004"
 ---
 # <a name="dependency-properties-overview"></a>Přehled vlastností závislostí
 
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje sadu služeb, které slouží k rozšíření funkcí [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnost. Souhrnně, tyto služby jsou obvykle označují jako [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému. Vlastnosti, které je založeno [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému se označuje jako vlastnost závislosti. Tento přehled popisuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému a možností vlastnost závislosti. To zahrnuje jak používat existující vlastností závislostí v jazyce XAML a v kódu. Tento přehled také zavádí specializované aspektů vlastností závislostí, jako je například metadata vlastnosti závislosti a jak vytvořit vlastní vlastnost závislosti v rámci vlastní třídy.
+Windows Presentation Foundation (WPF) poskytuje sadu služeb, které slouží k rozšíření funkcí typ [vlastnost](../../../standard/base-types/common-type-system.md#Properties). Souhrnně tyto služby jsou obvykle označuje jako vlastnost systém WPF. Vlastnost, kterou je zajištěna WPF vlastnost systému se označuje jako vlastnost závislosti. Tento přehled popisuje vlastnosti systému WPF a možností vlastnost závislosti. To zahrnuje jak používat existující vlastností závislostí v jazyce XAML a v kódu. Tento přehled také zavádí specializované aspektů vlastností závislostí, jako je například metadata vlastnosti závislosti a jak vytvořit vlastní vlastnost závislosti v rámci vlastní třídy.
 
 ## <a name="prerequisites"></a>Požadavky
-Toto téma předpokládá, že máte některé základní znalosti o [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] a objektově orientované programování. Chcete-li v následujících příkladech v tomto tématu byste měli také porozumět [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a vědět, jak napsat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Další informace najdete v tématu [návod: Můj první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).  
+Toto téma předpokládá, že máte některé základní znalosti o systém typů rozhraní .NET a objektově orientované programování. Aby bylo možné provést v příkladech v tomto tématu, by také pochopit XAML a vědět, jak psát aplikace WPF. Další informace najdete v tématu [návod: Můj první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).  
   
 ## <a name="dependency-properties-and-clr-properties"></a>Závislost vlastnosti a vlastnosti CLR
- V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], vlastnosti jsou obvykle zveřejněné jako [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnosti. Na základní úrovni může komunikovat přímo s těmito vlastnostmi a nikdy vědět, že jsou implementované jako vlastnost závislosti. Ale měli byste se seznámit s některé nebo všechny funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnosti systému, tak, aby můžete využít výhod těchto funkcí.
+ V grafickém subsystému WPF, vlastnosti jsou obvykle zveřejněné jako standardní .NET [vlastnosti](../../../standard/base-types/common-type-system.md#Properties). Na základní úrovni může komunikovat přímo s těmito vlastnostmi a nikdy vědět, že jsou implementované jako vlastnost závislosti. Však měli byste se seznámit s některé nebo všechny funkce WPF vlastnosti systému, tak, aby můžete využít výhod těchto funkcí.
 
 Účelem vlastností závislostí je poskytnout způsob, jak výpočtu hodnoty vlastnosti, na základě hodnoty ostatní vstupy. Tyto další vstupy mohou zahrnovat vlastnosti systému, například motivy a uživatelské předvolby, vlastnost za běhu rozhodnutí mechanismy, například datové vazby a animací nebo scénářů, více použití šablony, například prostředky a styly nebo známé hodnoty prostřednictvím vztahů nadřazenosti a podřízenosti s jinými prvky ve stromové struktuře elementu. Kromě toho lze vlastnost závislosti implementovat k zajištění nezávislý ověřování, výchozí hodnoty, zpětná volání, které sledují změny dalších vlastností a systém, který může coerce hodnot vlastností na základě informací o potenciálně modulu runtime. Odvozené třídy můžete také změnit některé specifické vlastnosti existující vlastnost přepsání metadat vlastností závislostí, nikoli skutečné použití existující vlastnosti nebo vytvořit nové vlastnosti přepsání.
 
 Odkaz na sady SDK můžete identifikovat vlastností, které je vlastnost závislosti přítomností části informace o vlastnosti závislosti na stránce spravovaný odkaz pro danou vlastnost. Informace o vlastnosti závislosti část obsahuje odkaz <xref:System.Windows.DependencyProperty> identifikátor pole pro tuto vlastnost závislosti a také obsahuje seznam možností metadat, které jsou nastavené pro tuto vlastnost, informace o přepsání na třídě a další podrobnosti.
 
 ## <a name="dependency-properties-back-clr-properties"></a>Vlastnosti závislosti zpět vlastnosti CLR
-Vlastnosti závislosti a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému rozšířit funkce vlastnost o typ, který zálohuje vlastnosti, jako alternativní implementace pro standardní vzor zálohování vlastnost s soukromé pole. Název tohoto typu je <xref:System.Windows.DependencyProperty>. Další důležité typ, který definuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systém <xref:System.Windows.DependencyObject>. <xref:System.Windows.DependencyObject> definuje základní třídu, která můžete zaregistrovat a vlastní vlastnost závislosti.
+Vlastností závislostí a systém vlastnost WPF rozšířit funkce vlastnost o typ, který zálohuje vlastnosti, jako alternativní implementace pro standardní vzor zálohování vlastnost s soukromé pole. Název tohoto typu je <xref:System.Windows.DependencyProperty>. Je důležité typ, který definuje vlastnost systému WPF <xref:System.Windows.DependencyObject>. <xref:System.Windows.DependencyObject> definuje základní třídu, která můžete zaregistrovat a vlastní vlastnost závislosti.
 
-Následuje souhrn terminologii používané v tomto [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)] dokumentace když hovoříte o vlastnosti závislosti:
+Terminologie, která se používá s vlastností závislostí jsou následující:
 
 - **Vlastnosti závislosti:** vlastnosti, které je založeno <xref:System.Windows.DependencyProperty>.
 
-- **Identifikátor vlastnosti závislosti:** A <xref:System.Windows.DependencyProperty> instance, kterou je jako návratová hodnota získali při registraci vlastnost závislosti a pak uloženy jako statický člen třídy. Tento identifikátor se používá jako parametr pro řadu [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] které komunikují s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému.
+- **Identifikátor vlastnosti závislosti:** A <xref:System.Windows.DependencyProperty> instance, kterou je jako návratová hodnota získali při registraci vlastnost závislosti a pak uloženy jako statický člen třídy. Tento identifikátor se používá jako parametr pro řadu rozhraní API, které komunikují s vlastností systému WPF.
 
-- **CLR "obálky":** skutečnou získání a nastavení implementace pro vlastnost. Tyto implementace začlenit pomocí jeho identifikátoru vlastnosti závislosti <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> volání, a zajišťuje tak základní vlastnost s využitím [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému.
+- **CLR "obálky":** skutečnou získání a nastavení implementace pro vlastnost. Tyto implementace začlenit pomocí jeho identifikátoru vlastnosti závislosti <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> volání, a zajišťuje tak základní pro danou vlastnost pomocí systému vlastnost WPF.
 
 V následujícím příkladu je definován `IsSpinning` vlastnost závislosti a ukazuje vztah <xref:System.Windows.DependencyProperty> identifikátor pro vlastnost, která se zálohuje.
 
@@ -56,7 +57,7 @@ Zásady vytváření názvů vlastnosti a jeho základní <xref:System.Windows.D
 V kódu nebo v jazyce XAML, můžete nastavit vlastnosti.
 
 ### <a name="setting-property-values-in-xaml"></a>Nastavení hodnot vlastností v jazyce XAML 
-Následující příklad XAML Určuje barvu pozadí tlačítka s jako červený. Tento příklad ukazuje případě jednoduché řetězcovou hodnotu pro atribut XAML je převést analyzátorem WPF XAML do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typu ( <xref:System.Windows.Media.Color>, prostřednictvím <xref:System.Windows.Media.SolidColorBrush>) v generovaného kódu.
+Následující příklad XAML Určuje barvu pozadí tlačítka s jako červený. Tento příklad ukazuje případě jednoduché řetězcovou hodnotu pro atribut XAML je převést analyzátorem WPF XAML do typu grafického subsystému WPF ( <xref:System.Windows.Media.Color>, prostřednictvím <xref:System.Windows.Media.SolidColorBrush>) v generovaného kódu.
 
 [!code-xaml[PropertiesOvwSupport#MostBasicProperty](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml#mostbasicproperty)]
 
@@ -82,7 +83,7 @@ Můžete také zavolat vlastnost systému [!INCLUDE[TLA2#tla_api#plural](../../.
 Vlastnosti můžete také nastavit v jazyce XAML a potom získat přístup k později v kódu pomocí kódu. Podrobnosti najdete v tématu [kódu a XAML v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md).
 
 ## <a name="property-functionality-provided-by-a-dependency-property"></a>Vlastnost funkce poskytované službou vlastnost závislosti
-Vlastnost závislosti poskytuje funkce, které rozšiřuje funkce vlastnosti a vlastnosti, který je zálohovaný díky pole. Často představuje každé takové funkce, nebo podporuje konkrétní funkce celkovým [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sadu funkcí:
+Vlastnost závislosti poskytuje funkce, které rozšiřuje funkce vlastnosti a vlastnosti, který je zálohovaný díky pole. Tato funkce často představuje nebo podporuje jednu konkrétní funkce:
 
 - [Prostředky](#resources)
 
@@ -107,7 +108,7 @@ Jakmile je definován prostředek, můžete odkazovat na prostředek a použít 
 
 [!code-xaml[PropertiesOvwSupport#ResourcesReference](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page2.xaml#resourcesreference)]
 
-Tento konkrétní prostředek je odkazováno jako [DynamicResource – rozšíření značek](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md) (v jazyce XAML WPF, můžete použít buď odkaz na statickou nebo dynamickou prostředků). Použít odkaz na dynamické prostředků, můžete musí být nastavení na vlastnost závislosti, takže je konkrétně odkaz využití dynamické prostředků, povolená ve [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému. Další informace najdete v tématu [XAML prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md).
+Tento konkrétní prostředek je odkazováno jako [DynamicResource – rozšíření značek](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md) (v jazyce XAML WPF, můžete použít buď odkaz na statickou nebo dynamickou prostředků). Pokud chcete použít odkaz na dynamické prostředků, můžete musí být nastavení na vlastnost závislosti, tak, aby byl konkrétně odkaz využití dynamické prostředků, která je povolena v systému vlastnost grafického subsystému WPF. Další informace najdete v tématu [XAML prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md).
 
 > [!NOTE]
 > Prostředky jsou považovány za místní hodnota, což znamená, že pokud jste nastavili jinou místní hodnotu, bude eliminovat odkaz na prostředek. Další informace najdete v tématu [přednost hodnota vlastnosti závislosti](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md).
@@ -170,7 +171,7 @@ Další informace najdete v tématu [dědičnost hodnotu vlastnosti](../../../..
 Vlastní ovládací prvek s vlastnostmi, které jsou implementovány jako obdrží odpovídající vlastnosti závislosti [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] podporovat. Jedním z příkladů je možnost upravovat vlastnosti direct a připojené závislostí s **vlastnosti** okno. Další informace najdete v tématu [vytváření – Přehled ovládacího prvku](../../../../docs/framework/wpf/controls/control-authoring-overview.md).
 
 ## <a name="dependency-property-value-precedence"></a>Priorita hodnotu vlastnosti závislosti
-Když získáte hodnota vlastnosti závislosti, jsou potenciálně získat hodnotu, která byla nastavena pro tuto vlastnost prostřednictvím některého z jiné vlastnosti na základě vstupních hodnot, které účastnit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systému. Priorita hodnotu vlastnosti závislosti existuje tak, aby celou řadu scénářů jak získat vlastnosti jejich hodnoty můžete spolupracovat předvídatelnou způsobem.
+Když získáte hodnota vlastnosti závislosti, potenciálně získávání hodnotu, která byla nastavena pro tuto vlastnost prostřednictvím některého z jiné na základě vlastnosti vstupních hodnot, které účastnit systému vlastnost WPF. Priorita hodnotu vlastnosti závislosti existuje tak, aby celou řadu scénářů jak získat vlastnosti jejich hodnoty můžete spolupracovat předvídatelnou způsobem.
 
 Podívejte se na následující příklad. Příklad obsahuje styl, který se vztahuje na všechny tlačítka a jejich <xref:System.Windows.Controls.Control.Background%2A> vlastnosti, ale také určuje jeden tlačítko s místně nastavte <xref:System.Windows.Controls.Control.Background%2A> hodnotu.
 
@@ -185,7 +186,7 @@ V zásadě pro první tlačítko, je vlastnost nastavena dvakrát, ale platí po
 Obvykle nechtěli mít styly a vždy použít a skrývat i místně nastavte hodnoty jednotlivých elementu (jinak, by bylo velmi obtížné obecně pomocí stylů nebo elementy). Proto hodnoty, které pocházejí z styly fungovat na nižší předchůdců než místně nastavte hodnotu. Podrobnější seznam vlastností závislostí a kde platnou hodnotu pro vlastnost závislosti mohou pocházet z naleznete v [přednost hodnota vlastnosti závislosti](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md).
 
 > [!NOTE]
-> Existuje několik vlastnosti definované na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky, které nejsou vlastností závislostí. Celkového vlastnosti byly implementovány jako vlastnosti závislosti pouze v případě, že bylo musí zajišťovat podporu pro minimálně v jednom ze scénářů povoleno systémem vlastnost: datové vazby, stylů, animace, výchozí hodnota podpora, dědičnosti, přidružené vlastnosti, nebo zneplatnění.
+> Existuje několik vlastností, které jsou definované na WPF prvky, které nejsou vlastností závislostí. Celkového vlastnosti byly implementovány jako vlastnosti závislosti pouze v případě, že bylo musí zajišťovat podporu pro minimálně v jednom ze scénářů povoleno systémem vlastnost: datové vazby, stylů, animace, výchozí hodnota podpora, dědičnosti, přidružené vlastnosti, nebo zneplatnění.
 
 ## <a name="learning-more-about-dependency-properties"></a>Dozvědět další informace o vlastnosti závislosti  
 
@@ -195,7 +196,7 @@ Obvykle nechtěli mít styly a vždy použít a skrývat i místně nastavte hod
 
 - Vlastnosti závislosti obecně považovat jako veřejné vlastnosti přístupné nebo alespoň zjistitelný všechny volající, který má přístup k instanci. Další informace najdete v tématu [zabezpečení vlastnost závislosti](../../../../docs/framework/wpf/advanced/dependency-property-security.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
  [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
  [Vlastnosti závislosti jen pro čtení](../../../../docs/framework/wpf/advanced/read-only-dependency-properties.md)  
  [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  

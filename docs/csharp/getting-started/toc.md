@@ -5,5 +5,5 @@
 ### [Publikování aplikace Hello World pomocí sady Visual Studio 2017](../../core/tutorials/publishing-with-visual-studio.md)
 ## [Vytvoření knihovny tříd pomocí jazyka C# a platformy .NET Core v sadě Visual Studio 2017](../../core/tutorials/library-with-visual-studio.md)
 ### [Testování knihovny tříd pomocí platformy .NET Core v sadě Visual Studio 2017](../../core/tutorials/testing-library-with-visual-studio.md)
-### [Použití knihovny tříd pomocí platformy .NET Core v sadě Visual Studio 2017](../../core/tutorials/consuming-library-with-visual-studio.md)
+### [Použití rozhraní .NET standardní knihovny v Visual Studio 2017](../../core/tutorials/consuming-library-with-visual-studio.md)
 ## [Začínáme s jazykem C# a nástrojem Visual Studio Code](../../core/tutorials/with-visual-studio-code.md)

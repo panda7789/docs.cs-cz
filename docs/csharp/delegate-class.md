@@ -3,11 +3,12 @@ title: System.Delegate a `delegate` – klíčové slovo
 description: Další informace o třídách v rozhraní .NET Framework, které podporují Delegáti a ty mapování do – klíčové slovo 'delegovat'.
 ms.date: 06/20/2016
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
-ms.openlocfilehash: 2265d081b884a19cda6fc9d80a0f621a30c87e2a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 39dca1053f87a5059bdc60f8b722091ba991cbd5
+ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34827297"
 ---
 # <a name="systemdelegate-and-the-delegate-keyword"></a>System.Delegate a `delegate` – klíčové slovo
 
@@ -77,10 +78,8 @@ Vývojáři, které chcete použít `List.Sort()` metoda muset definovat metoda,
 Předpokládejme, že chcete seřadit jejich délka seznamu řetězců. Porovnání funkce může být následující:
 
 ```csharp
-private static int CompareLength(string left, string right)
-{
-    return left.Length.CompareTo(right.Length);
-}
+private static int CompareLength(string left, string right) =>
+    left.Length.CompareTo(right.Length);
 ```
 
 Metoda je deklarován jako soukromá metoda. Není to. Tato metoda se jednat o část veřejné rozhraní nemusí být žádoucí. Můžete se pořád použít jako metodu porovnání po připojení k delegáta. Kód volání bude mít tato metoda připojen do cílového seznamu delegáta objektu a k dispozici prostřednictvím tohoto delegáta.
