@@ -11,11 +11,12 @@ helpviewer_keywords:
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d34de754d551a97178de2d4f9c6558170f58fe27
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3f8ed5cce3e0c9e22679f54b13c84ea422f2100d
+ms.sourcegitcommit: 6c480773ae896f45af4671fb3e26611a50e4dd81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251061"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Jak běhové prostředí vyhledává sestavení
 Pokud chcete úspěšně nasadit aplikace rozhraní .NET Framework, musíte pochopit, jak modul common language runtime vyhledá a váže k sestavení, které tvoří vaši aplikaci. Ve výchozím modulu runtime pokusí vytvořit vazbu s přesnou verzi sestavení, která byla vytvořena s. Toto výchozí chování můžete přepsat pomocí souboru nastavení konfigurace.  
@@ -236,8 +237,8 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 ```xml  
 <dependentAssembly>  
    <assemblyIdentity name="Server" publicKeyToken="c0305c36380ba429" />   
-      <codeBase version="1.0.0.0" href="v1/Server.dll"/>  
-      <codeBase version="2.0.0.0" href="v2/Server.dll"/>  
+   <codeBase version="1.0.0.0" href="v1/Server.dll" />  
+   <codeBase version="2.0.0.0" href="v2/Server.dll" />  
 </dependentAssembly>  
 ```  
   

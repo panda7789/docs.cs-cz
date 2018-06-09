@@ -3,12 +3,13 @@ title: Když zvolit rozhraní .NET Framework pro Docker kontejnery
 description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Když zvolit rozhraní .NET Framework pro Docker kontejnery
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/18/2017
-ms.openlocfilehash: e707c8f0e721915e829e41628891928594010b92
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 06/07/2018
+ms.openlocfilehash: 06b67f702b38202f598745826fa48f1ca97b7282
+ms.sourcegitcommit: 6c480773ae896f45af4671fb3e26611a50e4dd81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251032"
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Když zvolit rozhraní .NET Framework pro Docker kontejnery
 
@@ -22,15 +23,15 @@ Ve většině případů pro tento scénář nebudete muset migrovat stávajíc�
 
 ## <a name="using-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>Použití knihovny .NET třetích stran nebo není k dispozici balíčky NuGet pro .NET Core
 
-Třetí strany knihovny se rychle přechodu [.NET Standard](../../net-standard.md), což umožňuje kód sdílení ve všech typů rozhraní .NET, včetně .NET Core. Standardní knihovny rozhraní .NET 2.0 a nad rámec plochy rozhraní API kompatibilitu mezi různé architektury stane podstatně větší a v rozhraní .NET 2.0 základní aplikací také přímo odkazovat existující knihovny rozhraní .NET Framework (viz [compat Shim](https://github.com/dotnet/standard/blob/master/docs/faq.md#how-does-net-standard-versioning-work)).
+Třetí strany knihovny se rychle přechodu [.NET Standard](../../net-standard.md), což umožňuje kód sdílení ve všech typů rozhraní .NET, včetně .NET Core. Standardní knihovny rozhraní .NET 2.0 a nad rámec plochy rozhraní API kompatibilitu mezi různé architektury stane podstatně větší a v .NET Core 2.x aplikace můžete také přímo odkazovat na existující knihovny rozhraní .NET Framework (viz [compat Shim](https://github.com/dotnet/standard/blob/master/docs/faq.md#how-does-net-standard-versioning-work)).
 
 Ale i v případě že výjimečných postupu od standardní rozhraní .NET 2.0 a .NET Core 2.0, mohou existovat případy, kdy některé balíčky NuGet, třeba Windows ke spuštění a nemusí podporovat .NET Core. Pokud tyto balíčky jsou důležité pro vaši aplikaci, budete muset použít rozhraní .NET Framework kontejnerům systému Windows.
 
 ## <a name="using-net-technologies-not-available-for-net-core"></a>Pomocí technologie .NET, není k dispozici pro .NET Core 
 
-Některé technologie .NET Framework nejsou k dispozici v aktuální verzi .NET Core (verze 2.0 době psaní tohoto textu). Některé z nich bude k dispozici v pozdějších verzích .NET Core (.NET Core 2.x), ale jiné se nevztahují na novou aplikaci vzory cílem .NET Core a mohou být nikdy k dispozici.
+Některé technologie .NET Framework nejsou k dispozici v aktuální verzi .NET Core (verze 2.1 době psaní tohoto textu). Některé z nich bude k dispozici v pozdějších verzích .NET Core (.NET Core 2.x), ale jiné se nevztahují na novou aplikaci vzory cílem .NET Core a mohou být nikdy k dispozici.
 
-Následující seznam obsahuje většinu technologie, které nejsou k dispozici v rozhraní .NET 2.0 jádra:
+Následující seznam obsahuje většinu technologie, které nejsou k dispozici v rozhraní .NET Core 2.1:
 
 -   ASP.NET – webové formuláře. Tato technologie je dostupná pouze na rozhraní .NET Framework. Aktuálně nejsou žádné plány a dovést webových formulářů ASP.NET do .NET Core.
 

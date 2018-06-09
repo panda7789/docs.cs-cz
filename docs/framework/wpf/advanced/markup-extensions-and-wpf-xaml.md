@@ -15,11 +15,12 @@ helpviewer_keywords:
 - characters [WPF], curly brace
 - DynamicResource markup extensions [WPF]
 ms.assetid: 618dc745-8b14-4886-833f-486d2254bb78
-ms.openlocfilehash: e2fb1e64f957b49743d8dfb19091bca50303e2d2
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: 907d5dcaae8f6e09902c2b3548d5ba8ac9a2b077
+ms.sourcegitcommit: 6c480773ae896f45af4671fb3e26611a50e4dd81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251165"
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>Rozšíření značek a WPF XAML
 Toto téma zavádí koncepci rozšíření značek pro jazyk XAML, včetně jejich syntaxe pravidel, účel a objektový model třídy, který je základem je. Rozšíření značek jsou obecné funkce jazyka XAML a implementace rozhraní .NET XAML services. Toto téma konkrétně podrobnosti rozšíření značek pro použití v jazyce XAML WPF.  
@@ -88,7 +89,7 @@ Toto téma zavádí koncepci rozšíření značek pro jazyk XAML, včetně jeji
 -   Pokud jednotlivých oddělených tokenů neobsahují jakékoli projevy rovná, každý token, je zpracovaná jako argument konstruktoru. Každý parametr konstruktoru musí být zadána jako na typ očekávaný podle tohoto podpisu a ve správném pořadí očekávanou tento podpis.  
   
     > [!NOTE]
-    >  Procesor XAML musí volat konstruktor, který odpovídá argument počet zadaný počet párů. Z tohoto důvodu při implementaci rozšíření vlastních značek, neposkytují několik parametrů s stejný počet argumentů. Není definován chování chování procesor XAML, pokud existuje více než jednu cestu konstruktor rozšíření značek s stejný počet parametrů, ale měli předpokládáte, že procesor XAML je umožnit vyvolat výjimku na využití, pokud v této situaci existuje definice pro typ rozšíření značek.  
+    >  Procesor XAML musí volat konstruktor, který odpovídá argument počet zadaný počet párů. Z tohoto důvodu při implementaci rozšíření vlastních značek, neposkytují více konstruktory s stejný počet argumentů. Není definován chování chování procesor XAML, pokud existuje více než jednu cestu konstruktor rozšíření značek s stejný počet parametrů, ale měli předpokládáte, že procesor XAML je umožnit vyvolat výjimku na využití, pokud v této situaci existuje definice pro typ rozšíření značek.  
   
 -   Pokud jednotlivých oddělených tokenů obsahovat znak rovná se a potom procesor XAML nejprve volá výchozí konstruktor pro rozšíření značek. Potom každý dvojice název-hodnota = interpretována jako název vlastnosti, která existuje v rozšíření značek a hodnota pro přiřazení k dané vlastnosti.  
   

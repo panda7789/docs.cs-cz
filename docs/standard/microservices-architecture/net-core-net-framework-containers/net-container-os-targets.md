@@ -4,11 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.openlocfilehash: 0b06f64027a736ead148ea5511cf20e900b8b39a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 53b279a3325ae0fb662cd91a6f7f454b765196ff
+ms.sourcegitcommit: 6c480773ae896f45af4671fb3e26611a50e4dd81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251009"
 ---
 # <a name="what-os-to-target-with-net-containers"></a>Jaké operačního systému k cíli s kontejnery rozhraní .NET
 
@@ -28,19 +29,22 @@ Můžete také vytvořit vlastní image Docker v případech, kde chcete použí
 
 Když přidáte název bitové kopie do souboru soubor Docker, můžete vybrat operační systém a verze v závislosti na značku, kterou používáte, jako v následujících příkladech:
 
--   Microsoft /**dotnet:2.0.0-runtime-Klára**
+-   Microsoft /**dotnet:2.1 – modul runtime**
 
-        .NET Core 2.0 runtime-only on Linux
+        .NET Core 2.1 multi-architecture: Supports Linux and Windows Nano Server depending on the Docker host.
 
--   Microsoft /**dotnet:2.0.0-runtime-nanoserver-. 1709** 
-
-        .NET Core 2.0 runtime-only on Windows Nano Server (Windows Server 2016 Fall Creators Update version 1709)
-
--   Microsoft /**aspnetcore:2.0**
+-   Microsoft /**dotnet:2.1-aspnetcore – modul runtime**
     
-        .NET Core 2.0 multi-architecture: Supports Linux and Windows Nano Server depending on the Docker host.
+        ASP.NET Core 2.1 multi-architecture: Supports Linux and Windows Nano Server depending on the Docker host.
         The aspnetcore image has a few optimizations for ASP.NET Core. 
 
+-   Microsoft /**dotnet:2.1-aspnetcore-runtime-alpine** 
+
+        .NET Core 2.1 runtime-only on Linux Alpine distro
+
+-   Microsoft /**dotnet:2.1-aspnetcore-runtime-nanoserver-1803** 
+
+        .NET Core 2.1 runtime-only on Windows Nano Server (Windows Server version 1803)
 
 
 

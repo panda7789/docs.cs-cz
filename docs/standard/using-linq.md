@@ -6,11 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
-ms.openlocfilehash: 21b0995872047484bf1581190622c52f0e2527a9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 31b0a7b9e11d46e6453d9fcad87e7beadba9a1e3
+ms.sourcegitcommit: 6c480773ae896f45af4671fb3e26611a50e4dd81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251087"
 ---
 # <a name="linq-language-integrated-query"></a>LINQ (Language integrovaného dotazu)
 
@@ -29,7 +30,7 @@ var linqExperts = from p in programmers
 Pomocí stejné příklad `IEnumerable<T>` rozhraní API:
 
 ```csharp
-var linqExperts = programmers.Where(p => IsNewToLINQ)
+var linqExperts = programmers.Where(p => p.IsNewToLINQ)
                              .Select(p => new LINQExpert(p));
 ```
 
