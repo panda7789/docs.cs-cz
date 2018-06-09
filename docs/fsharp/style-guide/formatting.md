@@ -2,11 +2,12 @@
 title: 'F # – kód formátování pokyny'
 description: 'Přečtěte si pokyny pro formátování kódu F #.'
 ms.date: 05/14/2018
-ms.openlocfilehash: 1433b6891a6a0ddcdc082c141365ae54fa40c27b
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: 6c8e4059fd4bf1e7450118a6df02609217c4f4db
+ms.sourcegitcommit: 2ad7d06f4f469b5d8a5280ac0e0289a81867fc8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35231502"
 ---
 # <a name="f-code-formatting-guidelines"></a>F # – kód formátování pokyny
 
@@ -29,6 +30,177 @@ Pokud je požadována odsazení, je nutné použít mezery, tabulátory není. J
 **Doporučujeme 4 mezer na odsazení.**
 
 Ale nutné dodat, odsazení programů je subjektivní věci. Rozdíly jsou OK, ale je první pravidlo, postupujte podle *konzistence odsazení*. Zvolte obecně přijatelné styl odsazení a systematičtěji ji použít v celé vaší základu kódu.
+
+## <a name="formatting-blank-lines"></a>Formátování prázdné řádky
+
+* Samostatné nejvyšší úrovně funkce – třída definice a dva prázdné řádky.
+* Metoda definice uvnitř třídy jsou odděleny jeden prázdný řádek.
+* Prázdné řádky může šetřit () k oddělení skupin souvisejících funkcí. Prázdné řádky může být vynechán mezi spoustu související one-liners (například sada fiktivní implementace).
+* Pomocí prázdné řádky ve funkcích, doporučujeme, označte logické oddíly.
+
+## <a name="formatting-comments"></a>Formátování komentáře
+
+Obecně přednost více komentáře dvojitou lomítko přes komentáře bloku stylu ML.
+
+```fsharp
+// Prefer this style of comments when you want
+// to express written ideas on multiple lines.
+
+(*
+    ML-style comments are fine, but not a .NET-ism.
+    They are useful when needing to modify multi-line comments, though.
+*)
+```
+
+Vložené komentáře by měl počáteční písmeno.
+
+```fsharp
+let f x = x + 1 // Increment by one.
+```
+
+## <a name="naming-conventions"></a>Zásady vytváření názvů
+
+### <a name="use-camelcase-for-class-bound-expression-bound-and-pattern-bound-values-and-functions"></a>Použití camelCase vázané na třídu, vázané na výrazu a vzor vázané hodnoty a funkce
+
+Je běžné a přijaté F # stylu camelCase používat pro všechny názvy vázána jako místní proměnné nebo v vzor shody a definice funkcí.
+
+```fsharp
+// OK
+let addIAndJ i j = i + j
+
+// Bad
+let addIAndJ I J = I+J
+
+// Bad
+let AddIAndJ i j = i + j
+```
+
+Funkce místně vázané ve třídách měli použít také camelCase.
+
+```fsharp
+type MyClass() =
+
+    let doSomething () =
+
+    let firstResult = ...
+
+    let secondResult = ...
+
+    member x.Result = doSomething()
+```
+
+### <a name="use-camelcase-for-module-bound-public-functions"></a>Použití camelCase pro veřejné funkce vázané na modulu
+
+Když funkce vázané na modulu je součástí veřejné rozhraní API, měla by používat camelCase:
+
+```fsharp
+module MyAPI =
+    let publicFunctionOne param1 param2 param2 = ...
+
+    let publicFunctionTwo param1 param2 param3 = ...
+```
+
+### <a name="use-camelcase-for-internal-and-private-module-bound-values-and-functions"></a>Použít camelCase pro interní a privátní hodnoty vázané na modul a funkce
+
+Použijte camelCase pro soukromé hodnoty vázané na modul, včetně následujících:
+
+* Ad hoc funkce ve skriptech
+
+* Hodnoty, které tvoří interní implementace modul nebo typ
+
+```fsharp
+let emailMyBossTheLatestResults =
+    ...
+```
+
+### <a name="use-camelcase-for-parameters"></a>Použití camelCase parametrů
+
+Všechny parametry by měli používat camelCase v souladu s zásady vytváření názvů .NET.
+
+```fsharp
+module MyModule =
+    let myFunction paramOne paramTwo = ...
+
+type MyClass() =
+    member this.MyMethod(paramOne, paramTwo) = ...
+```
+
+### <a name="use-pascalcase-for-modules"></a>Použití PascalCase pro moduly
+
+Všechny moduly (nejvyšší úrovně, interní, privátní, vnořené) by měli používat PascalCase.
+
+```fsharp
+module MyTopLevelModule
+
+module Helpers =
+    module private SuperHelpers =
+        ...
+
+    ...
+```
+
+### <a name="use-pascalcase-for-type-declarations-members-and-labels"></a>Použít PascalCase pro typ deklarace, členů a popisky
+
+Třídy, rozhraní, struktury, výčty, delegáti, záznamy a rozlišovaná sjednocení by měly název s PascalCase. Členové v rámci typy a popisky pro záznamy a rozlišovaná sjednocení by měl používat také PascalCase.
+
+```fsharp
+type IMyInterface =
+    abstract Something: int
+
+type MyClass() =
+    member this.MyMethod(x, y) = x + y
+
+type MyRecord = { IntVal: int; StringVal: string }
+
+type SchoolPerson =
+    | Professor
+    | Student
+    | Advisor
+    | Administrator
+```
+
+### <a name="use-pascalcase-for-constructs-intrinsic-to-net"></a>Použít PascalCase pro konstrukce vnitřní na rozhraní .NET
+
+Obory názvů, výjimky, události a projekt nebo`.dll` názvy měli použít také PascalCase. Nejen nemá to zkontrolujte spotřeby z jinými jazyky rozhraní .NET působí přirozenější k příjemce, je také konzistentní s zásady vytváření názvů .NET, kterými se můžete setkat.
+
+### <a name="avoid-underscores-in-names"></a>Vyhněte se podtržítka v názvech
+
+V minulosti používat některé knihovny F # v názvech podtržítka. Ale toto je přijatá už široce, částečně, protože ho je v konfliktu s zásady vytváření názvů .NET. Ale nutné dodat, některé programátory F # pomocí podtržítka výraznou, částečně historických důvodů a proti chybám a ohledu je důležité. Ale Upozorňujeme, že styl je často disliked jiní uživatelé, kteří mají vybrat o tom, jestli ho použít.
+
+Některé výjimky zahrnuje spolupráce s nativním součásti, kde jsou velmi běžné podtržítka.
+
+### <a name="use-standard-f-operators"></a>Použijte standardní operátory F #
+
+Následující operátory jsou definovány v standardní knihovny F # a místo definování ekvivalenty měla být použita. Pomocí těchto operátorů se nedoporučuje, protože je obvykle, aby byl kód čitelnější a idiomatickou. Vývojářům pozadí v OCaml nebo jiné funkční programovací jazyk může být uzpůsobené pro různé idioms. Následující seznam shrnuje doporučené operátory F #.
+
+```fsharp
+x |> f // Forward pipeline
+f >> g // Forward composition
+x |> ignore // Discard away a value
+x + y // Overloaded addition (including string concatenation)
+x - y // Overloaded subtraction
+x * y // Overloaded multiplication
+x / y // Overloaded division
+x % y // Overloaded modulus
+x && y // Lazy/short-cut "and"
+x || y // Lazy/short-cut "or"
+x <<< y // Bitwise left shift
+x >>> y // Bitwise right shift
+x ||| y // Bitwise or, also for working with “flags” enumeration
+x &&& y // Bitwise and, also for working with “flags” enumeration
+x ^^^ y // Bitwise xor, also for working with “flags” enumeration
+```
+
+### <a name="use-prefix-syntax-for-generics-foot-in-preference-to-postfix-syntax-t-foo"></a>Použijte předponu syntaxi pro obecné typy (`Foo<T>`) přednostně syntaxe operátory (`T Foo`)
+
+F # dědí oba operátory ML styl pojmenování obecné typy (například `int list`) a také předponu styl .NET (například `list<int>`). Dáváte přednost styl rozhraní .NET, s výjimkou čtyři konkrétní typy:
+
+1. Pro F # uvádí, použijte formát operátory: `int list` místo `list<int>`.
+2. Pro možnosti F #, použijte formát operátory: `int option` místo `option<int>`.
+3. Pro F # pole, použijte syntaxi název `int[]` místo `int array` nebo `array<int>`.
+4. Referenční buňky, použijte `int ref` místo `ref<int>` nebo `Ref<int>`.
+
+Pro všechny ostatní typy použijte předponu formulář.
 
 ## <a name="formatting-discriminated-union-declarations"></a>Formátování rozlišované deklarace sjednocení
 
@@ -198,7 +370,7 @@ else e4
 
 ### <a name="pattern-matching-constructs"></a>Vzor odpovídající konstrukce
 
-Použití `|` pro každou klauzuli shoda s žádné odsazení. Je-li výraz krátký, můžete použít jeden řádek.
+Použití `|` pro každou klauzuli shoda s žádné odsazení. Pokud výraz krátký, můžete zvážit použití jeden řádek, pokud každý dílčím výrazu je také jednoduché.
 
 ```fsharp
 // OK
@@ -212,9 +384,6 @@ match l with
     | { him = x; her = "Posh" } :: tail -> _
     | _ :: tail -> findDavid tail
     | [] -> failwith "Couldn't find David"
-
-// OK
-match l with [] -> false | _ :: _ -> true
 ```
 
 Pokud ve výrazu na pravé straně šipku pro porovnávání je příliš velký, ho přesunout do následujícího řádku, zobrazují odsazené jeden krok z `match` / `|`.
@@ -291,20 +460,23 @@ let printVolumes x =
         (convertVolumeImperialPint x)
 ```
 
-Argumenty anonymní funkce může být buď na další řádek, nebo se nepropojená `fun` na ose argument:
+Pro výrazy lambda platí stejné pokyny jako argumenty funkce. Pokud text výrazu lambda, text může mít jiný řádku odsazeny o jeden obor
 
 ```fsharp
-// OK
 let printListWithOffset a list1 =
-    List.iter (fun elem ->
-        printfn "%d" (a + elem)) list1
+    List.iter
+        (fun elem -> printfn "%d" (a + elem))
+        list1
 
-// OK, but prefer previous
+// OK if lambda body is long enough
 let printListWithOffset a list1 =
-    List.iter (
-        fun elem ->
-            printfn "%d" (a + elem)) list1
+    List.iter
+        (fun elem ->
+            printfn "%d" (a + elem))
+        list1
 ```
+
+Ale pokud text výrazu lambda je více než jeden řádek, vezměte v úvahu řešení ho do samostatné funkce nemusí používat Víceřádkový konstrukt použít jako jeden argument na funkci.
 
 ### <a name="formatting-infix-operators"></a>Formátování zaváděcí operátory
 
@@ -402,162 +574,3 @@ let makeStreamReader x = new System.IO.StreamReader(path=x)
 // Not OK
 let makeStreamReader x = new System.IO.StreamReader(path = x)
 ```
-
-## <a name="formatting-blank-lines"></a>Formátování prázdné řádky
-
-* Samostatné nejvyšší úrovně funkce – třída definice a dva prázdné řádky.
-* Metoda definice uvnitř třídy jsou odděleny jeden prázdný řádek.
-* Prázdné řádky může šetřit () k oddělení skupin souvisejících funkcí. Prázdné řádky může být vynechán mezi spoustu související one-liners (například sada fiktivní implementace).
-* Pomocí prázdné řádky ve funkcích, doporučujeme, označte logické oddíly.
-
-## <a name="formatting-comments"></a>Formátování komentáře
-
-Obecně přednost více komentáře dvojitou lomítko přes komentáře bloku stylu ML.
-
-```fsharp
-// Prefer this style of comments when you want
-// to express written ideas on multiple lines.
-
-(*
-    Generally avoid these kinds of comments.
-*)
-```
-
-Vložené komentáře by měl počáteční písmeno.
-
-```fsharp
-let f x = x + 1 // Increment by one.
-```
-
-## <a name="naming-conventions"></a>Zásady vytváření názvů
-
-### <a name="use-camelcase-for-class-bound-expression-bound-and-pattern-bound-values-and-functions"></a>Použití camelCase vázané na třídu, vázané na výrazu a vzor vázané hodnoty a funkce
-
-Je běžné a přijaté F # stylu camelCase používat pro všechny názvy vázána jako místní proměnné nebo v vzor shody a definice funkcí.
-
-```fsharp
-// OK
-let addIAndJ i j = i + j
-
-// Bad
-let addIAndJ I J = I+J
-
-// Bad
-let AddIAndJ i j = i + j
-```
-
-Funkce místně vázané ve třídách měli použít také camelCase.
-
-```fsharp
-type MyClass() =
-
-    let doSomething () =
-
-    let firstResult = ...
-
-    let secondResult = ...
-
-    member x.Result = doSomething()
-```
-
-### <a name="use-camelcase-for-internal-and-private-module-bound-values-and-functions"></a>Použít camelCase pro interní a privátní hodnoty vázané na modul a funkce
-
-Použijte camelCase pro soukromé hodnoty vázané na modul, včetně následujících:
-
-* Ad hoc funkce ve skriptech
-
-* Hodnoty, které tvoří interní implementace modul nebo typ
-
-```fsharp
-let emailMyBossTheLatestResults =
-    ...
-```
-
-### <a name="use-camelcase-for-parameters"></a>Použití camelCase parametrů
-
-Všechny parametry by měli používat camelCase v souladu s zásady vytváření názvů .NET.
-
-```fsharp
-module MyModule =
-    let myFunction paramOne paramTwo = ...
-
-type MyClass() =
-    member this.MyMethod(paramOne, paramTwo) = ...
-```
-
-### <a name="use-pascalcase-for-modules"></a>Použití PascalCase pro moduly
-
-Všechny moduly (nejvyšší úrovně, interní, privátní, vnořené) by měli používat PascalCase.
-
-```fsharp
-module MyTopLevelModule
-
-module Helpers =
-    module private SuperHelpers =
-        ...
-
-    ...
-```
-
-### <a name="use-pascalcase-for-type-declarations-members-and-labels"></a>Použít PascalCase pro typ deklarace, členů a popisky
-
-Třídy, rozhraní, struktury, výčty, delegáti, záznamy a rozlišovaná sjednocení by měly název s PascalCase. Členové v rámci typy a popisky pro záznamy a rozlišovaná sjednocení by měl používat také PascalCase.
-
-```fsharp
-type IMyInterface =
-    abstract Something: int
-
-type MyClass() =
-    member this.MyMethod(x, y) = x + y
-
-type MyRecord = { IntVal: int; StringVal: string }
-
-type SchoolPerson =
-    | Professor
-    | Student
-    | Advisor
-    | Administrator
-```
-
-### <a name="use-pascalcase-for-constructs-intrinsic-to-net"></a>Použít PascalCase pro konstrukce vnitřní na rozhraní .NET
-
-Obory názvů, výjimky, události a projekt nebo`.dll` názvy měli použít také PascalCase. Nejen nemá to zkontrolujte spotřeby z jinými jazyky rozhraní .NET působí přirozenější k příjemce, je také konzistentní s zásady vytváření názvů .NET, kterými se můžete setkat.
-
-### <a name="avoid-underscores-in-names"></a>Vyhněte se podtržítka v názvech
-
-V minulosti používat některé knihovny F # v názvech podtržítka. Ale toto je přijatá už široce, částečně, protože ho je v konfliktu s zásady vytváření názvů .NET. Ale nutné dodat, některé programátory F # pomocí podtržítka výraznou, částečně historických důvodů a proti chybám a ohledu je důležité. Ale Upozorňujeme, že styl je často disliked jiní uživatelé, kteří mají vybrat o tom, jestli ho použít.
-
-Některé výjimky zahrnuje spolupráce s nativním součásti, kde jsou velmi běžné podtržítka.
-
-### <a name="use-standard-f-operators"></a>Použijte standardní operátory F #
-
-Následující operátory jsou definovány v standardní knihovny F # a místo definování ekvivalenty měla být použita. Pomocí těchto operátorů se nedoporučuje, protože je obvykle, aby byl kód čitelnější a idiomatickou. Vývojářům pozadí v OCaml nebo jiné funkční programovací jazyk může být uzpůsobené pro různé idioms. Následující seznam shrnuje doporučené operátory F #.
-
-```fsharp
-x |> f // Forward pipeline
-f >> g // Forward composition
-x |> ignore // Throwing away a value
-x + y // Overloaded addition (including string concatenation)
-x - y // Overloaded subtraction
-x * y // Overloaded multiplication
-x / y // Overloaded division
-x % y // Overloaded modulus
-x && y // Lazy/short-cut "and"
-x || y // Lazy/short-cut "or"
-x <<< y // Bitwise left shift
-x >>> y // Bitwise right shift
-x ||| y // Bitwise or, also for working with “flags” enumeration
-x &&& y // Bitwise and, also for working with “flags” enumeration
-x ^^^ y // Bitwise xor, also for working with “flags” enumeration
-```
-
-### <a name="use-prefix-syntax-for-generics-foot-in-preference-to-postfix-syntax-t-foo"></a>Použijte předponu syntaxi pro obecné typy (`Foo<T>`) přednostně syntaxe operátory (`T Foo`)
-
-F # dědí oba operátory ML styl pojmenování obecné typy (například `int list`) a také předponu styl .NET (například `list<int>`). Dáváte přednost styl rozhraní .NET, s výjimkou čtyři konkrétní typy:
-
-1. Pro F # uvádí, použijte formát operátory: `int list` místo `list<int>`.
-2. Pro možnosti F #, použijte formát operátory: `int option` místo `option<int>`.
-3. Pro F # pole, použijte syntaxi název `int[]` místo `int array` nebo `array<int>`.
-4. Referenční buňky, použijte `int ref` místo `ref<int>` nebo `Ref<int>`.
-
-Pro všechny ostatní typy použijte předponu formulář.

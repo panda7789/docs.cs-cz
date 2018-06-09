@@ -1,14 +1,15 @@
 ---
 title: Rozhraní .NET Mikroslužeb. Architektura pro aplikace .NET Kontejnerizované
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Úvodní část
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Mikroslužeb jsou modulární a nezávisle nasadit služby. Kontejnery docker (pro systémy Linux a Windows) zjednodušit nasazení a testování sdružování služby a jeho závislosti do jedné jednotky, která je pak spusťte v izolovaném prostředí.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
-ms.openlocfilehash: d4499384d63f11a1d78d0aa84749aed8ea554794
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 06/06/2018
+ms.openlocfilehash: 58bb915c825cd69c68b3955573145ae6a1b1a6e4
+ms.sourcegitcommit: 2ad7d06f4f469b5d8a5280ac0e0289a81867fc8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35231418"
 ---
 ![](./media/cover.png)
 
@@ -26,7 +27,7 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright © Microsoft Corporation 2017
+Copyright © Microsoft Corporation 2018
 
 Všechna práva vyhrazena. Žádná z částí obsah této příručky je možné reprodukovat nebo přenést v žádný formulář nebo žádnými prostředky bez předchozího písemného souhlasu vydavatele.
 

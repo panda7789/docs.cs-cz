@@ -3044,25 +3044,26 @@ f1_keywords:
 - bc30233
 - bc30829
 ms.assetid: 0938efc2-e205-450b-9314-99951fcbd702
-ms.openlocfilehash: 44bc5647fe740a4900b99794fe7af907e6328665
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 413765a6feebab3be8196552d11ade30bce28496
+ms.sourcegitcommit: 2ad7d06f4f469b5d8a5280ac0e0289a81867fc8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35231460"
 ---
 # <a name="sorry-we-don39t-have-specifics-on-this-visual-basic-error"></a>Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě jazyka Visual Basic
 Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete hledat text chyby číslo a zpráva k nalezení informací na webu. Nebo můžete požádat jinými vývojáři pomocí jedné z těchto fóra:  
   
- [Jazyk Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145963)  
+ [Jazyk Visual Basic](https://social.msdn.microsoft.com/Forums/en-US/home?forum=vblanguage)  
  Poskytuje fórum pro dotazy týkající se a obecné diskuse o syntaxi jazyka Visual Basic a kompilátoru.  
   
- [Zprostředkovatel komunikace s objekty jazyka Visual Basic a Upgrade](http://go.microsoft.com/fwlink/?LinkId=145966)  
+ [Zprostředkovatel komunikace s objekty jazyka Visual Basic a Upgrade](https://social.msdn.microsoft.com/Forums/en-US/home?forum=vbinterop)  
  Poskytuje fórum pro otázky o a problémů s upgradem do jazyka Visual Basic a práci s funkcemi interoperability.  
   
- [Visual Basic IDE](http://go.microsoft.com/fwlink/?LinkId=145971)  
+ [Visual Basic IDE](https://social.msdn.microsoft.com/Forums/en-US/home?forum=vbide)  
  Poskytuje fórum pro dotazy o tom, jak fungují v prostředí Visual Studio.  
   
- [Obecné jazyka Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145973)  
+ [Obecné jazyka Visual Basic](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=vbgeneral)  
  Poskytuje fórum pro otázky o a problémů s jazykem Visual Basic, které nejsou popsané v dalších fóra.  
   
  [StackOverflow](http://stackoverflow.com/questions/tagged/vb.net)  

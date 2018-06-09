@@ -3,11 +3,12 @@ title: Shoda vzoru – průvodce v C#
 description: Další informace o výrazy v jazyce C# pro porovnávání
 ms.date: 01/24/2017
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: 0f95ac8b16939173e6cfd7304b9cbe52526b5169
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 635ab45c89a38f3dedac2d60ea1e31ebf394c9b2
+ms.sourcegitcommit: 2ad7d06f4f469b5d8a5280ac0e0289a81867fc8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35231473"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů #
 
@@ -72,7 +73,7 @@ Tato omezení jsme odebrali, a teď můžete napsat `switch` příkaz s použit�
 Shoda vzoru `switch` příkaz používá známé syntaxe pro vývojáře, kteří použili tradiční stylu jazyka C `switch` příkaz. Každý `case` je vyhodnocena a spouští kód pod podmínku, která odpovídá vstupní proměnné. Provádění kódu nelze "předáno" z jeden výraz case na další; syntaxe `case` příkaz vyžaduje, aby se každý `case` končit `break`, `return`, nebo `goto`.
 
 > [!NOTE]
-> `goto` Příkazy Přejít na jiný štítek jsou platné pouze pro konstantní vzor příkaz classic přepínače.
+> `goto` Příkazy Přejít na jiný štítek jsou platné pouze pro vzoru konstantní (příkaz classic přepínače).
 
 Důležité nové pravidel určujících `switch` příkaz. Omezení pro typ proměnné v `switch` výraz se odebraly.
 Jakýkoli typ, jako například `object` v tomto příkladu může použít. Výrazy case již nejsou omezeny na konstantní hodnoty. Odebrání tohoto omezení znamená, že změna `switch` části může změnit chování programu.
