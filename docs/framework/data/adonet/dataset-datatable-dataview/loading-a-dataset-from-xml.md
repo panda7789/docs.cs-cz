@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759761"
 ---
 # <a name="loading-a-dataset-from-xml"></a><span data-ttu-id="51c3f-102">Načítání datové sady z XML</span><span class="sxs-lookup"><span data-stu-id="51c3f-102">Loading a DataSet from XML</span></span>
 <span data-ttu-id="51c3f-103">Obsah technologie ADO.NET <xref:System.Data.DataSet> lze vytvořit z datového proudu XML nebo dokumentu.</span><span class="sxs-lookup"><span data-stu-id="51c3f-103">The contents of an ADO.NET <xref:System.Data.DataSet> can be created from an XML stream or document.</span></span> <span data-ttu-id="51c3f-104">Kromě toho s rozhraním .NET Framework máte flexibilitu přes načtení informací ze souboru XML a jak schéma nebo relační struktura <xref:System.Data.DataSet> je vytvořena.</span><span class="sxs-lookup"><span data-stu-id="51c3f-104">In addition, with the .NET Framework you have great flexibility over what information is loaded from XML, and how the schema or relational structure of the <xref:System.Data.DataSet> is created.</span></span>  

@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756576"
 ---
 # <a name="ltvariablesgt"></a><span data-ttu-id="25e38-102">&lt;proměnné&gt;</span><span class="sxs-lookup"><span data-stu-id="25e38-102">&lt;variables&gt;</span></span>
 <span data-ttu-id="25e38-103">Představuje kolekci proměnných spojených s Tento dotaz aktivity.</span><span class="sxs-lookup"><span data-stu-id="25e38-103">Represents a collection of variables associated with this activity query.</span></span>  

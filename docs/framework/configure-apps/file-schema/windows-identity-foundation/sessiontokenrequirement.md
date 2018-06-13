@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754987"
 ---
 # <a name="ltsessiontokenrequirementgt"></a><span data-ttu-id="1310e-102">&lt;sessionTokenRequirement&gt;</span><span class="sxs-lookup"><span data-stu-id="1310e-102">&lt;sessionTokenRequirement&gt;</span></span>
 <span data-ttu-id="1310e-103">Obsahuje konfiguraci <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> třídu nebo odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="1310e-103">Provides configuration for the <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> class or derived classes.</span></span>  

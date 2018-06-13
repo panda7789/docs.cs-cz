@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749501"
 ---
 # <a name="ltendpointgt-element"></a><span data-ttu-id="3a920-102">Element &lt;endpoint&gt;</span><span class="sxs-lookup"><span data-stu-id="3a920-102">&lt;endpoint&gt; element</span></span>
 <span data-ttu-id="3a920-103">Určuje vazby, kontrakt a vlastnosti adresy pro koncový bod služby, který se používá ke zveřejnění služby.</span><span class="sxs-lookup"><span data-stu-id="3a920-103">Specifies binding, contract, and address properties for a service endpoint, which is used to expose services.</span></span>  

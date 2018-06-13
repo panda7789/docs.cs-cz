@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758968"
 ---
 # <a name="ltwsdualhttpbindinggt"></a><span data-ttu-id="abd32-102">&lt;wsDualHttpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="abd32-102">&lt;wsDualHttpBinding&gt;</span></span>
 <span data-ttu-id="abd32-103">Definuje vazbu zabezpečené, spolehlivé a vzájemná spolupráce, který je vhodný pro služby duplexní kontrakty nebo komunikaci prostřednictvím protokolu SOAP zprostředkovatelů.</span><span class="sxs-lookup"><span data-stu-id="abd32-103">Defines a secure, reliable and interoperable binding that is suitable for duplex service contracts or communication through SOAP intermediaries.</span></span>  

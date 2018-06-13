@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745224"
 ---
 # <a name="ltgcallowverylargeobjectsgt-element"></a><span data-ttu-id="fcade-102">&lt;gcallowverylargeobjects –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="fcade-102">&lt;gcAllowVeryLargeObjects&gt; Element</span></span>
 <span data-ttu-id="fcade-103">Na 64bitových platformách povoluje pole, jejichž celková velikost je větší než 2 gigabajty (GB).</span><span class="sxs-lookup"><span data-stu-id="fcade-103">On 64-bit platforms, enables arrays that are greater than 2 gigabytes (GB) in total size.</span></span>  

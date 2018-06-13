@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743001"
 ---
 # <a name="ltcryptoclassesgt-element"></a><span data-ttu-id="615b0-102">&lt;cryptoClasses –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="615b0-102">&lt;cryptoClasses&gt; Element</span></span>
 <span data-ttu-id="615b0-103">Obsahuje seznam tříd šifrování, které mají mapování na popisného názvu do [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) element.</span><span class="sxs-lookup"><span data-stu-id="615b0-103">Contains a list of cryptography classes that have a mapping to a friendly name in the [\<nameEntry>](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) element.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757239"
 ---
 # <a name="model-declared-function"></a><span data-ttu-id="3c762-102">deklarovaný modelu – funkce</span><span class="sxs-lookup"><span data-stu-id="3c762-102">model-declared function</span></span>
 <span data-ttu-id="3c762-103">A *modelu deklarované funkce* je funkce, která je deklarován v konceptuálním modelu, ale není definován v tomto konceptuálním modelu.</span><span class="sxs-lookup"><span data-stu-id="3c762-103">A *model-declared function* is a function that is declared in a conceptual model, but is not defined in that conceptual model.</span></span> <span data-ttu-id="3c762-104">Funkce mohou být definovány v prostředí hostování nebo úložiště.</span><span class="sxs-lookup"><span data-stu-id="3c762-104">The function might be defined in the hosting or storage environment.</span></span> <span data-ttu-id="3c762-105">Například může funkce modelu deklarované mapovat na funkci, která je definována v databázi, proto vystavení funkce na straně serveru v konceptuálním modelu.</span><span class="sxs-lookup"><span data-stu-id="3c762-105">For example, a model-declared function might be mapped to a function that is defined in a database, thus exposing server-side functionality in the conceptual model.</span></span>  

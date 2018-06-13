@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756199"
 ---
 # <a name="association-set-end"></a><span data-ttu-id="0d0a2-102">konce přidružení sady</span><span class="sxs-lookup"><span data-stu-id="0d0a2-102">association set end</span></span>
 <span data-ttu-id="0d0a2-103">*Nastavená přidružení end* identifikuje [typ entity](../../../../docs/framework/data/adonet/entity-type.md) a [sady entit](../../../../docs/framework/data/adonet/entity-set.md) na konci [sadu přidružení](../../../../docs/framework/data/adonet/association-set.md).</span><span class="sxs-lookup"><span data-stu-id="0d0a2-103">An *association set end* identifies the [entity type](../../../../docs/framework/data/adonet/entity-type.md) and the [entity set](../../../../docs/framework/data/adonet/entity-set.md) at the end of an [association set](../../../../docs/framework/data/adonet/association-set.md).</span></span> <span data-ttu-id="0d0a2-104">Přidružení sady končí jsou definované jako součást sady přidružení; sadu přidružení musí mít přesně dva sadu zakončení.</span><span class="sxs-lookup"><span data-stu-id="0d0a2-104">Association set ends are defined as part of an association set; an association set must have exactly two association set ends.</span></span>  

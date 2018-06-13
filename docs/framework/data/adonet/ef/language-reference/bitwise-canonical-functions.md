@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761191"
 ---
 # <a name="bitwise-canonical-functions"></a><span data-ttu-id="f5837-102">Bitový kanonické funkce</span><span class="sxs-lookup"><span data-stu-id="f5837-102">Bitwise Canonical Functions</span></span>
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="f5837-103"> zahrnuje bitové kanonické funkce.</span><span class="sxs-lookup"><span data-stu-id="f5837-103"> includes bitwise canonical functions.</span></span>  

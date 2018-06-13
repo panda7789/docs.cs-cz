@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743050"
 ---
 # <a name="ltnameentrygt-element"></a><span data-ttu-id="5b4a6-102">&lt;nameEntry –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="5b4a6-102">&lt;nameEntry&gt; Element</span></span>
 <span data-ttu-id="5b4a6-103">Mapuje název třídy algoritmus popisný název, který umožňuje jednu třídu k mít mnoho popisné názvy.</span><span class="sxs-lookup"><span data-stu-id="5b4a6-103">Maps a class name to a friendly algorithm name, which allows one class to have many friendly names.</span></span>  

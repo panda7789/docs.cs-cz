@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755962"
 ---
 # <a name="creating-a-dataset"></a><span data-ttu-id="b70eb-102">Vytvoření datové sady</span><span class="sxs-lookup"><span data-stu-id="b70eb-102">Creating a DataSet</span></span>
 <span data-ttu-id="b70eb-103">Vytvoření instance <xref:System.Data.DataSet> voláním <xref:System.Data.DataSet> konstruktor.</span><span class="sxs-lookup"><span data-stu-id="b70eb-103">You create an instance of a <xref:System.Data.DataSet> by calling the <xref:System.Data.DataSet> constructor.</span></span> <span data-ttu-id="b70eb-104">Volitelně můžete zadáte název argument.</span><span class="sxs-lookup"><span data-stu-id="b70eb-104">Optionally specify a name argument.</span></span> <span data-ttu-id="b70eb-105">Pokud nezadáte název <xref:System.Data.DataSet>, název nastavena na "NewDataSet".</span><span class="sxs-lookup"><span data-stu-id="b70eb-105">If you do not specify a name for the <xref:System.Data.DataSet>, the name is set to "NewDataSet".</span></span>  

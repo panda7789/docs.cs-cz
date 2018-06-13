@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758539"
 ---
 # <a name="adding-a-datatable-to-a-dataset"></a><span data-ttu-id="9a684-102">Přidání DataTable do datové sady</span><span class="sxs-lookup"><span data-stu-id="9a684-102">Adding a DataTable to a DataSet</span></span>
 <span data-ttu-id="9a684-103">ADO.NET umožňuje vytvářet <xref:System.Data.DataTable> objekty a přidat je do existujícího <xref:System.Data.DataSet>.</span><span class="sxs-lookup"><span data-stu-id="9a684-103">ADO.NET enables you to create <xref:System.Data.DataTable> objects and add them to an existing <xref:System.Data.DataSet>.</span></span> <span data-ttu-id="9a684-104">Můžete nastavit omezení informace <xref:System.Data.DataTable> pomocí <xref:System.Data.DataTable.PrimaryKey%2A> a <xref:System.Data.DataColumn.Unique%2A> vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="9a684-104">You can set constraint information for a <xref:System.Data.DataTable> by using the <xref:System.Data.DataTable.PrimaryKey%2A> and <xref:System.Data.DataColumn.Unique%2A> properties.</span></span>  

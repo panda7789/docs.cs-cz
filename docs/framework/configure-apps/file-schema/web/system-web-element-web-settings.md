@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755159"
 ---
 # <a name="ltsystemwebgt-element-web-settings"></a><span data-ttu-id="25c0d-102">&lt;System.Web&gt; – Element (webové nastavení)</span><span class="sxs-lookup"><span data-stu-id="25c0d-102">&lt;system.web&gt; Element (Web Settings)</span></span>
 <span data-ttu-id="25c0d-103">Obsahuje informace o správě procesy chování vrstvě hostování technologie ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="25c0d-103">Contains information about how the ASP.NET hosting layer manages process-wide behavior.</span></span>  

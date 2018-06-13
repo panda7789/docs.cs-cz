@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756212"
 ---
 # <a name="ltudpbindinggt"></a><span data-ttu-id="133fb-102">&lt;udpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="133fb-102">&lt;udpBinding&gt;</span></span>
 <span data-ttu-id="133fb-103">Element konfigurace slouží ke konfiguraci <xref:System.ServiceModel.UdpBinding> vazby.</span><span class="sxs-lookup"><span data-stu-id="133fb-103">A configuration element used to configure the <xref:System.ServiceModel.UdpBinding> binding.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760138"
 ---
 # <a name="calling-functions-in-linq-to-entities-queries"></a><span data-ttu-id="983e3-102">Volání funkcí v technologii LINQ to Entities dotazy</span><span class="sxs-lookup"><span data-stu-id="983e3-102">Calling Functions in LINQ to Entities Queries</span></span>
 <span data-ttu-id="983e3-103">Témata v této části popisují, jak volat funkce v technologii LINQ dotazy entity.</span><span class="sxs-lookup"><span data-stu-id="983e3-103">The topics in this section describe how to call functions in LINQ to Entities queries.</span></span>  

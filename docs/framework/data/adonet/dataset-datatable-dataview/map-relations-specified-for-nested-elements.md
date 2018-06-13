@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756693"
 ---
 # <a name="map-relations-specified-for-nested-elements"></a><span data-ttu-id="3a7dd-102">Mapování vztahy zadané pro vnořené prvky</span><span class="sxs-lookup"><span data-stu-id="3a7dd-102">Map Relations Specified for Nested Elements</span></span>
 <span data-ttu-id="3a7dd-103">Schéma může zahrnovat **msdata:Relationship** poznámky k explicitnímu zadání mapování mezi dvěma prvky ve schématu.</span><span class="sxs-lookup"><span data-stu-id="3a7dd-103">A schema can include an **msdata:Relationship** annotation to explicitly specify the mapping between any two elements in the schema.</span></span> <span data-ttu-id="3a7dd-104">Dva prvky určené ve **msdata:Relationship** mohou být použity ve schématu, ale nemusí být.</span><span class="sxs-lookup"><span data-stu-id="3a7dd-104">The two elements specified in **msdata:Relationship** can be nested in the schema, but do not have to be.</span></span> <span data-ttu-id="3a7dd-105">Proces mapování používá **msdata:Relationship** ve schématu vygenerovat primární klíč, cizí klíče relaci mezi dvěma sloupci.</span><span class="sxs-lookup"><span data-stu-id="3a7dd-105">The mapping process uses **msdata:Relationship** in the schema to generate the primary key/foreign key relationship between the two columns.</span></span>  
