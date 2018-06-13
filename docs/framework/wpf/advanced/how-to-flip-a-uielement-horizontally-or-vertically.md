@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544392"
 ---
 # <a name="how-to-flip-a-uielement-horizontally-or-vertically"></a>Postupy: Překlopení prvku UIElement vodorovně nebo svisle
 Tento příklad ukazuje, jak používat <xref:System.Windows.Media.ScaleTransform> k převrácení <xref:System.Windows.UIElement> vodorovně nebo svisle. V tomto příkladu <xref:System.Windows.Controls.Button> ovládací prvek (typ <xref:System.Windows.UIElement>) je obráceně použitím <xref:System.Windows.Media.ScaleTransform> k jeho <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost.  

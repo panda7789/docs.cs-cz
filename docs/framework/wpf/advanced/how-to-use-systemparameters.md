@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544632"
 ---
 # <a name="how-to-use-systemparameters"></a>Postupy: Používání tipů SystemParameters
 Tento příklad ukazuje, jak k přístupu a použití vlastností <xref:System.Windows.SystemParameters> za účelem styl nebo na tlačítko Přizpůsobit.  

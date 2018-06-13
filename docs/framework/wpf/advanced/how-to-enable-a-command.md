@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545279"
 ---
 # <a name="how-to-enable-a-command"></a>Postupy: Povolení příkazu
 Následující příklad ukazuje, jak používat tvorba příkazů v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  Tento příklad ukazuje, jak přidružit <xref:System.Windows.Input.RoutedCommand> k <xref:System.Windows.Controls.Button>, vytvoření <xref:System.Windows.Input.CommandBinding>a vytváření obslužných rutin událostí, které implementují třídu <xref:System.Windows.Input.RoutedCommand>.  Další informace o tvorba příkazů najdete v tématu [tvorba příkazů přehled](../../../../docs/framework/wpf/advanced/commanding-overview.md).  

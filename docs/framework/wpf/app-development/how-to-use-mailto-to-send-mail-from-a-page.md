@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544814"
 ---
 # <a name="how-to-use-mailto-to-send-mail-from-a-page"></a>Postupy: použití mailto: odesílání e-mailu z stránku
 Tento příklad ukazuje, jak používat <xref:System.Windows.Documents.Hyperlink> ve spojení s **mailto:**[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)].  

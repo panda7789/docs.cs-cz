@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544674"
 ---
 # <a name="how-to-use-systemfonts"></a>Postupy: Používání tipů SystemFonts
 Tento příklad ukazuje, jak používat statické prostředky <xref:System.Windows.SystemFonts> třídy za účelem styl nebo na tlačítko Přizpůsobit.  

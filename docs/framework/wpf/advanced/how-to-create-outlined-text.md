@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544962"
 ---
 # <a name="how-to-create-outlined-text"></a>Postupy: Vytvoření textu osnovy
 Ve většině případů při přidávání dekoru na textové řetězce ve vaší [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace, používáte text z hlediska kolekci diskrétní znaků nebo glyfů. Můžete například vytvořit lineární štětce přechodu a použijte ho k <xref:System.Windows.Controls.Control.Foreground%2A> vlastnost <xref:System.Windows.Controls.TextBox> objektu. Při zobrazení nebo upravte pole, lineární štětce přechodu automaticky použita pro aktuální sadu znaků v textovém řetězci.  

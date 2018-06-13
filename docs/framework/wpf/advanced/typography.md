@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546120"
 ---
 # <a name="typography"></a>Typografie
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] zahrnuje podporu pro bohatou prezentace textového obsahu. Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)], což zlepšuje přehlednost a čitelnost textu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje také [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma, která poskytují další možnosti nad rámec těch, definované [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu.  

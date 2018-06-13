@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548107"
 ---
 # <a name="focus-overview"></a>Přehled fokusu
 V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] existují dvě hlavní koncepty, které se týkají fokus: fokus a logické fokus klávesnice.  Fokus klávesnice vztahuje k elementu, který přijímá vstup z klávesnice a logické fokus odkazuje na element v fokus obor, který má právě fokus.  Tyto koncepty jsou podrobněji v tomto přehledu.  Vysvětlení rozdílu v tyto koncepty je důležité pro vytvoření složitých aplikací, které mají více oblastech, kde lze získat fokus.  

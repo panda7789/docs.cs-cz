@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544229"
 ---
 # <a name="input-wpf"></a>Vstup (WPF)
 Windows Presentation Foundation (WPF) zahrnuje podporu pro několik typů vstupu. Tento vstup zahrnuje text, dotykového ovládání, myši, příkazy, fokus, dotykového ovládání, přetahování myší a digitální rukopisu. Tato část popisuje témata týkající se vstup v grafickém subsystému WPF.  

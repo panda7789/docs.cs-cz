@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544508"
 ---
 # <a name="how-to-add-custom-data-to-ink-data"></a>Postupy: Přidání vlastních dat do dat inkoustu
 Přidáním vlastních dat do barvu, která bude uloženo při uložení rukopisu rukopisu serializovat formát (Serialized Format).  Můžete uložit vlastní data, která mají <xref:System.Windows.Ink.DrawingAttributes>, <xref:System.Windows.Ink.StrokeCollection>, nebo <xref:System.Windows.Ink.Stroke>.  Schopnost uložit vlastní data na tři objekty vám dává možnost k rozhodování o nejlepší místo k uložení dat.  Všechny tři třídy podobné metody používat k ukládání a přístup k vlastní data.  

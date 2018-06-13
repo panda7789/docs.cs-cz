@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547391"
 ---
 # <a name="property-value-inheritance"></a>Dědičnost hodnoty vlastnosti
 Dědičnost hodnota vlastnosti je funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systému. Dědičnost vlastnosti hodnota umožňuje podřízené elementy ve stromu elementů získat hodnotu konkrétní vlastnosti z nadřazené elementy, dědění tuto hodnotu, protože byl nastaven kdekoli v nejbližší nadřazený element. Nadřazený element může také mít získat jeho hodnota prostřednictvím dědičnost hodnotu vlastnosti, tak systému potenciálně recurses úplně do kořenového adresáře stránky. Dědičnost hodnota vlastnosti není výchozí chování systému vlastnosti; Vlastnost je nutné vytvořit s nastavením konkrétní metadata, aby způsobit, že vlastnost zahájíte dědičnost hodnotu vlastnosti na podřízené elementy.  

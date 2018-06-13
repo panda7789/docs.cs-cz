@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548429"
 ---
 # <a name="documents-in-wpf"></a>Dokumenty v platformě WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí širokou škálu funkcí dokumentu, které umožňují vytváření zachováním obsahu, který je navržený jako snadněji přístupu a čtení než v předchozích generací [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. Kromě široké možnosti a kvalitu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje integrované služby pro zobrazení dokumentu, balení a zabezpečení. Toto téma obsahuje úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typů dokumentů a balení dokumentu.  

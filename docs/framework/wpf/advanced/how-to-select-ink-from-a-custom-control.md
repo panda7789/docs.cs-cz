@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548363"
 ---
 # <a name="how-to-select-ink-from-a-custom-control"></a>Postupy: Výběr inkoustu pomocí vlastního ovládacího prvku
 Přidáním <xref:System.Windows.Ink.IncrementalLassoHitTester> do vlastního ovládacího prvku, můžete povolit vlastního ovládacího prvku tak, aby uživatel může vybrat rukopisu s nástrojem laso, podobně jako <xref:System.Windows.Controls.InkCanvas> vybere rukopisu s nepravidelné oblasti.  

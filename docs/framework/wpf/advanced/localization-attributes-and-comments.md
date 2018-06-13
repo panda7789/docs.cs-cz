@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547264"
 ---
 # <a name="localization-attributes-and-comments"></a>Atributy a komentáře lokalizace
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] lokalizace komentáře jsou vlastnosti, uvnitř [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] zdrojový kód, poskytuje vývojářům poskytovat pravidly a tipy pro lokalizaci. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] lokalizace komentáře obsahovat dvě sady informace: atributy lokalizovatelnost a lokalizace vlastní komentáře. Lokalizovatelnost atributy jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lokalizace rozhraní API k označení prostředků, které jsou lokalizovat. Vlastní komentáře jsou veškeré informace, které chce zahrnují vytváření aplikací.  

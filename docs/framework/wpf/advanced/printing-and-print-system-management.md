@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547417"
 ---
 # <a name="printing-and-print-system-management"></a>Tisk a systémová správa tisku
 [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] a rozhraní Microsoft .NET Framework znamenat novou cestu, kterou tiskové – alternativu k [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] tisk – a významně rozšířené sadu tiskový systém správy [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].  

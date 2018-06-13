@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544193"
 ---
 # <a name="how-to-clone-a-printer"></a>Postupy: Klonování tiskárny
 Většina podniků v určitém okamžiku koupit více tiskáren stejného modelu. Obvykle to jsou nainstalovány s nastavením konfigurace prakticky identické. Instalace tiskárny může být časově náročná a chyba náchylné k chybám. <xref:System.Printing.IndexedProperties?displayProperty=nameWithType> Obor názvů a <xref:System.Printing.PrintServer.InstallPrintQueue%2A> třídu, která se zveřejňují pomocí rozhraní Microsoft .NET Framework umožňuje okamžitě nainstalovat libovolný počet dalších tiskové fronty, které jsou klonovat z existující tiskovou frontu.  

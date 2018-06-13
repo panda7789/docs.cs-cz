@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543690"
 ---
 # <a name="how-to-recognize-application-gestures"></a>Postupy: Rozlišení gest aplikací
 Následující příklad ukazuje, jak vymazání rukopisu, když uživatel provede <xref:System.Windows.Ink.ApplicationGesture.ScratchOut> gesty na <xref:System.Windows.Controls.InkCanvas>. Tento příklad předpokládá <xref:System.Windows.Controls.InkCanvas>, volané `inkCanvas1`, je deklarován v souboru XAML.  

@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549393"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>Obor názvů XAML mapování oboru názvů pro WPF XAML
 Dále toto téma vysvětluje přítomnosti a účel dvě mapování oboru názvů jazyka XAML tak často, nalézt ve značce kořenového souboru WPF XAML. Také popisuje, jak vytvořit podobná mapování pro používání prvky, které jsou definovány v kódu nebo v samostatné sestavení.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548909"
 ---
 # <a name="walkthrough-hosting-a-windows-forms-composite-control-in-wpf"></a>Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte významné investice [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu, může být efektivnější opakovaně používat alespoň některé tento kód v vaší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace místo přepsání od začátku. Nejběžnější scénáře je, pokud máte existující Windows Forms – ovládací prvky. V některých případech nemusí mít ani přístup ke zdrojovému kódu pro tyto ovládací prvky. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Poskytuje přehledné postup pro hostování těchto ovládacích prvků v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Například můžete použít [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pro většinu vaše programování při hostování vaší specializované <xref:System.Windows.Forms.DataGridView> ovládací prvky.  

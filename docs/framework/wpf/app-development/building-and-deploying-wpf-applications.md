@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547138"
 ---
 # <a name="building-and-deploying-wpf-applications"></a>Sestavení a nasazení aplikací WPF
 Sestavení a nasazení modelu poskytuje možnost vytvářet a nasazovat aplikace místně i vzdáleně, včetně následujících:  

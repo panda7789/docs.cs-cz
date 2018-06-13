@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545529"
 ---
 # <a name="initialization-for-object-elements-not-in-an-object-tree"></a>Inicializace elementů objektu, které nejsou obsaženy ve stromu objektů
 Některé aspekty [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] inicializace odložit procesy, které se zpravidla spoléhají na daný element připojené k logického stromu nebo vizuálním stromu. Toto téma popisuje kroky, které může být nutné za účelem inicializace element, který není připojen k buď stromu.  

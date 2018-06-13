@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544645"
 ---
 # <a name="how-to-implement-a-dependency-property"></a>Postupy: Implementace vlastnosti závislosti
 Tento příklad ukazuje, jak zálohovat [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnost s <xref:System.Windows.DependencyProperty> pole, proto definování vlastnost závislosti. Když definovat vlastní vlastnosti a mají podporovat mnoho aspektů [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funkcí, včetně styly, vazby dat, dědičnosti, animace a výchozí hodnoty, měli byste implementovat jako vlastnost závislosti.  

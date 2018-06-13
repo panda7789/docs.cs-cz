@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544314"
 ---
 # <a name="how-to-handle-a-routed-event"></a>Postupy: Zpracování směrované události
 Tento příklad ukazuje, jak probublávání události práci a jak napsat obslužnou rutinu, která dokáže zpracovat data směrované události.  
