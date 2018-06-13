@@ -19,6 +19,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745614"
 ---
 # <a name="resolving-assembly-loads"></a>Řešení načítání sestavení
 Poskytuje rozhraní .NET Framework <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost pro aplikace, které vyžadují větší kontrolu nad načítání sestavení. Při zpracování této událost, můžete aplikaci načtení sestavení do zatížení kontextu z mimo normální testování cesty vyberte který několik verzí sestavení načíst, Emitování dynamických sestavení a obnoví v něm a tak dále. Toto téma obsahuje pokyny pro zpracování <xref:System.AppDomain.AssemblyResolve> událostí.  

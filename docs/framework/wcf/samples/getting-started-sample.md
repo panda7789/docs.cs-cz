@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33505766"
 ---
 # <a name="getting-started-sample"></a>Ukázka Začínáme
 Ukázka Začínáme ukazuje, jak implementovat typické služby a typické klienta pomocí služby Windows Communication Foundation (WCF). Tato ukázka je základem pro všechny ostatní vzorky základní technologie.  

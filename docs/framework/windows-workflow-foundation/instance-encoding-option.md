@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512535"
 ---
 # <a name="instance-encoding-option"></a>Kódování možnost instance
 **Instance kódování možnost** vlastnost úložiště Instance pracovního postupu SQL umožňuje určit, zda zprostředkovatel trvalost SQL by měl komprimovat informace stavu instance pracovního postupu pomocí algoritmu GZip před uložením informace do databáze trvalost. Povolené hodnoty pro tuto vlastnost jsou: GZip a None. Výchozí hodnota je žádné. Následující seznam popisuje tyto možnosti.  

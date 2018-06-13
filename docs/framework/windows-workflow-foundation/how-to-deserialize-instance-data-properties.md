@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514049"
 ---
 # <a name="how-to-deserialize-instance-data-properties"></a>Postupy: deserializovat vlastnosti Data Instance
 Mohou nastat situace, když uživatel nebo správce pracovního postupu chtít ručně zkontrolovat stav instance pracovního postupu trvalý. <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> obsahuje zobrazení v tabulce instance, která zveřejňuje následující čtyři sloupce:  

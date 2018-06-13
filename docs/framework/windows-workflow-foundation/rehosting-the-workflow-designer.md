@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513303"
 ---
 # <a name="rehosting-the-workflow-designer"></a>Opětovného hostování návrháře pracovních postupů
 [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] Můžete rehosted v prostředích mimo [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] pro účely vytváření, úpravu a sledování pracovních postupů.  

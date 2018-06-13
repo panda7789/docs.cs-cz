@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33504316"
 ---
 # <a name="services-and-transactions"></a>Služby a transakce
 Aplikace Windows Communication Foundation (WCF) můžete zahájit transakci ze v rámci klienta a koordinovat transakce v rámci operace služby. Klienty můžete zahájit transakci a vyvolání několik operací služby a ujistěte se, že operace služby jsou buď potvrzena nebo vrácena zpět jako na jednu jednotku.  

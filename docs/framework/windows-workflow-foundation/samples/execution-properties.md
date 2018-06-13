@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513019"
 ---
 # <a name="execution-properties"></a>Provádění vlastnosti
 Tento příklad ukazuje, jak definovat a provádění vlastnost použijte vlastní aktivity. V tomto příkladu vlastnost provádění Určuje barvu popředí v konzole. Pracovním postupu příklad ukazuje, jak různé logické cesty provádění (větví nástroje <xref:System.Activities.Statements.Parallel> aktivity) můžete udržovat různé konzoly barvy navzdory prokládaná provádění aktivity (napříč větví sady <xref:System.Activities.Statements.Parallel> aktivity).  

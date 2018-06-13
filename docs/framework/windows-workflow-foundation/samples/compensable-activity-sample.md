@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514002"
 ---
 # <a name="compensable-activity-sample"></a>Ukázka compensable aktivity
 Tento příklad znázorňuje způsob použití `CompensableActivity` aktivity k definování práce, kterou je třeba udělat pro danou akci během normálního spouštění a práci, kterou je potřeba provést odpovídajícím způsobem této akce v případě potřeby později.  První část vzorku ukazuje, jak compensable pracovní jednotky se může definovat v systému Windows Workflow Foundation (WF) pomocí `CompensableActivity` aktivity a jak jsou spouštěny v spuštění úspěšné.  Druhá část vzorku ukazuje, jak funkce stejné compensable pracovních jednotek automaticky postará o kompenzaci když je dosaženo neočekávané události a zrušení instance pracovního postupu.  

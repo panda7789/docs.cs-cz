@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338793"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Příkazy, výrazy a operátory (Průvodce programováním v C#)
 Kód jazyka C#, který se skládá z aplikace se skládá z příkazy, které tvoří klíčová slova, výrazy a operátory. Tato část obsahuje informace týkající se tyto základní prvky programu v C#.  

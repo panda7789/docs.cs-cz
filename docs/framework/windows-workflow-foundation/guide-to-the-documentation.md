@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513123"
 ---
 # <a name="guide-to-the-windows-workflow-documentation"></a>Průvodce dokumentací pracovního postupu systému Windows
 Toto téma obsahuje informace o tom, jak používat v dokumentaci Windows Workflow Foundation. Propojené dokumenty doporučují se, že počáteční body seskupené podle konkrétní zájmů a úrovně odborných znalostí.  

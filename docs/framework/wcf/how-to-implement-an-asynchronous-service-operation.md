@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500074"
 ---
 # <a name="how-to-implement-an-asynchronous-service-operation"></a>Postupy: Implementace operace asynchronní služby
 V aplikacích Windows Communication Foundation (WCF) mohou být operace služby implementovány synchronně nebo asynchronně bez diktování klientovi jejich volání. Například operace asynchronní služby můžete volání synchronně, a operací synchronní služby je možné volat asynchronně. Příklad, který ukazuje, jak asynchronní volání operace v aplikaci klienta, naleznete v části [postupy: asynchronní volání operací služby](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md). Další informace o synchronní a asynchronní operace najdete v tématu [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md) a [synchronní a asynchronní operace](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md). Toto téma popisuje základní strukturu operace asynchronní služby, kód není úplný. Kompletní příklad, jak si služba a klient strany najdete v části [asynchronního](http://msdn.microsoft.com/library/833db946-f511-4f64-a26f-2759a11217c7).  

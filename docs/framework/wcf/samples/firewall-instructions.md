@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33506754"
 ---
 # <a name="firewall-instructions"></a>Pokyny k bráně firewall
 Několik portů nebo programů v bráně firewall je nutné povolit, aby mohl fungovat ukázky Windows Communication Foundation (WCF). Řadu ukázky komunikovat prostřednictvím portů v rozsahu 8000-8003 a portu 9000. Brána firewall je ve výchozím nastavení zapnuta a brání přístupu k těmto portům. Pokud chcete povolit bránu firewall pro ukázky, proveďte jednu z následujících postupů, v závislosti na vašich požadavcích a zabezpečení prostředí:  

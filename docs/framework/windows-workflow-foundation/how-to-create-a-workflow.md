@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513260"
 ---
 # <a name="how-to-create-a-workflow"></a>Postupy: vytvoření pracovního postupu
 Pracovní postupy lze sestavit z předdefinovaných aktivit a také z vlastních aktivit. Tato témata v této části kroku procesem vytvoření pracovního postupu, který používá obě zabudované aktivity, jako <xref:System.Activities.Statements.Flowchart> aktivity a vlastní aktivity z předchozí [postupy: vytvoření aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md) tématu. Pracovní postup modelů číslo hádání hru. Pouze jeden témat v této části je vyžadováno k dokončení tohoto kurzu; měli byste vybrat styl, které vás zajímají a postupujte podle tohoto kroku. Je však může provést všechna témata v případě potřeby.  

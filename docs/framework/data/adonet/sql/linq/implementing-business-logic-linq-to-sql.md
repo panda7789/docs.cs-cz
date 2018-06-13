@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362048"
 ---
 # <a name="implementing-business-logic-linq-to-sql"></a>Implementace obchodní logiky (technologie LINQ to SQL)
 Termín "obchodní logiky" v tomto tématu vztahuje na všechny vlastní pravidla nebo ověřovací testy, které použijete pro data, než je vložit, aktualizovat nebo odstranit z databáze. Obchodní logika se také někdy označuje jako "obchodní pravidla" nebo "logiku domény." Ve vícevrstvé aplikace je obvykle určený jako logické vrstvu tak, aby ho můžete upravit nezávisle na prezentační vrstvy nebo vrstva přístupu k datům. Datová vrstva přístupu může vyvolat obchodní logiky před nebo za všechny aktualizace, vložení nebo odstranění dat v databázi.  

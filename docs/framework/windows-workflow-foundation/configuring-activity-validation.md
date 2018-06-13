@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512597"
 ---
 # <a name="configuring-activity-validation"></a>Konfigurace ověření aktivity
 Aktivita ověření umožňuje autorům aktivity a uživatelé identifikovat a zprávy o chybách v konfiguraci aktivity před jeho spuštění. Windows Workflow Foundation (WF) poskytuje následující tři typy ověření aktivity:  

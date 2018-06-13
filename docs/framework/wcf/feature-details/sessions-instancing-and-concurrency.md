@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33506571"
 ---
 # <a name="sessions-instancing-and-concurrency"></a>Relace, vytváření instancí a souběžnost
 A *relace* existuje korelace všech zpráv odeslaných mezi dva koncové body. *Vytváření instancí* odkazuje na řízení životnost služby uživatelem definované objekty a jejich související <xref:System.ServiceModel.InstanceContext> objekty. *Concurrency* je termín určený k ovládacímu prvku počet vláken, které jsou prováděny v době <xref:System.ServiceModel.InstanceContext> ve stejnou dobu.  

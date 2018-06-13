@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356734"
 ---
 # <a name="oracletypes"></a>OracleTypes
 Zprostředkovatel dat .NET Framework pro Oracle zahrnuje několik struktury, které můžete použít pro práci s datovými typy Oracle. Mezi ně patří <xref:System.Data.OracleClient.OracleNumber> a <xref:System.Data.OracleClient.OracleString>.  

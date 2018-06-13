@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500230"
 ---
 # <a name="how-to-declare-faults-in-service-contracts"></a>Postupy: deklarace chyb v kontraktech služby
 Ve spravovaném kódu jsou výjimky vyvolány, když dojde k chybové stavy. V aplikacích Windows Communication Foundation (WCF) nicméně kontraktů služby určit, jaké informace o chybě vrátí klientům deklarace chyb protokolu SOAP v kontrakt služby. Přehled o vztah mezi výjimek a chyb naleznete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  

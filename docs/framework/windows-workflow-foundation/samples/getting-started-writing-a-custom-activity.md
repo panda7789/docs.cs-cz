@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513308"
 ---
 # <a name="getting-started-writing-a-custom-activity"></a>Získávání Začínáme vytváření vlastních aktivit
 Tento příklad znázorňuje, jak definovat jednoduchý vlastní aktivity v jazyce XAML. Aktivita je zadaný název `Rhyme`, a je svou logikou pořadí tří <xref:System.Activities.Statements.WriteLine> aktivity.  

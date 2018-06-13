@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359423"
 ---
 # <a name="privacy-and-data-security"></a>Ochrana osobních údajů a zabezpečení dat
 Zabezpečení a správa citlivých informací v aplikaci ADO.NET je závislé na základní produkty a technologie použitá k jeho vytvoření. ADO.NET přímo neposkytuje služby pro zabezpečení nebo šifrovat data.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512996"
 ---
 # <a name="control-flow-activities-in-wf"></a>Aktivity toku řízení ve WF
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] Poskytuje několik aktivit pro řízení toku provádění v rámci pracovního postupu. Některé z těchto aktivit (například `Switch` a `If`) implementovat toku řízení struktury podobná těm v programovacím prostředí jako je například Visual C#, zatímco jiní jej (například `Pick`) nové struktury programovací model.  
