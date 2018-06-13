@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748838"
 ---
 # <a name="ltsystemservicemodelactivationgt"></a><span data-ttu-id="f2437-102">&lt;system.serviceModel.activation&gt;</span><span class="sxs-lookup"><span data-stu-id="f2437-102">&lt;system.serviceModel.activation&gt;</span></span>
 <span data-ttu-id="f2437-103">Tento konfigurační oddíl představuje nastavení konfigurace pro nástroj SMSvcHost.exe.</span><span class="sxs-lookup"><span data-stu-id="f2437-103">This configuration section represents the configuration settings for the SMSvcHost.exe tool.</span></span> <span data-ttu-id="f2437-104">Konfigurační prvky můžete nakonfigurovat v souboru konfigurace SMSvcHost.exe.config.</span><span class="sxs-lookup"><span data-stu-id="f2437-104">The configuration elements can be configured in the SMSvcHost.exe.config file.</span></span> <span data-ttu-id="f2437-105">Konkrétně obsahuje všechna nastavení celého systému, které musí být nakonfigurovaná.</span><span class="sxs-lookup"><span data-stu-id="f2437-105">Specifically, it includes all machine-wide settings that must be configured.</span></span>  

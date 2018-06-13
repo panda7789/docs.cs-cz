@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758721"
 ---
 # <a name="oracle-ref-cursors"></a><span data-ttu-id="a8e9f-102">Kurzory REF Oracle</span><span class="sxs-lookup"><span data-stu-id="a8e9f-102">Oracle REF CURSORs</span></span>
 <span data-ttu-id="a8e9f-103">Zprostředkovatel dat .NET Framework pro Oracle podporuje Oracle **REF kurzor** datového typu.</span><span class="sxs-lookup"><span data-stu-id="a8e9f-103">The .NET Framework Data Provider for Oracle supports the Oracle **REF CURSOR** data type.</span></span> <span data-ttu-id="a8e9f-104">Při použití zprostředkovatele dat pro práci s kurzory REF Oracle, měli byste zvážit následující chování.</span><span class="sxs-lookup"><span data-stu-id="a8e9f-104">When using the data provider to work with Oracle REF CURSORs, you should consider the following behaviors.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764538"
 ---
 # <a name="modulo-entity-sql"></a><span data-ttu-id="faef5-102">(Modulo) (Entita SQL)</span><span class="sxs-lookup"><span data-stu-id="faef5-102">(Modulo) (Entity SQL)</span></span>
 <span data-ttu-id="faef5-103">Vrátí zbytek rozdělené jiným jeden výraz.</span><span class="sxs-lookup"><span data-stu-id="faef5-103">Returns the remainder of one expression divided by another.</span></span>  

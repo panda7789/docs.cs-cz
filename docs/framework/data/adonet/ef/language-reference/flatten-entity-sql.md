@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760567"
 ---
 # <a name="flatten-entity-sql"></a><span data-ttu-id="bb6c6-102">VYROVNÁNÍ (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="bb6c6-102">FLATTEN (Entity SQL)</span></span>
 <span data-ttu-id="bb6c6-103">Převede kolekci plochou kolekce kolekcí.</span><span class="sxs-lookup"><span data-stu-id="bb6c6-103">Converts a collection of collections into a flattened collection.</span></span> <span data-ttu-id="bb6c6-104">Nová kolekce obsahuje všechny stejné prvky, jako původní kolekce, ale bez vnořené struktury.</span><span class="sxs-lookup"><span data-stu-id="bb6c6-104">The new collection contains all the same elements as the old collection, but without a nested structure.</span></span>  

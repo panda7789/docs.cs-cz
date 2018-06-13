@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764015"
 ---
 # <a name="operator-precedence-entity-sql"></a><span data-ttu-id="24086-102">Priorita operátorů (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="24086-102">Operator Precedence (Entity SQL)</span></span>
 <span data-ttu-id="24086-103">Když [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu má více operátorů, operátorů určuje pořadí, ve kterém se provádí operace.</span><span class="sxs-lookup"><span data-stu-id="24086-103">When an [!INCLUDE[esql](../../../../../../includes/esql-md.md)] query has multiple operators, operator precedence determines the sequence in which the operations are performed.</span></span> <span data-ttu-id="24086-104">Pořadí zpracování může významně ovlivnit výsledek dotazu.</span><span class="sxs-lookup"><span data-stu-id="24086-104">The order of execution can significantly affect the query result.</span></span>  

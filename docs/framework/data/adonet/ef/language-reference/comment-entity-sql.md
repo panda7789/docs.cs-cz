@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764161"
 ---
 # <a name="---comment-entity-sql"></a><span data-ttu-id="dd666-102">--(Komentář) (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="dd666-102">-- (Comment) (Entity SQL)</span></span>
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="dd666-103"> dotazy může obsahovat komentáře.</span><span class="sxs-lookup"><span data-stu-id="dd666-103"> queries can contain comments.</span></span> <span data-ttu-id="dd666-104">Dvě pomlčky (`--`) spustit řádek poznámky.</span><span class="sxs-lookup"><span data-stu-id="dd666-104">Two dashes (`--`) start a comment line.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755523"
 ---
 # <a name="connection-pooling"></a><span data-ttu-id="f2bc8-102">Sdružování připojení</span><span class="sxs-lookup"><span data-stu-id="f2bc8-102">Connection Pooling</span></span>
 <span data-ttu-id="f2bc8-103">Připojení ke zdroji dat může být časově náročná.</span><span class="sxs-lookup"><span data-stu-id="f2bc8-103">Connecting to a data source can be time consuming.</span></span> <span data-ttu-id="f2bc8-104">Chcete-li minimalizovat náklady na otevření připojení, ADO.NET používá volat metodu optimalizace *sdružování připojení*, což minimalizuje náklady na opakovaně otvírání a zavírání připojení.</span><span class="sxs-lookup"><span data-stu-id="f2bc8-104">To minimize the cost of opening connections, ADO.NET uses an optimization technique called *connection pooling*, which minimizes the cost of repeatedly opening and closing connections.</span></span> <span data-ttu-id="f2bc8-105">Sdružování připojení se proto liší pro zprostředkovatele dat .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="f2bc8-105">Connection pooling is handled differently for the .NET Framework data providers.</span></span>  

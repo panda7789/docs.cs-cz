@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759485"
 ---
 # <a name="datasets-datatables-and-dataviews"></a><span data-ttu-id="aa318-102">Datové sady, datové tabulky a datová zobrazení</span><span class="sxs-lookup"><span data-stu-id="aa318-102">DataSets, DataTables, and DataViews</span></span>
 <span data-ttu-id="aa318-103">Technologie ADO.NET <xref:System.Data.DataSet> je rezidentní reprezentace data, která zajišťuje konzistentní relační programovací model bez ohledu na zdroj dat obsahuje.</span><span class="sxs-lookup"><span data-stu-id="aa318-103">The ADO.NET <xref:System.Data.DataSet> is a memory-resident representation of data that provides a consistent relational programming model regardless of the source of the data it contains.</span></span> <span data-ttu-id="aa318-104">A <xref:System.Data.DataSet> představuje kompletní sadu dat včetně tabulek, které obsahují, řazení a omezit data, jakož i relace mezi tabulkami.</span><span class="sxs-lookup"><span data-stu-id="aa318-104">A <xref:System.Data.DataSet> represents a complete set of data including the tables that contain, order, and constrain the data, as well as the relationships between the tables.</span></span>  

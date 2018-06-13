@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756742"
 ---
 # <a name="ltetwtrackinggt"></a><span data-ttu-id="fe5eb-102">&lt;etwTracking&gt;</span><span class="sxs-lookup"><span data-stu-id="fe5eb-102">&lt;etwTracking&gt;</span></span>
 <span data-ttu-id="fe5eb-103">Chování služby, která umožňuje službám využít trasování událostí pro Windows Sledování pomocí <xref:System.Activities.Tracking.EtwTrackingParticipant>.</span><span class="sxs-lookup"><span data-stu-id="fe5eb-103">A service behavior that allows a service to utilize ETW tracking using an <xref:System.Activities.Tracking.EtwTrackingParticipant>.</span></span>  

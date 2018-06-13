@@ -13,6 +13,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757694"
 ---
 # <a name="ltapplicationpoolgt-element-web-settings"></a><span data-ttu-id="7fcba-102">&lt;applicationPool&gt; – Element (webové nastavení)</span><span class="sxs-lookup"><span data-stu-id="7fcba-102">&lt;applicationPool&gt; Element (Web Settings)</span></span>
 <span data-ttu-id="7fcba-103">Určuje nastavení konfigurace, které jsou používány ASP.NET ke správě procesy chování, když aplikace ASP.NET běží v integrovaném režimu [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější.</span><span class="sxs-lookup"><span data-stu-id="7fcba-103">Specifies configuration settings that are used by ASP.NET to manage process-wide behavior when an ASP.NET application is running in Integrated mode on [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] or a later version.</span></span>  

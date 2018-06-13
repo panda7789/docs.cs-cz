@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743973"
 ---
 # <a name="ltspecifiedpickupdirectorygt-element-network-settings"></a><span data-ttu-id="5823a-102">&lt;specifiedpickupdirectory –&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="5823a-102">&lt;specifiedPickupDirectory&gt; Element (Network Settings)</span></span>
 <span data-ttu-id="5823a-103">Nakonfiguruje místní adresář pro přenos protokolu SMTP (Simple Mail) serveru.</span><span class="sxs-lookup"><span data-stu-id="5823a-103">Configures the local directory for a Simple Mail Transport Protocol (SMTP) server.</span></span>  

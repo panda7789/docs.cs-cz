@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761919"
 ---
 # <a name="entity-sql-language-reference"></a><span data-ttu-id="48c8a-102">Referenční dokumentace jazyka Entity SQL</span><span class="sxs-lookup"><span data-stu-id="48c8a-102">Entity SQL Language Reference</span></span>
 <span data-ttu-id="48c8a-103">Tato část obsahuje podrobnou dokumentaci [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], [!INCLUDE[esql](../../../../../../includes/esql-md.md)]a modelování a mapování jazyky používané [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].</span><span class="sxs-lookup"><span data-stu-id="48c8a-103">This section provides detailed documentation [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], [!INCLUDE[esql](../../../../../../includes/esql-md.md)], and the modeling and mapping languages used by the [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].</span></span>  

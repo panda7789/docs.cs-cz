@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760330"
 ---
 # <a name="using-xml-in-a-dataset"></a><span data-ttu-id="98755-102">Pomocí XML v datové sadě</span><span class="sxs-lookup"><span data-stu-id="98755-102">Using XML in a DataSet</span></span>
 <span data-ttu-id="98755-103">S ADO.NET, můžete vyplnit <xref:System.Data.DataSet> z datového proudu XML nebo dokumentu.</span><span class="sxs-lookup"><span data-stu-id="98755-103">With ADO.NET you can fill a <xref:System.Data.DataSet> from an XML stream or document.</span></span> <span data-ttu-id="98755-104">Datový proud XML nebo dokument můžete použít k poskytování k <xref:System.Data.DataSet> data, informace o schématu nebo obojí.</span><span class="sxs-lookup"><span data-stu-id="98755-104">You can use the XML stream or document to supply to the <xref:System.Data.DataSet> either data, schema information, or both.</span></span> <span data-ttu-id="98755-105">Informací získaných z datového proudu XML nebo dokumentů mohou být kombinovány s existující data nebo informace o schématu již existuje v <xref:System.Data.DataSet>.</span><span class="sxs-lookup"><span data-stu-id="98755-105">The information supplied from the XML stream or document can be combined with existing data or schema information already present in the <xref:System.Data.DataSet>.</span></span>  

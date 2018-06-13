@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758305"
 ---
 # <a name="the-load-method"></a><span data-ttu-id="8f2b1-102">Metoda Load</span><span class="sxs-lookup"><span data-stu-id="8f2b1-102">The Load Method</span></span>
 <span data-ttu-id="8f2b1-103">Můžete použít <xref:System.Data.DataTable.Load%2A> metoda načíst <xref:System.Data.DataTable> s řádky ze zdroje dat.</span><span class="sxs-lookup"><span data-stu-id="8f2b1-103">You can use the <xref:System.Data.DataTable.Load%2A> method to load a <xref:System.Data.DataTable> with rows from a data source.</span></span> <span data-ttu-id="8f2b1-104">Toto je přetížené metody, které ve své nejjednodušší podobě přijímá jeden parametr, **DataReader –**.</span><span class="sxs-lookup"><span data-stu-id="8f2b1-104">This is an overloaded method which, in its simplest form, accepts a single parameter, a **DataReader**.</span></span> <span data-ttu-id="8f2b1-105">V tomto formuláři jednoduše načte **DataTable** s řádky.</span><span class="sxs-lookup"><span data-stu-id="8f2b1-105">In this form, it simply loads the **DataTable** with rows.</span></span> <span data-ttu-id="8f2b1-106">Volitelně můžete zadat **LoadOption** parametr řídit, jak přibývají data **DataTable**.</span><span class="sxs-lookup"><span data-stu-id="8f2b1-106">Optionally, you can specify the **LoadOption** parameter to control how data is added to the **DataTable**.</span></span>  

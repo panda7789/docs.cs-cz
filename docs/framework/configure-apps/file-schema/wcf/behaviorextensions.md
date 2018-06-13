@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749579"
 ---
 # <a name="ltbehaviorextensionsgt"></a><span data-ttu-id="e58f0-102">&lt;behaviorExtensions&gt;</span><span class="sxs-lookup"><span data-stu-id="e58f0-102">&lt;behaviorExtensions&gt;</span></span>
 <span data-ttu-id="e58f0-103">Chování rozšíření zajistit, aby uživatel k vytváření prvků uživatelem definované chování.</span><span class="sxs-lookup"><span data-stu-id="e58f0-103">Behavior extensions enable the user to create user-defined behavior elements.</span></span> <span data-ttu-id="e58f0-104">Tyto prvky můžete použít spolu s standardní elementy chování Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="e58f0-104">These elements can be used alongside the standard Windows Communication Foundation (WCF) behavior elements.</span></span> <span data-ttu-id="e58f0-105">`behaviorExtensions` Oddíl definuje element tak, že můžete použít v konfiguraci.</span><span class="sxs-lookup"><span data-stu-id="e58f0-105">The `behaviorExtensions` section defines the element such that it can be used in configuration.</span></span> <span data-ttu-id="e58f0-106">Tady je příklad typické chování rozšíření.</span><span class="sxs-lookup"><span data-stu-id="e58f0-106">Here is an example of a typical behavior extension.</span></span>  

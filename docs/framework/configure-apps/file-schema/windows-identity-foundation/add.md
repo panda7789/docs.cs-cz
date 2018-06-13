@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757850"
 ---
 # <a name="ltaddgt"></a><span data-ttu-id="77be1-102">&lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="77be1-102">&lt;add&gt;</span></span>
 <span data-ttu-id="77be1-103">Obslužná rutina tokenu zabezpečení zadaný přidá do kolekce obslužná rutina tokenu.</span><span class="sxs-lookup"><span data-stu-id="77be1-103">Adds the specified security token handler to the token handler collection.</span></span>  

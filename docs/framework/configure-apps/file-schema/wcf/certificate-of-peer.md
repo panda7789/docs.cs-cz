@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753599"
 ---
 # <a name="ltcertificategt-of-ltpeergt"></a><span data-ttu-id="078b2-102">&lt;certificate&gt; – &lt;peer&gt;</span><span class="sxs-lookup"><span data-stu-id="078b2-102">&lt;certificate&gt; of &lt;peer&gt;</span></span>
 <span data-ttu-id="078b2-103">Určuje certifikát používají partnerského uzlu.</span><span class="sxs-lookup"><span data-stu-id="078b2-103">Specifies a certificate used by a peer.</span></span>  

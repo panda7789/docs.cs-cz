@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762686"
 ---
 # <a name="how-to-call-canonical-functions"></a><span data-ttu-id="07d54-102">Postupy: volání funkce kanonickém tvaru</span><span class="sxs-lookup"><span data-stu-id="07d54-102">How to: Call Canonical Functions</span></span>
 <span data-ttu-id="07d54-103"><xref:System.Data.Objects.EntityFunctions> Třída obsahuje metody, které zveřejňují kanonické funkce pomocí v technologii LINQ dotazů entity.</span><span class="sxs-lookup"><span data-stu-id="07d54-103">The <xref:System.Data.Objects.EntityFunctions> class contains methods that expose canonical functions to use in LINQ to Entities queries.</span></span> <span data-ttu-id="07d54-104">Informace o kanonické funkce najdete v tématu [kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md).</span><span class="sxs-lookup"><span data-stu-id="07d54-104">For information about canonical functions, see [Canonical Functions](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md).</span></span>  

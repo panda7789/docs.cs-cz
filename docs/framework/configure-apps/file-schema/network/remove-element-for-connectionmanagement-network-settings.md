@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754477"
 ---
 # <a name="ltremovegt-element-for-connectionmanagement-network-settings"></a><span data-ttu-id="75372-102">&lt;Odebrat&gt; Element pro connectionManagement – (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="75372-102">&lt;remove&gt; Element for connectionManagement (Network Settings)</span></span>
 <span data-ttu-id="75372-103">Odebere ze seznamu pro správu připojení IP adresy nebo názvu DNS.</span><span class="sxs-lookup"><span data-stu-id="75372-103">Removes an IP address or DNS name from the connection management list.</span></span>  

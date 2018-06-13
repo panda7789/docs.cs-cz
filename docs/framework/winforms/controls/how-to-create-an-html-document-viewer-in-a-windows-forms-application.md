@@ -1,14 +1,6 @@
 ---
-title: "Postupy: Vytvoření prohlížeče dokumentu HTML ve formulářové aplikaci Windows"
-ms.custom: 
+title: 'Postupy: Vytvoření prohlížeče dokumentu HTML ve formulářové aplikaci Windows'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,45 +9,40 @@ helpviewer_keywords:
 - document viewers
 - Windows Forms, creating document viewers
 ms.assetid: 6a6338fe-f7ee-4f5e-9d8f-0465c57e9039
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 58f964be53c6ddb8abf0af539b773344ce09d948
-ms.sourcegitcommit: cf22b29db780e532e1090c6e755aa52d28273fa6
+ms.openlocfilehash: 1330e20cc4fe7df86e51bebca28e4a71e3108673
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530540"
 ---
-# <a name="how-to-create-an-html-document-viewer-in-a-windows-forms-application"></a><span data-ttu-id="d56c5-102">Postupy: Vytvoření prohlížeče dokumentu HTML ve formulářové aplikaci Windows</span><span class="sxs-lookup"><span data-stu-id="d56c5-102">How to: Create an HTML Document Viewer in a Windows Forms Application</span></span>
-<span data-ttu-id="d56c5-103">Můžete použít <xref:System.Windows.Forms.WebBrowser> ovládací prvek zobrazit a tisk dokumentů HTML bez zadání všechny funkce prohlížeči Internet.</span><span class="sxs-lookup"><span data-stu-id="d56c5-103">You can use the <xref:System.Windows.Forms.WebBrowser> control to display and print HTML documents without providing the full functionality of an Internet Web browser.</span></span> <span data-ttu-id="d56c5-104">To je užitečné, pokud chcete využít výhod možnosti formátování HTML, ale nechcete, aby vaši uživatelé načíst libovolné webové stránky, které mohou obsahovat nedůvěryhodné ovládací prvky webového nebo potenciálně škodlivý kód.</span><span class="sxs-lookup"><span data-stu-id="d56c5-104">This is useful when you want to take advantage of the formatting capabilities of HTML but do not want your users to load arbitrary Web pages that may contain untrusted Web controls or potentially malicious script code.</span></span> <span data-ttu-id="d56c5-105">Můžete chtít omezit schopnosti produktu <xref:System.Windows.Forms.WebBrowser> řídit tímto způsobem, například můžete použít jako prohlížeč formátu HTML e-mailu nebo k poskytnutí nápovědy ve formátu HTML v aplikaci.</span><span class="sxs-lookup"><span data-stu-id="d56c5-105">You might want to restrict the capability of the <xref:System.Windows.Forms.WebBrowser> control in this manner, for example, to use it as an HTML email viewer or to provide HTML-formatted help in your application.</span></span>  
+# <a name="how-to-create-an-html-document-viewer-in-a-windows-forms-application"></a><span data-ttu-id="d910a-102">Postupy: Vytvoření prohlížeče dokumentu HTML ve formulářové aplikaci Windows</span><span class="sxs-lookup"><span data-stu-id="d910a-102">How to: Create an HTML Document Viewer in a Windows Forms Application</span></span>
+<span data-ttu-id="d910a-103">Můžete použít <xref:System.Windows.Forms.WebBrowser> ovládací prvek zobrazit a tisk dokumentů HTML bez zadání všechny funkce prohlížeči Internet.</span><span class="sxs-lookup"><span data-stu-id="d910a-103">You can use the <xref:System.Windows.Forms.WebBrowser> control to display and print HTML documents without providing the full functionality of an Internet Web browser.</span></span> <span data-ttu-id="d910a-104">To je užitečné, pokud chcete využít výhod možnosti formátování HTML, ale nechcete, aby vaši uživatelé načíst libovolné webové stránky, které mohou obsahovat nedůvěryhodné ovládací prvky webového nebo potenciálně škodlivý kód.</span><span class="sxs-lookup"><span data-stu-id="d910a-104">This is useful when you want to take advantage of the formatting capabilities of HTML but do not want your users to load arbitrary Web pages that may contain untrusted Web controls or potentially malicious script code.</span></span> <span data-ttu-id="d910a-105">Můžete chtít omezit schopnosti produktu <xref:System.Windows.Forms.WebBrowser> řídit tímto způsobem, například můžete použít jako prohlížeč formátu HTML e-mailu nebo k poskytnutí nápovědy ve formátu HTML v aplikaci.</span><span class="sxs-lookup"><span data-stu-id="d910a-105">You might want to restrict the capability of the <xref:System.Windows.Forms.WebBrowser> control in this manner, for example, to use it as an HTML email viewer or to provide HTML-formatted help in your application.</span></span>  
   
-### <a name="to-create-an-html-document-viewer"></a><span data-ttu-id="d56c5-106">K vytvoření prohlížeče dokumentu HTML</span><span class="sxs-lookup"><span data-stu-id="d56c5-106">To create an HTML document viewer</span></span>  
+### <a name="to-create-an-html-document-viewer"></a><span data-ttu-id="d910a-106">K vytvoření prohlížeče dokumentu HTML</span><span class="sxs-lookup"><span data-stu-id="d910a-106">To create an HTML document viewer</span></span>  
   
-1.  <span data-ttu-id="d56c5-107">Nastavit <xref:System.Windows.Forms.WebBrowser.AllowWebBrowserDrop%2A> vlastnost, která má `false` zabránit <xref:System.Windows.Forms.WebBrowser> ovládací prvek v otevírání souborů, které jsou umístěny na ho.</span><span class="sxs-lookup"><span data-stu-id="d56c5-107">Set the <xref:System.Windows.Forms.WebBrowser.AllowWebBrowserDrop%2A> property to `false` to prevent the <xref:System.Windows.Forms.WebBrowser> control from opening files dropped onto it.</span></span>  
+1.  <span data-ttu-id="d910a-107">Nastavit <xref:System.Windows.Forms.WebBrowser.AllowWebBrowserDrop%2A> vlastnost, která má `false` zabránit <xref:System.Windows.Forms.WebBrowser> ovládací prvek v otevírání souborů, které jsou umístěny na ho.</span><span class="sxs-lookup"><span data-stu-id="d910a-107">Set the <xref:System.Windows.Forms.WebBrowser.AllowWebBrowserDrop%2A> property to `false` to prevent the <xref:System.Windows.Forms.WebBrowser> control from opening files dropped onto it.</span></span>  
   
      [!code-csharp[WebBrowserMisc#20](../../../../samples/snippets/csharp/VS_Snippets_Winforms/WebBrowserMisc/CS/WebBrowserMisc.cs#20)]
      [!code-vb[WebBrowserMisc#20](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/WebBrowserMisc/vb/WebBrowserMisc.vb#20)]  
   
-2.  <span data-ttu-id="d56c5-108">Nastavte <xref:System.Windows.Forms.WebBrowser.Url%2A> vlastnost do umístění souboru počáteční k zobrazení.</span><span class="sxs-lookup"><span data-stu-id="d56c5-108">Set the <xref:System.Windows.Forms.WebBrowser.Url%2A> property to the location of the initial file to display.</span></span>  
+2.  <span data-ttu-id="d910a-108">Nastavte <xref:System.Windows.Forms.WebBrowser.Url%2A> vlastnost do umístění souboru počáteční k zobrazení.</span><span class="sxs-lookup"><span data-stu-id="d910a-108">Set the <xref:System.Windows.Forms.WebBrowser.Url%2A> property to the location of the initial file to display.</span></span>  
   
      [!code-csharp[WebBrowserMisc#21](../../../../samples/snippets/csharp/VS_Snippets_Winforms/WebBrowserMisc/CS/WebBrowserMisc.cs#21)]
      [!code-vb[WebBrowserMisc#21](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/WebBrowserMisc/vb/WebBrowserMisc.vb#21)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="d56c5-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="d56c5-109">Compiling the Code</span></span>  
- <span data-ttu-id="d56c5-110">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="d56c5-110">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="d910a-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="d910a-109">Compiling the Code</span></span>  
+ <span data-ttu-id="d910a-110">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="d910a-110">This example requires:</span></span>  
   
--   <span data-ttu-id="d56c5-111">A <xref:System.Windows.Forms.WebBrowser> ovládací prvek s názvem `webBrowser1`.</span><span class="sxs-lookup"><span data-stu-id="d56c5-111">A <xref:System.Windows.Forms.WebBrowser> control named `webBrowser1`.</span></span>  
+-   <span data-ttu-id="d910a-111">A <xref:System.Windows.Forms.WebBrowser> ovládací prvek s názvem `webBrowser1`.</span><span class="sxs-lookup"><span data-stu-id="d910a-111">A <xref:System.Windows.Forms.WebBrowser> control named `webBrowser1`.</span></span>  
   
--   <span data-ttu-id="d56c5-112">Odkazuje na `System` a `System.Windows.Forms` sestavení.</span><span class="sxs-lookup"><span data-stu-id="d56c5-112">References to the `System` and `System.Windows.Forms` assemblies.</span></span>  
+-   <span data-ttu-id="d910a-112">Odkazuje na `System` a `System.Windows.Forms` sestavení.</span><span class="sxs-lookup"><span data-stu-id="d910a-112">References to the `System` and `System.Windows.Forms` assemblies.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d56c5-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="d56c5-113">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="d910a-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="d910a-113">See Also</span></span>  
  <xref:System.Windows.Forms.WebBrowser>  
  <xref:System.Windows.Forms.WebBrowser.AllowWebBrowserDrop%2A>  
  <xref:System.Windows.Forms.WebBrowser.Url%2A>  
- [<span data-ttu-id="d56c5-114">Přehled ovládacího prvku WebBrowser</span><span class="sxs-lookup"><span data-stu-id="d56c5-114">WebBrowser Control Overview</span></span>](../../../../docs/framework/winforms/controls/webbrowser-control-overview.md)  
- [<span data-ttu-id="d56c5-115">WebBrowser – zabezpečení</span><span class="sxs-lookup"><span data-stu-id="d56c5-115">WebBrowser Security</span></span>](../../../../docs/framework/winforms/controls/webbrowser-security.md)  
- [<span data-ttu-id="d56c5-116">Postupy: Přechod na adresu URL pomocí ovládacího prvku WebBrowser</span><span class="sxs-lookup"><span data-stu-id="d56c5-116">How to: Navigate to a URL with the WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)  
- [<span data-ttu-id="d56c5-117">Postupy: Tisk pomocí ovládacího prvku WebBrowser</span><span class="sxs-lookup"><span data-stu-id="d56c5-117">How to: Print with a WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)
+ [<span data-ttu-id="d910a-114">Přehled ovládacího prvku WebBrowser</span><span class="sxs-lookup"><span data-stu-id="d910a-114">WebBrowser Control Overview</span></span>](../../../../docs/framework/winforms/controls/webbrowser-control-overview.md)  
+ [<span data-ttu-id="d910a-115">WebBrowser – zabezpečení</span><span class="sxs-lookup"><span data-stu-id="d910a-115">WebBrowser Security</span></span>](../../../../docs/framework/winforms/controls/webbrowser-security.md)  
+ [<span data-ttu-id="d910a-116">Postupy: Přechod na adresu URL pomocí ovládacího prvku WebBrowser</span><span class="sxs-lookup"><span data-stu-id="d910a-116">How to: Navigate to a URL with the WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)  
+ [<span data-ttu-id="d910a-117">Postupy: Tisk pomocí ovládacího prvku WebBrowser</span><span class="sxs-lookup"><span data-stu-id="d910a-117">How to: Print with a WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)

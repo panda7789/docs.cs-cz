@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754103"
 ---
 # <a name="ltsupportportabilitygt-element"></a><span data-ttu-id="30487-102">&lt;supportPortability –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="30487-102">&lt;supportPortability&gt; Element</span></span>
 <span data-ttu-id="30487-103">Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých implementace rozhraní .NET Framework zakázáním výchozí chování, která zpracovává sestavení jako ekvivalentní pro účely přenositelnost aplikace.</span><span class="sxs-lookup"><span data-stu-id="30487-103">Specifies that an application can reference the same assembly in two different implementations of the .NET Framework, by disabling the default behavior that treats the assemblies as equivalent for application portability purposes.</span></span>  

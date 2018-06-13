@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761438"
 ---
 # <a name="cast-entity-sql"></a><span data-ttu-id="e8ff4-102">PŘETYPOVÁNÍ (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="e8ff4-102">CAST (Entity SQL)</span></span>
 <span data-ttu-id="e8ff4-103">Převod výrazu jednoho datového typu.</span><span class="sxs-lookup"><span data-stu-id="e8ff4-103">Converts an expression of one data type to another.</span></span>  

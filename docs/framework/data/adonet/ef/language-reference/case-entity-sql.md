@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761461"
 ---
 # <a name="case-entity-sql"></a><span data-ttu-id="7e3db-102">PŘÍPAD (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="7e3db-102">CASE (Entity SQL)</span></span>
 <span data-ttu-id="7e3db-103">Vyhodnotí sadu `Boolean` výrazy k určení výsledku.</span><span class="sxs-lookup"><span data-stu-id="7e3db-103">Evaluates a set of `Boolean` expressions to determine the result.</span></span>  

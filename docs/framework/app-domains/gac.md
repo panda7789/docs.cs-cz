@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751971"
 ---
 # <a name="global-assembly-cache"></a><span data-ttu-id="91024-102">Globální mezipaměť sestavení</span><span class="sxs-lookup"><span data-stu-id="91024-102">Global Assembly Cache</span></span>
 <span data-ttu-id="91024-103">Každý počítač, kde je nainstalován modul Common Language Runtime má mezipaměť strojový kód volá do globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="91024-103">Each computer where the Common Language Runtime is installed has a machine-wide code cache called the Global Assembly Cache.</span></span> <span data-ttu-id="91024-104">Globální mezipaměť sestavení uchovává sestavení konkrétně určená ke sdílení více aplikacemi v počítači.</span><span class="sxs-lookup"><span data-stu-id="91024-104">The Global Assembly Cache stores assemblies specifically designated to be shared by several applications on the computer.</span></span>  

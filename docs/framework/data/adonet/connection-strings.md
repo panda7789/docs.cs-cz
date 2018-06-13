@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757213"
 ---
 # <a name="connection-strings-in-adonet"></a><span data-ttu-id="94c1d-102">Připojovací řetězce v technologii ADO.NET</span><span class="sxs-lookup"><span data-stu-id="94c1d-102">Connection Strings in ADO.NET</span></span>
 <span data-ttu-id="94c1d-103">Rozhraní .NET Framework 2.0 zavedl nové funkce pro práci s připojovací řetězce, včetně zavedení nových klíčových slov do Tvůrce třídy řetězec připojení, které usnadňují vytváření řetězců platné připojení v době běhu.</span><span class="sxs-lookup"><span data-stu-id="94c1d-103">The .NET Framework 2.0 introduced new capabilities for working with connection strings, including the introduction of new keywords to the connection string builder classes, which facilitate creating valid connection strings at run time.</span></span>  

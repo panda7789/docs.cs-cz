@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743911"
 ---
 # <a name="assembly-location"></a><span data-ttu-id="5e0cd-102">Umístění sestavení</span><span class="sxs-lookup"><span data-stu-id="5e0cd-102">Assembly Location</span></span>
 <span data-ttu-id="5e0cd-103">Umístění sestavení určuje, zda modul common language runtime najít při odkazuje a také dokáže určit, zda je sestavení je možné sdílet s ostatních sestavení.</span><span class="sxs-lookup"><span data-stu-id="5e0cd-103">An assembly's location determines whether the common language runtime can locate it when referenced, and can also determine whether the assembly can be shared with other assemblies.</span></span> <span data-ttu-id="5e0cd-104">Můžete nasadit sestavení v následujících umístěních:</span><span class="sxs-lookup"><span data-stu-id="5e0cd-104">You can deploy an assembly in the following locations:</span></span>  

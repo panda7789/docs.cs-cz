@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760086"
 ---
 # <a name="specify-relations-between-elements-with-no-nesting"></a><span data-ttu-id="478ed-102">Určit vztahy mezi elementy s bez vnoření</span><span class="sxs-lookup"><span data-stu-id="478ed-102">Specify Relations Between Elements with No Nesting</span></span>
 <span data-ttu-id="478ed-103">Když nejsou vnořené prvky, jsou vytvořeny žádné implicitní vztahy.</span><span class="sxs-lookup"><span data-stu-id="478ed-103">When elements are not nested, no implicit relations are created.</span></span> <span data-ttu-id="478ed-104">Můžete však explicitně určit vztahy mezi elementy, které nejsou vnořené pomocí **msdata:Relationship** poznámky.</span><span class="sxs-lookup"><span data-stu-id="478ed-104">You can, however, explicitly specify relations between elements that are not nested by using the **msdata:Relationship** annotation.</span></span>  

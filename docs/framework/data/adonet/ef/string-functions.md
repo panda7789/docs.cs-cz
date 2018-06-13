@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766475"
 ---
 # <a name="string-functions"></a><span data-ttu-id="52b49-102">Funkce řetězce</span><span class="sxs-lookup"><span data-stu-id="52b49-102">String Functions</span></span>
 <span data-ttu-id="52b49-103">Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje `String` funkce, které provádění operací na vstup `String` a vrátit `String` nebo výsledek číselná hodnota.</span><span class="sxs-lookup"><span data-stu-id="52b49-103">The .NET Framework Data Provider for SQL Server (SqlClient) provides `String` functions that perform operations on an input `String` and return a `String` or numeric value result.</span></span> <span data-ttu-id="52b49-104">Tyto funkce jsou v oboru názvů SQL Server, která je k dispozici při použití SqlClient.</span><span class="sxs-lookup"><span data-stu-id="52b49-104">These functions are in the SqlServer namespace, which is available when you use SqlClient.</span></span> <span data-ttu-id="52b49-105">Umožňuje vlastnost obor názvů zprostředkovatele Entity Frameworku chcete zjistit, která předpona je používána tohoto poskytovatele pro konkrétní konstrukce, jako jsou typy a funkce.</span><span class="sxs-lookup"><span data-stu-id="52b49-105">A provider's namespace property allows the Entity Framework to discover which prefix is used by this provider for specific constructs, such as types and functions.</span></span>  

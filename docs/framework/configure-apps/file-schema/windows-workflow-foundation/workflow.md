@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758643"
 ---
 # <a name="ltworkflowgt"></a><span data-ttu-id="435b8-102">&lt;pracovní postup&gt;</span><span class="sxs-lookup"><span data-stu-id="435b8-102">&lt;workflow&gt;</span></span>
 <span data-ttu-id="435b8-103">Konfigurace elementu, který obsahuje všechny dotazy pro konkrétní pracovní tok identifikovaný **hypertextový odkaz "http://msdn.microsoft.com/library/system.servicemodel.activities.tracking.configuration.profileworkflowelement.activitydefinitionid(VS.100).aspx" ctivityDefinitionId** vlastnost.</span><span class="sxs-lookup"><span data-stu-id="435b8-103">A configuration element that contains all queries for a specific workflow identified by the **a HYPERLINK "http://msdn.microsoft.com/library/system.servicemodel.activities.tracking.configuration.profileworkflowelement.activitydefinitionid(VS.100).aspx" ctivityDefinitionId** property.</span></span>  

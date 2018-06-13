@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745835"
 ---
 # <a name="ltgcconcurrentgt-element"></a><span data-ttu-id="1f304-102">&lt;gcconcurrent –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="1f304-102">&lt;gcConcurrent&gt; Element</span></span>
 <span data-ttu-id="1f304-103">Určuje, zda modul common language runtime spuštěna uvolňování paměti na samostatné vlákno.</span><span class="sxs-lookup"><span data-stu-id="1f304-103">Specifies whether the common language runtime runs garbage collection on a separate thread.</span></span>  

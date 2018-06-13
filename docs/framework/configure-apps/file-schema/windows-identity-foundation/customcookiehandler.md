@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755601"
 ---
 # <a name="ltcustomcookiehandlergt"></a><span data-ttu-id="c1aa3-102">&lt;customCookieHandler&gt;</span><span class="sxs-lookup"><span data-stu-id="c1aa3-102">&lt;customCookieHandler&gt;</span></span>
 <span data-ttu-id="c1aa3-103">Nastaví typ obslužné rutiny vlastní soubor cookie.</span><span class="sxs-lookup"><span data-stu-id="c1aa3-103">Sets the custom cookie handler type.</span></span> <span data-ttu-id="c1aa3-104">Tento element může být pouze existuje-li `mode` atribut `<cookieHandler>` element je "Vlastní".</span><span class="sxs-lookup"><span data-stu-id="c1aa3-104">This element may only be present if the `mode` attribute of the `<cookieHandler>` element is "Custom".</span></span> <span data-ttu-id="c1aa3-105">Vlastní typ musí být odvozen od <xref:System.IdentityModel.Services.CookieHandler> třídy.</span><span class="sxs-lookup"><span data-stu-id="c1aa3-105">The custom type must be derived from the <xref:System.IdentityModel.Services.CookieHandler> class.</span></span>  

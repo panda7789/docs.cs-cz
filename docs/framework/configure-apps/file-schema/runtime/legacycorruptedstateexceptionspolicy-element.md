@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744613"
 ---
 # <a name="ltlegacycorruptedstateexceptionspolicygt-element"></a><span data-ttu-id="dd9ac-102">&lt;legacycorruptedstateexceptionspolicy –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="dd9ac-102">&lt;legacyCorruptedStateExceptionsPolicy&gt; Element</span></span>
 <span data-ttu-id="dd9ac-103">Určuje, zda modul common language runtime umožňuje spravovaného kódu k zachycení narušení přístupu a ostatní výjimky v poškozeném stavu.</span><span class="sxs-lookup"><span data-stu-id="dd9ac-103">Specifies whether the common language runtime allows managed code to catch access violations and other corrupted state exceptions.</span></span>  

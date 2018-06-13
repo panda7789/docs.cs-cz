@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753492"
 ---
 # <a name="common-client-technologies-in-the-net-framework"></a><span data-ttu-id="caa07-102">Technologie CCT (Common Client Technologies) v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="caa07-102">Common Client Technologies in the .NET Framework</span></span>
 <span data-ttu-id="caa07-103">Tato část popisuje různé technologie, které můžete použít v klientských aplikacích.</span><span class="sxs-lookup"><span data-stu-id="caa07-103">This section describes different technologies that you can use in your client applications.</span></span>  

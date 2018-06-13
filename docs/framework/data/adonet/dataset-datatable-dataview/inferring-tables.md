@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757824"
 ---
 # <a name="inferring-tables"></a><span data-ttu-id="5b32a-102">Odvození tabulky</span><span class="sxs-lookup"><span data-stu-id="5b32a-102">Inferring Tables</span></span>
 <span data-ttu-id="5b32a-103">Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET nejdřív zjistí, které elementy XML představují tabulky.</span><span class="sxs-lookup"><span data-stu-id="5b32a-103">When inferring a schema for a <xref:System.Data.DataSet> from an XML document, ADO.NET first determines which XML elements represent tables.</span></span> <span data-ttu-id="5b32a-104">Následující struktury XML výsledkem tabulka pro **datovou sadu** schématu:</span><span class="sxs-lookup"><span data-stu-id="5b32a-104">The following XML structures result in a table for the **DataSet** schema:</span></span>  

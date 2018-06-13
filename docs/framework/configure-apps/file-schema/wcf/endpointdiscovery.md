@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754246"
 ---
 # <a name="ltendpointdiscoverygt"></a><span data-ttu-id="6e474-102">&lt;endpointDiscovery&gt;</span><span class="sxs-lookup"><span data-stu-id="6e474-102">&lt;endpointDiscovery&gt;</span></span>
 <span data-ttu-id="6e474-103">Určuje různé zjišťování nastavení pro koncový bod, například jeho možnosti rozpoznání, obory a vlastní rozšíření jeho metadata.</span><span class="sxs-lookup"><span data-stu-id="6e474-103">Specifies the various discovery settings for an endpoint, such as its discoverability, scopes, and any custom extensions to its metadata.</span></span>  

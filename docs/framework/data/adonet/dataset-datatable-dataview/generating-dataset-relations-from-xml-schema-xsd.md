@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758435"
 ---
 # <a name="generating-dataset-relations-from-xml-schema-xsd"></a><span data-ttu-id="a0996-102">Generování datovou sadu vztahů ze schématu XML (XSD)</span><span class="sxs-lookup"><span data-stu-id="a0996-102">Generating DataSet Relations from XML Schema (XSD)</span></span>
 <span data-ttu-id="a0996-103">V <xref:System.Data.DataSet>, vytvoří přidružení mezi dvěma nebo více sloupců tak, že vytvoříte vztah nadřazený podřízený.</span><span class="sxs-lookup"><span data-stu-id="a0996-103">In a <xref:System.Data.DataSet>, you form an association between two or more columns by creating a parent-child relation.</span></span> <span data-ttu-id="a0996-104">Existují tři způsoby, jak představují **datovou sadu** vztahu v rámci schématu schématu XML definition language (XSD):</span><span class="sxs-lookup"><span data-stu-id="a0996-104">There are three ways to represent a **DataSet** relation within an XML Schema definition language (XSD) schema:</span></span>  

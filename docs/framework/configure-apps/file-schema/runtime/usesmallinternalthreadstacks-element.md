@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745484"
 ---
 # <a name="ltusesmallinternalthreadstacksgt-element"></a><span data-ttu-id="3f60f-102">&lt;Usesmallinternalthreadstacks –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="3f60f-102">&lt;UseSmallInternalThreadStacks&gt; Element</span></span>
 <span data-ttu-id="3f60f-103">Požadavky, modul CLR (CLR) snížit velikost paměti, použijte zadáním velikosti explicitní zásobníku při vytváření určitých vláken, která se používá interně, místo použití výchozí velikost zásobníku pro tyto vlákna.</span><span class="sxs-lookup"><span data-stu-id="3f60f-103">Requests that the common language runtime (CLR) reduce memory use by specifying explicit stack sizes when it creates certain threads that it uses internally, instead of using the default stack size for those threads.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758071"
 ---
 # <a name="ltsecuritytokenhandlersgt"></a><span data-ttu-id="fcba6-102">&lt;securityTokenHandlers&gt;</span><span class="sxs-lookup"><span data-stu-id="fcba6-102">&lt;securityTokenHandlers&gt;</span></span>
 <span data-ttu-id="fcba6-103">Určuje kolekci zabezpečení tokenu rutin, které jsou registrovány koncový bod.</span><span class="sxs-lookup"><span data-stu-id="fcba6-103">Specifies a collection of security token handlers that are registered with the endpoint.</span></span>  

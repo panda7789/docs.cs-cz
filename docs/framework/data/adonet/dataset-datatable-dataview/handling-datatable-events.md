@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760226"
 ---
 # <a name="handling-datatable-events"></a><span data-ttu-id="14bf3-102">Zpracování událostí DataTable</span><span class="sxs-lookup"><span data-stu-id="14bf3-102">Handling DataTable Events</span></span>
 <span data-ttu-id="14bf3-103"><xref:System.Data.DataTable> Objekt poskytuje řadu událostí, které může zpracovat aplikace.</span><span class="sxs-lookup"><span data-stu-id="14bf3-103">The <xref:System.Data.DataTable> object provides a series of events that can be processed by an application.</span></span> <span data-ttu-id="14bf3-104">Následující tabulka popisuje `DataTable` události.</span><span class="sxs-lookup"><span data-stu-id="14bf3-104">The following table describes `DataTable` events.</span></span>  

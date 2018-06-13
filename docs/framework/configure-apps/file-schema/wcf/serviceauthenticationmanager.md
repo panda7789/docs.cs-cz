@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748965"
 ---
 # <a name="ltserviceauthenticationmanagergt"></a><span data-ttu-id="35347-102">&lt;serviceAuthenticationManager&gt;</span><span class="sxs-lookup"><span data-stu-id="35347-102">&lt;serviceAuthenticationManager&gt;</span></span>
 <span data-ttu-id="35347-103">Poskytuje prvek konfigurace pracovního postupu, který stanoví platnosti přenosu, původce nebo zpráv na úrovni služby...</span><span class="sxs-lookup"><span data-stu-id="35347-103">Provides a workflow configuration element that establishes at the service level the validity of a transmission, message, or originator..</span></span>  

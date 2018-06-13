@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761035"
 ---
 # <a name="entity-sql-language"></a><span data-ttu-id="341d7-102">Jazyk SQL entity</span><span class="sxs-lookup"><span data-stu-id="341d7-102">Entity SQL Language</span></span>
 <span data-ttu-id="341d7-103">Entita SQL je nezávislé na úložiště dotazovací jazyk, který je podobný SQL.</span><span class="sxs-lookup"><span data-stu-id="341d7-103">Entity SQL is a storage-independent query language that is similar to SQL.</span></span> <span data-ttu-id="341d7-104">Entity SQL vám umožní zadat dotaz na data entity, jako objekty nebo ve formě tabulky.</span><span class="sxs-lookup"><span data-stu-id="341d7-104">Entity SQL allows you to query entity data, either as objects or in a tabular form.</span></span> <span data-ttu-id="341d7-105">Měli byste zvážit použití Entity SQL v následujících případech:</span><span class="sxs-lookup"><span data-stu-id="341d7-105">You should consider using Entity SQL in the following cases:</span></span>  

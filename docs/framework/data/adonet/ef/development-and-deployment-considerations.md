@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760343"
 ---
 # <a name="development-and-deployment-considerations"></a><span data-ttu-id="43d71-102">Vývoj a aspekty nasazení</span><span class="sxs-lookup"><span data-stu-id="43d71-102">Development and Deployment Considerations</span></span>
 <span data-ttu-id="43d71-103">Témata v této části řeší problémy vzít v úvahu při vývoji a nasazení aplikace, která je založena na technologii ADO.NET Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="43d71-103">Topics in this section address issues to consider when developing or deploying an application that is based on the ADO.NET Entity Framework.</span></span>  
