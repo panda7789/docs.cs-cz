@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741903"
 ---
 # <a name="how-to-load-assemblies-into-an-application-domain"></a><span data-ttu-id="40e6c-102">Postupy: Načtení sestavení do domény aplikace</span><span class="sxs-lookup"><span data-stu-id="40e6c-102">How to: Load Assemblies into an Application Domain</span></span>
 <span data-ttu-id="40e6c-103">Existuje několik způsobů načtení sestavení do domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="40e6c-103">There are several ways to load an assembly into an application domain.</span></span> <span data-ttu-id="40e6c-104">Doporučeným způsobem je použití `static` (`Shared` v jazyce Visual Basic) <xref:System.Reflection.Assembly.Load%2A> metodu <xref:System.Reflection.Assembly?displayProperty=nameWithType> třídy.</span><span class="sxs-lookup"><span data-stu-id="40e6c-104">The recommended way is to use the `static` (`Shared` in Visual Basic) <xref:System.Reflection.Assembly.Load%2A> method of the <xref:System.Reflection.Assembly?displayProperty=nameWithType> class.</span></span> <span data-ttu-id="40e6c-105">Další způsoby, které lze načíst sestavení patří:</span><span class="sxs-lookup"><span data-stu-id="40e6c-105">Other ways assemblies can be loaded include:</span></span>  

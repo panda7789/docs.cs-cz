@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742946"
 ---
 # <a name="ltremovegt-element-for-bypasslist-network-settings"></a><span data-ttu-id="ea0b1-102">&lt;Odebrat&gt; Element pro bypasslist – (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="ea0b1-102">&lt;remove&gt; Element for bypasslist (Network Settings)</span></span>
 <span data-ttu-id="ea0b1-103">Odebere seznam obcházení proxy adresy IP nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="ea0b1-103">Removes an IP address or DNS name from the proxy bypass list.</span></span>  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743807"
 ---
 # <a name="how-to-implement-user-login-with-client-application-services"></a><span data-ttu-id="0e19d-102">Postupy: Implementace přihlášení uživatele u klientských aplikačních služeb</span><span class="sxs-lookup"><span data-stu-id="0e19d-102">How to: Implement User Login with Client Application Services</span></span>
 <span data-ttu-id="0e19d-103">Klient aplikačních služeb můžete použít k ověření uživatelů pomocí stávající [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profilu služby.</span><span class="sxs-lookup"><span data-stu-id="0e19d-103">You can use client application services to validate users through an existing [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profile service.</span></span> <span data-ttu-id="0e19d-104">Informace o tom, jak nastavit [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profilu služby najdete v tématu [použití ověřování pomocí formulářů s Microsoft Ajax](http://msdn.microsoft.com/library/c50f7dc5-323c-4c63-b4f3-96edfc1e815e).</span><span class="sxs-lookup"><span data-stu-id="0e19d-104">For information about how to set up the [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profile service, see [Using Forms Authentication with Microsoft Ajax](http://msdn.microsoft.com/library/c50f7dc5-323c-4c63-b4f3-96edfc1e815e).</span></span>  

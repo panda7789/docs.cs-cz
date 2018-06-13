@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742897"
 ---
 # <a name="ltaddgt-element-for-authenticationmodules-network-settings"></a><span data-ttu-id="d9e40-102">&lt;Přidat&gt; Element pro authenticationModules – (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="d9e40-102">&lt;add&gt; Element for authenticationModules (Network Settings)</span></span>
 <span data-ttu-id="d9e40-103">Modul ověřování přidává k aplikaci.</span><span class="sxs-lookup"><span data-stu-id="d9e40-103">Adds an authentication module to the application.</span></span>  

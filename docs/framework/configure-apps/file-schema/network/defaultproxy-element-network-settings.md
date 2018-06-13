@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742715"
 ---
 # <a name="ltdefaultproxygt-element-network-settings"></a><span data-ttu-id="dbf02-102">&lt;defaultProxy –&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="dbf02-102">&lt;defaultProxy&gt; Element (Network Settings)</span></span>
 <span data-ttu-id="dbf02-103">Nakonfiguruje server proxy protokolu HTTP (Hypertext Transfer).</span><span class="sxs-lookup"><span data-stu-id="dbf02-103">Configures the Hypertext Transfer Protocol (HTTP) proxy server.</span></span>  

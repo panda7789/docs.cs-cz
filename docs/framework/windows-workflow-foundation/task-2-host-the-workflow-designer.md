@@ -1,45 +1,34 @@
 ---
 title: 'Úloha 2: Hostování návrháře pracovních postupů'
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
-caps.latest.revision: 19
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d4cc95041e96f5f4bb2d6b50e150c99a57404208
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 8ac6b3590d146909c1cb9fd8cf9cae2352b0155b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519061"
 ---
-# <a name="task-2-host-the-workflow-designer"></a><span data-ttu-id="990c7-102">Úloha 2: Hostování návrháře pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="990c7-102">Task 2: Host the Workflow Designer</span></span>
-<span data-ttu-id="990c7-103">Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] v aplikaci Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="990c7-103">This topic describes the procedure for hosting an instance of the [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] in a Windows Presentation Foundation (WPF) application.</span></span>  
+# <a name="task-2-host-the-workflow-designer"></a><span data-ttu-id="5609f-102">Úloha 2: Hostování návrháře pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="5609f-102">Task 2: Host the Workflow Designer</span></span>
+<span data-ttu-id="5609f-103">Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] v aplikaci Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="5609f-103">This topic describes the procedure for hosting an instance of the [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] in a Windows Presentation Foundation (WPF) application.</span></span>  
   
- <span data-ttu-id="990c7-104">Postup konfiguruje **mřížky** ovládací prvek, který obsahuje návrháře, prostřednictvím kódu programu vytvoří instanci <xref:System.Activities.Presentation.WorkflowDesigner> obsahující výchozí <xref:System.Activities.Statements.Sequence> aktivity, zaregistruje návrháře metadata zajistit Podpora návrháře pro všechny zabudované aktivity a hostitelé [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] v [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="990c7-104">The procedure configures the **Grid** control that contains the designer, programmatically creates an instance of the <xref:System.Activities.Presentation.WorkflowDesigner> that contains a default <xref:System.Activities.Statements.Sequence> activity, registers the designer metadata to provide designer support for all built-in activities, and hosts the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] in the [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] application.</span></span>  
+ <span data-ttu-id="5609f-104">Postup konfiguruje **mřížky** ovládací prvek, který obsahuje návrháře, prostřednictvím kódu programu vytvoří instanci <xref:System.Activities.Presentation.WorkflowDesigner> obsahující výchozí <xref:System.Activities.Statements.Sequence> aktivity, zaregistruje návrháře metadata zajistit Podpora návrháře pro všechny zabudované aktivity a hostitelé [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] v [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="5609f-104">The procedure configures the **Grid** control that contains the designer, programmatically creates an instance of the <xref:System.Activities.Presentation.WorkflowDesigner> that contains a default <xref:System.Activities.Statements.Sequence> activity, registers the designer metadata to provide designer support for all built-in activities, and hosts the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] in the [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] application.</span></span>  
   
-### <a name="to-host-the-workflow-designer"></a><span data-ttu-id="990c7-105">K hostování návrháře pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="990c7-105">To host the workflow designer</span></span>  
+### <a name="to-host-the-workflow-designer"></a><span data-ttu-id="5609f-105">K hostování návrháře pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="5609f-105">To host the workflow designer</span></span>  
   
-1.  <span data-ttu-id="990c7-106">Otevřete HostingApplication projektu, kterou jste vytvořili v [úloha 1: Vytvořte novou aplikaci Windows Presentation Foundation](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md).</span><span class="sxs-lookup"><span data-stu-id="990c7-106">Open the HostingApplication project you created in [Task 1: Create a New Windows Presentation Foundation Application](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md).</span></span>  
+1.  <span data-ttu-id="5609f-106">Otevřete HostingApplication projektu, kterou jste vytvořili v [úloha 1: Vytvořte novou aplikaci Windows Presentation Foundation](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md).</span><span class="sxs-lookup"><span data-stu-id="5609f-106">Open the HostingApplication project you created in [Task 1: Create a New Windows Presentation Foundation Application](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md).</span></span>  
   
-2.  <span data-ttu-id="990c7-107">Upravit velikost okna, aby bylo snazší používat [!INCLUDE[wfd2](../../../includes/wfd2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="990c7-107">Adjust the size of the window to make it easier to use the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)].</span></span> <span data-ttu-id="990c7-108">Chcete-li to provést, vyberte **MainWindow** v návrháři, zobrazte stisknutím klávesy F4 **vlastnosti** okno a v **rozložení** části existuje, nastavte **šířka** na hodnotu 600 a **výška** na hodnotu 350.</span><span class="sxs-lookup"><span data-stu-id="990c7-108">To do this, select **MainWindow** in the designer, press F4 to display the **Properties** window, and, in the **Layout** section there, set the **Width** to a value of 600 and the **Height** to a value of 350.</span></span>  
+2.  <span data-ttu-id="5609f-107">Upravit velikost okna, aby bylo snazší používat [!INCLUDE[wfd2](../../../includes/wfd2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="5609f-107">Adjust the size of the window to make it easier to use the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)].</span></span> <span data-ttu-id="5609f-108">Chcete-li to provést, vyberte **MainWindow** v návrháři, zobrazte stisknutím klávesy F4 **vlastnosti** okno a v **rozložení** části existuje, nastavte **šířka** na hodnotu 600 a **výška** na hodnotu 350.</span><span class="sxs-lookup"><span data-stu-id="5609f-108">To do this, select **MainWindow** in the designer, press F4 to display the **Properties** window, and, in the **Layout** section there, set the **Width** to a value of 600 and the **Height** to a value of 350.</span></span>  
   
-3.  <span data-ttu-id="990c7-109">Název mřížky nastavit tak, že vyberete **mřížky** panelu v Návrháři (klikněte na pole uvnitř **MainWindow**) a nastavení **název** vlastnost v horní části  **Vlastnosti** okno "grid1".</span><span class="sxs-lookup"><span data-stu-id="990c7-109">Set the grid name by selecting the **Grid** panel in the designer (click the box inside the **MainWindow**) and setting the **Name** property at the top of the **Properties** window to "grid1".</span></span>  
+3.  <span data-ttu-id="5609f-109">Název mřížky nastavit tak, že vyberete **mřížky** panelu v Návrháři (klikněte na pole uvnitř **MainWindow**) a nastavení **název** vlastnost v horní části  **Vlastnosti** okno "grid1".</span><span class="sxs-lookup"><span data-stu-id="5609f-109">Set the grid name by selecting the **Grid** panel in the designer (click the box inside the **MainWindow**) and setting the **Name** property at the top of the **Properties** window to "grid1".</span></span>  
   
-4.  <span data-ttu-id="990c7-110">V **vlastnosti** okně klikněte na tlačítko se třemi tečkami (**...** ) vedle položky `ColumnDefinitions` vlastnost otevřete **Editor kolekce** dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="990c7-110">In the **Properties** window, click the ellipsis (**…**) next to the `ColumnDefinitions` property to open the **Collection Editor** dialog box.</span></span>  
+4.  <span data-ttu-id="5609f-110">V **vlastnosti** okně klikněte na tlačítko se třemi tečkami (**...** ) vedle položky `ColumnDefinitions` vlastnost otevřete **Editor kolekce** dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="5609f-110">In the **Properties** window, click the ellipsis (**…**) next to the `ColumnDefinitions` property to open the **Collection Editor** dialog box.</span></span>  
   
-5.  <span data-ttu-id="990c7-111">V **Editor kolekce** dialogové okno, klikněte **přidat** tlačítko třikrát na tři sloupce k vložení do rozložení.</span><span class="sxs-lookup"><span data-stu-id="990c7-111">In the **Collection Editor** dialog box, click the **Add** button three times to insert three columns into the layout.</span></span> <span data-ttu-id="990c7-112">První sloupec bude obsahovat **sada nástrojů**, druhý sloupec bude hostovat [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], a třetí sloupec se použije pro vlastnost inspector.</span><span class="sxs-lookup"><span data-stu-id="990c7-112">The first column will contain the **Toolbox**, the second column will host the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], and the third column will be used for the property inspector.</span></span>  
+5.  <span data-ttu-id="5609f-111">V **Editor kolekce** dialogové okno, klikněte **přidat** tlačítko třikrát na tři sloupce k vložení do rozložení.</span><span class="sxs-lookup"><span data-stu-id="5609f-111">In the **Collection Editor** dialog box, click the **Add** button three times to insert three columns into the layout.</span></span> <span data-ttu-id="5609f-112">První sloupec bude obsahovat **sada nástrojů**, druhý sloupec bude hostovat [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], a třetí sloupec se použije pro vlastnost inspector.</span><span class="sxs-lookup"><span data-stu-id="5609f-112">The first column will contain the **Toolbox**, the second column will host the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], and the third column will be used for the property inspector.</span></span>  
   
-6.  <span data-ttu-id="990c7-113">Nastavte `Width` vlastnost střední sloupce na hodnotu "4 \*".</span><span class="sxs-lookup"><span data-stu-id="990c7-113">Set the `Width` property of the middle column to the value "4\*".</span></span>  
+6.  <span data-ttu-id="5609f-113">Nastavte `Width` vlastnost střední sloupce na hodnotu "4 \*".</span><span class="sxs-lookup"><span data-stu-id="5609f-113">Set the `Width` property of the middle column to the value "4\*".</span></span>  
   
-7.  <span data-ttu-id="990c7-114">Klikněte na tlačítko **OK** a uložte změny.</span><span class="sxs-lookup"><span data-stu-id="990c7-114">Click **OK** to save the changes.</span></span> <span data-ttu-id="990c7-115">Následující XAML se přidá do souboru MainWindow.xaml:</span><span class="sxs-lookup"><span data-stu-id="990c7-115">The following XAML is added to your MainWindow.xaml file:</span></span>  
+7.  <span data-ttu-id="5609f-114">Klikněte na tlačítko **OK** a uložte změny.</span><span class="sxs-lookup"><span data-stu-id="5609f-114">Click **OK** to save the changes.</span></span> <span data-ttu-id="5609f-115">Následující XAML se přidá do souboru MainWindow.xaml:</span><span class="sxs-lookup"><span data-stu-id="5609f-115">The following XAML is added to your MainWindow.xaml file:</span></span>  
   
     ```xml  
     <Grid Name="grid1">  
@@ -51,9 +40,9 @@ ms.lasthandoff: 04/30/2018
     </Grid>  
     ```  
   
-8.  <span data-ttu-id="990c7-116">V **Průzkumníku řešení**, klikněte pravým tlačítkem na MainWindow.xaml a vyberte **kód zobrazení**.</span><span class="sxs-lookup"><span data-stu-id="990c7-116">In **Solution Explorer**, right-click MainWindow.xaml and select **View Code**.</span></span> <span data-ttu-id="990c7-117">Upravte kód pomocí následujících kroků:</span><span class="sxs-lookup"><span data-stu-id="990c7-117">Modify the code by following these steps:</span></span>  
+8.  <span data-ttu-id="5609f-116">V **Průzkumníku řešení**, klikněte pravým tlačítkem na MainWindow.xaml a vyberte **kód zobrazení**.</span><span class="sxs-lookup"><span data-stu-id="5609f-116">In **Solution Explorer**, right-click MainWindow.xaml and select **View Code**.</span></span> <span data-ttu-id="5609f-117">Upravte kód pomocí následujících kroků:</span><span class="sxs-lookup"><span data-stu-id="5609f-117">Modify the code by following these steps:</span></span>  
   
-    1.  <span data-ttu-id="990c7-118">Přidání následujících oborů názvů:</span><span class="sxs-lookup"><span data-stu-id="990c7-118">Add the following namespaces:</span></span>  
+    1.  <span data-ttu-id="5609f-118">Přidání následujících oborů názvů:</span><span class="sxs-lookup"><span data-stu-id="5609f-118">Add the following namespaces:</span></span>  
   
         ```csharp  
         using System.Activities;  
@@ -65,7 +54,7 @@ ms.lasthandoff: 04/30/2018
         using System.ComponentModel;  
         ```  
   
-    2.  <span data-ttu-id="990c7-119">Deklarovat privátního člena pole pro uložení instance <xref:System.Activities.Presentation.WorkflowDesigner>, přidejte následující kód, který `MainWindow` – třída.</span><span class="sxs-lookup"><span data-stu-id="990c7-119">To declare a private member field to hold an instance of the <xref:System.Activities.Presentation.WorkflowDesigner>, add the following code to the `MainWindow` class.</span></span>  
+    2.  <span data-ttu-id="5609f-119">Deklarovat privátního člena pole pro uložení instance <xref:System.Activities.Presentation.WorkflowDesigner>, přidejte následující kód, který `MainWindow` – třída.</span><span class="sxs-lookup"><span data-stu-id="5609f-119">To declare a private member field to hold an instance of the <xref:System.Activities.Presentation.WorkflowDesigner>, add the following code to the `MainWindow` class.</span></span>  
   
         ```csharp  
         public partial class MainWindow : Window  
@@ -79,7 +68,7 @@ ms.lasthandoff: 04/30/2018
         }  
         ```  
   
-    3.  <span data-ttu-id="990c7-120">Přidejte následující `AddDesigner` metodu `MainWindow` třídy.</span><span class="sxs-lookup"><span data-stu-id="990c7-120">Add the following `AddDesigner` method to the `MainWindow` class.</span></span> <span data-ttu-id="990c7-121">Implementace vytvoří instanci <xref:System.Activities.Presentation.WorkflowDesigner>, přidá <xref:System.Activities.Statements.Sequence> aktivitu a umístí jej v prostředním sloupci grid1 **mřížky**.</span><span class="sxs-lookup"><span data-stu-id="990c7-121">The implementation creates an instance of the <xref:System.Activities.Presentation.WorkflowDesigner>, adds a <xref:System.Activities.Statements.Sequence> activity to it, and places it in middle column of the grid1 **Grid**.</span></span>  
+    3.  <span data-ttu-id="5609f-120">Přidejte následující `AddDesigner` metodu `MainWindow` třídy.</span><span class="sxs-lookup"><span data-stu-id="5609f-120">Add the following `AddDesigner` method to the `MainWindow` class.</span></span> <span data-ttu-id="5609f-121">Implementace vytvoří instanci <xref:System.Activities.Presentation.WorkflowDesigner>, přidá <xref:System.Activities.Statements.Sequence> aktivitu a umístí jej v prostředním sloupci grid1 **mřížky**.</span><span class="sxs-lookup"><span data-stu-id="5609f-121">The implementation creates an instance of the <xref:System.Activities.Presentation.WorkflowDesigner>, adds a <xref:System.Activities.Statements.Sequence> activity to it, and places it in middle column of the grid1 **Grid**.</span></span>  
   
         ```csharp  
         private void AddDesigner()  
@@ -98,7 +87,7 @@ ms.lasthandoff: 04/30/2018
         }  
         ```  
   
-    4.  <span data-ttu-id="990c7-122">Zaregistrujte návrháře metadata o návrháře podporu zabudované aktivity.</span><span class="sxs-lookup"><span data-stu-id="990c7-122">Register the designer metadata to add designer support for all the  built-in activities.</span></span> <span data-ttu-id="990c7-123">To umožňuje vyřadit aktivity z panelu nástrojů na původní <xref:System.Activities.Statements.Sequence> aktivity v [!INCLUDE[wfd2](../../../includes/wfd2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="990c7-123">This enables you to drop activities from the toolbox onto the original <xref:System.Activities.Statements.Sequence> activity in the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)].</span></span> <span data-ttu-id="990c7-124">Chcete-li to provést, přidejte `RegisterMetadata` metodu `MainWindow` – třída.</span><span class="sxs-lookup"><span data-stu-id="990c7-124">To do this, add the `RegisterMetadata` method to the `MainWindow` class.</span></span>  
+    4.  <span data-ttu-id="5609f-122">Zaregistrujte návrháře metadata o návrháře podporu zabudované aktivity.</span><span class="sxs-lookup"><span data-stu-id="5609f-122">Register the designer metadata to add designer support for all the  built-in activities.</span></span> <span data-ttu-id="5609f-123">To umožňuje vyřadit aktivity z panelu nástrojů na původní <xref:System.Activities.Statements.Sequence> aktivity v [!INCLUDE[wfd2](../../../includes/wfd2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="5609f-123">This enables you to drop activities from the toolbox onto the original <xref:System.Activities.Statements.Sequence> activity in the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)].</span></span> <span data-ttu-id="5609f-124">Chcete-li to provést, přidejte `RegisterMetadata` metodu `MainWindow` – třída.</span><span class="sxs-lookup"><span data-stu-id="5609f-124">To do this, add the `RegisterMetadata` method to the `MainWindow` class.</span></span>  
   
         ```csharp  
         private void RegisterMetadata()  
@@ -108,9 +97,9 @@ ms.lasthandoff: 04/30/2018
         }  
         ```  
   
-         <span data-ttu-id="990c7-125">Další informace o registraci návrháře aktivit najdete v tématu [postupy: vytvoření Návrháře vlastních aktivit](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md).</span><span class="sxs-lookup"><span data-stu-id="990c7-125">For more information about registering activity designers, see [How to: Create a Custom Activity Designer](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md).</span></span>  
+         <span data-ttu-id="5609f-125">Další informace o registraci návrháře aktivit najdete v tématu [postupy: vytvoření Návrháře vlastních aktivit](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md).</span><span class="sxs-lookup"><span data-stu-id="5609f-125">For more information about registering activity designers, see [How to: Create a Custom Activity Designer](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md).</span></span>  
   
-    5.  <span data-ttu-id="990c7-126">V `MainWindow` konstruktoru třídy, přidejte volání metody dříve deklarované registrujete metadata pro návrháře podporu a vytvářet <xref:System.Activities.Presentation.WorkflowDesigner>.</span><span class="sxs-lookup"><span data-stu-id="990c7-126">In the `MainWindow` class constructor, add calls to the methods declared previously to register the metadata for designer support and to create the <xref:System.Activities.Presentation.WorkflowDesigner>.</span></span>  
+    5.  <span data-ttu-id="5609f-126">V `MainWindow` konstruktoru třídy, přidejte volání metody dříve deklarované registrujete metadata pro návrháře podporu a vytvářet <xref:System.Activities.Presentation.WorkflowDesigner>.</span><span class="sxs-lookup"><span data-stu-id="5609f-126">In the `MainWindow` class constructor, add calls to the methods declared previously to register the metadata for designer support and to create the <xref:System.Activities.Presentation.WorkflowDesigner>.</span></span>  
   
         ```csharp  
         public MainWindow()  
@@ -126,13 +115,13 @@ ms.lasthandoff: 04/30/2018
         ```  
   
         > [!NOTE]
-        >  <span data-ttu-id="990c7-127">`RegisterMetadata` Metoda registruje návrháře metadata integrovaných aktivit, včetně <xref:System.Activities.Statements.Sequence> aktivity.</span><span class="sxs-lookup"><span data-stu-id="990c7-127">The `RegisterMetadata` method registers the designer metadata of built-in activities including the <xref:System.Activities.Statements.Sequence> activity.</span></span> <span data-ttu-id="990c7-128">Protože `AddDesigner` metoda používá <xref:System.Activities.Statements.Sequence> aktivity, `RegisterMetadata` metoda musí být volána nejprve.</span><span class="sxs-lookup"><span data-stu-id="990c7-128">Because the `AddDesigner` method uses the <xref:System.Activities.Statements.Sequence> activity, the `RegisterMetadata` method must be called first.</span></span>  
+        >  <span data-ttu-id="5609f-127">`RegisterMetadata` Metoda registruje návrháře metadata integrovaných aktivit, včetně <xref:System.Activities.Statements.Sequence> aktivity.</span><span class="sxs-lookup"><span data-stu-id="5609f-127">The `RegisterMetadata` method registers the designer metadata of built-in activities including the <xref:System.Activities.Statements.Sequence> activity.</span></span> <span data-ttu-id="5609f-128">Protože `AddDesigner` metoda používá <xref:System.Activities.Statements.Sequence> aktivity, `RegisterMetadata` metoda musí být volána nejprve.</span><span class="sxs-lookup"><span data-stu-id="5609f-128">Because the `AddDesigner` method uses the <xref:System.Activities.Statements.Sequence> activity, the `RegisterMetadata` method must be called first.</span></span>  
   
-9. <span data-ttu-id="990c7-129">Stisknutím klávesy F5 sestavení a spuštění řešení.</span><span class="sxs-lookup"><span data-stu-id="990c7-129">Press F5 to build and run the solution.</span></span>  
+9. <span data-ttu-id="5609f-129">Stisknutím klávesy F5 sestavení a spuštění řešení.</span><span class="sxs-lookup"><span data-stu-id="5609f-129">Press F5 to build and run the solution.</span></span>  
   
-10. <span data-ttu-id="990c7-130">V tématu [úloha 3: vytvoření sady nástrojů a PropertyGrid podokna](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md) se dozvíte, jak přidat **sada nástrojů** a **PropertyGrid** podporu do vaší opětovné hostování nástroje pracovního postupu návrháře.</span><span class="sxs-lookup"><span data-stu-id="990c7-130">See [Task 3: Create the Toolbox and PropertyGrid Panes](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md) to learn how to add **Toolbox** and **PropertyGrid** support to your rehosted workflow designer.</span></span>  
+10. <span data-ttu-id="5609f-130">V tématu [úloha 3: vytvoření sady nástrojů a PropertyGrid podokna](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md) se dozvíte, jak přidat **sada nástrojů** a **PropertyGrid** podporu do vaší opětovné hostování nástroje pracovního postupu návrháře.</span><span class="sxs-lookup"><span data-stu-id="5609f-130">See [Task 3: Create the Toolbox and PropertyGrid Panes](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md) to learn how to add **Toolbox** and **PropertyGrid** support to your rehosted workflow designer.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="990c7-131">Viz také</span><span class="sxs-lookup"><span data-stu-id="990c7-131">See Also</span></span>  
- [<span data-ttu-id="990c7-132">Změna hostování Návrháře postupu provádění</span><span class="sxs-lookup"><span data-stu-id="990c7-132">Rehosting the Workflow Designer</span></span>](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
- [<span data-ttu-id="990c7-133">Úkol 1: Vytvoření nové aplikace Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="990c7-133">Task 1: Create a New Windows Presentation Foundation Application</span></span>](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)  
- [<span data-ttu-id="990c7-134">Úkol 3: Vytvoření podoken pro sady nástrojů a mřížku vlastností</span><span class="sxs-lookup"><span data-stu-id="990c7-134">Task 3: Create the Toolbox and PropertyGrid Panes</span></span>](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)
+## <a name="see-also"></a><span data-ttu-id="5609f-131">Viz také</span><span class="sxs-lookup"><span data-stu-id="5609f-131">See Also</span></span>  
+ [<span data-ttu-id="5609f-132">Změna hostování Návrháře postupu provádění</span><span class="sxs-lookup"><span data-stu-id="5609f-132">Rehosting the Workflow Designer</span></span>](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
+ [<span data-ttu-id="5609f-133">Úkol 1: Vytvoření nové aplikace Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="5609f-133">Task 1: Create a New Windows Presentation Foundation Application</span></span>](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)  
+ [<span data-ttu-id="5609f-134">Úkol 3: Vytvoření podoken pro sady nástrojů a mřížku vlastností</span><span class="sxs-lookup"><span data-stu-id="5609f-134">Task 3: Create the Toolbox and PropertyGrid Panes</span></span>](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)

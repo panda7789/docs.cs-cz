@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742085"
 ---
 # <a name="how-to-unload-an-application-domain"></a><span data-ttu-id="d191f-102">Postupy: Uvolnění domény aplikace</span><span class="sxs-lookup"><span data-stu-id="d191f-102">How to: Unload an Application Domain</span></span>
 <span data-ttu-id="d191f-103">Po dokončení používání domény aplikace uvolnit pomocí <xref:System.AppDomain.Unload%2A?displayProperty=nameWithType> metoda.</span><span class="sxs-lookup"><span data-stu-id="d191f-103">When you have finished using an application domain, unload it using the <xref:System.AppDomain.Unload%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="d191f-104">**Uvolnění** metoda řádně vypne zadanou doménu aplikace.</span><span class="sxs-lookup"><span data-stu-id="d191f-104">The **Unload** method gracefully shuts down the specified application domain.</span></span> <span data-ttu-id="d191f-105">Během procesu uvolnění žádné nové vláken můžete přístup k doméně aplikace a všechny domény – konkrétní datové struktury aplikace jsou uvolněny.</span><span class="sxs-lookup"><span data-stu-id="d191f-105">During the unloading process, no new threads can access the application domain, and all application domain–specific data structures are freed.</span></span>  

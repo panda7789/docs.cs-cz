@@ -22,6 +22,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743417"
 ---
 # <a name="assembly-security-considerations"></a><span data-ttu-id="19a3b-102">Důležité informace o zabezpečení sestavení</span><span class="sxs-lookup"><span data-stu-id="19a3b-102">Assembly Security Considerations</span></span>
 <a name="top"></a> <span data-ttu-id="19a3b-103">Při vytváření sestavení, můžete sadu oprávnění, která sestavení vyžaduje ke spuštění.</span><span class="sxs-lookup"><span data-stu-id="19a3b-103">When you build an assembly, you can specify a set of permissions that the assembly requires to run.</span></span> <span data-ttu-id="19a3b-104">Zda jsou některá oprávnění udělit nebo nejsou udělena sestavení je založena na důkaz.</span><span class="sxs-lookup"><span data-stu-id="19a3b-104">Whether certain permissions are granted or not granted to an assembly is based on evidence.</span></span>  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742871"
 ---
 # <a name="cryptography-settings-schema"></a><span data-ttu-id="7193a-102">Schéma nastavení šifrování</span><span class="sxs-lookup"><span data-stu-id="7193a-102">Cryptography Settings Schema</span></span>
 <span data-ttu-id="7193a-103">Schéma nastavení šifrování obsahuje prvky, které určují, jak k mapování názvů popisný algoritmů na třídy, které implementují kryptografické algoritmy.</span><span class="sxs-lookup"><span data-stu-id="7193a-103">The cryptography settings schema contains elements that specify how to map friendly algorithm names to classes that implement cryptography algorithms.</span></span>  

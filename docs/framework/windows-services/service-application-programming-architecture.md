@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516104"
 ---
 # <a name="service-application-programming-architecture"></a><span data-ttu-id="76bf4-102">Architektura programování aplikace služby</span><span class="sxs-lookup"><span data-stu-id="76bf4-102">Service Application Programming Architecture</span></span>
 <span data-ttu-id="76bf4-103">Aplikace služby systému Windows jsou založené na třídu, která dědí z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> třídy.</span><span class="sxs-lookup"><span data-stu-id="76bf4-103">Windows Service applications are based on a class that inherits from the <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> class.</span></span> <span data-ttu-id="76bf4-104">Přepsání metody z této třídy a definovat funkce pro ně k určení chování služby.</span><span class="sxs-lookup"><span data-stu-id="76bf4-104">You override methods from this class and define functionality for them to determine how your service behaves.</span></span>  

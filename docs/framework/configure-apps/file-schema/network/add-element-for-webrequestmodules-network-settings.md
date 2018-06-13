@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742787"
 ---
 # <a name="ltaddgt-element-for-webrequestmodules-network-settings"></a><span data-ttu-id="f355b-102">&lt;Přidat&gt; Element pro webRequestModules – (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="f355b-102">&lt;add&gt; Element for webRequestModules (Network Settings)</span></span>
 <span data-ttu-id="f355b-103">Přidá vlastní modul žádost webové aplikaci.</span><span class="sxs-lookup"><span data-stu-id="f355b-103">Adds a custom Web request module to the application.</span></span>  
