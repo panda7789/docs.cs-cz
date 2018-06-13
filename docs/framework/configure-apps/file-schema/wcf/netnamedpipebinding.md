@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751825"
 ---
 # <a name="ltnetnamedpipebindinggt"></a><span data-ttu-id="8833e-102">&lt;netNamedPipeBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="8833e-102">&lt;netNamedPipeBinding&gt;</span></span>
 <span data-ttu-id="8833e-103">Definuje vazbu, která je zabezpečená, spolehlivé, optimalizované pro na počítač křížové proces komunikace.</span><span class="sxs-lookup"><span data-stu-id="8833e-103">Defines a binding that is secure, reliable, optimized for on-machine cross process communication.</span></span> <span data-ttu-id="8833e-104">Ve výchozím nastavení vygeneruje zásobníku runtime komunikaci pomocí protokolu WS-ReliableMessaging pro spolehlivost, zabezpečení přenosu pro zabezpečení přenosu, pojmenované kanály pro doručování zpráv a zprávy v binární kódování.</span><span class="sxs-lookup"><span data-stu-id="8833e-104">By default, it generates a runtime communication stack with WS-ReliableMessaging for reliability, transport security for transfer security, named pipes for message delivery, and binary message encoding.</span></span>  

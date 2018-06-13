@@ -1,26 +1,18 @@
 ---
-title: "Ukázkový soubor XML: Zákazníci a objednávky v Namespace2"
-ms.custom: 
+title: 'Ukázkový soubor XML: Zákazníci a objednávky v Namespace2'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 2da1c474-f658-4dca-a457-c35ef5ba4aff
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: dcdcb6a9505c22eedc957995516a017b60d5f81b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 53ad3633361772dc4a9be337df7ae2e1b8a60a5a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33337207"
 ---
-# <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a><span data-ttu-id="b0f07-102">Ukázkový soubor XML: Zákazníci a objednávky v Namespace</span><span class="sxs-lookup"><span data-stu-id="b0f07-102">Sample XML File: Customers and Orders in a Namespace</span></span>
-<span data-ttu-id="b0f07-103">Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="b0f07-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="b0f07-104">Tento soubor obsahuje zákazníci a objednávky.</span><span class="sxs-lookup"><span data-stu-id="b0f07-104">This file contains customers and orders.</span></span> <span data-ttu-id="b0f07-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="b0f07-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a><span data-ttu-id="cd9bc-102">Ukázkový soubor XML: Zákazníci a objednávky v Namespace</span><span class="sxs-lookup"><span data-stu-id="cd9bc-102">Sample XML File: Customers and Orders in a Namespace</span></span>
+<span data-ttu-id="cd9bc-103">Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="cd9bc-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="cd9bc-104">Tento soubor obsahuje zákazníci a objednávky.</span><span class="sxs-lookup"><span data-stu-id="cd9bc-104">This file contains customers and orders.</span></span> <span data-ttu-id="cd9bc-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="cd9bc-105">The XML is in a namespace.</span></span>  
   
-## <a name="customersordersinnamespacexml"></a><span data-ttu-id="b0f07-106">CustomersOrdersInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="b0f07-106">CustomersOrdersInNamespace.xml</span></span>  
+## <a name="customersordersinnamespacexml"></a><span data-ttu-id="cd9bc-106">CustomersOrdersInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="cd9bc-106">CustomersOrdersInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -438,5 +430,5 @@ ms.lasthandoff: 10/18/2017
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="b0f07-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="b0f07-107">See Also</span></span>  
- [<span data-ttu-id="b0f07-108">Dokumenty XML ukázkové (technologie LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="b0f07-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="cd9bc-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="cd9bc-107">See Also</span></span>  
+ [<span data-ttu-id="cd9bc-108">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="cd9bc-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

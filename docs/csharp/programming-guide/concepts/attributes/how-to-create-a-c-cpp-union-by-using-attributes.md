@@ -1,27 +1,19 @@
 ---
-title: "Postupy: vytváření sjednocení C-C++ pomocí atributů (C#)"
-ms.custom: 
+title: 'Postupy: vytváření sjednocení C-C++ pomocí atributů (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 85f35e56-26e0-4d31-9f3a-89bd4005e71a
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: e9274b585c2fecf53b94d94f9bdfdaf4a47f1041
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 30a8be9021495aa4cf61010508762999cdf91ff4
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33315838"
 ---
-# <a name="how-to-create-a-cc-union-by-using-attributes-c"></a><span data-ttu-id="d834c-102">Postupy: vytváření sjednocení C/C++ pomocí atributů (C#)</span><span class="sxs-lookup"><span data-stu-id="d834c-102">How to: Create a C/C++ Union by Using Attributes (C#)</span></span>
-<span data-ttu-id="d834c-103">Pomocí atributů můžete přizpůsobit, jak jsou rozloženy struktury v paměti.</span><span class="sxs-lookup"><span data-stu-id="d834c-103">By using attributes you can customize how structs are laid out in memory.</span></span> <span data-ttu-id="d834c-104">Například můžete vytvořit, která se označuje jako sjednocení v jazyce C/C++ pomocí `StructLayout(LayoutKind.Explicit)` a `FieldOffset` atributy.</span><span class="sxs-lookup"><span data-stu-id="d834c-104">For example, you can create what is known as a union in C/C++ by using the `StructLayout(LayoutKind.Explicit)` and `FieldOffset` attributes.</span></span>  
+# <a name="how-to-create-a-cc-union-by-using-attributes-c"></a><span data-ttu-id="27a2f-102">Postupy: vytváření sjednocení C/C++ pomocí atributů (C#)</span><span class="sxs-lookup"><span data-stu-id="27a2f-102">How to: Create a C/C++ Union by Using Attributes (C#)</span></span>
+<span data-ttu-id="27a2f-103">Pomocí atributů můžete přizpůsobit, jak jsou rozloženy struktury v paměti.</span><span class="sxs-lookup"><span data-stu-id="27a2f-103">By using attributes you can customize how structs are laid out in memory.</span></span> <span data-ttu-id="27a2f-104">Například můžete vytvořit, která se označuje jako sjednocení v jazyce C/C++ pomocí `StructLayout(LayoutKind.Explicit)` a `FieldOffset` atributy.</span><span class="sxs-lookup"><span data-stu-id="27a2f-104">For example, you can create what is known as a union in C/C++ by using the `StructLayout(LayoutKind.Explicit)` and `FieldOffset` attributes.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="d834c-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="d834c-105">Example</span></span>  
- <span data-ttu-id="d834c-106">V tomto segmentu kódu, všechna pole z `TestUnion` spustit ve stejném umístění v paměti.</span><span class="sxs-lookup"><span data-stu-id="d834c-106">In this code segment, all of the fields of `TestUnion` start at the same location in memory.</span></span>  
+## <a name="example"></a><span data-ttu-id="27a2f-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="27a2f-105">Example</span></span>  
+ <span data-ttu-id="27a2f-106">V tomto segmentu kódu, všechna pole z `TestUnion` spustit ve stejném umístění v paměti.</span><span class="sxs-lookup"><span data-stu-id="27a2f-106">In this code segment, all of the fields of `TestUnion` start at the same location in memory.</span></span>  
   
 ```csharp  
 // Add a using directive for System.Runtime.InteropServices.  
@@ -43,8 +35,8 @@ ms.lasthandoff: 12/09/2017
        }  
 ```  
   
-## <a name="example"></a><span data-ttu-id="d834c-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="d834c-107">Example</span></span>  
- <span data-ttu-id="d834c-108">Zde je další příklad kde počáteční pole v různých explicitně nastavit umístění.</span><span class="sxs-lookup"><span data-stu-id="d834c-108">The following is another example where fields start at different explicitly set locations.</span></span>  
+## <a name="example"></a><span data-ttu-id="27a2f-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="27a2f-107">Example</span></span>  
+ <span data-ttu-id="27a2f-108">Zde je další příklad kde počáteční pole v různých explicitně nastavit umístění.</span><span class="sxs-lookup"><span data-stu-id="27a2f-108">The following is another example where fields start at different explicitly set locations.</span></span>  
   
 ```csharp  
 // Add a using directive for System.Runtime.InteropServices.  
@@ -72,14 +64,14 @@ ms.lasthandoff: 12/09/2017
        }  
 ```  
   
- <span data-ttu-id="d834c-109">Pole dva celé číslo `i1` a `i2`, sdílet stejné umístění paměti jako `lg`.</span><span class="sxs-lookup"><span data-stu-id="d834c-109">The two integer fields, `i1` and `i2`, share the same memory locations as `lg`.</span></span> <span data-ttu-id="d834c-110">Tento druh kontrolu nad struktura rozložení je užitečné při použití vyvolání platformy.</span><span class="sxs-lookup"><span data-stu-id="d834c-110">This sort of control over struct layout is useful when using platform invocation.</span></span>  
+ <span data-ttu-id="27a2f-109">Pole dva celé číslo `i1` a `i2`, sdílet stejné umístění paměti jako `lg`.</span><span class="sxs-lookup"><span data-stu-id="27a2f-109">The two integer fields, `i1` and `i2`, share the same memory locations as `lg`.</span></span> <span data-ttu-id="27a2f-110">Tento druh kontrolu nad struktura rozložení je užitečné při použití vyvolání platformy.</span><span class="sxs-lookup"><span data-stu-id="27a2f-110">This sort of control over struct layout is useful when using platform invocation.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d834c-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="d834c-111">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="27a2f-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="27a2f-111">See Also</span></span>  
  <xref:System.Reflection>  
  <xref:System.Attribute>  
- [<span data-ttu-id="d834c-112">Průvodce programováním v C#</span><span class="sxs-lookup"><span data-stu-id="d834c-112">C# Programming Guide</span></span>](../../../../csharp/programming-guide/index.md)  
- [<span data-ttu-id="d834c-113">Atributy</span><span class="sxs-lookup"><span data-stu-id="d834c-113">Attributes</span></span>](../../../../../docs/standard/attributes/index.md)  
- [<span data-ttu-id="d834c-114">Reflexe (C#)</span><span class="sxs-lookup"><span data-stu-id="d834c-114">Reflection (C#)</span></span>](../../../../csharp/programming-guide/concepts/reflection.md)  
- [<span data-ttu-id="d834c-115">Atributy (C#)</span><span class="sxs-lookup"><span data-stu-id="d834c-115">Attributes (C#)</span></span>](../../../../csharp/programming-guide/concepts/attributes/index.md)  
- [<span data-ttu-id="d834c-116">Vytváření vlastních atributů (C#)</span><span class="sxs-lookup"><span data-stu-id="d834c-116">Creating Custom Attributes (C#)</span></span>](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)  
- [<span data-ttu-id="d834c-117">Přístup k atributům pomocí reflexe (C#)</span><span class="sxs-lookup"><span data-stu-id="d834c-117">Accessing Attributes by Using Reflection (C#)</span></span>](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+ [<span data-ttu-id="27a2f-112">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="27a2f-112">C# Programming Guide</span></span>](../../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="27a2f-113">Atributy</span><span class="sxs-lookup"><span data-stu-id="27a2f-113">Attributes</span></span>](../../../../../docs/standard/attributes/index.md)  
+ [<span data-ttu-id="27a2f-114">Reflexe (C#)</span><span class="sxs-lookup"><span data-stu-id="27a2f-114">Reflection (C#)</span></span>](../../../../csharp/programming-guide/concepts/reflection.md)  
+ [<span data-ttu-id="27a2f-115">Atributy (C#)</span><span class="sxs-lookup"><span data-stu-id="27a2f-115">Attributes (C#)</span></span>](../../../../csharp/programming-guide/concepts/attributes/index.md)  
+ [<span data-ttu-id="27a2f-116">Vytváření vlastních atributů (C#)</span><span class="sxs-lookup"><span data-stu-id="27a2f-116">Creating Custom Attributes (C#)</span></span>](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)  
+ [<span data-ttu-id="27a2f-117">Přístup k atributům pomocí reflexe (C#)</span><span class="sxs-lookup"><span data-stu-id="27a2f-117">Accessing Attributes by Using Reflection (C#)</span></span>](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)

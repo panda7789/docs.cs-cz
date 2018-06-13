@@ -1,26 +1,18 @@
 ---
-title: "Ukázkový soubor XML: Typické nákupní objednávka v Namespace1"
-ms.custom: 
+title: 'Ukázkový soubor XML: Typické nákupní objednávka v Namespace1'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 84dc3339-ea32-4ccc-9af6-ab38ddfecced
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 4e85dc10de556f37d63438b4c2d19f52e181efad
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 0adee32a3ee4d2347bd2e0a84024fe478346987a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33337558"
 ---
-# <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a><span data-ttu-id="9dacb-102">Ukázkový soubor XML: Typické nákupní objednávka v Namespace</span><span class="sxs-lookup"><span data-stu-id="9dacb-102">Sample XML File: Typical Purchase Order in a Namespace</span></span>
-<span data-ttu-id="9dacb-103">Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="9dacb-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="9dacb-104">Tento soubor je typické nákupní objednávka.</span><span class="sxs-lookup"><span data-stu-id="9dacb-104">This file is a typical purchase order.</span></span> <span data-ttu-id="9dacb-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="9dacb-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a><span data-ttu-id="94336-102">Ukázkový soubor XML: Typické nákupní objednávka v Namespace</span><span class="sxs-lookup"><span data-stu-id="94336-102">Sample XML File: Typical Purchase Order in a Namespace</span></span>
+<span data-ttu-id="94336-103">Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="94336-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="94336-104">Tento soubor je typické nákupní objednávka.</span><span class="sxs-lookup"><span data-stu-id="94336-104">This file is a typical purchase order.</span></span> <span data-ttu-id="94336-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="94336-105">The XML is in a namespace.</span></span>  
   
-## <a name="purchaseorderinnamespacexml"></a><span data-ttu-id="9dacb-106">PurchaseOrderInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="9dacb-106">PurchaseOrderInNamespace.xml</span></span>  
+## <a name="purchaseorderinnamespacexml"></a><span data-ttu-id="94336-106">PurchaseOrderInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="94336-106">PurchaseOrderInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -62,5 +54,5 @@ ms.lasthandoff: 10/18/2017
 </aw:PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="9dacb-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="9dacb-107">See Also</span></span>  
- [<span data-ttu-id="9dacb-108">Dokumenty XML ukázkové (technologie LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="9dacb-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="94336-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="94336-107">See Also</span></span>  
+ [<span data-ttu-id="94336-108">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="94336-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

@@ -1,14 +1,6 @@
 ---
-title: "CorDebugSetContextFlag – výčet"
-ms.custom: 
+title: CorDebugSetContextFlag – výčet
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CorDebugSetContextFlag
 api_location:
@@ -22,22 +14,19 @@ helpviewer_keywords:
 ms.assetid: b30280bb-fe75-44ed-8589-bcff081fae44
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 27e9fd561da74a3b88015e7820c2cbbd56ab2a7a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: badd79926e8f039cf6b947dd6655e2cd679e3000
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33406972"
 ---
-# <a name="cordebugsetcontextflag-enumeration"></a><span data-ttu-id="fdb92-102">CorDebugSetContextFlag – výčet</span><span class="sxs-lookup"><span data-stu-id="fdb92-102">CorDebugSetContextFlag Enumeration</span></span>
-<span data-ttu-id="fdb92-103">Určuje, zda kontext je z aktivní (nebo listu) s rámečkem v zásobníku nebo je poškozený podle unwinding z jiné rámce.</span><span class="sxs-lookup"><span data-stu-id="fdb92-103">Indicates whether the context is from the active (or leaf) frame on the stack or has been computed by unwinding from another frame.</span></span>  
+# <a name="cordebugsetcontextflag-enumeration"></a><span data-ttu-id="356e5-102">CorDebugSetContextFlag – výčet</span><span class="sxs-lookup"><span data-stu-id="356e5-102">CorDebugSetContextFlag Enumeration</span></span>
+<span data-ttu-id="356e5-103">Určuje, zda kontext je z aktivní (nebo listu) s rámečkem v zásobníku nebo je poškozený podle unwinding z jiné rámce.</span><span class="sxs-lookup"><span data-stu-id="356e5-103">Indicates whether the context is from the active (or leaf) frame on the stack or has been computed by unwinding from another frame.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="fdb92-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fdb92-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="356e5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="356e5-104">Syntax</span></span>  
   
 ```  
 typedef enum CorDebugSetContextFlag  
@@ -47,25 +36,25 @@ typedef enum CorDebugSetContextFlag
 }  CorDebugSetContextFlag;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="fdb92-105">Členové</span><span class="sxs-lookup"><span data-stu-id="fdb92-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="356e5-105">Členové</span><span class="sxs-lookup"><span data-stu-id="356e5-105">Members</span></span>  
   
-|<span data-ttu-id="fdb92-106">Člen</span><span class="sxs-lookup"><span data-stu-id="fdb92-106">Member</span></span>|<span data-ttu-id="fdb92-107">Popis</span><span class="sxs-lookup"><span data-stu-id="fdb92-107">Description</span></span>|  
+|<span data-ttu-id="356e5-106">Člen</span><span class="sxs-lookup"><span data-stu-id="356e5-106">Member</span></span>|<span data-ttu-id="356e5-107">Popis</span><span class="sxs-lookup"><span data-stu-id="356e5-107">Description</span></span>|  
 |------------|-----------------|  
-|<span data-ttu-id="fdb92-108">SET_CONTEXT_FLAG_ACTIVE_FRAME</span><span class="sxs-lookup"><span data-stu-id="fdb92-108">SET_CONTEXT_FLAG_ACTIVE_FRAME</span></span>|<span data-ttu-id="fdb92-109">Kontext není aktivní kontextu vlákna.</span><span class="sxs-lookup"><span data-stu-id="fdb92-109">The context is the thread’s active context.</span></span>|  
-|<span data-ttu-id="fdb92-110">SET_CONTEXT_FLAG_UNWIND_FRAME</span><span class="sxs-lookup"><span data-stu-id="fdb92-110">SET_CONTEXT_FLAG_UNWIND_FRAME</span></span>|<span data-ttu-id="fdb92-111">Kontext je poškozený podle unwinding z jiné rámce.</span><span class="sxs-lookup"><span data-stu-id="fdb92-111">The context has been computed by unwinding from another frame.</span></span>|  
+|<span data-ttu-id="356e5-108">SET_CONTEXT_FLAG_ACTIVE_FRAME</span><span class="sxs-lookup"><span data-stu-id="356e5-108">SET_CONTEXT_FLAG_ACTIVE_FRAME</span></span>|<span data-ttu-id="356e5-109">Kontext není aktivní kontextu vlákna.</span><span class="sxs-lookup"><span data-stu-id="356e5-109">The context is the thread’s active context.</span></span>|  
+|<span data-ttu-id="356e5-110">SET_CONTEXT_FLAG_UNWIND_FRAME</span><span class="sxs-lookup"><span data-stu-id="356e5-110">SET_CONTEXT_FLAG_UNWIND_FRAME</span></span>|<span data-ttu-id="356e5-111">Kontext je poškozený podle unwinding z jiné rámce.</span><span class="sxs-lookup"><span data-stu-id="356e5-111">The context has been computed by unwinding from another frame.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="fdb92-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="fdb92-112">Remarks</span></span>  
- <span data-ttu-id="fdb92-113">`CorDebugSetContextFlag`obsahuje hodnoty, které jsou používány [icordebugstackwalk::setcontext –](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="fdb92-113">`CorDebugSetContextFlag` provides values that are used by the [ICorDebugStackWalk::SetContext](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md) method.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="356e5-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="356e5-112">Remarks</span></span>  
+ <span data-ttu-id="356e5-113">`CorDebugSetContextFlag` obsahuje hodnoty, které jsou používány [icordebugstackwalk::setcontext –](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="356e5-113">`CorDebugSetContextFlag` provides values that are used by the [ICorDebugStackWalk::SetContext](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md) method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="fdb92-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fdb92-114">Requirements</span></span>  
- <span data-ttu-id="fdb92-115">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="fdb92-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="356e5-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="356e5-114">Requirements</span></span>  
+ <span data-ttu-id="356e5-115">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="356e5-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="fdb92-116">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="fdb92-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="356e5-116">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="356e5-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="fdb92-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="fdb92-117">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="356e5-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="356e5-117">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="fdb92-118">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="fdb92-118">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="356e5-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="356e5-118">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fdb92-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="fdb92-119">See Also</span></span>  
- [<span data-ttu-id="fdb92-120">Výčty pro ladění</span><span class="sxs-lookup"><span data-stu-id="fdb92-120">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
- [<span data-ttu-id="fdb92-121">Ladění</span><span class="sxs-lookup"><span data-stu-id="fdb92-121">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a><span data-ttu-id="356e5-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="356e5-119">See Also</span></span>  
+ [<span data-ttu-id="356e5-120">Výčty pro ladění</span><span class="sxs-lookup"><span data-stu-id="356e5-120">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
+ [<span data-ttu-id="356e5-121">Ladění</span><span class="sxs-lookup"><span data-stu-id="356e5-121">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
