@@ -1,14 +1,6 @@
 ---
-title: "WAIT_OPTION – výčet"
-ms.custom: 
+title: WAIT_OPTION – výčet
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - WAIT_OPTION
 api_location:
@@ -22,22 +14,19 @@ helpviewer_keywords:
 ms.assetid: 962fc293-8ded-4b3b-90ce-2c21a4f1b244
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 143c191592efe8cfea8049f0dd5dc05a5bd4192f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fb37394799db39baa406ef332066d5ebb2dbf19d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33441926"
 ---
-# <a name="waitoption-enumeration"></a><span data-ttu-id="5fc98-102">WAIT_OPTION – výčet</span><span class="sxs-lookup"><span data-stu-id="5fc98-102">WAIT_OPTION Enumeration</span></span>
-<span data-ttu-id="5fc98-103">Obsahuje hodnoty, které označují, že akce hostitele by měl trvat, pokud operace požadoval běžné bloky runtime (CLR) jazyk.</span><span class="sxs-lookup"><span data-stu-id="5fc98-103">Contains values that indicate the action a host should take if an operation requested by the common language runtime (CLR) blocks.</span></span>  
+# <a name="waitoption-enumeration"></a><span data-ttu-id="264b9-102">WAIT_OPTION – výčet</span><span class="sxs-lookup"><span data-stu-id="264b9-102">WAIT_OPTION Enumeration</span></span>
+<span data-ttu-id="264b9-103">Obsahuje hodnoty, které označují, že akce hostitele by měl trvat, pokud operace požadoval běžné bloky runtime (CLR) jazyk.</span><span class="sxs-lookup"><span data-stu-id="264b9-103">Contains values that indicate the action a host should take if an operation requested by the common language runtime (CLR) blocks.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5fc98-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5fc98-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="264b9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="264b9-104">Syntax</span></span>  
   
 ```  
 typedef enum {  
@@ -47,25 +36,25 @@ typedef enum {
 } WAIT_OPTION;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="5fc98-105">Členové</span><span class="sxs-lookup"><span data-stu-id="5fc98-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="264b9-105">Členové</span><span class="sxs-lookup"><span data-stu-id="264b9-105">Members</span></span>  
   
-|<span data-ttu-id="5fc98-106">Člen</span><span class="sxs-lookup"><span data-stu-id="5fc98-106">Member</span></span>|<span data-ttu-id="5fc98-107">Popis</span><span class="sxs-lookup"><span data-stu-id="5fc98-107">Description</span></span>|  
+|<span data-ttu-id="264b9-106">Člen</span><span class="sxs-lookup"><span data-stu-id="264b9-106">Member</span></span>|<span data-ttu-id="264b9-107">Popis</span><span class="sxs-lookup"><span data-stu-id="264b9-107">Description</span></span>|  
 |------------|-----------------|  
-|`WAIT_ALERTABLE`|<span data-ttu-id="5fc98-108">Hostitele upozorní, že úloha se probudí, modul CLR volá-li [ihosttask::alert –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="5fc98-108">Notifies the host that the task should be awakened if the CLR calls the [IHostTask::Alert](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) method.</span></span>|  
-|`WAIT_MSGPUMP`|<span data-ttu-id="5fc98-109">Zprávy v aktuální vlákno operačního systému se musí čerpadla, když se stane zablokuje vlákno upozorní hostitele.</span><span class="sxs-lookup"><span data-stu-id="5fc98-109">Notifies the host that it must pump messages on the current OS thread if the thread becomes blocked.</span></span> <span data-ttu-id="5fc98-110">Modul runtime určuje jenom na tuto hodnotu <xref:System.Threading.ApartmentState.STA> přístup z více vláken.</span><span class="sxs-lookup"><span data-stu-id="5fc98-110">The runtime specifies this value only on an <xref:System.Threading.ApartmentState.STA> thread.</span></span>|  
-|`WAIT_NOTINDEADLOCK`|<span data-ttu-id="5fc98-111">Upozorní hostitele, že žádost o synchronizaci zadaný nelze rozdělit hostitele.</span><span class="sxs-lookup"><span data-stu-id="5fc98-111">Notifies the host that the specified synchronization request cannot be broken by a host.</span></span> <span data-ttu-id="5fc98-112">To znamená, nemůže vrátit hostitele `HOST_E_DEADLOCK`.</span><span class="sxs-lookup"><span data-stu-id="5fc98-112">That is, the host cannot return `HOST_E_DEADLOCK`.</span></span>|  
+|`WAIT_ALERTABLE`|<span data-ttu-id="264b9-108">Hostitele upozorní, že úloha se probudí, modul CLR volá-li [ihosttask::alert –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="264b9-108">Notifies the host that the task should be awakened if the CLR calls the [IHostTask::Alert](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) method.</span></span>|  
+|`WAIT_MSGPUMP`|<span data-ttu-id="264b9-109">Zprávy v aktuální vlákno operačního systému se musí čerpadla, když se stane zablokuje vlákno upozorní hostitele.</span><span class="sxs-lookup"><span data-stu-id="264b9-109">Notifies the host that it must pump messages on the current OS thread if the thread becomes blocked.</span></span> <span data-ttu-id="264b9-110">Modul runtime určuje jenom na tuto hodnotu <xref:System.Threading.ApartmentState.STA> přístup z více vláken.</span><span class="sxs-lookup"><span data-stu-id="264b9-110">The runtime specifies this value only on an <xref:System.Threading.ApartmentState.STA> thread.</span></span>|  
+|`WAIT_NOTINDEADLOCK`|<span data-ttu-id="264b9-111">Upozorní hostitele, že žádost o synchronizaci zadaný nelze rozdělit hostitele.</span><span class="sxs-lookup"><span data-stu-id="264b9-111">Notifies the host that the specified synchronization request cannot be broken by a host.</span></span> <span data-ttu-id="264b9-112">To znamená, nemůže vrátit hostitele `HOST_E_DEADLOCK`.</span><span class="sxs-lookup"><span data-stu-id="264b9-112">That is, the host cannot return `HOST_E_DEADLOCK`.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="5fc98-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5fc98-113">Remarks</span></span>  
- <span data-ttu-id="5fc98-114">[Ihosttaskmanager::Sleep –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-sleep-method.md) a [ihosttaskmanager::switchtotask –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-switchtotask-method.md) metody obou přijímají parametr tohoto typu.</span><span class="sxs-lookup"><span data-stu-id="5fc98-114">The [IHostTaskManager::Sleep](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-sleep-method.md) and [IHostTaskManager::SwitchToTask](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-switchtotask-method.md) methods both take a parameter of this type.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="264b9-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="264b9-113">Remarks</span></span>  
+ <span data-ttu-id="264b9-114">[Ihosttaskmanager::Sleep –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-sleep-method.md) a [ihosttaskmanager::switchtotask –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-switchtotask-method.md) metody obou přijímají parametr tohoto typu.</span><span class="sxs-lookup"><span data-stu-id="264b9-114">The [IHostTaskManager::Sleep](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-sleep-method.md) and [IHostTaskManager::SwitchToTask](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-switchtotask-method.md) methods both take a parameter of this type.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5fc98-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5fc98-115">Requirements</span></span>  
- <span data-ttu-id="5fc98-116">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5fc98-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="264b9-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="264b9-115">Requirements</span></span>  
+ <span data-ttu-id="264b9-116">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="264b9-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5fc98-117">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="5fc98-117">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="264b9-117">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="264b9-117">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="5fc98-118">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="5fc98-118">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="264b9-118">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="264b9-118">**Library:** MSCorEE.dll</span></span>  
   
- <span data-ttu-id="5fc98-119">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5fc98-119">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="264b9-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="264b9-119">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5fc98-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="5fc98-120">See Also</span></span>  
- [<span data-ttu-id="5fc98-121">Výčty pro hostování</span><span class="sxs-lookup"><span data-stu-id="5fc98-121">Hosting Enumerations</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="264b9-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="264b9-120">See Also</span></span>  
+ [<span data-ttu-id="264b9-121">Výčty pro hostování</span><span class="sxs-lookup"><span data-stu-id="264b9-121">Hosting Enumerations</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

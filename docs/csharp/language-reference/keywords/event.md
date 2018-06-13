@@ -14,6 +14,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33955963"
 ---
 # <a name="event-c-reference"></a><span data-ttu-id="e4da0-102">event (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="e4da0-102">event (C# Reference)</span></span>
 <span data-ttu-id="e4da0-103">`event` – Klíčové slovo se používá k deklaraci událost v třídě vydavatele.</span><span class="sxs-lookup"><span data-stu-id="e4da0-103">The `event` keyword is used to declare an event in a publisher class.</span></span>  
