@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809755"
 ---
 # <a name="activity-list"></a><span data-ttu-id="0d6ec-102">Seznam aktivit</span><span class="sxs-lookup"><span data-stu-id="0d6ec-102">Activity List</span></span>
 <span data-ttu-id="0d6ec-103">Toto téma uvádí všechny aktivity, které jsou definované ve Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="0d6ec-103">This topic lists all the activities defined by Windows Communication Foundation (WCF).</span></span>  

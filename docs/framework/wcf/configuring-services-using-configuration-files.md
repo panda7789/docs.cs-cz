@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807430"
 ---
 # <a name="configuring-services-using-configuration-files"></a><span data-ttu-id="efaf0-102">Konfigurace služeb pomocí konfiguračních souborů</span><span class="sxs-lookup"><span data-stu-id="efaf0-102">Configuring Services Using Configuration Files</span></span>
 <span data-ttu-id="efaf0-103">Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním souborem vám umožní poskytovat koncový bod a data o chování služby v okamžiku nasazení místo v době návrhu.</span><span class="sxs-lookup"><span data-stu-id="efaf0-103">Configuring a Windows Communication Foundation (WCF) service with a configuration file gives you the flexibility of providing endpoint and service behavior data at the point of deployment instead of at design time.</span></span> <span data-ttu-id="efaf0-104">Toto téma popisuje primární techniky, které jsou k dispozici.</span><span class="sxs-lookup"><span data-stu-id="efaf0-104">This topic outlines the primary techniques available.</span></span>  

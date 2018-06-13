@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810106"
 ---
 # <a name="accessing-services-using-a-wcf-client"></a><span data-ttu-id="99798-102">Přístup ke službám pomocí klienta WCF</span><span class="sxs-lookup"><span data-stu-id="99798-102">Accessing Services Using a WCF Client</span></span>
 <span data-ttu-id="99798-103">Po vytvoření služby, je dalším krokem vytvoření proxy server klienta WCF.</span><span class="sxs-lookup"><span data-stu-id="99798-103">After you create a service, the next step is to create a WCF client proxy.</span></span> <span data-ttu-id="99798-104">Klientská aplikace používá proxy server klienta WCF pro komunikaci se službou.</span><span class="sxs-lookup"><span data-stu-id="99798-104">A client application uses the WCF client proxy to communicate with the service.</span></span> <span data-ttu-id="99798-105">Klientské aplikace obvykle importovat metadata služby pro generování kódu klienta WCF, který slouží k vyvolání služby.</span><span class="sxs-lookup"><span data-stu-id="99798-105">Client applications usually import a service's metadata to generate WCF client code that can be used to invoke the service.</span></span>  

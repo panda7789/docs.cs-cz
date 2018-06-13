@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803832"
 ---
 # <a name="data-binding-scenarios"></a><span data-ttu-id="bde80-102">Scénáře datových vazeb</span><span class="sxs-lookup"><span data-stu-id="bde80-102">Data Binding Scenarios</span></span>
 <span data-ttu-id="bde80-103">Tato část obsahuje příklady vysvětlující scénáře datových vazeb Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="bde80-103">This section contains samples that demonstrate Windows Communication Foundation (WCF) data binding scenarios.</span></span>  

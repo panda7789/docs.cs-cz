@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809791"
 ---
 # <a name="message-flow-overview"></a><span data-ttu-id="6ecca-102">Tok zpráv – přehled</span><span class="sxs-lookup"><span data-stu-id="6ecca-102">Message Flow Overview</span></span>
 <span data-ttu-id="6ecca-103">V distribuované systému obsahující vzájemně propojené služby je potřeba určit příčinnou vztahy mezi službami.</span><span class="sxs-lookup"><span data-stu-id="6ecca-103">In a distributed system containing interconnected services, it is necessary to determine causal relationships between the services.</span></span> <span data-ttu-id="6ecca-104">Je důležité pochopit různé součásti, které byly součástí toku požadavků na podporu kritické scénáře, jako je stav monitorování, řešení potíží a příčina analýzy.</span><span class="sxs-lookup"><span data-stu-id="6ecca-104">It is important to understand the various components that were part of a request flow to support critical scenarios such as health monitoring, troubleshooting, and root cause analysis.</span></span> <span data-ttu-id="6ecca-105">Chcete-li povolit korelace trasování mezi různé služby, v rozhraní .NET Framework 4 jsme doplnili podporu prostřednictvím následujících funkcí:</span><span class="sxs-lookup"><span data-stu-id="6ecca-105">To enable the correlation of traces between various services, in the .NET Framework 4 we added support through the following features:</span></span>  

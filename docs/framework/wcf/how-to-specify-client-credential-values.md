@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806641"
 ---
 # <a name="how-to-specify-client-credential-values"></a><span data-ttu-id="65e4e-102">Postupy: Zadání hodnot přihlašovacích údajů klienta</span><span class="sxs-lookup"><span data-stu-id="65e4e-102">How to: Specify Client Credential Values</span></span>
 <span data-ttu-id="65e4e-103">Pomocí služby Windows Communication Foundation (WCF), službu určit, jak ověření klienta ke službě.</span><span class="sxs-lookup"><span data-stu-id="65e4e-103">Using Windows Communication Foundation (WCF), the service can specify how a client is authenticated to the service.</span></span> <span data-ttu-id="65e4e-104">Službu můžete například stanovení, ověření klienta s certifikátem.</span><span class="sxs-lookup"><span data-stu-id="65e4e-104">For example, a service can stipulate that the client be authenticated with a certificate.</span></span>  

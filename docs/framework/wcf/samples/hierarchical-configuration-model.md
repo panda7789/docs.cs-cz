@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806627"
 ---
 # <a name="hierarchical-configuration-model"></a><span data-ttu-id="afe09-102">Model hierarchické konfigurace</span><span class="sxs-lookup"><span data-stu-id="afe09-102">Hierarchical Configuration Model</span></span>
 <span data-ttu-id="afe09-103">Tento příklad znázorňuje implementaci hierarchie konfigurační soubory pro služby.</span><span class="sxs-lookup"><span data-stu-id="afe09-103">This sample demonstrates how to implement a hierarchy of configuration files for services.</span></span> <span data-ttu-id="afe09-104">Také ukazuje, jak vazby, chování služby a chování koncový bod se dědí z vyšší úrovně v hierarchii.</span><span class="sxs-lookup"><span data-stu-id="afe09-104">It also shows how bindings, service behaviors, and endpoint behaviors are inherited from higher levels in the hierarchy.</span></span>  

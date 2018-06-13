@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805886"
 ---
 # <a name="choosing-a-message-exchange-pattern"></a><span data-ttu-id="575ad-102">Výběr vzorce výměny zpráv</span><span class="sxs-lookup"><span data-stu-id="575ad-102">Choosing a Message Exchange Pattern</span></span>
 <span data-ttu-id="575ad-103">Prvním krokem při psaní vlastních přenosu je rozhodnout, které *zprávy exchange vzory* (nebo MEPs) jsou povinné pro kanál vyvíjíte.</span><span class="sxs-lookup"><span data-stu-id="575ad-103">The first step in writing a custom transport is to decide which *message exchange patterns* (or MEPs) are required for the channel you are developing.</span></span> <span data-ttu-id="575ad-104">Toto téma popisuje možnosti dostupné a popisuje různé požadavky.</span><span class="sxs-lookup"><span data-stu-id="575ad-104">This topic describes the options available and discusses the various requirements.</span></span> <span data-ttu-id="575ad-105">Toto je první úloha v seznamu úkolů vývoj kanálu popsané v [rozvojových kanály](../../../../docs/framework/wcf/extending/developing-channels.md).</span><span class="sxs-lookup"><span data-stu-id="575ad-105">This is the first task in the channel development task list described in [Developing Channels](../../../../docs/framework/wcf/extending/developing-channels.md).</span></span>  

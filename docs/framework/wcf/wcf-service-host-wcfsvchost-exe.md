@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807031"
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a><span data-ttu-id="cdf7a-102">Hostitel služby WCF (WcfSvcHost.exe)</span><span class="sxs-lookup"><span data-stu-id="cdf7a-102">WCF Service Host (WcfSvcHost.exe)</span></span>
 <span data-ttu-id="cdf7a-103">Hostitel služby Windows Communication Foundation (WCF) (WcfSvcHost.exe) umožňuje spuštění ladicího programu sady Visual Studio (F5) automaticky hostování a testovat službu, kterou jste implementovali.</span><span class="sxs-lookup"><span data-stu-id="cdf7a-103">Windows Communication Foundation (WCF) Service Host (WcfSvcHost.exe) allows you to launch the Visual Studio debugger (F5) to automatically host and test a service you have implemented.</span></span> <span data-ttu-id="cdf7a-104">Potom můžete otestovat pomocí testovacího klienta WCF (WcfTestClient.exe) nebo vlastního klienta najít a opravit všechny potenciální chyby.</span><span class="sxs-lookup"><span data-stu-id="cdf7a-104">You can then test the service using WCF Test Client (WcfTestClient.exe), or your own client, to find and fix any potential errors.</span></span>  

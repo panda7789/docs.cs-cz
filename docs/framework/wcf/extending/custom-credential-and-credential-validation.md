@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803450"
 ---
 # <a name="custom-credential-and-credential-validation"></a><span data-ttu-id="76cf0-102">Vlastní pověření a ověřování pověření</span><span class="sxs-lookup"><span data-stu-id="76cf0-102">Custom Credential and Credential Validation</span></span>
 <span data-ttu-id="76cf0-103">Zabezpečení ve Windows Communication Foundation (WCF) je založena na výměnu přihlašovacích údajů mezi služeb a klientů.</span><span class="sxs-lookup"><span data-stu-id="76cf0-103">Security in Windows Communication Foundation (WCF) is based on the exchange of credentials between services and clients.</span></span> <span data-ttu-id="76cf0-104">Většina scénářů zabezpečení může obsloužit pomocí běžné typy přihlašovacích údajů, jako jsou Windows (Kerberos), uživatelského jména a hesla a certifikáty.</span><span class="sxs-lookup"><span data-stu-id="76cf0-104">Most security scenarios can be satisfied using common credential types, such as Windows (Kerberos), username and passwords, and certificates.</span></span> <span data-ttu-id="76cf0-105">Ale pokud nový typ pověření je zapotřebí, témata v této části popisují, jak ke zpracování a ověření nové typy.</span><span class="sxs-lookup"><span data-stu-id="76cf0-105">However, if a new type of credential is required, the topics in this section explain how to handle and validate new types.</span></span>  

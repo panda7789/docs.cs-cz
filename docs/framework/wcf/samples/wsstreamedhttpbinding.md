@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807173"
 ---
 # <a name="wsstreamedhttpbinding"></a><span data-ttu-id="1af2f-102">WSStreamedHttpBinding</span><span class="sxs-lookup"><span data-stu-id="1af2f-102">WSStreamedHttpBinding</span></span>
 <span data-ttu-id="1af2f-103">Ukázka ukazuje, jak vytvořit vazbu, která je určená pro podporu streamování scénářů, při použití přenosového protokolu HTTP.</span><span class="sxs-lookup"><span data-stu-id="1af2f-103">The sample demonstrates how to create a binding that is designed to support streaming scenarios when the HTTP transport is used.</span></span>  

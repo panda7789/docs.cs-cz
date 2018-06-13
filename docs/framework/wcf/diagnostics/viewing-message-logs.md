@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33802974"
 ---
 # <a name="viewing-message-logs"></a><span data-ttu-id="970e5-102">Prohlížení protokolů zpráv</span><span class="sxs-lookup"><span data-stu-id="970e5-102">Viewing Message Logs</span></span>
 <span data-ttu-id="970e5-103">Toto téma popisuje, jak můžete zobrazit protokoly zpráv.</span><span class="sxs-lookup"><span data-stu-id="970e5-103">This topic describes how you can view message logs.</span></span>  

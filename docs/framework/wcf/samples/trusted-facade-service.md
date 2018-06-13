@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807658"
 ---
 # <a name="trusted-facade-service"></a><span data-ttu-id="b0b5b-102">Důvěryhodná služba facade</span><span class="sxs-lookup"><span data-stu-id="b0b5b-102">Trusted Facade Service</span></span>
 <span data-ttu-id="b0b5b-103">Tento ukázkový scénář ukazuje, jak přenést informace identitu volajícího z jedné služby do jiného pomocí služby Windows Communication Foundation (WCF) Infrastruktura zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="b0b5b-103">This scenario sample demonstrates how to flow caller's identity information from one service to another using Windows Communication Foundation (WCF) security infrastructure.</span></span>  

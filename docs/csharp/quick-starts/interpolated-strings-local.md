@@ -10,6 +10,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472760"
 ---
 # <a name="string-interpolation"></a><span data-ttu-id="72261-103">Řetězec interpolace</span><span class="sxs-lookup"><span data-stu-id="72261-103">String interpolation</span></span>
 

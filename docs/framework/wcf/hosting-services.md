@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807850"
 ---
 # <a name="hosting-services"></a><span data-ttu-id="e1605-102">Služby hostování</span><span class="sxs-lookup"><span data-stu-id="e1605-102">Hosting Services</span></span>
 <span data-ttu-id="e1605-103">Stane aktivní, musí být hostované služby v rámci běhové prostředí, která ji vytvoří a určuje jeho kontextu a doba platnosti.</span><span class="sxs-lookup"><span data-stu-id="e1605-103">To become active, a service must be hosted within a run-time environment that creates it and controls its context and lifetime.</span></span> <span data-ttu-id="e1605-104">Služby Windows Communication Foundation (WCF) jsou navrženy pro spuštění v jakékoli procesu systému Windows, podporuje spravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="e1605-104">Windows Communication Foundation (WCF) services are designed to run in any Windows process that supports managed code.</span></span>  

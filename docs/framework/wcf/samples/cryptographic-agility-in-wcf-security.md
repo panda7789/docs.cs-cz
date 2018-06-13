@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810210"
 ---
 # <a name="cryptographic-agility-in-wcf-security"></a><span data-ttu-id="72945-102">Kryptografická flexibilita v zabezpečení WCF</span><span class="sxs-lookup"><span data-stu-id="72945-102">Cryptographic Agility in WCF Security</span></span>
 <span data-ttu-id="72945-103">Tento příklad ukazuje postup zadejte v algoritmu standardní nebo vlastní k zajištění kryptografických agilní implementace v klienta Windows Communication Foundation (WCF) a služby.</span><span class="sxs-lookup"><span data-stu-id="72945-103">This sample shows how to specify in a standard/custom algorithm to provide a cryptographic agile implementation in a Windows Communication Foundation (WCF) client and service.</span></span> <span data-ttu-id="72945-104">Ukázka se skládá z následujících projektech:</span><span class="sxs-lookup"><span data-stu-id="72945-104">The sample is composed of the following projects:</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806952"
 ---
 # <a name="building-the-windows-communication-foundation-samples"></a><span data-ttu-id="3b99e-102">Ukázky vytváření Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="3b99e-102">Building the Windows Communication Foundation Samples</span></span>
 <span data-ttu-id="3b99e-103">Ukázky Windows Communication Foundation (WCF) se dají vytvářet pomocí sady Visual Studio 2010 nebo pomocí **msbuild** příkazu z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="3b99e-103">The Windows Communication Foundation (WCF) samples can be built using Visual Studio 2010 or using the **msbuild** command from the command line.</span></span> <span data-ttu-id="3b99e-104">Oba postupy jsou popsány v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="3b99e-104">Both procedures are described in this topic.</span></span>  

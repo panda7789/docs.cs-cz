@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806741"
 ---
 # <a name="creating-user-defined-bindings"></a><span data-ttu-id="8c731-102">Vytváření uživatelem definovaných vazeb</span><span class="sxs-lookup"><span data-stu-id="8c731-102">Creating User-Defined Bindings</span></span>
 <span data-ttu-id="8c731-103">Chcete-li vytvořit vazby není poskytovaný systému několika způsoby:</span><span class="sxs-lookup"><span data-stu-id="8c731-103">There are several ways to create bindings not provided by the system:</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808324"
 ---
 # <a name="token-authenticator"></a><span data-ttu-id="2d9e6-102">Ověřovací data tokenu</span><span class="sxs-lookup"><span data-stu-id="2d9e6-102">Token Authenticator</span></span>
 <span data-ttu-id="2d9e6-103">Tento příklad ukazuje, jak implementovat vlastní ověřovací data tokenu.</span><span class="sxs-lookup"><span data-stu-id="2d9e6-103">This sample demonstrates how to implement a custom token authenticator.</span></span> <span data-ttu-id="2d9e6-104">Ve Windows Communication Foundation (WCF) ověřovací data tokenu se používá pro ověřování tokenu použít se zprávou, ověření, zda je konzistentní a ověřování identity přidružené k tokenu.</span><span class="sxs-lookup"><span data-stu-id="2d9e6-104">A token authenticator in Windows Communication Foundation (WCF) is used for validating the token used with the message, verifying that it is self-consistent, and authenticating the identity associated with the token.</span></span>  

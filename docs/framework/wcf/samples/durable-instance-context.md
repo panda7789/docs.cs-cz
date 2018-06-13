@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808605"
 ---
 # <a name="durable-instance-context"></a><span data-ttu-id="a4c38-102">Trvanlivý kontext instance</span><span class="sxs-lookup"><span data-stu-id="a4c38-102">Durable Instance Context</span></span>
 <span data-ttu-id="a4c38-103">Tento příklad znázorňuje postup přizpůsobení povolit kontexty trvanlivý instanci modulu runtime Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="a4c38-103">This sample demonstrates how to customize the Windows Communication Foundation (WCF) runtime to enable durable instance contexts.</span></span> <span data-ttu-id="a4c38-104">SQL Server 2005 používá jako své úložiště zálohování (SQL Server 2005 Express v tomto případě).</span><span class="sxs-lookup"><span data-stu-id="a4c38-104">It uses SQL Server 2005 as its backing store (SQL Server 2005 Express in this case).</span></span> <span data-ttu-id="a4c38-105">Však také poskytuje přístup k vlastní úložiště mechanismy.</span><span class="sxs-lookup"><span data-stu-id="a4c38-105">However, it also provides a way to access custom storage mechanisms.</span></span>  

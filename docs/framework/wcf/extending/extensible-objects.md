@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805194"
 ---
 # <a name="extensible-objects"></a><span data-ttu-id="b94ef-102">Rozšiřitelné objekty</span><span class="sxs-lookup"><span data-stu-id="b94ef-102">Extensible Objects</span></span>
 <span data-ttu-id="b94ef-103">Vzor extensible objektu se používá buď rozšířit existující třídy runtime s novými funkcemi nebo přidat nový stav na objekt.</span><span class="sxs-lookup"><span data-stu-id="b94ef-103">The extensible object pattern is used to either extend existing runtime classes with new functionality or to add new state to an object.</span></span> <span data-ttu-id="b94ef-104">Rozšíření, které jsou připojené k jednomu rozšiřitelné objekty, aktivujte velmi různých fází zpracování pro přístup k sdílení stavu a funkce, které jsou připojené k běžné extensible objekt, který bude mít přístup k chování.</span><span class="sxs-lookup"><span data-stu-id="b94ef-104">Extensions, attached to one of the extensible objects, enable behaviors at very different stages in processing to access shared state and functionality attached to a common extensible object that they can access.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808738"
 ---
 # <a name="custom-message-encoder-compression-encoder"></a><span data-ttu-id="1a3e0-102">Vlastní kodér zpráv: Kompresní kodér</span><span class="sxs-lookup"><span data-stu-id="1a3e0-102">Custom Message Encoder: Compression Encoder</span></span>
 <span data-ttu-id="1a3e0-103">Tento příklad ukazuje, jak implementovat vlastní kodér pomocí platformy Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="1a3e0-103">This sample demonstrates how to implement a custom encoder using the Windows Communication Foundation (WCF) platform.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807548"
 ---
 # <a name="durable-issued-token-provider"></a><span data-ttu-id="75be8-102">Trvale vydaný poskytovatel tokenu</span><span class="sxs-lookup"><span data-stu-id="75be8-102">Durable Issued Token Provider</span></span>
 <span data-ttu-id="75be8-103">Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel tokenu.</span><span class="sxs-lookup"><span data-stu-id="75be8-103">This sample demonstrates how to implement a custom client issued token provider.</span></span>  

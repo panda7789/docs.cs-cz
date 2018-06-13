@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808481"
 ---
 # <a name="walkthrough-creating-custom-client-and-service-credentials"></a><span data-ttu-id="dba9e-102">Návod: Vytvoření vlastního klienta a pověření služby</span><span class="sxs-lookup"><span data-stu-id="dba9e-102">Walkthrough: Creating Custom Client and Service Credentials</span></span>
 <span data-ttu-id="dba9e-103">Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a jak používat vlastní pověření z kódu aplikace.</span><span class="sxs-lookup"><span data-stu-id="dba9e-103">This topic shows how to implement custom client and service credentials and how to use custom credentials from application code.</span></span>  

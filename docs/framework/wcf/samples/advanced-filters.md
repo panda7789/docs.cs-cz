@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805613"
 ---
 # <a name="advanced-filters"></a><span data-ttu-id="b7dcc-102">Rozšířené filtry</span><span class="sxs-lookup"><span data-stu-id="b7dcc-102">Advanced Filters</span></span>
 <span data-ttu-id="b7dcc-103">Tento příklad znázorňuje směrování služby Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="b7dcc-103">This sample demonstrates a Windows Communication Foundation (WCF) routing service.</span></span> <span data-ttu-id="b7dcc-104">Služba Směrování je součást WCF, který usnadňuje do aplikace zahrnout směrovač podle obsahu.</span><span class="sxs-lookup"><span data-stu-id="b7dcc-104">The routing service is a WCF component that makes it easy to include a content-based router in your application.</span></span> <span data-ttu-id="b7dcc-105">Tato ukázka přizpůsobuje standardní ukázka kalkulačku WCF komunikovat pomocí služby směrování.</span><span class="sxs-lookup"><span data-stu-id="b7dcc-105">This sample adapts the standard WCF Calculator sample to communicate using the routing service.</span></span> <span data-ttu-id="b7dcc-106">Tento příklad ukazuje, jak definovat na základě obsahu směrování logiku prostřednictvím filtry zpráv a zpráva filtru tabulky.</span><span class="sxs-lookup"><span data-stu-id="b7dcc-106">This sample shows how to define content-based routing logic through the use of message filters and message filter tables.</span></span>  

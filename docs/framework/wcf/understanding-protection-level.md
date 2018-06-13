@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809778"
 ---
 # <a name="understanding-protection-level"></a><span data-ttu-id="c398d-102">Princip úrovně ochrany</span><span class="sxs-lookup"><span data-stu-id="c398d-102">Understanding Protection Level</span></span>
 <span data-ttu-id="c398d-103">`ProtectionLevel` Vlastnost nachází na mnoha různých tříd, jako <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy.</span><span class="sxs-lookup"><span data-stu-id="c398d-103">The `ProtectionLevel` property is found on many different classes, such as the <xref:System.ServiceModel.ServiceContractAttribute> and the <xref:System.ServiceModel.OperationContractAttribute> classes.</span></span> <span data-ttu-id="c398d-104">Vlastnost řídí, jak je chráněný část (nebo celé) zprávy.</span><span class="sxs-lookup"><span data-stu-id="c398d-104">The property controls how a part (or whole) of a message is protected.</span></span> <span data-ttu-id="c398d-105">Toto téma popisuje funkci Windows Communication Foundation (WCF) a jak to funguje.</span><span class="sxs-lookup"><span data-stu-id="c398d-105">This topic explains the Windows Communication Foundation (WCF) feature and how it works.</span></span>  

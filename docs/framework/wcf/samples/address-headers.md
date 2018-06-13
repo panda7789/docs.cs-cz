@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803787"
 ---
 # <a name="address-headers"></a><span data-ttu-id="92fbc-102">Hlavičky adresy</span><span class="sxs-lookup"><span data-stu-id="92fbc-102">Address Headers</span></span>
 <span data-ttu-id="92fbc-103">Příklad hlavičky adresy znázorňuje, jak klienti můžete předat parametry referenční dokumentace ke službě pomocí Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="92fbc-103">The Address Headers sample demonstrates how clients can pass reference parameters to a service using Windows Communication Foundation (WCF).</span></span>  

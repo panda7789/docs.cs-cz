@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810377"
 ---
 # <a name="dynamic-reconfiguration"></a><span data-ttu-id="fa680-102">Dynamická rekonfigurace</span><span class="sxs-lookup"><span data-stu-id="fa680-102">Dynamic Reconfiguration</span></span>
 <span data-ttu-id="fa680-103">Tento příklad znázorňuje směrování služby Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="fa680-103">This sample demonstrates the Windows Communication Foundation (WCF) routing service.</span></span> <span data-ttu-id="fa680-104">Služba Směrování je součást WCF, který usnadňuje do aplikace zahrnout směrovač podle obsahu.</span><span class="sxs-lookup"><span data-stu-id="fa680-104">The routing service is a WCF component that makes it easy to include a content-based router in your application.</span></span> <span data-ttu-id="fa680-105">Tato ukázka přizpůsobuje standardní ukázka kalkulačku WCF komunikovat pomocí služby směrování.</span><span class="sxs-lookup"><span data-stu-id="fa680-105">This sample adapts the standard WCF Calculator Sample to communicate using the routing service.</span></span> <span data-ttu-id="fa680-106">Tento příklad ukazuje, jak službu směrování můžete dynamicky překonfigurovat za běhu.</span><span class="sxs-lookup"><span data-stu-id="fa680-106">This sample shows how the routing service can be dynamically reconfigured during runtime.</span></span>  

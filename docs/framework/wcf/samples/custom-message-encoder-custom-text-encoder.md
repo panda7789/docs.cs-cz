@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808062"
 ---
 # <a name="custom-message-encoder-custom-text-encoder"></a><span data-ttu-id="a21cd-102">Vlastní kodér zpráv: Vlastní kodér textu</span><span class="sxs-lookup"><span data-stu-id="a21cd-102">Custom Message Encoder: Custom Text Encoder</span></span>
 <span data-ttu-id="a21cd-103">Tento příklad ukazuje, jak implementovat vlastní text kodéru zprávy pomocí služby Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="a21cd-103">This sample demonstrates how to implement a custom text message encoder using Windows Communication Foundation (WCF).</span></span>  

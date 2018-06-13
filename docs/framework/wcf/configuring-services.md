@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803277"
 ---
 # <a name="configuring-services"></a><span data-ttu-id="1ee8c-102">Konfigurace služeb</span><span class="sxs-lookup"><span data-stu-id="1ee8c-102">Configuring Services</span></span>
 <span data-ttu-id="1ee8c-103">Jakmile určené a implementovat vaše kontrakt služby, jste připraveni ke konfiguraci služby.</span><span class="sxs-lookup"><span data-stu-id="1ee8c-103">Once you have designed and implemented your service contract, you are ready to configure your service.</span></span> <span data-ttu-id="1ee8c-104">Toto je, kde definice a přizpůsobení, jak je vystaven služby pro klienty, včetně zadání adresy, kde se nachází, zprávy, který se používá k odesílání a přijímání zpráv a typ zabezpečení, která vyžaduje kódování a přenos.</span><span class="sxs-lookup"><span data-stu-id="1ee8c-104">This is where you define and customize how your service is exposed to clients, including specifying the address where it can be found, the transport and message encoding it uses to send and receive messages, and the type of security it requires.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804092"
 ---
 # <a name="systemservicemodelchannelsmessagesent"></a><span data-ttu-id="f2402-102">System.ServiceModel.Channels.MessageSent</span><span class="sxs-lookup"><span data-stu-id="f2402-102">System.ServiceModel.Channels.MessageSent</span></span>
 <span data-ttu-id="f2402-103">System.ServiceModel.Channels.MessageSent</span><span class="sxs-lookup"><span data-stu-id="f2402-103">System.ServiceModel.Channels.MessageSent</span></span>  

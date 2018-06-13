@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803537"
 ---
 # <a name="extending-encoders-and-serializers"></a><span data-ttu-id="f39bd-102">Rozšiřování kodérů a serializátorů</span><span class="sxs-lookup"><span data-stu-id="f39bd-102">Extending Encoders and Serializers</span></span>
 <span data-ttu-id="f39bd-103">Témata v této části popisují, jak rozšířit serializace systém Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="f39bd-103">The topics in this section describe how to extend the Windows Communication Foundation (WCF) serialization system.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805665"
 ---
 # <a name="discovery-binding-element-sample"></a><span data-ttu-id="f431b-102">Zjišťování – ukázka prvky vazby</span><span class="sxs-lookup"><span data-stu-id="f431b-102">Discovery Binding Element Sample</span></span>
 <span data-ttu-id="f431b-103">Tento příklad znázorňuje způsob použití prvku vazby klienta zjišťování pro zjišťování služby.</span><span class="sxs-lookup"><span data-stu-id="f431b-103">This sample demonstrates how to use the discovery client binding element to discover a service.</span></span> <span data-ttu-id="f431b-104">Tato funkce umožňuje vývojářům přidat kanálem klienta zjišťování do své existující zásobníku kanálu klienta provedení programovací model velmi intuitivní.</span><span class="sxs-lookup"><span data-stu-id="f431b-104">This feature enables developers to add a discovery client channel to their existing client channel stack, making the programming model very intuitive.</span></span> <span data-ttu-id="f431b-105">Po otevření přiřazený kanál adresu služby, se vyřeší, pomocí zjišťování.</span><span class="sxs-lookup"><span data-stu-id="f431b-105">When the associated channel is opened, the address of the service is resolved using discovery.</span></span> <span data-ttu-id="f431b-106">Tato ukázka se skládá z následujících projektech:</span><span class="sxs-lookup"><span data-stu-id="f431b-106">This sample consists of the following projects:</span></span>  

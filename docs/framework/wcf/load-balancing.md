@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807522"
 ---
 # <a name="load-balancing"></a><span data-ttu-id="a62ec-102">Vyrovnávání zatížení</span><span class="sxs-lookup"><span data-stu-id="a62ec-102">Load Balancing</span></span>
 <span data-ttu-id="a62ec-103">Jedním ze způsobů navýšení kapacity aplikace Windows Communication Foundation (WCF) je škálování je jejich nasazením do Vyrovnávání zatížení sítě serverové farmy.</span><span class="sxs-lookup"><span data-stu-id="a62ec-103">One way to increase the capacity of Windows Communication Foundation (WCF) applications is to scale them out by deploying them into a load-balanced server farm.</span></span> <span data-ttu-id="a62ec-104">Aplikace WCF může být Vyrovnávané pomocí vyrovnávání techniky, včetně služby Vyrovnávání zatížení softwaru jako je například Vyrovnávání zatížení sítě Windows standardní zatížení, jakož i hardwarové zařízení pro vyrovnávání zatížení.</span><span class="sxs-lookup"><span data-stu-id="a62ec-104">WCF applications can be load balanced using standard load balancing techniques, including software load balancers such as Windows Network Load Balancing as well as hardware-based load balancing appliances.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806380"
 ---
 # <a name="namedpipe-activation"></a><span data-ttu-id="cec6d-102">Aktivace pojmenovaného kanálu</span><span class="sxs-lookup"><span data-stu-id="cec6d-102">NamedPipe Activation</span></span>
 <span data-ttu-id="cec6d-103">Tento příklad znázorňuje hostování služby, která využívá služba aktivace procesů systému Windows (WAS) k aktivaci služby, který komunikuje přes názvy kanály.</span><span class="sxs-lookup"><span data-stu-id="cec6d-103">This sample demonstrates hosting a service that uses Windows Process Activation Service (WAS) to activate a service that communicates over names pipes.</span></span> <span data-ttu-id="cec6d-104">Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a vyžaduje [!INCLUDE[wv](../../../../includes/wv-md.md)] ke spuštění.</span><span class="sxs-lookup"><span data-stu-id="cec6d-104">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) and requires [!INCLUDE[wv](../../../../includes/wv-md.md)] to run.</span></span>  

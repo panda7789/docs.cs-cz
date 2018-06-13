@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808589"
 ---
 # <a name="using-sessions"></a><span data-ttu-id="0f7d1-102">Použití relací</span><span class="sxs-lookup"><span data-stu-id="0f7d1-102">Using Sessions</span></span>
 <span data-ttu-id="0f7d1-103">V aplikacích Windows Communication Foundation (WCF) *relace* korelaci skupinu zpráv k konverzaci.</span><span class="sxs-lookup"><span data-stu-id="0f7d1-103">In Windows Communication Foundation (WCF) applications, a *session* correlates a group of messages into a conversation.</span></span> <span data-ttu-id="0f7d1-104">WCF relací se liší od k dispozici v objektu session [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace, podporují různé chování a jsou ovládaná různými způsoby.</span><span class="sxs-lookup"><span data-stu-id="0f7d1-104">WCF sessions are different than the session object available in [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] applications, support different behaviors, and are controlled in different ways.</span></span> <span data-ttu-id="0f7d1-105">Toto téma popisuje funkce, které umožňují relací ve WCF aplikací a jejich použití.</span><span class="sxs-lookup"><span data-stu-id="0f7d1-105">This topic describes the features that sessions enable in WCF applications and how to use them.</span></span>  

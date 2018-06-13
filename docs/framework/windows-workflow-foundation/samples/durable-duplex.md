@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809424"
 ---
 # <a name="durable-duplex"></a><span data-ttu-id="4a28b-102">Trvanlivý duplexní přenos</span><span class="sxs-lookup"><span data-stu-id="4a28b-102">Durable Duplex</span></span>
 <span data-ttu-id="4a28b-103">Tento příklad ukazuje, jak připravit a nakonfigurovat systém exchange trvanlivý duplexní zpráv pomocí aktivity zasílání zpráv v systému Windows Workflow Foundation (WF).</span><span class="sxs-lookup"><span data-stu-id="4a28b-103">This sample demonstrates how to set up and configure durable duplex message exchange using the messaging activities in Windows Workflow Foundation (WF).</span></span> <span data-ttu-id="4a28b-104">Trvanlivý duplexní zpráva exchange je obousměrný zpráva systému exchange, který probíhá po dlouhou dobu.</span><span class="sxs-lookup"><span data-stu-id="4a28b-104">A durable duplex message exchange is a two-way message exchange that takes place over a long period of time.</span></span> <span data-ttu-id="4a28b-105">Doba platnosti výměny zpráv může být delší než komunikační kanál životnost a doba platnosti v paměti instancí služby.</span><span class="sxs-lookup"><span data-stu-id="4a28b-105">The lifetime of the message exchange may be longer than the lifetime of the communication channel and the in-memory lifetime of the service instances.</span></span>  

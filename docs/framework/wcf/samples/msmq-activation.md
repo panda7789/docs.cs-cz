@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808127"
 ---
 # <a name="msmq-activation"></a><span data-ttu-id="1e8d2-102">Aktivace MSMQ</span><span class="sxs-lookup"><span data-stu-id="1e8d2-102">MSMQ Activation</span></span>
 <span data-ttu-id="1e8d2-103">Tento příklad ukazuje, jak pro hostování aplikací v procesu aktivace služby WAS (Windows), které se načítají z fronty zpráv.</span><span class="sxs-lookup"><span data-stu-id="1e8d2-103">This sample demonstrates how to host applications in Windows Process Activation Service (WAS) that are read from a message queue.</span></span> <span data-ttu-id="1e8d2-104">Této ukázce se používá `netMsmqBinding` a je založena na [obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md) ukázka.</span><span class="sxs-lookup"><span data-stu-id="1e8d2-104">This sample uses the `netMsmqBinding` and is based on the [Two-Way Communication](../../../../docs/framework/wcf/samples/two-way-communication.md) sample.</span></span> <span data-ttu-id="1e8d2-105">Služba je v tomto případě hostované webové aplikace a klient se hostuje sama a výstupy ke konzole sledovat stav nákupních objednávek odeslána.</span><span class="sxs-lookup"><span data-stu-id="1e8d2-105">The service in this case is a Web-hosted application and the client is self-hosted and outputs to the console to observe the status of purchase orders submitted.</span></span>  

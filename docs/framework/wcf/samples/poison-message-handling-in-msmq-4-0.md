@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809502"
 ---
 # <a name="poison-message-handling-in-msmq-40"></a><span data-ttu-id="ffad3-102">Zacházení s nezpracovatelnými zprávami v MSMQ 4.0</span><span class="sxs-lookup"><span data-stu-id="ffad3-102">Poison Message Handling in MSMQ 4.0</span></span>
 <span data-ttu-id="ffad3-103">Tento příklad znázorňuje postup zpracování ve službě poškozených zpráv.</span><span class="sxs-lookup"><span data-stu-id="ffad3-103">This sample demonstrates how to perform poison message handling in a service.</span></span> <span data-ttu-id="ffad3-104">Tato ukázka je založena na [transakční vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) ukázka.</span><span class="sxs-lookup"><span data-stu-id="ffad3-104">This sample is based on the [Transacted MSMQ Binding](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) sample.</span></span> <span data-ttu-id="ffad3-105">V tomto příkladu `netMsmqBinding`.</span><span class="sxs-lookup"><span data-stu-id="ffad3-105">This sample uses the `netMsmqBinding`.</span></span> <span data-ttu-id="ffad3-106">Služba je vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu přijetí zprávy ve frontě.</span><span class="sxs-lookup"><span data-stu-id="ffad3-106">The service is a self-hosted console application to enable you to observe the service receiving queued messages.</span></span>  

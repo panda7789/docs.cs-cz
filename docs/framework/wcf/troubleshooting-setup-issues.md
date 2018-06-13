@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806510"
 ---
 # <a name="troubleshooting-setup-issues"></a><span data-ttu-id="638be-102">Odstraňování potíží s instalací</span><span class="sxs-lookup"><span data-stu-id="638be-102">Troubleshooting Setup Issues</span></span>
 <span data-ttu-id="638be-103">Toto téma popisuje postupy řešení problémů nastavit Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="638be-103">This topic describes how to troubleshoot Windows Communication Foundation (WCF) set up issues.</span></span>  

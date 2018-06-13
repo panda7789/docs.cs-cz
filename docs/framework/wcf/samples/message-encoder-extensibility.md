@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804196"
 ---
 # <a name="message-encoder-extensibility"></a><span data-ttu-id="2f7da-102">Rozšiřitelnost kodéru zpráv</span><span class="sxs-lookup"><span data-stu-id="2f7da-102">Message Encoder Extensibility</span></span>
 <span data-ttu-id="2f7da-103">Tato část obsahuje příklady vysvětlující vlastní zprávu při kódování.</span><span class="sxs-lookup"><span data-stu-id="2f7da-103">This section contains samples that demonstrate custom message encoding.</span></span>  

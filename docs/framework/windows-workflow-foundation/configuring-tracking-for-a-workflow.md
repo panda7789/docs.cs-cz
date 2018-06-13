@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809700"
 ---
 # <a name="configuring-tracking-for-a-workflow"></a><span data-ttu-id="a5a7e-102">Konfigurace sledování pro pracovní postup</span><span class="sxs-lookup"><span data-stu-id="a5a7e-102">Configuring Tracking for a Workflow</span></span>
 <span data-ttu-id="a5a7e-103">Pracovní postup můžete provést třemi způsoby:</span><span class="sxs-lookup"><span data-stu-id="a5a7e-103">A workflow can execute in three ways:</span></span>  

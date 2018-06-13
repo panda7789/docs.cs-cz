@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805522"
 ---
 # <a name="controlling-resource-consumption-and-improving-performance"></a><span data-ttu-id="90cf3-102">Řízení spotřeby prostředků a zlepšení výkonu</span><span class="sxs-lookup"><span data-stu-id="90cf3-102">Controlling Resource Consumption and Improving Performance</span></span>
 <span data-ttu-id="90cf3-103">Toto téma popisuje různé vlastnosti v různých oblastech architektury Windows Communication Foundation (WCF), která fungují pro řízení spotřeby prostředků a ovlivnit metrik výkonu.</span><span class="sxs-lookup"><span data-stu-id="90cf3-103">This topic describes various properties in different areas of the Windows Communication Foundation (WCF) architecture that work to control resource consumption and affect performance metrics.</span></span>  

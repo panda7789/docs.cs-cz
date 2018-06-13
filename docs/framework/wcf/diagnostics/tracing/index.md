@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809313"
 ---
 # <a name="tracing"></a><span data-ttu-id="9ca11-102">Trasování</span><span class="sxs-lookup"><span data-stu-id="9ca11-102">Tracing</span></span>
 <span data-ttu-id="9ca11-103">Windows Communication Foundation (WCF) poskytuje instrumentace aplikací a diagnostických dat pro monitorování selhání a analýzy.</span><span class="sxs-lookup"><span data-stu-id="9ca11-103">Windows Communication Foundation (WCF) provides application instrumentation and diagnostic data for fault monitoring and analysis.</span></span> <span data-ttu-id="9ca11-104">Trasování místo ladicí program vám pomůže pochopit, jak se chovají aplikace nebo proč chyb.</span><span class="sxs-lookup"><span data-stu-id="9ca11-104">You can use tracing instead of a debugger to understand how an application is behaving, or why it faults.</span></span> <span data-ttu-id="9ca11-105">Zpracování chyb a také mohou korelovat mezi komponentami a poskytuje prostředí začátku do konce.</span><span class="sxs-lookup"><span data-stu-id="9ca11-105">You can also correlate faults and processing across components to provide an end-to-end experience.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805405"
 ---
 # <a name="aspnet-caching-integration"></a><span data-ttu-id="0a659-102">Integrace mezipaměti ASP.NET</span><span class="sxs-lookup"><span data-stu-id="0a659-102">ASP.NET Caching Integration</span></span>
 <span data-ttu-id="0a659-103">Tento příklad ukazuje, jak využívat výstupní mezipaměti technologie ASP.NET pomocí programovacího modelu WCF WEB HTTP.</span><span class="sxs-lookup"><span data-stu-id="0a659-103">This sample demonstrates how to utilize the ASP.NET output cache with the WCF WEB HTTP programming model.</span></span> <span data-ttu-id="0a659-104">Najdete v tématu [základní služba prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázku vlastním hostováním verzi tento scénář, který popisuje implementace služby podrobněji.</span><span class="sxs-lookup"><span data-stu-id="0a659-104">Please see the [Basic Resource Service](../../../../docs/framework/wcf/samples/basic-resource-service.md) sample for a self-hosted version of this scenario that discusses the service implementation in depth.</span></span> <span data-ttu-id="0a659-105">Toto téma se zaměřuje na funkce integrace výstupní mezipaměti technologie ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="0a659-105">This topic focuses on the ASP.NET output cache integration feature.</span></span>  

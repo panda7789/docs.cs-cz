@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805821"
 ---
 # <a name="expected-exceptions"></a><span data-ttu-id="e535c-102">Očekávané výjimky</span><span class="sxs-lookup"><span data-stu-id="e535c-102">Expected Exceptions</span></span>
 <span data-ttu-id="e535c-103">Tento příklad znázorňuje, jak zachytit očekávané výjimky při použití typový klient.</span><span class="sxs-lookup"><span data-stu-id="e535c-103">This sample demonstrates how to catch expected exceptions when using a typed client.</span></span> <span data-ttu-id="e535c-104">Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.</span><span class="sxs-lookup"><span data-stu-id="e535c-104">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service.</span></span> <span data-ttu-id="e535c-105">V této ukázce klienta je konzolová aplikace (.exe) a služba je hostovaná Internetové informační služby (IIS).</span><span class="sxs-lookup"><span data-stu-id="e535c-105">In this sample, the client is a console application (.exe) and the service is hosted by Internet Information Services (IIS).</span></span>  

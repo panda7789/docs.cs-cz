@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806536"
 ---
 # <a name="how-to-lock-down-endpoints-in-the-enterprise"></a><span data-ttu-id="c6afc-102">Postupy: uzamčení koncových bodů v podnikové síti</span><span class="sxs-lookup"><span data-stu-id="c6afc-102">How to: Lock Down Endpoints in the Enterprise</span></span>
 <span data-ttu-id="c6afc-103">Velké podniky často vyžadují, že se aplikace vyvinuté souladu se zásadami zabezpečení organizace.</span><span class="sxs-lookup"><span data-stu-id="c6afc-103">Large enterprises often require that applications are developed in compliance with enterprise security policies.</span></span> <span data-ttu-id="c6afc-104">Následující téma popisuje, jak vyvíjet a instalovat klienta validátoru koncový bod, který slouží k ověření všechny aplikace klienta Windows Communication Foundation (WCF) nainstalované v počítačích.</span><span class="sxs-lookup"><span data-stu-id="c6afc-104">The following topic discusses how to develop and install a client endpoint validator that can be used to validate all Windows Communication Foundation (WCF) client applications installed on computers.</span></span>  

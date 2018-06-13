@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806666"
 ---
 # <a name="securing-workflow-services"></a><span data-ttu-id="7b4fd-102">Zabezpečení služeb pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="7b4fd-102">Securing Workflow Services</span></span>
 <span data-ttu-id="7b4fd-103">Ukázka zabezpečené služby pracovního postupu ukazuje následujících postupů:</span><span class="sxs-lookup"><span data-stu-id="7b4fd-103">The Secured Workflow Service sample shows the following procedures:</span></span>  
