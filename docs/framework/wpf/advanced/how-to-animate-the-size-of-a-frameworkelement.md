@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543982"
 ---
 # <a name="how-to-animate-the-size-of-a-frameworkelement"></a>Postupy: Animace velikosti FrameworkElement
 Pro animaci velikost <xref:System.Windows.FrameworkElement>, můžete buď animace jeho <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastnosti nebo použijte animovaný <xref:System.Windows.Media.ScaleTransform>.  

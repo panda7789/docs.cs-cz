@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397933"
 ---
 # <a name="how-to-hook-up-a-delegate-using-reflection"></a>Postupy: Připojení delegáta pomocí reflexe
 Pokud používáte reflexe načíst a spuštění sestavení, nelze použít jazykové funkce jako jazyka C# `+=` operátor nebo Visual Basic [AddHandler – příkaz](~/docs/visual-basic/language-reference/statements/addhandler-statement.md) spojit události. Následující postupy ukazují, jak spojit stávající metodu pro událost získáním všechny potřebné typy prostřednictvím reflexe a postup vytvoření dynamické metody pomocí reflexe emitování a propojte ho až událost.  

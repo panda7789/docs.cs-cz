@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551814"
 ---
 # <a name="how-to-style-controls-on-a-toolbar"></a>Postupy: Ovládací prvky stylu na objektu ToolBar
 <xref:System.Windows.Controls.ToolBar> Definuje <xref:System.Windows.ResourceKey> objekty, které chcete určit styl ovládacích prvků v rámci <xref:System.Windows.Controls.ToolBar>.  K formátování v ovládacím prvku <xref:System.Windows.Controls.ToolBar>, nastavte `x:key` styl do atribut <xref:System.Windows.ResourceKey> definované v <xref:System.Windows.Controls.ToolBar>.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542155"
 ---
 # <a name="toolstrip-control-architecture"></a>Architektura ovládacího prvku ToolStrip
 <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.ToolStripItem> třídy poskytují flexibilní a rozšiřitelný systém pro zobrazení položek panelu nástrojů, stavu a nabídky. Tyto třídy jsou obsaženy v <xref:System.Windows.Forms> obor názvů a že jsou všechny obvykle s názvem s předponou "ToolStrip" (například <xref:System.Windows.Forms.ToolStripOverflow>) nebo s příponou "Pruhu" (například <xref:System.Windows.Forms.MenuStrip>).  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540074"
 ---
 # <a name="radiobutton-control-overview-windows-forms"></a>RadioButton – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.RadioButton> ovládacích prvků k dispozici dvě nebo více vzájemně se vylučujících voleb pro uživatele. A přepínací tlačítka a zaškrtávací políčka mohou být zobrazeny, podobně jako funkci, je důležitý rozdíl: když uživatel vybere přepínače, přepínací tlačítka ve stejné skupině není k dispozici také. Naopak můžete vybrat libovolný počet zaškrtávací políčka. Definování skupina přepínacích tlačítek informuje uživatele, "Zde je sada parametrů, ze kterých můžete vybrat pouze jeden."  

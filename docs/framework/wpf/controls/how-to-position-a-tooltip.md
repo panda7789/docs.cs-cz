@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555935"
 ---
 # <a name="how-to-position-a-tooltip"></a>Postupy: Umístění objektu ToolTip
 Tento příklad ukazuje, jak určit umístění popisek na obrazovce.  

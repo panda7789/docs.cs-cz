@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552763"
 ---
 # <a name="how-to-use-the-content-scrolling-methods-of-scrollviewer"></a>Postupy: Použití metod pro posunutí obsahu prvku ScrollViewer
 Tento příklad ukazuje, jak používat posouvání metody třídy <xref:System.Windows.Controls.ScrollViewer> elementu. Tyto metody poskytují přírůstkové posouvání obsahu, buď čára, nebo podle stránky, <xref:System.Windows.Controls.ScrollViewer>.  

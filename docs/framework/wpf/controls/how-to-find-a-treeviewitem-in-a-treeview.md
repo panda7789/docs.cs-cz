@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554752"
 ---
 # <a name="how-to-find-a-treeviewitem-in-a-treeview"></a>Postupy: Hledání TreeViewItem v objektu TreeView
 <xref:System.Windows.Controls.TreeView> Řízení nabízí pohodlný způsob, jak zobrazit hierarchické data. Pokud vaše <xref:System.Windows.Controls.TreeView> je vázán na zdroj dat <xref:System.Windows.Controls.TreeView.SelectedItem%2A> vlastnost představuje pohodlný způsob pro vás lze snadno obnovit vybraná data objektu. Je obvykle nejvhodnější pro práci s základní datový objekt, ale někdy budete muset programově měnit data na obsahující <xref:System.Windows.Controls.TreeViewItem>. Například budete muset prostřednictvím kódu programu rozbalte <xref:System.Windows.Controls.TreeViewItem>, nebo vyberte jinou položku v <xref:System.Windows.Controls.TreeView>.  

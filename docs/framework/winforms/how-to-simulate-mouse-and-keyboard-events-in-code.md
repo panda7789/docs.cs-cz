@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541778"
 ---
 # <a name="how-to-simulate-mouse-and-keyboard-events-in-code"></a>Postupy: Simulace událostí myši a klávesnice v kódu
 Windows Forms poskytuje několik možností pro simulaci prostřednictvím kódu programu myši a vstup z klávesnice. Toto téma obsahuje přehled těchto možností.  

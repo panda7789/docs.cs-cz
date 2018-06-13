@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393865"
 ---
 # <a name="lttypeparametergt-element-net-native"></a>Element &lt;TypeParameter&gt; (.NET Native)
 Zásady se vztahuje na typ zastoupený typ argument předaný metodu.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541882"
 ---
 # <a name="binding-markup-extension"></a>Rozšíření značek připojení
 Odkládat údaje hodnotu vlastnosti na hodnotu vázané na data, vytvoření objektu zprostředkující výraz a interpretace kontextu dat, která se vztahuje k elementu a jeho vazby v době běhu.  

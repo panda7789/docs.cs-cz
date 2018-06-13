@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33553782"
 ---
 # <a name="panel-how-to-topics"></a>Témata panelu postupů
 Témata v této části popisují, jak používat <xref:System.Windows.Controls.Panel> elementu a související [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].  

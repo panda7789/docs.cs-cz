@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541921"
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Obousměrné funkce v přehledu WPF
 Na rozdíl od jiných vývoj platformy [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má řadu funkcí, které podporují rychlý vývoj obousměrného obsahu, například smíšený zleva doprava a přímo na zbývajících dat ve stejném dokumentu. Ve stejnou dobu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoří vynikající prostředí pro uživatele, kteří vyžadují obousměrné funkce, jako je arabština a hebrejština mluvení uživatele.  

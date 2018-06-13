@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33409825"
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (importér knihovny typů)
 Nástroj Type Library Importer převádí definice typu nalezené v knihovně typů modelu COM na ekvivalentní definice v sestavení Common Language Runtime. Výstupem nástroje Tlbimp.exe je binární soubor (sestavení) obsahující metadata modulu runtime pro typy definované v rámci původní knihovny typů. Můžete zkontrolovat tento soubor s nástroji, jako [Ildasm.exe](ildasm-exe-il-disassembler.md).  

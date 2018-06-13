@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365719"
 ---
 # <a name="query-projections-wcf-data-services"></a>Projekce dotazu (služby WCF Data Services)
 Poskytuje mechanismus v projekci [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] ke snížení množství dat v informačním kanálu vrácených dotazem zadáním jenom některé vlastnosti entity jsou vráceny v odpovědi. Další informace najdete v tématu [OData: Vyberte možností dotazu systému ($select)](http://go.microsoft.com/fwlink/?LinkId=186076).  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557521"
 ---
 # <a name="richtextbox-overview"></a>RichTextBox – přehled
 <xref:System.Windows.Controls.RichTextBox> Řízení umožňuje zobrazit nebo upravit obsah toku, včetně odstavců, obrázky, tabulky a další. Toto téma představuje <xref:System.Windows.Controls.TextBox> třídy a obsahuje příklady použití v obou [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a C#.  

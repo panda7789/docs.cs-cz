@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527388"
 ---
 # <a name="combobox-control-overview-windows-forms"></a>ComboBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ComboBox> řízení se používá k zobrazení dat v rozevíracím seznamem. Ve výchozím nastavení <xref:System.Windows.Forms.ComboBox> ovládací prvek se zobrazí ve dvou částech: horní část je textového pole, která umožňuje uživatelům zadejte položku seznamu. Druhá část je pole se seznamem, který zobrazí seznam položek, ze kterých může uživatel vybrat jeden. Další informace o dalších styly – pole se seznamem najdete v tématu [kdy použít Windows Forms ComboBox Instead of ListBox](../../../../docs/framework/winforms/controls/when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md).  

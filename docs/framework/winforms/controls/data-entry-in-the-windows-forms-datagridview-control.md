@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526817"
 ---
 # <a name="data-entry-in-the-windows-forms-datagridview-control"></a>Zadávání dat v ovládacím prvku Windows Forms DataGridView
 `DataGridView` Řízení poskytuje několik funkcí, která umožňují změnit jak uživatelé přidat nebo upravit dat v ovládacím prvku. Například můžete nastavit zadávání dat efektivnější tím, že poskytuje výchozí hodnoty pro nové řádky a upozornění uživatelů při výskytu chyb.  

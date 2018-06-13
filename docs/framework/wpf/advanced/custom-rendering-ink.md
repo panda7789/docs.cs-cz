@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540430"
 ---
 # <a name="custom-rendering-ink"></a>Inkoust vlastního vykreslení
 <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> Vlastnost tahu umožňuje určit vzhled tahu, například jeho velikost, barvu a tvar, ale může nastat situace, které chcete přizpůsobit vzhled nad rámec co <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> povolit. Můžete přizpůsobit vzhled rukopisu vykreslování v vzhled štětce letecké, těžba ropy Malování a mnoho dalších účinky. Windows Presentation Foundation (WPF) umožňuje, abyste vlastní vykreslení rukopisu implementací vlastní <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> a <xref:System.Windows.Ink.Stroke> objektu.  

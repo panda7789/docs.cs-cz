@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527771"
 ---
 # <a name="data-formatting-in-the-windows-forms-datagridview-control"></a>Formátování dat v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Řízení poskytuje automatický převod mezi hodnoty buněk a typy dat, které se zobrazí nadřazené sloupce. Textové pole sloupce, například zobrazit řetězcové vyjádření datum, čas, číslo a hodnoty výčtu a převést zadanou uživatelem řetězcové hodnoty na typy úložiště dat vyžaduje.  

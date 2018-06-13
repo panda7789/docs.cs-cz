@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397699"
 ---
 # <a name="using-a-synchronous-client-socket"></a>Pomocí soket synchronního klienta
 Soket synchronního klienta pozastaví programu aplikace při dokončení operace sítě. Synchronní sockets nejsou vhodné pro aplikace, které hodně využívají sítě pro jejich operaci, ale umožňují jednoduchý přístup k síťové služby pro jiné aplikace.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538962"
 ---
 # <a name="getting-started-with-windows-forms"></a>Začínáme s Windows Forms
 S Windows Forms můžete vytvořit výkonné aplikace pro systém Windows. Následující témata popisují podrobný postup plně využívat Windows Forms k zobrazení dat, zpracování uživatelského vstupu a nasazení aplikací, jednoduše a s rozšířeným zabezpečením.  

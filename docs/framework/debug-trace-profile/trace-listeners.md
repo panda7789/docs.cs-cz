@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391751"
 ---
 # <a name="trace-listeners"></a>Naslouchací procesy trasování
 Při použití **trasování**, **ladění** a <xref:System.Diagnostics.TraceSource>, musí mít mechanismus pro shromažďování a záznamem zpráv, které se odesílají. Trasovací zprávy jsou přijímány *naslouchací procesy*. Účelem tohoto naslouchací proces je shromažďování, ukládání a směrovat trasovací zprávy. Posluchači přímý výstup trasování příslušný cíli, jako je protokol, okno nebo textový soubor.  

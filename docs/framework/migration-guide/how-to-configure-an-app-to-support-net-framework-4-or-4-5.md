@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393699"
 ---
 # <a name="how-to-configure-an-app-to-support-net-framework-4-or-45"></a>Postupy: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo 4.5
 Všechny aplikace, které jsou hostiteli common language runtime (CLR) nutné spustit, nebo *aktivovat*, aby bylo možné spustit spravovaného kódu modulu CLR. Obvykle aplikace .NET Framework funguje ve verzi modulu CLR, pro kterou byla sestavena, ale toto chování stolních aplikací můžete změnit pomocí konfiguračního souboru aplikace (někdy označovaného jako soubor app.config). Nelze však změnit výchozí chování aktivace aplikací pro Windows Store nebo Windows Phone pomocí konfiguračního souboru aplikace. Tento článek vysvětluje, jak povolit stolní aplikaci spuštění v jiné verzi rozhraní .NET Framework, a poskytuje příklad, jak se zaměřit na verzi 4 nebo 4.5.  

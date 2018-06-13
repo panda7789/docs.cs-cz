@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541830"
 ---
 # <a name="base-elements-overview"></a>Přehled základních elementů
 Vysoké procento třídy v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] jsou odvozeny od čtyři třídy, které se běžně označují v [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)] dokumentace jako element základní třídy. Tyto třídy jsou <xref:System.Windows.UIElement>, <xref:System.Windows.FrameworkElement>, <xref:System.Windows.ContentElement>, a <xref:System.Windows.FrameworkContentElement>. <xref:System.Windows.DependencyObject> Třída rovněž souvisí, protože je obecná základní třída i <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement>  

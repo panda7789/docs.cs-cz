@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541561"
 ---
 # <a name="known-folder-guids-for-file-dialog-custom-places"></a>Známé identifikátory GUID pro vlastní místa dialogového okna souboru
 Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] známé složky při přidání složek do <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> kolekce. Známé identifikátory GUID složky nejsou velká a malá písmena a jsou definovány v souboru KnownFolders.h ve [!INCLUDE[winSDK](../../../../includes/winsdk-md.md)].  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33366018"
 ---
 # <a name="ltnettcpbindinggt"></a>&lt;NetTcpBinding&gt;
 Určuje bezpečné, spolehlivé a optimalizované vazbu vhodný pro komunikaci mezi počítači. Ve výchozím nastavení vygeneruje zásobníku runtime komunikace s zabezpečení systému Windows pro zabezpečení zpráv a ověřování, TCP pro doručování zpráv a zprávy v binární kódování.  
