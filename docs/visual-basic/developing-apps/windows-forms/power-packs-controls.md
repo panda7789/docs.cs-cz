@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584199"
 ---
 # <a name="visual-basic-power-packs-controls"></a>Visual Basic Power Pack – ovládací prvky
 Ovládací prvky jazyka Visual Basic Power Pack jsou další ovládací prvky Windows Forms. Nejsou zahrnuty v sadě Visual Studio.  Můžete [je stáhnout](http://go.microsoft.com/fwlink/?LinkId=321343), ale jsou k dispozici jako-je, bez podpory.  

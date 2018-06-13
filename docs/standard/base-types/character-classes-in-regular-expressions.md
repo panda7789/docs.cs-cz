@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579688"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Třídy znaků v regulárních výrazech
 <a name="Top"></a> Třídy znaků definuje sadu znaků, které může dojít ve vstupním řetězci pro úspěšnou shodu. Jazyk regulárních výrazů v .NET podporuje následujících tříd znaků:  

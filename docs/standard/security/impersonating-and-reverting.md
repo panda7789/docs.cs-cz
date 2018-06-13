@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582171"
 ---
 # <a name="impersonating-and-reverting"></a>Zosobnění a návrat
 V některých případech budete muset získat token účtu Windows zosobnit účet systému Windows. Například aplikace založený na technologii ASP.NET může mít zastupovat několika uživatelům v různých časech. Aplikace může přijmout token, který představuje správce z Internetové informační služby (IIS), zosobnit uživatele, provedení určité operace a vrátit k předchozí identitu. V dalším kroku ji může přijmout token ze služby IIS, který reprezentuje uživatele s menším počtem práv, provádět některé operace a vracet znovu.  

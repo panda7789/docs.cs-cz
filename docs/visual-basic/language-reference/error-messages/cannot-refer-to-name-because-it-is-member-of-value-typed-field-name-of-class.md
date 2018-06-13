@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586344"
 ---
 # <a name="cannot-refer-to-39ltnamegt39-because-it-is-a-member-of-the-value-typed-field-39ltnamegt39-of-class-39ltclassnamegt39-which-has-39systemmarshalbyrefobject39-as-a-base-class"></a>Nemůže odkazovat na &#39; &lt;název&gt; &#39; protože je členem pole zadali hodnotu &#39; &lt;název&gt; &#39; třídy &#39; &lt;classname&gt; &#39;jehož &#39;System.MarshalByRefObject&#39; jako základní třída
 `System.MarshalByRefObject` – Třída umožňuje aplikacím, které podporují vzdáleného přístupu k objektům napříč hranicemi domény aplikace. Typy musí dědit z `MarshalByRejectObject` třídy, pokud typ se používá napříč hranicemi domény aplikace. Stav objektu nesmí být zkopírována, protože členové objektu nejsou použitelné mimo doménu aplikace, v jakém byly vytvořeny.  

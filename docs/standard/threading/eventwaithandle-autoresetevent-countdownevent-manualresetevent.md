@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582931"
 ---
 # <a name="eventwaithandle-autoresetevent-countdownevent-manualresetevent"></a>EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent
 Obslužné rutiny čekání na událost povolit vláken pro synchronizaci aktivity podle sebe navzájem signalizace a čekání na signály druhé strany. Tyto události synchronizace jsou založená na obslužné rutiny čekání Win32 a je možné rozdělit do dvou typů: ty, které automaticky resetovat při signál a ty, které jsou ručně obnovit.  

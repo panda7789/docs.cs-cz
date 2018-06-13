@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33580442"
 ---
 # <a name="how-to-specify-merge-options-in-plinq"></a>Postupy: Určení možností sloučení v PLINQ
 Tento příklad ukazuje postup určení možností sloučení, které se použijí na všechny následné operátory v PLINQ dotazu. Není nutné explicitně nastavit možnosti sloučení, ale to může zvýšit výkon. Další informace o možnostech sloučení najdete v tématu [možností sloučení v PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).  

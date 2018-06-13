@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33581850"
 ---
 # <a name="accessing-application-forms-visual-basic"></a>Přístup k formulářům aplikace (Visual Basic)
 `My.Forms` Objekt poskytuje snadný přístup k instanci jednotlivých formulářů Windows deklarovány v projektu. Můžete také použít vlastnosti `My.Application` objektu pro přístup k aplikace úvodní obrazovku a hlavní formulář a získejte seznam otevřete formulářů aplikace.  

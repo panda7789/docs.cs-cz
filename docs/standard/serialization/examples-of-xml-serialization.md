@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592025"
 ---
 # <a name="examples-of-xml-serialization"></a>Příklady serializace XML
 Serializace XML může trvat více než jeden formulář z snadno komplexní. Například může serializovat třídu, která jednoduše se skládá z veřejného polí a vlastností, jak je znázorněno v [představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md). Následující příklady kódu adresa různých pokročilé scénáře, včetně použití serializace XML ke generování datový proud XML, který odpovídá určitého dokumentu schématu XML (XSD).  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594725"
 ---
 # <a name="ltproceduresignature1gt-is-not-cls-compliant-because-it-overloads-ltproceduresignature2gt-which-differs-from-it-only-by-array-of-array-parameter-types-or-by-the-rank-of-the-array-parameter-types"></a>&lt;proceduresignature1&gt; není kompatibilní se specifikací CLS, protože ho přetížení &lt;proceduresignature2&gt; který se liší od jeho pouze pole typů parametr pole nebo pořadí typy pole parametrů
 Procedura nebo vlastnosti je označena jako `<CLSCompliant(True)>` při přepíše jiný postup nebo vlastnost a je jediným rozdílem mezi seznamy jejich parametrů úroveň vnoření Vícenásobná pole nebo pole pořadí.  

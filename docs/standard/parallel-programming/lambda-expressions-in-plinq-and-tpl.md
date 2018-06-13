@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33581177"
 ---
 # <a name="lambda-expressions-in-plinq-and-tpl"></a>Výrazy lambda v PLINQ a TPL
 Task Parallel Library (TPL) obsahuje mnoho způsobů, které provést jednu z <xref:System.Func%601?displayProperty=nameWithType> nebo <xref:System.Action?displayProperty=nameWithType> rodiny delegátů jako vstupní parametry. Používání těchto delegátů předávat logika vlastní program paralelní smyčky, úlohy nebo dotazu. Příklady kódu pro TPL a také PLINQ použití výrazů lambda vytváření instancí těchto delegáti jako vložené bloky kódu. Toto téma obsahuje stručný úvod do Func a Action a ukazuje, jak použití výrazů lambda v knihovně Task Parallel Library a PLINQ.  

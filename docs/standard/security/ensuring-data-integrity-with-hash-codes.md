@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33581570"
 ---
 # <a name="ensuring-data-integrity-with-hash-codes"></a>Zajištění integrity dat pomocí hodnot hash
 Hodnota hash je číselná hodnota pevnou délku, která jednoznačně identifikuje data. Hodnoty hash představují velké objemy dat jako mnohem menší číselné hodnoty, takže se používají s digitálními podpisy. Hodnota hash je možné podepsat efektivnější než velkou hodnotu. Hodnoty hash jsou taky užitečné pro ověření integrity dat odeslaných v nezabezpečené kanály. Hodnota hash přijatých dat. lze porovnat hodnotu hash dat, jako byl odeslán k určení, zda byla změněna data.  

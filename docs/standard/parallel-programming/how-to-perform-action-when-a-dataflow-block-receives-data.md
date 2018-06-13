@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583016"
 ---
 # <a name="how-to-perform-action-when-a-dataflow-block-receives-data"></a>Postupy: Provádění akcí po přijetí dat do bloku toku dat
 *Spouštění bloku toku dat* typy volání delegáta zadaný uživatelem, když získají data. <xref:System.Threading.Tasks.Dataflow.ActionBlock%601?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.TransformBlock%602?displayProperty=nameWithType>, A <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602?displayProperty=nameWithType> třídy jsou typy bloku toku dat provádění. Můžete použít `delegate` – klíčové slovo (`Sub` v jazyce Visual Basic), <xref:System.Action%601>, <xref:System.Func%602>, nebo ve výrazu lambda, když poskytují pracovní funkce, která se bloku toku dat provádění. Tento dokument popisuje, jak používat <xref:System.Func%602> a výrazy lambda k provedení akce v blocích provádění.  

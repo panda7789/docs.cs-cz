@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597318"
 ---
 # <a name="my-reference-visual-basic"></a>Můj odkaz (referenční dokumentace jazyka Visual Basic)
 `My` Programování rychlejší a snazší díky funkci tím, že intuitivní přístup pro běžně používané metody, vlastnosti a události. Tato tabulka uvádí objekty obsažené v `My`a akcí, které lze provést s každým.  

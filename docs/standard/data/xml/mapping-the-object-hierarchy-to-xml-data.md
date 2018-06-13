@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577199"
 ---
 # <a name="mapping-the-object-hierarchy-to-xml-data"></a>Mapování hierarchie objektů na XML Data
 Když je dokument XML v paměti, je koncepční reprezentace stromu. Pro programování, nebudete mít hierarchii k objektu pro přístup k uzlu stromu. Následující příklad ukazuje, jak se změní obsah XML na uzly.  

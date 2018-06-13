@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594344"
 ---
 # <a name="variable-uses-an-automation-type-not-supported-in-visual-basic"></a>Proměnná používá typ automatizace, který není v jazyce Visual Basic podporován.
 Pokusili jste se použít proměnné definované v typu knihovny nebo objektu knihovny, který má datový typ jazyka Visual Basic nepodporuje.  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33580374"
 ---
 # <a name="how-to-create-and-execute-a-simple-plinq-query"></a>Postupy: Vytvoření a provedení jednoduchého dotazu PLINQ
 Následující příklad ukazuje, jak vytvořit jednoduchý dotaz paralelní LINQ pomocí <xref:System.Linq.ParallelEnumerable.AsParallel%2A> rozšiřující metody na zdrojové sekvence a provádění dotazu s použitím <xref:System.Linq.ParallelEnumerable.ForAll%2A> metoda.  

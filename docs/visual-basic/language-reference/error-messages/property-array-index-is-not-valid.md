@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593136"
 ---
 # <a name="property-array-index-is-not-valid"></a>Index pole vlastností není platný.
 Zadaná hodnota není platná pro index pole vlastností.  

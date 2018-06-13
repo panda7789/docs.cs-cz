@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579389"
 ---
 # <a name="observer-design-pattern-best-practices"></a>Doporučené postupy pro návrhový vzor Pozorovatel
 Návrhový vzor pozorovatel je v rozhraní .NET Framework, implementované jako sada rozhraní. <xref:System.IObservable%601?displayProperty=nameWithType> Rozhraní představuje poskytovatele dat, který je také zajišťuje <xref:System.IDisposable> implementace, která umožňuje pozorovatelů zrušit odběr oznámení. <xref:System.IObserver%601?displayProperty=nameWithType> Rozhraní představuje pozorovatele. Toto téma popisuje osvědčené postupy, které vývojáři postupujte při implementaci návrhový vzor pozorovatel pomocí těchto rozhraní.  

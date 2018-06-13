@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33580767"
 ---
 # <a name="how-to-prevent-a-child-task-from-attaching-to-its-parent"></a>Postupy: Zabránění připojení podřízené úlohy ke své nadřazené úloze
 Tento dokument ukazuje, jak zabránit v připojení k nadřazené úlohy podřízené úlohy. Brání připojení k nadřazené podřízené úlohy je užitečné, když zavoláte komponentu, která jsou zapsána třetích stran a také používající úlohy. Například komponenty třetích stran, která používá <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> možnost vytvořit <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> objekt může způsobit problémy ve vašem kódu, pokud je dlouhotrvající nebo k neošetřené výjimce.  

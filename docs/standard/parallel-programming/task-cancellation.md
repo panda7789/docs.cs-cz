@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582685"
 ---
 # <a name="task-cancellation"></a>Zrušení úlohy
 <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> třídy podporují zrušení prostřednictvím použití tokenů zrušení v rozhraní .NET Framework. Další informace najdete v tématu [zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md). Ve třídách úloh zahrnuje zrušení spolupráci mezi uživatelským delegátem, který představuje zrušitelnou operaci, a kódem, který požaduje zrušení.  Úspěšné zrušení zahrnuje vyžádání volání kódu <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metoda a uživatelského delegáta operaci včas. Operace může být ukončena pomocí jedné z těchto možností:  

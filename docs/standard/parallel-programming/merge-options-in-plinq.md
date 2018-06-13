@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584628"
 ---
 # <a name="merge-options-in-plinq"></a>Možnosti sloučení v PLINQ
 Při provádění dotazu jako paralelní, oddíly PLINQ zdrojové sekvence více vláken mohli pracovat na různé části souběžně, obvykle v samostatných vláknech. Pokud výsledky mají být využívány na jedno vlákno, například v `foreach` (`For Each` v jazyce Visual Basic) smyčce, pak je potřeba sloučit výsledky z každého vlákno zpět do jedné sekvence. Druh sloučení, který provádí PLINQ závisí na operátory, které se nacházejí v dotazu. Operátory, které zavádí nové pořadí ve výsledcích například musí vyrovnávací paměti všechny elementy z všechna vlákna. Z hlediska využívání vlákno (což je také u uživatelů aplikace) může plně ve vyrovnávací paměti dotaz spustit znatelné dobu před tím, než vyvolá první výsledek. Jiné operátory ve výchozím nastavení, jsou částečně do vyrovnávací paměti; dávají výsledky v dávkách. Jeden operátor <xref:System.Linq.ParallelEnumerable.ForAll%2A> není ve výchozím nastavení do vyrovnávací paměti. Dává všechny elementy ze všech vláken okamžitě.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583315"
 ---
 # <a name="manualresetevent-and-manualreseteventslim"></a>ManualResetEvent a ManualResetEventSlim
 <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> Třída reprezentuje událost popisovač místní čekání, která musí být ručně obnovit, jakmile to bylo signalizováno. Tato třída reprezentuje ve speciálním případě její základní třída <xref:System.Threading.EventWaitHandle?displayProperty=nameWithType>. Najdete v článku [EventWaitHandle](../../../docs/standard/threading/eventwaithandle.md) rámcová dokumentace pro použití a funkce ručně resetovat události.  

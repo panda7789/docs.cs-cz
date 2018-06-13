@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579584"
 ---
 # <a name="common-type-system"></a>Obecný systém typů
 Obecný systém typů definuje, jak jsou typy deklarovat, použít a spravovat v modulu common language runtime který je taky důležitou součástí modulu runtime podporu integrace mezi jazyky. Obecný systém typů provádí následující funkce:  

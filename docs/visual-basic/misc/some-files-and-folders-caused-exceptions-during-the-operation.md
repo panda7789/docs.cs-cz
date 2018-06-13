@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638679"
 ---
 # <a name="some-files-and-folders-caused-exceptions-during-the-operation"></a>Některé soubory a složky nezdařila z důvodu výjimky během operace
 Adresářů a souborů může způsobit výjimky, když dojde k pokusu o operaci, ale uživatel nemá potřebná oprávnění.  

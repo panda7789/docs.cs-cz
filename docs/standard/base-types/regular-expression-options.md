@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579649"
 ---
 # <a name="regular-expression-options"></a>Možnosti regulárních výrazů
 <a name="Top"></a> Ve výchozím nastavení při porovnání vstupní řetězec se znaky literálu v vzor regulárního výrazu je velká a malá písmena, prázdné znaky v vzor regulárního výrazu interpretována jako literál prázdné znaky a zaznamenávání skupiny v regulárním výrazu jsou pojmenované implicitně také jako explicitně. Tyto a několik dalších aspektů výchozího chování regulárních výrazů můžete upravit zadáním možnosti regulárních výrazů. Tyto možnosti, které jsou uvedené v následující tabulce, mohou být zahrnuty vložené jako součást regulární výraz nebo mohou být poskytnuty <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické vzor jako odpovídající metodu <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> hodnota výčtu.  

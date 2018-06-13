@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577558"
 ---
 # <a name="how-to-convert-between-net-framework-streams-and-windows-runtime-streams"></a>Postupy: Převádění mezi datovými proudy rozhraní .NET Framework a datovými proudy prostředí Windows Runtime
 Rozhraní .NET Framework pro aplikace Windows Store je podmnožinou kompletního rozhraní .NET Framework. Z důvodu bezpečnosti a vzhledem k jiným požadavkům na aplikace pro Windows Store nelze použít úplnou sadu API rozhraní .NET Framework pro otevírání a čtení souborů. Další informace najdete v tématu [přehled aplikace .NET pro Windows Store](http://msdn.microsoft.com/library/windows/apps/br230302.aspx). Rozhraní API pro .NET Framework však můžete použít pro jiné operace manipulace s datovým proudem. K manipulaci s těchto datových proudů, možná bude potřeba převádět typ datového proudu rozhraní .NET Framework, jako <xref:System.IO.MemoryStream> nebo <xref:System.IO.FileStream>a prostředí Windows Runtime datového proudu jako [IInputStream](http://msdn.microsoft.com/library/windows/apps/windows.storage.streams.iinputstream.aspx), [IOutputStream ](http://msdn.microsoft.com/library/windows/apps/windows.storage.streams.ioutputstream.aspx), nebo [IRandomAccessStream](http://msdn.microsoft.com/library/windows/apps/windows.storage.streams.irandomaccessstream.aspx).  

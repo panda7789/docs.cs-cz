@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592051"
 ---
 # <a name="adding-printable-reports-to-visual-studio-applications"></a>Přidávání tiskových sestav do aplikací v jazyce Visual Studio
 Visual Studio podporuje celou řadu řešení pro sestavy můžete přidat bohaté data sestavy do aplikace Visual Basic. Můžete vytvořit a přidat sestav pomocí ovládacích prvků prohlížeče sestav, Crystal Reports nebo SQL Server Reporting Services.  

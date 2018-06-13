@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577030"
 ---
 # <a name="remove-xml-data-using-xpathnavigator"></a>Odebrat pomocí objektem XPathNavigator nastaveným na Data XML
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje sadu metod, které slouží k odebírání uzlů a hodnoty dokument XML. Chcete-li používat tyto metody <xref:System.Xml.XPath.XPathNavigator> objekt musí být upravitelné, který je jeho <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> musí být vlastnost `true`.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582646"
 ---
 # <a name="accessing-the-keyboard-visual-basic"></a>Přístup ke klávesnici (Visual Basic)
 `My.Computer.Keyboard` Objektu poskytuje vlastnosti pro přístup k aktuální stav klávesnice, například jaké klíče jsou aktuálně stisknutí a poskytuje metody k odeslání stisknutí kláves do aktivního okna.  

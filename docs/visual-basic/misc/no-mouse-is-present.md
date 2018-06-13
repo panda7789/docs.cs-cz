@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637857"
 ---
 # <a name="no-mouse-is-present"></a>Žádné myši nachází.
 Jedna z vlastností `My.Computer.Mouse` byla volána objektu, ale počítač nemá žádné myši nebo portem myši nainstalována.  

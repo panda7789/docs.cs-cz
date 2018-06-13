@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33581378"
 ---
 # <a name="parallel-linq-plinq"></a>Paralelní LINQ (PLINQ)
 Paralelní LINQ (PLINQ) je paralelní provádění LINQ na objekty. PLINQ implementuje kompletní LINQ standardní operátory dotazu jako rozšiřující metody pro <xref:System.Linq> obor názvů a má další operátory paralelních operací. PLINQ kombinuje jednoduchosti a přehlednosti syntaxe LINQ s možností paralelní programování. Stejně jako kód s cílem Task Parallel Library dotazy PLINQ škálovat v stupeň souběžnosti na základě schopností hostitelského počítače.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579363"
 ---
 # <a name="xml-document-object-model-dom"></a>model DOM (Document Object Model) dokumentu XML
 Třída XML modelu DOM (Document Object) je reprezentaci v paměti dokumentu XML. Modelu DOM umožňuje prostřednictvím kódu programu pro čtení, manipulaci a upravovat dokument XML. **XmlReader** XML přečte třída; však poskytuje přístup bez mezipaměti, dopředné, jen pro čtení. To znamená, že neexistují žádné možnosti, chcete-li upravit hodnoty atributu nebo obsah elementu nebo možnost Vložit a odebrání uzlů s **XmlReader**. Úpravy je primární funkce modelu DOM. Je běžné a způsobem strukturovaných, že XML data je reprezentována v paměti, i když skutečná data XML je lineárně uložené v souboru nebo brzo z jiného objektu. Následuje XML data.  

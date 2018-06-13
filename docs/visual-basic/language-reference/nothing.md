@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603987"
 ---
 # <a name="nothing-visual-basic"></a>Nothing (Visual Basic)
 Představuje výchozí hodnotu jakéhokoli datového typu. U typů odkazu, je výchozí hodnota `null` odkaz. U typů hodnot výchozí hodnota závisí na tom, zda hodnota typ s možnou hodnotou Null.  

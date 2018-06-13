@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583926"
 ---
 # <a name="security-and-the-registry-visual-basic"></a>Zabezpečení a registr (Visual Basic)
 Tato stránka popisuje bezpečnostních důsledcích ukládání dat v registru.  

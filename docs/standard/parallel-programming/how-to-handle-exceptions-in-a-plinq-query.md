@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33580741"
 ---
 # <a name="how-to-handle-exceptions-in-a-plinq-query"></a>Postupy: Zpracování výjimek v dotazu PLINQ
 V prvním příkladu v tomto tématu ukazuje způsob zpracování <xref:System.AggregateException?displayProperty=nameWithType> , může být vyvolána z PLINQ dotazu, jakmile je spuštěn. Druhý příklad ukazuje, jak se umístí bloků try-catch v rámci delegátů, co nejblíže k kde bude vyvolána výjimka. Tímto způsobem můžete zachytit je Jakmile k nim dojde a případně pokračovat v provádění dotazu. Pokud je výjimky umožněno vyvolat zpět do spojovacího vlákna, je možné, že dotaz může pokračovat ve zpracování některé položky po je vyvolána výjimka.  

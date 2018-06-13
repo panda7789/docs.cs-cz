@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583874"
 ---
 # <a name="automation-error"></a>Chyba automatizace
 Došlo k chybě při spuštění metody nebo získání nebo nastavení vlastností proměnné objektu. Chyba byla hlášena aplikace, která vytvoří objekt.  

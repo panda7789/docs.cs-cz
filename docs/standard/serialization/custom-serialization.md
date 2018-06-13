@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592103"
 ---
 # <a name="custom-serialization"></a>Vlastní serializace
 Vlastní serializace je proces řízení serializace a deserializace typu. Kontrolou serializace je možné zajistit kompatibilitu serializace, což je možnost k serializaci a deserializaci mezi verzemi typu, aniž by vás základní funkce služby typu. Například v první verzi typu, může existovat pouze dvě pole. V příští verzi typu jsou přidány několik více polí. Ještě druhý verze aplikace, musí mít k serializaci a deserializaci oba typy. Níže uvedené části popisují, jak řídit serializace.

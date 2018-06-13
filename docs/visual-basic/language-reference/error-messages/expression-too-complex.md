@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583416"
 ---
 # <a name="expression-too-complex"></a>Výraz je příliš složitý.
 Výraz s plovoucí desetinnou čárkou obsahuje příliš mnoho vnořené podvýrazy.  

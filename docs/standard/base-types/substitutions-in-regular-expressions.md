@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579415"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Nahrazení v regulárních výrazech
 <a name="Top"></a> Náhrady jsou prvky jazyka, které jsou rozpoznány jenom v rámci vzory pro nahrazování. Pro definování celého textu nebo jeho části, která má nahradit odpovídající text ve vstupním řetězci, používají vzor regulárního výrazu. Vzor pro nahrazení se může skládat z jedné nebo několika substitucí spolu s literálními znaky. Vzory pro nahrazování jsou poskytovány přetížení <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> metoda, která mají `replacement` parametru a <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> metoda. Metody nahradí odpovídající vzor vzor, který je definován `replacement` parametr.  

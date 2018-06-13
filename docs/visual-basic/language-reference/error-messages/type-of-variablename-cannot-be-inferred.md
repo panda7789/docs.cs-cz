@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597146"
 ---
 # <a name="type-of-39ltvariablenamegt39-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a>Typ &#39; &lt;NázevProměnné&gt; &#39; nelze odvodit, protože hranice smyčky a proměnná krok není rozšíří do stejného typu
 Jste napsali `For...Next` smyčky, ve kterém kompilátor nelze odvodit typ dat pro řídicí proměnná smyčky vzhledem k tomu, že jsou splněné následující podmínky:  

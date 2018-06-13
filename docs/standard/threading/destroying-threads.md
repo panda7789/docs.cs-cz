@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582927"
 ---
 # <a name="destroying-threads"></a>Zničení vláken
 <xref:System.Threading.Thread.Abort%2A> Metoda se používá k zastavení spravované vlákno trvale. Při volání <xref:System.Threading.Thread.Abort%2A>, vyvolá modul common language runtime <xref:System.Threading.ThreadAbortException> ve vláknu cíl, který může zachytit vlákno cíl. Další informace naleznete v tématu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>.  

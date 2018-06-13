@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584177"
 ---
 # <a name="using-threads-and-threading"></a>Použití vláken a dělení na vlákna
 Témata v této části popisují vytváření a správu spravovaných vláknech, jak předat data do spravovaných vláknech a získat výsledky zpět a zrušení vláken a zpracování <xref:System.Threading.ThreadAbortException>.  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582529"
 ---
 # <a name="role-based-security"></a>Zabezpečení na základě rolí
 Role se často používají v finanční nebo obchodní aplikace k vynucení zásad. Aplikace může například uložit omezení na velikost zpracovávané v závislosti na tom, zda uživatel zadal žádost je členem zadané roli transakce. Úředníci mohou být autorizace k provádění transakcí, které jsou menší než zadaná prahová hodnota, vedoucí mohou mít vyšší limit a místopředsedové mohou mít stále vyšší limit (nebo vůbec žádné omezení). Na základě rolí zabezpečení mohou sloužit také pokud aplikace vyžaduje více schválení pro dokončení akce. Takovém případě může být nákupní systém, ve kterém můžete každý zaměstnanec generovat nákupní žádost, ale pouze nákupní agent můžete převést tuto žádost nákupní objednávka, který lze odeslat buď do jiného dodavatele.  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583127"
 ---
 # <a name="how-to-listen-for-multiple-cancellation-requests"></a>Postupy: Naslouchání více požadavkům zrušení
 Tento příklad ukazuje, jak pro naslouchání na dva zrušení tokenů současně tak, aby operace můžete zrušit, pokud se požaduje buď token.  

@@ -31,6 +31,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592428"
 ---
 # <a name="cryptographic-services"></a>Šifrovací služby
 <a name="top"></a> Veřejných sítích, jako je Internet není pro zajištění zabezpečené komunikace mezi entitami. Komunikace v těchto sítích je náchylný ke čtení nebo dokonce upravovat neoprávněným třetím stranám. Šifrování pomáhá chránit data před zobrazením, poskytuje způsoby, jak zjistit, zda nedošlo ke změně dat, a pomáhá poskytovat zabezpečenou komunikaci přes jinak nezabezpečené kanály. Například data mohou být šifrují pomocí šifrovacího algoritmu, přenesen šifrovaného stavu a později dešifrovat určenou stranou. Pokud třetích stran zabrání šifrovaná data, bude obtížné dekódovat.  

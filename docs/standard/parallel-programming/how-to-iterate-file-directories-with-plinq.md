@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33580793"
 ---
 # <a name="how-to-iterate-file-directories-with-plinq"></a>Postupy: Procházení adresářů se soubory pomocí jazyka PLINQ
 Tento příklad ukazuje dva způsoby jednoduché učinit paralelní operací na souborové adresáře. První dotaz používá <xref:System.IO.Directory.GetFiles%2A> metoda k vyplnění pole názvy souborů v adresáři a všechny podadresáře. Tato metoda nevrátí, dokud se vyplní celé pole, a proto ho můžou představovat latence na začátku operaci. Ale po naplnění pole PLINQ může zpracovat paralelní velmi rychle.  

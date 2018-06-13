@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590729"
 ---
 # <a name="introduction-to-the-line-and-shape-controls-visual-studio"></a>Úvod k ovládacím prvkům Čára a Tvar (Visual Studio)
 Ovládací prvky jazyka Visual Basic Power Pack Line a Shape jsou sadu tři grafické ovládacích prvků, které vám umožní kreslení čar a obrazců ve formulářích a kontejnerech. <xref:Microsoft.VisualBasic.PowerPacks.LineShape> Řízení slouží k vykreslení vodorovné, svislé a diagonálních čáry. <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> Řízení slouží k vykreslení kružnice a elipsy a <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> řízení slouží k vykreslení obdélníků a čtverce.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579597"
 ---
 # <a name="xmlschemavalidator-push-based-validation"></a>Ověření nabízené XmlSchemaValidator
 <xref:System.Xml.Schema.XmlSchemaValidator> Třída poskytuje mechanismus efektivní, vysoce výkonných ověřit data XML oproti schémat XML způsobem nabízené. Například <xref:System.Xml.Schema.XmlSchemaValidator> třída umožňuje ověřit XML informační sadu místní bez nutnosti serializovat jako dokument XML a pak rozboru dokument pomocí ověřování čtečky XML.  

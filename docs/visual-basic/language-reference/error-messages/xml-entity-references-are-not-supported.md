@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595823"
 ---
 # <a name="xml-entity-references-are-not-supported"></a>Odkazy na entity XML nejsou podporovány.
 Odkaz na entitu (například `©`) není definováno v XML 1.0 je obsažena hodnotu literál XML specifikaci. Pouze `&`, `"`, `<`, `>`, a `'` odkazy na entity XML jsou podporovány v literálech XML.  

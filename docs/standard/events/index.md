@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578581"
 ---
 # <a name="handling-and-raising-events"></a>Zpracování a generování událostí
 Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model delegátů následuje návrhový vzor pozorovatel, která umožňuje odběratele k registraci nebo dostávat oznámení od zprostředkovatele. Události odesílatele doručí oznámení, že došlo k události a přijímače událostí přijetí tohoto oznámení a definuje odpověď na něj. Tento článek popisuje hlavní součásti modelu delegáta, jak zpracovávat události v aplikacích a postupy implementace událostí v kódu.  

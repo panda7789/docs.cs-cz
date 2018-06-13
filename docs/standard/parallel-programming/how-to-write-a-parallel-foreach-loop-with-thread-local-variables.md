@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582734"
 ---
 # <a name="how-to-write-a-parallelforeach-loop-with-thread-local-variables"></a>Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním vláknu
 Následující příklad znázorňuje, jakým způsobem lze zapisovat metodu <xref:System.Threading.Tasks.Parallel.ForEach%2A>, která používá místní proměnné vlákna. Při provedení smyčky <xref:System.Threading.Tasks.Parallel.ForEach%2A> dochází k rozdělení kolekce prostředků na několik oddílů. Jednotlivé oddíly obdrží vlastní kopii „místní proměnné vlákna“. (Termín „místní proměnné vlákna“ je mírně nepřesný, protože v některých případech mohou být na stejném vlákně spuštěny dva oddíly.)  

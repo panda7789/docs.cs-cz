@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578418"
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a>Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech
 Asynchronní vzor založený na událostech nabízí efektivní způsob, jak vystavit asynchronní chování v tříd pomocí známých událostí a delegovat sémantiku. Implementovat asynchronní vzor založený na událostech, budete muset postupovat podle několik požadavků na konkrétní chování. Následující části popisují požadavky a pokyny, které byste měli zvážit při implementaci třídy, která odpovídá asynchronní vzor založený na událostech.  

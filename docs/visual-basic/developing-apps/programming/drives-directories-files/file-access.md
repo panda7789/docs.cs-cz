@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583302"
 ---
 # <a name="file-access-with-visual-basic"></a>Přístup k souborům v jazyce Visual Basic
 `My.Computer.FileSystem` Objekt poskytuje nástroje pro práci se soubory a složky. Jeho vlastnosti, metod a události umožňují vytvářet, kopírovat, přesunout, prozkoumat a odstraňovat soubory a složky. `My.Computer.FileSystem` poskytuje lepší výkon než starší verze funkce (`FileOpen`, `FileClose`, `Input`, `InputString`, `LineInput`atd), jsou poskytovány jazyka Visual Basic pro zpětnou kompatibilitu.  

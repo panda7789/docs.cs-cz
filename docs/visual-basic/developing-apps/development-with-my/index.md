@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584421"
 ---
 # <a name="development-with-my-visual-basic"></a>Vývoj s použitím oboru názvů My (Visual Basic)
 Visual Basic poskytuje nové funkce pro rychlý vývoj aplikací, zvýšit produktivitu a snadné použití vývojových prostředků. Jedna z těchto funkcí, názvem `My`, poskytuje přístup k informacím a výchozí instance objektů, které se vztahují k aplikaci a její běhové prostředí. Tyto informace je uspořádán do formátu, který je zjistitelný prostřednictvím technologie IntelliSense a logicky vymezen podle použití.  

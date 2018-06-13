@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584954"
 ---
 # <a name="timers"></a>Časovače
 Časovače jsou zjednodušené objekty, které umožňují delegátu, aby byl zavolán v určený čas. Vlákno ve fondu vláken provádí operaci čekání.  

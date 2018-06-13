@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599288"
 ---
 # <a name="array-dimensions-do-not-match-those-specified-in-the-39vbfixedarray39-attribute"></a>Pole dimenze platformám zadaným v neodpovídají &#39;VBFixedArray&#39; atribut
 Vaše pole dimenze neodpovídají dimenzí, které jste zadali v `VBFixedArray` atribut.  

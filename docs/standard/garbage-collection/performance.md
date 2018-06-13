@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579792"
 ---
 # <a name="garbage-collection-and-performance"></a>Kolekce paměti a výkon
 <a name="top"></a> Toto téma popisuje problémy týkající se shromažďování a paměti využití paměti. Ho řeší problémy, které se týkají spravovaná halda a vysvětluje, jak, aby se minimalizoval vliv uvolňování paměti na vaše aplikace. Každý problém obsahuje odkazy na postupy, které můžete použít k prozkoumání problémů.  

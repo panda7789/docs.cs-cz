@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635182"
 ---
 # <a name="cannot-delete-a-registry-hive"></a>Nelze odstranit podregistr registru
 Byl proveden pokus o odstranění podregistr registru. Podregistrů jsou klíče registru nejvyšší úrovně, jako například `HKEY_CURRENT_USER` a `HKEY_LOCAL_MACHINE`a nelze ji odstranit.  

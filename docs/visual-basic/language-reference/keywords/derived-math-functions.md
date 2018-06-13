@@ -26,6 +26,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596805"
 ---
 # <a name="derived-math-functions-visual-basic"></a>Derivované matematické funkce (Visual Basic)
 V následující tabulce jsou jiné než vnitřní matematické funkce, které může být odvozen od vnitřní matematické funkce <xref:System.Math?displayProperty=nameWithType> objektu. Vnitřní matematické funkce dostanete tak, že přidáte `Imports System.Math` do souboru nebo projektu.  

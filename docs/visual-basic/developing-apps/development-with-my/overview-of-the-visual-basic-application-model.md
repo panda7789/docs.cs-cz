@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591596"
 ---
 # <a name="overview-of-the-visual-basic-application-model"></a>Přehled aplikačního modelu jazyka Visual Basic
 Visual Basic poskytuje dobře definovaný model pro řízení chování aplikací modelu Windows Forms: model aplikace Visual Basic. Tento model zahrnuje události pro zpracování aplikace spuštění a vypnutí, a také události pro zachycení neošetřených výjimek. Také poskytuje podporu pro vývoj aplikací jedné instance. Aplikační model je rozšiřitelný, takže vývojáři, kteří potřebují větší kontrolu můžete přizpůsobit jeho přepisovatelné metody.  

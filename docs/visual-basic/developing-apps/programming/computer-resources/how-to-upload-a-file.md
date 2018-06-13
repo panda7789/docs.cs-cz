@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583783"
 ---
 # <a name="how-to-upload-a-file-in-visual-basic"></a>Postupy: Odeslání souboru v jazyce Visual Basic
 <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> Metoda slouží k nahrání souboru a jeho uložení do vzdáleného umístění. Pokud `ShowUI` parametr je nastaven na `True`, se zobrazí dialogové okno, které zobrazuje průběh nahrávání a umožňuje uživatelům na tlačítko Storno.  

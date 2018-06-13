@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33581788"
 ---
 # <a name="how-to-create-a-windowsprincipal-object"></a>Postupy: Vytvoření objektu WindowsPrincipal
 Existují dva způsoby, jak vytvořit <xref:System.Security.Principal.WindowsPrincipal> objektu, v závislosti na tom, zda kód musí opakovaně provádět ověřování na základě rolí nebo musí provést pouze jednou.  

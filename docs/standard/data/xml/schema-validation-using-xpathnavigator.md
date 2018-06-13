@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578350"
 ---
 # <a name="schema-validation-using-xpathnavigator"></a>Ověření schématu pomocí objektem XPathNavigator nastaveným na
 Pomocí <xref:System.Xml.XmlDocument> třídu, můžete ověřit obsah XML, který je součástí <xref:System.Xml.XmlDocument> objektu dvěma způsoby. První způsob je ověřit obsah XML pomocí ověřování <xref:System.Xml.XmlReader> objekt a druhým způsobem je použití <xref:System.Xml.XmlDocument.Validate%2A> metodu <xref:System.Xml.XmlDocument> třídy. Můžete také provést jen pro čtení ověření obsahu pomocí XML <xref:System.Xml.XPath.XPathDocument> třídy.  

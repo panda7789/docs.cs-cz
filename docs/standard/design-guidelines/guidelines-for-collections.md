@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578856"
 ---
 # <a name="guidelines-for-collections"></a>Pokyny pro kolekce
 Jakýkoli typ navrženo konkrétně k manipulaci s pro skupinu objektů, že některé běžné vlastnosti lze považovat za kolekce. Je téměř vždy vhodné pro tyto typy pro implementaci <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>, takže v této části jsme pouze na nabídnuté typy implementace jednoho nebo obou těchto rozhraní jako kolekce.  

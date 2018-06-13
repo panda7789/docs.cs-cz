@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585408"
 ---
 # <a name="spinwait"></a>SpinWait
 <xref:System.Threading.SpinWait?displayProperty=nameWithType> je typ zjednodušené synchronizace, můžete použít ve scénářích nízké úrovně, aby se zabránilo nákladné kontextu přepínače a přechody jádra, které jsou požadovány pro události kernel. Na počítačích vícejádrovými když prostředek neočekává se, že uchovávat po delší dobu, může být efektivnější pro čekání na vlákno číselníku v uživatelském režimu pro několik set desítek nebo několik cyklů a poté opakujte získat prostředek. Pokud daný prostředek k dispozici po roztočený, byla uložena několik cyklů tisíců. Pokud prostředek je stále není k dispozici, pak jste utratili jenom několik cyklů a stále zadat čekání základě jádra. Tato kombinace roztočený. potom čekání se někdy označuje jako *dvoufázové operace čekání*.  

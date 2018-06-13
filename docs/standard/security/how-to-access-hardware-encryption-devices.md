@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33581713"
 ---
 # <a name="how-to-access-hardware-encryption-devices"></a>Postupy: Přístup k hardwarovým šifrovacím zařízením
 Můžete použít <xref:System.Security.Cryptography.CspParameters> třída pro přístup k hardwarovým šifrovacím zařízením. Tuto třídu můžete použít například k integraci vaší aplikace pomocí čipové karty, hardwaru generátoru náhodných čísel nebo hardwarové implementaci konkrétního šifrovacího algoritmu.  

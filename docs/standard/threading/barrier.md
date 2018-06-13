@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584295"
 ---
 # <a name="barrier-net-framework"></a>Bariéra [.NET Framework]
 A *barrier* je uživatelem definované synchronizaci primitivní umožňující více vláken (označované jako *účastníky*) pro práci současně na algoritmus ve fázích. Každý účastník, provede, dokud nebude dosaženo bodem bariéry v kódu. Bariéry představuje konec jednou z fází práce. Když účastník dosáhne bariéry, zablokuje, dokud všichni účastníci dosáhli stejné bariéry. Po všichni účastníci dosáhli bariéry, můžete případně vyvolat po fáze akce. Tato fáze po akce slouží k provádění akcí podle jedním vláknem a při jiná vlákna jsou stále zablokované. Po provedení akce, jsou všechny odblokuje jednotlivými účastníky.  

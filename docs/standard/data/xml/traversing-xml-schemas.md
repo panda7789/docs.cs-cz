@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575359"
 ---
 # <a name="traversing-xml-schemas"></a>Procházení schémat XML
 Procházení schématu XML pomocí schématu objektu modelu (SOM) rozhraní API poskytuje přístup k prvky, atributy a typy, které jsou uložené v SOM. Procházení XML schéma načtena do rozsahu SOM je také prvním krokem při úpravě schématu XML pomocí rozhraní API SOM.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585538"
 ---
 # <a name="accessing-the-computer39s-ports-visual-basic"></a>Přístup k počítači&#39;s porty (Visual Basic)
 `My.Computer.Ports` Objekt poskytuje vlastnosti a metody pro přístup k sériovým portům počítače.  

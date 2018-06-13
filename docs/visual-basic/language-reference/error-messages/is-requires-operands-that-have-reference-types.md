@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585577"
 ---
 # <a name="39is39-requires-operands-that-have-reference-types-but-this-operand-has-the-value-type-39lttypenamegt39"></a>&#39;Je&#39; vyžaduje operandy mají odkazové typy, ale tento operand je typ hodnoty &#39; &lt;typename&gt;&#39;
 `Is` Relační operátor určuje, zda dva objektové proměnné odkazují na stejnou instanci. Toto porovnání není definován pro typy hodnot.  

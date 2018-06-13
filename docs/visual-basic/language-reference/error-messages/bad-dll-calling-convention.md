@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583835"
 ---
 # <a name="bad-dll-calling-convention"></a>Chybná konvence volání knihovny DLL
 Argumenty předávané dynamická knihovna (DLL) musí přesně odpovídat názvům rutina očekává. Konvence volání řešit počet, typ a pořadí argumentů. Váš program může být volání rutiny v knihovně DLL, který je předáván nesprávného typu nebo počet argumentů.  

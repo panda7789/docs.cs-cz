@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583731"
 ---
 # <a name="accessing-application-web-services-visual-basic"></a>Přístup k aplikačním webovým službám (Visual Basic)
 `My.WebServices` Objekt poskytuje instanci každé webové služby odkazuje v aktuálním projektu. Každá instance je vytvořena na vyžádání. Tyto webové služby můžete přistupovat prostřednictvím vlastnosti `My.WebServices` objektu. Název vlastnosti je stejný jako název webové služby, který má přístup k vlastnosti. Všechny třídy, která dědí z <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> je webová služba.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635130"
 ---
 # <a name="cannot-convert-argument-39ltargumentnamegt39-of-type-39lttype1gt39-to-type-39lttype2gt39"></a>Nelze převést argument &#39; &lt;název argumentu argumentname&gt; &#39; typu &#39; &lt;type1&gt; &#39; na typ &#39; &lt;type2&gt;&#39;
 Operaci převodu se pokusí převést na nekompatibilní typ argumentu.  

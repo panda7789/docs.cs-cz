@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582805"
 ---
 # <a name="scheduling-threads"></a>Plánování vláken
 Každé vlákno má přiřazen prioritu přístup z více vláken. Vlákna v rámci modul common language runtime vytvořili původně přiřazené priority **ThreadPriority.Normal**. Vlákna vytvořen vně modulu runtime zachovat prioritu, kterou měla před jejich zadali spravovaném prostředí. Můžete získat nebo nastavit prioritu všech vlákno se **Thread.Priority** vlastnost.  

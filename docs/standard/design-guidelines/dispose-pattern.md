@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578986"
 ---
 # <a name="dispose-pattern"></a>Dispose – vzor
 Všechny programy získat jeden nebo více systémových prostředků, například paměť, popisovače systému nebo připojení databáze, v průběhu jejich provádění. Vývojáři mají být opatrní při použití takových systémové prostředky, protože musí být vydané po svém získat a použít.  
