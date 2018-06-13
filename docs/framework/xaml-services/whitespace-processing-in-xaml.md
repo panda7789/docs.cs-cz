@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565542"
 ---
 # <a name="whitespace-processing-in-xaml"></a>Zpracování prázdných znaků v jazyku XAML
 Jazyk pravidel pro jazyk XAML stavu, je nutné zpracovat tuto významný mezerový znak [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] implementace procesoru. Toto téma popisuje tato pravidla jazyka XAML. Je také dokumenty zpracování další prázdný znak, který je definován [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] implementace procesoru XAML a zapisovače XAML pro serializaci.  

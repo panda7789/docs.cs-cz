@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568040"
 ---
 # <a name="designing-and-developing-containerized-apps-using-docker-and-microsoft-azure"></a>Návrh a vývoj kontejnerizované aplikací pomocí Docker a Microsoft Azure
 

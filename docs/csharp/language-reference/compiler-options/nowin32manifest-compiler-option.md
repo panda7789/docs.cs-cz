@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33214929"
 ---
 # <a name="-nowin32manifest-c-compiler-options"></a>-nowin32manifest (možnosti kompilátoru C#)
 Použití **-nowin32manifest** – možnost kompilátoru není pro vložení jakýkoli manifest aplikace do spustitelného souboru.  

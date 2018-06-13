@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557196"
 ---
 # <a name="how-to-animate-a-3-d-rotation-using-rotation3danimation"></a>Postupy: Animace trojrozměrného otočení použitím scénářů Rotation3DAnimation
 Následující příklad ukazuje, jak vytvořit objekt 3D otočit při jeho "wobbles" pomocí <xref:System.Windows.Media.Animation.Rotation3DAnimation> pro animaci <xref:System.Windows.Media.Media3D.RotateTransform3D.Rotation%2A> vlastnost <xref:System.Windows.Media.Media3D.RotateTransform3D> objekt u 3D objektu.  

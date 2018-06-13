@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744301"
 ---
 # <a name="working-with-assemblies-and-the-global-assembly-cache"></a>Práce se sestaveními a s globální pamětí sestavení
 Pokud máte v úmyslu sdílet sestavení mezi více aplikacemi, můžete ji nainstalovat do globální mezipaměti sestavení. Každý počítač, kde je nainstalován modul common language runtime má tato mezipaměť strojový kód. Globální mezipaměti sestavení uchovává sestavení konkrétně určená ke sdílení více aplikacemi v počítači. Sestavení musí mít silným názvem být nainstalovaný v globální mezipaměti sestavení.  

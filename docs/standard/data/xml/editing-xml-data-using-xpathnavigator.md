@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568586"
 ---
 # <a name="editing-xml-data-using-xpathnavigator"></a>Úpravy pomocí objektem XPathNavigator nastaveným na Data XML
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje metody pro vložení, upravovat a odebírat uzly a hodnoty z dokumentu XML obsažených v <xref:System.Xml.XmlDocument> objektu. Chcete-li používat některé z těchto metod vložit, upravovat a odebírat uzly a hodnoty, <xref:System.Xml.XPath.XPathNavigator> objekt musí být upravitelné, který je jeho <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> vlastnosti musí mít hodnotu true.  

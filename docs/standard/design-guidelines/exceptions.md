@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570589"
 ---
 # <a name="design-guidelines-for-exceptions"></a>Pokyny pro návrh pro výjimky
 Zpracovávání výjimek v jazyce má mnoho výhod oproti zasílání zpráv o chybách na základě vrátit hodnotu. Dobrý framework návrhu pomáhá výhody výjimek vývojáře aplikace. Tato část popisuje výhody výjimky a uvede pokyny pro efektivním použitím.  

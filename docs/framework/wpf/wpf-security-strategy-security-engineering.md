@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566204"
 ---
 # <a name="wpf-security-strategy---security-engineering"></a>Strategie zabezpečení WPF – engineering zabezpečení
 Trustworthy Computing je iniciativa Microsoft pro zajištění provozní zabezpečené kódu. Je klíčovým prvkem iniciativy Trustworthy Computing [!INCLUDE[TLA#tla_sdl](../../../includes/tlasharptla-sdl-md.md)]. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Engineering postupem, který se používá ve spojení s standardní technického procesu usnadňuje doručování zabezpečený kód je. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Se skládá z deset fází, které se zkombinovat osvědčené postupy s oblast, measurability a další struktura, včetně:  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365303"
 ---
 # <a name="implementing-an-implicit-transaction-using-transaction-scope"></a>Implementace implicitní transakci pomocí oboru transakce
 <xref:System.Transactions.TransactionScope> Třída poskytuje jednoduchý způsob, jak označit bloku kódu jako účasti na transakci, aniž by bylo nutné k interakci se vlastní transakce. Obor transakce můžete vybrat a spravovat okolí transakce automaticky. Z důvodu jeho snadno použitelných a efektivitu, je doporučeno používat <xref:System.Transactions.TransactionScope> třídy při vývoji aplikace transakce.  

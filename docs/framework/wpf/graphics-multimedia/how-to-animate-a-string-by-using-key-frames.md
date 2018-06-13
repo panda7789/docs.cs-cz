@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561056"
 ---
 # <a name="how-to-animate-a-string-by-using-key-frames"></a>Animace řetězce pomocí klíčových snímků
 Tento příklad ukazuje, jak animace řetězec, který je v tomto příkladu <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost <xref:System.Windows.Controls.Button> ovládacího prvku pomocí klíčových snímků.  

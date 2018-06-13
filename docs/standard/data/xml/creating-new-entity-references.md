@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568443"
 ---
 # <a name="creating-new-entity-references"></a>Vytvoření nové odkazy na Entity
 **CreateEntityReference** metoda vytvoří novou **XmlEntityReference** uzlu. XML modelu DOM (Document Object) zjistí, pokud již byl deklarován název entity se na ně odkazovat. Pokud ano, podřízené uzly **XmlEntityReference** uzlu se zkopírují z uzlu deklarace entity. Pokud není k dispozici žádná deklarace entity, který odpovídá, je připojen prázdný textový uzel jako jediným podřízeným entity uzlu odkazu. Protože podřízené uzly **XmlEntityReference** uzlu jsou kopie další uzly, tyto podřízené uzly jsou jen pro čtení a nelze jej změnit.  

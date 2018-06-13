@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513094"
 ---
 # <a name="windows-workflow-architecture"></a>Architektura pracovního postupu systému Windows
 Windows Workflow Foundation (WF) zvýší úroveň abstrakce pro vývoj aplikací interaktivní časově náročné. Pracovní jednotky se zapouzdřené jako aktivity. Aktivity spustit v prostředí, které poskytuje možnosti pro řízení toku, výjimek, chyb šíření, trvalosti dat o stavu, načítání a uvolňování probíhající pracovních postupů z paměti, sledování a toku transakcí.  

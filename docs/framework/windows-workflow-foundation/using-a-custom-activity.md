@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515507"
 ---
 # <a name="using-a-custom-activity"></a>Pomocí vlastních aktivit
 Aktivity, které jsou odvozeny od <xref:System.Activities.Activity> nebo jeho podtřídy skládá do větší pracovních postupů, nebo přímo v kódu. Toto téma popisuje, jak chcete použít vlastní aktivity v pracovních postupech, které jsou vytvořené v kódu nebo v návrháři.  

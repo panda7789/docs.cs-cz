@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569116"
 ---
 # <a name="evaluate-xpath-expressions-using-xpathnavigator"></a>Vyhodnocení výrazů jazyka XPath pomocí objektem XPathNavigator nastaveným na
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> metody k vyhodnocení výrazu XPath. <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> Metoda přebírá výraz XPath, vyhodnotí ji a vrátí typ W3C XPath logická hodnota, čísla, řetězce nebo sada uzlů na základě výsledku výrazu XPath.  

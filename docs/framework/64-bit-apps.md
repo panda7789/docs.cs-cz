@@ -13,6 +13,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744272"
 ---
 # <a name="64-bit-applications"></a>64bitové aplikace
 Při kompilaci aplikace, můžete určit, že ji měly být spuštěny v operačním systému Windows 64-bit buď jako nativní aplikace nebo WOW64 (Windows 32-bit na Windows 64-bit). Subsystém WOW64 je kompatibility prostředí umožňující 32bitovou aplikaci spustit v 64bitovém systému. Subsystém WOW64 je zahrnutá ve všech verzích 64bitová verze operačního systému Windows.  

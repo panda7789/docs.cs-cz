@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743183"
 ---
 # <a name="how-to-determine-an-assembly39s-fully-qualified-name"></a>Postupy: určení sestavení&#39;s plně kvalifikovaný název
 Chcete-li zjistit, plně kvalifikovaný název sestavení v globální mezipaměti sestavení, použijte nástroj globální mezipaměti sestavení ([Gacutil.exe](../../../docs/framework/tools/gacutil-exe-gac-tool.md)). V tématu [postupy: zobrazení obsahu globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-view-the-contents-of-the-gac.md).  

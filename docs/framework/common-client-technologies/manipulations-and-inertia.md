@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742150"
 ---
 # <a name="manipulations-and-inertia"></a>Manipulace a nečinnost
 *Manipulace* a *nečinnosti* procesor třídy pomůže aplikace při přesouvání prvky uživatelského rozhraní (UI) na obrazovce přirozené a intuitivní způsobem. Manipulace povolit uživatelům přesunout, otáčení a změna velikosti součásti pomocí manipulátory, například zařízení myši, pera, nebo (v přímé dotykovým ovládáním scénář) jejich prsty. *Nečinnosti* emuluje chování skutečných pro prvky uživatelského rozhraní, které jsou v provozu tak, že simuluje třecí vynutí u elementů. To umožňuje elementy postupně zpomalit jejich přesun (lineární i úhlová) před přicházející na určeném místě.  

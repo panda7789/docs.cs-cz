@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560363"
 ---
 # <a name="how-to-create-a-shape-using-a-streamgeometry"></a>Postupy: Vytvoření tvaru použitím StreamGeometry
 <xref:System.Windows.Media.StreamGeometry> šedé – alternativu, která umožňuje <xref:System.Windows.Media.PathGeometry> pro vytvoření geometrické obrazce. Použití <xref:System.Windows.Media.StreamGeometry> když potřebujete popisují komplexní geometry, ale nechcete, aby nároky na podporu vazby dat, animace nebo úpravy. Například z důvodu jeho efektivitu <xref:System.Windows.Media.StreamGeometry> třída je vhodná pro popisující ozdobného prvku.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512437"
 ---
 # <a name="getting-started-tutorial"></a>Kurz Začínáme
 Tato část obsahuje sadu návod témata, které vám představí programování aplikace Windows Workflow Foundation (WF). Pomocí následujících postupů v těchto tématech, vytvoříte aplikaci, která je číslo hádání hra. První téma v tomto kurzu vás provede kroky k vytvoření vlastních aktivit, které jsou potřebné pro pracovní postup. V druhé tématu jsou tyto aktivity několik společně s integrovanou pracovního postupu aktivit do vývojový diagram pracovního postupu. V sekci třetí aplikace hostitele je nakonfigurována pro spuštění pracovního postupu a v posledním tématu uvádíme trvalost. Každý krok v tomto procesu závisí na předchozí kroky, proto doporučujeme, můžete dokončit v pořadí.  

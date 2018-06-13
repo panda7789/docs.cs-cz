@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33562287"
 ---
 # <a name="how-to-control-key-frame-animation-timing"></a>Postupy: Řízení časování pro animace klíčových snímků
 Tento příklad ukazuje, jak řídit načasování klíčových snímků v rámci klíč rámce animace. Jako jiné animace animací jednotlivých klíče mají <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnost. Kromě určení trvání animace, budete muset zadat, jaká část této hodnotě DURATION je vymezena pro každý z jeho klíčových snímků. Chcete-li přidělit čas, zadejte <xref:System.Windows.Media.Animation.KeyTime> pro každý klíčových snímků animace.  

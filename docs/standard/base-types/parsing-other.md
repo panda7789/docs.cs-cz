@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568027"
 ---
 # <a name="parsing-other-strings-in-net"></a>Analýza jiných řetězců v .NET
 Kromě číselný a <xref:System.DateTime> řetězce, můžete také analyzovat řetězců, které představují typy <xref:System.Char>, <xref:System.Boolean>, a <xref:System.Enum> do datových typů.  

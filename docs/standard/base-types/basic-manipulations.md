@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567182"
 ---
 # <a name="how-to-perform-basic-string-manipulations-in-net"></a>Postup: provedení manipulace s řetězci základní v rozhraní .NET
 Následující příklad používá některé z metod popsaných v tématu [základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md) témata pro vytvoření třídy, která provádí manipulace s řetězci způsobem, který se může nacházet v reálné aplikaci. `MailToData` Třída obsahuje název a adresu osoby v samostatných vlastnosti a poskytuje způsob, jak kombinovat `City`, `State`, a `Zip` do jednoho řetězce pro zobrazení pro uživatele. Kromě toho třída umožňuje uživateli zadat města, státu a informace o PSČ jako jeden řetězec; aplikace automaticky analyzuje daný řetězec a vloží správné informace do odpovídající vlastnost.  

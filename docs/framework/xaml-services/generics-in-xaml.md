@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33563581"
 ---
 # <a name="generics-in-xaml"></a>Obecné typy v jazyku XAML
 Rozhraní .NET Framework XAML Services jak jsou implementované ve System.Xaml poskytuje podporu pro použití obecných typů CLR. Tato podpora zahrnuje určení omezení obecných typů jako argument typu a vynucující omezení voláním odpovídající `Add` metoda pro obecnou kolekci případy. Toto téma popisuje aspekty pomocí a odkazování na obecné typy v jazyce XAML.  

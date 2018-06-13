@@ -21,6 +21,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742832"
 ---
 # <a name="how-to-view-assembly-contents"></a>Postupy: Zobrazení obsahu sestavení
 Můžete použít [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) pro zobrazení informací (MSIL intermediate language) Microsoft v souboru. Pokud se jedná o prohlížení je sestavení, můžete tyto informace zahrnují sestavení atributy, stejně jako odkazy na jiné moduly a sestavení. Tato informace může být užitečné při určování, zda je soubor sestavení nebo součástí sestavení, a zda má soubor odkazy na další moduly nebo sestavení.  

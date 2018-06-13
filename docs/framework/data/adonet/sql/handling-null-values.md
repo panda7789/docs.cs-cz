@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364268"
 ---
 # <a name="handling-null-values"></a>Zpracování hodnot Null
 Hodnotu null v relační databázi se používá, pokud je hodnota ve sloupci neznámý nebo chybí. Null není prázdný řetězec (pro datové typy znaků nebo data a času) ani hodnotu nula (pro číselné datové typy). Specifikace ANSI SQL-92 stavy s hodnotou null musí být stejné pro všechny typy dat, tak, aby všechny hodnoty Null zpracovává konzistentně. <xref:System.Data.SqlTypes> Obor názvů obsahuje hodnotu null sémantiku implementací <xref:System.Data.SqlTypes.INullable> rozhraní. Každý dat typy v <xref:System.Data.SqlTypes> má svou vlastní `IsNull` vlastnost a `Null` hodnotu, která lze přiřadit k instanci daného datového typu.  

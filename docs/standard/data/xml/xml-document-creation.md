@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572785"
 ---
 # <a name="xml-document-creation"></a>Vytváření dokumentů XML
 Existují dva způsoby, jak vytvořit dokument XML. Jedním ze způsobů je vytvoření **třídou XMLDocument nastavenou na** bez parametrů. Druhý způsob je vytvoření **třídou XMLDocument nastavenou na** a předejte ji XmlNameTable jako parametr. Následující příklad ukazuje, jak vytvořit nový, prázdný **třídou XMLDocument nastavenou na** pomocí žádné parametry.  

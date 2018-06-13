@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557235"
 ---
 # <a name="tooltip-overview"></a>ToolTip – přehled
 Popisek je malé místní okno, které se zobrazí, když uživatel pozastaví ukazatel myši nad elementem, například jako přes <xref:System.Windows.Controls.Button>. Toto téma představuje popisek a popisuje, jak vytvářet a přizpůsobovat obsah popisku.  

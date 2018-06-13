@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557131"
 ---
 # <a name="data"></a>Data
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Datová vazba poskytuje jednoduchý a konzistentní způsob pro aplikace pro práci s daty a k dispozici. Elementy lze vázat na data z různých zdrojů dat ve formě [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty a XML. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] také poskytuje mechanismus pro přenos dat prostřednictvím operací přetažení myší.  

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571911"
 ---
 # <a name="how-to-convert-numeric-user-input-in-web-controls-to-numbers"></a>Postupy: Převod číselného vstupu uživatele ve webových ovládacích prvcích na čísla
 Protože na webové stránce lze zobrazit kdekoliv na světě, uživatelé mohou vložit číselná data do <xref:System.Web.UI.WebControls.TextBox> ovládacího prvku skoro neomezený počet formátů. V důsledku toho je velmi důležité určit národní prostředí a jazykovou verzi uživatele webové stránky. Pokud jste analyzovat uživatelský vstup, lze následně použít formátování konvence definované jazykovou verzi a národní prostředí uživatele.  

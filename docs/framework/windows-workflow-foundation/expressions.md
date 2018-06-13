@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514883"
 ---
 # <a name="expressions"></a>Výrazy
 Výraz Windows Workflow Foundation (WF) je aktivit, které vrací výsledek. Všechny aktivity výraz nepřímo odvozeny od <xref:System.Activities.Activity%601>, který obsahuje <xref:System.Activities.OutArgument> vlastnost s názvem <xref:System.Activities.Activity%601.Result%2A> jako návratová hodnota aktivity. [!INCLUDE[wf1](../../../includes/wf1-md.md)] z jednoduché, jako jsou ty, které se dodává s širokou škálu aktivit výraz <xref:System.Activities.Expressions.VariableValue%601> a <xref:System.Activities.Expressions.VariableReference%601>, které poskytují přístup k proměnné jednoho pracovního postupu pomocí aktivity operátor pro komplexní aktivity, jako <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> v rámci této nabídky přístup k úplného spektra jazyka Visual Basic k vytvoření výsledku. Lze vytvořit další výraz aktivity odvozené z <xref:System.Activities.CodeActivity%601> nebo <xref:System.Activities.NativeActivity%601>.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33214767"
 ---
 # <a name="-appconfig-c-compiler-options"></a>-appconfig (možnosti kompilátoru C#)
 **- Appconfig** – možnost kompilátoru umožňuje aplikaci C# k určení umístění souboru konfigurace (app.config) sestavení aplikace do common language runtime (CLR) v době vazby sestavení.  

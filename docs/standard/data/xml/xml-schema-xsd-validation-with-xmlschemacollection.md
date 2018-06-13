@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572194"
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a>Ověření schématu (XSD) XML s kolekci XmlSchemaCollection
 Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> ověřit dokument XML pomocí schématu XML definition language (XSD) schémat. <xref:System.Xml.Schema.XmlSchemaCollection> Díky ukládání schémata v kolekci, takže nejsou načtena do paměti dojde k ověření jednotlivých časové zvyšuje výkon. Pokud schéma existuje v kolekci schémat `schemaLocation` atribut slouží k vyhledání schématu v kolekci.  

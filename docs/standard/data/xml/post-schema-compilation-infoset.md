@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569626"
 ---
 # <a name="post-schema-compilation-infoset"></a>Informační sadu po schématu kompilace
 [Doporučení schématu XML World Wide Web Consortium (W3C)](https://www.w3.org/XML/Schema) popisuje sady informace (informační sadu), musí se zveřejnit pro ověření schématu před a po schématu kompilace. Model objektu schématu XML (SOM) zobrazení tato ohrožení před a po <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet> je volána.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557118"
 ---
 # <a name="adorners-overview"></a>Přehled doplňků
 Ozdobného prvku se o zvláštní typ <xref:System.Windows.FrameworkElement>používané k poskytování vizuální upozornění uživatele. Mezi další používá ozdobného prvku slouží k přidejte funkční obslužné rutiny na elementy nebo zadejte informace o prvku stavu.  

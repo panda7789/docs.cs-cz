@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565572"
 ---
 # <a name="xstatic-markup-extension"></a>x:Static – rozšíření značek
 Každá entita kód statické podle hodnoty, která je definována v odkazuje [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]– kompatibilní způsob. Statické vlastnosti, která se odkazuje slouží k poskytování hodnotou vlastnosti v jazyce XAML.  
