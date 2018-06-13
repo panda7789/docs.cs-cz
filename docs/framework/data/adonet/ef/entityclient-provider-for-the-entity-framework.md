@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764792"
 ---
 # <a name="entityclient-provider-for-the-entity-framework"></a>Zprostředkovatel EntityClient rozhraní Entity Framework
 Zprostředkovatel EntityClient je zprostředkovatele dat používaných aplikacemi Entity Framework pro přístup k datům, které jsou popsané v konceptuálním modelu. Informace o konceptuálních modelech najdete v tématu [modelování a mapování](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md). Zprostředkovatel EntityClient používá pro přístup ke zdroji dat jiných poskytovatelů dat rozhraní .NET Framework. Například EntityClient používá zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) při přístupu k databázi systému SQL Server. Informace o poskytovateli SqlClient najdete v tématu [SqlClient rozhraní Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md). Zprostředkovatel EntityClient je implementována ve <xref:System.Data.EntityClient> oboru názvů.  

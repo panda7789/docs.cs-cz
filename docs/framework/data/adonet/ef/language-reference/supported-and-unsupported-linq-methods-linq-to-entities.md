@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766631"
 ---
 # <a name="supported-and-unsupported-linq-methods-linq-to-entities"></a>Podporované a nepodporované LINQ metody (LINQ to Entities)
 Tato část obsahuje informace o operátorech standardní dotaz Language-Integrated Query (LINQ), které jsou podporována nebo není podporována v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy. Mnoho LINQ standardní operátory dotazu má přetížené verze, která přijímá argument celé číslo. Argument celé číslo odpovídá index počítaný od nuly v pořadí, které pracuje, <xref:System.Collections.Generic.IEqualityComparer%601>, nebo <xref:System.Collections.Generic.IComparer%601>. Pokud není uvedeno jinak, tyto verze přetížené operátory standardní dotaz LINQ nepodporuje a pokus o použití je vyvolá výjimku.  
