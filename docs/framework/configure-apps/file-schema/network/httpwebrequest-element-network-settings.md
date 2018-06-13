@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741965"
 ---
 # <a name="lthttpwebrequestgt-element-network-settings"></a><span data-ttu-id="04502-102">&lt;HttpWebRequest –&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="04502-102">&lt;httpWebRequest&gt; Element (Network Settings)</span></span>
 <span data-ttu-id="04502-103">Přizpůsobí parametry webové žádosti.</span><span class="sxs-lookup"><span data-stu-id="04502-103">Customizes Web request parameters.</span></span>  

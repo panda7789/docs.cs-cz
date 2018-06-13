@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744821"
 ---
 # <a name="walkthrough-creating-an-extensible-application"></a><span data-ttu-id="a9a55-102">Návod: Vytváření rozšiřitelné aplikace</span><span class="sxs-lookup"><span data-stu-id="a9a55-102">Walkthrough: Creating an Extensible Application</span></span>
 <span data-ttu-id="a9a55-103">Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché Kalkulačka funkcí.</span><span class="sxs-lookup"><span data-stu-id="a9a55-103">This walkthrough describes how to create a pipeline for an add-in that performs simple calculator functions.</span></span> <span data-ttu-id="a9a55-104">Nepředvádí scénářem z reálného prostředí; Místo toho ukazuje základní funkce kanálu a jak doplňku poskytuje služby pro hostitele.</span><span class="sxs-lookup"><span data-stu-id="a9a55-104">It does not demonstrate a real-world scenario; rather, it demonstrates the basic functionality of a pipeline and how an add-in can provide services for a host.</span></span>  

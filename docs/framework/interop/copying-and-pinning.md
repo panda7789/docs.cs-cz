@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392798"
 ---
 # <a name="copying-and-pinning"></a><span data-ttu-id="07bc0-102">Kopírování a přichycování</span><span class="sxs-lookup"><span data-stu-id="07bc0-102">Copying and Pinning</span></span>
 <span data-ttu-id="07bc0-103">Při zařazování dat, spolupráce vláken můžete zkopírovat nebo kód pin se zařazené data.</span><span class="sxs-lookup"><span data-stu-id="07bc0-103">When marshaling data, the interop marshaler can copy or pin the data being marshaled.</span></span> <span data-ttu-id="07bc0-104">Kopírování dat umístí kopii dat z jednoho umístění paměti v jiném umístění paměti.</span><span class="sxs-lookup"><span data-stu-id="07bc0-104">Copying the data places a copy of data from one memory location in another memory location.</span></span> <span data-ttu-id="07bc0-105">Následující obrázek znázorňuje rozdíly mezi kopírování typ hodnoty a kopírování typu předaná odkaz ze spravované na nespravované paměti.</span><span class="sxs-lookup"><span data-stu-id="07bc0-105">The following illustration shows the differences between copying a value type and copying a type passed by reference from managed to unmanaged memory.</span></span>  

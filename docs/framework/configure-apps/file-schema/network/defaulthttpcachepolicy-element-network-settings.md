@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741838"
 ---
 # <a name="ltdefaulthttpcachepolicygt-element-network-settings"></a><span data-ttu-id="4a740-102">&lt;defaulthttpcachepolicy –&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="4a740-102">&lt;defaultHttpCachePolicy&gt; Element (Network Settings)</span></span>
 <span data-ttu-id="4a740-103">Popisuje, jestli ukládání do mezipaměti HTTP je aktivní a popisuje výchozí zásady ukládání do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="4a740-103">Describes whether HTTP caching is active and describes the default caching policy.</span></span>  

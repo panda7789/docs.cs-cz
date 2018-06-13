@@ -20,6 +20,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744314"
 ---
 # <a name="how-to-build-a-single-file-assembly"></a><span data-ttu-id="3bbd8-102">Postupy: Vytváření sestavení s jediným souborem</span><span class="sxs-lookup"><span data-stu-id="3bbd8-102">How to: Build a Single-File Assembly</span></span>
 <span data-ttu-id="3bbd8-103">Jeden soubor sestavení, které je nejjednodušší typ sestavení, obsahuje informace o typu a implementace, a taky [manifest sestavení](../../../docs/framework/app-domains/assembly-manifest.md).</span><span class="sxs-lookup"><span data-stu-id="3bbd8-103">A single-file assembly, which is the simplest type of assembly, contains type information and implementation, as well as the [assembly manifest](../../../docs/framework/app-domains/assembly-manifest.md).</span></span> <span data-ttu-id="3bbd8-104">Můžete použít kompilátory příkazového řádku nebo [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] vytvořit jeden soubor sestavení.</span><span class="sxs-lookup"><span data-stu-id="3bbd8-104">You can use command-line compilers or [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] to create a single-file assembly.</span></span> <span data-ttu-id="3bbd8-105">Ve výchozím nastavení vytvoří kompilátor soubor sestavení s příponou .exe.</span><span class="sxs-lookup"><span data-stu-id="3bbd8-105">By default, the compiler creates an assembly file with an .exe extension.</span></span>  

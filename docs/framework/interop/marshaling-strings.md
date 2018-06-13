@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391118"
 ---
 # <a name="marshaling-strings"></a><span data-ttu-id="9a690-102">Zařazování řetězců</span><span class="sxs-lookup"><span data-stu-id="9a690-102">Marshaling Strings</span></span>
 <span data-ttu-id="9a690-103">Vyvolání platformy parametrů řetězce kopie, převod je z formátu rozhraní .NET Framework (Unicode) na nespravované formát (ANSI), v případě potřeby.</span><span class="sxs-lookup"><span data-stu-id="9a690-103">Platform invoke copies string parameters, converting them from the .NET Framework format (Unicode) to the unmanaged format (ANSI), if needed.</span></span> <span data-ttu-id="9a690-104">Protože jsou neměnné spravované řetězce, vyvolání platformy je zpět z nespravované paměti spravované paměti při nekopíruje funkce vrátí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="9a690-104">Because managed strings are immutable, platform invoke does not copy them back from unmanaged memory to managed memory when the function returns.</span></span>  

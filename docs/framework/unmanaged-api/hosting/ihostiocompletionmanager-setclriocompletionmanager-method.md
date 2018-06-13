@@ -1,14 +1,6 @@
 ---
-title: "IHostIoCompletionManager::SetCLRIoCompletionManager – metoda"
-ms.custom: 
+title: IHostIoCompletionManager::SetCLRIoCompletionManager – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IHostIoCompletionManager.SetCLRIoCompletionManager
 api_location:
@@ -23,22 +15,19 @@ helpviewer_keywords:
 ms.assetid: 4254bb01-3a14-4f34-a3be-60ff1f5072b5
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4fde1045fd0f15e7255a163c1f1b041800e85921
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5da62d8d46b71b1f9eef677d2252ec7b21a3ae4f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33439557"
 ---
-# <a name="ihostiocompletionmanagersetclriocompletionmanager-method"></a><span data-ttu-id="2f46f-102">IHostIoCompletionManager::SetCLRIoCompletionManager – metoda</span><span class="sxs-lookup"><span data-stu-id="2f46f-102">IHostIoCompletionManager::SetCLRIoCompletionManager Method</span></span>
-<span data-ttu-id="2f46f-103">Poskytuje ukazatele rozhraní na hostiteli [iclriocompletionmanager –](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md) instance implementované common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="2f46f-103">Provides the host with an interface pointer to the [ICLRIoCompletionManager](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md) instance implemented by the common language runtime (CLR).</span></span>  
+# <a name="ihostiocompletionmanagersetclriocompletionmanager-method"></a><span data-ttu-id="ef9c5-102">IHostIoCompletionManager::SetCLRIoCompletionManager – metoda</span><span class="sxs-lookup"><span data-stu-id="ef9c5-102">IHostIoCompletionManager::SetCLRIoCompletionManager Method</span></span>
+<span data-ttu-id="ef9c5-103">Poskytuje ukazatele rozhraní na hostiteli [iclriocompletionmanager –](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md) instance implementované common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="ef9c5-103">Provides the host with an interface pointer to the [ICLRIoCompletionManager](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md) instance implemented by the common language runtime (CLR).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2f46f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2f46f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ef9c5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ef9c5-104">Syntax</span></span>  
   
 ```  
 HRESULT SetCLRIoCompletionManager (  
@@ -46,33 +35,33 @@ HRESULT SetCLRIoCompletionManager (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="2f46f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2f46f-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="ef9c5-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ef9c5-105">Parameters</span></span>  
  `pManager`  
- <span data-ttu-id="2f46f-106">[v] Ukazatele rozhraní k `ICLRIoCompletionManager` instance poskytované modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="2f46f-106">[in] An interface pointer to an `ICLRIoCompletionManager` instance provided by the CLR.</span></span>  
+ <span data-ttu-id="ef9c5-106">[v] Ukazatele rozhraní k `ICLRIoCompletionManager` instance poskytované modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="ef9c5-106">[in] An interface pointer to an `ICLRIoCompletionManager` instance provided by the CLR.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="2f46f-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="2f46f-107">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="ef9c5-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ef9c5-107">Return Value</span></span>  
   
-|<span data-ttu-id="2f46f-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="2f46f-108">HRESULT</span></span>|<span data-ttu-id="2f46f-109">Popis</span><span class="sxs-lookup"><span data-stu-id="2f46f-109">Description</span></span>|  
+|<span data-ttu-id="ef9c5-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="ef9c5-108">HRESULT</span></span>|<span data-ttu-id="ef9c5-109">Popis</span><span class="sxs-lookup"><span data-stu-id="ef9c5-109">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="2f46f-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="2f46f-110">S_OK</span></span>|<span data-ttu-id="2f46f-111">`SetCLRIoCompletionManager`úspěšně vrácena.</span><span class="sxs-lookup"><span data-stu-id="2f46f-111">`SetCLRIoCompletionManager` returned successfully.</span></span>|  
-|<span data-ttu-id="2f46f-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="2f46f-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="2f46f-113">Modul CLR nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="2f46f-113">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="2f46f-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="2f46f-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="2f46f-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="2f46f-115">The call timed out.</span></span>|  
-|<span data-ttu-id="2f46f-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="2f46f-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="2f46f-117">Volající není vlastníkem zámek.</span><span class="sxs-lookup"><span data-stu-id="2f46f-117">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="2f46f-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="2f46f-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="2f46f-119">Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.</span><span class="sxs-lookup"><span data-stu-id="2f46f-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="2f46f-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="2f46f-120">E_FAIL</span></span>|<span data-ttu-id="2f46f-121">Došlo k neznámému závažné selhání.</span><span class="sxs-lookup"><span data-stu-id="2f46f-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="2f46f-122">Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="2f46f-122">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="2f46f-123">Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="2f46f-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="ef9c5-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="ef9c5-110">S_OK</span></span>|<span data-ttu-id="ef9c5-111">`SetCLRIoCompletionManager` úspěšně vrácena.</span><span class="sxs-lookup"><span data-stu-id="ef9c5-111">`SetCLRIoCompletionManager` returned successfully.</span></span>|  
+|<span data-ttu-id="ef9c5-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="ef9c5-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="ef9c5-113">Modul CLR nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="ef9c5-113">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="ef9c5-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="ef9c5-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="ef9c5-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="ef9c5-115">The call timed out.</span></span>|  
+|<span data-ttu-id="ef9c5-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="ef9c5-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="ef9c5-117">Volající není vlastníkem zámek.</span><span class="sxs-lookup"><span data-stu-id="ef9c5-117">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="ef9c5-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="ef9c5-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="ef9c5-119">Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.</span><span class="sxs-lookup"><span data-stu-id="ef9c5-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="ef9c5-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="ef9c5-120">E_FAIL</span></span>|<span data-ttu-id="ef9c5-121">Došlo k neznámému závažné selhání.</span><span class="sxs-lookup"><span data-stu-id="ef9c5-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="ef9c5-122">Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="ef9c5-122">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="ef9c5-123">Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="ef9c5-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="2f46f-124">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2f46f-124">Remarks</span></span>  
- <span data-ttu-id="2f46f-125">Poté, co zavolal modulu CLR `SetCLRIoCompletionManager`, musí volat hostitele [iclriocompletionmanager::onComplete –](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) upozornit modulu CLR, když požadavek vstupně-výstupní operace byla dokončena.</span><span class="sxs-lookup"><span data-stu-id="2f46f-125">After the CLR has called `SetCLRIoCompletionManager`, the host must call [ICLRIoCompletionManager::OnComplete](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) to notify the CLR when an I/O request has been completed.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="ef9c5-124">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ef9c5-124">Remarks</span></span>  
+ <span data-ttu-id="ef9c5-125">Poté, co zavolal modulu CLR `SetCLRIoCompletionManager`, musí volat hostitele [iclriocompletionmanager::onComplete –](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) upozornit modulu CLR, když požadavek vstupně-výstupní operace byla dokončena.</span><span class="sxs-lookup"><span data-stu-id="ef9c5-125">After the CLR has called `SetCLRIoCompletionManager`, the host must call [ICLRIoCompletionManager::OnComplete](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) to notify the CLR when an I/O request has been completed.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2f46f-126">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2f46f-126">Requirements</span></span>  
- <span data-ttu-id="2f46f-127">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2f46f-127">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ef9c5-126">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ef9c5-126">Requirements</span></span>  
+ <span data-ttu-id="ef9c5-127">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ef9c5-127">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2f46f-128">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="2f46f-128">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="ef9c5-128">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="ef9c5-128">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="2f46f-129">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="2f46f-129">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="ef9c5-129">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="ef9c5-129">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="2f46f-130">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2f46f-130">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="ef9c5-130">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ef9c5-130">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2f46f-131">Viz také</span><span class="sxs-lookup"><span data-stu-id="2f46f-131">See Also</span></span>  
- [<span data-ttu-id="2f46f-132">ICLRIoCompletionManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2f46f-132">ICLRIoCompletionManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)  
- [<span data-ttu-id="2f46f-133">IHostIoCompletionManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2f46f-133">IHostIoCompletionManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)
+## <a name="see-also"></a><span data-ttu-id="ef9c5-131">Viz také</span><span class="sxs-lookup"><span data-stu-id="ef9c5-131">See Also</span></span>  
+ [<span data-ttu-id="ef9c5-132">ICLRIoCompletionManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ef9c5-132">ICLRIoCompletionManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)  
+ [<span data-ttu-id="ef9c5-133">IHostIoCompletionManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ef9c5-133">IHostIoCompletionManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)

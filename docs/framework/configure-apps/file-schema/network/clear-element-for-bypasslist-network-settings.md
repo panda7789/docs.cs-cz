@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742189"
 ---
 # <a name="ltcleargt-element-for-bypasslist-network-settings"></a><span data-ttu-id="0aea8-102">&lt;Vymazat&gt; Element pro bypasslist – (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="0aea8-102">&lt;clear&gt; Element for bypasslist (Network Settings)</span></span>
 <span data-ttu-id="0aea8-103">Vymaže seznam obcházení proxy.</span><span class="sxs-lookup"><span data-stu-id="0aea8-103">Clears the proxy bypass list.</span></span>  

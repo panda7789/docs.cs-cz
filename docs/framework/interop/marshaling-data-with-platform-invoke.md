@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391313"
 ---
 # <a name="marshaling-data-with-platform-invoke"></a><span data-ttu-id="1c724-102">Zařazování dat s voláním platformy</span><span class="sxs-lookup"><span data-stu-id="1c724-102">Marshaling Data with Platform Invoke</span></span>
 <span data-ttu-id="1c724-103">Volání funkce exportované z nespravovaných knihovny, vyžaduje rozhraní .NET Framework aplikace funkce prototypů ve spravovaném kódu, který představuje nespravované funkce.</span><span class="sxs-lookup"><span data-stu-id="1c724-103">To call functions exported from an unmanaged library, a .NET Framework application requires a function prototype in managed code that represents the unmanaged function.</span></span> <span data-ttu-id="1c724-104">Chcete-li vytvořit prototyp, která umožňuje platformy vyvolání zařazování dat správně, musíte provést následující:</span><span class="sxs-lookup"><span data-stu-id="1c724-104">To create a prototype that enables platform invoke to marshal data correctly, you must do the following:</span></span>  

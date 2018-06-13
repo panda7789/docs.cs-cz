@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393390"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a><span data-ttu-id="4b15a-102">Zařazování tříd, struktur a sjednocení</span><span class="sxs-lookup"><span data-stu-id="4b15a-102">Marshaling Classes, Structures, and Unions</span></span>
 <span data-ttu-id="4b15a-103">Třídy a struktury jsou podobné v rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="4b15a-103">Classes and structures are similar in the .NET Framework.</span></span> <span data-ttu-id="4b15a-104">Mají obě můžete polí, vlastnosti a události.</span><span class="sxs-lookup"><span data-stu-id="4b15a-104">Both can have fields, properties, and events.</span></span> <span data-ttu-id="4b15a-105">Může mít také statické a nestatické metody.</span><span class="sxs-lookup"><span data-stu-id="4b15a-105">They can also have static and nonstatic methods.</span></span> <span data-ttu-id="4b15a-106">Jeden pozoruhodný rozdíl je, že jsou typy hodnot struktury a třídy jsou odkazové typy.</span><span class="sxs-lookup"><span data-stu-id="4b15a-106">One notable difference is that structures are value types and classes are reference types.</span></span>  

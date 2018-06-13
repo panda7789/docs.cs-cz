@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390520"
 ---
 # <a name="com-wrappers"></a><span data-ttu-id="37af4-102">Obálky COM</span><span class="sxs-lookup"><span data-stu-id="37af4-102">COM Wrappers</span></span>
 <span data-ttu-id="37af4-103">COM se liší od objektový model rozhraní .NET Framework důležité několika způsoby:</span><span class="sxs-lookup"><span data-stu-id="37af4-103">COM differs from the .NET Framework object model in several important ways:</span></span>  

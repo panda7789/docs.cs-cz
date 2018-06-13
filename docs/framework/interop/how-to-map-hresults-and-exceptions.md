@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393546"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a><span data-ttu-id="60629-102">Postupy: Mapování výsledků HRESULT a výjimek</span><span class="sxs-lookup"><span data-stu-id="60629-102">How to: Map HRESULTs and Exceptions</span></span>
 <span data-ttu-id="60629-103">Metody modelu COM zprávy o chybách vrácením hodnoty HRESULT; metod rozhraní .NET je sestavy vyvoláním výjimek.</span><span class="sxs-lookup"><span data-stu-id="60629-103">COM methods report errors by returning HRESULTs; .NET methods report them by throwing exceptions.</span></span> <span data-ttu-id="60629-104">Modul runtime zpracovává přechod mezi nimi.</span><span class="sxs-lookup"><span data-stu-id="60629-104">The runtime handles the transition between the two.</span></span> <span data-ttu-id="60629-105">Každá třída výjimky v rozhraní .NET Framework mapuje HRESULT.</span><span class="sxs-lookup"><span data-stu-id="60629-105">Each exception class in the .NET Framework maps to an HRESULT.</span></span>  

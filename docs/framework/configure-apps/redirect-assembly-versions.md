@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759267"
 ---
 # <a name="redirecting-assembly-versions"></a><span data-ttu-id="ad78d-102">Přesměrování verzí sestavení</span><span class="sxs-lookup"><span data-stu-id="ad78d-102">Redirecting Assembly Versions</span></span>
 <span data-ttu-id="ad78d-103">Můžete přesměrovat kompilaci vazby odkazy na sestavení rozhraní .NET Framework, sestavení třetích stran nebo sestavení vlastní aplikace.</span><span class="sxs-lookup"><span data-stu-id="ad78d-103">You can redirect compile-time binding references to .NET Framework assemblies, third-party assemblies, or your own app's assemblies.</span></span> <span data-ttu-id="ad78d-104">Můžete přesměrovat aplikace používat jinou verzi sestavení v mnoha různými způsoby: pomocí zásad vydavatele prostřednictvím konfigurační soubor aplikace; nebo prostřednictvím konfiguračním souboru počítače.</span><span class="sxs-lookup"><span data-stu-id="ad78d-104">You can redirect your app to use a different version of an assembly in a number of ways: through publisher policy, through an app configuration file; or through the machine configuration file.</span></span> <span data-ttu-id="ad78d-105">Tento článek popisuje, jak funguje sestavení – vazby v rozhraní .NET Framework a jak může být nakonfigurován.</span><span class="sxs-lookup"><span data-stu-id="ad78d-105">This article discusses how assembly binding works in the .NET Framework and how it can be configured.</span></span>  

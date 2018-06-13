@@ -1,37 +1,28 @@
 ---
-title: "Příklad: Zpracování výjimek, pokud vazba dat"
-ms.custom: 
+title: 'Příklad: Zpracování výjimek, pokud vazba dat'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: bd63ed96-9853-46dc-ade5-7bd1b0f39110
-caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: e2714d53426bfee22b3d83d76b766816d9bc9d60
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1c4b73ed36d3334e983b960ce972292a190bad85
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393585"
 ---
-# <a name="example-handling-exceptions-when-binding-data"></a><span data-ttu-id="9e5e2-102">Příklad: Zpracování výjimek, pokud vazba dat</span><span class="sxs-lookup"><span data-stu-id="9e5e2-102">Example: Handling Exceptions When Binding Data</span></span>
+# <a name="example-handling-exceptions-when-binding-data"></a><span data-ttu-id="7c403-102">Příklad: Zpracování výjimek, pokud vazba dat</span><span class="sxs-lookup"><span data-stu-id="7c403-102">Example: Handling Exceptions When Binding Data</span></span>
 > [!NOTE]
->  <span data-ttu-id="9e5e2-103">Toto téma se týká .NET nativní Developer Preview, což je předběžná verze softwaru.</span><span class="sxs-lookup"><span data-stu-id="9e5e2-103">This topic refers to the .NET Native Developer Preview, which is pre-release software.</span></span> <span data-ttu-id="9e5e2-104">Preview z si můžete stáhnout [webu Microsoft Connect](http://go.microsoft.com/fwlink/?LinkId=394611) (vyžaduje registraci).</span><span class="sxs-lookup"><span data-stu-id="9e5e2-104">You can download the preview from the [Microsoft Connect website](http://go.microsoft.com/fwlink/?LinkId=394611) (requires registration).</span></span>  
+>  <span data-ttu-id="7c403-103">Toto téma se týká .NET nativní Developer Preview, což je předběžná verze softwaru.</span><span class="sxs-lookup"><span data-stu-id="7c403-103">This topic refers to the .NET Native Developer Preview, which is pre-release software.</span></span> <span data-ttu-id="7c403-104">Preview z si můžete stáhnout [webu Microsoft Connect](http://go.microsoft.com/fwlink/?LinkId=394611) (vyžaduje registraci).</span><span class="sxs-lookup"><span data-stu-id="7c403-104">You can download the preview from the [Microsoft Connect website](http://go.microsoft.com/fwlink/?LinkId=394611) (requires registration).</span></span>  
   
- <span data-ttu-id="9e5e2-105">Následující příklad ukazuje, jak vyřešit [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimka, která se vyvolá, když aplikace, kompilovat s [!INCLUDE[net_native](../../../includes/net-native-md.md)] řetězu nástroj pokusí vázat data.</span><span class="sxs-lookup"><span data-stu-id="9e5e2-105">The following example shows how to resolve a [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) exception that is thrown when an app compiled with the [!INCLUDE[net_native](../../../includes/net-native-md.md)] tool chain tries to bind data.</span></span> <span data-ttu-id="9e5e2-106">Tady je informace o výjimce:</span><span class="sxs-lookup"><span data-stu-id="9e5e2-106">Here’s the exception information:</span></span>  
+ <span data-ttu-id="7c403-105">Následující příklad ukazuje, jak vyřešit [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimka, která se vyvolá, když aplikace, kompilovat s [!INCLUDE[net_native](../../../includes/net-native-md.md)] řetězu nástroj pokusí vázat data.</span><span class="sxs-lookup"><span data-stu-id="7c403-105">The following example shows how to resolve a [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) exception that is thrown when an app compiled with the [!INCLUDE[net_native](../../../includes/net-native-md.md)] tool chain tries to bind data.</span></span> <span data-ttu-id="7c403-106">Tady je informace o výjimce:</span><span class="sxs-lookup"><span data-stu-id="7c403-106">Here’s the exception information:</span></span>  
   
 ```  
 This operation cannot be carried out as metadata for the following type was removed for performance reasons:   
 App.ViewModels.MainPageVM  
 ```  
   
- <span data-ttu-id="9e5e2-107">Tady je zásobníku přidružené volání:</span><span class="sxs-lookup"><span data-stu-id="9e5e2-107">Here's the associated call stack:</span></span>  
+ <span data-ttu-id="7c403-107">Tady je zásobníku přidružené volání:</span><span class="sxs-lookup"><span data-stu-id="7c403-107">Here's the associated call stack:</span></span>  
   
 ```  
 Reflection::Execution::ReflectionDomainSetupImplementation.CreateNonInvokabilityException+0x238  
@@ -47,27 +38,27 @@ Windows_UI_Xaml!DirectUI::PropertyAccessPathStep::GetValue+0x31
 Windows_UI_Xaml!DirectUI::PropertyPathListener::ConnectPathStep+0x113  
 ```  
   
-## <a name="what-was-the-app-doing"></a><span data-ttu-id="9e5e2-108">Co dělal aplikace?</span><span class="sxs-lookup"><span data-stu-id="9e5e2-108">What was the app doing?</span></span>  
- <span data-ttu-id="9e5e2-109">Na bázi zásobníku, rámců z [Windows.UI.Xaml](http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.aspx) obor názvů znamenat, že byla spuštěna modul vykreslování XAML.</span><span class="sxs-lookup"><span data-stu-id="9e5e2-109">At the base of the stack, frames from the [Windows.UI.Xaml](http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.aspx) namespace indicate that the XAML rendering engine was running.</span></span>   <span data-ttu-id="9e5e2-110">Použití <xref:System.Reflection.PropertyInfo.GetValue%2A?displayProperty=nameWithType> metoda označuje vyhledávání na základě reflexe hodnoty vlastnosti na typ, jejichž metadata byla odebrána.</span><span class="sxs-lookup"><span data-stu-id="9e5e2-110">The use of the <xref:System.Reflection.PropertyInfo.GetValue%2A?displayProperty=nameWithType> method indicates a reflection-based lookup of a property’s value on the type whose metadata was removed.</span></span>  
+## <a name="what-was-the-app-doing"></a><span data-ttu-id="7c403-108">Co dělal aplikace?</span><span class="sxs-lookup"><span data-stu-id="7c403-108">What was the app doing?</span></span>  
+ <span data-ttu-id="7c403-109">Na bázi zásobníku, rámců z [Windows.UI.Xaml](http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.aspx) obor názvů znamenat, že byla spuštěna modul vykreslování XAML.</span><span class="sxs-lookup"><span data-stu-id="7c403-109">At the base of the stack, frames from the [Windows.UI.Xaml](http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.aspx) namespace indicate that the XAML rendering engine was running.</span></span>   <span data-ttu-id="7c403-110">Použití <xref:System.Reflection.PropertyInfo.GetValue%2A?displayProperty=nameWithType> metoda označuje vyhledávání na základě reflexe hodnoty vlastnosti na typ, jejichž metadata byla odebrána.</span><span class="sxs-lookup"><span data-stu-id="7c403-110">The use of the <xref:System.Reflection.PropertyInfo.GetValue%2A?displayProperty=nameWithType> method indicates a reflection-based lookup of a property’s value on the type whose metadata was removed.</span></span>  
   
- <span data-ttu-id="9e5e2-111">Prvním krokem při poskytování direktivu metadata by přidat `serialize` metadata pro typ tak, aby jeho vlastnosti jsou všechny dostupné:</span><span class="sxs-lookup"><span data-stu-id="9e5e2-111">The first step in providing a metadata directive would be to add `serialize` metadata for the type so that its properties are all accessible:</span></span>  
+ <span data-ttu-id="7c403-111">Prvním krokem při poskytování direktivu metadata by přidat `serialize` metadata pro typ tak, aby jeho vlastnosti jsou všechny dostupné:</span><span class="sxs-lookup"><span data-stu-id="7c403-111">The first step in providing a metadata directive would be to add `serialize` metadata for the type so that its properties are all accessible:</span></span>  
   
 ```xml  
 <Type Name="App.ViewModels.MainPageVM" Serialize="Required Public" />  
 ```  
   
-## <a name="is-this-an-isolated-case"></a><span data-ttu-id="9e5e2-112">Je to izolované případ?</span><span class="sxs-lookup"><span data-stu-id="9e5e2-112">Is this an isolated case?</span></span>  
- <span data-ttu-id="9e5e2-113">V tomto scénáři, pokud má datová vazba neúplné metadata pro jednu `ViewModel`, může se příliš ostatní uživatelé.</span><span class="sxs-lookup"><span data-stu-id="9e5e2-113">In this scenario, if data binding has incomplete metadata for one `ViewModel`, it may for others, too.</span></span>  <span data-ttu-id="9e5e2-114">Pokud jsou strukturovaná kód tak, aby aplikace zobrazit modely jsou v `App.ViewModels` obor názvů, můžete použít obecnější direktivy modulu runtime:</span><span class="sxs-lookup"><span data-stu-id="9e5e2-114">If the code is structured in a way that the app’s view models are all in the `App.ViewModels` namespace, you could use a more general runtime directive:</span></span>  
+## <a name="is-this-an-isolated-case"></a><span data-ttu-id="7c403-112">Je to izolované případ?</span><span class="sxs-lookup"><span data-stu-id="7c403-112">Is this an isolated case?</span></span>  
+ <span data-ttu-id="7c403-113">V tomto scénáři, pokud má datová vazba neúplné metadata pro jednu `ViewModel`, může se příliš ostatní uživatelé.</span><span class="sxs-lookup"><span data-stu-id="7c403-113">In this scenario, if data binding has incomplete metadata for one `ViewModel`, it may for others, too.</span></span>  <span data-ttu-id="7c403-114">Pokud jsou strukturovaná kód tak, aby aplikace zobrazit modely jsou v `App.ViewModels` obor názvů, můžete použít obecnější direktivy modulu runtime:</span><span class="sxs-lookup"><span data-stu-id="7c403-114">If the code is structured in a way that the app’s view models are all in the `App.ViewModels` namespace, you could use a more general runtime directive:</span></span>  
   
 ```xml  
 <Namespace Name="App.ViewModels " Serialize="Required Public" />  
 ```  
   
-## <a name="could-the-code-be-rewritten-to-not-use-reflection"></a><span data-ttu-id="9e5e2-115">By mohla být přepsána kód nechcete použít reflexe?</span><span class="sxs-lookup"><span data-stu-id="9e5e2-115">Could the code be rewritten to not use reflection?</span></span>  
- <span data-ttu-id="9e5e2-116">Datová vazba je velmi náročná na výkon reflexe, a proto Změna kódu, aby se zabránilo reflexe není vhodná.</span><span class="sxs-lookup"><span data-stu-id="9e5e2-116">Because data binding is reflection-intensive, changing the code to avoid reflection isn’t feasible.</span></span>  
+## <a name="could-the-code-be-rewritten-to-not-use-reflection"></a><span data-ttu-id="7c403-115">By mohla být přepsána kód nechcete použít reflexe?</span><span class="sxs-lookup"><span data-stu-id="7c403-115">Could the code be rewritten to not use reflection?</span></span>  
+ <span data-ttu-id="7c403-116">Datová vazba je velmi náročná na výkon reflexe, a proto Změna kódu, aby se zabránilo reflexe není vhodná.</span><span class="sxs-lookup"><span data-stu-id="7c403-116">Because data binding is reflection-intensive, changing the code to avoid reflection isn’t feasible.</span></span>  
   
- <span data-ttu-id="9e5e2-117">Existují však způsobů určení `ViewModel` na stránku XAML tak, aby nástroj řetězu můžete přidružit vlastnost vazby pomocí správného typu v doba kompilace a zachovat metadata bez použití direktivy modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="9e5e2-117">However, there are ways to specify the `ViewModel` to the XAML page so that the tool chain can associate property bindings with the correct type at compile time and keep the metadata without using a runtime directive.</span></span>  <span data-ttu-id="9e5e2-118">Například je možné aplikovat [Windows.UI.Xaml.Data.BindableAttribute](http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindableattribute.aspx) atribut na vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="9e5e2-118">For example, you could apply the [Windows.UI.Xaml.Data.BindableAttribute](http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindableattribute.aspx) attribute on properties.</span></span> <span data-ttu-id="9e5e2-119">To způsobí, že kompilátor jazyka XAML generovat informace o požadované vyhledávání a zabraňuje nutnosti direktivy modulu runtime v souboru Default.rd.xml.</span><span class="sxs-lookup"><span data-stu-id="9e5e2-119">This causes the XAML compiler to generate the required lookup information and avoids requiring a runtime directive in the Default.rd.xml file.</span></span>  
+ <span data-ttu-id="7c403-117">Existují však způsobů určení `ViewModel` na stránku XAML tak, aby nástroj řetězu můžete přidružit vlastnost vazby pomocí správného typu v doba kompilace a zachovat metadata bez použití direktivy modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="7c403-117">However, there are ways to specify the `ViewModel` to the XAML page so that the tool chain can associate property bindings with the correct type at compile time and keep the metadata without using a runtime directive.</span></span>  <span data-ttu-id="7c403-118">Například je možné aplikovat [Windows.UI.Xaml.Data.BindableAttribute](http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindableattribute.aspx) atribut na vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="7c403-118">For example, you could apply the [Windows.UI.Xaml.Data.BindableAttribute](http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindableattribute.aspx) attribute on properties.</span></span> <span data-ttu-id="7c403-119">To způsobí, že kompilátor jazyka XAML generovat informace o požadované vyhledávání a zabraňuje nutnosti direktivy modulu runtime v souboru Default.rd.xml.</span><span class="sxs-lookup"><span data-stu-id="7c403-119">This causes the XAML compiler to generate the required lookup information and avoids requiring a runtime directive in the Default.rd.xml file.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9e5e2-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="9e5e2-120">See Also</span></span>  
- [<span data-ttu-id="9e5e2-121">Začínáme</span><span class="sxs-lookup"><span data-stu-id="9e5e2-121">Getting Started</span></span>](../../../docs/framework/net-native/getting-started-with-net-native.md)  
- [<span data-ttu-id="9e5e2-122">Příklad: Řešení potíží s dynamickým programováním</span><span class="sxs-lookup"><span data-stu-id="9e5e2-122">Example: Troubleshooting Dynamic Programming</span></span>](../../../docs/framework/net-native/example-troubleshooting-dynamic-programming.md)
+## <a name="see-also"></a><span data-ttu-id="7c403-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="7c403-120">See Also</span></span>  
+ [<span data-ttu-id="7c403-121">Začínáme</span><span class="sxs-lookup"><span data-stu-id="7c403-121">Getting Started</span></span>](../../../docs/framework/net-native/getting-started-with-net-native.md)  
+ [<span data-ttu-id="7c403-122">Příklad: Řešení potíží s dynamickým programováním</span><span class="sxs-lookup"><span data-stu-id="7c403-122">Example: Troubleshooting Dynamic Programming</span></span>](../../../docs/framework/net-native/example-troubleshooting-dynamic-programming.md)

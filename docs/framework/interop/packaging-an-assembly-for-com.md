@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392393"
 ---
 # <a name="packaging-an-assembly-for-com"></a><span data-ttu-id="fa255-102">Zabalení sestavení pro model COM</span><span class="sxs-lookup"><span data-stu-id="fa255-102">Packaging an Assembly for COM</span></span>
 <span data-ttu-id="fa255-103">COM vývojáři mohou využít následující informace o spravovaných typů, že chtějí začlenit ve svých aplikacích:</span><span class="sxs-lookup"><span data-stu-id="fa255-103">COM developers can benefit from the following information about the managed types they plan to incorporate in their application:</span></span>  

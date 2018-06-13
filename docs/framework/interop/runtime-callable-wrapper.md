@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393507"
 ---
 # <a name="runtime-callable-wrapper"></a><span data-ttu-id="f3ccf-102">Obálka volatelná za běhu</span><span class="sxs-lookup"><span data-stu-id="f3ccf-102">Runtime Callable Wrapper</span></span>
 <span data-ttu-id="f3ccf-103">Modul common language runtime zpřístupní objektů COM prostřednictvím proxy serveru názvem obálka volatelná za běhu (RCW).</span><span class="sxs-lookup"><span data-stu-id="f3ccf-103">The common language runtime exposes COM objects through a proxy called the runtime callable wrapper (RCW).</span></span> <span data-ttu-id="f3ccf-104">I když RCW se zdá být objekt obyčejnou tak, aby klientů .NET, je jeho primární funkce zařazování volání mezi sebou klient .NET a objekt modelu COM.</span><span class="sxs-lookup"><span data-stu-id="f3ccf-104">Although the RCW appears to be an ordinary object to .NET clients, its primary function is to marshal calls between a .NET client and a COM object.</span></span>  

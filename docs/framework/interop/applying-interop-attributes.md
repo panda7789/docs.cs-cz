@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392561"
 ---
 # <a name="applying-interop-attributes"></a><span data-ttu-id="3172a-102">Použití atributů spolupráce</span><span class="sxs-lookup"><span data-stu-id="3172a-102">Applying Interop Attributes</span></span>
 <span data-ttu-id="3172a-103"><xref:System.Runtime.InteropServices> Obor názvů obsahuje tři kategorie atributů specifický pro spolupráci: uplatnil v době návrhu, jaké používají vůči nástroje zprostředkovatele komunikace s objekty COM a rozhraní API během procesu převodu a jsou použita buď vy nebo zprostředkovatel komunikace s objekty COM.</span><span class="sxs-lookup"><span data-stu-id="3172a-103">The <xref:System.Runtime.InteropServices> namespace provides three categories of interop-specific attributes: those applied by you at design time, those applied by COM interop tools and APIs during the conversion process, and those applied either by you or COM interop.</span></span>  

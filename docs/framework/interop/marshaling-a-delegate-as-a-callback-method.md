@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389379"
 ---
 # <a name="marshaling-a-delegate-as-a-callback-method"></a><span data-ttu-id="30f36-102">Zařazování delegáta jako metody zpětného volání</span><span class="sxs-lookup"><span data-stu-id="30f36-102">Marshaling a Delegate as a Callback Method</span></span>
 <span data-ttu-id="30f36-103">Tento příklad znázorňuje, jak předat delegáti nespravované funkce byl očekáván ukazatelů na funkce.</span><span class="sxs-lookup"><span data-stu-id="30f36-103">This sample demonstrates how to pass delegates to an unmanaged function expecting function pointers.</span></span> <span data-ttu-id="30f36-104">Delegát je třída, která může pojmout odkazu na třídu metodě a je ekvivalentní ukazatel na funkci zajišťující bezpečnost typů nebo funkce zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="30f36-104">A delegate is a class that can hold a reference to a method and is equivalent to a type-safe function pointer or a callback function.</span></span>  

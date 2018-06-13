@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757291"
 ---
 # <a name="copying-dataset-contents"></a><span data-ttu-id="92cdc-102">Kopírování obsahu datové sady</span><span class="sxs-lookup"><span data-stu-id="92cdc-102">Copying DataSet Contents</span></span>
 <span data-ttu-id="92cdc-103">Můžete vytvořit kopii <xref:System.Data.DataSet> , mohli pracovat s daty, aniž by to ovlivnilo původní data nebo pracovat s podmnožinu dat z **datovou sadu**.</span><span class="sxs-lookup"><span data-stu-id="92cdc-103">You can create a copy of a <xref:System.Data.DataSet> so that you can work with data without affecting the original data, or work with a subset of the data from a **DataSet**.</span></span> <span data-ttu-id="92cdc-104">Při kopírování **datovou sadu**, můžete:</span><span class="sxs-lookup"><span data-stu-id="92cdc-104">When copying a **DataSet**, you can:</span></span>  

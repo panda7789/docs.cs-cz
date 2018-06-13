@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390260"
 ---
 # <a name="how-to-create-wrappers-manually"></a><span data-ttu-id="87a80-102">Postupy: Ruční vytváření obálek</span><span class="sxs-lookup"><span data-stu-id="87a80-102">How to: Create Wrappers Manually</span></span>
 <span data-ttu-id="87a80-103">Rozhodnete-li se deklarovat typy modelu COM ve spravovaném zdrojovém kódu ručně, bude nejlépe, když začnete se stávajícím souborem IDL (Interface Definition Language) nebo knihovnou typů.</span><span class="sxs-lookup"><span data-stu-id="87a80-103">If you decide to declare COM types manually in managed source code, the best place to start is with an existing Interface Definition Language (IDL) file or type library.</span></span> <span data-ttu-id="87a80-104">Nemáte-li k dispozici soubor IDL nebo nelze vygenerovat soubor knihovny typů, můžete typy modelu COM nasimulovat pomocí spravovaných deklarací a exportováním výsledného sestavení do knihovny typů.</span><span class="sxs-lookup"><span data-stu-id="87a80-104">When you do not have the IDL file or cannot generate a type library file, you can simulate the COM types by creating managed declarations and exporting the resulting assembly to a type library.</span></span>  
