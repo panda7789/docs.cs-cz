@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33275623"
 ---
 # <a name="linq-in-c"></a>LINQ v jazyku C#
 Tato část obsahuje odkazy na témata, které poskytují podrobnější informace o LINQ.  

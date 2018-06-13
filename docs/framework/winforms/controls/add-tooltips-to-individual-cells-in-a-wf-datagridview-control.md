@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527697"
 ---
 # <a name="how-to-add-tooltips-to-individual-cells-in-a-windows-forms-datagridview-control"></a>Postupy: Přidání ToolTips do jednotlivých buněk v ovládacím prvku Windows Forms DataGridView
 Ve výchozím nastavení, popisy tlačítek slouží k zobrazení hodnot z <xref:System.Windows.Forms.DataGridView> buněk, které jsou příliš malé a zobrazit jejich celý obsah. Toto chování můžete přepsat však můžete nastavit text popisu tlačítka hodnoty jednotlivých buněk. To je užitečné k zobrazení na uživatele Další informace o buňku nebo poskytovat uživatelům alternativní popis obsah buňky. Například pokud máte řádek, který zobrazí stav ikony, můžete zadat text vysvětlení použití popisů tlačítek.  

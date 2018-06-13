@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33219333"
 ---
 # <a name="decimal-c-reference"></a>decimal (Referenční dokumentace jazyka C#)
 `decimal` – Klíčové slovo označuje typ dat 128-bit. Porovnání na jiné typy s plovoucí desetinnou čárkou `decimal` typ má více přesnost i s menším rozsahem, takže je vhodné pro finanční a peněžní výpočty. Přibližná rozsah a přesnost pro `decimal` typu jsou uvedené v následující tabulce.  

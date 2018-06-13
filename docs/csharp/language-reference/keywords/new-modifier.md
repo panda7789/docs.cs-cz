@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33273965"
 ---
 # <a name="new-modifier-c-reference"></a>new – modifikátor (Referenční dokumentace jazyka C#)
 Když se použije jako modifikátor deklarace, `new` – klíčové slovo explicitně skryje člena, který je zděděn ze základní třídy. Skrytí zděděného členu odvozenou verzí člena nahradí verzi základní třídy. I když můžete skrýt členy, bez použití `new` modifikátor, zobrazí se upozornění kompilátoru. Pokud používáte `new` explicitně skrýt členem, potlačí toto upozornění.  

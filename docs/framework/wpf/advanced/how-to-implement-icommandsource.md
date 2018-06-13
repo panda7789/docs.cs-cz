@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547024"
 ---
 # <a name="how-to-implement-icommandsource"></a>Postupy: Implementace rozhraní ICommandSource
 Tento příklad ukazuje, jak vytvořit zdroj příkaz implementací <xref:System.Windows.Input.ICommandSource>.  Příkaz zdroj je objekt, který umí vyvolání příkazu.  <xref:System.Windows.Input.ICommandSource> Rozhraní zveřejňuje tři členy: <xref:System.Windows.Input.ICommandSource.Command%2A>, <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>, a <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>.  <xref:System.Windows.Input.ICommandSource.Command%2A> je příkaz, který bude vyvolán. <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> Je uživatelský datový typ, který je předán ze zdroje příkaz metodu, která zpracovává příkaz. <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> Je objekt, který se spouští na příkaz.  

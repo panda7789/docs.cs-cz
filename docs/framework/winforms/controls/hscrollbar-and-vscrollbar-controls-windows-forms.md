@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533150"
 ---
 # <a name="hscrollbar-and-vscrollbar-controls-windows-forms"></a>Ovládací prvky HScrollBar a VScrollBar (Windows Forms)
 Ovládací prvky Windows Forms posuvníku panelu se používají k poskytují navigaci v seznamu položek nebo velké množství informací posouváním buď vodorovně nebo svisle v rámci aplikace nebo ovládací prvek. Posuvníky jsou běžné element rozhraní systému Windows.  

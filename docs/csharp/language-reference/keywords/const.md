@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216243"
 ---
 # <a name="const-c-reference"></a>const (Referenční dokumentace jazyka C#)
 Můžete použít `const` – klíčové slovo deklarace konstantní pole nebo konstantní místní. Konstantní pole a místní hodnoty nejsou proměnné a nejde ho upravit. Konstanty mohou obsahovat čísla, logické hodnoty, řetězce nebo odkaz s hodnotou null. Nevytvářejte konstanta představují informace, které byste měli kdykoli změnit. Například nepoužívejte konstantní pole k uložení ceny služby, číslo verze produktu nebo název značky společnosti. Tyto hodnoty můžete změnit v čase, a protože kompilátory rozšířit konstanty, jiný kód, kompilovat s vaší knihovny bude muset být překompilovat, aby se změny projevily. Viz také [jen pro čtení](../../../csharp/language-reference/keywords/readonly.md) – klíčové slovo. Příklad:  

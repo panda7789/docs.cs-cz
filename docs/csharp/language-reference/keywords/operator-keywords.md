@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33273312"
 ---
 # <a name="operator-keywords-c-reference"></a>Klíčová slova operátorů (Referenční dokumentace jazyka C#)
 Umožňuje provádět různé akce, například vytváření objektů a kontrola běhového typu objektu, získávání velikost typu a další akce. Tato část obsahuje následující klíčová slova:  

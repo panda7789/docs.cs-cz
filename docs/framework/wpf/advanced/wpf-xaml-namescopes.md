@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548691"
 ---
 # <a name="wpf-xaml-namescopes"></a>Obory názvů WPF XAML
 XAML namescopes jsou koncept identifikující objekty, které jsou definovány v jazyce XAML. Názvy v jazyce XAML namescope slouží k vytvoření vztahů mezi názvy definované XAML objektů a jejich ekvivalenty u instance ve stromu k objektu. Obvykle XAML namescopes v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] spravovaného kódu jsou vytvořeny při načítání jednotlivých stránek XAML kořeny pro aplikace XAML. XAML namescopes jako objekt programovací jsou definovány <xref:System.Windows.Markup.INameScope> rozhraní a také implementují třídu praktické <xref:System.Windows.NameScope>.  

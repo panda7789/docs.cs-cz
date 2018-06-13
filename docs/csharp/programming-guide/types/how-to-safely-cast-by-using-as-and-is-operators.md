@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33325095"
 ---
 # <a name="how-to-safely-cast-by-using-as-and-is-operators-c-programming-guide"></a>Postupy: Bezpečné přetypování pomocí operátorů as a is (Průvodce programováním v C#)
 Protože jsou polymorfní objekty, je možné proměnnou typu základní třídy pro odvozený typ. Přístup odvozený typ metodě, je potřeba hodnota zpět do odvozený typ přetypování. Však k pokusu o jednoduchou cast v těchto případech vytvoří riziko vyvolání <xref:System.InvalidCastException>. To znamená proč C# poskytuje [je](../../../csharp/language-reference/keywords/is.md) a [jako](../../../csharp/language-reference/keywords/as.md) operátory. Tyto operátory můžete použít k ověření, zda přetypování bude úspěšné, aniž by docházelo vyvolání výjimky. Obecně `as` operátor je efektivnější, protože pokud přetypování můžete provedeny úspěšně ve skutečnosti vrátí hodnotu přetypování. `is` Operátor vrací pouze logickou hodnotu. Je proto dá právě chcete určit typ objektu, ale nemají ve skutečnosti vysílat.  

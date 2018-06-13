@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529531"
 ---
 # <a name="clickonce-deployment-for-windows-forms"></a>ClickOnce – nasazení pro Windows Forms
 Následující témata popisují [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)], technologie používá pro snadné nasazení aplikace Windows Forms do klientských počítačů.  

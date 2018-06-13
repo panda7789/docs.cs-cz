@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545461"
 ---
 # <a name="how-to-open-a-window"></a>Postupy: otevření okna
 Tento příklad ukazuje, jak k otevření okna.  

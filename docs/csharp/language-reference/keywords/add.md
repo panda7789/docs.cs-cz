@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216010"
 ---
 # <a name="add-c-reference"></a>add (Referenční dokumentace jazyka C#)
 `add` Kontextové klíčové slovo se používá k definování vlastní události přistupujícího objektu, která je volána, když kód klienta jako odběratel u vaší [událostí](../../../csharp/language-reference/keywords/event.md). Pokud zadáte vlastní `add` přistupujícího objektu, musíte také zadat [odebrat](../../../csharp/language-reference/keywords/remove.md) přistupujícího objektu.  

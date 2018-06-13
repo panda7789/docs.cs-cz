@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527414"
 ---
 # <a name="how-to-add-custom-information-to-a-treeview-or-listview-control-windows-forms"></a>Postupy: Přidání vlastních informací do ovládacího prvku TreeView nebo ListView (Windows Forms)
 Můžete vytvořit odvozené uzel ve Windows Forms <xref:System.Windows.Forms.TreeView> ovládací prvek nebo odvozené položky v <xref:System.Windows.Forms.ListView> ovládacího prvku. Odvození umožňuje přidat všechna pole, které budete potřebovat, a také vlastních metod a konstruktory pro jejich zpracování. Jedno použití této funkce je objekt zákazníka připojit na jednotlivé položky seznamu nebo uzel stromu. Zde uvedené příklady jsou pro <xref:System.Windows.Forms.TreeView> řízení, ale stejný postup lze použít pro <xref:System.Windows.Forms.ListView> ovládacího prvku.  

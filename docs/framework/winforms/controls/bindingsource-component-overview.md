@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529601"
 ---
 # <a name="bindingsource-component-overview"></a>BindingSource – přehled komponenty
 <xref:System.Windows.Forms.BindingSource> Součásti je určen ke zjednodušení procesu vytvoření vazby ovládacích prvků pro příslušný zdroj dat. <xref:System.Windows.Forms.BindingSource> Součást funguje jako kanál a zdroj dat pro další ovládací prvky pro vazbu. Poskytuje abstrakci svého formuláře datové připojení při předávání pomocí příkazů do seznamu základní data. Kromě toho můžete data přidat do něj tak, aby sám komponentou funguje jako zdroj dat.  

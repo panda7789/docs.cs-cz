@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218173"
 ---
 # <a name="-reference-c-compiler-options"></a>-reference (možnosti kompilátoru C#)
 **– Referenční dokumentace** možnost způsobí, že kompilátor importuje [veřejné](../../../csharp/language-reference/keywords/public.md) informací o typu do zadaného souboru do aktuálního projektu, a umožňuje odkazování na metadata ze zadaných souborů sestavení.  

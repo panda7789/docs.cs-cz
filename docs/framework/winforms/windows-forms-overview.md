@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541723"
 ---
 # <a name="windows-forms-overview"></a>Přehled produktu Windows Forms
 V následujícím přehledu popisuje výhody inteligentní klientské aplikace, hlavní funkce programování modelu Windows Forms a použití Windows Forms k vytvoření inteligentní klienti, které naplňují potřeby pro podniky a koncoví uživatelé je aktuální.  

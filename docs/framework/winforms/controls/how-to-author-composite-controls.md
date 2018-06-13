@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528980"
 ---
 # <a name="how-to-author-composite-controls"></a>Postupy: Vytváření složených ovládacích prvků
 Složené ovládací prvky mohou být použity v mnoha způsoby. Můžete je v rámci projektu aplikace pracovní plochy Windows vytvářet a používat pouze ve formulářích v projektu. Nebo můžete vytvořit je v projektu knihovny ovládacích prvků Windows, kompilace projektu do sestavení a pomocí ovládacích prvků v jiném projektu. Můžete dokonce dědit z nich a použít dědičnost vizuálních prvků se přizpůsobit rychle pro zvláštní účely.  

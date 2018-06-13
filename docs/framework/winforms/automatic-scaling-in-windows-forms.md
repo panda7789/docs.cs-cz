@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529880"
 ---
 # <a name="automatic-scaling-in-windows-forms"></a>Automatická změna měřítka ve Windows Forms
 Automatické škálování umožňuje formulář a jeho ovládacích prvků, navržená tak, na jeden počítač se určité zobrazení řešení nebo systém písmo, správně zobrazený na jiný počítač s jiným zobrazením řešení nebo systém písmo. Zaručuje, formulář a jeho ovládacích prvků bude inteligentně velikosti být v souladu s nativní windows a další aplikace na počítače uživatelů i ostatní vývojáři. Podporu [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] pro automatické škálování a vizuální styly umožňuje [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] aplikace udržovat konzistentní vzhled a chování ve srovnání s nativní aplikace systému Windows na počítači každého uživatele.

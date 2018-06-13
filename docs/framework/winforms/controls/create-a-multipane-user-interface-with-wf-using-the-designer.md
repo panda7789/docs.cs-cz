@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529858"
 ---
 # <a name="how-to-create-a-multipane-user-interface-with-windows-forms-using-the-designer"></a>Postupy: Vytváření uživatelského rozhraní s více podokny s formuláři Windows pomocí Návrháře
 V následujícím postupu vytvoříte více podokny uživatelské rozhraní, které je podobné použít v aplikaci Microsoft Outlook s **složky** seznamu **zprávy** podokně a **Preview** podokně. Toto uspořádání je dosaženo hlavně prostřednictvím ukotvení ovládacích prvků pomocí formuláře.  

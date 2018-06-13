@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33265798"
 ---
 # <a name="try-catch-finally-c-reference"></a>try-catch-finally (Referenční dokumentace jazyka C#)
 Běžné použití `catch` a `finally` společně se získání a používání prostředků v `try` blokovat, řešit ve výjimečných případech `catch` blokovat a uvolnit prostředky v `finally` bloku.  

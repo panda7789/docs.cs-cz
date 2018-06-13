@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528338"
 ---
 # <a name="vector-graphics-overview"></a>Přehled vektorové grafiky
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Kreslení čar, obdélníků a ostatním tvarům na souřadnicový systém. Můžete vybrat z různých souřadnicových systémů, ale výchozí souřadnicový systém má původ v levém horním rohu s osou x tvořenou hodnotami odkazující na ose y míří dolů a doprava. Ve výchozím nastavení souřadnicový systém Měrná jednotka je pixelech.  

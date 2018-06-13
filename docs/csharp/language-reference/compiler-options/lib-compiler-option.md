@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216853"
 ---
 # <a name="-lib-c-compiler-options"></a>-lib (možnosti kompilátoru C#)
 **-Lib** možnost určuje umístění sestavení odkazovaných pomocí možnosti [– referenční dokumentace (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) možnost.  

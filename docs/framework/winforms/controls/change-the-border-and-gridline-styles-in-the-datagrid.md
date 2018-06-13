@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528746"
 ---
 # <a name="how-to-change-the-border-and-gridline-styles-in-the-windows-forms-datagridview-control"></a>Postupy: Změna stylů ohraničení a mřížky v ovládacím prvku Windows Forms DataGridView
 Pomocí <xref:System.Windows.Forms.DataGridView> ovládací prvek, můžete přizpůsobit vzhled ovládacího prvku ohraničení a mřížky ke zlepšení činnost koncového uživatele. Můžete upravit barvy čar mřížky a styl ohraničení ovládacího prvku kromě styly ohraničení buněk v ovládacím prvku. Můžete také použít jinou buňku styly ohraničení pro běžné buněk, buňky záhlaví řádků a buňky záhlaví sloupce.  

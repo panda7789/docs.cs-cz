@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526061"
 ---
 # <a name="bindingnavigator-control-windows-forms"></a>BindingNavigator – ovládací prvek (Windows Forms)
 `BindingNavigator` Je řízení navigace a manipulace uživatelské rozhraní (UI) pro ovládací prvky vázané na data. `BindingNavigator` Řízení umožňuje uživatelům procházet a pracovat s daty ve formuláři Windows.  

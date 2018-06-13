@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33315656"
 ---
 # <a name="how-to-know-the-difference-between-passing-a-struct-and-passing-a-class-reference-to-a-method-c-programming-guide"></a>Postupy: Zjištění rozdílu mezi předáním struktury a předáním odkazu na třídu metodě (Průvodce programováním v C#)
 Následující příklad ukazuje, jak předávání [struktura](../../../csharp/language-reference/keywords/struct.md) do metody se liší od předávání [třída](../../../csharp/language-reference/keywords/class.md) instance na metodu. V příkladu oba argumenty (struktura a třída instance) jsou předaná hodnota a obě metody změna hodnoty argumentu jedno pole. Ale výsledky ze dvou metod nejsou stejné vzhledem k tomu, co se předá, když je předat struktury se liší od co je předán při předání instance třídy.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216132"
 ---
 # <a name="-nostdlib-c-compiler-options"></a>-nostdlib (možnosti kompilátoru C#)
 **-nostdlib** zabraňuje importu mscorlib.dll, která definuje obor názvů, celý systém.  

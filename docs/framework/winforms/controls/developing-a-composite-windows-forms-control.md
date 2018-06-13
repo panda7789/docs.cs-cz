@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528282"
 ---
 # <a name="developing-a-composite-windows-forms-control"></a>Vývoj složeného ovládacího prvku Windows Forms
 Složené ovládací prvek Windows Forms můžete vyvíjet kombinací dalších ovládacích prvků Windows Forms. Složené ovládací prvky, které jsou odvozeny od <xref:System.Web.UI.UserControl> se nazývají uživatelské ovládací prvky. Základní třídy, <xref:System.Windows.Forms.UserControl>, poskytuje směrování pro podřízené prvky, čímž zajišťuje, že podřízené ovládací prvky mohou získat fokus klávesnice. Příklad uživatelského ovládacího prvku, naleznete v části <xref:System.Windows.Forms.UserControl> ukázku v [postupy: použití atributů v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md).  

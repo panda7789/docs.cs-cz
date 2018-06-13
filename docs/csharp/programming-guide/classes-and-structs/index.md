@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327356"
 ---
 # <a name="classes-and-structs-c-programming-guide"></a>Třídy a struktury (Průvodce programováním v C#)
 Třídy a struktury jsou dva základní konstrukce z obecný systém typů v rozhraní .NET Framework. Každá je v podstatě struktura dat, který zapouzdřuje sadu dat a chování, které patří společně jako logickou jednotku. Data a chování jsou *členy* třídy nebo struktura, a obsahují metody, vlastnosti a události a podobně, jak je uvedeno dále v tomto tématu.  

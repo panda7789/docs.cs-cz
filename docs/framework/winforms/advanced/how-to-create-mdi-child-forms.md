@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527496"
 ---
 # <a name="how-to-create-mdi-child-forms"></a>Postupy: Vytváření podřízených formulářů MDI
 Podřízených formulářů MDI jsou důležitou součástí [aplikace rozhraní více dokumentů (MDI)](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md), jak tyto formuláře jsou center interakce s uživatelem.  

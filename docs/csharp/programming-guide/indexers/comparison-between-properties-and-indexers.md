@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33330369"
 ---
 # <a name="comparison-between-properties-and-indexers-c-programming-guide"></a>Porovnání mezi vlastnostmi a indexery (Průvodce programováním v C#)
 Indexery jsou stejné jako vlastnosti. S výjimkou rozdíly uvedené v následující tabulce všechna pravidla, které jsou definovány pro vlastnost přístupových objektů týkají přístupové objekty indexer také.  

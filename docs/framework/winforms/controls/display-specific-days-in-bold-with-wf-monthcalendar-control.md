@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528528"
 ---
 # <a name="how-to-display-specific-days-in-bold-with-the-windows-forms-monthcalendar-control"></a>Postupy: Tučné zobrazení konkrétních dnů pomocí ovládacího prvku Windows Forms MonthCalendar
 Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek může zobrazit dnů tučným písmem jako singulární kalendářní data nebo na základě opakovaných. Můžete takto například k upozornění speciální datum, jako je například svátků a víkendech.  

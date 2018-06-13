@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545406"
 ---
 # <a name="how-to-create-a-text-decoration"></a>Postupy: Vytvoření dekorace textu
 A <xref:System.Windows.TextDecoration> objekt je visual dekoru můžete přidat do textu. Existují čtyři typy textové dekorace: podtržení, standardních hodnot, přeškrtnutí a čáry nahoře. Následující příklad ukazuje umístění textové dekorace textu.  

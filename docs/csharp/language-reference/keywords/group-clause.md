@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33217481"
 ---
 # <a name="group-clause-c-reference"></a>group – klauzule (Referenční dokumentace jazyka C#)
 `group` Klauzule vrací posloupnost <xref:System.Linq.IGrouping%602> objekty, které obsahovat nula nebo více položek, které odpovídají hodnotě klíče pro skupinu. Například můžete seskupit posloupnost řetězce podle první písmeno každého řetězce. V takovém případě první písmeno je klíč a má typ [char](../../../csharp/language-reference/keywords/char.md)a je uložen ve `Key` vlastnost jednotlivých <xref:System.Linq.IGrouping%602> objektu. Kompilátor odvodí typ klíče.  

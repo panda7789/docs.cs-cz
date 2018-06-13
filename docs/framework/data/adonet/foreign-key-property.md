@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762647"
 ---
 # <a name="foreign-key-property"></a>vlastností cizího klíče
 A *vlastností cizího klíče* v Entity Data Model (EDM) je primitivní typ [vlastnost](../../../../docs/framework/data/adonet/property.md) (nebo sadu vlastností primitivní typ) na [typ entity](../../../../docs/framework/data/adonet/entity-type.md) obsahující [klíč entity](../../../../docs/framework/data/adonet/entity-key.md) jiného typu entity.  

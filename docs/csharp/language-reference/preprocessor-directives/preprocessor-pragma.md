@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33278806"
 ---
 # <a name="pragma-c-reference"></a>#pragma (referenční dokumentace jazyka C#)
 `#pragma` poskytuje kompilátor zvláštní pokyny pro kompilaci souboru, ve kterém se zobrazí. Kompilátor musí podporovat pokynů. Jinými slovy, nemůžete použít `#pragma` k vytvoření vlastních pokynů předběžného zpracování. Kompilátor jazyka Microsoft C# podporuje následující dva `#pragma` pokyny:  

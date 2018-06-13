@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218394"
 ---
 # <a name="from-clause-c-reference"></a>from clause (Referenční dokumentace jazyka C#)
 Výraz dotazu musí začínat `from` klauzule. Kromě toho může výrazu dotazu obsahovat dílčí dotazy, které také začínat `from` klauzule. `from` Klauzuli určuje následující:  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33274216"
 ---
 # <a name="lock-statement-c-reference"></a>lock – příkaz (Referenční dokumentace jazyka C#)
 `lock` – Klíčové slovo označí blok příkaz jako důležitý oddíl získání zámku vzájemné vyloučení pro daný objekt, provádění příkazu a pak uvolnění uzamčení. Následující příklad obsahuje `lock` příkaz.  

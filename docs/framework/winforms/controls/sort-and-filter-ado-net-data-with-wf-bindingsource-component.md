@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538062"
 ---
 # <a name="how-to-sort-and-filter-adonet-data-with-the-windows-forms-bindingsource-component"></a>Postupy: Řazení a filtrování dat ADO.NET pomocí součásti Windows Forms BindingSource
 Můžete vystavit řazení a filtrování funkce <xref:System.Windows.Forms.BindingSource> ovládat prostřednictvím <xref:System.Windows.Forms.BindingSource.Sort%2A> a <xref:System.Windows.Forms.BindingSource.Filter%2A> vlastnosti. Jednoduché řazení, pokud je základní zdroj dat můžete použít <xref:System.ComponentModel.IBindingList>, a můžete použít filtrování a rozšířené řazení, pokud je zdroj dat <xref:System.ComponentModel.IBindingListView>. <xref:System.Windows.Forms.BindingSource.Sort%2A> Vlastnost vyžaduje standardní [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] syntaxe: následuje řetězec představující název sloupce dat ve zdroji dat `ASC` nebo `DESC` indikující, zda v seznamu musí být seřazeny ve vzestupném nebo sestupném pořadí. Můžete nastavit pokročilé řazení nebo více sloupci řazení oddělením každý sloupec s oddělovačem čárkami. <xref:System.Windows.Forms.BindingSource.Filter%2A> Vlastnost trvá řetězcového výrazu.  

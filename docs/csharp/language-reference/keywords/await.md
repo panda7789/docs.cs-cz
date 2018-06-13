@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218917"
 ---
 # <a name="await-c-reference"></a>await – – operátor (Referenční dokumentace jazyka C#)
 `await` Operátor se použije pro úlohu v asynchronní metodu vložit bod pozastavení při provádění metody až do dokončení awaited úloh. Úloha reprezentuje probíhající práce.  

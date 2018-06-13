@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216017"
 ---
 # <a name="global-c-reference"></a>global (Referenční dokumentace jazyka C#)
 `global` Kontextové klíčové slovo, pokud jde před [:: operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md), odkazuje na globální obor názvů, který je výchozí obor názvů pro žádné program C# a je jinak nepojmenované. Další informace najdete v tématu [postupy: použití aliasu globálního Namespace](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md).  

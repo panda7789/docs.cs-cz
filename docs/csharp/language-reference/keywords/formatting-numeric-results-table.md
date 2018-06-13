@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216909"
 ---
 # <a name="formatting-numeric-results-table-c-reference"></a>Tabulka formátování číselných výsledků (Referenční dokumentace jazyka C#)
 Můžete formátování číselných výsledků pomocí <xref:System.String.Format%2A?displayProperty=nameWithType> metoda, až <xref:System.Console.Write%2A?displayProperty=nameWithType> nebo <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metody, které volání `String.Format`, nebo pomocí [řetězec interpolace](../tokens/interpolated.md). Formát zadané pomocí řetězce formátu. Následující tabulka obsahuje podporované standardní formát řetězce. Řetězec formátu má následující podobu: `Axx`, kde `A` je specifikátor formátu a `xx` je specifikátor přesnosti. Specifikátor formátu řídí typ formátování aplikované na číselnou hodnotu a specifikátor přesnosti určuje počet platných číslic nebo desetinných míst formátovaný výstupu. Hodnota může být v rozmezí specifikátor přesnosti od 0 do 99.  

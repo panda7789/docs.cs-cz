@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546676"
 ---
 # <a name="document-serialization-and-storage"></a>Serializace a úložiště dokumentu
 Rozhraní Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobrazování dokumentů vysoké kvality.  Rozšířené funkce, které podporují – dokumenty a toku dokumenty, rozšířené zobrazení ovládacích prvků, v kombinaci s efektivní 2D a 3D grafický funkce trvat aplikací rozhraní .NET Framework na novou úroveň kvality a činnost koncového uživatele.  Schopnost spravovat flexibilně reprezentaci v paměti dokumentu je klíčovou funkcí rozhraní .NET Framework a schopnost efektivně uložení a načtení dokumenty z jiného úložiště dat je zapotřebí téměř každé aplikace.  Proces převodu dokument k úložišti externí data z interního vyjádření v paměti se říká serializace.  Proces zpětné čtení úložiště dat a znovu vytvořit na původní instanci v paměti se říká deserializace.  

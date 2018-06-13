@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33266152"
 ---
 # <a name="namespace-keywords-c-reference"></a>Klíčová slova oboru názvů (Referenční dokumentace jazyka C#)
 Tato část popisuje klíčová slova a operátory, které jsou spojené s použitím oborů názvů:  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531395"
 ---
 # <a name="how-to-bind-to-a-web-service-using-the-windows-forms-bindingsource"></a>Postupy: Připojení k webové službě pomocí Windows Forms BindingSource
 Pokud chcete vytvořit vazbu ovládacího prvku formuláře Windows do výsledků získaných z volání webové služby XML, můžete použít <xref:System.Windows.Forms.BindingSource> součásti. Tento postup je podobný vazby <xref:System.Windows.Forms.BindingSource> součásti typu. Je nutné vytvořit proxy server na straně klienta, který obsahuje metody a typy, které jsou vystavené webovou službu. Vygenerování proxy server na straně klienta z webové služby (.asmx) sám sebe nebo jeho webové služby (soubor Description Language WSDL). Váš klientský proxy server musí navíc vystavovat pole komplexní typy používané webovou službu jako veřejné vlastnosti. Pak vytvořte vazbu <xref:System.Windows.Forms.BindingSource> na jeden z typů, které jsou zveřejněné na webu služby proxy serveru.  

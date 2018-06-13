@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33219177"
 ---
 # <a name="-linkresource-c-compiler-options"></a>-linkresource (možnosti kompilátoru C#)
 Vytvoří odkaz na prostředek rozhraní .NET Framework ve výstupním souboru. Souboru prostředků nebyla přidána do výstupního souboru. Tím se liší od [– prostředek](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) možnost, která vložení zdrojového souboru do výstupního souboru.  

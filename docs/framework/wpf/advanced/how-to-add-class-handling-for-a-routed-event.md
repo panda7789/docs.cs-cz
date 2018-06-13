@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545360"
 ---
 # <a name="how-to-add-class-handling-for-a-routed-event"></a>Postupy: Přidání zpracování třídy pro směrovanou událost
 Směrované události mohou být zpracovány, obslužné rutiny třídy nebo instance obslužné rutiny v každém uzlu dané trasy. Obslužné rutiny třídy jsou vyvolány nejprve a lze implementace třídy potlačit události z instance zpracování nebo zavést další události konkrétní chování na události, které jsou vlastněny základní třídy. Tento příklad ukazuje dva úzce související techniky pro implementaci třídy obslužné rutiny.  

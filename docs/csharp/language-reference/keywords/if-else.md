@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218740"
 ---
 # <a name="if-else-c-reference"></a>if-else (Referenční dokumentace jazyka C#)
 `if` Příkaz identifikuje, který příkaz ke spuštění na základě hodnoty z `Boolean` výraz. V následujícím příkladu `Boolean` proměnné `result` je nastaven na `true` a pak vrátit se změnami `if` příkaz. Výstupem je `The condition is true`.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33286172"
 ---
 # <a name="ltlt-operator-c-reference"></a>&lt;&lt; Operátor (referenční dokumentace jazyka C#)
 Operátor posunutí doleva (`<<`) posuny jeho první operand zbývajících podle počtu bitů určeného její druhý operand. Musí být typ Druhý operand [int](../../../csharp/language-reference/keywords/int.md) nebo typu, který má předdefinované implicitní číselný převod na `int`.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545815"
 ---
 # <a name="resources-wpf"></a>Zdroje (WPF)
 Prostředek je objekt, který lze znovu použít na různých místech v aplikaci. WPF podporuje různé typy prostředků. Tyto prostředky jsou primárně dva typy prostředků: XAML prostředků a prostředků datových souborů. Příklady prostředků XAML: štětce a stylů. Soubory prostředků data jsou jiný spustitelný soubor datové soubory, které aplikace potřebuje.  

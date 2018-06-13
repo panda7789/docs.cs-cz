@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216474"
 ---
 # <a name="explicit-c-reference"></a>explicit (Referenční dokumentace jazyka C#)
 `explicit` – Klíčové slovo deklaruje operátor převodu uživatelem definovaný typ, který musí být volána s přetypování. Tento operátor například převede ze třídy s názvem Fahrenheita na třídu s názvem c:  

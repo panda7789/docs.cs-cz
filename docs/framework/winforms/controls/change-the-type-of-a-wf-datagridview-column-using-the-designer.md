@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527012"
 ---
 # <a name="how-to-change-the-type-of-a-windows-forms-datagridview-column-using-the-designer"></a>Postupy: Změna typu sloupce Windows Forms DataGridView pomocí Návrháře
 Někdy budete chtít změnit typ sloupce, který již byl přidán do Windows Forms <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Můžete například změnit některé sloupce, které se generují automaticky po vytvoření vazby ovládacího prvku ke zdroji dat typy. To je užitečné, když má sloupců obsahujících cizí klíče na řádky v tabulce související tabulky, které můžete zobrazit. V takovém případě můžete nahradit sloupce textové pole, které zobrazují tyto cizí klíče s sloupce pole se seznamem, které zobrazují smysluplnější hodnoty z související tabulky.  

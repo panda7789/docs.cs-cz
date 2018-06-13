@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529022"
 ---
 # <a name="types-of-bitmaps"></a>Typy rastrových obrázků
 Rastrový obrázek je pole bitů, které určuje barvu každého obrazového bodu v obdélníková pole pixelů. Počet bitů věnované na jednotlivé pixelů určuje počet barev, které lze přiřadit k této pixelů. Například pokud každý pixelů je reprezentována 4 bits, pak dané pixelů lze přiřadit jedné z 16 různých barev (2 ^ 4 = 16). Následující tabulka uvádí několik příkladů počet barev, které mohou být přiřazeny pixelu reprezentované zadaný počet bitů.  

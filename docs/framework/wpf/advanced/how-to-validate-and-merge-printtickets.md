@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548490"
 ---
 # <a name="how-to-validate-and-merge-printtickets"></a>Postupy: Ověření a sloučení PrintTickets
 [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] [Tiskových schématu](http://go.microsoft.com/fwlink/?LinkId=186397) zahrnuje flexibilní a rozšiřitelný <xref:System.Printing.PrintCapabilities> a <xref:System.Printing.PrintTicket> elementy. První rozepisuje možností zařízení pro tisk a druhá možnost určuje, jak má zařízení použít tyto možnosti s ohledem na konkrétní pořadí dokumenty, jednotlivý dokument nebo jednotlivých stránek.  

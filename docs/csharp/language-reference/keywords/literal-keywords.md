@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33265759"
 ---
 # <a name="literal-keywords-c-reference"></a>Literálová klíčová slova (Referenční dokumentace jazyka C#)
 C# má následující Literálová klíčová slova:  

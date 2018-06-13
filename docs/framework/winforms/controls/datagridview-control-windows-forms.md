@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529922"
 ---
 # <a name="datagridview-control-windows-forms"></a>DataGridView – ovládací prvek (Windows Forms)
 `DataGridView` Řízení poskytuje výkonný a flexibilní způsob, jak zobrazit data ve formátu tabulky. Můžete použít `DataGridView` řízení zobrazíte jen pro čtení zobrazení malé množství dat nebo je možné škálovat, aby bylo zřejmé, upravitelných zobrazeních velmi rozsáhlých datových sad.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529425"
 ---
 # <a name="displaying-data-in-the-windows-forms-datagridview-control"></a>Zobrazení dat v ovládacím prvku Windows Forms DataGridView
 `DataGridView` Řízení se používá k zobrazení dat z různých zdrojů externí data. Alternativně můžete přidávání řádků a sloupců do ovládacího prvku a ručně přidejte do ní data.  
