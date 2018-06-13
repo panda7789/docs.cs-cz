@@ -1,39 +1,28 @@
 ---
-title: "3338 – ChannelReceiveStop"
-ms.custom: 
+title: 3338 – ChannelReceiveStop
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: e8f0c71e-69e5-4390-aef3-e51c67d0bf0d
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 676d61bf1ebf4119df2d8e89a563214433cb50bf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1cec65a537cc3d679ffe2a00ef38959380281092
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33463997"
 ---
-# <a name="3338---channelreceivestop"></a><span data-ttu-id="6d87d-102">3338 – ChannelReceiveStop</span><span class="sxs-lookup"><span data-stu-id="6d87d-102">3338 - ChannelReceiveStop</span></span>
-## <a name="properties"></a><span data-ttu-id="6d87d-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="6d87d-103">Properties</span></span>  
+# <a name="3338---channelreceivestop"></a><span data-ttu-id="8f2d4-102">3338 – ChannelReceiveStop</span><span class="sxs-lookup"><span data-stu-id="8f2d4-102">3338 - ChannelReceiveStop</span></span>
+## <a name="properties"></a><span data-ttu-id="8f2d4-103">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="8f2d4-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="6d87d-104">ID</span><span class="sxs-lookup"><span data-stu-id="6d87d-104">ID</span></span>|<span data-ttu-id="6d87d-105">3338</span><span class="sxs-lookup"><span data-stu-id="6d87d-105">3338</span></span>|  
-|<span data-ttu-id="6d87d-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="6d87d-106">Keywords</span></span>|<span data-ttu-id="6d87d-107">Kanál</span><span class="sxs-lookup"><span data-stu-id="6d87d-107">Channel</span></span>|  
-|<span data-ttu-id="6d87d-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="6d87d-108">Level</span></span>|<span data-ttu-id="6d87d-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="6d87d-109">Verbose</span></span>|  
-|<span data-ttu-id="6d87d-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="6d87d-110">Channel</span></span>|<span data-ttu-id="6d87d-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="6d87d-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="8f2d4-104">ID</span><span class="sxs-lookup"><span data-stu-id="8f2d4-104">ID</span></span>|<span data-ttu-id="8f2d4-105">3338</span><span class="sxs-lookup"><span data-stu-id="8f2d4-105">3338</span></span>|  
+|<span data-ttu-id="8f2d4-106">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="8f2d4-106">Keywords</span></span>|<span data-ttu-id="8f2d4-107">Kanál</span><span class="sxs-lookup"><span data-stu-id="8f2d4-107">Channel</span></span>|  
+|<span data-ttu-id="8f2d4-108">úroveň</span><span class="sxs-lookup"><span data-stu-id="8f2d4-108">Level</span></span>|<span data-ttu-id="8f2d4-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="8f2d4-109">Verbose</span></span>|  
+|<span data-ttu-id="8f2d4-110">Kanál</span><span class="sxs-lookup"><span data-stu-id="8f2d4-110">Channel</span></span>|<span data-ttu-id="8f2d4-111">Aplikaci Microsoft Windows Server – aplikace/Debug</span><span class="sxs-lookup"><span data-stu-id="8f2d4-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="6d87d-112">Popis</span><span class="sxs-lookup"><span data-stu-id="6d87d-112">Description</span></span>  
- <span data-ttu-id="6d87d-113">Tato událost je vygenerované při kanál přijímat zastaví.</span><span class="sxs-lookup"><span data-stu-id="6d87d-113">This event is emitted when the channel receive stops.</span></span>  
+## <a name="description"></a><span data-ttu-id="8f2d4-112">Popis</span><span class="sxs-lookup"><span data-stu-id="8f2d4-112">Description</span></span>  
+ <span data-ttu-id="8f2d4-113">Tato událost je vygenerované při kanál přijímat zastaví.</span><span class="sxs-lookup"><span data-stu-id="8f2d4-113">This event is emitted when the channel receive stops.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="6d87d-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="6d87d-114">Message</span></span>  
- <span data-ttu-id="6d87d-115">ChannelHandlerId:% 1 – zpráva zobrazí smyčky byla zastavena.</span><span class="sxs-lookup"><span data-stu-id="6d87d-115">ChannelHandlerId:%1 - Message receive loop stopped.</span></span>  
+## <a name="message"></a><span data-ttu-id="8f2d4-114">Zpráva</span><span class="sxs-lookup"><span data-stu-id="8f2d4-114">Message</span></span>  
+ <span data-ttu-id="8f2d4-115">ChannelHandlerId:% 1 – zpráva zobrazí smyčky byla zastavena.</span><span class="sxs-lookup"><span data-stu-id="8f2d4-115">ChannelHandlerId:%1 - Message receive loop stopped.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="6d87d-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="6d87d-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="8f2d4-116">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="8f2d4-116">Details</span></span>

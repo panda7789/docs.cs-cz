@@ -1,36 +1,25 @@
 ---
 title: System.ServiceModel.Channels.MsmqPoisonMessageRejected
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 0e64b9bd-1f12-43df-a189-d7be3c2bace1
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 28924f04dc83387f49c2369c2598c028f9b8d4bb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7dc1e4120caae7c4a592067f5e77ed4f56e82e6b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33478163"
 ---
-# <a name="systemservicemodelchannelsmsmqpoisonmessagerejected"></a><span data-ttu-id="77de4-102">System.ServiceModel.Channels.MsmqPoisonMessageRejected</span><span class="sxs-lookup"><span data-stu-id="77de4-102">System.ServiceModel.Channels.MsmqPoisonMessageRejected</span></span>
-<span data-ttu-id="77de4-103">Poškozená zpráva byla odmítnuta.</span><span class="sxs-lookup"><span data-stu-id="77de4-103">Poison message rejected.</span></span>  
+# <a name="systemservicemodelchannelsmsmqpoisonmessagerejected"></a><span data-ttu-id="e8f66-102">System.ServiceModel.Channels.MsmqPoisonMessageRejected</span><span class="sxs-lookup"><span data-stu-id="e8f66-102">System.ServiceModel.Channels.MsmqPoisonMessageRejected</span></span>
+<span data-ttu-id="e8f66-103">Poškozená zpráva byla odmítnuta.</span><span class="sxs-lookup"><span data-stu-id="e8f66-103">Poison message rejected.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="77de4-104">Popis</span><span class="sxs-lookup"><span data-stu-id="77de4-104">Description</span></span>  
- <span data-ttu-id="77de4-105">Trasování označuje, že byl nezpracovatelná zpráva došlo a následně odmítnuto.</span><span class="sxs-lookup"><span data-stu-id="77de4-105">The trace indicates that a poison message was encountered and subsequently rejected.</span></span> <span data-ttu-id="77de4-106">K tomu dojde při `ReceiveErrorHandling` – NetMsmqBinding nebo – MsmqIntegrationBinding je nastavena na `Reject`.</span><span class="sxs-lookup"><span data-stu-id="77de4-106">This occurs when the `ReceiveErrorHandling` property on the NetMsmqBinding or MsmqIntegrationBinding is set to `Reject`.</span></span> <span data-ttu-id="77de4-107">Odmítnuté zprávy doručuje zpět do odesílatele [frontu nedoručených zpráv](http://go.microsoft.com/fwlink/?LinkId=99544).</span><span class="sxs-lookup"><span data-stu-id="77de4-107">A rejected message is delivered back to the sender’s [Dead-Letter Queue](http://go.microsoft.com/fwlink/?LinkId=99544).</span></span>  
+## <a name="description"></a><span data-ttu-id="e8f66-104">Popis</span><span class="sxs-lookup"><span data-stu-id="e8f66-104">Description</span></span>  
+ <span data-ttu-id="e8f66-105">Trasování označuje, že byl nezpracovatelná zpráva došlo a následně odmítnuto.</span><span class="sxs-lookup"><span data-stu-id="e8f66-105">The trace indicates that a poison message was encountered and subsequently rejected.</span></span> <span data-ttu-id="e8f66-106">K tomu dojde při `ReceiveErrorHandling` – NetMsmqBinding nebo – MsmqIntegrationBinding je nastavena na `Reject`.</span><span class="sxs-lookup"><span data-stu-id="e8f66-106">This occurs when the `ReceiveErrorHandling` property on the NetMsmqBinding or MsmqIntegrationBinding is set to `Reject`.</span></span> <span data-ttu-id="e8f66-107">Odmítnuté zprávy doručuje zpět do odesílatele [frontu nedoručených zpráv](http://go.microsoft.com/fwlink/?LinkId=99544).</span><span class="sxs-lookup"><span data-stu-id="e8f66-107">A rejected message is delivered back to the sender’s [Dead-Letter Queue](http://go.microsoft.com/fwlink/?LinkId=99544).</span></span>  
   
- <span data-ttu-id="77de4-108">V tématu [zpracování zpráv Poison](http://go.microsoft.com/fwlink/?LinkId=99546) další podrobnosti o kdy začnou poškozených zpráv a postup konfigurace služby pro správně zpracovat.</span><span class="sxs-lookup"><span data-stu-id="77de4-108">See [Poison-Message Handling](http://go.microsoft.com/fwlink/?LinkId=99546) for more details on when messages become poison and how to configure your service to handle them appropriately.</span></span> <span data-ttu-id="77de4-109">V tématu [MQMarkMessageRejected](http://go.microsoft.com/fwlink/?LinkId=99548) další podrobnosti o odmítnuté zprávy znamená služby MSMQ.</span><span class="sxs-lookup"><span data-stu-id="77de4-109">See [MQMarkMessageRejected](http://go.microsoft.com/fwlink/?LinkId=99548) for more details on what a rejected message means in MSMQ.</span></span>  
+ <span data-ttu-id="e8f66-108">V tématu [zpracování zpráv Poison](http://go.microsoft.com/fwlink/?LinkId=99546) další podrobnosti o kdy začnou poškozených zpráv a postup konfigurace služby pro správně zpracovat.</span><span class="sxs-lookup"><span data-stu-id="e8f66-108">See [Poison-Message Handling](http://go.microsoft.com/fwlink/?LinkId=99546) for more details on when messages become poison and how to configure your service to handle them appropriately.</span></span> <span data-ttu-id="e8f66-109">V tématu [MQMarkMessageRejected](http://go.microsoft.com/fwlink/?LinkId=99548) další podrobnosti o odmítnuté zprávy znamená služby MSMQ.</span><span class="sxs-lookup"><span data-stu-id="e8f66-109">See [MQMarkMessageRejected](http://go.microsoft.com/fwlink/?LinkId=99548) for more details on what a rejected message means in MSMQ.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="77de4-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="77de4-110">See Also</span></span>  
- [<span data-ttu-id="77de4-111">Trasování</span><span class="sxs-lookup"><span data-stu-id="77de4-111">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="77de4-112">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="77de4-112">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="77de4-113">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="77de4-113">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)  
- [<span data-ttu-id="77de4-114">Zpracování zpráv Poison</span><span class="sxs-lookup"><span data-stu-id="77de4-114">Poison-Message Handling</span></span>](http://go.microsoft.com/fwlink/?LinkId=99546)  
- [<span data-ttu-id="77de4-115">MQMarkMessageRejected</span><span class="sxs-lookup"><span data-stu-id="77de4-115">MQMarkMessageRejected</span></span>](http://go.microsoft.com/fwlink/?LinkId=99548)
+## <a name="see-also"></a><span data-ttu-id="e8f66-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="e8f66-110">See Also</span></span>  
+ [<span data-ttu-id="e8f66-111">Trasování</span><span class="sxs-lookup"><span data-stu-id="e8f66-111">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="e8f66-112">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="e8f66-112">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="e8f66-113">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="e8f66-113">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)  
+ [<span data-ttu-id="e8f66-114">Zpracování zpráv Poison</span><span class="sxs-lookup"><span data-stu-id="e8f66-114">Poison-Message Handling</span></span>](http://go.microsoft.com/fwlink/?LinkId=99546)  
+ [<span data-ttu-id="e8f66-115">MQMarkMessageRejected</span><span class="sxs-lookup"><span data-stu-id="e8f66-115">MQMarkMessageRejected</span></span>](http://go.microsoft.com/fwlink/?LinkId=99548)
