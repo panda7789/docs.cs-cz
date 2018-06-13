@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587876"
 ---
 # <a name="39line39-statements-are-no-longer-supported-visual-basic-compiler-error"></a>&#39;Řádek&#39; příkazy již nejsou podporovány (Chyba kompilátoru jazyka Visual Basic)
 Příkazy řádku již nejsou podporovány. Vstupně-výstupní funkce je k dispozici jako `Microsoft.VisualBasic.FileSystem.LineInput` a grafické funkce je k dispozici jako `System.Drawing.Graphics.DrawLine`.  

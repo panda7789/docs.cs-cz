@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583237"
 ---
 # <a name="how-to-write-messages-to-and-read-messages-from-a-dataflow-block"></a>Postupy: Zápis zpráv do bloku toku dat a čtení zpráv z bloku toku dat
 Tento dokument popisuje, jak používat knihovna toku dat TPL čtení zpráv z bloku toku dat a zápis zpráv do. Knihovna toku dat TPL poskytuje synchronní a asynchronní metody pro zápis zprávy a čtení zpráv z bloku toku dat. Používá tento dokument <xref:System.Threading.Tasks.Dataflow.BufferBlock%601?displayProperty=nameWithType> třídy. <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> Třída vyrovnávacích pamětí zpráv a chová jako zdroj zprávy a jako cíl zprávy.  

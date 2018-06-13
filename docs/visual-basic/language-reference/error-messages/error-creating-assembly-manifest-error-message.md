@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588298"
 ---
 # <a name="error-creating-assembly-manifest-lterror-messagegt"></a>Chyba při vytváření sestavení manifestu: &lt;chybová zpráva&gt;
 Visual Basic – kompilátor volá Linker sestavení (Al.exe, také známé jako Alink) ke generování sestavení s manifestu. Linkeru ohlásilo chybu ve fázi před emisí vytváření sestavení.  

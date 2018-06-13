@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586448"
 ---
 # <a name="identifier-is-too-long"></a>Identifikátor je příliš dlouhý.
 Název nebo identifikátor každý programovací element je omezený na 1023 znaků. Kromě toho plně kvalifikovaný název nesmí překročit 1023 znaků. To znamená, že řetězec celý identifikátor (`<namespace>.<...>.<namespace>.<class>.<element>`) nesmí být víc než 1023 znaků včetně operátor přístup ke členu (`.`) znaků.  

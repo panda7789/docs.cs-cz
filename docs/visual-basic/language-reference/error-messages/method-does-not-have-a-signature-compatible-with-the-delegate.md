@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593246"
 ---
 # <a name="method-does-not-have-a-signature-compatible-with-the-delegate"></a>Podpis metody není kompatibilní s delegátem.
 Je mezi podpisy metody a delegáta, který se pokoušíte použít nekompatibility. `Delegate` Příkaz definuje parametry a návratové typy delegát třídy. Žádné procedury, která má odpovídající parametrům typů kompatibilní a vrátí typy lze použít k vytvoření instance tohoto typu delegáta.  

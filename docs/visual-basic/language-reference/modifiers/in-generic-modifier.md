@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597429"
 ---
 # <a name="in-generic-modifier-visual-basic"></a>In (generický modifikátor) (Visual Basic)
 Pro parametry obecného typu `In` – klíčové slovo určuje, že parametr typu je kontravariant.  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592220"
 ---
 # <a name="introducing-xml-serialization"></a>Představení serializace XML
 Serializace je proces převodu objektu do formuláře, který lze snadno přenést. Například může serializovat objekt a přenosu je prostřednictvím Internetu pomocí protokolu HTTP mezi klientem a serverem. Na druhém konci rekonstruuje deserializace objektu z datového proudu.  

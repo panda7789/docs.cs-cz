@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586140"
 ---
 # <a name="how-to-write-a-simple-parallelfor-loop"></a>Postupy: Zápis jednoduché smyčky Parallel.For
 Toto téma obsahuje dva příklady, které ilustrují <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> metoda. První používá <xref:System.Threading.Tasks.Parallel.For%28System.Int64%2CSystem.Int64%2CSystem.Action%7BSystem.Int64%7D%29?displayProperty=nameWithType> přetížení metody a druhý používá <xref:System.Threading.Tasks.Parallel.For%28System.Int32%2CSystem.Int32%2CSystem.Action%7BSystem.Int32%7D%29?displayProperty=nameWithType> přetížení, dva nejjednodušší přetížení <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> metoda. Můžete použít tyto dvě přetížení <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> metoda, když není potřeba zrušit smyčky, rozdělit mimo iterace smyčky nebo udržovat žádné místní stav.  

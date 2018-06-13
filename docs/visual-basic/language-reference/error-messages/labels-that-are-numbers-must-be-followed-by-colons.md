@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587355"
 ---
 # <a name="labels-that-are-numbers-must-be-followed-by-colons"></a>Za popisky, které jsou pouze číselné, musí být uvedena dvojtečka.
 Čísla řádků stejným pravidlům jako jiné druhy popisky a musí obsahovat středník.  

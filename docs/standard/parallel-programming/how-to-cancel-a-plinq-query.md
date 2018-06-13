@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584276"
 ---
 # <a name="how-to-cancel-a-plinq-query"></a>Postupy: Zrušení dotazu PLINQ
 Následující příklady ukazují dva způsoby, jak zrušit PLINQ dotazu. V prvním příkladu ukazuje, jak zrušit dotaz, který se skládá z průchodu dat. nejčastěji. Druhý příklad ukazuje, jak zrušit dotaz, který obsahuje funkci uživatele, která náročné.  

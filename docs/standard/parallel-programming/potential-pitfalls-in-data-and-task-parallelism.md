@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592389"
 ---
 # <a name="potential-pitfalls-in-data-and-task-parallelism"></a>Potenciální nástrahy datového a funkčního paralelismu
 V mnoha případech <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> může poskytnout významné zlepšení výkonu oproti běžným sekvenčním smyčkám. Vytváření paralelní smyčky však zavádí složitost, která může vést k problémům, které v sekvenčních kódu nejsou jako běžné nebo nejsou vůbec došlo. Toto téma uvádí některé postupy, abyste se vyhnuli při psaní paralelní smyčky.  

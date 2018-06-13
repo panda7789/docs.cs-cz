@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586575"
 ---
 # <a name="creating-threads-and-passing-data-at-start-time"></a>Vytváření vláken a předávání dat při spuštění
 Když je vytvořen procesu operačního systému, operační systém vloží vlákna ke spouštění kódu v procesu, včetně všech původní domény aplikace. Od tohoto okamžiku se lze vytvořit a zničen bez žádné podprocesy operačního systému nutně vytvořením nebo zničení aplikační domény. Pokud je spravovaný kód spouštěna kód, pak <xref:System.Threading.Thread> objektu pro přístup z více vláken provádění v aktuální doméně aplikace je možné získat načítání statických <xref:System.Threading.Thread.CurrentThread%2A> vlastnost typu <xref:System.Threading.Thread>. Toto téma popisuje vytváření vláken a alternativami pro předávání dat na postup přístup z více vláken.  

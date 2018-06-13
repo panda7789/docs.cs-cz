@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586751"
 ---
 # <a name="processing-drives-directories-and-files-visual-basic"></a>Zpracování jednotek, adresářů a souborů (Visual Basic)
 Můžete použít ke zpracování jednotek, složek a souborů pomocí jazyka Visual Basic `My.Computer.FileSystem` objekt, který poskytuje lepší výkon a je jednodušší než tradiční metody, jako `FileOpen` a `Write` funkce (i když jsou stále k dispozici.) Následující části popisují tyto metody podrobně.  

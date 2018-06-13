@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586767"
 ---
 # <a name="39ltelementnamegt39-is-obsolete-visual-basic-warning"></a>&#39;&lt;Vlastnost elementname&gt; &#39; je zastaralé (upozornění Visual Basic)
 Příkaz pokusí o přístup k programovací element, který byl označen s <xref:System.ObsoleteAttribute> atribut a direktiva považováno za upozornění.  
