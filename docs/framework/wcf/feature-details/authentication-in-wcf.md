@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489107"
 ---
 # <a name="authentication-in-wcf"></a>Ověřování ve WCF
 Následující témata ukazují počet různé mechanismy ve Windows Communication Foundation (WCF), ověřování, například zadáte, ověřování systému Windows, certifikáty X.509 a uživatelského jména a hesla.  

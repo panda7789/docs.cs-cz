@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429221"
 ---
 # <a name="deprecated-clr-hosting-interfaces-and-coclasses"></a>Zastaralá rozhraní a třídy typu Coclass rozhraní hostování CLR
 Tato část popisuje rozhraní, která nespravované hostitelů můžete použít k integraci common language runtime (CLR) v rozhraní .NET Framework verze 1.0 a 1.1 do svých aplikací. Tato rozhraní poskytují metody pro hostitele ke konfiguraci a načtení modulu runtime do procesu.  

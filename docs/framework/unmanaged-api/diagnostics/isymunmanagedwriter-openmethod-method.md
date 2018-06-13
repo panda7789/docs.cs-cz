@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33427905"
 ---
 # <a name="isymunmanagedwriteropenmethod-method"></a>ISymUnmanagedWriter::OpenMethod – metoda
 Otevře se metoda, do které symbol informace jsou vydávány. Aktuální metoda pro volání zadat body sekvence, parametry a lexikální obory se změní na dané metody. Existuje implicitní lexikální prostor kolem celého metoda. Znovu metodu, která byla dříve uzavřený vymaže všechny dříve definovaném symboly pro danou metodu. Současně lze otevřít pouze jednu metodu.  

@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33427199"
 ---
 # <a name="isymunmanageddocument-interface"></a>ISymUnmanagedDocument – rozhraní
 Reprezentuje dokument odkazuje úložiště symbolů. Dokument je definována uniform resource locator (URL) a typ dokumentu identifikátor GUID. Můžete najít v dokumentu bez ohledu na to, jak je uložen pomocí adresy URL a typu GUID dokumentu. Můžete uložit zdrojový dokument do úložiště symbolů a načíst prostřednictvím tohoto rozhraní.  

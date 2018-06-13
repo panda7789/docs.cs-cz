@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33416576"
 ---
 # <a name="icordebugilframe4-interface"></a>Rozhraní ICorDebugILFrame4
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  

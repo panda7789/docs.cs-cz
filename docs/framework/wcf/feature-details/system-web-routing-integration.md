@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498020"
 ---
 # <a name="systemwebrouting-integration"></a>System.Web.Routing Integration
 Při hostování služby Windows Communication Foundation (WCF) v Internetové informační služby (IIS) můžete umístit soubor .svc ve virtuálním adresáři. Tento soubor .svc určuje vytváření hostitele služby a také třídu, která implementuje službu používat. Při zasílání požadavků na službu zadáte soubor .svc v identifikátoru URI, například: http://contoso.com/EmployeeServce.svc. Tento typ identifikátoru URI pro programátory, kteří vytvářejí služby REST není optimální. Identifikátory URI pro služby REST zadejte konkrétní prostředek a obvykle nemají žádné rozšíření. <xref:System.Web.Routing> Funkce integrace umožňuje hostování služby WCF REST, která reaguje na identifikátory URI bez přípony. Další informace o směrování najdete [směrování ASP.NET](http://go.microsoft.com/fwlink/?LinkId=184660) a [AspNetRouteIntegration](../../../../docs/framework/wcf/samples/aspnetrouteintegration.md) ukázka.  

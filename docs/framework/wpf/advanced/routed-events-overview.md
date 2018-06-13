@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549760"
 ---
 # <a name="routed-events-overview"></a>Přehled směrovaných událostí
 Toto téma popisuje koncept směrované události v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Téma definuje terminologie směrované události, popisuje, jak jsou směrované události směrován přes stromu elementů, shrnuje, jak zpracovávat směrované události a jak vytvořit vlastní směrované událostí zavádí.

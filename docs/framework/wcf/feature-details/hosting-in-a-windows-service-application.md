@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492229"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hostování v aplikaci služby pro Windows
 Služby systému Windows (dříve označované jako služby systému Windows NT) zadejte procesu modelu zvlášť vhodné pro aplikace, které musí za provozu v spustitelný soubor dlouho běžící a nezobrazovat jakoukoli formu uživatelské rozhraní. Doba platnosti procesu systému Windows služby aplikaci spravuje správce řízení služeb (SCM), která umožňuje spustit, zastavit a pozastavit aplikace služby systému Windows. Můžete nakonfigurovat službu procesů systému Windows spustit automaticky při spuštění počítače, takže je vhodné hostitelské prostředí pro aplikace "always on". Další informace o aplikace služby systému Windows najdete v tématu [aplikace služby systému Windows](http://go.microsoft.com/fwlink/?LinkId=89450).  

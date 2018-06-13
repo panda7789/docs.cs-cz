@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33422120"
 ---
 # <a name="icordebugvalue-interface1"></a>ICorDebugValue Interface1
 Reprezentuje hodnotu v procesu laděné. Hodnota může být pro čtení nebo zápisu hodnotu.  

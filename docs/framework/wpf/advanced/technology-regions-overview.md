@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548841"
 ---
 # <a name="technology-regions-overview"></a>Přehled technologie oblastí
 Pokud se používají více technologie prezentace v aplikaci, například WPF, Win32 nebo DirectX, sdílejí musí vykreslování oblasti v rámci běžných období nejvyšší úrovně. Toto téma popisuje problémy, které by mohly ovlivnit prezentace a vstup pro vaši aplikaci WPF součinnosti.  

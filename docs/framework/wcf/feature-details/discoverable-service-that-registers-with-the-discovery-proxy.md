@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490594"
 ---
 # <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>Postupy: implementace zjistitelný služba, která zaregistruje se zjišťování Proxy
 Toto téma je druhý čtyři témata, která popisuje, jak implementace zjišťování proxy. V předchozích tématu [postupy: Implementace zjišťování Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), implementována zjišťování proxy. V tomto tématu, vytvoření služby WCF, který odešle oznámení zprávy (`Hello` a `Bye`) na server proxy zjišťování způsobuje jeho registrace a zrušení registrace s proxy serverem zjišťování.  

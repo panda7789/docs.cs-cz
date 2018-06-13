@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537158"
 ---
 # <a name="numericupdown-control-overview-windows-forms"></a>NumericUpDown – přehled ovládacího prvku (Windows Forms)
 <xref:System.Windows.Forms.NumericUpDown> Řízení vypadá kombinací textového pole a dvojice šipek, které uživatel můžete kliknutím na Upravit hodnotu. Ovládací prvek zobrazí a nastaví jednu číselnou hodnotu ze seznamu voleb pevné číselné hodnoty. Uživatel může zvýšit a snížit počet kliknutím na tlačítko nahoru a dolů, stisknutím klávesy se šipkami nahoru a dolů, nebo zadáním čísla v části textového pole ovládacího prvku. Kliknutím na tlačítko šipka nahoru přesune číslo směrem k maximální; Kliknutím na tlačítko šipka dolů přesune číslo směrem k minimální.  

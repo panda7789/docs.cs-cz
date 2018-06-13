@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33504887"
 ---
 # <a name="types-supported-by-the-data-contract-serializer"></a>Typy podporované serializátorem kontraktu dat
 Windows Communication Foundation (WCF) používá <xref:System.Runtime.Serialization.DataContractSerializer> jako výchozí modul serializace k převedení dat do XML a převést zpět na data XML. <xref:System.Runtime.Serialization.DataContractSerializer> Je určená k serializaci *kontrakt dat* typy. Však podporuje mnoho dalších typů, které lze chápat tak, že má implicitní data kontrakt. Následuje seznam všech typů, které lze serializovat:  

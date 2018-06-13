@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533293"
 ---
 # <a name="how-to-implement-a-form-that-uses-a-background-operation"></a>Postupy: Implementace formuláře, který používá operaci na pozadí
 V následujícím příkladu programu vytvoří formulář, který vypočítá Fibonacciho čísla. Výpočet běží na vlákno, která je oddělená od vlákna uživatelského rozhraní, tak uživatelské rozhraní i nadále spustit bez zpoždění, protože výpočet pokračuje.  

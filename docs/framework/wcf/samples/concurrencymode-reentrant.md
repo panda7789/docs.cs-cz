@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502641"
 ---
 # <a name="concurrencymode-reentrant"></a>ConcurrencyMode Reentrant
 Tento příklad znázorňuje nezbytné a důsledky použití ConcurrencyMode.Reentrant na implementaci služby. ConcurrencyMode.Reentrant znamená, že služba (nebo zpětného volání) zpracovává jenom jednu zprávu v daném okamžiku (podobá `ConcurencyMode.Single`). K zajištění bezpečnosti přístup z více vláken, zamkne Windows Communication Foundation (WCF) `InstanceContext` zpracování zprávy, takže lze zpracovat žádné další zprávy. V případě vícenásobné režimu `InstanceContext` je odemčený těsně před služby umožňuje odchozí volání následných volání (může to být vícenásobné, jak je předvedeno v ukázce) a tím umožní získat zámek příštím pochází službě. K předvedení chování, příklad ukazuje, jak může klient a služba odesílání zpráv mezi sebou pomocí duplexního kontraktu.  

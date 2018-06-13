@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490101"
 ---
 # <a name="how-to-configure-com-service-settings"></a>Postupy: Konfigurace nastavení služby COM +
 Při aplikační rozhraní přidat nebo odebrat pomocí nástroje Konfigurace služby COM +, konfigurace webové služby je aktualizovat v rámci konfiguračního souboru aplikace. V modelu COM + hostované režimu, je umístěn soubor Application.config v kořenovém adresáři aplikace (%PROGRAMFILES%\ComPlus aplikace\\{appid} je výchozí nastavení). V některém z webových hostované režimy v souboru Web.config je umístěn v adresáři zadaný virtuální kořenový adresář.  

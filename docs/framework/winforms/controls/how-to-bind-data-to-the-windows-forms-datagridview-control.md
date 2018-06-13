@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531128"
 ---
 # <a name="how-to-bind-data-to-the-windows-forms-datagridview-control"></a>Postupy: Připojení dat k ovládacímu prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Řízení podporuje standardní Windows Forms datový model vazby, tak ho vytvoří vazbu na celou řadu zdrojů dat. Ve většině situací, ale vytvoříte vazbu k <xref:System.Windows.Forms.BindingSource> komponenta, která bude spravovat podrobnosti o interakci se zdrojem dat. <xref:System.Windows.Forms.BindingSource> Součást může představovat libovolný zdroj dat Windows Forms a poskytuje flexibilitu při výběru nebo úpravách umístění vaše data. Další informace o zdrojích dat nepodporuje <xref:System.Windows.Forms.DataGridView> řízení najdete v tématu [– Přehled ovládacího prvku DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md).  

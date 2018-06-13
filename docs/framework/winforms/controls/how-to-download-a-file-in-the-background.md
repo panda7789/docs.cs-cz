@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536566"
 ---
 # <a name="how-to-download-a-file-in-the-background"></a>Postupy: Stahování souboru na pozadí
 Stažení souboru je běžné úlohy a je často užitečné ke spuštění této operace může trvat delší dobu na samostatné vlákno. Použití <xref:System.ComponentModel.BackgroundWorker> součást k provedení této úlohy s kódem velmi malé.  

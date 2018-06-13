@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489570"
 ---
 # <a name="how-to-create-a-request-reply-contract"></a>Postupy: Vytvoření kontraktu požadavku a odpovědi
 Kontraktu požadavku a odpovědi určuje metodu, která vrátí odpověď. Odpovědi musí být odeslána a korelována žádost v souladu s podmínkami této smlouvy. I v případě, že metoda vrátí odpověď (`void` v jazyce C# nebo `Sub` v jazyce Visual Basic), infrastruktura vytvoří a odešle zprávu o prázdný volajícímu. Aby odesílání zprávy odpovědi prázdná, použijte jednosměrného kontraktu pro operaci.  

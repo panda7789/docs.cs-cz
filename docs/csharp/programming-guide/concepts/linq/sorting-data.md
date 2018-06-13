@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33332556"
 ---
 # <a name="sorting-data-c"></a>Řazení dat (C#)
 Operace řazení řadí elementy pořadí na základě jednoho nebo více atributů. První kritérium řazení provede primární řazení elementů. Zadáním druhý kritérium řazení lze seřadit elementů v rámci jednotlivých skupin primární řazení.  

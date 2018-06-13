@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499996"
 ---
 # <a name="how-to-specify-a-service-binding-in-configuration"></a>Postupy: Zadání vazby služby v konfiguraci
 V tomto příkladu `ICalculator` kontrakt je definována pro službu základní kalkulačky, služba se implementuje v `CalculatorService` třídě a následně svůj koncový bod je nakonfigurován v souboru Web.config, kde je zadán, že služba používá <xref:System.ServiceModel.BasicHttpBinding> . Popis toho, jak nakonfigurovat tuto službu pomocí kódu místo konfigurace, najdete v části [postupy: zadání vazby služby v kódu](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-code.md).  

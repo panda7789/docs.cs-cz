@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538564"
 ---
 # <a name="how-to-view-multiple-lines-in-the-windows-forms-textbox-control"></a>Postupy: Zobrazování více řádků v ovládacím prvku Windows Forms TextBox
 Ve výchozím nastavení Windows Forms <xref:System.Windows.Forms.TextBox> řízení pouze jeden řádek textu a nemá zobrazovat posuvníky. Je-li text je delší než dostupné místo, zobrazí se jenom část textu. Toto výchozí chování můžete změnit nastavením <xref:System.Windows.Forms.TextBox.Multiline%2A>, <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>, a <xref:System.Windows.Forms.TextBox.ScrollBars%2A> vlastnosti odpovídající hodnoty.  

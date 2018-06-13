@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33418233"
 ---
 # <a name="icordebugeval2-interface1"></a>ICorDebugEval2 Interface1
 Rozšiřuje "ICorDebugEval" kvůli zajištění podpory pro obecné typy.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488644"
 ---
 # <a name="comparing-transactions-in-com-and-servicemodel"></a>Porovnání transakcí u modelů COM+ a ServiceModel
 Toto téma popisuje, jak k simulaci chování transakční služby COM + s použitím atributů Windows Communication Foundation (WCF) <xref:System.ServiceModel> poskytuje obor názvů.  

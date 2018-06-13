@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502944"
 ---
 # <a name="custom-binding-reliable-session-over-https"></a>Spolehlivá relace vlastních vazeb přes HTTPS
 Tento příklad znázorňuje použití protokolu SSL zabezpečení přenosu s spolehlivé relace. Spolehlivé relace implementuje protokol WS-spolehlivé zasílání zpráv. Zabezpečené spolehlivé relace může mít podle skládání WS-zabezpečení přes spolehlivé relace. Ale v některých případech můžete místo toho použijte zabezpečení přenosu HTTP pomocí protokolu SSL.  
