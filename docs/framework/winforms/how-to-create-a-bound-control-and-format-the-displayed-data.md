@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542207"
 ---
 # <a name="how-to-create-a-bound-control-and-format-the-displayed-data"></a>Postupy: Vytvoření připojeného ovládacího prvku a formátování zobrazených dat
 S Windows Forms – datová vazba, můžete ho naformátovat data zobrazená v ovládacím prvku vázané na data pomocí **formátování a rozšířené vazby** dialogové okno.  

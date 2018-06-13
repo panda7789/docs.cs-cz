@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525867"
 ---
 # <a name="errorprovider-component-windows-forms"></a>ErrorProvider – komponenta (Windows Forms)
 Windows Forms `ErrorProvider` komponenta se používá k zobrazení uživatele nevtíravým způsobem, že je něco špatně. Se obvykle používá ve spojení s ověřování uživatelského vstupu ve formuláři, nebo zobrazení chyb v rámci datové sady.  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172487"
 ---
 # <a name="data-templating-overview"></a>Přehled datových šablon
 Ukázka datový model WPF vám poskytuje flexibilitu k definování prezentace dat. Ovládacích prvků WPF mít integrovanou funkci pro podporu přizpůsobení prezentace dat. Toto téma nejprve ukazuje, jak definovat <xref:System.Windows.DataTemplate> a pak zavádí další funkce Ukázka dat, jako je výběr šablony založené na vlastní logiky a podpora pro zobrazení hierarchické data.  

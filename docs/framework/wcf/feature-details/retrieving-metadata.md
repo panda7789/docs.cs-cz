@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493599"
 ---
 # <a name="retrieving-metadata"></a>Načítání metadat
 Načtení metadat je proces požaduje a načítání metadat z koncového bodu metadat, jako je koncový bod metadat WS-MetadataExchange (MEX) nebo koncový bod HTTP nebo získat metadata.  

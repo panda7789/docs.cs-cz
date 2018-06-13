@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566493"
 ---
 # <a name="defining-custom-types-for-use-with-net-framework-xaml-services"></a>Definování vlastních typů pro práci s technologií .NET Framework XAML Services
 Při definování vlastních typů, které jsou objekty firmy nebo jsou typy, které nemají závislost na konkrétní architektury, existují některé osvědčené postupy pro jazyk XAML můžete provést. Pokud budete postupovat podle těchto postupech, můžete zjistit charakteristiky XAML vašeho typu a dejte mu odpovídající reprezentace v datový proud uzlu XAML pomocí systému XAML typ rozhraní .NET Framework XAML Services a jeho XAML čtení a zápis XAML. Toto téma popisuje osvědčené postupy pro definice typů, člen definice a CLR zapisujících typů nebo členy.  

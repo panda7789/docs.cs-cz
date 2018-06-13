@@ -33,6 +33,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34234121"
 ---
 # <a name="function-statement-visual-basic"></a>Function – příkaz (Visual Basic)
 Deklaruje název, parametry a kód, který definovat `Function` postupu.  

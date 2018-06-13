@@ -13,6 +13,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34235915"
 ---
 # <a name="public-visual-basic"></a>Public (Visual Basic)
 Určuje, že jeden nebo více deklarované programovací elementy žádná omezení přístupu.  

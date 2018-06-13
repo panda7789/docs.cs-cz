@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493194"
 ---
 # <a name="how-to-create-a-secure-session"></a>Postupy: vytvoření zabezpečené relace
 S výjimkou produktů [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) vazby, vazby poskytované systémem Windows Communication Foundation (WCF) automaticky použít zabezpečených relací, pokud je povolená zabezpečení zpráv.  

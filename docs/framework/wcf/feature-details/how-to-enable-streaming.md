@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493635"
 ---
 # <a name="how-to-enable-streaming"></a>Postupy: Povolení streamování
 Windows Communication Foundation (WCF) můžete odesílat zprávy pomocí ve vyrovnávací paměti nebo přenášené datovými proudy přenosů. Ve výchozím režimu přenosu do vyrovnávací paměti zprávy musí být zcela doručována předtím, než příjemce může číst. Při streamování režim přenosu, můžete začít příjemce zprávu zpracovat, než je zcela doručit. Streamování režimu je užitečné, když informace, které se předá je náročná a může být zpracována sériově. Streamování režimu je také užitečné, pokud zpráva je moc velká, aby se zcela do vyrovnávací paměti.  

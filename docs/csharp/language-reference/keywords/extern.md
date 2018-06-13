@@ -13,6 +13,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172290"
 ---
 # <a name="extern-c-reference"></a>extern (Referenční dokumentace jazyka C#)
 `extern` Modifikátor se používá k deklaraci metodu, která je implementována externě. Běžně se používají `extern` se modifikátor s `DllImport` atributu při použití zprostředkovatele komunikace s objekty služby volat nespravovaný kód. V takovém případě metoda musí být deklarován také jako `static`, jak je znázorněno v následujícím příkladu:  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474705"
 ---
 # <a name="asynchronous-scenarios-using-http-tcp-or-named-pipe"></a>Asynchronní scénáře použití HTTP, TCP nebo pojmenovaného kanálu
 Toto téma popisuje aktivity a přenosy pro různé Asynchronní požadavek nebo odpověď scénáře s více vlákny požadavky pomocí protokolu HTTP, TCP nebo pojmenovaného kanálu.  

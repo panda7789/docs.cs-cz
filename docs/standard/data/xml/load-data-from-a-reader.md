@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569971"
 ---
 # <a name="load-data-from-a-reader"></a>Načtení dat z čtečka čipových karet
 Pokud dokument XML je načíst pomocí <xref:System.Xml.XmlDocument.Load%2A> metoda a parametr <xref:System.Xml.XmlReader>, jsou rozdíly v chování, k níž dojde v porovnání s chování načítání dat z jiných formátů. Pokud čtečka je ve stavu počáteční <xref:System.Xml.XmlDocument.Load%2A> využívá celý obsah ze čtečky a vytvoří kódu XML modelu DOM (Document Object) ze všech dat ve čtečce.  

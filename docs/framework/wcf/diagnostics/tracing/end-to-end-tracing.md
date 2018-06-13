@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474217"
 ---
 # <a name="end-to-end-tracing"></a>Komplexní trasování
 Koncová trasování (e2e) umožňuje vývojářům sledovat spuštění kódu v infrastruktuře Windows Communication Foundation (WCF), zjistěte, proč se nezdařilo kódové cestě, nebo zadejte podrobného trasování pro analýzu výkon a plánování kapacity. Windows Communication Foundation (WCF) poskytuje tři korelace mechanismy pro usnadnění diagnostiky příčiny chybu: aktivit, přenosy a šíření.  

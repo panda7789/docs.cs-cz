@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488569"
 ---
 # <a name="authorization-in-wcf"></a>Autorizace ve WCF
 Autorizace je proces řízení přístupu a oprávnění k prostředkům, jako jsou služby nebo soubory. Témata v této části ukazují, jak to provést základní ve Windows Communication Foundation (WCF) v mnoha různými způsoby.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34234675"
 ---
 # <a name="delegate-statement"></a>Delegate – příkaz
 Používá k deklaraci delegáta. Delegát je odkaz na typ, který odkazuje `Shared` metoda typu nebo metodu instance objektu. Všechny postup s odpovídajícími typy parametrů a vraťte se může použít k vytvoření instance této třídy delegáta. Postup lze poté později vyvolat prostřednictvím instanci delegáta.  

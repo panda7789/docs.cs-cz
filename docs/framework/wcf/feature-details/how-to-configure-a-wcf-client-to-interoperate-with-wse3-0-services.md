@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490640"
 ---
 # <a name="how-to-configure-a-wcf-client-to-interoperate-with-wse30-services"></a>Postupy: Konfigurace klienta WCF na vzájemnou spolupráci se službami WSE3.0
 Klienti Windows Communication Foundation (WCF) jsou úroveň kompatibilní s 3.0 vylepšení webové služby pro služby rozhraní Microsoft .NET (WSE), když klienti WCF jsou nakonfigurovány pro použití srpen 2004 verzi specifikace WS-Addressing.  

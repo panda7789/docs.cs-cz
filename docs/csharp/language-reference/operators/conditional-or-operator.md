@@ -13,6 +13,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34171803"
 ---
 # <a name="-operator-c-reference"></a>|| – operátor (Referenční dokumentace jazyka C#)
 Operátor podmíněného OR (`||`) provede logickou funkcí – nebo jeho `bool` operandy. Pokud je výsledkem první operand `true`, druhý operand, nebude hodnocen. Pokud je výsledkem první operand `false`, druhý operátor určuje, zda výraz OR jako celek vyhodnotí `true` nebo `false`.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172120"
 ---
 # <a name="sealed-c-reference"></a>sealed (Referenční dokumentace jazyka C#)
 Při použití třídy, `sealed` modifikátor zabrání ostatním třídám dědění z něj. V následujícím příkladu třída `B` dědí z třídy `A`, ale neexistuje žádná třída může dědit vlastnosti z třídy `B`.  

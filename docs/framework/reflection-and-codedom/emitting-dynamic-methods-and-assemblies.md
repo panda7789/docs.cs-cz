@@ -14,6 +14,7 @@ ms.sourcegitcommit: c03eef711abe961a85db2b4d0715257d1524aef6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33848294"
 ---
 # <a name="emitting-dynamic-methods-and-assemblies"></a>Generování dynamických metod a sestavení
 Tato část popisuje sadu spravovaných typů v <xref:System.Reflection.Emit> obor názvů, který povolí kompilátoru nebo nástroj pro vydávání metadata a Microsoft (MSIL intermediate language) v době běhu a volitelně generovat soubor přenosné spustitelný soubor (PE) na disku. Skriptovací stroje a kompilátory jsou primárními uživateli tohoto oboru názvů. V této části, funkce poskytované <xref:System.Reflection.Emit> obor názvů se označuje jako reflexe emitování.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542168"
 ---
 # <a name="attached-properties-overview"></a>Přehled připojených vlastností
 – Přidružená vlastnost je koncept definované XAML. – Přidružená vlastnost je určena pro použití jako typ globální vlastnost, která je nastavit na libovolný objekt. V [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], připojené vlastnosti jsou obvykle definovány jako specializovaná forma vlastnost závislosti, který nemá vlastnost konvenční "obálku".  

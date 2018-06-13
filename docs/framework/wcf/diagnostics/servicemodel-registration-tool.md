@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33473393"
 ---
 # <a name="servicemodel-registration-tool"></a>Nástroj ServiceModelReg.exe
 Nástroj ServiceModel Registration je nástroj příkazového řádku, který vám umožní spravovat registrace ServiceModel na jednom počítači. Další informace o tomto nástroji najdete v tématu [nástroj ServiceModel Registration (ServiceModelReg.exe)](../../../../docs/framework/wcf/servicemodelreg-exe.md).

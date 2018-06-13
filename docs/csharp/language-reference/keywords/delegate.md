@@ -14,6 +14,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172107"
 ---
 # <a name="delegate-c-reference"></a>delegate (Referenční dokumentace jazyka C#)
 Deklarace typu delegáta je podobná podpis metody. Má návratovou hodnotu a libovolný počet parametrů libovolného typu:  

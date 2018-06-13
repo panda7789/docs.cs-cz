@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33473643"
 ---
 # <a name="microsofttransactionstransactionbridgerecoveredcoordinatorinvalidmetadata"></a>Microsoft.Transactions.TransactionBridge.RecoveredCoordinatorInvalidMetadata
 Odkaz na koncový bod najít v položce protokolu obnovení koordinátora obsahovala neplatný nebo nekompatibilní data.  

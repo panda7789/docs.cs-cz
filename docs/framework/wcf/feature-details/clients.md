@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488800"
 ---
 # <a name="clients"></a>Klienti
 Témata v této části se týkají architekturu klienta, jak pro přístup k Windows Communication Foundation (WCF) služby, jak nakonfigurovat klienta WCF a některé posouzení zabezpečení pro klienty WCF.  

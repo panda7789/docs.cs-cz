@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569067"
 ---
 # <a name="white-space-and-significant-white-space-handling-when-loading-the-dom"></a>Prázdné znaky a mezer významné zpracování při načítání modelu DOM
 Při načítání dokumentu, můžete nastavit možnost zachování mezer a vytvořit **XmlWhitespace** uzly ve stromu dokumentu. Chcete-li vytvořit mezer uzly, nastavte **PreserveWhitespace** vlastnost na hodnotu true. Pokud je nastavena na **false**, který je výchozí, nejsou vytvořeny uzly mezer. Uzly významné prázdné znaky se vždycky zachovají, a **XmlSignificantWhitespace** uzly jsou vždy vytvořené v paměti představují tato data, bez ohledu na to, že v nastavení **PreserveWhitespace** příznak.  

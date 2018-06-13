@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494212"
 ---
 # <a name="content-based-correlation"></a>Korelace na základě obsahu
 Když pracovní postup služby komunikaci s klienty a další služby, je často některá data v výměně zpráv, který jednoznačně zpráva má vztah k určité instance. Korelace na základě obsahu používá tato data ve zprávě, jako je například číslo nebo pořadí ID zákazníka, pro směrování zpráv do instance správné pracovního postupu. Toto téma vysvětluje, jak používat korelace na základě obsahu v pracovních postupech.  

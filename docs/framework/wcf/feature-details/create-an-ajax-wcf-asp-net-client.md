@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490627"
 ---
 # <a name="how-to-create-an-ajax-enabled-wcf-service-and-an-aspnet-client-that-accesses-the-service"></a>Postupy: Vytvoření služby WCF, ve které je povolený AJAX, a klienta ASP.NET přistupujícího k ní
 Toto téma ukazuje, jak vytvořit služby technologie AJAX Windows Communication Foundation (WCF) a klienta ASP.NET přistupujícího k ní pomocí sady Visual Studio 2008. Kód pro službu a klienta jsou uvedeny v části Příklad po kroky pro jejich vytváření jsou popsány v části postupy.  

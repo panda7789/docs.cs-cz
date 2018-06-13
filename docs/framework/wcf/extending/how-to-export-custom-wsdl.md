@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489045"
 ---
 # <a name="how-to-export-custom-wsdl"></a>Postupy: Export vlastního WSDL
 Toto téma vysvětluje, jak exportovat vlastní informace o schématu WSDL. Uděláte to tak bude definujeme nový atribut kód volá `WsdlDocumentationAttribute` , bude přidání vlastních informací do WSDL vygenerované službou.  

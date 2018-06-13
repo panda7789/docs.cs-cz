@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567195"
 ---
 # <a name="calling-asynchronous-methods-using-iasyncresult"></a>Volání asynchronních metod pomocí rozhraní IAsyncResult
 Typy v rozhraní .NET Framework a knihovny tříd třetích stran nabízejí metody, které umožňují aplikaci chcete pokračovat v provádění při provádění asynchronní operace v vláken než hlavní vlákno aplikace. Následující části popisují a příklady kódu, která ukazují můžete volat asynchronní metody, které používají různé způsoby <xref:System.IAsyncResult> vzoru návrhu.  

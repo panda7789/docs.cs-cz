@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33562359"
 ---
 # <a name="xaml-security-considerations"></a>Důležité informace o zabezpečení pro jazyk XAML
 Toto téma popisuje osvědčené postupy pro zabezpečení v aplikacích, když používáte XAML a rozhraní .NET Framework XAML Services API.  

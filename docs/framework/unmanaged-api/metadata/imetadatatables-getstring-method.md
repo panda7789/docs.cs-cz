@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33449579"
 ---
 # <a name="imetadatatablesgetstring-method"></a>IMetaDataTables::GetString – metoda
 Získá řetězec v zadaném indexu ze sloupce tabulky v aktuálním oboru odkaz.  

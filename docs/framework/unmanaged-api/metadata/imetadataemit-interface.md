@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33449141"
 ---
 # <a name="imetadataemit-interface"></a>IMetaDataEmit – rozhraní
 Poskytuje metody pro vytváření, úpravě a uložit metadata o sestavení v aktuálně definován obor. Metadata dá uložené v paměti nebo uložit na disk.  

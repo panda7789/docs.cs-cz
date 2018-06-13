@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569301"
 ---
 # <a name="create-new-nodes-in-the-dom"></a>Vytvořit nové uzly v modelu DOM
 <xref:System.Xml.XmlDocument> Má metodu create pro všechny typy uzlů. Zadejte metodu s názvem vyžádání a obsah nebo jiné parametry pro uzly, u kterých se obsah (například textový uzel) a uzlu je vytvořena. Tyto metody jsou ty, které je třeba název a několik dalších parametrů, které jsou vyplněna můžete vytvořit příslušný uzel.  

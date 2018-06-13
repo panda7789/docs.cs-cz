@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525844"
 ---
 # <a name="polygons-in-gdi"></a>Mnohoúhelníky v GDI+
 Mnohoúhelníku je uzavřený obrazec s tři nebo více rovné strany. Například trojúhelníček je mnohoúhelník s tři strany, obdélníku je mnohoúhelník s čtyři strany a pětiúhelník je mnohoúhelník s pěti stranách. Následující obrázek znázorňuje několik mnohoúhelníky.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492268"
 ---
 # <a name="preventing-replay-attacks-when-a-wcf-service-is-hosted-in-a-web-farm"></a>Prevence útoků formou opakovaného přehrávání zprávy, když je služba WCF hostovaná ve webové farmě
 Při použití zabezpečení zpráv WCF brání provedení útoku formou opakovaného vytvořením hodnotu NONCE mimo příchozí zprávy a kontrola interní `InMemoryNonceCache` zobrazíte, když generovaného hodnotu NONCE nachází. Pokud se jedná, zpráva se zahodí jako opětovného přehrání. Pokud služby WCF je hostovaná ve webové farmě, protože `InMemoryNonceCache` není sdílená mezi uzly ve webové farmě, služba je ohrožena útoky opakováním.  Tento scénář zmírnit WCF 4.5 poskytuje bod rozšíření, která umožňuje implementovat vlastní sdílené mezipaměti hodnotu NONCE odvozením třídy od abstraktní třídy <xref:System.ServiceModel.Security.NonceCache>.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525005"
 ---
 # <a name="folderbrowserdialog-component-overview-windows-forms"></a>FolderBrowserDialog – přehled komponenty (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.FolderBrowserDialog> součást je modální dialogové okno, které se používá k procházení a výběru složek. V nástroji lze také vytvořit nové složky <xref:System.Windows.Forms.FolderBrowserDialog> součásti.  

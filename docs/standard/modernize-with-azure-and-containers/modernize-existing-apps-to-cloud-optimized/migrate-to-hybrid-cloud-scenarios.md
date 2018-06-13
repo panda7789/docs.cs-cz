@@ -9,6 +9,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33958206"
 ---
 # <a name="migrate-to-hybrid-cloud-scenarios"></a>Migrace na hybridní cloudové scénáře
 

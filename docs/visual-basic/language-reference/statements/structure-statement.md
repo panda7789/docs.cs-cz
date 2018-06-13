@@ -17,6 +17,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34234462"
 ---
 # <a name="structure-statement"></a>Structure – příkaz
 Deklaruje název strukturu a představuje definici proměnné, vlastností, události a postupy, které tvoří strukturu.  
