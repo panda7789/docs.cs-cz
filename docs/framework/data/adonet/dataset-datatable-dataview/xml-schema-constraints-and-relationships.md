@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759839"
 ---
 # <a name="xml-schema-constraints-and-relationships"></a><span data-ttu-id="169a8-102">Omezení schématu XML a relace</span><span class="sxs-lookup"><span data-stu-id="169a8-102">XML Schema Constraints and Relationships</span></span>
 <span data-ttu-id="169a8-103">Ve schématu XML definition language (XSD) schématu, můžete zadat omezení (jedinečné, klíče a omezení keyref) a vztahů (pomocí **msdata:Relationship** poznámky).</span><span class="sxs-lookup"><span data-stu-id="169a8-103">In an XML Schema definition language (XSD) schema, you can specify constraints (unique, key, and keyref constraints) and relationships (using the **msdata:Relationship** annotation).</span></span> <span data-ttu-id="169a8-104">Toto téma vysvětluje, jak se interpretují omezení a vztahy zadaný v schéma XML pro generování <xref:System.Data.DataSet>.</span><span class="sxs-lookup"><span data-stu-id="169a8-104">This topic explains how the constraints and relationships specified in an XML Schema are interpreted to generate the <xref:System.Data.DataSet>.</span></span>  
