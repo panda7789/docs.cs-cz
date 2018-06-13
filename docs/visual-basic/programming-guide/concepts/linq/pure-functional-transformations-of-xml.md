@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645168"
 ---
 # <a name="pure-functional-transformations-of-xml-visual-basic"></a>Čistý funkční transformace XML (Visual Basic)
 Tato část obsahuje návod funkční transformace pro formát XML. To zahrnuje vysvětlení hlavní koncepty a jazyk vytvoří, musíte pochopit použít funkční transformace a příklady použití funkční transformace k manipulaci s dokument XML. I když v tomto kurzu poskytuje LINQ příklady kódu XML, všechny základní koncepty platí také pro jiné technologie LINQ.  

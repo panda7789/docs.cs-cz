@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649188"
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Postupy: Řízení rozsahu proměnné (Visual Basic)
 Za normálních okolností je proměnná v *oboru*, nebo viditelné pro referenci v celé oblasti, ve kterém je deklarovat. V některých případech proměnnou na *úroveň přístupu* mohou mít vliv na svém oboru.  

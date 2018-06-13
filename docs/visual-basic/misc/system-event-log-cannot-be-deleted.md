@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639295"
 ---
 # <a name="system-event-log-cannot-be-deleted"></a>Protokol událostí systému nelze odstranit.
 Byl proveden pokus o odstranění protokolu událostí systému, kterou nejde odstranit. Protokol systému sleduje systémové události, jako je například selhání spuštění a hardwaru systému.  

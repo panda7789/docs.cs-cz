@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804989"
 ---
 # <a name="data-binding-in-an-aspnet-client"></a>Vazba dat v klientovi ASP.NET
 Tento příklad znázorňuje postup vytvoření vazby dat vrácených typické služby Windows Communication Foundation (WCF) v aplikaci webových formulářů.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805015"
 ---
 # <a name="xmlserializer-sample"></a>Ukázka třídy XMLSerializer
 Tento příklad ukazuje, jak k serializaci a deserializaci typy, které jsou kompatibilní s <xref:System.Xml.Serialization.XmlSerializer>. Výchozí formátování Windows Communication Foundation (WCF) je <xref:System.Runtime.Serialization.DataContractSerializer> třídy. <xref:System.Xml.Serialization.XmlSerializer> Třídu lze použít k serializaci a deserializaci typy, jestliže <xref:System.Runtime.Serialization.DataContractSerializer> třída se nedá použít. To je často případ, kdy přesnou kontrolu nad XML je požadovaná – například pokud část dat musí být atribut XML a není element XML. Navíc <xref:System.Xml.Serialization.XmlSerializer> často získá automaticky vybrán při vytváření klientů pro služby bez WCF.  

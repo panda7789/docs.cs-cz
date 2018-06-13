@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639494"
 ---
 # <a name="you-must-specify-a-path-that-is-under-the-current-folder-or-one-of-its-sub-folders"></a>Musíte zadat cestu, která je v aktuální složce nebo jeden z jejích podsložkách
 Zadaná cesta není v aktuálním adresáři. To může být způsobeno nesprávně analýza cest k souborům, při zadávání relativní cesta.  

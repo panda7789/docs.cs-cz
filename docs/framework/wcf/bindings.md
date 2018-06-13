@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803592"
 ---
 # <a name="windows-communication-foundation-bindings"></a>Vazby WCF
 Vazby zadejte, jak koncového bodu služby Windows Communication Foundation (WCF) komunikuje s další koncové body. Ve své nejzákladnější musíte zadat vazbu přenosu (například HTTP nebo TCP), který je použít. Můžete také nastavit další vlastnosti, například zabezpečení a transakce podporují pomocí vazby.  

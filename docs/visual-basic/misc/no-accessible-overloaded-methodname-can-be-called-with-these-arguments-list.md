@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637984"
 ---
 # <a name="no-accessible-overloaded-39ltmethodnamegt39-can-be-called-with-these-arguments-ltlistgt"></a>Žádné dostupné přetížený &#39; &lt;methodname&gt; &#39; nelze volat s těmito argumenty: &lt;seznamu&gt;
 Přetížené metoda je volána, ale žádná metoda možné přidružit k seznamu argumentů.  

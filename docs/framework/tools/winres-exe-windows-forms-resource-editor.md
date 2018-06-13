@@ -17,6 +17,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472578"
 ---
 # <a name="winresexe-windows-forms-resource-editor"></a>Winres.exe (editor prostředků Windows Forms)
 Windows Forms Resource Editor (Winres.exe) je nástroj pro tvorbu vizuálního rozložení, který pomáhá odborníkům přes lokalizaci lokalizovat prostředky uživatelského rozhraní (UI) nástroje Windows Forms používané formuláři. Soubor prostředků .resx nebo .resources sloužící jako vstup do nástroje Winres.exe lze vytvořit pomocí prostředí pro vizuální návrh, jako je například sada Microsoft Visual Studio. Informace o nasazení prostředků v aplikacích rozhraní .NET Framework, najdete v části [prostředků v aplikacích plochy](../../../docs/framework/resources/index.md).  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804976"
 ---
 # <a name="conceptual-overview"></a>Koncepční přehled
 Toto téma shrnuje informace o Windows Communication Foundation (WCF) zasílání zpráv systému a třídy, které podporují jeho použití.  

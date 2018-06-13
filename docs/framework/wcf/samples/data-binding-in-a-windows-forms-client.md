@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804375"
 ---
 # <a name="data-binding-in-a-windows-forms-client"></a>Datové vazby v klientovi Windows Forms
 Tento příklad znázorňuje způsob vytvoření vazby na data vrácená službou Windows Communication Foundation (WCF) v aplikaci Windows Forms.  

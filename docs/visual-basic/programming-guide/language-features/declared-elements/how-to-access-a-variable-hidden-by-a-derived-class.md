@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648044"
 ---
 # <a name="how-to-access-a-variable-hidden-by-a-derived-class-visual-basic"></a>Postupy: Přístup k proměnné skryté odvozenou třídou (Visual Basic)
 Když kód v odvozené třídě získá přístup k proměnné, kompilátor normálně přeloží odkaz na nejbližší dostupné verze, který je přístupný verze nejmenšího derivational kroky zpětné z přístupu k třídě. Pokud je proměnná definovaná v odvozené třídě, kód normálně přistupuje k této definici.  

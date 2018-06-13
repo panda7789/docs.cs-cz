@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34549617"
 ---
 # <a name="collections-c"></a>Kolekce (C#)
 Mnoho aplikací budete chtít vytvořit a spravovat skupiny související objekty. Existují dva způsoby do objektů skupiny: vytvořením pole objektů a vytvořením kolekce objektů.  

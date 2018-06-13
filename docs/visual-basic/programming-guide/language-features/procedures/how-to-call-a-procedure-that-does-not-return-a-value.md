@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649045"
 ---
 # <a name="how-to-call-a-procedure-that-does-not-return-a-value-visual-basic"></a>Postupy: Volání procedury, která nevrátí hodnotu (Visual Basic).
 A `Sub` postup nevrátí hodnotu kód volání. Zavoláte ji explicitně příkazem samostatné volání. Nelze volat ho jednoduše pomocí jeho názvu v rámci výrazu.  
