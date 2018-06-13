@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33332751"
 ---
 # <a name="expression-bodied-members-c-programming-guide"></a>Výraz vozidlo členové (C# programovací průvodce)
 Výraz definice textu umožňují poskytovat implementace člena ve formuláři velmi stručným a čitelné. Definici výraz text můžete použít vždy, když logiku pro všechny podporované člena, jako je například metody nebo vlastnosti, se skládá z jednoho výrazu. Definici výraz text má následující obecné syntaxi:

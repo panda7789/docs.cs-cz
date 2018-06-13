@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753648"
 ---
 # <a name="assembly-manifest"></a>Manifest sestavení
 Všechna sestavení, zda statickou nebo dynamickou, obsahuje kolekci dat, která popisuje, jak elementů v sestavení vztahují k sobě navzájem. Manifest sestavení obsahuje tato metadata sestavení. Manifest sestavení obsahuje všechna metadata potřebná pro určení požadavky verze sestavení a zabezpečení identity a všechny metadata potřebná k definování oboru sestavení a odkazy na prostředky a třídy. Manifest sestavení může být uložená v buď PE soubor (příponou .exe nebo .dll) s kódem (MSIL intermediate language) Microsoft nebo v samostatný soubor PE, která obsahuje jenom manifestu informace o sestavení.  

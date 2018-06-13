@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33316319"
 ---
 # <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-c"></a>Přidání prvky, atributy a uzly na strom XML (C#)
 Obsah (elementy, atributy, komentáře, pokyny pro zpracování, text a CDATA) můžete přidat na stávající strom XML.  

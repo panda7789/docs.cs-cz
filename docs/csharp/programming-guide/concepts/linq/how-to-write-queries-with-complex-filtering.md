@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33324808"
 ---
 # <a name="how-to-write-queries-with-complex-filtering-c"></a>Postupy: zápis dotazů s komplexní filtrování (C#)
 Někdy budete chtít zapisovat XML dotazů LINQ s komplexní filtry. Například můžete chtít najít všechny elementy, které mají podřízený element s určitým názvem a hodnotou. Toto téma poskytuje příklad zápisu dotaz s komplexní filtrování.  

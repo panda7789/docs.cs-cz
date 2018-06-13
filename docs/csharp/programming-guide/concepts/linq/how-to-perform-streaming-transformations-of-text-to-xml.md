@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33328185"
 ---
 # <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a>Postupy: provádění streamování transformací textu do formátu XML (C#)
 Jeden ze způsobů zpracování textového souboru je zápis metody rozšíření, která datové proudy textového souboru řádku na čas pomocí `yield return` vytvořit. Potom můžete napsat dotaz LINQ, který zpracovává textový soubor opožděné odložené způsobem. Pokud pak použijete <xref:System.Xml.Linq.XStreamingElement> do výstupního datového proudu, potom můžete vytvořit transformace z textového souboru na kód XML, který používá minimální množství paměti, bez ohledu na velikost zdroj textového souboru.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546592"
 ---
 # <a name="optimizing-performance-application-resources"></a>Optimalizace výkonu: Zdroje aplikace
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Umožňuje sdílet prostředky aplikace, takže může podporovat konzistentní vzhled a chování napříč podobné typované elementy. Toto téma obsahuje několik doporučení v této oblasti, která vám může pomoct zlepšit výkon aplikací.  

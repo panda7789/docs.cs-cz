@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549708"
 ---
 # <a name="application-management-overview"></a>Přehled správy aplikací
 Všechny aplikace zpravidla sdílejí společnou sadu funkcí, které platí pro aplikaci na implementaci a správu. Toto téma obsahuje přehled funkcí v <xref:System.Windows.Application> třídu pro vytváření a Správa aplikací.  

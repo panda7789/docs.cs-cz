@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33553725"
 ---
 # <a name="label"></a>Popisek
 <xref:System.Windows.Controls.Label> ovládací prvky obvykle poskytování informací v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)].  V minulosti <xref:System.Windows.Controls.Label> má obsahovala pouze text, ale protože <xref:System.Windows.Controls.Label> který se dodává s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je <xref:System.Windows.Controls.ContentControl>, může obsahovat buď text nebo <xref:System.Windows.UIElement>.  

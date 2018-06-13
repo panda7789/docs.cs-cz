@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33320674"
 ---
 # <a name="how-to-project-an-anonymous-type-c"></a>Postupy: projektu anonymní typ (C#)
 V některých případech můžete chtít projektu dotaz pro nový typ, i když víte, že použijete tento typ se pouze na krátkou dobu. Je velké množství práce navíc k vytvoření nového typu jenom pro použití v projekci. V takovém případě má efektivnější přístup projekt anonymního typu. Anonymní typy umožňují definovat třídu, pak deklarovat a inicializovat objekt třídy, bez nutnosti poskytnutí název třídy.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33267906"
 ---
 # <a name="integral-types-table-c-reference"></a>Tabulka celočíselných typů (Referenční dokumentace jazyka C#)
 V následující tabulce jsou uvedeny velikosti a rozsah celočíselných typů, které tvoří podmnožinu jednoduchých typů.  

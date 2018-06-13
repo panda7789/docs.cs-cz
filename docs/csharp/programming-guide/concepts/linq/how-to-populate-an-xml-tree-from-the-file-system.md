@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33328172"
 ---
 # <a name="how-to-populate-an-xml-tree-from-the-file-system-c"></a>Postupy: naplnění strom XML ze systému souborů (C#)
 Běžné a užitečné aplikace stromů XML je jako úložiště dat hierarchické název/hodnota. Můžete naplnit strom XML hierarchické daty a pak dotaz ho, transformovat je a v případě potřeby serializovat. V tomto scénáři použití řadu konkrétní sémantiku XML, například obory názvů a chování mezer nejsou důležité. Místo toho používají stromu XML jako malá, v paměti, hierarchické databázi jednoho uživatele.  

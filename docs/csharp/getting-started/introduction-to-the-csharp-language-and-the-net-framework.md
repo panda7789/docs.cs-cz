@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33217282"
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Úvod do jazyka C# a rozhraní .NET Framework
 C# je elegantní a bezpečnost typů objektově orientované jazyk, který umožňuje vývojářům vytvářet celou řadu zabezpečené a robustní aplikace, které běží na [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Můžete C# k vytvoření klienta Windows aplikace, webové služby XML, distribuované součásti, klient-server, databázových aplikací a mnoho mnohem víc. Visual C# poskytuje pokročilé kód editoru, návrháři pohodlný uživatelského rozhraní, integrované ladicí program a mnoho dalších nástrojů usnadňují vývoj aplikací na základě jazyka C# a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].  

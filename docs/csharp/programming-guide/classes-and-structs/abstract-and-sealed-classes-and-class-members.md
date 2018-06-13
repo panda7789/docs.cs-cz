@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33313911"
 ---
 # <a name="abstract-and-sealed-classes-and-class-members-c-programming-guide"></a>Abstraktní a uzavřené třídy a jejich členové (Průvodce programováním v C#)
 [Abstraktní](../../../csharp/language-reference/keywords/abstract.md) – klíčové slovo lze vytvořit třídy a [třída](../../../csharp/language-reference/keywords/class.md) členy, kteří jsou neúplné a musí být implementován v odvozené třídě.  

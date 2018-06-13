@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33321844"
 ---
 # <a name="anonymous-functions-c-programming-guide"></a>Anonymní funkce (Průvodce programováním v C#)
 Anonymní funkce je "vložené" příkaz nebo výraz, který lze použít bez ohledu na očekáván je typ delegáta. Můžete ji k inicializaci pojmenované delegáta nebo předat místo typu s názvem delegáta jako parametr metody.  

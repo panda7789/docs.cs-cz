@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33321243"
 ---
 # <a name="introduction-to-generics-c-programming-guide"></a>Úvod do obecných typů (Průvodce programováním v C#)
 Obecné třídy a metody kombinovat – opětovné použití, bezpečnost typů a efektivitu způsobem, který nelze jejich neobecné protějšky. Obecné typy jsou nejčastěji používá s kolekcí a metody, které pracovat s nimi. Knihovna tříd rozhraní .NET Framework verze 2.0 poskytuje nový obor názvů, <xref:System.Collections.Generic>, která obsahuje několik nové třídy kolekcí založených na obecné. Doporučuje se, že všechny aplikace, jejichž cílem rozhraní .NET Framework 2.0 a pozdější použití nové obecnou kolekci třídy místo starší svými protějšky neobecnou, jako <xref:System.Collections.ArrayList>. Další informace najdete v tématu [obecné typy v rozhraní .NET](../../../standard/generics/index.md).  

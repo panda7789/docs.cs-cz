@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33324353"
 ---
 # <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Postupy: dotaz pro soubory s konkrétním atributem či názvem (C#)
 Tento příklad ukazuje, jak najít všechny soubory, které mají příponu názvu zadaný soubor (například ".txt") v zadané adresářovém stromu. Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu podle času vytvoření.  

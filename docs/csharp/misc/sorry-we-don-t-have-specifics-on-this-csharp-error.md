@@ -887,6 +887,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33314067"
 ---
 # <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě C#
 Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete hledat text chyby číslo a zpráva k nalezení informací na webu. Nebo můžete požádat jinými vývojáři pomocí jedné z těchto fóra:  

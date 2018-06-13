@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33328952"
 ---
 # <a name="how-to-use-lambda-expressions-outside-linq-c-programming-guide"></a>Postupy: Použití výrazů lambda mimo LINQ (Průvodce programováním v C#)
 Lambda – výrazy nejsou omezeny na [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy. Můžete je všude, kde je očekávané hodnotu delegáta, který je bez ohledu na anonymní metodu je možné použít. Následující příklad ukazuje, jak pomocí výrazu lambda v obslužné rutině událostí Windows Forms. Všimněte si, že typy vstupních hodnot (<xref:System.Object> a <xref:System.Windows.Forms.MouseEventArgs>) jsou vyvozena na základě kompilátoru a není nutné mít explicitně lambda vstupní parametry.  

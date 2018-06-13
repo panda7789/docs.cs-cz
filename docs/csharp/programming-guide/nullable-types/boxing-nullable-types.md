@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334753"
 ---
 # <a name="boxing-nullable-types-c-programming-guide"></a>Zabalení typů s povolenou hodnotou Null (Průvodce programováním v C#)
 Objekty na základě typů s povolenou hodnotou Null se do pouze pole, pokud se objekt nesmí být nulová. Pokud <xref:System.Nullable%601.HasValue%2A> je `false`, odkaz na objekt je přiřazena k `null` místo zabalení. Příklad:  

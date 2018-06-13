@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33323885"
 ---
 # <a name="how-to-find-an-element-with-a-specific-child-element-c"></a>Postupy: vyhledávání prvku s konkrétní podřízeným elementem (C#)
 Toto téma ukazuje, jak najít konkrétní element, který má podřízený element s konkrétní hodnotou.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549367"
 ---
 # <a name="table-overview"></a>Přehled tabulky
 <xref:System.Windows.Documents.Table> je úrovně blokovém elementu, které podporuje předložení mřížky obsah dokumentu toku. Flexibilita tohoto elementu je velmi užitečná, ale také umožňuje složitěji, pochopit a používat správně.  

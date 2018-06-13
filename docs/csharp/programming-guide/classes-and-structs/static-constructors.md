@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33315708"
 ---
 # <a name="static-constructors-c-programming-guide"></a>Statické konstruktory (Průvodce programováním v C#)
 Statický konstruktor se používá k chybě při inicializaci žádné [statické](../../../csharp/language-reference/keywords/static.md) data, nebo provádět určité akce, které je nutné provést pouze jednou. Je volána automaticky dřív, než se vytvoří první instance nebo všechny statické členy odkazují.  

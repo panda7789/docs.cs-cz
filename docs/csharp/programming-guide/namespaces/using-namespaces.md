@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33329544"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Použití oboru názvů (Průvodce programováním v C#)
 Obory názvů jsou nejčastěji používá v rámci programy C# dvěma způsoby. Za prvé tříd rozhraní .NET Framework použít obory názvů k uspořádání jeho mnoho tříd. Za druhé deklarace vlastní oborů názvů umožňují omezit rozsah třídy a metody názvy v projektech větší programování.  

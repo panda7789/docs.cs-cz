@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334532"
 ---
 # <a name="generics-in-the-run-time-c-programming-guide"></a>Obecné typy v běhovém prostředí (Průvodce programováním v C#)
 Když je obecný typ nebo metoda zkompilován Microsoft (MSIL intermediate language), obsahuje metadata, která ji identifikuje jako s parametry typu. Jak MSIL pro obecný typ se používá, se liší podle toho, zda zadaný typ parametru hodnotu typu nebo typu odkazu.  

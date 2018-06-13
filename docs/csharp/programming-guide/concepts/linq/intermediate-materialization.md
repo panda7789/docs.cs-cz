@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33320635"
 ---
 # <a name="intermediate-materialization-c"></a>Zprostředkující Materialization (C#)
 Pokud si nejste opatrní, v některých situacích můžete výrazně změnit profilem paměti a výkon vaší aplikace tak, že předčasné materialization kolekcí v dotazech. Některé standardní operátory dotazu způsobit materialization jejich zdrojové kolekci před je jediným elementem. Například <xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType> nejprve iteruje jeho celý zdrojový kolekce, pak seřadí všechny položky a nakonec vypočítá první položka. To znamená, že je nákladné získat první položka uspořádanou kolekci; Každá položka po tomto datu není nákladné. To dává smysl: by bylo možné pro tento dotaz operátor neurčí jinak.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33323707"
 ---
 # <a name="tutorial-chaining-queries-together-c"></a>Kurz: Řetězení dotazy společně (C#)
 V tomto kurzu znázorňuje model zpracování, pokud zřetězené dotazy společně. Řetězení dotazy společně je klíčovou součástí zápisu funkční transformace. Je důležité si uvědomit, přesně jak zřetězené pracovní dotazy.  

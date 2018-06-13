@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33319322"
 ---
 # <a name="how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression-c-programming-guide"></a>Postupy: Použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu (Průvodce programováním v C#)
 Implicitně typované lokální proměnné můžete použít vždy, když chcete kompilátoru k určení typu místní proměnné. Implicitně typované lokální proměnné je nutné použít k uložení anonymní typy, které se často používají ve výrazech dotazů. Následující příklady znázorňují volitelné a vyžaduje použití implicitně typované lokální proměnné v dotazech.  

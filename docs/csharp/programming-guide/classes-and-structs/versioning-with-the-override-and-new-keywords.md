@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327548"
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>Správa verzí pomocí klíčových slov override a new (Průvodce programováním v C#)
 Jazyka C# je navržen tak, aby Správa verzí mezi [základní](../../../csharp/language-reference/keywords/base.md) a odvozené třídy v různé knihovny můžete vyvíjet a zachování zpětné kompatibility. To znamená, například, že zavedení nového člena v na základní [třída](../../../csharp/language-reference/keywords/class.md) se stejným názvem jako člen v odvozené třídě je zcela podporované v jazyce C# a nevede k neočekávanému chování. Taky to znamená, že třídu musí explicitně stavu zda metoda je určena k přepsání zděděnou metodu, nebo zda je metoda nové metodu, která skryje s podobným názvem zděděna metoda.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33320661"
 ---
 # <a name="generics-and-arrays-c-programming-guide"></a>Obecné typy a pole (Průvodce programováním v C#)
 V C# 2.0 nebo novější, jednorozměrná pole, které mají dolní mez 0 automaticky implementovat <xref:System.Collections.Generic.IList%601>. To umožňuje vytvářet obecné metody, které můžete použít stejný kód k iteraci v rámci pole a dalších typů kolekce. Tento postup je užitečné hlavně pro čtení dat v kolekcích. <xref:System.Collections.Generic.IList%601> Rozhraní nelze použít k přidání nebo odebrání elementy z pole. Bude vyvolána výjimka, pokud se pokusíte volání <xref:System.Collections.Generic.IList%601> metoda jako <xref:System.Collections.Generic.IList%601.RemoveAt%2A> na pole v tomto kontextu.  
