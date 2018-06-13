@@ -29,6 +29,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605287"
 ---
 # <a name="type-list-visual-basic"></a>Seznam typů (Visual Basic)
 Určuje, *parametry typu* pro *Obecné* programovací element. Několik parametrů jsou oddělené čárkami. Toto je syntaxe pro jeden typ parametru.  

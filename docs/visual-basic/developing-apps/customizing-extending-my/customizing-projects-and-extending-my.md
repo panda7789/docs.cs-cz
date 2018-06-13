@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586835"
 ---
 # <a name="customizing-projects-and-extending-my-with-visual-basic"></a>Přizpůsobení projektů a rozšíření oboru názvů My v jazyce Visual Basic
 Můžete přizpůsobit šablony projektů k poskytnutí dalších `My` objekty. To usnadňuje vyhledání a používání vašich objektů jinými vývojáři.  
