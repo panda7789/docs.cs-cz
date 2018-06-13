@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596681"
 ---
 # <a name="statement-cannot-end-a-block-outside-of-a-line-39if39-statement"></a>Příkaz nemůže ukončit blok mimo řádek s &#39;Pokud&#39; – příkaz
 Jeden řádek `If` příkaz obsahuje několik příkazů oddělené dvojtečkou (:), z nichž jeden je `End` příkaz pro řídicí blok mimo jeden řádek `If`. Jeden řádek `If` příkazy se nedoporučuje používat `End If` příkaz.  

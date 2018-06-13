@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518382"
 ---
 # <a name="absolute-delay"></a>Absolutní zpoždění
 Hlavní scénáře pro tato ukázka má počkat, dokud zadané <xref:System.DateTime> pomocí trvanlivý časovačů v aplikaci pracovního postupu. To se liší od pomocí integrovaných <xref:System.Activities.Statements.Delay> aktivitu jako to bude umožňují pouze zpoždění pro danou <xref:System.TimeSpan> (nebo počet minut nebo sekund).  

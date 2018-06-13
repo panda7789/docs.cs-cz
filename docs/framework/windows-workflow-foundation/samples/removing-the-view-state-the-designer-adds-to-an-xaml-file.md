@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517833"
 ---
 # <a name="removing-the-view-state-the-designer-adds-to-an-xaml-file"></a>Odebrání stav zobrazení návrháře přidá do souboru XAML
 Tento příklad ukazuje, jak vytvořte třídu, která je odvozena z <xref:System.Windows.Markup.XamlWriter> a odebere zobrazení stavu ze souboru XAML. [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] zapisuje informace do dokumentu XAML, která se označuje jako stav zobrazení. Stav zobrazení odkazuje na informace, který je požadován v době návrhu, jako je například umístění rozložení, který není nutný za běhu. [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)] Vloží do dokumentu XAML tyto informace, jako je upravit. [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)] zapisuje do souboru XAML s stav zobrazení `mc:Ignorable` atributů, takže tyto informace není načíst, pokud modul runtime načte souboru XAML. Tento příklad ukazuje, jak vytvořte třídu, která odebere této informace o stavu zobrazení při zpracování uzlů XAML.  

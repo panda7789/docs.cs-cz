@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518317"
 ---
 # <a name="using-custom-activity-designers-and-templates"></a>Pomocí Návrháře vlastních aktivit a šablony
 Tento oddíl obsahuje témata popisující, jak vytvářet Návrháře vlastních aktivit a šablony vlastní aktivity.  

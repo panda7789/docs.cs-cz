@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523381"
 ---
 # <a name="networking-in-windows-forms-applications"></a>Použití sítě ve formulářových aplikacích Windows
 Rozhraní .NET Framework poskytuje třídy pro zobrazení webové stránky, stahování obsahu webu, interakci s weby protokolu FTP pro přenos souboru a využívání webových služeb, což usnadňuje sestavení síťové funkce do své aplikace. Následující prostředky vám pomůže porozumět síťové technologie rozhraní .NET Framework a jak je můžete integrovat do Windows Forms.  

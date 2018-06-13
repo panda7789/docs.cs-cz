@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508342"
 ---
 # <a name="two-way-communication"></a>Obousměrná komunikace
 Tento příklad ukazuje, jak provádět zpracovaných obousměrné komunikace ve frontě prostřednictvím služby MSMQ. V tomto příkladu `netMsmqBinding` vazby. V takovém případě je služba vlastním hostováním konzolovou aplikaci, která umožňuje sledovat službu přijetí zprávy ve frontě.  

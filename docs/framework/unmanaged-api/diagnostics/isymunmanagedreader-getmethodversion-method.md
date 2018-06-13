@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33424661"
 ---
 # <a name="isymunmanagedreadergetmethodversion-method"></a>ISymUnmanagedReader::GetMethodVersion – metoda
 Získá verzi metoda. Metoda verze začíná na 1 a se zvýší pokaždé, když znovu zkompiluje metodu. Rekompilace může dojít bez změny metody.  

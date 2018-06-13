@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33449374"
 ---
 # <a name="imetadataassemblyemit-interface"></a>IMetaDataAssemblyEmit – rozhraní
 Poskytuje metody, které podporují vlastní popis modelu používaný modul common language runtime řešení a využívat prostředky.  

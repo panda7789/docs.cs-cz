@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514285"
 ---
 # <a name="custom-activity-designers"></a>Návrháři vlastních aktivit
 Tato část obsahuje ukázky aktivity, které používají vlastní Designer pro zobrazení v Návrháři pracovních postupů.  

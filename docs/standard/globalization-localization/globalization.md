@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579571"
 ---
 # <a name="globalization"></a>Globalizace
 Globalizace zahrnuje návrh a vývoj připravených aplikaci, která podporuje lokalizované rozhraní a místní data pro uživatele ve více jazykových verzí. Před zahájením fáze návrhu, měli byste určit jazykové verze, které bude podporovat aplikace. I když aplikace cílí na jednu kulturu nebo oblasti jako jeho výchozí, můžete navrhnout a zapisuje tak, aby ho lze snadno rozšířit na uživatele ve dalších jazykové verze.  

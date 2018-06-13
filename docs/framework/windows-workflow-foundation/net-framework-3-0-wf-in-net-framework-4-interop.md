@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518408"
 ---
 # <a name="using-net-framework-30-wf-activities-in-net-framework-4-with-the-interop-activity"></a>Pomocí aktivity WF rozhraní .NET Framework 3.0 v rozhraní .NET Framework 4 s spolupráce aktivity
 <xref:System.Activities.Statements.Interop> Aktivita [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] aktivity (WF 4.5), která zabalí [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] (WF 3.5) aktivitu v rámci [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu. Aktivita WF 3 může být aktivitu jednoho typu nebo celý strom aktivit. Provádění (včetně zrušení a zpracování výjimek) a perzistence [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] aktivita provedena v kontextu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] instance pracovního postupu, který spouští.  

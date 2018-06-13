@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572967"
 ---
 # <a name="naming-guidelines"></a>Pokyny pro pojmenování
 Následující sadu konzistentní zásady vytváření názvů pro vývoj prostředí může být hlavní příspěvkem k rozhraní framework použitelnost. To umožňuje framework má být používána celá řada vývojářů na široce oddělených projekty. Nad rámec konzistence formuláře názvy elementů framework musí snadno pochopit a musí obsahovat funkci jednotlivých prvků.  

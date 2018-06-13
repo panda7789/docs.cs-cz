@@ -32,6 +32,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579844"
 ---
 # <a name="formatting-types-in-net"></a>Typy formátování v rozhraní .NET
 <a name="Introduction"></a> Formátování je proces převodu instance třídy, struktury nebo výčtové hodnoty na řetězcovou reprezentaci, často tak, aby výsledný řetězec, můžete se uživatelům zobrazí nebo deserializovat k obnovení původního datového typu. Tento převod může představovat určité problémy:  

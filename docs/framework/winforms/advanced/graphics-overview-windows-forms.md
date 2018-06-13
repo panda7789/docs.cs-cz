@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521753"
 ---
 # <a name="graphics-overview-windows-forms"></a>Přehled grafiky (Windows Forms)
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je rozhraní grafiky zařízení, která umožňuje programátorům pro psaní aplikací nezávislé na zařízení. Služby [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] se zveřejňují přes sadu spravované třídy.  

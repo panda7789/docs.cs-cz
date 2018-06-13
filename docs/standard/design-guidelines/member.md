@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571394"
 ---
 # <a name="member-design-guidelines"></a>Člen pokynů pro návrh
 Metody, vlastnosti, události, konstruktory a pole se souhrnně označují jako členy. Členy jsou nakonec prostředky, se kterým je funkce framework zpřístupněny koncovým uživatelům prostředí.  

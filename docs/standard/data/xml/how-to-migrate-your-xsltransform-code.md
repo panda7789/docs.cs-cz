@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570991"
 ---
 # <a name="how-to-migrate-your-xsltransform-code"></a>Postupy: migrace kódu XslTransform
 Nové třídy XSLT byly navrženy pro velmi podobný existujících tříd. <xref:System.Xml.Xsl.XslCompiledTransform> Třídy nahradí <xref:System.Xml.Xsl.XslTransform> třídy. Šablony stylů kompilované pomocí <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metoda. Transformace jsou spouštěny pomocí <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metoda. Následující postupy ukazují běžné úlohy XSLT a porovnání kódu pomocí <xref:System.Xml.Xsl.XslTransform> třídy <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  

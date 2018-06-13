@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599028"
 ---
 # <a name="argument-39period39-must-be-less-than-or-equal-to-argument-39life39"></a>Argument &#39;období&#39; musí být menší než nebo rovna argument &#39;životnosti&#39;
 Hodnota `Period` argument, který určuje časový interval, pro který prostředek se počítá odpis hodnoty, je větší než hodnota `Life` argument.  

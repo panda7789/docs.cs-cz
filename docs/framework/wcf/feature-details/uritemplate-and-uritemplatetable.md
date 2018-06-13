@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508815"
 ---
 # <a name="uritemplate-and-uritemplatetable"></a>UriTemplate a UriTemplateTable
 Vývojáři webů potřebují k popisu tvar a rozložení identifikátory URI, který své služby reagovat na. Windows Communication Foundation (WCF) přidá dva nové třídy pro umožnění vývojáři kontroly nad jejich identifikátory URI. <xref:System.UriTemplate> a <xref:System.UriTemplateTable> tvoří základ, na základě identifikátoru URI odesílání modulu ve službě WCF. Tyto třídy můžete použít taky u své vlastní, což umožňuje vývojářům umožní využít šablon a identifikátor URI mechanismus mapování bez implementace služby WCF.  

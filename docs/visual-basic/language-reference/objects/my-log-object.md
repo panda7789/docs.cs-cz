@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596018"
 ---
 # <a name="mylog-object"></a>My.Log – objekt
 Poskytuje vlastnosti a metody pro zápis do aplikace naslouchající protokolům událostí a výjimek informace.  

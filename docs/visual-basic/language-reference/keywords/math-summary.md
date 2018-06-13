@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33598188"
 ---
 # <a name="math-summary-visual-basic"></a>Matematický souhrn (Visual Basic)
 Klíčová slova jazyka Visual Basic a členové běhové knihovny jsou uspořádány podle účelu a použití.  
