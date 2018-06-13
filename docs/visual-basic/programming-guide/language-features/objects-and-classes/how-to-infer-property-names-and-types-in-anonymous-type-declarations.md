@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653309"
 ---
 # <a name="how-to-infer-property-names-and-types-in-anonymous-type-declarations-visual-basic"></a>Postupy: Odvození názvů a typů vlastností v deklaracích anonymního typu (Visual Basic)
 Anonymní typy poskytují žádný mechanismus pro zadání přímo datové typy vlastností. Typy všech vlastností jsou odvodit. V následujícím příkladu, typy `Name` a `Price` jsou odvodit přímo z hodnoty, které se používají k inicializaci je.  

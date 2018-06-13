@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655020"
 ---
 # <a name="xml-literals-overview-visual-basic"></a>Přehled literálů XML (Visual Basic)
 *Literál XML* umožňuje začlenit XML přímo do kódu jazyka Visual Basic. Představuje literálu syntaxe XML [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekty a je podobná syntaxe XML 1.0. Díky tomu je snazší vytvářet XML elementů a dokumentů prostřednictvím kódu programu, protože kódu má stejné struktuře jako poslední XML.  

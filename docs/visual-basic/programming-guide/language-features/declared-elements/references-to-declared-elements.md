@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655808"
 ---
 # <a name="references-to-declared-elements-visual-basic"></a>Odkazy na deklarované elementy (Visual Basic)
 Pokud váš kód odkazoval element deklarované, Visual Basic – kompilátor odpovídá názvu ve vašem odkaz na odpovídající deklarace s tímto názvem. Když se stejným názvem je deklarován více než jeden element, můžete řídit, která z těchto elementů má odkazovat *opravňující* její název.  

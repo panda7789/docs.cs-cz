@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636725"
 ---
 # <a name="managed-classes-derived-from-a-com-class-cannot-be-called-late-bound"></a>Spravované třídy odvozené od třídy COM nelze volat pozdní vazbu.
 Pokoušíte se o volání pozdní vazbou na spravované třídy odvozené od třídy COM; takové hovory nejsou podporovány.  

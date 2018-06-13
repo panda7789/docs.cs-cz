@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645925"
 ---
 # <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-visual-basic"></a>Odebrání prvky, atributy a uzly ze stromu XML (Visual Basic)
 Ve stromu XML, můžete upravit odebrání prvky, atributy a jiné typy uzlů.  

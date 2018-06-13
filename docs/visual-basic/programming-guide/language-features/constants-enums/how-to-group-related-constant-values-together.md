@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646400"
 ---
 # <a name="how-to-group-related-constant-values-together-visual-basic"></a>Postupy: Seskupení souvisejících hodnot konstant (Visual Basic)
 Výčet je nejlepší způsob, jak seskupit související konstanty. Vytvoření výčtu s `Enum` prohlášení v části prohlášení o třídu nebo modul. Další informace najdete v tématu [postupy: deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md).  

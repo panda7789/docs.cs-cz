@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33634979"
 ---
 # <a name="internal-error-in-the-microsoft-visual-basic-runtime"></a>Vnitřní chyba v modulu runtime Microsoft Visual Basic
 V modulu Microsoft Visual Basic runtime došlo k vnitřní chybě.  

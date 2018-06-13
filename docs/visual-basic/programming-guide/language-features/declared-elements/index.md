@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647693"
 ---
 # <a name="declared-elements-in-visual-basic"></a>Deklarované elementy v jazyce Visual Basic
 A *deklarovaný element* je programovací element, který je definován v příkazu deklarace. Deklarované elementy obsahovat proměnné, konstanty, výčty, třídy, struktury, moduly, rozhraní, postupy, parametry procedur, vrátí funkce, odkazy na externí procedura, operátory, vlastnosti, události a delegáti.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635903"
 ---
 # <a name="file39s-open-mode-wasn39t-set-to-a-valid-value"></a>Soubor&#39;s otevřete režimu wasn&#39;t nastavit na platnou hodnotu
 Hodnota zadaná pro režim otevření souboru byl neplatný. V následující tabulce jsou platné hodnoty pro <xref:Microsoft.VisualBasic.OpenMode> výčtu.  

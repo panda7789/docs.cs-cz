@@ -17,6 +17,7 @@ ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/11/2018
+ms.locfileid: "34058828"
 ---
 # <a name="---string-interpolation-c-reference"></a>$ – řetězec interpolace (referenční dokumentace jazyka C#)
 

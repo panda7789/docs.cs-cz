@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635074"
 ---
 # <a name="could-not-obtain-full-operation-system-name-due-to-internal-error"></a>Nelze získat úplný název operačního systému z důvodu vnitřní chyby
 Nelze získat úplný název operačního systému z důvodu vnitřní chyby. To může být způsobeno WMI není existující do aktuálního počítače.  

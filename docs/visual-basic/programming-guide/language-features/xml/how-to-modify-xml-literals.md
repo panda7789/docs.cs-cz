@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656042"
 ---
 # <a name="how-to-modify-xml-literals-visual-basic"></a>Postupy: Změna literálů XML (Visual Basic)
 Visual Basic poskytuje praktické způsoby, jak změna literálů XML. Můžete přidat nebo odstranit elementů a atributů, a můžete také nahradit existující element nového elementu XML. Toto téma obsahuje několik příkladů, jak upravit existující literál XML.  

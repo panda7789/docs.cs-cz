@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635832"
 ---
 # <a name="could-not-obtain-memory-information-due-to-internal-error"></a>Nelze získat informace o paměti z důvodu vnitřní chyby
 Volání do jedné z vlastností informace o paměti `My.Computer.Info` objektu se nezdařilo.  
