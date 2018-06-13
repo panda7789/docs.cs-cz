@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762358"
 ---
 # <a name="csdl-ssdl-and-msl-specifications"></a>CSDL, SSDL a specifikace MSL
 [Msdn.microsoft.com/data/ef](http://msdn.microsoft.com/data/ef) lokalita je momentálně hlavní umístění pro obsah Entity Framework.  

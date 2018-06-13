@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327689"
 ---
 # <a name="chaining-queries-example-c"></a>Řetězení příklad dotazů (C#)
 Tento příklad vychází z předchozího příkladu a zobrazuje, co se stane, když jste řetězu společně dva dotazy, které obě používají odložené provedení a opožděné vyhodnocení.  

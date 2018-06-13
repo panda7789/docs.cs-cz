@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761529"
 ---
 # <a name="intersect-entity-sql"></a>INTERSECT (entita SQL)
 Vrátí kolekci všech jedinečných hodnot, které jsou vráceny ve výrazech dotazů na levé straně a pravé straně operandu INTERSECT. Všechny výrazy musí být stejného typu nebo typu běžné základní nebo odvozené jako `expression`.  

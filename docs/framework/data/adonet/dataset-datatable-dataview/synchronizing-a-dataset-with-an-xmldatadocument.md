@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763264"
 ---
 # <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>Synchronizace s XmlDataDocument datové sady
 V této části ukážeme jedním krokem zpracování nákupní objednávka, použitím silného typu <xref:System.Data.DataSet> synchronizovat se službou <xref:System.Xml.XmlDataDocument>. Příklady, které následují vytvořit **datovou sadu** s minimalizovaném okně schéma, které odpovídá pouze část zdrojový dokument XML. Příklady používají **XmlDataDocument** zachovat přesnost zdrojový dokument XML, povolení **datovou sadu** který se má použít ke zveřejnění podmnožinu dokumentu XML.  
