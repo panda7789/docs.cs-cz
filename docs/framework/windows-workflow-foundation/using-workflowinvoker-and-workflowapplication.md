@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519623"
 ---
 # <a name="using-workflowinvoker-and-workflowapplication"></a>Pomocí WorkflowInvoker a WorkflowApplication
 Windows Workflow Foundation (WF) poskytuje několik metod hostování pracovních postupů. <xref:System.Activities.WorkflowInvoker> poskytuje jednoduchý způsob pro vyvolání pracovního postupu, jako by byly volání metody a lze použít pouze pro pracovní postupy, které nepoužívají trvalost. <xref:System.Activities.WorkflowApplication> poskytuje bohatší model pro spouštění pracovních postupů, které obsahuje oznámení o události životního cyklu, řízení provádění, obnovení záložku a trvalost. <xref:System.ServiceModel.Activities.WorkflowServiceHost> poskytuje podporu pro aktivity zasílání zpráv a používá se především s služeb pracovních postupů. Toto téma vás seznámí s pracovního postupu hostování s <xref:System.Activities.WorkflowInvoker> a <xref:System.Activities.WorkflowApplication>. Další informace o hostování pracovních postupů s <xref:System.ServiceModel.Activities.WorkflowServiceHost>, najdete v části [služeb pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md) a [přehled hostování služeb pracovních postupů](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md).  

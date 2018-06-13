@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34171990"
 ---
 # <a name="public-c-reference"></a>public (Referenční dokumentace jazyka C#)
 `public` – Klíčové slovo je – modifikátor přístupu pro různé typy a členy typu. Veřejný přístup je nejvíce projektovou úroveň přístupu. Neexistují žádná omezení na přístup k veřejné členy, jako v následujícím příkladu:  

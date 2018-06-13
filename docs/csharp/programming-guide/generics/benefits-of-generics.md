@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336827"
 ---
 # <a name="benefits-of-generics-c-programming-guide"></a>Výhody obecných typů (Průvodce programováním v C#)
 Obecné typy poskytují řešení k omezení v dřívějších verzích modul common language runtime a ve kterém se provádí generalizace typy přetypování z universal základní typ a jazyk C# <xref:System.Object>. Vytvořením obecné třídy můžete vytvořit kolekci, která je bezpečnost typů v době kompilace.  

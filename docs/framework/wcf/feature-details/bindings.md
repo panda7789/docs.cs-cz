@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489661"
 ---
 # <a name="windows-communcation-foundation-bindings"></a>Vazby WCF
 Windows Communication Foundation (WCF) odděluje postup zápisu softwaru pro aplikaci z jak komunikuje s jiným softwarem. Vazby slouží k určení přenosu, kódování a podrobnosti protokolu povinné pro klienty a služby pro komunikaci mezi sebou. WCF používá vazby k vygenerování základní síťové vyjádření koncového bodu, takže většina podrobnosti vazba musí schválit strany, které komunikují. Nejjednodušší způsob, jak dosáhnout je pro klientům služby používat stejnou vazbu, která koncový bod služby používá. Další informace o tom, jak to udělat najdete v tématu [pomocí vazby na klienty a konfiguraci služby Windows Communication Foundation](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb).  

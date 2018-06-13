@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490916"
 ---
 # <a name="interoperability-with-web-services-enhancements-30"></a>Interoperabilita s Web Services Enhancements 3.0
 Služby a klienti Windows Communication Foundation (WCF) jsou úroveň kompatibilní s 3.0 vylepšení webové služby pro klienty Microsoft .NET (WSE) a služby, když klienti WCF a služby jsou nakonfigurovány pro použití srpen 2004 verzi Specifikace WS-Addressing.  

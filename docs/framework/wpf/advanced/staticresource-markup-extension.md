@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547196"
 ---
 # <a name="staticresource-markup-extension"></a>StaticResource – rozšíření značek
 Poskytuje hodnotu pro všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vlastnost atribut vyhledáním odkaz na prostředek už definované. Chování vyhledávání pro tento prostředek je obdobou čas načítání vyhledávání, který bude hledat prostředky, které byly dříve načteny z kódu aktuální [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky a také další aplikace zdroje a vygeneruje tuto hodnotu prostředků, jako Hodnota vlastnosti v objektech spuštění.  

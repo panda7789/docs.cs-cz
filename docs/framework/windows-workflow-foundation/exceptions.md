@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520156"
 ---
 # <a name="exceptions"></a>Výjimky
 Pracovní postupy můžete použít <xref:System.Activities.Statements.TryCatch> aktivity zpracování výjimek, které jsou vyvolány během spouštění pracovního postupu. Tyto odchylky mohou být zpracovány nebo se může být znovu vyvolána, pomocí <xref:System.Activities.Statements.Rethrow> aktivity. Aktivity v <xref:System.Activities.Statements.TryCatch.Finally%2A> části jsou spuštěna při buď <xref:System.Activities.Statements.TryCatch.Try%2A> části nebo <xref:System.Activities.Statements.TryCatch.Catches%2A> části dokončení. Pracovní postupy hostované <xref:System.Activities.WorkflowApplication> instance můžete také použít <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> obslužné rutiny události pro zpracování výjimek, které nejsou zpracovávány <xref:System.Activities.Statements.TryCatch> aktivity.  

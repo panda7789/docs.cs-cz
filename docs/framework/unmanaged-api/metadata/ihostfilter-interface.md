@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33446737"
 ---
 # <a name="ihostfilter-interface"></a>IHostFilter – rozhraní
 Poskytuje metody k označení, že zadaný token budou zpracovány.  

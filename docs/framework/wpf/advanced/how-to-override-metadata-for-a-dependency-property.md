@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543716"
 ---
 # <a name="how-to-override-metadata-for-a-dependency-property"></a>Postupy: Přetížení metadat pro vlastnost závislosti
 Tento příklad ukazuje, jak lze přepsat výchozí metadat vlastností závislostí, který přichází z zděděná třída, voláním <xref:System.Windows.DependencyProperty.OverrideMetadata%2A> metoda a poskytuje metadata pro konkrétní typ.  

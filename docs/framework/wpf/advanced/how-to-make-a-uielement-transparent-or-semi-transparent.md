@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545308"
 ---
 # <a name="how-to-make-a-uielement-transparent-or-semi-transparent"></a>Postupy: Vytvoření průhledného nebo poloprůhledného elementu UIElement
 Tento příklad ukazuje, jak provádět <xref:System.Windows.UIElement> průhledných nebo poloprůhlednost. K nastavení vzhledu elementu průhledných nebo poloprůhledné, nastavte jeho <xref:System.Windows.UIElement.Opacity%2A> vlastnost. Hodnota `0.0` nastaví prvek zcela transparentní, při hodnotu `1.0` bude zcela neprůhledná elementu. Hodnota `0.5` nastaví prvek 50 % neprůhledných a tak dále. Elementu <xref:System.Windows.UIElement.Opacity%2A> je nastaven na `1.0` ve výchozím nastavení.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33487422"
 ---
 # <a name="developing-channels"></a>Vývoj kanálů
 K vývoji pro protokol nebo přenos kanálu, který lze použít s Windows Communication Foundation (WCF) aplikační vrstvu vyžaduje několik kroků. Toto téma popisuje kroky a bodů na konkrétní témata pro další informace. Zjistit model kanálu a různé typy, které jsou uvedené v tomto tématu najdete v části [přehled modelu kanálu](../../../../docs/framework/wcf/extending/channel-model-overview.md). Kanál ukázku dokončení přenosu, najdete [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md).  

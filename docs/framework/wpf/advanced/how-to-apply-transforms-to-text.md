@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544919"
 ---
 # <a name="how-to-apply-transforms-to-text"></a>Postupy: Použití transformací na text
 Transformace můžete změnit zobrazení textu v aplikaci. Následující příklady používají různé typy transformací vykreslování ovlivnit zobrazení textu v <xref:System.Windows.Controls.TextBlock> ovládacího prvku.  

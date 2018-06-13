@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493181"
 ---
 # <a name="correlation-overview"></a>Korelace – přehled
 Korelace je mechanismus pro související zprávy služby pracovního postupu k sobě navzájem nebo stav instance aplikace, jako je například odpovědět na požadavek počáteční nebo konkrétní pořadí ID trvalého stavu pracovním postupu pořadí zpracování. Toto téma obsahuje přehled korelace. Na další témata v této části poskytují další informace pro každý typ korelace.  

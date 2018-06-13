@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33485361"
 ---
 # <a name="custom-tokens"></a>Vlastní tokeny
 I když Windows Communication Foundation (WCF) nativně podporuje certifikáty X.509, tokeny kontext zabezpečení, lístky protokolu Kerberos a tokeny název uživatele jako přihlašovací údaje, je dostatečně flexibilní, aby vám umožní používat vlastní pověření.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33337484"
 ---
 # <a name="exception-handling-c-programming-guide"></a>Zpracování výjimek (Průvodce programováním v C#)
 A [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blok využívá C# programátorům oddílu kód, který může být ovlivněn výjimku. Související [catch](../../../csharp/language-reference/keywords/try-catch.md) bloky se používají pro zpracování všech výsledné výjimek. A [nakonec](../../../csharp/language-reference/keywords/try-finally.md) blok obsahuje kód, který se spustí bez ohledu na to, zda je vyvolána výjimka `try` bloku, například uvolnění prostředků, které jsou přiděleny v `try` bloku. A `try` bloku vyžaduje jeden nebo více přidružené `catch` bloky, nebo `finally` bloku nebo obojí.  

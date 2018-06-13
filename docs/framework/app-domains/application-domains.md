@@ -19,6 +19,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34233948"
 ---
 # <a name="application-domains"></a>Aplikační domény
 Operační systémy a běhová prostředí obvykle poskytují určitou formu izolace mezi aplikacemi. Například Windows používá procesy k izolování aplikací. Tato izolace je nutné zajistit, že kód spuštěný v jedné aplikaci nemůže mít nepříznivý vliv na jiné nesouvisející aplikace.  

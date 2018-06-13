@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489141"
 ---
 # <a name="how-to-control-service-instancing"></a>Postupy: vytváření instancí služby Řízení
 Nastavení režimu instance služby umožňuje určit, kdy <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType> (a jeho objekt přidružená služba definovaný uživatelem) je vytvořen. Najdete v článku <xref:System.ServiceModel.InstanceContextMode> výčet režimů možné. Další informace o chování najdete v tématu [konfigurace a rozšíření modulu Runtime s chováním](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md). Pracovní příklady najdete v tématu [chování](../../../../docs/framework/wcf/samples/behaviors.md).  

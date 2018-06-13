@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33487669"
 ---
 # <a name="custom-message-formatters"></a>Vlastní formátování zpráv
 Obsah zprávy je často ve formátu XML, což je obvykle není vhodné formát pro aplikaci. Aplikace pracovat s objekty, získávání a nastavování jejich vlastností. Windows Communication Foundation (WCF) používá *kontrakt dat* převést <xref:System.ServiceModel.Channels.Message> objektu na objekt jednoduše zvládne aplikace. Tyto procesy se nazývají serializace a deserializace. Upozorňujeme, že jsou popsat serializaci a deserializaci provádí přenosové vrstvy do a z přenosový formát zprávy, což je proces nesouvisejícími tyto stejných podmínek.  

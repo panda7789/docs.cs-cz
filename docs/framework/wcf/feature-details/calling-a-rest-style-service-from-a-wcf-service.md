@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488508"
 ---
 # <a name="calling-a-rest-style-service-from-a-wcf-service"></a>Volání služby typu REST ze služby WCF
 Při volání z regulární služby WCF (založený na protokolu SOAP) služby ve stylu REST, přepíše kontext operaci na metodě služby (která obsahuje informace o příchozího požadavku) kontext, který má být používána odchozího požadavku. To způsobí, že metody GET protokolu HTTP žádosti o změnu na požadavky HTTP POST. Chcete-li vynutit službu WCF na používání správné kontextu pro volání služby stylu REST, vytvořte novou <xref:System.ServiceModel.OperationContextScope> a volání služby stylu REST z uvnitř oblasti kontextu operace. Toto téma popisuje, jak k vytvoření jednoduchý příklad, který tento postup ukazuje.  

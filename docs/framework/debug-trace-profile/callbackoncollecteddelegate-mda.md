@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356352"
 ---
 # <a name="callbackoncollecteddelegate-mda"></a>callbackOnCollectedDelegate – pomocník spravovaného ladění (MDA)
 `callbackOnCollectedDelegate` Pomocník spravovaného ladění (MDA) se aktivuje, pokud je delegáta zařazen ze spravovaného na nespravovaný kód jako ukazatel na funkci a zpětné volání je umístěn na tento ukazatel na funkci po uvolnění z paměti delegát.  

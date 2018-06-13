@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532630"
 ---
 # <a name="how-to-expose-properties-of-constituent-controls"></a>Postupy: Vystavení vlastností základních ovládacích prvků
 Ovládací prvky, které tvoří složeného ovládacího prvku se nazývají *základních ovládacích prvků*. Tyto ovládací prvky jsou obvykle deklarovány privátní a proto nelze získat přístup, vývojáři. Pokud chcete zpřístupnit vlastnosti těchto ovládacích prvků pro budoucí uživatele, umístěte je pro uživatele. Vlastnost základní ovládacího prvku je vytvářena při vytvoření vlastnosti v uživatelského ovládacího prvku a pomocí `get` a `set` přístupové objekty této vlastnosti k ovlivnění změnu v hodnotě soukromá vlastnost základní ovládacího prvku.  

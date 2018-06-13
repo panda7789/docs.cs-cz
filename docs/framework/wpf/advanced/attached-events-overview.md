@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541736"
 ---
 # <a name="attached-events-overview"></a>Přehled připojených událostí
 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] Definuje součást jazyk a typ události volána *přidružená událost*. Koncept přidružená událost umožňuje přidat obslužnou rutinu události pro libovolný element místo na element, který ve skutečnosti definuje nebo dědí události. V takovém případě ani objekt potenciálně vyvolá událost ani cílový zpracování instance definuje nebo jinak "vlastní" události.  

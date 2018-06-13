@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488036"
 ---
 # <a name="how-to-create-a-custom-principal-identity"></a>Postupy: vytvoření vlastní objekt Identity
 <xref:System.Security.Permissions.PrincipalPermissionAttribute> Je deklarativní způsob řízení přístupu metod služby. Při použití tohoto atributu <xref:System.ServiceModel.Description.PrincipalPermissionMode> výčet Určuje režim pro provedení kontroly autorizace. Když tento režim je nastaven na <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom>, umožní uživateli zadat vlastní <xref:System.Security.Principal.IPrincipal> třída vrácený <xref:System.Threading.Thread.CurrentPrincipal%2A> vlastnost. Toto téma ukazuje scénář při <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom> se používá v kombinaci s vlastní zásady autorizace a vlastní objekt.  

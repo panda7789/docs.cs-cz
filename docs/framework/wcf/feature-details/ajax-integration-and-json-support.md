@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488826"
 ---
 # <a name="ajax-integration-and-json-support"></a>Integrace jazyka AJAX a podpora formátu JSON
 Podpora Windows Communication Foundation (WCF) pro ASP.NET asynchronní JavaScript a XML (AJAX) a formát JavaScript Object Notation (JSON) dat povolit služby WCF vystavit operations klientům AJAX. Klienti AJAX jsou webové stránky spuštění kódu JavaScript a přístup k těchto služeb WCF pomocí požadavků HTTP. Témata v této části poskytují informace o tuto podporu a o tom, jak ho implementovat.  

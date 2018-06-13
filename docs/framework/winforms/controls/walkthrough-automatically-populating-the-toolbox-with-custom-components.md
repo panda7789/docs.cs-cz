@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540043"
 ---
 # <a name="walkthrough-automatically-populating-the-toolbox-with-custom-components"></a>Návod: Automatické vyplnění nástrojů vlastními komponentami
 Pokud vaše komponenty jsou definovány na projekt v aktuálně otevřených řešení, se automaticky zobrazí v **sada nástrojů**, třeba akce. Můžete také ručně naplnit **sada nástrojů** s vlastních součástí s použitím [zvolte sady nástrojů položek dialogové okno (Visual Studio)](http://msdn.microsoft.com/library/bd07835f-18a8-433e-bccc-7141f65263bb), ale **sada nástrojů** bere v úvahu položek ve vašem řešení sestavení výstupy s následujícími charakteristikami:  

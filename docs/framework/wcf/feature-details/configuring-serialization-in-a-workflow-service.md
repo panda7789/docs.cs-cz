@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488869"
 ---
 # <a name="configuring-serialization-in-a-workflow-service"></a>Konfigurace serializace ve službě pracovních postupů
 Služby pracovních postupů jsou služby Windows Communication Foundation (WCF), a tak mít možnost buď pomocí <xref:System.Runtime.Serialization.DataContractSerializer> (výchozí) nebo <xref:System.Xml.Serialization.XmlSerializer>. Při zápisu mimo pracovní postup služby typu serializátoru je zadán pro kontrakt služby nebo operace. Při vytváření pracovního postupu služby WCF v kódu nezadáte tyto smlouvy, ale místo jsou generovány při běhu pomocí odvození kontrakt. Další informace o odvození kontrakt najdete v tématu [použití kontraktů v pracovním postupu](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md).  Serializátor je zadán pomocí <xref:System.ServiceModel.Activities.Receive.SerializerOption%2A> vlastnost. To je možné nastavit v návrháři, jak je znázorněno na následujícím obrázku.  

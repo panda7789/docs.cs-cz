@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488696"
 ---
 # <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>Postupy: Konfigurace vlastních metadat WS Exchange vazby
 Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. Windows Communication Foundation (WCF) zahrnuje čtyři metadata definovaná systémem vazby, ale můžete metadat pomocí žádné vazby, které chcete publikovat. Toto téma vám ukáže, jak publikovat pomocí metadat `wsHttpBinding`. Tato vazba vám dává možnost vystavení metadata zabezpečené způsobem. Kód v tomto článku je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  

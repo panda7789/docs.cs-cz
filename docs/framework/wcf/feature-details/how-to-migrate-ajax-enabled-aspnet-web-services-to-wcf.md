@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495548"
 ---
 # <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Postupy: Migrace webových služeb ASP.NET s podporou AJAXu na službu WCF
 Toto téma popisuje postupy migrace základní služby prvku ASP.NET AJAX do ekvivalentní služby technologie AJAX Windows Communication Foundation (WCF). Ukazuje, jak vytvořit funkčně srovnatelný WCF verzi služby prvku ASP.NET AJAX. Tyto dvě služby je pak možné použít vedle sebe, nebo službu WCF lze nahradit služba ASP.NET AJAX.  

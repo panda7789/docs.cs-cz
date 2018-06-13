@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519591"
 ---
 # <a name="property-grid-extensibliity"></a>Vlastnost Extensibliity mřížky
 Vývojář může přizpůsobit mřížku vlastností, které se zobrazí, pokud je vybrána danou aktivitu v návrháři. To lze provést pro vytvoření bohaté úpravy prostředí. Tento příklad ukazuje, jak to lze provést.  

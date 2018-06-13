@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491572"
 ---
 # <a name="federation-and-issued-tokens"></a>Federace a vystavené tokeny
 S Windows Communication Foundation (WCF), můžete vytvořit klienty, kteří zabezpečeně komunikovat se službami, které implementují specifikace WS-Federation a WS-Trust. Specifikace poskytnout mechanismy, které umožňují ověřování a autorizace mezi různé důvěryhodnosti sfér pomocí XML, protokolu SOAP a webové služby popis Language (WSDL).  

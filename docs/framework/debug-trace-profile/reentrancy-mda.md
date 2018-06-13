@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33387858"
 ---
 # <a name="reentrancy-mda"></a>vícenásobný přístup MDA
 `reentrancy` Pomocník spravovaného ladění (MDA) se aktivuje, když je proveden pokus o přechod z nativní do spravovaného kódu v případech, kdy nebyla provedena předchozí přepínač ze spravovaného na nativní kódu prostřednictvím uspořádání přechodu.  

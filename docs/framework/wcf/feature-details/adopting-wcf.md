@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489128"
 ---
 # <a name="adopting-windows-communication-foundation"></a>Přijetí WCF
 Můžete používat Windows Communication Foundation (WCF) pro nový vývoj nadále zachovat stávající aplikace vyvinuté pomocí technologie ASP.NET. Protože WCF má být nejvhodnější volbou pro usnadnění komunikace s aplikace vytvořené pomocí rozhraní .NET Framework v žádném scénáři, mohl sloužit jako standardní nástroj pro řešení širokou škálu problémy s komunikací softwaru tak, že technologie ASP.NET nelze provést.  

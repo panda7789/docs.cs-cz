@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488940"
 ---
 # <a name="configuration-based-activation-in-iis-and-was"></a>Aktivace založená na konfiguraci v IIS a WAS
 Za normálních okolností při hostování služby Windows Communication Foundation (WCF) v rámci Internetové informační služby (IIS) nebo služby Aktivace procesů systému Windows (WAS), je nutné zadat soubor .svc. Soubor .svc obsahuje název služby a objekt pro vytváření hostitele volitelné vlastní službu. Tento další soubor přidá režijní náklady na možnosti správy. Aktivace podle konfigurace funkce eliminuje požadavek na soubor .svc a proto přidružené režijní náklady.  

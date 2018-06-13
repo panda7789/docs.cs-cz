@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524219"
 ---
 # <a name="how-to-draw-opaque-and-semitransparent-lines"></a>Postupy: Kreslení neprůhledných a poloprůhledných čar
 Při nakreslení čáry, je nutné předat <xref:System.Drawing.Pen> do objektu <xref:System.Drawing.Graphics.DrawLine%2A> metodu <xref:System.Drawing.Graphics> třídy. Jeden z parametrů <xref:System.Drawing.Pen.%23ctor%2A> konstruktor je <xref:System.Drawing.Color> objektu. Kreslení neprůhledných řádku, nastavte komponentu alfa barvy na 255. Kreslení poloprůhledných čáry, nastavte na jakoukoli hodnotu od 1 do 254 komponentu alfa.  

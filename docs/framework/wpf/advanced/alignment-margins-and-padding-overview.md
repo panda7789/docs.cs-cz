@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541249"
 ---
 # <a name="alignment-margins-and-padding-overview"></a>Přehled zarovnání, okrajů a odsazení
 <xref:System.Windows.FrameworkElement> Třída poskytuje několik vlastností, které se používají k přesné umístění podřízené elementy. Toto téma popisuje čtyři nejdůležitější vlastnosti: <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>, <xref:System.Windows.Controls.Border.Padding%2A>, a <xref:System.Windows.FrameworkElement.VerticalAlignment%2A>. Účinky tyto vlastnosti jsou důležité si uvědomit, protože poskytují základ pro řízení pozici prvků v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  
