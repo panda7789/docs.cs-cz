@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767580"
 ---
 # <a name="lttransportgt-of-ltwshttpbindinggt"></a><span data-ttu-id="78f21-102">&lt;transport&gt; – &lt;wsHttpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="78f21-102">&lt;transport&gt; of &lt;wsHttpBinding&gt;</span></span>
 <span data-ttu-id="78f21-103">Definuje nastavení ověřování pro přenos HTTP.</span><span class="sxs-lookup"><span data-stu-id="78f21-103">Defines authentication settings for the HTTP transport.</span></span>  

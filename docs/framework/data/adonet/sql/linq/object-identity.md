@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33358466"
 ---
 # <a name="object-identity"></a><span data-ttu-id="1e7ae-102">Identity – objekt</span><span class="sxs-lookup"><span data-stu-id="1e7ae-102">Object Identity</span></span>
 <span data-ttu-id="1e7ae-103">Objekty v modulu runtime mají jedinečné identity.</span><span class="sxs-lookup"><span data-stu-id="1e7ae-103">Objects in the runtime have unique identities.</span></span> <span data-ttu-id="1e7ae-104">Dvě proměnné, které odkazují na stejný objekt ve skutečnosti odkazovat na stejnou instanci objektu.</span><span class="sxs-lookup"><span data-stu-id="1e7ae-104">Two variables that refer to the same object actually refer to the same instance of the object.</span></span> <span data-ttu-id="1e7ae-105">Z tohoto důvodu jsou okamžitě viditelné prostřednictvím dalších změny provedené mimo jiné cestě prostřednictvím jednu proměnnou.</span><span class="sxs-lookup"><span data-stu-id="1e7ae-105">Because of this fact, changes that you make by way of a path through one variable are immediately visible through the other.</span></span>  

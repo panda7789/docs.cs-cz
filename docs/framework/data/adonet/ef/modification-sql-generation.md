@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766657"
 ---
 # <a name="modification-sql-generation"></a><span data-ttu-id="c2de6-102">Generování SQL úpravy</span><span class="sxs-lookup"><span data-stu-id="c2de6-102">Modification SQL Generation</span></span>
 <span data-ttu-id="c2de6-103">Tato část popisuje, jak vyvíjet modul úpravy SQL generování pro vaše (SQL:1999 – databáze kompatibilní) zprostředkovatele.</span><span class="sxs-lookup"><span data-stu-id="c2de6-103">This section discusses how to develop a modification SQL generation module for your (SQL:1999-compliant database) provider.</span></span> <span data-ttu-id="c2de6-104">Tento modul je zodpovědná za překladu stromu příkazů změny do příslušné příkazy SQL INSERT, UPDATE nebo DELETE.</span><span class="sxs-lookup"><span data-stu-id="c2de6-104">This module is responsible for translating a modification command tree into the appropriate SQL INSERT, UPDATE or DELETE statements.</span></span>  

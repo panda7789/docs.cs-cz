@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764616"
 ---
 # <a name="-or-entity-sql"></a><span data-ttu-id="6cb6e-102">|| (NEBO) (Entita SQL)</span><span class="sxs-lookup"><span data-stu-id="6cb6e-102">|| (OR) (Entity SQL)</span></span>
 <span data-ttu-id="6cb6e-103">Kombinuje dva `Boolean` výrazy.</span><span class="sxs-lookup"><span data-stu-id="6cb6e-103">Combines two `Boolean` expressions.</span></span>  

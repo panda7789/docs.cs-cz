@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765253"
 ---
 # <a name="constructing-types-entity-sql"></a><span data-ttu-id="9d0f7-102">Vytváření typů (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="9d0f7-102">Constructing Types (Entity SQL)</span></span>
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="9d0f7-103"> poskytuje tři druhy konstruktory: řádek konstruktory, pojmenovaného typu konstruktorů a konstruktorů kolekce.</span><span class="sxs-lookup"><span data-stu-id="9d0f7-103"> provides three kinds of constructors: row constructors, named type constructors, and collection constructors.</span></span>  

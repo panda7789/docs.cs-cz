@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766732"
 ---
 # <a name="entity-sql-reference"></a><span data-ttu-id="acdf5-102">Odkaz na entitu SQL</span><span class="sxs-lookup"><span data-stu-id="acdf5-102">Entity SQL Reference</span></span>
 <span data-ttu-id="acdf5-103">Tato část obsahuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] referenční témata.</span><span class="sxs-lookup"><span data-stu-id="acdf5-103">This section contains [!INCLUDE[esql](../../../../../../includes/esql-md.md)] reference topics.</span></span> <span data-ttu-id="acdf5-104">Toto téma shrnuje a skupin [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátory podle kategorie.</span><span class="sxs-lookup"><span data-stu-id="acdf5-104">This topic summarizes and groups the [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operators by category.</span></span>  

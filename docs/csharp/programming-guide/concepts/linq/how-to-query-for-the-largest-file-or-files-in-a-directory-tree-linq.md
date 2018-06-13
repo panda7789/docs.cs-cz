@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33325354"
 ---
 # <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a><span data-ttu-id="a5b88-102">Postupy: dotazování na největší soubor či soubory v adresářovém stromu (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="a5b88-102">How to: Query for the Largest File or Files in a Directory Tree (LINQ) (C#)</span></span>
 <span data-ttu-id="a5b88-103">Tento příklad ukazuje pět dotazů souvisejících s velikost souboru v bajtech:</span><span class="sxs-lookup"><span data-stu-id="a5b88-103">This example shows five queries related to file size in bytes:</span></span>  
