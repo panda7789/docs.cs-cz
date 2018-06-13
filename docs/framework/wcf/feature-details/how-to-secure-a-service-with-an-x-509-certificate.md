@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493039"
 ---
 # <a name="how-to-secure-a-service-with-an-x509-certificate"></a>Postupy: Zabezpečení služby certifikátem X.509
 Zabezpečení služby certifikátem X.509 je základní technika, použít většinu vazby ve Windows Communication Foundation (WCF). Toto téma vás provede kroky konfigurace služba s vlastním hostováním společně s certifikátem X.509.  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493745"
 ---
 # <a name="endpoints-addresses-bindings-and-contracts"></a>Koncové body: adresy, vazby a kontrakty
 Veškerá komunikace se službou Windows Communication Foundation (WCF) dojde k prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkce nabízené službou WCF.  

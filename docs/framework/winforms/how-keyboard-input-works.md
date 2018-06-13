@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541343"
 ---
 # <a name="how-keyboard-input-works"></a>Jak funguje vstup z klávesnice
 Windows Forms zpracovává vstup z klávesnice ve vyvolání události klávesnice v reakci na zpráv systému Windows. Většina aplikací Windows Forms zpracovat vstup z klávesnice výhradně pomocí zpracování události klávesnice. Nicméně budete muset pochopili, jak funguje zprávy klávesnice, můžete implementovat pokročilejší scénáře vstupu klávesnice, jako je například brání klíče, než dosáhnou ovládacího prvku. Toto téma popisuje typy klíčová data, že Windows Forms rozpozná a poskytuje přehled o tom, jak se směrují klávesnice zprávy. Informace o události klávesnice najdete v tématu [události klávesnice s použitím](../../../docs/framework/winforms/using-keyboard-events.md).  

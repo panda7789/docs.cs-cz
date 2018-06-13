@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548263"
 ---
 # <a name="relativesource-markupextension"></a>RelativeSource MarkupExtension
 Určuje vlastnosti <xref:System.Windows.Data.RelativeSource> vazby zdroj, který se má použít v rámci [vazba – rozšíření značek](../../../../docs/framework/wpf/advanced/binding-markup-extension.md), nebo při nastavení <xref:System.Windows.Data.Binding.RelativeSource%2A> vlastnost <xref:System.Windows.Data.Binding> element navázat v jazyce XAML.  

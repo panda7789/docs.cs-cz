@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524580"
 ---
 # <a name="regions-in-gdi"></a>Oblasti v rozhraní GDI+
 Oblast je část v oblasti výstupní zařízení. Oblasti může být jednoduchý (jeden rámeček) nebo komplexní (kombinaci mnohoúhelníky a uzavřené křivky). Následující obrázek znázorňuje dvou oblastí: jeden zkonstruován z obdélníku a dalších vytvořený z cesty.  

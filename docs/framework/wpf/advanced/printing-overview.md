@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549575"
 ---
 # <a name="printing-overview"></a>Přehled tisku
 Rozhraní Microsoft .NET Framework, vývojáři aplikace pomocí Windows Presentation Foundation (WPF) mají nové širokou škálu Správa tisku a tiskového systému [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]. S [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], některé z těchto vylepšení tiskový systém jsou také k dispozici pro vývojáře vytváření [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikací a vývojáře, kteří používají nespravovaného kódu. Základem tato nová funkce je nové [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] formát souboru a [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] tiskové cestu.  

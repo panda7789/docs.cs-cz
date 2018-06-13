@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548627"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
 Po aplikace Windows Presentation Foundation (WPF) jsou vytvářeny, které potřebují k nasazení. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a rozhraní .NET Framework zahrnují několik technologií nasazení. Nasazení technologie, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace závisí na typu aplikace. Toto téma obsahuje stručný přehled technologie každé nasazení a jak se používají ve spojení s požadavky na nasazení jednotlivých [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typ aplikace.  

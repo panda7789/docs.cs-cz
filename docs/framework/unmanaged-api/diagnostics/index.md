@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33424999"
 ---
 # <a name="diagnostics-symbol-store-unmanaged-api-reference"></a>Úložiště symbolů diagnostiky (referenční dokumentace nespravovaného rozhraní API)
 Rozhraní API úložiště symbolů diagnostiky umožňuje kompilátoru ke generování informací o symbolu za účelem použití ladicí program.  

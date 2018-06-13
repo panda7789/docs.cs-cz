@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33460838"
 ---
 # <a name="resolvetypelib-method"></a>ResolveTypeLib – metoda
 Přeloží jednoduchý název knihovny typů vrácením jeho plně kvalifikovanou cestu.  

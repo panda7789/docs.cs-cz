@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525240"
 ---
 # <a name="how-to-set-jpeg-compression-level"></a>Postupy: Nastavení úrovně komprese JPEG
 Můžete změnit parametry bitové kopie, když uložit obrázek na disk na minimální velikost souboru nebo zvýšení jeho kvality. Kvalitu obrazu JPEG můžete upravit změnou jeho úroveň komprese. K určení úrovně komprese při ukládání ve formátu JPEG, musíte vytvořit <xref:System.Drawing.Imaging.EncoderParameters> objektu a předejte ji do <xref:System.Drawing.Image.Save%2A> metodu <xref:System.Drawing.Image> třídy. Inicializace <xref:System.Drawing.Imaging.EncoderParameters> objektu tak, že IT oddělení má pole, které se skládá z jednoho <xref:System.Drawing.Imaging.EncoderParameter>. Když vytvoříte <xref:System.Drawing.Imaging.EncoderParameter>, zadejte <xref:System.Drawing.Imaging.Encoder.Quality> kodér a úroveň požadované komprese.  

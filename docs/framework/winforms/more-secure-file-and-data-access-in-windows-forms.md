@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541895"
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Více zabezpečený přístup k souborům a datům ve Windows Forms
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Využívá oprávnění k ochraně prostředkům a datům. Kde vaše aplikace můžou číst nebo zapisovat data závisí na oprávněních udělených aplikaci. Když aplikace běží v prostředí s částečnou důvěryhodností, pravděpodobně nebudete mít přístup k datům nebo možná budete muset změnit způsob přístupu k datům.  

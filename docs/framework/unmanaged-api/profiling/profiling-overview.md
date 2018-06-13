@@ -34,6 +34,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461910"
 ---
 # <a name="profiling-overview"></a>Přehled profilace
 <a name="top"></a> Profileru je nástroj, který monitoruje provádění jiná aplikace. Běžné profileru language runtime (CLR) je dynamická knihovna (DLL), která se skládá z funkcí, které příjem zpráv z a odeslání zpráv do modulu CLR pomocí rozhraní API pro profilaci. Profileru knihovnu DLL modulu CLR zavedená v době běhu.  

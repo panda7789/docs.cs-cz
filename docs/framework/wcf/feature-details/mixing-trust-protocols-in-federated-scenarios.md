@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494456"
 ---
 # <a name="mixing-trust-protocols-in-federated-scenarios"></a>Smíšené používání protokolů Trust ve federovaných scénářích
 Mohou existovat scénáře ve kterých federované klienti komunikují se službou a tokenu služby zabezpečení (STS), které nemají stejnou verzi vztah důvěryhodnosti. Služby mohou obsahovat WSDL `RequestSecurityTokenTemplate` assertion WS-Trust elementy, které jsou různé verze než Služba tokenů zabezpečení. V takových případech klienta Windows Communication Foundation (WCF) převede WS-Trust elementy přijal od `RequestSecurityTokenTemplate` tak, aby odpovídaly Služba tokenů zabezpečení důvěřovat verze. WCF zpracovává verze neodpovídající důvěryhodnosti pouze pro standardní vazby. Všechny standardní algoritmus parametry, které jsou rozpoznáno WCF jsou součástí standardní vazby. Toto téma popisuje chování WCF pomocí různých nastavení důvěryhodnosti mezi službou a služba tokenů zabezpečení.  

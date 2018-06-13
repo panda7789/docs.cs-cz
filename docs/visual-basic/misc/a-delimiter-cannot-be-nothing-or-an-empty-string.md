@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596847"
 ---
 # <a name="a-delimiter-cannot-be-nothing-or-an-empty-string"></a>Oddělovač nemůže být Nothing nebo prázdný řetězec.
 `TextFieldParser` Se nepodařilo načíst ze souboru, protože `Delimiters` je nastavena na `Nothing` nebo je prázdná `String` ("").  

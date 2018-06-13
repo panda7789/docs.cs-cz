@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639185"
 ---
 # <a name="file-specified-in-filename-is-not-a-valid-xml-file"></a>Soubor zadaný v názvu souboru není platný soubor XML
 Název souboru, který jste zadali, není platný soubor XML. Chcete-li určit povolené struktuře a obsahu dokumentu XML, můžete použít definice typu dokumentu (DTD), schéma Microsoft XML-Data Reduced (XDR) nebo schématu schématu XML definition language (XSD). XSD schémata jsou upřednostňovaný způsob, jak určit gramatika XML v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].  

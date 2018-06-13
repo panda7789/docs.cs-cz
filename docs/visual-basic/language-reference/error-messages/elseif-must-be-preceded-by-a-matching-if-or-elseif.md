@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588145"
 ---
 # <a name="39elseif39-must-be-preceded-by-a-matching-39if39-or-39elseif39"></a>&#39;#ElseIf&#39; musí předcházet odpovídající &#39;#If&#39; nebo &#39;#ElseIf&#39;
 `#ElseIf` představuje direktivu Podmíněná kompilace. `#ElseIf` Klauzule musí předcházet odpovídající `#If` nebo `#ElseIf` klauzule.  

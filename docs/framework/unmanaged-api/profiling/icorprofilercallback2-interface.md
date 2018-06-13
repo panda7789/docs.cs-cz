@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461046"
 ---
 # <a name="icorprofilercallback2-interface"></a>ICorProfilerCallback2 – rozhraní
 Poskytuje metody, které jsou používány common language runtime (CLR) profileru kód upozornit, když dojde k události, ke kterým se připojila profileru. `ICorProfilerCallback2` Rozhraní je rozšířením [icorprofilercallback –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) rozhraní. To znamená nabízí nové zpětná volání byla zavedená v rozhraní .NET Framework verze 2.0.  

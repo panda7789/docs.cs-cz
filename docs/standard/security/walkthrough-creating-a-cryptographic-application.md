@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591960"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Návod: Vytvoření šifrovací aplikace
 Tento návod ukazuje, jak k šifrování a dešifrování obsahu. Ukázky kódu jsou navrženy pro aplikace Windows Forms. Tuto aplikaci nepředvádí skutečných scénářích, například pomocí čipové karty. Místo toho ukazuje základní informace o šifrování a dešifrování.  
