@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508189"
 ---
 # <a name="service-identity-and-authentication"></a>Identita a ověřování služby
 Služby *identitu koncového bodu*je hodnota vygenerovaná ze služby webové služby popis Language (WSDL). Tato hodnota, rozšíří do libovolného klienta se používá k ověřování. Jakmile klient inicializuje komunikaci pro koncový bod a služby se ověří na klienta, klient porovná hodnotu identitu koncového bodu se proces ověřování koncového bodu vrácená hodnota. Pokud se shodují, klient jistotu, že nekontaktoval koncový bod očekávanou službu. To funguje jako ochrana proti *phishing* tak, že zabrání se přesměruje na koncový bod hostitelem škodlivý služba klienta.  

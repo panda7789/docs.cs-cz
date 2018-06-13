@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523885"
 ---
 # <a name="graphics-paths-in-gdi"></a>Cesty grafiky v GDI+
 Cesty se vytvoří kombinací řádků, obdélníků a jednoduchý křivek. Odvolat z [přehled vektorové grafiky](../../../../docs/framework/winforms/advanced/vector-graphics-overview.md) , následující základní stavební bloky ukázaly jako nejvhodnější pro vykreslování obrázků:  

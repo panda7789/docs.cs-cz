@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394862"
 ---
 # <a name="using-application-protocols"></a>Pomocí protokolů aplikací
 Rozhraní .NET Framework podporuje běžně používané Internetové protokoly aplikací. Tato část obsahuje informace o používání [HTTP](../../../docs/framework/network-programming/http.md), "TCP" a "UDP" protokoly a také informace o používání [Windows Sockets](../../../docs/framework/network-programming/sockets.md) rozhraní k implementaci vlastní protokoly.  

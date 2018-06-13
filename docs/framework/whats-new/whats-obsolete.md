@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514447"
 ---
 # <a name="what39s-obsolete-in-the-net-framework-class-library"></a>Co&#39;s zastaralé v knihovně tříd rozhraní .NET Framework
 Rozhraní .NET Framework se mění v čase. Každá nová verze přidává nové typy a členy typu, které přinášejí nové funkce. Existující typy a jejich členové také časem změnit. Například některé typy stane méně důležité, jako je technologie, které podporují nahrazena novou technologií a některé metody nejsou k dispozici novější metody, které jsou vhodnější nebo obsáhlejší.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33507819"
 ---
 # <a name="message-security-over-message-queuing"></a>Zabezpečení zprávy pomocí služby Řízení front zpráv
 Tento příklad znázorňuje implementaci aplikace, která využívá WS-zabezpečení x.509 v3 s ověřováním pomocí certifikátu pro klienta a vyžaduje server ověřování pomocí certifikátu x.509 v3 serveru přes služby MSMQ. Zpráva, že zabezpečení je někdy další žádoucí zajistit, že zůstat šifrovaných zpráv v úložišti služby MSMQ a aplikace můžete provádět vlastní ověřování zprávy.  

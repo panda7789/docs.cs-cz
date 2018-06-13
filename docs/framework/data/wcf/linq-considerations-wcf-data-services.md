@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365966"
 ---
 # <a name="linq-considerations-wcf-data-services"></a>Aspekty LINQ (služby WCF Data Services)
 Toto téma obsahuje informace o způsobu, jakým sestavit a spustit, když používáte dotazy které LINQ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta a omezení použití LINQ pro dotaz na data služby, který implementuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. Další informace o vytvoření a spuštění dotazů vůči [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě dat služby, najdete v části [dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  

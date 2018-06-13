@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515395"
 ---
 # <a name="basic-usage-of-sendparameters-and-receiveparameters-activities"></a>Základní informace o využití SendParameters a ReceiveParameters aktivit
 Tento příklad ukazuje použití <xref:System.ServiceModel.Activities.SendParametersContent> a <xref:System.ServiceModel.Activities.ReceiveParametersContent> aktivity. Službu zpřístupní jednu operaci, která argument řetězce a vrátí je vstupní zpět do klienta. Ukázka ukazuje, jak nastavit parametry pro tyto aktivity zasílání zpráv.  

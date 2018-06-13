@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518535"
 ---
 # <a name="workflowapplication-readline-host"></a>WorkflowApplication ReadLine hostitele
 Tato ukázka je obecný ReadLine hostitele. Můžete načíst a spustit žádný pracovní postup pomocí zahrnutou `ReadLine` aktivity (nebo ostatní aktivity, jako je získávající data z záložky pokračuje s řetězce). Výstup z `WriteLine` aktivity nebo nic zápis do <xref:System.Activities.Statements.WriteLine.TextWriter%2A> rozšíření se nasměruje do okna hostitele. Při nečinnosti instance, k dispozici záložky u dané instance se objeví v poli se seznamem. Vyberte záložku, vložení textu, některé a kliknutím na tlačítko Obnovit záložku pokračovat v provádění pracovního postupu. Můžete také zrušit, zrušení nebo ukončení vybrané pracovního postupu. Trvalost je ve výchozím – můžete vypnout hostitele a vrátí ji zpět a naplnění seznamu instanci s instancemi uloženy v databázi. Sledování se používá k výstupu <xref:System.Activities.WorkflowApplication>-úroveň události na hostitele s možností přidat podrobné sledování na úrovni aktivity.  

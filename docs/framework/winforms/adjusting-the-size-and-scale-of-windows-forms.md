@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516410"
 ---
 # <a name="adjusting-the-size-and-scale-of-windows-forms"></a>Úprava velikosti a měřítka Windows Forms
 Toto téma obsahuje odkazy na informace o změně velikosti Windows Forms.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531248"
 ---
 # <a name="how-to-change-styles-on-an-element-in-the-managed-html-document-object-model"></a>Postupy: Změna stylů v elementu v modelu spravovaného objektu dokumentu HTML
 Můžete styly řídit vzhled dokumentu a jeho elementy ve formátu HTML. <xref:System.Windows.Forms.HtmlDocument> a <xref:System.Windows.Forms.HtmlElement> podporu <xref:System.Windows.Forms.HtmlElement.Style%2A> vlastnosti, které přijímají řetězce styl následující formát:  

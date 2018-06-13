@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33506885"
 ---
 # <a name="xmlreader-sample"></a>Ukázka třídy XmlReader
 Ukázka třídy XmlReader ukazuje zpracování textu zprávy pomocí <xref:System.Xml.XmlReader>. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje službu kalkulačky. Operace další služby `Sum`, byl přidán, přijme zprávu, která obsahuje pole hodnot přidat společně. Služba přečte zprávu pomocí <xref:System.Xml.XmlReader>.  

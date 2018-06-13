@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532106"
 ---
 # <a name="how-to-define-z-ordering-of-docked-toolstrip-controls"></a>Postupy: Definování hloubkového uspořádání ukotvených ovládacích prvků ToolStrip
 Na pozici <xref:System.Windows.Forms.ToolStrip> řízení správně s ukotvení, je třeba umístit ovládacího prvku správně v pořadí vykreslování formuláře.  

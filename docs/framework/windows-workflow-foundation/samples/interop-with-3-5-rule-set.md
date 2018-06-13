@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517904"
 ---
 # <a name="interop-with-35-rule-set"></a>Zprostředkovatel komunikace s objekty sadou pravidel 3.5
 Tento příklad znázorňuje použití <xref:System.Activities.Statements.Interop> aktivity k integraci s vlastní aktivity v [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] pomocí <!--zz <xref:System.Workflow.Activities.Policy> --> `System.Workflow.Activities.Policy` a pravidla. Předává data do vlastní aktivita pomocí vytvoření vazby [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] proměnné pro vlastnosti závislosti vystavené vlastní aktivity.  

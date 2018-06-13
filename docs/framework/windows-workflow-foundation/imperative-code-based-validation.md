@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515455"
 ---
 # <a name="imperative-code-based-validation"></a>Imperativní ověření založené na kódu
 Imperativní ověřování založené na kódu poskytuje jednoduchý způsob, jak aktivity pro ověřování o samotné a je k dispozici pro aktivity, které jsou odvozeny od <xref:System.Activities.CodeActivity>, <xref:System.Activities.AsyncCodeActivity>, a <xref:System.Activities.NativeActivity>. Ověřovací kód, který určuje všechny chyby ověření nebo upozornění je přidána do aktivity.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398089"
 ---
 # <a name="network-isolation-for-windows-store-apps"></a>Izolace sítě pro aplikace Windows Store
 Třídy v <xref:System.Net>, <xref:System.Net.Http>, a <xref:System.Net.Http.Headers> obory názvů lze použít k vývoji aplikací pro Windows Store nebo desktopových aplikacích. Pokud se použije v aplikaci Windows Store, třídy v tyto obory názvů jsou ovlivněné součástí modelu zabezpečení aplikací používá při izolaci sítě [!INCLUDE[win8](../../../includes/win8-md.md)]. Možnosti příslušné sítě musí být povolen v manifest aplikace pro aplikace pro Windows Store pro systém umožňující přístup k síti.  

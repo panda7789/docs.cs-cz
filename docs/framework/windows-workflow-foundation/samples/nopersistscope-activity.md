@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516436"
 ---
 # <a name="nopersistscope-activity"></a>NoPersistScope aktivity
 Tento příklad ukazuje, jak k manipulaci s neserializovatelných a na jedno použití stavu v pracovním postupu. Je důležité, aby pracovní postupy Nepokoušejte se zachovat neserializovatelných stavu a je také důležité pro uvolnitelné objekty, které chcete vymazat, jakmile se používají v pracovním postupu.  

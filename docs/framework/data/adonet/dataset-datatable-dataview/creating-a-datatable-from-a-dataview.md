@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757057"
 ---
 # <a name="creating-a-datatable-from-a-dataview"></a>Vytváření DataTable z v zobrazení DataView
 Po načtení dat ze zdroje dat a vyplněno <xref:System.Data.DataTable> s daty, můžete chtít seřadit, filtrovat nebo jinak omezit vrácená data bez načítání ho znovu. <xref:System.Data.DataView> Třída umožňuje to. Kromě toho, pokud je potřeba vytvořit novou <xref:System.Data.DataTable> z <xref:System.Data.DataView>, můžete použít <xref:System.Data.DataView.ToTable%2A> metoda zkopírovat všechny řádky a sloupce nebo jsou podmnožinou dat do nového <xref:System.Data.DataTable>. <xref:System.Data.DataView.ToTable%2A> Metoda poskytuje přetížení pro:  

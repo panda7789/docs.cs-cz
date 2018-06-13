@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519896"
 ---
 # <a name="modeling-cancellation-behavior-in-workflows"></a>Chování zrušení modelování v pracovních postupech
 Aktivity může být zrušen uvnitř pracovního postupu, například při <xref:System.Activities.Statements.Parallel> aktivity zrušení neúplné větví při jeho <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> vyhodnotí jako `true`, nebo z mimo pracovní postup, pokud hostitel volá <xref:System.Activities.WorkflowApplication.Cancel%2A>. Zajistit zpracování zrušení, můžete použít autoři pracovního postupu <xref:System.Activities.Statements.CancellationScope> aktivitu <xref:System.Activities.Statements.CompensableActivity> aktivity, nebo vytvořit vlastní aktivity, které poskytují logiku zrušení. Toto téma poskytuje přehled o zrušení v pracovních postupech.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365745"
 ---
 # <a name="systemtransactions-integration-with-sql-server"></a>System.Transactions – integrace s SQL serverem
 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Verze 2.0 zavedená rozhraní transakce, které je přístupné prostřednictvím <xref:System.Transactions> oboru názvů. Toto rozhraní zpřístupní transakce způsobem, který je v plně integrovaná [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], včetně [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  

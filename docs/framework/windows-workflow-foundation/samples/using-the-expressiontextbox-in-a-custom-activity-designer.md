@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516783"
 ---
 # <a name="using-the-expressiontextbox-in-a-custom-activity-designer"></a>Pomocí ExpressionTextBox v Návrháři vlastní aktivity
 Tento příklad ukazuje způsob použití <xref:System.Activities.Presentation.View.ExpressionTextBox> v Návrháři vlastní aktivity. Vlastní aktivity, `MultiAssign`, přiřadí dvou řetězcových hodnot dvě proměnné řetězce. Některé <xref:System.Activities.Presentation.View.ExpressionTextBox> k vytvoření vazby ovládacích prvků <xref:System.Activities.InArgument>s a některé vytvořit vazbu k <xref:System.Activities.OutArgument>s.  

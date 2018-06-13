@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390458"
 ---
 # <a name="enabling-network-tracing"></a>Povolení trasování sítě
 Trasování sítě poskytuje přístup k informacím o volání metod a síťových přenosů generovaných spravované aplikace. Musíte provést následující úkoly a povolit trasování sítě ve vaší aplikaci:  

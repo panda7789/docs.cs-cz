@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518772"
 ---
 # <a name="instance-stores"></a>Instance úložiště
 Instance úložiště je logický kontejner instancí. Je na místě, kde je uložena instance data a metadata. Instance úložiště neznamená vyhrazené fyzické úložiště. Instance úložiště může obsahovat trvanlivý informace v databázi systému SQL Server nebo informace o stavu netrvalý v paměti. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] Se dodává s SQL úložiště Instance pracovního postupu, který je na konkrétní implementace úložiště instance, které umožňuje pracovní postupy pro zachování dat instance a metadat do databáze systému SQL Server 2005 nebo SQL Server 2008. Windows Server App Fabric kromě poskytuje konkrétní implementaci instance úložiště. Další informace najdete v tématu [Windows Server App Fabric Instance Store, dotazů a poskytovatelé řízení](http://go.microsoft.com/fwlink/?LinkID=201201&clcid=0x409).  

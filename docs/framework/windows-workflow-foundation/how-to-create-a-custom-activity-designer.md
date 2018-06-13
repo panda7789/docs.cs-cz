@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520341"
 ---
 # <a name="how-to-create-a-custom-activity-designer"></a>Postupy: vytvoření vlastního návrháře aktivit
 Návrháři vlastních aktivit jsou obvykle implementovány tak, aby jejich aktivity související s ostatními aktivitami, jejichž Designer může být přetažen na návrhovou plochu, která s nimi bez možnosti složení. Tato funkce vyžaduje, aby zadali Návrhář vlastní aktivity "rozevírací zónu" umístění libovolné aktivity a také způsob, jak spravovat výsledné kolekci elementů na návrhovou plochu. Toto téma popisuje, jak vytvořit vlastní aktivity návrháře obsahující rozevírací zóny a jak vytvořit Návrhář vlastní aktivity, který zajišťuje, že úpravy funkce potřebné ke správě kolekci elementů návrháře.  

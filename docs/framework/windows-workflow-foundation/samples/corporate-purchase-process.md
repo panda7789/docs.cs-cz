@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520039"
 ---
 # <a name="corporate-purchase-process"></a>Podnikové nákupní proces
 Tento příklad ukazuje postup vytvoření velmi základní požadavek pro návrhy (RFP) na základě nákupní proces s automatické nejlepší výběru návrhu. Spojuje v sobě <xref:System.Activities.Statements.Parallel>, <xref:System.Activities.Statements.ParallelForEach%601>, a <xref:System.Activities.Statements.ForEach%601> a vlastních aktivit k vytvoření pracovního postupu, který představuje proces.  

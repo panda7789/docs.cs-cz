@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365498"
 ---
 # <a name="updating-data-sources-with-dataadapters"></a>Aktualizace zdrojů dat s DataAdapters
 `Update` Metodu <xref:System.Data.Common.DataAdapter> je volána k vyřešení změny z <xref:System.Data.DataSet> zpět do zdroje dat. `Update` Metoda, například `Fill` metoda, přijímá jako argumenty instanci `DataSet`a volitelné <xref:System.Data.DataTable> objekt nebo `DataTable` název. `DataSet` Instance je `DataSet` obsahuje změny, které byly provedeny, a `DataTable` identifikuje tabulka, ze kterých se budou načítat změny. Pokud žádné `DataTable` není zadaný, první `DataTable` v `DataSet` se používá.  

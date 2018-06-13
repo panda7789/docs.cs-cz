@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514521"
 ---
 # <a name="flowchart-workflows"></a>Vývojový diagram pracovních postupů
 Vývojový diagram je dobře známé zlepší pro návrh programy. Vývojový diagram aktivity se obvykle používá k implementaci nesekvenční pracovní postupy, ale lze použít pro sekvenční pracovní postupy, pokud žádné `FlowDecision` uzly se používají.  

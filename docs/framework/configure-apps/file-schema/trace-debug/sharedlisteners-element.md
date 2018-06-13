@@ -19,6 +19,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745572"
 ---
 # <a name="ltsharedlistenersgt-element"></a>&lt;sharedListeners –&gt; – Element
 Obsahuje naslouchací procesy, které může odkazovat všechny zdroje nebo element trasování.  Tyto moduly pro naslouchání neobdrží ve výchozím nastavení všechny trasování a není možné načíst tyto moduly pro naslouchání v době běhu. Moduly pro naslouchání identifikovány jako sdílené moduly pro naslouchání mohou být přidány do zdroje nebo trasování podle názvu.  

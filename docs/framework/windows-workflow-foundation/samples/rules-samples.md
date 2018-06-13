@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516243"
 ---
 # <a name="rules-samples"></a>Ukázky pravidla
 Tato část obsahuje ukázky, která demonstruje použití modul pravidla pracovních postupů z [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)].  

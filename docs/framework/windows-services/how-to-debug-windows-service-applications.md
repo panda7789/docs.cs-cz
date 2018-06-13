@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518047"
 ---
 # <a name="how-to-debug-windows-service-applications"></a>Postupy: Ladění aplikací spouštěných jako služby systému Windows
 Služba musí být spuštěn v kontextu správci řízení služeb a nikoli z v sadě Visual Studio. Z tohoto důvodu ladění služby není stejně jednoduché jako ladění jinými typy aplikací Visual Studio. K ladění služby, musíte spustit službu a pak připojit ladicí program k procesu, ve kterém je spuštěna. Potom můžete ladění aplikace s použitím všechny standardní ladění funkce sady Visual Studio.  

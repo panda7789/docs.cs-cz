@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518483"
 ---
 # <a name="sqlstoreextensibility"></a>SQLStoreExtensibility
 Tento příklad znázorňuje použití a konfiguraci propagovaných vlastností v úložišti instance SQL pracovního postupu. Ukládání instance pracovního postupu SQL je na základě SQL implementace instance úložiště. Umožňuje instanci pro uložení stavu a načtení stavu do a z databáze systému SQL Server nebo SQL Server Express. Funkce rozšiřitelnost úložiště umožňuje uživateli definovat vlastnosti, které jsou uložené v úložišti instance. Tyto vlastnosti jsou zobrazeny v zobrazení propagovaných vlastnosti, která umožňuje uživatelům dotazu pro ně.  

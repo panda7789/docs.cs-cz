@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517388"
 ---
 # <a name="using-editing-scope"></a>Pomocí úpravy rozsahu
 Tento příklad znázorňuje postup dávky sadu změn, aby se můžete odvolat v jedné jednotky atomic. Ve výchozím nastavení jsou automaticky akce prováděné pomocí návrháře Autor aktivity integrované do systému zpět/opakování.  

@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33431887"
 ---
 # <a name="coeeshutdowncom-function"></a>CoEEShutDownCOM – funkce
 Vynutí modul CLR (CLR) Chcete-li uvolnit všechny ukazatele rozhraní, které uchovává uvnitř běhové obálky s možností (RCW). To má za následek uvolnění všech RCW mezipamětí. Globální funkce je ve zastaralá [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Místo toho použijte vstupní bod pro konkrétní modulu runtime.  

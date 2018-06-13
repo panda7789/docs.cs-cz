@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33416163"
 ---
 # <a name="icordebugeval2callparameterizedfunction-method"></a>ICorDebugEval2::CallParameterizedFunction – metoda
 Nastavuje volání do zadané ICorDebugFunction, což může být vnořena ve třídu, jejíž konstruktor přijímá <xref:System.Type> parametry, nebo může sám sebe trvat <xref:System.Type> parametry.  

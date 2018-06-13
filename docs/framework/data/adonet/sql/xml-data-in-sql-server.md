@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33358736"
 ---
 # <a name="xml-data-in-sql-server"></a>Data XML v systému SQL Server
 SQL Server zpřístupňuje funkce SQLXML v rozhraní .NET Framework. Vývojářům psát aplikace, které přístup k datům XML z instance systému SQL Server, aby data v prostředí .NET Framework, proces data a posílají aktualizace systému SQL Server. XML data můžete použít několika způsoby, v systému SQL Server, včetně úložiště dat a jako hodnoty parametrů pro načítání dat. **SqlXml** – třída v rozhraní .NET Framework poskytuje podporu na straně klienta pro práci s daty uloženými v sloupec XML v systému SQL Server. Další informace najdete v tématu "SQLXML spravované třídy" v SQL Server Books Online.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516592"
 ---
 # <a name="using-collection-activities"></a>Pomocí kolekce aktivit
 Tento příklad znázorňuje způsob použití aktivity kolekce (<xref:System.Activities.Statements.AddToCollection%601>, <xref:System.Activities.Statements.ClearCollection%601>, <xref:System.Activities.Statements.ExistsInCollection%601>, a <xref:System.Activities.Statements.RemoveFromCollection%601>) s třídou, která implementuje <xref:System.Collections.ICollection> rozhraní a jak vytvořit vlastní aktivity, který iteruje nad kolekcí do Vytiskněte obsah jednotlivých prvků v kolekci. Vlastní aktivity, která se nazývá `PrintCollection`, pošle tisk do konzoly nástroje členů položky kolekci s názvem `Numbers`.  

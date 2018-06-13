@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390133"
 ---
 # <a name="net-framework-client-profile"></a>Profil klienta rozhraní .NET Framework
 Profil klienta rozhraní .NET je podmnožinou rozhraní .NET Framework, který byl poskytnut s [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a starší verze a je optimalizovaný pro klientské aplikace. Rozhraní .NET Framework je platforma pro vývoj pro Windows, Windows Phone a Microsoft Azure a poskytuje prostředí pro spouštění spravovaných aplikací a knihovna tříd rozhraní .NET Framework. [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a starší verze k dispozici dvě možnosti nasazení: úplné rozhraní .NET Framework a profil klienta. Profil klienta podporuje rychlejší nasazení a menší instalační balíčky aplikace než plná verze rozhraní .NET Framework.  

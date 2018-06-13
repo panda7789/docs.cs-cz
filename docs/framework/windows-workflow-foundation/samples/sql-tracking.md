@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518300"
 ---
 # <a name="sql-tracking"></a>Sledování SQL
 Tento příklad znázorňuje, jak psát vlastní účastník sledování SQL, který zapíše sledování záznamů do databáze SQL. Windows Workflow Foundation (WF) poskytuje pracovní postup, chcete-li získat přehled o provádění instanci pracovního postupu pro sledování. Modul runtime sledování vysílá pracovní postup sledování záznamů během spouštění pracovního postupu. Další informace o sledování pracovního postupu najdete v tématu [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md).  

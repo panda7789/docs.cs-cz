@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395210"
 ---
 # <a name="how-to-request-a-web-page-and-retrieve-the-results-as-a-stream"></a>Postupy: žádosti o webovou stránku a načtěte výsledky jako datový proud
 Tento příklad ukazuje, jak k vyžádání webové stránky a načtěte výsledky v datovém proudu.  

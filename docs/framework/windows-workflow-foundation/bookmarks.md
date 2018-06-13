@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515565"
 ---
 # <a name="bookmarks"></a>Záložky
 Záložky jsou mechanismus, který umožňuje aktivitu pasivně čekání na vstup bez podržíte do pracovního postupu vlákno. Pokud aktivita signalizuje, že se čeká na podnětem, může vytvořit záložky. To znamená modulu runtime, že provádění aktivity by neměl být považováno za dokončené i v případě metodu aktuálně prováděné (které vytvořili <xref:System.Activities.Bookmark>) vrátí.  

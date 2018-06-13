@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755094"
 ---
 # <a name="ltnameclaimtypegt"></a>&lt;nameClaimType&gt;
 Nastaví typ deklarace identity, která určuje <xref:System.Security.Principal.IIdentity.Name%2A> vlastnost. Typ deklarace identity se používá pro vyhledávání <xref:System.Security.Claims.Claim> v kolekci <xref:System.Security.Claims.ClaimsIdentity> objektů vrácený <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> metoda Tato obslužná rutina tokenu. Hodnota odpovídající deklarace identity je pak nastavená na název <xref:System.Security.Principal.IIdentity> generované z této obslužné rutiny tokenu.  

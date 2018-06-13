@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523871"
 ---
 # <a name="how-to-display-pop-up-help"></a>Postupy: Zobrazení místní nápovědy
 Je možné zobrazit nápovědu pro Windows Forms pomocí **pomoci** tlačítko, které se nachází na pravé straně záhlaví, přístupný prostřednictvím <xref:System.Windows.Forms.Form.HelpButton%2A> vlastnost. Tento typ zobrazení nápovědy je vhodné pro použití s dialogová okna. Dialogová okna zobrazí modálně (s <xref:System.Windows.Forms.Form.ShowDialog%2A> metoda) mít potíže při vyvolání externí nápovědy systémy, protože modálních dialogových oken, musí se napřed zavřít fokus můžete přesune na další okno. Kromě toho používání **pomoci** tlačítko vyžaduje, aby byl žádné **minimalizaci** tlačítko nebo **Maximalizovat** tlačítko zobrazené v záhlaví. Jedná se o standardní dialogové konvenci, zatímco forms obvykle mají **minimalizaci** a **Maximalizovat** tlačítka.  

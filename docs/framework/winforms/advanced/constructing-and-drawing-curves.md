@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520614"
 ---
 # <a name="constructing-and-drawing-curves"></a>Sestavování a kreslení křivek
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] podporuje několik typů křivek: symbol tří teček, oblouky, základní křivky vyhlazení a Bézierovy křivky. Elipsy je definována jeho ohraničující obdélník; oblouk je část elipsy definované počáteční úhel a úhel oblouku. Pole bodů a pnutí parametru je definováno křivky mohutnosti – křivku plynule projdou každý bod v poli a parametr pnutí ovlivňuje způsob zatáčkách křivku. Bézierovy křivky definované dva koncové body a dva kontrolních bodů, které křivku nepředává prostřednictvím kontrolní body, ale kontrolní body ovlivnit směr a ohybem jako křivku přejde z jeden koncový bod na druhý.  

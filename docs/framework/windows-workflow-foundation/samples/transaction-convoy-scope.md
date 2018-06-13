@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516562"
 ---
 # <a name="transaction-convoy-scope"></a>Oboru Convoy transakce
 Tento příklad ukazuje, jak vytvořit paralelní Convoy zasílání zpráv vzor aktivity ve spojení s <xref:System.ServiceModel.Activities.TransactedReceiveScope> pro modelování protokol, kde několik operací, může dojít v libovolném pořadí všechny ve stejné transakci. Tento příklad také ukazuje, jak <xref:System.ServiceModel.Activities.TransactedReceiveScope> automaticky vytvoří novou transakci, pokud jeden není předávány na server, tak klient neprovede použití jakékoli transakce.  

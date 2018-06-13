@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33387429"
 ---
 # <a name="exposing-net-framework-components-to-com"></a>Vystavení komponent architektury .NET Framework pro COM
 Zápis typ formátu .NET a využívání tohoto typu z nespravovaného kódu jsou odlišné aktivity pro vývojáře. Tato část popisuje několik tipy pro vytvoření spravovaného kódu, které spolupracuje s klienty COM:  

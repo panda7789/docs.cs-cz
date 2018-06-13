@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515836"
 ---
 # <a name="hello-world-custom-activity"></a>Hello World vlastní aktivity
 Tento příklad znázorňuje několik klíčových funkcí systému Windows Workflow Foundation (WF), včetně toho, jak vytvořit jednoduché vlastní aktivity. Některé funkce předvedená v této ukázce vytváření vlastních aktivit v C# a pomocí `in` a `out` argumenty (<xref:System.Activities.InArgument> a <xref:System.Activities.OutArgument>).  

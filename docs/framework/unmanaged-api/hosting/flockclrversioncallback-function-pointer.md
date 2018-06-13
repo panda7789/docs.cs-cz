@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429670"
 ---
 # <a name="flockclrversioncallback-function-pointer"></a>FLockClrVersionCallback – ukazatel na funkci
 Odkazuje na funkci, která běžné volání language runtime (CLR) označíte, že inicializace má buď spustit nebo byla dokončena.  

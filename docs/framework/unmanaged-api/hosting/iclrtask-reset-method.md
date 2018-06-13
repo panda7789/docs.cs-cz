@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33435939"
 ---
 # <a name="iclrtaskreset-method"></a>ICLRTask::Reset – metoda
 Modul CLR (CLR) informuje, že byla dokončena úloha hostitele a umožňuje CLR znovu použít aktuální [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance představují jiná úloha.  

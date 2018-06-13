@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398128"
 ---
 # <a name="integrated-windows-authentication-with-extended-protection"></a>Integrované ověřování systému Windows s rozšířené ochrany
 Byly provedeny vylepšení, které mají vliv jak integrované ověřování systému Windows, které se provádí ověřování <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Mail.SmtpClient>, <xref:System.Net.Security.SslStream>, <xref:System.Net.Security.NegotiateStream>, a související třídy v <xref:System.Net> a související obory názvů. Byla přidána podpora pro rozšířená ochrana pro zvýšení zabezpečení.  

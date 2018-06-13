@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517154"
 ---
 # <a name="transaction-rollback"></a>Vrácení transakce
 Tento příklad ukazuje, jak vytvořit vlastní <xref:System.Activities.NativeActivity> který přistupuje k vedlejším <xref:System.Activities.RuntimeTransactionHandle> získat vedlejším transakce a explicitně vrátit zpět.  

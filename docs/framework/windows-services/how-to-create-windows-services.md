@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517859"
 ---
 # <a name="how-to-create-windows-services"></a>Postupy: Vytváření služeb systému Windows
 Když vytváříte službu, můžete použít šabloně projektu sady Visual Studio s názvem **služba systému Windows**. Tato šablona automaticky provede většinu práce vám tak, že odkazy na příslušné třídy a obory názvů, nastavení dědičnosti ze základní třídy pro služby, a přepsání několik metod budete pravděpodobně chcete přepsat.  

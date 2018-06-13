@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516159"
 ---
 # <a name="how-to-query-for-non-persisted-instances"></a>Postupy: dotaz pro netrvalé instance
 Když je vytvořena nová instance služby a služby má chování ukládání Instance pracovního postupu SQL definovaný, hostitel služby vytvoří počáteční záznam pro tuto instanci služby v úložišti instance. Následně při prvním potrvají instance služby, chování ukládání Instance pracovního postupu SQL uloží aktuální stav instance společně s další data, která je požadována pro aktivaci, obnovení a řízení.  

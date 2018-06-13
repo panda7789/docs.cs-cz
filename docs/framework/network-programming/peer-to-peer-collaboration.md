@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397816"
 ---
 # <a name="peer-to-peer-collaboration"></a>Spolupráce peer-to-Peer
 Sítě peer-to-peer je využití poměrně výkonné počítače (osobní počítače), které existují na hranici sítě Internet pro více než jen na základě klienta výpočetní úlohy. Moderní osobní počítač (počítače) má velmi rychlé procesor, valná paměti a velký pevný disk, žádný z nich se právě plně využít při provádění běžných úloh výpočetní například e-mailu a procházení webu. Moderní počítač můžete snadno fungovat jako klient i server (sdílené) pro mnoho typů aplikací.  
