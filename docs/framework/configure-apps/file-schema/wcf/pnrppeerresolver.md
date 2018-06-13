@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747977"
 ---
 # <a name="ltpnrppeerresolvergt"></a><span data-ttu-id="9f75b-102">&lt;pnrpPeerResolver&gt;</span><span class="sxs-lookup"><span data-stu-id="9f75b-102">&lt;pnrpPeerResolver&gt;</span></span>
 <span data-ttu-id="9f75b-103">Určuje, že překladač PNRP (protokolu Peer Name Resolution Protocol) se má použít jako překladač.</span><span class="sxs-lookup"><span data-stu-id="9f75b-103">Specifies that the PNRP (Peer Name Resolution Protocol) resolver is to be used as a resolver.</span></span> <span data-ttu-id="9f75b-104">Tento element je volitelný, protože PNRP je výchozí překladač.</span><span class="sxs-lookup"><span data-stu-id="9f75b-104">This element is optional because PNRP is the default resolver.</span></span>  

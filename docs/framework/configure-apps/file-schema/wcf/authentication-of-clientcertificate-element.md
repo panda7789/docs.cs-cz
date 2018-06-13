@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750476"
 ---
 # <a name="ltauthenticationgt-of-ltclientcertificategt-element"></a><span data-ttu-id="f43eb-102">&lt;authentication&gt; elementu &lt;clientCertificate&gt;</span><span class="sxs-lookup"><span data-stu-id="f43eb-102">&lt;authentication&gt; of &lt;clientCertificate&gt; Element</span></span>
 <span data-ttu-id="f43eb-103">Určuje chování ověřování pro klientské certifikáty používané služby.</span><span class="sxs-lookup"><span data-stu-id="f43eb-103">Specifies authentication behaviors for client certificates used by a service.</span></span>  

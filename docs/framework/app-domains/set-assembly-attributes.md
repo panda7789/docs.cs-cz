@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752194"
 ---
 # <a name="setting-assembly-attributes"></a><span data-ttu-id="7a61a-102">Nastavování atributů sestavení</span><span class="sxs-lookup"><span data-stu-id="7a61a-102">Setting Assembly Attributes</span></span>
 <span data-ttu-id="7a61a-103">Atributů sestavení jsou hodnoty, které obsahují informace o sestavení.</span><span class="sxs-lookup"><span data-stu-id="7a61a-103">Assembly attributes are values that provide information about an assembly.</span></span> <span data-ttu-id="7a61a-104">Atributy jsou rozdělené do následujících skupin informací:</span><span class="sxs-lookup"><span data-stu-id="7a61a-104">The attributes are divided into the following sets of information:</span></span>  

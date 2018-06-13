@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744392"
 ---
 # <a name="manipulations-and-inertia-overview"></a><span data-ttu-id="1f213-102">Přehled manipulace a nečinnosti</span><span class="sxs-lookup"><span data-stu-id="1f213-102">Manipulations and Inertia Overview</span></span>
 <span data-ttu-id="1f213-103">*Manipulace* povolit uživatelům přesunout, otáčení a změna velikosti prvky uživatelského rozhraní (UI) pomocí *manipulátory*.</span><span class="sxs-lookup"><span data-stu-id="1f213-103">*Manipulations* enable users to move, rotate, and resize user interface (UI) elements by using *manipulators*.</span></span> <span data-ttu-id="1f213-104">Manipulator představuje myši nebo (v případě dotykovým ovládáním) pera nebo prstu.</span><span class="sxs-lookup"><span data-stu-id="1f213-104">A manipulator represents a mouse or (in a touch-enabled scenario) a stylus or a finger.</span></span>  

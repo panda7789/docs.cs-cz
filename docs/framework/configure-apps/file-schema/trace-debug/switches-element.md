@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745143"
 ---
 # <a name="ltswitchesgt-element"></a><span data-ttu-id="2a314-102">&lt;přepínače&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="2a314-102">&lt;switches&gt; Element</span></span>
 <span data-ttu-id="2a314-103">Obsahuje trasování – přepínače a úroveň, kde jsou nastaveny trasování – přepínače.</span><span class="sxs-lookup"><span data-stu-id="2a314-103">Contains trace switches and the level where the trace switches are set.</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513283"
 ---
 # <a name="how-to-write-services-programmatically"></a><span data-ttu-id="54305-102">Postupy: Zápis služeb prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="54305-102">How to: Write Services Programmatically</span></span>
 <span data-ttu-id="54305-103">Pokud se rozhodnete použít projektu šablony služeb systému Windows, můžete napsat vlastní služby nastavením dědičnosti a dalších prvků infrastruktury sami.</span><span class="sxs-lookup"><span data-stu-id="54305-103">If you choose not to use the Windows Service project template, you can write your own services by setting up the inheritance and other infrastructure elements yourself.</span></span> <span data-ttu-id="54305-104">Při vytváření služby prostřednictvím kódu programu, je třeba provést několik kroků, které pro vás by jinak zpracovat šablony:</span><span class="sxs-lookup"><span data-stu-id="54305-104">When you create a service programmatically, you must perform several steps that the template would otherwise handle for you:</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748149"
 ---
 # <a name="ltconnectionpoolsettingsgt"></a><span data-ttu-id="2b16c-102">&lt;ConnectionPoolSettings&gt;</span><span class="sxs-lookup"><span data-stu-id="2b16c-102">&lt;connectionPoolSettings&gt;</span></span>
 <span data-ttu-id="2b16c-103">Určuje nastavení fondu další připojení pro vazbu s názvem kanálu.</span><span class="sxs-lookup"><span data-stu-id="2b16c-103">Specifies additional connection pool settings for a Named Pipe binding.</span></span>  

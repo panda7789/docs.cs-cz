@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749631"
 ---
 # <a name="ltaddgt-of-lttransportconfigurationtypegt"></a><span data-ttu-id="8d3cc-102">&lt;add&gt; – &lt;transportConfigurationType&gt;</span><span class="sxs-lookup"><span data-stu-id="8d3cc-102">&lt;add&gt; of &lt;transportConfigurationType&gt;</span></span>
 <span data-ttu-id="8d3cc-103">Tento element je dvojice klíč/hodnota, které jsou uvedeny typy konkrétního přenosu.</span><span class="sxs-lookup"><span data-stu-id="8d3cc-103">This element is a key/value pair, which identifies the type of a particular transport.</span></span>  

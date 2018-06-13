@@ -14,6 +14,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755074"
 ---
 # <a name="microsoftvisualstudioactivitiesasrclientactivitybuilderbuild"></a><span data-ttu-id="c7c62-102">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder.Build</span><span class="sxs-lookup"><span data-stu-id="c7c62-102">Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder.Build</span></span>
 <span data-ttu-id="c7c62-103">Vytvoří a nakonfiguruje <xref:System.Activities.ActivityBuilder> objekt, který poskytuje data pro aktivitu pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="c7c62-103">Creates and configures a <xref:System.Activities.ActivityBuilder> object that provides data for a workflow activity.</span></span>  

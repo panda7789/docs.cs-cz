@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744964"
 ---
 # <a name="ltassemblyidentitygt-element-for-ltruntimegt"></a><span data-ttu-id="914b7-102">&lt;assemblyIdentity&gt; Element pro &lt;modulu runtime&gt;</span><span class="sxs-lookup"><span data-stu-id="914b7-102">&lt;assemblyIdentity&gt; Element for &lt;runtime&gt;</span></span>
 <span data-ttu-id="914b7-103">Obsahuje identifikační informace o sestavení.</span><span class="sxs-lookup"><span data-stu-id="914b7-103">Contains identifying information about the assembly.</span></span>  

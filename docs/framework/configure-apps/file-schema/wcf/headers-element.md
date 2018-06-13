@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748276"
 ---
 # <a name="ltheadersgt-element"></a><span data-ttu-id="bd4e3-102">Element &lt;headers&gt;</span><span class="sxs-lookup"><span data-stu-id="bd4e3-102">&lt;headers&gt; element</span></span>
 <span data-ttu-id="bd4e3-103">Tato položka obsahuje kolekce hlavičky adresy, které jsou požadovány k správně adres místního vystavitele.</span><span class="sxs-lookup"><span data-stu-id="bd4e3-103">This contains a collection of address headers that are required in order to correctly address the local issuer.</span></span> <span data-ttu-id="bd4e3-104">Můžete použít `add` – klíčové slovo přidat hlavičku do této kolekce.</span><span class="sxs-lookup"><span data-stu-id="bd4e3-104">You can use the `add` keyword to add a header to this collection.</span></span>  

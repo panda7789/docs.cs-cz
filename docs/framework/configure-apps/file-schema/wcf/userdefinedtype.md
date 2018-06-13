@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755276"
 ---
 # <a name="ltuserdefinedtypegt"></a><span data-ttu-id="42b54-102">&lt;userDefinedType&gt;</span><span class="sxs-lookup"><span data-stu-id="42b54-102">&lt;userDefinedType&gt;</span></span>
 <span data-ttu-id="42b54-103">Představuje uživatel definovaný typ (UDT), které má být součástí kontraktu služby.</span><span class="sxs-lookup"><span data-stu-id="42b54-103">Represents a User Defined Type (UDT) that is to be included in the service contract.</span></span>  

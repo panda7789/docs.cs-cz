@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745172"
 ---
 # <a name="ltetwenablegt-element"></a><span data-ttu-id="7dd70-102">&lt;etwenable –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="7dd70-102">&lt;etwEnable&gt; Element</span></span>
 <span data-ttu-id="7dd70-103">Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro běžné události modulu runtime jazyka.</span><span class="sxs-lookup"><span data-stu-id="7dd70-103">Specifies whether to enable event tracing for Windows (ETW) for common language runtime events.</span></span>  

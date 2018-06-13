@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744626"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a><span data-ttu-id="163cb-102">Postupy: Podepsání sestavení silným názvem</span><span class="sxs-lookup"><span data-stu-id="163cb-102">How to: Sign an Assembly with a Strong Name</span></span>
 <span data-ttu-id="163cb-103">Existuje několik způsobů, jak můžete podepsat sestavení pomocí silného názvu:</span><span class="sxs-lookup"><span data-stu-id="163cb-103">There are a number of ways to sign an assembly with a strong name:</span></span>  

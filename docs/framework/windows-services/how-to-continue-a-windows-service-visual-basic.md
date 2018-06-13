@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512096"
 ---
 # <a name="how-to-continue-a-windows-service-visual-basic"></a><span data-ttu-id="4863b-102">Postupy: Pokračování služby systému Windows (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4863b-102">How to: Continue a Windows Service (Visual Basic)</span></span>
 <span data-ttu-id="4863b-103">Tento příklad používá <xref:System.ServiceProcess.ServiceController> součást pokračujte Správa služby IIS v místním počítači.</span><span class="sxs-lookup"><span data-stu-id="4863b-103">This example uses the <xref:System.ServiceProcess.ServiceController> component to continue the IIS Admin service on the local computer.</span></span>  

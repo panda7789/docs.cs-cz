@@ -14,6 +14,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745094"
 ---
 # <a name="startup-settings-schema"></a><span data-ttu-id="c14cf-102">Schéma nastavení spouštění</span><span class="sxs-lookup"><span data-stu-id="c14cf-102">Startup Settings Schema</span></span>
 <span data-ttu-id="c14cf-103">Spuštění – nastavení zadejte verzi modulu CLR, která by měla spustit aplikace.</span><span class="sxs-lookup"><span data-stu-id="c14cf-103">Startup settings specify the version of the common language runtime that should run the application.</span></span>  

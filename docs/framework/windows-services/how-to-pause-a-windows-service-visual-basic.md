@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33511511"
 ---
 # <a name="how-to-pause-a-windows-service-visual-basic"></a><span data-ttu-id="ec22f-102">Postupy: Pozastavení služby systému Windows (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ec22f-102">How to: Pause a Windows Service (Visual Basic)</span></span>
 <span data-ttu-id="ec22f-103">Tento příklad používá <xref:System.ServiceProcess.ServiceController> součásti pozastavit službu Správce služby IIS v místním počítači.</span><span class="sxs-lookup"><span data-stu-id="ec22f-103">This example uses the <xref:System.ServiceProcess.ServiceController> component to pause the IIS Admin service on the local computer.</span></span>  

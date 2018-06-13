@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756277"
 ---
 # <a name="comparing-datarows-linq-to-dataset"></a><span data-ttu-id="c7f7a-102">Porovnání DataRows (LINQ na DataSet)</span><span class="sxs-lookup"><span data-stu-id="c7f7a-102">Comparing DataRows (LINQ to DataSet)</span></span>
 [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]<span data-ttu-id="c7f7a-103"> definuje různé operátory set k porovnání zdrojové elementy, které chcete zobrazit, pokud jsou stejné.</span><span class="sxs-lookup"><span data-stu-id="c7f7a-103"> defines various set operators to compare source elements to see if they are equal.</span></span> [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]<span data-ttu-id="c7f7a-104"> poskytuje následující sadu operátory:</span><span class="sxs-lookup"><span data-stu-id="c7f7a-104"> provides the following set operators:</span></span>  
