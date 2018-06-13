@@ -35,6 +35,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654353"
 ---
 # <a name="special-characters-in-code-visual-basic"></a>Speciální znaky v kódu (Visual Basic)
 Někdy je nutné použít speciální znaky v kódu, který je znaků, které nejsou abecední nebo číselný. Interpunkce a speciální znaky znakové sady Visual Basic mají různé používá z uspořádání program text, který má definice úlohy, které provádí kompilátor nebo zkompilovaný program. Nezadávejte provést operaci.  

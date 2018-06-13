@@ -31,6 +31,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650345"
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a>Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy (Visual Basic).
 Můžete definice třídy, ze kterého můžete vytvořit objekty, které poskytují identické funkce pro různé datové typy. K tomuto účelu můžete zadat jednu nebo několik *parametry typu* v definici. Třída může pak sloužit jako šablona pro objekty, které používají různé datové typy. Třídy definované tímto způsobem se nazývá *– obecná třída*.  

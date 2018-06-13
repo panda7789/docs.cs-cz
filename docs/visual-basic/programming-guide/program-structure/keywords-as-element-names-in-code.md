@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652575"
 ---
 # <a name="keywords-as-element-names-in-code-visual-basic"></a>Klíčová slova jako názvy elementu v kódu (Visual Basic)
 Žádné program element – například proměnné, třída nebo člen – může mít stejný název jako s omezeným přístupem – klíčové slovo. Například můžete vytvořit proměnné s názvem `Loop`. Však k odkazování na vaší verzi, který má stejný název jako s omezeným přístupem `Loop` – klíčové slovo – musí předcházet řetězcem úplné kvalifikace nebo hranaté závorky (`[ ]`), jak ukazuje následující příklad.  

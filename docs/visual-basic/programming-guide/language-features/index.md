@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652009"
 ---
 # <a name="visual-basic-language-features"></a>Funkce jazyka Visual Basic
 V následujících tématech zavádět a popisují nezbytné součásti Visual Basic, objektově orientovaný programovací jazyk. Po vytvoření uživatelského rozhraní pro vaše aplikace pomocí formuláře a ovládací prvky, budete muset psát kód, který definuje chování aplikace. Stejně jako u moderní programovací jazyk, Visual Basic podporuje mnoho běžných programovací konstrukce a jazykové elementy.  

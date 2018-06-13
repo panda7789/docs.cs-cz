@@ -26,6 +26,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656149"
 ---
 # <a name="logical-and-bitwise-operators-in-visual-basic"></a>Logické a bitové operátory v jazyce Visual Basic
 Logické operátory porovnání `Boolean` výrazy a vraťte se `Boolean` výsledek. `And`, `Or`, `AndAlso`, `OrElse`, A `Xor` operátory jsou *binární* vzhledem k tomu, že jejich trvat dva operandy, při `Not` operátor je *unární* vzhledem k tomu, jak dlouho trvá jeden operand. Některé z těchto operátorů můžete také provést bitové logické operace na celočíselné hodnoty.  

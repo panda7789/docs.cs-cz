@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650410"
 ---
 # <a name="manipulating-xml-in-visual-basic"></a>Zacházení s XML v jazyce Visual Basic
 Můžete použít *XML – literály* k načtení XML z externího zdroje například řetězce, souboru nebo datový proud. Pak můžete použít [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k manipulaci s XML a použít [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dotaz XML.  

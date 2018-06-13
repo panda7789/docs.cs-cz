@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651110"
 ---
 # <a name="how-to-define-a-parameter-for-a-procedure-visual-basic"></a>Postupy: Definování parametru pro proceduru (Visual Basic)
 A *parametr* umožňuje volací kód, který předat hodnotu k postupu při jeho volání. Každý parametr pro proceduru deklarovat stejným způsobem jako deklarovat proměnnou, zadat jeho název a datový typ. Můžete také zadat mechanismus předávání, a zda se jedná o volitelný parametr.  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656084"
 ---
 # <a name="property-procedures-visual-basic"></a>Procedury vlastnosti (Visual Basic)
 Procedury vlastnosti je řada příkazů jazyka Visual Basic, které pracují s vlastní vlastnost na modul, třídu nebo strukturu. Procedury vlastností se také označují jako *přístupové objekty vlastnosti*.  

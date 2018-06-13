@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33635603"
 ---
 # <a name="code-resource-lock-error"></a>Chyba zámku prostředků kódu
 Proceduře v kódu prostředku došlo k volání. Nebyl nalezen prostředek kód, ale při možná zamknutí prostředků, protože je používán byl proveden pokus o došlo k chybě.  

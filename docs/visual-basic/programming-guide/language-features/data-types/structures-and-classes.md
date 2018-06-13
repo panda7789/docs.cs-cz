@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654119"
 ---
 # <a name="structures-and-classes-visual-basic"></a>Struktury a třídy (Visual Basic)
 Visual Basic kombinuje syntaxe struktury a třídy, s tím výsledkem, že obě entity podporují většinu stejné funkce. Existují však také důležité rozdíly mezi struktury a třídy.  

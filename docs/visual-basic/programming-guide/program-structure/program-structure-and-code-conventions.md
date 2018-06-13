@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654939"
 ---
 # <a name="program-structure-and-code-conventions-visual-basic"></a>Struktura programu a pravidla týkající se kódu (Visual Basic)
 Tato část představuje typické struktura programu jazyka Visual Basic, poskytuje jednoduché programu jazyka Visual Basic, "Hello, World" a popisuje pravidla týkající se kódu jazyka Visual Basic. Pravidla týkající se kódu jsou návrhy, které soustředit není na programu logiku, ale na její fyzickou strukturu a vzhled. Následující je snazší kódu pro čtení, pochopit a údržbu. Pravidla týkající se kódu mohou zahrnovat mimo jiné:  

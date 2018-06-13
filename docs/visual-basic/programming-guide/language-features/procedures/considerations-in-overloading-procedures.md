@@ -30,6 +30,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654327"
 ---
 # <a name="considerations-in-overloading-procedures-visual-basic"></a>Aspekty přetížení procedur (Visual Basic)
 Pokud jste přetížení procedury, je nutné použít jiné *podpis* pro každou přetížené verzi. To obvykle znamená, že každou verzi musíte zadat seznam různých parametrů. Další informace najdete v tématu "Jiný podpis" v [přetížení procedury](./procedure-overloading.md).  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651847"
 ---
 # <a name="references-and-the-imports-statement-visual-basic"></a>Odkazy a příkaz Imports (Visual Basic)
 Můžete zpřístupnit externí objekty do projektu výběrem **přidat odkaz na** příkaz na **projektu** nabídky. Odkazy v jazyce Visual Basic může ukazovat na sestavení, které jsou jako knihovny typů ale obsahují více informací.  

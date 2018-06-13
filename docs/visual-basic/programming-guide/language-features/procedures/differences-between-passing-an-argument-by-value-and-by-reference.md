@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651652"
 ---
 # <a name="differences-between-passing-an-argument-by-value-and-by-reference-visual-basic"></a>Rozdíly mezi předáním argumentu podle hodnoty a podle reference (Visual Basic)
 Pokud předáte jeden nebo více argumentů proceduře, každý argument odpovídá základní programovací element v volání kódu. Můžete předat hodnotu tento základní element nebo na něj odkaz. To se označuje jako *předávání mechanismus*.  

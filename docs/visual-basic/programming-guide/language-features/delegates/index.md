@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652880"
 ---
 # <a name="delegates-visual-basic"></a>Delegáti (Visual Basic)
 Delegáti jsou objekty, které odkazují na metody. V některých případech jsou popsány jako *ukazatelů na funkce zajišťující bezpečnost typů* vzhledem k tomu, že jsou podobná ukazatelů na funkce používán jinými programovací jazyky. Ale na rozdíl od ukazatelů na funkce, Visual Basic delegáti typu odkazu na základě třídy <xref:System.Delegate?displayProperty=nameWithType>. Delegáti odkazovat oba sdílené metody – metody, které může být volána bez konkrétní instanci třídy – a instanci metody.  

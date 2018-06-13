@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654749"
 ---
 # <a name="visual-basic-language-walkthroughs"></a>Návody pro jazyk Visual Basic
 Návody poskytují podrobné pokyny pro běžné scénáře, které vytváří dobrým místem, kde spustit získávání informací o produktu nebo oblasti určité funkce.  

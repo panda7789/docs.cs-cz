@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656253"
 ---
 # <a name="anonymous-types-visual-basic"></a>Anonymní typy (Visual Basic)
 Visual Basic podporuje anonymní typy, které vám umožní vytvořit objekty bez nutnosti psaní definice třídy pro datový typ. Kompilátor místo, vygeneruje třídu pro vás. Třída nemá žádný použitelný název, dědí přímo z <xref:System.Object>a obsahuje vlastnosti, které zadáte v deklarace objektu. Protože není určen název typu dat, se odkazuje jako *anonymního typu*.  

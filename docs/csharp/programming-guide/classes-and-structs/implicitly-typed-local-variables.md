@@ -10,6 +10,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172003"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Implicitně typované lokální proměnné (Průvodce programováním v C#)
 Lokální proměnné lze deklarovat bez nutnosti poskytnutí explicitního typu. `var` – Klíčové slovo instruuje kompilátor, aby odvození typu proměnné z výrazu na pravé straně příkazu inicializace. Odvozené typ může být předdefinovaný typ, anonymní typ, uživatelem definovaný typ nebo typem definovaným v knihovně tříd rozhraní .NET Framework. Další informace o tom, jak inicializovat pole s `var`, najdete v části [implicitně typované pole](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  

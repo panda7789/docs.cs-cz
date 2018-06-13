@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34171951"
 ---
 # <a name="unsafe-c-reference"></a>unsafe (Referenční dokumentace jazyka C#)
 `unsafe` – Klíčové slovo označuje unsafe kontext, který je požadován pro všechny operace zahrnutí ukazatelů. Další informace najdete v tématu [nezabezpečený kód a ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/index.md).  

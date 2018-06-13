@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655555"
 ---
 # <a name="namespaces-in-visual-basic"></a>Obory názvů v jazyce Visual Basic
 Obory názvů uspořádat objekty definované v sestavení. Sestavení může obsahovat více obory názvů, který zase mohou obsahovat jiných oborech názvů. Obory názvů zabránilo nejednoznačnosti a zjednodušit odkazy, při použití velké skupiny objektů, například knihovny tříd.  

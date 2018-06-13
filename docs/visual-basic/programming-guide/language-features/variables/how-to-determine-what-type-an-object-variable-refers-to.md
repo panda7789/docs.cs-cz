@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651311"
 ---
 # <a name="how-to-determine-what-type-an-object-variable-refers-to-visual-basic"></a>Postupy: Určení, na jaký typ proměnná objektu odkazuje (Visual Basic)
 Proměnné objektu obsahuje ukazatel na data, která je uložená na jiném místě. Typ dat, můžete změnit za běhu. V každém okamžiku můžete použít <xref:System.Type.GetTypeCode%2A> metoda k určení aktuální typ spuštění nebo [typeof – operátor](../../../../visual-basic/language-reference/operators/typeof-operator.md) zjistit, jestli aktuální běhového typu je kompatibilní s zadaného typu.  

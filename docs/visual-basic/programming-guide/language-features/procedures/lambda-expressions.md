@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654791"
 ---
 # <a name="lambda-expressions-visual-basic"></a>Výrazy Lambda (Visual Basic)
 A *výrazu lambda* je funkce nebo podprogramu bez názvu, který lze použít bez ohledu na delegáta je platný. Výrazy lambda může být funkce nebo subrutiny a může být jeden nebo více řádků. Můžete předat hodnoty z aktuálního oboru do výrazu lambda.  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653426"
 ---
 # <a name="overload-resolution-visual-basic"></a>Rozlišení přetěžování (Visual Basic)
 Když Visual Basic – kompilátor dojde volání procedury, která je definována v několika verzích přetížené, kompilátor musíte rozhodnout, které přetížení volání. Dělá to pomocí následujících kroků:  

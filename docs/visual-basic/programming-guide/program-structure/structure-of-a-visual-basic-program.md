@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654827"
 ---
 # <a name="structure-of-a-visual-basic-program"></a>Struktura programu jazyka Visual Basic
 V aplikaci Visual Basic je vytvářet z standardních stavebních bloků. A *řešení* se skládá z jednoho nebo několika projektů. A *projektu* pak může obsahovat jedno nebo více sestavení. Každý *sestavení* kompiluje z jednoho nebo více zdrojových souborů. A *zdrojový soubor* obsahuje definice a implementaci třídy, struktury, moduly a rozhraní, nakonec obsahujících vašeho kódu.  
