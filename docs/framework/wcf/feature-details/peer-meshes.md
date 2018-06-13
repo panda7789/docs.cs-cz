@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493334"
 ---
 # <a name="peer-meshes"></a>Skupiny partnerských uzlů
 A *OK sítě* je pojmenovaná kolekce partnerské uzly, který dokáže komunikovat mezi sebou a které jsou určeny OK jedinečné ID (vzájemně propojena graf) Každý uzel je připojen k více dalších uzlů. V dobře propojené mřížku je mezi dvěma uzly, s relativně malý počet směrování mezi uzly ve nejvzdálenější okrajů oka, cestu a OK zůstanou připojené i v případě, že některé uzly nebo připojení vyřadit. Aktivní uzly v mřížce publikovaly své informace o koncový bod s odpovídajícím ID mřížky, aby ostatní partnerské uzly najít.  

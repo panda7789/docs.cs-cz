@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33466470"
 ---
 # <a name="3411---httppipelinetimeoutexception"></a>3411 - HttpPipelineTimeoutException
 ## <a name="properties"></a>Vlastnosti  

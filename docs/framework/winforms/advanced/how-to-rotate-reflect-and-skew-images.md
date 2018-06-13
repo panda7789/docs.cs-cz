@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523452"
 ---
 # <a name="how-to-rotate-reflect-and-skew-images"></a>Postupy: Otáčení, převrácení a zkosení obrázků
 Otočit, odrážel a zkreslit bitovou kopii zadáním cílového body pro rozích levém horním pravém horním a dolním původní bitové kopie. Tři cílové body určit afinní transformace, která se mapuje na rovnoběžník původní obdélníková bitové kopie.  

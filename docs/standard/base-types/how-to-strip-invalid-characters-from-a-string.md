@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567351"
 ---
 # <a name="how-to-strip-invalid-characters-from-a-string"></a>Postupy: Odstranění neplatných znaků z řetězce
 Následující příklad používá statické <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> metoda pro odstranění neplatných znaků z řetězce.  

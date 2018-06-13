@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569691"
 ---
 # <a name="type-support-in-the-systemxml-classes"></a>Podpora typu v System.Xml třídy
 V rozhraní .NET Framework verze 2.0 mají základní třídy XML vylepšené a zahrnují typ podpory funkce. <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>, A <xref:System.Xml.XPath.XPathNavigator> třídy zahrnují typ podpory funkce, včetně možnosti pro převod mezi typy schémat XML a běžné typy language runtime (CLR).  

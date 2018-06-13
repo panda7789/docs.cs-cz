@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494088"
 ---
 # <a name="client-architecture"></a>Architektura klienta
 Aplikace používaná k volání operací služby objekty klienta Windows Communication Foundation (WCF). Toto téma popisuje objekty klienta WCF, kanály klienta WCF a jejich vztahů s základní architektury kanálu. Základní přehled objekty klienta WCF, najdete v tématu [klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md). Další informace o vrstvy kanálu najdete v tématu [rozšíření vrstvy kanálu](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md).  

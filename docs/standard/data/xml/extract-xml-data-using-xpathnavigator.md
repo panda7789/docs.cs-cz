@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572005"
 ---
 # <a name="extract-xml-data-using-xpathnavigator"></a>Extrahovat pomocí objektem XPathNavigator nastaveným na Data XML
 Představují dokument XML v rozhraní Microsoft .NET Framework několika různými způsoby. To zahrnuje použití <xref:System.String>, nebo pomocí <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>, <xref:System.Xml.XmlDocument>, nebo <xref:System.Xml.XPath.XPathDocument> třídy. Pro usnadnění přesun mezi tyto různé reprezentace dokumentu XML <xref:System.Xml.XPath.XPathNavigator> třída poskytuje několik metod a vlastností pro extrahování XML jako <xref:System.String>, <xref:System.Xml.XmlReader> objekt nebo <xref:System.Xml.XmlWriter> objektu.  

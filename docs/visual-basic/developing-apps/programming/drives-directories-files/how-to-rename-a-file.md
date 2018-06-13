@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586409"
 ---
 # <a name="how-to-rename-a-file-in-visual-basic"></a>Postupy: Přejmenování souboru v jazyce Visual Basic
 Použití `RenameFile` metodu `My.Computer.FileSystem` objekt, který chcete přejmenovat soubor zadáním aktuální umístění, název souboru a nový název souboru. Tento způsob nejde použít k přesouvání souborů. použít `MoveFile` metoda přesunout a přejmenujte soubor.  

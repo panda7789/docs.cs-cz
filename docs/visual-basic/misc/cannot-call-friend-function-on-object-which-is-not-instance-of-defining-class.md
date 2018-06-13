@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33634918"
 ---
 # <a name="cannot-call-friend-function-on-object-which-is-not-an-instance-of-defining-class"></a>Nelze volat funkce friend objekt, který není instancí definice – třída
 Buď jste se pokusili volání `Friend` postup třídy, nebo jste se pokusili získat přístup `Friend` vlastnosti nebo metody napříč procesy nebo mezi vlákny. A `Friend` postup lze volat z modulu mimo třídu, ale je součástí projektu, ve kterém je třída definovaná.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549124"
 ---
 # <a name="typography-in-wpf"></a>Typografie v rozhraní WPF
 Toto téma představuje hlavní typografických funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tyto funkce patří zlepšení kvality a výkon při vykreslování textu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] typografii podporu rozšířené mezinárodní text, rozšířenou podporu písma a nové aplikace programování text rozhraní (API).  

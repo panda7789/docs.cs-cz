@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33467204"
 ---
 # <a name="403---suspendsignpostevent"></a>403 – SuspendSignpostEvent
 ## <a name="properties"></a>Vlastnosti  

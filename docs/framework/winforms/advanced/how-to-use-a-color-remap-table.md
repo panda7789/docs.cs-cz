@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522470"
 ---
 # <a name="how-to-use-a-color-remap-table"></a>Postupy: Použití tabulky přemapování barev
 Přemapování je proces převodu barev v obraze podle tabulky přemapování barev. Tabulky přemapování barev je pole <xref:System.Drawing.Imaging.ColorMap> objekty. Každý <xref:System.Drawing.Imaging.ColorMap> objekt v poli má <xref:System.Drawing.Imaging.ColorMap.OldColor%2A> vlastnost a <xref:System.Drawing.Imaging.ColorMap.NewColor%2A> vlastnost.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520052"
 ---
 # <a name="c-expressions"></a>Výrazy jazyka C#
 Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výrazy jazyka C# jsou podporovány v systému Windows Workflow Foundation (WF). Nové projekty workflow C# vytvořené v [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] cílených [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] použití jazyka C# výrazy a pracovní postup projekty Visual Basic použití výrazů jazyka Visual Basic. Existující [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] projekty workflow, které používají výrazy jazyka Visual Basic mohou být migrovány do [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] bez ohledu na projekt jazyka a jsou podporovány. Toto téma obsahuje přehled výrazy jazyka C# v [!INCLUDE[wf1](../../../includes/wf1-md.md)].  

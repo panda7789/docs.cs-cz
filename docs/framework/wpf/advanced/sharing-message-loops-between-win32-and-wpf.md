@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548812"
 ---
 # <a name="sharing-message-loops-between-win32-and-wpf"></a>Sdílení smyčky zpráv mezi systémem Win32 a platformou WPF
 Toto téma popisuje, jak implementovat smyčku zpráv pro spolupráci s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], buď pomocí stávající zpráva smyčky ohrožení v <xref:System.Windows.Threading.Dispatcher> nebo vytvořením smyčku samostatnou zprávu na [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] postranní součinnosti kódu.  

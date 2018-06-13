@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636845"
 ---
 # <a name="can39t-perform-requested-operation-visual-basic"></a>Můžete&#39;t provést požadovanou operaci (Visual Basic)
 Operaci nelze provést, protože ho by zrušení platnosti aktuálního stavu projektu. Například může jste se pokusili Programová změna kód, který běží.  

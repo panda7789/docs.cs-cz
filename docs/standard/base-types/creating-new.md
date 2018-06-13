@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567816"
 ---
 # <a name="creating-new-strings-in-net"></a>Vytváření nových řetězců v .NET
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Umožňuje vytvoření jednoduché přiřazení řetězců a také přetížení konstruktoru třídy pro podporu vytváření řetězců pomocí několika různých parametrů. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Také poskytuje několik metod <xref:System.String?displayProperty=nameWithType> třídu, která vytvořit nový řetězec sloučením několika řetězců, pole řetězců, objekty nebo objekty.  

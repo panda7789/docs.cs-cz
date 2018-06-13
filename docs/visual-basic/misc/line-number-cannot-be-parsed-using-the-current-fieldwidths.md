@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637914"
 ---
 # <a name="line-ltnumbergt-cannot-be-parsed-using-the-current-fieldwidths"></a>Řádek &lt;číslo&gt; nelze analyzovat pomocí aktuální FieldWidths
 Zadaný řádek se nezdařila, protože jeho pole šířek než tyto zadané.  

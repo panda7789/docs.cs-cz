@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495363"
 ---
 # <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Postupy: vytváření dočasných certifikátů pro použití při vývoji
 Při vývoji zabezpečení služby nebo klienta s použitím Windows Communication Foundation (WCF), je často potřeba zadat certifikát X.509, který se má použít jako pověření. Certifikát je obvykle součástí řetěz certifikátů s kořenovou autoritou nalezen v úložišti Důvěryhodné kořenové certifikační autority počítače. S řetěz certifikátů umožňuje určit obor sadu certifikáty, které obvykle kořenovou autoritou je z vaší organizace nebo organizační jednotka. To emulovat v době vývoje, můžete vytvořit dva certifikáty splňovat požadavky na zabezpečení. První je certifikát podepsaný svým držitelem, který je umístěn v úložišti důvěryhodných kořenových certifikačních autorit a druhý certifikát je vytvořený z první a je umístěn v osobním úložišti umístění místního počítače nebo osobním úložišti Aktuální umístění uživatele. Toto téma vás provede kroky k vytvoření těchto dvou certifikátů pomocí [nástroje vytvoření certifikátu (MakeCert.exe)](http://go.microsoft.com/fwlink/?LinkId=248185), poskytnutá [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] SDK.  

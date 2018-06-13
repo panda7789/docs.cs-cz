@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585824"
 ---
 # <a name="accessing-data-in-visual-basic-applications"></a>Přístup k datům v aplikacích jazyka Visual Basic
 Visual Basic zahrnuje několik nových funkcí, které pomáhají při vývoji aplikací, které přístup k datům. Vázané na data formuláře pro aplikace systému Windows jsou vytvořeny tak, že přetáhnete položky z [okno zdroje dat](/visualstudio/data-tools/add-new-data-sources) do formuláře. Vytvoření vazby ovládacích prvků k datům tak, že přetáhnete položky z **okno zdroje dat** do existujícího ovládacího prvku.  

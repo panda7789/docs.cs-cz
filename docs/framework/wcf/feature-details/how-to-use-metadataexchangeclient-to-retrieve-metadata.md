@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494225"
 ---
 # <a name="how-to-use-metadataexchangeclient-to-retrieve-metadata"></a>Postupy: Načítání metadat pomocí vlastnosti MetadataExchangeClient
 Použití <xref:System.ServiceModel.Description.MetadataExchangeClient> třídy ke stažení metadat pomocí protokolu WS-MetadataExchange (MEX). Soubory načtené metadat se vrátí jako <xref:System.ServiceModel.Description.MetadataSet> objektu. Vrácený <xref:System.ServiceModel.Description.MetadataSet> objektu obsahuje kolekci <xref:System.ServiceModel.Description.MetadataSection> objekty, z nichž každý obsahuje dialekt konkrétních metadat a identifikátor. Metadata vrácená může zapisovat do souborů, nebo pokud vrácený metadat obsahuje webové služby popis Language (WSDL) dokumenty, můžete importovat metadata pomocí <xref:System.ServiceModel.Description.WsdlImporter>.  

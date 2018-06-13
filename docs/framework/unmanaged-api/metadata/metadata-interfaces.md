@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33450996"
 ---
 # <a name="metadata-interfaces"></a>Rozhraní metadat
 Tato část popisuje nespravovaná rozhraní, které poskytují přístup k metadatům vystavené typy rozhraní .NET Framework, metody, pole a tak dále.  

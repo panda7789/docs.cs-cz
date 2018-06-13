@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519431"
 ---
 # <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a>Postupy: povolení trvalost SQL pro pracovní postupy a služeb pracovních postupů
 Toto téma popisuje postup konfigurace úložiště Instance pracovního postupu SQL funkci tak, aby zapnout stálost pro vaše pracovní postupy a pracovní postup služby prostřednictvím kódu programu a pomocí konfiguračního souboru.  

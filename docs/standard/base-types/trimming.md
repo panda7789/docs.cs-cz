@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569886"
 ---
 # <a name="trimming-and-removing-characters-from-strings-in-net"></a>Ořezávání a odstraňování znaků z řetězců v .NET
 Pokud analyzujete věty do jednotlivých slov, budete muset zvýšit slova, která mají mezery (také nazývané mezer) na obou koncích aplikace word. V takovém případě můžete použít jednu z metod trim v **System.String** třída odebrat libovolný počet mezery ani jiné znaky ze zadané pozici v řetězci. Následující tabulka popisuje dostupné metody uvolnění dočasné paměti.  

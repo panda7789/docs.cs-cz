@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637371"
 ---
 # <a name="file-format-not-valid"></a>Formát souboru není platný
 Buď jste se pokusili načíst soubor do součásti, ale formát data v souboru je nekompatibilní s komponentou, nebo jste se pokusili součást data uložit do souboru, ale formát dat je nekompatibilní s formátem souboru.  
