@@ -1,28 +1,19 @@
 ---
-title: "Postupy: ověření pomocí XSD (technologie LINQ to XML) (Visual Basic)"
-ms.custom: 
+title: 'Postupy: ověření pomocí XSD (technologie LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a0fe88d4-4e77-49e7-90de-8953feeccc21
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 53b4f96e4fe31588c948d8e860be2c3bd3fa372a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: fa607cea999ec484ccdd47829d4b96b2d73b060a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645373"
 ---
-# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a><span data-ttu-id="ab0df-102">Postupy: ověření pomocí XSD (technologie LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ab0df-102">How to: Validate Using XSD (LINQ to XML) (Visual Basic)</span></span>
-<span data-ttu-id="ab0df-103"><xref:System.Xml.Schema> Obor názvů obsahuje rozšiřující metody, které usnadňují ověření strom XML proti soubor schématu definice jazyka XML (XSD).</span><span class="sxs-lookup"><span data-stu-id="ab0df-103">The <xref:System.Xml.Schema> namespace contains extension methods that make it easy to validate an XML tree against an XML Schema Definition Language (XSD) file.</span></span> <span data-ttu-id="ab0df-104">Další informace najdete v tématu <xref:System.Xml.Schema.Extensions.Validate%2A> metoda dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="ab0df-104">For more information, see the <xref:System.Xml.Schema.Extensions.Validate%2A> method documentation.</span></span>  
+# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a><span data-ttu-id="78ede-102">Postupy: ověření pomocí XSD (technologie LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="78ede-102">How to: Validate Using XSD (LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="78ede-103"><xref:System.Xml.Schema> Obor názvů obsahuje rozšiřující metody, které usnadňují ověření strom XML proti soubor schématu definice jazyka XML (XSD).</span><span class="sxs-lookup"><span data-stu-id="78ede-103">The <xref:System.Xml.Schema> namespace contains extension methods that make it easy to validate an XML tree against an XML Schema Definition Language (XSD) file.</span></span> <span data-ttu-id="78ede-104">Další informace najdete v tématu <xref:System.Xml.Schema.Extensions.Validate%2A> metoda dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="78ede-104">For more information, see the <xref:System.Xml.Schema.Extensions.Validate%2A> method documentation.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ab0df-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="ab0df-105">Example</span></span>  
- <span data-ttu-id="ab0df-106">Následující příklad vytvoří <xref:System.Xml.Schema.XmlSchemaSet>, pak ověří dva <xref:System.Xml.Linq.XDocument> objektů pro sadu schématu.</span><span class="sxs-lookup"><span data-stu-id="ab0df-106">The following example creates an <xref:System.Xml.Schema.XmlSchemaSet>, then validates two <xref:System.Xml.Linq.XDocument> objects against the schema set.</span></span> <span data-ttu-id="ab0df-107">Jeden z dokumentů je platný, druhý není.</span><span class="sxs-lookup"><span data-stu-id="ab0df-107">One of the documents is valid, the other is not.</span></span>  
+## <a name="example"></a><span data-ttu-id="78ede-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="78ede-105">Example</span></span>  
+ <span data-ttu-id="78ede-106">Následující příklad vytvoří <xref:System.Xml.Schema.XmlSchemaSet>, pak ověří dva <xref:System.Xml.Linq.XDocument> objektů pro sadu schématu.</span><span class="sxs-lookup"><span data-stu-id="78ede-106">The following example creates an <xref:System.Xml.Schema.XmlSchemaSet>, then validates two <xref:System.Xml.Linq.XDocument> objects against the schema set.</span></span> <span data-ttu-id="78ede-107">Jeden z dokumentů je platný, druhý není.</span><span class="sxs-lookup"><span data-stu-id="78ede-107">One of the documents is valid, the other is not.</span></span>  
   
 ```vb  
 Dim errors As Boolean = False  
@@ -74,7 +65,7 @@ Sub Main()
 End Sub  
 ```  
   
- <span data-ttu-id="ab0df-108">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="ab0df-108">This example produces the following output:</span></span>  
+ <span data-ttu-id="78ede-108">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="78ede-108">This example produces the following output:</span></span>  
   
 ```  
 Validating doc1  
@@ -85,12 +76,12 @@ The element 'Root' has invalid child element 'Child3'. List of possible elements
 doc2 did not validate  
 ```  
   
-## <a name="example"></a><span data-ttu-id="ab0df-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="ab0df-109">Example</span></span>  
- <span data-ttu-id="ab0df-110">Následující příklad ověří, že dokument XML z [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) platný podle schématu z [ukázkový soubor XSD: Zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).</span><span class="sxs-lookup"><span data-stu-id="ab0df-110">The following example validates that the XML document from [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) is valid per the schema from [Sample XSD File: Customers and Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).</span></span> <span data-ttu-id="ab0df-111">Pak upravením zdrojový dokument XML.</span><span class="sxs-lookup"><span data-stu-id="ab0df-111">It then modifies the source XML document.</span></span> <span data-ttu-id="ab0df-112">Změní `CustomerID` atribut na první zákazníka.</span><span class="sxs-lookup"><span data-stu-id="ab0df-112">It changes the `CustomerID` attribute on the first customer.</span></span> <span data-ttu-id="ab0df-113">Po provedení změny objednávky bude pak odkazovat zákazníkovi, který neexistuje, abyste v dokumentu XML se už ověřit.</span><span class="sxs-lookup"><span data-stu-id="ab0df-113">After the change, orders will then refer to a customer that does not exist, so the XML document will no longer validate.</span></span>  
+## <a name="example"></a><span data-ttu-id="78ede-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="78ede-109">Example</span></span>  
+ <span data-ttu-id="78ede-110">Následující příklad ověří, že dokument XML z [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) platný podle schématu z [ukázkový soubor XSD: Zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).</span><span class="sxs-lookup"><span data-stu-id="78ede-110">The following example validates that the XML document from [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) is valid per the schema from [Sample XSD File: Customers and Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).</span></span> <span data-ttu-id="78ede-111">Pak upravením zdrojový dokument XML.</span><span class="sxs-lookup"><span data-stu-id="78ede-111">It then modifies the source XML document.</span></span> <span data-ttu-id="78ede-112">Změní `CustomerID` atribut na první zákazníka.</span><span class="sxs-lookup"><span data-stu-id="78ede-112">It changes the `CustomerID` attribute on the first customer.</span></span> <span data-ttu-id="78ede-113">Po provedení změny objednávky bude pak odkazovat zákazníkovi, který neexistuje, abyste v dokumentu XML se už ověřit.</span><span class="sxs-lookup"><span data-stu-id="78ede-113">After the change, orders will then refer to a customer that does not exist, so the XML document will no longer validate.</span></span>  
   
- <span data-ttu-id="ab0df-114">Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="ab0df-114">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="78ede-114">Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="78ede-114">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span></span>  
   
- <span data-ttu-id="ab0df-115">Tento příklad používá následující schéma XSD: [ukázkový soubor XSD: Zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).</span><span class="sxs-lookup"><span data-stu-id="ab0df-115">This example uses the following XSD schema: [Sample XSD File: Customers and Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).</span></span>  
+ <span data-ttu-id="78ede-115">Tento příklad používá následující schéma XSD: [ukázkový soubor XSD: Zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).</span><span class="sxs-lookup"><span data-stu-id="78ede-115">This example uses the following XSD schema: [Sample XSD File: Customers and Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).</span></span>  
   
 ```vb  
 Dim errors As Boolean = False  
@@ -120,7 +111,7 @@ Sub Main()
 End Sub  
 ```  
   
- <span data-ttu-id="ab0df-116">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="ab0df-116">This example produces the following output:</span></span>  
+ <span data-ttu-id="78ede-116">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="78ede-116">This example produces the following output:</span></span>  
   
 ```  
 Attempting to validate  
@@ -131,6 +122,6 @@ The key sequence 'AAAAA' in Keyref fails to refer to some key.
 custOrdDoc did not validate  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ab0df-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="ab0df-117">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="78ede-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="78ede-117">See Also</span></span>  
  <xref:System.Xml.Schema.Extensions.Validate%2A>  
- [<span data-ttu-id="ab0df-118">Vytváření stromů XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ab0df-118">Creating XML Trees (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+ [<span data-ttu-id="78ede-118">Vytváření stromů XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="78ede-118">Creating XML Trees (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

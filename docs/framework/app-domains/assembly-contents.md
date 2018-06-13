@@ -14,6 +14,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741825"
 ---
 # <a name="assembly-contents"></a><span data-ttu-id="05bf1-102">Obsah sestavení</span><span class="sxs-lookup"><span data-stu-id="05bf1-102">Assembly Contents</span></span>
 <span data-ttu-id="05bf1-103">Obecně platí statické sestavení se může skládat ze čtyř prvků:</span><span class="sxs-lookup"><span data-stu-id="05bf1-103">In general, a static assembly can consist of four elements:</span></span>  
