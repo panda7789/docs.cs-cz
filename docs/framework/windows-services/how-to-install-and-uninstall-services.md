@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513136"
 ---
 # <a name="how-to-install-and-uninstall-services"></a><span data-ttu-id="d1271-102">Postupy: Instalace a odinstalace služeb</span><span class="sxs-lookup"><span data-stu-id="d1271-102">How to: Install and Uninstall Services</span></span>
 <span data-ttu-id="d1271-103">Pokud vyvíjíte služby systému Windows s použitím rozhraní .NET Framework, můžete rychle nainstalovat aplikace služby pomocí nástroje příkazového řádku, který volá InstallUtil.exe.</span><span class="sxs-lookup"><span data-stu-id="d1271-103">If you’re developing a Windows Service by using the .NET Framework, you can quickly install your service application by using a command-line utility called InstallUtil.exe.</span></span> <span data-ttu-id="d1271-104">Pokud jste vývojář kdo chce verzi služby systému Windows, uživatelé můžou instalovat a odinstalovat jste měli využívají novou technologii.</span><span class="sxs-lookup"><span data-stu-id="d1271-104">If you’re a developer who wants to release a Windows Service that users can install and uninstall  you should use InstallShield.</span></span> <span data-ttu-id="d1271-105">V tématu [nasazení Instalační služby systému Windows](http://msdn.microsoft.com/library/121be21b-b916-43e2-8f10-8b080516d2a0).</span><span class="sxs-lookup"><span data-stu-id="d1271-105">See [Windows Installer Deployment](http://msdn.microsoft.com/library/121be21b-b916-43e2-8f10-8b080516d2a0).</span></span>  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516214"
 ---
 # <a name="how-to-start-services"></a><span data-ttu-id="d6148-102">Postupy: Spuštění služeb</span><span class="sxs-lookup"><span data-stu-id="d6148-102">How to: Start Services</span></span>
 <span data-ttu-id="d6148-103">Po instalaci služby musí být spuštěna.</span><span class="sxs-lookup"><span data-stu-id="d6148-103">After a service is installed, it must be started.</span></span> <span data-ttu-id="d6148-104">Počáteční počet volání <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodu v třídě služby.</span><span class="sxs-lookup"><span data-stu-id="d6148-104">Starting calls the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method on the service class.</span></span> <span data-ttu-id="d6148-105">Obvykle <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda definuje užitečné pracovní službu provede.</span><span class="sxs-lookup"><span data-stu-id="d6148-105">Usually, the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method defines the useful work the service will perform.</span></span> <span data-ttu-id="d6148-106">Po spuštění služby, zůstane aktivní, dokud je ručně pozastavená nebo zastavená.</span><span class="sxs-lookup"><span data-stu-id="d6148-106">After a service starts, it remains active until it is manually paused or stopped.</span></span>  

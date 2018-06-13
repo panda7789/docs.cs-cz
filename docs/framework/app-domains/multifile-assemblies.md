@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742507"
 ---
 # <a name="multifile-assemblies"></a><span data-ttu-id="86c69-102">Vícesouborová sestavení</span><span class="sxs-lookup"><span data-stu-id="86c69-102">Multifile Assemblies</span></span>
 <span data-ttu-id="86c69-103">Můžete vytvořit vícesouborového sestavení s využitím kompilátory příkazového řádku nebo [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] s Visual C++.</span><span class="sxs-lookup"><span data-stu-id="86c69-103">You can create multifile assemblies using command-line compilers or [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] with Visual C++.</span></span> <span data-ttu-id="86c69-104">Manifest sestavení musí obsahovat jeden soubor v sestavení.</span><span class="sxs-lookup"><span data-stu-id="86c69-104">One file in the assembly must contain the assembly manifest.</span></span> <span data-ttu-id="86c69-105">Sestavení, které spustí aplikaci musí také obsahovat vstupní bod, jako je například Main nebo WinMain – metoda.</span><span class="sxs-lookup"><span data-stu-id="86c69-105">An assembly that starts an application must also contain an entry point, such as a Main or WinMain method.</span></span>  
