@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809729"
 ---
 # <a name="service-interoperability"></a>Vzájemná spolupráce služeb
 Tato část obsahuje příklady vysvětlující interakce mezi Windows Communication Foundation (WCF) a další technologie služby.  

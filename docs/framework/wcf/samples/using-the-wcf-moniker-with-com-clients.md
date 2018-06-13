@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808881"
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>Použití monikeru služby WCF u klientů modelu COM
 Tento příklad znázorňuje způsob použití monikeru služby Windows Communication Foundation (WCF) při integraci webových služeb na základě COM vývojových prostředí, jako je například Microsoft Office Visual Basic pro aplikace (Office VBA) nebo Visual Basic 6.0. Tato ukázka se skládá z klienta Windows Script Host (.vbs), podporující klientské knihovny DLL (.dll) a služby knihovny (DLL) hostované Internetové informační služby (IIS). Služba je služba kalkulačky a klient COM volá matematické operace – přidat, odečíst, násobit a dělit – ve službě. Činnost klienta je viditelný v systému windows pole zpráva.  

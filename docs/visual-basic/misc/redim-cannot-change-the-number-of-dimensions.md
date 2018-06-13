@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640378"
 ---
 # <a name="39redim39-cannot-change-the-number-of-dimensions"></a>&#39;ReDim&#39; nelze změnit počet dimenzí
 Operace se pokusí použít `ReDim` příkaz Chcete-li změnit pořadí pole (počet dimenzí). `ReDim` můžete změnit velikost jeden nebo více rozměry pole, které již byla dříve deklarována, ale nedá se změnit pořadí tohoto pole.  

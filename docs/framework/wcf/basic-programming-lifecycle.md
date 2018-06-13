@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803689"
 ---
 # <a name="basic-programming-lifecycle"></a>Základní programovací životní cyklus
 Windows Communication Foundation (WCF) umožňuje aplikacím komunikovat, zda jsou na stejném počítači, v Internetu, nebo na jinou aplikaci platformy. Toto téma popisuje úlohy, které jsou nutné k vytvoření aplikace WCF. Ukázkovou aplikaci, práce, najdete v části [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md).  

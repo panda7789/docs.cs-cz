@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809014"
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Prohlížeč trasování služeb (SvcTraceViewer.exe)
 Nástroj Prohlížeč trasování služby Windows Communication Foundation (WCF) umožňuje analyzovat diagnostické trasování, které jsou generovány nástrojem WCF. Prohlížeče trasování služeb poskytuje způsob, jak snadno sloučení, zobrazení a filtrovat zprávy trasování v protokolu, aby mohli diagnostikovat, opravit a ověřte problémů služby WCF.  

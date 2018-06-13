@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808413"
 ---
 # <a name="transport-udp"></a>Přenos: UDP
 Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP a vícesměrového vysílání jako vlastní přenosu Windows Communication Foundation (WCF). Ukázka popisuje doporučený postup pro vytvoření vlastní přenosu ve WCF, pomocí rozhraní kanálu a následující osvědčené postupy WCF. Postup vytvoření vlastního přenosu jsou následující:  

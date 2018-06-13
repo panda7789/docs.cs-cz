@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809167"
 ---
 # <a name="endpoint-creation-overview"></a>Přehled vytváření koncových bodů
 Veškerá komunikace se službou Windows Communication Foundation (WCF) dojde k prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkce, které nabízí služby WCF. Tato část popisuje strukturu koncový bod a popisuje, jak definovat koncový bod v konfiguraci a v kódu.  

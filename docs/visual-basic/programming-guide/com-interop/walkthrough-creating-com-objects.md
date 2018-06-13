@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643858"
 ---
 # <a name="walkthrough-creating-com-objects-with-visual-basic"></a>Návod: Vytváření objektů modelu COM pomocí jazyka Visual Basic
 Při vytváření nové aplikace nebo součásti, je nejlepší vytvořit sestavení rozhraní .NET Framework. Ale jazyka Visual Basic také umožňuje snadno vystavit rozhraní .NET Framework komponenty modelu COM. To umožňuje poskytovat nové součásti pro starší aplikace sady, které vyžadují COM – součásti. Tento návod ukazuje, jak používat Visual Basic vystavit [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] objekty jako objekty modelu COM, s i bez šablona třídy COM.  

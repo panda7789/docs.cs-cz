@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808923"
 ---
 # <a name="servicemodel-registration-tool-servicemodelregexe"></a>Nástroj ServiceModel Registration (ServiceModelReg.exe)
 Tento nástroj příkazového řádku umožňuje spravovat registraci komponent WCF a WF na jednom počítači. Za normálních podmínek by neměl budete muset použít tento nástroj jako WCF a konfigurace WF součástí při instalaci. Ale pokud dochází k potížím s aktivací prostřednictvím služby, můžete zkusit k registraci komponenty pomocí tohoto nástroje.  

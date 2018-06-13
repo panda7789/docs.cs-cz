@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809222"
 ---
 # <a name="how-to-define-a-windows-communication-foundation-service-contract"></a>Postupy: Definování kontraktu služby WCF
 Toto je první šesti úloh, které jsou potřebné pro vytvoření základní aplikace Windows Communication Foundation (WCF). Přehled všech šest úloh najdete v tématu [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810249"
 ---
 # <a name="hello-world-with-the-routing-service"></a>Hello World se směrovací službou
 Tento příklad znázorňuje směrovací služby Windows Communication Foundation (WCF). Služba Směrování je součást WCF, který usnadňuje do aplikace zahrnout směrovač podle obsahu. Tato ukázka přizpůsobuje standardní ukázka kalkulačku WCF na komunikaci pomocí služby směrování. V této ukázce kalkulačky klient je nakonfigurován pro odesílání zpráv pro koncový bod vystavené směrovači. Směrovací služby je nakonfigurován tak, aby přijímal všechny zprávy do něj odeslané a předávat je koncový bod, který odpovídá službu kalkulačky. Proto jsou zpráv odeslaných z klienta přijatých směrovači a přesměrovala ke službě skutečné kalkulačky. Zprávy ze služby kalkulačky jsou odesílány zpět na směrovač, který je pak předá zpět do klienta kalkulačky.  

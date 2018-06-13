@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809300"
 ---
 # <a name="custom-lifetime"></a>Vlastní doba života
 Tento příklad znázorňuje, jak napsat rozšíření Windows Communication Foundation (WCF) k poskytování služeb vlastní doba života pro sdílené instance služby WCF.  

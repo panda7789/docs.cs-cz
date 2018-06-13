@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638314"
 ---
 # <a name="method-39ltmethodnamegt39-has-no-parameter-named-39ltparameternamegt39"></a>Metoda &#39; &lt;methodname&gt; &#39; neobsahuje parametr s názvem &#39; &lt;parametername&gt;&#39;
 Zadaný argument s názvem neodpovídá některý z argumentů cílové metody.  

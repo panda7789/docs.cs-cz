@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809183"
 ---
 # <a name="ajax-service-without-configuration"></a>Služba AJAX bez konfigurace
 Tento příklad znázorňuje způsob použití Windows Communication Foundation (WCF) pro vytvoření základní služby ASP.NET asynchronní JavaScript a XML (AJAX) (služba, který je přístupný pomocí kódu jazyka JavaScript z webového prohlížeče klienta) bez použití žádnou konfiguraci. nastavení. Služba používá speciální syntaxe v souboru .svc automaticky povolení koncového bodu AJAX.  

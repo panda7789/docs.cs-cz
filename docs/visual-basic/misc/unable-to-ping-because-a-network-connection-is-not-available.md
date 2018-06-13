@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640401"
 ---
 # <a name="unable-to-ping-because-a-network-connection-is-not-available"></a>Nelze odeslat příkaz ping, protože není k dispozici síťové připojení
 Operaci nelze provést, protože není k dispozici žádné síťové připojení.  
