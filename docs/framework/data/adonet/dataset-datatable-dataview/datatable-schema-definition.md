@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757759"
 ---
 # <a name="datatable-schema-definition"></a><span data-ttu-id="2066f-102">Definice schématu DataTable</span><span class="sxs-lookup"><span data-stu-id="2066f-102">DataTable Schema Definition</span></span>
 <span data-ttu-id="2066f-103">Schéma a struktura tabulky je reprezentována sloupce a omezení.</span><span class="sxs-lookup"><span data-stu-id="2066f-103">The schema, or structure, of a table is represented by columns and constraints.</span></span> <span data-ttu-id="2066f-104">Můžete definovat schéma <xref:System.Data.DataTable> pomocí <xref:System.Data.DataColumn> objekty a také <xref:System.Data.ForeignKeyConstraint> a <xref:System.Data.UniqueConstraint> objekty.</span><span class="sxs-lookup"><span data-stu-id="2066f-104">You define the schema of a <xref:System.Data.DataTable> using <xref:System.Data.DataColumn> objects as well as <xref:System.Data.ForeignKeyConstraint> and <xref:System.Data.UniqueConstraint> objects.</span></span> <span data-ttu-id="2066f-105">Sloupce v tabulce můžete mapovat na sloupce ve zdroji dat, obsahují počítané hodnoty z výrazů, automaticky zvýšit jejich hodnoty nebo obsahovat hodnot primárního klíče.</span><span class="sxs-lookup"><span data-stu-id="2066f-105">The columns in a table can map to columns in a data source, contain calculated values from expressions, automatically increment their values, or contain primary key values.</span></span>  
