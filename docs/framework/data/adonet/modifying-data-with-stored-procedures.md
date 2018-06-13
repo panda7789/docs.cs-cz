@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758153"
 ---
 # <a name="modifying-data-with-stored-procedures"></a><span data-ttu-id="5416e-102">Úprava dat pomocí uložené procedury</span><span class="sxs-lookup"><span data-stu-id="5416e-102">Modifying Data with Stored Procedures</span></span>
 <span data-ttu-id="5416e-103">Uložené procedury lze přijímat data jako vstupní parametry a vrací data jako výstupní parametry, sad výsledků dotazu nebo návratové hodnoty.</span><span class="sxs-lookup"><span data-stu-id="5416e-103">Stored procedures can accept data as input parameters and can return data as output parameters, result sets, or return values.</span></span> <span data-ttu-id="5416e-104">Následující ukázka ukazuje, jak ADO.NET odesílá a přijímá vstupní parametry, výstupní parametry a návratové hodnoty.</span><span class="sxs-lookup"><span data-stu-id="5416e-104">The sample below illustrates how ADO.NET sends and receives input parameters, output parameters, and return values.</span></span> <span data-ttu-id="5416e-105">V příkladu vloží nového záznamu do tabulky, kde sloupec primárního klíče je sloupec identity v databázi systému SQL Server.</span><span class="sxs-lookup"><span data-stu-id="5416e-105">The example inserts a new record into a table where the primary key column is an identity column in a SQL Server database.</span></span>  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754490"
 ---
 # <a name="ltcompilergt-element"></a><span data-ttu-id="83db2-102">&lt;kompilátoru&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="83db2-102">&lt;compiler&gt; Element</span></span>
 <span data-ttu-id="83db2-103">Kompilátor – konfigurační atributy Určuje jazyk zprostředkovatele.</span><span class="sxs-lookup"><span data-stu-id="83db2-103">Specifies the compiler configuration attributes for a language provider.</span></span>  

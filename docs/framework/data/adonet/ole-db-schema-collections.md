@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766930"
 ---
 # <a name="ole-db-schema-collections"></a><span data-ttu-id="d8468-102">Kolekcemi schémat OLE DB</span><span class="sxs-lookup"><span data-stu-id="d8468-102">OLE DB Schema Collections</span></span>
 <span data-ttu-id="d8468-103">Tato část popisuje podporu kolekci schématu pro zprostředkovatele OLE DB pro Microsoft SQL Server, Oracle a Microsoft Jet.</span><span class="sxs-lookup"><span data-stu-id="d8468-103">This section discusses schema collection support for the OLE DB providers for Microsoft SQL Server, Oracle, and Microsoft Jet.</span></span>  

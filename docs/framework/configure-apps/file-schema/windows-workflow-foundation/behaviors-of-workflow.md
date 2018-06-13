@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767307"
 ---
 # <a name="ltbehaviorsgt-of-workflow"></a><span data-ttu-id="03371-102">&lt;chování&gt; pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="03371-102">&lt;behaviors&gt; of workflow</span></span>
 <span data-ttu-id="03371-103">Tento prvek obsahuje **serviceBehaviors** kolekce.</span><span class="sxs-lookup"><span data-stu-id="03371-103">This element contains the **serviceBehaviors** collection.</span></span>  <span data-ttu-id="03371-104">Každý prvek v kolekci definuje chování elementů používané služby pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="03371-104">Each element in the collection defines behavior elements consumed by workflow services.</span></span> <span data-ttu-id="03371-105">Každý prvek chování je určený podle jeho jedinečné **název** atribut.</span><span class="sxs-lookup"><span data-stu-id="03371-105">Each behavior element is identified by its unique **name** attribute.</span></span>  
