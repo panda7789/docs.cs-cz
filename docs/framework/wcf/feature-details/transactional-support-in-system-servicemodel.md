@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497916"
 ---
 # <a name="transactional-support-in-systemservicemodel"></a>Podpora transakcí v názvovém prostoru System.ServiceModel
 Témata v této části popisují transakční funkce, které poskytuje Windows Communication Foundation (WCF).  

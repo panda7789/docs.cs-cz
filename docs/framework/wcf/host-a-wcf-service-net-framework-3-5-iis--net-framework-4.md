@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499125"
 ---
 # <a name="how-to-host-a-wcf-service-written-with-net-framework-35-in-iis-running-under-net-framework-4"></a>Postupy: Hostování služby WCF napsané pomocí .NET Framework 3.5 v IIS a běžící pod .NET Framework 4
 Při hostování služby Windows Communication Foundation (WCF), napsané pomocí [!INCLUDE[netfx35_long](../../../includes/netfx35-long-md.md)] na počítač se systémem [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)], může dojít <xref:System.ServiceModel.ProtocolException> s následujícím textem.  

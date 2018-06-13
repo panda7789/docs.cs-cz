@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497049"
 ---
 # <a name="reliable-messaging-protocol-version-10"></a>Protokol spolehlivého zasílání zpráv verze 1.0
 Toto téma obsahuje podrobné informace o nasazení Windows Communication Foundation (WCF) pro WS-spolehlivého zasílání zpráv protokolu únor 2005 (verze 1.0) nezbytné pro vzájemná spolupráce pomocí přenosového protokolu HTTP. WCF dodržuje specifikaci WS-spolehlivé zasílání zpráv s omezení a objasnění, která jsou popsané v tomto tématu. Poznámka: verze 1.0 protokolu WS-ReliableMessaging je implementováno počínaje [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33562973"
 ---
 # <a name="collections-and-collection-types-for-xaml"></a>Kolekce a typy kolekcí v jazyku XAML
 Toto téma popisuje, jak definovat vlastnosti typů, které jsou určeny pro podporu kolekce a k podpoře syntaxe jazyka XAML pro vytvoření instance položky kolekce jako podřízené objekty element nadřazený objekt element nebo element vlastnosti.  

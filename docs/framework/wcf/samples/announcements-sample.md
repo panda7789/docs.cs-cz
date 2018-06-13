@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500035"
 ---
 # <a name="announcements-sample"></a>Ukázka oznámení
 Tento příklad ukazuje, jak používat funkci oznámení funkce zjišťování. Povolit oznámení služby k odeslání zprávy oznámení, které obsahují metadata týkající se služby. Ve výchozím nastavení je odeslána hello oznámení, když se služba spouští a bye oznámení se odesílají při vypnutí služby. Tato oznámení mohou být vícesměrového vysílání nebo mohou být odesílány typu point-to-point. Tato ukázka se skládá z klienta a služby dva projekty.  

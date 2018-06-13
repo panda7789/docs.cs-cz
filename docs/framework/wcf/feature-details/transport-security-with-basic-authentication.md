@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499112"
 ---
 # <a name="transport-security-with-basic-authentication"></a>Zabezpečení přenosu se základním ověřováním
 Následující obrázek znázorňuje klienta a služby Windows Communication Foundation (WCF). Server vyžaduje platný certifikát X.509, který lze použít pro vrstvy SSL (Secure Sockets) a klienti musí důvěřovat certifikátu serveru. Navíc webová služba již má implementaci protokolu SSL, který lze použít. Další informace o povolení základní ověřování v Internetové informační služby (IIS) najdete v tématu [ http://go.microsoft.com/fwlink/?LinkId=83822 ](http://go.microsoft.com/fwlink/?LinkId=83822).  

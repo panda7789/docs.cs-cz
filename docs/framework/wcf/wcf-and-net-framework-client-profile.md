@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500975"
 ---
 # <a name="wcf-and-net-framework-client-profile"></a>WCF a profil klienta .NET Framework
 [!INCLUDE[arrowhead](../../../includes/arrowhead-md.md)] je Odlehčená verze z úplné rozhraní .net Framework určená pro klienty, kteří nepotřebujete celý framework. Ne všechny Windows Communication Foundation podporuje rozhraní klienta.  

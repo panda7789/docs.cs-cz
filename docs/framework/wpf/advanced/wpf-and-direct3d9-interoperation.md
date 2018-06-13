@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549432"
 ---
 # <a name="wpf-and-direct3d9-interoperation"></a>Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9
 Můžete zahrnout procesu Direct3D9 obsahu v aplikaci Windows Presentation Foundation (WPF). Toto téma popisuje postup vytvoření procesu Direct3D9 obsah tak, aby se efektivně spolupracuje s WPF.  

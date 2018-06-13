@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497062"
 ---
 # <a name="data-transfer-architectural-overview"></a>Strukturální přehled přenosu dat
 Windows Communication Foundation (WCF) lze považovat za infrastrukturu zasílání zpráv. Může přijímat zprávy, jejich zpracování a jejich odesílání do uživatelského kódu pro další akce nebo můžete vytvořit zprávy z data zadána pomocí uživatelského kódu a jejich doručování do cílového umístění. Toto téma, které je určeno pro pokročilé vývojáře, popisuje architekturu zpracování zpráv a obsahují data. Jednodušší, orientované na úlohy zobrazení jak odesílat a přijímat data, najdete v části [zadání přenos dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  

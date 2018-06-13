@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496984"
 ---
 # <a name="mapping-between-json-and-xml"></a>Mapování mezi JSON a XML
 Čtení a zápis vyprodukované <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory> poskytují rozhraní API XML přes obsah JavaScript Object Notation (JSON). JSON kóduje dat pomocí podmnožinu literály objekt jazyka JavaScript. Čtení a zápis, které jsou vyprodukované tuto továrnu se také používají při obsah JSON se odesílat nebo přijímat aplikací Windows Communication Foundation (WCF) pomocí <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement> nebo <xref:System.ServiceModel.WebHttpBinding>.  

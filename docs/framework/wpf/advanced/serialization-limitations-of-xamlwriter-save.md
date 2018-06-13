@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547960"
 ---
 # <a name="serialization-limitations-of-xamlwritersave"></a>Omezení serializace XamlWriter.Save
 [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] <xref:System.Windows.Markup.XamlWriter.Save%2A> Lze použít k serializaci obsah [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace jako [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] souboru. Nicméně existují určitá omezení upozorňují na důležité v přesně to, co je serializováno. Tato omezení a některé obecné aspekty jsou popsány v tomto tématu.  

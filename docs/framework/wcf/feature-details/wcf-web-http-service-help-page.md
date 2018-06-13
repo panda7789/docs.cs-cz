@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500949"
 ---
 # <a name="wcf-web-http-service-help-page"></a>Stránka nápovědy webové služby HTTP WCF
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] poskytuje automatickou stránku nápovědy pro služby WCF WEB HTTP. Tato stránka nápovědy obsahuje popis každé operace, požadavku a odpovědi formátů a schémata. Tato funkce je ve výchozím nastavení vypnutý. Když uživatel přejde k služby WCF WEB HTTP a připojí "/ Help" na konec adresy URL, například http://localhost:8000/Customers/Help, stránku nápovědy, jako se zobrazí následující.  

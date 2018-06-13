@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497955"
 ---
 # <a name="wcf-discovery"></a>Zjišťování WCF
 Windows Communication Foundation (WCF) poskytuje podporu pro povolení služby umožňuje vzájemnou spolupráci způsobem pomocí protokolu WS-Discovery být zjistitelný za běhu. Služby WCF můžete oznamujeme jejich dostupnost k síti pomocí vícesměrového vysílání zprávy nebo na proxy serveru zjišťování. Klientské aplikace může hledat v síti nebo proxy server zjišťování k vyhledání služeb, které splňují zadaná kritéria. Témata v této části poskytují přehled a programovací model pro tuto funkci podrobně popisují.  

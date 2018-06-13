@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495980"
 ---
 # <a name="information-disclosure"></a>Zpřístupnění informací
 Zpřístupnění informací umožňuje útočníkovi získat cenné informace o systému. Proto vždy zvažte, které informace jsou odhalil a zda jej lze použít uživatelem se zlými úmysly. Následující informace o možných útoků zpřístupnění obsahuje seznam a jejich zmírnění pro každý.  

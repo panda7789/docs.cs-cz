@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33268117"
 ---
 # <a name="null-c-reference"></a>Null (Referenční dokumentace jazyka C#)
 `null` – Klíčové slovo je literál, který představuje odkaz s hodnotou null, který neodkazuje na libovolného objektu. `null` je výchozí hodnota proměnné typu odkazu. Typy obyčejnou hodnota nemůže být null. C# 2.0 však zavedena typy hodnot s povolenou hodnotou Null. V tématu [typy s možnou hodnotou Null](../../../csharp/programming-guide/nullable-types/index.md).  

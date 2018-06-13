@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495919"
 ---
 # <a name="http-transport-security"></a>Zabezpečení přenosu HTTP
 Při použití protokolu HTTP jako přenos, je zabezpečení poskytované implementace Secure Sockets Layer (SSL). SSL je široce používaných na Internetu k ověřování klienta a potom k zajištění důvěrnosti (šifrování) do kanálu. Toto téma vysvětluje, jak funguje protokol SSL a jak jsou implementované ve Windows Communication Foundation (WCF).  

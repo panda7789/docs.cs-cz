@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549461"
 ---
 # <a name="drag-and-drop-overview"></a>Přehled přetažení
 Toto téma obsahuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. Přetažení myší běžně odkazuje na metodu přenosu dat, který zahrnuje pomocí myši (nebo jiné polohovací zařízení) a vyberte jeden nebo více objektů, přetáhněte tyto objekty přes cíle některé požadované přetažení v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]a jejich vyřazení.  

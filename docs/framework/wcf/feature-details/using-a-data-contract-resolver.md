@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499398"
 ---
 # <a name="using-a-data-contract-resolver"></a>Použití překladače kontraktů dat
 Překladače kontraktů dat umožňuje nakonfigurovat známé typy dynamicky. Známé typy jsou potřeba při serializaci nebo deserializaci typu kontraktu dat není očekávaný. Další informace o známé typy najdete v tématu [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md). Známé typy jsou obvykle zadat staticky. To znamená, budete muset znát možné typy operace se může zobrazit při provádění operace. Existují scénáře, ve kterých to není PRAVDA a schopnost určit známé typy dynamicky je důležité.  

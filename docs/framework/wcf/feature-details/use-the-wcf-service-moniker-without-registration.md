@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497968"
 ---
 # <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Postupy: použití Monikeru služby Windows Communication Foundation bez registrace
 Pro připojení k a komunikovat se službou Windows Communication Foundation (WCF), musí mít klientské aplikace WCF podrobnosti o adresu služby, konfigurace vazeb a kontrakt služby.  

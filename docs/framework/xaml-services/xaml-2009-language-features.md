@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33563555"
 ---
 # <a name="xaml-2009-language-features"></a>Jazykové funkce jazyka XAML 2009
 XAML 2009 je sdružená termín pro nové funkce jazyka XAML, které rozšiřují existující specifikace jazyka XAML. XAML 2009 zavádí několik nových direktivách a konstrukce. Patří mezi ně[x: Arguments – direktiva](../../../docs/framework/xaml-services/x-arguments-directive.md); [x: factorymethod – direktiva](../../../docs/framework/xaml-services/x-factorymethod-directive.md); [x: Reference – rozšíření značek](../../../docs/framework/xaml-services/x-reference-markup-extension.md); [x: TypeArguments – direktiva ](../../../docs/framework/xaml-services/x-typearguments-directive.md); a vestavěné typy pro běžné primitiv jazyka (například `x:Char`).  

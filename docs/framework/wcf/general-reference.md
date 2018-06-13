@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498225"
 ---
 # <a name="general-reference"></a>Obecné referenční informace
 V části [ \<system.serviceModel >](../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) popisuje prvky, které se používají ke konfiguraci služby a klienti Windows Communication Foundation (WCF).

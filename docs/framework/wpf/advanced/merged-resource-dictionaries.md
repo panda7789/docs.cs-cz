@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548051"
 ---
 # <a name="merged-resource-dictionaries"></a>Slovníky sloučených prostředků
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] prostředky podporují funkci slovník sloučené prostředků. Tato funkce poskytuje způsob, jak definovat část prostředky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace mimo zkompilovaný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikace. Prostředky lze potom sdílen napříč aplikacemi a jsou také další pohodlně izolované pro lokalizaci.  

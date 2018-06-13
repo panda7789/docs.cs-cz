@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495883"
 ---
 # <a name="how-to-create-a-supporting-credential"></a>Postupy: vytvoření přihlašovacích údajů podpora
 Je možné, že schéma vlastní zabezpečení, která vyžaduje více než jedno pověření. Například služby vyžádat z klienta nejen uživatelské jméno a heslo, ale také přihlašovacích údajů, který prokáže, klient je víc než 18. Druhý přihlašovací údaje *podpora přihlašovacích údajů*. Toto téma vysvětluje, jak implementovat tyto přihlašovací údaje v klientovi Windows Communication Foundation (WCF).  

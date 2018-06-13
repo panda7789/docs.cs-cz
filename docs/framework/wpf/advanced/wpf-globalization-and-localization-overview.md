@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549614"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
 Pokud svůj produkt dostupnost pouze jeden jazyk, omezíte se zákazníkovi potenciální základní k zlomek naše world 6.5 miliardy naplnění. Pokud chcete, aby vaše aplikace k dosažení globální cílovou skupinu, nákladově efektivní lokalizace produktu je jedním z nejlepší a nejhospodárnějším možným způsobů spojit více zákazníků.  

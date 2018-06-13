@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496835"
 ---
 # <a name="configuring-system-provided-bindings"></a>Konfigurace vazeb poskytovaných systémem
 Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod a určují, jak se připojit k koncový bod. Vazby obsahovat prvky, které definují, jak jsou tyto kanály Windows Communication Foundation (WCF) vrstvený nahoru a zajistit tak funkce vyžaduje komunikaci. Vazba obsahuje tři typy elementů:  

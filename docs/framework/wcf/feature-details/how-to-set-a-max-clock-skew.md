@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496728"
 ---
 # <a name="how-to-set-a-max-clock-skew"></a>Postupy: Sada zkosení max. frekvence
 Kritický pro čas funkce můžete kolejnic, pokud se nastavení hodin na dva počítače liší. Pro zmírnění této možnosti, můžete nastavit `MaxClockSkew` vlastnosti <xref:System.TimeSpan>. Tato vlastnost je k dispozici na dvě třídy:  

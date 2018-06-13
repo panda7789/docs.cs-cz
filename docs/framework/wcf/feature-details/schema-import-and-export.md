@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497279"
 ---
 # <a name="schema-import-and-export"></a>Import a export schémat
 Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:System.Runtime.Serialization.DataContractSerializer>. `DataContractSerializer` Překládá mezi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty a XML (v obou směrech). Kromě serializátor sám sebe zahrnuje WCF přidružené schéma import a export mechanismy schématu. *Schéma* formální, přesné a strojově čitelným popis obrazec XML, který produkuje serializátor nebo který deserializátor přístup. WCF používá jazyk definice schématu XML World Wide Web Consortium (W3C) (XSD) jako jeho reprezentace schématu, která je široce vzájemná spolupráce s mnoha platformy třetí strany.  

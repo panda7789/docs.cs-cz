@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497201"
 ---
 # <a name="request-reply-correlation"></a>Korelace požadavku a odpovědi
 Korelace požadavku a odpovědi se používá s <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> pár implementovat obousměrný operace ve službě pracovního postupu a s <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply> pár, který vyvolá obousměrný operaci v jiný Web Služba. Při vyvolání obousměrný operace ve službě WCF, služba může být buď tradiční imperativní založené na kódu služby Windows Communication Foundation (WCF), nebo může být služby pracovních postupů. Použít korelace požadavku a odpovědi vazba obousměrná musí být použita, jako například <xref:System.ServiceModel.BasicHttpBinding>. Ať už vyvolání nebo implementace obousměrné operaci, jsou podobné kroků inicializace korelace a jsou popsané v této části.  

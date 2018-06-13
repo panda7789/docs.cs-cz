@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762712"
 ---
 # <a name="inferring-element-text"></a>Odvození textu elementu
 Pokud element obsahuje text a nemá žádné podřízené prvky k odvodit, protože tabulky, jako je například (elementy s atributy) nebo opakujících se prvků, nový sloupec s názvem **TableName_Text** přidá do tabulky, který je používán pro daný element. Text obsažené v elementu budou přidány do řádek v tabulce a uložená do nového sloupce. **ColumnMapping** vlastnost nového sloupce, bude nastavena pro **MappingType.SimpleContent**.  

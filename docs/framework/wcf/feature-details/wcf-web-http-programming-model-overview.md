@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33507110"
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>Přehled modelu webového programování HTTP služby WCF
 Programovací model Windows Communication Foundation (WCF) WEB HTTP poskytuje základní prvky potřebné k vytvoření webové služby HTTP s použitím technologie WCF. Služby WCF WEB HTTP jsou navržené tak, ke kterým přistupují širokou škálu možných klientů, včetně webových prohlížečů a mají následující jedinečné požadavky:  

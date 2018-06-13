@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765422"
 ---
 # <a name="odbc-data-type-mappings"></a>Mapování datového typu rozhraní ODBC
 V následující tabulce jsou uvedeny odvozené [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ pro datové typy z zprostředkovatel dat .NET Framework pro ODBC (<xref:System.Data.Odbc>). Typové přístupových metod pro <xref:System.Data.Odbc.OdbcDataReader> jsou také uvedeny.  

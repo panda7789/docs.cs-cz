@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33501413"
 ---
 # <a name="mtom-encoding"></a>Kódování MTOM
 Tento příklad znázorňuje použití kódování s WSHttpBinding zprávy zpráva přenosu optimalizace mechanismus (MTOM). MTOM je mechanismus pro přenos velkých binární příloh protokolu SOAP zprávy nezpracovaná bajtů, umožňuje pro menší zprávy.  

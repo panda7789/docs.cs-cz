@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497409"
 ---
 # <a name="securing-services-and-clients"></a>Zabezpečení služeb a klientů
 Informace v této části se zaměřuje na programování zabezpečení ve Windows Communication Foundation (WCF). Obecně platí jedná se o výběr odpovídající vazby poskytované systémem, nastavení vlastností prvku zabezpečení a pak nastavení vlastnosti chování služby, které řídí, jak načíst přihlašovací údaje pro použití služby nebo klient. Tyto postupy zahrnují požadavky na zabezpečení většiny uživatelů pro většinu scénářů, jak je znázorněno v [běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md). Pokud váš scénář vyžaduje další možnosti, nejprve v tématu [možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md); Pokud řešení není zřejmá, najdete v části [rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md). Pokud vytváříte (nebo spolupráce s) systému, který používá bohaté deklarace identity, najdete v tématech v [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498984"
 ---
 # <a name="renaming-a-wcf-service"></a>Přejmenování služby WCF
 Toto téma popisuje, jak můžete přejmenovat služby Windows Communication Foundation (WCF).  

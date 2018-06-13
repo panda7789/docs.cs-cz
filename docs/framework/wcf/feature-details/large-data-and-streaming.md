@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496559"
 ---
 # <a name="large-data-and-streaming"></a>Objemná data a vysílání datových proudů
 Windows Communication Foundation (WCF) je založený na jazyce XML komunikaci infrastruktury. Protože XML data je běžně zakódován ve formátu standardního textu definované v [XML 1.0 – specifikace](http://go.microsoft.com/fwlink/?LinkId=94838), připojené systémy vývojáři a architektům jsou obvykle zajímá přenosová nároků (nebo velikost) zprávy odeslané přes síť a založený na textu kódování XML představuje speciální výzvy pro efektivní přenos binární data.  

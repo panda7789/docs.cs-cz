@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497214"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>Postupy: Hostování služby WCF ve spravované službě Windows
 Toto téma popisuje základní kroky potřebné k vytvoření služby Windows Communication Foundation (WCF), který je hostitelem služby systému Windows. Tento scénář se aktivuje hostování možnost, která je dlouhodobé služby WCF hostované mimo Internetové informační služby (IIS) v zabezpečeném prostředí, který není aktivován zpráva spravované služby systému Windows. Doba platnosti služby místo toho řídí operační systém. Tento hostitelský možnost je dostupná ve všech verzích systému Windows.  

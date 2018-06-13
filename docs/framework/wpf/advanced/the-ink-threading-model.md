@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547876"
 ---
 # <a name="the-ink-threading-model"></a>Model vláken inkoustu
 Jednou z výhod rukopisu v Tablet PC je, že ho dojem mnoho zápis s regulární pera a dokumentu.  K tomu, shromažďuje pera vstupní data mnohem vyšší rychlostí než myš nemá a vykreslí rukopisu jako uživatelské zápisy.  Aplikace uživatelské rozhraní (UI) vlákno není dostatečná pro shromažďování dat pera a vykreslování rukopisu, protože se zablokuje.  K řešení, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace používá dva další vlákna, pokud uživatel zapíše rukopisu.  

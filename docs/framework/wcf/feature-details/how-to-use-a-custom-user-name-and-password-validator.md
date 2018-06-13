@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496809"
 ---
 # <a name="how-to-use-a-custom-user-name-and-password-validator"></a>Postupy: Použití validátoru vlastního uživatelského jména a hesla
 Ve výchozím nastavení Pokud uživatelské jméno a heslo slouží k ověřování, Windows Communication Foundation (WCF) používá Windows k ověření uživatelského jména a hesla. Ale WCF umožňuje vlastní uživatelské jméno a heslo schémat ověřování, také známé jako *validátory*. Zahrnout validátor vlastní uživatelské jméno a heslo, vytvořte třídu, která je odvozena z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> a potom jej nakonfigurovat.  
