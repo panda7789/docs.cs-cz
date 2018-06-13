@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539537"
 ---
 # <a name="how-to-ensure-multiple-controls-bound-to-the-same-data-source-remain-synchronized"></a>Postupy: Zajistěte, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných
 Často při práci s datové vazby v systému Windows Forms, jsou svázané více ovládacích prvků na stejném datovém zdroji. V některých případech může být nutné provést další kroky k zajištění, aby zůstaly synchronizované s sebe navzájem a zdroj dat vázané vlastnosti ovládacích prvků. Tyto kroky jsou nutné ve dvou situacích:  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393426"
 ---
 # <a name="ipv6-auto-configuration"></a>Automatické konfigurace protokolu IPv6
 Jeden cíl důležité pro protokol IPv6 je podpora uzlu technologie Plug and Play. To znamená musí být možné připojit k síti IPv6 uzlu a automaticky konfigurace bez lidského zásahu.  

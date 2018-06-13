@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33210974"
 ---
 # <a name="-help---c-compiler-options"></a>-help,-? (Možnosti kompilátoru C#)
 Tato možnost odešle do stdout seznam – možnosti kompilátoru a stručný popis jednotlivých možností.  

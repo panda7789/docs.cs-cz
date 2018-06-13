@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758474"
 ---
 # <a name="connection-string-builders"></a>Tvůrci řetězců pro připojení
 V dřívějších verzích [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], kompilace kontrola připojovací řetězce s spojený řetězec hodnoty se neuskutečnilo, tak, aby v době běhu nesprávné – klíčové slovo generované <xref:System.ArgumentException>. Každý z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat podporována jinou syntaxi pro klíčová slova řetězec připojení, kterým vytváření obtížné platný připojovací řetězce, je-li provést ručně. Chcete-li vyřešit tento problém [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 zavedl nový Tvůrci řetězců pro připojení pro každou [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] dat zprostředkovatele. Každý poskytovatel dat zahrnuje třídy tvůrce řetězec silného typu připojení, která dědí z <xref:System.Data.Common.DbConnectionStringBuilder>. Následující tabulka uvádí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat a jejich přidružené připojení řetězec Tvůrce třídy.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33366031"
 ---
 # <a name="what39s-new-in-adonet"></a>Co&#39;s nového v technologii ADO.NET
 Následující funkce jsou v nové [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  

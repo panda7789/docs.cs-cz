@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33325653"
 ---
 # <a name="how-to-generate-xml-from-csv-files-c"></a>Postupy: vygenerování XML ze souborů CSV (C#)
 Tento příklad ukazuje, jak používat [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] generovat soubor XML ze souboru oddělovači (CSV).  

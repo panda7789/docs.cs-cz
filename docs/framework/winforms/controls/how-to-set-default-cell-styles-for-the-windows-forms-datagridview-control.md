@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538677"
 ---
 # <a name="how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control"></a>Postupy: Nastavení výchozích stylů buňky pro ovládací prvek Windows Forms DataGridView
 Pomocí <xref:System.Windows.Forms.DataGridView> ovládací prvek, můžete zadat výchozích stylů buňky pro celý ovládací prvek a pro určité sloupce a řádky. Tyto výchozí hodnoty filtrovat dolů z úrovně řízení na úrovni sloupce, pak úroveň řádek, dále na úrovni buněk. Pokud určitý <xref:System.Windows.Forms.DataGridViewCellStyle> na úrovni buněk není nastavena vlastnost, bude použita výchozí nastavení vlastnosti na úrovni řádků. Pokud také není vlastnost nastavena na úrovni řádků, použije se výchozí nastavení sloupce. Nakonec pokud není vlastnost také nastavena na úrovni sloupce, výchozí <xref:System.Windows.Forms.DataGridView> nastavení se používá. Při tomto nastavení se můžete vyhnout nutnosti mít duplicitní hodnoty vlastností na více úrovních. Na každé úrovni jednoduše zadejte stylů, které se liší od úrovně nad ním. Další informace najdete v tématu [styly buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md).  

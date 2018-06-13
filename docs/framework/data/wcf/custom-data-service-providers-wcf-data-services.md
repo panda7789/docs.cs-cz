@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33354956"
 ---
 # <a name="custom-data-service-providers-wcf-data-services"></a>Poskytovatelé služeb vlastních dat (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] zahrnuje sadu poskytovatelů, která umožňuje definovat datový model na základě typu dat pozdní vazbu.  

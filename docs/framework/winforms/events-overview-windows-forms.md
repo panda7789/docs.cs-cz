@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540094"
 ---
 # <a name="events-overview-windows-forms"></a>Přehled událostí (Windows Forms)
 Událost je akci, která může reagovat, nebo "zpracování" v kódu. Události může být generována akci uživatele, jako je například kliknutí myši nebo stisknutím klávesy; v kódu programu; nebo v systému.  

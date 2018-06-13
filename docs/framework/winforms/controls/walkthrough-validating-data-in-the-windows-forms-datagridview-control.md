@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540960"
 ---
 # <a name="walkthrough-validating-data-in-the-windows-forms-datagridview-control"></a>Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView
 Pokud má uživatelům zobrazit funkce vstupního datového, máte často ověřit data do svého formuláře. <xref:System.Windows.Forms.DataGridView> Třída poskytuje vhodný způsob k provedení ověření, než se zaměřuje na úložiště dat data. Data můžete ověřit pomocí zpracování <xref:System.Windows.Forms.DataGridView.CellValidating> událost, která je vyvolána <xref:System.Windows.Forms.DataGridView> až aktuální buňky změní.  

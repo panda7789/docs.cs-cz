@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339823"
 ---
 # <a name="using-exceptions-c-programming-guide"></a>Použití výjimek (Průvodce programováním v C#)
 V jazyce C# chyby v programu v době běhu rozšířeny prostřednictvím programu pomocí mechanismus názvem výjimky. Výjimky vyvolané kód, který dojde k chybě a zachytila kód, který můžete chybu opravit. Výjimky může být vyvolána pomocí rozhraní .NET Framework common language runtime (CLR) nebo pomocí kódu v programu. Jakmile je vyvolána výjimka, rozšíří zásobníkem volání až `catch` se nachází příkaz pro výjimku. Nezachycená výjimky jsou zpracovávány obslužná rutina obecná výjimka poskytované systémem, který se zobrazí dialogové okno.  

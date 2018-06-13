@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33357511"
 ---
 # <a name="customizing-operations-by-using-stored-procedures-exclusively"></a>Přizpůsobení operace pomocí uložené procedury výhradně
 Přístup k datům s použitím pouze uložené procedury je běžný scénář.  

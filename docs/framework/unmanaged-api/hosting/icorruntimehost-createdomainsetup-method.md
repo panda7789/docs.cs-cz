@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33437983"
 ---
 # <a name="icorruntimehostcreatedomainsetup-method"></a>ICorRuntimeHost::CreateDomainSetup – metoda
 Získá typ ukazatele rozhraní z iappdomainsetup – k <xref:System.AppDomainSetup?displayProperty=nameWithType> instance. `IAppDomainSetup` poskytuje metody pro konfiguraci aspektů domény aplikace předtím, než se vytvoří.  

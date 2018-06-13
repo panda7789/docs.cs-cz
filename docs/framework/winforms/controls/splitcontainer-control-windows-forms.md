@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539198"
 ---
 # <a name="splitcontainer-control-windows-forms"></a>SplitContainer – ovládací prvek (Windows Forms)
 Windows Forms `SplitContainer` řízení lze považovat za složené; je dva panely oddělených mobilní panelu. Když ukazatel myši nad panelu, změní tvar, který má zobrazit, že je na panelu mobilní.  

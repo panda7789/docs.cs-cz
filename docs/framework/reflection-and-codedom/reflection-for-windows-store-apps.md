@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398788"
 ---
 # <a name="reflection-in-the-net-framework-for-windows-store-apps"></a>Reflexe v rozhraní .NET Framework pro aplikace pro Windows Store
 Od verze [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] obsahuje rozhraní .NET Framework sadu typů a členů reflexe pro použití v aplikacích pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]. Tyto typy a členy jsou k dispozici v úplné rozhraní .NET Framework také jako v [aplikace .NET pro Windows Store](http://go.microsoft.com/fwlink/?LinkID=225700). Tento dokument popisuje hlavní rozdíly mezi těmito položkami a jejich protějšky v rozhraní .NET Framework 4 a dřívějších verzích.  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393614"
 ---
 # <a name="invalidcercall-mda"></a>invalidCERCall – pomocník spravovaného ladění (MDA)
 `invalidCERCall` Pomocník spravovaného ladění (MDA) se aktivuje při volání metody, která má žádné spolehlivost smlouvy nebo nadměrně slabé kontrakt v rámci omezeného provádění (CER) oblasti grafu. Slabé smlouva je kontrakt, který deklaruje, že nejhorší stav případu poškození je větší rozsah než instance předána volání, který je <xref:System.AppDomain> nebo stav procesu může dojít k poškození nebo že jeho výsledek není vždy nepodmíněně computable Při volání v rámci CER.  

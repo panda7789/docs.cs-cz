@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33266861"
 ---
 # <a name="into-c-reference"></a>into (Referenční dokumentace jazyka C#)
 `into` Kontextové klíčové slovo lze použít k vytvoření dočasného identifikátor k ukládání výsledků [skupiny](../../../csharp/language-reference/keywords/group-clause.md), [spojení](../../../csharp/language-reference/keywords/join-clause.md) nebo [vyberte](../../../csharp/language-reference/keywords/select-clause.md) klauzule do nový identifikátor. Tento identifikátor může být sám generátor pro příkazy další dotaz. Při použití v `group` nebo `select` klauzuli použití nový identifikátor se někdy označuje jako *pokračování*.  

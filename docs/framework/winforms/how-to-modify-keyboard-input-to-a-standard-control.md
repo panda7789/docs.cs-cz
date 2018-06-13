@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540287"
 ---
 # <a name="how-to-modify-keyboard-input-to-a-standard-control"></a>Postupy: Úprava vstupu klávesnice do standardního ovládacího prvku
 Windows Forms poskytuje možnost využívat a úprava vstupu klávesnice. Využívání klíč odkazuje na zpracování klíč v rámci obslužnou rutinu metoda nebo událost, aby jiné metody a události, které dolů fronty zpráv neobdrží hodnota klíče. Úprava klíč odkazuje na změnou hodnoty klíče, aby metody a obslužné rutiny událostí další dolů fronty zpráv s jinou hodnotou klíče. Toto téma ukazuje, jak k těmto úkolům.  

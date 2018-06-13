@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393147"
 ---
 # <a name="default-marshaling-for-arrays"></a>Výchozí zařazování pro pole
 V aplikaci, která obsahuje jenom spravovaného kódu modul common language runtime předá typy polí jako vstupně -výstupní parametry. Naproti tomu spolupráce vláken předá pole jako parametry ve výchozím nastavení.  

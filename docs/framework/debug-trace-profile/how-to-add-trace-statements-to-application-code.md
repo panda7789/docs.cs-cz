@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391365"
 ---
 # <a name="how-to-add-trace-statements-to-application-code"></a>Postupy: Přidání příkazů trasování do kódu aplikace
 Metody nejčastěji používají pro trasování jsou metody pro zápis výstupu do naslouchací procesy: **zápisu**, **writeif –**, **WriteLine**, **writelineif –**, **Assert**, a **nezdaří**. Tyto metody lze rozdělit do dvou kategorií: **zápisu**, **WriteLine**, a **nezdaří** všechny bezpodmínečně, emitování výstup zatímco **writeif –**, **Writelineif –**, a **Assert** testů podmínce logické a zápisu nebo Nezapisovat závislosti na hodnotě podmínky. **Writeif –** a **writelineif –** emitování výstupu, pokud je podmínka vyhodnocena `true`, a **Assert** vysílá výstupu, pokud je podmínka vyhodnocena `false`.  

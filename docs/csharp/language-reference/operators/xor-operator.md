@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33271247"
 ---
 # <a name="-operator-c-reference"></a>^ – operátor (Referenční dokumentace jazyka C#)
 Binární `^` jsou operátory předdefinovány pro integrální typy a `bool`. Pro integrální typy `^` vypočítá bitový exkluzivní disjunkce OR z operandů. Pro `bool` operandy, `^` vypočítá logické exkluzivní- nebo operandů; výsledek je `true` jenom v případě právě jeden z jeho operandy je `true`.  

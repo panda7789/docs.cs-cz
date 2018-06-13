@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540407"
 ---
 # <a name="componentresourcekey-markup-extension"></a>ComponentResourceKey – rozšíření značek
 Definuje a klíče pro prostředky, které jsou načteny z externí sestavení odkazuje. To umožňuje vyhledávání prostředků zadat typ cíle v sestavení, nikoli slovníku explicitní prostředků v sestavení nebo na třídu.  

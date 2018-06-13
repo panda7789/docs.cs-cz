@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758552"
 ---
 # <a name="map-keyref-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapa keyref omezení schématu XML (XSD) k omezení datové sady
 **Keyref** element umožňuje vytváření propojení mezi prvky dokumentu. Toto je podobná relace cizího klíče v relační databázi. Pokud schéma určuje **keyref** elementu, element je převést během procesu schéma mapování na odpovídající omezení cizího klíče u sloupců v tabulkách <xref:System.Data.DataSet>. Ve výchozím nastavení **keyref** element také vytváří vztah, se **ParentTable**, **tabulka**, **ParentColumn**a  **ChildColumn** na vztah byly zadány vlastnosti.  

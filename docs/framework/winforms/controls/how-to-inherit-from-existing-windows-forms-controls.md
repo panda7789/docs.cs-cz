@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538738"
 ---
 # <a name="how-to-inherit-from-existing-windows-forms-controls"></a>Postupy: Dědění ze stávajících ovládacích prvků Windows Forms
 Pokud chcete rozšířit funkce existujícího ovládacího prvku, můžete vytvořit ovládacího prvku odvozenou z ovládacího prvku existující prostřednictvím dědičnosti. Při dědění z ovládacího prvku existující, dědí všechny funkce a vizuálních vlastností tohoto ovládacího prvku. Například při vytváření ovládacího prvku, který dědí z <xref:System.Windows.Forms.Button>, nový ovládací prvek vypadat a act přesně standardní <xref:System.Windows.Forms.Button> ovládacího prvku. Pak můžete rozšířit nebo změnit funkce nový ovládací prvek prostřednictvím implementace vlastních metod a vlastností. V některé ovládací prvky, můžete také změnit vzhled ovládacího prvku zděděné přepsáním jeho <xref:System.Windows.Forms.Control.OnPaint%2A> metoda.  

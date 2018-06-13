@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33349688"
 ---
 # <a name="ltaddgt-of-ltallowaccountsgt"></a>&lt;add&gt; – &lt;allowAccounts&gt;
 Určuje uživatelský účet pro procesy, které hostování služby WCF a je uděleno oprávnění k připojení ke službě sdílení.  

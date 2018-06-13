@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758513"
 ---
 # <a name="adonet-datasets"></a>Datové sady ADO.NET
 <xref:System.Data.DataSet> Objekt centrální podpory připojen, distribuci dat scénáře s [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]. **Datovou sadu** rezidentní znázornění dat, která zajišťuje konzistentní relační programovací model bez ohledu na zdroj dat je. Dá použít s několika a různé zdroje dat, s daty XML nebo spravovat data místní aplikace. **Datovou sadu** představuje kompletní sadu dat, včetně tabulky v relaci, omezení a relace mezi tabulkami. Následující obrázek ukazuje **datovou sadu** objektový model.  

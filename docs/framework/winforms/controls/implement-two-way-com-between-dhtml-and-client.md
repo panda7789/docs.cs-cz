@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540615"
 ---
 # <a name="how-to-implement-two-way-communication-between-dhtml-code-and-client-application-code"></a>Postupy: Implementace obousměrné komunikace mezi kódem DHTML a kódem klientské aplikace
 Můžete použít <xref:System.Windows.Forms.WebBrowser> řízení přidat existující dynamické kódu HTML (DHTML) webové aplikace do aplikace Windows Forms klienta. To je užitečné, když investovaly významné vývoj čas při vytváření ovládacích prvků na základě DHTML a chcete využít výhod možnosti bohaté uživatelské rozhraní Windows Forms bez přepsání existujícího kódu.  

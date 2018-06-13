@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33331211"
 ---
 # <a name="general-structure-of-a-c-program-c-programming-guide"></a>Obecná struktura programu v C# (Průvodce programováním v C#)
 Programy C# se může skládat z jedné nebo více souborů. Každý soubor může obsahovat nula nebo více oborů názvů. Obor názvů může obsahovat typy, jako jsou třídy, struktury, rozhraní, výčty a delegáti kromě jiných oborech názvů. Toto je kostře programu C#, který obsahuje všechny z těchto elementů.  

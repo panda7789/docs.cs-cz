@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538780"
 ---
 # <a name="tooltip-component-windows-forms"></a>ToolTip – komponenta (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ToolTip> součást zobrazí text, když uživatel odkazuje na ovládací prvky. Popisek může být přidružen žádný ovládací prvek. Příklad použití tohoto ovládacího prvku: Chcete-li ušetřit místo na formuláři, můžete zobrazení malé ikony na tlačítku a pomocí popisek vysvětlit funkce tlačítka.  

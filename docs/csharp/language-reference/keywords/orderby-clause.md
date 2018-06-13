@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33268048"
 ---
 # <a name="orderby-clause-c-reference"></a>orderby – klauzule (Referenční dokumentace jazyka C#)
 Ve výrazu dotazu `orderby` klauzule způsobí, že vrácený pořadí nebo dalším (skupiny), který se má seřadit ve vzestupném nebo sestupném pořadí. Aby bylo možné provést jednu nebo více operací sekundární řazení lze zadat více klíčů. Toto řazení je prováděno pomocí porovnávače výchozí pro typ elementu. Výchozí pořadí řazení je vzestupně. Můžete také zadat vlastní porovnávací funkci. Je však pouze k dispozici pomocí syntaxe na základě metod. Další informace najdete v tématu [řazení dat](../../programming-guide/concepts/linq/sorting-data.md).  

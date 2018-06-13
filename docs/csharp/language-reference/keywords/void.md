@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33267284"
 ---
 # <a name="void-c-reference"></a>void (Referenční dokumentace jazyka C#)
 Když se použije jako návratový typ pro metodu, `void` Určuje, že metoda nevrací hodnotu.

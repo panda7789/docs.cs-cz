@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767151"
 ---
 # <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET framework
 A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatel dat slouží k připojení k databázi, provádění příkazů a načíst výsledky. Výsledků buď zpracování přímo, uložena v umístění <xref:System.Data.DataSet> Chcete-li zpřístupnit pro uživatele podle potřeby, kombinované s daty z více zdrojů nebo používat vzdáleně mezi vrstvami. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatelé dat jsou lightweight, vytváření minimální vrstva mezi zdroji dat a kód, zvýšení výkonu bez omezení funkčnosti.  

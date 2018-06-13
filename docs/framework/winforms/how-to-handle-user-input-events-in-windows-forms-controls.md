@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538767"
 ---
 # <a name="how-to-handle-user-input-events-in-windows-forms-controls"></a>Postupy: Obsluha událostí uživatelského vstupu v ovládacích prvcích Windows Forms
 Tento příklad ukazuje, jak zpracovat většinu klávesnice, myš, fokus a události ověřování, které se můžou vyskytnout v ovládacím prvku Windows Forms. Textové pole s názvem `TextBoxInput` přijímá události, když je zaměřen a informace o každé události jsou zapsány do textového pole s názvem `TextBoxOutput` v pořadí, ve kterém jsou vyvolány události. Aplikace také obsahuje sadu políček, která mohou být použity k filtrování události, které do sestavy.  

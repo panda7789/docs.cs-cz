@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33320414"
 ---
 # <a name="how-to-retrieve-a-collection-of-elements-linq-to-xml-c"></a>Postupy: načtení kolekci elementů (technologie LINQ to XML) (C#)
 Toto téma ukazuje <xref:System.Xml.Linq.XContainer.Elements%2A> metoda. Tato metoda načte kolekci podřízených elementů elementu.  

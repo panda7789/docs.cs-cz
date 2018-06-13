@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33326430"
 ---
 # <a name="comparison-of-xpath-and-linq-to-xml"></a>Porovnání jazyka XPath a technologie LINQ to XML
 Výraz XPath a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] nabízejí některé podobné funkce. Obě lze použít k dotazu strom XML vrácení takové výsledky jako kolekci elementů, kolekce atributů, kolekce uzlů nebo hodnota elementu nebo atributu. Existují však také některé rozdíly.  

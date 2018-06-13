@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356460"
 ---
 # <a name="aspnet-applications-using-wait-handles"></a>Aplikace ASP.NET pomocí obslužné rutiny čekání
 Zpětné volání a dotazování modelů pro zpracování asynchronní operace jsou užitečné, když vaše aplikace zpracovává vždy pouze jeden asynchronní operaci. Modely čekání umožňují flexibilnější zpracování více asynchronních operací. Existují dva modely čekání s názvem pro <xref:System.Threading.WaitHandle> metody použité k jejich implementaci: čekání (Any) modelu a modelu čekání (All).  

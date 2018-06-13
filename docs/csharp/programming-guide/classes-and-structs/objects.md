@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33324672"
 ---
 # <a name="objects-c-programming-guide"></a>Objekty (Průvodce programováním v C#)
 Definice třídě nebo struktuře je jako matrici, která určuje, co můžete dělat typu. Objekt je v podstatě blok paměti, která je přidělena a nakonfigurovaný podle plánu. Program může vytvořit mnoho objektů stejné třídy. Objekty jsou také označovány jako instance a mohou být uloženy v proměnnou s názvem nebo v pole nebo kolekce. Kód klienta je kód, který používá tyto proměnné volání metody a přístup k veřejné vlastnosti objektu. V jazyce objektově orientované například C# typické program se skládá z více objektů dynamicky interakci.  

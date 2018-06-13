@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33265467"
 ---
 # <a name="params-c-reference"></a>params (Referenční dokumentace jazyka C#)
 Pomocí `params` – klíčové slovo, můžete zadat [parametru metody](../../../csharp/language-reference/keywords/method-parameters.md) , která má proměnný počet argumentů.  

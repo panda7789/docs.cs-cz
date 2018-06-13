@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541226"
 ---
 # <a name="varieties-of-custom-controls"></a>Typy vlastních ovládacích prvků
 S rozhraním .NET Framework můžete vytvořit a provádět nové ovládací prvky. Stejně jako stávající ovládací prvky prostřednictvím dědičnosti můžete rozšířit funkce známé uživatelského ovládacího prvku. Můžete také psát vlastní ovládací prvky, které provádějí vlastní Malování.  

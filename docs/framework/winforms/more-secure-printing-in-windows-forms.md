@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538936"
 ---
 # <a name="more-secure-printing-in-windows-forms"></a>Bezpečnější tisk ve Windows Forms
 Aplikace Windows Forms často zahrnují dalo tisku. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Používá <xref:System.Drawing.Printing.PrintingPermission> třída pro řízení přístupu k funkcím tisku a přidružené <xref:System.Drawing.Printing.PrintingPermissionLevel> hodnota výčtu udávajících úroveň přístupu. Ve výchozím nastavení je tisk povolené ve výchozím nastavení v zóny místního intranetu a Internetu; úroveň přístupu, je však omezená z obou zóny. Jestli vaše aplikace může tisknout, vyžaduje interakci s uživatelem, nebo nelze tiskových závisí na hodnotě oprávnění udělená aplikaci. Ve výchozím nastavení, obdrží zóny místního intranetu <xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting> přístup a zóny intranetu obdrží <xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting> přístup.  

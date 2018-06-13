@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33322010"
 ---
 # <a name="how-to-write-a-query-that-finds-elements-based-on-context-c"></a>Postupy: zápis dotaz, který vyhledá elementy na základě kontextu (C#)
 V některých případech můžete chtít vytvořit dotaz, který vybere elementy na základě jejich kontextu. Můžete filtrovat na základě před nebo po prvků. Můžete filtrovat na základě podřízené domény nebo nadřazenými prvky.  

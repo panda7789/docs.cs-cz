@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766033"
 ---
 # <a name="the-shape-of-the-command-trees"></a>Obrazec stromy příkazů
 Modul generování SQL je zodpovědný za generování back-end konkrétní dotaz SQL na základě výrazu stromu příkaz daný vstupní dotaz. Tato část popisuje vlastnosti, vlastnosti a struktura stromy příkazů dotazu.  

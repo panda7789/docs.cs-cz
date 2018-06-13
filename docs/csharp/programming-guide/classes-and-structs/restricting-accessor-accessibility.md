@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33322312"
 ---
 # <a name="restricting-accessor-accessibility-c-programming-guide"></a>Omezení přístupnosti přístupového objektu (Průvodce programováním v C#)
 [Získat](../../../csharp/language-reference/keywords/get.md) a [nastavit](../../../csharp/language-reference/keywords/set.md) části vlastnosti nebo indexeru se nazývají *přístupové objekty*. Ve výchozím nastavení mají stejné viditelnost těchto přístupových objektů, nebo úroveň přístupu: u vlastnosti nebo indexeru, do které patří. Další informace najdete v tématu [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). Někdy je však vhodné omezit přístup na jednu z těchto přístupových objektů. Obvykle to zahrnuje omezení přístupnosti `set` přistupujícího objektu, při zachování `get` přistupujícího objektu veřejně přístupná. Příklad:  

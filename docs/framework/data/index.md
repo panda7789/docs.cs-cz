@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356756"
 ---
 # <a name="data-and-modeling-in-the-net-framework"></a>Data a modelování v rozhraní .NET Framework
 Tato část obsahuje informace o tom, jak získat přístup k datům pomocí ADO.NET, jazyk integrovaného dotazu (LINQ), služby WCF Data Services a XML.  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388352"
 ---
 # <a name="marshaling-data-with-com-interop"></a>Zařazování dat se spoluprací COM
 Zprostředkovatel komunikace s objekty COM poskytuje podporu pro používání objektů COM ze spravovaného kódu i vystavení spravovaných objektů modelu COM. Podpora zařazování dat do a z modelu COM je rozsáhlá a poskytuje téměř vždy správné chování zařazování.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33267919"
 ---
 # <a name="object-c-reference"></a>object (Referenční dokumentace jazyka C#)
 `object` Typ je alias <xref:System.Object> v rozhraní .NET Framework. V systému jednotná typu jazyka C#, všechny typy, odkaz na předdefinované a uživatelem definované typy a typy hodnot, dědí přímo nebo nepřímo <xref:System.Object>. Můžete přiřadit hodnoty libovolného typu proměnné typu `object`. Když je proměnná typu hodnoty převést na objekt, je označováno jako *do pole*. Pokud proměnná typu objektu je převést na typ hodnoty, je označováno jako *nezabalený*. Další informace najdete v tématu [zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md).  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761867"
 ---
 # <a name="lt-less-than-or-equal-to-entity-sql"></a>&lt;= (Je menší než nebo rovno) (entita SQL)
 Porovná dva výrazy a určit, zda levý výraz má hodnotu menší než nebo rovna pravý výraz.  

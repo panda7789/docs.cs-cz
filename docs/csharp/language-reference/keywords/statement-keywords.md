@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33269658"
 ---
 # <a name="statement-keywords-c-reference"></a>Klíčová slova příkazů (Referenční dokumentace jazyka C#)
 Příkazy jsou pokyny programu. S výjimkou jak je popsáno v tématech v následující tabulce, odkazuje příkazy jsou spouštěny v pořadí. V následující tabulce jsou uvedeny C# klíčová slova příkazů. Další informace o příkazech, které nejsou vyjádřit pomocí jakékoli – klíčové slovo, najdete v části [příkazy](../../../csharp/programming-guide/statements-expressions-operators/statements.md).  

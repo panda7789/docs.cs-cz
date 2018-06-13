@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539488"
 ---
 # <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>Postupy: vytvoření aplikace Windows Forms z příkazového řádku
 Následující postupy popisují základní kroky, které je třeba provést k vytvoření a spuštění aplikace Windows Forms z příkazového řádku. Rozsáhlá podpora pro tyto postupy v sadě Visual Studio není k dispozici.  Viz také [návod: vytvoření jednoduché formuláře Windows](http://msdn.microsoft.com/library/z9w2f38k\(v=vs.100\)).  
