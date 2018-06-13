@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537038"
 ---
 # <a name="how-to-set-the-input-mask"></a>Postupy: Nastavení vstupní masky
 Maskované textové pole je prvek pole rozšířené text, který podporuje deklarativní syntaxe pro přijetí nebo odmítnutí vstup uživatele. Nastavením vlastnosti maska můžete povolená uživatelský vstup bez nutnosti psaní veškeré logiky vlastního ověřování ve vaší aplikaci. Další informace najdete v části poznámky <xref:System.Windows.Forms.MaskedTextBox> třídy.  

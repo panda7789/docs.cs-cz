@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538025"
 ---
 # <a name="how-to-display-option-buttons-in-a-menustrip-windows-forms"></a>Postupy: Zobrazení tlačítek možností v MenuStrip (Windows Forms)
 Přepínače, také známé jako přepínače, jsou podobná zaškrtněte políčka s tím rozdílem, že uživatelé mohou vybrat vždy pouze jednu. I když ve výchozím nastavení <xref:System.Windows.Forms.ToolStripMenuItem> třída nenabízí možnost tlačítko chování, třída poskytuje chování zaškrtávací políčko, kterou si můžete přizpůsobit pro implementaci – tlačítko chování položek nabídky v <xref:System.Windows.Forms.MenuStrip> ovládacího prvku.  

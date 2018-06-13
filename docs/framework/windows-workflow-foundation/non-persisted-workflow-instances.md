@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516747"
 ---
 # <a name="non-persisted-workflow-instances"></a>Instance pracovního postupu netrvalé
 Novou instanci pracovního postupu vytvoření která je uchována jeho stav v <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, hostitel služby vytvoří záznam pro tuto službu v úložišti instance. Když je následně k instanci pracovního postupu trvalé poprvé, <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> uloží aktuální stav instance. Pokud je pracovní postup je hostovaná v aktivační službě procesů systému Windows, data nasazení služby se zapisují také do instance úložiště při první instance.  

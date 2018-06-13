@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519578"
 ---
 # <a name="workflow-security"></a>Pracovní postup zabezpečení
 Windows Workflow Foundation (WF) je integrovaná do několika různých technologií, jako je Microsoft SQL Server a Windows Communication Foundation (WCF). Interakci s těmito technologiemi může znamenat problémy se zabezpečením do vašeho pracovního postupu, pokud se to udělá nesprávně.  

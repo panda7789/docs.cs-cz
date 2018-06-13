@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532458"
 ---
 # <a name="how-to-display-side-aligned-tabs-with-tabcontrol"></a>Postupy: Zobrazení bočně zarovnaných karet pomocí TabControl
 <xref:System.Windows.Forms.TabControl.Alignment%2A> Vlastnost <xref:System.Windows.Forms.TabControl> podporuje zobrazení karet svisle (společně levý nebo pravý okraj ovládacího prvku), naproti tomu vodorovně (přes horní nebo dolní části ovládacího prvku). Ve výchozím nastavení, tento svislé zobrazení výsledků v nízký uživatelské prostředí, protože <xref:System.Windows.Forms.TabPage.Text%2A> vlastnost <xref:System.Windows.Forms.TabPage> objekt nejsou zobrazeny na kartě, pokud jsou povolené vizuální styly. Je také přímý způsob, jak řídit směru textu v rámci kartě. Můžete použít vlastníka kreslení v <xref:System.Windows.Forms.TabControl> ke zlepšení toto prostředí.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520312"
 ---
 # <a name="pick-activity"></a>Vyberte aktivitu
 <xref:System.Activities.Statements.Pick> Aktivity zjednodušuje modelování sady aktivačních událostí a jejich odpovídající obslužné rutiny.  A <xref:System.Activities.Statements.Pick> aktivity obsahuje kolekci <xref:System.Activities.Statements.PickBranch> aktivity, kde každý <xref:System.Activities.Statements.PickBranch> je párování mezi <xref:System.Activities.Statements.PickBranch.Trigger%2A> aktivity a <xref:System.Activities.Statements.PickBranch.Action%2A> aktivity.  V době provedení aktivačních událostí pro všechny větve provedení paralelně.  Po dokončení jedna aktivační událost, pak je jeho odpovídající akci provést, a všechny ostatní aktivační události došlo ke zrušení.  Chování [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] <xref:System.Activities.Statements.Pick> aktivity je podobná [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] <xref:System.Workflow.Activities.ListenActivity> aktivity.  

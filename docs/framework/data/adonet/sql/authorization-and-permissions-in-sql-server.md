@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364220"
 ---
 # <a name="authorization-and-permissions-in-sql-server"></a>Autorizace a oprávnění v systému SQL Server
 Při vytváření databázových objektů, je třeba explicitně udělit oprávnění, aby byly dostupné pro uživatele. Všechny zabezpečitelné objekty má oprávnění, která lze udělit oprávnění příkazy using objekt zabezpečení.  

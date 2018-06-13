@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640527"
 ---
 # <a name="how-to-work-with-activex-controls-visual-basic"></a>Postupy: Práce s ovládacími prvky ActiveX (Visual Basic)
 ActiveX – ovládací prvky jsou komponenty modelu COM nebo objekty, které můžete vložit do webové stránky nebo jiná aplikace zabalené funkce, které má někdo jiný naprogramovaný tak znovu použít. ActiveX – ovládací prvky vytvořených pro Visual Basic 6.0 a starší verze můžete použít k přidání funkcí do **sada nástrojů** sady Visual Studio.  

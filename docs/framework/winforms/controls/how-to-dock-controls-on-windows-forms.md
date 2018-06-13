@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532313"
 ---
 # <a name="how-to-dock-controls-on-windows-forms"></a>Postupy: Ukotvování ovládacích prvků ve Windows Forms
 Můžete ukotvení ovládací prvky hrany svého formuláře nebo kliknul vyplnění kontejneru ovládacího prvku (formuláře nebo ovládacího prvku kontejneru). Například Průzkumník Windows ukotvené jeho <xref:System.Windows.Forms.TreeView> ovládacího prvku na levé straně okna a jeho <xref:System.Windows.Forms.ListView> ovládacího prvku na pravé straně okna. Použití <xref:System.Windows.Forms.Control.Dock%2A> vlastnost pro všechny viditelné ovládací prvky Windows Forms k definování ukotvení režimu.  

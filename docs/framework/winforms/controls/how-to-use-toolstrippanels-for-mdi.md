@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533432"
 ---
 # <a name="how-to-use-toolstrippanels-for-mdi"></a>Postupy: Použití prvku ToolStripPanels pro MDI
 <xref:System.Windows.Forms.ToolStripPanel> Poskytuje flexibilitu pro aplikace rozhraní více dokumentů (MDI) pomocí <xref:System.Windows.Forms.ToolStripPanel.Join%2A> metoda.  

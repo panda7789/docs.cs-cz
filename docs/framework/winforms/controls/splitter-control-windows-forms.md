@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534635"
 ---
 # <a name="splitter-control-windows-forms"></a>Rozdělovač – ovládací prvek (Windows Forms)
 Windows Forms `Splitter` ovládací prvky se používají ke změně velikosti ukotvených ovládacích prvků za běhu. `Splitter` Řízení se často používá ve formulářích s ovládacími prvky, které mají různých délek data k dispozici jako Průzkumník Windows, jejichž data podokna obsahovat informace o různých šířek v různých časech.  

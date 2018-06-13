@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517238"
 ---
 # <a name="how-to-create-a-custom-persistence-participant"></a>Postupy: vytvoření vlastního účastník
 Následující postup obsahuje kroky k vytvoření účastník trvalost. Najdete v článku [účastní trvalost](http://go.microsoft.com/fwlink/?LinkID=177735) ukázka a [rozšiřitelnost úložiště](../../../docs/framework/windows-workflow-foundation/store-extensibility.md) téma pro ukázkové implementace trvalost účastníky.  

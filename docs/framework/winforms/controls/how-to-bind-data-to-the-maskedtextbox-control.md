@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530912"
 ---
 # <a name="how-to-bind-data-to-the-maskedtextbox-control"></a>Postupy: Připojení dat k ovládacímu prvku MaskedTextBox
 Data lze vázat <xref:System.Windows.Forms.MaskedTextBox> řízení stejně jako všechny ostatní ovládací prvek Windows Forms. Ale pokud formátu vašich dat v databázi neodpovídá formátu očekávaném podle vaší definice maska, musíte změnit formát data. Následující postup ukazuje, jak to provést pomocí <xref:System.Windows.Forms.Binding.Format> a <xref:System.Windows.Forms.Binding.Parse> události <xref:System.Windows.Forms.Binding> třída zobrazíte samostatné telefonní číslo a phone rozšíření databáze pole jako jediné pole upravitelné.  

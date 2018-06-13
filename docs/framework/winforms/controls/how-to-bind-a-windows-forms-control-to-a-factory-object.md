@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530117"
 ---
 # <a name="how-to-bind-a-windows-forms-control-to-a-factory-object"></a>Postupy: Vázání ovládacího prvku Windows Forms k objektu factory
 Při vytváření ovládacích prvků, které pracují s daty, někdy zjistíte, je potřeba vytvořit vazbu ovládacího prvku na objekt nebo metodu, která generuje jiné objekty. Na objekt nebo metoda je volána objekt pro vytváření. Váš zdroj dat může být například vrácená hodnota z volání metody, namísto objektu v paměti nebo typu. Můžete vytvořit vazbu ovládacího prvku k tomuto typu zdroje dat, dokud zdroj vrátí kolekci.  

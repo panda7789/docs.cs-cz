@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516146"
 ---
 # <a name="designer-rehosting"></a>Návrhář opětovného hostování
 Návrhář opětovného hostování je běžný scénář, který odkazuje na hostování na plátno návrhu pracovního postupu uvnitř vlastní aplikaci. Hostování aplikace, které mají zkušenosti se většina lidí je Visual Studio, ale existuje několik scénářů, kdy zobrazující návrháře pracovních postupů v aplikaci může být užitečné:  

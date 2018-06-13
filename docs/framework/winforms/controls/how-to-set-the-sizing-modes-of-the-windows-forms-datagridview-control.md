@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536312"
 ---
 # <a name="how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control"></a>Postupy: Nastavení režimů změny velikosti ovládacího prvku Windows Forms DataGridView
 Následující postupy ukazují některé běžné scénáře, které přizpůsobit nebo v kombinaci k dispozici pro nastavení velikosti možností <xref:System.Windows.Forms.DataGridView> řízení a pro určité sloupce v ovládacím prvku.  

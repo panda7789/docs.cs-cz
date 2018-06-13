@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537615"
 ---
 # <a name="how-to-render-a-visual-style-element"></a>Postupy: Vykreslení elementu vizuálního stylu
 <xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType> Zpřístupní obor názvů <xref:System.Windows.Forms.VisualStyles.VisualStyleElement> objekty, které představují uživatelem systému Windows rozhraní (UI) elementy nepodporuje vizuální styly. Toto téma ukazuje, jak používat <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> třída k vykreslení <xref:System.Windows.Forms.VisualStyles.VisualStyleElement> představující **Odhlásit** a **vypnout** tlačítka nabídky Start.  

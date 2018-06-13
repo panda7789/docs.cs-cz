@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533816"
 ---
 # <a name="how-to-inherit-from-the-usercontrol-class"></a>Postupy: Dědění ze třídy UserControl
 Chcete-li funkci jeden nebo více ovládacích prvků Windows Forms kombinovat s vlastní kód, můžete vytvořit *uživatelský ovládací prvek*. Uživatelské ovládací prvky kombinovat vývoj rychlé ovládacího prvku, funkce a všestrannost vlastní vlastnosti a metody ovládací prvek standardní Windows Forms. Když začnete vytvoření uživatelského ovládacího prvku, máte k ruce viditelné designer, na který můžete umístit standardní ovládací prvky Windows Forms. Tyto ovládací prvky zachovat všechny jejich vyplývajících funkce, jakož i vzhled a chování (vzhled a chování) standardní ovládací prvky. Jakmile tyto ovládací prvky jsou součástí uživatelského ovládacího prvku, ale jsou již k dispozici prostřednictvím kódu. Uživatelský ovládací prvek nepodporuje svůj vlastní Malování a také zpracovává všechny základní funkce související s ovládacími prvky.  

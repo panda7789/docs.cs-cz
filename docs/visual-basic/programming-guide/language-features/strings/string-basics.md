@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654057"
 ---
 # <a name="string-basics-in-visual-basic"></a>Základní informace o řetězcích v jazyce Visual Basic
 `String` Datový typ reprezentuje řadu znaků (každý představuje zase instanci `Char` datový typ). Toto téma představuje základní koncepty řetězců v jazyce Visual Basic.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535282"
 ---
 # <a name="imagelist-component-overview-windows-forms"></a>ImageList – přehled komponenty (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ImageList> komponenta se používá k ukládání Image, které pak lze zobrazit pomocí ovládacích prvků. Seznam obrázků můžete napsat kód pro jeden a konzistentní katalog bitové kopie. Například můžete otáčení obrázků, na které se zobrazí <xref:System.Windows.Forms.Button> řízení jednoduše tak, že změna na tlačítko <xref:System.Windows.Forms.ButtonBase.ImageIndex%2A> nebo <xref:System.Windows.Forms.ButtonBase.ImageKey%2A> vlastnost. Stejný seznam bitové kopie můžete taky přidružit více ovládacích prvků. Například, pokud používáte obě <xref:System.Windows.Forms.ListView> řízení a <xref:System.Windows.Forms.TreeView> ovládací prvek zobrazí stejný seznam souborů, změna na ikonu v seznamu obrázků, které způsobí, že na ikonu Nový se zobrazí v obou zobrazeních.  

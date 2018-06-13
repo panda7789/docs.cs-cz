@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522392"
 ---
 # <a name="how-to-rotate-colors"></a>Postupy: Otáčení barev
 Otočení v four-dimensional barevný prostor je obtížné vizualizace. Jsme můžete usnadňují vizualizaci otočení souhlasit a jedna z komponent Barva pevné zachovat. Předpokládejme, že jsme souhlas s zachovat komponentu alfa pevné na 1 (plně neprůhledný). Potom jsme vizualizovat trojrozměrné barevný prostor s červenou, zelené a modré osy, jak je znázorněno na následujícím obrázku.  

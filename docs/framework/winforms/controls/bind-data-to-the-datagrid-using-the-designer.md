@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528993"
 ---
 # <a name="how-to-bind-data-to-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Vytvoření vazby dat k ovládacímu prvku Windows Forms DataGridView pomocí Návrháře
 Můžete použít návrháře pro připojení <xref:System.Windows.Forms.DataGridView> ovládacího prvku do zdroje dat několik různé typy, včetně databází, obchodní objekty nebo webové služby. Při vytvoření vazby ovládacího prvku ke zdroji dat pomocí návrháře, je ovládací prvek vázán automaticky k <xref:System.Windows.Forms.BindingSource> komponenty, která představuje příslušný zdroj dat. Kromě toho sloupce jsou automaticky generovány v ovládacím prvku tak, aby odpovídaly zadaný zdroj dat informace o schématu.  

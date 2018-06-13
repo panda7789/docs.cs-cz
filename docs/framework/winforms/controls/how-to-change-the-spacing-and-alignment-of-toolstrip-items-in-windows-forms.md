@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531261"
 ---
 # <a name="how-to-change-the-spacing-and-alignment-of-toolstrip-items-in-windows-forms"></a>Postupy: Změna mezer a zarovnání položek ToolStrip ve Windows Forms
 <xref:System.Windows.Forms.ToolStrip> Řízení plně podporuje rozložení funkce jako je například změna velikosti, mezery mezi <xref:System.Windows.Forms.ToolStripItem> na ovládací prvky relativně k sobě navzájem, uspořádání ovládacích prvků <xref:System.Windows.Forms.ToolStrip>a mezery mezi ovládací prvky vzhledem k <xref:System.Windows.Forms.ToolStrip>.  

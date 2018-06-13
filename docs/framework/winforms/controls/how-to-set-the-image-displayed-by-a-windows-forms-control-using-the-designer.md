@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532782"
 ---
 # <a name="how-to-set-the-image-displayed-by-a-windows-forms-control-using-the-designer"></a>Postupy: Nastavení obrázku zobrazovaného ovládacím prvkem Windows Forms pomocí Návrháře
 Několik Windows Forms – ovládací prvky můžete zobrazit obrázky. Obrázek může být ikonu, která vysvětluje účel ovládacího prvku, jako je například ikona disku na tlačítko, které označuje **Uložit** příkaz. Ikona, případně může být obrázek pozadí vzhled, které chcete umožnit ovládacího prvku.  

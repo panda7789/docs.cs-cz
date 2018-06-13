@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531502"
 ---
 # <a name="how-to-display-a-control-in-the-choose-toolbox-items-dialog-box"></a>Postupy: Zobrazení ovládacího prvku v dialogovém okně Zvolit položky nástrojů
 Při vývoji a distribuovat ovládací prvky, můžete se zobrazí v těchto ovládací prvky **výběr položek sady nástrojů** dialogové okno, které se zobrazí, když kliknete pravým tlačítkem na **sada nástrojů** a vyberte  **Zvolte položky**. Ovládací prvek se objeví v tomto dialogovém pomocí postupu registrace AssemblyFoldersEx můžete povolit.  

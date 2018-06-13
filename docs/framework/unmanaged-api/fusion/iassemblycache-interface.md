@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33430580"
 ---
 # <a name="iassemblycache-interface"></a>IAssemblyCache – rozhraní
 Představuje globální mezipaměti sestavení pro použití technologie fusion.  

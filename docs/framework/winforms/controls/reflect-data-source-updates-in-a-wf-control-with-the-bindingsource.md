@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536875"
 ---
 # <a name="how-to-reflect-data-source-updates-in-a-windows-forms-control-with-the-bindingsource"></a>Postupy: Uplatňování aktualizací zdroje dat v ovládacím prvku Windows Forms pomocí BindingSource
 Pokud používáte ovládací prvky vázané na data, máte někdy odpověď na změny ve zdroji dat, pokud zdroj dat není vyvolávání událostí seznam změnil. Při použití <xref:System.Windows.Forms.BindingSource> součást k vytvoření vazby zdroje dat do ovládacího prvku Windows Forms uvědomí ovládací prvek, který zdroje dat došlo ke změně voláním <xref:System.Windows.Forms.BindingSource.ResetBindings%2A> metoda.  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536495"
 ---
 # <a name="how-to-show-a-font-list-with-the-fontdialog-component"></a>Postupy: Zobrazení seznamu písem pomocí součásti FontDialog
 [FontDialog](../../../../docs/framework/winforms/controls/fontdialog-component-windows-forms.md) součást umožňuje uživatelům vybrat písmo, jakož i změnit jeho vlastnosti zobrazení, jako je například váhy a jeho velikost.  

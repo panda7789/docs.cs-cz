@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536719"
 ---
 # <a name="panel-control-windows-forms"></a>Ovládací prvek Panel (Windows Forms)
 Windows Forms `Panel` ovládací prvky používané k zajištění osobní seskupení pro další ovládací prvky. Obvykle použijete panelů dále dělit formuláře podle funkce. `Panel` Ovládací prvek je podobný <xref:System.Windows.Forms.GroupBox> řízení; však pouze `Panel` ovládací prvek může mít posuvníky a jenom <xref:System.Windows.Forms.GroupBox> zobrazí popisek.  

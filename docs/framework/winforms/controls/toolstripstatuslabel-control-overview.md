@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534538"
 ---
 # <a name="toolstripstatuslabel-control-overview"></a>ToolStripStatusLabel – přehled ovládacího prvku
 <xref:System.Windows.Forms.ToolStripStatusLabel> Je popisek <xref:System.Windows.Forms.StatusStrip>. Podobně jako <xref:System.Windows.Forms.Label> nebo <xref:System.Windows.Forms.ToolStripLabel>, <xref:System.Windows.Forms.ToolStripStatusLabel> poskytuje nelze klepnout zobrazení oblasti text, obrázky, nebo obojí. <xref:System.Windows.Forms.ToolStripStatusLabel> Je hostován <xref:System.Windows.Forms.StatusStrip>.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528363"
 ---
 # <a name="how-to-arrange-controls-with-snaplines-and-the-grid-in-windows-forms"></a>Postupy: Uspořádání ovládacích prvků pomocí zarovnávacích čar a mřížky ve Windows Forms
 Pomocí funkce rozložení sady Visual Studio, můžete přesněji nastavit umístění ovládacích prvků na formuláři. Ovládací prvky přidány do formuláře nebo přesunout na formuláři mohou být automaticky zarovnány řádků a sloupců mřížky Návrhář formulářů Windows, nebo můžete zarovnat ovládacích prvků pomocí zarovnávacích čar funkce.  

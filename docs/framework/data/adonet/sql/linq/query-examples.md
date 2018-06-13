@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362624"
 ---
 # <a name="query-examples"></a>Příklady dotazů
 Tato část obsahuje Visual Basic a C# Příklady typických [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazy. Vývojáři pomocí sady Visual Studio najdete v části Ukázky mnoho další příklady v ukázkové řešení, která je k dispozici. Další informace najdete v tématu [ukázky](../../../../../../docs/framework/data/adonet/sql/linq/samples.md).  

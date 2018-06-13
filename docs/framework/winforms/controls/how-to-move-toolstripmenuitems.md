@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534905"
 ---
 # <a name="how-to-move-toolstripmenuitems"></a>Postupy: Přesouvání ToolStripMenuItems
 V době návrhu, můžete přesunout celý nabídek nejvyšší úrovně a jejich položky nabídky na jiné místo, <xref:System.Windows.Forms.MenuStrip>. Také můžete přesunout jednotlivé položky nabídky mezi nejvyšší úrovně nabídky nebo změní pozici položek nabídek v rámci nabídky.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531582"
 ---
 # <a name="how-to-position-a-toolstripitem-on-a-toolstrip"></a>Postupy: Umístění prvku ToolStripItem do prvku ToolStrip
 Můžete přesunout nebo přidat <xref:System.Windows.Forms.ToolStripItem> levé nebo pravé straně <xref:System.Windows.Forms.ToolStrip>.  
