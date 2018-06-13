@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744223"
 ---
 # <a name="ltsystemcodedomgt-element"></a><span data-ttu-id="b0d59-102">&lt;System.CodeDom –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="b0d59-102">&lt;system.codedom&gt; Element</span></span>
 <span data-ttu-id="b0d59-103">Určuje kompilátor – nastavení konfigurace pro zprostředkovatele dostupný jazyk.</span><span class="sxs-lookup"><span data-stu-id="b0d59-103">Specifies compiler configuration settings for available language providers.</span></span>  

@@ -1,29 +1,23 @@
 ---
-title: "Implementace vlastních opakování volání protokolu HTTP s exponenciálního omezení rychlosti"
-description: "Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace vlastních opakování volání protokolu HTTP s exponenciálního omezení rychlosti"
-keywords: "Docker, Mikroslužeb, ASP.NET, kontejneru"
+title: Implementace vlastních opakování volání protokolu HTTP s exponenciálního omezení rychlosti
+description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace vlastních opakování volání protokolu HTTP s exponenciálního omezení rychlosti
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.prod: .net-core
-ms.technology: dotnet-docker
-ms.topic: article
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 477b77f4c4768ed98f730b0f5360761b0b54b10c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 10751bb74ed648839fabec67ff7a71e458fb2a44
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574943"
 ---
-# <a name="implementing-custom-http-call-retries-with-exponential-backoff"></a><span data-ttu-id="3610f-104">Implementace vlastních opakování volání protokolu HTTP s exponenciálního omezení rychlosti</span><span class="sxs-lookup"><span data-stu-id="3610f-104">Implementing custom HTTP call retries with exponential backoff</span></span>
+# <a name="implementing-custom-http-call-retries-with-exponential-backoff"></a><span data-ttu-id="5f77b-103">Implementace vlastních opakování volání protokolu HTTP s exponenciálního omezení rychlosti</span><span class="sxs-lookup"><span data-stu-id="5f77b-103">Implementing custom HTTP call retries with exponential backoff</span></span>
 
-<span data-ttu-id="3610f-105">Chcete-li vytvořit odolné mikroslužeb, budete muset zpracování možných scénářích selhání HTTP.</span><span class="sxs-lookup"><span data-stu-id="3610f-105">In order to create resilient microservices, you need to handle possible HTTP failure scenarios.</span></span> <span data-ttu-id="3610f-106">K tomuto účelu můžete vytvářet vlastní implementaci opakování s exponenciálního omezení rychlosti.</span><span class="sxs-lookup"><span data-stu-id="3610f-106">For that purpose, you could create your own implementation of retries with exponential backoff.</span></span>
+<span data-ttu-id="5f77b-104">Chcete-li vytvořit odolné mikroslužeb, budete muset zpracování možných scénářích selhání HTTP.</span><span class="sxs-lookup"><span data-stu-id="5f77b-104">In order to create resilient microservices, you need to handle possible HTTP failure scenarios.</span></span> <span data-ttu-id="5f77b-105">K tomuto účelu můžete vytvářet vlastní implementaci opakování s exponenciálního omezení rychlosti.</span><span class="sxs-lookup"><span data-stu-id="5f77b-105">For that purpose, you could create your own implementation of retries with exponential backoff.</span></span>
 
-<span data-ttu-id="3610f-107">Kromě zpracování prostředků dočasné nedostupnosti, exponenciálního omezení rychlosti také je potřeba vzít v úvahu, že poskytovatel cloudové může omezit dostupnost prostředků, aby se zabránilo přetížení využití.</span><span class="sxs-lookup"><span data-stu-id="3610f-107">In addition to handling temporal resource unavailability, the exponential backoff also needs to take into account that the cloud provider might throttle availability of resources to prevent usage overload.</span></span> <span data-ttu-id="3610f-108">Například velmi rychle vytváření příliš mnoho žádostí o připojení může zobrazit jako Denial of Service ([DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack)) útoku poskytovatelem cloudu.</span><span class="sxs-lookup"><span data-stu-id="3610f-108">For example, creating too many connection requests very quickly might be viewed as a Denial of Service ([DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack)) attack by the cloud provider.</span></span> <span data-ttu-id="3610f-109">V důsledku toho budete muset poskytují mechanismus back připojení požadavky škálovat tak, když byla zjištěna prahové hodnoty kapacity.</span><span class="sxs-lookup"><span data-stu-id="3610f-109">As a result, you need to provide a mechanism to scale back connection requests when a capacity threshold has been encountered.</span></span>
+<span data-ttu-id="5f77b-106">Kromě zpracování prostředků dočasné nedostupnosti, exponenciálního omezení rychlosti také je potřeba vzít v úvahu, že poskytovatel cloudové může omezit dostupnost prostředků, aby se zabránilo přetížení využití.</span><span class="sxs-lookup"><span data-stu-id="5f77b-106">In addition to handling temporal resource unavailability, the exponential backoff also needs to take into account that the cloud provider might throttle availability of resources to prevent usage overload.</span></span> <span data-ttu-id="5f77b-107">Například velmi rychle vytváření příliš mnoho žádostí o připojení může zobrazit jako Denial of Service ([DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack)) útoku poskytovatelem cloudu.</span><span class="sxs-lookup"><span data-stu-id="5f77b-107">For example, creating too many connection requests very quickly might be viewed as a Denial of Service ([DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack)) attack by the cloud provider.</span></span> <span data-ttu-id="5f77b-108">V důsledku toho budete muset poskytují mechanismus back připojení požadavky škálovat tak, když byla zjištěna prahové hodnoty kapacity.</span><span class="sxs-lookup"><span data-stu-id="5f77b-108">As a result, you need to provide a mechanism to scale back connection requests when a capacity threshold has been encountered.</span></span>
 
-<span data-ttu-id="3610f-110">Jako počáteční zkoumání, může implementovat vlastní kód s třídou nástroj pro exponenciálního omezení rychlosti jako v [RetryWithExponentialBackoff.cs](https://gist.github.com/CESARDELATORRE/6d7f647b29e55fdc219ee1fd2babb260), plus kód takto (což je také k dispozici na [úložiště GitHub ](https://gist.github.com/CESARDELATORRE/d80c6423a1aebaffaf387469f5194f5b)).</span><span class="sxs-lookup"><span data-stu-id="3610f-110">As an initial exploration, you could implement your own code with a utility class for exponential backoff as in [RetryWithExponentialBackoff.cs](https://gist.github.com/CESARDELATORRE/6d7f647b29e55fdc219ee1fd2babb260), plus code like the following (which is also available on a [GitHub repo](https://gist.github.com/CESARDELATORRE/d80c6423a1aebaffaf387469f5194f5b)).</span></span>
+<span data-ttu-id="5f77b-109">Jako počáteční zkoumání, může implementovat vlastní kód s třídou nástroj pro exponenciálního omezení rychlosti jako v [RetryWithExponentialBackoff.cs](https://gist.github.com/CESARDELATORRE/6d7f647b29e55fdc219ee1fd2babb260), plus kód takto (což je také k dispozici na [úložiště GitHub ](https://gist.github.com/CESARDELATORRE/d80c6423a1aebaffaf387469f5194f5b)).</span><span class="sxs-lookup"><span data-stu-id="5f77b-109">As an initial exploration, you could implement your own code with a utility class for exponential backoff as in [RetryWithExponentialBackoff.cs](https://gist.github.com/CESARDELATORRE/6d7f647b29e55fdc219ee1fd2babb260), plus code like the following (which is also available on a [GitHub repo](https://gist.github.com/CESARDELATORRE/d80c6423a1aebaffaf387469f5194f5b)).</span></span>
 
 ```csharp
 public sealed class RetryWithExponentialBackoff
@@ -96,7 +90,7 @@ public struct ExponentialBackoff
 }
 ```
 
-<span data-ttu-id="3610f-111">Pomocí tohoto kódu v klientovi C\# aplikace (jiné mikroslužbu webového rozhraní API klienta, aplikace ASP.NET MVC nebo i C\# aplikace Xamarin) je jednoduché.</span><span class="sxs-lookup"><span data-stu-id="3610f-111">Using this code in a client C\# application (another Web API client microservice, an ASP.NET MVC application, or even a C\# Xamarin application) is straightforward.</span></span> <span data-ttu-id="3610f-112">Následující příklad ukazuje, jak pomocí třídy HttpClient.</span><span class="sxs-lookup"><span data-stu-id="3610f-112">The following example shows how, using the HttpClient class.</span></span>
+<span data-ttu-id="5f77b-110">Pomocí tohoto kódu v klientovi C\# aplikace (jiné mikroslužbu webového rozhraní API klienta, aplikace ASP.NET MVC nebo i C\# aplikace Xamarin) je jednoduché.</span><span class="sxs-lookup"><span data-stu-id="5f77b-110">Using this code in a client C\# application (another Web API client microservice, an ASP.NET MVC application, or even a C\# Xamarin application) is straightforward.</span></span> <span data-ttu-id="5f77b-111">Následující příklad ukazuje, jak pomocí třídy HttpClient.</span><span class="sxs-lookup"><span data-stu-id="5f77b-111">The following example shows how, using the HttpClient class.</span></span>
 
 ```csharp
 public async Task<Catalog> GetCatalogItems(int page,int take, int? brand, int? type)
@@ -119,8 +113,8 @@ public async Task<Catalog> GetCatalogItems(int page,int take, int? brand, int? t
 }
 ```
 
-<span data-ttu-id="3610f-113">Tento kód je však vhodné pouze jako testování konceptu.</span><span class="sxs-lookup"><span data-stu-id="3610f-113">However, this code is suitable only as a proof of concept.</span></span> <span data-ttu-id="3610f-114">Další téma vysvětluje, jak používat sofistikované a osvědčené knihovny.</span><span class="sxs-lookup"><span data-stu-id="3610f-114">The next topic explains how to use more sophisticated and proven libraries.</span></span>
+<span data-ttu-id="5f77b-112">Tento kód je však vhodné pouze jako testování konceptu.</span><span class="sxs-lookup"><span data-stu-id="5f77b-112">However, this code is suitable only as a proof of concept.</span></span> <span data-ttu-id="5f77b-113">Další téma vysvětluje, jak používat sofistikované a osvědčené knihovny.</span><span class="sxs-lookup"><span data-stu-id="5f77b-113">The next topic explains how to use more sophisticated and proven libraries.</span></span>
 
 
 >[!div class="step-by-step"]
-<span data-ttu-id="3610f-115">[Předchozí] (implement-resilient-entity-framework-core-sql-connections.md) [Další] (implement-http-call-retries-exponential-backoff-polly.md)</span><span class="sxs-lookup"><span data-stu-id="3610f-115">[Previous] (implement-resilient-entity-framework-core-sql-connections.md) [Next] (implement-http-call-retries-exponential-backoff-polly.md)</span></span>
+<span data-ttu-id="5f77b-114">[Předchozí] (implement-resilient-entity-framework-core-sql-connections.md) [Další] (implement-http-call-retries-exponential-backoff-polly.md)</span><span class="sxs-lookup"><span data-stu-id="5f77b-114">[Previous] (implement-resilient-entity-framework-core-sql-connections.md) [Next] (implement-http-call-retries-exponential-backoff-polly.md)</span></span>

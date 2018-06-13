@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748569"
 ---
 # <a name="ltissuergt-of-ltissuedtokenparametersgt"></a><span data-ttu-id="7f867-102">&lt;issuer&gt; – &lt;issuedTokenParameters&gt;</span><span class="sxs-lookup"><span data-stu-id="7f867-102">&lt;issuer&gt; of &lt;issuedTokenParameters&gt;</span></span>
 <span data-ttu-id="7f867-103">Určuje zabezpečení Token Service (Služba tokenů zabezpečení), která vydává tokeny zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="7f867-103">Specifies the Security Token Service (STS) that issues security tokens.</span></span>  

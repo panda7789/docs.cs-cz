@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748903"
 ---
 # <a name="ltprotocolmappinggt"></a><span data-ttu-id="b4d41-102">&lt;ProtocolMapping&gt;</span><span class="sxs-lookup"><span data-stu-id="b4d41-102">&lt;protocolMapping&gt;</span></span>
 <span data-ttu-id="b4d41-103">Představuje konfigurační oddíl pro definování sady výchozí protokol mapování mezi přenosu protokolu schémata (např. http, net.tcp, net.pipe atd.) a vazeb WCF.</span><span class="sxs-lookup"><span data-stu-id="b4d41-103">Represents a configuration section for defining a set of default protocol mapping between transport protocol schemes (e.g., http, net.tcp, net.pipe, etc.) and WCF bindings.</span></span> <span data-ttu-id="b4d41-104">Při vytváření výchozí koncové body za běhu, Windows Communication Foundation (WCF) vyhledá nakonfigurované mapování a rozhodne, na které vazby pro konkrétní na základě adres.</span><span class="sxs-lookup"><span data-stu-id="b4d41-104">When creating default endpoints at runtime, Windows Communication Foundation (WCF) looks at the configured mappings and decides on which binding to use for a particular based address.</span></span>  
