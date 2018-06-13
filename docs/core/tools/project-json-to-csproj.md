@@ -4,29 +4,24 @@ description: V tématu mapování mezi elementy project.json a csproj.
 author: natemcmaster
 ms.author: mairaw
 ms.date: 03/13/2017
-ms.topic: conceptual
-ms.prod: dotnet-core
-ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.workload:
-- dotnetcore
-ms.openlocfilehash: c5753d73f062aa107d7afbec6146ea3452901fb1
-ms.sourcegitcommit: 03ee570f6f528a7d23a4221dcb26a9498edbdf8c
+ms.openlocfilehash: d262792cd6821d35dcaf2f4bb9c05625e1bcd2fa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218800"
 ---
-# <a name="a-mapping-between-projectjson-and-csproj-properties"></a><span data-ttu-id="ef2e4-103">Mapování mezi project.json a csproj vlastnosti</span><span class="sxs-lookup"><span data-stu-id="ef2e4-103">A mapping between project.json and csproj properties</span></span>
+# <a name="a-mapping-between-projectjson-and-csproj-properties"></a><span data-ttu-id="fcde3-103">Mapování mezi project.json a csproj vlastnosti</span><span class="sxs-lookup"><span data-stu-id="fcde3-103">A mapping between project.json and csproj properties</span></span>
 
-<span data-ttu-id="ef2e4-104">Podle [McMaster Jan](https://github.com/natemcmaster)</span><span class="sxs-lookup"><span data-stu-id="ef2e4-104">By [Nate McMaster](https://github.com/natemcmaster)</span></span>
+<span data-ttu-id="fcde3-104">Podle [McMaster Jan](https://github.com/natemcmaster)</span><span class="sxs-lookup"><span data-stu-id="fcde3-104">By [Nate McMaster](https://github.com/natemcmaster)</span></span>
 
-<span data-ttu-id="ef2e4-105">Během vývoje nástrojů .NET Core, návrhu důležité změně již nepodporují *project.json* soubory a místo toho přesunout do formátu nástroje MSBuild/csproj projekty .NET Core.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-105">During the development of the .NET Core tooling, an important design change was made to no longer support *project.json* files and instead move the .NET Core projects to the MSBuild/csproj format.</span></span>
+<span data-ttu-id="fcde3-105">Během vývoje nástrojů .NET Core, návrhu důležité změně již nepodporují *project.json* soubory a místo toho přesunout do formátu nástroje MSBuild/csproj projekty .NET Core.</span><span class="sxs-lookup"><span data-stu-id="fcde3-105">During the development of the .NET Core tooling, an important design change was made to no longer support *project.json* files and instead move the .NET Core projects to the MSBuild/csproj format.</span></span>
 
-<span data-ttu-id="ef2e4-106">Tento článek ukazuje, jak nastavení v *project.json* jsou reprezentované ve formátu MSBuild/csproj, takže můžete naučit používat nový formát a pochopit změny provedené pomocí nástrojů pro migraci, když provádíte upgrade projektu pro nejnovější verzi nástrojů.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-106">This article shows how the settings in *project.json* are represented in the MSBuild/csproj format so you can learn how to use the new format and understand the changes made by the migration tools when you're upgrading your project to the latest version of the tooling.</span></span> 
+<span data-ttu-id="fcde3-106">Tento článek ukazuje, jak nastavení v *project.json* jsou reprezentované ve formátu MSBuild/csproj, takže můžete naučit používat nový formát a pochopit změny provedené pomocí nástrojů pro migraci, když provádíte upgrade projektu pro nejnovější verzi nástrojů.</span><span class="sxs-lookup"><span data-stu-id="fcde3-106">This article shows how the settings in *project.json* are represented in the MSBuild/csproj format so you can learn how to use the new format and understand the changes made by the migration tools when you're upgrading your project to the latest version of the tooling.</span></span> 
  
-## <a name="the-csproj-format"></a><span data-ttu-id="ef2e4-107">Formát csproj</span><span class="sxs-lookup"><span data-stu-id="ef2e4-107">The csproj format</span></span>
+## <a name="the-csproj-format"></a><span data-ttu-id="fcde3-107">Formát csproj</span><span class="sxs-lookup"><span data-stu-id="fcde3-107">The csproj format</span></span>
 
-<span data-ttu-id="ef2e4-108">Nový formát \*.csproj, je ve formátu formátu XML.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-108">The new format, \*.csproj, is an XML-based format.</span></span> <span data-ttu-id="ef2e4-109">Následující příklad ukazuje na kořenový uzel .NET Core projekt pomocí `Microsoft.NET.Sdk`.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-109">The following example shows the root node of a .NET Core project using the `Microsoft.NET.Sdk`.</span></span> <span data-ttu-id="ef2e4-110">Pro webové projekty, je sada SDK používá `Microsoft.NET.Sdk.Web`.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-110">For web projects, the SDK used is `Microsoft.NET.Sdk.Web`.</span></span>
+<span data-ttu-id="fcde3-108">Nový formát \*.csproj, je ve formátu formátu XML.</span><span class="sxs-lookup"><span data-stu-id="fcde3-108">The new format, \*.csproj, is an XML-based format.</span></span> <span data-ttu-id="fcde3-109">Následující příklad ukazuje na kořenový uzel .NET Core projekt pomocí `Microsoft.NET.Sdk`.</span><span class="sxs-lookup"><span data-stu-id="fcde3-109">The following example shows the root node of a .NET Core project using the `Microsoft.NET.Sdk`.</span></span> <span data-ttu-id="fcde3-110">Pro webové projekty, je sada SDK používá `Microsoft.NET.Sdk.Web`.</span><span class="sxs-lookup"><span data-stu-id="fcde3-110">For web projects, the SDK used is `Microsoft.NET.Sdk.Web`.</span></span>
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -34,18 +29,18 @@ ms.lasthandoff: 04/28/2018
 </Project>
 ```
 
-## <a name="common-top-level-properties"></a><span data-ttu-id="ef2e4-111">Běžné vlastnosti nejvyšší úrovně</span><span class="sxs-lookup"><span data-stu-id="ef2e4-111">Common top-level properties</span></span>
+## <a name="common-top-level-properties"></a><span data-ttu-id="fcde3-111">Běžné vlastnosti nejvyšší úrovně</span><span class="sxs-lookup"><span data-stu-id="fcde3-111">Common top-level properties</span></span>
 
-### <a name="name"></a><span data-ttu-id="ef2e4-112">name</span><span class="sxs-lookup"><span data-stu-id="ef2e4-112">name</span></span>
+### <a name="name"></a><span data-ttu-id="fcde3-112">name</span><span class="sxs-lookup"><span data-stu-id="fcde3-112">name</span></span>
 ```json
 {
   "name": "MyProjectName"
 }
 ```
 
-<span data-ttu-id="ef2e4-113">Již není podporována.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-113">No longer supported.</span></span> <span data-ttu-id="ef2e4-114">V csproj ten je daný název souboru projektu, který je definovaný název adresáře.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-114">In csproj, this is determined by the project filename, which is defined by the directory name.</span></span> <span data-ttu-id="ef2e4-115">Například `MyProjectName.csproj`.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-115">For example, `MyProjectName.csproj`.</span></span>
+<span data-ttu-id="fcde3-113">Již není podporována.</span><span class="sxs-lookup"><span data-stu-id="fcde3-113">No longer supported.</span></span> <span data-ttu-id="fcde3-114">V csproj ten je daný název souboru projektu, který je definovaný název adresáře.</span><span class="sxs-lookup"><span data-stu-id="fcde3-114">In csproj, this is determined by the project filename, which is defined by the directory name.</span></span> <span data-ttu-id="fcde3-115">Například `MyProjectName.csproj`.</span><span class="sxs-lookup"><span data-stu-id="fcde3-115">For example, `MyProjectName.csproj`.</span></span>
 
-<span data-ttu-id="ef2e4-116">Ve výchozím nastavení, určuje název souboru projektu také hodnotu `<AssemblyName>` a `<PackageId>` vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-116">By default, the project filename also specifies the value of the `<AssemblyName>` and `<PackageId>` properties.</span></span> 
+<span data-ttu-id="fcde3-116">Ve výchozím nastavení, určuje název souboru projektu také hodnotu `<AssemblyName>` a `<PackageId>` vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="fcde3-116">By default, the project filename also specifies the value of the `<AssemblyName>` and `<PackageId>` properties.</span></span> 
 
 ```xml
 <PropertyGroup>
@@ -54,16 +49,16 @@ ms.lasthandoff: 04/28/2018
 </PropertyGroup>
 ```
 
-<span data-ttu-id="ef2e4-117">`<AssemblyName>` Bude mít jinou hodnotu než `<PackageId>` Pokud `buildOptions\outputName` vlastnost byla definována v souboru project.json.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-117">The `<AssemblyName>` will have a different value than `<PackageId>` if `buildOptions\outputName` property was defined in project.json.</span></span> <span data-ttu-id="ef2e4-118">Další informace najdete v tématu [další běžné možnosti sestavení](#other-common-build-options).</span><span class="sxs-lookup"><span data-stu-id="ef2e4-118">For more information, see [Other common build options](#other-common-build-options).</span></span>
+<span data-ttu-id="fcde3-117">`<AssemblyName>` Bude mít jinou hodnotu než `<PackageId>` Pokud `buildOptions\outputName` vlastnost byla definována v souboru project.json.</span><span class="sxs-lookup"><span data-stu-id="fcde3-117">The `<AssemblyName>` will have a different value than `<PackageId>` if `buildOptions\outputName` property was defined in project.json.</span></span> <span data-ttu-id="fcde3-118">Další informace najdete v tématu [další běžné možnosti sestavení](#other-common-build-options).</span><span class="sxs-lookup"><span data-stu-id="fcde3-118">For more information, see [Other common build options](#other-common-build-options).</span></span>
 
-### <a name="version"></a><span data-ttu-id="ef2e4-119">verze</span><span class="sxs-lookup"><span data-stu-id="ef2e4-119">version</span></span>
+### <a name="version"></a><span data-ttu-id="fcde3-119">verze</span><span class="sxs-lookup"><span data-stu-id="fcde3-119">version</span></span>
 
 ```json
 {
   "version": "1.0.0-alpha-*"
 }
 ```
-<span data-ttu-id="ef2e4-120">Použití `VersionPrefix` a `VersionSuffix` vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="ef2e4-120">Use the `VersionPrefix` and `VersionSuffix` properties:</span></span>
+<span data-ttu-id="fcde3-120">Použití `VersionPrefix` a `VersionSuffix` vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="fcde3-120">Use the `VersionPrefix` and `VersionSuffix` properties:</span></span>
 
 ```xml
 <PropertyGroup>
@@ -72,7 +67,7 @@ ms.lasthandoff: 04/28/2018
 </PropertyGroup>
 ```
 
-<span data-ttu-id="ef2e4-121">Můžete také `Version` vlastnost, ale může přepsat nastavení verze během balení:</span><span class="sxs-lookup"><span data-stu-id="ef2e4-121">You can also use the `Version` property, but this may override version settings during packaging:</span></span>
+<span data-ttu-id="fcde3-121">Můžete také `Version` vlastnost, ale může přepsat nastavení verze během balení:</span><span class="sxs-lookup"><span data-stu-id="fcde3-121">You can also use the `Version` property, but this may override version settings during packaging:</span></span>
 
 ```xml
 <PropertyGroup>
@@ -80,7 +75,7 @@ ms.lasthandoff: 04/28/2018
 </PropertyGroup>
 ```
 
-### <a name="other-common-root-level-options"></a><span data-ttu-id="ef2e4-122">Další běžné možnosti kořenové úrovně</span><span class="sxs-lookup"><span data-stu-id="ef2e4-122">Other common root-level options</span></span>
+### <a name="other-common-root-level-options"></a><span data-ttu-id="fcde3-122">Další běžné možnosti kořenové úrovně</span><span class="sxs-lookup"><span data-stu-id="fcde3-122">Other common root-level options</span></span>
 
 ```json
 {
@@ -107,9 +102,9 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-## <a name="frameworks"></a><span data-ttu-id="ef2e4-123">rozhraní</span><span class="sxs-lookup"><span data-stu-id="ef2e4-123">frameworks</span></span>
+## <a name="frameworks"></a><span data-ttu-id="fcde3-123">rozhraní</span><span class="sxs-lookup"><span data-stu-id="fcde3-123">frameworks</span></span>
 
-### <a name="one-target-framework"></a><span data-ttu-id="ef2e4-124">Jeden cíl framework</span><span class="sxs-lookup"><span data-stu-id="ef2e4-124">One target framework</span></span>
+### <a name="one-target-framework"></a><span data-ttu-id="fcde3-124">Jeden cíl framework</span><span class="sxs-lookup"><span data-stu-id="fcde3-124">One target framework</span></span>
 ```json
 {
   "frameworks": {
@@ -124,7 +119,7 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-### <a name="multiple-target-frameworks"></a><span data-ttu-id="ef2e4-125">Více cílové rozhraní</span><span class="sxs-lookup"><span data-stu-id="ef2e4-125">Multiple target frameworks</span></span>
+### <a name="multiple-target-frameworks"></a><span data-ttu-id="fcde3-125">Více cílové rozhraní</span><span class="sxs-lookup"><span data-stu-id="fcde3-125">Multiple target frameworks</span></span>
 
 ```json
 {
@@ -135,7 +130,7 @@ And it's really great!</Description>
 }
 ```
 
-<span data-ttu-id="ef2e4-126">Použití `TargetFrameworks` vlastnost můžete definovat seznam cílové architektury.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-126">Use the `TargetFrameworks` property to define your list of target frameworks.</span></span> <span data-ttu-id="ef2e4-127">K oddělení více hodnot framework použijte oddělte středníkem.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-127">Use semi-colon to separate multiple framework values.</span></span> 
+<span data-ttu-id="fcde3-126">Použití `TargetFrameworks` vlastnost můžete definovat seznam cílové architektury.</span><span class="sxs-lookup"><span data-stu-id="fcde3-126">Use the `TargetFrameworks` property to define your list of target frameworks.</span></span> <span data-ttu-id="fcde3-127">K oddělení více hodnot framework použijte oddělte středníkem.</span><span class="sxs-lookup"><span data-stu-id="fcde3-127">Use semi-colon to separate multiple framework values.</span></span> 
 
 ```xml
 <PropertyGroup>
@@ -143,12 +138,12 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-## <a name="dependencies"></a><span data-ttu-id="ef2e4-128">závislosti</span><span class="sxs-lookup"><span data-stu-id="ef2e4-128">dependencies</span></span>
+## <a name="dependencies"></a><span data-ttu-id="fcde3-128">závislosti</span><span class="sxs-lookup"><span data-stu-id="fcde3-128">dependencies</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="ef2e4-129">Pokud je závislost **projektu** a nejedná se o balíček, formát se liší.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-129">If the dependency is a **project** and not a package, the format is different.</span></span> <span data-ttu-id="ef2e4-130">Další informace najdete v tématu [typ závislosti](#dependency-type) části.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-130">For more information, see the [dependency type](#dependency-type) section.</span></span>
+> <span data-ttu-id="fcde3-129">Pokud je závislost **projektu** a nejedná se o balíček, formát se liší.</span><span class="sxs-lookup"><span data-stu-id="fcde3-129">If the dependency is a **project** and not a package, the format is different.</span></span> <span data-ttu-id="fcde3-130">Další informace najdete v tématu [typ závislosti](#dependency-type) části.</span><span class="sxs-lookup"><span data-stu-id="fcde3-130">For more information, see the [dependency type](#dependency-type) section.</span></span>
 
-### <a name="netstandardlibrary-metapackage"></a><span data-ttu-id="ef2e4-131">NETStandard.Library metapackage</span><span class="sxs-lookup"><span data-stu-id="ef2e4-131">NETStandard.Library metapackage</span></span>
+### <a name="netstandardlibrary-metapackage"></a><span data-ttu-id="fcde3-131">NETStandard.Library metapackage</span><span class="sxs-lookup"><span data-stu-id="fcde3-131">NETStandard.Library metapackage</span></span>
 
 ```json
 {
@@ -164,7 +159,7 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-### <a name="microsoftnetcoreapp-metapackage"></a><span data-ttu-id="ef2e4-132">Microsoft.NETCore.App metapackage</span><span class="sxs-lookup"><span data-stu-id="ef2e4-132">Microsoft.NETCore.App metapackage</span></span>
+### <a name="microsoftnetcoreapp-metapackage"></a><span data-ttu-id="fcde3-132">Microsoft.NETCore.App metapackage</span><span class="sxs-lookup"><span data-stu-id="fcde3-132">Microsoft.NETCore.App metapackage</span></span>
 
 ```json
 {
@@ -180,9 +175,9 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-<span data-ttu-id="ef2e4-133">Všimněte si, že `<RuntimeFrameworkVersion>` hodnota v migrovaných projektu je dáno verzi sady SDK, které jste nainstalovali.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-133">Note that the `<RuntimeFrameworkVersion>` value in the migrated project is determined by the version of the SDK you have installed.</span></span>
+<span data-ttu-id="fcde3-133">Všimněte si, že `<RuntimeFrameworkVersion>` hodnota v migrovaných projektu je dáno verzi sady SDK, které jste nainstalovali.</span><span class="sxs-lookup"><span data-stu-id="fcde3-133">Note that the `<RuntimeFrameworkVersion>` value in the migrated project is determined by the version of the SDK you have installed.</span></span>
 
-### <a name="top-level-dependencies"></a><span data-ttu-id="ef2e4-134">Nejvyšší úrovně závislosti</span><span class="sxs-lookup"><span data-stu-id="ef2e4-134">Top-level dependencies</span></span>
+### <a name="top-level-dependencies"></a><span data-ttu-id="fcde3-134">Nejvyšší úrovně závislosti</span><span class="sxs-lookup"><span data-stu-id="fcde3-134">Top-level dependencies</span></span>
 ```json
 {
   "dependencies": {
@@ -197,7 +192,7 @@ And it's really great!</Description>
 </ItemGroup>
 ```
 
-### <a name="per-framework-dependencies"></a><span data-ttu-id="ef2e4-135">Závislosti za architektury</span><span class="sxs-lookup"><span data-stu-id="ef2e4-135">Per-framework dependencies</span></span>
+### <a name="per-framework-dependencies"></a><span data-ttu-id="fcde3-135">Závislosti za architektury</span><span class="sxs-lookup"><span data-stu-id="fcde3-135">Per-framework dependencies</span></span>
 ```json
 {
   "framework": {
@@ -225,7 +220,7 @@ And it's really great!</Description>
 </ItemGroup>
 ```
 
-### <a name="imports"></a><span data-ttu-id="ef2e4-136">importy</span><span class="sxs-lookup"><span data-stu-id="ef2e4-136">imports</span></span>
+### <a name="imports"></a><span data-ttu-id="fcde3-136">importy</span><span class="sxs-lookup"><span data-stu-id="fcde3-136">imports</span></span>
 
 ```json
 {
@@ -252,9 +247,9 @@ And it's really great!</Description>
 </ItemGroup>
 ```
 
-### <a name="dependency-type"></a><span data-ttu-id="ef2e4-137">Typ závislosti</span><span class="sxs-lookup"><span data-stu-id="ef2e4-137">dependency type</span></span>
+### <a name="dependency-type"></a><span data-ttu-id="fcde3-137">Typ závislosti</span><span class="sxs-lookup"><span data-stu-id="fcde3-137">dependency type</span></span>
 
-#### <a name="type-project"></a><span data-ttu-id="ef2e4-138">Typ: projektu</span><span class="sxs-lookup"><span data-stu-id="ef2e4-138">type: project</span></span>
+#### <a name="type-project"></a><span data-ttu-id="fcde3-138">Typ: projektu</span><span class="sxs-lookup"><span data-stu-id="fcde3-138">type: project</span></span>
 ```json
 {
   "dependencies": {
@@ -274,10 +269,10 @@ And it's really great!</Description>
 ```
 
 > [!NOTE]
-> <span data-ttu-id="ef2e4-139">Tím by došlo k přerušení způsob který `dotnet pack --version-suffix $suffix` Určuje verzi závislostí odkaz na projekt.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-139">This will break the way that `dotnet pack --version-suffix $suffix` determines the dependency version of a project reference.</span></span>
+> <span data-ttu-id="fcde3-139">Tím by došlo k přerušení způsob který `dotnet pack --version-suffix $suffix` Určuje verzi závislostí odkaz na projekt.</span><span class="sxs-lookup"><span data-stu-id="fcde3-139">This will break the way that `dotnet pack --version-suffix $suffix` determines the dependency version of a project reference.</span></span>
 
 
-#### <a name="type-build"></a><span data-ttu-id="ef2e4-140">Typ: sestavení</span><span class="sxs-lookup"><span data-stu-id="ef2e4-140">type: build</span></span>
+#### <a name="type-build"></a><span data-ttu-id="fcde3-140">Typ: sestavení</span><span class="sxs-lookup"><span data-stu-id="fcde3-140">type: build</span></span>
 ```json
 {
   "dependencies": {
@@ -295,7 +290,7 @@ And it's really great!</Description>
 </ItemGroup>
 ```
 
-#### <a name="type-platform"></a><span data-ttu-id="ef2e4-141">Typ: platforma</span><span class="sxs-lookup"><span data-stu-id="ef2e4-141">type: platform</span></span>
+#### <a name="type-platform"></a><span data-ttu-id="fcde3-141">Typ: platforma</span><span class="sxs-lookup"><span data-stu-id="fcde3-141">type: platform</span></span>
 ```json
 {
   "dependencies": {
@@ -307,9 +302,9 @@ And it's really great!</Description>
 }
 ```
 
-<span data-ttu-id="ef2e4-142">V csproj není žádný ekvivalent.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-142">There is no equivalent in csproj.</span></span> 
+<span data-ttu-id="fcde3-142">V csproj není žádný ekvivalent.</span><span class="sxs-lookup"><span data-stu-id="fcde3-142">There is no equivalent in csproj.</span></span> 
 
-## <a name="runtimes"></a><span data-ttu-id="ef2e4-143">Moduly runtime</span><span class="sxs-lookup"><span data-stu-id="ef2e4-143">runtimes</span></span>
+## <a name="runtimes"></a><span data-ttu-id="fcde3-143">Moduly runtime</span><span class="sxs-lookup"><span data-stu-id="fcde3-143">runtimes</span></span>
 ```json
 {
   "runtimes": {
@@ -326,15 +321,15 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-### <a name="standalone-apps-self-contained-deployment"></a><span data-ttu-id="ef2e4-144">Samostatné aplikace (samostatná nasazení)</span><span class="sxs-lookup"><span data-stu-id="ef2e4-144">Standalone apps (self-contained deployment)</span></span>
-<span data-ttu-id="ef2e4-145">V souboru project.json definování `runtimes` části znamená byla aplikace samostatné během sestavení a publikování.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-145">In project.json, defining a `runtimes` section means the app was standalone during build and publish.</span></span>
-<span data-ttu-id="ef2e4-146">V nástroji MSBuild, jsou všechny projekty *přenosné* během vytváření sestavení, ale mohou být uvedeny jako samostatné.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-146">In MSBuild, all projects are *portable* during build, but can be published as standalone.</span></span>
+### <a name="standalone-apps-self-contained-deployment"></a><span data-ttu-id="fcde3-144">Samostatné aplikace (samostatná nasazení)</span><span class="sxs-lookup"><span data-stu-id="fcde3-144">Standalone apps (self-contained deployment)</span></span>
+<span data-ttu-id="fcde3-145">V souboru project.json definování `runtimes` části znamená byla aplikace samostatné během sestavení a publikování.</span><span class="sxs-lookup"><span data-stu-id="fcde3-145">In project.json, defining a `runtimes` section means the app was standalone during build and publish.</span></span>
+<span data-ttu-id="fcde3-146">V nástroji MSBuild, jsou všechny projekty *přenosné* během vytváření sestavení, ale mohou být uvedeny jako samostatné.</span><span class="sxs-lookup"><span data-stu-id="fcde3-146">In MSBuild, all projects are *portable* during build, but can be published as standalone.</span></span>
 
 `dotnet publish --framework netcoreapp1.0 --runtime osx.10.11-x64`
 
-<span data-ttu-id="ef2e4-147">Další informace najdete v tématu [samostatná nasazení (SCD)](../deploying/index.md#self-contained-deployments-scd).</span><span class="sxs-lookup"><span data-stu-id="ef2e4-147">For more information, see [Self-contained deployments (SCD)](../deploying/index.md#self-contained-deployments-scd).</span></span>
+<span data-ttu-id="fcde3-147">Další informace najdete v tématu [samostatná nasazení (SCD)](../deploying/index.md#self-contained-deployments-scd).</span><span class="sxs-lookup"><span data-stu-id="fcde3-147">For more information, see [Self-contained deployments (SCD)](../deploying/index.md#self-contained-deployments-scd).</span></span>
 
-## <a name="tools"></a><span data-ttu-id="ef2e4-148">nástroje</span><span class="sxs-lookup"><span data-stu-id="ef2e4-148">tools</span></span>
+## <a name="tools"></a><span data-ttu-id="fcde3-148">nástroje</span><span class="sxs-lookup"><span data-stu-id="fcde3-148">tools</span></span>
 ```json
 {
   "tools": {
@@ -350,13 +345,13 @@ And it's really great!</Description>
 ```
 
 > [!NOTE]
-> <span data-ttu-id="ef2e4-149">`imports` nástroje, nejsou podporovány v csproj.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-149">`imports` on tools are not supported in csproj.</span></span> <span data-ttu-id="ef2e4-150">Nástroje, které je třeba importy nebude fungovat s novým `Microsoft.NET.Sdk`.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-150">Tools that need imports will not work with the new `Microsoft.NET.Sdk`.</span></span>
+> <span data-ttu-id="fcde3-149">`imports` nástroje, nejsou podporovány v csproj.</span><span class="sxs-lookup"><span data-stu-id="fcde3-149">`imports` on tools are not supported in csproj.</span></span> <span data-ttu-id="fcde3-150">Nástroje, které je třeba importy nebude fungovat s novým `Microsoft.NET.Sdk`.</span><span class="sxs-lookup"><span data-stu-id="fcde3-150">Tools that need imports will not work with the new `Microsoft.NET.Sdk`.</span></span>
 
-## <a name="buildoptions"></a><span data-ttu-id="ef2e4-151">buildOptions</span><span class="sxs-lookup"><span data-stu-id="ef2e4-151">buildOptions</span></span>
+## <a name="buildoptions"></a><span data-ttu-id="fcde3-151">buildOptions</span><span class="sxs-lookup"><span data-stu-id="fcde3-151">buildOptions</span></span>
 
-<span data-ttu-id="ef2e4-152">Viz také [soubory](#files).</span><span class="sxs-lookup"><span data-stu-id="ef2e4-152">See also [Files](#files).</span></span>
+<span data-ttu-id="fcde3-152">Viz také [soubory](#files).</span><span class="sxs-lookup"><span data-stu-id="fcde3-152">See also [Files](#files).</span></span>
 
-### <a name="emitentrypoint"></a><span data-ttu-id="ef2e4-153">emitEntryPoint</span><span class="sxs-lookup"><span data-stu-id="ef2e4-153">emitEntryPoint</span></span>
+### <a name="emitentrypoint"></a><span data-ttu-id="fcde3-153">emitEntryPoint</span><span class="sxs-lookup"><span data-stu-id="fcde3-153">emitEntryPoint</span></span>
 
 ```json
 {
@@ -372,7 +367,7 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-<span data-ttu-id="ef2e4-154">Pokud `emitEntryPoint` byla `false`, hodnota `OutputType` jsou převedeny na `Library`, což je výchozí hodnota:</span><span class="sxs-lookup"><span data-stu-id="ef2e4-154">If `emitEntryPoint` was `false`, the value of `OutputType` is converted to `Library`, which is the default value:</span></span>
+<span data-ttu-id="fcde3-154">Pokud `emitEntryPoint` byla `false`, hodnota `OutputType` jsou převedeny na `Library`, což je výchozí hodnota:</span><span class="sxs-lookup"><span data-stu-id="fcde3-154">If `emitEntryPoint` was `false`, the value of `OutputType` is converted to `Library`, which is the default value:</span></span>
 
 ```json
 {
@@ -389,7 +384,7 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-### <a name="keyfile"></a><span data-ttu-id="ef2e4-155">keyFile</span><span class="sxs-lookup"><span data-stu-id="ef2e4-155">keyFile</span></span>
+### <a name="keyfile"></a><span data-ttu-id="fcde3-155">keyFile</span><span class="sxs-lookup"><span data-stu-id="fcde3-155">keyFile</span></span>
 
 ```json
 {
@@ -399,7 +394,7 @@ And it's really great!</Description>
 }
 ```
 
-<span data-ttu-id="ef2e4-156">`keyFile` Element zasahuje do tří vlastnosti v nástroji MSBuild:</span><span class="sxs-lookup"><span data-stu-id="ef2e4-156">The `keyFile` element expands to three properties in MSBuild:</span></span>
+<span data-ttu-id="fcde3-156">`keyFile` Element zasahuje do tří vlastnosti v nástroji MSBuild:</span><span class="sxs-lookup"><span data-stu-id="fcde3-156">The `keyFile` element expands to three properties in MSBuild:</span></span>
 
 ```xml
 <PropertyGroup>
@@ -409,7 +404,7 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-### <a name="other-common-build-options"></a><span data-ttu-id="ef2e4-157">Další běžné možnosti sestavení</span><span class="sxs-lookup"><span data-stu-id="ef2e4-157">Other common build options</span></span>
+### <a name="other-common-build-options"></a><span data-ttu-id="fcde3-157">Další běžné možnosti sestavení</span><span class="sxs-lookup"><span data-stu-id="fcde3-157">Other common build options</span></span>
 
 ```json
 {
@@ -439,11 +434,11 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-## <a name="packoptions"></a><span data-ttu-id="ef2e4-158">packOptions</span><span class="sxs-lookup"><span data-stu-id="ef2e4-158">packOptions</span></span>
+## <a name="packoptions"></a><span data-ttu-id="fcde3-158">packOptions</span><span class="sxs-lookup"><span data-stu-id="fcde3-158">packOptions</span></span>
 
-<span data-ttu-id="ef2e4-159">Viz také [soubory](#files).</span><span class="sxs-lookup"><span data-stu-id="ef2e4-159">See also [Files](#files).</span></span>
+<span data-ttu-id="fcde3-159">Viz také [soubory](#files).</span><span class="sxs-lookup"><span data-stu-id="fcde3-159">See also [Files](#files).</span></span>
 
-### <a name="common-pack-options"></a><span data-ttu-id="ef2e4-160">Běžné možnosti pack</span><span class="sxs-lookup"><span data-stu-id="ef2e4-160">Common pack options</span></span>
+### <a name="common-pack-options"></a><span data-ttu-id="fcde3-160">Běžné možnosti pack</span><span class="sxs-lookup"><span data-stu-id="fcde3-160">Common pack options</span></span>
 
 ```json
 {
@@ -479,9 +474,9 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-<span data-ttu-id="ef2e4-161">Není k dispozici žádný ekvivalent `owners` element v nástroji MSBuild.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-161">There is no equivalent for the `owners` element in MSBuild.</span></span> <span data-ttu-id="ef2e4-162">Pro `summary`, můžete použít MSBuild `<Description>` vlastnost, i když hodnota `summary` není automaticky migrovat na tuto vlastnost, protože tuto vlastnost je namapována na [ `description` ](#-other-common-root-level-options) element.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-162">For `summary`, you can use the MSBuild `<Description>` property, even though the value of `summary` is not migrated automatically to that property, since that property is mapped to the [`description`](#-other-common-root-level-options) element.</span></span>
+<span data-ttu-id="fcde3-161">Není k dispozici žádný ekvivalent `owners` element v nástroji MSBuild.</span><span class="sxs-lookup"><span data-stu-id="fcde3-161">There is no equivalent for the `owners` element in MSBuild.</span></span> <span data-ttu-id="fcde3-162">Pro `summary`, můžete použít MSBuild `<Description>` vlastnost, i když hodnota `summary` není automaticky migrovat na tuto vlastnost, protože tuto vlastnost je namapována na [ `description` ](#-other-common-root-level-options) element.</span><span class="sxs-lookup"><span data-stu-id="fcde3-162">For `summary`, you can use the MSBuild `<Description>` property, even though the value of `summary` is not migrated automatically to that property, since that property is mapped to the [`description`](#-other-common-root-level-options) element.</span></span>
 
-## <a name="scripts"></a><span data-ttu-id="ef2e4-163">skripty</span><span class="sxs-lookup"><span data-stu-id="ef2e4-163">scripts</span></span>
+## <a name="scripts"></a><span data-ttu-id="fcde3-163">skripty</span><span class="sxs-lookup"><span data-stu-id="fcde3-163">scripts</span></span>
 
 ```json
 {
@@ -492,7 +487,7 @@ And it's really great!</Description>
 }
 ```
 
-<span data-ttu-id="ef2e4-164">Jsou jejich ekvivalent v nástroji MSBuild [cíle](/visualstudio/msbuild/msbuild-targets):</span><span class="sxs-lookup"><span data-stu-id="ef2e4-164">Their equivalent in MSBuild are [targets](/visualstudio/msbuild/msbuild-targets):</span></span>
+<span data-ttu-id="fcde3-164">Jsou jejich ekvivalent v nástroji MSBuild [cíle](/visualstudio/msbuild/msbuild-targets):</span><span class="sxs-lookup"><span data-stu-id="fcde3-164">Their equivalent in MSBuild are [targets](/visualstudio/msbuild/msbuild-targets):</span></span>
 
 ```xml
 <Target Name="MyPreCompileTarget" BeforeTargets="Build">
@@ -506,7 +501,7 @@ And it's really great!</Description>
 ```
 
 
-## <a name="runtimeoptions"></a><span data-ttu-id="ef2e4-165">runtimeOptions</span><span class="sxs-lookup"><span data-stu-id="ef2e4-165">runtimeOptions</span></span>
+## <a name="runtimeoptions"></a><span data-ttu-id="fcde3-165">runtimeOptions</span><span class="sxs-lookup"><span data-stu-id="fcde3-165">runtimeOptions</span></span>
 
 ```json
 {
@@ -522,7 +517,7 @@ And it's really great!</Description>
 }
 ```
 
-<span data-ttu-id="ef2e4-166">Všechna nastavení v této skupině s výjimkou vlastnost "System.GC.Server" se umístí do souboru s názvem *runtimeconfig.template.json* ve složce projektu s možnostmi nahoru, aby se kořenový objekt během procesu migrace:</span><span class="sxs-lookup"><span data-stu-id="ef2e4-166">All settings in this group, except for the "System.GC.Server" property, are placed into a file called *runtimeconfig.template.json* in the project folder, with options lifted to the root object during the migration process:</span></span>
+<span data-ttu-id="fcde3-166">Všechna nastavení v této skupině s výjimkou vlastnost "System.GC.Server" se umístí do souboru s názvem *runtimeconfig.template.json* ve složce projektu s možnostmi nahoru, aby se kořenový objekt během procesu migrace:</span><span class="sxs-lookup"><span data-stu-id="fcde3-166">All settings in this group, except for the "System.GC.Server" property, are placed into a file called *runtimeconfig.template.json* in the project folder, with options lifted to the root object during the migration process:</span></span>
 
 ```json
 {
@@ -535,14 +530,14 @@ And it's really great!</Description>
 }
 ```
 
-<span data-ttu-id="ef2e4-167">Vlastnost "System.GC.Server" je do souboru csproj migrovat:</span><span class="sxs-lookup"><span data-stu-id="ef2e4-167">The "System.GC.Server" property is migrated into the csproj file:</span></span>
+<span data-ttu-id="fcde3-167">Vlastnost "System.GC.Server" je do souboru csproj migrovat:</span><span class="sxs-lookup"><span data-stu-id="fcde3-167">The "System.GC.Server" property is migrated into the csproj file:</span></span>
 ```xml
 <PropertyGroup>
   <ServerGarbageCollection>true</ServerGarbageCollection>
 </PropertyGroup>
 ```
 
-<span data-ttu-id="ef2e4-168">V csproj a také vlastnosti nástroje MSBuild však můžete nastavit tyto hodnoty:</span><span class="sxs-lookup"><span data-stu-id="ef2e4-168">However, you can set all those values in the csproj as well as MSBuild properties:</span></span>
+<span data-ttu-id="fcde3-168">V csproj a také vlastnosti nástroje MSBuild však můžete nastavit tyto hodnoty:</span><span class="sxs-lookup"><span data-stu-id="fcde3-168">However, you can set all those values in the csproj as well as MSBuild properties:</span></span>
 ```xml
 <PropertyGroup>
   <ServerGarbageCollection>true</ServerGarbageCollection>
@@ -553,19 +548,19 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-## <a name="shared"></a><span data-ttu-id="ef2e4-169">shared</span><span class="sxs-lookup"><span data-stu-id="ef2e4-169">shared</span></span>
+## <a name="shared"></a><span data-ttu-id="fcde3-169">shared</span><span class="sxs-lookup"><span data-stu-id="fcde3-169">shared</span></span>
 ```json
 {
   "shared": "shared/**/*.cs"
 }
 ```
 
-<span data-ttu-id="ef2e4-170">Nepodporované ve csproj.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-170">Not supported in csproj.</span></span> <span data-ttu-id="ef2e4-171">Místo toho musíte vytvořit zahrnout soubory obsahu v vaše *příponou .nuspec* souboru.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-171">You must instead create include content files in your *.nuspec* file.</span></span> <span data-ttu-id="ef2e4-172">Další informace najdete v tématu [včetně soubory obsahu](/nuget/schema/nuspec#including-content-files).</span><span class="sxs-lookup"><span data-stu-id="ef2e4-172">For more information, see [Including content files](/nuget/schema/nuspec#including-content-files).</span></span>
+<span data-ttu-id="fcde3-170">Nepodporované ve csproj.</span><span class="sxs-lookup"><span data-stu-id="fcde3-170">Not supported in csproj.</span></span> <span data-ttu-id="fcde3-171">Místo toho musíte vytvořit zahrnout soubory obsahu v vaše *příponou .nuspec* souboru.</span><span class="sxs-lookup"><span data-stu-id="fcde3-171">You must instead create include content files in your *.nuspec* file.</span></span> <span data-ttu-id="fcde3-172">Další informace najdete v tématu [včetně soubory obsahu](/nuget/schema/nuspec#including-content-files).</span><span class="sxs-lookup"><span data-stu-id="fcde3-172">For more information, see [Including content files](/nuget/schema/nuspec#including-content-files).</span></span>
 
-## <a name="files"></a><span data-ttu-id="ef2e4-173">soubory </span><span class="sxs-lookup"><span data-stu-id="ef2e4-173">files</span></span>
+## <a name="files"></a><span data-ttu-id="fcde3-173">soubory </span><span class="sxs-lookup"><span data-stu-id="fcde3-173">files</span></span>
 
-<span data-ttu-id="ef2e4-174">V *project.json*, sestavení a aktualizací Service pack může rozšířit na zkompilování a vložit z jiné složky.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-174">In *project.json*, build and pack could be extended to compile and embed from different folders.</span></span>
-<span data-ttu-id="ef2e4-175">V nástroji MSBuild, to se provádí pomocí [položky](/visualstudio/msbuild/common-msbuild-project-items).</span><span class="sxs-lookup"><span data-stu-id="ef2e4-175">In MSBuild, this is done using [items](/visualstudio/msbuild/common-msbuild-project-items).</span></span> <span data-ttu-id="ef2e4-176">V následujícím příkladu je běžné převod:</span><span class="sxs-lookup"><span data-stu-id="ef2e4-176">The following example is a common conversion:</span></span>
+<span data-ttu-id="fcde3-174">V *project.json*, sestavení a aktualizací Service pack může rozšířit na zkompilování a vložit z jiné složky.</span><span class="sxs-lookup"><span data-stu-id="fcde3-174">In *project.json*, build and pack could be extended to compile and embed from different folders.</span></span>
+<span data-ttu-id="fcde3-175">V nástroji MSBuild, to se provádí pomocí [položky](/visualstudio/msbuild/common-msbuild-project-items).</span><span class="sxs-lookup"><span data-stu-id="fcde3-175">In MSBuild, this is done using [items](/visualstudio/msbuild/common-msbuild-project-items).</span></span> <span data-ttu-id="fcde3-176">V následujícím příkladu je běžné převod:</span><span class="sxs-lookup"><span data-stu-id="fcde3-176">The following example is a common conversion:</span></span>
 
 ```json
 {
@@ -611,20 +606,20 @@ And it's really great!</Description>
 ```
 
 > [!NOTE]
-> <span data-ttu-id="ef2e4-177">Mnoho výchozí [expanze názvů vzory](https://en.wikipedia.org/wiki/Glob_(programming)) automaticky přidá .NET Core SDK.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-177">Many of the default [globbing patterns](https://en.wikipedia.org/wiki/Glob_(programming)) are added automatically by the .NET Core SDK.</span></span>
-> <span data-ttu-id="ef2e4-178">Další informace najdete v tématu [výchozí hodnoty položky zkompilovat](https://aka.ms/sdkimplicititems).</span><span class="sxs-lookup"><span data-stu-id="ef2e4-178">For more information, see [Default Compile Item Values](https://aka.ms/sdkimplicititems).</span></span>
+> <span data-ttu-id="fcde3-177">Mnoho výchozí [expanze názvů vzory](https://en.wikipedia.org/wiki/Glob_(programming)) automaticky přidá .NET Core SDK.</span><span class="sxs-lookup"><span data-stu-id="fcde3-177">Many of the default [globbing patterns](https://en.wikipedia.org/wiki/Glob_(programming)) are added automatically by the .NET Core SDK.</span></span>
+> <span data-ttu-id="fcde3-178">Další informace najdete v tématu [výchozí hodnoty položky zkompilovat](https://aka.ms/sdkimplicititems).</span><span class="sxs-lookup"><span data-stu-id="fcde3-178">For more information, see [Default Compile Item Values](https://aka.ms/sdkimplicititems).</span></span>
 
-<span data-ttu-id="ef2e4-179">Všechny nástroje MSBuild `ItemGroup` podporují elementy `Include`, `Exclude`, a `Remove`.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-179">All MSBuild `ItemGroup` elements support `Include`, `Exclude`, and `Remove`.</span></span>
+<span data-ttu-id="fcde3-179">Všechny nástroje MSBuild `ItemGroup` podporují elementy `Include`, `Exclude`, a `Remove`.</span><span class="sxs-lookup"><span data-stu-id="fcde3-179">All MSBuild `ItemGroup` elements support `Include`, `Exclude`, and `Remove`.</span></span>
 
-<span data-ttu-id="ef2e4-180">Můžete změnit rozložení balíček uvnitř .nupkg `PackagePath="path"`.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-180">Package layout inside the .nupkg can be modified with `PackagePath="path"`.</span></span>
+<span data-ttu-id="fcde3-180">Můžete změnit rozložení balíček uvnitř .nupkg `PackagePath="path"`.</span><span class="sxs-lookup"><span data-stu-id="fcde3-180">Package layout inside the .nupkg can be modified with `PackagePath="path"`.</span></span>
 
-<span data-ttu-id="ef2e4-181">S výjimkou `Content`, většina skupiny položek vyžadují explicitně přidání `Pack="true"` mají být zahrnuty v balíčku.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-181">Except for `Content`, most item groups require explicitly adding `Pack="true"` to be included in the package.</span></span> <span data-ttu-id="ef2e4-182">`Content` budou umístěny do *obsah* složky v balíčku od MSBuild `<IncludeContentInPack>` je nastavena na `true` ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-182">`Content` will be put in the *content* folder in a package since the MSBuild `<IncludeContentInPack>` property is set to `true` by default.</span></span> <span data-ttu-id="ef2e4-183">Další informace najdete v tématu [včetně obsahu v balíčku](/nuget/schema/msbuild-targets#including-content-in-a-package).</span><span class="sxs-lookup"><span data-stu-id="ef2e4-183">For more information, see [Including content in a package](/nuget/schema/msbuild-targets#including-content-in-a-package).</span></span>
+<span data-ttu-id="fcde3-181">S výjimkou `Content`, většina skupiny položek vyžadují explicitně přidání `Pack="true"` mají být zahrnuty v balíčku.</span><span class="sxs-lookup"><span data-stu-id="fcde3-181">Except for `Content`, most item groups require explicitly adding `Pack="true"` to be included in the package.</span></span> <span data-ttu-id="fcde3-182">`Content` budou umístěny do *obsah* složky v balíčku od MSBuild `<IncludeContentInPack>` je nastavena na `true` ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="fcde3-182">`Content` will be put in the *content* folder in a package since the MSBuild `<IncludeContentInPack>` property is set to `true` by default.</span></span> <span data-ttu-id="fcde3-183">Další informace najdete v tématu [včetně obsahu v balíčku](/nuget/schema/msbuild-targets#including-content-in-a-package).</span><span class="sxs-lookup"><span data-stu-id="fcde3-183">For more information, see [Including content in a package](/nuget/schema/msbuild-targets#including-content-in-a-package).</span></span>
 
-<span data-ttu-id="ef2e4-184">`PackagePath="%(Identity)"` je krátký způsob nastavení na cestu k souboru projektu relativní cestu k balíčku.</span><span class="sxs-lookup"><span data-stu-id="ef2e4-184">`PackagePath="%(Identity)"` is a short way of setting package path to the project-relative file path.</span></span>
+<span data-ttu-id="fcde3-184">`PackagePath="%(Identity)"` je krátký způsob nastavení na cestu k souboru projektu relativní cestu k balíčku.</span><span class="sxs-lookup"><span data-stu-id="fcde3-184">`PackagePath="%(Identity)"` is a short way of setting package path to the project-relative file path.</span></span>
 
-## <a name="testrunner"></a><span data-ttu-id="ef2e4-185">testRunner</span><span class="sxs-lookup"><span data-stu-id="ef2e4-185">testRunner</span></span>
+## <a name="testrunner"></a><span data-ttu-id="fcde3-185">testRunner</span><span class="sxs-lookup"><span data-stu-id="fcde3-185">testRunner</span></span>
 
-### <a name="xunit"></a><span data-ttu-id="ef2e4-186">xUnit</span><span class="sxs-lookup"><span data-stu-id="ef2e4-186">xUnit</span></span>
+### <a name="xunit"></a><span data-ttu-id="fcde3-186">xUnit</span><span class="sxs-lookup"><span data-stu-id="fcde3-186">xUnit</span></span>
 
 ```json
 {
@@ -643,7 +638,7 @@ And it's really great!</Description>
 </ItemGroup>
 ```
 
-### <a name="mstest"></a><span data-ttu-id="ef2e4-187">MSTest</span><span class="sxs-lookup"><span data-stu-id="ef2e4-187">MSTest</span></span>
+### <a name="mstest"></a><span data-ttu-id="fcde3-187">MSTest</span><span class="sxs-lookup"><span data-stu-id="fcde3-187">MSTest</span></span>
 
 ```json
 {
@@ -662,6 +657,6 @@ And it's really great!</Description>
 </ItemGroup>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="ef2e4-188">Viz také</span><span class="sxs-lookup"><span data-stu-id="ef2e4-188">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fcde3-188">Viz také</span><span class="sxs-lookup"><span data-stu-id="fcde3-188">See Also</span></span>
 
-[<span data-ttu-id="ef2e4-189">Souhrnné informace o změnách v rozhraní příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="ef2e4-189">High-level overview of changes in CLI</span></span>](../tools/cli-msbuild-architecture.md)
+[<span data-ttu-id="fcde3-189">Souhrnné informace o změnách v rozhraní příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="fcde3-189">High-level overview of changes in CLI</span></span>](../tools/cli-msbuild-architecture.md)
