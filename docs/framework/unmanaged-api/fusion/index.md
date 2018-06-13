@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33428586"
 ---
 # <a name="fusion-unmanaged-api-reference"></a>Fúze (referenční dokumentace nespravovaného rozhraní API)
 Rozhraní API fusion umožňuje hostitele modulu runtime pro přístup k vlastnostem prostředky aplikace, aby bylo možné najít správnou verzí tyto prostředky pro aplikaci.  

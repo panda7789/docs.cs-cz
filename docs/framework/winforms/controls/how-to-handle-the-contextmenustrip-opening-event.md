@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531859"
 ---
 # <a name="how-to-handle-the-contextmenustrip-opening-event"></a>Postupy: Zpracování události otevření ContextMenuStrip
 Můžete přizpůsobit chování vaší <xref:System.Windows.Forms.ContextMenuStrip> ovládacího prvku ve zpracování <xref:System.Windows.Forms.ToolStripDropDown.Opening> událostí.  

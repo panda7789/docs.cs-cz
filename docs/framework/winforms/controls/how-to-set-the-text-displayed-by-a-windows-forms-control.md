@@ -26,6 +26,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535610"
 ---
 # <a name="how-to-set-the-text-displayed-by-a-windows-forms-control"></a>Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms
 Ovládací prvky Windows Forms obvykle zobrazí text související s primární funkce ovládacího prvku. Například <xref:System.Windows.Forms.Button> obvykle zobrazí popisek indikující, jaká akce se provede při kliknutí na tlačítko. Pro všechny ovládací prvky, můžete nastavit nebo vrátí text s použitím <xref:System.Windows.Forms.Control.Text%2A> vlastnost. Písmo můžete změnit pomocí <xref:System.Windows.Forms.Control.Font%2A> vlastnost. Můžete také nastavit text pomocí návrháře.  Také najdete v části [postup: vytvoření přístup klíčů pro Windows Forms – ovládací prvky pomocí návrháře](http://msdn.microsoft.com/library/ms233673\(v=vs.110\)), [postup: nastavení zobrazí Text s použitím ovládacího prvku Windows Forms návrháře](http://msdn.microsoft.com/library/ms233665\(v=vs.110\)), [postupy: nastavení obrázku Zobrazí ve Windows Forms pomocí návrháře ovládacího prvku](http://msdn.microsoft.com/library/ms233656\(v=vs.110\)).  

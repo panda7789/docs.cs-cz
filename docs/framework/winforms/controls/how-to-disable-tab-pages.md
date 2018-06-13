@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534264"
 ---
 # <a name="how-to-disable-tab-pages"></a>Postupy: Zákaz stránek karet
 V některých případech můžete omezit přístup k datům, která je k dispozici v rámci vaší aplikace Windows Forms. Příkladem toho může být v případě, že se data zobrazí na kartě stránkách ovládacího prvku karta; Správce může mít informace na kartě stránky, kterou chcete omezit hosta nebo nižší úrovně uživatelů.  

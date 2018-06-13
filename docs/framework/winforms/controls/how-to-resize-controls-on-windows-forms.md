@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533923"
 ---
 # <a name="how-to-resize-controls-on-windows-forms"></a>Postupy: Změna velikosti ovládacích prvků ve formulářích Windows
 Můžete změnit velikost jednotlivých ovládacích prvků, a můžete změnit velikost více ovládacích prvků stejného nebo jiného typu, například <xref:System.Windows.Forms.Button> a <xref:System.Windows.Forms.GroupBox> ovládací prvky.  

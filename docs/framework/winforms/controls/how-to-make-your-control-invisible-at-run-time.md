@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532409"
 ---
 # <a name="how-to-make-your-control-invisible-at-run-time"></a>Postupy: Skrytí vlastního ovládacího prvku za běhu
 Existují situace, kdy můžete chtít vytvořit uživatelský ovládací prvek, který je v době běhu neviditelná. Ovládací prvek, který je hodiny výstrahy může být například neviditelná s výjimkou případů, kdy byl zvukově na upozornění. Toho dosahuje snadno nastavením <xref:System.Windows.Forms.Control.Visible%2A> vlastnost. Pokud <xref:System.Windows.Forms.Control.Visible%2A> vlastnost je `true`, vlastní ovládací prvek se zobrazí jako normální. Pokud `false`, bude skrytá vlastního ovládacího prvku. I když kód v vlastního ovládacího prvku může stále spustit při neviditelné, nebudete moci pracovat s ovládacím prvkem v uživatelském rozhraní. Pokud chcete vytvořit neviditelná ovládací prvek, který stále odpoví na uživatelský vstup (například kliknutí myší), měli byste vytvořit transparentní ovládacího prvku. Další informace najdete v tématu [poskytnutí vlastního ovládacího prvku průhledné pozadí](../../../../docs/framework/winforms/controls/how-to-give-your-control-a-transparent-background.md).  

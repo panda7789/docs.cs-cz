@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752543"
 ---
 # <a name="ltauthenticationgt-of-ltservicecertificategt-element"></a>&lt;authentication&gt; elementu &lt;serviceCertificate&gt;
 Určuje nastavení proxy serveru klienta používaná k ověřování certifikáty služby, které jsou získány pomocí vyjednávání SSL/TLS.  

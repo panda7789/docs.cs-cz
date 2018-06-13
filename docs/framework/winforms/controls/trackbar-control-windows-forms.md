@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534729"
 ---
 # <a name="trackbar-control-windows-forms"></a>TrackBar – ovládací prvek (Windows Forms)
 Windows Forms `TrackBar` ovládací prvek (také někdy nazývané "posuvník") se používá pro procházení velké množství informací nebo vizuálně úpravě číselné nastavení. `TrackBar` Řízení má dvě části: jezdce, také známé jako jezdce a značek. Jezdce je část, která se dá upravit. Odpovídá jeho umístění <xref:System.Windows.Forms.TrackBar.Value%2A> vlastnost. Značky jsou visual indikátory, které jsou rozmístěny v pravidelných intervalech. Na panelu sledovat přesune v krocích, které můžete zadat a lze zarovnávat vodorovně nebo svisle. Příklad použití panelu sledovat by pro nastavení míry nebo myš rychlost blikání kurzoru.  

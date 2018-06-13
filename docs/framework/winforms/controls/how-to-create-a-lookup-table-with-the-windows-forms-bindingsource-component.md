@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535581"
 ---
 # <a name="how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component"></a>Postupy: Vytváření vyhledávacích tabulek s komponentou Windows Forms BindingSource
 Vyhledávací tabulky je tabulka dat, která má sloupec, který zobrazí data z záznamy související tabulky. V následujících postupech <xref:System.Windows.Forms.ComboBox> řízení se používá k zobrazení pole s relace cizího klíče z nadřazené do podřízené tabulky.  

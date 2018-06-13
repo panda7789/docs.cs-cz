@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536251"
 ---
 # <a name="textbox-control-windows-forms"></a>TextBox – ovládací prvek (Windows Forms)
 Windows Forms textová pole se používají k získání vstup od uživatele nebo k zobrazení textu. `TextBox` Řízení se obecně používají pro upravovat text, i když ho můžete také provést jen pro čtení. Textová pole můžete zobrazit více řádků, zalomení textu velikosti ovládacího prvku a přidat základní formátování. `TextBox` Řízení umožňuje formát pro text zobrazuje nebo je zadaný v ovládacím prvku.  

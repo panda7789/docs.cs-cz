@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533601"
 ---
 # <a name="how-to-display-icons-for-the-windows-forms-listview-control"></a>Postupy: Zobrazení ikon pro ovládací prvek Windows Forms ListView
 Windows Forms <xref:System.Windows.Forms.ListView> ovládací prvek může zobrazit ikony ze tří seznamů obrázků. Zobrazení seznamu, podrobnosti a SmallIcon zobrazení obrázků ze seznamu obrázků zadaný v <xref:System.Windows.Forms.ListView.SmallImageList%2A> vlastnost. Zobrazuje obrázků ze seznamu obrázků zadaný v zobrazení LargeIcon <xref:System.Windows.Forms.ListView.LargeImageList%2A> vlastnost. Zobrazení seznamu lze také zobrazit další sadu ikony, nastavte v <xref:System.Windows.Forms.ListView.StateImageList%2A> vlastnost vedle velké nebo malé ikony. Další informace o seznamech obrázků najdete v tématu [ImageList – komponenta](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) a [postupy: Přidání nebo odebrání obrázků s komponentou Windows Forms ImageList](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md).  

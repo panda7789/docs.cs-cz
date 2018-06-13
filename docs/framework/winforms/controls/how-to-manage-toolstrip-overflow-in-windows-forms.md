@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534889"
 ---
 # <a name="how-to-manage-toolstrip-overflow-in-windows-forms"></a>Postupy: Správa přetečení ToolStrip ve Windows Forms
 Pokud všechny položky v <xref:System.Windows.Forms.ToolStrip> ovládacího prvku nelze uložit do přidělené místo, můžete povolit funkce přetečení na <xref:System.Windows.Forms.ToolStrip> a určují chování přetečení konkrétní <xref:System.Windows.Forms.ToolStripItem>s.  

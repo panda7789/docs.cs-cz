@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535266"
 ---
 # <a name="notifyicon-component-windows-forms"></a>NotifyIcon – komponenta (Windows Forms)
 Windows Forms `NotifyIcon` součásti pro procesy, které běží na pozadí a v opačném případě by není mít uživatelské rozhraní zobrazí ikony v oznamovací oblasti stav na hlavním panelu. Příkladem může být antivirový program, můžete dostat kliknutím na ikonu v oznamovací oblasti stav na hlavním panelu.  

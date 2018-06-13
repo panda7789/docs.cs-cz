@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534177"
 ---
 # <a name="how-to-set-the-toolstrip-renderer-at-run-time"></a>Postupy: Nastavení vykreslovacího modulu prvku ToolStrip za běhu
 Můžete přizpůsobit vzhled vaší <xref:System.Windows.Forms.ToolStrip> ovládacího prvku tak, že vytvoříte vlastní `ProfessionalColorTable` třídy.  

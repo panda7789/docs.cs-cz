@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534310"
 ---
 # <a name="printpreviewcontrol-control-windows-forms"></a>PrintPreviewControl – ovládací prvek (Windows Forms)
 Windows Forms `PrintPreviewControl` se používá k zobrazení dokumentu, který se zobrazí při tisku. Tento ovládací prvek má žádné tlačítka nebo další prvky uživatelského rozhraní, takže obvykle použijete `PrintPreviewControl` pouze v případě, že chcete napsat vlastní náhledu uživatelské rozhraní. Pokud chcete standardní uživatelské rozhraní, použijte <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku.  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536833"
 ---
 # <a name="providing-accessibility-information-for-controls-on-a-windows-form"></a>Poskytování informací o usnadnění pro ovládací prvky ve formuláři Windows
 Usnadnění jsou specializované programy a zařízení, které pomáhají osoby s postižením efektivněji využívat počítače. Mezi příklady patří čtečky obrazovky pro uživatele, kteří jsou blind a hlasové vstupní nástrojů pro uživatele, kteří poskytují ústní příkazy místo pomocí myši a klávesnice. Tyto usnadnění komunikovat s vlastnostmi usnadnění vystavené ovládací prvky Windows Forms. Tyto vlastnosti jsou:  

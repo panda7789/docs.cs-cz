@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429883"
 ---
 # <a name="ememoryavailable-enumeration"></a>EMemoryAvailable – výčet
 Obsahuje hodnoty, které označují množství volného fyzické paměti v počítači. Tyto hodnoty logicky mapování na události pro maximální a minimální paměti vrácená z `CreateMemoryResourceNotification` funkce v rozhraní API Win32.  

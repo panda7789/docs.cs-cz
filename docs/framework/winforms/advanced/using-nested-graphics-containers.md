@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529058"
 ---
 # <a name="using-nested-graphics-containers"></a>Použití vnořených grafických kontejnerů
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje kontejnery, které můžete použít k dočasnému nahradit nebo posílení součástí se stavem v <xref:System.Drawing.Graphics> objektu. Vytvořte kontejner voláním <xref:System.Drawing.Graphics.BeginContainer%2A> metodu <xref:System.Drawing.Graphics> objektu. Můžete volat <xref:System.Drawing.Graphics.BeginContainer%2A> opakovaně k vytvoření vnořené kontejnery. Každé volání <xref:System.Drawing.Graphics.BeginContainer%2A> musí být spárována s volání <xref:System.Drawing.Graphics.EndContainer%2A>.  

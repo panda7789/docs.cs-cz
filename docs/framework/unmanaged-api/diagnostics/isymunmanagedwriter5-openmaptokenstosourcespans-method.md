@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33428645"
 ---
 # <a name="isymunmanagedwriter5openmaptokenstosourcespans-method"></a>ISymUnmanagedWriter5::OpenMapTokensToSourceSpans – metoda
 Otevřete část speciální vlastní data pro vydávání informace o tokenu zdroj značky span mapování do. Otevírání v této části, když metoda je již otevřeno, nebo naopak, se o chybu.  

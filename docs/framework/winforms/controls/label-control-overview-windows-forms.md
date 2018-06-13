@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536299"
 ---
 # <a name="label-control-overview-windows-forms"></a>Přehled ovládacího prvku Popisek (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky slouží k zobrazení textu nebo obrázků, které uživatel nemůže upravovat. Slouží k identifikaci objektů ve formuláři – zadejte popis co určité ovládacího prvku budou dělat, když klikli, například nebo zobrazit informace v reakci na události spuštění nebo proces v aplikaci. Můžete například použít popisky Pokud chcete přidat popisný titulky textová pole, seznamy, pole se seznamem a tak dále. Můžete také psát kód, který změní text zobrazený popiskem v reakci na události v době běhu. Například pokud vaše aplikace trvá několik minut, než se zpracovat změnu, můžete zobrazit zprávu o stavu zpracování v popisku.  

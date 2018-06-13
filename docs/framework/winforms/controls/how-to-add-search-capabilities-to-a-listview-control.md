@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528271"
 ---
 # <a name="how-to-add-search-capabilities-to-a-listview-control"></a>Postupy: Přidání schopností vyhledávání do prvku ListView
 Často při práci s velké položek v seznamu <xref:System.Windows.Forms.ListView> ovládací prvek, můžete chtít nabízet možnosti vyhledávání pro uživatele. <xref:System.Windows.Forms.ListView> Řízení nabízí tato funkce dvěma různými způsoby: porovnávání text a hledání umístění.  
