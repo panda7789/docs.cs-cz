@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33274962"
 ---
 # <a name="region-c-reference"></a>#region (referenční dokumentace jazyka C#)
 `#region` Umožňuje zadat blok kódu, který můžete rozbalit nebo sbalit při použití [osnovy](/visualstudio/ide/outlining) funkce z editoru kódu sady Visual Studio. V souborech delší kódu je vhodnější moci sbalení a skrytí jeden nebo více oblastí tak, aby se mohli zaměřit části souboru, který aktuálně pracujete na. Následující příklad ukazuje, jak definovat oblasti:  

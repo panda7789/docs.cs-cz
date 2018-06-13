@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33333255"
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformace dat pomocí LINQ (C#)
 [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] není jenom o načtení dat. Je také výkonný nástroj pro převod data. Pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, můžete použít zdrojové sekvence jako vstup a upravit v mnoho způsobů, jak vytvořit nové pořadí výstup. Můžete upravit pořadí samotné beze změny samotné prvky řazení a seskupování. Ale možná nejúčinnějších funkci [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy je schopnost vytvářet nové typy. To lze provést v [vyberte](../../../../csharp/language-reference/keywords/select-clause.md) klauzule. Například můžete provádět následující úlohy:  

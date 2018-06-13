@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756615"
 ---
 # <a name="mapping-object-identifiers-to-cryptography-algorithms"></a>Mapování identifikátorů objektů na algoritmy šifrování
 Digitální podpisy Ujistěte se, že data není manipulováno při odeslání z jedné aplikace do jiného. Digitální podpis je obvykle počítaný použitím matematické funkce hash data, která mají být podepsané. Při formátování hodnotu hash podepsat, některé algoritmy digitální podpis připojí ASN.1 identifikátor objektu (OID) v rámci operace formátování. Identifikátor OID Určuje algoritmus, který se používá k výpočtu hodnoty hash. Identifikátory objektů rozšířit mechanismus na kryptografické algoritmy vlastní můžete namapovat algoritmy. Následující příklad ukazuje, jak k mapování identifikátor objektu na nový algoritmus hash.  

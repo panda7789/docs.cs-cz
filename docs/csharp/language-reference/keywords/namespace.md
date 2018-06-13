@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33276016"
 ---
 # <a name="namespace-c-reference"></a>namespace (Referenční dokumentace jazyka C#)
 `namespace` – Klíčové slovo se používá k deklaraci obor, který obsahuje sadu související objekty. Obor názvů můžete použít k uspořádání elementy kódu a vytvoření typů globálně jedinečný.  

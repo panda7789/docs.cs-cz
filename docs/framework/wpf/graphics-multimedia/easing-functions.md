@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557560"
 ---
 # <a name="easing-functions"></a>Funkce usnadnění
 Funkce usnadnění můžete použít vlastní matematické vzorce pro své animace. Například můžete objekt reálně kolísají nebo chovat, jako by šlo na pružiny. Můžete použít klíč rámce, nebo i z/do nebo podle animací sblížit těchto důsledcích, ale bude potřeba významné množství práce a animace bude přesností menší než pomocí matematické vzorce.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33332036"
 ---
 # <a name="how-to-access-an-array-element-with-a-pointer-c-programming-guide"></a>Postupy: Přístup k elementu pole pomocí ukazatele (Průvodce programováním v C#)
 V kontextu unsafe mohly přistupovat k elementu v paměti pomocí přístupu k elementu ukazatele, jak je znázorněno v následujícím příkladu:  

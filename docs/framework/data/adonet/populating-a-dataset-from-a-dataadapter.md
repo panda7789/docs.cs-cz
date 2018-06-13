@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356937"
 ---
 # <a name="populating-a-dataset-from-a-dataadapter"></a>Naplnění datové sady z modul DataAdapter
 [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] <xref:System.Data.DataSet> Je rezidentní reprezentace data, která poskytuje konzistentní relační programovací model bez ohledu na zdroj dat. `DataSet` Představuje kompletní sadu dat, který obsahuje tabulky, omezení a relace mezi tabulkami. Protože `DataSet` je nezávislý na zdroji dat, `DataSet` může obsahovat data místní aplikace a data z více zdrojů dat. Interakce s existujícími zdroji dat jsou řízeny prostřednictvím `DataAdapter`.  

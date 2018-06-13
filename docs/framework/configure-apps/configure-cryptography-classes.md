@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743248"
 ---
 # <a name="configuring-cryptography-classes"></a>Konfigurace šifrovacích tříd
 [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] Umožňuje správci počítače a nakonfigurovat výchozí kryptografické algoritmy a algoritmus implementace, které používají rozhraní .NET Framework a správně vytvořené aplikace.  Například organizace, která má svou vlastní implementaci kryptografických algoritmů můžete Ujistěte se, že implementace výchozí místo implementace poskytuje [!INCLUDE[winsdkshort](../../../includes/winsdkshort-md.md)]. I když spravovaných aplikací, které používají šifrování se vždy mohou rozhodnout explicitně vytvořit vazbu na konkrétní implementace, se doporučuje, aby vytvořili kryptografických objekty pomocí kryptografických konfigurační systém.  

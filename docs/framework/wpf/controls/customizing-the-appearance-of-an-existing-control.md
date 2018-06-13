@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558054"
 ---
 # <a name="customizing-the-appearance-of-an-existing-control-by-creating-a-controltemplate"></a>Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate
 <a name="introduction"></a> A <xref:System.Windows.Controls.ControlTemplate> určuje vizuální strukturu a visual chování ovládacího prvku. Můžete přizpůsobit vzhled ovládacího prvku tím, že it a nové <xref:System.Windows.Controls.ControlTemplate>. Při vytváření <xref:System.Windows.Controls.ControlTemplate>, nahraďte vzhled ovládacího prvku existující beze změny jeho funkci. Například můžete provést tlačítka ve vaší aplikaci zaokrouhlí místo výchozí odmocnina tvar, ale bude stále vyvolat tlačítko <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  

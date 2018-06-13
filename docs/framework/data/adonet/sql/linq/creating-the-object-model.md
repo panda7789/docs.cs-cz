@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359930"
 ---
 # <a name="creating-the-object-model"></a>Vytváření objektový Model
 Můžete vytvořit objektový model z existující databáze a použít model ve svém výchozím stavu. Můžete také upravit mnoho aspektů modelu a její chování.  

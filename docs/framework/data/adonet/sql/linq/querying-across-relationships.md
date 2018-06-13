@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360462"
 ---
 # <a name="querying-across-relationships"></a>Dotazování napříč relacemi
 Odkazy na jiné objekty nebo kolekce jiných objektů ve vaší definice tříd přímo odpovídají relace cizího klíče v databázi. Tyto relace můžete použít při dotazování podle pomocí zápisu s tečkou přístup k vlastnosti vztahu a přejít z jednoho objektu na jiný. Tyto operace přístupu převede složitější spojení nebo korelační poddotazy v ekvivalentní SQL.  

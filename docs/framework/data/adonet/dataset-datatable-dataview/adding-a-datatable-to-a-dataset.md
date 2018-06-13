@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758539"
 ---
 # <a name="adding-a-datatable-to-a-dataset"></a>Přidání DataTable do datové sady
 ADO.NET umožňuje vytvářet <xref:System.Data.DataTable> objekty a přidat je do existujícího <xref:System.Data.DataSet>. Můžete nastavit omezení informace <xref:System.Data.DataTable> pomocí <xref:System.Data.DataTable.PrimaryKey%2A> a <xref:System.Data.DataColumn.Unique%2A> vlastnosti.  

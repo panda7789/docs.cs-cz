@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33415373"
 ---
 # <a name="icordebugeditandcontinueerrorinfogetmodule-method"></a>ICorDebugEditAndContinueErrorInfo::GetModule – metoda
 `GetModule` je zastaralá. Tato metoda není volána.  

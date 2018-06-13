@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33352486"
 ---
 # <a name="windows-workflow-foundation-configuration-schema"></a>Konfigurační schéma pro Windows Workflow Foundation
 Konfigurace – elementy Windows Workflow Foundation (WF) umožňují nakonfigurovat aplikace pracovního postupu. Aplikace pomocí pracovního postupu můžete nakonfigurovat mimo jiné, sledování a trasování. Další informace o sledování a trasování najdete v tématu [pracovního postupu pro sledování a trasování](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md). Pro pracovní postup služby můžete taky konfigurace – elementy Windows Communication Foundation (WCF). Další podrobnosti o technologii WCF najdete v tématu [konfigurační schéma služby WCF](../../../../../docs/framework/configure-apps/file-schema/wcf/index.md).  

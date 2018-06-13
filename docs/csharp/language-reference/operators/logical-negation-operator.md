@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33273920"
 ---
 # <a name="-operator-c-reference"></a>! Operátor (referenční dokumentace jazyka C#)
 Logický operátor negace (`!`) je unární operátor, který Neguje jeho operand. Je definována pro `bool` a vrátí `true` jenom v případě jeho operand je `false`.  

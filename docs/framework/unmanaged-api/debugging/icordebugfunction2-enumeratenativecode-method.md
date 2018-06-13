@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33411785"
 ---
 # <a name="icordebugfunction2enumeratenativecode-method"></a>ICorDebugFunction2::EnumerateNativeCode – metoda
 Icordebugcodeenum – objektu, která obsahuje příkazy nativního kódu ve funkci odkazuje tento objekt ICorDebugFunction2 získá ukazatele rozhraní.  

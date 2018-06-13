@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744132"
 ---
 # <a name="assembly-names"></a>Názvy sestavení
 Název sestavení je uložená v metadatech a má významný dopad na rozsah sestavení a používat jiná aplikace. Sestavení se silným názvem má plně kvalifikovaný název, který obsahuje název sestavení, jazykovou verzi, veřejný klíč a číslo verze. To se často označuje jako zobrazovaný název a pro načíst sestavení můžete získat pomocí <xref:System.Reflection.Assembly.FullName%2A> vlastnost.  

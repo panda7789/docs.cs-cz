@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339391"
 ---
 # <a name="inside-a-c-program"></a>V programu v jazyce C#
 V části popisuje obecná struktura programu v C# a zahrnuje standardní "Hello, World!" Příklad.  

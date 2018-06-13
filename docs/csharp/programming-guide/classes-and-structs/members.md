@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33318221"
 ---
 # <a name="members-c-programming-guide"></a>Členové (Průvodce programováním v C#)
 Třídy a struktury mají členy, které zastupují jejich data a chování. Členy třídy a zahrnují všechny deklarované členy ve třídě, společně s všechny členy (s výjimkou konstruktory a finalizační metody) deklarované v všechny třídy v hierarchii dědičnosti. Soukromé členy základních tříd jsou zděděné, ale nejsou přístupné z odvozených tříd.  

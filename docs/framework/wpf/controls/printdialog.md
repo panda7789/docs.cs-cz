@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554765"
 ---
 # <a name="printdialog"></a>PrintDialog
 <xref:System.Windows.Controls.PrintDialog> Řízení se používá k vytvoření instance standardní tiskové dialogové okno se automaticky nakonfiguruje <xref:System.Printing.PrintTicket> a <xref:System.Printing.PrintQueue> podle vstup uživatele.  

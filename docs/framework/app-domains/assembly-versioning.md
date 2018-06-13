@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744353"
 ---
 # <a name="assembly-versioning"></a>Správa verzí sestavení
 Všechny verze sestavení, které používají modul common language runtime se provádí na úrovni sestavení. Konkrétní verze sestavení a verze závislé sestavení jsou popsané v manifestu sestavení. Výchozí zásada verze pro modul runtime je, že aplikace spouštět pouze s verzemi, které by byly vytvořené a testovány, není-li přepsat zásady explicitní verze v konfiguračních souborech (konfigurační soubor aplikace, soubor zásad vydavatele a Správce konfigurace souboru počítače).  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759891"
 ---
 # <a name="entity-framework-overview"></a>Přehled Entity Framework
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Je sada technologií v ADO.NET, které podporují vývoj aplikací orientovaných na data softwaru. Architekty a vývojáře aplikací orientovaných na data jste měli problémy s potřeba dosáhnout dva velmi různé cíle. Se musí modelu entity, vztahy a logiku z obchodních problémů, které jsou v řešení problémů a také musí pracovat s moduly data používá k ukládání a načítání dat. Data může span více úložných systémů, každou s vlastní protokoly; i aplikace, které pracují s systémem jedno úložiště, musíte vyvážit požadavky na úložiště systému podle požadavků zápisu kódu aplikace efektivní a udržovatelný.  

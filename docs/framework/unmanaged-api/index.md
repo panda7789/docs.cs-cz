@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33442914"
 ---
 # <a name="unmanaged-api-reference"></a>Nespravované rozhraní API
 Tato část obsahuje informace o nespravovaného rozhraní API, které je možné spravovat-související s kódem aplikace, jako je modulu runtime, kompilátory, disassemblers, obfuscators, ladicí programy a profilery.  

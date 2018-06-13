@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556936"
 ---
 # <a name="how-to-animate-a-3-d-rotation-using-quaternions"></a>Postupy: Animace 3D otočení použitím kvaternionů
 Tento příklad ukazuje postup animace natočení 3D objektu pomocí quaternions.  

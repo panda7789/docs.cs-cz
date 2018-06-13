@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755159"
 ---
 # <a name="ltsystemwebgt-element-web-settings"></a>&lt;System.Web&gt; – Element (webové nastavení)
 Obsahuje informace o správě procesy chování vrstvě hostování technologie ASP.NET.  

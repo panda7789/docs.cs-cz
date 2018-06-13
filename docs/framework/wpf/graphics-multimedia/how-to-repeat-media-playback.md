@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558652"
 ---
 # <a name="how-to-repeat-media-playback"></a>Postupy: Opětovné přehrání média
 Tento příklad ukazuje, jak přehrávání média bez omezení, který je, nastavte média, aby ho hraje v nekonečné smyčce.  

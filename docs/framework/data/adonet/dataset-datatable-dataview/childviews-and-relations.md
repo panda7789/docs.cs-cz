@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755380"
 ---
 # <a name="childviews-and-relations"></a>ChildViews a vztahy
 Pokud existuje relace mezi tabulkami <xref:System.Data.DataSet>, můžete vytvořit <xref:System.Data.DataView> obsahující řádky z tabulky souvisejících podřízených pomocí <xref:System.Data.DataRowView.CreateChildView%2A> metodu <xref:System.Data.DataRowView> řádků v nadřazené tabulce. Například následující kód zobrazí **kategorie** a jejich související **produkty** v abecedním pořadí seřazené podle **CategoryName** a **ProductName** .  

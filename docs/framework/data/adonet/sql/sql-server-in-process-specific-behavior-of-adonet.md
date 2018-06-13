@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356600"
 ---
 # <a name="sql-server-in-process-specific-behavior-of-adonet"></a>SQL Server v specifické pro proces chování ADO.NET
 Existují čtyři hlavní funkční rozšíření ADO.NET, v nalezen <xref:Microsoft.SqlServer.Server> obor názvů, které jsou speciálně určené pro použití v rámci procesu: <xref:Microsoft.SqlServer.Server.SqlContext>, <xref:Microsoft.SqlServer.Server.SqlPipe>, <xref:Microsoft.SqlServer.Server.SqlTriggerContext>, a <xref:Microsoft.SqlServer.Server.SqlDataRecord>.  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557144"
 ---
 # <a name="getting-started-wpf"></a>Začínáme (WPF)
 Windows Presentation Foundation (WPF) je rozhraní uživatelského rozhraní, které vytvoří klienta pro stolní počítače aplikací. Vývojové platformy WPF podporuje širokou škálu funkce pro vývoj aplikací, včetně model aplikací, prostředky, ovládací prvky, obrázků, rozložení, datová vazba, dokumenty a zabezpečení. Je podmnožinu rozhraní .NET Framework, takže pokud jste dříve vytvořili aplikace s rozhraním .NET Framework pomocí technologie ASP.NET nebo Windows Forms, programovací prostředí by mělo být známé. K poskytování deklarativní model pro programování aplikací používá WPF Extensible aplikace Markup Language (XAML). Tato část obsahuje témata, která zavádět a můžete začít pracovat s WPF.  

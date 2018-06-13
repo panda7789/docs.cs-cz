@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763368"
 ---
 # <a name="how-to-call-model-defined-functions-as-object-methods"></a>Postupy: volání funkce Model definován jako objekt metody
 Toto téma popisuje, jak volat funkci definované model jako metodu <xref:System.Data.Objects.ObjectContext> objektu nebo jako statickou metodu vlastní třídy. A *modelu definované funkce* je funkce, která je definována v konceptuálním modelu. Postupy v tomto tématu popisují, jak volat tyto funkce přímo namísto volání je z technologie LINQ dotazy entity. Informace o volání funkcí modelu definované v technologii LINQ na entity dotazy najdete v tématu [postupy: Call Model-Defined funkcí v dotazech](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-in-queries.md).  

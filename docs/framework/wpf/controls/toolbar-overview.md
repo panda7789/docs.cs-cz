@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557391"
 ---
 # <a name="toolbar-overview"></a>ToolBar – přehled
 <xref:System.Windows.Controls.ToolBar> ovládací prvky jsou kontejnery pro skupinu příkazy nebo ovládací prvky, které jsou obvykle spojené v jejich funkce. A <xref:System.Windows.Controls.ToolBar> obvykle obsahuje tlačítka, pomocí kterých volat příkazy.  

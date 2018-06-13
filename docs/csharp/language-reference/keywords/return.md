@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33266107"
 ---
 # <a name="return-c-reference"></a>return (Referenční dokumentace jazyka C#)
 `return` Příkaz ukončí provádění metody, ve kterém se zobrazí a vrátí prvek volání metody. Také se může vrátit Volitelná hodnota. Pokud je metoda `void` typu, `return` příkaz lze vynechat.  

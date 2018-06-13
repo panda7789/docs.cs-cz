@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33282389"
 ---
 # <a name="query-a-collection-of-objects"></a>Dotazování na kolekci objektů
 Tento příklad ukazuje, jak provést jednoduchý dotaz pro seznam `Student` objekty. Každý `Student` objekt obsahuje některé základní informace o student a seznam, který představuje Studentova skóre na čtyři kontroly.  

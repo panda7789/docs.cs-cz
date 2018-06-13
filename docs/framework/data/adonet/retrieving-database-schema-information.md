@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359686"
 ---
 # <a name="retrieving-database-schema-information"></a>Načítání informací o schématu databáze
 Získání informací o schématu z databáze se provádí v procesu zjišťování schématu. Schéma zjišťování umožňuje aplikacím požádá spravovaného zprostředkovatele najít a vrátí informace o schématu databáze, také známé jako *metadata*, dané databáze. Prvky schématu jiné databázi, například tabulky, sloupce a uložených procedur se zveřejňují přes kolekcemi schémat. Každá kolekce schéma obsahuje celou řadu specifické pro použitý zprostředkovatel informace o schématu.  

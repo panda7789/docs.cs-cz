@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756472"
 ---
 # <a name="getting-started-entity-framework"></a>Začínáme (rozhraní Entity Framework)
 [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Podporuje zaměřené na data aplikací a služeb a zajišťuje platformu, pro programování s daty, která vyvolává úroveň abstrakce z logické relační úrovně koncepční úroveň. Tím, že umožňuje vývojářům pracovat s daty na vyšší úrovni abstrakce, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje kód, který je nezávislý na žádné konkrétní datové úložiště modul nebo relační schéma. Další informace najdete v tématu [Entity Framework přehled](../../../../../docs/framework/data/adonet/ef/overview.md).  
