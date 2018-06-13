@@ -10,6 +10,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457477"
 ---
 # <a name="how-to-safely-cast-from-bool-to-bool-c-programming-guide"></a><span data-ttu-id="7581f-102">Postupy: Bezpečné přetypování z typu bool? na bool (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="7581f-102">How to: Safely Cast from bool? to bool (C# Programming Guide)</span></span>
 <span data-ttu-id="7581f-103">`bool?` Typ s možnou hodnotou Null může obsahovat tři různé hodnoty: `true`, `false`, a `null`.</span><span class="sxs-lookup"><span data-stu-id="7581f-103">The `bool?` nullable type can contain three different values: `true`, `false`, and `null`.</span></span> <span data-ttu-id="7581f-104">Proto `bool?` typ nelze použít v podmíněné příkazy, jako s `if`, `for`, nebo `while`.</span><span class="sxs-lookup"><span data-stu-id="7581f-104">Therefore, the `bool?` type cannot be used in conditionals such as with `if`, `for`, or `while`.</span></span> <span data-ttu-id="7581f-105">Chyba kompilátoru způsobí například následující kód.</span><span class="sxs-lookup"><span data-stu-id="7581f-105">For example, the following code causes a compiler error.</span></span>  

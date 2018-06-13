@@ -13,6 +13,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472500"
 ---
 # <a name="c-reference"></a><span data-ttu-id="7a6e3-102">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="7a6e3-102">C# Reference</span></span>
 <span data-ttu-id="7a6e3-103">Tato část obsahuje referenční materiály o C# klíčová slova, operátory, speciální znaky, preprocesor – direktivy, možnosti kompilátoru a kompilátoru chyby a upozornění.</span><span class="sxs-lookup"><span data-stu-id="7a6e3-103">This section provides reference material about C# keywords, operators, special characters, preprocessor directives, compiler options, and compiler errors and warnings.</span></span>  
