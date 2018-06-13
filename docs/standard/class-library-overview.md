@@ -44,6 +44,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577303"
 ---
 # <a name="net-class-library-overview"></a>Přehled knihovny tříd rozhraní .NET
 Implementace rozhraní .NET zahrnují třídy, rozhraní, delegáti a typy hodnot, které urychlit a optimalizovat proces vývoje a poskytují přístup k funkci systému. Usnadňuje vzájemná funkční spolupráce mezi jazyky většinu typů .NET jsou kompatibilní se specifikací CLS a dá se použít proto z žádný programovací jazyk, jehož kompilátoru vyhovuje specifikace (CLS).  

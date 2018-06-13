@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33564744"
 ---
 # <a name="xml-character-entities-and-xaml"></a>Znakové entity XML a jazyk XAML
 XAML používá entity znaků, které jsou definované v kódu XML pro speciální znaky. Toto téma popisuje některé konkrétní znak entit a obecné požadavky na dalších konceptech XML v jazyce XAML.  

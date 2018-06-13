@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573604"
 ---
 # <a name="performing-culture-insensitive-string-comparisons"></a>Provádění porovnávání řetězců nezávislých na jazykové verzi
 Ve výchozím nastavení <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda provádí porovnání zohledňující jazykovou verzi a velká a malá písmena. Tato metoda také zahrnuje několik přetížení, které poskytují `culture` parametr, který umožňuje zadat jazykovou verzi, pokud chcete použít, a `comparisonType` parametr, který slouží k určení pravidel porovnání, které můžete použít. Volání těchto metod namísto výchozího přetížení odstraní jakoukoli nejednoznačnost týkající se pravidel používaných při volání konkrétní metody a objasňuje, zda je konkrétní porovnání závislé na jazykové verzi či nikoli.  

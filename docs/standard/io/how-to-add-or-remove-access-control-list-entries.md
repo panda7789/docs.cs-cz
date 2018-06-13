@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573420"
 ---
 # <a name="how-to-add-or-remove-access-control-list-entries"></a>Postupy: Přidávání a odebírání položek seznamu řízení přístupu
 Přidat nebo odebrat položky seznamu řízení přístupu (ACL) do nebo ze souboru, <xref:System.Security.AccessControl.FileSecurity> nebo <xref:System.Security.AccessControl.DirectorySecurity> objekt musí být získaný soubor nebo adresář, upravit a potom se použijí zpět na soubor nebo adresář.  

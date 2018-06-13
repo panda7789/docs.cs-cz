@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33215375"
 ---
 # <a name="microsoft-wcf-web-service-reference-provider-tool"></a>Nástroj zprostředkovatele Microsoft WCF webové služby odkaz
 

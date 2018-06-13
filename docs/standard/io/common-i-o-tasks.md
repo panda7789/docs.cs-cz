@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577652"
 ---
 # <a name="common-io-tasks"></a>Obecné vstupně-výstupní úlohy
 <xref:System.IO> Obor názvů poskytuje několik tříd, které poskytují různé akce, jako je například čtení a zápisu, které budou provedeny u souborů, adresářů a datové proudy. Další informace najdete v tématu [souborové služby a vstupně-výstupní datový proud](../../../docs/standard/io/index.md).  

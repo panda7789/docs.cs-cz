@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651220"
 ---
 # <a name="walkthrough-encrypting-and-decrypting-strings-in-visual-basic"></a>Návod: Šifrování a dešifrování řetězců v jazyce Visual Basic
 Tento postup vám ukáže, jak používat <xref:System.Security.Cryptography.DESCryptoServiceProvider> třída k šifrování a dešifrování řetězců pomocí kryptografických služeb verze zprostředkovatele Kryptografických služeb Triple Data Encryption Standard (<xref:System.Security.Cryptography.TripleDES>) algoritmus. Prvním krokem je vytvoření jednoduché obálkovou třídu, který zapouzdřuje algoritmus 3DES a šifrovaná data uloží jako řetězec s kódováním base-64. Potom tuto obálku slouží bezpečně uložit privátních dat uživatele do veřejně přístupné textového souboru.  

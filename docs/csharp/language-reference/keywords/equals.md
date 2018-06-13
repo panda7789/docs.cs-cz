@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216162"
 ---
 # <a name="equals-c-reference"></a>equals (Referenční dokumentace jazyka C#)
 `equals` Kontextové klíčové slovo je používán `join` klauzule ve výrazu dotazu k porovnání elementy dvě pořadí. Další informace najdete v tématu [klauzuli join](../../../csharp/language-reference/keywords/join-clause.md).  

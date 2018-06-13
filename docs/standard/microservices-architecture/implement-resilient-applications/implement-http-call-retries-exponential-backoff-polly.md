@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576978"
 ---
 # <a name="implementing-http-call-retries-with-exponential-backoff-with-polly"></a>Implementace opakování volání protokolu HTTP s exponenciálního omezení rychlosti s Polly
 

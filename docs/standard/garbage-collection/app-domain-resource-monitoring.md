@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578327"
 ---
 # <a name="application-domain-resource-monitoring"></a>Sledování prostředků domény aplikace
 (ARM) sledování prostředků domény aplikace umožňuje hostitelům sledování využití procesoru a paměti aplikační doménou. To je užitečné pro hostitele například ASP.NET využívající mnoho aplikační domény v dlouho běžící proces. Hostitel může uvolnění domény aplikace aplikace, která nepříznivě ovlivňuje výkon celý proces, ale pouze pokud se ale může pomoci identifikovat problematické aplikace. ARM poskytuje informace, které je možné, které vám pomohou v rozhodování.  

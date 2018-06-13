@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603948"
 ---
 # <a name="of-clause-visual-basic"></a>Of – klauzule (Visual Basic)
 Zavádí `Of` klauzuli, která identifikuje *parametr typu* na *Obecné* třídy, struktury, rozhraní, delegát nebo postupu. Informace v obecných typech najdete v tématu [obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md).  

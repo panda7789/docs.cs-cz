@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569782"
 ---
 # <a name="xpathdocument-input-to-xsltransform"></a>Vstup XPathDocument XslTransform
 <xref:System.Xml.XPath.XPathDocument> Je jen pro čtení mezipaměti pro zpracování dokumentů s <xref:System.Xml.Xsl.XslTransform>. Je strukturálně podobné k XML modelu DOM (Document Object), ale je vysoce optimalizovaný pro jazyk XSL pro zpracování transformace XSLT () a datový model XML Path Language (XPath) pomocí funkcí optimalizace XPath na <xref:System.Xml.XPath.XPathNavigator>.  

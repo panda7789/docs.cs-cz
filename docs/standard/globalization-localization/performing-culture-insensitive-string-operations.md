@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575372"
 ---
 # <a name="performing-culture-insensitive-string-operations"></a>Provádění řetězcových operací nezávislých na jazykové verzi
 Přetížení metody, které vám umožní explicitně zadat jazykovou verzi předáním poskytovat většinu metod rozhraní .NET Framework, které ve výchozím nastavení provádět operace s řetězci zohledňující jazykovou verzi <xref:System.Globalization.CultureInfo> parametr. Tato přetížení umožňují odstranění v případě, že mapování a řazení pravidel a zaručit výsledky na jazykové verzi.  

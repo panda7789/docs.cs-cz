@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520406"
 ---
 # <a name="database-access-activities"></a>Databáze Access aktivity
 Databáze access aktivity umožňují přístup k databázi v rámci pracovního postupu. Tyto aktivity povolit přístup k databázím načtení nebo upravte informace a použití [ADO.NET](http://go.microsoft.com/fwlink/?LinkId=166081) pro přístup k databázi.  

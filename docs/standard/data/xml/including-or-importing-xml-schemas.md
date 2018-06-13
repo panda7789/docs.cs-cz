@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573060"
 ---
 # <a name="including-or-importing-xml-schemas"></a>Včetně nebo import schémat XML
 Schéma XML může obsahovat `<xs:import />`, `<xs:include />`, a `<xs:redefine />` elementy. Tyto prvky schématu naleznete v dalších schémat XML, které lze použít k doplnění strukturu schématu, která zahrnuje nebo importuje je. <xref:System.Xml.Schema.XmlSchemaImport>, <xref:System.Xml.Schema.XmlSchemaInclude> a <xref:System.Xml.Schema.XmlSchemaRedefine> třídy, mapování na tyto prvky ve Model model (schématu objektu SOM) rozhraní API.  

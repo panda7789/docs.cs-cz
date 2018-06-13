@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575333"
 ---
 # <a name="exceptions-and-performance"></a>Výjimky a výkonu
 Jeden běžný problém související s výjimkami je, že pokud se výjimky použijí pro kód, který pravidelně selže, výkon implementace nepřijatelné. Jde o platný problém. Pokud člen, vyvolá výjimku, může být jeho výkon pořadí podle velikosti pomalejší. Je však možné, abyste dosáhli dobrého výkonu při zachování výhradně výjimka pokyny, které zakáže použití kódy chyb. Dva vzory popsaných v této části zjistíte, jak to udělat.  

@@ -29,6 +29,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575577"
 ---
 # <a name="how-to-anticipate-out-of-space-conditions-with-isolated-storage"></a>Postupy: Příprava na vyčerpání volného prostoru pomocí izolovaného úložiště
 Kód, který používá izolované úložiště je omezen [kvóty](../../../docs/standard/io/isolated-storage.md#quotas) , určuje maximální velikost datového oddílu, ve kterém izolované úložiště souborů a adresářů neexistuje. Kvóta je definován pomocí zásad zabezpečení a konfigurovat správci. Pokud maximální povolená velikost je překročena při pokusu o zápis dat, <xref:System.IO.IsolatedStorage.IsolatedStorageException> je vyvolána výjimka, a operace se nezdaří. To pomáhá zabránit nebezpečné útoky odmítnutí služby, které by mohly způsobit aplikace odmítala požadavků z důvodu zaplnění datového úložiště.  

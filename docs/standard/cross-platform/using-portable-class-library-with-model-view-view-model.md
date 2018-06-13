@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574105"
 ---
 # <a name="using-portable-class-library-with-model-view-view-model"></a>Používání knihovny přenosných tříd spolu s modelem MVVM (Model-View-View Model)
 Můžete použít rozhraní .NET Framework [Přenosná knihovna tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) implementovat vzor Model-View-View Model (modelem MVVM) a sdílení sestavení napříč různými platformami.  

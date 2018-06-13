@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520497"
 ---
 # <a name="consuming-odata-feeds-from-a-workflow"></a>Využívání OData informační kanály z pracovního postupu
 Služby WCF Data Services je součástí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] , umožňuje vytvářet služby, které používají Open Data Protocol (OData) vystavení a spotřebování data prostřednictvím webu nebo intranetu pomocí sémantiky representational stavu transfer (REST). OData zpřístupní data jako prostředky, které jsou adresovat pomocí identifikátory URI. Všechny aplikace mohou komunikovat s služby OData na základě dat Pokud můžete odeslat požadavek HTTP a zpracování datového kanálu OData, vrátí datové služby. Kromě toho služby WCF Data Services zahrnuje klientské knihovny, které poskytují bohatší programovací prostředí spotřebuje informační kanály OData z [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] aplikace. Toto téma poskytuje přehled o využívání OData kanálu v pracovním postupu s i bez použití knihovny klienta.  

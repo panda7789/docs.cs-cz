@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572925"
 ---
 # <a name="xpath-namespace-navigation"></a>Namespace XPath navigace
 Chcete-li používat dotazy jazyka XPath s dokumenty XML, budete muset správně adres obory názvů XML a elementů obsažených ve obory názvů. Obory názvů zabránilo nejednoznačnosti, které může dojít, když se názvy jsou použity v více než jeden kontextu; například název `ID` mohou odkazovat na více než jeden identifikátor přidružený ke různé prvky dokumentu XML. Syntaxe Namespace určuje identifikátory URI, názvů a předpony, které rozlišení prvků dokument XML.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644157"
 ---
 # <a name="common-attributes-visual-basic"></a>Mezi běžné atributy (Visual Basic)
 Toto téma popisuje atributy, které se běžně používají v aplikacích jazyka Visual Basic.  

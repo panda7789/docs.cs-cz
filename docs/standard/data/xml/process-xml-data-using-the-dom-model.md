@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570347"
 ---
 # <a name="process-xml-data-using-the-dom-model"></a>Zpracování dat XML pomocí modelu DOM
 XML modelu DOM (Document Object) zpracovává XML data jako standardní sadu objektů a slouží k procesu data XML v paměti. `System.Xml` Obor názvů obsahuje programový reprezentace XML dokumenty, fragmenty, uzly nebo sad uzlů. Je založena na základní úroveň 1 DOM World Wide Web Consortium (W3C) a doporučení DOM úroveň 2 jádra.  

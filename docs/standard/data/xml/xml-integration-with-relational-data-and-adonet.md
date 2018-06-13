@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575698"
 ---
 # <a name="xml-integration-with-relational-data-and-adonet"></a>XML integrace s relačních dat a ADO.NET
 **XmlDataDocument** třída je třídu odvozenou z **třídou XMLDocument nastavenou na**a obsahuje XML data. Výhodou **XmlDataDocument** je, že zajišťuje most mezi hierarchické a relační data. Je **třídou XMLDocument nastavenou na** mohou být vázány na **datovou sadu** a obě třídy můžete synchronizovat změny provedené data obsažená ve dvou tříd. **Třídou XMLDocument nastavenou na** která je vázaná **datovou sadu** umožňuje XML tak, aby integrovat relačních dat, a není nutné mít data reprezentována jako buď XML nebo v relačním formátu. Můžete provést i a nesmí být omezené na jednom znázornění dat.  

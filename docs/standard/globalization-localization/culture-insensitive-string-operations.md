@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574047"
 ---
 # <a name="culture-insensitive-string-operations"></a>Operace s řetězci nezávislé na jazykových verzích
 Operace s řetězci závislé na jazykové verzi mohou být vhodné v případě, že vytváříte aplikace, které jsou navrhovány tak, aby uživatelům zobrazovaly výsledky na základě jazykové verze. Ve výchozím nastavení, metody závislé získat jazykovou verzi pro použití z <xref:System.Globalization.CultureInfo.CurrentCulture%2A> vlastnost pro aktuální vlákno.  

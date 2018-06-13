@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577017"
 ---
 # <a name="attribute-and-namespace-node-navigation-using-xpathnavigator"></a>Atribut a Namespace uzlu navigace pomocí objektem XPathNavigator nastaveným na
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje dvě sady metod navigace, v nalezen první sady, [uzlu nastavit navigační pomocí objektem XPathNavigator nastaveným na](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md) tématu, se používají k přejděte *uzlu sady* v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu. Druhé sadě, popsané v tomto tématu slouží k přejděte *uzly atribut a obor názvů* v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu.  

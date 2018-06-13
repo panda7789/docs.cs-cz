@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33215307"
 ---
 # <a name="-fullpaths-c-compiler-options"></a>-fullpaths (možnosti kompilátoru C#)
 **- Fullpaths** možnost způsobí, že kompilátor zadejte úplnou cestu k souboru, při výpisu kompilace chyby a upozornění.  

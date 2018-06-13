@@ -13,6 +13,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743820"
 ---
 # <a name="ltaddgt-element-for-ltnamedcachesgt"></a>&lt;Přidat&gt; Element pro &lt;namedCaches&gt;
 Přidá `namedCache` položku s `namedCaches` kolekci pro mezipaměť.  

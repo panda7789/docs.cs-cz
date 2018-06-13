@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568934"
 ---
 # <a name="removing-nodes-content-and-values-from-an-xml-document"></a>Odebírání uzlů, obsah a hodnoty z dokumentu XML
 Jakmile bude XML modelu DOM (Document Object) v paměti, můžete odebrat uzly ze stromu nebo odebrání určitých typů uzlu obsah a hodnoty. Informace o tom, jak odebrat uzel typu list nebo celý uzlu podstrom z dokumentu najdete v tématu [odebírání uzlů z modelu DOM](../../../../docs/standard/data/xml/removing-nodes-from-the-dom.md). Informace o tom, jak odebrat atributy u elementu, najdete v tématu [odebrání atributů z uzlu elementu v modelu DOM](../../../../docs/standard/data/xml/removing-attributes-from-an-element-node-in-the-dom.md). Informace o odebrání obsahu uzlu, ale ponechat uzel ve stromové struktuře najdete v tématu [odebrání uzlu obsah v modelu DOM](../../../../docs/standard/data/xml/removing-node-content-in-the-dom.md).  

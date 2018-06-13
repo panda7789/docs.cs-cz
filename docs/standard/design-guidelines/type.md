@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572886"
 ---
 # <a name="type-design-guidelines"></a>Typ pokynů pro návrh
 Z pohledu CLR existují pouze dvě kategorie typů – reference a hodnotové typy – ale pro účely diskuze o návrhu framework, jsme typy rozdělit do více logických skupin, každou s vlastní pravidla konkrétní návrhu.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576806"
 ---
 # <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>Třída XsltArgumentList pro parametry list stylu a rozšíření objekty
 <xref:System.Xml.Xsl.XsltArgumentList> Třída obsahuje jazyk XSL pro parametry transformace XSLT () a objektů rozšíření XSLT. Když předána do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodu, tyto parametry a rozšíření objektů můžete vyvolat z šablony stylů.  

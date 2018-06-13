@@ -26,6 +26,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604988"
 ---
 # <a name="ifthenelse-statement-visual-basic"></a>If...Then...Else – příkaz (Visual Basic)
 Podmíněně spustí skupinu příkazů v závislosti na hodnotě výrazu.  

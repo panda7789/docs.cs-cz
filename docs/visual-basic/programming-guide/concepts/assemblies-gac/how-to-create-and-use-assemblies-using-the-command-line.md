@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643286"
 ---
 # <a name="how-to-create-and-use-assemblies-using-the-command-line-visual-basic"></a>Postupy: vytvoření a použití sestavení s pomocí příkazového řádku (Visual Basic)
 Sestavení nebo dynamického propojení knihovna (DLL), je propojen s vaším programem za běhu. Chcete-li ukazují, vytvoření a použití knihovny DLL, zvažte následující scénáře:  

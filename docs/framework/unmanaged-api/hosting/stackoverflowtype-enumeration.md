@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33440866"
 ---
 # <a name="stackoverflowtype-enumeration"></a>StackOverflowType – výčet
 Obsahuje hodnoty, které označují základní příčinu události přetečení zásobníku.  

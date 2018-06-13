@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569448"
 ---
 # <a name="namespace-support-in-the-dom"></a>Podpora Namespace v modelu DOM
 XML modelu DOM (Document Object) je zcela clustery pro obor názvů. Jsou podporovány pouze deklaracemi obor názvů XML dokumenty. World Wide Web Consortium (W3C) určuje, že může být jiný obor názvů s deklaracemi DOM aplikace, které implementují úrovně 1 a DOM Level 2 funkce jsou clustery pro obor názvů. Všechny funkce v modelu DOM XML jsou však obor názvů deklaracemi bez ohledu na to, pokud je metoda z úrovně 1 nebo úrovně 2 DOM doporučení.  

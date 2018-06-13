@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643270"
 ---
 # <a name="atomized-xname-and-xnamespace-objects-linq-to-xml-visual-basic"></a>Atomized XName a XNamespace objekty (technologie LINQ to XML) (Visual Basic)
 <xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> objekty jsou *atomized*; to znamená, pokud obsahují stejný kvalifikovaný název, se vztahují ke stejnému objektu. Dostaneme výkonnostních výhod pro dotazy: při porovnávání rovnosti dvou atomized názvy základní převodní jazyk má jenom k určení, zda dva odkazy odkazují na stejný objekt. Kód základní nemusí řetězec porovnání, které by byly časově náročná.  

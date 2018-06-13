@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577212"
 ---
 # <a name="editing-xml-schemas"></a>Úpravy XML schémata
 Úpravy schématu XML je jedním z nejdůležitějších funkcích schématu objektu modelu (SOM). Všechny vlastnosti vedlejší schema kompilace SOM lze použít ke změně hodnot existující ve schématu XML. Schéma XML můžete pak překompilovat, aby se projevily změny.  

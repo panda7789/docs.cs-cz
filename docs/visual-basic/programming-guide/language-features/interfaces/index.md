@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654419"
 ---
 # <a name="interfaces-visual-basic"></a>Rozhraní (Visual Basic)
 *Rozhraní* definovat vlastnosti, metod a události, které můžete implementovat třídy. Rozhraní umožňují definovat funkce jako malé skupiny úzce související vlastnosti, metod a událostí; To snižuje problémy s kompatibilitou, protože rozšířené implementace pro vaše rozhraní můžete vyvíjet bez ohrožující existujícího kódu. Kdykoli můžete přidat nové funkce ve vývoji implementace a další rozhraní.  

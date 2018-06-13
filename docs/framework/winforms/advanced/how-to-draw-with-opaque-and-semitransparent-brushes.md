@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523605"
 ---
 # <a name="how-to-draw-with-opaque-and-semitransparent-brushes"></a>Postupy: Kreslení pomocí neprůhledných a poloprůhledných štětců
 Po vyplnění obrazce, je nutné předat <xref:System.Drawing.Brush> objektu na jednu z metod výplně <xref:System.Drawing.Graphics> třídy. Jeden parametr <xref:System.Drawing.SolidBrush.%23ctor%2A> konstruktor je <xref:System.Drawing.Color> objektu. K vyplnění neprůhledného tvaru, nastavte komponentu alfa barvy na 255. K vyplnění obrazce poloprůhledných, nastavte na jakoukoli hodnotu od 1 do 254 komponentu alfa.  

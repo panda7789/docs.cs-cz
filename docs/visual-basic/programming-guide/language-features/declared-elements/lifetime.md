@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654226"
 ---
 # <a name="lifetime-in-visual-basic"></a>Doba platnosti v jazyce Visual Basic
 *Životnost* deklarované elementu je doba, během které it je k dispozici pro použití. Proměnné jsou pouze elementy, které mají životnost. Pro tento účel kompilátor zpracovává parametry procedury a funkce vrátí jako zvláštních případech proměnných. Doba platnosti proměnné představuje dobu, během kterého může uchovávat hodnota. Jeho hodnota může změnit průběhu své životnosti, ale že vždy obsahuje určitou hodnotu.  

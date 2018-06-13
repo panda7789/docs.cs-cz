@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647134"
 ---
 # <a name="linq-to-xml-axes-visual-basic"></a>Technologie LINQ to XML osy (Visual Basic)
 Po vytvoření strom XML nebo načíst dokument XML do strom XML, můžete ji najít elementy a atributy a jejich hodnoty načíst dotazovat.  

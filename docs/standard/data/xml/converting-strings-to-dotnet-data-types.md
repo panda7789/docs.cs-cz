@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576576"
 ---
 # <a name="converting-strings-to-net-framework-data-types"></a>Převádění řetězců na rozhraní .NET Framework datové typy
 Pokud chcete převést řetězec na datový typ rozhraní .NET Framework, použijte **XmlConvert** metoda, která vyhovuje potřebám aplikace. Seznam všech metod pro převod k dispozici v **XmlConvert** třídy najdete v tématu <xref:System.Xml.XmlConvert>.  

@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574657"
 ---
 # <a name="performing-culture-insensitive-case-changes"></a>Provádění změn velikosti písmen nezávisle na jazykové verzi
 <xref:System.String.ToUpper%2A?displayProperty=nameWithType>, <xref:System.String.ToLower%2A?displayProperty=nameWithType>, <xref:System.Char.ToUpper%2A?displayProperty=nameWithType>, A <xref:System.Char.ToLower%2A?displayProperty=nameWithType> metody poskytují přetížení, které nepřijímá žádné parametry. Ve výchozím nastavení, tato přetížení bez parametrů provádí změny velikosti písmen na základě hodnoty z <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>. To vytváří malá a velká písmena výsledky, které se mohou lišit podle jazykové verze. Aby bylo jasné, zda chcete změny velikosti písmen zohledňující jazykovou verzi, nebo na jazykové verzi, by měl použít přetížení těchto metod, které vyžadují, abyste explicitně zadáte `culture` parametr. Změny velikosti písmen zohledňující jazykovou verzi, zadejte `CultureInfo.CurrentCulture` pro `culture` parametr. Nezávislé na jazykových změny velikosti písmen, zadejte `CultureInfo.InvariantCulture` pro `culture` parametr.  

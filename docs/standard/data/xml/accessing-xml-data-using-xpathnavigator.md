@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569080"
 ---
 # <a name="accessing-xml-data-using-xpathnavigator"></a>Přístup k datům XML pomocí objektem XPathNavigator nastaveným na
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje metody přejděte uzly, extrahovat XML data a přístup k datům silného typu XML v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu.  

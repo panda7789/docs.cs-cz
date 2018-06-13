@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519207"
 ---
 # <a name="custom-composite-using-native-activity"></a>Vlastní složené pomocí nativní aktivity
 Tento příklad ukazuje, jak k zápisu <xref:System.Activities.NativeActivity> , jiné plány <xref:System.Activities.Activity> objekty, které se řídí tok spuštění pracovního postupu. Tato ukázka používá dvě běžné řízení toky, pořadí a při, aby ukazují, jak to udělat.  

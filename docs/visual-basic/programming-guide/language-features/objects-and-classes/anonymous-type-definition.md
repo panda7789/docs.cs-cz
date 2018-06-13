@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649617"
 ---
 # <a name="anonymous-type-definition-visual-basic"></a>Definice autonomního typu (Visual Basic)
 V reakci na deklaraci instanci anonymního typu kompilátor vytvoří nové definice třídy, která obsahuje zadané vlastnosti pro typ.  

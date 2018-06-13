@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569528"
 ---
 # <a name="entity-references-are-expanded-and-not-preserved"></a>Odkazy na entity jsou rozšířené a není zachovaná.
 Pokud je odkaz na entitu rozšířit a nahradit text reprezentuje, **XmlEntityReference** uzlu není vytvořena. Místo toho je analyzována deklarací entity a uzlů vytvořené z obsahu v deklaraci zkopírují v místě z **XmlEntityReference**. Proto v `&publisher;` například `&publisher;` nebude uložena, ale místo toho **XmlText** uzel je vytvořen.  

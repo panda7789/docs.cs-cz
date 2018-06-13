@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576204"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Přehled asynchronních vzorů založených na událostech
 Aplikace, které současně provádět mnoho úloh, ale zůstávají reaguje na interakci s uživatelem, často vyžadují návrh, který používá více vláken. <xref:System.Threading> Obor názvů obsahuje všechny nástroje potřebné k vytvoření vícevláknové aplikace s vysokým výkonem, ale efektivně používání těchto nástrojů vyžaduje významné prostředí s více vlákny inženýrství softwaru. Pro vícevláknové aplikace s relativně jednoduché <xref:System.ComponentModel.BackgroundWorker> součást poskytuje přehledné řešení. Pro sofistikovanější asynchronní aplikace zvažte implementaci třídy, která dodržuje asynchronní vzor založený na událostech.  

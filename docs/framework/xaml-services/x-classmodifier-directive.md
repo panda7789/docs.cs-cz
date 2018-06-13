@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33564375"
 ---
 # <a name="xclassmodifier-directive"></a>x:ClassModifier – direktiva
 Mění chování kompilace XAML při `x:Class` k dispozici je také. Konkrétně, místo vytvoření částečné `class` má `Public` (výchozí), úroveň přístupu poskytnutého `x:Class` je vytvořena s `NotPublic` úroveň přístupu. Toto chování ovlivňuje úroveň přístupu pro třídy v vygenerované sestavení.  

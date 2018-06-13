@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647302"
 ---
 # <a name="when-to-use-an-enumeration-visual-basic"></a>Kdy použít výčet (Visual Basic)
 Výčty nabízí snadný způsob, jak pracovat s sady souvisejících konstanty. Na výčtu nebo `Enum`, je symbolický název pro sadu hodnot. Výčty jsou považovány za datové typy a můžete je použít k vytvoření sad konstanty pro použití s proměnnými a vlastnosti.  

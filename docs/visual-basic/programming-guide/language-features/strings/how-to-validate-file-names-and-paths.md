@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647801"
 ---
 # <a name="how-to-validate-file-names-and-paths-in-visual-basic"></a>Postupy: Ověření názvů a cest souborů v jazyce Visual Basic
 Tento příklad vrací `Boolean` hodnotu, která určuje, zda řetězec reprezentuje název souboru nebo cestu. Ověření kontroluje, zda název obsahuje znaky, které nejsou povoleny systému souborů.  

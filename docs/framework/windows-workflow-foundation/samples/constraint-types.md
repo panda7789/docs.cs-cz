@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517505"
 ---
 # <a name="constraint-types"></a>Omezení typů
 Tento příklad ukazuje dva různé způsoby použití omezení do pracovního postupu, jedna je z uvnitř aktivity (sestavení) a jeden z mimo (zásady). V tomto scénáři chce autor aktivity (od výrobce 3rth softwarové společnosti) k ověření vztah mezi dva argumenty. V takovém případě náklady na by měla být menší než nebo rovna hodnotě cenu. Toto je omezení obecné ověření sestavení.  

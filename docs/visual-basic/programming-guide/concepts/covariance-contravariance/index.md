@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644040"
 ---
 # <a name="covariance-and-contravariance-visual-basic"></a>Kovariance a kontravariance (Visual Basic)
 Kovariance a kontravariance povolit v jazyce Visual Basic implicitní převod odkazu pro typy polí, typy delegáta a argumenty obecného typu. Kovariance zachovává kompatibility přiřazení a kontravariance obrátí ho.  

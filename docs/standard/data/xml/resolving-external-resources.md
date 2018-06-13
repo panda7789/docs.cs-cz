@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577085"
 ---
 # <a name="resolving-external-resources"></a>Řešení externí zdroje
 **Objekt XmlResolver** vlastnost **třídou XMLDocument nastavenou na** je používán **třídou XMLDocument nastavenou na** třída najít prostředky, které nejsou vnořené v datech XML, jako je například externí dokument – typ definice (specifikace DTD), entit a schémat. Tyto položky může být umístěn v síti nebo na místní disk a identifikovat pomocí identifikátor URI (Uniform Resource). To umožňuje **třídou XMLDocument nastavenou na** vyřešit **EntityReference** uzlů, které jsou k dispozici v dokumentu a ověření dokumentu podle externí DTD nebo schéma.  

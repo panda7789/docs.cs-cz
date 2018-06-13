@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574719"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>Správa oborů názvů v dokumentu XML
 Obory názvů XML přidružit předdefinované a vlastní identifikátory URI názvy prvků a atributů v dokumentu XML. Chcete-li vytvořit těchto přidružení, definice předpony oboru názvů identifikátory URI a používání předpon, k vyfiltrování názvy prvků a atributů v datech XML. Obory názvů zabránit elementu a atributu kolize názvů a povolte elementů a atributů se stejným názvem, zpracovávají a ověřit jinak.  

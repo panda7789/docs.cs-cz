@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645964"
 ---
 # <a name="language-integrated-query-linq-visual-basic"></a>Language-Integrated Query (LINQ) (Visual Basic)
 LINQ je sada funkcí, které rozšiřuje možnosti účinný dotazovací na syntaxi jazyka Visual Basic. LINQ uvádí standardní, snadno naučili vzory pro dotazování a aktualizace dat a technologie můžete rozšířit pro zajištění podpory potenciálně jakýkoli druh datové úložiště.  Rozhraní .NET Framework zahrnuje LINQ sestavení zprostředkovatele, které umožňují použití LINQ s kolekcí rozhraní .NET Framework, databáze systému SQL Server, datové sady ADO.NET a dokumenty XML.  

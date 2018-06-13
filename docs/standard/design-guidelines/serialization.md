@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578063"
 ---
 # <a name="serialization"></a>Serializace
 Serializace je proces převodu objekt do formátu, který lze snadno jako trvalý, nebo přenosu. Například může serializovat objekt, přenosu přes Internet pomocí protokolu HTTP a deserializovat u cílového počítače.  

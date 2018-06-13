@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654213"
 ---
 # <a name="collection-initializers-visual-basic"></a>Inicializátory kolekcí (Visual Basic)
 *Inicializátory kolekcí* poskytují zkrácenou syntaxi, která umožňuje vytvořit kolekci a jeho naplnění počáteční sadu hodnot. Inicializátory kolekce jsou užitečné, když vytváříte kolekci ze sady známé hodnoty, například seznam možností v nabídce nebo kategorie, počáteční sadu číselných hodnot, seznam řetězců, jako je například den nebo měsíc názvy nebo zeměpisné umístění, jako statické seznam stavů, který se používá pro ověření.  

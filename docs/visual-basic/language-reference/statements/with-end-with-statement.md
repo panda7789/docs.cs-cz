@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604663"
 ---
 # <a name="withend-with-statement-visual-basic"></a>With...End With – příkaz (Visual Basic)
 Vykoná řadu příkazů, které opakovaně odkazují na jeden objekt nebo strukturu, takže příkazy mohou při přístupu k členům tohoto objektu nebo struktury použít zjednodušenou syntaxi.  Při použití strukturou, můžou jenom číst hodnoty členů, nebo volat metody a dojde k chybě, pokud se pokusíte přiřadit hodnoty členů struktury používán `With...End With` příkaz.  

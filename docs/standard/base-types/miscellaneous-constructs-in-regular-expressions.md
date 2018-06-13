@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571979"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>Různé konstrukce v regulárních výrazech
 Regulární výrazy v rozhraní .NET zahrnují tři různé jazykové konstrukty. Jedno umožňuje povolit nebo zakázat určité možnosti porovnávání uprostřed vzor regulárního výrazu. Zbývající dvě umožňují zahrnout komentáře v regulárním výrazu.  

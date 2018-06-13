@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648382"
 ---
 # <a name="constants-overview-visual-basic"></a>Přehled konstant (Visual Basic)
 Konstanta je smysluplný název, který probíhá číslo nebo řetězec, který se nemění. Konstanty ukládat hodnoty, které jak již název napovídá, zůstávají stejné v celé spuštění aplikace. Může výrazně zlepšit čitelnost kódu a bylo snazší spravovat pomocí konstanty. Použít na kód, který obsahuje hodnoty, které se znovu objeví nebo který závisí na určitých čísla, která je obtížné mějte na paměti, nebo nemají zřejmé význam.  

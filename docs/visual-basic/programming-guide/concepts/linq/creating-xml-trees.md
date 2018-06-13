@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643482"
 ---
 # <a name="creating-xml-trees-visual-basic"></a>Vytváření stromů XML (Visual Basic)
 Jeden z nejčastějších úloh XML je vytváření strom XML. Tato část popisuje několik způsobů, jak je vytvořte.  

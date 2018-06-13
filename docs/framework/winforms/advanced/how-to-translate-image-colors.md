@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522533"
 ---
 # <a name="how-to-translate-image-colors"></a>Postupy: Překlad barev obrázků
 Překlad přidá hodnotu na jeden nebo více součástí čtyři barev. V následující tabulce jsou uvedeny položek matice barev, které představují překladů.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577395"
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>Migrace z XslTransform – třída
 Architektura XSLT byla změněna v [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)] verzi. <xref:System.Xml.Xsl.XslTransform> Třída nahradila <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  
