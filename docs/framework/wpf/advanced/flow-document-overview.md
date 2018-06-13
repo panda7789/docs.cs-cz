@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549734"
 ---
 # <a name="flow-document-overview"></a>Přehled toku dokumentů
 Tok dokumenty jsou navrženy pro optimalizaci zobrazení a přehlednosti. Místo je nastavená na jednu předdefinované rozložení, dokumenty toku dynamicky upravit a přeformátování obsah na základě proměnných runtime například volitelné uživatelské předvolby, řešení zařízení a velikost okna. Kromě toho dokumenty toku nabízejí dokumentu pokročilé funkce, jako je stránkování a sloupců. Toto téma obsahuje přehled toku dokumentů a postup jejich vytvoření.  

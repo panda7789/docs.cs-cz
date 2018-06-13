@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546566"
 ---
 # <a name="markup-compatibility-mc-language-features"></a>Jazykové funkce kompatibility značek (mc:)
 ## <a name="in-this-section"></a>V tomto oddílu  

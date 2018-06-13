@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550774"
 ---
 # <a name="windows-in-wpf-applications"></a>Systém Windows v aplikacích WPF
 Uživatelé komunikovat s aplikací prostřednictvím služby windows. Základní účelem okno je hostování a zobrazit obsah. Typ obsahu, že okno hostitele závisí na typu dat, že aplikace funguje přes, který může obsahovat média, rozšiřitelné aplikace Markup Language (XAML) stránky, webové stránky, dokumenty, databázových tabulek a záznamy a informace o systému.  

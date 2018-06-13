@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551788"
 ---
 # <a name="how-to-wrap-a-border-around-the-content-of-a-canvas"></a>Postupy: Zalomení ohraničení kolem obsahu plátna
 Tento příklad ukazuje, jak zabalit <xref:System.Windows.Controls.Canvas> element s <xref:System.Windows.Controls.Border>.  

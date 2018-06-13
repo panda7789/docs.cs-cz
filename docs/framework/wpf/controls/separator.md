@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551041"
 ---
 # <a name="separator"></a>Oddělovač
 A <xref:System.Windows.Controls.Separator> řízení nevykresluje na řádek, vodorovné nebo svislé, mezi položkami v ovládacích prvcích, jako například <xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.Menu>, a <xref:System.Windows.Controls.ToolBar>.  

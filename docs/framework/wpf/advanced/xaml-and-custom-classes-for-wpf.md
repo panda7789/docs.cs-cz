@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549315"
 ---
 # <a name="xaml-and-custom-classes-for-wpf"></a>XAML a vlastní třídy pro WPF
 XAML, jak jsou implementované ve [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] rozhraní podporuje schopnost definovat vlastní třídu nebo strukturu v žádném [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] jazyka a poté přístup pomocí značek XAML. Můžete použít kombinaci [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]-definované typy a vaše vlastní typy v rámci stejného souboru značek, obvykle mapování vlastních typů na předponu oboru názvů jazyka XAML. Toto téma popisuje požadavky, které vlastní třídu, musí vyhovovat možné používat jako XAML element.  

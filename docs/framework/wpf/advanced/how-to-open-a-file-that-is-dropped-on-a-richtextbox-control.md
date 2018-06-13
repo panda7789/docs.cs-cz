@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547759"
 ---
 # <a name="how-to-open-a-file-that-is-dropped-on-a-richtextbox-control"></a>Postupy: Otevření souboru přetaženého na ovládací prvek RichTextBox
 V [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], <xref:System.Windows.Controls.TextBox>, <xref:System.Windows.Controls.RichTextBox>, a <xref:System.Windows.Documents.FlowDocument> všechny ovládací prvky mít integrovanou funkci přetažení myší. Integrovanou funkci umožňuje přetažení myší textu v rámci a mezi ovládacími prvky. Však není povolit otevřením souboru umístěním souboru na ovládací prvek. Tyto ovládací prvky přetažení myší události také označit jako zpracování. Ve výchozím nastavení, v důsledku toho nelze přidat svoje vlastní obslužné rutiny událostí nakonfigurovánu otevřete vynechaných soubory.  

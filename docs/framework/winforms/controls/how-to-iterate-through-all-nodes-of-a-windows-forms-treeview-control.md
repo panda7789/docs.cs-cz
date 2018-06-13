@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532753"
 ---
 # <a name="how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control"></a>Postupy: Iterace všemi uzly ovládacího prvku Windows Forms TreeView
 Někdy je užitečné k prozkoumání každý uzel ve Windows Forms <xref:System.Windows.Forms.TreeView> ovládací prvek, aby bylo možné provést některé výpočet hodnot uzlu. Tuto operaci lze provést pomocí postupu rekurzivní (rekurzivní metody v jazyce C# a C++), který iteruje každý uzel v každé z kolekcí stromu.  

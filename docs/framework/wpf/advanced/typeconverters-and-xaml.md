@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549679"
 ---
 # <a name="typeconverters-and-xaml"></a>TypeConverters a XAML
 Toto téma představuje účelem převodu typu z řetězce jako obecné funkce jazyka XAML. V rozhraní .NET Framework <xref:System.ComponentModel.TypeConverter> třída slouží jako součást implementace pro spravované vlastní třídu, která lze použít jako hodnoty vlastností v použití atributu XAML určitý účel. Pokud můžete psát vlastní třídu a chcete instancí vaší třídy možné používat jako hodnoty nastavit atribut XAML, může se mají použít <xref:System.ComponentModel.TypeConverterAttribute> na třídu, zápis vlastní <xref:System.ComponentModel.TypeConverter> třídy, nebo obojí.  

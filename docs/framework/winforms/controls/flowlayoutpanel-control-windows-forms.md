@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524397"
 ---
 # <a name="flowlayoutpanel-control-windows-forms"></a>FlowLayoutPanel – ovládací prvek (Windows Forms)
 `FlowLayoutPanel` Řízení uspořádá jeho obsah v směr toku vodorovně nebo svisle. Jeho obsah může být uzavřen z jeden řádek na další, nebo z jednoho sloupce na další. Alternativně může být jeho obsah oříznut místo uzavřen.  

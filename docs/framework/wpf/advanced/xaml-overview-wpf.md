@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549721"
 ---
 # <a name="xaml-overview-wpf"></a>Přehled XAML (WPF)
 Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro zápis [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. Toto téma popisuje XAML konkrétně, jak je implementované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. XAML samotné je větší koncept jazyk než [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  

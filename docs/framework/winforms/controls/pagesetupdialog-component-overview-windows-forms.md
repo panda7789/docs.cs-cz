@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534222"
 ---
 # <a name="pagesetupdialog-component-overview-windows-forms"></a>PageSetupDialog – přehled komponenty (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.PageSetupDialog> součást je předem nakonfigurovaný dialogové okno, použije se k nastavení stránky podrobnosti pro tisk v aplikacích založených na systému Windows. Použijte je v rámci aplikace systému Windows jako jednoduchým řešením pro uživatele k nastavení předvoleb stránky místo dialogové okno Vlastní konfigurace. Můžete povolit uživatelům nastavit okraj a okraj úpravy, záhlaví a zápatí stránky a výšku nebo na šířku. Podle standardní dialogová okna Windows, můžete vytvořit aplikace, jehož základní funkce je dobře obeznámeni uživatele.  

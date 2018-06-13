@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525572"
 ---
 # <a name="how-to-enable-column-reordering-in-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Povolení změny pořadí sloupců v ovládacím prvku Windows Forms DataGridView pomocí Návrháře
 Při zobrazení dat, které zobrazuje ve Windows Forms <xref:System.Windows.Forms.DataGridView> řízení, uživatelé někdy chtějí porovnat hodnoty v určité sloupce. To může být nepohodlná, pokud sloupce, které jsou často oddělené v ovládacím prvku, zejména v případě, že uživatelé musí a zpět vodorovný posun Chcete-li zobrazit všechny sloupce, které mají zájem. Můžete provést úlohy porovnání hodnoty ve sloupcích jednodušší tím, že umožňuje uživatelům změnit pořadí sloupců. Když povolíte Změna pořadí sloupců, uživatelé přesunou sloupce do nového umístění přetáhněte záhlaví sloupce pomocí myši.  

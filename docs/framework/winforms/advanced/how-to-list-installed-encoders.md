@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524752"
 ---
 # <a name="how-to-list-installed-encoders"></a>Postupy: Vypsání seznamu instalovaných kodérů
 Můžete zobrazit seznam kodérů dostupné v počítači, chcete-li zjistit, jestli vaše aplikace můžete uložit do formátu souboru z bitové kopie. <xref:System.Drawing.Imaging.ImageCodecInfo> Třída poskytuje <xref:System.Drawing.Imaging.ImageCodecInfo.GetImageEncoders%2A> statických metod, aby mohla určit, která image kodéry jsou k dispozici. <xref:System.Drawing.Imaging.ImageCodecInfo.GetImageEncoders%2A> Vrátí pole <xref:System.Drawing.Imaging.ImageCodecInfo> objekty.  

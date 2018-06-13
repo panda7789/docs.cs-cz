@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551762"
 ---
 # <a name="adorners"></a>Doplňky pro úpravy
 Tato část obsahuje informace o ozdobného prvku a [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Adorner framework.  

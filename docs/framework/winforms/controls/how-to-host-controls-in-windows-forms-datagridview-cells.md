@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534044"
 ---
 # <a name="how-to-host-controls-in-windows-forms-datagridview-cells"></a>Postupy: Umisťování ovládacích prvků do buněk Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Ovládací prvek obsahuje několik typů sloupce, povolíte uživatelům zadat a upravit hodnoty v mnoha různými způsoby. Pokud tyto typy sloupců nevyhovuje vašim potřebám zadávání dat, ale můžete vytvořit vlastní typy sloupců s buněk, které jsou hostiteli ovládací prvky dle vlastního výběru. Chcete-li to provést, je nutné definovat třídy, které jsou odvozeny od <xref:System.Windows.Forms.DataGridViewColumn> a <xref:System.Windows.Forms.DataGridViewCell>. Je třeba definovat třídu odvozenou z <xref:System.Windows.Forms.Control> a implementuje <xref:System.Windows.Forms.IDataGridViewEditingControl> rozhraní.  

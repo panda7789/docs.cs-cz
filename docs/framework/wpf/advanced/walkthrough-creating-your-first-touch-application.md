@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548348"
 ---
 # <a name="walkthrough-creating-your-first-touch-application"></a>Návod: Vytvoření první aplikace
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje aplikacím reagovat na touch. Například můžete pracovat s aplikací pomocí jedné nebo více prsty, které na zařízení touch-velká a malá písmena, například dotykovou obrazovku tento návod vytvoří aplikaci, která umožňuje uživatelům přesunout, změnit velikost nebo otočení jednoho objektu pomocí touch.  

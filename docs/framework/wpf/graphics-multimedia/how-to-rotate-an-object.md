@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561940"
 ---
 # <a name="how-to-rotate-an-object"></a>Postupy: Otočení objektu
 Tento příklad ukazuje, jak objektu. V příkladu se nejdřív vytvoří <xref:System.Windows.Media.RotateTransform> a pak specifikuje jeho <xref:System.Windows.Media.RotateTransform.Angle%2A> ve stupních.  

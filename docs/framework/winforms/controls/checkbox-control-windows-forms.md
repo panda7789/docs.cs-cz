@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524908"
 ---
 # <a name="checkbox-control-windows-forms"></a>CheckBox – ovládací prvek (Windows Forms)
 Windows Forms `CheckBox` řízení Určuje, zda je určitá podmínka zapnout nebo vypnout. Běžně se používá k dispozici Ano/Ne nebo hodnotu True nebo False výběru uživatele. Ovládací prvky zaškrtávacích políček ve skupinách, můžete použít k zobrazení více možností, ze kterých uživatel může vybrat jednu nebo více. Je podobná <xref:System.Windows.Forms.RadioButton> řízení, ale libovolný počet seskupené `CheckBox` může být vybraný ovládací prvky.  

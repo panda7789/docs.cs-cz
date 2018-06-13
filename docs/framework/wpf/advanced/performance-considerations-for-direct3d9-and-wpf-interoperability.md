@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549201"
 ---
 # <a name="performance-considerations-for-direct3d9-and-wpf-interoperability"></a>Předpokládaný výkon pro Direct3D9 a interoperabilitu WPF
 Je možné hostovat procesu Direct3D9 obsahu pomocí <xref:System.Windows.Interop.D3DImage> třídy. Hostování procesu Direct3D9 obsahu může ovlivnit výkon aplikace. Toto téma popisuje osvědčené postupy za účelem optimalizace výkonu při hostování procesu Direct3D9 obsahu v aplikaci Windows Presentation Foundation (WPF). Tyto doporučené postupy zahrnují použití <xref:System.Windows.Interop.D3DImage> a osvědčené postupy, pokud používáte systém Windows Vista, Windows XP, a zobrazí se více monitorování.  

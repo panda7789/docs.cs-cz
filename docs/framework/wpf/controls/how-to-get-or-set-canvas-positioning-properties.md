@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551977"
 ---
 # <a name="how-to-get-or-set-canvas-positioning-properties"></a>Postupy: Načtení nebo nastavení vlastnosti umístění plátna
 Tento příklad ukazuje, jak používat umísťovací metody třídy <xref:System.Windows.Controls.Canvas> element na pozici podřízené obsah. Tento příklad používá obsah <xref:System.Windows.Controls.ListBoxItem> představují umístění hodnoty a převede hodnoty instancí <xref:System.Double>, který je požadovaný argument pro umístění. Hodnoty jsou pak převést zpět na řetězce a zobrazí jako text v <xref:System.Windows.Controls.TextBlock> element pomocí <xref:System.Windows.Controls.Canvas.GetLeft%2A> metoda.  

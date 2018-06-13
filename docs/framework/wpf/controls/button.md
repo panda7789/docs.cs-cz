@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551697"
 ---
 # <a name="button"></a>Tlačítko
 A <xref:System.Windows.Controls.Button> řízení reaguje na uživatelský vstup z myši, klávesnice, pera, nebo jiné vstupní zařízení a vyvolá <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí. A <xref:System.Windows.Controls.Button> je základní [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] komponenty, která může obsahovat jednoduchý obsah, jako je text a může také obsahovat komplexní obsah, například bitové kopie a <xref:System.Windows.Controls.Panel> ovládací prvky.  

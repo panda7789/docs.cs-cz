@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549056"
 ---
 # <a name="windows-forms-and-wpf-interoperability-input-architecture"></a>Architektura vstupu interoperability Windows Forms a WPF
 Součinnosti mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vyžaduje, aby obě technologie bylo zpracování vstupních příslušné klávesnice. Toto téma popisuje, jak implementovat tyto technologie klávesnici a k povolení technologie smooth vzájemná spolupráce v hybridní aplikace zpracování zpráv.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551188"
 ---
 # <a name="combobox"></a>ComboBox
 <xref:System.Windows.Controls.ComboBox> Řízení předkládá uživatelům seznam možností. V seznamu se zobrazí a skrytý ovládací prvek rozšíří a sbalí. Ve svém výchozím stavu v seznamu sbalena, zobrazení pouze jednu možnost. Uživatel klikne tlačítko Zobrazit seznam možností.  

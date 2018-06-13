@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549098"
 ---
 # <a name="optimizing-performance-2d-graphics-and-imaging"></a>Optimalizace výkonu: 2D grafika a obrázky
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje širokou škálu 2D grafika a vytváření bitové kopie funkce, které lze optimalizovat pro požadavky vaší aplikace. Toto téma obsahuje informace o optimalizaci výkonu v těchto oblastech.  

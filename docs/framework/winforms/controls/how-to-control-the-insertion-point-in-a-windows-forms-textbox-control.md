@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530735"
 ---
 # <a name="how-to-control-the-insertion-point-in-a-windows-forms-textbox-control"></a>Postupy: Řízení bodu pro vkládání v ovládacím prvku Windows Forms TextBox
 Když Windows Forms <xref:System.Windows.Forms.TextBox> řízení nejprve obdrží fokus, výchozí vložení v rámci textového pole je nalevo od existujícího textu. Kurzor s klávesnici nebo myš, může uživatel přesunout. Pokud textového pole ztratí a pak znovu získal fokus, bude bod vložení kdekoli uživatele poslední ho umístili.  

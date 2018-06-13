@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549344"
 ---
 # <a name="weak-event-patterns"></a>Slabý vzor událostí
 V aplikacích je možné, že obslužné rutiny, které jsou připojené k zdroje událostí nebude v koordinaci s objektem naslouchací proces, který obslužná rutina připojen ke zdroji. Tato situace může vést k nevracení paměti. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] představuje návrhový vzor, který lze tento problém vyřešit pomocí vyhrazené manager třídu pro konkrétní události a implementace rozhraní na naslouchací procesy pro tuto událost. Tento vzor návrhu se označuje jako *slabé událostí vzor*.  

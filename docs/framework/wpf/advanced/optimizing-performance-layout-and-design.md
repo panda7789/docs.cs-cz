@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547833"
 ---
 # <a name="optimizing-performance-layout-and-design"></a>Optimalizace výkonu: Rozložení a návrh
 Návrh vašeho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace může mít vliv na jeho výkon vytvořením nárokům v Výpočet rozložení a ověření odkazy na objekty. Konstrukce objektů, zejména v době běhu může ovlivnit výkonové charakteristiky vaší aplikace.  

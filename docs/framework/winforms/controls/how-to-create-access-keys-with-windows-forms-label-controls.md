@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530800"
 ---
 # <a name="how-to-create-access-keys-with-windows-forms-label-controls"></a>Postupy: Vytváření přístupových klíčů pomocí ovládacích prvků Windows Forms Label
 Windows Forms <xref:System.Windows.Forms.Label> ovládací prvky můžete použít k definování přístupové klíče pro další ovládací prvky. Když definujete přístupový klíč v ovládacím prvku popisek, může uživatel stisknout klávesy ALT a znak, který určíte přesunout fokus na ovládací prvek, který následuje v pořadí. Protože popisky nemůže přijmout fokus, automaticky aktivuje na další ovládací prvek v pořadí. Tento postup slouží k přiřazení přístupových klíčů k textová pole, pole se seznamem, seznamy a datové mřížky.  

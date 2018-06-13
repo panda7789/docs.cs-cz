@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550095"
 ---
 # <a name="how-to-persist-and-restore-application-scope-properties-across-application-sessions"></a>Postupy: Zachování a obnovení vlastností v rozsahu aplikace mezi jednotlivými relacemi aplikace
 Tento příklad ukazuje, jak se zachovat vlastnosti oboru aplikace při vypnutí aplikace a jak obnovit vlastnosti oboru aplikace po další aplikace spustit.  

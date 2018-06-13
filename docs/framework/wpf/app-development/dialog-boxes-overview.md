@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549153"
 ---
 # <a name="dialog-boxes-overview"></a>Přehled dialogových oken
 Samostatné aplikace obvykle mají hlavní okno, jak zobrazuje hlavní data, přes které aplikace funguje a zpřístupňuje funkci pro zpracování dat prostřednictvím [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] mechanismy jako řádky nabídek, panely nástrojů a stavové řádky. Netriviální aplikace může také zobrazit další okna udělat následující:  

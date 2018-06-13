@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545968"
 ---
 # <a name="how-to-remotely-survey-the-status-of-printers"></a>Postupy: Vzdálené zjištění stavu tiskáren
 V každém okamžiku v střední a velké společnosti může být více tiskárny, které nejsou práce z důvodu uvíznutí papíru nebo se z dokumentu nebo jiné problematické situaci. Bohatá sada vlastností tiskárny v [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] Microsoft .NET Framework poskytují způsob pro provádění rychlé dotazník stavů tiskáren.  

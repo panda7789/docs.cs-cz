@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33284300"
 ---
 # <a name="where-clause-c-reference"></a>where – klauzule (Referenční dokumentace jazyka C#)
 `where` Klauzule ve výrazu dotazu slouží k určení, které prvky ze zdroje dat bude vrácen ve výrazu dotazu. Platí Boolean podmínku (*predikát*) pro každý element source (odkazuje proměnná rozsahu) a vrátí ty, pro které je zadaná podmínka pravdivá. Výraz jeden dotaz může obsahovat více `where` klauzule a jedna klauzule může obsahovat několik predikátů podvýrazy.  

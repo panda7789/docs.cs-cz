@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552776"
 ---
 # <a name="how-to-use-a-custom-context-menu-with-a-textbox"></a>Postupy: Použití vlastní místní nabídky u objektu TextBox
 Tento příklad ukazuje, jak definovat a implementovat jednoduchý vlastní kontextovou nabídku pro <xref:System.Windows.Controls.TextBox>.  

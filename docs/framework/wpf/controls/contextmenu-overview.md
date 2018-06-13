@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552867"
 ---
 # <a name="contextmenu-overview"></a>ContextMenu – přehled
 <xref:System.Windows.Controls.ContextMenu> Třída reprezentuje element, který zveřejňuje funkce pomocí konkrétního kontextu <xref:System.Windows.Controls.Menu>. Obvykle se uživatel zpřístupní <xref:System.Windows.Controls.ContextMenu> v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] kliknutím pravým tlačítkem na tlačítko myši. Toto téma představuje <xref:System.Windows.Controls.ContextMenu> elementu a obsahuje příklady použití v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a kód.  

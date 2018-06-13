@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547613"
 ---
 # <a name="intercepting-input-from-the-stylus"></a>Přijetí vstupu z pera
 <xref:System.Windows.Input.StylusPlugIns> Architektura poskytuje mechanismus pro implementaci nízké úrovně řízení přes <xref:System.Windows.Input.Stylus> vstup a vytvoření digitálního <xref:System.Windows.Ink.Stroke> objekty. <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> Třída poskytuje mechanismus pro implementaci vlastního chování a použijte ho pro datový proud dat pocházejících z pera zařízení k zajištění optimálního výkonu.  

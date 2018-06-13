@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33287264"
 ---
 # <a name="static-c-reference"></a>static – modifikátor (Referenční dokumentace jazyka C#)
 Použití `static` modifikátor deklarovat statický člen, který patří k samotného typu, nikoli na konkrétní objekt. `static` Modifikátor lze použít s třídy, pole, metody, vlastnosti, operátory, události a konstruktory, ale nedá se použít s indexery, finalizační metody nebo jiného typu než třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  

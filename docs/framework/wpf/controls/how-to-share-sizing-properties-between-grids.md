@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550862"
 ---
 # <a name="how-to-share-sizing-properties-between-grids"></a>Postupy: Sdílení vlastností změny velikosti mezi mřížkami
 Tento příklad ukazuje, jak sdílet data velikosti sloupců a řádků mezi <xref:System.Windows.Controls.Grid> elementy, aby bylo možné zachovat dimenzování konzistentní.  

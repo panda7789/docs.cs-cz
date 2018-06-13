@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549406"
 ---
 # <a name="marking-routed-events-as-handled-and-class-handling"></a>Označení směrovaných událostí jako zpracovaných a zpracování tříd
 Obslužné rutiny pro směrované události můžete označit události zpracovávaných v rámci data události. Zpracování události účinně zkracují trasy. Třída zpracování je programovací konceptu, které podporuje směrované události. Obslužná rutina třída má možnost zpracování konkrétní směrované události na úrovni třídy obslužnou rutinu, která je volána před všechny instance obslužné rutiny na jakoukoli instanci třídy.  
