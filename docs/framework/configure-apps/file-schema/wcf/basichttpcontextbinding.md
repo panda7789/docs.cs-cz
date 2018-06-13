@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753089"
 ---
 # <a name="ltbasichttpcontextbindinggt"></a><span data-ttu-id="b306e-102">&lt;basicHttpContextBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="b306e-102">&lt;basicHttpContextBinding&gt;</span></span>
 <span data-ttu-id="b306e-103">Určení vazbu, která poskytuje kontext pro <xref:System.ServiceModel.BasicHttpBinding> k výměně povolením soubory cookie HTTP jako mechanismus exchange.</span><span class="sxs-lookup"><span data-stu-id="b306e-103">Specifying a binding that provides context for the <xref:System.ServiceModel.BasicHttpBinding> to be exchanged by enabling HTTP cookies as the exchange mechanism.</span></span>  

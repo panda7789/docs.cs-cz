@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762384"
 ---
 # <a name="nullable-structured-types-entity-sql"></a><span data-ttu-id="01aa1-102">Strukturované typy s možnou hodnotou Null (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="01aa1-102">Nullable Structured Types (Entity SQL)</span></span>
 <span data-ttu-id="01aa1-103">A `null` instance strukturovaného typu je instanci, která neexistuje.</span><span class="sxs-lookup"><span data-stu-id="01aa1-103">A `null` instance of a structured type is an instance that does not exist.</span></span> <span data-ttu-id="01aa1-104">Tento proces se liší z existující instance, ve kterém mají všechny vlastnosti `null` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="01aa1-104">This is different from an existing instance in which all properties have `null` values.</span></span>  

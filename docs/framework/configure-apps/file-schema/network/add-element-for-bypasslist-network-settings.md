@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754516"
 ---
 # <a name="ltaddgt-element-for-bypasslist-network-settings"></a><span data-ttu-id="f9b4d-102">&lt;Přidat&gt; Element pro bypasslist – (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="f9b4d-102">&lt;add&gt; Element for bypasslist (Network Settings)</span></span>
 <span data-ttu-id="f9b4d-103">Přidá IP adresy nebo názvu DNS na seznam obcházení proxy.</span><span class="sxs-lookup"><span data-stu-id="f9b4d-103">Adds an IP address or DNS name to the proxy bypass list.</span></span>  

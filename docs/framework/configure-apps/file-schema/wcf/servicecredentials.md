@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750398"
 ---
 # <a name="ltservicecredentialsgt"></a><span data-ttu-id="d112a-102">&lt;– serviceCredentials&gt;</span><span class="sxs-lookup"><span data-stu-id="d112a-102">&lt;serviceCredentials&gt;</span></span>
 <span data-ttu-id="d112a-103">Určuje pověření, která se použije v ověřování služby a nastavení související s ověření pověření klienta.</span><span class="sxs-lookup"><span data-stu-id="d112a-103">Specifies the credential to be used in authenticating the service and the client credential validation-related settings.</span></span>  

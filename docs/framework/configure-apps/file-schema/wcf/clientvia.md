@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754129"
 ---
 # <a name="ltclientviagt"></a><span data-ttu-id="344dd-102">&lt;clientVia&gt;</span><span class="sxs-lookup"><span data-stu-id="344dd-102">&lt;clientVia&gt;</span></span>
 <span data-ttu-id="344dd-103">Určuje identifikátor URI, pro který by měl být vytvořen kanál přenosu.</span><span class="sxs-lookup"><span data-stu-id="344dd-103">Specifies the URI for which the transport channel should be created.</span></span> <span data-ttu-id="344dd-104">Další informace naleznete v tématu <xref:System.ServiceModel.Description.ClientViaBehavior>.</span><span class="sxs-lookup"><span data-stu-id="344dd-104">For more information, see <xref:System.ServiceModel.Description.ClientViaBehavior>.</span></span>  

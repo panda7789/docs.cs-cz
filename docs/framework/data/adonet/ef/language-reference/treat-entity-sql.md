@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763973"
 ---
 # <a name="treat-entity-sql"></a><span data-ttu-id="28865-102">ZPRACOVÁVAT (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="28865-102">TREAT (Entity SQL)</span></span>
 <span data-ttu-id="28865-103">Objekt konkrétní základní typ zpracovává jako objekt zadaného typu odvozené.</span><span class="sxs-lookup"><span data-stu-id="28865-103">Treats an object of a particular base type as an object of the specified derived type.</span></span>  

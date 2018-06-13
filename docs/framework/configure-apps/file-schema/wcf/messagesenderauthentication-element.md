@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750736"
 ---
 # <a name="ltmessagesenderauthenticationgt-element"></a><span data-ttu-id="48136-102">Element &lt;messageSenderAuthentication&gt;</span><span class="sxs-lookup"><span data-stu-id="48136-102">&lt;messageSenderAuthentication&gt; element</span></span>
 <span data-ttu-id="48136-103">Určuje možnosti ověřování pro odesílatelé zpráv peer-to-peer.</span><span class="sxs-lookup"><span data-stu-id="48136-103">Specifies authentication options for peer-to-peer message senders.</span></span>  

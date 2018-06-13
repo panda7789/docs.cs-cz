@@ -1,14 +1,6 @@
 ---
-title: "ICorDebugHeapValue::CreateRelocBreakpoint – metoda"
-ms.custom: 
+title: ICorDebugHeapValue::CreateRelocBreakpoint – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorDebugHeapValue.CreateRelocBreakpoint
 api_location:
@@ -23,22 +15,19 @@ helpviewer_keywords:
 ms.assetid: 54d31e7b-b1e2-4f2b-8a4f-867b8759fe41
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 33aff1dfefa2a1f487561d17b8a66f7821edeb5d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fac87410d4e9b23fd532582b9ce1500e2c08a301
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33412318"
 ---
-# <a name="icordebugheapvaluecreaterelocbreakpoint-method"></a><span data-ttu-id="a9986-102">ICorDebugHeapValue::CreateRelocBreakpoint – metoda</span><span class="sxs-lookup"><span data-stu-id="a9986-102">ICorDebugHeapValue::CreateRelocBreakpoint Method</span></span>
-<span data-ttu-id="a9986-103">Tato metoda není implementována v aktuální verzi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="a9986-103">This method is not implemented in the current version of the .NET Framework.</span></span>  
+# <a name="icordebugheapvaluecreaterelocbreakpoint-method"></a><span data-ttu-id="bd9d0-102">ICorDebugHeapValue::CreateRelocBreakpoint – metoda</span><span class="sxs-lookup"><span data-stu-id="bd9d0-102">ICorDebugHeapValue::CreateRelocBreakpoint Method</span></span>
+<span data-ttu-id="bd9d0-103">Tato metoda není implementována v aktuální verzi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="bd9d0-103">This method is not implemented in the current version of the .NET Framework.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a9986-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a9986-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bd9d0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bd9d0-104">Syntax</span></span>  
   
 ```  
 HRESULT CreateRelocBreakpoint (  
@@ -46,9 +35,9 @@ HRESULT CreateRelocBreakpoint (
 );  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="a9986-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a9986-105">Requirements</span></span>  
- <span data-ttu-id="a9986-106">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a9986-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bd9d0-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bd9d0-105">Requirements</span></span>  
+ <span data-ttu-id="bd9d0-106">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bd9d0-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a9986-107">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="a9986-107">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="bd9d0-107">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="bd9d0-107">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="a9986-108">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a9986-108">**Library:** CorGuids.lib</span></span>
+ <span data-ttu-id="bd9d0-108">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="bd9d0-108">**Library:** CorGuids.lib</span></span>

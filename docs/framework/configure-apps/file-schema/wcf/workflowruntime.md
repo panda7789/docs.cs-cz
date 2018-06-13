@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755845"
 ---
 # <a name="ltworkflowruntimegt"></a><span data-ttu-id="93607-102">&lt;Modul runtime pracovního postupu&gt;</span><span class="sxs-lookup"><span data-stu-id="93607-102">&lt;workflowRuntime&gt;</span></span>
 <span data-ttu-id="93607-103">Určuje nastavení pro instanci <xref:System.Workflow.Runtime.WorkflowRuntime> pro hostování služby Windows Communication Foundation (WCF) založené na pracovním postupu.</span><span class="sxs-lookup"><span data-stu-id="93607-103">Specifies settings for an instance of <xref:System.Workflow.Runtime.WorkflowRuntime> for hosting workflow-based Windows Communication Foundation (WCF) services.</span></span>  

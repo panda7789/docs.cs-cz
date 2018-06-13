@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751266"
 ---
 # <a name="lttransportgt-of-ltbasichttpbindinggt"></a><span data-ttu-id="8b19e-102">&lt;transport&gt; – &lt;basicHttpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="8b19e-102">&lt;transport&gt; of &lt;basicHttpBinding&gt;</span></span>
 <span data-ttu-id="8b19e-103">Definuje vlastnosti, které řídí parametry ověřování pro přenos HTTP.</span><span class="sxs-lookup"><span data-stu-id="8b19e-103">Defines properties that control authentication parameters for the HTTP transport.</span></span>  
