@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756940"
 ---
 # <a name="adding-datarelations"></a>Přidání DataRelations
 V <xref:System.Data.DataSet> s více <xref:System.Data.DataTable> objekty, můžete použít <xref:System.Data.DataRelation> objekty, které se týkají jednu tabulku do jiné, můžete procházet pomocí tabulky a vrátí řádky nadřazená nebo podřízená z tabulek v relaci.  

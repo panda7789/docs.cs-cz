@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752608"
 ---
 # <a name="ltaddgt-element-for-ltsharedlistenersgt"></a>&lt;Přidat&gt; Element pro &lt;sharedListeners&gt;
 Přidá naslouchací proces a `sharedListeners` kolekce. `sharedListeners` je to všechny kolekce naslouchacího procesu [ \<zdroje >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md) , můžete odkazovat.  Ve výchozím nastavení, moduly pro naslouchání v `sharedListeners` kolekce nejsou uloženy do `Listeners` kolekce. Je nutné je přidat název, který [ \<zdroje >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md). Není možné získat posluchače v `sharedListeners` kolekce v kódu v době běhu.  

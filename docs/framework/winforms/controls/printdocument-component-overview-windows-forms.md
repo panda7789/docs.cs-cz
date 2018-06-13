@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538262"
 ---
 # <a name="printdocument-component-overview-windows-forms"></a>PrintDocument – přehled komponenty (Windows Forms)
 Windows Forms [PrintDocument](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md) komponenta se používá k nastavení vlastnosti, které popisují, co chcete vytisknout a schopnost tisk dokumentu v rámci aplikace pro systém Windows. Může sloužit ve spojení s [PrintDialog](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md) součást, kterou je možné v ovládacím prvku všech aspektů tisk dokumentu.  

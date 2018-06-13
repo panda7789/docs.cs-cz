@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538525"
 ---
 # <a name="tablelayoutpanel-control-windows-forms"></a>TableLayoutPanel – ovládací prvek (Windows Forms)
 <xref:System.Windows.Forms.TableLayoutPanel> Řízení uspořádá jeho obsah v mřížce. Protože je prováděna rozložení i v době návrhu a běh, ho můžete změnit dynamicky jako změny prostředí aplikace. To umožňuje ovládacích prvků v panelu se úměrně změnit velikost, tak může reagovat na změny, jako je například změna velikosti nadřazeného ovládacího prvku nebo text délka změna z důvodu lokalizace.  

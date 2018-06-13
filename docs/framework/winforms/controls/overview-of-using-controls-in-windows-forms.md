@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537359"
 ---
 # <a name="overview-of-using-controls-in-windows-forms"></a>Přehled používání ovládacích prvků ve Windows Forms
 Toto téma popisuje základní prvky aplikace Windows Forms a poskytuje jednoduchý příklad, který používá ovládací prvky a zpracovává události v aplikaci Windows Forms.  

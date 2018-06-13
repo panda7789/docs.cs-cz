@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757148"
 ---
 # <a name="commands-and-parameters"></a>Příkazy a parametry
 Po navázání připojení ke zdroji dat, můžete provést příkazy a vrácení výsledků z zdroje dat pomocí <xref:System.Data.Common.DbCommand> objektu. Můžete vytvořit příkaz pomocí některé z konstruktorů příkaz zprostředkovatel dat .NET Framework, které pracujete. Konstruktory může trvat volitelné argumenty, jako je například příkazu SQL k provedení ve zdroji dat <xref:System.Data.Common.DbConnection> objekt, nebo <xref:System.Data.Common.DbTransaction> objektu. Tyto objekty můžete také nakonfigurovat jako vlastnosti příkazu. Můžete také vytvořit příkaz pro konkrétní připojení pomocí <xref:System.Data.Common.DbConnection.CreateCommand%2A> metodu `DbConnection` objektu. Příkaz jazyka SQL, který je vykonáván příkaz můžete nakonfigurovat pomocí <xref:System.Data.Common.DbCommand.CommandText%2A> vlastnost.  

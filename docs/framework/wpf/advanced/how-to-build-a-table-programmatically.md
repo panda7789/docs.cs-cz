@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33544301"
 ---
 # <a name="how-to-build-a-table-programmatically"></a>Postupy: Sestavení tabulky z programu
 Následující příklady ukazují, jak vytvořit prostřednictvím kódu programu <xref:System.Windows.Documents.Table> a jeho naplnění obsah. Obsah v tabulce jsou rozdělených do pěti řádků (reprezentována <xref:System.Windows.Documents.TableRow> objekty obsažené v <xref:System.Windows.Documents.Table.RowGroups%2A> objekt) a šesti sloupců (reprezentována <xref:System.Windows.Documents.TableColumn> objektů). Řádky se používají pro účely různých prezentace, včetně názvu řádek má title celou tabulku popisující sloupce dat v tabulce Řádek záhlaví a zápatí řádek s souhrnné informace.  Všimněte si, že znalost problematicky "title", "záhlaví" a "zápatí" řádků nepatří do tabulky; Jedná se o jednoduše řádky s různými charakteristikami. Buněk tabulky obsahují skutečný obsah, který se může skládat z text, obrázky nebo téměř žádné jiné [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] elementu.  

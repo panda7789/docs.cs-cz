@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545659"
 ---
 # <a name="disable-the-realtimestylus-for-wpf-applications"></a>Zákaz RealTimeStylus pro aplikace WPF
 Windows Presentation Foundation (WPF) má integrovanou podporu pro zpracování dotykové ovládání Windows 7. Podpora přicházejí vstup v reálném čase pera tablet platformy jako <xref:System.Windows.UIElement.OnStylusDown%2A>, <xref:System.Windows.UIElement.OnStylusUp%2A>, a <xref:System.Windows.UIElement.OnStylusMove%2A> události. Windows 7 také poskytuje více dotykové ovládání jako Win32 WM_TOUCH okno zprávy. Tato dvě rozhraní API se vzájemně vylučují na stejné HWND. Povolení touch vstup přes tablet platformy (výchozí nastavení pro aplikace WPF) zakáže WM_TOUCH zprávy. V důsledku toho pokud chcete použít WM_TOUCH a přijímat zprávy touch z grafického subsystému WPF okna, je nutné zakázat podporu předdefinované pera v grafickém subsystému WPF. To se vztahuje, třeba okno WPF hostování komponenty, která používá WM_TOUCH v situaci.  

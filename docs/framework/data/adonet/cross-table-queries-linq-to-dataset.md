@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757187"
 ---
 # <a name="cross-table-queries-linq-to-dataset"></a>Dotazy křížové tabulky (LINQ na DataSet)
 Kromě dotazování na jednotlivé tabulky, můžete také provést křížové tabulky dotazy v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]. To se provádí pomocí *spojení*. Spojení je přidružení objektů v jeden zdroj dat s objekty, které sdílejí společný atribut ve zdroji dat, jako je produkt nebo se obraťte na ID. Relace mezi objekty jsou v objektově orientované programování poměrně snadno přejít, protože každý objekt má člena, který odkazuje na jiný objekt. V tabulkách externí databáze ale navigace relací není stejně jednoduché. Databázové tabulky neobsahuje předdefinovaný vztahy. V těchto případech operace spojení lze tak, aby odpovídaly elementy z každého zdroje. Například zadány dvě tabulky, které obsahují informace o produktu a informace o prodeji, můžete použít operace spojení tak, aby odpovídaly informace o prodeji a produktů pro stejné prodeje pořadí.  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541067"
 ---
 # <a name="collecting-ink"></a>Shromáždění inkoustu
 [Windows Presentation Foundation](../../../../docs/framework/wpf/index.md) platformy shromažďuje digitální rukopisu v rámci základní ze svých funkcí. Toto téma popisuje metody pro kolekci rukopisu v systému Windows Presentation Foundation (WPF).  

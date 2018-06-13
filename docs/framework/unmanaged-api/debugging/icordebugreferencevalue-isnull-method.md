@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33417212"
 ---
 # <a name="icordebugreferencevalueisnull-method"></a>ICorDebugReferenceValue::IsNull – metoda
 Získá hodnotu, která určuje, zda tento ICorDebugReferenceValue v takovém případě je hodnota null, `ICorDebugReferenceValue` neukazuje na objekt.  

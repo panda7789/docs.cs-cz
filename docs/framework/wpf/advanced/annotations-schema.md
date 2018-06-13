@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542012"
 ---
 # <a name="annotations-schema"></a>Schéma poznámek
 Toto téma popisuje definici schématu XML (XSD) používá rozhraní Microsoft Framework poznámky k uložení a načtení dat poznámky uživatele.  

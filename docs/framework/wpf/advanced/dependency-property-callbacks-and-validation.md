@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541330"
 ---
 # <a name="dependency-property-callbacks-and-validation"></a>Zpětné volání a ověření vlastností závislostí
 Toto téma popisuje postup vytvoření vlastností závislostí pomocí alternativní vlastních implementací vlastnosti související s funkcí, jako jsou ověřování rozhodnutí, zpětná volání, které jsou spuštěny po změně platnou hodnotu vlastnosti a přepsáním Chcete-li to možné mimo vlivy na hodnotu rozhodnutí. Toto téma taky popisuje scénáře, kde rozšíření na výchozí chování systému vlastnost s použitím těchto postupů je vhodné.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528941"
 ---
 # <a name="control-type-recommendations"></a>Doporučení ohledně typu ovládacího prvku
 Rozhraní .NET Framework poskytuje power vývoji a implementovat nové ovládací prvky. Kromě známých uživatelského ovládacího prvku teď zjistíte, že budete moci napsat vlastní ovládací prvky, které provedení vlastní Malování a dokonce můžou rozšířit funkce existujících ovládacích prvků prostřednictvím dědičnosti. Rozhodnutí, jaké typy ovládacích prvků k vytvoření může být matoucí. V této části jsou zdůrazněné rozdílům mezi různé typy ovládacích prvků, ze kterého může dědit vlastnosti a poskytuje důležité informace týkající se typu vybrat pro váš projekt.  

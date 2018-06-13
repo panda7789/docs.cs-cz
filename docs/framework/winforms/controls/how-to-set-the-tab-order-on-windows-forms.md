@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539848"
 ---
 # <a name="how-to-set-the-tab-order-on-windows-forms"></a>Postupy: Nastavení pořadí karet ve formulářích Windows
 Pořadí je v pořadí, ve kterém uživatel přesune fokus z jednoho ovládacího prvku na jiný, stisknutím klávesy TAB. Každý formulář má svou vlastní pořadí. Výchozí pořadí je stejný jako pořadí, ve které jste vytvořili ovládací prvky. Pořadí číslování začíná nula.  

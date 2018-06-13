@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546133"
 ---
 # <a name="preview-events"></a>Události náhledu
 Události náhledu, také známé jako tunelování události, jsou směrované události, kde směr trasy, která přenáší z kořenového adresáře aplikace směrem k elementu, který vyvolá událost a hlásí jako zdroj v datech události. Ne všechny události scénáře podporovat nebo vyžadují události náhledu; Toto téma popisuje situace, kdy události náhledu existují, jak aplikace nebo součásti pracovat, a případy, kdy vytvoření události náhledu ve vlastních součástech nebo třídy může být vhodné.  

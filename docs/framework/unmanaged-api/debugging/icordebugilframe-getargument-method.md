@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33414050"
 ---
 # <a name="icordebugilframegetargument-method"></a>ICorDebugILFrame::GetArgument – metoda
 Získá hodnotu zadaného argumentu v této rámce zásobníku (MSIL intermediate language) společnosti Microsoft.  

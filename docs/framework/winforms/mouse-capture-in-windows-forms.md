@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538405"
 ---
 # <a name="mouse-capture-in-windows-forms"></a>Zachycení myši ve Windows Forms
 *Zachycení myši* údaj udává, kdy ovládacího prvku trvá příkaz Všechny myši vstup. V případě, že zachycení myši ovládacího prvku obdrží vstup z myši, zda je ukazatel je v rámci svých hranic.  

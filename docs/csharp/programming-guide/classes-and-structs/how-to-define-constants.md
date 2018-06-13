@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33313219"
 ---
 # <a name="how-to-define-constants-in-c"></a>Postupy: Definování konstant v jazyce C#
 Konstanty jsou pole, jejichž hodnoty jsou nastaveny na doba kompilace a nelze je změnit. Pomocí konstanty pro zajištění speciální hodnoty smysluplné názvy místo číselné literály ("čísla magic").  

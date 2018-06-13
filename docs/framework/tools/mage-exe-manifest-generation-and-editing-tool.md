@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33410387"
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (generování manifestu a nástroj pro úpravy)
 Nástroj pro generování a úpravy manifestu (Mage.exe) je nástroj příkazového řádku podporující vytváření a úpravy manifestů aplikací a nasazení. Nástroj příkazového řádku, Mage.exe lze spustit z dávkové skripty a další aplikace pro systém Windows, včetně [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace.  

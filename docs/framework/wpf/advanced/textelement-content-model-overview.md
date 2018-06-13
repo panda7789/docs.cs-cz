@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548854"
 ---
 # <a name="textelement-content-model-overview"></a>Přehled modelu obsahu TextElement
 Tento model obsahu přehled popisuje podporované obsah <xref:System.Windows.Documents.TextElement>. <xref:System.Windows.Documents.Paragraph> Třída je typ <xref:System.Windows.Documents.TextElement>. Model obsahu popisuje, jaké objekty elementy může být obsažený v jiné. Tento přehled obsahuje souhrn modelu obsahu použít pro objekty, které jsou odvozené z <xref:System.Windows.Documents.TextElement>. Další informace najdete v tématu [toku dokumentu přehled](../../../../docs/framework/wpf/advanced/flow-document-overview.md).  

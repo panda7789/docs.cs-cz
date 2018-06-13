@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542246"
 ---
 # <a name="windows-forms"></a>Windows Forms
 Jak jsou formuláře základní jednotka vaší aplikace, je nezbytné, dáváte některé myšlenku a jejich funkce návrhu. Formulář je nakonec s prázdným projektem že, jako vývojář, zlepšují se ovládacích prvků pro vytvoření uživatelského rozhraní a kódem k manipulaci s daty. Za tímto účelem Visual Studio poskytuje integrované vývojové prostředí (IDE), které pomáhají při psaní kódu, jakož i bohaté nastavit napsané pomocí ovládacího prvku [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Podle vzájemně doplňuje funkci těchto ovládacích prvků pomocí kódu, můžete snadno a rychle vyvíjet řešení, které potřebujete.  

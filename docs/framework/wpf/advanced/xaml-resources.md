@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33549562"
 ---
 # <a name="xaml-resources"></a>Zdroje XAML
 Prostředek je objekt, který lze znovu použít na různých místech v aplikaci. Příklady prostředků: štětce a stylů. Tento přehled popisuje, jak používat prostředky v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Můžete také vytvořit a přístup k prostředkům pomocí kódu nebo zcela zaměnitelným významem mezi kódem a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Další informace najdete v tématu [prostředky a kód](../../../../docs/framework/wpf/advanced/resources-and-code.md).  

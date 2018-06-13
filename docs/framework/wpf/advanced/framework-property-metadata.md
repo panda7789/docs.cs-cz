@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547459"
 ---
 # <a name="framework-property-metadata"></a>Metadata vlastnosti rozhraní .NET Framework
 Možnosti metadat vlastností Framework jsou hlášeny vlastností elementů objekt považuje za na rozhraní WPF v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] architektura. Obecné označení úrovni rozhraní WPF zahrnuje této funkce jako je například vykreslování, datové vazby, a vlastnost systému obecnější jsou zpracovávány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prezentace [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] a spustitelné soubory. Metadata vlastnosti Framework je dotazován tak, že tyto systémy pro stanovení konkrétních funkcí vlastností určitý element vlastnosti.  

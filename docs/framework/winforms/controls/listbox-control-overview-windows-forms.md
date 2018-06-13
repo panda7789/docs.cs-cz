@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537561"
 ---
 # <a name="listbox-control-overview-windows-forms"></a>ListBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ListBox> zobrazí seznam, ze kterého může uživatel vybrat jeden nebo více položek. Pokud celkový počet položek překročí číslo, které mohou být zobrazeny, posuvník se automaticky přidá do <xref:System.Windows.Forms.ListBox> ovládacího prvku. Když <xref:System.Windows.Forms.ListBox.MultiColumn%2A> je nastavena na `true`, pole se seznamem zobrazí položky v více sloupců a zobrazí se vodorovného posuvníku. Když <xref:System.Windows.Forms.ListBox.MultiColumn%2A> je nastavena na `false`, pole se seznamem zobrazí položky do jednoho sloupce a zobrazí se svislého posuvníku. Když <xref:System.Windows.Forms.ListBox.ScrollAlwaysVisible%2A> je nastaven na `true`, bez ohledu na počet položek, které se zobrazí posuvníku. <xref:System.Windows.Forms.ListBox.SelectionMode%2A> Vlastnost určuje, kolik položek seznamu lze vybrat současně.  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532145"
 ---
 # <a name="how-to-implement-virtual-mode-in-the-windows-forms-datagridview-control"></a>Postupy: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView
 Následující příklad kódu ukazuje, jak spravovat velké sady dat pomocí <xref:System.Windows.Forms.DataGridView> řízení s jeho <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost nastavena na hodnotu `true`.  

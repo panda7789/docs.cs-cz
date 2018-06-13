@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528474"
 ---
 # <a name="how-to-add-controls-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků do formulářů Windows
 Většina formulářů jsou navrženy přidáním ovládacích prvků na povrch ve formátu pro definování uživatelského rozhraní (UI). A *řízení* je komponenta ve formuláři použít k zobrazení informací nebo přijímají vstup uživatele. Další informace o ovládacích prvcích najdete v tématu [ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/index.md).  

@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527281"
 ---
 # <a name="matrix-representation-of-transformations"></a>Maticové znázornění transformací
 M x n matice je sady čísel uspořádané m řádků a sloupců n. Následující obrázek znázorňuje několik matice.  

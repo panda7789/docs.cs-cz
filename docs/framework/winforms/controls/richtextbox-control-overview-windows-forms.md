@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542116"
 ---
 # <a name="richtextbox-control-overview-windows-forms"></a>RichTextBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.RichTextBox> řízení se používá k zobrazení, zadávání a manipulace s nimi formátování textu. <xref:System.Windows.Forms.RichTextBox> Ovládací prvek provádí všechno, co <xref:System.Windows.Forms.TextBox> ovládací prvek provádí, ale můžete také zobrazit písma, barvy a odkazy; zatížení text a vložené obrázky ze souboru; a najít zadané znaky. <xref:System.Windows.Forms.RichTextBox> Řízení se obvykle používá k poskytování manipulaci s textem a zobrazení funkce podobná zpracování textu aplikace, jako je například Microsoft Word. Jako <xref:System.Windows.Forms.TextBox> ovládací prvek, <xref:System.Windows.Forms.RichTextBox> ovládací prvek může zobrazovat posuvníky; ale na rozdíl od <xref:System.Windows.Forms.TextBox> řízení, jeho výchozí nastavení je pro zobrazení vodorovného a svislého posuvníky podle potřeby a má scrollbar další nastavení.  

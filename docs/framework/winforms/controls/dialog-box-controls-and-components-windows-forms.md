@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527207"
 ---
 # <a name="dialog-box-controls-and-components-windows-forms"></a>Ovládací prvky a součásti dialogového okna (Windows Forms)
 Následující Windows Forms – ovládací prvky a součásti k dispozici standardní dialogová okna. Pomocí odkazů pro další informace o funkcích dostupných v každém poli dialogové okno.  

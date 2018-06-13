@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532259"
 ---
 # <a name="how-to-handle-errors-and-exceptions-that-occur-with-databinding"></a>Postupy: Zpracování chyb a výjimek, k nimž došlo v souvislosti s datovou vazbou
 Často výjimek a chyb dojde na základní objekty obchodní vazby na ovládací prvky. Tyto chyby a výjimky zachytit a potom můžete buď obnovit nebo předávat informace o chybě pro uživatele ve zpracování <xref:System.Windows.Forms.Binding.BindingComplete> událostí pro konkrétní <xref:System.Windows.Forms.Binding>, <xref:System.Windows.Forms.BindingSource>, nebo <xref:System.Windows.Forms.CurrencyManager> součásti.  
