@@ -1,26 +1,18 @@
 ---
-title: "Ukázkový soubor XML: Číselná Data v Namespace3"
-ms.custom: 
+title: 'Ukázkový soubor XML: Číselná Data v Namespace3'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 51750cab-3c66-4511-90fb-b9d211308d31
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: 2437f22c1c76d1a24883cc2ed5b0e9c5f068e55b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 5a752f477d17cee50b98bc88bd39cabda2bd3bf6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33329001"
 ---
-# <a name="sample-xml-file-numerical-data-in-a-namespace"></a><span data-ttu-id="87db5-102">Ukázkový soubor XML: Číselná Data v Namespace</span><span class="sxs-lookup"><span data-stu-id="87db5-102">Sample XML File: Numerical Data in a Namespace</span></span>
-<span data-ttu-id="87db5-103">Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="87db5-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="87db5-104">Tento soubor obsahuje číselná data pro souhrnné zpracování, průměrování a seskupení.</span><span class="sxs-lookup"><span data-stu-id="87db5-104">This file contains numerical data for summing, averaging, and grouping.</span></span> <span data-ttu-id="87db5-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="87db5-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-numerical-data-in-a-namespace"></a><span data-ttu-id="2a0d6-102">Ukázkový soubor XML: Číselná Data v Namespace</span><span class="sxs-lookup"><span data-stu-id="2a0d6-102">Sample XML File: Numerical Data in a Namespace</span></span>
+<span data-ttu-id="2a0d6-103">Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="2a0d6-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="2a0d6-104">Tento soubor obsahuje číselná data pro souhrnné zpracování, průměrování a seskupení.</span><span class="sxs-lookup"><span data-stu-id="2a0d6-104">This file contains numerical data for summing, averaging, and grouping.</span></span> <span data-ttu-id="2a0d6-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="2a0d6-105">The XML is in a namespace.</span></span>  
   
-## <a name="data"></a><span data-ttu-id="87db5-106">Data</span><span class="sxs-lookup"><span data-stu-id="87db5-106">Data</span></span>  
+## <a name="data"></a><span data-ttu-id="2a0d6-106">Data</span><span class="sxs-lookup"><span data-stu-id="2a0d6-106">Data</span></span>  
   
 ```xml  
 <Root xmlns='http://www.adatum.com'>  
@@ -63,5 +55,5 @@ ms.lasthandoff: 10/18/2017
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="87db5-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="87db5-107">See Also</span></span>  
- [<span data-ttu-id="87db5-108">Dokumenty XML ukázkové (technologie LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="87db5-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="2a0d6-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="2a0d6-107">See Also</span></span>  
+ [<span data-ttu-id="2a0d6-108">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="2a0d6-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595309"
 ---
 # <a name="widening-visual-basic"></a><span data-ttu-id="91a12-102">Rozšíření (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="91a12-102">Widening (Visual Basic)</span></span>
 <span data-ttu-id="91a12-103">Určuje, že operátora převodu (`CType`) převede třídu nebo strukturu typ, který může obsahovat všechny možné hodnoty z původní třídu nebo strukturu.</span><span class="sxs-lookup"><span data-stu-id="91a12-103">Indicates that a conversion operator (`CType`) converts a class or structure to a type that can hold all possible values of the original class or structure.</span></span>  
