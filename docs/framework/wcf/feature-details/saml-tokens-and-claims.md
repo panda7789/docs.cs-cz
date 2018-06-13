@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494729"
 ---
 # <a name="saml-tokens-and-claims"></a>Tokeny a deklarace SAML
 Zabezpečení kontrolní výrazy Markup Language (SAML) *tokeny* jsou reprezentace XML deklarací identity. Ve výchozím nastavení, tokeny SAML Windows Communication Foundation (WCF) používá ve scénářích federované zabezpečení jsou *vystavené tokeny*.  

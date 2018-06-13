@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491183"
 ---
 # <a name="message-security-with-issued-tokens"></a>Zabezpeční zpráv pomocí vydaných tokenů
 Vystavený token klientovi umožňuje scénáře federované zabezpečení ve Windows Communication Foundation (WCF).  

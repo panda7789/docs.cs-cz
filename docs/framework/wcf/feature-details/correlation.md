@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491280"
 ---
 # <a name="correlation"></a>Korelace
 Když aplikace služby pracovního postupu komunikovat s jinými službami, je důležité, aby zpráv mezi nimi jsou odesílány do instance příslušné pracovního postupu. Korelace poskytuje mechanismus pro tento. Témata v této části poskytují přehled korelace a způsobu jeho použití v různých pracovních postupech služby.  

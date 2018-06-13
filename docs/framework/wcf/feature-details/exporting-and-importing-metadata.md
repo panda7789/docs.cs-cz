@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495421"
 ---
 # <a name="exporting-and-importing-metadata"></a>Export a import metadat
 Ve Windows Communication Foundation (WCF), Export metadat je proces popisující koncové body služby a projekce je do znázornění paralelní, standardizované, který můžou klienti používat pochopit, jak používat službu. Import metadat služby je proces generování <xref:System.ServiceModel.Description.ServiceEndpoint> instance nebo části z metadat služby.  

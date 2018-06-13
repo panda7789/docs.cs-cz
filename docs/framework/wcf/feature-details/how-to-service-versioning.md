@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494892"
 ---
 # <a name="how-to-service-versioning"></a>Postupy: Verze služby
 Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace směrování, který směruje zprávy pro různé verze nástroje stejnou službu. V tomto příkladu jsou směrovány zprávy dvě různé verze služby kalkulačky, `roundingCalc` (v1) a `regularCalc` (v2). Obě implementace podporují stejné operace; ale službu starší `roundingCalc`, zaokrouhlí na nejbližší celé číslo všech výpočtů před vrácením. Klientská aplikace musí být schopen označuje, zda chcete použít novější `regularCalc` služby.  

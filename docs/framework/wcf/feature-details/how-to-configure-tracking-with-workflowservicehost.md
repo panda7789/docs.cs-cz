@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490731"
 ---
 # <a name="how-to-configure-tracking-with-workflowservicehost"></a>Postupy: konfigurace sledování pomocí hostitele služby pracovního postupu
 Toto téma vysvětluje postup konfigurace sledování pro [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] pracovního postupu hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Pomocí souboru Web.config je nakonfigurován tak, že zadáte chování služby.  

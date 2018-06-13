@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579337"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Podrobnosti k chování regulárních výrazů
 Modul regulárního výrazu rozhraní .NET Framework je navrácení regulární výraz objekt přiřazení vzorce která zahrnuje modul tradiční Nedeterministická konečné Automaton (NFA) jako je například použité Perl, Python, Emacs a Tcl. To je odlišné z rychlejší, ale omezenější, čistý regulární výraz moduly deterministický konečné Automaton (DFA) jako aplikace awk, egrep nebo lex. To je také odlišné od standardizované, ale pomalejší, k zařízení NFAs POSIX. Následující část popisuje tři typy modulů regulární výraz a vysvětluje, proč jsou regulární výrazy v rozhraní .NET Framework implementovaná pomocí modul tradiční NFA.  

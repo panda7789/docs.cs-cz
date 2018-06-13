@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490744"
 ---
 # <a name="how-to-use-multiple-security-tokens-of-the-same-type"></a>Postupy: použití více tokeny zabezpečení stejného typu
 -   V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 3.0, klienta zprávy pouze obsahují jeden token daného typu. Nyní zprávy klienta může obsahovat více tokeny typu. Toto téma ukazuje, jak chcete zahrnout do zpráv klienta více tokeny stejného typu.  

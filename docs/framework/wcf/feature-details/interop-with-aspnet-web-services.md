@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494293"
 ---
 # <a name="interoperability-with-aspnet-web-services"></a>Interoperabilita s webovými službami ASP.NET
 Vzájemná funkční spolupráce mezi [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby a služby Windows Communication Foundation (WCF) webové služby lze dosáhnout zajistíte, že služby implementovaná pomocí obou technologií odpovídají WS-I Basic Profile 1.1 specifikace. [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Webové služby, které odpovídají WS-I Basic Profile 1.1 jsou umožňuje vzájemnou spolupráci s klienty WCF pomocí vazby poskytované systémem WCF, <xref:System.ServiceModel.BasicHttpBinding>.  

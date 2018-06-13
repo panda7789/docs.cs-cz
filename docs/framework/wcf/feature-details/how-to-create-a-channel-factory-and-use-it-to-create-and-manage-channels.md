@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489967"
 ---
 # <a name="how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels"></a>Postupy: Vytvoření postupu kanálu a jeho použití k vytvoření a správě kanálů
 <xref:System.ServiceModel.DuplexChannelFactory%601> Třída poskytuje způsob, jak vytvořit a spravovat duplexní kanály různých typů, které klienti používat k odesílání a přijímání zpráv do a z koncových bodů služby.  

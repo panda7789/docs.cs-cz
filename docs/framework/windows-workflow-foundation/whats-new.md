@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518434"
 ---
 # <a name="what39s-new-in-windows-workflow-foundation"></a>Co&#39;s nové v modelu Windows Workflow Foundation
 Windows Workflow Foundation (WF) v [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] několik vzorů vývoj změny z předchozích verzí. Pracovní postupy jsou nyní snazší vytvoření, spuštění a udržovat a implementaci hostitel nové funkce. Další informace o migraci rozhraní .NET 3.0 a rozhraní .NET 3.5 pracovního postupu aplikacím používat nejnovější verzi najdete v tématu [migrace pokyny](../../../docs/framework/windows-workflow-foundation/migration-guidance.md).  

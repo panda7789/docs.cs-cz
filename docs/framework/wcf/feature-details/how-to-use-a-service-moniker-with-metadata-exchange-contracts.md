@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491247"
 ---
 # <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>Postupy: použití Monikeru služby s kontrakty Metadata Exchange
 Po vývoj některé nové služby WCF, můžete rozhodnout, že chcete být schopni volání tyto služby ze skriptu nebo aplikace Visual Basic 6.0. Jedno z těchto metod bude generovat sestavení klienta WCF, registraci sestavení modelu COM, který nainstaluje sestavení v mezipaměti GAC a pak odkazovat typy modelu COM z kódu jazyka Visual Basic. Když distribuujete aplikace, budete muset distribuovat také sestavení klienta WCF. Uživatel pak bude mít k registraci sestavení klienta WCF u modelu COM a jeho následné uložení do mezipaměti GAC. Zprostředkovatel komunikace s objekty WCF COM také umožňuje provádět stejné volání služby bez nutnosti spoléhat se na sestavení klienta WCF. Monikeru služby WCF můžete volat libovolnou službu WCF z jakéhokoli jazyka kompatibilní COM (Visual Basic, VBScript, Visual Basic for Applications (VBA) a tak dále) tak, že zadáte exchange (Mex) koncový bod metadat identifikátor URI, který monikeru služby se používá k extrakci typu informace o službě. Toto téma popisuje, jak volat ukázku získávání spuštění WCF pomocí Přezdívka WCF, který určuje koncový bod Mex.  

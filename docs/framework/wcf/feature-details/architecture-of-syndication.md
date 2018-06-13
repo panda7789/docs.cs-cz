@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492808"
 ---
 # <a name="architecture-of-syndication"></a>Architektura syndikace
 Rozhraní API syndikace určená k poskytování formátu jazykově neutrální programovací model, který umožňuje syndikovaný obsah má být zapsán k přenosu v různých formátech. Abstraktní datového modelu se skládá z následujících tříd:  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491657"
 ---
 # <a name="how-to-disable-encryption-of-digital-signatures"></a>Postupy: Zakázání šifrování digitálních podpisů
 Ve výchozím nastavení je podepsaný zprávu a podpis je digitálně zašifrovaný. Toto se řídí vytváření vlastní vazby s instancí <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a nastavení `MessageProtectionOrder` vlastnost buď třídy <xref:System.ServiceModel.Security.MessageProtectionOrder> hodnota výčtu. Výchozí hodnota je <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Tento proces využívá až o 30 procent déle než jednoduše podepisování a šifrování založené na celkovou velikost zprávy (menší zprávy, tím větší dopad na výkon). Zakázáním šifrování podpis, však může útočníkovi umožnit uhodnout obsah zprávy. To je možné, protože obsahuje prvek podpisu hodnota hash ve formátu prostého textu každých podepsaný části ve zprávě. Například i když text zprávy je ve výchozím nastavení zašifrované, nezašifrované podpis obsahuje kód hash těla zprávy před šifrování. Pokud je sada možných hodnot pro část podepsaná a šifrované malé, může útočník moci odvodit obsah pohledem na hodnotě hash. Šifrování podpis snižuje tento vektor útoku.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491852"
 ---
 # <a name="claims-and-tokens"></a>Deklarace a tokeny
 Toto téma popisuje různé typy deklarací, které Windows Communication Foundation (WCF) vytvoří z výchozí tokeny, které podporuje.  

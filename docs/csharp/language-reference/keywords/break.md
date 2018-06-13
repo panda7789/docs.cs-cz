@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33215047"
 ---
 # <a name="break-c-reference"></a>break (Referenční dokumentace jazyka C#)
 `break` Příkaz ukončí nejbližší nadřazených smyčky nebo [přepínač](../../../csharp/language-reference/keywords/switch.md) příkaz, ve kterém se zobrazí. Ovládací prvek předává do příkazu, který následuje ukončenou příkaz, pokud existuje.  

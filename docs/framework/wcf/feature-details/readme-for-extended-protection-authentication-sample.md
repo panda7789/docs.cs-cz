@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495077"
 ---
 # <a name="readme-for-extended-protection-authentication-sample"></a>Soubor ReadMe pro ukázku rozšířené ochrany ověřování
 Rozšířená ochrana je initiative zabezpečení k ochraně proti útokům man-in-the-middle (typu MITM), ve kterých útočník ("man-in-the-middle") zachycuje pověření klienta a používá je pro přístup k zabezpečeným prostředkům na určený server klienta.  

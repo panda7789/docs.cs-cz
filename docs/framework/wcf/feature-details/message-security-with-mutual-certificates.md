@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494173"
 ---
 # <a name="message-security-with-mutual-certificates"></a>Zabezpečení zpráv vzájemnými certifikáty
 Následující příklad ukazuje služby Windows Communication Foundation (WCF) a klienta zabezpečené pomocí režim zabezpečení zprávy. Klienta a služby se ověřují pomocí certifikátů.  

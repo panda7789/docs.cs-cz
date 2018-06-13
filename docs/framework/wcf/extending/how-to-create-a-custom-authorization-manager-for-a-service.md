@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490437"
 ---
 # <a name="how-to-create-a-custom-authorization-manager-for-a-service"></a>Postupy: Vytvoření vlastního správce autorizací pro službu
 Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) podporuje model extensible autorizace založené na deklaracích identity. Deklarace identity jsou extrahovány z tokenů a volitelně zpracovává zásady autorizace a pak umístit do <xref:System.IdentityModel.Policy.AuthorizationContext>. Správce autorizací prozkoumá deklarací identity ve <xref:System.IdentityModel.Policy.AuthorizationContext> pro autorizační rozhodnutí.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493487"
 ---
 # <a name="how-to-configure-an-iis-hosted-wcf-service-with-ssl"></a>Postupy: Konfigurace služby WCF hostované IIS pomocí protokolu SSL
 Toto téma popisuje postup nastavení služby WCF hostované IIS pro použití zabezpečení přenosu HTTP. Zabezpečení přenosu HTTP vyžaduje certifikát SSL zaregistrovat u služby IIS. Pokud není certifikát SSL, že které lze použít k vygenerování testu certifikátu služby IIS. Dále musíte přidání vazby SSL na web a nakonfigurovat vlastnosti ověřování na webu. Nakonec budete muset konfigurovat službu WCF pro použití protokolu HTTPS.  

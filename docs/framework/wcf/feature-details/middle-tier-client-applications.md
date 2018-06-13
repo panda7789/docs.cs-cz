@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493488"
 ---
 # <a name="middle-tier-client-applications"></a>Klientské aplikace střední vrstvy
 Toto téma popisuje různé problémy, které jsou specifické pro střední vrstvy klientské aplikace, které používají Windows Communication Foundation (WCF).  

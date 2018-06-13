@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489694"
 ---
 # <a name="how-to-implement-a-client-application-that-uses-the-discovery-proxy-to-find-a-service"></a>Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby
 Toto téma je třetí tři témata, která popisuje, jak implementace zjišťování proxy. V předchozím tématu [postupy: implementace zjistitelný služba, která registruje s proxy serverem zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md), implementovaná službu WCF, která registruje zjišťování proxy. V tomto tématu můžete vytvořit klienta WCF, který používá zjišťování proxy k vyhledání služby WCF.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499460"
 ---
 # <a name="securing-messages-using-transport-security"></a>Zabezpečení zpráv pomocí zabezpečení přenosu
 Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ), který vám pomůže zabezpečit zprávy odeslané do fronty.  

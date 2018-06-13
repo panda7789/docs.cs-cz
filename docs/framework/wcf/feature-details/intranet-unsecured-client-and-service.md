@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492245"
 ---
 # <a name="intranet-unsecured-client-and-service"></a>Nezabezpečený intranetový klient a služba
 Následující obrázek znázorňuje jednoduchý vyvinuté tak, aby poskytují informace o zabezpečení privátní sítě pro aplikace WCF služby Windows Communication Foundation (WCF). Zabezpečení není vyžadována, protože data je nízkou důležitostí, sítě musí být ze své podstaty zabezpečení nebo zabezpečení zajišťuje vrstvu pod infrastruktury WCF.  

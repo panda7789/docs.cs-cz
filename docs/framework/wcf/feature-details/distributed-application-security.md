@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496162"
 ---
 # <a name="distributed-application-security"></a>Zabezpečení distribuované aplikace
 Zabezpečení Windows Communication Foundation (WCF) je rozdělená do tří hlavních funkčním oblastem: přenos zabezpečení, řízení přístupu a auditování. Zabezpečení přenosu poskytuje integrity, šifrování a ověřování. Zabezpečení přenosu poskytuje jednu z následujících: přenosu zabezpečení, zabezpečení zpráv nebo `TransportWithMessageCredential`.  

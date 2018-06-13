@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492522"
 ---
 # <a name="how-to-access-a-wse-30-service-with-a-wcf-client"></a>Postupy: Přístup ke službě WSE 3.0 pomocí klienta WCF
 Klienti Windows Communication Foundation (WCF) jsou úroveň kompatibilní s Web Services vylepšení (WSE) 3.0 pro služby rozhraní Microsoft .NET, když klienti WCF jsou nakonfigurovány pro použití srpen 2004 verzi specifikace WS-Addressing. Však služby WSE 3.0 nepodporuje protokol exchange (MEX) metadata, tak při použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pro vytvoření třídy klienta WCF, nastavení zabezpečení se nepoužijí pro generovaný objekt Klienta WCF. Proto je třeba zadat nastavení zabezpečení, WSE 3.0 služba vyžaduje, aby po vygenerování klienta WCF.  

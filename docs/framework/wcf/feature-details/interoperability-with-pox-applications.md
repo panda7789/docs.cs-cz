@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494196"
 ---
 # <a name="interoperability-with-pox-applications"></a>Vzájemná spolupráce s aplikacemi POX
 "Prostý formát XML" aplikacemi (POX) komunikovat nahrazením nezpracovaná zpráv protokolu HTTP, které obsahují pouze data aplikací XML, který není umístěné do obálky protokolu SOAP. Windows Communication Foundation (WCF) nabízejí služby a klienti, kteří používají POX zprávy. Ve službě slouží k implementaci služeb, které zveřejňují koncové body pro klienty, například webové prohlížeče a skriptovací jazyky, které odesílat a přijímat zprávy POX WCF. Na straně klienta programovací model WCF slouží k implementaci klientů komunikujících s služeb založených na POX.  

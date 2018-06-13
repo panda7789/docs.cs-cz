@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490282"
 ---
 # <a name="discovery-announcements-and-announcement-client"></a>Oznámení zjišťování a klient oznámení
 Funkce zjišťování WCF umožňuje součásti oznamujeme jejich dostupnost. Pokud je nakonfigurovaná tak, odešle služba Hello a Bye oznámení. Klienti ani jiné součásti může sledovat takové zprávy oznámení a s nimi pracovat. To poskytuje alternativní metoda pro klienty vědět služeb. Funkce oznámení má několika způsoby, například pokud služby zadejte a nechat síť často, oznámení může být lepší alternativou než hledání pro služby. S tímto přístupem se snižuje síťový provoz a klient se dozvíte přítomnosti nebo odeslání služby při přijímání oznámení.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490422"
 ---
 # <a name="creating-multicasting-applications-using-the-udp-transport"></a>Vytváření aplikací všesměrového vysílání pomocí přenosu UDP
 Malé zprávy na velký počet příjemců vícesměrového vysílání aplikace posílat ve stejnou dobu, aniž by bylo nutné vytvořit bod nebo bod připojení. Důraz takové aplikace je rychlost nad spolehlivost. Jinými slovy je důležité k odeslání včas dat, než se ujistěte se, že je ve skutečnosti přijatá žádné konkrétní zpráva. WCF teď podporuje zápis vícesměrového vysílání aplikací pomocí <xref:System.ServiceModel.UdpBinding>. Tento přenos je užitečný ve scénářích, kde se služba potřebuje k odeslání zprávy malý počet klientů současně. Běžícími aplikace je příkladem těchto služeb.  

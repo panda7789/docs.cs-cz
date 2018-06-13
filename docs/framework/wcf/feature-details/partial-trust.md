@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492008"
 ---
 # <a name="partial-trust"></a>Částečná důvěryhodnost
 Od verze [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)], částečně důvěryhodné volající přístup k veřejné typy a metody implementované v <xref:System.ServiceModel>, <xref:System.Runtime.Serialization>, a <xref:System.ServiceModel.Web>. Tato část popisuje podporované scénáře použití služby Windows Communication Foundation (WCF) v rámci částečně důvěryhodné aplikace a také omezenou podmnožinou WCF funkce je k dispozici k aplikacím spuštěným se zabezpečením přístupu snížené kódu (CAS) oprávnění.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494605"
 ---
 # <a name="peer-resolvers"></a>Překladače partnerských uzlů
 Aby bylo možné připojit k mřížku, vyžaduje uzlem sdílené IP adresy dalších uzlů. IP adresy jsou získány kontaktováním překladač služby, která přebírá ID OK a vrátí seznam adres odpovídající do uzlů, které jsou registrovány ID tohoto konkrétního OK. Překladač udržuje seznam registrovaných adresy, které vytvoří tak, že každý uzel v mřížce zaregistrovat službu.  

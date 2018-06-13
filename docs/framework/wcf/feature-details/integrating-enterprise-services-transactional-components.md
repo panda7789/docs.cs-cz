@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492509"
 ---
 # <a name="integrating-enterprise-services-transactional-components"></a>Integrace transakčních komponent služeb Enterprise Services
 Windows Communication Foundation (WCF) poskytuje mechanismus automatického pro integraci do podnikové služby (viz [integrace s aplikacemi modelu COM +](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)). Ale můžete chtít flexibilitu při vývoji služeb, které používají interně hostovaným v rámci služby podnikového transakčních komponent. Protože funkce transakce WCF je založený na <xref:System.Transactions> infrastruktury, proces pro integraci služby Enterprise s použitím technologie WCF je stejná jako pro zadání vzájemná funkční spolupráce mezi <xref:System.Transactions> a podnikové služby, jak je uvedeno v [Vzájemná funkční spolupráce s Enterprise služeb a transakcí modelu COM +](http://go.microsoft.com/fwlink/?LinkId=94949).  

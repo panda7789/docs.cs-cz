@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499334"
 ---
 # <a name="how-to-specify-the-client-credential-type"></a>Postupy: Určení typu pověření klienta
 Po nastavení režimu zabezpečení (přenos nebo zpráv), máte možnost nastavení klienta typ přihlašovacích údajů. Tato vlastnost určuje, jaký typ přihlašovacích údajů klient musí poskytnout službě pro ověření. Další informace o nastavení režimu zabezpečení (nezbytným krokem před nastavením klienta typ přihlašovacích údajů) najdete v tématu [postupy: nastavení režimu zabezpečení](../../../docs/framework/wcf/how-to-set-the-security-mode.md).  

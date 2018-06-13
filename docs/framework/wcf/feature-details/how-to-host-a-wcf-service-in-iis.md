@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492480"
 ---
 # <a name="how-to-host-a-wcf-service-in-iis"></a>Postupy: Hostování služby WCF v IIS
 Toto téma popisuje základní kroky potřebné k vytvoření služby Windows Communication Foundation (WCF), který je hostován v Internetové informační služby (IIS). Toto téma předpokládá se seznámíte se službou IIS a pochopit, jak vytvořit a spravovat aplikace služby IIS pomocí nástroje pro správu služby IIS. Další informace o službě IIS najdete v části [Internetová informační služba](http://go.microsoft.com/fwlink/?LinkId=132449). Služby WCF, který se spustí v prostředí služby IIS plně využívá funkce služby IIS, jako je například recyklace procesů, nečinnosti vypnutí, monitorování stavu procesu a aktivace na základě zpráv. Tato možnost hostování vyžaduje, aby se služba IIS správně nakonfigurovaná, ale nevyžaduje, aby všechny hostování kódu zapsání jako součást aplikace. Můžete použít hostování IIS pouze s přenosového protokolu HTTP.  

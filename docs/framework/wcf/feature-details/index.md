@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494706"
 ---
 # <a name="wcf-feature-details"></a>Podrobnosti o funkcích WCF
 Windows Communication Foundation (WCF) umožňuje rozsáhlé ovládat funkce zasílání zpráv aplikace. Témata v této části najdete podrobnosti o dostupných funkcí. Další informace o základní programování najdete v tématu [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  

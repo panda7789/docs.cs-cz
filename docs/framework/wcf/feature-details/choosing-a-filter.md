@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494124"
 ---
 # <a name="choosing-a-filter"></a>Výběr filtru
 Při konfiguraci služby směrování, je důležité vybrat filtry správné zpráv a nakonfigurovat je pro přesné shody proti zprávy, které vám umožňují. Pokud filtry, které jste vybrali jsou v jejich odpovídá příliš široké, nebo jsou nesprávně nakonfigurované, zprávy jsou směrovány nesprávně. Pokud jsou filtry příliš omezující, nemusí mít žádné platné tras, které jsou k dispozici pro některé zprávy.  

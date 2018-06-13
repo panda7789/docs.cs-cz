@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494251"
 ---
 # <a name="routing-contracts"></a>Kontrakty pro směrování
 Kontrakty pro směrování definovat vzory zprávy, které služba směrování může zpracovat.  Každá smlouva je bez psaní a umožňuje služba pro příjem zprávy bez vědomí zpráva schématu nebo akce. To umožňuje obecně směrování zpráv bez další konfigurace, pro jaké jsou specifikace základní zpráv směrovány služby směrování.  

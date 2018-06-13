@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498866"
 ---
 # <a name="using-the-nethttpbinding"></a>Používání vazeb NetHttpBinding
 <xref:System.ServiceModel.NetHttpBinding> používá binární kódování ve výchozím nastavení je vazbu pro využívání služeb HTTP nebo protokolu WebSocket. <xref:System.ServiceModel.NetHttpBinding> rozpozná, jestli se používá s kontraktu požadavku a odpovědi nebo duplexního kontraktu a změnit své chování tak, aby odpovídaly – použije HTTP pro kontraktů požadavek odpověď a WebSockets pro duplexní kontrakty. Toto chování lze přepsat pomocí <!--zz <xref:System.ServiceModel.NetHttpBinding.WebSocketTransportUsage%2A> --> `WebSocketTransportUsage` nastavení:  

@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579233"
 ---
 # <a name="custom-numeric-format-strings"></a>Vlastní řetězce číselného formátu
 Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z jednoho nebo několika vlastních číselných specifikátorů pro definování formátování číselných dat. Vlastní číselný formátovací řetězec je formátovací řetězec, který není [standardního řetězce formátu čísel](../../../docs/standard/base-types/standard-numeric-format-strings.md).  

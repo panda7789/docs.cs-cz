@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500760"
 ---
 # <a name="custom-binding-reliable-session"></a>Spolehlivá relace s vlastními vazbami
 Vlastní vazby je definována seřazený seznam prvky diskrétní vazby. Tento příklad ukazuje, jak nakonfigurovat vlastní vazby s různými přenosu a zpráva kódování elementy, zejména povolení spolehlivé relace.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33505534"
 ---
 # <a name="streaming-feeds-sample"></a>Ukázka informačních kanálů streamování
 Tento příklad znázorňuje postup správy informační kanály syndikace, které obsahují velkým počtem položek. Na serveru, ukázky ukazuje, jak zpoždění vytvoření jednotlivé <xref:System.ServiceModel.Syndication.SyndicationItem> objekty v rámci kanálu dokud okamžitě, než položka se zapíše do datového proudu sítě.  

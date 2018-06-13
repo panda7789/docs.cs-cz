@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489873"
 ---
 # <a name="how-to-disable-secure-sessions-on-a-wsfederationhttpbinding"></a>Postupy: Zakázání zabezpečených relací u třídy WSFederationHttpBinding
 Některé služby mohou vyžadovat federované přihlašovací údaje, ale nepodporuje zabezpečených relací. V takovém případě je třeba zakázat funkci zabezpečené relace. Na rozdíl od <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`>, <xref:System.ServiceModel.WSFederationHttpBinding> třída neposkytuje způsob, jak zakázat zabezpečených relací při komunikaci se službou. Místo toho musíte vytvořit vlastní vazby, který nahradí bootstrap nastavení zabezpečené relace.  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498121"
 ---
 # <a name="transports-in-windows-communication-foundation"></a>Přenosy ve službě Windows Communication Foundation
 Přenosová vrstva je na nejnižší úrovni kanálu zásobníku. Hlavní přenosy použít ve Windows Communication Foundation (WCF) jsou HTTP, HTTPS, TCP a pojmenované kanály. Témata v této části popisují výběru mezi tyto přenosy, konfigurace přenosu a nastavení, ladění vlastnosti.  

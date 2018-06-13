@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489515"
 ---
 # <a name="configuring-the-nettcp-port-sharing-service"></a>Konfigurace Služby sdílení portů Net.TCP
 Samoobslužné hostované služby, které používají přenos Net.TCP můžete řídit několik upřesňujícího nastavení, jako například `ListenBacklog` a `MaxPendingAccepts`, kterými se řídí chování základní soket TCP používá pro síťovou komunikaci. Však tato nastavení pro každou soketu použije pouze na úrovni vazby pokud vazba přenosu zakázal sdílení portů, který je ve výchozím nastavení povolené.  

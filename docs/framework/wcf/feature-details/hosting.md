@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489395"
 ---
 # <a name="hosting"></a>Hostování
 Témata v této sekci popisují hostování služeb. Služba může být hostovaný Internetové informační služby (IIS), služba aktivace procesů systému Windows (WAS), Windows Server AppFabric, služby systému Windows, nebo ve spravované aplikaci – tato možnost se často označuje jako *vlastní hostování*.  

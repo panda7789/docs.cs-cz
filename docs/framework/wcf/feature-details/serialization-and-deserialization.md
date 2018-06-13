@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508605"
 ---
 # <a name="serialization-and-deserialization"></a>Serializace a deserializace
 Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:System.Runtime.Serialization.DataContractSerializer>. <xref:System.Runtime.Serialization.DataContractSerializer> Překládá mezi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty a XML v obou směrech. Toto téma vysvětluje, jak funguje serializátor.  

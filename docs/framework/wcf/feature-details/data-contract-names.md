@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494267"
 ---
 # <a name="data-contract-names"></a>Názvy kontraktu dat
 Stejné typy někdy nesdílejí klienta a služby. Stále se můžete předat data do sebe navzájem tak dlouho, dokud kontrakty dat odpovídají na obou stranách. [Ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md) je založena na kontrakt dat a názvy datových členů, a proto se poskytuje mechanismus pro mapování typů a členů do těchto názvů. Toto téma popisuje pravidla pro pojmenovávání kontrakty dat a také výchozí chování infrastrukturu Windows Communication Foundation (WCF), při vytváření názvů.  

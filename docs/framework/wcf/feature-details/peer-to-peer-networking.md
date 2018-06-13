@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491865"
 ---
 # <a name="peer-to-peer-networking"></a>Síť rovnocenných počítačů
 Rovnocenného kanálu je více stran, peer-to-peer (P2P) komunikace technologie Windows Communication Foundation (WCF). Poskytuje zabezpečené a škálovatelné na základě zpráv P2P komunikační kanál pro vývojáře aplikací. Jedním z příkladů běžných více stran aplikace, které mohou těžit z rovnocenného kanálu je spolupráce aplikaci, například chat, kde skupinu osob chat sebou způsobem peer-to-peer bez serverů. Rovnocenného kanálu umožňuje P2P spolupráce, distribuce obsahu, Vyrovnávání zatížení a distribuované zpracování spotřebních a podnikových scénářích.  

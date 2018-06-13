@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33505437"
 ---
 # <a name="wshttpbinding"></a>WSHttpBinding
 Tento příklad znázorňuje způsob implementace typické služby a typické klienta pomocí služby Windows Communication Foundation (WCF). Tato ukázka se skládá z konzoly programu klienta (client.exe) a knihovnu služby hostované Internetové informační služby (IIS). Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi. Kontrakt je definována `ICalculator` rozhraní, která zpřístupňuje matematické operace (přidat, odečíst, násobit a dělit). Klient podá synchronní požadavky a odpovědi služby s výsledkem dané matematické operace. Činnost klienta je viditelný v okně konzoly.  

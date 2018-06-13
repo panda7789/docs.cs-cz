@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494458"
 ---
 # <a name="discoveryclient-and-dynamicendpoint"></a>Objekty DiscoveryClient a DynamicEndpoint
 <xref:System.ServiceModel.Discovery.DiscoveryClient> a <xref:System.ServiceModel.Discovery.DynamicEndpoint> jsou dvě třídy používané na straně klienta pro vyhledání služeb. <xref:System.ServiceModel.Discovery.DiscoveryClient> poskytuje seznam služeb, které odpovídají konkrétní nastavení kritérií a umožňuje vám umožní připojit se ke službám. <xref:System.ServiceModel.Discovery.DynamicEndpoint> provádí stejné operace a kromě toho se automaticky připojí k jedné ze služeb, které byl nalezen. Žádný koncový bod, mohou být provedeny do <xref:System.ServiceModel.Discovery.DynamicEndpoint>, kritéria hledání se dá přidat taky v konfiguraci, proto <xref:System.ServiceModel.Discovery.DynamicEndpoint> je užitečné, když potřebujete zjišťování ve vašem řešení, ale nechcete, aby k úpravě klienta logiku – potřebujete upravit koncových bodů. <xref:System.ServiceModel.Discovery.DiscoveryClient> na druhé straně může použít k získání lepší kontrolu nad vaše operace vyhledávání. K použití a výhody jednotlivých jsou podrobně uvedeno níže.  

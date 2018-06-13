@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489765"
 ---
 # <a name="configuring-the-windows-process-activation-service-for-use-with-windows-communication-foundation"></a>Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation
 Toto téma popisuje kroky potřebné k nastavení aktivační služba procesů systému Windows (WAS) v [!INCLUDE[wv](../../../../includes/wv-md.md)] k hostování Windows Communication Foundation (WCF) služeb, které není komunikaci pomocí protokolu HTTP síťových protokolů. Následující oddíly popisují kroky pro tuto konfiguraci:  

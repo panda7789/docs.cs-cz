@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492297"
 ---
 # <a name="metadata"></a>Metadata
 Windows Communication Foundation (WCF) poskytuje infrastrukturu pro export, publikování, načítání a Import metadata služby. Služby WCF pomocí metadat popisují, jak pracovat s koncovými body služby tak, aby nástroje, jako je například Svcutil.exe, může automaticky generovat kód klienta pro přístup k službě.  

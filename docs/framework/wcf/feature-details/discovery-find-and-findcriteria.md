@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495317"
 ---
 # <a name="discovery-find-and-findcriteria"></a>Hledání zjišťování a kritéria hledání
 Operaci hledání zjišťování se spouští pomocí klienta ke zjištění jednu nebo více služeb a je jedním z hlavní akce v zjišťování. Provádění najít odešle zprávu WS-Discovery Probe přes síť. Služby, které odpovídají kritériím zadaným WS-Discovery ProbeMatch zprávy odpovědi. Další informace o zprávách zjišťování najdete v tématu [specifikaci WS-Discovery](http://go.microsoft.com/fwlink/?LinkID=122347).  

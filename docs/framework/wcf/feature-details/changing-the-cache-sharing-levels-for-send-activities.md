@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494531"
 ---
 # <a name="changing-the-cache-sharing-levels-for-send-activities"></a>Změna úrovní sdílení mezipaměti pro aktivity odesílání
 <xref:System.ServiceModel.Activities.SendMessageChannelCache> Rozšíření umožňuje přizpůsobit mezipaměti sdílení úrovní, nastavení objektu pro vytváření mezipaměti kanál, a nastavení kanál mezipaměti pro pracovní postupy, které odesílají zprávy do koncových bodů služby pomocí <xref:System.ServiceModel.Activities.Send> aktivity zasílání zpráv. Tyto pracovní postupy jsou obvykle pracovní postupy klienta, ale mohou být také služby pracovního postupu, které jsou hostovány v <xref:System.ServiceModel.WorkflowServiceHost>. Obsahuje objekt pro vytváření mezipaměti kanál v mezipaměti <xref:System.ServiceModel.ChannelFactory%601> objekty. Mezipaměť kanál obsahuje uložené v mezipaměti kanály.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494501"
 ---
 # <a name="peer-channel-security"></a>Zabezpečení rovnocenného kanálu
 Rovnocenného kanálu umožňuje různé typy distribuovaných aplikací, které jsou závislé na více stran zasílání zpráv. Mezi příklady patří distribuce obsahu internetových, kde důvěryhodného zdroje distribuuje obsah (například média nebo aktualizací softwaru), skupinou přátel systému exchange, Hudba a fotografie nebo tým kolegy společně upravit dokumentu. Každý z těchto scénářů vyžaduje jedinečnou modelu. Model zabezpečení rovnocenného kanálu je určen k řešení těchto scénářů a poskytuje model zabezpečení pro na potřeby odlišnými modely identitu, ověřování a autorizace.  

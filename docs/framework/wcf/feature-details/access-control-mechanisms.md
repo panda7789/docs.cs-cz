@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493162"
 ---
 # <a name="access-control-mechanisms"></a>Mechanismy řízení přístupu
 Můžete řídit přístup způsobem několik Windows Communication Foundation (WCF). Toto téma stručně popisuje různé mechanismy a poskytuje návrhy na při použití každé; je určena k vám pomohou vybrat správný mechanismus používat. Technologie pro přístup k jsou uvedeny v pořadí podle složitost. Nejjednodušší je <xref:System.Security.Permissions.PrincipalPermissionAttribute>; nejvíce komplexní je modelem Identity.  

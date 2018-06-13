@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490494"
 ---
 # <a name="integrating-with-com-applications"></a>Integrace s aplikacemi modelu COM+
 Windows Communication Foundation (WCF) poskytuje bohaté prostředí pro vytváření distribuované aplikace. Pokud máte významné investice v logiku aplikace založené na součást hostované v modelu COM +, můžete rozšířit existující logiky, místo aby ho přepsání WCF. Témata v této části popisují způsob použití modelu COM + s použitím technologie WCF.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495629"
 ---
 # <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement
 Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných systémem, které lze konfigurovat, ale neposkytuje úplnou flexibilitu při konfiguraci všech možností zabezpečení, které podporuje WCF. Toto téma ukazuje, jak vytvořit vlastní vazby přímo z jednotlivých vazby elementů a zvýrazňuje některé z nastavení zabezpečení, které je možné zadat při vytváření takovou vazbu. Další informace o vytváření vlastních vazeb najdete v tématu [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  

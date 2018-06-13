@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33217386"
 ---
 # <a name="extern-alias-c-reference"></a>externí alias (Referenční dokumentace jazyka C#)
 Máte tak, aby odkazovaly dvě verze sestavení, které mají stejné názvy plně kvalifikovaný typ. Například budete muset použít dvě nebo více verzí sestavení, ve stejné aplikaci. Pomocí externí sestavení alias obory názvů v každé sestavení může zalomit uvnitř obory názvů kořenové úrovně s názvem podle alias, který umožňuje jim použít ve stejném souboru.  

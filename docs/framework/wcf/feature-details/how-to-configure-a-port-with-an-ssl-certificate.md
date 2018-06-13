@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494826"
 ---
 # <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>Postupy: Konfigurace portu certifikát protokolu SSL
 Při vytváření samoobslužných hostovaná služba Windows Communication Foundation (WCF) se <xref:System.ServiceModel.WSHttpBinding> třídy zabezpečení přenosu tohoto používá, musíte taky nakonfigurovat port společně s certifikátem X.509. Pokud nejsou vytváření samoobslužných hostované služby, můžete hostovat služby v Internetové informační služby (IIS). Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  

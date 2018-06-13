@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491076"
 ---
 # <a name="how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications"></a>Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací pro řazení zpráv do front
 Pomocí integrace vazby služby MSMQ pro převod MSMQ zprávy do a z zpráv WCF můžete integrovat existující aplikace služby Řízení front zpráv (MSMQ) s aplikacemi Windows Communication Foundation (WCF). To umožňuje provádět volání do aplikacím služby MSMQ příjemce od klientů WCF a také volání do služby WCF z aplikacím služby MSMQ odesílatele.  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578973"
 ---
 # <a name="managed-execution-process"></a>Proces spravovaného spouštění
 <a name="introduction"></a> Proces spravovaného spouštění zahrnuje následující kroky, které jsou podrobněji vrátíme dál v tomto tématu:  

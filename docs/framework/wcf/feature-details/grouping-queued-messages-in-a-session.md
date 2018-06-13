@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491898"
 ---
 # <a name="grouping-queued-messages-in-a-session"></a>Seskupování zpráv zařazených do fronty v relaci
 Windows Communication Foundation (WCF) poskytuje relaci, která umožňuje seskupení sady souvisejících zpráv společně pro zpracování jedné přijímající aplikací. Zprávy, které jsou součástí relace musí být součástí stejné transakci. Vzhledem k tomu, že všechny zprávy jsou součástí stejné transakci, pokud se nepodaří jednu zprávu zpracovat celé relace je vrácena zpět. Relace mají podobné chování s ohledem na fronty nedoručených zpráv a poškozených fronty. Čas potřebný k Live (TTL) vlastnost nastavte u vazbu zařazených do fronty, nakonfigurované pro relace je použita v relaci jako celek. Pokud jen některé zprávy v relaci se odesílají než hodnota TTL nevyprší, celé relace je umístěna do fronty nedoručených zpráv. Podobně když zprávy v relaci se nepodařilo odeslat do aplikace z fronty aplikace, celé relace je umístěny v poškozených frontu (Pokud je k dispozici).  

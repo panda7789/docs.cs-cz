@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496634"
 ---
 # <a name="messaging-protocols"></a>Protokoly zasílání zpráv
 Zásobník kanálu Windows Communication Foundation (WCF) aktivuje kódování a přenos kanály transformace reprezentace interní zprávy do jeho přenosový formát a odesílat je pomocí konkrétního přenosu. Nejběžnější přenos používá funkční spolupráce při webové služby, je HTTP, a nejběžnější kódování používá webové služby jsou na základě XML SOAP 1.1, SOAP 1.2 a zpráva přenosu optimalizace mechanismus (MTOM).  

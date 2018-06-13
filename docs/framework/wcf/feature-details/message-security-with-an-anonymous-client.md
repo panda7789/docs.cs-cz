@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495051"
 ---
 # <a name="message-security-with-an-anonymous-client"></a>Zabezpečení zpráv s anonymním klientem
 Následující příklad ukazuje klienta a služby Zabezpečené zabezpečení zpráv Windows Communication Foundation (WCF). Návrh cílem je používat zabezpečení zpráv, nikoli zabezpečení přenosu, tak, aby v budoucnu může podporovat model bohatší založené na deklaracích identity. Další informace o použití bohaté deklarací identity pro ověřování najdete v tématu [správa deklarací a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).  

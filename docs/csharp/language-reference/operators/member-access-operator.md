@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33271026"
 ---
 # <a name="-operator-c-reference"></a>. Operátor (referenční dokumentace jazyka C#)
 Operátor tečky (`.`) se používá pro přístup ke členu. Operátor tečky určuje člena typu nebo oboru názvů. Například operátor tečky slouží k přístupu konkrétním metod v rámci knihovny tříd rozhraní .NET Framework:  

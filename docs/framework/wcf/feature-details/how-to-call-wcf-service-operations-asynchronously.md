@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493360"
 ---
 # <a name="how-to-call-wcf-service-operations-asynchronously"></a>Postupy: Asynchronní volání operací služby WCF
 Toto téma popisuje, jak mít klient přístup operace služby asynchronně. Implementuje službu v tomto tématu `ICalculator` rozhraní. Klienta můžete asynchronní volání operací na tomto rozhraní pomocí událostmi řízené asynchronní volání modelu. (Další informace o na základě událostí asynchronní volání modelu najdete v tématu [vícevláknové programování s asynchronním vzorem na základě událostí](http://go.microsoft.com/fwlink/?LinkId=248184)). Příklad, který ukazuje, jak implementovat asynchronní operace služby, naleznete v části [postupy: implementace operace asynchronní služby](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md). Další informace o synchronní a asynchronní operace najdete v tématu [synchronní a asynchronní operace](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  

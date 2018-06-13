@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33297365"
 ---
 # <a name="jagged-arrays-c-programming-guide"></a>Vícenásobná pole (Průvodce programováním v C#)
 Vícenásobné pole je pole, jehož prvky jsou pole. Prvky Vícenásobná pole může být různými dimenzemi a velikosti. Vícenásobná pole se někdy označuje jako "pole polí." Následující příklady ukazují, jak deklarovat, inicializovat a přístup Vícenásobná pole.  

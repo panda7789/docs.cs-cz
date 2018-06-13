@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493930"
 ---
 # <a name="batching-messages-in-a-transaction"></a>Dávkování zpráv v transakci
 Zkontrolujte správnost a spolehlivé doručování zpráv ve frontě aplikací pomocí transakce. Transakce, ale jsou náročná operace a může výrazně snížit propustnost zpráv. Jeden způsob, jak zlepšit propustnost zpráva má mít aplikaci, čtení a zpracování více zpráv v rámci jedné transakce. Je nejvhodnější poměr mezi výkonem a obnovení: jak zvyšuje počet zpráv v dávce, takže nemá množství práce obnovení, který vyžaduje, pokud jsou transakce vrácena zpět. Je důležité si uvědomit rozdíl mezi dávkování zpráv v transakci a relace. A *relace* je seskupení související zprávy, které jsou zpracovávány jednu aplikaci a potvrzené jako na jednu jednotku. Relace se běžně používají, pokud skupina související zprávy musí být zpracován jako společně. Příkladem je nákupní webový server s online. *Dávky* se používají ke zpracování více, které nejsou v relaci zprávy způsobem, že zpráva zvyšuje propustnost. Další informace o relacích najdete v tématu [seskupování zpráv zařazených do fronty v relaci](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md). Také zpracovává jednu aplikaci a potvrzené jako na jednu jednotku zpráv v dávce, ale může být žádný vztah mezi zprávy v dávce. Dávkování zpráv v transakci je optimalizace, která se nezmění, jak je aplikace spuštěná.  

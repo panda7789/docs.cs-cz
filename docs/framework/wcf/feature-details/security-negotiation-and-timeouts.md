@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497461"
 ---
 # <a name="security-negotiation-and-timeouts"></a>Vyjednávání a časové limity zabezpečení
 Při ověřování klientů a služeb, Windows Communication Foundation (WCF) podporuje režim, kde se přihlašovací údaje služby vyjednávat jako součást ověřování. V takových scénářů potenciálně více větev exchange dojde mezi klientem a službu potřebný k šíření přihlašovací údaje služby do klienta. <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.NegotiationTimeout%2A> Vlastnost určuje, jak dlouho může trvat víc větev exchange k dokončení. Však tento časový limit platí pouze v případě exchange ve skutečnosti trvá déle, jeden požadavků a odpovědí. V případech, kde vyjednávání dokončení v jediném odezvy nevztahuje časový limit.  

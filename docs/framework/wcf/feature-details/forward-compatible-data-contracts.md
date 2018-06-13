@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492203"
 ---
 # <a name="forward-compatible-data-contracts"></a>Kontrakty dat s dopřednou kompatibilitou
 Funkce z Windows Communication Foundation (WCF) je systém kontraktu dat, měnící můžete rozvíjet časem pevných způsoby. To znamená klient se starší verzí systému kontraktu dat může komunikovat se službou novější verzi stejné kontrakt dat nebo klient novější verzi kontraktu dat může komunikovat s starší verze stejné kontrakt dat. Další informace najdete v tématu [osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579623"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
 Rozhraní .NET Framework je závislý na jazyce. To znamená, že jako vývojář, můžete vyvíjet v jednom z mnoha jazycích, které cílí na rozhraní .NET Framework, jako je například C#, C + +/ CLI, Eiffel, F #, IronPython, IronRuby, aplikace PowerBuilder, Visual Basic, Visual COBOL a prostředí Windows PowerShell. Můžete přejít na typy a členy vytvořených pro rozhraní .NET Framework, aniž by museli znát jazyk, ve kterém byly se původně zapsán a bez nutnosti postupovat podle některého z původní jazyk konvence knihovny tříd. Pokud jste vývojář součásti, příslušné součásti jsou přístupné kteroukoli aplikací rozhraní .NET Framework, bez ohledu na jeho jazyk.  

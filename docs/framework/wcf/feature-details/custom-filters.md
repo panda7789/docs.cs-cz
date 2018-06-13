@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489752"
 ---
 # <a name="custom-filters"></a>Vlastní filtry
 Vlastní filtry umožňují definovat odpovídající logiky, která nelze provést pomocí filtrů zpráv systému. Například může vytvořit vlastní filtr, který vytvoří hodnotu hash elementu konkrétní zprávy a poté zkoumá hodnotu, která určí, zda filtr by měla vrátit hodnotu true nebo false.  

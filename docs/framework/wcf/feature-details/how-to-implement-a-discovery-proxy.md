@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496709"
 ---
 # <a name="how-to-implement-a-discovery-proxy"></a>Postupy: Implementace zjišťování proxy
 Toto téma vysvětluje postup implementace zjišťování proxy. Další informace o funkci zjišťování v systému Windows Communication Foundation (WCF) najdete v tématu [přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md). Zjišťování proxy může být implementována vytváření třídu, která rozšiřuje <xref:System.ServiceModel.Discovery.DiscoveryProxy> abstraktní třídy. Existuje několik dalších podporu tříd definovaný a použít v této ukázce. `OnResolveAsyncResult`, `OnFindAsyncResult`, a `AsyncResult`. Tyto třídy implementovat <xref:System.IAsyncResult> rozhraní. Další informace o <xref:System.IAsyncResult> najdete v části [System.IAsyncResult rozhraní](xref:System.IAsyncResult).

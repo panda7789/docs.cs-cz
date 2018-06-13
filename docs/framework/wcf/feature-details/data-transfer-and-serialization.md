@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489203"
 ---
 # <a name="data-transfer-and-serialization"></a>Přenos a serializace dat
 V systému připojený služeb a klientů závisí na výměnu dat k provedení jakékoli úlohy. Jako vývojář služeb nebo klienta musíte pochopit, jak Windows Communication Foundation (WCF) zpracovává data a serializace dat před vytvořením aplikace, které jsou efektivní a snadno spravovat.  

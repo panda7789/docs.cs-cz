@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494533"
 ---
 # <a name="exporting-schemas-from-classes"></a>Export schémat ze tříd
 Chcete-li vygenerovat schématu XML definition language (XSD) schémat ze třídy, které se používají v datovém modelu kontrakt, použijte <xref:System.Runtime.Serialization.XsdDataContractExporter> třídy. Toto téma popisuje proces pro vytváření schémat.  

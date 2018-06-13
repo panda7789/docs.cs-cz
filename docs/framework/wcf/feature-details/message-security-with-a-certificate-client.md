@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494690"
 ---
 # <a name="message-security-with-a-certificate-client"></a>Zabezpečení zpráv pomocí klientských certifikátů
 Následující scénář ukazuje klienta Windows Communication Foundation (WCF) a služby zabezpečené pomocí režim zabezpečení zprávy. Klienta a služby se ověřují pomocí certifikátů. Další informace najdete v tématu [zabezpečení distribuované aplikace](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).  

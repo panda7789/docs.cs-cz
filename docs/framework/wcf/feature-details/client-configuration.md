@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493127"
 ---
 # <a name="client-configuration"></a>Konfigurace klienta
 Konfigurace klienta Windows Communication Foundation (WCF) můžete použít k určení adresy, vazby, chování a kontrakt, vlastnosti "ABC" koncového bodu klientů, kteří klienti používat pro připojení ke koncovým bodům služby. [ \<Klienta >](../../../../docs/framework/configure-apps/file-schema/wcf/client.md) element má [ \<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element, jehož atributy se používají ke konfiguraci koncového bodu základních informací. Tyto atributy jsou popsané v části "Konfigurace koncových bodů" v tomto tématu.  

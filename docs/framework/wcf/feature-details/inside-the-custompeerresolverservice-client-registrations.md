@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494053"
 ---
 # <a name="inside-the-custompeerresolverservice-client-registrations"></a>Uvnitř CustomPeerResolverService: registrace klienta
 Každý uzel v mřížce publikuje informace jeho koncový bod, a překladač služby pomocí `Register` funkce. Službu překladač tyto informace ukládá jako registrační záznam. Tento záznam obsahuje jedinečný identifikátor (RegistrationID) a informace o koncovém (PeerNodeAddress) pro uzel.  

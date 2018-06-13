@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494147"
 ---
 # <a name="how-to-expose-a-contract-to-soap-and-web-clients"></a>Postupy: vystavení kontraktu protokolu SOAP a webovými klienty
 Ve výchozím nastavení Windows Communication Foundation (WCF) zpřístupňuje koncové body k dispozici pouze klientům protokolu SOAP. V [postupy: vytvoření základní služby WCF Web HTTP](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md), koncový bod je k dispozici pro klienty protokolu SOAP. Může nastat situace, kdy chcete zpřístupnit stejné smlouvy obou směrech, a to jako koncový bod webové a jako koncový bod protokolu SOAP. Toto téma ukazuje příklad toho, jak to udělat.  

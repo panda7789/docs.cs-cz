@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493189"
 ---
 # <a name="context-exchange-protocol"></a>Protokol kontextové výměny
 Tato část popisuje protokol kontextové výměny uvedený ve Windows Communication Foundation (WCF) verzi rozhraní .NET Framework verze 3.5. Tento protokol umožňuje kanálem klienta přijmout kontextu poskytl služby a použijte ho pro všechny následné žádosti do této služby, odešlou přes stejnou instanci kanálu klienta. Implementace protokol kontextové výměny můžete použít jednu z následujících dvou mechanismů rozšíření kontextu mezi serverem a klientem: soubory cookie protokolu HTTP nebo hlavičku protokolu SOAP.  

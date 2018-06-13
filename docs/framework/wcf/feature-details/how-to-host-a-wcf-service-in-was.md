@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492665"
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>Postupy: Hostování služby WCF ve WAS
 Toto téma obsahuje přehled základní kroky potřebné pro vytvoření služby Aktivace procesů systému Windows (WAS) hostovaná služba Windows Communication Foundation (WCF). BYL je nová služba aktivace procesů, která je generalizace funkcí Internetové informační služby (IIS), které pracují s jiným protokolem než HTTP přenosové protokoly. WCF používá rozhraní adaptér naslouchání pro komunikaci žádosti o aktivaci, které jsou přijaty prostřednictvím protokolů než HTTP nepodporuje WCF, jako je například TCP, pojmenované kanály a služby Řízení front zpráv.  

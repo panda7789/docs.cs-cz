@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489739"
 ---
 # <a name="hosting-in-a-managed-application"></a>Hostování ve spravované aplikaci
 Služby Windows Communication Foundation (WCF) může být hostovaný v žádném [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikace. Samoobslužné služby hostování je nejpružnější hostování možnost, protože vyžaduje minimálně infrastrukturu pro nasazování. Je však také alespoň robustní hostování možnost, protože spravované aplikace neposkytují pokročilé hostování a funkcím pro správu Další možnosti hostování ve WCF, například služby Internetové informační služby (IIS) a Windows.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493595"
 ---
 # <a name="how-to-error-handling"></a>Postupy: Zpracování chyb
 Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace směrování, která používá zpracování chyb. V tomto příkladu zprávy jsou směrovány do cílového koncového bodu. Pokud zprávu nelze doručit z důvodu v síti nebo na chybu týkající se komunikace (<xref:System.ServiceModel.CommunicationException>), je nutno zprávu na alternativní koncový bod.  

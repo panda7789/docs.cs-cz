@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496683"
 ---
 # <a name="messaging-activities"></a>Aktivity zasílání zpráv
 Zasílání zpráv aktivity umožňují pracovní postupy pro odesílání a přijímání zpráv WCF. Přidáním aktivity zasílání zpráv do pracovního postupu můžete model žádné libovolně komplexní zpráva exchange vzory (MEP).  

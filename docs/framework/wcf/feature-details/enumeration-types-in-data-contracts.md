@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494514"
 ---
 # <a name="enumeration-types-in-data-contracts"></a>Výčtové typy v kontraktech dat
 Výčty může být vyjádřený v datovém modelu kontrakt. Toto téma vás provede několik příkladů, které vysvětlují programovací model.  

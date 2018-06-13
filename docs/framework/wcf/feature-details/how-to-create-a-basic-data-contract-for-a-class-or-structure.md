@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490065"
 ---
 # <a name="how-to-create-a-basic-data-contract-for-a-class-or-structure"></a>Postupy: vytvoření kontraktu základní Data pro třídu nebo strukturu
 Toto téma ukazuje základní kroky pro vytvoření kontraktu dat pomocí třídu nebo strukturu. Další informace o kontraktech dat a způsob jejich použití najdete v tématu [pomocí kontrakty dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  

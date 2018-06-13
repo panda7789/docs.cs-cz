@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493393"
 ---
 # <a name="integrating-with-com-applications-overview"></a>Přehled integrace s aplikacemi modelu COM
 Windows Communication Foundation (WCF) poskytuje vývojář spravovaného kódu pomocí rozsáhlé prostředí pro vytváření aplikací pro připojené. Ale pokud máte významné investice v nespravovaném kódu založené na modelu COM a nechcete, aby k migraci, můžete stále integrovat webových služeb WCF přímo do váš stávající kód za použití monikeru služby WCF. Monikeru služby lze použít z celý na základě rozsahu COM vývojových prostředí, například Office VBA, Visual Basic 6.0 nebo Visual C++ verze 6.0.  

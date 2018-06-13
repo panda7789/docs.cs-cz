@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492720"
 ---
 # <a name="how-to-create-a-service-that-requires-sessions"></a>Postupy: Vytvoření služby vyžadující relace
 Relace vytvořit sdílený stav mezi dva nebo víc koncových bodů, které umožňuje užitečných funkcí, jako je například zpětná volání, vícenásobného předávání zabezpečení a přidružení mezi klienty a instance služby. Další informace o relacích v aplikacích Windows Communication Foundation (WCF) najdete v tématu [pomocí relace](../../../../docs/framework/wcf/using-sessions.md).  

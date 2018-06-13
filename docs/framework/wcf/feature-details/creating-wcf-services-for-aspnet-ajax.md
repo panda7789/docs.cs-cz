@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492968"
 ---
 # <a name="creating-wcf-services-for-aspnet-ajax"></a>Vytváření služeb WCF pro ASP.NET AJAX
 Microsoft ASP.NET AJAX umožňuje rychle vytvářet webové stránky, které zahrnují bohaté uživatelské prostředí s reakce a známé prvky uživatelského rozhraní. Poskytuje klientský skript knihovny, které jsou různé prohlížeče ECMAScript (JavaScript) a dynamické HTML (DHTML) technologie ASP.NET AJAX a se integruje s platformou ASP.NET 2.0 na serveru vývoj. Pomocí prvku ASP.NET AJAX, můžete zlepšit činnost koncového uživatele a efektivitu webových aplikací.  

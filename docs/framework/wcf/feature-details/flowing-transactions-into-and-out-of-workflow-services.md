@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496094"
 ---
 # <a name="flowing-transactions-into-and-out-of-workflow-services"></a>Tok transakcí do služeb pracovních postupů a mimo ně
 Pracovní postup služby a klienti mohou účastnit transakce.  Pro operaci služby, který se stane součástí vedlejším transakce, umístit <xref:System.ServiceModel.Activities.Receive> aktivita v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity. Volání pomocí <xref:System.ServiceModel.Activities.Send> nebo <xref:System.ServiceModel.Activities.SendReply> aktivita v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> bude také provést v rámci vedlejším transakce. Klientská aplikace pracovního postupu můžete vytvořit pomocí vedlejším transakce <xref:System.Activities.Statements.TransactionScope> aktivity a volání operací služby pomocí vedlejším transakce. Toto téma vás provede procesem vytvoření služby pracovního postupu a pracovní postup klienta, které se začlení transakcí.  

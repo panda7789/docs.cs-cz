@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493256"
 ---
 # <a name="contracts"></a>Kontrakty
 V této části se dozvíte, jak definovat a implementovat kontrakty Windows Communication Foundation (WCF). Smlouvy o poskytování služeb určuje, co koncový bod komunikuje s vnějším světem. Více konkrétní úrovni je prohlášení o sadu zprávy specifické pro uspořádány do základní zpráva exchange vzory (MEPs), jako je například požadavek nebo odpověď, jednosměrné a duplexní. Pokud smlouvy o poskytování služeb je sada logicky spojených výměny zpráv, je operace služby exchange jedné zprávy. Například `Hello` operace musí samozřejmě přijmout jednu zprávu (takže volající může informovat pozdrav) a může nebo nemusí vracet zprávy (v závislosti na provedla operaci).  

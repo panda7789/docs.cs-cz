@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491985"
 ---
 # <a name="how-to-set-up-a-signature-confirmation"></a>Postupy: Nastavení potvrzení podpisu
 *Potvrzení podpisu* mechanismus pro zprávu iniciátor zajistit, že byla přijata odpověď byla vygenerována v reakci na původní zprávu o odesílatele. Potvrzení podpisu je definována ve specifikaci WS-zabezpečení 1.1. Pokud koncový bod podporuje WS-Security 1.0, nemůžete použít potvrzení podpisu.  

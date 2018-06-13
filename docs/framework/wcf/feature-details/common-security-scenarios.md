@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490900"
 ---
 # <a name="common-security-scenarios"></a>Běžné scénáře zabezpečení
 Témata v této části katalogu počet možných klienta a konfigurace zabezpečení služby. Konfigurace se liší podle počtu faktorů. Například jestli je služba nebo klienta na intranetu, nebo jestli poskytuje zabezpečení systému Windows nebo přenos (například HTTPS).  

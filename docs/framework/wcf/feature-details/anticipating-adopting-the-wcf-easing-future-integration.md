@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489593"
 ---
 # <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-integration"></a>Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí integrace
 Pokud jste ještě dnes pomocí technologie ASP.NET a předvídat pomocí WCF v budoucnu, toto téma obsahuje pokyny k zajištění, že nové rozhraní ASP.NET Web services bude fungovat i společně s aplikací služby WCF.  

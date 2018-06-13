@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508058"
 ---
 # <a name="custom-secure-metadata-endpoint"></a>Vlastní zabezpečený koncový bod metadat
 Tento příklad znázorňuje, jak implementovat služby Zabezpečené metadata koncový bod, který používá jedna z vazeb neobsahující metadata exchange a postup konfigurace [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nebo klientům načíst metadata z těchto metadat koncového bodu. Nejsou k dispozici pro vystavení koncové body metadat dvě vazby poskytované systémem: mexHttpBinding a mexHttpsBinding. mexHttpBinding se používá ke zveřejnění způsobem nezabezpečené koncový bod metadat prostřednictvím protokolu HTTP. mexHttpsBinding se používá ke zveřejnění koncový bod metadat prostřednictvím protokolu HTTPS zabezpečeným způsobem. Tato ukázka znázorňuje, jak vystavit koncový bod metadat zabezpečené pomocí <xref:System.ServiceModel.WSHttpBinding>. Chcete by se to udělat, když chcete změnit nastavení zabezpečení na vazby, ale nechcete používat protokol HTTPS. Pokud použijete mexHttpsBinding bude váš koncový bod metadat zabezpečené, ale neexistuje žádný způsob, jak upravit nastavení vazby.  

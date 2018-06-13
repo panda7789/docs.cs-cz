@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508771"
 ---
 # <a name="obsolete-members-in-the-net-framework"></a>Zastaralé členy v rozhraní .NET Framework
 V tabulkách v tomto článku jsou uvedeny členy typu, které jsou zastaralé v rozhraní .NET Framework 4.5 a novějších verzích, které jsou uspořádané podle sestavení. Pomocí následujících odkazů můžete zobrazit seznam zastaralé členy a doporučených alternativách v každé sestavení. Toto téma nemá seznam členů zastaralé typy. Seznam zastaralé typy najdete v tématu [zastaralé typy](../../../docs/framework/whats-new/obsolete-types.md).  

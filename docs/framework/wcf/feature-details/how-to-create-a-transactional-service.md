@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494976"
 ---
 # <a name="how-to-create-a-transactional-service"></a>Postupy: Vytvoření transakční služby
 Tento příklad znázorňuje různé aspekty vytvoření transakční služby a použití transakci iniciované klientem ke koordinaci operací služby.  

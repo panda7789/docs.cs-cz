@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493312"
 ---
 # <a name="how-to-register-and-configure-a-service-moniker"></a>Postupy: registrace a konfigurace Monikeru služby
 Před použitím monikeru služby Windows Communication Foundation (WCF) v rámci aplikace modelu COM s typem kontrakt, musíte zaregistrovat požadované s atributy typy v modelu COM a nakonfigurovat aplikaci COM a moniker s požadovaná vazba konfigurace.  

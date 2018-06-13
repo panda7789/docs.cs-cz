@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494813"
 ---
 # <a name="how-to-retrieve-metadata-and-implement-a-compliant-service"></a>Postupy: načtení metadat a implementovat kompatibilní služby
 Často stejná osoba není návrh a implementaci služby. V prostředích, kde jsou důležité spolupráce aplikace kontrakty lze určený nebo popsané v webové služby popis Language (WSDL) a vývojář musí implementovat služba, která odpovídá zadané kontrakt. Můžete také migrovat existující službu pro Windows Communication Foundation (WCF), ale zachovat přenosový formát. Duplexní kontrakty navíc vyžadují volající implementace kontraktu zpětného volání.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491798"
 ---
 # <a name="how-to-service-data-partitioning"></a>Postupy: Vytvoření oddílů dat služby
 Toto téma popisuje základní kroky potřebné k oddílu zprávy ve více instancích stejné cílové služby. Dělení na oddíly dat služby se obvykle používá, když potřebujete škálování služby, chcete-li poskytovat lepší kvalitu služby, nebo když potřebujete zpracování požadavků různých zákazníků, určitým způsobem. Zprávy ze vysoké hodnoty nebo zákazníků "Zlatá" možná muset zpracovat vyšší prioritu než zprávy od standardní zákazníka.  

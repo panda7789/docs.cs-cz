@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493347"
 ---
 # <a name="how-to-view-certificates-with-the-mmc-snap-in"></a>Postupy: Zobrazení certifikátů pomocí modulu snap-in konzoly MMC
 Běžný typ přihlašovacích údajů je certifikát X.509. Při vytváření zabezpečené služby nebo klientů, můžete zadat, certifikát se dá použít jako pověření klienta služby nebo pomocí metody, jako <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metoda. Metoda vyžaduje různé parametry, jako je například úložiště, kde je uložen certifikát a hodnotu mají použít při hledání pro certifikát. Následující postup předvádí, jak prozkoumat úložiště na počítače, který chcete najít příslušný certifikát. Příklad hledání kryptografický otisk certifikátu, naleznete v části [postupy: načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).  

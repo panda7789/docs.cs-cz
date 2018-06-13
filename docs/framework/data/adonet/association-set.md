@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756992"
 ---
 # <a name="association-set"></a>Sada přidružení
 *Sadu přidružení* je logický kontejner pro [přidružení](../../../../docs/framework/data/adonet/association-type.md) instance stejného typu. Sadu přidružení není dat modelování konstrukce; nepopisuje tedy strukturu dat nebo vztahy. Místo toho sadu přidružení poskytuje konstrukt pro hostování nebo úložiště prostředí (například databáze SQL serveru nebo modul common language runtime) k instancím přidružení skupiny, které může být namapovaný na úložiště dat.  

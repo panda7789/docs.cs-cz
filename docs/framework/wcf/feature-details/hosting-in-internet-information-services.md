@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494111"
 ---
 # <a name="hosting-in-internet-information-services"></a>Hostování v Internetové informační službě
 Jednou z možností pro hostování služby Windows Communication Foundation (WCF) je v rámci Internetové informační služby (IIS) aplikace. Tento model hostování je podobný modelu používaný [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] a webových služeb ASP.NET (ASMX) webové služby.  

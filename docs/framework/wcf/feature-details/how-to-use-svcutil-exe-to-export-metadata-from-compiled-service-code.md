@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492746"
 ---
 # <a name="how-to-use-svcutilexe-to-export-metadata-from-compiled-service-code"></a>Postupy: Použití nástroje Svcutil.exe pro export metadat z kompilovaného kódu služby
 Metadata pro služby, smlouvy a datových typů v sestaveních kompilované, můžete exportovat svcutil.exe následujícím způsobem:  

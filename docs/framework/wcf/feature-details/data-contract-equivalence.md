@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492792"
 ---
 # <a name="data-contract-equivalence"></a>Ekvivalence kontraktů dat
 Pro klienta k úspěšnému odeslání dat určitého typu služby nebo k službě úspěšně posílat data do klienta odeslané typ nemusí nutně existovat na koncové straně příjmu. Jediným požadavkem je, že kontrakty dat obou typů být ekvivalentní. (V některých případech striktní ekvivalenční se nevyžaduje, jak je popsáno v [Správa verzí kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md).)  

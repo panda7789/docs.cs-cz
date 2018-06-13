@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517975"
 ---
 # <a name="dynamic-arguments"></a>Dynamické argumenty
 Tento příklad znázorňuje způsob implementace aktivitu, pro které jsou definovány argumenty příjemce aktivity spíše než Autor aktivity. Dělá to pomocí přepsání způsob, jakým modul runtime vytvoří metadata aktivity.  

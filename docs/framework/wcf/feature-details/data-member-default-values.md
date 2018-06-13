@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492122"
 ---
 # <a name="data-member-default-values"></a>Vychozí hodnoty datových členů
 V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], typy mají koncept *výchozí hodnoty*. Například pro libovolného typu odkaz na výchozí hodnota je `null`, a pro typ integer je nula. Je občas žádoucí vynechat data člena z serializovaná data, když je nastaveno na výchozí hodnotu. Protože člen má výchozí hodnotu, nemusí být serializovány skutečnou hodnotu; Tato akce nemá využít výkonu.  

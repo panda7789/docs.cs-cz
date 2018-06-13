@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579805"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Standardní řetězce formátu data a času
 Řetězec standardního formátu data a času používá pro definování textového vyjádření hodnoty data a času jeden specifikátor formátu. Formátovací řetězec datum a čas, který obsahuje více než jeden znak, včetně mezer, interpretována jako vlastní data a času řetězec formátu; Další informace najdete v tématu [vlastní řetězců data a času formát](../../../docs/standard/base-types/custom-date-and-time-format-strings.md). Řetězec standardního nebo vlastního formátu lze používat dvěma způsoby:  

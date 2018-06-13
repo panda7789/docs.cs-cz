@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489466"
 ---
 # <a name="certificate-validation-differences-between-https-ssl-over-tcp-and-soap-security"></a>Rozdíly v ověřování certifikátů mezi zabezpečeními HTTPS, SSL přes TCP a SOAP
 Můžete použít certifikáty ve Windows Communication Foundation (WCF) s zabezpečení zpráv vrstvy (SOAP) kromě zabezpečení přenosové vrstvy (TLS) přes protokol HTTP (HTTPS) nebo TCP. Toto téma popisuje rozdíly ve způsobu, jak tyto certifikáty se ověřují.  

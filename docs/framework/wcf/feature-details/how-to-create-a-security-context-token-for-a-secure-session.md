@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493409"
 ---
 # <a name="how-to-create-a-security-context-token-for-a-secure-session"></a>Postupy: Vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci
 Pomocí tokenu kontextu zabezpečení stavová (SCT) v zabezpečené relaci může relace odolat službu recyklovány. Například při bezstavové SCT se používá v zabezpečené relaci a Internetové informační služby (IIS) je obnovit, pak data relace, která souvisí se službou se ztratí. Tato data relace zahrnuje mezipamětí tokenů SCT. Ano při příštím klient odešle služba bezstavové SCT, vrátí se chyba, protože nelze načíst klíč, který je přidružen SCT. Pokud se ale používá stavová SCT, klíč, který je přidružen SCT obsažené v SCT. Vzhledem k tomu, že klíč obsažené v SCT a proto obsažené v zprávu, není služba recyklovány vliv zabezpečené relace. Ve výchozím nastavení používá Windows Communication Foundation (WCF) bezstavové SCTs v zabezpečené relaci. Toto téma podrobné informace o tom, jak použít stavová SCTs v zabezpečené relaci.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33493774"
 ---
 # <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Postupy: vytvoření služby WCF, který komunikuje přes objekty WebSockets
 Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding> vazby pro komunikaci pomocí objekty WebSockets.  Technologie WebSockets bude použít, když <xref:System.ServiceModel.NetHttpBinding> určuje kontrakt služby definuje kontrakt zpětného volání. Toto téma popisuje, jak implementovat klienta, který používá a služby WCF <xref:System.ServiceModel.NetHttpBinding> komunikovat přes objekty WebSockets.  

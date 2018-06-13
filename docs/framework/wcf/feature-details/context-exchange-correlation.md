@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492320"
 ---
 # <a name="context-exchange-correlation"></a>Korelace kontextové výměny
 Korelace kontextu je založené na mechanismu exchange kontext, který je popsané v [Exchange kontextu .NET – specifikace protokolu](http://go.microsoft.com/fwlink/?LinkId=166059). Korelace kontextové používá dobře známé kontextu hlavičky nebo soubor cookie k úpravě zprávy na správnou instanci. Použít korelace kontextu, na základě kontextu vazby, jako <xref:System.ServiceModel.BasicHttpContextBinding>, <xref:System.ServiceModel.WSHttpContextBinding>, nebo <xref:System.ServiceModel.NetTcpContextBinding> na zadaný pro koncový bod se musí použít <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Toto téma vysvětluje, jak používat kontextu korelace aktivitách zasílání zpráv ve službě pracovního postupu.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491528"
 ---
 # <a name="peer-nodes"></a>Partnerské uzly
 Uzel PeerNode je jeden koncový bod v rovnocenného kanálu oka. Aplikace může mít několik partnerské uzly, které jsou součástí skupiny různých uzlů. Například peer-to-peer chatovací aplikace může být součástí dva samostatné OK: jedné mřížky pro chatování s střední škole přátel; a druhý pro chatování s kolegy práci.  

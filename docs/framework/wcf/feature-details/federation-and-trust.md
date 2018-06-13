@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492902"
 ---
 # <a name="federation-and-trust"></a>Federace a důvěryhodnost
 Toto téma popisuje různé aspekty související s federovaným aplikacím, hranice vztahů důvěryhodnosti a konfiguraci a používat vydané tokeny Windows Communication Foundation (WCF).  

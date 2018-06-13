@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496336"
 ---
 # <a name="migrating-wse-30-web-services-to-wcf"></a>Migrace WSE 3.0 Web Services do WCF
 Výhody migrace WSE 3.0 Web services na Windows Communication Foundation (WCF) zahrnují lepší výkon a podporuje další přenosy, další bezpečnostní scénáře a WS-* specifikace. Webová služba, která je migrována z WSE 3.0 do WCF můžete zaznamenat až 200 až 400 % výkonu v přírůstcích. Další informace o přenosech nepodporuje WCF najdete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md). Seznam scénáře podporované službou WCF najdete v tématu [běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md). Seznam specifikace, které jsou podporovány službou WCF najdete v tématu [Průvodce interoperabilitou protokolů webových služeb](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md).  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494319"
 ---
 # <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a>Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď
 Následující postupy popisují, jak pro přístup ke službě Windows Communication Foundation (WCF), který definuje jednosměrného kontraktu a kontraktu požadavku a odpovědi a která nepoužívá vzoru duplexní komunikace.  

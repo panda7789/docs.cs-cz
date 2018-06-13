@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494160"
 ---
 # <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a>Postupy: vytvoření služby, je možné zadat libovolný dat pomocí programovací Model REST WCF
 Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služby. To je případ, kdy operace služby musí vracet, že data ve formátu nepodporuje byWCF. Toto téma popisuje použití programovací Model REST WCF k vytvoření služby, která přijímá libovolná data.  

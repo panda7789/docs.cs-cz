@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491927"
 ---
 # <a name="how-to-create-a-duplex-contract"></a>Postupy: Vytvoření duplexního kontraktu
 Toto téma ukazuje základní kroky pro vytvoření metody, které používají duplexního kontraktu (obousměrné). Duplexní kontrakt umožňuje klienty a servery pro komunikaci mezi sebou nezávisle tak, aby buď můžete spustit volání na druhý. Duplexní kontrakt je jedním ze tří vzorů zprávy k dispozici pro služby Windows Communication Foundation (WCF). Další dva zprávy vzory jsou jednosměrná a požadavku a odpovědi. Duplexního kontraktu se skládá ze dvou jednosměrné kontrakty mezi klientem a serverem a nevyžaduje korelaci volání metody. Tento druh kontrakt použijte, pokud vaše služba musí dotazovat klienta pro další informace nebo explicitně vyvolávání událostí na klientovi. Další informace o vytváření klientskou aplikaci pro duplexního kontraktu najdete v tématu [postupy: přístup k službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md). Ukázku práce, najdete [duplexní](../../../../docs/framework/wcf/samples/duplex.md) ukázka.  

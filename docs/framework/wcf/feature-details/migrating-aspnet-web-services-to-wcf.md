@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33494559"
 ---
 # <a name="migrating-aspnet-web-services-to-wcf"></a>Migrace webových služeb ASP.NET na WCF
 Technologie ASP.NET poskytuje knihovny tříd rozhraní .NET Framework a nástroje pro vytváření webových služeb, jakož i zařízení pro hostování služeb v rámci Internetové informační služby (IIS). Windows Communication Foundation (WCF) poskytuje knihovny tříd rozhraní .NET Framework, nástroje a hostování zařízení pro povolení softwaru entity na komunikaci pomocí žádné protokoly, včetně těch, které používá webové služby.  Migrace webových služeb ASP.NET na WCF umožňuje aplikacím využívat nové funkce a vylepšení, které jsou jedinečné pro WCF.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496224"
 ---
 # <a name="routing-service"></a>Směrovací služba
 Služba Směrování je obecný prostředník SOAP, který funguje jako směrovač zpráv. Základní funkce služby směrování je umožňuje směrovat zprávy na základě obsahu zprávy, která umožňuje zprávu, která se předají do koncového bodu klienta na základě hodnoty v rámci samotné, zprávy v záhlaví nebo textu zprávy.  
