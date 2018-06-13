@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365381"
 ---
 # <a name="the-linq-to-sql-object-model"></a>Technologie LINQ to SQL objektový Model
 V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], vyjádřené v programovací jazyk vývojář objektový model je namapována na datový model relační databáze. Operace s daty jsou pak provedeny podle modelu objektu.  

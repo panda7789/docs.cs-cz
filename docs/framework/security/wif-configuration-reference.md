@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399241"
 ---
 # <a name="wif-configuration-reference"></a>Referenci na konfigurační WIF
 Windows Identity Foundation (WIF) ve svých aplikacích můžete nakonfigurovat přidáním prvků do konfiguračního souboru. Toto téma obsahuje odkazy na referenční témata pro konfigurační prvky WIF.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33323635"
 ---
 # <a name="generic-interfaces-c-programming-guide"></a>Obecná rozhraní (Průvodce programováním v C#)
 Je často užitečné k definování rozhraní pro obecné kolekce třídy, nebo pro obecné třídy, které představují položky v kolekci. Předvolby pro obecné třídy je pomocí obecných rozhraní, jako například <xref:System.IComparable%601> místo <xref:System.IComparable>, aby se zabránilo operace zabalení a rozbalení u typů hodnot. Definuje několik obecných rozhraní pro použití s třídy kolekce v knihovně tříd rozhraní .NET Framework <xref:System.Collections.Generic> oboru názvů.  

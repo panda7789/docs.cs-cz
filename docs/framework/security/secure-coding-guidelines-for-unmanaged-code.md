@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408142"
 ---
 # <a name="secure-coding-guidelines-for-unmanaged-code"></a>Pokyny pro zabezpečení nespravovaného kódu
 Kód knihovny musí volat nespravovaný kód (například nativního kódu rozhraní API, jako je například Win32). Protože to znamená přechod mimo zónu zabezpečení pro spravovaný kód, přičemž se řádně upozornění je vyžadován. Pokud je váš kód zabezpečení jazykově neutrální, kód a kód, který se volá musí mít nespravovaného kódu oprávnění (<xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> zadaného příznaku).  

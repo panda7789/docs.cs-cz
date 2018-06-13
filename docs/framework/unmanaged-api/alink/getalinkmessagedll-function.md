@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402214"
 ---
 # <a name="getalinkmessagedll-function"></a>GetALinkMessageDll – funkce
 Vyhledá a načte zprávy knihovny DLL. Vrátí hodnotu 0, pokud nelze umístěný nebo načíst knihovny DLL zpráv. Zpráva knihovny DLL musí být buď v podadresáři, jejíž název je ID jazyka, nebo v aktuálním adresáři.  

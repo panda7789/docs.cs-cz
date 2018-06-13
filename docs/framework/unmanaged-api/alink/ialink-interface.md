@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408590"
 ---
 # <a name="ialink-interface"></a>IALink – rozhraní
 Pomáhá při vytváření sestavení rozhraní .NET Framework. Kromě jiných věcí rozhraní obsahuje metody, které pomáhají při psaní manifesty sestavení pro více modul sestavení, podepisování sestavení se silnými názvy a vytváření netmodules.  

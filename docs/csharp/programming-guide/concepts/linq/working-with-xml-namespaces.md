@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33330470"
 ---
 # <a name="working-with-xml-namespaces-c"></a>Práce s obory názvů XML (C#)
 Témata v této části popisují, jak [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] podporuje obory názvů.  

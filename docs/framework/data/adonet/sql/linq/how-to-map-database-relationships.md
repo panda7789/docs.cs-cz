@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364294"
 ---
 # <a name="how-to-map-database-relationships"></a>Postupy: mapování relace databáze
 Můžete zakódovat jako odkazuje vlastnost v třídě entity žádné vztahy dat, které budou vždy stejné. Ukázková databáze Northwind například vzhledem k tomu, že zákazníci obvykle umístit objednávky, je vždy vztah v modelu mezi zákazníků a jejich objednávky.  

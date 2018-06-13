@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408964"
 ---
 # <a name="wif-claims-programming-model"></a>Deklarace identity WIF programovací Model
 Vývojáři ASP.NET a Windows Communication Foundation (WCF) normálně používat rozhraní identita a IPrincipal pro práci s informací o identitě uživatele. V rozhraní .NET 4.5 Windows Identity Foundation (WIF) je integrována funkce tak, že deklarace identity jsou nyní vždy k dispozici pro všechny hlavní, jak je znázorněno v následujícím diagramu:  

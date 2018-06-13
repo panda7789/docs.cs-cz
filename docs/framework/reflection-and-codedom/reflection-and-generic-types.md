@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399701"
 ---
 # <a name="reflection-and-generic-types"></a>Reflexe a obecné typy
 <a name="top"></a> Z hlediska reflexe, rozdíl mezi obecného typu a typ obyčejnou je, že obecného typu má přidruženo sadu parametrů typů (je-li definice obecného typu) nebo zadejte argumenty (Pokud je vytvořený typ). Obecná metoda se liší od metody obyčejnou stejným způsobem.  

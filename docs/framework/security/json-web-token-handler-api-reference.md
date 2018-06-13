@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399267"
 ---
 # <a name="json-web-token-handler-api-reference"></a>Referenční dokumentace k rozhraní API obslužné rutiny webových tokenů JSON
 Tato část obsahuje referenční dokumentace rozhraní API pro JSON Web Token obslužná rutina WIF rozšíření.

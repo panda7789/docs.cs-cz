@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361982"
 ---
 # <a name="performing-batch-operations-using-dataadapters"></a>Provádění operací Batch pomocí DataAdapters
 Umožňuje podporu batch v ADO.NET <xref:System.Data.Common.DataAdapter> k seskupení operace INSERT, UPDATE a DELETE z <xref:System.Data.DataSet> nebo <xref:System.Data.DataTable> k serveru, místo abyste odesílali jednu operaci najednou. Snížení počet zpátečních cest k serveru se obvykle výsledkem výrazné zvýšení výkonu. Dávková aktualizace jsou podporované pro zprostředkovatele dat .NET pro SQL Server (<xref:System.Data.SqlClient>) a Oracle (<xref:System.Data.OracleClient>).  

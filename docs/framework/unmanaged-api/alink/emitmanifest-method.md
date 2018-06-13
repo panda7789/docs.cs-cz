@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33401206"
 ---
 # <a name="emitmanifest-method"></a>EmitManifest – metoda
 Vysílá konečné manifestu. Tuto metodu volejte po importu všechny ostatní soubory a nastavení všech možností. Nevolejte tuto metodu pro nevázaný moduly.  

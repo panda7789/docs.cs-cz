@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33403289"
 ---
 # <a name="getwin32resblob-method"></a>GetWin32ResBlob – metoda
 Načte objekt blob Win32 prostředků. Tuto metodu volejte po nastavení možností sestavení.  

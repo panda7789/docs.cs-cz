@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359709"
 ---
 # <a name="clr-user-defined-functions"></a>Uživatelem definované funkce CLR
 Uživatelem definované funkce jsou rutiny, které můžete provést parametry, provádět výpočty nebo jiné akce a vrácení výsledku. Uživatelem definované funkce můžete napsat v žádné rozhraní Microsoft .NET Framework programovací jazyk, jako je například Microsoft Visual Basic .NET nebo Microsoft Visual C#.  

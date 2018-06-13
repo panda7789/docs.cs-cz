@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33404194"
 ---
 # <a name="coractivefunction-structure"></a>COR_ACTIVE_FUNCTION – struktura
 Obsahuje informace o funkcích, které jsou momentálně aktivní v podprocesu rámce. Tato struktura je používán [icordebugthread2::getactivefunctions –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md) metoda.  

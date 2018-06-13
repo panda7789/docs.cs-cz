@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402025"
 ---
 # <a name="developer-command-prompt-for-visual-studio"></a>Příkazový řádek vývojáře pro sadu Visual Studio
 Příkazový řádek vývojáře pro sadu Visual Studio automaticky nastaví proměnné prostředí, které vám umožní snadno používat nástroje rozhraní .NET Framework. Do příkazového řádku vývojáře se instaluje s plná nebo komunity edice sady Visual Studio. Není nainstalovaná verze Express sady Visual Studio.  

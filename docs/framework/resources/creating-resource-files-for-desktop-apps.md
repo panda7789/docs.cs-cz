@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399818"
 ---
 # <a name="creating-resource-files-for-desktop-apps"></a>Vytváření zdrojových souborů pro aplikace klasické pracovní plochy
 Můžete zahrnout prostředky, například řetězce, Image nebo dat objektů, soubory prostředků, aby je bylo možné snadno do vaší aplikace. Rozhraní .NET Framework nabízí pět způsoby, jak vytvářet soubory prostředků:  

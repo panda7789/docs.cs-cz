@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33331438"
 ---
 # <a name="compiler-generated-exceptions-c-programming-guide"></a>Výjimky generované kompilátorem (Průvodce programováním v C#)
 Některé výjimky jsou vyvolány automaticky pomocí rozhraní .NET Framework common language runtime (CLR), pokud základní operace s chybou. Tyto výjimky a jejich chybové stavy jsou uvedeny v následující tabulce.  

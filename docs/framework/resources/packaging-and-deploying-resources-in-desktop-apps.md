@@ -33,6 +33,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399688"
 ---
 # <a name="packaging-and-deploying-resources-in-desktop-apps"></a>Zabalení a nasazení prostředků v aplikacích klasické pracovní plochy
 Aplikací v rozhraní .NET Framework Resource Manageru, reprezentována závisí <xref:System.Resources.ResourceManager> třída načíst lokalizované prostředky. Resource Manager předpokládá, že model hvězdicové slouží k zabalení a nasazení prostředků. Rozbočovače je hlavní sestavení, které obsahuje nelokalizovatelný, spustitelný kód a prostředky pro jednu kulturu, nazvanou neutrální nebo výchozí jazykovou verzi. Představuje výchozí jazykovou verzi záložní jazykovou verzi pro aplikaci. je jazyková verze, jejichž zdroje se použijí, pokud nelze nalézt lokalizované prostředky. Každý paprsek připojí k satelitní sestavení, které obsahuje prostředky pro jednu kulturu, ale neobsahuje žádný kód.  

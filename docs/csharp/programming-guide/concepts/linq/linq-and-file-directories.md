@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33325016"
 ---
 # <a name="linq-and-file-directories-c"></a>LINQ a souborové adresáře (C#)
 Mnoho operace souborového systému jsou v podstatě dotazy a jsou proto vhodné řešení pro LINQ přístup.  

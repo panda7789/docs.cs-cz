@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399805"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Načítání prostředků v aplikacích klasické pracovní plochy
 Při práci s místní zdroje v aplikacích klasické pracovní plochy rozhraní .NET Framework by v ideálním případě prostředky pro výchozí nebo neutrální jazykovou verzi balíčku s hlavní sestavení a vytvořte samostatné satelitní sestavení pro každý jazyk nebo jazykovou verzi, která vaše aplikace podporuje. Pak můžete použít <xref:System.Resources.ResourceManager> třídy, jak je popsáno v následující části pro přístup k prostředkům s názvem. Pokud se rozhodnete, že není v hlavní sestavení a satelitní sestavení pro vložení vašich prostředků, můžete taky přejít binární soubory RESOURCES přímo, jak je popsáno v části [načítání prostředky z soubory .resources](#from_file) později v tomto článek.  Načtení prostředků v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, najdete v části [vytváření a načítání prostředků v aplikacích pro Windows Store](http://go.microsoft.com/fwlink/p/?LinkID=241674) ve službě Windows Dev Center.  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566415"
 ---
 # <a name="xsubclass-directive"></a>x:Subclass – direktiva
 Mění chování kompilace kódu XAML při `x:Class` k dispozici je také. Místo vytváření částečné třídu, která je založena na `x:Class`, poskytnutého `x:Class` je vytvořen jako zprostředkující třída, a pak se očekává založeny na vaše zadané odvozené třídy `x:Class`.  

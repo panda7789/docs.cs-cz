@@ -27,6 +27,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399016"
 ---
 # <a name="using-the-codedom"></a>Použití modelu CodeDOM
 Modelu CodeDOM obsahuje typy, které představují mnoho běžných typů elementy zdrojového kódu. Můžete navrhnout program, který vytvoří model zdrojového kódu pomocí modelu CodeDOM elementů ke kompilaci grafu objektu. Tento objekt graf lze vykreslit jako zdrojový kód pomocí modelu CodeDOM generátor kódu pro podporované programovací jazyk. Modelu CodeDOM můžete použít také ke kompilaci zdrojového kódu do binární sestavení.  

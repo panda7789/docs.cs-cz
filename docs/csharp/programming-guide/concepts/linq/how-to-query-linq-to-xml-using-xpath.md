@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33317083"
 ---
 # <a name="how-to-query-linq-to-xml-using-xpath-c"></a>Postupy: dotazování technologie LINQ to XML s použitím XPath (C#)
 Toto téma představuje rozšiřující metody, které vám umožní zadat dotaz strom XML s použitím XPath. Podrobné informace o použití těchto metod rozšíření najdete v tématu <xref:System.Xml.XPath.Extensions?displayProperty=nameWithType>.  

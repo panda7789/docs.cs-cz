@@ -28,6 +28,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399055"
 ---
 # <a name="reflection-in-the-net-framework"></a>Reflexe v rozhraní .NET Framework
 Třídy v <xref:System.Reflection> obor názvů, společně s <xref:System.Type?displayProperty=nameWithType>, vám umožní získat informace o načíst [sestavení](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md) a typů front definovaných v nich, jako například [třídy](http://msdn.microsoft.com/library/ad7d3561-271e-4546-82fc-e00b059f27a9), [rozhraní](http://msdn.microsoft.com/library/fd9d5975-5363-4bc9-b883-609f887895e5), a [typů hodnot](http://msdn.microsoft.com/library/c9c567f8-8ab1-4d88-834d-00f7d92418de). Reflexe můžete také použít k vytvoření instance typu za běhu a k vyvolání a přistupovat k nim. Témata o konkrétních aspektů reflexe naleznete v tématu [Příbuzná témata](#related_topics) na konci tohoto přehledu.  

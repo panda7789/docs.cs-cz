@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399740"
 ---
 # <a name="viewing-type-information"></a>Zobrazení informací o typu
 <xref:System.Type?displayProperty=nameWithType> Třída je důležitá pro reflexe. Vytvoří modul common language runtime **typ** pro načíst typ v případě reflexe požaduje. Můžete použít **typ** metody, polí, vlastnosti a vnořené třídy a zjistěte všechny údaje o typu objektu.  

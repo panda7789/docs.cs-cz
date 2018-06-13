@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33333811"
 ---
 # <a name="generics-c-programming-guide"></a>Obecné typy (Průvodce programováním v C#)
 Obecné typy byly přidány do verze 2.0 jazyka C# a modul CLR (CLR). Obecné typy představit rozhraní .NET Framework koncept parametry typu, které umožňují provádět návrhu třídy a metody, které odložení specifikace jeden nebo více typů, dokud třída nebo metoda je deklarována a vytvořena kódem na straně klienta. Například můžete pomocí parametr obecného typu T zápisu jednu třídu, která jiný kód klienta můžete použít aniž by docházelo k náklady nebo riziko přetypování runtime nebo zabalení operace, jak je vidět tady:  

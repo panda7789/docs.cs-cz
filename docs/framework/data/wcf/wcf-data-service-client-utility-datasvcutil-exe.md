@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364523"
 ---
 # <a name="wcf-data-service-client-utility-datasvcutilexe"></a>Nástroj klienta WCF Data Service (DataSvcUtil.exe)
 DataSvcUtil.exe je nástroj příkazového řádku poskytovaný [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] , který využívá [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu a vygeneruje třídy klienta dat služby, které jsou potřebné pro přístup ke službě data z klientské aplikace rozhraní .NET Framework. Tento nástroj může generovat datové třídy pomocí následujících zdrojů metadat:  

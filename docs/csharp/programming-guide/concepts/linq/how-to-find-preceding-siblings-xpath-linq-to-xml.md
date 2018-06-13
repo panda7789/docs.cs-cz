@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33316878"
 ---
 # <a name="how-to-find-preceding-siblings-xpath-linq-to-xml-c"></a>Postupy: vyhledání předcházející položky na stejné úrovni (XPath-technologie LINQ to XML) (C#)
 Toto téma porovnává jazyka XPath `preceding-sibling` osy k [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] podřízené <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> osy.  

@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399753"
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností
 Emitování reflexe používá stejné rozhraní API nastavit v úplné nebo částečné důvěryhodnosti, ale některé funkce vyžadují speciální oprávnění v částečně důvěryhodným kódem. Kromě toho emitování reflexe má funkci anonymně hostované dynamické metody, která je určená pro použití s částečnou důvěryhodností a transparentní pro zabezpečení sestavení.  

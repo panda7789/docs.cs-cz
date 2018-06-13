@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398830"
 ---
 # <a name="working-with-resx-files-programmatically"></a>Práce se soubory .resx programově
 Protože soubory XML prostředků (RESX) musí obsahovat přesně vymezené XML, včetně hlavičku, která musí odpovídat určitému schématu následuje data v dvojice název/hodnota, můžete zjistit, že ruční vytvoření těchto souborů je k chybám. Jako alternativu můžete vytvořit soubory .resx programově pomocí typy a členy v knihovně tříd rozhraní .NET Framework. Knihovna tříd rozhraní .NET Framework můžete použít také k načtení prostředků, které jsou uložené v soubory RESX. Toto téma vysvětluje, jak můžete použít typy a členy v <xref:System.Resources> obor názvů pro práci se soubory .resx.  

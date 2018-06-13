@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33349766"
 ---
 # <a name="structs"></a>Struktury
 A *struktura* je typ hodnoty. Když je vytvořen struktury, obsahuje proměnnou, ke kterému je přiřazena struct struktura na skutečná data. Když struktura je přiřazen k nové proměnné, je zkopírována. Novou proměnnou a původní proměnná proto obsahovat dvě samostatné kopie stejná data. Změny provedené v jedné kopie nemají vliv na jiné kopie.

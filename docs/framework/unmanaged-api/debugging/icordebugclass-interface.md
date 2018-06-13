@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33406933"
 ---
 # <a name="icordebugclass-interface1"></a>ICorDebugClass Interface1
 Představuje typ, který může být základní nebo komplexní (tj. definovaný uživatelem). Pokud je typ Obecné, `ICorDebugClass` představuje bez instancí obecného typu.  

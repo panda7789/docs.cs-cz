@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33402054"
 ---
 # <a name="emitassembly-method"></a>EmitAssembly – metoda
 Vytvoří sestavení. Volejte tuto metodu po zavřeny všechny ostatní soubory s výjimkou souboru sestavení. Tato metoda není volána při vytváření nevázaný moduly.  

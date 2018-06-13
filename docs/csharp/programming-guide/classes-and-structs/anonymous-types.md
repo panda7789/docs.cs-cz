@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33314213"
 ---
 # <a name="anonymous-types-c-programming-guide"></a>Anonymní typy (Průvodce programováním v C#)
 Anonymní typy poskytují pohodlný způsob pro zapouzdření sadu vlastností jen pro čtení bez nutnosti explicitně zadat typ nejprve do jednoho objektu. Název typu je generován kompilátoru a není k dispozici na úrovni zdrojového kódu. Kompilátor odvodí typ každou vlastnost.  

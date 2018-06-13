@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364876"
 ---
 # <a name="enabling-multiple-active-result-sets"></a>Povolení více aktivních sad
 Několik sad Active výsledek (MARS) je funkce, která spolupracuje se serverem SQL Server k provádění více jednoho připojení. Pokud MARS je povoleno pro použití se systémem SQL Server, přidá každý objekt příkazu používá relaci připojení.  

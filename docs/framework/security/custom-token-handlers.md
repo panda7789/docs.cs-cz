@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399974"
 ---
 # <a name="custom-token-handlers"></a>Vlastní Token obslužné rutiny
 Toto téma popisuje tokenu obslužné rutiny v WIF a jak se používají ke zpracování tokeny. Téma také popisuje, co je potřeba vytvořit vlastní tokenu obslužné rutiny pro typy tokenů, které nejsou podporované ve výchozím nastavení v WIF.  

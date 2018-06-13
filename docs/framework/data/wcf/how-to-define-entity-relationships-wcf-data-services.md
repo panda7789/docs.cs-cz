@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363989"
 ---
 # <a name="how-to-define-entity-relationships-wcf-data-services"></a>Postupy: definování relací mezi Entity (služby WCF Data Services)
 Když přidáte novou entitu v [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], nejsou automaticky definovány žádné vztahy mezi nové entity a související entity. Můžete vytvořit a změnit vztahy mezi instancí entit a mají klientské knihovny ve službě data tyto změny projevily. Další informace najdete v tématu [aktualizaci dat služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).  

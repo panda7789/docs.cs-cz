@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33407076"
 ---
 # <a name="common-data-types-unmanaged-api-reference"></a>Běžné typy dat (referenční dokumentace nespravovaného rozhraní API)
 Toto téma obsahuje seznam jednoduché datové typy používané nespravovaná rozhraní API pro rozhraní .NET Framework, které jsou definovány pomocí jazyka C/C++ `typedef` příkazy. Tyto datové typy jsou obvykle aliasy pro C/C++ primitivní datové typy. Hodnoty tyto datové typy jsou obvykle neprůhledného; To znamená jsou vrácena určitou funkci nebo metodu tak, aby se dá předat do jiné funkce nebo metody bez úprav.  

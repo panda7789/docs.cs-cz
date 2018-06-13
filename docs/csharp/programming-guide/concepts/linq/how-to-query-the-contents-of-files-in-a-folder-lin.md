@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33319521"
 ---
 # <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a>Postupy: dotazu na obsah textových souborů ve složce (LINQ) (C#)
 Tento příklad ukazuje, jak chcete dotaz na všechny soubory v zadané adresářovém stromu, otevřete každý soubor a zkontrolujte jeho obsah. Tento typ technika může vytvořit indexy nebo obrátit indexy obsahu v adresářovém stromě. Hledání jednoduchého řetězce se provádí v tomto příkladu. Shoda vzoru složitější typy však lze provést s regulárním výrazem. Další informace najdete v tématu [postupy: kombinace dotazů LINQ s regulárními výrazy (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).  

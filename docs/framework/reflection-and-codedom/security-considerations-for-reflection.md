@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398701"
 ---
 # <a name="security-considerations-for-reflection"></a>Důležité informace o zabezpečení pro reflexi
 Reflexe umožňuje získat informace o typy a členy a členům přístup (to znamená, volání metod a konstruktory k získání a nastavení vlastnosti hodnoty, přidávat a odstraňovat obslužné rutiny událostí a tak dále). Použití reflexe ke získání informací o typy a členy není s omezeným přístupem. Všechny kódu můžete použít reflexe k provádění následujících úloh:  

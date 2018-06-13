@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356856"
 ---
 # <a name="transaction-management-escalation"></a>Transakce správy eskalaci
 Windows je hostitelem sadu služeb a moduly, které společně tvoří transakcí správce. Transakce řízení eskalace popisuje proces migrace transakcí z jednoho z komponenty správce transakcí.  
