@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656162"
 ---
 # <a name="implicit-and-explicit-conversions-visual-basic"></a>Implicitní a explicitní převody (Visual Basic)
 *Implicitní převod* nevyžaduje žádnou zvláštní syntaxi ve zdrojovém kódu. V následujícím příkladu, Visual Basic implicitně převede hodnotu `k` na hodnotu s plovoucí desetinnou čárkou jednoduchou přesností před přiřazením jeho `q`.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33501504"
 ---
 # <a name="local-channel"></a>Místní kanál
 Místní kanál je přenos kanálu Windows Communication Foundation (WCF), který se používá pro komunikaci v rámci stejné domény aplikace. To je užitečné pro scénáře, kde klient a služba běží ve stejné doméně aplikace a je třeba se vyhnout režii typické kanál zásobníku WCF (serializace a deserializace zpráv).  

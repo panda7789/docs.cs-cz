@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496237"
 ---
 # <a name="how-to-use-the-com-service-model-configuration-tool"></a>Postupy: Použití nástroje pro konfiguraci modelu služby COM+
 Jakmile vyberete příslušné hostující režim pomocí nástroje příkazového řádku modelu COM + Service Model Configuration (ComSvcConfig.exe) ke konfiguraci rozhraní aplikace, které se zveřejní jako webové služby.  

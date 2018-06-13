@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500666"
 ---
 # <a name="custom-binding-imperative"></a>Imperativní vlastní vazby
 Ukázka ukazuje, jak napsat imperativní kód pro definice a používání vlastních vazeb bez použití konfiguračního souboru nebo klienta Windows Communication Foundation (WCF) vygenerovat. Tato ukázka kombinuje funkce poskytované službou přenos HTTP a spolehlivé relace kanál, chcete-li vytvořit vazbu spolehlivé založené na protokolu HTTP. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  

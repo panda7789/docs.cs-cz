@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496903"
 ---
 # <a name="collection-types-in-data-contracts"></a>Typy kolekcí v kontraktech dat
 A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], jsou seznamy může být reprezentován pomocí pole nebo celou řadu dalších typů (obecný seznam, obecného <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>, nebo <xref:System.Collections.ArrayList>). Například kolekce může obsahovat seznam adres pro danou zákazníka. Tato kolekce se nazývají *seznam kolekcí*, bez ohledu na to jejich skutečným typem.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496283"
 ---
 # <a name="data-contract-versioning"></a>Správa verzí kontraktů dat
 Jak vyvíjet aplikace, budete také muset změnit data měnící použití služby. Toto téma vysvětluje, jak kontrakty dat verze. Toto téma popisuje mechanismy Správa verzí kontraktů dat. Úplný přehled a správa verzí závazné pokyny najdete v tématu [osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  

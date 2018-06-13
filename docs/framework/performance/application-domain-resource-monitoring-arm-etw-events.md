@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398180"
 ---
 # <a name="application-domain-resource-monitoring-arm-etw-events"></a>Události Trasování událostí pro Windows sledování prostředků domény aplikace (ARM)
 <a name="top"></a> Tyto události poskytují podrobné diagnostické informace týkající se stavu služby domény aplikace. Můžete použít tyto události nebo pomocí prostředků domény aplikace (ARM) funkci monitorování získat stejné informace.  

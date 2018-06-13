@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397270"
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)
 Direktivy modulu runtime (. rd.xml) soubor je konfigurační soubor XML, který určuje, zda jsou k dispozici pro reflexi prvky určené programu. Tady je příklad souboru direktivy modulu runtime:  

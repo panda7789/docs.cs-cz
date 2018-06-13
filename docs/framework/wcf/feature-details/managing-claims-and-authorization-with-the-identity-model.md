@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497023"
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>Správa deklarací a autorizace s modelem identity
 Autorizace je proces zjišťování entit, které mají oprávnění změnit, zobrazení nebo jinak přístup k prostředkům počítače. Například v obchodu, pouze správci mohou mít přístup k soubory své zaměstnance. Windows Communication Foundation (WCF) podporuje dva mechanismy pro provádění zpracování autorizace. První mechanismus vám umožňuje řídit autorizaci s použitím stávající společné jazykové konstrukty runtime (CLR). Druhá je model na základě deklarace označuje jako *modelu Identity*. WCF pomocí modelu Identity vytvoří deklarace identity ze příchozí zprávy; Třídy modelu identity lze rozšířit pro podporu nových typů deklarací identity pro schémata autorizace. Toto téma obsahuje přehled hlavní koncepty programování modelu Identity funkce, jakož i seznam nejdůležitější tříd, které používá funkci.  

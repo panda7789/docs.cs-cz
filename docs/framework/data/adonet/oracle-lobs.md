@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758773"
 ---
 # <a name="oracle-lobs"></a>Objekty LOBs Oracle
 Zprostředkovatel dat .NET Framework pro Oracle zahrnuje <xref:System.Data.OracleClient.OracleLob> třídy, která se používá pro práci s Oracle **obchodní** datové typy.  

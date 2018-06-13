@@ -41,6 +41,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655594"
 ---
 # <a name="generic-types-in-visual-basic-visual-basic"></a>Obecné typy v jazyce Visual Basic (Visual Basic)
 A *obecného typu* je jeden programovací element, který přizpůsobí provádět stejné funkce pro různé datové typy. Při definování obecné třídy nebo postup nemáte definovat samostatné verze pro každý typ dat, pro které můžete chtít provést této funkce.  

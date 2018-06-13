@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604091"
 ---
 # <a name="-operator-visual-basic"></a>/= – operátor [Visual Basic]
 Vydělí hodnoty proměnné nebo vlastnosti hodnotou výrazu a s plovoucí desetinnou čárkou výsledek přiřadí proměnné nebo vlastnosti.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497188"
 ---
 # <a name="how-to-create-a-workflow-service-that-calls-another-workflow-service"></a>Postupy: Vytvoření služby pracovních postupů, která volá jinou službu pracovních postupů
 Někdy je nezbytné pro služby pracovního postupu, který chcete získat informace z jiné služby pracovního postupu.  Toto téma ukazuje, jak volat jeden služby pracovního postupu z druhého. V tomto tématu vytvoříme dvě služby pracovního postupu; ten, který má metodu, která obrátí vstupní řetězec a druhý, který převádí vstupního řetězce na velká písmena po Prohodit řetězec, který používá službu první.  

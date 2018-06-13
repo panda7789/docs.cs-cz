@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603636"
 ---
 # <a name="new-operator-visual-basic"></a>New – operátor (Visual Basic)
 Zavádí `New` klauzuli k vytvoření nové instance objektu, určuje omezení konstruktor parametr typu nebo identifikuje `Sub` postupu jako konstruktoru třídy.  

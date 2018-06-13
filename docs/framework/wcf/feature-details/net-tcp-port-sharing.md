@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497149"
 ---
 # <a name="nettcp-port-sharing"></a>Sdílení portů Net.TCP
 Windows Communication Foundation (WCF) poskytuje nový protokol sítě založené na protokolu TCP (net.tcp://) pro komunikaci s vysokým výkonem. WCF také zavádí novou součást systému, služba Net.TCP Port Sharing umožňující portů net.tcp ke sdílení více procesy uživatele.  

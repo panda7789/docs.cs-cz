@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655860"
 ---
 # <a name="objects-and-classes-in-visual-basic"></a>Objekty a třídy v jazyce Visual Basic
 *Objekt* je kombinací kód a data, která lze považovat za jednotku. Objekt může být část aplikace, jako je ovládacího prvku nebo formuláře. Celá aplikace může být také objekt.

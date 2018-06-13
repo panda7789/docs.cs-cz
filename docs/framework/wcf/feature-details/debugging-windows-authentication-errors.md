@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495870"
 ---
 # <a name="debugging-windows-authentication-errors"></a>Ladění chyb ověřování systému Windows
 Pokud používáte ověřování systému Windows jako vhodný mechanismus zabezpečení, rozhraní pro zprostředkovatele podpory zabezpečení (SSPI) zpracovává procesy zabezpečení. Při výskytu chyb zabezpečení ve vrstvě rozhraní SSPI, že jsou prezentované podle Windows Communication Foundation (WCF). Toto téma obsahuje framework a sadu otázky, které pomohou diagnostikovat chyby.  

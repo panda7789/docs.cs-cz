@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499744"
 ---
 # <a name="using-the-discovery-client-channel"></a>Použití kanálu klienta zjišťování
 Při zápisu klientské aplikace WCF je třeba vědět adresa koncového bodu služby, ke kterému se připojujete. V mnoha situacích adresa koncového bodu služby není známa předem nebo adresu služby změny v čase. Kanálem klienta zjišťování umožňuje psát aplikace klienta WCF, popisují službu, kterou chcete volat a kanálem klienta automaticky odešle žádost o test. Jakmile služba odpoví, kanálem klienta zjišťování načte adresa koncového bodu služby z testu odpovědi a použije k vyvolání služby.  

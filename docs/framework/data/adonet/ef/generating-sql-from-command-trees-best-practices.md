@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760190"
 ---
 # <a name="generating-sql-from-command-trees---best-practices"></a>Generování příkazu SQL ze stromy příkazů – doporučené postupy
 Stromy příkazů dotazu výstup úzce model dotazů v SQL vyjádřit kombinací. Existují však určité běžné problémy pro zprostředkovatele zapisovače při generování SQL ze stromu příkazů výstupu. Toto téma popisuje tyto problémy. V dalším tématu ukázkového zprostředkovatele ukazuje, jak vyřešit tyto problémy.  

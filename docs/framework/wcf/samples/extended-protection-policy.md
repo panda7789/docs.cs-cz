@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33504355"
 ---
 # <a name="extended-protection-policy"></a>Zásady rozšířené ochrany
 Rozšířená ochrana je initiative zabezpečení pro ochranu proti útokům man-in-the-middle (typu MITM). Útoky typu MITM je ohrožení zabezpečení, ve kterém MITM přijímá pověření klienta a předává je na server.  

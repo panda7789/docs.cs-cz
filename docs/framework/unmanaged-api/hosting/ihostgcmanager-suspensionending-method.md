@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33438831"
 ---
 # <a name="ihostgcmanagersuspensionending-method"></a>IHostGCManager::SuspensionEnding – metoda
 Upozorní hostitele, modul CLR (CLR) obnovuje provádění úlohy na vláken, která měla bylo pozastaveno pro uvolnění paměti.  

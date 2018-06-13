@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656016"
 ---
 # <a name="nullable-value-types-visual-basic"></a>Typy hodnot s povolenou hodnotou Null (Visual Basic)
 Někdy pracujete s typ hodnoty, který nemá hodnotu definovanou v některých případech. Například na pole v databázi pravděpodobně k rozlišení mezi s přiřazenou hodnotu, která je smysluplný a nemá přiřazenou hodnotu. Typy hodnot lze rozšířit na převedení jejich normální hodnoty, nebo hodnotu null. Toto rozšíření je volána *typ s možnou hodnotou Null*.  

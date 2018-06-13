@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33275061"
 ---
 # <a name="-operator-c-reference"></a>++ – operátor (Referenční dokumentace jazyka C#)
 Operátor přírůstku (`++`) jeho operand zvýší o 1. Operátor přírůstku může vyskytovat před nebo po jeho operand: `++variable` a `variable++`.  

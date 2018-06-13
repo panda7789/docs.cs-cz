@@ -30,6 +30,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396387"
 ---
 # <a name="introducing-pluggable-protocols"></a>Představení modulární protokoly
 Rozhraní Microsoft .NET Framework poskytuje implementaci vrstev, rozšiřitelný a spravovaných služeb Internetu, které může být integrovaná rychle a snadno do svých aplikací. Přístup k Internetu třídy v <xref:System.Net> a <xref:System.Net.Sockets> obory názvů lze použít k implementaci webové i internetové aplikace.  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656055"
 ---
 # <a name="object-variable-assignment-visual-basic"></a>Přiřazení proměnné objektu (Visual Basic)
 Příkaz normální přiřazení můžete použít k přiřazení objektu k proměnné objektu. Můžete přiřadit výraz objekt nebo [nic](../../../../visual-basic/language-reference/nothing.md) – klíčové slovo, jako následující příklad znázorňuje.  

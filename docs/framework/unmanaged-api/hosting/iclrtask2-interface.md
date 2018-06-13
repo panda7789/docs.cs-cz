@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33438805"
 ---
 # <a name="iclrtask2-interface"></a>ICLRTask2 – rozhraní
 Obsahuje všechny funkce [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) rozhraní; kromě toho poskytuje metody, které umožňují zrušení vláken na opožděno na aktuální vlákno.  
