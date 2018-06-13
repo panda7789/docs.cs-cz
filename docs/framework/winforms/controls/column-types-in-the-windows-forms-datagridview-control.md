@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530000"
 ---
 # <a name="column-types-in-the-windows-forms-datagridview-control"></a>Typy sloupců v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Řízení používá několik typů sloupce a zobrazit informace o jeho povolit uživatelům změnit nebo přidat informace.  

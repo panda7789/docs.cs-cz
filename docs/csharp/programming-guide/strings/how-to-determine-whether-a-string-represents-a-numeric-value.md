@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336583"
 ---
 # <a name="how-to-determine-whether-a-string-represents-a-numeric-value-c-programming-guide"></a>Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu (Průvodce programováním v C#)
 K určení, zda řetězec je platný reprezentace zadané číselného typu, použijte statickou `TryParse` metodu, která je implementována všechny primitivní číselnými typy a také typy, jako <xref:System.DateTime> a <xref:System.Net.IPAddress>. Následující příklad ukazuje, jak určit, zda "108" je platná [int](../../../csharp/language-reference/keywords/int.md).  

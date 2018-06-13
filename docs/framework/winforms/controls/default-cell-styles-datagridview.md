@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529935"
 ---
 # <a name="how-to-set-default-cell-styles-and-data-formats-for-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Nastavení výchozích stylů buňky a datových formátů pro ovládací prvek Windows Forms DataGridView pomocí Návrháře
 <xref:System.Windows.Forms.DataGridView> Řízení umožňuje zadejte výchozích stylů buňky a data formátů pro celý ovládací prvek pro konkrétní sloupce, pro záhlaví řádků a sloupců a střídavých řádků vytvořit hlavní knihy efekt buňky. Ve výchozím nastavení se styly nastavení pro sloupce a střídavých řádků se přepíšou výchozí styly pro celý ovládací prvek. Kromě toho stylů, které se nastavují v kódu pro jednotlivé řádky a buněk přepsat výchozí styly.  

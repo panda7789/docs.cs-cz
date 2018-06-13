@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530478"
 ---
 # <a name="how-to-copy-toolstripmenuitems"></a>Postupy: Kopírování ToolStripMenuItems
 V době návrhu, můžete zkopírovat celý nabídek nejvyšší úrovně a jejich položky podnabídky na jiné místo, na <xref:System.Windows.Forms.MenuStrip>. Můžete také zkopírovat jednotlivé položky nabídky mezi nejvyšší úrovně nabídky nebo změní pozici položek nabídky v rámci nabídky.  

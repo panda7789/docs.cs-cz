@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33273384"
 ---
 # <a name="-operator-c-reference"></a>== – operátor (Referenční dokumentace jazyka C#)
 Pro předdefinované typy hodnot, operátor rovnosti (`==`) vrátí hodnotu true, pokud hodnoty jejími operandy, jsou stejné, `false` jinak. Pro odkaz na typy jiné než [řetězec](../../../csharp/language-reference/keywords/string.md), `==` vrátí `true` pokud jeho dva operandy odkazují na stejný objekt. Pro `string` typu `==` porovnává hodnoty řetězce.  

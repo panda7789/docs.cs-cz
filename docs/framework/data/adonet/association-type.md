@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756508"
 ---
 # <a name="association-type"></a>Typ přidružení
 *Typ přidružení* (také nazývané přidružení) je základní stavební blok pro popisující vztahy v Entity Data Model (EDM). V konceptuálním modelu přidružení představuje vztah mezi dvěma [typy entit](../../../../docs/framework/data/adonet/entity-type.md) (například `Customer` a `Order`). V aplikaci, představuje instanci přidružení konkrétní přidružení (jako je například přidružení mezi instanci `Customer` a instance `Order`). Přidružení instance jsou logicky seskupeny do [sadu přidružení](../../../../docs/framework/data/adonet/association-set.md).  

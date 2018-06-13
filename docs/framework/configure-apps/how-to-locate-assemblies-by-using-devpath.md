@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755458"
 ---
 # <a name="how-to-locate-assemblies-by-using-devpath"></a>Postupy: Vyhledání sestavení pomocí mechanismu DEVPATH
 Vývojáři mohou chtít Ujistěte se, že se sdílené sestavení, na které se sestavení s více aplikacemi funguje správně. Místo průběžně uvedení sestavení v globální mezipaměti sestavení během cyklu vývoje, můžete vytvořit vývojář mechanismu DEVPATH proměnné prostředí, která odkazuje na výstupního adresáře sestavení pro sestavení.  

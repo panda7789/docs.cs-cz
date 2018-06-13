@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756342"
 ---
 # <a name="how-to-make-model-and-mapping-files-embedded-resources"></a>Postupy: zpřístupnění modelu a soubory mapování vložené prostředky
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Umožňuje nasadit model a mapování soubory jako vložené prostředky aplikace. Toto sestavení s vložený model a mapování soubory musí být ve stejné doméně aplikace jako připojení entity načíst. Další informace najdete v tématu [připojovací řetězce](../../../../../docs/framework/data/adonet/ef/connection-strings.md). Ve výchozím nastavení [!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)] nástroje pro vložení modelu a mapování souborů. Když definujete ručně modelu a mapování souborů, pomocí tohoto postupu zkontrolujte, že soubory jsou nasazeny jako vložené prostředky společně s [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace.  

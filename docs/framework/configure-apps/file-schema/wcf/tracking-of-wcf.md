@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749316"
 ---
 # <a name="lttrackinggt-of-wcf"></a>&lt;tracking&gt; služby WCF
 Představuje konfiguračního oddílu pro definování nastavení sledování služby pracovního postupu.  

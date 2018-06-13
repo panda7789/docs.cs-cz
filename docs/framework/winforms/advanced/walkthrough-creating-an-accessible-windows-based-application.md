@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529620"
 ---
 # <a name="walkthrough-creating-an-accessible-windows-based-application"></a>Návod: Vytvoření aplikace systému Windows s usnadněnou obsluhou
 Vytváření přístupné aplikací má zásadní obchodní dopad. Mnoho vlády mají požadavky na usnadnění nákup softwaru. Logo Certified for Windows obsahuje požadavky na usnadnění přístupu. Usnadnění softwaru se vztahuje odhadované 30 milionů obyvatele samostatně, USA, kolika z nich potenciální zákazníky.  

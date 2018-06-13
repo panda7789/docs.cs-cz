@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527810"
 ---
 # <a name="how-to-access-the-html-source-in-the-managed-html-document-object-model"></a>Postupy: Přístup ke zdroji HTML ve spravovaném objektu modelu dokumentu HTML
 <xref:System.Windows.Forms.WebBrowser.DocumentStream%2A> a <xref:System.Windows.Forms.WebBrowser.DocumentText%2A> vlastnosti <xref:System.Windows.Forms.WebBrowser> řízení vrátit HTML aktuálního dokumentu, který existoval, když se napřed zobrazí. Nicméně pokud změníte stránce pomocí volání metod a vlastností, jako třeba <xref:System.Windows.Forms.HtmlElement.AppendChild%2A> a <xref:System.Windows.Forms.HtmlElement.InnerHtml%2A>, tyto změny se neprojeví při volání <xref:System.Windows.Forms.WebBrowser.DocumentStream%2A> a <xref:System.Windows.Forms.WebBrowser.DocumentText%2A>. Pokud chcete získat nejaktuálnější zdrojový kód HTML pro modelu DOM, musí volat <xref:System.Windows.Forms.HtmlElement.OuterHtml%2A> vlastnost v elementu HTML.  

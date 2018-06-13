@@ -34,6 +34,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394833"
 ---
 # <a name="ipv6-addressing"></a>IPv6 adresy
 V Internet Protocol verze 6 (IPv6) adresy jsou 128 bitů. Jedním z důvodů rozsáhlý adresní prostor je dostupných adres rozdělte hierarchie směrování domén, které odpovídají topologie k Internetu. Dalším důvodem je mapování adres síťových adaptérů (nebo rozhraní), které připojení zařízení k síti. IPv6 funkce schopnost překládání adres na nejnižší úrovni, který je na úrovni rozhraní sítě a také má funkce automatické konfigurace.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33269637"
 ---
 # <a name="let-clause-c-reference"></a>let – klauzule (Referenční dokumentace jazyka C#)
 Ve výrazu dotazu je někdy užitečné k ukládání výsledků dílčí výrazu, aby bylo možné používat v dalších klauzule. Můžete to provést pomocí `let` – klíčové slovo, které vytvoří novou proměnnou rozsahu a inicializuje s výsledkem výrazu zadáte. Jakmile inicializovaný s hodnotou, proměnnou rozsahu nelze použít k uložení jinou hodnotu. Ale pokud proměnnou rozsahu obsahuje dotazovatelné typu, může být dotazován.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395876"
 ---
 # <a name="socket-performance-enhancements-in-version-35"></a>Vylepšení výkonu soketu v verze 3.5
 <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> Třída je vylepšená v verze 3.5 pro použití aplikací, které používají vstupně-výstupní operace asynchronní sítě k dosažení nejvyšší výkon. Řadu nové třídy přidané jako součást sadu vylepšení <xref:System.Net.Sockets.Socket> třídu, která poskytují alternativní asynchronní vzor, který lze použít speciální soketu vysoce výkonné aplikace. Tato vylepšení byly navrženy speciálně pro serverové aplikace sítě, které vyžadují vysoký výkon. Aplikace můžete použít rozšířené asynchronní vzor výhradně, nebo pouze v cílové aktivní oblasti jejich aplikace (při přijímání velkého objemu dat, například).  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336554"
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>Přetypování a převody typů (Průvodce programováním v C#)
 Protože C# je staticky zadali v době kompilace po proměnné je deklarovaná, nemůže být znovu deklarován nebo používat k ukládání hodnoty jiného typu, pokud je tento typ převést na typ proměnné. Není třeba žádný převod z celé číslo na libovolný libovolný řetězec. Proto po deklarovat `i` jako celé číslo, nelze přiřadit řetězec "Hello", jak je znázorněno v následujícím kódu.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527729"
 ---
 # <a name="change-notification-in-windows-forms-data-binding"></a>Oznámení změn v datové vazbě rozhraní Windows Forms
 Jedním z nejdůležitějších konceptů Windows Forms – datová vazba je *upozornění na změnu*. Aby se zajistilo, že zdroj dat a vázané ovládací prvky vždy mít nejnovější data, je nutné přidat oznámení o změně pro datovou vazbu. Konkrétně chcete zajistit, že jsou vázané ovládací prvky upozorněni na změny, které byly provedeny k jejich zdroji dat a zdroj dat je upozornění na změny, které byly provedeny na vázané vlastnosti ovládacího prvku.  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393981"
 ---
 # <a name="cache-policy"></a>Zásady mezipaměti
 Zásady mezipaměti definuje pravidla, které se používají k určení, zda požadavek můžete splnit pomocí uložené v mezipaměti kopie požadovaný prostředek. Aplikace, zadejte požadavky na mezipaměti klienta pro aktuálnosti, ale zásady efektivní mezipaměti je určen podle požadavků mezipaměti klienta, serveru vypršení platnosti obsahu požadavky a požadavky na opětovné ověření serveru. Požadavky na zásady a server mezipaměti klienta interakci vždy výsledkem nejvíce konzervativní zásady ukládání do mezipaměti, aby bylo zajištěno, že nejčerstvější obsah se vrátí do klientské aplikace.  

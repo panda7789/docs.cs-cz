@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526934"
 ---
 # <a name="filedialog-class"></a>FileDialog – třída
 Windows Forms <xref:System.Windows.Forms.FileDialog> je obecná základní třída pro třídy <xref:System.Windows.Forms.OpenFileDialog> a <xref:System.Windows.Forms.SaveFileDialog> součásti. Provedete změny <xref:System.Windows.Forms.FileDialog> třídu, která ovlivňují vzhled a chování těchto dialogových oken, v závislosti na verzi aplikace běží na systému Windows.  

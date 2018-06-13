@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33219216"
 ---
 # <a name="char-c-reference"></a>char (Referenční dokumentace jazyka C#)
 `char` – Klíčové slovo se používá k deklaraci instance <xref:System.Char?displayProperty=nameWithType> struktura, která rozhraní .NET Framework se používá k reprezentaci znak Unicode. Hodnota `Char` objekt je hodnotu numerické 16bitové (pořadí).  

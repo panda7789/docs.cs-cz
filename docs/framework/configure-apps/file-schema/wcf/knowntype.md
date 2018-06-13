@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753323"
 ---
 # <a name="ltknowntypegt"></a>&lt;Třída knownType&gt;
 Určuje typ má být používána <xref:System.Runtime.Serialization.DataContractSerializer> během deserializace. Element "známému typu" Určuje, který vrátí pole nebo vlastnost "deklarovaný typ". Další informace najdete v tématu [známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33288616"
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out – modifikátor parametrů (Referenční dokumentace jazyka C#)
 `out` – Klíčové slovo způsobí, že argumenty předávané odkazem. Je třeba [ref](ref.md) – klíčové slovo, vyjma toho, že `ref` vyžaduje, aby před předáním iniciována proměnnou. Je také jako [v](in-parameter-modifier.md) – klíčové slovo, vyjma toho, že `in` neumožňuje vyvolání metody k úpravě hodnota argumentu. Používat `out` nutné explicitně zadat parametr definici metody a volání metody `out` – klíčové slovo. Příklad:  

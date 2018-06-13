@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33289422"
 ---
 # <a name="yield-c-reference"></a>yield (Referenční dokumentace jazyka C#)
 Při použití `yield` – klíčové slovo v příkazu, které označuje, že metoda, operátor, nebo `get` přistupujícího objektu, ve kterých se vyskytuje je iterátor. Pomocí `yield` k definování iterovat odebírá potřebu, explicitní navíc – třída (třída, která obsahuje stav pro výčet, najdete v části <xref:System.Collections.Generic.IEnumerator%601> příklad) při implementaci <xref:System.Collections.IEnumerable> a <xref:System.Collections.IEnumerator> vzor pro vlastní shromažďování typ.  

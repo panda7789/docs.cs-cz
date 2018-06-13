@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33289266"
 ---
 # <a name="line-c-reference"></a>#line (referenční dokumentace jazyka C#)
 `#line` Umožňuje změnit číslo řádku kompilátoru a (volitelně) název výstupního souboru chyby a upozornění. Tento příklad ukazuje, jak vytvářet sestavu dvě upozornění související s čísla řádků. `#line 200` – Direktiva vynutí číslo řádku, které má být 200 (i když výchozí hodnota je #7) a dokud další #line – direktiva, název souboru budou hlášené jako "Zvláštní". Směrnice výchozí #line vrátí číslování k jeho výchozí číslování, řádek, který zjistí, kolik řádků se označuje jako v předchozí direktivě.  
