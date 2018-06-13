@@ -1,55 +1,44 @@
 ---
-title: "Postupy: přizpůsobení informačních kanálů v aplikaci zprostředkovatele Entity Framework (služby WCF Data Services)"
-ms.custom: 
+title: 'Postupy: přizpůsobení informačních kanálů v aplikaci zprostředkovatele Entity Framework (služby WCF Data Services)'
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WCF Data Services, customizing
 - WCF Data Services, customizing feeds
 ms.assetid: fd16272e-36f2-415e-850e-8a81f2b17525
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 276aea81716f58ed4a0d6ba8e1f8e2bcdbedb908
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: bd29f6154297c2410294af14952d3d79201966ca
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359475"
 ---
-# <a name="how-to-customize-feeds-with-the-entity-framework-provider-wcf-data-services"></a><span data-ttu-id="e6782-102">Postupy: přizpůsobení informačních kanálů v aplikaci zprostředkovatele Entity Framework (služby WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="e6782-102">How to: Customize Feeds with the Entity Framework Provider (WCF Data Services)</span></span>
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="e6782-103">Umožňuje přizpůsobit Atom serializaci v odpovědi data služby tak, aby vlastnosti entity, může být namapovaný na nepoužívané elementy, které jsou definovány v AtomPub protokolu.</span><span class="sxs-lookup"><span data-stu-id="e6782-103"> enables you to customize the Atom serialization in a data service response so that properties of an entity may be mapped to unused elements that are defined in the AtomPub protocol.</span></span> <span data-ttu-id="e6782-104">Toto téma ukazuje, jak definovat mapování atributů pro typy entit v datovém modelu, který je definován v souboru EDMX pomocí zprostředkovatele Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="e6782-104">This topic shows how to define mapping attributes for the entity types in a data model that is defined in an .edmx file by using the Entity Framework provider.</span></span> <span data-ttu-id="e6782-105">Další informace najdete v tématu [kanálu přizpůsobení](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="e6782-105">For more information, see [Feed Customization](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md).</span></span>  
+# <a name="how-to-customize-feeds-with-the-entity-framework-provider-wcf-data-services"></a><span data-ttu-id="2b6be-102">Postupy: přizpůsobení informačních kanálů v aplikaci zprostředkovatele Entity Framework (služby WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="2b6be-102">How to: Customize Feeds with the Entity Framework Provider (WCF Data Services)</span></span>
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="2b6be-103"> Umožňuje přizpůsobit Atom serializaci v odpovědi data služby tak, aby vlastnosti entity, může být namapovaný na nepoužívané elementy, které jsou definovány v AtomPub protokolu.</span><span class="sxs-lookup"><span data-stu-id="2b6be-103"> enables you to customize the Atom serialization in a data service response so that properties of an entity may be mapped to unused elements that are defined in the AtomPub protocol.</span></span> <span data-ttu-id="2b6be-104">Toto téma ukazuje, jak definovat mapování atributů pro typy entit v datovém modelu, který je definován v souboru EDMX pomocí zprostředkovatele Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="2b6be-104">This topic shows how to define mapping attributes for the entity types in a data model that is defined in an .edmx file by using the Entity Framework provider.</span></span> <span data-ttu-id="2b6be-105">Další informace najdete v tématu [kanálu přizpůsobení](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="2b6be-105">For more information, see [Feed Customization](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md).</span></span>  
   
- <span data-ttu-id="e6782-106">V tomto tématu ručně upravíte soubor EDMX generované nástroj, který obsahuje datový model.</span><span class="sxs-lookup"><span data-stu-id="e6782-106">In this topic you will manually modify the tool-generated .edmx file that contains the data model.</span></span> <span data-ttu-id="e6782-107">Soubor musí ručně upravit, protože rozšíření do datového modelu Entity Designer nepodporuje.</span><span class="sxs-lookup"><span data-stu-id="e6782-107">You must manually modify the file because extensions to the data model are not supported by the Entity Designer.</span></span> <span data-ttu-id="e6782-108">Další informace o souboru .edmx, který nástroje modelu Entity Data Model vytvořit najdete v tématu [.edmx souboru přehled](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4).</span><span class="sxs-lookup"><span data-stu-id="e6782-108">For more information about the .edmx file that the Entity Data Model tools generate, see [.edmx File Overview](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4).</span></span> <span data-ttu-id="e6782-109">V příkladu v tomto tématu používá Northwind ukázková data služby a automaticky generovaný klienta dat služby třídy.</span><span class="sxs-lookup"><span data-stu-id="e6782-109">The example in this topic uses the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="e6782-110">Tato služba a datové třídy klienta se vytvoří při dokončení [rychlého startu služby WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="e6782-110">This service and the client data classes are created when you complete the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  
+ <span data-ttu-id="2b6be-106">V tomto tématu ručně upravíte soubor EDMX generované nástroj, který obsahuje datový model.</span><span class="sxs-lookup"><span data-stu-id="2b6be-106">In this topic you will manually modify the tool-generated .edmx file that contains the data model.</span></span> <span data-ttu-id="2b6be-107">Soubor musí ručně upravit, protože rozšíření do datového modelu Entity Designer nepodporuje.</span><span class="sxs-lookup"><span data-stu-id="2b6be-107">You must manually modify the file because extensions to the data model are not supported by the Entity Designer.</span></span> <span data-ttu-id="2b6be-108">Další informace o souboru .edmx, který nástroje modelu Entity Data Model vytvořit najdete v tématu [.edmx souboru přehled](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4).</span><span class="sxs-lookup"><span data-stu-id="2b6be-108">For more information about the .edmx file that the Entity Data Model tools generate, see [.edmx File Overview](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4).</span></span> <span data-ttu-id="2b6be-109">V příkladu v tomto tématu používá Northwind ukázková data služby a automaticky generovaný klienta dat služby třídy.</span><span class="sxs-lookup"><span data-stu-id="2b6be-109">The example in this topic uses the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="2b6be-110">Tato služba a datové třídy klienta se vytvoří při dokončení [rychlého startu služby WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="2b6be-110">This service and the client data classes are created when you complete the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  
   
-### <a name="to-manually-modify-the-northwindedmx-file-to-add-feed-customization-attributes"></a><span data-ttu-id="e6782-111">Pro ruční úpravy souboru Northwind.edmx přidejte informačního kanálu vlastní atributy</span><span class="sxs-lookup"><span data-stu-id="e6782-111">To manually modify the Northwind.edmx file to add feed customization attributes</span></span>  
+### <a name="to-manually-modify-the-northwindedmx-file-to-add-feed-customization-attributes"></a><span data-ttu-id="2b6be-111">Pro ruční úpravy souboru Northwind.edmx přidejte informačního kanálu vlastní atributy</span><span class="sxs-lookup"><span data-stu-id="2b6be-111">To manually modify the Northwind.edmx file to add feed customization attributes</span></span>  
   
-1.  <span data-ttu-id="e6782-112">V **Průzkumníku řešení**, klikněte pravým tlačítkem myši `Northwind.edmx` souboru a potom klikněte na **Otevřít protokolem**.</span><span class="sxs-lookup"><span data-stu-id="e6782-112">In **Solution Explorer**, right-click the `Northwind.edmx` file, and then click **Open with**.</span></span>  
+1.  <span data-ttu-id="2b6be-112">V **Průzkumníku řešení**, klikněte pravým tlačítkem myši `Northwind.edmx` souboru a potom klikněte na **Otevřít protokolem**.</span><span class="sxs-lookup"><span data-stu-id="2b6be-112">In **Solution Explorer**, right-click the `Northwind.edmx` file, and then click **Open with**.</span></span>  
   
-2.  <span data-ttu-id="e6782-113">V **otevřít v programu - Northwind.edmx** dialogové okno, vyberte **editoru XML**a potom klikněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="e6782-113">In the **Open With - Northwind.edmx** dialog box, select **XML Editor**, and then click **OK**.</span></span>  
+2.  <span data-ttu-id="2b6be-113">V **otevřít v programu - Northwind.edmx** dialogové okno, vyberte **editoru XML**a potom klikněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="2b6be-113">In the **Open With - Northwind.edmx** dialog box, select **XML Editor**, and then click **OK**.</span></span>  
   
-3.  <span data-ttu-id="e6782-114">Vyhledejte `ConceptualModels` elementu a nahradit stávající `Customers` typ entity s následující element, který obsahuje kanálu atributy mapování přizpůsobení:</span><span class="sxs-lookup"><span data-stu-id="e6782-114">Locate the `ConceptualModels` element and replace the existing `Customers` entity type with the following element that contains feed customization mapping attributes:</span></span>  
+3.  <span data-ttu-id="2b6be-114">Vyhledejte `ConceptualModels` elementu a nahradit stávající `Customers` typ entity s následující element, který obsahuje kanálu atributy mapování přizpůsobení:</span><span class="sxs-lookup"><span data-stu-id="2b6be-114">Locate the `ConceptualModels` element and replace the existing `Customers` entity type with the following element that contains feed customization mapping attributes:</span></span>  
   
      [!code-xml[Astoria Custom Feeds#EdmFeedCustomers](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria custom feeds/xml/northwind.csdl#edmfeedcustomers)]  
   
-4.  <span data-ttu-id="e6782-115">Uložte změny a zavřete soubor Northwind.edmx.</span><span class="sxs-lookup"><span data-stu-id="e6782-115">Save changes and close the Northwind.edmx file.</span></span>  
+4.  <span data-ttu-id="2b6be-115">Uložte změny a zavřete soubor Northwind.edmx.</span><span class="sxs-lookup"><span data-stu-id="2b6be-115">Save changes and close the Northwind.edmx file.</span></span>  
   
-5.  <span data-ttu-id="e6782-116">(Volitelné) Klikněte pravým tlačítkem na soubor Northwind.edmx a pak klikněte na **spustit nástroj pro vlastní**.</span><span class="sxs-lookup"><span data-stu-id="e6782-116">(Optional) Right-click the Northwind.edmx file and then click **Run Custom Tool**.</span></span>  
+5.  <span data-ttu-id="2b6be-116">(Volitelné) Klikněte pravým tlačítkem na soubor Northwind.edmx a pak klikněte na **spustit nástroj pro vlastní**.</span><span class="sxs-lookup"><span data-stu-id="2b6be-116">(Optional) Right-click the Northwind.edmx file and then click **Run Custom Tool**.</span></span>  
   
-     <span data-ttu-id="e6782-117">To regeneruje souboru vrstvy objektu, který může být nutný.</span><span class="sxs-lookup"><span data-stu-id="e6782-117">This regenerates the object layer file, which may be required.</span></span>  
+     <span data-ttu-id="2b6be-117">To regeneruje souboru vrstvy objektu, který může být nutný.</span><span class="sxs-lookup"><span data-stu-id="2b6be-117">This regenerates the object layer file, which may be required.</span></span>  
   
-6.  <span data-ttu-id="e6782-118">Znovu zkompiluje projektu.</span><span class="sxs-lookup"><span data-stu-id="e6782-118">Recompile the project.</span></span>  
+6.  <span data-ttu-id="2b6be-118">Znovu zkompiluje projektu.</span><span class="sxs-lookup"><span data-stu-id="2b6be-118">Recompile the project.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e6782-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="e6782-119">Example</span></span>  
- <span data-ttu-id="e6782-120">Předchozí příklad vrátí následující výsledek pro identifikátor URI `http://myservice/``Northwind.svc/Customers('ALFKI')`.</span><span class="sxs-lookup"><span data-stu-id="e6782-120">The previous example returns the following result for the URI `http://myservice/``Northwind.svc/Customers('ALFKI')`.</span></span>  
+## <a name="example"></a><span data-ttu-id="2b6be-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="2b6be-119">Example</span></span>  
+ <span data-ttu-id="2b6be-120">Předchozí příklad vrátí následující výsledek pro identifikátor URI `http://myservice/``Northwind.svc/Customers('ALFKI')`.</span><span class="sxs-lookup"><span data-stu-id="2b6be-120">The previous example returns the following result for the URI `http://myservice/``Northwind.svc/Customers('ALFKI')`.</span></span>  
   
  [!code-xml[Astoria Custom Feeds#EdmFeedResult](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria custom feeds/xml/edmfeedresult.xml#edmfeedresult)]  
   
-## <a name="see-also"></a><span data-ttu-id="e6782-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="e6782-121">See Also</span></span>  
- [<span data-ttu-id="e6782-122">Zprostředkovatel Entity Framework</span><span class="sxs-lookup"><span data-stu-id="e6782-122">Entity Framework Provider</span></span>](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md)
+## <a name="see-also"></a><span data-ttu-id="2b6be-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="2b6be-121">See Also</span></span>  
+ [<span data-ttu-id="2b6be-122">Zprostředkovatel Entity Framework</span><span class="sxs-lookup"><span data-stu-id="2b6be-122">Entity Framework Provider</span></span>](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md)

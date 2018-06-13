@@ -1,13 +1,6 @@
 ---
-title: "Postupy: projektu výsledků dotazu (služby WCF Data Services)"
-ms.custom: 
+title: 'Postupy: projektu výsledků dotazu (služby WCF Data Services)'
 ms.date: 03/30/2017
-ms.prod: .net-framework-oob
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,36 +10,32 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: 474ac625-8770-43ba-8320-d3315ea9530f
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 80c6216315ca1fb1200e12bca89ae8ef27652947
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4b75eb21cab7cd3acf25f7bcb9a3f009e8d5748b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33353889"
 ---
-# <a name="how-to-project-query-results-wcf-data-services"></a><span data-ttu-id="6d361-102">Postupy: projektu výsledků dotazu (služby WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="6d361-102">How to: Project Query Results (WCF Data Services)</span></span>
-<span data-ttu-id="6d361-103">Projekce poskytuje mechanismus ke snížení objemu dat vrácených dotazem zadáním jenom některé vlastnosti entity jsou vráceny v odpovědi.</span><span class="sxs-lookup"><span data-stu-id="6d361-103">Projection provides a mechanism to reduce the amount of data returned by a query by specifying that only certain properties of an entity are returned in the response.</span></span> <span data-ttu-id="6d361-104">Projekce můžete provádět na výsledcích [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] buď pomocí dotazu `$select` dotaz možnost nebo pomocí [vyberte](~/docs/csharp/language-reference/keywords/select-clause.md) klauzule ([vyberte](~/docs/visual-basic/language-reference/queries/select-clause.md) v jazyce Visual Basic) v dotazu LINQ.</span><span class="sxs-lookup"><span data-stu-id="6d361-104">You can perform projections on the results of an [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] query either by using the `$select` query option or by using the [select](~/docs/csharp/language-reference/keywords/select-clause.md) clause ([Select](~/docs/visual-basic/language-reference/queries/select-clause.md) in Visual Basic) in a LINQ query.</span></span> <span data-ttu-id="6d361-105">Další informace najdete v tématu [dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="6d361-105">For more information, see [Querying the Data Service](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).</span></span>  
+# <a name="how-to-project-query-results-wcf-data-services"></a><span data-ttu-id="cb2df-102">Postupy: projektu výsledků dotazu (služby WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="cb2df-102">How to: Project Query Results (WCF Data Services)</span></span>
+<span data-ttu-id="cb2df-103">Projekce poskytuje mechanismus ke snížení objemu dat vrácených dotazem zadáním jenom některé vlastnosti entity jsou vráceny v odpovědi.</span><span class="sxs-lookup"><span data-stu-id="cb2df-103">Projection provides a mechanism to reduce the amount of data returned by a query by specifying that only certain properties of an entity are returned in the response.</span></span> <span data-ttu-id="cb2df-104">Projekce můžete provádět na výsledcích [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] buď pomocí dotazu `$select` dotaz možnost nebo pomocí [vyberte](~/docs/csharp/language-reference/keywords/select-clause.md) klauzule ([vyberte](~/docs/visual-basic/language-reference/queries/select-clause.md) v jazyce Visual Basic) v dotazu LINQ.</span><span class="sxs-lookup"><span data-stu-id="cb2df-104">You can perform projections on the results of an [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] query either by using the `$select` query option or by using the [select](~/docs/csharp/language-reference/keywords/select-clause.md) clause ([Select](~/docs/visual-basic/language-reference/queries/select-clause.md) in Visual Basic) in a LINQ query.</span></span> <span data-ttu-id="cb2df-105">Další informace najdete v tématu [dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="cb2df-105">For more information, see [Querying the Data Service](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).</span></span>  
   
- <span data-ttu-id="6d361-106">V příkladu v tomto tématu používá Northwind ukázková data služby a automaticky generovaný klienta dat služby třídy.</span><span class="sxs-lookup"><span data-stu-id="6d361-106">The example in this topic uses the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="6d361-107">Tato služba a datové třídy klienta se vytvoří při dokončení [rychlého startu služby WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="6d361-107">This service and the client data classes are created when you complete the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  
+ <span data-ttu-id="cb2df-106">V příkladu v tomto tématu používá Northwind ukázková data služby a automaticky generovaný klienta dat služby třídy.</span><span class="sxs-lookup"><span data-stu-id="cb2df-106">The example in this topic uses the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="cb2df-107">Tato služba a datové třídy klienta se vytvoří při dokončení [rychlého startu služby WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="cb2df-107">This service and the client data classes are created when you complete the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="6d361-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="6d361-108">Example</span></span>  
- <span data-ttu-id="6d361-109">Následující příklad ukazuje dotaz LINQ této projekty zákazníkům entity do nový typ CustomerAddress, který obsahuje pouze vlastnosti specifické pro adresu plus vlastnost identity.</span><span class="sxs-lookup"><span data-stu-id="6d361-109">The following example shows a LINQ query that projects Customers entities into a new CustomerAddress type, which contains only address-specific properties plus the identity property.</span></span> <span data-ttu-id="6d361-110">To `CustomerAddress` třída definována na straně klienta a je nastavený atribut tak, aby klientské knihovny může rozpoznat jako typ entity.</span><span class="sxs-lookup"><span data-stu-id="6d361-110">This `CustomerAddress` class is defined on the client and is attributed so that the client library can recognize it as an entity type.</span></span>  
+## <a name="example"></a><span data-ttu-id="cb2df-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="cb2df-108">Example</span></span>  
+ <span data-ttu-id="cb2df-109">Následující příklad ukazuje dotaz LINQ této projekty zákazníkům entity do nový typ CustomerAddress, který obsahuje pouze vlastnosti specifické pro adresu plus vlastnost identity.</span><span class="sxs-lookup"><span data-stu-id="cb2df-109">The following example shows a LINQ query that projects Customers entities into a new CustomerAddress type, which contains only address-specific properties plus the identity property.</span></span> <span data-ttu-id="cb2df-110">To `CustomerAddress` třída definována na straně klienta a je nastavený atribut tak, aby klientské knihovny může rozpoznat jako typ entity.</span><span class="sxs-lookup"><span data-stu-id="cb2df-110">This `CustomerAddress` class is defined on the client and is attributed so that the client library can recognize it as an entity type.</span></span>  
   
  [!code-csharp[Astoria Northwind Client#SelectCustomerAddress](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#selectcustomeraddress)]
  [!code-vb[Astoria Northwind Client#SelectCustomerAddress](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#selectcustomeraddress)]  
   
-## <a name="example"></a><span data-ttu-id="6d361-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="6d361-111">Example</span></span>  
- <span data-ttu-id="6d361-112">Následující příklad ukazuje LINQ dotaz vrácené entity zákazníkům této projekty do nový typ CustomerAddressNonEntity, která obsahuje jenom adresy specifické vlastnosti a žádná vlastnost identity.</span><span class="sxs-lookup"><span data-stu-id="6d361-112">The following example shows a LINQ query that projects returned Customers entities into a new CustomerAddressNonEntity type, which contains only address-specific properties and no identity property.</span></span> <span data-ttu-id="6d361-113">To `CustomerAddressNonEntity` třída definována na straně klienta a není označené jako typ entity.</span><span class="sxs-lookup"><span data-stu-id="6d361-113">This `CustomerAddressNonEntity` class is defined on the client and is not attributed as an entity type.</span></span>  
+## <a name="example"></a><span data-ttu-id="cb2df-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="cb2df-111">Example</span></span>  
+ <span data-ttu-id="cb2df-112">Následující příklad ukazuje LINQ dotaz vrácené entity zákazníkům této projekty do nový typ CustomerAddressNonEntity, která obsahuje jenom adresy specifické vlastnosti a žádná vlastnost identity.</span><span class="sxs-lookup"><span data-stu-id="cb2df-112">The following example shows a LINQ query that projects returned Customers entities into a new CustomerAddressNonEntity type, which contains only address-specific properties and no identity property.</span></span> <span data-ttu-id="cb2df-113">To `CustomerAddressNonEntity` třída definována na straně klienta a není označené jako typ entity.</span><span class="sxs-lookup"><span data-stu-id="cb2df-113">This `CustomerAddressNonEntity` class is defined on the client and is not attributed as an entity type.</span></span>  
   
  [!code-csharp[Astoria Northwind Client#SelectCustomerAddressNonEntity](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#selectcustomeraddressnonentity)]
  [!code-vb[Astoria Northwind Client#SelectCustomerAddressNonEntity](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#selectcustomeraddressnonentity)]  
   
-## <a name="example"></a><span data-ttu-id="6d361-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="6d361-114">Example</span></span>  
- <span data-ttu-id="6d361-115">Následující příklad ukazuje definice `CustomerAddress``CustomerAddressNonEntity` typy, které se používají v předchozích příkladech.</span><span class="sxs-lookup"><span data-stu-id="6d361-115">The following example shows the definitions of the `CustomerAddress``CustomerAddressNonEntity` types that are used in the previous examples.</span></span>  
+## <a name="example"></a><span data-ttu-id="cb2df-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="cb2df-114">Example</span></span>  
+ <span data-ttu-id="cb2df-115">Následující příklad ukazuje definice `CustomerAddress``CustomerAddressNonEntity` typy, které se používají v předchozích příkladech.</span><span class="sxs-lookup"><span data-stu-id="cb2df-115">The following example shows the definitions of the `CustomerAddress``CustomerAddressNonEntity` types that are used in the previous examples.</span></span>  
   
  [!code-csharp[Astoria Northwind Client#CustomerAddressDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customeraddress.cs#customeraddressdefinition)]
  [!code-vb[Astoria Northwind Client#CustomerAddressDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customeraddress.vb#customeraddressdefinition)]
