@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803725"
 ---
 # <a name="basic-resource-service"></a><span data-ttu-id="f7c5a-102">Služba základních prostředků</span><span class="sxs-lookup"><span data-stu-id="f7c5a-102">Basic Resource Service</span></span>
 <span data-ttu-id="f7c5a-103">Tento příklad ukazuje, jak implementovat pomocí modelu programování REST Windows Communication Foundation (WCF), který zveřejňuje kolekce zákazníků, která podporuje načtení služby založené na protokolu HTTP, přidat, odstranit a nahrazovat operace.</span><span class="sxs-lookup"><span data-stu-id="f7c5a-103">This sample demonstrates how to implement a HTTP-based service using the Windows Communication Foundation (WCF) REST Programming model that exposes a collection of customers that supports the retrieve, add, delete and replace operations.</span></span> <span data-ttu-id="f7c5a-104">Tato ukázka se skládá z 2 komponenty - WCF HTTP služba s vlastním hostováním (Service.cs) a konzolovou aplikaci (program.cs), která vytvoří službu a provádí volání do ní.</span><span class="sxs-lookup"><span data-stu-id="f7c5a-104">This sample consists of 2 components - a self-hosted WCF HTTP service (Service.cs) and a console application (program.cs) that creates the service and makes calls to it.</span></span>  

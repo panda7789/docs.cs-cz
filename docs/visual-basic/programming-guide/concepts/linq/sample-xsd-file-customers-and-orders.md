@@ -1,29 +1,20 @@
 ---
-title: "Ukázkový soubor XSD: Zákazníci a Orders2"
-ms.custom: 
+title: 'Ukázkový soubor XSD: Zákazníci a Orders2'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: a0c0b414-c8e1-45e4-bb67-b5e650c97130
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 2894970ab279ca73178876234762a6c139950e17
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 5679aa39b1b5ee0b08cb9e7caa23cc01d43b7b50
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645256"
 ---
-# <a name="sample-xsd-file-customers-and-orders"></a><span data-ttu-id="66b1f-102">Ukázkový soubor XSD: Zákazníci a objednávky</span><span class="sxs-lookup"><span data-stu-id="66b1f-102">Sample XSD File: Customers and Orders</span></span>
-<span data-ttu-id="66b1f-103">Následující soubor XSD se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="66b1f-103">The following XSD file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="66b1f-104">Tento soubor obsahuje definici schématu pro [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="66b1f-104">This file contains a schema definition for the [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span></span> <span data-ttu-id="66b1f-105">Schéma používá `xs:key` a `xs:keyref` funkce XSD zajistit, že `CustomerID` atribut `Customer` element je klíč a k vytvoření vztahu mezi `CustomerID` element v každé `Order` elementu a `CustomerID` atribut v každé `Customer` elementu.</span><span class="sxs-lookup"><span data-stu-id="66b1f-105">The schema uses the `xs:key` and `xs:keyref` features of XSD to establish that the `CustomerID` attribute of the `Customer` element is a key, and to establish a relationship between the `CustomerID` element in each `Order` element and the `CustomerID` attribute in each `Customer` element.</span></span>  
+# <a name="sample-xsd-file-customers-and-orders"></a><span data-ttu-id="3aa3a-102">Ukázkový soubor XSD: Zákazníci a objednávky</span><span class="sxs-lookup"><span data-stu-id="3aa3a-102">Sample XSD File: Customers and Orders</span></span>
+<span data-ttu-id="3aa3a-103">Následující soubor XSD se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="3aa3a-103">The following XSD file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="3aa3a-104">Tento soubor obsahuje definici schématu pro [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="3aa3a-104">This file contains a schema definition for the [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span></span> <span data-ttu-id="3aa3a-105">Schéma používá `xs:key` a `xs:keyref` funkce XSD zajistit, že `CustomerID` atribut `Customer` element je klíč a k vytvoření vztahu mezi `CustomerID` element v každé `Order` elementu a `CustomerID` atribut v každé `Customer` elementu.</span><span class="sxs-lookup"><span data-stu-id="3aa3a-105">The schema uses the `xs:key` and `xs:keyref` features of XSD to establish that the `CustomerID` attribute of the `Customer` element is a key, and to establish a relationship between the `CustomerID` element in each `Order` element and the `CustomerID` attribute in each `Customer` element.</span></span>  
   
- <span data-ttu-id="66b1f-106">Příklad zápis dotazů LINQ, které využívají tento vztah pomocí `Join` klauzule, najdete v části [postupy: připojení dvě kolekce (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="66b1f-106">For an example of writing LINQ queries that take advantage of this relationship using the `Join` clause, see [How to: Join Two Collections (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="3aa3a-106">Příklad zápis dotazů LINQ, které využívají tento vztah pomocí `Join` klauzule, najdete v části [postupy: připojení dvě kolekce (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="3aa3a-106">For an example of writing LINQ queries that take advantage of this relationship using the `Join` clause, see [How to: Join Two Collections (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md).</span></span>  
   
-## <a name="customersordersxsd"></a><span data-ttu-id="66b1f-107">CustomersOrders.xsd</span><span class="sxs-lookup"><span data-stu-id="66b1f-107">CustomersOrders.xsd</span></span>  
+## <a name="customersordersxsd"></a><span data-ttu-id="3aa3a-107">CustomersOrders.xsd</span><span class="sxs-lookup"><span data-stu-id="3aa3a-107">CustomersOrders.xsd</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -102,5 +93,5 @@ ms.lasthandoff: 10/18/2017
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="66b1f-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="66b1f-108">See Also</span></span>  
- [<span data-ttu-id="66b1f-109">Dokumenty XML ukázkové (technologie LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="66b1f-109">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="3aa3a-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="3aa3a-108">See Also</span></span>  
+ [<span data-ttu-id="3aa3a-109">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="3aa3a-109">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

@@ -8,6 +8,7 @@ ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/11/2018
+ms.locfileid: "34058936"
 ---
 # <a name="string-interpolation-in-c"></a><span data-ttu-id="be5dd-103">Interpolace řetězce v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="be5dd-103">String interpolation in C#</span></span> #
 
