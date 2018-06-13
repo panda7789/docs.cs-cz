@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651580"
 ---
 # <a name="value-types-and-reference-types"></a>Typy hodnot a typy odkazu
 V jazyce Visual Basic – datové typy jsou implementované podle jejich klasifikace. Datové typy jazyka Visual Basic můžou být klasifikované podle jestli proměnné určitého typu ukládá svá vlastní data nebo odkazy na data. Pokud ukládají svá vlastní data *typ hodnoty*; Pokud má ukazatel na data jinde v paměti je *odkazují na typ*.  

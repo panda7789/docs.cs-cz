@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804183"
 ---
 # <a name="wcf-system-requirements"></a>WCF – požadavky na systém
 Windows Communication Foundation (WCF) je komunikace infrastrukturu, která se používá k vytvoření distribuované aplikace. Následujícím seznamu jsou požadavky, které umožňují WCF ke spuštění.  

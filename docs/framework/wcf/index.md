@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804268"
 ---
 # <a name="developing-service-oriented-applications-with-wcf"></a>Vývoj aplikací orientovaných na služby s použitím technologie WCF
 Tato část dokumentace obsahuje informace o Windows Communication Foundation (WCF), což je jednotná programovací model pro vytváření aplikací orientovaných na služby. Umožňuje vývojářům vytvářet bezpečné, spolehlivé a zpracovaných řešení, které integrovat do různých platforem a zajistit vzájemnou funkční spolupráci s stávajících investic.

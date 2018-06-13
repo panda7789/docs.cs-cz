@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649097"
 ---
 # <a name="zero-based-vs-one-based-string-access-in-visual-basic"></a>Počítaný od nuly vs. Přístup na základě jedné řetězce v jazyce Visual Basic
 Toto téma porovnává jak Visual Basic a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] poskytnout přístup k znaky v řetězci. [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Vždy poskytuje nule přístup k znaky v řetězci, zatímco Visual Basic poskytuje nule a na základě jedné přístup, v závislosti na funkce.  

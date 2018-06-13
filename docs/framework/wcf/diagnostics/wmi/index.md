@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805938"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 Windows Communication Foundation (WCF) zpřístupní dat kontroly služby za běhu prostřednictvím poskytovatele WCF Windows Management Instrumentation (WMI).  

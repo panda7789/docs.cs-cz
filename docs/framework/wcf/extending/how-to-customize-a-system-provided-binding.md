@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803666"
 ---
 # <a name="how-to-customize-a-system-provided-binding"></a>Postupy: přizpůsobení vazby poskytované systémem
 Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných systémem, které vám umožní nakonfigurovat některé vlastnosti základní prvky vazby, ale ne všechny vlastnosti. Toto téma ukazuje, jak nastavit vlastnosti u elementů vazby k vytvoření vlastní vazby.  

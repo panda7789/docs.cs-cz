@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804817"
 ---
 # <a name="query-execution"></a>Provádění dotazů
 Po vytvoření dotaz LINQ uživatelem je převést na strom příkazů. Stromu příkazů je reprezentace dotaz, který je kompatibilní s platformou Entity Framework. U zdroje dat je pak spustit strom příkazů. Během provádění dotazu se vyhodnocují všechny výrazy dotazů (všechny součásti dotaz), včetně těchto výrazů, které se používají v materialization výsledek.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643155"
 ---
 # <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>Postupy: dotazu na duplicitní soubory v adresářovém stromu (LINQ) (Visual Basic)
 Někdy může nacházet ve více než jednu složku soubory, které mají stejný název. Například v sadě Visual Studio instalační složce mít několik složky souboru readme.htm. Tento příklad ukazuje, jak se dotázat na tyto duplicitní názvy zadané kořenové složce. Druhý příklad ukazuje, jak se dotázat na soubory, jejíž aktuální velikost a času vytvoření také shodovat.  

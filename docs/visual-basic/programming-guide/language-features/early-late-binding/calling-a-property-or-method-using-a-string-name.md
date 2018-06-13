@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649224"
 ---
 # <a name="calling-a-property-or-method-using-a-string-name-visual-basic"></a>Volání vlastnosti nebo metody pomocí názvu řetězce (Visual Basic)
 Ve většině případů můžete zjistit vlastnosti a metody objektu v době návrhu a napsat kód pro jejich zpracování. Ale v některých případech nemusí víte o vlastnosti a metody objektu předem, nebo chcete může jenom možnost povolení koncový uživatel zadat vlastnosti nebo metody provést v době běhu.  

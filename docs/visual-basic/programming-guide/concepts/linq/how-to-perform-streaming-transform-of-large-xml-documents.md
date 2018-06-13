@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643728"
 ---
 # <a name="how-to-perform-streaming-transform-of-large-xml-documents-visual-basic"></a>Postup: provedení streamování transformace dokumentů velké XML (Visual Basic)
 Někdy je nutné transformovat velkých souborů XML a zapisovat vaše aplikace tak, aby nároky na paměť pro aplikace je předvídatelný. Pokud se pokusíte naplnit strom XML s velmi velký soubor XML, bude vaše využití paměti velikosti souboru (to znamená, nadměrné). Proto byste měli místo toho používat streamování techniku.  

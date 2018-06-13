@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646375"
 ---
 # <a name="elementary-data-types-visual-basic"></a>Základní datové typy (Visual Basic)
 Visual Basic poskytuje sadu předem definovaných datových typů, které můžete použít pro řadu programovací prvky. Tato část popisuje tyto typy a jejich použití.  

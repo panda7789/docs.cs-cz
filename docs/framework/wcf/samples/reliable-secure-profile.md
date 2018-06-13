@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805743"
 ---
 # <a name="reliable-secure-profile"></a>Řešení ReliableSecureProfile
 Tento příklad ukazuje, jak vytvořit WCF a [spolehlivé profil zabezpečení](http://go.microsoft.com/fwlink/?LinkId=178140) (konfigurace). Tento příklad znázorňuje implementaci [vytvořit připojení](http://go.microsoft.com/fwlink/?LinkId=178141) kanál, který může být složené, společně s spolehlivé zasílání zpráv a volitelně zabezpečený kanál vytvořit spolehlivá zabezpečené vazby podle specifikace konfigurace.  

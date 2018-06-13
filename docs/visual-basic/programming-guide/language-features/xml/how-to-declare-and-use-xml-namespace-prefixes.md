@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648795"
 ---
 # <a name="how-to-declare-and-use-xml-namespace-prefixes-visual-basic"></a>Postupy: Deklarace a používání předpon oboru názvů XML (Visual Basic)
 Tento příklad ukazuje, jak importovat Předpona oboru názvů XML `ns` a použít ho literál XML a vlastnosti osy XML.  

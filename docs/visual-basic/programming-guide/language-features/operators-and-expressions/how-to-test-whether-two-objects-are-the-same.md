@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647602"
 ---
 # <a name="how-to-test-whether-two-objects-are-the-same-visual-basic"></a>Postupy: Test, zda jsou dva objekty stejné (Visual Basic).
 Pokud máte dvě proměnné, které odkazují na objekty, můžete použít buď `Is` nebo `IsNot` operátor nebo obojí, chcete-li zjistit, zda odkazují na stejnou instanci.  

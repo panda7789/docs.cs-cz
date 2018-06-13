@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804587"
 ---
 # <a name="instancing-extensibility"></a>Rozšiřitelnost vytváření instancí
 Tato část obsahuje příklady vysvětlující vlastní vytváření instancí.  

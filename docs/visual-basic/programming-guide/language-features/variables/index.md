@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654470"
 ---
 # <a name="variables-in-visual-basic"></a>Proměnné v jazyce Visual Basic
 Často je nutné uložit hodnoty při provádění výpočtů v jazyce Visual Basic. Můžete například chtít výpočet několik hodnot, porovnat a provádět různé operace na nich, v závislosti na výsledku porovnání. Budete muset zachovat hodnoty, pokud chcete porovnat.  

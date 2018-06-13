@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643689"
 ---
 # <a name="how-to-join-two-collections-linq-to-xml-visual-basic"></a>Postupy: připojení dvě kolekce (technologie LINQ to XML) (Visual Basic)
 Elementu nebo atributu v dokumentu XML mohou někdy odkazovat na jiné elementu nebo atributu. Například [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) dokumentu XML obsahuje seznam zákazníků a seznam objednávky. Každý `Customer` obsahuje element `CustomerID` atribut. Každý `Order` obsahuje element `CustomerID` elementu. `CustomerID` Element v každé pořadí odkazuje `CustomerID` atribut v zákazníka.  

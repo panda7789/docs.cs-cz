@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647888"
 ---
 # <a name="loop-structures-visual-basic"></a>Struktury smyčky (Visual Basic)
 Struktury smyčky jazyka Visual Basic umožňují opakovaně spustit jeden nebo více řádků kódu. Příkazy v struktury smyčky můžete opakujte, dokud nebude podmínku `True`, dokud nebude podmínku `False`, zadat počet opakování, nebo jednou pro každý prvek v kolekci.  

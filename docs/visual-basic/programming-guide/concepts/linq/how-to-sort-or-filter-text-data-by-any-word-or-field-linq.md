@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641983"
 ---
 # <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-visual-basic"></a>Postupy: řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ) (Visual Basic)
 Následující příklad ukazuje, jak k seřazení řádků strukturovaných text, například hodnot oddělených čárkami, podle libovolného pole v řádku. Pole může zadat dynamicky za běhu. Předpokládejme, že pole v scores.csv představují číslo ID Studentova, následované řadu čtyři výsledků testu.  

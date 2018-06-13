@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645254"
 ---
 # <a name="language-integrated-axes-in-visual-basic-linq-to-xml"></a>Language-Integrated osy v jazyce Visual Basic (technologie LINQ to XML)
 Tato část popisuje funkcí integrovaných přímo do jazyka Visual Basic, který má usnadňují přístup XML. Mnoho příkladů v LINQ do dokumentace XML pomocí těchto integrované osy jazyka Visual Basic.  

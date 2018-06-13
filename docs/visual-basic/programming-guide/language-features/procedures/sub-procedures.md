@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652562"
 ---
 # <a name="sub-procedures-visual-basic"></a>Sub – procedury (Visual Basic)
 A `Sub` postup je řada příkazů jazyka Visual Basic uzavřené do `Sub` a `End Sub` příkazy. `Sub` Postup provede úlohu a vrátí ovládací prvek pro volací kód, ale nevrací hodnotu volání kódu.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643567"
 ---
 # <a name="com-interop-visual-basic"></a>Zprostředkovatel komunikace s objekty COM (Visual Basic)
 Modelu COM (Component Object) umožňuje objekt vystavit jeho funkce pro ostatní součásti a hostování aplikací. Většina dnešní softwaru zahrnuje objekty modelu COM. I když sestavení .NET jsou nejlepší volbou pro nové aplikace, může v některých případech musíte použít COM – objekty. Tato část popisuje některé z problémů, souvisejících s vytváření a používání objekty modelu COM pomocí jazyka Visual Basic.  

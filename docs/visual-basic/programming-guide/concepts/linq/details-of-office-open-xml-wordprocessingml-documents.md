@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641193"
 ---
 # <a name="details-of-office-open-xml-wordprocessingml-documents-visual-basic"></a>Podrobnosti o Office otevřít dokumenty WordprocessingML XML (Visual Basic)
 Tato část obsahuje informace o podrobnosti o dokumenty Office Open XML WordprocessingML. Zobrazuje příklady části dokumentu a stylu dokumentu Open XML.  

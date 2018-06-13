@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650615"
 ---
 # <a name="concatenation-operators-in-visual-basic"></a>Operátory řetězení v jazyce Visual Basic
 Operátory řetězení více řetězců připojení do jednoho řetězce. Existují dva operátory zřetězení `+` a `&`. Jak provádět základní zřetězení operace, jako ukazuje následující příklad.  

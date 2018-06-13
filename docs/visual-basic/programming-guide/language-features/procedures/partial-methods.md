@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651593"
 ---
 # <a name="partial-methods-visual-basic"></a>Částečné metody (Visual Basic)
 Částečné metody umožňují vývojářům vložení vlastní logiky do kódu. Kód je obvykle součástí návrháře generované třídy. Částečné metody jsou definovány v konkrétní třídu, který byl vytvořený generátor kódu a běžně se používají k poskytování oznámení, že něco došlo ke změnám. Umožňují vývojáři určit vlastní chování v reakci na změny.  

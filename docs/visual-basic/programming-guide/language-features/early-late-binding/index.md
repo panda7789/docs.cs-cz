@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647249"
 ---
 # <a name="early-and-late-binding-visual-basic"></a>Statické a pozdní vazby (Visual Basic)
 Visual Basic – kompilátor provede proces nazvaný `binding` když je objekt přiřazení proměnné objektu. Je-li objekt *časné* když je přiřazený k proměnné deklarované jako konkrétní typy objektů. Časná vázaným objektům povolení kompilátoru přidělit paměť a provádět další optimalizace před spuštěním aplikace. Například následující fragment kódu deklaruje proměnnou být typu <xref:System.IO.FileStream>:  

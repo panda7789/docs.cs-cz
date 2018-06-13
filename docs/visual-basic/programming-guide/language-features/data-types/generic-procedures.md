@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649393"
 ---
 # <a name="generic-procedures-in-visual-basic"></a>Obecné procedury v jazyce Visual Basic
 A *obecný postup*, také zavolat *obecná metoda*, je procedura definovaný s alespoň jeden typ parametru. To umožňuje přizpůsobit typy dat, které mají požadavky na jeho pokaždé, když se volá proceduru volajícího kódu.  

@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648577"
 ---
 # <a name="enumerations-and-name-qualification-visual-basic"></a>Výčty a kvalifikace názvu (Visual Basic)
 Za normálních okolností k odkazování na člena výčtu, musíte před název člena s názvem výčtu. Pro příklad, který bude odkazovat na `Sunday` členem vaší `Days` výčet, použijte následující syntaxi:  

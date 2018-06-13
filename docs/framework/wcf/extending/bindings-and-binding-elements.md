@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804622"
 ---
 # <a name="bindings-and-binding-elements"></a>Vazby a prvky vazeb
 Vazby jsou kolekce elementů zvláštní konfiguraci, s názvem *elementů vazby*, které se vyhodnocují modulem runtime služby vždy, když klient nebo je vytvářen koncový bod služby. Typem a pořadím elementů vazby v rámci vazbu určuje výběr a pořadí překrývání kanály protokolu a přenosu v zásobníku kanál koncového bodu.  

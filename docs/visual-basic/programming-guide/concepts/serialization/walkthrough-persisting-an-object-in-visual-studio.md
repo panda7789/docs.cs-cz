@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655607"
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>Návod: Uchování objektu v sadě Visual Studio (Visual Basic)
 I když můžete nastavit vlastnosti objektu na výchozí hodnoty v době návrhu, všechny hodnoty zadané v době běhu jsou ztraceny, když objekt zničena. Serializace můžete použít k uchování dat objektu mezi instance, které umožňuje ukládat hodnoty a je načtou při příštím vytvoření instance objektu.  
