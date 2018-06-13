@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517962"
 ---
 # <a name="cardinal-splines-in-gdi"></a>Základní křivky v GDI+
 Spojnice křivky je pořadí jednotlivých křivek připojený k formuláři větší křivky. Pole bodů a parametr pnutí je určena křivky. Spojnice křivky plynule projdou každý bod v poli; neexistují žádné sharp rozích a žádné náhlému změny v těsnost křivku. Následující obrázek znázorňuje sadu body a křivky mohutnosti, které procházejí každý bod v sadě.  

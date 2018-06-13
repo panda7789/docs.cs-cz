@@ -28,6 +28,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520419"
 ---
 # <a name="introduction-to-windows-service-applications"></a>Představení aplikací spouštěných jako služby systému Windows
 Služby Microsoft Windows, dříve označovaná jako služba NT umožňují vytvářet dlouho běžící spustitelný soubor aplikace, které běží ve vlastní relací v systému Windows. Tyto služby můžete být automaticky spustí při spuštění počítače, můžete pozastavit a restartování a nezobrazuje žádné uživatelské rozhraní. Tyto funkce usnadnění služby ideální pro použití na serveru nebo kdykoli budete potřebovat dlouhodobé funkce, které nebudou v konfliktu s jinými uživateli, kteří pracují na stejném počítači. Služby můžete také spustit v kontextu zabezpečení konkrétní uživatelský účet, který se liší od přihlášeného uživatele nebo výchozího účtu. Další informace o službách a relace systému Windows naleznete v dokumentaci k Windows SDK.  

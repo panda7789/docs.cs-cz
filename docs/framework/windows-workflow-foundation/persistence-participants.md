@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519808"
 ---
 # <a name="persistence-participants"></a>Trvalost účastníky
 Trvalost účastník účastnit aktivovány hostitele aplikace operaci trvalost (Uložit nebo zatížení). [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] Se dodává s dvěma abstraktní třídy **PersistenceParticipant** a **PersistenceIOParticipant**, který můžete použít k vytvoření účastník trvalost. Trvalost účastník je odvozena z jedné z těchto tříd, implementuje metody, které vás zajímají a potom přidá instanci třídy, která má <xref:System.ServiceModel.Activities.WorkflowServiceHost.WorkflowExtensions%2A> kolekce na <xref:System.ServiceModel.Activities.WorkflowServiceHost> . Hostitele aplikací může vyhledávat taková rozšíření pracovního postupu při zachování instanci pracovního postupu a volat metody odpovídající na účastníků trvalost v příslušnou dobu.  

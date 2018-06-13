@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520065"
 ---
 # <a name="creating-asynchronous-activities-in-wf"></a>Vytváření asynchronních aktivit v WF
 <xref:System.Activities.AsyncCodeActivity> poskytuje základní třídu používat, že umožňuje odvozené aktivity pro implementaci asynchronního spuštění logiku autoři aktivity. To je užitečné pro vlastní aktivity, které musíte provést asynchronní pracovní bez podržte podprocesu plánovače pracovního postupu a blokuje veškeré aktivity, které pravděpodobně bude moci spustit souběžně. Toto téma obsahuje přehled o tom, jak vytvořit vlastní asynchronní aktivity pomocí <xref:System.Activities.AsyncCodeActivity>.  

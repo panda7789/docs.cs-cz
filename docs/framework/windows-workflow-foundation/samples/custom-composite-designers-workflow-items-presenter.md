@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516520"
 ---
 # <a name="custom-composite-designers---workflow-items-presenter"></a>Vlastní složený Designer - přednášejícího položky pracovního postupu
 <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType> Je typ klíče v WF návrháře programovací model, který umožňuje úpravu kolekci elementů obsažené. Tento příklad ukazuje, jak sestavit Návrhář aktivity, která vyvolá upravitelné kolekce.  

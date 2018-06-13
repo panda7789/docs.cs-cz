@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33332007"
 ---
 # <a name="how-to-use-the-my-namespace-c-programming-guide"></a>Postupy: Použití oboru názvů My (Průvodce programováním v C#)
 <xref:Microsoft.VisualBasic.MyServices> Obor názvů (`My` v jazyce Visual Basic) poskytuje snadný a intuitivní přístup k několik tříd rozhraní .NET Framework, což umožňuje psát kód, který komunikuje s počítači, aplikace, nastavení, prostředky a tak dále. Přestože původně navržený pro použití v jazyce Visual Basic `MyServices` obor názvů mohou být používány aplikací v C#.  

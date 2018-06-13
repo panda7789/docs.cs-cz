@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33354930"
 ---
 # <a name="how-to-filter-at-the-datacontext-level"></a>Postupy: filtru na úrovni DataContext
 Můžete filtrovat `EntitySets` na `DataContext` úroveň. Tyto filtry platí pro všechny dotazy pracovat, <xref:System.Data.Linq.DataContext> instance.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542226"
 ---
 # <a name="windows-forms-security"></a>Windows Forms – zabezpečení
 Windows Forms funkce model zabezpečení, které je založené na kódu (zabezpečení, které úrovně jsou nastavené na kód, bez ohledu na to uživatel, který spouští kód). Toto je kromě všech schémata zabezpečení, které mohou být v místě již v systému. Může jít o programů v prohlížeče (například na základě zóny zabezpečení k dispozici v aplikaci Internet Explorer) nebo operačního systému (například zabezpečení na základě přihlašovacích údajů systému Windows NT).  

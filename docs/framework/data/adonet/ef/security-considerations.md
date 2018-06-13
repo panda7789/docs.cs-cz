@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766618"
 ---
 # <a name="security-considerations-entity-framework"></a>Aspekty zabezpečení (rozhraní Entity Framework)
 Toto téma popisuje aspekty zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace. Také postupujte podle doporučení pro vytvoření zabezpečeného [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikace. Další informace najdete v tématu [Přehled zabezpečení](../../../../../docs/framework/data/adonet/security-overview.md).  

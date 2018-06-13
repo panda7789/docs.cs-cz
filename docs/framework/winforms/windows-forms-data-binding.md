@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540641"
 ---
 # <a name="windows-forms-data-binding"></a>Windows Forms – datová vazba
 Datové vazby v systému Windows Forms poskytuje způsob, jak zobrazit a provést změny na informace ze zdroje dat v ovládacích prvků formuláře. Můžete vázat na zdroje dat tradiční jak téměř jakoukoli struktura, která obsahuje data.  

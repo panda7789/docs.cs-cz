@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33335481"
 ---
 # <a name="refactoring-using-an-extension-method-c"></a>Refaktoring pomocí metody rozšíření (C#)
 Tento příklad vychází na předchozí příklad, [načítání textu odstavců (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), podle refaktoring zřetězení řetězců pomocí čistý funkci, která je implementovaná jako metody rozšíření.  

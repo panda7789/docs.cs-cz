@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339576"
 ---
 # <a name="type-relationships-in-linq-query-operations-c"></a>Vztahy typů v operacích dotazu LINQ (C#)
 Zápis dotazů efektivně, byste měli porozumět, jak typy proměnných v rámci dokončení dotazu operace všechny vztahují k sobě navzájem. Pokud budete rozumět tomu tyto vztahy se snadněji pochopit [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] ukázky a příklady kódu v dokumentaci. Kromě toho bude pochopit, co se děje na pozadí při proměnné jsou implicitně typované pomocí `var`.  

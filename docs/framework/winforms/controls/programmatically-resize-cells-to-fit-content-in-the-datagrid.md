@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538139"
 ---
 # <a name="how-to-programmatically-resize-cells-to-fit-content-in-the-windows-forms-datagridview-control"></a>Postupy: Programová změna velikosti buněk k zobrazení celého obsahu v ovládacím prvku Windows Forms DataGridView
 Můžete použít <xref:System.Windows.Forms.DataGridView> řídit metody ke změně velikosti řádky, sloupce a hlavičky tak, že se jejich celý hodnoty bez zkrácení zobrazení. Tyto metody slouží ke změně velikosti <xref:System.Windows.Forms.DataGridView> elementy v některých případech dle vlastního výběru. Alternativně můžete nakonfigurovat na velikost tyto prvky automaticky vždy, když se změní obsah ovládacího prvku. Může to být neefektivní, ale při práci s velkých datových sad nebo při změně svých dat často. Další informace najdete v tématu [možnosti pro změnu velikosti v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md).  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538110"
 ---
 # <a name="method-implementation-in-custom-controls"></a>Implementace metody ve vlastních ovládacích prvcích
 Metoda je implementována v ovládacím prvku stejným způsobem, který ve jakoukoli jinou součástí by být implementována metoda.  

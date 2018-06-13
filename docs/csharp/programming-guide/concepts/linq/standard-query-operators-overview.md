@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33337321"
 ---
 # <a name="standard-query-operators-overview-c"></a>Přehled standardních operátorů dotazu (C#)
 *Standardní operátory dotazu* jsou metody, které tvoří vzoru LINQ. Většina z nich fungovat v pořadí, kde je posloupnost objekt, jehož typ implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. Standardní operátory dotazu zadejte možnosti dotazu, včetně filtrování, projekce, agregace, řazení a další.  

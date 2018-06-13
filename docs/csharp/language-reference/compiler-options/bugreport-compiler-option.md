@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33214089"
 ---
 # <a name="-bugreport-c-compiler-options"></a>-bugreport (možnosti kompilátoru C#)
 Určuje, že informace o ladění mají být umístěny v souboru pro pozdější analýzu.  

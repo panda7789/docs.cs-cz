@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516188"
 ---
 # <a name="toolbox-service"></a>Sada nástrojů služby
 Tento příklad ukazuje, jak aktualizovat [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] sada nástrojů aktivit na základě kontextu pracovního postupu. Ukázka obsahuje pracovní postup, který změní obsah sady nástrojů založené na tom, jestli je vybrané vlastní aktivity.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33337870"
 ---
 # <a name="how-to-convert-a-byte-array-to-an-int-c-programming-guide"></a>Postupy: Převedení pole bajtů na typ int (Průvodce programováním v C#)
 Tento příklad ukazuje, jak používat <xref:System.BitConverter> třída pro převod pole bajtů, které mají [int](../../../csharp/language-reference/keywords/int.md) a zpět na pole bajtů. Možná budete muset převést z bajtů na typ předdefinované po přečtení bajtů mimo síť, například. Kromě [ToInt32 (Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) metoda příklad následující tabulka uvádí metody v <xref:System.BitConverter> třídu, která převést bajtů (z pole bajtů) na jiné předdefinované typy.  

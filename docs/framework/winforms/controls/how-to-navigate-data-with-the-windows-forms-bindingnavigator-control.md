@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535597"
 ---
 # <a name="how-to-navigate-data-with-the-windows-forms-bindingnavigator-control"></a>Postupy: Navigace daty pomocí ovládacího prvku Windows Forms BindingNavigator
 Nástupem <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku Windows Forms umožňuje vývojářům poskytnout koncovým uživatelům s jednoduché datové navigaci a manipulace s uživatelským rozhraním ve formulářích jejich vytvoření.  

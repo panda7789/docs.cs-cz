@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338068"
 ---
 # <a name="how-to-handle-an-exception-using-trycatch-c-programming-guide"></a>Postupy: Zpracování výjimky pomocí bloku try/catch (Průvodce programováním v C#)
 Účel [try-catch –](../../../csharp/language-reference/keywords/try-catch.md) je blok catch a zpracování výjimky generované funkční kód. Některé výjimky lze zpracovat v `catch` bloku a problém vyřešit, bez výjimky se znovu; častěji jediné, co musíte se ale ujistěte se, že je vyvolána příslušné výjimky.  
