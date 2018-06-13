@@ -16,6 +16,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457387"
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
 Zařazování spolupráce funguje v pravidlech že tu určují chování data související s parametry metody jak předává mezi spravovanými a nespravovanými paměti. Tyto vestavěné pravidla řízení takové zařazování aktivitám v podobě transformace typu dat, zda volaný můžete změnit data do ní předán a tyto změny vrátit volajícímu, a pod kterým okolností zařazování poskytuje optimalizace výkonu.  

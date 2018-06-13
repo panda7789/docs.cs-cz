@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575515"
 ---
 # <a name="asynchronous-file-io"></a>Asynchronní I/O soubory
 Asynchronní operace umožňují provádět vstupně-výstupní operace náročné na prostředky bez blokování hlavního vlákna. Toto posouzení výkonu je důležité především v případě aplikací pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] nebo [!INCLUDE[desktop_appname](../../../includes/desktop-appname-md.md)], kde časově náročná operace může zablokovat vlákno uživatelského rozhraní a aplikace se pak jeví jako nefunkční.  

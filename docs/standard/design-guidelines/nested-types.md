@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573656"
 ---
 # <a name="nested-types"></a>Vnořené typy
 Vnořené typy je typem definovaným v rámci oboru jiného typu, který se nazývá nadřazených typů. Vnořené typy má přístup do všech členů jeho nadřazených typů. Například má přístup k privátním pole definovaná v nadřazených typů a chráněné polí definovaných ve všech nadřazených členů nadřazených typů.  

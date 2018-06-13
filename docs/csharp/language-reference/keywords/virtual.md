@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172643"
 ---
 # <a name="virtual-c-reference"></a>virtual (Referenční dokumentace jazyka C#)
 `virtual` – Klíčové slovo slouží k úpravě deklaraci metoda, vlastnost, indexer nebo událostí a povolit pro ni k přepsání v odvozené třídě. Například tuto metodu je možné přepsat všechny třídy, která dědí ho:  

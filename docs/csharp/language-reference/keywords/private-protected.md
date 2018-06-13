@@ -7,6 +7,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457248"
 ---
 # <a name="private-protected-c-reference"></a>privátní chráněné (referenční dokumentace jazyka C#)
 `private protected` – Kombinace klíčových slov je modifikátor přístupu členů. Privátní chráněného člena je přístupný pro typy odvozené od obsahující třídy, ale pouze v rámci jeho obsahující sestavení. Porovnání `private protected` s další modifikátory přístupu, přečtěte si téma [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). 

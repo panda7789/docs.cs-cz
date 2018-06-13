@@ -7,6 +7,7 @@ ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34483551"
 ---
 # <a name="client-channel-factories-and-channels"></a>Klienta: Objekty pro vytváření kanálů a kanály
 Toto téma popisuje vytvářet objekty pro vytváření kanálů a kanály.  

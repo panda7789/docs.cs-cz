@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573484"
 ---
 # <a name="how-to-delete-files-and-directories-in-isolated-storage"></a>Postupy: Odstraňování souborů a adresářů v izolovaném úložišti
 Můžete odstranit adresářů a souborů v souboru izolovaného úložiště. Názvy souborů a adresářů v rámci úložiště, jsou závislé na operačním systému a je zadána jako relativní vůči kořenovému adresáři virtuálním souborovém systému. Nejsou malá a velká písmena v operačních systémech Windows.  

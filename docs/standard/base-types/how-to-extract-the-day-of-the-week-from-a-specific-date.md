@@ -29,6 +29,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575724"
 ---
 # <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>Postupy: Extrahování dne v týdnu z konkrétního data
 Rozhraní .NET Framework usnadňuje určení pořadí dne v týdnu pro konkrétní datum a zobrazí se název lokalizované den v týdnu pro konkrétní datum. Výčtová hodnota určující, den v týdnu odpovídající konkrétní datum je k dispozici prostřednictvím <xref:System.DateTime.DayOfWeek%2A> nebo <xref:System.DateTimeOffset.DayOfWeek%2A> vlastnost. Načítání názvu den v týdnu je naopak operaci formátování, které lze provést pomocí volání metody pro formátování, jako je například hodnota data a času `ToString` metoda nebo <xref:System.String.Format%2A?displayProperty=nameWithType> metoda. Toto téma ukazuje, jak provést tyto operace formátování.  

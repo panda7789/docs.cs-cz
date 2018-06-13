@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461806"
 ---
 # <a name="icorprofilerinfo3-interface"></a>ICorProfilerInfo3 – rozhraní
 Poskytuje metody, které profilery kódu se používají ke komunikaci s modul CLR (CLR) k řízení sledování událostí a k požadavku na informace. `ICorProfilerInfo3` Rozhraní je rozšířením [ICorProfilerInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md) rozhraní. Poskytuje nové metody v podporované [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] a novějších verzích.  

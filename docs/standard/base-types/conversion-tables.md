@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571114"
 ---
 # <a name="type-conversion-tables-in-net"></a>Tabulky převodu typů v rozhraní .NET
 Rozšiřující převod nastane, když hodnota jednoho typu je převedena na jiný typ, který je rovna nebo větší velikosti. Zužující převod nastane, když hodnota jednoho typu je převést na hodnotu jiného typu, který je menší velikost. Tabulky v tomto tématu ilustrují chování vykazují oba typy převody.  

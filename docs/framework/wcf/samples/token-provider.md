@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807811"
 ---
 # <a name="token-provider"></a>Zprostředkovatel tokenu
 Tento příklad znázorňuje způsob implementace vlastního zprostředkovatele tokenu. Zprostředkovatel tokenu ve Windows Communication Foundation (WCF) se používá pro zadávání přihlašovacích údajů k zabezpečení infrastruktury. Zprostředkovatel tokenu obecně prozkoumá cíl a problémy vhodné přihlašovací údaje, aby infrastruktura zabezpečení můžete zabezpečit zprávy. WCF se dodává s výchozí zprostředkovatel tokenu správce přihlašovacích údajů. Dodává se také s WCF [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  

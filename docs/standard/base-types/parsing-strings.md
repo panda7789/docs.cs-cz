@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567741"
 ---
 # <a name="parsing-strings-in-net"></a>Analýza řetězců v rozhraní .NET
 Operaci analýzy převede řetězec, který představuje základní typ rozhraní .NET do základního typu. Operaci analýzy se například používá převést řetězec na číslo s plovoucí desetinnou čárkou nebo na hodnotu data a času. Metoda nejčastěji používaná k provedení analýzy operace je `Parse` metoda. Protože analýza je reverzní operace formátování (která zahrnuje převodu základní typ jeho řetězcovou reprezentaci), řadu stejné pravidla a pravidla týkající se použití. Jenom jako formátování používá objekt, který implementuje <xref:System.IFormatProvider> poskytovat informace formátování jazykové verzi, analýza také používá objekt, který implementuje rozhraní <xref:System.IFormatProvider> rozhraní určit, jak interpretovat reprezentaci řetězce . Další informace najdete v tématu [typy formátování](../../../docs/standard/base-types/formatting-types.md).  

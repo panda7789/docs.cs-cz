@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570650"
 ---
 # <a name="working-with-xml-schemas"></a>Práce s XML schémata
 Chcete-li definovat strukturu dokumentu XML, jakož i jeho element relace, datové typy a obsahu omezení, použít definice typu dokumentu (DTD) nebo schématu XML definition language (XSD) schématu. I když dokumentu XML se považuje za ve správném formátu, pokud splňuje všechny požadavky syntaktické definované doporučení jazyka XML (Extensible Markup) 1.0 World Wide Web Consortium (W3C), není to považováno za platný pokud obě je ve správném formátu a vyhovuje omezení podle DTD nebo schéma. Proto i když jsou všechny platné dokumenty XML ve správném formátu, ne všechny dokumenty ve správném formátu XML nejsou platné.  

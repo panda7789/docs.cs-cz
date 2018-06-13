@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461396"
 ---
 # <a name="icorprofilerinfo2-interface"></a>ICorProfilerInfo2 – rozhraní
 Poskytuje metody, které profilery kódu se používají ke komunikaci s modul common language runtime (CLR) k řízení sledování událostí a informace o požadavku. `ICorProfilerInfo2` Rozhraní je rozšířením [icorprofilerinfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) rozhraní. To znamená nabízí nové metody, které jsou podporovány v rozhraní .NET Framework verze 2.0 a novějších verzích.  

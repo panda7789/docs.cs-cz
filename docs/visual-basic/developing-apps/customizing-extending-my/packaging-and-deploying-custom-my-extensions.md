@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591856"
 ---
 # <a name="packaging-and-deploying-custom-my-extensions-visual-basic"></a>Balení a nasazení vlastních rozšíření oboru názvů My (Visual Basic)
 Visual Basic poskytuje snadný způsob můžete nasadit vaše vlastní `My` rozšíření oboru názvů pomocí šablony sady Visual Studio. Pokud vytváříte šablona projektu pro kterou vaše `My` rozšíření jsou nedílnou součástí nového typu projektu, můžete zahrnout pouze vaše vlastní `My` kód rozšíření projektu při exportu šablony. Další informace o exportu šablony projektů najdete v tématu [postupy: vytvoření šablony projektů](/visualstudio/ide/how-to-create-project-templates).  

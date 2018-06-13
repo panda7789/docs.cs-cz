@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33462062"
 ---
 # <a name="com-service-model-configuration-tool-comsvcconfigexe"></a>Nástroj COM+ Service Model Configuration (ComSvcConfig.exe)
 Nástroj příkazového řádku modelu COM + Service Model Configuration (ComSvcConfig.exe) umožňuje nakonfigurovat rozhraní modelu COM + mají být exponovány jako webové služby.  

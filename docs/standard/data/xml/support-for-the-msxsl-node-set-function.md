@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570526"
 ---
 # <a name="support-for-the-msxslnode-set-function"></a>Podpora pro msxsl:node-set() – funkce
 `msxsl:node-set` Funkce umožňuje převést fragment stromu výsledek sada uzlů. Výsledný uzlu nastavení vždy obsahuje jeden uzel a je kořenový uzel stromu.  

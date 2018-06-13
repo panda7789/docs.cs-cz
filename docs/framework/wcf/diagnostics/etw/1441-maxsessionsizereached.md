@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33460851"
 ---
 # <a name="1441---maxsessionsizereached"></a>1441 – MaxSessionSizeReached
 ## <a name="properties"></a>Vlastnosti  

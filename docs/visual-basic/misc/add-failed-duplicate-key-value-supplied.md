@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599772"
 ---
 # <a name="add-failed-duplicate-key-value-supplied"></a>Přidání se nezdařilo. Zadaná hodnota duplicitního klíče
 `Add` Operace se nezdařila, protože hodnota klíče je stejný jako jiná hodnota klíče. Hodnoty klíče musí být jedinečný.  

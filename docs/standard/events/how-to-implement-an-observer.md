@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574852"
 ---
 # <a name="how-to-implement-an-observer"></a>Postupy: Implementace pozorovatele
 Návrhový vzor pozorovatel vyžaduje rozdělení pozorovatele, které je zaregistruje pro oznámení, a zprostředkovatele, který monitoruje data a odešle oznámení pozorovatelů jeden nebo více. Toto téma popisuje postup vytvoření pozorovatele. Související téma, [postupy: implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md), popisuje, jak vytvářet poskytovatele.  

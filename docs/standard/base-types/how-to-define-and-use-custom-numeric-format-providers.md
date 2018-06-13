@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575821"
 ---
 # <a name="how-to-define-and-use-custom-numeric-format-providers"></a>Postupy: Definování a používání vlastních poskytovatelů číselného formátu
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje rozsáhlou kontrolu nad řetězcová reprezentace číselné hodnoty. Podporuje následující funkce pro přizpůsobení formát číselné hodnoty:  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575281"
 ---
 # <a name="capitalization-conventions"></a>Konvence malá a velká písmena
 Podle pokynů v této kapitoly rozložení se jednoduše pomocí případu, kdy použít konzistentně, zkontrolujte identifikátory pro typy, členů a parametry snadno čitelný.  

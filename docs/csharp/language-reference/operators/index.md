@@ -23,6 +23,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457601"
 ---
 # <a name="c-operators"></a>Operátory jazyka C#
 C# poskytuje mnoho operátory, které jsou symboly, které určují, které operace (matematické, indexování, volání funkce atd.) provést ve výrazu. Můžete [přetížení](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md) řada operátorů změnit jejich význam při aplikování uživatelem definovaného typu.  

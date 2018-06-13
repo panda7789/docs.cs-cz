@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806270"
 ---
 # <a name="how-to-create-a-windows-communication-foundation-client"></a>Postupy: Vytvoření klienta Windows Communication Foundation
 Toto je čtvrtý šesti úlohy, které jsou potřebné pro vytvoření aplikace Windows Communication Foundation (WCF). Přehled všech šest úloh najdete v tématu [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.  

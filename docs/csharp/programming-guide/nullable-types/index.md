@@ -11,6 +11,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34456585"
 ---
 # <a name="nullable-types-c-programming-guide"></a>Typy s povolenou hodnotou Null (Průvodce programováním v C#)
 Typy s možnou hodnotou Null jsou instancemi třídy <xref:System.Nullable%601?displayProperty=nameWithType> struktura. Typ s možnou hodnotou Null může představovat správné rozsahu hodnot pro její základní typ hodnoty, plus další `null` hodnotu. Například `Nullable<Int32>`, výrazný "S možnou hodnotou Null Int32," může být přiřazena libovolná hodnota od -2147483648 2147483647 nebo jej lze přiřadit `null` hodnotu. A `Nullable<bool>` je možné přiřadit hodnoty [true](../../../csharp/language-reference/keywords/true.md), [false](../../../csharp/language-reference/keywords/false.md), nebo [null](../../../csharp/language-reference/keywords/null.md). Schopnost přidělit `null` na typy číselné a logická hodnota je obzvláště užitečná při pracujete s databází a jiné datové typy, které obsahují prvky, které nemusí být přiřazena hodnota. Například logické pole v databázi můžete ukládat hodnoty `true` nebo `false`, nebo to může být definovaný. 

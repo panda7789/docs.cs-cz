@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571482"
 ---
 # <a name="xmlschemacollection-schema-compilation"></a>Schéma kolekci XmlSchemaCollection kompilace
 **Kolekci XmlSchemaCollection** je do mezipaměti nebo knihovny, kam můžete ukládat a ověřit XML-Data Reduced (XDR) a schématu XML schémata definition language (XSD). **Kolekci XmlSchemaCollection** zlepšuje výkon díky ukládání do mezipaměti schémata v paměti místo k nim přistupovat ze souboru nebo adresa URL.  

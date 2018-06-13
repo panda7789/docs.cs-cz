@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576126"
 ---
 # <a name="localizability-review"></a>Revize lokalizovatelnosti
 Revize lokalizovatelnosti je přechodný krok pro vývoj aplikací připravených. Ověří, že globalizovaná aplikace je připravena k lokalizaci a identifikuje kód, nebo všechny aspekty uživatelského rozhraní, které vyžadují zvláštní zpracování. Tento krok také pomáhá zajistit, že proces lokalizace nezavedou žádné funkční vady do vaší aplikace. Pokud byla vyřešili všechny problémy, které jsou vydané revize lokalizovatelnosti, je aplikace připravená pro lokalizaci. Pokud revize lokalizovatelnosti důkladné, by neměl mít k úpravě jakékoli zdrojového kódu během procesu lokalizace.  

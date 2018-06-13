@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574592"
 ---
 # <a name="using-standard-exception-types"></a>Použití typů standardní výjimky
 Tato část popisuje standardní výjimky poskytované rozhraní a podrobnosti o jejich využití. V seznamu je rozhodně není vyčerpávající. Naleznete na referenční dokumentaci rozhraní .NET Framework pro použití jiných typů výjimek Framework.  

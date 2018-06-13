@@ -14,6 +14,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34234370"
 ---
 # <a name="checked-and-unchecked-c-reference"></a>Zaškrtnuto a nezaškrtnuto (Referenční dokumentace jazyka C#)
 Příkazy jazyka C# můžete spustit v kontextu zaškrtnuté nebo nezaškrtnuté. V kontextu zaškrtnuté Přetečení aritmetické funkce vyvolá výjimku. V kontextu nezaškrtnuté aritmetického přetečení je ignorován a výsledek je rozdělená do zahození žádné nejvyšších bitů, které se nehodí typu cílového.  

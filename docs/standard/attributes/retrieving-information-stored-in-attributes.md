@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570396"
 ---
 # <a name="retrieving-information-stored-in-attributes"></a>Načítání informací uložených v atributech
 Načítání vlastní atribut je jednoduchý proces. Nejprve deklarujte instanci atribut, který chcete načíst. Potom použít <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> metoda pro inicializaci nového atributu na hodnotu atributu, který chcete načíst. Jakmile nový atribut inicializován, jednoduše použijte jeho vlastnosti a získat hodnoty.  

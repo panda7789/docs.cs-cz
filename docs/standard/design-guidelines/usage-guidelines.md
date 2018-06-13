@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571030"
 ---
 # <a name="usage-guidelines"></a>Pokyny týkající se používání
 Tato část obsahuje pokyny k používání běžné typy v rozhraní API pro veřejně přístupná. Zabývá přímého použití předdefinované Framework typů (např. atributy serializace) a přetížení běžných operátorů.  

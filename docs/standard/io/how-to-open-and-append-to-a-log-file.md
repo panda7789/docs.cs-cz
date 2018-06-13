@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571940"
 ---
 # <a name="how-to-open-and-append-to-a-log-file"></a>Postupy: Otevření a připojení k souboru protokolu
 <xref:System.IO.StreamWriter> a <xref:System.IO.StreamReader> zapisuje a čtení znaků z datových proudů. Následující příklad kódu otevře `log.txt` souboru pro vstup, nebo vytvoří soubor, pokud ještě neexistuje a připojí informace na konec souboru. Obsah souboru pak zapsány do standardního výstupního pro zobrazení. Jako alternativu k tento příklad informace může být uložený jako jeden řetězec nebo pole řetězců a <xref:System.IO.File.WriteAllText%2A> nebo <xref:System.IO.File.WriteAllLines%2A> metodu lze použít k dosažení stejné funkce.  

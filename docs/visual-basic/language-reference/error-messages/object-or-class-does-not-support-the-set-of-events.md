@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593201"
 ---
 # <a name="object-or-class-does-not-support-the-set-of-events"></a>Objekt nebo třída nepodporuje sadu událostí.
 Pokusili jste se použít `WithEvents` proměnné s komponenty, která nemůže pracovat jako zdroje událostí pro zadanou sadu událostí. Například Kdybyste chtěli jímky událostí objektu a pak vytvořte jiný objekt, který `Implements` první objekt. I když může si myslíte, že by mohla jímky událostí z implementovaná objektu, to není vždy případu. `Implements` pouze implementuje rozhraní pro metody a vlastnosti. `WithEvents` není podporováno pro privátní `UserControls`, protože typ informace potřebné k vyvolat `ObjectEvent` není k dispozici v době běhu.  

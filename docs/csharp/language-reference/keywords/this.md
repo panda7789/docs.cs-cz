@@ -13,6 +13,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172032"
 ---
 # <a name="this-c-reference"></a>this (Referenční dokumentace jazyka C#)
 `this` – Klíčové slovo odkazuje na aktuální instanci třídy a také slouží jako modifikátor první parametr metody rozšíření.  

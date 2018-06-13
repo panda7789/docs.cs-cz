@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807303"
 ---
 # <a name="wmi-provider"></a>Poskytovatel WMI
 Tento příklad ukazuje, jak ke shromažďování dat ze služby Windows Communication Foundation (WCF) v době běhu pomocí zprostředkovatele Windows Management Instrumentation (WMI), která je integrována do WCF. Tato ukázka také ukazuje, jak přidat objekt uživatelské rozhraní WMI pro službu. Ukázka aktivuje zprostředkovatele rozhraní WMI na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a ukazuje, jak získat data z `ICalculator` služby za běhu.  

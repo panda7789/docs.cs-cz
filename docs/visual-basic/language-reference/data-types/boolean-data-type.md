@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590274"
 ---
 # <a name="boolean-data-type-visual-basic"></a>Boolean – datový typ (Visual Basic)
 Blokování hodnoty, které může být pouze `True` nebo `False`. Klíčová slova `True` a `False` odpovídají dva stavy `Boolean` proměnné.  

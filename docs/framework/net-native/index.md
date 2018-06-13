@@ -15,6 +15,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457304"
 ---
 # <a name="compiling-apps-with-net-native"></a>Kompilování aplikací pomocí .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] je předkompilace technologie pro vytváření a nasazování aplikací pro Windows, která je součástí sady Visual Studio 2015 a novější verze. Zkompiluje automaticky prodejní verze aplikace, které jsou zapsány v spravovaného kódu (C# nebo Visual Basic), že cílové rozhraní .NET Framework a Windows 10 do nativního kódu.  

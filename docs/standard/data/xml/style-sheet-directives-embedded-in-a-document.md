@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569327"
 ---
 # <a name="style-sheet-directives-embedded-in-a-document"></a>Direktivy list stylu vložených v dokumentu
 V některých případech existující soubor XML obsahuje direktiva list stylu z `<?xml:stylesheet?>`. Aplikace Microsoft Internet Explorer to přijímá jako alternativu k `<?xml-stylesheet?>` syntaxe. Když se XML data obsahuje `<?xml:stylesheet?>` direktivy, jak je uvedené v následující data pokusu o načtení tato data do XML modelu DOM (Document Object) vyvolá výjimku.  

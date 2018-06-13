@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592363"
 ---
 # <a name="custom-partitioners-for-plinq-and-tpl"></a>Vlastní dělicí metody pro PLINQ a TPL
 Učinit paralelní operace pro zdroj dat, jedním z nezbytné kroky je *oddílu* zdroje do více oddílů, které dostanete souběžně několik vláken. PLINQ a Task Parallel Library (TPL) zadejte výchozí dělicí metody, které fungují transparentně při psaní paralelního dotazu nebo <xref:System.Threading.Tasks.Parallel.ForEach%2A> smyčky. Pro pokročilejší scénáře můžete zařadit vlastní dělicí metody.  

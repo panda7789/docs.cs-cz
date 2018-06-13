@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567626"
 ---
 # <a name="how-to-use-components-that-support-the-event-based-asynchronous-pattern"></a>Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech
 Celá řada komponent poskytují možnost provedení práci asynchronně. <xref:System.Media.SoundPlayer> a <xref:System.Windows.Forms.PictureBox> součásti, například umožňuje načíst vyznívá a bitové kopie "v pozadí", zatímco hlavní vlákno stále spuštěna bez přerušení.  
