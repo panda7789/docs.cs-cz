@@ -9,6 +9,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33958224"
 ---
 # <a name="when-to-deploy-windows-containers-to-azure-container-instances-aci"></a><span data-ttu-id="a0e70-103">Při nasazení kontejnerů Windows do Azure kontejner instancí (ACI)</span><span class="sxs-lookup"><span data-stu-id="a0e70-103">When to deploy Windows Containers to Azure Container Instances (ACI)</span></span>
 

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33958215"
 ---
 # <a name="modernize-existing-net-apps-to-cloud-optimized-applications"></a><span data-ttu-id="fde3f-103">Modernizovat existující aplikace .NET do optimalizovaných Cloudů aplikací</span><span class="sxs-lookup"><span data-stu-id="fde3f-103">Modernize existing .NET apps to Cloud-Optimized applications</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34234462"
 ---
 # <a name="structure-statement"></a><span data-ttu-id="ffeed-102">Structure – příkaz</span><span class="sxs-lookup"><span data-stu-id="ffeed-102">Structure Statement</span></span>
 <span data-ttu-id="ffeed-103">Deklaruje název strukturu a představuje definici proměnné, vlastností, události a postupy, které tvoří strukturu.</span><span class="sxs-lookup"><span data-stu-id="ffeed-103">Declares the name of a structure and introduces the definition of the variables, properties, events, and procedures that the structure comprises.</span></span>  

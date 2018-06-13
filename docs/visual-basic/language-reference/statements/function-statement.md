@@ -33,6 +33,7 @@ ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34234121"
 ---
 # <a name="function-statement-visual-basic"></a><span data-ttu-id="48854-102">Function – příkaz (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="48854-102">Function Statement (Visual Basic)</span></span>
 <span data-ttu-id="48854-103">Deklaruje název, parametry a kód, který definovat `Function` postupu.</span><span class="sxs-lookup"><span data-stu-id="48854-103">Declares the name, parameters, and code that define a `Function` procedure.</span></span>  
