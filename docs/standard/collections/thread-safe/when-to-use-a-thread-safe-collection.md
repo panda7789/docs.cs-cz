@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574836"
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>Kdy použít kolekci s bezpečnými vlákny
 [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] Zavádí pět nové typy kolekcí, které jsou speciálně určené pro podporu Vícevláknová přidávat a odebírat operace. K dosažení vláken, použít tyto nové typy různé druhy efektivní zamykání a mechanismy zámku bez synchronizace. Synchronizace přidá režie pro operaci. Množství práce, závisí na typ synchronizace, která se používá, druh operace, které se provádí a dalších faktorů, jako je počet vláken, které se pokoušíte získat přístup ke kolekci současně.  

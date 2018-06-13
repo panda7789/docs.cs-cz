@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334133"
 ---
 # <a name="how-to-display-command-line-arguments-c-programming-guide"></a>Postupy: Zobrazení argumentů příkazového řádku (Průvodce programováním v C#)
 Argumenty spustitelný soubor na příkazovém řádku jsou přístupné prostřednictvím volitelný parametr pro `Main`. Argumenty, které jsou uvedeny v podobě pole řetězců. Každý element pole obsahuje jeden argument. Odeberou se mezer mezi argumenty. Představte si třeba tyto volání fiktivní spustitelný soubor příkazového řádku:  

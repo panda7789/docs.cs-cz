@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551120"
 ---
 # <a name="control-customization"></a>Přizpůsobení ovládacího prvku
 Tato kategorie zahrnuje různé základní třídy, rozhraní a další prvky a koncepty používané při vytváření plně funkční [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ovládacího prvku.  
