@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540527"
 ---
 # <a name="how-to-save-files-using-the-savefiledialog-component"></a>Postupy: Ukládání souborů pomocí součásti SaveFileDialog
 <xref:System.Windows.Forms.SaveFileDialog> Součást umožňuje uživatelům procházet systému souborů a vyberte soubory uložit. Dialogové okno vrátí cestu a název souboru, který uživatel vybral v dialogovém okně. Ale musíte napsat kód, který ve skutečnosti zapisovat soubory na disk.  

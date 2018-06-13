@@ -30,6 +30,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33399174"
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Vytváření satelitních sestavení pro aplikace klasické pracovní plochy
 Soubory prostředků hrají roli centrální v lokalizovaných aplikací. Umožňují aplikace k zobrazení řetězce, obrázky a další data ve vlastních jazyce a jazykové verzi a zadejte alternativní dat, pokud nejsou k dispozici prostředky pro uživatele vlastní jazyk nebo jazykovou verzi. Rozhraní .NET Framework používá model střed a paprsek najít a načíst lokalizované prostředky. Rozbočovače je hlavní sestavení, které obsahuje nepřekládá spustitelného kódu a prostředků pro jednu jazykovou verzi, která se nazývá neutrální nebo výchozí jazykovou verzi. Představuje výchozí jazykovou verzi záložní jazykovou verzi pro aplikaci. používá se při žádné lokalizované prostředky jsou k dispozici. Můžete použít <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut a nastavit jazykovou verzi aplikace výchozí jazykovou verzi. Každý paprsek připojí k satelitní sestavení, které obsahuje prostředky pro jeden lokalizované jazykovou verzi, ale neobsahuje žádný kód. Protože satelitní sestavení nejsou součástí hlavní sestavení, můžete snadno aktualizovat nebo nahradit prostředky, které odpovídají konkrétní jazykové verze bez nahrazení hlavního sestavení pro aplikaci.  

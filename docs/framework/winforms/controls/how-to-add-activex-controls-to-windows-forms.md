@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527375"
 ---
 # <a name="how-to-add-activex-controls-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows
 Zatímco Návrhář formulářů Windows je optimalizovaná tak, aby hostitelské ovládací prvky Windows Forms, můžete taky v rozhraní Windows Forms – ovládací prvky ActiveX.  

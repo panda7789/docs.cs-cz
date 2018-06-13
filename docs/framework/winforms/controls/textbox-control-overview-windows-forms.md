@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539864"
 ---
 # <a name="textbox-control-overview-windows-forms"></a>TextBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms textová pole se používají k získání vstup od uživatele nebo k zobrazení textu. <xref:System.Windows.Forms.TextBox> Řízení se obecně používají pro upravovat text, i když ho můžete také provést jen pro čtení. Textová pole můžete zobrazit více řádků, zalomení textu velikosti ovládacího prvku a přidat základní formátování. <xref:System.Windows.Forms.TextBox> Řízení poskytuje jeden formát styl textu zobrazuje nebo je zadán do ovládacího prvku. Chcete-li zobrazit více typů formátovaný text, použijte <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. Další informace najdete v tématu [– Přehled ovládacího prvku RichTextBox](../../../../docs/framework/winforms/controls/richtextbox-control-overview-windows-forms.md).  

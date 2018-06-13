@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390296"
 ---
 # <a name="asynchronous-client-socket-example"></a>Příklad soketu asynchronní klienta
 V následujícím příkladu programu vytvoří klienta, který se připojuje k serveru. Klient je vytvořené s nástroji asynchronní soketu a spuštění aplikace klienta není pozastaven, když server vrátí odpověď. Aplikace odešle řetězec na server a potom zobrazí řetězec vrácená serverem v konzole.  

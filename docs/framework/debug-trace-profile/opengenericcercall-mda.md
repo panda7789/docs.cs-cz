@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33387517"
 ---
 # <a name="opengenericcercall-mda"></a>openGenericCERCall – pomocník spravovaného ladění (MDA)
 `openGenericCERCall` Upozornit, že graf omezeného provádění oblast (CER) s proměnné obecného typu v kořenové metoda je zpracovávaný v JIT – kompilace nebo nativních bitových kopií časem vygenerování a alespoň jeden z obecná se aktivuje Pomocník spravovaného ladění Typ proměnné je odkaz na typ objektu.  

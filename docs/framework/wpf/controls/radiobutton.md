@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33553920"
 ---
 # <a name="radiobutton"></a>RadioButton
 <xref:System.Windows.Controls.RadioButton> ovládací prvky jsou obvykle seskupeny dohromady a nabídnout uživatelům jednu volbu mezi několik možností; lze vybrat pouze jedno tlačítko najednou.  

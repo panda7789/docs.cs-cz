@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391170"
 ---
 # <a name="managing-connections"></a>Správa připojení
 Aplikace, které používají protokol HTTP pro připojení k prostředkům dat můžete použít rozhraní .NET Framework <xref:System.Net.ServicePoint> a <xref:System.Net.ServicePointManager> třídy ke správě připojení k Internetu a pomáhá jim dosáhnout optimálního škálování a výkon.  

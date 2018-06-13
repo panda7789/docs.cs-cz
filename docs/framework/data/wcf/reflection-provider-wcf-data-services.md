@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33366005"
 ---
 # <a name="reflection-provider-wcf-data-services"></a>Reflexe zprostředkovatele (služby WCF Data Services)
 Kromě úniku dat z datového modelu prostřednictvím rozhraní Entity Framework [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] můžou zpřístupnit data, která není definován výhradně ve model na základě entity. Zprostředkovatel reflexe poskytuje data v třídy, které návratové typy, které implementují <xref:System.Linq.IQueryable%601> rozhraní. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] odvození datový model pro tyto třídy pomocí reflexe a může překládat adresy vytvářet dotazy na prostředky do jazyka integrovaného dotazu (LINQ) – na základě dotazů vůči zveřejněné <xref:System.Linq.IQueryable%601> typy.  

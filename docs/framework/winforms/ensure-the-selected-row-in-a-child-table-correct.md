@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539887"
 ---
 # <a name="how-to-ensure-the-selected-row-in-a-child-table-remains-at-the-correct-position"></a>Postupy: Zajistěte, aby vybraný řádek v podřízené tabulce zůstal ve správné pozici
 Často při práci s datové vazby v systému Windows Forms, se zobrazí data v co se říká nadřazený podřízený nebo hlavní/podrobnosti zobrazení. Vztahuje se k datové vazby scénář, kde se zobrazí data z jednoho zdroje ve dvou ovládacích prvků. Změna výběru v ovládacím prvku jeden způsobí, že data zobrazená v ovládacím prvku druhý změnit. První prvek může například obsahovat seznam zákazníků a druhý seznam objednávek související s vybraného zákazníka v prvním ovládacím.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408458"
 ---
 # <a name="ialink2-interface"></a>IALink2 – rozhraní
 Doplňuje [ialink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md) deklarováním metody, které působí na novější rozhraní metadat, jako [imetadataemit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md). Kromě toho ialink2 – deklaruje metody, které poskytují flexibilitu další využití přes původní ialink – rozhraní.  

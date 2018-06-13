@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526846"
 ---
 # <a name="how-to-add-web-browser-capabilities-to-a-windows-forms-application"></a>Postupy: Přidání schopností webového prohlížeče do formulářové aplikace Windows
 Pomocí <xref:System.Windows.Forms.WebBrowser> ovládací prvek, můžete přidat funkce webového prohlížeče do vaší aplikace. Ve výchozím nastavení funguje jako webový prohlížeč ovládací prvek. Po načtení počáteční adresa URL nastavením <xref:System.Windows.Forms.WebBrowser.Url%2A> vlastnost, můžete přejít kliknutím hypertextových odkazů nebo pomocí klávesové zkratky přesunout zpátky a předávání prostřednictvím historie navigace. Ve výchozím nastavení můžete přístup k funkcím Další prohlížeče prostřednictvím místní nabídce klikněte pravým tlačítkem. Můžete také otevřít nové dokumenty umístěním do ovládacího prvku. <xref:System.Windows.Forms.WebBrowser> Ovládací prvek také obsahuje několik vlastností, metod a události, které můžete použít k implementaci podobné těm, které jsou součástí aplikace Internet Explorer funkce uživatelského rozhraní.  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33410017"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (Nástroj pro optimalizaci spravovaného kódu na základě profilu)
 Spravované profil na základě optimalizace nástroj (Mpgo.exe) je nástroj příkazového řádku, který používá běžné scénáře koncových uživatelů k optimalizaci sestavení nativních bitových kopií, které jsou vytvořené pomocí [generátor (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md). Tento nástroj umožňuje spustit trénovací scénáře, které generují data profilu. [Generátor (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) tato data používá k optimalizaci jeho sestavení aplikace generované nativních bitových kopií. Trénovací scénář je zkušební spuštění očekávaného použití aplikace. Nástroj Mpgo.exe je k dispozici v sadě Visual Studio Ultimate 2012 a vyšší. Počínaje [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)], Mpgo.exe můžete také použít k optimalizaci [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.  

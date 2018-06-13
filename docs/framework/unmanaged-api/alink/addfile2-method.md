@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33403328"
 ---
 # <a name="addfile2-method"></a>AddFile2 – metoda
 Přidá soubory do sestavení. Můžete také použít k vytvoření nepřipojeného moduly.  

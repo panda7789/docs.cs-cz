@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390962"
 ---
 # <a name="how-to-customize-a-time-based-cache-policy"></a>Postupy: přizpůsobení zásady založené na čase mezipaměti
 Při vytváření zásad založené na čase mezipaměti můžete přizpůsobit chování ukládání do mezipaměti zadáním hodnot pro maximální stáří, aktuálnosti minimální, maximální typu prošlostí nebo mezipaměti synchronizace datum. <xref:System.Net.Cache.HttpRequestCachePolicy> Objektu obsahuje několik konstruktorů, které vám umožní zadat platné kombinace tyto hodnoty.  

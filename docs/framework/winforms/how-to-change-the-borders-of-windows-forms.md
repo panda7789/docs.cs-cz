@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539773"
 ---
 # <a name="how-to-change-the-borders-of-windows-forms"></a>Postupy: Změna ohraničení Windows Forms 
 Máte několik stylů ohraničení lze vybírat při určování vzhled a chování Windows Forms. Změnou <xref:System.Windows.Forms.Form.FormBorderStyle%2A> vlastnost, můžete řídit chování změny velikosti ve tvaru. Kromě toho nastavení <xref:System.Windows.Forms.Form.FormBorderStyle%2A> má vliv na způsob zobrazení panelu popisek a co může vypadat tlačítka na něm. Další informace naleznete v tématu <xref:System.Windows.Forms.FormBorderStyle>.  

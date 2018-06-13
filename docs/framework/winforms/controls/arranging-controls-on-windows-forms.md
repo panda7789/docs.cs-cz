@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527310"
 ---
 # <a name="arranging-controls-on-windows-forms"></a>Uspořádávání ovládacích prvků ve Windows Forms
 Umístění a manipulace s ovládacích prvků ve formulářích různými způsoby, můžete vytvořit uživatelského rozhraní, které jsou intuitivní a funkčnosti pro uživatele.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33401151"
 ---
 # <a name="ui-automation-specification-and-community-promise"></a>Specifikace automatizace uživatelského rozhraní a příslib komunitě
 Automatizace uživatelského rozhraní zajišťují programový přístup k většině prvky uživatelského rozhraní (UI) na ploše povolení produktů využívajících technologie usnadnění, jako jsou třeba čtečky obrazovky zadání informací o uživatelském rozhraní pro koncové uživatele a k manipulaci s rozhraní jiným způsobem než standardní vstup .  

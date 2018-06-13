@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388856"
 ---
 # <a name="mef-for-net-for-windows-store-apps"></a>MEF pro aplikace .NET pro Windows Store
 <xref:System.Composition?displayProperty=nameWithType> a jeho podřízené obory názvů obsahují typy pro vývoj extensible [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace s Managed Extensibility Framework (MEF). Tyto obory názvů jsou součástí [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] podmnožina pro [!INCLUDE[win8](../../../includes/win8-md.md)] operačního systému.  

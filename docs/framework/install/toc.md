@@ -9,5 +9,4 @@
 ## [Oprava rozhraní .NET Framework](repair.md)
 ## [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md)
 ## [Instalace rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8](dotnet-35-windows-10.md)
-### [Řešení potíží s instalací rozhraní .NET Framework 3.5](net-framework-3-5-on-windows-8-plus.md)
 ## [Spouštění aplikací využívajících .NET Framework 1.1 v systému Windows 8, Windows 8.1 nebo Windows 10](run-net-framework-1-1-apps.md)
