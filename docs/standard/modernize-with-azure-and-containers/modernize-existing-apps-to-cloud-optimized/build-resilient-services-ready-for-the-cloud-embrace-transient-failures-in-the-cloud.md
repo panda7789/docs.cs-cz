@@ -9,6 +9,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33958218"
 ---
 # <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a><span data-ttu-id="57ea6-105">Vytvářet odolné služby, které jsou připravené pro cloud: zapojení přechodných chyb v cloudu</span><span class="sxs-lookup"><span data-stu-id="57ea6-105">Build resilient services ready for the cloud: Embrace transient failures in the cloud</span></span>
 

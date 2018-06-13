@@ -7,6 +7,7 @@ ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/11/2018
+ms.locfileid: "34059027"
 ---
 # <a name="ltservicegt"></a><span data-ttu-id="ccacf-102">&lt;Služby&gt;</span><span class="sxs-lookup"><span data-stu-id="ccacf-102">&lt;service&gt;</span></span>
 <span data-ttu-id="ccacf-103">`service` Element obsahuje nastavení pro službu Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="ccacf-103">The `service` element contains the settings for a Windows Communication Foundation (WCF) service.</span></span> <span data-ttu-id="ccacf-104">Obsahuje taky koncových bodů, které službu vystavit.</span><span class="sxs-lookup"><span data-stu-id="ccacf-104">It also contains endpoints that expose the service.</span></span>  
