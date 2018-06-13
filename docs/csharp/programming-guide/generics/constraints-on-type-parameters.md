@@ -11,6 +11,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457357"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a><span data-ttu-id="51055-102">Omezení parametrů typů (C# Průvodce programováním)</span><span class="sxs-lookup"><span data-stu-id="51055-102">Constraints on type parameters (C# Programming Guide)</span></span>
 

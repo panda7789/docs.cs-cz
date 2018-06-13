@@ -7,6 +7,7 @@ ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34483551"
 ---
 # <a name="client-channel-factories-and-channels"></a><span data-ttu-id="9b748-102">Klienta: Objekty pro vytváření kanálů a kanály</span><span class="sxs-lookup"><span data-stu-id="9b748-102">Client: Channel Factories and Channels</span></span>
 <span data-ttu-id="9b748-103">Toto téma popisuje vytvářet objekty pro vytváření kanálů a kanály.</span><span class="sxs-lookup"><span data-stu-id="9b748-103">This topic discusses the creation of channel factories and channels.</span></span>  

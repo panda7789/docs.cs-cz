@@ -15,6 +15,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472513"
 ---
 # <a name="c-compiler-options"></a><span data-ttu-id="e8ad6-102">Možnosti kompilátoru C#</span><span class="sxs-lookup"><span data-stu-id="e8ad6-102">C# Compiler Options</span></span>
 <span data-ttu-id="e8ad6-103">Kompilátor vytvoří spustitelné soubory (.exe), dynamické knihovny (DLL) nebo moduly kódu (.netmodule).</span><span class="sxs-lookup"><span data-stu-id="e8ad6-103">The compiler produces executable (.exe) files, dynamic-link libraries (.dll), or code modules (.netmodule).</span></span>  

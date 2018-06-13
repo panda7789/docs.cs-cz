@@ -7,6 +7,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472747"
 ---
 # <a name="connection-string-syntax"></a><span data-ttu-id="6da16-102">Syntaxi připojovacího řetězce</span><span class="sxs-lookup"><span data-stu-id="6da16-102">Connection String Syntax</span></span>
 <span data-ttu-id="6da16-103">Má každý zprostředkovatel dat .NET Framework `Connection` objekt, který dědí z <xref:System.Data.Common.DbConnection> a také konkrétního zprostředkovatele <xref:System.Data.Common.DbConnection.ConnectionString%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="6da16-103">Each .NET Framework data provider has a `Connection` object that inherits from <xref:System.Data.Common.DbConnection> as well as a provider-specific <xref:System.Data.Common.DbConnection.ConnectionString%2A> property.</span></span> <span data-ttu-id="6da16-104">Syntaxi konkrétní připojovacího řetězce pro každého zprostředkovatele je popsána v jeho `ConnectionString` vlastnost.</span><span class="sxs-lookup"><span data-stu-id="6da16-104">The specific connection string syntax for each provider is documented in its `ConnectionString` property.</span></span> <span data-ttu-id="6da16-105">Následující tabulka uvádí zprostředkovatelé čtyři dat, které jsou zahrnuty v rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="6da16-105">The following table lists the four data providers that are included in the .NET Framework.</span></span>  

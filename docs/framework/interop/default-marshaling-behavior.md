@@ -16,6 +16,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457387"
 ---
 # <a name="default-marshaling-behavior"></a><span data-ttu-id="f7c2a-102">Výchozí chování zařazování</span><span class="sxs-lookup"><span data-stu-id="f7c2a-102">Default Marshaling Behavior</span></span>
 <span data-ttu-id="f7c2a-103">Zařazování spolupráce funguje v pravidlech že tu určují chování data související s parametry metody jak předává mezi spravovanými a nespravovanými paměti.</span><span class="sxs-lookup"><span data-stu-id="f7c2a-103">Interop marshaling operates on rules that dictate how data associated with method parameters behaves as it passes between managed and unmanaged memory.</span></span> <span data-ttu-id="f7c2a-104">Tyto vestavěné pravidla řízení takové zařazování aktivitám v podobě transformace typu dat, zda volaný můžete změnit data do ní předán a tyto změny vrátit volajícímu, a pod kterým okolností zařazování poskytuje optimalizace výkonu.</span><span class="sxs-lookup"><span data-stu-id="f7c2a-104">These built-in rules control such marshaling activities as data type transformations, whether a callee can change data passed to it and return those changes to the caller, and under which circumstances the marshaler provides performance optimizations.</span></span>  

@@ -23,6 +23,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457601"
 ---
 # <a name="c-operators"></a><span data-ttu-id="85642-102">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="85642-102">C# Operators</span></span>
 <span data-ttu-id="85642-103">C# poskytuje mnoho operátory, které jsou symboly, které určují, které operace (matematické, indexování, volání funkce atd.) provést ve výrazu.</span><span class="sxs-lookup"><span data-stu-id="85642-103">C# provides many operators, which are symbols that specify which operations (math, indexing, function call, etc.) to perform in an expression.</span></span> <span data-ttu-id="85642-104">Můžete [přetížení](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md) řada operátorů změnit jejich význam při aplikování uživatelem definovaného typu.</span><span class="sxs-lookup"><span data-stu-id="85642-104">You can [overload](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md) many operators to change their meaning when applied to a user-defined type.</span></span>  
