@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641050"
 ---
 # <a name="unable-to-read-fixed-width-fields-because-fieldwidths-is-nothing-or-empty"></a>Nelze číst pole s pevnou šířkou, protože FieldWidths není nic nebo je prázdný
 `TextFieldParser` Se nepodařilo přečíst pole s pevnou šířkou, protože `FieldWidths` je nastavena na `Nothing` nebo je prázdný.  

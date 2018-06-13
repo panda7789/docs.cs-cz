@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807756"
 ---
 # <a name="stand-alone-diagnostics-feed-sample"></a>Ukázka samostatného diagnostického informačního kanálu
 Tento příklad znázorňuje postup vytvoření informačního kanálu RSS nebo kanálu Atom pro syndikace Windows Communication Foundation (WCF). Je základní program "Hello World", který zobrazuje základní informace o objektu modelu a jak nastavit ve službě Windows Communication Foundation (WCF).  

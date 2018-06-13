@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810158"
 ---
 # <a name="feedback-and-community"></a>Názory a komunita
 Děkujeme za vaše připomínky a obavy o Windows Communication Foundation (WCF) nebo [!INCLUDE[infocard](../../../includes/infocard-md.md)] dokumentaci. Na konec každé stránky v sadě SDK je větu "Odešlete komentáře k tomuto tématu společnosti Microsoft." Klikněte na odkaz "komentář" odesílat zobrazení nebo návrhy o určité téma.  

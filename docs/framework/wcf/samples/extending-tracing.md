@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806806"
 ---
 # <a name="extending-tracing"></a>Rozšíření trasování
 Tento příklad ukazuje, jak rozšířit funkci trasování Windows Communication Foundation (WCF) zápis trasování uživatelské aktivity v kódu klienta a služby. To umožňuje uživateli vytvořit trasování aktivity a seskupovat trasování do logické jednotky práce. Je také možné vazbu mezi aktivitami prostřednictvím přenosu (v rámci stejné koncového bodu) a šíření (v koncových bodů). V této ukázce je povoleno trasování pro klienta a služby. Další informace o tom, jak povolit trasování v konfiguračních souborech klienta a služby najdete v tématu [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md).  

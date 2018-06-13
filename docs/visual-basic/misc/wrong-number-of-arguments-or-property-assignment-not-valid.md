@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641138"
 ---
 # <a name="wrong-number-of-arguments-or-property-assignment-not-valid"></a>Nesprávný počet argumentů nebo přiřazení vlastnosti není platná
 Přiřazení došlo k pokusu o který není platný.  

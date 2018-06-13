@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805379"
 ---
 # <a name="extensibility"></a>Rozšiřitelnost
 Tato část obsahuje ukázky, které pracují s vlastní rozšíření a dalších funkcí služby Windows Communication Foundation (WCF).  

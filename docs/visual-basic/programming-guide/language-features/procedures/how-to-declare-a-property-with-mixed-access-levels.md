@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651408"
 ---
 # <a name="how-to-declare-a-property-with-mixed-access-levels-visual-basic"></a>Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu (Visual Basic)
 Pokud chcete `Get` a `Set` postupů na vlastnost, která má mít různé úrovně přístupu, můžete použít na úrovni mírnější `Property` prohlášení a více omezující úroveň buď `Get` nebo `Set` příkaz. Pokud chcete, aby určité části kódu, abyste mohli získat hodnotu vlastnosti a některé další části kódu, abyste mohli změnit hodnotu použijete u vlastnosti smíšenými úrovněmi přístupu.  

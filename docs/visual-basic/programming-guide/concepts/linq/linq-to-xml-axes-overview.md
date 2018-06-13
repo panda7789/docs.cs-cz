@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651437"
 ---
 # <a name="linq-to-xml-axes-overview-visual-basic"></a>Technologie LINQ to přehled osy XML (Visual Basic)
 Po vytvoření strom XML nebo načíst dokument XML do strom XML, můžete ji najít elementy a atributy a jejich hodnoty načíst dotazovat. Načíst prostřednictvím kolekce *osy metody*, označovaný také *osy*. Některé z os jsou metody v <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument> třídy, který vrací <xref:System.Collections.Generic.IEnumerable%601> kolekce. Některé z os jsou rozšiřující metody v <xref:System.Xml.Linq.Extensions> třídy. Osy, které jsou implementovány jako rozšiřující metody pracovat na kolekce a vrátí kolekce.  

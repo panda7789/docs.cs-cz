@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656327"
 ---
 # <a name="walkthrough-implementing-ienumerableof-t-in-visual-basic"></a>Návod: Implementace IEnumerable(Of T) v jazyce Visual Basic
 <xref:System.Collections.Generic.IEnumerable%601> Rozhraní je implementováno modulem třídy, které můžete při návratu posloupnost hodnoty jednu položku. Výhodou vrací data, která je jednu položku najednou, není nutné načíst kompletní sadu dat do paměti pro práci s ním. Potřebujete dostatek paměti pro načtení jednu položku z dat použijte. Třídy implementující `IEnumerable(T)` rozhraní lze použít s `For Each` smyčky nebo dotazů LINQ.  

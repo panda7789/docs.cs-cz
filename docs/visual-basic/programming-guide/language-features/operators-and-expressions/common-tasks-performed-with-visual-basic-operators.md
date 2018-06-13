@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654723"
 ---
 # <a name="common-tasks-performed-with-visual-basic-operators"></a>Běžné úlohy prováděné s operátory jazyka Visual Basic
 Operátory provádět mnoho běžných úkolů zahrnující jeden nebo více výrazů názvem *operandy*.  

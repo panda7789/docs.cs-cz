@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643949"
 ---
 # <a name="how-to-reference-com-objects-from-visual-basic"></a>Postupy: Odkaz na objekty modelu COM z jazyka Visual Basic
 V jazyce Visual Basic přidávání odkazů na objekty modelu COM, které mají knihovny typů vyžaduje vytvoření spolupráce sestavení pro knihovny COM. Odkazy na členy objektu COM jsou směrovány do sestavení vzájemné spolupráce a předá ji vlastního objektu COM. Odpovědí z objektu COM jsou směrovány do sestavení vzájemné spolupráce a předávaných do vaší [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace.  

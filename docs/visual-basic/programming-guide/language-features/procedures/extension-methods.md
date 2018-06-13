@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655281"
 ---
 # <a name="extension-methods-visual-basic"></a>Metody rozšíření (Visual Basic)
 Rozšiřující metody umožňují vývojářům přidání vlastních funkcí k typy dat, které jsou již definováni bez vytvoření nového odvozeného typu. Rozšiřující metody umožňují napíše metoda, kterou lze volat, jako by šlo metodu instance existující typu.  

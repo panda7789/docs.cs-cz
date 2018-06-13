@@ -16,6 +16,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457478"
 ---
 # <a name="throw-c-reference"></a>throw (Referenční dokumentace jazyka C#)
 Signály výskytem výjimku při spuštění programu.  

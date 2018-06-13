@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643650"
 ---
 # <a name="how-to-execute-expression-trees-visual-basic"></a>Postupy: provádění stromů výrazů (Visual Basic)
 Toto téma ukazuje, jak provést strom výrazu se nezdařilo. Provádění strom výrazu může vrátit hodnotu nebo ji může provádět jenom akce, jako při volání metody.  

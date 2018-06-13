@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807212"
 ---
 # <a name="ws-transaction-flow"></a>Tok transakcí webové služby
 Tento příklad znázorňuje použití transakce koordinované klienta a klient a server možnosti pro transakci toku pomocí protokolu WS-Atomic Transactions nebo OleTransactions. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje ale operace, které jsou označené k předvedení použití `TransactionFlowAttribute` s **TransactionFlowOption** výčet k určení, do jaké míry transakce toku povolený. V rámci oboru sdružení transakcí protokolu požadovaná operace je zapsán do databáze a dál, dokud klient koordinované transakce byla dokončena – i když klientská transakce nedokončí, transakce webové služby zajišťuje, že příslušné aktualizace do databáze nejsou potvrzeny.  

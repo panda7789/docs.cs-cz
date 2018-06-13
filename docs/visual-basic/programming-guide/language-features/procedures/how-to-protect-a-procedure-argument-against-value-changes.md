@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651515"
 ---
 # <a name="how-to-protect-a-procedure-argument-against-value-changes-visual-basic"></a>Postupy: Ochrana argumentu procedury proti změnám hodnoty (Visual Basic)
 Pokud procedury deklaruje parametr jako [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic poskytuje kód postup přímý odkaz na programovací element základní argument ve volání kódu. To umožňuje postup změňte hodnotu základní argument ve volání kódu. V některých případech může volající kód chcete chránit proti takové změny.  

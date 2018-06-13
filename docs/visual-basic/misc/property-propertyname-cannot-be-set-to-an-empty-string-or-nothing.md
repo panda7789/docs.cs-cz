@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639269"
 ---
 # <a name="property-ltpropertynamegt-cannot-be-set-to-an-empty-string-or-nothing"></a>Vlastnost &lt;propertyname&gt; nelze nastavit na prázdný řetězec nebo nic
 Vlastnost vyžaduje jinou hodnotu než prázdný řetězec ("") nebo `Nothing`. To může být způsobeno nesprávně výpočtu hodnoty.  

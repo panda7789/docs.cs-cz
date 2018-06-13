@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636129"
 ---
 # <a name="format-not-valid-in-resource-file"></a>Neplatný formát souboru prostředku
 Soubor prostředků ve vašem projektu nedodrží ve standardním formátu pro soubor prostředků systému Windows nebo došlo k neshodě mezi souboru prostředků a projektu jazyka Visual Basic.  

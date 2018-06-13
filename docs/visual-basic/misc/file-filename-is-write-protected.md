@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636549"
 ---
 # <a name="file-39ltfilenamegt39-is-write-protected"></a>Soubor &#39; &lt;filename&gt; &#39; je chráněna zápisu
 Soubor, který se pokoušíte zapisovat je chráněna proti zápisu a proto nemůže být změněn.  

@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653911"
 ---
 # <a name="procedure-overloading-visual-basic"></a>Procedura přetížení (Visual Basic)
 *Přetížení* procedury znamená jeho definováním v několika verze, používá stejný název, ale seznamy různých parametrů. Účelem přetížení je definovat několik úzce související verzí procedury bez nutnosti jejich odlišení podle názvu. To provedete pomocí různých seznam parametrů.  

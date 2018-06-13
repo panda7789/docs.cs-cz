@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640365"
 ---
 # <a name="the-source-folder-does-not-exist"></a>Zdrojová složka neexistuje.
 Jste se pokusili operace, která odkazuje na zdrojovou složku, která neexistuje. To může být výsledkem poskytnutí cestu nesprávný soubor.  

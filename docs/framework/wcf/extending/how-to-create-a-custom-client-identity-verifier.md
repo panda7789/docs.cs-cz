@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804473"
 ---
 # <a name="how-to-create-a-custom-client-identity-verifier"></a>Postupy: vytvoření Identity ověřovatel vlastní klienta
 *Identity* funkce služby Windows Communication Foundation (WCF) umožňuje klientům předem určit očekávanou identitu služby. Vždy, když server se ověří na klienta, je identita kontrolovat očekávanou identitu. (Vysvětlení identit a jak to funguje, najdete v článku [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).)  

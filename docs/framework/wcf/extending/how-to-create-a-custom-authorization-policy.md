@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804232"
 ---
 # <a name="how-to-create-a-custom-authorization-policy"></a>Postupy: Vytvoření vlastní zásady autorizace
 Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) podporuje ověřování na základě deklarace identity na modelu. Deklarace identity jsou extrahovány z tokenů, volitelně zpracovává vlastní zásady autorizace a pak umístit do <xref:System.IdentityModel.Policy.AuthorizationContext> , pak může být prověřen pro autorizační rozhodnutí. Vlastní zásadu lze použít na transformaci deklarací od příchozí tokeny do očekávaného aplikaci deklarací identity. Tímto způsobem může být aplikační vrstvu izolované od podrobnosti o různé deklarace obsloužených různé typy tokenů, které podporuje WCF. Toto téma ukazuje, jak implementovat vlastní zásady autorizace a postup přidání ke kolekci zásady, které používá služba pro tuto zásadu.  

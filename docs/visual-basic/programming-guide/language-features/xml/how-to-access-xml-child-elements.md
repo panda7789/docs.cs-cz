@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649201"
 ---
 # <a name="how-to-access-xml-child-elements-visual-basic"></a>Postupy: Přístup k podřízeným elementům XML (Visual Basic)
 Tento příklad ukazuje způsob použití podřízená osa – vlastnost přístup všech podřízených elementů XML, které mají zadaný název v elementu XML. Konkrétně používá <xref:System.Xml.Linq.XElement.Value%2A> vlastnost, která má získat hodnotu první prvek v kolekci, která `name` vrátí vlastnost podřízené osy. `name` Vlastnost osy podřízeného získá všech podřízených elementů s názvem `phone` v `contact` objektu. Tento příklad také používá `phone` vlastnost osy podřízeného přístup všech podřízených elementů s názvem `phone` , jsou součástí `contact` objektu.  

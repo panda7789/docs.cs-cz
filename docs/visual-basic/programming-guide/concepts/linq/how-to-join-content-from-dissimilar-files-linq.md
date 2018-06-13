@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643533"
 ---
 # <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>Postupy: spojení obsahu z Nepodobných souborů (LINQ) (Visual Basic)
 Tento příklad ukazuje, jak propojit data z dva soubory s položkami oddělenými čárkou, které sdílejí společné hodnotu, která se používá jako odpovídající klíč. Tento postup může být užitečné, pokud budete muset kombinovat data ze dvou tabulek, nebo z tabulky a ze souboru, který má jiný formát do nového souboru. Příklad pro práci s jakýkoli druh strukturovaných textových můžete upravit.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808764"
 ---
 # <a name="how-to-control-the-type-of-a-projection-c"></a>Postupy: řízení typu projekce (C#)
 Projekce je proces trvá jednu sadu dat, je filtrování, změna jeho tvar a i změna jeho typu. Většina výrazy dotazů provést projekce. Většina výrazy dotazu uvedené v této sekci vyhodnocení <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, ale můžete řídit typ projekce k vytvoření kolekce jiných typů. Toto téma ukazuje, jak to udělat.  

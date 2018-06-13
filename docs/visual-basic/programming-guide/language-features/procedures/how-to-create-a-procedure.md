@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649260"
 ---
 # <a name="how-to-create-a-procedure-visual-basic"></a>Postupy: Vytvoření procedury (Visual Basic)
 Uzavřete procedury mezi počáteční příkaz deklarace (`Sub` nebo `Function`) a příkazu koncová deklarace (`End Sub` nebo `End Function`). Všechny postup kód je mezi těmito příkazy.  

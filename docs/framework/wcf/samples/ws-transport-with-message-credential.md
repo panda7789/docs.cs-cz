@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810145"
 ---
 # <a name="ws-transport-with-message-credential"></a>Přenos WS s pověřením zpráv
 Tento příklad znázorňuje použití přenosu zabezpečení SSL v kombinaci s pověření klienta provádí ve zprávě. V tomto příkladu `wsHttpBinding` vazby.  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654883"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>Napište svůj první dotaz LINQ (Visual Basic)
 A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou vyjádřeny v jazyce vyhrazené dotazu. V průběhu času různé jazyky byly vyvinuty pro různé typy datových zdrojů, například SQL pro relační databáze a XQuery pro formát XML. Díky tomu je nezbytné pro vývojáře aplikace Další informace o nový jazyk dotazu pro každý typ zdroje dat nebo formát dat, která je podporována.  

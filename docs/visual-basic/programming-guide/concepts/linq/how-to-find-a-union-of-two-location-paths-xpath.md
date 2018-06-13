@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642637"
 ---
 # <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-visual-basic"></a>Postupy: vyhledání spojení dvě cesty umístění (XPath-technologie LINQ to XML) (Visual Basic)
 Výraz XPath umožňuje najít sjednocení výsledky dvě cesty XPath umístění.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644872"
 ---
 # <a name="linq-and-reflection-visual-basic"></a>LINQ a reflexe (Visual Basic)
 Odraz knihovna tříd rozhraní .NET Framework rozhraní API slouží k ověření metadata v sestavení rozhraní .NET a vytváření kolekcí typů, členy typu, parametry a tak dále, které jsou v této sestavě. Protože tyto kolekce podporují obecná `IEnumerable` rozhraní, můžete zadat dotaz pomocí jazyka LINQ.  

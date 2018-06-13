@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647758"
 ---
 # <a name="efficient-use-of-data-types-visual-basic"></a>Účinné používání datových typů (Visual Basic)
 Nedeklarovaný proměnných a proměnných deklarovaných bez datový typ přiřazené `Object` datového typu. To umožňuje snadno vytvářet programy rychle, ale může to způsobit je provést pomaleji.  

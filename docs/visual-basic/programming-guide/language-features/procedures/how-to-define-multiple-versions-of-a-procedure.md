@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649809"
 ---
 # <a name="how-to-define-multiple-versions-of-a-procedure-visual-basic"></a>Postupy: Definice více verzí procedury (Visual Basic)
 Můžete definovat procedury ve více verzí podle *přetížení* jeho pomocí se stejným názvem, ale seznam různých parametrů pro každou verzi. Účelem přetížení je definovat několik úzce související verzí procedury bez nutnosti jejich odlišení podle názvu.  

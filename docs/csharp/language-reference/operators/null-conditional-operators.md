@@ -17,6 +17,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457797"
 ---
 # <a name="-and--null-conditional-operators-c-and-visual-basic"></a>?. a? [] null podmíněné operátory (C# a Visual Basic)
 Testuje hodnotu levé operand pro hodnotu null, před provedením přístup ke členu (`?.`) nebo index (`?[]`) operaci; vrátí `null` Pokud je výsledkem levé operand `null`. 

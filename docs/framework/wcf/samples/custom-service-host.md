@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806793"
 ---
 # <a name="custom-service-host"></a>Vlastní hostitel služby
 Tento příklad ukazuje, jak použít vlastní odvozený ze <xref:System.ServiceModel.ServiceHost> tříd pro úpravu běhového chování služby. Tento přístup poskytuje opakovaně použitelné alternativu ke konfiguraci velký počet služeb v běžným způsobem. Ukázka také ukazuje, jak používat <xref:System.ServiceModel.Activation.ServiceHostFactory> třídu se má použít vlastní hostitel služby v Internetové informační služby (IIS) nebo služby Aktivace procesů systému Windows (WAS) hostitelské prostředí.  

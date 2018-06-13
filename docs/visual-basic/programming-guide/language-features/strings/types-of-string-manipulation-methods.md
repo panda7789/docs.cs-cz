@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648691"
 ---
 # <a name="types-of-string-manipulation-methods-in-visual-basic"></a>Typy metod manipulace s řetězci v jazyce Visual Basic
 K analýze a manipulaci s vaší řetězce několika různými způsoby. Některé metody jsou součástí jazyka Visual Basic a jiné jsou vyplývajících z `String` třídy.  
