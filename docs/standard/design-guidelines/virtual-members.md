@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573084"
 ---
 # <a name="virtual-members"></a>Virtuální členové
 Virtuální členové lze přepsat, čímž dojde ke změně chování podtřídy. Jsou velmi podobné zpětná volání z hlediska rozšiřitelnosti, které poskytují, ale jsou lepší z hlediska provádění výkonu a využití paměti. Virtuální členové zaregistrované navíc přirozenější ve scénářích, které vyžadují speciální vytváření druh existující typ (specializace).  

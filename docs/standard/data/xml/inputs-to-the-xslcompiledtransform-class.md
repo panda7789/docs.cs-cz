@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572837"
 ---
 # <a name="inputs-to-the-xslcompiledtransform-class"></a>Vstupy XslCompiledTransform – třída
 <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> Metoda přijímá tři vstupních typů pro zdrojový dokument: objekt, který implementuje <xref:System.Xml.XPath.IXPathNavigable> rozhraní <xref:System.Xml.XmlReader> objekt, který čte zdrojový dokument nebo řetězce URI.  

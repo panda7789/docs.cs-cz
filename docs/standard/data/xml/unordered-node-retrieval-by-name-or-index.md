@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572938"
 ---
 # <a name="unordered-node-retrieval-by-name-or-index"></a>Neseřazený uzlu načítání podle názvu nebo Index
 **XmlNamedNodeMap** je popsána ve specifikaci World Wide Web Consortium (W3C) jako NamedNodeMap a je potřeba pro zpracování neuspořádaný sada uzlů možnost odkaz uzly index nebo název. Jediným způsobem, jak máte přístup **XmlNamedNodeMap** je při **XmlNamedNodeMap** je vrácen prostřednictvím metody nebo vlastnosti. Existují tři metody nebo vlastnosti, které vracejí **XmlNamedNodeMap**:  

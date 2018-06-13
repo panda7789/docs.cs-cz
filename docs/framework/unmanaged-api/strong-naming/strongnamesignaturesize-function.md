@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33461198"
 ---
 # <a name="strongnamesignaturesize-function"></a>StrongNameSignatureSize – funkce
 Vrátí velikost podpis silného názvu. `StrongNameSignatureSize` se obvykle používá kompilátory Chcete-li zjistit, kolik místa vyhradit v souboru při vytváření sestavení se zpožděním podepsané.  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579155"
 ---
 # <a name="garbage-collection-notifications"></a>Oznámení pro kolekci paměti
 Existují situace, ve kterých může kolekci úplného uvolňování paměti (který je kolekcí generace 2) podle modul common language runtime nepříznivě ovlivnit výkon. To může být problém zvláště u serverů, které zpracovávají velké objemy požadavků. v takovém případě dlouho uvolňování může způsobit časový limit požadavku. Pokud chcete zabránit úplnou kolekci z výskytu kritické období, můžete být upozorněni, kolekci úplného uvolňování paměti se blíží a pak proveďte akce přesměrování zatížení k jiné instanci serveru. Můžete může také způsobit kolekci sami, za předpokladu, že aktuální instance serveru nemusí zpracovávat žádosti.  

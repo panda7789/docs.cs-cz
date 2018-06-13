@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572031"
 ---
 # <a name="how-to-write-characters-to-a-string"></a>Postupy: Zápis znaků do řetězce
 Následující příklady kódu zápis znaků synchronně a asynchronně z pole znaků do řetězce.  
