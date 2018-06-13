@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806829"
 ---
 # <a name="activity"></a>Aktivita
 Toto téma popisuje aktivity trasování v modelu trasování Windows Communication Foundation (WCF). Aktivity jsou zpracování jednotek, které pomůže uživateli zúžit obor selhání. Chyby, ke kterým dochází ve stejné aktivitě přímo souvisí. Operace se například nezdaří, protože zpráva dešifrování se nezdařilo. Trasování pro operace a Chyba při dešifrování zprávy zobrazí ve stejné aktivitě, zobrazující přímé korelace mezi chyby dešifrování a chybu požadavku.  

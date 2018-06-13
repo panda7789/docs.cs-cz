@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644274"
 ---
 # <a name="functional-programming-vs-imperative-programming-visual-basic"></a>Funkční programování vs. Imperativní programování (Visual Basic)
 Toto téma porovnává a výrazně liší od funkční programování s tradičnější imperativní programování (procedurální).  

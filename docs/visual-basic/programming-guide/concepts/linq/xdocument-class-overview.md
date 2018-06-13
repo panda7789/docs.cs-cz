@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651181"
 ---
 # <a name="xdocument-class-overview-visual-basic"></a>Přehled XDocument třídy (Visual Basic)
 Toto téma představuje <xref:System.Xml.Linq.XDocument> třídy.  

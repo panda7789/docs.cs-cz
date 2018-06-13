@@ -14,6 +14,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810002"
 ---
 # <a name="administration-and-diagnostics"></a>Správa a diagnostika
 Windows Communication Foundation (WCF) poskytuje bohatou sadu funkcí, které umožňují monitorovat různých fázích životního aplikace. Například můžete použít konfiguraci nastavení služeb a klientů v nasazení. WCF obsahuje velké sady čítačů výkonu můžete měřit výkon vaší aplikace. WCF taky zpřístupňuje dat kontroly služby za běhu prostřednictvím poskytovatele WCF Windows Management Instrumentation (WMI). Při vyskytne chyba nebo spustí funguje nesprávně aplikace, můžete zobrazit, pokud nic významné došlo k chybě v protokolu událostí. Můžete také použít protokolování zpráv a trasování a zjistěte, jaké události jsou situaci klient server ve vaší aplikaci. Tyto funkce pomáhat vývojáře a IT odborníky odstraňování aplikace WCF při nepracuje správně.  

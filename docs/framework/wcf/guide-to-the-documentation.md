@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805535"
 ---
 # <a name="guide-to-the-documentation"></a>Průvodce dokumentací
 Pokud je zde pokyny v dokumentaci Windows Communication Foundation (WCF). Propojené dokumenty doporučují se, že počáteční body seskupené podle konkrétní zájmů a úrovně odborných znalostí.  

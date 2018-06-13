@@ -11,6 +11,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808442"
 ---
 # <a name="securing-clients"></a>Zabezpečení klientů
 Ve Windows Communication Foundation (WCF), služba určuje požadavky na zabezpečení pro klienty. To znamená službu určuje jakém režimu zabezpečení používat a jestli klient musí poskytnout přihlašovací údaje. Proces zabezpečení klienta, proto je jednoduchý: použijte metadata získat ze služby (Pokud je publikována) a sestavení klienta. Metadata Určuje, jak nakonfigurovat klienta. Pokud služba vyžaduje, aby klient zadejte pověření, je nutné získat přihlašovací údaje, které vyhovuje požadavku. Toto téma popisuje proces podrobněji. Další informace o vytvoření zabezpečeného služby najdete v tématu [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  

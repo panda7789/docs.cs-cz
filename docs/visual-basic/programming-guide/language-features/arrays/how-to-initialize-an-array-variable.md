@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651567"
 ---
 # <a name="how-to-initialize-an-array-variable-in-visual-basic"></a>Postupy: Inicializace proměnné pole v jazyce Visual Basic
 Inicializace proměnné pole zahrnutím literál v pole `New` klauzule a zadat počáteční hodnoty pole. Můžete buď zadat typ nebo umožněte její odvodit z hodnot v poli literálu. Další informace o tom, jak je odvodit typ, najdete v části "Vyplní pole s počáteční hodnoty" v [pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  

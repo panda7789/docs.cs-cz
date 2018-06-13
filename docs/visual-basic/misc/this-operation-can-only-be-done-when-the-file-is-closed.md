@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640277"
 ---
 # <a name="this-operation-can-only-be-done-when-the-file-is-closed"></a>Tuto operaci lze provést pouze, pokud soubor se zavřel.
 Při otevření souboru má byl proveden pokus o provedení určité operace, které lze provést pouze při zavření souboru.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648304"
 ---
 # <a name="retrieving-the-paragraphs-and-their-styles-visual-basic"></a>Načítání odstavců a jejich styly (Visual Basic)
 V tomto příkladu jsme vytvořit dotaz, který načte odstavce uzly z WordprocessingML dokumentu. Také identifikuje styl jednotlivých odstavců.  

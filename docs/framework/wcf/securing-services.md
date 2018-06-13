@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808836"
 ---
 # <a name="securing-services"></a>Zabezpečení služeb
 Zabezpečení služby Windows Communication Foundation (WCF) se skládá ze dvou primární požadavky: přenos zabezpečení a autorizaci. (Třetí požadavek, auditování událostí zabezpečení, je popsaný v [auditování](../../../docs/framework/wcf/feature-details/auditing-security-events.md).) Stručně řečeno zabezpečení přenosu zahrnuje ověření (ověření identity služby a klient), důvěrnost (šifrování zpráv) a integrita (digitální podepisování, které zjistit případnou manipulaci). Autorizace je řízení přístupu k prostředkům, například povolení jenom mohou uživatelé s oprávněním ke čtení souboru. Pomocí funkce služby WCF, požadavky na dva primární jsou snadno implementovat.  

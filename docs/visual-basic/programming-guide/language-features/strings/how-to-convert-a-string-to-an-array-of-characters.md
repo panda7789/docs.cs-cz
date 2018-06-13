@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648616"
 ---
 # <a name="how-to-convert-a-string-to-an-array-of-characters-in-visual-basic"></a>Postupy: Převod řetězce na pole znaků v jazyce Visual Basic
 Někdy je užitečné používat data o znaky v řetězec vašeho a pozice z těchto znaků v řetězci, například když analyzujete řetězec. Tento příklad ukazuje, jak můžete získat pole znaky v řetězci voláním řetězec <xref:System.String.ToCharArray%2A> metoda.  

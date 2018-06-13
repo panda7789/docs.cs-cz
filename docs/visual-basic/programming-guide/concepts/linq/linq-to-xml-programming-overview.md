@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645691"
 ---
 # <a name="linq-to-xml-programming-overview-visual-basic"></a>Technologie LINQ to přehled programování v XML (Visual Basic)
 Tato témata poskytují informace o základní přehled o [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] třídy a také podrobné informace o tři nejdůležitější tříd.  

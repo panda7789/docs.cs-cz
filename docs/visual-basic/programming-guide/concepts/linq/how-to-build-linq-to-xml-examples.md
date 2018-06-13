@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641222"
 ---
 # <a name="how-to-build-linq-to-xml-examples-visual-basic"></a>Postupy: sestavení technologie LINQ to XML Příklady (Visual Basic)
 V různých fragmenty kódu a příkladech v této dokumentaci používání tříd a typů z různých obory názvů. Při kompilování kód jazyka Visual Basic, budete muset zadat příslušné `Imports` příkazy.  

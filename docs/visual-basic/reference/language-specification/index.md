@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648665"
 ---
 # <a name="visual-basic-language-specification"></a>Specifikace jazyka Visual Basic
 Specifikace jazyka Visual Basic je autoritativní zdroj odpovědi na všechny otázky týkající se gramatika jazyka Visual Basic a syntaxe. Obsahuje podrobné informace o jazyce, včetně mnoha bodů, které nejsou zahrnuté v referenční dokumentaci k nástroji jazyka Visual Basic.  

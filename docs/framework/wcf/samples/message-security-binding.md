@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805038"
 ---
 # <a name="message-security-binding"></a>Vazby zabezpečení zpráv
 Tato část obsahuje příklady vysvětlující vazby zabezpečení zpráv ve službách systému Windows ve službě WCF.  

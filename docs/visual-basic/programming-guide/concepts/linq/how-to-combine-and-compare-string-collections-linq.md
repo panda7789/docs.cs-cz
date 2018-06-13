@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644443"
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-visual-basic"></a>Postupy: kombinace a porovnávání kolekcí řetězců (LINQ) (Visual Basic)
 Tento příklad ukazuje způsob sloučení souborů, které obsahují řádků textu a pak výsledky seřaďte. Konkrétně ukazuje, jak provádět jednoduché zřetězení, spojení a průnik na dvě sady řádků textu.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637527"
 ---
 # <a name="public-member-39ltmembernamegt39-on-type-39lttypenamegt39-not-found"></a>Veřejné člen &#39; &lt;membername&gt; &#39; na typ &#39; &lt;typename&gt; &#39; nebyl nalezen
 Člen, který se pokoušíte získat přístup, nebyl nalezen. Této chybě může dojít při přístupu k neveřejným členy objektů pozdní vazbu.  

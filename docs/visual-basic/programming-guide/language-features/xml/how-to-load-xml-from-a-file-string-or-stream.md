@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647628"
 ---
 # <a name="how-to-load-xml-from-a-file-string-or-stream-visual-basic"></a>Postupy: Načtení XML ze souboru, řetězce nebo proudu (Visual Basic)
 Můžete vytvořit [XML – literály](../../../../visual-basic/language-reference/xml-literals/index.md) a naplnit je obsah z externího zdroje například souboru, řetězce nebo datový proud pomocí několika metod. Tyto metody jsou uvedeny v následujících příkladech.  

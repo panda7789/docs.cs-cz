@@ -11,6 +11,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809398"
 ---
 # <a name="extending-security"></a>Rozšíření zabezpečení
 Abychom vyhověli nové typy deklarací identity a vlastní tokeny, můžete rozšířit Infrastruktura zabezpečení služby Windows Communication Foundation (WCF). Témata v této části ukazují, jak to provést.  

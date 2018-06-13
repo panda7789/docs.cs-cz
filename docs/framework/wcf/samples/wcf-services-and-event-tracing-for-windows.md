@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809830"
 ---
 # <a name="wcf-services-and-event-tracing-for-windows"></a>Služby WCF a Trasování událostí pro Windows
 Tento příklad znázorňuje způsob použití analytické trasování ve Windows Communication Foundation (WCF) pro vydávání událostí v události trasování pro Windows (ETW). Analytické trasování jsou události vygenerované v klíčových bodů v zásobníku WCF, které umožňují řešení potíží s služby WCF v provozním prostředí.  

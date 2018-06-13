@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647228"
 ---
 # <a name="how-to-dispose-of-a-system-resource-visual-basic"></a>Postupy: Odstranění systémového prostředku (Visual Basic)
 Můžete použít `Using` bloku zaručit, že systém uvolní prostředku při ukončení bloku kódu. To je užitečné, pokud používáte systémový prostředek, který využívá velké množství paměti, nebo že ostatní součásti také chcete použít.  

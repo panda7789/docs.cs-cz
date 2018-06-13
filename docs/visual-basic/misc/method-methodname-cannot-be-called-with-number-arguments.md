@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636116"
 ---
 # <a name="method-39ltmethodnamegt39-cannot-be-called-with-ltnumbergt-arguments"></a>Metoda &#39; &lt;methodname&gt; &#39; nejde volat s &lt;číslo&gt; argumenty
 Volání metody obsahuje nesprávný počet argumentů.  
