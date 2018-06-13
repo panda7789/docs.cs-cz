@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33601150"
 ---
 # <a name="ltexceptiongt-visual-basic"></a>&lt;výjimka&gt; (Visual Basic)
 Určuje, výjimek, které může být vyvolána.  

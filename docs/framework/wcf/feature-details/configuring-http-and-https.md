@@ -9,6 +9,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33956483"
 ---
 # <a name="configuring-http-and-https"></a>Konfigurace HTTP a HTTPS
 Služby WCF a klienti mohou komunikovat prostřednictvím protokolu HTTP a HTTPS. Konfigurace nastavení protokolu HTTP nebo HTTPS pomocí Internetové informační služby (IIS), nebo pomocí nástroje příkazového řádku. Když je služba WCF hostované v části Nastavení služby IIS protokolu HTTP nebo HTTPS lze konfigurovat v rámci služby IIS (pomocí nástroje inetmgr.exe). Pokud služby WCF s vlastním hostováním, HTTP nebo HTTPS je nakonfigurováno pomocí nástroje příkazového řádku.  

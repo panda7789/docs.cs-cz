@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524063"
 ---
 # <a name="double-buffered-graphics"></a>Grafiky s dvojitou vyrovnávací pamětí
 Blikání problém je běžný, při programování grafiky. Grafické operace, které vyžadují více operací komplexní Malování může způsobit vykreslené obrázky, které chcete blikat nebo mají v opačném případě nemůže být přijata vzhled. Chcete-li tyto problémy vyřešit, rozhraní .NET Framework poskytuje přístup k dvojité ukládání do vyrovnávací paměti.  

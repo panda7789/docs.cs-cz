@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522041"
 ---
 # <a name="how-to-copy-pixels-for-reducing-flicker-in-windows-forms"></a>Postupy: Kopírování pixelů pro omezení blikání v rozhraní Windows Forms
 Při animaci jednoduchý obrázek uživatelů může někdy dojít blikání nebo jiných nežádoucího vizuálních efektů. Jeden způsob, jak omezit tento problém je použití procesu "přenos bitových bloků" na na obrázku. Přenos bitových bloků je "bitového bloku přenos" Barva dat z počátku obdélníku pixelů na cílovém obdélník pixelů.  

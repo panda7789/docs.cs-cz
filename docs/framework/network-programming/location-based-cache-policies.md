@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394504"
 ---
 # <a name="location-based-cache-policies"></a>Na základě umístění mezipaměti zásad
 Zásady na základě umístění mezipaměti definuje aktuálnosti platné položky v mezipaměti založené na požadovaný prostředek mohou odkud. Prostředek v mezipaměti je platný Pokud použití nemá není porušují požadavky na zadaný server opětovné ověření. Na základě umístění mezipaměti není vytvořená zásada, programově pomocí <xref:System.Net.Cache.RequestCachePolicy> nebo <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru třídy. Typ zásady na základě polohy předaný konstruktoru pomocí <xref:System.Net.Cache.RequestCacheLevel> nebo <xref:System.Net.Cache.HttpRequestCacheLevel> hodnota výčtu. Příklady kódu, které vytvářejí na základě umístění mezipaměti zásady, najdete v části [postupy: nastavení zásady na základě umístění mezipaměti pro aplikaci](../../../docs/framework/network-programming/how-to-set-a-location-based-cache-policy-for-an-application.md). Následující části popisují jednotlivé typy zásad na základě umístění mezipaměti pro protokol HTTP (http a https) prostředky.  

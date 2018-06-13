@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605027"
 ---
 # <a name="group-by-clause-visual-basic"></a>Group By – klauzule (Visual Basic)
 Skupiny elementy výsledků dotazu. Můžete také použít k použití agregační funkce pro každou skupinu. Operace seskupení je založena na jeden nebo více klíčů.  

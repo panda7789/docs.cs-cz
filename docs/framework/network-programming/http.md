@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394456"
 ---
 # <a name="http"></a>HTTP
 Rozhraní .NET Framework poskytuje komplexní podporu pro protokol HTTP, který tvoří většina všechny přenosy z Internetu, se <xref:System.Net.HttpWebRequest> a <xref:System.Net.HttpWebResponse> třídy. Tyto třídy odvozené od <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse>, jsou vráceny ve výchozím nastavení vždy, když statickou metodu <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> zaznamená identifikátor URI začínající "http" nebo "https". Ve většině případů **WebRequest** a **WebResponse** třídy poskytují všechny možnosti, které je potřeba provést žádost, ale pokud budete potřebovat přístup k funkce specifické pro HTTP, které jsou zveřejněné jako vlastnosti, které přiřazení typu Tyto třídy **HttpWebRequest** nebo **HttpWebResponse**.  

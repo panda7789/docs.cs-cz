@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523566"
 ---
 # <a name="how-to-access-specific-items-in-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Postupy: Přístup ke konkrétním položkám v ovládacím prvku Windows Forms ComboBox, ListBox nebo CheckedListBox
 Přístup ke konkrétní položky ve Windows Forms – pole se seznamem, seznamu nebo pole se seznamem zaškrtnuté je nezbytné úlohy. Umožňuje programu určit, co je v seznamu, na dané pozici.  

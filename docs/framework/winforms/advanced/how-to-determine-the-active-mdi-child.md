@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521715"
 ---
 # <a name="how-to-determine-the-active-mdi-child"></a>Postupy: Určení podřízeného prvku aktivního MDI
 V některých případech budete chtít zadat příkaz, který funguje na ovládací prvek, který má právě fokus na formuláři aktuálně aktivních podřízených. Předpokládejme například, že chcete kopírovat vybraný text z textového pole podřízené formuláře do schránky. By vytvoření procedury, která zkopíruje vybraný text do schránky pomocí <xref:System.Windows.Forms.Control.Click> událostí kopírovat položky nabídky v nabídce standardní upravit.  

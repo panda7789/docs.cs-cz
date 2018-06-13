@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523120"
 ---
 # <a name="how-to-tile-a-shape-with-an-image"></a>Postupy: Dlaždicové vyplnění obrazce pomocí obrázku
 Stejně jako dlaždice mohou být umístěny vedle sebe tak, aby pokrývalo podlaží, obdélníková bitové kopie můžete umístěny vedle sebe výplně (dlaždice) obrazce. Na dlaždici vnitřek obrazce pomocí textury štětce. Když vytvoříte <xref:System.Drawing.TextureBrush> objektu jednoho z argumentů je předat do konstruktoru je <xref:System.Drawing.Image> objektu. Pokud používáte texture štětce k vyplnění vnitřku tvaru, tvar je vyplněn opakovaných kopie tuto bitovou kopii.  

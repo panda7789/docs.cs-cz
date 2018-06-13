@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604418"
 ---
 # <a name="recommended-xml-tags-for-documentation-comments-visual-basic"></a>Doporučené značky XML pro dokumentační komentáře (Visual Basic)
 Visual Basic – kompilátor může zpracovat dokumentační komentáře v kódu do souboru XML. Další nástroje můžete používat ke zpracování souboru XML do dokumentace.  

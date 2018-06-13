@@ -86,6 +86,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605079"
 ---
 # <a name="type-conversion-functions-visual-basic"></a>Funkce pro převod typů (Visual Basic)
 Tyto funkce jsou kompilované vložené, což znamená, že kód převod je součástí kód, který se vyhodnotí výraz. Někdy je žádná volání procedury k provádění převodu, což zvyšuje výkon. Jednotlivé funkce převede výraz na určitého datového typu.  

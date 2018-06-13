@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33602752"
 ---
 # <a name="value-of-type-39type139-cannot-be-converted-to-39type239"></a>Hodnotu typu &#39;type1&#39; nelze převést na &#39;type2&#39;
 Hodnotu typu 'type1' nelze převést na 'type2'. Vlastnost 'Hodnota' můžete získat hodnotu řetězce první prvek '\<parentElement > ".  

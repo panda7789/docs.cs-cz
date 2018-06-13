@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394329"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework – průvodce nasazením pro administrátory
 Tento článek podrobně popisuje, jak můžete nasadit správce systému [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho závislé součásti systému přes síť pomocí Microsoft System Center Configuration Manager. V tomto článku se předpokládá, že všechny cílové klientské počítače splňují minimální požadavky rozhraní .NET Framework. Seznam softwarové a hardwarové požadavky pro instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], najdete v části [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).  

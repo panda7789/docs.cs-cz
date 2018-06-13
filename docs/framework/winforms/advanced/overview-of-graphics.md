@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523541"
 ---
 # <a name="overview-of-graphics"></a>Přehled grafiky
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je programovací rozhraní aplikace (API), která tvoří subsystém operačního systému Microsoft Windows. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] zodpovídá za zobrazení informací na obrazovky a tiskárny. Jak naznačuje název [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je nástupcem [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)], rozhraní grafických zařízení, která je zahrnutá v dřívějších verzích systému Windows.  

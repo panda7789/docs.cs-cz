@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408574"
 ---
 # <a name="icordebugcreateprocess-method"></a>ICorDebug::CreateProcess – metoda
 Spustí se proces a jeho primární vlákno pod kontrolou ladicího programu.  

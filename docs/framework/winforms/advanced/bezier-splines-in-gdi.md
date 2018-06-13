@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517570"
 ---
 # <a name="b233zier-splines-in-gdi"></a>B&#233;zier křivky v GDI +
 Bézierovy křivky je křivka určeného čtyři body: dva koncové body (p1 a p2) a dva kontrolních bodů (c1 a c2). Křivku začíná na p1 a p2 končí. Křivku nepředává prostřednictvím kontrolní body, ale kontrolní body fungovat jako magnets, stahování křivku v určitých pokynů a ovlivňování způsob, jakým zatáčkách křivku. Následující obrázek znázorňuje Bézierovy křivky spolu s jeho koncových bodů a kontrolní body.  

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644118"
 ---
 # <a name="basic-query-operations-visual-basic"></a>Základní operace dotazů (Visual Basic)
 Toto téma obsahuje stručný úvod do [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazy v jazyce Visual Basic a některé typické druhy operace, které můžete provádět v dotazu. Další informace naleznete v následujících tématech:  

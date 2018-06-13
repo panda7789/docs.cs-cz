@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640532"
 ---
 # <a name="the-connectiontimeout-must-be-greater-than-0"></a>ConnectionTimeout musí být větší než 0.
 Při odesílání a stahování souborů s [My.Computer.Network](xref:Microsoft.VisualBasic.Devices.Network), je nutné zadat `connectionTimeout` větší než `0`.  

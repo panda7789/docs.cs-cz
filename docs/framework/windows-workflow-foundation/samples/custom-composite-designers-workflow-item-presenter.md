@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517115"
 ---
 # <a name="custom-composite-designers---workflow-item-presenter"></a>Vlastní složený Designer - přednášejícího položky pracovního postupu
 <xref:System.Activities.Presentation.WorkflowItemPresenter> Je typ klíče v WF návrháře programovací model, který umožňuje vytváření "rozevírací zónu" umístění libovolné aktivity. Tento příklad ukazuje, jak stavět Návrhář aktivity tohoto povrchy takovou "rozevírací zónu."  

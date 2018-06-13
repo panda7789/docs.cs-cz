@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33602785"
 ---
 # <a name="statements-visual-basic"></a>Příkazy (Visual Basic)
 Témata v této části obsahují tabulky deklarace jazyka Visual Basic a spustitelné příkazy a důležité seznamů, které platí pro mnoho příkazů.  

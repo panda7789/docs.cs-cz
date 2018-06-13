@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646380"
 ---
 # <a name="constants-and-enumerations-in-visual-basic"></a>Konstanty a výčty v jazyce Visual Basic
 Konstanty představují způsob, jak používat smysluplný názvy místo hodnotu, která se nemění. Konstanty ukládat hodnoty, které jak již název napovídá, zůstat konstantní po spuštění aplikace. Konstanty můžete zadat smysluplný názvy, namísto čísla, provádění kódu lépe čitelný.  

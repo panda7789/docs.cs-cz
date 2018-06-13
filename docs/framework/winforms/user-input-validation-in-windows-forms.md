@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541804"
 ---
 # <a name="user-input-validation-in-windows-forms"></a>Ověřování uživatelského vstupu ve Windows Forms
 Při zadávání dat do aplikace, můžete ověřit platnost data předtím, než je vaše aplikace používá. Může vyžadovat určité textová pole nesmí být nulová délka, naformátovat pole jako telefonní číslo nebo jiný typ dat ve správném formátu, nebo že řetězec neobsahuje žádné nebezpečné znaky, které by mohly být použity k ohrožení zabezpečení databáze. Windows Forms poskytuje několik způsobů ověření vstupu ve vaší aplikaci.  

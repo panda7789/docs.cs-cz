@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647680"
 ---
 # <a name="how-to-search-within-a-string-visual-basic"></a>Postupy: Vyhledávání v řetězci (Visual Basic)
 Tento příklad volá <xref:System.String.IndexOf%2A> metodu <xref:System.String> objekt, který chcete nahlásit index prvního výskytu dílčí řetězec.  

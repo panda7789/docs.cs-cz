@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642869"
 ---
 # <a name="how-to-retrieve-the-shallow-value-of-an-element-visual-basic"></a>Postupy: načtení hodnoty bez podstruktury elementu (Visual Basic)
 Toto téma ukazuje, jak získat bez podstruktury hodnotu elementu. Bez podstruktury hodnota je hodnota pouze konkrétní elementu oproti hloubkové hodnotu, která obsahuje hodnoty všechny podřízené elementy zřetězen do jednoho řetězce.  

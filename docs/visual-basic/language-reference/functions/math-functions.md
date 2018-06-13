@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604533"
 ---
 # <a name="math-functions-visual-basic"></a>Matematické funkce (Visual Basic)
 Metody <xref:System.Math?displayProperty=nameWithType> třída poskytnout trigonometrické, logaritmické a další běžné matematické funkce.  

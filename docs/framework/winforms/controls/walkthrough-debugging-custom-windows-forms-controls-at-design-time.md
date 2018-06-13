@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542035"
 ---
 # <a name="walkthrough-debugging-custom-windows-forms-controls-at-design-time"></a>Návod: Ladění vlastních ovládacích prvků Windows Forms během návrhu
 Při vytváření vlastního ovládacího prvku často zjistíte, je nezbytné k ladění její chování v době návrhu. To platí hlavně vytváříte-li vlastní návrháře pro vaše vlastní ovládací prvek. Podrobnosti najdete v tématu [návod: vytváření funkce systému Windows Forms ovládací prvek, trvá využít nástroje Visual Studio návrhu](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md).  

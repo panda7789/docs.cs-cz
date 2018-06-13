@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518099"
 ---
 # <a name="dynamicactivity-creation"></a>Vytvoření DynamicActivity
 Tento příklad ukazuje dva různé způsoby vytvoření aktivitu pomocí modulu runtime <xref:System.Activities.DynamicActivity> aktivity.  

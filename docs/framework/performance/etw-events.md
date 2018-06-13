@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395301"
 ---
 # <a name="etw-events-in-the-net-framework"></a>Události Trasování událostí pro Windows v rozhraní .NET Framework
 Trasování událostí pro Windows (ETW) je systém vysoce výkonné, nízkou režii, škálovatelné trasování poskytované operační systémy Windows. Je doplňuje podporu ladění a profilování poskytované rozhraní .NET Framework a slouží k řešení potíží s celou řadu scénářů.  

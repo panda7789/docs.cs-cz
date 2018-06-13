@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33410095"
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (nástroj zásad zabezpečení přístupu kódu)
 Nástroj Code Access Security (CAS) Policy (Caspol.exe) umožňuje uživatelům a správcům měnit zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad podniku.  
@@ -102,7 +103,7 @@ caspol [options]
 |**-name "** *název* **"**|Pokud se používá s **– addgroup** možnost, určuje skriptování název pro skupinu kódu na Přidat. Pokud se používá s **- chggroup** možnost, určuje skriptování název pro skupinu kódu na Upravit. *Název* argument musí být uzavřena do uvozovek. *Název* argument nesmí začínat číslem a může obsahovat pouze A-Z, 0-9 nebo podtržítko. Skupiny kódu lze odkazovat to *název* místo podle jejich číselného popisek. *Název* je také velmi užitečné při vytváření skriptů.|  
   
 ## <a name="remarks"></a>Poznámky  
- Zásada zabezpečení je vyjádřena pomocí tří úrovní zásad: počítačová, uživatelská a podniková. Sada oprávnění, kterou sestavení přijímá, je určena průnikem sad oprávnění povolených těmito třemi úrovněmi zásad. Každá úroveň zásad je reprezentována hierarchickou strukturou skupin kódu. Každá skupina kódu má podmínku členství, která určuje, který kód je členem této skupiny. Sada pojmenovaných oprávnění je rovněž asociována s každou skupinou kódu. Tato sada oprávnění určuje oprávnění, která modul runtime povoluje kódu splňujícímu podmínku členství. Hierarchie skupin kódu, společně se souvisejícími pojmenovanými sadami oprávnění, definuje a spravuje každou úroveň zásad zabezpečení. Můžete použít**– uživatel**, **- customuser**, **– počítač** a **-enterprise** možnosti můžete nastavit úroveň zásady zabezpečení.  
+ Zásada zabezpečení je vyjádřena pomocí tří úrovní zásad: počítačová, uživatelská a podniková. Sada oprávnění, kterou sestavení přijímá, je určena průnikem sad oprávnění povolených těmito třemi úrovněmi zásad. Každá úroveň zásad je reprezentována hierarchickou strukturou skupin kódu. Každá skupina kódu má podmínku členství, která určuje, který kód je členem této skupiny. Sada pojmenovaných oprávnění je rovněž asociována s každou skupinou kódu. Tato sada oprávnění určuje oprávnění, která modul runtime povoluje kódu splňujícímu podmínku členství. Hierarchie skupin kódu, společně se souvisejícími pojmenovanými sadami oprávnění, definuje a spravuje každou úroveň zásad zabezpečení. Můžete použít **– uživatel**, **- customuser**, **– počítač** a **-enterprise** možnosti můžete nastavit úroveň zásady zabezpečení.  
   
  Další informace o zásadách zabezpečení a jak modul runtime určuje, jaká oprávnění udělit kódu najdete v tématu [Správa zásad zabezpečení](http://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9).  
   

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542181"
 ---
 # <a name="how-to-run-procedures-at-set-intervals-with-the-windows-forms-timer-component"></a>Postupy: Spouštění procedur v nastavených intervalech pomocí součásti Windows Forms Timer
 V některých případech můžete chtít vytvořit proceduru, který se spustí na konkrétní časové intervaly, dokud smyčku dokončil nebo který bude spuštěn po uplynutí časového intervalu sady. <xref:System.Windows.Forms.Timer> Součást umožňuje tento postup.  
