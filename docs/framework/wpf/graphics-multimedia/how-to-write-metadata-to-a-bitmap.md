@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559415"
 ---
 # <a name="how-to-write-metadata-to-a-bitmap"></a>Postupy: Zápis metadat do bitmapy
 Tento příklad ukazuje, jak napsat metadata pro rastrový obrázek pomocí dotazovacího jazyka pro metadata.  

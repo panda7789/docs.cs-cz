@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520510"
 ---
 # <a name="walkthrough-creating-a-windows-service-application-in-the-component-designer"></a>Návod: Vytvoření aplikace spouštěné jako služba systému Windows v návrháři součástí
 Tento článek ukazuje, jak vytvořit jednoduchou aplikaci služby systému Windows v sadě Visual Studio, která zapisuje zprávy do protokolu událostí. Zde jsou základní kroky, které jste při vytváření a používání služby:  

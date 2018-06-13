@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33564518"
 ---
 # <a name="-escape-sequence--markup-extension"></a>{} Řídicí sekvence / rozšíření značek
 Poskytuje řídicí sekvence XAML pro hodnoty atributu. Řídicí sekvence umožňuje následující hodnoty atributu budou interpretovat jako literál.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33217136"
 ---
 # <a name="dynamic-c-reference"></a>dynamic (Referenční dokumentace jazyka C#)
 `dynamic` Typ umožňuje operace, ve kterých se vyskytuje obejít kontrolu typu v čase kompilace. Tyto operace jsou místo toho vyřešeny za běhu. `dynamic` Typ zjednodušuje přístup k rozhraní API modelu COM, jako je například rozhraní API Office automatizace a také pro dynamické rozhraní API, jako je například IronPython knihovny a k HTML Document Object Model (DOM).  

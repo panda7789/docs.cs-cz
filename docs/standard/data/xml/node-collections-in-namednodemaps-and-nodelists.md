@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568521"
 ---
 # <a name="node-collections-in-namednodemaps-and-nodelists"></a>Uzel kolekce v NamedNodeMaps a NodeLists
 Můžete načíst sadu uzly a umístí jej v kolekci seřazený nebo Neseřazený. Při uvedení sada uzlů do neuspořádaný kolekce, sada volá NamedNodeMap World Wide Web Consortium (W3C); můžete načíst data podle názvu nebo index u tohoto typu kolekce. Uvedení sada uzlů v uspořádanou kolekci volá seznamu W3C a data může načíst index počítaný od nuly. NamedNodeMaps a NodeLists jsou popsány pomocí W3C. Implementace rozhraní Microsoft .NET Framework pro NamedNodeMap je **XmlNamedNodeMap**, a seznamu je implementované **XmlNodeList**.  

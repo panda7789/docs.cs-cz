@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570334"
 ---
 # <a name="common-design-patterns"></a>Obecné vzory návrhu
 Existuje řada knih na softwaru vzory, vzor jazyky a antipatterns, které řeší velmi široký předmět vzory. Proto tato kapitola obsahuje pokyny a diskuzi související s velmi omezená sada schémat, které se často používají v návrhu rozhraní API rozhraní .NET Framework.  

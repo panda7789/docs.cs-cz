@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554882"
 ---
 # <a name="how-to-resize-rows-with-a-gridsplitter"></a>Postupy: Změna velikosti řádků pomocí prvku GridSplitter
 Tento příklad ukazuje, jak používat vodorovných <xref:System.Windows.Controls.GridSplitter> mezery mezi dva řádky v znovu distribuovat <xref:System.Windows.Controls.Grid> bez změnit rozměry <xref:System.Windows.Controls.Grid>.  

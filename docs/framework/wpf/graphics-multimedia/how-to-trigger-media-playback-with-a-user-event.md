@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561472"
 ---
 # <a name="how-to-trigger-media-playback-with-a-user-event"></a>Postupy: Spuštění přehrání média pomocí události uživatele
 Tento příklad ukazuje, jak synchronizovat přehrávání médií s událostí.  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569769"
 ---
 # <a name="how-to-pad-a-number-with-leading-zeros"></a>Postupy: Zarovnání čísla úvodními nulami
 Úvodní nuly na celé číslo můžete přidat pomocí "D" [standardního řetězce formátu čísel](../../../docs/standard/base-types/standard-numeric-format-strings.md) s specifikátorem přesnosti. Můžete přidat pomocí úvodní nuly celé číslo a čísla s plovoucí desetinnou čárkou [vlastní číselný formátovací řetězec](../../../docs/standard/base-types/custom-numeric-format-strings.md). Toto téma ukazuje, jak používat obě metody k zarovnání čísla úvodními nulami.  

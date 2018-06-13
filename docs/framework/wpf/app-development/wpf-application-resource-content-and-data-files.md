@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558262"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF
 [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] aplikace často závisí na soubory, které obsahují data spustitelný soubor, jako například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], obrázky, videa a zvuku. Windows Presentation Foundation (WPF) nabízí zvláštní podporu pro konfiguraci, identifikace a použití těchto typů datových souborů, které se nazývají datové soubory aplikace. Tato podpora se pohybuje kolem konkrétní sadu typy souborů dat aplikace, včetně:  

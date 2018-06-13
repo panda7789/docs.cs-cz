@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566805"
 ---
 # <a name="xclass-directive"></a>x:Class – direktiva
 Nakonfiguruje kompilace kódu XAML pro připojení částečné třídy mezi značek a kódu. Třídu kódu je definována v samostatném souboru kódu v [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)] jazyka, zatímco třídu kód se obvykle vytvoří pomocí generování kódu během kompilace XAML.  

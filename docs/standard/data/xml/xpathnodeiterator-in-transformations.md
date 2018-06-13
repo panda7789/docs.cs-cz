@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571321"
 ---
 # <a name="xpathnodeiterator-in-transformations"></a>XPathNodeIterator v transformace
 <xref:System.Xml.XPath.XPathNodeIterator> Poskytuje metody k iteraci v rámci sady uzlů vytvořené v důsledku dotaz XML Path Language (XPath) nebo fragment stromu výsledek převést na uzlu nastavte pomocí metody sada uzlů. <xref:System.Xml.XPath.XPathNodeIterator> Umožňuje iterovat uzlů v rámci dané sadě uzlu. Jakmile se načte sada uzlů, <xref:System.Xml.XPath.XPathNodeIterator> třída poskytuje jen pro čtení, dopředné kurzoru vybrané sada uzlů. Sada uzlů se vytvoří v pořadí dokumentů, voláním této metody přesune na další uzel v pořadí dokumentů. <xref:System.Xml.XPath.XPathNodeIterator> Nelze sestavit uzlu stromu všech uzlů v sadě. Namísto toho poskytuje okno jednoho uzlu do data vystavení základní uzlu, na který odkazuje jako pohyb ve stromové struktuře. Metody a vlastnosti, které jsou dostupné na <xref:System.Xml.XPath.XPathNodeIterator> třída umožňují získat informace z aktuálního uzlu. Seznam dostupných metod a vlastností, najdete v tématu <xref:System.Windows.Forms.ToolBar>.  

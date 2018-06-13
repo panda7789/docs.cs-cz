@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365784"
 ---
 # <a name="writing-a-windows-store-app-that-consumes-an-odata-service"></a>Zápis aplikace pro Windows Store využívajícího služby OData
 Windows 8 zavádí nový typ aplikace: aplikace pro Windows Store. Aplikace pro Windows Store mají zcela nový vzhled a chování, spusťte na různých zařízeních a jsou k dispozici ve Windows Storu. Toto téma popisuje, jak psát aplikace pro Windows Store, který využívá služby OData, konkrétně službu OData NetFlix katalogu. Další informace o aplikacích pro Windows Store, přečtěte si prosím [Začínáme s aplikací pro Windows Store](http://msdn.microsoft.com/library/windows/apps/br211386.aspx).  

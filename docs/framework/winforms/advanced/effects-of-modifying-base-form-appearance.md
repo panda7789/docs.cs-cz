@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520549"
 ---
 # <a name="effects-of-modifying-a-base-form39s-appearance"></a>Účinky úpravy základní formulář&#39;s vzhledu
 Během vývoje aplikace může často potřebujete změnit vzhled základní formulář, ze kterého jsou dědění jiných formulářů v projektu (nebo jiné projekty).  

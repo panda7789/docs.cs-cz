@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515249"
 ---
 # <a name="exposing-data-with-cachemetadata"></a>Vystavení dat s CacheMetadata
 Před provedením aktivitu, modulu runtime pracovního postupu získá všechny informace o aktivitě, která je nutné, aby byla zachována jeho spuštění. Získá tyto informace při provádění modulu runtime pracovního postupu <xref:System.Activities.Activity.CacheMetadata%2A> metoda. Výchozí implementace této metody poskytuje modul runtime s všechny veřejné argumenty, proměnné a podřízené aktivity vystavené aktivity v době, kdy je se provedla; Pokud aktivita musí poskytnout další informace pro modul runtime než to (například soukromé členy, nebo aktivity plánování pomocí aktivity), k tomu lze přepsat tuto metodu.  

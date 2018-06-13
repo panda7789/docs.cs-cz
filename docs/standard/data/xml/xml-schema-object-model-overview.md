@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572106"
 ---
 # <a name="xml-schema-object-model-overview"></a>Přehled modelu objektů schématu XML
 Model objektu schématu (SOM) v rozhraní Microsoft .NET Framework je bohatá rozhraní API, která umožňuje vytvářet, upravovat a ověřit schémata prostřednictvím kódu programu. SOM funguje na dokumentech schémat XML podobně jako na způsob, jakým modelu objektu dokumentu (DOM) funguje na dokumenty XML. Dokumentech schémat XML. jsou platné soubory XML, které jednou načtena do SOM, nesou význam o struktuře a platnosti jiných dokumentů XML, která vyhovují schématu.  

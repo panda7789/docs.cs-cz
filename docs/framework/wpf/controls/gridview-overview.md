@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557677"
 ---
 # <a name="gridview-overview"></a>GridView – přehled
 <xref:System.Windows.Controls.GridView> režim zobrazení je jeden z režimů zobrazení pro <xref:System.Windows.Controls.ListView> ovládacího prvku. <xref:System.Windows.Controls.GridView> Třídy a jeho podpůrné povolit vás a uživatele zobrazit položky kolekce v tabulce, která tlačítka se většinou používá jako záhlaví sloupců interaktivní. Toto téma představuje <xref:System.Windows.Controls.GridView> třídy a popisuje jeho použití.  

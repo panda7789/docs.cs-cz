@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576308"
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>Ověřování dokumentu XML v modelu DOM
 <xref:System.Xml.XmlDocument> Třída nelze ověřit kód XML v objektu modelu dokumentu (DOM) proti schématu XML definice jazyka (XSD) schématu nebo s dokumentem definice typu (DTD) ve výchozím nastavení; XML se ověří pouze se ve správném formátu.  

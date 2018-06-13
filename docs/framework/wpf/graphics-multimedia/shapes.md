@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33562190"
 ---
 # <a name="shapes"></a>Obrazce
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje podporu pro kreslení základních tvarů pomocí <xref:System.Windows.Shapes.Shape> třídy. Objekty tvarů odvozena od <xref:System.Windows.FrameworkElement> a jako takový účastnit rozložení systému lze a jednoduše pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  

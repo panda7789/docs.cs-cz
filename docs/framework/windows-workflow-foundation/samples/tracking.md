@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515144"
 ---
 # <a name="tracking"></a>Sledování
 Tato část obsahuje ukázky, která ukazují pracovní postup sledování v systému Windows Workflow Foundation (WF).  

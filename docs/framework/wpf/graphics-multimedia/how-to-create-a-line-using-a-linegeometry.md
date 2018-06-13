@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560466"
 ---
 # <a name="how-to-create-a-line-using-a-linegeometry"></a>Postupy: Vytvoření čáry použitím LineGeometry
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.LineGeometry> třída k popisu řádku. A <xref:System.Windows.Media.LineGeometry> je definován jeho počáteční a koncové body.  

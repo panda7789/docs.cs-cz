@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362847"
 ---
 # <a name="hosting-the-data-service-wcf-data-services"></a>Hostující službu Data (služby WCF Data Services)
 Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete vytvořit službu, která zveřejňuje data jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu. Tato služba dat je definovaný jako třída, která dědí z <xref:System.Data.Services.DataService%601>. Tato třída poskytuje funkci požadovanou ke zpracování zpráv žádostí, provádění aktualizací na zdroji dat a vygenerování odpovědí na zprávy, podle požadavků [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Datové služby však nelze vytvořit vazbu k a naslouchání soketu sítě pro příchozí požadavky HTTP. Tato funkce vyžaduje službu data využívá hostitelská komponenta.  

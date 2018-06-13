@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362573"
 ---
 # <a name="retrieving-binary-data"></a>Načítání binární Data
 Ve výchozím nastavení **DataReader** načte příchozích dat jako řádek, jakmile celý řádek dat je k dispozici. Binární rozsáhlé objekty (objekty BLOB) vyžadují odlišné zacházení, ale, protože obsahují GB dat, které nemůžou být obsažené ve jeden řádek. **Command.ExecuteReader** metoda má přetížení, které bude trvat <xref:System.Data.CommandBehavior> argument změnit výchozí chování **DataReader –**. Můžete předat <xref:System.Data.CommandBehavior.SequentialAccess> k **ExecuteReader** metoda změnit výchozí chování **DataReader** tak, aby místo načítání řádky dat, načte data sekvenčně. to znamená přijetí. To je ideální pro načítání objektů BLOB nebo další velké datové struktury. Všimněte si, že toto chování může záviset na zdroj dat. Například vrací objekt BLOB z aplikace Microsoft Access načte celý objekt BLOB se načtena do paměti, spíše než postupně přijetí.  

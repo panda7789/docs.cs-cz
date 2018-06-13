@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574930"
 ---
 # <a name="selecting-a-collection-class"></a>Výběr třídy kolekce
 Ujistěte se, že pečlivě zvolte třídě kolekce. Pomocí nesprávného typu může omezit použití kolekce. Obecně platí, nepoužívejte typy v <xref:System.Collections> obor názvů Pokud jsou konkrétně cílení na rozhraní .NET Framework verze 1.1. Obecné a souběžné verze kolekcí jsou upřednostňované z důvodu jejich vyšší bezpečnost typů a dalších vylepšení.  

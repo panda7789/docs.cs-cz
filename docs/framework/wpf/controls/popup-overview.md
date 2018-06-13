@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557573"
 ---
 # <a name="popup-overview"></a>Přehled překryvných objektů
 <xref:System.Windows.Controls.Primitives.Popup> Řízení poskytuje způsob, jak zobrazit obsah v samostatném okně, které překrývat aktuální okno aplikace relativně k určené souřadnice element nebo obrazovky. Toto téma představuje <xref:System.Windows.Controls.Primitives.Popup> řízení a poskytuje informace o jeho použití.  

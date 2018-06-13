@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570663"
 ---
 # <a name="selecting-evaluating-and-matching-xml-data-using-xpathnavigator"></a>Výběr, Evaluating a porovnávání dat XML pomocí objektem XPathNavigator nastaveným na
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje metody a vyberte uzly ve <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> pomocí dotaz XPath, hodnocení a podívejte se na výsledky výraz XPath a určí, zda uzel v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu odpovídá daný výraz XPath. Těchto a dalších konceptech, které se vztahují k výběru, hodnocení a odpovídající uzly ve <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objekt jsou popsány v následujících tématech.  

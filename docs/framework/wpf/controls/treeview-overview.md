@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557781"
 ---
 # <a name="treeview-overview"></a>TreeView – přehled
 <xref:System.Windows.Controls.TreeView> Řízení poskytuje způsob, jak zobrazit informace v hierarchická struktura pomocí sbalitelné uzly. Toto téma představuje <xref:System.Windows.Controls.TreeView> a <xref:System.Windows.Controls.TreeViewItem> ovládací prvky a poskytuje jednoduché příklady, jak jejich použití.  

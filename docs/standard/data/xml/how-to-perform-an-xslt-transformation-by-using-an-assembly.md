@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569500"
 ---
 # <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Postup: provedení transformace XSLT pomocí sestavení
 Kompilátor XSLT (xsltc.exe) kompiluje XSLT šablony stylů a generuje sestavení. Sestavení mohou být předány přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metoda.  

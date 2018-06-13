@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365693"
 ---
 # <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>Postupy: vytvoření služby Data pomocí zdroje dat ADO.NET Entity Framework (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] zpřístupní entity data jako datové služby. Tato data entity zajišťuje [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Pokud zdroj dat je relační databáze. Toto téma ukazuje, jak vytvořit [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]– na základě datového modelu v Visual Studio webové aplikace, která je založena na existující databázi a použít tento datový model pro vytvoření nové datové služby.  

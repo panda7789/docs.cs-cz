@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362524"
 ---
 # <a name="creating-application-roles-in-sql-server"></a>Vytváření aplikací rolí v systému SQL Server
 Role aplikace poskytují způsob, jak přiřadit oprávnění k aplikaci místo databázové role nebo uživatele. Uživatele můžete připojit k databázi, aktivujte roli aplikace a předpokládá oprávnění udělená aplikaci. Oprávnění udělená role aplikace jsou platné po dobu trvání připojení.  

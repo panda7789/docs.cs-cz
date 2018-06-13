@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554837"
 ---
 # <a name="3-d-graphics-how-to-topics"></a>Postupy: Témata 3D grafiky
 Témata v této části ukazují, jak používat [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] grafiky ve [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  

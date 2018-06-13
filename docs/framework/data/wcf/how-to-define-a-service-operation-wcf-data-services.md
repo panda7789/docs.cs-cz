@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360880"
 ---
 # <a name="how-to-define-a-service-operation-wcf-data-services"></a>Postupy: Definování operace služby (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vystavení metody, které jsou definovány na serveru jako operací služby. Operace služby povolit datové služby poskytovat přístup pomocí identifikátoru URI na metodu, která je definován na serveru. Chcete-li definovat operace služby, použít [`WebGet]` nebo `[WebInvoke]` atribut do metody. Pro podporu operátory dotazu, musí vracet operace služby <xref:System.Linq.IQueryable%601> instance. Operace služby může přístup ke zdroji dat základní prostřednictvím <xref:System.Data.Services.DataService%601.CurrentDataSource%2A> vlastnost <xref:System.Data.Services.DataService%601>. Další informace najdete v tématu [operací služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md).  

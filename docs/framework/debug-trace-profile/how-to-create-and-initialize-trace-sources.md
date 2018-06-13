@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33386519"
 ---
 # <a name="how-to-create-and-initialize-trace-sources"></a>Postupy: Vytváření a inicializace zdrojů trasování
 <xref:System.Diagnostics.TraceSource> Třída se používá aplikace k vytvoření trasování, které může být spojeno s aplikací. <xref:System.Diagnostics.TraceSource> poskytuje metody trasování, které vám umožňují snadno události trasování, data trasování a problém informativní trasování. Výstup trasování <xref:System.Diagnostics.TraceSource> můžete vytvořit a inicializován s nebo bez použití konfiguračních souborů. Toto téma obsahuje pokyny pro obě možnosti. Doporučujeme však používají konfigurační soubory pro usnadnění Rekonfigurace trasování vyprodukované trasování zdrojů za běhu.  

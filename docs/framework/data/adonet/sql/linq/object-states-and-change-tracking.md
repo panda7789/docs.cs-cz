@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364252"
 ---
 # <a name="object-states-and-change-tracking"></a>Stavy objektů a sledování změn
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objekty vždy účastnit některé *stavu*. Například když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvoří nový objekt, objekt je ve `Unchanged` stavu. Nový objekt, který sami vytvoříte nezná <xref:System.Data.Linq.DataContext> a je v `Untracked` stavu. Po úspěšné provedení <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, všechny objekty, které zná [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v `Unchanged` stavu. (Jednu výjimku představuje ty, které byla úspěšně odstraněna z databáze, které jsou v `Deleted` stavu a nelze jej použít v tom, že <xref:System.Data.Linq.DataContext> instance.)  

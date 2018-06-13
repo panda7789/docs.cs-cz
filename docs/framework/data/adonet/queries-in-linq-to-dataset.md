@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362348"
 ---
 # <a name="queries-in-linq-to-dataset"></a>Dotazy v LINQ na DataSet
 Dotaz je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializované dotazovací jazyk, například SQL pro relační databáze a XQuery pro formát XML. Vývojáři mají proto byl Další informace o nový jazyk dotazu pro každý typ zdroje dat nebo formát dat, která dotazy. [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] nabízí jednodušší a konzistentní model pro práci s daty mezi různé druhy zdrojů dat a formáty. V [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotaz, vždy pracujete s programováním objekty.  

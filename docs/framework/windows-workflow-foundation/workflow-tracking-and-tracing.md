@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520013"
 ---
 # <a name="workflow-tracking-and-tracing"></a>Pracovní postup sledování a trasování
 Sledování pracovní postup systému je [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] funkce poskytují přehled o spuštění pracovního postupu. Poskytuje sledování infrastruktury ke sledování provádění instanci pracovního postupu. Sledování infrastruktury WF instruments transparentně pracovního postupu pro vydávání záznamy odrážející klíče události během provádění. Tato funkce je dostupná ve výchozím nastavení pro všechny [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu. Je potřeba provést žádné změny [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] pracovního postupu pro sledování proběhnout. Je pouze stačit rozhodnutí, jaké množství dat sledování, které chcete dostávat. Pokud instance pracovního postupu spustí nebo dokončí zpracování sledování jsou vygenerované záznamy. Sledování lze rovněž extrahovat obchodní relevantní data přidružená k proměnné pracovního postupu. Například pokud pracovní postup představuje pořadí zpracování systému, pořadí ID lze extrahovat spolu s <xref:System.Activities.Tracking.TrackingRecord> objektu. Obecně platí povolení WF sledování usnadňuje diagnostiku nebo obchodní analytická data nelze přistupovat ze spuštění pracovního postupu.  

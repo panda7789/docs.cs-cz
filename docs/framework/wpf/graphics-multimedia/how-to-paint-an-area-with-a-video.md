@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560774"
 ---
 # <a name="how-to-paint-an-area-with-a-video"></a>Postupy: Vykreslení videa v oblasti
 Tento příklad ukazuje, jak k vyplnění oblast s média. Jedním ze způsobů malovat oblast s média je používat <xref:System.Windows.Controls.MediaElement> společně s <xref:System.Windows.Media.VisualBrush>. Použít <xref:System.Windows.Controls.MediaElement> k načtení a přehrávání média a použít jej nastavit <xref:System.Windows.Media.VisualBrush.Visual%2A> vlastnost <xref:System.Windows.Media.VisualBrush>. Pak můžete použít <xref:System.Windows.Media.VisualBrush> k vyplnění oblast s vložená média.  

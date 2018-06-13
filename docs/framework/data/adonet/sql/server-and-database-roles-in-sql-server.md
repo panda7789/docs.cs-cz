@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364795"
 ---
 # <a name="server-and-database-roles-in-sql-server"></a>Server a databázových rolí v systému SQL Server
 Všechny verze systému SQL Server pomocí zabezpečení na základě rolí, což umožňuje přiřadit oprávnění k roli nebo skupinu uživatelů, ne pro jednotlivé uživatele. Pevného serveru a pevné databázové role mají pevnou sadu oprávnění, které jsou jim přiřazeny.  

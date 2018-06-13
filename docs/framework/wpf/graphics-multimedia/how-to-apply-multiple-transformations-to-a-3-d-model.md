@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558688"
 ---
 # <a name="how-to-apply-multiple-transformations-to-a-3-d-model"></a>Postupy: Použití několika transformací na 3D model
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Media3D.RotateTransform3D> a <xref:System.Windows.Media.Media3D.ScaleTransform3D> otočit a změna měřítka 3D modelu. Následující kód ukazuje, jak se má použít tyto transformace na <xref:System.Windows.Media.Media3D.Model3D.Transform%2A> vlastnost <xref:System.Windows.Media.Media3D.GeometryModel3D> v jazyce XAML.  

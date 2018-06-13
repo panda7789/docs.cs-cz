@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515766"
 ---
 # <a name="state-machine-activities-in-wf"></a>Aktivity stavu počítače v WF
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] poskytuje několik poskytované systémem aktivity a návrháře aktivit pro vytváření pracovních postupů stav počítače.  

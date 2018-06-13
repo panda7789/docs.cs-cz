@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365953"
 ---
 # <a name="wcf-data-services-45"></a>Datové služby WCF 4.5
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] (dříve označované jako "ADO.NET Data Services") je součástí rozhraní .NET Framework, který umožňuje vytvářet služby, které používají [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] vystavení a spotřebování data prostřednictvím webu nebo intranetu pomocí sémantika [representational stavu Transfer (REST)](http://go.microsoft.com/fwlink/?LinkId=113919). [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] zpřístupní data jako prostředky, které jsou adresovat pomocí identifikátory URI. Data se získat přístup a změnit pomocí standardních operací protokolu HTTP z GET, PUT, POST a odstranění. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] používá pravidla vztah entit [datového modelu Entity](../../../../docs/framework/data/adonet/entity-data-model.md) vystavit prostředky jako sady entit, které jsou spojené přidružení.  
