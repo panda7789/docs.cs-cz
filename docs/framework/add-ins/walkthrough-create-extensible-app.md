@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744821"
 ---
 # <a name="walkthrough-creating-an-extensible-application"></a>Návod: Vytváření rozšiřitelné aplikace
 Tento návod popisuje, jak vytvořit kanál pro doplněk provádí jednoduché Kalkulačka funkcí. Nepředvádí scénářem z reálného prostředí; Místo toho ukazuje základní funkce kanálu a jak doplňku poskytuje služby pro hostitele.  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390247"
 ---
 # <a name="registration-free-com-interop"></a>Zprostředkovatel komunikace s objekty COM bez registrace
 Spoluprací COM bez registrace se aktivuje komponentu bez uložení informací o sestavení pomocí registru systému Windows. Místo registrace komponenty v počítači během nasazení, vytvoření souborů manifestu Win32 stylu v době návrhu, které obsahují informace o aktivaci a vazeb. Tyto soubory manifestu, nikoli klíče registru přímé aktivace objektu.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542584"
 ---
 # <a name="events-wpf"></a>Události (WPF)
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] představuje směrované události, které můžete vyvolat obslužné rutiny, které existují v různých naslouchací procesy ve stromové struktuře element aplikace.  

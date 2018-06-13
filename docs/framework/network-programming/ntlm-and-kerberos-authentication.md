@@ -27,6 +27,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394384"
 ---
 # <a name="ntlm-and-kerberos-authentication"></a>Ověřování protokolu Kerberos a NTLM
 Výchozí ověřování protokolem NTLM a Kerberos používat pověření systému Microsoft Windows NT přidružené volající aplikace k pokusu o ověření se serverem. Při použití ověřování protokolem NTLM jiné než výchozí, aplikace nastaví typ ověřování NTLM a použije <xref:System.Net.NetworkCredential> objektu k předávání uživatelské jméno, heslo a doménu na hostitele, jak je znázorněno v následujícím příkladu.  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391118"
 ---
 # <a name="marshaling-strings"></a>Zařazování řetězců
 Vyvolání platformy parametrů řetězce kopie, převod je z formátu rozhraní .NET Framework (Unicode) na nespravované formát (ANSI), v případě potřeby. Protože jsou neměnné spravované řetězce, vyvolání platformy je zpět z nespravované paměti spravované paměti při nekopíruje funkce vrátí hodnotu.  

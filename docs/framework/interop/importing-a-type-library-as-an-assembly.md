@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393413"
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>Import knihovny typů ve formě sestavení
 Definice typů COM se obvykle nacházejí v knihovny typů. Naproti tomu kompatibilní se specifikací CLS kompilátory vytvořit typ metadat v sestavení. Dva zdroje informací o typu se výrazně lišit. Toto téma popisuje techniky pro generování metadat z knihovny typů. Výsledné sestavení je volána sestavení vzájemné spolupráce a informací o typu, který obsahuje umožňuje aplikacím používat typy modelu COM rozhraní .NET Framework.  

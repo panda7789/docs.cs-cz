@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389493"
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016"></a>Nainstalujte rozhraní .NET Framework na Windows 10 a Windows Server 2016
 

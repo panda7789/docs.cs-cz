@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539686"
 ---
 # <a name="listview-control-windows-forms"></a>ListView – ovládací prvek (Windows Forms)
 Windows Forms `ListView` ovládací prvek zobrazí seznam položky s ikonami. Zobrazení seznamu můžete použít k vytvoření uživatelského rozhraní, jako je v pravém podokně Průzkumníka Windows.  

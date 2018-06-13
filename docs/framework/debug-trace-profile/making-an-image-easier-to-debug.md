@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391043"
 ---
 # <a name="making-an-image-easier-to-debug"></a>Usnadnění ladění obrázku
 Při kompilaci nespravovaného kódu je možné nakonfigurovat spustitelnou bitovou kopii pro ladění nastavením přepínačů IDE nebo parametrů příkazového řádku. Například můžete použít nebo**Zi** možnost příkazového řádku v jazyce Visual C++ a požádejte ho pro vydávání soubory ladění symbolu (.pdb přípona souboru). Podobně /**Od** říká možnost příkazového řádku kompilátoru zakázat optimalizace. Výsledný kód pracuje pomaleji, ale je snadnější v něm v případě potřeby provádět ladění.  

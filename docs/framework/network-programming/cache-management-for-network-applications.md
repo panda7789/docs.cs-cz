@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391674"
 ---
 # <a name="cache-management-for-network-applications"></a>Správa mezipaměti pro síťové aplikace
 Toto téma a jeho souvisejících dílčí témata popisují ukládání do mezipaměti pro prostředků získaných pomocí <xref:System.Net.WebClient>, <xref:System.Net.WebRequest>, <xref:System.Net.HttpWebRequest>, a <xref:System.Net.FtpWebRequest> třídy.  

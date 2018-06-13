@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392210"
 ---
 # <a name="apis-that-rely-on-reflection"></a>Rozhraní API, která závisí na reflexi
 V některých případech použití reflexe v kódu není zřejmé a proto [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězu není zachovat metadata, která je vyžadována v době běhu. Toto téma popisuje některé běžné rozhraní API nebo běžných programovací vzorů, které nejsou považovány za součást rozhraní API reflexe, ale který závisí na reflexi proběhl úspěšně. Pokud je používáte ve zdrojovém kódu, můžete přidat informace o nich do direktivy modulu runtime (. rd.xml) tak, aby volání tato rozhraní API nevyvolá výjimku [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimky nebo některých jiných výjimky za běhu.  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393507"
 ---
 # <a name="runtime-callable-wrapper"></a>Obálka volatelná za běhu
 Modul common language runtime zpřístupní objektů COM prostřednictvím proxy serveru názvem obálka volatelná za běhu (RCW). I když RCW se zdá být objekt obyčejnou tak, aby klientů .NET, je jeho primární funkce zařazování volání mezi sebou klient .NET a objekt modelu COM.  

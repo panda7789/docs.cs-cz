@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391599"
 ---
 # <a name="runtime-information-etw-events"></a>Události Trasování událostí pro Windows běhových informací
 Informace o modulu runtime, SKU, číslo verze, způsobem, ve kterém byla aktivovaná modul runtime, včetně parametrů příkazového řádku, který byl spuštěn s, identifikátor GUID (pokud existuje) a další relevantní informace protokolu tyto události trasování událostí pro Windows. Pokud jsou v rámci procesu spouštění více moduly runtime informace poskytované tyto události (ClrInstanceID) pomáhá rozlišení moduly runtime.  

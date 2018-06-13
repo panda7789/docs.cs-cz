@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392798"
 ---
 # <a name="copying-and-pinning"></a>Kopírování a přichycování
 Při zařazování dat, spolupráce vláken můžete zkopírovat nebo kód pin se zařazené data. Kopírování dat umístí kopii dat z jednoho umístění paměti v jiném umístění paměti. Následující obrázek znázorňuje rozdíly mezi kopírování typ hodnoty a kopírování typu předaná odkaz ze spravované na nespravované paměti.  

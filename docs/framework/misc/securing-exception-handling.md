@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393039"
 ---
 # <a name="securing-exception-handling"></a>Zabezpečení zpracování výjimek
 V jazyce Visual Basic a Visual C++, výraz filtru další až stack spouští před spuštěním **nakonec** příkaz. **Catch** bloku přidružený tento filtr se spouští **nakonec** příkaz. Další informace najdete v tématu [Using User-Filtered výjimky](../../../docs/standard/exceptions/using-user-filtered-exception-handlers.md). Tento oddíl se zabývá bezpečnostních důsledcích tohoto pořadí. Vezměte v úvahu následující příklad pseudokódu, který znázorňuje pořadí, ve které příkazy filtru a **nakonec** příkazy spustit.  

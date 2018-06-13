@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395463"
 ---
 # <a name="getting-started-with-net-native"></a>Začínáme s .NET Native
 Ať už vytváříte nové aplikace pro Windows pro Windows 10 nebo migrujete stávající aplikace Windows Store, můžete postupovat podle stejnou sadu postupy. Chcete-li vytvořit [!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace, postupujte takto:  

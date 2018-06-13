@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759150"
 ---
 # <a name="handling-dataadapter-events"></a>Zpracování událostí DataAdapter
 Technologie ADO.NET <xref:System.Data.Common.DataAdapter> zpřístupní tři události, které můžete použít reagovat na změny dat ve zdroji dat. Následující tabulce je zobrazena `DataAdapter` události.  

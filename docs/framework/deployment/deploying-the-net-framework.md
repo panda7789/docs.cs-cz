@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391404"
 ---
 # <a name="deploying-the-net-framework"></a>Nasazení rozhraní .NET Framework
 V této části dokumentace rozhraní .NET Framework poskytuje informace pro vývojáře, kteří chtějí nainstalovat rozhraní .NET Framework s jejich aplikace a správci, kteří chtějí nasadit rozhraní .NET Framework v síti. Také popisuje aktivace a restartujte problémů, souvisejících s nasazení, jak můžete sledovat průběh instalace rozhraní .NET Framework.  

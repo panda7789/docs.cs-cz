@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535643"
 ---
 # <a name="how-to-sort-the-contents-of-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Postupy: Řazení obsahu ovládacího prvku Windows Forms ComboBox, ListBox nebo CheckedListBox
 Ovládací prvky Windows Forms řazení, když jsou vázané na data. Pokud chcete zobrazit seřazená data, používat zdroj dat, který podporuje řazení a tak zdroji dat se seřadí. Zdroje dat, které podporují řazení jsou zobrazení dat, data správci zobrazit a seřadit pole.  

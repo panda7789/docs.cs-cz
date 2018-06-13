@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389511"
 ---
 # <a name="enhancing-debugging-with-the-debugger-display-attributes"></a>Rozšíření ladění pomocí atributů zobrazení ladicího programu
 Atributů zobrazení ladicího programu povolit vývojář typu, který určuje a nejlépe rozumí modul runtime chování tohoto typu, také určit, co daný typ bude vypadat, který se zobrazí v ladicí program. Kromě toho ladicí program atributy, které poskytují zobrazení `Target` vlastnost lze použít na úrovni sestavení uživatelé bez vědomí zdrojového kódu. <xref:System.Diagnostics.DebuggerDisplayAttribute> Atribut ovládací prvky zobrazení typ nebo člen v proměnnými ladicího programu. <xref:System.Diagnostics.DebuggerBrowsableAttribute> Atribut určuje, zda a jak pole nebo vlastnost je zobrazena v proměnnými ladicího programu. <xref:System.Diagnostics.DebuggerTypeProxyAttribute> Atribut určuje typ substitute nebo proxy server, pro typ a mění způsob přidělování typ se zobrazí v ladicího programu. Při zobrazení proměnné, která má proxy server, nebo nahraďte typ proxy serveru znamená původní typ v okně zobrazení ladicího programu **.** Zadejte pouze veřejné členy proxy proměnné windowdisplays ladicí program. Soukromé členy nejsou zobrazeny.  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391453"
 ---
 # <a name="marshaling-different-types-of-arrays"></a>Zařazování různých typů polí
 Pole je typu odkazu ve spravovaném kódu, který obsahuje jeden či více elementů stejného typu. I když pole jsou odkazové typy, je jsou předat jako parametry k nespravovaným funkcím. Toto chování je konzistentní způsob spravovaných polí jsou předávány spravovaných objektů, což je jako vstupně -výstupní parametry. Další podrobnosti najdete v tématu [kopírování a přichycování](copying-and-pinning.md).  

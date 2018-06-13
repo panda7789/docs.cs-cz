@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395551"
 ---
 # <a name="lteventgt-element-net-native"></a>Element &lt;Event&gt; (.NET Native)
 Platí zásady reflexe modulu runtime pro událost.  

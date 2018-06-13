@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394631"
 ---
 # <a name="ltapplicationgt-element-net-native"></a>Element &lt;Application&gt; (.NET Native)
 Slouží jako kontejner pro celou aplikaci typy a členy typu jejichž metadat je k dispozici pro reflexi v době běhu a platí zásady reflexe modulu runtime pro všechny prvky programu v aplikaci.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390731"
 ---
 # <a name="runtime-exceptions-in-net-native-apps"></a>Výjimky za běhu v nativní aplikace .NET
 Je důležité k testování verze sestavení vaší aplikace pro univerzální platformu Windows na jejich cílových platforem, protože konfigurace debug a release jsou úplně jiné. Ve výchozím nastavení konfiguraci ladění používá na .NET Core runtime pro kompilaci aplikace, ale konfigurace verze používá .NET Native pro kompilaci vaší aplikace do nativního kódu.  

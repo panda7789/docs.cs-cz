@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33215956"
 ---
 # <a name="bool-c-reference"></a>bool (Referenční dokumentace jazyka C#)
 `bool` – Klíčové slovo je zástupce <xref:System.Boolean?displayProperty=nameWithType>. Se používá k deklaraci proměnné, které chcete uložit logické hodnoty [true](../../../csharp/language-reference/keywords/true.md) a [false](../../../csharp/language-reference/keywords/false.md).  

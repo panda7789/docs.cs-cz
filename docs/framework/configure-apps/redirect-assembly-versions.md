@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759267"
 ---
 # <a name="redirecting-assembly-versions"></a>Přesměrování verzí sestavení
 Můžete přesměrovat kompilaci vazby odkazy na sestavení rozhraní .NET Framework, sestavení třetích stran nebo sestavení vlastní aplikace. Můžete přesměrovat aplikace používat jinou verzi sestavení v mnoha různými způsoby: pomocí zásad vydavatele prostřednictvím konfigurační soubor aplikace; nebo prostřednictvím konfiguračním souboru počítače. Tento článek popisuje, jak funguje sestavení – vazby v rozhraní .NET Framework a jak může být nakonfigurován.  

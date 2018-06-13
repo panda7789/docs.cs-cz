@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393306"
 ---
 # <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Postupy: Získání procesu z instalačního programu .NET Framework 4.5
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Je modul runtime redistributable. Pokud vyvíjíte aplikace pro tuto verzi rozhraní .NET Framework, můžete zahrnout (řetězec) [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] instalace požadovaných součástí instalace vaší aplikace. K dispozici instalace přizpůsobené nebo jednotné prostředí, můžete chtít spustit bezobslužně [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] instalační program a jeho průběh sledovat při zobrazování průběh instalačního programu vaší aplikace. Povolit bezobslužné sledování [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] instalačního programu (stažené lze sledovat) definuje protokol pomocí segment mapované paměti vstupně-výstupních operací (MMIO) ke komunikaci s vaší instalace (sledovacích procesů nebo zřetězeného souboru). Tento protokol definuje způsob, jak zřetězeného souboru získat informace o průběhu, získat podrobné výsledky, odpovězte na otázky a zrušit [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] instalační program.  

@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396295"
 ---
 # <a name="requesting-data"></a>Požadavek na Data
 Vývoj aplikací, které běží v distribuované provozní prostředí dnešní Internetu vyžaduje metodu efektivní, snadno použitelné pro načítání dat ze všech typů prostředků. Modulární protokoly umožňují vyvíjet aplikace, které pomocí jediného rozhraní k načtení dat z více internetových protokolech.  

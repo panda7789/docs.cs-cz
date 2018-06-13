@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389552"
 ---
 # <a name="com-interop-sample-com-client-and-net-server"></a>Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET
 Tento příklad znázorňuje vzájemná spolupráce z [klient COM](#cpconcominteropsamplecomclientnetserveranchor1) a [.NET Server](#cpconcominteropsamplecomclientnetserveranchor2) který provede výpočty hypotéky. V tomto příkladu klient vytvoří a volá instanci spravovaný `Loan` třídy, předá čtyři argumenty (jeden z těchto čtyř se rovná nule) na instance a zobrazí výpočtů. Příklady kódu od této ukázky se zobrazí v této části.  

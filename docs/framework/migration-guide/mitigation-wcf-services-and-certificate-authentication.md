@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388934"
 ---
 # <a name="mitigation-wcf-services-and-certificate-authentication"></a>Omezení rizik: Služby WCF a ověřování pomocí certifikátu
 Rozhraní .NET Framework 4.6 přidá do seznamu výchozích protokol WCF SSL protokoly TLS 1.1 a TLS 1.2. Když klientské a serverové počítače nainstalována rozhraní .NET Framework 4.6 nebo vyšší, použije se pro vyjednávání protokolu TLS 1.2.  

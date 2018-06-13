@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392288"
 ---
 # <a name="blittable-and-non-blittable-types"></a>Přenositelné a nepřenositelné typy
 Většina typy dat mají společné reprezentaci v spravované i nespravované paměti a nevyžadují žádná zvláštní zpracování pomocí zprostředkovatele komunikace s objekty vláken. Tyto typy jsou označovány jako *přenositelné typy* vzhledem k tomu, že jsou předávány mezi nevyžadují převodu spravovaných a nespravovaných kódu.  

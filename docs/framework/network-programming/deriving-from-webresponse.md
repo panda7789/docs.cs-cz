@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395811"
 ---
 # <a name="deriving-from-webresponse"></a>Odvozování z WebResponse
 <xref:System.Net.WebResponse> Třída je abstraktní základní třída, která poskytuje základní metody a vlastnosti pro vytvoření odpovědi specifické pro protokol, který nejlépe odpovídá modulární protokol model rozhraní .NET Framework. Aplikace, které používají <xref:System.Net.WebRequest> třídy data žádosti z prostředků přijímat odpovědi v **WebResponse**. Specifické pro protokol **WebResponse** následníků musí implementovat abstraktní členy **WebResponse** třídy.  

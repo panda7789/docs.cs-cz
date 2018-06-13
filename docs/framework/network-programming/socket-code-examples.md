@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395850"
 ---
 # <a name="socket-code-examples"></a>Příklady kódu soketů
 Následující příklady kódu ukazují, jak používat <xref:System.Net.Sockets.Socket> tříd jako klienta pro připojení k vzdálené síťové služby a jako server naslouchat pro připojení ze vzdálených klientů.  

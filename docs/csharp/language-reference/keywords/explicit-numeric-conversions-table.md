@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218381"
 ---
 # <a name="explicit-numeric-conversions-table-c-reference"></a>Tabulka explicitních číselných převodů (Referenční dokumentace jazyka C#)
 Explicitní číselný převod se používá k jakékoli číselné typ převést na jiný číselný typ, pro kterou neexistuje žádný implicitní převod pomocí výraz přetypování. V následující tabulce jsou tyto převody.  

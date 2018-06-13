@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539514"
 ---
 # <a name="mouse-pointers-in-windows-forms"></a>Ukazatele myši ve Windows Forms
 Myš *ukazatel*, která se někdy označuje jako kurzor, je rastrového obrázku, který určuje bod fokus na obrazovce na vstup uživatele pomocí myši. Toto téma obsahuje přehled ukazatele myši ve Windows Forms a popisuje některé z způsobů, jak upravit a ovládat ukazatel myši.  

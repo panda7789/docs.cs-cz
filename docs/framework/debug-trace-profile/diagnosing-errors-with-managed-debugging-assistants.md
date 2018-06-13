@@ -36,6 +36,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392317"
 ---
 # <a name="diagnosing-errors-with-managed-debugging-assistants"></a>Diagnostikování chyb pomocí asistentů spravovaného ladění
 Spravované ladění Pomocníci ladění (mda) pomůcek, které spolupracují se modul CLR (CLR) k poskytování informací o stav modulu runtime. Asistentům generovat informační zprávy o událostech runtime, které nelze jinak depeše. Mda můžete izolovat aplikace pevný najít chyby, které dojít, když přechod mezi spravovanými a nespravovanými kódu. Můžete povolit nebo zakázat všechny mda přidání klíče registru systému Windows nebo nastavením proměnné prostředí. Konkrétní mda můžete povolit pomocí nastavení konfigurace aplikace. Můžete nastavit další konfiguraci nastavení pro některé jednotlivé mda v konfiguračním souboru aplikace. Protože tyto konfigurační soubory jsou analyzovat při načtení modulu runtime, je nutné povolit MDA před spuštěním spravované aplikace. Nelze ji povolit pro aplikace, které jste již bylo zahájeno.  

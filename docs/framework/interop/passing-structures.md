@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391505"
 ---
 # <a name="passing-structures"></a>Předávání struktur
 Mnoho nespravovaných funkcí předpokládá, že předat jako parametr pro funkci, členové struktury (uživatelem definované typy v jazyce Visual Basic) nebo členy třídy, které jsou definovány ve spravovaném kódu. Při předávání struktur nebo třídy do nespravovaného kódu pomocí platformy vyvolání, je třeba zadat další informace a zachovat původní rozložení a zarovnání. Toto téma představuje <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut, který používáte k definování formátovaný typy. Pro spravované struktury a třídy, můžete vybrat z několika předvídatelný rozložení chování poskytl **LayoutKind** výčtu.  

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392561"
 ---
 # <a name="applying-interop-attributes"></a>Použití atributů spolupráce
 <xref:System.Runtime.InteropServices> Obor názvů obsahuje tři kategorie atributů specifický pro spolupráci: uplatnil v době návrhu, jaké používají vůči nástroje zprostředkovatele komunikace s objekty COM a rozhraní API během procesu převodu a jsou použita buď vy nebo zprostředkovatel komunikace s objekty COM.  

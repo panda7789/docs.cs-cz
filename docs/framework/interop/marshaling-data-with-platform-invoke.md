@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391313"
 ---
 # <a name="marshaling-data-with-platform-invoke"></a>Zařazování dat s voláním platformy
 Volání funkce exportované z nespravovaných knihovny, vyžaduje rozhraní .NET Framework aplikace funkce prototypů ve spravovaném kódu, který představuje nespravované funkce. Chcete-li vytvořit prototyp, která umožňuje platformy vyvolání zařazování dat správně, musíte provést následující:  

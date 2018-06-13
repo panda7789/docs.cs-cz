@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389610"
 ---
 # <a name="how-to-access-http-specific-properties"></a>Postupy: přístup k vlastnosti specifické pro protokol HTTP
 Tento příklad ukazuje, jak vypnout HTTP **udržování** chování a získání verze protokolu číslo z webového serveru.  

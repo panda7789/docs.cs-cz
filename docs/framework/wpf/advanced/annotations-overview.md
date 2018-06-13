@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540840"
 ---
 # <a name="annotations-overview"></a>Přehled poznámek
 Zápis poznámky nebo komentáře na tištěných dokumentů je takové běžná aktivita, jsme téměř vzít pro udělena. Tyto poznámky nebo komentáře jsou "Poznámky" přidáme do dokumentu. Chcete-li příznak informace nebo chcete zvýraznit položky, které vás zajímají pro pozdější použití. Zápis poznámky na tištěných dokumentů je snadné a běžné, možnost přidávat komentáře osobní do elektronických dokumentů sice obvykle velmi omezená, pokud je k dispozici na všech.  

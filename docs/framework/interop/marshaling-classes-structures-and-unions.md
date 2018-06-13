@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393390"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>Zařazování tříd, struktur a sjednocení
 Třídy a struktury jsou podobné v rozhraní .NET Framework. Mají obě můžete polí, vlastnosti a události. Může mít také statické a nestatické metody. Jeden pozoruhodný rozdíl je, že jsou typy hodnot struktury a třídy jsou odkazové typy.  

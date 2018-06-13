@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757577"
 ---
 # <a name="defining-primary-keys"></a>Definování primárních klíčů
 Tabulka databáze běžně má sloupec nebo skupiny sloupců, která jednoznačně identifikuje každý řádek v tabulce. Toto identifikační sloupec nebo skupiny sloupců se nazývá primární klíč.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393813"
 ---
 # <a name="migrating-from-the-net-framework-11"></a>Migrace z rozhraní .NET Framework 1.1
 [!INCLUDE[win7](../../../includes/win7-md.md)] a novějších verzích operačního systému Windows nepodporuje [!INCLUDE[net_v11_long](../../../includes/net-v11-long-md.md)]. V důsledku toho aplikace cílené [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] nespustí bez úprav na [!INCLUDE[win7](../../../includes/win7-md.md)] nebo novější verze operačního systému. Toto téma popisuje kroky potřebné ke spuštění aplikace s cílem [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] pod [!INCLUDE[win7](../../../includes/win7-md.md)] a novějších verzích operačního systému Windows. Další informace o [!INCLUDE[net_v11_long](../../../includes/net-v11-long-md.md)] a [!INCLUDE[win8](../../../includes/win8-md.md)], najdete v části [spuštění rozhraní .NET Framework 1.1 aplikace ve Windows 8 a novějších verzích](../../../docs/framework/install/run-net-framework-1-1-apps.md).  

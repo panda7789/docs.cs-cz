@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541856"
 ---
 # <a name="how-to-make-thread-safe-calls-to-windows-forms-controls"></a>Postupy: Volání (s bezpečným vlákny) ovládacích prvků Windows Forms
 Pokud používáte více vláken zlepšit výkon aplikací Windows Forms, ujistěte se, abyste vytvořili volání pro vaše ovládací prvky způsobem bezpečné pro přístup z více vláken.  

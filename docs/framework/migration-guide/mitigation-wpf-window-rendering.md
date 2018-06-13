@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389565"
 ---
 # <a name="mitigation-wpf-window-rendering"></a>Omezení rizik: Vykreslování oken ve WPF
 V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] systémem Windows 8 a vyšší, celé okno je vykreslen bez výstřižek, pokud ji rozšiřuje mimo jednoho zobrazení ve scénáři s více monitorování.  

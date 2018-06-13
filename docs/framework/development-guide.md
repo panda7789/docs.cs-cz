@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391095"
 ---
 # <a name="net-framework-development-guide"></a>Průvodce vývojem s použitím rozhraní .NET Framework
 Tato část vysvětluje, jak vytvářet, konfigurovat, ladění, zabezpečení a nasazení aplikace rozhraní .NET Framework. Tato část taky poskytuje informace o technologii oblasti jako dynamické programování, vzájemná funkční spolupráce, rozšiřitelnosti, správa paměti a dělení na vlákna.  

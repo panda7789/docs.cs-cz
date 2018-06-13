@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396526"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Nasazení .NET Framework a aplikací
 Tento článek pomáhá začít pracovat, nasazení rozhraní .NET Framework s vaší aplikací. Většinu informací je určený pro vývojáře, výrobci OEM a správcům. Přečtěte si uživatelé, kteří chtějí nainstalovat rozhraní .NET Framework na svých počítačích [instalace rozhraní .NET Framework](~/docs/framework/install/index.md).  
