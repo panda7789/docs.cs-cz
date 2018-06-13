@@ -1,14 +1,6 @@
 ---
-title: "COR_GC_STATS – struktura"
-ms.custom: 
+title: COR_GC_STATS – struktura
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - COR_GC_STATS
 api_location:
@@ -22,22 +14,19 @@ helpviewer_keywords:
 ms.assetid: 8d4ff73e-739b-40f6-9349-359fbc99c2f9
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 02a775be4976760b354a492e7252a67ef04eace9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 009f1482de6e1daea21766300b4fb6a3ab0ffc8c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33432285"
 ---
-# <a name="corgcstats-structure"></a><span data-ttu-id="e37d4-102">COR_GC_STATS – struktura</span><span class="sxs-lookup"><span data-stu-id="e37d4-102">COR_GC_STATS Structure</span></span>
-<span data-ttu-id="e37d4-103">Poskytuje statistiky o mechanismus kolekce paměti common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="e37d4-103">Provides statistics about the garbage collection mechanism of the common language runtime (CLR).</span></span>  
+# <a name="corgcstats-structure"></a><span data-ttu-id="70525-102">COR_GC_STATS – struktura</span><span class="sxs-lookup"><span data-stu-id="70525-102">COR_GC_STATS Structure</span></span>
+<span data-ttu-id="70525-103">Poskytuje statistiky o mechanismus kolekce paměti common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="70525-103">Provides statistics about the garbage collection mechanism of the common language runtime (CLR).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e37d4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e37d4-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="70525-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="70525-104">Syntax</span></span>  
   
 ```  
 typedef struct _COR_GC_STATS {  
@@ -55,32 +44,32 @@ typedef struct _COR_GC_STATS {
 } COR_GC_STATS;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="e37d4-105">Členové</span><span class="sxs-lookup"><span data-stu-id="e37d4-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="70525-105">Členové</span><span class="sxs-lookup"><span data-stu-id="70525-105">Members</span></span>  
   
-|<span data-ttu-id="e37d4-106">Člen</span><span class="sxs-lookup"><span data-stu-id="e37d4-106">Member</span></span>|<span data-ttu-id="e37d4-107">Popis</span><span class="sxs-lookup"><span data-stu-id="e37d4-107">Description</span></span>|  
+|<span data-ttu-id="70525-106">Člen</span><span class="sxs-lookup"><span data-stu-id="70525-106">Member</span></span>|<span data-ttu-id="70525-107">Popis</span><span class="sxs-lookup"><span data-stu-id="70525-107">Description</span></span>|  
 |------------|-----------------|  
-|`Flags`|<span data-ttu-id="e37d4-108">Určuje pole hodnot, které by mělo být vypočtena a vrátil.</span><span class="sxs-lookup"><span data-stu-id="e37d4-108">Indicates which field values should be calculated and returned.</span></span>|  
-|`ExplicitGCCount`|<span data-ttu-id="e37d4-109">Označuje počet kolekce paměti, které byly vynutit externí požadavek.</span><span class="sxs-lookup"><span data-stu-id="e37d4-109">Indicates the number of garbage collections that were forced by external request.</span></span>|  
-|`GenCollectionsTaken`|<span data-ttu-id="e37d4-110">Označuje počet provést pro každou generaci kolekce.</span><span class="sxs-lookup"><span data-stu-id="e37d4-110">Indicates the number of garbage collections performed for each generation.</span></span>|  
-|`CommittedKBytes`|<span data-ttu-id="e37d4-111">Celkový počet kilobajtů potvrzené ve všech haldách</span><span class="sxs-lookup"><span data-stu-id="e37d4-111">The total number of kilobytes committed in all heaps.</span></span>|  
-|`ReservedKBytes`|<span data-ttu-id="e37d4-112">Celkový počet kilobajtů vyhrazené ve všech haldách</span><span class="sxs-lookup"><span data-stu-id="e37d4-112">The total number of kilobytes reserved in all heaps.</span></span>|  
-|`Gen0HeapSizeKBytes`|<span data-ttu-id="e37d4-113">Velikost v kilobajtech haldě generování než nula.</span><span class="sxs-lookup"><span data-stu-id="e37d4-113">The size, in kilobytes, of the generation-zero heap.</span></span>|  
-|`Gen1HeapSizeKBytes`|<span data-ttu-id="e37d4-114">Velikost v kilobajtech haldy 1. generace.</span><span class="sxs-lookup"><span data-stu-id="e37d4-114">The size, in kilobytes, of the generation-one heap.</span></span>|  
-|`Gen2HeapSizeKBytes`|<span data-ttu-id="e37d4-115">Velikost v kilobajtech haldě generování dva.</span><span class="sxs-lookup"><span data-stu-id="e37d4-115">The size, in kilobytes, of the generation-two heap.</span></span>|  
-|`LargeObjectHeapSizeKBytes`|<span data-ttu-id="e37d4-116">Velikost v kilobajtech haldě velkého objektu.</span><span class="sxs-lookup"><span data-stu-id="e37d4-116">The size, in kilobytes, of the large object heap.</span></span>|  
-|`KBytesPromotedFromGen0`|<span data-ttu-id="e37d4-117">Velikost v kilobajtech objekty povýší z generování nula generace jeden.</span><span class="sxs-lookup"><span data-stu-id="e37d4-117">The size, in kilobytes, of the objects promoted from generation zero to generation one.</span></span>|  
-|`KBytesPromotedFromGen1`|<span data-ttu-id="e37d4-118">Velikost v kilobajtech povýší z generace, jedna generace dva objekty.</span><span class="sxs-lookup"><span data-stu-id="e37d4-118">The size, in kilobytes, of the objects promoted from generation one to generation two.</span></span>|  
+|`Flags`|<span data-ttu-id="70525-108">Určuje pole hodnot, které by mělo být vypočtena a vrátil.</span><span class="sxs-lookup"><span data-stu-id="70525-108">Indicates which field values should be calculated and returned.</span></span>|  
+|`ExplicitGCCount`|<span data-ttu-id="70525-109">Označuje počet kolekce paměti, které byly vynutit externí požadavek.</span><span class="sxs-lookup"><span data-stu-id="70525-109">Indicates the number of garbage collections that were forced by external request.</span></span>|  
+|`GenCollectionsTaken`|<span data-ttu-id="70525-110">Označuje počet provést pro každou generaci kolekce.</span><span class="sxs-lookup"><span data-stu-id="70525-110">Indicates the number of garbage collections performed for each generation.</span></span>|  
+|`CommittedKBytes`|<span data-ttu-id="70525-111">Celkový počet kilobajtů potvrzené ve všech haldách</span><span class="sxs-lookup"><span data-stu-id="70525-111">The total number of kilobytes committed in all heaps.</span></span>|  
+|`ReservedKBytes`|<span data-ttu-id="70525-112">Celkový počet kilobajtů vyhrazené ve všech haldách</span><span class="sxs-lookup"><span data-stu-id="70525-112">The total number of kilobytes reserved in all heaps.</span></span>|  
+|`Gen0HeapSizeKBytes`|<span data-ttu-id="70525-113">Velikost v kilobajtech haldě generování než nula.</span><span class="sxs-lookup"><span data-stu-id="70525-113">The size, in kilobytes, of the generation-zero heap.</span></span>|  
+|`Gen1HeapSizeKBytes`|<span data-ttu-id="70525-114">Velikost v kilobajtech haldy 1. generace.</span><span class="sxs-lookup"><span data-stu-id="70525-114">The size, in kilobytes, of the generation-one heap.</span></span>|  
+|`Gen2HeapSizeKBytes`|<span data-ttu-id="70525-115">Velikost v kilobajtech haldě generování dva.</span><span class="sxs-lookup"><span data-stu-id="70525-115">The size, in kilobytes, of the generation-two heap.</span></span>|  
+|`LargeObjectHeapSizeKBytes`|<span data-ttu-id="70525-116">Velikost v kilobajtech haldě velkého objektu.</span><span class="sxs-lookup"><span data-stu-id="70525-116">The size, in kilobytes, of the large object heap.</span></span>|  
+|`KBytesPromotedFromGen0`|<span data-ttu-id="70525-117">Velikost v kilobajtech objekty povýší z generování nula generace jeden.</span><span class="sxs-lookup"><span data-stu-id="70525-117">The size, in kilobytes, of the objects promoted from generation zero to generation one.</span></span>|  
+|`KBytesPromotedFromGen1`|<span data-ttu-id="70525-118">Velikost v kilobajtech povýší z generace, jedna generace dva objekty.</span><span class="sxs-lookup"><span data-stu-id="70525-118">The size, in kilobytes, of the objects promoted from generation one to generation two.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="e37d4-119">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e37d4-119">Remarks</span></span>  
- <span data-ttu-id="e37d4-120">[Iclrgcmanager::getstats –](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) metoda vyžaduje, `Flags` pole z `COR_GC_STATS` struktura bude nastaven na jeden nebo více hodnot [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) výčtu k určete, které statistiky se nastavit.</span><span class="sxs-lookup"><span data-stu-id="e37d4-120">The [ICLRGCManager::GetStats](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) method requires the `Flags` field of the `COR_GC_STATS` structure to be set to one or more values of the [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) enumeration to specify which statistics are to be set.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="70525-119">Poznámky</span><span class="sxs-lookup"><span data-stu-id="70525-119">Remarks</span></span>  
+ <span data-ttu-id="70525-120">[Iclrgcmanager::getstats –](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) metoda vyžaduje, `Flags` pole z `COR_GC_STATS` struktura bude nastaven na jeden nebo více hodnot [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) výčtu k určete, které statistiky se nastavit.</span><span class="sxs-lookup"><span data-stu-id="70525-120">The [ICLRGCManager::GetStats](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) method requires the `Flags` field of the `COR_GC_STATS` structure to be set to one or more values of the [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) enumeration to specify which statistics are to be set.</span></span>  
   
- <span data-ttu-id="e37d4-121">Následující tabulka mapuje statistiky poskytované tuto strukturu pro dvě [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) hodnoty výčtu, `COR_GC_COUNTS` a `COR_GC_MEMORYUSAGE`.</span><span class="sxs-lookup"><span data-stu-id="e37d4-121">The following table maps the statistics provided by this structure to the two [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) enumeration values, `COR_GC_COUNTS` and `COR_GC_MEMORYUSAGE`.</span></span>  
+ <span data-ttu-id="70525-121">Následující tabulka mapuje statistiky poskytované tuto strukturu pro dvě [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) hodnoty výčtu, `COR_GC_COUNTS` a `COR_GC_MEMORYUSAGE`.</span><span class="sxs-lookup"><span data-stu-id="70525-121">The following table maps the statistics provided by this structure to the two [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) enumeration values, `COR_GC_COUNTS` and `COR_GC_MEMORYUSAGE`.</span></span>  
   
-|<span data-ttu-id="e37d4-122">Určeného COR_GC_COUNTS</span><span class="sxs-lookup"><span data-stu-id="e37d4-122">Specified by COR_GC_COUNTS</span></span>|<span data-ttu-id="e37d4-123">Určeného COR_GC_MEMORYUSAGE</span><span class="sxs-lookup"><span data-stu-id="e37d4-123">Specified by COR_GC_MEMORYUSAGE</span></span>|  
+|<span data-ttu-id="70525-122">Určeného COR_GC_COUNTS</span><span class="sxs-lookup"><span data-stu-id="70525-122">Specified by COR_GC_COUNTS</span></span>|<span data-ttu-id="70525-123">Určeného COR_GC_MEMORYUSAGE</span><span class="sxs-lookup"><span data-stu-id="70525-123">Specified by COR_GC_MEMORYUSAGE</span></span>|  
 |----------------------------------|---------------------------------------|  
 |`ExplicitGCCount`<br /><br /> `GenCollectionsTaken`|`CommittedKBytes`<br /><br /> `ReservedKBytes`<br /><br /> `Gen0HeapSizeKBytes`<br /><br /> `Gen1HeapSizeKBytes`<br /><br /> `Gen2HeapSizeKBytes`<br /><br /> `LargeObjectHeapSizeKBytes`<br /><br /> `KBytesPromotedFromGen0`<br /><br /> `KBytesPromotedFromGen1`|  
   
- <span data-ttu-id="e37d4-124">Příklad použití je následující:</span><span class="sxs-lookup"><span data-stu-id="e37d4-124">An example of the usage is as follows:</span></span>  
+ <span data-ttu-id="70525-124">Příklad použití je následující:</span><span class="sxs-lookup"><span data-stu-id="70525-124">An example of the usage is as follows:</span></span>  
   
 ```  
 COR_GC_STATS GCStats;  
@@ -88,16 +77,16 @@ GCStats.Flags = COR_GC_COUNTS | COR_GC_MEMORYUSAGE;
 pCLRGCManager->GetStats(&GCStats);  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="e37d4-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e37d4-125">Requirements</span></span>  
- <span data-ttu-id="e37d4-126">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e37d4-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="70525-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="70525-125">Requirements</span></span>  
+ <span data-ttu-id="70525-126">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="70525-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e37d4-127">**Záhlaví:** GCHost.idl</span><span class="sxs-lookup"><span data-stu-id="e37d4-127">**Header:** GCHost.idl</span></span>  
+ <span data-ttu-id="70525-127">**Záhlaví:** GCHost.idl</span><span class="sxs-lookup"><span data-stu-id="70525-127">**Header:** GCHost.idl</span></span>  
   
- <span data-ttu-id="e37d4-128">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="e37d4-128">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="70525-128">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="70525-128">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="e37d4-129">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e37d4-129">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="70525-129">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="70525-129">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e37d4-130">Viz také</span><span class="sxs-lookup"><span data-stu-id="e37d4-130">See Also</span></span>  
- [<span data-ttu-id="e37d4-131">Struktury pro hostování</span><span class="sxs-lookup"><span data-stu-id="e37d4-131">Hosting Structures</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)  
- [<span data-ttu-id="e37d4-132">Automatická správa paměti</span><span class="sxs-lookup"><span data-stu-id="e37d4-132">Automatic Memory Management</span></span>](../../../../docs/standard/automatic-memory-management.md)  
- [<span data-ttu-id="e37d4-133">Uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="e37d4-133">Garbage Collection</span></span>](../../../../docs/standard/garbage-collection/index.md)
+## <a name="see-also"></a><span data-ttu-id="70525-130">Viz také</span><span class="sxs-lookup"><span data-stu-id="70525-130">See Also</span></span>  
+ [<span data-ttu-id="70525-131">Struktury pro hostování</span><span class="sxs-lookup"><span data-stu-id="70525-131">Hosting Structures</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)  
+ [<span data-ttu-id="70525-132">Automatická správa paměti</span><span class="sxs-lookup"><span data-stu-id="70525-132">Automatic Memory Management</span></span>](../../../../docs/standard/automatic-memory-management.md)  
+ [<span data-ttu-id="70525-133">Uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="70525-133">Garbage Collection</span></span>](../../../../docs/standard/garbage-collection/index.md)

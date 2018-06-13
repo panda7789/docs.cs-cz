@@ -1,44 +1,33 @@
 ---
-title: "Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby"
-ms.custom: 
+title: 'Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 62b41a75-cf40-4c52-a842-a5f1c70e247f
-caps.latest.revision: "12"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 920f2f85333f23d1b07b6a8ddf2a05279ee477ce
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 82b38d684d6a8de66d569c6fe09813f8ee1bea6a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33489694"
 ---
-# <a name="how-to-implement-a-client-application-that-uses-the-discovery-proxy-to-find-a-service"></a><span data-ttu-id="7788c-102">Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby</span><span class="sxs-lookup"><span data-stu-id="7788c-102">How to: Implement a Client Application that Uses the Discovery Proxy to Find a Service</span></span>
-<span data-ttu-id="7788c-103">Toto téma je třetí tři témata, která popisuje, jak implementace zjišťování proxy.</span><span class="sxs-lookup"><span data-stu-id="7788c-103">This topic is the third of three topics that discusses how to implement a discovery proxy.</span></span> <span data-ttu-id="7788c-104">V předchozím tématu [postupy: implementace zjistitelný služba, která registruje s proxy serverem zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md), můžete implementovat [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služba, která registruje zjišťování proxy.</span><span class="sxs-lookup"><span data-stu-id="7788c-104">In the previous topic, [How to: Implement a Discoverable Service that Registers with the Discovery Proxy](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md), you implemented a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service that registers itself with the discovery proxy.</span></span> <span data-ttu-id="7788c-105">V tomto tématu můžete vytvořit [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] klienta, který používá zjišťování proxy k vyhledání [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] služby.</span><span class="sxs-lookup"><span data-stu-id="7788c-105">In this topic you create a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client that uses the discovery proxy to find the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service.</span></span>  
+# <a name="how-to-implement-a-client-application-that-uses-the-discovery-proxy-to-find-a-service"></a><span data-ttu-id="c95b7-102">Postupy: Implementace klientské aplikace používající zjišťování proxy k vyhledání služby</span><span class="sxs-lookup"><span data-stu-id="c95b7-102">How to: Implement a Client Application that Uses the Discovery Proxy to Find a Service</span></span>
+<span data-ttu-id="c95b7-103">Toto téma je třetí tři témata, která popisuje, jak implementace zjišťování proxy.</span><span class="sxs-lookup"><span data-stu-id="c95b7-103">This topic is the third of three topics that discusses how to implement a discovery proxy.</span></span> <span data-ttu-id="c95b7-104">V předchozím tématu [postupy: implementace zjistitelný služba, která registruje s proxy serverem zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md), implementovaná službu WCF, která registruje zjišťování proxy.</span><span class="sxs-lookup"><span data-stu-id="c95b7-104">In the previous topic, [How to: Implement a Discoverable Service that Registers with the Discovery Proxy](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md), you implemented a WCF service that registers itself with the discovery proxy.</span></span> <span data-ttu-id="c95b7-105">V tomto tématu můžete vytvořit klienta WCF, který používá zjišťování proxy k vyhledání služby WCF.</span><span class="sxs-lookup"><span data-stu-id="c95b7-105">In this topic you create a WCF client that uses the discovery proxy to find the WCF service.</span></span>  
   
-### <a name="implement-the-client"></a><span data-ttu-id="7788c-106">Implementace klienta</span><span class="sxs-lookup"><span data-stu-id="7788c-106">Implement the client</span></span>  
+### <a name="implement-the-client"></a><span data-ttu-id="c95b7-106">Implementace klienta</span><span class="sxs-lookup"><span data-stu-id="c95b7-106">Implement the client</span></span>  
   
-1.  <span data-ttu-id="7788c-107">Přidat nový projekt konzolové aplikace na `DiscoveryProxyExample` řešení volat `Client`.</span><span class="sxs-lookup"><span data-stu-id="7788c-107">Add a new console application project to the `DiscoveryProxyExample` solution called `Client`.</span></span>  
+1.  <span data-ttu-id="c95b7-107">Přidat nový projekt konzolové aplikace na `DiscoveryProxyExample` řešení volat `Client`.</span><span class="sxs-lookup"><span data-stu-id="c95b7-107">Add a new console application project to the `DiscoveryProxyExample` solution called `Client`.</span></span>  
   
-2.  <span data-ttu-id="7788c-108">Přidejte odkazy na následující sestavení:</span><span class="sxs-lookup"><span data-stu-id="7788c-108">Add references to the following assemblies:</span></span>  
+2.  <span data-ttu-id="c95b7-108">Přidejte odkazy na následující sestavení:</span><span class="sxs-lookup"><span data-stu-id="c95b7-108">Add references to the following assemblies:</span></span>  
   
-    1.  <span data-ttu-id="7788c-109">System.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="7788c-109">System.ServiceModel</span></span>  
+    1.  <span data-ttu-id="c95b7-109">System.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="c95b7-109">System.ServiceModel</span></span>  
   
-    2.  <span data-ttu-id="7788c-110">System.ServiceModel.Discovery</span><span class="sxs-lookup"><span data-stu-id="7788c-110">System.ServiceModel.Discovery</span></span>  
+    2.  <span data-ttu-id="c95b7-110">System.ServiceModel.Discovery</span><span class="sxs-lookup"><span data-stu-id="c95b7-110">System.ServiceModel.Discovery</span></span>  
   
-3.  <span data-ttu-id="7788c-111">Přidejte GeneratedClient.cs najít v dolní části tohoto tématu a projekt.</span><span class="sxs-lookup"><span data-stu-id="7788c-111">Add the GeneratedClient.cs found at the bottom of this topic to the project.</span></span>  
+3.  <span data-ttu-id="c95b7-111">Přidejte GeneratedClient.cs najít v dolní části tohoto tématu a projekt.</span><span class="sxs-lookup"><span data-stu-id="c95b7-111">Add the GeneratedClient.cs found at the bottom of this topic to the project.</span></span>  
   
     > [!NOTE]
-    >  <span data-ttu-id="7788c-112">Tento soubor je obvykle generována pomocí nástroje, jako je Svcutil.exe.</span><span class="sxs-lookup"><span data-stu-id="7788c-112">This file is usually generated using a tool such as Svcutil.exe.</span></span> <span data-ttu-id="7788c-113">Je poskytována v tomto tématu, zjednodušit.</span><span class="sxs-lookup"><span data-stu-id="7788c-113">It is provided in this topic to simplify the task.</span></span>  
+    >  <span data-ttu-id="c95b7-112">Tento soubor je obvykle generována pomocí nástroje, jako je Svcutil.exe.</span><span class="sxs-lookup"><span data-stu-id="c95b7-112">This file is usually generated using a tool such as Svcutil.exe.</span></span> <span data-ttu-id="c95b7-113">Je poskytována v tomto tématu, zjednodušit.</span><span class="sxs-lookup"><span data-stu-id="c95b7-113">It is provided in this topic to simplify the task.</span></span>  
   
-4.  <span data-ttu-id="7788c-114">Otevřete soubor Program.cs a přidejte následující metodu.</span><span class="sxs-lookup"><span data-stu-id="7788c-114">Open the Program.cs file and add the following method.</span></span> <span data-ttu-id="7788c-115">Tato metoda přebírá adresu koncového bodu a používá ji k inicializaci služby klienta (proxy).</span><span class="sxs-lookup"><span data-stu-id="7788c-115">This method takes an endpoint address and uses it to initialize the service client (proxy).</span></span>  
+4.  <span data-ttu-id="c95b7-114">Otevřete soubor Program.cs a přidejte následující metodu.</span><span class="sxs-lookup"><span data-stu-id="c95b7-114">Open the Program.cs file and add the following method.</span></span> <span data-ttu-id="c95b7-115">Tato metoda přebírá adresu koncového bodu a používá ji k inicializaci služby klienta (proxy).</span><span class="sxs-lookup"><span data-stu-id="c95b7-115">This method takes an endpoint address and uses it to initialize the service client (proxy).</span></span>  
   
     ```  
     static void InvokeCalculatorService(EndpointAddress endpointAddress)  
@@ -73,7 +62,7 @@ ms.lasthandoff: 12/22/2017
             }  
     ```  
   
-5.  <span data-ttu-id="7788c-116">Přidejte následující kód, který `Main` metoda.</span><span class="sxs-lookup"><span data-stu-id="7788c-116">Add the following code to the `Main` method.</span></span>  
+5.  <span data-ttu-id="c95b7-116">Přidejte následující kód, který `Main` metoda.</span><span class="sxs-lookup"><span data-stu-id="c95b7-116">Add the following code to the `Main` method.</span></span>  
   
     ```  
     public static void Main()  
@@ -112,10 +101,10 @@ ms.lasthandoff: 12/22/2017
             }  
     ```  
   
- <span data-ttu-id="7788c-117">Dokončili jste implementace klientské aplikace.</span><span class="sxs-lookup"><span data-stu-id="7788c-117">You have completed implementing the client application.</span></span> <span data-ttu-id="7788c-118">Pokračujte na [postupy: testování zjišťování Proxy](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md).</span><span class="sxs-lookup"><span data-stu-id="7788c-118">Continue on to [How to: Test the Discovery Proxy](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md).</span></span>  
+ <span data-ttu-id="c95b7-117">Dokončili jste implementace klientské aplikace.</span><span class="sxs-lookup"><span data-stu-id="c95b7-117">You have completed implementing the client application.</span></span> <span data-ttu-id="c95b7-118">Pokračujte na [postupy: testování zjišťování Proxy](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md).</span><span class="sxs-lookup"><span data-stu-id="c95b7-118">Continue on to [How to: Test the Discovery Proxy](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7788c-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="7788c-119">Example</span></span>  
- <span data-ttu-id="7788c-120">Toto je kód úplný výpis pro toto téma.</span><span class="sxs-lookup"><span data-stu-id="7788c-120">This is the full code listing for this topic.</span></span>  
+## <a name="example"></a><span data-ttu-id="c95b7-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="c95b7-119">Example</span></span>  
+ <span data-ttu-id="c95b7-120">Toto je kód úplný výpis pro toto téma.</span><span class="sxs-lookup"><span data-stu-id="c95b7-120">This is the full code listing for this topic.</span></span>  
   
 ```  
 // GeneratedClient.cs  
@@ -292,7 +281,7 @@ namespace Microsoft.Samples.Discovery
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7788c-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="7788c-121">See Also</span></span>  
- [<span data-ttu-id="7788c-122">Přehled zjišťování WCF</span><span class="sxs-lookup"><span data-stu-id="7788c-122">WCF Discovery Overview</span></span>](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
- [<span data-ttu-id="7788c-123">Postupy: Implementace proxy zjišťování</span><span class="sxs-lookup"><span data-stu-id="7788c-123">How to: Implement a Discovery Proxy</span></span>](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)  
- [<span data-ttu-id="7788c-124">Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování</span><span class="sxs-lookup"><span data-stu-id="7788c-124">How to: Implement a Discoverable Service that Registers with the Discovery Proxy</span></span>](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)
+## <a name="see-also"></a><span data-ttu-id="c95b7-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="c95b7-121">See Also</span></span>  
+ [<span data-ttu-id="c95b7-122">Přehled zjišťování WCF</span><span class="sxs-lookup"><span data-stu-id="c95b7-122">WCF Discovery Overview</span></span>](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
+ [<span data-ttu-id="c95b7-123">Postupy: Implementace proxy zjišťování</span><span class="sxs-lookup"><span data-stu-id="c95b7-123">How to: Implement a Discovery Proxy</span></span>](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)  
+ [<span data-ttu-id="c95b7-124">Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování</span><span class="sxs-lookup"><span data-stu-id="c95b7-124">How to: Implement a Discoverable Service that Registers with the Discovery Proxy</span></span>](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)

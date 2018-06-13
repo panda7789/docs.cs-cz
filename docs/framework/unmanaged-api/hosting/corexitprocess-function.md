@@ -1,14 +1,6 @@
 ---
-title: "CorExitProcess – funkce"
-ms.custom: 
+title: CorExitProcess – funkce
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - CorExitProcess
 api_location:
@@ -25,24 +17,21 @@ helpviewer_keywords:
 ms.assetid: a5cab4c6-990e-47f3-8798-cf422b791015
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 560f63c131ad336a3ff4b4edec0aed2b58d33ba5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d3e7f3208d7ac84645fa4c7ad7e0b71f6a0d3d3d
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429326"
 ---
-# <a name="corexitprocess-function"></a><span data-ttu-id="55255-102">CorExitProcess – funkce</span><span class="sxs-lookup"><span data-stu-id="55255-102">CorExitProcess Function</span></span>
-<span data-ttu-id="55255-103">Ukončí proces aktuální nespravované.</span><span class="sxs-lookup"><span data-stu-id="55255-103">Shuts down the current unmanaged process.</span></span>  
+# <a name="corexitprocess-function"></a><span data-ttu-id="c308b-102">CorExitProcess – funkce</span><span class="sxs-lookup"><span data-stu-id="c308b-102">CorExitProcess Function</span></span>
+<span data-ttu-id="c308b-103">Ukončí proces aktuální nespravované.</span><span class="sxs-lookup"><span data-stu-id="c308b-103">Shuts down the current unmanaged process.</span></span>  
   
- <span data-ttu-id="55255-104">Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="55255-104">This function has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span> <span data-ttu-id="55255-105">Použití [iclrmetahost::exitprocess –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-exitprocess-method.md) metoda místo.</span><span class="sxs-lookup"><span data-stu-id="55255-105">Use the [ICLRMetaHost::ExitProcess](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-exitprocess-method.md) method instead.</span></span>  
+ <span data-ttu-id="c308b-104">Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c308b-104">This function has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span> <span data-ttu-id="c308b-105">Použití [iclrmetahost::exitprocess –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-exitprocess-method.md) metoda místo.</span><span class="sxs-lookup"><span data-stu-id="c308b-105">Use the [ICLRMetaHost::ExitProcess](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-exitprocess-method.md) method instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="55255-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="55255-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c308b-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c308b-106">Syntax</span></span>  
   
 ```  
 void STDMETHODCALLTYPE CorExitProcess (   
@@ -50,23 +39,23 @@ void STDMETHODCALLTYPE CorExitProcess (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="55255-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="55255-107">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="c308b-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="c308b-107">Parameters</span></span>  
  `exitCode`  
- <span data-ttu-id="55255-108">Celé číslo, které určuje kód ukončení procesu.</span><span class="sxs-lookup"><span data-stu-id="55255-108">An integer that specifies the process exit code.</span></span>  
+ <span data-ttu-id="c308b-108">Celé číslo, které určuje kód ukončení procesu.</span><span class="sxs-lookup"><span data-stu-id="c308b-108">An integer that specifies the process exit code.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="55255-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="55255-109">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c308b-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c308b-109">Remarks</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="55255-110">Od verze [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], `CorExitProcess` ukončí všechny Začínáme runtime v procesu, ne jenom modul runtime, ke kterému bylo svázáno starší verze rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="55255-110">Beginning with the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], `CorExitProcess` exits every started runtime in the process, not just the runtime to which the legacy APIs have been bound.</span></span>  
+>  <span data-ttu-id="c308b-110">Od verze [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], `CorExitProcess` ukončí všechny Začínáme runtime v procesu, ne jenom modul runtime, ke kterému bylo svázáno starší verze rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="c308b-110">Beginning with the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], `CorExitProcess` exits every started runtime in the process, not just the runtime to which the legacy APIs have been bound.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="55255-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="55255-111">Requirements</span></span>  
- <span data-ttu-id="55255-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="55255-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c308b-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c308b-111">Requirements</span></span>  
+ <span data-ttu-id="c308b-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c308b-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="55255-113">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="55255-113">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="c308b-113">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="c308b-113">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="55255-114">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="55255-114">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="c308b-114">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="c308b-114">**Library:** MSCorEE.dll</span></span>  
   
- <span data-ttu-id="55255-115">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="55255-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="c308b-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c308b-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="55255-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="55255-116">See Also</span></span>  
- [<span data-ttu-id="55255-117">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="55255-117">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a><span data-ttu-id="c308b-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="c308b-116">See Also</span></span>  
+ [<span data-ttu-id="c308b-117">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="c308b-117">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
