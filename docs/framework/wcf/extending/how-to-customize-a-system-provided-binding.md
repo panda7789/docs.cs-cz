@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803666"
 ---
 # <a name="how-to-customize-a-system-provided-binding"></a><span data-ttu-id="a6ecc-102">Postupy: přizpůsobení vazby poskytované systémem</span><span class="sxs-lookup"><span data-stu-id="a6ecc-102">How to: Customize a System-Provided Binding</span></span>
 <span data-ttu-id="a6ecc-103">Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných systémem, které vám umožní nakonfigurovat některé vlastnosti základní prvky vazby, ale ne všechny vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="a6ecc-103">Windows Communication Foundation (WCF) includes several system-provided bindings that allow you to configure some of the properties of the underlying binding elements, but not all of the properties.</span></span> <span data-ttu-id="a6ecc-104">Toto téma ukazuje, jak nastavit vlastnosti u elementů vazby k vytvoření vlastní vazby.</span><span class="sxs-lookup"><span data-stu-id="a6ecc-104">This topic demonstrates how to set properties on the binding elements to create a custom binding.</span></span>  

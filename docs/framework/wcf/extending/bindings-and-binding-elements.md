@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804622"
 ---
 # <a name="bindings-and-binding-elements"></a><span data-ttu-id="ff3ed-102">Vazby a prvky vazeb</span><span class="sxs-lookup"><span data-stu-id="ff3ed-102">Bindings and Binding Elements</span></span>
 <span data-ttu-id="ff3ed-103">Vazby jsou kolekce elementů zvláštní konfiguraci, s názvem *elementů vazby*, které se vyhodnocují modulem runtime služby vždy, když klient nebo je vytvářen koncový bod služby.</span><span class="sxs-lookup"><span data-stu-id="ff3ed-103">Bindings are collections of special configuration elements, called *binding elements*, which are evaluated by the service runtime whenever a client or service endpoint is being constructed.</span></span> <span data-ttu-id="ff3ed-104">Typem a pořadím elementů vazby v rámci vazbu určuje výběr a pořadí překrývání kanály protokolu a přenosu v zásobníku kanál koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="ff3ed-104">The type and order of the binding elements within a binding determines the selection and stacking order of the protocol and transport channels in an endpoint's channel stack.</span></span>  

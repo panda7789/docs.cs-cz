@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808429"
 ---
 # <a name="wcf-client-overview"></a><span data-ttu-id="dad7f-102">Klienti WCF – přehled</span><span class="sxs-lookup"><span data-stu-id="dad7f-102">WCF Client Overview</span></span>
 <span data-ttu-id="dad7f-103">Tato část popisuje, co udělat klientských aplikací, jak nakonfigurovat, vytvoření a používání klienta Windows Communication Foundation (WCF) a jak zabezpečit klientské aplikace.</span><span class="sxs-lookup"><span data-stu-id="dad7f-103">This section describes what client applications do, how to configure, create, and use a Windows Communication Foundation (WCF) client, and how to secure client applications.</span></span>  

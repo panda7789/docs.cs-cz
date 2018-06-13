@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804817"
 ---
 # <a name="query-execution"></a><span data-ttu-id="edaaa-102">Provádění dotazů</span><span class="sxs-lookup"><span data-stu-id="edaaa-102">Query Execution</span></span>
 <span data-ttu-id="edaaa-103">Po vytvoření dotaz LINQ uživatelem je převést na strom příkazů.</span><span class="sxs-lookup"><span data-stu-id="edaaa-103">After a LINQ query is created by a user, it is converted to a command tree.</span></span> <span data-ttu-id="edaaa-104">Stromu příkazů je reprezentace dotaz, který je kompatibilní s platformou Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="edaaa-104">A command tree is a representation of a query that is compatible with the Entity Framework.</span></span> <span data-ttu-id="edaaa-105">U zdroje dat je pak spustit strom příkazů.</span><span class="sxs-lookup"><span data-stu-id="edaaa-105">The command tree is then executed against the data source.</span></span> <span data-ttu-id="edaaa-106">Během provádění dotazu se vyhodnocují všechny výrazy dotazů (všechny součásti dotaz), včetně těchto výrazů, které se používají v materialization výsledek.</span><span class="sxs-lookup"><span data-stu-id="edaaa-106">At query execution time, all query expressions (that is, all components of the query) are evaluated, including those expressions that are used in result materialization.</span></span>  

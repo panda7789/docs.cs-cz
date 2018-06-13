@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805938"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a><span data-ttu-id="60d39-102">Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)</span><span class="sxs-lookup"><span data-stu-id="60d39-102">Using Windows Management Instrumentation for Diagnostics</span></span>
 <span data-ttu-id="60d39-103">Windows Communication Foundation (WCF) zpřístupní dat kontroly služby za běhu prostřednictvím poskytovatele WCF Windows Management Instrumentation (WMI).</span><span class="sxs-lookup"><span data-stu-id="60d39-103">Windows Communication Foundation (WCF) exposes inspection data of a service at runtime through a WCF Windows Management Instrumentation (WMI) provider.</span></span>  

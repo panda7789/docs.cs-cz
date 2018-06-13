@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805990"
 ---
 # <a name="fundamental-windows-workflow-concepts"></a><span data-ttu-id="9e1a6-102">Základní Windows Workflow koncepty</span><span class="sxs-lookup"><span data-stu-id="9e1a6-102">Fundamental Windows Workflow Concepts</span></span>
 <span data-ttu-id="9e1a6-103">Vývoj pro pracovní postup v [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] používá koncepty, které může být nový někteří vývojáři.</span><span class="sxs-lookup"><span data-stu-id="9e1a6-103">Workflow development in the [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] uses concepts that may be new to some developers.</span></span> <span data-ttu-id="9e1a6-104">Toto téma popisuje některé koncepty a jak jsou implementované.</span><span class="sxs-lookup"><span data-stu-id="9e1a6-104">This topic describes some of the concepts and how they are implemented.</span></span>  

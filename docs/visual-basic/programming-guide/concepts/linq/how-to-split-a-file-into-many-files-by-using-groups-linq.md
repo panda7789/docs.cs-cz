@@ -1,29 +1,20 @@
 ---
-title: "Postupy: rozdělení souboru na mnoho souborů pomocí skupin (LINQ) (Visual Basic)"
-ms.custom: 
+title: 'Postupy: rozdělení souboru na mnoho souborů pomocí skupin (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 5e8b2a2b-0b1d-4933-8a2b-03e91dfaf77f
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 76fb89136e05ee803c1bb2c91674e6b216e4ed2d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 19b542e22aa6e987a21095025a136d7602057b2c
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642149"
 ---
-# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a><span data-ttu-id="0b2ef-102">Postupy: rozdělení souboru na mnoho souborů pomocí skupin (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0b2ef-102">How to: Split a File Into Many Files by Using Groups (LINQ) (Visual Basic)</span></span>
-<span data-ttu-id="0b2ef-103">Tento příklad ukazuje jeden ze způsobů sloučí obsah dva soubory a pak vytvořit sadu nové soubory, které uspořádání dat nový způsob.</span><span class="sxs-lookup"><span data-stu-id="0b2ef-103">This example shows one way to merge the contents of two files and then create a set of new files that organize the data in a new way.</span></span>  
+# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a><span data-ttu-id="7686c-102">Postupy: rozdělení souboru na mnoho souborů pomocí skupin (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7686c-102">How to: Split a File Into Many Files by Using Groups (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="7686c-103">Tento příklad ukazuje jeden ze způsobů sloučí obsah dva soubory a pak vytvořit sadu nové soubory, které uspořádání dat nový způsob.</span><span class="sxs-lookup"><span data-stu-id="7686c-103">This example shows one way to merge the contents of two files and then create a set of new files that organize the data in a new way.</span></span>  
   
-### <a name="to-create-the-data-files"></a><span data-ttu-id="0b2ef-104">K vytvoření datových souborů</span><span class="sxs-lookup"><span data-stu-id="0b2ef-104">To create the data files</span></span>  
+### <a name="to-create-the-data-files"></a><span data-ttu-id="7686c-104">K vytvoření datových souborů</span><span class="sxs-lookup"><span data-stu-id="7686c-104">To create the data files</span></span>  
   
-1.  <span data-ttu-id="0b2ef-105">Zkopírujte tyto názvy do textového souboru s názvem names1.txt a uložit do složky projektu:</span><span class="sxs-lookup"><span data-stu-id="0b2ef-105">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
+1.  <span data-ttu-id="7686c-105">Zkopírujte tyto názvy do textového souboru s názvem names1.txt a uložit do složky projektu:</span><span class="sxs-lookup"><span data-stu-id="7686c-105">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
   
     ```  
     Bankov, Peter  
@@ -38,7 +29,7 @@ ms.lasthandoff: 11/21/2017
     Garcia, Debra  
     ```  
   
-2.  <span data-ttu-id="0b2ef-106">Zkopírujte tyto názvy do textového souboru s názvem names2.txt a uložte ho do složky projektu: Všimněte si, že dva soubory obsahují některé názvy společné.</span><span class="sxs-lookup"><span data-stu-id="0b2ef-106">Copy these names into a text file that is named names2.txt and save it in your project folder: Note that the two files have some names in common.</span></span>  
+2.  <span data-ttu-id="7686c-106">Zkopírujte tyto názvy do textového souboru s názvem names2.txt a uložte ho do složky projektu: Všimněte si, že dva soubory obsahují některé názvy společné.</span><span class="sxs-lookup"><span data-stu-id="7686c-106">Copy these names into a text file that is named names2.txt and save it in your project folder: Note that the two files have some names in common.</span></span>  
   
     ```  
     Liu, Jinghao  
@@ -53,7 +44,7 @@ ms.lasthandoff: 11/21/2017
     El Yassir, Mehdi  
     ```  
   
-## <a name="example"></a><span data-ttu-id="0b2ef-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="0b2ef-107">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="7686c-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="7686c-107">Example</span></span>  
   
 ```vb  
 Class SplitWithGroups  
@@ -122,11 +113,11 @@ End Class
 '    Toyoshima, Tim  
 ```  
   
- <span data-ttu-id="0b2ef-108">Program zapíše samostatný soubor pro každou skupinu ve stejné složce jako datové soubory.</span><span class="sxs-lookup"><span data-stu-id="0b2ef-108">The program writes a separate file for each group in the same folder as the data files.</span></span>  
+ <span data-ttu-id="7686c-108">Program zapíše samostatný soubor pro každou skupinu ve stejné složce jako datové soubory.</span><span class="sxs-lookup"><span data-stu-id="7686c-108">The program writes a separate file for each group in the same folder as the data files.</span></span>  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="0b2ef-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="0b2ef-109">Compiling the Code</span></span>  
- <span data-ttu-id="0b2ef-110">Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.</span><span class="sxs-lookup"><span data-stu-id="0b2ef-110">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="7686c-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="7686c-109">Compiling the Code</span></span>  
+ <span data-ttu-id="7686c-110">Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.</span><span class="sxs-lookup"><span data-stu-id="7686c-110">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0b2ef-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="0b2ef-111">See Also</span></span>  
- [<span data-ttu-id="0b2ef-112">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0b2ef-112">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
- [<span data-ttu-id="0b2ef-113">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0b2ef-113">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="7686c-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="7686c-111">See Also</span></span>  
+ [<span data-ttu-id="7686c-112">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7686c-112">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
+ [<span data-ttu-id="7686c-113">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7686c-113">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
