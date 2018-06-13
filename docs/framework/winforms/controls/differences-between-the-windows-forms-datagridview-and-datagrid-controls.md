@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528706"
 ---
 # <a name="differences-between-the-windows-forms-datagridview-and-datagrid-controls"></a>Rozdíly mezi ovládacími prvky Windows Forms DataGridView a DataGrid
 <xref:System.Windows.Forms.DataGridView> Je nový ovládací prvek, který nahrazuje <xref:System.Windows.Forms.DataGrid> ovládacího prvku. <xref:System.Windows.Forms.DataGridView> Řízení poskytuje mnoho základních a pokročilých funkcí, které chybí v <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Kromě toho architektuře <xref:System.Windows.Forms.DataGridView> ovládací prvek je mnohem jednodušší rozšířit a přizpůsobit než <xref:System.Windows.Forms.DataGrid> ovládacího prvku.  

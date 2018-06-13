@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529469"
 ---
 # <a name="how-to-add-controls-without-a-user-interface-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků bez uživatelského rozhraní do formulářů Windows
 Nevizuální ovládací prvek (nebo součást) poskytuje funkce, které vaše aplikace. Na rozdíl od jiných ovládacích prvků součástí neposkytují uživatelské rozhraní pro uživatele a proto není nutné zobrazit na povrchu Návrhář formulářů Windows. Když součást je přidán do formuláře, zobrazí Návrhář formulářů Windows s možností změny velikosti panelu v dolní části formuláře, kde jsou zobrazeny všechny součásti. Po přidání ovládacího prvku do komponent, můžete vybrat součásti a nastavit jeho vlastnosti, stejně jako další ovládací prvek na formuláři.  

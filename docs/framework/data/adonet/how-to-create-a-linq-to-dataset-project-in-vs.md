@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758864"
 ---
 # <a name="how-to-create-a-linq-to-dataset-project-in-visual-studio"></a>Postupy: vytvoření LINQ na DataSet projekt v sadě Visual Studio
 Různé typy [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] projekty vyžadovat určité importovaných oborů názvů (Visual Basic) nebo `using` direktivy (C#) a odkazy. Minimální požadavek je odkaz na System.Core.dll a `using` direktivy pro <xref:System.Linq>. Ve výchozím nastavení, tyto se zadávají v případě, že vytvoříte novou [!INCLUDE[csharp_orcas_long](../../../../includes/csharp-orcas-long-md.md)] projektu. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] také vyžaduje odkaz na System.Data.dll a System.Data.DataSetExtensions.dll a `Imports` (Visual Basic) nebo `using` – direktiva (C#).  

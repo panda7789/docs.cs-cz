@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532909"
 ---
 # <a name="how-to-display-an-insertion-mark-in-a-windows-forms-listview-control"></a>Postupy: Zobrazení značky vložení v ovládacím prvku Windows Forms ListView
 Značky vložení v <xref:System.Windows.Forms.ListView> řízení zobrazuje uživatele, kteří bodem budou vloženy taženou položky. Když uživatel nastavuje tažením položku do bodu mezi dva další položky, zobrazuje značky vložení očekávané nové umístění položky.  

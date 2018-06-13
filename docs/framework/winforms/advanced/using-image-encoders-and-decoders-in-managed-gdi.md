@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524498"
 ---
 # <a name="using-image-encoders-and-decoders-in-managed-gdi"></a>Použití kodérů a dekodérů ve spravovaném GDI+
 <xref:System.Drawing> Obor názvů obsahuje <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> třídy pro ukládání a manipulace s nimi bitové kopie. Pomocí kódovací moduly obrázku v [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], můžete napsat bitové kopie z paměti na disk. Pomocí dekódovací moduly obrázku v [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], bitové kopie můžete načíst z disku do paměti. Kodér převádí data v <xref:System.Drawing.Image> nebo <xref:System.Drawing.Bitmap> objekt do formátu souboru určený disk. Dekodér převádí data v souboru na disku na formát vyžadovanou <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> objekty.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528275"
 ---
 # <a name="how-to-add-columns-to-the-windows-forms-listview-control"></a>Postupy: Přidání sloupců do ovládacího prvku Windows Forms ListView
 V zobrazení Podrobnosti o <xref:System.Windows.Forms.ListView> ovládací prvek může zobrazit více sloupců pro každou položku seznamu. Sloupce můžete zobrazit uživateli několik typů informací o jednotlivé položky seznamu. Seznam souborů, například může zobrazit, název souboru, typu souboru, velikost a datum poslední úpravy souboru. Informace o vyplnění sloupce po jejich vytvoření najdete v tématu [postupy: zobrazení podřízených položek ve sloupcích pomocí ovládacího prvku Windows Forms ListView](../../../../docs/framework/winforms/controls/how-to-display-subitems-in-columns-with-the-windows-forms-listview-control.md).  
