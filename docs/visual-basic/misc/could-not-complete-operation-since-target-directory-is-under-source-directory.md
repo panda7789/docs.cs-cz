@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638509"
 ---
 # <a name="could-not-complete-operation-since-target-directory-is-under-source-directory"></a>Operaci nelze provést, protože cílový adresář je pod zdrojový adresář
 Cyklická operace se nezdařila. Cyklická operace cyklus a proto nelze dokončit. Například objekt A pokusit dědění z objektu B, který zase dědí z objektu A.  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599171"
 ---
 # <a name="alias-clause-visual-basic"></a>Alias – klauzule (Visual Basic)
 Určuje, že externí procedura má jiný název v jeho knihovny DLL.  

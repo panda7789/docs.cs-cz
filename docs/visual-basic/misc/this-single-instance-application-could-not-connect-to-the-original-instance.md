@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640251"
 ---
 # <a name="this-single-instance-application-could-not-connect-to-the-original-instance"></a>Nelze se připojit k původní instance této aplikace s jedinou instancí
 Tato aplikace s jedinou instancí se nemohl připojit k původní instance. Některé možné příčiny tohoto problému jsou následující:  

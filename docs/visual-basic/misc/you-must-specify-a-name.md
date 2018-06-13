@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639660"
 ---
 # <a name="you-must-specify-a-name"></a>Je nutné zadat název
 Při provádění operací se soubory například přejmenování souboru, musíte zadat název.  

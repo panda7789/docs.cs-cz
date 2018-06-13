@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584902"
 ---
 # <a name="how-to-cancel-a-dataflow-block"></a>Postupy: Zrušení bloku toku dat
 Tento dokument ukazuje, jak povolit zrušení ve vaší aplikaci. Tento příklad používá Windows Forms k zobrazení, kde jsou aktivní v kanálu toku dat a také důsledky zrušení pracovních položek.  

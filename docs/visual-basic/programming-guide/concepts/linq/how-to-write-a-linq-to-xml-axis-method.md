@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33645665"
 ---
 # <a name="how-to-write-a-linq-to-xml-axis-method-visual-basic"></a>Postupy: zápis LINQ metodě osy XML (Visual Basic)
 Můžete napsat vlastní metody osy načíst kolekce z strom XML. Jedním z nejlepší způsobů, jak to udělat je zápis metody rozšíření, která vrátí kolekci elementy nebo atributy. Můžete napsat rozšíření metodu vrátit konkrétní podmnožiny elementy nebo atributy, v závislosti na požadavcích vaší aplikace.  

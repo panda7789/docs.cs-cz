@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643702"
 ---
 # <a name="troubleshooting-interoperability-visual-basic"></a>Řešení potíží s interoperabilitou (Visual Basic)
 Když jste vzájemnou spolupráci mezi COM a spravovaného kódu [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], můžete narazit na jeden nebo více z následujících běžných problémů.  

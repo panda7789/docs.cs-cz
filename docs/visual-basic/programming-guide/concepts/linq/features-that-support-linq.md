@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643897"
 ---
 # <a name="visual-basic-features-that-support-linq"></a>Funkce Visual Basic podporující LINQ
 Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje technologie v jazyce Visual Basic, podporuje syntaxe dotazu a dalších jazyků vytvoří přímo v jazyce. S [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], není nutné další informace o nový jazyk k dotazu vůči externího zdroje dat. Můžete dotazovat na data v relačních databází, úložiště XML nebo objekty v jazyce Visual Basic. Tato integrace možnosti dotazu do jazyka umožňuje kompilaci kontrola chyby syntaxe a bezpečnost typů. Tato integrace zajišťuje již znáte většinu co musíte vědět, abyste mohli psát dotazy bohatou a rozmanitých v jazyce Visual Basic.  

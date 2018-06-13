@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638780"
 ---
 # <a name="the-input-path-refers-to-a-file-but-ends-with-a-directory-separator-character"></a>Vstupní cesta odkazuje na soubor ale končí znakem oddělovače adresáře s
 Operace došlo k pokusu o vyžadující, že je nutné zadat název souboru, ale zadaný název končí znakem oddělovače adresáře (`\`). To může být cesta k souboru nesprávně analyzovaný výsledek.  

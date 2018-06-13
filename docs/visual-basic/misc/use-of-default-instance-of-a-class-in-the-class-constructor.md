@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638368"
 ---
 # <a name="use-of-default-instance-of-a-class-in-the-class-constructor-could-lead-to-infinite-recursive-call"></a>Použití výchozí Instance třídy v konstruktoru třídy může vést k nekonečné rekurzivní volání
 Výchozí instance třídy se používá v konstruktoru třídy. To může vést k nekonečné rekurzivní volání, také známé jako nekonečné smyčce.  

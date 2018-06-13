@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803725"
 ---
 # <a name="basic-resource-service"></a>Služba základních prostředků
 Tento příklad ukazuje, jak implementovat pomocí modelu programování REST Windows Communication Foundation (WCF), který zveřejňuje kolekce zákazníků, která podporuje načtení služby založené na protokolu HTTP, přidat, odstranit a nahrazovat operace. Tato ukázka se skládá z 2 komponenty - WCF HTTP služba s vlastním hostováním (Service.cs) a konzolovou aplikaci (program.cs), která vytvoří službu a provádí volání do ní.  

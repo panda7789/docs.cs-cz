@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592415"
 ---
 # <a name="the-managed-thread-pool"></a>Spravovaný fond vláken
 <xref:System.Threading.ThreadPool> Třída poskytuje vaší aplikace pomocí fond pracovních vláken, které jsou spravovány nástrojem systému, což umožňuje soustředit se jenom na úlohy aplikace a nikoli vláken správy. Pokud máte krátké úlohy, které vyžadují zpracování na pozadí, spravovaný fond vláken je snadný způsob, jak využít výhod více vláken. Například počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] můžete vytvořit <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objekty, které asynchronní zpracovávat podprocesy z fondu podprocesů.  

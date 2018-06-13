@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585666"
 ---
 # <a name="class-does-not-support-automation-or-does-not-support-expected-interface"></a>Třída nepodporuje automatizaci nebo nepodporuje očekávané rozhraní.
 Třída zadaná v `GetObject` nebo `CreateObject` volání funkce nebyl vystaven programovatelnosti rozhraní nebo změnit projekt z .dll .exe, nebo naopak.  

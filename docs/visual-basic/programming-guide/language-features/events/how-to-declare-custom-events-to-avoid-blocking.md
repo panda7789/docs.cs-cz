@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646923"
 ---
 # <a name="how-to-declare-custom-events-to-avoid-blocking-visual-basic"></a>Postupy: Deklarování vlastních událostí k zabránění blokování (Visual Basic)
 Existují několika případech, kdy je důležité, že jedna obslužná rutina není blokovat obslužné rutiny události. Vlastní události povolit události na asynchronní volání jeho obslužné rutiny událostí.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641800"
 ---
 # <a name="vbstrconvwide-and-vbstrconvnarrow-cannot-be-combined"></a>Argumenty VbStrConv.Wide a VbStrConv.Narrow nelze kombinovat
 Aplikace se pokouší se zkombinovat `VbStrConv` členy výčtu `Wide` a `Narrow`, které se vzájemně vylučují.  

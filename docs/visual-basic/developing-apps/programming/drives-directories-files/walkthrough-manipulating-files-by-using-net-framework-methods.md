@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592532"
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework (Visual Basic)
 Tento návod ukazuje, jak otevřít a přečíst si souboru pomocí <xref:System.IO.StreamReader> třídy, zkontrolujte, pokud je soubor přistupuje, hledat řetězec v souboru pro čtení s instancí <xref:System.IO.StreamReader> třídy a zapisovat do souboru pomocí <xref:System.IO.StreamWriter> třídy.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585049"
 ---
 # <a name="can39t-create-necessary-temporary-file"></a>Můžete&#39;t vytvořit nezbytný dočasný soubor
 Buď jednotka je plná obsahující adresáře, určené proměnnou prostředí TEMP, nebo proměnnou prostředí TEMP určuje jednotku neplatný nebo jen pro čtení nebo adresář.  

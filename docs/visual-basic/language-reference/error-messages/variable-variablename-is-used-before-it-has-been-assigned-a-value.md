@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596916"
 ---
 # <a name="variable-39ltvariablenamegt39-is-used-before-it-has-been-assigned-a-value"></a>Proměnné &#39; &lt;NázevProměnné&gt; &#39; před byla přiřazena hodnota je používána
 Proměnnou '\<NázevProměnné > se před byla přiřazena hodnota je používána. V době běhu může způsobit výjimka odkazu s hodnotou null.  

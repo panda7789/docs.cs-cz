@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642805"
 ---
 # <a name="how-to-create-a-list-of-items"></a>Postupy: Vytvoření seznamu položek
 Definuje kód v tomto tématu `Student` třídy a vytvoří seznam instancí třídy. V seznamu je navržen pro podporu tématu [návod: zápis dotazů v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md). Také může sloužit pro každou aplikaci, která vyžaduje seznamu objektů. Kód definuje položky v seznamu studenty pomocí inicializátory objektů.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648470"
 ---
 # <a name="how-to-define-a-conversion-operator-visual-basic"></a>Postupy: Definice operátora převodu (Visual Basic)
 Pokud jste definovali třídu nebo strukturu, můžete definovat operátor převodu typu mezi typ třídu nebo strukturu a jiný datový typ (například `Integer`, `Double`, nebo `String`).  

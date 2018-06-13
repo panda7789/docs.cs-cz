@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643299"
 ---
 # <a name="how-to-chain-axis-method-calls-linq-to-xml-visual-basic"></a>Postupy: tvoří řetěz volání metod osy (technologie LINQ to XML) (Visual Basic)
 Volání metody osy a pak volání některá z rozšíření metoda OS je běžný vzor, který budete používat v kódu.  

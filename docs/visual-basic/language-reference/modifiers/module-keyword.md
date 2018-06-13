@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595274"
 ---
 # <a name="module-ltkeywordgt-visual-basic"></a>Modul &lt;– klíčové slovo&gt; (Visual Basic)
 Určuje, že atribut na začátku zdrojového souboru platí pro aktuální modul sestavení.  

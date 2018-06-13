@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593636"
 ---
 # <a name="39ltname1gt39-is-ambiguous-imported-from-the-namespaces-or-types-39ltname2gt39"></a>&#39;&lt;name1&gt; &#39; je nejednoznačné, importovat z oboru názvů nebo typy &#39; &lt;name2&gt;&#39;
 Jste zadali název, který je nejednoznačný a proto je v konfliktu s jiným názvem. Visual Basic – kompilátor nemá žádné pravidel řešení konfliktů; rozlišení názvů musí být sami.  

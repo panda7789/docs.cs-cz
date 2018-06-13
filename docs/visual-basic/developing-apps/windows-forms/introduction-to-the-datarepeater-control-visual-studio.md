@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591947"
 ---
 # <a name="introduction-to-the-datarepeater-control-visual-studio"></a>Úvod k ovládacímu prvku DataRepeater (Visual Studio)
 Visual Basic Power Pack <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládací prvek je posuvný kontejner pro ovládací prvky, které zobrazují opakované data, například řádků v tabulce databáze. Může sloužit jako alternativu k <xref:System.Windows.Forms.DataGridView> řízení, pokud potřebujete větší kontrolu nad rozložení data. <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> "Opakuje" skupinu souvisejících ovládacích prvků tak, že vytvoříte více instancí v posouvání zobrazení. To umožňuje uživatelům zobrazit více záznamů najednou.  

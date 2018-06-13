@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643474"
 ---
 # <a name="getting-started-with-linq-in-visual-basic"></a>Začínáme s dotazy LINQ v jazyce Visual Basic
 Tato část obsahuje přehledy, příklady a základní informace, které vám pomůžou pochopit a používat Visual Basic a Language-Integrated Query (LINQ).  

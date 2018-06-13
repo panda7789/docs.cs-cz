@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593282"
 ---
 # <a name="out-of-stack-space-visual-basic"></a>Nedostatek místa v zásobníku (Visual Basic)
 Zásobník představuje pracovní oblasti paměti, která zvětšují a zvětšování dynamicky s požadavky vaší provádění programu. Jeho omezení byly překročeny.  

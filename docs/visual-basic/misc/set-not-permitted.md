@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641472"
 ---
 # <a name="set-not-permitted"></a>Nastavení není povoleno.
 Pokoušíte se o změnit vlastnost, jehož nastavení buď nelze nastavit v době běhu, jinak lze nastavit pouze za určitých podmínek. Například může jste se pokusili změnit `Appearance`, `ControlBox`,`MinButton`, nebo `MaxButton` nastavení vlastností pro daný formulář v době běhu, nebo může mít pokus o nastavení `Visible` vlastnost `False` pro poslední zbývající viditelné podnabídce nadřazené nabídky.  

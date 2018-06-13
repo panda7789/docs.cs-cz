@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583887"
 ---
 # <a name="declaration-expected"></a>Byla očekávána deklarace.
 Výpis nondeclarative, jako je například přiřazení nebo smyčky příkaz proběhne mimo všechny postupu. Mimo postupy jsou povoleny pouze deklarace.  

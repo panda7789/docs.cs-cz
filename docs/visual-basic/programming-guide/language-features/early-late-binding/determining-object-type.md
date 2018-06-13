@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648291"
 ---
 # <a name="determining-object-type-visual-basic"></a>Určení typu objektu (Visual Basic)
 Obecné objektové proměnné (to znamená, proměnné je deklarovat jako `Object`) může obsahovat objekty z libovolné třídy. Při použití proměnné typu `Object`, budete muset provést různé akce na základě třídy objektu; například některé objekty nemusí podporovat konkrétní vlastnosti nebo metody. Visual Basic poskytuje dva prostředky pro určení toho, jaký typ objektu je uložené v proměnné objektu: `TypeName` funkce a `TypeOf...Is` operátor.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647147"
 ---
 # <a name="retrieving-the-text-of-the-paragraphs-visual-basic"></a>Načítání textu odstavců (Visual Basic)
 Tento příklad vychází na předchozí příklad, [načítání odstavců a jejich styly (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md). Tento nový příklad načte text jednotlivých odstavců jako řetězec.  

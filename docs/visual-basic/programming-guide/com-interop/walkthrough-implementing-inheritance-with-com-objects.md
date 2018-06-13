@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644300"
 ---
 # <a name="walkthrough-implementing-inheritance-with-com-objects-visual-basic"></a>Návod: Implementace dědičnosti s objekty modelu COM (Visual Basic)
 Odvozujete tříd jazyka Visual Basic z `Public` třídy v objekty modelu COM, včetně těch, které jsou vytvořené v dřívějších verzích jazyka Visual Basic. Vlastnosti a metody třídy dědí z objektů COM můžete přepsat nebo přetížený stejně jako vlastnosti a metody všechny základní třídy lze přepsat nebo přetížený. Dědičnost z objektů COM je užitečné, když máte existující knihovny tříd, které nechcete znovu zkompilovat.  
