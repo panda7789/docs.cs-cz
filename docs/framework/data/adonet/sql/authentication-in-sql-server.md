@@ -7,6 +7,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472384"
 ---
 # <a name="authentication-in-sql-server"></a><span data-ttu-id="db405-102">Ověřování v systému SQL Server</span><span class="sxs-lookup"><span data-stu-id="db405-102">Authentication in SQL Server</span></span>
 <span data-ttu-id="db405-103">Systém SQL Server podporuje dva režimy ověřování a smíšený režim a režim ověřování systému Windows.</span><span class="sxs-lookup"><span data-stu-id="db405-103">SQL Server supports two authentication modes, Windows authentication mode and mixed mode.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803592"
 ---
 # <a name="windows-communication-foundation-bindings"></a><span data-ttu-id="92631-102">Vazby WCF</span><span class="sxs-lookup"><span data-stu-id="92631-102">Windows Communication Foundation Bindings</span></span>
 <span data-ttu-id="92631-103">Vazby zadejte, jak koncového bodu služby Windows Communication Foundation (WCF) komunikuje s další koncové body.</span><span class="sxs-lookup"><span data-stu-id="92631-103">Bindings specify how a Windows Communication Foundation (WCF) service endpoint communicates with other endpoints.</span></span> <span data-ttu-id="92631-104">Ve své nejzákladnější musíte zadat vazbu přenosu (například HTTP nebo TCP), který je použít.</span><span class="sxs-lookup"><span data-stu-id="92631-104">At its most basic, a binding must specify the transport (for example, HTTP or TCP) to use.</span></span> <span data-ttu-id="92631-105">Můžete také nastavit další vlastnosti, například zabezpečení a transakce podporují pomocí vazby.</span><span class="sxs-lookup"><span data-stu-id="92631-105">You can also set other characteristics, such as security and transaction support, through bindings.</span></span>  

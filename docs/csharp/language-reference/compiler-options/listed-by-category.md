@@ -11,6 +11,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472409"
 ---
 # <a name="c-compiler-options-listed-by-category"></a><span data-ttu-id="3d823-102">Možnosti kompilátoru C# uvedené podle kategorie</span><span class="sxs-lookup"><span data-stu-id="3d823-102">C# Compiler Options Listed by Category</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34549617"
 ---
 # <a name="collections-c"></a><span data-ttu-id="67660-102">Kolekce (C#)</span><span class="sxs-lookup"><span data-stu-id="67660-102">Collections (C#)</span></span>
 <span data-ttu-id="67660-103">Mnoho aplikací budete chtít vytvořit a spravovat skupiny související objekty.</span><span class="sxs-lookup"><span data-stu-id="67660-103">For many applications, you want to create and manage groups of related objects.</span></span> <span data-ttu-id="67660-104">Existují dva způsoby do objektů skupiny: vytvořením pole objektů a vytvořením kolekce objektů.</span><span class="sxs-lookup"><span data-stu-id="67660-104">There are two ways to group objects: by creating arrays of objects, and by creating collections of objects.</span></span>  

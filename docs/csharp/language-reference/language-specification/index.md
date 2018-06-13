@@ -13,6 +13,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472786"
 ---
 # <a name="c-60-draft-language-specification"></a><span data-ttu-id="0e103-102">Specifikace jazyka C# 6.0 konceptu</span><span class="sxs-lookup"><span data-stu-id="0e103-102">C# 6.0 draft language specification</span></span>
 
