@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508641"
 ---
 # <a name="security-behaviors-in-wcf"></a>Chování zabezpečení ve WCF
 Ve Windows Communication Foundation (WCF), upravte chování běhového chování na úrovni služby, nebo na úrovni koncového bodu. (Další informace o chování obecně platí, najdete v části [určení chování služby Run-Time](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md).) *Chování zabezpečení* kontrolu nad přihlašovací údaje, ověřování, autorizaci a auditování protokoly. Chování můžete použít buď programování, nebo prostřednictvím konfigurace. Toto téma se zaměřuje na konfiguraci následujících chování související s funkcí zabezpečení:  

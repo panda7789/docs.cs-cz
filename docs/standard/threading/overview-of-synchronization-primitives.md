@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592012"
 ---
 # <a name="overview-of-synchronization-primitives"></a>Přehled primitiv synchronizace
 <a name="top"></a> Rozhraní .NET Framework poskytuje celou řadu synchronizace primitiv pro řízení interakce vláken a vyloučení časování. To je možné zhruba rozdělit do tří kategorií: zamykání, signalizační a interlocked operace.  

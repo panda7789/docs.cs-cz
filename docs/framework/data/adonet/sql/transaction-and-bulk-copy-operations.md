@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365339"
 ---
 # <a name="transaction-and-bulk-copy-operations"></a>Transakce a operace hromadného kopírování
 Operace hromadného kopírování lze provést jako izolované operace nebo jako součást více krok transakce. Tato druhou možnost umožňuje provádět více než jeden hromadné kopírování v rámci jedné transakce a také provádění jiných databázových operací (například vložení, aktualizace a odstranění) ale stále mít možnost potvrďte nebo vraťte zpět celou transakci.  

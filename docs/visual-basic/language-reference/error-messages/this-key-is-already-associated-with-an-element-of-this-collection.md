@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593259"
 ---
 # <a name="this-key-is-already-associated-with-an-element-of-this-collection"></a>Tento klíč již je přidružen k elementu této kolekce.
 Zadaný klíč pro člena kolekce již identifikuje jiného člena kolekce. Klíč je řetězec zadaný v poli `Add` metoda, která jednoznačně identifikuje konkrétní člena kolekce.  

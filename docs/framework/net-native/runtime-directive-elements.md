@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398011"
 ---
 # <a name="runtime-directive-elements"></a>Elementy direktivy modulu runtime
 Formát souboru runtime (rd.xml) direktivy podporuje následující elementy direktivy modulu runtime. V tématu [direktivy modulu Runtime (rd.xml) referenci na konfigurační soubor](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md) pro znázornění hierarchické.  

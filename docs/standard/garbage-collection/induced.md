@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575860"
 ---
 # <a name="induced-collections"></a>Vyvolané kolekce
 Ve většině případů může systém uvolňování paměti určit nejvhodnější čas k provedení uvolnění paměti, které byste pak měli nechat běžet nezávisle. Při vynuceném kolekce může zlepšit výkon vaší aplikace, se velmi zřídka. V těchto případech můžete vyvolat uvolňování paměti pomocí <xref:System.GC.Collect%2A?displayProperty=nameWithType> metoda vynutit uvolnění paměti.  

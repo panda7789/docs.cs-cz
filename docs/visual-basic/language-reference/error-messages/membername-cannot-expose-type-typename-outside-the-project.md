@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588090"
 ---
 # <a name="39ltmembernamegt39-cannot-expose-type-39lttypenamegt39-outside-the-project-through-ltcontainertypegt-39ltcontainertypenamegt39"></a>&#39;&lt;MemberName&gt; &#39; nemůže vystavovat typ &#39; &lt;typename&gt; &#39; mimo projekt prostřednictvím &lt;containertype&gt; &#39; &lt;containertypename&gt;&#39;
 Proměnnou, parametr procedury nebo funkce návratový je nezveřejní jejímu kontejneru, ale je deklarován jako typ, který nesmí být nezveřejní kontejneru.  

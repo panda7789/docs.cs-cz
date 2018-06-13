@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588077"
 ---
 # <a name="end-of-statement-expected"></a>Byl očekáván konec příkazu.
 Příkaz je syntakticky dokončení, ale další programovací element odpovídá elementu, který dokončí příkaz. Na konci každé příkaz vyžádáním ukončení řádku.

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33386168"
 ---
 # <a name="wcf-directive-syntax"></a>Syntaxe direktivy WCF
 Určuje nastavení, které používají Windows Communication Foundation (WCF) direktivy v souborů .svc k přímé kompilátory. Každý – direktiva může obsahovat jeden nebo více atributů (spárovat s hodnotami), které jsou specifických pro danou direktivu. WCF je k dispozici pouze [ @ServiceHost ](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) – direktiva.  

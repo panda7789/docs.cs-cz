@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363111"
 ---
 # <a name="manipulating-data"></a>Manipulace s daty
 Před zavedením z více Active výsledek sady (MARS) vývojáři bylo nutné použít více připojení nebo kurzory na straně serveru k řešení určité scénáře. Kromě toho, když v situaci, transakční používaly více připojení, vázaný připojení (s **proceduru sp_getbindtoken** a **procedury sp_bindsession**) nebyly potřeba. Následující scénáře ukazují, jak používat připojení s MARS místo více připojení.  

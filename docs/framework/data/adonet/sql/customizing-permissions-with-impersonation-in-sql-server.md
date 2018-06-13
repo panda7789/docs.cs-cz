@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362640"
 ---
 # <a name="customizing-permissions-with-impersonation-in-sql-server"></a>Přizpůsobení oprávnění s zosobnění v systému SQL Server
 Mnoho aplikací pomocí uložené procedury pro přístup k datům, spoléhat na vlastnictví řetězení omezit přístup k základní tabulky. Můžete udělit oprávnění pro spouštění na uložené procedury, odvolání nebo odmítnout oprávnění u základní tabulky. SQL Server oprávnění volajícího nekontroluje, pokud se uložené procedury a tabulky mít stejného vlastníka. Ale vlastnictví řetězení nefunguje Pokud objekty mají různé vlastníci, nebo v případě dynamických SQL.  

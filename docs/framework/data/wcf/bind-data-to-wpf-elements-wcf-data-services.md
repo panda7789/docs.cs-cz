@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363892"
 ---
 # <a name="how-to-bind-data-to-windows-presentation-foundation-elements-wcf-data-services"></a>Postupy: připojení dat k prvky systému Windows Presentation Foundation (WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], lze vázat elementy Windows Presentation Foundation (WPF), jako <xref:System.Windows.Controls.ListBox>'' nebo <xref:System.Windows.Controls.ComboBox> na instanci <xref:System.Data.Services.Client.DataServiceCollection%601>, který zpracovává události vyvolané službou zachovat ovládací prvky <xref:System.Data.Services.Client.DataServiceContext> synchronizována se změnami žádost o data v ovládacích prvcích. Další informace najdete v tématu [vazby dat k ovládacím prvkům](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).  

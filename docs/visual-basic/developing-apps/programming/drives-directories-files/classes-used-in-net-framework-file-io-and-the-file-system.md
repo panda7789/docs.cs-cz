@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590696"
 ---
 # <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a>Třídy používané ve vstupně-výstupních operacích se soubory a v systému souborů v rozhraní .NET Framework (Visual Basic)
 Následující tabulka uvádí třídy běžně používané pro rozhraní .NET Framework soubor vstupně-výstupních operací, rozděleny do třídy vstupně-výstupních souborů, třídy používané pro vytváření datových proudů a třídy používané pro čtení a zápis do datových proudů.  

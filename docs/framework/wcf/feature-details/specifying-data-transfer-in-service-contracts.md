@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508488"
 ---
 # <a name="specifying-data-transfer-in-service-contracts"></a>Určování přenosu dat v kontraktech služby
 Windows Communication Foundation (WCF) lze považovat za infrastrukturu zasílání zpráv. Operace služby můžete přijímat zprávy, jejich zpracování a jejich odeslání zprávy. Zprávy jsou popsány použití kontraktů operaci. Zvažte například následující kontrakt.  

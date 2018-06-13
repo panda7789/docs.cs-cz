@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587743"
 ---
 # <a name="file-not-found-visual-basic-run-time-error"></a>Soubor nebyl nalezen (chyba za běhu jazyka Visual Basic).
 Soubor nebyl nalezen, kde je zadán. Chyba má následující možné příčiny:  

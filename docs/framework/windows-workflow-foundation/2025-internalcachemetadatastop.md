@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33510121"
 ---
 # <a name="2025---internalcachemetadatastop"></a>2025 - InternalCacheMetadataStop
 ## <a name="properties"></a>Vlastnosti  

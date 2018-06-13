@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396604"
 ---
 # <a name="using-an-asynchronous-server-socket"></a>Pomocí soketu asynchronní serveru
 Asynchronní serveru sockets používat asynchronní programovací model rozhraní .NET Framework ke zpracování žádosti o služby sítě. <xref:System.Net.Sockets.Socket> Třída dodržovat standardní rozhraní .NET Framework asynchronního vzoru pro pojmenovávání; například synchronní <xref:System.Net.Sockets.Socket.Accept%2A> metoda odpovídá asynchronní <xref:System.Net.Sockets.Socket.BeginAccept%2A> a <xref:System.Net.Sockets.Socket.EndAccept%2A> metody.  

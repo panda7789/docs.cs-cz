@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590261"
 ---
 # <a name="double-data-type-visual-basic"></a>Double – datový typ (Visual Basic)
 Blokování podepsané IEEE 64-bit (8 bajtů) dvojitou přesností s plovoucí desetinnou čárkou čísla, která rozsah v hodnotě od - 1.79769313486231570E + 308 prostřednictvím - 4.94065645841246544E-324 pro záporné hodnoty a z 4.94065645841246544E-324 prostřednictvím 1.79769313486231570E + 308 pro kladné hodnoty. Dvojitá přesnost – čísla ukládat sblížení reálné číslo.  

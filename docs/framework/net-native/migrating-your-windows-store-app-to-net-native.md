@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397777"
 ---
 # <a name="migrating-your-windows-store-app-to-net-native"></a>Migrace aplikace pro Windows Store do .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] poskytuje statické kompilace aplikací ve službě Windows Store nebo na počítači pro vývojáře. Tím se liší od dynamická kompilace provádí kompilátoru v běhu (JIT) pro aplikace Windows Store nebo [generátor (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) na zařízení. Bez ohledu rozdíly [!INCLUDE[net_native](../../../includes/net-native-md.md)] pokusí zachování kompatibility s [aplikace .NET pro Windows Store](http://msdn.microsoft.com/library/windows/apps/br230302.aspx). Ve většině případů věcí, které fungují v aplikacích .NET pro Windows Store se taky pracovat s [!INCLUDE[net_native](../../../includes/net-native-md.md)].  Ale v některých případech se můžete setkat s nějaké změny. Tento dokument popisuje tyto rozdíly mezi standardní aplikace .NET pro Windows Store a [!INCLUDE[net_native](../../../includes/net-native-md.md)] v těchto oblastech:  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766098"
 ---
 # <a name="filtering-with-dataview-linq-to-dataset"></a>Filtrování s DataView (LINQ na DataSet)
 Možnost filtrování dat pomocí konkrétních kritérií a potom prezentovat data ke klientovi pomocí ovládacího prvku uživatelského rozhraní je důležitým aspektem datové vazby. <xref:System.Data.DataView> poskytuje několik způsobů, jak filtrovat data a vrátit podmnožiny dat řádků kritéria filtru konkrétní schůzku. Kromě základě řetězec možností filtrování <xref:System.Data.DataView> taky poskytuje možnost používat [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy pro kritéria filtrování. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy umožňují mnohem složitější a výkonné filtrování operací než filtrování založené na řetězec.  

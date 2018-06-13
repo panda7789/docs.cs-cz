@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591765"
 ---
 # <a name="walkthrough-creating-a-dataflow-pipeline"></a>Postupy: Vytvoření kanálu toku dat
 Přestože je možné použít <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A?displayProperty=nameWithType>, a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A?displayProperty=nameWithType> metody pro příjem zpráv z zdroje bloky, bloky zpráv může připojit i k formuláře *kanálu toku dat*. Kanálu toku dat je několika komponent, nebo *bloků toku dat*, z nichž každá provádí konkrétní úlohu, která přispívá ke větší cíl. Každý bloku toku dat v kanálu toku dat provede práci při přijetí zprávy z jiného bloku toku dat. Analogie k tomuto je sestavení pro automobilů výrobní. Při každém vehicle průchodu řádku sestavení, jedné stanici sestaví rámečku, dalšímu nainstaluje modul a tak dále. Vzhledem sestavení řádku umožňuje více vozidel pro sestavení ve stejnou dobu, poskytuje lepší propustnost než ty dokončení vozidel jeden najednou.

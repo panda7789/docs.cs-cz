@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33501530"
 ---
 # <a name="how-to-set-the-protectionlevel-property"></a>Postupy: Nastavení vlastnosti ProtectionLevel
 Úroveň ochrany můžete nastavit tak, že použití odpovídajícího atributu a nastavení vlastnosti. Můžete nastavit ochranu na úrovni služby a ovlivňují všechny části každé zprávy nebo můžete nastavit ochranu stále podrobné úrovni, z metody části zprávy. Další informace o `ProtectionLevel` vlastnost, najdete v části [úroveň ochrany Principy](../../../docs/framework/wcf/understanding-protection-level.md).  

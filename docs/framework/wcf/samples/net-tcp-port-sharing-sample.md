@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33506464"
 ---
 # <a name="nettcp-port-sharing-sample"></a>Ukázka služby Net.TCP Port Sharing
 Protokol TCP/IP používá 16bitové čísla, který se nazývá port, k odlišení připojení k několika síťových aplikací, které jsou spuštěné na stejném počítači. Pokud aplikace naslouchá na portu, pak všechny přenosy TCP pro tento port přejde k dané aplikaci. Ostatní aplikace nemůže naslouchat na tomto portu ve stejnou dobu.  

@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579324"
 ---
 # <a name="metadata-and-self-describing-components"></a>Metadata a komponenty popisující samy sebe
 V minulosti součást softwaru (.exe nebo .dll), která byla zapsána v jednom jazyce nelze použít snadno softwarová součást, která byla zapsána v jiném jazyce. COM zadat krok k řešení tohoto problému. Rozhraní .NET Framework usnadňuje vzájemná spolupráce součásti i tím, že kompilátory pro vydávání další deklarativní informace do všech modulů a sestavení. Tyto informace, nazývané metadata, pomáhá součásti bezproblémově pracovat.  

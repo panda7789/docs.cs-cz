@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579012"
 ---
 # <a name="task-based-asynchronous-pattern-tap"></a>Asynchronní vzor založený na úlohách (TAP)
 Založený na úlohách asynchronní vzor (TAP) je založena na <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> typy v <xref:System.Threading.Tasks?displayProperty=nameWithType> obor názvů, které se používají k vyjádření libovolný asynchronní operace. TAP je doporučený asynchronní návrh vzoru pro nový vývoj.  

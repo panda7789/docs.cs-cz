@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767398"
 ---
 # <a name="navigation-property"></a>navigační vlastnost
 A *navigační vlastnost* je volitelná vlastnost na [typ entity](../../../../docs/framework/data/adonet/entity-type.md) umožňuje pro navigaci z jednoho [end](../../../../docs/framework/data/adonet/association-end.md) z [přidružení](../../../../docs/framework/data/adonet/association-type.md) na druhém konci. Na rozdíl od jiných [vlastnosti](../../../../docs/framework/data/adonet/property.md), navigačních vlastností nepřenášejí data.  

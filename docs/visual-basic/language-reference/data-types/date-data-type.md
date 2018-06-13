@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591817"
 ---
 # <a name="date-data-type-visual-basic"></a>Date – datový typ (Visual Basic)
 Obsahuje hodnoty IEEE 64-bit (8 bajtů), které reprezentují rozsahu od 1. ledna roku 0001 až 31. prosince 9999 roku datum a čas od 12:00:00: 00 (půlnoc) prostřednictvím 11:59:59.9999999 PM. Každý přírůstek představuje 100 nanosekundách uplynulý čas od začátku 1. ledna roku 1 v gregoriánském kalendáři. Maximální hodnota 100 nanosekundách představuje před začátkem 1. ledna roku 10000.  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579493"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Použití asynchronního vzoru založeného na úloze
 Použijete-li pracovat s asynchronních operací založený na úlohách asynchronní vzor (TAP), můžete dosáhnout čekání bez blokování zpětných volání.  Pro úlohy, můžete toho dosáhnout pomocí metody, jako <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>. Na základě jazyka asynchronní podpora skryje tím, že asynchronních operací, která se v rámci normálního toku řízení očekávaná zpětná volání a generované kompilátorem kódu poskytuje tato podpora stejnou úroveň rozhraní API.  

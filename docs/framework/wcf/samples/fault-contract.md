@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33504156"
 ---
 # <a name="fault-contract"></a>Chyba – kontrakt
 Chyba – kontrakt příklad znázorňuje způsob ke sdělování informací chyby ze služby klienta. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), s další kód přidat ke službě převést výjimku vnitřní chybu. Klient se pokusí provést dělení nulou vynutit chybový stav služby.  

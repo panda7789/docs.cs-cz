@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588158"
 ---
 # <a name="secure-coding-guidelines"></a>Pokyny pro zabezpečené kódování
 Zabezpečení na základě důkaz a zabezpečení přístupu kódu poskytují velmi výkonné, explicitní mechanismy pro implementaci zabezpečení. Většinu kódu aplikace můžete jednoduše používat infrastrukturu implementované rozhraní .NET Framework. V některých případech další bezpečnostní specifické pro aplikaci je nutné, vytvořené pomocí rozšíření zabezpečení systému nebo pomocí nových ad hoc metod.  

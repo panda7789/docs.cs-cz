@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33501452"
 ---
 # <a name="discover-a-service-with-unique-listen-uri-mode-sample"></a>Ukázka zjišťování služby s vlastností ListenUriMode nastavenou na Unique
 Tento příklad ukazuje, jak zjistit službu, která má <xref:System.ServiceModel.Channels.BindingContext.ListenUriMode%2A> vlastnost nastavena na hodnotu <xref:System.ServiceModel.Description.ListenUriMode.Unique>. Když <xref:System.ServiceModel.Channels.BindingContext.ListenUriMode%2A> je nastavena na <xref:System.ServiceModel.Description.ListenUriMode.Unique>, je zajištěno, že adrese ListenUri být jedinečný, a to nastavením portu být jedinečný, nebo pro danou cestu jako jedinečný identifikátor GUID připojením.  

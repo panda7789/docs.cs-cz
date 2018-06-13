@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364932"
 ---
 # <a name="how-to-generate-the-object-model-as-an-external-file"></a>Postupy: generování objektový Model jako externí soubor
 Jako alternativu k mapování na základě atributů můžete pomocí nástroje příkazového řádku na SQLMetal vygenerovat objektový model jako externí soubor XML. Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). Pomocí externího souboru XML mapování snížit zbytečné soubory do vašeho kódu. Můžete také změnit chování změnou externího souboru bez nutnosti rekompilace binární soubory aplikace. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  

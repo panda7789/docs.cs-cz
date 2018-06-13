@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575847"
 ---
 # <a name="how-to-enumerate-directories-and-files"></a>Postupy: Vytvoření výčtu adresářů a souborů
 Můžete vytvořit výčet adresářů a souborů pomocí metod, které vrací vyčíslitelná kolekce řetězců jejich názvů. Můžete také použít metody, které vrací kolekce vyčíslitelná <xref:System.IO.DirectoryInfo>, <xref:System.IO.FileInfo>, nebo <xref:System.IO.FileSystemInfo> objekty. Vyčíslitelná kolekce poskytují lepší výkon než pole při práci s rozsáhlých kolekcí adresářů a souborů.  

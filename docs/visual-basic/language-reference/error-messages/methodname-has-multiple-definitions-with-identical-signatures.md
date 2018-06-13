@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593727"
 ---
 # <a name="39ltmethodnamegt39-has-multiple-definitions-with-identical-signatures"></a>&#39;&lt;methodName&gt; &#39; má několik definic s identickými podpisy
 A `Function` nebo `Sub` deklarace postup používá seznam název a argument identické postupu jako předchozí deklarace. Možnou příčinou je pokus o přetížení původní procedury. Přetížené procedury musí mít jiný argument seznamy.  

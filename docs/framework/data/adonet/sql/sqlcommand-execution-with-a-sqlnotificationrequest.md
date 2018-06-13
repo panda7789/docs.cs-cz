@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365550"
 ---
 # <a name="sqlcommand-execution-with-a-sqlnotificationrequest"></a>Provádění SqlCommand s SqlNotificationRequest
 A <xref:System.Data.SqlClient.SqlCommand> může být nakonfigurováno pro generování oznámení při změně dat po získána ze serveru a sadu výsledků dotazu by být různé, pokud byly znovu spustit dotaz. To je užitečné pro scénáře, ve které chcete používat vlastní oznámení fronty na serveru nebo pokud není chcete zachovat živé objekty.  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589825"
 ---
 # <a name="encrypting-data"></a>Šifrování dat
 Symetrické šifrování a asymetrické šifrování se provádí pomocí různých procesů. Symetrické šifrování se provádí na datové proudy, proto je užitečné k šifrování velkých objemů dat. Asymetrické šifrování se provádí na malý počet bajtů a je proto vhodné pouze pro malé množství dat.  

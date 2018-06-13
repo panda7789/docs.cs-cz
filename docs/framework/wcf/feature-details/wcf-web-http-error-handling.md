@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498482"
 ---
 # <a name="wcf-web-http-error-handling"></a>Zpracování chyb HTTP programování webové služby WCF
 Zpracování chyb HTTP webové služby Windows Communication Foundation (WCF) umožňuje vracet chyby ze služby WCF Web HTTP, které zadejte stavový kód HTTP a vrátí podrobnosti o chybě používá stejný formát jako operace (například XML nebo JSON).  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591882"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Návod: Filtrování výstupu My.Application.Log (Visual Basic)
 Tento návod ukazuje, jak změnit výchozí filtrování protokolování `My.Application.Log` objektu, k řízení, jaké informace jsou předány z `Log` objektu do posluchače a jaké informace jsou zapsány posluchači. I po vytvoření aplikace, můžete změnit chování protokolování, protože informace o konfiguraci je uložené v konfiguračním souboru aplikace.  

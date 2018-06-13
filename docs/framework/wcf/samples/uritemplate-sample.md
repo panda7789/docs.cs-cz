@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502371"
 ---
 # <a name="uritemplate-sample"></a>Ukázka UriTemplate
 <xref:System.UriTemplate> Třída poskytuje metody pro práci se sadami identifikátory URI, které sdílejí společné struktury. Tento příklad znázorňuje následující klíčové koncepty týkající se `UriTemplate`:  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591687"
 ---
 # <a name="managed-and-unmanaged-threading-in-windows"></a>Spravovaná a nespravovaná vlákna ve Windows
 Správa všechna vlákna se provádí prostřednictvím <xref:System.Threading.Thread> třídy, včetně vláken vytvořený modul common language runtime a ty mimo modul runtime, který zadejte spravované prostředí ke spouštění kódu. Modul runtime monitoruje všechna vlákna zpracování, které někdy provedli kódu v rámci spravovaného spouštění prostředí. Žádné další podprocesy sledovat. Vláken můžete zadat spravovaného spouštění prostředí pomocí zprostředkovatele komunikace s objekty COM (protože modul runtime zpřístupní spravované objekty jako objekty COM nespravované World), modelu COM [DllGetClassObject](https://msdn.microsoft.com/library/ms680760.aspx) funkce a vyvolání platformy.  

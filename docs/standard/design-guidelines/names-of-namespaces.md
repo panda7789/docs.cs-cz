@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576429"
 ---
 # <a name="names-of-namespaces"></a>Názvy oborů názvů
 Jako s další pokyny pro pojmenování, cílem obory názvů v názvu je vytvoření dostatečně jasně pro programátory pomocí rozhraní okamžitě vědět, co je pravděpodobné, že obsah oboru názvů. Následující šablony určuje obecná pravidla pro názvy oborů názvů:  

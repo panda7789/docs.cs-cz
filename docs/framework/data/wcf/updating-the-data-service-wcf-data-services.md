@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365654"
 ---
 # <a name="updating-the-data-service-wcf-data-services"></a>Aktualizaci dat služby (služby WCF Data Services)
 Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny využívat [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu, knihovny překládá položek v informačním kanálu do instance třídy služeb dat klienta. Tyto datové služby třídy jsou sledovány pomocí <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří. Klient sleduje změny entit, které ohlásíte pomocí metody na <xref:System.Data.Services.Client.DataServiceContext>. Tyto metody povolit klientovi sledovat entity added a odstranila a taky změny, které provedete na hodnoty vlastnosti nebo vztahy mezi instancí entit. Tyto sledované změny jsou odesílány zpět ke službě data jako založené na REST operace při volání <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metoda.  

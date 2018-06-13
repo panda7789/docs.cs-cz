@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499190"
 ---
 # <a name="workflow-services"></a>Služby pracovních postupů
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] umožňuje plně popisují služby založené na pracovním postupu deklarativně v jazyce XAML. Můžete definovat pracovní postup, který implementuje služby a popisují koncové body služby zpřístupní všechny zcela v jazyce XAML. Témata v této části popisují podrobně, programovací model, který podporuje psaní služby deklarativně.  

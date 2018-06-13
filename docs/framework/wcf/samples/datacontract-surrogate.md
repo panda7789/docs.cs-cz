@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33507860"
 ---
 # <a name="datacontract-surrogate"></a>Náhrada kontraktu dat
 Tento příklad znázorňuje, jak procesy, jako jsou serializace, deserializace, schéma export a import schématu lze přizpůsobit pomocí kontraktu dat náhradního třídy. Tento příklad ukazuje způsob použití náhradní ve scénáři klient a server, kde je dat serializovat a přenesené mezi klienta Windows Communication Foundation (WCF) a služby.  

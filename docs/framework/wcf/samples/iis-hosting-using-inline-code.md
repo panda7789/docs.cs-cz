@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502387"
 ---
 # <a name="iis-hosting-using-inline-code"></a>Hostování IIS pomocí vloženého kódu
 Tento příklad ukazuje, jak implementovat službě hostované pomocí Internetové informační služby (IIS), kde je kód služby jsou obsaženy v řádku v souboru .svc a kompiluje na vyžádání. Kódu služby můžete implementovat také přímo v soubory zdrojového kódu umístěný v adresáři aplikace \App_Code nebo zkompilovat do sestavení nasazeno v \bin. Tato ukázka nepředvádí těchto postupů.  

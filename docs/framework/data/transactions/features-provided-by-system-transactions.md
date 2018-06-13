@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365927"
 ---
 # <a name="features-provided-by-systemtransactions"></a>Funkce poskytované službou System.Transactions –
 Tato část popisuje, jak lze pomocí funkce poskytované <xref:System.Transactions> obor názvů pro zápis vlastní transakční aplikace a zdroj správce. Konkrétně v této části zahrnuje jak vytvořit a účast v transakci (místní nebo distribuované) s jedním nebo více účastníky.  

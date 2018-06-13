@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591830"
 ---
 # <a name="extending-the-my-namespace-in-visual-basic"></a>Rozšíření oboru názvů My v jazyce Visual Basic
 `My` Oboru názvů v jazyce Visual Basic zpřístupňuje vlastnosti a metody, které vám umožní snadno využití výkonu rozhraní .NET Framework. `My` Obor názvů zjednodušuje běžné programovací problémy, často zkracuje snadné jednořádkového kódu. Kromě toho `My` obor názvů je plná rozšiřitelnost tak, aby si můžete přizpůsobit chování `My` a přidání nových služeb do jeho hierarchie k přizpůsobení potřebám specifické aplikace. Toto téma popisuje, jak postup přizpůsobení stávající členy `My` obor názvů a jak přidat vlastní třídy k `My` oboru názvů.  

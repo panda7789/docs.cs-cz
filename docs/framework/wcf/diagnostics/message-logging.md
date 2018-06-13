@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33474029"
 ---
 # <a name="message-logging"></a>Protokolování zpráv
 Windows Communication Foundation (WCF) poskytuje schopnost příchozí a odchozí zprávy pro offline používání protokolu. Protokolování zpráv umožňuje zjistit, jaké zprávu a zpráva textu vypadá jako. Tento typ protokolování je zvláště užitečné v umožňují vědět, co bylo předáno argumentů a jak přijímající koncový bod viděli argumenty, vyjádřené jako XML. Kromě toho protokolování zprávy, protože byla přijata umožňuje diagnostikovat poškozených zpráv také, najdete v části jak byly přijaty zprávy. Můžete také zkontrolovat zabezpečení použití tokenů částí šifrovaný a podepsaný a částí zůstává nedotčeno.  

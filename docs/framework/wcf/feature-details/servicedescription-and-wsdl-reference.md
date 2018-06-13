@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33507351"
 ---
 # <a name="servicedescription-and-wsdl-reference"></a>ServiceDescription and WSDL Reference
 Toto téma popisuje, jak Windows Communication Foundation (WCF) mapuje webové služby popis Language (WSDL) dokumenty do a z <xref:System.ServiceModel.Description.ServiceDescription> instance.  

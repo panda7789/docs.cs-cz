@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365875"
 ---
 # <a name="code-contracts"></a>Kontrakty kódu
 Kontrakty kódu poskytují způsob, jak určit předpoklady, vstupních a výstupních podmínek objektu v kódu. Předběžné podmínky jsou uvedeny požadavky, které musí být splněny, při zadávání metody nebo vlastnosti. Vstupních popisují očekávání v době, kdy bude ukončen kód metody nebo vlastnosti. Objekt výstupních podmínek popisují očekávanému stavu pro třídu, která je ve funkčním stavu.  

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590917"
 ---
 # <a name="key-security-concepts"></a>Klíčové koncepty zabezpečení
 Rozhraní Microsoft .NET Framework nabízí na základě rolí zabezpečení pomohou adresu zabezpečení se o mobilního kódu a poskytovat podporu, která umožňuje součásti, které chcete zjistit, co uživatelé jsou oprávněni provést.  

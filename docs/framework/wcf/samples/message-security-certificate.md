@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508439"
 ---
 # <a name="message-security-certificate"></a>Certifikát zabezpečení zprávy
 Tento příklad znázorňuje implementaci aplikace, která používá WS-zabezpečení X.509 v3 s ověřováním pomocí certifikátu pro klienta a vyžaduje ověření serveru pomocí serveru certifikát X.509 v3. Tato ukázka používá výchozí nastavení tak, aby všechny zprávy aplikace mezi klientem a serverem jsou podepsat a zašifrovat. Tato ukázka je založena na [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md) a skládá se z konzoly programu klienta knihovnu služby hostované Internetové informační služby (IIS). Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi.  

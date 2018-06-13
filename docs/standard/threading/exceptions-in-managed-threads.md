@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591570"
 ---
 # <a name="exceptions-in-managed-threads"></a>Výjimky ve spravovaných vláknech
 Od verze rozhraní .NET Framework verze 2.0, modul common language runtime umožňuje nejvíce neošetřených výjimek v vláken přirozeně pokračovat. Ve většině případů to znamená, že neošetřené výjimce způsobí, že je aplikace ukončena.  

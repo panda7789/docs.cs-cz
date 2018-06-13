@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365057"
 ---
 # <a name="application-scenarios-wcf-data-services"></a>Scénáře aplikací (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje základní sady scénáře pro vystavení a použití dat jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanály. Toto téma vám ukazuje na témata, které jsou relevantní pro tyto scénáře.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508576"
 ---
 # <a name="using-message-contracts"></a>Použití kontraktů zpráv
 Obvykle při sestavování aplikací Windows Communication Foundation (WCF), vývojáři zaměřit se na datové struktury a serializace problémy a nemusíte sami se týkají se strukturou zpráv, ve kterých se přenášejí data. Pro tyto aplikace je jednoduchá vytváření kontrakty dat pro parametry nebo návratové hodnoty. (Další informace najdete v tématu [zadání přenos dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).)  

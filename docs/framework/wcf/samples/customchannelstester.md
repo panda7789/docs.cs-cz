@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499385"
 ---
 # <a name="customchannelstester"></a>CustomChannelsTester
 `CustomChannelsTester` Je nástroj, který můžete použít k testování vaší implementace vlastní kanál oproti sadě kontrakty předdefinovaných služeb. Můžete vybrat sadu kontraktů služby a předejte ji do nástroje pomocí souboru XML. Nástroj potom generuje službu a klienta, který vykonává vaší implementace vlastní kanál při výměně zpráv.  

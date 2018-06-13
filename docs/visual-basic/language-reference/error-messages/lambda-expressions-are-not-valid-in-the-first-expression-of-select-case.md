@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588918"
 ---
 # <a name="lambda-expressions-are-not-valid-in-the-first-expression-of-a-39select-case39-statement"></a>Lambda – výrazy nejsou platné v prvním výrazu &#39;Select Case&#39; – příkaz
 Výraz lambda nelze použít pro výraz testu v `Select Case` příkaz. Definice výrazu lambda vrátí funkce a testovací výraz `Select Case` příkaz musí být základní datového typu.  

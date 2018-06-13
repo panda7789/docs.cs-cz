@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362074"
 ---
 # <a name="how-to-connect-to-a-database"></a>Postupy: připojení k databázi
 <xref:System.Data.Linq.DataContext> Je hlavní přenos, podle kterého připojení k databázi, načtení objektů z něj a odeslání změn zpět do ní. Můžete použít <xref:System.Data.Linq.DataContext> stejně, jako byste použili [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] <xref:System.Data.SqlClient.SqlConnection>. Ve skutečnosti <xref:System.Data.Linq.DataContext> je inicializován s připojením nebo připojovací řetězec, který zadáte. Další informace najdete v tématu [DataContext metody (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer).  

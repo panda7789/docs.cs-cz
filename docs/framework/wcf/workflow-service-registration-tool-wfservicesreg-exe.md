@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33506558"
 ---
 # <a name="workflow-service-registration-tool-wfservicesregexe"></a>Nástroj WorkFlow Service Registration (WFServicesReg.exe)
 Nástroj pro registraci služby pracovního postupu (WFServicesReg.exe) je samostatný nástroj, který slouží k přidání, odebrání nebo opravte konfigurační prvky pro služby systému Windows Workflow Foundation (WF).  

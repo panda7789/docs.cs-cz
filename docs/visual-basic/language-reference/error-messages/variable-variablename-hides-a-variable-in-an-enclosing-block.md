@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595089"
 ---
 # <a name="variable-39ltvariablenamegt39-hides-a-variable-in-an-enclosing-block"></a>Proměnná &#39; &lt;NázevProměnné&gt; &#39; skryje proměnnou z vnějšího bloku
 Proměnné v bloku má stejný název jako jiný místní proměnné.  

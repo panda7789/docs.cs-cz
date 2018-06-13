@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502725"
 ---
 # <a name="workflow-services-overview"></a>Služby pracovních postupů – přehled
 Služby pracovních postupů jsou služeb založených na WCF, které jsou implementovány pomocí pracovních postupů. Služby pracovních postupů jsou pracovní postupy, které používají zasílání zpráv aktivity pro odesílání a přijímání zpráv Windows Communication Foundation (WCF). Rozhraní .NET framework 4.5 zavádí několik zasílání zpráv aktivit, které umožňují odesílat a přijímat zprávy v rámci pracovního postupu. Další informace o zasílání zpráv aktivity a jak se lze použít k implementaci vzory jiná zpráva exchange najdete v tématu [zasílání zpráv aktivity](../../../../docs/framework/wcf/feature-details/messaging-activities.md).  

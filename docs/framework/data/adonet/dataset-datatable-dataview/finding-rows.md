@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760879"
 ---
 # <a name="finding-rows"></a>Vyhledání řádků
 Můžete vyhledat řádků podle jejich hodnot pro klíč řazení s použitím <xref:System.Data.DataView.Find%2A> a <xref:System.Data.DataView.FindRows%2A> metody <xref:System.Data.DataView>. Rozlišování velkých a malých písmen vyhledávání hodnot v **najít** a **FindRows** je dáno metody **CaseSensitive** vlastnost základní <xref:System.Data.DataTable>. Hledání hodnoty musí odpovídat existující řazení klíčové hodnoty jako celek cílem vrátit výsledek.  

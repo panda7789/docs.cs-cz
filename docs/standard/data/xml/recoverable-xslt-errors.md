@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579272"
 ---
 # <a name="recoverable-xslt-errors"></a>Chyby obnovitelné XSLT
 Doporučení W3C XSL transformace XSLT () verze 1.0 zahrnuje oblasti, ve kterých může implementaci zprostředkovatele rozhodování o způsobu zpracování situaci. Tyto oblasti jsou považovány za volitelné chování. Například části 7.3 vytváření zpracování pokynů, XSLT 1.0 doporučení stavy, jedná se o chybu, pokud vytváření instancí obsah `xsl:processing-instruction` vytvoří uzly kromě textové uzly. Některé problémy je třeba 1.0 XSLT doporučení označuje, co decision provést pokud procesor rozhodne zotavit z chyby. Pro problém uveden v části 7.3 W3C říká, že můžete implementace obnovit z této chyby, bez ohledu na uzlech a jejich obsah.  

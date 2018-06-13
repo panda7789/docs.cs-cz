@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591713"
 ---
 # <a name="potential-pitfalls-with-plinq"></a>Potenciální nástrahy PLINQ
 V mnoha případech můžete PLINQ poskytují významné zlepšení výkonu přes sekvenčních LINQ na objekty dotazy. Vytváření paralelních dotazů však zavádí složitost, který může vést k problémům, které v sekvenčních kódu nejsou jako běžné nebo nejsou vůbec došlo. Toto téma uvádí některé postupy, abyste se vyhnuli při psaní PLINQ dotazů.  
