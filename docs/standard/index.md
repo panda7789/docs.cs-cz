@@ -11,6 +11,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457008"
 ---
 # <a name="net-guide"></a><span data-ttu-id="15104-103">Průvodce technologií .NET</span><span class="sxs-lookup"><span data-stu-id="15104-103">.NET Guide</span></span>
 

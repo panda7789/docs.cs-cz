@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803764"
 ---
 # <a name="monitoring-service-operation-failures"></a><span data-ttu-id="f9429-102">Sledování selhání operací služby</span><span class="sxs-lookup"><span data-stu-id="f9429-102">Monitoring Service Operation Failures</span></span>
 <span data-ttu-id="f9429-103">Pokud je povolené analytické trasování pro aplikaci, selhání služby se dá snadno sledovat v prohlížeči událostí.</span><span class="sxs-lookup"><span data-stu-id="f9429-103">If analytic tracing is enabled for an application, service failures can easily be monitored in the event viewer.</span></span>  <span data-ttu-id="f9429-104">Toto téma ukazuje, jak k určení, kdy dojde k selhání operace služby, a jak zjistit, co způsobilo selhání.</span><span class="sxs-lookup"><span data-stu-id="f9429-104">This topic demonstrates how to determine when a service operation fails, and how to determine what caused the failure.</span></span>  

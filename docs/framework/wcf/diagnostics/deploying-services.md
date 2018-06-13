@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803579"
 ---
 # <a name="deploying-services"></a><span data-ttu-id="15173-102">Nasazení služeb</span><span class="sxs-lookup"><span data-stu-id="15173-102">Deploying Services</span></span>
 <span data-ttu-id="15173-103">Toto téma popisuje, jak můžete nasadit aplikace systému Windows Communication Foundation (WCF) do běhu prostředí.</span><span class="sxs-lookup"><span data-stu-id="15173-103">This topic describes how you can deploy a Windows Communication Foundation (WCF) application to a run-time environment.</span></span>  

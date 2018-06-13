@@ -10,6 +10,7 @@ ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34549452"
 ---
 # <a name="using-foreach-with-arrays-c-programming-guide"></a><span data-ttu-id="1530b-102">Použití příkazu foreach s poli (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="1530b-102">Using foreach with Arrays (C# Programming Guide)</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803134"
 ---
 # <a name="endpoint-performance-counters"></a><span data-ttu-id="ed137-102">Čítače výkonu koncového bodu</span><span class="sxs-lookup"><span data-stu-id="ed137-102">Endpoint Performance Counters</span></span>
 <span data-ttu-id="ed137-103">Čítače výkonu koncového bodu zachytit data, která zjistí, jak koncový bod přijímá zprávy.</span><span class="sxs-lookup"><span data-stu-id="ed137-103">Endpoint performance counters capture data that reveals how an endpoint is accepting messages.</span></span> <span data-ttu-id="ed137-104">Najdete v části `ServiceModelEndpoint 4.0.0.0` objekt výkonu při zobrazení pomocí sledování výkonu.</span><span class="sxs-lookup"><span data-stu-id="ed137-104">They can be found under the `ServiceModelEndpoint 4.0.0.0` performance object when viewing with the Performance Monitor.</span></span> <span data-ttu-id="ed137-105">Instance jsou pojmenované pomocí tohoto vzoru:</span><span class="sxs-lookup"><span data-stu-id="ed137-105">The instances are named using this pattern:</span></span>  
