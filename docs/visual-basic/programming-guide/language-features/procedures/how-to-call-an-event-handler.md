@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652679"
 ---
 # <a name="how-to-call-an-event-handler-in-visual-basic"></a>Postupy: Volání obslužné rutiny události (Visual Basic)
 *Událostí* je akce nebo výskyt – například myši klikněte na tlačítko nebo platební limit překročen – některých součástí programu, a který můžete napsat kód je rozpoznán reagovat. *Obslužné rutiny události* je kód, který vytváříte reagovat na událost.  

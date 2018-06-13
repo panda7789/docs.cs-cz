@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636368"
 ---
 # <a name="file-information-cannot-be-queried-while-open-for-writing"></a>Informace o souboru nemůže být dotazována otevřené pro zápis.
 Došlo pokusu o získání informací o souboru, který je aktuálně otevřena pro zápis.  

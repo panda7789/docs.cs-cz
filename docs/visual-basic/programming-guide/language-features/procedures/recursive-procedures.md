@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650212"
 ---
 # <a name="recursive-procedures-visual-basic"></a>Rekurzivní procedury (Visual Basic)
 A *rekurzivní* postup je ten, který volá sám sebe. Obecně platí tento není co nejúčinnější způsob, jak napsat kód jazyka Visual Basic.  

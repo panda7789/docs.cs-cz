@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652149"
 ---
 # <a name="main-procedure-in-visual-basic"></a>Hlavní procedura v jazyce Visual Basic
 Každá aplikace Visual Basic musí obsahovat proceduře volána `Main`. Tento postup slouží jako počáteční bod a celkové řízení pro vaše aplikace. Volání rozhraní .NET Framework vaší `Main` procedury při načetl vaší aplikace a chce předá řízení. Pokud vytváříte aplikace Windows Forms, musíte napsat `Main` postup pro aplikace, které běží na své vlastní.  

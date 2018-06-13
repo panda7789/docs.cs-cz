@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650436"
 ---
 # <a name="composite-data-types-visual-basic"></a>Složené datové typy (Visual Basic)
 Kromě základní datové typy jazyka Visual Basic dodávek, je možné sestavit položkami různých typů vytvořit *složené datové typy* například struktury, pole a třídy. Složené datové typy můžete vytvořit z základní typy a z jiných složené typy. Můžete například definovat pole elementy struktury nebo strukturu se členy pole.  

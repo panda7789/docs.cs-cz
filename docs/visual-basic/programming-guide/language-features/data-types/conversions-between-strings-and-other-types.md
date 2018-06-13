@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650566"
 ---
 # <a name="conversions-between-strings-and-other-types-visual-basic"></a>Převody mezi řetězci a ostatními typy (Visual Basic)
 Můžete převést jednu číslici, `Boolean`, nebo hodnotu data a času `String`. Můžete také převést v opačném směru – z řetězcové hodnoty číselné literály, `Boolean`, nebo `Date` – zadaný řetězec obsah lze interpretovat jako platná hodnota cílový datový typ. Pokud to není možné, dojde k chybě spuštění.  

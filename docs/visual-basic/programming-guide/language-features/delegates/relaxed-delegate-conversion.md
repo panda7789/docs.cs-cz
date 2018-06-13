@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650822"
 ---
 # <a name="relaxed-delegate-conversion-visual-basic"></a>Volný převod delegáta (Visual Basic)
 Volný převod delegáta umožňuje přiřadit předplatných a funkce na delegáty nebo obslužné rutiny i v případě, že jejich podpisy nejsou identické. Vazba na delegáty tedy stane konzistentní s vazbou již povolena pro volání metod.  

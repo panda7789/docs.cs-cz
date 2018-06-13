@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650449"
 ---
 # <a name="data-types-in-visual-basic"></a>Datové typy v jazyce Visual Basic
 *Datový typ* programovací elementu odkazuje na jaký typ dat může uchovávat a jak ho uloží data. Datové typy platí pro všechny hodnoty, které můžou být uložené v paměti počítače nebo účastnit vyhodnocení výrazu. Všechny proměnné, literál, konstanta, – výčet, vlastnost, parametru procedury, argumentu procedury a návratová hodnota procedury má datový typ.  

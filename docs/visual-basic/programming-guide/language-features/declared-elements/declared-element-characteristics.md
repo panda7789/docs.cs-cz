@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650891"
 ---
 # <a name="declared-element-characteristics-visual-basic"></a>Deklarované charakteristiky elementu (Visual Basic)
 A *vlastnosti* deklarované elementu je aspekt daný element, který má vliv jak kód mohou komunikovat s ním. Každý element, deklarované má jeden nebo více z následujících vlastností s ním spojená:  

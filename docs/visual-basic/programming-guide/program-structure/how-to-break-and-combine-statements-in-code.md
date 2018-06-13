@@ -26,6 +26,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651015"
 ---
 # <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>Postupy: Přerušení a kombinace příkazů v kódu (Visual Basic)
 Při psaní kódu, můžete vytvořit v některých případech zdlouhavé příkazy, které vyžadují vodorovného posouvání v editoru kódu. I když to nemá vliv způsob kód běží, je ztížíte pro vy ani nikdo jiný číst kód, jak se objevuje v monitorování. V takovém případě byste měli zvážit, rozdělení jeden dlouhý příkaz na několika řádcích.  
