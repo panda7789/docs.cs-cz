@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807964"
 ---
 # <a name="windows-service-host"></a>Hostitel služby Windows
 Tento příklad znázorňuje službě Windows Communication Foundation (WCF) hostované ve spravované službě Windows. Služby systému Windows jsou řízena pomocí apletu služby v **ovládací panely** a dá se nakonfigurovat automatické spuštění po restartu systému. Ukázka se skládá z programu klienta a aplikace služby systému Windows. Služba je implementovaný jako .exe program a obsahuje vlastní kód pro hostování. V jiných hostitelských prostředích, jako jsou služby Aktivace procesů systému Windows (WAS) nebo internetové informační služby (IIS), není nutné pro vás bude psaní hostování kódu.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594468"
 ---
 # <a name="nested-function-does-not-have-a-signature-that-is-compatible-with-delegate-39ltdelegatenamegt39"></a>Vnořené funkce neobsahuje podpis, který je kompatibilní s delegáta &#39; &lt;vlastnost delegatename&gt;&#39;
 Výraz lambda byl přiřazen delegáta, který má nekompatibilní podpis. Například následující kód, delegovat `Del` má dva parametry celé číslo.  

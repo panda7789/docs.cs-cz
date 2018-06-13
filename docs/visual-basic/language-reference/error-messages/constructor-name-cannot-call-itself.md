@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588993"
 ---
 # <a name="constructor-39ltnamegt39-cannot-call-itself"></a>Konstruktor &#39; &lt;název&gt; &#39; nelze volat sám sebe
 A `Sub New` postup ve třídě nebo struktuře volá sám sebe.  

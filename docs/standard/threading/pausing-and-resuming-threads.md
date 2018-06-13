@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589120"
 ---
 # <a name="pausing-and-resuming-threads"></a>Pozastavování a obnovování vláken
 Nejběžnější způsoby pro synchronizaci aktivity vláken jsou bloku a verzi vlákna nebo objekty uzamčení nebo oblastech kódu. Další informace o těchto zamykání a blokování mechanismy najdete v tématu [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  

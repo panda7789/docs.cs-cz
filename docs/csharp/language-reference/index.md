@@ -13,6 +13,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472500"
 ---
 # <a name="c-reference"></a>Referenční dokumentace jazyka C#
 Tato část obsahuje referenční materiály o C# klíčová slova, operátory, speciální znaky, preprocesor – direktivy, možnosti kompilátoru a kompilátoru chyby a upozornění.  

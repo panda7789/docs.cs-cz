@@ -9,6 +9,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472799"
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Balíčky, metapackages a architektury
 

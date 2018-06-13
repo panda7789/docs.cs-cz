@@ -10,6 +10,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457477"
 ---
 # <a name="how-to-safely-cast-from-bool-to-bool-c-programming-guide"></a>Postupy: Bezpečné přetypování z typu bool? na bool (Průvodce programováním v C#)
 `bool?` Typ s možnou hodnotou Null může obsahovat tři různé hodnoty: `true`, `false`, a `null`. Proto `bool?` typ nelze použít v podmíněné příkazy, jako s `if`, `for`, nebo `while`. Chyba kompilátoru způsobí například následující kód.  

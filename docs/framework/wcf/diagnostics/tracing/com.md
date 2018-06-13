@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33473512"
 ---
 # <a name="com"></a>Model COM+
 Následující obrázek ukazuje, jak lze pomocí trasování aktivit v aplikace modelu COM +. Místo provedení uživatelského kódu na serveru, jsme definovali aktivity modelu COM + pro každé volání metody objektu modelu COM +.  

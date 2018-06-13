@@ -7,6 +7,7 @@ ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34483515"
 ---
 # <a name="modules"></a>Moduly
 
