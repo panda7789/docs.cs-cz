@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542961"
 ---
 # <a name="documents"></a>Dokumenty
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje univerzální sadu součástí, které umožňují vývojářům vytvářet aplikace s funkcemi pokročilé dokumentu a vylepšené čtení prostředí. Kromě široké možnosti a kvalitu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] také poskytuje zjednodušenou správu služby pro dokument balení, zabezpečení a úložiště.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392863"
 ---
 # <a name="reflection-and-net-native"></a>Reflexe a .NET Native
 Ke správě podporuje vývoj metaprogramování prostřednictvím rozhraní API reflexe v rozhraní .NET Framework. Reflexe umožňuje zkontrolovat objekty v aplikaci, volat metody pro objekty zjištěné prostřednictvím kontroly, generování nových typů v době běhu a podporuje mnoho dalších scénářů dynamický kód. Podporuje také serializace a deserializace, což umožňuje objektu hodnoty polí jako trvalý, a později obnovit. Všechny tyto scénáře vyžadují rozhraní .NET Framework za běhu (JIT) kompilátor ke generování nativního kódu na základě metadat k dispozici.  

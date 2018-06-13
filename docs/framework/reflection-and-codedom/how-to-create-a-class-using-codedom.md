@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395385"
 ---
 # <a name="how-to-create-a-class-using-codedom"></a>Postupy: Vytváření třídy pomocí modelu CodeDOM
 Následující postupy ukazují, jak vytvořit a kompilaci grafu modelu CodeDOM, který generuje třída obsahující dvě pole, tři vlastností, metoda, konstruktor a vstupního bodu.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542750"
 ---
 # <a name="how-to-determine-whether-a-freezable-is-frozen"></a>Postupy: Určení, zda je zablokovatelné zablokováno
 Tento příklad ukazuje, jak zjistit, jestli <xref:System.Windows.Freezable> objekt nereaguje. Pokud se pokusíte změnit ukotvené <xref:System.Windows.Freezable> objektu, vyvolá <xref:System.InvalidOperationException>. Abyste se vyhnuli vyvolání výjimku, použijte <xref:System.Windows.Freezable.IsFrozen%2A> vlastnost <xref:System.Windows.Freezable> objektem pro určení, zda je pozastaveny.  

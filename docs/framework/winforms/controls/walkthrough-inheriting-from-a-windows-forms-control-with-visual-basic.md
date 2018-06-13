@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541434"
 ---
 # <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic"></a>Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basic
 V jazyce Visual Basic, můžete vytvořit výkonné vlastní ovládací prvky prostřednictvím *dědičnosti*. Prostřednictvím dědičnosti budete moci vytvořit ovládací prvky, které nezachovají vyplývajících funkce standardní ovládací prvky Windows Forms, ale také obsahovat vlastní funkce. V tomto návodu vytvoříte jednoduchý zděděné ovládací prvek názvem `ValueButton`. Toto tlačítko bude funkce dědit ze standardní Windows Forms <xref:System.Windows.Forms.Button> řízení a zveřejní vlastní vlastnost s názvem `ButtonValue`.  

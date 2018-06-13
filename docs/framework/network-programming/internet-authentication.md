@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396182"
 ---
 # <a name="internet-authentication"></a>Ověřování v Internetu
 <xref:System.Net> Třídy podporují různé mechanismy ověřování klienta, včetně standardní Internet metod ověřování basic, algoritmem digest, vyjednávání protokolu NTLM a ověřování protokolu Kerberos, a také vlastních metod, které můžete vytvořit.  

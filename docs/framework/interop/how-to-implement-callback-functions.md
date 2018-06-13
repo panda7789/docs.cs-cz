@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389272"
 ---
 # <a name="how-to-implement-callback-functions"></a>Postupy: Implementace funkcí zpětného volání
 Následující postup a příklad ukazují, jak pomocí platformy vyvolání spravované aplikace, můžete vytisknout popisovač hodnota pro každé okno v místním počítači. Konkrétně postup a ukázkovým použitím **EnumWindows** funkci, aby se krok pomocí seznamu pro windows a spravovaný zpětného volání funkce (s názvem zpětného volání) k tisku hodnoty popisovač okna.  

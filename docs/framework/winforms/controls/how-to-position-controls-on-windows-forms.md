@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538709"
 ---
 # <a name="how-to-position-controls-on-windows-forms"></a>Postupy: Umisťování ovládacích prvků ve formulářích Windows
 Umisťování ovládacích prvků, Návrhář formulářů Windows, nebo zadejte <xref:System.Windows.Forms.Control.Location%2A> vlastnost.  

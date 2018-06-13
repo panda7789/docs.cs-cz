@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640554"
 ---
 # <a name="specified-registry-path-does-not-start-with-a-valid-hive-name"></a>Cesta v registru zadané nezačíná název neplatný hive
 Cesta zadaná registru nezačíná název neplatný hive. Neplatný hive názvů:  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641957"
 ---
 # <a name="vbstrconvwide-and-vbstrconvnarrow-are-not-applicable-to-the-locale-specified"></a>Argumenty VbStrConv.Wide a VbStrConv.Narrow nejsou použitelné pro zadaný národní prostředí
 Aplikace se pokouší použít `VbStrConv` členy výčtu `Wide` nebo `Narrow`, které nejsou použitelné pro zadaný národní prostředí.  

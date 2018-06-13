@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570122"
 ---
 # <a name="xml-schema-object-model-som"></a>Objektový Model schématu XML (SOM)
 Schéma XML je výkonná a komplexní nástroj pro vytváření a ověřování struktury kompatibilní dokumentů XML. Podobně jako u dat modelování v relační databázi, schéma poskytuje způsob, jak definovat strukturu dokumentů XML zadáním prvky, které lze použít v dokumenty, jakož i strukturu a typy, které tyto prvky musí splňovat, aby se pro zadaná platná t konkrétní schématu.  

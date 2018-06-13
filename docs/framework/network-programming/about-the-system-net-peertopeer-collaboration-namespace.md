@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394040"
 ---
 # <a name="about-the-systemnetpeertopeercollaboration-namespace"></a>O Namespace System.Net.PeerToPeer.Collaboration
 <xref:System.Net.PeerToPeer.Collaboration> Obor názvů obsahuje třídy a rozhraní API, která slouží k implementaci aktivity spolupráce sdílené pomocí infrastruktury spolupráce Peer-to-Peer.  

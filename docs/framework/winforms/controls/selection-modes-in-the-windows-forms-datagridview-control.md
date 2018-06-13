@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539569"
 ---
 # <a name="selection-modes-in-the-windows-forms-datagridview-control"></a>Režimy výběru v ovládacím prvku Windows Forms DataGridView
 Někdy má vaše aplikace k provádění akcí podle volby uživatele v rámci <xref:System.Windows.Forms.DataGridView> ovládacího prvku. V závislosti na akce můžete omezit druhy výběru, které jsou možné. Předpokládejme například, že vaše aplikace můžete vytisknout sestavu pro aktuálně vybraný záznam. V takovém případě můžete nakonfigurovat <xref:System.Windows.Forms.DataGridView> ovládacího prvku tak, že kliknete na libovolné místo v řádku vždy vybere celý řádek, a proto lze vybrat že pouze jeden řádek v čase.  

@@ -22,6 +22,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741747"
 ---
 # <a name="how-to-create-a-public-private-key-pair"></a>Postupy: vytvoření páru veřejného a privátního klíče RSA
 Pro podepsání sestavení silným názvem, musíte mít pár veřejného a privátního klíče. Tento pár veřejného a soukromého kryptografické klíče se používá během kompilace k vytvoření sestavení se silným názvem. Můžete vytvořit pár klíčů pomocí [silný název – nástroj (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md). Soubory párů klíčů obvykle mají příponu .snk.  

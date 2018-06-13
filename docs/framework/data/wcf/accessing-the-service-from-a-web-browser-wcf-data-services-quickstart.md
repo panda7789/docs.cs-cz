@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364002"
 ---
 # <a name="accessing-the-service-from-a-web-browser-wcf-data-services-quickstart"></a>Přístupu ke službě z webového prohlížeče (rychlý start WCF Data Services)
 V této úloze se spustí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] ze sady Visual Studio a volitelně zakázat kanál čtení ve webovém prohlížeči. Můžete se pak načtení dokumentu definice služby a také přístup k prostředkům služby data odesláním požadavky HTTP GET prostřednictvím webového prohlížeče na zveřejněné prostředky.  

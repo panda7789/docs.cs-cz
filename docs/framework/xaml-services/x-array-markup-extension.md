@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565010"
 ---
 # <a name="xarray-markup-extension"></a>x:Array – rozšíření značek
 Poskytuje obecné podporu pro pole objektů v jazyce XAML prostřednictvím rozšíření značek. To odpovídá `x:ArrayExtension` typ jazyka XAML v [MS-XAML].  

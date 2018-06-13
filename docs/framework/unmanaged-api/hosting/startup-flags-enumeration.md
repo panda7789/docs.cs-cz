@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33444227"
 ---
 # <a name="startupflags-enumeration"></a>STARTUP_FLAGS – výčet
 Obsahuje hodnoty, které označují chování při spouštění modulu common language runtime (CLR). Ve výchozím nastavení, uvolňování paměti je nesouběžného a to pouze v knihovně základní třída je načten do oblasti domény jazykově neutrální.  

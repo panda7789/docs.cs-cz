@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539663"
 ---
 # <a name="how-to-develop-a-simple-windows-forms-control"></a>Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms
 Tato část vás provede procesem klíčové kroky pro vytvoření vlastního ovládacího prvku Windows Forms. Jednoduché ovládací prvek vyvinuté v tomto návodu umožňuje zarovnání jeho <xref:System.Windows.Forms.Control.Text%2A> vlastnost změnit. Nebudou vyvolat a zpracování událostí.  

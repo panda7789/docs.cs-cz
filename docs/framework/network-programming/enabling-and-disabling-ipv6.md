@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393929"
 ---
 # <a name="enabling-and-disabling-ipv6"></a>Povolení a zakázání IPv6
 Chcete-li používat protokol IPv6, ujistěte se, že používáte verzi operačního systému, který podporuje protokol IPv6 a ujistěte se, že operační systém a síťové třídy jsou konfigurována správně.  

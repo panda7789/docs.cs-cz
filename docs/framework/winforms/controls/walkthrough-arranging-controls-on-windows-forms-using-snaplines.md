@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541587"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-snaplines"></a>Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar
 Přesné umístění ovládacích prvků ve formuláři je důležitá pro mnoho aplikací. Návrhář formulářů Windows poskytuje celou řadu nástrojů rozložení toho chcete dosáhnout. Jedním z nejdůležitějších je <xref:System.Windows.Forms.Design.Behavior.SnapLine> funkce.  

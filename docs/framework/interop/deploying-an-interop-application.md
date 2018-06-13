@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389415"
 ---
 # <a name="deploying-an-interop-application"></a>Nasazení aplikace spolupráce
 Spolupráce aplikace obvykle zahrnuje klientského sestavení .NET, jeden nebo více sestavení vzájemné spolupráce představující odlišné COM knihovny typů a jeden nebo více registrované komponenty modelu COM. Visual Studio a [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] poskytují nástroje pro import a převést knihovny typů spolupráce sestavení, jak je popsáno v [Import knihovny typů jako sestavení](importing-a-type-library-as-an-assembly.md). K nasazení aplikace spolupráce dvěma způsoby:  

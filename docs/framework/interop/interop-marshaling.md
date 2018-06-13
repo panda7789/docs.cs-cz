@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395366"
 ---
 # <a name="interop-marshaling"></a>Zařazování spolupráce
 <a name="top"></a> Zařazování spolupráce řídí, jak se data předávají v metoda argumentů a návratové hodnoty mezi spravovanými a nespravovanými paměti během volání. Zařazování spolupráce je aktivita běhu zajišťuje služba zařazování modul common language runtime.  

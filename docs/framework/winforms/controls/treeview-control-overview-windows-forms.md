@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538623"
 ---
 # <a name="treeview-control-overview-windows-forms"></a>TreeView – přehled ovládacího prvku (Windows Forms)
 S Windows Forms <xref:System.Windows.Forms.TreeView> ovládací prvek, můžete zobrazit hierarchii uzlů na uživatele, jako způsob souborů a složek, se zobrazí v levém podokně Průzkumník Windows funkce operačního systému Windows. Každý uzel ve stromovém zobrazení může obsahovat další uzly, nazývá *podřízené uzly*. Můžete zobrazit nadřazených uzlů nebo uzlů, které obsahují podřízené uzly jako rozbalit nebo sbalit. Zobrazení stromu s zaškrtnutí políček vedle uzly můžete také zobrazit nastavením zobrazení stromu <xref:System.Windows.Forms.TreeView.CheckBoxes%2A> vlastnost `true`. Můžete programově poté zaškrtněte nebo zrušte uzly nastavením uzlu <xref:System.Windows.Forms.TreeNode.Checked%2A> vlastnost `true` nebo `false`.  

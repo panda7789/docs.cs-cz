@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396916"
 ---
 # <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Postupy: Definování obecného typu pomocí generování reflexe
 Toto téma ukazuje, jak vytvořit jednoduché obecného typu se dva parametry typu, jak se má použít třída omezení, omezení rozhraní a zvláštní omezení pro parametry typu a postup vytvoření členy, které používají parametry typu třídy jako typy parametrů a návratové typy.  

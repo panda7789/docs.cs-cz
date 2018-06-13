@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390858"
 ---
 # <a name="how-to-register-primary-interop-assemblies"></a>Postupy: Registrace primárních sestavení spolupráce
 Třídy mohou být zařazena pouze pomocí zprostředkovatele komunikace s objekty COM a jsou vždycky zařazené jako rozhraní. V některých případech rozhraní sloužící k zařazování třídy se nazývá rozhraní třídy. Informace o přepsání třídy rozhraní s rozhraním zvoleného najdete v tématu [obálka volatelná aplikacemi COM](../../../docs/framework/interop/com-callable-wrapper.md).  

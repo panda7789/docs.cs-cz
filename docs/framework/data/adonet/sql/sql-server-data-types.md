@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363499"
 ---
 # <a name="sql-server-data-types-and-adonet"></a>Data serveru SQL typy a ADO.NET
 SQL Server a rozhraní .NET Framework jsou založené na jiný typ systémy, které může mít za následek ztrátu dat. Chcete-li zachovat integritu dat, zprostředkovatel dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>) poskytuje typu přístupového objektu metody pro práci s daty na serveru SQL. Můžete použít výčtů ve <xref:System.Data.SqlDbType> třídy k určení <xref:System.Data.SqlClient.SqlParameter> datové typy.  

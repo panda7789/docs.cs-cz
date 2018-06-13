@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538724"
 ---
 # <a name="how-to-access-keyed-collections-in-windows-forms"></a>Postupy: Přístup ke kolekcím s klíči ve Windows Forms
 -   Jednotlivé kolekce položek můžete přejít pomocí klíče. Tato funkce se přidal do mnoho kolekce tříd, které jsou obvykle používány formulářových aplikací Windows. Následující seznam uvádí některé z kolekce tříd, které mají přístupné kolekce s klíči:  

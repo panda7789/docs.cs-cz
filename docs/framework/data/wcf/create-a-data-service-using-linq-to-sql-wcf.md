@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362244"
 ---
 # <a name="how-to-create-a-data-service-using-a-linq-to-sql-data-source-wcf-data-services"></a>Postupy: vytvoření služby dat pomocí LINQ ke zdroji dat SQL (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] zpřístupní entity data jako datové služby. Zprostředkovatel reflexe umožňuje definovat datového modelu, který je založena na všechny třídy, která zpřístupňuje členy, který vrací <xref:System.Linq.IQueryable%601> implementace. Abyste mohli provést aktualizace dat ve zdroji dat, musíte také implementovat tyto třídy <xref:System.Data.Services.IUpdatable> rozhraní. Další informace najdete v tématu [zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md). Toto téma ukazuje, jak vytvořit LINQ na SQL třídy, která přistupují k ukázková databáze Northwind pomocí reflexe poskytovatele, jakož i služba dat, která je založena na těchto třídách data vytvoření.  

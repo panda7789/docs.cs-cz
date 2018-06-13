@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392626"
 ---
 # <a name="security-and-public-read-only-array-fields"></a>Zabezpečené a veřejné položky pole určené pouze pro čtení
 Nikdy nepoužívejte jen pro čtení veřejné položky pole ze spravovaných knihoven k definování chování hranice nebo zabezpečení aplikací, protože lze upravit jen pro čtení veřejné položky pole.  

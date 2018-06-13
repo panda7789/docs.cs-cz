@@ -29,6 +29,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395057"
 ---
 # <a name="configuring-internet-applications"></a>Konfigurace Internetové aplikace
 [ \<System.Net > elementu (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) konfigurační prvek obsahuje informace o konfiguraci sítě pro aplikace. Pomocí [ \<system.Net > elementu (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) elementu, můžete nastavit proxy servery, nastavte připojení parametry správy a zahrnout vlastní moduly ověřování a požadavek do vaší aplikace.  

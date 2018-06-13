@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365167"
 ---
 # <a name="data-binding"></a>Datová vazba
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje vytvoření vazby na běžné ovládací prvky, jako je například ovládací prvky mřížky. Konkrétně [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] definuje základních sekvencí pro vytvoření vazby na data mřížky a zpracování vazba seznam podrobnosti, jak s ohledem na zobrazení a aktualizace.  

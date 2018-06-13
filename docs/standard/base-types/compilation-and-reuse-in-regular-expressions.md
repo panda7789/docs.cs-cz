@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568755"
 ---
 # <a name="compilation-and-reuse-in-regular-expressions"></a>Kompilace a opětovné používání v regulárních výrazech
 Můžete optimalizovat výkon aplikací, které rozsáhlé používání regulárních výrazů pochopení, jak modul regulárních výrazů zkompiluje výrazy a vysvětlení, jak běžných výrazů v mezipaměti. Toto téma popisuje kompilace a ukládání do mezipaměti.  

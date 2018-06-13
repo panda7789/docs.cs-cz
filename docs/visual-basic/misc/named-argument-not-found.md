@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638866"
 ---
 # <a name="named-argument-not-found-visual-basic"></a>Pojmenovaný argument nebyl nalezen (Visual Basic)
 Pojmenované argument nelze použít ve volání procedury, pokud se zobrazí v definici postupu. Zadané pojmenované argument, ale postup nebyl definován tak, aby přijímal argument s tímto názvem.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542858"
 ---
 # <a name="element-tree-and-serialization"></a>Strom prvku a serializace
 Programovací elementy WPF často existují v určitou formu stromu vzájemných vztahů. Například můžete být aplikace vytvořena uživatelského rozhraní v jazyce XAML conceptualized jako strom k objektu. Stromu element lze dále rozdělit do dvou diskrétních ještě někdy paralelní stromy: logického stromu a vizuálním stromu. Serializace v grafickém subsystému WPF zahrnuje uložení stavu tyto dvě, stromy, a také stav aplikace a jejich zápisu do souboru, potenciálně jako XAML.  

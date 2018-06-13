@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395255"
 ---
 # <a name="configuring-caching-in-network-applications"></a>Konfigurace ukládání do mezipaměti v síťových aplikací
 Chcete-li konfigurovat ukládání do mezipaměti, je nutné zadat zásady mezipaměti v aplikaci nebo <xref:System.Net.WebRequest> úroveň. Následující témata obsahují příklady kódu, která ukazují konfiguraci aplikace a požadavky na používání ukládání do mezipaměti.  

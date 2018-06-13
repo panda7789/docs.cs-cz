@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538907"
 ---
 # <a name="colorconvertedbitmap-markup-extension"></a>ColorConvertedBitmap – rozšíření značek
 Poskytuje způsob, jak zadat zdroj rastrový obrázek, který nemá vložený profil. Barva kontexty / profily jsou určené [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)], jako je zdroj bitové kopie [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].  
