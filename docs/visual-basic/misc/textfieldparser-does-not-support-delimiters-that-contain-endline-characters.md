@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641338"
 ---
 # <a name="textfieldparser-does-not-support-delimiters-that-contain-endline-characters"></a>TextFieldParser nepodporuje oddělovače, které obsahují znaky ukončovacího
 Oddělovač, který obsahuje znak ukončovacího byla zadána, ale `TextFieldParser` nepodporuje oddělovače, které obsahují ukončovacího znaky.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33637063"
 ---
 # <a name="cannot-convert-start-value-of-type-39lttype1gt39-and-step-value-of-type-39lttype2gt39-to-a-common-type"></a>Nelze převést počáteční hodnotu typu &#39; &lt;type1&gt; &#39; a krok hodnotu typu &#39; &lt;type2&gt; &#39; do stejného typu
 Zadaný `For...Next` hodnoty řízení mají různé typy a proto nejsou platné vzhledem k tomu, že je nelze převést do stejného typu.  
