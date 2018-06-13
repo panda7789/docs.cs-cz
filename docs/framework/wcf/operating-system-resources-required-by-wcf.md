@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498641"
 ---
 # <a name="operating-system-resources-required-by-wcf"></a>Prostředky operačního systému požadované službou WCF
 Windows Communication Foundation (WCF) závisí na několika prostředky, které jsou k dispozici v operačním systému funkce. Následující tabulka uvádí tyto prostředky.  

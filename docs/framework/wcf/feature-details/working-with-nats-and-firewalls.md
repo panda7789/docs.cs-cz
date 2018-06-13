@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508100"
 ---
 # <a name="working-with-nats-and-firewalls"></a>Práce s překlady adres (NAT) a bránami firewall
 Klient a server připojení k síti často nemají přímou a otevřete cestu pro komunikaci. Pakety jsou filtrovány, směrovat, analyzovat a transformovat na počítačích, koncový bod a zprostředkující počítače v síti. Sítě překlady adres (NAT) a brány firewall jsou běžných příkladů zprostředkující aplikací, které se můžou zapojit síťové komunikace.  

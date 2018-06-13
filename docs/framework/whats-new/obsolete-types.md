@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508814"
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Zastaralé typy v rozhraní .NET Framework
 <a name="introduction"></a> V tabulkách v tomto článku jsou uvedeny typy, které jsou v zastaralé [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], uspořádány sestavením. Pomocí následujících odkazů můžete zobrazit seznam zastaralé typy a doporučených alternativách v každé sestavení. Protože tyto typy jsou zastaralé, jsou jejich členové také zastaralé. Seznam dalších zastaralé členy v knihovně tříd rozhraní .NET Framework, naleznete v části [zastaralé členy](../../../docs/framework/whats-new/obsolete-members.md).  

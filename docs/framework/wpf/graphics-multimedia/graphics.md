@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556845"
 ---
 # <a name="graphics"></a>Grafika
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí integrovaná podpora pro multimédia, vektorové grafiky, animace a obsahu složení, a usnadňuje vývojářům tvorbu zajímavé uživatelská rozhraní a obsahu.  

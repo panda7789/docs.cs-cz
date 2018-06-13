@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33423368"
 ---
 # <a name="icordebugprocess5-interface"></a>ICorDebugProcess5 – rozhraní
 Rozšiřuje rozhraní ICorDebugProcess podporující přístup k spravovaná halda k zadání informací o uvolňování paměti spravovaných objektů, a k určení, zda ladicí program načte bitové kopie z mezipaměti místní nativních bitových kopií aplikace.  

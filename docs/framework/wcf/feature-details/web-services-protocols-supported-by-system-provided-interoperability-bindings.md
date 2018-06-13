@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508726"
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem
 Windows Communication Foundation (WCF) byl vytvořen, aby spolupracovat s webovými službami, které podporují sadu specifikace označované jako specifikací webových služeb. Pro zjednodušení konfigurace služby pro interoperabilita osvědčené postupy, WCF zavádí tři umožňuje vzájemnou spolupráci vazby poskytované systémem: <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>, <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, a <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>. Pro spolupráci s organizace pro standardy rozvoj z strukturovaných informace standardy (OASIS), WCF zahrnuje jednu vzájemná spolupráce poskytnutými systémem vazbu: <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>. Metadata publikace WCF zahrnuje dvě umožňuje vzájemnou spolupráci vazby poskytované systémem: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) a [ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md). Toto téma uvádí specifikace, které podporují umožňuje vzájemnou spolupráci vazby poskytované systémem.  

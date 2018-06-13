@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33430422"
 ---
 # <a name="hosting-global-static-functions"></a>Hostování globálních statických funkcí
 Tato část popisuje nespravované hostování funkce používané v rozhraní .NET Framework, který je hostitelem rozhraní API.  

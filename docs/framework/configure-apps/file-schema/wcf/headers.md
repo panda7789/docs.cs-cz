@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747148"
 ---
 # <a name="ltheadersgt"></a>&lt;Záhlaví&gt;
 Koncový bod lze řešit nejméně jedno záhlaví SOAP kromě jeho základní identifikátor URI. Jednu sadu scénáře, kde to je užitečné je sada SOAP zprostředkující scénáře, kde koncového bodu vyžaduje klientům tohoto koncového bodu patří zaměřený na prostředníci hlavičky SOAP. Tento element konfigurace slouží k definování takových hlavičky vlastní adresu. Položky v kolekci hlaviček koncový bod se vlastní elementy XML. Každý prvek musí být ve správném formátu XML.  

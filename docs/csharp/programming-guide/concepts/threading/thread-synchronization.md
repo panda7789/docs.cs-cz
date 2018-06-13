@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338608"
 ---
 # <a name="thread-synchronization-c"></a>Synchronizace vláken (C#)
 Následující části popisují funkce a třídy, které slouží k synchronizaci přístup k prostředkům v vícevláknové aplikace.  

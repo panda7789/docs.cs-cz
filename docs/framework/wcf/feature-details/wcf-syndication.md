@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499164"
 ---
 # <a name="wcf-syndication"></a>Syndikace WCF
 Windows Communication Foundation (WCF) poskytuje podporu pro snadno pracovat s informační kanály syndikace v Atom, RSS nebo dalších vlastních formátů, které umožňuje číst a jejich vytvoření a také je vystavit na koncový bod služby. Témata v této části popisují tato programovací model pro syndikace podrobně.  

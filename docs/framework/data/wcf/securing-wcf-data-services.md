@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359259"
 ---
 # <a name="securing-wcf-data-services"></a>Zabezpečení součásti WCF Data Services
 Toto téma popisuje aspekty zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a aplikace, které přístup ke službám, které podporují [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. Také postupujte podle doporučení pro vytvoření zabezpečeného [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikace.  

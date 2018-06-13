@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578271"
 ---
 # <a name="parameter-design"></a>Parametr návrhu
 Tato část obsahuje obecné Rady ohledně návrhu parametr, včetně oddíly s pokyny pro kontrolu argumenty. Kromě toho se seznamte s podle pokynů popsaných v [pojmenování parametry](../../../docs/standard/design-guidelines/naming-parameters.md).  

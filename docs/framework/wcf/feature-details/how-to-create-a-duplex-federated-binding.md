@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495723"
 ---
 # <a name="how-to-create-a-duplex-federated-binding"></a>Postupy: Vytvoření duplexní federované vazby
 <xref:System.ServiceModel.WSFederationHttpBinding> podporuje pouze kontrakty zpráv exchange datagram a požadavek nebo odpověď. Pokud chcete použít exchange kontrakt duplexní zprávy, musíte vytvořit vlastní vazby. Následující postupy ukazují, jak to udělat v konfiguraci, pomocí režimu zabezpečení zpráv pro přenosy protokolu HTTP a TCP a používá zabezpečení ve smíšeném režimu pro přenos TCP. Ukázkový kód zobrazuje všechny 3 vazby je na konci tohoto tématu.  

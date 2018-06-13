@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498254"
 ---
 # <a name="using-ws-atomictransaction"></a>Používání protokolu WS-AtomicTransaction
 WS-AtomicTransaction (WS-AT) je protokol umožňuje vzájemnou spolupráci transakce. Umožňuje toku distribuované transakce prostřednictvím zpráv, webové služby a koordinovat způsobem umožňuje vzájemnou spolupráci mezi infrastruktury heterogenní transakce. WS-AT používá protokol dvoufázový zápis k řízení atomic výsledek mezi distribuovaných aplikací, správci transakcí a správci prostředků.  

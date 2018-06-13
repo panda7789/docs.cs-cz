@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365797"
 ---
 # <a name="wcf-data-services-overview"></a>Přehled služby WCF Data Services
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje vytváření a využití služeb dat pro Web nebo intranetu pomocí [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Umožňuje vystavit data jako prostředky, které jsou adresovat pomocí identifikátory URI. To umožňuje přístup a změny dat pomocí sémantiky representational stavu transfer (REST), konkrétně standardních operací protokolu HTTP z GET, PUT, POST a odstranění. Toto téma obsahuje přehled vzory a postupy definované [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] a také zařízení poskytovaných [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] využívat výhod [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] v aplikacích založených na rozhraní .NET Framework.  

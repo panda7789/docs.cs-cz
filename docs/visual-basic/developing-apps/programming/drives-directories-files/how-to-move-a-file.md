@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587290"
 ---
 # <a name="how-to-move-a-file-in-visual-basic"></a>Postupy: Přesunutí souboru v jazyce Visual Basic
 `My.Computer.FileSystem.MoveFile` Metoda slouží k přesunutí souboru do jiné složky. Pokud cílová struktura neexistuje, bude vytvořen.  

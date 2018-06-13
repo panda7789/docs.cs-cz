@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555786"
 ---
 # <a name="menu"></a>Nabídka
 A <xref:System.Windows.Controls.Menu> je ovládací prvek, který umožňuje hierarchické uspořádání elementů spojených s příkazy nebo obslužné rutiny událostí. Každý <xref:System.Windows.Controls.Menu> může obsahovat více <xref:System.Windows.Controls.MenuItem> ovládací prvky. Každý <xref:System.Windows.Controls.MenuItem> můžete vyvolat příkaz nebo vyvolat `Click` obslužné rutiny události. A <xref:System.Windows.Controls.MenuItem> může mít více <xref:System.Windows.Controls.MenuItem> elementy jako podřízené objekty, které tvoří podnabídky.  

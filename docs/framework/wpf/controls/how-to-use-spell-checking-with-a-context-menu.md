@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33553764"
 ---
 # <a name="how-to-use-spell-checking-with-a-context-menu"></a>Postupy: Použití kontroly pravopisu s místní nabídkou
 Ve výchozím nastavení, když povolíte v ovládacím prvku úprav kontrolu pravopisu jako <xref:System.Windows.Controls.TextBox> nebo <xref:System.Windows.Controls.RichTextBox>, získat volby kontrola pravopisu v místní nabídce. Například pokud uživatelé klikněte pravým tlačítkem chybně, získají sadu pravopis návrhy či možnost **ignorovat všechny**. Ale když můžete přepsat výchozí místní nabídku s vlastními vlastní kontextové nabídky, tato funkce dojde ke ztrátě a budete muset napsat kód pro znovu povolit funkci Kontrola pravopisu v místní nabídce. Následující příklad ukazuje, jak povolit na <xref:System.Windows.Controls.TextBox>.  

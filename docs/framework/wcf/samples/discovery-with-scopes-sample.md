@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502197"
 ---
 # <a name="discovery-with-scopes-sample"></a>Ukázka zjišťování pomocí oborů
 Tento příklad ukazuje způsob použití obory zařadit do kategorií zjistitelný koncových bodů a jak používat <xref:System.ServiceModel.Discovery.DiscoveryClient> pro asynchronní vyhledávání pro koncové body. Tato ukázka na službu, ukazuje, jak přizpůsobit přidáním koncový bod zjišťování chování a jej použijete k přidání oboru ke koncovému bodu, stejně jako řízení možnosti rozpoznání pro koncový bod zjišťování pro každý koncový bod. Na straně klienta vzorku prochází přes jak klienti mohou vytvářet <xref:System.ServiceModel.Discovery.DiscoveryClient> a optimalizovat vyhledávání parametry, které zahrnují obory přidáním oborů, které chcete <xref:System.ServiceModel.Discovery.FindCriteria>. Tento příklad také ukazuje, jak klienti může omezit odpovědi přidáním kritéria ukončení.  

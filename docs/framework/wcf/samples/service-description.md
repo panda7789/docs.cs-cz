@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33504208"
 ---
 # <a name="service-description"></a>Popis služby
 Popis služby příklad ukazuje, jak službu můžete načíst jeho informace popisu služby za běhu. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), s další službou operace definované vrátit popisné informace o službě. Informace, které se vrátí seznam základní adresy a koncové body pro službu. Služba poskytuje s využitím tato informace <xref:System.ServiceModel.OperationContext>, <xref:System.ServiceModel.ServiceHost>, a <xref:System.ServiceModel.Description.ServiceDescription> třídy.  

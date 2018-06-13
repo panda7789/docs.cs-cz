@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363322"
 ---
 # <a name="application-security-scenarios-in-sql-server"></a>Scénáře zabezpečení aplikací v systému SQL Server
 Neexistuje žádný jeden správný způsob, jak vytvořit zabezpečený klientskou aplikaci SQL Server. Každá aplikace je jedinečné v jeho požadavky na prostředí pro nasazení a počet uživatelů. Aplikace, která je přiměřeně zabezpečen po počátečním nasazení se může stát méně zabezpečené v čase. Není možné předpovědět žádné přesnost co hrozeb můžou vznikat v budoucnu.  

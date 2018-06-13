@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502673"
 ---
 # <a name="self-host"></a>Vlastní hostování
 Tento příklad ukazuje, jak implementovat samoobslužné hostovanou službu v konzolové aplikaci. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Konfigurační soubor služby má byl přejmenován ze souboru Web.config na App.config a upravit tak, aby konfigurace základní adresu, která hostitel používá. Zdrojový kód služby se změnilo implementovat statického `Main` funkce, která vytvoří a otevře poskytující základní adresu nakonfigurované hostitele služby. Implementace služby se změnilo zapisovat výstup do konzoly pro každou operaci. Klient byl beze změny, s výjimkou konfigurace adresa správná koncového bodu služby.  

@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33431230"
 ---
 # <a name="cormarkthreadinthreadpool-function"></a>CorMarkThreadInThreadPool – funkce
 Označí aktuálně prováděné vlákno fondu vláken pro spuštění spravovaného kódu. Od verze rozhraní .NET Framework verze 2.0, tato funkce nemá žádný vliv. Není nutné a může být odebrán z vašeho kódu. Tato funkce je ve zastaralá [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  

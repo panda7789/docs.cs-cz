@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33600737"
 ---
 # <a name="argument-39ltargumentnamegt39-must-be-in-the-range-of--32768-to-65535"></a>Argument &#39; &lt;název argumentu argumentname&gt; &#39; musí být v rozsahu-32 768 až 65535.
 Hodnota argumentu spadá mimo povolený rozsah-32 768 do 65 535.  

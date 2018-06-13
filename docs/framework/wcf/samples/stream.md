@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508212"
 ---
 # <a name="stream"></a>Stream
 Ukázkový datový proud demonstruje použití streamování přenosu režimu komunikace. Služba zpřístupňuje několik operací, které odesílat a přijímat datové proudy. Tato ukázka se hostuje sama. Klient a služba jsou programy konzoly.  

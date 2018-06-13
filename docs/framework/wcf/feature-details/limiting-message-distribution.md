@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33495812"
 ---
 # <a name="limiting-message-distribution"></a>Omezení distribuce zpráv
 Rovnocenného kanálu je záměrné všesměrového vysílání mřížku. Svůj základní flooding model spočívá v distribuci každá zpráva odeslaná do všech členů tohoto oka kteréhokoli člena mřížku. To se hodí v situacích, kde každé zprávy vygenerované metodou členem je relevantní a užitečné pro všechny ostatní členy (například konverzační skupina). Ale mnoho aplikací mít občasné potřebu omezení distribuce zpráv. Například pokud nového člena spojí mřížku a chce načíst poslední zprávou odeslanou přes síť, tento požadavek není nutné k zaplnění na každého člena OK. Žádost může být omezen na téměř okolí, nebo může být odfiltrována místně vygenerovanou zprávy. Zprávy mohou rovněž odeslány do jednotlivých uzlu na OK. Toto téma popisuje použití počet směrování, šíření filtru zpráv, filtrem místní nebo přímé připojení k řízení, jak se předávají zprávy v průběhu OK a obsahuje obecné pokyny pro výběr přístup.  

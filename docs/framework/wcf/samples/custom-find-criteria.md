@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33503207"
 ---
 # <a name="custom-find-criteria"></a>Vlastní kritérium hledání
 Tento příklad znázorňuje, jak vytvořit vlastní rozsah odpovídající pomocí logiky a jak implementovat vlastní zjišťování služby. Klienti používají k zpřesnění a další sestavení nad funkce poskytované systémem najít zjišťování WCF vlastní rozsah odpovídající funkce. Scénáře, který popisuje tato ukázka je následující:  

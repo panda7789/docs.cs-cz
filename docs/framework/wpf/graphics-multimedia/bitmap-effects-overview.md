@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558002"
 ---
 # <a name="bitmap-effects-overview"></a>Přehled efektů bitmap
 Rastrový obrázek důsledky povolte návrháři a vývojáři použít vizuální efekty k vykreslení obsahu Windows Presentation Foundation (WPF). Například rastrový obrázek důsledky umožňují snadno aplikovat <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> vliv nebo efekt rozostření bitovou kopii nebo tlačítko.  

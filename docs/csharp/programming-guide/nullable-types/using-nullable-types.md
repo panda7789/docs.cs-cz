@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336918"
 ---
 # <a name="using-nullable-types-c-programming-guide"></a>Použití typů s povolenou hodnotou Null (Průvodce programováním v C#)
 Typy s možnou hodnotou Null může představovat všechny hodnoty základní typ a další [null](../../../csharp/language-reference/keywords/null.md) hodnotu. Typy s možnou hodnotou Null jsou deklarované v jednom ze dvou způsobů:  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362511"
 ---
 # <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a>Postupy: vývoj WCF Data Service spuštěna ve službě IIS
 Toto téma ukazuje, jak používat [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] k vytvoření služby data, která je založena na ukázková databáze Northwind, který je hostitelem aplikace technologie ASP.NET, která běží na Internetové informační služby (IIS). Příklad vytvoření stejnou službu data Northwind jako aplikace technologie ASP.NET, která běží na vývojový Server ASP.NET naleznete v části [rychlého startu služby WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  

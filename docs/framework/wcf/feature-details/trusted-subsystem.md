@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33500367"
 ---
 # <a name="trusted-subsystem"></a>Důvěryhodný subsystém
 Klient přistupuje k jedné nebo více webových služeb, které jsou rozmístěny v síti. Webové služby jsou navržené tak, aby přístup k další prostředky (například databáze nebo jiných webových služeb) je zapouzdřené v obchodní logice webovou službu. Tyto prostředky musí být chráněny před neoprávněným přístupem. Následující obrázek znázorňuje proces důvěryhodný subsystém.  

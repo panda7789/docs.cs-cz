@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556637"
 ---
 # <a name="how-to-convert-bound-data"></a>Postupy: Převod připojených dat
 Tento příklad ukazuje, jak se má použít převod na data, která se používá v vazby.  

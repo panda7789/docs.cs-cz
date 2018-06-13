@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33430512"
 ---
 # <a name="hosting-coclasses"></a>Třídy typu coclass hostování
 Tato část popisuje nespravované typy coclass rozhraní API, které používá rozhraní API hostování.  

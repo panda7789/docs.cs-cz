@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33497175"
 ---
 # <a name="how-to-secure-metadata-endpoints"></a>Postupy: Zabezpečené koncové body metadat
 Metadata pro služby mohou obsahovat citlivé údaje o vaší aplikaci, které můžete využít uživatel se zlými úmysly. Příjemci vaší služby také může vyžadovat zabezpečené mechanismus pro získání metadat o služby. Někdy je proto potřeba publikovat metadata pomocí zabezpečený koncový bod.  

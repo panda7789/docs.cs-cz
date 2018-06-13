@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33460486"
 ---
 # <a name="add-service-reference-in-a-portable-subset-project"></a>Přidání odkazu služby v přenosném dílčím projektu
 Projekty přenosném dílčím povolit programátorům sestavení .NET udržovat stromu jednoho zdroje a sestavení systému, přičemž musí zároveň podporovat více implementace rozhraní .NET (plochy, Silverlight, Windows Phone a XBOX). Projekty přenosném dílčím odkazovat pouze na přenosné knihovny .NET, které jsou sestavení rozhraní .NET framework, který lze použít na žádnou implementaci rozhraní .NET.  

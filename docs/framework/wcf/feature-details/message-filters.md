@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496932"
 ---
 # <a name="message-filters"></a>Filtry zpráv
 Implementace založená na obsahu směrování, služba Směrování používá <xref:System.ServiceModel.Dispatcher.MessageFilter> implementací, které kontrola určité části zprávy, jako je například adresu, název koncového bodu nebo konkrétní příkaz XPath. Pokud žádné filtry zpráv s [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] vašim požadavkům, můžete vytvořit vlastní filtr tak, že vytvoříte novou implementací základu <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy.  

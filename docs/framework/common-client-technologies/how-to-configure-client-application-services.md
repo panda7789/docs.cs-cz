@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744753"
 ---
 # <a name="how-to-configure-client-application-services"></a>Postupy: Konfigurace klientských aplikačních služeb
 Toto téma popisuje způsob použití sady Visual Studio **Návrhář projektu** povolit a nakonfigurovat klientské aplikační služby. Klient aplikačních služeb můžete použít k ověření uživatelů a načítání uživatelských rolí a nastavení z existující [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikace služby. Po konfiguraci, můžete přístup povolené služby v kódu aplikace, jak je popsáno v [Přehled klientských aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services-overview.md). Další informace o [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikační služby, najdete v části [aplikace ASP.NET: Přehled služby](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013).  

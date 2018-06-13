@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747054"
 ---
 # <a name="ltissuerchannelbehaviorsgt-element"></a>Element &lt;issuerChannelBehaviors&gt;
 Obsahuje kolekci chování koncový bod klienta Windows Communication Foundation (WCF) (definovanou v konfiguraci) má být použit při komunikaci s určeným službám tokenu služby. Chování definované nemůže obsahovat žádné [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) elementy.  

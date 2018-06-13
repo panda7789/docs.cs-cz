@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33423712"
 ---
 # <a name="debugging-unmanaged-api-reference"></a>Ladění (referenční dokumentace nespravovaného rozhraní API)
 Rozhraní API pro ladění umožňuje ladicí program k ladění kódu, který běží v prostředí běžné language runtime (CLR). Chcete ladit kód mohou být jakéhokoli typu kódu, který podporuje modulu CLR.  

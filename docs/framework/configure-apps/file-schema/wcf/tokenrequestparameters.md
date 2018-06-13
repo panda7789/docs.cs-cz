@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749540"
 ---
 # <a name="lttokenrequestparametersgt"></a>&lt;tokenRequestParameters&gt;
 Tento element konfigurace obsahuje podřízené elementy, které lze použít k určení dalších elementů XML k odeslání v textu zprávy do služby tokenů zabezpečení žádosti o token.  

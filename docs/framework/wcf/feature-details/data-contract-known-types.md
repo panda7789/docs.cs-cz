@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496006"
 ---
 # <a name="data-contract-known-types"></a>Známé typy kontraktů dat
 <xref:System.Runtime.Serialization.KnownTypeAttribute> Třída umožňuje zadat v předstihu, typy, které by měl být zahrnutý během deserializace důvodů. Příklad pracovní najdete v tématu [známé typy](../../../../docs/framework/wcf/samples/known-types.md) příklad.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33357193"
 ---
 # <a name="writing-a-transactional-application"></a>Zápis transakčních aplikací
 Jako programátor transakční aplikace můžete využívat výhod dvou programovacích modelů poskytované <xref:System.Transactions> obor názvů umožní vytvořit transakci. Můžete použít explicitní programovací model pomocí <xref:System.Transactions.Transaction> třídu nebo implicitní programovací model, ve kterém transakce jsou automaticky spravovány infrastrukturu, pomocí <xref:System.Transactions.TransactionScope> – třída. Doporučujeme použít model implicitní transakci pro vývoj. Můžete najít další informace o tom, jak používat v oboru transakce [implementace implicitní transakci pomocí oboru transakce](../../../../docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md) tématu.  

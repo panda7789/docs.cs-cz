@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33503259"
 ---
 # <a name="session"></a>Relace
 Relace příklad znázorňuje způsob implementace kontraktu, která vyžaduje relaci. Relaci poskytuje kontext pro provádění více operací. To umožňuje službě k přidružení stavu dané relace tak, aby následných operací můžete použít stav předchozí operace. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje službu kalkulačky. `ICalculator` Kontrakt změnila umožňující sadu aritmetické operace, které mají být provedeny, a zajistit přitom ochranu výsledku spuštěné. Tato funkce je definována `ICalculatorSession` kontrakt. Služba udržuje stavu pro klienta jako výpočet se říká víc operací služeb. Klient může získat aktuální výsledek pomocí volání `Result()` a zrušte zaškrtnutí výsledek, který má nula voláním `Clear()`.  

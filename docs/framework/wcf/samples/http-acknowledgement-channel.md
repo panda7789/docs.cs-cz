@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502829"
 ---
 # <a name="http-acknowledgement-channel"></a>Kanál potvrzení HTTP
 Kanál potvrzení HTTP je příkladem vrstveného kanálu, který změní jednosměrný vzorcem zasílání zpráv, povolení služby vědomí nebo odmítnout příchozí zprávy místo automaticky odesláno potvrzení na potvrzení. Kanál potvrzení HTTP také umožňuje službě potvrzení zpoždění, dokud mohl zajistit firemní úrovni záruku, že dojde ke zpracování zprávy.  

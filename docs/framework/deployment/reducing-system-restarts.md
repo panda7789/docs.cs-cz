@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388905"
 ---
 # <a name="reducing-system-restarts-during-net-framework-45-installations"></a>Omezení restartů systému při instalaci rozhraní .NET Framework 4.5
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Používá instalační program [restartovat správce](http://go.microsoft.com/fwlink/?LinkId=231425) aby systému restartuje kdykoli je to možné během instalace. Pokud vaše aplikace Instalační program nainstaluje rozhraní .NET Framework, můžete rozhraní pomocí Správce restartování využít této funkce. Další informace najdete v tématu [postupy: získání průběh z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md).  

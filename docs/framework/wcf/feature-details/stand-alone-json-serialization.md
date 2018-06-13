@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33509105"
 ---
 # <a name="stand-alone-json-serialization"></a>Samostatná serializace JSON
 JSON (JavaScript Object Notation) je formát dat, která je určená speciálně pro používat kód JavaScript spuštěný na webových stránkách otvírala v prohlížeči. Je výchozí formát dat používaný pomocí prvku ASP.NET AJAX služby vytvořené v systému Windows Communication Foundation (WCF).  

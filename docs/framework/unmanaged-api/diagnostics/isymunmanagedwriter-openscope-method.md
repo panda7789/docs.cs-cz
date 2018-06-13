@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33428157"
 ---
 # <a name="isymunmanagedwriteropenscope-method"></a>ISymUnmanagedWriter::OpenScope – metoda
 Otevře nové lexikální obor v aktuální metoda. Obor se stane nový aktuální obor a se posune do zásobníku oborů. Obory musí tvořit hierarchie. Položky na stejné úrovni nemohou překrývat.  

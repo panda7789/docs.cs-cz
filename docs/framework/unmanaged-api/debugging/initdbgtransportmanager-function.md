@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33423660"
 ---
 # <a name="initdbgtransportmanager-function"></a>InitDbgTransportManager – funkce
 Inicializuje správce přenosu pro připojení k vzdálené cíle pro výčet proces a modulu runtime.  

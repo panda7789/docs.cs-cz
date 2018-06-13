@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589094"
 ---
 # <a name="decrypting-data"></a>Dešifrování dat
 Dešifrování je reverzní operace šifrování. K šifrování tajného klíče musíte znát IV, které jste použili k šifrování dat i klíč. K šifrování veřejného klíče musíte znát veřejný klíč (Pokud byla data zašifrována pomocí soukromého klíče) nebo privátní klíč (Pokud byla data zašifrována pomocí veřejného klíče).  

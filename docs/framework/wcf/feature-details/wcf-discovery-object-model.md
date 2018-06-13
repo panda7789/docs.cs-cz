@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33509031"
 ---
 # <a name="wcf-discovery-object-model"></a>Objektový model zjišťování WCF
 Zjišťování WCF se skládá ze sady typy, které poskytují jednotný programovací model, který umožňuje zapisovat služby, které jsou zjistitelný v modulu runtime a klientů, které nalezne a použije tyto služby.  

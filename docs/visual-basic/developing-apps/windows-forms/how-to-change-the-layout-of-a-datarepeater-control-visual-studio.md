@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590839"
 ---
 # <a name="how-to-change-the-layout-of-a-datarepeater-control-visual-studio"></a>Postupy: Změna rozložení ovládacího prvku DataRepeater (Visual Studio)
 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> Řízení lze zobrazit v svislé (posunutí položky svisle) nebo vodorovné (posunutí vodorovně) orientace. Orientace v době návrhu nebo v době běhu můžete změnit změnou <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A> vlastnost. Pokud změníte <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A> vlastnost za běhu, můžete také změnit velikost <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> a změnit umístění podřízených ovládacích prvků.  

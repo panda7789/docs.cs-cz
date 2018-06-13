@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334194"
 ---
 # <a name="thread-pooling-c"></a>Přístup z více vláken sdružování (C#)
 A *fondu vláken* je kolekce vláken, které lze použít k provedení některých úloh na pozadí. (Viz [zřetězení (C#)](../../../../csharp/programming-guide/concepts/threading/index.md) základní informace.) Zůstane primární bezplatné provést další úlohy asynchronně vlákno.  

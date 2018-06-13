@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33357790"
 ---
 # <a name="updating-data-in-a-data-source"></a>Aktualizace dat ve zdroji dat
 SQL příkazy, které upravují data (například INSERT, UPDATE nebo DELETE) nevrátí řádků. Podobně mnoho uložené procedury provedení akce, ale nevrátí řádků. Chcete-li provést příkazy, které nevracejí řádky, vytvořte **příkaz** objekt s příslušný příkaz SQL a **připojení**, včetně požadované **parametry**. Spusťte příkaz se **ExecuteNonQuery** metodu **příkaz** objektu.  

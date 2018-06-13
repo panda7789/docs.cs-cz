@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744509"
 ---
 # <a name="creating-the-gamepiece-class"></a>Vytvoření třídy GamePiece
 **GamePiece** třída zapouzdří všechny funkce, které jsou potřebné k načtení bitovou kopii Microsoft XNA herní část, sledovat stav myši ve vztahu k herní část, zachycení myši, zadejte manipulace a nečinnosti zpracování, a Když herní část dosáhne omezení zobrazení port, zadejte skákající schopnosti.  

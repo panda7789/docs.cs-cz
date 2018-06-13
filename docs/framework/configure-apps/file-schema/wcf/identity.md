@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749163"
 ---
 # <a name="ltidentitygt"></a>&lt;Identity&gt;
 Prvek identity umožňuje vývojáři klienta zadejte v době návrhu očekávaný identitu služby. V procesu mezi klientem a službou infrastrukturu Windows Communication Foundation (WCF) zajistí, že identita očekávanou službu shody hodnoty tohoto elementu a proto může být ověřen. Další informace najdete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496848"
 ---
 # <a name="how-to-specify-channel-security-credentials"></a>Postupy: Zadejte pověření zabezpečení kanálu
 Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikacím COM volání služby WCF. Většina služeb WCF vyžadují klienta a zadejte pověření pro ověřování a autorizaci. Při volání služby WCF z klienta WCF, můžete tyto přihlašovací údaje ve spravovaném kódu nebo v konfiguračním souboru aplikace. Při volání služby WCF z aplikace modelu COM, můžete použít <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní k zadání přihlašovacích údajů. Toto téma se ilustrují různé způsoby, jak zadat přihlašovací údaje pomocí <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní.  

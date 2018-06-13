@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33355783"
 ---
 # <a name="sql-server-compact-and-linq-to-sql"></a>SQL Server Compact a technologie LINQ to SQL
 Systém SQL Server Compact je databáze výchozí nainstalované s Visual Studio. Další informace najdete v tématu [PAVE přes pomocí systému SQL Server Compact (Visual Studio)](http://msdn.microsoft.com/library/13320dd1-94e5-4077-bf76-8df253695ccc).  

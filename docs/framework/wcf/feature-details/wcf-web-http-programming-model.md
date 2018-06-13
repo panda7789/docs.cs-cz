@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33498007"
 ---
 # <a name="wcf-web-http-programming-model"></a>Model programování webových služeb HTTP WCF
 Windows Communication Foundation (WCF) webové HTTP programovací Model umožňuje vývojářům vystavit operací služby WCF na koncové body protokolu SOAP. Témata v této části Zkontrolujte funkci podrobně.  
