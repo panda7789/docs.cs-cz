@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531011"
 ---
 # <a name="how-to-determine-checked-items-in-the-windows-forms-checkedlistbox-control"></a>Postupy: Určení zaškrtnutých položek v ovládacím prvku Windows Forms CheckedListBox
 Při zobrazení dat uložených v systému Windows Forms <xref:System.Windows.Forms.CheckedListBox> ovládací prvek, můžete buď iterovat uložené v kolekci <xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A> vlastnost, nebo krok prostřednictvím seznamu <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> metoda k určení, které položky se kontroluje. <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> Metoda přebírá číslo indexu položky jako její argument a vrátí `true` nebo `false`. Na rozdíl od mohou očekávat <xref:System.Windows.Forms.ListBox.SelectedItems%2A> a <xref:System.Windows.Forms.ListBox.SelectedIndices%2A> vlastnosti není určeno, které položky se kontroluje; určují, které položky se zvýrazněnou.  

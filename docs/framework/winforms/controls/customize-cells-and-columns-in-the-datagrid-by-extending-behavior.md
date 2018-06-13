@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529130"
 ---
 # <a name="how-to-customize-cells-and-columns-in-the-windows-forms-datagridview-control-by-extending-their-behavior-and-appearance"></a>Postupy: Přizpůsobení buněk a sloupců v ovládacím prvku Windows Forms DataGridView rozšířením jeho chování a vzhledu
 <xref:System.Windows.Forms.DataGridView> Řízení poskytuje několik způsobů, jak přizpůsobit její vzhled a chování pomocí vlastností události a doprovodné třídy. V některých případech mohou mít požadavky pro vaše buněk, které překračují co může poskytnout tyto funkce. Můžete vytvořit vlastní vlastní <xref:System.Windows.Forms.DataGridViewCell> třída poskytovat rozšířené funkce.  

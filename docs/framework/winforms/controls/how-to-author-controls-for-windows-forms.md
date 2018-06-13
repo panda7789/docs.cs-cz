@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530647"
 ---
 # <a name="how-to-author-controls-for-windows-forms"></a>Postupy: Vytváření ovládacích prvků pro Windows Forms
 Ovládací prvek představuje grafické propojení mezi uživatelem a programu. Ovládací prvek můžete poskytnout nebo zpracování dat, přijímají vstup uživatele, reakce na události nebo proveďte libovolný počet dalších funkcí, které připojit aplikaci a uživatele. Protože ovládací prvek je v podstatě komponenta s grafickým rozhraním, může posloužit všechny funkce, která neobsahuje komponentu, a jejich interakci s uživatelem. Vytvoření ovládacích prvků k obsluze konkrétní účely a vytváření ovládacích prvků je jenom další programovacích úloh. Následující kroky si uvědomit, představují Přehled ovládacího prvku procesu vytváření. Odkazy poskytují další informace o jednotlivých kroků.  

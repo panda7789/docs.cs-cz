@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33358889"
 ---
 # <a name="querying-the-datarowview-collection-in-a-dataview"></a>Dotazování na kolekci DataRowView v v zobrazení DataView
 <xref:System.Data.DataView> Zpřístupní vyčíslitelná kolekce <xref:System.Data.DataRowView> objekty. <xref:System.Data.DataRowView> představuje vlastní pohled <xref:System.Data.DataRow> a zobrazí se na konkrétní verzi této <xref:System.Data.DataRow> v ovládacím prvku. Jenom jedna verze nástroje <xref:System.Data.DataRow> lze zobrazit pomocí ovládacího prvku, například <xref:System.Windows.Forms.DataGridView>. Dostanete <xref:System.Data.DataRow> který je zveřejněný prostřednictvím <xref:System.Data.DataRowView> prostřednictvím <xref:System.Data.DataRowView.Row%2A> vlastnost <xref:System.Data.DataRowView>. Při zobrazení hodnoty pomocí <xref:System.Data.DataRowView>, <xref:System.Data.DataView.RowStateFilter%2A> vlastnost určuje, která verze řádku základní <xref:System.Data.DataRow> zpřístupněn. Informace o přístupu k jiné řádek verze, která používá <xref:System.Data.DataRow>, najdete v části [stavy řádků a verze řádku](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md). Protože kolekce <xref:System.Data.DataRowView> objekty, které jsou zveřejněné <xref:System.Data.DataView> je vyčíslitelná, můžete použít [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazu nad ním.  

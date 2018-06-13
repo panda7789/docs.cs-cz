@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548032"
 ---
 # <a name="how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day"></a>Postupy: Zjištění, zda lze vytisknout tiskovou úlohu v této denní době
 Tiskové fronty nejsou vždy k dispozici po dobu 24 hodin denně. Mají počáteční a koncové vlastnosti doby, které lze nastavit, aby byly k dispozici v určitých časech den. Tuto funkci můžete použít například tak, aby vyhradil tiskárny pro výhradní použití určitých oddělení po 17: 00. Oddělení by měla mít jiné fronty obsluhy tiskárny než jiných oddělení použijte. Fronta jiných oddělení by být nastaveny na k dispozici po 17: 00, zatímco fronty pro favored oddělení může být nastaveny na vždy k dispozici.  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529698"
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>Návod: Demonstrace vizuálního dědění
 Dědičnost vizuálních prvků umožňuje zobrazíte ovládacích prvků na formuláři základní a přidejte nové ovládací prvky. V tomto návodu vytvoříte základní formulář a kompilována knihovny tříd. Bude tato knihovna tříd importovat do jiného projektu a vytvořte nový formulář, který dědí ze základní formulář. Během tohoto návodu se dozvíte, jak:  

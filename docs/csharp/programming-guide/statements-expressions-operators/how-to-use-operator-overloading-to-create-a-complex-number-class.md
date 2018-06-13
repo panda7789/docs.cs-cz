@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33328861"
 ---
 # <a name="how-to-use-operator-overloading-to-create-a-complex-number-class-c-programming-guide"></a>Postupy: Použití přetížení operátoru pro vytvoření třídy reprezentující komplexní čísla (Průvodce programováním v C#)
 Tento příklad ukazuje, jak můžete použít přetížení operátoru pro vytvoření třídy reprezentující komplexní čísla `Complex` , který definuje komplexní přidání. Program zobrazí imaginary a části reálná čísla a přidání dojít k použití přepsání `ToString` metoda.  

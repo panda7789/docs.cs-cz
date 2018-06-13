@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359312"
 ---
 # <a name="inserting-an-image-from-a-file"></a>Vkládání obrázek ze souboru
 Binární rozsáhlý objekt (binární rozsáhlý OBJEKT) můžete zapisovat jako binární nebo znak dat, v závislosti na typu pole na zdroj dat do databáze. Objekt BLOB je obecný pojem, který odkazuje `text`, `ntext`, a `image` datové typy, které obvykle obsahují dokumenty a obrázky.  

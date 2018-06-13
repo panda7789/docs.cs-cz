@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33528792"
 ---
 # <a name="basic-formatting-and-styling-in-the-windows-forms-datagridview-control"></a>Základní formátování a práce se styly v ovládacím prvku Windows Forms DataGridView
 `DataGridView` Ovládací prvek usnadňuje definovat základní vzhledu buněk a formátování zobrazení hodnoty buněk. Můžete definovat vzhled a formátování styly jednotlivých buněk, buněk v určité sloupce a řádky nebo všechny buňky v ovládacím prvku nastavením vlastnosti `DataGridViewCellStyle` objekty přistupovat prostřednictvím různých `DataGridView` vlastností ovládacího prvku. Kromě toho můžete upravit tyto styly dynamicky založeny na faktorech, jako je například hodnotu buňky pomocí zpracování `CellFormatting` událostí.  

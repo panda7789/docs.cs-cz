@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546276"
 ---
 # <a name="printing-how-to-topics"></a>Postupy: Témata tisku
 Témata v této části ukazují, jak používat tisk a funkce správy tiskový systém součástí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] a také nové [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] tiskové cestu.  

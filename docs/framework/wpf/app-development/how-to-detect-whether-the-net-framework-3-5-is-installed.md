@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33546039"
 ---
 # <a name="how-to-detect-whether-the-net-framework-35-is-installed"></a>Postupy: zjištění, zda je nainstalována rozhraní .NET Framework 3.5
 Než správci můžete nasadit aplikace Windows Presentation Foundation (WPF) v systému, která je cílena [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)], se musí nejprve potvrďte, že [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] runtime je k dispozici. Toto téma obsahuje skript napsaný v HTML/JavaScript, která správcům umožňuje určit, zda [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] je k dispozici v systému.  

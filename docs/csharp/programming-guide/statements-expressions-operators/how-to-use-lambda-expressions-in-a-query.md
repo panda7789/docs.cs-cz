@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33328133"
 ---
 # <a name="how-to-use-lambda-expressions-in-a-query-c-programming-guide"></a>Postupy: Použití výrazů lambda v dotazu (Průvodce programováním v C#)
 Nepoužívejte výrazy lambda přímo v syntaxi dotazu, ale je použijete v volání metod a výrazy dotazů může obsahovat volání metody. Ve skutečnosti některé operace dotazů lze vyjádřit pouze v syntaxe využívající metody. Další informace o rozdílu mezi syntaxe dotazů a syntaxe využívající metody najdete v tématu [syntaxe dotazů a syntaxe využívající metody v technologii LINQ](../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).  

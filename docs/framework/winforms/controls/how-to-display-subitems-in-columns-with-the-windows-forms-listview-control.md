@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532503"
 ---
 # <a name="how-to-display-subitems-in-columns-with-the-windows-forms-listview-control"></a>Postupy: Zobrazení podřízených položek ve sloupcích pomocí ovládacího prvku Windows Forms ListView
 Windows Forms <xref:System.Windows.Forms.ListView> řízení můžete zobrazit další text nebo pro každou položku v zobrazení Podrobnosti o podřízených položek. První sloupec zobrazuje text položky, například číslo zaměstnance. Druhá s názvem sloupce třetí a následné zobrazení první, druhý a další související podřízených položek.  

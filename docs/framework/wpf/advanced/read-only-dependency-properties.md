@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33548961"
 ---
 # <a name="read-only-dependency-properties"></a>Vlastnosti závislosti jen pro čtení
 Toto téma popisuje vlastnosti jen pro čtení závislostí, včetně existující vlastností závislostí jen pro čtení a scénáře a metody pro vytváření vlastnost vlastní závislosti jen pro čtení.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547404"
 ---
 # <a name="themedictionary-markup-extension"></a>ThemeDictionary – rozšíření značek
 Umožňuje autorům vlastní ovládací prvek nebo aplikací, které se integrují ovládací prvky třetích stran načíst slovnících prostředků motiv specifické pro použití v styly ovládacího prvku.  
