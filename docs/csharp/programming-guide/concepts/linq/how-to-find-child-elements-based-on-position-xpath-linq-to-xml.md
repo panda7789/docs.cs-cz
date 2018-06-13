@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33317499"
 ---
 # <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>Postupy: hledání podřízených elementů na základě pozice (XPath-technologie LINQ to XML) (C#)
 Někdy budete chtít najít elementy, které jsou založeny na jejich umístění. Můžete chtít najít druhý prvkem, nebo můžete chtít najít třetí prostřednictvím páté elementu.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33325205"
 ---
 # <a name="c-features-that-support-linq"></a>Funkce C# podporující LINQ
 Následující části jsou popsány nové jazykové konstrukty byla zavedená v C# 3.0. I když tyto nové funkce jsou používány pro určitý stupeň s [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy, nejsou omezeny na [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] a lze použít v libovolném kontextu, kde můžete najít je užitečné.  

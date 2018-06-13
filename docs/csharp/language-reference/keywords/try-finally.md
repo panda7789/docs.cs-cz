@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33288291"
 ---
 # <a name="try-finally-c-reference"></a>try-finally (Referenční dokumentace jazyka C#)
 Pomocí `finally` blok, můžete vyčistit všechny prostředky, které jsou přiděleny v [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blok a kód můžete spustit i v případě, že dojde k výjimce v `try` bloku. Obvykle prohlášení o `finally` bloku spustit, když opustí řízení `try` příkaz. Přenos řízení může nastat v důsledku normální spuštění, spuštění `break`, `continue`, `goto`, nebo `return` prohlášení, nebo propagace výjimku z `try` příkaz.  

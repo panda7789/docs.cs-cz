@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33333180"
 ---
 # <a name="how-to-identify-a-nullable-type-c-programming-guide"></a>Postupy: Identifikace typu s povolenou hodnotou Null (Průvodce programováním v C#)
 Můžete použít jazyka C# [typeof](../../../csharp/language-reference/keywords/typeof.md) operátor k vytvoření <xref:System.Type> objekt, který představuje typ s možnou hodnotou NULL:  

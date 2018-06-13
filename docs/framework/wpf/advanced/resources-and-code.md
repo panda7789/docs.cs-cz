@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547544"
 ---
 # <a name="resources-and-code"></a>Zdroje a kód
 Tento přehled soustřeďuje na postupy [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] prostředky můžete přistupovat ani je vytvářet pomocí kódu místo [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] syntaxe. Další informace o využití obecné prostředků a prostředky z [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntaxe perspektivy, najdete v části [XAML prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
