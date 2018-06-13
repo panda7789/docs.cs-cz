@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363260"
 ---
 # <a name="implementing-a-resource-manager"></a>Implementace Resource Manager
 Každý prostředek, který používá v transakci spravuje správce prostředků, jejichž akce jsou koordinovaný správcem transakcí. Správci prostředků pracují ve spolupráci se správcem transakcí k poskytování aplikací s zárukou atomicitu a izolaci. Microsoft SQL Server, fronty zpráv trvalý, tabulky hodnot hash v paměti jsou všechny příklady správci prostředků.  

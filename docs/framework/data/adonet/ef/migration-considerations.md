@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766433"
 ---
 # <a name="migration-considerations-entity-framework"></a>Posouzení migrace (rozhraní Entity Framework)
 [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framework poskytuje několik výhod do existující aplikace. Jedním z nejčastěji důležitá z těchto výhod je schopnost používat konceptuální model k oddělení používá aplikace ze schématu ve zdroji dat datové struktury. To umožňuje vám umožní snadno provádět budoucí změny do úložiště modelu nebo ke zdroji dat bez zušlechtěných změn do aplikace. Další informace o výhodách používání [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], najdete v části [Entity Framework přehled](../../../../../docs/framework/data/adonet/ef/overview.md) a [datového modelu Entity](../../../../../docs/framework/data/adonet/entity-data-model.md).  

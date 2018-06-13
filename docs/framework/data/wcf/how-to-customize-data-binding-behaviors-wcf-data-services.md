@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364136"
 ---
 # <a name="how-to-customize-data-binding-behaviors-wcf-data-services"></a>Postupy: přizpůsobení datové vazby chování (služby WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete zadat vlastní logiky, která je volána <xref:System.Data.Services.Client.DataServiceCollection%601> když je objekt přidat nebo odebrat z kolekce vazby, nebo když je zjištěna změna vlastností. Tato vlastní logiky je k dispozici jako metody, který je odkazováno jako <xref:System.Func%602> delegáti, které vrací hodnotu `false` při výchozí chování stále měla při dokončení vlastní metoda a `true` při následné zpracování události by se měla zastavit.  

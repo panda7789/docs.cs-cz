@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33358991"
 ---
 # <a name="how-to-manually-generate-client-data-service-classes-wcf-data-services"></a>Postupy: ruční generují třídy služby dat klienta (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] se integruje s Visual Studio umožňují automaticky generovat třídy služeb klienta data při použití **přidat odkaz na službu** dialogové okno Přidat odkaz na datové služby v projektu sady Visual Studio. Další informace najdete v tématu [postupy: Přidání odkazu na službu Data](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md). Stejné třídy služby dat klienta lze vytvořit také ručně pomocí nástroje generování kódu `DataSvcUtil.exe`. Tento nástroj, který je součástí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vygeneruje třídy rozhraní .NET Framework z definici datové služby. Také se použít pro generování třídy služeb dat ze souboru konceptuálního modelu (.csdl) a ze souboru .edmx, který představuje model Entity Framework v projektu sady Visual Studio.  

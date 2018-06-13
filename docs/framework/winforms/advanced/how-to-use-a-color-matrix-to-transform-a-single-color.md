@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527401"
 ---
 # <a name="how-to-use-a-color-matrix-to-transform-a-single-color"></a>Postupy: Použití matice barev k transformaci jedné barvy
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> třídy pro ukládání a manipulace s nimi bitové kopie. <xref:System.Drawing.Image> a <xref:System.Drawing.Bitmap> objekty jako 32bitové číslo úložiště barva každý pixelů: 8 bitů jednotlivých červená, zelená, modrá a alfa. Každý ze čtyř součástí je číslo od 0 do 255, kde 0 představuje žádné intenzitou a představující úplné intenzitou 255. Komponentu alfa Určuje průhlednost barvy: 0 je zcela průhledné a je plně neprůhledného 255.  

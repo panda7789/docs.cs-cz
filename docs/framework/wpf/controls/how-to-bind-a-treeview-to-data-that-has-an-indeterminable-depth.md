@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554373"
 ---
 # <a name="how-to-bind-a-treeview-to-data-that-has-an-indeterminable-depth"></a>Postupy: Připojení TreeView k datům nezjistitelné hloubky
 Může dojít k situaci, kdy budete chtít vytvořit vazbu <xref:System.Windows.Controls.TreeView> ke zdroji dat, jejichž hloubka není znám.  Tato situace může nastat, když jsou data rekurzivní ve své podstatě, například systém souborů, složek, kde může obsahovat složky, nebo organizační struktury společnosti, kde zaměstnanci mají ostatní zaměstnanci jako přímé podřízené.  

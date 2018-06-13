@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33319868"
 ---
 # <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>Postupy: práce s slovník pomocí technologie LINQ to XML (C#)
 Často je vhodnější převést zpět na jiné datové struktury typy datové struktury XML a XML. Toto téma ukazuje na konkrétní implementace tento obecné přístup tím, že převedete <xref:System.Collections.Generic.Dictionary%602> do XML a zpět.  

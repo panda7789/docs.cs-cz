@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33213220"
 ---
 # <a name="exception-handling-statements-c-reference"></a>Příkazy zpracování výjimek (Referenční dokumentace jazyka C#)
 C# poskytuje integrovanou podporu pro zpracování neobvyklé situace, označuje jako výjimky, které mohou nastat při spuštění aplikace. Tyto výjimky jsou zpracovávány kód, který je mimo běžný rozsah ovládacího prvku.  

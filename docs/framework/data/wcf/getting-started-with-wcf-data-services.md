@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359488"
 ---
 # <a name="getting-started-with-wcf-data-services"></a>Začínáme se službou WCF Data Services
 Témata v této části vám pomůžou rychle pochopit [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] a jak používat [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vystavení a spotřebování [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály pomocí vysvětlením základní technologie. Tato část obsahuje oba koncepční obsah a [rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) kurzu.  

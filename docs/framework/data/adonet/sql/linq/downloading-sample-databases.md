@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359673"
 ---
 # <a name="downloading-sample-databases"></a>Stažení ukázkové databáze
 Počet ukázky a návody v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dokumentace použít ukázková databáze Northwind a SQL Server Express Edition. Tyto produkty zdarma můžete stáhnout z webu Microsoft download.  

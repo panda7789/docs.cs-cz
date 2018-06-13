@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526575"
 ---
 # <a name="how-to-read-image-metadata"></a>Postupy: Čtení metadat obrázku
 Některé soubory, image obsahovat metadata, která si můžete přečíst určit funkce bitové kopie. Digitální fotografie může například obsahovat metadata, která si můžete přečíst k určení značku a model fotoaparátu používá k zachycení bitové kopie. S [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], si můžete přečíst metadata existujícího a novými metadaty je také možné zapsat do souborů obrázků.  

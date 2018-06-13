@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340681"
 ---
 # <a name="refactoring-using-a-pure-function-c"></a>Refaktoring pomocí čistý funkce (C#)
 Následující příklad refactors na předchozí příklad, [refaktoring pomocí metody rozšíření (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), použije čistý funkce v tomto příkladu kód najít text odstavce je přesunuta do čistého statickou metodu `ParagraphText`.  

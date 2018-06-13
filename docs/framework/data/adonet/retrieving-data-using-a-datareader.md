@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33353257"
 ---
 # <a name="retrieving-data-using-a-datareader"></a>Načítání dat pomocí DataReader –
 Načítání dat pomocí **DataReader –** zahrnuje vytvoření instance **příkaz** objektu a pak vytvořit **DataReader –** voláním  **Command.ExecuteReader** k načtení řádků ze zdroje dat. Následující příklad ilustruje, použití **DataReader –** kde `reader` představuje platnou DataReader – a `command` představuje platný objekt příkazu.  
@@ -21,7 +22,7 @@ reader = command.ExecuteReader();
  Můžete použít **čtení** metodu **DataReader –** objekt, který chcete získat řádek z výsledků dotazu. Každý sloupec vrácený řádek dostanete předáním odkazu na pořadí sloupce, který se na název **DataReader –**. Pro nejlepší výkon, ale **DataReader –** poskytuje řadu metod, které vám umožní přístup k hodnot sloupce v jeho nativní datové typy (**GetDateTime**, **GetDouble**, **Getguid –**, **GetInt32**a tak dále). Seznam typové přístupových metod pro data specifický pro zprostředkovatele **DataReaders**, najdete v části <xref:System.Data.OleDb.OleDbDataReader> a <xref:System.Data.SqlClient.SqlDataReader>. Pomocí zadaných přístupových metod, za předpokladu, že se označuje základní datový typ, snižuje množství při načítání hodnoty sloupce vyžaduje převod typů.  
   
 > [!NOTE]
->  Zahrnuje další vlastnost pro Windows Server 2003 verze rozhraní .NET Framework **DataReader –**, **HasRows**, což umožňuje zjistit, jestli **DataReader –**má nevrátil žádné výsledky před čtení z něj.  
+>  Zahrnuje další vlastnost pro Windows Server 2003 verze rozhraní .NET Framework **DataReader –**, **HasRows**, což umožňuje zjistit, jestli **DataReader –** má nevrátil žádné výsledky před čtení z něj.  
   
  Následující příklad kódu iteruje **DataReader** objekt a vrátí dva sloupce z každého řádku.  
   

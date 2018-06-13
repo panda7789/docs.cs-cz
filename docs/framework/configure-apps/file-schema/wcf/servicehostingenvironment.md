@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33354317"
 ---
 # <a name="ltservicehostingenvironmentgt"></a>&lt;serviceHostingEnvironment&gt;
 Tento element definuje typ, který vytvoří instanci služby hostování prostředí konkrétního přenosu. Pokud tento element je prázdné, použije se výchozí typ. Tento element dá použít jenom na aplikace či soubory konfiguraci na úrovni počítačů.  

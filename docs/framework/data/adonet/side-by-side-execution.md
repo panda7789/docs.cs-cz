@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365446"
 ---
 # <a name="side-by-side-execution-in-adonet"></a>Spuštění vedle sebe v technologii ADO.NET
 Spuštění vedle sebe v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] je možnost spustit aplikaci na počítač, který má více verzí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] nainstalovaná, výhradně pomocí verze, pro které byl zpracován aplikace. Podrobné informace o konfiguraci spuštění vedle sebe najdete v tématu [spuštění vedle sebe](../../../../docs/framework/deployment/side-by-side-execution.md).  

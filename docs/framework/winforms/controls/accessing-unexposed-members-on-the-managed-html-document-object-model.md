@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526430"
 ---
 # <a name="accessing-unexposed-members-on-the-managed-html-document-object-model"></a>Přístup k nevystaveným členům v modelu spravovaného objektu dokumentu HTML
 Spravované HTML modelu DOM (Document Object) obsahuje třídu s názvem <xref:System.Windows.Forms.HtmlElement> která zveřejňuje vlastnosti, metod a události, které mají společnou všechny elementy HTML. V některých případech ale potřebujete pro přístup k členy, kteří použití spravovaného rozhraní nevystavuje přímo. Toto téma popisuje dva způsoby pro přístup k nevystaveným členům, včetně [!INCLUDE[jsprjscript](../../../../includes/jsprjscript-md.md)] a VBScript funkcí definovaných v rámci webové stránky.  

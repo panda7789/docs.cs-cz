@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766657"
 ---
 # <a name="modification-sql-generation"></a>Generování SQL úpravy
 Tato část popisuje, jak vyvíjet modul úpravy SQL generování pro vaše (SQL:1999 – databáze kompatibilní) zprostředkovatele. Tento modul je zodpovědná za překladu stromu příkazů změny do příslušné příkazy SQL INSERT, UPDATE nebo DELETE.  

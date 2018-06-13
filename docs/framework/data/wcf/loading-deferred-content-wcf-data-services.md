@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365199"
 ---
 # <a name="loading-deferred-content-wcf-data-services"></a>Odložené načtení obsahu (služby WCF Data Services)
 Ve výchozím nastavení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] omezení množství dat, který vrací dotaz. Je však explicitně načíst další data, včetně entit v relaci, data stránkové odpovědi a binární datové proudy z službu data, když je to potřeba. Toto téma popisuje, jak načíst takový odložené obsah do vaší aplikace.  

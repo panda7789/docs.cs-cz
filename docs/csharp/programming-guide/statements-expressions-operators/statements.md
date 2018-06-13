@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339524"
 ---
 # <a name="statements-c-programming-guide"></a>Příkazy (Průvodce programováním v C#)
 Akce, které program trvá jsou vyjádřeny v příkazech. Běžné akce zahrnují deklarace proměnné, přiřazení hodnoty, volání metod ve smyčce přes kolekce a vytvoření větve na jeden nebo jiný blok kódu, v závislosti na dané podmínce. Pořadí, ve kterém jsou příkazy prováděna v programu se nazývá tok řízení toku spouštění. Tok řízení se může lišit při každém spuštění programu, v závislosti na tom, jak se program reaguje na vstup obdrží za běhu.  

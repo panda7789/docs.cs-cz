@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33312605"
 ---
 # <a name="arrays-as-objects-c-programming-guide"></a>Pole jako objekty (Průvodce programováním v C#)
 V jazyce C# pole jsou ve skutečnosti objekty a právě adresovatelné oblasti souvislé paměti jako C a C++. <xref:System.Array> je abstraktní základní typ všechny typy polí. Můžete použít vlastnosti a členy třídy, která <xref:System.Array> má. Příkladem by používat <xref:System.Array.Length%2A> vlastnost k získání délka pole. Následující kód přiřadí délka `numbers` pole, která je `5`, proměnné s názvem `lengthOfNumbers`:  

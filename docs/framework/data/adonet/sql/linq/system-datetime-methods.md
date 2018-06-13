@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360758"
 ---
 # <a name="systemdatetime-methods"></a>System.DateTime metody
 Následující technologie LINQ to SQL podporované metody, operátory a vlastnosti jsou k dispozici pro použití v technologii LINQ dotazy SQL. Když metoda, operátor nebo vlastnost není podporována, technologie LINQ to SQL nemůže překládat člena pro spuštění systému SQL Server. Můžete použít tyto členy ve vašem kódu, ale, že se musí vyhodnotit na před dotaz převádějí do jazyka Transact-SQL nebo po výsledky byly získány z databáze.  

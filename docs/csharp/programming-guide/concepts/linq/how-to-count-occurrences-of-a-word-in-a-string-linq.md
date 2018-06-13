@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33318832"
 ---
 # <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-c"></a>Postupy: počítání výskytů slova v řetězci (LINQ) (C#)
 Tento příklad ukazuje, jak používat dotaz LINQ k určení počtu výskytů zadaného slova v řetězci. Všimněte si, že k provedení počet, nejprve <xref:System.String.Split%2A> metoda je volána k vytvoření pole slova. Je snížení výkonu <xref:System.String.Split%2A> metoda. Pokud je počet slova jenom operace na řetězec, měli byste zvážit použití <xref:System.Text.RegularExpressions.Regex.Matches%2A> nebo <xref:System.String.IndexOf%2A> metody místo. Ale pokud výkon není kritický problém nebo jste již rozdělili věty za účelem provádění jiných typů dotazů nad ním, pak má smysl počet slova nebo fráze také pomocí LINQ.  

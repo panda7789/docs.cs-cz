@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527671"
 ---
 # <a name="how-to-add-or-remove-imagelist-images-with-the-designer"></a>Postupy: Přidávání a odebírání obrázků ImageList pomocí Návrháře
 Můžete přidat Image do <xref:System.Windows.Forms.ImageList> součástí několika různými způsoby. Bitové kopie můžete přidat velmi rychle pomocí inteligentních značek přidružené <xref:System.Windows.Forms.ImageList>, nebo pokud nastavujete na několik dalších vlastností <xref:System.Windows.Forms.ImageList>, možná bude jednodušší přidat bitové kopie v okně Vlastnosti. Můžete také přidat bitové kopie pomocí kódu. Další informace o tom, jak přidat bitové kopie s kódem najdete v tématu [postupy: Přidání nebo odebrání obrázků s komponentou Windows Forms ImageList](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md). Obvykle naplnit <xref:System.Windows.Forms.ImageList> součásti s obrázky, než je přidružena k ovládacímu prvku, ale není to povinné.  

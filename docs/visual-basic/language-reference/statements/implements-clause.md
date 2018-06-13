@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603402"
 ---
 # <a name="implements-clause-visual-basic"></a>Implements – klauzule (Visual Basic)
 Označuje, že členem třídu nebo strukturu poskytuje implementaci pro člena definované v rozhraní.  

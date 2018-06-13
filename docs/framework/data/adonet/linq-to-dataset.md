@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764850"
 ---
 # <a name="linq-to-dataset"></a>LINQ na DataSet
 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] umožňuje snadnější a rychlejší dotazu přes data uložená v mezipaměti <xref:System.Data.DataSet> objektu. Konkrétně [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] zjednodušuje dotazování tím, že umožňuje vývojářům psát dotazy z programovací jazyk, samostatně, místo pomocí samostatných dotazovací jazyk. To je zvlášť vhodné pro Visual Studio vývojáře, kteří teď můžete využít výhod kontrolu syntaxe kompilaci, statické zadáním a podporu technologie IntelliSense poskytované sady Visual Studio jejich dotazů.  

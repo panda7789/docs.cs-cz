@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360135"
 ---
 # <a name="how-to-store-and-reuse-queries"></a>Postupy: uložení a znovu používat dotazy
 Když máte aplikaci, která provádí mnohokrát strukturálně podobné dotazy, můžete zvýšit výkon často kompilování dotazu jednou a spouštění s odlišnými parametry několikrát. Například aplikace může mít načíst všechny zákazníky, kteří jsou z určitého města, kde je zadán Město v době běhu uživatelem ve formuláři. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje použití *zkompilovat dotazy* pro tento účel.  

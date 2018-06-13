@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340018"
 ---
 # <a name="how-to-catch-a-non-cls-exception"></a>Postupy: Zachycení výjimky nekompatibilní se specifikací CLS
 Některé jazyky rozhraní .NET, včetně C + +/ CLI, povolit objekty k vyvolání výjimky, které není odvozena od <xref:System.Exception>. Takové výjimky, se nazývají *-specifikací CLS výjimky* nebo *bez výjimky*. V jazyce Visual C# můžete nelze vyvolat-specifikací CLS výjimky, ale můžete je zachytit dvěma způsoby:  

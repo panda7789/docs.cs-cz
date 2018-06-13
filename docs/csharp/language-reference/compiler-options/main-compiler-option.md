@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33212417"
 ---
 # <a name="-main-c-compiler-options"></a>-main (možnosti kompilátoru C#)
 Tato možnost určuje třídu, která obsahuje položky, přejděte na program, pokud obsahuje více než jedné třídy **hlavní** metoda.  

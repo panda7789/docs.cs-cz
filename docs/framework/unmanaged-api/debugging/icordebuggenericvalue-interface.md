@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33415061"
 ---
 # <a name="icordebuggenericvalue-interface1"></a>ICorDebugGenericValue Interface1
 Podtřídou třídy "ICorDebugValue", která se použije pro všechny hodnoty. Toto rozhraní poskytuje metody Get a Set pro hodnotu.  

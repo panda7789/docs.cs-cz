@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765692"
 ---
 # <a name="working-with-data-providers"></a>Práce s zprostředkovatelů dat.
 Témata v této části popisují služby a zprostředkovatelé, kteří transformaci dotazy pro koncepční model na nativní dotazy na zdroj dat, který podporuje rozhraní Entity Framework.  

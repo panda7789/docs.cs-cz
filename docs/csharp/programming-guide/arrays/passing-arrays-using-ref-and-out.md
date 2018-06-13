@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33313567"
 ---
 # <a name="passing-arrays-using-ref-and-out-c-programming-guide"></a>Předávání polí pomocí parametrů ref a out (Průvodce programováním v C#)
 Všechny jako [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametry, `out` parametr typu pole musí mít přiřazenou před jeho použitím; to znamená, musí být přiřazen volaného. Příklad:  

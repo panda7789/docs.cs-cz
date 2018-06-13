@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525935"
 ---
 # <a name="how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control"></a>Postupy: Přidání a odebrání uzlů s ovládacím prvkem Windows Forms TreeView
 Windows Forms <xref:System.Windows.Forms.TreeView> řízení ukládá uzly nejvyšší úrovně v jeho <xref:System.Windows.Forms.TreeView.Nodes%2A> kolekce. Každý <xref:System.Windows.Forms.TreeNode> má také vlastní <xref:System.Windows.Forms.TreeNode.Nodes%2A> kolekce k uložení jeho podřízené uzly. Obě vlastnosti kolekce jsou typu <xref:System.Windows.Forms.TreeNodeCollection>, který poskytuje standardní kolekci členů, které vám umožní přidat, odebrat a uspořádání uzlů na jedné úrovni hierarchie uzlu.  

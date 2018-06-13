@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33322689"
 ---
 # <a name="pointer-conversions-c-programming-guide"></a>Převody ukazatele (Průvodce programováním v C#)
 V následující tabulce jsou uvedeny převody předdefinované implicitní ukazatele. Implicitní převody může dojít v mnoha situacích, včetně metoda vyvolání a přiřazení příkazy.  

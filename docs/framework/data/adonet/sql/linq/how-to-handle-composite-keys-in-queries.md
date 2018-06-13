@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33354236"
 ---
 # <a name="how-to-handle-composite-keys-in-queries"></a>Postupy: zpracování složené klíče v dotazech.
 Některé operátory může trvat jenom jeden argument. Pokud váš argument musí obsahovat více než jeden sloupec z databáze, musíte vytvořit anonymní typ představují kombinaci.  

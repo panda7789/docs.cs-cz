@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33316956"
 ---
 # <a name="how-to-find-a-single-descendant-using-the-descendants-method-c"></a>Postupy: vyhledání jednoho následníka metodou následníky (C#)
 Můžete použít <xref:System.Xml.Linq.XContainer.Descendants%2A> osy metoda rychle napsat kód najít jednoho jednoznačně s názvem elementu. Tento postup je zvlášť užitečné, když chcete najít konkrétní následníka s konkrétním názvem. Můžete napsat kód, přejděte na požadovaný element, ale je často rychlejší a snadnější k zápisu kódu pomocí <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  

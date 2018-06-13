@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33215014"
 ---
 # <a name="implicit-c-reference"></a>implicit (referenční dokumentace jazyka C#)
 `implicit` – Klíčové slovo se používá k deklaraci operátor implicitní uživatelsky definovaný typ. převod. Můžete povolit implicitní převody mezi uživatelem definovaný typ a jiného typu, pokud převod záruku, že nechcete mít za následek ztrátu dat.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362462"
 ---
 # <a name="sql-server-data-type-mappings"></a>Mapování datového typu SQL Server
 SQL Server a rozhraní .NET Framework jsou založené na jiný typ systémy. Například rozhraní .NET Framework <xref:System.Decimal> struktura má maximální měřítkem 28, zatímco maximální měřítko 38 využívají desetinné hodnoty, číselné datové typy systému SQL Server. Zachovat integritu dat. při čtení a zápis dat, <xref:System.Data.SqlClient.SqlDataReader> zpřístupňuje SQL Server – konkrétní zadali přístupových metod, které vracejí objekty <xref:System.Data.SqlTypes> a také přístupových metod, které vracejí rozhraní .NET Framework typy. Typy systému SQL Server a rozhraní .NET Framework typy jsou také reprezentované výčty v <xref:System.Data.DbType> a <xref:System.Data.SqlDbType> třídy, které můžete použít při zadávání <xref:System.Data.SqlClient.SqlParameter> datové typy.  

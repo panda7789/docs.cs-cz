@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33354569"
 ---
 # <a name="how-to-generate-customized-code-by-modifying-a-dbml-file"></a>Postupy: generování přizpůsobených kódu úpravou souboru DBML
 Zdrojový kód jazyka Visual Basic nebo C# můžete vygenerovat ze souboru metadat databáze markup language (dbml). Tento přístup poskytuje možnost přizpůsobit výchozí soubor DBML před generováním mapování kódu aplikace. Toto je pokročilá funkce.  
