@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33598852"
 ---
 # <a name="statement-is-not-valid-inside-a-methodmultiline-lambda"></a>Příkaz není platný uvnitř metody nebo víceřádkového výrazu lambda.
 Příkaz není platný v rámci `Sub`, `Function`, vlastnost `Get`, nebo vlastnost `Set` postupu. Některé příkazy mohou být umístěny na úrovni modulu nebo třídy. Jiné, jako například `Option Strict`, musí být na úrovni oboru názvů a předcházet všechny ostatní deklarace.  

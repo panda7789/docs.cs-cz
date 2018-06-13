@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33598917"
 ---
 # <a name="another-event-log-has-already-registered-a-source-with-this-name"></a>Jiné protokolu událostí už zaregistrovaný zdroj s tímto názvem
 Pokus o byl proveden pro zápis záznamu do protokolu událostí, kde je zadaný zdroj registrovaná s jinou protokolu událostí.  

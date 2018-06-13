@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639637"
 ---
 # <a name="too-many-dll-application-clients"></a>Příliš mnoho klientů aplikace knihovny DLL
 Dynamická knihovna (DLL) jazyka Visual Basic zvládne přístup jenom omezené množství hostitele aplikací. Vaše aplikace a dalších aplikací, které jsou hostiteli jazyka Visual Basic (některé z nich může být přístupné aplikace) jsou všechny pokusu o přístup k knihovnu DLL jazyka Visual Basic ve stejnou dobu.  

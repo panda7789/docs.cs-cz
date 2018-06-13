@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33602051"
 ---
 # <a name="static-visual-basic"></a>Static (Visual Basic)
 Určuje, že jeden nebo více deklarované lokální proměnné jsou nadále existovat a po ukončení procesu, ve které jsou deklarovány zachovat jejich nejnovější hodnoty.  

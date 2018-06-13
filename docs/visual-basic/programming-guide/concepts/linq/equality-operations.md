@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640214"
 ---
 # <a name="equality-operations-visual-basic"></a>Operace rovnosti (Visual Basic)
 Dvě pořadí, jehož odpovídající elementy jsou stejné, a které mají stejný počet elementů jsou považovány za shodné.  

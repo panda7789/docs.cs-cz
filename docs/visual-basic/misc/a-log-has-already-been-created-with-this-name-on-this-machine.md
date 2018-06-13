@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33603428"
 ---
 # <a name="a-log-has-already-been-created-with-this-name-on-this-machine"></a>Protokol byl vytvořen s tímto názvem na tomto počítači
 Byl proveden pokus o vytvoření protokolu s názvem, který je již používán.  

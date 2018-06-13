@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599187"
 ---
 # <a name="argument-value-39ltpathnamegt39-contains-characters-that-are-not-valid-in-a-path-name"></a>Hodnota argumentu &#39; &lt;pathname&gt; &#39; obsahuje znaky, které nejsou platné v názvu cesty
 Cesta obsahuje jeden nebo více znaků, které nejsou platné.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582256"
 ---
 # <a name="spinlock"></a>SpinLock
 <xref:System.Threading.SpinLock> Struktura je nízké úrovně, vzájemné vyloučení synchronizaci primitivní, otáčí během čekání na získání zámku. Na počítači, vícejádrovými, když se očekává, dobu čekání být krátké a pokud je minimální, kolizí <xref:System.Threading.SpinLock> můžete provádět lépe než jiné druhy zámky. Doporučujeme však používat <xref:System.Threading.SpinLock> pouze, když určíte profilace, který <xref:System.Threading.Monitor?displayProperty=nameWithType> metoda nebo <xref:System.Threading.Interlocked> metody jsou výrazně zpomalení výkonu vašeho programu.  
