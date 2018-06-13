@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810028"
 ---
 # <a name="udp-activation"></a><span data-ttu-id="08380-102">Aktivace UDP</span><span class="sxs-lookup"><span data-stu-id="08380-102">UDP Activation</span></span>
 <span data-ttu-id="08380-103">Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázka.</span><span class="sxs-lookup"><span data-stu-id="08380-103">This sample is based on the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample.</span></span> <span data-ttu-id="08380-104">Ji rozšiřuje [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku, který se podporují procesu aktivace pomocí služby Aktivace procesů systému Windows (WAS).</span><span class="sxs-lookup"><span data-stu-id="08380-104">It extends the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample to support process activation using the Windows Process Activation Service (WAS).</span></span>  
