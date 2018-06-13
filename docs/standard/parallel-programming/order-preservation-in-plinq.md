@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591622"
 ---
 # <a name="order-preservation-in-plinq"></a>Zachování pořadí v PLINQ
 Cílem je v PLINQ, maximalizovat výkon při zachování správnosti. Dotaz by měl spustit co nejrychleji, ale stále správné výsledky. V některých případech správnost vyžaduje pořadí zdrojové sekvence dat; řazení však může být náročné. Proto ve výchozím nastavení, PLINQ nezachová pořadí zdrojové sekvence. V tomto ohledu PLINQ podobá [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)], ale na rozdíl od LINQ na objekty, které zachováváno.  

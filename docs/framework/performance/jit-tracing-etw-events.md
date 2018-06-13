@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397556"
 ---
 # <a name="jit-tracing-etw-events"></a>Události Trasování událostí pro Windows trasování JIT
 <a name="top"></a> Tyto události shromažďovat údaje o úspěch nebo Chyba v běhu (JIT) vložené a volání tail JIT.  

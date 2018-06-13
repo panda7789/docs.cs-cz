@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643871"
 ---
 # <a name="how-to-modify-expression-trees-visual-basic"></a>Postupy: úpravy stromů výrazů (Visual Basic)
 Toto téma ukazuje, jak upravit strom výrazu se nezdařilo. Stromy výrazů jsou neměnné, což znamená, že je nelze změnit přímo. Chcete-li změnit strom výrazu, musíte vytvořit kopii existující strom výrazu a při vytváření kopie, proveďte požadované změny. Můžete použít <xref:System.Linq.Expressions.ExpressionVisitor> tříd procházení stávající strom výrazu a zkopírovat každý uzel, který ho navštíví.  

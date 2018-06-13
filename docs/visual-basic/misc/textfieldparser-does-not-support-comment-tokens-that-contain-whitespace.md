@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641220"
 ---
 # <a name="textfieldparser-does-not-support-comment-tokens-that-contain-whitespace"></a>TextFieldParser nepodporuje komentář tokeny, které obsahují prázdné znaky
 Zadaný token komentář, který obsahuje prázdné znaky. `TextFieldParser` Nepodporuje komentář tokeny, které obsahují mezer nenastane mezeru na začátku token. Prázdné znaky, ke kterým dochází na začátku token se ignoruje.  

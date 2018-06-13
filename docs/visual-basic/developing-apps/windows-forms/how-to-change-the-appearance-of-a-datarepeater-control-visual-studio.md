@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590118"
 ---
 # <a name="how-to-change-the-appearance-of-a-datarepeater-control-visual-studio"></a>Postupy: Změna vzhledu ovládacího prvku DataRepeater (Visual Studio)
 Můžete změnit vzhled <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku v době návrhu nastavením vlastnosti nebo v době běhu zpracování <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem> událostí.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640218"
 ---
 # <a name="how-to-find-descendant-elements-xpath-linq-to-xml-visual-basic"></a>Postupy: vyhledání Následnickým elementům (XPath-technologie LINQ to XML) (Visual Basic)
 Toto téma ukazuje, jak získat následnickým elementům s konkrétním názvem.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34171912"
 ---
 # <a name="ampamp-operator-c-reference"></a>&amp;&amp; Operátor (referenční dokumentace jazyka C#)
 Podmínku – a – operátor (`&&`) provede logickou- a jeho `bool` operandy, ale pouze vyhodnotí svůj druhý operand v případě potřeby.  

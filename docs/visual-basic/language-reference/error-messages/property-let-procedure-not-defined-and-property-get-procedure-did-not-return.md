@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33596603"
 ---
 # <a name="property-let-procedure-not-defined-and-property-get-procedure-did-not-return-an-object"></a>Procedura Property Let není definována a procedura Property Get nevrátila objekt.
 Některé operace, metody a vlastnosti lze použít pouze pro `Collection` objekty. Zadali jste operaci nebo vlastnost, která je určena výhradně pro kolekce, ale objekt se nenachází v kolekci.  

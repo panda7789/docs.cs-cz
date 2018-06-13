@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33640427"
 ---
 # <a name="the-value-of-ltargumentnamegt-must-be-greater-than-or-equal-to-1000"></a>Hodnota &lt;název argumentu argumentname&gt; musí být větší než nebo rovno 1 000
 Hodnota <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A> vlastnost musí být větší než nebo rovno 1 000.  

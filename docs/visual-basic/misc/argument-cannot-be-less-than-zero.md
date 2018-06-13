@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599880"
 ---
 # <a name="argument-cannot-be-less-than-zero"></a>Argument nesmí být menší než nula
 Hodnota, je menší než nula. není zadaný, ale argument nesmí být menší než nula.  

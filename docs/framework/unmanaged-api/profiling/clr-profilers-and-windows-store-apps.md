@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33462283"
 ---
 # <a name="clr-profilers-and-windows-store-apps"></a>Profilery CLR a aplikace pro Windows Store
 Toto téma popisuje, co je potřeba myslet při psaní diagnostické nástroje, které analýza spravovaného kódu běžících v rámci aplikace pro Windows Store.  Obsahuje také pokyny k úpravě existující nástroje vývoj, aby pracovaly při spuštění před aplikací pro Windows Store.  Chcete-li tyto informace pochopili, je vhodné, že pokud jste obeznámeni s Common Language Runtime profilace rozhraním API pro, již jste použili toto rozhraní API v diagnostický nástroj, běží správně u aplikací klasické pracovní plochy Windows a vy jste nyní zajímá úprava nástroj Chcete-li spustit správně pro aplikace pro Windows Store.  

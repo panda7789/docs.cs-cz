@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33598437"
 ---
 # <a name="all-field-widths-except-the-last-element-must-be-greater-than-zero"></a>Šířky všech polí, s výjimkou posledním elementem, musí být větší než nula.
 Šířky všech polí, s výjimkou posledním elementem, musí být větší než nula. Šířka pole, které menší než nebo rovna nule v posledním elementem značí, že poslední pole je s proměnnou délkou.  

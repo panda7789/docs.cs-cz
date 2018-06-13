@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33584654"
 ---
 # <a name="data-parallelism-task-parallel-library"></a>Datový paralelismus (Task Parallel Library)
 *Datový paralelismus* popisuje scénáře, ve kterých stejné operace se provádí současně (paralelně) u elementů ve zdrojové kolekci nebo pole. Zdrojové kolekci je v paralelních operací dat, na oddíly tak, aby více vláken může fungovat v různých segmentech současně.  

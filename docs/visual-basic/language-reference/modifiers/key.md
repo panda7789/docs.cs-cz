@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599841"
 ---
 # <a name="key-visual-basic"></a>Key (Visual Basic)
 `Key` – Klíčové slovo můžete určit chování pro vlastnosti anonymní typy. Pouze vlastnosti, které označíte jako vlastnosti klíče účastnit testy rovnosti mezi anonymní typ instance nebo výpočtu hodnoty hash. Hodnoty vlastnosti klíče nelze změnit.  

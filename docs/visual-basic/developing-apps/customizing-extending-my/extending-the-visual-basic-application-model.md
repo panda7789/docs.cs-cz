@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591869"
 ---
 # <a name="extending-the-visual-basic-application-model"></a>Rozšíření aplikačního modelu jazyka Visual Basic
 Funkce můžete přidat do aplikačního modelu přepsáním `Overridable` členy <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy. Tento postup umožňuje přizpůsobit chování aplikačního modelu služby a přidejte volání vlastní metody aplikace po spuštění a vypnutí.  

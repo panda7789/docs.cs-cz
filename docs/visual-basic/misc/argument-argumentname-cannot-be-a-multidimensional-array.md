@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599590"
 ---
 # <a name="argument-39ltargumentnamegt39-cannot-be-a-multidimensional-array"></a>Argument &#39; &lt;název argumentu argumentname&gt; &#39; nemůže být multidimenzionální pole
 Pořadí argument pole je větší než 1, ale může být pouze jednorozměrné pole.  

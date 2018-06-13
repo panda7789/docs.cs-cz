@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599974"
 ---
 # <a name="properties-visual-basic"></a>Vlastnosti (Visual Basic)
 Tato stránka obsahuje seznam vlastností, které jsou členy moduly jazyka Visual Basic. Další vlastnosti, které jsou členy specifickými objekty Visual Basic jsou uvedeny v [objekty](../../visual-basic/language-reference/objects/index.md).  

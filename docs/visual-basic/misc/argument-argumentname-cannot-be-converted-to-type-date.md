@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33600672"
 ---
 # <a name="argument-39ltargumentnamegt39-cannot-be-converted-to-type-39date39"></a>Argument &#39; &lt;název argumentu argumentname&gt; &#39; nelze převést na typ &#39;datum&#39;
 Převod se pokusil změnit proměnné na typ `Date`, ale hodnota nebyla rozpoznána jako platné datum.  

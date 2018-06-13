@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574875"
 ---
 # <a name="how-to-find-existing-files-and-directories-in-isolated-storage"></a>Postupy: Hledání existujících souborů a adresářů v izolovaném úložišti
 Chcete-li vyhledat adresáře v izolovaném úložišti, použijte <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A?displayProperty=nameWithType> metoda. Tato metoda přebírá řetězec, který představuje vzor hledání. Délce jednoho znaku (?) i více znak (*) můžete použít zástupné znaky v vzor hledání, ale musí být zadány v Závěrečná část názvu zástupné znaky. Například `directory1/*ect*` je platný hledaný řetězec, ale `*ect*/directory2` není.  

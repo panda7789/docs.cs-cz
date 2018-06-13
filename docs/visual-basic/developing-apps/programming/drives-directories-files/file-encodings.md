@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582282"
 ---
 # <a name="file-encodings-visual-basic"></a>Kódování souborů (Visual Basic)
 Kódování souborů, také známé jako kódování znaků, určete, jak představují znaky při zpracování textu. Jeden kódování může být vhodnější než oproti jinému z hlediska jazykové symboly může nebo nemůže zpracovat, i když je obvykle upřednostňované kódování Unicode.  

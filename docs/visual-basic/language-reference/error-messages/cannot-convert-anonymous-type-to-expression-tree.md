@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585473"
 ---
 # <a name="cannot-convert-anonymous-type-to-expression-tree-because-it-contains-a-field-that-is-used-in-the-initialization-of-another-field"></a>Anonymní typ nelze převést na strom výrazu, protože obsahuje pole, které se používá při inicializaci jiného pole.
 Kompilátor nepřijímá převod anonymním na strom výrazu, když jednu vlastnost anonymní typ se používá k chybě při inicializaci jinou vlastnost anonymního typu. Například v následujícím kódu `Prop1` je deklarován v seznamu inicializace a pak se použije jako počáteční hodnota `Prop2`.  

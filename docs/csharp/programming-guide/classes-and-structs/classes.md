@@ -11,6 +11,7 @@ ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/19/2018
+ms.locfileid: "34312089"
 ---
 # <a name="classes-c-programming-guide"></a>Třídy (Průvodce programováním v C#)
 A *třída* je konstruktor, který umožňuje vytvořit vlastní typy společně seskupením proměnné jiné typy, metod a události. Třída je jako plán, podle kterého. Definuje data a chování typu. Pokud třída není deklarovaný jako statický, kód klienta můžete vytvořit *instance* ho. Tyto instance jsou *objekty* které jsou přiřazeny k proměnné. Instance třídy zůstane v paměti, dokud všechny odkazy na ni se dostala mimo rozsah. V té době modulu CLR označí je vhodné pro uvolňování paměti. Pokud třída je deklarován jako [statické](../../../csharp/language-reference/keywords/static.md), nelze vytvořit instance, a kód klienta pouze k němu přístup pomocí vlastní třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
