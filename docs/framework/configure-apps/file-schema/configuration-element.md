@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745939"
 ---
 # <a name="configuration-element"></a><span data-ttu-id="41407-102">\<Konfigurace > elementu</span><span class="sxs-lookup"><span data-stu-id="41407-102">\<configuration> element</span></span>
 

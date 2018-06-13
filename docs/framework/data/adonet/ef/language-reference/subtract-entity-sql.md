@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763433"
 ---
 # <a name="--subtract-entity-sql"></a><span data-ttu-id="552ff-102">-(Odečtena) (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="552ff-102">- (Subtract) (Entity SQL)</span></span>
 <span data-ttu-id="552ff-103">Odečítá od dvou čísel.</span><span class="sxs-lookup"><span data-stu-id="552ff-103">Subtracts two numbers.</span></span>  

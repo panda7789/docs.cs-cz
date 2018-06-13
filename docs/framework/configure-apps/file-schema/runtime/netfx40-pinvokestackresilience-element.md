@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748994"
 ---
 # <a name="ltnetfx40pinvokestackresiliencegt-element"></a><span data-ttu-id="67c76-102">&lt;Netfx40_pinvokestackresilience –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="67c76-102">&lt;NetFx40_PInvokeStackResilience&gt; Element</span></span>
 <span data-ttu-id="67c76-103">Určuje, zda modul runtime automaticky opravy vyvolání nesprávný platformy deklarace v době běhu za cenu pomalejší přechodů mezi spravováno a nespravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="67c76-103">Specifies whether the runtime automatically fixes incorrect platform invoke declarations at run time, at the cost of slower transitions between managed and unmanaged code.</span></span>  

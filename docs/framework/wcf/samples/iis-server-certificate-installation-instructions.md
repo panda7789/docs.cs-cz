@@ -1,91 +1,80 @@
 ---
-title: "Pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)"
-ms.custom: 
+title: Pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 11281490-d2ac-4324-8f33-e7714611a34b
-caps.latest.revision: "18"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: cfb168ae60765a57017aaec6bdedaf796491f602
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 46d1acf758dd50b881527a16570a1e4a45933958
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33502602"
 ---
-# <a name="internet-information-services-iis-server-certificate-installation-instructions"></a><span data-ttu-id="1cd59-102">Pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)</span><span class="sxs-lookup"><span data-stu-id="1cd59-102">Internet Information Services (IIS) Server Certificate Installation Instructions</span></span>
-<span data-ttu-id="1cd59-103">Ke spuštění ukázky, které zabezpečeně komunikovat s Internetové informační služby (IIS), musíte vytvořit a nainstalovat certifikát serveru.</span><span class="sxs-lookup"><span data-stu-id="1cd59-103">To run the samples that securely communicate with Internet Information Services (IIS), you must create and install a server certificate.</span></span>  
+# <a name="internet-information-services-iis-server-certificate-installation-instructions"></a><span data-ttu-id="1fc81-102">Pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)</span><span class="sxs-lookup"><span data-stu-id="1fc81-102">Internet Information Services (IIS) Server Certificate Installation Instructions</span></span>
+<span data-ttu-id="1fc81-103">Ke spuštění ukázky, které zabezpečeně komunikovat s Internetové informační služby (IIS), musíte vytvořit a nainstalovat certifikát serveru.</span><span class="sxs-lookup"><span data-stu-id="1fc81-103">To run the samples that securely communicate with Internet Information Services (IIS), you must create and install a server certificate.</span></span>  
   
-## <a name="step-1-creating-certificates"></a><span data-ttu-id="1cd59-104">Krok 1.</span><span class="sxs-lookup"><span data-stu-id="1cd59-104">Step 1.</span></span> <span data-ttu-id="1cd59-105">Vytváření certifikátů</span><span class="sxs-lookup"><span data-stu-id="1cd59-105">Creating Certificates</span></span>  
- <span data-ttu-id="1cd59-106">Chcete-li vytvořit certifikát pro počítač, otevřete příkazový řádek sady Visual Studio s oprávněními správce a spusťte Setup.bat, která je zahrnuta v každé vzorků, které používají zabezpečené komunikace se službou IIS.</span><span class="sxs-lookup"><span data-stu-id="1cd59-106">To create a certificate for your computer, open a Visual Studio command prompt with administrator privileges and run the Setup.bat that is included in each of the samples that use secure communication with IIS.</span></span> <span data-ttu-id="1cd59-107">Ujistěte se, že cesta obsahuje složku, která obsahuje Makecert.exe předtím, než spustíte tento dávkový soubor.</span><span class="sxs-lookup"><span data-stu-id="1cd59-107">Ensure that the path includes the folder that contains Makecert.exe before you run this batch file.</span></span> <span data-ttu-id="1cd59-108">Tento příkaz slouží k vytvoření certifikátu v Setup.bat.</span><span class="sxs-lookup"><span data-stu-id="1cd59-108">The following command is used to create the certificate in Setup.bat.</span></span>  
+## <a name="step-1-creating-certificates"></a><span data-ttu-id="1fc81-104">Krok 1.</span><span class="sxs-lookup"><span data-stu-id="1fc81-104">Step 1.</span></span> <span data-ttu-id="1fc81-105">Vytváření certifikátů</span><span class="sxs-lookup"><span data-stu-id="1fc81-105">Creating Certificates</span></span>  
+ <span data-ttu-id="1fc81-106">Chcete-li vytvořit certifikát pro počítač, otevřete příkazový řádek sady Visual Studio s oprávněními správce a spusťte Setup.bat, která je zahrnuta v každé vzorků, které používají zabezpečené komunikace se službou IIS.</span><span class="sxs-lookup"><span data-stu-id="1fc81-106">To create a certificate for your computer, open a Visual Studio command prompt with administrator privileges and run the Setup.bat that is included in each of the samples that use secure communication with IIS.</span></span> <span data-ttu-id="1fc81-107">Ujistěte se, že cesta obsahuje složku, která obsahuje Makecert.exe předtím, než spustíte tento dávkový soubor.</span><span class="sxs-lookup"><span data-stu-id="1fc81-107">Ensure that the path includes the folder that contains Makecert.exe before you run this batch file.</span></span> <span data-ttu-id="1fc81-108">Tento příkaz slouží k vytvoření certifikátu v Setup.bat.</span><span class="sxs-lookup"><span data-stu-id="1fc81-108">The following command is used to create the certificate in Setup.bat.</span></span>  
   
 ```  
 makecert -sr LocalMachine -ss My -n CN=ServiceModelSamples-HTTPS-Server -sky exchange -sk ServiceModelSamples-HTTPS-Key  
 ```  
   
-## <a name="step-2-installing-certificates"></a><span data-ttu-id="1cd59-109">Krok 2.</span><span class="sxs-lookup"><span data-stu-id="1cd59-109">Step 2.</span></span> <span data-ttu-id="1cd59-110">Instalace certifikátů</span><span class="sxs-lookup"><span data-stu-id="1cd59-110">Installing Certificates</span></span>  
- <span data-ttu-id="1cd59-111">Kroky potřebné k instalaci certifikátů, který jste právě vytvořili závisí na které verze služby IIS, kterou používáte.</span><span class="sxs-lookup"><span data-stu-id="1cd59-111">The steps required to install the certificates you just created depend on which version of IIS you are using.</span></span>  
+## <a name="step-2-installing-certificates"></a><span data-ttu-id="1fc81-109">Krok 2.</span><span class="sxs-lookup"><span data-stu-id="1fc81-109">Step 2.</span></span> <span data-ttu-id="1fc81-110">Instalace certifikátů</span><span class="sxs-lookup"><span data-stu-id="1fc81-110">Installing Certificates</span></span>  
+ <span data-ttu-id="1fc81-111">Kroky potřebné k instalaci certifikátů, který jste právě vytvořili závisí na které verze služby IIS, kterou používáte.</span><span class="sxs-lookup"><span data-stu-id="1fc81-111">The steps required to install the certificates you just created depend on which version of IIS you are using.</span></span>  
   
-#### <a name="to-install-iis-on-iis-51-windows-xp-and-iis-60-windows-server-2003"></a><span data-ttu-id="1cd59-112">Chcete-li nainstalovat službu IIS do služby IIS 5.1 (Windows XP) a služby IIS 6.0 (Windows Server 2003)</span><span class="sxs-lookup"><span data-stu-id="1cd59-112">To install IIS on IIS 5.1 (Windows XP) and IIS 6.0 (Windows Server 2003)</span></span>  
+#### <a name="to-install-iis-on-iis-51-windows-xp-and-iis-60-windows-server-2003"></a><span data-ttu-id="1fc81-112">Chcete-li nainstalovat službu IIS do služby IIS 5.1 (Windows XP) a služby IIS 6.0 (Windows Server 2003)</span><span class="sxs-lookup"><span data-stu-id="1fc81-112">To install IIS on IIS 5.1 (Windows XP) and IIS 6.0 (Windows Server 2003)</span></span>  
   
-1.  <span data-ttu-id="1cd59-113">Otevřete Internetová informační služba modul Snap-In konzoly MMC správce.</span><span class="sxs-lookup"><span data-stu-id="1cd59-113">Open the Internet Information Services Manager MMC Snap-In.</span></span>  
+1.  <span data-ttu-id="1fc81-113">Otevřete Internetová informační služba modul Snap-In konzoly MMC správce.</span><span class="sxs-lookup"><span data-stu-id="1fc81-113">Open the Internet Information Services Manager MMC Snap-In.</span></span>  
   
-2.  <span data-ttu-id="1cd59-114">Klikněte pravým tlačítkem na výchozí web a vyberte **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="1cd59-114">Right-click the default Web site and select **Properties**.</span></span>  
+2.  <span data-ttu-id="1fc81-114">Klikněte pravým tlačítkem na výchozí web a vyberte **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="1fc81-114">Right-click the default Web site and select **Properties**.</span></span>  
   
-3.  <span data-ttu-id="1cd59-115">Vyberte **zabezpečení adresáře** kartě.</span><span class="sxs-lookup"><span data-stu-id="1cd59-115">Select the **Directory Security** tab.</span></span>  
+3.  <span data-ttu-id="1fc81-115">Vyberte **zabezpečení adresáře** kartě.</span><span class="sxs-lookup"><span data-stu-id="1fc81-115">Select the **Directory Security** tab.</span></span>  
   
-4.  <span data-ttu-id="1cd59-116">Klikněte **certifikát serveru** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="1cd59-116">Click the **Server Certificate** button.</span></span> <span data-ttu-id="1cd59-117">Spustí se Průvodce certifikátem webového serveru.</span><span class="sxs-lookup"><span data-stu-id="1cd59-117">The Web Server Certificate Wizard starts.</span></span>  
+4.  <span data-ttu-id="1fc81-116">Klikněte **certifikát serveru** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="1fc81-116">Click the **Server Certificate** button.</span></span> <span data-ttu-id="1fc81-117">Spustí se Průvodce certifikátem webového serveru.</span><span class="sxs-lookup"><span data-stu-id="1fc81-117">The Web Server Certificate Wizard starts.</span></span>  
   
-5.  <span data-ttu-id="1cd59-118">Dokončete průvodce.</span><span class="sxs-lookup"><span data-stu-id="1cd59-118">Complete the wizard.</span></span> <span data-ttu-id="1cd59-119">Vyberte možnost přiřadit certifikát.</span><span class="sxs-lookup"><span data-stu-id="1cd59-119">Select the option to assign a certificate.</span></span> <span data-ttu-id="1cd59-120">Vyberte ServiceModelSamples HTTPS Server certifikát ze seznamu certifikátů, které jsou zobrazeny.</span><span class="sxs-lookup"><span data-stu-id="1cd59-120">Select the ServiceModelSamples-HTTPS-Server certificate from the list of certificates that are displayed.</span></span>  
+5.  <span data-ttu-id="1fc81-118">Dokončete průvodce.</span><span class="sxs-lookup"><span data-stu-id="1fc81-118">Complete the wizard.</span></span> <span data-ttu-id="1fc81-119">Vyberte možnost přiřadit certifikát.</span><span class="sxs-lookup"><span data-stu-id="1fc81-119">Select the option to assign a certificate.</span></span> <span data-ttu-id="1fc81-120">Vyberte ServiceModelSamples HTTPS Server certifikát ze seznamu certifikátů, které jsou zobrazeny.</span><span class="sxs-lookup"><span data-stu-id="1fc81-120">Select the ServiceModelSamples-HTTPS-Server certificate from the list of certificates that are displayed.</span></span>  
   
-     <span data-ttu-id="1cd59-121">![Služba IIS certifikátu průvodce](../../../../docs/framework/wcf/samples/media/iiscertificate-wizard.GIF "IISCertificate_Wizard")</span><span class="sxs-lookup"><span data-stu-id="1cd59-121">![IIS Certificate Wizard](../../../../docs/framework/wcf/samples/media/iiscertificate-wizard.GIF "IISCertificate_Wizard")</span></span>  
+     <span data-ttu-id="1fc81-121">![Služba IIS certifikátu průvodce](../../../../docs/framework/wcf/samples/media/iiscertificate-wizard.GIF "IISCertificate_Wizard")</span><span class="sxs-lookup"><span data-stu-id="1fc81-121">![IIS Certificate Wizard](../../../../docs/framework/wcf/samples/media/iiscertificate-wizard.GIF "IISCertificate_Wizard")</span></span>  
   
-6.  <span data-ttu-id="1cd59-122">Otestovat přístup ke službě v prohlížeči pomocí https://localhost/servicemodelsamples/service.svc adresa HTTPS.</span><span class="sxs-lookup"><span data-stu-id="1cd59-122">Test access to the service in a browser by using the HTTPS address https://localhost/servicemodelsamples/service.svc.</span></span>  
+6.  <span data-ttu-id="1fc81-122">Testování přístup ke službě v prohlížeči pomocí protokolu HTTPS adresy https://localhost/servicemodelsamples/service.svc.</span><span class="sxs-lookup"><span data-stu-id="1fc81-122">Test access to the service in a browser by using the HTTPS address https://localhost/servicemodelsamples/service.svc.</span></span>  
   
-#### <a name="if-ssl-was-previously-configured-by-using-httpcfgexe"></a><span data-ttu-id="1cd59-123">Pokud pomocí Httpcfg.exe byl dříve nakonfigurovaný protokol SSL</span><span class="sxs-lookup"><span data-stu-id="1cd59-123">If SSL was previously configured by using Httpcfg.exe</span></span>  
+#### <a name="if-ssl-was-previously-configured-by-using-httpcfgexe"></a><span data-ttu-id="1fc81-123">Pokud pomocí Httpcfg.exe byl dříve nakonfigurovaný protokol SSL</span><span class="sxs-lookup"><span data-stu-id="1fc81-123">If SSL was previously configured by using Httpcfg.exe</span></span>  
   
-1.  <span data-ttu-id="1cd59-124">Použijte Makecert.exe (nebo spuštění Setup.bat) k vytvoření certifikátu serveru.</span><span class="sxs-lookup"><span data-stu-id="1cd59-124">Use Makecert.exe (or run Setup.bat) to create the server certificate.</span></span>  
+1.  <span data-ttu-id="1fc81-124">Použijte Makecert.exe (nebo spuštění Setup.bat) k vytvoření certifikátu serveru.</span><span class="sxs-lookup"><span data-stu-id="1fc81-124">Use Makecert.exe (or run Setup.bat) to create the server certificate.</span></span>  
   
-2.  <span data-ttu-id="1cd59-125">Spusťte Správce služby IIS a nainstalujte certifikát podle předchozích kroků.</span><span class="sxs-lookup"><span data-stu-id="1cd59-125">Run the IIS manager and install the certificate according to the previous steps.</span></span>  
+2.  <span data-ttu-id="1fc81-125">Spusťte Správce služby IIS a nainstalujte certifikát podle předchozích kroků.</span><span class="sxs-lookup"><span data-stu-id="1fc81-125">Run the IIS manager and install the certificate according to the previous steps.</span></span>  
   
-3.  <span data-ttu-id="1cd59-126">Přidejte následující řádek kódu do klientské aplikace.</span><span class="sxs-lookup"><span data-stu-id="1cd59-126">Add the following line of code to the client program.</span></span>  
+3.  <span data-ttu-id="1fc81-126">Přidejte následující řádek kódu do klientské aplikace.</span><span class="sxs-lookup"><span data-stu-id="1fc81-126">Add the following line of code to the client program.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="1cd59-127">Tento kód je potřeba jenom pro testovací certifikáty jsou vytvořené Makecert.exe.</span><span class="sxs-lookup"><span data-stu-id="1cd59-127">This code is only required for test certificates such as those created by Makecert.exe.</span></span> <span data-ttu-id="1cd59-128">Nedoporučuje pro produkční kód.</span><span class="sxs-lookup"><span data-stu-id="1cd59-128">It is not recommended for production code.</span></span>  
+>  <span data-ttu-id="1fc81-127">Tento kód je potřeba jenom pro testovací certifikáty jsou vytvořené Makecert.exe.</span><span class="sxs-lookup"><span data-stu-id="1fc81-127">This code is only required for test certificates such as those created by Makecert.exe.</span></span> <span data-ttu-id="1fc81-128">Nedoporučuje pro produkční kód.</span><span class="sxs-lookup"><span data-stu-id="1fc81-128">It is not recommended for production code.</span></span>  
   
 ```  
 PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");  
 ```  
   
-#### <a name="to-install-iis-on-iis-70-windows-vista-and-windows-server-2008"></a><span data-ttu-id="1cd59-129">Instalace služby IIS ve službě IIS 7.0 (Windows Vista a Windows Server 2008)</span><span class="sxs-lookup"><span data-stu-id="1cd59-129">To install IIS on IIS 7.0 (Windows Vista and Windows Server 2008)</span></span>  
+#### <a name="to-install-iis-on-iis-70-windows-vista-and-windows-server-2008"></a><span data-ttu-id="1fc81-129">Instalace služby IIS ve službě IIS 7.0 (Windows Vista a Windows Server 2008)</span><span class="sxs-lookup"><span data-stu-id="1fc81-129">To install IIS on IIS 7.0 (Windows Vista and Windows Server 2008)</span></span>  
   
-1.  <span data-ttu-id="1cd59-130">Z **spustit** nabídky, klikněte na tlačítko **spustit**, pak zadejte **inetmgr** otevřete modul snap-in konzoly MMC Internetové informační služby (IIS).</span><span class="sxs-lookup"><span data-stu-id="1cd59-130">From the **Start** menu, click **Run**, then type **inetmgr** to open the Internet Information Services (IIS) MMC snap-in.</span></span>  
+1.  <span data-ttu-id="1fc81-130">Z **spustit** nabídky, klikněte na tlačítko **spustit**, pak zadejte **inetmgr** otevřete modul snap-in konzoly MMC Internetové informační služby (IIS).</span><span class="sxs-lookup"><span data-stu-id="1fc81-130">From the **Start** menu, click **Run**, then type **inetmgr** to open the Internet Information Services (IIS) MMC snap-in.</span></span>  
   
-2.  <span data-ttu-id="1cd59-131">Klikněte pravým tlačítkem myši **Default Web Site** a vyberte **Upravit vazby...**</span><span class="sxs-lookup"><span data-stu-id="1cd59-131">Right-click the **Default Web Site** and select **Edit Bindings…**</span></span>  
+2.  <span data-ttu-id="1fc81-131">Klikněte pravým tlačítkem myši **Default Web Site** a vyberte **Upravit vazby...**</span><span class="sxs-lookup"><span data-stu-id="1fc81-131">Right-click the **Default Web Site** and select **Edit Bindings…**</span></span>  
   
-3.  <span data-ttu-id="1cd59-132">Klikněte **přidat** tlačítko **vazby webu** dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="1cd59-132">Click the **Add** button of the **Site Bindings** dialog box.</span></span>  
+3.  <span data-ttu-id="1fc81-132">Klikněte **přidat** tlačítko **vazby webu** dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="1fc81-132">Click the **Add** button of the **Site Bindings** dialog box.</span></span>  
   
-4.  <span data-ttu-id="1cd59-133">Vyberte **HTTPS** z **typ** rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="1cd59-133">Select **HTTPS** from the **Type** drop-down list.</span></span>  
+4.  <span data-ttu-id="1fc81-133">Vyberte **HTTPS** z **typ** rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="1fc81-133">Select **HTTPS** from the **Type** drop-down list.</span></span>  
   
-5.  <span data-ttu-id="1cd59-134">Vyberte **ServiceModelSamples HTTPS Server** z **certifikát SSL** rozevíracího seznamu a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="1cd59-134">Select the **ServiceModelSamples-HTTPS-Server** from the **SSL certificate** drop-down list and click **OK**.</span></span>  
+5.  <span data-ttu-id="1fc81-134">Vyberte **ServiceModelSamples HTTPS Server** z **certifikát SSL** rozevíracího seznamu a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="1fc81-134">Select the **ServiceModelSamples-HTTPS-Server** from the **SSL certificate** drop-down list and click **OK**.</span></span>  
   
-6.  <span data-ttu-id="1cd59-135">Otestovat přístup ke službě v prohlížeči pomocí https://localhost/servicemodelsamples/service.svc adresa HTTPS.</span><span class="sxs-lookup"><span data-stu-id="1cd59-135">Test access to the service in a browser by using the HTTPS address https://localhost/servicemodelsamples/service.svc.</span></span>  
+6.  <span data-ttu-id="1fc81-135">Testování přístup ke službě v prohlížeči pomocí protokolu HTTPS adresy https://localhost/servicemodelsamples/service.svc.</span><span class="sxs-lookup"><span data-stu-id="1fc81-135">Test access to the service in a browser by using the HTTPS address https://localhost/servicemodelsamples/service.svc.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="1cd59-136">Vzhledem k tomu, že testovací certifikát, který jste právě nainstalovali není důvěryhodný certifikát, kterým může dojít další upozornění zabezpečení aplikace Internet Explorer při procházení k místní webové adresy, které jsou zabezpečené s tímto certifikátem.</span><span class="sxs-lookup"><span data-stu-id="1cd59-136">Because the test certificate you have just installed is not a trusted certificate, you may encounter additional Internet Explorer security warnings when browsing to local Web addresses secured with this certificate.</span></span>  
+>  <span data-ttu-id="1fc81-136">Vzhledem k tomu, že testovací certifikát, který jste právě nainstalovali není důvěryhodný certifikát, kterým může dojít další upozornění zabezpečení aplikace Internet Explorer při procházení k místní webové adresy, které jsou zabezpečené s tímto certifikátem.</span><span class="sxs-lookup"><span data-stu-id="1fc81-136">Because the test certificate you have just installed is not a trusted certificate, you may encounter additional Internet Explorer security warnings when browsing to local Web addresses secured with this certificate.</span></span>  
   
-## <a name="removing-certificates"></a><span data-ttu-id="1cd59-137">Odebrání certifikátů</span><span class="sxs-lookup"><span data-stu-id="1cd59-137">Removing Certificates</span></span>  
+## <a name="removing-certificates"></a><span data-ttu-id="1fc81-137">Odebrání certifikátů</span><span class="sxs-lookup"><span data-stu-id="1fc81-137">Removing Certificates</span></span>  
   
--   <span data-ttu-id="1cd59-138">Pomocí Správce Internetové informační služby, jako dříve směrované, ale odebrat certifikát nebo vazba nepřidávat ho.</span><span class="sxs-lookup"><span data-stu-id="1cd59-138">Use the Internet Information Services Manager as previously directed, but remove the certificate or binding instead of adding it.</span></span>  
+-   <span data-ttu-id="1fc81-138">Pomocí Správce Internetové informační služby, jako dříve směrované, ale odebrat certifikát nebo vazba nepřidávat ho.</span><span class="sxs-lookup"><span data-stu-id="1fc81-138">Use the Internet Information Services Manager as previously directed, but remove the certificate or binding instead of adding it.</span></span>  
   
--   <span data-ttu-id="1cd59-139">Pomocí následujícího příkazu odeberte certifikát počítače.</span><span class="sxs-lookup"><span data-stu-id="1cd59-139">Remove the computer certificate by using the following command.</span></span>  
+-   <span data-ttu-id="1fc81-139">Pomocí následujícího příkazu odeberte certifikát počítače.</span><span class="sxs-lookup"><span data-stu-id="1fc81-139">Remove the computer certificate by using the following command.</span></span>  
   
     ```  
     httpcfg delete ssl -i 0.0.0.0:443  

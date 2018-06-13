@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762712"
 ---
 # <a name="inferring-element-text"></a><span data-ttu-id="e2770-102">Odvození textu elementu</span><span class="sxs-lookup"><span data-stu-id="e2770-102">Inferring Element Text</span></span>
 <span data-ttu-id="e2770-103">Pokud element obsahuje text a nemá žádné podřízené prvky k odvodit, protože tabulky, jako je například (elementy s atributy) nebo opakujících se prvků, nový sloupec s názvem **TableName_Text** přidá do tabulky, který je používán pro daný element.</span><span class="sxs-lookup"><span data-stu-id="e2770-103">If an element contains text and has no child elements to be inferred as tables (such as elements with attributes or repeated elements), a new column with the name **TableName_Text** will be added to the table that is inferred for the element.</span></span> <span data-ttu-id="e2770-104">Text obsažené v elementu budou přidány do řádek v tabulce a uložená do nového sloupce.</span><span class="sxs-lookup"><span data-stu-id="e2770-104">The text contained in the element will be added to a row in the table and stored in the new column.</span></span> <span data-ttu-id="e2770-105">**ColumnMapping** vlastnost nového sloupce, bude nastavena pro **MappingType.SimpleContent**.</span><span class="sxs-lookup"><span data-stu-id="e2770-105">The **ColumnMapping** property of the new column will be set to **MappingType.SimpleContent**.</span></span>  
