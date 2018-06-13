@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571458"
 ---
 # <a name="xpath-queries-and-namespaces"></a>Dotazy XPath a obory názvů
 Dotazy XPath věděli, obory názvů v dokumentu XML a předpony oboru názvů můžete použít k vyfiltrování názvy elementu a atributu. Kvalifikující názvy elementu a atributu předponu oboru názvů omezuje uzly vrácený dotaz XPath pro pouze uzly, které patří do konkrétní oboru názvů.  

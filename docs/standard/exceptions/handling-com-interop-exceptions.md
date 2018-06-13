@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571261"
 ---
 # <a name="handling-com-interop-exceptions"></a>Zpracování výjimek vzájemné spolupráce COM
 Spravovat a nespravovaného kódu můžou spolupracovat a zpracování výjimek. Pokud metoda vyvolá výjimku ve spravovaném kódu, můžete modul common language runtime předat HRESULT objektu COM. Pokud metoda selže v nespravovaném kódu vrácením selhání HRESULT, modul runtime vyvolá výjimku, která může být zachycen spravovaného kódu.  

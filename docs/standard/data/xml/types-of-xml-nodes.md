@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572207"
 ---
 # <a name="types-of-xml-nodes"></a>Typy uzlů XML
 Pokud dokument XML je pro čtení do paměti jako strom uzlů, typy uzlů pro uzly se rozhodla při vytvoření uzly. XML modelu DOM (Document Object) má několik druhů typy uzlů, dáno World Wide Web Consortium (W3C) a uvedené v části 1.1.1 modelu DOM struktura. Následující tabulka uvádí typy uzlů přiřazené pro daný typ uzlu a krátký popis každého objektu.  

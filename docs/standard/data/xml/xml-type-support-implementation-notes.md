@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33571407"
 ---
 # <a name="xml-type-support-implementation-notes"></a>Poznámky k implementaci XML typu podpory
 Toto téma popisuje některé podrobnosti implementace, které chcete mít na paměti.  

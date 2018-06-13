@@ -7,6 +7,7 @@ ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/11/2018
+ms.locfileid: "34059027"
 ---
 # <a name="ltservicegt"></a>&lt;Služby&gt;
 `service` Element obsahuje nastavení pro službu Windows Communication Foundation (WCF). Obsahuje taky koncových bodů, které službu vystavit.  

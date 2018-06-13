@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570595"
 ---
 # <a name="xmldocument-input-to-xsltransform"></a>Třídou XMLDocument nastavenou na vstup XslTransform
 <xref:System.Xml.XmlDocument> Třída poskytuje možnosti úprav pro dokument XML. Pokud soubor XML je nutné upravit nebo změnit před odesláním do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody načtení XML do <xref:System.Xml.XmlDocument>, upravovat a odeslat ho do <xref:System.Xml.Xsl.XslTransform>.  
