@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms"
-ms.custom: 
+title: 'Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -27,23 +20,19 @@ helpviewer_keywords:
 - access keys [Windows Forms], Windows Forms
 - ALT key
 ms.assetid: 4faa0991-28ec-4eca-91db-51dc2cd6a7ac
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 81aa68a65d09b073b117f4d96dfc06e614d68aea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 53ffd3632ff3e1179a72f1e2bfe4ea366e28b0f1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530946"
 ---
-# <a name="how-to-create-access-keys-for-windows-forms-controls"></a><span data-ttu-id="f0d2c-102">Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms</span><span class="sxs-lookup"><span data-stu-id="f0d2c-102">How to: Create Access Keys for Windows Forms Controls</span></span>
-<span data-ttu-id="f0d2c-103">*Přístupový klíč* je podrženého znaku v textu nabídky, položku nabídky nebo popisek ovládací prvek tlačítko.</span><span class="sxs-lookup"><span data-stu-id="f0d2c-103">An *access key* is an underlined character in the text of a menu, menu item, or the label of a control such as a button.</span></span> <span data-ttu-id="f0d2c-104">Pomocí přístupový klíč uživateli "Kliknutím na" tlačítko stisknutím klávesy ALT v kombinaci s předdefinované přístupový klíč.</span><span class="sxs-lookup"><span data-stu-id="f0d2c-104">With an access key, the user can "click" a button by pressing the ALT key in combination with the predefined access key.</span></span> <span data-ttu-id="f0d2c-105">Například, pokud tlačítko spustí postup tisk formuláře a proto jeho `Text` vlastnost je nastavena na "Tisk" přidáte ampersand před písmenem "P" způsobí, že písmeno "P" podtržení v text tlačítka v době běhu.</span><span class="sxs-lookup"><span data-stu-id="f0d2c-105">For example, if a button runs a procedure to print a form, and therefore its `Text` property is set to "Print," adding an ampersand before the letter "P" causes the letter "P" to be underlined in the button text at run time.</span></span> <span data-ttu-id="f0d2c-106">Uživatele můžete spustit příkaz přidružené tlačítko stisknutím ALT + P.</span><span class="sxs-lookup"><span data-stu-id="f0d2c-106">The user can run the command associated with the button by pressing ALT+P.</span></span> <span data-ttu-id="f0d2c-107">Nemůže mít přístupový klíč pro ovládací prvek, který nemůže přijmout fokus.</span><span class="sxs-lookup"><span data-stu-id="f0d2c-107">You cannot have an access key for a control that cannot receive focus.</span></span>  
+# <a name="how-to-create-access-keys-for-windows-forms-controls"></a><span data-ttu-id="7a52a-102">Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms</span><span class="sxs-lookup"><span data-stu-id="7a52a-102">How to: Create Access Keys for Windows Forms Controls</span></span>
+<span data-ttu-id="7a52a-103">*Přístupový klíč* je podrženého znaku v textu nabídky, položku nabídky nebo popisek ovládací prvek tlačítko.</span><span class="sxs-lookup"><span data-stu-id="7a52a-103">An *access key* is an underlined character in the text of a menu, menu item, or the label of a control such as a button.</span></span> <span data-ttu-id="7a52a-104">Pomocí přístupový klíč uživateli "Kliknutím na" tlačítko stisknutím klávesy ALT v kombinaci s předdefinované přístupový klíč.</span><span class="sxs-lookup"><span data-stu-id="7a52a-104">With an access key, the user can "click" a button by pressing the ALT key in combination with the predefined access key.</span></span> <span data-ttu-id="7a52a-105">Například, pokud tlačítko spustí postup tisk formuláře a proto jeho `Text` vlastnost je nastavena na "Tisk" přidáte ampersand před písmenem "P" způsobí, že písmeno "P" podtržení v text tlačítka v době běhu.</span><span class="sxs-lookup"><span data-stu-id="7a52a-105">For example, if a button runs a procedure to print a form, and therefore its `Text` property is set to "Print," adding an ampersand before the letter "P" causes the letter "P" to be underlined in the button text at run time.</span></span> <span data-ttu-id="7a52a-106">Uživatele můžete spustit příkaz přidružené tlačítko stisknutím ALT + P.</span><span class="sxs-lookup"><span data-stu-id="7a52a-106">The user can run the command associated with the button by pressing ALT+P.</span></span> <span data-ttu-id="7a52a-107">Nemůže mít přístupový klíč pro ovládací prvek, který nemůže přijmout fokus.</span><span class="sxs-lookup"><span data-stu-id="7a52a-107">You cannot have an access key for a control that cannot receive focus.</span></span>  
   
-### <a name="to-create-an-access-key-for-a-control"></a><span data-ttu-id="f0d2c-108">Chcete-li vytvořit přístupový klíč pro ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="f0d2c-108">To create an access key for a control</span></span>  
+### <a name="to-create-an-access-key-for-a-control"></a><span data-ttu-id="7a52a-108">Chcete-li vytvořit přístupový klíč pro ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="7a52a-108">To create an access key for a control</span></span>  
   
-1.  <span data-ttu-id="f0d2c-109">Nastavte `Text` vlastnost na řetězec, který obsahuje znak ampersand (&) před písmeno, které bude zástupce.</span><span class="sxs-lookup"><span data-stu-id="f0d2c-109">Set the `Text` property to a string that includes an ampersand (&) before the letter that will be the shortcut.</span></span>  
+1.  <span data-ttu-id="7a52a-109">Nastavte `Text` vlastnost na řetězec, který obsahuje znak ampersand (&) před písmeno, které bude zástupce.</span><span class="sxs-lookup"><span data-stu-id="7a52a-109">Set the `Text` property to a string that includes an ampersand (&) before the letter that will be the shortcut.</span></span>  
   
     ```vb  
     ' Set the letter "P" as an access key.  
@@ -61,10 +50,10 @@ ms.lasthandoff: 12/22/2017
     ```  
   
     > [!NOTE]
-    >  <span data-ttu-id="f0d2c-110">Zahrnout ampersand popisek bez vytvoření přístupový klíč, zahrnují dva ampersandy (& &).</span><span class="sxs-lookup"><span data-stu-id="f0d2c-110">To include an ampersand in a caption without creating an access key, include two ampersands (&&).</span></span> <span data-ttu-id="f0d2c-111">Znak ampersand se zobrazí v záhlaví a podtrhnou žádné znaky.</span><span class="sxs-lookup"><span data-stu-id="f0d2c-111">A single ampersand is displayed in the caption and no characters are underlined.</span></span>  
+    >  <span data-ttu-id="7a52a-110">Zahrnout ampersand popisek bez vytvoření přístupový klíč, zahrnují dva ampersandy (& &).</span><span class="sxs-lookup"><span data-stu-id="7a52a-110">To include an ampersand in a caption without creating an access key, include two ampersands (&&).</span></span> <span data-ttu-id="7a52a-111">Znak ampersand se zobrazí v záhlaví a podtrhnou žádné znaky.</span><span class="sxs-lookup"><span data-stu-id="7a52a-111">A single ampersand is displayed in the caption and no characters are underlined.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f0d2c-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="f0d2c-112">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="7a52a-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="7a52a-112">See Also</span></span>  
  <xref:System.Windows.Forms.Button>  
- [<span data-ttu-id="f0d2c-113">Postupy: Reakce na kliknutí na tlačítko Windows Forms</span><span class="sxs-lookup"><span data-stu-id="f0d2c-113">How to: Respond to Windows Forms Button Clicks</span></span>](../../../../docs/framework/winforms/controls/how-to-respond-to-windows-forms-button-clicks.md)  
- [<span data-ttu-id="f0d2c-114">Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms</span><span class="sxs-lookup"><span data-stu-id="f0d2c-114">How to: Set the Text Displayed by a Windows Forms Control</span></span>](../../../../docs/framework/winforms/controls/how-to-set-the-text-displayed-by-a-windows-forms-control.md)  
- [<span data-ttu-id="f0d2c-115">Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky</span><span class="sxs-lookup"><span data-stu-id="f0d2c-115">Labeling Individual Windows Forms Controls and Providing Shortcuts to Them</span></span>](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
+ [<span data-ttu-id="7a52a-113">Postupy: Reakce na kliknutí na tlačítko Windows Forms</span><span class="sxs-lookup"><span data-stu-id="7a52a-113">How to: Respond to Windows Forms Button Clicks</span></span>](../../../../docs/framework/winforms/controls/how-to-respond-to-windows-forms-button-clicks.md)  
+ [<span data-ttu-id="7a52a-114">Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms</span><span class="sxs-lookup"><span data-stu-id="7a52a-114">How to: Set the Text Displayed by a Windows Forms Control</span></span>](../../../../docs/framework/winforms/controls/how-to-set-the-text-displayed-by-a-windows-forms-control.md)  
+ [<span data-ttu-id="7a52a-115">Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky</span><span class="sxs-lookup"><span data-stu-id="7a52a-115">Labeling Individual Windows Forms Controls and Providing Shortcuts to Them</span></span>](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
