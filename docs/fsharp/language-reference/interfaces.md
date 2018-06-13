@@ -7,6 +7,7 @@ ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/11/2018
+ms.locfileid: "34058894"
 ---
 # <a name="interfaces"></a><span data-ttu-id="b8b4a-103">Rozhraní</span><span class="sxs-lookup"><span data-stu-id="b8b4a-103">Interfaces</span></span>
 

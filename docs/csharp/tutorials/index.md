@@ -8,6 +8,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33955989"
 ---
 # <a name="c-tutorials"></a><span data-ttu-id="62fe2-103">Kurzy C#</span><span class="sxs-lookup"><span data-stu-id="62fe2-103">C# Tutorials</span></span>
 

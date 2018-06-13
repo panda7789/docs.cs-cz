@@ -1,74 +1,64 @@
 ---
 title: Dělení na spravovaná vlákna
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: ''
-ms.suite: ''
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: 7b46a7d9-c6f1-46d1-a947-ae97471bba87
-caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 26f69429bb6ee479bd981474513698bf27993564
-ms.sourcegitcommit: 9a4fe1a1c37b26532654b4bbe22d702237950009
+ms.openlocfilehash: 2b1226f51143b912f85e94146948091891376e49
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589916"
 ---
-# <a name="managed-threading"></a><span data-ttu-id="bc1e1-102">Dělení na spravovaná vlákna</span><span class="sxs-lookup"><span data-stu-id="bc1e1-102">Managed Threading</span></span>
-<span data-ttu-id="bc1e1-103">Zda vyvíjíte pro počítače s jeden procesor nebo několik, má vaše aplikace poskytují nejvíce přizpůsobivý interakci s uživatelem, i když aplikaci právě provádí jinou práci.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-103">Whether you are developing for computers with one processor or several, you want your application to provide the most responsive interaction with the user, even if the application is currently doing other work.</span></span> <span data-ttu-id="bc1e1-104">Používání více vláken, která je jedním z nejúčinnějších způsobů, jak udržovat aplikace reaguje na uživatele a současně proveďte využití procesoru v mezi nebo i během událostí uživatele.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-104">Using multiple threads of execution is one of the most powerful ways to keep your application responsive to the user and at the same time make use of the processor in between or even during user events.</span></span> <span data-ttu-id="bc1e1-105">Při této části jsou popsány základní koncepty dělení na vlákna, se zaměřuje na spravovaná vlákna koncepty a pomocí spravovaného dělení na vlákna.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-105">While this section introduces the basic concepts of threading, it focuses on managed threading concepts and using managed threading.</span></span>  
+# <a name="managed-threading"></a><span data-ttu-id="beb21-102">Dělení na spravovaná vlákna</span><span class="sxs-lookup"><span data-stu-id="beb21-102">Managed Threading</span></span>
+<span data-ttu-id="beb21-103">Zda vyvíjíte pro počítače s jeden procesor nebo několik, má vaše aplikace poskytují nejvíce přizpůsobivý interakci s uživatelem, i když aplikaci právě provádí jinou práci.</span><span class="sxs-lookup"><span data-stu-id="beb21-103">Whether you are developing for computers with one processor or several, you want your application to provide the most responsive interaction with the user, even if the application is currently doing other work.</span></span> <span data-ttu-id="beb21-104">Používání více vláken, která je jedním z nejúčinnějších způsobů, jak udržovat aplikace reaguje na uživatele a současně proveďte využití procesoru v mezi nebo i během událostí uživatele.</span><span class="sxs-lookup"><span data-stu-id="beb21-104">Using multiple threads of execution is one of the most powerful ways to keep your application responsive to the user and at the same time make use of the processor in between or even during user events.</span></span> <span data-ttu-id="beb21-105">Při této části jsou popsány základní koncepty dělení na vlákna, se zaměřuje na spravovaná vlákna koncepty a pomocí spravovaného dělení na vlákna.</span><span class="sxs-lookup"><span data-stu-id="beb21-105">While this section introduces the basic concepts of threading, it focuses on managed threading concepts and using managed threading.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="bc1e1-106">Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], vícevláknové programování je výrazně jednodušší s <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> třídy, [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md), nové souběžných kolekce tříd v <xref:System.Collections.Concurrent?displayProperty=nameWithType> obor názvů a nové programovací model, který je založen na konceptu úkolů, nikoli vláken.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-106">Starting with the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], multithreaded programming is greatly simplified with the <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> and <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> classes, [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md), new concurrent collection classes in the <xref:System.Collections.Concurrent?displayProperty=nameWithType> namespace, and a new programming model that is based on the concept of tasks rather than threads.</span></span> <span data-ttu-id="bc1e1-107">Další informace najdete v tématu [paralelní programování](../../../docs/standard/parallel-programming/index.md).</span><span class="sxs-lookup"><span data-stu-id="bc1e1-107">For more information, see [Parallel Programming](../../../docs/standard/parallel-programming/index.md).</span></span>  
+>  <span data-ttu-id="beb21-106">Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], vícevláknové programování je výrazně jednodušší s <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> třídy, [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md), nové souběžných kolekce tříd v <xref:System.Collections.Concurrent?displayProperty=nameWithType> obor názvů a nové programovací model, který je založen na konceptu úkolů, nikoli vláken.</span><span class="sxs-lookup"><span data-stu-id="beb21-106">Starting with the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], multithreaded programming is greatly simplified with the <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> and <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> classes, [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md), new concurrent collection classes in the <xref:System.Collections.Concurrent?displayProperty=nameWithType> namespace, and a new programming model that is based on the concept of tasks rather than threads.</span></span> <span data-ttu-id="beb21-107">Další informace najdete v tématu [paralelní programování](../../../docs/standard/parallel-programming/index.md).</span><span class="sxs-lookup"><span data-stu-id="beb21-107">For more information, see [Parallel Programming](../../../docs/standard/parallel-programming/index.md).</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="bc1e1-108">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="bc1e1-108">In This Section</span></span>  
- [<span data-ttu-id="bc1e1-109">Základy dělení na spravovaná vlákna</span><span class="sxs-lookup"><span data-stu-id="bc1e1-109">Managed Threading Basics</span></span>](../../../docs/standard/threading/managed-threading-basics.md)  
- <span data-ttu-id="bc1e1-110">Poskytuje přehled spravovaného dělení na vlákna a popisuje použití více vláken.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-110">Provides an overview of managed threading and discusses when to use multiple threads.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="beb21-108">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="beb21-108">In This Section</span></span>  
+ [<span data-ttu-id="beb21-109">Základy dělení na spravovaná vlákna</span><span class="sxs-lookup"><span data-stu-id="beb21-109">Managed Threading Basics</span></span>](../../../docs/standard/threading/managed-threading-basics.md)  
+ <span data-ttu-id="beb21-110">Poskytuje přehled spravovaného dělení na vlákna a popisuje použití více vláken.</span><span class="sxs-lookup"><span data-stu-id="beb21-110">Provides an overview of managed threading and discusses when to use multiple threads.</span></span>  
   
- [<span data-ttu-id="bc1e1-111">Použití vláken a dělení na vlákna</span><span class="sxs-lookup"><span data-stu-id="bc1e1-111">Using Threads and Threading</span></span>](../../../docs/standard/threading/using-threads-and-threading.md)  
- <span data-ttu-id="bc1e1-112">Vysvětluje, jak vytvořit a spuštění, pozastavení, obnovení a zrušení vláken.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-112">Explains how to create, start, pause, resume, and abort threads.</span></span>  
+ [<span data-ttu-id="beb21-111">Použití vláken a dělení na vlákna</span><span class="sxs-lookup"><span data-stu-id="beb21-111">Using Threads and Threading</span></span>](../../../docs/standard/threading/using-threads-and-threading.md)  
+ <span data-ttu-id="beb21-112">Vysvětluje, jak vytvořit a spuštění, pozastavení, obnovení a zrušení vláken.</span><span class="sxs-lookup"><span data-stu-id="beb21-112">Explains how to create, start, pause, resume, and abort threads.</span></span>  
   
- [<span data-ttu-id="bc1e1-113">Doporučené postupy dělení na spravovaná vlákna</span><span class="sxs-lookup"><span data-stu-id="bc1e1-113">Managed Threading Best Practices</span></span>](../../../docs/standard/threading/managed-threading-best-practices.md)  
- <span data-ttu-id="bc1e1-114">Popisuje úrovně synchronizace, jak se vyhnout blokování a konflikty časování, jedním procesorem a počítačů s více procesory a další vláken problémy.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-114">Discusses levels of synchronization, how to avoid deadlocks and race conditions, single-processor and multiprocessor computers, and other threading issues.</span></span>  
+ [<span data-ttu-id="beb21-113">Doporučené postupy dělení na spravovaná vlákna</span><span class="sxs-lookup"><span data-stu-id="beb21-113">Managed Threading Best Practices</span></span>](../../../docs/standard/threading/managed-threading-best-practices.md)  
+ <span data-ttu-id="beb21-114">Popisuje úrovně synchronizace, jak se vyhnout blokování a konflikty časování, jedním procesorem a počítačů s více procesory a další vláken problémy.</span><span class="sxs-lookup"><span data-stu-id="beb21-114">Discusses levels of synchronization, how to avoid deadlocks and race conditions, single-processor and multiprocessor computers, and other threading issues.</span></span>  
   
- [<span data-ttu-id="bc1e1-115">Funkce a objekty dělení na vlákna</span><span class="sxs-lookup"><span data-stu-id="bc1e1-115">Threading Objects and Features</span></span>](../../../docs/standard/threading/threading-objects-and-features.md)  
- <span data-ttu-id="bc1e1-116">Popisuje spravované třídy, které můžete použít k synchronizaci aktivity vláken a data objektů získat přístup v různých vláknech a poskytuje přehled podprocesy z fondu podprocesů.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-116">Describes the managed classes you can use to synchronize the activities of threads and the data of objects accessed on different threads, and provides an overview of thread pool threads.</span></span>  
+ [<span data-ttu-id="beb21-115">Funkce a objekty dělení na vlákna</span><span class="sxs-lookup"><span data-stu-id="beb21-115">Threading Objects and Features</span></span>](../../../docs/standard/threading/threading-objects-and-features.md)  
+ <span data-ttu-id="beb21-116">Popisuje spravované třídy, které můžete použít k synchronizaci aktivity vláken a data objektů získat přístup v různých vláknech a poskytuje přehled podprocesy z fondu podprocesů.</span><span class="sxs-lookup"><span data-stu-id="beb21-116">Describes the managed classes you can use to synchronize the activities of threads and the data of objects accessed on different threads, and provides an overview of thread pool threads.</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="bc1e1-117">Odkaz</span><span class="sxs-lookup"><span data-stu-id="bc1e1-117">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="beb21-117">Odkaz</span><span class="sxs-lookup"><span data-stu-id="beb21-117">Reference</span></span>  
  <xref:System.Threading>  
- <span data-ttu-id="bc1e1-118">Obsahuje třídy pro použití a synchronizace spravovaných vláken.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-118">Contains classes for using and synchronizing managed threads.</span></span>  
+ <span data-ttu-id="beb21-118">Obsahuje třídy pro použití a synchronizace spravovaných vláken.</span><span class="sxs-lookup"><span data-stu-id="beb21-118">Contains classes for using and synchronizing managed threads.</span></span>  
   
  <xref:System.Collections.Concurrent>  
- <span data-ttu-id="bc1e1-119">Obsahuje třídy kolekce, které jsou bezpečné pro použití s více vlákny.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-119">Contains collection classes that are safe for use with multiple threads.</span></span>  
+ <span data-ttu-id="beb21-119">Obsahuje třídy kolekce, které jsou bezpečné pro použití s více vlákny.</span><span class="sxs-lookup"><span data-stu-id="beb21-119">Contains collection classes that are safe for use with multiple threads.</span></span>  
   
  <xref:System.Threading.Tasks>  
- <span data-ttu-id="bc1e1-120">Obsahuje třídy pro vytváření a plánování úloh souběžné zpracování.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-120">Contains classes for creating and scheduling concurrent processing tasks.</span></span>  
+ <span data-ttu-id="beb21-120">Obsahuje třídy pro vytváření a plánování úloh souběžné zpracování.</span><span class="sxs-lookup"><span data-stu-id="beb21-120">Contains classes for creating and scheduling concurrent processing tasks.</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="bc1e1-121">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="bc1e1-121">Related Sections</span></span>  
- [<span data-ttu-id="bc1e1-122">Aplikační domény</span><span class="sxs-lookup"><span data-stu-id="bc1e1-122">Application Domains</span></span>](../../../docs/framework/app-domains/application-domains.md)  
- <span data-ttu-id="bc1e1-123">Poskytuje přehled aplikační domény a jejich použití Common Language Infrastructure.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-123">Provides an overview of application domains and their use by the Common Language Infrastructure.</span></span>  
+## <a name="related-sections"></a><span data-ttu-id="beb21-121">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="beb21-121">Related Sections</span></span>  
+ [<span data-ttu-id="beb21-122">Aplikační domény</span><span class="sxs-lookup"><span data-stu-id="beb21-122">Application Domains</span></span>](../../../docs/framework/app-domains/application-domains.md)  
+ <span data-ttu-id="beb21-123">Poskytuje přehled aplikační domény a jejich použití Common Language Infrastructure.</span><span class="sxs-lookup"><span data-stu-id="beb21-123">Provides an overview of application domains and their use by the Common Language Infrastructure.</span></span>  
   
- [<span data-ttu-id="bc1e1-124">Asynchronní vstupně-výstupní operace se soubory</span><span class="sxs-lookup"><span data-stu-id="bc1e1-124">Asynchronous File I/O</span></span>](../../../docs/standard/io/asynchronous-file-i-o.md)  
- <span data-ttu-id="bc1e1-125">Popisuje výhody výkonu a základní operace asynchronních vstupně-výstupních operací.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-125">Describes the performance advantages and basic operation of asynchronous I/O.</span></span>  
+ [<span data-ttu-id="beb21-124">Asynchronní vstupně-výstupní operace se soubory</span><span class="sxs-lookup"><span data-stu-id="beb21-124">Asynchronous File I/O</span></span>](../../../docs/standard/io/asynchronous-file-i-o.md)  
+ <span data-ttu-id="beb21-125">Popisuje výhody výkonu a základní operace asynchronních vstupně-výstupních operací.</span><span class="sxs-lookup"><span data-stu-id="beb21-125">Describes the performance advantages and basic operation of asynchronous I/O.</span></span>  
   
- [<span data-ttu-id="bc1e1-126">Asynchronní vzor založený na úlohách (TAP)</span><span class="sxs-lookup"><span data-stu-id="bc1e1-126">Task-based Asynchronous Pattern (TAP)</span></span>](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)  
- <span data-ttu-id="bc1e1-127">Poskytuje přehled vzoru doporučené pro asynchronní programování v rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-127">Provides an overview of the recommended pattern for asynchronous programming in .NET.</span></span>  
+ [<span data-ttu-id="beb21-126">Asynchronní vzor založený na úlohách (TAP)</span><span class="sxs-lookup"><span data-stu-id="beb21-126">Task-based Asynchronous Pattern (TAP)</span></span>](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)  
+ <span data-ttu-id="beb21-127">Poskytuje přehled vzoru doporučené pro asynchronní programování v rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="beb21-127">Provides an overview of the recommended pattern for asynchronous programming in .NET.</span></span>  
   
- [<span data-ttu-id="bc1e1-128">Asynchronní volání synchronních metod</span><span class="sxs-lookup"><span data-stu-id="bc1e1-128">Calling Synchronous Methods Asynchronously</span></span>](../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
- <span data-ttu-id="bc1e1-129">Vysvětluje, jak volat metody pro přístup z více vláken pomocí integrovaných funkcí delegáti z fondu podprocesů.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-129">Explains how to call methods on thread pool threads using built-in features of delegates.</span></span>  
+ [<span data-ttu-id="beb21-128">Asynchronní volání synchronních metod</span><span class="sxs-lookup"><span data-stu-id="beb21-128">Calling Synchronous Methods Asynchronously</span></span>](../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
+ <span data-ttu-id="beb21-129">Vysvětluje, jak volat metody pro přístup z více vláken pomocí integrovaných funkcí delegáti z fondu podprocesů.</span><span class="sxs-lookup"><span data-stu-id="beb21-129">Explains how to call methods on thread pool threads using built-in features of delegates.</span></span>  
   
- [<span data-ttu-id="bc1e1-130">Paralelní programování</span><span class="sxs-lookup"><span data-stu-id="bc1e1-130">Parallel Programming</span></span>](../../../docs/standard/parallel-programming/index.md)  
- <span data-ttu-id="bc1e1-131">Popisuje paralelní programování knihoven, které zjednodušují používání více vláken v aplikacích.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-131">Describes the parallel programming libraries, which simplify the use of multiple threads in applications.</span></span>  
+ [<span data-ttu-id="beb21-130">Paralelní programování</span><span class="sxs-lookup"><span data-stu-id="beb21-130">Parallel Programming</span></span>](../../../docs/standard/parallel-programming/index.md)  
+ <span data-ttu-id="beb21-131">Popisuje paralelní programování knihoven, které zjednodušují používání více vláken v aplikacích.</span><span class="sxs-lookup"><span data-stu-id="beb21-131">Describes the parallel programming libraries, which simplify the use of multiple threads in applications.</span></span>  
   
- [<span data-ttu-id="bc1e1-132">Paralelní LINQ (PLINQ)</span><span class="sxs-lookup"><span data-stu-id="bc1e1-132">Parallel LINQ (PLINQ)</span></span>](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)  
- <span data-ttu-id="bc1e1-133">Popisuje systému pro spuštění dotazů paralelně, abyste mohli využívat více procesorů.</span><span class="sxs-lookup"><span data-stu-id="bc1e1-133">Describes a system for running queries in parallel, to take advantage of multiple processors.</span></span>
+ [<span data-ttu-id="beb21-132">Paralelní LINQ (PLINQ)</span><span class="sxs-lookup"><span data-stu-id="beb21-132">Parallel LINQ (PLINQ)</span></span>](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)  
+ <span data-ttu-id="beb21-133">Popisuje systému pro spuštění dotazů paralelně, abyste mohli využívat více procesorů.</span><span class="sxs-lookup"><span data-stu-id="beb21-133">Describes a system for running queries in parallel, to take advantage of multiple processors.</span></span>
