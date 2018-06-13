@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592586"
 ---
 # <a name="task-based-asynchronous-programming"></a>Asynchronní programování založené na úlohách
 Task Parallel Library (TPL) je založena na konceptu *úloh*, která představuje asynchronní operaci. V některých způsobech úlohu podobá vlákna nebo <xref:System.Threading.ThreadPool> pracovních položek, ale na vyšší úrovni abstrakce. Termín *úkolů paralelismus* odkazuje na jeden nebo více nezávislých úkoly, které jsou spuštěné současně. Úlohy poskytují dvě hlavní výhody:  

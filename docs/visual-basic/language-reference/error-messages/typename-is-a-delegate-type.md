@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595645"
 ---
 # <a name="39lttypenamegt39-is-a-delegate-type"></a>&#39;&lt;TypeName&gt; &#39; je typem delegáta
 '\<typename >' je typ delegáta. Delegát konstrukce umožňuje jenom jeden výraz AddressOf jako seznam argumentů. Často Výraz AddressOf lze namísto vytváření delegáta.  

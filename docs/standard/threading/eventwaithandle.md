@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592194"
 ---
 # <a name="eventwaithandle"></a>EventWaitHandle
 <xref:System.Threading.EventWaitHandle> Třída umožňuje vláken pro komunikaci mezi sebou signalizace a čekání signály. Obslužné rutiny událostí čekání (také označované jako události jednoduše) jsou popisovače čekání, které můžete signál, aby verze jeden nebo více podprocesů čekání. Po to bylo signalizováno, popisovač čekání událostí je obnovit ručně nebo automaticky. <xref:System.Threading.EventWaitHandle> Třída může představovat buď místní události popisovač čekání (místní události) nebo s názvem systémové události počkejte popisovač (s názvem události nebo událostí systému, viditelné pro všechny procesy).  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591322"
 ---
 # <a name="threading-objects-and-features"></a>Dělení objektů a funkcí na vlákna
 Rozhraní .NET Framework poskytuje mnoho objektů, které vám pomůžou vytvářet a spravovat vícevláknové aplikace. Spravovaných vláknech jsou reprezentované pomocí <xref:System.Threading.Thread> třídy. <xref:System.Threading.ThreadPool> Třída poskytuje snadné vytváření a Správa úloh na pozadí s více vlákny. <xref:System.ComponentModel.BackgroundWorker> Třída nemá stejný pro úlohy, které zajišťují interakci s uživatelským rozhraním. <xref:System.Threading.Timer> Třída spustí úlohy na pozadí v určitých intervalech.  

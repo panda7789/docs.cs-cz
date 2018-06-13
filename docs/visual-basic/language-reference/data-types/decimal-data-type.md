@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591615"
 ---
 # <a name="decimal-data-type-visual-basic"></a>Decimal – datový typ (Visual Basic)
 Blokování podepsané 128-bit (16 bajtů) hodnoty představující 96 bitů (12 bajtů) celá čísla škálovat podle proměnné power 10. Měřítko určuje počet číslic vpravo od desetinné čárky. ho rozsahu od 0 do 28. S měřítkem 0 (bez desetinných míst), je největší možná hodnota +/-79,228,162,514,264,337,593,543,950,335 (+/-7 .9228162514264337593543950335E + 28). S 28 desetinnými místy největší hodnota je +/-7,9228162514264337593543950335 a je nejmenší nenulovou hodnotu +/-0,0000000000000000000000000001 (+/-1E-28).  

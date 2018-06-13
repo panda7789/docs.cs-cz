@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586510"
 ---
 # <a name="managed-threading-basics"></a>Základy dělení na spravovaná vlákna
 Prvních pět témata v této části jsou navrženy pro vám pomohou určit, kdy používat spravovaného dělení na vlákna a vysvětlit některé základní funkce. Informace o třídy, které poskytují další funkce, najdete v části [dělení na vlákna objektů a funkcí](../../../docs/standard/threading/threading-objects-and-features.md) a [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589877"
 ---
 # <a name="latebound-overload-resolution-cannot-be-applied-to-39ltprocedurenamegt39-because-the-accessing-instance-is-an-interface-type"></a>Rozpoznání přetížené nelze použít pro &#39; &lt;procedurename&gt; &#39; protože přistupující instance je typ rozhraní
 Kompilátor se pokouší vyřešit odkaz na vlastnost přetížené nebo postup, ale odkaz nezdaří, protože argument je typu `Object` a odkazující objekt má datový typ rozhraní. `Object` Způsobí, že kompilátoru vyřešit jako pozdní vazbou odkaz.  

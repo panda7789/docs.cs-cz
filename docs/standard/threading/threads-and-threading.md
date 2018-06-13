@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592181"
 ---
 # <a name="threads-and-threading"></a>Vlákna a dělení na vlákna
 Operační systémy pomocí procesů k oddělení různých aplikací, které jsou spuštěny. Vláken je základní jednotkou, které operační systém přiděluje čas procesoru a víc než jedno vlákno může provádění kódu uvnitř tohoto procesu. Každé vlákno udržuje obslužné rutiny výjimek, plánování prioritu a sadu struktury, které používá systém uložit kontext přístup z více vláken, dokud je naplánována. Kontext vlákno obsahuje všechny informace, které vlákno je potřeba bezproblémově pokračovat v provádění, včetně vlákna sadu registrů CPU a zásobník v adresním prostoru procesu hostitele vlákna.  

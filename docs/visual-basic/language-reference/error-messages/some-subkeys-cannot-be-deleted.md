@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594790"
 ---
 # <a name="some-subkeys-cannot-be-deleted"></a>Některé dílčí klíče nelze odstranit.
 Byl proveden pokus o odstranění klíče z registru, ale operace se nezdařila, protože některé dílčí klíče nelze odstranit. Obvykle je to z důvodu nedostatečných oprávnění.  

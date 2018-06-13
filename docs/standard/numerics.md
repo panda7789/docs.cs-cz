@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588694"
 ---
 # <a name="numerics-in-the-net-framework"></a>Číslovky v architektuře .NET Framework
 Rozhraní .NET Framework podporuje standardní číselné integrální a s plovoucí desetinnou čárkou primitiv, a také <xref:System.Numerics.BigInteger>, typ integrální bez teoretické horní nebo dolní mez <xref:System.Numerics.Complex>, typ, který představuje komplexní čísla a sadu SIMD povoleno Vector typy v <xref:System.Numerics> oboru názvů.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597380"
 ---
 # <a name="xml-comment-exception-must-have-a-39cref39-attribute"></a>Výjimka komentáře XML musí mít &#39;cref&#39; atribut
 \<Výjimka > Značka poskytuje způsob, jak dokumentu výjimky, které mohou být vyvolány metodou. Požadované `cref` atribut určuje název člena, který je zaškrtnuta možnost generátorem dokumentaci. Pokud existuje člena, je přeložit název kanonický elementu v dokumentaci k souboru.  

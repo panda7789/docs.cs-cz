@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593964"
 ---
 # <a name="too-many-files"></a>Příliš mnoho souborů
 Buď další soubory byly vytvořeny v kořenovém adresáři než operačního systému povolí, nebo více souborů byly otevřeny než číslo zadané v **soubory =** nastavení v souboru CONFIG. Soubor SYS.  

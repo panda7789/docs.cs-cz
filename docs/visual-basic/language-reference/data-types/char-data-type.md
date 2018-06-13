@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590805"
 ---
 # <a name="char-data-type-visual-basic"></a>Char – datový typ (Visual Basic)
 Blokování nepodepsaného kódu (2bajtová) 16bitové body v rozmezí od 0 do 65535. Každý *code bodu*, nebo kód znaku, představuje jeden znak Unicode.  

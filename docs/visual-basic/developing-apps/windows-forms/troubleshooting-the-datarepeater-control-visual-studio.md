@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591895"
 ---
 # <a name="troubleshooting-the-datarepeater-control-visual-studio"></a>Řešení potíží s ovládacím prvkem DataRepeater (Visual Studio)
 V tomto tématu jsou uvedeny běžné problémy, které mohou nastat při práci se <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594159"
 ---
 # <a name="using-the-iteration-variable-in-a-lambda-expression-may-have-unexpected-results"></a>Použití proměnné iterace ve výrazu lambda může mít neočekávané důsledky.
 Použití proměnné iterace ve výrazu lambda může mít neočekávané výsledky. Místo toho vytvořte místní proměnné v rámci smyčky a přiřaďte ho hodnotu proměnné iterace.  

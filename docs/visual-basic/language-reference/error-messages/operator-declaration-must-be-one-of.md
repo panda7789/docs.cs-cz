@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595017"
 ---
 # <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not-ltlt-gtgt"></a>Operátor musí být jeden z: +,-, *,\,/, ^, &amp;, jako Mod a, nebo Xor, ne, &lt; &lt;, &gt; &gt;...
 Lze deklarovat pouze operátor, který je vhodné pro přetížení. Následující tabulka uvádí operátory, které můžou deklarovat.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585766"
 ---
 # <a name="constant-expression-not-representable-in-type-39lttypenamegt39"></a>Konstantní výraz nelze reprezentovat typem &#39; &lt;typename&gt;&#39;
 Pokoušíte se vyhodnotit konstanta, který se nevejde do typu cíle obvykle, protože ho je přetečení rozsahu.  

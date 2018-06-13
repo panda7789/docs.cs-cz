@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594211"
 ---
 # <a name="property-39ltpropertynamegt39-doesn39t-return-a-value-on-all-code-paths"></a>Vlastnost &#39; &lt;propertyname&gt; &#39; nemá&#39;t vrátit hodnotu na všechny cesty kódu
 Vlastnost '\<propertyname >' nevrací hodnotu na všechny cesty kódu. Výjimka odkazu s hodnotou null mohlo dojít v době běhu, když se použije výsledek.  

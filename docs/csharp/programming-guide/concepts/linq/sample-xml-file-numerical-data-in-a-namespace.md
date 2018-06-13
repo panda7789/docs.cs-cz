@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33329001"
 ---
 # <a name="sample-xml-file-numerical-data-in-a-namespace"></a>Ukázkový soubor XML: Číselná Data v Namespace
 Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor obsahuje číselná data pro souhrnné zpracování, průměrování a seskupení. XML je v oboru názvů.  

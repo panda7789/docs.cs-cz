@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588980"
 ---
 # <a name="access-of-shared-member-through-an-instance-qualifying-expression-will-not-be-evaluated"></a>Přístup sdíleného člena prostřednictvím instance; kvalifikující výraz nebyl vyhodnocen.
 Proměnnou instance třídy nebo struktura slouží k přístupu `Shared` proměnnou, vlastnost, postup nebo událostí, které jsou definované v tomto třídu nebo strukturu. Toto upozornění se může také nastat, pokud proměnnou instance se používá pro přístup implicitně sdíleného člena třídy nebo struktuře, například konstanta nebo výčtu nebo vnořenou třídu nebo strukturu.  

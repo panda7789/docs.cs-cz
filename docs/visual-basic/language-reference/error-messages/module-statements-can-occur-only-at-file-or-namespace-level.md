@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593162"
 ---
 # <a name="39module39-statements-can-occur-only-at-file-or-namespace-level"></a>&#39;Modul&#39; příkazy lze používat pouze na úrovni souboru nebo oboru názvů
 `Module` příkazy musí být v horní části souboru zdroje ihned po `Option` a `Imports` příkazy, globálními atributy a deklarace oboru názvů, ale před všechny ostatní deklarace.  

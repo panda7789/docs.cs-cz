@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586396"
 ---
 # <a name="derived-classes-cannot-raise-base-class-events"></a>Odvozené třídy nemohou vyvolat události třídy Base.
 Událost může být vyvolána pouze z deklarace místa, ve kterém je deklarovaná. Proto třídy nemohou vyvolat události z jiné třídě, i jeden, ze kterého je odvozený.  

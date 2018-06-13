@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588620"
 ---
 # <a name="how-to-delete-a-file-in-visual-basic"></a>Postupy: Odstranění souboru v jazyce Visual Basic
 `DeleteFile` Metodu `My.Computer.FileSystem` objekt umožňuje odstranit soubor. Nabízí možnosti jsou: zda odstraněné soubor k **Koš**, zda má být požádat uživatele o potvrzení, že soubor by měl odstranit a co dělat, když uživatel operaci zruší.  

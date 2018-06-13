@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588051"
 ---
 # <a name="how-to-search-data-in-a-datarepeater-control-visual-studio"></a>Postupy: Vyhledávání dat v ovládacím prvku DataRepeater (Visual Studio)
 Při použití <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládací prvek, který obsahuje mnoho záznamů, možná budete chtít hledání umožňují uživatelům pro konkrétní záznam. Namísto vyhledávání data do ovládacího prvku, můžete implementovat hledání pomocí dotazu na <xref:System.Windows.Forms.BindingSource>. Pokud byla položka nalezena, pak můžete použít <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.CurrentItemIndex%2A> vlastnost vyberte položku a přejděte do zobrazení.  

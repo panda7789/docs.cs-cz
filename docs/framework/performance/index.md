@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397296"
 ---
 # <a name="net-framework-performance"></a>.NET Framework – výkon
 Pokud chcete vytvářet aplikace s vysoký výkon, doporučujeme návrhu a plánování výkonu stejně jako jakékoli jiné funkce aplikace by návrhu. Můžete použít nástroje poskytované společností Microsoft k měření výkonu vaší aplikace a, v případě potřeby zlepšení využití paměti, propustnost kódu a odezvy. Toto téma obsahuje seznam nástrojů analýzy výkonu, poskytuje Microsoft a poskytuje odkazy na další témata, které se týkají výkonu pro konkrétní oblasti vývoj aplikací.  

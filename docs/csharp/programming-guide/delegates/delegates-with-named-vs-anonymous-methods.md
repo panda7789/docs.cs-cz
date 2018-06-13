@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33330762"
 ---
 # <a name="delegates-with-named-vs-anonymous-methods-c-programming-guide"></a>Delegáti s pojmenované vs. Anonymní metody (Průvodce programováním v C#)
 A [delegovat](../../../csharp/language-reference/keywords/delegate.md) může být přidružen metodu s názvem. Pokud instanci delegáta můžete vytvořit pomocí metodu s názvem, metodu předávána jako parametr, například:  

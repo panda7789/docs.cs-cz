@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593574"
 ---
 # <a name="39sub-main39-was-not-found-in-39ltnamegt39"></a>&#39;Sub Main&#39; nebyl nalezen v &#39; &lt;název&gt;&#39;
 `Sub Main` je pro něj byla zadána chybějící nebo nesprávné umístění.  

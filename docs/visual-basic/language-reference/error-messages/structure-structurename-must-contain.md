@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594495"
 ---
 # <a name="structure-39ltstructurenamegt39-must-contain-at-least-one-instance-member-variable-or-at-least-one-instance-event-declaration-not-marked-39custom39"></a>Struktura &#39; &lt;%{structurename/&gt; &#39; musí obsahovat alespoň jednu instanci členské proměnné nebo deklaraci události alespoň jedna instance nesmí být označený &#39;vlastní&#39;
 Definice struktury nezahrnuje všechny sdíleném proměnné nebo sdíleném nevlastní události.  

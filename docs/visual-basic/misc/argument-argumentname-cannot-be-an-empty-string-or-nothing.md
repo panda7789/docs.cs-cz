@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33598124"
 ---
 # <a name="argument-ltargumentnamegt-cannot-be-an-empty-string-or-nothing"></a>Argument &lt;název argumentu argumentname&gt; nemůže být prázdný řetězec nebo nic
 Argument vyžaduje jinou hodnotu než prázdný řetězec ("") nebo `Nothing`. To může být způsobeno nesprávně výpočtu hodnoty.  

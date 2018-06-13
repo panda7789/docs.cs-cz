@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33597393"
 ---
 # <a name="in-clause-visual-basic"></a>In – klauzule (Visual Basic)
 Určuje skupinu, která je proměnná smyčky v procházení `For Each` cykly, nebo určuje kolekci, která dotaz `From`, `Join`, nebo `Group Join` klauzule.  

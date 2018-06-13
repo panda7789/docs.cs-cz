@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592136"
 ---
 # <a name="walkthrough-creating-a-custom-dataflow-block-type"></a>Postupy: Vytvoření bloku toku dat vlastního typu
 Přestože knihovna toku dat TPL poskytuje několik typů bloku toku dat, které umožňují celou řadu funkcí, můžete také vytvořit vlastní bloku typy. Tento dokument popisuje, jak vytvořit typ bloku toku dat, který implementuje vlastní chování.  

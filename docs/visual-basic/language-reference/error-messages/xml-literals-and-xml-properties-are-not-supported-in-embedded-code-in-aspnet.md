@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594839"
 ---
 # <a name="xml-literals-and-xml-properties-are-not-supported-in-embedded-code-within-aspnet"></a>Ve vloženém kódu v prostředí ASP.NET nejsou podporovány literály XML a vlastnosti XML.
 Ve vloženém kódu v prostředí ASP.NET nejsou podporovány literály XML a vlastnosti XML. Chcete-li používat funkce, XML, přesuňte kód, který kódu.  

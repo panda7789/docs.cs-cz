@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33586738"
 ---
 # <a name="input-past-end-of-file"></a>Vstup za koncem souboru
 Buď `Input` příkaz je čtení ze souboru, který je prázdný nebo ve které se používá všechna data, nebo jste použili `EOF` funkce souborem otevřen pro binární.  

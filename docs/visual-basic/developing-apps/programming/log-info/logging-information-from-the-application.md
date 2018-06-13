@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589929"
 ---
 # <a name="logging-information-from-the-application-visual-basic"></a>Protokolování informací z aplikace (Visual Basic)
 Tento oddíl obsahuje témata, které se týkají se protokolování informací z aplikace pomocí `My.Application.Log` nebo `My.Log` objekt a jak rozšířit možnosti protokolování aplikace.  
