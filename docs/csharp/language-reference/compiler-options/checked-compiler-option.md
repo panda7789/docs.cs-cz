@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33218309"
 ---
 # <a name="-checked-c-compiler-options"></a>-zaškrtnutí (možnosti kompilátoru C#)
 **-Zaškrtnutí** možnost určuje, zda celočíselný aritmetický příkaz výsledkem hodnotu, která je mimo rozsah datového typu a zda není v oboru [zaškrtnutí](../../../csharp/language-reference/keywords/checked.md) nebo [ nezaškrtnuté](../../../csharp/language-reference/keywords/unchecked.md) – klíčové slovo, způsobí spuštění výjimky.  

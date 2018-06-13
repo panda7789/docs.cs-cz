@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33216168"
 ---
 # <a name="contextual-keywords-c-reference"></a>Kontextová klíčová slova (Referenční dokumentace jazyka C#)
 Kontextové klíčové slovo slouží k poskytování zvláštní význam v kódu, ale není vyhrazené slovo v jazyce C#. V této části byly zavedeny následující kontextová klíčová slova:  
