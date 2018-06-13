@@ -1,13 +1,6 @@
 ---
-title: "Chybové zprávy nástroje Winmdexp.exe"
-ms.custom: 
+title: Chybové zprávy nástroje Winmdexp.exe
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 f1_keywords:
 - WME1095
 - WME1110
@@ -164,24 +157,22 @@ helpviewer_keywords:
 - Windows Runtime Metadata Export Tool, error messages
 - error messages, Winmdexp.exe
 ms.assetid: 8271973c-deba-47a6-8e5e-04ce63f146ad
-caps.latest.revision: "5"
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 22f556c87f676b86228fbb68f66206f3c39140cd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0172f3895a0a1f444548bfbca877164815adc94a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33407037"
 ---
-# <a name="winmdexpexe-error-messages"></a><span data-ttu-id="48b9d-102">Chybové zprávy nástroje Winmdexp.exe</span><span class="sxs-lookup"><span data-stu-id="48b9d-102">Winmdexp.exe Error Messages</span></span>
-<span data-ttu-id="48b9d-103">Volání procesu sestavení [Winmdexp.exe (nástroj Windows Runtime Metadata Export)](../../../docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md) při použití  **[!INCLUDE[wrt](../../../includes/wrt-md.md)] součást** šablony v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], takže Winmdexp.exe chybové zprávy zobrazují na **Seznam chyb**.</span><span class="sxs-lookup"><span data-stu-id="48b9d-103">The build process calls [Winmdexp.exe (Windows Runtime Metadata Export Tool)](../../../docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md) when you use the **[!INCLUDE[wrt](../../../includes/wrt-md.md)] Component** template in [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], so Winmdexp.exe error messages appear in the **Error List**.</span></span> <span data-ttu-id="48b9d-104">Winmdexp.exe funguje na modul, který je kompilovat s `/target:winmdobj` možnost.</span><span class="sxs-lookup"><span data-stu-id="48b9d-104">Winmdexp.exe operates on a module that is compiled with the `/target:winmdobj` option.</span></span> <span data-ttu-id="48b9d-105">Protože vyžaduje kompilovaného modulu jako vstup, jeho chybové zprávy se nezobrazí, pokud se podaří kompilace.</span><span class="sxs-lookup"><span data-stu-id="48b9d-105">Because it requires a compiled module as input, its error messages don't appear unless compilation succeeds.</span></span>  
+# <a name="winmdexpexe-error-messages"></a><span data-ttu-id="ba580-102">Chybové zprávy nástroje Winmdexp.exe</span><span class="sxs-lookup"><span data-stu-id="ba580-102">Winmdexp.exe Error Messages</span></span>
+<span data-ttu-id="ba580-103">Volání procesu sestavení [Winmdexp.exe (nástroj Windows Runtime Metadata Export)](../../../docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md) při použití  **[!INCLUDE[wrt](../../../includes/wrt-md.md)] součást** šablony v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], takže Winmdexp.exe chybové zprávy zobrazují na **Seznam chyb**.</span><span class="sxs-lookup"><span data-stu-id="ba580-103">The build process calls [Winmdexp.exe (Windows Runtime Metadata Export Tool)](../../../docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md) when you use the **[!INCLUDE[wrt](../../../includes/wrt-md.md)] Component** template in [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], so Winmdexp.exe error messages appear in the **Error List**.</span></span> <span data-ttu-id="ba580-104">Winmdexp.exe funguje na modul, který je kompilovat s `/target:winmdobj` možnost.</span><span class="sxs-lookup"><span data-stu-id="ba580-104">Winmdexp.exe operates on a module that is compiled with the `/target:winmdobj` option.</span></span> <span data-ttu-id="ba580-105">Protože vyžaduje kompilovaného modulu jako vstup, jeho chybové zprávy se nezobrazí, pokud se podaří kompilace.</span><span class="sxs-lookup"><span data-stu-id="ba580-105">Because it requires a compiled module as input, its error messages don't appear unless compilation succeeds.</span></span>  
   
- <span data-ttu-id="48b9d-106">Chybové zprávy, které jsou navrženy tak, aby obsahovala všechny informace, které budete muset vyřešit chybové stavy, které patří. Ale některé problémy vyžadovat další informace, než se vejde ve zprávě.</span><span class="sxs-lookup"><span data-stu-id="48b9d-106">The error messages are designed to contain all the information you need to address the error conditions they report.However, some problems require more information than will fit in the message.</span></span> <span data-ttu-id="48b9d-107">Můžete najít další informace v [diagnostikování prostředí Windows Runtime součást chybové stavy](http://go.microsoft.com/fwlink/p/?LinkId=251127) ve službě Windows Dev Center.</span><span class="sxs-lookup"><span data-stu-id="48b9d-107">You can find additional information in [Diagnosing Windows Runtime component error conditions](http://go.microsoft.com/fwlink/p/?LinkId=251127) in the Windows Dev Center.</span></span>  
+ <span data-ttu-id="ba580-106">Chybové zprávy, které jsou navrženy tak, aby obsahovala všechny informace, které budete muset vyřešit chybové stavy, které patří. Ale některé problémy vyžadovat další informace, než se vejde ve zprávě.</span><span class="sxs-lookup"><span data-stu-id="ba580-106">The error messages are designed to contain all the information you need to address the error conditions they report.However, some problems require more information than will fit in the message.</span></span> <span data-ttu-id="ba580-107">Můžete najít další informace v [diagnostikování prostředí Windows Runtime součást chybové stavy](http://go.microsoft.com/fwlink/p/?LinkId=251127) ve službě Windows Dev Center.</span><span class="sxs-lookup"><span data-stu-id="ba580-107">You can find additional information in [Diagnosing Windows Runtime component error conditions](http://go.microsoft.com/fwlink/p/?LinkId=251127) in the Windows Dev Center.</span></span>  
   
- <span data-ttu-id="48b9d-108">Pokud vaše chyba není popsané v tomto článku a si myslíte, že zpráva neobsahuje dost informací k vyřešení příslušného problému, použijte odkaz v tomto článku a obsahovat chybovou zprávu.</span><span class="sxs-lookup"><span data-stu-id="48b9d-108">If your error is not discussed in that article, and you feel that the message doesn't contain sufficient information to address the issue, please use the feedback link in that article and include the error message.</span></span> <span data-ttu-id="48b9d-109">Alternativně můžete soubor chyby na [webu Microsoft Connect](http://go.microsoft.com/fwlink/p/?LinkId=251130).</span><span class="sxs-lookup"><span data-stu-id="48b9d-109">Alternatively, you can file a bug at the [Microsoft Connect website](http://go.microsoft.com/fwlink/p/?LinkId=251130).</span></span> <span data-ttu-id="48b9d-110">Další informace můžete také vyhledat [Microsoft Forums](http://go.microsoft.com/fwlink/p/?LinkId=251129).</span><span class="sxs-lookup"><span data-stu-id="48b9d-110">You can also look for more information on the [Microsoft Forums](http://go.microsoft.com/fwlink/p/?LinkId=251129).</span></span>  
+ <span data-ttu-id="ba580-108">Pokud vaše chyba není popsané v tomto článku a si myslíte, že zpráva neobsahuje dost informací k vyřešení příslušného problému, použijte odkaz v tomto článku a obsahovat chybovou zprávu.</span><span class="sxs-lookup"><span data-stu-id="ba580-108">If your error is not discussed in that article, and you feel that the message doesn't contain sufficient information to address the issue, please use the feedback link in that article and include the error message.</span></span> <span data-ttu-id="ba580-109">Alternativně můžete soubor chyby na [webu Microsoft Connect](http://go.microsoft.com/fwlink/p/?LinkId=251130).</span><span class="sxs-lookup"><span data-stu-id="ba580-109">Alternatively, you can file a bug at the [Microsoft Connect website](http://go.microsoft.com/fwlink/p/?LinkId=251130).</span></span> <span data-ttu-id="ba580-110">Další informace můžete také vyhledat [Microsoft Forums](http://go.microsoft.com/fwlink/p/?LinkId=251129).</span><span class="sxs-lookup"><span data-stu-id="ba580-110">You can also look for more information on the [Microsoft Forums](http://go.microsoft.com/fwlink/p/?LinkId=251129).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="48b9d-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="48b9d-111">See Also</span></span>  
- [<span data-ttu-id="48b9d-112">Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)</span><span class="sxs-lookup"><span data-stu-id="48b9d-112">Winmdexp.exe (Windows Runtime Metadata Export Tool)</span></span>](../../../docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md)  
- [<span data-ttu-id="48b9d-113">Diagnostikování chybové stavy komponenty prostředí Windows Runtime</span><span class="sxs-lookup"><span data-stu-id="48b9d-113">Diagnosing Windows Runtime component error conditions</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=251127)
+## <a name="see-also"></a><span data-ttu-id="ba580-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="ba580-111">See Also</span></span>  
+ [<span data-ttu-id="ba580-112">Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)</span><span class="sxs-lookup"><span data-stu-id="ba580-112">Winmdexp.exe (Windows Runtime Metadata Export Tool)</span></span>](../../../docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md)  
+ [<span data-ttu-id="ba580-113">Diagnostikování chybové stavy komponenty prostředí Windows Runtime</span><span class="sxs-lookup"><span data-stu-id="ba580-113">Diagnosing Windows Runtime component error conditions</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=251127)

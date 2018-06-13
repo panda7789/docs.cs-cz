@@ -5,6 +5,7 @@ ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/18/2017
+ms.locfileid: "25864458"
 ---
 # <a name="using-f-on-azure-service-fabric"></a><span data-ttu-id="ec04c-101">Pomocí F # na Azure Service Fabric</span><span class="sxs-lookup"><span data-stu-id="ec04c-101">Using F# on Azure Service Fabric</span></span>
 
