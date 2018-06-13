@@ -19,6 +19,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745572"
 ---
 # <a name="ltsharedlistenersgt-element"></a><span data-ttu-id="4593d-102">&lt;sharedListeners –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="4593d-102">&lt;sharedListeners&gt; Element</span></span>
 <span data-ttu-id="4593d-103">Obsahuje naslouchací procesy, které může odkazovat všechny zdroje nebo element trasování.</span><span class="sxs-lookup"><span data-stu-id="4593d-103">Contains listeners that any source or trace element can reference.</span></span>  <span data-ttu-id="4593d-104">Tyto moduly pro naslouchání neobdrží ve výchozím nastavení všechny trasování a není možné načíst tyto moduly pro naslouchání v době běhu.</span><span class="sxs-lookup"><span data-stu-id="4593d-104">These listeners do not receive any traces by default, and it is not possible to retrieve these listeners at run time.</span></span> <span data-ttu-id="4593d-105">Moduly pro naslouchání identifikovány jako sdílené moduly pro naslouchání mohou být přidány do zdroje nebo trasování podle názvu.</span><span class="sxs-lookup"><span data-stu-id="4593d-105">Listeners identified as shared listeners can be added to sources or traces by name.</span></span>  

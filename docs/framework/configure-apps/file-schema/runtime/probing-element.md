@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745000"
 ---
 # <a name="ltprobinggt-element"></a><span data-ttu-id="d4e4c-102">&lt;Zkušební fáze&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="d4e4c-102">&lt;probing&gt; Element</span></span>
 <span data-ttu-id="d4e4c-103">Určuje základní podadresáře aplikace pro modul common language runtime pro vyhledávání při načítání sestavení.</span><span class="sxs-lookup"><span data-stu-id="d4e4c-103">Specifies application base subdirectories for the common language runtime to search when loading assemblies.</span></span>  

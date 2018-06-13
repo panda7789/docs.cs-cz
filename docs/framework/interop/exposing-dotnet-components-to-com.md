@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33387429"
 ---
 # <a name="exposing-net-framework-components-to-com"></a><span data-ttu-id="c1814-102">Vystavení komponent architektury .NET Framework pro COM</span><span class="sxs-lookup"><span data-stu-id="c1814-102">Exposing .NET Framework Components to COM</span></span>
 <span data-ttu-id="c1814-103">Zápis typ formátu .NET a využívání tohoto typu z nespravovaného kódu jsou odlišné aktivity pro vývojáře.</span><span class="sxs-lookup"><span data-stu-id="c1814-103">Writing a .NET type and consuming that type from unmanaged code are distinct activities for developers.</span></span> <span data-ttu-id="c1814-104">Tato část popisuje několik tipy pro vytvoření spravovaného kódu, které spolupracuje s klienty COM:</span><span class="sxs-lookup"><span data-stu-id="c1814-104">This section describes several tips for writing managed code that interoperates with COM clients:</span></span>  

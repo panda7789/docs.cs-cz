@@ -1,42 +1,29 @@
 ---
 title: Zadání hodnoty XML jako parametry
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2c4d08b8-fc29-4614-97fa-29c8ff7ca5b3
-caps.latest.revision: 5
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: dace7c3adc1b7a55c8c945e82399828ce16f1bb0
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: c963b3e08eba7776a0ed579017f1e84828794379
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33355295"
 ---
-# <a name="specifying-xml-values-as-parameters"></a><span data-ttu-id="46bc1-102">Zadání hodnoty XML jako parametry</span><span class="sxs-lookup"><span data-stu-id="46bc1-102">Specifying XML Values as Parameters</span></span>
-<span data-ttu-id="46bc1-103">Pokud dotaz vyžaduje parametr, jehož hodnota je řetězec v kódu XML, vývojáři mohou zadat tuto hodnotu pomocí instance **SqlXml** datového typu.</span><span class="sxs-lookup"><span data-stu-id="46bc1-103">If a query requires a parameter whose value is an XML string, developers can supply that value using an instance of the **SqlXml** data type.</span></span> <span data-ttu-id="46bc1-104">Neexistují žádné triky; skutečně Sloupce XML v systému SQL Server přijmout hodnoty parametrů přesně stejným způsobem jako jiné datové typy.</span><span class="sxs-lookup"><span data-stu-id="46bc1-104">There really are no tricks; XML columns in SQL Server accept parameter values in exactly the same way as other data types.</span></span>  
+# <a name="specifying-xml-values-as-parameters"></a><span data-ttu-id="c8873-102">Zadání hodnoty XML jako parametry</span><span class="sxs-lookup"><span data-stu-id="c8873-102">Specifying XML Values as Parameters</span></span>
+<span data-ttu-id="c8873-103">Pokud dotaz vyžaduje parametr, jehož hodnota je řetězec v kódu XML, vývojáři mohou zadat tuto hodnotu pomocí instance **SqlXml** datového typu.</span><span class="sxs-lookup"><span data-stu-id="c8873-103">If a query requires a parameter whose value is an XML string, developers can supply that value using an instance of the **SqlXml** data type.</span></span> <span data-ttu-id="c8873-104">Neexistují žádné triky; skutečně Sloupce XML v systému SQL Server přijmout hodnoty parametrů přesně stejným způsobem jako jiné datové typy.</span><span class="sxs-lookup"><span data-stu-id="c8873-104">There really are no tricks; XML columns in SQL Server accept parameter values in exactly the same way as other data types.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="46bc1-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="46bc1-105">Example</span></span>  
- <span data-ttu-id="46bc1-106">Následující konzolové aplikace vytvoří novou tabulku v **AdventureWorks** databáze.</span><span class="sxs-lookup"><span data-stu-id="46bc1-106">The following console application creates a new table in the **AdventureWorks** database.</span></span> <span data-ttu-id="46bc1-107">Nová tabulka obsahuje sloupec s názvem **SalesID** a sloupec XML s názvem **SalesInfo**.</span><span class="sxs-lookup"><span data-stu-id="46bc1-107">The new table includes a column named **SalesID** and an XML column named **SalesInfo**.</span></span>  
+## <a name="example"></a><span data-ttu-id="c8873-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="c8873-105">Example</span></span>  
+ <span data-ttu-id="c8873-106">Následující konzolové aplikace vytvoří novou tabulku v **AdventureWorks** databáze.</span><span class="sxs-lookup"><span data-stu-id="c8873-106">The following console application creates a new table in the **AdventureWorks** database.</span></span> <span data-ttu-id="c8873-107">Nová tabulka obsahuje sloupec s názvem **SalesID** a sloupec XML s názvem **SalesInfo**.</span><span class="sxs-lookup"><span data-stu-id="c8873-107">The new table includes a column named **SalesID** and an XML column named **SalesInfo**.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="46bc1-108">**AdventureWorks** ukázkové databáze není nainstalována ve výchozím nastavení při instalaci systému SQL Server.</span><span class="sxs-lookup"><span data-stu-id="46bc1-108">The **AdventureWorks** sample database is not installed by default when you install SQL Server.</span></span> <span data-ttu-id="46bc1-109">Můžete ho nainstalovat tak, že spustíte instalační program SQL serveru.</span><span class="sxs-lookup"><span data-stu-id="46bc1-109">You can install it by running SQL Server Setup.</span></span>  
+>  <span data-ttu-id="c8873-108">**AdventureWorks** ukázkové databáze není nainstalována ve výchozím nastavení při instalaci systému SQL Server.</span><span class="sxs-lookup"><span data-stu-id="c8873-108">The **AdventureWorks** sample database is not installed by default when you install SQL Server.</span></span> <span data-ttu-id="c8873-109">Můžete ho nainstalovat tak, že spustíte instalační program SQL serveru.</span><span class="sxs-lookup"><span data-stu-id="c8873-109">You can install it by running SQL Server Setup.</span></span>  
   
- <span data-ttu-id="46bc1-110">V příkladu připraví <xref:System.Data.SqlClient.SqlCommand> objekt vložit řádek do nové tabulky.</span><span class="sxs-lookup"><span data-stu-id="46bc1-110">The example prepares a <xref:System.Data.SqlClient.SqlCommand> object to insert a row in the new table.</span></span> <span data-ttu-id="46bc1-111">Poskytuje XML data potřebná pro uloženého souboru **SalesInfo** sloupce.</span><span class="sxs-lookup"><span data-stu-id="46bc1-111">A saved file provides the XML data needed for the **SalesInfo** column.</span></span>  
+ <span data-ttu-id="c8873-110">V příkladu připraví <xref:System.Data.SqlClient.SqlCommand> objekt vložit řádek do nové tabulky.</span><span class="sxs-lookup"><span data-stu-id="c8873-110">The example prepares a <xref:System.Data.SqlClient.SqlCommand> object to insert a row in the new table.</span></span> <span data-ttu-id="c8873-111">Poskytuje XML data potřebná pro uloženého souboru **SalesInfo** sloupce.</span><span class="sxs-lookup"><span data-stu-id="c8873-111">A saved file provides the XML data needed for the **SalesInfo** column.</span></span>  
   
- <span data-ttu-id="46bc1-112">K vytvoření souboru potřebné pro spuštění ukázky, vytvořte nový textový soubor ve stejné složce jako projektu.</span><span class="sxs-lookup"><span data-stu-id="46bc1-112">To create the file needed for the example to run, create a new text file in the same folder as your project.</span></span> <span data-ttu-id="46bc1-113">Název souboru MyTestStoreData.xml.</span><span class="sxs-lookup"><span data-stu-id="46bc1-113">Name the file MyTestStoreData.xml.</span></span> <span data-ttu-id="46bc1-114">Otevřete soubor v programu Poznámkový blok a zkopírujte a vložte následující text:</span><span class="sxs-lookup"><span data-stu-id="46bc1-114">Open the file in Notepad and copy and paste the following text:</span></span>  
+ <span data-ttu-id="c8873-112">K vytvoření souboru potřebné pro spuštění ukázky, vytvořte nový textový soubor ve stejné složce jako projektu.</span><span class="sxs-lookup"><span data-stu-id="c8873-112">To create the file needed for the example to run, create a new text file in the same folder as your project.</span></span> <span data-ttu-id="c8873-113">Název souboru MyTestStoreData.xml.</span><span class="sxs-lookup"><span data-stu-id="c8873-113">Name the file MyTestStoreData.xml.</span></span> <span data-ttu-id="c8873-114">Otevřete soubor v programu Poznámkový blok a zkopírujte a vložte následující text:</span><span class="sxs-lookup"><span data-stu-id="c8873-114">Open the file in Notepad and copy and paste the following text:</span></span>  
   
 ```xml  
 <StoreSurvey xmlns="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/StoreSurvey">  
@@ -172,7 +159,7 @@ class Class1
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="46bc1-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="46bc1-115">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="c8873-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="c8873-115">See Also</span></span>  
  <xref:System.Data.SqlTypes.SqlXml>  
- [<span data-ttu-id="46bc1-116">Data XML na SQL Serveru</span><span class="sxs-lookup"><span data-stu-id="46bc1-116">XML Data in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
- [<span data-ttu-id="46bc1-117">ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady</span><span class="sxs-lookup"><span data-stu-id="46bc1-117">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [<span data-ttu-id="c8873-116">Data XML na SQL Serveru</span><span class="sxs-lookup"><span data-stu-id="c8873-116">XML Data in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
+ [<span data-ttu-id="c8873-117">ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady</span><span class="sxs-lookup"><span data-stu-id="c8873-117">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

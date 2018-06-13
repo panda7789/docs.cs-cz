@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33387130"
 ---
 # <a name="calling-a-dll-function"></a><span data-ttu-id="d5dc0-102">Volání funkce DLL</span><span class="sxs-lookup"><span data-stu-id="d5dc0-102">Calling a DLL Function</span></span>
 <span data-ttu-id="d5dc0-103">Přestože volání nespravovaných funkcí knihovny DLL je téměř shodná volání jiných spravovaného kódu, jsou rozdíly, které můžou vypadat matoucí funkcí knihovny DLL na první.</span><span class="sxs-lookup"><span data-stu-id="d5dc0-103">Although calling unmanaged DLL functions is nearly identical to calling other managed code, there are differences that can make DLL functions seem confusing at first.</span></span> <span data-ttu-id="d5dc0-104">Tato část obsahuje témata, která popisují některá z neobvyklého problémy související s volání.</span><span class="sxs-lookup"><span data-stu-id="d5dc0-104">This section introduces topics that describe some of the unusual calling-related issues.</span></span>  
