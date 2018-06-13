@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33355757"
 ---
 # <a name="how-to-intercept-data-service-messages-wcf-data-services"></a>Postupy: zachycení datových služba zpráv (služby WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], tak, aby můžete přidat vlastní logiky do operace je možné zachytit zprávy žádosti. K zachycení zprávy, použijete speciálně s atributy metody ve službě data. Další informace najdete v tématu [sběrače](../../../../docs/framework/data/wcf/interceptors-wcf-data-services.md).  

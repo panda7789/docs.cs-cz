@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340265"
 ---
 # <a name="knowing-when-to-use-override-and-new-keywords-c-programming-guide"></a>Znalost, kdy použít klíčová slova override a new (Průvodce programováním v C#)
 V jazyce C# metoda v odvozené třídě, může mít stejný název jako metodu v základní třídě. Můžete určit, jak používat metody pomocí [nové](../../../csharp/language-reference/keywords/new.md) a [přepsat](../../../csharp/language-reference/keywords/override.md) klíčová slova. `override` Modifikátor *rozšiřuje* metodu základní třídy a `new` modifikátor *skryje* ho. Rozdíl je předvedené v příkladech v tomto tématu.  

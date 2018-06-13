@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361540"
 ---
 # <a name="retrieving-and-modifying-data-in-adonet"></a>Načítání a upravovat Data v technologii ADO.NET
 Primární funkce jakékoli aplikace, databáze je připojení ke zdroji dat a načítání dat, který ji obsahuje. Zprostředkovatele dat .NET Framework technologie ADO.NET sloužit jako most mezi aplikace a zdroj dat, což umožňuje provést příkazy také o načtení dat pomocí **DataReader –** nebo **DataAdapter** . Klíčové funkce jakékoli aplikace, databáze, je schopnost aktualizovat data, která je uložená v databázi. V technologii ADO.NET, aktualizace dat zahrnuje použití **DataAdapter** a <xref:System.Data.DataSet>, a **příkaz** objekty; a může zahrnovat také pomocí transakce.  

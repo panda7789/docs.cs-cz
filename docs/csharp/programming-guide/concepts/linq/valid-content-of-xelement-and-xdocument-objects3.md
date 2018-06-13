@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340317"
 ---
 # <a name="valid-content-of-xelement-and-xdocument-objects"></a>Platný obsah XElement a XDocument objektů
 Toto téma popisuje platné argumenty, které lze předat konstruktorů a metod, které můžete použít k přidání obsahu do elementů a dokumenty.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33352861"
 ---
 # <a name="clr-triggers"></a>Aktivační procedury modulu CLR
 Aktivační událost je zvláštní druh uložené procedury, jež se spustí automaticky při jazyk událost spuštěna. Díky integraci systému Microsoft SQL Server pomocí rozhraní .NET Framework common language runtime (CLR) můžete použít jakýkoli jazyk rozhraní .NET Framework pro vytvoření aktivační procedury modulu CLR.  

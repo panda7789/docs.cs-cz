@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361770"
 ---
 # <a name="debugging-support"></a>Podpora ladění
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] poskytuje obecné ladění podporu pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projekty.  Viz také [ladění LINQ](http://msdn.microsoft.com/library/Bb385795\(v=vs.110\)) nebo [ladění LINQ](http://msdn.microsoft.com/library/Bb385795\(v=vs.120\)).  

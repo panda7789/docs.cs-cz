@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356781"
 ---
 # <a name="running-intranet-applications-in-full-trust"></a>Spouštění internetových aplikací v režimu plné důvěryhodnosti
 Od verze rozhraní .NET Framework verze 3.5, Service Pack 1 (SP1), aplikací a jejich sestavení knihovny můžete spouštět jako plné důvěryhodnosti sestavení ze sdílené síťové složky. <xref:System.Security.SecurityZone.MyComputer> důkaz zóny se automaticky přidá do sestavení, která jsou načtena ze sdílené složky v síti intranet. Tento důkaz poskytuje tyto sestavení, udělení stejné sady (což je obvykle úplný vztah důvěryhodnosti) jako sestavení, které jsou umístěny v počítači. Tato funkce neplatí pro aplikace ClickOnce nebo aplikace, které jsou určená ke spuštění na hostiteli.  

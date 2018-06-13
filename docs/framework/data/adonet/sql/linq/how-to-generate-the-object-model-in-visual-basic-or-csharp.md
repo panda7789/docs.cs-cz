@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360390"
 ---
 # <a name="how-to-generate-the-object-model-in-visual-basic-or-c"></a>Postupy: generování objektový Model v jazyce Visual Basic nebo C# #
 V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], objektový model v vlastní programovací jazyk je namapována na relační databázi. Dva nástroje jsou k dispozici pro automatické generování Visual Basic a C# model z metadat existující databázi.  
