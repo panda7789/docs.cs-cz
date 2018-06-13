@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567585"
 ---
 # <a name="manipulating-strings-in-net"></a>Manipulace s řetězci v .NET
 Rozhraní .NET poskytuje rozsáhlou sadu rutin, které umožňují efektivně vytvářet, porovnat a upravovat řetězce a také rychle analyzovat velké objemy dat pro vyhledávání, odeberte a nahraďte textové vzory a text.  

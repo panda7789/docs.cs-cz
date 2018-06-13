@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750593"
 ---
 # <a name="ltaddgt-of-ltclaimtyperequirementsgt"></a>&lt;add&gt; – &lt;claimTypeRequirements&gt;
 Určuje typy deklarací identity požadované a volitelné očekávání měla objevit ve federované přihlašovací údaje. Například služby stavu požadavky na příchozí přihlašovací údaje, které musí obsahovat sadu typy deklarací identity.  

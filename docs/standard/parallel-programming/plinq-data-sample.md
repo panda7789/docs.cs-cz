@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590891"
 ---
 # <a name="plinq-data-sample"></a>Ukázková data pro PLINQ
 Tato ukázka obsahuje příklad data ve formátu .csv, společně s metody, které transformují je na kolekce v paměti zákazníků, produktů, objednávky a podrobnosti o objednávce. Pro další pokusy s PLINQ můžete vložit příklady kódů z některých dalších tématech do kódu v tomto tématu a vyvolání z `Main` metoda. Tyto údaje můžete použít také s vlastními PLINQ dotazy.  

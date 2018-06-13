@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764993"
 ---
 # <a name="entity-key"></a>klíč entity
 *Klíč entity* je [vlastnost](../../../../docs/framework/data/adonet/property.md) nebo sada vlastností [typ entity](../../../../docs/framework/data/adonet/entity-type.md) , se používají k určení identity. Vlastnosti, které tvoří klíč entity, jsou vybraná v době návrhu. Hodnoty vlastnosti klíče entity musí jednoznačně identifikovat instance typu entity v rámci [sady entit](../../../../docs/framework/data/adonet/entity-set.md) za běhu. Vlastnosti, které tvoří klíč entity je třeba zvolit zaručovat jedinečnost instancí v sadu entit.  

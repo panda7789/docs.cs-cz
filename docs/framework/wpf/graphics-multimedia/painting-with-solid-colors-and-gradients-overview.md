@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566779"
 ---
 # <a name="painting-with-solid-colors-and-gradients-overview"></a>Přehled malování plnými barvami a přechody
 Toto téma popisuje postup použití <xref:System.Windows.Media.SolidColorBrush>, <xref:System.Windows.Media.LinearGradientBrush>, a <xref:System.Windows.Media.RadialGradientBrush> objekty k malování plné barvy, lineární přechody a paprskového přechody.  

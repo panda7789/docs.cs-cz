@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759163"
 ---
 # <a name="dataset-and-xmldatadocument-synchronization"></a>Datové sady a XmlDataDocument synchronizace
 Technologie ADO.NET <xref:System.Data.DataSet> vám poskytne relační znázornění dat. Hierarchický přístup k datům můžete použít k dispozici v rozhraní .NET Framework XML třídy. Tyto dvě reprezentace dat v minulosti, již byly použity samostatně. Ale rozhraní .NET Framework umožňuje v reálném čase, synchronní přístup k hierarchické a relační reprezentace dat prostřednictvím **datovou sadu** objektu a <xref:System.Xml.XmlDataDocument> objektu v uvedeném pořadí.  

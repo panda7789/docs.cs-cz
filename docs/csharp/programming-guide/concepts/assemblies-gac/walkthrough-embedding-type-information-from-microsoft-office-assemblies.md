@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33324522"
 ---
 # <a name="walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-visual-studio-c"></a>Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (C#)
 Pokud vložit informace typu v aplikaci, která odkazuje na objekty modelu COM, můžete eliminovat potřebu primární spolupracující sestavení (PIA). Informace o vložených typu navíc umožňuje dosáhnout nezávislost verze pro vaši aplikaci. To znamená váš program může být napsán používat typy z více verzí knihovny COM bez nutnosti konkrétní PIA – pro každou verzi. Toto je běžný scénář pro aplikace, které používají objekty z knihovny Microsoft Office. Vložení informací o typu umožňuje ve stejném sestavení programu pro práci s různými verzemi nástroje Microsoft Office na různých počítačích bez nutnosti znovu nasaďte program nebo PIA – pro každou verzi systému Microsoft Office.  

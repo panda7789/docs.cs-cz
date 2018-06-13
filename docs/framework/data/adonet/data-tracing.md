@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758500"
 ---
 # <a name="data-tracing-in-adonet"></a>Data trasování v technologii ADO.NET
 ADO.NET funkce integrované data trasování funkce, které podporuje zprostředkovatele dat .NET pro SQL Server, Oracle, technologie OLE DB a rozhraní ODBC, jakož i technologie ADO.NET <xref:System.Data.DataSet>a protokoly sítě systému SQL Server.  

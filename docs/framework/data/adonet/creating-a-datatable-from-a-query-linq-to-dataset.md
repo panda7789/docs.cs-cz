@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758825"
 ---
 # <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a>Vytváření DataTable z dotazu (LINQ na DataSet)
 Datová vazba se běžně používá z <xref:System.Data.DataTable> objektu. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda přebírá výsledky dotazu a zkopíruje data do <xref:System.Data.DataTable>, který pak může být použit pro datovou vazbu. Pokud operace dat prováděly, nové <xref:System.Data.DataTable> je sloučen zpět do zdroje <xref:System.Data.DataTable>.  

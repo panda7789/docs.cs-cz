@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565860"
 ---
 # <a name="type-converters-and-markup-extensions-for-xaml"></a>Převaděče typů a rozšíření značek pro jazyk XAML
 Převaděče typů a rozšíření značek jsou dvě techniky, které systémy typ jazyka XAML a XAML zapisovače použít ke generování součásti grafu objektu. I když některé vlastnosti sdílejí, převaděče typů a rozšíření značek jsou reprezentované jinak v datový proud uzlu XAML. V této dokumentaci sady, převaděčů typů, rozšíření značek a podobné konstrukce jsou někdy souhrnně označovány jako převodníky hodnot.  

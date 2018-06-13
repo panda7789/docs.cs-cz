@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758838"
 ---
 # <a name="consuming-a-dataset-from-an-xml-web-service"></a>Využívání datové sady z webové služby XML
 <xref:System.Data.DataSet> Byl navržen odpojené návrh, v části pro usnadnění pohodlný přenos dat přes Internet. **Datovou sadu** je "serializovatelný", můžete zadat jako vstup nebo výstup webové služby XML bez další kódování požadované Streamovat obsah **datovou sadu** z webové služby XML na klienta a naopak. **Datovou sadu** se implicitně převést na datový proud XML formátu formát DiffGram, odesílají přes síť a potom znovu vytvořena z datového proudu XML jako **datovou sadu** na koncové straně příjmu. To vám dává velmi jednoduchá a flexibilní metodu pro přenášení a vrácení relačních dat pomocí webové služby XML. Další informace o formátu, formátu DiffGram najdete v tématu [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md).  

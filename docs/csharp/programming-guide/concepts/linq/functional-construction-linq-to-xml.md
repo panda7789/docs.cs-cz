@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33329852"
 ---
 # <a name="functional-construction-linq-to-xml-c"></a>Funkční konstrukce (technologie LINQ to XML) (C#)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] nabízí efektivní způsob, jak vytvořit elementů XML s názvem *funkční konstrukce*. Funkční konstrukce je schopnost vytvářet strom XML v jediném příkazu.  

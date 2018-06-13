@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33591405"
 ---
 # <a name="printform-component-visual-basic"></a>PrintForm – součást (Visual Basic)
 <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> Součást jazyka Visual Basic umožňuje vytisknout image Windows Form v době běhu. Své chování nahrazuje u `PrintForm` metoda v dřívějších verzích jazyka Visual Basic.  

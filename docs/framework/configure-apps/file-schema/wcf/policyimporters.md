@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749095"
 ---
 # <a name="ltpolicyimportersgt"></a>&lt;policyImporters&gt;
 Tento element konfigurace určuje všechny společnosti importers zásady, které řídí import kontrolních výrazů vlastních zásad o vazby. Je každý podřízený element <`policyImporter`> sloužící k vyhledávání kontrolních výrazů vlastních zásad o vazbu funkce, jakož i připojit vlastní vazby element, který implementuje funkce vyžaduje kontrolní výraz.  

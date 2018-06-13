@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766524"
 ---
 # <a name="entity-framework-terminology"></a>Terminologie Entity Framework
 Toto téma definuje termíny často odkazuje v [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] dokumentaci. Jsou uvedeny odkazy na související témata, kde je k dispozici další informace.  

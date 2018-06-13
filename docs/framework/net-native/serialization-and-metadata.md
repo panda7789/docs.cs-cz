@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395970"
 ---
 # <a name="serialization-and-metadata"></a>Serializace a metadata
 Pokud vaše aplikace serializuje a deserializuje objekty, budete muset přidat položky do vaší direktivy modulu runtime (. rd.xml) souboru a zajistit tak potřeby metadata nachází v době běhu. Existují dvě kategorie serializátorů a každý vyžaduje jiný zpracování v souboru direktivy modulu runtime:  

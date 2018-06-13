@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761893"
 ---
 # <a name="nesting-datarelations"></a>DataRelations vnoření
 Jednotlivé tabulky v znázornění relační data obsahují řádky, které se vztahují na sebe navzájem pomocí sloupec nebo sadu sloupců. V technologie ADO.NET <xref:System.Data.DataSet>, relace mezi tabulkami je implementovaná pomocí <xref:System.Data.DataRelation>. Při vytváření **DataRelation**, vztahy podřízenosti sloupců, které lze spravovat pouze prostřednictvím vztah. Tabulky a sloupce jsou samostatné entity. V hierarchické reprezentace dat, který obsahuje XML vztahů nadřazenosti a podřízenosti reprezentována nadřazené elementy, které obsahují vnořené podřízené elementy.  

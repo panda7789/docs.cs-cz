@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763989"
 ---
 # <a name="order-by-entity-sql"></a>Řadit podle (entita SQL)
 Určuje pořadí řazení použít u objektů, vrátí se v příkazu SELECT.  

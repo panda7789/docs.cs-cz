@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759735"
 ---
 # <a name="datatable-constraints"></a>Omezení DataTable
 Omezení můžete vynutit omezení na datech v <xref:System.Data.DataTable>, aby udržení integrity dat. Omezení je automatické pravidlo použít na sloupec nebo související sloupce, který určuje postup, když je nějakým způsobem změnit hodnotu v řádku. Vynutí se omezení při `System.Data.DataSet.EnforceConstraints` vlastnost <xref:System.Data.DataSet> je **true**. Příklad kódu, který ukazuje, jak nastavit `EnforceConstraints` vlastnost, najdete v článku <xref:System.Data.DataSet.EnforceConstraints%2A> referenční téma.  

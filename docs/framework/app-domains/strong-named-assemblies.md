@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741942"
 ---
 # <a name="strong-named-assemblies"></a>Sestavení se silným názvem
 Silné názvy sestavení vytvoří jedinečnou identitu pro sestavení a může zabránit konfliktům sestavení.  

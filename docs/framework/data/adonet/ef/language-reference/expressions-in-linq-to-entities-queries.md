@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760762"
 ---
 # <a name="expressions-in-linq-to-entities-queries"></a>Výrazy v technologii LINQ to Entities dotazy
 Výraz je fragment kódu, který lze vyhodnotit na hodnotu typu single, objekt, metodu nebo obor názvů. Výrazy může obsahovat literálovou hodnotou, volání metod, operátor a jejími operandy nebo jednoduchý název. Název proměnné, typ, parametru metody, obor názvů nebo člena typu může být jednoduché názvy. Výrazy můžete použít operátory, které pak použít jiné výrazy jako parametry nebo volání metod, jejíž parametry jsou naopak další volání metody. Proto výrazy může jít o jednoduché pro velmi složité.  

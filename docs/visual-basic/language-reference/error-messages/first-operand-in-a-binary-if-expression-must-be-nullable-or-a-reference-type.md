@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590826"
 ---
 # <a name="first-operand-in-a-binary-39if39-expression-must-be-nullable-or-a-reference-type"></a>První operand v binárním &#39;Pokud&#39; výraz musí být null nebo zadejte odkaz
 `If` Výrazu může trvat dvě nebo tři argumenty. Při odesílání pouze dva argumenty, první argument musí být odkazového typu nebo typ s možnou hodnotou Null. Pokud je první argument výsledkem k ničemu jiné než `Nothing`, je vrácena jeho hodnota. Pokud se vyhodnotí jako první argument `Nothing`, druhý argument je vyhodnocena a vrácena.  

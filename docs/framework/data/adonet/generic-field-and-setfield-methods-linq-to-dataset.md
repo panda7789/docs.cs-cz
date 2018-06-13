@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767008"
 ---
 # <a name="generic-field-and-setfield-methods-linq-to-dataset"></a>Obecné pole a SetField metody (LINQ na DataSet)
 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] poskytuje rozšiřující metody pro <xref:System.Data.DataRow> třídy pro přístup k hodnot sloupce: <xref:System.Data.DataRowExtensions.Field%2A> metoda a <xref:System.Data.DataRowExtensions.SetField%2A> metoda. Tyto metody poskytují jednodušší přístup k hodnotám sloupce pro vývojáře, zejména pokud jde o hodnoty null. <xref:System.Data.DataSet> Používá <xref:System.DBNull.Value> k reprezentaci hodnoty null, zatímco [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] používá podpora s možnou hodnotou Null typu počínaje [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)]. Použití existující přistupující objekt sloupce v <xref:System.Data.DataRow> vyžaduje, abyste návratový objekt na příslušný typ přetypování. Pokud konkrétní pole v <xref:System.Data.DataRow> může mít hodnotu null, musí explicitně zkontrolovala pro hodnotu null protože vrácení <xref:System.DBNull.Value> a ho implicitně přetypování na jiný typ vyvolává <xref:System.InvalidCastException>. V následujícím příkladu Pokud <xref:System.Data.DataRow.IsNull%2A> metoda nebyla použita k vyhledání hodnotu null, by být vyvolána výjimka, pokud indexer vrátil <xref:System.DBNull.Value> a pokusil vysílat <xref:System.String>.  

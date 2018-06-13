@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762150"
 ---
 # <a name="sql-generation-in-the-sample-provider"></a>Generování SQL ve zprostředkovateli ukázka
 [Zprostředkovatele Entity Framework ukázka](http://go.microsoft.com/fwlink/?LinkId=180616) předvádí nové komponenty zprostředkovatele dat ADO.NET, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  To funguje s databází systému SQL Server 2005 a je implementovaný jako obálku pro zprostředkovatele dat ADO.NET 2.0 System.Data.SqlClient.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760463"
 ---
 # <a name="adding-columns-to-a-datatable"></a>Přidávání sloupců do DataTable
 A <xref:System.Data.DataTable> obsahuje kolekci <xref:System.Data.DataColumn> objekty odkazuje **sloupce** vlastnosti tabulky. Tato kolekce sloupců, společně s omezeními, definuje schéma a struktura tabulky.  

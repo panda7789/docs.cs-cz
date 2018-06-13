@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765838"
 ---
 # <a name="modifying-data-with-a-dbdataadapter"></a>Úprava dat s DbDataAdapter
 <xref:System.Data.Common.DbProviderFactory.CreateDataAdapter%2A> Metodu <xref:System.Data.Common.DbProviderFactory> objekt získáte <xref:System.Data.Common.DbDataAdapter> objekt, který je pro základní data poskytovatele určeného v okamžiku vytvoření objektu pro vytváření silného typu. Pak můžete použít <xref:System.Data.Common.DbCommandBuilder> k vytvoření příkazů k vložení, aktualizace a odstranění dat z <xref:System.Data.DataSet> ke zdroji dat.  

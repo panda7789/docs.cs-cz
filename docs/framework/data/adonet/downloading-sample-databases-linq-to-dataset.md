@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763050"
 ---
 # <a name="downloading-sample-databases-linq-to-dataset"></a>Stažení ukázkové databáze (LINQ na DataSet)
 Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dokumentace použít ukázkovou databázi AdventureWorks. Tento produkt zdarma si můžete stáhnout z webu Microsoft download. Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dokumentace použít jako úložiště dat serveru SQL Server. SQL Server Express Edition, která je k dispozici bezplatně, můžete také použít jako úložiště dat místo systému SQL Server.  

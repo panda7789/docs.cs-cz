@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604247"
 ---
 # <a name="objects-visual-basic"></a>Objekty (Visual Basic)
 Toto téma obsahuje odkazy na další témata dokument Visual Basic Runtime objekty a obsahovat tabulky jejich člen procedury, vlastnosti a události.  

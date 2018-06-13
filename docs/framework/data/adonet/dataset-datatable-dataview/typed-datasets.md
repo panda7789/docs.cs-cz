@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762452"
 ---
 # <a name="typed-datasets"></a>Typové datové sady
 Společně s pozdní vázané přístup k hodnotám prostřednictvím slabě typovaná proměnné <xref:System.Data.DataSet> poskytuje přístup k datům prostřednictvím silného typu jedná. Tabulky a sloupce, které jsou součástí **datovou sadu** lze přistupovat pomocí uživatelsky přívětivých názvů a silného typu proměnné.  

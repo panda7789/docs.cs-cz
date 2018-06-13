@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759680"
 ---
 # <a name="inferring-dataset-relational-structure-from-xml"></a>Odvození relační strukturu datové sady z XML
 Relační struktura nebo schéma z <xref:System.Data.DataSet> se skládá z tabulky, sloupce, omezení a vztahů. Při načítání <xref:System.Data.DataSet> ze souboru XML, můžete předem definovaná schématu, ale mohou být vytvořeny, explicitně nebo prostřednictvím odvozená z XML načítá. Další informace o načítání schématu a obsah <xref:System.Data.DataSet> ze souboru XML, najdete v části [načítání datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) a [načítání datovou sadu informace o schématu z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md).  

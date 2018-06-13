@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758890"
 ---
 # <a name="local-transactions"></a>Místní transakce
 Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se používají, když chcete svázat více úkolů společně, aby se spustit jako na jednu jednotku práce. Představte si například, že aplikace provede dvě úlohy. Nejprve se informace o objednávce aktualizuje tabulku. Druhý aktualizuje tabulku, která obsahuje informace o inventáři, připsáním na stranu MD položky seřazené. Pokud selže buď úlohu, pak oba aktualizace jsou vrácena zpět.  

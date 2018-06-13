@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758123"
 ---
 # <a name="how-to-create-a-publisher-policy"></a>Postupy: Vytváření zásad vydavatele
 Dodavatelé sestavení může stavu, že aplikace by měly používat na novější verzi sestavení zahrnutím souboru zásad vydavatele s upgradovaná sestavením. Soubor zásad vydavatele určuje sestavení – přesměrování a základní nastavení kódu a používá stejný formát jako konfiguračního souboru aplikace. Soubor zásad vydavatele je zkompilován do sestavení a umístit do globální mezipaměti sestavení.  

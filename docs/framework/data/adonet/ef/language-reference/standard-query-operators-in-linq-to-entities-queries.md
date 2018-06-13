@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766397"
 ---
 # <a name="standard-query-operators-in-linq-to-entities-queries"></a>Standardní operátory dotazu v technologii LINQ to Entities dotazy
 V dotazu zadejte informace, které chcete načíst z datového zdroje. Dotaz můžete také určit, jak tyto informace by měl být seřazeny, seskupené a ve tvaru před vrácením. LINQ poskytuje sadu metod standardní dotazu, které můžete použít v dotazu. Většina z nich pracovat pořadí; v tomto kontextu posloupnost je objekt, jehož typ implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. Funkci dotazu standardní operátory dotazu obsahuje filtrování, projekce, agregace, řazení, seskupení, stránkování a další. Některé Čím více často používají standardní dotazu, operátory mít vyhrazený syntaxe – klíčové slovo, tak, aby bylo možné volat pomocí syntaxe výrazu dotazu. Výraz dotazu je jiné, srozumitelnější způsoby, jak vyjádřit dotaz než ekvivalentní na základě metod. Klauzule výraz dotazu jsou převedeny do volání metody dotazů v době kompilace. Seznam standardních operátorů dotazu s klauzulí výraz ekvivalentní dotazu najdete v tématu [standardní přehled operátory dotazu](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  

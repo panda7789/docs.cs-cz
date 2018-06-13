@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759033"
 ---
 # <a name="inferring-relationships"></a>Odvození relace
 Pokud má element, který je používán jako tabulku podřízený element, který je také odvodit jako tabulku, <xref:System.Data.DataRelation> se vytvoří mezi dvěma tabulkami. Nový sloupec s názvem **ParentTableName_Id** bude přidán do tabulky vytvořili pro nadřazený element i v tabulce pro podřízený element vytvořit. **ColumnMapping** vlastnost v tomto sloupci identity bude nastavena pro **MappingType.Hidden**. Sloupec bude automaticky rostoucí primární klíč pro nadřazenou tabulkou a bude použit pro **DataRelation** mezi dvěma tabulkami. Datový typ sloupce identity přidané bude **System.Int32**, na rozdíl od všech ostatních odvozené sloupce datový typ, který je **System.String**. A <xref:System.Data.ForeignKeyConstraint> s **DeletRule** = **Cascade** bude vytvořen také pomocí nového sloupce v nadřazené a podřízené tabulky.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761906"
 ---
 # <a name="writing-dataset-contents-as-xml-data"></a>Zápis obsah datovou sadu jako XML Data
 V technologii ADO.NET můžete napsat reprezentaci XML <xref:System.Data.DataSet>, s nebo bez jeho schématu. Pokud informace o schématu zahrnuty vložené se souborem XML, je zapsán pomocí jazyka definice schématu XML (XSD). Schéma obsahuje definice tabulky <xref:System.Data.DataSet> a také definice relace a omezení.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750749"
 ---
 # <a name="ltroutinggt-of-ltservicebehaviorgt"></a>&lt;routing&gt; – &lt;serviceBehavior&gt;
 Poskytuje běhové přístup ke službě Směrování a povolit dynamické změnu konfigurace směrování.  

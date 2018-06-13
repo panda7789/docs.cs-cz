@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762514"
 ---
 # <a name="constant-expressions"></a>Výrazy konstant
 Konstantní výraz se skládá z konstantní hodnotu. Konstantní hodnoty jsou přímo převést na příkaz konstantní výrazy stromu, bez překladu na straně klienta. To zahrnuje výrazy, jejichž výsledkem konstantní hodnotu. Chování zdroje dat by měl být tedy, že pro všechny výrazy zahrnující konstanty. To může mít za následek chování, které se liší od chování CLR.  

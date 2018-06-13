@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765266"
 ---
 # <a name="entity-data-model-inheritance"></a>Model Entity Data Model: dědičnosti
 Entity Data Model (EDM) podporuje dědičnosti pro [typy entit](../../../../docs/framework/data/adonet/entity-type.md). Dědičnost v modelu EDM je podobná dědičnosti pro třídy v objektově orientované programovací jazyky. Jako pomocí třídy v objektově orientovaný jazyků v konceptuálním modelu můžete definovat typ entity ( *odvozeného typu*), dědí z jiného typu entity ( *základní typ*). Ale na rozdíl od třídy v objektově orientované programování v konceptuálním modelu odvozený typ vždy dědí všechny [vlastnosti](../../../../docs/framework/data/adonet/property.md) a [navigační vlastnosti](../../../../docs/framework/data/adonet/navigation-property.md) základního typu. Nejde přepsat zděděné vlastnosti v odvozeném typu.  

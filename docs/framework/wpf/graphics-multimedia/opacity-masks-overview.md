@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566230"
 ---
 # <a name="opacity-masks-overview"></a>Přehled masek krytí
 Masky krytí umožňují provést části elementu nebo visual průhledných nebo částečně transparentní. Chcete-li vytvořit masky krytí, je použít <xref:System.Windows.Media.Brush> k <xref:System.Windows.UIElement.OpacityMask%2A> vlastnost elementu nebo <xref:System.Windows.Media.Visual>.  Štětec se mapuje na element nebo visual a hodnota neprůhlednosti každého obrazového bodu štětce slouží k určení výsledného krytí jednotlivých odpovídající pixelů, elementu nebo visual.  

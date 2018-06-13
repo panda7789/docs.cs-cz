@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33327213"
 ---
 # <a name="how-to-use-a-dictionary-to-store-event-instances-c-programming-guide"></a>Postupy: Použití slovníku k ukládání instancí událostí (Průvodce programováním v C#)
 Jedno použití pro `accessor-declarations` je vystavit mnoho událostí bez přidělování pole pro každou jednotlivou událost, ale místo toho pomocí slovníku k ukládání instancí událostí. To je užitečné pouze v případě, že máte mnoho událostí, ale očekáváte, že se neprovádí, většina události.  

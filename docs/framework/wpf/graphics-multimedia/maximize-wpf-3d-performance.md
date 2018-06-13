@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565435"
 ---
 # <a name="maximize-wpf-3d-performance"></a>Maximalizace výkonu WPF 3D
 Při používání [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sestavení 3D ovládacích prvků a zahrnutí 3D scény do vaší aplikace, je důležité vzít v úvahu optimalizace výkonu. Toto téma obsahuje seznam 3D třídy a vlastnosti, které mají vliv na výkon pro vaši aplikaci, včetně doporučení pro optimalizaci výkonu, když je budete používat.  

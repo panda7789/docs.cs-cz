@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33331682"
 ---
 # <a name="differences-between-c-templates-and-c-generics-c-programming-guide"></a>Rozdíly mezi šablonami C++ a obecnými typy C# (Průvodce programováním v C#)
 Šablony obecnými typy C# a C++ jsou obě jazykové funkce, které poskytují podporu pro parametrizované typy. Existují však mnoho rozdíly mezi nimi. Na úrovni syntaxe obecnými typy C# jsou jednodušší přístup k parametrizované typy bez složitost C++ šablon. Kromě toho C# nepokouší poskytnout všechny funkce, které poskytují šablonami C++. Na úrovni implementace základní rozdíl je, že náhrady obecného typu C# jsou prováděny v době běhu a instancí objektů se tím zachovají informace obecného typu. Další informace najdete v tématu [obecné typy v čase spuštění](../../../csharp/programming-guide/generics/generics-in-the-run-time.md).  

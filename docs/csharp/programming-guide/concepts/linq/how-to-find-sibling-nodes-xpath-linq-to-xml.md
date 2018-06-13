@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33324158"
 ---
 # <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Postupy: vyhledání uzly na stejné úrovni (XPath-technologie LINQ to XML) (C#)
 Můžete chtít najít všechny úroveň uzlu, které mají určitý název. Výsledné kolekce mohou zahrnovat uzlu kontextu, pokud kontext uzel má také určitý název.  

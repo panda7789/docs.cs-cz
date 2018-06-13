@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765318"
 ---
 # <a name="entity-type"></a>Typ entity
 *Typ entity* je základní stavební blok pro popisující strukturu dat s Entity Data Model (EDM). Typ entity v konceptuálním modelu představuje strukturu nejvyšší úrovně koncepty, jako jsou zákazníci nebo objednávky. Typ entity je šablona pro instance typu entity. Každá šablona obsahuje následující informace:  

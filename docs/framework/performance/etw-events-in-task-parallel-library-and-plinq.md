@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397686"
 ---
 # <a name="etw-events-in-task-parallel-library-and-plinq"></a>Události Trasování událostí pro Windows v knihovně Task Parallel Library a PLINQ
 Knihovně Task Parallel Library a PLINQ generovat události trasování pro Windows (ETW) události, které můžete použít k profilu a řešení potíží s aplikací pomocí nástroje, jako je analyzátor výkonu systému Windows. Ve většině scénářů, nejlepší způsob, jak kód paralelní aplikace profilu je však používat [vizualizér souběžnosti](/visualstudio/profiling/concurrency-visualizer) v [!INCLUDE[vsUltShort](../../../includes/vsultshort-md.md)].  

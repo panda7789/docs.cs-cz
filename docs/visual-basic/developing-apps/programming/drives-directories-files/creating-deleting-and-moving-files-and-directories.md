@@ -27,6 +27,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590943"
 ---
 # <a name="creating-deleting-and-moving-files-and-directories-in-visual-basic"></a>Vytváření, odstraňování a přesouvání souborů a adresářů v jazyce Visual Basic
 V této části jsou uvedeny úlohy, které jsou přidružené k vytváření, odstraňování, přesouvání a přejmenování souborů a adresářů v jazyce Visual Basic.  

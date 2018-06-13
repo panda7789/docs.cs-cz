@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592116"
 ---
 # <a name="string-data-type-visual-basic"></a>String – datový typ (Visual Basic)
 Obsahuje pořadí, bodů nepodepsaný kód (2bajtová) 16bitové rozsahu v rozmezí 0 až 65535. Každý *code bodu*, nebo kód znaku, představuje jeden znak Unicode. Řetězec může obsahovat od 0 do přibližně dvě miliardy (2 ^ 31) znaky znakové sady Unicode.  

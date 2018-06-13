@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33326102"
 ---
 # <a name="how-to-transform-the-shape-of-an-xml-tree-c"></a>Postupy: transformace tvaru stromu XML (C#)
 *Tvar* XML dokumentu odkazuje na jeho názvy elementů, názvy atributů a charakteristika hierarchii.  

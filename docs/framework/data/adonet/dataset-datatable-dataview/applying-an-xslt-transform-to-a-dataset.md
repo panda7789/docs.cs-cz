@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32756550"
 ---
 # <a name="applying-an-xslt-transform-to-a-dataset"></a>Použití transformaci XSLT na datové sady
 **WriteXml** metodu <xref:System.Data.DataSet> umožňuje psát obsah **datovou sadu** jako XML data. Běžné úlohy je pak transformace této XML do jiného formátu použití transformací XSL (XSLT). Ale synchronizace **datovou sadu** s <xref:System.Xml.XmlDataDocument> umožňuje použít šablonu stylů XSLT k obsahu **datovou sadu** bez nutnosti nejprve psaní obsah  **Datová sada** jako data XML pomocí **WriteXml**.  

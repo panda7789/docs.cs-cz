@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760268"
 ---
 # <a name="summary-of-the-dataset-schema-inference-process"></a>Souhrn procesu odvození schéma datové sady
 Odvození proces nejdřív zjistí, z dokumentu XML prvky, které bude odvodit jako tabulky. Z zbývající XML určuje proces odvození sloupce pro tyto tabulky. Pro vnořené tabulky, proces odvození generuje vnořené <xref:System.Data.DataRelation> a <xref:System.Data.ForeignKeyConstraint> objekty.  

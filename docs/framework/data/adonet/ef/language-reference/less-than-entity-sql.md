@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760970"
 ---
 # <a name="lt-less-than-entity-sql"></a>&lt; (Méně než) (Entita SQL)
 Porovná dva výrazy a určit, zda má hodnotu menší, než pravý výraz levý výraz.  

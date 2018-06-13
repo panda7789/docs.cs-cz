@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396815"
 ---
 # <a name="deriving-from-webrequest"></a>Odvozování z WebRequest
 <xref:System.Net.WebRequest> Třída je abstraktní základní třída, která poskytuje základní metody a vlastnosti pro vytvoření obslužné rutiny specifické pro protokol požadavek, který nejlépe odpovídá modulární protokol model rozhraní .NET Framework. Aplikace, které používají **WebRequest** třídy můžete žádost o data pomocí libovolný podporovaný protokol bez nutnosti zadat protokol použít.  

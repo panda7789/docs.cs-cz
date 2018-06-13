@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395229"
 ---
 # <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>Postupy: nastavení zásad na základě umístění mezipaměti pro aplikaci
 Na základě umístění mezipaměti zásady umožňují aplikace explicitně definujte chování ukládání do mezipaměti na základě umístění požadovaného prostředku. Toto téma popisuje nastavení zásad mezipaměti prostřednictvím kódu programu. Informace o nastavení zásad pro aplikaci pomocí konfiguračních souborů najdete v tématu [ \<requestCaching – > elementu (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md).  

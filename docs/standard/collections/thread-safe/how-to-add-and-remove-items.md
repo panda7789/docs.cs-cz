@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569743"
 ---
 # <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Postupy: Přidávání a odebírání položek v ConcurrentDictionary
 Tento příklad ukazuje, jak přidat, získat, aktualizovat a odebrání položek z <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>. Tato třída kolekce je implementace bezpečné pro přístup z více vláken. Doporučujeme vám, že použít kdykoli více vláken může se pokusit o přístup k prvkům.  

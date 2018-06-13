@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569275"
 ---
 # <a name="object-comparison-using-xmlnametable"></a>Objekt porovnání pomocí XmlNameTable
 **XmlDocuments**, při vytváření, máte název tabulky vytvořené speciálně pro tento dokument. Pokud načten do dokumentu nebo se vytvářejí nové elementy nebo atributy, názvy elementu a atributu jsou vloženy do **XmlNameTable**. Můžete taky vytvořit **třídou XMLDocument nastavenou na** použití stávající **tabulky názvů** z jiného dokumentu. Když **XmlDocuments** jsou vytvořeny pomocí konstruktor, který přebírá **XmlNameTable** parametr dokument má přístup k uzlu názvy, obory názvů a předpony, které jsou již uloženy v  **XmlNameTable**. Bez ohledu na to, jak načíst název tabulky s názvy, jakmile se názvy jsou uložené v tabulce, názvy lze porovnat rychle pomocí objektu porovnání místo porovnání řetězců. Řetězce lze také přidat název tabulky pomocí <xref:System.Xml.NameTable.Add%2A>. Následující příklad kódu ukazuje název tabulky vytváří a řetězec **MyString** přidávané do tabulky. Potom **třídou XMLDocument nastavenou na** je vytvořený pomocí této tabulky a názvy elementu a atributu v **Myfile.xml** jsou přidány do existující název tabulky.  

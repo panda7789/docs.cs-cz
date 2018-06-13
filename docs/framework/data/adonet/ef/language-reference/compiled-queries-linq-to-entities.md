@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761594"
 ---
 # <a name="compiled-queries--linq-to-entities"></a>Kompilované dotazy (LINQ to Entities)
 Když máte aplikaci, která provádí strukturálně podobné dotazy mnohokrát v rozhraní Entity Framework, můžete zvýšit výkon často kompilování dotazu jednou a spouštění s odlišnými parametry několikrát. Například aplikace může mít načíst všechny zákazníky z určitého města; Město je zadána v době běhu uživatele ve formuláři. Technologie LINQ to Entities podporuje používání kompilované dotazy pro tento účel.  

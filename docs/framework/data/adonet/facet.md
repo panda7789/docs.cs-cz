@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762420"
 ---
 # <a name="facet"></a>omezující vlastnost
 A *omezující vlastnost* se používá k přidání podrobností do definice vlastnost primitivního typu. A [vlastnost](../../../../docs/framework/data/adonet/property.md) definice obsahuje informace o vlastnost typu, ale často je nutné podrobněji. Typ entity v konceptuálním modelu například může mít vlastnost typu `String` jehož hodnota nemůže být nastavena na hodnotu null. Omezující vlastnosti umožňují určit tato úroveň podrobností.  

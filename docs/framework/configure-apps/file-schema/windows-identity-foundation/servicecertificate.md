@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766774"
 ---
 # <a name="ltservicecertificategt"></a>&lt;ServiceCertificate&gt;
 Nakonfiguruje certifikátu X.509, který se používá k šifrování a dešifrování tokenů.  

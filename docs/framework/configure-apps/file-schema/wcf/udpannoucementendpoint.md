@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766787"
 ---
 # <a name="ltudpannoucementendpointgt"></a>&lt;udpAnnoucementEndpoint&gt;
 Tento element konfigurace definuje standardní koncový bod, který je používán služby pro odeslání zpráv oznámení vazbu UDP. Má pevnou kontraktu a podporuje dvě verze zjišťování. Kromě toho má vazbu pevné UDP a adresu výchozí hodnotu podle specifikace WS-Discovery (WS-Discovery. dubna 2005 nebo WS-Discovery verze 1.1). Můžete zadat adresu vícesměrového vysílání pro odesílání a přijímání zpráv oznámení.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762920"
 ---
 # <a name="multiset-entity-sql"></a>MULTIMNOŽINA (entita SQL)
 Vytvoří instanci multimnožina ze seznamu hodnot. Všechny hodnoty ve MULTISET konstruktor musí být kompatibilní typu `T`. Prázdný multiset konstruktory nejsou povoleny.  

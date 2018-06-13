@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761503"
 ---
 # <a name="comparison-expressions"></a>Výrazy porovnání
 Výraz porovnání zkontroluje, zda je konstantní hodnota, hodnota vlastnosti nebo výsledek metody stejné, není rovno, větší nebo menší než jiná hodnota. Pokud konkrétní porovnání není platný pro [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], bude vyvolána výjimka. Všechny porovnání implicitní a explicitní, vyžadují, zda jsou všechny součásti ve zdroji dat porovnatelný. Výrazy porovnání se často používají v `Where` klauzule pro omezení výsledky dotazu.  

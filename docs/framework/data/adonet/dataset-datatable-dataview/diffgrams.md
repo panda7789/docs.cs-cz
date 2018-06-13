@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760031"
 ---
 # <a name="diffgrams"></a>DiffGrams
 Prvek formátu DiffGram je formátu XML, který identifikuje aktuální a původní verze datové prvky. <xref:System.Data.DataSet> Používá formát DiffGram formát pro načtení a zachovat její obsah a k serializaci její obsah pro přenos přes síťové připojení. Když <xref:System.Data.DataSet> je zapsána jako formát DiffGram, vyplní formát DiffGram všechny potřebné informace přesně znovu vytvořit obsah, když není schéma služby <xref:System.Data.DataSet>, včetně hodnoty ve sloupcích i **původní** a **aktuální** verze řádku, řádku informace o chybě a pořadí řádků.  

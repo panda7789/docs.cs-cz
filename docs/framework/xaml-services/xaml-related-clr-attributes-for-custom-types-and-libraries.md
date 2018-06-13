@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566480"
 ---
 # <a name="xaml-related-clr-attributes-for-custom-types-and-libraries"></a>Atributy CLR související s jazykem XAML pro vlastní typy a knihovny
 Toto téma popisuje běžné atributy modulu runtime (CLR) jazyk, které jsou definované rozhraní .NET Framework XAML Services. Popisuje také jiné CLR atributy, které jsou definovány v rozhraní .NET Framework s scénáři související s jazykem XAML pro aplikaci na sestavení nebo typy. Zapisujících sestavení, typy a členy s těmito atributy CLR poskytuje XAML typ systémové informace související s vaší typy. Informace jsou poskytovány na všechny XAML příjemce, který používá rozhraní .NET Framework XAML Services pro zpracování datový proud uzlu XAML přímo nebo prostřednictvím vyhrazené čteček XAML a XAML zapisovače.  

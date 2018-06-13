@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397631"
 ---
 # <a name="using-udp-services"></a>Pomocí služby UDP
 <xref:System.Net.Sockets.UdpClient> Třída komunikuje pomocí protokolu UDP síťové služby. Vlastnosti a metody <xref:System.Net.Sockets.UdpClient> abstraktní třída podrobnosti o vytváření <xref:System.Net.Sockets.Socket> pro podávání žádostí a příjmu dat pomocí protokolu UDP.  
