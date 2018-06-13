@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566597"
 ---
 # <a name="wpf-brushes-overview"></a>Přehled štětců WPF
 Všechno viditelný na obrazovce je viditelný, protože byl vykresluje podle štětce. Například štětce se používá k popisu tlačítka, popředí textu a vyplnění obrazce na pozadí. Toto téma představuje koncepty Malování s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] stopy a obsahuje příklady. Štětce umožňují malovat [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] objekty s vše od jednoduchých, plné barvy pro komplexní skupiny vzory a bitové kopie.  

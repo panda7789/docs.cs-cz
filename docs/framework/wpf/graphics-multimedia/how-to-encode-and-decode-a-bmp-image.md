@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558835"
 ---
 # <a name="how-to-encode-and-decode-a-bmp-image"></a>Postupy: Kódování a dekódování obrázku BMP
 Následující příklady ukazují, jak kódování a dekódování [!INCLUDE[TLA#tla_bmp](../../../../includes/tlasharptla-bmp-md.md)] bitovou kopii pomocí konkrétní <xref:System.Windows.Media.Imaging.BmpBitmapDecoder> a <xref:System.Windows.Media.Imaging.BmpBitmapEncoder> objekty.  

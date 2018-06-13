@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522444"
 ---
 # <a name="how-to-shear-colors"></a>Postupy: Zkosení barev
 Zkosení zvyšuje nebo snižuje komponentu Barva o částku úměrná jiné barevnou složku. Představte si třeba transformaci, kde komponentu red vzroste polovina hodnotou modré součásti. V části transformace by stát barvu (0,2, 0,5, 1) (0,7, 0,5, 1). Novou red součást je 0,2 + (1/2)(1) = 0,7.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517657"
 ---
 # <a name="declarative-constraints"></a>Deklarativní omezení
 Deklarativní omezení poskytují výkonný metodu ověření pro aktivitu a jeho vztahů s dalšími aktivitami. Omezení jsou nakonfigurovány pro aktivitu během procesu vytváření, ale další omezení lze zadat také od hostitele pracovního postupu. Toto téma obsahuje přehled používání deklarativní omezení pro ověřování aktivity.  

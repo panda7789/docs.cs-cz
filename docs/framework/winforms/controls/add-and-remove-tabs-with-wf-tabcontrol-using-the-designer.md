@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525262"
 ---
 # <a name="how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol-using-the-designer"></a>Postupy: Přidávání a odebírání karet s prvkem Windows Forms TabControl pomocí Návrháře
 Když umístíte <xref:System.Windows.Forms.TabControl> ovládacího prvku ve formuláři, obsahuje dvě karty ve výchozím nastavení. Můžete přidat nebo odebrat karty pomocí návrháře.  

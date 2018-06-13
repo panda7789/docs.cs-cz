@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743885"
 ---
 # <a name="retrieving-setup-information-from-an-application-domain"></a>Načítání informací nastavení z domény aplikace
 Každá instance domény aplikace se skládá z obě vlastnosti a <xref:System.AppDomainSetup> informace. Informace o instalaci můžete načíst z domény aplikace pomocí <xref:System.AppDomain?displayProperty=nameWithType> třídy. Tato třída poskytuje několik členů, kteří získávají informace o konfiguraci o domény aplikace.  

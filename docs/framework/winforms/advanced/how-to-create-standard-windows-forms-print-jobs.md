@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522330"
 ---
 # <a name="how-to-create-standard-windows-forms-print-jobs"></a>Postupy: Vytváření standardních tiskových úloh Windows Forms
 Základ pro tisk ve Windows Forms je <xref:System.Drawing.Printing.PrintDocument> součást – přesněji řečeno, <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí. Vytvořením kód pro zpracování <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí, můžete zadat, tisknout, jak můžete k jeho tisku.  

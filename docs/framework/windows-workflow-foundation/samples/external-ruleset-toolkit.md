@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520393"
 ---
 # <a name="external-ruleset-toolkit"></a>Externí Ruleset Toolkit
 Za normálních okolností Pokud použijete pravidla v rámci aplikace pracovního postupu, pravidla jsou součástí sestavení. V některých případech můžete udržovat sady pravidel odděleně od sestavení tak, aby bylo možné aktualizovat bez opětovné sestavení a nasazení sestavení pracovního postupu. Tato ukázka vám umožňuje spravovat a upravovat sady pravidel v databázi a přístup k tyto sady pravidel z pracovního postupu za běhu. To umožňuje, aby automaticky začlenit RuleSet změny spuštěných instancí pracovního postupu.  

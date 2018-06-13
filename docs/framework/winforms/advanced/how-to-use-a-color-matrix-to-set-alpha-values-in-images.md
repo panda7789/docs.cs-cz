@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522343"
 ---
 # <a name="how-to-use-a-color-matrix-to-set-alpha-values-in-images"></a>Postupy: Použití matice barev k nastavení alfa hodnot v obrázcích
 <xref:System.Drawing.Bitmap> – Třída (který dědí z <xref:System.Drawing.Image> třída) a <xref:System.Drawing.Imaging.ImageAttributes> třída poskytovat funkce pro načtení a nastavení hodnoty pixelů. Můžete použít <xref:System.Drawing.Imaging.ImageAttributes> třída změnit alpha hodnoty celého obrázku, nebo můžete volat <xref:System.Drawing.Bitmap.SetPixel%2A> metodu <xref:System.Drawing.Bitmap> třídy upravte hodnoty jednotlivých pixelů.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521333"
 ---
 # <a name="how-to-draw-a-single-b233zier-spline"></a>Postupy: kreslení jedné B&#233;zier křivkový
 Bézierovy křivky je definována čtyři body: počáteční bod, dvě kontrolních bodů a koncový bod.  

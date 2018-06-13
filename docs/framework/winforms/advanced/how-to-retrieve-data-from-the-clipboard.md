@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524076"
 ---
 # <a name="how-to-retrieve-data-from-the-clipboard"></a>Postupy: Načtení dat ze schránky
 <xref:System.Windows.Forms.Clipboard> Třída poskytuje metody, které můžete použít k interakci s funkcí schránky operačního systému Windows. Mnoho aplikací používá schránky jako dočasné úložiště pro data. Například textové editory používat schránku během operace vyjímání a vkládání. Schránky je také užitečné pro přenos informací z jedné aplikace do jiné.  

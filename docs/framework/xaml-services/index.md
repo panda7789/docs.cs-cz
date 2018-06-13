@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566831"
 ---
 # <a name="xaml-services"></a>XAML Services
 Toto téma popisuje možnosti sadu technologií, označuje jako rozhraní .NET Framework XAML Services. Většina služeb a rozhraní API popsané se nacházejí v sestavení System.Xaml, což je sestavení zavedené [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] sadu sestavení .NET core. Služby zahrnují čtení a zápis, třídy schématu a podporu schématu, objekty Factory zapisujících třídy, vnitřní podporu jazyka XAML a další funkce jazyka XAML.  

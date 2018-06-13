@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520078"
 ---
 # <a name="workflow-persistence"></a>Trvalost pracovního postupu
 Trvalost pracovního postupu je trvanlivý zaznamenávání stavu instance pracovního postupu, nezávisle na informace o procesu nebo počítače. To se provádí nabízí dobře známé bod obnovení pro instanci pracovního postupu v případě selhání systému, nebo zachovat paměti uvolnění instancí pracovního postupu, které nejsou aktivně věnovat práci nebo přesunout stav instance pracovního postupu z jednoho uzlu do jiného uzel ve farmě serverů.  

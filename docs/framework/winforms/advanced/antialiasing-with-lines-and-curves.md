@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520380"
 ---
 # <a name="antialiasing-with-lines-and-curves"></a>Vyhlazení u čar a křivek
 Při použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] kreslení čáry, zadejte výchozí bod a koncový bod řádku, ale není nutné poskytovat žádné informace o jednotlivých pixelů na řádek. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] funguje ve spojení s software ovladače zobrazení k určení, které pixelů bude zapnuto zobrazíte řádek na konkrétní zobrazení zařízení.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569730"
 ---
 # <a name="event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs"></a>Zpracování událostí v dokumentu XML pomocí XmlNodeChangedEventArgs
 **XmlNodeChangedEventArgs** zapouzdří argumenty předávané obslužné rutiny událostí zaregistrované na **třídou XMLDocument nastavenou na** objekt pro zpracování událostí. V následující tabulce je zadané události a popis při při vyvolání.  

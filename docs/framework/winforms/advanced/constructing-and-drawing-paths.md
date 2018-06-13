@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520653"
 ---
 # <a name="constructing-and-drawing-paths"></a>Sestavování a kreslení cest
 Cestu je posloupnost primitiv grafiky (řádky, obdélníky, křivek, text a podobně), které je možné s nimi manipulovat a vykreslovat jako na jednu jednotku. Cestu je možné rozdělit do *obrázky* které jsou otevřené nebo uzavřený. Obrázku může obsahovat několik primitiv.  

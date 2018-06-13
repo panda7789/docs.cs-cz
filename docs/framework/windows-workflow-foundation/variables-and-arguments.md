@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520104"
 ---
 # <a name="variables-and-arguments"></a>Proměnné a argumenty
 V systému Windows Workflow Foundation (WF), proměnné představují úložiště dat a argumenty představují tok dat do a z aktivity. Aktivita má sadu argumentů a jejich tvoří podpis aktivity. Kromě toho aktivitu můžete spravovat seznam proměnné, do kterých vývojář lze přidávat nebo odebírat proměnné při návrhu pracovního postupu. Argument je svázán pomocí výraz, který vrátí hodnotu.  

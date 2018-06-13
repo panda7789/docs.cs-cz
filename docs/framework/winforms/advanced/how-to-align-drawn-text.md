@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522754"
 ---
 # <a name="how-to-align-drawn-text"></a>Postupy: Zarovnání vykresleného textu
 Při provádění vlastní kreslení, můžete často center vykresleného textu ve formuláři nebo ovládací prvek. Můžete snadno zarovnat text vykreslené s <xref:System.Drawing.Graphics.DrawString%2A> nebo <xref:System.Windows.Forms.TextRenderer.DrawText%2A> metody vytváření správné formátování objektu a nastavením příznaků příslušný formát.  

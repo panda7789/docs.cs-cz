@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743729"
 ---
 # <a name="creating-the-game1-class"></a>Vytvoření třídy Game1
 Jak se všechny projekty Microsoft XNA Game1 třída odvozená z [Microsoft.Xna.Framework.Game](http://msdn.microsoft.com/library/microsoft.xna.framework.game.aspx) třídy, která poskytuje základní grafické zařízení inicializace, herní logiku a generování kódu pro XNA hry. Třídy Game1 je docela jednoduchá, protože většinu práce v GamePiece a GamePieceCollection třídy.  

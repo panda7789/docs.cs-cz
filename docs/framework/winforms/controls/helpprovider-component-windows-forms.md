@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524154"
 ---
 # <a name="helpprovider-component-windows-forms"></a>HelpProvider – komponenta (Windows Forms)
 Windows Forms `HelpProvider` součást je použit k přidružení soubor nápovědy HTML – Nápověda 1.x (soubor CHM. vytvořeného s pracoviště Nápověda HTML nebo soubor HTM) s vaší aplikací systému Windows.  

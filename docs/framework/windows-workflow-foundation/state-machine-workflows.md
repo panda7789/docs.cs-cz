@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519636"
 ---
 # <a name="state-machine-workflows"></a>Pracovní postupy stavu počítače
 Stavový stroj je dobře známé zlepší pro vývoj programy. <xref:System.Activities.Statements.StateMachine> Aktivity, spolu s <xref:System.Activities.Statements.State>, <xref:System.Activities.Statements.Transition>, a dalších aktivit můžete použít k sestavení stavu počítače pracovního postupu programy. Toto téma obsahuje přehled vytváření pracovních postupů stav počítače.  

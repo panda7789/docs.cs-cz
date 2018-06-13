@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568882"
 ---
 # <a name="hashtable-and-dictionary-collection-types"></a>Typy kolekce Hashtable a Dictionary
 <xref:System.Collections.Hashtable?displayProperty=nameWithType> Třída a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> implementovat obecné třídy <xref:System.Collections.IDictionary?displayProperty=nameWithType> rozhraní. <xref:System.Collections.Generic.Dictionary%602> Obecná třída také implementuje <xref:System.Collections.Generic.IDictionary%602> obecné rozhraní. Každý prvek v těchto kolekcí je proto pár klíč hodnota.  

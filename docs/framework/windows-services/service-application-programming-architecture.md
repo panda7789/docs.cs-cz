@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516104"
 ---
 # <a name="service-application-programming-architecture"></a>Architektura programování aplikace služby
 Aplikace služby systému Windows jsou založené na třídu, která dědí z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> třídy. Přepsání metody z této třídy a definovat funkce pro ně k určení chování služby.  

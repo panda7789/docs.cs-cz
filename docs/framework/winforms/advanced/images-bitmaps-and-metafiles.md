@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522198"
 ---
 # <a name="images-bitmaps-and-metafiles"></a>Obrázky, rastrové obrázky a metasoubory
 `Image` Třída je abstraktní základní třída, která poskytuje metody pro práci s rastrových obrázků (Bitmap) a vektoru bitové kopie (metasoubory). `Bitmap` Třídy a <xref:System.Drawing.Imaging.Metafile> obě dědí z třídy `Image` třídy. `Bitmap` Třída rozšíří na možnosti `Image` třída tím, že poskytuje další metody pro načítání, ukládání a manipulace s nimi rastrových obrázků. <xref:System.Drawing.Imaging.Metafile> Třída rozšíří na možnosti `Image` třída tím, že poskytuje další metody pro zaznamenání a zkoumání vektoru bitové kopie.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520718"
 ---
 # <a name="help-systems-in-windows-forms-applications"></a>Systémy nápovědy ve formulářových aplikacích Windows
 Jeden z nejdůležitějších courtesies, jako vývojář aplikací, můžete poskytnout uživatelům bez je příslušný systém nápovědy. Toto je, kde bude zapnout když stát nerozumíte nebo disoriented. Poskytnutí systému nápovědy v aplikaci systému Windows se snadno provádí pomocí [HelpProvider – komponenta](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md).  

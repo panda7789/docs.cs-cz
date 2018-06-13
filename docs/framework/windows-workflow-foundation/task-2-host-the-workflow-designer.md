@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519061"
 ---
 # <a name="task-2-host-the-workflow-designer"></a>Úloha 2: Hostování návrháře pracovních postupů
 Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] v aplikaci Windows Presentation Foundation (WPF).  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520120"
 ---
 # <a name="using-workflowidentity-and-versioning"></a>Pomocí WorkflowIdentity a správa verzí
 <xref:System.Activities.WorkflowIdentity> poskytuje způsob pro pracovní postup vývojáři aplikace k přidružit název a <xref:System.Version> s definicí pracovního postupu a pro tyto informace k být přidružen k instanci pracovního postupu trvalý. Tyto informace identity lze použít vývojáři aplikace pracovního postupu povolit scénáře, jako je vedle sebe spouštění více verzí definice pracovního postupu a poskytuje základním kamenem pro další funkce, jako je například dynamická aktualizace. Toto téma poskytuje přehled používání <xref:System.Activities.WorkflowIdentity> s <xref:System.Activities.WorkflowApplication> hostování. Informace o provádění vedle sebe definice pracovního postupu v služby pracovního postupu v tématu [správu verzí vedle sebe v hostitele služby pracovního postupu](../../../docs/framework/wcf/feature-details/side-by-side-versioning-in-workflowservicehost.md). Informace o dynamické aktualizace, najdete v části [dynamické aktualizace](../../../docs/framework/windows-workflow-foundation/dynamic-update.md).  

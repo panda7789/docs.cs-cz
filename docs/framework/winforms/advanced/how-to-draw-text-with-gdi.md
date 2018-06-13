@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522912"
 ---
 # <a name="how-to-draw-text-with-gdi"></a>Postupy: Kreslení textu pomocí GDI
 S <xref:System.Windows.Forms.TextRenderer.DrawText%2A> metoda v <xref:System.Windows.Forms.TextRenderer> třída, dostanete [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] funkce pro kreslení textu na formulář nebo ovládací prvek. [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] vykreslování textu obvykle nabízí lepší výkon a přesnější text měření než [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)].  

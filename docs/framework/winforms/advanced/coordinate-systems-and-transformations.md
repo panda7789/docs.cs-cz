@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521775"
 ---
 # <a name="coordinate-systems-and-transformations"></a>Systém souřadnic a transformace
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje Světové transformace a transformace stránky, které můžete převést (Otočit, škálovat, převede a tak dále) položek nakreslení. Dvě transformace také umožňují fungovat v různých systém souřadnic.  

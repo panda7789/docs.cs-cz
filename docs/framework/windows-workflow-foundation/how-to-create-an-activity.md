@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519604"
 ---
 # <a name="how-to-create-an-activity"></a>Postupy: vytvoření aktivity
 Aktivity jsou core jednotky chování v [!INCLUDE[wf1](../../../includes/wf1-md.md)]. Logika spuštění aktivity můžete implementují ve spravovaném kódu nebo se dá implementovat pomocí jiné aktivity. Toto téma ukazuje, jak vytvořit dvě aktivity. První aktivita je jednoduchý aktivity, která používá kód k implementaci jeho logiku spouštění. Implementace druhá aktivita je definována pomocí jiné aktivity. Tyto aktivity se používají v následující kroky v tomto kurzu.  

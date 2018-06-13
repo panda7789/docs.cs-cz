@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515782"
 ---
 # <a name="operationscope"></a>OperationScope
 Tento příklad ukazuje, jak aktivity, zasílání zpráv <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> můžete použít k vystavení existující vlastní aktivity jako operaci v služby pracovních postupů. Tato ukázka obsahuje novou vlastní aktivitu volána `OperationScope`. Je určena k usnadnění vývoje služby pracovního postupu tak, že umožníte uživatelům vytvářet text činnosti samostatně jako vlastní aktivity a pak je snadno vystavení jako operací služby pomocí `OperationScope` aktivity. Například vlastní `Add` aktivity, která přebírá dva `in` argumentů a vrátí jeden `out` může dojít k vystavení argument jako `Add` provozní stav služby pracovního postupu umístěním do `OperationScope`.  

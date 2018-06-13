@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519503"
 ---
 # <a name="tracking-events-into-event-tracing-in-windows"></a>Sledování událostí do událostí trasování v systému Windows
 Tento příklad ukazuje, jak povolit sledování služby pracovních postupů Windows Workflow Foundation (WF) a vydávání sledování událostí v trasování událostí pro Windows (ETW). Pro vydávání pracovní postup sledování záznamů do trasování událostí pro Windows, používá ukázku účastník sledování ETW (<xref:System.Activities.Tracking.EtwTrackingParticipant>).  

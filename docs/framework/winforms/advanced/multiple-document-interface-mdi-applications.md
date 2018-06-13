@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523965"
 ---
 # <a name="multiple-document-interface-mdi-applications"></a>Aplikace MDI (Multiple-Document Interface)
 Aplikace rozhraní více dokumentů (MDI) umožňují zobrazit více dokumentů ve stejnou dobu, s každý dokument zobrazí v samostatném okně. Aplikace MDI mají často položku nabídky okno s dílčích pro přepínání mezi windows nebo dokumenty.  

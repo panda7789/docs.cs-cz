@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33569756"
 ---
 # <a name="resolving-external-resources-during-xslt-processing"></a>Řešení externím prostředkům během zpracování XSLT
 Existují několikrát během transformace XSLT, kdy budete muset vyřešit externím prostředkům.  

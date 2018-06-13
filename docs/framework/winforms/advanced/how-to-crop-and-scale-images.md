@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521635"
 ---
 # <a name="how-to-crop-and-scale-images"></a>Postupy: Oříznutí a změna měřítka obrázků
 <xref:System.Drawing.Graphics> Třída poskytuje několik <xref:System.Drawing.Graphics.DrawImage%2A> metody, některé z nich musí mít zdrojové a cílové parametry obdélníku, které můžete použít k oříznutí a škálování bitové kopie.  

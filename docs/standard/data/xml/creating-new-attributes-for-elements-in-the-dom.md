@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570377"
 ---
 # <a name="creating-new-attributes-for-elements-in-the-dom"></a>Vytvoření nové atributy pro elementy v modelu DOM
 Vytvoření nového atributu se liší od vytvoření jiných typů uzlů, protože atributy nejsou uzly, ale jsou vlastnosti uzlu elementu a jsou součástí **XmlAttributeCollection** přidružené k elementu. Vytvořte atribut a jeho připojení pro element několika způsoby:  

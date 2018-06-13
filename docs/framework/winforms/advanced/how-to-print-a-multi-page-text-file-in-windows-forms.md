@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523000"
 ---
 # <a name="how-to-print-a-multi-page-text-file-in-windows-forms"></a>Postupy: Tisk vícestránkového textového souboru ve Windows Forms
 Je velmi běžné aplikace založené na systému Windows k vytištění textu. <xref:System.Drawing.Graphics> Třída poskytuje metody pro kreslení objekty (grafiky nebo text) na zařízení, jako je například obrazovky nebo tiskárny.  

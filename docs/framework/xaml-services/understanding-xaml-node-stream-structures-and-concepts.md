@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566649"
 ---
 # <a name="understanding-xaml-node-stream-structures-and-concepts"></a>Principy struktur a koncepcí datových proudů uzlů XAML
 XAML čtení a zápis XAML, jak jsou implementované v rozhraní .NET Framework XAML Services jsou založené na návrh konceptu datový proud uzlu XAML. Datový proud uzlu XAML je koncepci sady uzlů XAML. V této koncepci procesor XAML provede strukturu uzlu vztahy v jazyce XAML, jeden v čase. V každém okamžiku existuje pouze jeden záznam na aktuální nebo aktuální pozici v otevřít datový proud uzlu XAML a mnoho aspektů rozhraní API sestavy pouze informace k dispozici z této pozice. Aktuální uzel v datový proud uzlu XAML lze popsat jako objekt, člen nebo hodnota. Tak, že považuje XAML jako datový proud uzlu XAML, můžete XAML čtečky komunikovat s zapisovače XAML a povolit program k zobrazení, pracovat s nebo alter obsah datový proud uzlu XAML při zatížení cestu nebo uložení operace cestu, která zahrnuje XAML. Rozhraní API návrhu XAML čtení a zápis a koncept datový proud uzlu XAML jsou například podobné předchozí související čtečky a návrhy zapisovače a koncepty, [!INCLUDE[TLA#tla_xmldom](../../../includes/tlasharptla-xmldom-md.md)] a <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> třídy. Toto téma popisuje koncepty datový proud uzlu XAML a popisuje, jak můžete napsat rutiny, které pracují se reprezentace XAML na úrovni uzlu XAML.  

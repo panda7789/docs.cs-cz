@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742946"
 ---
 # <a name="ltremovegt-element-for-bypasslist-network-settings"></a>&lt;Odebrat&gt; Element pro bypasslist – (nastavení sítě)
 Odebere seznam obcházení proxy adresy IP nebo název DNS.  

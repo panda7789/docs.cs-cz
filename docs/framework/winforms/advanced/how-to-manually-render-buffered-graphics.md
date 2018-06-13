@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524193"
 ---
 # <a name="how-to-manually-render-buffered-graphics"></a>Postupy: Ruční zobrazení grafiky uložené do vyrovnávací paměti
 Pokud spravujete vlastní grafiky ve vyrovnávací paměti, musíte být schopná vytvořit a vykreslení grafiky vyrovnávací paměti. Můžete vytvořit instance <xref:System.Drawing.BufferedGraphics> třídu, která souvisí s kreslení povrchy na vaší obrazovce voláním <xref:System.Drawing.BufferedGraphicsContext.Allocate%2A> metoda. Tato metoda vytvoří <xref:System.Drawing.BufferedGraphics> instance, který je přidružen konkrétní vykreslování prostor, jako jsou formuláře nebo ovládacího prvku. Po vytvoření <xref:System.Drawing.BufferedGraphics> instance, při kreslení grafiky do vyrovnávací paměti reprezentuje prostřednictvím <xref:System.Drawing.BufferedGraphics.Graphics%2A> vlastnost. Po provedení všech grafické operace, můžete zkopírovat obsah vyrovnávací paměti na obrazovku voláním <xref:System.Drawing.BufferedGraphics.Render%2A> metoda.  

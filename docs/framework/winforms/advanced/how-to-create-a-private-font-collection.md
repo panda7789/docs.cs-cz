@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523077"
 ---
 # <a name="how-to-create-a-private-font-collection"></a>Postupy: Vytvoření soukromé kolekce písem
 <xref:System.Drawing.Text.PrivateFontCollection> Třída dědí z <xref:System.Drawing.Text.FontCollection> abstraktní základní třída. Můžete použít <xref:System.Drawing.Text.PrivateFontCollection> objekt udržovat sadu písem speciálně pro vaši aplikaci. Kolekce privátní písem může zahrnovat nainstalovaný systém písma, jakož i písma, které nebyly nainstalovány v počítači. Chcete-li přidat soubor písma na kolekci privátní písma, zavolejte <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile%2A> metodu <xref:System.Drawing.Text.PrivateFontCollection> objektu.  

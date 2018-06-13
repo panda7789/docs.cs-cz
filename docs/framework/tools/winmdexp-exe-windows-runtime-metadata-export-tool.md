@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33408096"
 ---
 # <a name="winmdexpexe-windows-runtime-metadata-export-tool"></a>Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)
 [!INCLUDE[wrt](../../../includes/wrt-md.md)] Metadata nástroj pro Export (Winmdexp.exe) transformuje modul rozhraní .NET Framework na soubor, který obsahuje [!INCLUDE[wrt](../../../includes/wrt-md.md)] metadat. I když sestavení rozhraní .NET Framework a [!INCLUDE[wrt](../../../includes/wrt-md.md)] soubory metadat použít stejný fyzický formát, jsou rozdíly v obsahu tabulky metadat, což znamená, že sestavení rozhraní .NET Framework nejsou automaticky použitelné jako [!INCLUDE[wrt](../../../includes/wrt-md.md)] součásti . Proces zapnutí modul do rozhraní .NET Framework [!INCLUDE[wrt](../../../includes/wrt-md.md)] součást se označuje jako *export*. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], bude výsledný soubor metadat (.winmd) systému Windows obsahuje metadata a implementace.  

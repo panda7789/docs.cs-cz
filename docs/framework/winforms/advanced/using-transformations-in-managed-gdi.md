@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523793"
 ---
 # <a name="using-transformations-in-managed-gdi"></a>Použití transformací ve spravovaném GDI+
 Afinní transformace zahrnují otáčení, změnu velikosti, která znázorňuje, zkosení a překladu. V [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], <xref:System.Drawing.Drawing2D.Matrix> třída poskytuje základ pro provádění afinní transformace na vektorové kresby, obrázky a text.  

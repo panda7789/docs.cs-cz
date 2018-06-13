@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516825"
 ---
 # <a name="instance-activation"></a>Instance aktivace
 Ukládání Instance pracovního postupu SQL spustí vnitřní úloh, která pravidelně probudí a zjišťuje instance pracovního postupu spustitelného nebo activatable v databázi trvalost. Pokud najde instanci spustitelného pracovního postupu, upozorní hostitele pracovního postupu, který je schopen aktivace instance. Pokud instance úložiště najde instance activatable pracovního postupu, upozorní obecné hostitele, který aktivuje hostitele pracovního postupu, který pak spustí instanci pracovního postupu. Následující části v tomto tématu popisují proces aktivace instance podrobně.  

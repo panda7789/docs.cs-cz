@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523839"
 ---
 # <a name="using-application-settings-and-user-settings"></a>Použití nastavení aplikace a uživatelských nastavení
 Od verze rozhraní .NET Framework 2.0, můžete vytvořit a přístup k hodnoty, které jsou nastavené jako trvalé mezi relacemi spuštění aplikace. Tyto hodnoty se nazývají *nastavení*. Nastavení může představovat uživatelské předvolby nebo cenné informace aplikaci potřebuje používat. Například může vytvořit řadu nastavení, které ukládají uživatelské předvolby pro barevné schéma aplikace. Nebo může být uložena připojovací řetězec, který určuje databázi, která vaše aplikace používá. Nastavení povolit, že jste do obou uchovávat informace, které je velmi důležité do aplikace mimo kódu a vytváření profilů, které ukládají požadavků jednotlivých uživatelů.  

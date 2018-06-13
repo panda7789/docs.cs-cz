@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551964"
 ---
 # <a name="expander"></a>Rozšíření
 <xref:System.Windows.Controls.Expander> Umožňuje uživatelům zobrazit záhlaví a rozbalte tuto hlavičku další podrobnosti zobrazíte, nebo na Sbalit oddíl až hlavičku.  

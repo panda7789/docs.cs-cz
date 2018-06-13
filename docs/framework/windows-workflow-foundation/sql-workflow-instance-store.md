@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517316"
 ---
 # <a name="sql-workflow-instance-store"></a>Ukládání Instance pracovního postupu SQL
 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Se dodává s SQL úložiště Instance pracovního postupu, která umožňuje pracovní postupy pro zachování stavu informace o instancí pracovních postupů v databázi systému SQL Server 2005 nebo SQL Server 2008. Tato funkce je primárně implementována ve formě <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> třídy, která je odvozena z abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídu rozhraní trvalost. Funkci SQL ukládání Instance pracovního postupu se považuje za trvalost zprostředkovatele SQL, který je konkrétní implementaci trvalost rozhraní API, které hostitel používá k odesílání příkazů trvalost do úložiště.  

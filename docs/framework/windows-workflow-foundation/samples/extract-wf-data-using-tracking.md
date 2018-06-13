@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519870"
 ---
 # <a name="extract-wf-data-using-tracking"></a>Extrahovat Data WF pomocí sledování
 Tento příklad znázorňuje způsob použití sledování extrahovat proměnné pracovního postupu a argumenty z aktivit pracovního postupu. Také ukazuje přidání poznámky do sledování záznamů a extrahování dat datové části v rámci vlastní sledování záznamů. Příklad používá účastník sledování trasování událostí pro Windows (ETW) extrahovat data z pracovního postupu.  

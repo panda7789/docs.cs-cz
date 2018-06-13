@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556871"
 ---
 # <a name="how-to-specify-the-binding-source"></a>Postupy: Určení zdroje připojení
 V datové vazbě zdrojového objektu vazby odkazuje na objekt, který je získat data z. Toto téma popisuje různé způsoby zadávání zdroji vazby.  

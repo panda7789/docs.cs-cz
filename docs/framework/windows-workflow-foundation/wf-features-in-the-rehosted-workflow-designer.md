@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520143"
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Podpora nových funkcí Workflow Foundation 4.5 v Návrháři pracovních postupů opětovné hostování nástroje
 Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] zavedená mnoha nových funkcí, včetně několik vylepšení zkušeností Návrháře pracovního postupu. V tomto tématu jsou tyto funkce jsou podporované v Návrháři opětovné hostování nástroje, a ty, které nejsou aktuálně podporovány.  

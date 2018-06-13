@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557989"
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>Návod: Vytvoření tlačítka použitím XAML
 Cílem tohoto návodu je informace o vytváření animované tlačítko pro použití v aplikaci Windows Presentation Foundation (WPF). Tento návod používá styly a šablonu pro vytvoření přizpůsobené tlačítko prostředek, který umožňuje opětovné použití kódu a oddělení tlačítko logiku z deklarace tlačítko. Tento názorný postup je zapsán výhradně v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552789"
 ---
 # <a name="how-to-improve-the-scrolling-performance-of-a-listbox"></a>Postupy: Zvýšení výkonu posunování prvku ListBox
 Pokud <xref:System.Windows.Controls.ListBox> obsahuje mnoho položek rozhraní odpověď uživatele může být pomalé, co uživatel posune <xref:System.Windows.Controls.ListBox> pomocí kolečka myši nebo přetažením úchytu posuvníku. Může zlepšit výkon <xref:System.Windows.Controls.ListBox> když uživatel posune nastavením `VirtualizingStackPanel.VirtualizationMode` přidružená vlastnost k <xref:System.Windows.Controls.VirtualizationMode.Recycling?displayProperty=nameWithType>.  

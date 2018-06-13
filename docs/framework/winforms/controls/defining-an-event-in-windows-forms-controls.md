@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524030"
 ---
 # <a name="defining-an-event-in-windows-forms-controls"></a>Definování události v ovládacím prvku Windows Forms
 Podrobnosti o definování vlastních událostí najdete v tématu [události](../../../../docs/standard/events/index.md). Pokud definujete událost, která nemá žádné přidružená data, použijte základní typ pro data události <xref:System.EventArgs>a použijte <xref:System.EventHandler> jako delegát události. Uděláte to zbývá určit člen události a s chráněným `On` *EventName* metoda, která vyvolává událost.  

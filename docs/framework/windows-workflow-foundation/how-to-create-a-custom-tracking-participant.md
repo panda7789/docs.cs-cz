@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519529"
 ---
 # <a name="how-to-create-a-custom-tracking-participant"></a>Postupy: vytvoření vlastní sledování účastník
 Pracovní postup sledování poskytuje přehled o stavu spuštění pracovního postupu. Modul runtime pracovního postupu vysílá sledování záznamy, které popisují pracovního postupu události životního cyklu, události aktivit životního cyklu, obnovení záložku a chyb. Tyto záznamy o sledování jsou spotřebovávána sledování účastníky. Windows Workflow Foundation (WF) obsahuje standardní sledování člena, který zapíše sledování záznamů jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník. Tento kurz – krok popisuje, jak vytvořit vlastní sledování účastník a sledování profil, který zaznamenat výstup `WriteLine` aktivity, aby mohly být zobrazeny pro uživatele.  

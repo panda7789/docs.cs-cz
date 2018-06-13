@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523764"
 ---
 # <a name="how-to-create-a-new-setting-at-design-time"></a>Postupy: Vytvoření nového nastavení při návrhu
 Můžete vytvořit nové nastavení v době návrhu pomocí Návrháře nastavení. Návrhář nastavení je rozhraní stylu mřížky, které vám umožní vytvořit nové nastavení a zadejte vlastnosti pro toto nastavení. Musíte zadat název, hodnotu, typ a obor pro nové nastavení. Po vytvoření nastavení je dostupné v kódu.  

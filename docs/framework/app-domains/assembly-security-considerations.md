@@ -22,6 +22,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743417"
 ---
 # <a name="assembly-security-considerations"></a>Důležité informace o zabezpečení sestavení
 <a name="top"></a> Při vytváření sestavení, můžete sadu oprávnění, která sestavení vyžaduje ke spuštění. Zda jsou některá oprávnění udělit nebo nejsou udělena sestavení je založena na důkaz.  

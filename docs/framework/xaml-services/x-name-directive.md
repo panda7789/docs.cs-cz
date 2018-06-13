@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565847"
 ---
 # <a name="xname-directive"></a>x:Name – direktiva
 Jednoznačně identifikuje elementů XAML definované v XAML namescope. XAML namescopes a jejich jedinečnost modely je použít pro vytvořených objektů architektury poskytují rozhraní API nebo implementaci chování, které přístup k objektu vytvořeny XAML grafu v době běhu.  

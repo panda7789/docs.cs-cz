@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33508316"
 ---
 # <a name="user-name-password-validator"></a>Validátor hesel pro uživatelská jména
 Tento příklad ukazuje, jak implementovat vlastní UserNamePassword validátor. To je užitečné v případech, kdy žádný z předdefinovaných režimy ověřování UserNamePassword je vhodné pro požadavky na aplikace; Pokud jsou například páry uživatelského jména a hesla uloženy v některé externí úložiště, jako je databáze. Tento příklad ukazuje služba, která má vlastní validátor, která vyhledává dvě dvojice konkrétní uživatelské jméno a heslo. Klient používá dvojici uživatelské jméno a heslo k ověření služby.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523680"
 ---
 # <a name="using-the-world-transformation"></a>Použití světové transformace
 Světové transformace je vlastnost <xref:System.Drawing.Graphics> třídy. Čísla, které určují Světové transformace jsou uložené v <xref:System.Drawing.Drawing2D.Matrix> objekt, který představuje matici 3 x 3. <xref:System.Drawing.Drawing2D.Matrix> a <xref:System.Drawing.Graphics> třídy mají několik metod pro nastavení čísla v transformační matice world.  

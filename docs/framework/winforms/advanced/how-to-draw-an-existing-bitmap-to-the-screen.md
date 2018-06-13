@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522317"
 ---
 # <a name="how-to-draw-an-existing-bitmap-to-the-screen"></a>Postupy: Nakreslení existujícího rastrového obrázku na obrazovku
 Na obrazovce můžete snadno nakreslit stávající image. Nejprve je nutné vytvořit <xref:System.Drawing.Bitmap> objekt pomocí konstruktor rastrový obrázek, který přebírá název souboru, <xref:System.Drawing.Bitmap.%23ctor%28System.String%29>. Tento konstruktor přijímá obrázků pomocí několika různých formátech souborů, včetně BMP, GIF, JPEG, PNG a TIFF. Po vytvoření <xref:System.Drawing.Bitmap> objektu, který předat <xref:System.Drawing.Bitmap> do objektu <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518842"
 ---
 # <a name="confirmation"></a>Potvrzení
 Tento příklad ukazuje čtyři běžné scénáře, které obaluje použití <xref:System.Activities.Statements.CompensableActivity> a potvrzení hesla. Ukázka spustí čtyři pracovní postupy pro zobrazení potvrzení. Tato ukázka je dostupná v deklarativní a imperativní verze.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33409903"
 ---
 # <a name="sosdll-sos-debugging-extension"></a>SOS.dll (rozšíření ladění SOS)
 Rozšíření ladění SOS (SOS.dll) pomáhá při ladění spravovaných aplikacích v sadě Visual Studio a v ladicím programu systému Windows (WinDbg.exe) tím, že poskytuje informace o interní prostředí Common Language Runtime (CLR). Tento nástroj vyžaduje, aby měl projekt povoleno nespravované ladění. Knihovna SOS.dll je automaticky nainstalována společně s rozhraním .NET Framework. Chcete-li použít SOS.dll v sadě Visual Studio, nainstalujte [ovladač Kit WDK (Windows)](http://msdn.microsoft.com/windows/hardware/hh852362).  

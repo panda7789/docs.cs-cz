@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519490"
 ---
 # <a name="contract-first-workflow-service-development"></a>Vývoj kontrakt první pracovní postup služby
 Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], funkce Windows Workflow Foundation (WF) lepší integrace mezi webové služby a pracovní postupy ve formě vývoj kontrakt první pracovního postupu. Nástroj pro vývoj kontrakt první pracovního postupu můžete navrhnout první kontrakt v kódu. Nástroj potom automaticky generuje šablonu aktivit v sadě nástrojů pro operace v kontraktu. Toto téma obsahuje přehled aktivit a vlastnosti ve službě pracovního postupu mapování do atributy kontraktu služby. Podrobný příklad vytváření pracovního postupu první kontraktu služby najdete v tématu [postupy: vytvoření služby pracovního postupu, který využívá existující smlouvy služby](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522457"
 ---
 # <a name="how-to-create-a-linear-gradient"></a>Postupy: Vytvoření lineárního přechodu
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje vodorovné, svislé a diagonálních lineární přechody. Ve výchozím nastavení změní barvu v lineárního přechodu jednotně. Lineárního přechodu však můžete přizpůsobit tak, že změní barvu způsobem neuniformní.  

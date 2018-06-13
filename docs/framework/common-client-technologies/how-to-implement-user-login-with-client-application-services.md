@@ -14,6 +14,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743807"
 ---
 # <a name="how-to-implement-user-login-with-client-application-services"></a>Postupy: Implementace přihlášení uživatele u klientských aplikačních služeb
 Klient aplikačních služeb můžete použít k ověření uživatelů pomocí stávající [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profilu služby. Informace o tom, jak nastavit [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] profilu služby najdete v tématu [použití ověřování pomocí formulářů s Microsoft Ajax](http://msdn.microsoft.com/library/c50f7dc5-323c-4c63-b4f3-96edfc1e815e).  

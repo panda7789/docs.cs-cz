@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559458"
 ---
 # <a name="how-to-draw-a-closed-shape-by-using-the-polygon-element"></a>Postupy: Vykreslení zavřeného tvaru použitím mnohoúhelníku
 Tento příklad ukazuje, jak k vykreslení uzavřený obrazec pomocí <xref:System.Windows.Shapes.Polygon> elementu. Kreslení uzavřený obrazec, vytvoření <xref:System.Windows.Shapes.Polygon> elementu a použít jeho <xref:System.Windows.Shapes.Polygon.Points%2A> vlastnosti k určení vrcholy obrazce. Řádek automaticky vykreslením, který se připojuje první a poslední bod. Nakonec zadejte <xref:System.Windows.Shapes.Shape.Fill%2A>, <xref:System.Windows.Shapes.Shape.Stroke%2A>, nebo obojí.  

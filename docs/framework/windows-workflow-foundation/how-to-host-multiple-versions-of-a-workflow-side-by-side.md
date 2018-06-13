@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520484"
 ---
 # <a name="how-to-host-multiple-versions-of-a-workflow-side-by-side"></a>Postupy: hostování více verzí pracovní postup-souběžného
 `WorkflowIdentity` umožňuje vývojářům aplikací pracovního postupu pro definici pracovního postupu přidružení název a verzi a pro tyto informace k být přidružen k instanci pracovního postupu trvalý. Tyto informace identity lze použít vývojáři aplikace pracovního postupu povolit scénáře, jako je vedle sebe spouštění více verzí definice pracovního postupu a poskytuje základním kamenem pro další funkce, jako je například dynamická aktualizace. Tento krok v tomto kurzu ukazuje, jak používat `WorkflowIdentity` k hostování více verzí pracovního postupu ve stejnou dobu.  

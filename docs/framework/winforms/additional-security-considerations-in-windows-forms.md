@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519909"
 ---
 # <a name="additional-security-considerations-in-windows-forms"></a>Dodatečné informace o zabezpečení ve Windows Forms
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] nastavení zabezpečení může způsobit, že aplikace na spouštění v prostředí s částečnou důvěryhodností než jinak v místním počítači. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Omezuje přístup k takové kritické místním prostředkům jako systém souborů, sítě a nespravované rozhraní API, mimo jiné. Nastavení zabezpečení vliv na schopnost volat rozhraní API Win32 Microsoft nebo jiná rozhraní API, který nemůže být ověřen systémem zabezpečení. Zabezpečení ovlivní také dalších aspektů vaší aplikace, včetně souborů a dat přístupu a tisku. Další informace o přístupu k souborům a data v prostředí s částečnou důvěryhodností najdete v tématu [další soubor zabezpečení a přístup k datům ve Windows Forms](../../../docs/framework/winforms/more-secure-file-and-data-access-in-windows-forms.md). Další informace o tisku v prostředí s částečnou důvěryhodností najdete v tématu [další Secure tiskem v systému Windows Forms](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md).  

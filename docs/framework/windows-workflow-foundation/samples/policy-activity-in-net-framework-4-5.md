@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518897"
 ---
 # <a name="policy-activity-in-net-framework-45"></a>Zásady aktivity v rozhraní .NET Framework 4.5
 Aktivita Policy4 povoluje modelu Windows Workflow Foundation v [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] (WF 3.5) <xref:System.Workflow.Activities.Rules.RuleSet> objekty, které chcete použít v modelu Windows Workflow Foundation v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] (WF 4.5) přímo pomocí pravidla modulem, který se dodává v WF 3.5. Pomocí této aktivity může vytvářet a spouštět WF 3.5 <xref:System.Workflow.Activities.Rules.RuleSet>. Další informace o stroj pravidel 3.5 WF jako součást modelu Windows Workflow Foundation, přečtěte si úvod k modulu Windows Workflow Foundation pravidla. Další informace o migraci pravidla, která WF v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)], přečtěte si prosím [migrace pokyny](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md).  

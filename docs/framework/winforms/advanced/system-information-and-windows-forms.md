@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524112"
 ---
 # <a name="system-information-and-windows-forms"></a>Systémové informace a Windows Forms
 Někdy je nutné shromažďovat informace o počítači, který vaše aplikace běží na tak, aby rozhodnutí v kódu. Například můžete mít funkce, které platí pouze při připojení k doméně konkrétní síť; v takovém případě musíte způsob, jak určit domény a zakázat funkce, pokud doména není k dispozici.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33387182"
 ---
 # <a name="configuring-assembly-binding-redirection"></a>Konfigurace přesměrování vazby sestavení
 Ve výchozím nastavení používají aplikace sadu sestavení rozhraní .NET Framework, která jsou součástí na verzi modulu runtime používá ke kompilaci aplikace. Můžete použít **AppliesTo –** atributu u [ \<assemblybinding – >](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) element v konfiguračním souboru aplikace pro přesměrování odkazy na sestavení vazbu na konkrétní verzi rozhraní .NET Sestavení architektury. Tento volitelný atribut používá označíte, která verze se vztahuje na číslo verze rozhraní .NET Framework. Pokud žádné **AppliesTo –** atribut zadán,  **\<assemblybinding – >** element platí pro všechny verze rozhraní .NET Framework.  

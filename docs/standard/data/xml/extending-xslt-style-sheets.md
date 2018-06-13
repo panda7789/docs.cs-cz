@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568820"
 ---
 # <a name="extending-xslt-style-sheets"></a>Rozšíření šablony stylů XSLT
 Tato část popisuje různé metody rozšíření funkcí XSLT. Můžete přidat objekty rozšíření nebo parametry s využitím <xref:System.Xml.Xsl.XsltArgumentList> třídy. Rozšíření objektů nebo parametry může být volána z této šablony. Kromě toho můžete také vložit blocích skriptu do šablony stylů pomocí `msxsl:script` elementu.  
