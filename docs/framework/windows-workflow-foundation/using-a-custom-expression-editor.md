@@ -1,42 +1,31 @@
 ---
 title: Pomocí vlastního výrazu editoru
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: 0901b58b-e037-44a8-8281-f6f54361cfca
-caps.latest.revision: 8
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 6e9481364a70257f6c1711692daf5c81eee9fd88
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 4eb39fbd51cf4f1914f7fdca545f9c9fd8e83240
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518574"
 ---
-# <a name="using-a-custom-expression-editor"></a><span data-ttu-id="ecf48-102">Pomocí vlastního výrazu editoru</span><span class="sxs-lookup"><span data-stu-id="ecf48-102">Using a Custom Expression Editor</span></span>
-<span data-ttu-id="ecf48-103">Editor vlastního výrazu se dá implementovat zajistit výraz bohatší nebo jednodušší prostředí pro úpravy.</span><span class="sxs-lookup"><span data-stu-id="ecf48-103">A custom expression editor can be implemented to provide a richer or simpler expression editing experience.</span></span> <span data-ttu-id="ecf48-104">Existuje několik situací, ve kterých můžete chtít použít editor vlastního výrazu:</span><span class="sxs-lookup"><span data-stu-id="ecf48-104">There are several scenarios in which you might want to use a custom expression editor:</span></span>  
+# <a name="using-a-custom-expression-editor"></a><span data-ttu-id="f0a40-102">Pomocí vlastního výrazu editoru</span><span class="sxs-lookup"><span data-stu-id="f0a40-102">Using a Custom Expression Editor</span></span>
+<span data-ttu-id="f0a40-103">Editor vlastního výrazu se dá implementovat zajistit výraz bohatší nebo jednodušší prostředí pro úpravy.</span><span class="sxs-lookup"><span data-stu-id="f0a40-103">A custom expression editor can be implemented to provide a richer or simpler expression editing experience.</span></span> <span data-ttu-id="f0a40-104">Existuje několik situací, ve kterých můžete chtít použít editor vlastního výrazu:</span><span class="sxs-lookup"><span data-stu-id="f0a40-104">There are several scenarios in which you might want to use a custom expression editor:</span></span>  
   
--   <span data-ttu-id="ecf48-105">Poskytovat podporu technologie IntelliSense a dalších bohaté funkce v Návrháři pracovních postupů opětovné hostování nástroje pro úpravy.</span><span class="sxs-lookup"><span data-stu-id="ecf48-105">To provide support for IntelliSense and other rich editing features in a rehosted workflow designer.</span></span> <span data-ttu-id="ecf48-106">Tato funkce je třeba zadat, protože výraz editoru Visual Studio výchozí nelze použít v opětovné hostování nástroje aplikace.</span><span class="sxs-lookup"><span data-stu-id="ecf48-106">This functionality must be provided because the default Visual Studio expression editor cannot be used in rehosted applications.</span></span>  
+-   <span data-ttu-id="f0a40-105">Poskytovat podporu technologie IntelliSense a dalších bohaté funkce v Návrháři pracovních postupů opětovné hostování nástroje pro úpravy.</span><span class="sxs-lookup"><span data-stu-id="f0a40-105">To provide support for IntelliSense and other rich editing features in a rehosted workflow designer.</span></span> <span data-ttu-id="f0a40-106">Tato funkce je třeba zadat, protože výraz editoru Visual Studio výchozí nelze použít v opětovné hostování nástroje aplikace.</span><span class="sxs-lookup"><span data-stu-id="f0a40-106">This functionality must be provided because the default Visual Studio expression editor cannot be used in rehosted applications.</span></span>  
   
--   <span data-ttu-id="ecf48-107">Pro zjednodušení výraz prostředí pro obchodní analytik uživatele, pro úpravy, aby se po není, například vyžaduje výuka Visual Basic nebo řešit výrazy jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="ecf48-107">To simplify the expression editing experience for the business analyst users, so that they are not, for example, required to learn Visual Basic or deal with Visual Basic expressions.</span></span>  
+-   <span data-ttu-id="f0a40-107">Pro zjednodušení výraz prostředí pro obchodní analytik uživatele, pro úpravy, aby se po není, například vyžaduje výuka Visual Basic nebo řešit výrazy jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="f0a40-107">To simplify the expression editing experience for the business analyst users, so that they are not, for example, required to learn Visual Basic or deal with Visual Basic expressions.</span></span>  
   
- <span data-ttu-id="ecf48-108">Tři základní kroky, které jsou potřebné pro provedení editor vlastního výrazu:</span><span class="sxs-lookup"><span data-stu-id="ecf48-108">Three basic steps are needed to implement a custom expression editor:</span></span>  
+ <span data-ttu-id="f0a40-108">Tři základní kroky, které jsou potřebné pro provedení editor vlastního výrazu:</span><span class="sxs-lookup"><span data-stu-id="f0a40-108">Three basic steps are needed to implement a custom expression editor:</span></span>  
   
-1.  <span data-ttu-id="ecf48-109">Implementace <xref:System.Activities.Presentation.View.IExpressionEditorService> rozhraní.</span><span class="sxs-lookup"><span data-stu-id="ecf48-109">Implement the <xref:System.Activities.Presentation.View.IExpressionEditorService> interface.</span></span> <span data-ttu-id="ecf48-110">Toto rozhraní spravuje vytváření a odstraňování editory výraz.</span><span class="sxs-lookup"><span data-stu-id="ecf48-110">This interface manages the creation and destruction of expression editors.</span></span>  
+1.  <span data-ttu-id="f0a40-109">Implementace <xref:System.Activities.Presentation.View.IExpressionEditorService> rozhraní.</span><span class="sxs-lookup"><span data-stu-id="f0a40-109">Implement the <xref:System.Activities.Presentation.View.IExpressionEditorService> interface.</span></span> <span data-ttu-id="f0a40-110">Toto rozhraní spravuje vytváření a odstraňování editory výraz.</span><span class="sxs-lookup"><span data-stu-id="f0a40-110">This interface manages the creation and destruction of expression editors.</span></span>  
   
-2.  <span data-ttu-id="ecf48-111">Implementace <xref:System.Activities.Presentation.View.IExpressionEditorInstance> rozhraní.</span><span class="sxs-lookup"><span data-stu-id="ecf48-111">Implement the <xref:System.Activities.Presentation.View.IExpressionEditorInstance> interface.</span></span> <span data-ttu-id="ecf48-112">Toto rozhraní implementuje rozhraní pro výraz uživatelského rozhraní pro úpravy.</span><span class="sxs-lookup"><span data-stu-id="ecf48-112">This interface implements the UI for expression editing UI.</span></span>  
+2.  <span data-ttu-id="f0a40-111">Implementace <xref:System.Activities.Presentation.View.IExpressionEditorInstance> rozhraní.</span><span class="sxs-lookup"><span data-stu-id="f0a40-111">Implement the <xref:System.Activities.Presentation.View.IExpressionEditorInstance> interface.</span></span> <span data-ttu-id="f0a40-112">Toto rozhraní implementuje rozhraní pro výraz uživatelského rozhraní pro úpravy.</span><span class="sxs-lookup"><span data-stu-id="f0a40-112">This interface implements the UI for expression editing UI.</span></span>  
   
-3.  <span data-ttu-id="ecf48-113">Publikování <xref:System.Activities.Presentation.View.IExpressionEditorService> v aplikaci opětovné hostování nástroje pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="ecf48-113">Publish the <xref:System.Activities.Presentation.View.IExpressionEditorService> in your rehosted workflow application.</span></span>  
+3.  <span data-ttu-id="f0a40-113">Publikování <xref:System.Activities.Presentation.View.IExpressionEditorService> v aplikaci opětovné hostování nástroje pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="f0a40-113">Publish the <xref:System.Activities.Presentation.View.IExpressionEditorService> in your rehosted workflow application.</span></span>  
   
-## <a name="implementing-a-custom-expression-editor-in-a-class-library"></a><span data-ttu-id="ecf48-114">Implementace vlastního editoru výrazu v knihovny tříd</span><span class="sxs-lookup"><span data-stu-id="ecf48-114">Implementing a Custom Expression Editor in a Class Library</span></span>  
- <span data-ttu-id="ecf48-115">Zde je ukázka kódu pro (testování konceptu) `MyEditorService` třídu, která implementuje <xref:System.Activities.Presentation.View.IExpressionEditorService> rozhraní je obsažen v projektu knihovny MyExpressionEditorService.</span><span class="sxs-lookup"><span data-stu-id="ecf48-115">Here is a sample of code for a (proof of concept) `MyEditorService` class that implements the <xref:System.Activities.Presentation.View.IExpressionEditorService> interface is contained in a MyExpressionEditorService library project.</span></span>  
+## <a name="implementing-a-custom-expression-editor-in-a-class-library"></a><span data-ttu-id="f0a40-114">Implementace vlastního editoru výrazu v knihovny tříd</span><span class="sxs-lookup"><span data-stu-id="f0a40-114">Implementing a Custom Expression Editor in a Class Library</span></span>  
+ <span data-ttu-id="f0a40-115">Zde je ukázka kódu pro (testování konceptu) `MyEditorService` třídu, která implementuje <xref:System.Activities.Presentation.View.IExpressionEditorService> rozhraní je obsažen v projektu knihovny MyExpressionEditorService.</span><span class="sxs-lookup"><span data-stu-id="f0a40-115">Here is a sample of code for a (proof of concept) `MyEditorService` class that implements the <xref:System.Activities.Presentation.View.IExpressionEditorService> interface is contained in a MyExpressionEditorService library project.</span></span>  
   
 ```  
 using System;  
@@ -82,7 +71,7 @@ namespace MyExpressionEditorService
 }  
 ```  
   
- <span data-ttu-id="ecf48-116">Zde je kód pro `MyExpressionEditorInstance` třídu, která implementuje <xref:System.Activities.Presentation.View.IExpressionEditorInstance> rozhraní v projektu knihovny MyExpressionEditorService.</span><span class="sxs-lookup"><span data-stu-id="ecf48-116">Here is the code for a `MyExpressionEditorInstance` class that implements the <xref:System.Activities.Presentation.View.IExpressionEditorInstance> interface in a MyExpressionEditorService library project.</span></span>  
+ <span data-ttu-id="f0a40-116">Zde je kód pro `MyExpressionEditorInstance` třídu, která implementuje <xref:System.Activities.Presentation.View.IExpressionEditorInstance> rozhraní v projektu knihovny MyExpressionEditorService.</span><span class="sxs-lookup"><span data-stu-id="f0a40-116">Here is the code for a `MyExpressionEditorInstance` class that implements the <xref:System.Activities.Presentation.View.IExpressionEditorInstance> interface in a MyExpressionEditorService library project.</span></span>  
   
 ```  
 using System;  
@@ -232,8 +221,8 @@ namespace MyExpressionEditorService
 }  
 ```  
   
-### <a name="publishing-a-custom-expression-editor-in-a-wpf-project"></a><span data-ttu-id="ecf48-117">Publikování vlastního editoru výrazu v projekt WPF</span><span class="sxs-lookup"><span data-stu-id="ecf48-117">Publishing a Custom Expression Editor in a WPF Project</span></span>  
- <span data-ttu-id="ecf48-118">Zde je kód, který ukazuje, jak opětovným hostováním Návrhář v [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] aplikace a postup vytvoření a publikování `MyEditorService` služby.</span><span class="sxs-lookup"><span data-stu-id="ecf48-118">Here is the code that shows how to rehost the designer in a [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] application and how to create and publish the `MyEditorService` service.</span></span> <span data-ttu-id="ecf48-119">Před použitím tento kód se přidáte odkaz na projekt knihovny MyExpressionEditorService z projektu, který obsahuje avalon2 aplikaci.</span><span class="sxs-lookup"><span data-stu-id="ecf48-119">Before using this code, add a reference to the MyExpressionEditorService library project from the project that contains the avalon2 application.</span></span>  
+### <a name="publishing-a-custom-expression-editor-in-a-wpf-project"></a><span data-ttu-id="f0a40-117">Publikování vlastního editoru výrazu v projekt WPF</span><span class="sxs-lookup"><span data-stu-id="f0a40-117">Publishing a Custom Expression Editor in a WPF Project</span></span>  
+ <span data-ttu-id="f0a40-118">Zde je kód, který ukazuje, jak opětovným hostováním Návrhář v [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] aplikace a postup vytvoření a publikování `MyEditorService` služby.</span><span class="sxs-lookup"><span data-stu-id="f0a40-118">Here is the code that shows how to rehost the designer in a [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] application and how to create and publish the `MyEditorService` service.</span></span> <span data-ttu-id="f0a40-119">Před použitím tento kód se přidáte odkaz na projekt knihovny MyExpressionEditorService z projektu, který obsahuje avalon2 aplikaci.</span><span class="sxs-lookup"><span data-stu-id="f0a40-119">Before using this code, add a reference to the MyExpressionEditorService library project from the project that contains the avalon2 application.</span></span>  
   
 ```  
 using System.Windows;  
@@ -286,10 +275,10 @@ namespace WpfApplication1
 }  
 ```  
   
-### <a name="notes"></a><span data-ttu-id="ecf48-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ecf48-120">Notes</span></span>  
- <span data-ttu-id="ecf48-121">Pokud používáte **ExpressionTextBox** ovládacího prvku v Návrháři vlastní aktivitu, není nutné vytvořit a zrušení editory výraz pomocí <xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A> a <xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A> metody <xref:System.Activities.Presentation.View.IExpressionEditorService> rozhraní.</span><span class="sxs-lookup"><span data-stu-id="ecf48-121">If you are using an **ExpressionTextBox** control in a custom activity designer, it is not necessary to create and destroy expression editors using the <xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A> and <xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A> methods of the <xref:System.Activities.Presentation.View.IExpressionEditorService> interface.</span></span> <span data-ttu-id="ecf48-122"><xref:System.Activities.Presentation.View.ExpressionTextBox> Tato třída spravuje za vás.</span><span class="sxs-lookup"><span data-stu-id="ecf48-122">The <xref:System.Activities.Presentation.View.ExpressionTextBox> class manages this for you.</span></span>  
+### <a name="notes"></a><span data-ttu-id="f0a40-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f0a40-120">Notes</span></span>  
+ <span data-ttu-id="f0a40-121">Pokud používáte **ExpressionTextBox** ovládacího prvku v Návrháři vlastní aktivitu, není nutné vytvořit a zrušení editory výraz pomocí <xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A> a <xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A> metody <xref:System.Activities.Presentation.View.IExpressionEditorService> rozhraní.</span><span class="sxs-lookup"><span data-stu-id="f0a40-121">If you are using an **ExpressionTextBox** control in a custom activity designer, it is not necessary to create and destroy expression editors using the <xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A> and <xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A> methods of the <xref:System.Activities.Presentation.View.IExpressionEditorService> interface.</span></span> <span data-ttu-id="f0a40-122"><xref:System.Activities.Presentation.View.ExpressionTextBox> Tato třída spravuje za vás.</span><span class="sxs-lookup"><span data-stu-id="f0a40-122">The <xref:System.Activities.Presentation.View.ExpressionTextBox> class manages this for you.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ecf48-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="ecf48-123">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="f0a40-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="f0a40-123">See Also</span></span>  
  <xref:System.Activities.Presentation.View.IExpressionEditorService>  
  <xref:System.Activities.Presentation.View.IExpressionEditorInstance>  
- [<span data-ttu-id="ecf48-124">Použití ExpressionTextBox v návrháři vlastní aktivity</span><span class="sxs-lookup"><span data-stu-id="ecf48-124">Using the ExpressionTextBox in a Custom Activity Designer</span></span>](../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)
+ [<span data-ttu-id="f0a40-124">Použití ExpressionTextBox v návrháři vlastní aktivity</span><span class="sxs-lookup"><span data-stu-id="f0a40-124">Using the ExpressionTextBox in a Custom Activity Designer</span></span>](../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)

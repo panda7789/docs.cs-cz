@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerInfo2::GetBoxClassLayout – metoda"
-ms.custom: 
+title: ICorProfilerInfo2::GetBoxClassLayout – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerInfo2.GetBoxClassLayout
 api_location:
@@ -23,22 +15,19 @@ helpviewer_keywords:
 ms.assetid: 624672b5-1189-488a-85d2-3e12b49617c1
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 9ef6df997a4ba4369b87789e47ac7ead2206162e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f046fb51753bfa79d333d465e8850794ecc73973
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33453535"
 ---
-# <a name="icorprofilerinfo2getboxclasslayout-method"></a><span data-ttu-id="440a7-102">ICorProfilerInfo2::GetBoxClassLayout – metoda</span><span class="sxs-lookup"><span data-stu-id="440a7-102">ICorProfilerInfo2::GetBoxClassLayout Method</span></span>
-<span data-ttu-id="440a7-103">Získá informace o tom, kde nachází typ zadané hodnoty při je zabalená.</span><span class="sxs-lookup"><span data-stu-id="440a7-103">Gets information about where the specified value type is located when it is boxed.</span></span>  
+# <a name="icorprofilerinfo2getboxclasslayout-method"></a><span data-ttu-id="14526-102">ICorProfilerInfo2::GetBoxClassLayout – metoda</span><span class="sxs-lookup"><span data-stu-id="14526-102">ICorProfilerInfo2::GetBoxClassLayout Method</span></span>
+<span data-ttu-id="14526-103">Získá informace o tom, kde nachází typ zadané hodnoty při je zabalená.</span><span class="sxs-lookup"><span data-stu-id="14526-103">Gets information about where the specified value type is located when it is boxed.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="440a7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="440a7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="14526-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="14526-104">Syntax</span></span>  
   
 ```  
 HRESULT GetBoxClassLayout(  
@@ -46,25 +35,25 @@ HRESULT GetBoxClassLayout(
     [out] ULONG32 *pBufferOffset);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="440a7-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="440a7-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="14526-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="14526-105">Parameters</span></span>  
  `classId`  
- <span data-ttu-id="440a7-106">[v] ID třídy, která popisuje typ hodnoty, který je zabalená.</span><span class="sxs-lookup"><span data-stu-id="440a7-106">[in] The ID of the class that describes the value type that is boxed.</span></span>  
+ <span data-ttu-id="14526-106">[v] ID třídy, která popisuje typ hodnoty, který je zabalená.</span><span class="sxs-lookup"><span data-stu-id="14526-106">[in] The ID of the class that describes the value type that is boxed.</span></span>  
   
  `pBufferOffset`  
- <span data-ttu-id="440a7-107">[out] Celé číslo, které je posun vzhledem k zabalené objekt ukazatel ID typ hodnoty.</span><span class="sxs-lookup"><span data-stu-id="440a7-107">[out] An integer that is the offset, relative to the boxed object ID pointer, of the value type.</span></span>  
+ <span data-ttu-id="14526-107">[out] Celé číslo, které je posun vzhledem k zabalené objekt ukazatel ID typ hodnoty.</span><span class="sxs-lookup"><span data-stu-id="14526-107">[out] An integer that is the offset, relative to the boxed object ID pointer, of the value type.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="440a7-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="440a7-108">Remarks</span></span>  
- <span data-ttu-id="440a7-109">`pBufferOffset` Hodnota je umístění typ hodnoty v rámci pole.</span><span class="sxs-lookup"><span data-stu-id="440a7-109">The `pBufferOffset` value is the location of the value type within a box.</span></span> <span data-ttu-id="440a7-110">Po `pBufferOffset` se použije na objekt zabalené rozložení třída typ hodnoty lze interpretovat hodnota objektu.</span><span class="sxs-lookup"><span data-stu-id="440a7-110">After `pBufferOffset` is applied to a boxed object, the value type's class layout can be used to interpret the object's value.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="14526-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="14526-108">Remarks</span></span>  
+ <span data-ttu-id="14526-109">`pBufferOffset` Hodnota je umístění typ hodnoty v rámci pole.</span><span class="sxs-lookup"><span data-stu-id="14526-109">The `pBufferOffset` value is the location of the value type within a box.</span></span> <span data-ttu-id="14526-110">Po `pBufferOffset` se použije na objekt zabalené rozložení třída typ hodnoty lze interpretovat hodnota objektu.</span><span class="sxs-lookup"><span data-stu-id="14526-110">After `pBufferOffset` is applied to a boxed object, the value type's class layout can be used to interpret the object's value.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="440a7-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="440a7-111">Requirements</span></span>  
- <span data-ttu-id="440a7-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="440a7-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="14526-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="14526-111">Requirements</span></span>  
+ <span data-ttu-id="14526-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="14526-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="440a7-113">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="440a7-113">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="14526-113">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="14526-113">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="440a7-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="440a7-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="14526-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="14526-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="440a7-115">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="440a7-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="14526-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="14526-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="440a7-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="440a7-116">See Also</span></span>  
- [<span data-ttu-id="440a7-117">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="440a7-117">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [<span data-ttu-id="440a7-118">ICorProfilerInfo2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="440a7-118">ICorProfilerInfo2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="14526-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="14526-116">See Also</span></span>  
+ [<span data-ttu-id="14526-117">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="14526-117">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
+ [<span data-ttu-id="14526-118">ICorProfilerInfo2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="14526-118">ICorProfilerInfo2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
