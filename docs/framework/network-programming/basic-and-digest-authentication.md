@@ -1,12 +1,6 @@
 ---
-title: "Základní a ověřování algoritmem Digest"
-ms.custom: 
+title: Základní a ověřování algoritmem Digest
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -25,21 +19,20 @@ helpviewer_keywords:
 - network resources, authentication
 - user authentication, digest
 ms.assetid: 8cce2742-8d52-4643-9dd2-64ddf38aa878
-caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.workload: dotnet
-ms.openlocfilehash: 7ca66a65c05da3d515358c0fdb26682fa4ec1438
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fc061065caa4dad878a2a9b45e98ecb0d419d18b
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398219"
 ---
-# <a name="basic-and-digest-authentication"></a><span data-ttu-id="1e6ee-102">Základní a ověřování algoritmem Digest</span><span class="sxs-lookup"><span data-stu-id="1e6ee-102">Basic and Digest Authentication</span></span>
-<span data-ttu-id="1e6ee-103"><xref:System.Net> Implementace basic a ověřování algoritmem digest splňuje RFC2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest (k dispozici na webu World Wide Web Consortium na www.w3.org).</span><span class="sxs-lookup"><span data-stu-id="1e6ee-103">The <xref:System.Net> implementation of basic and digest authentication complies with RFC2617 – HTTP Authentication: Basic and Digest Authentication (available on the World Wide Web Consortium's Web site at www.w3.org).</span></span>  
+# <a name="basic-and-digest-authentication"></a><span data-ttu-id="439a8-102">Základní a ověřování algoritmem Digest</span><span class="sxs-lookup"><span data-stu-id="439a8-102">Basic and Digest Authentication</span></span>
+<span data-ttu-id="439a8-103"><xref:System.Net> Implementace basic a ověřování algoritmem digest splňuje RFC2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest (k dispozici na webu World Wide Web Consortium na www.w3.org).</span><span class="sxs-lookup"><span data-stu-id="439a8-103">The <xref:System.Net> implementation of basic and digest authentication complies with RFC2617 – HTTP Authentication: Basic and Digest Authentication (available on the World Wide Web Consortium's Web site at www.w3.org).</span></span>  
   
- <span data-ttu-id="1e6ee-104">Použijte základní a ověřování algoritmem digest, musí aplikace zadejte uživatelské jméno a heslo v <xref:System.Net.WebRequest.Credentials%2A> vlastnost <xref:System.Net.WebRequest> objekt, který se používá k vyžádání dat z Internetu, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="1e6ee-104">To use basic and digest authentication, an application must provide a user name and password in the <xref:System.Net.WebRequest.Credentials%2A> property of the <xref:System.Net.WebRequest> object that it uses to request data from the Internet, as shown in the following example.</span></span>  
+ <span data-ttu-id="439a8-104">Použijte základní a ověřování algoritmem digest, musí aplikace zadejte uživatelské jméno a heslo v <xref:System.Net.WebRequest.Credentials%2A> vlastnost <xref:System.Net.WebRequest> objekt, který se používá k vyžádání dat z Internetu, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="439a8-104">To use basic and digest authentication, an application must provide a user name and password in the <xref:System.Net.WebRequest.Credentials%2A> property of the <xref:System.Net.WebRequest> object that it uses to request data from the Internet, as shown in the following example.</span></span>  
   
 ```vb  
 Dim MyURI As String = "http://www.contoso.com/"  
@@ -54,8 +47,8 @@ WReq.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword);
 ```  
   
 > [!CAUTION]
->  <span data-ttu-id="1e6ee-105">Data odeslaná s Basic a ověřování algoritmem Digest nejsou šifrována, takže nežádoucí osoba může zobrazit data.</span><span class="sxs-lookup"><span data-stu-id="1e6ee-105">Data sent with Basic and Digest Authentication is not encrypted, so the data can be seen by an adversary.</span></span> <span data-ttu-id="1e6ee-106">Kromě toho základní ověřovací pověření (uživatelské jméno a heslo) se odesílají v nešifrované a mohou být zachyceny.</span><span class="sxs-lookup"><span data-stu-id="1e6ee-106">Additionally, Basic Authentication credentials (user name and password) are sent in the clear and can be intercepted.</span></span>  
+>  <span data-ttu-id="439a8-105">Data odeslaná s Basic a ověřování algoritmem Digest nejsou šifrována, takže nežádoucí osoba může zobrazit data.</span><span class="sxs-lookup"><span data-stu-id="439a8-105">Data sent with Basic and Digest Authentication is not encrypted, so the data can be seen by an adversary.</span></span> <span data-ttu-id="439a8-106">Kromě toho základní ověřovací pověření (uživatelské jméno a heslo) se odesílají v nešifrované a mohou být zachyceny.</span><span class="sxs-lookup"><span data-stu-id="439a8-106">Additionally, Basic Authentication credentials (user name and password) are sent in the clear and can be intercepted.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1e6ee-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="1e6ee-107">See Also</span></span>  
- [<span data-ttu-id="1e6ee-108">Ověřování NTLM a Kerberos</span><span class="sxs-lookup"><span data-stu-id="1e6ee-108">NTLM and Kerberos Authentication</span></span>](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)  
- [<span data-ttu-id="1e6ee-109">Ověřování v internetu</span><span class="sxs-lookup"><span data-stu-id="1e6ee-109">Internet Authentication</span></span>](../../../docs/framework/network-programming/internet-authentication.md)
+## <a name="see-also"></a><span data-ttu-id="439a8-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="439a8-107">See Also</span></span>  
+ [<span data-ttu-id="439a8-108">Ověřování NTLM a Kerberos</span><span class="sxs-lookup"><span data-stu-id="439a8-108">NTLM and Kerberos Authentication</span></span>](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)  
+ [<span data-ttu-id="439a8-109">Ověřování v internetu</span><span class="sxs-lookup"><span data-stu-id="439a8-109">Internet Authentication</span></span>](../../../docs/framework/network-programming/internet-authentication.md)

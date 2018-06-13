@@ -11,9 +11,10 @@ ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
 ms.openlocfilehash: f69aa704b05bffeaf932a093b991810f8678251c
 ms.sourcegitcommit: b750a8e3979749b214e7e10c82efb0a0524dfcb1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30957643"
 ---
 # <a name="samples-and-tutorials"></a><span data-ttu-id="77ee3-104">Ukázky a výukové programy</span><span class="sxs-lookup"><span data-stu-id="77ee3-104">Samples and tutorials</span></span>
 

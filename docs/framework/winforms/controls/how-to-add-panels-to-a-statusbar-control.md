@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Přidání panelů do ovládacího prvku StatusBar"
-ms.custom: 
+title: 'Postupy: Přidání panelů do ovládacího prvku StatusBar'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,31 +10,27 @@ helpviewer_keywords:
 - status bars [Windows Forms], adding panels
 - StatusBar control [Windows Forms], adding panels
 ms.assetid: 835e3902-288c-4c38-9d69-0696d8695009
-caps.latest.revision: "15"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 044fffa06a3900e64e66f5f87f259e34340f4959
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: fa5246d76e09091350a5d5276f2c06824b9906d1
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33527618"
 ---
-# <a name="how-to-add-panels-to-a-statusbar-control"></a><span data-ttu-id="a13cb-102">Postupy: Přidání panelů do ovládacího prvku StatusBar</span><span class="sxs-lookup"><span data-stu-id="a13cb-102">How to: Add Panels to a StatusBar Control</span></span>
+# <a name="how-to-add-panels-to-a-statusbar-control"></a><span data-ttu-id="0cc3c-102">Postupy: Přidání panelů do ovládacího prvku StatusBar</span><span class="sxs-lookup"><span data-stu-id="0cc3c-102">How to: Add Panels to a StatusBar Control</span></span>
 > [!IMPORTANT]
->  <span data-ttu-id="a13cb-103"><xref:System.Windows.Forms.StatusStrip> a <xref:System.Windows.Forms.ToolStripStatusLabel> ovládací prvky nahradit a přidání funkcí do <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> řídí; však <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> ovládací prvky jsou uchovány pro zpětnou kompatibilitu a budoucí použití, pokud jste Vyberte.</span><span class="sxs-lookup"><span data-stu-id="a13cb-103">The <xref:System.Windows.Forms.StatusStrip> and <xref:System.Windows.Forms.ToolStripStatusLabel> controls replace and add functionality to the <xref:System.Windows.Forms.StatusBar> and <xref:System.Windows.Forms.StatusBarPanel> controls; however, the <xref:System.Windows.Forms.StatusBar> and <xref:System.Windows.Forms.StatusBarPanel> controls are retained for both backward compatibility and future use, if you choose.</span></span>  
+>  <span data-ttu-id="0cc3c-103"><xref:System.Windows.Forms.StatusStrip> a <xref:System.Windows.Forms.ToolStripStatusLabel> ovládací prvky nahradit a přidání funkcí do <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> řídí; však <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> ovládací prvky jsou uchovány pro zpětnou kompatibilitu a budoucí použití, pokud jste Vyberte.</span><span class="sxs-lookup"><span data-stu-id="0cc3c-103">The <xref:System.Windows.Forms.StatusStrip> and <xref:System.Windows.Forms.ToolStripStatusLabel> controls replace and add functionality to the <xref:System.Windows.Forms.StatusBar> and <xref:System.Windows.Forms.StatusBarPanel> controls; however, the <xref:System.Windows.Forms.StatusBar> and <xref:System.Windows.Forms.StatusBarPanel> controls are retained for both backward compatibility and future use, if you choose.</span></span>  
   
- <span data-ttu-id="a13cb-104">Programovatelný oblasti v rámci [StatusBar – ovládací prvek](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md) řízení se skládá z instancí <xref:System.Windows.Forms.StatusBarPanel> třídy.</span><span class="sxs-lookup"><span data-stu-id="a13cb-104">The programmable area within a [StatusBar Control](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md) control consists of instances of the <xref:System.Windows.Forms.StatusBarPanel> class.</span></span> <span data-ttu-id="a13cb-105">Tyto jsou přidány prostřednictvím doplňky <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> třídy.</span><span class="sxs-lookup"><span data-stu-id="a13cb-105">These are added through additions to the <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> class.</span></span>  
+ <span data-ttu-id="0cc3c-104">Programovatelný oblasti v rámci [StatusBar – ovládací prvek](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md) řízení se skládá z instancí <xref:System.Windows.Forms.StatusBarPanel> třídy.</span><span class="sxs-lookup"><span data-stu-id="0cc3c-104">The programmable area within a [StatusBar Control](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md) control consists of instances of the <xref:System.Windows.Forms.StatusBarPanel> class.</span></span> <span data-ttu-id="0cc3c-105">Tyto jsou přidány prostřednictvím doplňky <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> třídy.</span><span class="sxs-lookup"><span data-stu-id="0cc3c-105">These are added through additions to the <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> class.</span></span>  
   
-### <a name="to-add-panels-to-a-status-bar"></a><span data-ttu-id="a13cb-106">Přidání panelů do stavového řádku</span><span class="sxs-lookup"><span data-stu-id="a13cb-106">To add panels to a status bar</span></span>  
+### <a name="to-add-panels-to-a-status-bar"></a><span data-ttu-id="0cc3c-106">Přidání panelů do stavového řádku</span><span class="sxs-lookup"><span data-stu-id="0cc3c-106">To add panels to a status bar</span></span>  
   
-1.  <span data-ttu-id="a13cb-107">V postupu, vytvořit jejich přidáním do panelů stavového řádku <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>.</span><span class="sxs-lookup"><span data-stu-id="a13cb-107">In a procedure, create status-bar panels by adding them to the <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>.</span></span> <span data-ttu-id="a13cb-108">Zadejte nastavení vlastností pro jednotlivé panely pomocí jeho index předána <xref:System.Windows.Forms.StatusBar.Panels%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="a13cb-108">Specify property settings for individual panels by using its index passed through the <xref:System.Windows.Forms.StatusBar.Panels%2A> property.</span></span>  
+1.  <span data-ttu-id="0cc3c-107">V postupu, vytvořit jejich přidáním do panelů stavového řádku <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>.</span><span class="sxs-lookup"><span data-stu-id="0cc3c-107">In a procedure, create status-bar panels by adding them to the <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>.</span></span> <span data-ttu-id="0cc3c-108">Zadejte nastavení vlastností pro jednotlivé panely pomocí jeho index předána <xref:System.Windows.Forms.StatusBar.Panels%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="0cc3c-108">Specify property settings for individual panels by using its index passed through the <xref:System.Windows.Forms.StatusBar.Panels%2A> property.</span></span>  
   
-     <span data-ttu-id="a13cb-109">V následujícím příkladu kódu cesta pro umístění ikony je nastavena **dokumenty** složky.</span><span class="sxs-lookup"><span data-stu-id="a13cb-109">In the following code example, the path set for the location of the icon is the **My Documents** folder.</span></span> <span data-ttu-id="a13cb-110">Toto umístění se používá, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat této složky.</span><span class="sxs-lookup"><span data-stu-id="a13cb-110">This location is used because you can assume that most computers running the Windows operating system will include this folder.</span></span> <span data-ttu-id="a13cb-111">Výběr toto umístění také umožňuje uživatelům s minimální systém úrovně přístupu pro aplikaci bezpečně spustit.</span><span class="sxs-lookup"><span data-stu-id="a13cb-111">Choosing this location also allows users with minimal system access levels to safely run the application.</span></span> <span data-ttu-id="a13cb-112">Následující příklad vyžaduje formulář s <xref:System.Windows.Forms.StatusBar> ovládací prvek již přidán.</span><span class="sxs-lookup"><span data-stu-id="a13cb-112">The following example requires a form with a <xref:System.Windows.Forms.StatusBar> control already added.</span></span>  
+     <span data-ttu-id="0cc3c-109">V následujícím příkladu kódu cesta pro umístění ikony je nastavena **dokumenty** složky.</span><span class="sxs-lookup"><span data-stu-id="0cc3c-109">In the following code example, the path set for the location of the icon is the **My Documents** folder.</span></span> <span data-ttu-id="0cc3c-110">Toto umístění se používá, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat této složky.</span><span class="sxs-lookup"><span data-stu-id="0cc3c-110">This location is used because you can assume that most computers running the Windows operating system will include this folder.</span></span> <span data-ttu-id="0cc3c-111">Výběr toto umístění také umožňuje uživatelům s minimální systém úrovně přístupu pro aplikaci bezpečně spustit.</span><span class="sxs-lookup"><span data-stu-id="0cc3c-111">Choosing this location also allows users with minimal system access levels to safely run the application.</span></span> <span data-ttu-id="0cc3c-112">Následující příklad vyžaduje formulář s <xref:System.Windows.Forms.StatusBar> ovládací prvek již přidán.</span><span class="sxs-lookup"><span data-stu-id="0cc3c-112">The following example requires a form with a <xref:System.Windows.Forms.StatusBar> control already added.</span></span>  
   
     > [!NOTE]
-    >  <span data-ttu-id="a13cb-113"><xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> Je soubor od nuly, kód by měl pokračovat odpovídajícím způsobem.</span><span class="sxs-lookup"><span data-stu-id="a13cb-113">The <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> is a zero-based collection, so code should proceed accordingly.</span></span>  
+    >  <span data-ttu-id="0cc3c-113"><xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> Je soubor od nuly, kód by měl pokračovat odpovídajícím způsobem.</span><span class="sxs-lookup"><span data-stu-id="0cc3c-113">The <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection> is a zero-based collection, so code should proceed accordingly.</span></span>  
   
     ```vb  
     Public Sub CreateStatusBarPanels()  
@@ -131,11 +120,11 @@ ms.lasthandoff: 01/19/2018
        }  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="a13cb-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="a13cb-114">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="0cc3c-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="0cc3c-114">See Also</span></span>  
  <xref:System.Windows.Forms.StatusBar>  
  <xref:System.Windows.Forms.ToolStripStatusLabel>  
- [<span data-ttu-id="a13cb-115">Dialogové okno Editor kolekcí</span><span class="sxs-lookup"><span data-stu-id="a13cb-115">Collection Editor Dialog Box</span></span>](http://msdn.microsoft.com/library/53fb3aad-bffa-4da5-ac89-8438e6fc803c)  
- [<span data-ttu-id="a13cb-116">Postupy: Nastavení velikosti panelů stavového řádku</span><span class="sxs-lookup"><span data-stu-id="a13cb-116">How to: Set the Size of Status-Bar Panels</span></span>](../../../../docs/framework/winforms/controls/how-to-set-the-size-of-status-bar-panels.md)  
- [<span data-ttu-id="a13cb-117">Návod: Aktualizace informací stavového řádku za běhu</span><span class="sxs-lookup"><span data-stu-id="a13cb-117">Walkthrough: Updating Status Bar Information at Run Time</span></span>](../../../../docs/framework/winforms/controls/walkthrough-updating-status-bar-information-at-run-time.md)  
- [<span data-ttu-id="a13cb-118">Postupy: Určení panelu v ovládacím prvku Windows Forms StatusBar označeného kliknutím</span><span class="sxs-lookup"><span data-stu-id="a13cb-118">How to: Determine Which Panel in the Windows Forms StatusBar Control Was Clicked</span></span>](../../../../docs/framework/winforms/controls/determine-which-panel-wf-statusbar-control-was-clicked.md)  
- [<span data-ttu-id="a13cb-119">Přehled ovládacího prvku StatusBar</span><span class="sxs-lookup"><span data-stu-id="a13cb-119">StatusBar Control Overview</span></span>](../../../../docs/framework/winforms/controls/statusbar-control-overview-windows-forms.md)
+ [<span data-ttu-id="0cc3c-115">Dialogové okno Editor kolekcí</span><span class="sxs-lookup"><span data-stu-id="0cc3c-115">Collection Editor Dialog Box</span></span>](http://msdn.microsoft.com/library/53fb3aad-bffa-4da5-ac89-8438e6fc803c)  
+ [<span data-ttu-id="0cc3c-116">Postupy: Nastavení velikosti panelů stavového řádku</span><span class="sxs-lookup"><span data-stu-id="0cc3c-116">How to: Set the Size of Status-Bar Panels</span></span>](../../../../docs/framework/winforms/controls/how-to-set-the-size-of-status-bar-panels.md)  
+ [<span data-ttu-id="0cc3c-117">Návod: Aktualizace informací stavového řádku za běhu</span><span class="sxs-lookup"><span data-stu-id="0cc3c-117">Walkthrough: Updating Status Bar Information at Run Time</span></span>](../../../../docs/framework/winforms/controls/walkthrough-updating-status-bar-information-at-run-time.md)  
+ [<span data-ttu-id="0cc3c-118">Postupy: Určení panelu v ovládacím prvku Windows Forms StatusBar označeného kliknutím</span><span class="sxs-lookup"><span data-stu-id="0cc3c-118">How to: Determine Which Panel in the Windows Forms StatusBar Control Was Clicked</span></span>](../../../../docs/framework/winforms/controls/determine-which-panel-wf-statusbar-control-was-clicked.md)  
+ [<span data-ttu-id="0cc3c-119">Přehled ovládacího prvku StatusBar</span><span class="sxs-lookup"><span data-stu-id="0cc3c-119">StatusBar Control Overview</span></span>](../../../../docs/framework/winforms/controls/statusbar-control-overview-windows-forms.md)
