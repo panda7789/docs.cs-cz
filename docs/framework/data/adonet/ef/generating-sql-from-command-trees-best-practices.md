@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760190"
 ---
 # <a name="generating-sql-from-command-trees---best-practices"></a><span data-ttu-id="9b27f-102">Generování příkazu SQL ze stromy příkazů – doporučené postupy</span><span class="sxs-lookup"><span data-stu-id="9b27f-102">Generating SQL from Command Trees - Best Practices</span></span>
 <span data-ttu-id="9b27f-103">Stromy příkazů dotazu výstup úzce model dotazů v SQL vyjádřit kombinací.</span><span class="sxs-lookup"><span data-stu-id="9b27f-103">Output query command trees closely model queries expressible in SQL.</span></span> <span data-ttu-id="9b27f-104">Existují však určité běžné problémy pro zprostředkovatele zapisovače při generování SQL ze stromu příkazů výstupu.</span><span class="sxs-lookup"><span data-stu-id="9b27f-104">However, there are certain common challenges for provider writers when generating SQL from an output command tree.</span></span> <span data-ttu-id="9b27f-105">Toto téma popisuje tyto problémy.</span><span class="sxs-lookup"><span data-stu-id="9b27f-105">This topic discusses these challenges.</span></span> <span data-ttu-id="9b27f-106">V dalším tématu ukázkového zprostředkovatele ukazuje, jak vyřešit tyto problémy.</span><span class="sxs-lookup"><span data-stu-id="9b27f-106">In the next topic, the sample provider shows how to address these challenges.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760931"
 ---
 # <a name="canonical-functions"></a><span data-ttu-id="b4f02-102">Kanonické funkce</span><span class="sxs-lookup"><span data-stu-id="b4f02-102">Canonical Functions</span></span>
 <span data-ttu-id="b4f02-103">Tato část popisuje kanonické funkce, které jsou podporovány všechny zprostředkovateli dat a mohou být využívána všechny dotazování technologie.</span><span class="sxs-lookup"><span data-stu-id="b4f02-103">This section discusses canonical functions that are supported by all data providers, and can be used by all querying technologies.</span></span> <span data-ttu-id="b4f02-104">Kanonické funkce nelze rozšířit pomocí zprostředkovatele.</span><span class="sxs-lookup"><span data-stu-id="b4f02-104">Canonical functions cannot be extended by a provider.</span></span>  
