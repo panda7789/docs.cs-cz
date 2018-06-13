@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397088"
 ---
 # <a name="accessing-custom-attributes"></a>Přístup k vlastním atributům
 Po atributy nejsou spojené s prvky programu, reflexe můžete použít k dotazování jejich existence a hodnoty. V rozhraní .NET Framework verze 1.0 a 1.1 vlastní atributy jsou zkoumány v kontextu spuštění. Poskytuje rozhraní .NET Framework verze 2.0 nový kontext načítání pouze pro reflexi kontext, který můžete použít k prozkoumání kód, který nelze načíst pro provedení.  

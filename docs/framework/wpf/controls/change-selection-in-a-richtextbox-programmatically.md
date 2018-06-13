@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550999"
 ---
 # <a name="change-selection-in-a-richtextbox-programmatically"></a>Programová změna výběru v poli RichTextBox
 Tento příklad ukazuje, jak programově změnit aktuální výběr v <xref:System.Windows.Controls.RichTextBox>. Tato volba je stejný, jako by uživatel měl vybraný obsah pomocí uživatelského rozhraní.  

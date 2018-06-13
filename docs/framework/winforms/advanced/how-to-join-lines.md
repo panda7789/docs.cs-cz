@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522012"
 ---
 # <a name="how-to-join-lines"></a>Postupy: Spojení čar
 Spojení čar je běžné oblasti, která je tvořen dvěma řádky, jehož elementy end splňují nebo překrývat. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje tři styly řádku spojení: ostrý bevelova křivka a zaokrouhleno. Čára – styl propojení je vlastnost <xref:System.Drawing.Pen> třídy. Pokud zadáte styl řádku spojení <xref:System.Drawing.Pen> objektu, že styl spojení se použije na všechny řádky, které jsou připojené v žádném <xref:System.Drawing.Drawing2D.GraphicsPath> objekt vykreslovány pomocí pera.  

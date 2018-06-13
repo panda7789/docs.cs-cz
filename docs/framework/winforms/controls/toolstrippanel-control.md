@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535425"
 ---
 # <a name="toolstrippanel-control"></a>ToolStripPanel – ovládací prvek
 `ToolStripPanel` ovládací prvek umožňuje sdílení vodorovné nebo svislé prostor v rámci oblasti nástroje, pokud je ukotveno a uspořádání z <xref:System.Windows.Forms.ToolStrip> řídí, kdy není nutné čtyři panely a centrální panelu <xref:System.Windows.Forms.ToolStripContainer>.  

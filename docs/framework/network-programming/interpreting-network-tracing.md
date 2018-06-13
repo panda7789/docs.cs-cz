@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396958"
 ---
 # <a name="interpreting-network-tracing"></a>Interpretace trasování sítě
 Pokud je povoleno sledování sítě, můžete použít trasování pro zachycení volání vaše aplikace provede na různých <xref:System.Net> třídy členy. Výstup z těchto volání může být podobná následující příklady.  

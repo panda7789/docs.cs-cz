@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530244"
 ---
 # <a name="how-to-change-the-appearance-of-the-windows-forms-colordialog-component"></a>Postupy: Změna vzhledu součásti Windows Forms ColorDialog
 Můžete nakonfigurovat vzhledu Windows Forms <xref:System.Windows.Forms.ColorDialog> součásti s číslem jeho vlastnosti. Dialogové okno má dvě části – jeden, který ukazuje základní barvy a ten, který umožňuje uživateli definovat vlastní barvy.  

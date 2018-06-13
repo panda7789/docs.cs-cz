@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517709"
 ---
 # <a name="xaml-activation"></a>Aktivace XAML
 Tento příklad ukazuje, jak k hostování deklarativní pracovní postup ve službě IIS. Ukázka je základní pracovní postup volá `EchoService` má jednu operaci.  

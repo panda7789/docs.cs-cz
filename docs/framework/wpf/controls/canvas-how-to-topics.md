@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550950"
 ---
 # <a name="canvas-how-to-topics"></a>Postupy: Témata plátna
 Témata v této části popisují způsob použití <xref:System.Windows.Controls.Canvas> element na pozici absolutně podřízené elementy.  

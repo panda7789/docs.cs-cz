@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33563794"
 ---
 # <a name="xshared-attribute"></a>x:Shared – atribut
 Pokud nastavíte hodnotu `false`, mění chování WPF načtení prostředků tak, aby požadavky pro prostředek s atributy vytvoření nové instance pro každý požadavek místo sdílení stejné instanci pro všechny požadavky.  
