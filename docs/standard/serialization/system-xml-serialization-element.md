@@ -1,64 +1,52 @@
 ---
-title: "&lt;System.XML.Serialization&gt; – Element"
-ms.custom: 
+title: '&lt;System.XML.Serialization&gt; – Element'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - system.xml.serialization element
 - XML serialization, configuration
 - <system.xml.serialization> element
 ms.assetid: 3ce45919-388a-418c-8968-6df0372c73ec
-caps.latest.revision: "5"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: d673c76e57ffb8315e97b1695dbcbc1f4fe0aab9
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: e26a12facb92147d7660ae266ea5e1b090d7e198
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33583770"
 ---
-# <a name="ltsystemxmlserializationgt-element"></a><span data-ttu-id="4d164-102">&lt;System.XML.Serialization&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="4d164-102">&lt;system.xml.serialization&gt; Element</span></span>
-<span data-ttu-id="4d164-103">Element nejvyšší úrovně pro řízení serializace XML.</span><span class="sxs-lookup"><span data-stu-id="4d164-103">The top-level element for controlling XML serialization.</span></span> <span data-ttu-id="4d164-104">Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).</span><span class="sxs-lookup"><span data-stu-id="4d164-104">For more information about configuration files, see [Configuration File Schema](../../../docs/framework/configure-apps/file-schema/index.md).</span></span>  
+# <a name="ltsystemxmlserializationgt-element"></a><span data-ttu-id="5d760-102">&lt;System.XML.Serialization&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="5d760-102">&lt;system.xml.serialization&gt; Element</span></span>
+<span data-ttu-id="5d760-103">Element nejvyšší úrovně pro řízení serializace XML.</span><span class="sxs-lookup"><span data-stu-id="5d760-103">The top-level element for controlling XML serialization.</span></span> <span data-ttu-id="5d760-104">Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).</span><span class="sxs-lookup"><span data-stu-id="5d760-104">For more information about configuration files, see [Configuration File Schema](../../../docs/framework/configure-apps/file-schema/index.md).</span></span>  
   
- <span data-ttu-id="4d164-105">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="4d164-105">\<configuration></span></span>  
-<span data-ttu-id="4d164-106">\<System.XML.Serialization ></span><span class="sxs-lookup"><span data-stu-id="4d164-106">\<system.xml.serialization></span></span>  
+ <span data-ttu-id="5d760-105">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="5d760-105">\<configuration></span></span>  
+<span data-ttu-id="5d760-106">\<System.XML.Serialization ></span><span class="sxs-lookup"><span data-stu-id="5d760-106">\<system.xml.serialization></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4d164-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4d164-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5d760-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5d760-107">Syntax</span></span>  
   
 ```xml  
 <system.xml.serialization>  
 </system.xml.serialization>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="4d164-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="4d164-108">Attributes and Elements</span></span>  
- <span data-ttu-id="4d164-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="4d164-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="5d760-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="5d760-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="5d760-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="5d760-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="4d164-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="4d164-110">Attributes</span></span>  
- <span data-ttu-id="4d164-111">Žádné</span><span class="sxs-lookup"><span data-stu-id="4d164-111">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="5d760-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="5d760-110">Attributes</span></span>  
+ <span data-ttu-id="5d760-111">Žádné</span><span class="sxs-lookup"><span data-stu-id="5d760-111">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="4d164-112">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="4d164-112">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="5d760-112">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="5d760-112">Child Elements</span></span>  
   
-|<span data-ttu-id="4d164-113">Prvek</span><span class="sxs-lookup"><span data-stu-id="4d164-113">Element</span></span>|<span data-ttu-id="4d164-114">Popis</span><span class="sxs-lookup"><span data-stu-id="4d164-114">Description</span></span>|  
+|<span data-ttu-id="5d760-113">Prvek</span><span class="sxs-lookup"><span data-stu-id="5d760-113">Element</span></span>|<span data-ttu-id="5d760-114">Popis</span><span class="sxs-lookup"><span data-stu-id="5d760-114">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="4d164-115">\<dateTimeSerialization > elementu</span><span class="sxs-lookup"><span data-stu-id="4d164-115">\<dateTimeSerialization> Element</span></span>](../../../docs/standard/serialization/datetimeserialization-element.md)|<span data-ttu-id="4d164-116">Určuje režim serializace <xref:System.DateTime> objekty.</span><span class="sxs-lookup"><span data-stu-id="4d164-116">Determines the serialization mode of <xref:System.DateTime> objects.</span></span>|  
-|[<span data-ttu-id="4d164-117">\<schemaImporterExtensions > elementu</span><span class="sxs-lookup"><span data-stu-id="4d164-117">\<schemaImporterExtensions> Element</span></span>](../../../docs/standard/serialization/schemaimporterextensions-element.md)|<span data-ttu-id="4d164-118">Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="4d164-118">Contains types that are used by the <xref:System.Xml.Serialization.XmlSchemaImporter> for mapping of XSD types to .NET Framework types.</span></span>|  
+|[<span data-ttu-id="5d760-115">\<dateTimeSerialization > elementu</span><span class="sxs-lookup"><span data-stu-id="5d760-115">\<dateTimeSerialization> Element</span></span>](../../../docs/standard/serialization/datetimeserialization-element.md)|<span data-ttu-id="5d760-116">Určuje režim serializace <xref:System.DateTime> objekty.</span><span class="sxs-lookup"><span data-stu-id="5d760-116">Determines the serialization mode of <xref:System.DateTime> objects.</span></span>|  
+|[<span data-ttu-id="5d760-117">\<schemaImporterExtensions > elementu</span><span class="sxs-lookup"><span data-stu-id="5d760-117">\<schemaImporterExtensions> Element</span></span>](../../../docs/standard/serialization/schemaimporterextensions-element.md)|<span data-ttu-id="5d760-118">Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="5d760-118">Contains types that are used by the <xref:System.Xml.Serialization.XmlSchemaImporter> for mapping of XSD types to .NET Framework types.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="4d164-119">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="4d164-119">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="5d760-119">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="5d760-119">Parent Elements</span></span>  
   
-|<span data-ttu-id="4d164-120">Prvek</span><span class="sxs-lookup"><span data-stu-id="4d164-120">Element</span></span>|<span data-ttu-id="4d164-121">Popis</span><span class="sxs-lookup"><span data-stu-id="4d164-121">Description</span></span>|  
+|<span data-ttu-id="5d760-120">Prvek</span><span class="sxs-lookup"><span data-stu-id="5d760-120">Element</span></span>|<span data-ttu-id="5d760-121">Popis</span><span class="sxs-lookup"><span data-stu-id="5d760-121">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="4d164-122">\<Konfigurace > elementu</span><span class="sxs-lookup"><span data-stu-id="4d164-122">\<configuration> Element</span></span>](../../../docs/framework/configure-apps/file-schema/configuration-element.md)|<span data-ttu-id="4d164-123">Kořenový element v každém konfiguračním souboru, který je používán common language runtime a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="4d164-123">The root element in every configuration file that is used by the common language runtime and .NET Framework applications.</span></span>|  
+|[<span data-ttu-id="5d760-122">\<Konfigurace > elementu</span><span class="sxs-lookup"><span data-stu-id="5d760-122">\<configuration> Element</span></span>](../../../docs/framework/configure-apps/file-schema/configuration-element.md)|<span data-ttu-id="5d760-123">Kořenový element v každém konfiguračním souboru, který je používán common language runtime a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="5d760-123">The root element in every configuration file that is used by the common language runtime and .NET Framework applications.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="4d164-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="4d164-124">Example</span></span>  
- <span data-ttu-id="4d164-125">Následující příklad kódu ukazuje, jak určit režim serializace <xref:System.DateTime> objekt a přidání typy používané <xref:System.Xml.Serialization.XmlSchemaImporter> při mapování typů XSD na typy rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="4d164-125">The following code example illustrates how to specify the serialization mode of a <xref:System.DateTime> object, and the addition of types used by the <xref:System.Xml.Serialization.XmlSchemaImporter> when mapping XSD types to .NET Framework types.</span></span>  
+## <a name="example"></a><span data-ttu-id="5d760-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="5d760-124">Example</span></span>  
+ <span data-ttu-id="5d760-125">Následující příklad kódu ukazuje, jak určit režim serializace <xref:System.DateTime> objekt a přidání typy používané <xref:System.Xml.Serialization.XmlSchemaImporter> při mapování typů XSD na typy rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="5d760-125">The following code example illustrates how to specify the serialization mode of a <xref:System.DateTime> object, and the addition of types used by the <xref:System.Xml.Serialization.XmlSchemaImporter> when mapping XSD types to .NET Framework types.</span></span>  
   
 ```xml  
 <system.xml.serialization>  
@@ -74,10 +62,10 @@ ms.lasthandoff: 12/23/2017
 </system.sxml.serialization>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="4d164-126">Viz také</span><span class="sxs-lookup"><span data-stu-id="4d164-126">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="5d760-126">Viz také</span><span class="sxs-lookup"><span data-stu-id="5d760-126">See Also</span></span>  
  <xref:System.Xml.Serialization.XmlSchemaImporter>  
  <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>  
- [<span data-ttu-id="4d164-127">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="4d164-127">Configuration File Schema</span></span>](../../../docs/framework/configure-apps/file-schema/index.md)  
- [<span data-ttu-id="4d164-128">\<dateTimeSerialization > elementu</span><span class="sxs-lookup"><span data-stu-id="4d164-128">\<dateTimeSerialization> Element</span></span>](../../../docs/standard/serialization/datetimeserialization-element.md)  
- [<span data-ttu-id="4d164-129">\<schemaImporterExtensions > elementu</span><span class="sxs-lookup"><span data-stu-id="4d164-129">\<schemaImporterExtensions> Element</span></span>](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
- [<span data-ttu-id="4d164-130">\<Přidat > elementu pro \<xmlSchemaImporterExtensions ></span><span class="sxs-lookup"><span data-stu-id="4d164-130">\<add> Element for \<xmlSchemaImporterExtensions></span></span>](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)
+ [<span data-ttu-id="5d760-127">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="5d760-127">Configuration File Schema</span></span>](../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="5d760-128">\<dateTimeSerialization > elementu</span><span class="sxs-lookup"><span data-stu-id="5d760-128">\<dateTimeSerialization> Element</span></span>](../../../docs/standard/serialization/datetimeserialization-element.md)  
+ [<span data-ttu-id="5d760-129">\<schemaImporterExtensions > elementu</span><span class="sxs-lookup"><span data-stu-id="5d760-129">\<schemaImporterExtensions> Element</span></span>](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
+ [<span data-ttu-id="5d760-130">\<Přidat > elementu pro \<xmlSchemaImporterExtensions ></span><span class="sxs-lookup"><span data-stu-id="5d760-130">\<add> Element for \<xmlSchemaImporterExtensions></span></span>](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)

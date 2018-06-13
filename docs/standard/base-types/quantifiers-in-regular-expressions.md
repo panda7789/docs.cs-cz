@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579090"
 ---
 # <a name="quantifiers-in-regular-expressions"></a><span data-ttu-id="d82b3-102">Kvantifikátory v regulárních výrazech</span><span class="sxs-lookup"><span data-stu-id="d82b3-102">Quantifiers in Regular Expressions</span></span>
 <span data-ttu-id="d82b3-103">Kvantifikátory zadejte, kolik instancí znaku, skupiny nebo třída znak musí být ve vstupu pro shodu, která se má najít.</span><span class="sxs-lookup"><span data-stu-id="d82b3-103">Quantifiers specify how many instances of a character, group, or character class must be present in the input for a match to be found.</span></span>  <span data-ttu-id="d82b3-104">Následující tabulka uvádí kvantifikátory nepodporuje rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="d82b3-104">The following table lists the quantifiers supported by .NET.</span></span>  

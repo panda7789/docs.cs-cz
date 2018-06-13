@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33579688"
 ---
 # <a name="character-classes-in-regular-expressions"></a><span data-ttu-id="9721e-102">Třídy znaků v regulárních výrazech</span><span class="sxs-lookup"><span data-stu-id="9721e-102">Character Classes in Regular Expressions</span></span>
 <a name="Top"></a> <span data-ttu-id="9721e-103">Třídy znaků definuje sadu znaků, které může dojít ve vstupním řetězci pro úspěšnou shodu.</span><span class="sxs-lookup"><span data-stu-id="9721e-103">A character class defines a set of characters, any one of which can occur in an input string for a match to succeed.</span></span> <span data-ttu-id="9721e-104">Jazyk regulárních výrazů v .NET podporuje následujících tříd znaků:</span><span class="sxs-lookup"><span data-stu-id="9721e-104">The regular expression language in .NET supports the following character classes:</span></span>  
