@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517917"
 ---
 # <a name="store-extensibility"></a>Rozšíření úložiště
 <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> umožňuje uživatelům povýšit specifické pro aplikace, vlastní vlastnosti, které lze použít k dotazu pro instance v databázi trvalost. Operace povýšení vlastnost způsobí, že hodnota, která má být k dispozici v rámci speciální zobrazení v databázi. Tyto vlastnosti propagovaných (vlastnosti, které lze použít v dotazech uživatele) může být jednoduché typy, jako je například Int64, Guid, String a data a času nebo serializovaných binárního typu (byte[]).  

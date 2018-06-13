@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517696"
 ---
 # <a name="services"></a>Služby
 Tato část obsahuje odkazy na vzorků, které Předvedení funkcí služby Windows Workflow Foundation (WF).  

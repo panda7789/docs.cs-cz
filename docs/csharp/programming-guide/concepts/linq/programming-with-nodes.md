@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33335416"
 ---
 # <a name="programming-with-nodes-c"></a>Programování s uzly (C#)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Vývojáři, kteří potřebují často psát programy, jako je například editoru XML, transformace systému nebo Autor sestavy je potřeba psát programy, které fungují na jemnějšího úrovni členitosti než elementů a atributů. Často potřebují k práci na úrovni uzlu, manipulace s textové uzly, pokyny pro zpracování a komentáře. Toto téma obsahuje některé podrobnosti o programování na úrovni uzlu.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513546"
 ---
 # <a name="binding-a-custom-activity-property-to-a-designer-control"></a>Vazba vlastnost vlastní aktivity do ovládacího prvku návrháře
 Vytvoření vazby návrháře textové pole na argument aktivity je poměrně jednoduché; Vytvoření vazby ovládacího prvku složité návrháře (například pole se seznamem) na aktivity argument příkaz může nést výzvy, ale. Toto téma popisuje, jak vytvořit vazbu argument aktivity do ovládacího prvku pole se seznamem na Návrhář vlastní aktivity.  

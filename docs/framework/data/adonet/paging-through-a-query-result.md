@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33358965"
 ---
 # <a name="paging-through-a-query-result"></a>Stránkování prostřednictvím výsledku dotazu
 Stránkování prostřednictvím výsledku dotazu je proces vrácení výsledků dotazu v menších podmnožin dat nebo stránky. Toto je běžnou praxí při zobrazování výsledků uživateli na malé bloky snadno spravovat.  

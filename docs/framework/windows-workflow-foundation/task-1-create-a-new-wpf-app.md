@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517946"
 ---
 # <a name="task-1-create-a-new-windows-presentation-foundation-application"></a>Úloha 1: Vytvořte novou aplikaci Windows Presentation Foundation
 V této úloze, vytvoříte prázdnou aplikaci Windows Presentation Foundation (WPF) pomocí šablony sady Visual Studio aplikace WPF a přidáte odkazy na příslušné [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] sestavení pracovního postupu.  

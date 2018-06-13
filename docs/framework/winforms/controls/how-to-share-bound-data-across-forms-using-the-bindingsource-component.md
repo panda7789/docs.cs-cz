@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536589"
 ---
 # <a name="how-to-share-bound-data-across-forms-using-the-bindingsource-component"></a>Postupy: Sdílení připojených dat mezi formuláři pomocí součásti BindingSource
 Můžete snadno sdílet data mezi formuláři pomocí <xref:System.Windows.Forms.BindingSource> součásti. Můžete například zobrazit jednu jen pro čtení formulář, který je souhrn dat zdroje dat a jiné upravovat formulář, který obsahuje podrobné informace o aktuálně vybrané položky ve zdroji dat. Tento příklad ukazuje tento scénář.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517264"
 ---
 # <a name="nativeactivity-base-class"></a>NativeActivity základní třída
 <xref:System.Activities.NativeActivity> je abstraktní třídy chráněný konstruktor. Jako <xref:System.Activities.CodeActivity>, <xref:System.Activities.NativeActivity> slouží k zápisu imperativní chování implementací <xref:System.Activities.NativeActivity.Execute%2A> metoda. Na rozdíl od <xref:System.Activities.CodeActivity>, <xref:System.Activities.NativeActivity> má přístup ke všem zveřejněné funkce modulu runtime pracovního postupu pomocí <xref:System.Activities.NativeActivityContext> byl předán objekt <xref:System.Activities.NativeActivity.Execute%2A> metoda.  

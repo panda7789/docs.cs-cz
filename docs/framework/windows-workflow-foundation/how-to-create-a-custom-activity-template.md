@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517846"
 ---
 # <a name="how-to-create-a-custom-activity-template"></a>Postupy: vytvoření vlastní aktivity šablony
 Vlastní aktivity šablony slouží k přizpůsobení konfigurace aktivit, včetně vlastních složené aktivit, tak, aby uživatelé nebudou mít k vytvoření jednotlivě každou aktivitu a nakonfigurovat jejich vlastnosti a další nastavení ručně. Tyto vlastní šablony může být k dispozici v **sada nástrojů** na [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] nebo opětovné hostování nástroje návrháře, ze kterého uživatelů můžete přetáhnout na předkonfigurované návrhovou plochu. [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] se dodává s dobrým příkladem takové šablony: [SendAndReceiveReply Template Designer](/visualstudio/workflow-designer/sendandreceivereply-template-designer) a [ReceiveAndSendReply Template Designer](/visualstudio/workflow-designer/receiveandsendreply-template-designer) v [návrháře aktivitslužbyzasílánízpráv](/visualstudio/workflow-designer/messaging-activity-designers) kategorie.  

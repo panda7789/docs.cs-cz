@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33505967"
 ---
 # <a name="servicemodel-attributes-and-servicedescription-reference"></a>Atributy ServiceModel a odkazy ServiceDescription
 *Popis stromu* je hierarchie typů (počínaje <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> třída) společně popisují všechny aspekty služby. Windows Communication Foundation (WCF) používá k vytvoření platný služby modulu runtime Publikovat Web Services Description Language (WSDL), jazyk definice schématu XML (XSD) a výrazy zásad (metadata) o službě, který můžou klienti používat pro popis stromu připojení k a používat službu a ke generování různé kódu a konfigurace souborů reprezentace strom hodnot popis.  

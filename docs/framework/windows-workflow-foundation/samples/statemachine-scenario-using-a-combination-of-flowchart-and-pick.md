@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517933"
 ---
 # <a name="statemachine-scenario-using-a-combination-of-flowchart-and-pick"></a>Pomocí kombinace vývojový diagram a vybrat scénář StateMachine
 Tento příklad znázorňuje způsob implementace scénář jednoduchého stopky pomocí kombinace <xref:System.Activities.Statements.Flowchart> a <xref:System.Activities.Statements.Pick> aktivity. Použije příjem a odesílání uvnitř aktivity vybrat tak, aby naslouchala událostem stopky.  

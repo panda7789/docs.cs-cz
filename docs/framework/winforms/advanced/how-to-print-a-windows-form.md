@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522266"
 ---
 # <a name="how-to-print-a-windows-form"></a>Postupy: Tisk formuláře Windows Form
 Jako součást procesu vývoje obvykle můžete vytisknout kopii svého formuláře systému Windows. Následující příklad kódu ukazuje, jak chcete vytisknout kopii aktuálního formuláře pomocí <xref:System.Drawing.Graphics.CopyFromScreen%2A> metoda.  

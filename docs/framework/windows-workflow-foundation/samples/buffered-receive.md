@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518708"
 ---
 # <a name="buffered-receive"></a>Uložená do vyrovnávací paměti přijímat
 Tento příklad ukazuje, jak nastavit a konfigurovat funkci vyrovnávací pamětí příjmu v systému Windows Workflow Foundation (WF). Uložená do vyrovnávací paměti přijímat umožňuje autorovi pracovní postup vytvoření pracovního postupu bez nutnosti starat o pořadí, ve kterém jsou přijaty zprávy. Funkci vyrovnávací pamětí příjmu vyrovnávacích pamětí zpráv místně a doručí je, když pracovní postup je připravený je přijmout.  

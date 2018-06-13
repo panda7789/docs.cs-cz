@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33504434"
 ---
 # <a name="loosely-typed-extensions-sample"></a>Ukázka rozšíření volného typu
 Modelu objektu syndikace poskytuje bohaté podporu pro práci s daty rozšíření – informace, které se nachází v syndikace kanál reprezentovaný pomocí XML je ale vystavené třídy není explicitně jako <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem>. Tento příklad ukazuje základní postupy pro práci s daty rozšíření.  

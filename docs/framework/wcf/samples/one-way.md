@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33505704"
 ---
 # <a name="one-way"></a>Jednosměrný
 Tento příklad znázorňuje služby kontaktu s operací jednosměrné služby. Klient není počkejte na dokončení stejně jako v případě s operací obousměrné služby operací služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a používá `wsHttpBinding` vazby. Služba v této ukázce je vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu, která přijímá a zpracovává požadavky. Klient je také konzolové aplikace.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535728"
 ---
 # <a name="how-to-set-the-sort-modes-for-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Nastavení režimů třídění pro sloupce v ovládacím prvku Windows Forms DataGridView
 V <xref:System.Windows.Forms.DataGridView> řízení, textové pole sloupců použít automatické řazení ve výchozím nastavení, zatímco jiné typy sloupců nejsou automaticky seřazeny. Někdy budete chtít přepsat tyto výchozí hodnoty. Například můžete zobrazit obrázky místo textu, čísla nebo hodnoty výčtu buněk. Při bitové kopie nelze řadit, základní hodnoty, které představují lze seřadit.  

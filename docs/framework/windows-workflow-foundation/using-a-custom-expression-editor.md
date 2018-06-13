@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518574"
 ---
 # <a name="using-a-custom-expression-editor"></a>Pomocí vlastního výrazu editoru
 Editor vlastního výrazu se dá implementovat zajistit výraz bohatší nebo jednodušší prostředí pro úpravy. Existuje několik situací, ve kterých můžete chtít použít editor vlastního výrazu:  

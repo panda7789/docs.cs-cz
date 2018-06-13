@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517557"
 ---
 # <a name="required-arguments-and-overload-groups"></a>Vyžaduje argumenty a skupiny přetížení
 Aktivity lze nakonfigurovat tak, aby některé argumenty jsou povinné vázat pro aktivitu platná pro provedení. `RequiredArgument` Atribut slouží k označení, že některé argumenty u aktivit jsou povinné a `OverloadGroup` atribut slouží k seskupení kategorie povinnými argumenty. Pomocí atributy mohou aktivity tvůrci poskytnout jednoduché nebo komplexní aktivity ověření konfigurace.  

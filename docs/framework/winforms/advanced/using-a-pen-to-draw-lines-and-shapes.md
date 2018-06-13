@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524339"
 ---
 # <a name="using-a-pen-to-draw-lines-and-shapes"></a>Kreslení čar a obrazců pomocí pera
 Použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] `Pen` objekty k vykreslení segmenty čáry, křivky a jsou podrobněji popsány dále tvarů. V této části *řádku* odkazuje na některý z těchto, není-li zadán rozumí pouze úsek čáry. Nastavte vlastnosti pera k řízení barvu, šířku, zarovnání a styl čar vykreslovány pomocí pera.  

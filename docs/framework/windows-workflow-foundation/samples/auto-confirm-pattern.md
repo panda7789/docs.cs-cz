@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515990"
 ---
 # <a name="auto-confirm-pattern"></a>Automatické potvrďte vzor
 Tato ukázka se skládá ze tří scénářů, které spustit ilustrující vlastní `AutoConfirmScope` aktivity. První příklad ukazuje úspěšné provedení posloupnost čtyři compensable aktivit, kde vnořených druhý a třetí v `AutoConfirmScope`. Druhý příklad ukazuje stejné pořadí s výjimkou po provedení čtvrtý <xref:System.Activities.Statements.CompensableActivity>. Třetí scénář ukazuje stejné pořadí s výjimku, ke kterým dochází v `AutoConfirmScope` po druhá <xref:System.Activities.Statements.CompensableActivity> dokončení.  

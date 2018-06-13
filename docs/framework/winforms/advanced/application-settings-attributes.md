@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518346"
 ---
 # <a name="application-settings-attributes"></a>Atributy nastavení aplikace
 Architektura nastavení aplikace obsahuje mnoho atributů, které mohou být použity buď obálkovou třídu nastavení aplikace nebo jeho jednotlivé vlastnosti. Tyto atributy se zkontrolují v době běhu aplikace nastavení infrastruktury, často konkrétně poskytovatel nastavení, aby bylo možné přizpůsobit funguje stanovené potřebám vlastní obálky.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33335245"
 ---
 # <a name="equality-comparisons-c-programming-guide"></a>Porovnání rovnosti (Průvodce programováním v C#)
 Někdy je nezbytné k porovnání rovnosti dvou hodnot. V některých případech testujete pro *hodnotu rovnosti*, také známé jako *ekvivalenční*, což znamená, že hodnoty, které jsou obsaženy v dvě proměnné, které jsou stejné. V ostatních případech budete muset určit, zda dvě proměnné odkazovat na stejnou základní objekt v paměti. Tento typ rovnosti se nazývá *referenční rovnosti*, nebo *identity*. Toto téma popisuje tyto dva druhy rovnosti a poskytuje odkazy na další témata pro další informace.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33519857"
 ---
 # <a name="how-to-create-a-custom-instance-store"></a>Postupy: vytvoření vlastní Instance úložiště
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] obsahuje <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, úložiště instance, které používá systém SQL Server se zachovat data pracovního postupu. Pokud vaše aplikace je potřeba zachovat data pracovního postupu na jiné médium, například jiné databázi nebo systému souborů, můžete implementovat vlastní instance úložiště. Vlastní instance úložiště je vytvořeno tím, že rozšíří abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídy a metody, které jsou požadovány pro implementaci implementace. Pro úplnou implementaci vlastní instance úložiště, najdete v článku [podnikové procesu nákupu](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md) ukázka.  
