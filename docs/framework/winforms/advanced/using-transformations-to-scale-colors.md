@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525964"
 ---
 # <a name="using-transformations-to-scale-colors"></a>Použití transformací pro škálování barev
 Škálování transformace vynásobí jednu nebo více součástí čtyři barvu podle čísla. V následující tabulce jsou uvedeny položek matice barev, které představují škálování.  
