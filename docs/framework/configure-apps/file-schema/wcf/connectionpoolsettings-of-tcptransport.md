@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753076"
 ---
 # <a name="ltconnectionpoolsettingsgt-of-lttcptransportgt"></a><span data-ttu-id="bfa48-102">&lt;connectionPoolSettings&gt; – &lt;tcpTransport&gt;</span><span class="sxs-lookup"><span data-stu-id="bfa48-102">&lt;connectionPoolSettings&gt; of &lt;tcpTransport&gt;</span></span>
 <span data-ttu-id="bfa48-103">Určuje nastavení fondu další připojení pro přenos TCP.</span><span class="sxs-lookup"><span data-stu-id="bfa48-103">Specifies additional connection pool settings for a TCP transport.</span></span>  

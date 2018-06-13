@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747639"
 ---
 # <a name="ltcertificatereferencegt-for-ltidentitygt"></a><span data-ttu-id="01cb4-102">&lt;certificateReference&gt; pro &lt;identity&gt;</span><span class="sxs-lookup"><span data-stu-id="01cb4-102">&lt;certificateReference&gt; for &lt;identity&gt;</span></span>
 <span data-ttu-id="01cb4-103">Určuje nastavení pro ověření certifikátu X.509.</span><span class="sxs-lookup"><span data-stu-id="01cb4-103">Specifies settings for X.509 certificate validation.</span></span> <span data-ttu-id="01cb4-104">Zabezpečené klienta Windows Communication Foundation (WCF), která se připojuje k koncový bod s tuto identitu ověřuje, že deklarací identity předkládaných server obsahovat použitý k vytvoření tuto identitu deklarace identity.</span><span class="sxs-lookup"><span data-stu-id="01cb4-104">A secure Windows Communication Foundation (WCF) client that connects to an endpoint with this identity verifies that the claims presented by the server contain the identity claim used to construct this identity.</span></span>  

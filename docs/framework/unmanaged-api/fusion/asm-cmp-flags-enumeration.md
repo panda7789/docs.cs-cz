@@ -1,14 +1,6 @@
 ---
-title: "ASM_CMP_FLAGS – výčet"
-ms.custom: 
+title: ASM_CMP_FLAGS – výčet
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ASM_CMP_FLAGS
 api_location:
@@ -22,22 +14,19 @@ helpviewer_keywords:
 ms.assetid: 4d1e6700-d4be-4fbd-8796-bfb4c07abbc8
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4930a4998ace3a1cd9e60300818fcfc75702b63b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fb5266a5ad1e91904432111049e70c4acc35cf37
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33429929"
 ---
-# <a name="asmcmpflags-enumeration"></a><span data-ttu-id="170ec-102">ASM_CMP_FLAGS – výčet</span><span class="sxs-lookup"><span data-stu-id="170ec-102">ASM_CMP_FLAGS Enumeration</span></span>
-<span data-ttu-id="170ec-103">Určuje verzi, sestavení, jazykovou verzi, podpisu a tak dále, dvě sestavení, který se má porovnat pomocí [iassemblyname::isequal –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="170ec-103">Indicates the version, build, culture, signature, and so on, of two assemblies to be compared by the [IAssemblyName::IsEqual](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md) method.</span></span>  
+# <a name="asmcmpflags-enumeration"></a><span data-ttu-id="7bec8-102">ASM_CMP_FLAGS – výčet</span><span class="sxs-lookup"><span data-stu-id="7bec8-102">ASM_CMP_FLAGS Enumeration</span></span>
+<span data-ttu-id="7bec8-103">Určuje verzi, sestavení, jazykovou verzi, podpisu a tak dále, dvě sestavení, který se má porovnat pomocí [iassemblyname::isequal –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="7bec8-103">Indicates the version, build, culture, signature, and so on, of two assemblies to be compared by the [IAssemblyName::IsEqual](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md) method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="170ec-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="170ec-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7bec8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7bec8-104">Syntax</span></span>  
   
 ```  
 typedef enum {  
@@ -78,15 +67,15 @@ typedef enum {
 } ASM_CMP_FLAGS;  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="170ec-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="170ec-105">Requirements</span></span>  
- <span data-ttu-id="170ec-106">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="170ec-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7bec8-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7bec8-105">Requirements</span></span>  
+ <span data-ttu-id="7bec8-106">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7bec8-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="170ec-107">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="170ec-107">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="7bec8-107">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="7bec8-107">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="170ec-108">**Knihovna:** zahrnuty jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="170ec-108">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="7bec8-108">**Knihovna:** zahrnuty jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="7bec8-108">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="170ec-109">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="170ec-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="7bec8-109">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7bec8-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="170ec-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="170ec-110">See Also</span></span>  
- [<span data-ttu-id="170ec-111">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="170ec-111">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)  
- [<span data-ttu-id="170ec-112">Výčty pro fúze</span><span class="sxs-lookup"><span data-stu-id="170ec-112">Fusion Enumerations</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="7bec8-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="7bec8-110">See Also</span></span>  
+ [<span data-ttu-id="7bec8-111">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7bec8-111">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)  
+ [<span data-ttu-id="7bec8-112">Výčty pro fúze</span><span class="sxs-lookup"><span data-stu-id="7bec8-112">Fusion Enumerations</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)

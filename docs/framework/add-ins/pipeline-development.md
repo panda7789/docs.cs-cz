@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744574"
 ---
 # <a name="pipeline-development"></a><span data-ttu-id="34dbc-102">Vývoj kanálu</span><span class="sxs-lookup"><span data-stu-id="34dbc-102">Pipeline Development</span></span>
 <span data-ttu-id="34dbc-103">Kanál doplňku je cesta kanálu segmentů, které hostitelskou aplikaci a její add-in musí používat ke komunikaci mezi sebou.</span><span class="sxs-lookup"><span data-stu-id="34dbc-103">The add-in pipeline is the path of pipeline segments that the host application and its add-in must use to communicate with each other.</span></span>  

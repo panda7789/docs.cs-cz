@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747054"
 ---
 # <a name="ltissuerchannelbehaviorsgt-element"></a><span data-ttu-id="a0c9f-102">Element &lt;issuerChannelBehaviors&gt;</span><span class="sxs-lookup"><span data-stu-id="a0c9f-102">&lt;issuerChannelBehaviors&gt; Element</span></span>
 <span data-ttu-id="a0c9f-103">Obsahuje kolekci chování koncový bod klienta Windows Communication Foundation (WCF) (definovanou v konfiguraci) má být použit při komunikaci s určeným službám tokenu služby.</span><span class="sxs-lookup"><span data-stu-id="a0c9f-103">Contains a collection of Windows Communication Foundation (WCF) client endpoint behaviors (defined in the configuration) to be used when communicating with the specified Service Token Services.</span></span> <span data-ttu-id="a0c9f-104">Chování definované nemůže obsahovat žádné [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) elementy.</span><span class="sxs-lookup"><span data-stu-id="a0c9f-104">The defined behaviors cannot include any [\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) elements.</span></span>  

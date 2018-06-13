@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744509"
 ---
 # <a name="creating-the-gamepiece-class"></a><span data-ttu-id="7c6de-102">Vytvoření třídy GamePiece</span><span class="sxs-lookup"><span data-stu-id="7c6de-102">Creating the GamePiece Class</span></span>
 <span data-ttu-id="7c6de-103">**GamePiece** třída zapouzdří všechny funkce, které jsou potřebné k načtení bitovou kopii Microsoft XNA herní část, sledovat stav myši ve vztahu k herní část, zachycení myši, zadejte manipulace a nečinnosti zpracování, a Když herní část dosáhne omezení zobrazení port, zadejte skákající schopnosti.</span><span class="sxs-lookup"><span data-stu-id="7c6de-103">The **GamePiece** class encapsulates all the functionality required to load a Microsoft XNA game piece image, track the state of the mouse in relation to the game piece, capture the mouse, provide manipulation and inertia processing, and provide bouncing capability when the game piece reaches the limits of the view port.</span></span>  

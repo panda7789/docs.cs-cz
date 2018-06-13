@@ -14,6 +14,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746212"
 ---
 # <a name="ltenforcefipspolicygt-element"></a><span data-ttu-id="22c3f-102">&lt;enforcefipspolicy –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="22c3f-102">&lt;enforceFIPSPolicy&gt; Element</span></span>
 <span data-ttu-id="22c3f-103">Určuje, jestli vynutit požadavek konfigurace počítače, že kryptografické algoritmy musí být v souladu s na zpracování standardů FIPS (Federal Information).</span><span class="sxs-lookup"><span data-stu-id="22c3f-103">Specifies whether to enforce a computer configuration requirement that cryptographic algorithms must comply with the Federal Information Processing Standards (FIPS).</span></span>  

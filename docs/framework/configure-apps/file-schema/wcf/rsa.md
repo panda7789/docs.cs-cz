@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749927"
 ---
 # <a name="ltrsagt"></a><span data-ttu-id="ab906-102">&lt;RSA&gt;</span><span class="sxs-lookup"><span data-stu-id="ab906-102">&lt;rsa&gt;</span></span>
 <span data-ttu-id="ab906-103">Zabezpečené klienta WCF, která se připojuje k koncový bod s tuto identitu ověřuje, že deklarací identity předkládaných serverem obsahují deklarace identity, který obsahuje veřejný klíč RSA použitý k vytvoření tuto identitu.</span><span class="sxs-lookup"><span data-stu-id="ab906-103">A secure WCF client that connects to an endpoint with this identity verifies that the claims presented by the server contain a claim that contains the RSA public key used to construct this identity.</span></span>  

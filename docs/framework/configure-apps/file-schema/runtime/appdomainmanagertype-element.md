@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743482"
 ---
 # <a name="ltappdomainmanagertypegt-element"></a><span data-ttu-id="dfaf8-102">&lt;appdomainmanagertype –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="dfaf8-102">&lt;appDomainManagerType&gt; Element</span></span>
 <span data-ttu-id="dfaf8-103">Určuje typ, který slouží jako správce domény aplikace pro výchozí doménu aplikace.</span><span class="sxs-lookup"><span data-stu-id="dfaf8-103">Specifies the type that serves as the application domain manager for the default application domain.</span></span>  

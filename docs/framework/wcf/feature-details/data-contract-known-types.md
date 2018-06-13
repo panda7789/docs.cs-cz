@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33496006"
 ---
 # <a name="data-contract-known-types"></a><span data-ttu-id="8d727-102">Známé typy kontraktů dat</span><span class="sxs-lookup"><span data-stu-id="8d727-102">Data Contract Known Types</span></span>
 <span data-ttu-id="8d727-103"><xref:System.Runtime.Serialization.KnownTypeAttribute> Třída umožňuje zadat v předstihu, typy, které by měl být zahrnutý během deserializace důvodů.</span><span class="sxs-lookup"><span data-stu-id="8d727-103">The <xref:System.Runtime.Serialization.KnownTypeAttribute> class allows you to specify, in advance, the types that should be included for consideration during deserialization.</span></span> <span data-ttu-id="8d727-104">Příklad pracovní najdete v tématu [známé typy](../../../../docs/framework/wcf/samples/known-types.md) příklad.</span><span class="sxs-lookup"><span data-stu-id="8d727-104">For a working example, see the [Known Types](../../../../docs/framework/wcf/samples/known-types.md) example.</span></span>  

@@ -24,6 +24,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744080"
 ---
 # <a name="how-to-build-a-multifile-assembly"></a><span data-ttu-id="fe803-102">Postupy: Vytváření vícesouborového sestavení</span><span class="sxs-lookup"><span data-stu-id="fe803-102">How to: Build a Multifile Assembly</span></span>
 <span data-ttu-id="fe803-103">Tento článek vysvětluje, jak vytvořit vícesouborového sestavení a poskytuje kód, který znázorňuje každý krok v postupu.</span><span class="sxs-lookup"><span data-stu-id="fe803-103">This article explains how to create a multifile assembly and provides code that illustrates each step in the procedure.</span></span>  

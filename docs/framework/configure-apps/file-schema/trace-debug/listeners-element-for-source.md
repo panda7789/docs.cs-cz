@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746836"
 ---
 # <a name="ltlistenersgt-element-for-ltsourcegt"></a><span data-ttu-id="fcf8b-102">&lt;moduly pro naslouchání&gt; Element pro &lt;zdroje&gt;</span><span class="sxs-lookup"><span data-stu-id="fcf8b-102">&lt;listeners&gt; Element for &lt;source&gt;</span></span>
 <span data-ttu-id="fcf8b-103">Přidá nebo odebere naslouchací procesy v <xref:System.Diagnostics.TraceSource.Listeners%2A> kolekci <xref:System.Diagnostics.TraceSource>.</span><span class="sxs-lookup"><span data-stu-id="fcf8b-103">Adds or removes listeners in the <xref:System.Diagnostics.TraceSource.Listeners%2A> collection for a <xref:System.Diagnostics.TraceSource>.</span></span> <span data-ttu-id="fcf8b-104">Naslouchací proces nasměruje výstup trasování do příslušné cílové, jako je například protokol, okno nebo textového souboru.</span><span class="sxs-lookup"><span data-stu-id="fcf8b-104">A listener directs the tracing output to an appropriate target, such as a log, window, or text file.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32768486"
 ---
 # <a name="docker-application-devops-workflow-with-microsoft-tools"></a><span data-ttu-id="507b8-103">Pracovní postup docker aplikací DevOps s nástroji Microsoft</span><span class="sxs-lookup"><span data-stu-id="507b8-103">Docker application DevOps workflow with Microsoft tools</span></span>
 

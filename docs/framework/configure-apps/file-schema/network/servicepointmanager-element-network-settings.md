@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753583"
 ---
 # <a name="ltservicepointmanagergt-element-network-settings"></a><span data-ttu-id="1483c-102">&lt;ServicePointManager –&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="1483c-102">&lt;servicePointManager&gt; Element (Network Settings)</span></span>
 <span data-ttu-id="1483c-103">Nakonfiguruje připojení k síťovým prostředkům.</span><span class="sxs-lookup"><span data-stu-id="1483c-103">Configures connections to network resources.</span></span>  

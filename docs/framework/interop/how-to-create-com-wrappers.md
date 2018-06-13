@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391222"
 ---
 # <a name="how-to-create-com-wrappers"></a><span data-ttu-id="a51c7-102">Postupy: Vytváření obálek COM</span><span class="sxs-lookup"><span data-stu-id="a51c7-102">How to: Create COM Wrappers</span></span>
 <span data-ttu-id="a51c7-103">Obálky modelu COM (Component Object) můžete vytvořit pomocí [!INCLUDE[vsprvsext](../../../includes/vsprvsext-md.md)] funkce nebo rozhraní .NET Framework nástroje Tlbimp.exe a Regasm.exe.</span><span class="sxs-lookup"><span data-stu-id="a51c7-103">You can create Component Object Model (COM) wrappers by using [!INCLUDE[vsprvsext](../../../includes/vsprvsext-md.md)] features or the .NET Framework tools Tlbimp.exe and Regasm.exe.</span></span> <span data-ttu-id="a51c7-104">Obě metody generovat dva typy COM – obálky:</span><span class="sxs-lookup"><span data-stu-id="a51c7-104">Both methods generate two types of COM wrappers:</span></span>  

@@ -19,6 +19,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744639"
 ---
 # <a name="creating-and-using-strong-named-assemblies"></a><span data-ttu-id="36f1e-102">Vytváření a používání sestavení se silným názvem</span><span class="sxs-lookup"><span data-stu-id="36f1e-102">Creating and Using Strong-Named Assemblies</span></span>
 <a name="top"></a> <span data-ttu-id="36f1e-103">Silné jméno se skládá z identity sestavení – jeho jednoduchý textový název, číslo verze a informace o jazykové verzi (Pokud je zadáno) – plus veřejného klíče a digitální podpis.</span><span class="sxs-lookup"><span data-stu-id="36f1e-103">A strong name consists of the assembly's identity—its simple text name, version number, and culture information (if provided)—plus a public key and a digital signature.</span></span> <span data-ttu-id="36f1e-104">Generuje se ze souboru sestavení pomocí odpovídajícího privátního klíče.</span><span class="sxs-lookup"><span data-stu-id="36f1e-104">It is generated from an assembly file using the corresponding private key.</span></span> <span data-ttu-id="36f1e-105">(Soubor sestavení obsahuje manifest sestavení, který obsahuje názvy a hodnoty hash všech souborů, které tvoří sestavení.)</span><span class="sxs-lookup"><span data-stu-id="36f1e-105">(The assembly file contains the assembly manifest, which contains the names and hashes of all the files that make up the assembly.)</span></span>  

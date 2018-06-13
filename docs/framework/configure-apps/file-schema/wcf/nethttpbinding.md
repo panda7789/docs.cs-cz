@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751919"
 ---
 # <a name="ltnethttpbindinggt"></a><span data-ttu-id="4ca79-102">&lt;netHttpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="4ca79-102">&lt;netHttpBinding&gt;</span></span>
 <span data-ttu-id="4ca79-103">Představuje vazbu služby Windows Communication Foundation (WCF) můžete použít ke konfiguraci a vystavit koncové body, které mohou komunikovat prostřednictvím protokolu HTTP.</span><span class="sxs-lookup"><span data-stu-id="4ca79-103">Represents a binding that a Windows Communication Foundation (WCF) service can use to configure and expose endpoints that are able to communicate over HTTP.</span></span> <span data-ttu-id="4ca79-104">Při použití s duplexního kontraktu, webové sokety se bude používat, v opačném případě se použije protokol HTTP.</span><span class="sxs-lookup"><span data-stu-id="4ca79-104">When used with a duplex contract, Web Sockets will be used, otherwise HTTP will be used.</span></span>  

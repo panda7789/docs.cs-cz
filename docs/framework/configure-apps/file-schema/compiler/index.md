@@ -19,6 +19,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753687"
 ---
 # <a name="compiler-and-language-provider-settings-schema"></a><span data-ttu-id="cfebb-102">Schéma nastavení kompilátoru a poskytovatele jazyka</span><span class="sxs-lookup"><span data-stu-id="cfebb-102">Compiler and Language Provider Settings Schema</span></span>
 <span data-ttu-id="cfebb-103">Kompilátoru a poskytovatele nastavení jazyka zadejte kompilátor – elementy konfigurace pro zprostředkovatele dostupný jazyk.</span><span class="sxs-lookup"><span data-stu-id="cfebb-103">Compiler and language provider settings specify compiler configuration elements for available language providers.</span></span> <span data-ttu-id="cfebb-104">Každý prvek konfigurace kompilátoru Určuje kód název typu poskytovatele, parametry kompilátoru jazyka názvy podporu a podporu přípony souborů.</span><span class="sxs-lookup"><span data-stu-id="cfebb-104">Each compiler configuration element specifies the code provider type name, compiler parameters, supported language names, and supported file extensions.</span></span>  

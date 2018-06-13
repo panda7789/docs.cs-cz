@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743573"
 ---
 # <a name="ltappdomainresourcemonitoringgt-element"></a><span data-ttu-id="fb31b-102">&lt;appdomainresourcemonitoring –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="fb31b-102">&lt;appDomainResourceMonitoring&gt; Element</span></span>
 <span data-ttu-id="fb31b-103">Dá pokyn modulu runtime ke shromažďování statistik na všechny domény aplikace v procesu po dobu trvání procesu.</span><span class="sxs-lookup"><span data-stu-id="fb31b-103">Instructs the runtime to collect statistics on all application domains in the process for the life of the process.</span></span>  

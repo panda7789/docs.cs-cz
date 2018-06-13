@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749163"
 ---
 # <a name="ltidentitygt"></a><span data-ttu-id="d067d-102">&lt;Identity&gt;</span><span class="sxs-lookup"><span data-stu-id="d067d-102">&lt;identity&gt;</span></span>
 <span data-ttu-id="d067d-103">Prvek identity umožňuje vývojáři klienta zadejte v době návrhu očekávaný identitu služby.</span><span class="sxs-lookup"><span data-stu-id="d067d-103">The identity element allows a client developer to specify at design time the expected identity of the service.</span></span> <span data-ttu-id="d067d-104">V procesu mezi klientem a službou infrastrukturu Windows Communication Foundation (WCF) zajistí, že identita očekávanou službu shody hodnoty tohoto elementu a proto může být ověřen.</span><span class="sxs-lookup"><span data-stu-id="d067d-104">In the handshake process between the client and service, the Windows Communication Foundation (WCF) infrastructure will ensure that the identity of the expected service matches the values of this element, and thus can be authenticated.</span></span> <span data-ttu-id="d067d-105">Další informace najdete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).</span><span class="sxs-lookup"><span data-stu-id="d067d-105">For more information, see [Service Identity and Authentication](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).</span></span>  
