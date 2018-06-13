@@ -8,6 +8,7 @@ ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/19/2018
+ms.locfileid: "34311998"
 ---
 # <a name="f-guide"></a><span data-ttu-id="a768d-103">Průvodce jazykem F#</span><span class="sxs-lookup"><span data-stu-id="a768d-103">F# Guide</span></span>
 
