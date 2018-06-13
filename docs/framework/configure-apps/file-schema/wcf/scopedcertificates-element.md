@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748861"
 ---
 # <a name="ltscopedcertificatesgt-element"></a><span data-ttu-id="dd926-102">Element &lt;scopedCertificates&gt;</span><span class="sxs-lookup"><span data-stu-id="dd926-102">&lt;scopedCertificates&gt; Element</span></span>
 <span data-ttu-id="dd926-103">Představuje kolekci certifikáty X.509, které jsou součástí konkrétní služby (obor) pro ověřování.</span><span class="sxs-lookup"><span data-stu-id="dd926-103">Represents a collection of X.509 certificates provided by specific services (scoped) for authentication.</span></span> <span data-ttu-id="dd926-104">Tato kolekce se obvykle používá k určení certifikáty služby pro služby tokenů zabezpečení ve scénáři federované.</span><span class="sxs-lookup"><span data-stu-id="dd926-104">This collection is typically used to specify the service certificates for Security Token Services in a federated scenario.</span></span>  
