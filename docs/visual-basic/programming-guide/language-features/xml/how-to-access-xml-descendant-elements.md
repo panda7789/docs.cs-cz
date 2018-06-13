@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648483"
 ---
 # <a name="how-to-access-xml-descendant-elements-visual-basic"></a>Postupy: Přístup k následnickým elementům XML (Visual Basic)
 Tento příklad ukazuje, jak používat vlastnost osy nástupce pro přístup k všech elementů XML, které jsou obsažené v elementu XML, které mají zadaný název. Konkrétně používá `Value` vlastnost, která má získat hodnotu první prvek v kolekci, která `name` vrátí vlastnost Následnické osy. `name` Vlastnost osy nástupce získá všechny elementy s názvem `name` , jsou součástí `contacts` objektu. Tento příklad také používá `phone` vlastnost osy nástupce přístup všech potomků s názvem `phone` , jsou součástí `contacts` objektu.  

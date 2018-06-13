@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806910"
 ---
 # <a name="virtual-directory-setup-instructions"></a>Pokyny pro instalaci virtuálního adresáře
 Ukázky Windows Communication Foundation (WCF) jsou určeny k sdílejí společný virtuální adresář s názvem servicemodelsamples, který je namapovaný na %SystemDrive%\inetpub\wwwroot\servicemodelsamples složky.  

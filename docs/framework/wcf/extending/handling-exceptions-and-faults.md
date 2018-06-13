@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809557"
 ---
 # <a name="handling-exceptions-and-faults"></a>Zpracování výjimek a chyb
 Výjimky se používají ke komunikaci chyby místně v rámci služby nebo implementace klienta. Chyb, na druhé straně, se použijí ke komunikaci chyby napříč hranicemi služby, například ze serveru do klienta a naopak. Kromě chyb používají přenosové kanály mechanismy specifické pro přenos často ke komunikaci chyb na úrovni přenosu. Například přenos HTTP používá stavové kódy, jako je například 404 ke komunikaci neexistující adresu URL koncového bodu (neexistuje žádný koncový bod, který má být zaslán zpět chybu). Tento dokument se skládá ze tří oddílů, které poskytují pokyny k vlastním kanálu autoři. První část obsahuje pokyny k kdy a jak definovat a generování výjimek. Druhá část obsahuje pokyny ohledně generování a využívání chyb. Třetí část vysvětluje, jak poskytnout informace o trasování a řešení potíží s běžící aplikací usnadňuje uživateli vlastní kanál.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807186"
 ---
 # <a name="creating-a-bindingelement"></a>Vytvoření BindingElement
 Vazby a prvky vazeb (objekty, které rozšiřují <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>, v uvedeném pořadí) jsou místo, kde se přidružené k kanál továrny a moduly pro naslouchání kanálu aplikací modelu Windows Communication Foundation (WCF). Bez vazby, použití vlastních kanály vyžaduje programování na úrovni kanálu jak je popsáno v [programování na úrovni služby kanálů](../../../../docs/framework/wcf/extending/service-channel-level-programming.md) a [programování na úrovni kanálu klienta](../../../../docs/framework/wcf/extending/client-channel-level-programming.md). Toto téma popisuje minimální požadavek na povolit v kanálu WCF, vývoj <xref:System.ServiceModel.Channels.BindingElement> pro kanál a povolit použití z aplikace, jak je popsáno v kroku 4 v [rozvojových kanály](../../../../docs/framework/wcf/extending/developing-channels.md).  

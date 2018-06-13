@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809466"
 ---
 # <a name="data-contract-surrogates"></a>Náhrady kontraktů dat
 Kontrakt dat *náhradní* je pokročilá funkce založena na kontrakt dat modelu. Tato funkce je určena pro typ přizpůsobení a nahrazování v situacích, kde chcete změnit, jak je serializováno typu, deserializovat nebo předpokládané do metadata uživatele. Některé scénáře, kde lze použít náhradní je při kontraktu dat nebyl zadán pro typ, pole a vlastnosti nejsou označené jako <xref:System.Runtime.Serialization.DataMemberAttribute> atribut nebo uživatele chcete dynamicky vytvořte variace schématu.  

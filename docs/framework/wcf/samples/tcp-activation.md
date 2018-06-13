@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807403"
 ---
 # <a name="tcp-activation"></a>Aktivace protokolem TCP
 Tento příklad znázorňuje hostování službu, která používá k aktivaci služby, který komunikuje přes protokol net.tcp služby Aktivace procesů systému Windows (WAS). Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  

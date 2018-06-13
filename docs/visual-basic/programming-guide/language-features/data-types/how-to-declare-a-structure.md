@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650024"
 ---
 # <a name="how-to-declare-a-structure-visual-basic"></a>Postupy: Definice struktury (Visual Basic)
 Zahájit deklarace struktury s [Structure – příkaz](../../../../visual-basic/language-reference/statements/structure-statement.md), a její `End` `Structure` příkaz. Mezi tyto dva příkazy, musí deklarovat alespoň jeden *element*. Elementy mohou být jakéhokoli typu dat, ale alespoň jeden musí být na sdíleném proměnnou nebo sdíleném, nevlastní událostí.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806055"
 ---
 # <a name="configuring-bindings-for-windows-communication-foundation-services"></a>Konfigurace vazeb pro služby Windows Communication Foundation
 Při vytváření aplikace, budete chtít často odložení rozhodnutí, která správci po nasazení aplikace. Například je často žádný způsob, jak předem zjistit, co služba adresu nebo identifikátor URI (Uniform Resource), bude. Místo pevně kódováno adresu, je vhodnější umožňují správcům udělat po vytvoření služby. Tato možnost se provádí prostřednictvím konfigurace.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809385"
 ---
 # <a name="how-to-create-a-custom-security-token-authenticator"></a>Postupy: Vytvoření vlastního ověřovacího modulu tokenu zabezpečení
 Toto téma ukazuje, jak vytvořit ověřovacího modulu tokenu vlastní zabezpečení a postup při integraci s tokenu správce vlastní zabezpečení. Ověřovací data tokenu zabezpečení ověří obsah token zabezpečení, která je součástí příchozí zprávy. Pokud je ověření úspěšné, ověřovacích vrátí kolekci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> instance, při hodnocení, vrátí sadu deklarací identity.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806641"
 ---
 # <a name="how-to-specify-client-credential-values"></a>Postupy: Zadání hodnot přihlašovacích údajů klienta
 Pomocí služby Windows Communication Foundation (WCF), službu určit, jak ověření klienta ke službě. Službu můžete například stanovení, ověření klienta s certifikátem.  

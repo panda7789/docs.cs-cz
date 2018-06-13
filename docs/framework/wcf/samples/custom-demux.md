@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805561"
 ---
 # <a name="custom-demux"></a>Vlastní demux
 Tento příklad ukazuje, jak hlavičky zpráv MSMQ lze mapovat na jinou službu operations tak, aby Windows Communication Foundation (WCF) služeb, které používají <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> nejsou omezeny na použití jedné operace služby, jak je předvedeno v [ Zprávy služby Řízení front zpráv do Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md) a [Windows Communication Foundation do řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md) ukázky.  

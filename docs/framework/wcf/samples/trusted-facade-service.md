@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807658"
 ---
 # <a name="trusted-facade-service"></a>Důvěryhodná služba facade
 Tento ukázkový scénář ukazuje, jak přenést informace identitu volajícího z jedné služby do jiného pomocí služby Windows Communication Foundation (WCF) Infrastruktura zabezpečení.  

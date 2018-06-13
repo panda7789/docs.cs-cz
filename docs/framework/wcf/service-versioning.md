@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809687"
 ---
 # <a name="service-versioning"></a>Verze služby
 Po počátečním nasazení a potenciálně několikrát během své životnosti může potřebovat služby (a koncových bodů, které vystavují) se musí změnit z různých důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo k jiné řešení problémy. Každé změně zavádí novou verzi služby. Toto téma vysvětluje, jak vzít v úvahu Správa verzí Windows Communication Foundation (WCF).  

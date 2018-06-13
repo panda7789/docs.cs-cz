@@ -11,6 +11,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457927"
 ---
 # <a name="operators-c-programming-guide"></a>Operátory (Průvodce programováním v C#)
 V jazyce C# *operátor* je element program, který se použije na jeden nebo více *operandy* v výraz nebo příkaz. Operátory, které s jedním operandem, jako je například operátor přírůstku (`++`) nebo `new`, se označují jako *unární* operátory. Operátory, které provést dva operandy, jako je například aritmetické operátory (`+`,`-`,`*`,`/`), se označují jako *binární* operátory. Jeden operátor, operátor podmíněného (`?:`), má tři operandy a je jedinou Ternární operátor v jazyce C#.  

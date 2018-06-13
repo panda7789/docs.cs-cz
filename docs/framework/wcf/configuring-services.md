@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803277"
 ---
 # <a name="configuring-services"></a>Konfigurace služeb
 Jakmile určené a implementovat vaše kontrakt služby, jste připraveni ke konfiguraci služby. Toto je, kde definice a přizpůsobení, jak je vystaven služby pro klienty, včetně zadání adresy, kde se nachází, zprávy, který se používá k odesílání a přijímání zpráv a typ zabezpečení, která vyžaduje kódování a přenos.  

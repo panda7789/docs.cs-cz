@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809313"
 ---
 # <a name="tracing"></a>Trasování
 Windows Communication Foundation (WCF) poskytuje instrumentace aplikací a diagnostických dat pro monitorování selhání a analýzy. Trasování místo ladicí program vám pomůže pochopit, jak se chovají aplikace nebo proč chyb. Zpracování chyb a také mohou korelovat mezi komponentami a poskytuje prostředí začátku do konce.  

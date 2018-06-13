@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648772"
 ---
 # <a name="user-defined-constants-visual-basic"></a>Uživatelem definované konstanty (Visual Basic)
 Konstanta je smysluplný název, který probíhá číslo nebo řetězec, který se nemění. Konstanty ukládat hodnoty, které jak již název napovídá, zůstat konstantní po spuštění aplikace. Můžete použít konstanty, které jsou definovány pro ovládací prvky nebo součásti, se kterými můžete pracovat, nebo můžete vytvořit vlastní. Konstanty vytvořit sami jsou popsány jako *uživatelem definované*.  

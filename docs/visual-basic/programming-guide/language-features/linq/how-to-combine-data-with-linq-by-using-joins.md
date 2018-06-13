@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33653452"
 ---
 # <a name="how-to-combine-data-with-linq-by-using-joins-visual-basic"></a>Postupy: Kombinace dat s LINQ pomocí spojení (Visual Basic)
 Visual Basic poskytuje `Join` a `Group Join` dotaz klauzule k vám umožní sloučit obsah na základě běžných hodnot mezi kolekce více kolekcí. Tyto hodnoty se označují jako *klíč* hodnoty. Vývojáři, kteří znají relační databáze koncepty rozpozná `Join` klauzule jako vnitřního spojení a `Group Join` klauzule jako prakticky LEFT OUTER JOIN.  

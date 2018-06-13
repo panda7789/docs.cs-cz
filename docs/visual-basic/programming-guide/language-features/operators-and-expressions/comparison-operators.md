@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655133"
 ---
 # <a name="comparison-operators-in-visual-basic"></a>Operátory porovnání v jazyce Visual Basic
 Relační operátory porovnání dvou výrazů a vrátí `Boolean` hodnotu, která představuje vztah jejich hodnot. Pro porovnání číselných hodnot, operátory porovnávání řetězců a operátory porovnání objektů existují operátory. Všechny tři typy operátory jsou popsané v tomto dokumentu.  

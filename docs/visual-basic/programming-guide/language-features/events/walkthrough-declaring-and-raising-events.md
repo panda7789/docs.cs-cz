@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652806"
 ---
 # <a name="walkthrough-declaring-and-raising-events-visual-basic"></a>Návod: Deklarace a vyvolávání událostí (Visual Basic)
 Tento návod ukazuje, jak deklarace a vyvolávání událostí třídy s názvem `Widget`. Po dokončení kroků, můžete chtít přečíst téma doprovodné [návod: zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md), který ukazuje způsob použití události z `Widget` objekty, které chcete poskytnout informace o stavu v aplikaci.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809976"
 ---
 # <a name="custom-channel-dispatcher"></a>Dispečer vlastního kanálu
 Tato ukázka ukazuje, jak vytvořit kanál zásobníku vlastní způsobem implementací <xref:System.ServiceModel.ServiceHostBase> přímo a jak vytvořit vlastní kanál dispečera v prostředí hostitele webu. Dispečera kanál komunikuje s <xref:System.ServiceModel.Channels.IChannelListener> tak, aby přijímal zprávy kanály a načte z zásobníku kanálu. Tato ukázka také poskytuje základní ukázka, jak vytvořit kanál zásobníku v prostředí webové hostitele pomocí <xref:System.ServiceModel.Activation.VirtualPathExtension>.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806380"
 ---
 # <a name="namedpipe-activation"></a>Aktivace pojmenovaného kanálu
 Tento příklad znázorňuje hostování služby, která využívá služba aktivace procesů systému Windows (WAS) k aktivaci služby, který komunikuje přes názvy kanály. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a vyžaduje [!INCLUDE[wv](../../../../includes/wv-md.md)] ke spuštění.  

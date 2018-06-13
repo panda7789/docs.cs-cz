@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655358"
 ---
 # <a name="visual-basic-coding-conventions"></a>Visual Basic – konvence kódování
 Microsoft vyvíjí ukázky a dokumentace, která postupujte podle pokynů v tomto tématu. Pokud budete postupovat podle stejné konvence psaní kódu, získáte následující výhody:  

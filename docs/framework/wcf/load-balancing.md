@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807522"
 ---
 # <a name="load-balancing"></a>Vyrovnávání zatížení
 Jedním ze způsobů navýšení kapacity aplikace Windows Communication Foundation (WCF) je škálování je jejich nasazením do Vyrovnávání zatížení sítě serverové farmy. Aplikace WCF může být Vyrovnávané pomocí vyrovnávání techniky, včetně služby Vyrovnávání zatížení softwaru jako je například Vyrovnávání zatížení sítě Windows standardní zatížení, jakož i hardwarové zařízení pro vyrovnávání zatížení.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806458"
 ---
 # <a name="wcf-service-publishing"></a>Publikování služby WCF
 Publikování služby Windows Communication Foundation (WCF) usnadňuje pokročíte z časná vývojového prostředí, ve skutečnosti nasazení aplikace do produkčního prostředí pro účely testování poskytované hostitel služby WCF a testovacího klienta WCF. Před potvrzením plán konečné nasazení, můžete pro publikování služby Windows Communication Foundation (WCF) ověřte, zda služby WCF provede správně a je připravena k publikování. Můžete také nasadit knihovnách služby WCF na různé cílové umístění pro testování.  

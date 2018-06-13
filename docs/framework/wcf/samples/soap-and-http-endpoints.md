@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809515"
 ---
 # <a name="soap-and-http-endpoints"></a>Koncové body SOAP a HTTP
 Tento příklad znázorňuje způsob implementace služby vzdáleného volání procedur a vystavit ve formátu protokolu SOAP a formát "Prostý formát XML" (POX) pomocí modelu programování WCF Web. Najdete v článku [základní služba HTTP](../../../../docs/framework/wcf/samples/basic-http-service.md) ukázku další podrobnosti o vazby HTTP pro službu. Tato ukázka se zaměřuje na podrobnosti, které se vztahují k vystavení stejnou službu prostřednictvím protokolu SOAP a HTTP pomocí různých vazeb.  

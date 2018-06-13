@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807535"
 ---
 # <a name="specifying-service-run-time-behavior"></a>Určování chování služby za běhu
 Po dokončení návrhu smlouvy o poskytování služeb ([navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)) a implementace vašeho kontrakt služby ([implementace kontraktů služby](../../../docs/framework/wcf/implementing-service-contracts.md)) můžete nakonfigurovat chování operaci služby modulu runtime. Toto téma popisuje funkce služby poskytované systémem a operace chování a popisuje, kde najít další informace o vytvoření nové chování. Když některé chování se použijí jako atributy, mnoho se aplikují pomocí konfiguračního souboru aplikace nebo prostřednictvím kódu programu. Další informace o konfiguraci aplikace služby najdete v tématu [konfigurace služby](../../../docs/framework/wcf/configuring-services.md).  

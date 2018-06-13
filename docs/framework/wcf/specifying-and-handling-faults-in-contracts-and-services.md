@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806497"
 ---
 # <a name="specifying-and-handling-faults-in-contracts-and-services"></a>Určování a zpracování chyb v kontraktech a službách
 Aplikace Windows Communication Foundation (WCF) zpracování chyby situacích mapování objektů spravovaných výjimek na protokolu SOAP selhání objekty a objekty chybu protokolu SOAP na objekty spravovaných výjimek. Témata v této části popisují postup návrhu kontrakty vystavit chyba podmínek jako vlastní chyb SOAP, jak vracet tyto chyby v rámci implementace služby a jak klienti catch takové chyby.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803342"
 ---
 # <a name="analytic-tracing-overview"></a>Analytické trasování – přehled
 Analytické trasování v [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] je vysoký výkon a nízkou podrobností trasování funkce nastavit nad událostí trasování pro Windows (ETW). Trasování událostí pro Windows se spustí na úrovni jádra k výrazně snížit režii trasování operací. Ho efektivně ukládá do vyrovnávací paměti události režimu uživatele a jádra a umožňuje dynamické povolení protokolování bez nutnosti restartování služby. Data trasování je k dispozici v případě, že byl vygenerované a přijaté protokoly za ním.  

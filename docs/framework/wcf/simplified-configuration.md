@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808507"
 ---
 # <a name="simplified-configuration"></a>Zjednodušená konfigurace
 Konfigurace služby Windows Communication Foundation (WCF) může být složité úlohy. Existuje mnoho různých možností a není vždy snadno určit nastavení, které jsou vyžadovány. Při konfiguraci souborů zvýšíte flexibilitu služby WCF, jsou také zdroj pro mnoho vyhledání problémů. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] řeší tyto problémy a poskytuje způsob, jak snížit velikost a složitost konfigurace služby.  

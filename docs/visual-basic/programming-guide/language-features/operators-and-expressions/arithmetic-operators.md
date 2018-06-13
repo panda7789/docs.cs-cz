@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655581"
 ---
 # <a name="arithmetic-operators-in-visual-basic"></a>Aritmetické operátory v jazyce Visual Basic
 Aritmetické operátory slouží k provádění mnoha známé aritmetické operace, které zahrnují výpočet numerických hodnot reprezentována literály, proměnné, ostatní výrazy, funkce a vlastnosti volání a konstanty. Bitové posunutí – operátory, které fungují na úrovni jednotlivých bity operandy a jejich vzory bitové posunutí doleva nebo doprava taky klasifikované s aritmetické operátory jsou.  

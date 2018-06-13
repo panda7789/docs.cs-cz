@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803486"
 ---
 # <a name="dynamically-enabling-analytic-tracing"></a>Dynamické povolování analytického sledování
 Pomocí nástrojů, které jsou součástí operačního systému Windows, můžete povolit nebo zakázat trasování dynamicky použitím události trasování událostí pro Windows (ETW). Pro všechny [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] služby Windows Communication Foundation (WCF), analytické trasování může být povolení i Zakázaní dynamicky bez úpravy souboru Web.config aplikace nebo restartování služby. To umožňuje aplikaci, který vysílá události trasování, které zůstanou nepřerušeného.  

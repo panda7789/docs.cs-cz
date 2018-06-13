@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805405"
 ---
 # <a name="aspnet-caching-integration"></a>Integrace mezipaměti ASP.NET
 Tento příklad ukazuje, jak využívat výstupní mezipaměti technologie ASP.NET pomocí programovacího modelu WCF WEB HTTP. Najdete v tématu [základní služba prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázku vlastním hostováním verzi tento scénář, který popisuje implementace služby podrobněji. Toto téma se zaměřuje na funkce integrace výstupní mezipaměti technologie ASP.NET.  

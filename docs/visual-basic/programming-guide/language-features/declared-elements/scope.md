@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656292"
 ---
 # <a name="scope-in-visual-basic"></a>Rozsah v jazyce Visual Basic
 *Oboru* deklarované elementu je sada všechen kód, který může na ni odkazuje bez určení názvu nebo ji dáte k dispozici prostřednictvím [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md). Element může mít rozsah v některém z následujících úrovní:  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33652770"
 ---
 # <a name="linq-to-xml-vs-dom-visual-basic"></a>Technologie LINQ to XML vs. Model DOM (Visual Basic)
 Tato část popisuje některé hlavní rozdíly mezi [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] a aktuální převládá XML programovací rozhraní API, W3C Model DOM (Document Object).  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809115"
 ---
 # <a name="specifying-an-endpoint-address"></a>Zadání adresy koncového bodu
 Veškerá komunikace se službou Windows Communication Foundation (WCF) dojde k prostřednictvím své koncové body. Každý <xref:System.ServiceModel.Description.ServiceEndpoint> obsahuje <xref:System.ServiceModel.Description.ServiceEndpoint.Address%2A>, <xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A>a <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A>. Kontrakt určuje operací, které jsou k dispozici. Vazba Určuje, jak se komunikovat se službou a adresu určuje, kde najít službu. Každý koncový bod musí mít jedinečnou adresu. Adresa koncového bodu je reprezentována <xref:System.ServiceModel.EndpointAddress> třídy, která obsahuje identifikátor URI (Uniform Resource) představující adresu služby, <xref:System.ServiceModel.EndpointAddress.Identity%2A>, který představuje identitu zabezpečení služby a kolekce volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A>. Volitelné záhlaví obsahují podrobnější informace o přidělování k vaší identifikaci nebo interakci s koncovým bodem. Například záhlaví můžete určit, jak zpracovávat příchozí zprávy, kde má koncový bod odeslat zprávu odpovědi nebo které instanci služby pro použití ke zpracování příchozí zprávy z určitého uživatele, když jsou k dispozici více instancí.  

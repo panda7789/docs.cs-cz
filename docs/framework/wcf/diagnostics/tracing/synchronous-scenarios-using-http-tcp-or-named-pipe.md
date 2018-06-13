@@ -2,11 +2,12 @@
 title: Synchronní scénáře využívající HTTP, TCP nebo pojmenované kanály
 ms.date: 03/30/2017
 ms.assetid: 7e90af1b-f8f6-41b9-a63a-8490ada502b1
-ms.openlocfilehash: 03f4fdcaa5fc59efe7e92d2cb900212ed5ebae77
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 11a5d8f43d12d35728c65c7a60ad8a4fa2fc1b3a
+ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810171"
 ---
 # <a name="synchronous-scenarios-using-http-tcp-or-named-pipe"></a>Synchronní scénáře využívající HTTP, TCP nebo pojmenované kanály
 Toto téma popisuje aktivity a přenosy pro různé synchronní požadavek nebo odpověď scénáře s jedním podprocesem klienta, pomocí protokolu HTTP, TCP nebo pojmenovaného kanálu. V tématu [asynchronní scénáře použití HTTP, TCP nebo pojmenované kanály](../../../../../docs/framework/wcf/diagnostics/tracing/asynchronous-scenarios-using-http-tcp-or-named-pipe.md) Další informace o Vícevláknová požadavky.  
@@ -54,7 +55,7 @@ Toto téma popisuje aktivity a přenosy pro různé synchronní požadavek nebo 
  Jediným rozdílem s předchozím scénáři je, že zprávu o chybě protokolu SOAP se vrátí jako zprávu odpovědi. Pokud `propagateActivity` = `true`, ID aktivity zprávy požadavku se přidá do selhání zprávu protokolu SOAP.  
   
 ## <a name="synchronous-one-way-without-errors"></a>Synchronní jednosměrný bez chyb  
- První scénář jediným rozdílem je, že na server je vrácena žádná zpráva. Pro protokoly založené na protokolu HTTP, stav (platné nebo chyba) je stále vrácen do klienta. Důvodem je, že je protokol pouze s sémantiku požadavků a odpovědí, který je součástí protokolu HTTP [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] zásobník protokolu. Protože je skrytá zpracování protokolu TCP [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)], klientovi je odeslán bez potvrzení.  
+ První scénář jediným rozdílem je, že na server je vrácena žádná zpráva. Pro protokoly založené na protokolu HTTP, stav (platné nebo chyba) je stále vrácen do klienta. Je to proto, že je protokol pouze s sémantiku požadavků a odpovědí, který je součástí v zásobníku protokolů WCF HTTP. Protože zpracování protokolu TCP je skryta WCF, potvrzení je odeslán do klienta.  
   
 ## <a name="synchronous-one-way-with-errors"></a>Synchronní jednosměrný s chybami  
  Pokud dojde k chybě při zpracování zprávy (Q nebo novější), žádná oznámení je vrácen do klienta. Toto je stejný jako scénář "Synchronní One-Way bez chyby". Jednosměrný situaci byste neměli používat, pokud chcete zobrazit chybová zpráva.  

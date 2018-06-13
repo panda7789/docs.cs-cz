@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809778"
 ---
 # <a name="understanding-protection-level"></a>Princip úrovně ochrany
 `ProtectionLevel` Vlastnost nachází na mnoha různých tříd, jako <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy. Vlastnost řídí, jak je chráněný část (nebo celé) zprávy. Toto téma popisuje funkci Windows Communication Foundation (WCF) a jak to funguje.  

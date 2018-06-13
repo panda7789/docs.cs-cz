@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809859"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Windows Workflow Foundation funkce podrobností
 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] Přidá do modelu Windows Workflow Foundation celou řadu funkcí. Tento dokument obsahuje několik nových funkcí a uvádí podrobnosti o scénářích, ve kterých mohou být užitečné.  

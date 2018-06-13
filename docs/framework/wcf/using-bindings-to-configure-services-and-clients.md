@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806068"
 ---
 # <a name="using-bindings-to-configure-services-and-clients"></a>Používání vazeb ke konfiguraci služeb a klientů
 Vazby jsou objekty, které zadejte podrobnosti komunikace požadované pro připojení ke koncovému bodu. Přesněji řečeno vazby obsahovat informace o konfiguraci, která se používá k vytvoření klienta služby Windows nebo modul runtime definováním specifika přenosy, formáty (kódování zpráv) a protokoly pro příslušné kanál koncového bodu nebo klienta. Postup vytvoření funkční služby Windows Communication Foundation (WCF), každý koncový bod v rámci služby vyžaduje vazbu. Toto téma vysvětluje, co jsou vazby, jak jsou definovány a jak konkrétní vazbu je zadán pro koncový bod.  

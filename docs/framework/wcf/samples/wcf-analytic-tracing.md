@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807095"
 ---
 # <a name="wcf-analytic-tracing"></a>Analytické trasování WCF
 Tento příklad ukazuje, jak přidat vlastní trasování událostí do datového proudu analytické trasování, které Windows Communication Foundation (WCF) zapisuje do trasování událostí pro Windows v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Analytické trasování jsou určené můžete snadno získat viditelnost do služeb bez placení snížení výkonu vysoké. Tento příklad ukazuje způsob použití <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> rozhraní API zápisu události, které se integrují se službou WCF.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649084"
 ---
 # <a name="linq-to-xml-overview-visual-basic"></a>Technologie LINQ to XML přehled (Visual Basic)
 XML byl široce přijat jako způsob formátování dat v mnoha kontexty. Například můžete vyhledat XML na webu, konfigurační soubory, soubory Microsoft Office Word a databází.  

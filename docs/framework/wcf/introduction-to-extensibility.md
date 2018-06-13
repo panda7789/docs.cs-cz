@@ -11,6 +11,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804430"
 ---
 # <a name="introduction-to-extensibility"></a>Úvod do rozšíření
 Aplikační model Windows Communication Foundation (WCF) je proto, aby vyřešila větší část požadavky na komunikaci všechny distribuované aplikace. Ale stále existují scénáře, které výchozí aplikačního modelu a implementace poskytované systémem nepodporují. Model rozšiřitelnosti WCF je určená pro podporu vlastní scénáře tím, že umožňuje, abyste upravili chování systému na všech úrovních, a to i do bodu nahrazení modelu celou aplikaci. Toto téma popisuje různé oblasti rozšíření a odkazuje na další informace o jednotlivých.  

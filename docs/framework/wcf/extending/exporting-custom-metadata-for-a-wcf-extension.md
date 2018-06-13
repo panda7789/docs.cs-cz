@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804041"
 ---
 # <a name="exporting-custom-metadata-for-a-wcf-extension"></a>Export vlastních metadat pro rozšíření WCF
 Ve Windows Communication Foundation (WCF), export metadat je proces popisující koncové body služby a projekce je do znázornění paralelní, standardizované, který můžou klienti používat pochopit, jak používat službu. Vlastní metadata se skládá z elementů XML, které vývozci poskytované systémem metadata nelze exportovat. Obvykle obsahuje vlastní elementy WSDL pro uživatelem definované chování a prvky vazeb a výrazy zásad o možnostech a požadavky vazby a kontrakty.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805064"
 ---
 # <a name="designing-and-implementing-services"></a>Navrhování a implementace služeb
 V této části se dozvíte, jak definovat a implementovat kontrakty WCF. Smlouvy o poskytování služeb určuje, co koncový bod komunikuje s vnějším světem. Více konkrétní úrovni je prohlášení o sadu zprávy specifické pro uspořádány do základní zpráva exchange vzory (MEPs), jako je například požadavek nebo odpověď, jednosměrné a duplexní. Pokud smlouvy o poskytování služeb je sada logicky spojených výměny zpráv, je operace služby exchange jedné zprávy. Například `Hello` operace musí samozřejmě přijmout jednu zprávu (takže volající může informovat pozdrav) a může nebo nemusí vracet zprávy (v závislosti na provedla operaci).  

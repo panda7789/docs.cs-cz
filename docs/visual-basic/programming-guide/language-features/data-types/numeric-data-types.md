@@ -28,6 +28,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654200"
 ---
 # <a name="numeric-data-types-visual-basic"></a>Numerické datové typy (Visual Basic)
 Visual Basic poskytuje několik *číselné datové typy* pro zpracování čísla v různých reprezentace. *Integrální* typy představují jenom celá čísla (kladnou, zápornou a nula), a *nonintegral* typy představují čísla s celým číslem a zlomkové části.  

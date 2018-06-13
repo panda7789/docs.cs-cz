@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655129"
 ---
 # <a name="procedures-in-visual-basic"></a>Procedury v jazyce Visual Basic
 A *postup* je blok příkazů jazyka Visual Basic uzavřena příkazem deklarace (`Function`, `Sub`, `Operator`, `Get`, `Set`) a odpovídající `End` deklarace. Všechny spustitelné příkazy v jazyce Visual Basic musí být v rámci některé procedury.  

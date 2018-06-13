@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806029"
 ---
 # <a name="custom-stream-upgrades"></a>Vlastní upgrady streamů
 Datový proud orientované přenosy například TCP a pojmenované kanály pracovat nepřetržitý proud bajtů mezi klientem a serverem. Tento datový proud je realizován pomocí <xref:System.IO.Stream> objektu. V případě upgradu datového proudu klient chce, aby se k přidání volitelné protokol vrstvy kanálu zásobníku a požádá druhém konci komunikační kanál Uděláte to tak. Upgrade datového proudu se skládá v nahrazení původní <xref:System.IO.Stream> objekt s některého upgradovaný.  

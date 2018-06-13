@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808140"
 ---
 # <a name="how-to-create-a-service-that-employs-a-custom-certificate-validator"></a>Postupy: vytvoření služby, který využívá validátor vlastní certifikát
 Toto téma ukazuje, jak implementovat vlastní certifikát ověření a postup konfigurace klienta služby Windows nebo pověření nahradit logiku ověření certifikátu výchozí validátor vlastní certifikát.  

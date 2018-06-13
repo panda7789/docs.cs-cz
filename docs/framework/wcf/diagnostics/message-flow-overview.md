@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809791"
 ---
 # <a name="message-flow-overview"></a>Tok zpráv – přehled
 V distribuované systému obsahující vzájemně propojené služby je potřeba určit příčinnou vztahy mezi službami. Je důležité pochopit různé součásti, které byly součástí toku požadavků na podporu kritické scénáře, jako je stav monitorování, řešení potíží a příčina analýzy. Chcete-li povolit korelace trasování mezi různé služby, v rozhraní .NET Framework 4 jsme doplnili podporu prostřednictvím následujících funkcí:  

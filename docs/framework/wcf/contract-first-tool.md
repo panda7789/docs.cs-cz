@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806257"
 ---
 # <a name="contract-first-tool"></a>Nástroj Contract-First
 Kontrakty služeb často potřebují vytvořena z existujících služeb. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], třídy kontraktu dat můžete automaticky vytvořen z existujících služeb pomocí nástroj contract-first. Pokud chcete používat nástroj contract-first, musí být soubor definice schématu XML (XSD) stažen místně; Nástroj nemůže importovat kontrakty vzdálených dat prostřednictvím protokolu HTTP.  

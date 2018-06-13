@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808605"
 ---
 # <a name="durable-instance-context"></a>Trvanlivý kontext instance
 Tento příklad znázorňuje postup přizpůsobení povolit kontexty trvanlivý instanci modulu runtime Windows Communication Foundation (WCF). SQL Server 2005 používá jako své úložiště zálohování (SQL Server 2005 Express v tomto případě). Však také poskytuje přístup k vlastní úložiště mechanismy.  

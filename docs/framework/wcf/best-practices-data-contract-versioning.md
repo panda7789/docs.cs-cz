@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808533"
 ---
 # <a name="best-practices-data-contract-versioning"></a>Osvědčené postupy: Správa verzí kontraktů dat
 Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které můžete snadno vyvíjet se v čase. Další informace o kontraktech dat najdete v tématech v [pomocí kontrakty dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md).  

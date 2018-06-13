@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33654775"
 ---
 # <a name="linq-and-strings-visual-basic"></a>LINQ a řetězce (Visual Basic)
 LINQ lze použít pro dotazování a Transformace řetězců a kolekcí řetězců. Může být obzvláště užitečný v případě částečně strukturovaných dat v textových souborů. Dotazů LINQ lze spojovat pomocí funkce tradiční řetězce a regulární výrazy. Například můžete použít <xref:System.String.Split%2A> nebo <xref:System.Text.RegularExpressions.Regex.Split%2A> metodu pro vytvoření pole řetězců, které můžete zadat dotaz nebo upravovat pomocí LINQ. Můžete použít <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> metoda v `where` klauzuli jazyka LINQ. A můžete LINQ dotazů nebo upravit <xref:System.Text.RegularExpressions.MatchCollection> výsledků vrácených regulární výraz.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808855"
 ---
 # <a name="basic-http-service"></a>Základní služba HTTP
 Tento příklad znázorňuje způsob implementace služby založené na protokolu HTTP, na základě RPC - často se používá označení "POX" (prostý formát XML) služby – pomocí modelu programování REST Windows Communication Foundation (WCF). Tato ukázka se skládá ze dvou komponent: protokol HTTP WCF služba s vlastním hostováním (Service.cs) a konzolovou aplikaci (Program.cs), která vytvoří službu a provádí volání do ní.  

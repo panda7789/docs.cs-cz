@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656029"
 ---
 # <a name="visual-basic-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru jazyka Visual Basic abecední
 Visual Basic – kompilátor příkazového řádku je k dispozici jako alternativu k kompilace programů z integrované vývojové prostředí (IDE) sady Visual Studio. Následuje seznam řadí abecedně možnosti příkazového řádku kompilátoru jazyka Visual Basic.  

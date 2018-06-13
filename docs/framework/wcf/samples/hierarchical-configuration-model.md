@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806627"
 ---
 # <a name="hierarchical-configuration-model"></a>Model hierarchické konfigurace
 Tento příklad znázorňuje implementaci hierarchie konfigurační soubory pro služby. Také ukazuje, jak vazby, chování služby a chování koncový bod se dědí z vyšší úrovně v hierarchii.  

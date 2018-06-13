@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656068"
 ---
 # <a name="shadowing-in-visual-basic"></a>Stínění v jazyce Visual Basic
 Když dva programovací elementy sdílet stejný název, jednu z nich můžete skrýt, nebo *stínové*, jiný. V takové situaci stíněné element není k dispozici pro referenci; Místo toho že pokud váš kód používá název elementu, Visual Basic – kompilátor ho přeloží na stínového provozu elementu.  

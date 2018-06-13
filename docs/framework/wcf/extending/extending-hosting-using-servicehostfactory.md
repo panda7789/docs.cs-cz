@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806205"
 ---
 # <a name="extending-hosting-using-servicehostfactory"></a>Rozšíření hostování pomocí třídy ServiceHostFactory
 Standardní <xref:System.ServiceModel.ServiceHost> rozhraní API pro hostování služby Windows Communication Foundation (WCF) je bod rozšiřitelnosti architektury WCF. Uživatelé mohou odvozovat vlastní hostitele z <xref:System.ServiceModel.ServiceHost>, obvykle k přepsání <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening> používat <xref:System.ServiceModel.Description.ServiceDescription> výchozí koncové body imperativní přidávat nebo upravovat chování před otevřením službu.  

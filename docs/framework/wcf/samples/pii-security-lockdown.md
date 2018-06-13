@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809027"
 ---
 # <a name="pii-security-lockdown"></a>Bezpečnostní uzamčení PII
 Tato ukázka ukazuje, jak řídit několik funkcí souvisejících se zabezpečením služby Windows Communication Foundation (WCF) podle:  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806858"
 ---
 # <a name="importing-custom-metadata-for-a-wcf-extension"></a>Import vlastních metadat pro rozšíření WCF
 Ve Windows Communication Foundation (WCF), import metadat je proces generování abstraktní reprezentace služby nebo jeho součásti z jeho metadata. Například můžete importovat WCF <xref:System.ServiceModel.Description.ServiceEndpoint> instancí <xref:System.ServiceModel.Channels.Binding> instance nebo <xref:System.ServiceModel.Description.ContractDescription> instancí z WSDL dokumentů pro službu. Chcete-li importovat metadata služby ve službě WCF, použijte implementace <xref:System.ServiceModel.Description.MetadataImporter?displayProperty=nameWithType> abstraktní třídy. Typy, které jsou odvozeny od <xref:System.ServiceModel.Description.MetadataImporter> třída implementovat podporu pro import formáty metadat, které využít WS-Policy importovat logiky ve službě WCF.  

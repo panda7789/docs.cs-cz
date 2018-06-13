@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809742"
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF Test Client (WcfTestClient.exe)
 Testování klienta Windows Communication Foundation (WCF) (WcfTestClient.exe) je nástroj grafickým uživatelským rozhraním, který umožňuje uživatelům vstupní parametry testu, odeslat tento vstup do služby a zobrazit odpověď zpět odeslaná službě. Poskytuje bezproblémové služby testování prostředí při kombinaci s hostitel služby WCF.  

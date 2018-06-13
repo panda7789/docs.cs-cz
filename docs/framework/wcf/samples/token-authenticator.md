@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808324"
 ---
 # <a name="token-authenticator"></a>Ověřovací data tokenu
 Tento příklad ukazuje, jak implementovat vlastní ověřovací data tokenu. Ve Windows Communication Foundation (WCF) ověřovací data tokenu se používá pro ověřování tokenu použít se zprávou, ověření, zda je konzistentní a ověřování identity přidružené k tokenu.  

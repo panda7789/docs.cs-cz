@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806646"
 ---
 # <a name="extending-clients"></a>Rozšíření klientů
 V volající aplikace je zodpovědná za překladu volání metod v kódu aplikace do odchozí zprávy, když zavedete je základní kanály, překladu výsledky zpět do návratové hodnoty a výstupní parametry v vrstva modelu služby kód aplikace a vrací výsledky zpět na volajícího. Rozšíření modelů služby upravit nebo jsou implementovány provádění nebo komunikace chování a funkce zahrnující klienta nebo dispečera funkce, vlastní chování, zprávu a parametr zachycení a další funkce rozšiřitelnost.  

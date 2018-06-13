@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808309"
 ---
 # <a name="configuring-and-extending-the-runtime-with-behaviors"></a>Konfigurace a rozšíření modulu runtime s chováním
 Chování umožňují upravit výchozí chování a přidat vlastní rozšíření, která zkontrolovat a ověřit konfiguraci služby nebo upravit chování za běhu v aplikacích pro klienta a služby Windows Communication Foundation (WCF). Toto téma popisuje chování rozhraní, jak pro jejich implementaci a jak je přidáte do popisu služby (v aplikaci služby) nebo koncový bod (v aplikaci klienta) prostřednictvím kódu programu, nebo v konfiguračním souboru. Další informace o používání poskytované systémem chování najdete v tématu [určení chování služby Run-Time](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md) a [zadání běhového chování klienta](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md).  

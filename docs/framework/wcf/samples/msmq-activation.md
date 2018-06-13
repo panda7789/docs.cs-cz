@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808127"
 ---
 # <a name="msmq-activation"></a>Aktivace MSMQ
 Tento příklad ukazuje, jak pro hostování aplikací v procesu aktivace služby WAS (Windows), které se načítají z fronty zpráv. Této ukázce se používá `netMsmqBinding` a je založena na [obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md) ukázka. Služba je v tomto případě hostované webové aplikace a klient se hostuje sama a výstupy ke konzole sledovat stav nákupních objednávek odeslána.  

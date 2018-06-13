@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809648"
 ---
 # <a name="service-channel-listeners-and-channels"></a>Služba: Moduly pro naslouchání kanálů a kanály
 Existují tři kategorie objektů kanál: kanály, kanál naslouchací procesy a objekty factory kanálu. Kanály jsou rozhraní mezi aplikací a zásobník kanálu. Kanál moduly pro naslouchání jsou zodpovědní za vytváření kanály na straně příjmu (nebo naslouchání), obvykle v reakci na nové příchozí zprávy nebo připojení. Objekty Factory kanál jsou zodpovědní za vytváření kanály na straně odesílání zahájíte komunikaci s koncovým bodem.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808235"
 ---
 # <a name="extending-dispatchers"></a>Rozšíření dispečerů
 Dispečerů jsou zodpovědní za stahování příchozí zprávy mimo základní kanály, převedena do volání metod v kódu aplikace a odesílání výsledky zpět k volajícímu. Rozšíření dispečerů umožňují upravit zpracování.  Můžete implementovat zprávy nebo parametr kontroly, které zkontrolovat nebo upravit obsah zprávy nebo parametry.  Můžete změnit způsob zprávy jsou směrovány do operace nebo zadejte některé další funkce.  

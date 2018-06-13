@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649110"
 ---
 # <a name="object-variables-in-visual-basic"></a>Proměnné objektu v jazyce Visual Basic
 Proměnné můžete kromě ukládání hodnot přímo, odkaz na objekt. Objekt můžete přiřadit proměnné ze stejného důvodu, který přiřadíte žádnou hodnotu proměnné:  

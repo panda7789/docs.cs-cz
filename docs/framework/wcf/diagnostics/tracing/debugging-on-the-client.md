@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809001"
 ---
 # <a name="debugging-on-the-client"></a>Ladění na klientovi
 Aby bylo snazší pro uživatele pro psaní aplikací klienta služby WCF, můžete přidat [ \<serviceDebug >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) služby chování do konfiguračního souboru služby. Toto chování lze použít k publikování stránky nápovědy a vrátí informace o spravovaných výjimce v podrobnostech chyb SOAP vrácen do klienta.

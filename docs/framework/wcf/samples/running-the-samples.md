@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807251"
 ---
 # <a name="running-the-windows-communication-foundation-samples"></a>Spouštění ukázek Windows Communication Foundation
 Ukázky Windows Communication Foundation (WCF) se může spouštět v konfiguraci s jedním počítače nebo počítači. Zadaný, ukázky jsou připravené ke spuštění na jednom počítači. V konfiguraci mezi počítači je potřeba upravit nastavení tohoto příkladu konfiguračního souboru. Následující postupy popisují, jak spustit ukázku ve stejném počítači a počítači konfigurace. Všimněte si, že jsou rozdíly v kroků pro služby hostované v Internetové informační služby (IIS) a vlastním hostováním ukázky. Většina ukázky jsou hostované ve službě IIS; Zobrazit informace o ukázkový soubor readme k určení, jak je hostovaná.  

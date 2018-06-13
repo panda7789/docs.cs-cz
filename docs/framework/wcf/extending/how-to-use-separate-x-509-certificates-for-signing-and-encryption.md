@@ -14,6 +14,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806179"
 ---
 # <a name="how-to-use-separate-x509-certificates-for-signing-and-encryption"></a>Postupy: Použití samostatných certifikátů X.509 pro přihlašování a šifrování
 Toto téma ukazuje, jak konfigurovat Windows Communication Foundation (WCF) používat různé certifikáty pro podepisování zpráv a šifrování na klientovi a služby.  

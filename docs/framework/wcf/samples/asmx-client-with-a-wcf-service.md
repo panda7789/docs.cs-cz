@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805126"
 ---
 # <a name="asmx-client-with-a-wcf-service"></a>Klient ASMX se službou WCF
 Tento příklad znázorňuje postup vytvoření služby pomocí služby Windows Communication Foundation (WCF) a pak z klienta bez WCF, jako je například klient ASMX se přístupu ke službě.  

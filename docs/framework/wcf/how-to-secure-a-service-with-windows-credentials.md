@@ -14,6 +14,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806393"
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: zabezpečení služby pomocí pověření systému Windows
 Toto téma ukazuje, jak povolit přenos zabezpečení ve službě Windows Communication Foundation (WCF), který se nachází v doméně systému Windows a je volána klienty ve stejné doméně. Další informace o tomto scénáři najdete v tématu [zabezpečení přenosu pomocí ověřování systému Windows](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). Ukázkovou aplikaci, najdete v článku [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) ukázka.  

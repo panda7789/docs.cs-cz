@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805886"
 ---
 # <a name="choosing-a-message-exchange-pattern"></a>Výběr vzorce výměny zpráv
 Prvním krokem při psaní vlastních přenosu je rozhodnout, které *zprávy exchange vzory* (nebo MEPs) jsou povinné pro kanál vyvíjíte. Toto téma popisuje možnosti dostupné a popisuje různé požadavky. Toto je první úloha v seznamu úkolů vývoj kanálu popsané v [rozvojových kanály](../../../../docs/framework/wcf/extending/developing-channels.md).  

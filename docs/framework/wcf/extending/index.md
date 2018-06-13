@@ -11,6 +11,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803702"
 ---
 # <a name="extending-wcf"></a>Rozšíření WCF
 Windows Communication Foundation (WCF) umožňuje upravit a rozšířit běhu součásti přesněji řídit a rozšířit aplikace založené na služby. Témata v této části najdete podrobněji o architektuře rozšíření. Další informace o základní programování najdete v tématu [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  

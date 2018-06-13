@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803437"
 ---
 # <a name="client-interoperability"></a>Interoperabilita klientů
 Tato část obsahuje příklady vysvětlující interoperabilitu mezi Windows Communication Foundation (WCF) a další technologie.  

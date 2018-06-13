@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656240"
 ---
 # <a name="how-to-create-a-property-visual-basic"></a>Postupy: Vytvoření vlastnosti (Visual Basic)
 Uzavřete definici vlastnosti mezi `Property` příkaz a `End Property` příkaz. V rámci této definici definujete `Get` postupu `Set` postup nebo obojí. Všechny vlastnosti kódu je v rámci těchto postupů.  

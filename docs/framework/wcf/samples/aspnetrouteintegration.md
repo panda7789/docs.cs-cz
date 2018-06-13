@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804401"
 ---
 # <a name="aspnetrouteintegration"></a>AspNetRouteIntegration
 Tento příklad znázorňuje způsob k hostování služby Windows Communication Foundation (WCF) REST pomocí směrování ASP.NET. [Základní služba prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázka zobrazuje vlastním hostováním verze tohoto scénáře a implementaci služby podrobněji popisuje. Toto téma se zaměřuje na funkce integrace technologie ASP.NET. Další informace o směrování ASP.NET najdete v tématu <xref:System.Web.Routing>.  

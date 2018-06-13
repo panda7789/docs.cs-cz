@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648873"
 ---
 # <a name="how-to-declare-an-object-variable-and-assign-an-object-to-it-in-visual-basic"></a>Postupy: Deklarace objektové proměnné a přiřazení objektu k proměnné v jazyce Visual Basic
 Deklarace proměnné [Object – datový typ](../../../../visual-basic/language-reference/data-types/object-data-type.md) zadáním `As Object` v [Dim – příkaz](../../../../visual-basic/language-reference/statements/dim-statement.md). Přiřazení objektu k tuto proměnnou tím, že objekt za znaménkem rovnítka (`=`) v klauzuli příkaz nebo inicializace přiřazení.  

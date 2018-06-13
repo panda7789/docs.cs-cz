@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648194"
 ---
 # <a name="decision-structures-visual-basic"></a>Struktury rozhodování (Visual Basic)
 Visual Basic umožňuje testovacích podmínkách a provádět různé operace v závislosti na výsledky testu. Můžete otestovat podmínku true nebo false, pro různé hodnoty výrazu, nebo pro různé výjimky, které jsou generovány, pokud provádějí sérii příkazů.  

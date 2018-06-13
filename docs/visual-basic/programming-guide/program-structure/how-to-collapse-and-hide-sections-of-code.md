@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650852"
 ---
 # <a name="how-to-collapse-and-hide-sections-of-code-visual-basic"></a>Postupy: Sbalení a skrytí sekcí kódu (Visual Basic)
 `#Region` – Direktiva umožňuje sbalení a skrytí sekcí kódu v souborech jazyka Visual Basic. `#Region` Umožňuje zadat blok kódu, které můžete rozbalit nebo sbalit při použití editoru kódu v sadě Visual Studio. Umožňuje selektivně skrýt kódu umožňuje vaše soubory lépe spravovat a snadněji číst. Další informace najdete v tématu [Osnova](/visualstudio/ide/outlining).  

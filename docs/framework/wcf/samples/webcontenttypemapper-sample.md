@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806965"
 ---
 # <a name="webcontenttypemapper-sample"></a>WebContentTypeMapper – ukázka
 Tento příklad znázorňuje způsob namapování nové typy obsahu do formáty text zpráv Windows Communication Foundation (WCF).  

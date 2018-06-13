@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806871"
 ---
 # <a name="defining-and-specifying-faults"></a>Definice a určení chyb
 Chyb SOAP nesou podmínku informace o chybě ze služby pro klienta a v případě duplexní z klienta ke službě umožňuje vzájemnou spolupráci způsobem. Toto téma popisuje, kdy a jak definovat vlastní chyby obsahu a určit, které operace vrátit. Další informace o tom, jak služba nebo duplexní klienta, můžete odeslat těchto chyb a jak klienta služby nebo aplikace zpracovává tyto chyby najdete v tématu [odesílání a přijímání chyb](../../../docs/framework/wcf/sending-and-receiving-faults.md). Přehled zpracování chyb v aplikacích Windows Communication Foundation (WCF) najdete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  

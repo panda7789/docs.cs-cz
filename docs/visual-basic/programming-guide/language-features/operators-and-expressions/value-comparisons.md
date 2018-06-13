@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33649604"
 ---
 # <a name="value-comparisons-visual-basic"></a>Porovnání hodnot (Visual Basic)
 Operátory porovnání lze použít k vytvoření výrazy, které porovnávají hodnoty proměnných číselná. Tyto výrazy vrátit `Boolean` hodnota založená na tom, zda je výsledkem porovnávání PRAVDA nebo NEPRAVDA. Příklady takových výraz.  

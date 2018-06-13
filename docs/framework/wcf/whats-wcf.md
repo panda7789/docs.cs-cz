@@ -11,6 +11,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807407"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 Windows Communication Foundation (WCF) je architektura pro vytváření aplikací orientovaných na služby. Pomocí WCF, můžete odeslat data jako asynchronní zprávy z jedné služby koncového bodu do jiného. Koncový bod služby můžou být součástí nepřetržitě dostupná služba hostované službou IIS, nebo může být služby hostované v aplikaci. Koncový bod může být klient služby, která vyžaduje data z koncového bodu služby. Zprávy může být stejně jednoduché jako jeden znak nebo word odeslán jako XML, nebo jako datový proud binárních dat jako komplexní. Několik ukázkových scénářů patří:  

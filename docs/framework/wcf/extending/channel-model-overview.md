@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804635"
 ---
 # <a name="channel-model-overview"></a>Přehled modelu kanálu
 Zásobník kanálu Windows Communication Foundation (WCF) je vrstveného komunikačního balíku s jeden nebo více kanálů, které zpracovávají zprávy. V dolní části zásobníku je přenos kanálu, který je zodpovědný za přizpůsobení zásobníku kanál pro základní přenos (například TCP, HTTP, SMTP a dalších typů přenosu.). Kanály poskytují nízké úrovně programovací model pro odesílání a přijímání zpráv. Tento programovací model spoléhá na několik rozhraní a dalších typů souhrnně označované jako model kanálu WCF. Toto téma popisuje tvarů kanál, vytváření základní kanál naslouchání služby (service) a kanálu (na straně klienta).  

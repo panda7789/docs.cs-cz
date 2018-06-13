@@ -11,6 +11,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806016"
 ---
 # <a name="getting-started-tutorial"></a>Kurz Začínáme
 V tématech uvedených v této části jsou určeny k získáte rychlý ohrožení k Windows Communication Foundation (WCF) programovací prostředí. Jsou navrženy dokončit v pořadí podle seznamu v dolní části tohoto tématu. Absolvování tohoto kurzu pochopíte úvodní kroky potřebné k vytvoření klienta a služby WCF aplikací. Služba vystavuje jeden nebo více koncových bodů, každý z nich vystavuje jednu nebo víc operací služeb. *Koncový bod* služby specifikuje adresu, kde můžete najít službu, vazbu, která obsahuje informace, které popisují, jak klient musí komunikovat s službu a kontrakt, který definuje funkci poskytovaný službou svým klientům.  

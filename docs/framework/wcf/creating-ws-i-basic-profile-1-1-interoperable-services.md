@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804940"
 ---
 # <a name="creating-ws-i-basic-profile-11-interoperable-services"></a>Vytváření interoperabilních služeb WS-I Basic Profile 1.1
 Ke konfiguraci koncového bodu služby WCF na umožňuje spolupráci s [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] webových služeb klientům:  

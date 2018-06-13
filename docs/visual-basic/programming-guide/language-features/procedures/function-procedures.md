@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655532"
 ---
 # <a name="function-procedures-visual-basic"></a>Procedury funkcí (Visual Basic)
 A `Function` postup je řada příkazů jazyka Visual Basic uzavřené do `Function` a `End Function` příkazy. `Function` Postup provede úlohu a potom se vrátí ovládací prvek volání kódu. Až se obnoví ovládací prvek, také vrátí hodnotu, voláním kódu.  

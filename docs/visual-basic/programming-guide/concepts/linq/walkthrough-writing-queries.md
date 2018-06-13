@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655873"
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>Návod: Zápis dotazů ve Visual Basic
 Tento návod ukazuje, jak můžete použít funkce jazyka Visual Basic pro zápis [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dotaz výrazy. Návod ukazuje, jak vytvářet dotazy na seznam objektů studenty, jak spouštět dotazy a postup je upravit. Dotazy obsahovat několik funkcí, včetně inicializátory objektů, odvození místního typu a anonymní typy.  

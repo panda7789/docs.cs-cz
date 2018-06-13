@@ -11,6 +11,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804219"
 ---
 # <a name="windows-communication-foundation-architecture"></a>Architektura Windows Communication Foundation
 Následující obrázek znázorňuje hlavní vrstvy architektury Windows Communication Foundation (WCF).  

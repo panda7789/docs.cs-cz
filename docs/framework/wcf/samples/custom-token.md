@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809846"
 ---
 # <a name="custom-token"></a>Vlastní token
 Tento příklad ukazuje, jak přidat vlastní implementaci token do aplikace Windows Communication Foundation (WCF). V příkladu se používá `CreditCardToken` bezpečně předávat informace o platebních kartách klienta ke službě. Token je předán v záhlaví zprávy WS-zabezpečení a je podepsat a zašifrovat, pomocí vazby symetrický zabezpečení element společně s tělo zprávy a jiné záhlaví zprávy. To je užitečné v případech, kdy jsou předdefinované tokeny není dostatečná. Tento příklad znázorňuje, jak poskytnout token zabezpečení vlastní službě místo pomocí jedné z předdefinovaných tokenů. Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi.  

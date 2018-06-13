@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807316"
 ---
 # <a name="using-performance-counters"></a>Použití čítačů výkonu
 Tento příklad znázorňuje, jak získat přístup k čítače výkonu systému Windows Communication Foundation (WCF) a postup vytvoření čítače výkonu definovaný uživatelem. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  

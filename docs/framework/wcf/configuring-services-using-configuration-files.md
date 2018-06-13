@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807430"
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
 Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním souborem vám umožní poskytovat koncový bod a data o chování služby v okamžiku nasazení místo v době návrhu. Toto téma popisuje primární techniky, které jsou k dispozici.  

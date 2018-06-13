@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808520"
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>Řešení potíží s WCF – úvodní příručka
 Toto téma uvádí počet známé problémy, se kterými se zákazníci spustili do při vývoj klienti WCF a služeb. Pokud problém, který běží na není v tomto seznamu, doporučujeme že konfigurovat trasování pro služby. Tím se vygeneruje soubor trasování, můžete zobrazit pomocí prohlížeče soubor trasování a získat podrobné informace o výjimkách, který může vyskytovat v rámci služby. Další informace o konfiguraci trasování najdete v tématu: [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Další informace o prohlížeči soubor trasování najdete v tématu: [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  

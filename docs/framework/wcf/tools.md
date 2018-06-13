@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806130"
 ---
 # <a name="windows-communication-foundation-tools"></a>Nástroje služby Windows Communication Foundation
 Nástroje Microsoft Windows Communication Foundation (WCF) jsou navržené tak, aby bylo snazší pro vás k vytvoření, nasazení a správě aplikací služby WCF. Tato část obsahuje podrobné informace o nástrojích. Upozorňujeme, že nástroje nejsou podporovány.  

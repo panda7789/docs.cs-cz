@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810080"
 ---
 # <a name="advanced-error-handling"></a>Pokročilé zpracování chyb
 Tento příklad znázorňuje směrování služby Windows Communication Foundation (WCF). Služba Směrování je součást WCF, který usnadňuje do aplikace zahrnout směrovač podle obsahu. Tento příklad ukazuje, jak službu Směrování inteligentně zotavení z chyb, s použitím transakce a jiné složitější zasílání zpráv koncepty, jako je například vícesměrového vysílání.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808283"
 ---
 # <a name="client-validation"></a>Ověřování ze strany klienta
 Služby často publikování metadat povolit automatické generování a konfigurace různých typů klientů proxy serveru. Pokud služba není důvěryhodný, klientské aplikace by měl ověřit, že metadata, splňuje zásady klientské aplikace týkající se zabezpečení, transakce, typ kontrakt služby a tak dále. Následující příklad ukazuje, jak zapsat klienta chování koncového bodu, která ověřuje koncový bod služby k zajištění, že tento koncový bod služby lze bezpečně používat.  

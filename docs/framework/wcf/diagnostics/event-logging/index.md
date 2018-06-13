@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804936"
 ---
 # <a name="event-logging-in-wcf"></a>Protokolování událostí ve WCF
 Windows Communication Foundation (WCF) sleduje interní události v protokolu událostí systému Windows.  

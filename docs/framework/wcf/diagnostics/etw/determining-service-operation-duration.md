@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804960"
 ---
 # <a name="determining-service-operation-duration"></a>Zjišťování doby provádění operací služby
 Pokud analytické trasování je povolena v aplikaci Windows Communication Foundation (WCF), doba provádění pro operaci služby se dá snadno určit pomocí protokolu událostí.  Toto téma ukazuje, jak určit množství času, které operace služby potřebné k dokončení.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803667"
 ---
 # <a name="guidelines-and-best-practices"></a>Směrnice a doporučené postupy
 Tento oddíl obsahuje témata, které poskytují pokyny pro vytváření aplikací pro Windows Communication Foundation (WCF).  

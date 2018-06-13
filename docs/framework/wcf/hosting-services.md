@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807850"
 ---
 # <a name="hosting-services"></a>Služby hostování
 Stane aktivní, musí být hostované služby v rámci běhové prostředí, která ji vytvoří a určuje jeho kontextu a doba platnosti. Služby Windows Communication Foundation (WCF) jsou navrženy pro spuštění v jakékoli procesu systému Windows, podporuje spravovaného kódu.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805665"
 ---
 # <a name="discovery-binding-element-sample"></a>Zjišťování – ukázka prvky vazby
 Tento příklad znázorňuje způsob použití prvku vazby klienta zjišťování pro zjišťování služby. Tato funkce umožňuje vývojářům přidat kanálem klienta zjišťování do své existující zásobníku kanálu klienta provedení programovací model velmi intuitivní. Po otevření přiřazený kanál adresu služby, se vyřeší, pomocí zjišťování. Tato ukázka se skládá z následujících projektech:  

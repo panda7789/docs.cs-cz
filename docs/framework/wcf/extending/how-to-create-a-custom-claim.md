@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33804856"
 ---
 # <a name="how-to-create-a-custom-claim"></a>Postupy: vytvoření vlastních deklarací identity
 Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) poskytuje sadu předdefinovaných typy a práva s podpůrné funkce pro vytváření <xref:System.IdentityModel.Claims.Claim> instancí s těmito typy a práva. Tyto integrované deklarace jsou navrženy pro informace o modelu nacházejí v přihlašovacích údajů typů klientů, které podporuje WCF ve výchozím nastavení. V mnoha případech jsou předdefinované deklarace identity dostatečná; Některé aplikace ale můžou vyžadovat vlastní deklarace. Deklarace identity se skládá z typ deklarace identity, prostředků, pro kterou platí deklarace identity k a práv, která jsou uplatňovaná přes tento prostředek. Toto téma popisuje postup vytvoření vlastních deklarací identity.  

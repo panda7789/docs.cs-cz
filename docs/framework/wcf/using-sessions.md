@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808589"
 ---
 # <a name="using-sessions"></a>Použití relací
 V aplikacích Windows Communication Foundation (WCF) *relace* korelaci skupinu zpráv k konverzaci. WCF relací se liší od k dispozici v objektu session [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace, podporují různé chování a jsou ovládaná různými způsoby. Toto téma popisuje funkce, které umožňují relací ve WCF aplikací a jejich použití.  

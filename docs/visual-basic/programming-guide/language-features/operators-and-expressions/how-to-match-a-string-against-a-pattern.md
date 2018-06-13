@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655209"
 ---
 # <a name="how-to-match-a-string-against-a-pattern-visual-basic"></a>Postupy: Porovnání řetězce se vzorem (Visual Basic)
 Pokud chcete zjistit, zda výraz, který [String – datový typ](../../../../visual-basic/language-reference/data-types/string-data-type.md) splňuje vzor, pak můžete použít [jako operátor](../../../../visual-basic/language-reference/operators/like-operator.md).  

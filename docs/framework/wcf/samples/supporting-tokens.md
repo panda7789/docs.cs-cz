@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808793"
 ---
 # <a name="supporting-tokens"></a>Podpora tokenů
 Podpora tokenů ukázka ukazuje, jak přidat další tokeny pro zprávu, která používá WS-zabezpečení. V příkladu přidá token zabezpečení Binární X.509 kromě token zabezpečení uživatelské jméno. Token je předán v hlavičce protokolu WS-zabezpečení zprávy z klienta ke službě a součástí zprávy je podepsaný s privátním klíčem přidružené k tokenu zabezpečení X.509 prokázat u sebe certifikátu X.509 k příjemce. To je užitečné v případě, pokud je potřeba mít více deklarací identity přidružené k ověřování nebo autorizaci odesílatele zprávy. Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi.  

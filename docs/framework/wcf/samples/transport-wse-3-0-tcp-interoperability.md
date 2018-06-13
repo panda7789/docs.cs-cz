@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808009"
 ---
 # <a name="transport-wse-30-tcp-interoperability"></a>Přenos: Součinnost TCP ve WSE 3.0
 Ukázka WSE 3.0 TCP interoperabilita přenosu ukazuje, jak implementovat duplexní relace TCP vlastní přenos Windows Communication Foundation (WCF). Také ukazuje, jak můžete použít rozšíření vrstvy kanálu rozhraní přenášených v síti s existující nasazené systémy. Následující kroky ukazují, jak vytvořit tento vlastní přenos WCF:  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805587"
 ---
 # <a name="advanced-format-selection"></a>Rozšířený výběr formátu
 Tento příklad znázorňuje postup rozšíření programovací model REST Windows Communication Foundation (WCF) pro podporu nových odchozí odpovědi formátů. Kromě toho Ukázka používá šablony T4 k vrácení odpovědi jako stránku XHTML ukázka, jak se dají implementovat programovací model styl zobrazení.  

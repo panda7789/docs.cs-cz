@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805444"
 ---
 # <a name="developing-and-deploying-wcf-data-services"></a>Vývoj a nasazení služby WCF Data Services
 Toto téma obsahuje informace o vývoji a nasazení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Pro další základní informace o [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], najdete v části [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md) a [přehled](../../../../docs/framework/data/wcf/wcf-data-services-overview.md).  

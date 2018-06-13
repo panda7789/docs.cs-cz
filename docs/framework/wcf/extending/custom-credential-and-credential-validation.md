@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803450"
 ---
 # <a name="custom-credential-and-credential-validation"></a>Vlastní pověření a ověřování pověření
 Zabezpečení ve Windows Communication Foundation (WCF) je založena na výměnu přihlašovacích údajů mezi služeb a klientů. Většina scénářů zabezpečení může obsloužit pomocí běžné typy přihlašovacích údajů, jako jsou Windows (Kerberos), uživatelského jména a hesla a certifikáty. Ale pokud nový typ pověření je zapotřebí, témata v této části popisují, jak ke zpracování a ověření nové typy.  

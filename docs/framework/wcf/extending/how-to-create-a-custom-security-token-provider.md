@@ -14,6 +14,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808959"
 ---
 # <a name="how-to-create-a-custom-security-token-provider"></a>Postupy: vytvoření zprostředkovatele tokenu vlastní zabezpečení
 Toto téma ukazuje, jak vytvořit nové typy tokenů s poskytovatele tokenu vlastní zabezpečení a postup pro integraci zprostředkovatele tokenu správce vlastní zabezpečení.  

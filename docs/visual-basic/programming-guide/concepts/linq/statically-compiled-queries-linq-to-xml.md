@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655294"
 ---
 # <a name="statically-compiled-queries-linq-to-xml-visual-basic"></a>Staticky kompilované dotazy (technologie LINQ to XML) (Visual Basic)
 Jedním z nejdůležitějších výkonu výhody LINQ to XML, naproti tomu <xref:System.Xml.XmlDocument>, že dotazy v technologii LINQ to XML nejsou staticky kompiluje, zatímco dotazů XPath je nutné interpretovat v době běhu. Tato funkce je založená na technologii LINQ to XML, takže není nutné provést další kroky pro jejich výhod, ale je vhodné pochopit rozdíl při výběru mezi tyto technologie. Toto téma vysvětluje rozdíly.  
