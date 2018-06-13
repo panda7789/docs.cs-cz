@@ -13,6 +13,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34458113"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="e3c98-103">??</span><span class="sxs-lookup"><span data-stu-id="e3c98-103">??</span></span> <span data-ttu-id="e3c98-104">Operátor (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="e3c98-104">Operator (C# Reference)</span></span>
 <span data-ttu-id="e3c98-105">`??` Operátor se označuje jako operátor slučování hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="e3c98-105">The `??` operator is called the null-coalescing operator.</span></span>  <span data-ttu-id="e3c98-106">Vrátí levý operand, pokud hodnota operandu není null; v opačném případě vrátí pravý operand.</span><span class="sxs-lookup"><span data-stu-id="e3c98-106">It returns the left-hand operand if the operand is not null; otherwise it returns the right hand operand.</span></span>  

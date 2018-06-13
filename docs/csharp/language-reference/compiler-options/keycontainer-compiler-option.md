@@ -13,6 +13,7 @@ ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/24/2018
+ms.locfileid: "34472565"
 ---
 # <a name="-keycontainer-c-compiler-options"></a><span data-ttu-id="74490-102">-keycontainer (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="74490-102">-keycontainer (C# Compiler Options)</span></span>
 <span data-ttu-id="74490-103">Určuje název kontejneru kryptografických klíčů.</span><span class="sxs-lookup"><span data-stu-id="74490-103">Specifies the name of the cryptographic key container.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34549588"
 ---
 # <a name="iteration-statements-c-reference"></a><span data-ttu-id="aa672-102">Příkazy iterace (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="aa672-102">Iteration Statements (C# Reference)</span></span>
 

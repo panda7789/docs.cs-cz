@@ -14,6 +14,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457213"
 ---
 # <a name="-operator-c-reference"></a><span data-ttu-id="cca2b-102">?: – operátor (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="cca2b-102">?: Operator (C# Reference)</span></span>
 <span data-ttu-id="cca2b-103">Podmíněný operátor (`?:`), často označovaný jako Ternární podmíněný operátor vrátí jeden ze dvou hodnot v závislosti na hodnotě výrazu logické hodnoty.</span><span class="sxs-lookup"><span data-stu-id="cca2b-103">The conditional operator (`?:`), commonly known as the ternary conditional operator, returns one of two values depending on the value of a Boolean expression.</span></span> <span data-ttu-id="cca2b-104">Následuje syntaxe pro podmiňovací operátor.</span><span class="sxs-lookup"><span data-stu-id="cca2b-104">Following is the syntax for the conditional operator.</span></span>  

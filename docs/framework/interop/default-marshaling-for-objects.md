@@ -15,6 +15,7 @@ ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/19/2018
+ms.locfileid: "34312180"
 ---
 # <a name="default-marshaling-for-objects"></a><span data-ttu-id="7d9b9-102">Výchozí zařazování pro objekty</span><span class="sxs-lookup"><span data-stu-id="7d9b9-102">Default Marshaling for Objects</span></span>
 <span data-ttu-id="7d9b9-103">Parametry a pole zadán jako <xref:System.Object?displayProperty=nameWithType> mohou být zpřístupněny nespravovaného kódu jako jeden z následujících typů:</span><span class="sxs-lookup"><span data-stu-id="7d9b9-103">Parameters and fields typed as <xref:System.Object?displayProperty=nameWithType> can be exposed to unmanaged code as one of the following types:</span></span>  
