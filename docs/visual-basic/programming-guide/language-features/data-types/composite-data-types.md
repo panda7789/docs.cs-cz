@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650436"
 ---
 # <a name="composite-data-types-visual-basic"></a><span data-ttu-id="127ab-102">Složené datové typy (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="127ab-102">Composite Data Types (Visual Basic)</span></span>
 <span data-ttu-id="127ab-103">Kromě základní datové typy jazyka Visual Basic dodávek, je možné sestavit položkami různých typů vytvořit *složené datové typy* například struktury, pole a třídy.</span><span class="sxs-lookup"><span data-stu-id="127ab-103">In addition to the elementary data types Visual Basic supplies, you can also assemble items of different types to create *composite data types* such as structures, arrays, and classes.</span></span> <span data-ttu-id="127ab-104">Složené datové typy můžete vytvořit z základní typy a z jiných složené typy.</span><span class="sxs-lookup"><span data-stu-id="127ab-104">You can build composite data types from elementary types and from other composite types.</span></span> <span data-ttu-id="127ab-105">Můžete například definovat pole elementy struktury nebo strukturu se členy pole.</span><span class="sxs-lookup"><span data-stu-id="127ab-105">For example, you can define an array of structure elements, or a structure with array members.</span></span>  

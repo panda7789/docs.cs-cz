@@ -9,6 +9,7 @@ ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2018
+ms.locfileid: "34172320"
 ---
 # <a name="using-constructors-c-programming-guide"></a><span data-ttu-id="991dc-102">Použití konstruktorů (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="991dc-102">Using Constructors (C# Programming Guide)</span></span>
 <span data-ttu-id="991dc-103">Když [– třída](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md) je vytvořen, se nazývá jeho konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="991dc-103">When a [class](../../../csharp/language-reference/keywords/class.md) or [struct](../../../csharp/language-reference/keywords/struct.md) is created, its constructor is called.</span></span> <span data-ttu-id="991dc-104">Konstruktory mít stejný název jako třídě nebo struktuře a obvykle inicializují datových členů nového objektu.</span><span class="sxs-lookup"><span data-stu-id="991dc-104">Constructors have the same name as the class or struct, and they usually initialize the data members of the new object.</span></span>  
