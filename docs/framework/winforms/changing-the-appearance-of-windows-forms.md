@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33523547"
 ---
 # <a name="changing-the-appearance-of-windows-forms"></a>Změna vzhledu Windows Forms 
 Můžete přizpůsobit vzhled aplikace Windows Forms v mnoha různými způsoby, například Změna ohraničení, krytí, tvaru, styl nebo nastavení obrázek pozadí pro aplikaci Windows Forms.  

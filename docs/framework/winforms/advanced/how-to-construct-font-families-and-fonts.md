@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520887"
 ---
 # <a name="how-to-construct-font-families-and-fonts"></a>Postupy: Vytváření rodin písem a písem
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] skupiny se stejného řezu, ale s různými styly písem do rodiny písem. Například typu Arial obsahuje následující písma:  

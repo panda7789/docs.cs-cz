@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516630"
 ---
 # <a name="accessing-operationcontext"></a>Přístup k informacím OperationContext
 Tento příklad ukazuje, jak aktivity zasílání zpráv (<xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.Send>) lze použít s aktivitou vlastní rozsah pro přístup k <xref:System.ServiceModel.OperationContext.Current%2A> a připojit nebo načíst záhlaví vlastní zprávy v rámci odchozí nebo příchozí zprávy.  

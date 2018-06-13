@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525031"
 ---
 # <a name="using-a-gradient-brush-to-fill-shapes"></a>Použití štětce přechodu k vyplnění obrazců
 Můžete štětce přechodu k vyplnění obrazce postupně změna barvou. Například můžete vodorovné přechodu k vyplnění obrazce s barvu, která postupně změní, když přesouváte od levého okraje tvaru na pravý okraj. Představte si obdélníku s levý okraj, který je černé (znázorněná červené, zelené a modré součásti 0, 0, 0) a pravý okraj, který je červený (představované 255, 0, 0). Pokud rámeček je 256 pixelů, bude jeden znak větší než red součást pixelů na levé straně, red součást dané pixelů. Krajní levé pixelů v řádku obsahuje součásti barvu (0, 0, 0), druhý pixelů má (1, 0, 0), třetí pixelů má (2, 0, 0) a tak dále, dokud se nedostanete do úplně vpravo pixelů, která má součásti barvu (255, 0, 0). Tyto hodnoty interpolované barva tvoří přechod barev.  

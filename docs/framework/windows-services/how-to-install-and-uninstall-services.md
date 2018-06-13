@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513136"
 ---
 # <a name="how-to-install-and-uninstall-services"></a>Postupy: Instalace a odinstalace služeb
 Pokud vyvíjíte služby systému Windows s použitím rozhraní .NET Framework, můžete rychle nainstalovat aplikace služby pomocí nástroje příkazového řádku, který volá InstallUtil.exe. Pokud jste vývojář kdo chce verzi služby systému Windows, uživatelé můžou instalovat a odinstalovat jste měli využívají novou technologii. V tématu [nasazení Instalační služby systému Windows](http://msdn.microsoft.com/library/121be21b-b916-43e2-8f10-8b080516d2a0).  

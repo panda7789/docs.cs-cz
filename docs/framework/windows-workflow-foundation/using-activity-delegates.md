@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518949"
 ---
 # <a name="using-activity-delegates"></a>Použití delegátů aktivity
 Delegáti aktivity povolit aktivity autorům vystavit zpětná volání s konkrétní podpisy, pro které uživatelé aktivity zadat na základě aktivity obslužné rutiny. K dispozici jsou dva typy aktivity delegáti: <xref:System.Activities.ActivityAction%601> se používá k definování delegáti aktivity, které nemají návratovou hodnotu, a <xref:System.Activities.ActivityFunc%601> se používá k definování delegáti aktivity, které mají návratovou hodnotu.  

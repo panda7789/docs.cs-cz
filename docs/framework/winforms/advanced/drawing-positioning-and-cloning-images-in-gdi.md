@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33521648"
 ---
 # <a name="drawing-positioning-and-cloning-images-in-gdi"></a>Kreslení, umisťování a klonování obrázků v GDI+
 Můžete použít <xref:System.Drawing.Bitmap> třída načtení a zobrazuje rastrových obrázků a vy můžete použít <xref:System.Drawing.Imaging.Metafile> třída načtení a zobrazuje vektoru bitové kopie. <xref:System.Drawing.Bitmap> a <xref:System.Drawing.Imaging.Metafile> třídy dědí <xref:System.Drawing.Image> třídy. Bitovou kopii vektoru zobrazíte potřebujete instanci <xref:System.Drawing.Graphics> třídy a <xref:System.Drawing.Imaging.Metafile>. Pokud chcete zobrazit rastrového obrázku, je třeba instanci <xref:System.Drawing.Graphics> třídy a <xref:System.Drawing.Bitmap>. Instance <xref:System.Drawing.Graphics> třída poskytuje <xref:System.Drawing.Graphics.DrawImage%2A> metoda, která přijímá <xref:System.Drawing.Imaging.Metafile> nebo <xref:System.Drawing.Bitmap> jako argument.  

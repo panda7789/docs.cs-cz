@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33358404"
 ---
 # <a name="ownership-and-user-schema-separation-in-sql-server"></a>Vlastnictví a oddělení schéma uživatele v systému SQL Server
 Koncept základní zabezpečení systému SQL Server je, že vlastníky objektů mít neodvolatelný oprávnění ke správě je. Oprávnění nelze odstranit z objektu vlastníka a z databáze nelze vyřadit uživatele, pokud vlastní objekty v něm.  

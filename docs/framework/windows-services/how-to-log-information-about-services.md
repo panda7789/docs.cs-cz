@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33513959"
 ---
 # <a name="how-to-log-information-about-services"></a>Postupy: Zaznamenávání informací o službách
 Všechny projekty služby systému Windows ve výchozím nastavení, mají možnost využívat v protokolu událostí aplikace a do něj zapisovat informace a výjimky. Můžete použít <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost označující, zda chcete tuto funkci v aplikaci. Ve výchozím nastavení je protokolování zapnuto služby, které vytvoříte pomocí šablony projektu služby systému Windows. Můžete použít statické formu <xref:System.Diagnostics.EventLog> třída pro psaní informace o službě do protokolů, aniž by bylo nutné vytvořit instanci <xref:System.Diagnostics.EventLog> součást nebo ručně zaregistrovat zdroj.  

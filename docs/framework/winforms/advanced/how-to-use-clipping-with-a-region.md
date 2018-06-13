@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33522093"
 ---
 # <a name="how-to-use-clipping-with-a-region"></a>Postupy: Použití oříznutí s oblastí
 Jedna z vlastností <xref:System.Drawing.Graphics> třída je klip oblast. Všechny kreslení provádí danou <xref:System.Drawing.Graphics> objekt je omezen na oblasti klip této <xref:System.Drawing.Graphics> objektu. Oblasti klip můžete nastavit tak, že zavoláte <xref:System.Drawing.Graphics.SetClip%2A> metoda.  

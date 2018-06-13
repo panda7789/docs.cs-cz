@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33517167"
 ---
 # <a name="application-settings-for-windows-forms"></a>Nastavení aplikace pro Windows Forms
 Funkce nastavení aplikace Windows Forms umožňuje snadno vytvářet, ukládat a udržovat vlastní aplikaci a uživatelské předvolby v klientovi. Pomocí nastavení aplikace můžete uložit pouze data aplikací, jako je například databázové připojovací řetězce, ale také uživatelská data, jako třeba pozic panelu nástrojů a naposledy použít seznamy.  

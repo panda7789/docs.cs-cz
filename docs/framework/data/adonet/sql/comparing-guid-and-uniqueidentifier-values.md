@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33357767"
 ---
 # <a name="comparing-guid-and-uniqueidentifier-values"></a>Porovnáním různých GUID a hodnoty uniqueidentifier
 Datový typ globálně jedinečný identifikátor (GUID) v systému SQL Server je reprezentována `uniqueidentifier` datového typu, který uloží binární hodnotu 16 bajtů. Identifikátor GUID je binární číslo a je nejčastěji se využívá jako identifikátor, který musí být jedinečné v síti, která má mnoho počítačů v mnoha lokalitách. Identifikátory GUID může být generována volání funkce NEWID Transact-SQL a je musí být jedinečný v celém světě. Další informace najdete v tématu "Uniqueidentifier pomocí dat" v SQL Server Books Online.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520211"
 ---
 # <a name="tracking-events-reference"></a>Sledovací odkaz události
 Během provádění pracovní postup v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] vyvolá sledování událostí při jejich přesunu různými fázemi v celé jeho životnosti. Hostitel může přihlásit k odběru těchto událostí a aktualizovat stav průběhu pracovního postupu během celé jeho životnosti. Sledování události vyvolané jsou popsané v této části.  

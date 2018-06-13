@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526527"
 ---
 # <a name="how-to-provide-help-in-a-windows-application"></a>Postupy: Poskytnutí nápovědy v aplikaci Windows
 Můžete použít nástroje <xref:System.Windows.Forms.HelpProvider> součásti pro připojení ke konkrétní ovládacích prvků ve Windows Forms témata nápovědy v souboru nápovědy. Soubor nápovědy může být HTML nebo HTMLHelp 1.x nebo větší formát.  

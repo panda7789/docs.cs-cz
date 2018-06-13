@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514344"
 ---
 # <a name="migration-activity-in-wf"></a>Aktivity související s migrací v WF
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] poskytuje <xref:System.Activities.Statements.Interop> aktivity pro provádění aktivity, které jsou odvozeny od aktivity v rámci pracovního postupu, který je založen na <xref:System.Activities.Activity>. Další informace najdete v tématu [migrace pokyny](../../../docs/framework/windows-workflow-foundation/migration-guidance.md) části.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516799"
 ---
 # <a name="basic-transactionscope"></a>Základní TransactionScope
 Tato ukázka se skládá ze čtyř scénářů, spusťte znázorňující vnořit <xref:System.Activities.Statements.TransactionScope> instance. První scénář ukazuje vnoření aktivitu 3. stran, které autor nemá žádné informace o konstrukce. Druhý a třetí scénáře ukazují, jak jsou dodržovány vypršení časových limitů a poslední scénář ukazuje <xref:System.Activities.Statements.TransactionScope.AbortInstanceOnTransactionFailure%2A> nastavení.  

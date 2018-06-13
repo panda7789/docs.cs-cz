@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33515965"
 ---
 # <a name="expressions"></a>Výrazy
 Tento příklad znázorňuje, jak používat základní výrazy v pracovním postupu. Skládá se z pracovního postupu, který vypočítá Základní mzda statistiky pro dva zaměstnanci fiktivní společnosti. Dvě třídy `Employee` a `SalaryStats`, jsou definovány v Employee.cs a SalaryStats.cs. Tyto třídy se používají v pracovním postupu, který ukazuje, jak provádět jednoduché aritmetické a řetězec operace na vlastnosti proměnných komplexních typů.  

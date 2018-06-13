@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33518990"
 ---
 # <a name="wait-for-input-activity"></a>Počkejte aktivity pro vstup
 Tento příklad znázorňuje postup vytvoření pojmenovaného záložky v pracovním postupu. Windows Workflow Foundation (WF) neposkytuje aktivitu pro vytvoření deklarativní záložky. Proto pokud chcete vytvořit záložku v pracovní postup, musíte napsat vlastní aktivity, která ji vytvoří. `WaitForInput` Aktivity definované v této ukázce tuto funkci zajišťuje, aby uživatelé mohou vytvářet záložky deklarativně v pracovním postupu.  

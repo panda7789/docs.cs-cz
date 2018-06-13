@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529805"
 ---
 # <a name="best-practices-for-scaling-the-windows-forms-datagridview-control"></a>Doporučené postupy pro změnu velikosti v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Řízení určená k poskytování maximální škálovatelnost. Pokud potřebujete zobrazit velké objemy dat, postupujte podle pokynů popsaných v tomto tématu, aby se zabránilo spotřebovává velké množství paměti nebo dlouhodobější snížení kvality odezvy uživatelského rozhraní (UI). Toto téma popisuje následující problémy:  

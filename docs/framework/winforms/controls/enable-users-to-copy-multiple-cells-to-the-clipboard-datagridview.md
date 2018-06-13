@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526562"
 ---
 # <a name="how-to-enable-users-to-copy-multiple-cells-to-the-clipboard-from-the-windows-forms-datagridview-control"></a>Postupy: Povolení kopírování více buněk do schránky z ovládacího prvku Windows Forms DataGridView
 Když povolíte kopírování buňky, provedete dat ve vaší <xref:System.Windows.Forms.DataGridView> snadno dostupný k ostatním aplikacím prostřednictvím ovládacího prvku <xref:System.Windows.Forms.Clipboard>. Hodnoty vybraných buněk jsou převedeny na řetězce a přidat do schránky jako text oddělený tabulátory hodnot pro vložení do aplikace, jako je Poznámkový blok a aplikace Excel a jako tabulku ve formátu HTML pro vložení do aplikace, jako je Word.  

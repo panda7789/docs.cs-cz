@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529857"
 ---
 # <a name="developing-windows-forms-controls-at-design-time"></a>Vývoj ovládacích prvků Windows Forms v době návrhu
 Pro ovládací prvek autory rozhraní .NET Framework poskytuje širokou řadu vytváření technologie ovládacího prvku. Autoři je už omezený na navrhování složené ovládací prvky, které fungují jako kolekce dříve existující ovládacích prvků. Prostřednictvím dědičnosti můžete vytvořit své vlastní ovládací prvky z dříve existující složené ovládací prvky nebo dříve existující ovládací prvky Windows Forms. Můžete taky navrhnout vlastní ovládací prvky, které implementují vlastní Malování. Tyto možnosti Povolit značnou flexibilitu při návrhu a funkčnost visual rozhraní. Abyste mohli využívat tyto funkce, musí být obeznámeni s koncepty programování na základě objektů.  

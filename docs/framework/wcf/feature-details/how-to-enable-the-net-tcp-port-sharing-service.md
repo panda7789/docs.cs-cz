@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33490757"
 ---
 # <a name="how-to-enable-the-nettcp-port-sharing-service"></a>Postupy: povolení služby Sdílení portů Net.TCP
 Windows Communication Foundation (WCF) používá služba systému Windows s názvem služba Net.TCP Port Sharing usnadňuje sdílení portů TCP více procesy. Tato služba je nainstalován jako součást služby WCF, ale služba není povoleno ve výchozím nastavení jako bezpečnostní opatření a proto musí se zapnout ručně před první použití. Toto téma popisuje, jak nakonfigurovat službu Net TCP Port Sharing pomocí modulu snap-In konzoly Microsoft Management Console (MMC).  

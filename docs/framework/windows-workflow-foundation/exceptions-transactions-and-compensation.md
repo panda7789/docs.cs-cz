@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33512207"
 ---
 # <a name="exceptions-transactions-and-compensation"></a>Výjimky transakce a kompenzace
 [!INCLUDE[wf1](../../../includes/wf1-md.md)] poskytuje několik různých mechanismů pro nakládání běhu chybové stavy v pracovních postupech. Pracovní postupy můžete použít kombinaci obslužné rutiny výjimek, transakce, zrušení a náhrady ke zpracování a elegantně zotavit chybové stavy.  

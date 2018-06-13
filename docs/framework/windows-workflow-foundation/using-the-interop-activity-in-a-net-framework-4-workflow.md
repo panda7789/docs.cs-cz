@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33520224"
 ---
 # <a name="using-the-interop-activity-in-a-net-framework-4-workflow"></a>Pomocí zprostředkovatele komunikace s objekty aktivity v pracovním postupu rozhraní .NET Framework 4
 Aktivity vytvořené pomocí [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] nebo [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] mohou být používány [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovní postup pomocí <xref:System.Activities.Statements.Interop> aktivity. Toto téma obsahuje základní informace o použití <xref:System.Activities.Statements.Interop> aktivity.  

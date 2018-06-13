@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516910"
 ---
 # <a name="visual-workflow-tracking"></a>Sledování Visual pracovního postupu
 Tento příklad znázorňuje způsob vytvoření visual pracovního postupu pro sledování aplikace pomocí funkce ladění, která je k dispozici prostřednictvím [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].  

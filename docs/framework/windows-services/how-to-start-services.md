@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33516214"
 ---
 # <a name="how-to-start-services"></a>Postupy: Spuštění služeb
 Po instalaci služby musí být spuštěna. Počáteční počet volání <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodu v třídě služby. Obvykle <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda definuje užitečné pracovní službu provede. Po spuštění služby, zůstane aktivní, dokud je ručně pozastavená nebo zastavená.  
