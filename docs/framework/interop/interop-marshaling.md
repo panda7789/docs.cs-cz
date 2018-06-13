@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395366"
 ---
 # <a name="interop-marshaling"></a><span data-ttu-id="cbea6-102">Zařazování spolupráce</span><span class="sxs-lookup"><span data-stu-id="cbea6-102">Interop Marshaling</span></span>
 <a name="top"></a> <span data-ttu-id="cbea6-103">Zařazování spolupráce řídí, jak se data předávají v metoda argumentů a návratové hodnoty mezi spravovanými a nespravovanými paměti během volání.</span><span class="sxs-lookup"><span data-stu-id="cbea6-103">Interop marshaling governs how data is passed in method arguments and return values between managed and unmanaged memory during calls.</span></span> <span data-ttu-id="cbea6-104">Zařazování spolupráce je aktivita běhu zajišťuje služba zařazování modul common language runtime.</span><span class="sxs-lookup"><span data-stu-id="cbea6-104">Interop marshaling is a run-time activity performed by the common language runtime's marshaling service.</span></span>  

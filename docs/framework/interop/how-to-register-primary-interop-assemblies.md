@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33390858"
 ---
 # <a name="how-to-register-primary-interop-assemblies"></a><span data-ttu-id="47c83-102">Postupy: Registrace primárních sestavení spolupráce</span><span class="sxs-lookup"><span data-stu-id="47c83-102">How to: Register Primary Interop Assemblies</span></span>
 <span data-ttu-id="47c83-103">Třídy mohou být zařazena pouze pomocí zprostředkovatele komunikace s objekty COM a jsou vždycky zařazené jako rozhraní.</span><span class="sxs-lookup"><span data-stu-id="47c83-103">Classes can be marshaled only by COM interop and are always marshaled as interfaces.</span></span> <span data-ttu-id="47c83-104">V některých případech rozhraní sloužící k zařazování třídy se nazývá rozhraní třídy.</span><span class="sxs-lookup"><span data-stu-id="47c83-104">In some cases the interface used to marshal the class is known as the class interface.</span></span> <span data-ttu-id="47c83-105">Informace o přepsání třídy rozhraní s rozhraním zvoleného najdete v tématu [obálka volatelná aplikacemi COM](../../../docs/framework/interop/com-callable-wrapper.md).</span><span class="sxs-lookup"><span data-stu-id="47c83-105">For information about overriding the class interface with an interface of your choice, see [COM Callable Wrapper](../../../docs/framework/interop/com-callable-wrapper.md).</span></span>  

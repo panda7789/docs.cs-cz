@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33389272"
 ---
 # <a name="how-to-implement-callback-functions"></a><span data-ttu-id="40841-102">Postupy: Implementace funkcí zpětného volání</span><span class="sxs-lookup"><span data-stu-id="40841-102">How to: Implement Callback Functions</span></span>
 <span data-ttu-id="40841-103">Následující postup a příklad ukazují, jak pomocí platformy vyvolání spravované aplikace, můžete vytisknout popisovač hodnota pro každé okno v místním počítači.</span><span class="sxs-lookup"><span data-stu-id="40841-103">The following procedure and example demonstrate how a managed application, using platform invoke, can print the handle value for each window on the local computer.</span></span> <span data-ttu-id="40841-104">Konkrétně postup a ukázkovým použitím **EnumWindows** funkci, aby se krok pomocí seznamu pro windows a spravovaný zpětného volání funkce (s názvem zpětného volání) k tisku hodnoty popisovač okna.</span><span class="sxs-lookup"><span data-stu-id="40841-104">Specifically, the procedure and example use the **EnumWindows** function to step through the list of windows and a managed callback function (named CallBack) to print the value of the window handle.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32742020"
 ---
 # <a name="full-code-listings"></a><span data-ttu-id="6f889-102">Výpis úplného kódu</span><span class="sxs-lookup"><span data-stu-id="6f889-102">Full Code Listings</span></span>
 <span data-ttu-id="6f889-103">Toto téma obsahuje výpis pro aplikaci, která používá celý kód [manipulace a nečinnosti](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md) procesory.</span><span class="sxs-lookup"><span data-stu-id="6f889-103">This topic contains the entire code listing for an application that uses [Manipulations and Inertia](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md) processors.</span></span>  

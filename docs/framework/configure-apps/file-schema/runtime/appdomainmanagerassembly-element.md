@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744847"
 ---
 # <a name="ltappdomainmanagerassemblygt-element"></a><span data-ttu-id="deb5e-102">&lt;appdomainmanagerassembly –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="deb5e-102">&lt;appDomainManagerAssembly&gt; Element</span></span>
 <span data-ttu-id="deb5e-103">Určuje sestavení, které poskytuje správce domény aplikace pro výchozí doméně aplikace v procesu.</span><span class="sxs-lookup"><span data-stu-id="deb5e-103">Specifies the assembly that provides the application domain manager for the default application domain in the process.</span></span>  

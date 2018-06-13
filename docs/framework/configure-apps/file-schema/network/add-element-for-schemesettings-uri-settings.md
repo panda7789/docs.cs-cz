@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741851"
 ---
 # <a name="ltaddgt-element-for-schemesettings-uri-settings"></a><span data-ttu-id="0bb5b-102">&lt;Přidat&gt; Element pro schemeSettings (nastavení Uri)</span><span class="sxs-lookup"><span data-stu-id="0bb5b-102">&lt;add&gt; Element for schemeSettings (Uri Settings)</span></span>
 <span data-ttu-id="0bb5b-103">Přidá nastavení schéma pro název schématu.</span><span class="sxs-lookup"><span data-stu-id="0bb5b-103">Adds a scheme setting for a scheme name.</span></span>  

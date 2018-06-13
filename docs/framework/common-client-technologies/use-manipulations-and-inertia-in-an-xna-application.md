@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741669"
 ---
 # <a name="using-manipulations-and-inertia-in-an-xna-application"></a><span data-ttu-id="38cdd-102">Použití manipulace a nečinnosti v aplikaci XNA</span><span class="sxs-lookup"><span data-stu-id="38cdd-102">Using Manipulations and Inertia in an XNA Application</span></span>
 <span data-ttu-id="38cdd-103">Tento článek popisuje, jak můžete použít manipulace a nečinnosti zpracování v aplikaci Microsoft XNA ovládat pohyb herní částí.</span><span class="sxs-lookup"><span data-stu-id="38cdd-103">This article describes how you can use manipulations and inertia processing in a Microsoft XNA application to control the movement of game pieces.</span></span> <span data-ttu-id="38cdd-104">Předtím, než se pustíte do čtení tohoto článku, měli byste se seznámit s [přehled manipulace a nečinnosti](../../../docs/framework/common-client-technologies/manipulations-and-inertia-overview.md) tématu a znát základní XNA koncepce programování.</span><span class="sxs-lookup"><span data-stu-id="38cdd-104">Before you read this article, you should be familiar with the [Manipulations and Inertia Overview](../../../docs/framework/common-client-technologies/manipulations-and-inertia-overview.md) topic, and be familiar with basic XNA programming concepts.</span></span>  

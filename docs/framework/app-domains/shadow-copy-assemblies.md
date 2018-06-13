@@ -13,6 +13,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743950"
 ---
 # <a name="shadow-copying-assemblies"></a><span data-ttu-id="df34f-102">Stínové kopírování sestavení</span><span class="sxs-lookup"><span data-stu-id="df34f-102">Shadow Copying Assemblies</span></span>
 <span data-ttu-id="df34f-103">Stínové kopírování sestavení povoluje, které se používají v doméně aplikace aktualizovat bez uvolnění domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="df34f-103">Shadow copying enables assemblies that are used in an application domain to be updated without unloading the application domain.</span></span> <span data-ttu-id="df34f-104">To je zvlášť užitečné pro aplikace, které musí být k dispozici nepřetržitě, jako je například weby technologie ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="df34f-104">This is particularly useful for applications that must be available continuously, such as ASP.NET sites.</span></span>  
