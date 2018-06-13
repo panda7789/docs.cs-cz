@@ -11,6 +11,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33808868"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation – informace o ochraně osobních údajů
 Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. Když vytvoříte aplikaci pomocí Windows Communication Foundation (WCF), verze 3.0, vaše aplikace může mít vliv na vaši koncoví uživatelé o ochraně osobních údajů. Například aplikace může shromažďovat explicitně kontaktní informace o uživateli, nebo může požádat nebo poslat informace přes Internet na webové stránky. Pokud vložíte technologie společnosti Microsoft v aplikaci, že technologie může mít svůj vlastní chování, které by mohly ovlivnit ochranu osobních údajů. WCF neodesílá žádné informace společnosti Microsoft z vaší aplikace Pokud jste nebo koncový uživatel se rozhodnete odeslat do us.  

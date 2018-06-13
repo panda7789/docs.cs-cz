@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33465856"
 ---
 # <a name="4014---messagequeueregisterfailed"></a>4014 – MessageQueueRegisterFailed
 ## <a name="properties"></a>Vlastnosti  

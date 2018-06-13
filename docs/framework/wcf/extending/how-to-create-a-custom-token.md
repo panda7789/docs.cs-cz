@@ -15,6 +15,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809206"
 ---
 # <a name="how-to-create-a-custom-token"></a>Postupy: Vytvoření vlastního tokenu
 Toto téma ukazuje, jak vytvořit vlastní zabezpečovací tokenu pomocí <xref:System.IdentityModel.Tokens.SecurityToken> třídy a jak integrovat s zprostředkovatele tokenu vlastní zabezpečovací a ověřovací data. Kompletní příklad najdete v článku [vlastní tokenu](../../../../docs/framework/wcf/samples/custom-token.md) ukázka.  

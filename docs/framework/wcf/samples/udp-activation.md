@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33810028"
 ---
 # <a name="udp-activation"></a>Aktivace UDP
 Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázka. Ji rozšiřuje [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku, který se podporují procesu aktivace pomocí služby Aktivace procesů systému Windows (WAS).  
