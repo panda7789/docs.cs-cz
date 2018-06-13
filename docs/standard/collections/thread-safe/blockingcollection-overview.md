@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573617"
 ---
 # <a name="blockingcollection-overview"></a>BlockingCollection – přehled
 <xref:System.Collections.Concurrent.BlockingCollection%601> je třída kolekce, která poskytuje následující funkce:  

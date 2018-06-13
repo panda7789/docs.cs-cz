@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573176"
 ---
 # <a name="how-to-round-trip-date-and-time-values"></a>Postupy: Hodnoty data a času round-trip
 V mnoha aplikacích hodnota data a času je určený pro jednoznačnou identifikaci jediný bod v čase. Toto téma ukazuje, jak k uložení a obnovení <xref:System.DateTime> hodnotu, <xref:System.DateTimeOffset> hodnota a datum a čas hodnotu s časem zónu informace tak, aby obnovená hodnota identifikuje ve stejnou dobu jako uložena hodnota.  

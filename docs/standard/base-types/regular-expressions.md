@@ -27,6 +27,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577138"
 ---
 # <a name="net-regular-expressions"></a>Regulární výrazy rozhraní .NET
 Regulární výrazy poskytují výkonný, flexibilní a efektivní způsob zpracování textu. Rozsáhlé porovnávání notace regulárních výrazů umožňuje rychle analyzovat velké objemy text k vyhledání konkrétní znak vzory; k ověření text tak, aby to odpovídá předdefinované vzoru (například e-mailovou adresu); k extrakci, upravit, nahraďte nebo odstranit text dílčích řetězců; a pokud chcete generovat sestavy do kolekce přidat extrahovaných řetězců. Pro mnoho aplikací, které pracují s řetězci nebo které analyzují velké textové bloky, jsou regulární výrazy nepostradatelným nástrojem.  

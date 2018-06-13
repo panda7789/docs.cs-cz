@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570630"
 ---
 # <a name="node-set-navigation-using-xpathnavigator"></a>Uzel navigační sady pomocí objektem XPathNavigator nastaveným na
 Můžete přejít přes uzly v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu pomocí uzlu nastavit metody navigace <xref:System.Xml.XPath.XPathNavigator> třídy. Můžete přejít přes všechny uzly nebo přes vybraná sada uzlů, které vrátí jednu z metod výběr <xref:System.Xml.XPath.XPathNavigator> třídy.  

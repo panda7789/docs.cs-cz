@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570454"
 ---
 # <a name="xpathnavigator-in-transformations"></a>Objektem XPathNavigator nastaveným v transformace
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje náhodný přístup jen pro čtení k datům a je určená pro použití jako vstup pro jazyk XSL pro transformace XSLT (). Se implementuje na <xref:System.Xml.XPath.XPathDocument>, <xref:System.Xml.XmlDataDocument>, a <xref:System.Xml.XmlDocument>. <xref:System.Xml.XPath.XPathNavigator> Je založena na datový Model World Wide Web Consortium (W3C), jak je popsáno v části 5 doporučení XML Path Language (XPath).  

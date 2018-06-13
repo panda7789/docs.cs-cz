@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573117"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Porovnávání a řazení v kolekcích
 <xref:System.Collections> Třídy provádění porovnávání v téměř všechny procesy související Správa kolekcí, zda hledání elementu, který chcete odebrat nebo vrací hodnotu z dvojice klíč hodnota.  

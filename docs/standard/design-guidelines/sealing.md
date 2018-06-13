@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573734"
 ---
 # <a name="sealing"></a>Zapečetění
 Jedna z funkcí objektově orientované rozhraní se vývojáři můžou rozšířit a přizpůsobit způsoby neočekávané návrháři framework. Toto je napájení i nebezpečí extensible návrhu. Při návrhu vaší framework je, proto velmi důležité pečlivě návrh pro rozšíření, pokud se požaduje a omezit rozšiřitelnosti, když je nebezpečné.  

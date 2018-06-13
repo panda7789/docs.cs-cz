@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578304"
 ---
 # <a name="standard-timespan-format-strings"></a>Standardní řetězce formátu TimeSpan
 <a name="Top"></a> Standardní <xref:System.TimeSpan> řetězec formátu používá jeden specifikátor formátu pro definování textovou reprezentaci hodnoty <xref:System.TimeSpan> hodnotu, která je výsledkem operace formátování. Formátovací řetězec, který obsahuje více než jeden znak, včetně mezer, interpretována jako vlastní <xref:System.TimeSpan> řetězec formátu. Další informace najdete v tématu [vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md) .  

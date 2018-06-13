@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572642"
 ---
 # <a name="when-to-use-generic-collections"></a>Kdy použít generické kolekce
 Pomocí obecné kolekce je obecně nedoporučuje, protože získáte okamžitý výhodou bezpečnost typů bez nutnosti odvozovat od typu základní kolekce a implementace konkrétní typ členů. Obecné typy kolekcí také obecně poskytují lepší výkon než odpovídající typy neobecné kolekcí (a lépe než typy, které jsou odvozeny od neobecné základní kolekci typů) při elementy z kolekce jsou typy hodnot, protože s obecnými typy není potřeba pole elementy.  

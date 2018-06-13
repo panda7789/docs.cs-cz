@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33576178"
 ---
 # <a name="parsing-numeric-strings-in-net"></a>Analýza číselných řetězců v NET
 Všechny číselné typy mají dvě statické metody analýzy `Parse` a `TryParse`, že můžete převést řetězcové vyjádření čísla do číselného typu. Tyto metody umožňují analyzovat řetězce, které byly vytvořeny pomocí řetězce formátu zdokumentována [standardní číselných řetězců formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md) a [vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md). Ve výchozím nastavení `Parse` a `TryParse` metody můžete převést úspěšně řetězce, které obsahují pouze na celé číslo hodnoty integrální desetinných míst. Úspěšně se můžete převést řetězce, které obsahují celých a desetinných desítková číslice, oddělovače skupin a oddělovač desetinných na hodnoty s plovoucí desetinnou čárkou. `Parse` Metoda vyvolá výjimku pokud operace selže, zatímco `TryParse` metoda vrátí `false`.  

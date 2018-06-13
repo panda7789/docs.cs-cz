@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397452"
 ---
 # <a name="in-process-side-by-side-execution"></a>Vnitroprocesové souběžné provádění
 Od verze [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete použít v procesu souběžného hostování spustit více verzí common language runtime (CLR) v jediném procesu. Ve výchozím nastavení spravované komponenty COM s verzí rozhraní .NET Framework, které byly vytvořené s nástroji, bez ohledu na verzi rozhraní .NET Framework, který je načten pro proces spustit.  

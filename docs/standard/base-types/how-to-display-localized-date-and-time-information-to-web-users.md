@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578154"
 ---
 # <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>Postupy: Zobrazování lokalizovaných informací data a času webovým uživatelům
 Protože na webové stránce lze zobrazit kdekoliv na světě, analyzovat a formátuje hodnoty data a času operací neměli spoléhat na výchozí formát (což je nejčastěji formát jazykové verze místní webový server) při interakci s uživatelem. Místo toho by měla webových formulářů, které zpracovávají datum a čas uživatelský vstup řetězce analyzovat řetězců pomocí upřednostňované jazykové verze uživatele. Podobně data a času, které má být zobrazena uživateli ve formátu, který vyhovuje jazykovou verzi uživatele. Toto téma ukazuje, jak to udělat.  

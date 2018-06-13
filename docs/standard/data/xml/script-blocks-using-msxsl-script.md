@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33577160"
 ---
 # <a name="script-blocks-using-msxslscript"></a>Msxsl:script bloky pomocí skriptu
 <xref:System.Xml.Xsl.XslCompiledTransform> Třída podporuje vložené skripty pomocí `msxsl:script` elementu. Při načtení šablony stylů žádné definované funkce jsou kompilovaná do převodního jazyka Microsoft (MSIL) Code Document Object Model (CodeDOM) a jsou při běhu spuštěn. Sestavení vygenerovat z bloku vloženého skriptu je samostatný než sestavení vygenerované šablony stylů.  

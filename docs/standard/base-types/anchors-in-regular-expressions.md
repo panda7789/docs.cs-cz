@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578024"
 ---
 # <a name="anchors-in-regular-expressions"></a>Kotvy v regulárních výrazech
 <a name="top"></a> Kotvy nebo atomické kontrolní výrazy s nulovou šířkou určují pozici v řetězci, kde musí dojít ke shodě. Pokud použijete na ukotvení v hledaný výraz, modul regulárních výrazů v řetězci nebo využívat znaků; Vypadá to shody na určené pozici. Například `^` Určuje, že porovnávání musí začít na začátku řádku nebo řetězec. Proto s regulárním výrazem `^http:` odpovídá "http:" pouze pokud se nachází na začátku řádku. Následující tabulka uvádí ukotvení podporované regulární výrazy v rozhraní .NET.  

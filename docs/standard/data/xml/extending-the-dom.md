@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572249"
 ---
 # <a name="extending-the-dom"></a>Rozšíření modelu DOM
 Rozhraní Microsoft .NET Framework obsahuje základní sadu třídy, která poskytuje implementaci z XML modelu DOM (Document Object). <xref:System.Xml.XmlNode>a jeho odvozené třídy, poskytuje metody a vlastnosti, které vám umožní přejít, dotazování a změnit obsah a struktura dokumentu XML.  

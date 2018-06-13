@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33456960"
 ---
 # <a name="3302---receivecontextfaulted"></a>3302 – ReceiveContextFaulted
 ## <a name="properties"></a>Vlastnosti  

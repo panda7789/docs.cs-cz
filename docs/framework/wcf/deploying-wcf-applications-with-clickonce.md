@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33456693"
 ---
 # <a name="deploying-wcf-applications-with-clickonce"></a>Nasazení aplikací služby WCF technologií ClickOnce
 Klientským aplikacím pomocí služby Windows Communication Foundation (WCF) mohou být nasazeny pomocí technologie ClickOnce. Tato technologie umožňuje, aby využít výhod modulu runtime ochranu zabezpečení poskytované zabezpečení přístupu kódu, za předpokladu, že jsou digitálně podepsané důvěryhodným certifikátem. Certifikát použitý k podepsání aplikace ClickOnce se musí nacházet v úložišti důvěryhodné vydavatele a místních zásad zabezpečení v klientském počítači musí být nakonfigurován pro udělení oprávnění úplné důvěryhodnosti pro aplikace podepsaný pomocí certifikátu vydavatele.  

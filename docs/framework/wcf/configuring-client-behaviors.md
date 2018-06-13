@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33458104"
 ---
 # <a name="configuring-client-behaviors"></a>Konfigurace chování klientů
 Windows Communication Foundation (WCF) nakonfiguruje chování dvěma způsoby: buď odkazující na chování konfigurace – které jsou definovány v `<behavior>` části z konfiguračního souboru aplikace klienta – nebo prostřednictvím kódu programu volání aplikace. Toto téma popisuje obou přístupů.  

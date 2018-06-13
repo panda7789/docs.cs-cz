@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565360"
 ---
 # <a name="xxdata-intrinsic-xaml-type"></a>x:XData – vnitřní typ jazyka XAML
 Umožňuje umístění XML datové ostrůvky v produkční XAML. Elementy XML v rámci `x:XData` by neměla být zpracována XAML procesorů, jako by byly součástí výchozí funguje oboru názvů jazyka XAML nebo jakékoli jiné oboru názvů jazyka XAML. `x:XData` může obsahovat libovolný ve správném formátu XML.  

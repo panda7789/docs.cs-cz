@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575386"
 ---
 # <a name="event-design"></a>Návrh událostí
 Události jsou nejčastěji používané formu zpětných volání (konstrukce, které umožňují rozhraní k volání do kódu uživatele). Další mechanismy zpětné volání zahrnout členy trvá delegáti, virtuální členové a na základě rozhraní moduly plug-in. Data z použitelnost studie označit, že většina vývojářů pohodlnější použití událostí, než používají jiné mechanismy zpětné volání. Události jsou výborně integrované s Visual Studio a mnoha jazycích.  

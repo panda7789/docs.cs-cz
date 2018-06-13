@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573897"
 ---
 # <a name="latency-modes"></a>Latentní režimy
 Uvolnění objektů, musí uvolňování zastavení všech spuštěných vláken v aplikaci. V některých situacích, například pokud aplikace načte data nebo se zobrazí obsah můžete na kritické čas úplné uvolnění paměti a mít dopad na výkon. Míra interakce systému uvolňování můžete upravit podle nastavení <xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType> vlastnost na jednu z <xref:System.Runtime.GCLatencyMode?displayProperty=nameWithType> hodnoty.  

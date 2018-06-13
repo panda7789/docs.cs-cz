@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33491150"
 ---
 # <a name="how-to-import-custom-policy-assertions"></a>Postupy: Import kontrolních výrazů vlastních zásad
 Kontrolní výrazy zásad jsou popsány možnosti a požadavky koncového bodu služby.  Klientské aplikace můžete použít výrazy zásad v metadata služby ke konfiguraci klienta vazby nebo k přizpůsobení kontrakt služby pro koncový bod služby.  

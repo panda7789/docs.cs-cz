@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578195"
 ---
 # <a name="best-practices-for-developing-world-ready-applications"></a>Doporučené postupy pro vývoj aplikací připravených k použití
 Tato část popisuje osvědčené postupy při vývoji aplikací připravených.  

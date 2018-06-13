@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33450499"
 ---
 # <a name="metadata-unmanaged-api-reference"></a>Metadata (referenční dokumentace nespravovaného rozhraní API)
 Metadat rozhraní API umožňuje klientovi, jako je například kompilátor, ke generování nebo získat přístup k metadatům komponenty bez typy načítá modulem common language runtime (CLR).  

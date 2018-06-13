@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572707"
 ---
 # <a name="select-nodes-using-xpath-navigation"></a>Vyberte uzel pomocí jazyka XPath navigace
 XML modelu DOM (Document Object) obsahuje metody, které vám umožní používat navigační XML Path Language (XPath) dotazů na informace v modelu DOM. Pomocí jazyka XPath se najít uzel jeden, konkrétní nebo k vyhledání všech uzlech, jež některé kritériím.  

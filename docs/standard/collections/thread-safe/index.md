@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33575528"
 ---
 # <a name="thread-safe-collections"></a>Kolekce se zabezpečenými vlákny
 [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] Zavádí <xref:System.Collections.Concurrent?displayProperty=nameWithType> názvů, který zahrnuje několik tříd kolekcí, které jsou bezpečné pro přístup z více vláken a škálovatelné. Více vláken může bezpečně a efektivně přidat nebo odebrat položky z těchto kolekcí, bez nutnosti další synchronizace v uživatelském kódu. Když píšete nový kód, pomocí třídy souběžných kolekce vždy, když kolekce se zápis do více vláken současně. Pokud jsou pouze čtení ze sdílené kolekce, pak můžete použít třídy v <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů. Doporučujeme, abyste provedli třídy kolekcí verze 1.0, pokud není vyžadováno cílit na rozhraní .NET Framework 1.1 nebo starší modul runtime.  

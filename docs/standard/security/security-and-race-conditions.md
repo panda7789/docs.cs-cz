@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33582132"
 ---
 # <a name="security-and-race-conditions"></a>Zabezpečení a konflikty časování
 Další oblastí zájmu je potenciální bezpečnostní rizika zneužité časování. Existuje několik způsobů, ve kterých k tomu může dojít. Související témata, které následují popisují některé z hlavních problémů, kterým musí vývojář vyhnout.  

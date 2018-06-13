@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396828"
 ---
 # <a name="caching-in-net-framework-applications"></a>Ukládání do vyrovnávací paměti v aplikacích .NET Framework
 Ukládání do mezipaměti umožňuje ukládání dat v paměti pro rychlý přístup. Když je znovu přístupu k datům, aplikací můžete získat data z mezipaměti nutné načíst z původního zdroje. Tím lze vylepšit výkon a škálovatelnost. Navíc díky ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.  

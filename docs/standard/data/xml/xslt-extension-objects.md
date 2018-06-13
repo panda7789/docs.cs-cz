@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570507"
 ---
 # <a name="xslt-extension-objects"></a>Rozšíření objektů XSLT
 Rozšíření objektů se používají k rozšíření funkcí stylů. Rozšíření objektů jsou udržované <xref:System.Xml.Xsl.XsltArgumentList> třídy.  

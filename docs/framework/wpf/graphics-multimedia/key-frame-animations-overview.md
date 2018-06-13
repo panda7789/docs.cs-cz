@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33566558"
 ---
 # <a name="key-frame-animations-overview"></a>Přehled animací klíčových snímků
 Toto téma vás seznámí s animací jednotlivých klíč. Animací klíč jednotlivých umožňují animace pomocí více než dvě cílové hodnoty a řídit metodu interpolace animace.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398271"
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>Kompatibilita verzí v rozhraní .NET Framework
 Zpětná kompatibilita znamená, že aplikaci, která byla vyvinuta pro konkrétní verze platformy bude spuštěna v novějších verzích této platformě. Rozhraní .NET Framework snaží co zpětné kompatibility: zdrojový kód napsaný pro jednu verzi rozhraní .NET Framework by měl kompilovat v novějších verzích rozhraní .NET Framework a binární soubory, které běží na jednu verzi rozhraní .NET Framework se měl chovat stejně jako na novější verze rozhraní .NET Framework.  

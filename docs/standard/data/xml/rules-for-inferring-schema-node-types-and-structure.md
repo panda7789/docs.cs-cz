@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578232"
 ---
 # <a name="rules-for-inferring-schema-node-types-and-structure"></a>Pravidla pro odvození typů uzlů schéma a struktura
 Toto téma popisuje, jak proces odvození schématu překládá typy uzlů v dokumentu XML na strukturu schématu XML definition language (XSD).  

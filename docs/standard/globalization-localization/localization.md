@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33573910"
 ---
 # <a name="localization"></a>Lokalizace
 Lokalizace je proces převodu aplikace prostředky do lokalizované verze pro každou jazykovou verzi, která bude podporovat aplikace. Až po dokončení byste měli přistoupit k lokalizaci [lokalizovatelnosti](../../../docs/standard/globalization-localization/localizability-review.md) kroku ověřte, že globalizovaná aplikace je připravena k lokalizaci.  

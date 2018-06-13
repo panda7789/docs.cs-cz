@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33574644"
 ---
 # <a name="writing-custom-attributes"></a>Zápis vlastních atributů
 K návrhu vlastní atributy, není potřeba hlavní mnoho nových konceptů. Pokud jste obeznámeni s objektově orientované programování a vědět, jak navrhnout třídy, že máte většinu potřebných znalostí. Vlastní atributy jsou v podstatě tradiční třídy, které jsou odvozeny od přímo nebo nepřímo <xref:System.Attribute?displayProperty=nameWithType>. Stejně jako tradiční třídy vlastní atributy obsahují metody, které ukládají a načítají data.  

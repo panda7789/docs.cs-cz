@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397582"
 ---
 # <a name="peer-names-and-pnrp-ids"></a>Názvy partnerů a ID PNRP
 Název partnerského zařízení představuje koncový bod pro komunikaci, což může být do počítače, uživatele, skupiny, službou nebo nic přidružené partnerského uzlu, který lze přeložit na adresu IPv6. Řešení protokolu PNRP (Peer Name) trvá statisticky jedinečný název partnerského zařízení pro vytvoření PNRP ID, které slouží k identifikaci členů cloudu.  

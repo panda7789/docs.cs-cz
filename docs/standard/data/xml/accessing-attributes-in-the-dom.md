@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572018"
 ---
 # <a name="accessing-attributes-in-the-dom"></a>Přístup k atributům v modelu DOM
 Atributy jsou vlastnosti elementu, ne podřízených objektů daného elementu. Tento rozdíl je důležitý kvůli metody použité k přejděte na stejné úrovni, nadřazené a podřízené uzly z XML modelu DOM (Document Object). Například **PreviousSibling** a **NextSibling** metody nepoužívají se k přejděte z prvku, atributu nebo mezi atributy. Místo toho atribut je vlastnost elementu a vlastní element, má **OwnerElement** vlastnost a ne **parentNode** vlastnost, a má odlišné metody navigace.  

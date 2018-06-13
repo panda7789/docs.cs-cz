@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33578110"
 ---
 # <a name="observer-design-pattern"></a>Návrhový vzor Pozorovatel
 Návrhový vzor pozorovatel umožňuje odběratele k registraci nebo dostávat oznámení od zprostředkovatele. Je vhodná pro každý scénář, který vyžaduje nabízená oznámení. Definuje vzoru *zprostředkovatele* (také označované jako *subjektu* nebo *lze zobrazit*) a nula, jednu nebo více *pozorovatelů*. Pozorovatelů zaregistrovat u zprostředkovatele a vždy, když předdefinovanou podmínku, události nebo změna stavu dojde, zprostředkovatel automaticky oznámí všechny pozorovatelů pomocí volání jeden své metody. Při volání této metody zprostředkovatele můžete také poskytnout aktuální informace o stavu pozorovatelů. V rozhraní .NET Framework, je použít návrhový vzor pozorovatel implementací obecná <xref:System.IObservable%601?displayProperty=nameWithType> a <xref:System.IObserver%601?displayProperty=nameWithType> rozhraní. Parametr obecného typu představuje typ, který poskytuje informace o oznámení.  

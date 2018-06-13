@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33572772"
 ---
 # <a name="how-to-read-characters-from-a-string"></a>Postupy: Čtení znaků z řetězce
 Následující příklady kódu ukazují, jak číst synchronně a asynchronně znaků z řetězce.  
