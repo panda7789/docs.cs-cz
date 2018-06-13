@@ -10,6 +10,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457654"
 ---
 # <a name="overloadable-operators-c-programming-guide"></a><span data-ttu-id="03704-102">Přetížitelné operátory (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="03704-102">Overloadable Operators (C# Programming Guide)</span></span>
 

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803738"
 ---
 # <a name="basic-wcf-programming"></a><span data-ttu-id="f94de-102">Základní programování WCF</span><span class="sxs-lookup"><span data-stu-id="f94de-102">Basic WCF Programming</span></span>
 <span data-ttu-id="f94de-103">Tato část představuje základy vytváření aplikací pro Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="f94de-103">This section presents the fundamentals for creating Windows Communication Foundation (WCF) applications.</span></span>  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457478"
 ---
 # <a name="throw-c-reference"></a><span data-ttu-id="ace88-102">throw (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="ace88-102">throw (C# Reference)</span></span>
 <span data-ttu-id="ace88-103">Signály výskytem výjimku při spuštění programu.</span><span class="sxs-lookup"><span data-stu-id="ace88-103">Signals the occurrence of an exception during program execution.</span></span>  

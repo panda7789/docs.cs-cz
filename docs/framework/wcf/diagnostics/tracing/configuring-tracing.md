@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807365"
 ---
 # <a name="configuring-tracing"></a><span data-ttu-id="23006-102">Konfigurace trasování</span><span class="sxs-lookup"><span data-stu-id="23006-102">Configuring Tracing</span></span>
 <span data-ttu-id="23006-103">Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasování zdrojů pro vydávání trasování a nastavte úrovně trasování, trasování aktivit sady a šíření pro podporu trasování začátku do konce korelace a nastavte trasování – moduly naslouchání pro přístup k trasování.</span><span class="sxs-lookup"><span data-stu-id="23006-103">This topic describes how you can enable tracing, configure trace sources to emit traces and set trace levels, set activity tracing and propagation to support end-to-end trace correlation, and set trace listeners to access traces.</span></span>  

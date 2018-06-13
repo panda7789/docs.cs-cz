@@ -17,6 +17,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457797"
 ---
 # <a name="-and--null-conditional-operators-c-and-visual-basic"></a><span data-ttu-id="c3590-102">?.</span><span class="sxs-lookup"><span data-stu-id="c3590-102">?.</span></span> <span data-ttu-id="c3590-103">a? [] null podmíněné operátory (C# a Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c3590-103">and ?[] null-conditional Operators (C# and Visual Basic)</span></span>
 <span data-ttu-id="c3590-104">Testuje hodnotu levé operand pro hodnotu null, před provedením přístup ke členu (`?.`) nebo index (`?[]`) operaci; vrátí `null` Pokud je výsledkem levé operand `null`.</span><span class="sxs-lookup"><span data-stu-id="c3590-104">Tests the value of the left-hand operand for null before performing a member access (`?.`) or index (`?[]`) operation; returns `null` if the left-hand operand evaluates to `null`.</span></span> 

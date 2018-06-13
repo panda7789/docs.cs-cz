@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803391"
 ---
 # <a name="windows-communication-foundation-endpoints"></a><span data-ttu-id="d92f8-102">Koncové body Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="d92f8-102">Windows Communication Foundation Endpoints</span></span>
 <span data-ttu-id="d92f8-103">Veškerá komunikace se službou Windows Communication Foundation (WCF) dojde k prostřednictvím *koncové body* služby.</span><span class="sxs-lookup"><span data-stu-id="d92f8-103">All communication with a Windows Communication Foundation (WCF) service occurs through the *endpoints* of the service.</span></span> <span data-ttu-id="d92f8-104">Koncové body poskytují klientům přístup k funkci, která nabízí služby WCF.</span><span class="sxs-lookup"><span data-stu-id="d92f8-104">Endpoints provide clients access to the functionality that a WCF service offers.</span></span>  

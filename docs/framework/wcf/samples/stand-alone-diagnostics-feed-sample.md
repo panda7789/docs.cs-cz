@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807756"
 ---
 # <a name="stand-alone-diagnostics-feed-sample"></a><span data-ttu-id="af76c-102">Ukázka samostatného diagnostického informačního kanálu</span><span class="sxs-lookup"><span data-stu-id="af76c-102">Stand-Alone Diagnostics Feed Sample</span></span>
 <span data-ttu-id="af76c-103">Tento příklad znázorňuje postup vytvoření informačního kanálu RSS nebo kanálu Atom pro syndikace Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="af76c-103">This sample demonstrates how to create an RSS/Atom feed for syndication with Windows Communication Foundation (WCF).</span></span> <span data-ttu-id="af76c-104">Je základní program "Hello World", který zobrazuje základní informace o objektu modelu a jak nastavit ve službě Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="af76c-104">It is a basic "Hello World" program that shows the basics of the object model and how to set it up on a Windows Communication Foundation (WCF) service.</span></span>  

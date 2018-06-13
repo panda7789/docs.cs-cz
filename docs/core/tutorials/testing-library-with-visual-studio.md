@@ -12,6 +12,7 @@ ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34483470"
 ---
 # <a name="testing-a-class-library-with-net-core-in-visual-studio-2017"></a><span data-ttu-id="71e13-103">Testování knihovny tříd s .NET Core v Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="71e13-103">Testing a class library with .NET Core in Visual Studio 2017</span></span>
 
