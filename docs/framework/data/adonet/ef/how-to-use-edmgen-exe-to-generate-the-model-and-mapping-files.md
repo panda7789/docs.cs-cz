@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760944"
 ---
 # <a name="how-to-use-edmgenexe-to-generate-the-model-and-mapping-files"></a><span data-ttu-id="281e9-102">Postupy: použití EdmGen.exe pro generování modelu a soubory mapování</span><span class="sxs-lookup"><span data-stu-id="281e9-102">How to: Use EdmGen.exe to Generate the Model and Mapping Files</span></span>
 <span data-ttu-id="281e9-103">Toto téma ukazuje, jak pomocí nástroje Generátor EDM (EdmGen.exe) ke generování založena na databázi školní následující soubory:</span><span class="sxs-lookup"><span data-stu-id="281e9-103">This topic shows how to use the EDM Generator (EdmGen.exe) tool to generate the following files based on the School database:</span></span>  

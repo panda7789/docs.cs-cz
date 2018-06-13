@@ -1,32 +1,21 @@
 ---
 title: System.ServiceModel.PortSharing.PortSharingListening
-ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 05528126-de72-4801-93ab-397f3c32b809
-caps.latest.revision: "4"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2ef033ca6eed84c89f32194fd26784293a3f58df
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 202c9a23a63b7118050eb3146dff9594091e8cfa
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33482447"
 ---
-# <a name="systemservicemodelportsharingportsharinglistening"></a><span data-ttu-id="01e42-102">System.ServiceModel.PortSharing.PortSharingListening</span><span class="sxs-lookup"><span data-stu-id="01e42-102">System.ServiceModel.PortSharing.PortSharingListening</span></span>
-<span data-ttu-id="01e42-103">System.ServiceModel.PortSharing.PortSharingListening</span><span class="sxs-lookup"><span data-stu-id="01e42-103">System.ServiceModel.PortSharing.PortSharingListening</span></span>  
+# <a name="systemservicemodelportsharingportsharinglistening"></a><span data-ttu-id="6c103-102">System.ServiceModel.PortSharing.PortSharingListening</span><span class="sxs-lookup"><span data-stu-id="6c103-102">System.ServiceModel.PortSharing.PortSharingListening</span></span>
+<span data-ttu-id="6c103-103">System.ServiceModel.PortSharing.PortSharingListening</span><span class="sxs-lookup"><span data-stu-id="6c103-103">System.ServiceModel.PortSharing.PortSharingListening</span></span>  
   
-## <a name="description"></a><span data-ttu-id="01e42-104">Popis</span><span class="sxs-lookup"><span data-stu-id="01e42-104">Description</span></span>  
- <span data-ttu-id="01e42-105">Správce TransportManager nyní úspěšně naslouchá.</span><span class="sxs-lookup"><span data-stu-id="01e42-105">The TransportManager is now successfully listening.</span></span>  
+## <a name="description"></a><span data-ttu-id="6c103-104">Popis</span><span class="sxs-lookup"><span data-stu-id="6c103-104">Description</span></span>  
+ <span data-ttu-id="6c103-105">Správce TransportManager nyní úspěšně naslouchá.</span><span class="sxs-lookup"><span data-stu-id="6c103-105">The TransportManager is now successfully listening.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="01e42-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="01e42-106">See Also</span></span>  
- [<span data-ttu-id="01e42-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="01e42-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="01e42-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="01e42-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="01e42-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="01e42-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="6c103-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="6c103-106">See Also</span></span>  
+ [<span data-ttu-id="6c103-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="6c103-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="6c103-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="6c103-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="6c103-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="6c103-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759540"
 ---
 # <a name="configuring-parameters-and-parameter-data-types"></a><span data-ttu-id="889a7-102">Konfigurace parametrů a datové typy parametrů</span><span class="sxs-lookup"><span data-stu-id="889a7-102">Configuring Parameters and Parameter Data Types</span></span>
 <span data-ttu-id="889a7-103">Příkaz objekty používají parametry k předání hodnoty do příkazů SQL nebo uložené procedury, kontrola typu a ověření.</span><span class="sxs-lookup"><span data-stu-id="889a7-103">Command objects use parameters to pass values to SQL statements or stored procedures, providing type checking and validation.</span></span> <span data-ttu-id="889a7-104">Na rozdíl od text příkazu parametr vstup považovat za literálovou hodnotou, ne jako spustitelný kód.</span><span class="sxs-lookup"><span data-stu-id="889a7-104">Unlike command text, parameter input is treated as a literal value, not as executable code.</span></span> <span data-ttu-id="889a7-105">To pomáhá chránit před útoky "Injektáž SQL", ve kterých útočník vloží příkaz tohoto ohrožení zabezpečení na serveru do příkazu SQL.</span><span class="sxs-lookup"><span data-stu-id="889a7-105">This helps guard against "SQL injection" attacks, in which an attacker inserts a command that compromises security on the server into an SQL statement.</span></span>  

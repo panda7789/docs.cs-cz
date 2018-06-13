@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397387"
 ---
 # <a name="callback-functions"></a><span data-ttu-id="bcaf6-102">Funkce zpětného volání</span><span class="sxs-lookup"><span data-stu-id="bcaf6-102">Callback Functions</span></span>
 <span data-ttu-id="bcaf6-103">Funkce zpětného volání je kód v rámci spravované aplikace, která pomáhá nespravované funkce DLL dokončení úkolu.</span><span class="sxs-lookup"><span data-stu-id="bcaf6-103">A callback function is code within a managed application that helps an unmanaged DLL function complete a task.</span></span> <span data-ttu-id="bcaf6-104">Volání funkce zpětného volání předat nepřímo ze spravované aplikace, prostřednictvím funkce knihovny DLL a zpět do spravované implementace.</span><span class="sxs-lookup"><span data-stu-id="bcaf6-104">Calls to a callback function pass indirectly from a managed application, through a DLL function, and back to the managed implementation.</span></span> <span data-ttu-id="bcaf6-105">Některé z mnoha funkcí knihovny DLL volána s platformou vyvolání vyžadují funkce zpětného volání ve spravovaném kódu správně spouštět.</span><span class="sxs-lookup"><span data-stu-id="bcaf6-105">Some of the many DLL functions called with platform invoke require a callback function in managed code to run properly.</span></span>  

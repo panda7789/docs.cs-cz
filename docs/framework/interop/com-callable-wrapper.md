@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394963"
 ---
 # <a name="com-callable-wrapper"></a><span data-ttu-id="b6a5d-102">Obálka volatelná aplikacemi COM</span><span class="sxs-lookup"><span data-stu-id="b6a5d-102">COM Callable Wrapper</span></span>
 <span data-ttu-id="b6a5d-103">Jakmile klient modelu COM zavolá objekt rozhraní .NET, vytvoří modul CLR (Common Language Runtime) pro daný objekt spravovaný objekt a obálku volatelnou modelem COM (CCW).</span><span class="sxs-lookup"><span data-stu-id="b6a5d-103">When a COM client calls a .NET object, the common language runtime creates the managed object and a COM callable wrapper (CCW) for the object.</span></span> <span data-ttu-id="b6a5d-104">Pokud nelze odkazovat na objekt rozhraní .NET přímo, budou klienti modelu COM pro spravovaný objekt používat objekt CCW jako proxy.</span><span class="sxs-lookup"><span data-stu-id="b6a5d-104">Unable to reference a .NET object directly, COM clients use the CCW as a proxy for the managed object.</span></span>  

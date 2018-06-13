@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760294"
 ---
 # <a name="functions-entity-sql"></a><span data-ttu-id="f896a-102">Funkce (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="f896a-102">Functions (Entity SQL)</span></span>
 <span data-ttu-id="f896a-103">Entity SQL podporuje uživatelsky definované funkce, kanonické funkce a funkce specifické pro zprostředkovatele.</span><span class="sxs-lookup"><span data-stu-id="f896a-103">Entity SQL supports user-defined functions, canonical functions, and provider-specific functions.</span></span> <span data-ttu-id="f896a-104">Uživatelem definované funkce jsou určené v konceptuální model, nebo vložené v dotazu.</span><span class="sxs-lookup"><span data-stu-id="f896a-104">User-defined functions are specified in the conceptual model or inline in the query.</span></span> <span data-ttu-id="f896a-105">Další informace najdete v tématu [funkce definované uživatelem](../../../../../../docs/framework/data/adonet/ef/language-reference/user-defined-functions-entity-sql.md).</span><span class="sxs-lookup"><span data-stu-id="f896a-105">For more information, see [User-Defined Functions](../../../../../../docs/framework/data/adonet/ef/language-reference/user-defined-functions-entity-sql.md).</span></span>  
