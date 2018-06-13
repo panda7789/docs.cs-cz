@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540914"
 ---
 # <a name="implementing-virtual-mode-with-just-in-time-data-loading-in-the-windows-forms-datagridview-control"></a>Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView
 Jedním z důvodů implementace virtuálního režimu v <xref:System.Windows.Forms.DataGridView> ovládací prvek je k načtení dat pouze dle potřeby. To se označuje jako *načítání dat za běhu*.  

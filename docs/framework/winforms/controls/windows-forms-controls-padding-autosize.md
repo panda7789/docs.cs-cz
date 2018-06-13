@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541629"
 ---
 # <a name="walkthrough-laying-out-windows-forms-controls-with-padding-margins-and-the-autosize-property"></a>Návod: Rozvrhování ovládacích prvků Windows Forms s odsazením, okraji a s vlastností AutoSize
 Přesné umístění ovládacích prvků ve formuláři je důležitá pro mnoho aplikací. **Návrhář formulářů Windows** nabízí celou řadu nástrojů rozložení toho chcete dosáhnout. Tři nejdůležitějších jsou <xref:System.Windows.Forms.Control.Margin%2A>, <xref:System.Windows.Forms.Control.Padding%2A>, a <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnosti, které jsou k dispozici na všech ovládacích prvků Windows Forms.  

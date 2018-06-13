@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365940"
 ---
 # <a name="table-valued-parameters"></a>Parametry s hodnotou tabulky
 Parametry s hodnotou tabulky představují snadný způsob, jak zařazování bez nutnosti více odezev nebo speciální logiku na straně serveru pro zpracování dat více řádků dat z klientské aplikace do systému SQL Server. Parametry s hodnotou tabulky můžete použít k zapouzdření řádky dat v aplikaci klienta a odesílání dat na server v jedné parametrizovaného příkazu. Příchozí data řádky jsou uložené v proměnné tabulky, která lze poté ho zpracovat. pomocí [!INCLUDE[tsql](../../../../../includes/tsql-md.md)].  

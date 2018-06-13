@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365511"
 ---
 # <a name="wcf-data-services-client-library"></a>Klientská knihovna pro WCF Data Services
 Všechny aplikace mohou komunikovat s [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]-založené služba dat v případě, že může posílat proces a požadavek HTTP [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu, vrátí datové služby. Tato interoperabilita umožňuje přístup k [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby z široké povoleno rozsahu webových aplikací. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] zahrnuje knihovny klienta, které poskytují bohatší programovací prostředí spotřebuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály v rozhraní .NET Framework nebo aplikace programu Silverlight.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540989"
 ---
 # <a name="webbrowser-control-overview"></a>WebBrowser – přehled ovládacího prvku
 <xref:System.Windows.Forms.WebBrowser> Řízení poskytuje spravovaná obálka pro ovládací prvek WebBrowser ActiveX. Spravovaná obálka umožňuje zobrazení webové stránky v aplikacích Windows Forms klienta. Můžete použít <xref:System.Windows.Forms.WebBrowser> řízení duplicitní funkce procházení WWW aplikace Internet Explorer v aplikaci, nebo můžete zakázat výchozí funkce Internet Exploreru a použít ovládací prvek jako jednoduchý prohlížeče dokumentu HTML. Můžete také použít ovládací prvek přidejte do svého formuláře prvky jazyka DHTML na základě uživatelského rozhraní a skrýt skutečnost, že jsou hostované v <xref:System.Windows.Forms.WebBrowser> ovládacího prvku. Tento přístup umožňuje bezproblémově kombinovat ovládací prvky webového s ovládacími prvky Windows Forms v jedné aplikaci.  

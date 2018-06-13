@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365472"
 ---
 # <a name="windows-applications-using-callbacks"></a>Aplikace systému Windows pomocí zpětných volání
 Ve většině scénářů asynchronní zpracování, kterou chcete spustit operaci databáze a pokračovat v provozu jiné procesy bez čekání na dokončení operace databáze. Mnoho scénářů vyžadují dělat něco po operace databáze byla ukončena. V aplikaci Windows například můžete delegovat dlouho běžící operace vlákna na pozadí při povolení uživatelské rozhraní vlákno zůstat reaguje. Ale po dokončení operace databáze chcete použít výsledky k vyplnění formuláře. Tento typ scénářů je nejlepší implementováno s zpětné volání.  

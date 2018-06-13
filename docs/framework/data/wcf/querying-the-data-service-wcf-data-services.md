@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365641"
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>Dotaz na službu Data (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny umožňuje spouštět dotazy na data služby pomocí známých [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] programování způsoby, včetně použití integrovaného dotazu jazyka (LINQ). Klientská knihovna překládá dotazu, která je definována v klientovi jako jedna instance <xref:System.Data.Services.Client.DataServiceQuery%601> třída do zprávy požadavku HTTP GET. Knihovny obdrží zprávu odpovědi a převede jej do instance třídy služeb dat klienta. Tyto třídy jsou sledovány objektem <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří.  

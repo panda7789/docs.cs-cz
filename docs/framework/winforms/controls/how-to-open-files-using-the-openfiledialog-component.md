@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542272"
 ---
 # <a name="how-to-open-files-using-the-openfiledialog-component"></a>Postupy: Otevírání souborů pomocí součásti OpenFileDialog
 <xref:System.Windows.Forms.OpenFileDialog> Součást umožňuje uživatelům procházet složky jejich počítače nebo všechny počítače v síti a vyberte jeden nebo více souborů otevřete. Dialogové okno vrátí cestu a název souboru, vyberte v dialogovém okně vyberte uživatele.  

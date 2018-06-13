@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365524"
 ---
 # <a name="sql-clr-type-mapping"></a>Mapování typu SQL CLR
 V technologii LINQ to SQL datový model relační databáze mapuje objektový model, který je vyjádřena v programovací jazyk podle vašeho výběru. Při spuštění aplikace, technologie LINQ to SQL překládá dotazy language-integrated ve model objektu do SQL a odešle je do databáze pro provedení. Při databáze vrátí výsledky, znamená, že technologie LINQ to SQL výsledky zpět na objekty, které můžete pracovat v vlastní programovací jazyk.  

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542077"
 ---
 # <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>Návod: Implementace formuláře, který používá operaci na pozadí
 Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete vaše uživatelské rozhraní (UI) přestane reagovat nebo "zablokování", můžete použít <xref:System.ComponentModel.BackgroundWorker> třída k provedení operace na jiné vlákno.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33409361"
 ---
 # <a name="wsfederation-authentication-module-overview"></a>Přehled modulu ověřování WSFederation
 Windows Identity Foundation (WIF) zahrnuje podpory federovaného ověřování v aplikacích ASP.NET prostřednictvím modulu ověřování WS-Federated (WS-služba FAM). Toto téma vám pomůže pochopit, jak federovaného ověřování funguje a jak ji používat.  

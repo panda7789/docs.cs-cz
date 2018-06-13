@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365849"
 ---
 # <a name="service-operations-wcf-data-services"></a>Operace služby (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje definovat operace služby ve službě data ke zveřejnění metody na serveru. Jako další prostředky služby dat jsou operací služby řešit identifikátory URI. Operace služby umožňují vystavit obchodní logiky v datové služby, jako třeba implementovat logiku ověření pro použití na základě rolí zabezpečení, nebo ke zveřejnění specializovaných dotazování možnosti. Operace služby jsou metody přidat k třídě služby data, která je odvozena od <xref:System.Data.Services.DataService%601>. Podobně jako všechny ostatní datové prostředky služby můžete zadat parametry pro metodu operaci služby. Například následující operace identifikátor URI služby (na základě [rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) služba dat) předá hodnotu `London` k `city` parametr:  

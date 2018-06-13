@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363561"
 ---
 # <a name="exposing-your-data-as-a-service-wcf-data-services"></a>Vystavení dat jako služba (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] se integruje s Visual Studio umožňují snadno definovat služby, která zveřejňuje data podle [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanály. Vytvoření datové služby, který zveřejňuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanál zahrnuje následující základní kroky:  

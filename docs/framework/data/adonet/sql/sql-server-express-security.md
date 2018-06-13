@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364369"
 ---
 # <a name="sql-server-express-security"></a>SQL Server Express zabezpečení
 Microsoft SQL Server Express Edition (SQL Server Express) je založený na systému Microsoft SQL Server a podporuje většinu funkcí databázového stroje. Je navržen tak, aby nepotřebných funkcí a připojení k síti jsou vypnuté ve výchozím nastavení. Tím se snižuje oblasti prostor k útoku uživatelem se zlými úmysly.  

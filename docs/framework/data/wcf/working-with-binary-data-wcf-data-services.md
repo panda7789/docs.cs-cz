@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365368"
 ---
 # <a name="working-with-binary-data-wcf-data-services"></a>Práce s binární Data (služby WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny umožňuje načíst a aktualizovat binární data ze [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu v jednom z následujících způsobů:  

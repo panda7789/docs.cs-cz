@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365563"
 ---
 # <a name="binding-data-to-controls-wcf-data-services"></a>Vazba dat s ovládacími prvky (služby WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], lze vázat ovládací prvky, jako `ComboBox` a `ListView` ovládacích prvků do instance systému <xref:System.Data.Services.Client.DataServiceCollection%601> třídy. Tuto kolekci, která dědí z <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, obsahuje data z [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu. Tato třída reprezentuje kolekci dynamická data, která poskytuje oznámení, pokud získat položky přidány nebo odebrány. Při použití instance <xref:System.Data.Services.Client.DataServiceCollection%601> pro datovou vazbu [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny zpracování těchto událostí k zajištění, že objekty sledovanými <xref:System.Data.Services.Client.DataServiceContext> zůstaly synchronizované s daty v elementu vázané uživatelského rozhraní.  

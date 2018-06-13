@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363348"
 ---
 # <a name="protecting-connection-information"></a>Ochrana informací o připojení
 Zabezpečení přístupu ke zdroji dat je jedním z nejdůležitějších cílů při zabezpečení aplikace. Připojovací řetězec uvede potenciální ohrožení zabezpečení, pokud není zabezpečená. Ukládání informací o připojení ve formátu prostého textu nebo uchování v paměti rizika ohrožení celého systému. Připojovací řetězce, které jsou součástí vašeho zdrojového kódu lze číst pomocí [Ildasm.exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) zobrazíte Microsoft (MSIL intermediate language) v kompilovaném sestavení.  

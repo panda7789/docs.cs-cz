@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541408"
 ---
 # <a name="security-in-windows-forms-overview"></a>Přehled zabezpečení ve Windows Forms
 Před vydáním [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], všechny kód spuštěný na uživatele je počítač měl stejné práva nebo oprávnění k přístupu k prostředkům měl uživatel počítače. Například pokud uživatel byl povolen přístup k systému souborů, kód byl povolen přístup systému souborů. Uživatel byl povolen přístup k databázi, kód byl povolen přístup k databázi. I když tato práva nebo oprávnění může být přijatelné pro kód ve spustitelné soubory, které uživatel nainstaloval explicitně v místním počítači, se nemusí být přijatelné pro potenciálně škodlivého kódu, pocházejících z Internetu nebo intranetu. Tento kód by neměly mít přístup k prostředkům počítače uživatele bez oprávnění.  

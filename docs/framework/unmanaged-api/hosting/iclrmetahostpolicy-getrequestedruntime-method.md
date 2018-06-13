@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33436043"
 ---
 # <a name="iclrmetahostpolicygetrequestedruntime-method"></a>ICLRMetaHostPolicy::GetRequestedRuntime – metoda
 Poskytuje rozhraní pro upřednostňované verzí common language runtime (CLR) na základě hostování zásad, spravované sestavení, řetězec verze a konfiguraci datového proudu. Ve skutečnosti není načíst nebo aktivovat modulu CLR, ale jednoduše vrátí tato metoda [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní, které představuje výsledek zásad. Tato metoda nahrazuje [getrequestedruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md), [getrequestedruntimeversion –](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md), [corbindtoruntimehost –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md), [corbindtoruntimebycfg –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md), a [getcorrequiredversion –](../../../../docs/framework/unmanaged-api/hosting/getcorrequiredversion-function.md) metody.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361650"
 ---
 # <a name="walkthrough-manipulating-data-visual-basic"></a>Návod: Manipulace s daty (Visual Basic)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přidání, úpravy a odstraňování dat v databázi. Kopie v ukázkové databázi Northwind použije k přidání zákazníka, změňte název zákazníka a odstranění objednávky.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365186"
 ---
 # <a name="ltaddgt-of-ltbaseaddressprefixfiltergt"></a>&lt;add&gt; – &lt;baseAddressPrefixFilter&gt;
 Představuje konfiguraci element, který určuje průchozí filtr, který poskytuje mechanismus pro hostování aplikací Windows Communication Foundation (WCF) ve službě IIS, vyberte odpovídající vazby Internetové informační služby (IIS).  

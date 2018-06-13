@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541694"
 ---
 # <a name="dependency-property-metadata"></a>Metadata vlastností závislosti
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Vlastnost metadata, systém, která přesahuje, může být hlášené o vlastnosti prostřednictvím reflexe nebo obecné generování sestav zahrnuje [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] charakteristiky. Metadata pro vlastnost závislosti lze také přiřadit jednoznačně podle třídy, která definuje vlastnost závislosti, jde změnit, pokud vlastnost závislosti je přidat do jiné třídy a je možné přepsat konkrétně všechny odvozené třídy, které dědí Vlastnost závislosti z definující základní třídy.  

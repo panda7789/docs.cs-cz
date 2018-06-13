@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542194"
 ---
 # <a name="user-drawn-controls"></a>Ovládací prvky vykreslované uživatelem
 Rozhraní .NET Framework poskytuje možnost snadno vyvíjet vlastní ovládací prvky. Můžete vytvořit uživatelský ovládací prvek, což je sada standardních ovládacích prvků spojuje kód, nebo můžete navrhnout vlastní ovládací prvek od základů nahoru. Dědičnost i slouží k vytvoření ovládacího prvku, který dědí z existujícího ovládacího prvku a přidejte do jeho vyplývajících funkce. Libovolnou metodu použijete, rozhraní .NET Framework poskytuje funkce pro kreslení vlastní grafické rozhraní pro libovolný ovládací prvek, který vytvoříte.  

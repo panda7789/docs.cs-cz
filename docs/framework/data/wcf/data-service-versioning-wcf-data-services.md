@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365615"
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>Správa verzí služby dat (služby WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Můžete vytvořit datové služby tak, aby klienti přístup k datům jako prostředky pomocí identifikátory URI, které jsou založeny na datový model. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje také definice operací služby. Po počátečním nasazení a potenciálně několikrát během své životnosti, tato data services bude pravděpodobně nutné změnit z různých důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo jiných problémů. Pokud provedete změny do existující služby data, musí se zvážit, zda chcete definovat novou verzi dat služby a jak nejlepší minimalizaci dopadů na existující klientské aplikace. Toto téma obsahuje pokyny k kdy a jak vytvořit novou verzi datové služby. Také popisuje, jak [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] zpracovává exchange mezi klienty a datové služby, které podporují různé verze [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokolu.  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540365"
 ---
 # <a name="how-to-navigate-data-in-windows-forms"></a>Postupy: Procházení dat v rozhraní Windows Forms
 V aplikaci Windows, je nejjednodušší způsob, jak procházet záznamy ze zdroje dat pro vazbu <xref:System.Windows.Forms.BindingSource> součásti na zdroj dat a pak vazby ovládacích prvků <xref:System.Windows.Forms.BindingSource>. Pak můžete použít metodu předdefinovanou navigaci na <xref:System.Windows.Forms.BindingSource> takové <xref:System.Windows.Forms.BindingSource.MoveNext%2A>, <xref:System.Windows.Forms.BindingSource.MoveLast%2A>, <xref:System.Windows.Forms.BindingSource.MovePrevious%2A> a <xref:System.Windows.Forms.BindingSource.MoveFirst%2A>. Pomocí těchto metod se upraví <xref:System.Windows.Forms.BindingSource.Position%2A> a <xref:System.Windows.Forms.BindingSource.Current%2A> vlastnosti <xref:System.Windows.Forms.BindingSource> správně. Můžete také najít položku a nastavte jej jako aktuální položky nastavením <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost.  

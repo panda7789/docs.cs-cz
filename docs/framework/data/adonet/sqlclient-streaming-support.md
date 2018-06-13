@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364733"
 ---
 # <a name="sqlclient-streaming-support"></a>Podpora streamování SqlClient
 Podpora mezi SQL serverem a aplikace streamování (novinka v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) podporuje nestrukturovaných dat na serveru (dokumentů, bitové kopie a mediálních souborů). Databáze systému SQL Server může uchovávat binární rozsáhlé objekty (objekty BLOB), ale načítání objektů BLOB můžete použít velké množství paměti.  

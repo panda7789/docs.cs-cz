@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365914"
 ---
 # <a name="asynchronous-operations-wcf-data-services"></a>Asynchronní operace (služby WCF Data Services)
 Webové aplikace musí zohlednit zhorší latenci mezi klientem a serverem než aplikace, které běží v interních sítích. Chcete-li optimalizovat výkon a uživatelské prostředí aplikace, doporučujeme používat asynchronní metody <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601> třídy při přístupu k [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] servery prostřednictvím webu.  

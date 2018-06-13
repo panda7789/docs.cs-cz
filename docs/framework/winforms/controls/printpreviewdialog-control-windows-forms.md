@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538376"
 ---
 # <a name="printpreviewdialog-control-windows-forms"></a>PrintPreviewDialog – ovládací prvek (Windows Forms)
 Windows Forms `PrintPreviewDialog` řízení je předem nakonfigurovaný dialogové okno slouží k zobrazení, jak se dokument zobrazí při tisku. Ji použijte v rámci aplikace systému Windows jako simple řešení místo dialogové okno Vlastní konfigurace. Ovládací prvek obsahuje tlačítka pro tisk, přiblížení, zobrazení jednu nebo více stránek a zavření dialogového okna.  

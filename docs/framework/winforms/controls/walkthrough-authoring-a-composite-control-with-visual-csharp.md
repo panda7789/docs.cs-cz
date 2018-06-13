@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541791"
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-c"></a>Návod: Vytvoření složeného ovládacího prvku pomocí Visual C# #
 Složené ovládací prvky poskytují prostředky, pomocí kterého lze vytvořit vlastní grafické rozhraní a znovu použít. Složeného ovládacího prvku je v podstatě součást s vizuální reprezentace. Takto může obsahovat jeden nebo více Windows Forms – ovládací prvky, komponenty nebo bloky kódu, který můžete rozšířit funkce ověřování uživatelského vstupu, změnou vlastností zobrazení nebo provádění jiných úloh vyžaduje autorem. Složené ovládací prvky můžete umístit v rozhraní Windows Forms stejným způsobem jako další ovládací prvky. V první části tohoto návodu, vytvořte jednoduché složeného ovládacího prvku názvem `ctlClock`. V druhé části tohoto průvodce, můžete rozšířit funkce `ctlClock` prostřednictvím dědičnosti.  

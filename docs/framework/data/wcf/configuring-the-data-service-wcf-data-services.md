@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365135"
 ---
 # <a name="configuring-the-data-service-wcf-data-services"></a>Konfigurace služby dat (služby WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete vytvořit datové služby, které zveřejňují [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanály. Data v těchto kanálů mohou pocházet z různých datových zdrojů. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Zprostředkovatelé dat používá ke zveřejnění těchto dat jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Zahrnout tyto zprostředkovatele [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] poskytovatele, zprostředkovatele reflexe a sadu rozhraní poskytovatele služeb vlastní data. Implementace zprostředkovatele definuje datový model pro službu. Další informace najdete v tématu [zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md).  

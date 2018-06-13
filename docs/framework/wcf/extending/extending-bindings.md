@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33485779"
 ---
 # <a name="extending-bindings"></a>Rozšiřování vazeb
 Vazby zadejte přenosu, kódování a protokol požadované pro připojení ke koncovému bodu. Vazba rozšíření a vlastní vazby implementovat vlastní komunikaci funkce potřebné k podpoře funkce aplikací.  

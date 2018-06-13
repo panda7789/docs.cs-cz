@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365420"
 ---
 # <a name="walkthrough-using-only-stored-procedures-c"></a>Návod: Použití pouze uložené procedury (C#)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přístup k datům spuštěním uložené procedury jenom. Tento přístup se často používá databázi správci omezit, jak přistupovat k úložišti dat.  

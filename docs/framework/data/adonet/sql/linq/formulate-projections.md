@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364945"
 ---
 # <a name="formulate-projections"></a>Formulovali projekce
 Následující příklady zobrazují jak `select` příkaz v jazyce C# a `Select` v jazyce Visual Basic je možné kombinovat s další funkce pro projekce dotazu formuláře.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539949"
 ---
 # <a name="openfiledialog-component-windows-forms"></a>OpenFileDialog – komponenta (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.OpenFileDialog> součást je předem nakonfigurovaný dialogové okno. Stejná **otevření souboru** dialogové okno vystavené operačního systému Windows. Dědí z <xref:System.Windows.Forms.CommonDialog> třídy.  

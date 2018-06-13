@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540501"
 ---
 # <a name="dependency-property-security"></a>Zabezpečení vlastností závislosti
 Vlastnosti závislosti by měl být obecně považuje za veřejné vlastnosti. Povaha [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systému brání schopnost provádět záruky zabezpečení o hodnotu vlastnosti závislosti.  

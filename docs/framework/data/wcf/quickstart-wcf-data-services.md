@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365394"
 ---
 # <a name="quickstart-wcf-data-services"></a>Rychlý start (služby WCF Data Services)
 Tento rychlý Start umožňuje seznámit se s [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] prostřednictvím řadu úloh, které podporují témata v [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md).  

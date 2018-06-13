@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539339"
 ---
 # <a name="panel-control-overview-windows-forms"></a>Přehled ovládacího prvku Panel (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.Panel> ovládací prvky používané k zajištění osobní seskupení pro další ovládací prvky. Obvykle použijete panelů dále dělit formuláře podle funkce. Například můžete mít formulář objednávky, který určuje poštovní možnosti, například které přes noc poskytovatel používat. Všechny možnosti panelu seskupení umožňuje uživateli logické vizuální upozornění. V návrhu čas všechny ovládací prvky lze snadno přesunout – když přesunete <xref:System.Windows.Forms.Panel> řídit, všechny její obsažené ovládací prvky příliš přesunout. Ovládací prvky jsou seskupené v panelu je přístupná přes jeho <xref:System.Windows.Forms.Control.Controls%2A> vlastnost. Tato vlastnost vrátí kolekci <xref:System.Windows.Forms.Control> instance, takže obvykle bude potřeba převést ovládacího prvku načíst tento způsob, jak jeho konkrétního typu.  

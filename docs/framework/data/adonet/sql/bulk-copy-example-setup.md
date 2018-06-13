@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362436"
 ---
 # <a name="bulk-copy-example-setup"></a>Hromadné kopírování příklad instalace
 <xref:System.Data.SqlClient.SqlBulkCopy> Třída slouží k zápisu dat pouze na tabulky serveru SQL Server. Ukázky kódu, které jsou uvedené v tomto tématu použijte ukázkové databáze systému SQL Server, **AdventureWorks**. Aby se zabránilo Změna stávající tabulce ukázky kódu zápisu dat do tabulky, které je nutné nejprve vytvořit.  

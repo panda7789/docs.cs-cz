@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33639282"
 ---
 # <a name="unable-to-read-delimited-fields-because-a-double-quote-is-not-a-legal-delimiter-when-escapequotes-is-set-to-true"></a>Nelze načíst pole, protože dvojité uvozovky není platný oddělovač EscapeQuotes nastavena na hodnotu True
 `TextFieldParser` Nelze číst ze souboru, protože jako oddělovač, který má zadaný znak uvozovek (") a `EscapeQuotes` je nastaven na `True`.  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388053"
 ---
 # <a name="pinvokestackimbalance-mda"></a>pInvokeStackImbalance – pomocník spravovaného ladění (MDA)
 `pInvokeStackImbalance` Pomocník spravovaného ladění (MDA) se aktivuje, když modulu CLR zjistí, že hloubka zásobníku po volání nespravovaného neodpovídá očekávané zásobníku hloubka, danou konvence volání, které jsou zadané v <xref:System.Runtime.InteropServices.DllImportAttribute> atribut společně s prohlášení o parametrech v spravované podpis.  

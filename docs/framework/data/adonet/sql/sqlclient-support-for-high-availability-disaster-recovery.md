@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365706"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>SqlClient podporu pro vysokou dostupnost a zotavení po havárii
 Toto téma popisuje podporu SqlClient (přidáno v [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) pro vysokou dostupnost, zotavení po havárii – skupiny dostupnosti AlwaysOn.  Funkce skupin dostupnosti AlwaysOn byla přidána do systému SQL Server 2012. Další informace o skupinách dostupnosti AlwaysOn najdete v části SQL Server Books Online.  

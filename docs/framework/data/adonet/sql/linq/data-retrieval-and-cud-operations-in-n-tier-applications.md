@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365836"
 ---
 # <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>Operace vytvoření ve víceúrovňových aplikacích (technologie LINQ to SQL) a načtení dat
 Při serializaci objektů entity například zákazníků nebo objednávky klienta přes síť, jsou tyto entity odpojit od jejich data kontextu. Data kontextu už sleduje, jejich změny nebo jejich přidružení s jinými objekty. Nejedná se o problém, dokud klienti jsou jen ke čtení dat. Také je poměrně jednoduché umožníte klientům přidat nové řádky k databázi. Ale pokud vaše aplikace vyžaduje, aby klienti mohli aktualizovat nebo odstranit data, pak je potřeba přiřadit entity nový kontext data před voláním <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>. Kromě toho pokud používáte kontrola optimistickou metodu souběžného s původní hodnoty, pak je také nutné způsob, jak poskytnout databázi původní entitu a entitu jako upravená. `Attach` Metod jsou uvedeny umožnit entity vložena nový kontext dat po nějaké době odpojit.  

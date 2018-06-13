@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536338"
 ---
 # <a name="toolstripcontainer-control-overview"></a>ToolStripContainer – přehled ovládacího prvku
 A <xref:System.Windows.Forms.ToolStripContainer> má panelů na jeho levé, pravé, horní a dolní straně pro umístění a rafting <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, a <xref:System.Windows.Forms.StatusStrip> ovládací prvky. Více <xref:System.Windows.Forms.ToolStrip> ovládací prvky zásobníku ve svislém směru, pokud jejich umístění v doleva nebo doprava <xref:System.Windows.Forms.ToolStripContainer>. Pokud je uvést do pravého horního nebo dolního jejich vodorovně zásobníku <xref:System.Windows.Forms.ToolStripContainer>. Můžete použít centrální <xref:System.Windows.Forms.ToolStripContentPanel> z <xref:System.Windows.Forms.ToolStripContainer> na pozici tradiční ovládací prvky na formuláři.  

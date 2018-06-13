@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33440762"
 ---
 # <a name="ihostpolicymanager-interface"></a>IHostPolicyManager – rozhraní
 Poskytuje metody, které hostitele akce, které provádí common language runtime (CLR) pro zrušení, překročení časového limitu nebo chyby.  

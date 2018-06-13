@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33542048"
 ---
 # <a name="toolstrip-control-overview-windows-forms"></a>ToolStrip – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ToolStrip> ovládací prvek a jeho přidružené třídy zadejte společná architektura pro kombinování prvky uživatelského rozhraní na panely nástrojů, stavové řádky a nabídky. <xref:System.Windows.Forms.ToolStrip> ovládací prvky nabízí bohaté prostředí návrhu, která zahrnuje aktivace na místě a úpravy, vlastní rozložení a rafting, což je možnost panelů nástrojů sdílet vodorovné nebo svislé místa.  

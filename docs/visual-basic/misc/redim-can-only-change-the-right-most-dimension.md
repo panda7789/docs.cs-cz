@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641180"
 ---
 # <a name="39redim39-can-only-change-the-right-most-dimension"></a>&#39;ReDim&#39; lze změnit pouze dimenze nejvíce vpravo
 A `ReDim` příkaz pokusil použít `Preserve` – klíčové slovo Chcete-li změnit dimenze pole, které není poslední dimenze. Při použití `Preserve`, můžete změnit velikost pouze poslední dimenze pole. Pro všechny další dimenze musíte zadat stejnou velikost jako existující pole.  

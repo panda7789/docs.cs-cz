@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33411028"
 ---
 # <a name="icordebugframecreatestepper-method"></a>ICorDebugFrame::CreateStepper – metoda
 Získá krokovač, které umožňuje provádět operace taktování relativně k této ICorDebugFrame ladicího programu.  

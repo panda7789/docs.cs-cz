@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33540488"
 ---
 # <a name="how-to-add-load-save-and-cancel-buttons-to-the-windows-forms-bindingnavigator-control"></a>Postupy: Přidávání tlačítek Načíst, Uložit a Storno do ovládacího prvku Windows Forms BindingNavigator
 <xref:System.Windows.Forms.BindingNavigator> Ovládací prvek je zvláštní účely <xref:System.Windows.Forms.ToolStrip> ovládací prvek, který je určený pro navigaci a manipulace s nimi ovládacích prvků formuláře, které jsou vázané na data.  

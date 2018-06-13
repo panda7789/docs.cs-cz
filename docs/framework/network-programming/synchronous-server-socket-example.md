@@ -17,6 +17,7 @@ ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33955950"
 ---
 # <a name="synchronous-server-socket-example"></a>Příklad soketu synchronní serveru
 V následujícím příkladu programu vytvoří server, který přijímá požadavky na připojení od klientů. Server je vytvořené s soket synchronního spuštění serverové aplikace je pozastaven, kdy čeká připojení z klienta. Aplikace obdrží řetězec z klienta, zobrazí řetězec v konzole a pak vrátí řetězec zpět do klienta. Řetězec z klienta musí obsahovat řetězec "\<EOF >" signál konec zprávy.  

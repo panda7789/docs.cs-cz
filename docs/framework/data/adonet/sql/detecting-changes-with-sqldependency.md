@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33360187"
 ---
 # <a name="detecting-changes-with-sqldependency"></a>Detekce změn s SqlDependency
 A <xref:System.Data.SqlClient.SqlDependency> objekt může být přidružený <xref:System.Data.SqlClient.SqlCommand> aby bylo možné rozpoznat, kdy se výsledky dotazu lišit od těch původně načten. Je také možné přiřadit delegáta, kterého `OnChange` událost, která bude platit při změně výsledků pro přidružený příkaz. Je nutné přidružit <xref:System.Data.SqlClient.SqlDependency> pomocí příkazu před spuštěním příkazu. `HasChanges` Vlastnost <xref:System.Data.SqlClient.SqlDependency> lze také použít k určení, pokud výsledky dotazu změnily od první načtena data.  

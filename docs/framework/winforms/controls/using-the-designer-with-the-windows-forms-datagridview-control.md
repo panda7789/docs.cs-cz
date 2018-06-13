@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33539822"
 ---
 # <a name="using-the-designer-with-the-windows-forms-datagridview-control"></a>Používání Návrháře s ovládacím prvkem Windows Forms DataGridView
 Visual Studio poskytuje návrháře podpora `DataGridView` ovládací prvek, který umožňuje provádět mnoho úloh nastavení bez nutnosti psaní kódu. Tyto úlohy patří vazbu ovládacího prvku ke zdroji dat, úprava sloupce, které slouží k zobrazení dat a úpravě vzhled a chování základní ovládacího prvku.  

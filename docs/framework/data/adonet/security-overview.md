@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361936"
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
 Zabezpečení aplikace je nepřetržitý proces. Nikdy bude bod, kde vývojář může zaručit, že aplikace je bezpečné ze všech útoky, protože není možné předpovědět, jaké druhy budoucím útokům nové technologie povede. Naopak právě, protože nemá nikdo nedostatky zabezpečení ještě zjištěných (nebo publikovaná) v systému neznamená žádný existují nebo mohou existovat. Budete muset plánování zabezpečení během fáze návrhu projektu a také naplánovat, jak se zachová zabezpečení během životního cyklu aplikace.  

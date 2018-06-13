@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365602"
 ---
 # <a name="enlisting-resources-as-participants-in-a-transaction"></a>Uvedení prostředky jako účastníky v transakci
 Každý zdroj účasti na transakci spravuje správce prostředků, jejichž akce jsou koordinovaný správcem transakcí. Koordinace se provádí prostřednictvím oznámením na účastníky, kteří mají uveden v transakci prostřednictvím Správce transakcí.  

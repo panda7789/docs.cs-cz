@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541843"
 ---
 # <a name="interfaces-related-to-data-binding"></a>Rozhraní související s datovou vazbou
 S [!INCLUDE[vstecado](../../../includes/vstecado-md.md)], můžete vytvořit vazba potřebám vaší aplikace a data, že pracujete s mnoha různých datových struktur. Můžete vytvořit vaše vlastní třídy, které poskytovat nebo přijímat data ve Windows Forms. Tyto objekty nabízejí různé úrovně funkčnosti a složitost od základní datové vazby k poskytování podpory návrhu, kontrola chyb, upozornění na změnu nebo i podpora pro strukturovaných vrácení zpět změny provedené s vlastními daty.  

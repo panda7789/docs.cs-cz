@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541574"
 ---
 # <a name="windows-forms-controls-by-function"></a>Ovládací prvky Windows Forms podle funkce
 Windows Forms nabízí ovládací prvky a součásti, které provádět spoustu funkcí. Následující tabulka uvádí Windows Forms – ovládací prvky a součásti podle obecné funkce. Kromě toho kde více ovládacích prvků existují, které slouží stejnou funkci, je uvedena doporučené ovládacího prvku se poznámky týkající se ovládací prvek, který je nahrazena. V samostatné následné tabulce jsou uvedeny nahrazené ovládací prvky s jejich doporučené nahrazení.  

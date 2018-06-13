@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33439723"
 ---
 # <a name="ihostmallocdebugalloc-method"></a>IHostMAlloc::DebugAlloc – metoda
 Požadavky, přidělit zadaného množství paměti z haldy hostitel a dále sledovat, kdy byl přidělen paměť.  

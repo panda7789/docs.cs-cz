@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33538233"
 ---
 # <a name="treeview-control-windows-forms"></a>TreeView – ovládací prvek (Windows Forms)
 Windows Forms `TreeView` zobrazí hierarchie uzly, stejně, jako způsob souborů a složek, jsou zobrazeny v levém podokně funkci Průzkumníka Windows v operačních systémech Windows.  

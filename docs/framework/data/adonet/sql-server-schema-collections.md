@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361052"
 ---
 # <a name="sql-server-schema-collections"></a>Kolekcemi schémat serveru SQL
 Zprostředkovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje další schéma kolekce kromě běžných kolekcemi schémat. Schéma kolekce mírně lišit podle verze systému SQL Server, kterou používáte. Pokud chcete určit seznam podporovaných schématu kolekcí, volání **GetSchema** metoda bez argumentů nebo názvem schématu kolekce "MetaDataCollections". Tato možnost vrátí <xref:System.Data.DataTable> seznam podporovaných schéma kolekce, počet omezení, které každý podporují a počet identifikátor částí, které používají.  

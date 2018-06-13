@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33364996"
 ---
 # <a name="how-to-determine-the-number-of-entities-returned-by-a-query-wcf-data-services"></a>Postupy: určení počtu entity vrácené dotazem (služby WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete určit počet entit, které jsou v zadaný identifikátor URI dotazu na sadu entit. Tento počet může být zahrnuta, společně s výsledek dotazu nebo jako celočíselnou hodnotu. Další informace najdete v tématu [dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  

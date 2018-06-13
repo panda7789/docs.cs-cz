@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363180"
 ---
 # <a name="ltmessagegt-of-ltws2007httpbindinggt"></a>&lt;message&gt; – &lt;ws2007HttpBinding&gt;
 Definuje nastavení pro zprávy úroveň zabezpečení [ \<– ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md) element.  

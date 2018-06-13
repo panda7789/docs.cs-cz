@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361281"
 ---
 # <a name="managing-permissions-with-stored-procedures-in-sql-server"></a>Správa oprávnění pomocí uložené procedury v systému SQL Server
 Jedna z metod vytváření více řádků obrany kolem vaše databáze je implementace všechny přístup k datům pomocí uložené procedury nebo funkce definované uživatelem. Odvolání nebo odepřít všechna oprávnění k základní objekty, jako jsou tabulky a udělte oprávnění spouštět na uložené procedury. Tím se vytvoří efektivně zabezpečení hraniční kolem dat a databázových objektů.  
