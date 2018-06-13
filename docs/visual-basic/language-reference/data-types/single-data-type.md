@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590768"
 ---
 # <a name="single-data-type-visual-basic"></a>Single – datový typ (Visual Basic)
 Blokování podepsané IEEE 32-bit (4bajtový) s plovoucí desetinnou čárkou čísla s jednoduchou přesností v rozmezí od - 3.4028235E + 38 prostřednictvím - 1, 401298E-45 pro záporné hodnoty a z 1, 401298E-45 prostřednictvím 3.4028235E + 38 kladné hodnoty. Čísla s jednoduchou přesností ukládat sblížení reálné číslo.  

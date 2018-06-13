@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594280"
 ---
 # <a name="the-type-for-variable-39ltvariablenamegt39-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a>Typ pro proměnnou &#39; &lt;NázevProměnné&gt; &#39; nebude odvodit, protože je vázána na pole ve vymezeném oboru
 Typ pro proměnnou '\<NázevProměnné >, nebude ho odvodit, protože je vázána na pole v vymezeném oboru. Změňte název '\<NázevProměnné >', nebo použijte plně kvalifikovaný název (například 'Me.variablename' nebo 'MyBase.variablename').  

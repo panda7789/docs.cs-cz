@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590723"
 ---
 # <a name="how-to-download-a-file-in-visual-basic"></a>Postupy: Stažení souboru v jazyce Visual Basic
 <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> Metoda slouží k stažení vzdáleného souboru a uložte ho do určitého umístění. Pokud `ShowUI` parametr je nastaven na `True`, zobrazí se dialogové okno zobrazující průběh stahování a umožníte uživatelům na tlačítko Storno. Ve výchozím nastavení nepřepisují existující soubory se stejným názvem; Pokud chcete přepsat existující soubory, nastavte `overwrite` parametru `True`.  

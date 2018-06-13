@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604169"
 ---
 # <a name="unable-to-load-information-for-class-39ltclassnamegt39"></a>Nelze načíst informace pro třídu &#39; &lt;elementem classname&gt;&#39;
 Odkaz byl proveden třídu, která není k dispozici.  

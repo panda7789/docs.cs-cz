@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593890"
 ---
 # <a name="path-not-found"></a>Cesta nebyla nalezena.
 Během operace přístupu k souborům nebo přístup k disku operačního systému se nepodařilo najít určenou cestu. Cesta k souboru obsahuje určení jednotky a adresáře a podadresáře, které musí procházet a vyhledejte soubor. Cesta může být relativní nebo absolutní.  

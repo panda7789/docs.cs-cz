@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595959"
 ---
 # <a name="mycomputerclock-object"></a>My.Computer.Clock – objekt
 Poskytuje vlastnosti pro přístup k aktuálním místním časem a světového koordinovaného času (greenwichský střední čas ekvivalent) z systémových hodin.  

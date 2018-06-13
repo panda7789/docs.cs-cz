@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594185"
 ---
 # <a name="xml-namespace-uri-39httpwwww3orgxml1998namespace39-can-be-bound-only-to-39xmlns39"></a>Identifikátor URI oboru názvů XML &#39; http://www.w3.org/XML/1998/namespace&#39; může mít pouze vazby &#39;xmlns.&#39;
 Identifikátor URI http://www.w3.org/XML/1998/namespace se používá v deklarace oboru názvů XML. Tento identifikátor URI je vyhrazený obor názvů a nemůže být součástí deklarace oboru názvů XML.  

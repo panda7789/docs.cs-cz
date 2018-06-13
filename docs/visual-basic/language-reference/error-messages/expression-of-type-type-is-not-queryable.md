@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589006"
 ---
 # <a name="expression-of-type-lttypegt-is-not-queryable"></a>Výraz typu &lt;typ&gt; není dotazovatelné
 Výraz typu \<typ > není dotazovatelnosti. Ujistěte se, že nejsou pro zprostředkovatele LINQ chybí sestavení odkaz nebo obor názvů importu.  

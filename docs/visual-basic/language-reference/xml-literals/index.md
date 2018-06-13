@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33600763"
 ---
 # <a name="xml-literals-visual-basic"></a>Literály XML (Visual Basic)
 Témata v této části dokumentů syntaxe literálů XML v jazyce Visual Basic. Literál XML syntaxe umožňuje začlenit přímo v kódu XML.  

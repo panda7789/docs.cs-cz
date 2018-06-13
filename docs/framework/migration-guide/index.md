@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391245"
 ---
 # <a name="migration-guide-to-the-net-framework-47-46-and-45"></a>Příručka k migraci na rozhraní .NET Framework 4.7, 4.6 a 4.5 
 Pokud jste vytvořili vaší aplikaci pomocí dřívější verze rozhraní .NET Framework, můžete obvykle ho upgradovat na rozhraní .NET Framework 4.5 nebo jeho verze bodu (4.5.1 a 4.5.2), rozhraní .NET Framework 4.6 a jeho verze bodu (4.6.1 a 4.6.2), nebo 4.7 rozhraní .NET Framework a jeho bod snadno uvolní (4.7.1 a 4.7.2). Otevřete projekt v sadě Visual Studio. Pokud váš projekt byla vytvořena ve starší verzi sady Visual Studio **projektu kompatibility** automaticky otevře dialogové okno. Další informace o upgradu na projekt v sadě Visual Studio najdete v tématu [Port, migrace a Upgrade projektů sady Visual Studio](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects) a [Visual Studio 2017 cílení a kompatibilita platformy](/visualstudio/productinfo/vs2017-compatibility-vs).  

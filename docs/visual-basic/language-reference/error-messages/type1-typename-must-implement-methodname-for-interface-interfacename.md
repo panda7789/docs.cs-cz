@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594380"
 ---
 # <a name="lttype1gt39lttypenamegt39-must-implement-39ltmethodnamegt39-for-interface-39ltinterfacenamegt39"></a>&lt;Type1&gt;&#39;&lt;typename&gt; &#39; musí implementovat &#39; &lt;methodname&gt; &#39; pro rozhraní &#39; &lt;interfacename&gt;&#39;
 Třídu nebo strukturu pro implementaci rozhraní deklarace identity, ale neimplementuje procedury definované rozhraní. Každý člen rozhraní musí být implementována.  

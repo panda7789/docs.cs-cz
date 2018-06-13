@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592272"
 ---
 # <a name="how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls-visual-studio"></a>Postupy: Kreslení obrazců pomocí ovládacích prvků OvalShape a RectangleShape (Visual Studio)
 Můžete použít <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> řízení k vykreslení kroužky nebo elips ve formuláři nebo kontejneru, v době návrhu i v době běhu. Můžete použít <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> řízení k vykreslení čtverce, obdélníku nebo obdélníků se zaoblenými hranami ve formuláři nebo kontejneru. Také můžete tento ovládací prvek pro kreslení tvarů v době návrhu i v době běhu.  

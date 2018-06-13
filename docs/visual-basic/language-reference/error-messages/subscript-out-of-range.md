@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33594264"
 ---
 # <a name="subscript-out-of-range-visual-basic"></a>Dolní index mimo rozsah (Visual Basic)
 Dolní index pole není platný, protože spadá mimo povolený rozsah. Nejnižší dolního indexu hodnota dimenze je vždy 0 a nejvyšší hodnotou dolního indexu je vrácený `GetUpperBound` metodu pro daná dimenze.  

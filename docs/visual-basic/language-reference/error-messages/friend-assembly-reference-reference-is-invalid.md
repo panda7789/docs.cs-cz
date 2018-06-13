@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587368"
 ---
 # <a name="friend-assembly-reference-ltreferencegt-is-invalid"></a>Odkaz sestavení Friend &lt;odkaz&gt; je neplatný
 Odkaz sestavení Friend \<reference > je neplatný. Podepsaná sestavení silného názvu do svých prohlášeních InternalsVisibleTo nutné zadat veřejný klíč.  

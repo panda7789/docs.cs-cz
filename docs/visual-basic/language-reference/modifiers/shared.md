@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604546"
 ---
 # <a name="shared-visual-basic"></a>Shared (Visual Basic)
 Určuje, že jeden nebo více deklarované programovací elementy jsou spojeny s třídu nebo strukturu ve velkém a ne s konkrétní instanci třídu nebo strukturu.  

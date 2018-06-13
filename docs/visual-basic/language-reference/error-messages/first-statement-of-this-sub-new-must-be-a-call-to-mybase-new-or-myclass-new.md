@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589457"
 ---
 # <a name="first-statement-of-this-39sub-new39-must-be-a-call-to-39mybasenew39-or-39myclassnew39-no-accessible-constructor-without-parameters"></a>První příkaz tohoto &#39;Sub New&#39; musí být volání &#39;MyBase.New&#39; nebo &#39;MyClass.New&#39; (žádný dostupný konstruktor bez parametrů)
 Prvním příkazem 'Sub New' musí být volání 'MyBase.New' nebo 'MyClass.New', protože základní třídy\<basename >' z '\<derivedname >' nemá k přístupné 'Sub New, kterou lze volat bez argumentů.  

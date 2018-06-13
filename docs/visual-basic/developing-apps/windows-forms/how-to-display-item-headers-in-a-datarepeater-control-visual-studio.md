@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592130"
 ---
 # <a name="how-to-display-item-headers-in-a-datarepeater-control-visual-studio"></a>Postupy: Zobrazení položek záhlaví v ovládacím prvku DataRepeater (Visual Studio)
 Položka hlavičky v <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> řízení poskytuje vizuální indikátor při <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> je vybrána. Když <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A> je nastavena na <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterLayoutStyles.Vertical> (výchozí), hlavička se zobrazí vlevo od jednotlivých položek. Když <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A> je nastavena na <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterLayoutStyles.Horizontal>, hlavička se zobrazí v horní části každé položky.  

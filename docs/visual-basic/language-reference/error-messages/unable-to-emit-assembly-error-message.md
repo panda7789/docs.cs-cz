@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33595170"
 ---
 # <a name="unable-to-emit-assembly-lterror-messagegt"></a>Sestavení nelze vygenerovat: &lt;chybová zpráva&gt;
 Visual Basic – kompilátor volání Linker sestavení (Al.exe, také známé jako Alink) ke generování sestavení s manifestu, s linkeru reporting chybu ve fázi emisí vytváření sestavení.  

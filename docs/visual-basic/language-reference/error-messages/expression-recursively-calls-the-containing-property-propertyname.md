@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588840"
 ---
 # <a name="expression-recursively-calls-the-containing-property-39ltpropertynamegt39"></a>Výraz rekurzivně volá vlastnost obsahující &#39; &lt;propertyname&gt;&#39;
 Příkaz v `Set` postup definici vlastnosti ukládá hodnotu do názvu vlastnosti.  

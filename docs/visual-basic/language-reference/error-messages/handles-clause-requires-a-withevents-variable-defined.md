@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587430"
 ---
 # <a name="handles-clause-requires-a-withevents-variable-defined-in-the-containing-type-or-one-of-its-base-types"></a>Klauzule Handles vyžaduje proměnnou WithEvents definovanou v nadřazeném typu nebo v některém z jeho základních typů.
 Není poskytnut `WithEvents` proměnné ve vaší `Handles` klauzule. `Handles` – Klíčové slovo na konci tohoto postupu deklarace způsobí, že okno zpracování událostí vyvolaných proměnné objektu deklarováno s použitím `WithEvents` – klíčové slovo.  

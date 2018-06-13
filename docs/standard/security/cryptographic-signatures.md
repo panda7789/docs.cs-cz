@@ -27,6 +27,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589802"
 ---
 # <a name="cryptographic-signatures"></a>Kryptografické podpisy
 <a name="top"></a> Kryptografické digitální podpisy zajistit integritu dat použít algoritmy s veřejným klíčem. Při podepisování dat pomocí digitálního podpisu někdo lze ověřit podpis a může prokázat, že data pochází od vás a nebyla změněna poté, co jste se přihlásili ho. Další informace o digitálních podpisů najdete v tématu [šifrovacím službám](../../../docs/standard/security/cryptographic-services.md).  

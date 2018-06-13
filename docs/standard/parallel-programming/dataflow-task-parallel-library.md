@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592480"
 ---
 # <a name="dataflow-task-parallel-library"></a>Tok dat (Task Parallel Library)
 <a name="top"></a> Task Parallel Library (TPL) poskytuje součásti toku dat a pomáhá tak zvýšit robustnost aplikací s povolenými souběžnosti. Tyto součásti toku dat se souhrnně označují jako *knihovna toku dat TPL*. Tento model toku dat podporuje programování založené na objektu actor pomocí poskytnete zprávy v procesu předávání pro hrubý toku dat a paralelní zpracování úlohy. Komponenty toku dat sestavení pro typy a plánování infrastruktury TPL a integraci s podporou jazyka C#, Visual Basic a F # pro asynchronní programování. Tyto součásti toku dat jsou užitečné, pokud máte více operací, které musí vzájemnou komunikaci asynchronně, nebo pokud chcete zpracovat data, jakmile je k dispozici. Představte si třeba aplikaci, která zpracovává data bitové kopie z webové kamery. Pomocí modelu toku dat je aplikace dokáže zpracovat rámce bitové kopie, jakmile budou k dispozici. Pokud aplikace vylepšuje rámce bitové kopie, například provedením světla oprava nebo červených snížení, můžete vytvořit *kanálu* toku dat komponent. Každá fáze v kanálu může používat další funkce hrubý paralelismus, jako jsou funkce, která zajišťuje TPL k transformaci bitovou kopii.  

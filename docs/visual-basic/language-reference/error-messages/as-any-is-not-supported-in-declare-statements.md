@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33588223"
 ---
 # <a name="39as-any39-is-not-supported-in-39declare39-statements"></a>&#39;Jako kterákoli&#39; není podporována v &#39;Declare&#39; – příkazy
 `Any` Datový typ se použila se `Declare` příkazy v Visual Basic 6.0 a starší verze, které chcete povolit použití argumenty, které může obsahovat jakýkoli typ dat. Přetížení, ale podporuje jazyka Visual Basic a díky tomu tak `Any` datový typ zastaralé.  

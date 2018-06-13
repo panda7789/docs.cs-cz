@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592233"
 ---
 # <a name="virtual-mode-in-the-datarepeater-control-visual-studio"></a>Virtuální režim ovládacího prvku DataRepeater (Visual Studio)
 Pokud chcete zobrazit velké množství tabulková data v <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> řízení, může zlepšit výkon nastavením <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A> vlastnost `True` a explicitně správě interakci ovládacího prvku se zdrojem dat. <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> Ovládací prvek obsahuje několik událostí, které může zpracovat pracovat se zdroj dat a zobrazit data jako za běhu.  

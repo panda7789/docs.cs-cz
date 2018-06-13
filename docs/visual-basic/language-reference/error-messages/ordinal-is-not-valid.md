@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593600"
 ---
 # <a name="ordinal-is-not-valid"></a>Ordinální číslo není platné.
 Volání do dynamická knihovna (DLL) uvedené pro použití číslo místo názvu postup pomocí `#num` syntaxe. Tato chyba má následující možné příčiny:  

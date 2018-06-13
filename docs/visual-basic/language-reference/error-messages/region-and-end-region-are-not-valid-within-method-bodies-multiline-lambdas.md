@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33593230"
 ---
 # <a name="39region39-and-39end-region39-statements-are-not-valid-within-method-bodiesmultiline-lambdas"></a>&#39;#Region&#39; a &#39;#End Region&#39; příkazy nejsou platné uvnitř těla nebo víceřádkových výrazů lambda – metoda
 `#Region` Bloku musí být deklarován na úrovni třídy, modul nebo obor názvů. Sbalitelné oblast může obsahovat jednu nebo více procedur, ale nesmí začínat ani končit v rámci procedury.  

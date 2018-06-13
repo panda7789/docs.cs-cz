@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33589981"
 ---
 # <a name="function-39ltprocedurenamegt39-doesn39t-return-a-value-on-all-code-paths"></a>Funkce &#39; &lt;procedurename&gt; &#39; nemá&#39;t vrátit hodnotu na všechny cesty kódu
 Funkce '\<procedurename >' nevrací hodnotu na všechny cesty kódu. Chybějící příkaz 'Return'?  

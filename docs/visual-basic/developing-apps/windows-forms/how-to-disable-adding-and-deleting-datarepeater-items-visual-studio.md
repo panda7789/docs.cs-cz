@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590796"
 ---
 # <a name="how-to-disable-adding-and-deleting-datarepeater-items-visual-studio"></a>Postupy: Zákaz přidávání a odstraňování položek DataRepeater (Visual Studio)
 Ve výchozím nastavení, můžete přidávat a odstraňovat položky v uživatelů <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku. Uživatele můžete přidat novou položku stisknutím kombinace kláves CTRL + N při <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItemEventArgs.DataRepeaterItem%2A> má právě fokus, nebo pomocí kliknutím **AddNewItem** na tlačítko <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku. Uživatelé odstranit položku stisknutím klávesy odstranit při <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItemEventArgs.DataRepeaterItem%2A> má právě fokus, nebo pomocí kliknutím na tlačítko **DeleteItem** na tlačítko <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku.  

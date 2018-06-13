@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33587316"
 ---
 # <a name="39extension39-attribute-can-be-applied-only-to-39module39-39sub39-or-39function39-declarations"></a>&#39;Rozšíření&#39; atribut lze použít pouze &#39;modulu&#39;, &#39;Sub&#39;, nebo &#39;funkce&#39; deklarace
 Jediný způsob, jak rozšířit datový typ v jazyce Visual Basic je definovat metody rozšíření uvnitř standardní modulu. Rozšíření metoda může být `Sub` postup nebo `Function` postupu. Všechny metody rozšíření musí být označen atributem rozšíření, `<Extension()>`, z <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> oboru názvů. Modul, který obsahuje metody rozšíření Volitelně mohou být označeny stejným způsobem. Žádné jiné použití atributu rozšíření je platný.  

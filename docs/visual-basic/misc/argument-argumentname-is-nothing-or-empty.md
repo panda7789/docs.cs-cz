@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33599616"
 ---
 # <a name="argument-39ltargumentnamegt39-is-nothing-or-empty"></a>Argument &#39; &lt;název argumentu argumentname&gt; &#39; nic nebo musí být prázdná
 Název argument není platný, protože je inicializováno `Nothing` nebo je prázdný. Argument musí mít specifické datový typ a platný název.  
