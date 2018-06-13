@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524384"
 ---
 # <a name="how-to-autogenerate-columns-in-a-data-bound-windows-forms-datagridview-control"></a>Postupy: Automatické generování sloupců v daty připojeném ovládacím prvku Windows Forms DataGridView
 Následující příklad kódu ukazuje, jak zobrazit sloupce z vázaný datový zdroj v <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Když <xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A> hodnota vlastnosti je `true` (výchozí), <xref:System.Windows.Forms.DataGridViewColumn> se vytvoří pro každý sloupec v tabulce datového zdroje.  

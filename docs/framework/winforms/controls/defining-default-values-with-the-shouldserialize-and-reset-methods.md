@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529789"
 ---
 # <a name="defining-default-values-with-the-shouldserialize-and-reset-methods"></a>Definování výchozích hodnot pomocí metod ShouldSerialize a Reset
 `ShouldSerialize` a `Reset` jsou volitelné metody, které můžete zadat u vlastnosti, pokud vlastnost nemá mají jednoduchý výchozí hodnotu. Pokud má vlastnost jednoduché výchozí hodnotu, byste měli použít <xref:System.ComponentModel.DefaultValueAttribute> a místo toho zadat výchozí hodnotu atributu konstruktoru třídy. Některé z těchto mechanismů povoluje následující funkce v Návrháři:  

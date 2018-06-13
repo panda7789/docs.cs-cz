@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557599"
 ---
 # <a name="menu-overview"></a>Přehled nabídky
 <xref:System.Windows.Controls.Menu> Třída umožňuje uspořádat prvky přidružené příkazy a obslužné rutiny událostí v hierarchickém pořadí. Každý <xref:System.Windows.Controls.Menu> element obsahuje kolekci <xref:System.Windows.Controls.MenuItem> elementy.  

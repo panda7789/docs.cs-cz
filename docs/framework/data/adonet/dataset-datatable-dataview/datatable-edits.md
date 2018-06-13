@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758617"
 ---
 # <a name="datatable-edits"></a>Úpravy DataTable
 Když provedete změny hodnot sloupce v <xref:System.Data.DataRow>, změny jsou okamžitě umístěny v aktuálním stavu řádku. <xref:System.Data.DataRowState> Pak nastavena na **změněné**, a změny jsou přijetí nebo odmítnutí pomocí <xref:System.Data.DataRow.AcceptChanges%2A> nebo <xref:System.Data.DataRow.RejectChanges%2A> metody **DataRow**. **DataRow** také poskytuje tři metody, které můžete pozastavit stav řádek během úprav. Tyto metody jsou <xref:System.Data.DataRow.BeginEdit%2A>, <xref:System.Data.DataRow.EndEdit%2A>, a <xref:System.Data.DataRow.CancelEdit%2A>.  

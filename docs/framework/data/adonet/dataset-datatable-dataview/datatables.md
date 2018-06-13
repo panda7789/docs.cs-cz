@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759709"
 ---
 # <a name="datatables"></a>DataTables
 A <xref:System.Data.DataSet> se skládá z kolekce tabulek, vztahy a omezení. V technologii ADO.NET <xref:System.Data.DataTable> objekty se používají k vyjádření tabulky v **datovou sadu**. A **DataTable** představuje jednu tabulku v paměti relačních dat; je místní pro data. Aplikace založené na NET, ve kterém se nachází, ale je možné importovat ze zdroje dat, například pomocí systému Microsoft SQL Server **DataAdapter** Další informace najdete v tématu [naplňování datové sady z modul DataAdapter](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md) .  

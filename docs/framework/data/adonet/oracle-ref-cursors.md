@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758721"
 ---
 # <a name="oracle-ref-cursors"></a>Kurzory REF Oracle
 Zprostředkovatel dat .NET Framework pro Oracle podporuje Oracle **REF kurzor** datového typu. Při použití zprostředkovatele dat pro práci s kurzory REF Oracle, měli byste zvážit následující chování.  

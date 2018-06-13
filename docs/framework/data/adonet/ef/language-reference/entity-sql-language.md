@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761035"
 ---
 # <a name="entity-sql-language"></a>Jazyk SQL entity
 Entita SQL je nezávislé na úložiště dotazovací jazyk, který je podobný SQL. Entity SQL vám umožní zadat dotaz na data entity, jako objekty nebo ve formě tabulky. Měli byste zvážit použití Entity SQL v následujících případech:  

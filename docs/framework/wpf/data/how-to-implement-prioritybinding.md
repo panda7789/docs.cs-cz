@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557755"
 ---
 # <a name="how-to-implement-prioritybinding"></a>Postupy: Implementace rozhraní PriorityBinding
 <xref:System.Windows.Data.PriorityBinding> v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funguje tak, že zadáte seznam vazeb. Seznam vazeb je nejnižší priorita seřazena z nejvyšší prioritou. Jestliže nejvyšší prioritou vazby vrací hodnotu úspěšně při zpracování nejsou nikdy potřeba zpracovat vazby v seznamu. Může to být případě, že nejvyšší prioritou vazby trvá dlouhou dobu k vyhodnocení, další nejvyšší prioritou, která vrátí hodnotu úspěšně bude používat, dokud vazbu s vyšší prioritou vrací hodnotu úspěšně.  

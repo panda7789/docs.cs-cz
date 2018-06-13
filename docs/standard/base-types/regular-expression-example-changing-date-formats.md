@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568066"
 ---
 # <a name="regular-expression-example-changing-date-formats"></a>Příklad regulární výraz: Změna formátů data
 Následující příklad kódu používá <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> metody lze nahradit kalendářních dat, které mají tvar *mm*/*dd*/*rr* s data, která mít formát *dd*-*mm*-*rr*.  

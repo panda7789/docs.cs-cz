@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558810"
 ---
 # <a name="how-to-animate-in-a-style"></a>Postupy: Animace ve stylu
 Tento příklad ukazuje postup animace vlastnosti v rámci styl. Při animaci v rámci styl, pro který je definován styl jenom element framework můžete použít přímo. Pokud chcete zacílit zmrazitelné objekt, můžete musí "dot dolů" z vlastnosti stylem elementu.  

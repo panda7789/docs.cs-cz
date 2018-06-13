@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559597"
 ---
 # <a name="how-to-create-different-tile-patterns-with-a-tilebrush"></a>Postupy: Vytváření jiných vzorů dlaždic pomocí TileBrush
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.TileBrush.TileMode%2A> vlastnost <xref:System.Windows.Media.TileBrush> vzorek.  

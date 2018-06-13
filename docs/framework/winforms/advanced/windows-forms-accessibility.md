@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524651"
 ---
 # <a name="windows-forms-accessibility"></a>Usnadnění v produktu Windows Forms
 Funkce usnadnění systému Windows Forms umožňuje zpřístupnit vaše aplikace k široké škále uživatelů.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760853"
 ---
 # <a name="composing-nested-entity-sql-queries"></a>Sestavování dotazů SQL vnořené Entity
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je bohaté funkční jazyk. Stavební blok [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je výraz. Na rozdíl od konvenční SQL [!INCLUDE[esql](../../../../../../includes/esql-md.md)] není omezeno na tabulkovém výslednou sadu: [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje skládání složité výrazy, které může mít literály, parametrů nebo vnořené výrazy. Hodnotu ve výrazu můžete parametry nebo složené některé výrazu.  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525533"
 ---
 # <a name="contextmenustrip-control"></a>ContextMenuStrip – ovládací prvek
 <xref:System.Windows.Forms.ContextMenuStrip> Řízení poskytuje místní nabídky, která můžete přidružit k ovládacímu prvku.  

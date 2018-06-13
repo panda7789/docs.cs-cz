@@ -32,6 +32,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759722"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Konfigurace aplikací pomocí konfiguračních souborů
 Rozhraní .NET Framework, pomocí konfiguračních souborů, nabízí vývojáři a správci řízení a flexibilitu přes způsob aplikace spustit. Konfigurační soubory jsou soubory XML, které lze změnit podle potřeby. Správce může řídit, které chráněným prostředkům aplikaci můžete přístup, jaké verze sestavení aplikace použije a kde jsou umístěné vzdálené aplikace a objekty. Vývojáři můžou pro nastavení v konfiguračních souborech, takže není nutné znovu zkompiluje aplikace pokaždé, když se změní nastavení. Tato část popisuje, co můžete nakonfigurovat a proč konfigurace aplikace mohou být užitečné.  

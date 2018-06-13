@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525559"
 ---
 # <a name="constituent-controls"></a>Základní ovládací prvky
 Ovládací prvky, které tvoří uživatelský ovládací prvek, nebo *základních ovládacích prvků* jako jsou označovány jako, jsou relativně pevná, pokud jde o vlastní grafiky vykreslování. Všechny ovládací prvky Windows Forms zpracovávat své vlastní vykreslování prostřednictvím svých vlastních <xref:System.Windows.Forms.Control.OnPaint%2A> metoda. Protože tato metoda je chráněn, není přístupná pro vývojáře a proto není možné zabránit spuštění při vykreslení ovládacího prvku. To neznamená, ale, že není možné přidat kód do mají vliv na vzhled základních ovládacích prvků. Další vykreslování dosáhnete přidáním obslužné rutiny události. Předpokládejme například, že byly vytváření obsahu <xref:System.Windows.Forms.UserControl> s tlačítko s názvem `MyButton`. Pokud jste si přáli mít další vykreslování rámec toho, co byl poskytnut <xref:System.Web.UI.WebControls.Button>, byste přidali kód pro váš uživatelský ovládací prvek podobný následujícímu:  

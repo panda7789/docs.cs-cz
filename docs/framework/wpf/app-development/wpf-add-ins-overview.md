@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557859"
 ---
 # <a name="wpf-add-ins-overview"></a>Přehled doplňků WPF
 <a name="Introduction"></a> [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zahrnuje přidat model, vývojáři mohou použít k vytvoření aplikace, které podporují doplňku rozšíření. Tento model doplňku umožňuje vytváření doplňků, které integrovat a rozšířit funkce aplikace. V některých scénářích aplikací také potřebovat zobrazit [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] jsou poskytovány doplňků. Toto téma ukazuje, jak [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] rozšiřuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] model doplňku povolit tyto scénáře, architektura hlouběji, její výhody a její omezení.  

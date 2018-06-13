@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555670"
 ---
 # <a name="how-to-accelerate-or-decelerate-an-animation"></a>Postupy: Zrychlení a zpomalení animace
 Tento příklad ukazuje, jak zajistit animace urychlit a zpomalení v čase. V následujícím příkladu jsou animovaný několik obdélníků pomocí animací jiné <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A> a <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A> nastavení.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760775"
 ---
 # <a name="linq-to-entities"></a>LINQ to Entities
 Technologie LINQ to Entities podporuje Language-Integrated Query (LINQ), která umožňuje vývojářům psát dotazy pro koncepční model Entity Framework pomocí jazyka Visual Basic a Visual C#. Dotazy na Entity Framework jsou reprezentované pomocí příkazu stromu dotazů, které spustit proti do kontextu objektu. Technologie LINQ to Entities převede Language-Integrated dotazy (LINQ) dotazy pro příkaz stromu dotazy, provádí dotazy na Entity Framework a vrátí objekty, které lze použít k rozhraní Entity Framework a LINQ. Toto je proces pro vytvoření a provedení dotazu LINQ to Entities:  

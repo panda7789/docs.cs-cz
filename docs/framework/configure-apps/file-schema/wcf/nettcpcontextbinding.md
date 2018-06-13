@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751217"
 ---
 # <a name="ltnettcpcontextbindinggt"></a>&lt;netTcpContextBinding&gt;
 Určuje kontext pro <xref:System.ServiceModel.NetTcpBinding> který vyžaduje, aby byly podepsány úroveň ochrany. Mechanismus contextExchangeMechanism pro NetTcpContextBinding je SOAPHeader.  

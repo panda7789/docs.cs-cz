@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531024"
 ---
 # <a name="how-to-customize-item-addition-with-the-windows-forms-bindingsource"></a>Postupy: Přizpůsobení přidávání položek pomocí Windows Forms BindingSource
 Při použití <xref:System.Windows.Forms.BindingSource> součásti pro vazbu ovládacího prvku Windows Forms ke zdroji dat může být nutné přizpůsobit vytvoření nové položky. <xref:System.Windows.Forms.BindingSource> Součást je tato možnost přehledné tím, že poskytuje <xref:System.Windows.Forms.BindingSource.AddingNew> událost, která se obvykle vyvolá, když je potřeba vytvořit novou položku připojeného ovládacího prvku. Vaší obslužné rutiny událostí můžete zadat jakoukoli vlastní chování se vyžaduje (například volání metody na webové službě nebo získávání nový objekt ze třídy vytváření).  

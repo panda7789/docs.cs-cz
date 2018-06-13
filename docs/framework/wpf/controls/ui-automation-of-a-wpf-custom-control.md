@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557911"
 ---
 # <a name="ui-automation-of-a-wpf-custom-control"></a>Automatizace uživatelského rozhraní vlastního ovládacího prvku WPF
 [!INCLUDE[TLA#tla_uiautomation](../../../../includes/tlasharptla-uiautomation-md.md)] poskytuje rozhraní jeden, zobecněný této automatizace, které můžou klienti použít k zkontrolujte nebo pracovat uživatelského rozhraní z různých platformy a rozhraní. [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] Umožňuje (testovací) pro zajištění kvality kódu a usnadnění aplikace, jako jsou třeba čtečky obrazovky sloužící ke zkoumání prvky uživatelského rozhraní a simulovat uživatelské interakce s nimi z jiných kódu. Informace o [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] pro všechny platformy, najdete v části usnadnění.  

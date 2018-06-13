@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558862"
 ---
 # <a name="how-to-chain-bitmapsource-objects-together"></a>Postupy: Vzájemné zřetězení objektů BitmapSource
 Tento příklad ukazuje, jak můžete použít různé efekty na zdroj bitové kopie s řetězení více <xref:System.Windows.Media.Imaging.BitmapSource> odvozené objekty společně.  

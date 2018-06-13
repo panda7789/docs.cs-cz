@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524449"
 ---
 # <a name="folderbrowserdialog-component-windows-forms"></a>FolderBrowserDialog – komponenta (Windows Forms)
 Windows Forms `FolderBrowserDialog` součást zobrazuje rozhraní, pomocí kterého můžete procházet a vyberte složku nebo vytvořit novou uživatelé. Je doplněk [OpenFileDialog – komponenta](../../../../docs/framework/winforms/controls/openfiledialog-component-windows-forms.md) součást, která se používá k procházení a výběru souborů.  

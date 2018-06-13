@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759368"
 ---
 # <a name="dataadapter-parameters"></a>Parametry DataAdapter
 <xref:System.Data.Common.DbDataAdapter> Má čtyři vlastnosti, které slouží k načtení dat z a aktualizovat data do zdroje dat: <xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> vlastnost vrací data ze zdroje dat; a <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> , <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>, a <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> vlastnosti se používají ke správě změny ve zdroji dat. `SelectCommand` Musí být nastavena vlastnost před voláním `Fill` metodu `DataAdapter`. `InsertCommand`, `UpdateCommand`, Nebo `DeleteCommand` vlastnosti musí být nastavená před `Update` metodu `DataAdapter` je volána, v závislosti na tom, jaké změny byly provedeny k datům ve <xref:System.Data.DataTable>. Pokud byl přidán počet řádků, například `InsertCommand` musí být nastaven před voláním `Update`. Když `Update` zpracovává vložené, aktualizovaných nebo odstraněných řádků, `DataAdapter` používá příslušných `Command` vlastnost zpracovat akci. Aktuální informace o upravené řádek je předán `Command` objektu prostřednictvím `Parameters` kolekce.  

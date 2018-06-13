@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555773"
 ---
 # <a name="data-binding-wpf"></a>Datová vazba (WPF)
 Datová vazba Windows Presentation Foundation (WPF) poskytuje jednoduchý a konzistentní způsob pro aplikace pro práci s daty a k dispozici. Elementy mohou být vázány na data z různých zdrojů dat ve formuláři common language runtime (CLR) objektů a XML.  

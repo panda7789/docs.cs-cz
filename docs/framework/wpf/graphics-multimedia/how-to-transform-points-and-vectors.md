@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559963"
 ---
 # <a name="how-to-transform-points-and-vectors"></a>Postupy: Body a vektory transformace
 Tento příklad ukazuje, jak používat <xref:System.Windows.Media.Matrix> k transformaci <xref:System.Windows.Point> a <xref:System.Windows.Vector> objekty.  

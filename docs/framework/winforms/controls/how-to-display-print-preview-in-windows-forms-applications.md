@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532805"
 ---
 # <a name="how-to-display-print-preview-in-windows-forms-applications"></a>Postupy: Zobrazení náhledu tisku ve formulářových aplikacích Windows
 Můžete použít <xref:System.Windows.Forms.PrintPreviewDialog> řízení umožňuje uživatelům zobrazit dokumentu, často před je vytisknout.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758435"
 ---
 # <a name="generating-dataset-relations-from-xml-schema-xsd"></a>Generování datovou sadu vztahů ze schématu XML (XSD)
 V <xref:System.Data.DataSet>, vytvoří přidružení mezi dvěma nebo více sloupců tak, že vytvoříte vztah nadřazený podřízený. Existují tři způsoby, jak představují **datovou sadu** vztahu v rámci schématu schématu XML definition language (XSD):  

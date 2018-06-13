@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757434"
 ---
 # <a name="association-end"></a>end přidružení
 *End přidružení* identifikuje [typ entity](../../../../docs/framework/data/adonet/entity-type.md) na jednom konci [přidružení](../../../../docs/framework/data/adonet/association-type.md) a počet entit, zadejte instancí, které může existovat na tomto konci tohoto přidružení. Zakončení přidružení jsou definované jako součást přidružení; přidružení musí mít přesně dva elementy end přidružení. [Navigační vlastnosti](../../../../docs/framework/data/adonet/navigation-property.md) povolit pro navigaci z elementu end přidružení jeden na druhý.  

@@ -19,6 +19,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32743986"
 ---
 # <a name="delay-signing-an-assembly"></a>Zpoždění podepsání sestavení
 Organizace může mít úzce chráněného pár klíčů, vývojáři nemá přístup k každý den. Veřejný klíč je často k dispozici, ale přístup k privátnímu klíči je omezen na pouze několika jednotlivcům. Při vývoji sestavení se silnými názvy, každé sestavení tohoto sestavení cíl odkazy silným názvem obsahuje token veřejného klíče dávat cíl sestavení silným názvem. To vyžaduje, aby veřejný klíč k dispozici během procesu vývoje.  

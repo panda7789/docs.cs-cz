@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534492"
 ---
 # <a name="how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set"></a>Postupy: Seskupení ovládacích prvků Windows Forms RadioButton do funkce v podobě skupiny
 Windows Forms <xref:System.Windows.Forms.RadioButton> ovládací prvky jsou navrženy umožnit uživateli vybrat mezi dva nebo více nastavení, ve kterých lze přiřadit pouze jeden postup nebo objekt. Například skupina <xref:System.Windows.Forms.RadioButton> ovládací prvky se může zobrazovat vybrat balíček prostředníci pro pořadí, ale pouze jedna prostředníci se použije. Proto pouze jeden <xref:System.Windows.Forms.RadioButton> najednou lze vybrat, i když je součástí skupiny funkčnosti.  

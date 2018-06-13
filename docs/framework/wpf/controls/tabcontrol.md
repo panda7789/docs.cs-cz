@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555974"
 ---
 # <a name="tabcontrol"></a>TabControl
 <xref:System.Windows.Controls.TabControl> elementy zobrazit obsah na samostatné stránky získat přístup tak, že vyberete příslušnou kartu. Obsahuje každé kartě <xref:System.Windows.Controls.TabItem>.  

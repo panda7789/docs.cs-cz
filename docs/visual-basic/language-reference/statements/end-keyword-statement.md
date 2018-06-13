@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33605261"
 ---
 # <a name="end-ltkeywordgt-statement-visual-basic"></a>End &lt;– klíčové slovo&gt; – příkaz (Visual Basic)
 Když následuje další klíčové slovo, ukončí definici bloku příkaz zavedených v tomto – klíčové slovo.  

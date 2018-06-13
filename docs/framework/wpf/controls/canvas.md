@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33553271"
 ---
 # <a name="canvas"></a>Plátno
 <xref:System.Windows.Controls.Canvas> je ovládací prvek rozložení, který umožňuje absolutní umístění podřízených elementů.  

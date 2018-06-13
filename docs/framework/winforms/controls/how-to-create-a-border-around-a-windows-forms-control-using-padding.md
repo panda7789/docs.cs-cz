@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530286"
 ---
 # <a name="how-to-create-a-border-around-a-windows-forms-control-using-padding"></a>Postupy: Vytváření ohraničení okolo ovládacího prvku Windows Forms pomocí odsazení
 Následující příklad kódu ukazuje, jak vytvořit okraj nebo popisují kolem <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. V příkladu nastaví hodnotu <xref:System.Windows.Forms.Panel> ovládacího prvku <xref:System.Windows.Forms.Padding> vlastnost na hodnotu 5 a nastaví <xref:System.Windows.Forms.Control.Dock%2A> vlastnost podřízenou <xref:System.Windows.Forms.RichTextBox> řídit k <xref:System.Windows.Forms.DockStyle.Fill>. <xref:System.Windows.Forms.Control.BackColor%2A> z <xref:System.Windows.Forms.Panel> řízení je nastavené na <xref:System.Drawing.Color.Blue%2A>, vytváří modré ohraničení <xref:System.Windows.Forms.RichTextBox> ovládacího prvku.  

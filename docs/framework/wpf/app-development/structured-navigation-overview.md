@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558149"
 ---
 # <a name="structured-navigation-overview"></a>Přehled strukturované navigace
 Obsah, který mohou být hostovány systémem [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], <xref:System.Windows.Controls.Frame>, nebo <xref:System.Windows.Navigation.NavigationWindow> se skládá ze stránek, které lze identifikovat podle pack [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] a nejsnadnější v hypertextové odkazy. Struktura stránek a způsoby, ve kterém se lze procházet, podle definice hypertextové odkazy, se označuje jako topologii navigace. Takové topologii vyhovuje celou řadu typů aplikací, zejména ty, které procházení dokumentů. Pro tyto aplikace uživatele můžete přejít z jedné stránky na jinou stránku bez buď stránky museli mít žádné konkrétní informace o dalších.  

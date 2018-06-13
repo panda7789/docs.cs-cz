@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33604689"
 ---
 # <a name="mywebservices-object"></a>My.WebServices – objekt
 Poskytuje vlastnosti pro vytváření a přístup k jediné instance každého XML webové služby odkazuje v aktuálním projektu.  

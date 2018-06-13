@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744493"
 ---
 # <a name="client-application-services-overview"></a>Přehled klientských aplikačních služeb
 Klient aplikačních služeb poskytují zjednodušenou přístup k [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] přihlášení, rolí a profilu služby z aplikací Windows Forms a Windows Presentation Foundation (WPF). [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikace služby jsou součástí Microsoft ASP.NET 2.0 AJAX rozšíření, která je součástí [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)] a [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]. Tyto služby umožňují více Web a aplikace pro systém Windows sdílet informace o uživateli a správu uživatelů funkci z jednoho serveru.  

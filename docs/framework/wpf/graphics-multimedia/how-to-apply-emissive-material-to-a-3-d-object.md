@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559416"
 ---
 # <a name="how-to-apply-emissive-material-to-a-3-d-object"></a>Postupy: Použití zářivého materiálu na 3D objekt
 Následující příklad ukazuje, jak používat <xref:System.Windows.Media.Media3D.EmissiveMaterial> přidat do existující rovna barvu štětce EmissiveMaterial materiály můžou barev. Kód uvedený níže ukazuje <xref:System.Windows.Media.Media3D.DiffuseMaterial> a <xref:System.Windows.Media.Media3D.EmissiveMaterial> použít v kombinaci blue přidat do DiffuseMaterial vzhled.  

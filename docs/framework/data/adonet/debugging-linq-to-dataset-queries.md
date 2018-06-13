@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760112"
 ---
 # <a name="debugging-linq-to-dataset-queries"></a>Ladění LINQ na dotazy, datové sady
 [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] podporuje ladění z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu. Existují však určité rozdíly mezi ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu a jiných-[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu. Většina funkce ladění pracovat s [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] příkazy, včetně krokování, nastavení zarážek a zobrazení výsledků, které jsou zobrazeny v ladicího programu. Však odložené dotazu ve má některé vedlejší účinky, které byste měli zvážit při ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kód a některá omezení pomocí upravit a pokračovat. Toto téma popisuje aspekty ladění, které jsou jedinečné pro [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] ve srovnání s jinou hodnotu než[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu.  

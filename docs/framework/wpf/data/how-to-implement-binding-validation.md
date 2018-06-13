@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556962"
 ---
 # <a name="how-to-implement-binding-validation"></a>Postupy: Implementace ověření připojení
 Tento příklad ukazuje, jak používat <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> a aktivační události styl visual svůj názor informovat uživatele, pokud je zadaná neplatná hodnota, podle vlastního ověřovacího pravidla.  

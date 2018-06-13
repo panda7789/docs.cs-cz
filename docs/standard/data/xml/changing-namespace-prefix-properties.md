@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33568690"
 ---
 # <a name="changing-namespace-prefix-properties"></a>Změna vlastností Namespace předpony
 **XmlNode** třída umožňuje změnit Předpona oboru názvů, které jsou přidružené k danému uzlu. Například následující kód ukazuje předponu elementu mění.  

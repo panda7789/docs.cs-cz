@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525080"
 ---
 # <a name="button-control-windows-forms"></a>Ovládací prvek Tlačítko (Windows Forms)
 Windows Forms `Button` řízení umožňuje uživateli klikněte na něj k provedení akce. `Button` Ovládací prvek může zobrazit textu a obrázků. Při kliknutí na tlačítko efekt stisknuté a vydání.  

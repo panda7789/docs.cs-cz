@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534609"
 ---
 # <a name="webbrowser-security"></a>WebBrowser – zabezpečení
 <xref:System.Windows.Forms.WebBrowser> Ovládací prvek je určen pro práci v pouze úplný vztah důvěryhodnosti. Obsah HTML, který zobrazí v ovládacím prvku mohou pocházet z externích webových serverů a může obsahovat nespravovaného kódu ve formě skripty nebo ovládací prvky webového. Pokud použijete <xref:System.Windows.Forms.WebBrowser> ovládací prvek v této situaci se ovládací prvek je již méně bezpečná, než by bylo Internet Explorer, ale spravovaný <xref:System.Windows.Forms.WebBrowser> řízení nezabrání takový nespravovaný kód spuštěný.  

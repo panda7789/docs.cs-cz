@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746888"
 ---
 # <a name="enhanced-strong-naming"></a>Vylepšené silné názvy
 Podpis silného názvu je mechanismus identity v rozhraní .NET Framework pro identifikaci sestavení. Je digitální podpis veřejného klíče, který se obvykle používá k ověření integrity dat, které jsou předávány z původce (podepisující osoba) k příjemce (ověřovatele). Tento podpis slouží jako jedinečnou identitu pro sestavení a zajišťuje, aby odkazy na sestavení byla jednoznačná. Sestavení je podepsaný jako součást procesu sestavení a potom ověřit, když je načten.  

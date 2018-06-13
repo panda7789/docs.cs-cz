@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762407"
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>Provádění dotazu XPath na datové sady
 Vztah mezi synchronizovaný <xref:System.Data.DataSet> a <xref:System.Xml.XmlDataDocument> umožňuje využívat XML služby, jako je dotaz XML Path Language (XPath), kteří se dostávají **XmlDataDocument** a může provádět určité funkce snadněji než přístup k **datovou sadu** přímo. Například místo pomocí **vyberte** metodu <xref:System.Data.DataTable> přejděte s jinými v **datovou sadu**, dotaz XPath můžete provádět na **XmlDataDocument**  který je synchronizován se službou **datovou sadu**, chcete-li získat seznam elementů XML ve formě <xref:System.Xml.XmlNodeList>. Uzly v **XmlNodeList**, vícesměrového vysílání jako <xref:System.Xml.XmlElement> uzlů, může být předána do **GetRowFromElement** metodu **XmlDataDocument**, vrátit odpovídající <xref:System.Data.DataRow> odkazy na řádky tabulky synchronizované **datovou sadu**.  
