@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33806315"
 ---
 # <a name="custom-message-interceptor"></a><span data-ttu-id="53220-102">Vlastní zachycování zpráv</span><span class="sxs-lookup"><span data-stu-id="53220-102">Custom Message Interceptor</span></span>
 <span data-ttu-id="53220-103">Tento příklad znázorňuje použití model rozšiřitelnosti kanálu.</span><span class="sxs-lookup"><span data-stu-id="53220-103">This sample demonstrates the use of the channel extensibility model.</span></span> <span data-ttu-id="53220-104">Konkrétně ukazuje, jak implementovat vlastní vazby element, který vytváří objekty factory kanálu a naslouchací procesy kanál zachytávat všechny příchozí a odchozí zprávy na určitém místě v zásobníku spuštění.</span><span class="sxs-lookup"><span data-stu-id="53220-104">In particular, it shows how to implement a custom binding element that creates channel factories and channel listeners to intercept all incoming and outgoing messages at a particular point in the run-time stack.</span></span> <span data-ttu-id="53220-105">Ukázka zahrnuje také klienta a serveru, která ukazují použití tyto vlastní objekty pro vytváření.</span><span class="sxs-lookup"><span data-stu-id="53220-105">The sample also includes a client and server that demonstrate the use of these custom factories.</span></span>  

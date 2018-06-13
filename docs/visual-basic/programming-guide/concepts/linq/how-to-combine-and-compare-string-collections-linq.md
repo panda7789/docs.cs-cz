@@ -1,29 +1,20 @@
 ---
-title: "Postupy: kombinace a porovnávání kolekcí řetězců (LINQ) (Visual Basic)"
-ms.custom: 
+title: 'Postupy: kombinace a porovnávání kolekcí řetězců (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: 243cfafc-9eaa-4354-a9df-d329f1d39913
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 7240f9a8923060634e8824f2516c220b376e2e90
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 0e8df8e6e324b2a575fb6232c54a223cb35a4ef2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644443"
 ---
-# <a name="how-to-combine-and-compare-string-collections-linq-visual-basic"></a><span data-ttu-id="c857e-102">Postupy: kombinace a porovnávání kolekcí řetězců (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c857e-102">How to: Combine and Compare String Collections (LINQ) (Visual Basic)</span></span>
-<span data-ttu-id="c857e-103">Tento příklad ukazuje způsob sloučení souborů, které obsahují řádků textu a pak výsledky seřaďte.</span><span class="sxs-lookup"><span data-stu-id="c857e-103">This example shows how to merge files that contain lines of text and then sort the results.</span></span> <span data-ttu-id="c857e-104">Konkrétně ukazuje, jak provádět jednoduché zřetězení, spojení a průnik na dvě sady řádků textu.</span><span class="sxs-lookup"><span data-stu-id="c857e-104">Specifically, it shows how to perform a simple concatenation, a union, and an intersection on the two sets of text lines.</span></span>  
+# <a name="how-to-combine-and-compare-string-collections-linq-visual-basic"></a><span data-ttu-id="095f7-102">Postupy: kombinace a porovnávání kolekcí řetězců (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="095f7-102">How to: Combine and Compare String Collections (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="095f7-103">Tento příklad ukazuje způsob sloučení souborů, které obsahují řádků textu a pak výsledky seřaďte.</span><span class="sxs-lookup"><span data-stu-id="095f7-103">This example shows how to merge files that contain lines of text and then sort the results.</span></span> <span data-ttu-id="095f7-104">Konkrétně ukazuje, jak provádět jednoduché zřetězení, spojení a průnik na dvě sady řádků textu.</span><span class="sxs-lookup"><span data-stu-id="095f7-104">Specifically, it shows how to perform a simple concatenation, a union, and an intersection on the two sets of text lines.</span></span>  
   
-### <a name="to-set-up-the-project-and-the-text-files"></a><span data-ttu-id="c857e-105">Nastavení projektu a textové soubory</span><span class="sxs-lookup"><span data-stu-id="c857e-105">To set up the project and the text files</span></span>  
+### <a name="to-set-up-the-project-and-the-text-files"></a><span data-ttu-id="095f7-105">Nastavení projektu a textové soubory</span><span class="sxs-lookup"><span data-stu-id="095f7-105">To set up the project and the text files</span></span>  
   
-1.  <span data-ttu-id="c857e-106">Zkopírujte tyto názvy do textového souboru s názvem names1.txt a uložit do složky projektu:</span><span class="sxs-lookup"><span data-stu-id="c857e-106">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
+1.  <span data-ttu-id="095f7-106">Zkopírujte tyto názvy do textového souboru s názvem names1.txt a uložit do složky projektu:</span><span class="sxs-lookup"><span data-stu-id="095f7-106">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
   
     ```  
     Bankov, Peter  
@@ -38,7 +29,7 @@ ms.lasthandoff: 11/21/2017
     Garcia, Debra  
     ```  
   
-2.  <span data-ttu-id="c857e-107">Zkopírujte tyto názvy do textového souboru s názvem names2.txt a uložit ve složce projektu.</span><span class="sxs-lookup"><span data-stu-id="c857e-107">Copy these names into a text file that is named names2.txt and save it in your project folder.</span></span> <span data-ttu-id="c857e-108">Všimněte si, že dva soubory mají společné některé názvy.</span><span class="sxs-lookup"><span data-stu-id="c857e-108">Note that the two files have some names in common.</span></span>  
+2.  <span data-ttu-id="095f7-107">Zkopírujte tyto názvy do textového souboru s názvem names2.txt a uložit ve složce projektu.</span><span class="sxs-lookup"><span data-stu-id="095f7-107">Copy these names into a text file that is named names2.txt and save it in your project folder.</span></span> <span data-ttu-id="095f7-108">Všimněte si, že dva soubory mají společné některé názvy.</span><span class="sxs-lookup"><span data-stu-id="095f7-108">Note that the two files have some names in common.</span></span>  
   
     ```  
     Liu, Jinghao  
@@ -53,7 +44,7 @@ ms.lasthandoff: 11/21/2017
     El Yassir, Mehdi  
     ```  
   
-## <a name="example"></a><span data-ttu-id="c857e-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="c857e-109">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="095f7-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="095f7-109">Example</span></span>  
   
 ```vb  
 Class ConcatenateStrings  
@@ -171,9 +162,9 @@ End Class
 ' 2 total names in list  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="c857e-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="c857e-110">Compiling the Code</span></span>  
- <span data-ttu-id="c857e-111">Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.</span><span class="sxs-lookup"><span data-stu-id="c857e-111">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="095f7-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="095f7-110">Compiling the Code</span></span>  
+ <span data-ttu-id="095f7-111">Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.</span><span class="sxs-lookup"><span data-stu-id="095f7-111">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c857e-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="c857e-112">See Also</span></span>  
- [<span data-ttu-id="c857e-113">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c857e-113">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
- [<span data-ttu-id="c857e-114">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c857e-114">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="095f7-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="095f7-112">See Also</span></span>  
+ [<span data-ttu-id="095f7-113">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="095f7-113">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
+ [<span data-ttu-id="095f7-114">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="095f7-114">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

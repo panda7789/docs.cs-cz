@@ -10,6 +10,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805535"
 ---
 # <a name="guide-to-the-documentation"></a><span data-ttu-id="ddaf1-102">Průvodce dokumentací</span><span class="sxs-lookup"><span data-stu-id="ddaf1-102">Guide to the Documentation</span></span>
 <span data-ttu-id="ddaf1-103">Pokud je zde pokyny v dokumentaci Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="ddaf1-103">Provided here is guidance about the Windows Communication Foundation (WCF) documentation.</span></span> <span data-ttu-id="ddaf1-104">Propojené dokumenty doporučují se, že počáteční body seskupené podle konkrétní zájmů a úrovně odborných znalostí.</span><span class="sxs-lookup"><span data-stu-id="ddaf1-104">The linked documents are recommended starting points grouped according to specific interests and levels of expertise.</span></span>  

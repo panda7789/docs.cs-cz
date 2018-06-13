@@ -9,6 +9,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33807837"
 ---
 # <a name="configuring-message-logging"></a><span data-ttu-id="05d40-102">Konfigurace protokolování zpráv</span><span class="sxs-lookup"><span data-stu-id="05d40-102">Configuring Message Logging</span></span>
 <span data-ttu-id="05d40-103">Toto téma popisuje, jak můžete nakonfigurovat protokolování zpráv pro různé scénáře.</span><span class="sxs-lookup"><span data-stu-id="05d40-103">This topic describes how you can configure message logging for different scenarios.</span></span>  

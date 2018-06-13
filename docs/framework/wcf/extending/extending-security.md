@@ -11,6 +11,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809398"
 ---
 # <a name="extending-security"></a><span data-ttu-id="27dea-102">Rozšíření zabezpečení</span><span class="sxs-lookup"><span data-stu-id="27dea-102">Extending Security</span></span>
 <span data-ttu-id="27dea-103">Abychom vyhověli nové typy deklarací identity a vlastní tokeny, můžete rozšířit Infrastruktura zabezpečení služby Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="27dea-103">To accommodate new claim types and custom tokens, you can extend the security infrastructure of Windows Communication Foundation (WCF).</span></span> <span data-ttu-id="27dea-104">Témata v této části ukazují, jak to provést.</span><span class="sxs-lookup"><span data-stu-id="27dea-104">The topics in this section show you how this is done.</span></span>  
