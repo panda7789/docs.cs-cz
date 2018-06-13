@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33359875"
 ---
 # <a name="return-or-skip-elements-in-a-sequence"></a>Vrátí nebo přeskočit elementy v pořadí
 Použití <xref:System.Linq.Queryable.Take%2A> operátor a vrátí zadaný počet elementů v pořadí a pak přeskočit zbytek.  

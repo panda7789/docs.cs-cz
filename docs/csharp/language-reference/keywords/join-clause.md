@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33289396"
 ---
 # <a name="join-clause-c-reference"></a>join – klauzule (Referenční dokumentace jazyka C#)
 `join` Klauzule je užitečné pro přidružení elementy z jiné zdrojové pořadí, které nemají přímé relaci v objektu modelu. Jediným požadavkem je, že elementů v jednotlivých zdrojů sdílet určitou hodnotu, která může být porovnána shoda. Například distributora jídlo může mít seznam dodavatelé určité produktu a seznamu odběratelů. A `join` klauzuli lze použít, například můžete vytvořit seznam dodavatelů a zadané odběratelů tohoto produktu, kteří jsou ve stejné oblasti.  

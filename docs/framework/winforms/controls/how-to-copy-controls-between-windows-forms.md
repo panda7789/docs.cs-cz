@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530270"
 ---
 # <a name="how-to-copy-controls-between-windows-forms"></a>Postupy: Kopírování ovládacích prvků mezi formuláři Windows
 Ovládací prvek mohou být zkopírovány do stejného formuláře, do jiného formuláře v rámci projektu nebo do schránky pro použití v jiných řešení.  

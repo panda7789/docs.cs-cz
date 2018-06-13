@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33353889"
 ---
 # <a name="how-to-project-query-results-wcf-data-services"></a>Postupy: projektu výsledků dotazu (služby WCF Data Services)
 Projekce poskytuje mechanismus ke snížení objemu dat vrácených dotazem zadáním jenom některé vlastnosti entity jsou vráceny v odpovědi. Projekce můžete provádět na výsledcích [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] buď pomocí dotazu `$select` dotaz možnost nebo pomocí [vyberte](~/docs/csharp/language-reference/keywords/select-clause.md) klauzule ([vyberte](~/docs/visual-basic/language-reference/queries/select-clause.md) v jazyce Visual Basic) v dotazu LINQ. Další informace najdete v tématu [dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535142"
 ---
 # <a name="how-to-perform-a-custom-action-based-on-changes-in-a-cell-of-a-windows-forms-datagridview-control"></a>Postupy: Provedení vlastní akce na základě změn v buňce ovládacího prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Ovládací prvek má určitý počet událostí můžete použít ke zjištění změny ve stavu <xref:System.Windows.Forms.DataGridView> buněk. Dva z nejčastěji používaných jsou <xref:System.Windows.Forms.DataGridView.CellValueChanged> a <xref:System.Windows.Forms.DataGridView.CellStateChanged> události.  

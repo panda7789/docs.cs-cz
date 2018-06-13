@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33536088"
 ---
 # <a name="how-to-validate-data-in-the-windows-forms-datagridview-control"></a>Postupy: Ověřování dat v ovládacím prvku Windows Forms DataGridView
 Následující příklad kódu ukazuje, jak ověřit data zadaná uživatelem do <xref:System.Windows.Forms.DataGridView> ovládacího prvku. V tomto příkladu <xref:System.Windows.Forms.DataGridView> naplněný řádky z `Customers` tabulky ukázková databáze Northwind. Když uživatel upravuje buňka v `CompanyName` sloupce, jeho hodnota je testována platnost kontrolou, že to není prázdný. Pokud obslužné rutiny události pro <xref:System.Windows.Forms.DataGridView.CellValidating> událostí zjistí, že hodnota je řetězec prázdný, <xref:System.Windows.Forms.DataGridView> zabráníte uživateli ukončení buňky, dokud nebude zadán neprázdný řetězec.  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530452"
 ---
 # <a name="how-to-create-an-mdi-form-with-toolstrippanel-controls"></a>Postupy: Vytvoření formuláře MDI s ovládacími prvky ToolStripPanel
 Můžete vytvořit více formuláře rozhraní (MDI) dokumentu, který má <xref:System.Windows.Forms.ToolStrip> ovládací prvky rámců na všechny čtyři strany.  

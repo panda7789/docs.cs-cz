@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557976"
 ---
 # <a name="3-d-transformations-overview"></a>Přehled 3D transformací
 Toto téma popisuje postup použití transformace na 3D modely v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] grafika systému. Transformace umožňuje vývojářům změnit umístění, změnit velikost a orientaci modely beze změny základní hodnoty, které je definovat.  

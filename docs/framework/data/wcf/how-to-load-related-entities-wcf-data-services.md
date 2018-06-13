@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33358159"
 ---
 # <a name="how-to-load-related-entities-wcf-data-services"></a>Postupy: načtení entit v relaci (služby WCF Data Services)
 Když potřebujete k načtení přidružených entit v [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete použít <xref:System.Data.Services.Client.DataServiceContext.LoadProperty%2A> metodu <xref:System.Data.Services.Client.DataServiceContext> třídy. Můžete také <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> metodu <xref:System.Data.Services.Client.DataServiceQuery%601> vyžadovat, aby entit v relaci například načíst v odpovědi na stejný dotaz.  

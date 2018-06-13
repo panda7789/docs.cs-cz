@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33567494"
 ---
 # <a name="extending-metadata-using-attributes"></a>Rozšiřování metadat pomocí atributů
 Modul common language runtime umožňuje přidat popisné deklarace podobné klíčovým slovům volá atributy umožňuje anotaci elementům programování, jako jsou typy, pole, metod a vlastností. Při kompilaci kódu pro modul runtime, je převést na Microsoft (MSIL intermediate language) a umístěn uvnitř přenosné spustitelný soubor (PE) společně s generované kompilátorem metadat. Atributy umožňují umístit další popisné informace do metadat, které mohou být extrahovány pomocí reflexe služby modulu runtime. Kompilátor vytvoří atributy, když je deklarovat instance speciálních tříd, které jsou odvozeny od <xref:System.Attribute?displayProperty=nameWithType>.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554804"
 ---
 # <a name="clocks-how-to-topics"></a>Postupy: Témata hodin
 Následující témata popisují, jak používat <xref:System.Windows.Media.Animation.Clock> objekt, který chcete spravovat informace o stavu časování pro <xref:System.Windows.Media.Animation.Timeline>.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356508"
 ---
 # <a name="how-to-add-modify-and-delete-entities-wcf-data-services"></a>Postupy: přidat, upravit a odstranit entity (služby WCF Data Services)
 Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny, můžete vytvořit, aktualizovat a odstranit data entity v datové služby provedením ekvivalentní akce u objektů v <xref:System.Data.Services.Client.DataServiceContext>. Další informace najdete v tématu [aktualizaci dat služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557405"
 ---
 # <a name="how-to-bind-to-a-collection-and-display-information-based-on-selection"></a>Postupy: Připojení ke kolekci a zobrazení informací podle výběru
 V jednoduchém scénáři seznam podrobnosti máte vázané na data <xref:System.Windows.Controls.ItemsControl> například <xref:System.Windows.Controls.ListBox>. Na základě výběru, můžete zobrazit další informace o vybrané položce. Tento příklad ukazuje, jak implementovat tento scénář.  

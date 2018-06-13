@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531427"
 ---
 # <a name="how-to-create-a-windows-forms-control-that-shows-progress"></a>Postupy: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh
 Následující příklad kódu ukazuje vlastního ovládacího prvku názvem `FlashTrackBar` který lze použít na úroveň nebo průběh aplikace se uživateli zobrazí. Přechod na základě vizuálně představují průběh.  

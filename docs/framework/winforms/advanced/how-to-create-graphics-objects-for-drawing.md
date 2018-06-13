@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526485"
 ---
 # <a name="how-to-create-graphics-objects-for-drawing"></a>Postupy: Vytváření grafických objektů pro kreslení
 Předtím, než můžete kreslení čar a tvarů, vykreslení text, nebo zobrazit a pracovat s obrázky s [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], je nutné vytvořit <xref:System.Drawing.Graphics> objektu. <xref:System.Drawing.Graphics> Objektu představuje [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] kreslení prostor a je objekt, který se používá k vytvoření grafické bitové kopie.  

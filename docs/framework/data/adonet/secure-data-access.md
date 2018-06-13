@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362708"
 ---
 # <a name="secure-data-access"></a>Zabezpečení přístupu k datům
 Psaní kódu zabezpečené ADO.NET, musíte pochopit mechanismy zabezpečení, k dispozici v příslušné úložiště dat, nebo databáze. Také je potřeba zvážit důsledky zabezpečení jiných funkcích nebo součásti, které vaše aplikace může obsahovat.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33362025"
 ---
 # <a name="how-to-bind-data-using-a-project-data-source-wcf-data-services"></a>Postupy: vytvoření vazby dat pomocí projektu zdroje dat (služby WCF Data Services)
 Vytvořením zdroje dat, které jsou založeny na generované datové objekty [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské aplikace. Když přidáte odkaz na datové služby pomocí **přidat odkaz na službu** dialogové okno, zdroj dat projektu je vytvořen společně s datové třídy generovaného klienta. Jeden zdroj dat se vytvoří pro každou sadu entit, že data služby vystavuje. Můžete vytvořit formuláře, které zobrazují data ze služby tak, že přetáhnete tyto položky zdroje dat z **zdroje dat** okna do návrháře. Tyto položky stát ovládacích prvků, které jsou vázány na zdroj dat. Během provádění tento zdroj dat je vázána na instanci systému <xref:System.Data.Services.Client.DataServiceCollection%601> třídy, která je vyplněn objekty, které jsou ke službě dat vrácených dotazem. Další informace najdete v tématu [vazby dat k ovládacím prvkům](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).  

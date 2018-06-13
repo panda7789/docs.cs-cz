@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541658"
 ---
 # <a name="data-binding-and-windows-forms"></a>Datové vazby a rozhraní Windows Forms
 V systému Windows Forms můžete vázat na právě tradičních datových zdrojů, ale také k téměř jakoukoli struktura, která obsahuje data. Můžete vázat na pole hodnot, které vypočítat za běhu, čtení ze souboru nebo odvozena z hodnot jiných ovládacích prvků.  

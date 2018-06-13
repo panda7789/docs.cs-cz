@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541018"
 ---
 # <a name="virtual-mode-in-the-windows-forms-datagridview-control"></a>Virtuální režim v ovládacím prvku Windows Forms DataGridView
 Virtuální režim, můžete spravovat interakce mezi <xref:System.Windows.Forms.DataGridView> řízení a vlastní datové mezipaměti. Chcete-li implementovat virtuální režim, nastavte <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost `true` a zpracovat jeden nebo více událostí, které jsou popsané v tomto tématu. Obvykle bude zpracovávat alespoň `CellValueNeeded` událost, která umožňuje vzhledu ovládacího prvku hodnot v datové mezipaměti.  

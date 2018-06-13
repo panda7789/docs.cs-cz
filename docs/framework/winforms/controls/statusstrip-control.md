@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534494"
 ---
 # <a name="statusstrip-control"></a>StatusStrip – ovládací prvek
 Windows Forms `StatusStrip` řízení se používá ve formulářích jako oblast, obvykle zobrazují v dolní části okna, ve kterém aplikace můžete zobrazit různé typy informací o stavu. `StatusStrip` ovládací prvky obvykle mají `ToolStripStatusLabel` ovládacích prvků na nich, které zobrazují text nebo ikony, které označují stav, nebo <xref:System.Windows.Forms.ToolStripProgressBar> který graficky zobrazí stav dokončení procesu.  

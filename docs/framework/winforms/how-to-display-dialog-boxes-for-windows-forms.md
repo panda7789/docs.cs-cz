@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33537421"
 ---
 # <a name="how-to-display-dialog-boxes-for-windows-forms"></a>Postupy: Zobrazování dialogových oken pro Windows Forms
 Zobrazit dialogové okno stejným způsobem zobrazí všechny formuláře v aplikaci. Formulář spuštění načte automaticky, když je aplikace spuštěna. Chcete-li druhý formulář nebo dialogové okno se zobrazí v aplikaci, napište kód pro načtení a zobrazit ji. Stejně tak aby formulář nebo dialogové okno pole zmizí, zápis kódu pro uvolnění nebo skrytí podokna.  

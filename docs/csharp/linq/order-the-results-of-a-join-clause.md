@@ -8,6 +8,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33269697"
 ---
 # <a name="order-the-results-of-a-join-clause"></a>Řazení výsledků klauzule join
 Tento příklad ukazuje postup řazení výsledků operace spojení. Všimněte si, že je po spojení provést řazení. Přestože je možné použít `orderby` klauzule s jedním nebo více zdroje pořadí před spojení, obecně nedoporučujeme ji. Někteří poskytovatelé LINQ nemusí zachovat řazení po spojení.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556028"
 ---
 # <a name="how-to-position-the-cursor-at-the-beginning-or-end-of-text-in-a-textbox-control"></a>Postupy: Umístění kurzoru na začátku a konci textu v ovládacím prvku TextBox
 Tento příklad ukazuje, jak umístěte kurzor na začátku nebo na konci textového obsahu <xref:System.Windows.Controls.TextBox> ovládacího prvku.  

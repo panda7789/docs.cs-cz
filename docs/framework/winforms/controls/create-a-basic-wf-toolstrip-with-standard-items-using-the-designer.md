@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526637"
 ---
 # <a name="how-to-create-a-basic-windows-forms-toolstrip-with-standard-items-using-the-designer"></a>Postupy: Vytvoření základního prvku Windows Forms ToolStrip se standardními položkami pomocí Návrháře
 Následující postup ukazuje, jak vytvořit <xref:System.Windows.Forms.ToolStrip> a přidejte 7 <xref:System.Windows.Forms.ToolStripButton> ovládací prvky, které představují typické úlohy.  

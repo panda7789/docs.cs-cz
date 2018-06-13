@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33356098"
 ---
 # <a name="linq-to-sql-n-tier-with-web-services"></a>Technologie LINQ to SQL N-vrstvá s webovými službami
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je určený pro použití na střední vrstvy v vrstva přístupu k datům volně vázány (DAL), třeba webové služby. Pokud prezentační vrstvou se webovou stránku ASP.NET, pak použijete <xref:System.Web.UI.WebControls.LinqDataSource> ovládacího prvku webového serveru ke správě přenosů dat mezi uživatelské rozhraní a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] na střední vrstvě. Pokud prezentační vrstvou není stránku ASP.NET, pak střední vrstvě a prezentační vrstvou musí používat ke správě serializace a deserializace dat některé další kroky.  

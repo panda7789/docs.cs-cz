@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529438"
 ---
 # <a name="walkthrough-creating-a-masterdetail-form-using-two-windows-forms-datagridview-controls"></a>Návod: Vytvoření hlavního/podrobného formuláře pomocí dvou ovládacích prvků Windows Forms DataGridView
 Jeden z nejběžnějších scénářů pro použití <xref:System.Windows.Forms.DataGridView> ovládacího prvku *a podrobností* formuláře, ve kterém se zobrazí relaci nadřazený podřízený mezi dvěma tabulkami databáze. Výběr řádků v tabulce hlavní způsobí, že aktualizace s použitím dat odpovídající podřízené tabulky podrobností.  

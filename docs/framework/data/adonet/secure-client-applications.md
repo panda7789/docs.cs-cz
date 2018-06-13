@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361556"
 ---
 # <a name="secure-client-applications"></a>Zabezpečení klientské aplikace
 Aplikace se obvykle skládají z mnoha částí, které musí všechny chráněné z chyb zabezpečení, které může dojít ke ztrátě dat nebo jinak ohrozit zabezpečení systému. Vytvoření zabezpečeného uživatelského rozhraní můžete zabránit mnoho problémů s blokováním útočníci před přístupem dat nebo dostatek systémových prostředků.  

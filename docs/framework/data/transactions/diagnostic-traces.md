@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363464"
 ---
 # <a name="diagnostic-traces"></a>Diagnostické trasování
 Trasování jsou publikování určitých zpráv, které jsou generovány během spuštění aplikace. Při použití trasování, musí mít mechanismus pro shromažďování a zaznamenávání zpráv, které jsou odeslány. Trasovací zprávy jsou přijímány naslouchací procesy. Účelem tohoto naslouchací proces je shromažďování, ukládání a směrovat trasovací zprávy. Posluchači přímý výstup trasování příslušný cíli, jako je protokol, okno nebo textový soubor.  

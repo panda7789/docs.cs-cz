@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526234"
 ---
 # <a name="considerations-when-hosting-an-activex-control-on-a-windows-form"></a>Aspekty hostování ovládacího prvku ActiveX ve formuláři Windows
 I když Windows Forms jsou optimalizovány na hostitele Windows Forms – ovládací prvky, můžete dál používat ovládací prvky ActiveX. Při plánování aplikace, která používá ovládací prvky ActiveX, mít na paměti následující aspekty:  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33355230"
 ---
 # <a name="linq-to-sql"></a>Technologie LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je součástí [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] verze 3.5, který poskytuje běhové infrastrukturu pro správu relačních dat jako objekty.  

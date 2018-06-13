@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339745"
 ---
 # <a name="using-properties-c-programming-guide"></a>Použití vlastností (Průvodce programováním v C#)
 Vlastnosti kombinovat aspektů pole a metody. Uživateli objektu, zdá být pole, vlastnosti přístupu k vlastnosti vyžaduje stejná syntaxe. Implementátor třídy, vlastnosti je jeden nebo dva bloky kódu představující [získat](../../../csharp/language-reference/keywords/get.md) přistupujícího objektu nebo [nastavit](../../../csharp/language-reference/keywords/set.md) přistupujícího objektu. Blok kódu pro `get` přistupujícího objektu je spuštěn, když je vlastnost číst; blokovat kód pro `set` přistupujícího objektu je spuštěn, když vlastnost je přiřazena nová hodnota. Vlastnost bez `set` přistupujícího objektu je považován za jen pro čtení. Vlastnost bez `get` přistupujícího objektu je považován za jen pro zápis. Vlastnost, která má oba přístupových objektů je pro čtení a zápis.  

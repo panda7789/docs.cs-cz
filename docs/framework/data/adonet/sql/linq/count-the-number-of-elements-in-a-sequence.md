@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33353831"
 ---
 # <a name="count-the-number-of-elements-in-a-sequence"></a>Počet elementů v pořadí
 Použití <xref:System.Linq.Enumerable.Count%2A> operátor počítat počet elementů v pořadí.  

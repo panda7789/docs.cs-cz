@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33349008"
 ---
 # <a name="ltaddgt-of-ltprotocolmappinggt"></a>&lt;add&gt; – &lt;protocolMapping&gt;
 Představuje výchozí protokol mapování mezi přenosové schéma protokolu (např. http, net.tcp, net.pipe atd.) a vazbu Windows Communication Foundation (WCF). Při vytváření výchozí koncové body za běhu, WCF porovná nakonfigurované mapování a rozhodne, na které vazby pro konkrétní na základě adres.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363390"
 ---
 # <a name="polling-in-console-applications"></a>Dotazování v konzolové aplikace
 Asynchronní operace v ADO.NET umožňují zahájit časově náročné databázových operací na jedno vlákno při provádění dalších úloh na jiné vlákno. Ve většině scénářů ale bude nakonec se dostanete na bod, kde vaše aplikace by neměl pokračovat až po dokončení operace databáze. U takových případech je užitečné pro cyklické dotazování asynchronní operaci k určení, zda bude dokončena operace nebo ne.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33313797"
 ---
 # <a name="auto-implemented-properties-c-programming-guide"></a>Automaticky implementované vlastnosti (Průvodce programováním v C#)
 V jazyce C# 3.0 nebo novější automaticky implementované vlastnosti deklarace vlastnosti přesnější při provést žádné další logiku navíc je nutné v přístupových objektech vlastnosti. Umožňují také kód klienta k vytváření objektů. Když je deklarovat vlastnost, jak je znázorněno v následujícím příkladu, kompilátor vytvoří privátní, anonymní základní pole, které je přístupné pouze prostřednictvím vlastnosti `get` a `set` přistupující objekty.  

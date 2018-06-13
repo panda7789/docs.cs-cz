@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535854"
 ---
 # <a name="numericupdown-control-windows-forms"></a>NumericUpDown – ovládací prvek (Windows Forms)
 Windows Forms `NumericUpDown` řízení vypadá kombinací textového pole a dvojice šipek, které uživatel můžete kliknutím na Upravit hodnotu. Ovládací prvek zobrazí a nastaví jednu číselnou hodnotu ze seznamu voleb. Uživatel může zvýšit a snížit počet kliknutím tlačítka nahoru a dolů, stisknutím klávesy se šipkami nahoru a dolů nebo zadáním čísla. Kliknutím na tlačítko šipka nahoru přesune hodnotu směrem k jeho maximální; Kliknutím na tlačítko šipka dolů přesune na minimum. Je například kde tento druh řízení může být užitečné pro ovládání hlasitosti na hudební přehrávač. Číselné ovládací prvky typu číselník – se používají v některých aplikacích ovládací panely systému Windows.  

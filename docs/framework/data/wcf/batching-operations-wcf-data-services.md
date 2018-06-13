@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33357858"
 ---
 # <a name="batching-operations-wcf-data-services"></a>Dávkování operací (služby WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Podporuje dávkové zpracování žádostí o [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby. Další informace najdete v tématu [OData: dávkové zpracování](http://go.microsoft.com/fwlink/?LinkId=186075). V [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], každou operaci, která používá <xref:System.Data.Services.Client.DataServiceContext>, jako jsou například provádění dotazu nebo uložení změn, výsledkem samostatné žádosti odesílány ke službě data. Aby byla zachována logické obor pro sady operací, můžete definovat explicitně provozní dávky. To zajistí, že všechny operace v dávce se odesílají do služby data v jednom požadavku HTTP, umožňuje, aby server ke zpracování operace atomicky a snižuje počet zpátečních cest k službě data.  

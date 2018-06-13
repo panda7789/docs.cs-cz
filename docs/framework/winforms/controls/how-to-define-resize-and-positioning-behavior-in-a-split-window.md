@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33531632"
 ---
 # <a name="how-to-define-resize-and-positioning-behavior-in-a-split-window"></a>Postupy: Definování chování změny velikosti a polohování v rozděleném okně
 Panelů <xref:System.Windows.Forms.SplitContainer> řízení samo dobře se po změně velikosti a pracovat s nimi uživatelé. Však bude nastat situace, kdy se má k programovému řízení rozdělovače – kde je umístěný a do jaké míry lze přesunout.  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33269116"
 ---
 # <a name="remove-c-reference"></a>remove (Referenční dokumentace jazyka C#)
 `remove` Kontextové klíčové slovo se používá k definování vlastní události přistupujícího objektu, která je volána, když kód klienta odhlásí vaše [událostí](../../../csharp/language-reference/keywords/event.md). Pokud zadáte vlastní `remove` přistupující objekt, je třeba zadat také [přidat](../../../csharp/language-reference/keywords/add.md) přistupujícího objektu.  

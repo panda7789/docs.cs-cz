@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525951"
 ---
 # <a name="recoloring-images"></a>Přebarvení obrázků
 Přebarvení je proces změny barvy obrázku. Některé příklady přebarvení jsou změna jedné barvy na jiný, úpravě intenzitou barvu, která je relativní vzhledem k jiné barvy, úpravě také průraznost nebo kontrast všechny barvy a převádění barvy na odstínech šedi.  

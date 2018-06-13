@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33565686"
 ---
 # <a name="path-animations-overview"></a>Přehled animací cesty
 <a name="introduction"></a> Toto téma představuje animací cesty, které vám umožní používat geometrickou cestu ke generování hodnot výstup. Cesta animací jsou užitečné pro přesunutí a otáčení objektů podél komplexní cesty.  

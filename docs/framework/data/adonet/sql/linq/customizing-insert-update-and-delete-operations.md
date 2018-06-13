@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33361637"
 ---
 # <a name="customizing-insert-update-and-delete-operations"></a>Přizpůsobení vložit, aktualizovat a odstraňovat operací
 Ve výchozím nastavení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generuje dynamické SQL implementovat vložení, číst, aktualizovat a operace odstranění. V praxi však obvykle přizpůsobit tak, aby vyhovovala vašim obchodním potřebám vaší aplikace.  

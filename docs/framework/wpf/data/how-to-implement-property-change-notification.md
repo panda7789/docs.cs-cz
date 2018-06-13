@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33555987"
 ---
 # <a name="how-to-implement-property-change-notification"></a>Postupy: Implementace oznámení změn vlastností
 Pro podporu <xref:System.Windows.Data.BindingMode.OneWay> nebo <xref:System.Windows.Data.BindingMode.TwoWay> vazby k povolení vlastnosti cíle vaší vazba automaticky podle dynamické změn vazby zdroje (například tak, aby měl v podokně náhledu aktualizují automaticky, když uživatel upravuje formuláře), vaše – třída musí zajistit řádné změněné vlastnosti oznámení. Tento příklad ukazuje, jak vytvořit třídu, která implementuje <xref:System.ComponentModel.INotifyPropertyChanged>.  

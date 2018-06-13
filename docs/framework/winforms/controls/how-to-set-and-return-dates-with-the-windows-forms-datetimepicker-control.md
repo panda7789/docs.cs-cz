@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33535666"
 ---
 # <a name="how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control"></a>Postupy: Nastavení a vracení kalendářních dat pomocí ovládacího prvku Windows Forms DateTimePicker
 Aktuálně vybrané data a času v systému Windows Forms <xref:System.Windows.Forms.DateTimePicker> je dáno ovládacího prvku <xref:System.Windows.Forms.DateTimePicker.Value%2A> vlastnost. Můžete nastavit <xref:System.Windows.Forms.DateTimePicker.Value%2A> předtím, než se zobrazí ovládací prvek (například v době návrhu nebo formuláře <xref:System.Windows.Forms.Form.Load> událostí) k určení, datum, pro které bude zpočátku vybrali v ovládacím prvku. Ve výchozím nastavení, ovládacího prvku na <xref:System.Windows.Forms.DateTimePicker.Value%2A> nastavena na aktuální datum. Pokud změníte ovládacího prvku <xref:System.Windows.Forms.DateTimePicker.Value%2A> v kódu, se automaticky aktualizuje ovládací prvek na formuláři, aby odrážela nové nastavení.  

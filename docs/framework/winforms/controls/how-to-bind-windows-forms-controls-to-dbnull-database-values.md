@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33530312"
 ---
 # <a name="how-to-bind-windows-forms-controls-to-dbnull-database-values"></a>Postupy: Připojení ovládacích prvků Windows Forms k hodnotám databáze DBNull
 Při vytvoření vazby ovládacích prvků Windows Forms ke zdroji dat a zdroj dat vrátí <xref:System.DBNull> hodnotu, můžete nahradit odpovídající hodnotu bez zpracování, formátování a analýzu událostí. <xref:System.Windows.Forms.Binding.NullValue%2A> Vlastnost převede <xref:System.DBNull> na zadaný objekt při formátování nebo analýza dat zdrojové hodnoty.  

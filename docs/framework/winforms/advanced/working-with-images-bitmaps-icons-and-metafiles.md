@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33526831"
 ---
 # <a name="working-with-images-bitmaps-icons-and-metafiles"></a>Práce s obrázky, rastrovými obrázky, ikonami a metasoubory
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje `Bitmap` třídy pro práci s rastrových obrázků a `Metafile` třídy pro práci s obrázky vektoru. `Bitmap` a `Metafile` obě třídy dědí `Image` třídy.  

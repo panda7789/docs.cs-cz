@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33340473"
 ---
 # <a name="how-to-use-a-thread-pool-c"></a>Postupy: použití fondu vláken (C#)
 *Sdružování vláken* je forma více vláken v úkoly, které jsou přidány do fronty a automaticky spuštěn při vytvoření vláken. Další informace najdete v tématu [vláken sdružování (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md).  

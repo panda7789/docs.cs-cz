@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33529672"
 ---
 # <a name="how-to-access-objects-bound-to-windows-forms-datagridview-rows"></a>Postupy: Přístup k objektům připojeným k řádkům Windows Forms DataGridView
 Někdy je užitečné zobrazit tabulku informací uložených v kolekci objektů firmy. Po vytvoření vazby <xref:System.Windows.Forms.DataGridView> řízení takové shromažďování každé veřejné vlastnosti se zobrazí v vlastní sloupce, pokud vlastnost nebyl označen jiný procházet s <xref:System.ComponentModel.BrowsableAttribute>. Například kolekce `Customer` objekty by mít sloupce jako **název** a **adresu**.  

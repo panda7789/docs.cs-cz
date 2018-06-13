@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339316"
 ---
 # <a name="getting-started-with-linq-in-c"></a>Začínáme s dotazy LINQ v jazyce C#
 Tato část obsahuje základní informace, které vám pomohou pochopit, zbytek LINQ dokumentace a ukázky.  

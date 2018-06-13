@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339602"
 ---
 # <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Postupy: Definování rovnosti hodnoty pro typ (Průvodce programováním v C#)
 Když definujete třídě nebo struktuře, je rozhodnout, zda má smysl k vytvoření vlastní definice rovnosti hodnoty (nebo ekvivalenční) pro typ. Obvykle byste implementovat rovnosti hodnoty, když se očekává, že objekty typu přidat do kolekce nějaká, nebo když je jejich primární účel k uložení sadu polí a vlastností. Vaše definice rovnosti hodnoty můžete založit na porovnání všechna pole a vlastnosti v typu, nebo může základní definice na podmnožinu. Ale v obou případech a v třídy a struktury vaší implementace postupujte podle pět záruky ekvivalenční:  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33338741"
 ---
 # <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: přístup k objektům spolupráce sady Office pomocí Visual C# funkcí (C# Průvodce programováním)
 Visual C# obsahuje funkce, které zjednodušují přístup k rozhraní API Office objekty. Nové funkce patří pojmenované a nepovinné argumenty, nový typ s názvem `dynamic`a schopnost předání argumentů odkaz parametrů metody modelu COM, jako kdyby byly parametry s hodnotou.  

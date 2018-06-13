@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33352636"
 ---
 # <a name="referential-integrity-constraint"></a>omezení referenční integrity
 A *omezení referenční integrity* v Entity Data Model (EDM) je podobná omezení referenční integrity v relační databázi. Stejným způsobem, že sloupec (nebo sloupce) z tabulky databáze může odkazovat primární klíč jiné tabulky [vlastnost](../../../../docs/framework/data/adonet/property.md) (nebo vlastnosti) z [typ entity](../../../../docs/framework/data/adonet/entity-type.md) může odkazovat [klíč entity ](../../../../docs/framework/data/adonet/entity-key.md) jiného typu entity. Je volána typ entity, který se odkazuje *hlavní end* omezení. Typ entity, který odkazuje na hlavní end je volána *ukončení závislosti* omezení.  

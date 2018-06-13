@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33533754"
 ---
 # <a name="how-to-loop-a-sound-playing-on-a-windows-form"></a>Postupy: Opakované přehrávání zvuku ve formuláři Windows
 Následující příklad kódu opakovaného hraje zvuku. Když kód v `stopPlayingButton_Click` spuštění obslužné rutiny události, zvuk, který se aktuálně přehrávání zastaví. Pokud žádné přehrávání zvuku, nedojde k žádné akci.  

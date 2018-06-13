@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33339836"
 ---
 # <a name="query-expression-syntax-for-standard-query-operators-c"></a>Syntaxe výrazu dotazu pro standardní operátory dotazu (C#)
 Některé více často používaných standardní operátory dotazu mít vyhrazené C# – klíčové slovo syntaxe jazyka umožňující volat v rámci *dotaz výrazu*. Výraz dotazu je jiné, srozumitelnější formu vyjadřující dotazu než jeho *na základě metod* ekvivalentní. Klauzule výraz dotazu jsou převedeny do volání metody dotazů v době kompilace.  

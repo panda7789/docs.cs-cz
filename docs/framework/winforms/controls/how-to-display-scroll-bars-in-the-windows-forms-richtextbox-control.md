@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532740"
 ---
 # <a name="how-to-display-scroll-bars-in-the-windows-forms-richtextbox-control"></a>Postupy: Zobrazení posuvníků v ovládacím prvku Windows Forms RichTextBox
 Ve výchozím nastavení Windows Forms <xref:System.Windows.Forms.RichTextBox> zobrazí vodorovného a svislého posuvníky podle potřeby. Je sedm možných hodnot pro <xref:System.Windows.Forms.RichTextBox.ScrollBars%2A> vlastnost <xref:System.Windows.Forms.RichTextBox> řízení, které jsou popsané v následující tabulce.  

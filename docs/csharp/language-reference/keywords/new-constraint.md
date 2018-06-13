@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33268993"
 ---
 # <a name="new-constraint-c-reference"></a>new – omezení (Referenční dokumentace jazyka C#)
 `new` Omezení určuje, že některý argument typu v deklaraci – obecná třída musí mít konstruktor public bez parametrů. Pokud chcete používat nové omezení, typ nemůže být abstraktní.  

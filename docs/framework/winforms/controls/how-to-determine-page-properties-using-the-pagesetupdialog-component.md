@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532724"
 ---
 # <a name="how-to-determine-page-properties-using-the-pagesetupdialog-component"></a>Postupy: Určení vlastností stránky pomocí součásti PageSetupDialog
 [PageSetupDialog –](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md) součást uvede rozložení, velikost papíru a další možnosti rozložení stránky pro uživatele pro dokument.  
