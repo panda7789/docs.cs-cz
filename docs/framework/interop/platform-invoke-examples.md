@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33386776"
 ---
 # <a name="platform-invoke-examples"></a><span data-ttu-id="0b97a-102">Příklady vyvolání platformy</span><span class="sxs-lookup"><span data-stu-id="0b97a-102">Platform Invoke Examples</span></span>
 <span data-ttu-id="0b97a-103">Následující příklady ukazují, jak definovat a volání **MessageBox** funkce v User32.dll, předávání jednoduchý řetězec jako argument.</span><span class="sxs-lookup"><span data-stu-id="0b97a-103">The following examples demonstrate how to define and call the **MessageBox** function in User32.dll, passing a simple string as an argument.</span></span> <span data-ttu-id="0b97a-104">V příkladech <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> je nastaveno na **automaticky** umožníte cílové platformy určit Šířka znaku a zařazování pro řetězce.</span><span class="sxs-lookup"><span data-stu-id="0b97a-104">In the examples, the <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> field is set to **Auto** to let the target platform determine the character width and string marshaling.</span></span>  

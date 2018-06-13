@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765630"
 ---
 # <a name="entity-data-model-key-concepts"></a><span data-ttu-id="52d02-102">Entity Data Model klíčové koncepty</span><span class="sxs-lookup"><span data-stu-id="52d02-102">Entity Data Model Key Concepts</span></span>
 <span data-ttu-id="52d02-103">Entity Data Model (EDM) používá tři klíčové koncepty k popisu struktury dat: *typ entity*, *typ přidružení*, a *vlastnost*.</span><span class="sxs-lookup"><span data-stu-id="52d02-103">The Entity Data Model (EDM) uses three key concepts to describe the structure of data: *entity type*, *association type*, and *property*.</span></span> <span data-ttu-id="52d02-104">Jedná se o nejdůležitějších konceptů v popisující strukturu dat v jakékoli použití EDM.</span><span class="sxs-lookup"><span data-stu-id="52d02-104">These are the most important concepts in describing the structure of data in any implementation of the EDM.</span></span>  

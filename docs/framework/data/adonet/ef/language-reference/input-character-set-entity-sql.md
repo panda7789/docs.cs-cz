@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764694"
 ---
 # <a name="input-character-set-entity-sql"></a><span data-ttu-id="a63aa-102">Vstupní znakovou sadu (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="a63aa-102">Input Character Set (Entity SQL)</span></span>
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="a63aa-103"> přijme kódovaný v UTF-16 znaků UNICODE.</span><span class="sxs-lookup"><span data-stu-id="a63aa-103"> accepts UNICODE characters encoded in UTF-16.</span></span>  

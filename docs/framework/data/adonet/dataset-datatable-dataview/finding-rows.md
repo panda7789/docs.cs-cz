@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760879"
 ---
 # <a name="finding-rows"></a><span data-ttu-id="893e2-102">Vyhledání řádků</span><span class="sxs-lookup"><span data-stu-id="893e2-102">Finding Rows</span></span>
 <span data-ttu-id="893e2-103">Můžete vyhledat řádků podle jejich hodnot pro klíč řazení s použitím <xref:System.Data.DataView.Find%2A> a <xref:System.Data.DataView.FindRows%2A> metody <xref:System.Data.DataView>.</span><span class="sxs-lookup"><span data-stu-id="893e2-103">You can search for rows according to their sort key values by using the <xref:System.Data.DataView.Find%2A> and <xref:System.Data.DataView.FindRows%2A> methods of the <xref:System.Data.DataView>.</span></span> <span data-ttu-id="893e2-104">Rozlišování velkých a malých písmen vyhledávání hodnot v **najít** a **FindRows** je dáno metody **CaseSensitive** vlastnost základní <xref:System.Data.DataTable>.</span><span class="sxs-lookup"><span data-stu-id="893e2-104">The case sensitivity of search values in the **Find** and **FindRows** methods is determined by the **CaseSensitive** property of the underlying <xref:System.Data.DataTable>.</span></span> <span data-ttu-id="893e2-105">Hledání hodnoty musí odpovídat existující řazení klíčové hodnoty jako celek cílem vrátit výsledek.</span><span class="sxs-lookup"><span data-stu-id="893e2-105">Search values must match existing sort key values in their entirety in order to return a result.</span></span>  

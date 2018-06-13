@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388499"
 ---
 # <a name="compiling-an-interop-project"></a><span data-ttu-id="dcd4c-102">Kompilace projektu interoperability</span><span class="sxs-lookup"><span data-stu-id="dcd4c-102">Compiling an Interop Project</span></span>
 <span data-ttu-id="dcd4c-103">Projektů spolupráce COM, které odkazují na jeden nebo více sestavení obsahující importované typy modelu COM kompilovány jako ostatní spravovaný projekt.</span><span class="sxs-lookup"><span data-stu-id="dcd4c-103">COM interop projects that reference one or more assemblies containing imported COM types are compiled like any other managed project.</span></span> <span data-ttu-id="dcd4c-104">Sestavení spolupráce ve vývojovém prostředí, jako je například Visual Studio, můžete odkazovat, nebo můžete použít, je při použití příkazového řádku kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="dcd4c-104">You can reference interop assemblies in a development environment such as Visual Studio, or you can reference them when you use a command-line compiler.</span></span> <span data-ttu-id="dcd4c-105">V obou případech správně, kompilace sestavení vzájemné spolupráce musí být ve stejném adresáři jako ostatní soubory projektu.</span><span class="sxs-lookup"><span data-stu-id="dcd4c-105">In either case, to compile properly, the interop assembly must be in the same directory as the other project files.</span></span>  

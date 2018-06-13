@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592207"
 ---
 # <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a><span data-ttu-id="79688-102">Návod: Změna místa, kam objekt My.Application.Log zapisuje informace (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="79688-102">Walkthrough: Changing Where My.Application.Log Writes Information (Visual Basic)</span></span>
 <span data-ttu-id="79688-103">Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování informací o událostech, ke kterým dochází ve vaší aplikaci.</span><span class="sxs-lookup"><span data-stu-id="79688-103">You can use the `My.Application.Log` and `My.Log` objects to log information about events that occur in your application.</span></span> <span data-ttu-id="79688-104">Tento návod ukazuje, jak přepíší výchozí nastavení, a způsobit, že `Log` objektu k zápisu do jiných součástí naslouchajících protokolům.</span><span class="sxs-lookup"><span data-stu-id="79688-104">This walkthrough shows how to override the default settings and cause the `Log` object to write to other log listeners.</span></span>  

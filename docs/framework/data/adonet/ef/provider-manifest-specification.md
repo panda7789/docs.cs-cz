@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767138"
 ---
 # <a name="provider-manifest-specification"></a><span data-ttu-id="41709-102">Specifikace manifestu zprostředkovatele</span><span class="sxs-lookup"><span data-stu-id="41709-102">Provider Manifest Specification</span></span>
 <span data-ttu-id="41709-103">Tato část popisuje, jak můžete zprostředkovatele úložiště dat podporují typy a funkce v úložišti.</span><span class="sxs-lookup"><span data-stu-id="41709-103">This section discusses how a data store provider can support the types and functions in the data store.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767645"
 ---
 # <a name="ltxmlelementgt"></a><span data-ttu-id="8985f-102">&lt;XmlElement.&gt;</span><span class="sxs-lookup"><span data-stu-id="8985f-102">&lt;xmlElement&gt;</span></span>
 <span data-ttu-id="8985f-103">Určuje element XML, který je odeslána v textu zprávy do služby tokenů zabezpečení Pokud požadování tokenu.</span><span class="sxs-lookup"><span data-stu-id="8985f-103">Specifies an XML element that is sent in the message body to the Security Token Service when requesting a token.</span></span>  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33509657"
 ---
 # <a name="troubleshooting-service-application-won39t-install"></a><span data-ttu-id="34da8-102">Řešení potíží: Služby aplikace Won&#39;t instalace</span><span class="sxs-lookup"><span data-stu-id="34da8-102">Troubleshooting: Service Application Won&#39;t Install</span></span>
 <span data-ttu-id="34da8-103">Pokud vaše aplikace služby se nenainstaluje správně, zkontrolujte, ujistěte se, že <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> pro třídu služby je nastavena na stejnou hodnotu znázorněné v instalačním programu pro danou službu.</span><span class="sxs-lookup"><span data-stu-id="34da8-103">If your service application will not install correctly, check to make sure that the <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> property for the service class is set to the same value as is shown in the installer for that service.</span></span> <span data-ttu-id="34da8-104">Hodnota musí být stejný v obou případech v pořadí pro vaši službu se správně nainstalovat.</span><span class="sxs-lookup"><span data-stu-id="34da8-104">The value must be the same in both instances in order for your service to install correctly.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766306"
 ---
 # <a name="conceptual-model-canonical-to-sql-server-functions-mapping"></a><span data-ttu-id="2fed8-102">Konceptuální Model kanonický k mapování funkcí SQL serveru</span><span class="sxs-lookup"><span data-stu-id="2fed8-102">Conceptual Model Canonical to SQL Server Functions Mapping</span></span>
 <span data-ttu-id="2fed8-103">Toto téma popisuje, jak konceptuální model kanonické funkce mapu, která odpovídající funkce SQL Server.</span><span class="sxs-lookup"><span data-stu-id="2fed8-103">This topic describes how conceptual model canonical functions map to the corresponding SQL Server functions.</span></span>  

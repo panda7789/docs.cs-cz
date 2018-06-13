@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33592376"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a><span data-ttu-id="1b346-102">Základy formulářové aplikace Windows (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1b346-102">Windows Forms Application Basics (Visual Basic)</span></span>
 <span data-ttu-id="1b346-103">Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Windows Forms, které běží místně na počítačích uživatelů.</span><span class="sxs-lookup"><span data-stu-id="1b346-103">An important part of Visual Basic is the ability to create Windows Forms applications that run locally on users' computers.</span></span> <span data-ttu-id="1b346-104">Visual Studio můžete použít k vytvoření aplikace a uživatelské rozhraní Windows Forms pomocí.</span><span class="sxs-lookup"><span data-stu-id="1b346-104">You can use Visual Studio to create the application and user interface using Windows Forms.</span></span> <span data-ttu-id="1b346-105">Aplikace Windows Forms jsou založeny na třídy z <xref:System.Windows.Forms> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="1b346-105">A Windows Forms application is built on classes from the <xref:System.Windows.Forms> namespace.</span></span>  

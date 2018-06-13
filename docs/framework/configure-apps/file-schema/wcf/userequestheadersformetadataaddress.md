@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766696"
 ---
 # <a name="ltuserequestheadersformetadataaddressgt"></a><span data-ttu-id="ff774-102">&lt;useRequestHeadersForMetadataAddress&gt;</span><span class="sxs-lookup"><span data-stu-id="ff774-102">&lt;useRequestHeadersForMetadataAddress&gt;</span></span>
 <span data-ttu-id="ff774-103">Umožňuje načítání informací o adresu metadat ze záhlaví zprávy požadavku.</span><span class="sxs-lookup"><span data-stu-id="ff774-103">Enables the retrieval of metadata address information from the request message headers.</span></span>  

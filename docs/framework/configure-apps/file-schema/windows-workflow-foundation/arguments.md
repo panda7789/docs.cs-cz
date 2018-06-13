@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757408"
 ---
 # <a name="ltargumentsgt"></a><span data-ttu-id="d7fc6-102">&lt;Argumenty&gt;</span><span class="sxs-lookup"><span data-stu-id="d7fc6-102">&lt;arguments&gt;</span></span>
 <span data-ttu-id="d7fc6-103">Představuje kolekci argumentů přidruženého k dotazu stavu aktivity.</span><span class="sxs-lookup"><span data-stu-id="d7fc6-103">Represents a collection of arguments associated with an activity state query.</span></span>  

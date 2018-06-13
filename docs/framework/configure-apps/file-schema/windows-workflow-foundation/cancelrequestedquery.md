@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767034"
 ---
 # <a name="ltcancelrequestedquerygt"></a><span data-ttu-id="9ac8d-102">&lt;cancelRequestedQuery&gt;</span><span class="sxs-lookup"><span data-stu-id="9ac8d-102">&lt;cancelRequestedQuery&gt;</span></span>
 <span data-ttu-id="9ac8d-103">Představuje dotaz, který se používá ke sledování požadavků pro zrušení podřízené aktivity Nadřazená aktivita.</span><span class="sxs-lookup"><span data-stu-id="9ac8d-103">Represents a query that is used to track requests to cancel a child activity by the parent activity.</span></span> <span data-ttu-id="9ac8d-104">Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru zrušit požadavek záznam objekty.</span><span class="sxs-lookup"><span data-stu-id="9ac8d-104">The query is necessary for a tracking participant to subscribe to cancel request record objects.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760905"
 ---
 # <a name="grouppartition-entity-sql"></a><span data-ttu-id="dcfec-102">GROUPPARTITION (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="dcfec-102">GROUPPARTITION (Entity SQL)</span></span>
 <span data-ttu-id="dcfec-103">Vrátí kolekci argument hodnoty, které jsou k projekci mimo aktuální oddílu skupiny, ke kterému se vztahuje na agregaci.</span><span class="sxs-lookup"><span data-stu-id="dcfec-103">Returns a collection of argument values that are projected off the current group partition to which the aggregate is related.</span></span> <span data-ttu-id="dcfec-104">`GroupPartition` Agregace je agregace se na základě skupiny a nemá žádný formulář na základě kolekce.</span><span class="sxs-lookup"><span data-stu-id="dcfec-104">The `GroupPartition` aggregate is a group-based aggregate and has no collection-based form.</span></span>  

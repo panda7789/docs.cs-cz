@@ -1,32 +1,21 @@
 ---
-title: "Chyba – kontrakt"
-ms.custom: 
+title: Chyba – kontrakt
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: b31b140e-dc3b-408b-b3c7-10b6fe769725
-caps.latest.revision: "16"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 9bf0f615ae338d9ad52cc8c40096e7130fb111ea
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 37b9d7e3ec2135d60215232fae114baef1b54f36
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33504156"
 ---
-# <a name="fault-contract"></a><span data-ttu-id="ebd90-102">Chyba – kontrakt</span><span class="sxs-lookup"><span data-stu-id="ebd90-102">Fault Contract</span></span>
-<span data-ttu-id="ebd90-103">Chyba – kontrakt příklad znázorňuje způsob ke sdělování informací chyby ze služby klienta.</span><span class="sxs-lookup"><span data-stu-id="ebd90-103">The Fault Contract sample demonstrates how to communicate error information from a service to a client.</span></span> <span data-ttu-id="ebd90-104">Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), s další kód přidat ke službě převést výjimku vnitřní chybu.</span><span class="sxs-lookup"><span data-stu-id="ebd90-104">The sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md), with some additional code added to the service to convert an internal exception to a fault.</span></span> <span data-ttu-id="ebd90-105">Klient se pokusí provést dělení nulou vynutit chybový stav služby.</span><span class="sxs-lookup"><span data-stu-id="ebd90-105">The client attempts to perform division by zero to force an error condition on the service.</span></span>  
+# <a name="fault-contract"></a><span data-ttu-id="8e2a5-102">Chyba – kontrakt</span><span class="sxs-lookup"><span data-stu-id="8e2a5-102">Fault Contract</span></span>
+<span data-ttu-id="8e2a5-103">Chyba – kontrakt příklad znázorňuje způsob ke sdělování informací chyby ze služby klienta.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-103">The Fault Contract sample demonstrates how to communicate error information from a service to a client.</span></span> <span data-ttu-id="8e2a5-104">Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), s další kód přidat ke službě převést výjimku vnitřní chybu.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-104">The sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md), with some additional code added to the service to convert an internal exception to a fault.</span></span> <span data-ttu-id="8e2a5-105">Klient se pokusí provést dělení nulou vynutit chybový stav služby.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-105">The client attempts to perform division by zero to force an error condition on the service.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="ebd90-106">V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="ebd90-106">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
+>  <span data-ttu-id="8e2a5-106">V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-106">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- <span data-ttu-id="ebd90-107">Kontrakt kalkulačky změnila zahrnout <xref:System.ServiceModel.FaultContractAttribute> jak je znázorněno v následujícím ukázkovém kódu.</span><span class="sxs-lookup"><span data-stu-id="ebd90-107">The calculator contract has been modified to include a <xref:System.ServiceModel.FaultContractAttribute> as shown in the following sample code.</span></span>  
+ <span data-ttu-id="8e2a5-107">Kontrakt kalkulačky změnila zahrnout <xref:System.ServiceModel.FaultContractAttribute> jak je znázorněno v následujícím ukázkovém kódu.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-107">The calculator contract has been modified to include a <xref:System.ServiceModel.FaultContractAttribute> as shown in the following sample code.</span></span>  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -44,7 +33,7 @@ public interface ICalculator
 }  
 ```  
   
- <span data-ttu-id="ebd90-108"><xref:System.ServiceModel.FaultContractAttribute> Atribut znamená, že `Divide` operace může vrátit chybu typu `MathFault`.</span><span class="sxs-lookup"><span data-stu-id="ebd90-108">The <xref:System.ServiceModel.FaultContractAttribute> attribute indicates that the `Divide` operation may return a fault of type `MathFault`.</span></span> <span data-ttu-id="ebd90-109">Chybu může být jakéhokoli typu, který lze serializovat.</span><span class="sxs-lookup"><span data-stu-id="ebd90-109">A fault can be of any type that can be serialized.</span></span> <span data-ttu-id="ebd90-110">V takovém případě `MathFault` kontraktu dat je následující:</span><span class="sxs-lookup"><span data-stu-id="ebd90-110">In this case, the `MathFault` is a data contract, as follows:</span></span>  
+ <span data-ttu-id="8e2a5-108"><xref:System.ServiceModel.FaultContractAttribute> Atribut znamená, že `Divide` operace může vrátit chybu typu `MathFault`.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-108">The <xref:System.ServiceModel.FaultContractAttribute> attribute indicates that the `Divide` operation may return a fault of type `MathFault`.</span></span> <span data-ttu-id="8e2a5-109">Chybu může být jakéhokoli typu, který lze serializovat.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-109">A fault can be of any type that can be serialized.</span></span> <span data-ttu-id="8e2a5-110">V takovém případě `MathFault` kontraktu dat je následující:</span><span class="sxs-lookup"><span data-stu-id="8e2a5-110">In this case, the `MathFault` is a data contract, as follows:</span></span>  
   
 ```  
 [DataContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -69,7 +58,7 @@ public class MathFault
 }  
 ```  
   
- <span data-ttu-id="ebd90-111">`Divide` Metoda vrátí <xref:System.ServiceModel.FaultException%601> došlo k výjimce při Rozděl nulové výjimkou jak je znázorněno v následujícím ukázkovém kódu.</span><span class="sxs-lookup"><span data-stu-id="ebd90-111">The `Divide` method throws a <xref:System.ServiceModel.FaultException%601> exception when a divide by zero exception occurs as shown in the following sample code.</span></span> <span data-ttu-id="ebd90-112">Tato výjimka za následek chybu odesílány do klienta.</span><span class="sxs-lookup"><span data-stu-id="ebd90-112">This exception results in a fault being sent to the client.</span></span>  
+ <span data-ttu-id="8e2a5-111">`Divide` Metoda vrátí <xref:System.ServiceModel.FaultException%601> došlo k výjimce při Rozděl nulové výjimkou jak je znázorněno v následujícím ukázkovém kódu.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-111">The `Divide` method throws a <xref:System.ServiceModel.FaultException%601> exception when a divide by zero exception occurs as shown in the following sample code.</span></span> <span data-ttu-id="8e2a5-112">Tato výjimka za následek chybu odesílány do klienta.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-112">This exception results in a fault being sent to the client.</span></span>  
   
 ```  
 public int Divide(int n1, int n2)  
@@ -88,7 +77,7 @@ public int Divide(int n1, int n2)
 }  
 ```  
   
- <span data-ttu-id="ebd90-113">Kód klienta vynutí chybu tím, že požádá dělení nulou.</span><span class="sxs-lookup"><span data-stu-id="ebd90-113">The client code forces an error by requesting a division by zero.</span></span> <span data-ttu-id="ebd90-114">Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta.</span><span class="sxs-lookup"><span data-stu-id="ebd90-114">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="ebd90-115">Zobrazí dělení nulou nehlásí jako chybu.</span><span class="sxs-lookup"><span data-stu-id="ebd90-115">You see the division by zero being reported as a fault.</span></span> <span data-ttu-id="ebd90-116">Stisknutím klávesy ENTER v okně klienta vypnout klienta.</span><span class="sxs-lookup"><span data-stu-id="ebd90-116">Press ENTER in the client window to shut down the client.</span></span>  
+ <span data-ttu-id="8e2a5-113">Kód klienta vynutí chybu tím, že požádá dělení nulou.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-113">The client code forces an error by requesting a division by zero.</span></span> <span data-ttu-id="8e2a5-114">Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-114">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="8e2a5-115">Zobrazí dělení nulou nehlásí jako chybu.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-115">You see the division by zero being reported as a fault.</span></span> <span data-ttu-id="8e2a5-116">Stisknutím klávesy ENTER v okně klienta vypnout klienta.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-116">Press ENTER in the client window to shut down the client.</span></span>  
   
 ```  
 Add(15,3) = 18  
@@ -99,7 +88,7 @@ FaultException<MathFault>: Math fault while doing division. Problem: divide by z
 Press <ENTER> to terminate client.  
 ```  
   
- <span data-ttu-id="ebd90-117">Klient dosahuje tím, že zachytávání odpovídající `FaultException<MathFault>` výjimka:</span><span class="sxs-lookup"><span data-stu-id="ebd90-117">The client does this by catching the appropriate `FaultException<MathFault>` exception:</span></span>  
+ <span data-ttu-id="8e2a5-117">Klient dosahuje tím, že zachytávání odpovídající `FaultException<MathFault>` výjimka:</span><span class="sxs-lookup"><span data-stu-id="8e2a5-117">The client does this by catching the appropriate `FaultException<MathFault>` exception:</span></span>  
   
 ```  
 catch (FaultException<MathFault> e)  
@@ -109,9 +98,9 @@ catch (FaultException<MathFault> e)
 }  
 ```  
   
- <span data-ttu-id="ebd90-118">Ve výchozím nastavení podrobnosti o neočekávané výjimky neodešlou do klienta aby podrobnosti o implementaci služby z uvozovací znaky hranice zabezpečení služby.</span><span class="sxs-lookup"><span data-stu-id="ebd90-118">By default, the details of unexpected exceptions are not sent to the client to prevent details of the service implementation from escaping the secure boundary of the service.</span></span> <span data-ttu-id="ebd90-119">`FaultContract`poskytuje způsob, jak popisuje chyb v kontraktu a označit určité typy výjimek podle potřeby pro přenos do klienta.</span><span class="sxs-lookup"><span data-stu-id="ebd90-119">`FaultContract` provides a way to describe faults in a contract and mark certain types of exceptions as appropriate for transmission to the client.</span></span> <span data-ttu-id="ebd90-120">`FaultException<T>`poskytuje mechanismus běhu pro odesílání chyb k příjemce.</span><span class="sxs-lookup"><span data-stu-id="ebd90-120">`FaultException<T>` provides the run-time mechanism for sending faults to consumers.</span></span>  
+ <span data-ttu-id="8e2a5-118">Ve výchozím nastavení podrobnosti o neočekávané výjimky neodešlou do klienta aby podrobnosti o implementaci služby z uvozovací znaky hranice zabezpečení služby.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-118">By default, the details of unexpected exceptions are not sent to the client to prevent details of the service implementation from escaping the secure boundary of the service.</span></span> <span data-ttu-id="8e2a5-119">`FaultContract` poskytuje způsob, jak popisuje chyb v kontraktu a označit určité typy výjimek podle potřeby pro přenos do klienta.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-119">`FaultContract` provides a way to describe faults in a contract and mark certain types of exceptions as appropriate for transmission to the client.</span></span> <span data-ttu-id="8e2a5-120">`FaultException<T>` poskytuje mechanismus běhu pro odesílání chyb k příjemce.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-120">`FaultException<T>` provides the run-time mechanism for sending faults to consumers.</span></span>  
   
- <span data-ttu-id="ebd90-121">Je však užitečné při ladění, najdete v části interní podrobnosti o selhání služby.</span><span class="sxs-lookup"><span data-stu-id="ebd90-121">However, it is useful to see the internal details of a service failure when debugging.</span></span> <span data-ttu-id="ebd90-122">Chcete-li vypnout zabezpečené chování výše popsané, můžete určit, že podrobnosti o každé neošetřených výjimek na serveru by měl být součástí chybu, která je odeslána do klienta.</span><span class="sxs-lookup"><span data-stu-id="ebd90-122">To turn off the secure behavior previously described, you can indicate that the details of every unhandled exception on the server should be included in the fault that is sent to the client.</span></span> <span data-ttu-id="ebd90-123">To se provádí nastavením <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> k `true`.</span><span class="sxs-lookup"><span data-stu-id="ebd90-123">This is accomplished by setting <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> to `true`.</span></span> <span data-ttu-id="ebd90-124">Můžete buď ho nastavit v kódu nebo v konfiguraci, jak znázorňuje následující ukázka.</span><span class="sxs-lookup"><span data-stu-id="ebd90-124">You can either set it in code, or in configuration as shown in the following sample.</span></span>  
+ <span data-ttu-id="8e2a5-121">Je však užitečné při ladění, najdete v části interní podrobnosti o selhání služby.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-121">However, it is useful to see the internal details of a service failure when debugging.</span></span> <span data-ttu-id="8e2a5-122">Chcete-li vypnout zabezpečené chování výše popsané, můžete určit, že podrobnosti o každé neošetřených výjimek na serveru by měl být součástí chybu, která je odeslána do klienta.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-122">To turn off the secure behavior previously described, you can indicate that the details of every unhandled exception on the server should be included in the fault that is sent to the client.</span></span> <span data-ttu-id="8e2a5-123">To se provádí nastavením <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> k `true`.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-123">This is accomplished by setting <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> to `true`.</span></span> <span data-ttu-id="8e2a5-124">Můžete buď ho nastavit v kódu nebo v konfiguraci, jak znázorňuje následující ukázka.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-124">You can either set it in code, or in configuration as shown in the following sample.</span></span>  
   
 ```xml  
 <behaviors>  
@@ -124,27 +113,27 @@ catch (FaultException<MathFault> e)
 </behaviors>  
 ```  
   
- <span data-ttu-id="ebd90-125">Navíc chování musí být přidružen službu nastavením `behaviorConfiguration` atribut služby v konfiguračním souboru na "CalculatorServiceBehavior".</span><span class="sxs-lookup"><span data-stu-id="ebd90-125">Further, the behavior must be associated with the service by setting the `behaviorConfiguration` attribute of the service in the configuration file to "CalculatorServiceBehavior".</span></span>  
+ <span data-ttu-id="8e2a5-125">Navíc chování musí být přidružen službu nastavením `behaviorConfiguration` atribut služby v konfiguračním souboru na "CalculatorServiceBehavior".</span><span class="sxs-lookup"><span data-stu-id="8e2a5-125">Further, the behavior must be associated with the service by setting the `behaviorConfiguration` attribute of the service in the configuration file to "CalculatorServiceBehavior".</span></span>  
   
- <span data-ttu-id="ebd90-126">K zachycení takové chyby u klienta, neobecnou <xref:System.ServiceModel.FaultException> musí být zachycena.</span><span class="sxs-lookup"><span data-stu-id="ebd90-126">To catch such faults on the client, the non-generic <xref:System.ServiceModel.FaultException> must be caught.</span></span>  
+ <span data-ttu-id="8e2a5-126">K zachycení takové chyby u klienta, neobecnou <xref:System.ServiceModel.FaultException> musí být zachycena.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-126">To catch such faults on the client, the non-generic <xref:System.ServiceModel.FaultException> must be caught.</span></span>  
   
- <span data-ttu-id="ebd90-127">Toto chování lze používat pouze pro účely ladění a nikdy by měla být povolená v produkčním prostředí.</span><span class="sxs-lookup"><span data-stu-id="ebd90-127">This behavior should only be used for debugging purposes and should never be enabled in production.</span></span>  
+ <span data-ttu-id="8e2a5-127">Toto chování lze používat pouze pro účely ladění a nikdy by měla být povolená v produkčním prostředí.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-127">This behavior should only be used for debugging purposes and should never be enabled in production.</span></span>  
   
-### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="ebd90-128">Pokud chcete nastavit, sestavit a spustit ukázku</span><span class="sxs-lookup"><span data-stu-id="ebd90-128">To set up, build, and run the sample</span></span>  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="8e2a5-128">Pokud chcete nastavit, sestavit a spustit ukázku</span><span class="sxs-lookup"><span data-stu-id="8e2a5-128">To set up, build, and run the sample</span></span>  
   
-1.  <span data-ttu-id="ebd90-129">Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="ebd90-129">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
+1.  <span data-ttu-id="8e2a5-129">Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="8e2a5-129">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  <span data-ttu-id="ebd90-130">Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="ebd90-130">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+2.  <span data-ttu-id="8e2a5-130">Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="8e2a5-130">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  <span data-ttu-id="ebd90-131">Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="ebd90-131">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
+3.  <span data-ttu-id="8e2a5-131">Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="8e2a5-131">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="ebd90-132">Ukázky může být již nainstalována na váš počítač.</span><span class="sxs-lookup"><span data-stu-id="ebd90-132">The samples may already be installed on your machine.</span></span> <span data-ttu-id="ebd90-133">Před pokračováním zkontrolovat na následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="ebd90-133">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="8e2a5-132">Ukázky může být již nainstalována na váš počítač.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-132">The samples may already be installed on your machine.</span></span> <span data-ttu-id="8e2a5-133">Před pokračováním zkontrolovat na následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="8e2a5-133">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="ebd90-134">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="ebd90-134">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="ebd90-135">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="ebd90-135">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="8e2a5-134">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-134">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="8e2a5-135">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="8e2a5-135">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Faults`  
   
-## <a name="see-also"></a><span data-ttu-id="ebd90-136">Viz také</span><span class="sxs-lookup"><span data-stu-id="ebd90-136">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8e2a5-136">Viz také</span><span class="sxs-lookup"><span data-stu-id="8e2a5-136">See Also</span></span>
