@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744064"
 ---
 # <a name="how-to-obtain-type-and-member-information-from-an-assembly"></a><span data-ttu-id="f8822-102">Postupy: Získávání informací o typu a členu ze sestavení</span><span class="sxs-lookup"><span data-stu-id="f8822-102">How to: Obtain Type and Member Information from an Assembly</span></span>
 <span data-ttu-id="f8822-103"><xref:System.Reflection> Obor názvů obsahuje mnoho metody pro získání informací ze sestavení.</span><span class="sxs-lookup"><span data-stu-id="f8822-103">The <xref:System.Reflection> namespace contains many methods for obtaining information from an assembly.</span></span> <span data-ttu-id="f8822-104">V této části ukážeme jednu z těchto metod.</span><span class="sxs-lookup"><span data-stu-id="f8822-104">This section demonstrates one of these methods.</span></span> <span data-ttu-id="f8822-105">Další informace najdete v tématu [Přehled reflexe](../../../docs/framework/reflection-and-codedom/reflection.md).</span><span class="sxs-lookup"><span data-stu-id="f8822-105">For additional information, see [Reflection Overview](../../../docs/framework/reflection-and-codedom/reflection.md).</span></span>  

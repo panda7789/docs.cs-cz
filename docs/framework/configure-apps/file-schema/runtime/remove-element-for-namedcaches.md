@@ -13,6 +13,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745211"
 ---
 # <a name="ltremovegt-element-for-ltnamedcachesgt"></a><span data-ttu-id="1168a-102">&lt;Odebrat&gt; Element pro &lt;namedCaches&gt;</span><span class="sxs-lookup"><span data-stu-id="1168a-102">&lt;remove&gt; Element for &lt;namedCaches&gt;</span></span>
 <span data-ttu-id="1168a-103">Odebere položku s názvem mezipaměti z `namedCaches` kolekci pro mezipaměť.</span><span class="sxs-lookup"><span data-stu-id="1168a-103">Removes a named cache entry from the `namedCaches` collection for a memory cache.</span></span>  

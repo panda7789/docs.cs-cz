@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741890"
 ---
 # <a name="ltsmtpgt-element-network-settings"></a><span data-ttu-id="21468-102">&lt;SMTP&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="21468-102">&lt;smtp&gt; Element (Network Settings)</span></span>
 <span data-ttu-id="21468-103">Nakonfiguruje formát doručení, metodu doručení a z adresy pro odesílání e-mailů.</span><span class="sxs-lookup"><span data-stu-id="21468-103">Configures the delivery format, delivery method, and from address for sending emails.</span></span>  

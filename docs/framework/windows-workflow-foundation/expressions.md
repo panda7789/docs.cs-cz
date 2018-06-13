@@ -1,35 +1,24 @@
 ---
 title: Expressions1
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: c42341a9-43a1-462c-bffb-c5de004aa428
-caps.latest.revision: 17
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 805a49d45da308744fc528b63e8a74bb69bbd124
-ms.sourcegitcommit: 94d33cadc5ff81d2ac389bf5f26422c227832052
+ms.openlocfilehash: 015bf50fc718881ee4e67d17298031ef0f94d4cb
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33514883"
 ---
-# <a name="expressions"></a><span data-ttu-id="f2aa2-102">Výrazy</span><span class="sxs-lookup"><span data-stu-id="f2aa2-102">Expressions</span></span>
-<span data-ttu-id="f2aa2-103">Výraz Windows Workflow Foundation (WF) je aktivit, které vrací výsledek.</span><span class="sxs-lookup"><span data-stu-id="f2aa2-103">A Windows Workflow Foundation (WF) expression is any activity that returns a result.</span></span> <span data-ttu-id="f2aa2-104">Všechny aktivity výraz nepřímo odvozeny od <xref:System.Activities.Activity%601>, který obsahuje <xref:System.Activities.OutArgument> vlastnost s názvem <xref:System.Activities.Activity%601.Result%2A> jako návratová hodnota aktivity.</span><span class="sxs-lookup"><span data-stu-id="f2aa2-104">All expression activities derive indirectly from <xref:System.Activities.Activity%601>, which contains an <xref:System.Activities.OutArgument> property named <xref:System.Activities.Activity%601.Result%2A> as the activity’s return value.</span></span> [!INCLUDE[wf1](../../../includes/wf1-md.md)]<span data-ttu-id="f2aa2-105"> z jednoduché, jako jsou ty, které se dodává s širokou škálu aktivit výraz <xref:System.Activities.Expressions.VariableValue%601> a <xref:System.Activities.Expressions.VariableReference%601>, které poskytují přístup k proměnné jednoho pracovního postupu pomocí aktivity operátor pro komplexní aktivity, jako <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> v rámci této nabídky přístup k úplného spektra jazyka Visual Basic k vytvoření výsledku.</span><span class="sxs-lookup"><span data-stu-id="f2aa2-105"> ships with a wide range of expression activities from simple ones like <xref:System.Activities.Expressions.VariableValue%601> and <xref:System.Activities.Expressions.VariableReference%601>, which provide access to single workflow variable through operator activities, to complex activities such as <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> and <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> that offer access to the full breadth of Visual Basic language to produce the result.</span></span> <span data-ttu-id="f2aa2-106">Lze vytvořit další výraz aktivity odvozené z <xref:System.Activities.CodeActivity%601> nebo <xref:System.Activities.NativeActivity%601>.</span><span class="sxs-lookup"><span data-stu-id="f2aa2-106">Additional expression activities can be created by deriving from <xref:System.Activities.CodeActivity%601> or <xref:System.Activities.NativeActivity%601>.</span></span>  
+# <a name="expressions"></a><span data-ttu-id="30a4f-102">Výrazy</span><span class="sxs-lookup"><span data-stu-id="30a4f-102">Expressions</span></span>
+<span data-ttu-id="30a4f-103">Výraz Windows Workflow Foundation (WF) je aktivit, které vrací výsledek.</span><span class="sxs-lookup"><span data-stu-id="30a4f-103">A Windows Workflow Foundation (WF) expression is any activity that returns a result.</span></span> <span data-ttu-id="30a4f-104">Všechny aktivity výraz nepřímo odvozeny od <xref:System.Activities.Activity%601>, který obsahuje <xref:System.Activities.OutArgument> vlastnost s názvem <xref:System.Activities.Activity%601.Result%2A> jako návratová hodnota aktivity.</span><span class="sxs-lookup"><span data-stu-id="30a4f-104">All expression activities derive indirectly from <xref:System.Activities.Activity%601>, which contains an <xref:System.Activities.OutArgument> property named <xref:System.Activities.Activity%601.Result%2A> as the activity’s return value.</span></span> [!INCLUDE[wf1](../../../includes/wf1-md.md)]<span data-ttu-id="30a4f-105"> z jednoduché, jako jsou ty, které se dodává s širokou škálu aktivit výraz <xref:System.Activities.Expressions.VariableValue%601> a <xref:System.Activities.Expressions.VariableReference%601>, které poskytují přístup k proměnné jednoho pracovního postupu pomocí aktivity operátor pro komplexní aktivity, jako <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> v rámci této nabídky přístup k úplného spektra jazyka Visual Basic k vytvoření výsledku.</span><span class="sxs-lookup"><span data-stu-id="30a4f-105"> ships with a wide range of expression activities from simple ones like <xref:System.Activities.Expressions.VariableValue%601> and <xref:System.Activities.Expressions.VariableReference%601>, which provide access to single workflow variable through operator activities, to complex activities such as <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> and <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> that offer access to the full breadth of Visual Basic language to produce the result.</span></span> <span data-ttu-id="30a4f-106">Lze vytvořit další výraz aktivity odvozené z <xref:System.Activities.CodeActivity%601> nebo <xref:System.Activities.NativeActivity%601>.</span><span class="sxs-lookup"><span data-stu-id="30a4f-106">Additional expression activities can be created by deriving from <xref:System.Activities.CodeActivity%601> or <xref:System.Activities.NativeActivity%601>.</span></span>  
   
-## <a name="using-expressions"></a><span data-ttu-id="f2aa2-107">Pomocí výrazů</span><span class="sxs-lookup"><span data-stu-id="f2aa2-107">Using Expressions</span></span>  
- <span data-ttu-id="f2aa2-108">Návrhář postupu provádění používá <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> pro všechny výrazy v projektech Visual Basic a <xref:Microsoft.CSharp.Activities.CSharpValue%601> a <xref:Microsoft.CSharp.Activities.CSharpReference%601> pro výrazy v pracovním postupu projektů C#.</span><span class="sxs-lookup"><span data-stu-id="f2aa2-108">Workflow designer uses <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> and <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> for all expressions in Visual Basic projects, and <xref:Microsoft.CSharp.Activities.CSharpValue%601> and <xref:Microsoft.CSharp.Activities.CSharpReference%601> for expressions in C# workflow projects.</span></span>  
+## <a name="using-expressions"></a><span data-ttu-id="30a4f-107">Pomocí výrazů</span><span class="sxs-lookup"><span data-stu-id="30a4f-107">Using Expressions</span></span>  
+ <span data-ttu-id="30a4f-108">Návrhář postupu provádění používá <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> pro všechny výrazy v projektech Visual Basic a <xref:Microsoft.CSharp.Activities.CSharpValue%601> a <xref:Microsoft.CSharp.Activities.CSharpReference%601> pro výrazy v pracovním postupu projektů C#.</span><span class="sxs-lookup"><span data-stu-id="30a4f-108">Workflow designer uses <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> and <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> for all expressions in Visual Basic projects, and <xref:Microsoft.CSharp.Activities.CSharpValue%601> and <xref:Microsoft.CSharp.Activities.CSharpReference%601> for expressions in C# workflow projects.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="f2aa2-109">Podpora pro výrazy jazyka C# v projektech pracovního postupu byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="f2aa2-109">Support for C# expressions in workflow projects was introduced in [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].</span></span> <span data-ttu-id="f2aa2-110">Další informace najdete v tématu [výrazy jazyka C#](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="f2aa2-110">For more information, see [C# Expressions](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md).</span></span>  
+>  <span data-ttu-id="30a4f-109">Podpora pro výrazy jazyka C# v projektech pracovního postupu byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="30a4f-109">Support for C# expressions in workflow projects was introduced in [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].</span></span> <span data-ttu-id="30a4f-110">Další informace najdete v tématu [výrazy jazyka C#](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="30a4f-110">For more information, see [C# Expressions](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md).</span></span>  
   
- <span data-ttu-id="f2aa2-111">V jazyce XAML, kde se zobrazí výrazy závorkách v hranatých závorkách, jako v následujícím příkladu se uloží vyprodukované návrháře pracovních postupů.</span><span class="sxs-lookup"><span data-stu-id="f2aa2-111">Workflows produced by designer are saved in XAML, where expressions appear enclosed in square brackets, as in the following example.</span></span>  
+ <span data-ttu-id="30a4f-111">V jazyce XAML, kde se zobrazí výrazy závorkách v hranatých závorkách, jako v následujícím příkladu se uloží vyprodukované návrháře pracovních postupů.</span><span class="sxs-lookup"><span data-stu-id="30a4f-111">Workflows produced by designer are saved in XAML, where expressions appear enclosed in square brackets, as in the following example.</span></span>  
   
 ```xml  
 <Sequence xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">  
@@ -50,7 +39,7 @@ ms.lasthandoff: 04/30/2018
 </Sequence>  
 ```  
   
- <span data-ttu-id="f2aa2-112">Při definování pracovního postupu v kódu, dá se žádné aktivity výraz.</span><span class="sxs-lookup"><span data-stu-id="f2aa2-112">When defining a workflow in code, any expression activities can be used.</span></span> <span data-ttu-id="f2aa2-113">Následující příklad ukazuje použití složení operátor aktivit a přidejte tři číslice.</span><span class="sxs-lookup"><span data-stu-id="f2aa2-113">The following example shows the usage of a composition of operator activities to add three numbers.</span></span>  
+ <span data-ttu-id="30a4f-112">Při definování pracovního postupu v kódu, dá se žádné aktivity výraz.</span><span class="sxs-lookup"><span data-stu-id="30a4f-112">When defining a workflow in code, any expression activities can be used.</span></span> <span data-ttu-id="30a4f-113">Následující příklad ukazuje použití složení operátor aktivit a přidejte tři číslice.</span><span class="sxs-lookup"><span data-stu-id="30a4f-113">The following example shows the usage of a composition of operator activities to add three numbers.</span></span>  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -79,7 +68,7 @@ Sequence w = new Sequence
 };  
 ```  
   
- <span data-ttu-id="f2aa2-114">Témže pracovním postupu může být vyjádřený více kompaktně pomocí jazyka C# výrazy lambda, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="f2aa2-114">The same workflow can be expressed more compactly by using C# lambda expressions, as shown in the following example.</span></span>  
+ <span data-ttu-id="30a4f-114">Témže pracovním postupu může být vyjádřený více kompaktně pomocí jazyka C# výrazy lambda, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="30a4f-114">The same workflow can be expressed more compactly by using C# lambda expressions, as shown in the following example.</span></span>  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -100,7 +89,7 @@ Sequence w = new Sequence
 };  
 ```  
   
- <span data-ttu-id="f2aa2-115">Pracovní postup lze také vyjádřit pomocí aktivity výrazu jazyka Visual Basic, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="f2aa2-115">The workflow can also be expressed by using Visual Basic expression activities, as shown in the following example.</span></span>  
+ <span data-ttu-id="30a4f-115">Pracovní postup lze také vyjádřit pomocí aktivity výrazu jazyka Visual Basic, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="30a4f-115">The workflow can also be expressed by using Visual Basic expression activities, as shown in the following example.</span></span>  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -121,8 +110,8 @@ Sequence w = new Sequence
 };  
 ```  
   
-## <a name="extending-available-expressions-with-custom-expression-activities"></a><span data-ttu-id="f2aa2-116">Rozšíření k dispozici výrazy s aktivitami vlastního výrazu</span><span class="sxs-lookup"><span data-stu-id="f2aa2-116">Extending Available Expressions with Custom Expression Activities</span></span>  
- <span data-ttu-id="f2aa2-117">Výrazy v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] jsou extensible povolení pro další výraz aktivity, který se má vytvořit.</span><span class="sxs-lookup"><span data-stu-id="f2aa2-117">Expressions in [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] are extensible allowing for additional expression activities to be created.</span></span> <span data-ttu-id="f2aa2-118">Následující příklad ukazuje aktivitu, která vrací součet tři celočíselné hodnoty.</span><span class="sxs-lookup"><span data-stu-id="f2aa2-118">The following example shows an activity that returns a sum of three integer values.</span></span>  
+## <a name="extending-available-expressions-with-custom-expression-activities"></a><span data-ttu-id="30a4f-116">Rozšíření k dispozici výrazy s aktivitami vlastního výrazu</span><span class="sxs-lookup"><span data-stu-id="30a4f-116">Extending Available Expressions with Custom Expression Activities</span></span>  
+ <span data-ttu-id="30a4f-117">Výrazy v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] jsou extensible povolení pro další výraz aktivity, který se má vytvořit.</span><span class="sxs-lookup"><span data-stu-id="30a4f-117">Expressions in [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] are extensible allowing for additional expression activities to be created.</span></span> <span data-ttu-id="30a4f-118">Následující příklad ukazuje aktivitu, která vrací součet tři celočíselné hodnoty.</span><span class="sxs-lookup"><span data-stu-id="30a4f-118">The following example shows an activity that returns a sum of three integer values.</span></span>  
   
 ```  
 using System;  
@@ -149,7 +138,7 @@ namespace ExpressionsDemo
 }  
 ```  
   
- <span data-ttu-id="f2aa2-119">Pomocí této nové aktivity je možné přepsat předchozí pracovního postupu, který přidat tři hodnoty, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="f2aa2-119">With this new activity you can rewrite the previous workflow that added three values as shown in the following example.</span></span>  
+ <span data-ttu-id="30a4f-119">Pomocí této nové aktivity je možné přepsat předchozí pracovního postupu, který přidat tři hodnoty, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="30a4f-119">With this new activity you can rewrite the previous workflow that added three values as shown in the following example.</span></span>  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -176,4 +165,4 @@ Sequence w = new Sequence
 };  
 ```  
   
- <span data-ttu-id="f2aa2-120">Další informace o používání výrazy v kódu najdete v tématu [vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kód](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).</span><span class="sxs-lookup"><span data-stu-id="f2aa2-120">For more information about using expressions in code, see [Authoring Workflows, Activities, and Expressions Using Imperative Code](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).</span></span>
+ <span data-ttu-id="30a4f-120">Další informace o používání výrazy v kódu najdete v tématu [vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kód](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).</span><span class="sxs-lookup"><span data-stu-id="30a4f-120">For more information about using expressions in code, see [Authoring Workflows, Activities, and Expressions Using Imperative Code](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).</span></span>

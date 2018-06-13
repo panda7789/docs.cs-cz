@@ -1,51 +1,38 @@
 ---
 title: Generování kódu v technologii LINQ to SQL
-ms.custom: ''
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: ''
-ms.suite: ''
-ms.technology:
-- dotnet-ado
-ms.tgt_pltfrm: ''
-ms.topic: article
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-caps.latest.revision: 4
-author: douglaslMS
-ms.author: douglasl
-manager: craigg
-ms.workload:
-- dotnet
-ms.openlocfilehash: ff543efecb65e61fecef0056650b35735bef83c0
-ms.sourcegitcommit: 86adcc06e35390f13c1e372c36d2e044f1fc31ef
+ms.openlocfilehash: 0345e48061132626fb714f00e44cb5637879f94a
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33363377"
 ---
-# <a name="code-generation-in-linq-to-sql"></a><span data-ttu-id="3638a-102">Generování kódu v technologii LINQ to SQL</span><span class="sxs-lookup"><span data-stu-id="3638a-102">Code Generation in LINQ to SQL</span></span>
-<span data-ttu-id="3638a-103">Mohou generovat kód k reprezentaci databáze pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] nebo nástroj příkazového řádku na SQLMetal.</span><span class="sxs-lookup"><span data-stu-id="3638a-103">You can generate code to represent a database by using either the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] or the SQLMetal command-line tool.</span></span> <span data-ttu-id="3638a-104">V obou případech generování kódu začátku do konce skládá ze tří fází:</span><span class="sxs-lookup"><span data-stu-id="3638a-104">In either case, end-to-end code generation occurs in three stages:</span></span>  
+# <a name="code-generation-in-linq-to-sql"></a><span data-ttu-id="b3632-102">Generování kódu v technologii LINQ to SQL</span><span class="sxs-lookup"><span data-stu-id="b3632-102">Code Generation in LINQ to SQL</span></span>
+<span data-ttu-id="b3632-103">Mohou generovat kód k reprezentaci databáze pomocí [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] nebo nástroj příkazového řádku na SQLMetal.</span><span class="sxs-lookup"><span data-stu-id="b3632-103">You can generate code to represent a database by using either the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] or the SQLMetal command-line tool.</span></span> <span data-ttu-id="b3632-104">V obou případech generování kódu začátku do konce skládá ze tří fází:</span><span class="sxs-lookup"><span data-stu-id="b3632-104">In either case, end-to-end code generation occurs in three stages:</span></span>  
   
-1.  <span data-ttu-id="3638a-105">*Extraktor* extrahuje informace o schématu z databáze a znovu seskupí informace do souboru DBML formátu XML.</span><span class="sxs-lookup"><span data-stu-id="3638a-105">The *DBML Extractor* extracts schema information from the database and reassembles the information into an XML-formatted DBML file.</span></span>  
+1.  <span data-ttu-id="b3632-105">*Extraktor* extrahuje informace o schématu z databáze a znovu seskupí informace do souboru DBML formátu XML.</span><span class="sxs-lookup"><span data-stu-id="b3632-105">The *DBML Extractor* extracts schema information from the database and reassembles the information into an XML-formatted DBML file.</span></span>  
   
-2.  <span data-ttu-id="3638a-106">Je skenovalo souboru DBML *DBML validátoru* chyby.</span><span class="sxs-lookup"><span data-stu-id="3638a-106">The DBML file is scanned by the *DBML Validator* for errors.</span></span>  
+2.  <span data-ttu-id="b3632-106">Je skenovalo souboru DBML *DBML validátoru* chyby.</span><span class="sxs-lookup"><span data-stu-id="b3632-106">The DBML file is scanned by the *DBML Validator* for errors.</span></span>  
   
-3.  <span data-ttu-id="3638a-107">Pokud se zobrazí žádné chyby ověření, soubor je předán generátor kódu.</span><span class="sxs-lookup"><span data-stu-id="3638a-107">If no validation errors appear, the file is passed to the Code Generator.</span></span>  
+3.  <span data-ttu-id="b3632-107">Pokud se zobrazí žádné chyby ověření, soubor je předán generátor kódu.</span><span class="sxs-lookup"><span data-stu-id="b3632-107">If no validation errors appear, the file is passed to the Code Generator.</span></span>  
   
- <span data-ttu-id="3638a-108">Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span><span class="sxs-lookup"><span data-stu-id="3638a-108">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span></span> <span data-ttu-id="3638a-109">Vývojáři pomocí sady Visual Studio můžete také použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] ke generování kódu.</span><span class="sxs-lookup"><span data-stu-id="3638a-109">Developers using Visual Studio can also use the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] to generate code.</span></span> <span data-ttu-id="3638a-110">V tématu [technologie LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).</span><span class="sxs-lookup"><span data-stu-id="3638a-110">See [LINQ to SQL Tools in Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).</span></span>  
+ <span data-ttu-id="b3632-108">Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span><span class="sxs-lookup"><span data-stu-id="b3632-108">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span></span> <span data-ttu-id="b3632-109">Vývojáři pomocí sady Visual Studio můžete také použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] ke generování kódu.</span><span class="sxs-lookup"><span data-stu-id="b3632-109">Developers using Visual Studio can also use the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] to generate code.</span></span> <span data-ttu-id="b3632-110">V tématu [technologie LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).</span><span class="sxs-lookup"><span data-stu-id="b3632-110">See [LINQ to SQL Tools in Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).</span></span>  
   
-## <a name="dbml-extractor"></a><span data-ttu-id="3638a-111">Extraktor</span><span class="sxs-lookup"><span data-stu-id="3638a-111">DBML Extractor</span></span>  
- <span data-ttu-id="3638a-112">Je Extraktor [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] komponenty, která přebírá metadata databáze jako vstup a vytvoří soubor DBML jako výstup.</span><span class="sxs-lookup"><span data-stu-id="3638a-112">The DBML Extractor is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that takes database metadata as input and produces a DBML file as output.</span></span>  
+## <a name="dbml-extractor"></a><span data-ttu-id="b3632-111">Extraktor</span><span class="sxs-lookup"><span data-stu-id="b3632-111">DBML Extractor</span></span>  
+ <span data-ttu-id="b3632-112">Je Extraktor [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] komponenty, která přebírá metadata databáze jako vstup a vytvoří soubor DBML jako výstup.</span><span class="sxs-lookup"><span data-stu-id="b3632-112">The DBML Extractor is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that takes database metadata as input and produces a DBML file as output.</span></span>  
   
-## <a name="code-generator"></a><span data-ttu-id="3638a-113">Generátor kódu</span><span class="sxs-lookup"><span data-stu-id="3638a-113">Code Generator</span></span>  
- <span data-ttu-id="3638a-114">Generátor kódu je [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] součást, který překládá DBML souborů do jazyka Visual Basic, C# nebo XML mapování souborů.</span><span class="sxs-lookup"><span data-stu-id="3638a-114">The Code Generator is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that translates DBML files to Visual Basic, C#, or XML mapping files.</span></span>  
+## <a name="code-generator"></a><span data-ttu-id="b3632-113">Generátor kódu</span><span class="sxs-lookup"><span data-stu-id="b3632-113">Code Generator</span></span>  
+ <span data-ttu-id="b3632-114">Generátor kódu je [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] součást, který překládá DBML souborů do jazyka Visual Basic, C# nebo XML mapování souborů.</span><span class="sxs-lookup"><span data-stu-id="b3632-114">The Code Generator is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that translates DBML files to Visual Basic, C#, or XML mapping files.</span></span>  
   
-## <a name="xml-schema-definition-file"></a><span data-ttu-id="3638a-115">Soubor definice schématu XML</span><span class="sxs-lookup"><span data-stu-id="3638a-115">XML Schema Definition File</span></span>  
- <span data-ttu-id="3638a-116">Souboru DBML musí být platná proti následující definice schématu jako soubor XSD.</span><span class="sxs-lookup"><span data-stu-id="3638a-116">The DBML file must be valid against the following schema definition as an XSD file.</span></span>  
+## <a name="xml-schema-definition-file"></a><span data-ttu-id="b3632-115">Soubor definice schématu XML</span><span class="sxs-lookup"><span data-stu-id="b3632-115">XML Schema Definition File</span></span>  
+ <span data-ttu-id="b3632-116">Souboru DBML musí být platná proti následující definice schématu jako soubor XSD.</span><span class="sxs-lookup"><span data-stu-id="b3632-116">The DBML file must be valid against the following schema definition as an XSD file.</span></span>  
   
- <span data-ttu-id="3638a-117">Tento soubor definice schématu z definičního souboru schématu, která se používá k ověření souboru externí mapování rozlišit.</span><span class="sxs-lookup"><span data-stu-id="3638a-117">Distinguish this schema definition file from the schema definition file that is used to validate an external mapping file.</span></span> <span data-ttu-id="3638a-118">Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)).</span><span class="sxs-lookup"><span data-stu-id="3638a-118">For more information, see [External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)).</span></span>  
+ <span data-ttu-id="b3632-117">Tento soubor definice schématu z definičního souboru schématu, která se používá k ověření souboru externí mapování rozlišit.</span><span class="sxs-lookup"><span data-stu-id="b3632-117">Distinguish this schema definition file from the schema definition file that is used to validate an external mapping file.</span></span> <span data-ttu-id="b3632-118">Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)).</span><span class="sxs-lookup"><span data-stu-id="b3632-118">For more information, see [External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)).</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="3638a-119">Uživatelé sady Visual Studio také najít tento soubor XSD v dialogovém okně schémat XML jako "DbmlSchema.xsd".</span><span class="sxs-lookup"><span data-stu-id="3638a-119">Visual Studio users will also find this XSD file in the XML Schemas dialog box as "DbmlSchema.xsd".</span></span> <span data-ttu-id="3638a-120">Pokud chcete použít soubor XSD správně pro ověření souboru DBML, najdete v části [postupy: ověření DBML a externí soubory mapování](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span><span class="sxs-lookup"><span data-stu-id="3638a-120">To use the XSD file correctly for validating a DBML file, see [How to: Validate DBML and External Mapping Files](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
+>  <span data-ttu-id="b3632-119">Uživatelé sady Visual Studio také najít tento soubor XSD v dialogovém okně schémat XML jako "DbmlSchema.xsd".</span><span class="sxs-lookup"><span data-stu-id="b3632-119">Visual Studio users will also find this XSD file in the XML Schemas dialog box as "DbmlSchema.xsd".</span></span> <span data-ttu-id="b3632-120">Pokud chcete použít soubor XSD správně pro ověření souboru DBML, najdete v části [postupy: ověření DBML a externí soubory mapování](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span><span class="sxs-lookup"><span data-stu-id="b3632-120">To use the XSD file correctly for validating a DBML file, see [How to: Validate DBML and External Mapping Files](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
   
 ```  
 ?<?xml version="1.0" encoding="utf-16"?>  
@@ -255,8 +242,8 @@ elementFormDefault="qualified" >
 </xs:schema>  
 ```  
   
-## <a name="sample-dbml-file"></a><span data-ttu-id="3638a-121">Ukázkový soubor DBML</span><span class="sxs-lookup"><span data-stu-id="3638a-121">Sample DBML File</span></span>  
- <span data-ttu-id="3638a-122">Následující kód je výňatek ze souboru DBML vytvořené z ukázková databáze Northwind.</span><span class="sxs-lookup"><span data-stu-id="3638a-122">The following code is an excerpt from the DBML file created from the Northwind sample database.</span></span> <span data-ttu-id="3638a-123">Celý soubor můžete vygenerovat pomocí na SQLMetal s **XML** možnost.</span><span class="sxs-lookup"><span data-stu-id="3638a-123">You can generate the whole file by using SQLMetal with the **/xml** option.</span></span> <span data-ttu-id="3638a-124">Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span><span class="sxs-lookup"><span data-stu-id="3638a-124">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span></span>  
+## <a name="sample-dbml-file"></a><span data-ttu-id="b3632-121">Ukázkový soubor DBML</span><span class="sxs-lookup"><span data-stu-id="b3632-121">Sample DBML File</span></span>  
+ <span data-ttu-id="b3632-122">Následující kód je výňatek ze souboru DBML vytvořené z ukázková databáze Northwind.</span><span class="sxs-lookup"><span data-stu-id="b3632-122">The following code is an excerpt from the DBML file created from the Northwind sample database.</span></span> <span data-ttu-id="b3632-123">Celý soubor můžete vygenerovat pomocí na SQLMetal s **XML** možnost.</span><span class="sxs-lookup"><span data-stu-id="b3632-123">You can generate the whole file by using SQLMetal with the **/xml** option.</span></span> <span data-ttu-id="b3632-124">Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span><span class="sxs-lookup"><span data-stu-id="b3632-124">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-16"?>  
@@ -282,9 +269,9 @@ elementFormDefault="qualified" >
 </Database>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="3638a-125">Viz také</span><span class="sxs-lookup"><span data-stu-id="3638a-125">See Also</span></span>  
- [<span data-ttu-id="3638a-126">Základní informace</span><span class="sxs-lookup"><span data-stu-id="3638a-126">Background Information</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
- [<span data-ttu-id="3638a-127">Externí mapování</span><span class="sxs-lookup"><span data-stu-id="3638a-127">External Mapping</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
- [<span data-ttu-id="3638a-128">Postupy: Generování objektového modelu jako externího souboru</span><span class="sxs-lookup"><span data-stu-id="3638a-128">How to: Generate the Object Model as an External File</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)  
- [<span data-ttu-id="3638a-129">Stažení ukázkových databází</span><span class="sxs-lookup"><span data-stu-id="3638a-129">Downloading Sample Databases</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
- [<span data-ttu-id="3638a-130">Referenční informace</span><span class="sxs-lookup"><span data-stu-id="3638a-130">Reference</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+## <a name="see-also"></a><span data-ttu-id="b3632-125">Viz také</span><span class="sxs-lookup"><span data-stu-id="b3632-125">See Also</span></span>  
+ [<span data-ttu-id="b3632-126">Základní informace</span><span class="sxs-lookup"><span data-stu-id="b3632-126">Background Information</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
+ [<span data-ttu-id="b3632-127">Externí mapování</span><span class="sxs-lookup"><span data-stu-id="b3632-127">External Mapping</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
+ [<span data-ttu-id="b3632-128">Postupy: Generování objektového modelu jako externího souboru</span><span class="sxs-lookup"><span data-stu-id="b3632-128">How to: Generate the Object Model as an External File</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)  
+ [<span data-ttu-id="b3632-129">Stažení ukázkových databází</span><span class="sxs-lookup"><span data-stu-id="b3632-129">Downloading Sample Databases</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
+ [<span data-ttu-id="b3632-130">Referenční informace</span><span class="sxs-lookup"><span data-stu-id="b3632-130">Reference</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)

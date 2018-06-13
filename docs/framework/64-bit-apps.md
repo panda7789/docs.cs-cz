@@ -13,6 +13,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32744272"
 ---
 # <a name="64-bit-applications"></a><span data-ttu-id="60e3d-102">64bitové aplikace</span><span class="sxs-lookup"><span data-stu-id="60e3d-102">64-bit Applications</span></span>
 <span data-ttu-id="60e3d-103">Při kompilaci aplikace, můžete určit, že ji měly být spuštěny v operačním systému Windows 64-bit buď jako nativní aplikace nebo WOW64 (Windows 32-bit na Windows 64-bit).</span><span class="sxs-lookup"><span data-stu-id="60e3d-103">When you compile an application, you can specify that it should run on a Windows 64-bit operating system either as a native application or under WOW64 (Windows 32-bit on Windows 64-bit).</span></span> <span data-ttu-id="60e3d-104">Subsystém WOW64 je kompatibility prostředí umožňující 32bitovou aplikaci spustit v 64bitovém systému.</span><span class="sxs-lookup"><span data-stu-id="60e3d-104">WOW64 is a compatibility environment that enables a 32-bit application to run on a 64-bit system.</span></span> <span data-ttu-id="60e3d-105">Subsystém WOW64 je zahrnutá ve všech verzích 64bitová verze operačního systému Windows.</span><span class="sxs-lookup"><span data-stu-id="60e3d-105">WOW64 is included in all 64-bit versions of the Windows operating system.</span></span>  

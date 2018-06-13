@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerCallback3::ProfilerDetachSucceeded – metoda"
-ms.custom: 
+title: ICorProfilerCallback3::ProfilerDetachSucceeded – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerCallback3.ProfilerDetachSucceeded Method
 api_location:
@@ -23,48 +15,45 @@ helpviewer_keywords:
 ms.assetid: 05164966-16ce-4cc9-a530-43a640c00711
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: d06671917094752287836800ebc492d5f0a5b595
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bffe293f7d29c34a22196336533202996f3fd129
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33454032"
 ---
-# <a name="icorprofilercallback3profilerdetachsucceeded-method"></a><span data-ttu-id="c4975-102">ICorProfilerCallback3::ProfilerDetachSucceeded – metoda</span><span class="sxs-lookup"><span data-stu-id="c4975-102">ICorProfilerCallback3::ProfilerDetachSucceeded Method</span></span>
-<span data-ttu-id="c4975-103">Upozorní profileru, že modul CLR (CLR) má uvolnit knihovnu DLL profileru.</span><span class="sxs-lookup"><span data-stu-id="c4975-103">Notifies the profiler that the common language runtime (CLR) is about to unload the profiler DLL.</span></span>  
+# <a name="icorprofilercallback3profilerdetachsucceeded-method"></a><span data-ttu-id="e4cdc-102">ICorProfilerCallback3::ProfilerDetachSucceeded – metoda</span><span class="sxs-lookup"><span data-stu-id="e4cdc-102">ICorProfilerCallback3::ProfilerDetachSucceeded Method</span></span>
+<span data-ttu-id="e4cdc-103">Upozorní profileru, že modul CLR (CLR) má uvolnit knihovnu DLL profileru.</span><span class="sxs-lookup"><span data-stu-id="e4cdc-103">Notifies the profiler that the common language runtime (CLR) is about to unload the profiler DLL.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c4975-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c4975-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e4cdc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e4cdc-104">Syntax</span></span>  
   
 ```  
 HRESULT ProfilerDetachSucceeded();  
 ```  
   
-## <a name="return-value"></a><span data-ttu-id="c4975-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c4975-105">Return Value</span></span>  
- <span data-ttu-id="c4975-106">Vrácená hodnota z této zpětné volání se ignoruje.</span><span class="sxs-lookup"><span data-stu-id="c4975-106">The return value from this callback is ignored.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="e4cdc-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="e4cdc-105">Return Value</span></span>  
+ <span data-ttu-id="e4cdc-106">Vrácená hodnota z této zpětné volání se ignoruje.</span><span class="sxs-lookup"><span data-stu-id="e4cdc-106">The return value from this callback is ignored.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="c4975-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c4975-107">Remarks</span></span>  
- <span data-ttu-id="c4975-108">`ProfilerDetachSucceeded` Zpětné volání se objeví po všechna vlákna se odpojili profileru kódu.</span><span class="sxs-lookup"><span data-stu-id="c4975-108">The `ProfilerDetachSucceeded` callback is issued after all threads have exited the profiler's code.</span></span> <span data-ttu-id="c4975-109">Když tato metoda je volána, proveďte profileru poslední minutu úkoly, které nejsou vhodné pro jeho destruktor, jako je například upozornění jeho uživatelského rozhraní nebo součást protokolování.</span><span class="sxs-lookup"><span data-stu-id="c4975-109">When this method is called, the profiler should perform any last-minute tasks that are not appropriate for its destructor, such as notifying its UI or logging component.</span></span> <span data-ttu-id="c4975-110">Ale profileru nesmějí provádět volání funkce na rozhraní, které jsou k dispozici CLR během této zpětného volání (například [icorprofilerinfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) nebo `IMetaData*` rozhraní).</span><span class="sxs-lookup"><span data-stu-id="c4975-110">However, the profiler must not call functions on interfaces that are provided by the CLR during this callback (such as the [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) or `IMetaData*` interfaces).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="e4cdc-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e4cdc-107">Remarks</span></span>  
+ <span data-ttu-id="e4cdc-108">`ProfilerDetachSucceeded` Zpětné volání se objeví po všechna vlákna se odpojili profileru kódu.</span><span class="sxs-lookup"><span data-stu-id="e4cdc-108">The `ProfilerDetachSucceeded` callback is issued after all threads have exited the profiler's code.</span></span> <span data-ttu-id="e4cdc-109">Když tato metoda je volána, proveďte profileru poslední minutu úkoly, které nejsou vhodné pro jeho destruktor, jako je například upozornění jeho uživatelského rozhraní nebo součást protokolování.</span><span class="sxs-lookup"><span data-stu-id="e4cdc-109">When this method is called, the profiler should perform any last-minute tasks that are not appropriate for its destructor, such as notifying its UI or logging component.</span></span> <span data-ttu-id="e4cdc-110">Ale profileru nesmějí provádět volání funkce na rozhraní, které jsou k dispozici CLR během této zpětného volání (například [icorprofilerinfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) nebo `IMetaData*` rozhraní).</span><span class="sxs-lookup"><span data-stu-id="e4cdc-110">However, the profiler must not call functions on interfaces that are provided by the CLR during this callback (such as the [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) or `IMetaData*` interfaces).</span></span>  
   
- <span data-ttu-id="c4975-111">Modul CLR vytvoří záznam v protokolu událostí aplikace systému Windows k označení, že byla úspěšně dokončena operace odpojení.</span><span class="sxs-lookup"><span data-stu-id="c4975-111">The CLR creates an entry in the Windows Application event log to indicate that the detach operation is successful.</span></span>  
+ <span data-ttu-id="e4cdc-111">Modul CLR vytvoří záznam v protokolu událostí aplikace systému Windows k označení, že byla úspěšně dokončena operace odpojení.</span><span class="sxs-lookup"><span data-stu-id="e4cdc-111">The CLR creates an entry in the Windows Application event log to indicate that the detach operation is successful.</span></span>  
   
- <span data-ttu-id="c4975-112">Po návratu profileru z této zpětného volání modulu CLR uvolní objekt profileru a uvolní profileru knihovny DLL.</span><span class="sxs-lookup"><span data-stu-id="c4975-112">After the profiler returns from this callback, the CLR releases the profiler object and unloads the profiler DLL.</span></span> <span data-ttu-id="c4975-113">Proto profileru nesmí provádět všechny akce, které by způsobily provádění nastat uvnitř profileru DLL po vrátí z této zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="c4975-113">Therefore, the profiler must not perform any actions that would cause execution to occur inside the profiler DLL after it returns from this callback.</span></span> <span data-ttu-id="c4975-114">Například nemůže vytvořit podprocesy ani registrace zpětných volání časovače.</span><span class="sxs-lookup"><span data-stu-id="c4975-114">For example, it must not create threads or register timer callbacks.</span></span>  
+ <span data-ttu-id="e4cdc-112">Po návratu profileru z této zpětného volání modulu CLR uvolní objekt profileru a uvolní profileru knihovny DLL.</span><span class="sxs-lookup"><span data-stu-id="e4cdc-112">After the profiler returns from this callback, the CLR releases the profiler object and unloads the profiler DLL.</span></span> <span data-ttu-id="e4cdc-113">Proto profileru nesmí provádět všechny akce, které by způsobily provádění nastat uvnitř profileru DLL po vrátí z této zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="e4cdc-113">Therefore, the profiler must not perform any actions that would cause execution to occur inside the profiler DLL after it returns from this callback.</span></span> <span data-ttu-id="e4cdc-114">Například nemůže vytvořit podprocesy ani registrace zpětných volání časovače.</span><span class="sxs-lookup"><span data-stu-id="e4cdc-114">For example, it must not create threads or register timer callbacks.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c4975-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c4975-115">Requirements</span></span>  
- <span data-ttu-id="c4975-116">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c4975-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e4cdc-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e4cdc-115">Requirements</span></span>  
+ <span data-ttu-id="e4cdc-116">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e4cdc-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c4975-117">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="c4975-117">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="e4cdc-117">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="e4cdc-117">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="c4975-118">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c4975-118">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="e4cdc-118">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e4cdc-118">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="c4975-119">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c4975-119">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="e4cdc-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e4cdc-119">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c4975-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="c4975-120">See Also</span></span>  
- [<span data-ttu-id="c4975-121">Rozhraní pro metadata</span><span class="sxs-lookup"><span data-stu-id="c4975-121">Metadata Interfaces</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
- [<span data-ttu-id="c4975-122">ICorProfilerInfo3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c4975-122">ICorProfilerInfo3 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)  
- [<span data-ttu-id="c4975-123">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="c4975-123">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [<span data-ttu-id="c4975-124">Profilace</span><span class="sxs-lookup"><span data-stu-id="c4975-124">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)
+## <a name="see-also"></a><span data-ttu-id="e4cdc-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="e4cdc-120">See Also</span></span>  
+ [<span data-ttu-id="e4cdc-121">Rozhraní pro metadata</span><span class="sxs-lookup"><span data-stu-id="e4cdc-121">Metadata Interfaces</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
+ [<span data-ttu-id="e4cdc-122">ICorProfilerInfo3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e4cdc-122">ICorProfilerInfo3 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)  
+ [<span data-ttu-id="e4cdc-123">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="e4cdc-123">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
+ [<span data-ttu-id="e4cdc-124">Profilace</span><span class="sxs-lookup"><span data-stu-id="e4cdc-124">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)
