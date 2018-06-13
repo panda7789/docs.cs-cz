@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764655"
 ---
 # <a name="top-entity-sql"></a><span data-ttu-id="c62f3-102">HORNÍ (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="c62f3-102">TOP (Entity SQL)</span></span>
 <span data-ttu-id="c62f3-103">Klauzule SELECT může obsahovat volitelné nejvyšší dílčí klauzuli následující volitelné modifikátor všechna nebo DISTINCT.</span><span class="sxs-lookup"><span data-stu-id="c62f3-103">The SELECT clause can have an optional TOP sub-clause following the optional ALL/DISTINCT modifier.</span></span> <span data-ttu-id="c62f3-104">Dílčí klauzule TOP Určuje, že bude vrácen pouze první sadu řádků z výsledku dotazu.</span><span class="sxs-lookup"><span data-stu-id="c62f3-104">The TOP sub-clause specifies that only the first set of rows will be returned from the query result.</span></span>  

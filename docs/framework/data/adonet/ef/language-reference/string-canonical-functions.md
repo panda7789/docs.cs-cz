@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766501"
 ---
 # <a name="string-canonical-functions"></a><span data-ttu-id="3d4a9-102">Kanonické funkce řetězce</span><span class="sxs-lookup"><span data-stu-id="3d4a9-102">String Canonical Functions</span></span>
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="3d4a9-103"> zahrnuje kanonické funkce řetězec.</span><span class="sxs-lookup"><span data-stu-id="3d4a9-103"> includes string canonical functions.</span></span>  

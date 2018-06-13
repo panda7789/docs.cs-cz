@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767060"
 ---
 # <a name="ltwindowsgt-of-ltclientcredentialsgt-element"></a><span data-ttu-id="6e450-102">&lt;windows&gt; elementu &lt;clientCredentials&gt;</span><span class="sxs-lookup"><span data-stu-id="6e450-102">&lt;windows&gt; of &lt;clientCredentials&gt; Element</span></span>
 <span data-ttu-id="6e450-103">Určuje nastavení pro pověření systému Windows, který se má použít k reprezentování klienta.</span><span class="sxs-lookup"><span data-stu-id="6e450-103">Specifies the settings for a Windows credential to be used to represent the client.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765786"
 ---
 # <a name="oracle-and-adonet"></a><span data-ttu-id="85429-102">Oracle a ADO.NET</span><span class="sxs-lookup"><span data-stu-id="85429-102">Oracle and ADO.NET</span></span>
 > [!NOTE]

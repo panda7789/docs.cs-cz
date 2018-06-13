@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755146"
 ---
 # <a name="ltfaultpropagationqueriesgt"></a><span data-ttu-id="5bae2-102">&lt;faultPropagationQueries&gt;</span><span class="sxs-lookup"><span data-stu-id="5bae2-102">&lt;faultPropagationQueries&gt;</span></span>
 <span data-ttu-id="5bae2-103">Představuje kolekci dotazy, které se používají ke sledování ošetření chyb, které se vyskytují v aktivitě.</span><span class="sxs-lookup"><span data-stu-id="5bae2-103">Represents a collection of queries that are used to track the handling of faults that occur within an activity.</span></span>  <span data-ttu-id="5bae2-104">K této události dochází pokaždé, když FaultHandler zpracovává chybu.</span><span class="sxs-lookup"><span data-stu-id="5bae2-104">This event occurs each time a FaultHandler processes a fault.</span></span> <span data-ttu-id="5bae2-105">Takový dotaz byste měli používat ke sledování zpracování chyb, k nimž došlo v rámci aktivity.</span><span class="sxs-lookup"><span data-stu-id="5bae2-105">You should use such query to track the handling of faults that occur within an activity.</span></span> <span data-ttu-id="5bae2-106">Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru chyby šíření hodnoty záznamů.</span><span class="sxs-lookup"><span data-stu-id="5bae2-106">The query is necessary for a  tracking participant to subscribe to fault propagation records.</span></span>  

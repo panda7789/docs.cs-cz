@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766033"
 ---
 # <a name="the-shape-of-the-command-trees"></a><span data-ttu-id="aafc3-102">Obrazec stromy příkazů</span><span class="sxs-lookup"><span data-stu-id="aafc3-102">The Shape of the Command Trees</span></span>
 <span data-ttu-id="aafc3-103">Modul generování SQL je zodpovědný za generování back-end konkrétní dotaz SQL na základě výrazu stromu příkaz daný vstupní dotaz.</span><span class="sxs-lookup"><span data-stu-id="aafc3-103">The SQL generation module is responsible for generating a backend specific SQL query based on a given input query command tree expression.</span></span> <span data-ttu-id="aafc3-104">Tato část popisuje vlastnosti, vlastnosti a struktura stromy příkazů dotazu.</span><span class="sxs-lookup"><span data-stu-id="aafc3-104">This section discusses the characteristics, properties, and structure of the query command trees.</span></span>  

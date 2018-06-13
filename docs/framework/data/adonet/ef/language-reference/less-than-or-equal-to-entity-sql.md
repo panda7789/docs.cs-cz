@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761867"
 ---
 # <a name="lt-less-than-or-equal-to-entity-sql"></a><span data-ttu-id="ad6c2-102">&lt;= (Je menší než nebo rovno) (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="ad6c2-102">&lt;= (Less Than or Equal To) (Entity SQL)</span></span>
 <span data-ttu-id="ad6c2-103">Porovná dva výrazy a určit, zda levý výraz má hodnotu menší než nebo rovna pravý výraz.</span><span class="sxs-lookup"><span data-stu-id="ad6c2-103">Compares two expressions to determine whether the left expression has a value less than or equal to the right expression.</span></span>  

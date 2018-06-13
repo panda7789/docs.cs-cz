@@ -14,6 +14,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753349"
 ---
 # <a name="using-serviced-components-with-the-global-assembly-cache"></a><span data-ttu-id="3816d-102">Používání obsluhovaných komponent s globální pamětí sestavení</span><span class="sxs-lookup"><span data-stu-id="3816d-102">Using Serviced Components with the Global Assembly Cache</span></span>
 <span data-ttu-id="3816d-103">Obsluhované komponenty (spravované komponenty modelu COM +) měly být umístěny v globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="3816d-103">Serviced components (managed code COM+ components) should be put in the Global Assembly Cache.</span></span> <span data-ttu-id="3816d-104">V některých scénářích modul Common Language Runtime a služby COM + může zpracovávat obsluhované komponenty, které nejsou v globální mezipaměti sestavení; v jiných scénářích nelze.</span><span class="sxs-lookup"><span data-stu-id="3816d-104">In some scenarios, the Common Language Runtime and COM+ Services can handle serviced components that are not in the Global Assembly Cache; in other scenarios, they cannot.</span></span> <span data-ttu-id="3816d-105">Následující scénáře popisují toto:</span><span class="sxs-lookup"><span data-stu-id="3816d-105">The following scenarios illustrate this:</span></span>  

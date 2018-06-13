@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388352"
 ---
 # <a name="marshaling-data-with-com-interop"></a><span data-ttu-id="fc890-102">Zařazování dat se spoluprací COM</span><span class="sxs-lookup"><span data-stu-id="fc890-102">Marshaling Data with COM Interop</span></span>
 <span data-ttu-id="fc890-103">Zprostředkovatel komunikace s objekty COM poskytuje podporu pro používání objektů COM ze spravovaného kódu i vystavení spravovaných objektů modelu COM.</span><span class="sxs-lookup"><span data-stu-id="fc890-103">COM interop provides support for both using COM objects from managed code and exposing managed objects to COM.</span></span> <span data-ttu-id="fc890-104">Podpora zařazování dat do a z modelu COM je rozsáhlá a poskytuje téměř vždy správné chování zařazování.</span><span class="sxs-lookup"><span data-stu-id="fc890-104">Support for marshaling data to and from COM is extensive and almost always provides the correct marshaling behavior.</span></span>  

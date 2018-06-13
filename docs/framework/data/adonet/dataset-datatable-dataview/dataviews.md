@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758786"
 ---
 # <a name="dataviews"></a><span data-ttu-id="dd7ab-102">DataView</span><span class="sxs-lookup"><span data-stu-id="dd7ab-102">DataViews</span></span>
 <span data-ttu-id="dd7ab-103">A <xref:System.Data.DataView> umožňuje vytvářet různá zobrazení dat uložených v <xref:System.Data.DataTable>, funkci, která se často používá v aplikacích datové vazby.</span><span class="sxs-lookup"><span data-stu-id="dd7ab-103">A <xref:System.Data.DataView> enables you to create different views of the data stored in a <xref:System.Data.DataTable>, a capability that is often used in data-binding applications.</span></span> <span data-ttu-id="dd7ab-104">Použití **DataView**, můžou zpřístupnit data v tabulce s různým řazením a data lze filtrovat podle řádku stavu nebo podle výraz filtru.</span><span class="sxs-lookup"><span data-stu-id="dd7ab-104">Using a **DataView**, you can expose the data in a table with different sort orders, and you can filter the data by row state or based on a filter expression.</span></span>  

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393147"
 ---
 # <a name="default-marshaling-for-arrays"></a><span data-ttu-id="1db06-102">Výchozí zařazování pro pole</span><span class="sxs-lookup"><span data-stu-id="1db06-102">Default Marshaling for Arrays</span></span>
 <span data-ttu-id="1db06-103">V aplikaci, která obsahuje jenom spravovaného kódu modul common language runtime předá typy polí jako vstupně -výstupní parametry.</span><span class="sxs-lookup"><span data-stu-id="1db06-103">In an application consisting entirely of managed code, the common language runtime passes array types as In/Out parameters.</span></span> <span data-ttu-id="1db06-104">Naproti tomu spolupráce vláken předá pole jako parametry ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="1db06-104">In contrast, the interop marshaler passes an array as In parameters by default.</span></span>  

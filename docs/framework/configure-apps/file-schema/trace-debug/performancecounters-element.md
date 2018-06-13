@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754155"
 ---
 # <a name="ltperformancecountersgt-element"></a><span data-ttu-id="b267b-102">&lt;čítače výkonu&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="b267b-102">&lt;performanceCounters&gt; Element</span></span>
 <span data-ttu-id="b267b-103">Určuje velikost globální paměť sdíleny čítače výkonu.</span><span class="sxs-lookup"><span data-stu-id="b267b-103">Specifies the size of the global memory shared by performance counters.</span></span>  

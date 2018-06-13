@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766225"
 ---
 # <a name="optimistic-concurrency"></a><span data-ttu-id="ed2d9-102">Optimistickou metodu souběžného zpracování</span><span class="sxs-lookup"><span data-stu-id="ed2d9-102">Optimistic Concurrency</span></span>
 <span data-ttu-id="ed2d9-103">V prostředí, jsou dva modely pro aktualizace dat v databázi: optimistickou metodu souběžného a pesimistické souběžnosti.</span><span class="sxs-lookup"><span data-stu-id="ed2d9-103">In a multiuser environment, there are two models for updating data in a database: optimistic concurrency and pessimistic concurrency.</span></span> <span data-ttu-id="ed2d9-104"><xref:System.Data.DataSet> Objekt je navržen pro podporu použití optimistickou metodu souběžného pro dlouho běžící aktivity, jako je vzdálené komunikace dat a práce s daty.</span><span class="sxs-lookup"><span data-stu-id="ed2d9-104">The <xref:System.Data.DataSet> object is designed to encourage the use of optimistic concurrency for long-running activities, such as remoting data and interacting with data.</span></span>  
