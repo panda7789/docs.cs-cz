@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749966"
 ---
 # <a name="ltissuedtokenauthenticationgt-of-ltservicecredentialsgt"></a><span data-ttu-id="44d0b-102">&lt;issuedTokenAuthentication&gt; – &lt;serviceCredentials&gt;</span><span class="sxs-lookup"><span data-stu-id="44d0b-102">&lt;issuedTokenAuthentication&gt; of &lt;serviceCredentials&gt;</span></span>
 <span data-ttu-id="44d0b-103">Určuje vlastní tokenem vydaným jako přihlašovací údaje služby.</span><span class="sxs-lookup"><span data-stu-id="44d0b-103">Specifies a custom token issued as a service credential.</span></span>  

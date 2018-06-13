@@ -1,10 +1,6 @@
 ---
 title: Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě C#
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-csharp
-ms.topic: article
 f1_keywords:
 - CS1583
 - CS0821
@@ -886,34 +882,32 @@ f1_keywords:
 helpviewer_keywords:
 - errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
-caps.latest.revision: 15
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: c6cabc4c619e6ace4c376fd125e7531f10bf9b88
-ms.sourcegitcommit: 2042de78fcdceebb6b8ac4b7a292b93e8782cbf5
+ms.openlocfilehash: 5e9c0aff2df5c46e707fa9f85506758327b58d80
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33314067"
 ---
-# <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a><span data-ttu-id="4083b-102">Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě C#</span><span class="sxs-lookup"><span data-stu-id="4083b-102">Sorry, we don&#39;t have specifics on this C# error</span></span>
-<span data-ttu-id="4083b-103">Je nám líto, ale nemáme žádné konkrétní informace o této chybě.</span><span class="sxs-lookup"><span data-stu-id="4083b-103">We’re sorry, but we don’t have any specific information about this error.</span></span> <span data-ttu-id="4083b-104">Můžete hledat text chyby číslo a zpráva k nalezení informací na webu.</span><span class="sxs-lookup"><span data-stu-id="4083b-104">You can search for the error number and message text to find information on the web.</span></span> <span data-ttu-id="4083b-105">Nebo můžete požádat jinými vývojáři pomocí jedné z těchto fóra:</span><span class="sxs-lookup"><span data-stu-id="4083b-105">Or you can ask other developers using one of these forums:</span></span>  
+# <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a><span data-ttu-id="bdf77-102">Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě C#</span><span class="sxs-lookup"><span data-stu-id="bdf77-102">Sorry, we don&#39;t have specifics on this C# error</span></span>
+<span data-ttu-id="bdf77-103">Je nám líto, ale nemáme žádné konkrétní informace o této chybě.</span><span class="sxs-lookup"><span data-stu-id="bdf77-103">We’re sorry, but we don’t have any specific information about this error.</span></span> <span data-ttu-id="bdf77-104">Můžete hledat text chyby číslo a zpráva k nalezení informací na webu.</span><span class="sxs-lookup"><span data-stu-id="bdf77-104">You can search for the error number and message text to find information on the web.</span></span> <span data-ttu-id="bdf77-105">Nebo můžete požádat jinými vývojáři pomocí jedné z těchto fóra:</span><span class="sxs-lookup"><span data-stu-id="bdf77-105">Or you can ask other developers using one of these forums:</span></span>  
   
- [<span data-ttu-id="4083b-106">Jazyk Visual C#</span><span class="sxs-lookup"><span data-stu-id="4083b-106">Visual C# Language</span></span>](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharplanguage)  
- <span data-ttu-id="4083b-107">Poskytuje fórum pro dotazy týkající se a v obecných diskusích syntaxe jazyka Visual C# a kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="4083b-107">Provides a forum for questions about and general discussions of the Visual C# language syntax and compiler.</span></span>  
+ [<span data-ttu-id="bdf77-106">Jazyk Visual C#</span><span class="sxs-lookup"><span data-stu-id="bdf77-106">Visual C# Language</span></span>](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharplanguage)  
+ <span data-ttu-id="bdf77-107">Poskytuje fórum pro dotazy týkající se a v obecných diskusích syntaxe jazyka Visual C# a kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="bdf77-107">Provides a forum for questions about and general discussions of the Visual C# language syntax and compiler.</span></span>  
   
- [<span data-ttu-id="4083b-108">Visual C# IDE</span><span class="sxs-lookup"><span data-stu-id="4083b-108">Visual C# IDE</span></span>](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharpide)  
- <span data-ttu-id="4083b-109">Poskytuje fórum pro dotazy o tom, jak fungují v prostředí Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="4083b-109">Provides a forum for questions about how to work in the Visual Studio environment.</span></span>  
+ [<span data-ttu-id="bdf77-108">Visual C# IDE</span><span class="sxs-lookup"><span data-stu-id="bdf77-108">Visual C# IDE</span></span>](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharpide)  
+ <span data-ttu-id="bdf77-109">Poskytuje fórum pro dotazy o tom, jak fungují v prostředí Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="bdf77-109">Provides a forum for questions about how to work in the Visual Studio environment.</span></span>  
   
- [<span data-ttu-id="4083b-110">Visual C# obecné</span><span class="sxs-lookup"><span data-stu-id="4083b-110">Visual C# General</span></span>](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=csharpgeneral)  
- <span data-ttu-id="4083b-111">Poskytuje fórum pro otázky o a problémů s Visual C#, která nejsou popsané v dalších fóra.</span><span class="sxs-lookup"><span data-stu-id="4083b-111">Provides a forum for questions about and issues with Visual C# that are not discussed in other forums.</span></span>  
+ [<span data-ttu-id="bdf77-110">Visual C# obecné</span><span class="sxs-lookup"><span data-stu-id="bdf77-110">Visual C# General</span></span>](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=csharpgeneral)  
+ <span data-ttu-id="bdf77-111">Poskytuje fórum pro otázky o a problémů s Visual C#, která nejsou popsané v dalších fóra.</span><span class="sxs-lookup"><span data-stu-id="bdf77-111">Provides a forum for questions about and issues with Visual C# that are not discussed in other forums.</span></span>  
   
- [<span data-ttu-id="4083b-112">StackOverflow</span><span class="sxs-lookup"><span data-stu-id="4083b-112">StackOverflow</span></span>](http://stackoverflow.com/questions/tagged/c%23)  
- <span data-ttu-id="4083b-113">Poskytuje fórum pro otázky o a problémů s Visual C#.</span><span class="sxs-lookup"><span data-stu-id="4083b-113">Provides a forum for questions about and issues with Visual C#.</span></span>  
+ [<span data-ttu-id="bdf77-112">StackOverflow</span><span class="sxs-lookup"><span data-stu-id="bdf77-112">StackOverflow</span></span>](http://stackoverflow.com/questions/tagged/c%23)  
+ <span data-ttu-id="bdf77-113">Poskytuje fórum pro otázky o a problémů s Visual C#.</span><span class="sxs-lookup"><span data-stu-id="bdf77-113">Provides a forum for questions about and issues with Visual C#.</span></span>  
   
- <span data-ttu-id="4083b-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4083b-114">Also see:</span></span>  
- [<span data-ttu-id="4083b-115">Další zdroje pro programátory v jazyce Visual C#</span><span class="sxs-lookup"><span data-stu-id="4083b-115">Additional Resources for Visual C# Programmers</span></span>](../../csharp/getting-started/additional-resources.md)  
+ <span data-ttu-id="bdf77-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bdf77-114">Also see:</span></span>  
+ [<span data-ttu-id="bdf77-115">Další zdroje pro programátory v jazyce Visual C#</span><span class="sxs-lookup"><span data-stu-id="bdf77-115">Additional Resources for Visual C# Programmers</span></span>](../../csharp/getting-started/additional-resources.md)  
   
-## <a name="see-also"></a><span data-ttu-id="4083b-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="4083b-116">See Also</span></span>  
- [<span data-ttu-id="4083b-117">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="4083b-117">C# Programming Guide</span></span>](../../csharp/programming-guide/index.md)  
- [<span data-ttu-id="4083b-118">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="4083b-118">C# Reference</span></span>](../../csharp/language-reference/index.md)  
- [<span data-ttu-id="4083b-119">Kontaktujte nás</span><span class="sxs-lookup"><span data-stu-id="4083b-119">Talk to Us</span></span>](/visualstudio/ide/talk-to-us)  
+## <a name="see-also"></a><span data-ttu-id="bdf77-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="bdf77-116">See Also</span></span>  
+ [<span data-ttu-id="bdf77-117">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="bdf77-117">C# Programming Guide</span></span>](../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="bdf77-118">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="bdf77-118">C# Reference</span></span>](../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="bdf77-119">Kontaktujte nás</span><span class="sxs-lookup"><span data-stu-id="bdf77-119">Talk to Us</span></span>](/visualstudio/ide/talk-to-us)  

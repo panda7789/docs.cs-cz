@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751438"
 ---
 # <a name="ltreliablesessiongt"></a><span data-ttu-id="a9c5e-102">&lt;reliableSession&gt;</span><span class="sxs-lookup"><span data-stu-id="a9c5e-102">&lt;reliableSession&gt;</span></span>
 <span data-ttu-id="a9c5e-103">Definuje nastavení WS-spolehlivé zasílání zpráv.</span><span class="sxs-lookup"><span data-stu-id="a9c5e-103">Defines setting for WS-Reliable Messaging.</span></span> <span data-ttu-id="a9c5e-104">Pokud tento element je přidat do vlastní vazby, výsledná kanál může podporovat přesně-jednou záruky doručení.</span><span class="sxs-lookup"><span data-stu-id="a9c5e-104">When this element is added to a custom binding, the resulting channel can support exactly-once delivery assurances.</span></span>  

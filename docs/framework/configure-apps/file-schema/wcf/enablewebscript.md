@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751893"
 ---
 # <a name="ltenablewebscriptgt"></a><span data-ttu-id="95989-102">&lt;enableWebScript&gt;</span><span class="sxs-lookup"><span data-stu-id="95989-102">&lt;enableWebScript&gt;</span></span>
 <span data-ttu-id="95989-103">Tento element umožňuje chování koncového bodu, který vám umožní využívat službu z webových stránek ASP.NET AJAX.</span><span class="sxs-lookup"><span data-stu-id="95989-103">This element enables the endpoint behavior that makes it possible to consume the service from ASP.NET AJAX web pages.</span></span>  

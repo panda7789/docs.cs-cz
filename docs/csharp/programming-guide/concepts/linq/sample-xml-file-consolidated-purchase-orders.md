@@ -1,26 +1,18 @@
 ---
-title: "Ukázkový soubor XML: Konsolidovat Orders2 nákupu"
-ms.custom: 
+title: 'Ukázkový soubor XML: Konsolidovat Orders2 nákupu'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 9d9698a5-95f2-4564-813b-ba536cdf3bfb
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: a6cf08959792e2d491ee6aede59abeeac50e1700
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d9a97b097f208cdabb63023b36db1e374ac61c3f
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33329381"
 ---
-# <a name="sample-xml-file-consolidated-purchase-orders"></a><span data-ttu-id="b7517-102">Ukázkový soubor XML: Konsolidované nákupních objednávek</span><span class="sxs-lookup"><span data-stu-id="b7517-102">Sample XML File: Consolidated Purchase Orders</span></span>
-<span data-ttu-id="b7517-103">Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="b7517-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="b7517-104">Tento soubor je sada nákupních objednávek různých tvarů z více společností.</span><span class="sxs-lookup"><span data-stu-id="b7517-104">This file is a set of purchase orders with different shapes from multiple companies.</span></span> <span data-ttu-id="b7517-105">Nákupních objednávek z každé společnosti jsou v samostatné obory názvů.</span><span class="sxs-lookup"><span data-stu-id="b7517-105">Purchase orders from each company are in separate namespaces.</span></span>  
+# <a name="sample-xml-file-consolidated-purchase-orders"></a><span data-ttu-id="e6179-102">Ukázkový soubor XML: Konsolidované nákupních objednávek</span><span class="sxs-lookup"><span data-stu-id="e6179-102">Sample XML File: Consolidated Purchase Orders</span></span>
+<span data-ttu-id="e6179-103">Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="e6179-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="e6179-104">Tento soubor je sada nákupních objednávek různých tvarů z více společností.</span><span class="sxs-lookup"><span data-stu-id="e6179-104">This file is a set of purchase orders with different shapes from multiple companies.</span></span> <span data-ttu-id="e6179-105">Nákupních objednávek z každé společnosti jsou v samostatné obory názvů.</span><span class="sxs-lookup"><span data-stu-id="e6179-105">Purchase orders from each company are in separate namespaces.</span></span>  
   
-## <a name="consolidatedpurchaseordersxml"></a><span data-ttu-id="b7517-106">ConsolidatedPurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="b7517-106">ConsolidatedPurchaseOrders.xml</span></span>  
+## <a name="consolidatedpurchaseordersxml"></a><span data-ttu-id="e6179-106">ConsolidatedPurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="e6179-106">ConsolidatedPurchaseOrders.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -152,5 +144,5 @@ ms.lasthandoff: 10/18/2017
 </PurchaseOrders>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="b7517-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="b7517-107">See Also</span></span>  
- [<span data-ttu-id="b7517-108">Dokumenty XML ukázkové (technologie LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="b7517-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="e6179-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="e6179-107">See Also</span></span>  
+ [<span data-ttu-id="e6179-108">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="e6179-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

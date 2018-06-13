@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755328"
 ---
 # <a name="transports"></a><span data-ttu-id="bc42e-102">Přenosy</span><span class="sxs-lookup"><span data-stu-id="bc42e-102">Transports</span></span>
 <span data-ttu-id="bc42e-103">Přenosová vrstva je na nejnižší úrovni kanálu zásobníku.</span><span class="sxs-lookup"><span data-stu-id="bc42e-103">The transport layer is at the lowest level of the channel stack.</span></span> <span data-ttu-id="bc42e-104">Hlavní přenosy použít ve Windows Communication Foundation (WCF) jsou HTTP, HTTPS, TCP a pojmenované kanály.</span><span class="sxs-lookup"><span data-stu-id="bc42e-104">The main transports used in Windows Communication Foundation (WCF) are HTTP, HTTPS, TCP, and Named Pipes.</span></span> <span data-ttu-id="bc42e-105">Tato část uvádí všechny konfigurační prvky, které vám umožní nakonfigurovat různé typy přenosů.</span><span class="sxs-lookup"><span data-stu-id="bc42e-105">This section lists all the configuration elements that allow you to configure different types of transports.</span></span>  

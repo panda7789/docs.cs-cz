@@ -1,28 +1,20 @@
 ---
-title: "Postupy: výpočet hodnot sloupce v textovém souboru CSV (LINQ) (C#)"
-ms.custom: 
+title: 'Postupy: výpočet hodnot sloupce v textovém souboru CSV (LINQ) (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: 4747f37a-a198-4df2-8efe-5b0731e0ea27
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: cee87fcb0d0b430d9577319abc30b8caf03e9188
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 6f203d7fa4a313be122d09d5bd68e77411c89ed2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33328757"
 ---
-# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a><span data-ttu-id="92132-102">Postupy: výpočet hodnot sloupce v textovém souboru CSV (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="92132-102">How to: Compute Column Values in a CSV Text File (LINQ) (C#)</span></span>
-<span data-ttu-id="92132-103">Tento příklad ukazuje, jak provádět agregační výpočtů, jako je například součtu, průměru, Min a Max pro sloupce soubor .csv.</span><span class="sxs-lookup"><span data-stu-id="92132-103">This example shows how to perform aggregate computations such as Sum, Average, Min, and Max on the columns of a .csv file.</span></span> <span data-ttu-id="92132-104">Příklad zásady, které jsou zobrazeny v tomto poli je použít pro jiné typy strukturovaných textových.</span><span class="sxs-lookup"><span data-stu-id="92132-104">The example principles that are shown here can be applied to other types of structured text.</span></span>  
+# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a><span data-ttu-id="e099b-102">Postupy: výpočet hodnot sloupce v textovém souboru CSV (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="e099b-102">How to: Compute Column Values in a CSV Text File (LINQ) (C#)</span></span>
+<span data-ttu-id="e099b-103">Tento příklad ukazuje, jak provádět agregační výpočtů, jako je například součtu, průměru, Min a Max pro sloupce soubor .csv.</span><span class="sxs-lookup"><span data-stu-id="e099b-103">This example shows how to perform aggregate computations such as Sum, Average, Min, and Max on the columns of a .csv file.</span></span> <span data-ttu-id="e099b-104">Příklad zásady, které jsou zobrazeny v tomto poli je použít pro jiné typy strukturovaných textových.</span><span class="sxs-lookup"><span data-stu-id="e099b-104">The example principles that are shown here can be applied to other types of structured text.</span></span>  
   
-### <a name="to-create-the-source-file"></a><span data-ttu-id="92132-105">Chcete-li vytvořit zdrojový soubor</span><span class="sxs-lookup"><span data-stu-id="92132-105">To create the source file</span></span>  
+### <a name="to-create-the-source-file"></a><span data-ttu-id="e099b-105">Chcete-li vytvořit zdrojový soubor</span><span class="sxs-lookup"><span data-stu-id="e099b-105">To create the source file</span></span>  
   
-1.  <span data-ttu-id="92132-106">Zkopírujte následující řádky do souboru, který je pojmenován scores.csv a uložit ve složce projektu.</span><span class="sxs-lookup"><span data-stu-id="92132-106">Copy the following lines into a file that is named scores.csv and save it in your project folder.</span></span> <span data-ttu-id="92132-107">Předpokládají, že první sloupec představuje student ID a následné sloupce představují skóre ze čtyř zkoušek pro aplikaci.</span><span class="sxs-lookup"><span data-stu-id="92132-107">Assume that the first column represents a student ID, and subsequent columns represent scores from four exams.</span></span>  
+1.  <span data-ttu-id="e099b-106">Zkopírujte následující řádky do souboru, který je pojmenován scores.csv a uložit ve složce projektu.</span><span class="sxs-lookup"><span data-stu-id="e099b-106">Copy the following lines into a file that is named scores.csv and save it in your project folder.</span></span> <span data-ttu-id="e099b-107">Předpokládají, že první sloupec představuje student ID a následné sloupce představují skóre ze čtyř zkoušek pro aplikaci.</span><span class="sxs-lookup"><span data-stu-id="e099b-107">Assume that the first column represents a student ID, and subsequent columns represent scores from four exams.</span></span>  
   
     ```  
     111, 97, 92, 81, 60  
@@ -39,7 +31,7 @@ ms.lasthandoff: 11/21/2017
     122, 94, 92, 91, 91  
     ```  
   
-## <a name="example"></a><span data-ttu-id="92132-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="92132-108">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="e099b-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="e099b-108">Example</span></span>  
   
 ```csharp  
 class SumColumns  
@@ -164,11 +156,11 @@ class SumColumns
  */  
 ```  
   
- <span data-ttu-id="92132-109">Dotaz funguje tak, že pomocí <xref:System.String.Split%2A> způsobů, jak převést jednotlivé řádky textu do pole.</span><span class="sxs-lookup"><span data-stu-id="92132-109">The query works by using the <xref:System.String.Split%2A> method to convert each line of text into an array.</span></span> <span data-ttu-id="92132-110">Každý element pole představuje sloupec.</span><span class="sxs-lookup"><span data-stu-id="92132-110">Each array element represents a column.</span></span> <span data-ttu-id="92132-111">Nakonec text v jednotlivých sloupcích jsou převedeny na jeho číselnému znázornění.</span><span class="sxs-lookup"><span data-stu-id="92132-111">Finally, the text in each column is converted to its numeric representation.</span></span> <span data-ttu-id="92132-112">Pokud se soubor nachází soubor tabulátorem, stačí aktualizovat argument ve `Split` metodu `\t`.</span><span class="sxs-lookup"><span data-stu-id="92132-112">If your file is a tab-separated file, just update the argument in the `Split` method to `\t`.</span></span>  
+ <span data-ttu-id="e099b-109">Dotaz funguje tak, že pomocí <xref:System.String.Split%2A> způsobů, jak převést jednotlivé řádky textu do pole.</span><span class="sxs-lookup"><span data-stu-id="e099b-109">The query works by using the <xref:System.String.Split%2A> method to convert each line of text into an array.</span></span> <span data-ttu-id="e099b-110">Každý element pole představuje sloupec.</span><span class="sxs-lookup"><span data-stu-id="e099b-110">Each array element represents a column.</span></span> <span data-ttu-id="e099b-111">Nakonec text v jednotlivých sloupcích jsou převedeny na jeho číselnému znázornění.</span><span class="sxs-lookup"><span data-stu-id="e099b-111">Finally, the text in each column is converted to its numeric representation.</span></span> <span data-ttu-id="e099b-112">Pokud se soubor nachází soubor tabulátorem, stačí aktualizovat argument ve `Split` metodu `\t`.</span><span class="sxs-lookup"><span data-stu-id="e099b-112">If your file is a tab-separated file, just update the argument in the `Split` method to `\t`.</span></span>  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="92132-113">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="92132-113">Compiling the Code</span></span>  
- <span data-ttu-id="92132-114">Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší, s odkazem na System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="92132-114">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="e099b-113">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="e099b-113">Compiling the Code</span></span>  
+ <span data-ttu-id="e099b-114">Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší, s odkazem na System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="e099b-114">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="92132-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="92132-115">See Also</span></span>  
- [<span data-ttu-id="92132-116">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="92132-116">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
- [<span data-ttu-id="92132-117">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="92132-117">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="e099b-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="e099b-115">See Also</span></span>  
+ [<span data-ttu-id="e099b-116">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="e099b-116">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
+ [<span data-ttu-id="e099b-117">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="e099b-117">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
