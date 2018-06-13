@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398232"
 ---
 # <a name="specifying-a-character-set"></a><span data-ttu-id="641b3-102">Určení sady znaků</span><span class="sxs-lookup"><span data-stu-id="641b3-102">Specifying a Character Set</span></span>
 <span data-ttu-id="641b3-103"><xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> Pole řídí řetězec zařazování a určuje, jak vyvolání platformy najde názvy funkcí v knihovně DLL.</span><span class="sxs-lookup"><span data-stu-id="641b3-103">The <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> field controls string marshaling and determines how platform invoke finds function names in a DLL.</span></span> <span data-ttu-id="641b3-104">Toto téma popisuje, jak chování.</span><span class="sxs-lookup"><span data-stu-id="641b3-104">This topic describes both behaviors.</span></span>  

@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Reakce na kliknutí na tlačítko Windows Forms"
-ms.custom: 
+title: 'Postupy: Reakce na kliknutí na tlačítko Windows Forms'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -22,27 +15,23 @@ helpviewer_keywords:
 - examples [Windows Forms], controls
 - Click event [Windows Forms], responding to
 ms.assetid: 7a4951bd-369c-4662-b246-28ad83eda484
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 28b0467c8b589882fe5afd7e884d0de55d8ca564
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 14a880c34f163dc6fece44c24d377822a741b0f2
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534248"
 ---
-# <a name="how-to-respond-to-windows-forms-button-clicks"></a><span data-ttu-id="499bd-102">Postupy: Reakce na kliknutí na tlačítko Windows Forms</span><span class="sxs-lookup"><span data-stu-id="499bd-102">How to: Respond to Windows Forms Button Clicks</span></span>
-<span data-ttu-id="499bd-103">Nejzákladnější použití Windows Forms <xref:System.Windows.Forms.Button> ovládacího prvku je při kliknutí na tlačítko spouštět nějaký kód.</span><span class="sxs-lookup"><span data-stu-id="499bd-103">The most basic use of a Windows Forms <xref:System.Windows.Forms.Button> control is to run some code when the button is clicked.</span></span>  
+# <a name="how-to-respond-to-windows-forms-button-clicks"></a><span data-ttu-id="78762-102">Postupy: Reakce na kliknutí na tlačítko Windows Forms</span><span class="sxs-lookup"><span data-stu-id="78762-102">How to: Respond to Windows Forms Button Clicks</span></span>
+<span data-ttu-id="78762-103">Nejzákladnější použití Windows Forms <xref:System.Windows.Forms.Button> ovládacího prvku je při kliknutí na tlačítko spouštět nějaký kód.</span><span class="sxs-lookup"><span data-stu-id="78762-103">The most basic use of a Windows Forms <xref:System.Windows.Forms.Button> control is to run some code when the button is clicked.</span></span>  
   
- <span data-ttu-id="499bd-104">Kliknutím na tlačítko <xref:System.Windows.Forms.Button> řízení vytvoří také několik dalších událostí, jako <xref:System.Windows.Forms.Control.MouseEnter>, <xref:System.Windows.Forms.Control.MouseDown>, a <xref:System.Windows.Forms.Control.MouseUp> události.</span><span class="sxs-lookup"><span data-stu-id="499bd-104">Clicking a <xref:System.Windows.Forms.Button> control also generates a number of other events, such as the <xref:System.Windows.Forms.Control.MouseEnter>, <xref:System.Windows.Forms.Control.MouseDown>, and <xref:System.Windows.Forms.Control.MouseUp> events.</span></span> <span data-ttu-id="499bd-105">Pokud máte v úmyslu připojení obslužné rutiny události pro tyto související události, ujistěte se, že jejich akce nejsou v konfliktu.</span><span class="sxs-lookup"><span data-stu-id="499bd-105">If you intend to attach event handlers for these related events, be sure that their actions do not conflict.</span></span> <span data-ttu-id="499bd-106">Například pokud kliknete na tlačítko vymaže informace, které uživatel zadal v textovém poli, pozastavení ukazatel myši nad tlačítko nesmí zobrazí se s touto nyní neexistující informací.</span><span class="sxs-lookup"><span data-stu-id="499bd-106">For example, if clicking the button clears information that the user has typed in a text box, pausing the mouse pointer over the button should not display a tool tip with that now-nonexistent information.</span></span>  
+ <span data-ttu-id="78762-104">Kliknutím na tlačítko <xref:System.Windows.Forms.Button> řízení vytvoří také několik dalších událostí, jako <xref:System.Windows.Forms.Control.MouseEnter>, <xref:System.Windows.Forms.Control.MouseDown>, a <xref:System.Windows.Forms.Control.MouseUp> události.</span><span class="sxs-lookup"><span data-stu-id="78762-104">Clicking a <xref:System.Windows.Forms.Button> control also generates a number of other events, such as the <xref:System.Windows.Forms.Control.MouseEnter>, <xref:System.Windows.Forms.Control.MouseDown>, and <xref:System.Windows.Forms.Control.MouseUp> events.</span></span> <span data-ttu-id="78762-105">Pokud máte v úmyslu připojení obslužné rutiny události pro tyto související události, ujistěte se, že jejich akce nejsou v konfliktu.</span><span class="sxs-lookup"><span data-stu-id="78762-105">If you intend to attach event handlers for these related events, be sure that their actions do not conflict.</span></span> <span data-ttu-id="78762-106">Například pokud kliknete na tlačítko vymaže informace, které uživatel zadal v textovém poli, pozastavení ukazatel myši nad tlačítko nesmí zobrazí se s touto nyní neexistující informací.</span><span class="sxs-lookup"><span data-stu-id="78762-106">For example, if clicking the button clears information that the user has typed in a text box, pausing the mouse pointer over the button should not display a tool tip with that now-nonexistent information.</span></span>  
   
- <span data-ttu-id="499bd-107">Pokud se uživatel pokusí dvakrát klikněte <xref:System.Windows.Forms.Button> ovládací prvek, každý klikněte na tlačítko se zpracovávají odděleně; to znamená, ovládacího prvku nepodporuje událost poklikejte na soubor.</span><span class="sxs-lookup"><span data-stu-id="499bd-107">If the user attempts to double-click the <xref:System.Windows.Forms.Button> control, each click will be processed separately; that is, the control does not support the double-click event.</span></span>  
+ <span data-ttu-id="78762-107">Pokud se uživatel pokusí dvakrát klikněte <xref:System.Windows.Forms.Button> ovládací prvek, každý klikněte na tlačítko se zpracovávají odděleně; to znamená, ovládacího prvku nepodporuje událost poklikejte na soubor.</span><span class="sxs-lookup"><span data-stu-id="78762-107">If the user attempts to double-click the <xref:System.Windows.Forms.Button> control, each click will be processed separately; that is, the control does not support the double-click event.</span></span>  
   
-### <a name="to-respond-to-a-button-click"></a><span data-ttu-id="499bd-108">Reakce na kliknutí na tlačítko</span><span class="sxs-lookup"><span data-stu-id="499bd-108">To respond to a button click</span></span>  
+### <a name="to-respond-to-a-button-click"></a><span data-ttu-id="78762-108">Reakce na kliknutí na tlačítko</span><span class="sxs-lookup"><span data-stu-id="78762-108">To respond to a button click</span></span>  
   
--   <span data-ttu-id="499bd-109">U tlačítka `Click` <xref:System.EventHandler> psát kód pro spuštění.</span><span class="sxs-lookup"><span data-stu-id="499bd-109">In the button's `Click` <xref:System.EventHandler> write the code to run.</span></span> <span data-ttu-id="499bd-110">`Button1_Click`musí být vázána k ovládacímu prvku.</span><span class="sxs-lookup"><span data-stu-id="499bd-110">`Button1_Click` must be bound to the control.</span></span> <span data-ttu-id="499bd-111">Další informace najdete v tématu [postupy: vytváření obslužných rutin událostí spustit čas pro Windows Forms](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="499bd-111">For more information, see [How to: Create Event Handlers at Run Time for Windows Forms](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md).</span></span>  
+-   <span data-ttu-id="78762-109">U tlačítka `Click` <xref:System.EventHandler> psát kód pro spuštění.</span><span class="sxs-lookup"><span data-stu-id="78762-109">In the button's `Click` <xref:System.EventHandler> write the code to run.</span></span> <span data-ttu-id="78762-110">`Button1_Click` musí být vázána k ovládacímu prvku.</span><span class="sxs-lookup"><span data-stu-id="78762-110">`Button1_Click` must be bound to the control.</span></span> <span data-ttu-id="78762-111">Další informace najdete v tématu [postupy: vytváření obslužných rutin událostí spustit čas pro Windows Forms](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="78762-111">For more information, see [How to: Create Event Handlers at Run Time for Windows Forms](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md).</span></span>  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  
@@ -66,7 +55,7 @@ ms.lasthandoff: 12/22/2017
        }  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="499bd-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="499bd-112">See Also</span></span>  
- [<span data-ttu-id="499bd-113">Přehled ovládacího prvku Button</span><span class="sxs-lookup"><span data-stu-id="499bd-113">Button Control Overview</span></span>](../../../../docs/framework/winforms/controls/button-control-overview-windows-forms.md)  
- [<span data-ttu-id="499bd-114">Metody výběru ovládacího prvku Windows Forms Button</span><span class="sxs-lookup"><span data-stu-id="499bd-114">Ways to Select a Windows Forms Button Control</span></span>](../../../../docs/framework/winforms/controls/ways-to-select-a-windows-forms-button-control.md)  
- [<span data-ttu-id="499bd-115">Ovládací prvek Button</span><span class="sxs-lookup"><span data-stu-id="499bd-115">Button Control</span></span>](../../../../docs/framework/winforms/controls/button-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="78762-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="78762-112">See Also</span></span>  
+ [<span data-ttu-id="78762-113">Přehled ovládacího prvku Button</span><span class="sxs-lookup"><span data-stu-id="78762-113">Button Control Overview</span></span>](../../../../docs/framework/winforms/controls/button-control-overview-windows-forms.md)  
+ [<span data-ttu-id="78762-114">Metody výběru ovládacího prvku Windows Forms Button</span><span class="sxs-lookup"><span data-stu-id="78762-114">Ways to Select a Windows Forms Button Control</span></span>](../../../../docs/framework/winforms/controls/ways-to-select-a-windows-forms-button-control.md)  
+ [<span data-ttu-id="78762-115">Ovládací prvek Button</span><span class="sxs-lookup"><span data-stu-id="78762-115">Button Control</span></span>](../../../../docs/framework/winforms/controls/button-control-windows-forms.md)
