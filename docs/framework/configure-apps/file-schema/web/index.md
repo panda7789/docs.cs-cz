@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767476"
 ---
 # <a name="web-settings-schema"></a><span data-ttu-id="8ed4d-102">Schéma nastavení webu</span><span class="sxs-lookup"><span data-stu-id="8ed4d-102">Web Settings Schema</span></span>
 <span data-ttu-id="8ed4d-103">Nastavení webové zadejte procesoru a úroveň spuštění ASP.NET nastavení, které platí pro procesy chování spravované technologií ASP.NET, který je hostitelem vrstvy.</span><span class="sxs-lookup"><span data-stu-id="8ed4d-103">Web settings specify CPU and execution-level ASP.NET settings that apply to process-wide behavior managed by the ASP.NET hosting layer.</span></span> <span data-ttu-id="8ed4d-104">Tato nastavení se liší od nastavení typ domény aplikace, které jsou určené v souboru Web.config aplikace technologie ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="8ed4d-104">These settings differ from application domain-type settings that are specified in the Web.config file of an ASP.NET application.</span></span>  
