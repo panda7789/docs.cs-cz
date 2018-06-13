@@ -7,6 +7,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457979"
 ---
 # <a name="f-coding-conventions"></a><span data-ttu-id="02059-103">F # – konvence kódování</span><span class="sxs-lookup"><span data-stu-id="02059-103">F# coding conventions</span></span>
 
