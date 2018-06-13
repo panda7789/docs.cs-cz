@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751009"
 ---
 # <a name="ltdefaultcertificategt-element"></a><span data-ttu-id="3ea46-102">Element &lt;defaultCertificate&gt;</span><span class="sxs-lookup"><span data-stu-id="3ea46-102">&lt;defaultCertificate&gt; Element</span></span>
 <span data-ttu-id="3ea46-103">Určuje certifikát X.509, který se má použít při služby nebo služby tokenů zabezpečení neposkytuje jeden prostřednictvím vyjednávání protokolu.</span><span class="sxs-lookup"><span data-stu-id="3ea46-103">Specifies an X.509 certificate to be used when a service or STS does not provide one via a negotiation protocol.</span></span>  

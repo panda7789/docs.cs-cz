@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747746"
 ---
 # <a name="ltbindingelementextensionsgt"></a><span data-ttu-id="2dab7-102">&lt;bindingElementExtensions&gt;</span><span class="sxs-lookup"><span data-stu-id="2dab7-102">&lt;bindingElementExtensions&gt;</span></span>
 <span data-ttu-id="2dab7-103">Tato část umožňuje použití vlastní vazby element z počítače nebo konfiguračního souboru aplikace.</span><span class="sxs-lookup"><span data-stu-id="2dab7-103">This section enables the use of a custom binding element from a machine or application configuration file.</span></span> <span data-ttu-id="2dab7-104">Element vlastní vazby můžete přidat do této kolekce pomocí `add` – klíčové slovo a nastavení `type` atribut elementu vazby element rozšíření, a taky `name` atribut prvku vlastní vazby.</span><span class="sxs-lookup"><span data-stu-id="2dab7-104">You can add a custom binding element to this collection by using the `add` keyword, and setting the `type` attribute of the element to a binding element extension, as well as the `name` attribute to the custom binding element.</span></span>  

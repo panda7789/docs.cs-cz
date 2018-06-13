@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762088"
 ---
 # <a name="exists-entity-sql"></a><span data-ttu-id="1bc43-102">EXISTUJE (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="1bc43-102">EXISTS (Entity SQL)</span></span>
 <span data-ttu-id="1bc43-103">Určuje, zda kolekce je prázdný.</span><span class="sxs-lookup"><span data-stu-id="1bc43-103">Determines if a collection is empty.</span></span>  

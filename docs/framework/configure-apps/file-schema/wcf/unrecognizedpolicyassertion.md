@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766917"
 ---
 # <a name="ltunrecognizedpolicyassertiongt"></a><span data-ttu-id="31020-102">&lt;unrecognizedPolicyAssertion&gt;</span><span class="sxs-lookup"><span data-stu-id="31020-102">&lt;unrecognizedPolicyAssertion&gt;</span></span>
 <span data-ttu-id="31020-103">Představuje element vazby, který určuje výraz zásad.</span><span class="sxs-lookup"><span data-stu-id="31020-103">Represents a binding element that specifies policy assertion.</span></span> <span data-ttu-id="31020-104">Tento element nemá žádný atribut a je k dispozici jako prázdný přepínač.</span><span class="sxs-lookup"><span data-stu-id="31020-104">This element has no attribute and is present as an empty switch.</span></span>  

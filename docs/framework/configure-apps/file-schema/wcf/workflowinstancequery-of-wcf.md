@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32767554"
 ---
 # <a name="ltworkflowinstancequerygt-of-wcf"></a><span data-ttu-id="9bd66-102">&lt;workflowInstanceQuery&gt; služby WCF</span><span class="sxs-lookup"><span data-stu-id="9bd66-102">&lt;workflowInstanceQuery&gt; of WCF</span></span>
 <span data-ttu-id="9bd66-103">Představuje dotaz, který sleduje změny životního cyklu instance pracovního postupu, jako je spuštěna nebo dokončené události.</span><span class="sxs-lookup"><span data-stu-id="9bd66-103">Represents a query that tracks workflow instance life cycle changes such as a started or completed event.</span></span>  

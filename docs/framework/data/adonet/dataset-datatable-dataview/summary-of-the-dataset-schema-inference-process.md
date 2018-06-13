@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760268"
 ---
 # <a name="summary-of-the-dataset-schema-inference-process"></a><span data-ttu-id="52fa2-102">Souhrn procesu odvození schéma datové sady</span><span class="sxs-lookup"><span data-stu-id="52fa2-102">Summary of the DataSet Schema Inference Process</span></span>
 <span data-ttu-id="52fa2-103">Odvození proces nejdřív zjistí, z dokumentu XML prvky, které bude odvodit jako tabulky.</span><span class="sxs-lookup"><span data-stu-id="52fa2-103">The inference process first determines, from the XML document, which elements will be inferred as tables.</span></span> <span data-ttu-id="52fa2-104">Z zbývající XML určuje proces odvození sloupce pro tyto tabulky.</span><span class="sxs-lookup"><span data-stu-id="52fa2-104">From the remaining XML, the inference process determines the columns for those tables.</span></span> <span data-ttu-id="52fa2-105">Pro vnořené tabulky, proces odvození generuje vnořené <xref:System.Data.DataRelation> a <xref:System.Data.ForeignKeyConstraint> objekty.</span><span class="sxs-lookup"><span data-stu-id="52fa2-105">For nested tables, the inference process generates nested <xref:System.Data.DataRelation> and <xref:System.Data.ForeignKeyConstraint> objects.</span></span>  

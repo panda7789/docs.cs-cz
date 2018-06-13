@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749095"
 ---
 # <a name="ltpolicyimportersgt"></a><span data-ttu-id="b5a45-102">&lt;policyImporters&gt;</span><span class="sxs-lookup"><span data-stu-id="b5a45-102">&lt;policyImporters&gt;</span></span>
 <span data-ttu-id="b5a45-103">Tento element konfigurace určuje všechny společnosti importers zásady, které řídí import kontrolních výrazů vlastních zásad o vazby.</span><span class="sxs-lookup"><span data-stu-id="b5a45-103">This configuration element specifies all the policy importers that control the import of custom policy assertions about bindings.</span></span> <span data-ttu-id="b5a45-104">Je každý podřízený element <`policyImporter`> sloužící k vyhledávání kontrolních výrazů vlastních zásad o vazbu funkce, jakož i připojit vlastní vazby element, který implementuje funkce vyžaduje kontrolní výraz.</span><span class="sxs-lookup"><span data-stu-id="b5a45-104">Each child element is a <`policyImporter`> that is used to search custom policy assertions about binding features, as well as attach a custom binding element that implements the features the assertion requires.</span></span>  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747945"
 ---
 # <a name="runtime-settings-schema"></a><span data-ttu-id="8ef17-102">Schéma nastavení běhového prostředí</span><span class="sxs-lookup"><span data-stu-id="8ef17-102">Runtime Settings Schema</span></span>
 <span data-ttu-id="8ef17-103">Nastavení běhového prostředí jsou používány modul common language runtime lze nakonfigurovat aplikace cílených rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="8ef17-103">Runtime settings are used by the common language runtime to configure applications that target the .NET Framework.</span></span>  

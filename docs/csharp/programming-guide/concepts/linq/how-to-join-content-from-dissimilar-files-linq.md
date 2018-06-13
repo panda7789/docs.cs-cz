@@ -1,28 +1,20 @@
 ---
-title: "Postupy: spojení obsahu z Nepodobných souborů (LINQ) (C#)"
-ms.custom: 
+title: 'Postupy: spojení obsahu z Nepodobných souborů (LINQ) (C#)'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-csharp
-ms.topic: article
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
-caps.latest.revision: "3"
-author: BillWagner
-ms.author: wiwagn
-ms.openlocfilehash: ac5c9f2037e3254c6262efe00fcbff31664dcd70
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c6af2c0f90d3ebb69438b670a4f0cecb10d8d2fc
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33319166"
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a><span data-ttu-id="dadfe-102">Postupy: spojení obsahu z Nepodobných souborů (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="dadfe-102">How to: Join Content from Dissimilar Files (LINQ) (C#)</span></span>
-<span data-ttu-id="dadfe-103">Tento příklad ukazuje, jak propojit data z dva soubory s položkami oddělenými čárkou, které sdílejí společné hodnotu, která se používá jako odpovídající klíč.</span><span class="sxs-lookup"><span data-stu-id="dadfe-103">This example shows how to join data from two comma-delimited files that share a common value that is used as a matching key.</span></span> <span data-ttu-id="dadfe-104">Tento postup může být užitečné, pokud budete muset kombinovat data ze dvou tabulek, nebo z tabulky a ze souboru, který má jiný formát do nového souboru.</span><span class="sxs-lookup"><span data-stu-id="dadfe-104">This technique can be useful if you have to combine data from two spreadsheets, or from a spreadsheet and from a file that has another format, into a new file.</span></span> <span data-ttu-id="dadfe-105">Příklad pro práci s jakýkoli druh strukturovaných textových můžete upravit.</span><span class="sxs-lookup"><span data-stu-id="dadfe-105">You can modify the example to work with any kind of structured text.</span></span>  
+# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a><span data-ttu-id="79a9d-102">Postupy: spojení obsahu z Nepodobných souborů (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="79a9d-102">How to: Join Content from Dissimilar Files (LINQ) (C#)</span></span>
+<span data-ttu-id="79a9d-103">Tento příklad ukazuje, jak propojit data z dva soubory s položkami oddělenými čárkou, které sdílejí společné hodnotu, která se používá jako odpovídající klíč.</span><span class="sxs-lookup"><span data-stu-id="79a9d-103">This example shows how to join data from two comma-delimited files that share a common value that is used as a matching key.</span></span> <span data-ttu-id="79a9d-104">Tento postup může být užitečné, pokud budete muset kombinovat data ze dvou tabulek, nebo z tabulky a ze souboru, který má jiný formát do nového souboru.</span><span class="sxs-lookup"><span data-stu-id="79a9d-104">This technique can be useful if you have to combine data from two spreadsheets, or from a spreadsheet and from a file that has another format, into a new file.</span></span> <span data-ttu-id="79a9d-105">Příklad pro práci s jakýkoli druh strukturovaných textových můžete upravit.</span><span class="sxs-lookup"><span data-stu-id="79a9d-105">You can modify the example to work with any kind of structured text.</span></span>  
   
-### <a name="to-create-the-data-files"></a><span data-ttu-id="dadfe-106">K vytvoření datových souborů</span><span class="sxs-lookup"><span data-stu-id="dadfe-106">To create the data files</span></span>  
+### <a name="to-create-the-data-files"></a><span data-ttu-id="79a9d-106">K vytvoření datových souborů</span><span class="sxs-lookup"><span data-stu-id="79a9d-106">To create the data files</span></span>  
   
-1.  <span data-ttu-id="dadfe-107">Zkopírujte následující řádky do souboru, který je pojmenován scores.csv a uložte ho do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="dadfe-107">Copy the following lines into a file that is named scores.csv and save it to your project folder.</span></span> <span data-ttu-id="dadfe-108">Soubor představuje data z tabulky.</span><span class="sxs-lookup"><span data-stu-id="dadfe-108">The file represents spreadsheet data.</span></span> <span data-ttu-id="dadfe-109">Sloupec 1 je ID Studentova a sloupce 2 až 5 jsou výsledků testu.</span><span class="sxs-lookup"><span data-stu-id="dadfe-109">Column 1 is the student's ID, and columns 2 through 5 are test scores.</span></span>  
+1.  <span data-ttu-id="79a9d-107">Zkopírujte následující řádky do souboru, který je pojmenován scores.csv a uložte ho do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="79a9d-107">Copy the following lines into a file that is named scores.csv and save it to your project folder.</span></span> <span data-ttu-id="79a9d-108">Soubor představuje data z tabulky.</span><span class="sxs-lookup"><span data-stu-id="79a9d-108">The file represents spreadsheet data.</span></span> <span data-ttu-id="79a9d-109">Sloupec 1 je ID Studentova a sloupce 2 až 5 jsou výsledků testu.</span><span class="sxs-lookup"><span data-stu-id="79a9d-109">Column 1 is the student's ID, and columns 2 through 5 are test scores.</span></span>  
   
     ```  
     111, 97, 92, 81, 60  
@@ -39,7 +31,7 @@ ms.lasthandoff: 11/21/2017
     122, 94, 92, 91, 91  
     ```  
   
-2.  <span data-ttu-id="dadfe-110">Zkopírujte následující řádky do souboru, který je pojmenován names.csv a uložte ho do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="dadfe-110">Copy the following lines into a file that is named names.csv and save it to your project folder.</span></span> <span data-ttu-id="dadfe-111">Soubor představuje tabulky, který obsahuje příjmení, křestní jméno a student ID. Studentova</span><span class="sxs-lookup"><span data-stu-id="dadfe-111">The file represents a spreadsheet that contains the student's last name, first name, and student ID.</span></span>  
+2.  <span data-ttu-id="79a9d-110">Zkopírujte následující řádky do souboru, který je pojmenován names.csv a uložte ho do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="79a9d-110">Copy the following lines into a file that is named names.csv and save it to your project folder.</span></span> <span data-ttu-id="79a9d-111">Soubor představuje tabulky, který obsahuje příjmení, křestní jméno a student ID. Studentova</span><span class="sxs-lookup"><span data-stu-id="79a9d-111">The file represents a spreadsheet that contains the student's last name, first name, and student ID.</span></span>  
   
     ```  
     Omelchenko,Svetlana,111  
@@ -56,7 +48,7 @@ ms.lasthandoff: 11/21/2017
     Tucker,Michael,122  
     ```  
   
-## <a name="example"></a><span data-ttu-id="dadfe-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="dadfe-112">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="79a9d-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="79a9d-112">Example</span></span>  
   
 ```csharp  
 class JoinStrings  
@@ -127,9 +119,9 @@ Zabokritski, 96, 85, 91, 60
  */  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="dadfe-113">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="dadfe-113">Compiling the Code</span></span>  
- <span data-ttu-id="dadfe-114">Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší, s odkazem na System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="dadfe-114">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="79a9d-113">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="79a9d-113">Compiling the Code</span></span>  
+ <span data-ttu-id="79a9d-114">Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší, s odkazem na System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="79a9d-114">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="dadfe-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="dadfe-115">See Also</span></span>  
- [<span data-ttu-id="dadfe-116">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="dadfe-116">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
- [<span data-ttu-id="dadfe-117">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="dadfe-117">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="79a9d-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="79a9d-115">See Also</span></span>  
+ [<span data-ttu-id="79a9d-116">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="79a9d-116">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
+ [<span data-ttu-id="79a9d-117">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="79a9d-117">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754834"
 ---
 # <a name="ltwebsocketsettingsgt"></a><span data-ttu-id="a89f2-102">&lt;webSocketSettings&gt;</span><span class="sxs-lookup"><span data-stu-id="a89f2-102">&lt;webSocketSettings&gt;</span></span>
 <span data-ttu-id="a89f2-103">Element konfigurace slouží k zadání nastavení Websocket.</span><span class="sxs-lookup"><span data-stu-id="a89f2-103">A configuration element used to specify Web Socket settings.</span></span>  

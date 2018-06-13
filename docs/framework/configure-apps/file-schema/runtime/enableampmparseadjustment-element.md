@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752816"
 ---
 # <a name="ltenableampmparseadjustmentgt-element"></a><span data-ttu-id="ad410-102">&lt;EnableAmPmParseAdjustment&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="ad410-102">&lt;EnableAmPmParseAdjustment&gt; Element</span></span>
 <span data-ttu-id="ad410-103">Určuje, zda datum a čas analýza metody použít upravenou sadu pravidel analyzovat data řetězce, které obsahují den, měsíc, hodinu a označení dop. / odp.</span><span class="sxs-lookup"><span data-stu-id="ad410-103">Determines whether date and time parsing methods use an adjusted set of rules to parse date strings that contain a day, month, hour, and AM/PM designator.</span></span>  

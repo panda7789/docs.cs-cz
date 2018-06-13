@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758152"
 ---
 # <a name="connection-events"></a><span data-ttu-id="51e51-102">Připojení událostí</span><span class="sxs-lookup"><span data-stu-id="51e51-102">Connection Events</span></span>
 <span data-ttu-id="51e51-103">Všechny zprostředkovatele dat .NET Framework mají **připojení** objekty s dvě události, které můžete použít k načtení informační zprávy ze zdroje dat nebo k určení, zda stav **připojení** má změnit.</span><span class="sxs-lookup"><span data-stu-id="51e51-103">All of the .NET Framework data providers have **Connection** objects with two events that you can use to retrieve informational messages from a data source or to determine if the state of a **Connection** has changed.</span></span> <span data-ttu-id="51e51-104">Následující tabulka popisuje události z **připojení** objektu.</span><span class="sxs-lookup"><span data-stu-id="51e51-104">The following table describes the events of the **Connection** object.</span></span>  

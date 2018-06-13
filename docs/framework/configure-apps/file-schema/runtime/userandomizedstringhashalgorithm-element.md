@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746082"
 ---
 # <a name="ltuserandomizedstringhashalgorithmgt-element"></a><span data-ttu-id="3f889-102">&lt;Userandomizedstringhashalgorithm –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="3f889-102">&lt;UseRandomizedStringHashAlgorithm&gt; Element</span></span>
 <span data-ttu-id="3f889-103">Určuje, zda modul common language runtime vypočítá na kódů hash pro řetězce na základě domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="3f889-103">Determines whether the common language runtime calculates hash codes for strings on a per application domain basis.</span></span>  

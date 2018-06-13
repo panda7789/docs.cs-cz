@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765851"
 ---
 # <a name="entity-sql-quick-reference"></a><span data-ttu-id="5f8fd-102">Stručná referenční entity SQL</span><span class="sxs-lookup"><span data-stu-id="5f8fd-102">Entity SQL Quick Reference</span></span>
 <span data-ttu-id="5f8fd-103">Toto téma obsahuje Stručná referenční příručka pro [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazy.</span><span class="sxs-lookup"><span data-stu-id="5f8fd-103">This topic provides a quick reference to [!INCLUDE[esql](../../../../../../includes/esql-md.md)] queries.</span></span> <span data-ttu-id="5f8fd-104">Dotazy v tomto tématu jsou založené na modelu prodeje společnosti AdventureWorks.</span><span class="sxs-lookup"><span data-stu-id="5f8fd-104">The queries in this topic are based on the AdventureWorks Sales model.</span></span>  

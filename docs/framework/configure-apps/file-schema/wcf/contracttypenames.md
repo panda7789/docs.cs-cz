@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752917"
 ---
 # <a name="ltcontracttypenamesgt"></a><span data-ttu-id="58f62-102">&lt;contractTypeNames&gt;</span><span class="sxs-lookup"><span data-stu-id="58f62-102">&lt;contractTypeNames&gt;</span></span>
 <span data-ttu-id="58f62-103">Konfigurační oddíl, který určuje seznam názvy typů smlouvy, které jsou názvy kontraktu služby se hledají, a kritéria pro službu obvykle používaných při hledání.</span><span class="sxs-lookup"><span data-stu-id="58f62-103">A configuration section that specifies a list of contract type names, which are the contract names of the services being searched for, and the criteria typically used when searching for a service.</span></span> <span data-ttu-id="58f62-104">Pokud je zadán více než jeden název kontraktu, bude odpověď pouze koncové body služby odpovídající všechny smlouvy.</span><span class="sxs-lookup"><span data-stu-id="58f62-104">If more than one contract name is specified, only service endpoints matching ALL contracts will reply.</span></span> <span data-ttu-id="58f62-105">Všimněte si, že ve Windows Communication Foundation (WCF), koncový bod podporuje pouze jeden kontrakt.</span><span class="sxs-lookup"><span data-stu-id="58f62-105">Note that in Windows Communication Foundation (WCF), an endpoint can only support one contract.</span></span>  

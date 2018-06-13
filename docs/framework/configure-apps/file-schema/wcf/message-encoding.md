@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752491"
 ---
 # <a name="message-encoding"></a><span data-ttu-id="b4b42-102">Kódování zpráv</span><span class="sxs-lookup"><span data-stu-id="b4b42-102">Message Encoding</span></span>
 <span data-ttu-id="b4b42-103">Proces transformace sadu znaků Unicode do pořadí bajtů kódování je.</span><span class="sxs-lookup"><span data-stu-id="b4b42-103">Encoding is the process of transforming a set of Unicode characters into a sequence of bytes.</span></span> <span data-ttu-id="b4b42-104">Dekódování je zpětné proces.</span><span class="sxs-lookup"><span data-stu-id="b4b42-104">Decoding is the reverse process.</span></span> <span data-ttu-id="b4b42-105">Windows Communication Foundation (WCF) zahrnuje tři typy kódování pro protokolu SOAP zprávy: Text, Binary a zpráva přenosu optimalizace mechanismus (MTOM).</span><span class="sxs-lookup"><span data-stu-id="b4b42-105">Windows Communication Foundation (WCF) includes three types of encoding for SOAP messages: Text, Binary and Message Transmission Optimization Mechanism (MTOM).</span></span>  

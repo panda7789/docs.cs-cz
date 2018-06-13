@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761698"
 ---
 # <a name="in-entity-sql"></a><span data-ttu-id="ab7d0-102">V (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="ab7d0-102">IN (Entity SQL)</span></span>
 <span data-ttu-id="ab7d0-103">Určuje, zda hodnota odpovídá libovolná hodnota v kolekci.</span><span class="sxs-lookup"><span data-stu-id="ab7d0-103">Determines whether a value matches any value in a collection.</span></span>  

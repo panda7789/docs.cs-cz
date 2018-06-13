@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753388"
 ---
 # <a name="ltcertificategt-of-ltclientcertificategt-element"></a><span data-ttu-id="f0216-102">&lt;certificate&gt; elementu &lt;clientCertificate&gt;</span><span class="sxs-lookup"><span data-stu-id="f0216-102">&lt;certificate&gt; of &lt;clientCertificate&gt; Element</span></span>
 <span data-ttu-id="f0216-103">Určuje X.509 certifikát používaný k podepisování a šifrování zpráv.</span><span class="sxs-lookup"><span data-stu-id="f0216-103">Specifies an X.509 certificate used to sign and encrypt messages.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747233"
 ---
 # <a name="ltchannelpoolsettingsgt"></a><span data-ttu-id="45b26-102">&lt;channelPoolSettings&gt;</span><span class="sxs-lookup"><span data-stu-id="45b26-102">&lt;channelPoolSettings&gt;</span></span>
 <span data-ttu-id="45b26-103">Určuje nastavení fondu kanálu pro vlastní vazby.</span><span class="sxs-lookup"><span data-stu-id="45b26-103">Specifies the channel pool settings for a custom binding.</span></span>  

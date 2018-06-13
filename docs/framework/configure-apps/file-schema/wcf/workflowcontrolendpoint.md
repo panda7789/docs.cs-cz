@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754782"
 ---
 # <a name="ltworkflowcontrolendpointgt"></a><span data-ttu-id="27984-102">&lt;WorkflowControlEndpoint&gt;</span><span class="sxs-lookup"><span data-stu-id="27984-102">&lt;workflowControlEndpoint&gt;</span></span>
 <span data-ttu-id="27984-103">Koncový bod standardní řízení provádění instancí pracovního postupu definuje tento element konfigurace (vytvoření, spuštění, pozastavení, ukončit, atd).</span><span class="sxs-lookup"><span data-stu-id="27984-103">This configuration element defines a standard endpoint for controlling the execution of workflow instances (create, run, suspend, terminate, etc).</span></span>  

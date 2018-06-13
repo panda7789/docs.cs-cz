@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761906"
 ---
 # <a name="writing-dataset-contents-as-xml-data"></a><span data-ttu-id="366d7-102">Zápis obsah datovou sadu jako XML Data</span><span class="sxs-lookup"><span data-stu-id="366d7-102">Writing DataSet Contents as XML Data</span></span>
 <span data-ttu-id="366d7-103">V technologii ADO.NET můžete napsat reprezentaci XML <xref:System.Data.DataSet>, s nebo bez jeho schématu.</span><span class="sxs-lookup"><span data-stu-id="366d7-103">In ADO.NET you can write an XML representation of a <xref:System.Data.DataSet>, with or without its schema.</span></span> <span data-ttu-id="366d7-104">Pokud informace o schématu zahrnuty vložené se souborem XML, je zapsán pomocí jazyka definice schématu XML (XSD).</span><span class="sxs-lookup"><span data-stu-id="366d7-104">If schema information is included inline with the XML, it is written using the XML Schema definition language (XSD).</span></span> <span data-ttu-id="366d7-105">Schéma obsahuje definice tabulky <xref:System.Data.DataSet> a také definice relace a omezení.</span><span class="sxs-lookup"><span data-stu-id="366d7-105">The schema contains the table definitions of the <xref:System.Data.DataSet> as well as the relation and constraint definitions.</span></span>  

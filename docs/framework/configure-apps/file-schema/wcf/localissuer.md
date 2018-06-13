@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749111"
 ---
 # <a name="ltlocalissuergt"></a><span data-ttu-id="43a92-102">&lt;localIssuer&gt;</span><span class="sxs-lookup"><span data-stu-id="43a92-102">&lt;localIssuer&gt;</span></span>
 <span data-ttu-id="43a92-103">Určuje adresu a vazba místního vystavitele, který se má použít k získání tokenu zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="43a92-103">Specifies the address and binding of the local issuer to be used to obtain a security token.</span></span>  

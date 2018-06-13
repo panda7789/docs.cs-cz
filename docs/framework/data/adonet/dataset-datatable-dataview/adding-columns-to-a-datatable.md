@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760463"
 ---
 # <a name="adding-columns-to-a-datatable"></a><span data-ttu-id="7d007-102">Přidávání sloupců do DataTable</span><span class="sxs-lookup"><span data-stu-id="7d007-102">Adding Columns to a DataTable</span></span>
 <span data-ttu-id="7d007-103">A <xref:System.Data.DataTable> obsahuje kolekci <xref:System.Data.DataColumn> objekty odkazuje **sloupce** vlastnosti tabulky.</span><span class="sxs-lookup"><span data-stu-id="7d007-103">A <xref:System.Data.DataTable> contains a collection of <xref:System.Data.DataColumn> objects referenced by the **Columns** property of the table.</span></span> <span data-ttu-id="7d007-104">Tato kolekce sloupců, společně s omezeními, definuje schéma a struktura tabulky.</span><span class="sxs-lookup"><span data-stu-id="7d007-104">This collection of columns, along with any constraints, defines the schema, or structure, of the table.</span></span>  

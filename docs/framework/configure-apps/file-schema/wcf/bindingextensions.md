@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750772"
 ---
 # <a name="ltbindingextensionsgt"></a><span data-ttu-id="ff7a9-102">&lt;bindingExtensions&gt;</span><span class="sxs-lookup"><span data-stu-id="ff7a9-102">&lt;bindingExtensions&gt;</span></span>
 <span data-ttu-id="ff7a9-103">Tato část umožňuje použití definované uživatelem vazby z počítače nebo konfiguračního souboru aplikace.</span><span class="sxs-lookup"><span data-stu-id="ff7a9-103">This section enables the use of a user defined binding from a machine or application configuration file.</span></span> <span data-ttu-id="ff7a9-104">Můžete přidat definované uživatelem vazby k této kolekci pomocí `add` – klíčové slovo a nastavení `type` atribut elementu uživatelem definované vazby, společně s `name` vazby definován atribut na jméno uživatele.</span><span class="sxs-lookup"><span data-stu-id="ff7a9-104">You can add a user defined binding to this collection by using the `add` keyword, and setting the `type` attribute of the element to a user defined binding, as well as the `name` attribute to the name of the user defined binding.</span></span>  

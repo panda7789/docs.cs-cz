@@ -1,49 +1,39 @@
 ---
-title: "Ukázková data pro PLINQ"
-ms.custom: 
+title: Ukázková data pro PLINQ
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - PLINQ queries, sample data
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 4b1aaa6f3027283ff20088d6122f9b4ec4bb1111
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 3dd16f46b7d7eb80021a67583f51feae182a2cc9
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33590891"
 ---
-# <a name="plinq-data-sample"></a><span data-ttu-id="8231a-102">Ukázková data pro PLINQ</span><span class="sxs-lookup"><span data-stu-id="8231a-102">PLINQ Data Sample</span></span>
-<span data-ttu-id="8231a-103">Tato ukázka obsahuje příklad data ve formátu .csv, společně s metody, které transformují je na kolekce v paměti zákazníků, produktů, objednávky a podrobnosti o objednávce.</span><span class="sxs-lookup"><span data-stu-id="8231a-103">This sample contains example data in .csv format, together with methods that transform it into in-memory collections of Customers, Products, Orders, and Order Details.</span></span> <span data-ttu-id="8231a-104">Pro další pokusy s PLINQ můžete vložit příklady kódů z některých dalších tématech do kódu v tomto tématu a vyvolání z `Main` metoda.</span><span class="sxs-lookup"><span data-stu-id="8231a-104">To further experiment with PLINQ, you can paste code examples from certain other topics into the code in this topic and invoke it from the `Main` method.</span></span> <span data-ttu-id="8231a-105">Tyto údaje můžete použít také s vlastními PLINQ dotazy.</span><span class="sxs-lookup"><span data-stu-id="8231a-105">You can also use this data with your own PLINQ queries.</span></span>  
+# <a name="plinq-data-sample"></a><span data-ttu-id="55413-102">Ukázková data pro PLINQ</span><span class="sxs-lookup"><span data-stu-id="55413-102">PLINQ Data Sample</span></span>
+<span data-ttu-id="55413-103">Tato ukázka obsahuje příklad data ve formátu .csv, společně s metody, které transformují je na kolekce v paměti zákazníků, produktů, objednávky a podrobnosti o objednávce.</span><span class="sxs-lookup"><span data-stu-id="55413-103">This sample contains example data in .csv format, together with methods that transform it into in-memory collections of Customers, Products, Orders, and Order Details.</span></span> <span data-ttu-id="55413-104">Pro další pokusy s PLINQ můžete vložit příklady kódů z některých dalších tématech do kódu v tomto tématu a vyvolání z `Main` metoda.</span><span class="sxs-lookup"><span data-stu-id="55413-104">To further experiment with PLINQ, you can paste code examples from certain other topics into the code in this topic and invoke it from the `Main` method.</span></span> <span data-ttu-id="55413-105">Tyto údaje můžete použít také s vlastními PLINQ dotazy.</span><span class="sxs-lookup"><span data-stu-id="55413-105">You can also use this data with your own PLINQ queries.</span></span>  
   
- <span data-ttu-id="8231a-106">Data představuje podmnožinu databázi Northwind.</span><span class="sxs-lookup"><span data-stu-id="8231a-106">The data represents a subset of the Northwind database.</span></span> <span data-ttu-id="8231a-107">Záznamy o zákaznících padesát (50) jsou zahrnuty, ale ne všechna pole.</span><span class="sxs-lookup"><span data-stu-id="8231a-107">Fifty (50) customer records are included, but not all fields.</span></span> <span data-ttu-id="8231a-108">Podmnožinu řádků z objednávek a odpovídající data z Order_Detail pro každý zákazníka je zahrnuta.</span><span class="sxs-lookup"><span data-stu-id="8231a-108">A subset of the rows from the Orders and corresponding Order_Detail data for every Customer is included.</span></span> <span data-ttu-id="8231a-109">Všechny produkty, které jsou zahrnuty.</span><span class="sxs-lookup"><span data-stu-id="8231a-109">All Products are included.</span></span>  
+ <span data-ttu-id="55413-106">Data představuje podmnožinu databázi Northwind.</span><span class="sxs-lookup"><span data-stu-id="55413-106">The data represents a subset of the Northwind database.</span></span> <span data-ttu-id="55413-107">Záznamy o zákaznících padesát (50) jsou zahrnuty, ale ne všechna pole.</span><span class="sxs-lookup"><span data-stu-id="55413-107">Fifty (50) customer records are included, but not all fields.</span></span> <span data-ttu-id="55413-108">Podmnožinu řádků z objednávek a odpovídající data z Order_Detail pro každý zákazníka je zahrnuta.</span><span class="sxs-lookup"><span data-stu-id="55413-108">A subset of the rows from the Orders and corresponding Order_Detail data for every Customer is included.</span></span> <span data-ttu-id="55413-109">Všechny produkty, které jsou zahrnuty.</span><span class="sxs-lookup"><span data-stu-id="55413-109">All Products are included.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="8231a-110">Datové sady není dostatečně velký pro ukazují, že PLINQ je rychlejší než LINQ na objekty pro dotazy, které obsahují pouze základní `where` a `select` klauzule.</span><span class="sxs-lookup"><span data-stu-id="8231a-110">The data set is not large enough to demonstrate that PLINQ is faster than LINQ to Objects for queries that contain just basic `where` and `select` clauses.</span></span> <span data-ttu-id="8231a-111">Abyste viděli, zvyšuje rychlost pro malé datové sady, jako je tato, pomocí dotazů, které obsahují výpočetně náročných operací na každý element v datové sadě.</span><span class="sxs-lookup"><span data-stu-id="8231a-111">To observe speed increases for small data sets such as this, use queries that contain computationally expensive operations on every element in the data set.</span></span>  
+>  <span data-ttu-id="55413-110">Datové sady není dostatečně velký pro ukazují, že PLINQ je rychlejší než LINQ na objekty pro dotazy, které obsahují pouze základní `where` a `select` klauzule.</span><span class="sxs-lookup"><span data-stu-id="55413-110">The data set is not large enough to demonstrate that PLINQ is faster than LINQ to Objects for queries that contain just basic `where` and `select` clauses.</span></span> <span data-ttu-id="55413-111">Abyste viděli, zvyšuje rychlost pro malé datové sady, jako je tato, pomocí dotazů, které obsahují výpočetně náročných operací na každý element v datové sadě.</span><span class="sxs-lookup"><span data-stu-id="55413-111">To observe speed increases for small data sets such as this, use queries that contain computationally expensive operations on every element in the data set.</span></span>  
   
-### <a name="to-set-up-this-sample"></a><span data-ttu-id="8231a-112">Nastavení této ukázky</span><span class="sxs-lookup"><span data-stu-id="8231a-112">To set up this sample</span></span>  
+### <a name="to-set-up-this-sample"></a><span data-ttu-id="55413-112">Nastavení této ukázky</span><span class="sxs-lookup"><span data-stu-id="55413-112">To set up this sample</span></span>  
   
-1.  <span data-ttu-id="8231a-113">Vytvoření projektu konzolové aplikace jazyka Visual Basic a Visual C#.</span><span class="sxs-lookup"><span data-stu-id="8231a-113">Create a Visual Basic or Visual C# console application project.</span></span>  
+1.  <span data-ttu-id="55413-113">Vytvoření projektu konzolové aplikace jazyka Visual Basic a Visual C#.</span><span class="sxs-lookup"><span data-stu-id="55413-113">Create a Visual Basic or Visual C# console application project.</span></span>  
   
-2.  <span data-ttu-id="8231a-114">Nahraďte obsah Module1.vb nebo Program.cs pomocí kódu, který zahrnuje následující kroky.</span><span class="sxs-lookup"><span data-stu-id="8231a-114">Replace the contents of Module1.vb or Program.cs by using the code that follows these steps.</span></span>  
+2.  <span data-ttu-id="55413-114">Nahraďte obsah Module1.vb nebo Program.cs pomocí kódu, který zahrnuje následující kroky.</span><span class="sxs-lookup"><span data-stu-id="55413-114">Replace the contents of Module1.vb or Program.cs by using the code that follows these steps.</span></span>  
   
-3.  <span data-ttu-id="8231a-115">Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**.</span><span class="sxs-lookup"><span data-stu-id="8231a-115">On the **Project** menu, click **Add New Item**.</span></span> <span data-ttu-id="8231a-116">Vyberte **textový soubor** a pak klikněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="8231a-116">Select **Text File** and then click **OK**.</span></span> <span data-ttu-id="8231a-117">Zkopírujte data v tomto tématu a pak ji vložit do nového textového souboru.</span><span class="sxs-lookup"><span data-stu-id="8231a-117">Copy the data in this topic and then paste it in the new text file.</span></span> <span data-ttu-id="8231a-118">Na **soubor** nabídky, klikněte na tlačítko **Uložit**, název souboru Plinqdata.csv a pak ho uložte ve složce, která obsahuje zdrojové soubory vašeho kódu.</span><span class="sxs-lookup"><span data-stu-id="8231a-118">On the **File** menu, click **Save**, name the file Plinqdata.csv, and then save it in the folder that contains your source code files.</span></span>  
+3.  <span data-ttu-id="55413-115">Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**.</span><span class="sxs-lookup"><span data-stu-id="55413-115">On the **Project** menu, click **Add New Item**.</span></span> <span data-ttu-id="55413-116">Vyberte **textový soubor** a pak klikněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="55413-116">Select **Text File** and then click **OK**.</span></span> <span data-ttu-id="55413-117">Zkopírujte data v tomto tématu a pak ji vložit do nového textového souboru.</span><span class="sxs-lookup"><span data-stu-id="55413-117">Copy the data in this topic and then paste it in the new text file.</span></span> <span data-ttu-id="55413-118">Na **soubor** nabídky, klikněte na tlačítko **Uložit**, název souboru Plinqdata.csv a pak ho uložte ve složce, která obsahuje zdrojové soubory vašeho kódu.</span><span class="sxs-lookup"><span data-stu-id="55413-118">On the **File** menu, click **Save**, name the file Plinqdata.csv, and then save it in the folder that contains your source code files.</span></span>  
   
-4.  <span data-ttu-id="8231a-119">Stisknutím klávesy F5 ověřte, zda projekt sestavení a běží správně.</span><span class="sxs-lookup"><span data-stu-id="8231a-119">Press F5 to verify that the project builds and runs correctly.</span></span> <span data-ttu-id="8231a-120">Tento výstup má být zobrazena v okně konzoly.</span><span class="sxs-lookup"><span data-stu-id="8231a-120">The following output should be displayed in the console window.</span></span>  
+4.  <span data-ttu-id="55413-119">Stisknutím klávesy F5 ověřte, zda projekt sestavení a běží správně.</span><span class="sxs-lookup"><span data-stu-id="55413-119">Press F5 to verify that the project builds and runs correctly.</span></span> <span data-ttu-id="55413-120">Tento výstup má být zobrazena v okně konzoly.</span><span class="sxs-lookup"><span data-stu-id="55413-120">The following output should be displayed in the console window.</span></span>  
   
     ```  
     Customer count: 50  
@@ -56,7 +46,7 @@ ms.lasthandoff: 12/23/2017
  [!code-csharp[PLINQ#50](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#50)]
  [!code-vb[PLINQ#50](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#50)]  
   
-## <a name="data"></a><span data-ttu-id="8231a-121">Data</span><span class="sxs-lookup"><span data-stu-id="8231a-121">Data</span></span>  
+## <a name="data"></a><span data-ttu-id="55413-121">Data</span><span class="sxs-lookup"><span data-stu-id="55413-121">Data</span></span>  
   
 ```  
 CUSTOMERS  
@@ -872,5 +862,5 @@ PRODUCTS
 END PRODUCTS  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="8231a-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="8231a-122">See Also</span></span>  
- [<span data-ttu-id="8231a-123">Paralelní LINQ (PLINQ)</span><span class="sxs-lookup"><span data-stu-id="8231a-123">Parallel LINQ (PLINQ)</span></span>](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+## <a name="see-also"></a><span data-ttu-id="55413-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="55413-122">See Also</span></span>  
+ [<span data-ttu-id="55413-123">Paralelní LINQ (PLINQ)</span><span class="sxs-lookup"><span data-stu-id="55413-123">Parallel LINQ (PLINQ)</span></span>](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760970"
 ---
 # <a name="lt-less-than-entity-sql"></a><span data-ttu-id="5857c-102">&lt; (Méně než) (Entita SQL)</span><span class="sxs-lookup"><span data-stu-id="5857c-102">&lt; (Less Than) (Entity SQL)</span></span>
 <span data-ttu-id="5857c-103">Porovná dva výrazy a určit, zda má hodnotu menší, než pravý výraz levý výraz.</span><span class="sxs-lookup"><span data-stu-id="5857c-103">Compares two expressions to determine whether the left expression has a value less than the right expression.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746732"
 ---
 # <a name="ltdnsgt"></a><span data-ttu-id="5694f-102">&lt;DNS&gt;</span><span class="sxs-lookup"><span data-stu-id="5694f-102">&lt;dns&gt;</span></span>
 <span data-ttu-id="5694f-103">Určuje očekávanou identitu serveru.</span><span class="sxs-lookup"><span data-stu-id="5694f-103">Specifies the expected identity of the server.</span></span> <span data-ttu-id="5694f-104">Tato identita je platný pro X509 režim ověřování certifikátu, pokud certifikát serveru obsahuje DNS se stejnou hodnotou.</span><span class="sxs-lookup"><span data-stu-id="5694f-104">This identity is valid for X509 Certificate authentication mode if the server’s certificate contains a DNS with the same value.</span></span> <span data-ttu-id="5694f-105">Je taky platná pro režim ověřování systému Windows Pokud hlavní název služby má stejnou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="5694f-105">It is also valid for Windows authentication mode if the SPN has the same value.</span></span>  

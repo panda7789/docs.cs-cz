@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749423"
 ---
 # <a name="ltthrowunobservedtaskexceptionsgt-element"></a><span data-ttu-id="a14e3-102">&lt;Throwunobservedtaskexceptions –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="a14e3-102">&lt;ThrowUnobservedTaskExceptions&gt; Element</span></span>
 <span data-ttu-id="a14e3-103">Určuje, zda úloha neošetřené výjimky by měl ukončit spuštěných procesů.</span><span class="sxs-lookup"><span data-stu-id="a14e3-103">Specifies whether unhandled task exceptions should terminate a running process.</span></span>  

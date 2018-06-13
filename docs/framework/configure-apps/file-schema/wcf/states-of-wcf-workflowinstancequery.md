@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32749485"
 ---
 # <a name="ltstatesgt-of-wcf-ltworkflowinstancequerygt"></a><span data-ttu-id="138b1-102">&lt;states&gt; služby WCF, &lt;workflowInstanceQuery&gt;</span><span class="sxs-lookup"><span data-stu-id="138b1-102">&lt;states&gt; of WCF, &lt;workflowInstanceQuery&gt;</span></span>
 <span data-ttu-id="138b1-103">Představuje kolekci předplacenému stavy z instance sledovaných pracovního postupu při vytváření záznamů sledování.</span><span class="sxs-lookup"><span data-stu-id="138b1-103">Represents a collection of subscribed states from the tracked workflow instance when the tracking records are created.</span></span>  

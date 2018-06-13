@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32760047"
 ---
 # <a name="inference-limitations"></a><span data-ttu-id="35d14-102">Odvození omezení</span><span class="sxs-lookup"><span data-stu-id="35d14-102">Inference Limitations</span></span>
 <span data-ttu-id="35d14-103">Proces odvození <xref:System.Data.DataSet> schématu z XML může mít za následek různé schémata v závislosti na elementy XML v každý dokument.</span><span class="sxs-lookup"><span data-stu-id="35d14-103">The process of inferring a <xref:System.Data.DataSet> schema from XML can result in different schemas depending on the XML elements in each document.</span></span> <span data-ttu-id="35d14-104">Zvažte například následující dokumenty XML.</span><span class="sxs-lookup"><span data-stu-id="35d14-104">For example, consider the following XML documents.</span></span>  

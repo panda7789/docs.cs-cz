@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761630"
 ---
 # <a name="collection-entity-sql"></a><span data-ttu-id="71f02-102">KOLEKCE (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="71f02-102">COLLECTION (Entity SQL)</span></span>
 <span data-ttu-id="71f02-103">Klíčové slovo KOLEKCE se používá pouze v definici vložená funkce.</span><span class="sxs-lookup"><span data-stu-id="71f02-103">The COLLECTION keyword is only used in the definition of an inline function.</span></span> <span data-ttu-id="71f02-104">Funkce kolekce jsou funkce, které pracují kolekci hodnot a Vytvoření skalární výstupu.</span><span class="sxs-lookup"><span data-stu-id="71f02-104">Collection functions are functions that operate on a collection of values and produce a scalar output.</span></span>  

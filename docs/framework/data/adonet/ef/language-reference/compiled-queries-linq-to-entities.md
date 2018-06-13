@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761594"
 ---
 # <a name="compiled-queries--linq-to-entities"></a><span data-ttu-id="cb32b-102">Kompilované dotazy (LINQ to Entities)</span><span class="sxs-lookup"><span data-stu-id="cb32b-102">Compiled Queries  (LINQ to Entities)</span></span>
 <span data-ttu-id="cb32b-103">Když máte aplikaci, která provádí strukturálně podobné dotazy mnohokrát v rozhraní Entity Framework, můžete zvýšit výkon často kompilování dotazu jednou a spouštění s odlišnými parametry několikrát.</span><span class="sxs-lookup"><span data-stu-id="cb32b-103">When you have an application that executes structurally similar queries many times in the Entity Framework, you can frequently increase performance by compiling the query one time and executing it several times with different parameters.</span></span> <span data-ttu-id="cb32b-104">Například aplikace může mít načíst všechny zákazníky z určitého města; Město je zadána v době běhu uživatele ve formuláři.</span><span class="sxs-lookup"><span data-stu-id="cb32b-104">For example, an application might have to retrieve all the customers in a particular city; the city is specified at runtime by the user in a form.</span></span> <span data-ttu-id="cb32b-105">Technologie LINQ to Entities podporuje používání kompilované dotazy pro tento účel.</span><span class="sxs-lookup"><span data-stu-id="cb32b-105">LINQ to Entities supports using compiled queries for this purpose.</span></span>  

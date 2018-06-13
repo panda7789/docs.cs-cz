@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751767"
 ---
 # <a name="how-to-create-an-application-domain"></a><span data-ttu-id="7265d-102">Postupy: Vytvoření domény aplikace</span><span class="sxs-lookup"><span data-stu-id="7265d-102">How to: Create an Application Domain</span></span>
 <span data-ttu-id="7265d-103">Běžné hostitel běhu jazyka automaticky vytvoří aplikační domény v případě potřeby.</span><span class="sxs-lookup"><span data-stu-id="7265d-103">A common language runtime host creates application domains automatically when they are needed.</span></span> <span data-ttu-id="7265d-104">Můžete však vytvořit vlastní domény aplikace a načíst do nich ty sestavení, které chcete spravovat osobní.</span><span class="sxs-lookup"><span data-stu-id="7265d-104">However, you can create your own application domains and load into them those assemblies that you want to manage personally.</span></span> <span data-ttu-id="7265d-105">Můžete také vytvořit aplikační domény, ze kterých je kód spuštěn.</span><span class="sxs-lookup"><span data-stu-id="7265d-105">You can also create application domains from which you execute code.</span></span>  

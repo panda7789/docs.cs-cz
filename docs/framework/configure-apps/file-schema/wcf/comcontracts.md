@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746407"
 ---
 # <a name="ltcomcontractsgt"></a><span data-ttu-id="439e0-102">&lt;comContracts&gt;</span><span class="sxs-lookup"><span data-stu-id="439e0-102">&lt;comContracts&gt;</span></span>
 <span data-ttu-id="439e0-103">`comContracts` Konfigurační oddíl obsahuje prvky, které umožňují určit různé vlastnosti modelu COM + integrace kontraktu služby.</span><span class="sxs-lookup"><span data-stu-id="439e0-103">The `comContracts` configuration section contains elements that allow you to specify various properties of a COM+ integration service contract.</span></span>  

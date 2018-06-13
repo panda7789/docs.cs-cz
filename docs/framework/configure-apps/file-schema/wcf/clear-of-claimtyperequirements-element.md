@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32747122"
 ---
 # <a name="ltcleargt-of-ltclaimtyperequirementsgt-element"></a><span data-ttu-id="d6125-102">&lt;clear&gt; elementu &lt;claimTypeRequirements&gt;</span><span class="sxs-lookup"><span data-stu-id="d6125-102">&lt;clear&gt; of &lt;claimTypeRequirements&gt; element</span></span>
 <span data-ttu-id="d6125-103">Určuje, že všechny deklarace identity typy odeberou ve federované přihlašovací údaje.</span><span class="sxs-lookup"><span data-stu-id="d6125-103">Specifies that all the claim types to be removed in the federated credential.</span></span> <span data-ttu-id="d6125-104">Tím se zajistí, že kolekce začne prázdný.</span><span class="sxs-lookup"><span data-stu-id="d6125-104">This ensures that the collection starts empty.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764733"
 ---
 # <a name="navigate-entity-sql"></a><span data-ttu-id="bf416-102">PŘEJDĚTE (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="bf416-102">NAVIGATE (Entity SQL)</span></span>
 <span data-ttu-id="bf416-103">Přejde přes vztahu mezi entity.</span><span class="sxs-lookup"><span data-stu-id="bf416-103">Navigates over the relationship established between entities.</span></span>  

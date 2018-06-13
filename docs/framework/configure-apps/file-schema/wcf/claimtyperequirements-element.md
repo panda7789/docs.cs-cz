@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748011"
 ---
 # <a name="ltclaimtyperequirementsgt-element"></a><span data-ttu-id="58781-102">Element &lt;claimTypeRequirements&gt;</span><span class="sxs-lookup"><span data-stu-id="58781-102">&lt;claimTypeRequirements&gt; element</span></span>
 <span data-ttu-id="58781-103">Určuje kolekci typů požadované deklarace identity.</span><span class="sxs-lookup"><span data-stu-id="58781-103">Specifies a collection of required claim types.</span></span>  

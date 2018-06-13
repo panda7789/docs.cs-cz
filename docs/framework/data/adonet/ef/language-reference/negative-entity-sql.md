@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765149"
 ---
 # <a name="--negative-entity-sql"></a><span data-ttu-id="61a6d-102">-(Záporné) (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="61a6d-102">- (Negative) (Entity SQL)</span></span>
 <span data-ttu-id="61a6d-103">Vrátí záporná hodnota číselného výrazu.</span><span class="sxs-lookup"><span data-stu-id="61a6d-103">Returns the negative of the value of a numeric expression.</span></span>  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746352"
 ---
 # <a name="ltoidentrygt-element"></a><span data-ttu-id="6797a-102">&lt;oidentry –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="6797a-102">&lt;oidEntry&gt; Element</span></span>
 <span data-ttu-id="6797a-103">Mapuje ASN.1 identifikátor objektu (OID) popisný název.</span><span class="sxs-lookup"><span data-stu-id="6797a-103">Maps an ASN.1 object identifier (OID) to a friendly name.</span></span>  

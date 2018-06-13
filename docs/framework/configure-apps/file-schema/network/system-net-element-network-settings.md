@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752439"
 ---
 # <a name="ltsystemnetgt-element-network-settings"></a><span data-ttu-id="f2ae6-102">&lt;system.Net&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="f2ae6-102">&lt;system.Net&gt; Element (Network Settings)</span></span>
 <span data-ttu-id="f2ae6-103">Obsahuje nastavení, které určují, jak rozhraní .NET Framework připojí k síti.</span><span class="sxs-lookup"><span data-stu-id="f2ae6-103">Contains settings that specify how the .NET Framework connects to the network.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745822"
 ---
 # <a name="ltaddgt-of-ltserviceactivationsgt"></a><span data-ttu-id="1409a-102">&lt;add&gt; – &lt;serviceActivations&gt;</span><span class="sxs-lookup"><span data-stu-id="1409a-102">&lt;add&gt; of &lt;serviceActivations&gt;</span></span>
 <span data-ttu-id="1409a-103">Konfigurace element, který umožňuje definovat nastavení aktivace virtuální služby, pomocí které jsou namapovány na vaše typů služby Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="1409a-103">A configuration element that allows you to define virtual service activation settings that map to your Windows Communication Foundation (WCF) service types.</span></span> <span data-ttu-id="1409a-104">Díky tomu je možné aktivovat služby hostované v WAS nebo IIS bez souborů .svc.</span><span class="sxs-lookup"><span data-stu-id="1409a-104">This makes it possible to activate services hosted in WAS/IIS without an .svc file.</span></span>  

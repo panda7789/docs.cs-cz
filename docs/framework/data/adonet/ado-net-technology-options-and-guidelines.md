@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758214"
 ---
 # <a name="adonet-technology-options-and-guidelines"></a><span data-ttu-id="4d14d-102">Možnosti technologie ADO.NET a pokyny</span><span class="sxs-lookup"><span data-stu-id="4d14d-102">ADO.NET Technology Options and Guidelines</span></span>
 <span data-ttu-id="4d14d-103">Platforma dat ADO.NET je více verzí strategie pro snížit množství kódování a údržby, které jsou potřeba pro vývojáře je povolením programu na modely dat koncepční entity.</span><span class="sxs-lookup"><span data-stu-id="4d14d-103">The ADO.NET Data Platform is a multi-release strategy to decrease the amount of coding and maintenance required for developers by enabling them to program against conceptual entity data models.</span></span> <span data-ttu-id="4d14d-104">Tato platforma obsahuje ADO.NET Entity Framework a souvisejících technologiích.</span><span class="sxs-lookup"><span data-stu-id="4d14d-104">This platform includes the ADO.NET Entity Framework and related technologies.</span></span>  

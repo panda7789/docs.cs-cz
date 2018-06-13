@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752475"
 ---
 # <a name="ltsettingsgt-element-network-settings"></a><span data-ttu-id="541cf-102">&lt;nastavení&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="541cf-102">&lt;settings&gt; Element (Network Settings)</span></span>
 <span data-ttu-id="541cf-103">Nakonfiguruje možnosti základní sítě <xref:System.Net?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="541cf-103">Configures basic network options for the <xref:System.Net?displayProperty=nameWithType> namespace.</span></span>  

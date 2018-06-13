@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757863"
 ---
 # <a name="map-key-xml-schema-xsd-constraints-to-dataset-constraints"></a><span data-ttu-id="54c34-102">Mapa klíč omezení schématu XML (XSD) k omezení datové sady</span><span class="sxs-lookup"><span data-stu-id="54c34-102">Map key XML Schema (XSD) Constraints to DataSet Constraints</span></span>
 <span data-ttu-id="54c34-103">Ve schématu, můžete určit klíče omezení na element nebo atribut, pomocí **klíč** elementu.</span><span class="sxs-lookup"><span data-stu-id="54c34-103">In a schema, you can specify a key constraint on an element or attribute using the **key** element.</span></span> <span data-ttu-id="54c34-104">Element nebo atribut, na kterém je zadán omezení klíče musí mít jedinečné hodnoty v žádné instanci schématu a nesmí obsahovat hodnoty null.</span><span class="sxs-lookup"><span data-stu-id="54c34-104">The element or attribute on which a key constraint is specified must have unique values in any schema instance, and cannot have null values.</span></span>  

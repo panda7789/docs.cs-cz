@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765071"
 ---
 # <a name="parameters-entity-sql"></a><span data-ttu-id="a02d3-102">Parametry (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="a02d3-102">Parameters (Entity SQL)</span></span>
 <span data-ttu-id="a02d3-103">Parametry jsou proměnné, které jsou definované mimo [!INCLUDE[esql](../../../../../../includes/esql-md.md)], obvykle prostřednictvím rozhraní API vazby, který je používán hostitelského jazyka.</span><span class="sxs-lookup"><span data-stu-id="a02d3-103">Parameters are variables that are defined outside [!INCLUDE[esql](../../../../../../includes/esql-md.md)], usually through a binding API that is used by a host language.</span></span> <span data-ttu-id="a02d3-104">Každý parametr má název a typ.</span><span class="sxs-lookup"><span data-stu-id="a02d3-104">Each parameter has a name and a type.</span></span> <span data-ttu-id="a02d3-105">Názvy parametrů jsou definovány ve výrazech dotazů s na na (@) symbol jako předponu.</span><span class="sxs-lookup"><span data-stu-id="a02d3-105">Parameter names are defined in query expressions with the at (@) symbol as a prefix.</span></span> <span data-ttu-id="a02d3-106">Je umožňuje to rozlišit z názvů vlastností nebo jiné názvy, které jsou definovány v dotazu.</span><span class="sxs-lookup"><span data-stu-id="a02d3-106">This disambiguates them from the names of properties or other names that are defined in the query.</span></span>  

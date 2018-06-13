@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753164"
 ---
 # <a name="ltdiscoveryclientgt"></a><span data-ttu-id="f7474-102">&lt;Objekty DiscoveryClient&gt;</span><span class="sxs-lookup"><span data-stu-id="f7474-102">&lt;discoveryClient&gt;</span></span>
 <span data-ttu-id="f7474-103">Element konfigurace pro vytvoření vlastní vazby, která umožňuje klientskou aplikaci, aby automaticky vyhledat zjistitelný službu a najděte jeho adresa za běhu.</span><span class="sxs-lookup"><span data-stu-id="f7474-103">A configuration element for creating a custom binding that enables a client application to automatically search for a discoverable service and find its address at runtime.</span></span>  

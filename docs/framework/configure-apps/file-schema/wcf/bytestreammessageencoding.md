@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753271"
 ---
 # <a name="ltbytestreammessageencodinggt"></a><span data-ttu-id="af2ed-102">&lt;byteStreamMessageEncoding&gt;</span><span class="sxs-lookup"><span data-stu-id="af2ed-102">&lt;byteStreamMessageEncoding&gt;</span></span>
 <span data-ttu-id="af2ed-103">Určuje zprávu, která kódování pomocí datového proudu bajtů, přičemž můžete určit kódování znaků.</span><span class="sxs-lookup"><span data-stu-id="af2ed-103">Specifies the message encoding as a stream of bytes, with the option to specify the character encoding.</span></span>  

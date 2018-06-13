@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32765318"
 ---
 # <a name="entity-type"></a><span data-ttu-id="2c28d-102">Typ entity</span><span class="sxs-lookup"><span data-stu-id="2c28d-102">entity type</span></span>
 <span data-ttu-id="2c28d-103">*Typ entity* je základní stavební blok pro popisující strukturu dat s Entity Data Model (EDM).</span><span class="sxs-lookup"><span data-stu-id="2c28d-103">The *entity type* is the fundamental building block for describing the structure of data with the Entity Data Model (EDM).</span></span> <span data-ttu-id="2c28d-104">Typ entity v konceptuálním modelu představuje strukturu nejvyšší úrovně koncepty, jako jsou zákazníci nebo objednávky.</span><span class="sxs-lookup"><span data-stu-id="2c28d-104">In a conceptual model, an entity type represents the structure of top-level concepts, such as customers or orders.</span></span> <span data-ttu-id="2c28d-105">Typ entity je šablona pro instance typu entity.</span><span class="sxs-lookup"><span data-stu-id="2c28d-105">An entity type is a template for entity type instances.</span></span> <span data-ttu-id="2c28d-106">Každá šablona obsahuje následující informace:</span><span class="sxs-lookup"><span data-stu-id="2c28d-106">Each template contains the following information:</span></span>  

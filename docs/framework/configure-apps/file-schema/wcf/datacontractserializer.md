@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748008"
 ---
 # <a name="datacontractserializer"></a><span data-ttu-id="0fe7d-102">dataContractSerializer</span><span class="sxs-lookup"><span data-stu-id="0fe7d-102">dataContractSerializer</span></span>
 <span data-ttu-id="0fe7d-103">Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="0fe7d-103">Contains configuration data for the <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  

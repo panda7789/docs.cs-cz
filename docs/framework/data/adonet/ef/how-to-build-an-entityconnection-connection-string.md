@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759956"
 ---
 # <a name="how-to-build-an-entityconnection-connection-string"></a><span data-ttu-id="bea52-102">Postupy: sestavení řetězec připojení EntityConnection</span><span class="sxs-lookup"><span data-stu-id="bea52-102">How to: Build an EntityConnection Connection String</span></span>
 <span data-ttu-id="bea52-103">Toto téma představuje příklad, jak sestavit <xref:System.Data.EntityClient.EntityConnection>.</span><span class="sxs-lookup"><span data-stu-id="bea52-103">This topic provides an example of how to build an <xref:System.Data.EntityClient.EntityConnection>.</span></span>  

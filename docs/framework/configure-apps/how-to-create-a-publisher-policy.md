@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758123"
 ---
 # <a name="how-to-create-a-publisher-policy"></a><span data-ttu-id="48207-102">Postupy: Vytváření zásad vydavatele</span><span class="sxs-lookup"><span data-stu-id="48207-102">How to: Create a Publisher Policy</span></span>
 <span data-ttu-id="48207-103">Dodavatelé sestavení může stavu, že aplikace by měly používat na novější verzi sestavení zahrnutím souboru zásad vydavatele s upgradovaná sestavením.</span><span class="sxs-lookup"><span data-stu-id="48207-103">Vendors of assemblies can state that applications should use a newer version of an assembly by including a publisher policy file with the upgraded assembly.</span></span> <span data-ttu-id="48207-104">Soubor zásad vydavatele určuje sestavení – přesměrování a základní nastavení kódu a používá stejný formát jako konfiguračního souboru aplikace.</span><span class="sxs-lookup"><span data-stu-id="48207-104">The publisher policy file specifies assembly redirection and code base settings, and uses the same format as an application configuration file.</span></span> <span data-ttu-id="48207-105">Soubor zásad vydavatele je zkompilován do sestavení a umístit do globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="48207-105">The publisher policy file is compiled into an assembly and placed in the global assembly cache.</span></span>  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757369"
 ---
 # <a name="ltclaimsauthorizationmanagergt"></a><span data-ttu-id="008c8-102">&lt;claimsAuthorizationManager&gt;</span><span class="sxs-lookup"><span data-stu-id="008c8-102">&lt;claimsAuthorizationManager&gt;</span></span>
 <span data-ttu-id="008c8-103">Zaregistruje Správce autorizací příchozí deklarace identity deklarací identity.</span><span class="sxs-lookup"><span data-stu-id="008c8-103">Registers a claims authorization manager for the incoming claims.</span></span>  

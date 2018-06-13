@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32757902"
 ---
 # <a name="managing-dataviews"></a><span data-ttu-id="8b6a1-102">Správa DataView</span><span class="sxs-lookup"><span data-stu-id="8b6a1-102">Managing DataViews</span></span>
 <span data-ttu-id="8b6a1-103">Můžete použít <xref:System.Data.DataViewManager> ke správě nastavení zobrazení pro všechny tabulky v <xref:System.Data.DataView>.</span><span class="sxs-lookup"><span data-stu-id="8b6a1-103">You can use a <xref:System.Data.DataViewManager> to manage view settings for all the tables in a <xref:System.Data.DataView>.</span></span> <span data-ttu-id="8b6a1-104">Pokud máte ovládací prvek, který chcete vytvořit vazbu k několika tabulkám, jako je například mřížka který naviguje relace, **DataViewManager** je ideální.</span><span class="sxs-lookup"><span data-stu-id="8b6a1-104">If you have a control that you want to bind to multiple tables, such as a grid that navigates relationships, a **DataViewManager** is ideal.</span></span>  

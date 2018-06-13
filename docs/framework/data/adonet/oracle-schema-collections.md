@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766852"
 ---
 # <a name="oracle-schema-collections"></a><span data-ttu-id="cdc32-102">Kolekce schématu Oracle</span><span class="sxs-lookup"><span data-stu-id="cdc32-102">Oracle Schema Collections</span></span>
 <span data-ttu-id="cdc32-103">Zprostředkovatel dat Microsoft .NET Framework pro Oracle podporuje následující kolekce konkrétní schématu kromě běžných kolekcemi schémat:</span><span class="sxs-lookup"><span data-stu-id="cdc32-103">The Microsoft .NET Framework Data Provider for Oracle supports the following specific schema collections in addition to the common schema collections:</span></span>  

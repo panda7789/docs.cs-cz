@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763238"
 ---
 # <a name="isnull-entity-sql"></a><span data-ttu-id="d9fb5-102">ISNULL (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="d9fb5-102">ISNULL (Entity SQL)</span></span>
 <span data-ttu-id="d9fb5-103">Určuje, pokud má hodnotu null výrazu dotazu.</span><span class="sxs-lookup"><span data-stu-id="d9fb5-103">Determines if a query expression is null.</span></span>  

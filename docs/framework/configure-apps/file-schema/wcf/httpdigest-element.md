@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748890"
 ---
 # <a name="lthttpdigestgt-element"></a><span data-ttu-id="cbf9c-102">Element &lt;httpDigest&gt;</span><span class="sxs-lookup"><span data-stu-id="cbf9c-102">&lt;httpDigest&gt; Element</span></span>
 <span data-ttu-id="cbf9c-103">Určuje výtah zadejte pověření používaná při ověřování klienta ke službě.</span><span class="sxs-lookup"><span data-stu-id="cbf9c-103">Specifies a digest type credential used when authenticating the client to a service.</span></span>  

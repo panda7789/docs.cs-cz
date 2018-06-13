@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746017"
 ---
 # <a name="ltgeneratepublisherevidencegt-element"></a><span data-ttu-id="adeb7-102">&lt;generatePublisherEvidence&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="adeb7-102">&lt;generatePublisherEvidence&gt; Element</span></span>
 <span data-ttu-id="adeb7-103">Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> důkaz pro zabezpečení přístupu kódu (CAS).</span><span class="sxs-lookup"><span data-stu-id="adeb7-103">Specifies whether the runtime creates <xref:System.Security.Policy.Publisher> evidence for code access security (CAS).</span></span>  

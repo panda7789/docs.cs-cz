@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762920"
 ---
 # <a name="multiset-entity-sql"></a><span data-ttu-id="0511d-102">MULTIMNOŽINA (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="0511d-102">MULTISET (Entity SQL)</span></span>
 <span data-ttu-id="0511d-103">Vytvoří instanci multimnožina ze seznamu hodnot.</span><span class="sxs-lookup"><span data-stu-id="0511d-103">Creates an instance of a multiset from a list of values.</span></span> <span data-ttu-id="0511d-104">Všechny hodnoty ve MULTISET konstruktor musí být kompatibilní typu `T`.</span><span class="sxs-lookup"><span data-stu-id="0511d-104">All the values in the MULTISET constructor must be of a compatible type `T`.</span></span> <span data-ttu-id="0511d-105">Prázdný multiset konstruktory nejsou povoleny.</span><span class="sxs-lookup"><span data-stu-id="0511d-105">Empty multiset constructors are not allowed.</span></span>  

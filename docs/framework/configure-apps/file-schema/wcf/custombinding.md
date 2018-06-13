@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751772"
 ---
 # <a name="ltcustombindinggt"></a><span data-ttu-id="56a8e-102">&lt;customBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="56a8e-102">&lt;customBinding&gt;</span></span>
 <span data-ttu-id="56a8e-103">Poskytuje plnou kontrolu nad zasílání zpráv zásobníku pro uživatele.</span><span class="sxs-lookup"><span data-stu-id="56a8e-103">Provides full control over the messaging stack for the user.</span></span>  

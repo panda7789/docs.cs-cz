@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746264"
 ---
 # <a name="ltbinarymessageencodinggt"></a><span data-ttu-id="59e13-102">&lt;binaryMessageEncoding&gt;</span><span class="sxs-lookup"><span data-stu-id="59e13-102">&lt;binaryMessageEncoding&gt;</span></span>
 <span data-ttu-id="59e13-103">Definuje kodéru zprávy v binární, která kóduje zprávy Windows Communication Foundation (WCF) v binárním v drátové síti.</span><span class="sxs-lookup"><span data-stu-id="59e13-103">Defines a binary message encoder that encodes Windows Communication Foundation (WCF) messages in binary on the wire.</span></span>  

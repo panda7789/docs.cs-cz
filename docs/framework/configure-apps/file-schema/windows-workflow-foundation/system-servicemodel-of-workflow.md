@@ -8,6 +8,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32755634"
 ---
 # <a name="ltsystemservicemodelgt-of-workflow"></a><span data-ttu-id="2f2b4-102">&lt;system.serviceModel&gt; pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="2f2b4-102">&lt;system.serviceModel&gt; of workflow</span></span>
 <span data-ttu-id="2f2b4-103">Tento oddíl konfigurace obsahuje všechny elementy konfigurace pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="2f2b4-103">This configuration section contains all the workflow configuration elements.</span></span>  

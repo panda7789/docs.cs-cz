@@ -15,6 +15,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32746550"
 ---
 # <a name="ltremovegt-element-for-ltlistenersgt-for-lttracegt"></a><span data-ttu-id="c17ef-102">&lt;Odebrat&gt; Element pro &lt;naslouchací procesy&gt; pro &lt;trasování&gt;</span><span class="sxs-lookup"><span data-stu-id="c17ef-102">&lt;remove&gt; Element for &lt;listeners&gt; for &lt;trace&gt;</span></span>
 <span data-ttu-id="c17ef-103">Odebere naslouchací proces z **naslouchací procesy** kolekce.</span><span class="sxs-lookup"><span data-stu-id="c17ef-103">Removes a listener from the **Listeners** collection.</span></span>  

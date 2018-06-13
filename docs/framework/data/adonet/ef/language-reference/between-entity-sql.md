@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761766"
 ---
 # <a name="between-entity-sql"></a><span data-ttu-id="0fe5d-102">MEZI (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="0fe5d-102">BETWEEN (Entity SQL)</span></span>
 <span data-ttu-id="0fe5d-103">Určuje, zda výraz výsledkem hodnota v zadaném rozsahu.</span><span class="sxs-lookup"><span data-stu-id="0fe5d-103">Determines whether an expression results in a value in a specified range.</span></span> <span data-ttu-id="0fe5d-104">[!INCLUDE[esql](../../../../../../includes/esql-md.md)] Mezi výraz má stejné funkce jako výraz jazyka Transact-SQL mezi.</span><span class="sxs-lookup"><span data-stu-id="0fe5d-104">The [!INCLUDE[esql](../../../../../../includes/esql-md.md)] BETWEEN expression has the same functionality as the Transact-SQL BETWEEN expression.</span></span>  

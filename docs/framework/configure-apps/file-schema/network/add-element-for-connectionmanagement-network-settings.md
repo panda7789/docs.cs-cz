@@ -18,6 +18,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32753739"
 ---
 # <a name="ltaddgt-element-for-connectionmanagement-network-settings"></a><span data-ttu-id="8bea0-102">&lt;Přidat&gt; Element pro connectionManagement – (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="8bea0-102">&lt;add&gt; Element for connectionManagement (Network Settings)</span></span>
 <span data-ttu-id="8bea0-103">Přidá do seznamu pro správu připojení IP adresu nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="8bea0-103">Adds an IP address or DNS name to the connection management list.</span></span>  

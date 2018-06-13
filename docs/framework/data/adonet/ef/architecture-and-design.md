@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766865"
 ---
 # <a name="architecture-and-design"></a><span data-ttu-id="e373e-102">Architektura a návrh</span><span class="sxs-lookup"><span data-stu-id="e373e-102">Architecture and Design</span></span>
 <span data-ttu-id="e373e-103">Modul generování SQL v [ukázka zprostředkovatele](http://go.microsoft.com/fwlink/?LinkId=180616) je implementovaný jako návštěvníka na strom výrazu, který představuje strom příkazů.</span><span class="sxs-lookup"><span data-stu-id="e373e-103">The SQL generation module in the [Sample Provider](http://go.microsoft.com/fwlink/?LinkId=180616) is implemented as a visitor on the expression tree that represents the command tree.</span></span> <span data-ttu-id="e373e-104">Generování probíhá v jednom průchodu přes strom výrazu.</span><span class="sxs-lookup"><span data-stu-id="e373e-104">The generation is done in a single pass over the expression tree.</span></span>  

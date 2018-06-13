@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32750749"
 ---
 # <a name="ltroutinggt-of-ltservicebehaviorgt"></a><span data-ttu-id="f78f6-102">&lt;routing&gt; – &lt;serviceBehavior&gt;</span><span class="sxs-lookup"><span data-stu-id="f78f6-102">&lt;routing&gt; of &lt;serviceBehavior&gt;</span></span>
 <span data-ttu-id="f78f6-103">Poskytuje běhové přístup ke službě Směrování a povolit dynamické změnu konfigurace směrování.</span><span class="sxs-lookup"><span data-stu-id="f78f6-103">Provides run-time access to the routing service to allow dynamic modification of the routing configuration.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763836"
 ---
 # <a name="set-entity-sql"></a><span data-ttu-id="89c81-102">Sada (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="89c81-102">SET (Entity SQL)</span></span>
 <span data-ttu-id="89c81-103">Výraz sady se používá k získávání novou kolekci s všechny elementy s duplicitním odebrat převést na kolekci objektů do sady.</span><span class="sxs-lookup"><span data-stu-id="89c81-103">The SET expression is used to convert a collection of objects into a set by yielding a new collection with all duplicate elements removed.</span></span>  

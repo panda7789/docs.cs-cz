@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763667"
 ---
 # <a name="merging-dataset-contents"></a><span data-ttu-id="c994b-102">Slučování obsah datové sady</span><span class="sxs-lookup"><span data-stu-id="c994b-102">Merging DataSet Contents</span></span>
 <span data-ttu-id="c994b-103">Můžete použít <xref:System.Data.DataSet.Merge%2A> metoda sloučit obsah <xref:System.Data.DataSet>, <xref:System.Data.DataTable>, nebo <xref:System.Data.DataRow> pole do existující `DataSet`.</span><span class="sxs-lookup"><span data-stu-id="c994b-103">You can use the <xref:System.Data.DataSet.Merge%2A> method to merge the contents of a <xref:System.Data.DataSet>, <xref:System.Data.DataTable>, or <xref:System.Data.DataRow> array into an existing `DataSet`.</span></span> <span data-ttu-id="c994b-104">Několik možnosti a faktory ovlivňují jak nová data sloučí existující `DataSet`.</span><span class="sxs-lookup"><span data-stu-id="c994b-104">Several factors and options affect how new data is merged into an existing `DataSet`.</span></span>  

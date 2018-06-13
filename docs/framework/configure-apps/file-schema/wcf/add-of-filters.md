@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32754607"
 ---
 # <a name="ltaddgt-of-ltfiltersgt"></a><span data-ttu-id="dd638-102">&lt;add&gt; – &lt;filters&gt;</span><span class="sxs-lookup"><span data-stu-id="dd638-102">&lt;add&gt; of &lt;filters&gt;</span></span>
 <span data-ttu-id="dd638-103">Filtr XPath, který určuje typ zprávy do protokolu.</span><span class="sxs-lookup"><span data-stu-id="dd638-103">A XPath filter that specifies the kind of message to be logged.</span></span>  

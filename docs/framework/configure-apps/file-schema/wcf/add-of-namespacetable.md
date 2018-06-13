@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32748630"
 ---
 # <a name="ltaddgt-of-ltnamespacetablegt"></a><span data-ttu-id="dec67-102">&lt;add&gt; – &lt;namespaceTable&gt;</span><span class="sxs-lookup"><span data-stu-id="dec67-102">&lt;add&gt; of &lt;namespaceTable&gt;</span></span>
 <span data-ttu-id="dec67-103">Představuje konfiguraci elementu, který obsahuje obor názvů jako předpona mapování, která lze poté použít ve filtrech XPath pro směrování.</span><span class="sxs-lookup"><span data-stu-id="dec67-103">Represents a configuration element that contains a namespace to prefix mapping that can then be used in XPath filters for routing.</span></span>  

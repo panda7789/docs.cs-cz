@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762673"
 ---
 # <a name="overlaps-entity-sql"></a><span data-ttu-id="473b5-102">PŘEKRYTÍ (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="473b5-102">OVERLAPS (Entity SQL)</span></span>
 <span data-ttu-id="473b5-103">Určuje, zda mají dvě kolekce společné prvky.</span><span class="sxs-lookup"><span data-stu-id="473b5-103">Determines whether two collections have common elements.</span></span>  

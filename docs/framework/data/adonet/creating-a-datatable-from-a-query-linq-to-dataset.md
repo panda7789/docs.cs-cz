@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758825"
 ---
 # <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a><span data-ttu-id="bf59b-102">Vytváření DataTable z dotazu (LINQ na DataSet)</span><span class="sxs-lookup"><span data-stu-id="bf59b-102">Creating a DataTable From a Query (LINQ to DataSet)</span></span>
 <span data-ttu-id="bf59b-103">Datová vazba se běžně používá z <xref:System.Data.DataTable> objektu.</span><span class="sxs-lookup"><span data-stu-id="bf59b-103">Data binding is a common use of <xref:System.Data.DataTable> object.</span></span> <span data-ttu-id="bf59b-104"><xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda přebírá výsledky dotazu a zkopíruje data do <xref:System.Data.DataTable>, který pak může být použit pro datovou vazbu.</span><span class="sxs-lookup"><span data-stu-id="bf59b-104">The <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> method takes the results of a query and copies the data into a <xref:System.Data.DataTable>, which can then be used for data binding.</span></span> <span data-ttu-id="bf59b-105">Pokud operace dat prováděly, nové <xref:System.Data.DataTable> je sloučen zpět do zdroje <xref:System.Data.DataTable>.</span><span class="sxs-lookup"><span data-stu-id="bf59b-105">When the data operations have been performed, the new <xref:System.Data.DataTable> is merged back into the source <xref:System.Data.DataTable>.</span></span>  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32758500"
 ---
 # <a name="data-tracing-in-adonet"></a><span data-ttu-id="06e51-102">Data trasování v technologii ADO.NET</span><span class="sxs-lookup"><span data-stu-id="06e51-102">Data Tracing in ADO.NET</span></span>
 <span data-ttu-id="06e51-103">ADO.NET funkce integrované data trasování funkce, které podporuje zprostředkovatele dat .NET pro SQL Server, Oracle, technologie OLE DB a rozhraní ODBC, jakož i technologie ADO.NET <xref:System.Data.DataSet>a protokoly sítě systému SQL Server.</span><span class="sxs-lookup"><span data-stu-id="06e51-103">ADO.NET features built-in data tracing functionality that is supported by the .NET data providers for SQL Server, Oracle, OLE DB and ODBC, as well as the ADO.NET <xref:System.Data.DataSet>, and the SQL Server network protocols.</span></span>  
