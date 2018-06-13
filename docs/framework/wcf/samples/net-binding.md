@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33805951"
 ---
 # <a name="net-binding"></a><span data-ttu-id="2fa86-102">Síťová vazba</span><span class="sxs-lookup"><span data-stu-id="2fa86-102">Net Binding</span></span>
 <span data-ttu-id="2fa86-103">Tato část obsahuje ukázky, která demonstruje použití sítě vazby atributy elementu koncový bod.</span><span class="sxs-lookup"><span data-stu-id="2fa86-103">This section contains samples that demonstrate using network binding attributes of an endpoint element.</span></span>  

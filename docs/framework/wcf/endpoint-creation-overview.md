@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809167"
 ---
 # <a name="endpoint-creation-overview"></a><span data-ttu-id="cc728-102">Přehled vytváření koncových bodů</span><span class="sxs-lookup"><span data-stu-id="cc728-102">Endpoint Creation Overview</span></span>
 <span data-ttu-id="cc728-103">Veškerá komunikace se službou Windows Communication Foundation (WCF) dojde k prostřednictvím *koncové body* služby.</span><span class="sxs-lookup"><span data-stu-id="cc728-103">All communication with a Windows Communication Foundation (WCF) service occurs through the *endpoints* of the service.</span></span> <span data-ttu-id="cc728-104">Koncové body poskytují klientům přístup k funkce, které nabízí služby WCF.</span><span class="sxs-lookup"><span data-stu-id="cc728-104">Endpoints provide the clients access to the functionality that a WCF service offers.</span></span> <span data-ttu-id="cc728-105">Tato část popisuje strukturu koncový bod a popisuje, jak definovat koncový bod v konfiguraci a v kódu.</span><span class="sxs-lookup"><span data-stu-id="cc728-105">This section describes the structure of an endpoint and outlines how to define an endpoint in configuration and in code.</span></span>  

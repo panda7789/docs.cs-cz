@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809154"
 ---
 # <a name="using-tracing-to-troubleshoot-your-application"></a><span data-ttu-id="6d5a2-102">Řešení potíží s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="6d5a2-102">Using Tracing to Troubleshoot Your Application</span></span>
 <span data-ttu-id="6d5a2-103">Tato část obsahuje různé témata, které popisují, jak můžete použít trasování problém s vaší aplikací.</span><span class="sxs-lookup"><span data-stu-id="6d5a2-103">This section contains various topics that describe how you can use tracing to troubleshoot your application.</span></span>  

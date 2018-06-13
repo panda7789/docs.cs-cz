@@ -12,6 +12,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809924"
 ---
 # <a name="designing-service-contracts"></a><span data-ttu-id="995c6-102">Navrhování kontraktů služby</span><span class="sxs-lookup"><span data-stu-id="995c6-102">Designing Service Contracts</span></span>
 <span data-ttu-id="995c6-103">Toto téma popisuje, jaké služby měnící se, jak jsou definovány, jaké operace jsou k dispozici (a důsledky pro základní výměny zpráv), jaké typy dat jsou použité a další problémy, které vám pomůžou návrh operace, které odpovídají požadavky na vaše scénáře.</span><span class="sxs-lookup"><span data-stu-id="995c6-103">This topic describes what service contracts are, how they are defined, what operations are available (and the implications for the underlying message exchanges), what data types are used, and other issues that help you design operations that satisfy the requirements of your scenario.</span></span>  

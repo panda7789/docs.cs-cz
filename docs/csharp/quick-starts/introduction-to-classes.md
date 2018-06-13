@@ -8,6 +8,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457330"
 ---
 # <a name="introduction-to-classes"></a><span data-ttu-id="b8154-103">Úvod do třídy</span><span class="sxs-lookup"><span data-stu-id="b8154-103">Introduction to classes</span></span>
 

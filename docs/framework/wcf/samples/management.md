@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33809963"
 ---
 # <a name="management"></a><span data-ttu-id="305f7-102">Správa</span><span class="sxs-lookup"><span data-stu-id="305f7-102">Management</span></span>
 <span data-ttu-id="305f7-103">Tato část obsahuje příklady vysvětlující správy Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="305f7-103">This section contains samples that demonstrate Windows Communication Foundation (WCF) management.</span></span>  
