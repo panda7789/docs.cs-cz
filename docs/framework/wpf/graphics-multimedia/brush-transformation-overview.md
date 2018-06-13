@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557651"
 ---
 # <a name="brush-transformation-overview"></a>Přehled transformace štětce
 Třída štětce poskytuje dvě vlastnosti transformace: <xref:System.Windows.Media.Brush.Transform%2A> a <xref:System.Windows.Media.Brush.RelativeTransform%2A>. Vlastnosti umožňují otočit, škálování, zkreslit a převede štětce obsah. Toto téma popisuje rozdíly mezi tyto dvě vlastnosti a obsahuje příklady jejich využití.  

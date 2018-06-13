@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547339"
 ---
 # <a name="safe-constructor-patterns-for-dependencyobjects"></a>Zabezpečené vzory konstruktoru pro DependencyObjects
 Konstruktory – třída obecně platí, by neměl volání zpětná volání, jako je například virtuální metody nebo delegáti, protože konstruktory lze volat jako základní inicializace konstruktory odvozené třídy. Zadání virtuální může být provedena do stavu neúplná inicializace libovolného objektu. Ale samotného systému vlastnost volá a zveřejňuje zpětná volání interně v rámci systému vlastnost závislosti. Jednoduché operace jako nastavení hodnoty vlastnosti závislosti s <xref:System.Windows.DependencyObject.SetValue%2A> volání potenciálně zahrnuje zpětné volání někde pro zjišťování. Z tohoto důvodu byste měli být opatrní při nastavení hodnoty vlastností v textu konstruktor, který se může stát problematické, pokud váš typ se používá jako základní třída závislostí. Je určitý vzor pro implementaci <xref:System.Windows.DependencyObject> konstruktory, které zabraňuje konkrétních problémů s stavy vlastnost závislosti a vyplývajících zpětná volání, které jsou zde uvedeny.  

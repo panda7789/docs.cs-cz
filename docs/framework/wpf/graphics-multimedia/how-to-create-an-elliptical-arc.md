@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560887"
 ---
 # <a name="how-to-create-an-elliptical-arc"></a>Postupy: Vytvoření oblouku elipsy
 Tento příklad ukazuje, jak k vykreslení eliptické oblouk. Chcete-li vytvořit eliptické oblouk, použijte <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, a <xref:System.Windows.Media.ArcSegment> třídy.  

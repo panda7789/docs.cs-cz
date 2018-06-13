@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397150"
 ---
 # <a name="how-to-create-an-xml-documentation-file-using-codedom"></a>Postupy: Vytváření souborů dokumentace XML pomocí modelu CodeDOM
 CodeDOM lze použít k vytvoření kód, který generuje dokumentace XML. Proces zahrnuje vytvoření grafu modelu CodeDOM, který obsahuje dokumentační komentáře XML, generování kódu a kompilace generovaného kódu s možností kompilátoru, která vytvoří výstupní dokumentace XML.  

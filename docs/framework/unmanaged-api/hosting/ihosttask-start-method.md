@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33441494"
 ---
 # <a name="ihosttaskstart-method"></a>IHostTask::Start – metoda
 Požadavky, že hostitel move – úloha reprezentována aktuální [ihosttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance z pozastavenou za provozu stavu, ve kterém můžete spustit kód.  

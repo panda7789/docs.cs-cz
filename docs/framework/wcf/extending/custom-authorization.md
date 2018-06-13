@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33487854"
 ---
 # <a name="custom-authorization"></a>Autorizace uživatele
 Autorizace je proces řízení přístupu k prostředkům a úlohy. Témata v této části vám umožňují vytvářet pro implementaci různých typů a deklarací identity, zásady.  

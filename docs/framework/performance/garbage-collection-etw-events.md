@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396932"
 ---
 # <a name="garbage-collection-etw-events"></a>Události Trasování událostí pro Windows kolekci paměti
 <a name="top"></a> Tyto události shromažďovat informace týkající se uvolňování paměti. Mohou pomoci v diagnostice a ladění, včetně určení, jak často uvolňování byla provedena, kolik paměti byl uvolněn při uvolňování paměti a tak dále.  

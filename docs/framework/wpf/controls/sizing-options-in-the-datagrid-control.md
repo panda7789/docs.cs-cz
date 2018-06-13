@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557846"
 ---
 # <a name="sizing-options-in-the-datagrid-control"></a>Možnosti změny velikosti v ovládacím prvku DataGrid
 Různé možnosti jsou k dispozici pro ovládací prvek jak <xref:System.Windows.Controls.DataGrid> velikosti sám sebe. <xref:System.Windows.Controls.DataGrid>a jednotlivých řádků a sloupců v <xref:System.Windows.Controls.DataGrid>, může být nastaven na automaticky velikost na jejich obsah, nebo můžete nastavit na konkrétní hodnoty. Ve výchozím nastavení <xref:System.Windows.Controls.DataGrid> bude zvýšit nebo snížit přizpůsobit velikost jeho obsahu.  

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33552916"
 ---
 # <a name="how-to-save-load-and-print-richtextbox-content"></a>Postupy: Uložení, načtení a tisk obsahu RichTextBox
 Následující příklad ukazuje, jak uložit obsah <xref:System.Windows.Controls.RichTextBox> do souboru, načíst tento obsah zpět do <xref:System.Windows.Controls.RichTextBox>a tisknout obsah.  

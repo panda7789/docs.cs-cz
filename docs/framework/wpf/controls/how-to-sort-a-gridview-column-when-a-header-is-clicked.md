@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33554895"
 ---
 # <a name="how-to-sort-a-gridview-column-when-a-header-is-clicked"></a>Postupy: Řazení sloupce GridView při kliknutí na záhlaví
 Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.ListView> ovládací prvek, který implementuje <xref:System.Windows.Controls.GridView> zobrazení režimu a řazení dat obsahu, když uživatel klikne záhlaví sloupce.  

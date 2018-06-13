@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391999"
 ---
 # <a name="install-the-net-framework-on-windows-xp-and-windows-server-2003"></a>Nainstalujte rozhraní .NET Framework na systém Windows XP a Windows Server 2003
 

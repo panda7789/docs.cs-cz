@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395944"
 ---
 # <a name="using-client-sockets"></a>Použití klienta soketů
 Před spuštěním konverzace prostřednictvím <xref:System.Net.Sockets.Socket>, je nutné vytvořit datového kanálu mezi vaší aplikací a vzdálená zařízení. I když existují další rodiny adres sítě a protokoly, tento příklad ukazuje postup vytvoření připojení TCP/IP k vzdálené služby.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558184"
 ---
 # <a name="drawing-objects-overview"></a>Přehled vykreslovaných objektů
 Toto téma představuje <xref:System.Windows.Media.Drawing> objekty a popisuje, jak je použít k efektivní kreslení tvarů, rastrové obrázky, text a média. Použít <xref:System.Windows.Media.Drawing> objekty, když vytvoříte klip obrázky, Malování <xref:System.Windows.Media.DrawingBrush>, nebo použijte <xref:System.Windows.Media.Visual> objekty.  

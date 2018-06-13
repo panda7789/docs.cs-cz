@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33289149"
 ---
 # <a name="c-keywords"></a>Klíčová slova jazyka C#
 Klíčová slova jsou předdefinované, vyhrazené identifikátory, které mají zvláštní význam kompilátoru. Nelze je použít jako identifikátory v programu Pokud patří mezi ně `@` jako předponu. Například `@if` je platný identifikátor, ale `if` není, protože `if` je klíčové slovo.  

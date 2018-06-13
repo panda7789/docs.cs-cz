@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32759540"
 ---
 # <a name="configuring-parameters-and-parameter-data-types"></a>Konfigurace parametrů a datové typy parametrů
 Příkaz objekty používají parametry k předání hodnoty do příkazů SQL nebo uložené procedury, kontrola typu a ověření. Na rozdíl od text příkazu parametr vstup považovat za literálovou hodnotou, ne jako spustitelný kód. To pomáhá chránit před útoky "Injektáž SQL", ve kterých útočník vloží příkaz tohoto ohrožení zabezpečení na serveru do příkazu SQL.  

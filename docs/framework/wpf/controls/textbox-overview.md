@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557768"
 ---
 # <a name="textbox-overview"></a>TextBox – přehled
 <xref:System.Windows.Controls.TextBox> Vám umožňuje zobrazit nebo upravit neformátovaný text. Běžně se používají <xref:System.Windows.Controls.TextBox> upravuje neformátovaný text ve formuláři. Například formulář žádostí o uživatelské jméno, telefonní číslo atd využije <xref:System.Windows.Controls.TextBox> ovládací prvky pro zadávání textu. Toto téma představuje <xref:System.Windows.Controls.TextBox> třídy a obsahuje příklady použití v obou [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a C#.  

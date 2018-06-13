@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558340"
 ---
 # <a name="popup-placement-behavior"></a>Chování při umístění překryvného objektu
 A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsah v samostatném okně, které překrývat aplikace. Můžete zadat umístění <xref:System.Windows.Controls.Primitives.Popup> relativně k ovládacího prvku, myš nebo obrazovky pomocí <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>, <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>, <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>, <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>, a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> vlastnosti.  Tyto vlastnosti spolupracovat a poskytuje vám flexibilitu při určující pozici <xref:System.Windows.Controls.Primitives.Popup>.  

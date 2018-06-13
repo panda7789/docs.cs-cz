@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559851"
 ---
 # <a name="how-to-seek-a-clock-synchronously"></a>Postupy: Synchronní vyhledání hodin
 Použití <xref:System.Windows.Media.Animation.ClockController.SeekAlignedToLastTick%2A> metoda k vyhledání hodiny k určitému bodu synchronně. Následující příklad ukazuje, jak <xref:System.Windows.Media.Animation.ClockController.Seek%2A> a <xref:System.Windows.Media.Animation.ClockController.SeekAlignedToLastTick%2A> metody <xref:System.Windows.Media.Animation.ClockController>.  

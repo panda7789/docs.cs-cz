@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33436306"
 ---
 # <a name="iceefilegen-class"></a>ICeeFileGen – třída
 Poskytuje funkce pro vytváření nativní přenosné spustitelného souboru (PE). Rozhraní se obvykle používá kompilátory k vygenerování jejich kompilované výstup spustitelný soubor.  

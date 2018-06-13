@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559363"
 ---
 # <a name="how-to-draw-an-ellipse-or-a-circle"></a>Postupy: Vykreslení elipsy nebo kruhu
 Tento příklad ukazuje, jak k vykreslení tři tečky a kroužky pomocí <xref:System.Windows.Shapes.Ellipse> elementu. Kreslení elipsy, vytvořit <xref:System.Windows.Shapes.Ellipse> elementu a zadejte jeho <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A>. Použijte jeho <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnosti k určení, <xref:System.Windows.Media.Brush> sloužící k vyplnění vnitřku se třemi tečkami. Použijte jeho <xref:System.Windows.Shapes.Shape.Stroke%2A> vlastnosti k určení, <xref:System.Windows.Media.Brush> sloužící k vyplnění obrys se třemi tečkami. <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> Vlastnost určuje Tloušťka obrysu třemi tečkami.  

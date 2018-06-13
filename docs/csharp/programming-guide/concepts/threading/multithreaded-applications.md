@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336040"
 ---
 # <a name="multithreaded-applications-c"></a>Vícevláknové aplikace (C#)
 Díky C# můžete vytvořit aplikace, které provádějí více úkolů ve stejnou dobu. Úlohy s potenciálně pojme dalších úloh můžete provést v samostatných vláknech, tento proces se označuje jako *multithreading* nebo *volné dělení na vlákna*.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33556000"
 ---
 # <a name="scrollbar"></a>ScrollBar
 A <xref:System.Windows.Controls.Primitives.ScrollBar> vám umožní zobrazit obsah, který je mimo aktuální zobrazení oblasti klouzavé <xref:System.Windows.Controls.Primitives.Thumb> zpřístupněte obsah.  

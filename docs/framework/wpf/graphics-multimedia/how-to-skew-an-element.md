@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561560"
 ---
 # <a name="how-to-skew-an-element"></a>Postupy: Zkreslení elementu
 Tento příklad ukazuje, jak používat <xref:System.Windows.Media.SkewTransform> zkosení elementu. Zkosení, která je také označována jako zkosení, je transformaci, která roztahovány souřadnicového prostoru neuniformní způsobem. Jeden typické použití <xref:System.Windows.Media.SkewTransform> je pro simulaci [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] podrobně [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] objekty.  

@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561043"
 ---
 # <a name="how-to-draw-a-rectangle"></a>Postupy: Vykreslení obdélníku
 Tento příklad ukazuje, jak k vykreslení obdélníku pomocí <xref:System.Windows.Shapes.Rectangle> elementu.  

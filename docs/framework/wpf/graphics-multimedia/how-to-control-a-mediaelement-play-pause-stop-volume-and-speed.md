@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561388"
 ---
 # <a name="how-to-control-a-mediaelement-play-pause-stop-volume-and-speed"></a>Postupy: Řízení elementu MediaElement (Přehrát, Pozastavit, Zastavit, Hlasitost a Rychlost)
 Následující příklad ukazuje, jak řídit přehrávání média pomocí <xref:System.Windows.Controls.MediaElement>. V příkladu se vytvoří jednoduchý media player, které umožňuje hrát, pozastavení, zastavit a přeskočit a zpět na médiu a také upravit poměr svazek a rychlost.  

@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33395905"
 ---
 # <a name="making-asynchronous-requests"></a>Vytváření asynchronních požadavků
 <xref:System.Net> Třídy používat rozhraní .NET Framework standardní asynchronní programovací model pro asynchronní přístup k internetovým prostředkům. <xref:System.Net.WebRequest.BeginGetResponse%2A> a <xref:System.Net.WebRequest.EndGetResponse%2A> metody <xref:System.Net.WebRequest> třídy zahájení a dokončení asynchronní požadavky na internetové prostředky.  

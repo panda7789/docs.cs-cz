@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33286731"
 ---
 # <a name="define-c-reference"></a>#define (referenční dokumentace jazyka C#)
 Používáte `#define` k definování symbol. Při použití symbol jako výraz, který je předán [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) direktivy, výraz vyhodnotí jako `true`, jak ukazuje následující příklad:  

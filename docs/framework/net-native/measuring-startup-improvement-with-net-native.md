@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397738"
 ---
 # <a name="measuring-startup-improvement-with-net-native"></a>Měření zlepšení spuštění pomocí .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] výrazně zlepší doba spuštění aplikace. Tomuto vylepšení je zvláště patrné na přenosné zařízení úsporný a s komplexní aplikace. Toto téma vám pomůže začít pracovat s základní instrumentace potřebné k měření tomuto vylepšení spuštění.  

@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33335520"
 ---
 # <a name="introduction-to-linq-queries-c"></a>Úvod do dotazů LINQ (C#)
 A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializované dotazovací jazyk. V čase pro různé typy datových zdrojů, například SQL pro relační databáze a XQuery pro formát XML bylo vyvinuto různé jazyky. Vývojáři mají proto byl Další informace o nový jazyk dotazu pro každý typ zdroje dat nebo formát dat, který musí podporovat. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Tuto situaci zjednodušuje tím, že nabízí konzistentní model pro práci s daty mezi různé druhy zdrojů dat a formáty. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz, které jsou vždy práce s objekty. Použijte stejný základní kódování vzory pro dotazování a transformace dat v dokumentech XML, databáze SQL, [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datové sady, kolekcí .NET a dalších formát, pro který [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele je k dispozici.  

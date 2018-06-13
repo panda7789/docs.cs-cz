@@ -39,6 +39,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397920"
 ---
 # <a name="handling-errors"></a>Zpracování chyb
 <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy generování výjimek obou systému (například <xref:System.ArgumentException>) a výjimky webových (které jsou <xref:System.Net.WebException> vyvolané <xref:System.Net.WebRequest.GetResponse%2A> – metoda).  

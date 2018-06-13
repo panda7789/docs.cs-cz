@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398063"
 ---
 # <a name="understanding-webrequest-problems-and-exceptions"></a>Principy WebRequest problémy a výjimek
 <xref:System.Net.WebRequest> a jejich odvozené třídy (<xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, a <xref:System.Net.FileWebRequest>) generování výjimek signál podmínku neobvyklé. Někdy není zřejmé řešení těchto problémů.  

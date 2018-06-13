@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558106"
 ---
 # <a name="hit-testing-in-the-visual-layer"></a>Spuštění testování ve vizuální vrstvě
 Toto téma poskytuje přehled o počtu testování funkce poskytované službou visual vrstvy. Přístupů testování podpory umožňuje určit, zda hodnota geometrie nebo bodu spadá do vykreslené obsah <xref:System.Windows.Media.Visual>, což umožňuje implementovat rozhraní chování uživatelů, jako je například obdélníku výběru vybrat více objektů.  

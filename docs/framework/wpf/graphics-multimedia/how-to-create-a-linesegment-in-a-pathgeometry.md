@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559665"
 ---
 # <a name="how-to-create-a-linesegment-in-a-pathgeometry"></a>Postupy: Vytváření LineSegment v PathGeometry
 Tento příklad ukazuje postup vytvoření úsek čáry. Chcete-li vytvořit segment čáry, použijte <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, a <xref:System.Windows.Media.LineSegment> třídy.  

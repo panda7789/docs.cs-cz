@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33393680"
 ---
 # <a name="using-an-asynchronous-client-socket"></a>Pomocí soketu asynchronní klienta
 Soketu asynchronní klienta nepozastaví aplikace při čekání na dokončení operací sítě. Místo toho používá standardní asynchronní programovací model rozhraní .NET Framework ke zpracování připojení k síti na jedno vlákno, zatímco aplikace stále běží na původní vlákno. Asynchronní sockets jsou vhodné pro aplikace, která hodně využívají sítě nebo nelze počkejte na dokončení před pokračováním síťových operací.  

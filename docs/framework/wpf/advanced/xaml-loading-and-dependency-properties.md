@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33547723"
 ---
 # <a name="xaml-loading-and-dependency-properties"></a>Vlastnost závislostí a načítání XAML
 Aktuální [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provádění jeho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru je ze své podstaty vědět vlastnost závislosti. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Procesoru používá metody systému vlastností vlastností závislostí při načítání binární [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a zpracování atributy, které jsou vlastnosti závislosti. To efektivně obchází obálky vlastnost. Při implementaci vlastní závislosti vlastnosti, musí účet pro toto chování a byste neměli umístění jakýkoli jiný kód ve vaší vlastnost obálku než metody vlastností systému <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A>.  

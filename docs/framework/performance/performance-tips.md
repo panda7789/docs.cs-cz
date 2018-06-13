@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396410"
 ---
 # <a name="net-performance-tips"></a>Tipy pro zvýšení výkonu rozhraní .NET
 Termín *výkonu* obvykle odkazuje na rychlost zpracování programu. Rychlost provádění někdy zvýšíte následující některých základních pravidel ve zdrojovém kódu. V některých aplikacích je důležité, abyste pečlivě zkontrolujte kód a použít profilery a ujistěte se, zda je spuštěna co nejrychleji. V jiných programů nemáte provést tyto optimalizace, protože je kód spuštěn přijatelně rychlé, jako je zapsán. V tomto článku jsou uvedené některé běžné oblasti, kde můžete sníží výkon a tipy pro zlepšení ho a také odkazy na témata další výkonu. Další informace o plánování a měření výkonu najdete v tématu [výkonu](../../../docs/framework/performance/index.md)  

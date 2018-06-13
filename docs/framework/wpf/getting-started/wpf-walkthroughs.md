@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557885"
 ---
 # <a name="wpf-walkthroughs"></a>Návody pro WPF
 Návody poskytují podrobné pokyny pro běžné scénáře. Díky tomu je vhodné oddělení na zahájení informací o produktu nebo oblasti určité funkce.  

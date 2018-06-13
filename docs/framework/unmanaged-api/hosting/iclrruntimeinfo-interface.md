@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33436465"
 ---
 # <a name="iclrruntimeinfo-interface"></a>ICLRRuntimeInfo – rozhraní
 Poskytuje metody, které vracejí informace o konkrétní modul common language runtime (CLR), včetně verze, adresář a stavové zatížení. Toto rozhraní také poskytuje funkce specifické pro modul runtime bez inicializace modulu runtime. Zahrnuje modul runtime relativní [LoadLibrary](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-loadlibrary-method.md) metoda, modul runtime modulů [GetProcAddress](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getprocaddress-method.md) metoda a zadaný modul runtime rozhraní prostřednictvím [getinterface –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getinterface-method.md)metoda.  

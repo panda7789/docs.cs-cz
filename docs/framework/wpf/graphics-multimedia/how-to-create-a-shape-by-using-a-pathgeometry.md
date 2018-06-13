@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560179"
 ---
 # <a name="how-to-create-a-shape-by-using-a-pathgeometry"></a>Postupy: Vytvoření tvaru použitím PathGeometry
 Tento příklad ukazuje, jak vytvořit obrazce pomocí <xref:System.Windows.Media.PathGeometry> třídy. <xref:System.Windows.Media.PathGeometry> objekty, které se skládají z jedné nebo více <xref:System.Windows.Media.PathFigure> objekty; každá <xref:System.Windows.Media.PathFigure> představuje různé "obrázek" nebo tvaru. Každý <xref:System.Windows.Media.PathFigure> se sám skládá z jednoho nebo více <xref:System.Windows.Media.PathSegment> objekty, každý představuje připojené část obrázku nebo tvaru. Segment typy <xref:System.Windows.Media.LineSegment>, <xref:System.Windows.Media.ArcSegment>, a <xref:System.Windows.Media.BezierSegment>.  

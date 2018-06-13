@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33559484"
 ---
 # <a name="how-to-encode-and-decode-a-tiff-image"></a>Postupy: Kódování a dekódování obrázku TIFF
 Následující příklady ukazují, jak kódování a dekódování [!INCLUDE[TLA#tla_tiff](../../../../includes/tlasharptla-tiff-md.md)] bitovou kopii pomocí konkrétní <xref:System.Windows.Media.Imaging.TiffBitmapDecoder> a <xref:System.Windows.Media.Imaging.TiffBitmapEncoder> objekty.  

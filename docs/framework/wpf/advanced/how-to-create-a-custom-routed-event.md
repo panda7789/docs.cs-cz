@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543703"
 ---
 # <a name="how-to-create-a-custom-routed-event"></a>Postupy: Vytvoření vlastní směrované události
 Pro vaše vlastní události pro podporu směrování událostí, je třeba zaregistrovat <xref:System.Windows.RoutedEvent> pomocí <xref:System.Windows.EventManager.RegisterRoutedEvent%2A> metoda. Tento příklad ukazuje základní informace o vytváření vlastních směrované události.  

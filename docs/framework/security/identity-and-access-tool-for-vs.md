@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398606"
 ---
 # <a name="identity-and-access-tool-for-visual-studio-2012"></a>Identita a přístup pro sadu Visual Studio 2012
 Toto téma popisuje nový nástroj Identity and Access Tool for Visual Studio 11. Tento nástroj můžete stáhnout z následující adresy URL: [ http://go.microsoft.com/fwlink/?LinkID=245849 ](http://go.microsoft.com/fwlink/?LinkID=245849) nebo přímo z v rámci sadu Visual Studio 11 vyhledáním "identity" přímo ve Správci rozšíření.  

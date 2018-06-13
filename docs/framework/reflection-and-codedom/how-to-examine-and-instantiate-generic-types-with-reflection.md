@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397569"
 ---
 # <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>Postupy: Prozkoumání a vytvoření instancí obecných typů pomocí reflexe
 Stejným způsobem jako informace o jiných typech se získat informace o obecných typů: prověřením <xref:System.Type> objekt, který reprezentuje obecného typu. Princip rozdíl je, že obecného typu má seznam <xref:System.Type> objekty, které představují jeho parametry obecného typu. První postup v této části prověří obecné typy.  

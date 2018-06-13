@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397059"
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Klíčová slova a úrovně ETW CLR
 <a name="top"></a> Trasování událostí pro Windows (ETW) události lze filtrovat podle kategorie a úroveň. Událost [CLR ETW – klíčová slova](#keywords) povolit filtrování událostí podle kategorie; se používají v kombinacích runtime a rundown zprostředkovatele. [Úrovně událostí](#levels) jsou identifikovány příznaky.  

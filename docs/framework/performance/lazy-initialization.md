@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398024"
 ---
 # <a name="lazy-initialization"></a>Opožděná inicializace
 *Opožděná inicializace* objektu znamená, že je její vytvoření odložení dokud nejprve se používá. (Pro toto téma podmínky *opožděné inicializace* a *opožděné konkretizaci* jsou shodné.) Opožděná inicializace slouží především zvyšování výkonu, vyhněte se plýtvání výpočtů a snížit požadavky na paměť programu. Jedná se o nejběžnějších scénářů:  

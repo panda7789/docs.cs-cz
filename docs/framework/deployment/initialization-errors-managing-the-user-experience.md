@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33392145"
 ---
 # <a name="net-framework-initialization-errors-managing-the-user-experience"></a>.NET Framework – chyby inicializace: správa zkušeností uživatele
 Systému aktivace modulu runtime (CLR) určuje verzi modulu CLR, který se použije ke spuštění kódu spravované aplikace. V některých případech nemusí být schopni najít verzi modulu CLR načíst aktivačního systému. K této situaci obvykle dochází, pokud aplikace vyžaduje verzi CLR, která je neplatná nebo není nainstalována v daném počítači. Pokud není nalezen požadovanou verzi, systém aktivace CLR vrátí kód chyby HRESULT z funkce nebo rozhraní, která byla volána a může zobrazit chybovou zprávu pro uživatele, který je spuštěna aplikace. Tento článek obsahuje seznam kódů HRESULT a vysvětluje, jak můžete zabránit v chybové zprávě se zobrazí.  

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398167"
 ---
 # <a name="security-and-remoting-considerations"></a>Důležité informace o zabezpečení a vzdálené komunikaci
 Vzdálená komunikace umožňuje nastavit průhledné volání mezi doménami aplikace, procesy nebo počítače. Procházení zásobníku zabezpečení přístupu kódu však nemůže překročit hranice procesu nebo počítače (použít mezi doménami aplikací stejného procesu).  

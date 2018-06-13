@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33398141"
 ---
 # <a name="using-a-synchronous-server-socket"></a>Pomocí soket synchronního serveru
 Synchronní serveru sockets pozastavit provádění aplikace, dokud obdrží žádost o připojení soketu. Sokety synchronní serveru nejsou vhodné pro aplikace, které hodně využívají sítě v jejich operaci, ale mohou být vhodný pro jednoduché síťových aplikací.  

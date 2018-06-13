@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33557794"
 ---
 # <a name="fromtoby-animations-overview"></a>Přehled animace od/komu/kým
 Toto téma popisuje, jak použít z/do nebo podle animací pro animaci vlastností závislostí. From/k/podle animace vytvoří přechod mezi dvěma hodnotami.  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558197"
 ---
 # <a name="wpf-content-model"></a>Model obsahu WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je prezentace platforma, která poskytuje mnoho ovládací prvky a typy jako ovládací prvek, jehož primárním účelem je zobrazit různé typy obsahu. Pokud chcete zjistit, který ovládací prvek použít nebo který ovládací prvek odvození od, byste měli porozumět typy objektů, které nejlépe můžete zobrazit konkrétní ovládacího prvku.  

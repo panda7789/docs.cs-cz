@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33553365"
 ---
 # <a name="styles-and-templates"></a>– styly a šablony
 Windows Presentation Foundation (WPF) stylů a ukázka odkazují na sadu funkcí (styly, šablony, aktivační události a scénářů), které umožňují aplikace, dokument nebo návrhář uživatelského rozhraní (UI) pro vytvoření vizuálně byly atraktivní aplikace a do standardizovat na konkrétní vzhled jejich produktu.  

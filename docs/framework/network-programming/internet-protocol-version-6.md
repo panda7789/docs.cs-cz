@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397114"
 ---
 # <a name="internet-protocol-version-6"></a>Protokol IP verze 6
 Internet Protocol version 6 (IPv6) je nová sada standardních protokolů pro síťovou vrstvou sítě Internet. Protokol IPv6 je proto, aby vyřešila mnohé z problémů aktuální verze sady Internet Protocol (známé jako IPv4) s ohledem na adrese spotřebovávat, zabezpečení, automatická konfigurace, rozšíření a tak dále. IPv6 rozšíří možnosti Internetu povolit nové typy aplikací, včetně peer-to-peer a mobilních aplikací. Tady jsou hlavní problémy aktuální protokolu IPv4:  

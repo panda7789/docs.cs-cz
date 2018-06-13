@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397959"
 ---
 # <a name="sql-server-programming-and-host-protection-attributes"></a>Programování serveru SQL Server a atributy ochrany hostitele
 Možnost načtení a provedení spravovaného kódu v hostitelském systému SQL Server vyžaduje splnění požadavků hostitele pro zabezpečení přístupu kódu a Ochrana prostředků hostitele.  Požadavky na zabezpečení přístupu kódu jsou určené jednou ze tří sad oprávnění systému SQL Server: BEZPEČNÉ, externí přístup nebo UNSAFE. Kód provádění v rámci SAFE nebo sady oprávnění externí přístup musí vyloučit některé typy nebo členy, kteří mají <xref:System.Security.Permissions.HostProtectionAttribute> atribut použitý. <xref:System.Security.Permissions.HostProtectionAttribute> Není oprávnění zabezpečení tolik, kolik spolehlivost záruku v identifikuje konkrétního kódu vytvoří typy nebo metody, že může zakáže hostitele.  Použití <xref:System.Security.Permissions.HostProtectionAttribute> vynucuje programovací model, který pomáhá chránit stabilitu hostitele.  

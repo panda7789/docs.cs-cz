@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33334857"
 ---
 # <a name="file-system-and-the-registry-c-programming-guide"></a>Systém souborů a registr (Průvodce programováním v C#)
 Následující témata ukazují, jak používat C# a rozhraní .NET Framework k provádění různých základních operací u souborů, složek a registru.  

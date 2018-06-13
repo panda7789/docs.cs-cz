@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33396997"
 ---
 # <a name="peer-name-resolution-protocol"></a>Protokol PNRP
 V prostředích peer-to-peer partnerské uzly používají určitý název řešení systémy přeložit vzájemně umístění v síti (adresy, protokoly a porty) z názvů nebo jiné typy identifikátorů. V minulosti má byla peer name resolution Protocol ztěžuje ze své podstaty přechodný připojení a také další nedostatků v v systému DNS (Domain Name).  

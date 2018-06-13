@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488215"
 ---
 # <a name="how-to-export-custom-policy-assertions"></a>Postupy: Export kontrolních výrazů vlastních zásad
 Kontrolní výrazy zásad jsou popsány možnosti a požadavky koncového bodu služby. Aplikace služby můžete pomocí kontrolních výrazů vlastních zásad metadata služby komunikovat koncový bod, vazba nebo kontrakt informace o přizpůsobení do klientské aplikace. Windows Communication Foundation (WCF) můžete exportovat kontrolní výrazy ve výrazech zásad připojena v WSDL vazby na koncový bod, operace nebo zpráva tématům, v závislosti na možnosti nebo požadavků, které budou komunikovat.  

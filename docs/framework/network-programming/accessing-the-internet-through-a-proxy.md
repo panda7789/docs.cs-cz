@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33394976"
 ---
 # <a name="accessing-the-internet-through-a-proxy"></a>Přístup k Internetu prostřednictvím proxy serveru
 Pokud váš web používá proxy pro poskytnutí přístupu k Internetu, musíte nakonfigurovat proxy instance k aktivaci aplikace ke komunikaci s webový proxy server.  

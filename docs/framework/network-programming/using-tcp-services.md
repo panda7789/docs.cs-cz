@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33397166"
 ---
 # <a name="using-tcp-services"></a>Pomocí služby TCP
 <xref:System.Net.Sockets.TcpClient> Třída vyžaduje data z internetových prostředků pomocí protokolu TCP. Metody a vlastnosti **TcpClient** abstraktní podrobnosti o vytváření <xref:System.Net.Sockets.Socket> pro podávání žádostí a příjmu dat pomocí protokolu TCP. Protože připojení k vzdálené zařízení je reprezentována jako datový proud, data můžete číst a zapisovat s techniky zpracování datového proudu rozhraní .NET Framework.  

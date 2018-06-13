@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33560101"
 ---
 # <a name="how-to-create-a-cubic-bezier-curve"></a>Postupy: Vytvoření kubické Bézierovy křivky
 Tento příklad ukazuje postup vytvoření krychlový Bézierovu křivku. Chcete-li vytvořit krychlový Bézierovu křivku, použijte <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, a <xref:System.Windows.Media.BezierSegment> třídy.  Chcete-li zobrazit výsledné geometry, použijte <xref:System.Windows.Shapes.Path> element, nebo použít je s <xref:System.Windows.Media.GeometryDrawing> nebo <xref:System.Windows.Media.DrawingContext>. V následujících příkladech se nevykreslí krychlový Bézierovu křivku z (10, 100) na (300, 100). Křivku má ovládací prvek body (100, 0) a (200, 200).  

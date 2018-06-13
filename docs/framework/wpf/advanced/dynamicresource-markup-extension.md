@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33545321"
 ---
 # <a name="dynamicresource-markup-extension"></a>DynamicResource – rozšíření značek
 Poskytuje hodnotu pro všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vlastnost atribut rozlišením tuto hodnotu jako odkaz na prostředek definované. Chování vyhledávání pro tento prostředek je analogická spuštění vyhledávání.  

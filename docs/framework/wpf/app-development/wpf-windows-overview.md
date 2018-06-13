@@ -33,6 +33,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33558119"
 ---
 # <a name="wpf-windows-overview"></a>Přehled WPF Windows
 Uživatelé komunikovat s samostatné aplikace Windows Presentation Foundation (WPF) prostřednictvím služby windows. Primárním účelem okno je jako hostitele obsahu, který vizualizuje data a umožňuje uživatelům interakci s daty. Samostatné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace zadat své vlastní windows pomocí <xref:System.Windows.Window> třídy. Toto téma představuje <xref:System.Windows.Window> před pokrývajících základní informace o vytváření a správa systému windows v samostatné aplikace.  

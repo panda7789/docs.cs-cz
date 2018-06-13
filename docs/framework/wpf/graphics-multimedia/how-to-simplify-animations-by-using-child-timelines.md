@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33561670"
 ---
 # <a name="how-to-simplify-animations-by-using-child-timelines"></a>Postupy: Zjednodušení aplikací použitím podřízených časových os
 Tento příklad ukazuje, jak můžete zjednodušit animace pomocí podřízené <xref:System.Windows.Media.Animation.ParallelTimeline> objekty. A <xref:System.Windows.Media.Animation.Storyboard> je typ <xref:System.Windows.Media.Animation.Timeline> poskytující cílení informace pro časové osy obsahuje. Použití <xref:System.Windows.Media.Animation.Storyboard> zajistit časovou osu zacílení na informace, včetně informací o objektu a vlastnost.  
