@@ -20,6 +20,7 @@ ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34457755"
 ---
 # <a name="styling-and-templating"></a>Styly a šablony
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] stylů a ukázka odkazují na sadu funkcí (styly, šablony, aktivační události a scénářů), které umožňují vývojářů a návrhářů, k vytvoření zajímavé vizuální efekty a k vytvoření konzistentního vzhledu jejich produktu. I když vývojáři a nebo Návrháři můžete přizpůsobit vzhled hojně na základě aplikace aplikace, je nutné povolit sdílení výskytu v rámci i mezi aplikacemi a údržby silné stylů a Ukázka modelu. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje tento model.  

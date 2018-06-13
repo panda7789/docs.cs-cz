@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33651753"
 ---
 # <a name="array-dimensions-in-visual-basic"></a>Rozměry pole v jazyce Visual Basic
 A *dimenze* je směr, ve kterém můžete měnit specifikace elementů tohoto pole. Pole, které obsahuje celkový počet prodeje za každý den v měsíci má jednu dimenzi (den v měsíci). Pole, které obsahuje celkový počet prodeje podle oddělení pro každý den v měsíci se dvěma rozměry (číslo oddělení a den v měsíci). Počet dimenzí pole se nazývá jeho *pořadí*.  

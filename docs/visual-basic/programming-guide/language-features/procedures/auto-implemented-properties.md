@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33656311"
 ---
 # <a name="auto-implemented-properties-visual-basic"></a>Automaticky implementované vlastnosti (Visual Basic)
 *Automaticky implementované vlastnosti* vám umožní rychle určit vlastnost třídy bez nutnosti psaní kódu pro `Get` a `Set` vlastnost. Při psaní kódu automaticky implementované vlastnosti, Visual Basic – kompilátor automaticky vytvoří privátní pole pro uložení proměnné vlastnost kromě vytváření přidruženého `Get` a `Set` postupy.  

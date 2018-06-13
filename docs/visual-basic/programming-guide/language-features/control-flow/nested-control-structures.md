@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648068"
 ---
 # <a name="nested-control-structures-visual-basic"></a>Vnořené řídicí struktury (Visual Basic)
 Můžete umístit řídicí příkazy uvnitř jiné řídicí příkazy, například `If...Then...Else` blokovat v rámci `For...Next` smyčky. Příkaz Ovládací prvek umístěn uvnitř jiného příkazu ovládací prvek se říká, že *vnořené*.  

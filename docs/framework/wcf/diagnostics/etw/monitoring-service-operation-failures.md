@@ -7,6 +7,7 @@ ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33803764"
 ---
 # <a name="monitoring-service-operation-failures"></a>Sledování selhání operací služby
 Pokud je povolené analytické trasování pro aplikaci, selhání služby se dá snadno sledovat v prohlížeči událostí.  Toto téma ukazuje, jak k určení, kdy dojde k selhání operace služby, a jak zjistit, co způsobilo selhání.  

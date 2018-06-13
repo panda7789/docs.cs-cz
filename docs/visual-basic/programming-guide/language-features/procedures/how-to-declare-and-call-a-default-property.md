@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33650992"
 ---
 # <a name="how-to-declare-and-call-a-default-property-in-visual-basic"></a>Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic
 A *výchozí vlastnost* je vlastnost třídu nebo strukturu, která může kód přistupovat bez zadání ho. Při volání metody kód názvy třídu nebo strukturu, ale není vlastnost a kontext umožňuje přístup k vlastnosti, Visual Basic přeloží přístup třídy nebo struktury je výchozí vlastnost, pokud existuje.  

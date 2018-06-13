@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33638475"
 ---
 # <a name="file-information-cannot-be-queried-if-the-file-does-not-exist"></a>Informace o souboru nemůže být dotazována, pokud soubor neexistuje.
 Byl proveden pokus o dotazování <xref:System.IO.FileInfo> objekt pro informace o souboru, který neexistuje. To je obvykle kvůli chybu provedené při zadávání názvu souboru.  

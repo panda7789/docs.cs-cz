@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33636614"
 ---
 # <a name="named-arguments-cannot-match-paramarray-parameters"></a>Pojmenované argumenty nemohou odpovídat parametrům ParamArray
 Hodnotou musí být předán pole parametrů.  

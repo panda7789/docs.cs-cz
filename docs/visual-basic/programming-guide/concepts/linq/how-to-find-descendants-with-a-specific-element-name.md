@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33643156"
 ---
 # <a name="how-to-find-descendants-with-a-specific-element-name-visual-basic"></a>Postupy: vyhledání následníky s konkrétní Element názvu (Visual Basic)
 Někdy budete chtít vyhledání všech potomků s konkrétním názvem. Můžete napsat kód, k iteraci v rámci všech následníky, ale je jednodušší použít <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  

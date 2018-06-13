@@ -27,6 +27,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655899"
 ---
 # <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>Doba života objektu: Vytváření a zničení objektů (Visual Basic)
 Instance třídy objekt, je vytvořená pomocí `New` – klíčové slovo. Úlohy inicializace často musí být provedeny na nové objekty před jejich použití. Běžné úlohy inicializace zahrnují otevírání souborů, připojení k databázím a čtení hodnoty klíčů registru. Inicializace nových objektů pomocí procedury volané ovládací prvky jazyka Visual Basic *konstruktory* (speciální metody, které umožňují řídit inicializace).  
