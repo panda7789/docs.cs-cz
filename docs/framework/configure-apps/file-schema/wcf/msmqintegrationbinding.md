@@ -9,6 +9,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32751659"
 ---
 # <a name="ltmsmqintegrationbindinggt"></a><span data-ttu-id="907c2-102">&lt;MsmqIntegrationBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="907c2-102">&lt;msmqIntegrationBinding&gt;</span></span>
 <span data-ttu-id="907c2-103">Definuje vazbu, která poskytuje služby Řízení front podporu tím, že směrování zpráv prostřednictvím služby MSMQ.</span><span class="sxs-lookup"><span data-stu-id="907c2-103">Defines a binding that provides queuing support by routing messages through MSMQ.</span></span>  

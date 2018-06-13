@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Iterace všemi uzly ovládacího prvku Windows Forms TreeView"
-ms.custom: 
+title: 'Postupy: Iterace všemi uzly ovládacího prvku Windows Forms TreeView'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-winforms
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -17,29 +10,25 @@ helpviewer_keywords:
 - TreeView control [Windows Forms], iterating through nodes
 - tree nodes in TreeView control [Windows Forms], iterating through
 ms.assetid: 427f8928-ebcf-4beb-887f-695b905d5134
-caps.latest.revision: "14"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 02dfe1cb494df91a2a3ef3a6bba533306d61edef
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 89a2c1411ab64b4a20ad291165cfa6d83511c4c6
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33532753"
 ---
-# <a name="how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control"></a><span data-ttu-id="63c65-102">Postupy: Iterace všemi uzly ovládacího prvku Windows Forms TreeView</span><span class="sxs-lookup"><span data-stu-id="63c65-102">How to: Iterate Through All Nodes of a Windows Forms TreeView Control</span></span>
-<span data-ttu-id="63c65-103">Někdy je užitečné k prozkoumání každý uzel ve Windows Forms <xref:System.Windows.Forms.TreeView> ovládací prvek, aby bylo možné provést některé výpočet hodnot uzlu.</span><span class="sxs-lookup"><span data-stu-id="63c65-103">It is sometimes useful to examine every node in a Windows Forms <xref:System.Windows.Forms.TreeView> control in order to perform some calculation on the node values.</span></span> <span data-ttu-id="63c65-104">Tuto operaci lze provést pomocí postupu rekurzivní (rekurzivní metody v jazyce C# a C++), který iteruje každý uzel v každé z kolekcí stromu.</span><span class="sxs-lookup"><span data-stu-id="63c65-104">This operation can be done using a recursive procedure (recursive method in C# and C++) that iterates through each node in each collection of the tree.</span></span>  
+# <a name="how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control"></a><span data-ttu-id="488ba-102">Postupy: Iterace všemi uzly ovládacího prvku Windows Forms TreeView</span><span class="sxs-lookup"><span data-stu-id="488ba-102">How to: Iterate Through All Nodes of a Windows Forms TreeView Control</span></span>
+<span data-ttu-id="488ba-103">Někdy je užitečné k prozkoumání každý uzel ve Windows Forms <xref:System.Windows.Forms.TreeView> ovládací prvek, aby bylo možné provést některé výpočet hodnot uzlu.</span><span class="sxs-lookup"><span data-stu-id="488ba-103">It is sometimes useful to examine every node in a Windows Forms <xref:System.Windows.Forms.TreeView> control in order to perform some calculation on the node values.</span></span> <span data-ttu-id="488ba-104">Tuto operaci lze provést pomocí postupu rekurzivní (rekurzivní metody v jazyce C# a C++), který iteruje každý uzel v každé z kolekcí stromu.</span><span class="sxs-lookup"><span data-stu-id="488ba-104">This operation can be done using a recursive procedure (recursive method in C# and C++) that iterates through each node in each collection of the tree.</span></span>  
   
- <span data-ttu-id="63c65-105">Každý <xref:System.Windows.Forms.TreeNode> objekt ve stromovém zobrazení má vlastnosti, které můžete použít k zobrazení stromu přejděte: <xref:System.Windows.Forms.TreeNode.FirstNode%2A>, <xref:System.Windows.Forms.TreeNode.LastNode%2A>, <xref:System.Windows.Forms.TreeNode.NextNode%2A>, <xref:System.Windows.Forms.TreeNode.PrevNode%2A>, a <xref:System.Windows.Forms.TreeNode.Parent%2A>.</span><span class="sxs-lookup"><span data-stu-id="63c65-105">Each <xref:System.Windows.Forms.TreeNode> object in a tree view has properties that you can use to navigate the tree view: <xref:System.Windows.Forms.TreeNode.FirstNode%2A>, <xref:System.Windows.Forms.TreeNode.LastNode%2A>, <xref:System.Windows.Forms.TreeNode.NextNode%2A>, <xref:System.Windows.Forms.TreeNode.PrevNode%2A>, and <xref:System.Windows.Forms.TreeNode.Parent%2A>.</span></span> <span data-ttu-id="63c65-106">Hodnota <xref:System.Windows.Forms.TreeNode.Parent%2A> vlastnost je nadřazený uzel aktuální uzel.</span><span class="sxs-lookup"><span data-stu-id="63c65-106">The value of the <xref:System.Windows.Forms.TreeNode.Parent%2A> property is the parent node of the current node.</span></span> <span data-ttu-id="63c65-107">Podřízené uzly z aktuálního uzlu, pokud jsou k dispozici jsou uvedeny v jeho <xref:System.Windows.Forms.TreeNode.Nodes%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="63c65-107">The child nodes of the current node, if there are any, are listed in its <xref:System.Windows.Forms.TreeNode.Nodes%2A> property.</span></span> <span data-ttu-id="63c65-108"><xref:System.Windows.Forms.TreeView> Má vlastní ovládací prvek <xref:System.Windows.Forms.TreeView.TopNode%2A> vlastnost, která je kořenový uzel stromu celého zobrazení.</span><span class="sxs-lookup"><span data-stu-id="63c65-108">The <xref:System.Windows.Forms.TreeView> control itself has the <xref:System.Windows.Forms.TreeView.TopNode%2A> property, which is the root node of the entire tree view.</span></span>  
+ <span data-ttu-id="488ba-105">Každý <xref:System.Windows.Forms.TreeNode> objekt ve stromovém zobrazení má vlastnosti, které můžete použít k zobrazení stromu přejděte: <xref:System.Windows.Forms.TreeNode.FirstNode%2A>, <xref:System.Windows.Forms.TreeNode.LastNode%2A>, <xref:System.Windows.Forms.TreeNode.NextNode%2A>, <xref:System.Windows.Forms.TreeNode.PrevNode%2A>, a <xref:System.Windows.Forms.TreeNode.Parent%2A>.</span><span class="sxs-lookup"><span data-stu-id="488ba-105">Each <xref:System.Windows.Forms.TreeNode> object in a tree view has properties that you can use to navigate the tree view: <xref:System.Windows.Forms.TreeNode.FirstNode%2A>, <xref:System.Windows.Forms.TreeNode.LastNode%2A>, <xref:System.Windows.Forms.TreeNode.NextNode%2A>, <xref:System.Windows.Forms.TreeNode.PrevNode%2A>, and <xref:System.Windows.Forms.TreeNode.Parent%2A>.</span></span> <span data-ttu-id="488ba-106">Hodnota <xref:System.Windows.Forms.TreeNode.Parent%2A> vlastnost je nadřazený uzel aktuální uzel.</span><span class="sxs-lookup"><span data-stu-id="488ba-106">The value of the <xref:System.Windows.Forms.TreeNode.Parent%2A> property is the parent node of the current node.</span></span> <span data-ttu-id="488ba-107">Podřízené uzly z aktuálního uzlu, pokud jsou k dispozici jsou uvedeny v jeho <xref:System.Windows.Forms.TreeNode.Nodes%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="488ba-107">The child nodes of the current node, if there are any, are listed in its <xref:System.Windows.Forms.TreeNode.Nodes%2A> property.</span></span> <span data-ttu-id="488ba-108"><xref:System.Windows.Forms.TreeView> Má vlastní ovládací prvek <xref:System.Windows.Forms.TreeView.TopNode%2A> vlastnost, která je kořenový uzel stromu celého zobrazení.</span><span class="sxs-lookup"><span data-stu-id="488ba-108">The <xref:System.Windows.Forms.TreeView> control itself has the <xref:System.Windows.Forms.TreeView.TopNode%2A> property, which is the root node of the entire tree view.</span></span>  
   
-### <a name="to-iterate-through-all-nodes-of-the-treeview-control"></a><span data-ttu-id="63c65-109">Chcete-li iterace všemi uzly ovládacího prvku TreeView</span><span class="sxs-lookup"><span data-stu-id="63c65-109">To iterate through all nodes of the TreeView control</span></span>  
+### <a name="to-iterate-through-all-nodes-of-the-treeview-control"></a><span data-ttu-id="488ba-109">Chcete-li iterace všemi uzly ovládacího prvku TreeView</span><span class="sxs-lookup"><span data-stu-id="488ba-109">To iterate through all nodes of the TreeView control</span></span>  
   
-1.  <span data-ttu-id="63c65-110">Vytvoření rekurzivní procedury (rekurzivní metody v jazyce C# a C++), který testuje každý uzel.</span><span class="sxs-lookup"><span data-stu-id="63c65-110">Create a recursive procedure (recursive method in C# and C++) that tests each node.</span></span>  
+1.  <span data-ttu-id="488ba-110">Vytvoření rekurzivní procedury (rekurzivní metody v jazyce C# a C++), který testuje každý uzel.</span><span class="sxs-lookup"><span data-stu-id="488ba-110">Create a recursive procedure (recursive method in C# and C++) that tests each node.</span></span>  
   
-2.  <span data-ttu-id="63c65-111">Voláním procedury.</span><span class="sxs-lookup"><span data-stu-id="63c65-111">Call the procedure.</span></span>  
+2.  <span data-ttu-id="488ba-111">Voláním procedury.</span><span class="sxs-lookup"><span data-stu-id="488ba-111">Call the procedure.</span></span>  
   
-     <span data-ttu-id="63c65-112">Následující příklad ukazuje, jak každý tisknout <xref:System.Windows.Forms.TreeNode> objektu <xref:System.Windows.Forms.TreeNode.Text%2A> vlastnost:</span><span class="sxs-lookup"><span data-stu-id="63c65-112">The following example shows how to print each <xref:System.Windows.Forms.TreeNode> object's <xref:System.Windows.Forms.TreeNode.Text%2A> property:</span></span>  
+     <span data-ttu-id="488ba-112">Následující příklad ukazuje, jak každý tisknout <xref:System.Windows.Forms.TreeNode> objektu <xref:System.Windows.Forms.TreeNode.Text%2A> vlastnost:</span><span class="sxs-lookup"><span data-stu-id="488ba-112">The following example shows how to print each <xref:System.Windows.Forms.TreeNode> object's <xref:System.Windows.Forms.TreeNode.Text%2A> property:</span></span>  
   
     ```vb  
     Private Sub PrintRecursive(ByVal n As TreeNode)  
@@ -134,6 +123,6 @@ ms.lasthandoff: 12/22/2017
        }  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="63c65-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="63c65-113">See Also</span></span>  
- [<span data-ttu-id="63c65-114">Ovládací prvek TreeView</span><span class="sxs-lookup"><span data-stu-id="63c65-114">TreeView Control</span></span>](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)  
- [<span data-ttu-id="63c65-115">Rekurzivní procedury</span><span class="sxs-lookup"><span data-stu-id="63c65-115">Recursive Procedures</span></span>](~/docs/visual-basic/programming-guide/language-features/procedures/recursive-procedures.md)
+## <a name="see-also"></a><span data-ttu-id="488ba-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="488ba-113">See Also</span></span>  
+ [<span data-ttu-id="488ba-114">Ovládací prvek TreeView</span><span class="sxs-lookup"><span data-stu-id="488ba-114">TreeView Control</span></span>](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)  
+ [<span data-ttu-id="488ba-115">Rekurzivní procedury</span><span class="sxs-lookup"><span data-stu-id="488ba-115">Recursive Procedures</span></span>](~/docs/visual-basic/programming-guide/language-features/procedures/recursive-procedures.md)

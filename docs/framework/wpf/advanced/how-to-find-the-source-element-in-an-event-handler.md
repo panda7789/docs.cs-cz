@@ -1,13 +1,6 @@
 ---
-title: "Postupy: Hledání zdrojového elementu v obslužné rutině události"
-ms.custom: 
+title: 'Postupy: Hledání zdrojového elementu v obslužné rutině události'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
@@ -15,29 +8,25 @@ helpviewer_keywords:
 - source element in event handlers [WPF]
 - event handlers [WPF], finding source element in
 ms.assetid: 85f71c5a-b714-4c65-9711-7d905c2bbe98
-caps.latest.revision: "13"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: d62d657b886b867481088e32fe1dd0614377e146
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c3ae893cd7fd7780854d6eb6ffd682feadb5c5a0
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543997"
 ---
-# <a name="how-to-find-the-source-element-in-an-event-handler"></a><span data-ttu-id="218ce-102">Postupy: Hledání zdrojového elementu v obslužné rutině události</span><span class="sxs-lookup"><span data-stu-id="218ce-102">How to: Find the Source Element in an Event Handler</span></span>
-<span data-ttu-id="218ce-103">Tento příklad ukazuje, jak najít source element v obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="218ce-103">This example shows how to find the source element in an event handler.</span></span>  
+# <a name="how-to-find-the-source-element-in-an-event-handler"></a><span data-ttu-id="f45a7-102">Postupy: Hledání zdrojového elementu v obslužné rutině události</span><span class="sxs-lookup"><span data-stu-id="f45a7-102">How to: Find the Source Element in an Event Handler</span></span>
+<span data-ttu-id="f45a7-103">Tento příklad ukazuje, jak najít source element v obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="f45a7-103">This example shows how to find the source element in an event handler.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="218ce-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="218ce-104">Example</span></span>  
- <span data-ttu-id="218ce-105">Následující příklad ukazuje <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužné rutiny události, který je deklarován v souboru kódu na pozadí.</span><span class="sxs-lookup"><span data-stu-id="218ce-105">The following example shows a <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event handler that is declared in a code-behind file.</span></span> <span data-ttu-id="218ce-106">Když uživatel klikne na tlačítko, které obslužná rutina je připojen k, obslužná rutina změní hodnotu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="218ce-106">When a user clicks the button that the handler is attached to, the handler changes a property value.</span></span> <span data-ttu-id="218ce-107">Používá kód obslužné rutiny <xref:System.Windows.RoutedEventArgs.Source%2A> vlastnost směrované události dat, která je zaznamenána v argumenty událostí, chcete-li změnit <xref:System.Windows.FrameworkElement.Width%2A> hodnotu vlastnosti na <xref:System.Windows.RoutedEventArgs.Source%2A> elementu.</span><span class="sxs-lookup"><span data-stu-id="218ce-107">The handler code uses the <xref:System.Windows.RoutedEventArgs.Source%2A> property of the routed event data that is reported in the event arguments to change the <xref:System.Windows.FrameworkElement.Width%2A> property value on the <xref:System.Windows.RoutedEventArgs.Source%2A> element.</span></span>  
+## <a name="example"></a><span data-ttu-id="f45a7-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="f45a7-104">Example</span></span>  
+ <span data-ttu-id="f45a7-105">Následující příklad ukazuje <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužné rutiny události, který je deklarován v souboru kódu na pozadí.</span><span class="sxs-lookup"><span data-stu-id="f45a7-105">The following example shows a <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event handler that is declared in a code-behind file.</span></span> <span data-ttu-id="f45a7-106">Když uživatel klikne na tlačítko, které obslužná rutina je připojen k, obslužná rutina změní hodnotu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="f45a7-106">When a user clicks the button that the handler is attached to, the handler changes a property value.</span></span> <span data-ttu-id="f45a7-107">Používá kód obslužné rutiny <xref:System.Windows.RoutedEventArgs.Source%2A> vlastnost směrované události dat, která je zaznamenána v argumenty událostí, chcete-li změnit <xref:System.Windows.FrameworkElement.Width%2A> hodnotu vlastnosti na <xref:System.Windows.RoutedEventArgs.Source%2A> elementu.</span><span class="sxs-lookup"><span data-stu-id="f45a7-107">The handler code uses the <xref:System.Windows.RoutedEventArgs.Source%2A> property of the routed event data that is reported in the event arguments to change the <xref:System.Windows.FrameworkElement.Width%2A> property value on the <xref:System.Windows.RoutedEventArgs.Source%2A> element.</span></span>  
   
  [!code-xaml[RoutedEventSource#XAMLHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventSource/CSharp/default.xaml#xamlhandler)]  
   
  [!code-csharp[RoutedEventSource#Handler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventSource/CSharp/default.xaml.cs#handler)]
  [!code-vb[RoutedEventSource#Handler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventSource/VisualBasic/default.xaml.vb#handler)]  
   
-## <a name="see-also"></a><span data-ttu-id="218ce-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="218ce-108">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="f45a7-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="f45a7-108">See Also</span></span>  
  <xref:System.Windows.RoutedEventArgs>  
- [<span data-ttu-id="218ce-109">Přehled směrovaných událostí</span><span class="sxs-lookup"><span data-stu-id="218ce-109">Routed Events Overview</span></span>](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
- [<span data-ttu-id="218ce-110">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="218ce-110">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)
+ [<span data-ttu-id="f45a7-109">Přehled směrovaných událostí</span><span class="sxs-lookup"><span data-stu-id="f45a7-109">Routed Events Overview</span></span>](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
+ [<span data-ttu-id="f45a7-110">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="f45a7-110">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)

@@ -1,50 +1,39 @@
 ---
-title: "Knihovna tříd (WPF)"
-ms.custom: 
+title: Knihovna tříd (WPF)
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology: dotnet-wpf
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - WPF class library [WPF]
 - Windows Presentation Foundation class library [WPF]
 ms.assetid: dcb35927-00ad-4141-a1ab-a7a524dd3f10
-caps.latest.revision: "10"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 259aeca19f1b5865cee2749e76398e3e7f30aa51
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1d6f23c253a081bf454606a222ee4deed6c52e81
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550963"
 ---
-# <a name="class-library-wpf"></a><span data-ttu-id="48ff9-102">Knihovna tříd (WPF)</span><span class="sxs-lookup"><span data-stu-id="48ff9-102">Class Library (WPF)</span></span>
-<span data-ttu-id="48ff9-103">Následující odkazy odkazují na obory názvů, které obsahují [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] [!INCLUDE[TLA#tla_api#plural](../../../includes/tlasharptla-apisharpplural-md.md)].</span><span class="sxs-lookup"><span data-stu-id="48ff9-103">The following links refer to namespaces that contain [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] [!INCLUDE[TLA#tla_api#plural](../../../includes/tlasharptla-apisharpplural-md.md)].</span></span>  
+# <a name="class-library-wpf"></a><span data-ttu-id="0c10b-102">Knihovna tříd (WPF)</span><span class="sxs-lookup"><span data-stu-id="0c10b-102">Class Library (WPF)</span></span>
+<span data-ttu-id="0c10b-103">Následující odkazy odkazují na obory názvů, které obsahují [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] [!INCLUDE[TLA#tla_api#plural](../../../includes/tlasharptla-apisharpplural-md.md)].</span><span class="sxs-lookup"><span data-stu-id="0c10b-103">The following links refer to namespaces that contain [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] [!INCLUDE[TLA#tla_api#plural](../../../includes/tlasharptla-apisharpplural-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="48ff9-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="48ff9-104">In This Section</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="0c10b-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="0c10b-104">In This Section</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="48ff9-105">Odkaz</span><span class="sxs-lookup"><span data-stu-id="48ff9-105">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="0c10b-105">Odkaz</span><span class="sxs-lookup"><span data-stu-id="0c10b-105">Reference</span></span>  
   
 -   <xref:Microsoft.Build.Tasks.Windows>  
   
--   <span data-ttu-id="48ff9-106"><xref:Microsoft.Win32>(sdílené)</span><span class="sxs-lookup"><span data-stu-id="48ff9-106"><xref:Microsoft.Win32> (shared)</span></span>  
+-   <span data-ttu-id="0c10b-106"><xref:Microsoft.Win32> (sdílené)</span><span class="sxs-lookup"><span data-stu-id="0c10b-106"><xref:Microsoft.Win32> (shared)</span></span>  
   
 -   <xref:Microsoft.Windows.Themes>  
   
--   <span data-ttu-id="48ff9-107"><xref:System.Collections.ObjectModel>(sdílené)</span><span class="sxs-lookup"><span data-stu-id="48ff9-107"><xref:System.Collections.ObjectModel> (shared)</span></span>  
+-   <span data-ttu-id="0c10b-107"><xref:System.Collections.ObjectModel> (sdílené)</span><span class="sxs-lookup"><span data-stu-id="0c10b-107"><xref:System.Collections.ObjectModel> (shared)</span></span>  
   
--   <span data-ttu-id="48ff9-108"><xref:System.Collections.Specialized>(sdílené)</span><span class="sxs-lookup"><span data-stu-id="48ff9-108"><xref:System.Collections.Specialized> (shared)</span></span>  
+-   <span data-ttu-id="0c10b-108"><xref:System.Collections.Specialized> (sdílené)</span><span class="sxs-lookup"><span data-stu-id="0c10b-108"><xref:System.Collections.Specialized> (shared)</span></span>  
   
--   <span data-ttu-id="48ff9-109"><xref:System.ComponentModel>(sdílené)</span><span class="sxs-lookup"><span data-stu-id="48ff9-109"><xref:System.ComponentModel> (shared)</span></span>  
+-   <span data-ttu-id="0c10b-109"><xref:System.ComponentModel> (sdílené)</span><span class="sxs-lookup"><span data-stu-id="0c10b-109"><xref:System.ComponentModel> (shared)</span></span>  
   
--   <span data-ttu-id="48ff9-110"><xref:System.Diagnostics>(sdílené)</span><span class="sxs-lookup"><span data-stu-id="48ff9-110"><xref:System.Diagnostics> (shared)</span></span>  
+-   <span data-ttu-id="0c10b-110"><xref:System.Diagnostics> (sdílené)</span><span class="sxs-lookup"><span data-stu-id="0c10b-110"><xref:System.Diagnostics> (shared)</span></span>  
   
--   <span data-ttu-id="48ff9-111"><xref:System.IO>(sdílené)</span><span class="sxs-lookup"><span data-stu-id="48ff9-111"><xref:System.IO> (shared)</span></span>  
+-   <span data-ttu-id="0c10b-111"><xref:System.IO> (sdílené)</span><span class="sxs-lookup"><span data-stu-id="0c10b-111"><xref:System.IO> (shared)</span></span>  
   
 -   <xref:System.IO.Packaging>  
   
@@ -54,7 +43,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.Printing.Interop>  
   
--   <span data-ttu-id="48ff9-112"><xref:System.Security.Permissions>(sdílené)</span><span class="sxs-lookup"><span data-stu-id="48ff9-112"><xref:System.Security.Permissions> (shared)</span></span>  
+-   <span data-ttu-id="0c10b-112"><xref:System.Security.Permissions> (sdílené)</span><span class="sxs-lookup"><span data-stu-id="0c10b-112"><xref:System.Security.Permissions> (shared)</span></span>  
   
 -   <xref:System.Security.RightsManagement>  
   
@@ -96,7 +85,7 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:System.Windows.Interop>  
   
--   <span data-ttu-id="48ff9-113"><xref:System.Windows.Markup>(sdílené)</span><span class="sxs-lookup"><span data-stu-id="48ff9-113"><xref:System.Windows.Markup> (shared)</span></span>  
+-   <span data-ttu-id="0c10b-113"><xref:System.Windows.Markup> (sdílené)</span><span class="sxs-lookup"><span data-stu-id="0c10b-113"><xref:System.Windows.Markup> (shared)</span></span>  
   
 -   <xref:System.Windows.Markup.Localizer>  
   
@@ -134,10 +123,10 @@ ms.lasthandoff: 12/22/2017
   
 -   <xref:UIAutomationClientsideProviders>  
   
-## <a name="xaml-support-in-net-4"></a><span data-ttu-id="48ff9-114">XAML podpora v rozhraní .NET 4</span><span class="sxs-lookup"><span data-stu-id="48ff9-114">XAML Support in .NET 4</span></span>  
- <span data-ttu-id="48ff9-115">Následující obory názvů obsahovat typy z System.Xaml sestavení.</span><span class="sxs-lookup"><span data-stu-id="48ff9-115">The following namespaces contain types from the System.Xaml assembly.</span></span> <span data-ttu-id="48ff9-116">System.Xaml poskytuje běžné podporu jazyka XAML pro rozhraní, jako je například WPF, která jsou postaveny na [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="48ff9-116">System.Xaml provides common XAML language support for frameworks such as WPF that are built on [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)].</span></span>  
+## <a name="xaml-support-in-net-4"></a><span data-ttu-id="0c10b-114">XAML podpora v rozhraní .NET 4</span><span class="sxs-lookup"><span data-stu-id="0c10b-114">XAML Support in .NET 4</span></span>  
+ <span data-ttu-id="0c10b-115">Následující obory názvů obsahovat typy z System.Xaml sestavení.</span><span class="sxs-lookup"><span data-stu-id="0c10b-115">The following namespaces contain types from the System.Xaml assembly.</span></span> <span data-ttu-id="0c10b-116">System.Xaml poskytuje běžné podporu jazyka XAML pro rozhraní, jako je například WPF, která jsou postaveny na [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="0c10b-116">System.Xaml provides common XAML language support for frameworks such as WPF that are built on [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)].</span></span>  
   
--   <span data-ttu-id="48ff9-117"><xref:System.Windows.Markup>(sdílené)</span><span class="sxs-lookup"><span data-stu-id="48ff9-117"><xref:System.Windows.Markup> (shared)</span></span>  
+-   <span data-ttu-id="0c10b-117"><xref:System.Windows.Markup> (sdílené)</span><span class="sxs-lookup"><span data-stu-id="0c10b-117"><xref:System.Windows.Markup> (shared)</span></span>  
   
 -   <xref:System.Xaml>  
   

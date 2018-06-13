@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752296"
 ---
 # <a name="ltrelativebindforresourcesgt-element"></a><span data-ttu-id="ad9fd-102">&lt;relativebindforresources –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="ad9fd-102">&lt;relativeBindForResources&gt; Element</span></span>
 <span data-ttu-id="ad9fd-103">Tato kontrola se optimalizuje pro satelitní sestavení.</span><span class="sxs-lookup"><span data-stu-id="ad9fd-103">Optimizes the probe for satellite assemblies.</span></span>  

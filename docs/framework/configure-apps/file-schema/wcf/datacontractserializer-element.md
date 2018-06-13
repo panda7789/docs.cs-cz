@@ -12,6 +12,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32752764"
 ---
 # <a name="ltdatacontractserializergt"></a><span data-ttu-id="1cdba-102">&lt;dataContractSerializer&gt;</span><span class="sxs-lookup"><span data-stu-id="1cdba-102">&lt;dataContractSerializer&gt;</span></span>
 <span data-ttu-id="1cdba-103">Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="1cdba-103">Contains configuration data for the <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span> <span data-ttu-id="1cdba-104">Tento element proběhne dvě různé hierarchie.</span><span class="sxs-lookup"><span data-stu-id="1cdba-104">This element occurs in two different hierarchies.</span></span> <span data-ttu-id="1cdba-105">Jeden je uvedena v následující části schéma hierarchie a druhý je uveden v oddílu Poznámky.</span><span class="sxs-lookup"><span data-stu-id="1cdba-105">One is listed the following Schema Hierarchy section and the other is listed in the Remarks section.</span></span>  
