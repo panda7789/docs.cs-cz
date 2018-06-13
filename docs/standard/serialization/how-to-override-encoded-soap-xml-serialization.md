@@ -1,54 +1,42 @@
 ---
-title: "Postupy: potlačení serializace XML kódovaného protokolu SOAP"
-ms.custom: 
+title: 'Postupy: potlačení serializace XML kódovaného protokolu SOAP'
 ms.date: 03/30/2017
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
 helpviewer_keywords:
 - overriding XML serialization
 - SOAP, overriding encoded XML serialization
 ms.assetid: d0791df8-04e3-46b4-a6be-fe0ed09267e8
-caps.latest.revision: "6"
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 759da973662e407313dbfd1d1d8ffb18881d154c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 1ce2259c482c0e8441b35b41e2303fba5d547416
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33585837"
 ---
-# <a name="how-to-override-encoded-soap-xml-serialization"></a><span data-ttu-id="d598f-102">Postupy: potlačení serializace XML kódovaného protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="d598f-102">How to: Override Encoded SOAP XML Serialization</span></span>
-[<span data-ttu-id="d598f-103">Příklad kódu</span><span class="sxs-lookup"><span data-stu-id="d598f-103">Code Example</span></span>](#tskhowtooverrideencodedsoapxmlserializationanchor1)  
+# <a name="how-to-override-encoded-soap-xml-serialization"></a><span data-ttu-id="8f02c-102">Postupy: potlačení serializace XML kódovaného protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="8f02c-102">How to: Override Encoded SOAP XML Serialization</span></span>
+[<span data-ttu-id="8f02c-103">Příklad kódu</span><span class="sxs-lookup"><span data-stu-id="8f02c-103">Code Example</span></span>](#tskhowtooverrideencodedsoapxmlserializationanchor1)  
   
- <span data-ttu-id="d598f-104">Proces pro přepsání XML serializaci objektů jako zprávy protokolu SOAP je podobný procesu pro přepsání standardních serializace XML.</span><span class="sxs-lookup"><span data-stu-id="d598f-104">The process for overriding XML serialization of objects as SOAP messages is similar to the process for overriding standard XML serialization.</span></span> <span data-ttu-id="d598f-105">Informace o přepsání standardní serializace XML, najdete v části [postup: Zadejte jiný název elementu datový proud XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).</span><span class="sxs-lookup"><span data-stu-id="d598f-105">For information about overriding standard XML serialization, see [How to: Specify an Alternate Element Name for an XML Stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).</span></span>  
+ <span data-ttu-id="8f02c-104">Proces pro přepsání XML serializaci objektů jako zprávy protokolu SOAP je podobný procesu pro přepsání standardních serializace XML.</span><span class="sxs-lookup"><span data-stu-id="8f02c-104">The process for overriding XML serialization of objects as SOAP messages is similar to the process for overriding standard XML serialization.</span></span> <span data-ttu-id="8f02c-105">Informace o přepsání standardní serializace XML, najdete v části [postup: Zadejte jiný název elementu datový proud XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).</span><span class="sxs-lookup"><span data-stu-id="8f02c-105">For information about overriding standard XML serialization, see [How to: Specify an Alternate Element Name for an XML Stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).</span></span>  
   
-### <a name="to-override-serialization-of-objects-as-soap-messages"></a><span data-ttu-id="d598f-106">Chcete-li přepsat serializaci objektů jako zprávy protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="d598f-106">To override serialization of objects as SOAP messages</span></span>  
+### <a name="to-override-serialization-of-objects-as-soap-messages"></a><span data-ttu-id="8f02c-106">Chcete-li přepsat serializaci objektů jako zprávy protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="8f02c-106">To override serialization of objects as SOAP messages</span></span>  
   
-1.  <span data-ttu-id="d598f-107">Vytvořit instanci <xref:System.Xml.Serialization.SoapAttributeOverrides> třídy.</span><span class="sxs-lookup"><span data-stu-id="d598f-107">Create an instance of the <xref:System.Xml.Serialization.SoapAttributeOverrides> class.</span></span>  
+1.  <span data-ttu-id="8f02c-107">Vytvořit instanci <xref:System.Xml.Serialization.SoapAttributeOverrides> třídy.</span><span class="sxs-lookup"><span data-stu-id="8f02c-107">Create an instance of the <xref:System.Xml.Serialization.SoapAttributeOverrides> class.</span></span>  
   
-2.  <span data-ttu-id="d598f-108">Vytvořit `SoapAttributes` pro všechny členy třídy, která je serializována.</span><span class="sxs-lookup"><span data-stu-id="d598f-108">Create a `SoapAttributes` for each class member that is being serialized.</span></span>  
+2.  <span data-ttu-id="8f02c-108">Vytvořit `SoapAttributes` pro všechny členy třídy, která je serializována.</span><span class="sxs-lookup"><span data-stu-id="8f02c-108">Create a `SoapAttributes` for each class member that is being serialized.</span></span>  
   
-3.  <span data-ttu-id="d598f-109">Vytvořte instanci jedné nebo více atributů, které mají vliv na serializace XML, v závislosti na člena serializována.</span><span class="sxs-lookup"><span data-stu-id="d598f-109">Create an instance of one or more of the attributes that affect XML serialization, as appropriate, to the member being serialized.</span></span> <span data-ttu-id="d598f-110">Další informace naleznete v tématu "Atributy, aby ovládací prvek kódovaný SOAP serializace".</span><span class="sxs-lookup"><span data-stu-id="d598f-110">For more information, see "Attributes That Control Encoded SOAP Serialization".</span></span>  
+3.  <span data-ttu-id="8f02c-109">Vytvořte instanci jedné nebo více atributů, které mají vliv na serializace XML, v závislosti na člena serializována.</span><span class="sxs-lookup"><span data-stu-id="8f02c-109">Create an instance of one or more of the attributes that affect XML serialization, as appropriate, to the member being serialized.</span></span> <span data-ttu-id="8f02c-110">Další informace naleznete v tématu "Atributy, aby ovládací prvek kódovaný SOAP serializace".</span><span class="sxs-lookup"><span data-stu-id="8f02c-110">For more information, see "Attributes That Control Encoded SOAP Serialization".</span></span>  
   
-4.  <span data-ttu-id="d598f-111">Nastaví odpovídající vlastnost `SoapAttributes` do atribut vytvořené v kroku 3.</span><span class="sxs-lookup"><span data-stu-id="d598f-111">Set the appropriate property of `SoapAttributes` to the attribute created in step 3.</span></span>  
+4.  <span data-ttu-id="8f02c-111">Nastaví odpovídající vlastnost `SoapAttributes` do atribut vytvořené v kroku 3.</span><span class="sxs-lookup"><span data-stu-id="8f02c-111">Set the appropriate property of `SoapAttributes` to the attribute created in step 3.</span></span>  
   
-5.  <span data-ttu-id="d598f-112">Add `SoapAttributes` to `SoapAttributeOverrides`.</span><span class="sxs-lookup"><span data-stu-id="d598f-112">Add `SoapAttributes` to `SoapAttributeOverrides`.</span></span>  
+5.  <span data-ttu-id="8f02c-112">Add `SoapAttributes` to `SoapAttributeOverrides`.</span><span class="sxs-lookup"><span data-stu-id="8f02c-112">Add `SoapAttributes` to `SoapAttributeOverrides`.</span></span>  
   
-6.  <span data-ttu-id="d598f-113">Vytvořit `XmlTypeMapping` pomocí `SoapAttributeOverrides`.</span><span class="sxs-lookup"><span data-stu-id="d598f-113">Create an `XmlTypeMapping` using the `SoapAttributeOverrides`.</span></span> <span data-ttu-id="d598f-114">Použití `SoapReflectionImporter.ImportTypeMapping` metoda.</span><span class="sxs-lookup"><span data-stu-id="d598f-114">Use the `SoapReflectionImporter.ImportTypeMapping` method.</span></span>  
+6.  <span data-ttu-id="8f02c-113">Vytvořit `XmlTypeMapping` pomocí `SoapAttributeOverrides`.</span><span class="sxs-lookup"><span data-stu-id="8f02c-113">Create an `XmlTypeMapping` using the `SoapAttributeOverrides`.</span></span> <span data-ttu-id="8f02c-114">Použití `SoapReflectionImporter.ImportTypeMapping` metoda.</span><span class="sxs-lookup"><span data-stu-id="8f02c-114">Use the `SoapReflectionImporter.ImportTypeMapping` method.</span></span>  
   
-7.  <span data-ttu-id="d598f-115">Vytvořit `XmlSerializer` pomocí `XmlTypeMapping`.</span><span class="sxs-lookup"><span data-stu-id="d598f-115">Create an `XmlSerializer` using `XmlTypeMapping`.</span></span>  
+7.  <span data-ttu-id="8f02c-115">Vytvořit `XmlSerializer` pomocí `XmlTypeMapping`.</span><span class="sxs-lookup"><span data-stu-id="8f02c-115">Create an `XmlSerializer` using `XmlTypeMapping`.</span></span>  
   
-8.  <span data-ttu-id="d598f-116">Serializaci nebo deserializaci objektu.</span><span class="sxs-lookup"><span data-stu-id="d598f-116">Serialize or deserialize the object.</span></span>  
+8.  <span data-ttu-id="8f02c-116">Serializaci nebo deserializaci objektu.</span><span class="sxs-lookup"><span data-stu-id="8f02c-116">Serialize or deserialize the object.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="d598f-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="d598f-117">Example</span></span>  
- <span data-ttu-id="d598f-118">Následující příklad kódu serializuje soubor dvěma způsoby: první, aniž by přepsala `XmlSerializer` chování třídy a sekundu přepsáním chování.</span><span class="sxs-lookup"><span data-stu-id="d598f-118">The following code example serializes a file in two ways: first, without overriding the `XmlSerializer` class's behavior, and second, by overriding the behavior.</span></span> <span data-ttu-id="d598f-119">Tento příklad obsahuje třídu s názvem `Group` s několika členy.</span><span class="sxs-lookup"><span data-stu-id="d598f-119">The example contains a class named `Group` with several members.</span></span> <span data-ttu-id="d598f-120">Různé atributy, jako je například `SoapElementAttribute`, na členy třídy nebyly použity.</span><span class="sxs-lookup"><span data-stu-id="d598f-120">Various attributes, such as the `SoapElementAttribute`, have been applied to class members.</span></span> <span data-ttu-id="d598f-121">Pokud je třída serializované pomocí `SerializeOriginal` v případě metody atributy řízení obsahu zprávy protokolu SOAP.</span><span class="sxs-lookup"><span data-stu-id="d598f-121">When the class is serialized with the `SerializeOriginal` method, the attributes control the SOAP message content.</span></span> <span data-ttu-id="d598f-122">Když `SerializeOverride` metoda je volána, chování `XmlSerializer` přepsáno vytváření různé atributy a nastavením vlastnosti `SoapAttributes` na tyto atributy (podle potřeby).</span><span class="sxs-lookup"><span data-stu-id="d598f-122">When the `SerializeOverride` method is called, the behavior of the `XmlSerializer` is overridden by creating various attributes and setting the properties of a `SoapAttributes` to those attributes (as appropriate).</span></span>  
+## <a name="example"></a><span data-ttu-id="8f02c-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="8f02c-117">Example</span></span>  
+ <span data-ttu-id="8f02c-118">Následující příklad kódu serializuje soubor dvěma způsoby: první, aniž by přepsala `XmlSerializer` chování třídy a sekundu přepsáním chování.</span><span class="sxs-lookup"><span data-stu-id="8f02c-118">The following code example serializes a file in two ways: first, without overriding the `XmlSerializer` class's behavior, and second, by overriding the behavior.</span></span> <span data-ttu-id="8f02c-119">Tento příklad obsahuje třídu s názvem `Group` s několika členy.</span><span class="sxs-lookup"><span data-stu-id="8f02c-119">The example contains a class named `Group` with several members.</span></span> <span data-ttu-id="8f02c-120">Různé atributy, jako je například `SoapElementAttribute`, na členy třídy nebyly použity.</span><span class="sxs-lookup"><span data-stu-id="8f02c-120">Various attributes, such as the `SoapElementAttribute`, have been applied to class members.</span></span> <span data-ttu-id="8f02c-121">Pokud je třída serializované pomocí `SerializeOriginal` v případě metody atributy řízení obsahu zprávy protokolu SOAP.</span><span class="sxs-lookup"><span data-stu-id="8f02c-121">When the class is serialized with the `SerializeOriginal` method, the attributes control the SOAP message content.</span></span> <span data-ttu-id="8f02c-122">Když `SerializeOverride` metoda je volána, chování `XmlSerializer` přepsáno vytváření různé atributy a nastavením vlastnosti `SoapAttributes` na tyto atributy (podle potřeby).</span><span class="sxs-lookup"><span data-stu-id="8f02c-122">When the `SerializeOverride` method is called, the behavior of the `XmlSerializer` is overridden by creating various attributes and setting the properties of a `SoapAttributes` to those attributes (as appropriate).</span></span>  
   
 ```csharp  
 using System;  
@@ -290,10 +278,10 @@ public class Run
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="d598f-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="d598f-123">See Also</span></span>  
- [<span data-ttu-id="d598f-124">Serializace XML a SOAP</span><span class="sxs-lookup"><span data-stu-id="d598f-124">XML and SOAP Serialization</span></span>](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
- [<span data-ttu-id="d598f-125">Seznam atributů řídících serializaci zakódovanou v protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="d598f-125">Attributes That Control Encoded SOAP Serialization</span></span>](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)  
- [<span data-ttu-id="d598f-126">Serializace XML pomocí webových služeb XML</span><span class="sxs-lookup"><span data-stu-id="d598f-126">XML Serialization with XML Web Services</span></span>](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)  
- [<span data-ttu-id="d598f-127">Postupy: Serializace objektu</span><span class="sxs-lookup"><span data-stu-id="d598f-127">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
- [<span data-ttu-id="d598f-128">Postupy: Deserializace objektu</span><span class="sxs-lookup"><span data-stu-id="d598f-128">How to: Deserialize an Object</span></span>](../../../docs/standard/serialization/how-to-deserialize-an-object.md)  
- [<span data-ttu-id="d598f-129">Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="d598f-129">How to: Serialize an Object as a SOAP-Encoded XML Stream</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
+## <a name="see-also"></a><span data-ttu-id="8f02c-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="8f02c-123">See Also</span></span>  
+ [<span data-ttu-id="8f02c-124">Serializace XML a SOAP</span><span class="sxs-lookup"><span data-stu-id="8f02c-124">XML and SOAP Serialization</span></span>](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
+ [<span data-ttu-id="8f02c-125">Seznam atributů řídících serializaci zakódovanou v protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="8f02c-125">Attributes That Control Encoded SOAP Serialization</span></span>](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)  
+ [<span data-ttu-id="8f02c-126">Serializace XML pomocí webových služeb XML</span><span class="sxs-lookup"><span data-stu-id="8f02c-126">XML Serialization with XML Web Services</span></span>](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)  
+ [<span data-ttu-id="8f02c-127">Postupy: Serializace objektu</span><span class="sxs-lookup"><span data-stu-id="8f02c-127">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+ [<span data-ttu-id="8f02c-128">Postupy: Deserializace objektu</span><span class="sxs-lookup"><span data-stu-id="8f02c-128">How to: Deserialize an Object</span></span>](../../../docs/standard/serialization/how-to-deserialize-an-object.md)  
+ [<span data-ttu-id="8f02c-129">Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP</span><span class="sxs-lookup"><span data-stu-id="8f02c-129">How to: Serialize an Object as a SOAP-Encoded XML Stream</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
