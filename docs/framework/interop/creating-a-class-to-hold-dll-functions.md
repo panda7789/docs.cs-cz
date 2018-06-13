@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33387059"
 ---
 # <a name="creating-a-class-to-hold-dll-functions"></a><span data-ttu-id="97e60-102">Vytvoření třídy k umístění funkcí DLL</span><span class="sxs-lookup"><span data-stu-id="97e60-102">Creating a Class to Hold DLL Functions</span></span>
 <span data-ttu-id="97e60-103">Zabalení často používané funkce DLL v třídě spravované je efektivní přístup k zapouzdření funkce platformy.</span><span class="sxs-lookup"><span data-stu-id="97e60-103">Wrapping a frequently used DLL function in a managed class is an effective approach to encapsulate platform functionality.</span></span> <span data-ttu-id="97e60-104">Přestože není povinný Uděláte to tak v každém případě, za předpokladu, že třída obálky je vhodné, protože definice funkcí knihovny DLL může být pracné a k chybám.</span><span class="sxs-lookup"><span data-stu-id="97e60-104">Although it is not mandatory to do so in every case, providing a class wrapper is convenient because defining DLL functions can be cumbersome and error-prone.</span></span> <span data-ttu-id="97e60-105">Pokud programujete v jazyce Visual Basic nebo C#, je potřeba deklarovat funkcí knihovny DLL v rámci třídy nebo modulu Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="97e60-105">If you are programming in Visual Basic or C#, you must declare DLL functions within a class or Visual Basic module.</span></span>  

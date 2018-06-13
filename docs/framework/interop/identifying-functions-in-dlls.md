@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388616"
 ---
 # <a name="identifying-functions-in-dlls"></a><span data-ttu-id="c839f-102">Identifikace funkcí ve knihovnách DLL</span><span class="sxs-lookup"><span data-stu-id="c839f-102">Identifying Functions in DLLs</span></span>
 <span data-ttu-id="c839f-103">Identitu funkce DLL se skládá z následujících elementů:</span><span class="sxs-lookup"><span data-stu-id="c839f-103">The identity of a DLL function consists of the following elements:</span></span>  

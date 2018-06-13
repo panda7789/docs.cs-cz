@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388375"
 ---
 # <a name="consuming-unmanaged-dll-functions"></a><span data-ttu-id="0c5fe-102">Používání nespravovaných funkcí DLL</span><span class="sxs-lookup"><span data-stu-id="0c5fe-102">Consuming Unmanaged DLL Functions</span></span>
 <span data-ttu-id="0c5fe-103">Vyvolání platformy je služba, což umožňuje spravovat kódu volání nespravovaných funkcí, které jsou implementované v dynamické knihovny (DLL), například v rozhraní API Win32.</span><span class="sxs-lookup"><span data-stu-id="0c5fe-103">Platform invoke is a service that enables managed code to call unmanaged functions implemented in dynamic link libraries (DLLs), such as those in the Win32 API.</span></span> <span data-ttu-id="0c5fe-104">Vyhledá a vyvolá exportované funkce a zařazuje její argumenty (celá čísla, řetězce, pole, struktur a tak dále) přes součinnosti hranice, podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="0c5fe-104">It locates and invokes an exported function and marshals its arguments (integers, strings, arrays, structures, and so on) across the interoperation boundary as needed.</span></span>  
