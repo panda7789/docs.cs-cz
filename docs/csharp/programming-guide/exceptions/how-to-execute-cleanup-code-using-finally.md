@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33331705"
 ---
 # <a name="how-to-execute-cleanup-code-using-finally-c-programming-guide"></a>Postupy: Spuštění kódu čištění pomocí příkazu finally (Průvodce programováním v C#)
 Účel `finally` příkaz je aby se zajistilo nezbytné čištění objektů, obvykle objekty, které jsou externí prostředky, která uchovává okamžitě, i když je vyvolána výjimka. Příkladem takových čištění volá <xref:System.IO.Stream.Close%2A> na <xref:System.IO.FileStream> okamžitě po použití místo abyste čekali, objekt, který má být uvolnění z paměti modulem common language runtime, následujícím způsobem:  

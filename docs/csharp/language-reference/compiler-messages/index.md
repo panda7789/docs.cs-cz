@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33213200"
 ---
 # <a name="c-compiler-errors"></a>Chyby kompilátoru jazyka C#
 Některé chyby kompilátoru jazyka C# mají odpovídající témata s vysvětlením, proč je generována chyba a, v některých případech, jak chybu opravit. Použijte jednu z následujících kroků zobrazíte, zda je pro konkrétní chybová zpráva k dispozici nápověda.  

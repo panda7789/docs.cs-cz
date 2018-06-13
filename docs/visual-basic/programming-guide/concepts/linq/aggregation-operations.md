@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644066"
 ---
 # <a name="aggregation-operations-visual-basic"></a>Agregační operace (Visual Basic)
 Agregační operace vypočítá jednu hodnotu z kolekce hodnot. Příklad operace agregace je výpočet průměrné denní teploty z měsíc za denní hodnoty teploty.  

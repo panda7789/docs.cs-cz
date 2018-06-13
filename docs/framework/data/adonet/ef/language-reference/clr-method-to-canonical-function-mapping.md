@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32766592"
 ---
 # <a name="clr-method-to-canonical-function-mapping"></a>Metoda CLR pro mapování kanonické funkce
 Rozhraní Entity Framework poskytuje sadu kanonické funkce, které implementují funkce, které jsou společné napříč mnoha systémy databáze, jako je například zacházení s řetězci a matematické funkce. To umožňuje vývojářům cíle širokou škálu databázovými systémy. Při volání z dotazování technologii, jako je technologie LINQ to Entities, tyto kanonické funkce jsou převedeny na správné odpovídající funkce úložiště pro použitý zprostředkovatel. To umožňuje volání funkce vyjádřeno v běžné formuláře napříč datových zdrojů, zajištění konzistentní dotazu prostředí napříč zdroje dat. Bitové operace AND, OR, NOT a XOR operátory jsou taky namapovaný na funkce kanonický po operand číselného typu. Pro logickou operandy, bitové operace AND, OR a NOT, a operátory XOR výpočetní logické AND, OR, ne a operace XOR operandy. Další informace najdete v tématu [kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md).  

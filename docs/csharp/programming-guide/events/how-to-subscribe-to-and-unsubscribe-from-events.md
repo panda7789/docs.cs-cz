@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336200"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Postupy: Přihlášení a odhlášení odběru událostí (Průvodce programováním v C#)
 Přihlášení k odběru na událost, která se publikuje jinou třídou, když chcete napsat vlastní kód, který je volána, když se vyvolá tuto událost. Například může přihlásíte k odběru na tlačítko `click` událostí, aby bylo možné aplikaci dělat něco užitečné, když uživatel klikne na tlačítko.  

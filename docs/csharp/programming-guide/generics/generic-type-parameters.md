@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33332465"
 ---
 # <a name="generic-type-parameters-c-programming-guide"></a>Obecné parametry typu (Průvodce programováním v C#)
 Parametry typu v obecného typu nebo definici metody, je zástupný symbol pro konkrétního typu klienta Určuje, kdy se vytvořit instanci proměnné obecného typu. Obecný třídy, jako například `GenericList<T>` uvedené v [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md), nelze použít jako-je, protože není skutečně typu; se víc podobá plán, podle kterého typu. Chcete-li použít `GenericList<T>`, kód klienta musí deklarovat a vytvořit instanci typu vytvořený tak, že zadáte argument typu v závorkách úhlu. Argument typu pro tuto konkrétní třídu mohou být jakéhokoli typu rozpoznán překladačem. Libovolný počet instancí vytvořený typ lze vytvořit, každé z nich pomocí jiného typu argument, následujícím způsobem:  

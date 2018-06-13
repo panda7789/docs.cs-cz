@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32764135"
 ---
 # <a name="entity-set"></a>sada entit
 *Sady entit* je logický kontejner pro instance [typ entity](../../../../docs/framework/data/adonet/entity-type.md) a instancí jakéhokoli typu odvozeného z tohoto typu entity. (Informace o odvozené typy najdete v tématu [datového modelu Entity: dědičnosti](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).) Vztah mezi typem entity a sadu entit je podobná vztah mezi řádek a tabulku v relační databázi: řádek, jako je typ entity popisuje strukturu dat a jako tabulku, obsahuje sadu entit instance dané struktury. Sadu entit není dat modelování konstrukce; Struktura dat nepopisuje. Místo toho sadu entit poskytuje konstrukt pro hostování nebo úložiště prostředí (například databáze SQL serveru nebo modul common language runtime) k instancím typu entity skupiny tak, aby se můžete namapovat k úložišti dat.  
