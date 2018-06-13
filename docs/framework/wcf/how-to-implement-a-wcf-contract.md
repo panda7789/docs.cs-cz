@@ -1,40 +1,27 @@
 ---
-title: "Postupy: implementace kontraktu služby Windows Communication Foundation"
-ms.custom: 
+title: 'Postupy: implementace kontraktu služby Windows Communication Foundation'
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: article
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - service contracts [WCF], implementing
 ms.assetid: d5ab51ba-61ae-403e-b3c8-e2669e326806
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4bf590b2f508cc6661b5acb045a7d66b38ed169c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d8d1712e6fcc844a3606403efc3c2648ddcc9c65
+ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/04/2018
+ms.locfileid: "33499308"
 ---
-# <a name="how-to-implement-a-windows-communication-foundation-service-contract"></a><span data-ttu-id="9afa0-102">Postupy: implementace kontraktu služby Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="9afa0-102">How to: Implement a Windows Communication Foundation Service Contract</span></span>
-<span data-ttu-id="9afa0-103">Toto je druhý šesti úkoly vyžadované pro vytvoření základní [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] služby a klienta, který můžete volat službu.</span><span class="sxs-lookup"><span data-stu-id="9afa0-103">This is the second of six tasks required to create a basic [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service and a client that can call the service.</span></span> <span data-ttu-id="9afa0-104">Přehled všech šest úloh najdete v tématu [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.</span><span class="sxs-lookup"><span data-stu-id="9afa0-104">For an overview of all six tasks, see the [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md) topic.</span></span>  
+# <a name="how-to-implement-a-windows-communication-foundation-service-contract"></a><span data-ttu-id="34f79-102">Postupy: implementace kontraktu služby Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="34f79-102">How to: Implement a Windows Communication Foundation Service Contract</span></span>
+<span data-ttu-id="34f79-103">Toto je druhý šesti úlohy, které jsou potřebné pro vytvoření základní služby Windows Communication Foundation (WCF) a klienta, který můžete volat službu.</span><span class="sxs-lookup"><span data-stu-id="34f79-103">This is the second of six tasks required to create a basic Windows Communication Foundation (WCF) service and a client that can call the service.</span></span> <span data-ttu-id="34f79-104">Přehled všech šest úloh najdete v tématu [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.</span><span class="sxs-lookup"><span data-stu-id="34f79-104">For an overview of all six tasks, see the [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md) topic.</span></span>  
   
- <span data-ttu-id="9afa0-105">Dalším krokem při vytváření aplikace WCF je implementace rozhraní služby.</span><span class="sxs-lookup"><span data-stu-id="9afa0-105">The next step in creating a WCF application is to implement the service interface.</span></span> <span data-ttu-id="9afa0-106">To zahrnuje vytvoření třídy s názvem `CalculatorService` , která implementuje uživatelsky definované `ICalculator` rozhraní...</span><span class="sxs-lookup"><span data-stu-id="9afa0-106">This involves creating a class called `CalculatorService` that implements the user-defined `ICalculator` interface..</span></span>  
+ <span data-ttu-id="34f79-105">Dalším krokem při vytváření aplikace WCF je implementace rozhraní služby.</span><span class="sxs-lookup"><span data-stu-id="34f79-105">The next step in creating a WCF application is to implement the service interface.</span></span> <span data-ttu-id="34f79-106">To zahrnuje vytvoření třídy s názvem `CalculatorService` , která implementuje uživatelsky definované `ICalculator` rozhraní...</span><span class="sxs-lookup"><span data-stu-id="34f79-106">This involves creating a class called `CalculatorService` that implements the user-defined `ICalculator` interface..</span></span>  
   
-### <a name="to-implement-a-wcf-service-contract"></a><span data-ttu-id="9afa0-107">K implementaci kontraktu služby WCF</span><span class="sxs-lookup"><span data-stu-id="9afa0-107">To implement a WCF service contract</span></span>  
+### <a name="to-implement-a-wcf-service-contract"></a><span data-ttu-id="34f79-107">K implementaci kontraktu služby WCF</span><span class="sxs-lookup"><span data-stu-id="34f79-107">To implement a WCF service contract</span></span>  
   
-1.  <span data-ttu-id="9afa0-108">Otevřete soubor Service1.cs nebo Service1.vb a přidejte následující kód:</span><span class="sxs-lookup"><span data-stu-id="9afa0-108">Open the Service1.cs or Service1.vb file and add the following code:</span></span>  
+1.  <span data-ttu-id="34f79-108">Otevřete soubor Service1.cs nebo Service1.vb a přidejte následující kód:</span><span class="sxs-lookup"><span data-stu-id="34f79-108">Open the Service1.cs or Service1.vb file and add the following code:</span></span>  
   
     ```csharp  
     //Service1.cs  
@@ -130,10 +117,10 @@ ms.lasthandoff: 12/22/2017
     End Namespace  
     ```  
   
-     <span data-ttu-id="9afa0-109">Každá metoda implementuje operaci kalkulačky a zapíše text do konzoly nástroje Testování usnadnit.</span><span class="sxs-lookup"><span data-stu-id="9afa0-109">Each method implements the calculator operation and writes some text to the console to make testing easier.</span></span>  
+     <span data-ttu-id="34f79-109">Každá metoda implementuje operaci kalkulačky a zapíše text do konzoly nástroje Testování usnadnit.</span><span class="sxs-lookup"><span data-stu-id="34f79-109">Each method implements the calculator operation and writes some text to the console to make testing easier.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="9afa0-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="9afa0-110">Example</span></span>  
- <span data-ttu-id="9afa0-111">Následující kód ukazuje, jak rozhraní, které definuje kontrakt a implementaci rozhraní.</span><span class="sxs-lookup"><span data-stu-id="9afa0-111">The following code shows both the interface that defines the contract and the implementation of the interface.</span></span>  
+## <a name="example"></a><span data-ttu-id="34f79-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="34f79-110">Example</span></span>  
+ <span data-ttu-id="34f79-111">Následující kód ukazuje, jak rozhraní, které definuje kontrakt a implementaci rozhraní.</span><span class="sxs-lookup"><span data-stu-id="34f79-111">The following code shows both the interface that defines the contract and the implementation of the interface.</span></span>  
   
 ```csharp
 // IService1.cs  
@@ -276,11 +263,11 @@ Namespace GettingStartedLib
 End Namespace  
 ```  
   
- <span data-ttu-id="9afa0-112">Kontrakt služby je teď vytvořená a implementovat.</span><span class="sxs-lookup"><span data-stu-id="9afa0-112">Now the service contract is created and implemented.</span></span> <span data-ttu-id="9afa0-113">Sestavte řešení, abyste zajistili zde nejsou žádné chyby kompilace a pak pokračujte [postupy: hostování a spuštění základní služby](../../../docs/framework/wcf/how-to-host-and-run-a-basic-wcf-service.md) službu spustit.</span><span class="sxs-lookup"><span data-stu-id="9afa0-113">Build the solution to ensure there are no compilation errors and then proceed to [How to: Host and Run a Basic Service](../../../docs/framework/wcf/how-to-host-and-run-a-basic-wcf-service.md) to run the service.</span></span> <span data-ttu-id="9afa0-114">Informace o odstraňování potíží, najdete v části [řešení potíží s kurzu Začínáme](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md).</span><span class="sxs-lookup"><span data-stu-id="9afa0-114">For troubleshooting information, see [Troubleshooting the Getting Started Tutorial](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md).</span></span>  
+ <span data-ttu-id="34f79-112">Kontrakt služby je teď vytvořená a implementovat.</span><span class="sxs-lookup"><span data-stu-id="34f79-112">Now the service contract is created and implemented.</span></span> <span data-ttu-id="34f79-113">Sestavte řešení, abyste zajistili zde nejsou žádné chyby kompilace a pak pokračujte [postupy: hostování a spuštění základní služby](../../../docs/framework/wcf/how-to-host-and-run-a-basic-wcf-service.md) službu spustit.</span><span class="sxs-lookup"><span data-stu-id="34f79-113">Build the solution to ensure there are no compilation errors and then proceed to [How to: Host and Run a Basic Service](../../../docs/framework/wcf/how-to-host-and-run-a-basic-wcf-service.md) to run the service.</span></span> <span data-ttu-id="34f79-114">Informace o odstraňování potíží, najdete v části [řešení potíží s kurzu Začínáme](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md).</span><span class="sxs-lookup"><span data-stu-id="34f79-114">For troubleshooting information, see [Troubleshooting the Getting Started Tutorial](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md).</span></span>  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="9afa0-115">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="9afa0-115">Compiling the Code</span></span>  
- <span data-ttu-id="9afa0-116">Pokud používáte Visual Studio, v nabídce sestavení klikněte na tlačítko Sestavit řešení (nebo stiskněte klávesu CTRL + SHIFT + B).</span><span class="sxs-lookup"><span data-stu-id="9afa0-116">If you are using Visual Studio, on the Build menu click Build Solution (or press CTRL+SHIFT+B).</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="34f79-115">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="34f79-115">Compiling the Code</span></span>  
+ <span data-ttu-id="34f79-116">Pokud používáte Visual Studio, v nabídce sestavení klikněte na tlačítko Sestavit řešení (nebo stiskněte klávesu CTRL + SHIFT + B).</span><span class="sxs-lookup"><span data-stu-id="34f79-116">If you are using Visual Studio, on the Build menu click Build Solution (or press CTRL+SHIFT+B).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9afa0-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="9afa0-117">See Also</span></span>  
- [<span data-ttu-id="9afa0-118">Začínáme</span><span class="sxs-lookup"><span data-stu-id="9afa0-118">Getting Started</span></span>](../../../docs/framework/wcf/samples/getting-started-sample.md)  
- [<span data-ttu-id="9afa0-119">Vlastní hostování</span><span class="sxs-lookup"><span data-stu-id="9afa0-119">Self-Host</span></span>](../../../docs/framework/wcf/samples/self-host.md)
+## <a name="see-also"></a><span data-ttu-id="34f79-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="34f79-117">See Also</span></span>  
+ [<span data-ttu-id="34f79-118">Začínáme</span><span class="sxs-lookup"><span data-stu-id="34f79-118">Getting Started</span></span>](../../../docs/framework/wcf/samples/getting-started-sample.md)  
+ [<span data-ttu-id="34f79-119">Vlastní hostování</span><span class="sxs-lookup"><span data-stu-id="34f79-119">Self-Host</span></span>](../../../docs/framework/wcf/samples/self-host.md)

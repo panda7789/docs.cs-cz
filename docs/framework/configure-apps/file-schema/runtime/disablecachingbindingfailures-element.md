@@ -17,6 +17,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32745676"
 ---
 # <a name="ltdisablecachingbindingfailuresgt-element"></a><span data-ttu-id="d6646-102">&lt;disablecachingbindingfailures –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="d6646-102">&lt;disableCachingBindingFailures&gt; Element</span></span>
 <span data-ttu-id="d6646-103">Určuje, jestli chcete zakázat ukládání do mezipaměti vazby, ke kterým dochází, protože sestavení nebyl nalezen ve zjišťování.</span><span class="sxs-lookup"><span data-stu-id="d6646-103">Specifies whether to disable the caching of binding failures that occur because the assembly was not found by probing.</span></span>  

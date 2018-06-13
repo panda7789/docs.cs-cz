@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33510134"
 ---
 # <a name="troubleshooting-debugging-windows-services"></a><span data-ttu-id="a9934-102">Řešení potíží: Ladění služeb systému Windows</span><span class="sxs-lookup"><span data-stu-id="a9934-102">Troubleshooting: Debugging Windows Services</span></span>
 <span data-ttu-id="a9934-103">Když ladíte aplikaci služby pro Windows, služby a **Windows Service Manager** komunikovat.</span><span class="sxs-lookup"><span data-stu-id="a9934-103">When you debug a Windows service application, your service and the **Windows Service Manager** interact.</span></span> <span data-ttu-id="a9934-104">**Portálu Service Manager** spustí služby voláním <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda a potom počká 30 sekund <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda vrátí.</span><span class="sxs-lookup"><span data-stu-id="a9934-104">The **Service Manager** starts your service by calling the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method, and then waits 30 seconds for the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method to return.</span></span> <span data-ttu-id="a9934-105">Pokud metoda v tuto chvíli nezobrazí, správce ukazuje chybu, že službu nelze spustit.</span><span class="sxs-lookup"><span data-stu-id="a9934-105">If the method does not return in this time, the manager shows an error that the service cannot be started.</span></span>  
