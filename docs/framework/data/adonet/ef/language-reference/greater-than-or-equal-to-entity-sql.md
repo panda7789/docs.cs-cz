@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761984"
 ---
 # <a name="gt-greater-than-or-equal-to-entity-sql"></a><span data-ttu-id="9b230-102">&gt;= (Větší než nebo rovno) (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="9b230-102">&gt;= (Greater Than or Equal To) (Entity SQL)</span></span>
 <span data-ttu-id="9b230-103">Porovná dva výrazy a určit, zda má levý výraz hodnotu větší než nebo rovna hodnotě pravý výraz.</span><span class="sxs-lookup"><span data-stu-id="9b230-103">Compares two expressions to determine whether the left expression has a value greater than or equal to the right expression.</span></span>  

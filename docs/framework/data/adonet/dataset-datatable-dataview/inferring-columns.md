@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761074"
 ---
 # <a name="inferring-columns"></a><span data-ttu-id="241d7-102">Odvození sloupce</span><span class="sxs-lookup"><span data-stu-id="241d7-102">Inferring Columns</span></span>
 <span data-ttu-id="241d7-103">Po ADO.NET určil z dokumentu XML prvky, které k odvození jako tabulky pro <xref:System.Data.DataSet>, pak odvozeny sloupce pro tyto tabulky.</span><span class="sxs-lookup"><span data-stu-id="241d7-103">After ADO.NET has determined from an XML document which elements to infer as tables for a <xref:System.Data.DataSet>, it then infers the columns for those tables.</span></span> <span data-ttu-id="241d7-104">ADO.NET 2.0 zavedl nový modul odvození schématu, odvodí typ silného typu dat pro každou **simpleType** elementu.</span><span class="sxs-lookup"><span data-stu-id="241d7-104">ADO.NET 2.0 introduced a new schema inference engine that infers a strongly typed data type for each **simpleType** element.</span></span> <span data-ttu-id="241d7-105">V předchozích verzích, datový typ odvozené **simpleType** element byla vždy **xsd:string**.</span><span class="sxs-lookup"><span data-stu-id="241d7-105">In previous versions, the data type of an inferred **simpleType** element was always **xsd:string**.</span></span>  

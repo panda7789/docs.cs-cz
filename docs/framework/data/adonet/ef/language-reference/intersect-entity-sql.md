@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761529"
 ---
 # <a name="intersect-entity-sql"></a><span data-ttu-id="10a61-102">INTERSECT (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="10a61-102">INTERSECT (Entity SQL)</span></span>
 <span data-ttu-id="10a61-103">Vrátí kolekci všech jedinečných hodnot, které jsou vráceny ve výrazech dotazů na levé straně a pravé straně operandu INTERSECT.</span><span class="sxs-lookup"><span data-stu-id="10a61-103">Returns a collection of any distinct values that are returned by both the query expressions on the left and right sides of the INTERSECT operand.</span></span> <span data-ttu-id="10a61-104">Všechny výrazy musí být stejného typu nebo typu běžné základní nebo odvozené jako `expression`.</span><span class="sxs-lookup"><span data-stu-id="10a61-104">All expressions must be of the same type or of a common base or derived type as `expression`.</span></span>  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32762842"
 ---
 # <a name="how-to-call-custom-database-functions"></a><span data-ttu-id="44b2c-102">Postupy: volání funkce vlastní databáze</span><span class="sxs-lookup"><span data-stu-id="44b2c-102">How to: Call Custom Database Functions</span></span>
 <span data-ttu-id="44b2c-103">Toto téma popisuje, jak volat vlastní funkce, které jsou definovány v databázi z v rámci LINQ dotazy entity.</span><span class="sxs-lookup"><span data-stu-id="44b2c-103">This topic describes how to call custom functions that are defined in the database from within LINQ to Entities queries.</span></span>  

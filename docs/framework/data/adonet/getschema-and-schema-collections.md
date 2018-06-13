@@ -10,6 +10,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763940"
 ---
 # <a name="getschema-and-schema-collections"></a><span data-ttu-id="4e7a1-102">GetSchema a kolekcemi schémat</span><span class="sxs-lookup"><span data-stu-id="4e7a1-102">GetSchema and Schema Collections</span></span>
 <span data-ttu-id="4e7a1-103">**Připojení** třídy v každé z implementace spravovaných zprostředkovatelé rozhraní .NET Framework **GetSchema** metodu, která se používá k načtení schématu informace o databázi, která je aktuálně připojen, a informace o schématu vrácená z **GetSchema** metoda obsahuje ve formě <xref:System.Data.DataTable>.</span><span class="sxs-lookup"><span data-stu-id="4e7a1-103">The **Connection** classes in each of the .NET Framework managed providers implement a **GetSchema** method which is used to retrieve schema information about the database that is currently connected, and the schema information returned from the **GetSchema** method comes in the form of a <xref:System.Data.DataTable>.</span></span> <span data-ttu-id="4e7a1-104">**GetSchema** metoda je přetížené metody, která poskytuje volitelné parametry pro zadání kolekce schémat vrátit a omezení množství vrácených informací.</span><span class="sxs-lookup"><span data-stu-id="4e7a1-104">The **GetSchema** method is an overloaded method that provides optional parameters for specifying the schema collection to return, and restricting the amount of information returned.</span></span>  

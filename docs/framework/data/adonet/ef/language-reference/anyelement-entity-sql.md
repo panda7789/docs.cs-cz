@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32761841"
 ---
 # <a name="anyelement-entity-sql"></a><span data-ttu-id="16353-102">ANYELEMENT (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="16353-102">ANYELEMENT (Entity SQL)</span></span>
 <span data-ttu-id="16353-103">Extrahuje element z kolekce s více hodnotami.</span><span class="sxs-lookup"><span data-stu-id="16353-103">Extracts an element from a multivalued collection.</span></span>  

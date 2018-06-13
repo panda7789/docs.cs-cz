@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763037"
 ---
 # <a name="like-entity-sql"></a><span data-ttu-id="00592-102">JAKO (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="00592-102">LIKE (Entity SQL)</span></span>
 <span data-ttu-id="00592-103">Určuje, zda konkrétní znak `String` odpovídá zadanému vzoru.</span><span class="sxs-lookup"><span data-stu-id="00592-103">Determines whether a specific character `String` matches a specified pattern.</span></span>  

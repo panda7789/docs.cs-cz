@@ -7,6 +7,7 @@ ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32763160"
 ---
 # <a name="named-type-constructor-entity-sql"></a><span data-ttu-id="83f51-102">Konstruktor typu s názvem (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="83f51-102">Named Type Constructor (Entity SQL)</span></span>
 <span data-ttu-id="83f51-103">Použít k vytvoření instance konceptuálního modelu nominální například Entity nebo komplexní typy.</span><span class="sxs-lookup"><span data-stu-id="83f51-103">Used to create instances of conceptual model nominal types such as Entity or Complex types.</span></span>  
