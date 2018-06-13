@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541934"
 ---
 # <a name="dependency-property-value-precedence"></a>Priorita hodnot závislých vlastností
 <a name="introduction"></a> Toto téma vysvětluje, jak do chodu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systému může mít vliv na hodnotu vlastnosti závislosti a popisuje priorit, podle které aspekty vlastnosti systému, na které se týkají platnou hodnotu vlastnosti.  

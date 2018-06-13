@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33440044"
 ---
 # <a name="icorruntimehost-interface"></a>ICorRuntimeHost – rozhraní
 Poskytuje metody, které umožní hostitele spuštění a zastavení common language runtime (CLR) explicitně, vytvořte a nakonfigurujte aplikační domény, pro přístup k výchozí doméně a chcete získat výčet všech domén, které jsou spuštěné v procesu.  

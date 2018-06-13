@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33333840"
 ---
 # <a name="how-to-write-to-a-text-file-c-programming-guide"></a>Postupy: Zápis do textového souboru (Průvodce programováním v C#)
 Tyto příklady znázorňují různé způsoby zápisu textu do souboru. První dva příklady používají statické usnadňující metody na <xref:System.IO.File?displayProperty=nameWithType> třída pro psaní každý prvek všech `IEnumerable<string>` a řetězec do textového souboru. Příklad 3 ukazuje, jak přidat text do souboru při každém řádku jednotlivě zpracovat, protože zapisovat do souboru. Příklady 1 – 3 přepsat všechny existující obsah v souboru, ale příklad 4 ukazuje, jak přidat text do existující soubor.  

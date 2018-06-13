@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492284"
 ---
 # <a name="configuring-discovery-in-a-configuration-file"></a>Konfigurace zjišťování v konfiguračním souboru
 Existují čtyři hlavní skupiny nastavení konfigurace používané při zjišťování. Toto téma se stručně popisují každou a obsahuje příklady způsob jejich konfigurace. Následující každý oddíl bude odkaz na další podrobnější dokumentaci o každou oblast.  

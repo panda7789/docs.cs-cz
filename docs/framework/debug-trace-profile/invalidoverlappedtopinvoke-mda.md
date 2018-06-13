@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33386854"
 ---
 # <a name="invalidoverlappedtopinvoke-mda"></a>invalidOverlappedToPinvoke – pomocník spravovaného ladění (MDA)
 `invalidOverlappedToPinvoke` Pomocník spravovaného ladění (MDA) se aktivuje, když překrytý ukazatel, jež nebyla vytvořena v haldě kolekce paměti předána ke konkrétním funkcím Win32.  

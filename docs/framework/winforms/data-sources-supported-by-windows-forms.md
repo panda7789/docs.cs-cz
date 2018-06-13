@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33541174"
 ---
 # <a name="data-sources-supported-by-windows-forms"></a>Zdroje dat podporované rozhraním Windows Forms
 Datová vazba tradičně, už je použité v aplikacích využít dat uložených v databázích. S Windows Forms – datová vazba, můžete přístup k datům z databáze a také data v jiných struktur, jako je například pole a kolekcí, tak dlouho, dokud byly splněny určité minimální požadavky.  

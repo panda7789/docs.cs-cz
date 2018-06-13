@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33365225"
 ---
 # <a name="managing-the-data-service-context-wcf-data-services"></a>Správa služby kontextu dat (služby WCF Data Services)
 <xref:System.Data.Services.Client.DataServiceContext> Třída zapouzdří operace, které jsou podporovány službě zadaná data. I když [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jsou bezstavové služby, není kontextu. Proto můžete použít <xref:System.Data.Services.Client.DataServiceContext> třídy pro uchování stavu na straně klienta mezi interakce s službu data za účelem podpory funkcí, jako například Správa změn. Tato třída také spravuje identit a sleduje změny.  

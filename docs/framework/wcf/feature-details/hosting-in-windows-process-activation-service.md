@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492444"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Hostování v Aktivační službě procesů systému Windows
 Služba aktivace procesů systému Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují aplikace služby Windows Communication Foundation (WCF) tohoto hostitele. Model procesu WAS umožňuje zobecnit [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje službám WCF pomocí protokolu HTTP a jiných protokolů než HTTP, jako je například Net.TCP v hostitelské prostředí, které podporuje aktivaci na základě zpráv a nabízí schopnost hostovat velký počet aplikací v daném počítači.  

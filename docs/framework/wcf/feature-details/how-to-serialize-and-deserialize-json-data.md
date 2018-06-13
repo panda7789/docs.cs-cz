@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33492587"
 ---
 # <a name="how-to-serialize-and-deserialize-json-data"></a>Postupy: Serializace a deserializace dat protokolu JSON
 JSON (JavaScript Object Notation) je formát kódování efektivní dat, který umožňuje rychlé výměnu malé množství dat mezi prohlížeče klienta a podporou AJAXU webové služby.  

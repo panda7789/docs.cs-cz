@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33388258"
 ---
 # <a name="mitigation-tls-protocols"></a>Omezení rizik: Protokoly TLS
 Od verze rozhraní .NET Framework 4.6 <xref:System.Net.ServicePointManager?displayProperty=nameWithType> a <xref:System.Net.Security.SslStream?displayProperty=nameWithType> třídy mohou používat jednu z následujících tří protokolů: Tls1.0, Tls1.1 nebo Tls 1.2. Protokol SSL3.0 a šifrovací algoritmus RC4 nejsou podporovány.  

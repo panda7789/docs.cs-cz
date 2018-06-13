@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488472"
 ---
 # <a name="configuring-workflowservicehost"></a>Konfigurace třídy WorkflowServiceHost
 Tato část obsahuje sadu krátké "jak" témata, která stručně popisují, jak nakonfigurovat různé funkce <xref:System.ServiceModel.Activities.WorkflowServiceHost> – třída v konfiguraci. Tato témata zahrnují konkrétní konfigurace služby pracovního postupu, všechny ostatní konfigurace se provádí stejným způsobem jako regulární služby WCF.  

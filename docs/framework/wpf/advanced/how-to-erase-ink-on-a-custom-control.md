@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33543244"
 ---
 # <a name="how-to-erase-ink-on-a-custom-control"></a>Postupy: Smazání inkoustu na vlastním ovládacím prvku
 <xref:System.Windows.Ink.IncrementalStrokeHitTester> Určuje, jestli aktuálně vykresleného tahu protíná jinou tahu.  To je užitečné pro vytvoření ovládacího prvku, který umožňuje uživatelům vymazat části tahu, způsob uživatel může na <xref:System.Windows.Controls.InkCanvas> při <xref:System.Windows.Controls.InkCanvas.EditingMode%2A> je nastaven na <xref:System.Windows.Controls.InkCanvasEditingMode.EraseByPoint>.  

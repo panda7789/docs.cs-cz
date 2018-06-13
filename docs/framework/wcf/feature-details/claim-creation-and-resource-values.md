@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33488049"
 ---
 # <a name="claim-creation-and-resource-values"></a>Vytvoření nároku a hodnoty prostředků
 <xref:System.IdentityModel.Claims.Claim> Třída poskytuje několik metod, vytváření instancí předdefinované typy deklarací identity. Z těchto metod následující provést žádné sémantického nebo formátu kontrola na zadaný prostředek:  
