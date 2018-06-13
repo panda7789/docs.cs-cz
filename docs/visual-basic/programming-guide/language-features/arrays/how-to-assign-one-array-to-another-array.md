@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647927"
 ---
 # <a name="how-to-assign-one-array-to-another-array-visual-basic"></a>Postupy: Přiřazení jednoho pole ke druhému (Visual Basic)
 Vzhledem k tomu, že pole jsou objekty, můžete je používat v příkazech přiřazení jako ostatní typy objektů. Proměnné pole obsahuje ukazatele na data tvořících elementy pole a informace o pořadí a délku a přiřazení zkopíruje pouze tento ukazatel.  

@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33550248"
 ---
 # <a name="how-to-enable-spell-checking-in-a-text-editing-control"></a>Postupy: Povolení kontroly pravopisu v ovládacím prvku pro úpravy textu
 Následující příklad ukazuje, jak povolit kontrolu pravopisu v reálném čase <xref:System.Windows.Controls.TextBox> pomocí <xref:System.Windows.Controls.SpellCheck.IsEnabled%2A> vlastnost <xref:System.Windows.Controls.SpellCheck> třídy.  

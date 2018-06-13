@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336541"
 ---
 # <a name="xelement-class-overview-c"></a>Přehled třídy XElement (C#)
 <xref:System.Xml.Linq.XElement> Třída je jedné ze základních tříd v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Reprezentuje element, XML. Tuto třídu můžete použít k vytváření prvků; Změňte obsah elementu; přidat, změnit nebo odstranit podřízené elementy; Přidání atributů do elementu; nebo serializovat obsah elementu v textové podobě. Také můžete spolupracovat s jiné třídy v <xref:System.Xml?displayProperty=nameWithType>, jako například <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>, a <xref:System.Xml.Xsl.XslCompiledTransform>.  

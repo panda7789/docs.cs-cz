@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33641125"
 ---
 # <a name="use-39fileputobject39-instead-of-39fileput39-when-using-argument-of-type-39object39"></a>Použití &#39;FilePutObject –&#39; místo &#39;FilePut –&#39; při použití argument typu &#39;objektu&#39;
 `FilePut` Metoda obsahuje argument typu `Object`. `FilePutObject` musí být použito místo `FilePut` aby se zabránilo nejednoznačnosti.  

@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33646549"
 ---
 # <a name="control-flow-in-visual-basic"></a>Tok řízení v jazyce Visual Basic
 Oblast vlevo, program pokračuje prostřednictvím jeho příkazy od začátku do konce. Některé velmi jednoduché programy může být napsán s pouze tento jednosměrný tok. Velká část napájení a nástroj žádný programovací jazyk, však pochází z umožňuje změnit pořadí zpracování řídicí příkazy a smyčky.  

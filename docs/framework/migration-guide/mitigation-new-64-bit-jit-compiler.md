@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33391937"
 ---
 # <a name="mitigation-new-64-bit-jit-compiler"></a>Omezení rizik: Nové 64-bit JIT kompilátoru
 Od verze rozhraní .NET Framework 4.6, modul runtime zahrnuje nové kompilátoru JIT 64-bit pro kompilaci za běhu. Tato změna nemá vliv kompilace s 32-bit kompilátoru za běhu.  

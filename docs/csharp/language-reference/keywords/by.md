@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33213435"
 ---
 # <a name="by-c-reference"></a>by (Referenční dokumentace jazyka C#)
 `by` Kontextové klíčové slovo je používán `group` klauzule ve výrazu dotazu k určení, jak by měly být seskupené vrácené položky. Další informace najdete v tématu [group – klauzule](../../../csharp/language-reference/keywords/group-clause.md).  

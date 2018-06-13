@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33336635"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Použití typu dynamic (Průvodce programováním v C#)
 [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] zavádí nový typ `dynamic`. Typ je statický typu, ale objekt typu `dynamic` obchází Kontrola statické typu. Ve většině případů funguje stejně, jako má typ `object`. Při kompilaci, element, který je zadán jako `dynamic` se předpokládá, že pro podporu všechny operace. Proto není nutné starat o tom, zda objekt získá svou hodnotu z rozhraní API modelu COM, dynamické jazyce například IronPython, z HTML Document Object Model (DOM), z reflexe nebo z jinde v programu. Ale pokud kód není platný, jsou zachyceny chyby za běhu.  

@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33330704"
 ---
 # <a name="how-to-override-the-tostring-method-c-programming-guide"></a>Postupy: Potlačení metody ToString (Průvodce programováním v C#)
 Každé třídě nebo struktuře v jazyce C# implicitně dědí <xref:System.Object> třídy. Proto získá každý objekt v jazyce C# <xref:System.Object.ToString%2A> metoda, která vrátí řetězcovou reprezentaci tohoto objektu. Například všechny proměnné typu `int` mít `ToString` metoda, která umožňuje, aby vrátila jejich obsah jako řetězec:  

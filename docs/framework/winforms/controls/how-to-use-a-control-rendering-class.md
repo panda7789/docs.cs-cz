@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33534102"
 ---
 # <a name="how-to-use-a-control-rendering-class"></a>Postupy: Použití třídy vykreslující ovládací prvek
 Tento příklad ukazuje, jak používat <xref:System.Windows.Forms.ComboBoxRenderer> třída k vykreslení ovládacího prvku pole na šipku rozevíracího pole se seznamem. V příkladu se skládá z <xref:System.Windows.Forms.Control.OnPaint%2A> metoda jednoduché vlastního ovládacího prvku. <xref:System.Windows.Forms.ComboBoxRenderer.IsSupported%2A?displayProperty=nameWithType> Vlastnost se používá k určení, jestli jsou povolené vizuální styly v oblasti klienta aplikace Windows. Pokud vizuální styly jsou aktivní, pak se <xref:System.Windows.Forms.ComboBoxRenderer.DrawDropDownButton%2A?displayProperty=nameWithType> metoda vykreslí na šipku rozevíracího seznamu s vizuálními styly; v opačném <xref:System.Windows.Forms.ControlPaint.DrawComboButton%2A?displayProperty=nameWithType> metoda vykreslí na šipku rozevíracího seznamu ve klasický styl systému Windows.  

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644248"
 ---
 # <a name="assemblies-and-the-global-assembly-cache-visual-basic"></a>Sestavení a globální mezipaměti sestavení (Visual Basic)
 Vytváří základní jednotku nasazení, Správa verzí, opakované použití, aktivaci oborů a oprávnění zabezpečení pro sestavení. Aplikace založené na Asp.net. Sestavení mít formu na spustitelný soubor (.exe) nebo soubor dynamické knihovny (DLL) a představují stavební kameny rozhraní .NET Framework. Poskytují modul common language runtime s použitím informací, musí se jednat o zjištění typu implementace. Si můžete představit jako kolekci typů a prostředky, které tvoří logickou jednotku funkcí a jsou vytvořeny tak spolupracují sestavení.  

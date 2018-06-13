@@ -13,6 +13,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524304"
 ---
 # <a name="checkedlistbox-control-overview-windows-forms"></a>CheckedListBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.CheckedListBox> ovládací prvek rozšiřuje <xref:System.Windows.Forms.ListBox> ovládacího prvku. Nemá téměř vše, pole se seznamem nemá a také můžete zobrazit zatržení vedle položky v seznamu. Další rozdíly mezi dvěma ovládací prvky jsou který zkontrolovat seznam oknech podporovat pouze <xref:System.Windows.Forms.DrawMode.Normal?displayProperty=nameWithType>; a který zkontrolovat seznamy může mít pouze jednu položku nebo není vybrán žádný. Upozorňujeme, že vybraná položka je zvýrazněn na formuláři a není stejný jako položku zaškrtnuté.  

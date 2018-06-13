@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524677"
 ---
 # <a name="how-to-add-a-toolstripcontainer-to-a-form"></a>Postupy: Přidání ToolStripContainer do formuláře
 Prostřednictvím kódu programu můžete přidat <xref:System.Windows.Forms.ToolStripContainer> na formuláři Windows a jeho naplnění ovládací prvky.  

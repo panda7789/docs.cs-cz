@@ -10,6 +10,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648564"
 ---
 # <a name="how-to-call-an-extension-method-visual-basic"></a>Postupy: Volání metody rozšíření (Visual Basic)
 Rozšiřující metody umožňují přidání metody do existující třídy. Po metody rozšíření je deklarovaný a začlenění do oboru, můžete ji volat jako metodu instance typu, který rozšiřuje ji. Další informace o tom, jak zápis metody rozšíření najdete v tématu [postupy: zápis metody rozšíření](./how-to-write-an-extension-method.md).  

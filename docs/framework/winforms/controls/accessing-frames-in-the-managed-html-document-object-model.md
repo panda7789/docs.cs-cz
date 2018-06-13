@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525514"
 ---
 # <a name="accessing-frames-in-the-managed-html-document-object-model"></a>Přístup k rámcům v modelu spravovaného objektu dokumentu HTML
 Některé dokumentů HTML se skládají z *rámce*, nebo okna, která může pojmout své vlastní dokumenty odlišné HTML. Pomocí rámce usnadňuje vytvoření stránky HTML, ve kterých zůstat statický, jako je například navigační panel některé části stránky, zatímco jiné rámce neustále mění svůj obsah.  

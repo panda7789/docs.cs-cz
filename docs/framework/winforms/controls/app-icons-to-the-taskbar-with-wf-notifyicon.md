@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525410"
 ---
 # <a name="how-to-add-application-icons-to-the-taskbar-with-the-windows-forms-notifyicon-component"></a>Postupy: Přidání ikon aplikací do TaskBar se součástí Windows Forms NotifyIcon
 Windows Forms <xref:System.Windows.Forms.NotifyIcon> součást zobrazí jeden ikonu v oznamovací oblasti stav na hlavním panelu. Chcete-li zobrazit více ikony ve stavové oblasti, musíte mít více <xref:System.Windows.Forms.NotifyIcon> součásti ve formuláři. Pokud chcete nastavit ikonu zobrazí pro ovládací prvek, použijte <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost. Můžete napsat kód ve <xref:System.Windows.Forms.NotifyIcon.DoubleClick> obslužné rutiny události tak, že něco se stane, když uživatel poklikáním na ikonu. Například můžete dokonce vytvářet dialogové okno zobrazí uživatele, pro konfiguraci reprezentována ikonu proces na pozadí.  

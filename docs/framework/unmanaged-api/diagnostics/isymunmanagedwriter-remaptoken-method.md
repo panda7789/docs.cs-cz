@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33427831"
 ---
 # <a name="isymunmanagedwriterremaptoken-method"></a>ISymUnmanagedWriter::RemapToken – metoda
 Upozorní zapisovače symbol, že token metadat jako metadata byla vygenerované složek. Pokud zapisovače symbol má uložený staré token v rámci úložiště symbolů, musíte buď aktualizace, které uložené token s novou hodnotu, nebo musíte uložit mapy pro odpovídající čtečku symbol přemapování během čtení fáze.  

@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33655186"
 ---
 # <a name="inheritance-basics-visual-basic"></a>Základní informace o dědičnosti (Visual Basic)
 `Inherits` Příkaz se používá k deklaraci novou třídu, s názvem *odvozené třídy*na stávající třídě, označuje jako základě *základní třída*. Odvozené třídy dědí a můžete rozšířit, vlastnosti, metody, události, pole a konstanty definované v základní třídě. Následující část popisuje některé z pravidel pro dědičnosti a modifikátory, které můžete změnit způsob třídy dědí nebo jsou děděné:  

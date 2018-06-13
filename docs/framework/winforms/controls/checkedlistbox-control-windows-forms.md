@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33525585"
 ---
 # <a name="checkedlistbox-control-windows-forms"></a>CheckedListBox – ovládací prvek (Windows Forms)
 Windows Forms `CheckedListBox` ovládací prvek zobrazí seznam položek, jako je třeba <xref:System.Windows.Forms.ListBox> řízení a také můžete zobrazit zatržení vedle položky v seznamu.  

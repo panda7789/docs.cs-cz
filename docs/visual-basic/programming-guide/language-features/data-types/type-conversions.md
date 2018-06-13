@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33647189"
 ---
 # <a name="type-conversions-in-visual-basic"></a>Převody typů v jazyce Visual Basic
 Proces změny hodnoty z jednoho datového typu na jiný typ se nazývá *převod*. Převody jsou buď *rozšiřující* nebo *zužující*, v závislosti na data kapacitou typy související se situací. Jsou i *implicitní* nebo *explicitní*, v závislosti na syntaxi ve zdrojovém kódu.  

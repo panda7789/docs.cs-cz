@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33551222"
 ---
 # <a name="flowdocumentpageviewer"></a>FlowDocumentPageViewer
 <xref:System.Windows.Controls.FlowDocumentPageViewer> Řízení se používá k zobrazení <xref:System.Windows.Documents.FlowDocument> obsahu na základě na stránce. Rozdíl oproti <xref:System.Windows.Controls.FlowDocumentScrollViewer>, která uvede <xref:System.Windows.Documents.FlowDocument> obsahu v prohlížeči posouvání.  

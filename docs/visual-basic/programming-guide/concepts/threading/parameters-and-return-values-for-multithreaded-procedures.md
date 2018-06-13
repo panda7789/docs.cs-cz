@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33648096"
 ---
 # <a name="parameters-and-return-values-for-multithreaded-procedures-visual-basic"></a>Parametry a návratové hodnoty pro procedury ve více vláknech (Visual Basic)
 Poskytnutí a vrácení hodnot v Vícevláknová aplikace je složité, protože v konstruktoru pro třídu přístup z více vláken, musí být předán odkaz na procedury, která nezadávaly žádné argumenty a nevrací žádnou hodnotu. Následující části vysvětlují, některá jednoduché způsoby, jak zadat parametry a návratové hodnoty z procedury v samostatných vláknech.  

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33332199"
 ---
 # <a name="how-to-access-a-member-with-a-pointer-c-programming-guide"></a>Postupy: Přístup ke členu pomocí ukazatele (Průvodce programováním v C#)
 Pro přístup ke členu struktura, který je deklarován v kontextu unsafe, můžete použít operátor přístupu členů, jak je znázorněno v následujícím příkladu, ve kterém `p` je ukazatel na [struktura](../../../csharp/language-reference/keywords/struct.md) obsahující členem `x`.  

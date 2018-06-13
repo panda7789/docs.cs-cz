@@ -16,6 +16,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33644352"
 ---
 # <a name="walkthrough-calling-windows-apis-visual-basic"></a>Návod: Volání rozhraní API systému Windows (Visual Basic)
 Rozhraní API systému Windows jsou dynamické knihovny (DLL), které jsou součástí operačního systému Windows. Můžete použít je k provádění úloh, když je k zápisu ekvivalentní postupy. Například systém Windows nabízí funkce s názvem `FlashWindowEx` , umožňuje provádět alternativní mezi světlým a tmavým odstínech záhlaví pro aplikaci.  

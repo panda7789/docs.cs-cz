@@ -7,6 +7,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33642061"
 ---
 # <a name="the-folder-cannot-be-created-since-a-file-already-exists-with-the-same-path"></a>Složku nelze vytvořit, protože se stejnou cestou již existuje soubor
 Byl proveden pokus o vytvoření adresáře, ale soubor cestu již existuje. To může být způsobeno nesprávně analýze cesty, zejména při práci s relativní cesty.  

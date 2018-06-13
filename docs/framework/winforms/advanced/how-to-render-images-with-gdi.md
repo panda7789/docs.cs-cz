@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33524603"
 ---
 # <a name="how-to-render-images-with-gdi"></a>Postupy: Vykreslení obrázků pomocí GDI+
 Můžete použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] vykreslování obrázků, které existují jako soubory ve svých aplikacích. To uděláte tak, že vytvoříte nový objekt <xref:System.Drawing.Image> – třída (například <xref:System.Drawing.Bitmap>), vytváření <xref:System.Drawing.Graphics> objektu, který odkazuje na kreslicí plochy, kterou chcete použít a volání <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu. Obrázek se vykresluje do kreslicí plochy reprezentována graphics – třída. Můžete použít Editor obrázků můžete vytvářet a upravovat soubory obrázků v době návrhu a vykreslit pomocí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] za běhu. Další informace najdete v tématu [Editor obrázků pro ikony](/cpp/windows/image-editor-for-icons).  
