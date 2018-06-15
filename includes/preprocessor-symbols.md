@@ -1,11 +1,11 @@
 ---
 ms.custom: updateeachrelease
 ms.openlocfilehash: f8be002c1d2e34889204ae2c1c50aa87ccdd080e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 1e17d85fdd86608b5bde8ffc517b162146a129fd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33658314"
+ms.lasthandoff: 06/13/2018
+ms.locfileid: "35422625"
 ---
 | Cílové rozhraní | Symboly |
 | ------------------| ------- |
