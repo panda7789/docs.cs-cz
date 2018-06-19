@@ -72,6 +72,8 @@
 ## [Požadavky pro macOS](core/macos-prerequisites.md)
 ## [Požadavky pro Linux](core/linux-prerequisites.md)
 ## [Co je nového v .NET Core](core/whats-new/index.md)
+### [Co je nového v .NET Core 2.1](core/whats-new/dotnet-core-2-1.md)
+### [Co je nového v .NET Core 2.0](core/whats-new/dotnet-core-2-0.md)
 ## [Kurzy](core/tutorials/index.md)
 ### [Vytvoření kompletního řešení .NET Core ve Windows pomocí sady Visual Studio 2017](core/tutorials/using-on-windows-full-solution.md)
 ### [Začínáme s .NET Core v systému macOS](core/tutorials/using-on-macos.md)
@@ -96,6 +98,7 @@
 ### [Nasazení aplikací pomocí nástrojů CLI](core/deploying/deploy-with-cli.md)
 ### [Nasazení aplikací pomocí sady Visual Studio](core/deploying/deploy-with-vs.md)
 ### [Vytvoření balíčku NuGet pomocí nástrojů pro různé platformy](core/deploying/creating-nuget-packages.md)
+### [Samostatné nasazení – dopředné posunutí modulu runtime](core/deploying/runtime-patch-selection.md)
 ### [Úložiště balíčků modulu runtime](core/deploying/runtime-store.md)
 ## [Docker](core/docker/index.md)
 ### [Úvod k .NET a Dockeru](core/docker/intro-net-docker.md)
@@ -122,20 +125,23 @@
 ## [Přehled sady .NET Core SDK](core/sdk.md)
 ## [Nástroje CLI platformy .NET Core](core/tools/index.md)
 ### [Telemetrie](core/tools/telemetry.md)
+### [Globální nástroje](core/tools/global-tools.md)
 ### [Model rozšíření](core/tools/extensibility.md)
 ### [Průběžná integrace](core/tools/using-ci-with-cli.md)
 ### [Vlastní šablony](core/tools/custom-templates.md)
 ### [dotnet](core/tools/dotnet.md)
 ### [dotnet build](core/tools/dotnet-build.md)
+### [dotnet build-server](core/tools/dotnet-build-server.md)
 ### [dotnet clean](core/tools/dotnet-clean.md)
 ### [dotnet help](core/tools/dotnet-help.md)
 ### [dotnet install-script](core/tools/dotnet-install-script.md)
 ### [dotnet migrate](core/tools/dotnet-migrate.md)
 ### [dotnet msbuild](core/tools/dotnet-msbuild.md)
 ### [dotnet new](core/tools/dotnet-new.md)
-### [dotnet nuget delete](core/tools/dotnet-nuget-delete.md)
-### [dotnet nuget locals](core/tools/dotnet-nuget-locals.md)
-### [dotnet nuget push](core/tools/dotnet-nuget-push.md)
+### dotnet nuget
+#### [dotnet nuget delete](core/tools/dotnet-nuget-delete.md)
+#### [dotnet nuget locals](core/tools/dotnet-nuget-locals.md)
+#### [dotnet nuget push](core/tools/dotnet-nuget-push.md)
 ### [dotnet pack](core/tools/dotnet-pack.md)
 ### [dotnet publish](core/tools/dotnet-publish.md)
 ### [dotnet restore](core/tools/dotnet-restore.md)
@@ -143,6 +149,11 @@
 ### [dotnet run](core/tools/dotnet-sln.md)
 ### [dotnet restore](core/tools/dotnet-store.md)
 ### [dotnet test](core/tools/dotnet-test.md)
+### dotnet tool
+#### [dotnet tool install](core/tools/dotnet-tool-install.md)
+#### [dotnet tool list](core/tools/dotnet-tool-list.md)
+#### [dotnet tool uninstall](core/tools/dotnet-tool-uninstall.md)
+#### [dotnet tool update](core/tools/dotnet-tool-update.md)
 ### [dotnet test](core/tools/dotnet-vstest.md)
 ### Příkazy pro modifikaci projektů
 #### Odkazy
@@ -155,6 +166,7 @@
 ### [global.json](core/tools/global-json.md)
 ## [Další nástroje rozhraní .NET Core](core/additional-tools/index.md)
 ### [WCF Web Service Reference Provider](core/additional-tools/wcf-web-service-reference-guide.md)
+### [dotnet-svcutil](core/additional-tools/dotnet-svcutil-guide.md)
 ### [XML Serializer Generator](core/additional-tools/xml-serializer-generator.md)
 ## [Přenos z rozhraní .NET Framework](core/porting/index.md)
 ### [Uspořádání projektů pro .NET Core](core/porting/project-structure.md)
@@ -215,10 +227,11 @@
 <!-- The "What's New" section is short, and one level
     deep, so leave it in the main TOC -->
 ## [Co je nového v jazyce C#](csharp/whats-new/index.md)
-### [Co je nového v jazyce C# 7.2](csharp/whats-new/csharp-7-2.md)
-### [Co je nového v jazyce C# 7.1](csharp/whats-new/csharp-7-1.md)
-### [Co je nového v jazyce C# 7.0](csharp/whats-new/csharp-7.md)
-### [Co je nového v jazyce C# 6](csharp/whats-new/csharp-6.md)
+### [C# 7.3](csharp/whats-new/csharp-7-3.md)
+### [C# 7.2](csharp/whats-new/csharp-7-2.md)
+### [C# 7.1](csharp/whats-new/csharp-7-1.md)
+### [C# 7.0](csharp/whats-new/csharp-7.md)
+### [C# 6](csharp/whats-new/csharp-6.md)
 ### [Historie verzí jazyka C#](csharp/whats-new/csharp-version-history.md)
 ### [Vztahy mezi jazykem a architekturou](csharp/whats-new/relationships-between-language-and-library.md)
 <!-- End What's New -->
@@ -549,6 +562,7 @@
 ### [Návod: Implementace dědičnosti pomocí objektů COM](visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
 
 ## [Referenční dokumentace jazyka](visual-basic/language-reference/index.md)
+### [Konfigurace verze jazyka](visual-basic/language-reference/configure-language-version.md)
 ### [Typografická pravidla a pravidla vytváření kódu](visual-basic/language-reference/typographic-and-code-conventions.md)
 ### [Členové knihovny modulu runtime jazyka Visual Basic](visual-basic/language-reference/runtime-library-members.md)
 ### [Klíčová slova](visual-basic/language-reference/keywords/index.md)
@@ -1117,11 +1131,12 @@
 <!-- ML.NET Content -->
 # [Průvodce ML.NET](machine-learning/index.md)
 ## [Kurzy](machine-learning/tutorials/index.md)
-### [Analýza mínění (klasifikace)](machine-learning/tutorials/sentiment-analysis.md)
+### [Analýza mínění (binární klasifikace)](machine-learning/tutorials/sentiment-analysis.md)
 ### [Předpověď ceny jízdy taxíkem (regrese)](machine-learning/tutorials/taxi-fare.md)
 ## [Prostředky](machine-learning/resources/index.md)
 ### [Glosář strojového učení](machine-learning/resources/glossary.md)
 ### [Základy strojového učení](machine-learning/resources/basics.md)
+### [Úkoly strojového učení](machine-learning/resources/tasks.md)
 
 <!-- End ML.NET Content -->
 
