@@ -5,12 +5,12 @@ f1_keywords:
 - nameof_CSharpKeyword
 - nameof
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: 8a850633bee26120a12f9d72e9d18b5af131d267
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2695095aa4bf2035d8766f3cbcb82f4fbb290e22
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33274432"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208347"
 ---
 # <a name="nameof-c-reference"></a>nameof (referenční dokumentace jazyka C#)
 
@@ -85,18 +85,22 @@ class C {
   
 var c = new C()  
   
-nameof(C) -> "C"  
-nameof(C.Method1) -> "Method1"   
-nameof(C.Method2) -> "Method2"  
-nameof(c.Method1) -> "Method1"   
-nameof(c.Method2) -> "Method2"  
-nameof(z) -> "z" // inside of Method2 ok, inside Method1 is a compiler error  
-nameof(Stuff) = "Stuff"  
-nameof(T) -> "T" // works inside of method but not in attributes on the method  
-nameof(f) -> "f"  
-nameof(f<T>) -> syntax error  
-nameof(f<>) -> syntax error  
-nameof(Method2()) -> error "This expression does not have a name"  
+class Test {  
+    static void Main (string[] args) {  
+        Console.WriteLine(nameof(C)); // -> "C"  
+        Console.WriteLine(nameof(C.Method1)); // -> "Method1"   
+        Console.WriteLine(nameof(C.Method2)); // -> "Method2"  
+        Console.WriteLine(nameof(c.Method1)); // -> "Method1"   
+        Console.WriteLine(nameof(c.Method2)); // -> "Method2"  
+        // Console.WriteLine(nameof(z)); -> "z" [inside of Method2 ok, inside Method1 is a compiler error]  
+        Console.WriteLine(nameof(Stuff)); // -> "Stuff"  
+        // Console.WriteLine(nameof(T)); -> "T" [works inside of method but not in attributes on the method]  
+        Console.WriteLine(nameof(f)); // -> "f"  
+        // Console.WriteLine(nameof(f<T>)); -> [syntax error]  
+        // Console.WriteLine(nameof(f<>)); -> [syntax error]  
+        // Console.WriteLine(nameof(Method2())); -> [error "This expression does not have a name"]  
+    }
+}
 ```  
   
 ## <a name="remarks"></a>Poznámky  

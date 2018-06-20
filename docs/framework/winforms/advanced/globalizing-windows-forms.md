@@ -1,6 +1,7 @@
 ---
-title: Globalizace Windows Forms
-ms.date: 03/30/2017
+title: Globalizace aplikací Windows Forms
+description: Toto téma představuje seznam témat týkajících se globalizace Windows Forms aplikací.
+ms.date: 06/08/2018
 helpviewer_keywords:
 - Windows Forms, globalization
 - localization [Windows Forms]
@@ -8,55 +9,47 @@ helpviewer_keywords:
 - world-ready applications
 - global applications [Windows Forms], creating Windows Forms
 ms.assetid: 72f6cd92-83be-45ec-aa37-9cb8e3ebc3c5
-ms.openlocfilehash: 936042d54e23a87a4901d7e5d22226d85f0e528b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 72bab76245b7b613ed97acec4cc616732c54de0f
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208455"
 ---
-# <a name="globalizing-windows-forms"></a>Globalizace Windows Forms
-*Globalizace* je proces návrhu a vývoje softwarového produktu, který funguje pro více jazykových verzí.  
-  
-## <a name="in-this-section"></a>V tomto oddílu  
- [Kódování a globalizace modelu Windows Forms](../../../../docs/framework/winforms/advanced/encoding-and-windows-forms-globalization.md)  
- Popisuje plná podpora kódování Unicode a jeho dopad.  
-  
- [Mezinárodní písma v modelu Windows Forms a ovládacích prvcích](../../../../docs/framework/winforms/advanced/international-fonts-in-windows-forms-and-controls.md)  
- Vysvětluje, kdy a jak vybrat písma pro zobrazení v rozhraní Windows Forms mezinárodní znaky.  
-  
- [Zobrazení asijských znaků s vlastností ImeMode](../../../../docs/framework/winforms/advanced/display-of-asian-characters-with-the-imemode-property.md)  
- Zavádí `ImeMode` vlastnosti, která se používá k řízení typ vstupu formuláře Windows nebo ovládací prvek přijímá.  
-  
--   [Návod: Stahování satelitních sestavení na vyžádání pomocí rozhraní API nasazení ClickOnce pomocí Návrháře](http://msdn.microsoft.com/library/ms366788\(v=vs.110\))  
-  
--   [Lokalizace aplikací ClickOnce](http://msdn.microsoft.com/library/ms404266\(v=vs.110\))  
-  
--   [Návod: Stahování satelitních sestavení na vyžádání pomocí rozhraní API nasazení ClickOnce](http://msdn.microsoft.com/library/ms404269\(v=vs.110\))  
-  
--   [Postupy: nastavení jazykové verze a jazyková verze uživatelského rozhraní pro globalizace Windows Forms](http://msdn.microsoft.com/library/b28bx3bh\(v=vs.110\))  
-  
--   [Postupy: vytvoření zrcadlené Windows Forms a ovládacích prvcích](http://msdn.microsoft.com/library/xwbz5ws0\(v=vs.110\))  
-  
--   [Postupy: lokalizace podporují ve Windows Forms pomocí AutoSize a TableLayoutPanel – ovládací prvek](http://msdn.microsoft.com/library/1zkt8b33\(v=vs.110\))  
-  
--   [Návod: Lokalizace Windows Forms](http://msdn.microsoft.com/library/y99d1cd3\(v=vs.110\))  
-  
--   [Návod: Vytvoření rozložení, který přizpůsobí poměru pro lokalizaci](http://msdn.microsoft.com/library/7k9fa71y\(v=vs.110\))  
-  
--   [Postupy: vytvoření okna zpráv pro obousměrnou Windows Forms](http://msdn.microsoft.com/library/k1689bxh\(v=vs.110\))  
-  
--   [Návod: Stahování satelitních sestavení na vyžádání pomocí rozhraní API nasazení ClickOnce pomocí Návrháře](http://msdn.microsoft.com/library/ms366788\(v=vs.120\))  
-  
--   [Lokalizace aplikací ClickOnce](http://msdn.microsoft.com/library/ms404266\(v=vs.120\))  
-  
--   [Návod: Stahování satelitních sestavení na vyžádání pomocí rozhraní API nasazení ClickOnce](http://msdn.microsoft.com/library/ms404269\(v=vs.120\))  
-  
-## <a name="related-sections"></a>Související oddíly  
-  
-1.  [Globalizace a lokalizace aplikací](http://msdn.microsoft.com/library/1021kkz0\(v=vs.110\))  
-  
-2.  [Globalizace aplikací](http://msdn.microsoft.com/library/eaa7b9c0\(v=vs.110\))  
-  
-3.  [Globalizace a lokalizace aplikací](http://msdn.microsoft.com/library/1021kkz0\(v=vs.120\))  
-  
-4.  [Globalizace aplikací](http://msdn.microsoft.com/library/eaa7b9c0\(v=vs.120\))
+# <a name="globalizing-windows-forms-applications"></a>Globalizace aplikací Windows Forms
+
+*Globalizace* je proces návrhu a vývoje softwarového produktu, který funguje pro více jazykových verzí.
+
+## <a name="in-this-section"></a>V tomto oddílu
+
+[Kódování a globalizace modelu Windows Forms](encoding-and-windows-forms-globalization.md)  
+Popisuje plná podpora kódování Unicode a jeho dopad.
+
+[Mezinárodní písma v modelu Windows Forms a ovládacích prvcích](international-fonts-in-windows-forms-and-controls.md)  
+Vysvětluje, kdy a jak vybrat písma pro zobrazení v rozhraní Windows Forms mezinárodní znaky.
+
+[Podpora obousměrného zápisu u formulářových aplikací Windows](bi-directional-support-for-windows-forms-applications.md)  
+Vysvětluje, jak vytvářet aplikace založené na Windows, které podporují obousměrné jazyky (vpravo zprava doleva).
+
+[Zobrazení asijských znaků s vlastností ImeMode](display-of-asian-characters-with-the-imemode-property.md)  
+Zavádí `ImeMode` vlastnosti, která se používá k řízení typ vstupu formuláře Windows nebo ovládací prvek přijímá.
+
+## <a name="related-sections"></a>Související oddíly
+
+- [Globalizace a lokalizace aplikací .NET](../../../standard/globalization-localization/index.md)
+
+- [Návod: Stahování satelitních sestavení na vyžádání pomocí rozhraní API nasazení ClickOnce pomocí Návrháře](/visualstudio/deployment/walkthrough-downloading-satellite-assemblies-on-demand-with-the-clickonce-deployment-api-using-the-designer)
+
+- [Lokalizace aplikací ClickOnce](/visualstudio/deployment/localizing-clickonce-applications)
+
+- [Návod: Stahování satelitních sestavení na vyžádání pomocí rozhraní API nasazení ClickOnce](/visualstudio/deployment/walkthrough-downloading-satellite-assemblies-on-demand-with-the-clickonce-deployment-api)
+
+- [Postupy: nastavení jazykové verze a jazyková verze uživatelského rozhraní pro globalizace Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/b28bx3bh(v=vs.100))
+
+- [Postupy: vytvoření zrcadlené Windows Forms a ovládacích prvcích](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/xwbz5ws0(v=vs.100))
+
+- [Postupy: lokalizace podporují ve Windows Forms pomocí AutoSize a TableLayoutPanel – ovládací prvek](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/1zkt8b33(v=vs.100))
+
+- [Návod: Lokalizace Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/y99d1cd3(v=vs.100))
+
+- [Návod: Vytvoření rozložení, který přizpůsobí poměru pro lokalizaci](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/7k9fa71y(v=vs.100))

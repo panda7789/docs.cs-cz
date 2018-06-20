@@ -3,12 +3,12 @@ title: Indexery
 description: Další informace o indexery C# a jak implementovat indexovaných vlastností, které jsou vlastnosti odkazovat pomocí jednoho nebo více argumentů.
 ms.date: 06/20/2016
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
-ms.openlocfilehash: 73f79f58cd20187a6fd0de29f53f1a31a269e0e9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 012213a4cdf8b70ec919639a082d5700228dde6b
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33218296"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207492"
 ---
 # <a name="indexers"></a>Indexery
 
@@ -176,7 +176,7 @@ Můžete postupovat podle tohoto návrhu stylu pro modelování žádné řazen�
 
 ### <a name="dictionaries"></a>slovník
 
-Další z typických možností je, když potřebujete modelu slovník nebo mapy. Tento scénář je, když typ vašeho uloží hodnoty na základě klíče, obvykle text klíče. Tento příklad vytvoří slovník, který mapuje argumenty příkazového řádku k [lamdba výrazy](delegates-overview.md) , spravovat tyto možnosti. Následující příklad ukazuje dvě třídy: `ArgsActions` třídu, která mapuje možnost příkazového řádku k `Action` delegovat a `ArgsProcessor` používající `ArgsActions` provést každý `Action` když zjistí tuto možnost.
+Další z typických možností je, když potřebujete modelu slovník nebo mapy. Tento scénář je, když typ vašeho uloží hodnoty na základě klíče, obvykle text klíče. Tento příklad vytvoří slovník, který mapuje argumenty příkazového řádku k [výrazy lambda](delegates-overview.md) , spravovat tyto možnosti. Následující příklad ukazuje dvě třídy: `ArgsActions` třídu, která mapuje možnost příkazového řádku k `Action` delegovat a `ArgsProcessor` používající `ArgsActions` provést každý `Action` když zjistí tuto možnost.
 
 ```csharp
 public class ArgsProcessor

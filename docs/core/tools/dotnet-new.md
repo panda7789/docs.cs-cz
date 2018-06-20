@@ -3,13 +3,13 @@ title: nový příkaz DotNet - .NET Core rozhraní příkazového řádku
 description: Nový příkaz dotnet vytvoří nové projekty .NET Core na základě zadané šablony.
 author: mairaw
 ms.author: mairaw
-ms.date: 05/29/2018
-ms.openlocfilehash: ae24c4145cc67ca863c07e4d22af8a1c2c2dd732
-ms.sourcegitcommit: 3540f614fc94f77ca4ab58df66db2d0f4d52dfee
+ms.date: 06/12/2018
+ms.openlocfilehash: f0ef91361dfbc2c2ba5532fbd607786289e98c69
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34570460"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208313"
 ---
 # <a name="dotnet-new"></a>nové DotNet.
 
@@ -151,8 +151,8 @@ Obsahuje seznam šablon, které obsahují zadaný název. Pokud je vyvolána pro
 
 Jazyk šablonu, kterou chcete vytvořit. Jazyk přijata, se liší podle šablony (viz výchozí hodnoty v [argumenty](#arguments) části). Pro některé šablony není platná.
 
-    > [!NOTE]
-    > Some shells interpret `#` as a special character. In those cases, you need to enclose the language parameter value, such as `dotnet new console -lang "F#"`.
+> [!NOTE]
+> Některé součásti pro interpretovat `#` za zvláštní znak. V takových případech je potřeba uzavřít hodnotu parametru jazyka, například `dotnet new console -lang "F#"`.
 
 `-n|--name <OUTPUT_NAME>`
 
@@ -202,8 +202,8 @@ Obsahuje seznam šablon, které obsahují zadaný název. Pokud je vyvolána pro
 
 Jazyk šablonu, kterou chcete vytvořit. Jazyk přijata, se liší podle šablony (viz výchozí hodnoty v [argumenty](#arguments) části). Pro některé šablony není platná.
 
-    > [!NOTE]
-    > Some shells interpret `#` as a special character. In those cases, you need to enclose the language parameter value, such as `dotnet new console -lang "F#"`.
+> [!NOTE]
+> Některé součásti pro interpretovat `#` za zvláštní znak. V takových případech je potřeba uzavřít hodnotu parametru jazyka, například `dotnet new console -lang "F#"`.
 
 `-n|--name <OUTPUT_NAME>`
 
@@ -243,8 +243,8 @@ Obsahuje seznam šablon, které obsahují zadaný název. Pokud je vyvolána pro
 
 Jazyk šablonu, kterou chcete vytvořit. Jazyk přijata, se liší podle šablony (viz výchozí hodnoty v [argumenty](#arguments) části). Pro některé šablony není platná.
 
-    > [!NOTE]
-    > Some shells interpret `#` as a special character. In those cases, you need to enclose the language parameter value, such as `dotnet new console -lang "F#"`.
+> [!NOTE]
+> Některé součásti pro interpretovat `#` za zvláštní znak. V takových případech je potřeba uzavřít hodnotu parametru jazyka, například `dotnet new console -lang "F#"`.
 
 `-n|--name <OUTPUT_NAME>`
 
@@ -502,13 +502,13 @@ Vytvořte standardní rozhraní .NET projektu knihovny tříd v zadaný adresá�
 
 `dotnet new classlib -lang VB -o MyLibrary`
 
-Vytvořte nový projekt aplikace ASP.NET Core C# MVC v aktuálním adresáři bez jakéhokoli ověřování cílení na rozhraní .NET 2.0 jádra:
+Vytvořte nový projekt aplikace ASP.NET Core C# MVC v aktuálním adresáři bez jakéhokoli ověřování:
 
-`dotnet new mvc -au None -f netcoreapp2.0`
+`dotnet new mvc -au None`
 
-Vytvoření nové aplikace xUnit cílení na rozhraní .NET 2.0 jádra:
+Vytvoření nové aplikace xUnit:
 
-`dotnet new xunit --framework netcoreapp2.0`
+`dotnet new xunit`
 
 Seznam všech šablon, které jsou k dispozici pro MVC:
 

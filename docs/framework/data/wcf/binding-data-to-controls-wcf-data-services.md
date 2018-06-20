@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - data binding, WCF Data Services
 ms.assetid: b32e1d49-c214-4cb1-867e-88fbb3d08c8d
-ms.openlocfilehash: 85a50d5425b8eec0166c839440f15e31500f3984
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a38727a638f7764c01db5da6506b705267b7bd6e
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33365563"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207479"
 ---
 # <a name="binding-data-to-controls-wcf-data-services"></a>Vazba dat s ovládacími prvky (služby WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], lze vázat ovládací prvky, jako `ComboBox` a `ListView` ovládacích prvků do instance systému <xref:System.Data.Services.Client.DataServiceCollection%601> třídy. Tuto kolekci, která dědí z <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, obsahuje data z [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu. Tato třída reprezentuje kolekci dynamická data, která poskytuje oznámení, pokud získat položky přidány nebo odebrány. Při použití instance <xref:System.Data.Services.Client.DataServiceCollection%601> pro datovou vazbu [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny zpracování těchto událostí k zajištění, že objekty sledovanými <xref:System.Data.Services.Client.DataServiceContext> zůstaly synchronizované s daty v elementu vázané uživatelského rozhraní.  
@@ -22,7 +22,7 @@ S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], lze vázat ovlád
  <xref:System.Data.Services.Client.DataServiceCollection%601> Třídy (nepřímo) implementuje <xref:System.Collections.Specialized.INotifyCollectionChanged> rozhraní pro upozornění kontextu, když jsou objekty přidat nebo odebrat z kolekce. Použít s objekty pro typ dat služby <xref:System.Data.Services.Client.DataServiceCollection%601> musí také implementovat <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní výstrahy <xref:System.Data.Services.Client.DataServiceCollection%601> při vlastnosti objektů v kolekci vazby změnily.  
   
 > [!NOTE]
->  Při použití **přidat odkaz na službu** dialogové okno nebo[DataSvcUtil.exe](../../../../docs/framework/data/wcf/wcf-data-service-client-utility-datasvcutil-exe.md) nástroj s `/dataservicecollection` možnost vygenerovat třídy klienta data service, generované datové třídy implementovat <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Další informace najdete v tématu [postupy: ruční generování dat služby třídy klienta](../../../../docs/framework/data/wcf/how-to-manually-generate-client-data-service-classes-wcf-data-services.md).  
+>  Při použití **přidat odkaz na službu** dialogové okno nebo [DataSvcUtil.exe](../../../../docs/framework/data/wcf/wcf-data-service-client-utility-datasvcutil-exe.md) nástroj s `/dataservicecollection` možnost vygenerovat třídy klienta data service, generované datové třídy implementovat <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Další informace najdete v tématu [postupy: ruční generování dat služby třídy klienta](../../../../docs/framework/data/wcf/how-to-manually-generate-client-data-service-classes-wcf-data-services.md).  
   
 ## <a name="creating-the-binding-collection"></a>Vytváření kolekce vazby  
  Vytvořit novou instanci třídy <xref:System.Data.Services.Client.DataServiceCollection%601> třída při volání jedné z metod třídy konstruktor s zadaný <xref:System.Data.Services.Client.DataServiceContext> instance a volitelně <xref:System.Data.Services.Client.DataServiceQuery%601> nebo LINQ dotazu, který vrátí po spuštění, <xref:System.Collections.Generic.IEnumerable%601> instance. To <xref:System.Collections.Generic.IEnumerable%601> poskytuje zdroj objektů pro kolekci vazby, která jsou nastala z [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Další informace najdete v tématu [Materialization objekt](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md). Ve výchozím nastavení, změny provedené v vázaný objekty a položek vložených do kolekce jsou automaticky sledovány objektem <xref:System.Data.Services.Client.DataServiceContext>. Pokud potřebujete ručně sledovat tyto změny, zavolejte jednu z metod konstruktoru, která přebírá `trackingMode` parametr a zadejte hodnotu <xref:System.Data.Services.Client.TrackingMode.None>.  

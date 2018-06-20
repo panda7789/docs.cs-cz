@@ -5,11 +5,12 @@ helpviewer_keywords:
 - Windows Forms, enhancing
 - Windows Forms, adding features
 ms.assetid: 733d1219-d6ad-4256-a55b-9eccf47f5a06
-ms.openlocfilehash: 750d94caf08776ae457dbff153afbc8ec9368f07
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8ab1a79bc3a799edc8b0472bb31983a7215f6f9e
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208454"
 ---
 # <a name="enhancing-windows-forms-applications"></a>Rozšiřování formulářových aplikací Windows
 Windows Forms obsahuje řadu funkcí, které můžete použít ke zvýšení vaší aplikace pro systém Windows k vyhoví konkrétním požadavkům uživatelů. Následující témata popisují tyto funkce a jejich použití.  
@@ -30,7 +31,7 @@ Windows Forms obsahuje řadu funkcí, které můžete použít ke zvýšení va�
  [Použití sítě ve formulářových aplikacích Windows](../../../../docs/framework/winforms/advanced/networking-in-windows-forms-applications.md)  
  Obsahuje odkazy na témata, která popisují a ukazují, jak používat sítě v systému Windows Forms.  
   
- [Globalizace modelu Windows Forms](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)  
+ [Globalizace aplikací Windows Forms](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)  
  Obsahuje odkazy na témata, která ukazují, jak globalizace Windows Forms aplikace.  
   
  [Model Windows Forms a nespravované aplikace](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  

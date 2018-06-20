@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.prod: dotnet-ml
 ms.devlang: dotnet
 manager: wpickett
-ms.openlocfilehash: 332d9e14bea165992f9f00b048286e185269ea79
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: b7690eb6931f4a491b1a03812fe3f2d8a64cfcd4
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/02/2018
-ms.locfileid: "35017272"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208312"
 ---
 # <a name="machine-learning-glossary"></a>Machine learning Glosář
 
@@ -33,7 +33,7 @@ Rozhraní API související ML.NET: <xref:Microsoft.ML.Models.BinaryClassificati
 
 ## <a name="binary-classification"></a>binární klasifikace
 
-A [klasifikace](#classification) případ where [popisek](#label) je jenom jednu z dvě třídy. Další informace najdete v tématu [binární klasifikace](https://en.wikipedia.org/wiki/Binary_classification) článku na webu Wikipedia.
+A [klasifikace](#classification) případ where [popisek](#label) je jenom jednu z dvě třídy. Další informace najdete v tématu [binární klasifikace](tasks.md#binary-classification) části [strojového učení úlohy](tasks.md) tématu.
 
 ## <a name="classification"></a>klasifikace
 
@@ -85,7 +85,7 @@ Obvyklým parametry pro funkci předpovědi. Například vah ve model lineární
 
 ## <a name="multiclass-classification"></a>více třídami klasifikace
 
-A [klasifikace](#classification) případ where [popisek](#label) je jedním z tři nebo více tříd. Další informace najdete v tématu [více třídami klasifikace](https://en.wikipedia.org/wiki/Multiclass_classification) článku na webu Wikipedia.
+A [klasifikace](#classification) případ where [popisek](#label) je jedním z tři nebo více tříd. Další informace najdete v tématu [více třídami klasifikace](tasks.md#multiclass-classification) části [strojového učení úlohy](tasks.md) tématu.
 
 ## <a name="n-gram"></a>N-gram
 
@@ -113,7 +113,7 @@ Rozhraní API související ML.NET: <xref:Microsoft.ML.Models.BinaryClassificati
 
 ## <a name="regression"></a>Regrese
 
-A [počítač učení se supervizí](#supervised-machine-learning) úloh, kde výstup je skutečné hodnoty, například, double. Mezi příklady patří predikci uložených ceny.
+A [počítač učení se supervizí](#supervised-machine-learning) úloh, kde výstup je skutečné hodnoty, například, double. Mezi příklady patří predikci uložených ceny. Další informace najdete v tématu [regrese](tasks.md#regression) části [strojového učení úlohy](tasks.md) tématu.
 
 ## <a name="relative-absolute-error"></a>Relativní absolutní chyba
 

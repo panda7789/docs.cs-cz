@@ -4,17 +4,17 @@ description: Architektury moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/08/2017
-ms.openlocfilehash: 7b4bcb1c39ddbbc104820558532b03bc9341804e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e27cdb4b785253edd27e9854d6f977e3ede02266
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592558"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208499"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Testování jádro ASP.NET MVC aplikace
 
-> _"Pokud chcete svůj produkt testování částí, s největší pravděpodobností vašim zákazníkům nebude rádi otestovat ji, buď."_
-> _ – Anonymní -
+> _"Pokud chcete svůj produkt testování částí, s největší pravděpodobností vašim zákazníkům nebude rádi otestovat ji, buď." _ 
+>  _- Anonymní -_
 
 ## <a name="summary"></a>Souhrn
 
@@ -38,7 +38,7 @@ Integrace testy bude mít často složitější nastavení a postupy rušením n
 
 Třída implementace LocalFileImageService implementuje logiku pro načítání a vrátí počet bajtů souboru bitové kopie z určité složce zadané id:
 
-```cs
+```csharp
 public class LocalFileImageService : IImageService
 {
     private readonly IHostingEnvironment _env;
@@ -53,6 +53,13 @@ public class LocalFileImageService : IImageService
             var contentRoot = _env.ContentRootPath + "//Pics";
             var path = Path.Combine(contentRoot, id + ".png");
             return File.ReadAllBytes(path);
+        }
+        catch (FileNotFoundException ex)
+        {
+            throw new CatalogImageMissingException(ex);
+        }
+    }
+}
 ```
 
 ### <a name="functional-tests"></a>Funkčních testů
@@ -101,19 +108,19 @@ Obrázek 9-3 přidat xUnit testovacího projektu v sadě Visual Studio
 
 Testy konzistentní způsobem, by měl název s názvy, které označují, jaké jsou všechny testy. Jeden z přístupů, které došlo skvělé úspěšné dokončení je název třídy testovací podle třídy a metody, kterou budou testování. Výsledkem je mnoho tříd malý test, ale umožňuje velmi vymazat, co je zodpovědná za každý test. Pomocí názvu třídy testovací nastavit tak, aby určovat třídu a metoda má být testována název metody testovací slouží k určení chování testuje. To by mělo zahrnovat očekávané chování a všechny vstupy nebo předpoklady, které by měl yield toto chování. Některé názvy testovací příklad:
 
--   CatalogControllerGetImage.CallsImageServiceWithId
+- CatalogControllerGetImage.CallsImageServiceWithId
 
--   CatalogControllerGetImage.LogsWarningGivenImageMissingException
+- CatalogControllerGetImage.LogsWarningGivenImageMissingException
 
--   CatalogControllerGetImage.ReturnsFileResultWithBytesGivenSuccess
+- CatalogControllerGetImage.ReturnsFileResultWithBytesGivenSuccess
 
--   CatalogControllerGetImage.ReturnsNotFoundResultGivenImageMissingException
+- CatalogControllerGetImage.ReturnsNotFoundResultGivenImageMissingException
 
 Varianta tohoto přístupu končí každý název třídy test s "By" a mírně změní slovesného času:
 
--   CatalogControllerGetImage**by**. **Volání**ImageServiceWithId
+- CatalogControllerGetImage**by**. **Volání**ImageServiceWithId
 
--   CatalogControllerGetImage**by**. **Protokol**WarningGivenImageMissingException
+- CatalogControllerGetImage**by**. **Protokol**WarningGivenImageMissingException
 
 Některé týmy najít druhý pojmenování přístup jasnější, ale něco víc verbose. V každém případě zkuste použít zásady vytváření názvů, který poskytuje vhled do testovací chování, takže pokud jeden nebo více testů nezdaří, je zřejmé z jejich názvy, jaké případech se nezdařilo. Nepojmenovávejte můžete testy představu o možných, jako je například ControllerTests.Test1, jak tyto nabízet žádnou hodnotu, při jejich zobrazí ve výsledcích testu.
 
@@ -131,7 +138,7 @@ V dobře navrženou aplikaci ASP.NET Core bude se zapouzdřené většina složi
 
 V některých případech budete muset refactor kódu v pořadí pro testování částí. Často to zahrnuje identifikace abstrakce a využitím vkládání závislostí pro přístup k odběru v kód, který chcete otestovat, nikoli kódování přímo na infrastrukturu. Představte si třeba tato metoda jednoduché akce pro zobrazení obrázků:
 
-```cs
+```csharp
 [HttpGet("[controller]/pic/{id}")]
 public IActionResult GetImage(int id)
 {
@@ -146,7 +153,7 @@ Tato metoda testování částí je provedené obtížné je přímé závislá 
 
 Pokud nemůžete přímo testování částí chování systému souborů, a nemůže otestovat trasy, co je došlo k testování? Po refaktoring k umožnění testování částí, je dobře, může zjistit některé testovací případy a chybějící chování, jako je například zpracování chyb. Jakým způsobem metodu? Pokud soubor nebyl nalezen. Co je dělat? V tomto příkladu metoda refactored vypadat třeba takto:
 
-```cs
+```csharp
 [HttpGet("[controller]/pic/{id}")\]
 public IActionResult GetImage(int id)
 {
@@ -168,21 +175,11 @@ public IActionResult GetImage(int id)
 
 ## <a name="integration-testing-aspnet-core-apps"></a>Integrace aplikace ASP.NET Core testování
 
-```cs
-    }
-        catch (FileNotFoundException ex)
-        {
-            throw new CatalogImageMissingException(ex);
-        }
-    }
-}
-```
-
 Tato služba používá IHostingEnvironment, stejně jako CatalogController kódu se předtím, než je teď vyčleněný do samostatné služby. Protože se jedná pouze kód v kontroleru, který používá IHostingEnvironment, že závislostí je odebraný z na CatalogController konstruktor.
 
 Pokud chcete otestovat, že tato služba funguje správně, musíte vytvořit soubor image známé test a ověřte, zda služba vrací je zadána specifický vstup. Měli postará nepoužívat mock objektů na chování, které chcete ve skutečnosti testovat (v tomto případě čtení ze systému souborů). Však mock objektů může být stále užitečná k nastavení integrace testy. V takovém případě můžete model IHostingEnvironment, tak, aby jeho ContentRootPath ukazuje na složku, kterou se chystáte použít pro vaše testovací bitovou kopii. Dokončení třídy testovací integrace pracovní je znázorněno zde:
 
-```cs
+```csharp
 public class LocalFileImageServiceGetImageBytesById
 {
     private byte[] _testBytes = new byte[] { 0x01, 0x02, 0x03 };
@@ -224,7 +221,7 @@ public class LocalFileImageServiceGetImageBytesById
 
 Pro aplikace ASP.NET Core třídě TestServer usnadňuje funkčních testů poměrně k zápisu. Nakonfigurujete TestServer, použití WebHostBuilder stejným způsobem jako za normálních okolností pro vaši aplikaci. Tato WebHostBuilder by měl být nakonfigurovaný stejně jako skutečné hostitele vaší aplikace, ale můžete upravit všechny jeho aspektů, které testování usnadnit. Ve většině případů, stejný objekt TestServer pro mnoho testovacích případů budete opakovaně, tak ho může zapouzdřit v opakovaně použitelné metodu (možná v základní třídě):
 
-```cs
+```csharp
 public abstract class BaseWebTest
 {
     protected readonly HttpClient _client;
@@ -234,14 +231,14 @@ public abstract class BaseWebTest
     {
         _client = GetClient();
     }
-    
+
     protected HttpClient GetClient()
     {
         var startupAssembly = typeof(Startup).GetTypeInfo().Assembly;
         _contentRoot = GetProjectPath("src", startupAssembly);
         var builder = new WebHostBuilder()
         .UseContentRoot(_contentRoot)
-        .UseStartup&lt;Startup&gt;();
+        .UseStartup<Startup>();
         var server = new TestServer(builder);
         var client = server.CreateClient();
         return client;
@@ -251,7 +248,7 @@ public abstract class BaseWebTest
 
 GetProjectPath – metoda jednoduše vrátí fyzickou cestu k webovému projektu (stažení ukázkové řešení). WebHostBuilder v tomto případě jednoduše Určuje, kde je kořenu obsahu pro webovou aplikaci a odkazuje na stejný třída při spuštění, které skutečné webová aplikace používá. Pro práci s TestServer, používat standardní typ System.Net.HttpClient provádět požadavky na ni. Objekt TestServer zpřístupní užitečné CreateClient metodu, která obsahuje předem nakonfigurovaná klienta, který je připraven k provedení požadavků v aplikaci objekt TestServer a systémem. Pomocí tohoto klienta (nastavit do chráněného \_člen klienta na základní test výše) při zápisu funkčních testů pro aplikace ASP.NET Core:
 
-```cs
+```csharp
 public class CatalogControllerGetImage : BaseWebTest
 {
     [Fact]

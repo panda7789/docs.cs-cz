@@ -2,12 +2,12 @@
 title: Konfigurace klienta
 ms.date: 03/30/2017
 ms.assetid: 5da5bd3b-65d9-43b7-91b9-cc9e989b1350
-ms.openlocfilehash: 0fd3d1a15164447275ef488ac91b9a8bd240032d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 26557b6cbbe33626152878eccab62de11d22660d
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33493127"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207414"
 ---
 # <a name="client-configuration"></a>Konfigurace klienta
 Konfigurace klienta Windows Communication Foundation (WCF) můžete použít k určení adresy, vazby, chování a kontrakt, vlastnosti "ABC" koncového bodu klientů, kteří klienti používat pro připojení ke koncovým bodům služby. [ \<Klienta >](../../../../docs/framework/configure-apps/file-schema/wcf/client.md) element má [ \<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element, jehož atributy se používají ke konfiguraci koncového bodu základních informací. Tyto atributy jsou popsané v části "Konfigurace koncových bodů" v tomto tématu.  
@@ -91,7 +91,7 @@ Konfigurace klienta Windows Communication Foundation (WCF) můžete použít k u
  `contract` Určuje atribut, který kontrakt koncový bod je vystavení. Tato hodnota se mapuje <xref:System.ServiceModel.ServiceContractAttribute.ConfigurationName%2A> z <xref:System.ServiceModel.ServiceContractAttribute>. Výchozí hodnota je název úplné typu třídy, která implementuje službu.  
   
 ### <a name="configuring-metadata"></a>Konfigurace metadat  
- [ \<Metadata >](../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md) element se používá k určení nastavení použitá pro zaregistrování metadata importovat rozšíření. Další informace o rozšíření systému metadat najdete v tématu[rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md).  
+ [ \<Metadata >](../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md) element se používá k určení nastavení použitá pro zaregistrování metadata importovat rozšíření. Další informace o rozšíření systému metadat najdete v tématu [rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  

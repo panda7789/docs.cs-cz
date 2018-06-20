@@ -4,12 +4,12 @@ description: Zjistit, jak používat ML.NET ve scénáři binární klasifikace 
 ms.date: 06/04/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: e6c9ae0eb91fcb570209ce25d4a18a4dcd104724
-ms.sourcegitcommit: 5b0802832fb9ad684d34e69b8644a16a5b7c4810
+ms.openlocfilehash: 85fb55582d891c67f172effa4952f15ac5604d50
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "35017279"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207661"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>Kurz: Použití ML.NET ve scénáři postojích analysis binární klasifikace
 
@@ -179,7 +179,7 @@ Inicializuje novou instanci třídy <xref:Microsoft.ML.LearningPipeline> , bude 
 
 [!code-csharp[LearningPipeline](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#5 "Create a learning pipeline")]
 
-<xref:Microsoft.ML.TextLoader%601> Objekt představuje první část kanálu a načte data souboru školení.
+<xref:Microsoft.ML.Data.TextLoader> Objekt představuje první část kanálu a načte data souboru školení.
 
 [!code-csharp[TextLoader](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#6 "Add a text loader to the pipeline")]
 
@@ -239,7 +239,7 @@ Přidejte volání do nové metody z `Main` metoda, v rámci `Train` volání me
 
 [!code-csharp[CallEvaluate](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#12 "Call the Evaluate method")]
 
-<xref:Microsoft.ML.TextLoader%601> Třída načte nová datová sada testů se stejným schématem. Použití této datové sady pro kontrolu kvality modelu můžete vyhodnotit. Přidejte následující kód, který `Evaluate` metoda:
+<xref:Microsoft.ML.Data.TextLoader> Třída načte nová datová sada testů se stejným schématem. Použití této datové sady pro kontrolu kvality modelu můžete vyhodnotit. Přidejte následující kód, který `Evaluate` metoda:
 
 [!code-csharp[LoadText](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#13 "Load the test dataset")]
 

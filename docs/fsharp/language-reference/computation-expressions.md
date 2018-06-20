@@ -2,12 +2,12 @@
 title: Výpočetní výrazy (F#)
 description: 'Naučte se vytvářet vhodné syntaxe pro psaní výpočtů v F #, která může být sekvencování a spojovat pomocí konstrukce toku řízení a vazeb.'
 ms.date: 05/16/2016
-ms.openlocfilehash: a4ddb3fde284452bc901c5270551611e43742c1f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4995efc757d99a575ee9fad3abf0465a32398c44
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33566610"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207430"
 ---
 # <a name="computation-expressions"></a>Výpočetní výrazy
 
@@ -15,6 +15,7 @@ Výpočetní výrazy v jazyce F # poskytují pohodlný syntaxi pro zápis výpo�
 
 
 ## <a name="built-in-workflows"></a>Předdefinované pracovní postupy
+
 Sekvenční výrazy jsou příkladem výpočetní výraz, jako jsou asynchronní pracovní postupy a výrazy dotazů. Další informace najdete v tématu [pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [výrazy dotazů](query-expressions.md).
 
 Některé funkce jsou společné pro sekvenční výrazy a asynchronní pracovní postupy a ilustrují, základní syntaxe pro výpočetní výraz:

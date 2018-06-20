@@ -3,12 +3,12 @@ title: Vytváření stromů výrazů
 description: Další informace o technikách pro vytváření stromů výrazů.
 ms.date: 06/20/2016
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
-ms.openlocfilehash: 52e03bd1ea2635d75da6d70af6918b33b64622b0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7751af17aafa8e2d1a14125da43352108b1c1f95
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33216311"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207186"
 ---
 # <a name="building-expression-trees"></a>Vytváření stromů výrazů
 
@@ -43,10 +43,10 @@ var addition = Expression.Add(one, two);
 Jakmile máte Přidání výrazu, můžete vytvořit výrazu lambda:
 
 ```csharp
-var lamdba = Expression.Lambda(addition);
+var lambda = Expression.Lambda(addition);
 ```
 
-Toto je velmi jednoduchý LambdaExpression, protože neobsahuje žádné argumenty.
+Toto je výrazu lambda velmi jednoduchý, protože neobsahuje žádné argumenty.
 Později v této části se zobrazí postup namapovat argumenty parametrů a složitější výrazy se vytvářejí.
 
 Pro výrazy, které jsou stejně jednoduché jako to předchozí můžou kombinovat všechna volání do jednoho příkazu:

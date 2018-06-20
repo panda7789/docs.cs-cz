@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Key attribute in XAML [XAML Services]
 - XAML [XAML Services], x:Key attribute
 ms.assetid: 1985cd45-f197-42d5-b75e-886add64b248
-ms.openlocfilehash: 511721c3ffffb3b80b339c4671ad99e16bafda93
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 53e89b664b3885bea7d2da8633505488438a1af5
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33565896"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207544"
 ---
 # <a name="xkey-directive"></a>x:Key – direktiva
 Jednoznačně identifikuje prvky, které jsou vytvořeny a odkazovat ve slovníku definované XAML. Přidání `x:Key` hodnotu do elementu objektu XAML je nejběžnější způsob, jak identifikovat prostředku v slovník prostředků, například v WPF <xref:System.Windows.ResourceDictionary>.  
@@ -73,7 +73,7 @@ Jednoznačně identifikuje prvky, které jsou vytvořeny a odkazovat ve slovník
   
  Klíče a názvy používat různé direktivy a jazykové elementy (`x:Key` versus `x:Name`) v základní definici XAML. Názvy klíčů a také používají v různých situacích definici WPF a aplikace tyto koncepty. Podrobnosti najdete v tématu [WPF XAML Namescopes](../../../docs/framework/wpf/advanced/wpf-xaml-namescopes.md).  
   
- Jak jsme uvedli dříve, můžete zadat prostřednictvím rozšíření značek hodnoty klíče a může být než hodnotu řetězce. Příklad scénáře WPF je, že hodnota `x:Key` může být[ComponentResourceKey](../../../docs/framework/wpf/advanced/componentresourcekey-markup-extension.md). Některé ovládací prvky vystavit klíč styl tohoto typu pro vlastní styl prostředek, který ovlivňuje součástí vzhled a chování tohoto ovládacího prvku bez zcela nahrazení styl. Příkladem takových klíč je <xref:System.Windows.Controls.ToolBar.ButtonStyleKey%2A>.  
+ Jak jsme uvedli dříve, můžete zadat prostřednictvím rozšíření značek hodnoty klíče a může být než hodnotu řetězce. Příklad scénáře WPF je, že hodnota `x:Key` může být [ComponentResourceKey](../../../docs/framework/wpf/advanced/componentresourcekey-markup-extension.md). Některé ovládací prvky vystavit klíč styl tohoto typu pro vlastní styl prostředek, který ovlivňuje součástí vzhled a chování tohoto ovládacího prvku bez zcela nahrazení styl. Příkladem takových klíč je <xref:System.Windows.Controls.ToolBar.ButtonStyleKey%2A>.  
   
  Funkci sloučené slovník WPF zavádí další důležité informace pro klíče jedinečnost a chování vyhledávání klíčů. Další informace najdete v tématu [sloučit slovnících prostředků](../../../docs/framework/wpf/advanced/merged-resource-dictionaries.md).  
   

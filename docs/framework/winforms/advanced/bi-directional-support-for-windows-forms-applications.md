@@ -9,11 +9,12 @@ helpviewer_keywords:
 - Windows Forms, bi-directional support
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fe1a15477e858a77ee7829f1d4a9d052457cd30f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dbe14e6c05fd6ef155b564e499157e00c5d809e5
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208445"
 ---
 # <a name="bi-directional-support-for-windows-forms-applications"></a>Obousměrná podpora pro formulářové aplikace Windows
 Visual Studio můžete použít k vytvoření aplikace pro systém Windows podporující obousměrných jazycích (vpravo zprava doleva) jako je například arabština a hebrejština. To zahrnuje standardní formulářů, dialogová okna, MDI formuláře a všechny ovládací prvky můžete pracovat v tyto formuláře – to znamená, že všechny objekty v <xref:System.Windows.Forms.Control> oboru názvů.  
@@ -116,6 +117,7 @@ Visual Studio můžete použít k vytvoření aplikace pro systém Windows podpo
   
  Některé ovládací prvky jsou zapečetěné. Proto nelze odvodit nový ovládací prvek z nich. Patří mezi ně <xref:System.Windows.Forms.ImageList> a <xref:System.Windows.Forms.ProgressBar> ovládací prvky.  
   
-## <a name="see-also"></a>Viz také  
- [Obousměrná podpora pro webových aplikací ASP.NET](http://msdn.microsoft.com/library/5576f9b1-9b86-41ef-8354-092d366bcd03)  
- [Globalizace modelu Windows Forms](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+
+[Obousměrná podpora pro webových aplikací ASP.NET](http://msdn.microsoft.com/library/5576f9b1-9b86-41ef-8354-092d366bcd03)  
+[Globalizace aplikací Windows Forms](globalizing-windows-forms.md)

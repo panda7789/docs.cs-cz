@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
-ms.openlocfilehash: 7c785814c4726dd805ad7b0dccb6a3584118cc65
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9572540f17e5628d7f71c94ee68f7cba17d64d07
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579753"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207635"
 ---
 # <a name="implementing-the-microservice-application-layer-using-the-web-api"></a>Implementace aplikační vrstvu mikroslužbu pomocí rozhraní Web API
 
@@ -667,7 +667,7 @@ public class CreateOrderCommandHandler
 
 Se kód, který příkazy koreluje s obslužné rutiny příkazů. Obslužná rutina je pouze jednoduchou třídu, ale dědí z RequestHandler&lt;T&gt;, a MediatR zajišťuje vyvolání správné datové části.
 
-## <a name="applying-cross-cutting-concerns-when-processing-commands-with-the-behaviors-in-meadiatr"></a>Při zpracování příkazů s chováním v MeadiatR použití mezi vyjímání otázky
+## <a name="applying-cross-cutting-concerns-when-processing-commands-with-the-behaviors-in-mediatr"></a>Při zpracování příkazů s chováním v MediatR použití mezi vyjímání otázky
 
 Neexistuje jeden krok: schopnost použít mezi vyjímání obavy zprostředkovatel kanálu. Taky uvidíte na konci kód Autofac registrace modulu jak registruje chování typu, konkrétně, vlastní třídu LoggingBehavior a třídu ValidatorBehavior. Ale můžete přidat další vlastní jednání příliš.
 
@@ -828,12 +828,12 @@ Podobným způsobem může implementovat jiného chování pro další aspekty n
 ##### <a name="the-mediator-pattern"></a>Zprostředkovatel vzor
 
 -   **Zprostředkovatel vzor**
-    [*https://en.wikipedia.org/wiki/Mediator\_vzor*](https://en.wikipedia.org/wiki/Mediator_pattern)
+    [*https://en.wikipedia.org/wiki/Mediator\_pattern*](https://en.wikipedia.org/wiki/Mediator_pattern)
 
 ##### <a name="the-decorator-pattern"></a>Vzor dekoratéra
 
 -   **Vzor dekoratéra**
-    [*https://en.wikipedia.org/wiki/Decorator\_vzor*](https://en.wikipedia.org/wiki/Decorator_pattern)
+    [*https://en.wikipedia.org/wiki/Decorator\_pattern*](https://en.wikipedia.org/wiki/Decorator_pattern)
 
 ##### <a name="mediatr-jimmy-bogard"></a>MediatR (Jimmy Bogard)
 

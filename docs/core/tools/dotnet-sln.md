@@ -3,13 +3,13 @@ title: příkaz SLN – DotNet - .NET Core rozhraní příkazového řádku
 description: Příkaz dotnet sln poskytuje vhodnou možnost přidávat, odstraňovat a seznam projekty v řešení souboru.
 author: mairaw
 ms.author: mairaw
-ms.date: 05/29/2018
-ms.openlocfilehash: dd77281b55b3e7fc7c293e402d11de016ef73cf8
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.date: 06/13/2018
+ms.openlocfilehash: 65ae402ef5519863886c8cf833598f5314b4bdad
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696709"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208320"
 ---
 # <a name="dotnet-sln"></a>SLN – DotNet.
 
@@ -33,6 +33,12 @@ dotnet sln [-h|--help]
 ## <a name="description"></a>Popis
 
 `dotnet sln` Příkaz nabízí pohodlný způsob, jak přidat, odebrat a seznam projekty v řešení souboru.
+
+Použít `dotnet sln` příkaz, musí již existovat soubor řešení. Pokud potřebujete vytvořit, použijte [dotnet nové](dotnet-new.md) příkazu, jako v následujícím příkladu:
+
+```
+dotnet new sln
+```
 
 ## <a name="commands"></a>Příkazy
 

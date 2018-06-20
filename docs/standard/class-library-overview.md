@@ -39,14 +39,15 @@ helpviewer_keywords:
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c6c61e4721e6daa548db2fffccc75606e98f71cc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7b6730e621a85dc8e656723647f949449241c407
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33577303"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207453"
 ---
 # <a name="net-class-library-overview"></a>Přehled knihovny tříd rozhraní .NET
+
 Implementace rozhraní .NET zahrnují třídy, rozhraní, delegáti a typy hodnot, které urychlit a optimalizovat proces vývoje a poskytují přístup k funkci systému. Usnadňuje vzájemná funkční spolupráce mezi jazyky většinu typů .NET jsou kompatibilní se specifikací CLS a dá se použít proto z žádný programovací jazyk, jehož kompilátoru vyhovuje specifikace (CLS).  
   
  Typy .NET jsou foundation, na které .NET jsou vytvořeny aplikací, komponent a ovládací prvky. Implementace rozhraní .NET zahrnout typy, které provádějí následující funkce:  
@@ -63,22 +64,24 @@ Implementace rozhraní .NET zahrnují třídy, rozhraní, delegáti a typy hodno
   
 -   Poskytnout přístup k datům, bohaté grafické uživatelské rozhraní klienta a řídí serveru, klienta grafickým uživatelským rozhraním.  
   
- Rozhraní .NET poskytuje bohatou sadu rozhraní, stejně jako abstraktní a konkrétní třídy (jinou než abstraktní). Můžete použít konkrétní třídy, jako je nebo v mnoha případech, vlastní odvozovat z nich. Pokud chcete používat funkci rozhraní, můžete vytvořit třídu, která implementuje rozhraní nebo odvození třídy z jednoho z tříd rozhraní .NET Framework, která implementuje rozhraní.  
+ Rozhraní .NET poskytuje bohatou sadu rozhraní, stejně jako abstraktní a konkrétní třídy (jinou než abstraktní). Můžete použít konkrétní třídy, jako je nebo v mnoha případech, vlastní odvozovat z nich. Pokud chcete používat funkci rozhraní, můžete vytvořit třídu, která implementuje rozhraní nebo odvození třídy z jednoho z třídy rozhraní .NET, které implementuje rozhraní.  
   
-## <a name="naming-conventions"></a>Zásady vytváření názvů  
- Typy .NET použijte tečku syntaxe schéma pojmenování connotes hierarchie. Tato technika skupin souvisejících typů do oborů názvů, aby mohl být vyhledávat a snadněji odkazovat. První část úplný název – až úplně vpravo tečky – je název oboru názvů. Poslední část názvu je název typu. Například **System.Collections.ArrayList** představuje **ArrayList** typ, který patří do **System.Collections** oboru názvů. Typy v **System.Collections** lze použít k manipulaci s kolekce objektů.  
+## <a name="naming-conventions"></a>Zásady vytváření názvů
+
+ Typy .NET použijte tečku syntaxe schéma pojmenování connotes hierarchie. Tato technika skupin souvisejících typů do oborů názvů, aby mohl být vyhledávat a snadněji odkazovat. První část úplný název – až úplně vpravo tečky – je název oboru názvů. Poslední část názvu je název typu. Například `System.Collections.Generic.List<T>` představuje `List<T>` typ, který patří do `System.Collections.Generic` oboru názvů. Typy v <xref:System.Collections.Generic> lze použít pro práci s obecné kolekce.  
   
  Toto schéma pojmenování usnadňuje vývojářům knihovny rozšíření [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] vytvářet hierarchické skupiny typů a název je konzistentní, informativní způsobem. Umožňuje také typy musí jednoznačně identifikovat podle názvu jejich úplná (to znamená, podle názvu jejich obor názvů a typ), která brání kolize názvů typu. Knihovna vývojáři očekává se, že při vytváření názvů pro jejich obory názvů použít následující konvence:  
   
  *NázevSpolečnosti*. *TechnologyName*  
   
- Například obor názvů Microsoft.Word odpovídá tomuto.  
+ Například obor názvů `Microsoft.Word` odpovídá tomuto.  
   
  Použití vzory pojmenování do skupiny související typy do oborů názvů je velmi užitečný způsob vytváření a dokumentování knihovny tříd. Toto schéma pojmenování však nemá žádný vliv na viditelnost, přístup ke členu, dědičnosti, zabezpečení nebo vazby. Obor názvů, může být rozdělený napříč více sestavení a jednoho sestavení může obsahovat typy z více obory názvů. Sestavení poskytuje formální struktura pro správu verzí, nasazení, zabezpečení, načítání a viditelnost v modulu CLR.  
   
  Další informace o názvech obory názvů a typ najdete v tématu [obecný systém typů](../../docs/standard/base-types/common-type-system.md).  
   
-## <a name="system-namespace"></a>Namespace systému  
+## <a name="system-namespace"></a>System – obor názvů
+
  <xref:System> Obor názvů je kořenový obor názvů pro základní typy v rozhraní .NET. Tento obor názvů obsahuje třídy, které představují základní datové typy používané všemi aplikacemi: <xref:System.Object> (kořen hierarchie dědičnosti), <xref:System.Byte>, <xref:System.Char>, <xref:System.Array>, <xref:System.Int32>, <xref:System.String>a tak dále. Mnoho z těchto typů odpovídají primitivní datové typy, které používá programovací jazyk. Při psaní kódu pomocí typy rozhraní .NET Framework, můžete použít svůj jazyk odpovídající – klíčové slovo při je očekávána základní datový typ rozhraní .NET Framework.  
   
  Následující tabulka uvádí základní typy, .NET poskytuje, stručně popisuje každý typ a označuje odpovídající typ v jazyce Visual Basic, C#, C++ a F #.  

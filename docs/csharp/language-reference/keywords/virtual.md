@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - virtual keyword [C#]
 ms.assetid: 5da9abae-bc1e-434f-8bea-3601b8dcb3b2
-ms.openlocfilehash: 5a188e9a7cbb7a1c497d577039c2b2578eaa7526
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.openlocfilehash: af5b7e3efdc98910ebbe7e061eba250cbe2d0c50
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
-ms.locfileid: "34172643"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207346"
 ---
 # <a name="virtual-c-reference"></a>virtual (Referenční dokumentace jazyka C#)
 `virtual` – Klíčové slovo slouží k úpravě deklaraci metoda, vlastnost, indexer nebo událostí a povolit pro ni k přepsání v odvozené třídě. Například tuto metodu je možné přepsat všechny třídy, která dědí ho:  
@@ -42,7 +42,7 @@ public virtual double Area()
 -   Virtuální zděděnou vlastnost je možné přepsat v odvozené třídě včetně deklarace vlastnosti, která používá `override` modifikátor.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `Shape` třída obsahuje dvě souřadnice `x`, `y`a `Area()` virtuální metoda. Různé tvar třídy, jako `Circle`, `Cylinder`, a `Sphere` dědění `Shape` třídy a možnosti útoku se počítá pro každý obrázek. Každý odvozené třídy je vlastní implementaci přepsání `Area()`.  
+ V tomto příkladu `Shape` třída obsahuje dvě souřadnice `x`, `y`a `Area()` virtuální metoda. Různé tvar třídy, jako `Circle`, `Cylinder`, a `Sphere` dědění `Shape` třídy a možnosti útoku se počítá pro každý obrázek. Každá odvozená třída má vlastní implementaci přepsání `Area()`.  
   
  Všimněte si, že zděděné třídy `Circle`, `Sphere`, a `Cylinder` všichni používají konstruktory, které inicializaci základní třídy, jak je znázorněno v následující prohlášení.  
   

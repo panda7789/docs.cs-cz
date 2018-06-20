@@ -4,12 +4,12 @@ description: Prozkoumejte různé strojového učení úlohy v ML.NET podporová
 ms.date: 06/04/2018
 author: aditidugar
 ms.author: johalex
-ms.openlocfilehash: 22249ac2d275a4168dbd8b03b90d9698fe90f2d1
-ms.sourcegitcommit: d8bf4976eafe3289275be3811e7cb721bfff7e1e
+ms.openlocfilehash: 875006a9cddb87b5f9436b78773420858fd842dd
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "35017274"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208311"
 ---
 # <a name="machine-learning-tasks"></a>Úkoly strojového učení
 
@@ -29,13 +29,17 @@ A [počítač učení se supervizí](glossary.md#supervised-machine-learning) ú
 * Diagnostikování zda pacienta má určitá nákazy, nebo ne.
 * Rozhodování označit e-mailu jako "spamu", nebo ne.
 
-## <a name="multi-class-classification"></a>Klasifikace více – třída
+Další informace najdete v tématu [binární klasifikace](https://en.wikipedia.org/wiki/Binary_classification) článku na webu Wikipedia.
+
+## <a name="multiclass-classification"></a>více třídami klasifikace
 
 A [počítač učení se supervizí](glossary.md#supervised-machine-learning) úlohu, která se používá k předvídání – třída (kategorie) instance data. Vstup klasifikační algoritmus je sada s popiskem příklady. Každý popisek je celé číslo mezi 0 a k-1, kde k je počet tříd. Výstup klasifikační algoritmus je třídění, který můžete použít k předpovědi třídu nové instance služby bez popisku. Příklady scénářů více třída klasifikace:
 
 * Zjišťuje se druh PSA jako "Siberian Husky", "Zlatá načítací modul pro", "Co", atd.
 * Principy film zkontroluje jako "pozitivní", "neutrální" nebo "negativní".
 * Kategorizaci hotelů zkontroluje jako "místo", "cena", "čistoty", atd.
+
+Další informace najdete v tématu [více třídami klasifikace](https://en.wikipedia.org/wiki/Multiclass_classification) článku na webu Wikipedia.
 
 ## <a name="regression"></a>Regrese
 

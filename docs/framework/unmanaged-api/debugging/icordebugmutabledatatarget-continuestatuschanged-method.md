@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 5a66d3f4-dd16-4d62-9dcc-0eab7041d894
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cb07c519743c41a7a31994e42d2fdc5220e5e2ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3d2560aa484c6965047b2fdaf2c539b8ab675bc8
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418207"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207700"
 ---
 # <a name="icordebugmutabledatatargetcontinuestatuschanged-method"></a>ICorDebugMutableDataTarget::ContinueStatusChanged – metoda
 Změní stav pokračování události nezpracovaných ladění na zadané vlákno.  
@@ -27,7 +27,7 @@ HRESULT ContinueStatusChanged(
  Identifikátor vlákno definované operačního systému.  
   
  `continueStatus`  
- A[COREDB_CONTINUE_STATUS](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md)hodnotu, která představuje nový požadovaný stav pokračování.  
+ A [COREDB_CONTINUE_STATUS](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md) hodnotu, která představuje nový požadovaný stav pokračování.  
   
 ## <a name="remarks"></a>Poznámky  
  Ladicí program volání `ContinueStatusChanged` metoda při volání metody ICorDebug, vyžaduje aktuální událost ladění zpracovávat způsobem, který je potenciálně liší od způsobu, ve kterém se za normálních okolností by ošetřit. Například, pokud dojde k výjimce nezpracovaných a ladicí program požadavky operace, která by zrušit výjimku (například [icordebugilframe::setip –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md) nebo `FuncEval`), toto rozhraní API slouží k vyžádání, že se výjimka zrušena.  

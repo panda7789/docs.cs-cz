@@ -5,12 +5,12 @@ helpviewer_keywords:
 - indexers [C#], in interfaces
 - accessors [C#], indexers
 ms.assetid: e16b54bd-4a83-4f52-bd75-65819fca79e8
-ms.openlocfilehash: cb039755b7440cbfd1f782cc118d11a03b47da04
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 120b6e72a6ab906437c593d6eb33024d1df8f52b
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33331120"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208349"
 ---
 # <a name="indexers-in-interfaces-c-programming-guide"></a>Indexery v rozhraní (Průvodce programováním v C#)
 Indexery lze deklarovat na [rozhraní](../../../csharp/language-reference/keywords/interface.md). Přístupové objekty z rozhraní indexery se liší od přístupových objektů [třída](../../../csharp/language-reference/keywords/class.md) indexery následujícími způsoby:  
@@ -35,7 +35,7 @@ Indexery lze deklarovat na [rozhraní](../../../csharp/language-reference/keywor
  V předchozím příkladu můžete použít člen implementace explicitního rozhraní pomocí plně kvalifikovaný název člena rozhraní. Příklad:  
   
 ```  
-public string ISomeInterface.this[int index]   
+string ISomeInterface.this[int index]   
 {   
 }   
 ```  
@@ -43,7 +43,7 @@ public string ISomeInterface.this[int index]
  Plně kvalifikovaný název je však potřeba jenom aby se zabránilo nejednoznačnosti, když třída je implementace více než jedno rozhraní se stejným podpisem indexer. Například pokud `Employee` třída je implementace dvě rozhraní, `ICitizen` a `IEmployee`, a obě rozhraní mají stejným podpisem indexer člen implementace explicitního rozhraní je nutné. To znamená, následující prohlášení indexer:  
   
 ```  
-public string IEmployee.this[int index]   
+string IEmployee.this[int index]   
 {   
 }   
 ```  
@@ -51,7 +51,7 @@ public string IEmployee.this[int index]
  implementuje indexeru na `IEmployee` rozhraní při následující prohlášení:  
   
 ```  
-public string ICitizen.this[int index]
+string ICitizen.this[int index]
 {   
 }   
 ```  

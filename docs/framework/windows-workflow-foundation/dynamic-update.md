@@ -2,12 +2,12 @@
 title: Dynamická aktualizace
 ms.date: 03/30/2017
 ms.assetid: 8b6ef19b-9691-4b4b-824c-3c651a9db96e
-ms.openlocfilehash: cfd10e4b93351c607ef270487a12bec19ded4ca8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f50c8e8ed7ebaab71421ff1615051d9b828d9e4b
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33520354"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207518"
 ---
 # <a name="dynamic-update"></a>Dynamická aktualizace
 Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři aplikace k aktualizaci definice pracovního postupu instance trvalou pracovního postupu. To může být implementace oprava chyb, nové požadavky, nebo aby bylo možné ošetřit neočekávané změny. Toto téma obsahuje přehled funkcí Dynamická aktualizace byla zavedená v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].  
@@ -164,7 +164,7 @@ foreach (Guid id in ids)
  Po dynamické aktualizace, může být obnoven k instanci pracovního postupu. Všimněte si, že nové aktualizované definice a <xref:System.Activities.WorkflowIdentity> se musí použít.  
   
 > [!NOTE]
->  Další informace o práci s <xref:System.Activities.WorkflowApplication> a <xref:System.Activities.WorkflowIdentity>, najdete v části[pomocí WorkflowIdentity a správa verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md).  
+>  Další informace o práci s <xref:System.Activities.WorkflowApplication> a <xref:System.Activities.WorkflowIdentity>, najdete v části [pomocí WorkflowIdentity a správa verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md).  
   
  V následujícím příkladu `MortgageWorkflow_v1.1.xaml` pracovní postup z předchozího příkladu je kompilovaná a je načtena a obnovit pomocí definice aktualizované pracovního postupu.  
   

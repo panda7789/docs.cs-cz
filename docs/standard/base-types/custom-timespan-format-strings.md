@@ -15,11 +15,12 @@ helpviewer_keywords:
 ms.assetid: a63ebf55-7269-416b-b4f5-286f6c03bf0e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 354b9fe1171e8e41702db001ab3c0e5daa65431e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8f65e8bb1a61bad458cb33a3bf9d2553479c750e
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208502"
 ---
 # <a name="custom-timespan-format-strings"></a>Vlastní řetězce formátu TimeSpan
 A <xref:System.TimeSpan> řetězec formátu definuje řetězcovou reprezentaci <xref:System.TimeSpan> hodnotu, která je výsledkem operace formátování. Vlastní řetězec formátu se skládá z jednoho nebo více vlastních <xref:System.TimeSpan> specifikátory společně s libovolný počet literály formátu. Libovolný řetězec, který není [standardní řetězce formátu TimeSpan](../../../docs/standard/base-types/standard-timespan-format-strings.md) interpretována jako vlastní <xref:System.TimeSpan> řetězec formátu.  
@@ -66,7 +67,7 @@ A <xref:System.TimeSpan> řetězec formátu definuje řetězcovou reprezentaci <
 |"FFFFFF"|Miliontin sekundy v určitém časovém intervalu. Jakékoli zlomkové koncové nuly nejsou zobrazeny.<br /><br /> Další informace: [vlastní specifikátor formátu "FFFFFF"](#F6_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 329179<br /><br /> `TimeSpan.Parse("0:0:3.1000009")`:<br /><br /> `ss\.FFFFFF`: 03.1|  
 |"FFFFFFF"|Do 10 milionů sekundy v určitém časovém intervalu. Jakékoli zlomkové koncové nuly nebo sedm nul se nezobrazí.<br /><br /> Další informace: [vlastní specifikátor formátu "FFFFFFF"](#F7_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 3291791<br /><br /> `TimeSpan.Parse("0:0:3.1900000")`:<br /><br /> `ss\.FFFFFF`: 03.19|  
 |*' řetězec*.|Oddělovač řetězcového literálu.<br /><br /> Další informace: [ostatní znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh':'mm':'ss` --> "14:32:17"|  
-|\|Řídicí znak.<br /><br /> Další informace:[ostatní znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|  
+|\\| Řídicí znak.<br /><br /> Další informace:[ostatní znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|  
 |Jakýkoli jiný znak|Libovolný znak neuvozené interpretována jako vlastní specifikátor formátu.<br /><br /> Další informace: [dalšími znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|  
   
 <a name="dSpecifier"></a>   

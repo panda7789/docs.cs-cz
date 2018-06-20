@@ -4,18 +4,18 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - using statement [C#]
 ms.assetid: afc355e6-f0b9-4240-94dd-0d93f17d9fc3
-ms.openlocfilehash: fa27039e8444090c8a516b92ba5ab62c7f93c51a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7bf9138721ecee63c65c2e39922aee96b1dfaa41
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33285740"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208348"
 ---
 # <a name="using-statement-c-reference"></a>using – příkaz (Referenční dokumentace jazyka C#)
 Poskytuje pohodlné syntaxe, které zajišťuje správné použití <xref:System.IDisposable> objekty.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití pomocí příkazu.  
+ Následující příklad ukazuje způsob použití `using` příkaz.  
   
  [!code-csharp[csrefKeywordsNamespace#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_1.cs)]  
   
@@ -24,15 +24,17 @@ Poskytuje pohodlné syntaxe, které zajišťuje správné použití <xref:System
   
 Po dobu životnosti `IDisposable` objektu je omezený na jednu metodu, musí deklarovat a vytvoří instanci v `using` příkaz. `using` Příkaz volání <xref:System.IDisposable.Dispose%2A> metoda v objektu správným způsobem a (pokud ji používáte jako je uvedené výše) také způsobuje, že samotného se dostala mimo rozsah objektu co nejrychleji <xref:System.IDisposable.Dispose%2A> je volána. V rámci `using` blok, objekt je jen pro čtení a nelze změnit ani znovu přiřazen.  
   
- `using` Příkaz zajistí, že <xref:System.IDisposable.Dispose%2A> je volána, i když dojde k výjimce při volání metody pro objekt. Můžete dosáhnout stejný výsledek vložení objektu do bloku try a pak voláním <xref:System.IDisposable.Dispose%2A> v a nakonec blokovat; ve skutečnosti, jedná se jak `using` příkaz je přeložen kompilátoru. Příklad kódu se dříve zasahuje do následující kód v době kompilace (Všimněte si velmi složené závorky k vytvoření omezeným oborem pro objekt):  
+ `using` Příkaz zajistí, že <xref:System.IDisposable.Dispose%2A> je volána, i když dojde k výjimce v rámci `using` bloku. Stejného výsledku můžete dosáhnout vložením objektu uvnitř `try` blok a pak volání <xref:System.IDisposable.Dispose%2A> v `finally` blokovat; ve skutečnosti, jedná se jak `using` příkaz je přeložen kompilátoru. Příklad kódu se dříve zasahuje do následující kód v době kompilace (Všimněte si velmi složené závorky k vytvoření omezeným oborem pro objekt):  
   
  [!code-csharp[csrefKeywordsNamespace#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_2.cs)]  
+ 
+ Další informace o `try` - `finally` prohlášení, najdete v článku [try-finally –](try-finally.md) tématu.
   
- V může být deklarován více instancí typu `using` příkaz, jak je znázorněno v následujícím příkladu.  
+ V může být deklarován více instancí typu `using` příkaz, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csrefKeywordsNamespace#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_3.cs)]  
   
- Můžete vytvořit instanci objektu prostředků a pak předejte proměnnou `using` prohlášení, ale to není osvědčený postup. V takovém případě zůstane objekt v oboru řízení odešel `using` blokovat, i když je pravděpodobně nebude mít přístup k jeho nespravovaných prostředků. Jinými slovy ji budou už inicializována plně. Pokud se pokusíte použít objekt mimo `using` blok riziko způsobuje vyvolání výjimky. Z tohoto důvodu je obecně lepší vytvořit instanci objektu v `using` příkaz a omezit její obor `using` bloku.  
+ Můžete vytvořit instanci objektu prostředků a pak předejte proměnnou `using` prohlášení, ale to není osvědčený postup. V takovém případě po nechá ovládacího prvku `using` blokovat, zůstane objekt v oboru, ale pravděpodobně nemá přístup k jeho nespravovaných prostředků. Jinými slovy je inicializováno není plně už. Pokud se pokusíte použít objekt mimo `using` blok riziko způsobuje vyvolání výjimky. Z tohoto důvodu je obecně lepší vytvořit instanci objektu v `using` příkaz a omezit její obor `using` bloku.  
   
  [!code-csharp[csrefKeywordsNamespace#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-statement_4.cs)]  
   

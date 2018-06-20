@@ -3,25 +3,28 @@ title: Provádění stromů výrazů
 description: Informace o provádění stromů výrazů jejich převedením na spustitelný soubor pokyny Intermediate Language (IL).
 ms.date: 06/20/2016
 ms.assetid: 109e0ac5-2a9c-48b4-ac68-9b6219cdbccf
-ms.openlocfilehash: 54706cd5d8ebe60bb893bc82f05aecddae370602
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fb9ec5f023587b4e5c74ab71acbd6a886e085e4a
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207388"
 ---
 # <a name="executing-expression-trees"></a>Provádění stromů výrazů
 
 [Předchozí – Typy Framework podpůrné stromů výrazů](expression-classes.md)
 
 *Strom výrazu* je datová struktura, která představuje nějaký kód.
-Není kompilované a spustitelného kódu. Pokud chcete provést kód .NET, která je reprezentována strom výrazu, je nutné je převést na spustitelný soubor IL pokyny. 
+Není kompilované a spustitelného kódu. Pokud chcete provést kód .NET, která je reprezentována strom výrazu, je nutné je převést na spustitelný soubor IL pokyny.
+
 ## <a name="lambda-expressions-to-functions"></a>Lambda – výrazy to – funkce
-Můžete převést všechny LambdaExpression nebo kterýkoli typ odvozený od LambdaExpression do spustitelného souboru IL. Ostatní typy výrazů nelze převést přímo do kódu. Toto omezení se v praxi malý vliv. Lambda – výrazy jsou pouze typy výrazů, které byste chtěli spusťte tak, že převádění do převodního jazyka spustitelný soubor (IL). (Vezměte v úvahu, o co znamená přímo provést `ConstantExpression`. By to znamená nic užitečného?) Všechny strom výrazu, který je `LamdbaExpression`, nebo z odvozený typ. `LambdaExpression` lze převést na IL.
+
+Můžete převést všechny LambdaExpression nebo kterýkoli typ odvozený od LambdaExpression do spustitelného souboru IL. Ostatní typy výrazů nelze převést přímo do kódu. Toto omezení se v praxi malý vliv. Lambda – výrazy jsou pouze typy výrazů, které byste chtěli spusťte tak, že převádění do převodního jazyka spustitelný soubor (IL). (Vezměte v úvahu, o co znamená přímo provést `ConstantExpression`. By to znamená nic užitečného?) Všechny strom výrazu, který je `LambdaExpression`, nebo z odvozený typ. `LambdaExpression` lze převést na IL.
 Typ výrazu `Expression<TDelegate>` se pouze konkrétní příklad v rozhraní .NET Core libraries. Slouží k reprezentaci výraz, který se mapuje na jakýkoli typ delegáta. Protože tento typ se mapuje na typ delegáta, rozhraní .NET můžete zkontrolujte výraz a generovat IL pro příslušné delegáta, který odpovídá podpis výrazu lambda. 
 
-Ve většině případů tím se vytvoří jednoduchý mapování mezi výrazu a jeho odpovídající delegáta. Například strom výrazu, která je reprezentována `Expression<Func<int>>` bude převedena na delegáta typu `Func<int>`. Výraz lambda veškeré návratový typ a seznam argumentů existuje typ delegáta, který je typ cíle pro spustitelný kód reprezentována této lamdba výrazem.
+Ve většině případů tím se vytvoří jednoduchý mapování mezi výrazu a jeho odpovídající delegáta. Například strom výrazu, která je reprezentována `Expression<Func<int>>` bude převedena na delegáta typu `Func<int>`. Výraz lambda veškeré návratový typ a seznam argumentů existuje typ delegáta, který je cílový typ pro spustitelný kód reprezentována tohoto výrazu lambda.
 
-`LamdbaExpression` Typ obsahuje `Compile` a `CompileToMethod` členy, které byste použili převést strom výrazu spustitelného kódu. `Compile` Metoda vytvoří delegáta. `CompileToMethod` Metoda aktualizace `MethodBuilder` objekt s IL představující kompilované výstup strom výrazu. Všimněte si, že `CompileToMethod` dostupný jen na úplné desktopového rozhraní, nikoli na rozhraní .NET Core.
+`LambdaExpression` Typ obsahuje `Compile` a `CompileToMethod` členy, které byste použili převést strom výrazu spustitelného kódu. `Compile` Metoda vytvoří delegáta. `CompileToMethod` Metoda aktualizace `MethodBuilder` objekt s IL představující kompilované výstup strom výrazu. Všimněte si, že `CompileToMethod` je k dispozici v rámci celé ploše, není v .NET Core.
 
 Volitelně můžete zadat taky `DebugInfoGenerator` , se zobrazí symbol ladicí informace pro objekt generovaného delegáta. To umožňuje převést strom výrazu do objektu delegáta a mít úplné ladicí informace o generovaného delegáta.
 
@@ -34,11 +37,11 @@ var answer = func(); // Invoke Delegate
 Console.WriteLine(answer);
 ```
 
-Všimněte si, že typ delegáta je založen na typ výrazu. Pokud chcete použít objekt delegáta způsobem silného typu, je nutné znát návratový typ a seznam argumentů. `LambdaExpression.Compile()` Metoda vrátí `Delegate` typu. Budete muset převést na typ správné delegáta, který má mít žádné nástroje kompilaci zkontrolujte seznam argumentů návratový typ.
+Všimněte si, že typ delegáta je založen na typ výrazu. Pokud chcete použít objekt delegáta způsobem silného typu, je nutné znát návratový typ a seznam argumentů. `LambdaExpression.Compile()` Metoda vrátí `Delegate` typu. Budete mít přetypovat na typ správné delegáta mít žádné nástroje kompilaci zkontrolujte seznam argumentů nebo návratový typ.
 
 ## <a name="execution-and-lifetimes"></a>Spuštění a životnosti
 
-Spouštění kódu vyvoláním delegát vytvoří, když jste volali metodu `LamdbaExpression.Compile()`. Můžete to vidět výše kde `add.Compile()` vrátí delegáta. Vyvolání delegáta, voláním `func()` spustí kód.
+Spouštění kódu vyvoláním delegát vytvoří, když jste volali metodu `LambdaExpression.Compile()`. Můžete to vidět výše kde `add.Compile()` vrátí delegáta. Vyvolání delegáta, voláním `func()` spustí kód.
 
 Tento delegát představuje kód na strom výrazu. Můžete zachovat popisovač přidělíte a později ji použít. Nemusíte kompilovat pokaždé, když chcete spustit kód, který představuje strom výrazu. (Nezapomeňte, že jsou neměnné stromů výrazů a později kompilování stejném stromu pro výraz vytvoří delegáta, který provádí stejný kód.)
 

@@ -16,11 +16,12 @@ helpviewer_keywords:
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 665c90ca9950424be21539a83992e1c36dc51ba7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5dbdb4aa70fcd14a914e1cb1b608260f1e51c1d0
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208503"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Vlastní řetězce formátu data a času
 Řetězec formátu data a času definuje textovou reprezentaci hodnoty <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnotu, která je výsledkem operace formátování. Může také definovat reprezentaci hodnoty data a času nezbytnou v rámci operace analýzy a úspěšně tak řetězec převést na datum a čas. Řetězec vlastního formátu se skládá z jednoho nebo více vlastních specifikátorů formátu data a času. Libovolný řetězec, který není [řetězec formátu standardní hodnoty data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md) interpretována jako vlastní data a času řetězec formátu.  
@@ -90,7 +91,7 @@ ms.lasthandoff: 05/04/2018
 |"/"|Oddělovač data.<br /><br /> Další informace: [vlastní formát specifikátor "/"](#dateSeparator).|2009-06-15T13:45:30 -> / (en US)<br /><br /> 2009-06-15T13:45:30 -> - (ar-DZ)<br /><br /> 2009-06-15T13:45:30 -> . (tr-TR)|  
 |"*řetězec*"<br /><br /> '*řetězec*.|Oddělovač řetězcového literálu.<br /><br /> Další informace: [znak literály](#Literals).|2009-06-15T13:45:30 ("směrování žádostí na aplikace:" h:m t) -> směrování žádostí na aplikace: 1:45 P<br /><br /> 2009-06-15T13:45:30 (' směrování žádostí na aplikace:' h:m t) -> směrování žádostí na aplikace: 1:45 P|  
 |%|Definuje následující znak jako specifikátor vlastního formátu.<br /><br /> Další informace:[pomocí jednoho specifikátory formátu vlastní](#UsingSingleSpecifiers).|2009-06-15T13:45:30 (%h) -> 1|  
-|\|Řídicí znak.<br /><br /> Další informace: [znak literály](#Literals) a [pomocí řídicí znak](#escape).|2009-06-15T13:45:30 (h \h) -> 1 hod|  
+|\\| Řídicí znak.<br /><br /> Další informace: [znak literály](#Literals) a [pomocí řídicí znak](#escape).|2009-06-15T13:45:30 (h \h) -> 1 hod|  
 |Jakýkoli jiný znak|Znak je zkopírován do výsledného řetězce beze změny.<br /><br /> Další informace: [znak literály](#Literals).|2009-06-15T01:45:30 (hh: mm t směrování žádostí na aplikace) -> směrování žádostí na aplikace dop.|  
   
  Následující oddíly poskytují další informace o jednotlivých specifikátorech vlastního formátu data a času. Pokud není uvedeno jinak, každý specifikátor vytváří identické řetězcové vyjádření bez ohledu na to, zda je použit s <xref:System.DateTime> hodnotu nebo <xref:System.DateTimeOffset> hodnotu.  

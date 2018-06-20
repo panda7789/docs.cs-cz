@@ -3,12 +3,12 @@ title: Historie jazyka C# – průvodce v C#
 description: Co vzhledu jazyk líbí v nejstarších verzích, a jak vyvinul od?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: e659f2438e9785a02f7016e49b78015ad46b9133
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: 3e3bf98d1435b237b2941758b8ed245baa970237
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696972"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207531"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C# #
 
@@ -16,11 +16,24 @@ Co vzhledu jazyk v jeho nejdřívější ztělesněních vytvořit? A jak vyvinu
 
 ## <a name="c-version-10"></a>C# verze 1.0
 
-Přejděte zpět a podívejte se, C# verze 1.0 hledá mnoho jako Java. Jako [součástí jeho stanovené cíle pro ECMA](http://feeldotneteasy.blogspot.com/2011/01/c-design-goals.html), se žádá o jako "objektově orientované jazyk jednoduchý, moderní, obecné účely."  V době vyhledávání jako Java, čeho se dosáhne těmito časná cíli.
+Přejděte zpět a podívejte se, C# verze 1.0 hledá mnoho jako Java. Jako [součástí jeho stanovené cíle pro ECMA](http://feeldotneteasy.blogspot.com/2011/01/c-design-goals.html), se žádá o jako "jednoduché, moderní, pro obecné účely objektově orientované jazyk."  V době vyhledávání jako Java, čeho se dosáhne těmito časná cíli.
 
-Ale když se podíváte zpět na C# 1.0 nyní, budete by sami trochu dizzy. Neobsahovala možnosti integrované asynchronní a některé funkce slick kolem obecné typy, které jsme provést pro udělena. Jako matter z skutečnosti neobsahovala obecné úplně.  A [LINQ](../linq/index.md)? Není k dispozici dosud. Které by byly třeba některé letech.
+Ale když se podíváte zpět na C# 1.0 nyní, budete by sami trochu dizzy. Neobsahovala možnosti integrované asynchronní a některé funkce slick kolem obecné typy, které můžete provést pro uděleno. Jako matter z skutečnosti neobsahovala obecné úplně.  A [LINQ](../linq/index.md)? Není k dispozici dosud. Tyto doplňky by trvat některé letech.
 
 C# verze 1.0 hledá odřapíkovaného funkcí ve srovnání s dnes. By najít sami zápis některé podrobné kódu. Ale ještě, budete muset spustit někde. C# verze 1.0 byl přijatelná alternativa k Java na platformě Windows.
+
+Hlavní funkce jazyka C# 1.0 patřila tato:
+
+- [Třídy](../programming-guide/classes-and-structs/classes.md)
+- [Struktury](../programming-guide/classes-and-structs/structs.md)
+- [Rozhraní](../programming-guide/interfaces/index.md)
+- [Události](../events-overview.md)
+- [Vlastnosti](../properties.md)
+- [Delegáti](../delegates-overview.md)
+- [Výrazy](../programming-guide/statements-expressions-operators/expressions.md)
+- [Příkazy](../programming-guide/statements-expressions-operators/statements.md)
+- [Atributy](../programming-guide/concepts/attributes/index.md)
+- Literály
 
 ## <a name="c-version-20"></a>C# verze 2.0
 
@@ -33,11 +46,18 @@ Nyní věcí spustit získat zajímavé. Podívejme se na některé hlavní funk
 - [Iterátory](../programming-guide/concepts/iterators.md)
 - [Kovariance a kontravariance](../programming-guide/concepts/covariance-contravariance/index.md)
 
-Při C# může spustili jako poměrně obecné jazyk Object-Oriented (ú), verze 2.0 c změnit, rychle. Jakmile měly jejich nohou nich, se po některé závažné vývojáře problémové body. A jejich došlo po jejich velký způsobem.
+Další funkce jazyka C# 2.0 možnosti přidané do stávajících funkcí:
 
-Obecné typy máte typy a metody, které může fungovat na libovolný typ a zároveň zachovat bezpečnost typů. Ano, například s <xref:System.Collections.Generic.List%601> umožňuje mít `List<string>` nebo `List<int>` a provádět typ bezpečné operace na tyto řetězce nebo celá čísla, zatímco iterace je. Toto je lepší, než vytváření `ListInt` dědice nebo přetypování z `Object` pro všechny operace.
+- Metoda getter/setter samostatné usnadnění
+- Metoda skupiny převody (delegáti)
+- Statické třídy
+- Odvození delegáta
 
-C# iterátory verze 2.0 uvést do režimu. Stručně uvést, to umožňuje iteraci v rámci položky v `List` (nebo jiné výčtové typy) s `foreach` smyčky. Jako první třídy součástí jazyk s výrazně lepší čitelnost jazyk a lidově schopnost důvod o kód.
+Při C# může spustili jako obecný jazyk Object-Oriented (ú), verze 2.0 c změnit, rychle. Jakmile měly jejich nohou nich, se po některé závažné vývojáře problémové body. A budou se po nich významný.
+
+S obecnými typy typy a metody můžete pracovat libovolný typ a zároveň zachovat bezpečnost typů. Například, že <xref:System.Collections.Generic.List%601> umožňuje mít `List<string>` nebo `List<int>` a provádět operace zajišťující bezpečnost typů na tyto řetězce nebo celá čísla, zatímco iterace je. Použití obecných typů je lepší, než vytvořit `ListInt` která je odvozena od `ArrayList` nebo přetypování z `Object` pro všechny operace.
+
+C# iterátory verze 2.0 uvést do režimu. Stručně uvést, iterátory vám umožní zkoumat všechny položky v `List` (nebo jiné výčtové typy) s `foreach` smyčky. S iterátory jako první třídy součást jazyk výrazně lepší čitelnost jazyk a lidově schopnost důvod o kód.
 
 Ještě, C# pokračovat a přehrávání kousek zjištěná v jazyce Java. Java měl již vydaných verzí, které zahrnuty obecné typy a iterátory. Ale které brzy změní jako jazyky dál momentální od sebe.
 
@@ -51,10 +71,13 @@ C# 3.0 verze byla v pozdní 2007, společně s Visual Studio 2008, i když úpln
 - [výraz lambda](https://www.daedtech.com/introduction-to-c-lambda-expressions/)
 - [Stromy výrazů](https://blogs.msdn.microsoft.com/charlie/2008/01/31/expression-tree-basics/)
 - [Metody rozšíření](https://www.codeproject.com/Tips/709310/Extension-Method-In-Csharp)
+- [Implicitně typované lokální proměnné](../language-reference/keywords/var.md)
+- [Částečné metody](../language-reference/keywords/partial-method.md)
+- Inicializátory objektu a kolekce
 
 V retrospect mnoho z těchto funkcí pravděpodobně nevyhnutelné i nelze oddělit. Všechny zapadají strategicky. Obecně je představit, že používání funkce jazyka C# verze byla výrazu dotazu, také známé jako Language-Integrated Query (LINQ).
 
-Zobrazení více nuanced prověří stromů výrazů lambda – výrazy a anonymní typy jako základ, na kterém je vytvořený LINQ. Ale v obou případech C# 3.0 zobrazí revoluční koncept. C# 3.0 bylo zahájeno jen pro vypnutí C# do hybridním objektově orientované / funkční jazyk.
+Zobrazení více nuanced prověří stromů výrazů lambda – výrazy a anonymní typy jako základ, na kterém je vytvořený LINQ. Ale v obou případech C# 3.0 zobrazí revoluční koncept. C# 3.0 bylo zahájeno jen pro vypnutí C# do hybridní objektově orientované / funkční jazyk.
 
 Konkrétně může zapisovat teď stylu SQL, deklarativní dotazy k provádění operací na kolekce, mimo jiné. Místo psaní `for` cykly k výpočtu průměru seznam celých čísel, můžete to teď udělat jako jednoduše jako `list.Average()`. Kombinace výrazy dotazů a rozšiřující metody provedené se zdát, že tento seznam celých čísel byl zadán mnoho efektivněji.
 
@@ -75,11 +98,11 @@ Vestavěné typy spolupráce zmírnit problémové nasazení. Obecné kovariance
 
 Hlavní funkce byla zavedení `dynamic` – klíčové slovo. `dynamic` – Klíčové slovo, dát do jazyka C# verze 4.0 možnost přepsat kompilátoru na zadáním kompilaci. Pomocí dynamické klíčové slovo, můžete vytvořit konstrukce podobná dynamicky zadávaných jazyky, jako je JavaScript. Můžete vytvořit `dynamic x = "a string"` a poté přidejte šest, ponechává vyřešit, která má proběhnout vedle modulu runtime.
 
-To vám dává potenciální chyby, ale také skvělé power v rámci jazyk.
+Dynamická vazba vám potenciálně pro chyby, ale také skvělé power v rámci jazyk.
 
 ## <a name="c-version-50"></a>C# verze 5.0
 
-C# verze 5.0 se velmi cílených verze jazyka. Téměř všechny úsilí pro tuto verzi se stala součástí jiného koncept Přelomová jazyk.  Tady je seznam hlavních funkce:
+C# verze 5.0 se zaměřují verze jazyka. Téměř všechny úsilí pro tuto verzi se stala součástí jiného koncept Přelomová jazyk: `async` a `await` modelu pro asynchronní programování.  Tady je seznam hlavních funkce:
 
 - [Asynchronní členy](../async.md)
 - [Volající – atributy s informacemi](https://www.codeproject.com/Tips/606379/Caller-Info-Attributes-in-Csharp)
@@ -90,7 +113,7 @@ Ale `async` a `await` jsou skutečné hvězdiček této verze. Pokud tyto funkce
 
 ## <a name="c-version-60"></a>C# verze 6.0
 
-Verze 3.0 a 5.0 C# měl přidat některé působivé funkce v jazyce objektově orientované. Verze 6.0 by přejděte od provádění dominantní používání funkce a místo vydání řadu funkcí, které ctí uživatelé jazyka. Tady jsou některé z nich:
+Verze 3.0 a 5.0 C# měl přidat hlavní nové funkce v jazyce objektově orientovaný. Verze 6.0 by přejděte od provádění dominantní používání funkce a místo toho verze mnoho menší funkcí, které provedeny programováním v C# produktivnější. Tady jsou některé z nich:
 
 - [Statické importy](../language-reference/keywords/using-static.md)
 - [Filtry výjimek](https://www.thomaslevesque.com/2015/06/21/exception-filters-in-c-6/)
@@ -100,6 +123,11 @@ Verze 3.0 a 5.0 C# měl přidat některé působivé funkce v jazyce objektově 
 - [Interpolace řetězců](../language-reference/tokens/interpolated.md)
 - [nameof – operátor](https://stackoverflow.com/questions/31695900/what-is-the-purpose-of-nameof)
 - [Inicializátory indexu](csharp-6.md#index-initializers)
+
+Mezi další nové funkce patří:
+
+- Await v bloky catch/finally
+- Výchozí hodnoty pro vlastnosti jen pro příjemce
 
 Každá z těchto funkcí je zajímavé v sobě. Ale pokud si prohlédnete je zcela, zobrazí zajímavé vzor. V této verzi jazyka C# eliminovat standardní jazyk, aby kód víc ve formátu Terse zasílaná a čitelné. Proto ventilátory čistá, jednoduchého kódu, tato verze jazyka nemohla obrovské win.
 
@@ -116,8 +144,16 @@ Nejnovější hlavní verzi je C# verze 7.0. Tato verze má některé věcem evo
 - [Rozšířené výraz vozidlo členy](./csharp-7.md#more-expression-bodied-members)
 - [Místní hodnoty REF a vrátí](./csharp-7.md#ref-locals-and-returns)
 
+Další funkce:
+
+- [Zahození](../discards.md)
+- [Binární literály](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-7.0/binary-literals.md)
+- [Oddělovače číslice](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-7.0/digit-separators.md)
+- Vrátí REF a lokální proměnné
+- [Throw – výrazy](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-7.0/throw-expression.md)
+
 Všechny tyto funkce nabízí nové funkce nástrojů pro vývojáře a možnost zápisu i čisticí kódu než kdy dřív. Zvýraznění je sloučíte deklarace proměnné pro použití s `out` – klíčové slovo a tím, že více vrácených hodnot prostřednictvím řazené kolekce členů.
 
-Ale C# se provádí požadavek put pro někdy širší použití. .NET core teď cílí žádný operační systém a má jeho očí správně zapojený do cloudu a na přenositelnost.  To jistě zabírá jazyk návrhářům nápady a čas, kromě objevuje nové funkce.
+Ale C# se provádí požadavek put pro někdy širší použití. .NET core teď cílí žádný operační systém a má jeho očí správně zapojený do cloudu a na přenositelnost.  Tyto nové funkce určitě zabírají jazyk návrhářům nápady a čas, kromě objevuje nové funkce.
 
 _Článek_ [ _původně publikovaná na blogu NDepend_](https://blog.ndepend.com/c-versions-look-language-history/)_, s laskavým svolením Erik Dietrich a Patrik Smacchia._

@@ -3,11 +3,12 @@ title: Typy řazené kolekce členů – Průvodce C#
 description: Další informace o typech pojmenované a nepojmenované řazené kolekce členů v jazyce C#
 ms.date: 05/15/2018
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 5ef8d89f62a30d3d64f7377972e31d9c4d93d41e
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: 6c3b6edb0481b8c2e4d92989b605f657aac607fa
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208359"
 ---
 # <a name="c-tuple-types"></a>Řazené kolekce členů typy C# #
 
@@ -91,7 +92,8 @@ Počínaje 7.3 C#, řazené kolekce členů typy podpory `==` a `!=` operátory.
 
 [!code-csharp[TupleEquality](../../samples/snippets/csharp/tuples/tuples/program.cs#Equality "Testing tuples for equality")]
 
-Existuje několik pravidel, která pohodlnější provádění testů rovnosti řazené kolekce členů. Provede řazené kolekce členů rovnosti [zrušeno převody](/dotnet/csharp/language-reference/language-specification/conversions.md#lifted-conversion-operators) Pokud jeden z řazené kolekce členů je s možnou hodnotou Null řazené kolekce členů, jak je znázorněno v následujícím kódu:
+Existuje několik pravidel, která pohodlnější provádění testů rovnosti řazené kolekce členů. Provede řazené kolekce členů rovnosti [zrušeno převody](/dotnet/csharp/language-reference/language-specification/conversions#lifted-conversion-operators) Pokud jeden z řazené kolekce členů je s možnou hodnotou Null řazené kolekce členů, jak je znázorněno v následujícím kódu:
+
 
 [!code-csharp[NullableTupleEquality](../../samples/snippets/csharp/tuples/tuples/program.cs#NullableEquality "Comparing Tuples and nullable tuples")]
 

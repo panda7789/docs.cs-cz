@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: c01152d016a852c15ffa1d1c82c16d6795965f31
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 16d318c1c1a5d8e560b97d9e996f1165a4566c6a
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33289214"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36208356"
 ---
 # <a name="is-c-reference"></a>is (Referenční dokumentace jazyka C#) #
 
@@ -75,7 +75,7 @@ Při provádění porovnávání vzorů pomocí vzoru typ `is` testuje, zda výr
 
 kde *expr* je výraz, který se vyhodnotí na instanci typu, *typ* je název typu, na který výsledek *expr* chcete převést a *název_proměnné* je objekt, ke kterému výsledek *expr* je převést, pokud `is` test je `true`. 
 
-`is` Výraz `true` Pokud žádné z následujících:
+`is` Výraz `true` Pokud *expr* není `null`, a platí následující:
 
 - *Expr* je instance stejného typu jako *typu*.
 
@@ -85,7 +85,7 @@ kde *expr* je výraz, který se vyhodnotí na instanci typu, *typ* je název typ
 
 - *Expr* představuje instanci typu, který implementuje *typ* rozhraní.
 
-Pokud *exp* je `true` a `is` se používá s `if` příkaz *název_proměnné* je přiřazen a má místní rozsah v rámci `if` pouze příkaz.
+Pokud *expr* je `true` a `is` se používá s `if` příkaz *název_proměnné* je přiřazen a má místní rozsah v rámci `if` pouze příkaz.
 
 Následující příklad používá `is` typ vzor k zajištění implementace typu <xref:System.IComparable.CompareTo(System.Object)?displayProperty=nameWithType> metoda.
 
@@ -147,7 +147,7 @@ Všimněte si, že pokud *expr* je `null`, `is` výraz stále platí a přiřad�
   
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
  [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
  [typeof](../../../csharp/language-reference/keywords/typeof.md)  

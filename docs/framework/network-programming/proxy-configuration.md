@@ -1,6 +1,6 @@
 ---
 title: Konfigurace proxy serveru
-ms.date: 03/30/2017
+ms.date: 06/18/2018
 helpviewer_keywords:
 - Networking
 - adaptive proxies
@@ -14,12 +14,12 @@ ms.assetid: 353c0a8b-4cee-44f6-8e65-60e286743df9
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 41e1dcee90531de605b6bddc1eedc1c44235d8eb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6cf25d3d7dcde963f06729794716b75dffdb64ae
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397530"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207362"
 ---
 # <a name="proxy-configuration"></a>Konfigurace proxy serveru
 Proxy server zpracovává požadavky na klienta pro prostředky. Proxy server můžete vrátit požadovaný prostředek ze své mezipaměti nebo předat požadavek na server, kde je umístěn daný prostředek. Proxy může zlepšit výkon sítě snížením počtu požadavky odeslané na vzdálených serverech. Proxy lze také omezit přístup k prostředkům.  
@@ -29,38 +29,16 @@ Proxy server zpracovává požadavky na klienta pro prostředky. Proxy server m�
   
  Adaptivní proxy se nakonfiguroval konfigurační skript (viz [automatické zjišťování Proxy](../../../docs/framework/network-programming/automatic-proxy-detection.md)). Tento skript generuje sadu protokoly aplikací a proxy serveru pro každý protokol.  
   
- Několik možností, jak řídit, jak je konfigurační skript spustit. Můžete zadat následující:  
-  
--   Jak často je konfigurační skript stáhnout a spustit.  
-  
--   Jak dlouho chcete čekat na skript, který chcete stáhnout.  
-  
--   Které přihlašovací údaje systému má použít pro přístup k proxy serveru.  
-  
--   Které přihlašovací údaje systému měli používat ke stažení konfigurační skript.  
-  
  Změny v prostředí sítě můžou vyžadovat, že systém použít novou sadu serverů proxy. Pokud připojení k síti ocitne mimo provoz nebo je inicializován nového připojení k síti, systém musí vyhledat příslušný zdroj konfigurační skript v nové verzi prostředí a spusťte nový skript.  
   
- V následující tabulce jsou uvedeny možnosti konfigurace pro adaptivní proxy serveru.  
-  
-|Atribut, vlastnost nebo konfigurace nastavení souboru|Popis|  
-|--------------------------------------------------------|-----------------|  
-|`scriptDownloadInterval`|Uplynulý čas v sekundách mezi stahováním skriptu.|  
-|`scriptDownloadTimeout`|Doba čekání (v sekundách) pro skript, který chcete stáhnout.|  
-|`useDefaultCredentials` Nebo <xref:System.Net.WebProxy.UseDefaultCredentials>|Určuje, zda systém používá výchozí síťové přihlašovací údaje pro přístup k proxy serveru.|  
-|`useDefaultCredentialForScriptDownload`|Určuje, zda systém použije výchozí přihlašovací údaje pro síť se stáhnout skript konfigurace.|  
-|`usesystemdefaults`|Určuje, zda nastavení statické proxy (adresa proxy seznam obcházení a nepoužívat místního) byste si měli přečíst z nastavení proxy serveru aplikace Internet Explorer pro uživatele. Pokud tato hodnota nastavena na hodnotu "true" a pak nastavení statické proxy z Internet Exploreru se použije.<br /><br /> Pokud je tato hodnota "false" nebo není sada, potom nastavení statické proxy může být zadaný v konfiguraci a přepíše nastavení proxy serveru aplikace Internet Explorer. Tato hodnota musí také na hodnotu "false" nebo není nastavená adaptivní proxy, aby byl povolen.|  
+ Můžete použít `usesystemdefault` atribut [ `<proxy>` ](../configure-apps/file-schema/network/proxy-element-network-settings.md) element v konfiguračním souboru. `usesystemdefault` Atribut ovládací prvky, zda nastavení statické proxy (adresa proxy serveru, seznam obcházení a nepoužívat v místní) byste si měli přečíst z nastavení proxy serveru aplikace Internet Explorer pro uživatele. Pokud tato hodnota nastavena na `true`, použije se nastavení statické proxy serveru z Internet Exploreru. Pokud je tato hodnota `false` nebo není nastavený, nastavení statické proxy může být zadaný v konfiguraci a přepíše nastavení proxy serveru aplikace Internet Explorer. Tato hodnota musí být také nastaven na `false` nebo není nastaveno adaptivní proxy, aby byl povolen.  
   
  Následující příklad ukazuje konfiguraci typické adaptivní proxy.  
   
 ```xml  
 <system.net>  
     <defaultProxy>  
-      <proxy  scriptDownloadInterval="600"  
-              scriptDownloadTimeout="30"  
-              useDefaultCredentials="true"  
-              usesystemdefaults="true"  
-      />  
+      <proxy usesystemdefault="false" />
     </defaultProxy>  
 </system.net>  
 ```  
@@ -83,7 +61,7 @@ Proxy server zpracovává požadavky na klienta pro prostředky. Proxy server m�
 |`proxyaddress` Nebo <xref:System.Net.WebProxy.Address>|Adresa proxy serveru používat.|  
 |`bypassonlocal` Nebo <xref:System.Net.WebProxy.BypassProxyOnLocal>|Určuje, zda je vynechá proxy pro místní adresy.|  
 |`bypasslist` Nebo <xref:System.Net.WebProxy.BypassArrayList>|Popisuje sadu adres, které používat proxy server s použitím regulárních výrazů.|  
-|`usesystemdefaults`|Určuje, zda nastavení statické proxy (adresa proxy seznam obcházení a nepoužívat místního) byste si měli přečíst z nastavení proxy serveru aplikace Internet Explorer pro uživatele. Pokud tato hodnota nastavena na hodnotu "true" a pak nastavení statické proxy z Internet Exploreru se použije. V rozhraní .NET Framework 2.0 když tato hodnota nastavena na hodnotu "PRAVDA", ostatní nastavení proxy serveru v konfiguračním souboru nejsou přepsat nastavení proxy serveru aplikace Internet Explorer. V rozhraní .NET Framework 1.1 je možné přepsat nastavení proxy serveru aplikace Internet Explorer Další nastavení proxy serveru v konfiguračním souboru.<br /><br /> Pokud je tato hodnota "false" nebo není sada, potom nastavení statické proxy může být zadaný v konfiguraci a přepíše nastavení proxy serveru aplikace Internet Explorer. Tato hodnota musí také na hodnotu "false" nebo není nastavená adaptivní proxy, aby byl povolen.|  
+|`usesystemdefault`|Určuje, zda nastavení statické proxy (adresa proxy seznam obcházení a nepoužívat místního) byste si měli přečíst z nastavení proxy serveru aplikace Internet Explorer pro uživatele. Pokud tato hodnota nastavena na `true`, pak se použije nastavení statické proxy serveru z Internet Exploreru. V rozhraní .NET Framework 2.0, pokud je tato hodnota nastavena na `true`, ostatní nastavení proxy serveru v konfiguračním souboru nejsou přepsat nastavení proxy serveru aplikace Internet Explorer. V rozhraní .NET Framework 1.1 je možné přepsat nastavení proxy serveru aplikace Internet Explorer Další nastavení proxy serveru v konfiguračním souboru.<br /><br /> Pokud je tato hodnota `false` nebo není nastavený, potom nastavení statické proxy může být zadaný v konfiguraci a přepíše nastavení proxy serveru aplikace Internet Explorer. Tato hodnota musí být také nastaven na `false` nebo není nastaveno adaptivní proxy, aby byl povolen.|  
   
  Následující příklad ukazuje konfiguraci typické statické proxy.  
   

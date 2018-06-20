@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b816087f54e652f07dc791b7d66eb1af8f52f55e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: deea4e6128eace0ffa539d77bb63f7629eb72354
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33406504"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207401"
 ---
 # <a name="corsegment-structure"></a>COR_SEGMENT – struktura
 Obsahuje informace o oblasti spravovaná halda paměti.  
@@ -47,7 +47,7 @@ typedef struct _COR_SEGMENT {
 |`heap`|Číslo haldy, ve kterém se nachází oblasti paměti. Další informace naleznete v části Poznámky.|  
   
 ## <a name="remarks"></a>Poznámky  
- `COR_SEGMENTS` Struktura představuje oblast spravovaná halda paměti.  `COR_SEGMENTS` objekty jsou členy [ICorDebugHeapRegionEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md) kolekce objektu, který je naplněn volání[icordebugprocess5::enumerateheapregions –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerateheapregions-method.md) metoda.  
+ `COR_SEGMENTS` Struktura představuje oblast spravovaná halda paměti.  `COR_SEGMENTS` objekty jsou členy [ICorDebugHeapRegionEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md) kolekce objektu, který je naplněn volání [icordebugprocess5::enumerateheapregions –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerateheapregions-method.md) metoda.  
   
  `heap` Pole je číslo procesoru, který odpovídá haldě nehlásí. Kolektory uvolňování paměti pracovních stanic jeho hodnota je vždy nula, protože pracovní stanice mají jenom jeden kolekce halda paměti. Pro Kolektory paměti serveru jeho hodnota odpovídá procesoru, který halda je připojen k. Všimněte si, že může existovat více nebo méně uvolňování haldách, než je skutečný procesory z důvodu podrobnosti implementace systému uvolňování paměti.  
   

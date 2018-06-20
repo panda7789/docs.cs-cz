@@ -6,12 +6,12 @@ ms.author: mairaw
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: a67484c3-fe92-44d8-8fa3-36fa2071d880
-ms.openlocfilehash: 7d2f81ef08892c994163d609a56008c1accadaa8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8026ac821dfeed03127c894a5768a4c91b13beb3
+ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33570596"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36207170"
 ---
 # <a name="net-class-libraries"></a>Knihovny tříd rozhraní .NET
 
@@ -39,11 +39,11 @@ Konfigurace platformy zvolíte při vytvoření přenosné knihovny. Jedná se o
 
 Celá řada vývojářů knihovny, že jste přepnuli neměly více knihoven specifické pro platformu z jednoho zdroje (pomocí direktivy Podmíněná kompilace) na přenosné knihovny. Existují [několik přístupů](https://blog.stephencleary.com/2012/11/portable-class-library-enlightenment.html) pro přístup k specifické pro platformu funkcionalitu v rámci přenosné knihovny s [návnada a přepínače](https://log.paulbetts.org/the-bait-and-switch-pcl-trick/) maximum široce přijat technika v tomto okamžiku.
 
-### <a name="net-standard-class-libraries"></a>Knihovny standardní tříd rozhraní .NET
+## <a name="net-standard-class-libraries"></a>.NET standard knihovny tříd
 
 .NET standard knihovny jsou náhradní koncepty specifické pro platformu a přenosné knihovny. Jsou specifické pro platformu v tom smyslu, že jejich zpřístupnění všechny funkce ze základní platformy (žádné syntetické platformy nebo průnikům platformy). Jsou přenosné v tom smyslu, že fungují na všech platformách podpůrné.
 
-.NET Standard poskytuje sadu knihovny _kontrakty_. Implementace rozhraní .NET musí podporovat každé smlouvě, plně nebo vůbec. Každá implementace proto podporuje sadu .NET standardní smluv. Důsledkem je, že každý .NET Standard knihovny tříd je podporována na platformách, které ji podporují je kontrakt závislosti.
+.NET Standard poskytuje sadu knihovny _kontrakty_. Implementace rozhraní .NET musí podporovat každé smlouvě, plně nebo vůbec. Každá implementace proto podporuje sadu .NET standardní smluv. Důsledkem je, že každý .NET Standard knihovny tříd podporuje na platformách, které podporují jeho závislé součásti kontrakt.
 
 .NET Standard nevystavuje celý funkce rozhraní .NET Framework (ani je, že cílem), ale vystavit mnoho další rozhraní API než přenosné knihovny tříd. V čase se přidají další rozhraní API.
 
@@ -60,6 +60,6 @@ Na následujících platformách podporují .NET Standard knihovny:
 
 Další informace najdete v tématu [.NET Standard](net-standard.md) tématu.
 
-### <a name="mono-class-libraries"></a>Knihovny tříd mono
+## <a name="mono-class-libraries"></a>Knihovny tříd mono
 
 Knihovny tříd jsou podporovány na Mono, včetně tři typy knihoven popsané výše. Mono často ukázala (správně) jako napříč platformami implementace rozhraní Microsoft .NET Framework. V části to byl, protože specifické pro platformu .NET Framework knihovny může spustit na Mono runtime bez úprav nebo opětovnou kompilaci. Tato vlastnost byla na místě před vytvoření knihovny tříd portable, takže se na zřejmé volbu Povolit binární přenositelnost mezi rozhraní .NET Framework a Mono (i když to šlo jenom v jednom směru).
