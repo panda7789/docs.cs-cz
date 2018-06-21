@@ -14,15 +14,18 @@ helpviewer_keywords:
 ms.assetid: ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 94659919d4e902f8562e669fbb0f98d6ebc679ab
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 7d0ff21ee4846b2f5586317e70ac96f37517621f
+ms.sourcegitcommit: 3d42e1d73e21c35c540dd4adbea23efcbe1b8b0a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32744639"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36270497"
 ---
 # <a name="creating-and-using-strong-named-assemblies"></a>Vytváření a používání sestavení se silným názvem
 <a name="top"></a> Silné jméno se skládá z identity sestavení – jeho jednoduchý textový název, číslo verze a informace o jazykové verzi (Pokud je zadáno) – plus veřejného klíče a digitální podpis. Generuje se ze souboru sestavení pomocí odpovídajícího privátního klíče. (Soubor sestavení obsahuje manifest sestavení, který obsahuje názvy a hodnoty hash všech souborů, které tvoří sestavení.)  
+
+> [!WARNING]
+> Nespoléhejte na silné názvy pro zabezpečení. Obsahují jenom jedinečnou identitu.
   
  Sestavení se silným názvem lze použít pouze typy od ostatních sestavení se silným názvem. Jinak by dojít k ohrožení integritu sestavení se silným názvem.  
   

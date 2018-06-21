@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 1b5439c1-f3d5-4529-bd69-01814703d067
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a4f791ea339c9188ac8fada525611fc68821351d
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: f78df1a85bacae3019fe27857731174796d8a311
+ms.sourcegitcommit: 3d42e1d73e21c35c540dd4adbea23efcbe1b8b0a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32743417"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36270419"
 ---
 # <a name="assembly-security-considerations"></a>Důležité informace o zabezpečení sestavení
 <a name="top"></a> Při vytváření sestavení, můžete sadu oprávnění, která sestavení vyžaduje ke spuštění. Zda jsou některá oprávnění udělit nebo nejsou udělena sestavení je založena na důkaz.  
@@ -45,9 +45,13 @@ ms.locfileid: "32743417"
  V okamžiku načtení sestavení důkaz slouží jako vstup pro zásady zabezpečení. Zásady zabezpečení je vytvořena podle podniku a správce počítače a nastavení zásad pro uživatele a určuje sadu oprávnění udělenou po provedení všech spravovaného kódu. Zásady zabezpečení lze navázat pro vydavatele sestavení (Pokud má podpisový generovaných nástrojem podpis), sestavení pro webový server a zónu (v Internet Exploreru podmínky) byl stažen z nebo pro silný název sestavení. Správce počítače můžete například vytvořit zásady zabezpečení, která umožňuje všechny kód stáhnout z webu a podepsaný daný software společnosti pro přístup k databázi v počítači, ale neposkytuje přístup k zápisu na disku.  
   
 ## <a name="strong-named-assemblies-and-signing-tools"></a>Sestavení se silným názvem a podepisování nástroje  
+
+ > [!WARNING]
+ > Nespoléhejte na silné názvy pro zabezpečení. Obsahují jenom jedinečnou identitu.
+
  Sestavení můžete přihlásit dva různé ale vzájemně doplňují způsoby: silným názvem nebo pomocí [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md). Podepisování sestavení se silným názvem přidá veřejný šifrovací klíče do souboru, který obsahuje manifest sestavení. Podpis silného názvu pomáhá ověřit jedinečnost názvu, zabránit falšování a poskytnout volající některé identity když odkaz je vyřešený.  
   
- Ale žádná úroveň důvěryhodnosti souvisí se silným názvem, díky čemuž [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md) důležité. Tyto podepisovací nástroje vyžadují vydavatele k prokázání své identity autority třetích stran a získat certifikát. Tento certifikát se pak vloží v souboru a můžete použít správce můžete rozhodnout, jestli důvěřovat pravosti kódu.  
+ Žádná úroveň důvěryhodnosti souvisí se silným názvem, díky čemuž [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md) důležité. Tyto podepisovací nástroje vyžadují vydavatele k prokázání své identity autority třetích stran a získat certifikát. Tento certifikát se pak vloží v souboru a můžete použít správce můžete rozhodnout, jestli důvěřovat pravosti kódu.  
   
  Můžete udělit silným názvem i digitální podpis vytvořený [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md) k sestavení, nebo můžete použít buď samostatně. Tyto podepisovací nástroje můžete přihlásit pouze jeden soubor současně; pro vícesouborového sestavení podepsat soubor, který obsahuje manifest sestavení. Silné jméno je uložené v souboru, který obsahuje manifest sestavení, ale podpis vytvořený [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md) je uložen v vyhrazené sektoru přenosné spustitelného souboru (PE), který obsahuje manifest sestavení. Podepisování sestavení pomocí [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md) lze (s nebo bez silný název) Pokud již máte hierarchie důvěryhodnosti, které jsou závislé na[SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md) generované podpisu nebo pokud vaše zásady používá jenom část klíče a nekontroluje řetěz certifikátů.  
   

@@ -3,12 +3,12 @@ title: Začínáme s sémantického analýzy
 description: V tomto kurzu poskytuje přehled o práci s sémantického analysis pomocí .NET SDK kompilátoru.
 ms.date: 02/06/2018
 ms.custom: mvc
-ms.openlocfilehash: 360d31b86a677adfe51ebd6752fca8475814fd89
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4b021ed2a27da754e2ac5af01716868e41e72738
+ms.sourcegitcommit: 3d42e1d73e21c35c540dd4adbea23efcbe1b8b0a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33358749"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36270458"
 ---
 # <a name="get-started-with-semantic-analysis"></a>Začínáme s sémantického analýzy
 
@@ -131,7 +131,7 @@ Vyberte jenom vlastnost název a pouze jedinečné názvy odebráním žádné p
 
 Můžete také vytvořit celý dotaz pomocí syntaxe dotazů LINQ a potom v konzole zobrazit názvy všech metoda:
 
-[!code-csharp[build and display the results of this query.](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#12 "Build and display the results of the query.")]
+[!code-csharp[build and display the results of this query.](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#13 "Build and display the results of the query.")]
 
 Sestavte a spusťte program. Byste měli vidět následující výstup:
 

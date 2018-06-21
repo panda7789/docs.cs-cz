@@ -13,12 +13,12 @@ helpviewer_keywords:
 - flicker
 - bit-block transfer
 ms.assetid: 33b76910-13a3-4521-be98-5c097341ae3b
-ms.openlocfilehash: 65428132c885191b62c3b4a76c8937bf8f3f6732
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dc5f05ff4ea9f3c2b828cbe37860e1bd241fc604
+ms.sourcegitcommit: 3d42e1d73e21c35c540dd4adbea23efcbe1b8b0a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33522041"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36270432"
 ---
 # <a name="how-to-copy-pixels-for-reducing-flicker-in-windows-forms"></a>Postupy: Kopírování pixelů pro omezení blikání v rozhraní Windows Forms
 Při animaci jednoduchý obrázek uživatelů může někdy dojít blikání nebo jiných nežádoucího vizuálních efektů. Jeden způsob, jak omezit tento problém je použití procesu "přenos bitových bloků" na na obrázku. Přenos bitových bloků je "bitového bloku přenos" Barva dat z počátku obdélníku pixelů na cílovém obdélník pixelů.  
@@ -28,7 +28,7 @@ Při animaci jednoduchý obrázek uživatelů může někdy dojít blikání neb
  V následujícím příkladu se nevykreslí obrazce na formuláři v jeho <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Potom, <xref:System.Drawing.Graphics.CopyFromScreen%2A> metoda se používá k duplicitní tvaru.  
   
 > [!NOTE]
->  Nastavení formuláře <xref:System.Windows.Forms.Control.DoubleBuffered%2A> vlastnost, která má `true` bude na základě grafiky kód <xref:System.Windows.Forms.Control.Paint> událostí být dvojitou vyrovnávací pamětí. Pokud to nebude mít žádné zvýšení výkonu discernable při použití kódu níže, je něco třeba vzít v úvahu při práci s kódem složitější grafiky manipulaci.  
+>  Nastavení formuláře <xref:System.Windows.Forms.Control.DoubleBuffered%2A> vlastnost, která má `true` bude na základě grafiky kód <xref:System.Windows.Forms.Control.Paint> událostí být dvojitou vyrovnávací pamětí. Pokud to nebude mít žádné zvýšení výkonu a jasně při použití kódu níže, je něco třeba vzít v úvahu při práci s kódem složitější grafiky manipulaci.  
   
 ## <a name="example"></a>Příklad  
   

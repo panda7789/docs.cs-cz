@@ -5,12 +5,12 @@ author: rlander
 ms.author: mairaw
 ms.date: 04/10/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: f069686866c4fd0e8e380af3ef448d282df34801
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cf374f9d1fd7e343e5eba868d3f686784428a2d0
+ms.sourcegitcommit: 3d42e1d73e21c35c540dd4adbea23efcbe1b8b0a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33389493"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36270445"
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016"></a>Nainstalujte rozhraní .NET Framework na Windows 10 a Windows Server 2016
 
@@ -66,7 +66,7 @@ Verze rozhraní .NET framework 4.x jsou na místě aktualizace starší verze. T
 
 - Nelze nainstalovat dřívější verzi rozhraní .NET Framework na počítači, pokud je již nainstalována novější verze.
 
-- verze rozhraní .NET Framework 4.x slouží ke spouštění aplikací, které jsou vytvořené pro rozhraní .NET Framework 4.0 prostřednictvím této verze. Například rozhraní .NET Framework 4.7 slouží ke spouštění aplikací, které jsou vytvořené pro rozhraní .NET Framework 4.0 prostřednictvím 4.7. Na nejnovější verzi (rozhraní .NET Framework 4.7.1) můžete použít ke spuštění aplikace vytvořené budou všechny verze rozhraní .NET Framework od verze 4.0.
+- verze rozhraní .NET Framework 4.x slouží ke spouštění aplikací, které jsou vytvořené pro rozhraní .NET Framework 4.0 prostřednictvím této verze. Například rozhraní .NET Framework 4.7 slouží ke spouštění aplikací, které jsou vytvořené pro rozhraní .NET Framework 4.0 prostřednictvím 4.7. Na nejnovější verzi (rozhraní .NET Framework 4.7.2) můžete použít ke spuštění aplikace vytvořené pomocí všechny verze rozhraní .NET Framework od verze 4.0.
 
 Seznam všech verzí rozhraní .NET Framework, které jsou k dispozici ke stažení najdete v tématu [.NET stáhne](https://www.microsoft.com/net/download?utm_source=ms-docs&utm_medium=referral) stránky.
 
@@ -74,7 +74,7 @@ Seznam všech verzí rozhraní .NET Framework, které jsou k dispozici ke staže
 
 Pokud nelze získat správnou verzi nainstalováno rozhraní .NET Framework, můžete [požádejte o pomoc Microsoft](mailto:dotnet-install-help@service.microsoft.com?subject=Install-Help).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 [Stahování rozhraní .NET](https://www.microsoft.com/net/download?utm_source=ms-docs&utm_medium=referral)   
 [Řešení potíží s blokované rozhraní .NET Framework a odinstalacemi](troubleshoot-blocked-installations-and-uninstallations.md)   
