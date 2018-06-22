@@ -4,12 +4,12 @@ description: Pochopit, jak funguje správa verzí .NET Core.
 author: bleroy
 ms.author: mairaw
 ms.date: 02/13/2018
-ms.openlocfilehash: 0cfd620d2b6e6e60531b0e2aa938c1ed64b6af23
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 33c545fdea254133fe6e65f4d6dd725f5184faec
+ms.sourcegitcommit: 640cee8fc5d256cdd80e5b80240469feac10499e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33219011"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36298237"
 ---
 # <a name="net-core-versioning"></a>Správa verzí .NET core
 
@@ -45,14 +45,14 @@ Instalační program uživatelského rozhraní v těchto souborů ke stažení s
 Tady jsou některé příklady tento formát:
 
 ```
-dotnet-runtime-2.0.4-macos.10.12-x64.pkg            # Mac runtime installer
-dotnet-sdk-2.0.4-win10-x64.exe                      # Windows SDK installer
-dotnet-sdk-2.0.4-fedora.24-x64.tar.gz               # Fedora 24 binary archive
+dotnet-runtime-2.0.4-osx.10.12-x64.pkg            # Mac runtime installer
+dotnet-sdk-2.0.4-win-x64.exe                      # Windows SDK installer
+dotnet-sdk-2.0.4-linux-x64.tar.gz                 # Linux binary archive
 
 #Ubuntu file set needed for the SDK
-dotnet-host-2.0.4-ubuntu.16.04-x64.deb              # Host / muxer and host policy
-dotnet-runtime-2.0.4-ubuntu.16.04-x64.deb           # runtime
-dotnet-sdk-2.0.4-ubuntu.16.04-x64.deb               # SDK tools
+dotnet-host-2.0.4-ubuntu.16.04-x64.deb            # Host / muxer and host policy
+dotnet-runtime-2.0.4-ubuntu.16.04-x64.deb         # runtime
+dotnet-sdk-2.0.4-ubuntu.16.04-x64.deb             # SDK tools
 ```
 
 Formát je čitelná a zřetelně zobrazí, co jste stahování, jaká verze je a kde můžete použít. Název balíčku runtime zahrnuje `runtime`, a sada SDK zahrnuje `SDK`.
@@ -253,7 +253,7 @@ Pokaždé, když se dodává novou hlavní verzi .NET Core, `MAJOR` získá zvý
 
 Různé metapackages jsou aktualizovány tak, aby odkazovaly aktualizované balíčky knihovny .NET Core. [ `Microsoft.NETCore.App` ](https://www.nuget.org/packages/Microsoft.NETCore.App) Metapackage a `netcore` cílové rozhraní jsou verzí jako hlavní aktualizace odpovídající `MAJOR` číslo verze nové verze.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 [Cílové verze rozhraní .NET Framework](../../standard/frameworks.md)  
 [Vytváření distribučních balíčků .NET Core](../build/distribution-packaging.md)  

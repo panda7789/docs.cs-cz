@@ -3,13 +3,13 @@ title: Volba mezi .NET Core a rozhraní .NET Framework pro server aplikace
 description: Průvodce, na které implementace rozhraní .NET, byste měli zvážit při vytváření aplikace server v rozhraní .NET.
 author: cartermp
 ms.author: mairaw
-ms.date: 03/15/2018
-ms.openlocfilehash: 39d07417a3e901c68dbbd8e9e217fb716edec881
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.date: 06/19/2018
+ms.openlocfilehash: a9eaeae515041ee1d99ede5b004ecc85e453de2d
+ms.sourcegitcommit: 640cee8fc5d256cdd80e5b80240469feac10499e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34728716"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36298185"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a rozhraní .NET Framework pro server aplikace
 
@@ -88,8 +88,6 @@ Některé technologie .NET Framework nejsou k dispozici v .NET Core. Některé z
 * Aplikace webových formulářů ASP.NET: webových formulářů ASP.NET jsou dostupné jenom v rozhraní .NET Framework. ASP.NET Core nelze použít pro webových formulářů ASP.NET. Neexistují žádné plány a dovést webových formulářů ASP.NET do .NET Core.
 
 * Aplikace ASP.NET Web Pages: rozhraní ASP.NET Web Pages nejsou součástí ASP.NET Core. ASP.NET Core [stránky Razor](/aspnet/core/mvc/razor-pages/) mít mnoho společného s webovými stránkami.
-
-* Implementace klienta nebo serveru funkce SignalR technologie ASP.NET. V současné době [funkce SignalR technologie ASP.NET](https://github.com/aspnet/SignalR) je k dispozici v režimu preview s ASP.NET Core 2.1.
 
 * Implementace služby WCF. I když dojde [knihovny klienta WCF](https://github.com/dotnet/wcf) využívat služby WCF z .NET Core, implementaci serveru WCF je aktuálně k dispozici pouze v rozhraní .NET Framework. Tento scénář není součástí stávající plán pro .NET Core, ale je nepovažoval do budoucna.
 

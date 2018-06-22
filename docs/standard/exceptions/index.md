@@ -1,24 +1,24 @@
 ---
-title: Zpracování a generování výjimek
-ms.date: 03/30/2017
+title: Zpracování a generování výjimek v rozhraní .NET
+ms.date: 06/19/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- exceptions [.NET Framework], handling
+- exceptions [.NET], handling
 - runtime, exceptions
 - filtering exceptions
-- errors [.NET Framework], exceptions
-- exceptions [.NET Framework], throwing
-- exceptions [.NET Framework]
+- errors [.NET], exceptions
+- exceptions [.NET], throwing
+- exceptions [.NET]
 - common language runtime, exceptions
 ms.assetid: f99a1d29-a2a8-47af-9707-9909f9010735
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b71ffd9bfcfcb048f148ac1a3a418c03b9834ea2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a278940528966e32646a3551b4c133223de9746e
+ms.sourcegitcommit: 640cee8fc5d256cdd80e5b80240469feac10499e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33575450"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36298341"
 ---
 # <a name="handling-and-throwing-exceptions-in-net"></a>Zpracování a generování výjimek v rozhraní .NET
 
@@ -42,32 +42,31 @@ Obvyklým model zpracování chyb jazyk spoléhali na jazyka jedinečný způsob
 
 - Zpracování výjimek lze přidat do aplikace pro zvýšení spolehlivosti programu.
 
-Výjimky nabízejí výhod oproti jiným metodám oznámení o chybě, jako je například návratové kódy. Selhání nedojde vzhledem k tomu, že pokud je vyvolána výjimka, a nemusíte je zpracovávat, modul runtime ukončí aplikaci. Neplatné hodnoty nepokračujte rozšíří v rámci systému v důsledku kód, který se nepodaří vyhledat návratový kód chyby. 
+Výjimky nabízejí výhod oproti jiným metodám oznámení o chybě, jako je například návratové kódy. Selhání nemáte nevšimli, protože pokud je vyvolána výjimka, a nemusíte je zpracovávat, modul runtime ukončí aplikaci. Neplatné hodnoty není nadále šířit prostřednictvím systému v důsledku kód, který se nepodaří vyhledat návratový kód chyby.
 
 ## <a name="common-exceptions"></a>Běžné výjimky
 
 Následující tabulka uvádí některé běžné výjimky s příklady, co může způsobit.
 
-| Typ výjimky | Základní typ | Popis | Příklad |
-| -------------- | --------- | ----------- | ------- |
-| <xref:System.Exception> | <xref:System.Object> | Základní třída pro všechny výjimky. | Žádný (použijte třídu odvozenou této výjimky). |
-| <xref:System.IndexOutOfRangeException> | <xref:System.Exception> | Vyvolána modulem runtime pouze v případě, že pole je indexovaný nesprávně. | Indexování pole mimo platný rozsah: `arr[arr.Length+1]` |
-| <xref:System.NullReferenceException> | <xref:System.Exception> | Vyvolána modulem runtime pouze v případě, že se odkazuje objekt s hodnotou null. | `object o = null; o.ToString();` |
-| <xref:System.InvalidOperationException> | <xref:System.Exception> | Vyvolána metodami, když je v neplatném stavu. | Volání metody `Enumerator.GetNext()` po odebrání položky ze zdrojové kolekce. |
-| <xref:System.ArgumentException> | <xref:System.Exception> | Základní třída pro všechny výjimky argumentu. | Žádný (použijte třídu odvozenou této výjimky). |
-| <xref:System.ArgumentNullException> | <xref:System.Exception> | Vyvolané metody, které neumožňují argumentu mít hodnotu null. | `String s = null; "Calculate".IndexOf (s);` |
-| <xref:System.ArgumentOutOfRangeException> | <xref:System.Exception> | Vyvolané metody, které ověřte, zda jsou argumenty v zadaném rozsahu. | `String s = "string"; s.Substring(s.Length+1);` |
+| Typ výjimky | Popis | Příklad |
+| -------------- | ----------- | ------- |
+| <xref:System.Exception> | Základní třída pro všechny výjimky. | Žádný (použijte třídu odvozenou této výjimky). |
+| <xref:System.IndexOutOfRangeException> | Vyvolána modulem runtime pouze v případě, že pole je indexovaný nesprávně. | Indexování pole mimo platný rozsah: <br /> `arr[arr.Length+1]` |
+| <xref:System.NullReferenceException> | Vyvolána modulem runtime pouze v případě, že se odkazuje objekt s hodnotou null. | `object o = null;` <br /> `o.ToString();` |
+| <xref:System.InvalidOperationException> | Vyvolána metodami, když je v neplatném stavu. | Volání metody `Enumerator.MoveNext()` po odebrání položky ze zdrojové kolekce. |
+| <xref:System.ArgumentException> | Základní třída pro všechny výjimky argumentu. | Žádný (použijte třídu odvozenou této výjimky). |
+| <xref:System.ArgumentNullException> | Vyvolané metody, které neumožňují argumentu mít hodnotu null. | `String s = null;` <br /> `"Calculate".IndexOf(s);`|
+| <xref:System.ArgumentOutOfRangeException> | Vyvolané metody, které ověřte, zda jsou argumenty v zadaném rozsahu. | `String s = "string";` <br /> `s.Substring(s.Length+1);` |
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-* [Třída a vlastnosti výjimky](exception-class-and-properties.md)
-* [Postupy: Používání bloku Try/Catch k zachycování výjimek](how-to-use-the-try-catch-block-to-catch-exceptions.md)
-* [Postupy: Používání specifických výjimek v bloku Catch](how-to-use-specific-exceptions-in-a-catch-block.md)
-* [Postupy: Explicitní generování výjimek](how-to-explicitly-throw-exceptions.md)
-* [Postupy: Vytváření uživatelsky definovaných výjimek](how-to-create-user-defined-exceptions.md)
-* [Používání obslužných rutin uživatelsky filtrovaných výjimek](using-user-filtered-exception-handlers.md)
-* [Postupy: Používání bloků Finally](how-to-use-finally-blocks.md)
-* [Zpracování výjimek vzájemné spolupráce COM](handling-com-interop-exceptions.md)
-* [Doporučené postupy pro výjimky](best-practices-for-exceptions.md)
-
-Další informace o fungování výjimek v rozhraní .NET najdete v tématu [každých Dev co potřebujete vědět o výjimky v modulu Runtime](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/exceptions.md).
+[Třída a vlastnosti výjimky](exception-class-and-properties.md)  
+[Postupy: Používání bloku Try/Catch k zachycování výjimek](how-to-use-the-try-catch-block-to-catch-exceptions.md)  
+[Postupy: Používání specifických výjimek v bloku Catch](how-to-use-specific-exceptions-in-a-catch-block.md)  
+[Postupy: Explicitní generování výjimek](how-to-explicitly-throw-exceptions.md)  
+[Postupy: Vytváření uživatelsky definovaných výjimek](how-to-create-user-defined-exceptions.md)  
+[Používání obslužných rutin uživatelsky filtrovaných výjimek](using-user-filtered-exception-handlers.md)  
+[Postupy: Používání bloků Finally](how-to-use-finally-blocks.md)  
+[Zpracování výjimek vzájemné spolupráce COM](handling-com-interop-exceptions.md)  
+[Doporučené postupy pro výjimky](best-practices-for-exceptions.md)  
+[Co každých Dev musí vědět o výjimky v modulu Runtime](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/exceptions.md).
