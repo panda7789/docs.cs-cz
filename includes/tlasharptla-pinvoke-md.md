@@ -1,1 +1,1 @@
-<span data-ttu-id="74776-101">Služby volání nespravovaného kódu (PInvoke)</span><span class="sxs-lookup"><span data-stu-id="74776-101">Platform Invocation Services (PInvoke)</span></span>
+<span data-ttu-id="637fd-101">Služby volání nespravovaného kódu (PInvoke)</span><span class="sxs-lookup"><span data-stu-id="637fd-101">Platform Invocation Services (PInvoke)</span></span>
