@@ -4,49 +4,49 @@ description: Podporované verze systému macOS a .NET Core závislosti k vývoji
 author: guardrex
 ms.author: mairaw
 ms.date: 09/27/2017
-ms.openlocfilehash: b1f4d3b49be7ba5349197187d6576b78db58798c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 31fee3bbc85daa66019b63e50b48509b79606fce
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33219076"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36315063"
 ---
-# <a name="prerequisites-for-net-core-on-macos"></a><span data-ttu-id="76f39-103">Předpoklady pro .NET Core v systému macOS</span><span class="sxs-lookup"><span data-stu-id="76f39-103">Prerequisites for .NET Core on macOS</span></span>
+# <a name="prerequisites-for-net-core-on-macos"></a><span data-ttu-id="192af-103">Předpoklady pro .NET Core v systému macOS</span><span class="sxs-lookup"><span data-stu-id="192af-103">Prerequisites for .NET Core on macOS</span></span>
 
-<span data-ttu-id="76f39-104">Tento článek ukazuje systému macOS podporované verze a závislosti .NET Core, které potřebujete k vývoji, nasadit a spustit aplikace .NET Core v systému macOS počítače.</span><span class="sxs-lookup"><span data-stu-id="76f39-104">This article shows you the supported macOS versions and .NET Core dependencies that you need to develop, deploy, and run .NET Core applications on macOS machines.</span></span> <span data-ttu-id="76f39-105">Podporované verze operačního systému a závislosti, které následují použít na tři způsoby, jak vývoj aplikací .NET Core na Macu: prostřednictvím [příkazového řádku pomocí vašeho oblíbeného editoru](tutorials/using-with-xplat-cli.md), [Visual Studio Code](https://code.visualstudio.com/)a [Visual Studio pro Mac](https://www.visualstudio.com/vs/visual-studio-mac/).</span><span class="sxs-lookup"><span data-stu-id="76f39-105">The supported OS versions and dependencies that follow apply to the three ways of developing .NET Core apps on a Mac: via the [command-line with your favorite editor](tutorials/using-with-xplat-cli.md), [Visual Studio Code](https://code.visualstudio.com/), and [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/).</span></span>
+<span data-ttu-id="192af-104">Tento článek ukazuje systému macOS podporované verze a závislosti .NET Core, které potřebujete k vývoji, nasadit a spustit aplikace .NET Core v systému macOS počítače.</span><span class="sxs-lookup"><span data-stu-id="192af-104">This article shows you the supported macOS versions and .NET Core dependencies that you need to develop, deploy, and run .NET Core applications on macOS machines.</span></span> <span data-ttu-id="192af-105">Podporované verze operačního systému a závislosti, které následují použít na tři způsoby, jak vývoj aplikací .NET Core na Macu: prostřednictvím [příkazového řádku pomocí vašeho oblíbeného editoru](tutorials/using-with-xplat-cli.md), [Visual Studio Code](https://code.visualstudio.com/)a [Visual Studio pro Mac](https://visualstudio.microsoft.com/vs/visual-studio-mac/).</span><span class="sxs-lookup"><span data-stu-id="192af-105">The supported OS versions and dependencies that follow apply to the three ways of developing .NET Core apps on a Mac: via the [command-line with your favorite editor](tutorials/using-with-xplat-cli.md), [Visual Studio Code](https://code.visualstudio.com/), and [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/visual-studio-mac/).</span></span>
 
-## <a name="supported-macos-versions"></a><span data-ttu-id="76f39-106">Podporované systému macOS verze</span><span class="sxs-lookup"><span data-stu-id="76f39-106">Supported macOS versions</span></span>
+## <a name="supported-macos-versions"></a><span data-ttu-id="192af-106">Podporované systému macOS verze</span><span class="sxs-lookup"><span data-stu-id="192af-106">Supported macOS versions</span></span>
 
-# <a name="net-core-2xtabnetcore2x"></a>[<span data-ttu-id="76f39-107">.NET pro základní 2.x</span><span class="sxs-lookup"><span data-stu-id="76f39-107">.NET Core 2.x</span></span>](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[<span data-ttu-id="192af-107">.NET pro základní 2.x</span><span class="sxs-lookup"><span data-stu-id="192af-107">.NET Core 2.x</span></span>](#tab/netcore2x)
 
-<span data-ttu-id="76f39-108">.NET core 2.x je podporována v následujících verzích systému macOS:</span><span class="sxs-lookup"><span data-stu-id="76f39-108">.NET Core 2.x is supported on the following versions of macOS:</span></span>
+<span data-ttu-id="192af-108">.NET core 2.x je podporována v následujících verzích systému macOS:</span><span class="sxs-lookup"><span data-stu-id="192af-108">.NET Core 2.x is supported on the following versions of macOS:</span></span>
 
-* <span data-ttu-id="76f39-109">systému macOS 10.12 "Sierra" a novější verze</span><span class="sxs-lookup"><span data-stu-id="76f39-109">macOS 10.12 "Sierra" and later versions</span></span>
+* <span data-ttu-id="192af-109">systému macOS 10.12 "Sierra" a novější verze</span><span class="sxs-lookup"><span data-stu-id="192af-109">macOS 10.12 "Sierra" and later versions</span></span>
 
-<span data-ttu-id="76f39-110">V tématu [2.x .NET Core, podporované verze operačního systému](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md) pro úplný seznam .NET Core 2.x podporované operační systémy, mimo verze podporu operačního systému a odkazy na zásady životního cyklu.</span><span class="sxs-lookup"><span data-stu-id="76f39-110">See [.NET Core 2.x Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md) for the complete list of .NET Core 2.x supported operating systems, out of support OS versions, and lifecycle policy links.</span></span>
+<span data-ttu-id="192af-110">V tématu [2.x .NET Core, podporované verze operačního systému](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md) pro úplný seznam .NET Core 2.x podporované operační systémy, mimo verze podporu operačního systému a odkazy na zásady životního cyklu.</span><span class="sxs-lookup"><span data-stu-id="192af-110">See [.NET Core 2.x Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md) for the complete list of .NET Core 2.x supported operating systems, out of support OS versions, and lifecycle policy links.</span></span>
 
-# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="76f39-111">.NET pro základní 1.x</span><span class="sxs-lookup"><span data-stu-id="76f39-111">.NET Core 1.x</span></span>](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="192af-111">.NET pro základní 1.x</span><span class="sxs-lookup"><span data-stu-id="192af-111">.NET Core 1.x</span></span>](#tab/netcore1x)
 
-<span data-ttu-id="76f39-112">.NET core 1.x je podporována v následujících verzích systému macOS:</span><span class="sxs-lookup"><span data-stu-id="76f39-112">.NET Core 1.x is supported on the following versions of macOS:</span></span>
+<span data-ttu-id="192af-112">.NET core 1.x je podporována v následujících verzích systému macOS:</span><span class="sxs-lookup"><span data-stu-id="192af-112">.NET Core 1.x is supported on the following versions of macOS:</span></span>
 
-* <span data-ttu-id="76f39-113">systému macOS 10.12 "Sierra"</span><span class="sxs-lookup"><span data-stu-id="76f39-113">macOS 10.12 "Sierra"</span></span>
-* <span data-ttu-id="76f39-114">systému macOS 10.11 "El Capitan"</span><span class="sxs-lookup"><span data-stu-id="76f39-114">macOS 10.11 "El Capitan"</span></span>
+* <span data-ttu-id="192af-113">systému macOS 10.12 "Sierra"</span><span class="sxs-lookup"><span data-stu-id="192af-113">macOS 10.12 "Sierra"</span></span>
+* <span data-ttu-id="192af-114">systému macOS 10.11 "El Capitan"</span><span class="sxs-lookup"><span data-stu-id="192af-114">macOS 10.11 "El Capitan"</span></span>
 
-<span data-ttu-id="76f39-115">V tématu [podporované verze operačního systému aplikace .NET Core 1.x](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md) pro úplný seznam .NET Core 1.x podporované operační systémy, mimo verze podporu operačního systému a odkazy na zásady životního cyklu.</span><span class="sxs-lookup"><span data-stu-id="76f39-115">See [.NET Core 1.x Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md) for the complete list of .NET Core 1.x supported operating systems, out of support OS versions, and lifecycle policy links.</span></span>
+<span data-ttu-id="192af-115">V tématu [podporované verze operačního systému aplikace .NET Core 1.x](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md) pro úplný seznam .NET Core 1.x podporované operační systémy, mimo verze podporu operačního systému a odkazy na zásady životního cyklu.</span><span class="sxs-lookup"><span data-stu-id="192af-115">See [.NET Core 1.x Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md) for the complete list of .NET Core 1.x supported operating systems, out of support OS versions, and lifecycle policy links.</span></span>
 
 ---
 
-## <a name="net-core-dependencies"></a><span data-ttu-id="76f39-116">.NET core závislosti</span><span class="sxs-lookup"><span data-stu-id="76f39-116">.NET Core dependencies</span></span>
+## <a name="net-core-dependencies"></a><span data-ttu-id="192af-116">.NET core závislosti</span><span class="sxs-lookup"><span data-stu-id="192af-116">.NET Core dependencies</span></span>
 
-# <a name="net-core-2xtabnetcore2x"></a>[<span data-ttu-id="76f39-117">.NET pro základní 2.x</span><span class="sxs-lookup"><span data-stu-id="76f39-117">.NET Core 2.x</span></span>](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[<span data-ttu-id="192af-117">.NET pro základní 2.x</span><span class="sxs-lookup"><span data-stu-id="192af-117">.NET Core 2.x</span></span>](#tab/netcore2x)
 
-<span data-ttu-id="76f39-118">Stáhněte a nainstalujte rozhraní .NET Core SDK z [.NET stáhne](https://www.microsoft.com/net/download/core).</span><span class="sxs-lookup"><span data-stu-id="76f39-118">Download and install the .NET Core SDK from [.NET Downloads](https://www.microsoft.com/net/download/core).</span></span> <span data-ttu-id="76f39-119">Pokud máte problémy s instalací v systému macOS, projděte si [známé problémy](https://github.com/dotnet/core/tree/master/release-notes/2.0) téma pro nainstalovanou verzi.</span><span class="sxs-lookup"><span data-stu-id="76f39-119">If you have problems with the installation on macOS, consult the [Known issues](https://github.com/dotnet/core/tree/master/release-notes/2.0) topic for the version you have installed.</span></span>
+<span data-ttu-id="192af-118">Stáhněte a nainstalujte rozhraní .NET Core SDK z [.NET stáhne](https://www.microsoft.com/net/download/core).</span><span class="sxs-lookup"><span data-stu-id="192af-118">Download and install the .NET Core SDK from [.NET Downloads](https://www.microsoft.com/net/download/core).</span></span> <span data-ttu-id="192af-119">Pokud máte problémy s instalací v systému macOS, projděte si [známé problémy](https://github.com/dotnet/core/tree/master/release-notes/2.0) téma pro nainstalovanou verzi.</span><span class="sxs-lookup"><span data-stu-id="192af-119">If you have problems with the installation on macOS, consult the [Known issues](https://github.com/dotnet/core/tree/master/release-notes/2.0) topic for the version you have installed.</span></span>
 
-# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="76f39-120">.NET pro základní 1.x</span><span class="sxs-lookup"><span data-stu-id="76f39-120">.NET Core 1.x</span></span>](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="192af-120">.NET pro základní 1.x</span><span class="sxs-lookup"><span data-stu-id="192af-120">.NET Core 1.x</span></span>](#tab/netcore1x)
 
-<span data-ttu-id="76f39-121">**.NET pro základní 1.x**</span><span class="sxs-lookup"><span data-stu-id="76f39-121">**.NET Core 1.x**</span></span>
+<span data-ttu-id="192af-121">**.NET pro základní 1.x**</span><span class="sxs-lookup"><span data-stu-id="192af-121">**.NET Core 1.x**</span></span>
 
-<span data-ttu-id="76f39-122">.NET core 1.x vyžaduje OpenSSL spuštěnou v systému macOS.</span><span class="sxs-lookup"><span data-stu-id="76f39-122">.NET Core 1.x requires OpenSSL when running on macOS.</span></span> <span data-ttu-id="76f39-123">Snadný způsob, jak získat OpenSSL je pomocí [Homebrew ("brew")](https://brew.sh/) Správce balíčků pro systému macOS.</span><span class="sxs-lookup"><span data-stu-id="76f39-123">An easy way to obtain OpenSSL is by using the [Homebrew ("brew")](https://brew.sh/) package manager for macOS.</span></span> <span data-ttu-id="76f39-124">Po instalaci *brew*, nainstalovat OpenSSL spuštěním následujících příkazů příkazového řádku Terminálové (příkaz):</span><span class="sxs-lookup"><span data-stu-id="76f39-124">After installing *brew*, install OpenSSL by executing the following commands at a Terminal (command) prompt:</span></span>
+<span data-ttu-id="192af-122">.NET core 1.x vyžaduje OpenSSL spuštěnou v systému macOS.</span><span class="sxs-lookup"><span data-stu-id="192af-122">.NET Core 1.x requires OpenSSL when running on macOS.</span></span> <span data-ttu-id="192af-123">Snadný způsob, jak získat OpenSSL je pomocí [Homebrew ("brew")](https://brew.sh/) Správce balíčků pro systému macOS.</span><span class="sxs-lookup"><span data-stu-id="192af-123">An easy way to obtain OpenSSL is by using the [Homebrew ("brew")](https://brew.sh/) package manager for macOS.</span></span> <span data-ttu-id="192af-124">Po instalaci *brew*, nainstalovat OpenSSL spuštěním následujících příkazů příkazového řádku Terminálové (příkaz):</span><span class="sxs-lookup"><span data-stu-id="192af-124">After installing *brew*, install OpenSSL by executing the following commands at a Terminal (command) prompt:</span></span>
 
 ```console
 brew update
@@ -56,17 +56,17 @@ ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
 ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 ```
 
-<span data-ttu-id="76f39-125">Stáhněte a nainstalujte rozhraní .NET Core SDK z [.NET stáhne](https://www.microsoft.com/net/download/core).</span><span class="sxs-lookup"><span data-stu-id="76f39-125">Download and install the .NET Core SDK from [.NET Downloads](https://www.microsoft.com/net/download/core).</span></span> <span data-ttu-id="76f39-126">Pokud máte problémy s instalací v systému macOS, projděte si [1.0.0 známé problémy](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.0-known-issues.md) a [1.0.1 známé problémy](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.1-known-issues.md) témata.</span><span class="sxs-lookup"><span data-stu-id="76f39-126">If you have problems with the installation on macOS, consult the [1.0.0 Known Issues](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.0-known-issues.md) and [1.0.1 Known Issues](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.1-known-issues.md) topics.</span></span>
+<span data-ttu-id="192af-125">Stáhněte a nainstalujte rozhraní .NET Core SDK z [.NET stáhne](https://www.microsoft.com/net/download/core).</span><span class="sxs-lookup"><span data-stu-id="192af-125">Download and install the .NET Core SDK from [.NET Downloads](https://www.microsoft.com/net/download/core).</span></span> <span data-ttu-id="192af-126">Pokud máte problémy s instalací v systému macOS, projděte si [1.0.0 známé problémy](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.0-known-issues.md) a [1.0.1 známé problémy](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.1-known-issues.md) témata.</span><span class="sxs-lookup"><span data-stu-id="192af-126">If you have problems with the installation on macOS, consult the [1.0.0 Known Issues](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.0-known-issues.md) and [1.0.1 Known Issues](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.1-known-issues.md) topics.</span></span>
 
 ---
 
-## <a name="increase-the-maximum-open-file-limit-net-core-versions-before-net-core-sdk-202"></a><span data-ttu-id="76f39-127">Zvyšte limit maximální otevření souboru (verze .NET Core před .NET Core SDK bodu 2.0.2)</span><span class="sxs-lookup"><span data-stu-id="76f39-127">Increase the maximum open file limit (.NET Core versions before .NET Core SDK 2.0.2)</span></span> 
+## <a name="increase-the-maximum-open-file-limit-net-core-versions-before-net-core-sdk-202"></a><span data-ttu-id="192af-127">Zvyšte limit maximální otevření souboru (verze .NET Core před .NET Core SDK bodu 2.0.2)</span><span class="sxs-lookup"><span data-stu-id="192af-127">Increase the maximum open file limit (.NET Core versions before .NET Core SDK 2.0.2)</span></span> 
 
-<span data-ttu-id="76f39-128">Ve starší verzi .NET Core (před .NET Core SDK bodu 2.0.2) nemusí být výchozí limit pro otevření souboru v systému macOS dostatečná pro některé úlohy .NET Core, jako je například obnovení projekty nebo spouštění testů jednotek.</span><span class="sxs-lookup"><span data-stu-id="76f39-128">In older .NET Core versions (before .NET Core SDK 2.0.2), the default open file limit on macOS may not be sufficient for some .NET Core workloads, such as restoring projects or running unit tests.</span></span>
+<span data-ttu-id="192af-128">Ve starší verzi .NET Core (před .NET Core SDK bodu 2.0.2) nemusí být výchozí limit pro otevření souboru v systému macOS dostatečná pro některé úlohy .NET Core, jako je například obnovení projekty nebo spouštění testů jednotek.</span><span class="sxs-lookup"><span data-stu-id="192af-128">In older .NET Core versions (before .NET Core SDK 2.0.2), the default open file limit on macOS may not be sufficient for some .NET Core workloads, such as restoring projects or running unit tests.</span></span>
 
-<span data-ttu-id="76f39-129">Toto omezení můžete zvýšit pomocí následujících kroků:</span><span class="sxs-lookup"><span data-stu-id="76f39-129">You can increase this limit by following these steps:</span></span>
+<span data-ttu-id="192af-129">Toto omezení můžete zvýšit pomocí následujících kroků:</span><span class="sxs-lookup"><span data-stu-id="192af-129">You can increase this limit by following these steps:</span></span>
 
-1. <span data-ttu-id="76f39-130">Pomocí textového editoru, vytvořte nový soubor _/Library/LaunchDaemons/limit.maxfiles.plist_a uložte soubor tohoto obsahu:</span><span class="sxs-lookup"><span data-stu-id="76f39-130">Using a text editor, create a new file _/Library/LaunchDaemons/limit.maxfiles.plist_, and save the file with this content:</span></span>
+1. <span data-ttu-id="192af-130">Pomocí textového editoru, vytvořte nový soubor _/Library/LaunchDaemons/limit.maxfiles.plist_a uložte soubor tohoto obsahu:</span><span class="sxs-lookup"><span data-stu-id="192af-130">Using a text editor, create a new file _/Library/LaunchDaemons/limit.maxfiles.plist_, and save the file with this content:</span></span>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -92,21 +92,21 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 </plist>
 ```
 
-2. <span data-ttu-id="76f39-131">V okně terminálu spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="76f39-131">In a terminal window, run the following command:</span></span>
+2. <span data-ttu-id="192af-131">V okně terminálu spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="192af-131">In a terminal window, run the following command:</span></span>
 
 ```console
 echo 'ulimit -n 2048' | sudo tee -a /etc/profile
 ```
 
-3. <span data-ttu-id="76f39-132">Restartování počítače Mac, chcete-li použít tato nastavení.</span><span class="sxs-lookup"><span data-stu-id="76f39-132">Reboot your Mac to apply these settings.</span></span>
+3. <span data-ttu-id="192af-132">Restartování počítače Mac, chcete-li použít tato nastavení.</span><span class="sxs-lookup"><span data-stu-id="192af-132">Reboot your Mac to apply these settings.</span></span>
 
-## <a name="visual-studio-for-mac"></a><span data-ttu-id="76f39-133">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="76f39-133">Visual Studio for Mac</span></span>
+## <a name="visual-studio-for-mac"></a><span data-ttu-id="192af-133">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="192af-133">Visual Studio for Mac</span></span>
 
-<span data-ttu-id="76f39-134">K vývoji aplikací .NET Core pomocí sady .NET Core SDK můžete použít všechny editor.</span><span class="sxs-lookup"><span data-stu-id="76f39-134">You can use any editor to develop .NET Core applications using the .NET Core SDK.</span></span> <span data-ttu-id="76f39-135">Ale pokud chcete k vývoji aplikací .NET Core v systému Mac v integrovaném vývojovém prostředí, můžete použít [Visual Studio pro Mac](https://www.visualstudio.com/vs/visual-studio-mac/).</span><span class="sxs-lookup"><span data-stu-id="76f39-135">However, if you want to develop .NET Core applications on a Mac in an integrated development environment, you can use [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/).</span></span> 
+<span data-ttu-id="192af-134">K vývoji aplikací .NET Core pomocí sady .NET Core SDK můžete použít všechny editor.</span><span class="sxs-lookup"><span data-stu-id="192af-134">You can use any editor to develop .NET Core applications using the .NET Core SDK.</span></span> <span data-ttu-id="192af-135">Ale pokud chcete k vývoji aplikací .NET Core v systému Mac v integrovaném vývojovém prostředí, můžete použít [Visual Studio pro Mac](https://visualstudio.microsoft.com/vs/visual-studio-mac/).</span><span class="sxs-lookup"><span data-stu-id="192af-135">However, if you want to develop .NET Core applications on a Mac in an integrated development environment, you can use [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/visual-studio-mac/).</span></span> 
 
-<span data-ttu-id="76f39-136">.NET core vývoj v systému macOS pomocí sady Visual Studio pro Mac vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="76f39-136">.NET Core development on macOS with Visual Studio for Mac requires:</span></span>
+<span data-ttu-id="192af-136">.NET core vývoj v systému macOS pomocí sady Visual Studio pro Mac vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="192af-136">.NET Core development on macOS with Visual Studio for Mac requires:</span></span>
 
-* <span data-ttu-id="76f39-137">Podporované verze operačního systému macOS</span><span class="sxs-lookup"><span data-stu-id="76f39-137">A supported version of the macOS operating system</span></span>
-* <span data-ttu-id="76f39-138">OpenSSL (.NET Core 1.x pouze; .NET Core 2.x používá zabezpečení služeb dostupných v systému macOS nativně)</span><span class="sxs-lookup"><span data-stu-id="76f39-138">OpenSSL (.NET Core 1.x only; .NET Core 2.x uses security services available natively in macOS)</span></span>
-* <span data-ttu-id="76f39-139">.NET core SDK pro systém Mac</span><span class="sxs-lookup"><span data-stu-id="76f39-139">.NET Core SDK for Mac</span></span>
-* [<span data-ttu-id="76f39-140">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="76f39-140">Visual Studio for Mac</span></span>](https://www.visualstudio.com/vs/visual-studio-mac/)
+* <span data-ttu-id="192af-137">Podporované verze operačního systému macOS</span><span class="sxs-lookup"><span data-stu-id="192af-137">A supported version of the macOS operating system</span></span>
+* <span data-ttu-id="192af-138">OpenSSL (.NET Core 1.x pouze; .NET Core 2.x používá zabezpečení služeb dostupných v systému macOS nativně)</span><span class="sxs-lookup"><span data-stu-id="192af-138">OpenSSL (.NET Core 1.x only; .NET Core 2.x uses security services available natively in macOS)</span></span>
+* <span data-ttu-id="192af-139">.NET core SDK pro systém Mac</span><span class="sxs-lookup"><span data-stu-id="192af-139">.NET Core SDK for Mac</span></span>
+* [<span data-ttu-id="192af-140">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="192af-140">Visual Studio for Mac</span></span>](https://visualstudio.microsoft.com/vs/visual-studio-mac/)
