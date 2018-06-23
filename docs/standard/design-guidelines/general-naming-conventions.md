@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: d3a77ea1-75d2-4969-a8c3-3e1e3e1aaedc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bc54b8bdc96a5038dc75111d9833e70e7ffd2e9e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 207227b3e5c52b7c6e0f704543379874f3708c03
+ms.sourcegitcommit: ceca5a1c027627abcca2767567703c3879f33325
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578037"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36338101"
 ---
 # <a name="general-naming-conventions"></a>Obecné zásady vytváření názvů
 Tato část popisuje obecné zásady vytváření názvů vztahující se k výběru word pokyny k používání zkratky a zkratky a doporučení na tom, jak zamezit pomocí názvů konkrétní jazyk.  
@@ -74,7 +74,7 @@ Tato část popisuje obecné zásady vytváření názvů vztahující se k výb
 |**bool**|**Logická hodnota**|**bool**|**Logická hodnota**|  
 |**char**|**Char**|**wchar_t**|**Char**|  
 |**string**|**Řetězec**|**Řetězec**|**Řetězec**|  
-|**object**|**Objekt**|**Objekt**|**Objekt**|  
+|**object**|**objekt**|**objekt**|**objekt**|  
   
  **PROVEĎTE ✓** použít běžný název, například `value` nebo `item`, místo opakování název typu ve výjimečných případech, pokud identifikátor nemá žádný význam sémantického a typ parametru není důležité.  
   
@@ -85,7 +85,7 @@ Tato část popisuje obecné zásady vytváření názvů vztahující se k výb
   
  **PROVEĎTE ✓** přednost přidání příponu místo předpony označující novou verzi existujícího rozhraní API.  
   
- To vám pomůže zjišťování při procházení dokumentace, nebo pomocí Intellisense. Stará verze rozhraní API se uspořádají blízko nových rozhraní API, protože většina prohlížečů a Intellisense zobrazí identifikátory v abecedním pořadí.  
+ To vám pomůže zjišťování při procházení dokumentace, nebo pomocí IntelliSense. Stará verze rozhraní API se uspořádají blízko nových rozhraní API, protože většina prohlížečů a IntelliSense zobrazí identifikátory v abecedním pořadí.  
   
  **✓ ZVAŽTE** pomocí identifikátor úplně nový, ale smysluplný místo přidávání příponu nebo předponu.  
   
