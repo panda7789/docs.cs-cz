@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: c31e1663-c164-4e65-b66d-d3aa8750a154
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c9a679a69b5a4cc7076fd2f31a0870d48ef47dd8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6625103da5b9e235b214a41d990d7accb2646e57
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579662"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314936"
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>Vývoj napříč platformami pomocí přenosné knihovny tříd
 Přenosná knihovna tříd rozhraní .NET Framework typ projektu v sadě Visual Studio vám usnadní vytváření aplikací pro různé platformy a knihovny pro platformy Microsoft snadno a rychle.  
@@ -51,8 +51,8 @@ Přenosná knihovna tříd rozhraní .NET Framework typ projektu v sadě Visual 
 |Verze Visual Studio Express 2010.|Ne.|  
 |Visual Studio 2012 Professional, Premium nebo Ultimate|Ano. Kvůli podpoře zařízení Windows Phone 8.0, nainstalujte [Windows Phone SDK 8.0](https://www.microsoft.com/download/details.aspx?id=35471).|  
 |Visual Studio Express 2012 verze|Ne.|  
-|Visual Studio 2013 Professional, Premium nebo Ultimate|Ano. Pro podporu Windows Phone 8.1, nainstalujte [nejnovější verzi sady Visual Studio 2013](https://www.visualstudio.com/vs/older-downloads/).|  
-|Visual Studio Community 2013 pro Windows|Ano, když instalujete [nejnovější verzi Visual Studio Community 2013](https://www.visualstudio.com/vs/older-downloads/), což zahrnuje Update 2.|  
+|Visual Studio 2013 Professional, Premium nebo Ultimate|Ano. Pro podporu Windows Phone 8.1, nainstalujte [nejnovější verzi sady Visual Studio 2013](https://visualstudio.microsoft.com/vs/older-downloads/).|  
+|Visual Studio Community 2013 pro Windows|Ano, když instalujete [nejnovější verzi Visual Studio Community 2013](https://visualstudio.microsoft.com/vs/older-downloads/), což zahrnuje Update 2.|  
   
 <a name="create_pcl"></a>   
 ## <a name="creating-a-portable-class-library-project"></a>Vytvoření projektu knihovny přenosných tříd  

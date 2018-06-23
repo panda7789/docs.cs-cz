@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7ceb4d79bb88e41e62f3ee136b6beb3324b3dbd7
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 876bf9bf952aa9591a9ccbe51baaca9c5c71388e
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33809713"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314773"
 ---
 # <a name="walkthrough-my-first-wpf-desktop-application"></a>Návod: Můj první grafický subsystém WPF aplikace pracovní plochy
 
@@ -308,7 +308,7 @@ V této části aktualizujete uživatelském rozhraní domovské stránky s bito
 
     [!code-xaml[ExpenseIt#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt5/ExpenseItHome.xaml#12)]
 
-6. Nastavte <xref:System.Windows.Controls.Panel.Background%2A> z <xref:System.Windows.Controls.Grid> jako *watermark.png* soubor obrázku, přidáním následující XAML někde mezi `<Grid>` a `<\/Grid>` značky:
+6. Nastavte <xref:System.Windows.Controls.Panel.Background%2A> z <xref:System.Windows.Controls.Grid> jako *watermark.png* soubor obrázku, přidáním následující XAML někde mezi `<Grid>` a `</Grid>` značky:
 
     [!code-xaml[ExpenseIt#14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt5/ExpenseItHome.xaml#14)]
 
@@ -504,7 +504,7 @@ Další informace o vytváření aplikací najdete v následujících tématech:
 - [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
 - [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md)
 - [Ukázka dat – přehled](../../../../docs/framework/wpf/data/data-templating-overview.md)

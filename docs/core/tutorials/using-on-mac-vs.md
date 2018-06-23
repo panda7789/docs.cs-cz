@@ -4,12 +4,12 @@ description: Toto téma vás provede procesem vytvoření jednoduché konzolové
 author: guardrex
 ms.author: mairaw
 ms.date: 06/12/2017
-ms.openlocfilehash: 82cd7c09dd595a8273eb88a4caaf34782fa10ac4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dd8262a7d2fa03ab06f9f85e91c298f52e3c0849
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33214540"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36315144"
 ---
 # <a name="getting-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
@@ -28,7 +28,7 @@ Najdete v článku [požadavky pro .NET Core v systému Mac](../../core/macos-pr
 
 Pokud jste již nainstalovali požadované součásti a Visual Studio pro Mac, tuto část přeskočte a přejděte k [vytvoření projektu](#creating-a-project). Postupujte podle těchto kroků nainstalujte požadované součásti a Visual Studio pro Mac:
 
-Stažení [Visual Studio pro Mac – instalační program](https://www.visualstudio.com/vs/visual-studio-mac/). Spusťte instalační program. Přečtěte si a přijměte licenční smlouvu. Během instalace že poskytuje možnost nainstalovat Xamarin, technologie vývoj pro různé platformy mobilních aplikací. Instalace Xamarin a jeho souvisejících součástí je volitelné pro vývoj .NET Core. Návod sady Visual Studio pro Mac procesu instalace, najdete v části [představení Visual Studio pro Mac](https://developer.xamarin.com/guides/cross-platform/visual-studio-mac/). Po dokončení instalace spusťte Visual Studio pro Mac IDE.
+Stažení [Visual Studio pro Mac – instalační program](https://visualstudio.microsoft.com/vs/visual-studio-mac/). Spusťte instalační program. Přečtěte si a přijměte licenční smlouvu. Během instalace že poskytuje možnost nainstalovat Xamarin, technologie vývoj pro různé platformy mobilních aplikací. Instalace Xamarin a jeho souvisejících součástí je volitelné pro vývoj .NET Core. Návod sady Visual Studio pro Mac procesu instalace, najdete v části [představení Visual Studio pro Mac](https://developer.xamarin.com/guides/cross-platform/visual-studio-mac/). Po dokončení instalace spusťte Visual Studio pro Mac IDE.
 
 ## <a name="creating-a-project"></a>Vytvoření projektu
 

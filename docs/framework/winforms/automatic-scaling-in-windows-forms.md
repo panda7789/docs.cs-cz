@@ -5,12 +5,12 @@ helpviewer_keywords:
 - scalability [Windows Forms], automatic in Windows Forms
 - Windows Forms, automatic scaling
 ms.assetid: 68fad25b-afbc-44bd-8e1b-966fc43507a4
-ms.openlocfilehash: e27c56d9a6d745c7d1ff83986e7996aa1bebc879
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0018b9f8644ec7d222a416bb5f71a7c61671009e
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529880"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314760"
 ---
 # <a name="automatic-scaling-in-windows-forms"></a>Automatická změna měřítka ve Windows Forms
 Automatické škálování umožňuje formulář a jeho ovládacích prvků, navržená tak, na jeden počítač se určité zobrazení řešení nebo systém písmo, správně zobrazený na jiný počítač s jiným zobrazením řešení nebo systém písmo. Zaručuje, formulář a jeho ovládacích prvků bude inteligentně velikosti být v souladu s nativní windows a další aplikace na počítače uživatelů i ostatní vývojáři. Podporu [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] pro automatické škálování a vizuální styly umožňuje [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] aplikace udržovat konzistentní vzhled a chování ve srovnání s nativní aplikace systému Windows na počítači každého uživatele.
@@ -42,14 +42,6 @@ Během tento mechanismus je dostatečné pro většinu účelů, která vznikla 
 - Automatické škálování byl implementován pouze <xref:System.Windows.Forms.Form> třídy, ne v <xref:System.Windows.Forms.ContainerControl> třídy. Uživatelské ovládací prvky v důsledku toho by škálovat správně jenom v případě, že uživatelský ovládací prvek byl vytvořen ve stejném rozlišení jako formulář a byla umístěny do formuláře v době návrhu.
 
 - Formulářů a jejich podřízené ovládací prvky může být současně určen pouze několik vývojáři pokud jejich počítač řešení byly stejné. Podobně se rovněž dědičnosti formuláře závislé na rozlišení přidružené nadřazeného formuláře.
-
-> [!NOTE]
-> S extrémně rozdíly v zobrazení DPIs, zejména v moderní zařízení 2V-1 můžete přesto k tomu s nejnovější verzí rozhraní .NET Framework a Visual Studio. Tato adresa v týmu pomocí různých zobrazí DPI, ujistěte se, že Visual Studio vždy spustí v režimu bez DPI s deklaracemi, tak Návrhář formulářů Windows vždy základny výpočtu rozložení na 96 DPI. Za tímto účelem jednoduše nastavte následující klíč registru zakážete sledování HighDPI Visual Studio:
->
-> ```
-> [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\devenv.exe]
-> "dpiAwareness"=dword:00000000
-> ```
 
 - Není kompatibilní s novější rozložení manažery zavedené [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] verze 2.0, jako například <xref:System.Windows.Forms.FlowLayoutPanel> a <xref:System.Windows.Forms.TableLayoutPanel>.
 
@@ -101,7 +93,7 @@ Windows Forms teď používá následující logice automaticky škálovat formu
 
     - <xref:System.Windows.Forms.Control.ScaleControl%2A> Metoda může být potlačena za účelem změnit škálování logiku pro aktuální ovládací prvek.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
  <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A>  
  <xref:System.Windows.Forms.Control.Scale%2A>  
  <xref:System.Windows.Forms.ContainerControl.PerformAutoScale%2A>  

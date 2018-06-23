@@ -5,12 +5,12 @@ author: mlacouture
 ms.author: johalex
 ms.date: 01/19/2018
 ms.custom: mvc
-ms.openlocfilehash: a842224a76962a9d6db820149a75f1255204e9b7
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: 5f744fd63116ac453a2a7db8eb94f12738c95f21
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34728560"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36315196"
 ---
 # <a name="net-core-additional-tools"></a>Další nástroje .NET core
 
@@ -18,7 +18,7 @@ Tato část zkompiluje o seznam nástrojů, které podporují a rozšířit funk
 
 ## <a name="wcf-web-service-reference-toolwcf-web-service-reference-guidemd"></a>[Odkaz na službu WCF webové nástroje](wcf-web-service-reference-guide.md)
 
-Odkaz webové služby WCF (Windows Communication Foundation) je poskytovatel připojené služby Visual Studio, který provedené v jeho debut [Visual Studio 2017 verze 15,5](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes#WCFTools). Tento nástroj získává metadata z webové služby v aktuálním řešení v umístění v síti, nebo ze souboru WSDL a generuje zdrojový soubor, který je kompatibilní s .NET Core, definování třídu proxy WCF pomocí metody, které můžete použít pro přístup k operace webové služby.
+Odkaz webové služby WCF (Windows Communication Foundation) je poskytovatel připojené služby Visual Studio, který provedené v jeho debut [Visual Studio 2017 verze 15,5](https://visualstudio.microsoft.com/news/releasenotes/vs2017-relnotes#WCFTools). Tento nástroj získává metadata z webové služby v aktuálním řešení v umístění v síti, nebo ze souboru WSDL a generuje zdrojový soubor, který je kompatibilní s .NET Core, definování třídu proxy WCF pomocí metody, které můžete použít pro přístup k operace webové služby.
 
 ## <a name="wcf-dotnet-svcutil-tooldotnet-svcutil-guidemd"></a>[Nástroj dotnet svcutil WCF](dotnet-svcutil-guide.md)
 

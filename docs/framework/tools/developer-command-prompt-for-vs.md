@@ -12,19 +12,19 @@ helpviewer_keywords:
 ms.assetid: 94fcf524-9045-4993-bfb2-e2d8bad44219
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7e91822f172de8700b04847541c4b80010a22b53
-ms.sourcegitcommit: 3d42e1d73e21c35c540dd4adbea23efcbe1b8b0a
+ms.openlocfilehash: 8e64facffd4face929b28d660ffd5210f127c3bd
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36270484"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36315222"
 ---
 # <a name="developer-command-prompt-for-visual-studio"></a>Příkazový řádek vývojáře pro sadu Visual Studio
 
 Příkazový řádek vývojáře pro sadu Visual Studio automaticky nastaví proměnné prostředí, které vám umožní snadno používat nástroje rozhraní .NET Framework. Do příkazového řádku vývojáře se instaluje s plná nebo komunity edice sady Visual Studio. Není nainstalovaná verze Express sady Visual Studio.
 
 > [!div class="button"]
-[Stáhněte si Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
+[Stáhněte si Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 
 ## <a name="searching-for-the-command-prompt-on-your-machine"></a>Hledání příkazového řádku na počítači
 

@@ -4,11 +4,12 @@ description: Kontejnerizované Docker životního cyklu aplikací s Microsoft pl
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 05db5cf8e8dc073dd341fbffab619c326b48f136
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 62da6a3ff595422e42450cb1341976424acc5a52
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314708"
 ---
 # <a name="using-visual-studio-tools-for-docker-visual-studio-on-windows"></a>Pomocí nástrojů Visual Studio pro Docker (Visual Studio v systému Windows)
 
@@ -22,7 +23,7 @@ Nejnovější verze Docker pro systém Windows je jednodušší než někdy k v�
 
 Pokud používáte Visual Studio 2015, musíte mít Update 3 nebo novější verze a sady Visual Studio Tools for Docker.
 
-**Další informace:** pokyny k instalaci sady Visual Studio, přejděte na [ https://www.visualstudio.com/\ produkty/vs-2015produktu edice](https://www.visualstudio.com/products/vs-2015-product-editions).
+**Další informace:** pokyny k instalaci sady Visual Studio, přejděte na [ https://visualstudio.microsoft.com/\ produkty/vs-2015produktu edice](https://visualstudio.microsoft.com/products/vs-2015-product-editions).
 
 Chcete-li zobrazit další informace o instalaci Visual Studio Tools for Docker, přejděte na <http://aka.ms/vstoolsfordocker> a <https://docs.microsoft.com/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker>.
 

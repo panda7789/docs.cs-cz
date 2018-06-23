@@ -18,11 +18,12 @@ helpviewer_keywords:
 ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7887c1142b721249526a318257149e419affd967
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 89989b4b7730f4e252dc846377b385cb359dbee1
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36315118"
 ---
 # <a name="common-language-runtime-clr-overview"></a>Přehled Common Language Runtime (CLR)
 
@@ -31,7 +32,7 @@ Rozhraní .NET Framework poskytuje běhové prostředí volá modul common langu
 Kompilátory a nástroje vystavit funkcionalitu modul common language runtime a umožňují napsat kód této výhody z této spravovaného prostředí pro spouštění. Kód, který vyvíjíte pomocí kompilátor jazyka, který se zaměřuje modulu runtime nazývá spravovaný kód. jeho výhody z funkcí, jako je integrace mezi jazyky, mezi jazyky výjimek, lepší zabezpečení, správy verzí a nasazení podporují, jednoduchý model pro interakce komponenty a ladění a profilování služby.
 
 > [!NOTE]
-> Kompilátory a nástroje, se můžou k vytvoření výstupu, který modul common language runtime můžete využívat, protože systém typů formátu metadat a prostředí runtime (systém virtuální provádění) jsou všechny definované veřejný standard společné jazykové ECMA Specifikace infrastruktury. Další informace najdete v tématu [ECMA C# a společné jazykové infrastruktury specifikace](https://www.visualstudio.com/license-terms/ecma-c-common-language-infrastructure-standards/).
+> Kompilátory a nástroje, se můžou k vytvoření výstupu, který modul common language runtime můžete využívat, protože systém typů formátu metadat a prostředí runtime (systém virtuální provádění) jsou všechny definované veřejný standard společné jazykové ECMA Specifikace infrastruktury. Další informace najdete v tématu [ECMA C# a společné jazykové infrastruktury specifikace](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/).
 
 Chcete-li povolit modul runtime k poskytování služeb do spravovaného kódu, musí kompilátory jazyka emitování metadata, která popisuje typy, členů a odkazy v kódu. Metadata se ukládají s kódem; Každý načíst běžné language runtime přenosné spustitelného souboru (PE) obsahuje metadata. Modul runtime používá metadata najít a načíst třídy, rozvrhněte instancí v paměti, vyřešit volání metod, generování nativního kódu, vynutit zabezpečení a nastavit kontext spuštění hranice.
 
@@ -43,7 +44,7 @@ Jako součást jejich metadat provádění všechny spravované součásti infor
 
 Kompilátory jazyka a nástroje vystavit funkcionalitu modulu runtime způsoby, které by měla být užitečné a intuitivní pro vývojáře. To znamená, že některé funkce modulu runtime může být více patrné v jednom prostředí než v jiném. Jak možnosti modulu runtime závisí na které kompilátory jazyka nebo nástroje pro použít. Například pokud jste vývojář jazyka Visual Basic, můžete si všimnout, že se modul common language runtime jazyka Visual Basic má další funkce, než před. Modul runtime poskytuje následující výhody:
 
-- Vylepšení výkonu.
+- Byl vylepšen výkon.
 
 - Umožňuje snadno použít součásti vyvinuté v dalších jazycích.
 
@@ -86,6 +87,6 @@ Kompilátory jazyka a nástroje vystavit funkcionalitu modulu runtime způsoby, 
 |[Přehled rozhraní .NET Framework](../framework/get-started/overview.md)|Popisuje klíčové koncepty rozhraní .NET Framework, např. obecný systém typů, vzájemná funkční spolupráce mezi jazyky, spravovaného spouštění, aplikační domény a sestavení.|
 |[Obecný systém typů](./base-types/common-type-system.md)|Popisuje, jak jsou typy deklarovat, používat a spravovat v modulu runtime podporu integrace mezi jazyky.|
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 [Verze a závislosti](../framework/migration-guide/versions-and-dependencies.md)

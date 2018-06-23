@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.openlocfilehash: 4e2585d7fdeb89e7267f2615113f819d71236dc7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 45917a9dbfbd6610c3cca9ab7dcf9f924c329c10
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33580169"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314923"
 ---
 # <a name="when-to-choose-net-core-for-docker-containers"></a>Kdy zvolte .NET Core Docker kontejnerů
 
@@ -25,9 +25,9 @@ Je zřejmé Pokud vaším cílem je, aby aplikace (webové aplikace nebo služby
 
 .NET core také podporuje systému macOS jako vývojové platformy. Ale když nasadíte kontejnery Docker hostitele, které jsou hostiteli musí (aktuálně) být založená na Linux nebo Windows. Například ve vývojovém prostředí, můžete použít virtuální počítač s Linuxem spuštěna v počítačích Mac.
 
-[Visual Studio](https://www.visualstudio.com/) poskytuje integrované vývojové prostředí (IDE) pro Windows která podporuje vývoj Docker. 
+[Visual Studio](https://visualstudio.microsoft.com/) poskytuje integrované vývojové prostředí (IDE) pro Windows která podporuje vývoj Docker. 
 
-[Visual Studio pro Mac](https://www.visualstudio.com/vs/visual-studio-mac/) IDE, vývoje Xamarin Studio, spuštěné v systému macOS a podporuje Docker od mid 2017.
+[Visual Studio pro Mac](https://visualstudio.microsoft.com/vs/visual-studio-mac/) IDE, vývoje Xamarin Studio, spuštěné v systému macOS a podporuje Docker od mid 2017.
 
 Můžete také použít [Visual Studio Code](https://code.visualstudio.com/) (VS Code) v systému macOS, Linux a Windows. VS Code plně podporuje .NET Core, včetně technologie IntelliSense a ladění. Protože VS Code je lightweight editor, můžete ho vyvíjet kontejnerizované aplikace v systému Mac ve spojení s rozhraní příkazového řádku Dockeru a [nástrojů rozhraní příkazového řádku (CLI) .NET Core](../../../core/tools/index.md). S editory většina jiných výrobců jako Sublime Text, Emacs, vi a open-source OmniSharp projekt, který poskytuje podporu technologie IntelliSense pro jazyky rozhraní .NET, můžete také vybrat .NET Core. Kromě integrovaného vývojového prostředí a editory můžete použít rozhraní příkazového řádku .NET Core pro všechny podporované platformy.
 

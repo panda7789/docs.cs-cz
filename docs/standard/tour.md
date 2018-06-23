@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: b1925397fb7cad5e55f992feaa5be2e2d837aac8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: de5ff06e660d3c4e976c10043a7ebc72d102cff5
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592259"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314640"
 ---
 # <a name="tour-of-net"></a>Přehled používání rozhraní .NET
 
@@ -25,7 +25,7 @@ Zjistěte, jak nastavit vývojové prostředí pro spouštění ukázky kódu, n
 
 ## <a name="programming-languages"></a>Programovací jazyky
 
-Rozhraní .NET podporuje více programovacích jazyků. Implementace rozhraní .NET implementovat [společné jazykové infrastruktury (CLI)](https://www.visualstudio.com/license-terms/ecma-c-common-language-infrastructure-standards/), která kromě jiných věcí určuje nezávislé na jazyku runtime a jazyk interoperability. To znamená, že zvolíte kterémkoli jazyce platformy .NET k vytváření aplikací a služeb na rozhraní .NET.
+Rozhraní .NET podporuje více programovacích jazyků. Implementace rozhraní .NET implementovat [společné jazykové infrastruktury (CLI)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/), která kromě jiných věcí určuje nezávislé na jazyku runtime a jazyk interoperability. To znamená, že zvolíte kterémkoli jazyce platformy .NET k vytváření aplikací a služeb na rozhraní .NET.
 
 Microsoft aktivně vyvíjí a podporuje tři jazyky rozhraní .NET: C#, F # a Visual Basic (VB). 
 

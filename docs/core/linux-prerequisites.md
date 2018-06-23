@@ -4,12 +4,12 @@ description: Podporované verze systému Linux a závislostí .NET Core k vývoj
 author: jralexander
 ms.author: johalex
 ms.date: 06/01/2018
-ms.openlocfilehash: 30448d84a8377e27b0606b3bdabdcbac96c048aa
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: 62493d45bd5839119fd98adb6db52d8d53ce4de5
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34728544"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314819"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Předpoklady pro .NET Core v systému Linux
 
@@ -197,7 +197,7 @@ Red Hat .NET kanál přístup registrace pomoc najdete v tématu [kapitoly 1 .NE
 **.NET core 2.1**
 
 >[!IMPORTANT]
-> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [instalaci Visual Studia 2017 15.7 Preview 1 nebo novější](https://www.visualstudio.com/vs/preview).
+> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [nainstalovat Visual Studio 2017 15.7 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017).
 
 |Moduly runtime nebo sady SDK                  |Ubuntu 18.04    |Ubuntu 17.10    |Ubuntu 16.04 / Linux máta 18|Ubuntu 14.04 / Linux máta 17|
 |---------------------------------|----------------|----------------|----------------------------|----------------------------|
@@ -253,7 +253,7 @@ Instalace .NET Core na podporované Debian verze (64bitová verze):
 **.NET core 2.1**
 
 >[!IMPORTANT]
-> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [instalaci Visual Studia 2017 15.7 Preview 1 nebo novější](https://www.visualstudio.com/vs/preview).
+> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [nainstalovat Visual Studio 2017 15.7 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017).
 
 |Moduly runtime nebo sady SDK                  |Debian 9       |Debian 8       |
 |---------------------------------|---------------|---------------|
@@ -306,7 +306,7 @@ Instalace .NET Core na podporované verze Fedora:
 **.NET core 2.1**
 
 >[!IMPORTANT]
-> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [instalaci Visual Studia 2017 15.7 Preview 1 nebo novější](https://www.visualstudio.com/vs/preview).
+> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [nainstalovat Visual Studio 2017 15.7 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017).
 
 |Moduly runtime nebo sady SDK                  |Fedora 27          |Fedora 26             |
 |---------------------------------|-------------------|----------------------|
@@ -363,7 +363,7 @@ Chcete-li nainstalovat rozhraní .NET základní pro podporované CentOS a Oracl
 **.NET core 2.1**
 
 >[!IMPORTANT]
-> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [instalaci Visual Studia 2017 15.7 Preview 1 nebo novější](https://www.visualstudio.com/vs/preview/).
+> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [nainstalovat Visual Studio 2017 15.7 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017).
 
 * .NET core Runtime 2.1.0 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/centos/runtime-2.1.0)
 * .NET core SDK 2.1.300 [odkaz instalace](https://www.microsoft.com/net/download/linux-package-manager/centos/sdk-2.1.300)
@@ -423,7 +423,7 @@ K instalaci .NET Core 2.x pro podporované SUSE Linux Enterprise Server a OpenSU
 **.NET core 2.1**
 
 >[!IMPORTANT]
-> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [instalaci Visual Studia 2017 15.7 Preview 1 nebo novější](https://www.visualstudio.com/vs/preview).
+> Chcete-li použít pomocí sady Visual Studio .NET Core 2.1, je potřeba [nainstalovat Visual Studio 2017 15.7 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017).
 
 **SUSE Linux Enterprise Server**
 

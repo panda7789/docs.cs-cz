@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1ecac9d30b390be886e9d81f11623070301f7d38
-ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
+ms.openlocfilehash: 07b19c062d314fe3280d9ebed818b484ff9d1b13
+ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34312024"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314747"
 ---
 # <a name="get-started-with-the-net-framework"></a>Začínáme s rozhraním .NET Framework
 
@@ -71,7 +71,7 @@ K vývoji aplikací rozhraní .NET Framework nebo součástí, postupujte takto:
 
 2. Vyberte jazyk nebo jazyků – podpora rozhraní .NET Framework, který chcete používat pro vývoj aplikací. Počet jazyků, které jsou k dispozici, včetně [jazyka Visual Basic](../../visual-basic/index.md), [C#](../../csharp/index.md), [F #](../../fsharp/index.md)a C + +/ CLI od společnosti Microsoft. (Programovací jazyk, který umožňuje vyvíjet aplikace pro rozhraní .NET Framework dodržuje [specifikace společné jazykové infrastruktury (CLI)](http://go.microsoft.com/fwlink/?LinkId=199862).)
 
-3. Vyberte a nainstalujte vývoj prostředí sloužící k vytvoření aplikace a že podporuje vybraný programovací jazyk nebo jazyky. Microsoft integrované vývojové prostředí (IDE) pro aplikace .NET Framework je [Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017). Je k dispozici v několika edicích.
+3. Vyberte a nainstalujte vývoj prostředí sloužící k vytvoření aplikace a že podporuje vybraný programovací jazyk nebo jazyky. Microsoft integrované vývojové prostředí (IDE) pro aplikace .NET Framework je [Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017). Je k dispozici v několika edicích.
 
 Další informace o vývoji aplikací, které cílí na rozhraní .NET Framework, najdete v článku [Průvodce vývojem](../../../docs/framework/development-guide.md).
 
@@ -87,7 +87,7 @@ Další informace o vývoji aplikací, které cílí na rozhraní .NET Framework
 | [Dokumentace k .NET core](https://docs.microsoft.com/dotnet/) | Poskytuje koncepční a referenční dokumentace rozhraní API pro .NET Core. |
 | [.NET Standard](~/docs/standard/net-standard.md) | Popisuje standardní .NET verzí specifikace, které podporují jednotlivé implementace rozhraní .NET zaručit, že jsou k dispozici na několika platformách konzistentní sada rozhraní API.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 [.NET framework – Průvodce](../../../docs/framework/index.md)   
 [Co je nového](../../../docs/framework/whats-new/index.md)   
