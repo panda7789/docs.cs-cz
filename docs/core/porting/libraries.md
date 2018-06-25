@@ -5,10 +5,11 @@ author: cartermp
 ms.author: mairaw
 ms.date: 07/14/2017
 ms.openlocfilehash: 88513eaee35a82d6424fc2218f8cbbe635a8e02c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: ceca5a1c027627abcca2767567703c3879f33325
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "33218355"
 ---
 # <a name="porting-to-net-core---libraries"></a>Portování do .NET Core - knihovny
 

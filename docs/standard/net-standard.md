@@ -7,10 +7,10 @@ ms.date: 05/18/2018
 ms.technology: dotnet-standard
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
 ms.openlocfilehash: 8f4490edfc06fcc3ec06daffdb0966ac9ee72e23
-ms.sourcegitcommit: 640cee8fc5d256cdd80e5b80240469feac10499e
+ms.sourcegitcommit: ceca5a1c027627abcca2767567703c3879f33325
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2018
+ms.lasthandoff: 06/25/2018
 ms.locfileid: "36298172"
 ---
 # <a name="net-standard"></a>Standardní rozhraní .NET

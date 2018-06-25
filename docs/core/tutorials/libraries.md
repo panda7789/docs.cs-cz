@@ -5,10 +5,10 @@ author: cartermp
 ms.author: mairaw
 ms.date: 05/01/2017
 ms.openlocfilehash: a6db7a15c484122600afd54814d19ea11bd1abc1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: ceca5a1c027627abcca2767567703c3879f33325
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/25/2018
 ms.locfileid: "33218144"
 ---
 # <a name="developing-libraries-with-cross-platform-tools"></a>Vývoj knihovny s křížové nástrojů platformy
