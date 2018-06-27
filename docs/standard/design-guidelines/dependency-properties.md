@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 212cfb1e-cec4-4047-94a6-47209b387f6f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 039015f895a491d8709815d6aff52eb6139d779f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7398202cc265fbd55b9bf0b5a53367dedcab57b0
+ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576113"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36948482"
 ---
 # <a name="dependency-properties"></a>Vlastnosti závislosti
 Vlastnost závislosti (DP) je regulární vlastnost, která ukládá v úložišti vlastnost místo ukládání typ proměnné (pole), například jeho hodnotu.  
@@ -43,7 +43,7 @@ Vlastnost závislosti (DP) je regulární vlastnost, která ukládá v úložiš
   
  Je classic třeba přidružená vlastnost <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType> vlastnost. Vlastnost představuje pozici sloupce tlačítka (ne mřížky), ale je pouze relevantní Pokud tlačítko je obsažen v mřížce, a tudíž je "připojen" na tlačítka podle mřížky.  
   
-```  
+```xaml
 <Grid>  
     <Grid.ColumnDefinitions>  
         <ColumnDefinition />  
@@ -57,7 +57,7 @@ Vlastnost závislosti (DP) je regulární vlastnost, která ukládá v úložiš
   
  Definice přidružená vlastnost vypadá nejčastěji, vlastnosti regulární závislosti, s tím rozdílem, že přístupové objekty jsou reprezentované pomocí statické metody Get a sady:  
   
-```  
+```csharp
 public class Grid {  
   
     public static int GetColumn(DependencyObject obj) {  

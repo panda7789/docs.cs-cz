@@ -6,12 +6,12 @@ ms.author: johalex
 ms.date: 06/18/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 690e39dcbd02d81b8d4afe918a74795aa02f7fc6
-ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
+ms.openlocfilehash: 9706dad0a8e32651496e0404be4501c2c70e9d75
+ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36314962"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36948628"
 ---
 # <a name="tutorial-use-mlnet-to-predict-new-york-taxi-fares-regression"></a>Kurz: Použití ML.NET k předvídání New Yorku taxíkem tarify (regrese)
 
@@ -82,7 +82,7 @@ Vytvoření třídy pro vstupní data a jsou předpovědi:
 
 1. V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt a pak vyberte **přidat** > **novou položku**.
 1. V **přidat novou položku** dialogové okno, vyberte **třída** a změňte **název** do *TaxiTrip.cs*. Pak vyberte **přidat** tlačítko.
-1. Přidejte následující `using` příkazy na nový soubor:
+1. Přidejte následující `using` direktivy na nový soubor:
 
    [!code-csharp[AddUsings](../../../samples/machine-learning/tutorials/TaxiFarePrediction/TaxiTrip.cs#1 "Add necessary usings")]
 
@@ -96,19 +96,23 @@ Odeberte stávající definice třídy a přidejte následující kód, který m
 
 ## <a name="define-data-and-model-paths"></a>Definování dat a model cesty
 
-Přejděte zpět *Program.cs* souboru a vytvořte tři globální konstanty pro uložení cest k souborům s datových sad a uložte modelu:
+Přejděte zpět *Program.cs* souboru a přidejte tři pole pro uložení cest k souborům s datových sad a soubor uložte modelu:
 
-* `_datapath` obsahuje cestu k datům používá pro trénování modelu.
-* `_testdatapath` obsahuje cestu k datům používá k vyhodnocení modelu.
-* `_modelpath` má cestu k uložení naučeného modelu.
+* `_datapath` obsahuje cestu k souboru s datovou sadou použity při cvičení modelu.
+* `_testdatapath` obsahuje cestu k souboru s datovou sadou, používá k vyhodnocení modelu.
+* `_modelpath` obsahuje cestu k souboru, kde je uložený naučeného modelu.
 
-Přidejte následující kód řádku vpravo nahoře `Main` metoda k určení těchto cestách:
+Přidejte následující kód vpravo nahoře `Main` metoda k určení těchto cestách:
 
 [!code-csharp[InitializePaths](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#2 "Define variables to store the data file paths")]
 
+Chcete-li předchozí kód kompilovat, přidejte následující `using` direktivy v horní části *Program.cs* souboru:
+
+[!code-csharp[AddUsingsForPaths](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#17 "Using statements for path definitions")]
+
 ## <a name="create-a-learning-pipeline"></a>Vytvoření kanálu učení
 
-Přidejte následující další `using` příkazů do horní části *Program.cs* souboru:
+Přidejte následující další `using` direktivy do horní části *Program.cs* souboru:
 
 [!code-csharp[AddUsings](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#1 "Add necessary usings")]
 
@@ -135,7 +139,7 @@ var pipeline = new LearningPipeline();
 
 ## <a name="load-and-transform-data"></a>Načítání a transformace dat
 
-První krok, který provádí learning kanálu načítá data z trénovací datové sady. V našem případě trénovací datové sady je uložený v textovém souboru s cestou definované `_datapath` konstantní. Tento soubor obsahuje záhlaví s názvy sloupců, takže první řádek má ignorovat při načítání dat. Sloupce v souboru oddělených čárkou (","). Přidejte následující kód do `Train` metoda:
+První krok, který provádí learning kanálu načítá data z trénovací datové sady. V našem případě trénovací datové sady je uložený v textovém souboru s cestou definované `_datapath` pole. Tento soubor obsahuje záhlaví s názvy sloupců, takže první řádek má ignorovat při načítání dat. Sloupce v souboru oddělených čárkou (","). Přidejte následující kód do `Train` metoda:
 
 ```csharp
 pipeline.Add(new TextLoader(_datapath).CreateFrom<TaxiTrip>(useHeader: true, separator: ','));
@@ -215,7 +219,7 @@ Pomocí `await` v `Main` metoda znamená `Main` metoda musí mít `async` modifi
 
 [!code-csharp[AsyncMain](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#8 "Make the Main method async and return a task.")]
 
-Také je nutné přidat následující `using` příkaz v horní části souboru:
+Také je nutné přidat následující `using` direktivy v horní části souboru:
 
 [!code-csharp[UsingTasks](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#9 "Add System.Threading.Tasks. to your usings.")]
 

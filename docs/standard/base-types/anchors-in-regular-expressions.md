@@ -17,20 +17,20 @@ helpviewer_keywords:
 ms.assetid: 336391f6-2614-499b-8b1b-07a6837108a7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2cbf0ceb7d5f8e56955f8989e5eb4efba99540bc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 24a579acacf41df24779252e1064e1c271310edc
+ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578024"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36948586"
 ---
 # <a name="anchors-in-regular-expressions"></a>Kotvy v regulárních výrazech
 <a name="top"></a> Kotvy nebo atomické kontrolní výrazy s nulovou šířkou určují pozici v řetězci, kde musí dojít ke shodě. Pokud použijete na ukotvení v hledaný výraz, modul regulárních výrazů v řetězci nebo využívat znaků; Vypadá to shody na určené pozici. Například `^` Určuje, že porovnávání musí začít na začátku řádku nebo řetězec. Proto s regulárním výrazem `^http:` odpovídá "http:" pouze pokud se nachází na začátku řádku. Následující tabulka uvádí ukotvení podporované regulární výrazy v rozhraní .NET.  
   
 |Ukotvení|Popis|  
 |------------|-----------------|  
-|`^`|Shoda se musí vyskytovat na začátku řetězce nebo řádku. Další informace najdete v tématu [začátek řetězce nebo řádku](#Start).|  
-|`$`|Shoda se musí vyskytovat na konci řetězce nebo řádku nebo před `\n` na konci řetězce nebo řádku. Další informace najdete v tématu [ukončení řetězce nebo řádku](#End).|  
+|`^`|Ve výchozím nastavení shoda se musí vyskytovat na začátku řetězce; v víceřádkového režimu musí dojít na začátek řádku. Další informace najdete v tématu [začátek řetězce nebo řádku](#Start).|  
+|`$`|Ve výchozím nastavení, shoda se musí vyskytovat na konci řetězce nebo před `\n` na konci řetězce; v víceřádkového režimu, musí dojít na konci řádku nebo před `\n` na konci řádku. Další informace najdete v tématu [ukončení řetězce nebo řádku](#End).|  
 |`\A`|Shoda se musí vyskytovat na začátku pouze řetězec (bez víceřádkové podpory). Další informace najdete v tématu [spustit z řetězce pouze](#StartOnly).|  
 |`\Z`|Shoda se musí vyskytovat na konci řetězce nebo před `\n` na konci řetězce. Další informace najdete v tématu [ukončení řetězce nebo ukončení před novým řádkem](#EndOrNOnly).|  
 |`\z`|Shoda se musí vyskytovat na konci pouze řetězce. Další informace najdete v tématu [End z řetězce pouze](#EndOnly).|  
@@ -40,7 +40,7 @@ ms.locfileid: "33578024"
   
 <a name="Start"></a>   
 ## <a name="start-of-string-or-line-"></a>Na začátku řetězce nebo řádku: ^  
- `^` Ukotvení Určuje, že následující vzor musí začínat na první pozici znaku řetězce. Pokud používáte `^` s <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> možnost (viz [možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md)), shoda se musí vyskytovat na začátku každého řádku.  
+ Ve výchozím nastavení `^` ukotvení Určuje, že následující vzor musí začínat na první pozici znaku řetězce. Pokud používáte `^` s <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> možnost (viz [možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md)), shoda se musí vyskytovat na začátku každého řádku.  
   
  Následující příklad používá `^` ukotvení v regulární výraz, který extrahuje informace o let, během které existovaly některé profesionální baseballové týmy. V příkladu volá dvě přetížení <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> metoda:  
   

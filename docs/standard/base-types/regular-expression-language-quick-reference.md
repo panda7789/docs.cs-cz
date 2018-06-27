@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b41161d1511f7dce975ac5ad916750734972fa3c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cc0c1ebdc4f774858916dcc8ec8db2ba386b7a88
+ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579870"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36948602"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Jazyk regulárních výrazů – stručná referenční dokumentace
 <a name="top"></a> Regulární výraz je vzor, který modul regulárních výrazů se pokusí o porovnání v vstupního textu. Vzor sestává z jednoho nebo více znakových literálů, operátorů nebo konstrukcí.  Stručný úvod najdete v části [regulárních výrazech .NET](../../../docs/standard/base-types/regular-expressions.md).  
@@ -93,8 +93,8 @@ ms.locfileid: "33579870"
   
 |Kontrolní výraz|Popis|Vzor|Shody|  
 |---------------|-----------------|-------------|-------------|  
-|`^`|Porovnání musí začít na začátku řetězce nebo řádku.|`^\d{3}`|"901" ve výrazu<br /><br /> "901-333-"|  
-|`$`|Shoda se musí vyskytovat na konci řetězce nebo před `\n` na konci řádku nebo řetězec.|`-\d{3}$`|"-333" v<br /><br /> "-901-333"|  
+|`^`|Ve výchozím nastavení musí porovnávání začít na začátku řetězce; v víceřádkového režimu musíte spustit na začátek řádku.|`^\d{3}`|"901" ve výrazu<br /><br /> "901-333-"|  
+|`$`|Ve výchozím nastavení, shoda se musí vyskytovat na konci řetězce nebo před `\n` na konci řetězce; v víceřádkového režimu, musí dojít před koncem řádku nebo před `\n` na konci řádku.|`-\d{3}$`|"-333" v<br /><br /> "-901-333"|  
 |`\A`|Ke shodě musí dojít na začátku řetězce.|`\A\d{3}`|"901" ve výrazu<br /><br /> "901-333-"|  
 |`\Z`|Shoda se musí vyskytovat na konci řetězce nebo před `\n` na konci řetězce.|`-\d{3}\Z`|"-333" v<br /><br /> "-901-333"|  
 |`\z`|Ke shodě musí dojít na konci řetězce.|`-\d{3}\z`|"-333" v<br /><br /> "-901-333"|  
@@ -132,14 +132,14 @@ ms.locfileid: "33579870"
 |`*`|Porovná předchozí prvek nulakrát nebo vícekrát.|`\d*\.\d`|".0", "19.9", "219.9"|  
 |`+`|Porovná předchozí prvek jednou nebo vícekrát.|`"be+"`|"bee" ve slově "been", "be" ve slově "bent"|  
 |`?`|Porovná předchozí prvek nulakrát nebo jedenkrát.|`"rai?n"`|"ran", "rain"|  
-|`{` *N* `}`|Odpovídá předchozí prvek přesně *n* časy.|`",\d{3}"`|",043" ve výrazu "1,043.6", ",876", ",543" a ",210" ve výrazu "9,876,543,210"|  
-|`{` *N* `,}`|Odpovídá předchozí prvek alespoň *n* časy.|`"\d{2,}"`|"166", "29", "1930"|  
+|`{` *n* `}`|Odpovídá předchozí prvek přesně *n* časy.|`",\d{3}"`|",043" ve výrazu "1,043.6", ",876", ",543" a ",210" ve výrazu "9,876,543,210"|  
+|`{` *n* `,}`|Odpovídá předchozí prvek alespoň *n* časy.|`"\d{2,}"`|"166", "29", "1930"|  
 |`{` *n* `,` *m* `}`|Odpovídá předchozí prvek alespoň *n* časy, ale ne víc než *m* časy.|`"\d{3,5}"`|"166", "17668"<br /><br /> "19302" ve výrazu "193024"|  
 |`*?`|Porovná předchozí prvek nulakrát nebo vícekrát, ale s co nejmenším možným počtem opakování.|`\d*?\.\d`|".0", "19.9", "219.9"|  
 |`+?`|Porovná předchozí prvek jednou nebo vícekrát, ale s co nejmenším možným počtem opakování.|`"be+?"`|"be" ve slově "been", "be" ve slově "bent"|  
 |`??`|Porovná předchozí prvek nulakrát nebo jedenkrát, ale s co nejmenším možným počtem opakování.|`"rai??n"`|"ran", "rain"|  
-|`{` *N* `}?`|Odpovídá předchozí prvek přesně *n* časy.|`",\d{3}?"`|",043" ve výrazu "1,043.6", ",876", ",543" a ",210" ve výrazu "9,876,543,210"|  
-|`{` *N* `,}?`|Odpovídá předchozí prvek alespoň *n* dobu, ale co nejméně krát.|`"\d{2,}?"`|"166", "29", "1930"|  
+|`{` *n* `}?`|Odpovídá předchozí prvek přesně *n* časy.|`",\d{3}?"`|",043" ve výrazu "1,043.6", ",876", ",543" a ",210" ve výrazu "9,876,543,210"|  
+|`{` *n* `,}?`|Odpovídá předchozí prvek alespoň *n* dobu, ale co nejméně krát.|`"\d{2,}?"`|"166", "29", "1930"|  
 |`{` *n* `,` *m* `}?`|Odpovídá předchozí element mezi *n* a *m* dobu, ale co nejméně krát.|`"\d{3,5}?"`|"166", "17668"<br /><br /> "193", "024" ve výrazu "193024"|  
   
  [Zpět na začátek](#top)  

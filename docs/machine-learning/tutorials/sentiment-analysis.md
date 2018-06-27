@@ -4,12 +4,12 @@ description: Zjistit, jak používat ML.NET ve scénáři binární klasifikace 
 ms.date: 06/04/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 898b4664120b6eeb0ef18aac3acdc94b0ca0bacd
-ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
+ms.openlocfilehash: 727718c00b9270e2bbbe0840879b3a7e164a02d8
+ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36314835"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36948615"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>Kurz: Použití ML.NET ve scénáři postojích analysis binární klasifikace
 
@@ -113,13 +113,13 @@ Přidejte následující další `using` příkazů do horní části *Program.c
 
 [!code-csharp[AddUsings](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#1 "Add necessary usings")]
 
-Potřebujete vytvořit tři globální proměnné, do kterých cestu k naposledy stažené soubory:
+Potřebujete vytvořit tři globální pole pro uložení cest k naposledy stažené soubory:
 
 * `_dataPath` nemá cestu k datové sadě použity při cvičení modelu.
 * `_testDataPath` nemá cestu k datové sadě používají k vyhodnocení modelu.
 * `_modelPath` má cestu k uložení naučeného modelu.
 
-Přidejte následující kód řádku vpravo nahoře `Main` metoda k určení naposledy stažené soubory:
+Přidejte následující kód řádku vpravo nahoře `Main` metoda k určení těchto cestách:
 
 [!code-csharp[Declare file variables](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#2 "Declare variables to store data files")]
 

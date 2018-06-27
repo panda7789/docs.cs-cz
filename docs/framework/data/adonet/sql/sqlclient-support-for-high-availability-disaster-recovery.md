@@ -2,12 +2,12 @@
 title: SqlClient podporu pro vysokou dostupnost a zotavení po havárii
 ms.date: 03/30/2017
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
-ms.openlocfilehash: e3599c11743a33ca7cd071573bc67699eed7f606
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 001b99d7a7ec7dd7e483887ceeb0b2563a46da0a
+ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33365706"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36948521"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>SqlClient podporu pro vysokou dostupnost a zotavení po havárii
 Toto téma popisuje podporu SqlClient (přidáno v [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) pro vysokou dostupnost, zotavení po havárii – skupiny dostupnosti AlwaysOn.  Funkce skupin dostupnosti AlwaysOn byla přidána do systému SQL Server 2012. Další informace o skupinách dostupnosti AlwaysOn najdete v části SQL Server Books Online.  
@@ -32,7 +32,7 @@ Toto téma popisuje podporu SqlClient (přidáno v [!INCLUDE[net_v45](../../../.
 2.  <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A>  
 
 > [!NOTE]
->  Nastavení `MultiSubnetFailover` k `true` není povinné s [!INCLUDE[net_v461](../../../../../includes/net-v461-md.md)]) nebo novější verze.
+>  Nastavení `MultiSubnetFailover` k `true` není povinné s [!INCLUDE[net_v461](../../../../../includes/net-v461-md.md)] nebo novější verze.
   
 ## <a name="connecting-with-multisubnetfailover"></a>Propojení s MultiSubnetFailover  
  Vždycky zadat `MultiSubnetFailover=True` při připojování k naslouchací proces skupiny dostupnosti SQL Server 2012 nebo Instance clusteru převzetí služeb při selhání systému SQL Server 2012. `MultiSubnetFailover` umožňuje rychlejší převzetí služeb při selhání pro všechny skupiny dostupnosti a nebo Instance clusteru převzetí služeb při selhání v systému SQL Server 2012 a budou výrazně zkrátit čas převzetí služeb při selhání pro jeden a více podsítí AlwaysOn topologie. Během převzetí služeb více podsítí se klient pokusí připojení paralelně. Při selhání podsíť bude intenzivně pokus o připojení protokolu TCP.  
