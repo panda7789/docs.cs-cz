@@ -1,61 +1,82 @@
 ---
 title: 'Postupy: stažení souborů s FTP'
-ms.date: 03/30/2017
+description: Tento článek ukazuje vzorku o tom, jak stáhnout soubor ze serveru FTP.
+ms.date: 06/26/2018
+dev_langs:
+- csharp
+- vb
 ms.assetid: 892548b8-954a-4f6a-9bca-2ae620c3700f
-author: mcleblanc
-ms.author: markl
-manager: markl
-ms.openlocfilehash: a3e0b5773a98b42411e4dd76668dafb834b5cbd3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4e000aa149a9a02e6f12e9b184d9c43a065b673f
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394846"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37028302"
 ---
 # <a name="how-to-download-files-with-ftp"></a>Postupy: stažení souborů s FTP
-Tento příklad ukazuje, jak stáhnout soubor ze serveru FTP.  
-  
-## <a name="example"></a>Příklad  
-  
-```csharp  
-using System;  
-using System.IO;  
-using System.Net;  
-using System.Text;  
-  
-namespace Examples.System.Net  
-{  
-    public class WebRequestGetExample  
-    {  
-        public static void Main ()  
-        {  
-            // Get the object used to communicate with the server.  
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://www.contoso.com/test.htm");  
-            request.Method = WebRequestMethods.Ftp.DownloadFile;  
-  
-            // This example assumes the FTP site uses anonymous logon.  
-            request.Credentials = new NetworkCredential ("anonymous","janeDoe@contoso.com");  
-  
-            FtpWebResponse response = (FtpWebResponse)request.GetResponse();  
-  
-            Stream responseStream = response.GetResponseStream();  
-            StreamReader reader = new StreamReader(responseStream);  
-            Console.WriteLine(reader.ReadToEnd());  
-  
-            Console.WriteLine("Download Complete, status {0}", response.StatusDescription);  
-  
-            reader.Close();  
-            response.Close();    
-        }  
-    }  
-}  
-```  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Tento příklad vyžaduje:  
-  
--   Odkazuje na **System.Net** oboru názvů.  
-  
-## <a name="robust-programming"></a>Robustní programování  
-  
-## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework
+
+Tento příklad ukazuje, jak stáhnout soubor ze serveru FTP.
+
+## <a name="example"></a>Příklad
+
+```csharp
+using System;
+using System.IO;
+using System.Net;
+
+namespace Examples.System.Net
+{
+    public class WebRequestGetExample
+    {
+        public static void Main ()
+        {
+            // Get the object used to communicate with the server.
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://www.contoso.com/test.htm");
+            request.Method = WebRequestMethods.Ftp.DownloadFile;
+
+            // This example assumes the FTP site uses anonymous logon.
+            request.Credentials = new NetworkCredential("anonymous","janeDoe@contoso.com");
+
+            FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+
+            Stream responseStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(responseStream);
+            Console.WriteLine(reader.ReadToEnd());
+
+            Console.WriteLine($"Download Complete, status {response.StatusDescription}");
+
+            reader.Close();
+            response.Close();
+        }
+    }
+}
+```
+
+```vb
+Imports System.IO
+Imports System.Net
+
+Namespace Examples.System.Net
+    Public Module WebRequestGetExample
+        Public Sub Main()
+            ' Get the object used to communicate with the server.
+            Dim request As FtpWebRequest = CType(WebRequest.Create("ftp://www.contoso.com/test.htm"), FtpWebRequest)
+            request.Method = WebRequestMethods.Ftp.DownloadFile
+
+            ' This example assumes the FTP site uses anonymous logon.
+            request.Credentials = New NetworkCredential("anonymous", "janeDoe@contoso.com")
+
+            Dim response As FtpWebResponse = CType(request.GetResponse(), FtpWebResponse)
+
+            Dim responseStream As Stream = response.GetResponseStream()
+            Dim reader As StreamReader = New StreamReader(responseStream)
+            Console.WriteLine(reader.ReadToEnd())
+
+            Console.WriteLine($"Download Complete, status {response.StatusDescription}")
+
+            reader.Close()
+            response.Close()
+        End Sub
+    End Module
+End Namespace
+```

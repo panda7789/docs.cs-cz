@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - double data type [C#]
 ms.assetid: 0980e11b-6004-4102-abcf-cfc280fc6991
-ms.openlocfilehash: b6f9ecc75fbdeff27bf8c0e183a585757860aff2
-ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
+ms.openlocfilehash: 8e3a94bb79d46f2815e46b86f1aca92acc73e5c2
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36948381"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37027847"
 ---
 # <a name="double-c-reference"></a>double (Referenční dokumentace jazyka C#)
 
 `double` – Klíčové slovo označuje jednoduchý typ, který ukládá 64bitové hodnoty s plovoucí desetinnou čárkou. Následující tabulka uvádí přesnost a přibližnou rozsah `double` typu.
 
-|Typ|Přibližná rozsahu|Přesnost|Typ rozhraní .NET Framework|
+|Typ|Přibližná rozsahu|Přesnost|Typ formátu .NET|
 |----------|-----------------------|---------------|-------------------------|
 |`double`|±5.0 × 10<sup>−324</sup> k ±1.7 × 10<sup>308</sup>|15 až 16 číslic|<xref:System.Double?displayProperty=nameWithType>|
 

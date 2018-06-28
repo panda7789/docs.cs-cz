@@ -7,20 +7,20 @@ f1_keywords:
 helpviewer_keywords:
 - int keyword [C#]
 ms.assetid: 212447b4-5d2a-41aa-88ab-84fe710bdb52
-ms.openlocfilehash: c7d9bb0ee3d59ef3e0cf56d26e73a925fcfb4206
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 41ee5ecdae815eaddf8652a4873c060fb8f92bc3
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33275288"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37028263"
 ---
 # <a name="int-c-reference"></a>int (Referenční dokumentace jazyka C#)
 
 `int` označuje typ integrální, který ukládá hodnoty podle velikosti a rozsah uvedené v následující tabulce.  
   
-|Typ|Rozsah|Velikost|Typ rozhraní .NET Framework|Výchozí hodnota|  
-|----------|-----------|----------|-------------------------|-------------------|  
-|`int`|-2 147 483 648 na 2 147 483 647|32bitové celé číslo se znaménkem|<xref:System.Int32?displayProperty=nameWithType>|0|  
+|Typ|Rozsah|Velikost|Typ formátu .NET|  
+|----------|-----------|----------|-------------------------|  
+|`int`|-2 147 483 648 na 2 147 483 647|32bitové celé číslo se znaménkem|<xref:System.Int32?displayProperty=nameWithType>|  
   
 ## <a name="literals"></a>Literály  
  

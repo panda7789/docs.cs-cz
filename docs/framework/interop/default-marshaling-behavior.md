@@ -1,6 +1,6 @@
 ---
 title: Výchozí chování zařazování
-ms.date: 03/30/2017
+ms.date: 06/26/2018
 dev_langs:
 - csharp
 - vb
@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f5fef84250f9dbc10a921a6844f7020c72835cea
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: 83bb8b0305e47ca7b354db03c7a9a3dd02f62d41
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34457387"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37028068"
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
 Zařazování spolupráce funguje v pravidlech že tu určují chování data související s parametry metody jak předává mezi spravovanými a nespravovanými paměti. Tyto vestavěné pravidla řízení takové zařazování aktivitám v podobě transformace typu dat, zda volaný můžete změnit data do ní předán a tyto změny vrátit volajícímu, a pod kterým okolností zařazování poskytuje optimalizace výkonu.  
@@ -113,7 +113,9 @@ interface DelegateTest : IDispatch {
 ```  
   
  Ukazatel na funkci můžete přímo odkázat, stejně jako všechny ostatní nespravované – ukazatel na funkci můžete zrušením odkazu.  
-  
+
+V tomto příkladu, pokud dva delegáty jsou zařazené jako <xref:System.Runtime.InteropServices.UnmanagedType.FunctionPtr?displayProperty=nameWithType>, výsledkem je `int` a ukazatel na `int`. Protože typů delegátů přeuspořádány, `int` zde představuje ukazatel void (`void*`), který je adresa delegáta v paměti. Jinými slovy, je tento výsledek specifické pro systémy Windows 32-bit, protože `int` zde představuje velikost ukazatel na funkci.
+
 > [!NOTE]
 >  Odkaz na ukazatel funkce na spravované delegáta držené nespravovaného kódu nezabrání modul common language runtime v provádění uvolňování paměti na spravovaného objektu.  
   

@@ -2,12 +2,12 @@
 title: Generování klienta WCF z metadat služby
 ms.date: 03/30/2017
 ms.assetid: 27f8f545-cc44-412a-b104-617e0781b803
-ms.openlocfilehash: bd349099213a7818555a910aac1949999a57a58f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 55034868b465b63dca3ca28238d81b348d9d6893
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33494013"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37027925"
 ---
 # <a name="generating-a-wcf-client-from-service-metadata"></a>Generování klienta WCF z metadat služby
 Toto téma popisuje, jak používat různé přepínače v Svcutil.exe generovat klienty z dokumentů metadat.  
@@ -20,7 +20,7 @@ Toto téma popisuje, jak používat různé přepínače v Svcutil.exe generovat
   
 -   DISCO požadavku (pomocí [DiscoveryClientProtocol](http://go.microsoft.com/fwlink/?LinkId=94777) z webových služeb ASP.NET) pro zadaná adresa.  
   
- Svcutil.exe generuje klienta na základě webové služby popis Language (WSDL) nebo zásady souboru přijal od služby. Hlavní název uživatele (UPN) je generována zřetězením uživatelské jméno s "@" a následným přidáním plně kvalifikovaný název domény (FQDN). Ale pro uživatele, kteří si zaregistrovali na službě Active Directory, tento formát není platný a názvu UPN, které nástroj generuje způsobí selhání v ověřování protokolem Kerberos se následující chybová zpráva: **pokus o přihlášení se nezdařilo.** Chcete-li vyřešit tento problém, opravte ručně, nástroj vygeneruje soubor klienta.  
+ Svcutil.exe generuje klienta na základě webové služby popis Language (WSDL) nebo zásady souboru přijal od služby. Hlavní název uživatele (UPN) je generována zřetězením uživatelské jméno s "\@" a následným přidáním plně kvalifikovaný název domény (FQDN). Ale pro uživatele, kteří si zaregistrovali na službě Active Directory, tento formát není platný a názvu UPN, které nástroj generuje způsobí selhání v ověřování protokolem Kerberos se následující chybová zpráva: **pokus o přihlášení se nezdařilo.** Chcete-li vyřešit tento problém, opravte ručně, nástroj vygeneruje soubor klienta.  
   
 ```  
 svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>  

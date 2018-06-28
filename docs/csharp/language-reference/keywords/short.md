@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - short keyword [C#]
 ms.assetid: 04c10688-e51a-4a87-bfec-83f7fb42ff11
-ms.openlocfilehash: 657d5bb3866a3ad88226740ebf7ef12c3654e56b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7991259aadd391288caa37b35addd6e16e234878
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33288161"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37027860"
 ---
 # <a name="short-c-reference"></a>short (Referenční dokumentace jazyka C#)
 
 `short` označuje celočíselný datový typ, který ukládá hodnoty podle velikosti a rozsah uvedené v následující tabulce.  
   
-|Typ|Rozsah|Velikost|Typ rozhraní .NET Framework|  
+|Typ|Rozsah|Velikost|Typ formátu .NET|  
 |----------|-----------|----------|-------------------------|  
 |`short`|-32 768 do 32 767|16bitové celé číslo se znaménkem|<xref:System.Int16?displayProperty=nameWithType>|  
   

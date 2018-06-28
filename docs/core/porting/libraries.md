@@ -4,12 +4,12 @@ description: Zjistěte, jak k portu projektů knihovny z rozhraní .NET Framewor
 author: cartermp
 ms.author: mairaw
 ms.date: 07/14/2017
-ms.openlocfilehash: 88513eaee35a82d6424fc2218f8cbbe635a8e02c
-ms.sourcegitcommit: ceca5a1c027627abcca2767567703c3879f33325
+ms.openlocfilehash: 0f1d79623b4ece836732010e76a3c93fbbf8099f
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "33218355"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37028042"
 ---
 # <a name="porting-to-net-core---libraries"></a>Portování do .NET Core - knihovny
 
@@ -72,18 +72,6 @@ Použijte hranice zabezpečení poskytované operačního systému, například 
 Podobně jako u certifikační Autority, transparentnost zabezpečení umožňuje oddělení kódu v izolovaném prostoru z kód kritický pro zabezpečení deklarativní způsobem, ale je [již nejsou podporovány jako hranice zabezpečení](~/docs/framework/misc/security-transparent-code.md). Tato funkce slouží výraznou program Silverlight. 
 
 Použijte hranice zabezpečení poskytované operačního systému, například virtualizace, kontejnery nebo uživatelské účty pro spouštění procesů nejmenší sadu oprávnění.
-
-### <a name="globaljson"></a>global.json
-
-*Global.json* soubor je volitelný soubor, který vám umožní nastavit verze nástrojů .NET Core projektu. Pokud používáte noční sestavení .NET Core a chcete zadat konkrétní verzi sady SDK, zadejte verzi s *global.json* souboru. Obvykle se nachází v aktuálním pracovním adresáři nebo jednoho z jeho nadřazené adresáře. 
-
-```json
-{
-  "sdk": {
-    "version": "2.1.0-preview1-006491"
-  }
-}
-```
 
 ## <a name="converting-a-pcl-project"></a>Převedení projektu PCL
 

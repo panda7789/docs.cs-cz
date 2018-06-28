@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - ushort keyword [C#]
 ms.assetid: 1a7dbaae-b7a0-4111-872a-c88a6d3981ac
-ms.openlocfilehash: 03638893978779fcfd34544363d935fa5e609481
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 706fb36e687976a2cb8704658856023296131d63
+ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33288821"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37027873"
 ---
 # <a name="ushort-c-reference"></a>ushort (Referenční dokumentace jazyka C#)
 
 `ushort` – Klíčové slovo označuje celočíselný datový typ, který ukládá hodnoty podle velikosti a rozsah uvedené v následující tabulce.  
   
-|Typ|Rozsah|Velikost|Typ rozhraní .NET Framework|  
+|Typ|Rozsah|Velikost|Typ formátu .NET|  
 |----------|-----------|----------|-------------------------|  
 |`ushort`|0 až 65 535|Nepodepsané 16bitové celé číslo|<xref:System.UInt16?displayProperty=nameWithType>|  
   
