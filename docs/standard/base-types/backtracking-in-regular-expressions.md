@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7caf42ee45f31e374bd2cbf7c700992130281ff0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e05da1c2ed68f482cbb1280c5c40583ab54d71bb
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579766"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37071861"
 ---
 # <a name="backtracking-in-regular-expressions"></a>Zpětné navracení v regulárních výrazech
 <a name="top"></a> Zpětné navracení nastane, když vzor regulárního výrazu obsahuje volitelné [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) nebo [alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md), a modul regulárních výrazů se vrátí do předchozího uloženého stavu pokračujte jeho Vyhledání shody. Navracení má klíčový význam pro výkon regulárních výrazů, což umožňuje, aby výrazy byly výkonné a pružné a aby vyhovovaly velmi složitým vzorům. Tento výkon však zároveň něco stojí. Navracení je často jediným nejdůležitějším faktorem, který ovlivňuje výkon modulu regulárních výrazů. Vývojář má naštěstí vliv na chování modulu regulárních výrazů a způsob používání mechanismu navracení. V tomto tématu je vysvětleno fungování a ovládání mechanismu navracení.  
@@ -169,7 +169,7 @@ ms.locfileid: "33579766"
 |`[-.\w]*`|Porovná žádný či jeden výskyt nebo několik výskytů spojovníku, tečky nebo znaku slova.|  
 |`[0-9A-Z]`|Porovná alfanumerický znak.|  
 |`([-.\w]*[0-9A-Z])*`|Porovná žádný výskyt nebo několik výskytů kombinace nuly nebo několika spojovníků, teček či znaků slova, následovaných alfanumerickým znakem. Toto je první zachytávající skupina.|  
-|`@`|Porovná symbol „at“ (@).|  
+|`@`|Shoda znaku zavináče ("\@").|  
   
  Druhý vzor regulárního výrazu `^[0-9A-Z][-.\w]*(?<=[0-9A-Z])@`, používá kontrolní výraz kladné zpětného vyhledávání. Je definován tak, jak je uvedeno v následující tabulce.  
   
@@ -179,7 +179,7 @@ ms.locfileid: "33579766"
 |`[0-9A-Z]`|Porovná alfanumerický znak. Toto porovnání nerozlišuje velká a malá písmena, protože <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metoda je volána s <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> možnost.|  
 |`[-.\w]*`|Porovná žádný výskyt nebo několik výskytů spojovníku, tečky nebo znaku slova.|  
 |`(?<=[0-9A-Z])`|Ověří poslední shodující se znak a pokračuje v porovnání, pokud se jedná o znak alfanumerický. Alfanumerické znaky jsou podmnožinou množiny, která sestává z teček, spojovníků a znaků slov.|  
-|`@`|Porovná symbol „at“ (@).|  
+|`@`|Shoda znaku zavináče ("\@").|  
   
 <a name="Lookahead"></a>   
 ### <a name="lookahead-assertions"></a>Kontrolní výrazy dopředného vyhledávání  

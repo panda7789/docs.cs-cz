@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 56b4ae5c-4745-44ff-ad78-ffe4fcde6b9b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a826121a7f22d1db7287171c5add28e5fcd690cc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 88092c22e763e427203350065ff62b7c5e040b97
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33398024"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37073213"
 ---
 # <a name="lazy-initialization"></a>Opožděná inicializace
 *Opožděná inicializace* objektu znamená, že je její vytvoření odložení dokud nejprve se používá. (Pro toto téma podmínky *opožděné inicializace* a *opožděné konkretizaci* jsou shodné.) Opožděná inicializace slouží především zvyšování výkonu, vyhněte se plýtvání výpočtů a snížit požadavky na paměť programu. Jedná se o nejběžnějších scénářů:  
@@ -140,7 +140,7 @@ ms.locfileid: "33398024"
  [!code-vb[Lazy#9](../../../samples/snippets/visualbasic/VS_Snippets_Misc/lazy/vb/lazy_vb.vb#9)]  
   
 ## <a name="thread-local-variables-in-parallelfor-and-foreach"></a>Lokální proměnné vláken v Parallel.For a ForEach  
- Při použití <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> metoda nebo <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> metoda Iterujte přes zdroje dat současně, můžete použít přetížení, které mají integrovanou podporu pro místní data. V těchto metod vlákno polohu dosaženo pomocí místní delegáty pro vytvoření, přístup a vyčistit data. Další informace najdete v tématu [postupy: zápis smyčky Parallel.For pomocí proměnných Thread-Local](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md) a [postupy: zápis smyčky Parallel.ForEach pomocí proměnných Thread-Local](../../../docs/standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-thread-local-variables.md).  
+ Při použití <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> metoda nebo <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> metoda Iterujte přes zdroje dat současně, můžete použít přetížení, které mají integrovanou podporu pro místní data. V těchto metod vlákno polohu dosaženo pomocí místní delegáty pro vytvoření, přístup a vyčistit data. Další informace najdete v tématu [postupy: zápis smyčky Parallel.For pomocí proměnných Thread-Local](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md) a [postupy: zápis smyčky Parallel.ForEach pomocí proměnných oddílu místní](../../../docs/standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md).  
   
 ## <a name="using-lazy-initialization-for-low-overhead-scenarios"></a>Pomocí opožděné inicializace pro nízkou režii scénáře  
  V případech, kdy máte opožděné inicializace velký počet objektů, můžete rozhodnout, že zabalení každý objekt v <xref:System.Lazy%601> vyžaduje příliš mnoho paměti nebo příliš mnoho výpočetních prostředků. Nebo můžete mít přísné požadavky je vystaven o tom, jak opožděné inicializace. V takových případech můžete použít `static` (`Shared` v jazyce Visual Basic) metody <xref:System.Threading.LazyInitializer?displayProperty=nameWithType> opožděné inicializace každého objektu bez zabalení v instanci třídy <xref:System.Lazy%601>.  
