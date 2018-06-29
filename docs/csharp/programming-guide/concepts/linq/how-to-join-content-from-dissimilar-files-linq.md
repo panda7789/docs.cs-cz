@@ -1,20 +1,21 @@
 ---
 title: 'Postupy: spojení obsahu z Nepodobných souborů (LINQ) (C#)'
-ms.date: 07/20/2015
+ms.date: 06/27/2018
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
-ms.openlocfilehash: c6af2c0f90d3ebb69438b670a4f0cecb10d8d2fc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 444276f6ad68e988b2dbc2cd7401248a6f5da072
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33319166"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37071832"
 ---
 # <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Postupy: spojení obsahu z Nepodobných souborů (LINQ) (C#)
+
 Tento příklad ukazuje, jak propojit data z dva soubory s položkami oddělenými čárkou, které sdílejí společné hodnotu, která se používá jako odpovídající klíč. Tento postup může být užitečné, pokud budete muset kombinovat data ze dvou tabulek, nebo z tabulky a ze souboru, který má jiný formát do nového souboru. Příklad pro práci s jakýkoli druh strukturovaných textových můžete upravit.  
   
-### <a name="to-create-the-data-files"></a>K vytvoření datových souborů  
+## <a name="to-create-the-data-files"></a>K vytvoření datových souborů
   
-1.  Zkopírujte následující řádky do souboru, který je pojmenován scores.csv a uložte ho do složky projektu. Soubor představuje data z tabulky. Sloupec 1 je ID Studentova a sloupce 2 až 5 jsou výsledků testu.  
+1.  Zkopírujte následující řádky do souboru, který je pojmenován *scores.csv* a uložte jej do složky projektu. Soubor představuje data z tabulky. Sloupec 1 je ID Studentova a sloupce 2 až 5 jsou výsledků testu.  
   
     ```  
     111, 97, 92, 81, 60  
@@ -31,7 +32,7 @@ Tento příklad ukazuje, jak propojit data z dva soubory s položkami oddělený
     122, 94, 92, 91, 91  
     ```  
   
-2.  Zkopírujte následující řádky do souboru, který je pojmenován names.csv a uložte ho do složky projektu. Soubor představuje tabulky, který obsahuje příjmení, křestní jméno a student ID. Studentova  
+2.  Zkopírujte následující řádky do souboru, který je pojmenován *names.csv* a uložte jej do složky projektu. Soubor představuje tabulky, který obsahuje příjmení, křestní jméno a student ID. Studentova  
   
     ```  
     Omelchenko,Svetlana,111  
@@ -49,8 +50,12 @@ Tento příklad ukazuje, jak propojit data z dva soubory s položkami oddělený
     ```  
   
 ## <a name="example"></a>Příklad  
-  
-```csharp  
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 class JoinStrings  
 {  
     static void Main()  
@@ -78,7 +83,7 @@ class JoinStrings
             let nameFields = name.Split(',')  
             from id in scores  
             let scoreFields = id.Split(',')  
-            where nameFields[2] == scoreFields[0]  
+            where Convert.ToInt32(nameFields[2]) == Convert.ToInt32(scoreFields[0])
             select nameFields[0] + "," + scoreFields[1] + "," + scoreFields[2]   
                    + "," + scoreFields[3] + "," + scoreFields[4];  
   
@@ -102,26 +107,32 @@ class JoinStrings
     }  
 }  
 /* Output:  
-Merge two spreadsheets:  
-Adams, 99, 82, 81, 79  
-Fakhouri, 99, 86, 90, 94  
-Feng, 93, 92, 80, 87  
-Garcia, 97, 89, 85, 82  
-Garcia, 35, 72, 91, 70  
-Garcia, 92, 90, 83, 78  
-Mortensen, 88, 94, 65, 91  
-O'Donnell, 75, 84, 91, 39  
-Omelchenko, 97, 92, 81, 60  
-Tucker, 68, 79, 88, 92  
-Tucker, 94, 92, 91, 91  
-Zabokritski, 96, 85, 91, 60  
-12 total names in list  
+Merge two spreadsheets:
+Omelchenko, 97, 92, 81, 60
+O'Donnell, 75, 84, 91, 39
+Mortensen, 88, 94, 65, 91
+Garcia, 97, 89, 85, 82
+Garcia, 35, 72, 91, 70
+Fakhouri, 99, 86, 90, 94
+Feng, 93, 92, 80, 87
+Garcia, 92, 90, 83, 78
+Tucker, 68, 79, 88, 92
+Adams, 99, 82, 81, 79
+Zabokritski, 96, 85, 91, 60
+Tucker, 94, 92, 91, 91
+12 total names in list
  */  
-```  
+```
+
+## <a name="compiling-the-code"></a>Probíhá kompilace kódu
+
+Vytvoření a kompilace projektu, jehož cílem jednu z následujících možností:
+
+- Rozhraní .NET framework verze 3.5 s odkazem na System.Core.dll.
+- Rozhraní .NET framework verze 4.0 nebo vyšší.
+- .NET core verze 1.0 nebo novější.
   
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší, s odkazem na System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
-  
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
+
  [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
  [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)

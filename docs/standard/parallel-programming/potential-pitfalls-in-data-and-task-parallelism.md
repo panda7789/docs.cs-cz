@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1e357177-e699-4b8f-9e49-56d3513ed128
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: da87531ff7f20181e1e5499acb8152d0fbadc8af
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6d4fd91eccd5e8f3fd6be7c8a63ab1c097002382
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592389"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37073226"
 ---
 # <a name="potential-pitfalls-in-data-and-task-parallelism"></a>Potenciální nástrahy datového a funkčního paralelismu
 V mnoha případech <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> může poskytnout významné zlepšení výkonu oproti běžným sekvenčním smyčkám. Vytváření paralelní smyčky však zavádí složitost, která může vést k problémům, které v sekvenčních kódu nejsou jako běžné nebo nejsou vůbec došlo. Toto téma uvádí některé postupy, abyste se vyhnuli při psaní paralelní smyčky.  
@@ -24,7 +24,7 @@ V mnoha případech <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty
  V některých případech může paralelní smyčky pracovat pomaleji než sekvenční ekvivalent. Základní pravidlem je, že jsou paralelní smyčky, které mají několik iterací a rychlé uživatelské delegáty mnohem není možné příliš. Ale protože výkonu mnoho faktorů, doporučujeme vždy změřit skutečné výsledky.  
   
 ## <a name="avoid-writing-to-shared-memory-locations"></a>Vyhněte se zápis do umístění sdílené paměti  
- V sekvenčních kódu není z číst nebo zapisovat na statické proměnné nebo třída polí. Vždy, když souběžně několik vláken přistupují takovéto proměnné, je však vysoká pravděpodobnost časování. I když používáte zámky synchronizovat přístup k proměnné náklady na synchronizace může narušit výkonnost. Proto doporučujeme můžete vyhnout, nebo alespoň omezit přístup ke sdílenému stavu v co nejvíce paralelní smyčky. Nejlepší způsob, jak to udělat, je použít přetížení <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> využívající <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> proměnnou pro uložení místní stav během provádění smyčky. Další informace najdete v tématu [postupy: zápis smyčky Parallel.For pomocí proměnných Thread-Local](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md) a [postupy: zápis smyčky Parallel.ForEach pomocí proměnných Thread-Local](../../../docs/standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-thread-local-variables.md).  
+ V sekvenčních kódu není z číst nebo zapisovat na statické proměnné nebo třída polí. Vždy, když souběžně několik vláken přistupují takovéto proměnné, je však vysoká pravděpodobnost časování. I když používáte zámky synchronizovat přístup k proměnné náklady na synchronizace může narušit výkonnost. Proto doporučujeme můžete vyhnout, nebo alespoň omezit přístup ke sdílenému stavu v co nejvíce paralelní smyčky. Nejlepší způsob, jak to udělat, je použít přetížení <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> využívající <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> proměnnou pro uložení místní stav během provádění smyčky. Další informace najdete v tématu [postupy: zápis smyčky Parallel.For pomocí proměnných Thread-Local](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md) a [postupy: zápis smyčky Parallel.ForEach pomocí proměnných oddílu místní](../../../docs/standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md).  
   
 ## <a name="avoid-over-parallelization"></a>Vyhněte se nadbytečnému  
  Pomocí paralelní smyčky způsobit režijní náklady na vytváření oddílů zdrojové kolekci a synchronizaci pracovních vláken. Výhody paralelního zpracování jsou další omezen počet procesorů v počítači. Neexistuje žádné zrychlení užitečného spuštěním několika výpočetních vláken na počítače s více procesory. Proto musí být pozor, abyste přepsání paralelní smyčka.  

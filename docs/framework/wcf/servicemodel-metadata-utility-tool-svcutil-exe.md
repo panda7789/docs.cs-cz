@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Svcutil.exe
 - clients [WCF], consuming services
 ms.assetid: 1abf3d9f-b420-46f1-b628-df238751f308
-ms.openlocfilehash: 011f37cbbfa3eacab92705cd8e4363b36a746cf1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1ca518e1d98e26755167ec6cf2f67ba9f7295679
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33509147"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37071328"
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>Nástroj ServiceModel Metadata Utility (Svcutil.exe)
 Nástroj ServiceModel Metadata Utility slouží ke generování kódu služby model z metadat dokumenty a dokumenty metadat z kódu modelu služby.  
@@ -36,7 +36,7 @@ Nástroj ServiceModel Metadata Utility slouží ke generování kódu služby mo
 >   
 >  Kromě toho `/r` a `/ct` přepínačů pro odkazování na typy jsou určeny pro vygenerování kontrakty dat. Tyto přepínače nefungují při používání třídy XmlSerializer.  
   
-### <a name="timeout"></a>Časový limit  
+### <a name="timeout"></a>časový limit  
  Nástroj má časový limit 5 minut při načítání metadat.  Tento časový limit se vztahuje pouze k načítání metadat přes síť. Nevztahuje se na žádné zpracování této metadat.  
   
 ### <a name="multi-targetting"></a>Více-které se budou zaměřovat  

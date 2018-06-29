@@ -2,12 +2,12 @@
 title: Společné schéma kolekce
 ms.date: 03/30/2017
 ms.assetid: 50127ced-2ac8-4d7a-9cd1-5c98c655ff03
-ms.openlocfilehash: fc8b581a127fbef0f32cdee53eaa62d241e4ae31
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 29ccd2af4268a86ae4c2047ad2523f68b0f6489e
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32759306"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37072121"
 ---
 # <a name="common-schema-collections"></a>Společné schéma kolekce
 Společné schéma kolekce jsou kolekce schéma, které jsou implementovány každou zprostředkovatelů spravované rozhraní .NET Framework. Můžete zadat dotaz rozhraní .NET Framework spravovaného zprostředkovatele určit seznam podporovaných schématu kolekcí voláním **GetSchema** metoda bez argumentů nebo názvem schématu kolekce "MetaDataCollections". Tato možnost vrátí <xref:System.Data.DataTable> seznam podporovaných schéma kolekce, počet omezení, které každý podporují a počet identifikátor částí, které používají. Tyto kolekce popisují všechny požadované sloupce. Poskytovatelé jsou volně přidat další sloupce, pokud si přejí. Například `SqlClient` a `OracleClient` přidejte název parametru do kolekce omezení.  
@@ -19,7 +19,7 @@ Společné schéma kolekce jsou kolekce schéma, které jsou implementovány ka�
 ## <a name="metadatacollections"></a>MetaDataCollections  
  Tato kolekce schémat zpřístupní informace o všech kolekcí schémat nepodporuje rozhraní .NET Framework spravovaného poskytovatele, který je aktuálně používána pro připojení k databázi.  
   
-|columnName|Datový typ|Popis|  
+|ColumnName|Datový typ|Popis|  
 |----------------|--------------|-----------------|  
 |Název_kolekce|odkazy řetězců|Název kolekce, které mají být předány **GetSchema** metoda vrátí kolekci.|  
 |NumberOfRestrictions|int|Počet omezení, která může být určen pro kolekci.|  
@@ -28,9 +28,9 @@ Společné schéma kolekce jsou kolekce schéma, které jsou implementovány ka�
 ## <a name="datasourceinformation"></a>DataSourceInformation  
  Tato kolekce schémat zpřístupní informace o zdroji dat, který rozhraní .NET Framework je aktuálně spravovaného zprostředkovatele připojení k.  
   
-|columnName|Datový typ|Popis|  
+|ColumnName|Datový typ|Popis|  
 |----------------|--------------|-----------------|  
-|CompositeIdentifierSeparatorPattern|odkazy řetězců|Regulární výraz tak, aby odpovídaly složené oddělovače v složené identifikátor. Například "\\." (pro SQL Server) nebo "@&#124;\\." (pro Oracle).<br /><br /> Složené identifikátor je obvykle co se používá pro název databázového objektu, například: pubs.dbo.authors nebo pubs@dbo.authors.<br /><br /> Pro systém SQL Server, použijte regulární výraz "\\.". Pro OracleClient, použijte "@&#124;\\.".<br /><br /> Pro použití rozhraní ODBC Catalog_name_seperator.<br /><br /> Pro OLE DB pomocí DBLITERAL_CATALOG_SEPARATOR nebo DBLITERAL_SCHEMA_SEPARATOR.|  
+|CompositeIdentifierSeparatorPattern|odkazy řetězců|Regulární výraz tak, aby odpovídaly složené oddělovače v složené identifikátor. Například "\\." (pro SQL Server) nebo "\@&#124;\\." (pro Oracle).<br /><br /> Složené identifikátor je obvykle co se používá pro název databázového objektu, například: pubs.dbo.authors nebo pubs@dbo.authors.<br /><br /> Pro systém SQL Server, použijte regulární výraz "\\.". Pro OracleClient, použijte "\@&#124;\\.".<br /><br /> Pro použití rozhraní ODBC Catalog_name_seperator.<br /><br /> Pro OLE DB pomocí DBLITERAL_CATALOG_SEPARATOR nebo DBLITERAL_SCHEMA_SEPARATOR.|  
 |DataSourceProductName|odkazy řetězců|Název produktu přístup poskytovatele, jako je například "Oracle" nebo "SQLServer".|  
 |DataSourceProductVersion|odkazy řetězců|Určuje verzi produktu přístup poskytovatele, v nativním formátu zdroje dat a není ve formátu Microsoft.<br /><br /> V některých případech DataSourceProductVersion a DataSourceProductVersionNormalized se stejnou hodnotu. V případě technologie OLE DB a rozhraní ODBC tyto bude vždy stejná jsou namapované na stejný volání funkce v základní nativní rozhraní API.|  
 |DataSourceProductVersionNormalized|odkazy řetězců|Normalizované verze pro data zdrojové, tak, aby ji můžete porovnat s `String.Compare()`. Formát tohoto objektu je konzistentní pro všechny verze zprostředkovatele, který má zabránit verze 10 řazení mezi verze 1 a verze 2.<br /><br /> Zprostředkovatel Oracle například používá formát "nn.nn.nn.nn.nn" pro jeho normalizované verze, což způsobí, že zdroj dat Oracle 8i vrátit "08.01.07.04.01". Typický formát "nn.nn.nnnn" Microsoft používá systém SQL Server.<br /><br /> V některých případech DataSourceProductVersion a DataSourceProductVersionNormalized se stejnou hodnotu. V případě technologie OLE DB a rozhraní ODBC to bude vždy stejná jsou namapované na stejný volání funkce v základní nativní rozhraní API.|  
@@ -38,7 +38,7 @@ Společné schéma kolekce jsou kolekce schéma, které jsou implementovány ka�
 |IdentifierPattern|odkazy řetězců|Regulární výraz, který odpovídá identifikátor a má hodnotu shody identifikátoru. Například "[A-Za-z0-9_ #$]".|  
 |IdentifierCase|<xref:System.Data.Common.IdentifierCase>|Určuje, zda není v uvozovkách identifikátory jsou považovány jako malá a velká písmena, nebo ne.|  
 |OrderByColumnsInSelect|bool|Určuje, zda sloupce v klauzuli ORDER BY musí být v seznamu select. Hodnota true označuje, že jsou nemusí být v seznamu select hodnota false určuje, že nemusí být v seznamu select.|  
-|ParameterMarkerFormat|odkazy řetězců|Řetězec formátu, který představuje způsob formátování parametr.<br /><br /> Pokud pojmenované parametry jsou podporovány ve zdroji dat, musí být první zástupný symbol v tomto řetězci kde musí být formátována název parametru.<br /><br /> Například, pokud zdroj dat očekává parametry s názvem a předponu ':' bude ":{0}". Pokud to formátování s názvem parametru "p1" výsledná řetězec je ": p1".<br /><br /> Pokud zdroj dat očekává parametry, které mu předcházet text ' @', ale názvy již zahrnují, bude se{0}"a výsledek formátování parametr s názvem"@p1"by být jednoduše"@p1".<br /><br /> Zdroje dat, které nemají očekávat pojmenované parametry a očekávat použití '?' znak, řetězec formátu lze zadat jako jednoduše '?', který by ignorovat název parametru. Pro OLE DB vrátíme '?'.|  
+|ParameterMarkerFormat|odkazy řetězců|Řetězec formátu, který představuje způsob formátování parametr.<br /><br /> Pokud pojmenované parametry jsou podporovány ve zdroji dat, musí být první zástupný symbol v tomto řetězci kde musí být formátována název parametru.<br /><br /> Například, pokud zdroj dat očekává parametry s názvem a předponu ':' bude ":{0}". Pokud to formátování s názvem parametru "p1" výsledná řetězec je ": p1".<br /><br /> Pokud zdroj dat očekává parametry, které mu předcházet text ' @', ale názvy již zahrnují, bude se{0}"a výsledek formátování parametr s názvem"\@p1 "by být jednoduše"\@p1 ".<br /><br /> Zdroje dat, které nemají očekávat pojmenované parametry a očekávat použití '?' znak, řetězec formátu lze zadat jako jednoduše '?', který by ignorovat název parametru. Pro OLE DB vrátíme '?'.|  
 |ParameterMarkerPattern|odkazy řetězců|Regulární výraz, který odpovídá parametru značku. Bude mít hodnotu shody názvu parametru, pokud existuje.<br /><br /> Například, pokud jsou podporovány pojmenované parametry ' @' úvodní znak, který bude obsažen v názvu parametru by to byl: "(@[A-Za-z0-9_$ #] *)".<br /><br /> Ale pokud pojmenované parametry jsou podporovány ':' jako úvodní znak a není součástí názvu parametru, bude: ": ([A-Za-z0-9_$ #]\*)".<br /><br /> Samozřejmě pokud zdroj dat nepodporuje pojmenované parametry, jednoduše bude "?".|  
 |ParameterNameMaxLength|int|Maximální délka názvu parametru ve znacích. Visual Studio očekává, že pokud jsou podporovány názvy parametrů, minimální hodnota maximální délky se 30 znaků.<br /><br /> Pokud zdroj dat nepodporuje pojmenované parametry, vrátí tato vlastnost hodnotu 0.|  
 |ParameterNamePattern|odkazy řetězců|Regulární výraz, který odpovídá názvy platný parametr. Různé datové zdroje mají různá pravidla týkající se znaky, které mohou být použity pro názvy parametrů.<br /><br /> Visual Studio očekává, že pokud jsou podporovány názvy parametrů, jsou znaky "\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}\p{Nd}" minimální podporované sadu znaků, které jsou platné pro názvy parametrů.|  
@@ -51,7 +51,7 @@ Společné schéma kolekce jsou kolekce schéma, které jsou implementovány ka�
 ## <a name="datatypes"></a>Datové typy  
  Toto schéma kolekce zpřístupňuje informace o datové typy, které jsou podporovány v databázi, rozhraní .NET Framework spravovaná zprostředkovatele je aktuálně připojen k.  
   
-|columnName|Datový typ|Popis|  
+|ColumnName|Datový typ|Popis|  
 |----------------|--------------|-----------------|  
 |TypeName|odkazy řetězců|Název typu dat specifický pro zprostředkovatele.|  
 |ProviderDbType|int|Hodnota typu specifický pro zprostředkovatele, který se má použít při zadávání parametr typu. Například SqlDbType.Money nebo OracleType.Blob.|  
@@ -65,7 +65,7 @@ Společné schéma kolekce jsou kolekce schéma, které jsou implementovány ka�
 |IsFixedLength|bool|true – sloupce tento datový typ vytvořené jazyk definice dat (DDL) budou mít pevnou délkou.<br /><br /> false – sloupce tento typ dat, které vytvoří DDL bude s proměnnou délkou.<br /><br /> DBNull.Value—It není označuje, zda zprostředkovatel namapujete toto pole s pevnou délkou nebo proměnnou délkou sloupec.|  
 |IsFixedPrecisionScale|bool|true – datový typ má pevnou přesnost a měřítko.<br /><br /> false – datový typ nemá pevnou přesnost a měřítko.|  
 |IsLong|bool|true – datový typ obsahuje velmi dlouhé data; Definice velmi dlouhé dat je specifický pro zprostředkovatele.<br /><br /> false – datový typ neobsahuje data velmi náročná.|  
-|Vlastnost isNullable|bool|true – je datový typ s možnou hodnotou Null.<br /><br /> false – datový typ není null.<br /><br /> DBNull.Value—It není označuje, zda je datový typ s možnou hodnotou Null.|  
+|Vlastnost IsNullable|bool|true – je datový typ s možnou hodnotou Null.<br /><br /> false – datový typ není null.<br /><br /> DBNull.Value—It není označuje, zda je datový typ s možnou hodnotou Null.|  
 |IsSearchable|bool|true – datový typ lze použít v klauzuli WHERE se žádné operátor s výjimkou predikátu LIKE.<br /><br /> false – datový typ nelze použít v klauzuli WHERE s žádné operátor s výjimkou predikátu LIKE.|  
 |IsSearchableWithLike|bool|true – datový typ lze použít s LIKE predikátu.<br /><br /> false – datový typ nelze použít s predikátu LIKE.|  
 |IsUnsigned|bool|true – datový typ není podepsán.<br /><br /> false – datový typ je podepsaný.<br /><br /> Použít na datový typ DBNull.Value—Not.|  
@@ -80,7 +80,7 @@ Společné schéma kolekce jsou kolekce schéma, které jsou implementovány ka�
 ## <a name="restrictions"></a>Omezení  
  Tato kolekce schémat zveřejněné informace o omezení, které jsou podporovány pomocí spravovaného poskytovatele rozhraní .NET Framework, který je aktuálně používána pro připojení k databázi.  
   
-|columnName|Datový typ|Popis|  
+|ColumnName|Datový typ|Popis|  
 |----------------|--------------|-----------------|  
 |Název_kolekce|odkazy řetězců|Název kolekce, která se týkají těchto omezení.|  
 |RestrictionName|odkazy řetězců|Název omezení v kolekci.|  
@@ -90,7 +90,7 @@ Společné schéma kolekce jsou kolekce schéma, které jsou implementovány ka�
 ## <a name="reservedwords"></a>ReservedWords  
  Tato kolekce schémat zpřístupní informace o slova, která jsou vyhrazené databázi, která zprostředkovatele, který je aktuálně připojen k spravované rozhraní .NET Framework.  
   
-|columnName|Datový typ|Popis|  
+|ColumnName|Datový typ|Popis|  
 |----------------|--------------|-----------------|  
 |ReservedWord|odkazy řetězců|Specifické pro poskytovatele vyhrazené slovo.|  
   

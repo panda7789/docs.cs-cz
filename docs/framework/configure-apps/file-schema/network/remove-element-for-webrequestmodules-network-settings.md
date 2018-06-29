@@ -13,12 +13,12 @@ ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: e20d414b3be41fc175037c6691518adf6a424b69
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 40eda14d4d578f10a77aa06843abd48f58c55f6a
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32743024"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37073018"
 ---
 # <a name="ltremovegt-element-for-webrequestmodules-network-settings"></a>&lt;Odebrat&gt; Element pro webRequestModules – (nastavení sítě)
 Odebere vlastní modul žádost webové aplikaci.  
@@ -57,7 +57,7 @@ Odebere vlastní modul žádost webové aplikaci.
 ## <a name="remarks"></a>Poznámky  
  `remove` Element odebere registrovaný modul webové žádosti pro zadané předpony identifikátoru URI.  
   
- Hodnota `prefix` atribut by měl mít počáteční znaky platný identifikátor URI – například "http", nebo "http://www.contoso.com".  
+ Hodnota `prefix` atribut by měl mít počáteční znaky platný identifikátor URI – například "http", nebo "`http://www.contoso.com` ".  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  

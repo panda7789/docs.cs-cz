@@ -7,11 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - Windows Forms, font scheme changes
 ms.assetid: 4db27702-22e7-43bf-a07d-9a004549853c
-ms.openlocfilehash: 455609ea602f450803718f5be34618b087560d21
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2451885c673515eb6690b0784fd5bd22de629209
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37071143"
 ---
 # <a name="how-to-respond-to-font-scheme-changes-in-a-windows-forms-application"></a>Postupy: Odpověď na změny schématu písem ve formulářové aplikaci Windows
 V operačních systémech Windows uživatel může změnit nastavení systémového písma, aby byly výchozí písmo zobrazí větší nebo menší. Změna těchto nastavení písma je velmi důležitá pro uživatele, kteří jsou slabozraké a vyžadují větší typ ke čtení textu na obrazovce. Můžete upravit aplikaci Windows Forms reagování na tyto změny zvýšením nebo snížením velikosti formulář a všechny obsažené text vždy, když změny schématu písem. Pokud chcete, aby svého formuláře dynamicky zohlednit změny velikosti písem, můžete přidat kód do svého formuláře.  
@@ -39,13 +40,13 @@ V operačních systémech Windows uživatel může změnit nastavení systémov�
   
 5.  Nakonec implementovat obslužnou rutinu pro <xref:System.Windows.Forms.Form.FormClosing> událost, která umožňuje odpojit <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> obslužné rutiny události.  
   
-> [!IMPORTANT]
->  Selhání zahrnout tento kód způsobí, že vaše aplikace a nastat únik paměti.  
+     > [!IMPORTANT]
+     > Selhání zahrnout tento kód způsobí, že vaše aplikace a nastat únik paměti.  
   
- [!code-csharp[WinFormsAutoScaling#5](../../../samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#5)]
- [!code-vb[WinFormsAutoScaling#5](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#5)]  
+     [!code-csharp[WinFormsAutoScaling#5](../../../samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#5)]
+     [!code-vb[WinFormsAutoScaling#5](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#5)]  
   
-1.  Zkompilování a spuštění kódu.  
+6.  Zkompilování a spuštění kódu.  
   
 ### <a name="to-manually-change-the-font-scheme-in-windows-xp"></a>Ruční změny schématu písem v systému Windows XP  
   
@@ -55,7 +56,7 @@ V operačních systémech Windows uživatel může změnit nastavení systémov�
   
 3.  Z **velikost písma** rozevíracího seznamu vyberte novou velikost písma.  
   
-     Si všimnete, že formulář nyní reaguje na spuštění čas změny ve schématu plochy písma. Když uživatel změní mezi **normální**, **velká písma**, a **navíc velká písma**, formulář změní písmo a škáluje správně.  
+     Můžete si všimnout, že formulář nyní reaguje na změny běhu schéma plochy písma. Když uživatel změní mezi **normální**, **velká písma**, a **navíc velká písma**, formulář změní písmo a škáluje správně.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[WinFormsAutoScaling#1](../../../samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#1)]

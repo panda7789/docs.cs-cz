@@ -2,12 +2,12 @@
 title: Generování SQL úpravy
 ms.date: 03/30/2017
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
-ms.openlocfilehash: b7bb390fd4e221c70d5ed8da5873c557fcde3c98
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 1d24775a7a50da1008a5097e1a2caf4e72c946e2
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32766657"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37071949"
 ---
 # <a name="modification-sql-generation"></a>Generování SQL úpravy
 Tato část popisuje, jak vyvíjet modul úpravy SQL generování pro vaše (SQL:1999 – databáze kompatibilní) zprostředkovatele. Tento modul je zodpovědná za překladu stromu příkazů změny do příslušné příkazy SQL INSERT, UPDATE nebo DELETE.  
@@ -104,7 +104,7 @@ The elements of the list are specified as type DbModificationClause, which speci
 ## <a name="generating-an-insert-sql-command"></a>Generování příkazu Insert SQL  
  Pro danou DbInsertCommandTree ve zprostředkovateli ukázkové následuje příkaz insert generovaného jednu z níže dvě vložení šablon.  
   
- První šablonu, kterou má příkaz k provedení vložení, na základě hodnot v seznamu SetClauses a vyberte příkaz vrátit vlastnosti zadaná ve vlastnosti Returning vloženého řádku, pokud vlastnost Returning nebyla null. Element predikátem "@@ROWCOUNT > 0" je hodnota true, pokud byl vložit řádek. Element predikátem "keyMemberI = keyValueI &#124; scope_identity()" trvá tvar "keyMemberI = scope_identity()" pouze v případě keyMemeberI je klíč generovaný úložištěm, protože scope_identity() vrátí poslední hodnotu identity, které jsou vloženy do (identity sloupec generovaný úložištěm).  
+ První šablonu, kterou má příkaz k provedení vložení, na základě hodnot v seznamu SetClauses a vyberte příkaz vrátit vlastnosti zadaná ve vlastnosti Returning vloženého řádku, pokud vlastnost Returning nebyla null. Element predikátem "\@ @ROWCOUNT > 0" je hodnota true, pokud byl vložit řádek. Element predikátem "keyMemberI = keyValueI &#124; scope_identity()" trvá tvar "keyMemberI = scope_identity()" pouze v případě keyMemeberI je klíč generovaný úložištěm, protože scope_identity() vrátí poslední hodnotu identity, které jsou vloženy do (identity sloupec generovaný úložištěm).  
   
 ```  
 -- first insert Template  

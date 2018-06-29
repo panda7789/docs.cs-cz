@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 5c14867c-9a99-45bc-ae7f-2686700d377a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ce2c47b172afee8745cdf5f68323d64dd550ea59
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6db9d2e1e075b9908e4c6db3d327f446980e98a5
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579142"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37072953"
 ---
 # <a name="using-the-stringbuilder-class-in-net"></a>Používání třídy StringBuilder v rozhraní .NET
 <xref:System.String> Objekt se nedá změnit. Pokaždé, když použijete jednu z metod v <xref:System.String?displayProperty=nameWithType> třídu, můžete vytvořit nový objekt řetězec v paměti, který vyžaduje nové přidělení místa pro tento nový objekt. V situacích, kdy potřebujete provést opakované změny řetězec, režijní náklady spojené s vytvářením novou <xref:System.String> objektu může být drahé. <xref:System.Text.StringBuilder?displayProperty=nameWithType> Třídu lze použít, pokud chcete upravit řetězec bez vytvoření nového objektu. Například pomocí <xref:System.Text.StringBuilder> třída může zvýšit výkon při zřetězení mnoha řetězců společně ve smyčce.  
@@ -43,7 +43,7 @@ ms.locfileid: "33579142"
  [!code-vb[Conceptual.StringBuilder#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/Example.vb#1)]  
   
 ## <a name="setting-the-capacity-and-length"></a>Nastavení kapacity a délky  
- I když <xref:System.Text.StringBuilder> je dynamický objekt, který umožňuje rozšířit počet znaků v řetězci, který zapouzdřit, můžete zadat hodnotu pro maximální počet znaků, které mohou být uloženy. Tato hodnota se nazývá kapacita objektu a neměla by být zaměňovat s délka řetězce, který aktuální <xref:System.Text.StringBuilder> obsahuje. Například může vytvořit novou instanci třídy <xref:System.Text.StringBuilder> třída řetězcem "Hello", který má délku 5 a může určit, že objekt obsahuje maximální kapacita 25. Při změně <xref:System.Text.StringBuilder>, ho není znovu přidělte velikost pro sebe sama dokud nebude dosaženo kapacitu. V takovém případě je automaticky přiděleno nové místo a kapacita se zdvojnásobí. Můžete zadat kapacitu <xref:System.Text.StringBuilder> třídy pomocí jedné z přetížené konstruktory. Následující příklad určuje, že `MyStringBuilder` objekt můžete rozšířit tak, aby nesmí být delší než 25 prostory.  
+ I když <xref:System.Text.StringBuilder> je dynamický objekt, který umožňuje rozšířit počet znaků v řetězci, který zapouzdřit, můžete zadat hodnotu pro maximální počet znaků, které mohou být uloženy. Tato hodnota se nazývá kapacita objektu a neměla by být zaměňovat s délka řetězce, který aktuální <xref:System.Text.StringBuilder> obsahuje. Například může vytvořit novou instanci třídy <xref:System.Text.StringBuilder> třída řetězcem "Hello", který má délku 5 a může určit, že objekt obsahuje maximální kapacita 25. Při změně <xref:System.Text.StringBuilder>, ho není znovu přidělte velikost pro sebe sama dokud nebude dosaženo kapacitu. V takovém případě je automaticky přiděleno nové místo a kapacita se zdvojnásobí. Můžete zadat kapacitu <xref:System.Text.StringBuilder> třídy pomocí jedné z přetížené konstruktory. Následující příklad určuje, že `myStringBuilder` objekt můžete rozšířit tak, aby nesmí být delší než 25 prostory.  
   
  [!code-cpp[Conceptual.StringBuilder#2](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.StringBuilder/cpp/example.cpp#2)]
  [!code-csharp[Conceptual.StringBuilder#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#2)]
@@ -98,7 +98,7 @@ ms.locfileid: "33579142"
  [!code-csharp[Conceptual.StringBuilder#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#7)]
  [!code-vb[Conceptual.StringBuilder#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/Example.vb#7)]  
   
-### <a name="replace"></a>Nahradit  
+### <a name="replace"></a>nahradit  
  **Nahradit** metoda lze použít k nahrazení znaků v rámci <xref:System.Text.StringBuilder> zadaný objekt s jinou znak. Následující příklad používá **nahradit** metody na hledání <xref:System.Text.StringBuilder> objektu pro všechny instance vykřičník znak (!) a nahraďte otazník (?).  
   
  [!code-cpp[Conceptual.StringBuilder#8](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.StringBuilder/cpp/example.cpp#8)]

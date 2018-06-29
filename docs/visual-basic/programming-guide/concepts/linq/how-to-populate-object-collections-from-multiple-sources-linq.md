@@ -2,12 +2,12 @@
 title: 'Postupy: vyplňování kolekcí objektů z více zdrojů (LINQ) (Visual Basic)'
 ms.date: 06/22/2018
 ms.assetid: 63062a22-e6a9-42c0-b357-c7c965f58f33
-ms.openlocfilehash: 097a41614b4e7fb48c3ef3903faec8ed9ee3d5b6
-ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
+ms.openlocfilehash: 6560f853874f9b9a9aeb53bd0678540004fdfcc1
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36948446"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37070860"
 ---
 # <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>Postupy: vyplňování kolekcí objektů z více zdrojů (LINQ) (Visual Basic)
 
@@ -25,7 +25,6 @@ Tento příklad ukazuje postup slučovat data z různých zdrojů do sekvence no
 Následující příklad ukazuje, jak používat typ s názvem `Student` k uložení sloučenými daty z dvě kolekce v paměti řetězců, které simulují data z tabulky ve formátu CSV. První kolekce řetězců reprezentuje student názvy a ID, a druhá kolekce reprezentuje ID student (ve sloupci první) a čtyři skóre zkoušku. ID je použít jako cizí klíč.
 
 ```vb
-Imports System
 Imports System.Collections.Generic
 Imports System.Linq
 
@@ -133,7 +132,8 @@ Next
 
 Vytvoření a kompilace projektu, jehož cílem jednu z následujících možností:
 
-- Rozhraní .NET framework verze 3.5 nebo vyšší s odkazem na System.Core.dll.
+- Rozhraní .NET framework verze 3.5 s odkazem na System.Core.dll.
+- Rozhraní .NET framework verze 4.0 nebo vyšší.
 - .NET core verze 1.0 nebo novější.
 
 ## <a name="see-also"></a>Viz také:

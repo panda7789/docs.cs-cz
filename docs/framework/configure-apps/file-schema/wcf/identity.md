@@ -2,12 +2,12 @@
 title: '&lt;Identity&gt;'
 ms.date: 03/30/2017
 ms.assetid: c1d2ae56-e231-4a07-9c3f-9f13381dc0d8
-ms.openlocfilehash: 9cfd1d6cc7c278fd7e95c13df0a6f801cfabbc33
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 1fc47b9595f409cf375dc75f2bf43e83f58491df
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32749163"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37071289"
 ---
 # <a name="ltidentitygt"></a>&lt;Identity&gt;
 Prvek identity umožňuje vývojáři klienta zadejte v době návrhu očekávaný identitu služby. V procesu mezi klientem a službou infrastrukturu Windows Communication Foundation (WCF) zajistí, že identita očekávanou službu shody hodnoty tohoto elementu a proto může být ověřen. Další informace najdete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
@@ -48,7 +48,7 @@ Prvek identity umožňuje vývojáři klienta zadejte v době návrhu očekávan
 |dns|Určuje certifikátu X.509. certifikát použitý k ověření služby DNS. Tento prvek obsahuje atribut `value` , je řetězec a obsahuje skutečné identitu.|  
 |rsa|Určuje hodnotu pole RSA certifikátu X.509. certifikát použitý k ověření služby klienta. Tento prvek obsahuje atribut `value` , je řetězec a obsahuje skutečné identity|  
 |servicePrincipalName|Určuje identitu serveru hlavní název (SPN), což je hlavní název klient používá k jedinečné identifikaci instance služby. Tento prvek obsahuje atribut `value` , je řetězec a obsahuje skutečné hlavní název. Tento element je typu <xref:System.ServiceModel.Configuration.ServicePrincipalNameElement>.|  
-|userPrincipalName|Určuje identitu hlavní název (UPN) uživatele, což je typ názvu přihlášení uživatele v síti. Hlavní název uživatele se skládá z názvu objektu uživatele ve službě Active Directory, za nímž následuje použít v symbolu (@) a potom obvykle Domain Name System nadřazené domény. Například Jeff v stromu domény Fabrikam.com může mít hlavní název uživatele [ jeff@fabrikam.com ](mailto:jeffsmith@fabrikam.com).  Tento prvek obsahuje atribut `value` , je řetězec a obsahuje skutečné hlavní název. Tento element je typu <xref:System.ServiceModel.Configuration.UserPrincipalNameElement>.|  
+|userPrincipalName|Určuje identitu hlavní název (UPN) uživatele, což je typ názvu přihlášení uživatele v síti. Hlavní název uživatele se skládá z názvu objektu uživatele ve službě Active Directory, za nímž následuje použít v symbolu (\@) a potom obvykle Domain Name System nadřazené domény. Například Jeff v stromu domény Fabrikam.com může mít hlavní název uživatele [ jeff@fabrikam.com ](mailto:jeffsmith@fabrikam.com).  Tento prvek obsahuje atribut `value` , je řetězec a obsahuje skutečné hlavní název. Tento element je typu <xref:System.ServiceModel.Configuration.UserPrincipalNameElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

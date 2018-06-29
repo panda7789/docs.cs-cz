@@ -2,12 +2,12 @@
 title: Protokoly zasílání zpráv
 ms.date: 03/30/2017
 ms.assetid: 5b20bca7-87b3-4c8f-811b-f215b5987104
-ms.openlocfilehash: c900c8fde8b13b4766fb245de2bab46b5601f135
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d188c79d3879ef383d24f56c81d66973266636bc
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33496634"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37072719"
 ---
 # <a name="messaging-protocols"></a>Protokoly zasílání zpráv
 Zásobník kanálu Windows Communication Foundation (WCF) aktivuje kódování a přenos kanály transformace reprezentace interní zprávy do jeho přenosový formát a odesílat je pomocí konkrétního přenosu. Nejběžnější přenos používá funkční spolupráce při webové služby, je HTTP, a nejběžnější kódování používá webové služby jsou na základě XML SOAP 1.1, SOAP 1.2 a zpráva přenosu optimalizace mechanismus (MTOM).  
@@ -452,7 +452,7 @@ Content-Length: 0
   
 -   R4132: Hlavičku HTTP Content-Type musí mít parametr typu s hodnotou `application/xop+xml` uzavřena v uvozovkách.  
   
- Přestože není definován v dokumentu RFC 2387 požadavek na použijte uvozovky, text dodržuje, že všechny typu multipart/related média parametry nejpravděpodobnější obsahovat vyhrazené znaky jako "@" or "/" a je proto třeba dvojitých uvozovek.  
+ Přestože není definován v dokumentu RFC 2387 požadavek na použijte uvozovky, text zaznamenává všechny parametry typu multipart/related média s největší pravděpodobností obsahovat vyhrazené znaky jako "\@" nebo "/" a je proto třeba dvojité uvozovky značky.  
   
 -   R4133: Hlavičku HTTP Content-Type musí mít parametr s hodnotou hlavičku Content-ID části standardu MIME, který obsahuje SOAP 1.x obálky, uzavřena v uvozovkách. Pokud je spuštění parametr vynechán, první část MIME musí obsahovat SOAP 1.x obálku.  
   

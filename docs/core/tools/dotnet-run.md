@@ -4,12 +4,12 @@ description: Dotnet, spusťte příkaz poskytuje vhodnou možnost pro spuštěn�
 author: mairaw
 ms.author: mairaw
 ms.date: 05/29/2018
-ms.openlocfilehash: 82c6e44e52aa6af7044edf72fd6e57b7614a70f3
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: 609ac27f21e6801992b9e10c7d465a805492859e
+ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696309"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37071757"
 ---
 # <a name="dotnet-run"></a>Spustit DotNet.
 
@@ -201,9 +201,9 @@ Spusťte projekt v aktuálním adresáři:
 
 Spusťte zadaného projektu:
 
-`dotnet run --project /projects/proj1/proj1.csproj`
+`dotnet run --project ./projects/proj1/proj1.csproj`
 
-Spusťte projekt v aktuálním adresáři ( `--help` argument v tomto příkladu je předán do aplikace, protože `--` použit argument):
+Spusťte projekt v aktuálním adresáři ( `--help` argument v tomto příkladu je předán do aplikace, protože prázdný `--` možnost se používá):
 
 `dotnet run --configuration Release -- --help`
 
