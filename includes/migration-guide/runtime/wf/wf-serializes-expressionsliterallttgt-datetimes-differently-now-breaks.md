@@ -6,5 +6,5 @@
 |Návrh|Tato změna umožňuje <xref:System.DateTime?displayProperty=name> a <xref:System.DateTimeOffset?displayProperty=name> hodnoty, které mají být zpětné odbavení. Vlastní analyzátory XAML, které předpokládají, že vstup XAML je v syntaxi atributu, nebudou pracovat správně.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

@@ -6,6 +6,6 @@
 |Návrh|Aplikaci, která používá předpovězené hodnoty pro <xref:System.Windows.Controls.Primitives.IScrollInfo.HorizontalOffset?displayProperty=name> by mělo být změněno načíst skutečná hodnota (a hodnotu <xref:System.Windows.Controls.Primitives.IScrollInfo.ExtentWidth?displayProperty=name>) po všech vodorovného posunování, který by mohl změnit <xref:System.Windows.Controls.Primitives.IScrollInfo.ExtentWidth?displayProperty=name> z důvodu deaktivace virtualizace.|
 |Rozsah|Vedlejší|
 |Version|4.6.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Windows.Controls.Primitives.IScrollInfo?displayProperty=nameWithType></li></ul>|
 

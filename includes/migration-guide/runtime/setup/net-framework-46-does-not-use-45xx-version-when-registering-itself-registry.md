@@ -6,5 +6,5 @@
 |Návrh|Aktualizace aplikace zjišťování pro rozhraní .NET Framework 4.5 nainstalujte tak, že vyhledá 4.5 klíčů registru také přijímat 4.6.|
 |Rozsah|Edge|
 |Version|4.6|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

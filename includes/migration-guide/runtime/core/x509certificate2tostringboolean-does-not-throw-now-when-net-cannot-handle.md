@@ -6,6 +6,6 @@
 |Návrh|Žádný kód v závislosti na <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.ToString(System.Boolean)?displayProperty=nameWithType> by měly být aktualizovány v některých případech, ve kterých rozhraní API by mít dřív vyvolala očekávat, že vrácený řetězec mohou vyloučit některé data certifikátu (například veřejný klíč, privátní klíč a rozšíření).|
 |Rozsah|Edge|
 |Version|4.6|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Security.Cryptography.X509Certificates.X509Certificate2.ToString(System.Boolean)?displayProperty=nameWithType></li></ul>|
 

@@ -5,5 +5,5 @@
 |Podrobnosti|Umožňuje CodeDOM funkce kompilátoru zkompilovat proti cílové verze mscorlib.dll místo mscorlib.dll verze rozhraní .NET Framework 4.5.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

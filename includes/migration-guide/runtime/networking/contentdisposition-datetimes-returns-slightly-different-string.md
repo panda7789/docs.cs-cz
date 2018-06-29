@@ -6,6 +6,6 @@
 |Návrh|Nečekejte, že bude řetězec reprezentace ContentDispositions z různých verzí rozhraní .NET Framework správně porovnat jednu na druhou. Převod řetězce ContentDispositions, pokud je to možné, před provedením porovnání.|
 |Rozsah|Vedlejší|
 |Version|4.6|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Net.Mime.ContentDisposition.ToString?displayProperty=nameWithType></li><li><xref:System.Net.Mime.ContentDisposition.GetHashCode?displayProperty=nameWithType></li></ul>|
 

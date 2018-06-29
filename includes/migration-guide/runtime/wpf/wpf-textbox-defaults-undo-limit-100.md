@@ -6,6 +6,6 @@
 |Návrh|Pokud limit 100 vrácení zpět je příliš nízké, může být explicitně nastavena limit s <xref:System.Windows.Controls.Primitives.TextBoxBase.UndoLimit>|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Windows.Controls.TextBox?displayProperty=nameWithType></li></ul>|
 

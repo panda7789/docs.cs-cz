@@ -6,6 +6,6 @@
 |Návrh|Pokud <xref:System.AggregateException?displayProperty=name> se zachycení jako způsob zjišťování úlohu, která byla zrušena před <xref:System.Threading.Tasks.Task.WaitAll%2A> volání volaná, že kód místo toho provádět stejné detekce prostřednictvím <xref:System.Threading.Tasks.Task.IsCanceled%2A> vlastnosti (například:. Any(t =&gt; t.IsCanceled)) vzhledem k tomu, že rozhraní .NET Framework 4.6 pouze vyvolá v takovém případě pokud awaited všechny úkoly dokončené před časový limit.|
 |Rozsah|Vedlejší|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.Int32)?displayProperty=nameWithType></li><li><xref:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.Int32,System.Threading.CancellationToken)?displayProperty=nameWithType></li><li><xref:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[],System.TimeSpan)?displayProperty=nameWithType></li></ul>|
 

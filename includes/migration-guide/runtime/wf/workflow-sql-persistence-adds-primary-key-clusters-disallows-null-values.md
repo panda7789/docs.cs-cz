@@ -6,5 +6,5 @@
 |Návrh|Soubor SQL SqlWorkflowInstanceStoreSchemaUpgrade.sql je nutné použít na existující instalace, aby bylo možné zaznamenat tuto změnu. Nové instalace databáze automaticky budou mít změny.|
 |Rozsah|Edge|
 |Version|4.7|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

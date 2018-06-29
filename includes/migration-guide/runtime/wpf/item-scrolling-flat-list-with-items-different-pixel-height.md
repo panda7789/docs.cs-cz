@@ -6,6 +6,6 @@
 |Návrh|Pokud iterace dojde v rozhraní .NET Framework 4.6.1, ale není v dřívějších verzích – to znamená, pokud <xref:System.Windows.Controls.ItemsControl?displayProperty=name> je položka-posouvání jako plochý seznam s položkami různých pixelů výšky - existují dvě náhrad:<ol><li>Nainstalujte rozhraní .NET Framework 4.6.2.</li><li>Nainstalujte opravu hotfix HR 1605 pro rozhraní .NET Framework 4.6.1.</li></ol>|
 |Rozsah|Vedlejší|
 |Version|4.6.1|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Windows.Controls.VirtualizingStackPanel?displayProperty=nameWithType></li></ul>|
 

@@ -6,6 +6,6 @@
 |Návrh|Žádné Tato změna vyhovuje očekávané chování u ovládacích prvků <xref:System.Windows.Controls.TextBlock?displayProperty=name> ovládacího prvku.|
 |Rozsah|Vedlejší|
 |Version|4.6.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Windows.UIElement.IsEnabled?displayProperty=nameWithType></li></ul>|
 

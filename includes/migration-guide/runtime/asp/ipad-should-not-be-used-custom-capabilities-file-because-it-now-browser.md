@@ -6,5 +6,5 @@
 |Návrh|Pokud funkce specifické pro iPad je potřeba, je potřeba změnit chování iPad nastavením možnosti na refID předdefinovaných gateway &quot;IPad&quot; místo vygenerováním novou &quot;IPad&quot; ID agentem uživatele odpovídající.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

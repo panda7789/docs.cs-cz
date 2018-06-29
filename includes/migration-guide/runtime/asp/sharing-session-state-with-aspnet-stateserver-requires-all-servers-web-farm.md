@@ -6,6 +6,6 @@
 |Návrh|Ujistěte se, že upgrade verze rozhraní .NET Framework na webové servery, které sdílejí stavu ve stejnou dobu.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Web.SessionState.SessionStateMode.StateServer?displayProperty=nameWithType></li></ul>|
 

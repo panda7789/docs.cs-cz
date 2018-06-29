@@ -6,5 +6,5 @@
 |Návrh|Pokud volné paměti, které jsou dostupné na webovém serveru je nižší než procento definované nastavení konfigurace, dojde k výjimce. Některé služby WCF, které úspěšně spuštěn a v prostředí omezené paměti se spustil teď může selhat.|
 |Rozsah|Vedlejší|
 |Version|4.5.1|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

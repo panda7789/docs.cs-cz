@@ -6,5 +6,5 @@
 |Návrh|Tyto změny můžete usnadnit vytvořením nástrojů a aplikací, které používají rozhraní API DDL. Tyto změny mohou ovlivnit kompatibilitu aplikací v následujících situacích:<ul><li>Uživatel zapíše kód, který provede <code>DROP DATABASE</code> příkaz přímo místo volání <xref:System.Data.Objects.ObjectContext.DeleteDatabase%2A> Pokud <xref:System.Data.Objects.ObjectContext.DatabaseExists%2A> vrátí <code>true</code>. Tím je prolomen existující kód, pokud není databáze připojena, ale existuje soubor MDF.</li><li>Uživatel zapíše kód, který se očekává <xref:System.Data.Objects.ObjectContext.DeleteDatabase%2A> metoda k vyvolání <xref:System.Data.SqlClient.SqlException> místo <xref:System.InvalidOperationException> při počáteční katalog a MDF soubor neexistují.</li></ul>|
 |Rozsah|Vedlejší|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

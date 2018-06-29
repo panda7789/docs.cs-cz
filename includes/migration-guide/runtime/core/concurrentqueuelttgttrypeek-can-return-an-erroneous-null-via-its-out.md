@@ -6,6 +6,6 @@
 |Návrh|Tento problém vyřešen v rozhraní .NET Framework 4.5.1. Upgrade na dané platformy, se tento problém vyřešit.|
 |Rozsah|Hlavní|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Collections.Concurrent.ConcurrentQueue%601.TryPeek(%600@)?displayProperty=nameWithType></li></ul>|
 

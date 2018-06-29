@@ -6,6 +6,6 @@
 |Návrh|Místo toho by měl určovat uživatelů v závislosti na toto chování tak, aby zakázala relativní identifikátory URI <xref:System.UriKind.Absolute?displayProperty=nameWithType> při vytváření identifikátoru URI.|
 |Rozsah|Edge|
 |Version|4.7.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Uri.TryCreate(System.Uri,System.Uri,System.Uri@)?displayProperty=nameWithType></li><li><xref:System.Uri.TryCreate(System.String,System.UriKind,System.Uri@)?displayProperty=nameWithType></li><li><xref:System.Uri.TryCreate(System.Uri,System.String,System.Uri@)?displayProperty=nameWithType></li></ul>|
 

@@ -6,5 +6,5 @@
 |Návrh|Již nelze používat MEF k vytvoření serializátoru|
 |Rozsah|Hlavní|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

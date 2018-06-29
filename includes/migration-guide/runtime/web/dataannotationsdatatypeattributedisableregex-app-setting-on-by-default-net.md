@@ -6,5 +6,5 @@
 |Návrh|Pokud zjistíte, že regulární výrazy ve webové aplikaci po upgradu na rozhraní .NET Framework 4.7.2 nebudou fungovat, můžete je aktualizovat hodnotu <code>&quot;dataAnnotations:dataTypeAttribute:disableRegEx&quot;</code> nastavení <code>false</code> se vrátit k předchozí chování.<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;appsettings&gt;&#13;&#10;...&#13;&#10;&lt;add key=&quot;dataAnnotations:dataTypeAttribute:disableRegEx&quot; value=&quot;false&quot;/&gt;&#13;&#10;...&#13;&#10;&lt;/appsettings&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>|
 |Rozsah|Vedlejší|
 |Version|4.7.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

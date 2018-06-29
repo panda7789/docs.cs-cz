@@ -6,5 +6,5 @@
 |Návrh|Tato změna usnadňuje ladění v případech, kde délka zpráva překračuje omezení povolenou technologie ASP.NET nebo WCF. Je třeba upravit kód, který provádí zpracování podle stavový kód HTTP 400.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

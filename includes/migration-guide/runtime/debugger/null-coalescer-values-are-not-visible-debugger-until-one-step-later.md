@@ -6,5 +6,5 @@
 |Návrh|Krokování s jednou další v ladicím programu způsobí, že hodnotu místní nebo pole správně aktualizovat. Navíc tento problém byl opraven v rozhraní .NET Framework 4.6; upgrade na tuto verzi rozhraní by měla potíže vyřešit.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

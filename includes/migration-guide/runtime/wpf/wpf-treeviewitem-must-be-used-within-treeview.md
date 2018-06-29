@@ -6,5 +6,5 @@
 |Návrh|Opravu hotfix bude k dispozici pro tento.|
 |Rozsah|Vedlejší|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

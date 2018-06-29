@@ -6,5 +6,5 @@
 |Návrh|Aktualizace skriptů jasně znamenat přetížení, které je třeba použít. To může obvykle provádí explicitně přetypování parametry typu tyto metody jako <xref:System.Type>. V tématu [tento odkaz](https://support.microsoft.com/kb/2909958/) další podrobnosti a příklady, jak vyřešit problém.|
 |Rozsah|Vedlejší|
 |Version|4.5.1|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

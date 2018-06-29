@@ -6,5 +6,5 @@
 |Návrh|Problém #1 – to byl vyřešen v rozhraní .NET Framework 4.6.2 problém č. 2 - Kontrola pravopisu WPF již není podporován při spouštění aplikací pomocí 'spustit jako jiný uživatel'. Spouštění rozhraní .NET Framework 4.6.2, aplikace spustit tímto způsobem už havárií neočekávaně – místo toho bude kontrola pravopisu bezobslužně zakázáno. Problém #3 – to je v rozhraní .NET Framework 4.6.2 bylo opraveno.|
 |Rozsah|Edge|
 |Version|4.6.1|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

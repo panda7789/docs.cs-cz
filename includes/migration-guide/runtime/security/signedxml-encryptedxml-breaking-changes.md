@@ -6,6 +6,6 @@
 |Návrh|Vývojáři chtít přečíst téma použití <xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform> a <xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>, stejně jako typy odvozené od <xref:System.Security.Cryptography.Xml.Transform> vzhledem k tomu, že dokument příjemce nemusí být možné zpracovat.|
 |Rozsah|Vedlejší|
 |Version|4.6.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Security.Cryptography.Xml.Transform?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform?displayProperty=nameWithType></li></ul>|
 

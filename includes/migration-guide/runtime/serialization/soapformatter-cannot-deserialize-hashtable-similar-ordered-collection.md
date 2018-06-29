@@ -6,6 +6,6 @@
 |Návrh|<xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter?displayProperty=name> měl by být nahrazen serializace <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter?displayProperty=name> serializace nebo <xref:System.Runtime.Serialization.NetDataContractSerializer?displayProperty=name> chcete být odolní vůči změny rozhraní .NET Framework.|
 |Rozsah|Vedlejší|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter.Serialize(System.IO.Stream,System.Object)?displayProperty=nameWithType></li><li><xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter.Serialize(System.IO.Stream,System.Object,System.Runtime.Remoting.Messaging.Header[])?displayProperty=nameWithType></li><li><xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter.Deserialize(System.IO.Stream)?displayProperty=nameWithType></li><li><xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter.Deserialize(System.IO.Stream,System.Runtime.Remoting.Messaging.HeaderHandler)?displayProperty=nameWithType></li></ul>|
 

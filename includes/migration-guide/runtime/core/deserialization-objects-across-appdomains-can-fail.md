@@ -6,5 +6,5 @@
 |Návrh|V tématu [zmírnění: deserializace objektů mezi doménami aplikací](~/docs/framework/migration-guide/mitigation-deserialization-of-objects-across-app-domains.md)|
 |Rozsah|Edge|
 |Version|4.5.1|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

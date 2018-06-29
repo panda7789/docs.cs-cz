@@ -6,5 +6,5 @@
 |Návrh|EnableViewStateMac musí předpokládat, že hodnota true a je třeba vyřešit případné chyby MAC (jak je popsáno v [v tomto návodu](https://support.microsoft.com/kb/2915218), která obsahuje více řešení v závislosti na tom, jaké jsou specifikace příčinu chyby MAC).|
 |Rozsah|Hlavní|
 |Version|4.5.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

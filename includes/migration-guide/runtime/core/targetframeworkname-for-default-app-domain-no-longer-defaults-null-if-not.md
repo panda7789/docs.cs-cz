@@ -6,6 +6,6 @@
 |Návrh|Kód se musí aktualizovat na nezávisí na <xref:System.AppDomainSetup.TargetFrameworkName> jako výchozí bude použit na hodnotu null. Pokud se vyžaduje, aby tato vlastnost nadále vyhodnotit na hodnotu null, se může být explicitně nastaven na tuto hodnotu.|
 |Rozsah|Edge|
 |Version|4.6|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.AppDomainSetup.TargetFrameworkName?displayProperty=nameWithType></li></ul>|
 

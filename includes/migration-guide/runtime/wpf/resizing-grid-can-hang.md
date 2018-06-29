@@ -6,5 +6,5 @@
 |Návrh|Upgrade na rozhraní .NET Framework 4.7.1.  Případně pokud nepotřebujete algoritmus 4.7 přidělení můžete použít následující nastavení konfigurace:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Controls.Grid.StarDefinitionsCanExceedAvailableSpace=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
 |Rozsah|Edge|
 |Version|4.7|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

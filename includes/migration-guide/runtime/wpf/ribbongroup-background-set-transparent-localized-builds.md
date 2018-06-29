@@ -6,5 +6,5 @@
 |Návrh|Upgrade na rozhraní .NET Framework 4.7|
 |Rozsah|Edge|
 |Version|4.6.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

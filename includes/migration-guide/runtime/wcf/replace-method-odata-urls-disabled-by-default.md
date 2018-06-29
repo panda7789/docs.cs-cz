@@ -6,6 +6,6 @@
 |Návrh|Pokud se vyžaduje metoda nahrazení (což neobvyklé), může být znovu zapnout pomocí nastavení konfigurace (<xref:System.Data.Services.Configuration.DataServicesFeaturesSection.ReplaceFunction?displayProperty=name>). Metodu povoleno nahradit však můžete otevřít bezpečnostní zranitelná místa a musí být použit pouze po pečlivě zkontrolujte.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Data.Services.DataService%601?displayProperty=nameWithType></li></ul>|
 

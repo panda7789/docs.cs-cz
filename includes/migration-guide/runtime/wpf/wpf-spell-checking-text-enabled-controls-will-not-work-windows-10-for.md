@@ -6,5 +6,5 @@
 |Návrh|Upozorňujeme, že jazyk nebo text, který má být provedena kontrola pravopisu je nutné přidat jako vstupní jazyk pro kontrolu pravopisu pro práci v systému Windows 10.|
 |Rozsah|Edge|
 |Version|4.6|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

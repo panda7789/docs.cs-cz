@@ -6,5 +6,5 @@
 |Návrh|Opravu tohoto problému je k dispozici v servisní verze rozhraní .NET Framework 4.5.2 (kumulativní opravu hotfix 3026376), nebo upgrade na rozhraní .NET Framework 4.6|
 |Rozsah|Hlavní|
 |Version|4.5.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

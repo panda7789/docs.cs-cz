@@ -6,6 +6,6 @@
 |Návrh|Mějte na paměti, <xref:System.Windows.Threading.DispatcherSynchronizationContext.CreateCopy> nyní vrátí novou <xref:System.Threading.SynchronizationContext?displayProperty=name> objektu. Kód, který používá ekvivalenční odkazy generované tímto způsobem dříve, nebyla ve skutečnosti kontroluje, zda byla v kontextu správné, ale nemá při postavené na rozhraní .NET Framework 4.5 nebo novější.  Při pravděpodobně způsobit problémy, výkonu cesty ovlivněných kódu by vám měly dostatečně k určení, pokud to ale představuje jakýkoli problém.|
 |Rozsah|Vedlejší|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Windows.Threading.DispatcherSynchronizationContext.CreateCopy?displayProperty=nameWithType></li></ul>|
 

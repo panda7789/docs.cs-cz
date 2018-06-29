@@ -6,6 +6,6 @@
 |Návrh|Upozorňujeme, že některé data časná a pozdní můžou mírně lišit při použití PersianCalendar v rozhraní .NET Framework 4.6. Navíc při serializaci kalendářní data mezi procesy, které se může spustit na různé verze rozhraní .NET Framework, neukládejte je jako PersianCalendar datum řetězce (protože tyto hodnoty mohou být odlišné).|
 |Rozsah|Vedlejší|
 |Version|4.6|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Globalization.PersianCalendar?displayProperty=nameWithType></li></ul>|
 

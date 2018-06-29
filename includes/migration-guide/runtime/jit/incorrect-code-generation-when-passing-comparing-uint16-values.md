@@ -6,5 +6,5 @@
 |Návrh|Pokud narazíte na problémy v porovnání 16bitové nepodepsané hodnot v 4.7 rozhraní .NET Framework, upgradujte na rozhraní .NET Framework 4.7.1.|
 |Rozsah|Edge|
 |Version|4.7|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

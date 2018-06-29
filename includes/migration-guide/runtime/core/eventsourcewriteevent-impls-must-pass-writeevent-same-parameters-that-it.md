@@ -6,5 +6,5 @@
 |Návrh|<xref:System.IndexOutOfRangeException?displayProperty=name> Je vyvolána výjimka, pokud <xref:System.Diagnostics.Tracing.EventListener?displayProperty=name> čte <xref:System.Diagnostics.Tracing.EventSource?displayProperty=name> data v procesu pro daný zdroj události, která porušuje tento kontrakt.|
 |Rozsah|Vedlejší|
 |Version|4.5.1|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

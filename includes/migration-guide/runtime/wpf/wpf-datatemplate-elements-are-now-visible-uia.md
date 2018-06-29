@@ -6,6 +6,6 @@
 |Návrh|Testy automatizace uživatelského rozhraní pro tuto aplikaci může být nutné aktualizovat, aby účet pro strom UIA teď včetně dříve neviditelná <xref:System.Windows.DataTemplate?displayProperty=name> elementy. Nyní může například testy, které očekávají některé prvky, které chcete vedle sebe nutné očekávat dříve neviditelné prvky UIA mezi nimi. Nebo testy, které jsou závislé na určitých počty nebo indexů pro elementy UIA může být nutné aktualizovat s novými hodnotami.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Windows.DataTemplate.%23ctor?displayProperty=nameWithType></li><li><xref:System.Windows.DataTemplate.%23ctor(System.Object)?displayProperty=nameWithType></li></ul>|
 

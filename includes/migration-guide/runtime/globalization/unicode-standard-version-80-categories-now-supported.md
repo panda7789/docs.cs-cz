@@ -6,6 +6,6 @@
 |Návrh|Zkontrolujte kód a odebrat nebo změnit logiku, která závisí na pevně kategorií znaků Unicode.|
 |Rozsah|Vedlejší|
 |Version|4.6.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Char.GetUnicodeCategory(System.Char)?displayProperty=nameWithType></li><li><xref:System.Globalization.CharUnicodeInfo.GetUnicodeCategory(System.Char)?displayProperty=nameWithType></li><li><xref:System.Globalization.CharUnicodeInfo.GetUnicodeCategory(System.String,System.Int32)?displayProperty=nameWithType></li></ul>|
 

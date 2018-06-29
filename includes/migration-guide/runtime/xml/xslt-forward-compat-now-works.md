@@ -6,6 +6,6 @@
 |Návrh|Většina aplikací by měl neovlivní, ale data se má seřadit jinak v některých případech teď, když je dodržena Sort. Pokud <code>xsl:sort</code> se používá v 1.1 šablony stylů, potvrďte, že aplikace nebyly v závislosti na pořadí seřazená data. Pokud aplikace spoléhají na 4.0 řazení chování, odeberte <code>xsl:sort</code> z této šablony.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Xml.Xsl.XslCompiledTransform?displayProperty=nameWithType></li></ul>|
 

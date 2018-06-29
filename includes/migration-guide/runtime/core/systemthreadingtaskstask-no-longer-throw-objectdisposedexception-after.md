@@ -6,5 +6,5 @@
 |Návrh|Uvědomte si, že metody úloh může už throw <xref:System.ObjectDisposedException?displayProperty=name> v případech, kdy je objekt zlikvidován. Pokud aplikace se v závislosti na výjimku vědět, že úloha byla zrušena, by měl aktualizovat explicitně zkontrolovat stav úkolu pomocí <xref:System.Threading.Tasks.Task.Status>.|
 |Rozsah|Vedlejší|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

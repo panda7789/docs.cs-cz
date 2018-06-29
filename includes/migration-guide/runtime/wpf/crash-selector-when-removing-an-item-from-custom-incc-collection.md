@@ -6,5 +6,5 @@
 |Návrh|Upgrade na rozhraní .NET Framework 4.7.1.|
 |Rozsah|Vedlejší|
 |Version|4.7|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

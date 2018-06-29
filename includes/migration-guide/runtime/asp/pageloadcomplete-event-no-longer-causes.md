@@ -6,5 +6,5 @@
 |Návrh|Pokud je třeba pro datové vazby, ručně vyvolejte databind v událost, která je dříve v po zálohování.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

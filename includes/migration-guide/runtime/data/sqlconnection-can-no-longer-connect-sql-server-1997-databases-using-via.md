@@ -6,6 +6,6 @@
 |Návrh|Protokol VIA se již nepoužívá, takže alternativní protokolu by měla použít pro připojení k databázím SQL. Nejběžnější protokol použitý je protokol TCP/IP. Pokyny pro povolení protokolu TCP/IP naleznete [zde](https://msdn.microsoft.com/library/bb909712.aspx). Pokud databázi je dostupný pouze v intranetu, protokol sdílené kanály poskytnout lepší výkon při pomalém sítě.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Data.SqlClient.SqlConnection.%23ctor(System.String)?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlConnection.%23ctor(System.String,System.Data.SqlClient.SqlCredential)?displayProperty=nameWithType></li></ul>|
 

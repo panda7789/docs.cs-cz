@@ -6,5 +6,5 @@
 |Návrh|Dříve v případě, že dojde k přetečení, by výsledkem bylo tiché zkrácení. Teď <xref:System.OverflowException?displayProperty=name> je vyvolána výjimka.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

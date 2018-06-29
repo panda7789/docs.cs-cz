@@ -6,5 +6,5 @@
 |Návrh|Toto chování (ať už k oříznutí nebo ne) může být explicitně nastaveny pomocí <code>&lt;EnableMultiMonitorDisplayClipping&gt;</code> element v <code>&lt;appSettings&gt;</code> v konfiguračním souboru aplikace, nebo nastavením <code>EnableMultiMonitorDisplayClipping</code> vlastnost při spuštění aplikace.|
 |Rozsah|Vedlejší|
 |Version|4.6|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

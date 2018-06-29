@@ -6,5 +6,5 @@
 |Návrh|Aktualizujte zařazování kód pro práci s objekty bez reflexe|
 |Rozsah|Vedlejší|
 |Version|4.6|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

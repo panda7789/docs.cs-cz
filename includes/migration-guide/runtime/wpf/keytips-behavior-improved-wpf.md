@@ -6,5 +6,5 @@
 |Návrh|Není k dispozici|
 |Rozsah|Edge|
 |Version|4.7.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

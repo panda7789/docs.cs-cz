@@ -6,6 +6,6 @@
 |Návrh|Tato chyba byl opraven v rozhraní .NET Framework 4.5.2, takže ho předejít upgrade rozhraní .NET Framework. Alternativně můžete se vyhnout tím, že odebere všechny nainstalované jiný - IFS služeb vrstvy rozhraní Winsock.|
 |Rozsah|Vedlejší|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Data.SqlClient.SqlConnection.Open?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlConnection.OpenAsync(System.Threading.CancellationToken)?displayProperty=nameWithType></li></ul>|
 

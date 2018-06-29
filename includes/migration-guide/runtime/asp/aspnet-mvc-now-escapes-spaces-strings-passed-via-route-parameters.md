@@ -6,6 +6,6 @@
 |Návrh|Kód se musí aktualizovat na unescape parametrů řetězce z trasy. V případě potřeby původní URI lze přistupovat pomocí <xref:System.Net.HttpWebRequest.RequestUri>. OriginalString rozhraní API.|
 |Rozsah|Vedlejší|
 |Version|4.5.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Web.Mvc.RouteAttribute.%23ctor(System.String)?displayProperty=nameWithType></li></ul>|
 

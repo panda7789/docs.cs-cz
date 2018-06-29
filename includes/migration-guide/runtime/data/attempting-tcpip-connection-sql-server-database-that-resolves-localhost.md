@@ -6,5 +6,5 @@
 |Návrh|Tento problém byl vyřešen a obnovit předchozí chování v rozhraní .NET Framework 4.6.2. Pro připojení k systému SQL Server Database, který se přeloží na <code>localhost</code>, upgradujte na verzi rozhraní .NET Framework 4.6.2.|
 |Rozsah|Vedlejší|
 |Version|4.6|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

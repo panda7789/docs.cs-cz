@@ -6,5 +6,5 @@
 |Návrh|Pokud je nutné k serializaci a deserializaci <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=name> mezi rozhraní .NET Framework 4.5 a 4.5.1/4.5.2 rozhraní .NET Framework, jako například serializátor alternativní <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=name> nebo <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter?displayProperty=name> serializátor by měl použít místo <xref:System.Runtime.Serialization.NetDataContractSerializer?displayProperty=name>. Případně protože je tento problém řešit v rozhraní .NET Framework 4.6, se může být vyřešen upgrade na tuto verzi rozhraní .NET Framework.|
 |Rozsah|Vedlejší|
 |Version|4.5.1|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

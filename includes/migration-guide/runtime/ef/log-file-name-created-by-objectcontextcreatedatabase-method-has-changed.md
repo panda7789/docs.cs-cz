@@ -6,6 +6,6 @@
 |Návrh|Pokud název souboru protokolu je důležité pro aplikaci, je třeba aktualizovat aplikaci můžete očekávat formát názvu souboru standardní _log.ldf.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Data.Objects.ObjectContext.CreateDatabase?displayProperty=nameWithType></li></ul>|
 

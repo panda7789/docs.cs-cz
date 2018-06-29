@@ -6,6 +6,6 @@
 |Návrh|<ul><li>Aktualizace aplikací není závislý na <xref:System.Uri.UnescapeDataString(System.String)?displayProperty=name> má být vyvolána v případě neplatnou řídicí sekvenci. Takové pořadí musí být rozpoznány přímo teď.</li><li>Podobně očekávejte, že řetězce Escaped a Neuvozené URI a Data se může lišit z rozhraní .NET Framework 4.0 a rozhraní .NET Framework 4.5 a nesmí být porovnána přímo mezi verzemi rozhraní .NET. Místo toho se má analyzovat a normalized v jedné verzi rozhraní .NET, než jsou provedeny všechny porovnání.</li></ul>|
 |Rozsah|Vedlejší|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Uri.EscapeDataString(System.String)?displayProperty=nameWithType></li><li><xref:System.Uri.EscapeUriString(System.String)?displayProperty=nameWithType></li><li><xref:System.Uri.UnescapeDataString(System.String)?displayProperty=nameWithType></li></ul>|
 

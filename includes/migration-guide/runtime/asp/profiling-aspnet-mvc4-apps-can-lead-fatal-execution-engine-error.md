@@ -6,5 +6,5 @@
 |Návrh|Tento problém vyřešen v rozhraní .NET Framework 4.5.2. Případně může zabránit tento problém zadáním profileru <code>COR_PRF_DISABLE_ALL_NGEN_IMAGES</code> v maska událostí.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

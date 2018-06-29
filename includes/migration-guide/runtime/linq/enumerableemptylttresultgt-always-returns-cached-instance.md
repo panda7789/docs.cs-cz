@@ -6,6 +6,6 @@
 |Návrh|Protože předchozí chování je Nedeterministický, kód je nepravděpodobné, že jsou na ní závislé. Ale v případě nepravděpodobné, že prázdný enumerables se porovnají a očekává se někdy nerovné, by měl být vytvořen explicitní prázdné pole (<code>new T[0]</code>) namísto použití <xref:System.Linq.Enumerable.Empty%60%601>.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Linq.Enumerable.Empty%60%601?displayProperty=nameWithType></li></ul>|
 

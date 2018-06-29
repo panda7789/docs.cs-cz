@@ -6,6 +6,6 @@
 |Návrh|Kód, jejichž provedení závisí na zpracování <xref:System.Security.Cryptography.CryptographicException?displayProperty=name> by měl místo toho provést, pokud ověření selže a metoda vrátí <strong>False</strong>.|
 |Rozsah|Vedlejší|
 |Version|4.6.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Security.Cryptography.RSACng.VerifyHash(System.Byte[],System.Byte[],System.Security.Cryptography.HashAlgorithmName,System.Security.Cryptography.RSASignaturePadding)?displayProperty=nameWithType></li></ul>|
 

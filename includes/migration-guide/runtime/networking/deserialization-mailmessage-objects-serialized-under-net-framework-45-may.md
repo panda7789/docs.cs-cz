@@ -6,6 +6,6 @@
 |Návrh|Ujistěte se, že váš kód poskytuje výjimek při deserializaci <xref:System.Web.Mail.MailMessage> objektu.|
 |Rozsah|Vedlejší|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Web.Mail.MailMessage?displayProperty=nameWithType></li></ul>|
 

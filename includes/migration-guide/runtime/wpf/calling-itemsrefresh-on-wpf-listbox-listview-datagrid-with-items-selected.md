@@ -6,6 +6,6 @@
 |Návrh|Tento problém může být odpracovaných kolem programově unselecting položky před <xref:System.Windows.Data.CollectionView.Refresh?displayProperty=name> se označuje jako a potom znovu je vyberete po dokončení volání. Případně se tento problém byl opraven v rozhraní .NET Framework 4.6 a může být kontaktována upgrade na tuto verzi rozhraní .NET Framework.|
 |Rozsah|Vedlejší|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Windows.Data.CollectionView.Refresh?displayProperty=nameWithType></li></ul>|
 

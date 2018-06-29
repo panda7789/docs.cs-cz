@@ -6,6 +6,6 @@
 |Návrh|Práce s identifikátory URI obsahující konzistentně Unicode aplikace mít opačném případě může toto chování tak, aby zakázala odkazy na sdílené složky UNC. Tyto aplikace by měly používat <xref:System.Uri.IsUnc> místo.|
 |Rozsah|Edge|
 |Version|4.7.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Uri?displayProperty=nameWithType></li></ul>|
 

@@ -6,5 +6,5 @@
 |Návrh|Použít staré zásobníku v systému Windows 10 Creators aktualizace, nastavte <code>UseXpsOMPrinting</code> REG_DWORD hodnotu <code>HKEY_CURRENT_USER\Software\Microsoft\.NETFramework\Windows Presentation Foundation\Printing</code> klíč registru <code>1</code>.|
 |Rozsah|Edge|
 |Version|4.7|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

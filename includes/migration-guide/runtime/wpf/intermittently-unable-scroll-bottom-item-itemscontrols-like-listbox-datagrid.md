@@ -6,5 +6,5 @@
 |Návrh|Tento problém byl opraven v rozhraní .NET Framework 4.5.2 a může být kontaktována upgrade na tuto verzi (nebo novější), rozhraní .NET Framework. Alternativně uživatelé stále můžete přetáhnout posuvníky poslední položky v těchto kolekcích, ale muset zkuste dvakrát Uděláte to tak úspěšně.|
 |Rozsah|Vedlejší|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

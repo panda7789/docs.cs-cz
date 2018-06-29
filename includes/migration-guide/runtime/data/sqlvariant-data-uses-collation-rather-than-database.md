@@ -6,5 +6,5 @@
 |Návrh|Tato změna řeší poškození dat. Pokud se liší od kolaci databáze <code>sql_variant</code> kolace. Aplikace využívající poškozená data mohou selhat.|
 |Rozsah|Transparentní|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

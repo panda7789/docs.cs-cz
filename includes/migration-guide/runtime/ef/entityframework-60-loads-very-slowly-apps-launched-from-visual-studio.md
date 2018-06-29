@@ -6,5 +6,5 @@
 |Návrh|Tento problém vyřešen v objektu EntityFramework 6.0.2. Aktualizace objektu EntityFramework, aby se zabránilo problémy s výkonem.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

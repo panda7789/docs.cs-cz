@@ -6,5 +6,5 @@
 |Návrh|<ul><li>Pokud vaše certifikační server a klient má požadované OID rozšířeného použití klíče ověřte. Pokud ne, aktualizace vaší certifikační.</li><li>Ověřte, jestli kořenový certifikát je neplatný. Pokud ano, aktualizujte kořenový certifikát.</li><li>Postupy pro vyjádření výslovného nesouhlasu změnu: Pokud nelze aktualizovat certifikát, můžete obejít narušující změně dočasně s následujícím nastavením konfigurace, ale zrušení změn ponechá systému citlivé na zabezpečení problém.</li></ul><pre><code class="lang-xml">&lt;appSettings&gt;&#13;&#10;&lt;add key=&quot;wcf:useLegacyCertificateUsagePolicy&quot; value=&quot;true&quot; /&gt;&#13;&#10;&lt;/appSettings&gt;&#13;&#10;</code></pre>|
 |Rozsah|Vedlejší|
 |Version|4.7.2|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 

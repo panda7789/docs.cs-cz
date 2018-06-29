@@ -6,6 +6,6 @@
 |Návrh|V ideálním případě aplikace by měla být aktualizovány nechcete použít v kódování UTF-7 <xref:System.Web.HttpRequest?displayProperty=name>s. Alternativně může být obnovena starší verze chování pomocí <code>aspnet:AllowUtf7RequestContentEncoding</code> atribut [appSettings](https://msdn.microsoft.com/library/hh975440(v=vs.110).aspx) elementu.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Typ|modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Web.HttpRequest.ContentEncoding?displayProperty=nameWithType></li></ul>|
 
