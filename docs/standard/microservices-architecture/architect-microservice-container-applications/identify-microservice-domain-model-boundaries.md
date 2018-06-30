@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: b11d2838539b8ddbe21bcfcb77845a10e466c760
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bb02d2102659abd910f9a7e62652511c65574ab7
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578106"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106233"
 ---
 # <a name="identify-domain-model-boundaries-for-each-microservice"></a>Určení modelu domény hranice pro každou mikroslužbu
 
@@ -53,4 +53,5 @@ Existuje několik výhod není sdílení stejnou entitu uživatele se stejným �
 
 
 >[!div class="step-by-step"]
-[Předchozí] (distributed-data-management.md) [Další] (direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)
+[Předchozí](distributed-data-management.md)
+[další](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)

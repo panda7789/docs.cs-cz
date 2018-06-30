@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/30/2017
-ms.openlocfilehash: 8ff6afbe9618df918e0a965fa1202bbb999eee5c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 42b0bf43ace00b1eb4b48c39604b89ea76c99220
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578167"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106146"
 ---
 # <a name="using-a-database-server-running-as-a-container"></a>Pomocí databázový server, který je spuštěn jako kontejner
 
@@ -201,4 +201,5 @@ Nakonec v soubor docker-compose.override.yml mikroslužbu basket.api pro ukázku
 
 
 >[!div class="step-by-step"]
-[Předchozí] (více-container-aplikace docker-compose.md) [Další] (integrace událostí – na základě mikroslužbu communications.md)
+[Předchozí](multi-container-applications-docker-compose.md)
+[další](integration-event-based-microservice-communications.md)

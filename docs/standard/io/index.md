@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 63767a3ba2831ca9cadd9b99998eb871780143e0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 40eeeab159bdef9fc286374fde8c1c1d3a9f5c2b
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579038"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105651"
 ---
 # <a name="file-and-stream-io"></a>I/O souborů a proudů
 Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložného média nebo na něj. V rozhraní .NET Framework `System.IO` obory názvů obsahují typy, které umožňují čtení a zápis, synchronně i asynchronně, na datové proudy a souborů. Tyto obory názvů obsahují také typy provádějící kompresi a dekompresi souborů a typy umožňující komunikaci pomocí kanálů a sériových portů.  
@@ -26,6 +26,8 @@ Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložn
   
 ## <a name="files-and-directories"></a>Soubory a adresáře  
  Můžete použít typy v <xref:System.IO?displayProperty=nameWithType> obor názvů pro interakci s souborů a adresářů. Lze tak například načíst nebo nastavit vlastnosti souborů a adresářů nebo načíst kolekce souborů a adresářů na základě kritérií vyhledávání.  
+
+Cesta konvence pojmenování a jak express cestu k souboru pro systémy Windows, včetně těch s syntaxe zařízení DOS, podporuje se v rozhraní .NET Core 1.1 nebo novější a rozhraní .NET Framework 4.6.2 a novějším, najdete v části [cesta formáty souborů v systémech Windows](file-path-formats.md). 
   
  Zde jsou některé běžně používané třídy souborů a adresářů:  
   

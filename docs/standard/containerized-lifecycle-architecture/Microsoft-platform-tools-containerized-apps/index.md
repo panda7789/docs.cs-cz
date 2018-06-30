@@ -4,12 +4,12 @@ description: Kontejnerizované Docker životního cyklu aplikací s Microsoft pl
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
-ms.openlocfilehash: 02bd144f5bfd64ab3a0b0d30aad642c5c3099c7b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b14d361fb93b98de68b828514c7ea72811075fb8
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576240"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106188"
 ---
 # <a name="introduction-to-the-microsoft-platform-and-tools-for-containerized-apps"></a>Úvod do platformy Microsoft a nástrojů pro kontejnerové aplikace
 
@@ -59,4 +59,5 @@ Pomocí služby VSTS, vývojáři můžou vytvářet DevOps zaměřené na konte
 Proto společnost Microsoft nabízí kompletní základ pro začátku do konce kontejnerizované Docker životního cyklu aplikace. Je však *kolekce produkty a technologie, které vám umožní volitelně vybrat a integrovat s existujícím nástroje a zpracuje*. Flexibilita při široký přístup spolu s sílu podrobněji možnosti umístění Microsoft silné polohy pro vývoj aplikací kontejnerizované Docker.
 
 >[!div class="step-by-step"]
-[Předchozí] (.. / Docker-application-lifecycle/containers-foundation-for-devops-collaboration.md) [Další] (.. /Design-Develop-containerized-Apps/index.MD)
+[Předchozí](../Docker-application-lifecycle/containers-foundation-for-devops-collaboration.md)
+[další](../design-develop-containerized-apps/index.md)

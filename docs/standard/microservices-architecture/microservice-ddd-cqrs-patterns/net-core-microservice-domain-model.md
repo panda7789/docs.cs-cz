@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/09/2017
-ms.openlocfilehash: e0c931405b8b7e3b52bdcbd511737b449dc74273
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e836eda7fdc7b55ca7d1fe2ef5bf48a2d4ecb5a3
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579558"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106262"
 ---
 # <a name="implementing-a-microservice-domain-model-with-net-core"></a>Implementace modelu mikroslužbu domény s .NET Core 
 
@@ -180,4 +180,5 @@ Například v předchozím příkladu kódu OrderAggregate neexistují několik 
 
 
 >[!div class="step-by-step"]
-[Previous] (microservice-domain-model.md) [Next] (seedwork-domain-model-base-classes-interfaces.md)
+[Předchozí](microservice-domain-model.md)
+[další](seedwork-domain-model-base-classes-interfaces.md)

@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
-ms.openlocfilehash: 04a0def5fbadcc39220d9dc8daa9c9341fe66b26
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4ba2e48e742e580a1c96743fa89e413c488b8dc7
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579299"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106720"
 ---
 # <a name="implementing-value-objects"></a>Implementace hodnota objekty
 
@@ -326,4 +326,5 @@ public class Address
 
 
 >[!div class="step-by-step"]
-[Předchozí] (seedwork-domain-model-base-classes-interfaces.md) [Další] (výčet třídy over výčtu types.md)
+[Předchozí](seedwork-domain-model-base-classes-interfaces.md)
+[další](enumeration-classes-over-enum-types.md)

@@ -4,12 +4,12 @@ description: Kontejnerizované Docker životního cyklu aplikací s Microsoft pl
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 1bd1abccb55fe9f837b024cc0f61eea71d3b64c5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bc9cfe583b5e52b9bb3d089a4b12d285726d5c69
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33567923"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106837"
 ---
 # <a name="run-manage-and-monitor-docker-production-environments"></a>Spouštět, spravovat a monitorovat Docker produkční prostředí
 
@@ -21,4 +21,5 @@ Jak spouštět kontejnerizované aplikace v produkčním prostředí (platformu 
 
 
 >[!div class="step-by-step"]
-[Předchozí] (.. / docker-devops-workflow/docker-application-outer-loop-devops-workflow.md) [Další] (run-microservices-based-applications-in-production.md)
+[Předchozí](../docker-devops-workflow/docker-application-outer-loop-devops-workflow.md)
+[další](run-microservices-based-applications-in-production.md)

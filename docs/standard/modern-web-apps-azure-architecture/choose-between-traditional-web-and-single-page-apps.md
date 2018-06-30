@@ -4,12 +4,12 @@ description: Architekti moderních webových aplikací pomocí ASP.NET Core a Mi
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/06/2017
-ms.openlocfilehash: a8c6a3b6c9c934cd44eb4fa402c8d792006ac560
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: bbb217b2f11901658fa70a5e5cff6521d157952c
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36208497"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37104763"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Volba mezi tradiční webové aplikace a jednostránkové aplikace (SPA)
 
@@ -71,7 +71,7 @@ Všimněte si, že často SPA nutné implementovat funkce, které jsou integrova
 Zápis SPA vyžaduje znalost jazyka JavaScript a TypeScript a způsobů programování na straně klienta a knihovny. Váš tým musí být příslušný zápis moderní JavaScriptu pomocí rozhraní SPA jako úhlová.
 
 > ### <a name="references--spa-frameworks"></a>Odkazy – SPA architektury
-> - **úhlová**  
+> - **Úhlová**  
 > <https://angular.io>
 > - **Porovnání rámci jazyka JavaScript**  
 > <https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/>
@@ -86,10 +86,11 @@ Následující rozhodnutí tabulka shrnuje některé základní faktorů, které
 
   | **Koeficient** | **Tradiční webové aplikace** | **Jednostránková aplikace** |
   |---|---|---|
-  | Požadované Team znalost jazyka JavaScript nebo TypeScript | **minimální** | **Požadované** |
+  | Požadované Team znalost jazyka JavaScript nebo TypeScript | **Minimální** | **Požadované** |
   | Podpora prohlížeče bez skriptování | **Podporované** | **Nepodporuje se** |
   | Chování minimální aplikace na straně klienta | **Well-Suited** | **Přehnaně** |
   | Požadavky na bohatou a komplexní uživatelské rozhraní | **Omezené** | **Well-Suited** |
 
 >[!div class="step-by-step"]
-[Předchozí] (moderních web aplikace characteristics.md) [další](architectural-principles.md)
+[Předchozí](modern-web-applications-characteristics.md)
+[další](architectural-principles.md)

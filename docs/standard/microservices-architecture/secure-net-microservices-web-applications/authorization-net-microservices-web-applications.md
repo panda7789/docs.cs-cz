@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: mjrousos
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 2ea56f5a28d115fc5d91a98604b82565c8bf5c78
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7b2981579f28c083a31d7af6ae42f4e3ca8bbd88
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33582818"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105498"
 ---
 # <a name="about-authorization-in-net-microservices-and-web-applications"></a>O autorizace v rozhraní .NET mikroslužeb a webové aplikace
 
@@ -129,4 +129,5 @@ Příklad vlastní autorizace požadavku a obslužné rutiny pro kontrolu stář
 
 
 >[!div class="step-by-step"]
-[Předchozí] (index.md) [Další] (vývojáře app-tajné klíče storage.md)
+[Předchozí](index.md)
+[další](developer-app-secrets-storage.md)

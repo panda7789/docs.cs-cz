@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: a12012f115629a79734c18c3bc75733ae2fc8195
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 01b84d29a559bde02ebd30535488c272d5208167
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578830"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106512"
 ---
 # <a name="migrating-legacy-monolithic-net-framework-applications-to-windows-containers"></a>Migrace aplikací starší monolitický .NET Framework do kontejneru systému Windows
 
@@ -186,4 +186,5 @@ Existuje několik rozdílů mezi vývoj konfigurace a konfiguraci výroby. Ve v�
 Ve vývojovém prostředí je nutné spustit všechny kontejnery v stejné operačního systému. CE docker pro systém Windows nepodporuje spuštěných kontejnerů systémem Windows a Linux ve stejnou dobu. V produkčním prostředí můžete rozhodnout, pokud chcete spustit mikroslužbu katalogu v kontejneru systému Windows v jednom Docker hostiteli (nebo clusteru), nebo můžete nechat webových formulářů, aplikace komunikovat s instancí mikroslužbu katalogu spuštěnému v kontejneru Linux na jiné Docker hostitele. To závisí na tom, jak chcete optimalizovat pro latenci sítě. Ve většině případů budete chtít mikroslužeb, které vaše aplikace závisí na spouštění v stejného Docker hostitele (nebo swarm) pro snadné nasazení a menší latence komunikace. V těchto konfiguracích je pouze nákladná komunikace mezi instancemi mikroslužbu a vysokou dostupnost serverů pro trvalé úložiště.
 
 >[!div class="step-by-step"]
-[Předchozí] (.. / net-core-single-containers-linux-windows-server-hosts/index.md) [Další] (.. /Multi-Container-microservice-NET-Applications/index.MD)
+[Předchozí](../net-core-single-containers-linux-windows-server-hosts/index.md)
+[další](../multi-container-microservice-net-applications/index.md)

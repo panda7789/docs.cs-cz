@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: fa26aa86e09f7a5d390336e460fa0272f76e17a4
-ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
+ms.openlocfilehash: fdca8d38157d5c5b62bd077e5d715ca22ac9780f
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34805471"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106746"
 ---
 # <a name="applying-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>Použití CQRS a CQS přístupů DDD mikroslužbu v eShopOnContainers
 
@@ -64,4 +64,5 @@ Existuje jenom jedna aplikace architektura: architektura systému nebo začátku
 
 
 >[!div class="step-by-step"]
-[Předchozí] (apply-simplified-microservice-cqrs-ddd-patterns.md) [Další] (cqrs reads.md mikroslužbu)
+[Předchozí](apply-simplified-microservice-cqrs-ddd-patterns.md)
+[další](cqrs-microservice-reads.md)

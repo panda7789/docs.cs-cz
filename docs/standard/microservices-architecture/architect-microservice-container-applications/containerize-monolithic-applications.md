@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: f5d00c6ce4c965d66937dae3f8e5453883afb4b7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4e5b7a8202a0af26c8d61e315c3aa8f592ed45d9
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33577248"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105920"
 ---
 # <a name="containerizing-monolithic-applications"></a>Containerizing monolitický aplikace
 
@@ -73,4 +73,5 @@ Jak je také uvedené na obrázku 4-4 doručí toku publikovat bitovou kopii pro
 
 
 >[!div class="step-by-step"]
-[Předchozí] (index.md) [Další] (docker-application-state-data.md)
+[Předchozí](index.md)
+[další](docker-application-state-data.md)

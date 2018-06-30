@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 5d7037f91cb338721f91d35567246ebbca018a3c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5d8ba76caab39db222c2ceba36a4d67cab3e8a3f
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579169"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105791"
 ---
 # <a name="implementing-event-based-communication-between-microservices-integration-events"></a>Implementace založené na události komunikace mezi mikroslužeb (integrace událostí)
 
@@ -129,4 +129,5 @@ public interface IEventBus
 
 
 >[!div class="step-by-step"]
-[Předchozí] (database-server-container.md) [Další] (rabbitmq-event-bus-development-test-environment.md)
+[Předchozí](database-server-container.md)
+[další](rabbitmq-event-bus-development-test-environment.md)

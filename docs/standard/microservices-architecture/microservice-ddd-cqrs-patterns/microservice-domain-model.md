@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/09/2017
-ms.openlocfilehash: 2776412b96d4ed141f48814d19d2deaa1a71520d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e672685666c846ea63bcd9cdb713af58f5e6fb1b
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579454"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106249"
 ---
 # <a name="designing-a-microservice-domain-model"></a>Navržení modelu mikroslužbu domény
 
@@ -87,8 +87,8 @@ Hodnota objekty jsou obtížné spravovat v relačních databází a ORMs jako E
 -   **Hodnota objektu**
     [*http://deviq.com/value-object/*](http://deviq.com/value-object/)
 
--   **Hodnota objekty v Test-Driven vývoj**
-    [*https://leanpub.com/tdd-ebook/read\#leanpub automaticky hodnota objekty*](https://leanpub.com/tdd-ebook/read#leanpub-auto-value-objects)
+-   **Hodnota objekty v vývoje řízeného testováním**
+    [*https://leanpub.com/tdd-ebook/read\#leanpub-auto-value-objects*](https://leanpub.com/tdd-ebook/read#leanpub-auto-value-objects)
 
 -   **Zařízení Evans Erica. Řízené domény návrhu: Boji se složitostí při vysílat softwaru.** (Sešit; zahrnuje diskuzi o hodnotu objekty) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
@@ -134,7 +134,7 @@ Identifikace a práci s agregace vyžaduje výzkum a prostředí. Další inform
 #### <a name="additional-resources"></a>Další zdroje
 
 -   **Vaughn Vernon. Efektivní návrh agregace - část I: modelování jeden agregace**
-    [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD\_KOMUNITY\_KOMPOZICE\_AGREGACE\_část \_1. pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_1.pdf)
+    [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD\_COMMUNITY\_ESSAY\_AGGREGATES\_PART\_1.pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_1.pdf)
 
 -   **Vaughn Vernon. Efektivní agregační návrh – část II: Provádění agregací pracovní společně**
     *<https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_2.pdf> *
@@ -153,4 +153,5 @@ Identifikace a práci s agregace vyžaduje výzkum a prostředí. Další inform
 
 
 >[!div class="step-by-step"]
-[Předchozí] (ddd-zaměřené na konkrétní microservice.md) [Další] (net – základní – mikroslužbu domain-model.md)
+[Předchozí](ddd-oriented-microservice.md)
+[další](net-core-microservice-domain-model.md)

@@ -4,12 +4,12 @@ description: Kontejnerizované Docker životního cyklu aplikací s Microsoft pl
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: fe25fa8772c60625c5564d5e7194957366a6010a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4d25ef131cf149eb869fa2acd40eddff5ee0b55d
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572746"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106616"
 ---
 # <a name="monolithic-applications"></a>Monolitický aplikace
 
@@ -71,4 +71,5 @@ Obrázek 4 – 4 také ukazuje, že tok publikovat nabízených oznámení bitov
 
 
 >[!div class="step-by-step"]
-[Předchozí] (běžné kontejneru návrhu principles.md) [Další] (state-and-data-in-docker-applications.md)
+[Předchozí](common-container-design-principles.md)
+[další](state-and-data-in-docker-applications.md)

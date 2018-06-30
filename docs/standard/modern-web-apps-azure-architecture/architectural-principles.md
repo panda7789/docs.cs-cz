@@ -4,12 +4,12 @@ description: Architektury moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/06/2017
-ms.openlocfilehash: eb4af7e3472a39bc87f6fcc568b2519099bab279
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4ee14b128d3b83fd446352bb6f78afc08fb38c52
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33589942"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105856"
 ---
 # <a name="architectural-principles"></a>Zásady architektury
 
@@ -117,4 +117,5 @@ Minimálně měli snažit jednotlivé webové aplikace se vlastní ohraničené 
 > <https://martinfowler.com/bliki/BoundedContext.html>
 
 > [!div class="step-by-step"]
-[Předchozí] (choose-between-traditional-web-and-single-page-apps.md) [Další] (common-web-application-architectures.md)
+[Předchozí](choose-between-traditional-web-and-single-page-apps.md)
+[další](common-web-application-architectures.md)

@@ -6,18 +6,20 @@ ms.author: ronpet
 ms.date: 05/02/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: 01eb2e94b57da5e5dad0fa355246bcbcbc153dab
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: cbe08d87e90d319c074e85d0157e62fe023cce8c
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34457008"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105169"
 ---
 # <a name="net-guide"></a>Průvodce technologií .NET
 
 V příručce .NET poskytuje velké množství informací o rozhraní .NET.  V závislosti na vaší znalost .NET můžete prozkoumat různé části této příručky a dalších částech v dokumentaci k rozhraní .NET.
 
 ## <a name="new-to-net"></a>Nové rozhraní .NET
+
+Pokud chcete, aby souhrnné informace o rozhraní .NET, podívejte se na [co je rozhraní .NET?](https://www.microsoft.com/net/learn/what-is-dotnet).
 
 Pokud jste ještě rozhraní .NET, podívejte se [Začínáme](get-started.md) článku.
 

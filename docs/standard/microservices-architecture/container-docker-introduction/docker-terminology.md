@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 9bbeff8c467e762e682fdaf99c8a11851b291db8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 95f073a7db763abd295647d41d2e96e6d6d71067
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576643"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106785"
 ---
 # <a name="docker-terminology"></a>Terminologie docker
 
@@ -47,4 +47,5 @@ Tato část uvádí termíny a definice, které byste měli být před získán�
 
 
 >[!div class="step-by-step"]
-[Předchozí] (docker-defined.md) [Další] (docker kontejnery Image registries.md)
+[Předchozí](docker-defined.md)
+[další](docker-containers-images-registries.md)

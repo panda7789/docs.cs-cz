@@ -1,15 +1,15 @@
 ---
-title: Události domény. Návrh a implementaci
+title: Události domény. návrh a implementaci
 description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Události domény, návrhu a implementace
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: e6af18b1154759677c7749632eace30bad752591
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: 44fbe79c9ed7cfd4a79daf6ee9b3d39afd33a910
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34697193"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106022"
 ---
 # <a name="domain-events-design-and-implementation"></a>Události domény: návrhu a implementace
 
@@ -366,4 +366,5 @@ Jak jsme uvedli, pomocí události domény explicitní implementace vedlejší �
 
 
 >[!div class="step-by-step"]
-[Předchozí] (klient straně validation.md) [Další] (infrastruktury trvalost layer-design.md)
+[Předchozí](client-side-validation.md)
+[další](infrastructure-persistence-layer-design.md)

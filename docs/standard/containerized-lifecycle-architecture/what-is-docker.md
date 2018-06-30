@@ -4,12 +4,12 @@ description: Kontejnerizované Docker životního cyklu aplikací s Microsoft pl
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
-ms.openlocfilehash: c566c4104f21ff6a55646d96e141cde4c7722735
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2dfff13f00d4ea0e57161c21d7773eead41c28ee
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33569665"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105382"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 
@@ -53,4 +53,5 @@ Obrázek 1 – 3: porovnání tradiční virtuálních počítačů do kontejner
 
 
 >[!div class="step-by-step"]
-[Předchozí] (index.md) [Další] (docker-terminology.md)
+[Předchozí](index.md)
+[další](docker-terminology.md)

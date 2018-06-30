@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: b483214e7bd039a71ae642aa26e69d63222af8ab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0f6689468eda1dd1b12c24927e650b2b01381274
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33580124"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37104439"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-docker-containers"></a>Volba mezi .NET Core a rozhraní .NET Framework pro Docker kontejnery
 
@@ -17,4 +17,5 @@ Existují dvě podporované implementace pro vytváření serverové kontejneriz
 
 
 >[!div class="step-by-step"]
-[Předchozí] (.. / container-docker-introduction/docker-containers-images-registries.md) [Další] (Obecné guidance.md)
+[Předchozí](../container-docker-introduction/docker-containers-images-registries.md)
+[další](general-guidance.md)

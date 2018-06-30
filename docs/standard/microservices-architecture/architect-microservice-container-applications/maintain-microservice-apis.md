@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 4b57a0ed8c4e8a4cd36ef5cef4b40de0595f1284
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a2ec577a12cf677c2ec5e20a6f3e862911c82fbb
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33575873"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105690"
 ---
 # <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>Mikroslužbu vytváření, vyvíjejí a správa verzí rozhraní API a kontrakty
 
@@ -38,4 +38,5 @@ Nakonec, pokud používáte architekturu REST, [hypermédií](https://www.infoq.
 
 
 >[!div class="step-by-step"]
-[Předchozí] (asynchronous-message-based-communication.md) [Další] (microservices-addressability-service-registry.md)
+[Předchozí](asynchronous-message-based-communication.md)
+[další](microservices-addressability-service-registry.md)

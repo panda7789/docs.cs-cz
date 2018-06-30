@@ -4,12 +4,12 @@ description: Kontejnerizované Docker životního cyklu aplikací s Microsoft pl
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: cda9aa77ca033dced8b6b30538f19f28a5fa63a2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9e578599c61053704202946772c43bdb5ef895c2
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579207"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105586"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro Docker aplikace
 
@@ -122,7 +122,7 @@ Existují další řádky konfigurace, které můžete přidat na soubor Docker 
 
 **Další informace o** informace o vytváření imagí Dockeru pro aplikace .NET Core, přejděte na <https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images>.
 
-Další informace o vytváření vlastních bitových kopií, přejděte na [ https://docs.docker.com/engine/\kurzy/dockerimages/](https://docs.docker.com/engine/tutorials/dockerimages/).
+Další informace o vytváření vlastních bitových kopií, přejděte na [ https://docs.docker.com/engine/\ kurzy/dockerimages/](https://docs.docker.com/engine/tutorials/dockerimages/).
 
 **Úložiště s více platformami bitové kopie**
 
@@ -259,4 +259,5 @@ Také můžete ladit .NET Core kontejnery v Docker když pomocí sady Visual Stu
 
 
 >[!div class="step-by-step"]
-[Předchozí] (docker aplikace development-environment.md) [Další] (visual-studio nástroje pro docker.md)
+[Předchozí](docker-apps-development-environment.md)
+[další](visual-studio-tools-for-docker.md)

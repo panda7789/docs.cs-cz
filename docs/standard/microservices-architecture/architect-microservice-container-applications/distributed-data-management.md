@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 7d173133ab7c803c7ab48b39c50b02ee4f3b1721
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1d079dc7eef2f4abfbdec5a01b4233c8504d449d
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578934"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106486"
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>Problémy a řešení pro správu distribuovaných dat
 
@@ -83,11 +83,11 @@ Další podrobnosti o později v tomto průvodci v částech je popsané použit
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Zakončení věta**
-    [*https://en.wikipedia.org/wiki/CAP\_věta*](https://en.wikipedia.org/wiki/CAP_theorem)
+-   **Věta Zakončení**
+    [*https://en.wikipedia.org/wiki/CAP\_theorem*](https://en.wikipedia.org/wiki/CAP_theorem)
 
 -   **Konzistence typu případné**
-    [*https://en.wikipedia.org/wiki/Eventual\_konzistence*](https://en.wikipedia.org/wiki/Eventual_consistency)
+    [*https://en.wikipedia.org/wiki/Eventual\_consistency*](https://en.wikipedia.org/wiki/Eventual_consistency)
 
 -   **Úvod do konzistence dat**
     [*https://msdn.microsoft.com/library/dn589800.aspx*](https://msdn.microsoft.com/library/dn589800.aspx)
@@ -109,4 +109,5 @@ Další podrobnosti o později v tomto průvodci v částech je popsané použit
 
 
 >[!div class="step-by-step"]
-[Předchozí] (logical-versus-physical-architecture.md) [Další] (identify-microservice-domain-model-boundaries.md)
+[Předchozí](logical-versus-physical-architecture.md)
+[další](identify-microservice-domain-model-boundaries.md)

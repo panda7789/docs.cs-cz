@@ -4,12 +4,12 @@ description: Kontejnerizované Docker životního cyklu aplikací s Microsoft pl
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 3877767117d8292644782fc07df6667931688be2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 368d99e92f80cf37965139cb67fc5f22b44f40cd
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33575541"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106124"
 ---
 # <a name="monitor-containerized-application-services"></a>Monitorování kontejnerizované aplikačních služeb
 
@@ -42,7 +42,7 @@ Vytvořte prostředek Application Insights, postupujte podle pokynů v článcí
 -   **Monitorování Docker aplikací ve službě Application Insights:**  [https://docs.microsoft.com/azure/application-insights/app-insights-docker](https://docs.microsoft.com/azure/application-insights/app-insights-docker)
 
 -   **Aplikace bitovou kopii Insights Docker v Docker Hub a Githubu:**  
-[https://hub.docker.com/r/microsoft/applicationinsights/](https://hub.docker.com/r/microsoft/applicationinsights/) A <https://github.com/Microsoft/ApplicationInsights-Docker>
+[https://hub.docker.com/r/microsoft/applicationinsights/](https://hub.docker.com/r/microsoft/applicationinsights/) a <https://github.com/Microsoft/ApplicationInsights-Docker>
 
 -   **Nastavte Application Insights pro ASP.NET:**  
 [https://docs.microsoft.com/azure/application-insights/app-insights-asp-net](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net)
@@ -97,4 +97,5 @@ Uložení dotazů je také standardní funkce služby Operations Management Suit
 **Další informace o** najít informace o instalaci a konfiguraci Docker kontejneru řešení v [Operations Management Suite](http://microsoft.com/oms), přejděte na <https://docs.microsoft.com/azure/log-analytics/log-analytics-containers>.
 
 >[!div class="step-by-step"]
-[Předchozí] (spravovat produkční docker-environments.md) [Další] (.. /Key-takeaways/index.MD)
+[Předchozí](manage-production-docker-environments.md)
+[další](../key-takeaways/index.md)

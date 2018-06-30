@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 2adce39561dd2b97910155ebed595a2df7785c11
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c61a08566492a59090b19f99aaf97b5f6082c1fb
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33574670"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37104566"
 ---
 # <a name="client-side-validation-validation-in-the-presentation-layers"></a>Ověřování na straně klienta (ověřování v prezentační vrstvy)
 
@@ -29,8 +29,8 @@ Implementace ověřování na straně klienta, závisí na jaký druh klientskou
 
 ### <a name="validation-in-xamarin-mobile-apps"></a>Ověření v mobilních aplikacích Xamarin
 
--   **Ověření vstupní Text a zobrazit chyby**
-    [*https://developer.xamarin.com/recipes/ios/standard\_ovládací prvky nebo textu\_pole nebo ověřit\_vstupní /*](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/validate_input/)
+-   **Ověření Text pro vstup a zobrazit chyby**
+    [*https://developer.xamarin.com/recipes/ios/standard\_controls/text\_field/validate\_input/*](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/validate_input/)
 
 -   **Zpětné volání pro ověření**
     [*https://developer.xamarin.com/samples/xamarin-forms/XAML/ValidationCallback/*](https://developer.xamarin.com/samples/xamarin-forms/XAML/ValidationCallback/)
@@ -65,4 +65,5 @@ V souhrnu jsou to nejdůležitější koncepty namapoval ověření:
 
 
 >[!div class="step-by-step"]
-[Předchozí] (domény modelu layer-validations.md) [Další] (domain události návrhu implementation.md)
+[Předchozí](domain-model-layer-validations.md)
+[další](domain-events-design-implementation.md)

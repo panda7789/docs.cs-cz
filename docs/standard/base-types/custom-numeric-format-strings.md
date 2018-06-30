@@ -1,6 +1,6 @@
 ---
 title: Vlastní řetězce číselného formátu
-ms.date: 03/30/2017
+ms.date: 06/25/2018
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -18,16 +18,18 @@ helpviewer_keywords:
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fa1ab1d9a9ff3d652ce97d4fe7e6d04f744aea98
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7b9cf18c4893b618d16ef24bab83a19154e19a9c
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579233"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106525"
 ---
 # <a name="custom-numeric-format-strings"></a>Vlastní řetězce číselného formátu
+
 Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z jednoho nebo několika vlastních číselných specifikátorů pro definování formátování číselných dat. Vlastní číselný formátovací řetězec je formátovací řetězec, který není [standardního řetězce formátu čísel](../../../docs/standard/base-types/standard-numeric-format-strings.md).  
   
+
  Vlastní řetězce číselného formátu podporuje někteří přetížení `ToString` metoda všechny číselné typy. Můžete například zadat řetězec číselného formátu tak, aby <xref:System.Int32.ToString%28System.String%29> a <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> metody <xref:System.Int32> typu. Vlastní řetězce číselného formátu jsou také podporovány pomocí .NET [funkce složeného formátování](../../../docs/standard/base-types/composite-formatting.md), který je využíván jiným některé `Write` a `WriteLine` metody <xref:System.Console> a <xref:System.IO.StreamWriter> třídy, <xref:System.String.Format%2A?displayProperty=nameWithType>metoda a <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> metoda. [Řetězec interpolace](../../csharp/language-reference/tokens/interpolated.md) funkce podporuje také vlastní řetězce číselného formátu.  
   
 > [!TIP]
@@ -45,14 +47,16 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
 |"‰"|Zástupný symbol promile|Vynásobí číslo 1000 a vloží do výsledného řetězce symbol promile podle jazykové verze.<br /><br /> Další informace: ["‰" vlastní specifikátor](#SpecifierPerMille).|0.03697 ("#0.00‰", en US) -> 36.97‰<br /><br /> 0.03697 ("#0.00‰", ru-RU) -> 36, 97‰|  
 |"E0"<br /><br /> "E+0"<br /><br /> "E-0"<br /><br /> "e0"<br /><br /> "e+0"<br /><br /> "e-0"|Exponenciální zápis|Pokud následuje alespoň jedna 0 (nula), zformátuje výsledek pomocí exponenciálního zápisu. Velikost písmen "E" nebo "e" označuje velikost symbolu exponentu ve výsledném řetězci. Počet nul následujících znak "E" nebo "e" určuje minimální počet číslic v exponentu. Znaménko plus (+) označuje, že znak znaménka vždy předchází exponent. Znaménko mínus (-) označuje, že znak znaménka předchází pouze u záporných exponentů.<br /><br /> Další informace: ["E" a "e" vlastní specifikátory](#SpecifierExponent).|987654 ("#0.0e0") -> 98.8e4<br /><br /> 1503.92311 1.504e + 03 -> ("0.0 ##e + 00")<br /><br /> 1.8901385E-16 ("0.0e + 00") -> 1.9e-16|  
 |"\\"|Řídicí znak|Způsobí, že následující znak je interpretován jako literál, nikoli jako specifikátor vlastního formátu.<br /><br /> Další informace: ["\\" řídicí znak](#SpecifierEscape).|987654 ("\\###00\\#") -> #987654#|  
-|'*řetězec*.<br /><br /> "*řetězec*"|Oddělovač řetězcového literálu|Označuje, že uzavřené znaky by měly být zkopírovány do výsledného řetězce beze změny.|68 ("#" stupních"") -> 68 stupňů<br /><br /> 68 ("#" stupňů. ") -> 68 stupňů|  
+|'*řetězec*.<br /><br /> "*řetězec*"|Oddělovač řetězcového literálu|Označuje, že uzavřené znaky by měly být zkopírovány do výsledného řetězce beze změny.<br/><br/>Další informace: [znak literály](#character-literals).|68 ("#" stupních"") -> 68 stupňů<br /><br /> 68 ("#" stupňů. ") -> 68 stupňů|  
 |;|Oddělovač oddílů|Definuje oddíly se zvláštními formátovacími řetězci pro kladná, záporná a nulová čísla.<br /><br /> Další informace: [";" Část oddělovače](#SectionSeparator).|12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#);-\0-") -> -0-<br /><br /> -12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)<br /><br /> 12.345 ("#0.0#;(#0.0#)") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#)") -> 0.0<br /><br /> -12.345 ("#0.0#;(#0.0#)") -> (12.35)|  
-|Ostatní|Všechny ostatní znaky|Znak je zkopírován do výsledného řetězce beze změny.|68 ("# °") -> 68 °|  
+|Ostatní|Všechny ostatní znaky|Znak je zkopírován do výsledného řetězce beze změny.<br/><br/>Další informace: [znak literály](#character-literals).|68 ("# °") -> 68 °|  
   
  V následujících částech jsou uvedeny podrobné informace o jednotlivých vlastních specifikátorech číselného formátu.  
+
+[!INCLUDE[C# interactive-note](~/includes/csharp-interactive-with-culture-note.md)] 
   
 <a name="Specifier0"></a>   
-## <a name="the-0-custom-specifier"></a>Vlastní specifikátor "0"  
+## <a name="the-0-custom-specifier"></a>"0" vlastní specifikátor  
  Specifikátor vlastního formátu "0" slouží jako zástupný symbol nuly. Pokud právě formátovaná hodnota má číslici na pozici, kde se zobrazí nula ve formátovacím řetězci, je tato číslice zkopírována do výsledného řetězce. V opačném případě se ve výsledném řetězci zobrazí nula. Pozice nuly nejvíce vlevo od desetinné čárky a nuly nejvíce vpravo od desetinné čárky určuje rozsah číslic, které jsou vždy obsaženy ve výsledném řetězci.  
   
  Specifikátor "00" způsobí, že hodnota se zaokrouhlí na nejbližší číslici předcházející desítky, kde je vždy použito zaokrouhlení směrem od nuly. Například formátování 34,5 se specifikátorem "00" dává výslednou hodnotu 35.  
@@ -60,7 +64,7 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
  Následující příklad zobrazí několik hodnot, které jsou formátovány pomocí vlastních formátovacích řetězců, které obsahují zástupné symboly nuly.  
   
  [!code-cpp[Formatting.Numeric.Custom#1](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#1)]
- [!code-csharp[Formatting.Numeric.Custom#1](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#1)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#1](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#1)]
  [!code-vb[Formatting.Numeric.Custom#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#1)]  
   
  [Zpět k tabulce](#table)  
@@ -76,19 +80,19 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
  Následující příklad zobrazí několik hodnot, které jsou formátovány pomocí vlastních formátovacích řetězců, které obsahují zástupné symboly číslice.  
   
  [!code-cpp[Formatting.Numeric.Custom#2](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#2)]
- [!code-csharp[Formatting.Numeric.Custom#2](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#2)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#2](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#2)]
  [!code-vb[Formatting.Numeric.Custom#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#2)]  
   
  Chcete-li vrátit výsledek řetězec, ve kterém chybí číslic nebo úvodní nuly jsou nahrazovány mezery, použijte [funkce složeného formátování](../../../docs/standard/base-types/composite-formatting.md) a zadejte šířku pole, jak ukazuje následující příklad.  
   
  [!code-cpp[Formatting.Numeric.Custom#12](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/SpaceOrDigit1.cpp#12)]
- [!code-csharp[Formatting.Numeric.Custom#12](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/SpaceOrDigit1.cs#12)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#12](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/SpaceOrDigit1.cs#12)]
  [!code-vb[Formatting.Numeric.Custom#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/SpaceOrDigit1.vb#12)]  
   
  [Zpět k tabulce](#table)  
   
 <a name="SpecifierPt"></a>   
-## <a name="the--custom-specifier"></a>Vlastní specifikátor "."  
+## <a name="the--custom-specifier"></a>"." Vlastní specifikátor  
  Specifikátor vlastního formátu "." vloží lokalizovaný oddělovač desetinných míst do výsledného řetězce. První tečka ve formátovacím řetězci určuje umístění oddělovače desetinných míst ve formátované hodnotě. Jakékoli další tečky jsou ignorovány.  
   
  Znak, který se používá jako oddělovač desetinných míst ve výsledném řetězci není vždy dobou; je dáno <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> vlastnost <xref:System.Globalization.NumberFormatInfo> objekt, který řídí formátování.  
@@ -96,13 +100,13 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
  Následující příklad používá specifikátor formátu "." pro určení umístění desetinné tečky v několika výsledných řetězcích.  
   
  [!code-cpp[Formatting.Numeric.Custom#3](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#3)]
- [!code-csharp[Formatting.Numeric.Custom#3](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#3)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#3](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#3)]
  [!code-vb[Formatting.Numeric.Custom#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#3)]  
   
  [Zpět k tabulce](#table)  
   
 <a name="SpecifierTh"></a>   
-## <a name="the--custom-specifier"></a>Vlastní specifikátor ","  
+## <a name="the--custom-specifier"></a>Vlastní specifikátor ""  
  Znak "," slouží jako oddělovač skupin a specifikátor číselného měřítka.  
   
 -   Oddělovač skupin: Pokud je zadána jedna nebo více čárek mezi dva zástupné znaky pro číslice (0 nebo #), které formátují integrální číslice čísla, je znak oddělovače skupin vložen mezi každou číselnou skupinu do integrální části výstupu.  
@@ -116,13 +120,13 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
  Následující příklad ukazuje použití čárky jako oddělovače skupin.  
   
  [!code-cpp[Formatting.Numeric.Custom#4](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#4)]
- [!code-csharp[Formatting.Numeric.Custom#4](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#4)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#4](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#4)]
  [!code-vb[Formatting.Numeric.Custom#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#4)]  
   
  Následující příklad ukazuje použití čárky jako specifikátoru číselného měřítka.  
   
  [!code-cpp[Formatting.Numeric.Custom#5](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#5)]
- [!code-csharp[Formatting.Numeric.Custom#5](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#5)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#5](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#5)]
  [!code-vb[Formatting.Numeric.Custom#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#5)]  
   
  [Zpět k tabulce](#table)  
@@ -134,7 +138,7 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
  Následující příklad definuje několik vlastních formátovacích řetězců, které obsahují vlastní specifikátor "%".  
   
  [!code-cpp[Formatting.Numeric.Custom#6](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#6)]
- [!code-csharp[Formatting.Numeric.Custom#6](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#6)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#6](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#6)]
  [!code-vb[Formatting.Numeric.Custom#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#6)]  
   
  [Zpět k tabulce](#table)  
@@ -146,19 +150,19 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
  Následující příklad definuje vlastní formátovací řetězec, který obsahuje vlastní specifikátor "‰".  
   
  [!code-cpp[Formatting.Numeric.Custom#9](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#9)]
- [!code-csharp[Formatting.Numeric.Custom#9](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#9)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#9](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#9)]
  [!code-vb[Formatting.Numeric.Custom#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#9)]  
   
  [Zpět k tabulce](#table)  
   
 <a name="SpecifierExponent"></a>   
-## <a name="the-e-and-e-custom-specifiers"></a>Vlastní specifikátory "E" a "e"  
+## <a name="the-e-and-e-custom-specifiers"></a>Specifikátory vlastní "E" a "e"  
  Pokud je ve formátovacím řetězci přítomný některý z řetězců "E", "E+", "E-", "e", "e+" nebo "e-" a je okamžitě následován alespoň jednou nulou, je číslo formátováno pomocí vědeckého zápisu se znakem "E" nebo "e" vloženým mezi číslo a exponent. Počet nul následujících po indikátoru vědeckého zápisu určuje minimální počet číslic pro výstup exponentu. Formáty "E+" a "e+" označují, že znaménka plus nebo minus by měla vždy předcházet exponent. Formáty "E", "E-", "e" nebo "e-" označují, že znak znaménka by měl předcházet pouze záporné exponenty.  
   
  Následující příklad formátuje několik číselných hodnot pomocí specifikátorů pro vědecký zápis.  
   
  [!code-cpp[Formatting.Numeric.Custom#7](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#7)]
- [!code-csharp[Formatting.Numeric.Custom#7](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#7)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#7](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#7)]
  [!code-vb[Formatting.Numeric.Custom#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#7)]  
   
  [Zpět k tabulce](#table)  
@@ -177,7 +181,7 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
  Následující příklad používá řídicí znak, aby se zabránilo formátování operaci provést z interpretace "#", "0", a "\\" znaky jako řídicí znaky nebo specifikátory formátu. Příklady jazyka C# používají další zpětné lomítko k tomu, aby zpětné lomítko bylo interpretováno jako literální znak.  
   
  [!code-cpp[Formatting.Numeric.Custom#11](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/escape1.cpp#11)]
- [!code-csharp[Formatting.Numeric.Custom#11](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/escape1.cs#11)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#11](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/escape1.cs#11)]
  [!code-vb[Formatting.Numeric.Custom#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/escape1.vb#11)]  
   
  [Zpět k tabulce](#table)  
@@ -197,23 +201,55 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
  Následující příklad používá specifikátor formátu ";" pro formátování kladných, záporných a nulových čísel odlišným způsobem.  
   
  [!code-cpp[Formatting.Numeric.Custom#8](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#8)]
- [!code-csharp[Formatting.Numeric.Custom#8](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#8)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#8](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#8)]
  [!code-vb[Formatting.Numeric.Custom#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#8)]  
   
  [Zpět k tabulce](#table)  
+
+## <a name="character-literals"></a>Znakové literály  
+ 
+Specifikátory formátu, které se zobrazují v řetězci vlastní číselného formátu jsou vždy interpretovat jako formátování znaků a nikdy jako literál znaků. To zahrnuje následující znaky:  
+
+- [0](#Specifier0)
+- [\#](#SpecifierD)
+- [%](#SpecifierPct)
+- [‰](#SpecifierPerMille)
+- '
+- [\\](#SpecifierEscape)
+- [.](#SpecifierPt)
+- [,](#SpecifierTh)
+- [E nebo e](#SpecifierExponent), v závislosti na pozici v řetězec formátu.
+
+Všechny ostatní znaky jsou vždy interpretuje jako znakové literály a v operaci formátování, které jsou zahrnuté ve výsledném řetězci beze změny.  V operaci analýzy musí se shodovat s znaky ve vstupním řetězci přesně; porovnání rozlišuje velká a malá písmena.  
   
+Následující příklad ilustruje jeden běžně používá literálu znak jednotek (v tomto případě tisíc):
+  
+ [!code-csharp-interactive[literal characters](~/samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/literal2.cs#1)]
+ [!code-vb[literal characters](~/samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/literal2.vb#1)]  
+  
+ Existují dva způsoby, které určují, že znaky se budou interpretovat jako literály a jako formátovací znaky, abyste mohli být součástí výsledný řetězec nebo úspěšně analyzovat ve vstupním řetězci:  
+  
+- Podle uvozovací znaky formátování znak. Další informace najdete v tématu ["\\" řídicí znak](#SpecifierEscape).
+  
+- Uzavřením celý řetězcového literálu do uvozovek apostrofy.
+
+Následující příklad používá obou přístupů k obsahovat vyhrazené znaky v řetězci vlastní číselného formátu.  
+  
+     [!code-csharp-interactive[including reserved characters](~/samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/literal1.cs#1)]
+     [!code-vb[including reserved characters](~/samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/literal1.vb#1)]  
+    
 <a name="NotesCustomFormatting"></a>   
 ## <a name="notes"></a>Poznámky  
   
-### <a name="floating-point-infinities-and-nan"></a>Nekonečno s plovoucí desetinnou čárkou a NaN  
+### <a name="floating-point-infinities-and-nan"></a>Nekonečno s plovoucí desetinnou čárkou a NaN.  
  Bez ohledu na řetězec formátu Pokud hodnota <xref:System.Single> nebo <xref:System.Double> s plovoucí desetinnou čárkou typ je kladné nekonečno, záporné nekonečno nebo nečíselné (NaN), formátovaný řetězec je hodnotou příslušné <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>, <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>, nebo <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A> vlastnost určeného aktuálně používán <xref:System.Globalization.NumberFormatInfo> objektu.  
   
-### <a name="control-panel-settings"></a>Nastavení části Ovládací panely  
+### <a name="control-panel-settings"></a>Nastavení ovládacího panelu  
  Nastavení v **místní a jazykové nastavení** položky v Ovládacích panelech vliv výsledný řetězec vytvořený při operaci formátování. Tato nastavení slouží k chybě při inicializaci <xref:System.Globalization.NumberFormatInfo> objekt přidružený jazykové verze aktuálního vlákna, a poskytuje hodnoty použité k řízení formátování jazykové verze aktuálního vlákna. Počítače, které používají různá nastavení, generují různé výsledné řetězce.  
   
  Kromě toho, pokud použijete <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> konstruktor k vytvoření instance nového <xref:System.Globalization.CultureInfo> objekt, který reprezentuje stejnou jazykovou verzi jako aktuální systémovou kulturu jakékoli vlastní nastavení **místní a jazykové nastavení** na ovládacím panelu se použijí k novému <xref:System.Globalization.CultureInfo> objektu. Můžete použít <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> konstruktor k vytvoření <xref:System.Globalization.CultureInfo> objekt, který vlastní nastavení systému.  
   
-### <a name="rounding-and-fixed-point-format-strings"></a>Formátovací řetězce se zaokrouhlováním a pevnou desetinnou čárkou  
+### <a name="rounding-and-fixed-point-format-strings"></a>Řetězce formátu zaokrouhlení a s pevnou desetinnou čárkou  
  Pro formátovací řetězce s pevnou desetinnou čárkou (což jsou formátovací řetězce, které neobsahují vědecké formátovací znaky) jsou čísla zaokrouhlena na tolik desetinných míst, kolik je zástupných symbolů číslic napravo od desetinné čárky. Pokud formátovací řetězec neobsahuje desetinnou čárku, bude číslo zaokrouhleno na nejbližší celé číslo. Pokud má dané číslo více číslic, než je počet zástupných symbolů číslic nalevo od desetinné čárky, jsou další číslice zkopírovány do výsledného řetězce bezprostředně před první zástupný symbol číslice.  
   
  [Zpět k tabulce](#table)  
@@ -223,13 +259,13 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
  Následující příklad ukazuje dva vlastní číselné formátovací řetězce. V obou případech zástupný symbol číslice (`#`) zobrazí číselná data a všechny ostatní znaky jsou zkopírovány do výsledný řetězec.  
   
  [!code-cpp[Formatting.Numeric.Custom#10](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/example1.cpp#10)]
- [!code-csharp[Formatting.Numeric.Custom#10](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/example1.cs#10)]
+ [!code-csharp-interactive[Formatting.Numeric.Custom#10](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/example1.cs#10)]
  [!code-vb[Formatting.Numeric.Custom#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/example1.vb#10)]  
   
  [Zpět k tabulce](#table)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Globalization.NumberFormatInfo>  
+## <a name="see-also"></a>Viz také:  
+ <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>  
  [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
  [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)  
  [Postupy: Zarovnání čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  

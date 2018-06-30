@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/30/2017
-ms.openlocfilehash: ded2e5399938be25005776963b0310b6a49d0353
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 430fbe3fc6d63fd3b90b578f32b42831c368ba10
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592350"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106301"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vaší aplikace s více kontejnerů pomocí docker-compose.yml 
 
@@ -431,8 +431,8 @@ Všimněte si, že s hodnotami nastavenými v běhové prostředí vždy přepsa
 -   **Přehled Docker Compose**
     [*https://docs.docker.com/compose/overview/*](https://docs.docker.com/compose/overview/)
 
--   **Více souborů vytvářené**
-    [*https://docs.docker.com/compose/extends/\#více tvoří soubory*](https://docs.docker.com/compose/extends/#multiple-compose-files)
+-   **Více souborů Compose**
+    [*https://docs.docker.com/compose/extends/\#multiple-compose-files*](https://docs.docker.com/compose/extends/#multiple-compose-files)
 
 ### <a name="building-optimized-aspnet-core-docker-images"></a>Vytváření optimalizované imagí Dockeru jádro ASP.NET
 
@@ -548,4 +548,5 @@ Celkové takeway tady je, že budete moci sestavit aplikaci stejné svůj CI/CD 
 
 
 >[!div class="step-by-step"]
-[Předchozí] (data řízené crud-microservice.md) [Další] (container.md databáze serveru)
+[Předchozí](data-driven-crud-microservice.md)
+[další](database-server-container.md)

@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
-ms.openlocfilehash: 0f3b4539156f3ba437c77dea721ca53206d1ed40
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6003252d7e87428c7f954b57c3b67a041e3f3b15
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579896"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106473"
 ---
 # <a name="implementing-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Implementace vrstvu trvalosti infrastruktury základní Entity Framework
 
@@ -471,4 +471,5 @@ I když nepodporujeme doporučené vrácení IQueryable z úložiště, je v po�
     
 
 >[!div class="step-by-step"]
-[Předchozí] (infrastruktury trvalost layer-design.md) [Další] (nosql-database trvalost infrastructure.md)
+[Předchozí](infrastructure-persistence-layer-design.md)
+[další](nosql-database-persistence-infrastructure.md)

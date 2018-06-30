@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.openlocfilehash: 53b279a3325ae0fb662cd91a6f7f454b765196ff
-ms.sourcegitcommit: 6c480773ae896f45af4671fb3e26611a50e4dd81
+ms.openlocfilehash: fca5cf280d5abb85da78413a6eed463a2ffe6a88
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2018
-ms.locfileid: "35251009"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37104876"
 ---
 # <a name="what-os-to-target-with-net-containers"></a>Jaké operačního systému k cíli s kontejnery rozhraní .NET
 
@@ -50,4 +50,5 @@ Když přidáte název bitové kopie do souboru soubor Docker, můžete vybrat o
 
 
 >[!div class="step-by-step"]
-[Předchozí] (kontejner framework – volba factors.md) [Další] (oficiální net-docker-images.md)
+[Předchozí](container-framework-choice-factors.md)
+[další](official-net-docker-images.md)

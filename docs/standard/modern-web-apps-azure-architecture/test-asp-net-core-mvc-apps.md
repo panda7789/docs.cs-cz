@@ -4,12 +4,12 @@ description: Architektury moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/08/2017
-ms.openlocfilehash: e27cdb4b785253edd27e9854d6f977e3ede02266
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: b22e0e109144b4abd04cd4199cfdec244d8fa7af
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36208499"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106499"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Testování jádro ASP.NET MVC aplikace
 
@@ -273,4 +273,5 @@ public class CatalogControllerGetImage : BaseWebTest
 Tento test funkční vykonává úplné zásobník aplikací ASP.NET MVC jádra, včetně všech middleware, filtry, vazače, atd., které může být na místě. Ověřuje, že danou trasu ("/ katalogu/pic/1) vrátí očekávané bajtové pole pro soubor do vhodného umístění. Nebude tak bez nastavování skutečné webový server a proto zabraňuje většinu brittleness, který používá skutečné webového serveru pro testování můžete zaznamenat (například problémy s nastavením brány firewall). Funkčních testů, které spouštění TestServer jsou obvykle nižší než integrace a testování částí, ale je mnohem rychlejší než testy, které by spustit v síti k serveru webového testu.
 
 >[!div class="step-by-step"]
-[Předchozí] (work-with-data-in-asp-net-core-apps.md) [Další] (development-process-for-azure.md)
+[Předchozí](work-with-data-in-asp-net-core-apps.md)
+[další](development-process-for-azure.md)

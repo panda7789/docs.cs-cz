@@ -2,12 +2,12 @@
 title: 'Přenos: UDP'
 ms.date: 03/30/2017
 ms.assetid: 738705de-ad3e-40e0-b363-90305bddb140
-ms.openlocfilehash: 4f69730831ec57efc782a95d7412496aa69a4afb
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 64452e36f34f87aef491cf66f6dd94ddc3a59f34
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33808413"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106035"
 ---
 # <a name="transport-udp"></a>Přenos: UDP
 Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP a vícesměrového vysílání jako vlastní přenosu Windows Communication Foundation (WCF). Ukázka popisuje doporučený postup pro vytvoření vlastní přenosu ve WCF, pomocí rozhraní kanálu a následující osvědčené postupy WCF. Postup vytvoření vlastního přenosu jsou následující:  
@@ -72,9 +72,9 @@ Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP
   
 -   <xref:System.ServiceModel.Channels.CommunicationObject> Třída implementuje <xref:System.ServiceModel.ICommunicationObject> a vynucuje stav stavového stroje výše popsané v kroku 2. 
 
--   ''<xref:System.ServiceModel.Channels.ChannelManagerBase> Třída implementuje <xref:System.ServiceModel.Channels.CommunicationObject> a poskytuje jednotnou základní třídu pro <xref:System.ServiceModel.Channels.ChannelFactoryBase> a <xref:System.ServiceModel.Channels.ChannelListenerBase>. <xref:System.ServiceModel.Channels.ChannelManagerBase> Třída pracuje ve spojení s <xref:System.ServiceModel.Channels.ChannelBase>, což je základní třídu, která implementuje <xref:System.ServiceModel.Channels.IChannel>.  
+-   <xref:System.ServiceModel.Channels.ChannelManagerBase> Třída implementuje <xref:System.ServiceModel.Channels.CommunicationObject> a poskytuje jednotnou základní třídu pro <xref:System.ServiceModel.Channels.ChannelFactoryBase> a <xref:System.ServiceModel.Channels.ChannelListenerBase>. <xref:System.ServiceModel.Channels.ChannelManagerBase> Třída pracuje ve spojení s <xref:System.ServiceModel.Channels.ChannelBase>, což je základní třídu, která implementuje <xref:System.ServiceModel.Channels.IChannel>.  
   
--   ''<xref:System.ServiceModel.Channels.ChannelFactoryBase> Třída implementuje <xref:System.ServiceModel.Channels.ChannelManagerBase> a <xref:System.ServiceModel.Channels.IChannelFactory> a dojde ke konsolidaci `CreateChannel` přetížení do jednoho `OnCreateChannel` abstraktní metodu.  
+-   <xref:System.ServiceModel.Channels.ChannelFactoryBase> Třída implementuje <xref:System.ServiceModel.Channels.ChannelManagerBase> a <xref:System.ServiceModel.Channels.IChannelFactory> a dojde ke konsolidaci `CreateChannel` přetížení do jednoho `OnCreateChannel` abstraktní metodu.  
   
 -   <xref:System.ServiceModel.Channels.ChannelListenerBase> Třída implementuje <xref:System.ServiceModel.Channels.IChannelListener>. Se má na starosti správu základních stavu.  
   
@@ -109,13 +109,13 @@ this.socket.SendTo(messageBuffer.Array, messageBuffer.Offset, messageBuffer.Coun
 ```  
   
 ### <a name="the-udpchannellistener"></a>UdpChannelListener  
- '' UdpChannelListener, který implementuje ukázce je odvozena z <xref:System.ServiceModel.Channels.ChannelListenerBase> třídy. Pro jediný soket UDP používá pro příjem datagramy. `OnOpen` Metoda přijímá data pomocí soketu UDP v asynchronní smyčce. Data jsou potom převedou do zprávy pomocí rozhraní kódování zprávy.  
+ `UdpChannelListener` , Implementuje ukázce je odvozena z <xref:System.ServiceModel.Channels.ChannelListenerBase> třídy. Pro jediný soket UDP používá pro příjem datagramy. `OnOpen` Metoda přijímá data pomocí soketu UDP v asynchronní smyčce. Data jsou potom převedou do zprávy pomocí rozhraní kódování zprávy.  
   
 ```csharp
 message = MessageEncoderFactory.Encoder.ReadMessage(new ArraySegment<byte>(buffer, 0, count), bufferManager);  
 ```  
   
- Protože stejné kanálu datagramu představuje zprávy, které přicházejí z mnoha zdrojů, `UdpChannelListener` naslouchací proces typu singleton. Není ve většině, jednu aktivní <xref:System.ServiceModel.Channels.IChannel>'' přidružené k této naslouchací proces najednou. Ukázka generuje jiný pouze v případě, že kanál, který je vrácen rutinou `AcceptChannel` metoda je následně zlikvidován. Při příjmu zprávy je zařazených do fronty do tohoto kanálu, typu singleton.  
+ Protože stejné kanálu datagramu představuje zprávy, které přicházejí z mnoha zdrojů, `UdpChannelListener` naslouchací proces typu singleton. Není ve většině, jednu aktivní <xref:System.ServiceModel.Channels.IChannel> přidružené k této naslouchací proces najednou. Ukázka generuje jiný pouze v případě, že kanál, který je vrácen rutinou `AcceptChannel` metoda je následně zlikvidován. Při příjmu zprávy je zařazených do fronty do tohoto kanálu, typu singleton.  
   
 #### <a name="udpinputchannel"></a>UdpInputChannel  
  `UdpInputChannel` Třída implementuje `IInputChannel`. Skládá se z fronty příchozích zpráv, které se nacházejí `UdpChannelListener`je soketu. Tyto zprávy jsou vyjmutou pomocí `IInputChannel.Receive` metoda.  

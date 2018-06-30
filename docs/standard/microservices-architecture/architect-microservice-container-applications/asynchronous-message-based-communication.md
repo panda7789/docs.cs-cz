@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: bee9a6215d2952f6c7f71607b1c4b1f44d1c0faf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5fb5d2f9f4f63ee885752a5dcc45cc45f71dc32f
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579129"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106405"
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchronní komunikaci na základě zpráv
 
@@ -85,8 +85,8 @@ Další témata vzít v úvahu při použití asynchronní komunikaci jsou zprá
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Řízené zasílání zpráv událostí**
-    [*http://soapatterns.org/design\_vzory/událost\_řízené\_zasílání zpráv*](http://soapatterns.org/design_patterns/event_driven_messaging)
+-   **Událost řízené zasílání zpráv**
+    [*http://soapatterns.org/design\_patterns/event\_driven\_messaging*](http://soapatterns.org/design_patterns/event_driven_messaging)
 
 -   **Publikování a přihlášení k odběru kanálu**
     [*http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html*](http://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html)
@@ -101,11 +101,12 @@ Další témata vzít v úvahu při použití asynchronní komunikaci jsou zprá
     [*https://msdn.microsoft.com/library/jj591572.aspx*](https://msdn.microsoft.com/library/jj591572.aspx)
 
 -   **Konzistence typu případné**
-    [*https://en.wikipedia.org/wiki/Eventual\_konzistence*](https://en.wikipedia.org/wiki/Eventual_consistency)
+    [*https://en.wikipedia.org/wiki/Eventual\_consistency*](https://en.wikipedia.org/wiki/Eventual_consistency)
 
 -   **Jimmy Bogard. Refaktoring směrem odolnost: Vyhodnocení párování**
     [*https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/*](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
 
 
 >[!div class="step-by-step"]
-[Předchozí] (communication-in-microservice-architecture.md) [Další] (maintain-microservice-apis.md)
+[Předchozí](communication-in-microservice-architecture.md)
+[další](maintain-microservice-apis.md)

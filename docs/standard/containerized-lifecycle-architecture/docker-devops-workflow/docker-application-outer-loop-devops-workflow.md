@@ -4,12 +4,12 @@ description: Kontejnerizované Docker životního cyklu aplikací s Microsoft pl
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 198313c260b36d3f3025606e73e220c361a7ebb8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b88eb5637bf266ab2e0a6d255f2e83f6aadc8af2
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578999"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106159"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky v pracovním postupu vnější smyčky DevOps pro aplikaci Docker
 
@@ -234,4 +234,5 @@ Toto téma taky je popsaná v další kapitoly jako součást úlohy, které IT 
 Jenom v případě, že monitorování a Diagnostika jsou 100 procent v rámci sféru DevOps jsou monitorování procesů a analýzy provádí vývojový tým, proti prostředí testování nebo beta. To se provádí tak, že provedete zátěžové testování nebo jednoduše tak, že monitorování beta nebo QA prostředí, kde beta testery zkoušíte nové verze.
 
 >[!div class="step-by-step"]
-[Předchozí] (index.md) [Další] (.. /Run-Manage-monitor-docker-Environments/index.MD)
+[Předchozí](index.md)
+[další](../run-manage-monitor-docker-environments/index.md)

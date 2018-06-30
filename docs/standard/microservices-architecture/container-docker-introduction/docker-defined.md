@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: fadd2611283f0a7dadbf1734fe48f7d1a13096ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 06dd5199b8dbc42ce3e9ae35bc5c3673d01cb4de
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576190"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106798"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 
@@ -58,4 +58,5 @@ Bitovou kopii kontejneru je způsob, jak balíčku aplikace nebo služby a nasa�
 Nemáte vyslovení docker vývojáři "Ho pracuje na můj počítač, proč ne v produkčním prostředí?" Říká se, "Je spuštěna na Docker". Docker zabalené aplikace mohou být provedeny na všech podporovaných Docker prostředí. Docker zabalené aplikace spustit konzistentně na všechny cíle nasazení (vývoj, kontrolu kvality, pracovní produkční).
 
 >[!div class="step-by-step"]
-[Předchozí] (index.md) [Další] (docker-terminology.md)
+[Předchozí](index.md)
+[další](docker-terminology.md)

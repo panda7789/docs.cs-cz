@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/06/2018
-ms.openlocfilehash: 58bb915c825cd69c68b3955573145ae6a1b1a6e4
-ms.sourcegitcommit: 2ad7d06f4f469b5d8a5280ac0e0289a81867fc8e
+ms.openlocfilehash: 154cb0eafb8f14d61191b7cad749cb93d269ff34
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35231418"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105061"
 ---
 ![](./media/cover.png)
 
@@ -152,4 +152,4 @@ Napsali jsme tento průvodce vám pomůže pochopit architektura kontejnerizovan
 [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com)
 
 >[!div class="step-by-step"]
-[Další] (container-docker-introduction/index.md)
+[Next](container-docker-introduction/index.md)

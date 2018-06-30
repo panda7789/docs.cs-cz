@@ -3,12 +3,12 @@ title: Mikroslužeb hostované v Docker - C#
 description: Naučte se vytvořit základní služby, které běží v kontejnerech Docker asp.net
 ms.date: 06/08/2017
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
-ms.openlocfilehash: b043b0109bcf8a67867d2c73a5ab22e43a4963cf
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: 1f4b38243beb1210b1374bd701fac66b2fa72cc5
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36208357"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106347"
 ---
 # <a name="microservices-hosted-in-docker"></a>Mikroslužeb hostované v Docker
 
@@ -46,15 +46,17 @@ Docker lze nainstalovat v mnoha Linuxových distribucích, systému macOS nebo s
 
 ## <a name="create-the-application"></a>Vytvoření aplikace
 
-Teď, když jste nainstalovali všechny nástroje, vytvořte novou aplikaci ASP.NET Core. To lze provést, vytvořte nový adresář s názvem "WeatherMicroservice" a spusťte následující příkaz v tomto adresáři ve své oblíbené prostředí:
+Teď, když jste nainstalovali všechny nástroje, vytvořte novou aplikaci ASP.NET Core v adresář s názvem "WeatherMicroservice" spuštěním následujícího příkazu v své oblíbené prostředí:
 
 ```console
-dotnet new web
+dotnet new web -o WeatherMicroservice
 ```
 
 `dotnet` Příkaz spustí nástroje potřebné pro .NET – vývoj. Každý příkaz spouští jiný příkaz.
 
 `dotnet new` Příkaz se používá k vytvoření .net základní projekty.
+
+`-o WeatherMicroservice` Možnost po `dotnet new` příkaz umožňuje poskytnout umístění pro vytvoření aplikace ASP.NET Core.
 
 Pro tento mikroslužby chceme nejjednodušším, nejvíce jednoduché webové aplikace to možné, takže jsme použili šabloně "ASP.NET Core prázdný" zadáním jeho krátký název `web`.
 

@@ -4,12 +4,12 @@ description: Kontejnerizované Docker životního cyklu aplikací s Microsoft pl
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 43b76f738fa4b7c89423a5b9fac7ef91f40880c5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ff5a1f3e4b09ac9f7ea600d3f127523b96fcce55
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33568729"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106360"
 ---
 # <a name="docker-containers-images-and-registries"></a>Docker kontejnery, Image a registry
 
@@ -34,4 +34,5 @@ Privátní image registrech hostovaný místně nebo v cloudu se doporučují pr
 -   Chcete mít minimální latenci mezi vaší bitové kopie a prostředí pro vybrané nasazení. Například pokud produkční prostředí Azure, pravděpodobně chcete ukládat obrázků v registru kontejner Azure tak, aby latence sítě bude minimální. Podobným způsobem Pokud provozním prostředí je na místě, můžete chtít mít místní Docker důvěryhodné registru k dispozici v rámci stejné místní síti.
 
 >[!div class="step-by-step"]
-[Předchozí] (docker-terminology.md) [Další] (Docker-application-lifecycle/index.md)
+[Předchozí](docker-terminology.md)
+[další](Docker-application-lifecycle/index.md)

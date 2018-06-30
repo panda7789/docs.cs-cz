@@ -4,12 +4,12 @@ description: Kontejnerizované Docker životního cyklu aplikací s Microsoft pl
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 62da6a3ff595422e42450cb1341976424acc5a52
-ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
+ms.openlocfilehash: facc295399a7471edfd3e59eb1cc0e90f01ef11b
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36314708"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37104889"
 ---
 # <a name="using-visual-studio-tools-for-docker-visual-studio-on-windows"></a>Pomocí nástrojů Visual Studio pro Docker (Visual Studio v systému Windows)
 
@@ -71,4 +71,5 @@ Nasaďte kontejner ASP.NET se vzdáleným hostitelem Docker: [https://docs.micro
 
 
 >[!div class="step-by-step"]
-[Předchozí] (docker aplikace vnitřní smyčky workflow.md) [Další] (set-up-windows-containers-with-powershell.md)
+[Předchozí](docker-apps-inner-loop-workflow.md)
+[další](set-up-windows-containers-with-powershell.md)

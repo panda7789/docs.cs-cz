@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.openlocfilehash: d65968e3d37f53cceee55120110ad4bb3c13d304
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5058023aa7cbb42bcf39d061a3273b30e0e9b74c
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33577675"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105817"
 ---
 # <a name="using-azure-service-fabric"></a>Pomocí Azure Service Fabric
 
@@ -89,4 +89,5 @@ Ostatní mikroslužbu platformy, které umožňují stavové služby, které pod
 Upozorňujeme, že jsou kontejnery Docker bezstavové sami. Pokud chcete implementovat stavové služby, musíte další doporučený a vyšší úrovně rozhraní si předtím poznamenali. 
 
 >[!div class="step-by-step"]
-[Předchozí] (scalable-available-multi-container-microservice-applications.md) [Další] (.. /docker-Application-Development-Process/index.MD)
+[Předchozí](scalable-available-multi-container-microservice-applications.md)
+[další](../docker-application-development-process/index.md)

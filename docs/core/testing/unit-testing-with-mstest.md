@@ -4,12 +4,12 @@ description: Další koncepty test jednotky v C# a .NET Core prostřednictvím i
 author: ncarandini
 ms.author: wiwagn
 ms.date: 09/08/2017
-ms.openlocfilehash: b76e577d3950dd13b038f47c1b133e3529867c38
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6cfc389a1ee526d8dc4383c5efd6fb3299eb08d8
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33216093"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105599"
 ---
 # <a name="unit-testing-c-with-mstest-and-net-core"></a>Testování C# s použitím Mstestu a .NET Core jednotky
 
@@ -17,7 +17,7 @@ Tento kurz vás provede interaktivní prostředí vytváření ukázkové řeše
 
 ### <a name="creating-the-source-project"></a>Vytvoření projektu zdroje
 
-Otevřete okno prostředí. Vytvořte adresář s názvem *testování pomocí dotnet – testování* pro uložení řešení. Uvnitř tohoto nového adresáře, spusťte [ `dotnet new sln` ](../tools/dotnet-new.md) vytvořit nový soubor řešení pro knihovny tříd a k testovacímu projektu. Dále vytvořte *PrimeService* adresáře. Následující obrys doposud ukazuje strukturu adresáře a souboru:
+Otevřete okno prostředí. Vytvořte adresář s názvem *jednotky – testování pomocí mstestu* pro uložení řešení. Uvnitř tohoto nového adresáře, spusťte [ `dotnet new sln` ](../tools/dotnet-new.md) vytvořit nový soubor řešení pro knihovny tříd a k testovacímu projektu. Dále vytvořte *PrimeService* adresáře. Následující obrys doposud ukazuje strukturu adresáře a souboru:
 
 ```
 /unit-testing-using-mstest

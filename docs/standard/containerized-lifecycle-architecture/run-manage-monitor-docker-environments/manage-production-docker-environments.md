@@ -4,12 +4,12 @@ description: Kontejnerizované Docker životního cyklu aplikací s Microsoft pl
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 5ecf1fbc164ff4170951894abc071908f45178d1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 169ffa7ba61fa5dff09229410adb534f8e34a35c
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33573878"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37104582"
 ---
 # <a name="manage-production-docker-environments"></a>Spravovat produkční prostředí Docker
 
@@ -46,4 +46,5 @@ Toto jsou nástroje pro správu Service Fabric:
 
 
 >[!div class="step-by-step"]
-[Předchozí] (run-microservices-based-applications-in-production.md) [Další] (monitorování kontejnerizované aplikace services.md)
+[Předchozí](run-microservices-based-applications-in-production.md)
+[další](monitor-containerized-application-services.md)

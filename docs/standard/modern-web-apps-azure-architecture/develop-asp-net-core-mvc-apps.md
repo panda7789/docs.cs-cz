@@ -4,12 +4,12 @@ description: Architektury moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/07/2017
-ms.openlocfilehash: 59f0d46dadb736ad55e53f6715b7ca1b62e9cec4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a90f88e117965aec1550a45f114cabfda5204468
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592402"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106590"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikací MVC ASP.NET Core
 
@@ -73,7 +73,7 @@ Pro webové rozhraní API, rozhraní ASP.NET MVC základní podporuje [ *vyjedn�
 > - **Vazby modelu** https://docs.microsoft.com/aspnet/core/mvc/models/model-binding
 > - **Ověření modelu**
 > <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
-> - **filtry** https://docs.microsoft.com/aspnet/core/mvc/controllers/filters
+> - **Filtry** https://docs.microsoft.com/aspnet/core/mvc/controllers/filters
 
 ## <a name="working-with-dependencies"></a>Práce s závislosti
 
@@ -552,4 +552,5 @@ Pokud máte aplikace na platformě Azure, slouží k poskytování několika slu
 > <https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction>
 
 >[!div class="step-by-step"]
-[Předchozí] (common-client-side-web-technologies.md) [Další] (work-with-data-in-asp-net-core-apps.md)
+[Předchozí](common-client-side-web-technologies.md)
+[další](work-with-data-in-asp-net-core-apps.md)

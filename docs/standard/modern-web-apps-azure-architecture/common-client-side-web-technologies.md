@@ -4,12 +4,12 @@ description: Architektury moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/07/2017
-ms.openlocfilehash: 96bafce9c81a3a0486b7b8930367cf47ec5cbcb8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 79dac220e40274889783d29c0e04679dd878fda5
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592064"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106759"
 ---
 # <a name="common-client-side-web-technologies"></a>Běžné webové technologie straně klienta
 
@@ -66,7 +66,7 @@ Představte si například, pokud do textového pole hodnota přesahuje 10, elem
 
 ### <a name="jquery-vs-a-spa-framework"></a>jQuery vs SPA Framework
 
-| **Koeficient** | **jQuery** | **úhlová**|
+| **Koeficient** | **jQuery** | **Úhlová**|
 |--------------------------|------------|-------------|
 | Abstrahuje modelu DOM | **Ano** | **Ano** |
 | Podpora jazyka AJAX | **Ano** | **Ano** |
@@ -104,7 +104,7 @@ Ve spolupráci s součásti a šablony, místo elementů modelu DOM může úhlo
 
 Společnost Microsoft vyvinula referenční aplikace [eShopOnContainers](http://aka.ms/MicroservicesArchitecture), což zahrnuje implementace úhlová SPA. Tato aplikace obsahuje úhlová modulů ke správě online obchod nákupního košíku, zatížení a zobrazení položek ze svého katalogu a vytvoření pořadí zpracování. Můžete zobrazit a stáhnout ukázkovou aplikaci z [Githubu](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Web/WebSPA).
 
-### <a name="react"></a>Reagovat
+### <a name="react"></a>reagovat
 
 Na rozdíl od úhlová, který nabízí úplnou implementaci vzor Model-View-Controller, reagují se týká pouze zobrazení. Není rozhraní, právě knihovnu, takže k sestavení SPA budete muset využít další knihovny.
 
@@ -155,9 +155,9 @@ Rozhraní JavaScript pokračovat ve vývoji s breakneck rychlost. Použijte info
 > <https://jquery.com/>
 > - **jQuery vs AngularJS**  
 > <https://www.airpair.com/angularjs/posts/jquery-angularjs-comparison-migration-walkthrough>
-> - **úhlová**  
+> - **Úhlová**  
 > <https://angular.io/>
-> - **Reagovat**  
+> - **reagovat**  
 > <https://facebook.github.io/react/>
 > - **Reagovat Slingshot**  
 > <https://github.com/coryhouse/react-slingshot>
@@ -167,4 +167,5 @@ Rozhraní JavaScript pokračovat ve vývoji s breakneck rychlost. Použijte info
 > <https://hackernoon.com/5-best-javascript-frameworks-in-2017-7a63b3870282>
 
 >[!div class="step-by-step"]
-[Předchozí] (common-web-application-architectures.md) [Další] (develop-asp-net-core-mvc-apps.md)
+[Předchozí](common-web-application-architectures.md)
+[další](develop-asp-net-core-mvc-apps.md)

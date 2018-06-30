@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 9bcaacce323ed9afa482660f409312f9a1b82cfa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e41544a7c5f352321c3fa3e61a71568a6cf0f219
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576478"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106681"
 ---
 # <a name="microservices-architecture"></a>Architektura Mikroslužeb
 
@@ -63,4 +63,5 @@ Z těchto jsou pouze první tři zahrnutých nebo byla zavedená v této příru
 
 
 >[!div class="step-by-step"]
-[Předchozí] (service-oriented-architecture.md) [Další] (data-sovereignty-per-microservice.md)
+[Předchozí](service-oriented-architecture.md)
+[další](data-sovereignty-per-microservice.md)

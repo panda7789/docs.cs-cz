@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: f429bc0c6e76c2be2e4f491768a15ab36ecb0d34
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 662e1af8595c074ee1aeba5ad4d83660b667c1cd
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33591091"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105524"
 ---
 # <a name="deploying-single-container-based-net-core-web-applications-on-linux-or-windows-nano-server-hosts"></a>Nasazení webových aplikací na základě jednoho kontejneru .NET Core na hostitelích Nano Server systému Windows nebo Linux
 
@@ -142,4 +142,5 @@ Možná budete muset zastavit spuštěné procesy při přepínání mezi různ�
 Průvodce, který přidává podporu Docker komunikuje s běžící proces Docker. Průvodce nebude pracovat správně, pokud Docker není spuštěn, když spustíte průvodce. Kromě toho Průvodce prověří zvoleného aktuální kontejner přidání správné Docker podpory. Pokud chcete přidat podporu pro Windows kontejnery, budete muset spustit průvodce, dokud máte Docker s kontejnery Windows nakonfigurovat. Pokud chcete přidat podporu pro kontejnery Linux, spusťte Průvodce při Docker s kontejnery Linux nakonfigurované.
 
 >[!div class="step-by-step"]
-[Předchozí] (.. / docker-application-development-process/docker-app-development-workflow.md) [Další] (.. /containerize-NET-Framework-Applications/index.MD)
+[Předchozí](../docker-application-development-process/docker-app-development-workflow.md)
+[další](../containerize-net-framework-applications/index.md)

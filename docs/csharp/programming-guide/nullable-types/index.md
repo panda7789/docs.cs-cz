@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, nullable types
 - types [C#], nullable
 ms.assetid: e473cb01-28ca-42be-9cea-f717055d72c6
-ms.openlocfilehash: fcff492f420a60a41b373bf9042ed0c2d66d0446
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: 64b326b82cd022ed6590a232546690e2ec2a5c78
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34456585"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105485"
 ---
 # <a name="nullable-types-c-programming-guide"></a>Typy s povolenou hodnotou Null (Průvodce programováním v C#)
 Typy s možnou hodnotou Null jsou instancemi třídy <xref:System.Nullable%601?displayProperty=nameWithType> struktura. Typ s možnou hodnotou Null může představovat správné rozsahu hodnot pro její základní typ hodnoty, plus další `null` hodnotu. Například `Nullable<Int32>`, výrazný "S možnou hodnotou Null Int32," může být přiřazena libovolná hodnota od -2147483648 2147483647 nebo jej lze přiřadit `null` hodnotu. A `Nullable<bool>` je možné přiřadit hodnoty [true](../../../csharp/language-reference/keywords/true.md), [false](../../../csharp/language-reference/keywords/false.md), nebo [null](../../../csharp/language-reference/keywords/null.md). Schopnost přidělit `null` na typy číselné a logická hodnota je obzvláště užitečná při pracujete s databází a jiné datové typy, které obsahují prvky, které nemusí být přiřazena hodnota. Například logické pole v databázi můžete ukládat hodnoty `true` nebo `false`, nebo to může být definovaný. 
@@ -27,7 +27,7 @@ Další příklady najdete v tématu [pomocí typy s možnou hodnotou Null](../.
   
 -   Syntaxe `T?` je sdružená vlastnost <xref:System.Nullable%601>, kde `T` je typ hodnoty. Jsou dva formuláře zaměnitelné.  
   
--   Stejně jako obyčejnou hodnota typu, například přiřadit hodnotu Null typu `int? x = 10;` nebo `double? d = 4.108`. Typ s možnou hodnotou Null lze také přiřadit hodnotu `null`: `int? x = null.`  
+-   Stejně jako obyčejnou hodnota typu, například přiřadit hodnotu Null typu `int? x = 10;` nebo `double? d = 4.108;`. Typ s možnou hodnotou Null lze také přiřadit hodnotu `null`: `int? x = null;`.  
   
 -   Použití <xref:System.Nullable%601.GetValueOrDefault%2A?displayProperty=nameWithType> metoda vrátí přiřazenou hodnotu nebo výchozí hodnota pro základní typ, pokud je hodnota `null`, například `int j = x.GetValueOrDefault();`  
   

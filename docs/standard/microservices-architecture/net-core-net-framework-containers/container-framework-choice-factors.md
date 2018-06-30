@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/18/2017
-ms.openlocfilehash: 0e384fabca88d8ad6f93ae626140fb3d5dcaf971
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c45fbb9f26e6cd315e1b623ba2c79d5d038a6919
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33589319"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105297"
 ---
 # <a name="decision-table-net-frameworks-to-use-for-docker"></a>Rozhodovací tabulky: rozhraní .NET Framework pro Docker
 
@@ -58,4 +58,5 @@ Existuje několik funkcí vaší aplikace, které ovlivnit vaše rozhodnutí. P�
     - Pokud používáte rozhraní API, které jsou k dispozici pro klienta *.NET Core*, můžete také zvolit *Linux kontejnery a kontejnery Windows*.
 
 >[!div class="step-by-step"]
-[Předchozí] (net-framework kontejneru scenarios.md) [Další] (net kontejneru os-targets.md)
+[Předchozí](net-framework-container-scenarios.md)
+[další](net-container-os-targets.md)

@@ -1,15 +1,15 @@
 ---
-title: klíče takeaways
+title: Klíče takeaways
 description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | klíče takeaways
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 880f99228dbfe7374878b497582ccf540658fc12
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3366fa2494615db841b768f9149a070a65da58ee
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578180"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105511"
 ---
 # <a name="key-takeaways"></a>Klíče Takeaways
 
@@ -38,4 +38,4 @@ Jako souhrn a takeaways klíče jsou následující nejdůležitější závěr�
 **Orchestrators.** Orchestrators kontejneru jako ty, které jsou uvedeny v Azure Container Service (Kubernetes, Mesos DC/OS a Docker Swarm) a Azure Service Fabric jsou nezbytné pro všechny aplikace na základě mikroslužbu produkční prostředí a pro všechny služby kontejneru aplikace s významné složitost, škálovatelnost potřeb a konstantní vývoj. Tato příručka obsahuje zavedla orchestrators a jejich role v řešení na základě mikroslužbu a na základě kontejneru. Pokud potřebám vaší aplikace jsou přesun směrem k komplexní kontejnerizované aplikace, najdete je užitečná k vyhledání na další zdroje dalších informací o orchestrators
 
 >[!div class="step-by-step"]
-[Předchozí] (secure-net-microservices-web-applications/azure-key-vault-protects-secrets.md)
+[Předchozí](secure-net-microservices-web-applications/azure-key-vault-protects-secrets.md)

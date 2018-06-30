@@ -4,12 +4,12 @@ description: Architektury moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 10/08/2017
-ms.openlocfilehash: 66f321d4671364fa1f7eebef98d53210098b5ed4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ea7b173369cea3b785297a136546d65965c3d789
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33585486"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106850"
 ---
 # <a name="development-process-for-azure"></a>Vývoj pro proces pro Azure.
 
@@ -113,4 +113,5 @@ Když webové aplikace běží, můžete monitorovat stav aplikace a shromažďo
 
 
 >[!div class="step-by-step"]
-[Previous] (test-asp-net-core-mvc-apps.md) [Next] (azure-hosting-recommendations-for-asp-net-web-apps.md)
+[Předchozí](test-asp-net-core-mvc-apps.md)
+[další](azure-hosting-recommendations-for-asp-net-web-apps.md)

@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 33ced8ee-1745-4e71-8dee-ebe70ec067c7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1b1295185bf0fa06884b1332762d01f86f138a0b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 902c82f77240c957cc6070c9437b95d0c89fca53
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572220"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37105346"
 ---
 # <a name="xml-processing-options"></a>Možnosti pro zpracování XML
 Projděte si následující tabulky seznam technologiích společnosti Microsoft, které můžete použít pro proces XML data.  
@@ -19,7 +19,7 @@ Projděte si následující tabulky seznam technologiích společnosti Microsoft
   
 |**Možnost**|**Zpracování typu**|**Popis**|  
 |----------------|-------------------------|---------------------|  
-|[LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13) <br />(<xref:System.Xml.Linq> oboru názvů)|V paměti|-Založené na technologii .NET Framework Language-Integrated dotazu (LINQ).<br />-Poskytuje podobné jazyka SQL pro objekty, relační data a XML data možnosti dotazu.<br />-Poskytuje inituive možnosti vytváření a transformace dokumentů.<br />– Tuto možnost použijte, pokud píšete nový kód.|  
+|[LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13) <br />(<xref:System.Xml.Linq> oboru názvů)|V paměti|-Založené na technologii .NET Framework Language-Integrated dotazu (LINQ).<br />-Poskytuje podobné jazyka SQL pro objekty, relační data a XML data možnosti dotazu.<br />-Poskytuje intuitivní dokumentu možnosti vytvoření a transformace.<br />– Tuto možnost použijte, pokud píšete nový kód.|  
 |<xref:System.Xml.XmlReader?displayProperty=nameWithType>|Na základě datového proudu|-Umožňuje rychlé, bez mezipaměti, dopředné pro přístup k datům XML.<br />– Můžete vytvořit objekty pomocí <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> metoda a zadejte sadu funkcí pro povolení objektu pomocí <xref:System.Xml.XmlReaderSettings> – třída.|  
 |<xref:System.Xml.XmlWriter?displayProperty=nameWithType>|Na základě datového proudu|-Umožňuje rychlé, bez mezipaměti, dopředné pro generování dat XML.<br />– Můžete vytvořit objekty pomocí <xref:System.Xml.XmlWriter.Create%2A?displayProperty=nameWithType> metoda a zadejte sadu funkcí pro povolení objektu pomocí <xref:System.Xml.XmlWriterSettings> – třída.|  
 |<xref:System.Xml.XmlDocument?displayProperty=nameWithType>|V paměti|-Implementuje [základní úroveň 1 W3C Model Document Object (DOM)](https://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html) a [DOM úroveň 2 jádra](https://www.w3.org/TR/DOM-Level-2-Core/) doporučení.<br />-Můžete vytvořit, vložení, odebrání a změna uzly pomocí metody a vlastnosti, na základě známých modelu DOM.<br />– Tuto možnost použijte, pokud upravujete stávající kód, který využívá W3C modelu DOM.|  
