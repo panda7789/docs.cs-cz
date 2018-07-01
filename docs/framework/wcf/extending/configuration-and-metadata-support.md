@@ -2,12 +2,12 @@
 title: Konfigurace a podpora metadat
 ms.date: 03/30/2017
 ms.assetid: 27c240cb-8cab-472c-87f8-c864f4978758
-ms.openlocfilehash: 4dfeeba6db220e03ad981b13e2bb093bedcd43c3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d316e373177d86b7ba2b715f29fe3dace9082e8b
+ms.sourcegitcommit: 736ec4d3e2c74895b47a0d36126657b95da383c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33486721"
+ms.lasthandoff: 06/30/2018
+ms.locfileid: "37140148"
 ---
 # <a name="configuration-and-metadata-support"></a>Konfigurace a podpora metadat
 Toto téma popisuje, jak povolit podporu konfigurace a metadat pro vazby a prvky vazeb.  
@@ -182,7 +182,7 @@ if (transportBindingElement is UdpTransportBindingElement)
  Vlastní vazby element můžete exportovat zásady kontrolní výrazy ve vazbě WSDL pro koncový bod služby do express možnosti tohoto prvku vazby. Následující příklad kódu jsou převzaty z [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázka.  
   
 #### <a name="policy-export"></a>Export zásad  
- `UdpTransportBindingElement` Zadejte implementuje ''<xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> přidání podpory pro export zásad. V důsledku toho <xref:System.ServiceModel.Description.MetadataExporter?displayProperty=nameWithType> zahrnuje `UdpTransportBindingElement` při generování zásad u všech vazby, která ji obsahuje.  
+ `UdpTransportBindingElement` Zadejte implementuje <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> přidání podpory pro export zásad. V důsledku toho <xref:System.ServiceModel.Description.MetadataExporter?displayProperty=nameWithType> zahrnuje `UdpTransportBindingElement` při generování zásad u všech vazby, která ji obsahuje.  
   
  V <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A?displayProperty=nameWithType>, přidejte kontrolní výrazy pro UDP a jiné assertion, pokud je kanál v režimu vícesměrového vysílání. Toto je vzhledem k tomu, že má vliv na režimu vícesměrového vysílání jak komunikačního balíku je vytvořený a proto musí být koordinované mezi na obou stranách.  
   

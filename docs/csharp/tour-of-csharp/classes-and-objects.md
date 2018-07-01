@@ -3,12 +3,12 @@ title: Třídy a objekty v jazyce C# – přehled používání jazyka C#
 description: Nové jazyka C#? Přečtěte si tento přehled tříd, objekty a dědičnost
 ms.date: 08/10/2016
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: 1e89d8b89e5f4f74d637a1e3674fb3959a231a49
-ms.sourcegitcommit: 640cee8fc5d256cdd80e5b80240469feac10499e
+ms.openlocfilehash: 8e6b327c8391c3a3c97f7806f87dbb9656f0d00d
+ms.sourcegitcommit: 736ec4d3e2c74895b47a0d36126657b95da383c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36298289"
+ms.lasthandoff: 06/30/2018
+ms.locfileid: "37140278"
 ---
 # <a name="classes-and-objects"></a>Třídy a objekty
 
@@ -55,7 +55,7 @@ Následující část obsahuje přehled různých druhů členů, které může 
 
 ## <a name="accessibility"></a>Usnadnění
 
-Každý člen třídy má přidružené usnadnění přístupu, který řídí oblasti program textu, která mají mít přístup k členovi. Nejsou k dispozici pět možné formy usnadnění. Tyto jsou shrnuté níž.
+Každý člen třídy má přidružené usnadnění přístupu, který řídí oblasti program textu, která mají mít přístup k členovi. Existují šesti možné formy usnadnění. Tyto jsou shrnuté níž.
 
 * `public`
     - Přístup není omezené.
@@ -64,7 +64,7 @@ Každý člen třídy má přidružené usnadnění přístupu, který řídí o
 * `internal`
     - Přístup omezený na aktuální sestavení (.exe, .dll atd.)
 * `protected internal`
-    - Přístup omezené na obsahující třídu nebo třídy odvozené od obsahující – třída
+    - Přístup k jiné obsahující třídu, třídy odvozené od třídy obsahující nebo tříd v rámci stejného sestavení
 * `private`
     - Přístup k omezené na tato třída
 * `private protected`
