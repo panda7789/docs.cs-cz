@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 8ef9f39b0d99db32438e7dcf83318a1aa9054967
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6cc5563f93915d1516e5a5f22a104012c1bb85d6
+ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592441"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37106574"
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
@@ -110,7 +110,7 @@ Jak je uvedeno výše v části architektura, může mít několik přístupů p
 
 -   Pomocí [pošta k odeslání vzoru](http://gistlabs.com/2014/05/the-outbox/). Toto je transakcí tabulku pro ukládání událostí integrace (rozšíření místní transakce).
 
-Pro tento scénář pomocí úplné vzoru událostí Sourcing (ES) je jedním z osvědčených postupů, *není-li* nejlepší. V mnoha scénářích aplikace, ale nemusí být schopen implementovat úplnou ES operace. ES znamená ukládání jenom události domény v transakční databáze, místo ukládání dat v aktuálním stavu. Ukládání jenom události domény může mít velký výhod, jako je například s historii vašeho systému, které jsou k dispozici a schopnost určit stav systému v každém okamžiku v minulosti. Ale implementace úplnou ES vyžaduje, abyste rearchitect většinu systému a představuje mnoho složité kroky a požadavky. Například by chcete použít databázi vytvořené speciálně pro událost sourcing, například [událostí úložiště](https://geteventstore.com/), nebo databázi orientované dokumentu například Azure Cosmos DB, MongoDB, Cassandra, CouchDB nebo RavenDB. ES je skvělým přístup pro tento problém, ale není Nejsnazším řešením, pokud jste již obeznámeni s sourcing událostí.
+Pro tento scénář pomocí úplné vzoru událostí Sourcing (ES) je jedním z osvědčených postupů, není-li *nejlepší*. V mnoha scénářích aplikace, ale nemusí být schopen implementovat úplnou ES operace. ES znamená ukládání jenom události domény v transakční databáze, místo ukládání dat v aktuálním stavu. Ukládání jenom události domény může mít velký výhod, jako je například s historii vašeho systému, které jsou k dispozici a schopnost určit stav systému v každém okamžiku v minulosti. Ale implementace úplnou ES vyžaduje, abyste rearchitect většinu systému a představuje mnoho složité kroky a požadavky. Například by chcete použít databázi vytvořené speciálně pro událost sourcing, například [událostí úložiště](https://geteventstore.com/), nebo databázi orientované dokumentu například Azure Cosmos DB, MongoDB, Cassandra, CouchDB nebo RavenDB. ES je skvělým přístup pro tento problém, ale není Nejsnazším řešením, pokud jste již obeznámeni s sourcing událostí.
 
 Možnost použít transakčního protokolu dolování původně vypadá velmi transparentní. Pro tento postup, ale mikroslužbu má pro spojení protokolu RDBMS transakce, jako je například protokolu transakcí serveru SQL Server. To je pravděpodobně není žádoucí. Další nevýhodou je, že nízké úrovně aktualizací zaznamenávají v protokolu transakcí nemusí být na stejné úrovni jako vysoké úrovně integrace události. Pokud ano, proces zpětnou tyto operace transakce protokolu může být obtížné.
 
@@ -319,8 +319,8 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
 -   **Forked eShopOnContainers pomocí NServiceBus (určitého softwaru)**
     [*http://go.particular.net/eShopOnContainers*](http://go.particular.net/eShopOnContainers)
 
--   **Řízené zasílání zpráv událostí**
-    [*http://soapatterns.org/design\_vzory/událost\_řízené\_zasílání zpráv*](http://soapatterns.org/design_patterns/event_driven_messaging)
+-   **Událost řízené zasílání zpráv**
+    [*http://soapatterns.org/design\_patterns/event\_driven\_messaging*](http://soapatterns.org/design_patterns/event_driven_messaging)
 
 -   **Jimmy Bogard. Refaktoring směrem odolnost: Vyhodnocení párování**
     [*https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/*](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
@@ -332,7 +332,7 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
     [*https://msdn.microsoft.com/library/jj591572.aspx*](https://msdn.microsoft.com/library/jj591572.aspx)
 
 -   **Konzistence typu případné**
-    [*https://en.wikipedia.org/wiki/Eventual\_konzistence*](https://en.wikipedia.org/wiki/Eventual_consistency)
+    [*https://en.wikipedia.org/wiki/Eventual\_consistency*](https://en.wikipedia.org/wiki/Eventual_consistency)
 
 -   **Hnědá Philip. Kontexty ohraničenou strategií pro integraci**
     [*http://culttt.com/2014/11/26/strategies-integrating-bounded-contexts/*](http://culttt.com/2014/11/26/strategies-integrating-bounded-contexts/)
@@ -352,8 +352,8 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
 -   **Patrik Nommensen. Správa dat založeného na událostech pro Mikroslužeb**
     *<https://dzone.com/articles/event-driven-data-management-for-microservices-1> *
 
--   **Věta CAP**
-    [*https://en.wikipedia.org/wiki/CAP\_věta*](https://en.wikipedia.org/wiki/CAP_theorem)
+-   **Věta Zakončení**
+    [*https://en.wikipedia.org/wiki/CAP\_theorem*](https://en.wikipedia.org/wiki/CAP_theorem)
 
 -   **Co je Zakončení věta?**
     [*https://www.quora.com/What-Is-CAP-Theorem-1*](https://www.quora.com/What-Is-CAP-Theorem-1)
@@ -367,15 +367,16 @@ Pokud je nastavený příznak "redelivered", příjemce, vyžaduje v úvahu, pro
 -   **Erica Brewer. Zakončení 12 letech později: jak změnily "Pravidla"**
     [*https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed*](https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed)
 
--   **Účastní transakcí (DTC) externí** (MSMQ) [  *https://msdn.microsoft.com/library/ms978430.aspx \#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/library/ms978430.aspx%23bdadotnetasync2_topic3c)
+-   **Účastní transakcí (DTC) externí** (MSMQ) [*https://msdn.microsoft.com/library/ms978430.aspx\#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/library/ms978430.aspx%23bdadotnetasync2_topic3c)
 
 -   **Azure Service Bus. Zprostředkované zasílání zpráv: Detekce duplicitních**
     [*https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25*](https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25)
 
--   **Průvodce spolehlivost** (RabbitMQ dokumentace) [  *https://www.rabbitmq.com/reliability.html \#příjemce*](https://www.rabbitmq.com/reliability.html%23consumer)
+-   **Průvodce spolehlivost** (RabbitMQ dokumentace) [*https://www.rabbitmq.com/reliability.html\#consumer*](https://www.rabbitmq.com/reliability.html%23consumer)
 
 
 
 
 >[!div class="step-by-step"]
-[Předchozí] (rabbitmq-event-bus-development-test-environment.md) [Další] (test-aspnet-core-services-web-apps.md)
+[Předchozí](rabbitmq-event-bus-development-test-environment.md)
+[další](test-aspnet-core-services-web-apps.md)

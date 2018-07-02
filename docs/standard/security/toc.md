@@ -31,3 +31,4 @@
 ### [Zabezpečení a uživatelský vstup](security-and-user-input.md)
 ### [Zabezpečení a konflikty časování](security-and-race-conditions.md)
 ### [Zabezpečení a průběžné vytváření kódu](security-and-on-the-fly-code-generation.md)
+### [Ohrožení zabezpečení časování u symetrického dešifrování pomocí odsazení v režimu CBC](vulnerabilities-cbc-mode.md)
