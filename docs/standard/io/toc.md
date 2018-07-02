@@ -1,4 +1,5 @@
-# [Vstup/výstup souborů a datových proudů](index.md)
+# [Vstup/výstup souborů a streamů](index.md)
+## [Formáty cesty k souborům v systémech Windows](file-path-formats.md)
 ## [Obecné vstupně-výstupní úlohy](common-i-o-tasks.md)
 ### [Postupy: Kopírování adresářů](how-to-copy-directories.md)
 ### [Postupy: Vytvoření výčtu adresářů a souborů](how-to-enumerate-directories-and-files.md)

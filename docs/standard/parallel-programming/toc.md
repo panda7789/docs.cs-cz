@@ -4,7 +4,7 @@
 #### [Postupy: Zápis jednoduché smyčky Parallel.For](how-to-write-a-simple-parallel-for-loop.md)
 #### [Postupy: Zápis jednoduché smyčky Parallel.ForEach](how-to-write-a-simple-parallel-foreach-loop.md)
 #### [Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu](how-to-write-a-parallel-for-loop-with-thread-local-variables.md)
-#### [Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním vláknu](how-to-write-a-parallel-foreach-loop-with-thread-local-variables.md)
+#### [Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním oddílu](how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md)
 #### [Postupy: Zrušení smyčky Parallel.For nebo ForEach](how-to-cancel-a-parallel-for-or-foreach-loop.md)
 #### [Postupy: Zpracování výjimek v paralelních smyčkách](how-to-handle-exceptions-in-parallel-loops.md)
 #### [Postupy: Zrychlení malých smyček](how-to-speed-up-small-loop-bodies.md)
