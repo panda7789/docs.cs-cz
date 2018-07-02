@@ -91,6 +91,7 @@
 ### [Správa závislostí](core/tools/dependencies.md)
 ### [Dodatky k formátu csproj](core/tools/csproj.md)
 ## Migrace
+### [.NET Core 2.0 na 2.1](core/migration/20-21.md)
 ### [Migrace na formát csproj](core/migration/index.md)
 ### [Mapování mezi project.json a csproj](core/tools/project-json-to-csproj.md)
 ### [Migrace z DNX](core/migration/from-dnx.md)
@@ -414,7 +415,7 @@
 ### [Obory názvů](fsharp/language-reference/namespaces.md)
 ### [Moduly](fsharp/language-reference/modules.md)
 ### [Deklarace importu: Klíčové slovo open](fsharp/language-reference/import-declarations-the-open-keyword.md)
-### [Signatury](fsharp/language-reference/signatures.md)
+### [Soubory podpisů](fsharp/language-reference/signature-files.md)
 ### [Měrné jednotky](fsharp/language-reference/units-of-measure.md)
 ### [Dokumentace XML](fsharp/language-reference/xml-documentation.md)
 ### [Opožděné výpočty](fsharp/language-reference/lazy-computations.md)
