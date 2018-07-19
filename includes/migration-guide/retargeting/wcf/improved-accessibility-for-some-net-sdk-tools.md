@@ -1,9 +1,9 @@
-### <a name="improved-accessibility-for-some-net-sdk-tools"></a>Vylepšené usnadnění pro některé nástroje .NET SDK
+### <a name="improved-accessibility-for-some-net-sdk-tools"></a>Vylepšení přístupnosti pro některé nástroje sady .NET SDK
 
 |   |   |
 |---|---|
-|Podrobnosti|V rozhraní .NET Framework SDK 4.7.1 byly vylepšeny nástroje SvcConfigEditor.exe a SvcTraceViewer.exe opravou rozmanitých problémy. Většina z nich byly drobných záležitostí, jako je název není definované nebo určité vzorce automatizace uživatelského rozhraní není implementovaná správně. Zatímco řada uživatelů nebude mít na paměti tyto nesprávné hodnoty, zákazníkům, kteří používají technologie pro usnadnění jako čtečky obrazovky zjistí tyto sady SDK nástroje přístup. Tyto opravy jistě, změnit některé předchozí chování, například pořadí fokus klávesnice. Aby bylo možné získat všechny opravy usnadnění v těchto nástrojů, můžete do souboru app.config následující:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures=false&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
+|Podrobnosti|V SDK rozhraní .NET Framework 4.7.1 byly vylepšeny nástroje SvcConfigEditor.exe a SvcTraceViewer.exe opravou různých usnadnění. Většina z nich byly malé problémy, jako je název nedefinují nebo určité vzory pro automatizaci uživatelského rozhraní nebyl správně implementována. Při nesprávné hodnoty si nevšimnou mnoho uživatelů, zákazníci, kteří používají podpůrnou technologií, jako je čtečky obrazovky najdete tyto sady SDK nástroje přístupnější. Tyto opravy jistě, změňte některá předchozí chování, stejně jako pořadí fokus klávesnice. Zajistí všechno, co přístupnost opravy v těchto nástrojů můžete do souboru app.config následující:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures=false&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
 |Rozsah|Edge|
 |Version|4.7.1|
-|Typ|Změna orientace|
+|Typ|Mění se cílení|
 

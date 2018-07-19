@@ -2,9 +2,9 @@
 
 |   |   |
 |---|---|
-|Podrobnosti|Aplikace ClickOnce pomocí certifikát podepsaný pomocí algoritmu SHA-256 dříve, musel by nacházet, i v případě, že cílem aplikace 4.0 rozhraní .NET Framework 4.5 nebo novější. Nyní cílové rozhraní .NET Framework 4.0 ClickOnce aplikace můžete spustit v rozhraní .NET Framework 4.0, i když podepsané pomocí algoritmu SHA-256.|
-|Návrh|Tato změna odebere této závislosti a umožňuje certifikáty SHA-256 k podepisování aplikací ClickOnce, které cílí na rozhraní .NET Framework 4 a starší verze.|
+|Podrobnosti|Dříve by aplikace ClickOnce s certifikátem podepsané pomocí algoritmu SHA-256 vyžaduje rozhraní .NET Framework 4.5 nebo novější bude k dispozici, i v případě, že aplikace cílené 4.0. Nyní aplikace ClickOnce cílové rozhraní .NET Framework 4.0 lze spustit v rozhraní .NET Framework 4.0, i v případě, že podepsané pomocí algoritmu SHA-256.|
+|Návrh|Tato změna odebere dané závislosti a umožňuje certifikáty SHA-256 k podepisování aplikací ClickOnce, určených pro rozhraní .NET Framework 4 a dřívějších verzích.|
 |Rozsah|Vedlejší|
 |Version|4.6|
-|Typ|Změna orientace|
+|Typ|Mění se cílení|
 

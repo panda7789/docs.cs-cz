@@ -1,10 +1,10 @@
-### <a name="wcf-message-security-now-is-able-to-use-tls11-and-tls12"></a>Zabezpečení zpráv WCF je teď možné používat TLS1.1 a TLS1.2
+### <a name="wcf-message-security-now-is-able-to-use-tls11-and-tls12"></a>Zabezpečení zpráv WCF je teď možné použít TLS1.1 a TLS1.2
 
 |   |   |
 |---|---|
-|Podrobnosti|Od verze 4.7 rozhraní .NET Framework, zákazníci mohou nakonfigurovat TLS1.1 nebo TLS1.2 v zabezpečení zpráv WCF kromě SSL3.0 a TLS1.0 prostřednictvím nastavení konfigurace aplikace.|
-|Návrh|V 4.7 rozhraní .NET Framework podpora TLS1.1 a TLS1.2 v zabezpečení zpráv WCF ve výchozím nastavení vypnutá. Můžete ji povolit přidáním následující řádek <code>&lt;runtime&gt;</code> v souboru app.config nebo web.config:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.ServiceModel.DisableUsingServicePointManagerSecurityProtocols=false;Switch.System.Net.DontEnableSchUseStrongCrypto=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
+|Podrobnosti|Spuštění v rozhraní .NET Framework 4.7, zákazníci můžou nakonfigurovat TLS1.1 nebo TLS1.2 v zabezpečení zpráv WCF kromě SSL3.0 a protokol TLS 1.0 prostřednictvím nastavení konfigurace aplikace.|
+|Návrh|V rozhraní .NET Framework 4.7 je ve výchozím nastavení zakázána podpora TLS1.1 a TLS1.2 v zabezpečení zpráv WCF. Můžete ji povolit tak, že přidáte následující řádek, který <code>&lt;runtime&gt;</code> část souboru app.config nebo web.config:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.ServiceModel.DisableUsingServicePointManagerSecurityProtocols=false;Switch.System.Net.DontEnableSchUseStrongCrypto=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
 |Rozsah|Edge|
 |Version|4.7|
-|Typ|Změna orientace|
+|Typ|Mění se cílení|
 
