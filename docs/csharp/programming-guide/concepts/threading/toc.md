@@ -3,6 +3,5 @@
 ## [Parametry a návratové hodnoty pro procedury ve více vláknech](parameters-and-return-values-for-multithreaded-procedures.md)
 ## [Návod: Multithreading s komponentou BackgroundWorker](walkthrough-multithreading-with-the-backgroundworker-component.md)
 ## [Synchronizace vláken](thread-synchronization.md)
-## [Časovače vláken](thread-timers.md)
 ## [Sdružování vláken](thread-pooling.md)
 ### [Postupy: Použití fondu vláken](how-to-use-a-thread-pool.md)
