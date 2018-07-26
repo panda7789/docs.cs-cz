@@ -1,27 +1,18 @@
 ---
-title: "Ukázkový soubor XML: Číselná Data v Namespace1"
-ms.custom: 
+title: 'Ukázkový soubor XML: Numerická Data v Namespace1'
 ms.date: 07/20/2015
-ms.prod: .net
-ms.reviewer: 
-ms.suite: 
-ms.technology: devlang-visual-basic
-ms.tgt_pltfrm: 
-ms.topic: article
 ms.assetid: f01cc0a1-fb55-4b42-8380-16f4be47d6f4
-caps.latest.revision: "3"
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 8baded2fc58d9ad285623edfe13f2ddaebc1501b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 71ff5229d4f2342880bdf50f288355a676b78722
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244306"
 ---
-# <a name="sample-xml-file-numerical-data-in-a-namespace"></a><span data-ttu-id="ef8d0-102">Ukázkový soubor XML: Číselná Data v Namespace</span><span class="sxs-lookup"><span data-stu-id="ef8d0-102">Sample XML File: Numerical Data in a Namespace</span></span>
-<span data-ttu-id="ef8d0-103">Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="ef8d0-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="ef8d0-104">Tento soubor obsahuje číselná data pro souhrnné zpracování, průměrování a seskupení.</span><span class="sxs-lookup"><span data-stu-id="ef8d0-104">This file contains numerical data for summing, averaging, and grouping.</span></span> <span data-ttu-id="ef8d0-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="ef8d0-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-numerical-data-in-a-namespace"></a><span data-ttu-id="0ddec-102">Ukázkový soubor XML: Numerická Data v Namespace</span><span class="sxs-lookup"><span data-stu-id="0ddec-102">Sample XML File: Numerical Data in a Namespace</span></span>
+<span data-ttu-id="0ddec-103">Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="0ddec-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="0ddec-104">Tento soubor obsahuje číselná data pro sčítání, agregovat a seskupení.</span><span class="sxs-lookup"><span data-stu-id="0ddec-104">This file contains numerical data for summing, averaging, and grouping.</span></span> <span data-ttu-id="0ddec-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="0ddec-105">The XML is in a namespace.</span></span>  
   
-## <a name="data"></a><span data-ttu-id="ef8d0-106">Data</span><span class="sxs-lookup"><span data-stu-id="ef8d0-106">Data</span></span>  
+## <a name="data"></a><span data-ttu-id="0ddec-106">Data</span><span class="sxs-lookup"><span data-stu-id="0ddec-106">Data</span></span>  
   
 ```xml  
 <Root xmlns='http://www.adatum.com'>  
@@ -64,5 +55,5 @@ ms.lasthandoff: 10/18/2017
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ef8d0-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="ef8d0-107">See Also</span></span>  
- [<span data-ttu-id="ef8d0-108">Dokumenty XML ukázkové (technologie LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="ef8d0-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="0ddec-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="0ddec-107">See Also</span></span>  
+ [<span data-ttu-id="0ddec-108">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="0ddec-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

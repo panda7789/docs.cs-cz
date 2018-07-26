@@ -1,42 +1,42 @@
 ---
-title: Technologie LINQ to XML události (Visual Basic)
+title: Události LINQ to XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 34923928-b99c-4004-956e-38f6db25e910
 ms.openlocfilehash: 216c2af87d2ae3a767548ccaa1efe118215cc6a0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33645987"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39245283"
 ---
-# <a name="linq-to-xml-events-visual-basic"></a><span data-ttu-id="8c716-102">Technologie LINQ to XML události (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8c716-102">LINQ to XML Events (Visual Basic)</span></span>
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="8c716-103"> události umožňují být upozorněni, když je změnit strom XML.</span><span class="sxs-lookup"><span data-stu-id="8c716-103"> events enable you to be notified when an XML tree is altered.</span></span>  
+# <a name="linq-to-xml-events-visual-basic"></a><span data-ttu-id="868f5-102">Události LINQ to XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="868f5-102">LINQ to XML Events (Visual Basic)</span></span>
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="868f5-103"> události umožňují upozorněni, když je změněna stromu XML.</span><span class="sxs-lookup"><span data-stu-id="868f5-103"> events enable you to be notified when an XML tree is altered.</span></span>  
   
- <span data-ttu-id="8c716-104">Události můžete přidat do instance libovolného <xref:System.Xml.Linq.XObject>.</span><span class="sxs-lookup"><span data-stu-id="8c716-104">You can add events to an instance of any <xref:System.Xml.Linq.XObject>.</span></span> <span data-ttu-id="8c716-105">Obslužné rutiny události bude potom přijímat události pro změny, <xref:System.Xml.Linq.XObject> a všechny jeho podřízené položky.</span><span class="sxs-lookup"><span data-stu-id="8c716-105">The event handler will then receive events for modifications to that <xref:System.Xml.Linq.XObject> and any of its descendants.</span></span> <span data-ttu-id="8c716-106">Můžete například přidat obslužné rutiny události ke kořenu stromu a zpracovat všechny změny do stromu z této obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="8c716-106">For example, you can add an event handler to the root of the tree, and handle all modifications to the tree from that event handler.</span></span>  
+ <span data-ttu-id="868f5-104">Události můžete přidat do instance libovolného <xref:System.Xml.Linq.XObject>.</span><span class="sxs-lookup"><span data-stu-id="868f5-104">You can add events to an instance of any <xref:System.Xml.Linq.XObject>.</span></span> <span data-ttu-id="868f5-105">Obslužná rutina události se pak zobrazí události pro změny, které <xref:System.Xml.Linq.XObject> a všech jejích potomků.</span><span class="sxs-lookup"><span data-stu-id="868f5-105">The event handler will then receive events for modifications to that <xref:System.Xml.Linq.XObject> and any of its descendants.</span></span> <span data-ttu-id="868f5-106">Můžete například přidat obslužnou rutinu události pro kořen stromu a zpracovat všechny změny do stromové struktury z této obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="868f5-106">For example, you can add an event handler to the root of the tree, and handle all modifications to the tree from that event handler.</span></span>  
   
- <span data-ttu-id="8c716-107">Příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] události, viz <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed>.</span><span class="sxs-lookup"><span data-stu-id="8c716-107">For examples of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] events, see <xref:System.Xml.Linq.XObject.Changing> and <xref:System.Xml.Linq.XObject.Changed>.</span></span>  
+ <span data-ttu-id="868f5-107">Příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] události, viz <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed>.</span><span class="sxs-lookup"><span data-stu-id="868f5-107">For examples of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] events, see <xref:System.Xml.Linq.XObject.Changing> and <xref:System.Xml.Linq.XObject.Changed>.</span></span>  
   
-## <a name="types-and-events"></a><span data-ttu-id="8c716-108">Typy a události</span><span class="sxs-lookup"><span data-stu-id="8c716-108">Types and Events</span></span>  
- <span data-ttu-id="8c716-109">Při práci s událostmi se používají následující typy:</span><span class="sxs-lookup"><span data-stu-id="8c716-109">You use the following types when working with events:</span></span>  
+## <a name="types-and-events"></a><span data-ttu-id="868f5-108">Typy a události</span><span class="sxs-lookup"><span data-stu-id="868f5-108">Types and Events</span></span>  
+ <span data-ttu-id="868f5-109">Při práci s událostmi se používají následující typy:</span><span class="sxs-lookup"><span data-stu-id="868f5-109">You use the following types when working with events:</span></span>  
   
-|<span data-ttu-id="8c716-110">Typ</span><span class="sxs-lookup"><span data-stu-id="8c716-110">Type</span></span>|<span data-ttu-id="8c716-111">Popis</span><span class="sxs-lookup"><span data-stu-id="8c716-111">Description</span></span>|  
+|<span data-ttu-id="868f5-110">Typ</span><span class="sxs-lookup"><span data-stu-id="868f5-110">Type</span></span>|<span data-ttu-id="868f5-111">Popis</span><span class="sxs-lookup"><span data-stu-id="868f5-111">Description</span></span>|  
 |----------|-----------------|  
-|<xref:System.Xml.Linq.XObjectChange>|<span data-ttu-id="8c716-112">Určuje typ události, když událost se vyvolá pro <xref:System.Xml.Linq.XObject>.</span><span class="sxs-lookup"><span data-stu-id="8c716-112">Specifies the event type when an event is raised for an <xref:System.Xml.Linq.XObject>.</span></span>|  
-|<xref:System.Xml.Linq.XObjectChangeEventArgs>|<span data-ttu-id="8c716-113">Poskytuje data pro <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed> události.</span><span class="sxs-lookup"><span data-stu-id="8c716-113">Provides data for the <xref:System.Xml.Linq.XObject.Changing> and <xref:System.Xml.Linq.XObject.Changed> events.</span></span>|  
+|<xref:System.Xml.Linq.XObjectChange>|<span data-ttu-id="868f5-112">Určuje typ události, když událost se vyvolá pro <xref:System.Xml.Linq.XObject>.</span><span class="sxs-lookup"><span data-stu-id="868f5-112">Specifies the event type when an event is raised for an <xref:System.Xml.Linq.XObject>.</span></span>|  
+|<xref:System.Xml.Linq.XObjectChangeEventArgs>|<span data-ttu-id="868f5-113">Poskytuje data pro <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed> události.</span><span class="sxs-lookup"><span data-stu-id="868f5-113">Provides data for the <xref:System.Xml.Linq.XObject.Changing> and <xref:System.Xml.Linq.XObject.Changed> events.</span></span>|  
   
- <span data-ttu-id="8c716-114">Při úpravě strom XML, jsou vyvolány následující události:</span><span class="sxs-lookup"><span data-stu-id="8c716-114">The following events are raised when you modify an XML tree:</span></span>  
+ <span data-ttu-id="868f5-114">Při úpravě stromu XML jsou vyvolány následující události:</span><span class="sxs-lookup"><span data-stu-id="868f5-114">The following events are raised when you modify an XML tree:</span></span>  
   
-|<span data-ttu-id="8c716-115">Událost</span><span class="sxs-lookup"><span data-stu-id="8c716-115">Event</span></span>|<span data-ttu-id="8c716-116">Popis</span><span class="sxs-lookup"><span data-stu-id="8c716-116">Description</span></span>|  
+|<span data-ttu-id="868f5-115">Událost</span><span class="sxs-lookup"><span data-stu-id="868f5-115">Event</span></span>|<span data-ttu-id="868f5-116">Popis</span><span class="sxs-lookup"><span data-stu-id="868f5-116">Description</span></span>|  
 |-----------|-----------------|  
-|<xref:System.Xml.Linq.XObject.Changing>|<span data-ttu-id="8c716-117">Dojde k těsně před <xref:System.Xml.Linq.XObject> nebo některý z jeho následníky se chystáte změnit.</span><span class="sxs-lookup"><span data-stu-id="8c716-117">Occurs just before this <xref:System.Xml.Linq.XObject> or any of its descendants is going to change.</span></span>|  
-|<xref:System.Xml.Linq.XObject.Changed>|<span data-ttu-id="8c716-118">Nastane při <xref:System.Xml.Linq.XObject> došlo ke změně nebo některé z jejich potomků změnily.</span><span class="sxs-lookup"><span data-stu-id="8c716-118">Occurs when an <xref:System.Xml.Linq.XObject> has changed or any of its descendants have changed.</span></span>|  
+|<xref:System.Xml.Linq.XObject.Changing>|<span data-ttu-id="868f5-117">Nastane bezprostředně před <xref:System.Xml.Linq.XObject> nebo libovolného z jeho potomků se to změnit.</span><span class="sxs-lookup"><span data-stu-id="868f5-117">Occurs just before this <xref:System.Xml.Linq.XObject> or any of its descendants is going to change.</span></span>|  
+|<xref:System.Xml.Linq.XObject.Changed>|<span data-ttu-id="868f5-118">Vyvolá se při <xref:System.Xml.Linq.XObject> došlo ke změně nebo libovolného z jeho potomků změnily.</span><span class="sxs-lookup"><span data-stu-id="868f5-118">Occurs when an <xref:System.Xml.Linq.XObject> has changed or any of its descendants have changed.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="8c716-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="8c716-119">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="868f5-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="868f5-119">Example</span></span>  
   
-### <a name="description"></a><span data-ttu-id="8c716-120">Popis</span><span class="sxs-lookup"><span data-stu-id="8c716-120">Description</span></span>  
- <span data-ttu-id="8c716-121">Události jsou užitečné, pokud chcete zachovat některé agregační informace ve stromu XML.</span><span class="sxs-lookup"><span data-stu-id="8c716-121">Events are useful when you want to maintain some aggregate information in an XML tree.</span></span> <span data-ttu-id="8c716-122">Například můžete udržovat celkovou fakturu představuje součet položek řádku faktury.</span><span class="sxs-lookup"><span data-stu-id="8c716-122">For example, you may want maintain an invoice total that is the sum of the line items of the invoice.</span></span> <span data-ttu-id="8c716-123">Tento příklad používá událostí udržovat celkový počet všech podřízených elementů v části komplexních prvků `Items`.</span><span class="sxs-lookup"><span data-stu-id="8c716-123">This example uses events to maintain the total of all of the child elements under the complex element `Items`.</span></span>  
+### <a name="description"></a><span data-ttu-id="868f5-120">Popis</span><span class="sxs-lookup"><span data-stu-id="868f5-120">Description</span></span>  
+ <span data-ttu-id="868f5-121">Události jsou užitečné, pokud chcete zachovat některé agregované informace ve stromu XML.</span><span class="sxs-lookup"><span data-stu-id="868f5-121">Events are useful when you want to maintain some aggregate information in an XML tree.</span></span> <span data-ttu-id="868f5-122">Například můžete udržovat celkovou fakturu, který je součtem řádku položek faktury.</span><span class="sxs-lookup"><span data-stu-id="868f5-122">For example, you may want maintain an invoice total that is the sum of the line items of the invoice.</span></span> <span data-ttu-id="868f5-123">Tento příklad používá události k údržbě celkový součet všech podřízených elementů v rámci komplexních prvků `Items`.</span><span class="sxs-lookup"><span data-stu-id="868f5-123">This example uses events to maintain the total of all of the child elements under the complex element `Items`.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="8c716-124">Kód</span><span class="sxs-lookup"><span data-stu-id="8c716-124">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="868f5-124">Kód</span><span class="sxs-lookup"><span data-stu-id="868f5-124">Code</span></span>  
   
 ```vb  
 Module Module1  
@@ -92,8 +92,8 @@ Module Module1
 End Module  
 ```  
   
-### <a name="comments"></a><span data-ttu-id="8c716-125">Komentáře</span><span class="sxs-lookup"><span data-stu-id="8c716-125">Comments</span></span>  
- <span data-ttu-id="8c716-126">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="8c716-126">This code produces the following output:</span></span>  
+### <a name="comments"></a><span data-ttu-id="868f5-125">Komentáře</span><span class="sxs-lookup"><span data-stu-id="868f5-125">Comments</span></span>  
+ <span data-ttu-id="868f5-126">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="868f5-126">This code produces the following output:</span></span>  
   
 ```  
 Changed System.Xml.Linq.XElement Add  
@@ -114,5 +114,5 @@ Total:308
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="8c716-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="8c716-127">See Also</span></span>  
- [<span data-ttu-id="8c716-128">Pokročilé technologie LINQ to XML programování (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8c716-128">Advanced LINQ to XML Programming (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+## <a name="see-also"></a><span data-ttu-id="868f5-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="868f5-127">See Also</span></span>  
+ [<span data-ttu-id="868f5-128">Pokročilé technologie LINQ to XML programování (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="868f5-128">Advanced LINQ to XML Programming (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

@@ -1,19 +1,19 @@
 ---
-title: Serializace pro objekt XmlReader (volajícím XSLT) (Visual Basic)
+title: Serializace do třídy XmlReader (vyvolání XSLT) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 8b64f95a-e8f6-40f7-99f9-a8002c63af96
 ms.openlocfilehash: 05754593f4f30683ffabecaa8e16c35bf836a3f8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33645587"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39198825"
 ---
-# <a name="serializing-to-an-xmlreader-invoking-xslt-visual-basic"></a><span data-ttu-id="f52ca-102">Serializace pro objekt XmlReader (volajícím XSLT) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f52ca-102">Serializing to an XmlReader (Invoking XSLT) (Visual Basic)</span></span>
-<span data-ttu-id="f52ca-103">Při použití <xref:System.Xml?displayProperty=nameWithType> interoperabilita možnosti [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], můžete použít <xref:System.Xml.Linq.XNode.CreateReader%2A> vytvořit <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="f52ca-103">When you use the <xref:System.Xml?displayProperty=nameWithType> interoperability capabilities of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], you can use <xref:System.Xml.Linq.XNode.CreateReader%2A> to create an <xref:System.Xml.XmlReader>.</span></span> <span data-ttu-id="f52ca-104">Modul, který čte z tohoto <xref:System.Xml.XmlReader> čte uzly ve stromové struktuře XML a zpracovává je odpovídajícím způsobem.</span><span class="sxs-lookup"><span data-stu-id="f52ca-104">The module that reads from this <xref:System.Xml.XmlReader> reads the nodes from the XML tree and processes them accordingly.</span></span>  
+# <a name="serializing-to-an-xmlreader-invoking-xslt-visual-basic"></a><span data-ttu-id="89d2e-102">Serializace do třídy XmlReader (vyvolání XSLT) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="89d2e-102">Serializing to an XmlReader (Invoking XSLT) (Visual Basic)</span></span>
+<span data-ttu-id="89d2e-103">Při použití <xref:System.Xml?displayProperty=nameWithType> funkce interoperability [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], můžete použít <xref:System.Xml.Linq.XNode.CreateReader%2A> k vytvoření <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="89d2e-103">When you use the <xref:System.Xml?displayProperty=nameWithType> interoperability capabilities of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], you can use <xref:System.Xml.Linq.XNode.CreateReader%2A> to create an <xref:System.Xml.XmlReader>.</span></span> <span data-ttu-id="89d2e-104">Modul, který čte z tohoto <xref:System.Xml.XmlReader> přečte uzlů ze stromu XML a zpracovává je odpovídajícím způsobem.</span><span class="sxs-lookup"><span data-stu-id="89d2e-104">The module that reads from this <xref:System.Xml.XmlReader> reads the nodes from the XML tree and processes them accordingly.</span></span>  
   
-## <a name="invoking-an-xslt-transformation"></a><span data-ttu-id="f52ca-105">Vyvolání transformaci XSLT</span><span class="sxs-lookup"><span data-stu-id="f52ca-105">Invoking an XSLT Transformation</span></span>  
- <span data-ttu-id="f52ca-106">Možné použití této metody je při použití transformace XSLT.</span><span class="sxs-lookup"><span data-stu-id="f52ca-106">One possible use for this method is when invoking an XSLT transformation.</span></span> <span data-ttu-id="f52ca-107">Můžete vytvořit strom XML, vytvořit <xref:System.Xml.XmlReader> ve stromové struktuře XML vytvoříte nový textový dokument a poté vytvořit <xref:System.Xml.XmlWriter> k zápisu do nový dokument.</span><span class="sxs-lookup"><span data-stu-id="f52ca-107">You can create an XML tree, create an <xref:System.Xml.XmlReader> from the XML tree, create a new document, and then create an <xref:System.Xml.XmlWriter> to write into the new document.</span></span> <span data-ttu-id="f52ca-108">Potom můžete vyvolat transformace XSLT, předávání v <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter>.</span><span class="sxs-lookup"><span data-stu-id="f52ca-108">Then, you can invoke the XSLT transformation, passing in <xref:System.Xml.XmlReader> and <xref:System.Xml.XmlWriter>.</span></span> <span data-ttu-id="f52ca-109">Po úspěšném dokončení transformace, se zobrazí v stromu nové XML výsledky transformace.</span><span class="sxs-lookup"><span data-stu-id="f52ca-109">After the transformation successfully completes, the new XML tree is populated with the results of the transformation.</span></span>  
+## <a name="invoking-an-xslt-transformation"></a><span data-ttu-id="89d2e-105">Vyvolání transformace XSLT</span><span class="sxs-lookup"><span data-stu-id="89d2e-105">Invoking an XSLT Transformation</span></span>  
+ <span data-ttu-id="89d2e-106">Jedním z využití pro tuto metodu je při vyvolání transformace XSLT.</span><span class="sxs-lookup"><span data-stu-id="89d2e-106">One possible use for this method is when invoking an XSLT transformation.</span></span> <span data-ttu-id="89d2e-107">Můžete vytvořit stromu XML, vytvořit <xref:System.Xml.XmlReader> ze stromu XML vytvoříte nový textový dokument a pak vytvořte <xref:System.Xml.XmlWriter> k zápisu do nového dokumentu.</span><span class="sxs-lookup"><span data-stu-id="89d2e-107">You can create an XML tree, create an <xref:System.Xml.XmlReader> from the XML tree, create a new document, and then create an <xref:System.Xml.XmlWriter> to write into the new document.</span></span> <span data-ttu-id="89d2e-108">Potom můžete vyvolat transformace XSLT, při předávání v <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter>.</span><span class="sxs-lookup"><span data-stu-id="89d2e-108">Then, you can invoke the XSLT transformation, passing in <xref:System.Xml.XmlReader> and <xref:System.Xml.XmlWriter>.</span></span> <span data-ttu-id="89d2e-109">Po úspěšném dokončení transformace stromu XML nové naplněný výsledky transformace.</span><span class="sxs-lookup"><span data-stu-id="89d2e-109">After the transformation successfully completes, the new XML tree is populated with the results of the transformation.</span></span>  
   
 ```vb  
 Dim xslMarkup As XDocument = _  
@@ -51,7 +51,7 @@ End Using
 Console.WriteLine(newTree)  
 ```  
   
- <span data-ttu-id="f52ca-110">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="f52ca-110">This example produces the following output:</span></span>  
+ <span data-ttu-id="89d2e-110">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="89d2e-110">This example produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -60,5 +60,5 @@ Console.WriteLine(newTree)
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="f52ca-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="f52ca-111">See Also</span></span>  
- [<span data-ttu-id="f52ca-112">Serializace XML stromů (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f52ca-112">Serializing XML Trees (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)
+## <a name="see-also"></a><span data-ttu-id="89d2e-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="89d2e-111">See Also</span></span>  
+ [<span data-ttu-id="89d2e-112">Serializace stromů XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="89d2e-112">Serializing XML Trees (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)

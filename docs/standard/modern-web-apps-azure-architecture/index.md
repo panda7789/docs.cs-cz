@@ -1,76 +1,113 @@
 ---
-title: Architekti moderních webových aplikací pomocí ASP.NET Core a Azure
-description: Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | Úvod
+title: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
+description: Průvodce, který obsahuje pokyny k začátku do konce vytváření monolitické webových aplikací pomocí ASP.NET Core a Azure.
 author: ardalis
 ms.author: wiwagn
-ms.date: 10/06/2017
-ms.openlocfilehash: 085ec85002fc1661d6e20b3c3f11cf4b6ea2161b
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 06/28/2018
+ms.openlocfilehash: e2d2545108b55043c322baffbd609b2422d2743b
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37103916"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37936981"
 ---
-# <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a><span data-ttu-id="cadc3-103">Architekti moderních webových aplikací pomocí ASP.NET Core a Azure</span><span class="sxs-lookup"><span data-stu-id="cadc3-103">Architect Modern Web Applications with ASP.NET Core and Azure</span></span>
+# <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a><span data-ttu-id="d0131-103">Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure</span><span class="sxs-lookup"><span data-stu-id="d0131-103">Architect Modern Web Applications with ASP.NET Core and Azure</span></span>
 
-![Obrázek titulní](./media/cover.jpg)
+![titulní obrázek](./media/cover.png)
 
+<span data-ttu-id="d0131-105">PUBLIKOVAL(A)</span><span class="sxs-lookup"><span data-stu-id="d0131-105">PUBLISHED BY</span></span>
 
-<span data-ttu-id="cadc3-105">.NET core a ASP.NET Core nabízí několik výhod oproti tradičním .NET – vývoj.</span><span class="sxs-lookup"><span data-stu-id="cadc3-105">.NET Core and ASP.NET Core offer several advantages over traditional .NET development.</span></span> <span data-ttu-id="cadc3-106">.NET Core byste měli použít pro serverové aplikace, pokud některé nebo všechny z následujících akcí, které jsou důležité pro úspěch vaší aplikace:</span><span class="sxs-lookup"><span data-stu-id="cadc3-106">You should use .NET Core for your server applications if some or all of the following are important to your application's success:</span></span>
+<span data-ttu-id="d0131-106">Microsoft Developer Division, .NET a Visual Studio produktových týmů</span><span class="sxs-lookup"><span data-stu-id="d0131-106">Microsoft Developer Division, .NET, and Visual Studio product teams</span></span>
 
--   <span data-ttu-id="cadc3-107">Podpora více platforem</span><span class="sxs-lookup"><span data-stu-id="cadc3-107">Cross-platform support</span></span>
+<span data-ttu-id="d0131-107">Divize Microsoft Corporation.</span><span class="sxs-lookup"><span data-stu-id="d0131-107">A division of Microsoft Corporation</span></span>
 
--   <span data-ttu-id="cadc3-108">Použití mikroslužeb</span><span class="sxs-lookup"><span data-stu-id="cadc3-108">Use of microservices</span></span>
+<span data-ttu-id="d0131-108">One Microsoft Way</span><span class="sxs-lookup"><span data-stu-id="d0131-108">One Microsoft Way</span></span>
 
--   <span data-ttu-id="cadc3-109">Použití kontejnerů Docker</span><span class="sxs-lookup"><span data-stu-id="cadc3-109">Use of Docker containers</span></span>
+<span data-ttu-id="d0131-109">Redmond, Washington 98052-6399</span><span class="sxs-lookup"><span data-stu-id="d0131-109">Redmond, Washington 98052-6399</span></span>
 
--   <span data-ttu-id="cadc3-110">Vysoký výkon a škálovatelnost požadavky</span><span class="sxs-lookup"><span data-stu-id="cadc3-110">High performance and scalability requirements</span></span>
+<span data-ttu-id="d0131-110">Copyright © 2018 Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="d0131-110">Copyright © 2018 by Microsoft Corporation</span></span>
 
--   <span data-ttu-id="cadc3-111">Souběžně sdílená verze rozhraní .NET verze aplikace na stejném serveru</span><span class="sxs-lookup"><span data-stu-id="cadc3-111">Side-by-side versioning of .NET versions by application on the same server</span></span>
+<span data-ttu-id="d0131-111">Všechna práva vyhrazena.</span><span class="sxs-lookup"><span data-stu-id="d0131-111">All rights reserved.</span></span> <span data-ttu-id="d0131-112">Žádná část obsahu této knihy může reprodukovat nebo v libovolné formě nebo jakýmikoli prostředky bez písemného souhlasu vydavatele.</span><span class="sxs-lookup"><span data-stu-id="d0131-112">No part of the contents of this book may be reproduced or transmitted in any form or by any means without the written permission of the publisher.</span></span>
 
-<span data-ttu-id="cadc3-112">Tradiční aplikace .NET může a proveďte podporu těchto požadavků, ale jsou optimalizované ASP.NET Core a .NET Core nabízí vylepšenou podporu pro výše uvedené scénáře.</span><span class="sxs-lookup"><span data-stu-id="cadc3-112">Traditional .NET applications can and do support these requirements, but ASP.NET Core and .NET Core have been optimized to offer improved support for the above scenarios.</span></span>
+<span data-ttu-id="d0131-113">Tato kniha je k dispozici "jako-je" a vyjadřuje zobrazení autora a názory.</span><span class="sxs-lookup"><span data-stu-id="d0131-113">This book is provided “as-is” and expresses the author’s views and opinions.</span></span> <span data-ttu-id="d0131-114">Zobrazení, názory a informace v této knize, včetně adres URL a jiných odkazů na internetové weby, mohou změnit bez předchozího upozornění.</span><span class="sxs-lookup"><span data-stu-id="d0131-114">The views, opinions and information expressed in this book, including URL and other Internet website references, may change without notice.</span></span>
 
-<span data-ttu-id="cadc3-113">Organizace více výběru pro hostování své webové aplikace v cloudu pomocí služby, jako je Microsoft Azure.</span><span class="sxs-lookup"><span data-stu-id="cadc3-113">More and more organizations are choosing to host their web applications in the cloud using services like Microsoft Azure.</span></span> <span data-ttu-id="cadc3-114">Měli byste zvážit hostování vaší aplikace v cloudu, pokud tady jsou důležité pro vaše aplikace nebo organizace:</span><span class="sxs-lookup"><span data-stu-id="cadc3-114">You should consider hosting your application in the cloud if the following are important to your application or organization:</span></span>
+<span data-ttu-id="d0131-115">Některé zde uvedené příklady jsou k dispozici pouze pro ilustraci a jsou smyšlené.</span><span class="sxs-lookup"><span data-stu-id="d0131-115">Some examples depicted herein are provided for illustration only and are fictitious.</span></span> <span data-ttu-id="d0131-116">Žádný skutečný vztah nebo spojení ani je určena ji vyvozovat.</span><span class="sxs-lookup"><span data-stu-id="d0131-116">No real association or connection is intended or should be inferred.</span></span>
 
--   <span data-ttu-id="cadc3-115">Snížené investice do datového centra náklady (hardwaru, softwaru, místo, nástroje atd.)</span><span class="sxs-lookup"><span data-stu-id="cadc3-115">Reduced investment in data center costs (hardware, software, space, utilities, etc)</span></span>
+<span data-ttu-id="d0131-117">Microsoft a ochranné známky uvedený na https://www.microsoft.com na webové stránce "Ochranné známky" jsou obchodní známky společností skupiny Microsoft.</span><span class="sxs-lookup"><span data-stu-id="d0131-117">Microsoft and the trademarks listed at https://www.microsoft.com on the “Trademarks” webpage are trademarks of the Microsoft group of companies.</span></span>
 
--   <span data-ttu-id="cadc3-116">Flexibilní ceny (platím na základě využití, ne pro nečinnosti kapacity)</span><span class="sxs-lookup"><span data-stu-id="cadc3-116">Flexible pricing (pay based on usage, not for idle capacity)</span></span>
+<span data-ttu-id="d0131-118">Mac a macOS jsou ochranné známky společnosti Apple Inc.</span><span class="sxs-lookup"><span data-stu-id="d0131-118">Mac and macOS are trademarks of Apple Inc.</span></span>
 
--   <span data-ttu-id="cadc3-117">Extrémně spolehlivosti</span><span class="sxs-lookup"><span data-stu-id="cadc3-117">Extreme reliability</span></span>
+<span data-ttu-id="d0131-119">Velryba logo Dockeru je registrovaná ochranná známka společnosti Docker, Inc. Použít oprávnění.</span><span class="sxs-lookup"><span data-stu-id="d0131-119">The Docker whale logo is a registered trademark of Docker, Inc. Used by permission.</span></span>
 
--   <span data-ttu-id="cadc3-118">Vylepšené aplikace mobility; snadno změnit kde a jak vaše aplikace je nasazená</span><span class="sxs-lookup"><span data-stu-id="cadc3-118">Improved app mobility; easily change where and how your app is deployed</span></span>
+<span data-ttu-id="d0131-120">Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.</span><span class="sxs-lookup"><span data-stu-id="d0131-120">All other marks and logos are property of their respective owners.</span></span>
 
--   <span data-ttu-id="cadc3-119">Flexibilní kapacity; škálování směrem nahoru nebo dolů na základě skutečné požadavky</span><span class="sxs-lookup"><span data-stu-id="cadc3-119">Flexible capacity; scale up or down based on actual needs</span></span>
+<span data-ttu-id="d0131-121">Autor:</span><span class="sxs-lookup"><span data-stu-id="d0131-121">Author:</span></span>
 
-<span data-ttu-id="cadc3-120">Vytváření webových aplikací pomocí ASP.NET Core, hostované ve službě Microsoft Azure nabízí řadu výhod konkurenční přes tradiční alternativy.</span><span class="sxs-lookup"><span data-stu-id="cadc3-120">Building web applications with ASP.NET Core, hosted in Microsoft Azure, offers numerous competitive advantages over traditional alternatives.</span></span> <span data-ttu-id="cadc3-121">ASP.NET Core je optimalizovaná pro postupy vývoj moderních webových aplikací a na cloudový hosting scénáře.</span><span class="sxs-lookup"><span data-stu-id="cadc3-121">ASP.NET Core is optimized for modern web application development practices and cloud hosting scenarios.</span></span> <span data-ttu-id="cadc3-122">V tomto průvodci se dozvíte, jak do architektury aplikace ASP.NET Core nejlépe využít těchto funkcí.</span><span class="sxs-lookup"><span data-stu-id="cadc3-122">In this guide, you will learn how to architect your ASP.NET Core applications to best take advantage of these capabilities.</span></span>
+> <span data-ttu-id="d0131-122">**Steve Smith (@ardalis)**, Poradce pro architekturu softwaru, [Ardalis.com](https://ardalis.com)</span><span class="sxs-lookup"><span data-stu-id="d0131-122">**Steve Smith (@ardalis)**, Software Architecture Advisor, [Ardalis.com](https://ardalis.com)</span></span>
 
-## <a name="purpose"></a><span data-ttu-id="cadc3-123">Účel</span><span class="sxs-lookup"><span data-stu-id="cadc3-123">Purpose</span></span>
+<span data-ttu-id="d0131-123">Editory:</span><span class="sxs-lookup"><span data-stu-id="d0131-123">Editors:</span></span>
 
-<span data-ttu-id="cadc3-124">Tato příručka obsahuje pokyny začátku do konce k vytváření monolitický webových aplikací pomocí ASP.NET Core a Azure.</span><span class="sxs-lookup"><span data-stu-id="cadc3-124">This guide provides end-to-end guidance on building monolithic web applications using ASP.NET Core and Azure.</span></span>
+> <span data-ttu-id="d0131-124">**Maira Wenzel**</span><span class="sxs-lookup"><span data-stu-id="d0131-124">**Maira Wenzel**</span></span>
 
-<span data-ttu-id="cadc3-125">Tato příručka je doplňkem k "*Architecting a vývoj Kontejnerizované a na základě Mikroslužbu aplikace pomocí rozhraní .NET*" která se zaměřuje další na Docker, Mikroslužeb a nasazení kontejnerů do firemní sítě hostitele aplikace.</span><span class="sxs-lookup"><span data-stu-id="cadc3-125">This guide is complementary to the "*Architecting and Developing Containerized and Microservice-based Applications with .NET*" which focuses more on Docker, Microservices, and Deployment of Containers to host enterprise applications.</span></span>
+## <a name="introduction"></a><span data-ttu-id="d0131-125">Úvod</span><span class="sxs-lookup"><span data-stu-id="d0131-125">Introduction</span></span>
 
-> ### <a name="architecting-and-developing-containerized-microservice-based-apps-in-net"></a><span data-ttu-id="cadc3-126">Architektury a vývoj Kontejnerizované Mikroslužbu na základě aplikací v rozhraní .NET</span><span class="sxs-lookup"><span data-stu-id="cadc3-126">Architecting and Developing Containerized Microservice Based Apps in .NET</span></span>
-> - <span data-ttu-id="cadc3-127">**elektronická kniha**</span><span class="sxs-lookup"><span data-stu-id="cadc3-127">**e-book**</span></span>  
-> <http://aka.ms/MicroservicesEbook>
-> - <span data-ttu-id="cadc3-128">**Ukázkové aplikace**</span><span class="sxs-lookup"><span data-stu-id="cadc3-128">**Sample Application**</span></span>  
-> <http://aka.ms/microservicesarchitecture>
+<span data-ttu-id="d0131-126">.NET core a ASP.NET Core nabízí několik výhod oproti tradičním vývoj na platformě .NET.</span><span class="sxs-lookup"><span data-stu-id="d0131-126">.NET Core and ASP.NET Core offer several advantages over traditional .NET development.</span></span> <span data-ttu-id="d0131-127">Pokud některé nebo všechny z následujících akcí, které jsou důležité pro úspěch vaší aplikace byste měli používat .NET Core pro serverové aplikace:</span><span class="sxs-lookup"><span data-stu-id="d0131-127">You should use .NET Core for your server applications if some or all of the following are important to your application's success:</span></span>
 
-## <a name="who-should-use-this-guide"></a><span data-ttu-id="cadc3-129">Tato příručka, kdo by měl používat</span><span class="sxs-lookup"><span data-stu-id="cadc3-129">Who should use this guide</span></span>
+- <span data-ttu-id="d0131-128">Podpora víc platforem.</span><span class="sxs-lookup"><span data-stu-id="d0131-128">Cross-platform support.</span></span>
 
-<span data-ttu-id="cadc3-130">Cílovou skupinu tohoto průvodce je především vývojáře, zájemců vývoj a architektům, kteří mají zájem o vytváření moderních webových aplikací pomocí Microsoft technologií a služeb v cloudu.</span><span class="sxs-lookup"><span data-stu-id="cadc3-130">The audience for this guide is mainly developers, development leads, and architects who are interested in building modern web applications using Microsoft technologies and services in the cloud.</span></span>
+- <span data-ttu-id="d0131-129">Používání mikroslužeb.</span><span class="sxs-lookup"><span data-stu-id="d0131-129">Use of microservices.</span></span>
 
-<span data-ttu-id="cadc3-131">Sekundární cílové skupiny je technické vedoucím pracovníkům, kteří jsou již obeznámeni ASP.NET nebo Azure a hledáte informace o tom, jestli má smysl pro upgrade na ASP.NET Core pro nové nebo existující projekty.</span><span class="sxs-lookup"><span data-stu-id="cadc3-131">A secondary audience is technical decision makers who are already familiar ASP.NET and/or Azure and are looking for information on whether it makes sense to upgrade to ASP.NET Core for new or existing projects.</span></span>
+- <span data-ttu-id="d0131-130">Použití kontejnerů Dockeru.</span><span class="sxs-lookup"><span data-stu-id="d0131-130">Use of Docker containers.</span></span>
 
-## <a name="how-you-can-use-this-guide"></a><span data-ttu-id="cadc3-132">Použití této příručce</span><span class="sxs-lookup"><span data-stu-id="cadc3-132">How you can use this guide</span></span>
+- <span data-ttu-id="d0131-131">Vysoké požadavky na výkon a škálovatelnost.</span><span class="sxs-lookup"><span data-stu-id="d0131-131">High performance and scalability requirements.</span></span>
 
-<span data-ttu-id="cadc3-133">Tato příručka obsahuje byla vyjádřit těmito poměrně malý dokument, který se zaměřuje na tvorbu webových aplikací s moderním technologie .NET a systému Windows Azure.</span><span class="sxs-lookup"><span data-stu-id="cadc3-133">This guide has been condensed into a relatively small document that focuses on building web applications with modern .NET technologies and Windows Azure.</span></span> <span data-ttu-id="cadc3-134">Jako takový ho můžete přečíst v celé jeho šíři poskytnout základní principy tyto aplikace a jejich technické aspekty.</span><span class="sxs-lookup"><span data-stu-id="cadc3-134">As such, it can be read in its entirety to provide a foundation of understanding such applications and their technical considerations.</span></span> <span data-ttu-id="cadc3-135">V průvodci, společně s ukázkovou aplikaci, může taky sloužit jako výchozí bod nebo odkaz.</span><span class="sxs-lookup"><span data-stu-id="cadc3-135">The guide, along with its sample application, can also serve as a starting point or reference.</span></span> <span data-ttu-id="cadc3-136">Pomocí aplikace přidružené sample jako šablona pro vaše vlastní aplikace nebo zjistit, jak můžete organizovat součásti vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="cadc3-136">Use the associated sample application as a template for your own applications, or to see how you might organize your application's component parts.</span></span> <span data-ttu-id="cadc3-137">Při odkazovat zpět v Průvodci principy a pokrytí architektura a možnosti technologií a rozhodnutí vážení tyto možnosti pro vlastní aplikaci.</span><span class="sxs-lookup"><span data-stu-id="cadc3-137">Refer back to the guide's principles and coverage of architecture and technology options and decision considerations when weighing these choices for your own application.</span></span>
+- <span data-ttu-id="d0131-132">Správa verzí vedle sebe verzí rozhraní .NET v aplikaci na stejném serveru.</span><span class="sxs-lookup"><span data-stu-id="d0131-132">Side-by-side versioning of .NET versions by application on the same server.</span></span>
 
-<span data-ttu-id="cadc3-138">Nebojte se, že předávání této příručce si s týmem k zajištění výklad tyto požadavky a možnosti.</span><span class="sxs-lookup"><span data-stu-id="cadc3-138">Feel free to forward this guide to your team to help ensure a common understanding of these considerations and opportunities.</span></span> <span data-ttu-id="cadc3-139">Má každý uživatel práce z společnou sadu terminologie a základních zásad vám pomůže zajistit konzistentní použití architektury vzory a postupy.</span><span class="sxs-lookup"><span data-stu-id="cadc3-139">Having everybody working from a common set of terminology and underlying principles will help ensure consistent application of architectural patterns and practices.</span></span>
+<span data-ttu-id="d0131-133">Tradiční aplikace rozhraní .NET můžete a dělat vyhovění těmto požadavkům, ale v ASP.NET Core a .NET Core byly optimalizovány a nabídnout Vylepšená podpora pro výše zmíněné situace umožnili.</span><span class="sxs-lookup"><span data-stu-id="d0131-133">Traditional .NET applications can and do support these requirements, but ASP.NET Core and .NET Core have been optimized to offer improved support for the above scenarios.</span></span>
 
-## <a name="references"></a><span data-ttu-id="cadc3-140">Odkazy</span><span class="sxs-lookup"><span data-stu-id="cadc3-140">References</span></span>
-- <span data-ttu-id="cadc3-141">**Volba mezi .NET Core a .NET Framework pro serverové aplikace**</span><span class="sxs-lookup"><span data-stu-id="cadc3-141">**Choosing between .NET Core and .NET Framework for server apps**</span></span>  
-<https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server>
+<span data-ttu-id="d0131-134">Více organizací volí k hostování webových aplikací v cloudu pomocí služeb, jako je Microsoft Azure.</span><span class="sxs-lookup"><span data-stu-id="d0131-134">More and more organizations are choosing to host their web applications in the cloud using services like Microsoft Azure.</span></span> <span data-ttu-id="d0131-135">Měli byste zvážit hostování vaší aplikace v cloudu, pokud tady jsou důležité pro vaše aplikace nebo organizace:</span><span class="sxs-lookup"><span data-stu-id="d0131-135">You should consider hosting your application in the cloud if the following are important to your application or organization:</span></span>
+
+- <span data-ttu-id="d0131-136">Snížení investice do datového centra náklady (hardware, software, místa, nástroje atd.)</span><span class="sxs-lookup"><span data-stu-id="d0131-136">Reduced investment in data center costs (hardware, software, space, utilities, etc.)</span></span>
+
+- <span data-ttu-id="d0131-137">Flexibilní ceny (placené podle používání, ne za nevyužitou kapacitu).</span><span class="sxs-lookup"><span data-stu-id="d0131-137">Flexible pricing (pay based on usage, not for idle capacity).</span></span>
+
+- <span data-ttu-id="d0131-138">Extrémní spolehlivost.</span><span class="sxs-lookup"><span data-stu-id="d0131-138">Extreme reliability.</span></span>
+
+- <span data-ttu-id="d0131-139">Vylepšené aplikace mobility; snadno změnit, kde a jak je aplikace nasazená.</span><span class="sxs-lookup"><span data-stu-id="d0131-139">Improved app mobility; easily change where and how your app is deployed.</span></span>
+
+- <span data-ttu-id="d0131-140">Flexibilní kapacity; vertikálně navyšovat nebo snižovat podle skutečných potřeb.</span><span class="sxs-lookup"><span data-stu-id="d0131-140">Flexible capacity; scale up or down based on actual needs.</span></span>
+
+<span data-ttu-id="d0131-141">Vytváření webových aplikací pomocí ASP.NET Core, hostované v Azure, nabízí mnoho konkurenční výhody oproti tradičním alternativy.</span><span class="sxs-lookup"><span data-stu-id="d0131-141">Building web applications with ASP.NET Core, hosted in Azure, offers many competitive advantages over traditional alternatives.</span></span> <span data-ttu-id="d0131-142">ASP.NET Core je optimalizovaná pro postupy vývoje moderních webových aplikací a cloudových scénářích hostování.</span><span class="sxs-lookup"><span data-stu-id="d0131-142">ASP.NET Core is optimized for modern web application development practices and cloud hosting scenarios.</span></span> <span data-ttu-id="d0131-143">V této příručce se dozvíte, jak navrhovat aplikace ASP.NET Core nejlíp využít tyto možnosti.</span><span class="sxs-lookup"><span data-stu-id="d0131-143">In this guide, you'll learn how to architect your ASP.NET Core applications to best take advantage of these capabilities.</span></span>
+
+## <a name="purpose"></a><span data-ttu-id="d0131-144">Účel</span><span class="sxs-lookup"><span data-stu-id="d0131-144">Purpose</span></span>
+
+<span data-ttu-id="d0131-145">Tato příručka obsahuje pokyny k začátku do konce vytváření monolitické webových aplikací pomocí ASP.NET Core a Azure.</span><span class="sxs-lookup"><span data-stu-id="d0131-145">This guide provides end-to-end guidance on building monolithic web applications using ASP.NET Core and Azure.</span></span>
+
+<span data-ttu-id="d0131-146">Tento průvodce je pouze doplnění ["_Mikroslužby .NET. Architektura pro Kontejnerizovaných aplikací .NET_"](../microservices-architecture/index.md) který se zaměřuje další on Docker, Mikroslužby a nasazení kontejnerů pro hostování podnikových aplikací.</span><span class="sxs-lookup"><span data-stu-id="d0131-146">This guide is complementary to the ["_.NET Microservices. Architecture for Containerized .NET Applications_"](../microservices-architecture/index.md) which focuses more on Docker, Microservices, and Deployment of Containers to host enterprise applications.</span></span>
+
+### <a name="net-microservices-architecture-for-containerized-net-applications"></a><span data-ttu-id="d0131-147">Mikroslužby .NET.</span><span class="sxs-lookup"><span data-stu-id="d0131-147">.NET Microservices.</span></span> <span data-ttu-id="d0131-148">Architektura pro Kontejnerizované aplikace .NET</span><span class="sxs-lookup"><span data-stu-id="d0131-148">Architecture for Containerized .NET Applications</span></span>
+
+- <span data-ttu-id="d0131-149">**(elektronická kniha)**</span><span class="sxs-lookup"><span data-stu-id="d0131-149">**e-book**</span></span>  
+  <https://aka.ms/MicroservicesEbook>
+- <span data-ttu-id="d0131-150">**Ukázkové aplikace**</span><span class="sxs-lookup"><span data-stu-id="d0131-150">**Sample Application**</span></span>  
+  <https://aka.ms/microservicesarchitecture>
+
+## <a name="who-should-use-this-guide"></a><span data-ttu-id="d0131-151">Kdo by měl používat tohoto průvodce</span><span class="sxs-lookup"><span data-stu-id="d0131-151">Who should use this guide</span></span>
+
+<span data-ttu-id="d0131-152">Cílovou skupinu tohoto průvodce je především vývojáře, vedoucími vývoje a architektů, kteří mají zájem o vývoj moderních webových aplikací pomocí Microsoft technologie a služby v cloudu.</span><span class="sxs-lookup"><span data-stu-id="d0131-152">The audience for this guide is mainly developers, development leads, and architects who are interested in building modern web applications using Microsoft technologies and services in the cloud.</span></span>
+
+<span data-ttu-id="d0131-153">Sekundární skupina jsou technické pracovníky s rozhodovací pravomocí, kteří jsou již známé technologie ASP.NET nebo v Azure a hledáte informace o tom, zda má smysl pro upgrade na technologie ASP.NET Core pro nové nebo existující projekty.</span><span class="sxs-lookup"><span data-stu-id="d0131-153">A secondary audience is technical decision makers who are already familiar ASP.NET or Azure and are looking for information on whether it makes sense to upgrade to ASP.NET Core for new or existing projects.</span></span>
+
+## <a name="how-you-can-use-this-guide"></a><span data-ttu-id="d0131-154">Použití tohoto průvodce</span><span class="sxs-lookup"><span data-stu-id="d0131-154">How you can use this guide</span></span>
+
+<span data-ttu-id="d0131-155">Tato příručka obsahuje byla zhušťovat do poměrně málo početnému dokumentu, který se zaměřuje na tvorbu webových aplikací s moderní technologie .NET a Windows Azure.</span><span class="sxs-lookup"><span data-stu-id="d0131-155">This guide has been condensed into a relatively small document that focuses on building web applications with modern .NET technologies and Windows Azure.</span></span> <span data-ttu-id="d0131-156">V důsledku toho může být číst v celém rozsahu na poskytují základní principy těchto aplikací a jejich technické aspekty.</span><span class="sxs-lookup"><span data-stu-id="d0131-156">As such, it can be read in its entirety to provide a foundation of understanding such applications and their technical considerations.</span></span> <span data-ttu-id="d0131-157">V průvodci, spolu s ukázkovou aplikaci, může sloužit také jako výchozí bod nebo odkaz.</span><span class="sxs-lookup"><span data-stu-id="d0131-157">The guide, along with its sample application, can also serve as a starting point or reference.</span></span> <span data-ttu-id="d0131-158">Použijte související ukázkové aplikace jako šablonu pro vaše vlastní aplikace, nebo můžete zobrazit, jak můžete organizovat součásti vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="d0131-158">Use the associated sample application as a template for your own applications, or to see how you might organize your application's component parts.</span></span> <span data-ttu-id="d0131-159">Při odkazovat zpět v Průvodci principy a pokrytí architektury a možnosti technologií a důležité informace o rozhodnutí při vážení tyto možnosti pro svoji vlastní aplikaci.</span><span class="sxs-lookup"><span data-stu-id="d0131-159">Refer back to the guide's principles and coverage of architecture and technology options and decision considerations when you're weighing these choices for your own application.</span></span>
+
+<span data-ttu-id="d0131-160">Můžete dál v této příručce k vašemu týmu pomoct zajistit, aby tyto aspekty a příležitosti.</span><span class="sxs-lookup"><span data-stu-id="d0131-160">Feel free to forward this guide to your team to help ensure a common understanding of these considerations and opportunities.</span></span> <span data-ttu-id="d0131-161">S Vystoupením práce z společnou sadu terminologie a základní principy pomáhá zajistit konzistentní použití architektury vzory a postupy.</span><span class="sxs-lookup"><span data-stu-id="d0131-161">Having everybody working from a common set of terminology and underlying principles helps ensure consistent application of architectural patterns and practices.</span></span>
+
+## <a name="references"></a><span data-ttu-id="d0131-162">Odkazy</span><span class="sxs-lookup"><span data-stu-id="d0131-162">References</span></span>
+
+- <span data-ttu-id="d0131-163">**Volba mezi .NET Core a .NET Framework pro serverové aplikace**</span><span class="sxs-lookup"><span data-stu-id="d0131-163">**Choosing between .NET Core and .NET Framework for server apps**</span></span>  
+  <https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server>
 
 >[!div class="step-by-step"]
-[<span data-ttu-id="cadc3-142">Next</span><span class="sxs-lookup"><span data-stu-id="cadc3-142">Next</span></span>](modern-web-applications-characteristics.md)
+[<span data-ttu-id="d0131-164">Next</span><span class="sxs-lookup"><span data-stu-id="d0131-164">Next</span></span>](modern-web-applications-characteristics.md)

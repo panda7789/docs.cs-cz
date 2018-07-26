@@ -1,18 +1,18 @@
 ---
-title: 'Ukázkový soubor XML: Typické nákupní objednávka v Namespace3'
+title: 'Ukázkový soubor XML: Typická nákupní objednávka v Namespace3'
 ms.date: 07/20/2015
 ms.assetid: 38260901-c9f9-4240-9cbf-652c8b05021d
 ms.openlocfilehash: 94aa8d39b351a55183b7164bd4ceca875742f17d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33644778"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244823"
 ---
-# <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a><span data-ttu-id="50bc9-102">Ukázkový soubor XML: Typické nákupní objednávka v Namespace</span><span class="sxs-lookup"><span data-stu-id="50bc9-102">Sample XML File: Typical Purchase Order in a Namespace</span></span>
-<span data-ttu-id="50bc9-103">Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="50bc9-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="50bc9-104">Tento soubor je typické nákupní objednávka.</span><span class="sxs-lookup"><span data-stu-id="50bc9-104">This file is a typical purchase order.</span></span> <span data-ttu-id="50bc9-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="50bc9-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a><span data-ttu-id="f1441-102">Ukázkový soubor XML: Typická nákupní objednávka v Namespace</span><span class="sxs-lookup"><span data-stu-id="f1441-102">Sample XML File: Typical Purchase Order in a Namespace</span></span>
+<span data-ttu-id="f1441-103">Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="f1441-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="f1441-104">Tento soubor je typická nákupní objednávka.</span><span class="sxs-lookup"><span data-stu-id="f1441-104">This file is a typical purchase order.</span></span> <span data-ttu-id="f1441-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="f1441-105">The XML is in a namespace.</span></span>  
   
-## <a name="purchaseorderinnamespacexml"></a><span data-ttu-id="50bc9-106">PurchaseOrderInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="50bc9-106">PurchaseOrderInNamespace.xml</span></span>  
+## <a name="purchaseorderinnamespacexml"></a><span data-ttu-id="f1441-106">PurchaseOrderInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="f1441-106">PurchaseOrderInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -54,5 +54,5 @@ ms.locfileid: "33644778"
 </aw:PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="50bc9-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="50bc9-107">See Also</span></span>  
- [<span data-ttu-id="50bc9-108">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="50bc9-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="f1441-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="f1441-107">See Also</span></span>  
+ [<span data-ttu-id="f1441-108">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="f1441-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

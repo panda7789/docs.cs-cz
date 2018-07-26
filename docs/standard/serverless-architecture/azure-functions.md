@@ -1,0 +1,185 @@
+---
+title: Azure Functions – aplikace bez serveru
+description: Služba Azure functions poskytuje funkce bez serveru v různých jazycích (C#, JavaScript, Javu) a škálovat kód platformy k poskytování okamžitého založený na událostech.
+author: JEREMYLIKNESS
+ms.author: jeliknes
+ms.date: 06/26/2018
+ms.openlocfilehash: f08ba20b485197acd3bb5cdfe5699cd6be991d7c
+ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37404897"
+---
+# <a name="azure-functions"></a><span data-ttu-id="7eded-103">Služba Azure Functions</span><span class="sxs-lookup"><span data-stu-id="7eded-103">Azure Functions</span></span>
+
+<span data-ttu-id="7eded-104">Azure functions poskytuje výpočetní prostředí prostředí.</span><span class="sxs-lookup"><span data-stu-id="7eded-104">Azure functions provide a serverless compute experience.</span></span> <span data-ttu-id="7eded-105">Funkce vyvolá *aktivační událost* (jako je přístup k koncový bod HTTP nebo časovače) a provede blok kódu nebo obchodní logiku.</span><span class="sxs-lookup"><span data-stu-id="7eded-105">A function is invoked by a *trigger* (such as access to an HTTP endpoint or a timer) and executes a block of code or business logic.</span></span> <span data-ttu-id="7eded-106">Funkce také podporu specializované *vazby* , které se připojovat k prostředkům, jako jsou úložiště a front.</span><span class="sxs-lookup"><span data-stu-id="7eded-106">Functions also support specialized *bindings* that connect to resources like storage and queues.</span></span>
+
+![Logo Azure functions](./media/azure-functions-logo.png)
+
+<span data-ttu-id="7eded-108">Existují dvě verze architektury Azure Functions.</span><span class="sxs-lookup"><span data-stu-id="7eded-108">There are two versions of the Azure Functions framework.</span></span> <span data-ttu-id="7eded-109">Starší verze podporuje úplné rozhraní .NET Framework a nového modulu runtime aplikace .NET Core pro různé platformy.</span><span class="sxs-lookup"><span data-stu-id="7eded-109">The legacy version supports the full .NET Framework and the new runtime supports cross-platform .NET Core applications.</span></span> <span data-ttu-id="7eded-110">Další jazyky kromě jazyka C# jako je JavaScript, F # nebo Java jsou podporovány.</span><span class="sxs-lookup"><span data-stu-id="7eded-110">Additional languages besides C# such as JavaScript, F#, and Java are supported.</span></span> <span data-ttu-id="7eded-111">Funkce vytvořené na portálu poskytují bohatou syntaxe skriptování.</span><span class="sxs-lookup"><span data-stu-id="7eded-111">Functions created in the portal provide a rich scripting syntax.</span></span> <span data-ttu-id="7eded-112">Funkce, které jsou vytvořeny jako samostatné projekty je možné nasadit s plnou platformu podporu a možnosti.</span><span class="sxs-lookup"><span data-stu-id="7eded-112">Functions created as standalone projects can be deployed with full platform support and capabilities.</span></span>
+
+<span data-ttu-id="7eded-113">Další informace najdete v tématu [dokumentaci ke službě Azure Functions](https://docs.microsoft.com/azure/azure-functions).</span><span class="sxs-lookup"><span data-stu-id="7eded-113">For more information, see [Azure Functions documentation](https://docs.microsoft.com/azure/azure-functions).</span></span>
+
+## <a name="functions-v1-vs-v2"></a><span data-ttu-id="7eded-114">Funkce v1 a v2</span><span class="sxs-lookup"><span data-stu-id="7eded-114">Functions v1 vs. v2</span></span>
+
+<span data-ttu-id="7eded-115">Existují dvě verze modulu runtime Azure Functions: 1.x a 2.x.</span><span class="sxs-lookup"><span data-stu-id="7eded-115">There are two versions of the Azure Functions runtime: 1.x and 2.x.</span></span> <span data-ttu-id="7eded-116">Verzi 1.x je všeobecně dostupná (GA).</span><span class="sxs-lookup"><span data-stu-id="7eded-116">Version 1.x is generally available (GA).</span></span> <span data-ttu-id="7eded-117">Podporuje vývoj aplikací pro .NET z portálu nebo počítače Windows a používá rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="7eded-117">It supports .NET development from the portal or Windows machines and uses the .NET Framework.</span></span> <span data-ttu-id="7eded-118">1.x podporuje C#, JavaScript a F #, experimentální podporu pro Python, PHP, TypeScript, Batch, Bash a PowerShell.</span><span class="sxs-lookup"><span data-stu-id="7eded-118">1.x supports C#, JavaScript, and F#, with experimental support for Python, PHP, TypeScript, Batch, Bash, and PowerShell.</span></span>
+
+<span data-ttu-id="7eded-119">Verze 2.x je ve verzi preview.</span><span class="sxs-lookup"><span data-stu-id="7eded-119">Version 2.x is in preview.</span></span> <span data-ttu-id="7eded-120">Využívá rozhraní .NET Core a podporuje vývoj napříč platformami pro Windows, macOS a počítače s Linuxem.</span><span class="sxs-lookup"><span data-stu-id="7eded-120">It leverages .NET Core and supports cross-platform development on Windows, macOS, and Linux machines.</span></span> <span data-ttu-id="7eded-121">2.x přidává prvotřídní podporu pro Javu, ale zatím nepodporuje přímo některý z následujících experimentálních jazyků.</span><span class="sxs-lookup"><span data-stu-id="7eded-121">2.x adds first-class support for Java but doesn't yet directly support any of the experimental languages.</span></span> <span data-ttu-id="7eded-122">Verze 2.x používá nový model rozšiřitelnosti vazbu, která umožňuje rozšíření třetích stran na platformu, nezávislé správy verzí vazby, a vylepšené prostředí pro spuštění.</span><span class="sxs-lookup"><span data-stu-id="7eded-122">Version 2.x uses a new binding extensibility model that enables third-party extensions to the platform, independent versioning of bindings, and a more streamlined execution environment.</span></span>
+
+> <span data-ttu-id="7eded-123">**Je známý problém s 1.x [podpory přesměrování vazby](https://github.com/Azure/azure-functions-host/issues/992).**</span><span class="sxs-lookup"><span data-stu-id="7eded-123">**There is a known issue in 1.x with [binding redirect support](https://github.com/Azure/azure-functions-host/issues/992).**</span></span> <span data-ttu-id="7eded-124">Tento problém je specifický pro vývoj na platformě .NET.</span><span class="sxs-lookup"><span data-stu-id="7eded-124">The issue is specific to .NET development.</span></span> <span data-ttu-id="7eded-125">Projekty se závislostmi na knihovny, které jsou jiné verzi z knihovny zahrnuté v modulu runtime se to týká.</span><span class="sxs-lookup"><span data-stu-id="7eded-125">Projects with dependencies on libraries that are a different version from the libraries included in the runtime are impacted.</span></span> <span data-ttu-id="7eded-126">Funkce tým zavázal vidět konkrétní pokrok na příslušný problém.</span><span class="sxs-lookup"><span data-stu-id="7eded-126">The functions team has committed to making concrete progress on the problem.</span></span> <span data-ttu-id="7eded-127">Tým bude zabývat přesměrování vazby v 2.x předtím, než se ukládá do všeobecné dostupnosti.</span><span class="sxs-lookup"><span data-stu-id="7eded-127">The team will address binding redirects in 2.x before it goes into general availability.</span></span> <span data-ttu-id="7eded-128">Příkaz oficiální team s návrhy jejich oprav a alternativní řešení je k dispozici tady: [sestavení řešení ve službě Azure Functions](https://github.com/Azure/azure-functions-host/wiki/Assembly-Resolution-in-Azure-Functions).</span><span class="sxs-lookup"><span data-stu-id="7eded-128">The official team statement with suggested fixes and workarounds is available here: [Assembly resolution in Azure Functions](https://github.com/Azure/azure-functions-host/wiki/Assembly-Resolution-in-Azure-Functions).</span></span>
+
+<span data-ttu-id="7eded-129">Další informace najdete v tématu [porovnání 1.x a 2.x](https://docs.microsoft.com/azure/azure-functions/functions-versions).</span><span class="sxs-lookup"><span data-stu-id="7eded-129">For more information, see [Compare 1.x and 2.x](https://docs.microsoft.com/azure/azure-functions/functions-versions).</span></span>
+
+## <a name="programming-language-support"></a><span data-ttu-id="7eded-130">Podpora jazyků programování</span><span class="sxs-lookup"><span data-stu-id="7eded-130">Programming language support</span></span>
+
+<span data-ttu-id="7eded-131">Jsou podporovány následující jazyky buď obecně dostupná (GA), ve verzi preview, nebo je experimentální.</span><span class="sxs-lookup"><span data-stu-id="7eded-131">The following languages are supported either in general availability (GA), preview, or experimental.</span></span>
+
+|<span data-ttu-id="7eded-132">Jazyk</span><span class="sxs-lookup"><span data-stu-id="7eded-132">Language</span></span>      |<span data-ttu-id="7eded-133">1.x</span><span class="sxs-lookup"><span data-stu-id="7eded-133">1.x</span></span>         |<span data-ttu-id="7eded-134">2.x</span><span class="sxs-lookup"><span data-stu-id="7eded-134">2.x</span></span>      |
+|--------------|------------|---------|
+|<span data-ttu-id="7eded-135">**C#**</span><span class="sxs-lookup"><span data-stu-id="7eded-135">**C#**</span></span>        |<span data-ttu-id="7eded-136">VERZE GA</span><span class="sxs-lookup"><span data-stu-id="7eded-136">GA</span></span>          |<span data-ttu-id="7eded-137">Náhled</span><span class="sxs-lookup"><span data-stu-id="7eded-137">Preview</span></span>  |
+|<span data-ttu-id="7eded-138">**JavaScript**</span><span class="sxs-lookup"><span data-stu-id="7eded-138">**JavaScript**</span></span>|<span data-ttu-id="7eded-139">VERZE GA</span><span class="sxs-lookup"><span data-stu-id="7eded-139">GA</span></span>          |<span data-ttu-id="7eded-140">Náhled</span><span class="sxs-lookup"><span data-stu-id="7eded-140">Preview</span></span>  |
+|<span data-ttu-id="7eded-141">**F#**</span><span class="sxs-lookup"><span data-stu-id="7eded-141">**F#**</span></span>        |<span data-ttu-id="7eded-142">VERZE GA</span><span class="sxs-lookup"><span data-stu-id="7eded-142">GA</span></span>          |         |
+|<span data-ttu-id="7eded-143">**Java**</span><span class="sxs-lookup"><span data-stu-id="7eded-143">**Java**</span></span>      |            |<span data-ttu-id="7eded-144">Náhled</span><span class="sxs-lookup"><span data-stu-id="7eded-144">Preview</span></span>  |
+|<span data-ttu-id="7eded-145">**Python**</span><span class="sxs-lookup"><span data-stu-id="7eded-145">**Python**</span></span>    |<span data-ttu-id="7eded-146">Experimentální</span><span class="sxs-lookup"><span data-stu-id="7eded-146">Experimental</span></span>|         |
+|<span data-ttu-id="7eded-147">**PHP**</span><span class="sxs-lookup"><span data-stu-id="7eded-147">**PHP**</span></span>       |<span data-ttu-id="7eded-148">Experimentální</span><span class="sxs-lookup"><span data-stu-id="7eded-148">Experimental</span></span>|         |
+|<span data-ttu-id="7eded-149">**TypeScript**</span><span class="sxs-lookup"><span data-stu-id="7eded-149">**TypeScript**</span></span>|<span data-ttu-id="7eded-150">Experimentální</span><span class="sxs-lookup"><span data-stu-id="7eded-150">Experimental</span></span>|         |
+|<span data-ttu-id="7eded-151">**Služby batch**</span><span class="sxs-lookup"><span data-stu-id="7eded-151">**Batch**</span></span>     |<span data-ttu-id="7eded-152">Experimentální</span><span class="sxs-lookup"><span data-stu-id="7eded-152">Experimental</span></span>|         |
+|<span data-ttu-id="7eded-153">**Bash**</span><span class="sxs-lookup"><span data-stu-id="7eded-153">**Bash**</span></span>      |<span data-ttu-id="7eded-154">Experimentální</span><span class="sxs-lookup"><span data-stu-id="7eded-154">Experimental</span></span>|         |
+|<span data-ttu-id="7eded-155">**PowerShell**</span><span class="sxs-lookup"><span data-stu-id="7eded-155">**PowerShell**</span></span>|<span data-ttu-id="7eded-156">Experimentální</span><span class="sxs-lookup"><span data-stu-id="7eded-156">Experimental</span></span>|         |
+
+<span data-ttu-id="7eded-157">Další informace najdete v tématu [podporované jazyky](https://docs.microsoft.com/azure/azure-functions/supported-languages).</span><span class="sxs-lookup"><span data-stu-id="7eded-157">For more information, see [Supported languages](https://docs.microsoft.com/azure/azure-functions/supported-languages).</span></span>
+
+## <a name="app-service-plans"></a><span data-ttu-id="7eded-158">Plány služby App service</span><span class="sxs-lookup"><span data-stu-id="7eded-158">App service plans</span></span>
+
+<span data-ttu-id="7eded-159">Funkce se opírá *plán služby app service*.</span><span class="sxs-lookup"><span data-stu-id="7eded-159">Functions are backed by an *app service plan*.</span></span> <span data-ttu-id="7eded-160">Plán definuje prostředky využívané třídou aplikaci functions.</span><span class="sxs-lookup"><span data-stu-id="7eded-160">The plan defines the resources used by the functions app.</span></span> <span data-ttu-id="7eded-161">Můžete přiřadit plány v oblasti, určení velikosti a počtu virtuálních počítačů, které se použije a vyberte si cenovou úroveň.</span><span class="sxs-lookup"><span data-stu-id="7eded-161">You can assign plans to a region, determine the size and number of virtual machines that will be used, and pick a pricing tier.</span></span> <span data-ttu-id="7eded-162">True přístup bez serveru, může používat aplikace function App **spotřeby** plánu.</span><span class="sxs-lookup"><span data-stu-id="7eded-162">For a true serverless approach, function apps may use the **consumption** plan.</span></span> <span data-ttu-id="7eded-163">Plán consumption výkonu škálovaly back-endu automaticky na základě zatížení.</span><span class="sxs-lookup"><span data-stu-id="7eded-163">The consumption plan will scale the back end automatically based on load.</span></span>
+
+<span data-ttu-id="7eded-164">Další informace najdete v tématu [plány služby App service](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview).</span><span class="sxs-lookup"><span data-stu-id="7eded-164">For more information, see [App service plans](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview).</span></span>
+
+## <a name="create-your-first-function"></a><span data-ttu-id="7eded-165">Vytvoření první funkce</span><span class="sxs-lookup"><span data-stu-id="7eded-165">Create your first function</span></span>
+
+<span data-ttu-id="7eded-166">Existují tři běžné způsoby, jak můžete vytvářet aplikace function App.</span><span class="sxs-lookup"><span data-stu-id="7eded-166">There are three common ways you can create function apps.</span></span>
+
+* <span data-ttu-id="7eded-167">Funkce skriptu na portálu.</span><span class="sxs-lookup"><span data-stu-id="7eded-167">Script functions in the portal.</span></span>
+* <span data-ttu-id="7eded-168">Vytvořte prostředky potřebné pomocí rozhraní příkazového řádku Azure (CLI).</span><span class="sxs-lookup"><span data-stu-id="7eded-168">Create the necessary resources using the Azure Command Line Interface (CLI).</span></span>
+* <span data-ttu-id="7eded-169">Vytvoření funkcí pro místně pomocí oblíbeného prostředí IDE a publikovat je do Azure.</span><span class="sxs-lookup"><span data-stu-id="7eded-169">Build functions locally using your favorite IDE and publish them to Azure.</span></span>
+
+<span data-ttu-id="7eded-170">Další informace o vytváření skriptované funkce na portálu najdete v tématu [vytvoření první funkce na webu Azure Portal](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function).</span><span class="sxs-lookup"><span data-stu-id="7eded-170">For more information on creating a scripted function in the portal, see [Create your first function in the Azure portal](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function).</span></span>
+
+<span data-ttu-id="7eded-171">Chcete-li sestavení z příkazového řádku Azure, přečtěte si téma [vytvoření první funkce pomocí Azure CLI](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli).</span><span class="sxs-lookup"><span data-stu-id="7eded-171">To build from the Azure CLI, see [Create your first function using the Azure CLI](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli).</span></span>
+
+<span data-ttu-id="7eded-172">Vytvoření funkce z Visual Studia, najdete v tématu [vytvoření první funkce pomocí sady Visual Studio](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio).</span><span class="sxs-lookup"><span data-stu-id="7eded-172">To create a function from Visual Studio, see [Create your first function using Visual Studio](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio).</span></span>
+
+## <a name="understand-triggers-and-bindings"></a><span data-ttu-id="7eded-173">Vysvětlení aktivačními událostmi a vazbami</span><span class="sxs-lookup"><span data-stu-id="7eded-173">Understand triggers and bindings</span></span>
+
+<span data-ttu-id="7eded-174">Funkce jsou vyvolány *aktivační událost* a může mít nastavený právě jeden.</span><span class="sxs-lookup"><span data-stu-id="7eded-174">Functions are invoked by a *trigger* and can have exactly one.</span></span> <span data-ttu-id="7eded-175">Kromě volání funkce, určitými aktivačními událostmi sloužit také jako vazby.</span><span class="sxs-lookup"><span data-stu-id="7eded-175">In addition to invoking the function, certain triggers also serve as bindings.</span></span> <span data-ttu-id="7eded-176">Můžete také definovat víc vazeb kromě aktivační událost.</span><span class="sxs-lookup"><span data-stu-id="7eded-176">You may also define multiple bindings in addition to the trigger.</span></span> <span data-ttu-id="7eded-177">*Vazby* poskytují deklarativní způsob, jak připojit data do vašeho kódu.</span><span class="sxs-lookup"><span data-stu-id="7eded-177">*Bindings* provide a declarative way to connect data to your code.</span></span> <span data-ttu-id="7eded-178">Jsou mohou být předány (vstup) nebo přijímat data (výstup).</span><span class="sxs-lookup"><span data-stu-id="7eded-178">They can be passed in (input) or receive data (output).</span></span> <span data-ttu-id="7eded-179">Triggery a vazby vytvořit funkce usnadnění práce.</span><span class="sxs-lookup"><span data-stu-id="7eded-179">Triggers and bindings make functions easy to work with.</span></span> <span data-ttu-id="7eded-180">Vazby odstranění nároky na ruční vytvoření databáze nebo souboru systému připojení.</span><span class="sxs-lookup"><span data-stu-id="7eded-180">Bindings remove the overhead of manually creating database or file system connections.</span></span> <span data-ttu-id="7eded-181">Všechny informace potřebné pro vazby je obsažen ve speciální *souboru functions.json* souborů skriptů nebo deklarované s atributy v kódu.</span><span class="sxs-lookup"><span data-stu-id="7eded-181">All of the information needed for the bindings is contained in a special *functions.json* file for scripts or declared with attributes in code.</span></span>
+
+<span data-ttu-id="7eded-182">Některé běžné triggery patří:</span><span class="sxs-lookup"><span data-stu-id="7eded-182">Some common triggers include:</span></span>
+
+* <span data-ttu-id="7eded-183">Úložiště objektů blob: vyvolejte funkci souboru nebo složky nahraje nebo změnit v úložišti.</span><span class="sxs-lookup"><span data-stu-id="7eded-183">Blob Storage: invoke your function when a file or folder is uploaded or changed in storage.</span></span>
+* <span data-ttu-id="7eded-184">HTTP: vyvolání funkce jako rozhraní REST API.</span><span class="sxs-lookup"><span data-stu-id="7eded-184">HTTP: invoke your function like a REST API.</span></span>
+* <span data-ttu-id="7eded-185">Fronta: vyvolání funkce při položky existují ve frontě.</span><span class="sxs-lookup"><span data-stu-id="7eded-185">Queue: invoke your function when items exist in a queue.</span></span>
+* <span data-ttu-id="7eded-186">Časovače: vyvolejte funkci regulární čím dál.</span><span class="sxs-lookup"><span data-stu-id="7eded-186">Timer: invoke your function on a regular cadence.</span></span>
+
+<span data-ttu-id="7eded-187">Příklady vazby:</span><span class="sxs-lookup"><span data-stu-id="7eded-187">Examples of bindings include:</span></span>
+
+* <span data-ttu-id="7eded-188">Cosmos DB: snadno připojte k databázi k načtení nebo uložení souborů.</span><span class="sxs-lookup"><span data-stu-id="7eded-188">CosmosDB: easily connect to the database to load or save files.</span></span>
+* <span data-ttu-id="7eded-189">Table Storage: práce s úložiště klíč/hodnota z aplikace function app.</span><span class="sxs-lookup"><span data-stu-id="7eded-189">Table Storage: work with key/value storage from your function app.</span></span>
+* <span data-ttu-id="7eded-190">Queue Storage: můžete snadno získat položky z fronty nebo umístit nových položek do fronty.</span><span class="sxs-lookup"><span data-stu-id="7eded-190">Queue Storage: easily retrieve items from a queue, or place new items on the queue.</span></span>
+
+<span data-ttu-id="7eded-191">Následující příklad *souboru functions.json* soubor definuje aktivační události a vazby:</span><span class="sxs-lookup"><span data-stu-id="7eded-191">The following example *functions.json* file defines a trigger and a binding:</span></span>
+
+```json
+{
+  "bindings": [
+    {
+      "name": "myBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "images/{name}",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "name": "$return",
+      "type": "queue",
+      "direction": "out",
+      "queueName": "images",
+      "connection": "AzureWebJobsStorage"
+    }
+  ],
+  "disabled": false
+}
+```
+
+<span data-ttu-id="7eded-192">V tomto příkladu se funkce aktivuje změn do úložiště objektů blob v `images` kontejneru.</span><span class="sxs-lookup"><span data-stu-id="7eded-192">In this example, the function is triggered by a change to blob storage in the `images` container.</span></span> <span data-ttu-id="7eded-193">Informace pro soubor je předáno, aby aktivační událost se taky pracuje jako vazbu.</span><span class="sxs-lookup"><span data-stu-id="7eded-193">The information for the file is passed in, so the trigger also acts as a binding.</span></span> <span data-ttu-id="7eded-194">Existuje jiný vazba vložit informace do fronty s názvem `images`.</span><span class="sxs-lookup"><span data-stu-id="7eded-194">Another binding exists to put information onto a queue named `images`.</span></span>
+
+<span data-ttu-id="7eded-195">Tady je skript jazyka C# pro funkci:</span><span class="sxs-lookup"><span data-stu-id="7eded-195">Here is the C# script for the function:</span></span>
+
+```csharp
+public static string Run(Stream myBlob, string name, TraceWriter log)
+{
+    log.Info($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
+    return name;
+}
+```
+
+<span data-ttu-id="7eded-196">V příkladu je jednoduchou funkci, která přebírá název souboru, který byl změněn nebo nahráli do úložiště objektů blob a umístí jej do fronty pro pozdější zpracování.</span><span class="sxs-lookup"><span data-stu-id="7eded-196">The example is a simple function that takes the name of the file that was modified or uploaded to blob storage, and places it on a queue for later processing.</span></span>
+
+<span data-ttu-id="7eded-197">Úplný seznam triggerů a vazeb, naleznete v tématu [aktivace Azure Functions a vazby koncepty](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings).</span><span class="sxs-lookup"><span data-stu-id="7eded-197">For a full list of triggers and bindings, see [Azure Functions triggers and bindings concepts](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings).</span></span>
+
+## <a name="proxies"></a><span data-ttu-id="7eded-198">Proxy servery</span><span class="sxs-lookup"><span data-stu-id="7eded-198">Proxies</span></span>
+
+<span data-ttu-id="7eded-199">Proxy servery poskytují funkce přesměrování pro aplikaci.</span><span class="sxs-lookup"><span data-stu-id="7eded-199">Proxies provide redirect functionality for your application.</span></span> <span data-ttu-id="7eded-200">Proxy servery zveřejnit koncový bod a mapování tohoto koncového bodu na jiný prostředek.</span><span class="sxs-lookup"><span data-stu-id="7eded-200">Proxies expose an endpoint and map that endpoint to another resource.</span></span> <span data-ttu-id="7eded-201">Proxy služby, které vám umožní:</span><span class="sxs-lookup"><span data-stu-id="7eded-201">With proxies, you can:</span></span>
+
+* <span data-ttu-id="7eded-202">Přesměrovat příchozí požadavek do jiného koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="7eded-202">Reroute an incoming request to another endpoint.</span></span>
+* <span data-ttu-id="7eded-203">Předtím, než se předají, upravte příchozího požadavku.</span><span class="sxs-lookup"><span data-stu-id="7eded-203">Modify the incoming request before it's passed along.</span></span>
+* <span data-ttu-id="7eded-204">Upravit nebo poskytovat odpověď.</span><span class="sxs-lookup"><span data-stu-id="7eded-204">Modify or provide a response.</span></span>
+
+<span data-ttu-id="7eded-205">Proxy servery se používají pro scénáře, jako například:</span><span class="sxs-lookup"><span data-stu-id="7eded-205">Proxies are used for scenarios such as:</span></span>
+
+* <span data-ttu-id="7eded-206">Zjednodušení a zkrácení Změna adresy URL.</span><span class="sxs-lookup"><span data-stu-id="7eded-206">Simplifying, shortening, or changing the URL.</span></span>
+* <span data-ttu-id="7eded-207">Poskytuje konzistentní předpona rozhraní API pro více back endové služby.</span><span class="sxs-lookup"><span data-stu-id="7eded-207">Providing a consistent API prefix to multiple back-end services.</span></span>
+* <span data-ttu-id="7eded-208">Napodobování odpovědí na koncový bod a proto produkt.</span><span class="sxs-lookup"><span data-stu-id="7eded-208">Mocking a response to an endpoint being developed.</span></span>
+* <span data-ttu-id="7eded-209">Poskytuje statické odpovědi do známého koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="7eded-209">Providing a static response to a well-known endpoint.</span></span>
+* <span data-ttu-id="7eded-210">Koncový bod rozhraní API udržování souladu, zatímco back-endu je přesunovat nebo migrovat.</span><span class="sxs-lookup"><span data-stu-id="7eded-210">Keeping an API endpoint consistent while the back end is moved or migrated.</span></span>
+
+<span data-ttu-id="7eded-211">Proxy servery jsou uloženy jako definice JSON.</span><span class="sxs-lookup"><span data-stu-id="7eded-211">Proxies are stored as JSON definitions.</span></span> <span data-ttu-id="7eded-212">Tady je příklad:</span><span class="sxs-lookup"><span data-stu-id="7eded-212">Here is an example:</span></span>
+
+```json
+{
+  "$schema": "http://json.schemastore.org/proxies",
+  "proxies": {
+    "Domain Redirect": {
+      "matchCondition": {
+        "route": "/{shortUrl}"
+      },
+      "backendUri": "http://%WEBSITE_HOSTNAME%/api/UrlRedirect/{shortUrl}"
+    },
+    "Root": {
+      "matchCondition": {
+        "route": "/"
+      },
+      "responseOverrides": {
+        "response.statusCode": "301",
+        "response.statusReason": "Moved Permanently",
+        "response.headers.location": "https://docs.microsoft.com/"
+      }
+    }
+  }
+}
+```
+
+<span data-ttu-id="7eded-213">`Domain Redirect` Proxy používá zkrácený trasu a mapuje na delší funkce prostředků.</span><span class="sxs-lookup"><span data-stu-id="7eded-213">The `Domain Redirect` proxy takes a shortened route and maps it to the longer function resource.</span></span> <span data-ttu-id="7eded-214">Transformace vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="7eded-214">The transformation looks like:</span></span>
+
+`https://--shorturl--/123` -> `https://--longurl--.azurewebsites.net/api/UrlRedirect/123`
+
+<span data-ttu-id="7eded-215">`Root` Proxy trvá nic odeslané na adresu URL kořenového (`https://--shorturl--/`) a přesměruje na web s dokumentací.</span><span class="sxs-lookup"><span data-stu-id="7eded-215">The `Root` proxy takes anything sent to the root URL (`https://--shorturl--/`) and redirects it to the documentation site.</span></span>
+
+<span data-ttu-id="7eded-216">Příklad použití proxy se zobrazí ve videu [Azure: přeneste svoje aplikace do cloudu s využitím Azure Functions](https://channel9.msdn.com/events/Connect/2017/E102).</span><span class="sxs-lookup"><span data-stu-id="7eded-216">An example of using proxies is shown in the video [Azure: Bring your app to the cloud with serverless Azure Functions](https://channel9.msdn.com/events/Connect/2017/E102).</span></span> <span data-ttu-id="7eded-217">V reálném čase se aplikace ASP.NET Core běží na místním serveru SQL Server migrovat do cloudu Azure.</span><span class="sxs-lookup"><span data-stu-id="7eded-217">In real time, an ASP.NET Core application running on local SQL Server is migrated to the Azure Cloud.</span></span> <span data-ttu-id="7eded-218">Proxy služby slouží k refaktorování tradiční projekt webového rozhraní API pro použití funkce.</span><span class="sxs-lookup"><span data-stu-id="7eded-218">Proxies are used to help refactor a traditional Web API project to use functions.</span></span>
+
+<span data-ttu-id="7eded-219">Další informace o proxy serverů najdete v tématu [pracovat s proxy služby Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-proxies).</span><span class="sxs-lookup"><span data-stu-id="7eded-219">For more information about Proxies, see [Work with Azure Functions Proxies](https://docs.microsoft.com/azure/azure-functions/functions-proxies).</span></span>
+
+>[!div class="step-by-step"]
+<span data-ttu-id="7eded-220">[Předchozí](azure-serverless-platform.md)
+[další](application-insights.md)</span><span class="sxs-lookup"><span data-stu-id="7eded-220">[Previous](azure-serverless-platform.md)
+[Next](application-insights.md)</span></span>

@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC36548
 ms.assetid: 27de068f-080e-4160-86bf-1ec23fd1925a
-ms.openlocfilehash: d43f6ef19591af326d06a4ce21194d8f9fa58c2b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2f97a0de74428ce42a088644580a78bf8fd99945
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33585473"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37936799"
 ---
-# <a name="cannot-convert-anonymous-type-to-expression-tree-because-it-contains-a-field-that-is-used-in-the-initialization-of-another-field"></a><span data-ttu-id="5bbab-102">Anonymní typ nelze převést na strom výrazu, protože obsahuje pole, které se používá při inicializaci jiného pole.</span><span class="sxs-lookup"><span data-stu-id="5bbab-102">Cannot convert anonymous type to expression tree because it contains a field that is used in the initialization of another field</span></span>
-<span data-ttu-id="5bbab-103">Kompilátor nepřijímá převod anonymním na strom výrazu, když jednu vlastnost anonymní typ se používá k chybě při inicializaci jinou vlastnost anonymního typu.</span><span class="sxs-lookup"><span data-stu-id="5bbab-103">The compiler does not accept conversion of an anonymous to an expression tree when one property of the anonymous type is used to initialize another property of the anonymous type.</span></span> <span data-ttu-id="5bbab-104">Například v následujícím kódu `Prop1` je deklarován v seznamu inicializace a pak se použije jako počáteční hodnota `Prop2`.</span><span class="sxs-lookup"><span data-stu-id="5bbab-104">For example, in the following code, `Prop1` is declared in the initialization list and then used as the initial value for `Prop2`.</span></span>  
+# <a name="cannot-convert-anonymous-type-to-expression-tree-because-it-contains-a-field-that-is-used-in-the-initialization-of-another-field"></a><span data-ttu-id="9d45a-102">Anonymní typ nelze převést na strom výrazu, protože obsahuje pole, které se používá při inicializaci jiného pole.</span><span class="sxs-lookup"><span data-stu-id="9d45a-102">Cannot convert anonymous type to expression tree because it contains a field that is used in the initialization of another field</span></span>
+<span data-ttu-id="9d45a-103">Kompilátor nepřijímá převod anonymním na strom výrazu, pokud jedna vlastnost anonymního typu slouží k inicializaci jiné vlastnosti anonymního typu.</span><span class="sxs-lookup"><span data-stu-id="9d45a-103">The compiler does not accept conversion of an anonymous to an expression tree when one property of the anonymous type is used to initialize another property of the anonymous type.</span></span> <span data-ttu-id="9d45a-104">Například v následujícím kódu `Prop1` je deklarovaný v inicializaci seznamu a pak použít jako počáteční hodnota `Prop2`.</span><span class="sxs-lookup"><span data-stu-id="9d45a-104">For example, in the following code, `Prop1` is declared in the initialization list and then used as the initial value for `Prop2`.</span></span>  
   
 ```vb  
 Module M2  
@@ -31,11 +31,11 @@ Module M2
 End Module  
 ```  
   
- <span data-ttu-id="5bbab-105">**ID chyby:** BC36548</span><span class="sxs-lookup"><span data-stu-id="5bbab-105">**Error ID:** BC36548</span></span>  
+ <span data-ttu-id="9d45a-105">**ID chyby:** BC36548</span><span class="sxs-lookup"><span data-stu-id="9d45a-105">**Error ID:** BC36548</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="5bbab-106">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="5bbab-106">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="9d45a-106">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="9d45a-106">To correct this error</span></span>  
   
--   <span data-ttu-id="5bbab-107">Přiřadit počáteční hodnotu pro `Prop1` místní proměnné.</span><span class="sxs-lookup"><span data-stu-id="5bbab-107">Assign the initial value for `Prop1` to a local variable.</span></span> <span data-ttu-id="5bbab-108">Přiřaďte tuto proměnnou na obě `Prop1` a `Prop2`, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="5bbab-108">Assign that variable to both `Prop1` and `Prop2`, as shown in the following code.</span></span>  
+-   <span data-ttu-id="9d45a-107">Počáteční hodnota pro přiřazení `Prop1` místní proměnné.</span><span class="sxs-lookup"><span data-stu-id="9d45a-107">Assign the initial value for `Prop1` to a local variable.</span></span> <span data-ttu-id="9d45a-108">Přiřaďte tuto proměnnou k oběma `Prop1` a `Prop2`, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="9d45a-108">Assign that variable to both `Prop1` and `Prop2`, as shown in the following code.</span></span>  
   
     ```  
     Sub Main()  
@@ -46,7 +46,8 @@ End Module
     End Sub  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="5bbab-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="5bbab-109">See Also</span></span>  
- [<span data-ttu-id="5bbab-110">Anonymní typy</span><span class="sxs-lookup"><span data-stu-id="5bbab-110">Anonymous Types</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
- [<span data-ttu-id="5bbab-111">Stromy výrazů</span><span class="sxs-lookup"><span data-stu-id="5bbab-111">Expression Trees</span></span>](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)  
- [<span data-ttu-id="5bbab-112">Postupy: Použití stromů výrazů k sestavování dynamických dotazů</span><span class="sxs-lookup"><span data-stu-id="5bbab-112">How to: Use Expression Trees to Build Dynamic Queries</span></span>](http://msdn.microsoft.com/library/1e37e0cc-eef3-48bb-8b69-3adabf322735)
+## <a name="see-also"></a><span data-ttu-id="9d45a-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9d45a-109">See also</span></span>
+
+[<span data-ttu-id="9d45a-110">Anonymní typy (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9d45a-110">Anonymous Types (Visual Basic)</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
+[<span data-ttu-id="9d45a-111">Stromy výrazů (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9d45a-111">Expression Trees (Visual Basic)</span></span>](../../programming-guide/concepts/expression-trees/index.md)  
+[<span data-ttu-id="9d45a-112">Postupy: použití stromů výrazů k sestavování dynamických dotazů (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9d45a-112">How to: Use Expression Trees to Build Dynamic Queries (Visual Basic)</span></span>](../../programming-guide/concepts/expression-trees/how-to-use-expression-trees-to-build-dynamic-queries.md)  

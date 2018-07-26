@@ -1,64 +1,64 @@
 ---
-title: Předávání polí jako argumentů (Průvodce programováním v C#)
-ms.date: 07/20/2015
+title: Předávání polí jako argumentů (C# Programming Guide)
+ms.date: 07/05/2018
 helpviewer_keywords:
 - arrays [C#], passing as arguments
 ms.assetid: f3a0971e-c87c-4a1f-8262-bc0a3b712772
-ms.openlocfilehash: d863cdc33a8a1a844aabbea9ba5876614e6e8dba
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0289297be9d7b4989cc95d2b50b92dae9ee831f7
+ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33315513"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39199222"
 ---
-# <a name="passing-arrays-as-arguments-c-programming-guide"></a><span data-ttu-id="b079c-102">Předávání polí jako argumentů (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="b079c-102">Passing Arrays as Arguments (C# Programming Guide)</span></span>
-<span data-ttu-id="b079c-103">Pole může být předán jako argumenty pro parametry metody.</span><span class="sxs-lookup"><span data-stu-id="b079c-103">Arrays can be passed as arguments to method parameters.</span></span> <span data-ttu-id="b079c-104">Vzhledem k tomu, že pole jsou odkazové typy, metodu můžete změnit hodnotu elementy.</span><span class="sxs-lookup"><span data-stu-id="b079c-104">Because arrays are reference types, the method can change the value of the elements.</span></span>  
-  
-## <a name="passing-single-dimensional-arrays-as-arguments"></a><span data-ttu-id="b079c-105">Jednorozměrná předávání polí jako argumentů</span><span class="sxs-lookup"><span data-stu-id="b079c-105">Passing Single-Dimensional Arrays As Arguments</span></span>  
- <span data-ttu-id="b079c-106">Metodu lze předat inicializovaného jednorozměrná pole.</span><span class="sxs-lookup"><span data-stu-id="b079c-106">You can pass an initialized single-dimensional array to a method.</span></span> <span data-ttu-id="b079c-107">Následující příkaz například odešle pole tiskové metodě.</span><span class="sxs-lookup"><span data-stu-id="b079c-107">For example, the following statement sends an array to a print method.</span></span>  
-  
- [!code-csharp[csProgGuideArrays#34](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_1.cs)]  
-  
- <span data-ttu-id="b079c-108">Následující kód ukazuje částečnou implementaci metodu tisku.</span><span class="sxs-lookup"><span data-stu-id="b079c-108">The following code shows a partial implementation of the print method.</span></span>  
-  
- [!code-csharp[csProgGuideArrays#33](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_2.cs)]  
-  
- <span data-ttu-id="b079c-109">Můžete inicializovat a předat nové pole v jednom kroku, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="b079c-109">You can initialize and pass a new array in one step, as is shown in the following example.</span></span>  
-  
- [!code-csharp[CsProgGuideArrays#35](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_3.cs)]  
-  
-## <a name="example"></a><span data-ttu-id="b079c-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="b079c-110">Example</span></span>  
-  
-### <a name="description"></a><span data-ttu-id="b079c-111">Popis</span><span class="sxs-lookup"><span data-stu-id="b079c-111">Description</span></span>  
- <span data-ttu-id="b079c-112">V následujícím příkladu je pole řetězců inicializovat a předat jako argument k `PrintArray` metoda pro řetězce.</span><span class="sxs-lookup"><span data-stu-id="b079c-112">In the following example, an array of strings is initialized and passed as an argument to a `PrintArray` method for strings.</span></span> <span data-ttu-id="b079c-113">Metoda zobrazí elementy pole.</span><span class="sxs-lookup"><span data-stu-id="b079c-113">The method displays the elements of the array.</span></span> <span data-ttu-id="b079c-114">Dále metody `ChangeArray` a `ChangeArrayElement` se nazývají prokázat, že odesílání argument pole hodnotou nebrání změny na elementy pole.</span><span class="sxs-lookup"><span data-stu-id="b079c-114">Next, methods `ChangeArray` and `ChangeArrayElement` are called to demonstrate that sending an array argument by value does not prevent changes to the array elements.</span></span>  
-  
-### <a name="code"></a><span data-ttu-id="b079c-115">Kód</span><span class="sxs-lookup"><span data-stu-id="b079c-115">Code</span></span>  
- [!code-csharp[csProgGuideArrays#30](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_4.cs)]  
-  
-## <a name="passing-multidimensional-arrays-as-arguments"></a><span data-ttu-id="b079c-116">Vícerozměrná pole předání jako argumentů</span><span class="sxs-lookup"><span data-stu-id="b079c-116">Passing Multidimensional Arrays As Arguments</span></span>  
- <span data-ttu-id="b079c-117">Inicializovaného multidimenzionálního pole můžete předat metodě stejným způsobem, že předáváte jednorozměrné pole.</span><span class="sxs-lookup"><span data-stu-id="b079c-117">You pass an initialized multidimensional array to a method in the same way that you pass a one-dimensional array.</span></span>  
-  
- [!code-csharp[csProgGuideArrays#41](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_5.cs)]  
-  
- <span data-ttu-id="b079c-118">Následující kód ukazuje částečné deklaraci tiskové metodu, která přijímá dvourozměrná pole jako její argument.</span><span class="sxs-lookup"><span data-stu-id="b079c-118">The following code shows a partial declaration of a print method that accepts a two-dimensional array as its argument.</span></span>  
-  
- [!code-csharp[csProgGuideArrays#36](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_6.cs)]  
-  
- <span data-ttu-id="b079c-119">Můžete inicializovat a předat nové pole v jednom kroku, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="b079c-119">You can initialize and pass a new array in one step, as is shown in the following example.</span></span>  
-  
- [!code-csharp[csProgGuideArrays#32](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_7.cs)]  
-  
-## <a name="example"></a><span data-ttu-id="b079c-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="b079c-120">Example</span></span>  
-  
-### <a name="description"></a><span data-ttu-id="b079c-121">Popis</span><span class="sxs-lookup"><span data-stu-id="b079c-121">Description</span></span>  
- <span data-ttu-id="b079c-122">V následujícím příkladu je inicializován a předaný dvourozměrná pole celých čísel `Print2DArray` metoda.</span><span class="sxs-lookup"><span data-stu-id="b079c-122">In the following example, a two-dimensional array of integers is initialized and passed to the `Print2DArray` method.</span></span> <span data-ttu-id="b079c-123">Metoda zobrazí elementy pole.</span><span class="sxs-lookup"><span data-stu-id="b079c-123">The method displays the elements of the array.</span></span>  
-  
-### <a name="code"></a><span data-ttu-id="b079c-124">Kód</span><span class="sxs-lookup"><span data-stu-id="b079c-124">Code</span></span>  
- [!code-csharp[csProgGuideArrays#31](../../../csharp/programming-guide/arrays/codesnippet/CSharp/passing-arrays-as-arguments_8.cs)]  
-  
-## <a name="see-also"></a><span data-ttu-id="b079c-125">Viz také</span><span class="sxs-lookup"><span data-stu-id="b079c-125">See Also</span></span>  
- [<span data-ttu-id="b079c-126">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="b079c-126">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
- [<span data-ttu-id="b079c-127">Pole</span><span class="sxs-lookup"><span data-stu-id="b079c-127">Arrays</span></span>](../../../csharp/programming-guide/arrays/index.md)  
- [<span data-ttu-id="b079c-128">Jednorozměrná pole</span><span class="sxs-lookup"><span data-stu-id="b079c-128">Single-Dimensional Arrays</span></span>](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)  
- [<span data-ttu-id="b079c-129">Vícerozměrná pole</span><span class="sxs-lookup"><span data-stu-id="b079c-129">Multidimensional Arrays</span></span>](../../../csharp/programming-guide/arrays/multidimensional-arrays.md)  
- [<span data-ttu-id="b079c-130">Vícenásobná pole</span><span class="sxs-lookup"><span data-stu-id="b079c-130">Jagged Arrays</span></span>](../../../csharp/programming-guide/arrays/jagged-arrays.md)
+# <a name="passing-arrays-as-arguments-c-programming-guide"></a><span data-ttu-id="c668f-102">Předávání polí jako argumentů (C# Programming Guide)</span><span class="sxs-lookup"><span data-stu-id="c668f-102">Passing arrays as arguments (C# Programming Guide)</span></span>
+
+<span data-ttu-id="c668f-103">Pole může být předány jako argumenty na parametry metod.</span><span class="sxs-lookup"><span data-stu-id="c668f-103">Arrays can be passed as arguments to method parameters.</span></span> <span data-ttu-id="c668f-104">Protože pole jsou typy odkazů, metodu můžete změnit hodnotu prvků.</span><span class="sxs-lookup"><span data-stu-id="c668f-104">Because arrays are reference types, the method can change the value of the elements.</span></span>
+
+## <a name="passing-single-dimensional-arrays-as-arguments"></a><span data-ttu-id="c668f-105">Jednorozměrná předávání polí jako argumentů</span><span class="sxs-lookup"><span data-stu-id="c668f-105">Passing single-dimensional arrays as arguments</span></span>
+
+<span data-ttu-id="c668f-106">Metodu můžete předat inicializované jednorozměrné pole.</span><span class="sxs-lookup"><span data-stu-id="c668f-106">You can pass an initialized single-dimensional array to a method.</span></span> <span data-ttu-id="c668f-107">Například následující příkaz odešle pole tisku metodě.</span><span class="sxs-lookup"><span data-stu-id="c668f-107">For example, the following statement sends an array to a print method.</span></span>
+
+[!code-csharp[csProgGuideArrays#34](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#34)]
+
+<span data-ttu-id="c668f-108">Následující kód ukazuje částečnou implementaci metody tisku.</span><span class="sxs-lookup"><span data-stu-id="c668f-108">The following code shows a partial implementation of the print method.</span></span>
+
+[!code-csharp[csProgGuideArrays#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#33)]
+
+<span data-ttu-id="c668f-109">Můžete inicializovat a předat nové pole v jednom kroku, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="c668f-109">You can initialize and pass a new array in one step, as is shown in the following example.</span></span>
+
+[!code-csharp[CsProgGuideArrays#35](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#35)]
+
+### <a name="example"></a><span data-ttu-id="c668f-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="c668f-110">Example</span></span>
+
+<span data-ttu-id="c668f-111">V následujícím příkladu je pole řetězců inicializován a předat jako argument `DisplayArray` metodu pro řetězce.</span><span class="sxs-lookup"><span data-stu-id="c668f-111">In the following example, an array of strings is initialized and passed as an argument to a `DisplayArray` method for strings.</span></span> <span data-ttu-id="c668f-112">Metoda zobrazí prvků pole.</span><span class="sxs-lookup"><span data-stu-id="c668f-112">The method displays the elements of the array.</span></span> <span data-ttu-id="c668f-113">Dále `ChangeArray` metoda obrátí prvků pole a pak `ChangeArrayElements` metoda upraví první tři prvky pole.</span><span class="sxs-lookup"><span data-stu-id="c668f-113">Next, the `ChangeArray` method reverses the array elements, and then the `ChangeArrayElements` method modifies the first three elements of the array.</span></span> <span data-ttu-id="c668f-114">Poté, co každá metoda vrací výsledek, `DisplayArray` metoda ukazuje, že předá podle hodnoty pole nezabrání změny k prvkům pole.</span><span class="sxs-lookup"><span data-stu-id="c668f-114">After each method returns, the `DisplayArray` method shows that passing an array by value doesn't prevent changes to the array elements.</span></span>
+
+[!code-csharp[csProgGuideArrays#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/ArrayExample.cs)]
+
+## <a name="passing-multidimensional-arrays-as-arguments"></a><span data-ttu-id="c668f-115">Předání vícerozměrných polí jako argumentů</span><span class="sxs-lookup"><span data-stu-id="c668f-115">Passing multidimensional arrays as arguments</span></span>
+
+<span data-ttu-id="c668f-116">Inicializované vícerozměrná pole můžete předat metodě stejným způsobem, který předáte jednorozměrné pole.</span><span class="sxs-lookup"><span data-stu-id="c668f-116">You pass an initialized multidimensional array to a method in the same way that you pass a one-dimensional array.</span></span>
+
+[!code-csharp[csProgGuideArrays#41](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#41)]
+
+<span data-ttu-id="c668f-117">Následující kód znázorňuje deklaraci částečné tisku metody, která přijímá jako svůj argument dvourozměrné pole.</span><span class="sxs-lookup"><span data-stu-id="c668f-117">The following code shows a partial declaration of a print method that accepts a two-dimensional array as its argument.</span></span>
+
+[!code-csharp[csProgGuideArrays#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#36)]
+
+<span data-ttu-id="c668f-118">Můžete inicializovat a předejte nové pole v jednom kroku, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c668f-118">You can initialize and pass a new array in one step, as is shown in the following example:</span></span>
+
+[!code-csharp[csProgGuideArrays#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#32)]
+
+### <a name="example"></a><span data-ttu-id="c668f-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="c668f-119">Example</span></span>
+
+<span data-ttu-id="c668f-120">V následujícím příkladu je inicializován a předat dvourozměrné pole celých čísel `Print2DArray` metody.</span><span class="sxs-lookup"><span data-stu-id="c668f-120">In the following example, a two-dimensional array of integers is initialized and passed to the `Print2DArray` method.</span></span> <span data-ttu-id="c668f-121">Metoda zobrazí prvků pole.</span><span class="sxs-lookup"><span data-stu-id="c668f-121">The method displays the elements of the array.</span></span>
+
+[!code-csharp[csProgGuideArrays#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#31)]
+
+## <a name="see-also"></a><span data-ttu-id="c668f-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c668f-122">See also</span></span>
+
+[<span data-ttu-id="c668f-123">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="c668f-123">C# Programming Guide</span></span>](../index.md)  
+[<span data-ttu-id="c668f-124">Pole</span><span class="sxs-lookup"><span data-stu-id="c668f-124">Arrays</span></span>](index.md)  
+[<span data-ttu-id="c668f-125">Jednorozměrná pole</span><span class="sxs-lookup"><span data-stu-id="c668f-125">Single-Dimensional Arrays</span></span>](single-dimensional-arrays.md)  
+[<span data-ttu-id="c668f-126">Vícerozměrná pole</span><span class="sxs-lookup"><span data-stu-id="c668f-126">Multidimensional Arrays</span></span>](multidimensional-arrays.md)  
+[<span data-ttu-id="c668f-127">Vícenásobná pole</span><span class="sxs-lookup"><span data-stu-id="c668f-127">Jagged Arrays</span></span>](jagged-arrays.md)  

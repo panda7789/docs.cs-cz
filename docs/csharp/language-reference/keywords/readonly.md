@@ -1,64 +1,103 @@
 ---
-title: readonly – modifikátor (Referenční dokumentace jazyka C#)
-ms.date: 07/20/2015
+title: ReadOnly – klíčové slovo (referenční dokumentace jazyka C#)
+ms.date: 06/21/2018
 f1_keywords:
 - readonly_CSharpKeyword
 - readonly
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: d2f8a2f192dc319ad806aeef4bfbaeecc44b07a3
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.openlocfilehash: 96607f1dd7f019169446e29a08496fb54e1ed493
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
-ms.locfileid: "34172630"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37961180"
 ---
-# <a name="readonly-c-reference"></a><span data-ttu-id="7f574-102">readonly – modifikátor (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="7f574-102">readonly (C# Reference)</span></span>
-<span data-ttu-id="7f574-103">`readonly` – Klíčové slovo je modifikátor, který můžete použít na pole.</span><span class="sxs-lookup"><span data-stu-id="7f574-103">The `readonly` keyword is a modifier that you can use on fields.</span></span> <span data-ttu-id="7f574-104">Pokud obsahuje deklaraci pole `readonly` modifikátor, přiřazení pole zaváděné deklaraci může dojít pouze v rámci deklarace nebo v konstruktoru ve stejné třídě.</span><span class="sxs-lookup"><span data-stu-id="7f574-104">When a field declaration includes a `readonly` modifier, assignments to the fields introduced by the declaration can only occur as part of the declaration or in a constructor in the same class.</span></span>  
+# <a name="readonly-c-reference"></a><span data-ttu-id="10df7-102">readonly – modifikátor (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="10df7-102">readonly (C# Reference)</span></span>
+
+<span data-ttu-id="10df7-103">`readonly` – Klíčové slovo je modifikátor, který je možné ve třech kontextech:</span><span class="sxs-lookup"><span data-stu-id="10df7-103">The `readonly` keyword is a modifier that can be used in three contexts:</span></span>
+
+- <span data-ttu-id="10df7-104">V [pole deklarace](#readonly-field-example), `readonly` označuje, že přiřazení pro pole může probíhat jenom jako součást deklarace nebo v konstruktoru ve stejné třídě.</span><span class="sxs-lookup"><span data-stu-id="10df7-104">In a [field declaration](#readonly-field-example), `readonly` indicates that assignment to the field can only occur as part of the declaration or in a constructor in the same class.</span></span>
+- <span data-ttu-id="10df7-105">V [ `readonly struct` definice](#readonly-struct-example), `readonly` znamená, že `struct` je neměnný.</span><span class="sxs-lookup"><span data-stu-id="10df7-105">In a [`readonly struct` definition](#readonly-struct-example), `readonly` indicates that the `struct` is immutable.</span></span>
+- <span data-ttu-id="10df7-106">V [ `ref readonly` metoda návratový](#ref-readonly-return-example), `readonly` modifikátor označuje, že metoda vrátí odkaz a zápisu nejsou povoleny na tento odkaz.</span><span class="sxs-lookup"><span data-stu-id="10df7-106">In a [`ref readonly` method return](#ref-readonly-return-example), the `readonly` modifier indicates that method returns a reference and writes are not allowed to that reference.</span></span>
+
+<span data-ttu-id="10df7-107">Poslední dvě kontexty byly přidány v jazyce C# 7.2.</span><span class="sxs-lookup"><span data-stu-id="10df7-107">The final two contexts were added in C# 7.2.</span></span>
+
+## <a name="readonly-field-example"></a><span data-ttu-id="10df7-108">Pole určené jen pro čtení, například</span><span class="sxs-lookup"><span data-stu-id="10df7-108">Readonly field example</span></span>  
+
+<span data-ttu-id="10df7-109">V tomto příkladu je hodnota pole `year` nelze změnit v metodě `ChangeYear`, i když je k ní přiřadí hodnota v konstruktoru třídy:</span><span class="sxs-lookup"><span data-stu-id="10df7-109">In this example, the value of the field `year` cannot be changed in the method `ChangeYear`, even though it is assigned a value in the class constructor:</span></span>  
   
-## <a name="readonly-field-example"></a><span data-ttu-id="7f574-105">Pole jen pro čtení, například</span><span class="sxs-lookup"><span data-stu-id="7f574-105">Readonly field example</span></span>  
- <span data-ttu-id="7f574-106">V tomto příkladu hodnota v poli `year` nelze změnit v metodě `ChangeYear`, i když je přiřazen hodnotu v konstruktoru třídy:</span><span class="sxs-lookup"><span data-stu-id="7f574-106">In this example, the value of the field `year` cannot be changed in the method `ChangeYear`, even though it is assigned a value in the class constructor:</span></span>  
+[!code-csharp[Readonly Field example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#ReadonlyField)]  
   
- [!code-csharp[csrefKeywordsModifiers#14](../../../csharp/language-reference/keywords/codesnippet/CSharp/readonly_1.cs)]  
+<span data-ttu-id="10df7-110">Můžete přiřadit hodnoty k `readonly` pouze v následujících kontextů:</span><span class="sxs-lookup"><span data-stu-id="10df7-110">You can assign a value to a `readonly` field only in the following contexts:</span></span>  
   
- <span data-ttu-id="7f574-107">Můžete přiřadit hodnotu na `readonly` pouze v kontextech následující pole:</span><span class="sxs-lookup"><span data-stu-id="7f574-107">You can assign a value to a `readonly` field only in the following contexts:</span></span>  
-  
--   <span data-ttu-id="7f574-108">Pokud proměnná je inicializován v deklaraci, například:</span><span class="sxs-lookup"><span data-stu-id="7f574-108">When the variable is initialized in the declaration, for example:</span></span>  
-  
-    ```csharp  
-    public readonly int y = 5;  
-    ```  
-  
--   <span data-ttu-id="7f574-109">V konstruktorech instance třídy pro pole instance, která obsahuje deklaraci pole nebo pro statické pole na statického konstruktoru třídy, která obsahuje deklaraci pole.</span><span class="sxs-lookup"><span data-stu-id="7f574-109">For an instance field, in the instance constructors of the class that contains the field declaration, or for a static field, in the static constructor of the class that contains the field declaration.</span></span> <span data-ttu-id="7f574-110">Existují i pouze kontexty, ve kterých je platná pro předávání `readonly` jako pole [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) nebo [ref](../../../csharp/language-reference/keywords/ref.md) parametr.</span><span class="sxs-lookup"><span data-stu-id="7f574-110">These are also the only contexts in which it is valid to pass a `readonly` field as an [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) or [ref](../../../csharp/language-reference/keywords/ref.md) parameter.</span></span>  
+- <span data-ttu-id="10df7-111">Pokud je proměnná inicializována v deklaraci, například:</span><span class="sxs-lookup"><span data-stu-id="10df7-111">When the variable is initialized in the declaration, for example:</span></span>  
+
+```csharp
+public readonly int y = 5;  
+```
+
+- <span data-ttu-id="10df7-112">V konstruktoru instance třídy, která obsahuje deklaraci pole instance.</span><span class="sxs-lookup"><span data-stu-id="10df7-112">In an instance constructor of the class that contains the instance field declaration.</span></span>
+- <span data-ttu-id="10df7-113">V statický konstruktor třídy, která obsahuje deklaraci statického pole.</span><span class="sxs-lookup"><span data-stu-id="10df7-113">In the static constructor of the class that contains the static field declaration.</span></span>
+
+<span data-ttu-id="10df7-114">Kontexty konstruktoru jsou také pouze kontextech, ve kterých je možné předat `readonly` jako pole [si](out-parameter-modifier.md) nebo [ref](ref.md) parametru.</span><span class="sxs-lookup"><span data-stu-id="10df7-114">These constructor contexts are also the only contexts in which it is valid to pass a `readonly` field as an [out](out-parameter-modifier.md) or [ref](ref.md) parameter.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="7f574-111">`readonly` – Klíčové slovo se liší od [const](../../../csharp/language-reference/keywords/const.md) – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="7f574-111">The `readonly` keyword is different from the [const](../../../csharp/language-reference/keywords/const.md) keyword.</span></span> <span data-ttu-id="7f574-112">A `const` pole lze inicializovat pouze na deklaraci pole.</span><span class="sxs-lookup"><span data-stu-id="7f574-112">A `const` field can only be initialized at the declaration of the field.</span></span> <span data-ttu-id="7f574-113">A `readonly` pole jde inicializovat na deklaraci nebo v konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="7f574-113">A `readonly` field can be initialized either at the declaration or in a constructor.</span></span> <span data-ttu-id="7f574-114">Proto `readonly` pole může mít různé hodnoty v závislosti na konstruktoru použít.</span><span class="sxs-lookup"><span data-stu-id="7f574-114">Therefore, `readonly` fields can have different values depending on the constructor used.</span></span> <span data-ttu-id="7f574-115">Navíc při `const` pole je argumentem konstanta kompilaci `readonly` pole lze použít pro modul runtime konstanty jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="7f574-115">Also, while a `const` field is a compile-time constant, the `readonly` field can be used for runtime constants as in the following example:</span></span>  
-  
-```csharp  
+> <span data-ttu-id="10df7-115">`readonly` – Klíčové slovo se liší od [const](const.md) – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="10df7-115">The `readonly` keyword is different from the [const](const.md) keyword.</span></span> <span data-ttu-id="10df7-116">A `const` pole mohou být inicializovány pouze v deklaraci pole.</span><span class="sxs-lookup"><span data-stu-id="10df7-116">A `const` field can only be initialized at the declaration of the field.</span></span> <span data-ttu-id="10df7-117">A `readonly` pole mohou být inicializovány při deklaraci nebo v konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="10df7-117">A `readonly` field can be initialized either at the declaration or in a constructor.</span></span> <span data-ttu-id="10df7-118">Proto `readonly` pole může mít různé hodnoty v závislosti na použitém konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="10df7-118">Therefore, `readonly` fields can have different values depending on the constructor used.</span></span> <span data-ttu-id="10df7-119">Také, zatímco `const` pole je konstantu kompilace `readonly` pole lze použít pro konstanty runtime jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="10df7-119">Also, while a `const` field is a compile-time constant, the `readonly` field can be used for runtime constants as in the following example:</span></span>  
+
+```csharp
 public static readonly uint timeStamp = (uint)DateTime.Now.Ticks;  
-```  
+```
+
+[!code-csharp[Initialize readonly Field example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#InitReadonlyField)]  
   
-## <a name="comparing-readonly-and-non-readonly-instance-fields"></a><span data-ttu-id="7f574-116">Porovnání instance pole jen pro čtení a jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="7f574-116">Comparing readonly and non-readonly instance fields</span></span>  
- [!code-csharp[csrefKeywordsModifiers#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/readonly_2.cs)]  
+<span data-ttu-id="10df7-120">V předchozím příkladu, pokud použijete příkaz jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="10df7-120">In the preceding example, if you use a statement like the following example:</span></span>  
   
- <span data-ttu-id="7f574-117">V předchozím příkladu, pokud použijete příkaz takto:</span><span class="sxs-lookup"><span data-stu-id="7f574-117">In the preceding example, if you use a statement like this:</span></span>  
+`p2.y = 66;        // Error`  
   
- `p2.y = 66;        // Error`  
+<span data-ttu-id="10df7-121">Zobrazí se chybová zpráva kompilátoru:</span><span class="sxs-lookup"><span data-stu-id="10df7-121">you will get the compiler error message:</span></span>  
   
- <span data-ttu-id="7f574-118">Zobrazí se chybová zpráva kompilátoru:</span><span class="sxs-lookup"><span data-stu-id="7f574-118">you will get the compiler error message:</span></span>  
+`The left-hand side of an assignment must be an l-value`  
   
- `The left-hand side of an assignment must be an l-value`  
+<span data-ttu-id="10df7-122">což je ke stejné chybě, kterou získáte, když se pokusíte přiřadit hodnotu konstanty.</span><span class="sxs-lookup"><span data-stu-id="10df7-122">which is the same error you get when you attempt to assign a value to a constant.</span></span>  
+
+## <a name="readonly-struct-example"></a><span data-ttu-id="10df7-123">Příklad struktury jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="10df7-123">Readonly struct example</span></span>
+
+<span data-ttu-id="10df7-124">`readonly` Modifikátor `struct` definice deklaruje, že struktura **neměnné**.</span><span class="sxs-lookup"><span data-stu-id="10df7-124">The `readonly` modifier on a `struct` definition declares that the struct is **immutable**.</span></span> <span data-ttu-id="10df7-125">Každé pole instance `struct` musí být označen `readonly`, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="10df7-125">Every instance field of the `struct` must be marked `readonly`, as shown in the following example:</span></span>
+
+[!code-csharp[readonly struct example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#ReadonlyStruct)]  
+
+<span data-ttu-id="10df7-126">V předchozím příkladu [automatické vlastnosti jen pro čtení](../../properties.md#read-only) k deklaraci jeho úložiště.</span><span class="sxs-lookup"><span data-stu-id="10df7-126">The preceding example uses [readonly auto properties](../../properties.md#read-only) to declare its storage.</span></span> <span data-ttu-id="10df7-127">Který dává pokyn kompilátoru k vytvoření `readonly` pomocná pole pro tyto vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="10df7-127">That instructs the compiler to create `readonly` backing fields for those properties.</span></span> <span data-ttu-id="10df7-128">Můžete také deklarovat `readonly` přímo pole:</span><span class="sxs-lookup"><span data-stu-id="10df7-128">You could also declare `readonly` fields directly:</span></span>
+
+```csharp
+public readonly struct Point
+{
+    public readonly double X;
+    public readonly double Y;
+
+    public Point(double x, double y) => (X, Y) = (x, y);
+
+    public override string ToString() => $"({X}, {Y})";
+}
+```
+
+<span data-ttu-id="10df7-129">Přidání pole nejsou označeny `readonly` vygeneruje Chyba kompilátoru `CS8340`: "pole instancí struktur jen pro čtení musí být jen pro čtení."</span><span class="sxs-lookup"><span data-stu-id="10df7-129">Adding a field not marked `readonly` generates compiler error `CS8340`: "Instance fields of readonly structs must be readonly."</span></span>
+
+## <a name="ref-readonly-return-example"></a><span data-ttu-id="10df7-130">Příklad vrácené REF jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="10df7-130">Ref readonly return example</span></span>
+
+<span data-ttu-id="10df7-131">`readonly` Modifikátor `ref return` označuje, že výsledný odkaz nelze upravit.</span><span class="sxs-lookup"><span data-stu-id="10df7-131">The `readonly` modifier on a `ref return` indicates that the returned reference cannot be modified.</span></span> <span data-ttu-id="10df7-132">Následující příklad vrátí odkaz na počátku.</span><span class="sxs-lookup"><span data-stu-id="10df7-132">The following example returns a reference to the origin.</span></span> <span data-ttu-id="10df7-133">Používá `readonly` modifikátor označuje, že volající nelze měnit původu:</span><span class="sxs-lookup"><span data-stu-id="10df7-133">It uses the `readonly` modifier to indicate that callers cannot modify the origin:</span></span>
+
+[!code-csharp[readonly struct example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#ReadonlyReturn)]  
+<span data-ttu-id="10df7-134">Typ vrácený nemusí být `readonly struct`.</span><span class="sxs-lookup"><span data-stu-id="10df7-134">The type returned doesn't need to be a `readonly struct`.</span></span> <span data-ttu-id="10df7-135">Libovolný typ, který může být vrácen `ref` může být vrácen `ref readonly`</span><span class="sxs-lookup"><span data-stu-id="10df7-135">Any type that can be returned by `ref` can be returned by `ref readonly`</span></span>
+
+## <a name="c-language-specification"></a><span data-ttu-id="10df7-136">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="10df7-136">C# Language Specification</span></span>  
+[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
- <span data-ttu-id="7f574-119">což je ke stejné chybě, kterou získáte, když se pokusí přiřadit hodnotu konstanty.</span><span class="sxs-lookup"><span data-stu-id="7f574-119">which is the same error you get when you attempt to assign a value to a constant.</span></span>  
-  
-## <a name="c-language-specification"></a><span data-ttu-id="7f574-120">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="7f574-120">C# Language Specification</span></span>  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
-## <a name="see-also"></a><span data-ttu-id="7f574-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="7f574-121">See Also</span></span>  
- [<span data-ttu-id="7f574-122">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="7f574-122">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
- [<span data-ttu-id="7f574-123">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="7f574-123">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
- [<span data-ttu-id="7f574-124">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="7f574-124">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
- [<span data-ttu-id="7f574-125">Modifikátory</span><span class="sxs-lookup"><span data-stu-id="7f574-125">Modifiers</span></span>](../../../csharp/language-reference/keywords/modifiers.md)  
- [<span data-ttu-id="7f574-126">const</span><span class="sxs-lookup"><span data-stu-id="7f574-126">const</span></span>](../../../csharp/language-reference/keywords/const.md)  
- [<span data-ttu-id="7f574-127">Pole</span><span class="sxs-lookup"><span data-stu-id="7f574-127">Fields</span></span>](../../../csharp/programming-guide/classes-and-structs/fields.md)
+## <a name="see-also"></a><span data-ttu-id="10df7-137">Viz také</span><span class="sxs-lookup"><span data-stu-id="10df7-137">See Also</span></span>  
+[<span data-ttu-id="10df7-138">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="10df7-138">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+[<span data-ttu-id="10df7-139">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="10df7-139">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+[<span data-ttu-id="10df7-140">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="10df7-140">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
+[<span data-ttu-id="10df7-141">Modifikátory</span><span class="sxs-lookup"><span data-stu-id="10df7-141">Modifiers</span></span>](../../../csharp/language-reference/keywords/modifiers.md)  
+[<span data-ttu-id="10df7-142">const</span><span class="sxs-lookup"><span data-stu-id="10df7-142">const</span></span>](../../../csharp/language-reference/keywords/const.md)  
+[<span data-ttu-id="10df7-143">Pole</span><span class="sxs-lookup"><span data-stu-id="10df7-143">Fields</span></span>](../../../csharp/programming-guide/classes-and-structs/fields.md)

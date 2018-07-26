@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: hledání podřízených elementů na základě pozice (XPath-technologie LINQ to XML) (C#)'
+title: 'Postupy: vyhledání podřízených elementů na základě pozice (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: e35bb269-ec86-4c96-8321-12491a0eb2c3
 ms.openlocfilehash: ffe10bd5b263e56b6f2ee1708688523a2b0dd018
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33317499"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39245051"
 ---
-# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a><span data-ttu-id="10e4f-102">Postupy: hledání podřízených elementů na základě pozice (XPath-technologie LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="10e4f-102">How to: Find Child Elements Based on Position (XPath-LINQ to XML) (C#)</span></span>
-<span data-ttu-id="10e4f-103">Někdy budete chtít najít elementy, které jsou založeny na jejich umístění.</span><span class="sxs-lookup"><span data-stu-id="10e4f-103">Sometimes you want to find elements based on their position.</span></span> <span data-ttu-id="10e4f-104">Můžete chtít najít druhý prvkem, nebo můžete chtít najít třetí prostřednictvím páté elementu.</span><span class="sxs-lookup"><span data-stu-id="10e4f-104">You might want to find the second element, or you might want to find the third through the fifth element.</span></span>  
+# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a><span data-ttu-id="2ff00-102">Postupy: vyhledání podřízených elementů na základě pozice (XPath – LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="2ff00-102">How to: Find Child Elements Based on Position (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="2ff00-103">Někdy budete chtít najít prvky založené na jejich umístění.</span><span class="sxs-lookup"><span data-stu-id="2ff00-103">Sometimes you want to find elements based on their position.</span></span> <span data-ttu-id="2ff00-104">Můžete chtít najít druhý element nebo můžete chtít najít třetí prostřednictvím pátého prvku pole.</span><span class="sxs-lookup"><span data-stu-id="2ff00-104">You might want to find the second element, or you might want to find the third through the fifth element.</span></span>  
   
- <span data-ttu-id="10e4f-105">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="10e4f-105">The XPath expression is:</span></span>  
+ <span data-ttu-id="2ff00-105">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="2ff00-105">The XPath expression is:</span></span>  
   
  `Test[position() >= 2 and position() <= 4]`  
   
- <span data-ttu-id="10e4f-106">Existují dva přístupy k zápisu to [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazu opožděné způsobem.</span><span class="sxs-lookup"><span data-stu-id="10e4f-106">There are two approaches to writing this [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query in a lazy way.</span></span> <span data-ttu-id="10e4f-107">Můžete použít <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A> operátory, nebo můžete použít <xref:System.Linq.Enumerable.Where%2A> přetížení, které přijímá indexu.</span><span class="sxs-lookup"><span data-stu-id="10e4f-107">You can use the <xref:System.Linq.Enumerable.Skip%2A> and <xref:System.Linq.Enumerable.Take%2A> operators, or you can use the <xref:System.Linq.Enumerable.Where%2A> overload that takes an index.</span></span> <span data-ttu-id="10e4f-108">Při použití <xref:System.Linq.Enumerable.Where%2A> přetížení, použijte výraz lambda, která přebírá dva argumenty.</span><span class="sxs-lookup"><span data-stu-id="10e4f-108">When you use the <xref:System.Linq.Enumerable.Where%2A> overload, you use a lambda expression that takes two arguments.</span></span> <span data-ttu-id="10e4f-109">Následující příklad ukazuje obě metody výběru na základě pozice.</span><span class="sxs-lookup"><span data-stu-id="10e4f-109">The following example shows both methods of selecting based on position.</span></span>  
+ <span data-ttu-id="2ff00-106">Existují dva přístupy k psaní to [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazu opožděné způsobem.</span><span class="sxs-lookup"><span data-stu-id="2ff00-106">There are two approaches to writing this [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query in a lazy way.</span></span> <span data-ttu-id="2ff00-107">Můžete použít <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A> operátory, nebo můžete použít <xref:System.Linq.Enumerable.Where%2A> přetížení přebírající indexu.</span><span class="sxs-lookup"><span data-stu-id="2ff00-107">You can use the <xref:System.Linq.Enumerable.Skip%2A> and <xref:System.Linq.Enumerable.Take%2A> operators, or you can use the <xref:System.Linq.Enumerable.Where%2A> overload that takes an index.</span></span> <span data-ttu-id="2ff00-108">Při použití <xref:System.Linq.Enumerable.Where%2A> přetížení, můžete použít výraz lambda, který přebírá dva argumenty.</span><span class="sxs-lookup"><span data-stu-id="2ff00-108">When you use the <xref:System.Linq.Enumerable.Where%2A> overload, you use a lambda expression that takes two arguments.</span></span> <span data-ttu-id="2ff00-109">Následující příklad ukazuje obě metody na základě pozice výběru.</span><span class="sxs-lookup"><span data-stu-id="2ff00-109">The following example shows both methods of selecting based on position.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="10e4f-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="10e4f-110">Example</span></span>  
- <span data-ttu-id="10e4f-111">Tento příklad vyhledá druhý prostřednictvím čtvrtý `Test` elementu.</span><span class="sxs-lookup"><span data-stu-id="10e4f-111">This example finds the second through the fourth `Test` element.</span></span> <span data-ttu-id="10e4f-112">Výsledkem je kolekci elementů.</span><span class="sxs-lookup"><span data-stu-id="10e4f-112">The result is a collection of elements.</span></span>  
+## <a name="example"></a><span data-ttu-id="2ff00-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="2ff00-110">Example</span></span>  
+ <span data-ttu-id="2ff00-111">Tento příklad vyhledá druhé až čtvrté `Test` elementu.</span><span class="sxs-lookup"><span data-stu-id="2ff00-111">This example finds the second through the fourth `Test` element.</span></span> <span data-ttu-id="2ff00-112">Výsledkem je kolekci elementů.</span><span class="sxs-lookup"><span data-stu-id="2ff00-112">The result is a collection of elements.</span></span>  
   
- <span data-ttu-id="10e4f-113">Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: Konfigurace testu (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-test-configuration-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="10e4f-113">This example uses the following XML document: [Sample XML File: Test Configuration (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-test-configuration-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="2ff00-113">Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: Konfigurace testu (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-test-configuration-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="2ff00-113">This example uses the following XML document: [Sample XML File: Test Configuration (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-test-configuration-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XElement testCfg = XElement.Load("TestConfig.xml");  
@@ -54,7 +54,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- <span data-ttu-id="10e4f-114">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="10e4f-114">This example produces the following output:</span></span>  
+ <span data-ttu-id="2ff00-114">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="2ff00-114">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -78,5 +78,5 @@ Results are identical
 </Test>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="10e4f-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="10e4f-115">See Also</span></span>  
- [<span data-ttu-id="10e4f-116">Technologie LINQ to XML pro uživatele XPath (C#)</span><span class="sxs-lookup"><span data-stu-id="10e4f-116">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="2ff00-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="2ff00-115">See Also</span></span>  
+ [<span data-ttu-id="2ff00-116">LINQ to XML pro uživatele jazyka XPath (C#)</span><span class="sxs-lookup"><span data-stu-id="2ff00-116">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

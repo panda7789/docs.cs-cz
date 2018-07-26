@@ -1,0 +1,1 @@
+<span data-ttu-id="173db-101">**Toto téma platí pro: ✓** .NET Core SDK 2.1.300 a novějších verzích</span><span class="sxs-lookup"><span data-stu-id="173db-101">**This topic applies to: ✓** .NET Core SDK 2.1.300 and later versions</span></span>
