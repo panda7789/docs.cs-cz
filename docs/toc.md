@@ -14,6 +14,7 @@
 ### [Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnerů s Windows](standard/modernize-with-azure-and-containers/)
 ### [Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft](standard/containerized-lifecycle-architecture/)
 ### [Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET](standard/microservices-architecture/)
+### [Aplikace bez serveru: architektura, vzory a implementace v Azure](standard/serverless-architecture/)
 ## [Volba mezi .NET Core a .NET Framework pro serverové aplikace](standard/choosing-core-framework-server.md)
 ## [Co je spravovaný kód?](standard/managed-code.md)
 ### [Automatická správa paměti](standard/automatic-memory-management.md)
@@ -120,7 +121,7 @@
 ### [Publikovaný výstup testování částí](core/testing/unit-testing-published-output.md)
 ### [Live Unit Testing pro projekty .NET Core pomocí sady Visual Studio](/visualstudio/test/live-unit-testing-start)
 ## [Správa verzí](core/versions/index.md)
-<!--### [🔧 Servicing](core/versions/servicing.md)-->
+### [Výběr verze .NET Core](core/versions/selection.md)
 ## [Katalog identifikátorů modulu runtime](core/rid-catalog.md)
 ## [Přehled sady .NET Core SDK](core/sdk.md)
 ## [Nástroje CLI platformy .NET Core](core/tools/index.md)
@@ -176,7 +177,7 @@
 <!--### [🔧 NuGet packages](core/porting/nuget-packages.md)-->
 ## [Sestavení .NET Core ze zdroje](core/build/index.md)
 ### [Vytváření distribučních balíčků .NET Core](core/build/distribution-packaging.md)
-## [Dokumenty VS 2015/project.json](project-json.md)
+## [Dokumentace k VS 2015/project.json](project-json.md)
 <!-- End .NET Core Content -->
 
 <!-- .NET Framework Content -->
@@ -294,6 +295,7 @@
 
 ## [Prohlídka jazyka F#](fsharp/tour.md)
 ## [Začínáme](fsharp/get-started/index.md)
+### [Instalace F#](fsharp/get-started/install-fsharp.md)
 ### [Začínáme se sadou Visual Studio](fsharp/get-started/get-started-visual-studio.md)
 ### [Začínáme se sadou Visual Studio pro Mac](fsharp/get-started/get-started-with-visual-studio-for-mac.md)
 ### [Začínáme s nástrojem Visual Studio Code a Ionide](fsharp/get-started/get-started-vscode.md)
@@ -352,7 +354,7 @@
 ### [Literály](fsharp/language-reference/literals.md)
 ### [Typy F#](fsharp/language-reference/fsharp-types.md)
 ### [Odvození typu](fsharp/language-reference/type-inference.md)
-### [Primitivní typy](fsharp/language-reference/primitive-types.md)
+### [Základní typy](fsharp/language-reference/basic-types.md)
 ### [Typ jednotky](fsharp/language-reference/unit-type.md)
 ### [Řetězce](fsharp/language-reference/strings.md)
 ### [Řazené kolekce členů](fsharp/language-reference/tuples.md)
@@ -1133,6 +1135,7 @@
 ## [Kurzy](machine-learning/tutorials/index.md)
 ### [Analýza mínění (binární klasifikace)](machine-learning/tutorials/sentiment-analysis.md)
 ### [Předpověď ceny jízdy taxíkem (regrese)](machine-learning/tutorials/taxi-fare.md)
+### [Iris clustering](machine-learning/tutorials/iris-clustering.md)
 ## [Prostředky](machine-learning/resources/index.md)
 ### [Glosář strojového učení](machine-learning/resources/glossary.md)
 ### [Základy strojového učení](machine-learning/resources/basics.md)
