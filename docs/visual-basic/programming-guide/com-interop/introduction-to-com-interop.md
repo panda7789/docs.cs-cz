@@ -6,50 +6,50 @@ helpviewer_keywords:
 - COM interop [Visual Basic], about COM interop
 ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
 ms.openlocfilehash: 639b621215f25bc1042274a92a21fca2985e5918
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33644391"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244111"
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>Představení zprostředkovatele komunikace s objekty COM (Visual Basic)
-Modelu COM (Component Object) umožňuje zpřístupnění jeho funkce pro ostatní součásti a hostování aplikací založených na objekt. Při COM – objekty byly nezbytné, aby Windows programování mnoho let, aplikací navržených pro modul CLR (CLR) nabízí celou řadu výhod.  
+Modelu COM (Component Object) umožňuje objektu jeho funkcionalitu, ostatních komponentách a k hostování aplikací. Zatímco objekty modelu COM byly nezbytné k programování po mnoho let Windows, aplikací navržených pro modul common language runtime (CLR) nabízí celou řadu výhod.  
   
- [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace nakonec nahradí vyvinuté pomocí modelu COM. Do té doby se možná budete muset použít nebo vytvořit objekty modelu COM pomocí sady Visual Studio. Vzájemná funkční spolupráce s modelu COM, nebo *zprostředkovatel komunikace s objekty COM*, vám umožní použít při přechodu do stávajících objektů COM [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vlastním tempem.  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace bude nakonec nahradí vyvinuté pomocí modelu COM. Dokud to neuděláte bude pravděpodobně nutné použít nebo vytvořit objekty modelu COM s použitím sady Visual Studio. Vzájemná funkční spolupráce s modelu COM, nebo *komunikace s objekty COM*, vám umožní použít při přechodu do existujících objektů COM [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] svým vlastním tempem.  
   
- Pomocí [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] k vytvoření komponenty modelu COM, můžete použít spoluprací COM bez registrace. Díky tomu můžete řídit, která verze knihoven DLL je povoleno, když více než jedna verze je nainstalována v počítači a umožňuje koncovým uživatelům pomocí příkazu XCOPY nebo FTP zkopírujte vaší aplikace do příslušného adresáře v počítači, kde můžete spustit. Další informace najdete v tématu [spoluprací COM bez registrace](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd).  
+ S použitím [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vytváření komponent modelu COM, můžete použít spolupráci s COM bez registrace. To vám umožňuje řídit, kterou verzi knihovny DLL povolíte více než jedna verze je nainstalovaná na počítači a umožňuje koncovým uživatelům pomocí příkazu XCOPY nebo FTP aplikaci do příslušného adresáře v počítači, kde lze spustit. Další informace najdete v tématu [spolupráci s COM bez registrace](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd).  
   
 ## <a name="managed-code-and-data"></a>Spravovaný kód a Data  
- Kód vytvořených pro [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] se označuje jako *spravovaného kódu*a obsahuje metadata, která je používána modulu CLR. Data využívaná [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikacím se říká *dat spravovaných* vzhledem k tomu, že modul runtime spravuje souvisejících s daty úlohy, jako je kontrola typu přidělování a opětovného získání paměti a provádění. Ve výchozím nastavení Visual Basic .NET používá spravovaného kódu a data, ale nespravovaného kódu a data objektů modelu COM pomocí zprostředkovatele komunikace s objekty sestavení (popsané později na této stránce) jsou k dispozici.  
+ Kód vyvinutý pro [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] se označuje jako *spravovaného kódu*a obsahuje metadata, která je používaná platformou CLR. Data používaná [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikacím se říká *dat spravovaných* vzhledem k tomu, že modul runtime spravuje úlohy související s daty, jako je kontrola typu přidělování a uvolní paměť a provádění. Ve výchozím nastavení Visual Basic .NET používá spravovaný kód a data, ale přístup k nespravovanému kódu a data objektů COM pomocí sestavení vzájemné spolupráce (popsaný níže na této stránce).  
   
 ## <a name="assemblies"></a>Sestavení  
- Sestavení je primární stavebním blokem [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace. Jedná se o kolekci funkcí, které je integrované, verzí a nasazené jako jediná implementace jednotku obsahující jeden nebo více souborů. Každé sestavení obsahuje manifest sestavení.  
+ Sestavení je primární stavebním blokem [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace. Jde o kolekci funkcí, které jsou připravené, čísly verzí a nasazených jako jedna implementace jednotku obsahující jeden nebo více souborů. Každé sestavení obsahuje manifest sestavení.  
   
-## <a name="type-libraries-and-assembly-manifests"></a>Sestavení manifestů a knihovny typů  
- Knihovny typů popisuje vlastnosti objektů COM, jako jsou názvy členů a datové typy. Manifesty sestavení provádí stejnou funkci pro [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace. Obsahují následující informace:  
+## <a name="type-libraries-and-assembly-manifests"></a>Manifesty sestavení a knihoven typů  
+ Knihovny typů popisují vlastnosti objektů modelu COM, jako jsou názvy členů a datové typy. Manifesty sestavení provádí stejnou funkci pro [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikací. Patří mezi ně následující informace:  
   
--   Identita sestavení, verzi, jazykovou verzi a digitální podpis.  
+-   Identitu sestavení, verzi, jazykovou verzi a digitální podpis.  
   
--   Soubory, které tvoří implementace sestavení.  
+-   Soubory, které tvoří sestavení implementace.  
   
--   Typy a prostředky, které tvoří sestavení. To zahrnuje ty, které byly exportovány z něj.  
+-   Typy a prostředky, které tvoří sestavení. To zahrnuje ty, které jsou exportovány z něj.  
   
--   Kompilace závislostí na ostatních sestavení.  
+-   Kompilace závislosti na ostatních sestaveních.  
   
--   Oprávnění vyžadovaná pro sestavení správné fungování.  
+-   Oprávnění vyžadovaná pro sestavení spuštěn správně.  
   
- Další informace o sestavení a sestavení manifesty najdete v tématu [sestavení a globální mezipaměť sestavení](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md).  
+ Další informace o sestavení a sestavení manifesty, naleznete v tématu [sestavení a globální mezipaměť sestavení](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md).  
   
 ### <a name="importing-and-exporting-type-libraries"></a>Import a export knihovny typů  
- Obsahuje nástroje, Tlbimp, který umožňuje importovat informace z knihovny typů do sady Visual Studio [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace. Knihovny typů ze sestavení můžete vygenerovat pomocí nástroje Tlbexp.  
+ Visual Studio obsahuje nástroje, Tlbimp, který umožňuje importovat informace z knihovny typů do [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace. Knihovny typů ze sestavení můžete vygenerovat pomocí nástroje Tlbexp.  
   
- Informace o Tlbimp a Tlbexp najdete v tématu [Tlbimp.exe (Importér knihovny)](../../../framework/tools/tlbimp-exe-type-library-importer.md) a [Tlbexp.exe (Exportér knihovny)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d).  
+ Informace o Tlbimp a Tlbexp najdete v tématu [Tlbimp.exe (Importér knihovny typů)](../../../framework/tools/tlbimp-exe-type-library-importer.md) a [Tlbexp.exe (Exportér knihovny typů)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d).  
   
-## <a name="interop-assemblies"></a>Sestavení spolupráce  
- Spolupráce – sestavení jsou [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sestavení, které most mezi spravovaných a nespravovaných code, členové objektu COM mapování na ekvivalentní [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] spravované členy. Spolupráce – sestavení vytvořené Visual Basic .NET zpracovávat řadu podrobnosti o práci s objekty modelu COM, jako je například zařazování interoperability.  
+## <a name="interop-assemblies"></a>Sestavení vzájemné spolupráce  
+ Definiční sestavení jsou [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sestavení, která most mezi spravovaného a nespravovaného kódu, mapování členové objektu modelu COM na ekvivalentní [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] spravované členy. Definiční sestavení vytvořených pomocí jazyka Visual Basic .NET zpracování řadu podrobnosti o práci s objekty COM, jako je například zařazování vzájemná funkční spolupráce.  
   
 ## <a name="interoperability-marshaling"></a>Zařazování spolupráce  
- Všechny [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace sdílet sadu běžné typy, které umožňuje interoperabilitu objektů, bez ohledu na programovací jazyk, který se používá. Parametry a návratové hodnoty objektů COM někdy použít datové typy, které se liší od těch, které používá ve spravovaném kódu. *Vzájemná funkční spolupráce zařazování* je proces balení parametry a návratové hodnoty do ekvivalentní datové typy, jako se přesouvají do a z COM – objekty. Další informace najdete v tématu [zařazování zprostředkovatel komunikace s objekty](../../../framework/interop/interop-marshaling.md).  
+ Všechny [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace sdílet sadu běžných typů, které umožňují spolupráci objektů, bez ohledu na programovací jazyk, který se používá. Parametry a návratovými hodnotami objektů COM se někdy používají datové typy, které se liší od těch, které používají ve spravovaném kódu. *Zařazování spolupráce* při přechodu do a z objektů COM je proces balení parametry a návratové hodnoty na ekvivalentní datové typy. Další informace najdete v tématu [zařazování Interop](../../../framework/interop/interop-marshaling.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)  

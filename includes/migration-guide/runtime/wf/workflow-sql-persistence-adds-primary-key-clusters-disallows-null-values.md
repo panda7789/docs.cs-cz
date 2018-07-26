@@ -1,10 +1,10 @@
-### <a name="workflow-sql-persistence-adds-primary-key-clusters-and-disallows-null-values-in-some-columns"></a>Trvalost SQL pracovního postupu přidává primární klíč clusterů a zakáže hodnoty null v některé sloupce
+### <a name="workflow-sql-persistence-adds-primary-key-clusters-and-disallows-null-values-in-some-columns"></a>Trvalost pracovního postupu SQL přidá primární klíč clusterů a nepovoluje hodnoty null v některé sloupce
 
 |   |   |
 |---|---|
-|Podrobnosti|Od verze 4.7 rozhraní .NET Framework, použijte tabulky pro SQL pracovního postupu Instance Store (SWIS) vytvořený skript SqlWorkflowInstanceStoreSchema.sql clusterovaný primární klíče. Z toho důvodu se nepodporují identity <code>null</code> hodnoty. Operaci SWIS není touto změnou ovlivněná. Aktualizace byly provedeny na podporu transakční replikace SQL serveru.|
-|Návrh|Soubor SQL SqlWorkflowInstanceStoreSchemaUpgrade.sql je nutné použít na existující instalace, aby bylo možné zaznamenat tuto změnu. Nové instalace databáze automaticky budou mít změny.|
+|Podrobnosti|Od verze rozhraní .NET Framework 4.7, tabulky vytvořené pro SQL pracovního postupu Instance Store (SWIS) skriptem SqlWorkflowInstanceStoreSchema.sql používat clusterovaný primární klíče. Z toho důvodu se nepodporují identity <code>null</code> hodnoty. Operace SWIS neovlivní tato změna. Aktualizace byly provedeny na podporu transakční replikace systému SQL Server.|
+|Návrh|Pokud chcete vyzkoušet tuto změnu se musí použít soubor SQL SqlWorkflowInstanceStoreSchemaUpgrade.sql stávajících zařízení. Nové instalace databáze automaticky budou mít změny.|
 |Rozsah|Edge|
 |Version|4.7|
-|Typ|modul runtime|
+|Typ|Modul runtime|
 

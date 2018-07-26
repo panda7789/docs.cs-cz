@@ -1,79 +1,79 @@
 ---
-title: Nasazení aplikace .NET core pomocí nástrojů příkazového řádku
-description: Další nasazení aplikace .NET Core pomocí nástrojů rozhraní příkazového řádku (CLI)
+title: Nasazení aplikace .NET core pomocí nástrojů CLI
+description: Zjistěte, nasazení aplikace .NET Core pomocí nástrojů rozhraní příkazového řádku (CLI)
 author: rpetrusha
 ms.author: ronpet
 ms.date: 04/18/2017
 ms.openlocfilehash: 7b009068422686442ebff83b9400c365f34a3154
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33217828"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244748"
 ---
-# <a name="deploying-net-core-apps-with-command-line-interface-cli-tools"></a>Nasazení aplikací .NET Core pomocí nástrojů rozhraní příkazového řádku (CLI)
+# <a name="deploying-net-core-apps-with-command-line-interface-cli-tools"></a>Nasazení aplikace .NET Core pomocí nástrojů rozhraní příkazového řádku (CLI)
 
-Můžete nasadit aplikaci .NET Core buď jako *nasazení závislé na framework*, který obsahuje binární soubory vaší aplikace, ale závisí na přítomnost .NET Core v cílovém systému, nebo jako *samostatný nasazení*, což zahrnuje aplikace a binární soubory .NET Core. Přehled najdete v tématu [nasazení aplikace .NET Core](index.md).
+Můžete nasadit aplikaci .NET Core buď jako *nasazení závisí na architektuře*, který obsahuje binární soubory vaší aplikace, ale závisí na přítomnosti .NET Core v cílovém systému, nebo jako *samostatná nasazení*, což zahrnuje aplikace a binární soubory .NET Core. Přehled najdete v tématu [nasazení aplikace .NET Core](index.md).
 
-Následující části vysvětlují, jak používat [.NET Core rozhraní příkazového řádku nástroje](../tools/index.md) vytvořit následující typy nasazení:
+Následující části vysvětlují, jak používat [nástroje rozhraní příkazového řádku .NET Core](../tools/index.md) vytvořit následující typy nasazení:
 
-- Nasazení závislé na Framework
-- Nasazení závislé na Framework se závislostmi třetích stran
+- Nasazení závisí na architektuře
+- Nasazení závisí na architektuře s závislostí třetích stran
 - Samostatná nasazení
-- Samostatná nasazení se závislostmi třetích stran
+- Samostatná nasazení s závislostí třetích stran
 
-Při práci z příkazového řádku, můžete použít program editor podle svého výběru. Pokud je váš program editor [Visual Studio Code](https://code.visualstudio.com), nástroje command console můžete otevřít v prostředí Visual Studio Code výběrem **zobrazení** > **integrované Terminálové**.
+Při práci z příkazového řádku, můžete program editoru podle vašeho výběru. Pokud je váš program editor [Visual Studio Code](https://code.visualstudio.com), nástroje command console v prostředí Visual Studio Code můžete otevřít tak, že vyberete **zobrazení** > **integrovaný terminál**.
 
-## <a name="framework-dependent-deployment"></a>Nasazení závislé na Framework
+## <a name="framework-dependent-deployment"></a>Nasazení závisí na architektuře
 
-Nasazení závislé na framework nasazení nemá žádné závislosti třetích stran zahrnuje vytváření, testování a publikování aplikace. Jednoduchý příklad napsané v C# znázorňuje proces. 
+Nasazení závisí na architektuře bez závislostí třetích stran zahrnuje vytváření, testování a publikování aplikace. Jednoduchý příklad napsané v jazyce C# znázorňuje proces. 
 
 1. Vytvořte adresář projektu.
 
-   Vytvořte adresář pro svůj projekt a nastavit jej jako aktuální adresář.
+   Vytvořte adresář pro váš projekt a nastavte ji váš aktuální adresář.
 
 1. Vytvoření projektu.
 
-   Z příkazového řádku, zadejte [novou konzolu pro dotnet](../tools/dotnet-new.md) vytvořit nový projekt konzolové C# v tomto adresáři.
+   Z příkazového řádku, zadejte [nové konzoly dotnet](../tools/dotnet-new.md) v tomto adresáři vytvořte nový projekt konzoly C#.
 
 1. Přidejte zdrojový kód aplikace.
 
-   Otevřete *Program.cs* souboru ve svém editoru a automaticky vygenerovaný kód nahraďte následujícím kódem. Se zobrazí výzvu k zadání textu a zobrazí jednotlivých slov zadané uživatelem. Používá regulární výraz `\w+` slov v vstupního textu.
+   Otevřít *Program.cs* souboru ve svém editoru a automaticky vygenerovaném kódu nahraďte následujícím kódem. Se zobrazí výzva k zadání textu a zobrazuje jednotlivá slova zadané uživatelem. Používá regulární výraz `\w+` k oddělení slov ve vstupním textu.
 
    [!code-csharp[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]
 
 1. Aktualizujte závislosti projektu a nástroje.
  
-   Spustit [dotnet obnovení](../tools/dotnet-restore.md) ([viz Poznámka](#dotnet-restore-note)) příkazu obnovte závislosti zadaný ve vašem projektu.
+   Spustit [dotnet restore](../tools/dotnet-restore.md) ([viz Poznámka](#dotnet-restore-note)) příkaz pro obnovení závislosti zadaný ve vašem projektu.
 
-1. Vytvořte sestavení ladicí verze vaší aplikace.
+1. Vytvořte sestavení pro ladění vaší aplikace.
 
-   Použití [dotnet sestavení](../tools/dotnet-build.md) k vytvoření aplikace nebo [dotnet. Spusťte](../tools/dotnet-run.md) příkazu sestavit a spustit ho.
+   Použití [dotnet sestavení](../tools/dotnet-build.md) příkazu k sestavení aplikace nebo [dotnet spustit](../tools/dotnet-run.md) příkazu sestavit a spustit ho.
 
-1. Nasazení aplikace.
+1. Nasazení vaší aplikace.
 
    Po ladit a testovat program, vytvořte nasazení pomocí následujícího příkazu:
 
       ```console
       dotnet publish -f netcoreapp1.1 -c Release
       ```
-   Tím se vytvoří verze (a nikoli ladění) verzi aplikace. Výsledné soubory jsou umístěny v adresáři s názvem *publikování* , je v podadresáři vašeho projektu *bin* adresáře.
+   Tím se vytvoří vydanou verzi (místo ladění) verze vaší aplikace. Výsledné soubory jsou umístěny v adresáři s názvem *publikovat* , který je v podadresáři vašeho projektu *bin* adresáře.
 
-   Proces publikování společně se soubory aplikace vysílá soubor databáze (.pdb) program, který obsahuje ladicí informace o vaší aplikaci. Soubor je užitečné především pro ladění výjimek. Můžete se distribuovat soubory vaší aplikace. Ale uložte jej v případě, že chcete ladit sestavení pro vydání vaší aplikace.
+   Proces publikování spolu se soubory vaší aplikace, generuje soubor databáze (PDB) programu, který obsahuje ladicí informace o vaší aplikaci. Soubor je užitečné hlavně pro ladění výjimky. Můžete nechcete distribuovat s vaší aplikace soubory. Měli byste, však uložit ho v případě, že chcete ladit sestavení pro vydání aplikace.
 
-   Můžete nasadit kompletní sadu aplikací, které chcete systém souborů. Například můžete balíček je v souboru Zip, pomocí jednoduché `copy` příkaz nebo nasadit pomocí jakékoli instalačního balíčku podle svého výběru.
+   Můžete nasadit kompletní sadu souborů aplikace žádným způsobem, který vám vyhovuje. Například lze zabalit jako soubor Zip, použít jednoduchý `copy` příkazu, nebo je nasadit v balíčcích instalace podle vašeho výběru.
 
 1. Spuštění aplikace
 
-   Po instalaci, mohou uživatelé provádět vaší aplikace pomocí `dotnet` příkaz a poskytnutí názvu souboru, jako například `dotnet fdd.dll`.
+   Po instalaci se uživatelé můžou spustit vaši aplikaci pomocí `dotnet` příkazu a poskytuje název souboru aplikace, jako například `dotnet fdd.dll`.
 
-   Kromě binární soubory aplikace instalačním programem vaší by také buď vytvořit balíček instalačního programu sdílený framework nebo kontrolovat předpokladem je jako součást instalace aplikace.  Instalace sdílený framework vyžaduje správce nebo kořenový přístup.
+   Kromě binární soubory aplikace Instalační program by měl také vytvoření balíčku Instalační služby sdílené architektuře nebo vyhledat jako předpoklad jako součást instalace aplikace.  Instalace rozhraní sdílené vyžaduje přístup správce/root.
 
-## <a name="framework-dependent-deployment-with-third-party-dependencies"></a>Nasazení závislé na Framework se závislostmi třetích stran
+## <a name="framework-dependent-deployment-with-third-party-dependencies"></a>Nasazení závisí na architektuře s závislostí třetích stran
 
-Nasazení nasazení framework závislé na jeden nebo více třetích stran závislosti vyžaduje, aby tyto závislosti projektu k dispozici. Dva další kroky jsou požadovány, než můžete spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) příkaz:
+Nasazení závisí na architektuře se jeden nebo více závislostí třetích stran vyžaduje, aby tyto závislosti k dispozici pro váš projekt. Další dva kroky jsou požadovány, než můžete spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) příkaz:
 
-1. Přidejte odkazy na požadované knihovny třetích stran `<ItemGroup>` část vaší *csproj* souboru. Následující `<ItemGroup>` část obsahuje závislost na [Json.NET](http://www.newtonsoft.com/json) jako knihovnu třetí strany:
+1. Přidat odkazy na požadované knihovny třetích stran `<ItemGroup>` část vaší *csproj* souboru. Následující `<ItemGroup>` oddíl obsahuje závislost na [Json.NET](http://www.newtonsoft.com/json) jako knihovny třetích stran:
 
       ```xml
       <ItemGroup>
@@ -81,33 +81,33 @@ Nasazení nasazení framework závislé na jeden nebo více třetích stran záv
       </ItemGroup>
       ```
 
-1. Pokud jste tak ještě neučinili, stáhněte si balíček NuGet obsahující závislost třetích stran. Chcete-li stáhnout balíček, spusťte `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) příkaz po přidání závislost. Protože závislost vyřešen z místní mezipaměti NuGet v publikovat čas, musí být k dispozici v systému.
+1. Pokud jste tak dosud neučinili, stáhněte si balíček NuGet obsahující závislostí třetích stran. Pokud chcete stáhnout balíček, spusťte `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) příkaz po přidání závislosti. Protože závislost vyřeší z místní mezipaměti NuGet na čas publikování, musí být k dispozici ve vašem systému.
 
-Upozorňujeme, že nasazení závislé na framework se závislostmi třetí strany se pouze jako přenosný jeho závislé součásti třetích stran. Například pokud knihovnu třetích stran podporuje pouze systému macOS, aplikace není přenosné pro systémy Windows. To se stane, když závislost třetích stran, samotné závisí na nativního kódu. Dobrým příkladem tohoto objektu je [Kestrel server](/aspnet/core/fundamentals/servers/kestrel), který vyžaduje nativní závislost na [libuv](https://github.com/libuv/libuv). Když disketové jednotky se vytvoří pro aplikace s tímto typem závislosti třetích stran, publikované výstup obsahuje složku pro každý [identifikátor Runtime (RID)](../rid-catalog.md) podporující nativní závislost (a která existuje v jeho balíčku NuGet).
+Všimněte si, že nasazení závisí na architektuře závislostí třetích stran je pouze jako přenosný jeho závislostí třetích stran. Například pokud knihovny třetí strany pouze podporuje macOS, aplikace není přenosný do systémů Windows. To se stane, když závislostí třetích stran, samotný závisí na nativní kód. Dobrým příkladem tohoto je [Kestrel server](/aspnet/core/fundamentals/servers/kestrel), což vyžaduje nativní závislost na [libuv](https://github.com/libuv/libuv). Po vytvoření disketové jednotky pro aplikace s tímto druhem závislostí třetích stran publikovaný výstup obsahuje složku pro každý [identifikátor modulu Runtime (RID)](../rid-catalog.md) podporující nativní závislostí (a, která existuje v jeho balíček NuGet).
 
-## <a name="simpleSelf"></a> Samostatná nasazení bez závislosti na třetích stran
+## <a name="simpleSelf"></a> Samostatná nasazení bez závislostí třetích stran
 
-Nasazení samostatná nasazení bez závislosti na třetích stran zahrnuje vytvoření projektu, úprava *csproj* souborů, vytváření, testování a publikování aplikace. Jednoduchý příklad napsané v C# znázorňuje proces. Tento příklad ukazuje, jak vytvořit samostatný nasazení pomocí [dotnet nástroj](../tools/dotnet.md) z příkazového řádku.
+Samostatná nasazení bez závislostí třetích stran zahrnuje vytvoření projektu, úpravy *csproj* souboru, sestavování, testování a publikování aplikace. Jednoduchý příklad napsané v jazyce C# znázorňuje proces. Tento příklad ukazuje, jak vytvořit samostatná nasazení pomocí [nástrojů dotnet](../tools/dotnet.md) z příkazového řádku.
 
 1. Vytvořte adresář pro projekt.
 
-   Vytvořte adresář pro svůj projekt a nastavte jej aktuální adresář.
+   Vytvořte adresář pro váš projekt a nastavte ji váš aktuální adresář.
 
 1. Vytvoření projektu.
 
-   Z příkazového řádku, zadejte [novou konzolu pro dotnet](../tools/dotnet-new.md) vytvořit nový projekt konzolové C# v tomto adresáři.
+   Z příkazového řádku, zadejte [nové konzoly dotnet](../tools/dotnet-new.md) v tomto adresáři vytvořte nový projekt konzoly C#.
 
 1. Přidejte zdrojový kód aplikace.
 
-   Otevřete *Program.cs* souboru ve svém editoru a automaticky vygenerovaný kód nahraďte následujícím kódem. Se zobrazí výzvu k zadání textu a zobrazí jednotlivých slov zadané uživatelem. Používá regulární výraz `\w+` slov v vstupního textu.
+   Otevřít *Program.cs* souboru ve svém editoru a automaticky vygenerovaném kódu nahraďte následujícím kódem. Se zobrazí výzva k zadání textu a zobrazuje jednotlivá slova zadané uživatelem. Používá regulární výraz `\w+` k oddělení slov ve vstupním textu.
 
    [!code-csharp[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]
 
-1. Definujte platformy, které se zaměří na vaši aplikaci.
+1. Definování platformy, které se zaměří na vaši aplikaci.
 
-   Vytvoření `<RuntimeIdentifiers>` značky v `<PropertyGroup>` část vaší *csproj* soubor, který definuje platformy vaší aplikace cílí a zadejte runtime identifikátorů (RID) pro každou platformu, která cílí. Všimněte si, že je také nutné přidat středníkem k oddělení identifikátorů RID. V tématu [Runtime identifikátor katalogu](../rid-catalog.md) seznam identifikátorů modulu runtime. 
+   Vytvoření `<RuntimeIdentifiers>` značku `<PropertyGroup>` část vaší *csproj* soubor, který definuje platformy, zaměřuje a zadejte identifikátor modulu runtime (RID) pro každou platformu, která je cílem vaší aplikace. Všimněte si, že budete také muset přidat středníkem k oddělení identifikátory RID. Zobrazit [katalog identifikátorů modulu Runtime](../rid-catalog.md) seznam identifikátorů modulů runtime. 
 
-   Například následující `<PropertyGroup>` části udává, že se aplikace spouští na 64bitové verze Windows 10 operační systémy a operační systém 10.11 verze OS X 64-bit.
+   Například následující `<PropertyGroup>` části označuje, že aplikace běží na 64bitová verze Windows 10 operačních systémů a operačním systému OS 10.11 verze X 64-bit.
 
      ```xml
      <PropertyGroup>
@@ -115,32 +115,32 @@ Nasazení samostatná nasazení bez závislosti na třetích stran zahrnuje vytv
      </PropertyGroup>
      ```
 
-   Všimněte si, že `<RuntimeIdentifiers>` element může vyskytovat v žádném `<PropertyGroup>` ve vaší *csproj* souboru. Ucelenou ukázku *csproj* souboru se zobrazí později v této části.
+   Všimněte si, že `<RuntimeIdentifiers>` element lze použít v libovolném `<PropertyGroup>` ve vašich *csproj* souboru. Úplnou ukázku *csproj* souboru se zobrazí později v této části.
 
 1. Aktualizujte závislosti projektu a nástroje.
 
-   Spustit [dotnet obnovení](../tools/dotnet-restore.md) ([viz Poznámka](#dotnet-restore-note)) příkazu obnovte závislosti zadaný ve vašem projektu.
+   Spustit [dotnet restore](../tools/dotnet-restore.md) ([viz Poznámka](#dotnet-restore-note)) příkaz pro obnovení závislosti zadaný ve vašem projektu.
 
-1. Vytvořte sestavení ladicí verze vaší aplikace.
+1. Vytvořte sestavení pro ladění vaší aplikace.
 
-   Z příkazového řádku, použijte [dotnet sestavení](../tools/dotnet-build.md) příkaz.
+   Z příkazového řádku, použijte [dotnet sestavení](../tools/dotnet-build.md) příkazu.
 
-1. Po ladit a testovat program, vytvoření souborů k nasazení s vaší aplikací pro každou platformu, cílem.
+1. Po ladit a testovat program, vytvoření souborů k nasazení s vaší aplikací pro každou platformu, zaměřuje.
 
-   Použití `dotnet publish` příkaz pro obě platformy cílí následujícím způsobem:
+   Použití `dotnet publish` příkaz pro obě cílových platforem následujícím způsobem:
 
       ```console
       dotnet publish -c Release -r win10-x64
       dotnet publish -c Release -r osx.10.11-x64
       ```
 
-   Tím se vytvoří verze (a nikoli ladění) verzi aplikace pro každou cílovou platformu. Výsledné soubory jsou umístěny v podadresáři s názvem *publikování* , je v podadresáři vašeho projektu *.\bin\Release\netcoreapp1.1\<runtime_identifier >* podadresáři. Všimněte si, že každý podadresář obsahuje kompletní sadu souborů (soubory aplikace a všechny soubory .NET Core) potřebné ke spuštění aplikace.
+   Tím se vytvoří vydanou verzi (místo ladění) verze vaší aplikace pro každou cílovou platformu. Výsledné soubory jsou umístěny v podadresáři s názvem *publikovat* , který je v podadresáři vašeho projektu *.\bin\Release\netcoreapp1.1\<runtime_identifier >* podadresáře. Všimněte si, že každý podadresář obsahuje kompletní sadu souborů (soubory aplikace a všechny soubory .NET Core) potřebné pro spuštění vaší aplikace.
 
-Proces publikování společně se soubory aplikace vysílá soubor databáze (.pdb) program, který obsahuje ladicí informace o vaší aplikaci. Soubor je užitečné především pro ladění výjimek. Je možné, není-li vytvořit balíček s soubory aplikace. Ale uložte jej v případě, že chcete ladit sestavení pro vydání vaší aplikace.
+Proces publikování spolu se soubory vaší aplikace, generuje soubor databáze (PDB) programu, který obsahuje ladicí informace o vaší aplikaci. Soubor je užitečné hlavně pro ladění výjimky. Můžete není balíček se soubory vaší aplikace. Měli byste, však uložit ho v případě, že chcete ladit sestavení pro vydání aplikace.
 
-Publikované soubory žádným způsobem, který chcete nasaďte. Například můžete balíček je v souboru Zip, pomocí jednoduché `copy` příkaz nebo nasadit pomocí jakékoli instalačního balíčku podle svého výběru.
+Nasaďte publikované soubory žádným způsobem, který vám vyhovuje. Například lze zabalit jako soubor Zip, použít jednoduchý `copy` příkazu, nebo je nasadit v balíčcích instalace podle vašeho výběru.
 
-Toto je kompletní *csproj* souboru pro tento projekt.
+Tady je úplný *csproj* souboru pro tento projekt.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -152,11 +152,11 @@ Toto je kompletní *csproj* souboru pro tento projekt.
 </Project>
 ```
 
-## <a name="self-contained-deployment-with-third-party-dependencies"></a>Samostatná nasazení se závislostmi třetích stran
+## <a name="self-contained-deployment-with-third-party-dependencies"></a>Samostatná nasazení s závislostí třetích stran
 
-Nasazení samostatná nasazení s jeden nebo více závislostí třetí strany vyžaduje přidání závislosti. Dva další kroky jsou požadovány, než můžete spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) příkaz:
+Samostatná nasazení s jeden nebo více závislostí třetích stran, zahrnuje přidání závislosti. Další dva kroky jsou požadovány, než můžete spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) příkaz:
 
-1. Přidejte odkazy na všechny knihovny třetích stran `<ItemGroup>` část vaší *csproj* souboru. Následující `<ItemGroup>` část používá technologii Json.NET jako knihovnu třetích stran.
+1. Přidat odkazy na žádné knihovny třetích stran `<ItemGroup>` část vaší *csproj* souboru. Následující `<ItemGroup>` části používá technologii Json.NET jako knihovny třetí strany.
 
     ```xml
       <ItemGroup>
@@ -164,9 +164,9 @@ Nasazení samostatná nasazení s jeden nebo více závislostí třetí strany v
       </ItemGroup>
     ```
 
-1. Pokud jste tak ještě neučinili, stáhněte si balíček NuGet obsahující závislost třetích stran k vašemu systému. Chcete-li zpřístupnit závislost do vaší aplikace, spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) příkaz po přidání závislost. Protože závislost vyřešen z místní mezipaměti NuGet v publikovat čas, musí být k dispozici v systému.
+1. Pokud jste tak dosud neučinili, stáhněte si balíček NuGet obsahující závislostí třetích stran do vašeho systému. Pokud chcete zpřístupnit závislost do aplikace, spusťte `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) příkaz po přidání závislosti. Protože závislost vyřeší z místní mezipaměti NuGet na čas publikování, musí být k dispozici ve vašem systému.
 
-Toto je kompletní *csproj* souboru pro tento projekt:
+Tady je úplný *csproj* souboru pro tento projekt:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -181,15 +181,15 @@ Toto je kompletní *csproj* souboru pro tento projekt:
 </Project>
 ```
 
-Když nasadíte aplikaci, všechny závislosti třetích stran používají ve vaší aplikaci jsou také obsažena s soubory aplikace. Knihovny jiných výrobců nemusí na serveru, na kterém aplikace běží.
+Při nasazení vaší aplikace jsou také obsažena případných závislostí třetích stran používají ve vaší aplikaci se soubory aplikace. V systému, na kterém běží aplikace nejsou vyžadovány knihovny třetích stran.
 
-Všimněte si, že lze nasadit pouze samostatná nasazení s knihovnou třetích stran na platformách podporovaných aplikací této knihovny. Toto je podobná s závislosti třetích stran s nativní závislosti v nasazení závislé na framework, kde musí být kompatibilní s platformou, pro které je aplikace nasazená nativní závislosti.
+Všimněte si, že lze nasadit pouze samostatná nasazení pomocí knihovny třetí strany na platformách podporovaných aplikací tuto knihovnu. Toto je podobný s tím, že závislostí třetích stran s nativní závislosti v nasazení závisí na architektuře, kde musí být kompatibilní s platformou, do kterého byla nasazena aplikace, nativní závislosti.
 
 <a name="dotnet-restore-note"></a>
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-# <a name="see-also"></a>Viz také
+# <a name="see-also"></a>Viz také:
 
 [Nasazení aplikace .NET core](index.md)   
-[Katalog .NET core Runtime identifikátor (RID)](../rid-catalog.md)   
+[.NET core Runtime identifikátor (RID) katalogu](../rid-catalog.md)   
 

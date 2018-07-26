@@ -9,19 +9,19 @@ helpviewer_keywords:
 - return keyword [C#]
 ms.assetid: 6da6e152-5b58-4448-8f3f-470dd0617ecd
 ms.openlocfilehash: 29d2b8e28ae6240b9d06b82695efe1736404c5cb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33266107"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244774"
 ---
 # <a name="return-c-reference"></a>return (Referenční dokumentace jazyka C#)
-`return` Příkaz ukončí provádění metody, ve kterém se zobrazí a vrátí prvek volání metody. Také se může vrátit Volitelná hodnota. Pokud je metoda `void` typu, `return` příkaz lze vynechat.  
+`return` Příkaz ukončí provádění metody, ve kterém se zobrazí a vrátí řízení volající metodě. Také může vrátit nepovinnou hodnotu. Pokud je metoda `void` typ, `return` příkaz lze vynechat.  
   
- Pokud je příkaz return uvnitř `try` bloku, `finally` bloku, pokud existuje, bude proveden před voláním metody vrátí ovládací prvek.  
+ Pokud je příkaz return uvnitř `try` bloku `finally` bloku, pokud existuje, budou spuštěny před ovládací prvek vrátí volajícímu metody.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu metoda `CalculateArea()` vrátí místní proměnné `area` jako [dvojité](../../../csharp/language-reference/keywords/double.md) hodnotu.  
+ V následujícím příkladu metoda `CalculateArea()` vrátí lokální proměnná `area` jako [double](../../../csharp/language-reference/keywords/double.md) hodnotu.  
   
  [!code-csharp[csrefKeywordsJump#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/return_1.cs)]  
   

@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: dotazování technologie LINQ to XML s použitím XPath (C#)'
+title: 'Postupy: dotazování na LINQ to XML pomocí jazyka XPath (C#)'
 ms.date: 07/20/2015
 ms.assetid: ee5af263-4ab1-45e5-b792-33a3221b426d
 ms.openlocfilehash: a02149719afa19350a9baf15c41bd3548daa1344
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33317083"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37959852"
 ---
-# <a name="how-to-query-linq-to-xml-using-xpath-c"></a>Postupy: dotazování technologie LINQ to XML s použitím XPath (C#)
-Toto téma představuje rozšiřující metody, které vám umožní zadat dotaz strom XML s použitím XPath. Podrobné informace o použití těchto metod rozšíření najdete v tématu <xref:System.Xml.XPath.Extensions?displayProperty=nameWithType>.  
+# <a name="how-to-query-linq-to-xml-using-xpath-c"></a>Postupy: dotazování na LINQ to XML pomocí jazyka XPath (C#)
+Toto téma představuje rozšiřující metody, které vám umožní dotazovat stromu XML pomocí XPath. Podrobné informace o použití těchto metod rozšíření najdete v tématu <xref:System.Xml.XPath.Extensions?displayProperty=nameWithType>.  
   
- Pokud nemáte velmi konkrétní důvod, proč pro dotazování pomocí jazyka XPath, jako je například rozsáhlé používání starší verze kódu, pomocí technologie LINQ to XML XPath se nedoporučuje. Nebude provádět dotazy XPath a také [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy.  
+ Pokud nemáte velmi konkrétní důvod pro dotazování pomocí XPath, jako je například příliš často používá starší verzi kódu s LINQ to XML pomocí jazyka XPath se nedoporučuje. Nebude provádět dotazy XPath a jednak [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří malé stromu XML a používá <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> pro výběr sady elementů.  
+ Následující příklad vytvoří malý stromu XML a používá <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> vybrat sadu elementů.  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -40,4 +40,4 @@ foreach (XElement el in list)
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Pokročilé techniky dotazu (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+ [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

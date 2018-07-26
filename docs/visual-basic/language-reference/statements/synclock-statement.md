@@ -1,5 +1,5 @@
 ---
-title: SyncLock – příkaz
+title: SyncLock – příkaz (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.SyncLock
@@ -9,15 +9,15 @@ helpviewer_keywords:
 - SyncLock statement [Visual Basic]
 - locks, threads
 ms.assetid: 14501703-298f-4d43-b139-c4b6366af176
-ms.openlocfilehash: cf2aad9ec2ba67200d175fbcddfcb49afeac6efc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6f5a89ebe359ca2fdae1d5545192dc2dcecca6a2
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604975"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244154"
 ---
 # <a name="synclock-statement"></a>SyncLock – příkaz
-Získá výhradní zámek pro příkaz blok před provedením bloku.  
+Získá výhradní zámek pro blok příkazů, který před spuštěním bloku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,59 +32,59 @@ End SyncLock
  Požadováno. Výraz, který se vyhodnotí jako odkaz na objekt.  
   
  `block`  
- Volitelné. Blok příkazů, které se mají spustit, když je získat zámek.  
+ Volitelné. Blok příkazů, které se má provést, když je požadován zámek.  
   
  `End SyncLock`  
  Ukončí `SyncLock` bloku.  
   
 ## <a name="remarks"></a>Poznámky  
- `SyncLock` Příkaz zajistí, že více vláken nespouštějte příkaz bloku ve stejnou dobu. `SyncLock` každé vlákno zabrání zadávání bloku, dokud ho spustíte žádné jiné vlákno.  
+ `SyncLock` Prohlášení zajišťuje, že více vláken neprovádět tohoto bloku příkazů ve stejnou dobu. `SyncLock` každé vlákno zabrání v zadání bloku, dokud žádné vlákno provádí.  
   
- Nejběžnější použití `SyncLock` je ochrana dat před více než jedním vláknem aktualizované současně. Pokud příkazů, které manipulovat s daty, třeba přejít k dokončení bez přerušení, umístí je uvnitř `SyncLock` bloku.  
+ Nejběžnější použití nástroje `SyncLock` je k ochraně dat aktualizovány podle více než jedno vlákno současně. Pokud příkazy, které pracuje s daty musí přejít do dokončení bez přerušení, vytvořte z nich uvnitř `SyncLock` bloku.  
   
- Blok příkazu chráněn výhradní zámek se někdy nazývá *kritická sekce*.  
+ Někdy se označuje jako blok příkazů, který je chráněn výhradní zámek *kritický oddíl*.  
   
-## <a name="rules"></a>Pravidla  
+## <a name="rules"></a>pravidla  
   
--   Vytvoření větve. Můžete nemůže provést větvení do `SyncLock` blokovat z mimo blok.  
+-   Větvení. Nelze větvit do `SyncLock` znemožní mimo blok.  
   
--   Hodnota zámek objektu. Hodnota `lockobject` nemůže být `Nothing`. Než ho použijete, musíte vytvořit zámek objektu `SyncLock` příkaz.  
+-   Hodnota objektu zámku. Hodnota `lockobject` nemůže být `Nothing`. Zamknout objekt musíte vytvořit předtím, než ho použijete `SyncLock` příkazu.  
   
-     Nelze změnit hodnotu `lockobject` při provádění `SyncLock` bloku. Tento mechanismus vyžaduje, že zůstanou nezměněny zámek objektu.  
+     Nelze změnit hodnotu `lockobject` při provádění `SyncLock` bloku. Mechanismus vyžaduje, že zámek objektu zůstanou beze změny.  
   
 -   Nelze použít [Await](../../../visual-basic/language-reference/operators/await-operator.md) operátor `SyncLock` bloku.  
   
 ## <a name="behavior"></a>Chování  
   
--   Mechanismus. Když se dosáhne vlákna `SyncLock` příkaz, vyhodnocuje `lockobject` výraz a pozastaví spuštění, dokud ho získá výhradní zámek na objekt vrácený výrazem. Když se dosáhne jiné vlákno `SyncLock` příkaz ji není získat zámek dokud provede první vlákno `End SyncLock` příkaz.  
+-   Mechanismus. Když vlákno dosáhne `SyncLock` prohlášení, vyhodnotí `lockobject` výraz a pozastaví spuštění, dokud získá výhradní zámek na objekt vrácený výrazem. Když jiné vlákno dosáhne `SyncLock` příkazu, to není získat zámek až do první vlákno spustí `End SyncLock` příkazu.  
   
--   Chráněná Data. Pokud `lockobject` je `Shared` proměnné, vlákno v žádné instanci třídy výhradní zámek brání v provádění `SyncLock` blokovat, když se spouští jiné vlákno. To chrání data, která je sdílena mezi všemi instancemi.  
+-   Chráněná Data. Pokud `lockobject` je `Shared` proměnné, vlákno v jakékoli instance třídy výhradní zámek brání v provádění `SyncLock` zablokuje při provádění jakékoli jiné vlákno. To chrání data, jež jsou sdílena mezi všemi instancemi.  
   
-     Pokud `lockobject` je proměnná instance (není `Shared`), zámek brání spuštěné v aktuální instanci ze provádění vlákna `SyncLock` bloku ve stejnou dobu jako jiné vlákno ve stejné instanci. To chrání data zachována jednotlivých instancí.  
+     Pokud `lockobject` je proměnná instance (ne `Shared`), zámek je chrání vlákna běžícího v aktuální instanci spuštění `SyncLock` bloku ve stejnou dobu jako jiné vlákno ve stejné instanci. To chrání data udržovaná jednotlivých instancí.  
   
--   Získání a verzi. A `SyncLock` bloku se chová stejně jako `Try...Finally` konstrukce, ve kterém `Try` bloku získá výhradní zámek na `lockobject` a `Finally` uvolněním bloku. Z toho důvodu `SyncLock` bloku zaručuje verze zámku, bez ohledu na to, jak byl ukončen blok. To platí i v případě neošetřené výjimce.  
+-   Získání a uvolnění. A `SyncLock` bloku se chová stejně jako `Try...Finally` konstrukce, ve kterém `Try` bloku získá výhradní zámek na `lockobject` a `Finally` ho uvolní blok. Z toho důvodu `SyncLock` bloku zaručuje uvolnění zámku, bez ohledu na to, jak ukončení bloku. To platí i v případě neošetřené výjimce.  
   
--   Volá Framework. `SyncLock` Bloku operace čtení a uvolní výhradní zámek voláním `Enter` a `Exit` metody `Monitor` třídy v <xref:System.Threading> oboru názvů.  
+-   Rámec volá. `SyncLock` Blokovat operace čtení a uvolní zámek voláním `Enter` a `Exit` metody `Monitor` třídy v <xref:System.Threading> oboru názvů.  
   
-## <a name="programming-practices"></a>Postupy programování  
- `lockobject` Výraz by měl být vždy vyhodnocen objekt, který patří výhradně na třídu. By měly deklarovat `Private` objektová proměnná k ochraně dat, které patří do aktuální instance nebo `Private Shared` objektová proměnná k ochraně dat, které jsou společné pro všechny instance.  
+## <a name="programming-practices"></a>Postupy pro programování  
+ `lockobject` Objekt, který patří do vaší třídy výhradně vždy by se měl vyhodnotit výraz. By měla deklarovat `Private` proměnné objektu k ochraně dat, které patří k aktuální instanci nebo `Private Shared` proměnné objektu k ochraně dat, které jsou společné pro všechny instance.  
   
- Neměli byste používat `Me` data pro instanci objektu – klíčové slovo zajistit zámek. Pokud kód externí ke třídě obsahuje odkaz na instanci třídě, by mohl použít tento odkaz jako objekt zámku pro `SyncLock` bloku zcela liší od váš, ochrana dat na jiný. Tímto způsobem třídě a jiná třída může blokovat navzájem z provedením jejich nesouvisejícími `SyncLock` bloky. Vzhledem k tomu, že jakýkoli jiný kód v procesu pomocí stejné řetězce budou sdílet stejnou zámek může být problematické podobně uzamčení na řetězec.  
+ Neměli byste používat `Me` data pro instanci objektu – klíčové slovo kvůli zámku. Pokud má kód do vaší třídy externí odkaz na instanci třídy, pomocí tohoto odkazu jako objekt zámek pro `SyncLock` bloku zcela liší od patří vám, chrání různé datové. Tímto způsobem vaší třídy a jiná třída může blokovat mezi sebou z provádění jejich nesouvisejících `SyncLock` bloky. Podobně uzamčení na řetězec může být problematické, protože jakýkoli jiný kód v procesu pomocí stejný řetězec budou sdílet stejnou zámku.  
   
- Byste neměli používat `Me.GetType` metody můžete zajistit objekt zámku pro sdílená data. Důvodem je, že `GetType` vždy vrátí stejné `Type` objekt pro název dané třídy. Externí kód může volat `GetType` na vaší třídě a získat používáte stejný objekt zámku. To by způsobilo dvě třídy blokování jiných z jejich `SyncLock` bloky.  
+ Také byste neměli používat `Me.GetType` metodu k dispozici zámek objektu, pro sdílená data. Důvodem je, že `GetType` vždy vrátí stejné `Type` objekt pro název dané třídy. Externí kód lze zavolat `GetType` na třídě a získat stejné zamknout objekt, který používáte. To způsobí dvě třídy blokování druhý z jejich `SyncLock` bloky.  
   
 ## <a name="examples"></a>Příklady  
   
 ### <a name="description"></a>Popis  
- Následující příklad ukazuje třídu, která udržuje jednoduchý seznam zpráv. Drží zprávy v matici a posledních použít element tohoto pole v proměnné. `addAnotherMessage` Postup zvýší posledním elementem a uloží novou zprávu. Tyto dvě operace jsou chráněny `SyncLock` a `End SyncLock` příkazy, protože po posledním elementem se zvýší, nové zprávy musí být uložen před posledním elementem můžete zvýšit znovu jiné vlákno.  
+ Následující příklad ukazuje třídu, která udržuje jednoduchý seznam zpráv. V poli obsahuje zprávy a poslední prvek pole použitá v proměnné. `addAnotherMessage` Postup zvýší poslední prvek a uloží novou zprávu. Tyto dvě operace jsou chráněny `SyncLock` a `End SyncLock` příkazy, protože po posledním prvku byl navýšen, nová zpráva musí být uložen před jakékoli vlákno může zvýšit poslední prvek znovu.  
   
- Pokud `simpleMessageList` třída sdílet jeden seznam zpráv mezi všechny jeho instance, proměnné `messagesList` a `messagesLast` by být deklarována jako `Shared`. V tomto případě proměnnou `messagesLock` navíc by měl mít `Shared`, takže by jeden zámek objekt použitý objektem všechny instance.  
+ Pokud `simpleMessageList` třídy sdílí jeden seznam zpráv mezi všechny její instance, proměnné `messagesList` a `messagesLast` by být deklarovaný jako `Shared`. V tomto případě, proměnná `messagesLock` by mělo být také `Shared`, takže by existovat jeden zámek objekt použitý objektem každou instanci.  
   
 ### <a name="code"></a>Kód  
  [!code-vb[VbVbalrThreading#1](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/synclock-statement_1.vb)]  
   
 ### <a name="description"></a>Popis  
- Následující příklad používá vláken a `SyncLock`. Tak dlouho, dokud `SyncLock` příkaz, příkaz blok je důležitý oddíl a `balance` nikdy se změní na záporné číslo. Můžete Zakomentovat `SyncLock` a `End SyncLock` příkazy zobrazíte účinek vynechala `SyncLock` – klíčové slovo.  
+ Následující příklad používá vlákna a `SyncLock`. Za předpokladu, `SyncLock` příkaz je k dispozici, je důležité části tohoto bloku příkazů a `balance` nikdy nebude záporné číslo. Můžete Zakomentovat `SyncLock` a `End SyncLock` příkazy a vidět její účinek ponechání navýšení kapacity `SyncLock` – klíčové slovo.  
   
 ### <a name="code"></a>Kód  
  [!code-vb[VbVbalrThreading#21](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/synclock-statement_2.vb)]  

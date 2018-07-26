@@ -8,17 +8,18 @@ helpviewer_keywords:
 - private keyword [C#]
 ms.assetid: 654c0bb8-e6ac-4086-bf96-7474fa6aa1c8
 ms.openlocfilehash: 89bc23e91bf693f0a95b75dffe2399cb7e865b50
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37960804"
 ---
 # <a name="private-c-reference"></a>private (Referenční dokumentace jazyka C#)
-`private` – Klíčové slovo je modifikátor přístupu členů. 
+`private` – Klíčové slovo je modifikátor přístupu členu. 
    
- > Tato stránka popisuje `private` přístup. `private` – Klíčové slovo je také součástí [ `private protected` ](./private-protected.md) – modifikátor přístupu.
+ > Tato stránka popisuje `private` přístup. `private` – Klíčové slovo je také součástí [ `private protected` ](./private-protected.md) modifikátor přístupu.
   
-Soukromý přístup je omezenou úroveň přístupu. Soukromé členy jsou přístupné pouze v rámci tělo třídě nebo struktuře, ve které jsou deklarovány, jako v následujícím příkladu:  
+Soukromý přístup je omezenou úroveň přístupu. Privátní členy jsou přístupné jenom v rámci třídy nebo struktury, ve kterém jsou deklarovány, jako v následujícím příkladu:  
   
 ```csharp  
 class Employee  
@@ -28,14 +29,14 @@ class Employee
 }  
 ```  
 
- Vnořené typy v těle stejné lze rovněž použít tyto soukromé členy.  
+ Vnořené typy ve stejné tělo se dostanete také tyto soukromé členy.  
   
- Jedná o chybu kompilace tak, aby odkazovaly privátního člena mimo třídě nebo struktuře, ve kterém je deklarovaná.  
+ Je chyba kompilace tak, aby odkazovaly soukromý člen mimo třídy nebo struktury, ve kterém je deklarována.  
   
- Porovnání `private` s další modifikátory přístupu, přečtěte si téma [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md) a [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
+ Porovnání `private` jiných přístupu modifikátory přístupu, najdete v článku [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md) a [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `Employee` třída obsahuje dva private členy `name` a `salary`. Jako soukromé členy k nim být přístup s výjimkou metody člen. Veřejné metody s názvem `GetName` a `Salary` jsou přidány do povolit řízené přístup k soukromé členy. `name` Člen přistupuje prostřednictvím veřejná metoda a `salary` člen přistupuje prostřednictvím veřejné vlastnosti jen pro čtení. (Viz [vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md) Další informace.)  
+ V tomto příkladu `Employee` třída obsahuje dva soukromé datové členy `name` a `salary`. Jako soukromé členy k nim nelze přistupovat s výjimkou metody člena. Veřejné metody s názvem `GetName` a `Salary` přidávají povolit řízený přístup k soukromým členům. `name` Člen přistupuje prostřednictvím veřejnou metodu a `salary` člen přistupuje prostřednictvím veřejné vlastnosti jen pro čtení. (Viz [vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md) Další informace.)  
   
  [!code-csharp[csrefKeywordsModifiers#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/private_1.cs)]  
   

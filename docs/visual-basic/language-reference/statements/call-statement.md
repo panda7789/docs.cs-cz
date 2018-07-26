@@ -8,15 +8,15 @@ helpviewer_keywords:
 - Call statement [Visual Basic]
 - procedures [Visual Basic], calling
 ms.assetid: e5b31571-6867-406f-b8e7-a3f9aae4723a
-ms.openlocfilehash: 2074f44aedf59f1570e73c898a9bf64e57034923
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 259fcc6f1c59df09e768a08204df81aa8105de53
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33603389"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37936786"
 ---
 # <a name="call-statement-visual-basic"></a>Call – příkaz (Visual Basic)
-Přenos řízení `Function`, `Sub`, nebo postup dynamická knihovna (DLL).  
+Přenosy ovládacího prvku `Function`, `Sub`, nebo procedura dynamická knihovna (DLL).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,21 +25,21 @@ Přenos řízení `Function`, `Sub`, nebo postup dynamická knihovna (DLL).
 ```  
   
 ## <a name="parts"></a>Součásti  
- `procedureName`  
- Požadováno. Název procedury k volání.  
-  
- `argumentList`  
- Volitelné. Seznam proměnných nebo výrazů představující argumenty, které se budou předávat procesu při jejím volání. Více argumentů jsou oddělené čárkami. Pokud zahrnete `argumentList`, je nutné uzavřít do závorek.  
+|||
+|---|---|
+|`procedureName`|Požadováno. Název procedury pro volání.|
+|`argumentList`|Volitelné. Seznam proměnných a výrazů představujících argumenty, které jsou předány na postup, když je volána. Více argumentů jsou odděleny čárkami. Pokud zahrnete `argumentList`, je nutné uzavřít do závorek.|
+|||
   
 ## <a name="remarks"></a>Poznámky  
  Můžete použít `Call` – klíčové slovo při volání procedury. Pro většinu volání procedur není nutné používat toto klíčové slovo.  
   
- Obvykle se používá `Call` – klíčové slovo volané výraz nezačíná identifikátor. Použití `Call` – klíčové slovo pro jiné účely se nedoporučuje.  
+ Obvykle se používá `Call` – klíčové slovo volané výrazu nelze spustit s identifikátorem. Použití `Call` – klíčové slovo pro jiné účely se nedoporučuje.  
   
- Pokud postup vrátí hodnotu, `Call` příkaz zruší ho.  
+ Pokud se proces vrátí hodnotu, která `Call` příkaz zahodí ji.  
   
 ## <a name="example"></a>Příklad  
- Následující kód ukazuje dva příklady kde `Call` – klíčové slovo je potřeba volání procedury. V obou příkladech volané výraz nezačíná identifikátor.  
+ Následující kód ukazuje dva příklady kde `Call` – klíčové slovo je potřeba volání procedury. V obou příkladech nezačíná názvem výraz identifikátor.  
   
  [!code-vb[VbVbalrStatements#97](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/call-statement_1.vb)]  
   

@@ -1,5 +1,5 @@
 ---
-title: Visual Basic – kompilátor příkazového řádku
+title: Kompilátor příkazového řádku jazyka Visual Basic
 ms.date: 02/20/2018
 helpviewer_keywords:
 - compilers [Visual Basic], Visual Basic options
@@ -11,30 +11,30 @@ ms.assetid: 6b57c444-50c7-4b88-8f59-ed65cff5e05c
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1dd00fca2f2b24386773ac4868763cfb868e6b37
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33650904"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244761"
 ---
-# <a name="visual-basic-command-line-compiler"></a>Visual Basic – kompilátor příkazového řádku
+# <a name="visual-basic-command-line-compiler"></a>Kompilátor příkazového řádku jazyka Visual Basic
 
-Kompilátor příkazového řádku jazyka Visual Basic představuje alternativu ke kompilace programů z v sadě Visual Studio integrované vývojové prostředí (IDE). Tato část obsahuje popis pro možnosti kompilátoru jazyka Visual Basic.
+Kompilátor příkazového řádku jazyka Visual Basic poskytuje alternativu ke kompilaci programů z v rámci integrovaného vývojového prostředí (IDE) sady Visual Studio. Tato část obsahuje popis možnosti kompilátoru jazyka Visual Basic.
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
   
 ## <a name="in-this-section"></a>V tomto oddílu
 
 [Sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)  
-Popisuje příkazového řádku kompilátoru jazyka Visual Basic, který je k dispozici jako alternativu k kompilace programů z v prostředí Visual Studio IDE.
+Popisuje kompilátor příkazového řádku jazyka Visual Basic, která se poskytuje jako alternativu ke kompilaci programů z integrovaného vývojového prostředí Visual Studio.
 
-[Možnosti kompilátoru jazyka Visual Basic abecední](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
-Seznamy – možnosti kompilátoru v abecedním tabulce
+[Abecedně seřazené možnosti kompilátoru jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
+Seznamy – možnosti kompilátoru v abecedním tabulky
 
-[Visual Basic – možnosti kompilátoru uvedené podle kategorie](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)  
-Uvede – možnosti kompilátoru v funkční skupiny.
+[Možnosti kompilátoru jazyka Visual Basic uvedené podle kategorie](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)  
+Představuje možnosti kompilátoru v funkční skupiny.
   
 ## <a name="related-sections"></a>Související oddíly
 
 [Průvodce jazykem Visual Basic](../../index.md)  
-Výchozím bodem pro dokumentaci jazyka Visual Basic.
+Výchozí bod pro dokumentaci jazyka Visual Basic.

@@ -9,19 +9,19 @@ helpviewer_keywords:
 - scope [C#]
 ms.assetid: 0a788423-9110-42e0-97d9-bda41ca4870f
 ms.openlocfilehash: 343cce85dd235532fbe3fc90af0a785f48518db7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33276016"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39245608"
 ---
 # <a name="namespace-c-reference"></a>namespace (Referenční dokumentace jazyka C#)
-`namespace` – Klíčové slovo se používá k deklaraci obor, který obsahuje sadu související objekty. Obor názvů můžete použít k uspořádání elementy kódu a vytvoření typů globálně jedinečný.  
+`namespace` – Klíčové slovo se používá k deklarování oboru, který obsahuje sadu souvisejících objektů. Obor názvů slouží k uspořádání prvků kódu a vytváření globálně jedinečných typů.  
   
  [!code-csharp[csrefKeywordsNamespace#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/namespace_1.cs)]  
   
 ## <a name="remarks"></a>Poznámky  
- V oboru názvů můžou deklarovat minimálně jeden z následujících typů:  
+ V rámci oboru názvů je možné deklarovat jeden nebo více z následujících typů:  
   
 -   jiný obor názvů  
   
@@ -35,21 +35,21 @@ ms.locfileid: "33276016"
   
 -   [delegate](../../../csharp/language-reference/keywords/delegate.md)  
   
- Zda je explicitně deklarovat obor názvů ve zdrojovém souboru C#, kompilátor přidá výchozí obor názvů. Tento nepojmenované obor názvů, označovaných také jako globální obor názvů, je v každý soubor. Všechny identifikátor v globálním oboru názvů je k dispozici pro použití v s názvem oboru názvů.  
+ Zda explicitně deklarovat oboru názvů do zdrojového souboru jazyka C#, kompilátor přidá výchozí obor názvů. Tato nepojmenovaného oboru názvů, někdy označovány jako globální obor názvů, je k dispozici v každém souboru. Žádný identifikátor v globálním oboru názvů je k dispozici pro použití s názvem oboru názvů.  
   
- Obory názvů implicitně mít veřejný přístup a nejedná se upravitelnými. Informace o modifikátory přístupu můžete přiřadit k prvkům v oboru názvů, najdete v části [modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md).  
+ Obory názvů mají implicitně veřejný přístup, a to není možné upravit. Informace o přístupu modifikátory přístupu můžete přiřadit na prvky v oboru názvů, naleznete v tématu [modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md).  
   
- Je možné definovat ve dvou nebo více deklarace oboru názvů. Například v následujícím příkladu definuje dvě třídy jako součást `MyCompany` obor názvů:  
+ Je možné definovat ve dvou nebo více deklarací oboru názvů. Například následující příklad definuje dvě třídy jako součást `MyCompany` obor názvů:  
   
  [!code-csharp[csrefKeywordsNamespace#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/namespace_2.cs)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak volat statickou metodu v vnořené oboru názvů.  
+ Následující příklad ukazuje, jak zavolat statickou metodu ve vnořené oboru názvů.  
   
  [!code-csharp[csrefKeywordsNamespace#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/namespace_3.cs)]  
   
 ## <a name="for-more-information"></a>Další informace  
- Další informace o použití oboru názvů najdete v následujících tématech:  
+ Další informace o použití oboru názvů naleznete v následujících tématech:  
   
 -   [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)  
   

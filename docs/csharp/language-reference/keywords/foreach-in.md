@@ -9,37 +9,37 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: d3ce1122c54c14b1baf35641f28d062a2855d335
-ms.sourcegitcommit: 736ec4d3e2c74895b47a0d36126657b95da383c9
+ms.openlocfilehash: a6397cdc9d1e36423a14158a57ca2c1b3fe9df17
+ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/30/2018
-ms.locfileid: "37140265"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37874959"
 ---
 # <a name="foreach-in-c-reference"></a>foreach, in (Referenční dokumentace jazyka C#)
 
-`foreach` Příkaz spustí příkaz nebo blok příkazů pro jednotlivé elementy v instanci typu, který implementuje <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> rozhraní. `foreach` Příkaz není omezen na tyto typy a dají se použít k instanci žádný typ, který splňuje tyto podmínky:
+`foreach` Příkaz opakuje příkaz nebo blok příkazů pro každý prvek v instanci typu, který implementuje <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> rozhraní. `foreach` Příkaz není omezena pouze na tyto typy které můžou uplatnit na instanci typu, který splňuje následující podmínky:
 
-- má public bez parametrů `GetEnumerator` metoda, jejíž návratový typ je třída, struktura nebo typ rozhraní
-- Návratový typ `GetEnumerator` metoda má veřejnosti `Current` vlastnost a public bez parametrů `MoveNext` metoda s návratovým typem <xref:System.Boolean>.
+- nemá veřejný konstruktor bez parametrů `GetEnumerator` metoda, jejíž návratový typ je třída, struktura nebo typ rozhraní
+- Návratový typ `GetEnumerator` metoda má veřejnou `Current` vlastnost a veřejný konstruktor bez parametrů `MoveNext` metoda, jejíž návratový typ je <xref:System.Boolean>.
 
-Kdykoli bodu v rámci `foreach` příkaz bloku, může dojít k narušení mimo smyčky pomocí [zalomení](break.md) příkaz nebo krok do další iterace ve smyčce pomocí [pokračovat](continue.md) příkaz. Také můžete ukončit `foreach` cykly pomocí [goto](goto.md), [vrátit](return.md), nebo [throw](throw.md) příkazy.
+Na libovolný bod v rámci `foreach` blok příkazů, můžete přerušit ze smyčky s použitím [přerušení](break.md) příkazu nebo kroku na následující iteraci ve smyčce pomocí [pokračovat](continue.md) příkazu. Také můžete ukončit `foreach` smyčky pomocí [goto](goto.md), [vrátit](return.md), nebo [throw](throw.md) příkazy.
 
 ## <a name="examples"></a>Příklady
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-Následující příklad ukazuje použití `foreach` příkaz s instanci <xref:System.Collections.Generic.List%601> typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní:
+Následující příklad ukazuje použití `foreach` příkaz s instancí <xref:System.Collections.Generic.List%601> typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní:
 
 [!code-csharp-interactive[list example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#1)]
 
-Další příklad používá `foreach` příkaz s instanci <xref:System.Span%601?displayProperty=nameWithType> typu, který neimplementuje žádné rozhraní:
+Následující příklad používá `foreach` příkaz s instancí <xref:System.Span%601?displayProperty=nameWithType> typ, který neimplementuje žádné rozhraní:
 
-[!code-csharp[span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#2)]
+[!code-csharp-interactive[span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#2)]
 
-Počínaje C# 7.3, pokud je čítač `Current` vlastnost vrátí [odkazovat návratovou hodnotu](../../programming-guide/classes-and-structs/ref-returns.md) (`ref T` kde `T` je typ elementu kolekce), můžou deklarovat proměnnou iteraci pomocí `ref` nebo `ref readonly` modifikátor. Následující příklad používá `ref` proměnné iterace nastavit hodnotu každé položky v poli stackalloc. `ref readonly` Verze iterace kolekce k vytištění všech hodnot. `readonly` Deklarace používá implicitní deklarace místní proměnné. Implicitní deklarace proměnných lze použít s buď `ref` nebo `ref readonly` deklarace, jak můžete explicitně zadali deklarace proměnných.
+Od verze C# 7.3, pokud čítače výčtu `Current` vrátí vlastnost [odkazovat na návratovou hodnotu](../../programming-guide/classes-and-structs/ref-returns.md) (`ref T` kde `T` je typ prvku kolekce), můžete deklarovat proměnnou iterace `ref` nebo `ref readonly` modifikátor. Následující příklad používá `ref` iterační proměnné a hodnotu každé položky v poli Výraz stackalloc. `ref readonly` Verze iterace kolekce, kterou chcete vytisknout všechny hodnoty. `readonly` Deklarace používá implicitní deklarace lokální proměnné. Implicitní deklarace proměnných je možné buď pomocí `ref` nebo `ref readonly` deklarace, jak můžete explicitně zadané deklarace proměnných.
 
-[!code-csharp[ref span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#RefSpan)]
+[!code-csharp-interactive[ref span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#RefSpan)]
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -47,7 +47,7 @@ Počínaje C# 7.3, pokud je čítač `Current` vlastnost vrátí [odkazovat náv
 
 ## <a name="see-also"></a>Viz také:
 
-[Foreach – příkaz (specifikace jazyka C#)](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement)  
+[Příkaz foreach (specifikace jazyka C#)](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement)  
 [Použití příkazu foreach s poli](../../programming-guide/arrays/using-foreach-with-arrays.md)  
 [for](for.md)  
 [Příkazy iterace](iteration-statements.md)  

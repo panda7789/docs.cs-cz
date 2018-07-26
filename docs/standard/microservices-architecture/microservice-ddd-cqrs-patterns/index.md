@@ -1,74 +1,74 @@
 ---
-title: Boji se složitost firmy v Mikroslužbu s DDD a CQRS vzorky
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Boji se složitost firmy v Mikroslužbu s DDD a CQRS vzorky
+title: Zvládnutí firemní složitosti v Mikroslužbě pomocí vzorů DDD a CQRS
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Zvládnutí firemní složitosti v Mikroslužbě pomocí vzorů DDD a CQRS
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
-ms.openlocfilehash: af67f94b2c56f6a1ec794abbf7d3dad0d78033ec
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 06/06/2018
+ms.openlocfilehash: bc8ff6262436af6eb49a4ef8635d502e80b74b5a
+ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105755"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37874384"
 ---
-# <a name="tackling-business-complexity-in-a-microservice-with-ddd-and-cqrs-patterns"></a>Boji se složitost firmy v Mikroslužbu s DDD a CQRS vzorky
+# <a name="tackling-business-complexity-in-a-microservice-with-ddd-and-cqrs-patterns"></a>Zvládnutí firemní složitosti v Mikroslužbě pomocí vzorů DDD a CQRS
 
-*Návrh modelu domény pro každou mikroslužbu nebo ohraničenou kontext, který se vztahuje k pochopení obchodní domény.*
+*Návrh modelem domény pro jednotlivé mikroslužby nebo ohraničená kontextu, který se zobrazuje přehled o obchodní domény.*
 
-Tato část se zaměřuje na pokročilejší mikroslužeb, který implementujete, když potřebujete řešení komplexních subsystémy nebo mikroslužeb odvozené od znalosti odborníků domény s proměnlivých obchodní pravidla. Architektura vzory použít v této části jsou založené na základě domény návrhu (DDD) a přístupy k příkazu a dotaz odpovědnost oddělení (CQRS), jak ukazuje následující obrázek 9-1.
+Tato část se zaměřuje na pokročilejší mikroslužeb, které lze implementovat budete muset řešit komplexní subsystémy nebo mikroslužeb odvozené ze znalostí odborníky na domény s neustále se měnící obchodní pravidla. Tyto architektury vzory se dají použít v této části jsou založené na návrhu řízeného doménou (DDD) a přístupy k příkazu a model dělení zodpovědnosti dotazů (CQRS), jak je znázorněno na obrázku 9-1.
 
 ![](./media/image1.png)
 
-**Obrázek 9-1**. Architektura externí mikroslužbu versus vzory interní architekturu pro každý mikroslužbu
+**Obrázek 9-1**. Architekturu mikroslužeb externí a interní architekturu vzorů u jednotlivých mikroslužeb
 
-Většina techniky pro data řízené mikroslužeb, jako je například implementaci služby webového rozhraní API ASP.NET Core nebo jak vystavit metadata Swagger s Swashbuckle, je však také pro pokročilejší mikroslužeb implementuje interně pomocí DDD vzory. Tato část je rozšířením předchozích sekcí, protože většina postupy popsané dříve platí také zde nebo pro jakýkoli druh mikroslužby.
+Většina techniky pro mikroslužby, jako je například implementace služby webového rozhraní API ASP.NET Core nebo jak vystavit metadata Swagger službou Swashbuckle, na základě dat je však také lze použít na pokročilejší mikroslužeb implementována interně pomocí DDD vzory. Tato část je rozšířením v předchozích částech, protože většina údajů je vysvětleno výše platí také zde nebo pro jakýkoli druh mikroslužeb.
 
-Tato část obsahuje podrobnosti nejprve zjednodušené CQRS vzory použitou v eShopOnContainers odkaz na aplikaci. Později zobrazí se přehled DDD techniky, které vám umožní najít běžných vzorů, které můžete opakovaně použít ve svých aplikacích.
+V této části nejprve poskytuje podrobné informace o jednodušší vzorů CQRS používaných v aplikaci eShopOnContainers odkaz na aplikaci. Později získáte přehled o DDD techniky, které vám umožní najít běžné vzory, které můžete znovu použít ve svých aplikacích.
 
-DDD je velké téma s bohatou sadu prostředků pro učení. Můžete spustit pomocí books jako [Domain-Driven návrhu](https://domainlanguage.com/ddd/) zařízení Erica Evans a další materiály z Vaughn Vernon, Jimmy Nilsson, Gregu Young, Udi Dahan, Jimmy Bogard a mnoho dalších DDD nebo CQRS odborníky. Ale většina vše, co je potřeba k vyzkoušení se dozvíte, jak použít techniky DDD z konverzace, whiteboarding a modelování relace s odborníky ve vaší doméně konkrétní obchodní domény.
+DDD je velké téma s širokou škálu materiálů. Můžete začít s knihy stejně jako [Domain-Driven Design](https://domainlanguage.com/ddd/) Eric Evans a další materiály od Vaughn Vernon Jimmy Nilsson, Grega Younga, Udi Dahan, Jimmy Bogard a mnoha dalšími experty DDD a CQRS. Ale většinu z vás všechny nutné pokusí zjistěte, jak použít DDD techniky z konverzace, využití tabulí a modelování semináře s odborníky ve vaší doméně konkrétní obchodní domény.
 
 #### <a name="additional-resources"></a>Další zdroje
 
-##### <a name="ddd-domain-driven-design"></a>DDD (návrh řízené domény)
+##### <a name="ddd-domain-driven-design"></a>DDD (návrhem řízeným doménou)
 
--   **Zařízení Evans Erica. Jazyka domény**
+-   **Eric Evans. Jazyk domény**
     [*https://domainlanguage.com/*](https://domainlanguage.com/)
 
--   **Martin Fowler. Funguje na základě domény**
+-   **Martina Fowlera. Návrhy řízené doménou**
     [*https://martinfowler.com/tags/domain%20driven%20design.html*](https://martinfowler.com/tags/domain%20driven%20design.html)
 
--   **Jimmy Bogard. Posílení doménu: Základy**
+-   **Jimmy Bogard. Posílení vaší domény: Základy**
     [*https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/*](https://lostechies.com/jimmybogard/2010/02/04/strengthening-your-domain-a-primer/)
 
 ##### <a name="ddd-books"></a>DDD knihy
 
--   **Zařízení Evans Erica. Řízené domény návrhu: Složitost v vysílat softwaru boji se**
+-   **Eric Evans. Návrhy řízené doménou: Použití složitosti srdce softwaru**
     [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
--   **Zařízení Evans Erica. Návrhu řízené domény – referenční informace: Definice a souhrny vzor**
+-   **Eric Evans. Návrhu řízeného doménou – referenční informace: Definice a souhrny vzor**
     [*https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/*](https://www.amazon.com/Domain-Driven-Design-Reference-Definitions-2014-09-22/dp/B01N8YB4ZO/)
 
--   **Vaughn Vernon. Implementace návrhu řízené domény**
+-   **Vaughn Vernon. Implementace návrhu řízeného doménou**
     [*https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/*](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/)
 
--   **Vaughn Vernon. Řízené domény návrhu destilovaná**
+-   **Vaughn Vernon. Destilované návrhem řízeným doménou**
     [*https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/*](https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/)
 
--   **Jimmy Nilsson. Použití řízené domény návrhu a vzorce**
+-   **Jimmy Nilsson. Použití návrhu řízeného doménou a vzory**
     [*https://www.amazon.com/Applying-Domain-Driven-Design-Patterns-Examples/dp/0321268202/*](https://www.amazon.com/Applying-Domain-Driven-Design-Patterns-Examples/dp/0321268202/)
 
--   **Cesaru členka Torre. Průvodce vrstvený N architektura orientovaná na doméně s rozhraním .NET**
+-   **De la Torre Cesarovi. Průvodce N vrstvami architektura orientovaná na doméně s využitím .NET**
     [*https://www.amazon.com/N-Layered-Domain-Oriented-Architecture-Guide-NET/dp/8493903612/*](https://www.amazon.com/N-Layered-Domain-Oriented-Architecture-Guide-NET/dp/8493903612/)
 
--   **Opisek Avram a Floyd Marinescu. Domény řízené návrhu rychle**
+-   **Abel Avram a Floyd Marinescu. Řízené doménou návrh rychle**
     [*https://www.amazon.com/Domain-Driven-Design-Quickly-Abel-Avram/dp/1411609255/*](https://www.amazon.com/Domain-Driven-Design-Quickly-Abel-Avram/dp/1411609255/)
 
 DDD školení
 
--   **Julie Lerman a Steve Smith. Základy funguje na základě domény**
+-   **Julie Lerman a Steve Smith. Základy návrhu řízeného doménou**
     [*http://bit.ly/PS-DDD*](http://bit.ly/PS-DDD)
 
 
 >[!div class="step-by-step"]
-[Předchozí](../multi-container-microservice-net-applications/background-tasks-with-ihostedservice.md)
+[Předchozí](../multi-container-microservice-net-applications/implement-api-gateways-with-ocelot.md)
 [další](apply-simplified-microservice-cqrs-ddd-patterns.md)

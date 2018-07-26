@@ -1,35 +1,35 @@
 ---
-title: příkaz balíček - .NET Core rozhraní příkazového řádku přidejte DotNet.
-description: Příkaz 'dotnet. Přidejte balíček' poskytuje vhodnou možnost Přidat odkaz na balíček NuGet do projektu.
+title: příkaz DotNet add package příkaz – rozhraní příkazového řádku .NET Core
+description: Příkaz "se příkaz dotnet add package" poskytuje vhodnou možnost Přidat odkaz na balíček NuGet do projektu.
 author: mairaw
 ms.author: mairaw
 ms.date: 05/25/2018
 ms.openlocfilehash: 31dda9dbb101238b3a33d8b0d9a17765744480e0
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696296"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244390"
 ---
-# <a name="dotnet-add-package"></a>Přidejte balíček DotNet.
+# <a name="dotnet-add-package"></a>příkaz DotNet add package
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Název
 
-`dotnet add package` -Přidá balíček odkaz na soubor projektu.
+`dotnet add package` -Přidá odkaz na balíček do souboru projektu.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Souhrn
 
 `dotnet add [<PROJECT>] package <PACKAGE_NAME> [-h|--help] [-f|--framework] [-n|--no-restore] [--package-directory] [-s|--source] [-v|--version]`
 
 ## <a name="description"></a>Popis
 
-`dotnet add package` Příkaz poskytuje vhodnou možnost Přidat balíček odkaz na soubor projektu. Po spuštění příkazu, je kontrola kompatibility zajistěte, aby byl že tento balíček je kompatibilní s rozhraní v projektu. Pokud je kontrola úspěšně projde, `<PackageReference>` prvek přidán na soubor projektu a [dotnet obnovení](dotnet-restore.md) běží.
+`dotnet add package` Příkaz poskytuje vhodnou možnost Přidat odkaz na balíček do souboru projektu. Po spuštění příkazu je kontrolu kompatibility a ujistěte se, že balíček je kompatibilní s architekturami, které v projektu. Pokud je kontrola proběhne úspěšně, `<PackageReference>` element je přidat do souboru projektu a [dotnet restore](dotnet-restore.md) běží.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-Například přidání `Newtonsoft.Json` k *ToDo.csproj* výstup v následujícím příkladu:
+Například přidáním `Newtonsoft.Json` k *ToDo.csproj* vytváří výstup podobný následujícímu příkladu:
 
 ```console
   Writing C:\Users\mairaw\AppData\Local\Temp\tmp95A8.tmp
@@ -41,7 +41,7 @@ info : Package 'Newtonsoft.Json' is compatible with all the specified frameworks
 info : PackageReference for package 'Newtonsoft.Json' version '10.0.3' added to file 'C:\projects\ToDo\ToDo.csproj'.
 ```
 
-*ToDo.csproj* soubor nyní obsahuje [ `<PackageReference>` ](/nuget/consume-packages/package-references-in-project-files) element pro odkazovaný balíček.
+*ToDo.csproj* nyní obsahuje soubor [ `<PackageReference>` ](/nuget/consume-packages/package-references-in-project-files) – element pro odkazované balíčku.
 
 ```xml
 <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
@@ -51,33 +51,33 @@ info : PackageReference for package 'Newtonsoft.Json' version '10.0.3' added to 
 
 `PROJECT`
 
-Určuje soubor projektu. Pokud není zadaný, hledá příkaz aktuální adresář pro jednu.
+Určuje soubor projektu. Pokud není zadán, příkaz vyhledá v aktuálním adresáři pro jeden.
 
 `PACKAGE_NAME`
 
-Odkaz na balíček přidat.
+Odkaz na balíček pro přidání.
 
 ## <a name="options"></a>Možnosti
 
 `-h|--help`
 
-Vytiskne krátké nápovědy pro příkaz.
+Vytiskne krátký nápovědy pro příkaz.
 
 `-f|--framework <FRAMEWORK>`
 
-Přidá odkaz na balíček jenom při cílení na konkrétní [framework](../../standard/frameworks.md).
+Přidá odkaz na balíček pouze v případě cílení na konkrétní [framework](../../standard/frameworks.md).
 
 `-n|--no-restore`
 
-Přidá odkaz na balíček bez provedení kontroly obnovení preview a kompatibility.
+Přidá odkaz na balíček bez provedení kontroly obnovení ve verzi preview a kompatibility.
 
 `--package-directory <PACKAGE_DIRECTORY>`
 
-Obnoví balíček do zadaného adresáře.
+Obnoví balíčku do zadaného adresáře.
 
 `-s|--source <SOURCE>`
 
-Během operace obnovení používá konkrétního zdroje balíčku NuGet.
+Během operace obnovení používá konkrétní zdroj balíčku NuGet.
 
 `-v|--version <VERSION>`
 
@@ -89,7 +89,7 @@ Přidat `Newtonsoft.Json` balíček NuGet do projektu:
 
 `dotnet add package Newtonsoft.Json`
 
-Přidání na konkrétní verzi balíčku do projektu:
+Přidání konkrétní verzi balíčku do projektu:
 
 `dotnet add ToDo.csproj package Microsoft.Azure.DocumentDB.Core -v 1.0.0`
 

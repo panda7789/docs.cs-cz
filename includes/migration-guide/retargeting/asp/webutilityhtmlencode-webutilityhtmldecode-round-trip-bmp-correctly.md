@@ -2,10 +2,10 @@
 
 |   |   |
 |---|---|
-|Podrobnosti|Pro aplikace, které cílí na rozhraní .NET Framework 4.5, znaky, které jsou mimo round-trip základní vícejazyčné roviny (BMP) správně, pokud jsou předány <xref:System.Net.WebUtility.HtmlDecode(System.String)> metody.|
-|Návrh|Tato změna by měl mít žádný vliv na aktuální aplikace, ale chcete obnovit původní, nastavte <code>targetFramework</code> atribut <code>&lt;httpRuntime&gt;</code> element na řetězec, jinak než &quot;4.5&quot;. Můžete také nastavit <code>unicodeEncodingConformance</code> a <code>unicodeDecodingConformance</code> atributy <code>&lt;webUtility&gt;</code> konfigurační prvek za účelem řízení nezávisle na cílové verzi rozhraní .NET Framework.|
+|Podrobnosti|Pro aplikace, které jsou cíleny rozhraní .NET Framework 4.5, znaky, které jsou mimo zpátečního převodu základní vícejazyčné roviny (BMP) správně, když jsou předány <xref:System.Net.WebUtility.HtmlDecode(System.String)> metody.|
+|Návrh|Tato změna by měl mít žádný vliv na aktuální aplikace, ale chcete-li obnovit původní chování, nastavte <code>targetFramework</code> atribut <code>&lt;httpRuntime&gt;</code> na řetězec jiný než &quot;4.5&quot;. Můžete také nastavit <code>unicodeEncodingConformance</code> a <code>unicodeDecodingConformance</code> atributy <code>&lt;webUtility&gt;</code> konfiguračního prvku a řídit tak toto chování nezávisle na cílové verzi rozhraní .NET Framework.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Změna orientace|
+|Typ|Mění se cílení|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Net.WebUtility.HtmlEncode(System.String)?displayProperty=nameWithType></li><li><xref:System.Net.WebUtility.HtmlEncode(System.String,System.IO.TextWriter)?displayProperty=nameWithType></li></ul>|
 

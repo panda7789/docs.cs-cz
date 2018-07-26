@@ -8,31 +8,31 @@ helpviewer_keywords:
 - checked keyword [C#]
 ms.assetid: 718a1194-988d-48a3-b089-d6ee8bd1608d
 ms.openlocfilehash: e6c28ee0c575bd6010a8aad76fc978062c5fc6a4
-ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36948407"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37960752"
 ---
 # <a name="checked-c-reference"></a>checked (Referenční dokumentace jazyka C#)
 
-`checked` – Klíčové slovo se používá k explicitně povolit přetečení kontrola aritmetické operace typu integrální převody.
+`checked` – Klíčové slovo se používá explicitně povolit kontroly pro integrálového typu aritmetické operace a převody přetečení.
 
-Ve výchozím nastavení výraz, který obsahuje pouze konstantní hodnoty v případě, že výraz vytvoří hodnotu, která je mimo rozsah pro cílový typ způsobí chybu kompilátoru. Pokud výraz obsahuje jednu nebo více hodnot nekonstantní, kompilátor nezjistí přetečení. Vyhodnocení výrazu přiřazené `i2` v následujícím příkladu nezpůsobí chybě kompilátoru.
+Ve výchozím nastavení výraz, který obsahuje pouze konstantní hodnoty způsobí chybu kompilátoru, pokud výraz vytvoří hodnotu, která je mimo rozsah cílového typu. Pokud výraz obsahuje jednu nebo více hodnot, která není konstantní, kompilátor nezjistí přetečení. Vyhodnocení výrazu přiřazená `i2` v následujícím příkladu nezpůsobí chybu kompilátoru.
 
 [!code-csharp[csrefKeywordsChecked#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsChecked/CS/csrefKeywordsChecked.cs#3)]
 
-Ve výchozím nastavení tyto není konstantní výrazy nejsou kontrola přetečení v době běhu buď a vyvolají není přetečení výjimky. Předchozí příklad zobrazí-2,147,483,639 jako součet dvě kladná celá čísla.
+Ve výchozím nastavení tyto není konstantní výrazy nejsou zkontrolovat přetečení v době běhu buď a nevyvolávejte výjimky přetečení. Předchozí příklad zobrazuje-2,147,483,639 jako součet hodnot dvě kladná celá čísla.
 
-Kontrola přetečení se dá nastavit podle – možnosti kompilátoru, konfigurace prostředí nebo použití `checked` – klíčové slovo. Následující příklady ukazují, jak používat `checked` výraz nebo `checked` bloku ke zjištění přetečení předchozí součet vytvořené v době běhu. Oba příklady vyvolání k výjimce přetečení.
+Kontrola přetečení se dá nastavit možnosti kompilátoru, konfigurace prostředí nebo použití `checked` – klíčové slovo. Následující příklady ukazují, jak používat `checked` výraz nebo `checked` bloku k detekci přetečení, který je vytvořen v době běhu předchozí součet. Oba příklady vyvolat výjimku přetečení.
 
 [!code-csharp[csrefKeywordsChecked#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsChecked/CS/csrefKeywordsChecked.cs#4)]
 
-[Nezaškrtnuté](../../../csharp/language-reference/keywords/unchecked.md) – klíčové slovo lze zabránit kontrola přetečení.
+[Nekontrolovaná](../../../csharp/language-reference/keywords/unchecked.md) – klíčové slovo je možné zabránit kontrola přetečení.
 
 ## <a name="example"></a>Příklad
 
-Tento příklad ukazuje způsob použití `checked` povolit přetečení kontrola za běhu.
+Tento příklad ukazuje způsob použití `checked` povolit kontroly za běhu přetečení.
 
 [!code-csharp[csrefKeywordsChecked#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsChecked/CS/csrefKeywordsChecked.cs#1)]
 

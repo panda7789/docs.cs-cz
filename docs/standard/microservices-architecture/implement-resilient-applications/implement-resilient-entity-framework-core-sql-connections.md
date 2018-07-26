@@ -1,21 +1,21 @@
 ---
-title: Implementace odolné připojení SQL základní Entity Framework
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace odolné připojení SQL základní Entity Framework
+title: Implementace odolných připojení Entity Framework Core SQL
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Implementace odolných připojení Entity Framework Core SQL. Tato technika je zvlášť důležité při používání Azure SQL Database v cloudu.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
-ms.openlocfilehash: 79f115a2d897463c213eda6f4d6951ff0cbeb3ca
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 06/08/2018
+ms.openlocfilehash: c1324eafc9dc0286128e8e942f95ad7c4c0a5d98
+ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105472"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37874933"
 ---
-# <a name="implementing-resilient-entity-framework-core-sql-connections"></a>Implementace odolné připojení SQL základní Entity Framework
+# <a name="implement-resilient-entity-framework-core-sql-connections"></a>Implementace odolných připojení Entity Framework Core SQL
 
-Pro databáze SQL Azure Entity Framework Core již poskytuje interní databáze připojení odolnost proti chybám a zkuste to znovu logiku. Ale musíte povolit strategii provádění Entity Framework pro každé připojení DbContext, pokud chcete mít [odolné připojení EF základní](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency).
+Pro službu Azure SQL DB Entity Framework Core již poskytuje interní databáze připojení odolnost proti chybám a zkuste to znovu logiku. Ale je potřeba povolit strategie provádění Entity Framework pro každé připojení kontext databáze. Pokud chcete mít [odolnost připojení EF Core](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency).
 
-Například následující kód na úrovni připojení EF základní umožňuje odolné připojení SQL, které jsou opakovat, pokud se nepovede připojit.
+Například následující kód na úrovni připojení EF Core umožňuje odolnost připojení SQL, které se zopakují, pokud se nepovede.
 
 ```csharp
 // Startup.cs from any ASP.NET Core Web API
@@ -25,13 +25,13 @@ public class Startup
     public IServiceProvider ConfigureServices(IServiceCollection services)
     {
         // ...
-        services.AddDbContext<OrderingContext>(options =>
+        services.AddDbContext<CatalogContext>(options =>
         {
             options.UseSqlServer(Configuration["ConnectionString"],
             sqlServerOptionsAction: sqlOptions =>
             {
                 sqlOptions.EnableRetryOnFailure(
-                maxRetryCount: 5,
+                maxRetryCount: 10,
                 maxRetryDelay: TimeSpan.FromSeconds(30),
                 errorNumbersToAdd: null);
             });
@@ -41,15 +41,15 @@ public class Startup
 }
 ```
 
-## <a name="execution-strategies-and-explicit-transactions-using-begintransaction-and-multiple-dbcontexts"></a>Strategie provádění a pomocí zahájení transakce a více DbContexts explicitních transakcí
+## <a name="execution-strategies-and-explicit-transactions-using-begintransaction-and-multiple-dbcontexts"></a>Strategie provádění a explicitní transakce pomocí BeginTransaction a více DbContexts
 
-Když opakování jsou povolena v připojení EF jádra, stane jednotlivých operací, které můžete provádět pomocí EF základní vlastní dá se zkusit znovu operaci. Každý dotaz a každé volání SaveChanges bude zopakován jako jednotku, pokud dojde k přechodné chybě.
+Pokud opakované pokusy jsou povolené v EF Core připojení, bude každé operace, které můžete provádět pomocí EF Core vlastní opakovatelné operace. Každý dotaz a každé volání SaveChanges bude zopakován jako celek, pokud dojde k přechodnému selhání.
 
-Ale pokud kódu inicializuje transakci pomocí zahájení transakce, definujete vlastní skupiny operací, které musí být považovány za jednotku – všechno uvnitř transakce se vrátila zpět v případě, že dojde k chybě. Výjimku takto se zobrazí, pokud se pokusíte provést tuto transakci, při použití EF strategii provádění (zásady opakování) a zahrnují několik SaveChanges volání z více DbContexts v transakci.
+Ale pokud váš kód zahájí transakci pomocí BeginTransaction, definujete vlastní skupinu operací, které je potřeba za jednotku považuje – všechno, co je uvnitř transakce se vrátila zpět, pokud dojde k chybě. Výjimku vypadat asi takto se zobrazí, pokud se pokusíte spustit transakci, při použití strategie provádění EF (zásady opakování) a zahrnují několik SaveChanges volání z více DbContexts v transakci.
 
-> System.InvalidOperationException: V nakonfigurované strategii provádění 'SqlServerRetryingExecutionStrategy' nepodporuje transakce inicializované uživatelem. Použijte strategii provádění vrácený 'DbContext.Database.CreateExecutionStrategy()' provádět všechny operace v rámci transakce jako nevyřeší jednotku.
+> System.InvalidOperationException: Strategie provádění nakonfigurované "SqlServerRetryingExecutionStrategy" nepodporuje transakce iniciované uživatelem. Použití strategie provádění vrácený "DbContext.Database.CreateExecutionStrategy()" provádět všechny operace v transakci jako vyvolaly jednotky.
 
-Řešení je ručně vyvolání strategie provádění EF s představující všechno delegáta, který je třeba provést. Pokud dojde k přechodné chybě, bude strategii provádění znovu vyvolání delegáta. Například následující kód ukazují, jak jsou implementované v eShopOnContainers se dvěma více DbContexts (\_catalogContext a IntegrationEventLogContext) při aktualizaci produktu a potom uložení ProductPriceChangedIntegrationEvent objekt, který se musí použít jiný DbContext.
+Řešením je vyvolat strategie provádění EF s všechno, co představuje delegáta, který je nutné spustit ručně. Pokud dojde k přechodnému selhání, strategie provádění znovu vyvolá delegáta. Například následující kód zobrazí, jak je implementován v aplikaci eShopOnContainers se dvěma více DbContexts (\_catalogContext a IntegrationEventLogContext) při aktualizaci produktu a potom uložení ProductPriceChangedIntegrationEvent objektu, který je potřeba použít jiné DbContext.
 
 ```csharp
 public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem
@@ -81,17 +81,17 @@ public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem
 }
 ```
 
-Je první DbContext \_catalogContext a druhý je DbContext v rámci \_integrationEventLogService objektu. Potvrzení akce se provádí napříč více DbContexts pomocí strategie provádění EF.
+Je první objekt DbContext \_catalogContext a druhý je DbContext v rámci \_integrationEventLogService objektu. Provedení akce potvrzení napříč více DbContexts použitím strategie provádění EF.
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Odolnost připojení a zachycením příkaz s použitím Entity Framework**
+-   **Odolnost připojení EF** (Entity Framework Core) [*https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency*](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency)
+
+-   **Odolnost připojení a zachycení příkazů s rozhraním Entity Framework**
     [*https://docs.microsoft.com/azure/architecture/patterns/category/resiliency*](https://docs.microsoft.com/azure/architecture/patterns/category/resiliency)
 
--   **Cesaru členka Torre. Pomocí připojení Sql základní odolné Entity Framework a transakce**
+-   **De la Torre Cesarovi. Pomocí odolné Entity Framework Core Sql připojení a transakce**
     <https://blogs.msdn.microsoft.com/cesardelatorre/2017/03/26/using-resilient-entity-framework-core-sql-connections-and-transactions-retries-with-exponential-backoff/>
 
-
 >[!div class="step-by-step"]
-[Předchozí](implement-retries-exponential-backoff.md)
-[další](implement-custom-http-call-retries-exponential-backoff.md)
+[Předchozí](implement-retries-exponential-backoff.md) [Next]explore-custom-http-call-retries-exponential-backoff.md)

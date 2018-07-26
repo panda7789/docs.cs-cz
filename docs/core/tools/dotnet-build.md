@@ -1,33 +1,33 @@
 ---
-title: DotNet sestavení command - .NET Core rozhraní příkazového řádku
-description: Dotnet sestavení příkaz sestavení projektu a všechny jeho závislé součásti.
+title: DotNet sestavení příkaz – rozhraní příkazového řádku .NET Core
+description: Dotnet sestavení příkaz sestavení projektu a všechny jeho závislosti.
 author: mairaw
 ms.author: mairaw
 ms.date: 05/25/2018
 ms.openlocfilehash: 6b0b7bc11b560d8632b38f1dfa4e7eb3ce6c54d2
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34697128"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37961454"
 ---
-# <a name="dotnet-build"></a>sestavení pro DotNet.
+# <a name="dotnet-build"></a>DotNet – sestavení
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Název
 
-`dotnet build` -Sestavení projektu a všechny jeho závislé součásti.
+`dotnet build` -Sestavení projektu a všechny jeho závislosti.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
 ```
 dotnet build [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--no-dependencies] [--no-incremental]
     [--no-restore] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
 dotnet build [-h|--help]
 ```
-# <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
 ```
 dotnet build [<PROJECT>] [-c|--configuration] [-f|--framework] [--no-dependencies] [--no-incremental] [-o|--output]
     [-r|--runtime] [-v|--verbosity] [--version-suffix]
@@ -37,19 +37,19 @@ dotnet build [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet build` Příkaz sestavení projektu a jeho závislosti do sady binárních souborů. Binární soubory zahrnují projektu kódu v souborech Intermediate Language (IL) s *.dll* rozšíření a symbol soubory používané pro ladění pomocí *PDB* rozšíření. Soubor JSON závislosti (*\*. deps.json*) vytváří, jsou uvedené závislosti aplikace. A  *\*. runtimeconfig.json* vytvořil soubor, který určuje sdílený modul runtime a její verzi pro aplikaci.
+`dotnet build` Příkaz sestaví projekt a jeho závislosti do sady binární soubory. Binární soubory zahrnují projektu kódu v souborech Intermediate Language (IL) s *.dll* rozšíření a symbol soubory používané pro ladění v sadě *PDB* rozšíření. Soubor JSON závislosti (*\*. deps.json*) je vytvořen, který obsahuje seznam závislostí aplikace. A  *\*. runtimeconfig.json* je vytvořen soubor, který určuje sdílený modul runtime a jeho verze pro aplikaci.
 
-Pokud projekt má závislosti třetích stran, například knihoven z NuGet, se z mezipaměti NuGet rozpoznána a nejsou k dispozici integrované výstup projektu. Si uvědomit, produkt `dotnet build` není připraven k přesunu do jiného počítače ke spuštění. Tím se liší od chování rozhraní .NET Framework v které vytváření spustitelný projekt (aplikace) vytváří výstup, který je spustitelného na libovolném počítači nainstalovanou rozhraní .NET Framework. Pokud chcete, aby na podobném principu s .NET Core, budete muset použít [dotnet publikování](dotnet-publish.md) příkaz. Další informace najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
+Obsahuje-li projekt závislostí třetích stran, jako jsou knihovny z Nugetu, že vyřešit z mezipaměti NuGet a nejsou k dispozici s sestavení výstupu projektu. Skutečností, součin `dotnet build` není připravené k převedení do jiného počítače ke spuštění. To se liší od chování rozhraní .NET Framework ve které vytváření spustitelného souboru projektu (aplikace) vytvoří výstup, který je spustitelný na libovolný počítač, ve kterém je nainstalováno rozhraní .NET Framework. Pokud chcete, aby fungují na podobném principu s .NET Core, budete muset použít [dotnet publikovat](dotnet-publish.md) příkazu. Další informace najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
 
-Vytváření vyžaduje *project.assets.json* souboru, který uvádí závislosti vaší aplikace. Soubor je vytvořen, když [ `dotnet restore` ](dotnet-restore.md) se spustí. Bez souboru prostředků v místě nelze nástroji vyřešit referenční sestavení, což vede k chybám. S .NET Core 1.x SDK potřebné ke spuštění explicitně `dotnet restore` dřív, než spustíte `dotnet build`. Od verze rozhraní .NET Core SDK 2.0, `dotnet restore` implicitně spouští při spuštění `dotnet build`. Pokud chcete zakázat implicitní obnovení při spuštění příkazu sestavení, můžete předat `--no-restore` možnost.
+Vytváření vyžaduje *project.assets.json* soubor, který obsahuje seznam závislostí vaší aplikace. Soubor je vytvořen při [ `dotnet restore` ](dotnet-restore.md) provádí. Bez souboru prostředků v místě nelze nástrojů vyřešit referenční sestavení, což má za následek chyby. S .NET Core 1.x SDK potřebné ke spuštění explicitně `dotnet restore` dřív, než spustíte `dotnet build`. Počínaje .NET Core 2.0 SDK `dotnet restore` se implicitně spouští při spuštění `dotnet build`. Pokud chcete zakázat implicitní obnovení při spuštění příkazu k sestavení, lze předat `--no-restore` možnost.
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
-`dotnet build` používá pro sestavení projektu MSBuild, takže podporuje paralelní i přírůstkové sestavení. Další informace najdete v tématu [přírůstková sestavení](/visualstudio/msbuild/incremental-builds).
+`dotnet build` používá MSBuild k sestavení projektu, takže podporuje paralelní i přírůstkové sestavení. Další informace najdete v tématu [přírůstková sestavení](/visualstudio/msbuild/incremental-builds).
 
-Kromě jeho možností `dotnet build` příkaz přijímá MSBuild možnosti, jako například `/p` pro nastavení vlastností nebo `/l` k definování protokolovacího nástroje. Další informace o těchto možnostech najdete v tématu [Reference k příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference).
+Kromě jeho možností `dotnet build` příkaz přijímá MSBuild možnosti, jako například `/p` pro nastavení vlastnosti nebo `/l` k definování protokolovač. Další informace o těchto možnostech najdete v tématu [MSBuild Reference k příkazovému řádku](/visualstudio/msbuild/msbuild-command-line-reference).
 
-Jestli je projekt spustitelný soubor nebo ne je dáno `<OutputType>` vlastnost v souboru projektu. Následující příklad ukazuje projekt, který vytváří spustitelného kódu:
+Určuje, zda je projekt spustitelné nebo ne je určeno `<OutputType>` vlastnost v souboru projektu. Následující příklad ukazuje projekt, který vytvoří spustitelný kód:
 
 ```xml
 <PropertyGroup>
@@ -57,17 +57,17 @@ Jestli je projekt spustitelný soubor nebo ne je dáno `<OutputType>` vlastnost 
 </PropertyGroup>
 ```
 
-Chcete-li vytvořit knihovnu, vynechejte `<OutputType>` vlastnost. Hlavní rozdíl ve vytvořené výstupu je, že IL DLL pro knihovnu neobsahuje vstupní body a nelze provést.
+Pokud chcete vytvořit knihovnu, vynechejte `<OutputType>` vlastnost. Hlavní rozdíl v sestavení výstupu je, že knihovna DLL IL pro knihovnu neobsahuje vstupní body a nelze ho provést.
 
 ## <a name="arguments"></a>Arguments
 
 `PROJECT`
 
-K vytvoření souboru projektu. Pokud projekt soubor není zadán, MSBuild vyhledá aktuální pracovní adresář pro soubor, který má příponu souboru, které *proj* a použije tento soubor.
+Soubor projektu pro sestavení. Pokud není zadán soubor projektu, MSBuild vyhledá aktuální pracovní adresář pro soubor, který má příponu souboru, který končí na *proj* a použije tento soubor.
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
 
 `-c|--configuration {Debug|Release}`
 
@@ -79,31 +79,31 @@ Zkompiluje pro konkrétní [framework](../../standard/frameworks.md). Rozhraní 
 
 `--force`
 
-Vynutí všechny závislosti pro přeloženy i v případě, že poslední obnovení bylo úspěšné. Zadáním tohoto příznaku je stejný jako odstranění *project.assets.json* souboru.
+Způsobí, že všechny závislosti vyřešit i v případě, že poslední obnovení bylo úspěšné. Zadání tohoto příznaku je stejný jako odstranění *project.assets.json* souboru.
 
 `-h|--help`
 
-Vytiskne krátké nápovědy pro příkaz.
+Vytiskne krátký nápovědy pro příkaz.
 
 `--no-dependencies`
 
-Ignoruje odkazů (P2P) projekt na projekt a pouze sestavení projektu zadaný kořenový.
+Pouze sestavení projektu zadaný kořenový a ignoruje odkazy typu projekt projekt (P2P).
 
 `--no-incremental`
 
-Označí sestavení jako bezpečné pro přírůstkové sestavení. Tento příznak vypne přírůstkové kompilace a vynutí čistou opětovné sestavení grafu závislostí projektu.
+Označí sestavení jako problematické pro přírůstkové sestavení. Tento příznak vypne přírůstková kompilace a vynutí opětovné čisté sestavení grafu závislostí projektu.
 
 `--no-restore`
 
-Neprovede implicitní obnovení během vytváření sestavení.
+Neprovede implicitní obnovení během sestavování.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Adresář, do níž umístíte integrovaný binární soubory. Budete také muset definovat `--framework` Pokud zadáte tuto možnost.
+Adresář, do kterého chcete sestavené binární soubory. Budete také muset definovat `--framework` při zadání této možnosti.
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-Určuje cílový modul runtime. Seznam Runtime identifikátorů (RID), najdete v článku [identifikátorů RID katalogu](../rid-catalog.md).
+Určuje cílový modul runtime. Seznam identifikátorů modulů Runtime (RID), najdete v článku [katalog identifikátorů RID](../rid-catalog.md).
 
 `-v|--verbosity <LEVEL>`
 
@@ -111,9 +111,9 @@ Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[i
 
 `--version-suffix <VERSION_SUFFIX>`
 
-Definuje verze přípona hvězdičku (`*`) v poli verze souboru projektu. Formát řídí pokyny verze NuGet.
+Definuje, verze přípona hvězdičku (`*`) v poli verze souboru projektu. Formát řídí pokyny verze Nugetu.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
 
 `-c|--configuration {Debug|Release}`
 
@@ -125,23 +125,23 @@ Zkompiluje pro konkrétní [framework](../../standard/frameworks.md). Rozhraní 
 
 `-h|--help`
 
-Vytiskne krátké nápovědy pro příkaz.
+Vytiskne krátký nápovědy pro příkaz.
 
 `--no-dependencies`
 
-Ignoruje odkazů (P2P) projekt na projekt a pouze sestavení projektu zadaný kořenový.
+Pouze sestavení projektu zadaný kořenový a ignoruje odkazy typu projekt projekt (P2P).
 
 `--no-incremental`
 
-Označí sestavení jako bezpečné pro přírůstkové sestavení. Tento příznak vypne přírůstkové kompilace a vynutí čistou opětovné sestavení grafu závislostí projektu.
+Označí sestavení jako problematické pro přírůstkové sestavení. Tento příznak vypne přírůstková kompilace a vynutí opětovné čisté sestavení grafu závislostí projektu.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Adresář, do níž umístíte integrovaný binární soubory. Budete také muset definovat `--framework` Pokud zadáte tuto možnost.
+Adresář, do kterého chcete sestavené binární soubory. Budete také muset definovat `--framework` při zadání této možnosti.
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-Určuje cílový modul runtime. Seznam Runtime identifikátorů (RID), najdete v článku [identifikátorů RID katalogu](../rid-catalog.md).
+Určuje cílový modul runtime. Seznam identifikátorů modulů Runtime (RID), najdete v článku [katalog identifikátorů RID](../rid-catalog.md).
 
 `-v|--verbosity <LEVEL>`
 
@@ -149,24 +149,24 @@ Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[i
 
 `--version-suffix <VERSION_SUFFIX>`
 
-Definuje verze přípona hvězdičku (`*`) v poli verze souboru projektu. Formát řídí pokyny verze NuGet.
+Definuje, verze přípona hvězdičku (`*`) v poli verze souboru projektu. Formát řídí pokyny verze Nugetu.
 
 ---
 
 ## <a name="examples"></a>Příklady
 
-Sestavte projekt a jeho závislé součásti:
+Sestavení projektu a jeho závislosti:
 
 `dotnet build`
 
-Sestavte projekt a jeho závislosti pomocí konfigurace verze:
+Sestavení projektu a jeho závislosti pomocí konfigurace vydané verze:
 
 `dotnet build --configuration Release`
 
-Sestavte projekt a jeho závislosti pro konkrétní runtime (v tomto příkladu Ubuntu 16.04):
+Sestavení projektu a jeho závislosti pro konkrétní prostředí runtime (v tomto příkladu se systémem Ubuntu 16.04):
 
 `dotnet build --runtime ubuntu.16.04-x64`
 
-Sestavte projekt a použijte zadaný zdroj balíčku NuGet během operace obnovení (.NET Core SDK 2.0 a novější):
+Sestavte projekt a použít zadaný zdroj balíčku NuGet během operace obnovení (.NET Core SDK 2.0 a novější):
 
 `dotnet build --source c:\packages\mypackages`

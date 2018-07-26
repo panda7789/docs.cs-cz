@@ -1,10 +1,10 @@
-### <a name="entityframework-60-loads-very-slowly-in-apps-launched-from-visual-studio"></a>Načítání objektu EntityFramework 6.0 velmi pomalu v aplikacích pro spuštění ze sady Visual Studio
+### <a name="entityframework-60-loads-very-slowly-in-apps-launched-from-visual-studio"></a>Načtení objektu EntityFramework 6.0 velmi pomalu v aplikacích pro spuštění ze sady Visual Studio
 
 |   |   |
 |---|---|
-|Podrobnosti|Spouštění aplikace z Visual Studio 2013, který používá EntityFramework 6.0 může být velmi pomalé.|
-|Návrh|Tento problém vyřešen v objektu EntityFramework 6.0.2. Aktualizace objektu EntityFramework, aby se zabránilo problémy s výkonem.|
+|Podrobnosti|Spuštění aplikace ze sady Visual Studio 2013, která používá EntityFramework 6.0 může být velmi pomalé.|
+|Návrh|Tento problém je vyřešen v objektu EntityFramework 6.0.2. Aktualizace objektu EntityFramework, aby tyto problémy s výkonem.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|modul runtime|
+|Typ|Modul runtime|
 

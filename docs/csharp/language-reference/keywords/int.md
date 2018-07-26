@@ -8,40 +8,40 @@ helpviewer_keywords:
 - int keyword [C#]
 ms.assetid: 212447b4-5d2a-41aa-88ab-84fe710bdb52
 ms.openlocfilehash: 41ee5ecdae815eaddf8652a4873c060fb8f92bc3
-ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
+ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37028263"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39199427"
 ---
 # <a name="int-c-reference"></a>int (Referenční dokumentace jazyka C#)
 
-`int` označuje typ integrální, který ukládá hodnoty podle velikosti a rozsah uvedené v následující tabulce.  
+`int` označuje integrální typ, který uchovává hodnoty podle toho, velikost a rozsah je znázorněno v následující tabulce.  
   
 |Typ|Rozsah|Velikost|Typ formátu .NET|  
 |----------|-----------|----------|-------------------------|  
-|`int`|-2 147 483 648 na 2 147 483 647|32bitové celé číslo se znaménkem|<xref:System.Int32?displayProperty=nameWithType>|  
+|`int`|-2 147 483 648 do 2 147 483 647|32bitové celé číslo se znaménkem|<xref:System.Int32?displayProperty=nameWithType>|  
   
 ## <a name="literals"></a>Literály  
  
-Můžete deklarace a inicializace `int` proměnné přiřazením decimal literál, hexadecimální literál, nebo (počínaje 7.0 C#) binární literálu do ní.  Pokud literálu celé číslo je mimo rozsah `int` (tj. Pokud je menší než <xref:System.Int32.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>), dojde k chybě kompilace. 
+Můžete deklarovat a inicializovat `int` proměnné přiřazením literál desítkové, hexadecimální literál, nebo (od verze C# 7.0) binární literál k němu.  Pokud celočíselný literál je mimo rozsah `int` (tj. Pokud je menší než <xref:System.Int32.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>), dojde k chybě kompilace. 
 
-V následujícím příkladu, celá čísla rovno 90,946, která jsou reprezentovány jako decimal, šestnáctkové, a binární literály jsou přiřazeny k `int` hodnoty.  
+V následujícím příkladu celých čísel je rovno 90,946, které jsou reprezentovány jako desítkové, hexadecimální, a binární literály jsou přiřazeny k `int` hodnoty.  
   
 [!code-csharp[int](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#Int)]  
 
 > [!NOTE] 
-> Použijte předponu `0x` nebo `0X` k označení hexadecimální literál a předponu `0b` nebo `0B` k označení binární literál. Decimal literály mít žádná předpona. 
+> Použijte předponu `0x` nebo `0X` k označení šestnáctkové literal a předponu `0b` nebo `0B` k označení binární literál. Desítkové literály mají žádná předpona. 
 
-Od verze jazyka C# 7.0, byly přidány několik funkcí za účelem zlepšení čitelnosti. 
- - C# 7.0 umožňuje použití znak podtržítka `_`, jako oddělovač číslice.
- - C# 7.2 umožňuje `_` má být použit jako číslice oddělovače pro binární nebo hexadecimální literál, po předponu. Decimal literál není povolená tak, aby měl úvodní podtržítka.
+Od verze C# 7.0, přidali několik funkcí za účelem zlepšení čitelnosti. 
+ - C# 7.0 umožňuje použití znaku podtržítka `_`, jako oddělovač číslic.
+ - C# 7.2 umožňuje `_` má být použit jako oddělovač číslici šestnáctkové nebo binární literál po předponu. Desítkový literál není povoleno mít vedoucího podtržítka.
 
-Níže jsou uvedeny některé příklady.
+Níže je uvedeno několik příkladů.
 
 [!code-csharp[int](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#IntS)]  
  
- Literály celé číslo může obsahovat také příponu, která označuje typ, i když neexistuje žádné příponu, která označuje `int` typu. Pokud celé literál bez přípony, je její typ první z těchto typů, ve kterých může být reprezentován jeho hodnotu: 
+ Literály celých čísel může také obsahovat příponu, která označuje typ., ačkoli neexistuje žádné příponu, která označuje `int` typu. Pokud celočíselného literálu bez přípony, jeho typ je první z těchto typů, ve kterých může být reprezentována jeho hodnotu: 
 
 1. `int`
 2. [uint](../../../csharp/language-reference/keywords/uint.md)
@@ -51,14 +51,14 @@ Níže jsou uvedeny některé příklady.
 V těchto příkladech je literál 90946 typu `int`.
   
 ## <a name="conversions"></a>Převody  
- Je předdefinovaný implicitní převod z `int` k [dlouho](../../../csharp/language-reference/keywords/long.md), [float](../../../csharp/language-reference/keywords/float.md), [dvojité](../../../csharp/language-reference/keywords/double.md), nebo [decimal](../../../csharp/language-reference/keywords/decimal.md). Příklad:  
+ Není předdefinovanou implicitní převod z `int` k [dlouhé](../../../csharp/language-reference/keywords/long.md), [float](../../../csharp/language-reference/keywords/float.md), [double](../../../csharp/language-reference/keywords/double.md), nebo [desítkové](../../../csharp/language-reference/keywords/decimal.md). Příklad:  
   
 ```csharp  
 // '123' is an int, so an implicit conversion takes place here:  
 float f = 123;  
 ```  
   
- Je předdefinovaný implicitní převod z [sbyte](../../../csharp/language-reference/keywords/sbyte.md), [bajtů](../../../csharp/language-reference/keywords/byte.md), [krátké](../../../csharp/language-reference/keywords/short.md), [ushort](../../../csharp/language-reference/keywords/ushort.md), nebo [char](../../../csharp/language-reference/keywords/char.md) k `int`. Například následující příkaz přiřazení způsobí chybu kompilace bez přetypování:  
+ Není předdefinovanou implicitní převod z [sbyte](../../../csharp/language-reference/keywords/sbyte.md), [bajtů](../../../csharp/language-reference/keywords/byte.md), [krátký](../../../csharp/language-reference/keywords/short.md), [ushort](../../../csharp/language-reference/keywords/ushort.md), nebo [char](../../../csharp/language-reference/keywords/char.md) k `int`. Přiřazovací příkaz například způsobí chybu kompilace bez přetypování:  
   
 ```csharp  
 long aLong = 22;  
@@ -66,14 +66,14 @@ int i1 = aLong;       // Error: no implicit conversion from long.
 int i2 = (int)aLong;  // OK: explicit conversion.  
 ```  
   
- Všimněte si také, že neexistuje žádná implicitní převod z typů s plovoucí desetinnou čárkou na `int`. Například následující příkaz vygeneruje Chyba kompilátoru, pokud se používá explicitní přetypování:  
+ Všimněte si také, že neexistuje žádný implicitní převod z typů s plovoucí desetinnou čárkou `int`. Například následující příkaz vygeneruje chybu kompilátoru, pokud používá explicitní přetypování:  
   
 ```csharp  
 int x = 3.0;         // Error: no implicit conversion from double.  
 int y = (int)3.0;    // OK: explicit conversion.  
 ```  
   
- Další informace o aritmetických výrazech s smíšený typy s plovoucí desetinnou čárkou a integrální typy najdete v tématu [float](../../../csharp/language-reference/keywords/float.md) a [dvojité](../../../csharp/language-reference/keywords/double.md).  
+ Další informace o aritmetických výrazech s smíšené typy s plovoucí desetinnou čárkou a celočíselných typů naleznete v tématu [float](../../../csharp/language-reference/keywords/float.md) a [double](../../../csharp/language-reference/keywords/double.md).  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

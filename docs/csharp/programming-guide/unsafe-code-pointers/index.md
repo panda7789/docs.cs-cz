@@ -11,30 +11,30 @@ helpviewer_keywords:
 - pointers [C#], about pointers
 ms.assetid: b0fcca10-a92d-4f2a-835b-b0ccae6739ee
 ms.openlocfilehash: b57a6f607dbdbc84c60889a5ce2b1e3c33d7f435
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33331601"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39245169"
 ---
 # <a name="unsafe-code-and-pointers-c-programming-guide"></a>Nezabezpečený kód a ukazatele (Průvodce programováním v C#)
-Pokud chcete zachovat bezpečnost typů a zabezpečení, C# nepodporuje aritmetika ukazatele ve výchozím nastavení. Avšak pomocí [unsafe](../../../csharp/language-reference/keywords/unsafe.md) – klíčové slovo, můžete definovat kontextu unsafe, ve které je možné ukazatele. Další informace o ukazatele, naleznete v tématu [typy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md).  
+Pokud chcete zachovat bezpečnost typů a zabezpečení, C# nepodporuje aritmetiku ukazatele ve výchozím nastavení. Nicméně pomocí [nebezpečné](../../../csharp/language-reference/keywords/unsafe.md) – klíčové slovo, můžete definovat nezabezpečený kontext, ve které je možné ukazatele. Další informace o ukazatelích naleznete v tématu [typy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md).  
   
 > [!NOTE]
->  V common language runtime (CLR) nezabezpečený kód se označuje jako neověřitelný kód. Nezabezpečený kód v jazyce C# není nutně nebezpečné; je pouze kód, jejichž zabezpečení nelze ověřit pomocí modulu CLR. Modul CLR bude proto pouze spouštění nezabezpečený kód Pokud je ve plně důvěryhodné sestavení. Pokud používáte nezabezpečený kód, je vaší povinností ujistit, že váš kód nezavádí rizika zabezpečení nebo chyby ukazatele.  
+>  V modulu common language runtime (CLR) nebezpečný kód se označuje jako neověřitelný kód. Nezabezpečený kód v jazyce C# není nutně nebezpečné; je jenom kód, jejichž zabezpečení nelze ověřit pomocí modulu CLR. Modul CLR proto pouze spustí nezabezpečený kód by byl v plně důvěryhodná sestavení. Pokud používáte nebezpečný kód, je vaší povinností ujistit, že váš kód nezavádí rizika zabezpečení nebo ukazatel chyby.  
   
 ## <a name="unsafe-code-overview"></a>Přehled nebezpečného kódu  
  Nezabezpečený kód má následující vlastnosti:  
   
--   Metody, typy a bloky kódu je možné definovat jako bezpečné.  
+-   Metody, typy a bloků kódu může být definován jako bezpečné.  
   
--   V některých případech může nezabezpečený kód zvýšit výkon aplikace odebráním kontroly meze pole.  
+-   V některých případech může nezabezpečený kód zvýšit výkon vaší aplikace tak, že odeberete kontroly hranice pole.  
   
 -   Nezabezpečený kód je potřeba při volání nativních funkcí, které vyžadují ukazatele.  
   
--   Nezabezpečený kód představuje riziko zabezpečení a stability.  
+-   Použití nezabezpečeného kódu představuje rizika zabezpečení a stabilitu.  
   
--   V pořadí pro jazyk C# zkompilovat nezabezpečený kód, aplikace musí být zkompilovány s [/ unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md).  
+-   V pořadí pro jazyk C# ke kompilaci nezabezpečený kód aplikace musí být kompilována s [/ unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md).  
   
 ## <a name="related-sections"></a>Související oddíly  
  Další informace naleznete v tématu:  

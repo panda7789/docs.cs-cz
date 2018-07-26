@@ -1,41 +1,43 @@
 ---
-title: Spojení pomocí složených klíčů
-description: Jak spojení pomocí složených klíčů.
+title: Spojení pomocí složených klíčů (LINQ v JAZYKU C#)
+description: Zjistěte, jak spojení pomocí složených klíčů v technologii LINQ.
 ms.date: 12/1/2016
 ms.assetid: da70b54d-3213-45eb-8437-fbe75cbcf935
-ms.openlocfilehash: e40f4d147886c07913c761bb5df83ee34d23eaba
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dd3f5e949b5c1bc6abc592dc135e73a91be801e9
+ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33271211"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37404025"
 ---
 # <a name="join-by-using-composite-keys"></a>Spojení pomocí složených klíčů
 
-Tento příklad ukazuje, jak provádět operace spojení, ve kterých chcete použít více než jeden klíč k definování shody. Toho dosahuje pomocí složeného klíče. Vytváření složené klíče jako anonymní typ nebo s názvem typu hodnotami, které chcete porovnat. Pokud napříč hranicemi metoda se předá proměnná dotaz, použít pojmenovaného typu, který přepíše <xref:System.Object.Equals%2A> a <xref:System.Object.GetHashCode%2A> klíče. Názvy vlastností a pořadí, ve kterém nastávají, musí být identický každý klíč.  
-  
-## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat složený klíč k připojení dat z tři tabulky:  
-  
-```csharp  
-var query = from o in db.Orders  
-    from p in db.Products  
-    join d in db.OrderDetails   
-        on new {o.OrderID, p.ProductID} equals new {d.OrderID,        d.ProductID} into details  
-        from d in details  
-        select new {o.OrderID, p.ProductID, d.UnitPrice};  
-```  
-  
- Odvození typu na složené klíče závisí na názvy vlastností v klíče a pořadí, ve kterém nastávají. Pokud vlastnosti v pořadí zdroje nemají stejné názvy, je nutné přiřadit nové názvy v klíče. Například pokud `Orders` tabulky a `OrderDetails` tabulku každý použít odlišné názvy pro jejich sloupce, můžete vytvořit složené klíče přiřazením identické názvy v anonymní typy:  
-  
-```csharp  
-join...on new {Name = o.CustomerName, ID = o.CustID} equals   
-    new {Name = d.CustName, ID = d.CustID }  
-```  
-  
- Složené klíče mohou být také používány `group` klauzule.  
+Tento příklad ukazuje, jak provádět operace spojení, ve kterých chcete použít více než jeden klíč k definování shody. To se provádí pomocí složený klíč. Vytvoření složeného klíče jako anonymního typu nebo s názvem typu hodnotami, které chcete porovnat. Pokud proměnná dotazu se předají přes hranice metody, pomocí pojmenovaného typu, který přepíše <xref:System.Object.Equals%2A> a <xref:System.Object.GetHashCode%2A> klíče. Názvy vlastností a pořadí, ve kterém k nim dojde, musí být identické v každý klíč.
 
-## <a name="see-also"></a>Viz také  
- [LINQ – výrazy dotazů](index.md)  
- [join – klauzule](../language-reference/keywords/join-clause.md)  
- [group – klauzule](../language-reference/keywords/group-clause.md)
+## <a name="example"></a>Příklad
+
+Následující příklad ukazuje, jak používat složený klíč k připojení dat ze třech tabulkách:
+
+```csharp
+var query = from o in db.Orders
+    from p in db.Products
+    join d in db.OrderDetails
+        on new {o.OrderID, p.ProductID} equals new {d.OrderID, d.ProductID} into details
+        from d in details
+        select new {o.OrderID, p.ProductID, d.UnitPrice};
+```
+
+Odvození typu na složených klíčích závisí na názvy vlastností v klíči a pořadí, ve kterém k nim dojde. Pokud vlastnosti ve zdrojových posloupností nemají stejné názvy, je nutné přiřadit nové názvy v klíčích. Například pokud `Orders` tabulky a `OrderDetails` tabulka každá používá jiné názvy pro jejich sloupců, můžete vytvořit složených klíčů tak, že přiřadíte stejné názvy v anonymních typů:
+
+```csharp
+join...on new {Name = o.CustomerName, ID = o.CustID} equals
+    new {Name = d.CustName, ID = d.CustID }
+```
+
+Složené klíče můžete také použít v `group` klauzuli.
+
+## <a name="see-also"></a>Viz také:
+
+[LINQ (Language Integrated Query)](index.md)  
+[join – klauzule](../language-reference/keywords/join-clause.md)  
+[group – klauzule](../language-reference/keywords/group-clause.md)  

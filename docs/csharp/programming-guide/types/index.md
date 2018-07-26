@@ -12,86 +12,86 @@ helpviewer_keywords:
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
 ms.openlocfilehash: 15f3a774255923aba83f15700540369040c02dcd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33338715"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37961531"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 ## <a name="types-variables-and-values"></a>Typy, proměnných a hodnot  
- C# je jazyk silného typu. Všechny proměnné a konstanta má typ, stejně jako každý výraz, který se vyhodnotí na hodnotu. Každý podpis metody Určuje typ pro každý vstupní parametr a návratovou hodnotu. Knihovna tříd rozhraní .NET definuje sadu předdefinovaných číselnými typy a také více komplexní typy, které představují širokou škálu Logická konstrukce, jako je například systém souborů, připojení k síti, kolekce a pole objektů a dat. Typické programu v C# používá typy z knihovny tříd a uživatelem definované typy, které model koncepty, které jsou specifické pro program problém domény.  
+ C# je silně typovaný jazyk. Všechny proměnné a konstanty mají typ, stejně jako každý výraz, který se vyhodnotí na hodnotu. Každý podpis metody Určuje typ každého vstupního parametru a vracené hodnoty. Knihovny tříd .NET definuje sadu předdefinovaných číselných typů, jakož i složitější typy, které představují širokou škálu logických konstrukcí, jako je například systém souborů, připojení k síti, kolekce a pole objektů a data. Typické programu v C# používá typy z knihovny tříd i uživatelské typy, které modelují koncepty, které jsou specifické pro problematiku programu.  
   
- Informace uložené v typu patří:  
+ Informace uložené v typu může patřit také následující:  
   
--   Prostor úložiště, který vyžaduje proměnné typu.  
+-   Prostor úložiště, který vyžaduje proměnnou typu.  
   
--   Maximální a minimální hodnoty, které může představovat.  
+-   Maximální a minimální hodnoty, které mohou představovat.  
   
--   Členy (metody, pole, události a tak dále), které obsahuje.  
+-   Členy (metody, pole, události atd.), které obsahuje.  
   
 -   Základní typ, který dědí z.  
   
--   Umístění, kde se přidělí paměť pro proměnné v době běhu.  
+-   Umístění, kde bude přidělena paměť pro proměnné v době běhu.  
   
 -   Typy operací, které jsou povoleny.  
   
- Kompilátor používá informace o typu a ujistěte se, že jsou všechny operace, které se provádí v kódu *bezpečnost typů*. Například, pokud deklarace proměnné typu [int](../../../csharp/language-reference/keywords/int.md), kompilátor umožňuje dále používat proměnné a operace odčítání. Pokud se pokusíte provést tyto stejné operace v proměnné typu [bool](../../../csharp/language-reference/keywords/bool.md), kompilátor vygeneruje chybu, jak je znázorněno v následujícím příkladu:  
+ Kompilátor používá informace o typu, abyste měli jistotu, že jsou všechny operace, které jsou prováděny ve vašem kódu *bezpečnost typů*. Například, pokud deklarujete proměnnou typu [int](../../../csharp/language-reference/keywords/int.md), kompilátor umožňuje také použít proměnné a operace odčítání. Pokud se pokusíte provést tyto stejné operace na proměnnou typu [bool](../../../csharp/language-reference/keywords/bool.md), kompilátor vygeneruje chybu, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideTypes#42](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_1.cs)]  
   
 > [!NOTE]
->  Jazyk C a C++ vývojáře, Všimněte si, že v jazyce C#, [bool](../../../csharp/language-reference/keywords/bool.md) není převoditelná na [int](../../../csharp/language-reference/keywords/int.md).  
+>  Vývojáře v C a C++, Všimněte si, že v jazyce C#, [bool](../../../csharp/language-reference/keywords/bool.md) není převoditelná na [int](../../../csharp/language-reference/keywords/int.md).  
   
- Kompilátor vloží informace o typu do spustitelného souboru jako metadata. Modul CLR (CLR) používá aby metadata v době běhu k další zajistit bezpečnost typů, při přiděluje a uvolňuje volné paměti.  
+ Kompilátor vloží informace o typu do spustitelného souboru jako metadata. Common language runtime (CLR) používá tato metadata za běhu, aby byla dále podpořena bezpečnost typů, při přidělování a uvolňování paměti.  
   
-### <a name="specifying-types-in-variable-declarations"></a>Určení typů v deklarace proměnných  
- Když deklarovat proměnnou nebo konstantní v programu, musíte buď zadat typ, nebo použít [var](../../../csharp/language-reference/keywords/var.md) – klíčové slovo umožníte kompilátoru odvození typu. Následující příklad ukazuje některé deklarace proměnných, které používají integrované číselnými typy a komplexní uživatelem definované typy:  
+### <a name="specifying-types-in-variable-declarations"></a>Určení typů v deklaracích proměnných  
+ Pokud deklarujete proměnnou nebo konstantní v programu, musíte buď určit její typ nebo použít [var](../../../csharp/language-reference/keywords/var.md) – klíčové slovo, abyste umožnili kompilátoru odvodit typ. Následující příklad ukazuje některé deklarace proměnných, které používají předdefinované číselné typy a komplexní typy definované uživatelem:  
   
  [!code-csharp[csProgGuideTypes#36](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_2.cs)]  
   
- Typy metoda parametry a návratové hodnoty jsou určené v podpis metody. Následující podpis ukazuje metodu, která vyžaduje [int](../../../csharp/language-reference/keywords/int.md) jako vstupní argument a vrátí řetězec:  
+ Typy parametrů metod a vrácené hodnoty jsou uvedeny v podpisu metody. Následující podpis představuje metodu, která vyžaduje [int](../../../csharp/language-reference/keywords/int.md) jako vstupní argument a vrátí řetězec:  
   
  [!code-csharp[csProgGuideTypes#35](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_3.cs)]  
   
- Po je deklarovaná proměnné, nelze ji znovu deklarované s nový typ a nelze přiřadit hodnotu, která není kompatibilní s příslušným deklarovaným typem. Například nelze deklarovat [int](../../../csharp/language-reference/keywords/int.md) a přiřaďte ho logickou hodnotu z [true](../../../csharp/language-reference/keywords/true-literal.md). Hodnoty však můžete převést na jiné typy, např. Pokud jsou přiřazovány nové proměnné nebo předány jako argumenty metoda. A *typ – převod* této nemá příčina ztrátě dat se provádí automaticky kompilátorem. Vyžaduje převod, který může způsobit ztrátu dat *přetypování* ve zdrojovém kódu.  
+ Jakmile je proměnná deklarována, nemůže být znovu deklarována s novým typem a nelze jí přiřadit hodnotu, která není kompatibilní s příslušným deklarovaným typem. Například nelze deklarovat [int](../../../csharp/language-reference/keywords/int.md) a přiřadit mu hodnotu typu Boolean [true](../../../csharp/language-reference/keywords/true-literal.md). Hodnoty však lze převést na jiné typy, například když jsou přiřazeny nové proměnné nebo předány jako argumenty metody. A *převod typu* fakturuje se u tohoto nezpůsobí ztrátu dat probíhá automaticky kompilátorem. Vyžaduje převod, který může způsobit ztrátu dat *přetypování* ve zdrojovém kódu.  
   
  Další informace najdete v tématu [přetypování a převody typů](../../../csharp/programming-guide/types/casting-and-type-conversions.md).  
   
 ## <a name="built-in-types"></a>Vestavěné typy  
- C# obsahuje standardní sadu předdefinovaných číselnými typy představují celá čísla, číslo s plovoucí čárkou bodu hodnoty, logické výrazy, textových znaků, desetinná čísla a dalších typů dat. Existují také předdefinované `string` a `object` typy. Tyto jsou k dispozici pro použití v libovolné aplikaci C#. Další informace o předdefinovaných typů najdete v tématu [referenční tabulky pro typy](../../../csharp/language-reference/keywords/reference-tables-for-types.md).  
+ Jazyk C# poskytuje standardní sadu předdefinovaných číselných typů k vyjádření celočíselných hodnot, s plovoucí desetinnou čárkou hodnoty bodů, logických výrazů, znaků textu, desetinných míst a dalších typů dat. Existují také vestavěné `string` a `object` typy. Toto jsou k dispozici pro použití v libovolném programu C#. Další informace o předdefinovaných typech naleznete v tématu [referenční tabulky pro typy](../../../csharp/language-reference/keywords/reference-tables-for-types.md).  
   
 ## <a name="custom-types"></a>Vlastní typy  
- Můžete použít [struktura](../../../csharp/language-reference/keywords/struct.md), [třída](../../../csharp/language-reference/keywords/class.md), [rozhraní](../../../csharp/language-reference/keywords/interface.md), a [výčtu](../../../csharp/language-reference/keywords/enum.md) konstrukty, které vytvořit vlastní typy. Knihovna tříd rozhraní .NET, samotné je kolekce vlastních typů od společnosti Microsoft, který můžete použít ve svých vlastních aplikacích. Ve výchozím nastavení jsou k dispozici v libovolné aplikaci C# nejčastěji používané typy v knihovně tříd. Jiné jsou k dispozici pouze v případě, že explicitně přidat odkaz na projekt na sestavení, ve kterém jsou definovány. Po kompilátor obsahuje odkaz na sestavení, můžou deklarovat proměnné (a konstanty) z typů deklarované v této sestavě ve zdrojovém kódu. Další informace najdete v tématu [knihovna tříd rozhraní .NET](../../../standard/class-library-overview.md).  
+ Můžete použít [struktura](../../../csharp/language-reference/keywords/struct.md), [třídy](../../../csharp/language-reference/keywords/class.md), [rozhraní](../../../csharp/language-reference/keywords/interface.md), a [výčtu](../../../csharp/language-reference/keywords/enum.md) konstrukce k tvorbě vlastních typů. Samotné knihovny tříd .NET je kolekce vlastních typů společnosti Microsoft, můžete použít ve svých vlastních aplikacích. Nejčastěji používané typy v knihovně tříd jsou standardně k dispozici v libovolném programu C#. Ostatní jsou k dispozici pouze v případě, že explicitně přidáte odkaz na sestavení, ve kterém jsou definovány. Poté, co kompilátor získá odkaz na sestavení, můžete deklarovat proměnné (a konstanty) typů deklarovaných v daném sestavení ve zdrojovém kódu. Další informace najdete v tématu [knihovny tříd .NET](../../../standard/class-library-overview.md).  
   
 ## <a name="the-common-type-system"></a>Obecný systém typů  
- Je důležité pochopit dva základní body o systém typů v rozhraní .NET:  
+ Je důležité porozumět dvěma základním principům systému typu v rozhraní .NET:  
   
--   Podporuje se zásadou dědičnosti. Typy můžete odvozena od ostatních typů názvem *základní typy*. Odvozený typ dědí (s určitými omezeními), metody, vlastnosti a ostatním členům základního typu. Základní typ můžete zase odvozen od jiný typ, ve kterém případ odvozený typ dědí členů oba základní typy v hierarchii dědičnosti. Všechny typy, včetně předdefinovaných číselnými typy, jako například <xref:System.Int32?displayProperty=nameWithType> (C# – klíčové slovo: [int](../../../csharp/language-reference/keywords/int.md)), jsou odvozeny nakonec z jedné základní typ, který je <xref:System.Object?displayProperty=nameWithType> (C# – klíčové slovo: [objekt](../../../csharp/language-reference/keywords/object.md)). Tato hierarchie jednotná typ je volána [obecný systém typů](../../../standard/base-types/common-type-system.md) (STS). Další informace o dědičnosti v jazyce C#, najdete v části [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
+-   Podporuje princip dědičnosti. Typy lze odvodit z jiných typů nazývaných *základní typy*. Odvozený typ zdědí (s určitými omezeními) metody, vlastnosti a ostatní členy základního typu. Základní typ lze odvozovat z některých jiných typů, ve kterém případě odvozený typ dědí členy obou základních typů v hierarchii dědičnosti. Všechny typy včetně předdefinovaných číselných typů, jako například <xref:System.Int32?displayProperty=nameWithType> (C# – klíčové slovo: [int](../../../csharp/language-reference/keywords/int.md)), jsou odvozeny výsledku z jednoho základního typu, které jsou <xref:System.Object?displayProperty=nameWithType> (C# – klíčové slovo: [objekt](../../../csharp/language-reference/keywords/object.md)). Tato hierarchie jednotného typu se nazývá [obecný systém typů](../../../standard/base-types/common-type-system.md) (CTS). Další informace o dědičnosti v C# najdete v tématu [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
   
--   Každý typ v CTS je definován jako buď *typ hodnoty* nebo *odkazují na typ*. To zahrnuje všechny vlastní typy v knihovně tříd rozhraní .NET a také vlastní uživatelem definované typy. Typy, které se definují pomocí [struktura](../../../csharp/language-reference/keywords/struct.md) – klíčové slovo jsou typy hodnot, jsou předdefinované číselnými typy `structs`. Typy, které se definují pomocí [třída](../../../csharp/language-reference/keywords/class.md) – klíčové slovo je odkaz na typy. Typy odkazů a hodnotových typů mají různá pravidla kompilaci a různé chování v běhu.  
+-   Každý typ v CTS je definována buď jako *typ hodnoty* nebo *odkazovat na typ*. To zahrnuje všechny vlastní typy v knihovně tříd rozhraní .NET a také vlastní uživatelem definované typy. Typy, které definujete pomocí [struktura](../../../csharp/language-reference/keywords/struct.md) – klíčové slovo jsou typy hodnot; předdefinované číselné typy jsou `structs`. Typy, které definujete pomocí [třídy](../../../csharp/language-reference/keywords/class.md) – klíčové slovo jsou referenční typy. Typy odkazů a typy hodnot mají jiná pravidla pro kompilaci a jiné chování za běhu.  
   
- Následující obrázek znázorňuje vztahy mezi typy hodnot a typy odkazů v CTS.  
+ Následující ilustrace znázorňuje vztah mezi typy hodnot a odkazové typy v CTS.  
   
- ![Typy hodnot a typy odkazu](../../../csharp/programming-guide/types/media/valuetypescts.png "ValueTypesCTS")  
-Hodnotové nebo odkazové typy v CTS  
+ ![Typy hodnot a odkazové typy](../../../csharp/programming-guide/types/media/valuetypescts.png "ValueTypesCTS")  
+Typy hodnot a odkazové typy v CTS  
   
 > [!NOTE]
->  Uvidíte, že nejčastěji používané typy jsou všechny uspořádány do <xref:System> oboru názvů. Obor názvů, ve kterém se nachází typ má však žádný vztah k tom, zda je hodnota typu nebo typu odkazu.  
+>  Uvidíte, že nejčastěji používané typy jsou všechny uspořádány v <xref:System> oboru názvů. Obor názvů, ve kterém je obsažen typ, nemá však žádný vztah k tom, zda je hodnota typu nebo typu odkazu.  
   
 ### <a name="value-types"></a>Typy hodnot  
- Typy hodnot odvozena od <xref:System.ValueType?displayProperty=nameWithType>, která je odvozena z <xref:System.Object?displayProperty=nameWithType>. Typy, které jsou odvozeny od <xref:System.ValueType?displayProperty=nameWithType> chovají specifickým v modulu CLR. Hodnota typu proměnné přímo obsahovat jejich hodnoty, které znamená, že je paměť přidělená vložený v jakémkoli kontextu je deklarovaná proměnnou. Neexistuje žádné přidělení haldy samostatný nebo Režijní náklady na shromažďování uvolňování paměti pro typ hodnoty proměnné.  
+ Typy hodnot jsou odvozeny z <xref:System.ValueType?displayProperty=nameWithType>, která je odvozena z <xref:System.Object?displayProperty=nameWithType>. Typy, které jsou odvozeny z <xref:System.ValueType?displayProperty=nameWithType> mají zvláštní chování v modulu CLR. Hodnoty typových proměnných přímo obsahují své hodnoty, což znamená, že paměť je přidělena vnitřně v jakémkoli kontextu je proměnná deklarována. Neexistuje samostatné přidělení haldy nebo zařazení kolekce paměti pro proměnné typu hodnoty.  
   
  Existují dvě kategorie typů hodnot: [struktura](../../../csharp/language-reference/keywords/struct.md) a [výčtu](../../../csharp/language-reference/keywords/enum.md).  
   
- Předdefinované číselnými typy jsou struktury a mají vlastnosti a metody, které dostanete:  
+ Předdefinované číselné typy jsou struktury a mají vlastnosti a metody, které dostanete:  
   
 ```csharp  
 // Static method on type Byte.  
 byte b = Byte.MaxValue;  
 ```  
   
- Ale deklarace a k nim přiřadíte hodnoty, jako kdyby byly jednoduché typy neagregačními:  
+ Ale deklarujete je a přiřadit jim hodnoty tak jako by byly jednoduché neagregované typy:  
   
 ```csharp  
 byte num = 0xA;  
@@ -99,52 +99,52 @@ int i = 5;
 char c = 'Z';  
 ```  
   
- Typy hodnot jsou *zapečetěné*, což znamená, například, že nelze odvodit typ z <xref:System.Int32?displayProperty=nameWithType>, a nelze definovat struktury dědění z jakékoli uživatelsky definované třídy, nebo struktura, protože struktury může dědit vlastnosti pouze z <xref:System.ValueType?displayProperty=nameWithType> . Struktury však můžete implementovat jednu nebo více rozhraní. Může odevzdat typu Struktura k typu rozhraní; To způsobí, že *zabalení* operace obtékat spravovaná halda struktura uvnitř objekt typu odkaz. Operace zabalení dojít, když na metodu, která přebírá předáte typ hodnoty <xref:System.Object?displayProperty=nameWithType> jako vstupní parametr. Další informace najdete v tématu [zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md).  
+ Typy hodnot jsou *zapečetěné*, což znamená, že, například, že nemůžete odvodit typ z <xref:System.Int32?displayProperty=nameWithType>, a nemůžete definovat strukturu pro dědění z jakéhokoli uživatelsky definované třídy nebo struktury, protože struktura může dědit jedině z <xref:System.ValueType?displayProperty=nameWithType> . Strukturu však můžete implementovat jednu nebo více rozhraní. Můžete přetypovat obsadit typ struktury pro typ rozhraní; To způsobí, že *zabalení* operace zalomí strukturu uvnitř odkazu typu objektu na spravované haldě. K operaci zabalení dochází při předání typu hodnoty metodě, která přijímá <xref:System.Object?displayProperty=nameWithType> jako vstupní parametr. Další informace najdete v tématu [zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md).  
   
- Můžete použít [struktura](../../../csharp/language-reference/keywords/struct.md) – klíčové slovo k vytvoření vlastních typů vlastní hodnotu. Obvykle struktury slouží jako kontejner pro malou sadu související proměnné, jak je znázorněno v následujícím příkladu:  
+ Můžete použít [struktura](../../../csharp/language-reference/keywords/struct.md) – klíčové slovo k tvorbě vlastních typů vlastní hodnotu. Obvykle struktura slouží jako kontejner pro malou skupinu příbuzných proměnných, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_4.cs)]  
   
- Další informace o strukturách najdete v tématu [struktury](../../../csharp/programming-guide/classes-and-structs/structs.md). Další informace o typech hodnota v rozhraní .NET najdete v tématu [typy hodnot](../../../csharp/language-reference/keywords/value-types.md).  
+ Další informace o strukturách naleznete v tématu [struktury](../../../csharp/programming-guide/classes-and-structs/structs.md). Další informace o typech hodnot v rozhraní .NET najdete v tématu [hodnotách](../../../csharp/language-reference/keywords/value-types.md).  
   
- Je kategorie typů hodnot [výčtu](../../../csharp/language-reference/keywords/enum.md). Výčet definuje sadu s názvem celočíselné konstanty. Například <xref:System.IO.FileMode?displayProperty=nameWithType> výčet v knihovně tříd rozhraní .NET obsahuje sadu s názvem konstantní celá čísla, které určují, jak by měla otevřít soubor. Jak je znázorněno v následujícím příkladu je definována:  
+ Další kategorie typů hodnot je [výčtu](../../../csharp/language-reference/keywords/enum.md). Výčet definuje sadu pojmenovaných integrálních konstant. Například <xref:System.IO.FileMode?displayProperty=nameWithType> výčtu v knihovně tříd rozhraní .NET obsahuje sadu s názvem konstantní celá čísla, které určují, jak by měl být soubor otevřen. Jak je znázorněno v následujícím příkladu je definována:  
  
  [!code-csharp[csProgGuideTypes#44](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_5.cs)]  
   
- `System.IO.FileMode.Create` Konstanta má hodnotu 2. Název však má mnohem větší smysl pro člověka čtení zdrojový kód a z toho důvodu je je vhodnější použít výčty místo konstantní literál čísla. Další informace naleznete v tématu <xref:System.IO.FileMode?displayProperty=nameWithType>.  
+ `System.IO.FileMode.Create` – Konstanta má hodnotu 2. Název však má mnohem větší smysl pro člověka při čtení zdrojového kódu a z toho důvodu je lepší používat místo čísel konstantní literální čísla. Další informace naleznete v tématu <xref:System.IO.FileMode?displayProperty=nameWithType>.  
   
- Dědí všechny výčty <xref:System.Enum?displayProperty=nameWithType>, který dědí z <xref:System.ValueType?displayProperty=nameWithType>. Všechna pravidla, která se týkají struktury platí také pro výčty. Další informace o výčty najdete v tématu [výčtové typy](../../../csharp/programming-guide/enumeration-types.md).  
+ Všechny výčty dědí z <xref:System.Enum?displayProperty=nameWithType>, který dědí z <xref:System.ValueType?displayProperty=nameWithType>. Všechna pravidla, které se vztahují na struktury se vztahují také na výčty. Další informace o výčtech naleznete v tématu [výčtové typy](../../../csharp/programming-guide/enumeration-types.md).  
   
 ### <a name="reference-types"></a>Typy odkazů  
- Typ, který je definován jako [třída](../../../csharp/language-reference/keywords/class.md), [delegovat](../../../csharp/language-reference/keywords/delegate.md), pole, nebo [rozhraní](../../../csharp/language-reference/keywords/interface.md) je *odkazují na typ*. Za běhu, když deklarovat proměnnou typu odkaz, proměnná obsahuje hodnotu [null](../../../csharp/language-reference/keywords/null.md) dokud explicitně vytvořit objekt pomocí [nové](../../../csharp/language-reference/keywords/new.md) operátor, nebo ji přiřadit objekt, který byl jinde vytvořené pomocí `new`, jak je znázorněno v následujícím příkladu:
+ Typ, který je definován jako [třídy](../../../csharp/language-reference/keywords/class.md), [delegovat](../../../csharp/language-reference/keywords/delegate.md), pole, nebo [rozhraní](../../../csharp/language-reference/keywords/interface.md) je *odkazovat na typ*. V době běhu při deklarování proměnné typu odkazu proměnná obsahuje hodnotu [null](../../../csharp/language-reference/keywords/null.md) dokud explicitně nevytvoříte objekt s použitím [nové](../../../csharp/language-reference/keywords/new.md) operátor nebo jí nepřiřadíte objekt, který je vytvořen jinde pomocí `new`, jak je znázorněno v následujícím příkladu:
   
 ```csharp  
 MyClass mc = new MyClass();  
 MyClass mc2 = mc;  
 ```  
-   Rozhraní musí být inicializován společně s objektu třídy, který implementuje ho. Pokud `MyClass` implementuje `IMyInterface`, vytvořte instanci `IMyInterface` jak je znázorněno v následujícím příkladu:  
+   Rozhraní musí být inicializováno spolu s objektem třídy, který jej implementuje. Pokud `MyClass` implementuje `IMyInterface`, můžete vytvořit instanci `IMyInterface` jak je znázorněno v následujícím příkladu:  
   
 ```csharp  
 IMyInterface iface = new MyClass();  
 ```  
   
- Při vytvoření objektu je paměť přidělená v spravovaná halda a proměnná obsahuje pouze odkaz na objekt umístění. Typy v haldě spravované vyžadují režijní náklady na jejich přidělení i při jsou uvolnit pomocí funkce správy paměti automatické modulu CLR, která se označuje jako *uvolňování paměti*. Ale je také vysoce optimalizovaný uvolňování paměti a ve většině scénářů nevytvoří problémy výkonem. Další informace o uvolňování paměti najdete v tématu [Automatická správa paměti](../../../standard/automatic-memory-management.md).  
+ Při vytvoření objektu je paměť přidělena na spravované haldě a proměnná obsahuje pouze odkaz na umístění objektu. Typy na spravované haldě zdržovat při přidělování i při jejich převzetí pomocí funkce správy automatické paměti modulu CLR, která se nazývá *uvolňování*. Nicméně uvolňování paměti je také vysoce optimalizováno a ve většině případů nedojde k vytvoření problému s výkonem. Další informace o uvolňování paměti naleznete v tématu [Automatická správa paměti](../../../standard/automatic-memory-management.md).  
   
- Všechna pole jsou odkazové typy, i když jsou jejich elementů typů hodnot. Pole implicitně odvozena od <xref:System.Array?displayProperty=nameWithType> třídy, ale nikoli deklarace a jejich používání s zjednodušenou syntaxi, který je zadán v jazyce C#, jak je znázorněno v následujícím příkladu:  
+ Všechna pole jsou typy odkazů, i když jsou jejich prvky typy hodnot. Pole implicitně odvozují ze <xref:System.Array?displayProperty=nameWithType> třídy, ale deklarujete a používáte je se zjednodušenou syntaxí, která je k dispozici v jazyce C#, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideTypes#45](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_6.cs)]  
   
- Typy odkazů, plně podporovat dědičnosti. Při vytváření třídy lze dědit z jakéhokoli rozhraní nebo třídu, která není definován jako [zapečetěné](../../../csharp/language-reference/keywords/sealed.md), a ostatní třídy lze dědit z vaší třídy a přepsat virtuální metody. Další informace o tom, jak vytvořit vlastní třídy najdete v tématu [třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md). Další informace o dědičnosti a virtuální metody najdete v tématu [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
+ Typy odkazu plně podporují dědičnost. Při vytváření třídy můžete dědit ze kteréhokoli rozhraní nebo třídu, která není definován jako [zapečetěné](../../../csharp/language-reference/keywords/sealed.md), a jiné třídy mohou dědit z vaší třídy a přepsat vaše virtuální metody. Další informace o tom, jak vytvořit vlastní třídy naleznete v tématu [třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md). Další informace o dědičnosti a virtuálních metodách, naleznete v tématu [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
   
-## <a name="types-of-literal-values"></a>Typy hodnot literálu  
- V jazyce C# literálových hodnot z kompilátoru přijímat typu. Můžete určit, jak by měla být zadána číselný literál připojením písmeno na konec číslo. Například k určení, že hodnota 4.56 by měl být považovány za plovoucí desetinné čárky, připojit "f" nebo "F" po číslo: `4.56f`. Pokud je připojen žádný písmeno, kompilátor odvodí typ literál. Další informace o tom, které lze určit typy přípony písmeno, najdete na stránkách odkaz pro jednotlivé typy v [typy hodnot](../../../csharp/language-reference/keywords/value-types.md).  
+## <a name="types-of-literal-values"></a>Typů hodnot literálů  
+ V jazyce C# hodnoty literálu získávají typ z kompilátoru. Můžete určit, jak by měly být typu číselný literál přidáním písmene na konci čísla. Například chcete-li určit, že by měl hodnotou 4,56 zacházet jako s float, přidejte k "f" nebo "F" za číslo: `4.56f`. Pokud není připojeno žádné písmeno, kompilátor odvodí typ literál. Další informace o tom, které mohou být typy specifikovat písmennými příponami, najdete v referenčních stránkách pro jednotlivé typy v [hodnotách](../../../csharp/language-reference/keywords/value-types.md).  
   
- Protože jsou zadány literály, a všechny typy odvození nakonec z <xref:System.Object?displayProperty=nameWithType>, můžete napsat a kompilace kódu, například následující:  
+ Vzhledem k tomu, že jsou literály typovány a všechny typy jsou nakonec odvozeny z <xref:System.Object?displayProperty=nameWithType>, můžete psát a kompilovat kód následujícím:  
   
  [!code-csharp[csProgGuideTypes#37](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_7.cs)]  
   
 ## <a name="generic-types"></a>Obecné typy  
- Typ lze deklarovat s jedním nebo více *parametry typu* slouží jako zástupný symbol pro skutečný typ ( *konkrétní typ*), kód klienta bude poskytovat při vytváření instance typu. Tyto typy jsou označovány jako *obecné typy*. Například typ formátu .NET <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> má jeden parametr typu, který podle konvence je přiřazen název *T*. Při vytváření instance typu, je třeba zadat typ objektů, které bude obsahovat seznam, například řetězec:  
+ Typ lze deklarovat s jedním nebo více *parametry typu* , které slouží jako zástupný symbol pro skutečný typ ( *konkrétní typ*), že kód klienta poskytne při vytváření instance daného typu. Tyto typy jsou označovány jako *obecných typů*. Například typ formátu .NET <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> má jeden parametr typu, které podle konvence je označen názvem *T*. Při vytváření instance typu, je třeba zadat typ objektů, které budou obsahovat seznam, například řetězec:  
  
 ```csharp
 List<string> stringList = new List<string>();
@@ -152,14 +152,14 @@ stringList.Add("String example");
 // compile time error adding a type other than a string:
 stringList.Add(4);
 ```
- Použití parametru typu umožňuje opakovaně použít stejnou třídu pro uložení všech typ elementu, aniž by bylo nutné převést každý element na [objekt](../../../csharp/language-reference/keywords/object.md). Obecné třídy kolekcí se nazývají *silného typu kolekce* protože kompilátor zná konkrétní typ elementů kolekci a může vygenerovat chybu v kompilaci v případě, například pokusíte přidat do celéčíslo`stringList` objektu v předchozím příkladu. Další informace najdete v tématu [obecné typy](../../../csharp/programming-guide/generics/index.md).  
+ Použití parametru typu umožňuje znovu použít stejné třídy pro uložení libovolného typu prvku, aniž by bylo nutné převést každý prvek na [objekt](../../../csharp/language-reference/keywords/object.md). Obecné třídy kolekcí se nazývají *silně typované kolekce* protože kompilátor zná konkrétní typ prvků kolekci a může vyvolat chyby při kompilaci, pokud, například pokusu o přidání celého čísla `stringList` objekt v předchozím příkladu. Další informace najdete v tématu [obecných typů](../../../csharp/programming-guide/generics/index.md).  
   
-## <a name="implicit-types-anonymous-types-and-nullable-types"></a>Implicitní typy, anonymní typy a typy podporující hodnoty Null  
- Jak jsme uvedli dříve, můžete implicitně zadat místní proměnné (ale ne členy třídy) pomocí [var](../../../csharp/language-reference/keywords/var.md) – klíčové slovo. Proměnná typu stále obdrží při kompilaci, ale typ zajišťuje kompilátoru. Další informace najdete v tématu [implicitně typované lokální proměnné](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
+## <a name="implicit-types-anonymous-types-and-nullable-types"></a>Implicitní typy, anonymní typy a typy s možnou hodnotou Null  
+ Jak bylo uvedeno dříve, můžete implicitně zadat místní proměnnou (ale ne členy třídy) pomocí [var](../../../csharp/language-reference/keywords/var.md) – klíčové slovo. Proměnná stále přijímá typ v době kompilace, ale typ je poskytován kompilátorem. Další informace najdete v tématu [implicitně typované lokální proměnné](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   
- V některých případech je nepraktické vytvoření pojmenovaného typu pro jednoduché sady souvisejících hodnot, které nemáte v úmyslu k uložení nebo předejte mimo hranice metoda. Můžete vytvořit *anonymní typy* pro tento účel. Další informace najdete v tématu [anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
+ V některých případech je nevhodné vytvářet pojmenované typy pro jednoduché sady souvisejících hodnot, které nezamýšlíte ukládat ani přenášet mimo hranice metody. Můžete vytvořit *anonymní typy* pro tento účel. Další informace najdete v tématu [anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
   
- Typy hodnot obyčejnou nemůže mít hodnotu [null](../../../csharp/language-reference/keywords/null.md). Ale můžete vytvořit typy s možnou hodnotou Null hodnot připojení `?` po typu. Například `int?` je `int` typ, který může mít hodnotu [null](../../../csharp/language-reference/keywords/null.md). V CTS, s možnou hodnotou Null typy jsou instance typu Obecná struktura <xref:System.Nullable%601?displayProperty=nameWithType>. Typy s možnou hodnotou Null jsou zvláště užitečné, když jsou předávání dat do a z databáze, ve kterých může být číselné hodnoty null. Další informace najdete v tématu [typy s možnou hodnotou Null](../../../csharp/programming-guide/nullable-types/index.md).  
+ Typy běžných hodnot nemohou mít hodnotu [null](../../../csharp/language-reference/keywords/null.md). Můžete však vytvořit typy s možnou hodnotou Null přidáním `?` po typu. Například `int?` je `int` typ, který může mít také hodnotu [null](../../../csharp/language-reference/keywords/null.md). V CTS jsou typy připouštějící hodnotu Null instancemi obecného typu struktury <xref:System.Nullable%601?displayProperty=nameWithType>. Typy s možnou hodnotou Null jsou zvláště užitečné při předávání dat do a z databáze, ve kterých mohou být číselné hodnoty null. Další informace najdete v tématu [typy připouštějící hodnotu Null](../../../csharp/programming-guide/nullable-types/index.md).  
   
 ## <a name="related-sections"></a>Související oddíly  
  Další informace naleznete v následujících tématech:  

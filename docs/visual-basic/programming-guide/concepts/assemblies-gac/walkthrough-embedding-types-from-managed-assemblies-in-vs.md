@@ -1,68 +1,68 @@
 ---
-title: 'Návod: Vložení typů z řízených sestavení v sadě Visual Studio (Visual Basic)'
+title: 'Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 56ed12ba-adff-4e9c-a668-7fcba80c4795
 ms.openlocfilehash: 1f6176746b783d020c809fb0b5d55d741ce0148b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33644183"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39245466"
 ---
-# <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-visual-basic"></a>Návod: Vložení typů z řízených sestavení v sadě Visual Studio (Visual Basic)
-Pokud jste pro vložení informací o typu ze spravovaných sestavení se silným názvem, můžete volně spojte typy v aplikaci k dosažení nezávislost verze. To znamená váš program může být napsán používat typy z více verzí aplikace spravované knihovny aniž byste museli zopakovat pro každou verzi.  
+# <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-visual-basic"></a>Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)
+Pokud jste pro vložení informací o typu ze spravovaných sestavení se silným názvem, můžete volně zkombinujte typy v aplikaci dosáhnout nezávislosti na verzi. To znamená váš program může zapisovat používat typy z více verzí aplikace spravované knihovny aniž byste museli překompilují. pro každou verzi.  
   
- Typ vložení se často používá se spoluprací COM, jako je například aplikace, která používá objekty automatizace z aplikace Microsoft Office. Vložení informací o typu umožňuje ve stejném sestavení programu pro práci s různými verzemi nástroje Microsoft Office na různých počítačích. Však můžete použít také typu vložení v rámci řešení pro plně spravovaná.  
+ Typ vložení se často používá se spoluprací COM, jako je například aplikace, která používá objekty automatizace z aplikace Microsoft Office. Vložení informací o typu umožňuje jednomu sestavení programu pracovat s různými verzemi sady Microsoft Office na různých počítačích. Ale můžete použít také typ vkládání pomocí plně spravované řešení.  
   
- Lze jej vkládat informace o typu ze sestavení, který má následující vlastnosti:  
+ Lze jej vkládat informace o typu ze sestavení, která má následující vlastnosti:  
   
--   Sestavení zpřístupní alespoň jeden veřejné rozhraní.  
+-   Sestavení poskytuje aspoň jedno veřejných rozhraní.  
   
--   Vložené rozhraní jsou opatřen poznámkou `ComImport` atribut a `Guid` atribut (a jedinečný identifikátor GUID).  
+-   Vložená rozhraní je opatřen poznámkou `ComImport` atribut a `Guid` atribut (a jedinečný identifikátor GUID).  
   
--   Sestavení je opatřen poznámkou `ImportedFromTypeLib` atribut nebo `PrimaryInteropAssembly` atribut a úroveň sestavení `Guid` atribut. (Ve výchozím nastavení, zahrnují šablony projektů Visual Basic úrovni sestavení `Guid` atributů.)  
+-   Sestavení je opatřen poznámkou `ImportedFromTypeLib` atribut nebo `PrimaryInteropAssembly` atribut a úrovni sestavení `Guid` atribut. (Ve výchozím nastavení, zahrnují šablony projektů Visual Basic úrovni sestavení `Guid` atribut.)  
   
- Po zadání veřejného rozhraní, která může být vložen, můžete vytvořit runtime třídy, které implementují těchto rozhraní. Program klienta můžete pak vložení informací o typu pro tyto rozhraní v době návrhu pomocí odkazování na sestavení, které obsahuje veřejné rozhraní a nastavení `Embed Interop Types` vlastnost odkazu na `True`. Jde o ekvivalent pomocí příkazového řádku kompilátoru a odkazování na sestavení s použitím `/link` – možnost kompilátoru. Program klienta pak můžete načíst instancí objektů vaší runtime, která je zadán jako těchto rozhraní. Pokud vytvoříte novou verzi vašeho sestavení silným názvem modulu runtime, není nutné zopakovat s sestavení aktualizované runtime program klienta. Místo toho program klienta budou nadále používat kteroukoli verzi modulu runtime sestavení je k dispozici, pomocí informací o vloženého typu pro veřejné rozhraní.  
+ Po zadání veřejného rozhraní, která může být vložen, můžete vytvořit modul runtime třídy, které implementují tato rozhraní. Klientský program může potom můžete vložit informace o těchto rozhraní typu v době návrhu pomocí odkazu na sestavení, které obsahuje veřejné rozhraní a nastavení `Embed Interop Types` vlastnosti odkazu na `True`. Jedná se o ekvivalent používání kompilátoru příkazového řádku a odkazování na sestavení s použitím `/link` – možnost kompilátoru. Klientská aplikace může pak načíst instance objektů modulu runtime typu těchto rozhraní. Pokud vytvoříte novou verzi vašich sestavení silným názvem modulu runtime, není potřeba klientský program překompilují se aktualizovaný modul runtime sestavení. Místo toho klientskou aplikaci dál používat, podle toho, která verze sestavení modulu runtime je k dispozici, pomocí informací o vloženém typu pro veřejné rozhraní.  
   
- Vzhledem k tomu, že primární funkce typ vnoření je podpora vložení informací o typu ze sestavení vzájemné spolupráce COM, při vložení informací o typu ve plně spravovaná řešení platí následující omezení:  
+ Vzhledem k tomu, že primární funkce vkládání typ pro podporu vkládání informací o typu ze sestavení vzájemné spolupráce COM se při vložení informací o typu do plně spravované řešení platí následující omezení:  
   
--   Pouze atributy, které jsou specifické pro zprostředkovatele komunikace s objekty COM jsou vloženy; ostatní atributy se ignorují.  
+-   Jsou vloženy pouze atributy specifické pro zprostředkovatele komunikace s objekty COM; Další atributy se ignorují.  
   
--   Pokud typu používá obecné parametry a typ obecný parametr je vloženého typu, typu nelze použít v hranici sestavení. Při překročení hranici sestavení příklady volání metody z jiného sestavení nebo typ odvozování z typu definovaný v jiném sestavení.  
+-   Pokud typ používá obecné parametry a vložený typ je typ obecný parametr, tento typ nelze použít přes hranice sestavení. Příklady přes hranice sestavení, jsou volání metody z jiného sestavení nebo typ odvozený od typu definované v jiném sestavení.  
   
--   Konstanty nejsou vložena.  
+-   Konstanty nejsou vložené.  
   
--   <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> Třída nepodporuje vloženého typu jako klíč. Můžete implementovat vlastní typ slovníku pro podporu vloženého typu jako klíč.  
+-   <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> Třída nepodporuje vložený typ jako klíč. Můžete implementovat vlastní typ slovníku pro podporu vložený typ jako klíč.  
   
- V tomto návodu se postupujte takto:  
+ V tomto návodu provedete následující:  
   
--   Vytvořte sestavení se silným názvem, který má veřejné rozhraní, který obsahuje informace o typu, kterou můžete vložit.  
+-   Vytvořte sestavení se silným názvem, který má veřejné rozhraní, který obsahuje informace o typu, který může být vložen.  
   
--   Vytvořte sestavení silným názvem modulu runtime, který implementuje této veřejné rozhraní.  
+-   Vytvořte sestavení silným názvem modulu runtime, který implementuje veřejných rozhraní.  
   
--   Vytvořte program klienta, který se vloží informací o typu ze veřejné rozhraní a vytvoří instanci třídy ze sestavení modulu runtime.  
+-   Vytvořte program klienta, který se vloží informace o typu z veřejného rozhraní a vytvoří instanci třídy v sestavení modulu runtime.  
   
--   Upravit a znovu sestavte sestavení za běhu.  
+-   Upravit a znovu sestavte sestavení modulu runtime.  
   
--   Spusťte klientskou aplikaci, která v tématu, aby se používal novou verzi modulu runtime sestavení bez nutnosti její kompilace programu klienta.  
+-   Spusťte klientskou aplikaci, která věděli, že nová verze sestavení modulu runtime používá bez nutnosti znovu kompilovat program klienta.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-## <a name="creating-an-interface"></a>Vytváření rozhraní  
+## <a name="creating-an-interface"></a>Vytvoření rozhraní  
   
-#### <a name="to-create-the-type-equivalence-interface-project"></a>Vytvoření projektu typu ekvivalenční rozhraní  
+#### <a name="to-create-the-type-equivalence-interface-project"></a>Vytvoření projektu rozhraní rovnocennosti typu  
   
-1.  V sadě Visual Studio na **soubor** nabídky, přejděte na příkaz **nový** a pak klikněte na **projektu**.  
+1.  V sadě Visual Studio na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**.  
   
-2.  V **nový projekt** dialogovém **typy projektů** podokně, ujistěte se, že **Windows** je vybrána. Vyberte **knihovny tříd** v **šablony** podokně. V **název** zadejte `TypeEquivalenceInterface`a potom klikněte na **OK**. Vytvoření nového projektu.  
+2.  V **nový projekt** v dialogu **typy projektů** podokno, ujistěte se, že **Windows** zaškrtnuto. Vyberte **knihovny tříd** v **šablony** podokně. V **název** zadejte `TypeEquivalenceInterface`a potom klikněte na tlačítko **OK**. Vytvoření nového projektu.  
   
-3.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na soubor Class1.vb a klikněte na **přejmenovat**. Přejmenujte soubor `ISampleInterface.vb` a stiskněte klávesu ENTER. Přejmenování souboru také přejmenuje třídy pro `ISampleInterface`. Tato třída bude reprezentovat veřejné rozhraní pro třídu.  
+3.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na soubor Class1.vb a klikněte na tlačítko **přejmenovat**. Přejmenujte soubor na `ISampleInterface.vb` a stiskněte klávesu ENTER. Přejmenování souboru se také přejmenujte třídu na `ISampleInterface`. Tato třída bude reprezentovat veřejného rozhraní pro třídu.  
   
-4.  Klikněte pravým tlačítkem na projekt TypeEquivalenceInterface a klikněte na tlačítko **vlastnosti**. Klikněte **zkompilovat** kartě. Nastavte výstupní cesta na některé platné místo ve svém vývojovém počítači, jako je třeba `C:\TypeEquivalenceSample`. Toto umístění se taky použije později v tomto návodu.  
+4.  Klikněte pravým tlačítkem na projekt TypeEquivalenceInterface a klikněte na tlačítko **vlastnosti**. Klikněte na tlačítko **kompilaci** kartu. Nastavte výstupní cesta platná umístění na vašem vývojovém počítači, jako je třeba `C:\TypeEquivalenceSample`. Toto umístění se taky použije v pozdějším kroku v tomto názorném postupu.  
   
-5.  Při úpravách stále vlastností projektu, klikněte **podpisování** karta. Vyberte **podepsání sestavení** možnost. V **vyberte soubor klíče se silným názvem** seznamu, klikněte na tlačítko **< nová... >**. V **název souboru klíče** zadejte `key.snk`. Vymazat **chránit Moje soubor klíče s heslem** zaškrtávací políčko. Click **OK**.  
+5.  Při úpravách stále vlastnosti projektu, klikněte na tlačítko **podepisování** kartu. Vyberte **podepsat sestavení** možnost. V **vyberte soubor klíče se silným názvem** klikněte na možnost **< Nový … >**. V **název souboru klíče** zadejte `key.snk`. Zrušte **chránit můj soubor klíče s heslem** zaškrtávací políčko. Klikněte na tlačítko **OK**.  
   
-6.  Otevřete soubor ISampleInterface.vb. Přidejte následující kód do souboru třídy ISampleInterface k vytvoření rozhraní ISampleInterface.  
+6.  Otevřete soubor ISampleInterface.vb. Přidejte následující kód do souboru třídy ISampleInterface k vytvoření ISampleInterface rozhraní.  
   
     ```vb  
     Imports System.Runtime.InteropServices  
@@ -75,13 +75,13 @@ Pokud jste pro vložení informací o typu ze spravovaných sestavení se silný
     End Interface  
     ```  
   
-7.  Na **nástroje** nabídky, klikněte na tlačítko **vytvořit Guid**. V **vytvořit GUID** dialogové okno, klikněte na tlačítko **registru formátu** a pak klikněte na **kopie**. Klikněte na tlačítko **ukončení**.  
+7.  Na **nástroje** nabídky, klikněte na tlačítko **Create Guid**. V **Create GUID** dialogové okno, klikněte na tlačítko **formát registru** a potom klikněte na tlačítko **kopírování**. Klikněte na tlačítko **ukončovací**.  
   
-8.  V `Guid` atribut, odstraňte ukázka GUID a vložte identifikátor GUID, který jste zkopírovali ze **vytvořit GUID** dialogové okno. Odebrat složené závorky ({}) ze zkopírovaného identifikátor GUID.  
+8.  V `Guid` atribut, odstraňte ukázkový identifikátor GUID a vložte identifikátor GUID, který jste zkopírovali **Create GUID** dialogové okno. Odebrat složené závorky ({}) ze zkopírovaného identifikátor GUID.  
   
 9. Na **projektu** nabídky, klikněte na tlačítko **zobrazit všechny soubory**.  
   
-10. V **Průzkumníku řešení**, rozbalte **Můj projekt** složky. Dvakrát klikněte AssemblyInfo.vb. Do souboru přidejte následující atribut.  
+10. V **Průzkumníka řešení**, rozbalte **Můj projekt** složky. Dvakrát klikněte AssemblyInfo.vb. Přidejte následující atribut souboru.  
   
     ```vb  
     <Assembly: ImportedFromTypeLib("")>  
@@ -91,29 +91,29 @@ Pokud jste pro vložení informací o typu ze spravovaných sestavení se silný
   
 11. Uložte projekt.  
   
-12. Klikněte pravým tlačítkem na projekt TypeEquivalenceInterface a klikněte na tlačítko **sestavení**. Soubor DLL knihovny tříd jsou kompilované a uložit na zadaná sestavení výstupní cestu (například C:\TypeEquivalenceSample).  
+12. Klikněte pravým tlačítkem na projekt TypeEquivalenceInterface a klikněte na tlačítko **sestavení**. Soubor DLL knihovny tříd je zkompilován a uloží do zadané sestavení výstupní cestu (například C:\TypeEquivalenceSample).  
   
 ## <a name="creating-a-runtime-class"></a>Vytvoření třídy modulu Runtime  
   
-#### <a name="to-create-the-type-equivalence-runtime-project"></a>Vytvoření projektu typu ekvivalenční modulu runtime  
+#### <a name="to-create-the-type-equivalence-runtime-project"></a>Vytvoření projektu typu ekvivalence modulu runtime  
   
-1.  V sadě Visual Studio na **soubor** nabídky, přejděte na příkaz **nový** a pak klikněte na **projektu**.  
+1.  V sadě Visual Studio na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**.  
   
-2.  V **nový projekt** dialogovém **typy projektů** podokně, ujistěte se, že **Windows** je vybrána. Vyberte **knihovny tříd** v **šablony** podokně. V **název** zadejte `TypeEquivalenceRuntime`a potom klikněte na **OK**. Vytvoření nového projektu.  
+2.  V **nový projekt** v dialogu **typy projektů** podokno, ujistěte se, že **Windows** zaškrtnuto. Vyberte **knihovny tříd** v **šablony** podokně. V **název** zadejte `TypeEquivalenceRuntime`a potom klikněte na tlačítko **OK**. Vytvoření nového projektu.  
   
-3.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na soubor Class1.vb a klikněte na **přejmenovat**. Přejmenujte soubor `SampleClass.vb` a stiskněte klávesu ENTER. Přejmenování souboru také přejmenuje třídy pro `SampleClass`. Tato třída se implementovat `ISampleInterface` rozhraní.  
+3.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na soubor Class1.vb a klikněte na tlačítko **přejmenovat**. Přejmenujte soubor na `SampleClass.vb` a stiskněte klávesu ENTER. Přejmenování souboru třídy, která se také přejmenuje `SampleClass`. Tato třída implementuje `ISampleInterface` rozhraní.  
   
-4.  Klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **vlastnosti**. Klikněte **zkompilovat** kartě. Nastavit výstupní cesta do stejného umístění, které jste použili v TypeEquivalenceInterface projektu, například `C:\TypeEquivalenceSample`.  
+4.  Klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **vlastnosti**. Klikněte na tlačítko **kompilaci** kartu. Nastavte výstupní cestu do stejného umístění, například použít v projektu TypeEquivalenceInterface `C:\TypeEquivalenceSample`.  
   
-5.  Při úpravách stále vlastností projektu, klikněte **podpisování** karta. Vyberte **podepsání sestavení** možnost. V **vyberte soubor klíče se silným názvem** seznamu, klikněte na tlačítko **< nová... >**. V **název souboru klíče** zadejte `key.snk`. Vymazat **chránit Moje soubor klíče s heslem** zaškrtávací políčko. Click **OK**.  
+5.  Při úpravách stále vlastnosti projektu, klikněte na tlačítko **podepisování** kartu. Vyberte **podepsat sestavení** možnost. V **vyberte soubor klíče se silným názvem** klikněte na možnost **< Nový … >**. V **název souboru klíče** zadejte `key.snk`. Zrušte **chránit můj soubor klíče s heslem** zaškrtávací políčko. Klikněte na tlačítko **OK**.  
   
-6.  Klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **přidat odkaz na**. Klikněte **Procházet** kartě a přejděte do složky výstupní cesta. Vyberte soubor TypeEquivalenceInterface.dll a klikněte na tlačítko **OK**.  
+6.  Klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **přidat odkaz**. Klikněte na tlačítko **Procházet** kartu a přejděte do složky cesta pro výstup. Vyberte soubor TypeEquivalenceInterface.dll a klikněte na tlačítko **OK**.  
   
 7.  Na **projektu** nabídky, klikněte na tlačítko **zobrazit všechny soubory**.  
   
-8.  V **Průzkumníku řešení**, rozbalte **odkazy** složky. Vyberte odkaz na TypeEquivalenceInterface. V okně Vlastnosti pro odkaz na TypeEquivalenceInterface nastavit **konkrétní verzi** vlastnost **False**.  
+8.  V **Průzkumníka řešení**, rozbalte **odkazy** složky. Vyberte odkaz TypeEquivalenceInterface. V okně Vlastnosti pro odkaz na TypeEquivalenceInterface nastavit **konkrétní verzi** vlastnost **False**.  
   
-9. Přidejte následující kód do souboru SampleClass třídy pro vytvoření třídy SampleClass.  
+9. Přidejte následující kód do souboru třídy SampleClass SampleClass třídu vytvořte.  
   
     ```vb  
     Imports TypeEquivalenceInterface  
@@ -137,25 +137,25 @@ Pokud jste pro vložení informací o typu ze spravovaných sestavení se silný
   
 10. Uložte projekt.  
   
-11. Klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **sestavení**. Soubor DLL knihovny tříd jsou kompilované a uložit na zadaná sestavení výstupní cestu (například C:\TypeEquivalenceSample).  
+11. Klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **sestavení**. Soubor DLL knihovny tříd je zkompilován a uloží do zadané sestavení výstupní cestu (například C:\TypeEquivalenceSample).  
   
 ## <a name="creating-a-client-project"></a>Vytvoření projektu klienta  
   
-#### <a name="to-create-the-type-equivalence-client-project"></a>Vytvoření projektu klienta ekvivalenční typu  
+#### <a name="to-create-the-type-equivalence-client-project"></a>Vytvoření projektu klienta rovnocennosti typu  
   
-1.  V sadě Visual Studio na **soubor** nabídky, přejděte na příkaz **nový** a pak klikněte na **projektu**.  
+1.  V sadě Visual Studio na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**.  
   
-2.  V **nový projekt** dialogovém **typy projektů** podokně, ujistěte se, že **Windows** je vybrána. Vyberte **konzolové aplikace** v **šablony** podokně. V **název** zadejte `TypeEquivalenceClient`a potom klikněte na **OK**. Vytvoření nového projektu.  
+2.  V **nový projekt** v dialogu **typy projektů** podokno, ujistěte se, že **Windows** zaškrtnuto. Vyberte **konzolovou aplikaci** v **šablony** podokně. V **název** zadejte `TypeEquivalenceClient`a potom klikněte na tlačítko **OK**. Vytvoření nového projektu.  
   
-3.  Klikněte pravým tlačítkem na projekt TypeEquivalenceClient a klikněte na tlačítko **vlastnosti**. Klikněte **zkompilovat** kartě. Nastavit výstupní cesta do stejného umístění, které jste použili v TypeEquivalenceInterface projektu, například `C:\TypeEquivalenceSample`.  
+3.  Klikněte pravým tlačítkem na projekt TypeEquivalenceClient a klikněte na tlačítko **vlastnosti**. Klikněte na tlačítko **kompilaci** kartu. Nastavte výstupní cestu do stejného umístění, například použít v projektu TypeEquivalenceInterface `C:\TypeEquivalenceSample`.  
   
-4.  Klikněte pravým tlačítkem na projekt TypeEquivalenceClient a klikněte na tlačítko **přidat odkaz na**. Klikněte **Procházet** kartě a přejděte do složky výstupní cesta. Vyberte soubor TypeEquivalenceInterface.dll (ne TypeEquivalenceRuntime.dll) a klikněte na tlačítko **OK**.  
+4.  Klikněte pravým tlačítkem na projekt TypeEquivalenceClient a klikněte na tlačítko **přidat odkaz**. Klikněte na tlačítko **Procházet** kartu a přejděte do složky cesta pro výstup. Vyberte soubor TypeEquivalenceInterface.dll (ne TypeEquivalenceRuntime.dll) a klikněte na tlačítko **OK**.  
   
 5.  Na **projektu** nabídky, klikněte na tlačítko **zobrazit všechny soubory**.  
   
-6.  V **Průzkumníku řešení**, rozbalte **odkazy** složky. Vyberte odkaz na TypeEquivalenceInterface. V okně Vlastnosti pro odkaz na TypeEquivalenceInterface nastavit **vložit zprostředkovatel komunikace s objekty typy** vlastnost **True**.  
+6.  V **Průzkumníka řešení**, rozbalte **odkazy** složky. Vyberte odkaz TypeEquivalenceInterface. V okně Vlastnosti pro odkaz na TypeEquivalenceInterface nastavit **Embed Interop Types** vlastnost **True**.  
   
-7.  Přidejte následující kód do souboru Module1.vb vytvoření programu klienta.  
+7.  Přidejte následující kód do souboru Module1.vb vytvořit klientskou aplikaci.  
   
     ```vb  
     Imports TypeEquivalenceInterface  
@@ -176,17 +176,17 @@ Pokud jste pro vložení informací o typu ze spravovaných sestavení se silný
     End Module  
     ```  
   
-8.  Stisknutím klávesy CTRL + F5 sestavit a spustit program.  
+8.  Stisknutím kláves CTRL + F5 sestavte a spusťte program.  
   
 ## <a name="modifying-the-interface"></a>Úprava rozhraní  
   
-#### <a name="to-modify-the-interface"></a>Chcete-li upravit rozhraní  
+#### <a name="to-modify-the-interface"></a>Chcete-li změnit rozhraní  
   
-1.  V sadě Visual Studio na **soubor** nabídky, přejděte na příkaz **otevřete**a potom klikněte na **projekt nebo řešení**.  
+1.  V sadě Visual Studio na **souboru** nabídky, přejděte k **otevřít**a potom klikněte na tlačítko **projekt či řešení**.  
   
-2.  V **otevřeného projektu** dialogové okno, klikněte pravým tlačítkem na projekt TypeEquivalenceInterface a pak klikněte na tlačítko **vlastnosti**. Klikněte **aplikace** kartě. Klikněte **informací o sestavení** tlačítko. Změna **verze sestavení** a **verze souboru** hodnoty k `2.0.0.0`.  
+2.  V **otevřít projekt** dialogové okno, klikněte pravým tlačítkem na projekt TypeEquivalenceInterface a potom klikněte na tlačítko **vlastnosti**. Klikněte na tlačítko **aplikace** kartu. Klikněte na tlačítko **informace o sestavení** tlačítko. Změnit **verze sestavení** a **verze souboru** hodnoty `2.0.0.0`.  
   
-3.  Otevřete soubor ISampleInterface.vb. Přidejte následující řádek kódu rozhraní ISampleInterface.  
+3.  Otevřete soubor ISampleInterface.vb. Přidejte následující řádek kódu do rozhraní ISampleInterface.  
   
     ```vb  
     Function GetDate() As Date  
@@ -196,15 +196,15 @@ Pokud jste pro vložení informací o typu ze spravovaných sestavení se silný
   
 4.  Uložte projekt.  
   
-5.  Klikněte pravým tlačítkem na projekt TypeEquivalenceInterface a klikněte na tlačítko **sestavení**. Nová verze souboru třídy knihovny DLL je zkompilovat a uloží do výstupní cesta zadaná sestavení (například C:\TypeEquivalenceSample).  
+5.  Klikněte pravým tlačítkem na projekt TypeEquivalenceInterface a klikněte na tlačítko **sestavení**. Novou verzi souboru DLL knihovny třídy je zkompilován a uloží do zadané výstupní cesty zadané sestavení (například C:\TypeEquivalenceSample).  
   
-## <a name="modifying-the-runtime-class"></a>Úprava Runtime – třída  
+## <a name="modifying-the-runtime-class"></a>Úprava třídy modulu Runtime  
   
-#### <a name="to-modify-the-runtime-class"></a>Chcete-li upravit runtime – třída  
+#### <a name="to-modify-the-runtime-class"></a>Chcete-li změnit třídy modulu runtime  
   
-1.  V sadě Visual Studio na **soubor** nabídky, přejděte na příkaz **otevřete**a potom klikněte na **projekt nebo řešení**.  
+1.  V sadě Visual Studio na **souboru** nabídky, přejděte k **otevřít**a potom klikněte na tlačítko **projekt či řešení**.  
   
-2.  V **otevřeného projektu** dialogové okno pole, klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **vlastnosti**. Klikněte **aplikace** kartě. Klikněte **informací o sestavení** tlačítko. Změna **verze sestavení** a **verze souboru** hodnoty k `2.0.0.0`.  
+2.  V **otevřít projekt** dialogovém poli, klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **vlastnosti**. Klikněte na tlačítko **aplikace** kartu. Klikněte na tlačítko **informace o sestavení** tlačítko. Změnit **verze sestavení** a **verze souboru** hodnoty `2.0.0.0`.  
   
 3.  Otevřete SampleClass.vbfile. Přidejte následující řádky kódu do třídy SampleClass.  
   
@@ -218,9 +218,9 @@ End Function
   
 4.  Uložte projekt.  
   
-5.  Klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **sestavení**. Aktualizovaná verze souboru třídy knihovny DLL je zkompilovat a uloží do výstupní cesta dříve zadané sestavení (například C:\TypeEquivalenceSample).  
+5.  Klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **sestavení**. Aktualizovanou verzi souboru DLL knihovny třídy je zkompilován a uložen v sestavení dříve zadaná výstupní cesta (například C:\TypeEquivalenceSample).  
   
-6.  V Průzkumníku souborů otevřete složku výstupu cestu (například C:\TypeEquivalenceSample). Dvakrát klikněte na TypeEquivalenceClient.exe ke spuštění programu. Program se projeví novou verzi sestavení TypeEquivalenceRuntime bez nutnosti znovu kompilovány.  
+6.  V Průzkumníku souborů otevřete složku výstupu cestu (například C:\TypeEquivalenceSample). Dvakrát klikněte na panel TypeEquivalenceClient.exe ke spuštění programu. Program bude odrážet nové verze sestavení TypeEquivalenceRuntime bez nutnosti znovu zkompilovat.  
   
 ## <a name="see-also"></a>Viz také  
  [/ Link (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/link.md)  

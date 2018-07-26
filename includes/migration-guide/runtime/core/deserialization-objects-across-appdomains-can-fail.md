@@ -1,10 +1,10 @@
-### <a name="deserialization-of-objects-across-appdomains-can-fail"></a>Deserializace objektů mezi domén může selhat.
+### <a name="deserialization-of-objects-across-appdomains-can-fail"></a>Deserializace objektů mezi doménami appdomains může selhat.
 
 |   |   |
 |---|---|
-|Podrobnosti|V některých případech Pokud aplikace používá dva nebo více domén aplikací jiné aplikace základů, pokusu o deserializaci objektů v rámci logické volání mezi doménami aplikací vyvolá výjimku.|
-|Návrh|V tématu [zmírnění: deserializace objektů mezi doménami aplikací](~/docs/framework/migration-guide/mitigation-deserialization-of-objects-across-app-domains.md)|
+|Podrobnosti|V některých případech kdy aplikace používá dvě nebo více domén aplikace s různými základy cesty aplikace, při pokusu o deserializaci objektů v logického kontextu volání mezi doménami aplikace výjimku.|
+|Návrh|Zobrazit [zmírnění: deserializace objektů mezi doménami aplikace](~/docs/framework/migration-guide/mitigation-deserialization-of-objects-across-app-domains.md)|
 |Rozsah|Edge|
 |Version|4.5.1|
-|Typ|modul runtime|
+|Typ|Modul runtime|
 

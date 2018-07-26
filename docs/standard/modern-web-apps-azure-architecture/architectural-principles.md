@@ -1,121 +1,120 @@
 ---
 title: Zásady architektury
-description: Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | Zásady architektury
+description: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure | Zásady architektury
 author: ardalis
 ms.author: wiwagn
-ms.date: 10/06/2017
-ms.openlocfilehash: 4ee14b128d3b83fd446352bb6f78afc08fb38c52
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 6/28/2018
+ms.openlocfilehash: 2e0938fc67e02a52b99158b2ff07b9f32464e674
+ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105856"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37404435"
 ---
 # <a name="architectural-principles"></a>Zásady architektury
 
-> "Pokud počítačů budovy programátory způsob napsali programy a první woodpecker, které byly dodány společně by destroy civilizace."  
+> "Pokud budov sestavili tvůrci programátoři způsob napsal programy a první woodpecker, který po něm přišel by zničit civilizace."  
 > _\- Weinberg Lucie_
 
-## <a name="summary"></a>Souhrn
+By měla navrhovat a navrhněte softwarová řešení s udržovatelnosti v úvahu. Zásady uvedené v této části vám pomůže směrem k rozhodnutí o architektuře, výsledkem bude čistý, údržby aplikace. Obecně tyto zásady se dozvíte, k vytváření aplikací ze samostatné součásti, které nejsou pevně ostatních částech aplikace, ale spíše komunikovat prostřednictvím explicitního rozhraní nebo systémů pro zasílání zpráv.
 
-Měli byste architektury a návrhu řešení softwaru s udržovatelnosti pamatovat. Principy uvedených v této části vám pomůže směrem k architektury rozhodnutí, která bude mít za následek čistá, údržby aplikace. Obecně platí tyto zásady pokyny k vytváření aplikací mimo diskrétní součásti, které nejsou pevně spojená do dalších částí vaší aplikace, ale spíš komunikují prostřednictvím explicitní rozhraní nebo systémem pro zasílání zpráv.
+## <a name="common-design-principles"></a>Běžné zásady návrhu
 
-## <a name="common-design-principles"></a>Společné zásady návrhu
+### <a name="separation-of-concerns"></a>Oddělení oblastí zájmu
 
-### <a name="separation-of-concerns"></a>Oddělené oblasti zájmu
+Je základní princip při vývoji **oddělení se týká**. Této zásady vyhodnotí, že by měla být oddělena software podle druhy práce, kterou provádí. Zvažte například aplikaci, která obsahuje logiku pro identifikaci zajímavosti položek se budou zobrazovat uživateli, a který zformátuje tyto položky tak, aby byly snadněji postřehnutelné určitým způsobem. Odpovědnost za výběr položek k formátování chování by měl být udržovány odděleně od chování za formátování položek, protože jde o samostatné otázky, které se vztahují pouze shodou mezi sebou.
 
-Prvotní zásadou při vývoji je **oddělení obavy**. Této zásady vyhodnotí, že by měl být oddělený softwaru podle druhy práce, kterou provádí. Zvažte například aplikace, který obsahuje logiku pro identifikaci pozoruhodné položky k zobrazení pro uživatele a který zformátuje takové položky v konkrétní způsob, jak byla výraznější. Chování za výběr položky k formátování by měly být udržovány odděleně od chování zodpovědná za formátování položek, protože existují samostatné otázky, které se vztahují pouze shodou jednu na druhou.
-
-Z pohledu architektury aplikace je možné logicky sestavit podle této zásady oddělením základní obchodní chování z infrastruktury a uživatelské rozhraní logiku. V ideálním případě obchodní pravidla a logiku musí nacházet v samostatné projektu, který by neměl závisí na jiné projekty v aplikaci. To pomáhá zajistit, že obchodní model je snadné testování a můžete rozvíjet bez se úzce párované nízké úrovně implementace na podrobnosti. Oddělené oblasti zájmu je je důležitým aspektem za použití vrstvy v architekturách aplikací.
+Architektonicky aplikace se dají logicky vytvářet postupovat podle této zásady tak, že oddělíte core obchodní chování od logiky infrastruktury a uživatelské rozhraní. V ideálním případě obchodní pravidla a logiky by měl nacházet v samostatný projekt, který by neměl závisí na jiné projekty v aplikaci. To pomáhá zajistit, že je obchodní model usnadňuje testování a můžete rozvíjet bez jsou úzce spojeny s podrobnosti nízké úrovně implementace. Oddělení oblastí zájmu je důležitým aspektem za použití vrstev v aplikačních architektur.
 
 ### <a name="encapsulation"></a>Zapouzdření
 
-Různé části aplikace, měli používat **zapouzdření** k izolovat z dalších částí aplikace. Součásti aplikace a vrstvy by mohli upravit interní implementace, aniž by vás jejich spolupracovníci tak dlouho, dokud nejsou externí kontrakty došlo k porušení. Správné použití operátoru zapouzdření pomůže dosáhnout volné párování a modularitu do návrhů aplikace, protože objekty a balíčky, lze nahradit alternativní implementace tak dlouho, dokud se udržuje stejné rozhraní.
+Používejte různé části aplikace **zapouzdření** chcete izolovat je z jiných částí aplikace. Mezi součástmi aplikace a vrstvy by měl být moci upravit jejich vnitřní implementace bez porušení jejich spolupracovníky tak dlouho, dokud nejsou došlo k porušení smlouvy externí. Správné použití operátoru zapouzdření pomáhá dosahovat volné párování a modularitu při návrhy aplikací, protože objekty a balíčky je možné nahradit alternativní implementace tak dlouho, dokud se udržuje stejné rozhraní.
 
-Ve třídách se dosáhne zapouzdření omezení mimo přístup k vnitřní stav třídu. Pokud mimo objektu actor chce, aby se k manipulaci se stav objektu, se musí učinit přes dobře definované funkce (nebo metoda setter vlastnosti), místo přímý přístup k privátním stav objektu. Součásti aplikace a aplikace, sami, by měl vystavit dobře definované rozhraní pro jejich spolupracovníci k použití, namísto povolení jejich stavu přímo upravovat. Tím se uvolní interní návrhu aplikace tak, aby v průběhu času vyvíjejí bez obav, že to tak poruší spolupracovníci, tak dlouho, dokud se spravuje veřejné kontrakty.
+Ve třídách zapouzdření se dosahuje tím, že omezíte mimo přístup ke vnitřní stav třídy. Pokud prvek "actor" vnější chce, aby se k manipulaci s stavu objektu, je to měl dělat implementovaný prostřednictvím dobře definovaných – funkce (nebo vlastnost setter), namísto nutnosti přímý přístup k privátním stavu objektu. Mezi součástmi aplikace a samotnými aplikacemi, by měly vystavit dobře definovaných rozhraní pro své spolupracovníky k používání a nepovolí svůj stav na přímo upravovat. Tím se uvolní interní návrhu aplikace až po v průběhu času vyvíjejí bez obav, že to uděláte tak přeruší spolupracovníkům, tak dlouho, dokud se zachovají veřejné smluv.
 
 ### <a name="dependency-inversion"></a>Inverze závislostí
 
-Směr závislosti v rámci aplikace musí být ve směru abstrakce, není podrobnosti implementace. Většina aplikací jsou určeny tak, aby kompilaci závislostí toků ve směru spuštění modulu runtime. To vytváří přímé závislost grafu. To znamená pokud modul A volání a funkce v modulu B, které volá funkci v modulu C, a potom v kompilaci čas A bude záležet na B, který bude záviset na C, jak ukazuje obrázek 4-1.
+Směr závislosti v rámci aplikace musí být ve směru abstrakce, ne podrobnosti implementace. Většina aplikací jsou napsané tak, aby závislostí kompilace toky ve směru spuštění modulu runtime. Tímto se vytvoří graf závislosti s přímým přístupem. To znamená pokud modul A volá funkci v modulu B, které volá funkci v modulu jazyka C a pak podle času A kompilace závisí na B, který bude záviset na C, jak ukazuje obrázek 4-1.
 
 ![](./media/image4-1.png)
 
-**Obrázek 4-1.** Graf přímé závislostí.
+**Obrázek 4-1.** Graf závislosti s přímým přístupem.
 
-Použití Princip inverzi závislostí umožňuje A volat metody abstrakci, který implementuje B, kterých by bylo možné pro A volání B za běhu, ale pro B závisí na rozhraní řízené A v době kompilace (tedy *převrácení* Typické kompilaci závislost). V době běhu toku spuštění programu zůstává beze změny, ale zavedení rozhraní znamená, že různé implementace tato rozhraní lze snadno připojit.
+Použití zásady čistého inverzi závislost umožňuje A volání metod na abstrakce, která implementuje B, aby bylo možné pro A volání B za běhu, ale pro B závisí na rozhraní řídí A v době kompilace (tedy *převrácení* Typické kompilace závislosti). V době běhu průběh provádění programu nezmění, ale po zavedení služby rozhraní znamená, že jedná o rozdílné implementace těchto rozhraní můžete snadno být zapojené do elektrické zásuvky.
 
 ![](./media/image4-2.png)
 
-**Obrázek 4-2.** Graf obráceným závislostí.
+**Obrázek 4-2.** Graf závislosti obrácený.
 
-**Závislost inverzi** je klíčovou součástí vytváření volně spojené aplikace, protože závisí na a implementovat vyšší úrovni abstrakce, nikoli opačným způsobem je možné zapsat podrobnosti implementace. Výsledná aplikace jsou v důsledku možností intenzivního testování, modulární a udržovatelný. Praxe *vkládání závislostí* je možné díky podle zásady inverzi závislostí.
+**Závislost inverzi** je klíčovou součástí vytvoření volně spárované aplikace, protože podrobnosti implementace lze zapsat a závisí na implementaci vyšší úroveň abstrakce, spíše než naopak. Výsledná aplikace jsou v důsledku možností intenzivního testování, modulární a udržovatelný. Postup, kdy se *injektáž závislostí* je možné podle principu inverzi závislostí.
 
 ### <a name="explicit-dependencies"></a>Explicitní závislosti.
 
-**Třídy a metody explicitně vyžadují všechny spolupráce objekty, které jsou nutné k fungování.** Třída konstruktory nabízejí možnost pro třídy k identifikaci akcí, které potřebují, aby byla v platném stavu a správně fungovat. Pokud definujete třídy, které můžete sestavený a názvem, ale které bude pouze fungovat správně, pokud jsou splněné určité globální nebo infrastruktury komponenty, jsou právě tyto třídy *nepoctivý* se svým klientům. Kontrakt konstruktor oznamuje, že klienta, která pouze potřebuje věcí zadaný (pravděpodobně nic, pokud třída právě používá výchozí konstruktor), ale pak za běhu, které se jím objekt skutečně vyžaduje něco jiného.
+**Metody a třídy explicitně vyžadují žádné spolupracující objekty, které potřebují, aby bylo možné správně fungovat.** Konstruktor třídy poskytují příležitost pro třídy k identifikaci věci, které musí být v platném stavu a správně fungovat. Při definování třídy, která vytvořen a názvem, ale která bude pouze fungovat správně, pokud některé součásti globální nebo infrastruktury jsou na místě, se tyto třídy *nepoctivý* s klienty. Kontrakt konstruktor sděluje, že klienta, který potřebuje pouze věci zadané (pravděpodobně nic, pokud třída používá pouze výchozí konstruktor), ale pak za běhu, který ukazuje objekt opravdu potřebujete něco jiného.
 
-Pomocí následujících Princip explicitní závislosti, třídy a metody probíhá pravdivé s jejich klienty o požadované funkce. Díky tomu váš kód více samoobslužných dokumentace a kódování měnící přívětivější, protože uživatelé vrátí se do vztahu důvěryhodnosti, který také poskytují, co je potřeba ve formě metoda nebo konstruktor parametry, objekty, které pracují se budou chovat správně za běhu.
+Podle principu explicitní závislosti jsou ještě upřímná s klienty o to, co chtějí, aby bylo možné funkci třídy a metody. Díky tomu váš kód více samoobslužných dokumentace a smlouvy přívětivější, psaní kódu, protože uživatelé budou přicházet do vztahu důvěryhodnosti, který tak dlouho, dokud poskytují toho, co vyžaduje ve formě – metoda nebo parametry konstruktoru, objekty, které pracují se bude chovat. správně za běhu.
 
-### <a name="single-responsibility"></a>Jeden odpovědnosti
+### <a name="single-responsibility"></a>Jednotnou zodpovědnost
 
-Jeden odpovědnost princip platí pro objektově orientované návrhu, ale lze považovat také za architektury Princip podobná oddělené oblasti zájmu. Se stavy, že objekty by měl mít jenom jeden zodpovědnost a že by měly mít jenom jeden důvod, chcete-li změnit. Konkrétně pouze situace, ve kterém by se měl změnit objekt je, pokud způsobem, ve kterém se provádí jeho jeden odpovědnost musí aktualizovat. Podle této zásady umožňuje vytvořit více volně spojené a modulární systémy od různé druhy nové chování může být implementováno jako nové třídy, nikoli přidáním další zodpovědnost za existujících tříd. Přidání nové třídy je vždy bezpečnější než změna existujících tříd, protože žádný kód ještě závisí na nové třídy.
+Princip jednotnou zodpovědnost se vztahuje k objektově orientovaný návrh, ale můžete také považují za architektury Princip podobný oddělení oblastí zájmu. Uvádí, že objekty by měl mít pouze jednu zodpovědnost a že by měly mít pouze jeden důvod, proč změnit. Konkrétně pouze situace, ve kterém by měl změnit objekt je, pokud se musí aktualizovat způsob, ve které provádí její odpovědnosti jeden. Podle této zásady umožňuje vytvořit více volně spojené a modulární systémy, od mnoha různých nové chování je možné implementovat jako nové třídy, nikoli přidáním další odpovědnost na existující třídy. Přidání nové třídy je vždy bezpečnější než změna existujících tříd, protože žádný kód, ale závisí na nové třídy.
 
-V aplikaci monolitický jsme můžete použít zásady jeden odpovědnosti na vysoké úrovni na vrstvy v aplikaci. Prezentace odpovědnost by měla zůstat v projektu uživatelského rozhraní, při přístupu k datům v rámci projektu infrastruktury by měly být udržovány zodpovědnost. V projektu základní aplikaci, kde lze snadno testovat a můžete rozvíjet nezávisle z jiných odpovědnosti by měly být udržovány obchodní logiku.
+V monolitické aplikaci jsme do vrstvy v aplikaci použít principu jednotnou zodpovědnost na vysoké úrovni. Prezentace odpovědnost by měla zůstat v projektu uživatelského rozhraní, při přístupu k datům v rámci projektu aplikace infrastruktury by měly být neustále odpovědnost. Obchodní logika ukládat v základní projekt aplikace, ve kterém lze snadno testovat a můžete rozvíjet nezávisle z další úkoly.
 
-Při této zásady je použít Architektura aplikace a jsou přesměrováni na svůj logické koncový bod, získáte mikroslužeb. Daný mikroslužbu by měl mít jeden zodpovědnost. Pokud potřebujete rozšířit chování systému, je obvykle lepší to udělat tak, že přidáte další mikroslužeb, nikoli zodpovědnost za některého ze stávajících.
+Tato zásada je použita na architektuře aplikací a přesunete na jeho logický koncový bod, získáte mikroslužeb. Daný mikroslužba by měl mít jednotnou zodpovědnost. Pokud potřebujete rozšířit chování systému, je obvykle vhodnější to udělat tak, že přidáte další mikroslužeb, nikoli přidáním zodpovědností některý z existujících.
 
-[Další informace o architektuře mikroslužeb](http://aka.ms/MicroservicesEbook)
+[Další informace o architektuře mikroslužeb](https://aka.ms/MicroservicesEbook)
 
-### <a name="dont-repeat-yourself-dry"></a>Nemáte opakujte sami (SUCHÝCH)
+### <a name="dont-repeat-yourself-dry"></a>Neopakovat sami (zkušební)
 
-Aplikace by měla Vyhněte se zadání chování související s konkrétní koncept na více místech, protože se jedná o zdroj časté chyb. V určitém okamžiku, bude vyžadovat změny v požadavcích změna toto chování a pravděpodobnost, že nejméně jedna instance chování nebude možné aktualizovat, bude mít za následek nekonzistentní chování systému.
+Aplikace se měli vyhnout určení chování je to časté příčiny chyby související s konkrétní pojem na více místech. V určitém okamžiku bude vyžadovat změny v požadavcích změna toto chování a pravděpodobnost, že nejméně jedna instance chování selže aktualizovat bude mít za následek nekonzistentní chování systému.
 
-Místo duplikování logiku, zapouzdření v programovací konstrukce. Vytvořit vytvořit jeden autority přes toto chování a další část aplikace, která vyžaduje tuto chování použijte novou konstrukce.
+Namísto duplikování logiky zapouzdření v programovací konstrukce. Vytvořit sestavit jeden autority přes toto chování a mají jiné části aplikace, která potřebuje toto chování použít novou konstrukci.
 
 > [!NOTE]
-> Vyhněte se vazby společně chování, které se pouze shodou opakují. Například právě, protože dva různé konstanty oba mají stejnou hodnotu, která neznamená, že byste měli mít jenom jeden konstantu, pokud koncepčně jste odkazující na různých věcí.
+> Vyhněte se chování, které se shodou opakované vazby společně. Například pouze z důvodu dvě různé konstanty obě mají stejnou hodnotu, neznamená, že byste měli mít jenom jednu konstantu, koncepčně jste odkazující na různé věci.
 
-### <a name="persistence-ignorance"></a>Které trvalost
+### <a name="persistence-ignorance"></a>Trvalost neznalosti
 
-**Které trvalost** (PI) odkazuje na typy, které je potřeba nastavit jako trvalý, ale jejichž kód není ovlivněna volba technologie trvalost. Tyto typy v rozhraní .NET jsou někdy označovány jako prostý staré objekty CLR (POCOs), protože se nemusíte dědit z určité základní třídy nebo implementovat konkrétní rozhraní. Trvalost, které se hodí v situaci, protože umožňuje stejný model business zachovat v několika způsoby, nabízí větší flexibilita k aplikaci. Trvalost možnosti může změnit v čase od technologie jednu databázi na jiný, nebo může být potřeba kromě ať je aplikace spuštěna s další způsoby trvalost (například pomocí mezipaměť Redis nebo Azure DocumentDb kromě relační databáze).
+**Trvalost neznalosti** (PÍ) odkazuje na typy, které je potřeba nastavit jako trvalý, ale jejíž kód není ovlivněn řadu technologií trvalosti. Tyto typy v rozhraní .NET jsou někdy označovány jako obyčejný starší objekty CLR (POCOs), protože není nutné dědí určité základní třídy nebo implementovat konkrétní rozhraní. Trvalost neznalosti je užitečné, protože umožňuje stejný model business natrvalo několika různými způsoby, nabízí větší flexibilitu pro aplikace. Možnosti trvalého může změnit v čase od technologie jednu databázi na jiný, nebo může být vyžadováno kromě cokoli, co je aplikace spuštěna s další formy trvalost (například použití mezipaměti redis cache nebo Azure DocumentDb kromě relační databáze).
 
-Některé příklady porušení této zásady patří:
+Mezi příklady narušení této zásady patří:
 
--   Vyžaduje základní třída
+- Vyžaduje základní třídy.
 
--   Implementace požadované rozhraní
+- Provádění požadované rozhraní.
 
--   Třídy zodpovědná za uložení sami (například vzoru aktivním záznamu)
+- Třídy za samotné ukládání (například záznam Active vzor).
 
--   Vyžaduje výchozí konstruktor
+- Vyžaduje výchozí konstruktor.
 
--   Vlastnosti, které vyžadují virtual – klíčové slovo
+- Vlastnosti vyžadující virtual – klíčové slovo.
 
--   Povinné atributy specifické pro trvalost
+- Vyžadované atributy specifické pro trvalost.
 
-Požadavek na třídy mají některé z výše uvedené funkce nebo chování přidá párování mezi typy, které mají být trvalý a volba technologie trvalost znesnadňuje přijmout nové strategií přístupu data v budoucnosti.
+Požadavek třídy mají některé z výše uvedené funkce nebo chování přidá párování mezi typy natrvalo a volbu technologie trvalost znesnadňuje přijmout nové strategie přístup data v budoucnosti.
 
 ### <a name="bounded-contexts"></a>Ohraničené kontexty
 
-**Vázaný kontexty** jsou centrální vzoru v Domain-Driven návrhu. Podle ji rozdělit na samostatné koncepční moduly poskytují způsob boji se složitosti pro velké aplikace nebo organizace. Každý koncepční modul pak představuje kontext, který je oddělená od jiných kontextech (proto ohraničenou) a můžete rozvíjet nezávisle. Každý ohraničené kontext by měla být v ideálním případě mohou zvolit vlastní názvy koncepty v něm a vlastní úložiště trvalosti by měl mít výhradní přístup.
+**Ohraničených kontextech** jsou centrální model v Domain-Driven Design. Když ho rozdělíte do samostatných koncepční modulů poskytují způsob složitosti řešení pro velké aplikace nebo organizace. Každý koncepční modul představuje kontext, který je oddělená od ostatních kontextech (tedy ohraničeny) a můžete rozvíjet nezávisle na sobě. Jednotlivých ohraničených kontextech v ideálním případě měli zvolit vlastní názvy konceptů v rámci něj a má výhradní přístup k vlastním úložišti pro trvalé uložení.
 
-Minimálně měli snažit jednotlivé webové aplikace se vlastní ohraničené kontextu, s vlastní úložiště trvalosti pro svůj obchodní model, místo sdílení databázi s jinými aplikacemi. Probíhá komunikace mezi ohraničené kontexty prostřednictvím programového rozhraní, a nikoli prostřednictvím sdílenou databázi, která umožňuje obchodní logiky a umístěte události provést v reakci na změny, které se uskuteční. Vázaný kontexty mapy úzce k mikroslužeb, které také jsou v ideálním případě implementované jako vlastní jednotlivých ohraničené kontexty.
+Minimálně přiklonit jednotlivých webových aplikací na jejich vlastní ohraničený kontext s své vlastní úložiště trvalosti pro svůj obchodní model, nikoli databázi pro sdílení obsahu s jinými aplikacemi. Probíhá komunikace mezi ohraničené kontexty prostřednictvím programových rozhraní, a nikoli prostřednictvím sdílenou databázi, která umožňuje obchodní logiky a události se umístit v reakci na změny, které se provedou. Ohraničených kontextech mapy úzce do mikroslužeb, která také se v ideálním případě implementují jako vlastní jednotlivých ohraničené kontexty.
 
 > ### <a name="references--modern-web-applications"></a>Odkazy – moderních webových aplikací
-> - **Oddělené oblasti zájmu**  
-> <http://deviq.com/separation-of-concerns/>
-> - **Zapouzdření** <http://deviq.com/encapsulation/>
+> - **Oddělení oblastí zájmu**  
+> <https://deviq.com/separation-of-concerns/>
+> - **Zapouzdření**  
+> <https://deviq.com/encapsulation/>
 > - **Princip inverzi závislostí**  
-> <http://deviq.com/dependency-inversion-principle/>
+> <https://deviq.com/dependency-inversion-principle/>
 > - **Princip explicitní závislosti.**  
-> <http://deviq.com/explicit-dependencies-principle/>
-> - **Nemáte opakujte sami**  
-> <http://deviq.com/don-t-repeat-yourself/>
-> - **Které trvalost**  
-> <http://deviq.com/persistence-ignorance/>
-> - **Ohraničené kontextu**  
+> <https://deviq.com/explicit-dependencies-principle/>
+> - **Neopakovat sami**  
+> <https://deviq.com/don-t-repeat-yourself/>
+> - **Trvalost neznalosti**  
+> <https://deviq.com/persistence-ignorance/>
+> - **Ohraničený kontext**  
 > <https://martinfowler.com/bliki/BoundedContext.html>
 
-> [!div class="step-by-step"]
+>[!div class="step-by-step"]
 [Předchozí](choose-between-traditional-web-and-single-page-apps.md)
 [další](common-web-application-architectures.md)

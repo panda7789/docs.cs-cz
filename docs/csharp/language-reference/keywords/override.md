@@ -8,34 +8,34 @@ helpviewer_keywords:
 - override keyword [C#]
 ms.assetid: dd1907a8-acf8-46d3-80b9-c2ca4febada8
 ms.openlocfilehash: 8f692dfdf8bd34ddb62623d86ec3dadd2b8dead3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33280150"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39199261"
 ---
 # <a name="override-c-reference"></a>override (Referenční dokumentace jazyka C#)
-`override` Modifikátor je potřeba rozšířit nebo změnit abstraktní nebo virtuální implementace zděděné metoda, vlastnost, indexer nebo událostí.  
+`override` Modifikátor je potřeba rozšířit nebo upravit abstraktní nebo virtuální provádění zděděné metody, vlastnosti, indexeru nebo události.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `Square` třída musí obsahovat přepsaného implementace `Area` protože `Area` dědí z abstraktní `ShapesClass`:  
+ V tomto příkladu `Square` třída musí poskytovat implementaci přepsané `Area` protože `Area` se dědí z abstraktní `ShapesClass`:  
   
  [!code-csharp[csrefKeywordsModifiers#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/override_1.cs)]  
   
- `override` Metoda poskytuje nové implementaci člena, který je zděděn ze základní třídy. Metoda, která je přepsat `override` deklarace se označuje jako přepsaného základní metody. Přepsané základní metody musí mít stejný podpis jako `override` metoda. Informace o dědičnosti najdete v tématu [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
+ `override` Metody poskytuje novou implementaci člena, který je zděděn ze základní třídy. Metoda, která je přepsána `override` prohlášení je označován jako přepsané základní metodě. Přepsané základní metoda musí mít stejný podpis jako `override` metody. Informace o dědičnosti, naleznete v tématu [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
   
- Nejde přepsat bez virtuální nebo statické metody. Přepsané základní metody musí být `virtual`, `abstract`, nebo `override`.  
+ Nevirtuální nebo statické metody nelze přepsat. Přepsané základní metoda musí být `virtual`, `abstract`, nebo `override`.  
   
- `override` Deklarace nelze změnit usnadnění přístupu `virtual` metoda. Obě `override` metoda a `virtual` metoda musí mít stejnou [úrovně – modifikátor přístupu](../../../csharp/language-reference/keywords/access-modifiers.md).  
+ `override` Deklarace nemůže změnit přístupnost `virtual` metody. Obě `override` metoda a `virtual` metoda musí mít stejný [úrovně modifikátor přístupu](../../../csharp/language-reference/keywords/access-modifiers.md).  
   
- Nelze použít `new`, `static`, nebo `virtual` modifikátory upravit `override` metoda.  
+ Nelze použít `new`, `static`, nebo `virtual` modifikátory upravit `override` metody.  
   
- Přepsání deklarace vlastnosti musíte zadat přesně stejný – modifikátor přístupu, typ a název jako zděděnou vlastnost a musí být vlastnost přepsaného `virtual`, `abstract`, nebo `override`.  
+ Přepsání deklarace vlastnost musíte zadat přesně stejné modifikátor přístupu, typ a název jako zděděné vlastnosti a musí být přepsané vlastnosti `virtual`, `abstract`, nebo `override`.  
   
- Další informace o tom, jak používat `override` – klíčové slovo, najdete v části [Správa verzí pomocí nové klíčových slov Override a](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) a [znalost, kdy použít nové klíčových slov Override a](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).  
+ Další informace o tom, jak používat `override` – klíčové slovo, naleznete v tématu [Správa verzí pomocí nových klíčových slov Override a](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) a [znalost, kdy použít nová klíčová slova Override a](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).  
   
 ## <a name="example"></a>Příklad  
- Tento příklad definuje základní třídu s názvem `Employee`a odvozené třídy s názvem `SalesEmployee`. `SalesEmployee` Třída obsahuje doplňující vlastnosti, `salesbonus`a přepíše metodu `CalculatePay` Chcete-li vzít v úvahu.  
+ Tento příklad definuje základní třídu s názvem `Employee`a odvozená třída s názvem `SalesEmployee`. `SalesEmployee` Třída zahrnuje další vlastnost `salesbonus`a přepíše metodu `CalculatePay` aby vzít v úvahu.  
   
  [!code-csharp[csrefKeywordsModifiers#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/override_2.cs)]  
   

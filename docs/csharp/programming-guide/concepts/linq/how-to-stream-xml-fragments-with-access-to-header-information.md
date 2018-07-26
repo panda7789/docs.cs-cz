@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: Stream fragmenty kódu XML se přístup k informacím o záhlaví (C#)'
+title: 'Postupy: Stream fragmentů XML pomocí přístup k informacím hlavičky (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7f242770-b0c7-418d-894b-643215e1f8aa
 ms.openlocfilehash: af8f83ba746292289bb97f591103cc91d6febbad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33325029"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39199293"
 ---
-# <a name="how-to-stream-xml-fragments-with-access-to-header-information-c"></a>Postupy: Stream fragmenty kódu XML se přístup k informacím o záhlaví (C#)
-Někdy je nutné ke čtení libovolně velké soubory XML a zapisovat vaše aplikace tak, aby nároky na paměť pro aplikace je předvídatelný. Pokud se pokusíte strom XML naplnění velký soubor XML, bude vaše využití paměti velikosti souboru – to znamená, nadměrné. Proto byste měli místo toho používat streamování techniku.  
+# <a name="how-to-stream-xml-fragments-with-access-to-header-information-c"></a>Postupy: Stream fragmentů XML pomocí přístup k informacím hlavičky (C#)
+Někdy je nutné číst libovolně velké soubory XML a zapisovat vaše aplikace tak, aby nároky na paměť pro aplikace předvídatelné. Pokud se pokusíte k naplnění stromu XML pomocí velkého souboru XML, využití paměti bude přímo úměrná velikosti souboru – to znamená, nadměrné. Proto měli používat streamování technika místo.  
   
- Jednou z možností je napsat aplikaci pomocí <xref:System.Xml.XmlReader>. Ale můžete chtít použít [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] k dotazování stromové struktuře XML. Pokud je to tento případ, můžete napsat vlastní metodu vlastní osy. Další informace najdete v tématu [postupy: zápis LINQ metodě osy XML (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md).  
+ Jednou z možností je pro zápis aplikace pomocí <xref:System.Xml.XmlReader>. Však můžete chtít použít [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz stromu XML. Pokud je to tento případ, můžete napsat vlastní metodu vlastní osy. Další informace najdete v tématu [postupy: zápis metody osy XML (C#) LINQ](../../../../csharp/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md).  
   
- Zápis způsob osy, zápis malých metody, která používá <xref:System.Xml.XmlReader> číst uzlů, dokud nebude dosaženo jednoho z uzlů, které vás zajímá. Pak zavolá metodu <xref:System.Xml.Linq.XNode.ReadFrom%2A>, který čte z <xref:System.Xml.XmlReader> a vytvoří XML fragment. Potom dává každý fragment prostřednictvím `yield return` na metodu, která je výčet metodu vlastní osy. Poté můžete napsat dotazů LINQ na metodu vlastní osy.  
+ Chcete-li napsat vlastní metodu osy, napište malé metody, která používá <xref:System.Xml.XmlReader> číst uzly, dokud nebude dosaženo jednoho z uzlů, které vás zajímají. Pak zavolá metodu <xref:System.Xml.Linq.XNode.ReadFrom%2A>, která čte z <xref:System.Xml.XmlReader> a vytvoří instanci XML fragment. Pak bude vrácen každý fragment prostřednictvím `yield return` v metodě, která je výčet metodu vlastní osy. Můžete pak zápis dotazů LINQ na vaše vlastní osy metoda.  
   
- Streamování techniky nejlépe použity v situacích, kdy je potřeba zpracovat zdrojový dokument jenom jednou a může zpracovat elementy v pořadí dokumentů. Některé standardní operátory dotazů, jako například <xref:System.Linq.Enumerable.OrderBy%2A>iteraci zdrojových, shromáždit všechna data, řazení ji a nakonec yield první položky v sekvenci. Všimněte si, pokud používáte operátor dotazu, který bude realizována zdrojem před je první položka, nebude zachovali malou paměťovou zátěž.  
+ Streamování techniky aplikují nejlépe v situacích, kde je potřeba zpracovat zdrojový dokument pouze jednou a může zpracovat prvky v pořadí dokumentů. Některé standardní operátory dotazů, jako například <xref:System.Linq.Enumerable.OrderBy%2A>iterovat jejich zdroj, shromáždit všechna data, seřadit a nakonec yield první položky v sekvenci. Všimněte si, že pokud použijete operátor dotazu, který bude realizována zdrojem před získávání první položka, nebude zachovat malé paměťové nároky.  
   
 ## <a name="example"></a>Příklad  
- Někdy problém získá jen málo další zajímavé. V následujícím dokumentu XML má příjemce metodu vlastní osy také znát název zákazníka, které patří každou položku.  
+ Někdy problém získá jen málo další zajímavé. V následujícím dokumentu XML příjemce vaše vlastní osy metoda má také znát název zákazníka, který jednotlivé položky patří do.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -66,11 +66,11 @@ Někdy je nutné ke čtení libovolně velké soubory XML a zapisovat vaše apli
 </Root>  
 ```  
   
- Přístup, který má v tomto příkladu je také sledovat informace hlavičky, uložit informace ze záhlaví a následně vytvořit malé stromu XML, který obsahuje informace v záhlaví a podrobností, která jsou vytváření výčtu. Metoda osy poskytuje pak tento nový, malé strom XML. Dotaz pak má přístup k informace hlavičky, jakož i podrobné informace.  
+ Přístup, který přijímá v tomto příkladu je taky sledovat informace hlavičky, uložit informace v záhlaví a následně vytvořit malé stromu XML, který obsahuje informace v záhlaví a podrobností, které jsou výčet. Metoda osy poskytuje pak tento nový, malé stromu XML. Dotaz potom má přístup k informace hlavičky, jakož i podrobné informace.  
   
- Tento přístup má malou paměťovou zátěž. Každý fragment XML podrobností, je vhodné, jsou uchovány žádné odkazy na předchozí fragment, a je k dispozici pro uvolňování paměti. Všimněte si, že tento postup vytvoří mnoho zkrátí objektů v haldě.  
+ Tento přístup má malé paměťové nároky. Každý detail fragment XML, je vhodné, žádné odkazy jsou omezeny na předchozí fragment, a je k dispozici pro uvolnění paměti. Všimněte si, že tento postup vytvoří mnoho krátkodobý objektů na haldě.  
   
- Následující příklad ukazuje, jak implementovat a použít vlastní osy metodu, která datové proudy fragmenty XML ze souboru určeného identifikátor URI. Tato vlastní osy je speciálně tak, aby se očekává, že dokument, který má `Customer`, `Name`, a `Item` elementy a aby tyto prvky se být uspořádány jako výše `Source.xml` dokumentu. Je zneužívající vlastností prohlížeče implementace. Robustnější implementace by připravený k analýze neplatný dokument.  
+ Následující příklad ukazuje, jak implementovat a používat vlastní osy metodu, která jsou streamována fragmentů XML ze souboru určeného identifikátorem URI. Tato vlastní osy je vytvořených speciálně tak, aby se očekává, že dokument, který má `Customer`, `Name`, a `Item` elementy a, tyto prvky se uspořádané jako výše `Source.xml` dokumentu. Je zjednodušenou implementaci. Robustnější implementace by být připraveni analyzovat neplatný dokument.  
   
 ```csharp  
 static IEnumerable<XElement> StreamCustomerItem(string uri)  

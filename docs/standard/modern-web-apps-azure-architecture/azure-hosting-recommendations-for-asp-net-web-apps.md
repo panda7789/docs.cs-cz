@@ -1,129 +1,131 @@
 ---
-title: Azure hostování doporučení pro webové aplikace ASP.NET Core
-description: Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | Azure hostování doporučení pro webové aplikace ASP.NET
+title: Doporučení pro webové aplikace ASP.NET Core hostování Azure
+description: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure | Doporučení pro webové aplikace ASP.NET hostování Azure
 author: ardalis
 ms.author: wiwagn
-ms.date: 10/07/2017
-ms.openlocfilehash: 756f74cacec0a9f5be502ee02659510869d79746
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 06/27/2018
+ms.openlocfilehash: a70cb822c789638ca107b090d1aed2b88ccc6a5d
+ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105706"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37404525"
 ---
-# <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Azure hostování doporučení pro webové aplikace ASP.NET Core
+# <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Doporučení pro webové aplikace ASP.NET Core hostování Azure
 
-> "-Obchodní žebříčky všude, kde jsou obcházení IT oddělení získat aplikace z cloudu (neboli SaaS) a platícího pro ně, jako kdyby je sdíleli katalogu předplatné. A pokud služby se už nevyžaduje, můžete zrušit předplatné se žádná zařízení zbývající nepoužité v horním."  
-> _\- Daryl Plummer, Gartner analytika_
+> "Řádku obchodní vedení všude, kde jsou obcházení oddělení IT získat aplikace z cloudu (označuje se také jako SaaS) a platit za ně je stejně, jako kdyby je sdíleli předplatné magazine. A když služby se už nevyžaduje, se předplatné zrušit se žádná zařízení left nepoužívané v pravém rohu."  
+> _\- Daryl Plummer, analytik společnosti Gartner_
 
-## <a name="summary"></a>Souhrn
-
-Ať potřebám vaší aplikace a architektura systému Windows Azure může podporovat. Hostování potřeb může být stejně jednoduché jako statické webu velmi sofistikované aplikace skládá z desítek služeb. U monolitický webové aplikace ASP.NET Core a podpůrné služby existuje několik dobře známé konfigurace, které jsou doporučena. Následující doporučení jsou seskupeny podle typu prostředku hostovat, jestli úplné aplikace, jednotlivých procesů nebo data.
+Všechno, co vaše aplikace potřebám a architekturu, Windows Azure může podporovat. Hostování potřeb může být stejně snadné jako statický web sofistikované aplikace tvořené řadě služeb. Monolitické webové aplikace ASP.NET Core a podpůrných služeb existují některé známé konfigurace, které se doporučují. Doporučení v tomto článku se seskupují podle druhu prostředku hostovat, zda celé aplikace, jednotlivé procesy nebo data.
 
 ## <a name="web-applications"></a>Webové aplikace
 
-Webové aplikace se dají hostovat pomocí:
+Pomocí se dají hostovat webové aplikace:
 
--   Webové aplikace aplikační služby
+- App Service Web Apps
 
--   Kontejnery
+- Kontejnery
 
--   Azure Service Fabric
+- Azure Service Fabric
 
--   Virtuální počítače (VM)
+- Virtuální počítače (VM)
 
-App Service Web Apps z nich, se o doporučený postup pro většinu scénářů. Pro architektury mikroslužby zvažte přístup založený na kontejneru nebo service fabric. Pokud potřebujete větší kontrolu nad počítače spuštění aplikace, zvažte virtuálních počítačích Azure.
+App Service Web Apps z nich je doporučený postup pro většinu scénářů. Pro architektury mikroslužeb zvažte přístupu založených na kontejnerech nebo Service Fabric. Pokud potřebujete větší kontrolu nad počítače spuštěné aplikace, zvažte Azure Virtual Machines.
 
-### <a name="app-service-web-apps"></a>Webové aplikace aplikační služby
+### <a name="app-service-web-apps"></a>App Service Web Apps
 
-Služby App Service Web Apps nabízí plně spravovaná platforma optimalizována pro hostování webových aplikací. Je platform-as-a-service(PaaS), nabídky, že vám umožní soustředit na obchodní logiku, zatímco Azure zajistí infrastruktury potřebné pro spouštění a škálování aplikace. Některé klíčové funkce App Service Web Apps:
+App Service Web Apps nabízí plně spravovaná platforma optimalizovaná pro hostování webových aplikací. Je platforma jako služba (PaaS), nabídky, že vám umožní soustředit na obchodní logiku, zatímco Azure zajistí infrastrukturu potřebné k spouštění a škálování aplikace. Některé klíčové funkce služby App Service Web Apps:
 
--   Optimalizace DevOps (průběžnou integraci a doručení, několika prostředích, A / B testování, podpora skriptování)
+- Optimalizace DevOps (průběžná integrace a doručování, více prostředí, A / B testování, podpora skriptování).
 
--   Globální škálování a vysokou dostupnost
+- Globální škálování a vysokou dostupnost.
 
--   Připojení k platformám SaaS a místních dat
+- Připojení k platformám SaaS a firemními daty.
 
--   Zabezpečení a dodržování předpisů
+- Zabezpečení a dodržování předpisů.
 
--   integrace sady Visual Studio
+- Integrace se sadou Visual Studio.
 
-Aplikační služba Azure je nejlepší volbou pro většinu webové aplikace. Nasazení a správy se integrují do platformy, lokalit můžete rychle škálovat pro zpracování vysoké přenosové zatížení a poskytovat vysokou dostupnost, Správce vyrovnávání a provoz integrované zatížení. Můžete přesunout existující lokality do služby Azure App Service snadno pomocí nástrojů pro migraci online, použijte open-source aplikace z Galerie webových aplikací nebo vytvoří nový web pomocí framework a nástrojů dle vašeho výběru. Funkci webové úlohy umožňuje snadno přidat úloha na pozadí zpracování do webové aplikace služby App Service.
+Azure App Service je nejlepší volbou pro většinu webových aplikací. Nasazení a správa jsou integrované do platformy, weby se rychle škálují pro zvládnutí vysokého přenosového zatížení a integrované zatížení vyrovnávání a traffic manager zajišťují vysokou dostupnost. Můžete přesunout existující weby do služby Azure App Service snadno se online nástroje pro migraci, použijte open source aplikaci z Galerie webových aplikací nebo vytvoření nového webu pomocí rozhraní a nástrojů podle vašeho výběru. Funkce WebJobs umožňuje snadno přidat úlohy na pozadí zpracování do webové aplikace služby App Service.
 
-### <a name="containers-and-azure-container-service"></a>Kontejnery a Azure Container Service
+### <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
 
-Azure Container Service umožňuje jednodušší můžete vytvářet, konfigurovat a spravovat cluster virtuálních počítačů, které jsou předem nakonfigurován ke spuštění kontejnerizované aplikací. Konfigurace aplikace optimalizované oblíbených open-source plánování a orchestraci nástrojů používá. To umožňuje použití existujících dovedností a kreslení na text velké a stále se rozrůstající komunita odborných znalostí, nasazovat a spravovat aplikace založené na kontejneru v Microsoft Azure.
+Azure Kubernetes Service (AKS) spravuje hostované prostředí Kubernetes, tak rychle a snadno nasazovat a spravovat kontejnerizované aplikace bez znalosti Orchestrace kontejnerů. Také odstraní starosti související s probíhajícími operacemi a údržbou díky zřizování, upgradování a škálování prostředků na vyžádání, bez nutnosti přepínat aplikace do offline režimu.
 
-Azure Container Service umožňuje jednodušší můžete vytvářet, konfigurovat a spravovat cluster virtuálních počítačů, které jsou předem nakonfigurován ke spuštění kontejnerizované aplikací. Konfigurace aplikace optimalizované oblíbených open-source plánování a orchestraci nástrojů používá. To umožňuje použití existujících dovedností a kreslení na text velké a stále se rozrůstající komunita odborných znalostí, nasazovat a spravovat aplikace založené na kontejneru v Microsoft Azure.
+AKS snižuje složitost a provozní režií při správě clusteru Kubernetes tím spojenou díky přenášení většiny zodpovědnosti na Azure. Jako hostovaná služba Kubernetes, Azure stará o důležité úlohy jako sledování stavu a údržby za vás. Navíc Platíte pouze za agentské uzly v rámci vašich clusterů, ne za hlavní uzly. Jako spravovaná služba Kubernetes poskytuje AKS:
 
-Jeden cíl Azure Container Service je poskytnout kontejneru hostitelské prostředí pomocí nástroje open source a technologie, které jsou dnes důležitá u zákazníků společnosti Microsoft. Za tímto účelem zpřístupní Azure Container Service standardní koncové body rozhraní API pro vaši zvolenou orchestrator (DC/OS, Docker Swarm nebo Kubernetes). Pomocí těchto koncových bodů, můžete využít veškerý software, který je schopen rozhovoru do těchto koncových bodů. V případě koncového bodu Docker Swarm, můžete například použít Docker rozhraní příkazového řádku (CLI). Pro DC/OS můžete zvolit, rozhraní příkazového řádku orchestrátoru DC/OS. Pro Kubernetes můžete zvolit kubectl. Obrázek 11-1 ukazuje, jak by pomocí těchto koncových bodů pro správu clusterů kontejneru.
+- Automatické upgrady verzí Kubernetes a opravy chyb.
+- Snadné škálování clusterů.
+- Hostovanou rovinu řízení (hlavní uzly).
+- Úspory nákladů – Platíte pouze za spuštěné uzly fondu agentů.
 
-![](./media/image11-1.png)
-
-**Obrázek 11-1.** Správa Azure Container Service pomocí Docker, Kubernetes nebo DC/OS koncových bodů.
+S Azure stará o správu uzlů ve vašem clusteru AKS už nepotřebujete provádět mnoho úloh ručně, například upgrady clusteru. Protože Azure stará o tyto důležité úlohy údržby za vás, neposkytuje AKS přímý přístup (například pomocí protokolu SSH) do clusteru.
 
 ### <a name="azure-service-fabric"></a>Azure Service Fabric
 
-Service Fabric je vhodný, pokud vytváříte novou aplikaci nebo přepisovat stávající aplikace pro použití architektury mikroslužby. Aplikace, které se spouštějí na sdílenému fondu počítačů, můžete začněte v malém rozsahu a dosáhnout masivním měřítku se stovkami nebo tisíci počítačů podle potřeby. Stavové služby usnadňují konzistentně a spolehlivě uložení stavu aplikace a Service Fabric automaticky spravuje služba rozdělení do oddílů, škálování a dostupnost za vás. Service Fabric podporuje také WebAPI s Open Web Interface pro .NET (OWIN) a ASP.NET Core. Ve srovnání s App Service, Service Fabric taky poskytuje další kontrolu nad nebo přímý přístup k podkladové infrastruktury. Můžete vzdálené do vašich serverů nebo můžete nakonfigurovat úlohy spuštění serveru.
+Service Fabric je dobrou volbou, pokud už vytváříte nové aplikace nebo přepsáním stávající aplikace pro využívají architekturu mikroslužeb. Aplikace spouštěné ve sdíleném fondu počítačů, můžete začít v malém a dosáhnout masivně škálovat na stovky nebo tisíce počítačů podle potřeby. Stavové služby usnadňují konzistentní a spolehlivé ukládání stavu aplikace a Service Fabric automaticky spravuje dělení, škálování a dostupnost za vás. Service Fabric také podporuje webová rozhraní API s Open Web Interface pro .NET (OWIN) a ASP.NET Core. Ve srovnání s App Service, Service Fabric také poskytuje další kontrolu nad nebo přímý přístup k základní infrastruktury. Můžete vzdáleně připojit do vašich serverů nebo konfigurace úloh při spuštění serveru.
 
-### <a name="azure-virtual-machines"></a>Virtuální počítače Azure
+### <a name="azure-virtual-machines"></a>Azure Virtual Machines
 
-Pokud máte existující aplikace, které by vyžadovaly významné změny ke spuštění v App Service nebo Service Fabric, může zvolit virtuální počítače za účelem zjednodušení migrace do cloudu. Ale správně konfigurace, zabezpečení a údržba virtuální počítače vyžaduje mnohem víc času a IT odborných znalosti ve srovnání s Azure App Service a Service Fabric. Pokud uvažujete o virtuálních počítačích Azure, ujistěte se, že byste vzít v úvahu následné údržbě náročnost opravy, aktualizovat a spravovat prostředí virtuálních počítačů. Virtuální počítače Azure je infrastruktury jako služba (IaaS), zatímco služba App Service a Service Fabric jsou platformy jako služba (Paas).
+Pokud máte existující aplikace, které by vyžadovaly výrazné změny ke spuštění ve službě App Service nebo Service Fabric, můžete zvolením služby Virtual Machines pro zjednodušení migrace do cloudu. Ale správně konfigurace, zabezpečení a údržba virtuálních počítačů vyžaduje mnohem více času a znalosti v oboru IT ve srovnání s Azure App Service a Service Fabric. Pokud zvažujete Azure Virtual Machines, nezapomeňte že vzít v úvahu náročnost průběžné údržby vyžaduje opravu, aktualizovat a spravovat prostředí virtuálních počítačů. Azure Virtual Machines je infrastruktura jako služba (IaaS), služby App Service a Service Fabric jsou PaaS.
 
 #### <a name="feature-comparison"></a>Porovnání funkcí
 
-| Funkce služby App Service | Service Fabric | Virtuální počítač |
-|---------|----------|----------|
-| Téměř rychlých nasazení | X | X | |
-| Škálování na větší počítače bez znovu ho zaveďte | X | X | |
-| Instance sdílet obsah a konfiguraci; není nutné znovu ho zaveďte nebo reconfigure při změně měřítka | X | X | |
-| Prostředí s více nasazení (produkční, pracovní) | X | X | |
-| Automatická správa aktualizací operačního systému | X | | |
-| Bezproblémové přepínání mezi platformami 32 nebo 64bitový | X | | |
-| Nasaďte kód prostřednictvím Git, FTP | X | | X |
-| Nasazení kódu do Web Deploy | X | | X |
-| Nasazení kódu do sady TFS | X | X | X |
-| Hostitele web nebo webovou vrstvu služby vícevrstvé architektury | X | X | X |
-| Přístup k Azure služby, jako je Service Bus, úložiště, databáze SQL | X | X | X |
-| Nainstalujte všechny vlastní MSI | | X | X |
+| Funkce                                                                                    | App Service | Kontejnery (AKS) | Service Fabric | Virtuální počítač |
+| ------------------------------------------------------------------------------------------ | ----------- | ---------------- | -------------- | --------------- |
+| Téměř okamžité nasazení                                                                    | X           | X                | X              |                 |
+| Vertikálně navýšit kapacitu na větší počítače bez opětovného nasazení                                               | X           | X                | X              |                 |
+| Instance sdílejí obsah a konfiguraci. bez nutnosti opětovného nasazení nebo překonfigurujte při horizontálním škálování | X           | X                | X              |                 |
+| Více prostředí pro nasazení (produkční, pracovní)                                     | X           | X                | X              |                 |
+| Automatická správa aktualizací operačního systému                                                             | X           | X                |                |                 |
+| Bezproblémové přepínání mezi 32 a 64bitové platformy                                             | X           | X                |                |                 |
+| Nasazení kódu pomocí Gitu a protokolu FTP                                                                  | X           | X                |                | X               |
+| Nasazení kódu pomocí nasazení webu                                                                 | X           | X                |                | X               |
+| Nasazení kódu pomocí TFS                                                                       | X           | X                | X              | X               |
+| Hostitelský web nebo webovou vrstvu služby vícevrstvé architektury                                    | X           | X                | X              | X               |
+| Přístup ke službám Azure, jako je Service Bus, Storage, SQL Database                              | X           | X                | X              | X               |
+| Instalace jakékoli vlastní instalační služby MSI                                                                     |             | X                | X              | X               |
 
 ## <a name="logical-processes"></a>Logické procesy
 
-Jednotlivé logické procesy, které může být odděleno od zbývající aplikace dá nasadit nezávisle na Azure Functions "bez serveru" způsobem. Azure Functions umožňuje právě psát kód, který je nutné pro daný problém, bez starostí o aplikace nebo infrastruktury ji spustit. Můžete vybrat z různých programovacích jazyků, včetně C\#, F\#, Node.js a Python, PHP, umožní vám vybrat nejvíce produktivní jazyk pro úlohu po ruce. Podobně jako většina cloudové řešení platíte jenom po určenou dobu používání a důvěřujete Azure Functions škálování podle potřeby.
+Jednotlivé logické procesy, které mohou být oddělené od zbytku aplikace může nezávisle nasadit do služby Azure Functions v podobě "bez serveru". Azure Functions umožňuje stačí napsat kód, který budete potřebovat pro daný problém, ale nemusíme se starat o aplikaci nebo infrastrukturu k jeho spuštění. Můžete si vybrat z nejrůznějších programovacích jazyků, včetně C\#, F\#, Node.js, Python a PHP, umožní vám vybrat nejproduktivnější jazyk pro úlohy po ruce. Jako většina řešení založené na cloudu platíte jenom po zadanou dobu používání a Azure Functions vertikálně navýšit kapacitu podle potřeby můžete důvěřovat.
 
 ## <a name="data"></a>Data
 
-Azure nabízí širokou škálu možností úložiště dat, tak, aby vaše aplikace můžete použít poskytovatele příslušná data pro dotyčné údaje.
+Azure nabízí širokou škálu možnosti ukládání dat, tak, aby aplikace můžete používat poskytovatele příslušná data pro dotyčný data.
 
-Databáze SQL Azure pro transakční, relační data, jsou nejlepší možnost. Mezipaměť Redis založenou na Azure SQL Database pro vysoký výkon pro čtení – většinou data, je vhodné řešení.
+Pro transakční, relační data Azure SQL Database se nejlepší možností. Pro vysoký výkon pro čtení – většinou data mezipaměti Redis se opírá o službě Azure SQL Database je dobrým řešením.
 
-Nestrukturovaných dat JSON může být uložená mnoha různými způsoby, z databáze SQL sloupců do objektů BLOB nebo tabulek, ve službě Azure Storage, do DocumentDB. Z těchto DocumentDB nabízí nejlepší funkcích pro dotazování a možnost se doporučuje pro velké počty dokumentů na základě JSON, které musí podporovat dotazování.
+Nestrukturovaná data JSON mohou být uloženy v různými způsoby, z databáze SQL sloupců pro objekty BLOB nebo tabulek ve službě Azure Storage k DocumentDB. Z těchto DocumentDB nabízí nejlepší funkcích pro dotazování a možnost se doporučuje pro velké počty dokumentů založenými na JSON, které musí podporovat dotazování.
 
-Přechodný příkaz - nebo na základě událostí data použít k orchestrování chování aplikace můžete použít služeb Azure Storage nebo Azure Service Bus. Azure sběrnice úložiště nabízí větší flexibilitu a je služba doporučené pro netriviální zasílání zpráv v rámci i mezi aplikacemi.
+Přechodné příkazu - nebo založený na událostech data použít k orchestrování chování aplikace pomocí Azure Service Bus nebo front Azure Storage. Azure Service Bus úložiště nabízí větší flexibilitu a je doporučenou službu pro netriviální zasílání zpráv v rámci a mezi aplikacemi.
 
-## <a name="architecture-recommendations"></a>Architektura doporučení
+## <a name="architecture-recommendations"></a>Doporučení pro architekturu
 
-Požadavky na vaše aplikace by měly určovat jeho architektura. Nejsou k dispozici, a vybrat že ten správný je důležité rozhodnutí řadou různých služeb Azure. Společnost Microsoft nabízí Galerie architektur odkaz k identifikaci typické architektury optimalizované pro běžné scénáře. Referenční architektura mapy úzce požadavky na aplikace, nebo v nejméně nabízí výchozí bod může vytvořit vazbu.
+Podle požadavků vaší aplikace by měly určovat jeho architektura. Nejsou k dispozici mnoho různých služeb Azure. Důležité rozhodnutí je výběr ten správný. Společnost Microsoft nabízí Galerie referenční architektury, které pomáhají identifikovat typických architekturách, které jsou optimalizované pro běžné scénáře. Může se stát referenční architekturu, map, pečlivě sledují a podle požadavků vaší aplikace nebo na nejméně nabízí, počáteční bod.
 
-Obrázek 11-2 je znázorněný příklad referenční architekturu. Tento diagram znázorňuje doporučené architektura přístup pro web systém správy obsahu Sitecore optimalizované pro marketing.
+Obrázek 11-2 je znázorněný příklad referenční architekturu. Tento diagram znázorňuje postup doporučené architektury pro web systém správy obsahu Sitecore optimalizované pro uvedení na trh.
 
 ![](./media/image11-2.png)
 
-**Obrázek 11-2.** Sitecore marketing webu referenční architektura.
+**Obrázek 11-1.** Sitecore marketingový web referenční architekturu.
 
-**Odkazy – Azure hostování doporučení**
+**Odkazy – hostování doporučení pro Azure**
 
--   Architectures\ řešení služby Azure
-    <https://azure.microsoft.com/solutions/architecture/>
+- Architectures\ řešení Azure
+  <https://azure.microsoft.com/solutions/architecture/>
 
--   Guide\ vývojáře pro službu Azure
-    <https://azure.microsoft.com/campaigns/developer-guide/>
+- Azure Developer Guide\
+  <https://azure.microsoft.com/campaigns/developer-guide/>
 
--   Co je Azure App Service? \
-    <https://docs.microsoft.com/azure/app-service/app-service-value-prop-what-is>
+- Overview\ webové aplikace
+  <https://docs.microsoft.com/azure/app-service/app-service-web-overview>
 
--   Služby Azure App Service, Virtual Machines, Service Fabric a Comparison\ cloudové služby
-    <https://docs.microsoft.com/azure/app-service-web/choose-web-site-cloud-service-vm>
+- Azure App Service, Virtual Machines, Service Fabric a Cloud Services comparison\
+  <https://docs.microsoft.com/azure/app-service-web/choose-web-site-cloud-service-vm>
+
+- Úvod do služby Azure Kubernetes Service (AKS) \
+  <https://docs.microsoft.com/azure/aks/intro-kubernetes>
 
 >[!div class="step-by-step"]
 [Předchozí](development-process-for-azure.md)

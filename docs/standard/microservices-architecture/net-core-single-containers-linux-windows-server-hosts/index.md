@@ -1,63 +1,61 @@
 ---
-title: Nasazení jednoho kontejneru na základě webových aplikací .NET Core na hostitelích Nano Server systému Windows nebo Linux
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Nasazení jednoho kontejneru na základě webových aplikací .NET Core na hostitelích Nano Server systému Windows nebo Linux
+title: Nasazení jedním kontejnerem na základě webových aplikací .NET Core v Linuxu nebo Windows hostiteli s Nano serverem
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Nasazení jedním kontejnerem na základě webových aplikací .NET Core v Linuxu nebo Windows hostiteli s Nano serverem
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
-ms.openlocfilehash: 662e1af8595c074ee1aeba5ad4d83660b667c1cd
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 06/27/2018
+ms.openlocfilehash: 56c41a51cddeca6c74b09710f9536195a6a88904
+ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105524"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37404496"
 ---
-# <a name="deploying-single-container-based-net-core-web-applications-on-linux-or-windows-nano-server-hosts"></a>Nasazení webových aplikací na základě jednoho kontejneru .NET Core na hostitelích Nano Server systému Windows nebo Linux
+# <a name="deploying-single-container-based-net-core-web-applications-on-linux-or-windows-nano-server-hosts"></a>Nasazování webových aplikací na základě jednoho kontejneru .NET Core v Linuxu nebo Windows hostiteli s Nano serverem
 
-*Kontejnery Docker můžete použít pro nasazení monolitický jednodušší webových aplikací. Tím se zlepšuje průběžnou integraci a průběžné nasazování kanálů a pomáhá dosáhnout úspěšné nasazení produkční. Žádné další "funguje v počítači, proč nefunguje v produkčním prostředí?"*
+_Kontejnery Dockeru můžete použít pro monolitické nasazení jednodušší webových aplikací. Tím se zlepšuje průběžnou integraci a průběžné nasazování kanálů a pomáhá dosahovat úspěšnosti nasazení do produkčního prostředí. Už to funguje"v počítači, proč to nebude fungovat v produkčním prostředí?"_
 
-Architektura se na základě mikroslužeb má mnoho výhod, ale tyto výhody pocházet s náklady zvýšenou složitostí. V některých případech náklady převažují nad přínosy a můžete se s aplikací monolitický nasazení spuštěn v jednom kontejneru nebo v několika kontejnerů lépe vyhovovat. 
+Architektura založená na mikroslužbách má spoustu výhod, ale tyto výhody pocházet za cenu zvýšení složitosti. V některých případech se náklady převažují nad přínosy a monolitické nasazení aplikací spouštěných v kontejnerech jedné nebo několika je lepší volbou.
 
-Monolitický aplikace nemusí být snadno decomposable do dobře oddělených mikroslužeb. Jste se naučili tyto by měl být oddíly podle funkce: mikroslužeb by měla fungovat nezávisle na sobě zajistit pružnější aplikace. Pokud nelze doručit řezy funkce aplikace, oddělení ho přidá jenom složitost.
+Monolitické aplikace nemusí být snadno decomposable do jasně oddělené mikroslužeb. Když jste se naučili, že tyto mikroslužby by měly být rozdělené podle funkce: by měly fungovat nezávisle na sobě zajistit odolnost aplikace. Pokud nelze doručit řezy funkce aplikace, oddělení pouze zvyšuje složitost.
 
-Aplikace nemusí ještě nezávisle škálovat funkce. Předpokládejme, že již v rané fázi v dobu životnosti naší eShopOnContainers odkaz na aplikaci, provoz není justify funkce rozdělit do různých mikroslužeb. Provoz se dostatečně malé, obvykle přidávání zdrojů do jedné služby určené přidávání zdrojů ke všem službám. Další kroky k oddělení aplikaci do samostatné služby k dispozici minimální výhody.
+Aplikace nemusí potřebovat ještě nezávisle škálovat funkce. Předpokládejme, který v počátečních fázích `eShopOnContainers` odkazovat na aplikace, provoz neměli zarovnání, rozdělení funkcí do různých mikroslužeb. Provoz byla dostatečně malá, přidávání prostředků do jedné služby obvykle určena přidávání prostředků do všech služeb. Další práci pro oddělení aplikací do samostatných služeb k dispozici minimální výhodu.
 
-Časná ve vývoji aplikace nemusí být také jasno kde přirozené funkční hranice jsou. Když budete vyvíjet minimální přijatelná produktu, fyzické oddělení nemusí ještě této služby.
+Také již v rané fázi při vývoji aplikace možná nebudete mít jasnou představu kde jsou přirozené hranice funkční. Při vývoji minimální přijatelné produktu, nemusí mít ještě umístila fyzické oddělení.
 
-Některé z těchto podmínek může být dočasné. Můžete začít tak, že vytvoříte monolitický aplikace a později oddělit některé funkce vyvinuté a nasadit jako mikroslužeb. Další podmínky může být nezbytné pro aplikace problém místa, což znamená, že aplikace může být nikdy rozdělen do více mikroslužeb.
+Některé z těchto podmínek může být dočasné. Může být začněte vytvořením jednotlivou aplikaci a později oddělení několik funkcí, které vyvinul a nasadit jako mikroslužeb. Další podmínky může být nezbytné pro aplikace problém místa, což znamená, že aplikace může být nikdy rozdělená do několika mikroslužeb.
 
-Oddělení aplikace do mnoha diskrétní procesů také zavádí režijní náklady. Rozdělit funkce do různých procesů je složitější. S růstem složitosti komunikační protokoly. Místo volání metod je nutné použít asynchronní komunikaci mezi službami. Když přesouváte mikroslužeb architektury, budete muset přidat řadu stavební bloky implementované v mikroslužeb verze aplikace eShopOnContainers: sběrnice zpracování událostí, zprávy odolnost proti chybám a opakovaných pokusů, konzistence typu případné a další.
+Oddělení aplikace do mnoha samostatné procesy také zavádí režijní náklady. Rozdělení funkcí do různých procesů je složitější. Komunikační protokoly budou složitější. Namísto volání metody je nutné použít asynchronní komunikace mezi službami. Při přesunu na architekturu mikroslužeb, budete muset přidat řadu stavební bloky implementované ve verzi mikroslužeb `eShopOnContainers` aplikace: zpracování událostí Service bus, zprávy odolnost proti chybám a opakovaných pokusů, konečnou konzistenci a další.
 
-Velmi zjednodušené verzi eShopOnContainers (s názvem [eShopWeb](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Web/WebMonolithic) a zahrnuté ve stejném úložišti GitHub) spustí jako monolitický aplikace MVC a jako právě popsáno, existují výhod nabízených volbou tohoto návrhu. Můžete stáhnout z webu GitHub zdroj pro tuto aplikaci a ji spustit místně. Výhody této monolitický aplikace z nasazuje v prostředí kontejneru.
+Velmi zjednodušené verzi aplikaci eShopOnContainers (s názvem [eShopWeb](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Web/WebMonolithic) a je zahrnuté ve stejném úložišti Githubu) spouští jako monolitické aplikace MVC. Jak je popsáno, existují výhody, které nabízí široké možnosti volby návrhu. Můžete zdroj pro tuto aplikaci stáhnout z webu GitHub a spustit ho místně. Tato monolitické aplikace využívá výhod nasazení v prostředí kontejneru.
 
-Pro jeden kontejnerizované nasazení znamená, že každá instance aplikace běží ve stejném prostředí. To zahrnuje vývojářského prostředí, kde již v rané fázi testování a vývoje probíhat. Vývojový tým aplikaci můžete spustit v prostředí s kontejnerizované, které odpovídá produkčního prostředí.
+Za prvé nasazení kontejnerizované znamená, že každá instance aplikace běží ve stejném prostředí. Jedná se o prostředí pro vývojáře, kde vývoj a testování již v rané fázi probíhat. Vývojový tým můžete spustit aplikaci v kontejnerizovaných prostředí, která odpovídá produkčního prostředí.
 
-Kromě toho kontejnerizované aplikace škálování při nižších nákladech. Jak už jste viděli dříve, kontejner prostředí umožňuje sdílení než tradiční prostředí virtuálního počítače větší prostředků.
+Navíc kontejnerizovaných aplikací horizontální navýšení kapacity za nižší cenu. Jak jste viděli již dříve kontejnerové prostředí umožňuje větší prostředků sdílení než tradiční prostředí virtuálních počítačů.
 
-Nakonec containerizing aplikace vynutí oddělení mezi obchodní logiky a storage server. Jak aplikace horizontálně navýší kapacitu, bude několika kontejnerů spoléhají na střední jedno fyzické úložiště. Obvykle to může být vysoká dostupnost serveru se systémem databázi systému SQL Server.
+Nakonec se uzavření aplikace do kontejneru vynutí oddělení mezi obchodní logiku a storage server. Jak aplikace horizontálně navýší kapacitu, budou různé kontejnery spoléhat na střední jednoho fyzického úložiště. Toto úložiště by obvykle vysokou dostupnost serveru databáze SQL serveru.
 
-## <a name="application-tour"></a>Prohlídka aplikace
+## <a name="application-tour"></a>Přehled aplikace
 
-[EShopWeb](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Web/WebMonolithic) aplikace představuje část aplikace eShopOnContainers běžící jako monolitický aplikace – aplikace ASP.NET MVC jádra na základě běžící na .NET Core. Poskytuje především katalogu procházení možností, které jsme popsané v předchozích částech.
+[EShopWeb](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Web/WebMonolithic) aplikace představuje některé aplikace aplikaci eShopOnContainers spuštěné jako monolitické aplikace – aplikace založené na technologii ASP.NET Core MVC spouštění v .NET Core. Zejména poskytuje katalogu možnosti procházení, jak je popsáno v předchozí části.
 
-Aplikace používá databázi systému SQL Server pro úložiště katalogu. V nasazení založené na kontejner můžete tato monolitický aplikace přístup k úložišti dat stejné jako aplikace založené na mikroslužeb. Aplikace je nakonfigurovaná pro spuštění systému SQL Server v kontejneru spolu s monolitický aplikace. V produkčním prostředí by systému SQL Server spustit na počítači vysokou dostupnost, mimo Docker hostitele. Pro usnadnění práce v dev nebo testovací prostředí doporučujeme systémem SQL Server v jeho vlastní kontejneru.
+Aplikace používá pro ukládání katalogu do databáze SQL serveru. V kontejnerových nasazení této monolitické aplikace mohly přistupovat k úložišti dat jako aplikací založených na mikroslužbách. Aplikace je nakonfigurovaná pro spuštění systému SQL Server v kontejneru spolu s monolitickými aplikacemi. V produkčním prostředí SQL Server spustí na počítači s vysokou dostupností mimo hostitele Dockeru. Pro usnadnění práce v prostředí vývoj nebo testování se doporučuje systémem SQL Server do vlastního kontejneru.
 
-Funkci počáteční nastavení pouze povolí procházení katalogu. Aktualizace by povolit úplnou sadu funkcí kontejnerové aplikace. Pokročilejší architektura monolitický webové aplikace A je popsána v [webové aplikace ASP.NET architektura postupy](https://aka.ms/webappebook) elektronickou knihu a související [eShopOnWeb ukázkovou aplikaci](http://aka.ms/WebAppArchitecture), i když v takovém případě není spuštěna na Docker kontejnery, protože tento scénář se zaměřuje na vývoj prostý webové s ASP.NET Core.
+Počáteční sada pouze funkcí povolí procházení katalogu. Aktualizace by umožňují úplná sada funkcí kontejnerizované aplikace. A další pokročilé architektura pro webové monolitické aplikace je popsána v [postupy architektury webové aplikace ASP.NET](https://aka.ms/webappebook) e kniha a související [eShopOnWeb ukázkovou aplikaci](http://aka.ms/WebAppArchitecture).
 
-Zjednodušené verzi k dispozici v eShopOnContainers (eShopWeb) ale běží v kontejner Docker.
+## <a name="docker-support"></a>Podpora dockeru
 
-## <a name="docker-support"></a>Podpora docker
+Projekt eShopOnWeb poběží v .NET Core. To znamená, že můžete spustit v kontejnerech založených na Linuxu nebo založené na Windows. Všimněte si, že pro nasazení prostředí Docker, chcete použít stejný typ hostitele pro SQL Server. Kontejnery založené na Linuxu povolit menší nároky na místo a jsou upřednostňované.
 
-Spustí eShopOnWeb projektu na .NET Core. Proto můžete spustit v kontejnerech systémem Linux nebo systému Windows. Všimněte si, že pro nasazení Docker chcete použít stejný typ hostitele pro SQL Server. Systémem Linux kontejnery umožňují menší nároky a mají přednost.
-
-Visual Studio poskytuje šablony projektu, který přidává podporu pro Docker řešení. Klikněte pravým tlačítkem na projekt, klikněte na tlačítko **přidat** následuje **Docker podporu**. Šablona přidá do projektu a nový soubor Docker **docker compose** projekt, který poskytuje počáteční soubor docker-compose.yml. Tento krok již byla provedena v projektu eShopOnWeb stáhnout z webu GitHub. Zobrazí se, že obsahuje řešení **eShopOnWeb** projektu a **docker compose** projektu jak je znázorněno v obrázek 6-1.
+Visual Studio poskytuje šablony projektu, který se přidá podpora pro Docker do řešení. Klikněte pravým tlačítkem na projekt, klikněte na tlačítko **přidat** následovaný **podporu Dockeru**. Šablona přidá do projektu a nový soubor Dockerfile **docker-compose** projekt, který poskytuje starter *docker-compose.yml* souboru. Tento krok již byla provedena v projektu eShopOnWeb stáhnou z Githubu. Uvidíte, že obsahuje řešení **eShopOnWeb** projektu a **docker-compose** projektu jak je znázorněno v obrázek 6-1.
 
 ![](./media/image1.png)
 
-**Obrázek 6-1**. **Docker compose** projekt v kontejneru jedné webové aplikace
+**Obrázek 6-1**. **Docker-compose** projektu v aplikaci web jeden kontejner
 
-Tyto soubory jsou standardní docker-soubory, které jsou konzistentní s žádným projektem Docker compose. Můžete je používat pomocí sady Visual Studio nebo z příkazového řádku. Tato aplikace běží na .NET Core a používá Linux kontejnery, takže můžete také code, sestavit a spustit na Macu nebo na počítač s Linuxem.
+Tyto soubory jsou standardní docker-compose soubory, které jsou konzistentní s žádným projektem Dockeru. Můžete je pomocí sady Visual Studio nebo z příkazového řádku. Tato aplikace běží na .NET Core a používá kontejnery Linuxu. Ano můžete také kódu, sestavení a ho spustit na počítači Mac nebo na počítači s Linuxem.
 
-Soubor docker-compose.yml obsahuje informace o co bitové kopie k sestavení a jaké kontejnerů ke spuštění. Šablony zadejte, jak vytvořit bitovou kopii eshopweb a spusťte kontejnery aplikace. Je nutné přidat závislost na serveru SQL Server tak, že začleníte bitovou kopii pro něj (například mssql. server linux) a služby pro bitovou kopii sql.data pro Docker sestavení a spuštění tohoto kontejneru. Tato nastavení jsou zobrazena v následujícím příkladu:
+*Docker-compose.yml* soubor obsahuje informace o co k sestavení Image a jaké kontejnery ke spuštění. Tyto šablony určit způsob sestavení `eshopweb` obrázků a spuštění aplikace kontejnery. Je třeba přidat závislost na SQL serveru zahrnutím bitovou kopii pro něj (například `mssql-server-linux`) a služby pro sql.data bitovou kopii pro sestavení a spuštění kontejneru Dockeru. Tato nastavení jsou uvedeny v následujícím příkladu:
 
 ```yml
 version: '2'
@@ -75,15 +73,15 @@ services:
     image: microsoft/mssql-server-linux
 ```
 
-Závisí\_na direktiva uvádějí Docker že bitovou kopii eShopWeb závisí na bitovou kopii sql.data. Řádky níže, které jsou pokyny k vytvoření image označené sql.data pomocí bitové kopie microsoft/mssql-server-linux.
+`depends_on` – Direktiva říká Dockeru, eShopWeb image závisí na imagi sql.data. Níže uvedené řádky `depends_on` jsou pokyny k sestavení image označit `sql.data` pomocí `microsoft/mssql-server-linux` bitové kopie.
 
-**Docker compose** projektu zobrazí další soubory docker-compose pod uzlem hlavní docker-compose.yml zajistit vizuální označení, že tyto soubory souvisí. Soubor docker compose override.yml obsahuje nastavení pro obě služby, jako je například připojovací řetězce a další nastavení aplikace.
+**Docker-compose** projektu zobrazí další docker-compose soubory pod hlavním *docker-compose.yml* uzel poskytují vizuální označení, že se vztahují tyto soubory. *Docker compose override.yml* soubor obsahuje nastavení pro obě služby, jako je například připojovací řetězce a další nastavení aplikace.
 
-Následující příklad ukazuje soubor docker-compose.vs.debug.yml, který obsahuje nastavení používaná pro ladění v sadě Visual Studio. V tomto souboru má obrázek eshopweb značce vývojářů, přidá se k němu. Který pomáhá samostatné ladění z bitové kopie verze tak, aby nenasazujte omylem informace o ladění do provozního prostředí:
+Následující příklad ukazuje *docker compose.vs.debug.yml* soubor, který obsahuje nastavení používaná pro ladění v sadě Visual Studio. V tomto souboru eshopweb image má značku dev, připojí k němu. Který pomáhá samostatný ladicí verzi Image tak, aby se nenasazují omylem informace o ladění do produkčního prostředí:
 
 ```yml
 version: '2'
-  
+
 services:
   eshopweb:
     image: eshop/web:dev
@@ -101,11 +99,11 @@ services:
       - "com.microsoft.visualstudio.targetoperatingsystem=linux"
 ```
 
-Přidat posledního souboru je docker compose.ci.build.yml. Tím se použije z příkazového řádku pro sestavení projektu ze serveru položek konfigurace. Tento soubor vytvářené spustí kontejner Docker, který vytvoří bitové kopie pro vaši aplikaci. Následující příklad ukazuje obsah souboru docker compose.ci.build.yml.
+Poslední soubor přidán *docker-compose.ci.build.yml*. Tento soubor se použije z příkazového řádku pro sestavení projektu z položek konfigurace serveru. Tento soubor compose spustí kontejner Dockeru, který sestaví Image vaše aplikace potřebuje. Následující příklad ukazuje obsah *docker-compose.ci.build.yml* souboru:
 
 ```yml
 version: '2'
-  
+
 services:
   ci-build:
     image: microsoft/aspnetcore-build:latest
@@ -115,31 +113,32 @@ services:
   command: /bin/bash -c "dotnet restore ./eShopWeb.sln && dotnet publish  ./eShopWeb.sln -c Release -o ./obj/Docker/publish"
 ```
 
-**Poznámka:**: od verze rozhraní .NET 2.0 jádra, dotnet obnovení příkaz provede automaticky při publikování dotnet se spustí.
+> [!NOTE]
+> Od verze rozhraní .NET Core SDK 2.0 [dotnet restore](../../../core/tools/dotnet-restore.md) příkaz spustí automaticky při [dotnet publikovat](../../../core/tools/dotnet-publish.md) provádí.
 
-Všimněte si, že obrázek je obrázek, který ASP.NET Core sestavení. Této bitové kopie zahrnuje sady SDK a sestavení nástroje pro sestavení aplikace a vytvořte požadované obrázky. Spuštění **docker compose** projekt pomocí tento soubor spustí kontejneru sestavení z bitové kopie, pak sestavení vaší aplikace bitové kopie v tomto kontejneru. Zadejte tento docker-jako součást příkazového řádku k vytvoření aplikace v kontejner Docker compose souboru a potom ho spusťte.
+Všimněte si, že na obrázku je v ASP.NET Core, sestavte image. Tento image obsahuje nástroje pro sadu SDK a sestavení k sestavení aplikace a vytvořte požadované Image. Spuštění **docker-compose** projekt pomocí tohoto souboru z této image spustí kontejner sestavení a poté sestaví image vaší aplikace v tomto kontejneru. Můžete určit, že *docker-compose* souboru jako součást příkazového řádku pro sestavení aplikace v kontejneru Dockeru, a spusťte jej.
 
-V sadě Visual Studio, můžete spustit svoji aplikaci v Docker kontejnery výběrem **docker-tvoří** projekt jako spouštěný projekt a stisknutím klávesy Ctrl + F5 (F5 k ladění), jako u jakékoli jiné aplikace. Při prvním spuštění **docker compose** projektu sady Visual Studio spustí **docker compose** pomocí soubor docker-compose.yml, soubor docker-compose.override.yml a jeden z docker-compose.vs.\* soubory. Po spuštění aplikace Visual Studio spustí prohlížeč za vás.
+V sadě Visual Studio, můžete tak, že vyberete spuštění aplikace v kontejnerech Dockeru **docker-compose** projekt jako spouštěný projekt a následným stisknutím klávesy Ctrl + F5 (F5 pro ladění), jako u jakékoli jiné aplikace. Při spuštění **docker-compose** projektu sady Visual Studio spustí **docker-compose** pomocí *docker-compose.yml* souboru  *docker-compose.override.yml* souboru a ten příkazu docker-compose.vs.\* soubory. Po zahájení aplikace Visual Studio spustí prohlížeč pro vás.
 
-Pokud je spuštění aplikace v ladicím programu, připojí se k běžící aplikaci v Docker Visual Studio.
+Pokud spuštění aplikace v ladicím programu sady Visual Studio připojí k běžící aplikaci v Dockeru.
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-Tato část popisuje několik problémů, které by mohly nastat při spuštění kontejnery místně a navrhne některé opravy.
+Tato část popisuje několik problémů, které mohou nastat při spuštění kontejnerů místně a navrhne některé opravy.
 
-### <a name="stopping-docker-containers"></a>Zastavení Docker kontejnery 
+### <a name="stop-docker-containers"></a>Zastavit kontejnery Dockeru
 
-Po spuštění aplikace kontejnerizované kontejnery nadále spouštět, i když je nutné zastavit ladění. Spuštěním docker ps příkazu z příkazového řádku kontejnery, které jsou spuštěny. Příkaz k ukončení docker zastaví kontejner spuštěné, jak je znázorněno na obrázku 6-2.
+Po spuštění kontejnerizované aplikace i nadále spouštět, i po zastavení ladění kontejnerů. Můžete spustit `docker ps` příkazu z příkazového řádku zobrazíte, které kontejnery běží. `docker stop` Příkaz zastaví spuštěný kontejner, jak je znázorněno v obrázek 6-2.
 
 ![](./media/image2.png)
 
-**Obrázek 6-2**. Výpis a zastavení kontejnerů pomocí docker ps a docker zastavit rozhraní příkazového řádku
+**Obrázek 6 – 2**. Výpis a zastavuje kontejnery docker a docker ps zastavit příkazy rozhraní příkazového řádku
 
-Možná budete muset zastavit spuštěné procesy při přepínání mezi různými konfiguracemi. V opačném kontejner, ve kterém běží webová aplikace používá port pro vaši aplikaci (5106 v tomto příkladu).
+Můžete potřebovat ukončené procesy při přepínání mezi různé konfigurace. V opačném případě kontejneru, na kterém běží webová aplikace používá port, který pro vaši aplikaci (5106 v tomto příkladu).
 
-### <a name="adding-docker-to-your-projects"></a>Přidání Docker do vašich projektů
+### <a name="add-docker-to-your-projects"></a>Přidat do vašich projektů Dockeru
 
-Průvodce, který přidává podporu Docker komunikuje s běžící proces Docker. Průvodce nebude pracovat správně, pokud Docker není spuštěn, když spustíte průvodce. Kromě toho Průvodce prověří zvoleného aktuální kontejner přidání správné Docker podpory. Pokud chcete přidat podporu pro Windows kontejnery, budete muset spustit průvodce, dokud máte Docker s kontejnery Windows nakonfigurovat. Pokud chcete přidat podporu pro kontejnery Linux, spusťte Průvodce při Docker s kontejnery Linux nakonfigurované.
+Průvodce, který přidává podporu Dockeru komunikuje se spuštěným procesem Dockeru. Pokud Docker není spuštěná, když spustíte průvodce, průvodce nespustí správně. Průvodce zkontroluje zvoleného aktuálního kontejneru pro přidání správné podpory Dockeru. Přidání podpory pro kontejnery Windows, spusťte Průvodce mají Dockeru s kontejnery Windows nakonfigurovaný. Přidání podpory pro Linuxové kontejnery, spusťte Průvodce mají Dockeru s kontejnery Linuxu, které jsou nakonfigurované.
 
 >[!div class="step-by-step"]
 [Předchozí](../docker-application-development-process/docker-app-development-workflow.md)

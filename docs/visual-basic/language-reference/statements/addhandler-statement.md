@@ -8,15 +8,15 @@ f1_keywords:
 helpviewer_keywords:
 - AddHandler statement [Visual Basic]
 ms.assetid: cfe69799-2a0f-42c0-a99e-09fed954da01
-ms.openlocfilehash: db8131dc82aed40e725c9375efef274fb6917d41
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bc0dce442db9d62b9fbee857b6e711696ad87fb8
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33603649"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37936812"
 ---
 # <a name="addhandler-statement"></a>AddHandler – příkaz
-Přidruží událost obslužné rutiny události za běhu.  
+Přidruží událost k obslužné rutiny události v době běhu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,21 +25,21 @@ AddHandler event, AddressOf eventhandler
 ```  
   
 ## <a name="parts"></a>Součásti  
- `event`  
- Název události ke zpracování.  
-  
- `eventhandler`  
- Název procedury, která zpracovává událost.  
+|||
+|---|---|
+|event|Název události ke zpracování.|  
+|`eventhandler`|Název procedury, která zpracovává událost.|
+|||
   
 ## <a name="remarks"></a>Poznámky  
- `AddHandler` a `RemoveHandler` příkazy umožňují spuštění a zastavení zpracování událostí v průběhu provádění programu.  
+ `AddHandler` a `RemoveHandler` příkazy umožňují spustit a zastavit zpracování událostí v průběhu provádění programu.  
   
- Podpis `eventhandler` postupu musí odpovídat podpis události `event`.  
+ Podpis metody `eventhandler` postupu musí odpovídat signatuře události `event`.  
   
- `Handles` – Klíčové slovo a `AddHandler` příkaz oba umožňují určit, že konkrétní postupy zpracování konkrétní události, ale jsou rozdíly. `AddHandler` Příkaz připojí postupy pro události za běhu. Použití `Handles` – klíčové slovo při definování postup, chcete-li určit, která byla zjištěna určitá událost. Další informace najdete v tématu [zpracovává](../../../visual-basic/language-reference/statements/handles-clause.md).  
+ `Handles` – Klíčové slovo a `AddHandler` příkaz oba umožňují určit, že konkrétní postupy zpracování určité události, ale existují rozdíly. `AddHandler` Příkaz se připojí postupy k událostem v době běhu. Použití `Handles` – klíčové slovo při definování proceduru k určení, že zpracovává konkrétní události. Další informace najdete v tématu [zpracovává](../../../visual-basic/language-reference/statements/handles-clause.md).  
   
 > [!NOTE]
->  Pro vlastní události `AddHandler` příkaz volá události `AddHandler` přistupujícího objektu. Další informace o vlastních událostí najdete v tématu [Event – příkaz](../../../visual-basic/language-reference/statements/event-statement.md).  
+>  Pro vlastní události `AddHandler` příkaz volá události `AddHandler` přistupujícího objektu. Další informace o vlastních událostech najdete v tématu [Event – příkaz](../../../visual-basic/language-reference/statements/event-statement.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-vb[VbVbalrEvents#17](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/addhandler-statement_1.vb)]  

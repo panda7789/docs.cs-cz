@@ -20,97 +20,97 @@ helpviewer_keywords:
 - floating-point numbers
 ms.assetid: 90040d67-b630-4125-a6ae-37195b079042
 ms.openlocfilehash: c5ff9d097c0660956a9751a23511d8273766227c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33655782"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39245669"
 ---
 # <a name="troubleshooting-data-types-visual-basic"></a>Řešení potíží s datovými typy (Visual Basic)
-Tato stránka obsahuje některé běžné problémy, ke kterým dochází při provádění operací na vnitřní datové typy.  
+Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout při provádění operací ve vnitřních datových typů.  
   
-## <a name="floating-point-expressions-do-not-compare-as-equal"></a>Výrazy s plovoucí desetinnou čárkou není porovnat jako rovná  
- Při práci s plovoucí desetinnou čárkou ([jeden datový typ](../../../../visual-basic/language-reference/data-types/single-data-type.md) a [dvojitý datový typ](../../../../visual-basic/language-reference/data-types/double-data-type.md)), mějte na paměti, že jsou uloženy jako binární zlomků. To znamená, že se nemůže přidržet přesná reprezentace jakékoli množství, který není binární zlomek (ve formátu tisíc nebo (2 ^ n), kde tisíc a n jsou celá čísla). Například 0,5 (= 1/2) a 0.3125 (= 5/16) můžete uchovávat jako přesné hodnoty, zatímco (= 1/5) 0.2 a 0.3 (= 3/10) může být pouze aproximace.  
+## <a name="floating-point-expressions-do-not-compare-as-equal"></a>Jako rovnocenné Neporovnávejte výrazů s plovoucí desetinnou čárkou  
+ Při práci s čísly s plovoucí desetinnou čárkou ([jeden datový typ](../../../../visual-basic/language-reference/data-types/single-data-type.md) a [datový typ Double](../../../../visual-basic/language-reference/data-types/double-data-type.md)), mějte na paměti, že se ukládají jako binární zlomků. To znamená, že se nemůže obsahovat přesnou reprezentací libovolné množství, který není binární zlomek (formuláře k nebo (2 ^ n), kde k a n jsou celá čísla). Například 0,5 (= 1/2) a 0.3125 (tzn. 5/16) se můžou uchovávat jako přesné hodnoty, zatímco se (= 1/5) 0.2 a 0.3 (= 3/10) může být pouze rovin útoku.  
   
- Z tohoto důvodu nepřesnosti, nemůžete spoléhat na přesné výsledky při pracovat na hodnoty s plovoucí desetinnou čárkou. Konkrétně dvě hodnoty, které jsou teoreticky stejné pravděpodobně reprezentace mírně lišit.  
+ Z tohoto důvodu nepřesnosti, nelze spoléhat na přesné výsledky při pracovat na hodnoty s plovoucí desetinnou čárkou. Konkrétně se dvě hodnoty, které jsou si rovny teoreticky může mít mírně odlišné reprezentace.  
   
-| K porovnání s plovoucí desetinnou čárkou počty | 
+| K porovnání s plovoucí desetinnou čárkou množství | 
 |---| 
-|1.  Výpočet absolutní hodnotu jejich rozdíl pomocí <xref:System.Math.Abs%2A> metodu <xref:System.Math> třídy v <xref:System> oboru názvů.<br />2.  Určení přijatelné maximální rozdíl, tak, že můžete zvážit dva množství, která mají být stejné pro praktické účely, pokud jejich rozdílem je, není větší.<br />3.  Porovnejte absolutní hodnota rozdílu přijatelné rozdílu.|  
+|1.  Vypočítá absolutní hodnotu jejich rozdíl pomocí <xref:System.Math.Abs%2A> metodu <xref:System.Math> třídy v <xref:System> oboru názvů.<br />2.  Určení přijatelné maximální rozdíl, tak, aby měli zvážit dva množství musí rovnat pro praktické účely, pokud je jejich rozdíl větší.<br />3.  Porovnejte absolutní hodnota rozdílu na přijatelné rozdíl.|  
   
- Následující příklad ukazuje nesprávný a správnou porovnání dva `Double` hodnoty.  
+ Následující příklad ukazuje správná i nesprávná porovnání dvou `Double` hodnoty.  
   
  [!code-vb[VbVbalrDataTypes#10](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_1.vb)]  
   
- Předchozí příklad používá <xref:System.Double.ToString%2A> metodu <xref:System.Double> struktury tak, aby ji můžete zadat lepší přesnosti než `CStr` používá – klíčové slovo. Výchozí hodnota je 15 číslic, ale ve formátu "G17" ji rozšiřuje na 17 číslic.  
+ V předchozím příkladu se používá <xref:System.Double.ToString%2A> metodu <xref:System.Double> struktury tak, aby ho můžete zadat vyšší přesností než `CStr` používá klíčové slovo. Výchozí hodnota je 15 číslic, ale to formát "G17" rozšiřuje na 17 číslic.  
   
 ## <a name="mod-operator-does-not-return-accurate-result"></a>Mod – operátor nevrátí přesné výsledky  
- Z důvodu nepřesnosti s plovoucí desetinnou čárkou úložiště [Mod operátor](../../../../visual-basic/language-reference/operators/mod-operator.md) neočekávaný výsledek může vrátit, pokud je alespoň jedna z operandy s plovoucí desetinnou čárkou.  
+ Z důvodu nepřesnosti úložiště, s plovoucí desetinnou čárkou [Mod operátor](../../../../visual-basic/language-reference/operators/mod-operator.md) může vrátit neočekávaný výsledek v případě alespoň jeden z operandů s plovoucí desetinnou čárkou.  
   
- [Decimal – datový typ](../../../../visual-basic/language-reference/data-types/decimal-data-type.md) nepoužívá reprezentace plovoucí desetinné čárky. Mnoho čísla, které jsou nepřesné v `Single` a `Double` jsou přesně v `Decimal` (například 0.2 a 0.3). I když aritmetické je pomalejší v `Decimal` než v s plovoucí desetinnou čárkou, může být vhodné ke snížení výkonu zajistit lepší přesnosti.  
+ [Datový typ Decimal](../../../../visual-basic/language-reference/data-types/decimal-data-type.md) nepoužívá reprezentace plovoucí desetinné čárky. Mnoha čísla, která jsou nepřesné v `Single` a `Double` jsou přesné v `Decimal` (například 0.2 a 0.3). I když aritmetické je pomalejší v `Decimal` než v plovoucí desetinné čárky, může být vhodné ke snížení výkonu, abyste dosáhli vyšší přesnost.  
   
-|Najít zbytek celé číslo s plovoucí desetinnou čárkou počty|  
+|Chcete-li najít zbytek celé číslo s plovoucí desetinnou čárkou množství|  
 |---|  
-|1.  Deklarujte proměnné jako `Decimal`.<br />2.  Použít znak typu literálu `D` vynutit literály k `Decimal`, v případě, že jejich hodnoty jsou příliš velké vzhledem k `Long` datového typu.|  
+|1.  Deklarujte proměnné jako `Decimal`.<br />2.  Použít znak typu literálu `D` přinutit se `Decimal`, v případě, že jejich hodnoty jsou příliš velké `Long` datového typu.|  
   
- Následující příklad ukazuje potenciální nepřesnosti operandů s plovoucí desetinnou čárkou.  
+ Následující příklad ukazuje potenciál nepřesnost operandů s plovoucí desetinnou čárkou.  
   
  [!code-vb[VbVbalrDataTypes#11](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_2.vb)]  
   
- Předchozí příklad používá <xref:System.Double.ToString%2A> metodu <xref:System.Double> struktury tak, aby ji můžete zadat lepší přesnosti než `CStr` používá – klíčové slovo. Výchozí hodnota je 15 číslic, ale ve formátu "G17" ji rozšiřuje na 17 číslic.  
+ V předchozím příkladu se používá <xref:System.Double.ToString%2A> metodu <xref:System.Double> struktury tak, aby ho můžete zadat vyšší přesností než `CStr` používá klíčové slovo. Výchozí hodnota je 15 číslic, ale to formát "G17" rozšiřuje na 17 číslic.  
   
- Protože `zeroPointTwo` je `Double`, jeho hodnota 0,2 je nekonečnou opakovaný binární zlomek s hodnotou uloženou 0.20000000000000001. Dělení 2.0 toto množství vypočítá 9.9999999999999995 s zbytek 0.19999999999999991.  
+ Protože `zeroPointTwo` je `Double`, 0.2 jeho hodnotu neomezeně opakovaný binární zlomek s hodnotou uloženou v 0.20000000000000001. Vydělí toto množství 2.0 poskytuje 9.9999999999999995 s zbytek 0.19999999999999991.  
   
- Ve výrazu pro `decimalRemainder`, znak typu literálu `D` vynutí oba operandy k `Decimal`, a 0,2 má znázornění přesné. Proto `Mod` operátor vypočítá zbytek 0,0 očekávané.  
+ Ve výrazu pro `decimalRemainder`, znak typu literálu `D` vynutí oba operandy `Decimal`, a 0.2 má přesné reprezentaci. Proto `Mod` operátor dává očekávaný zbývající 0,0.  
   
- Všimněte si, že není dostatečná pro deklarovat `decimalRemainder` jako `Decimal`. Musíte také vynutit literály k `Decimal`, nebo používají `Double` ve výchozím nastavení a `decimalRemainder` obdrží nesprávné stejnou hodnotu jako `doubleRemainder`.  
+ Všimněte si, že není dostatečná k deklarování `decimalRemainder` jako `Decimal`. Také je nutné donutit literály do `Decimal`, nebo používají `Double` ve výchozím nastavení a `decimalRemainder` obdrží nepřesné stejnou hodnotu jako `doubleRemainder`.  
   
-## <a name="boolean-type-does-not-convert-to-numeric-type-accurately"></a>Typem logická hodnota není převod na číselný typ přesně  
- [Datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) hodnoty nejsou uložené jako čísla a uložené hodnoty nejsou určeny jako ekvivalentní na čísla. Pro kompatibilitu s předchozími verzemi jazyka Visual Basic poskytuje klíčová slova převodu ([CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md), `CBool`, `CInt`a tak dále) pro převod mezi `Boolean` a číselnými typy. Ale jiné jazyky někdy provést tyto převody odlišně, stejně jako [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody.  
+## <a name="boolean-type-does-not-convert-to-numeric-type-accurately"></a>Typ Boolean není numerický typ. přesně převádět  
+ [Datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) nejsou uložené hodnoty jako čísla a uložené hodnoty nejsou určeny jako ekvivalentní čísla. Z důvodu kompatibility se staršími verzemi Visual Basic poskytuje klíčová slova převodu ([funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md), `CBool`, `CInt`, a tak dále) pro převod mezi `Boolean` a číselné typy. Ale jiných jazycích někdy provádění těchto převodů odlišně, stejně jako [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody.  
   
- Nikdy byste měli zapsat kód, který závisí na ekvivalentní číselné hodnoty pro `True` a `False`. Kdykoli je to možné, měli byste omezit využití `Boolean` proměnné logické hodnoty, pro které jsou navrženy. Pokud musíte kombinovat `Boolean` a číselné hodnoty, ujistěte se, že rozumíte převod metoda, kterou jste vybrali.  
+ Nikdy by měl napsat kód, který závisí na ekvivalentní číselné hodnoty pro `True` a `False`. Kdykoli je to možné, byste měli omezit využití `Boolean` proměnné logické hodnoty, které jsou určeny. Jestliže musíte kombinovat `Boolean` a číselné hodnoty, ujistěte se, že rozumíte metodu převodu, který jste vybrali.  
   
 ### <a name="conversion-in-visual-basic"></a>Převod v jazyce Visual Basic  
- Při použití `CType` nebo `CBool` klíčová slova převodu převod číselných datových typů pro `Boolean`, stane 0 `False` a všechny ostatní hodnoty přestat `True`. Při převodu `Boolean` hodnot na číselné typy pomocí klíčová slova převodu, `False` se změní na 0 a `True` se změní na hodnotu -1.  
+ Při použití `CType` nebo `CBool` klíčová slova převodu chcete převést číselné datové typy k `Boolean`, stane 0 `False` a Staňte se všechny ostatní hodnoty `True`. Při převodu `Boolean` hodnoty pro číselné typy s použitím klíčová slova převodu `False` stane 0 a `True` stane hodnota -1.  
   
-### <a name="conversion-in-the-framework"></a>Převod v rozhraní Framework  
- <xref:System.Convert.ToInt32%2A> Metodu <xref:System.Convert> třídy v <xref:System> převede obor názvů `True` až + 1.  
+### <a name="conversion-in-the-framework"></a>V rámci převodu  
+ <xref:System.Convert.ToInt32%2A> Metodu <xref:System.Convert> třídy v <xref:System> obor názvů převede `True` až + 1.  
   
- Pokud je nutné převést `Boolean` hodnoty na číselný datový typ, dávejte pozor, o jakou metodu převodu použijete.  
+ Pokud je nutné převést `Boolean` hodnota, která se číselný datový typ, buďte opatrní o způsobu převodu použijete.  
   
 ## <a name="character-literal-generates-compiler-error"></a>Znakový literál vygeneruje Chyba kompilátoru  
- Neexistují žádné znaky typu předpokládá Visual Basic výchozí datové typy pro literály. Výchozí typ znaku literálu – uzavřena v uvozovkách (`" "`) – je `String`.  
+ Neexistují žádné znaky typu předpokládá Visual Basic výchozí datové typy pro literály. Výchozí typ pro literální znak – uzavřena v uvozovkách (`" "`) – je `String`.  
   
- `String` Datový typ není rozšíří do [Char – datový typ](../../../../visual-basic/language-reference/data-types/char-data-type.md). To znamená, že pokud chcete přiřadit k literál `Char` proměnné, musíte provést zužující převod nebo vynutit literál k `Char` typu.  
+ `String` Datový typ nelze rozšířit na [Char – datový typ](../../../../visual-basic/language-reference/data-types/char-data-type.md). To znamená, že pokud chcete přiřadit literál na `Char` proměnné, musíte provést zužující převod nebo literál k vynucení `Char` typu.  
 
-|K vytvoření znakový literál přiřadí proměnné nebo konstanta|
+|K vytvoření znak literálu přiřadit k proměnné nebo – konstanta|
 |---|  
-|1.  Deklarovat proměnnou nebo konstanta jako `Char`.<br />2.  Hodnota znaku uzavřít do uvozovek (`" "`).<br />3.  Postupujte podle uzavírací dvojité uvozovky s znak typu literálu `C` vynutit literál k `Char`. To je nezbytné, pokud kontrola typu přepínače ([Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) je `On`, a je v každém případě žádoucí.|  
+|1.  Deklarujte proměnnou nebo konstantu jako `Char`.<br />2.  Hodnota znaku uzavřete do uvozovek (`" "`).<br />3.  Postupujte podle uzavírací dvojité uvozovky se znak typu literálu `C` přinutit literal na `Char`. To je nezbytné, pokud kontrola typu ([Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) je `On`, a je v každém případě žádoucí.|  
   
- Následující příklad ukazuje úspěšné i neúspěšné přiřazení literálu k `Char` proměnné.  
+ Následující příklad ukazuje neúspěšných a úspěšných přiřazení literál na `Char` proměnné.  
   
  [!code-vb[VbVbalrDataTypes#12](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_3.vb)]  
   
- Existuje vždy riziko pomocí zužující převody, protože můžou selhat v době běhu. Například převod z `String` k `Char` může selhat, pokud `String` hodnota obsahuje více než jeden znak. Proto je lepší programování používat `C` zadávat znaky.  
+ Je vždycky riziko pomocí zužující převody, protože může selhat v době běhu. Například převod z `String` k `Char` může selhat, pokud `String` hodnota obsahuje více než jeden znak. Proto je lépe programování používat `C` znak.  
   
 ## <a name="string-conversion-fails-at-run-time"></a>Převod řetězce selže v době běhu  
- [String – datový typ](../../../../visual-basic/language-reference/data-types/string-data-type.md) účastní velmi málo rozšiřující převody. `String` rozšiřuje pouze na sebe sama a `Object`a pouze `Char` a `Char()` ( `Char` pole) rozšíří do `String`. Důvodem je, že `String` proměnných a konstant může obsahovat hodnoty, které nemůže obsahovat jiné datové typy.  
+ [Datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md) podílí na velmi málo rozšiřující převody. `String` rozšiřuje pouze sám na sebe a `Object`a pouze `Char` a `Char()` ( `Char` pole) rozšířit na `String`. Důvodem je, že `String` proměnné a konstanty může obsahovat hodnoty, které nesmí obsahovat jiné datové typy.  
   
- Když je kontrola typu přepínače ([Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) je `On`, kompilátor zakazuje všechny implicitní zužující převod. To zahrnuje ty zahrnující `String`. Váš kód můžete dál používat klíčová slova převodu, jako `CStr` a [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md), které přímo [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] k pokusu o převod.  
+ Při přepnutí kontrola typu ([Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) je `On`, zakáže všechny implicitní zužující převody kompilátor. Jedná se o těch zahrnující `String`. Kód můžete stále použít klíčová slova převodu například `CStr` a [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md), které přímo [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pokusu o převod.  
   
 > [!NOTE]
->  Chyba zužující převod je potlačen pro převody z elementů v `For Each…Next` kolekce řídicí proměnná smyčky. Další informace a příklady naleznete v části "Zužující převody" v [For Each... Další příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
+>  Chyba zúžit převodu je potlačeno pro převod z prvků v `For Each…Next` kolekce řídicí proměnná smyčky for. Další informace a příklady najdete v tématu v části "Zužující převody" [For Each... Další příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
   
 ### <a name="narrowing-conversion-protection"></a>Zužující převod ochrany  
- Zužující převody nevýhodou je, že může selhat v době běhu. Například pokud `String` proměnná obsahuje nic jiného, než "hodnotu True" nebo "Nepravda", nelze převést na `Boolean`. Pokud obsahuje znaky interpunkce, převod na číselný typ. se nezdaří. Pokud víte, že vaše `String` proměnné vždy obsahuje hodnoty, které může přijmout typ cílového, by neměl zkuste převod.  
+ Zužující převody nevýhodou je, že může selhat v době běhu. Například pokud `String` proměnná obsahuje všechno, jiné než "True" nebo "Nepravda", nelze převést na `Boolean`. Pokud obsahuje interpunkční znaménka, převod na libovolného číselného typu se nezdaří. Pokud si nejste jisti, který vaše `String` proměnná vždy obsahuje hodnoty, které může přijmout typ cíle, by neměla zkuste převod.  
   
- Pokud je nutné převést z `String` na jiný datový typ, má-li uzavřete pokusu o převod v nejbezpečnější postup [zkuste... Catch... Finally – příkaz](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md). To vám umožňuje řešit selhání spuštění.  
+ Pokud je nutné převést z `String` na jiný datový typ, je nejbezpečnější postup uzavření pokus o převod [zkuste... Catch... Příkaz finally](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md). Díky tomu můžete řešit selhání za běhu.  
   
-### <a name="character-arrays"></a>Znaková pole  
- Jediný `Char` a pole `Char` elementy obě rozšíří do `String`. Ale `String` není rozšíří do `Char()`. Převést `String` hodnotu `Char` pole, které můžete použít <xref:System.String.ToCharArray%2A> metodu <xref:System.String?displayProperty=nameWithType> třída.  
+### <a name="character-arrays"></a>Znakových polí  
+ Jediný `Char` a pole `Char` prvky obou rozšířit na `String`. Ale `String` nelze rozšířit na `Char()`. Převést `String` hodnota, která se `Char` pole, můžete použít <xref:System.String.ToCharArray%2A> metodu <xref:System.String?displayProperty=nameWithType> třídy.  
   
-### <a name="meaningless-values"></a>Smysl hodnoty  
- Obecně platí `String` hodnoty nejsou smysluplný v jiné datové typy a převod je vysoce umělé a nebezpečné. Kdykoli je to možné, měli byste omezit využití `String` proměnné sekvence znaků, pro které jsou navrženy. By nikdy napsat kód, který závisí na ekvivalentní hodnoty v jiných typech.  
+### <a name="meaningless-values"></a>Význam hodnoty  
+ Obecně platí `String` hodnoty nejsou smysl v jiných datových typů a převod je vysoce umělý a nebezpečné. Kdykoli je to možné, byste měli omezit využití `String` proměnné sekvence znaků, pro které jsou určeny. By nikdy Nepsat kód, který závisí na odpovídající hodnoty v jiných typech.  
   
 ## <a name="see-also"></a>Viz také  
  [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  

@@ -1,228 +1,319 @@
 ---
-title: Společné architektury webové aplikace
-description: Architektury moderních webových aplikací pomocí ASP.NET Core a Microsoft Azure | společné architektury webové aplikace
+title: Běžné architektury webových aplikací
+description: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure | Prozkoumejte běžné architektury webových aplikací
 author: ardalis
 ms.author: wiwagn
-ms.date: 10/06/2017
-ms.openlocfilehash: cb9a1d68d4c7c66c6adab3a5e932ee37c3ea22b0
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 06/28/2018
+ms.openlocfilehash: ff483c9b555fdf394d11626536c28e7e07516d05
+ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106420"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37404629"
 ---
-# <a name="common-web-application-architectures"></a>Společné architektury webové aplikace
+# <a name="common-web-application-architectures"></a>Běžné architektury webových aplikací
 
-> "Pokud se domníváte, že je dobré architektura náročná, zkuste architektura chybné."  
-> _-Brian zápatí a Joseph Yoder_
+> "Pokud se domníváte, že je dobré architektura nákladné, zkuste chybný architektury."  
+> _– Brian zápatí a Joseph Yoder_
 
-## <a name="summary"></a>Souhrn
+Většina tradičních aplikací rozhraní .NET jsou nasazeny jako jedné jednotky odpovídající spustitelný soubor nebo jednu webovou aplikaci spuštěnou v rámci jedné domény aplikace služby IIS. Toto je nejjednodušší model nasazení a velmi dobře slouží řada aplikací menší veřejné a vnitřní. Ale i směru tato jedna jednotka nasazení, většina netriviální obchodních aplikací těžit z některé logické rozdělení do několika vrstev.
 
-Většina tradičních aplikací .NET jsou nasazeny jako jedné jednotky odpovídající spustitelný soubor nebo jedné webové aplikace běžící v rámci jedné domény aplikace služby IIS. Toto je nejjednodušší model nasazení a velmi dobře slouží mnoho interních a veřejných menší aplikací. Ale i zadána tato jedné jednotky nasazení nejvíce netriviální obchodních aplikací těžit z některé logického oddělení do několika vrstev.
+## <a name="what-is-a-monolithic-application"></a>Co je u monolitické aplikace?
 
-## <a name="what-is-a-monolithic-application"></a>Co je monolitický aplikace?
-
-Monolitický aplikace je ten, který je zcela samostatné, z hlediska své chování. Může komunikovat s další služby nebo datové úložiště v průběhu provádění jeho operací, ale základní své chování běží v rámci vlastní proces a bude celá aplikace se obvykle nasazují jako na jednu jednotku. Pokud je takové aplikace je potřeba škálovat horizontálně, obvykle v celé aplikaci duplicitní mezi více serverů nebo virtuální počítače.
+Monolitické aplikace je ten, který je zcela nezávislý, z hlediska své chování. Může komunikovat s dalšími službám nebo datům úložišti v průběhu provádění jeho operací, ale základní chování aplikace běží v rámci svého vlastního procesu a celá aplikace je obvykle nasazeni jako jeden celek. Pokud takové aplikace potřebuje k horizontálnímu škálování, obvykle bude celá aplikace je duplicitní v rámci více serverů nebo virtuálních počítačů.
 
 ## <a name="all-in-one-applications"></a>Aplikace: 1
 
-Nejmenší možný počet projekty pro architekturu aplikace je jedna. V této architektuře celý logiku aplikace obsažené v jednom projektu, zkompilovány do jednoho sestavení a nasadit jako na jednu jednotku.
+Nejmenší možný počet projektů pro architekturu aplikace patří. V této architektuře celý logiku aplikace je obsažená v jednom projektu zkompilován do jednoho sestavení a nasazených jako celek.
 
-Nový projekt ASP.NET Core, vytvořené v sadě Visual Studio nebo z příkazového řádku, spustí jako jednoduchý monolitu "vše v jednom". Obsahuje všechny chování aplikace, včetně přístupu logiku prezentační, obchodní a data. Obrázek 5-1 zobrazuje strukturu souborů jednoprojektové aplikace.
-
-**Obrázek 5-1.** Jeden projektu aplikace ASP.NET Core
+Nový projekt ASP.NET Core, vytvořené v sadě Visual Studio nebo z příkazového řádku, je na začátku jako jednoduchý monolitu "vše v jednom". Obsahuje všechny chování aplikace, včetně logikou přístupu prezentační, obchodní a datové sady. Obrázek 5-1 zobrazuje strukturu souborů z jednoho projektu aplikace.
 
 ![](./media/image5-1.png)
 
-V případě jedné projektu oddělené oblasti zájmu se dosahuje prostřednictvím složky. Výchozí šablony obsahuje samostatné složky pro odpovědnosti vzor MVC modely, zobrazení, a řadiče, a také další složky pro Data a služby. V tomto případě prezentace podrobnosti by měl být omezeny co nejvíce do složky, zobrazení a podrobnosti implementace přístup data by měla být omezená na třídy zachovány ve složce Data. Obchodní logika by měl být umístěn v služeb a tříd v rámci složku modely.
+**Obrázek 5-1.** Jednoho projektu aplikace ASP.NET Core.
 
-I když je jednoduchý, má monolitický řešení jednoprojektové některé nevýhody. S růstem velikost a složitost projektu pořád roste s tím také počet souborů a složek. Otázky uživatelského rozhraní (modely, zobrazení, řadiče) jsou umístěny ve více složkách, které nejsou seskupeny podle abecedy. Tento problém jenom získá zhoršení, když další konstruktory úrovni uživatelského rozhraní, jako jsou filtry nebo ModelBinders, se přidají do vlastních složek. Obchodní logika je různých mezi složkami modely a služby, a není není jasný náznak, které by měl třídy v složky, které závisí na které jiné. Kvůli chybějící organizace na úrovni projektu často vede k [špagety kód](http://deviq.com/spaghetti-code/).
+V případě jediného projektu v oddělení oblastí zájmu je dosaženo pomocí složky. Výchozí šablona obsahuje samostatné složky pro vzor odpovědnosti modelů, zobrazení a Kontrolerů MVC, stejně jako další složky pro Data a služby. V tomto případě by měla být omezena prezentace podrobnosti co nejvíc do zobrazení složky a podrobnosti implementace přístupu dat by měla být omezena na třídy, které jsou uloženy ve složce Data. Obchodní logika by měl být uložený v třídy v rámci složky modelů a služeb.
 
-Aby bylo možné tyto problémy řeší aplikace často momentální do řešení vícenásobného projektu, kde se každý projekt, považuje se nacházejí v konkrétní *vrstvy* aplikace.
+I když je jednoduché, monolitické řešení jednoprojektové má některé nevýhody. Nárůstu velikosti a složitosti projektu, bude počet souborů a složek i růst. Rozhraní (UI) obavy uživatelů (modelů, zobrazení, kontrolery) jsou umístěny v více složek, které nejsou seskupeny podle abecedy. Tento problém pouze získá horší, když se další úroveň uživatelského rozhraní konstruktorů, jako jsou filtry nebo ModelBinders, jsou přidány do jejich vlastních složek. Obchodní logika je rozmístěno jinde mezi složkami modelů a služeb, a není není jasný náznak, z nichž třídy do složky, které by neměly být závislé na které ostatní. Tato nedostatečná organizace na úrovni projektu často vede k [špagety kód](https://deviq.com/spaghetti-code/).
 
-## <a name="what-are-layers"></a>Jaké jsou vrstvy?
+Pro řešení těchto problémů, často vyvíjet aplikace do multiprojektových řešení, kde je považován za každý projekt uložená v konkrétní _vrstvy_ aplikace.
 
-Jelikož aplikace v složitost, jeden způsob, jak spravovat této složitost je rozdělit aplikace podle jeho odpovědnosti nebo připomínky. To odpovídá oddělení Princip otázky a pomoct chránit rostoucí codebase uspořádaná tak, aby vývojáři mohli snadno najít, kde je implementováno určité funkce. Vrstvená architektura nabízí řadu výhod nad rámec právě kód organizaci, ale.
+## <a name="what-are-layers"></a>Co jsou vrstvy?
 
-Podle uspořádání kódu do vrstvy, můžete znovu použít běžné funkce nízké úrovně v celé aplikaci. Vzhledem k tomu, znamená to, že méně kódu potřeba zapsat a můžou aplikace pro standardizaci na jediná implementace, podle SUCHÝCH zásady, je vhodné tuto opakované použití.
+Jak aplikace jejich složitost v, je jeden způsob, jak spravovat složitost rozdělte aplikace podle její odpovědnosti nebo připomínky. Následuje oddělení hlavní otázky a pomoct chránit rostoucí základu kódu uspořádané tak, aby vývojáři mohli snadno najít, kde je implementovat určité funkce. Vrstvené architektury nabízí několik výhod nad rámec právě kódu organizace, i když.
 
-S Vrstvená architektura aplikace můžete vynutit omezení, na kterých vrstvy může komunikovat s jiných vrstev. To pomáhá zajistit zapouzdření. Když vrstvu změní nebo nahradit, by měl mít vliv pouze vrstvy, které s ním pracovat. Omezením, které závisí vrstvy, na kterých lze zmírnit jiných vrstev dopad změny, aby jediné změny nebude mít vliv na celou aplikaci.
+Uspořádáním kódu do vrstev lze opětovně použít běžné funkce nízké úrovně v celé aplikaci. Použití je výhodné, protože to znamená méně kódu musí být napsaný, a proto ji povolí aplikaci používají jako standard jedna implementace, po [Neopakovat sami (zkušební)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) zásadě.
 
-Vrstvy (a zapouzdření) bylo mnohem snazší nahradit funkcionalitu v rámci aplikace. Například aplikace může původně trvalosti použít svou vlastní databázi systému SQL Server, ale později může zvolit strategie trvalost založené na cloudu, nebo jeden za webového rozhraní API. Pokud aplikace má správně zapouzdřené jeho implementace trvalost v rámci logické vrstvy, může být nahrazen novou implementace stejné veřejné rozhraní této konkrétní vrstvy systému SQL Server.
+Pomocí vrstev architektury můžete aplikace vynucovat omezení, na které vrstvy mohou komunikovat s jinými vrstvami. To pomáhá zajistit zapouzdření. Když vrstvu je změnit nebo nahradit, by měla mít vliv pouze vrstvy, které s ním pracovat. Tím, že omezíte, které vrstvy závisí, na kterých můžete minimalizovat jinými vrstvami, dopad změn, tak, aby jeden změna nebude mít vliv na celou aplikaci.
 
-Kromě potenciálně záměnu implementace v reakci na budoucí změny v požadavcích vrstvy aplikace můžete taky usnadňují vyměnit implementace pro účely testování. Místo nutnosti psaní testy, které provozují proti skutečná data vrstvy nebo uživatelského rozhraní aplikace, tyto vrstvy můžou nahradit během testu falešných implementace, které poskytují známé odpovědí na požadavky. Testy díky obvykle mnohem snazší k zápisu a mnohem rychlejší spusťte ve srovnání s spuštěná testy znovu skutečné infrastruktury aplikace.
+Vrstvy (a zapouzdření) to značně zjednodušují nahrazují funkce v rámci aplikace. Aplikace například může zpočátku používat vlastní databázi systému SQL Server pro trvalost, ale později může zvolit strategii trvalost založené na cloudu, nebo jeden za webového rozhraní API. Pokud aplikace nemá správně zapouzdřené jeho implementace trvalého v rámci logické vrstvy, mohla být, že systém SQL Server zvláštní vrstva nahrazena novou implementaci stejné veřejné rozhraní.
 
-Logické rozvrstvení je běžný postup pro zlepšení organizace kódu v podnikových aplikacích softwaru a existuje několik způsobů, ve kterých mohou být uspořádány kód do vrstvy.
+Kromě potenciál záměnu implementace v reakci na budoucí změny v požadavcích aplikace může také usnadňují vyměnit implementace pro účely testování. Namísto nutnosti psát testy, které pracují na skutečné datové vrstvy nebo vrstvě uživatelského rozhraní aplikace, lze tyto vrstvy nahradit v době testu s falešnou implementace, které poskytují známé odpovědí na požadavky. Testy díky obvykle mnohem jednodušší zápis a mnohem rychlejší spouštění ve srovnání s spuštění testů znovu aplikace skutečný infrastruktury.
+
+Logické vrstvení je běžná technika pro zlepšení organizaci kódu v oddílu podnikové aplikace softwaru a existuje několik způsobů, jimiž kódu je možné uspořádat do vrstvy.
 
 > [!NOTE]
-> *Vrstvy* představují logického oddělení v aplikaci. V případě, že logiku aplikace je fyzicky distribuován do samostatné servery nebo procesy, tyto cíle samostatné fyzické nasazení se označují jako *vrstev*. Je možné a celkem běžné tak, aby měl N-Layer aplikaci, která je nasazena na jedné vrstvě.
+ > _Vrstvy_ představují logické oddělení v rámci aplikace. V případě, že aplikace logiky je fyzicky distribuovány na samostatných serverech nebo procesy, tyto cíle samostatné fyzické nasazení se označují jako _úrovně_. Je možné a celkem běžné, aby N vrstvy aplikace, která se nasadí do jedné vrstvě.
 
-## <a name="traditional-n-layer-architecture-applications"></a>Tradiční "N-Layer" Architektura aplikace
+## <a name="traditional-n-layer-architecture-applications"></a>Tradiční aplikace s architekturou "N-vrstva"
 
-Nejběžnější organizace aplikace logiky do vrstvách je znázorněno na obrázku 5-2.
-
-**Obrázek 5-2.** Typická aplikace vrstvy.
+Nejběžnější organizace aplikace logiky do vrstvy se zobrazí obrázek 5-2.
 
 ![](./media/image5-2.png)
 
-Tyto vrstvy jsou často se používá zkratka jako uživatelského rozhraní, BLL (vrstvu obchodní logiky) a DAL (Data Access Layer). Pomocí této architektury, uživatelé provádět požadavky prostřednictvím uživatelského rozhraní vrstvy, která komunikuje jenom s BLL. BLL, pak můžete volat DAL data žádosti o přístup. Vrstva uživatelského rozhraní neměli provádět všechny požadavky vrstvy DAL přímo, ani musí komunikovat s trvalost přímo přes jiným způsobem. Podobně BLL by měla pouze pracovat s trvalost projít DAL. Tímto způsobem každé vrstvě má vlastní dobře známé zodpovědnost.
+**Obrázek 5-2.** Typická aplikace vrstvy.
 
-Jednou z nevýhod tohoto přístupu tradiční rozvrstvení je, že kompilaci závislosti shora dolů. To znamená vrstvě uživatelského rozhraní závisí na BLL, což závisí na DAL. To znamená, že BLL, což obvykle obsahuje nejdůležitější logiku v aplikaci, je závislá na podrobnosti implementace přístup dat (a často na existenci databáze). Testování obchodní logiku v takové architekturu je často složité, vyžadování testovací databáze. Princip inverzi závislosti lze použít a tento problém vyřešit, jak uvidíte v další části.
+Tyto vrstvy jsou často se zkracuje jako uživatelského rozhraní, vrstvu obchodní logiky () knihoven BLL a DAL (Data Access Layer). Pomocí této architektury, uživatelům provádět požadavky prostřednictvím vrstvě uživatelského rozhraní, která komunikuje jenom s BLL. BLL, pak můžete volat DAL data žádosti o přístup. Vrstvě uživatelského rozhraní neměli provádět všechny požadavky vrstvy DAL přímo ani by měl pracovat s trvalostí přímo prostřednictvím jiným způsobem. Podobně BLL by měl pouze pracovat s trvalostí prostřednictvím vrstvy DAL. Tímto způsobem každá vrstva má svou vlastní dobře známé odpovědnost.
 
-Obrázek 5-3 ukazuje řešení s příklad nejnovější aplikace do tří projektů odpovědnost (nebo layer).
+Jednou z nevýhod tohoto přístupu tradiční vrstvení je, že závislostí kompilace v horní části do dolní části. To znamená vrstvě uživatelského rozhraní závisí na BLL, která závisí na vrstvy DAL. To znamená, že BLL, který obvykle obsahuje nejdůležitější logiky v aplikaci, je závislá na podrobnosti implementace přístupu dat (a často na existenci databáze). Testování obchodní logiku v takové architektury je často obtížné, které vyžadují testovací databázi. Princip inverzi závislostí lze použít k vyřešení tohoto problému, jak uvidíte v další části.
 
-**Obrázek 5-3.** Jednoduché monolitický aplikace pomocí tří projektů.
+Obrázek 5 – 3 ukazuje příklad řešení, rozdělení aplikace do tří projektů odpovědnost (nebo vrstvy).
 
 ![](./media/image5-3.png)
 
-I když tato aplikace používá několik projektů pro účely organizace, je stále nasazen jako na jednu jednotku a jeho klienty bude pracovat s ním jako jednu webovou aplikaci. To umožňuje velmi jednoduché nasazení procesu. Obrázek 5-4 ukazuje, jak může být taková aplikace hostované pomocí služby Windows Azure.
+**Obrázek 5 – 3.** Jednoduché monolitické aplikace pomocí tří projektů.
+
+I když se tato aplikace používá několik projektů pro účely organizace, stále je nasazen jako jednu jednotku a jeho klienti budou pracovat s ním jako jednu webovou aplikaci. To umožňuje proces velmi jednoduché nasazení. Obrázek 5 – 4 ukazuje, jak mohou být takové aplikace hostované pomocí Azure.
 
 ![](./media/image5-4.png)
 
 **Obrázek 5 – 4.** Jednoduché nasazení webové aplikace Azure
 
-Jak aplikace potřebuje, růst, mohou být vyžadovány komplexní a robustní řešení nasazení. Obrázek 5-5 ukazuje příklad složitější plán nasazení, který podporuje další funkce.
+Jak rostou potřeby aplikace, může být složité a robustní řešení nasazení požadováno. Obrázek 5 až 5 ukazuje příklad složitější plánu nasazení, který podporuje další funkce.
 
 ![](./media/image5-5.png)
 
-**Obrázek 5-5.** Nasazení webové aplikace do Azure App Service
+**Obrázek 5 – 5.** Nasazení webové aplikace do služby Azure App Service
 
-Tento projekt organizace do více projektů podle odpovědnost interně, zlepšuje udržovatelnosti aplikace.
+Tento projekt organizace do více projekty založené na odpovědnost interně, zvyšuje udržovatelnost aplikace.
 
-Tato jednotka je možné rozšířit nebo horizontálně navýšit kapacitu Pokud chcete využít výhod cloudových škálovatelnost na vyžádání. Rozšiřování prostředků znamená přidávání dalších procesoru, paměti, místa na disku nebo jiným prostředkům na server(y) hostování vaší aplikace. Škálování znamená, přidávání dalších instancí těchto serverů, zda se jedná o fyzických serverech nebo virtuálních počítačů. Pokud je vaše aplikace hostované ve více instancích, nástroj pro vyrovnávání zatížení se používá k požadavky přiřadit instance jednotlivých aplikací.
+Tato jednotka je možné škálovat směrem nahoru nebo navýšení kapacity využívat škálovatelnost na vyžádání založené na cloudu. Vertikální navýšení kapacity znamená, že přidáte další procesor, paměť, místo na disku nebo další prostředky na serverech, které hostují vaši aplikaci. Horizontální navýšení kapacity znamená, že přidávání dalších instancí těchto serverů, ať už jde o fyzických serverech nebo virtuálních počítačů. Když aplikace běží na několika instancích, nástroj pro vyrovnávání zatížení slouží k přiřazení požadavků k instance jednotlivých aplikací.
 
-Nejjednodušším přístupem při škálování webové aplikace v Azure je nakonfigurovat ručně škálování v plánu služby aplikace App Service. Obrázek 5 a 6 zobrazit obrazovce odpovídající řídicí panel Azure nakonfigurovat, kolik instancí slouží k aplikaci.
+Nejjednodušším přístupem při škálování webové aplikace v Azure je nakonfigurovat ručně škálování v plánu služby vaší aplikace App Service. Obrázek 5 – 6 se zobrazuje obrazovka odpovídající řídicí panel Azure nakonfigurovat, kolik instancí má aplikace.
 
 ![](./media/image5-6.png)
 
 **Obrázek 5 a 6.** Plán služby App Service škálování v Azure.
 
-## <a name="clean-architecture"></a>Vyčištění architektura
+## <a name="clean-architecture"></a>Vyčištění architektury
 
-Aplikace, které následují v inverzi Princip závislostí, jakož i Principy návrhu Domain-Driven (DDD) zpravidla přicházejí na podobnou architekturu. Tato architektura se příliš mnoho názvy průběhu let. Jeden ze zadaných názvů první byl šestiúhelníkový architekturu, za nímž následuje adaptéry a porty. Nedávno, je byla citovalo jako [průsvitek architektura](http://jeffreypalermo.com/blog/the-onion-architecture-part-1/) nebo [čisté architektura](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). Je tento poslední název čistou architektura, která slouží jako základ pro popis architektury v této příručce e.
+Můžete přejít na podobnou architekturu mají tendenci aplikací podle principu inverzi závislostí, jakož i principů návrhu Domain-Driven (DDD). Tato architektura se dostaly celou řadu názvů v průběhu let. Jeden z názvů první byl šestiúhelníkový architektury, za nímž následuje adaptéry a porty. Nedávno, je byl uvedený jako [průsvitek architektura](http://jeffreypalermo.com/blog/the-onion-architecture-part-1/) nebo [čisté architektura](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). Tento název, vyčistit architektury, se používá jako název pro tuto architekturu v této e knihy.
 
 > [!NOTE]
-> Termín čistou architektura lze použít k aplikacím, které jsou vytvořené pomocí také zásady DDD, ty, které nejsou sestavené pomocí DDD. V případě dřívějším, může být tato kombinace označovány jako "Čistou DDD architektura".
+> Termín čisté architekturu je možné použít pro aplikace, které se vytvářejí pomocí DDD zásady stejně jako ty, které nejsou sestavené pomocí DDD. V případě nejprve, může být tato kombinace označovány jako "Architektuře čistého DDD".
 
-Vyčištění architektura převádí model obchodní logiky a aplikace v centru aplikace. Místo nutnosti obchodní logiky, závisí na přístup k datům nebo jiných příčin infrastruktury, je obrácený tuto závislost: Podrobnosti o infrastruktury a implementace závisí na základní aplikace. Toho dosáhnete tak, že definujete abstrakce nebo rozhraní, klíčové aplikace, které jsou pak implementované pro typy definované v vrstvě infrastruktury. Běžný způsob vizualizace této architektury je použití řadu soustředných kroužky, podobně jako průsvitek. Obrázek 5 X ukazuje příklad tento styl architektury reprezentace.
+Vyčistit architektuře umístí obchodní logiky a aplikace modelu v Centru pro aplikace. Namísto toho, aby obchodní logika závisí na přístup k datům nebo jiných starostí o infrastrukturu, je obrácený této závislosti: infrastruktury a podrobnosti implementace závisí na základní aplikace. Toho dosáhnete tak, že definujete abstrakce, rozhraní, nebo v samotném aplikace, které jsou následně implementované typy definované ve vrstvě infrastruktury. Běžný způsob vizualizace tato architektura je použít řadu soustředných kruhy, podobně jako průsvitek. Obrázek 5 – 7 ukazuje příklad tohoto stylu architektury reprezentace.
 
 ![](./media/image5-7.png)
 
-**Obrázek 5 – 7.** Vyčištění architektura; zobrazení průsvitek
+**Obrázek 5 – 7.** Vyčistit architektura; průsvitek zobrazení
 
-V tomto diagramu toku závislostí směrem k nejvnitřnější kruhu. Proto se zobrazí, že základní aplikace (která má svůj název od pozice základem této diagramu) nemá žádné závislosti na jiných vrstev aplikace. V centru velmi jsou entity a rozhraní aplikace. Právě mimo, ale stále v základní aplikace jsou služby domény, obvykle implementující rozhraní definované v informacích o vnitřní kruh. Mimo aplikaci základní uživatelské rozhraní a infrastruktura vrstvy, které závisí na základní aplikaci, ale není na sebe navzájem (nutně).
+V tomto diagramu závislosti tok směrem k nejvnitřnější kruh. Jádro aplikace trvá jeho název z jeho pozice v jádru tento diagram. A můžete zobrazit v diagramu, jádro aplikace nemá žádné závislosti na ostatních aplikačních vrstev. Entity aplikace a rozhraní jsou velmi uprostřed. Pouze mimo, ale stále v základní aplikaci jsou služby domain services, které obvykle implementují rozhraní definované v vnitřního kroužku. Mimo jádro aplikace uživatelského rozhraní a infrastruktura vrstvy závisí na základní aplikaci, ale ne na sebe navzájem (nemusí).
 
-Obrázek 5 X znázorňuje tradičnější diagram vodorovné vrstev, který lépe závislosti mezi uživatelského rozhraní a jiných vrstev.
+Obrázek 5 – 8 ukazuje tradičnější diagram vodorovné vrstev, která lépe odpovídá závislost mezi uživatelského rozhraní a dalšími vrstvami.
 
 ![](./media/image5-8.png)
 
-**Obrázek 5-8.** Vyčištění architektura; zobrazení vodorovné vrstvy
+**Obrázek 5 až 8.** Vyčistit architektura; horizontální vrstvy zobrazení
 
-Všimněte si, že plnou šipky představují kompilaci závislosti, zatímco přerušovanou šipku představuje závislost pouze modul runtime. Pomocí architektuře čistého, vrstvě uživatelského rozhraní funguje s rozhraními definované v základní aplikace v době kompilace a v ideálním případě by neměl mít žádnou znalost typy implementace definované v vrstvě infrastruktury. Za běhu ale tyto typy implementace se bude vyžadovat pro aplikaci spustit, tak budou muset být přítomna a drátové až rozhraní základní aplikace pomocí vkládání závislostí.
+Všimněte si, že solid šipky představují závislosti za kompilace, zatímco představuje přerušovanou šipku závislosti jen pro modul runtime. S čistou architekturou vrstvě uživatelského rozhraní pracuje s rozhraní definované v samotném aplikace v době kompilace a v ideálním případě by neměla vědět o implementaci typů definovaných ve vrstvě infrastruktury. V době běhu ale tyto typy implementace jsou aplikace provést, vyžaduje, musí mít k dispozici i tradiční sítě až po aplikace základní rozhraní pomocí vkládání závislostí.
 
-Obrázek 5-9 ukazuje podrobnější pohled na architekturu aplikace ASP.NET Core při sestavení následující tato doporučení.
+Obrázek 5 až 9 ukazuje podrobnější zobrazení architektury aplikace ASP.NET Core při sestavení po těchto doporučení.
 
 ![Architektura jádra ASPNET](./media/image5-9.png)
 
-**Obrázek 5-9.** Diagram architektury ASP.NET Core následující čistou architektura.
+**Obrázek 5 až 9.** Diagram architektury ASP.NET Core po vyčištění architektury.
 
-Protože základní aplikace nezávisí na infrastrukturu, je velmi snadné zápis testů částí automatizované pro tuto vrstvu. Následující obrázky 5 až 10 a 5 11 ukazují, jak testy nevejde se do této architektury.
+Protože základní aplikace nejsou závislé na infrastruktuře, je velmi jednoduše můžete vytvořit automatizované testy jednotky pro tuto vrstvu. Hodnoty 5 až 10 a 11. 5 ukazují, jak přizpůsobit testy do této architektury.
 
 ![UnitTestCore](./media/image5-10.png)
 
-**Obrázek 5-10.** Testování aplikací jádra v izolaci částí.
+**Obrázek 5 – 10.** Testování jednotek základní aplikaci v izolaci.
 
 ![IntegrationTests](./media/image5-11.png)
 
-**Obrázek 5-11.** Integrace testování implementace infrastruktury s externími závislostmi.
+**Obrázek 5 – 11.** Integrační testování implementace infrastruktury s externími závislostmi.
 
-Vzhledem k tomu, že vrstva uživatelského rozhraní neobsahuje žádné přímé závislost na typy definované v projektu infrastruktury, je rovněž velmi snadné odkládacího souboru se implementace, buď usnadňuje testování nebo v reakci na měnící se požadavky na aplikace. Předdefinované použití a podpora pro vkládání závislostí ASP.NET Core díky této architektury za nejvhodnější způsob, jak struktura netriviální monolitický aplikace.
+Protože vrstvě uživatelského rozhraní nemá žádné přímé závislosti na typy definované v projektu infrastruktury, je rovněž velmi snadno zaměnit implementace, buď usnadňuje testování nebo v reakci na měnící se požadavky na aplikace. Integrované použití ASP.NET Core a podpora pro vkládání závislostí díky této architektuře nejvhodnější způsob, jak struktura netriviální monolitické aplikace.
 
-Pro monolitický aplikace jsou všechny projekty základní aplikaci, infrastruktury a uživatelské rozhraní spustit jako jednu aplikaci. Architektura modulu runtime aplikace může vypadat jako obrázek 5-12.
+U monolitické aplikace jsou všechny projekty jádro aplikace, infrastruktury a uživatelského rozhraní spustit jako jednu aplikaci. Architektura modulu runtime aplikace bude vypadat přibližně jako obrázek 5 – 12.
 
-![Architektura jádra ASPNET 2](./media/image5-12.png)
+![Architektura ASP.NET Core 2](./media/image5-12.png)
 
-**Obrázek 5-12.** Architektura aplikace ukázka ASP.NET Core runtime.
+**Obrázek 5 – 12.** Architektura modulu runtime aplikace ASP.NET Core vzorku.
 
-### <a name="organizing-code-in-clean-architecture"></a>Uspořádání kódu v architektuře čistého
+### <a name="organizing-code-in-clean-architecture"></a>Uspořádání v architektuře čistého kódu
 
-V čisté Architektura řešení každý projekt má zrušte odpovědnosti. Jako takový bude určité typy patří do každého projektu a často zjistíte složky odpovídající tyto typy v příslušné projektu.
+V architektuře čistého řešení každý projekt má vymazat odpovědnosti. V důsledku toho některé typy patří do jednotlivých projektů a často zjistíte složky odpovídající typy v příslušného projektu.
 
-Základní aplikace obsahuje obchodní model, který obsahuje entity, služeb a rozhraní. Tato rozhraní zahrnují abstrakce pro operace, které bude možné provést pomocí infrastruktury, například přístup k datům, přístupu k systému souborů, volání sítě atd. Pro práci s nonentity typy, které nemají žádné závislosti na uživatelského rozhraní nebo infrastruktury nutné někdy služby nebo rozhraní definované v této vrstvě. To může být definováno jako jednoduché objekty Data Transfer (DTOs).
+Jádro aplikace obsahuje obchodní model, který obsahuje entity, služby a rozhraní. Tato rozhraní zahrnují abstrakce pro operace, které budou provedeny pomocí infrastruktury, jako je přístup k datům, přístupu k systému souborů, volání sítě atd. Někdy služby nebo rozhraní definované v této vrstvě bude nutné spolupracovat s nonentity typy, které nemají žádné závislosti na uživatelské rozhraní nebo infrastruktury. Ty lze definovat jako jednoduché objekty Data Transfer (DTO).
 
-> ### <a name="application-core-types"></a>Základní typy aplikací
-> -   Entity (obchodní model třídy, které jsou nastavené jako trvalé)
-> -   Rozhraní
-> -   Služby
-> -   DTOs
+### <a name="application-core-types"></a>Základní typy aplikací
 
-Projekt infrastruktury by měl obvykle zahrnovat implementace přístup data. V typické webové aplikace ASP.NET Core to bude zahrnovat data přístup implementace třídy Entity Framework DbContext, všechny migrace EF jádra, které byly definovány a. Nejběžnější způsob abstraktní data přístup implementace kód je prostřednictvím [vzor návrhu úložiště](http://deviq.com/repository-pattern/).
+- Entity (obchodní model tříd, které jsou trvalé)
+- Rozhraní
+- Služby
+- DTO
 
-Kromě dat implementace přístup musí obsahovat projektu OMI implementace služeb, které musí spolupracovat s riziko z hlediska infrastruktury. Tyto služby musí implementovat rozhraní definované v základní aplikace, a proto infrastruktury by měl mít odkaz na projekt aplikace jádra.
+Projekt infrastruktury obvykle zahrnuje implementace dat přístup. V typické webové aplikace ASP.NET Core, patří tyto implementace Entity Framework (EF) uvolněn objekt DbContext, všechny EF Core `Migration` objekty, které byly definovány a přístupu k datům třídy implementace. Nejběžnější způsob abstraktní kód implementace přístupu k datům je prostřednictvím [vzor návrhu úložiště](https://deviq.com/repository-pattern/).
 
-> ### <a name="infrastructure-types"></a>Typy infrastruktury
-> -   Základní typy EF (DbContext, migrace)
-> -   Přístup k datům implementace typů (úložiště)
-> -   Specifické pro infrastrukturu služby (FileLogger, SmtpNotifier atd.)
+Kromě dat přístup implementace infrastruktury projektu by měl obsahovat implementace služby, které musí spolupracovat s starostí o infrastrukturu. Tyto služby by měly implementovat rozhraní definované v samotném aplikace a proto infrastruktury by měly mít odkaz na projekt aplikace Core.
 
-V aplikaci ASP.NET MVC základní uživatelské rozhraní vrstvě bude vstupní bod pro aplikaci a bude projektu aplikace ASP.NET MVC jádra. Tento projekt by měl odkazovat projektu základní aplikace a typy jejího musí komunikovat s infrastrukturou výhradně prostřednictvím rozhraní definované v základní aplikace. Žádné přímé vytváření instancí (nebo statické volání) musí být povolené typy vrstvy infrastruktury ve vrstvě uživatelského rozhraní.
+### <a name="infrastructure-types"></a>Typy infrastruktury
 
-> ### <a name="ui-layer-types"></a>Typy vrstvy uživatelského rozhraní
-> -   Kontrolery
-> -   Filtry
-> -   Zobrazení
-> -   ViewModels
-> -   Spuštění
+- EF Core typy (`DbContext`, `Migration`)
+- Datové typy implementace (úložiště)
+- Specifické pro infrastrukturu služby (například `FileLogger` nebo `SmtpNotifier`)
 
-Třída při spuštění je zodpovědný pro konfiguraci aplikace a kabeláž typů implementace rozhraní, což vkládání závislostí v době běhu správně fungovat.
+Vrstva uživatelské rozhraní v aplikaci ASP.NET Core MVC je vstupním bodem pro aplikaci. Tento projekt by měl odkazovat na projekt, jádro aplikace a jeho typy by měly interakci s infrastrukturu výhradně prostřednictvím rozhraní definované v jádro aplikace. Žádné přímé vytvoření instance nebo statické volání typy vrstev infrastruktury by měl povolené ve vrstvě uživatelského rozhraní.
+
+### <a name="ui-layer-types"></a>Typy vrstvy uživatelského rozhraní
+
+- Kontrolery
+- Filtry
+- Zobrazení
+- Modely ViewModels
+- Po spuštění
+
+Třída při spuštění je zodpovědný pro konfiguraci aplikace a pro její implementaci typů rozhraní, což injektáž závislostí do za běhu správně fungovat.
 
 > [!NOTE]
-> Aby bylo možné propojit až vkládání závislostí v ConfigureServices v souboru Startup.cs projektu uživatelského rozhraní, možná muset projektu odkazovat projektu OMI. Tuto závislost jde je eliminovat snadno pomocí vlastní DI kontejner. Pro účely tohoto příkladu je nejjednodušší je umožnit uživatelského rozhraní projekt, který má odkazovat na projektu OMI.
+> Aby bylo možné nastavit injektáž závislostí v ConfigureServices v souboru Startup.cs projekt uživatelského rozhraní, možná muset projektu odkazovat na projekt infrastruktury. Tato závislost jde je eliminovat nejsnadněji použít vlastní kontejner DI. Pro účely tohoto příkladu je nejjednodušším přístupem umožnit projekt uživatelského rozhraní tak, aby se odkazovat na projekt infrastruktury.
 
-## <a name="monolithic-applications-and-containers"></a>Monolitický aplikace a kontejnery 
+## <a name="monolithic-applications-and-containers"></a>Monolitické aplikace a kontejnery
 
-Můžete sestavit jeden a monolitický nasazení založené na webové aplikace nebo služby a nasaďte ho jako kontejner. V aplikaci nemusí být monolitický ale uspořádány do několika knihovny, komponenty nebo vrstvy. Externě je jediný kontejner jako jeden proces, jednu webovou aplikaci nebo jedné služby.
+Můžete vytvořit jeden a monolitické nasazení na základě webové aplikace nebo služby a nasadit ho jako kontejner. V rámci aplikace nemusí být monolitické ale uspořádaných do několika knihoven, komponenty nebo vrstvy. Externě je jedním kontejnerem jako jeden proces, jednu webovou aplikaci nebo jedinou službou.
 
-Ke správě tohoto modelu, můžete nasadit jediný kontejner k reprezentaci aplikace. Pokud chcete použít škálování, stačí přidáte další kopie pro vyrovnávání zatížení vpředu. Jednoduchost pochází z Správa jedno nasazení v jedné kontejneru nebo virtuálních počítačů.
+Správa tohoto modelu, nasadíte jedním kontejnerem pro reprezentaci aplikace. Pokud chcete škálovat, stačí přidáte další kopie se nástroj pro vyrovnávání zatížení v popředí. Jednoduchost pochází z jednoho nasazení ve virtuální počítač s jedním kontejnerem nebo Správa.
 
 ![](./media/image5-13.png)
 
-Můžete zahrnout více součásti nebo knihovny nebo interní vrstvy v rámci každý kontejner, jak je znázorněno na obrázku 5-X. Objekt zabezpečení kontejneru, ale následující *"kontejner nepodporuje jednou z věcí a nemá v jednom procesu*", monolitický vzor může dojít ke konfliktu.
+Jak je znázorněno v obrázek 5-13 může obsahovat více komponent a knihovny nebo interní vrstvy v rámci každého kontejneru. Ale po Princip kontejneru _"kontejner provede jednu věc a dělá v jednom procesu_", monolitické vzorek může dojít ke konfliktu.
 
-Nevýhodou tohoto přístupu dodává Pokud/při zvětšování aplikace vyžadující ji škálovat. Pokud bude celá aplikace škálovat, není skutečně problém. Ve většině případů několik součástí aplikace jsou však, že body potlačení nutnosti škálování, zatímco ostatní součásti jsou používá menší.
+Nevýhodou tento přístup se dodává pokud/když aplikace poroste, požadují škálování. Pokud bude celá aplikace se škáluje, není ve skutečnosti k problému. Ve většině případů však několik částí aplikace jsou body potlačení nutnosti škálování, zatímco ostatní součásti jsou používá menší.
 
-Pomocí příklad typické elektronické obchodování; Co je pravděpodobně potřeba škálování je součást informace o produktu. Mnoho zákazníků další Procházet produkty než jejich zakoupení. Další zákazníci využívat nákupního košíku než použití kanálu platba. Méně zákazníky přidání komentářů nebo zobrazit historii jejich nákupu. A pravděpodobně pouze existuje více zaměstnancům, najdete v jedné oblasti, která potřebují spravovat obsah a marketingových kampaní. Pomocí příjmu monolitický návrhu, všechny kód nasazen vícekrát.
+Použijeme příklad typické elektronického obchodování, co budete pravděpodobně muset škálovat je součást informace o produktu. Mnoho zákazníků další procházet produktů, než je koupit. Větší počet zákazníků pomocí nákupního košíku, než použití kanálu platby. Méně zákazníky přidat komentáře nebo zobrazení jejich historie nákupů. A pravděpodobně máte pouze několik zaměstnanců, v jedné oblasti, které potřebují spravovat obsah a marketingových kampaní. Díky škálování monolitický návrh, všechny se kód nasazuje více než jednou.
 
-Kromě měřítka všechno, co problém, změny jedinou komponentu vyžadují opětovném dokončení testování v celé aplikaci a dokončení opětovného nasazení všech instancí.
+Kromě problém "škálovat vše" vyžadovat změny jedné komponenty kompletní opakované celé aplikace a dokončení opětovné nasazení všech instancí.
 
-Monolitický přístup je běžné a mnoha organizacích jsou vývoj s tímto přístupem architektury. Mnoho mají s vhodné dostatek výsledky, zatímco ostatní nedosáhli limitů. Mnoho určená svých aplikací v tomto modelu, protože nástroje a infrastruktura byly příliš složité sestavení architektury služby zaměřené na konkrétní (SOA) a nebylo uvidí potřeba – dokud vzrostla aplikace. Pokud zjistíte, že jste nedosáhli limitů monolitický přístupu, může být rozdělení aplikace k tomu, aby lépe využít kontejnery a mikroslužeb logické dál.
+Monolitického přístupu je běžné a mnoha organizacích jsou vývoj s využitím tento architektonický přístup umožňuje vytvářet. Mnoho máte kvalitní dostatek výsledky, zatímco ostatní omezení výskytu. Mnoho navržené svých aplikací v tomto modelu, protože bylo příliš obtížné umožňuje vytvářet architektury orientované na služby (SOA) nástroje a infrastruktura a jejich nezobrazila potřeby, dokud zvětšoval aplikace. Pokud zjistíte, že narazíte na omezení monolitického přístupu, může být dalším logickým krokem po rozdělení aplikace, který umožňuje lepší využití kontejnerů a mikroslužeb.
 
 ![](./media/image5-14.png)
 
-Nasazení monolitický aplikací v Microsoft Azure se dá dosáhnout pomocí vyhrazených virtuálních počítačích pro každou instanci. Pomocí [škálovatelné sady virtuálních počítačů Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/), je možné snadno škálovat virtuálních počítačů. [Azure App Services](https://azure.microsoft.com/services/app-service/) můžete spouštět monolitický aplikace a snadno škálovat instance bez nutnosti ke správě virtuálních počítačů. Azure App Services můžete spustit jedné instance Docker kontejnery také, což výrazně zjednodušuje nasazení. Pomocí Docker, můžete nasadit jeden virtuální počítač jako hostitele Docker a spustit víc instancí. Pomocí nástroje pro vyrovnávání Azure, jak je znázorněno v obrázku 5-14, můžete spravovat škálování.
+Nasazení monolitických aplikací v Microsoft Azure můžete dosáhnout pomocí vyhrazených virtuálních počítačů pro každou instanci. Pomocí [Škálovací sady virtuálních počítačů Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/), je možné snadno škálovat virtuální počítače. [Služba Azure App Services](https://azure.microsoft.com/services/app-service/) můžete spustit monolitické aplikace a snadno škálovat instance, aniž byste museli spravovat virtuální počítače. Azure App Services můžete spustit jeden instancí kontejnerů Dockeru, zjednodušuje nasazení. Pomocí Dockeru, můžete nasadit jeden virtuální počítač jako hostitele Dockeru a spouštět více instancí. Pomocí nástroje pro vyrovnávání Azure, jak je znázorněno v obrázek 5-14, můžete spravovat škálování.
 
-Nasazení do různých hostitelů lze spravovat pomocí techniky tradiční nasazení. Hostitelů Docker lze spravovat pomocí příkazů jako **docker spustit** provést ručně, nebo prostřednictvím automatizace, jako je nepřetržitá doručení (CD) kanálů.
+Nasazení do různých hostitelů lze spravovat pomocí nasazení tradiční techniky. Hostitele Docker můžete spravovat pomocí příkazů, jako jsou **dockeru spustit** provést ručně nebo pomocí automatizace, jako je průběžné doručování (CD) kanálů.
 
-### <a name="monolithic-application-deployed-as-a-container"></a>Monolitický aplikace nasazena jako kontejner
+### <a name="monolithic-application-deployed-as-a-container"></a>Monolitické aplikace nasazená jako kontejner
 
-Existují výhody použití kontejnerů ke správě nasazení monolitický aplikací. Změna velikosti instancí kontejnerů je mnohem rychlejší a snadnější než nasazení dalších virtuálních počítačů. I když se používá škálovatelné sady virtuálních počítačů škálování virtuálních počítačů, jejich trvat dobu k instanci. Při nasazení jako instance aplikace, je konfigurace aplikace spravované v rámci virtuálního počítače.
+Existují výhody použití kontejnerů ke správě nasazení monolitických aplikací. Škálování instance kontejnerů je mnohem jednodušší a rychlejší než nasazení dalších virtuálních počítačů. I když použijete virtuálního počítače škálovací sady škálování virtuálních počítačů, jejich trvat dobu na instanci. Po nasazení jako instance aplikace, je konfigurace aplikace spravovaná v rámci virtuálního počítače.
 
-Nasazení aktualizací, jako je mnohem rychlejší imagí Dockeru a efektivní sítě. Imagí dockeru obvykle spuštění v sekundách, rychlosti zavedení uživatelům. Zrušení Docker instance je stejně snadná jako vystavování **docker zastavení** příkazu, obvykle dokončení menší než za sekundu.
+Nasazení aktualizací, je mnohem rychlejší imagí Dockeru a efektivní sítě. Image dockeru se obvykle začít během několika sekund, a tím i urychlení uvedení. Opětné do instance Docker je stejně jednoduché jako vydání `docker stop` příkaz obvykle dokončení v menší než druhý.
 
-Jako kontejnery jsou ze své podstaty neměnné záměrné, nikdy musíte si dělat starosti poškozená virtuálních počítačích, zatímco skriptů pro aktualizaci zapomněl účet pro některé specifické konfigurace nebo vlevo soubor na disku.
+Kontejnery jsou ze své podstaty neměnné záměrné, je nikdy potřeba starat o poškozená virtuálních počítačů, zatímco zapomenout skripty pro aktualizaci. aby se zohlednily některé konkrétní konfiguraci nebo doleva souboru na disku.
 
-Při monolitický aplikace využívat Docker, rozdělení monolitický aplikaci do dílčí systémy, které je možné rozšířit, vyvíjí a nasadit samostatně může být vašim vstupním bodem do sféru mikroslužeb.
+_Kontejnery Dockeru můžete použít pro monolitické nasazení jednodušší webových aplikací. Tím se zlepšuje průběžnou integraci a průběžné nasazování kanálů a pomáhá dosahovat úspěšnosti nasazení do produkčního prostředí. Už to funguje"v počítači, proč to nebude fungovat v produkčním prostředí?"_
 
-> ### <a name="references--common-web-architectures"></a>Odkazy – společné architektury webové
-> - **Vyčištění architektura**  
-> <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
+Architektura založená na mikroslužbách má spoustu výhod, ale tyto výhody pocházet za cenu zvýšení složitosti. V některých případech se náklady převažují nad přínosy, je lepší volbou monolitické nasazení aplikace s jedním kontejnerem nebo v několika kontejnerů.
+
+Monolitické aplikace nemusí být snadno decomposable do jasně oddělené mikroslužeb. Mikroslužby by měla fungovat nezávisle na sobě zajistit odolnost aplikace. Pokud nelze doručit řezy nezávislé funkce aplikace, oddělení pouze zvyšuje složitost.
+
+Aplikace nemusí potřebovat ještě nezávisle škálovat funkce. Mnoho aplikací, když potřebují škálovat na více než jednu instanci, můžete to udělat prostřednictvím poměrně jednoduchý proces klonování celý instance. Další práci pro oddělení aplikací do samostatných služeb poskytuje minimální výhodu při škálování úplná instance aplikace je jednoduché a nákladově efektivní.
+
+Již v rané fázi při vývoji aplikace se nemusí mít jasno, kde jsou přirozené hranice funkční. Při vývoji minimální přijatelné produktu, nemusí mít ještě umístila fyzické oddělení. Některé z těchto podmínek může být dočasné. Může být začněte vytvořením jednotlivou aplikaci a později oddělení několik funkcí, které vyvinul a nasadit jako mikroslužeb. Další podmínky může být nezbytné pro aplikace problém místa, což znamená, že aplikace může být nikdy rozdělená do několika mikroslužeb.
+
+Oddělení aplikace do mnoha samostatné procesy také zavádí režijní náklady. Rozdělení funkcí do různých procesů je složitější. Komunikační protokoly budou složitější. Namísto volání metody je nutné použít asynchronní komunikace mezi službami. Při přesunu na architekturu mikroslužeb, budete muset přidat řadu stavební bloky implementované v mikroslužbách verze aplikace aplikaci eShopOnContainers: zpracování událostí Service bus, zprávy odolnost proti chybám a opakovaných pokusů, konečnou konzistenci a další.
+
+Mnohem jednodušší [eShopOnWeb referenční aplikace](https://github.com/dotnet-architecture/eShopOnWeb) podporuje použití monolitického kontejneru jeden kontejner. Aplikace obsahuje dvě webové aplikace: jednu pomocí tradiční MVC a další pomocí stránky Razor. Obojí se dají spustit pomocí kořenového řešení `docker-compose build` a `docker-compose up` příkazy. Tento příkaz nakonfiguruje samostatný kontejnery pro každé webové instance, pomocí `Dockerfile` najít v kořenovém adresáři každé webový projekt a spustí každý kontejner v samostatných portů. Můžete zdroj pro tuto aplikaci stáhnout z webu GitHub a spustit ho místně. Tato monolitické aplikace využívá výhod nasazení v prostředí kontejneru.
+
+Za prvé nasazení kontejnerizované znamená, že každá instance aplikace běží ve stejném prostředí. Jedná se o prostředí pro vývojáře, kde vývoj a testování již v rané fázi probíhat. Vývojový tým můžete spustit aplikaci v kontejnerizovaných prostředí, která odpovídá produkčního prostředí.
+
+Kromě toho kontejnerizovaných aplikací pro horizontální navýšení kapacity za nižší cenu. Použití prostředí kontejnerů umožňuje větší prostředků sdílení než tradiční prostředí virtuálních počítačů.
+
+Nakonec se uzavření aplikace do kontejneru vynutí oddělení mezi obchodní logiku a storage server. Jak škálovat aplikaci se několik kontejnerů spoléhat na střední jednoho fyzického úložiště. Toto médium úložiště by obvykle vysokou dostupnost serveru databáze SQL serveru.
+
+## <a name="docker-support"></a>Podpora dockeru
+
+`eShopOnWeb` Projekt poběží v .NET Core. Proto můžete spustit v kontejnerech založených na Linuxu nebo založené na Windows. Všimněte si, že pro nasazení prostředí Docker, chcete použít stejný typ hostitele pro SQL Server. Kontejnery založené na Linuxu povolit menší nároky na místo a jsou upřednostňované.
+
+Visual Studio 2017 můžete použít k přidání podpory Dockeru k existující aplikaci kliknutím pravým tlačítkem myši na projekt v **Průzkumníka řešení** a zvolíte **přidat** > **podporu Dockeru** . To přidá potřebné soubory a změní projekt, k jejich použití. Aktuální `eShopOnWeb` ukázka již má tyto soubory na místě.
+
+Úroveň řešení `docker-compose.yml` soubor obsahuje informace o co k sestavení Image a jaké kontejnery ke spuštění. Soubor umožňuje používat `docker-compose` příkaz spustit obě verze webové aplikace ve stejnou dobu. Také ho můžete použít ke konfiguraci závislostí, jako je například kontejner samostatné databáze.
+
+```yml
+version: '3'
+
+services:
+  eshopwebrazor:
+    image: eshopwebrazor
+    build:
+      context: .
+      dockerfile: src/WebRazorPages/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5107:5107"
+
+  eshopwebmvc:
+    image: eshopwebmvc
+    build:
+      context: .
+      dockerfile: src/Web/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5106:5106"
+
+networks:
+  default:
+    external:
+      name: nat
+```
+
+`docker-compose.yml` Souboru odkazy `Dockerfile` v `Web` a `WebRazorPages` projekty. `Dockerfile` Slouží k určení, které základní kontejneru se použije a konfiguraci aplikace na ní. `WebRazorPages`" `Dockerfile`:
+
+```
+FROM microsoft/dotnet:2.1-aspnetcore-runtime AS base
+WORKDIR /app
+EXPOSE 80
+
+FROM microsoft/aspnetcore-build:2.1.300-preview1 AS build
+RUN npm install -g bower@1.8.4
+WORKDIR /src
+COPY . .
+WORKDIR /src/src/WebRazorPages
+RUN dotnet restore -nowarn:msb3202,nu1503
+RUN dotnet build --no-restore -c Release -o /app
+
+FROM build AS publish
+RUN dotnet publish --no-restore -c Release -o /app
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
+ENTRYPOINT ["dotnet", "Microsoft.eShopWeb.RazorPages.dll"]
+```
+
+### <a name="troubleshooting-docker-problems"></a>Řešení potíží s Dockerem
+
+Po spuštění kontejnerizované aplikace pokračuje v běhu až po ukončení. Můžete zobrazit, které kontejnery běží s `docker ps` příkazu. Spuštěný kontejner můžete zastavit pomocí `docker stop` příkazu a zadáte ID kontejneru.
+
+Všimněte si, že spuštěné kontejnery Docker může být vázaný na porty, které může být jinak pokusu o použití ve vašem vývojovém prostředí. Pokud se pokusíte spustit nebo ladit aplikaci používající stejný port jako spuštěný kontejner Dockeru, získáte chybu s informacemi o tom, že server nejde vytvořit vazbu k tomuto portu. Zastavování kontejneru znovu, by měla vyřešit problém.
+
+Pokud chcete přidat podporu Dockeru do vaší aplikace pomocí sady Visual Studio, ujistěte se, jestli že je spuštěný Docker, pokud tak učiníte. Průvodce nespustí správně, pokud Docker není spuštěn, když spustíte průvodce. Kromě toho Průvodce zkontroluje zvoleného aktuálního kontejneru pro přidání správné podpory Dockeru. Pokud chcete přidat podporu pro kontejnery Windows, musíte spustit průvodce, dokud máte Docker s kontejnery Windows nakonfigurovaný. Pokud chcete přidat podporu pro Linuxové kontejnery, spusťte Průvodce mají Dockeru s kontejnery Linuxu, které jsou nakonfigurované.
+
+> ### <a name="references--common-web-architectures"></a>Odkazy – běžné architektury webových
+>
+> - **Vyčištění architektury**  
+>   <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
 > - **Architektura průsvitek**  
-> <http://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
-> - **Vzor úložiště**  
-> <http://deviq.com/repository-pattern/>
-> - **Vyčištění ukázkové architektury řešení**  
-> <https://github.com/ardalis/cleanarchitecture>
-> - **Elektronická kniha Mikroslužeb architektury** <http://aka.ms/MicroservicesEbook>
+>   <http://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
+> - **Model úložiště**  
+>   <https://deviq.com/repository-pattern/>
+> - **Vyčistit ukázkové architektury řešení**  
+>   <https://github.com/ardalis/cleanarchitecture>
+> - **Aplikační architektura založená na Mikroslužbách elektronickou knihu**  
+>   <https://aka.ms/MicroservicesEbook>
 
 >[!div class="step-by-step"]
 [Předchozí](architectural-principles.md)

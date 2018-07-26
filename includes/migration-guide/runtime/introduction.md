@@ -1,12 +1,12 @@
 ## <a name="introduction"></a>Úvod
-Změny v modulu runtime vliv na všechny aplikace, které jsou spuštěny v rozhraní .NET Framework nebyla zkompilovat proti a které používají určité funkce.
+Změny v modulu runtime ovlivňují všechny aplikace, které jsou spuštěny v rozhraní .NET Framework nebyla zkompilována proti a používají určitou funkci.
 
-V tématech, které popisují změny v modulu runtime budeme mít klasifikované jednotlivé položky podle jejich očekávaného dopadu, následujícím způsobem:
+V tématech, které popisují změny modulu runtime, jsme jednotlivé položky klasifikovali podle jejich očekávaného dopadu, následujícím způsobem:
 
-**Hlavní** jde významné změny, které ovlivní velký počet aplikací, nebo který vyžaduje významné úpravu kódu.
+**Hlavní** jedná se o významnou změnu, která ovlivňuje mnoho aplikací nebo která vyžaduje podstatné změny kódu.
 
-**Méně závažné** jedná se o změnu, která ovlivňuje malý počet aplikací nebo který vyžaduje menší úpravu kódu.
+**Vedlejší** jedná se o změnu, která ovlivňuje menší počet aplikací nebo která vyžaduje méně závažnou změnu kódu.
 
-**Okraj případ** jedná se o změnu, která má vliv na aplikace v rámci velmi konkrétní scénáře, které nejsou běžné.
+**Okraj případ** jedná se o změnu, která ovlivňuje aplikace v konkrétních situacích, jež nejsou běžné.
 
-**Transparentní** jedná se o změnu, která nemá žádný znatelný vliv na vývojáře aplikace nebo uživatele. Z důvodu této změny by aplikace neměla vyžadovat úpravy.
+**Transparentní** jedná se o změnu, která nemá znatelný vliv na uživatele nebo vývojáře aplikace. Z důvodu této změny by aplikace neměla vyžadovat úpravy.

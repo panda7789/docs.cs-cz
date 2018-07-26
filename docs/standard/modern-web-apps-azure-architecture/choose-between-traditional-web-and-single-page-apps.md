@@ -1,95 +1,94 @@
 ---
-title: Volba mezi tradiční webové aplikace a jednostránkové aplikace
-description: Architekti moderních webových aplikací pomocí ASP.NET Core a Microsoft Azure
+title: Volba mezi tradičními webovými aplikacemi a jednostránkové aplikace
+description: Zjistěte, jak si vybrat mezi tradičními webovými aplikacemi a jednostránkové aplikace (SPA) při vytváření webových aplikací.
 author: ardalis
 ms.author: wiwagn
-ms.date: 10/06/2017
-ms.openlocfilehash: bbb217b2f11901658fa70a5e5cff6521d157952c
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 6/28/2018
+ms.openlocfilehash: 40b17d07b008c2a3a9457bffc26b612e6b5c9fe5
+ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37104763"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37404143"
 ---
-# <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Volba mezi tradiční webové aplikace a jednostránkové aplikace (SPA)
+# <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Volba mezi tradičními webovými aplikacemi a jednostránkové aplikace (SPA)
 
-> "Je Atwood zákonem: jakékoli aplikace, která může být napsán v jazyce JavaScript, zapíšou nakonec v jazyce JavaScript."  
-> _\- Jeff Atwood_
+> "Zákony vaší Atwoodem: všechny aplikace, které je možné psát v jazyce JavaScript, nakonec se zapíše v jazyce JavaScript."  
+> _\- Jeffem Atwoodem_
 
-## <a name="summary"></a>Souhrn
+Existují dva hlavní přístupy k vytváření webových aplikací ještě dnes: tradiční webových aplikací, které provádějí většinu aplikací logiky na serveru a jednostránkové aplikace (SPA), které provádějí většinu logiku uživatelského rozhraní ve webovém prohlížeči komunikuje s webovým serverem, primárně prostřednictvím webového rozhraní API. S hybridním přístupem je také možné, je nejjednodušší hostovat jeden nebo více bohaté SPA jako dílčí aplikace v rámci větší tradiční webové aplikace.
 
-Existují dvě obecné metody vytvářet webové aplikace ještě dnes: tradiční webových aplikací, které provádějí většinu logiku aplikace na serveru a jednostránkové aplikace (SPA), které provádějí většinu logiku uživatelského rozhraní ve webovém prohlížeči, komunikuje s webovým serverem, především pomocí webového rozhraní API. Hybridní přístup je také možné, nejjednodušší se hostitele jednu nebo více bohaté SPA jako dílčí aplikací v rámci větší tradiční webové aplikace.
+Byste měli použít tradiční webové aplikace při:
 
-Měli byste použít tradiční webové aplikace při:
+- Podle požadavků vaší aplikace na straně klienta jsou jednoduché nebo i jen pro čtení.
 
--   Požadavky na straně klienta aplikace jsou jednoduchý nebo i jen pro čtení.
+- Vaše aplikace potřebuje pro funkce v prohlížečích bez podpory jazyka JavaScript.
 
--   Aplikace musí fungovat v prohlížečích bez podpory jazyka JavaScript.
-
--   Váš tým je obeznámeni s JavaScript nebo TypeScript technik vývoje.
+- Váš tým není obeznámen s JavaScript nebo TypeScript vývojářských technik.
 
 Měli byste použít SPA při:
 
--   Aplikace musí vystavit bohaté uživatelské rozhraní s mnoha funkcemi.
+- Aplikace musí zveřejnit bohatší uživatelské rozhraní s mnoha funkcemi.
 
--   Váš tým je obeznámeni s vývojem pro JavaScript a TypeScript.
+- Váš tým je zkušenosti s vývojem v jazyce JavaScript nebo TypeScript.
 
--   Aplikace musí již zveřejňují rozhraní API pro ostatní klienty (interní nebo veřejná).
+- Aplikace už musí vystavit rozhraní API pro ostatní klienty (interní nebo veřejný).
 
-Navíc vyžadují větší SPA architektury architektury a odborných znalosti zabezpečení. Dojde k větší změn z důvodu časté aktualizace a nové rozhraní než tradiční webových aplikací. Konfigurace automatizované procesy sestavení a nasazení a použití možnosti nasazení jako kontejnery jsou s aplikacemi SPA obtížnější než tradiční webové aplikace.
+Navíc vyžadují větší architektury jednostránková aplikace architektury a bezpečnostních expertů. Dojde větší změny z důvodu časté aktualizace a nové rozhraní než tradiční webových aplikací. Konfigurace automatizované procesy sestavení a nasazení a při využívání možností nasazení, jako jsou kontejnery jsou s aplikacemi SPA obtížnější než tradičními webovými aplikacemi.
 
-Vylepšení v možné díky modelu SPA činnost koncového uživatele je nutné porovnat těchto aspektů.
+Vylepšení činnost koncového uživatele umožněno SPA modelu musí porovnat tyto aspekty.
 
-## <a name="when-to-choose-traditional-web-apps"></a>Kdy použít tradiční webové aplikace
+## <a name="when-to-choose-traditional-web-apps"></a>Kdy zvolit tradičními webovými aplikacemi
 
-Následuje podrobnější vysvětlení dříve uvádí důvody pro výběr tradiční webových aplikací.
+Tady je podrobnější vysvětlení důvodů dříve uvedeno pro výběr tradiční webových aplikací.
 
-**Aplikace má požadavky na jednoduchý, může být jen pro čtení, straně klienta**
+**Vaše aplikace má požadavky na jednoduché, může být jen pro čtení a na straně klienta**
 
-Mnoho webových aplikací jsou primárně spotřebovávána způsobem jen pro čtení valná většina uživatelů. Jen pro čtení (nebo pro čtení – většinou) aplikace jsou obvykle mnohem jednodušší než ty, které udržují a manipulaci s značnou část stavu. Vyhledávací může například obsahovat jeden vstupní bod se textové pole a druhá stránka pro zobrazení výsledků vyhledávání. Anonymní uživatelé snadno provádět požadavky a je nutné pro logiku na straně klienta. Podobně blogu nebo obsah systém správy je veřejná aplikace obvykle obsahuje především obsah s malým množstvím chování klienta. Jsou takové aplikace snadno vytvořené jako tradiční na serveru webové aplikace, které provádět logiku na webovém serveru a vykreslení HTML, který se má zobrazit v prohlížeči. Vymazat výhodu v těchto scénářích má také skutečnost, že každý jedinečný stránce webu má svou vlastní adresu URL, která může být aktuálně přihlášeni a indexovaný vyhledávači (ve výchozím nastavení, aniž by bylo nutné přidat jako samostatný prvek aplikace).
+Mnoho webových aplikací se primárně spotřebuje způsobem jen pro čtení v převážné většině uživatelů. Aplikace jen pro čtení (nebo pro čtení – většinou) jsou obvykle mnohem jednodušší než ty, které udržují a manipulaci s spoustu stavu. Vyhledávací web může například sestávat z jeden vstupní bod se textové pole a druhá stránka pro zobrazení výsledků hledání. Anonymní uživatelé snadno provádět požadavky, a není nutné logiku na straně klienta. Podobně, blogu nebo obsah správy systému veřejně přístupných aplikace obvykle se skládá převážně obsah s malou chování na straně klienta. Tyto aplikace se snadno vytvářejí jako tradiční serverových webových aplikací, které provádět logiku na webovém serveru a generují kód jazyka HTML, který se má zobrazit v prohlížeči. Skutečnost, že každá jedinečná stránku webu má svou vlastní adresu URL, která může být záložek a indexovaný vyhledávači (ve výchozím nastavení, aniž by bylo nutné přidat jako samostatný prvek aplikace) je také vymazat výhoda v takových scénářích.
 
-**Aplikace musí fungovat v prohlížečích bez podpory jazyka JavaScript**
+**Vaše aplikace potřebuje pro funkce v prohlížečích bez podpory jazyka JavaScript**
 
-Webové aplikace, které je potřeba fungovat v prohlížečích s omezeným nebo bez podpory jazyka JavaScript by měly být zapsány pomocí pracovních postupů tradiční webové aplikace (nebo alespoň moct vrátit zpět k takové chování). SPA vyžadují JavaScript na straně klienta, chcete-li funkce; Pokud není k dispozici, nejsou SPA dobrou volbou.
+Webové aplikace, které je potřeba pracovat v prohlížečích s omezená nebo žádná podpora jazyka JavaScript by měly být zapsány pomocí pracovních postupů tradiční webové aplikace (nebo aspoň moci vrátit k takové chování). SPA vyžadovat, aby se funkce; JavaScript na straně klienta Pokud není k dispozici, nejsou SPA dobrou volbou.
 
-**Je-li obeznámeni s JavaScript nebo TypeScript technik vývoje váš tým**
+**Váš tým není obeznámen s postupy vývoje jazyka JavaScript nebo TypeScript**
 
-Pokud váš tým obeznámeni s JavaScript nebo TypeScript, ale je obeznámeni s vývoj webové serverové aplikace, pravděpodobně budou moct rychleji než SPA poskytovat tradiční webové aplikace. Není-li learning k programu SPA cílem, nebo se vyžaduje uživatelské prostředí poskytované SPA, tradiční webové aplikace jsou vyšší produktivitu výběru týmům, kteří jsou již obeznámeni s jejich vytváření.
+Pokud váš tým není obeznámen s JavaScript nebo TypeScript, ale zná vývoj na straně serveru webové aplikace, pravděpodobně budou moct doručovat rychleji než SPA tradiční webové aplikace. Není-li se program SPA cíl nebo poskytované SPA uživatelské prostředí je povinný, jsou tradičními webovými aplikacemi produktivnější volbu pro týmy, které jsou již znáte sestaveny.
 
-## <a name="when-to-choose-spas"></a>Když chcete-li zvolit SPA
+## <a name="when-to-choose-spas"></a>Kdy zvolit SPA
 
-Následuje podrobnější vysvětlení kdy zvolit styl jednostránkové aplikace vývoje pro vaši webovou aplikaci.
+Tady je podrobnější vysvětlení kdy zvolit jednostránkové aplikace stylu vývoje pro vaši webovou aplikaci.
 
-**Aplikace musí vystavit bohaté uživatelské rozhraní s mnoha funkcemi**
+**Aplikace musí zveřejnit bohatší uživatelské rozhraní s mnoha funkcemi**
 
-SPA může podporovat bohaté funkce klienta, které nevyžaduje opětovné načtení stránky, když uživatelé provést akce nebo přejděte mezi oblastmi aplikace. SPA můžete načítat rychleji, načítání dat na pozadí, a akce jednotlivých uživatelů jsou rychlejšího vzhledem k tomu, že vyskytují jen vzácně zavážky celou stránku. SPA může podporovat přírůstkové aktualizace, aniž by uživatel musel klikněte na tlačítko pro odeslání formuláře ukládání částečně vyplněné formuláře nebo dokumenty. Bohaté chování klienta, jako je například přetahování myší, může podporovat SPA mnohem snadněji než tradiční aplikace. SPA můžete určený ke spouštění v odpojeném režimu, provedení aktualizace na straně klienta model, který se nakonec synchronizují zpět na server, jakmile se znovu navázané připojení. Pokud vaše aplikace požadavky zahrnují bohaté funkce, která přesahuje co nabízí typické formuláře HTML, měli byste vybrat k SPA styl aplikaci.
+SPA může podporovat bohaté funkce na straně klienta, který nevyžaduje, aby znovu načíst tuto stránku jako uživatelům provádět akce nebo přecházet mezi oblastmi této aplikace. SPA může načíst rychleji, načítají se data na pozadí, a akce jednotlivých uživatelů jsou rychlejší reakce, protože se vyskytují jen vzácně zpracovávané celou stránku. SPA podporuje přírůstkové aktualizace, aniž by uživatel musel klikněte na tlačítko pro odeslání formuláře ukládá částečně dokončené formuláře nebo dokumenty. Bohaté chování na straně klienta, jako je například přetažení myší, může podporovat SPA mnohem snadněji než tradiční aplikace. SPA můžete určený ke spouštění v odpojeném režimu, provádění aktualizací na straně klienta modelu, který se nakonec synchronizují zpět na server, jakmile se připojení znovu navázáno. Pokud vaše aplikace požadavky zahrnují bohatým funkcím sady, který jde nad rámec co nabízí typické formuláře HTML, měli byste zvolit aplikace SPA style.
 
-Všimněte si, že často SPA nutné implementovat funkce, které jsou integrované v tradiční webové aplikace, například zobrazení smysluplný adresy URL na adresu panelu odrážející aktuální operace (a umožní uživatelům záložku nebo přímý odkaz na tuto adresu URL pro návrat do něj). SPA také měli povolit uživatelům používat tlačítka vpřed a zpět v prohlížeči s výsledky, které nebudou neohlášeného je.
+Všimněte si, že často SPA nutné k implementaci funkcí, které jsou integrované do tradičními webovými aplikacemi, jako je například zobrazení smysluplnou adresu URL na adresu panelu odráží aktuální operaci (a umožní uživatelům záložku nebo přímý odkaz na tuto adresu URL pro návrat k jeho). SPA také měli uživatelům povolit používání tlačítka vpřed a zpět v prohlížeči s výsledky, které jim nebude překvapí.
 
-**Je váš tým obeznámeni s vývojem pro JavaScript a TypeScript**
+**Váš tým je zkušenosti s vývojem v jazyce JavaScript nebo TypeScript**
 
-Zápis SPA vyžaduje znalost jazyka JavaScript a TypeScript a způsobů programování na straně klienta a knihovny. Váš tým musí být příslušný zápis moderní JavaScriptu pomocí rozhraní SPA jako úhlová.
+Zápis SPA vyžaduje znalost jazyka JavaScript nebo TypeScript a techniky programování na straně klienta a knihovny. Váš tým by měl být příslušné při psaní moderní JavaScript s využitím SPA architekturu jako třeba Angular.
 
-> ### <a name="references--spa-frameworks"></a>Odkazy – SPA architektury
-> - **Úhlová**  
-> <https://angular.io>
-> - **Porovnání rámci jazyka JavaScript**  
-> <https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/>
+> ### <a name="references--spa-frameworks"></a>Odkazy – rozhraní SPA
+>
+> - **Angular**  
+>   <https://angular.io>
+> - **Porovnání architektury JavaScriptu**  
+>   <https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/>
 
-**Aplikace musí již zveřejňují rozhraní API pro ostatní klienty (interní nebo veřejná)**
+**Aplikace musí již vystavit rozhraní API pro ostatní klienty (interní nebo veřejný)**
 
-Pokud jste již podporujete webové rozhraní API pro ostatní klienty, může vyžadovat méně úsilí pro vytvoření SPA implementace, která využívá tato rozhraní API místo reprodukci logiku ve formuláři na straně serveru. SPA zkontrolujte rozsáhlé používání webových rozhraní API pro dotazování a aktualizace dat, jak uživatelé pracují s aplikací.
+Pokud jste již podpory webového rozhraní API pro ostatní klienty, může vyžadovat menším úsilím pro vytvoření implementace jednostránková aplikace, které využívají tato rozhraní API spíše než reprodukce logiky ve formuláři na straně serveru. SPA využívat rozsáhlé webové rozhraní API k dotazování a aktualizace dat jak uživatelé pracují s aplikací.
 
-## <a name="decision-table--traditional-web-or-spa"></a>Rozhodovací tabulky – tradiční Web nebo SPA
+## <a name="decision-table--traditional-web-or-spa"></a>Tabulka rozhodnutí – tradiční webu nebo aplikace SPA
 
-Následující rozhodnutí tabulka shrnuje některé základní faktorů, které je třeba zvážit při výběru mezi tradiční webové aplikace a SPA.
+Následující rozhodnutí tabulka shrnuje některé základní faktory ke zvážení při výběru mezi tradičními webovými aplikací a SPA.
 
-  | **Koeficient** | **Tradiční webové aplikace** | **Jednostránková aplikace** |
-  |---|---|---|
-  | Požadované Team znalost jazyka JavaScript nebo TypeScript | **Minimální** | **Požadované** |
-  | Podpora prohlížeče bez skriptování | **Podporované** | **Nepodporuje se** |
-  | Chování minimální aplikace na straně klienta | **Well-Suited** | **Přehnaně** |
-  | Požadavky na bohatou a komplexní uživatelské rozhraní | **Omezené** | **Well-Suited** |
+| **faktor**                                           | **Tradiční webové aplikace** | **Jednostránková aplikace** |
+| ---------------------------------------------------- | ----------------------- | --------------------------- |
+| Požadované týmu znalost jazyka JavaScript/TypeScript | **Minimální**             | **Vyžaduje**                |
+| Podpora prohlížeče bez skriptování                   | **Podporované**           | **Nepodporuje se**           |
+| Chování minimální aplikace na straně klienta             | **Well-Suited**         | **Přehnaně**                |
+| Požadavky na bohatě vybaveným a komplexní uživatelské rozhraní            | **Limited**             | **Well-Suited**             |
 
 >[!div class="step-by-step"]
 [Předchozí](modern-web-applications-characteristics.md)

@@ -8,16 +8,16 @@ helpviewer_keywords:
 - null keyword [C#]
 ms.assetid: fecb1c60-6232-4efe-87f7-9a86ba2e9119
 ms.openlocfilehash: cd99ce43ad359c58c855748dff9a01abb6dbd453
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33268117"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37961167"
 ---
 # <a name="null-c-reference"></a>Null (Referenční dokumentace jazyka C#)
-`null` – Klíčové slovo je literál, který představuje odkaz s hodnotou null, který neodkazuje na libovolného objektu. `null` je výchozí hodnota proměnné typu odkazu. Typy obyčejnou hodnota nemůže být null. C# 2.0 však zavedena typy hodnot s povolenou hodnotou Null. V tématu [typy s možnou hodnotou Null](../../../csharp/programming-guide/nullable-types/index.md).  
+`null` – Klíčové slovo je literál, který představuje nulový odkaz, který neodkazuje na libovolný objekt. `null` je výchozí hodnota proměnných odkazového typu. Typy běžných hodnot nemohou mít hodnotu null. Však 2.0 C# představila typy s možnou hodnotou Null. Zobrazit [typy připouštějící hodnotu Null](../../../csharp/programming-guide/nullable-types/index.md).  
   
- Následující příklad ukazuje některé chování null – klíčové slovo:  
+ Následující příklad ukazuje některá chování null – klíčové slovo:  
   
  [!code-csharp[csrefKeywordsLiteral#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/null_1.cs)]  
   

@@ -1,11 +1,11 @@
-### <a name="wpf-textbox-selected-text-appears-a-different-color-when-the-text-box-is-inactive"></a>WPF TextBox vybraný text se zobrazí barvu, když je neaktivní textového pole
+### <a name="wpf-textbox-selected-text-appears-a-different-color-when-the-text-box-is-inactive"></a>Textové pole WPF vybraný text se zobrazí odlišnou barvou, když do textového pole je neaktivní
 
 |   |   |
 |---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.5, když je neaktivní ovládací prvek WPF textové pole (nemá fokus), zobrazí vybraný text v poli se zobrazí barvu než při řízení je aktivní.|
-|Návrh|Předchozí chování (rozhraní .NET Framework 4.0) může být obnoven nastavením <xref:System.Windows.FrameworkCompatibilityPreferences.AreInactiveSelectionHighlightBrushKeysSupported> vlastnost <code>false</code>.|
+|Podrobnosti|V rozhraní .NET Framework 4.5, když je neaktivní ovládacího prvku WPF textového pole (nemá fokus), zobrazí se vybraný text v poli jinou barvou, než když je aktivní ovládací prvek.|
+|Návrh|Může se obnovit předchozí chování (.NET Framework 4.0) tak, že nastavíte <xref:System.Windows.FrameworkCompatibilityPreferences.AreInactiveSelectionHighlightBrushKeysSupported> vlastnost <code>false</code>.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|modul runtime|
+|Typ|Modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Windows.Controls.TextBox?displayProperty=nameWithType></li></ul>|
 

@@ -8,80 +8,91 @@ helpviewer_keywords:
 - group keyword [C#]
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
-ms.openlocfilehash: 2674986013afccf0a61267e49ca186d2ccb380e5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8e3ddea3ba733cb9ba32e510b050a58407a7a477
+ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33217481"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37404512"
 ---
 # <a name="group-clause-c-reference"></a>group – klauzule (Referenční dokumentace jazyka C#)
-`group` Klauzule vrací posloupnost <xref:System.Linq.IGrouping%602> objekty, které obsahovat nula nebo více položek, které odpovídají hodnotě klíče pro skupinu. Například můžete seskupit posloupnost řetězce podle první písmeno každého řetězce. V takovém případě první písmeno je klíč a má typ [char](../../../csharp/language-reference/keywords/char.md)a je uložen ve `Key` vlastnost jednotlivých <xref:System.Linq.IGrouping%602> objektu. Kompilátor odvodí typ klíče.  
-  
- Můžete ukončit výrazu dotazu s `group` klauzule, jak je znázorněno v následujícím příkladu:  
-  
- [!code-csharp[cscsrefQueryKeywords#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_1.cs)]  
-  
- Pokud chcete provést operace další dotazů pro každou skupinu, můžete zadat identifikátor dočasné pomocí [do](../../../csharp/language-reference/keywords/into.md) kontextové klíčové slovo. Při použití `into`, musíte pokračovat dotaz a nakonec ho ukončit některým `select` příkaz nebo jiné `group` klauzule, jak je znázorněno v následující výpis:  
-  
- [!code-csharp[cscsrefQueryKeywords#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_2.cs)]  
-  
- Více dokončit příklady použití `group` a bez `into` jsou uvedeny v části Příklad v tomto tématu.  
-  
-## <a name="enumerating-the-results-of-a-group-query"></a>Vytváření výčtu výsledků dotazu skupiny  
- Protože <xref:System.Linq.IGrouping%602> objekty produkovaný `group` dotaz jsou v podstatě seznam seznamů, je nutné použít vnořený [foreach](../../../csharp/language-reference/keywords/foreach-in.md) smyčky přístup k položkám v každé skupině. Vnější smyčky iteruje nad klíče skupiny a vnitřní smyčky iteruje nad každou položku v samotné skupině. Skupina může mít klíč, ale žádné elementy. Toto je `foreach` smyčky, který provede daný dotaz v předchozích příkladech kódu:  
-  
- [!code-csharp[cscsrefQueryKeywords#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_3.cs)]  
-  
-## <a name="key-types"></a>Typy klíčů  
- Klíče skupiny mohou být jakéhokoli typu, například řetězce, integrované číselného typu nebo uživatelsky definovaných s názvem typu nebo anonymního typu.  
-  
-### <a name="grouping-by-string"></a>Seskupení řetězce  
- V předchozích příkladech kód používá `char`. Řetězec klíč může snadno bylo zadáno místo, například dokončení příjmení:  
-  
- [!code-csharp[cscsrefQueryKeywords#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_4.cs)]  
-  
-### <a name="grouping-by-bool"></a>Seskupování podle bool  
- Následující příklad ukazuje použití bool hodnotu pro klíč k rozdělení výsledky do dvou skupin. Všimněte si, že hodnota je produkovaný dílčích výrazů v `group` klauzule.  
-  
- [!code-csharp[cscsrefQueryKeywords#14](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_5.cs)]  
-  
-### <a name="grouping-by-numeric-range"></a>Seskupování podle číselný rozsah  
- Další příklad používá k vytvoření klíče číselné skupiny, které představují percentilu rozsah výraz. Všimněte si použití [umožní](../../../csharp/language-reference/keywords/let-clause.md) jako do vhodného umístění pro uložení metodu volat výsledek, takže není nutné volat metodu dvakrát v `group` klauzule. Všimněte si také v `group` klauzule, aby se zabránilo výjimky "dělení nulou" kód zkontroluje, ujistěte se, že student nemá v průměru nula. Další informace o tom, jak bezpečně použít metody ve výrazech dotazů najdete v tématu [postupy: zpracování výjimek ve výrazech dotazů](../../../csharp/programming-guide/linq-query-expressions/how-to-handle-exceptions-in-query-expressions.md).  
-  
- [!code-csharp[cscsrefQueryKeywords#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_6.cs)]  
-  
-### <a name="grouping-by-composite-keys"></a>Seskupování podle složené klíče  
- Složený klíč používejte, pokud chcete seskupení prvků podle více než jeden klíč. Složený klíč vytvoříte pomocí anonymní typ nebo pojmenovaného typu pro uložení klíče elementu. V následujícím příkladu předpokládáme, že třídu `Person` bylo deklarováno se členy s názvem `surname` a `city`. `group` Klauzule způsobí, že má být vytvořen pro každou sadu osob, které mají stejný název poslední a stejné města samostatnou skupinu.  
-  
-```csharp  
-group person by new {name = person.surname, city = person.city};  
-```  
-  
- Použijte pojmenovaného typu, pokud je nutné předat proměnnou dotaz na jinou metodu. Vytváření speciální třídy pomocí automaticky implementované vlastnosti pro klíče a pak přepsat <xref:System.Object.Equals%2A> a <xref:System.Object.GetHashCode%2A> metody. Můžete také použít struktury, v takovém případě není nutné výhradně přepsat tyto metody. Další informace najdete v části [postupy: implementace třídy Lightweight vlastnostmi Auto-Implemented](../../../csharp/programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) a [postup: dotazu na duplicitní soubory v adresářovém stromu](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md). Toto téma obsahuje příklad kódu, který ukazuje, jak použít složený klíč s názvem typu.  
-  
-## <a name="example"></a>Příklad  
- Následující příklad ukazuje standardní vzor pro řazení zdroje dat do skupin při použití žádné další dotaz logiku do skupin. Tomu se říká seskupení bez pokračování. Prvků v poli řetězců se seskupí podle jejich první písmeno. Výsledek dotazu je <xref:System.Linq.IGrouping%602> typ, který obsahuje veřejné `Key` vlastnost typu `char` a <xref:System.Collections.Generic.IEnumerable%601> kolekce, která obsahuje každou položku v seskupení.  
-  
- Výsledek `group` klauzule je posloupnost pořadí. Proto pro přístup k jednotlivé prvky v rámci skupiny pro každý vrácený, použít vnořený `foreach` smyčky uvnitř smyčky, který iteruje klíče skupiny, jak je znázorněno v následujícím příkladu.  
-  
- [!code-csharp[cscsrefQueryKeywords#16](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_7.cs)]  
-  
-## <a name="example"></a>Příklad  
- Tento příklad ukazuje, jak provádět další logiku navíc na skupiny po vytvoření je pomocí *pokračování* s `into`. Další informace najdete v tématu [do](../../../csharp/language-reference/keywords/into.md). V následujícím příkladu se dotazuje každou skupinu a vyberte pouze ty, jehož hodnota klíče je samohláskou.  
-  
- [!code-csharp[cscsrefQueryKeywords#17](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_8.cs)]  
-  
-## <a name="remarks"></a>Poznámky  
- Při kompilaci `group` klauzule jsou přeložit na volání <xref:System.Linq.Enumerable.GroupBy%2A> metoda.  
-  
-## <a name="see-also"></a>Viz také  
- <xref:System.Linq.IGrouping%602>  
- <xref:System.Linq.Enumerable.GroupBy%2A>  
- <xref:System.Linq.Enumerable.ThenBy%2A>  
- <xref:System.Linq.Enumerable.ThenByDescending%2A>  
- [Klíčová slova dotazu (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)  
- [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)  
- [Postupy: vytvoření vnořené skupiny](../../../csharp/programming-guide/linq-query-expressions/how-to-create-a-nested-group.md)  
- [Postupy: seskupení výsledků dotazu](../../../csharp/programming-guide/linq-query-expressions/how-to-group-query-results.md)  
- [Postupy: provádění poddotazů na skupinách](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-a-subquery-on-a-grouping-operation.md)
+
+`group` Klauzule vrátí sekvenci <xref:System.Linq.IGrouping%602> objektů, které obsahují nula nebo více položek, které odpovídají hodnotě klíče pro skupinu. Můžete například seskupit posloupnost řetězce jsou první písmena jednotlivých řetězců. V tomto případě první písmeno jednotky je klíč a má typ [char](char.md)a je uložen v `Key` vlastnosti každého <xref:System.Linq.IGrouping%602> objektu. Kompilátor odvodí typ klíče.
+
+Můžete ukončit pomocí výrazu dotazu `group` klauzule, jak je znázorněno v následujícím příkladu:
+
+[!code-csharp[cscsrefQueryKeywords#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#10)]
+
+Pokud chcete provádět operace dalšího dotazu pro každou skupinu, můžete určit identifikátor dočasné pomocí [do](into.md) kontextové klíčové slovo. Při použití `into`, musíte pokračovat s dotazem a nakonec ukončit některým `select` příkazu nebo jiného `group` klauzule, jak je znázorněno v následujícím výtažku:
+
+[!code-csharp[cscsrefQueryKeywords#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#11)]
+
+Více kompletní příklady použití `group` a nemusíte `into` jsou k dispozici v oddíle Příklad tohoto článku.
+
+## <a name="enumerating-the-results-of-a-group-query"></a>Vytváření výčtu výsledků dotazu skupiny
+
+Protože <xref:System.Linq.IGrouping%602> objekty vytvářené `group` dotaz jsou v podstatě seznam seznamů, je nutné použít vnořený [foreach](foreach-in.md) smyčky pro přístup k položkám v každé skupině. Vnější smyčka Iteruje přes skupiny klíče a vnitřní smyčku iteruje každou položku v samotnou skupinu. Skupina může mít klíč, ale žádné elementy. Tady je `foreach` smyčku, která spustí dotaz v předchozích příkladech kódu:
+
+[!code-csharp[cscsrefQueryKeywords#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#12)]
+
+## <a name="key-types"></a>Typy klíčů
+
+Skupiny klíče může být libovolný typ, například řetězce, vestavěným číselným typem nebo uživatelem definované s názvem typu nebo anonymního typu.
+
+### <a name="grouping-by-string"></a>Seskupení podle řetězce
+
+V předchozích příkladech kódu použít `char`. Řetězec klíče může snadno nebyli určeni místo, například dokončení příjmení:
+
+[!code-csharp[cscsrefQueryKeywords#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#13)]
+
+### <a name="grouping-by-bool"></a>Seskupení podle bool
+
+Následující příklad ukazuje použití bool hodnotu pro klíč k rozdělení výsledky do dvou skupin. Všimněte si, že hodnota je produkovaný dílčí výraz v `group` klauzuli.
+
+[!code-csharp[cscsrefQueryKeywords#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#14)]
+
+### <a name="grouping-by-numeric-range"></a>Seskupení podle číselného rozsahu
+
+Následující příklad používá výraz k vytvoření klíče číselné skupiny, které představují širokou percentil. Všimněte si použití [nechat](let-clause.md) jako vhodné umístění pro uložení metodu výsledek volání, takže není nutné volat metodu dvěma časy `group` klauzuli. Všimněte si také v `group` klauzule, že aby se zabránilo výjimka "dělení nulou" kód zkontroluje, ujistěte se, že student nemá průměrem nula. Další informace o tom, jak bezpečně použít metody ve výrazech dotazů najdete v tématu [postupy: zpracování výjimek ve výrazech dotazů](../../programming-guide/linq-query-expressions/how-to-handle-exceptions-in-query-expressions.md).
+
+[!code-csharp[cscsrefQueryKeywords#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#15)]
+
+### <a name="grouping-by-composite-keys"></a>Seskupování pomocí složených klíčů
+
+Složený klíč používejte, pokud chcete seskupit elementy podle více než jeden klíč. Vytvoříte složený klíč pomocí anonymního typu nebo typu s názvem pro uložení klíčovým prvkem. V následujícím příkladu se předpokládá, že třída `Person` byla deklarována s členy s názvem `surname` a `city`. `group` Klauzule způsobí, že mají být vytvořeny pro každou sadu osoby se stejným názvem poslední a stejném městě samostatnou skupinu.
+
+```csharp
+group person by new {name = person.surname, city = person.city};
+```
+
+Použijte pojmenovaného typu, pokud je proměnná dotazu musí předávat na jinou metodu. Vytváření speciální třídy pomocí automaticky implementovaných vlastností pro klíče a potom přepsat <xref:System.Object.Equals%2A> a <xref:System.Object.GetHashCode%2A> metody. Můžete také použít – struktura, v takovém případě není nutné výhradně přepsat tyto metody. Další informace najdete v části [postupy: implementace lehké třídy s implemented Properties](../../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) a [jak: dotazu na duplicitní soubory v adresářovém stromu](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md). Ten článek obsahuje příklad kódu, který ukazuje, jak použít složený klíč s názvem typu.
+
+## <a name="example"></a>Příklad
+
+Následující příklad ukazuje standardní vzor k řazení zdroje dat do skupin, při použití logiky bez dalšího dotazu do skupin. Tomu se říká seskupení bez pokračování. Prvky v poli řetězců jsou seskupeny podle jejich první písmeno. Výsledek dotazu je <xref:System.Linq.IGrouping%602> typ, který obsahuje veřejnou `Key` vlastnost typu `char` a <xref:System.Collections.Generic.IEnumerable%601> kolekce, která obsahuje každou položku v seskupení.
+
+Výsledek `group` sekvence sekvencí je klauzule. Proto se pro přístup k jednotlivým prvkům v rámci jednotlivých skupin vrácené, použití vnořeného `foreach` smyčky uvnitř smyčky, která iteruje skupiny klíče, jak je znázorněno v následujícím příkladu.
+
+[!code-csharp[cscsrefQueryKeywords#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#16)]
+
+## <a name="example"></a>Příklad
+
+Tento příklad ukazuje, jak provádět další logiku na skupiny po jejich vytvoření s použitím *pokračování* s `into`. Další informace najdete v tématu [do](into.md). V následujícím příkladu se dotazuje každou skupinu a vybrat jenom na ty, jejichž hodnota klíče je samohláskou.
+
+[!code-csharp[cscsrefQueryKeywords#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#17)]
+
+## <a name="remarks"></a>Poznámky
+
+V době kompilace `group` klauzule jsou přeloženy do volání <xref:System.Linq.Enumerable.GroupBy%2A> metody.
+
+## <a name="see-also"></a>Viz také:
+
+<xref:System.Linq.IGrouping%602>  
+<xref:System.Linq.Enumerable.GroupBy%2A>  
+<xref:System.Linq.Enumerable.ThenBy%2A>  
+<xref:System.Linq.Enumerable.ThenByDescending%2A>  
+[Klíčová slova dotazu](query-keywords.md)  
+[LINQ (Language Integrated Query)](../../linq/index.md)  
+[Vytvoření vnořené skupiny](../../linq/create-a-nested-group.md)  
+[Seskupení výsledků dotazu](../../linq/group-query-results.md)  
+[Provádění poddotazů na skupinách](../../linq/perform-a-subquery-on-a-grouping-operation.md)

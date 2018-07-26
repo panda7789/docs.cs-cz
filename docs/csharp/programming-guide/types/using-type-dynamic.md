@@ -5,57 +5,62 @@ helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: 67eb39fd6f2077d2adf1d38d001e801b815d687d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 296b9c80b4ea8b09e8efce71e3b388f7e453850b
+ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33336635"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37404373"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Použití typu dynamic (Průvodce programováním v C#)
-[!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] zavádí nový typ `dynamic`. Typ je statický typu, ale objekt typu `dynamic` obchází Kontrola statické typu. Ve většině případů funguje stejně, jako má typ `object`. Při kompilaci, element, který je zadán jako `dynamic` se předpokládá, že pro podporu všechny operace. Proto není nutné starat o tom, zda objekt získá svou hodnotu z rozhraní API modelu COM, dynamické jazyce například IronPython, z HTML Document Object Model (DOM), z reflexe nebo z jinde v programu. Ale pokud kód není platný, jsou zachyceny chyby za běhu.  
+[!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] zavádí nový typ `dynamic`. Typ je statický typ, ale objekt typu `dynamic` obchází kontroly statického typu. Ve většině případů funguje jako má typ `object`. V době kompilace, element, který je zadán jako `dynamic` se předpokládá, že podporují všechny operace. Proto je nemusíte mít obavy o tom, zda objekt získává svou hodnotu z rozhraní API modelu COM, z dynamického jazyka, jako je IronPython, z HTML Document Object Model (DOM), z reflexe nebo z někde jinde v programu. Nicméně pokud kód není platný, jsou zachyceny chyby za běhu.  
   
- Například pokud metodu instance `exampleMethod1` v následujícím kódu má jenom jeden parametr, kompilátor rozpozná, první volání metody, `ec.exampleMethod1(10, 4)`, není platný, protože obsahuje dva argumenty. Volání způsobí, že chyba kompilátoru. Druhé volání metody, `dynamic_ec.exampleMethod1(10, 4)`, kontrolována kompilátorem, protože typ `dynamic_ec` je `dynamic`. Proto je uvedená žádná chyba kompilátoru. Však chyba není vyhnuli oznámení po neomezenou dobu. To je zachycena v době běhu a způsobí spuštění výjimky.  
+ Například pokud metodu instance `exampleMethod1` v následujícím kódu má pouze jeden parametr, který kompilátor rozpozná první volání metody, `ec.exampleMethod1(10, 4)`, není platný, protože obsahuje dva argumenty. Volání způsobí chybu kompilátoru. Druhé volání metody, `dynamic_ec.exampleMethod1(10, 4)`, není kompilátor kontrolovat, protože typ `dynamic_ec` je `dynamic`. Proto je hlášena žádná chyba kompilátoru. Nicméně chyby neuvozuje Všimněte si, že po neomezenou dobu. Je zachycena v době běhu a způsobí, že výjimka za běhu.  
   
  [!code-csharp[CsProgGuideTypes#50](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-type-dynamic_1.cs)]  
   
  [!code-csharp[CsProgGuideTypes#56](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-type-dynamic_2.cs)]  
   
- Role kompilátoru v těchto příkladech je do balíčku společně informace o každý příkaz navržení udělat, aby objekt nebo výraz, který je zadán jako `dynamic`. Za běhu je zkontrolován uložené informace a žádnému příkazu, který není platný způsobí spuštění výjimky.  
+ Role kompilátor v těchto příkladech je do balíčku společně informace o všech příkazů navrhuje k objektu nebo výraz, který je zadán jako `dynamic`. V době běhu je zkontrolován uložené informace a jakýkoli příkaz, který není platný způsobí, že výjimka za běhu.  
   
- Výsledek nejvíce dynamické operace je sám `dynamic`. Například, pokud se ukazatel myši nad použití `testSum` v následujícím příkladu, IntelliSense zobrazí typ **(místní proměnné) dynamické testSum**.  
+ Výsledek nejvíce dynamické operace je samotný `dynamic`. Například, pokud ukazatel myši nad rámec použití `testSum` v následujícím příkladu, technologie IntelliSense zobrazí typ **dynamické testSum (lokální proměnná)**.  
   
  [!code-csharp[CsProgGuideTypes#51](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-type-dynamic_3.cs)]  
   
- Operace, ve kterých je výsledek `dynamic` obsahovat převody z `dynamic` jiný typ, a volá konstruktor, které zahrnují argumenty typu `dynamic`. Například typ `testInstance` v toto prohlášení je `ExampleClass`, nikoli `dynamic`.  
+ Ve kterých je výsledek operace `dynamic` patří:
+ 
+* Převody z `dynamic` do jiného typu. 
+* Volá konstruktor, které zahrnují argumenty typu `dynamic`. 
+
+Například typ `testInstance` v následující deklaraci je `ExampleClass`, nikoli `dynamic`:
   
  [!code-csharp[CsProgGuideTypes#52](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-type-dynamic_4.cs)]  
   
- Převod příklady jsou uvedeny v následující části "Převody."  
+ Příklady převodu jsou uvedeny v následující části "Převody".  
   
 ## <a name="conversions"></a>Převody  
- Převody mezi dynamické objekty a jinými typy jsou snadné. To umožňuje vývojáři přepínat mezi chování dynamické a bez dynamické.  
+ Převody mezi dynamických objektů a dalších typů je snadné. To umožňuje vývojářům přepínat mezi dynamické a nedynamickou chování.  
   
- Jakýkoli objekt můžete převést na dynamický typ implicitně, jak je znázorněno v následujících příkladech.  
+ Libovolný objekt lze převést na dynamický typ implicitně, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[CsProgGuideTypes#53](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-type-dynamic_5.cs)]  
   
- Naopak implicitní převod můžete dynamicky uplatňují na jakýkoli výraz typu `dynamic`.  
+ Naopak implicitní převod může dynamicky uplatňují na libovolný výraz typu `dynamic`.  
   
  [!code-csharp[CsProgGuideTypes#54](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-type-dynamic_6.cs)]  
   
-## <a name="overload-resolution-with-arguments-of-type-dynamic"></a>Řešení s argumenty z typu dynamic přetížení  
- K rozlišení přetížení v době běhu místo v době kompilace dojde, pokud jeden nebo více argumentů volání metody mít typ `dynamic`, nebo pokud příjemce volání metody, které je typu `dynamic`. V následujícím příkladu pokud dostupné jenom `exampleMethod2` provést argument řetězce je definována metoda odesílání `d1` jako argument nezpůsobí Chyba kompilátoru, ale způsobit spuštění výjimka. Řešení přetížení nezdaří za běhu, protože běhu typ `d1` je `int`, a `exampleMethod2` vyžaduje řetězec.  
+## <a name="overload-resolution-with-arguments-of-type-dynamic"></a>Řešení přetížení s argumenty z typu dynamic  
+ Řešení přetížení dojde za běhu místo v době kompilace, pokud jeden nebo více argumentů ve volání metody typ `dynamic`, nebo pokud je příjemce volání metody typu `dynamic`. V následujícím příkladu Pokud dostupná jenom `exampleMethod2` přijmout argument řetězce je definována metoda odesílání `d1` jako argument nezpůsobí chybu kompilátoru, ale to způsobit výjimku za běhu. Řešení přetížení se nezdaří za běhu, protože typ za běhu `d1` je `int`, a `exampleMethod2` vyžaduje řetězec.  
   
  [!code-csharp[CsProgGuideTypes#55](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-type-dynamic_7.cs)]  
   
-## <a name="dynamic-language-runtime"></a>Dynamic Language Runtime  
- Dynamické language runtime (DLR) je nové rozhraní API v [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]. Poskytuje infrastrukturu, která podporuje `dynamic` typu v C# a také provádění dynamické programovacích jazyků, jako je například IronPython a IronRuby. Další informace o DLR najdete v tématu [přehled dynamického modulu Runtime jazyka](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md).  
+## <a name="dynamic-language-runtime"></a>Runtime modul dynamického jazyka  
+ Dynamické jazykovým modulem runtime (DLR) je nová rozhraní API v [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]. Poskytuje infrastrukturu, která podporuje `dynamic` typu v jazyce C# a také provádění dynamických programovacích jazyků, jako je například IronPython a IronRuby. Další informace o DLR najdete v tématu [přehled dynamického modulu Runtime jazyka](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md).  
   
 ## <a name="com-interop"></a>Zprostředkovatel komunikace s objekty COM  
- [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] zahrnuje několik funkcí, které lepší spolupráce se rozhraní API modelu COM, jako je například rozhraní API Office automatizace. Mezi vylepšení patří použití `dynamic` typ a [pojmenované a nepovinné argumenty](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md).  
+ [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] obsahuje několik funkcí, které vylepšují prostředí spolupráce se rozhraní API modelu COM, jako je například rozhraní API automatizace sady Office. Mezi vylepšení patří použití `dynamic` typ a [pojmenované a nepovinné argumenty](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md).  
   
- Mnoho způsobů COM povolit jevu ve typy argumentů a návratový typ tak, že určíte typy jako `object`. To je nezbytné explicitní přetypování hodnoty, které mají společně se silným typem proměnné v jazyce C#. Pokud zkompilujete pomocí [/Link (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/link-compiler-option.md) možnost zavedení `dynamic` typu umožňuje považovat výskytů `object` v modelu COM podpisy jako kdyby byly typu `dynamic`a tím aby se zabránilo mnohem přetypování. Například následující příkazy kontrastu přístupu buňku v tabulce aplikace Microsoft Office Excel s `dynamic` typu a bez `dynamic` typu.  
+ Mnoho metod modelu COM povolit variace v typy argumentů a návratový typ podle určení typů jako `object`. To je nezbytné explicitní přetypování hodnoty tak, aby zajistěte ve spolupráci se silnými typy proměnných v jazyce C#. Pokud kompilujete pomocí [/Link (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/link-compiler-option.md) možnost zavedení `dynamic` typ umožňuje přistupovat ke všem výskytů `object` v signaturách modelu COM jako by byly typu `dynamic`a tím současně aby se předešlo velkou část přetypování. Například následující příkazy kontrastu, jak získat přístup k buňku v tabulce s Microsoft Office Excel `dynamic` typ a bez `dynamic` typu.  
   
  [!code-csharp[csOfficeWalkthrough#12](../../../csharp/programming-guide/interop/codesnippet/CSharp/using-type-dynamic_8.cs)]  
   
@@ -66,6 +71,6 @@ ms.locfileid: "33336635"
 |Název|Popis|  
 |-----------|-----------------|  
 |[dynamic](../../../csharp/language-reference/keywords/dynamic.md)|Popisuje použití `dynamic` – klíčové slovo.|  
-|[Přehled DLR (Dynamic Language Runtime)](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)|Poskytuje přehled DLR, což je prostředí runtime, který přidává sadu služeb pro dynamické jazyky do common language runtime (CLR).|  
-|[Návod: Vytváření a používání dynamických objektů](../../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)|Poskytuje podrobné pokyny pro vytvoření vlastní dynamický objekt a pro vytvoření projektu, který přistupuje `IronPython` knihovny.|  
-|[Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C#](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)|Ukazuje, jak vytvořit projekt, který používá pojmenovaných a nepovinných argumentů `dynamic` typ a další rozšíření, které zjednodušují přístup k rozhraní API Office objekty.|
+|[Přehled DLR (Dynamic Language Runtime)](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)|Přehled DLR, což je prostředí modulu runtime, který přidá sadu služeb pro dynamické jazyky common language runtime (CLR).|  
+|[Návod: Vytváření a používání dynamických objektů](../../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)|Obsahuje podrobné pokyny pro vytvoření vlastní dynamický objekt a pro vytvoření projektu, který přistupuje `IronPython` knihovny.|  
+|[Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C#](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)|Ukazuje, jak vytvořit projekt, který používá pojmenovaných a nepovinných argumentů `dynamic` typ a další vylepšení, které usnadňují přístup k objektům rozhraní API Office.|

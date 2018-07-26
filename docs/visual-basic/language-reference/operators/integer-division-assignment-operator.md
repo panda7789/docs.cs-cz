@@ -1,5 +1,5 @@
 ---
-title: '\= Operátor'
+title: '\= – Operátor (Visual Basic)'
 ms.date: 07/20/2015
 f1_keywords:
 - '\='
@@ -11,15 +11,15 @@ helpviewer_keywords:
 - operator \= [Visual Basic]
 - compound assignment statements [Visual Basic]
 ms.assetid: 6f39915d-e398-4045-afcc-da6885e57b9c
-ms.openlocfilehash: 4ebbf2eca7fb3cd208d979d7f3c77aa106569119
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bcfc59efda0627f83713fe9ada24cedc20d823e3
+ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33603558"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39198205"
 ---
 # <a name="-operator"></a>\\= – Operátor
-Vydělí hodnoty proměnné nebo vlastnosti hodnotou výrazu a přiřadí proměnné nebo vlastnosti celé číslo.  
+Vydělí hodnotu proměnné nebo vlastnosti hodnotou výrazu a přiřadí proměnné nebo vlastnosti výsledku celého čísla.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,23 +29,23 @@ variableorproperty \= expression
   
 ## <a name="parts"></a>Součásti  
  `variableorproperty`  
- Požadováno. Číselné proměnné nebo vlastnost.  
+ Požadováno. Všechny číselné proměnné nebo vlastnosti.  
   
  `expression`  
  Požadováno. Jakýkoli číselný výraz.  
   
 ## <a name="remarks"></a>Poznámky  
- Element na levé straně `\=` operátor může být jednoduché skalární proměnné, vlastnost nebo element pole. Název proměnné nebo vlastnost nelze [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).  
+ Element na levé straně `\=` operátor může být jednoduché skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
- `\=` Operátor vydělí hodnoty proměnné nebo vlastnosti na levé straně, se hodnota na záhlavím vpravo a přiřadí proměnné nebo vlastnosti na levé straně, celé číslo  
+ `\=` Operátor vydělí hodnotu proměnné nebo vlastnosti na levé straně hodnotou napravo a přiřadí proměnné nebo vlastnosti na levé straně celé číslo výsledku  
   
- Další informace o dělení celého čísla v tématu [\ – operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md).  
+ Další informace o dělení celého čísla, naleznete v tématu [\ – operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md).  
   
 ## <a name="overloading"></a>Přetížení  
- `\` Může být operátor *přetížený*, což znamená, že třídu nebo strukturu lze znovu definovat své chování při operand má typ třídy nebo struktura. Přetížení `\` operátor má vliv na chování `\=` operátor. Pokud váš kód používá `\=` na třídu nebo strukturu, která přetížení `\`, ujistěte se, pochopit jeho Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ `\` Operátor může být *přetížené*, což znamená, že třídy nebo struktury lze znovu definovat jeho chování při operand má typ této třídě nebo struktuře. Přetížení `\` operátor má vliv na chování `\=` operátor. Pokud váš kód používá `\=` v třídě nebo struktuře, která přetížení `\`, je nutné pochopit jeho Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `\=` operátor rozdělit jednu `Integer` proměnné sekundu a přiřadit na celé číslo vést k první proměnné.  
+ V následujícím příkladu `\=` operátor rozdělit jeden `Integer` proměnné tak, že druhé a přiřadit na celé číslo. následkem toho se první proměnné.  
   
  [!code-vb[VbVbalrOperators#19](codesnippet/VisualBasic/integer-division-assignment-operator_1.vb)]  
   

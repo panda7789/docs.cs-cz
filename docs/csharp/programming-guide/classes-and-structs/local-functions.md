@@ -1,80 +1,80 @@
 ---
-title: Lokální funkce (C# Průvodce programováním)
+title: Lokální funkce (C# Programming Guide)
 ms.date: 06/14/2017
 helpviewer_keywords:
 - local functions [C#]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 208ac3d4a7b803dd081edfd9f5227a779f7cf211
-ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
+ms.openlocfilehash: 2f21dd80de8f9df612ab460b9375bf5c1dfae1ce
+ms.sourcegitcommit: 702d5ffc6e733b6c4ded85bf1c92e2293638ee9a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34805617"
+ms.lasthandoff: 07/04/2018
+ms.locfileid: "37792306"
 ---
-# <a name="local-functions-c-programming-guide"></a>Lokální funkce (C# Průvodce programováním)
+# <a name="local-functions-c-programming-guide"></a>Lokální funkce (C# Programming Guide)
 
-Od verze jazyka C# 7.0, C# podporuje *lokální funkce*. Lokální funkce jsou privátní metody typu, které jsou vnořené v jiného člena. Může být volána pouze z jejich obsahující člen. Lokální funkce můžete v deklarována a volat z:
+Od verze C# 7.0, C# podporuje *lokální funkce*. Lokální funkce jsou privátní metody typu, které jsou vnořeny v jiném členu. Může být volána pouze od jejich nadřazeného člena. Lokální funkce může deklarovat v a volat z:
 
-- Metody, hlavně iterator metody a asynchronní metody
+- Metody, hlavně iterátory a asynchronní metody
 - Konstruktory
-- Přístupové objekty vlastnosti
+- Přistupující objekty vlastnosti
 - Přístupové objekty událostí
 - Anonymní metody
-- Lambda – výrazy
+- Výrazy lambda
 - Finalizační metody
-- Další místní funkce
+- Jiné místní funkce
 
-Lokální funkce však nelze deklarovat uvnitř výrazu vozidlo člen.
+Lokální funkce však nemohou být deklarovány uvnitř na člena s výrazem v těle.
 
 > [!NOTE]
-> V některých případech můžete implementovat funkce podporovány také místní funkcí výrazu lambda. Porovnání najdete v tématu [lokální funkce ve srovnání s výrazy Lambda](../../local-functions-vs-lambdas.md).
+> V některých případech slouží k implementaci funkcionality také podporuje místní funkce výraz lambda. Porovnání najdete v tématu [lokální funkce ve srovnání s Lambda výrazy](../../local-functions-vs-lambdas.md).
 
-Lokální funkce byl záměr vymazat kódu. Každý, kdo čtení kódu můžete uvidíte, že metoda není s výjimkou volatelné obsahující metoda. Pro týmové projekty, budou také znemožňují pro jiné vývojáře omylem zavolat metodu přímo z jinde v dané třídě nebo stuct.
+Lokální funkce zkontrolujte záměru kódu jasný. Každému, kdo čte kód můžete vidět, metoda se nedá volat s výjimkou obsahující metodou. Pro týmové projekty, jsou také znemožnit pro jiné vývojáře omylem volat metodu přímo z jinde v dané třídy nebo struktury.
  
-## <a name="local-function-syntax"></a>Syntaxe místní – funkce
+## <a name="local-function-syntax"></a>Syntaxe místní funkce
 
-Místní funkce je definován jako vnořené metoda uvnitř obsahující člena. Její definice obsahuje následující syntaxi:
+Lokální funkce je definován jako metodu vnořené uvnitř nadřazeného člena. Jeho definice má následující syntaxi:
 
 ```txt
 <modifiers: async | unsafe> <return-type> <method-name> <parameter-list>
 ```
 
-Můžete použít místní funkce [asynchronní](../../language-reference/keywords/async.md) a [unsafe](../../language-reference/keywords/unsafe.md) modifikátory. 
+Lokální funkce můžete použít [asynchronní](../../language-reference/keywords/async.md) a [nebezpečné](../../language-reference/keywords/unsafe.md) modifikátory. 
 
-Všimněte si, že všechny místní proměnné, které jsou definovány v obsahující členovi, včetně jeho parametry metody jsou dostupné v místní funkce. 
+Všimněte si, že jsou k dispozici v lokální funkce všech místních proměnných, které jsou definovány v obsahující členu, včetně jeho parametry metody. 
 
-Na rozdíl od metoda definice definice místní funkce nesmí obsahovat následující prvky:
+Na rozdíl od definice metody definice lokální funkce nesmí obsahovat následující prvky:
 
-- Modifikátor přístupu členů. Protože všechny místní funkce privátní, včetně – modifikátor přístupu, jako například `private` – klíčové slovo, vygeneruje Chyba kompilátoru CS0106, "modifikátor 'privátní' není platný pro tuto položku."
+- Členský modifikátor přístupu. Protože jsou všechny lokální funkce privátní, včetně modifikátor přístupu, jako `private` – klíčové slovo, vygeneruje Chyba kompilátoru CS0106 "modifikátor 'private' není platný pro tuto položku."
  
-- [Statické](../../language-reference/keywords/static.md) – klíčové slovo. Včetně `static` – klíčové slovo vygeneruje Chyba kompilátoru CS0106, "modifikátor"statická"není platný pro tuto položku."
+- [Statické](../../language-reference/keywords/static.md) – klíčové slovo. Včetně `static` – klíčové slovo vygeneruje Chyba kompilátoru CS0106, "modifikátor 'static' není platný pro tuto položku."
 
-Kromě toho atributy nelze použít k funkci místní nebo jeho parametry a parametry typu. 
+Kromě toho atributy nejde použít na místní funkci nebo na jeho parametry a parametry typu. 
  
-V následujícím příkladu definuje místní funkce s názvem `AppendPathSeparator` , je pro metodu s názvem soukromý `GetText`:
+Následující příklad definuje lokální funkce s názvem `AppendPathSeparator` , který je pro metodu s názvem soukromý `GetText`:
    
 [!code-csharp[LocalFunctionExample](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/local-functions1.cs)]  
    
-## <a name="local-functions-and-exceptions"></a>Místní funkce a výjimky
+## <a name="local-functions-and-exceptions"></a>Lokální funkce a výjimky
 
-Jedna z funkcí užitečné místní funkcí je, že umožňují výjimky prezentovat okamžitě. Pro metodu iterátory výjimky jsou prezentované jenom v případě, že je výčet vrácený pořadí, a ne v případě, že se načítají iteraci. Pro asynchronní metody je možné vysledovat všechny výjimky vzniklé v asynchronní metody při vrácený úloh je očekáváno. 
+Jedním z užitečných funkcí lokální funkce je, že umožňují výjimky k poskytování okamžitě. U metody iterátorů výjimky zobrazují se jenom v případě, že vrácená sekvence je vypočten, a ne v případě, že se načte iterátor. Pro asynchronní metody jsou dodržovány zůstanou veškeré výjimky vyvolané v asynchronní metodě při očekávání vrácené úlohy. 
 
-V následujícím příkladu definuje `OddSequence` metoda, která vytvoří výčet liché číslo mezi zadaném rozsahu. Protože předává číslo větší než 100, která `OddSequence` enumerátor metoda vyvolá metoda <xref:System.ArgumentOutOfRangeException>. Jak ukazuje výstup z příkladu, výjimka zobrazí jenom v případě, že iterace čísla, a ne už při načtení enumerátoru.
+Následující příklad definuje `OddSequence` metodu, která vytvoří výčet lichá čísla zadaného rozsahu. Protože předá číslo větší než 100, aby se `OddSequence` – metoda výčtu, metoda vyvolá <xref:System.ArgumentOutOfRangeException>. Jak výstup z příkladu ukazuje, vyvolá výjimku pouze v případě, že je iterace čísla, a ne už při načtení enumerátoru.
 
 [!code-csharp[LocalFunctionIterator1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/local-functions-iterator1.cs)] 
 
-Místo toho můžete při provádění ověřování může vyvolat výjimku a před načtením iteraci vrácením iteraci z místní funkce, jako následující příklad ukazuje.
+Místo toho může vyvolat výjimku při provádění ověření a před načtením iterátor tak, že vrací iterátor z místní funkce, jako následující příklad ukazuje.
 
 [!code-csharp[LocalFunctionIterator2](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/local-functions-iterator2.cs)]
 
-Místní funkcí lze podobným způsobem zpracování výjimek mimo asynchronní operaci. Normálně, výjimky vzniklé v asynchronní metody vyžadují, že byste zkontrolovat vnitřní výjimky z <xref:System.AggregateException>. Lokální funkce povolit kódu služeb při selhání rychle a povolit vaší výjimka být vyvolána i zjištěnými synchronně.
+Lokální funkce můžete použít podobným způsobem jako pro zpracování výjimek mimo asynchronní operace. Obvykle vyžadují výjimky vyvolané v asynchronní metodě, že zkoumají vnitřní výjimky, které <xref:System.AggregateException>. Lokální funkce umožňují váš kód k rychle vygenerovala chybu a povolit výjimky být vyvolána i zjištěnými synchronně.
 
-Následující příklad používá asynchronní metodu s názvem `GetMultipleAsync` pozastavení pro zadaný počet sekund, a vrátí hodnotu, která je náhodný násobkem tento počet sekund. Maximální zpoždění je 5 sekund; <xref:System.ArgumentOutOfRangeException> výsledků, pokud je hodnota větší než 5. Jak ukazuje následující příklad, výjimka, která se vyvolá, když hodnota 6 předána `GetMultipleAsync` metoda je uzavřen do <xref:System.AggregateException> po `GetMultipleAsync` metoda zahájí spuštění.
+Následující příklad používá asynchronní metodu s názvem `GetMultipleAsync` pozastavení pro zadaný počet sekund a vrací hodnotu, která je náhodné násobek tento počet sekund. Maximální zpoždění je 5 sekund. <xref:System.ArgumentOutOfRangeException> výsledky, pokud je hodnota větší než 5. Jak ukazuje následující příklad, je předán výjimku, která je vyvolána, když je hodnota 6 `GetMultipleAsync` metoda zabalené do <xref:System.AggregateException> po `GetMultipleAsync` metoda zahájí vykonávání.
 
 [!code-csharp[LocalFunctionAsync`](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/local-functions-async1.cs)] 
 
-Jako jsme to udělali s iterator metoda, jsme Refaktorovat kód z tohoto příkladu k ověření před voláním asynchronní metody. Jako výstup z následující příklad ukazuje <xref:System.ArgumentOutOfRangeException> není uzavřen do <xref:System.AggregateException>.
+Jako jsme to udělali s metodu iterátoru, jsme Refaktorovat kód z tohoto příkladu a provést ověření před volání asynchronní metody. Jak výstup z následující příklad ukazuje <xref:System.ArgumentOutOfRangeException> není zabalena v <xref:System.AggregateException>.
 
 [!code-csharp[LocalFunctionAsync`](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/local-functions-async2.cs)] 
 

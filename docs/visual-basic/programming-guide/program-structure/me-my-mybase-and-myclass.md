@@ -22,17 +22,17 @@ helpviewer_keywords:
 - MyBase keyword [Visual Basic], relationship to similar programming elements
 ms.assetid: f8e241ae-b1ed-4886-9aa0-08c632154029
 ms.openlocfilehash: f3db5f8f6688e68992f683ac1b1465078aa41231
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33650524"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244709"
 ---
 # <a name="me-my-mybase-and-myclass-in-visual-basic"></a>Me, My, MyBase a MyClass v jazyce Visual Basic
-`Me`, `My`, `MyBase`, a `MyClass` v jazyce Visual Basic mají podobné názvy, ale jiné účely. Toto téma popisuje každou z těchto položek, aby bylo možné odlišit.  
+`Me`, `My`, `MyBase`, a `MyClass` v jazyce Visual Basic mají podobné názvy, ale různým účelům. Toto téma popisuje všechny tyto entity, aby bylo možné odlišit.  
   
 ## <a name="me"></a>Mně  
- `Me` – Klíčové slovo poskytuje způsob, jak odkazovat na konkrétní instanci třídu nebo strukturu, ve kterém je aktuálně provádění kódu. `Me` chová jako objektová proměnná nebo proměnná struktura odkaz na aktuální instanci. Pomocí `Me` je zvláště užitečná pro předávání informací o aktuálně spuštěném instanci třídu nebo strukturu proceduře v jiné třídy, struktury nebo modul.  
+ `Me` – Klíčové slovo poskytuje způsob, jak odkazovat na konkrétní instanci třídy nebo struktury, ve kterém právě spouští kód. `Me` se chová jako objektová proměnná nebo proměnná struktury odkaz na aktuální instanci. Pomocí `Me` je obzvláště užitečné pro předávání informací o aktuálně spuštěném instanci třídy nebo struktury do procedury v jiné třídy, struktury nebo modulu.  
   
  Předpokládejme například, že máte následující postup v modulu.  
   
@@ -43,20 +43,20 @@ Sub ChangeFormColor(FormName As Form)
 End Sub  
 ```  
   
- Můžete tento postup a předejte aktuální instancí třídy <xref:System.Windows.Forms.Form> třída jako argument pomocí následujícího příkazu.  
+ Můžete volat tento postup a předejte aktuální instancí třídy <xref:System.Windows.Forms.Form> třídy jako argument pomocí následujícího příkazu.  
   
 ```  
 ChangeFormColor(Me)  
 ```  
   
 ## <a name="my"></a>Moje  
- `My` Funkce poskytuje snadný a intuitivní přístup k několika [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] třídy, povolení jazyka Visual Basic uživatelům interakci s počítači, aplikace, nastavení, prostředky a tak dále.  
+ `My` Funkce poskytuje jednoduché a intuitivní přístup k několika [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] třídy, povolení uživatele jazyka Visual Basic k interakci s počítačem, aplikace, nastavení, prostředky a tak dále.  
   
 ## <a name="mybase"></a>MyBase  
- `MyBase` – Klíčové slovo chová jako proměnná objektu odkazuje na základní třídu aktuální instance třídy. `MyBase` se běžně používá pro přístup k členy základní třídy, které jsou přepsat nebo Stínovaný v odvozené třídě. `MyBase.New` slouží k explicitně volání konstruktoru základní třídy z konstruktoru odvozené třídy.  
+ `MyBase` – Klíčové slovo se chová jako proměnná objektu odkazuje na základní třídu aktuální instance třídy. `MyBase` běžně se používá pro přístup ke členům základní třídy, přepsat nebo Stínovaný v odvozené třídě. `MyBase.New` umožňuje explicitně volat konstruktor základní třídy v konstruktoru odvozené třídy.  
   
 ## <a name="myclass"></a>MyClass  
- `MyClass` – Klíčové slovo chová jako odkaz na aktuální instanci třídy jako poprvé implementované proměnné objektu. `MyClass` je podobná `Me`, ale všechny volání metod v něm jsou zpracovány jako kdyby metodu `NotOverridable`.  
+ `MyClass` – Klíčové slovo se chová jako odkaz na aktuální instanci třídy, jak byly původně implementované proměnné objektu. `MyClass` je podobný `Me`, ale všechna volání metody na něm zacházeno, jako kdyby byly metodu `NotOverridable`.  
   
 ## <a name="see-also"></a>Viz také  
  [Základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)

@@ -1,39 +1,39 @@
 ---
 title: Testování služeb ASP.NET Core a webové aplikace
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Testování služeb ASP.NET Core a webové aplikace
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Testování služeb ASP.NET Core a webové aplikace
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 5e06f582677e61209d0b226fc68bca81dfe593e5
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: f7bd75ecdd85e49524ccdf67f3e59aa4be46bdce
+ms.sourcegitcommit: 702d5ffc6e733b6c4ded85bf1c92e2293638ee9a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37104397"
+ms.lasthandoff: 07/04/2018
+ms.locfileid: "37792410"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testování služeb ASP.NET Core a webové aplikace
 
-Řadiče jsou centrální součástí všechny služby rozhraní API ASP.NET Core a ASP.NET MVC webové aplikace. Jako takový měli byste mít přitom jistotu, že chovají se jako určený pro vaši aplikaci. Automatizované testy vám může poskytnout tento spolehlivosti a chyby může zjistit, než dosáhnou produkční.
+Kontrolery jsou klíčovou součást všem službám rozhraní API pro ASP.NET Core a ASP.NET MVC webové aplikace. V důsledku toho byste měli mít jistotu, které se chovají se tak, jak má pro vaši aplikaci. Automatizované testy vám můžou poskytnout tento spolehlivosti a dokáže detekovat chyby dřív, než dorazí produkčního prostředí.
 
-Budete muset testování chování podle platný nebo neplatný vstupy kontroleru a testování řadiče odpovědí na základě výsledku operace firmy, které provádí. Tyto typy testů, ale musí mít vaše mikroslužeb:
+Je potřeba otestovat, jak se chová podle platný nebo neplatný vstupy kontroler a testovací kontroler odpovědi na základě výsledku obchodní operace, které provádí. Nicméně byste měli mít tyto druhy testů mikroslužby:
 
--   Testování částí. Tyto Ujistěte se, že jednotlivé součásti aplikace fungovat podle očekávání. Kontrolní výrazy otestovat rozhraní API součásti.
+-   Testy jednotek. Tyto Ujistěte se, že jednotlivé komponenty aplikace fungovat podle očekávání. Kontrolní výrazy otestování rozhraní API součásti.
 
--   Integrace testy. Tyto Ujistěte se, že interakce komponenty fungují podle očekávání proti externí artefaktů, jako jsou databáze. Kontrolní výrazy můžete otestovat součást rozhraní API, uživatelského rozhraní nebo vedlejší účinky akcí jako vstupně-výstupní operace databáze protokolování atd.
+-   Integrační testy. Tyto Ujistěte se, že součást interakce fungovat podle očekávání proti externí artefakty, jako jsou databáze. Kontrolní výrazy můžete otestovat rozhraní API součásti, uživatelského rozhraní nebo vedlejší efekty akce, jako je databáze vstupně-výstupních operací, protokolování, atd.
 
--   Funkčních testů pro každý mikroslužby. Tyto Ujistěte se, že aplikace funguje podle očekávání z pohledu uživatele.
+-   Funkční testy u jednotlivých mikroslužeb. Tyto Ujistěte se, že aplikace funguje podle očekávání z pohledu uživatele.
 
--   Služba testy. Tyto Ujistěte se, že případy použití služby začátku do konce, včetně testování víc služeb ve stejnou dobu, jsou testovány. Pro tento typ testování musíte nejdřív připravit prostředí. V takovém případě znamená spouštění služeb (například pomocí docker tvoří nahoru).
+-   Ověřuje se služba. Tyto Ujistěte se, že jsou testovány případy použití konec konec služby, včetně testování víc služeb ve stejnou dobu. Pro tento typ testování musíte nejprve připravit prostředí. V tomto případě znamená spouštění služeb (například pomocí docker-compose up).
 
-### <a name="implementing-unit-tests-for-aspnet-core-web-apis"></a>Implementuje testy částí pro rozhraní API webové jádro ASP.NET
+### <a name="implementing-unit-tests-for-aspnet-core-web-apis"></a>Implementace testů částí pro rozhraní Web API ASP.NET Core
 
-Testování částí zahrnuje testování součástí aplikace izolovaně od jeho infrastruktury a závislosti. Když jste jednotkové testování řadiče logiku, obsah jenom jednu akci nebo metoda je testován, není chování jeho závislé součásti nebo rozhraní samotného. Testování částí Nezjišťovat problémy v interakci mezi součástmi – to znamená účelem integrace testování.
+Testování částí zahrnuje testování částí aplikace v izolaci od jeho infrastrukturu a závislosti. Při testování částí je logice kontroleru, jenom obsah jedné akce nebo metoda je testována, není chování z jejich závislých nebo samotného rozhraní. Testy jednotek Nezjišťovat problémy v interakci mezi komponentami –, který je cílem testování integrace.
 
-Jako jednotku můžete otestovat vaše akce kontroleru, ujistěte se, že byste se zaměřit pouze na jejich chování. Testování částí řadiče zabraňuje věcmi, jako jsou filtry, směrování nebo vazby modelu. Protože se zaměřuje na testování právě jednou z věcí, testy jednotek jsou obecně jednoduché k zápisu a rychlé spuštění. Kvalitně sadu testů jednotek se může spouštět často bez mnoho zásahů.
+Jako jednotku můžete testovat vaše akce kontroleru, ujistěte se, že se že zaměříte jenom na jejich chování. Řadič testu jednotek se vyhnete věci jako filtry, směrování nebo vazby modelu. Protože zaměřují se na testování pouze jednou z věcí, testování jednotek je obecně k zápisu snadné a rychlé spuštění. Kvalitně napsané sady testů jednotek můžete často spustit bez spojená tak velká režie.
 
-Testování částí se implementují podle testovací architektury, jako je xUnit.net Mstestu, Moq nebo NUnit. Pro ukázkovou aplikaci eShopOnContainers používáme XUnit.
+Testování částí se implementují podle testovacích architektur, jako jsou například xUnit.net, MSTest, Moq nebo NUnit. Pro ukázkovou aplikaci aplikaci eShopOnContainers používáme XUnit.
 
-Když píšete testů jednotek pro kontroler Web API, můžete vytvořit instanci třídy controller přímo pomocí new – klíčové slovo v jazyce C\#tak, aby se test spustí co nejrychleji. Následující příklad ukazuje, jak postupovat při použití [XUnit](https://xunit.github.io/) jako Test framework.
+Při psaní testů jednotek pro kontroler Web API je vytvoření instance třídy controller přímo pomocí new – klíčové slovo v jazyce C\#tak, aby se tak rychle spustí test. Následující příklad ukazuje, jak na to, jestli používáte [XUnit](https://xunit.github.io/) jako rozhraní pro testování.
 
 ```csharp
 [Fact]
@@ -53,19 +53,19 @@ public void Add_new_Order_raises_new_event()
 }
 ```
 
-### <a name="implementing-integration-and-functional-tests-for-each-microservice"></a>Implementace integrace a funkčních testů pro každý mikroslužbu
+### <a name="implementing-integration-and-functional-tests-for-each-microservice"></a>Implementace integrace a funkční testy u jednotlivých mikroslužeb
 
-Jak jsme uvedli, integrace testy a funkčních testů mají různé účely a cíle. Způsob, jakým implementujete i při testování řadiče ASP.NET Core je však podobný, takže v této části jsme soustředit se jenom na integraci testy.
+Jak je uvedeno, integrační testy a funkční testy mají různé účely a cíle. Způsob, jak implementovat při testování kontrolery ASP.NET Core je ale podobný, takže v této části budeme soustředit na integrační testy.
 
-Testování integrace zajistí, že součásti aplikace fungovat správně při sestaví. Integrace podporuje ASP.NET Core testování pomocí systémů testování částí a integrované testovací webového hostitele, který lze použít ke zpracování požadavků bez nároky na síť.
+Testování integrace zajistí, že součásti aplikace fungovat správně při sestavena. ASP.NET Core podporuje integrační testování s využitím rozhraní testování částí a integrované testovací webového hostitele, který slouží ke zpracování požadavků bez nároky na síť.
 
-Na rozdíl od testování částí integrace testy často zahrnují aspekty infrastruktury aplikace, jako je například databáze, systém souborů, síťové prostředky, nebo webové požadavky a odpovědi. Testování částí použijte fakes nebo model objektů místo tyto problémy. Ale účelem testů integrace je potvrďte, že systém funguje podle očekávání se tyto systémy, tak pro testování integrace nemáte použít fakes nebo model objektů. Místo toho můžete zahrnout infrastruktury, jako je databáze přístupu nebo služba volání z jiné služby.
+Na rozdíl od testování jednotek testy integrace často zahrnují starostí o infrastrukturu aplikace, jako je například databáze, systém souborů, síťové prostředky, nebo webové požadavky a odpovědi. Testy jednotek použít produkt fakes nebo napodobení objekty místo tyto problémy. Ale testy integrace slouží k potvrzení, že systém funguje podle očekávání u těchto systémů, tak pro testování integrace můžete použít produkt fakes ani napodobení objekty. Místo toho vložte infrastruktury, jako jsou databáze přístupu nebo služba volání z jiné služby.
 
-Protože integrace testy prověření větší segmenty kódu než testy jednotek a protože integrace testy využívají prvky infrastruktury, že jsou obvykle pořadí podle velikosti pomalejší než testování částí. Proto je vhodné omezit kolik integrace testy zápisu a spustit.
+Protože testy integrace využít větší segmentů kódu než testování částí a integrační testy závisí na prvky infrastruktury, jsou často na řádově pomalejší než testování částí. Proto je vhodné omezit počet testů integrace, zápis a spouštění.
 
-ASP.NET Core zahrnuje integrovanou test webové hostitele, který lze použít pro zpracování požadavků HTTP bez nároky na síť, což znamená, že můžete spustit tyto testy rychlejší při použití skutečné webového hostitele. Test webového hostitele je k dispozici v komponentě NuGet jako Microsoft.AspNetCore.TestHost. Jej lze přidat do projektů testování integrace a použít k hostiteli ASP.NET Core aplikace.
+ASP.NET Core zahrnuje integrované testovací webového hostitele, který slouží ke zpracování požadavků HTTP bez nároky na síť, což znamená, že můžete spustit tyto testy rychlejší při použití skutečné webového hostitele. Hostitel webového testu je k dispozici v komponentě NuGet jako Microsoft.AspNetCore.TestHost. Lze přidat do projektů testování integrace a používané aplikace do hostitele ASP.NET Core.
 
-Jak můžete vidět v následujícím kódu, při vytváření integrace testy pro ASP.NET Core řadiče, vytvoří instanci řadiče prostřednictvím testovacího hostitele. Toto je porovnatelný z hlediska na požadavek HTTP, ale běží rychleji.
+Jak je vidět v následujícím kódu, při vytváření testů integrace pro ASP.NET Core řadiče, vytvoříte instanci řadiče přes hostitele testu. Toto je srovnatelná se požadavek HTTP, ale běží rychleji.
 
 ```csharp
 public class PrimeWebDefaultRequestShould
@@ -96,17 +96,17 @@ public class PrimeWebDefaultRequestShould
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Steve Smith. Testování řadiče** (ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/mvc/controllers/testing*](/aspnet/core/mvc/controllers/testing)
+-   **Steve Smith. Testování kontrolerů** (ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/mvc/controllers/testing*](/aspnet/core/mvc/controllers/testing)
 
--   **Steve Smith. Testování integrace** (ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/testing/integration-testing*](/aspnet/core/testing/integration-testing)
+-   **Steve Smith. Testování integrace** (ASP.NET Core) [*https://docs.microsoft.com/aspnet/core/test/integration-tests*](/aspnet/core/test/integration-tests)
 
--   **Testování v .NET Core pomocí dotnet testů jednotek**
+-   **Testování jednotek v .NET Core pomocí příkazu dotnet test**
     [*https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test*](../../../core/testing/unit-testing-with-dotnet-test.md)
 
 -   **xUnit.net**. Oficiální web.
     [*https://xunit.github.io/*](https://xunit.github.io/)
 
--   **Testování částí.**
+-   **Základní informace o testování částí.**
     [*https://msdn.microsoft.com/library/hh694602.aspx*](https://msdn.microsoft.com/library/hh694602.aspx)
 
 -   **Moq**. Úložiště GitHub.
@@ -115,13 +115,13 @@ public class PrimeWebDefaultRequestShould
 -   **NUnit**. Oficiální web.
     [*https://www.nunit.org/*](https://www.nunit.org/)
 
-### <a name="implementing-service-tests-on-a-multi-container-application"></a>Implementace služby testy na aplikace s více kontejnerů 
+### <a name="implementing-service-tests-on-a-multi-container-application"></a>Implementace služby testů na vícekontejnerová aplikace 
 
-Jak jsme uvedli dříve, při testování aplikace s více kontejner, musíte používat v rámci clusteru hostitele nebo kontejner Docker všechny mikroslužeb. Testy začátku do konce služby, které zahrnují více operací zahrnujících několik mikroslužeb musíte nasadit a spustit celou aplikaci na hostiteli Docker spuštěním docker-tvoří nahoru (nebo srovnatelný mechanismus, pokud používáte produktu orchestrator). Po celou aplikaci a všechny její služby běží, můžete provést integraci začátku do konce a funkčních testů.
+Jak je uvedeno výše, při testování vícekontejnerových aplikací, všechny mikroslužby musí běžet v rámci clusteru hostitelů nebo kontejneru Docker. Služby – koncový testů, které zahrnují více operací zahrnující několik mikroslužby vyžadují, abyste nasadit a spustit celou aplikaci v hostitele Docker pomocí docker-compose up (nebo mechanismus srovnatelné, pokud používáte orchestrator). Po celou aplikaci a její služby běží, můžete provést integraci začátku do konce a funkčních testů.
 
-Existuje několik přístupů, které můžete použít. V soubor docker-compose.yml, který můžete použít k nasazení aplikace (nebo podobné těm, které jsou, jako je docker compose.ci.build.yml), na úrovni řešení můžete rozšířit vstupní bod používat [dotnet testovací](../../../core/tools/dotnet-test.md). Můžete taky jiné vytvářené soubor, který by spouštění testů do bitové kopie, které se zaměříte. Pomocí jiného souboru vytvářené pro integraci testy, které zahrnuje mikroslužeb a databáze na kontejnery měli jistotu, že související data se vždy vynuluje do původního stavu před spuštěním testů.
+Existuje několik přístupů, které můžete použít. V souboru docker-compose.yml, můžete použít k nasazení aplikace (nebo podobnosti, jako je docker-compose.ci.build.yml) na úrovni řešení můžete rozbalit vstupním bodem k použití [příkazu dotnet test](../../../core/tools/dotnet-test.md). Můžete také použít jiný soubor compose, který by na obrázku, který se zaměřujete na spuštění testů. S použitím jiný soubor compose pro integrační testy, které zahrnují mikroslužeb a databází v kontejnerech, abyste měli jistotu, že související data se vždy obnovit do původního stavu před spuštěním testů.
 
-Jakmile vytvářené aplikace spuštěná, můžete využít výhod zarážky a výjimky, pokud používáte Visual Studio. Nebo můžete spustit testy integrace automaticky v kanálu vaší konfigurace v sadě Visual Studio Team Services nebo všechny ostatní systémy CI/CD, který podporuje Docker kontejnery.
+Jakmile psaní aplikace je spuštěná, můžete využít výhod zarážky a výjimek, pokud používáte Visual Studio. Nebo můžete spustit testy integrace automaticky v kanálu CI v aplikaci Visual Studio Team Services nebo jakémkoli jiném systému CI/CD, který podporuje kontejnery Dockeru.
 
 >[!div class="step-by-step"]
 [Předchozí](subscribe-events.md)

@@ -1,10 +1,10 @@
-### <a name="winforms-checkforoverflowunderflow-property-is-now-true-for-systemdrawing"></a>Vlastnost CheckForOverflowUnderflow na WinForm je nyní pro System.Drawing hodnotu true.
+### <a name="winforms-checkforoverflowunderflow-property-is-now-true-for-systemdrawing"></a>Formuláře Windows na CheckForOverflowUnderflow vlastnost má nyní hodnotu true pro System.Drawing
 
 |   |   |
 |---|---|
-|Podrobnosti|Vlastnost CheckForOverflowUnderflow pro sestavení System.Drawing.dll je nastavena na hodnotu true.|
-|Návrh|Dříve v případě, že dojde k přetečení, by výsledkem bylo tiché zkrácení. Teď <xref:System.OverflowException?displayProperty=name> je vyvolána výjimka.|
+|Podrobnosti|Vlastnost CheckForOverflowUnderflow System.Drawing.dll sestavení je nastavena na hodnotu true.|
+|Návrh|Dříve v případě, že dojde k přetečení, by výsledkem bylo tiché zkrácení. Nyní <xref:System.OverflowException?displayProperty=name> je vyvolána výjimka.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|modul runtime|
+|Typ|Modul runtime|
 

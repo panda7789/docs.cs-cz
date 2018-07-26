@@ -4,60 +4,49 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - exceptions [C#], non-CLS
 ms.assetid: db4630b3-5240-471a-b3a7-c7ff6ab31e8d
-ms.openlocfilehash: 6169f4b6de2efdfed0dbf43272d708c47b46dbca
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c3153da78e0c25d59da7b5d83bd33f8080c7fae8
+ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33340018"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39198767"
 ---
 # <a name="how-to-catch-a-non-cls-exception"></a>Postupy: Zachycení výjimky nekompatibilní se specifikací CLS
-Některé jazyky rozhraní .NET, včetně C + +/ CLI, povolit objekty k vyvolání výjimky, které není odvozena od <xref:System.Exception>. Takové výjimky, se nazývají *-specifikací CLS výjimky* nebo *bez výjimky*. V jazyce Visual C# můžete nelze vyvolat-specifikací CLS výjimky, ale můžete je zachytit dvěma způsoby:  
+Některé jazyky .NET, včetně C + +/ CLI, povolit objekty k vyvolání výjimky, které nejsou odvozeny od <xref:System.Exception>. Takové výjimky jsou volány *-kompatibilní se Specifikací výjimky* nebo *nejsou výjimkami*. V jazyce C# nelze vyvolat výjimky neodpovídající specifikaci CLS, ale je možné zachytit dvěma způsoby:  
   
--   V rámci `catch (Exception e)` blokovat jako <xref:System.Runtime.CompilerServices.RuntimeWrappedException>.  
+-   V rámci `catch (RuntimeWrappedException e)` bloku.
   
-     Ve výchozím nastavení sestavení Visual C# zachytí výjimky specifikací CLS jako zabalené výjimky. Tuto metodu použijte, pokud budete potřebovat přístup k původní výjimka, která je přístupná prostřednictvím <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A> vlastnost. Postupem uvedeným v tomto tématu vysvětluje, jak zachytit výjimky tímto způsobem.  
+     Ve výchozím nastavení nastavení sestavení Visual C# zachytává výjimky neodpovídající specifikaci CLS jako zabalené výjimky. Tuto metodu použijte, pokud potřebujete přístup k původní výjimku, která je přístupná prostřednictvím <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType> vlastnost. Postup dále v tomto tématu vysvětluje, jak zachytávat výjimky tímto způsobem.  
   
--   V rámci bloku catch obecné (bloku catch bez zadán typ výjimky), který je put po `catch (Exception)` nebo `catch (Exception e)` bloku.  
+-   V rámci obecný zachytávací blok (blok catch bez zadaný typ výjimky), který je umístit za všechny ostatní `catch` bloky.
   
-     Tuto metodu použijte, pokud chcete provést některé akce (například zápis do souboru protokolu) v reakci na-specifikací CLS výjimky a nepotřebujete přístup k informacím o výjimce. Ve výchozím nastavení modul common language runtime zabalí všechny výjimky. Chcete-li toto chování zakázat, přidejte tento atribut úrovně sestavení do kódu, obvykle v souboru AssemblyInfo.cs: `[assembly: RuntimeCompatibilityAttribute(WrapNonExceptionThrows = false)]`.  
+     Tuto metodu použijte, pokud chcete provést určitou akci (jako je například zápis do souboru protokolu) v reakci na výjimky neodpovídající specifikaci CLS a nepotřebujete přístup k informacím o výjimce. Ve výchozím nastavení modul common language runtime zabalí všechny výjimky. Chcete-li toto chování zakázat, přidejte tento atribut úrovně sestavení kódu, obvykle v souboru AssemblyInfo.cs: `[assembly: RuntimeCompatibilityAttribute(WrapNonExceptionThrows = false)]`.  
   
-### <a name="to-catch-a-non-cls-exception"></a>K zachycení výjimky specifikací CLS  
+### <a name="to-catch-a-non-cls-exception"></a>K zachycení výjimky neodpovídající specifikaci CLS  
   
-1.  V rámci `catch(Exception e) block`, použijte `as` – klíčové slovo k testování zda `e` lze převést na <xref:System.Runtime.CompilerServices.RuntimeWrappedException>.  
-  
-2.  Přístup k původní výjimka pomocí <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A> vlastnost.  
+V rámci `catch(RuntimeWrappedException e)` blokovat, přístup k původní výjimky prostřednictvím <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType> vlastnost.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zachytit-specifikací CLS výjimka, která byla vydána z knihovny tříd napsané v jazyce C + +/ CLR. Všimněte si, že v tomto příkladu kód klienta Visual C# vědět předem, že je typ výjimky, které jsou hlášeny <xref:System.String?displayProperty=nameWithType>. Můžete převést <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A> vlastnost zpět jeho původní typ tak dlouho, dokud tento typ je přístupný z vašeho kódu.  
+ Následující příklad ukazuje, jak zachytit výjimku kompilace neodpovídající specifikaci CLS, která byla vyvolána z knihovny tříd napsané v jazyce C + +/ CLI. Všimněte si, že v tomto příkladu kódu klienta jazyka C# pozná, předem, jestli je typ výjimky vyvolané <xref:System.String?displayProperty=nameWithType>. Můžete přetypovat <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType> vlastnost zpátky původního stavu, dokud tento typ je přístupný z vašeho kódu.  
   
-```  
-// Class library written in C++/CLR.  
-   ThrowNonCLS.Class1 myClass = new ThrowNonCLS.Class1();  
-  
-   try  
-   {  
+```csharp
+// Class library written in C++/CLI.
+var myClass = new ThrowNonCLS.Class1();
+
+try
+{
     // throws gcnew System::String(  
     // "I do not derive from System.Exception!");  
-    myClass.TestThrow();   
-   }  
-  
-   catch (Exception e)  
-   {  
-    RuntimeWrappedException rwe = e as RuntimeWrappedException;  
-    if (rwe != null)      
-    {  
-      String s = rwe.WrappedException as String;  
-      if (s != null)  
-      {  
-        Console.WriteLine(s);  
-      }  
-    }  
-    else  
-    {  
-       // Handle other System.Exception types.  
-    }  
-   }             
+    myClass.TestThrow();
+}
+catch (RuntimeWrappedException e)
+{
+    String s = e.WrappedException as String;
+    if (s != null)
+    {
+        Console.WriteLine(s);
+    }
+}
 ```  
   
 ## <a name="see-also"></a>Viz také  

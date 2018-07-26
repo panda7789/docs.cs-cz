@@ -1,84 +1,84 @@
 ---
-title: Události domény. návrh a implementaci
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Události domény, návrhu a implementace
+title: Události domény. návrh a implementace
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Události domény, návrh a implementace
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 44fbe79c9ed7cfd4a79daf6ee9b3d39afd33a910
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
-ms.translationtype: HT
+ms.openlocfilehash: 3daab93a97c57521ae6f16ea2498c3f36f30d795
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106022"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37937124"
 ---
-# <a name="domain-events-design-and-implementation"></a>Události domény: návrhu a implementace
+# <a name="domain-events-design-and-implementation"></a>Domény události: návrh a implementace
 
-Explicitní implementace vedlejší účinky změn ve vaší doméně pomocí události domény. V jiná slova a používá terminologie DDD používejte domény události explicitní implementace vedlejší účinky napříč více agregace. Volitelně můžete pro účely lepší škálovatelnosti a menší dopad na uzamčení databáze pomocí konzistence typu případné mezi agregace ve stejné doméně.
+Používejte události domény o explicitní implementaci vedlejší účinky změn v rámci vaší domény. Jiná slova, a pomocí terminologie DDD používejte události domény o explicitní implementaci vedlejší účinky napříč více agregací. Volitelně můžete pro lepší škálovatelnost a menší dopad na zámků databáze pomocí konečné konzistenci mezi agregací ve stejné doméně.
 
 ## <a name="what-is-a-domain-event"></a>Co je událost domény?
 
-Událost je něco, co došlo v minulosti. Událost domény, logicky, něco, co se stalo v určité doméně, a něco chcete jiných součástí stejné domény (v procesu), aby mít na paměti a potenciálně reagovat na ně.
+Událost je něco, ke kterým došlo v minulosti. Událost domény, logicky, něco, co se stalo v určité doméně, a něco chcete dalších součástí stejné domény (v procesu) mít na paměti a potenciálně reagovat na ně.
 
-Důležité výhodou události domény je, že vedlejší účinky po se něco stalo v doméně, může být vyjádřený explicitně místo implicitně. Tyto straně důsledky musí být konzistentní, proto dojít buď všechny operace související s obchodní úlohy, nebo žádná z nich. Kromě toho události domény umožňuje lepší oddělené oblasti zájmu v rámci třídy ve stejné doméně.
+Důležitou výhodou metody události domény je, že místo implicitně můžete explicitně vyjádřené vedlejší účinky, jakmile se něco stalo v doméně. Tyto vedlejší účinky musí být konzistentní vzhledem k aplikacím, tak dojít buď všechny operace související s obchodní úlohy, nebo žádná z nich. Kromě toho události domény umožňují lepší oddělené oblasti zájmu mezi třídami ve stejné doméně.
 
-Například pokud právě používáte rozhraní Entity Framework a entity nebo i agregace, pokud musí existovat vedlejší účinky provoked případem použití, ty budou prováděny jako implicitní koncept v párované kódu po se něco stalo. Ale pokud se zobrazí pouze tento kód, možná nevíte, pokud tento kód (vedlejším účinkem) je součástí hlavní operaci, nebo pokud se ve skutečnosti je vedlejším účinkem. Na druhé straně pomocí události domény mohou koncept explicitní a součástí všudypřítomný jazyk. Například v aplikaci eShopOnContainers vytváření pořadí není jenom o pořadí; aktualizací nebo vytvoří kupujících agregační na základě původního uživatele, protože uživatel není kupující dokud pořadí na místě. Pokud používáte události domény, můžete explicitně express pravidlo této domény založené na všudypřítomný jazyk zadaný odborníky domény.
+Například používáte jenom Entity Framework a entity nebo dokonce agregace, pokud musí existovat provoked případem použití vedlejší účinky, ty bude možné implementovat jako implicitní koncept v propojených kódu po se něco stalo. Ale pokud se zobrazí pouze, že kód, možná nevíte, pokud tento kód (vedlejším účinkem) je součástí hlavní operace, nebo pokud je to v podstatě vedlejší účinek. Na druhé straně použití události domény je koncept explicitní a součástí všudypřítomná jazyka. Například v aplikaci eShopOnContainers aplikaci vytvoření objednávky není jen o pořadí. aktualizace nebo vytvoří kupujících agregované podle původního uživatele, protože uživatel není kupující dokud nedojde k objednávku na místě. Pokud používáte události domény, můžete vyjádřit explicitně daného pravidla domény v všudypřítomná jazyk poskytované odborníky domény.
 
-Události domény jsou trochu podobné události zasílání zpráv ve stylu s jeden podstatným rozdílem. S skutečné zasílání zpráv služby Řízení front zpráv, zpráv zprostředkovatelé nebo služby service bus pomocí AMPQ se zprávu vždy odesílají asynchronně a předávat v rámci procesy a počítače. To je užitečné pro integraci více ohraničenou kontexty, mikroslužeb nebo i jiné aplikace. S událostmi domény chcete vyvolat událost z operace domény, které jsou aktuálně spuštěné, ale chcete, aby žádné vedlejší účinky v rámci stejné domény.
+Události domény se trochu podobné události zasílání zpráv ve stylu s jeden důležitý rozdíl. S skutečné zasílání zpráv služby Řízení front zpráv, zprostředkovatele zpráv a service bus pomocí AMPQ zprávu vždy odeslán asynchronně a předávat v rámci procesy a počítače. To je užitečné pro integraci více ohraničených kontextech, mikroslužby nebo dokonce během různých aplikací. S událostmi domény chcete vyvolat událost z operace domény, které jsou aktuálně spuštěné, ale chcete, aby všechny vedlejší účinky na výskyt ve stejné doméně.
 
-Události domény a jejich vedlejší efekty (akce aktivuje později spravovaná obslužné rutiny událostí) provedeno téměř okamžitě, obvykle v rámci procesu a v rámci stejné domény. Proto události domény může být synchronní nebo asynchronní. Události integrace, ale musí být vždy asynchronní.
+Události domény a jejich vedlejších účinků (akce aktivuje později, které se spravují přes obslužné rutiny událostí) se budou objevovat téměř okamžitě, obvykle v rámci procesu a ve stejné doméně. Události domény může proto být synchronní nebo asynchronní. Integrace událostí, ale musí být vždy asynchronní.
 
 ## <a name="domain-events-versus-integration-events"></a>Události domény oproti události integrace
 
-Sémanticky, domény a integrace události jsou samé: oznámení o něco, které právě došlo. Implementace však musí být jiný. Události domény jsou jenom zpráv nabídnutých do dispečeru událostí domény, který by mohl implementovaný jako zprostředkovatel v paměti na základě kontejner IoC nebo jiným způsobem.
+Sémanticky, domény a integrace událostí se stejnou věc: oznámení o něco, stačí ke kterým došlo. Jejich provádění však musí být jiný. Události domény jsou pouze zprávy do dispečeru událostí domény, který by mohl implementovat jako zprostředkovatel v paměti založené na kontejner IoC nebo jakékoliv jiné metody.
 
-Na druhé straně účelem události integrace je potřebný k šíření potvrzené transakce a aktualizace další subsystémy, jestli jsou v jiné mikroslužeb nebo ohraničenou kontextu i externími aplikacemi. Proto má vzniknout jen pokud entita je úspěšně jako trvalé, od v mnoha scénářích Pokud se to nezdaří, celou operaci efektivně nikdy došlo.
+Na druhé straně účelem integrace událostí je šířit potvrzené transakce a aktualizace pro další subsystémy, ať už jsou ostatní mikroslužeb, ohraničených kontextech nebo dokonce i externích aplikací. Proto by měl nastat pouze pokud entita se úspěšně ukládají, od v mnoha scénářích v případě selhání celá operace efektivně nikdy se stalo.
 
-Kromě toho a jako uvedených, integrace události musí být založená na asynchronní komunikaci mezi více mikroslužeb (jiných kontextech s ohraničenou) nebo i externími systémy nebo aplikacemi. Proto musí rozhraní sběrnice událostí některé infrastrukturu, která umožňuje mezi proces a distribuovaných komunikace mezi potenciálně vzdálené. Ho může být založen na komerční služby service bus, fronty, sdílenou databázi použít jako poštovní schránku nebo jakékoliv distribuované a v ideálním případě push založené na systému zasílání zpráv.
+Kromě toho a jako jsme už zmínili, integrace událostí musí založené na asynchronní komunikaci mezi několika mikroslužbami (omezená kontexty jiných) nebo i externích systémů a aplikací. Rozhraní události Service bus proto potřebuje určitou infrastrukturu, která umožňuje mezi procesu a distribuovat mezi potenciálně vzdálené komunikace. Může být založen na komerční služby Service bus, front, sdílené databáze používaná jako poštovní schránku nebo jakékoli jiné distribuované a v ideálním případě push založené na systému zasílání zpráv.
 
-## <a name="domain-events-as-a-preferred-way-to-trigger-side-effects-across-multiple-aggregates-within-the-same-domain"></a>Události domény jako upřednostňovaný způsob, jak aktivovat vedlejší účinky napříč více agregace ve stejné doméně
+## <a name="domain-events-as-a-preferred-way-to-trigger-side-effects-across-multiple-aggregates-within-the-same-domain"></a>Události domény jako upřednostňovaný způsob, jak spouštět vedlejší účinky napříč více agregací ve stejné doméně
 
-Pokud spuštění příkazu vztahující se k jednomu agregační instance vyžaduje další domény pravidla ke spuštění na jeden nebo více dalších agregace, by měl navrhujete a implementujete tyto vedlejší účinky, aby se spouštěly domény událostmi. Jak je uvedené v obrázek 9-14 a jako jeden z nejdůležitějších případy použití, domény událostí se používá k rozšíří změny stavu na více agregace v rámci stejného modelu domény.
+Pokud spuštění příkazu vztahující se k jednomu agregace instance vyžaduje další doménu pravidel ke spuštění na jeden nebo více dalších agregace, by měl navrhujte a implementujte tyto vedlejší účinky bude aktivovat události domény. Jak je znázorněno v obrázek 9-14 a jako jeden z vašich nejdůležitějších případy použití, událost domény by měla sloužit k šíření změn stavu napříč více agregace v rámci stejného modelu domény.
 
 ![](./media/image15.png)
 
-**Obrázek 9-14**. Události domény chcete zajistit konzistenci mezi několika agregace ve stejné doméně
+**Obrázek 9-14**. Události domény k vynucení konzistence mezi více agregací ve stejné doméně
 
-Na obrázku když uživatel spustí pořadí, aktivuje událost domény OrderStarted vytvoření objektu kupujících v řazení mikroslužbu, založené na původní informace o uživateli z mikroslužbu identity (pomocí informací uvedených v příkazu CreateOrder). Událost domény je generován agregace pořadí při vytvoření na prvním místě.
+Obrázek když uživatel zahájí objednávky, aktivuje událost domény OrderStarted vytvoření objektu kupujících v pořadí mikroslužeb, založené na původní informace o uživateli z mikroslužeb identity (pomocí informací uvedených v příkazu CreateOrder). Agregace pořadí vygeneruje událost domény při vytváření na prvním místě.
 
-Alternativně můžete mít kořenu agregační předplatné pro události vyvolané službou členy jeho agregace (podřízených entit). Každá entita podřízené OrderItem pro instanci může vyvolat událost, když cena zboží je vyšší než určitou velikostí, nebo když množství položek produktu je příliš vysoká. Agregační kořenové můžete přijímat tyto události a provádět globální výpočtu nebo agregace.
+Alternativně můžete mít agregační kořenové přihlášený(á) k odběru události vyvolané službou členy jeho agregace (podřízené entity). Každé podřízené entity OrderItem například může vyvolat událost při větším než určitou velikostí cena zboží, nebo když částka položka produktu je příliš vysoká. Agregační kořenové můžete přijímat události a provádět globální výpočtu nebo agregace.
 
-Je důležité si uvědomit, že tato komunikace na základě událostí není implementována přímo v rámci agregace; je nutné implementovat domény obslužné rutiny. Zpracování událostí domény je aplikace. Vrstva modelu domény měli jenom zaměřit na logiku domény – věcí, které by pochopit odborník z domény, ne aplikace infrastruktury, jako jsou obslužné rutiny a vedlejším účinkem trvalost akce s použitím úložiště. Úroveň vrstvy aplikace je proto, kde byste měli mít spuštění akce při domény událost se vyvolá, obslužné rutiny událostí domény.
+Je důležité pochopit, že tato komunikace založené na události není implementovaná přímo v rámci agregace; budete muset implementovat obslužné rutiny událostí domény. Zpracování událostí domény je aplikace. Vrstvě doménového modelu byste se zaměřit jenom na logiku domény – věcí, které by pochopit doménu, není aplikační infrastruktury jako vedlejší efekt trvalost akce pomocí úložišť a obslužné rutiny. Na úrovni vrstvy aplikace je proto, ve kterém byste měli mít obslužné rutiny událostí domény Aktivace akce, když je vyvolána událost domény.
 
-Události domény lze také použít k aktivaci libovolného počtu akcí aplikace a co je důležitější, musí být otevřený a odpojeného způsobem zvýšit počet v budoucnu. Například při spuštění pořadí, můžete chtít publikování domény událostí k šíření této informací o jiné agregace nebo i pro vyvolání akce aplikace jako oznámení.
+Domény události lze také spustit libovolný počet akcí aplikace a co je důležitější, musí být otevřený, aby toto číslo v budoucnu zvýšit oddělující způsobem. Například při spuštění příkazu můžete publikovat událost domény, šíření tyto informace do jiné agregace nebo dokonce, aby se vyvolala se akce aplikace jako oznámení.
 
-Klíče bod je otevřené počet akce má být proveden při výskytu události domény. Nakonec se zvýší akce a pravidla v doméně a aplikace. Složitost nebo počet vedlejším účinkem akcí, když se stane něco se zvýší, ale pokud se váš kód kombinaci s "spojovací" (který je právě vytváření instancí objektů s new – klíčové slovo v jazyce C\#), pokaždé, když je potřeba přidat novou akci je nutné, aby Původní kód změňte. Výsledkem by mohlo nové chyby, protože se každý nový požadavek by potřebujete změnit původní toku kódu. To má význam proti [otevřete/uzavřeno Princip](https://en.wikipedia.org/wiki/Open/closed_principle) z [plnou](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)). Ne, pouze to, že, původní třídu, která byla Orchestrace operace by růst a růst, která přejde na [jedné zásadě odpovědnost (SRP)](https://en.wikipedia.org/wiki/Single_responsibility_principle).
+Zásadním aspektem je otevřít počet akce, které se spustí při výskytu události domény. Nakonec se zvětší akce a pravidla v doméně a aplikace. Složitost nebo počet akcí vedlejší efekt při určité události, které se zvýší, ale pokud se váš kód spolu s "spojovací" (to znamená, stačí vytváření instancí objektů s new – klíčové slovo v jazyce C\#), pak pokaždé, když je potřeba přidat novou akci byste museli Původní kód změňte. To mohlo způsobit nové chyby, protože se každý nový požadavek bude muset změnit původní tok kódu. Toto patří proti [Open/uzavřeno Princip](https://en.wikipedia.org/wiki/Open/closed_principle) z [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)). Not, nejen to, původní třídy, která byla Orchestrace operace by růst i při pozdějším růstu a ten se ukládá proti [jedné zásadě odpovědnost (SRP)](https://en.wikipedia.org/wiki/Single_responsibility_principle).
 
-Na druhé straně Pokud používáte události domény, můžete vytvořit podrobné a odpojeného implementace oddělováním odpovědnosti použití tohoto přístupu:
+Na druhé straně Pokud používáte události domény, můžete vytvořit podrobné a samostatné implementace podle oddělení odpovědností tento přístup:
 
-1.  Odeslání příkazu (například CreateOrder).
-2.  Zobrazí příkaz v obslužná rutina příkazu.
-    -   Spusťte jeden agregace transakce.
-    -   (Volitelné) Vyvolávání událostí domény pro vedlejší efekty (například OrderStartedDomainEvent).
-1.  Zpracování událostí domény (v rámci aktuální proces), které budou spuštěny otevřete počet vedlejší účinky v několika agregace nebo se akce aplikace. Příklad:
-    -   Ověřte nebo vytvořte kupujících a způsobu platby.
-    -   Vytvoření a odeslání událostí související integrace ke sběrnici událostí k rozšíří stavy na mikroslužeb nebo aktivační událost externí akcí jako odběratel odesílání e-mailu.
-    -   Zpracujte jiné vedlejší účinky.
+1.  Poslat příkaz (například CreateOrder).
+2.  Zobrazit příkaz v obslužná rutina příkazu.
+    -   Spuštění jedné agregace transakce.
+    -   (Volitelné) Vyvolávání událostí domény pro vedlejší účinky (například OrderStartedDomainEvent).
+1.  Popisovač události domény (v rámci aktuální proces), které spustí otevřít počet vedlejší účinky ve více agregace nebo akce aplikací. Příklad:
+    -   Ověřit nebo vytvořit odběratele a způsobu platby.
+    -   Vytvoření a odeslání událostí související integrace do sběrnice událostí šíření stavů mezi mikroslužbami nebo aktivační událost externí akce, jako je odesílání e-mailu do odběratele.
+    -   Zpracování vedlejší efekty.
 
-Jak znázorňuje obrázek 9 – 15, od stejné domény události, může zpracovávat několik akcí souvisejících s jiné agregace v doméně nebo akce další aplikace, které je potřeba provést přes připojení s integrace události a události sběrnice mikroslužeb.
+Jak znázorňuje obrázek 9-15, od stejné událost domény, můžete zpracovávat několik akcí souvisejících s jiné agregace v doméně nebo akce další aplikace, které je potřeba provést přes připojení pomocí integrace událostí a sběrnice událostí mikroslužeb.
 
 ![](./media/image16.png)
 
-**Obrázek 9 až 15**. Zpracování více akcí v každé doméně
+**Obrázek 9-15**. Zpracování více akcí pro doménu
 
-Obslužné rutiny událostí jsou obvykle v aplikační vrstvě, protože objektů infrastruktury, jako jsou úložiště nebo rozhraní API aplikace bude používat mikroslužbu chování. V tomto smysl jsou podobné obslužné rutiny příkazů, obslužné rutiny událostí, tak jak jsou součástí aplikační vrstvu. Důležitý rozdíl je, že příkaz má být zpracován pouze jednou. Událost domény může být zpracována nula nebo *n* krát, protože ho lze přijímat pomocí několika příjemci nebo obslužných rutin událostí pomocí k jinému účelu pro každou obslužnou rutinu.
+Obslužné rutiny událostí jsou obvykle v aplikační vrstvě, protože objektů infrastruktury, jako jsou úložiště nebo rozhraní API aplikace bude používat pro chování mikroslužbách. V tomto smyslu obslužné rutiny událostí jsou podobně jako obslužné rutiny příkazů, tak jak jsou součástí aplikačního. Důležitý rozdíl je, že příkaz by se měly zpracovat pouze jednou. Událost domény může být zpracována nula nebo *n* vícekrát, protože může být přijata několik příjemců nebo obslužné rutiny události s jiným způsobem pro každou obslužnou rutinu.
 
-Možnost Otevřít počet obslužných rutin na událost domény umožňuje přidat mnoho další pravidla domény bez dopadu na váš aktuální kód. Implementace následující obchodní pravidlo, které se má provést vpravo po konkrétní události, například může být stejně snadná jako přidávání několik obslužné rutiny událostí (nebo i pouze jeden):
+Možnost Otevřít počet obslužné rutiny na událost domény umožňuje přidat mnoho dalších pravidel domény bez dopadu na vaše aktuální kód. Implementace následující obchodní pravidlo, které má dojít doprava po konkrétní události, například může být stejně jednoduché jako přidání několik obslužných rutin událostí (nebo dokonce jen jeden):
 
-Pokud celková velikost koupili zákazníka v úložišti, napříč jakékoli číslo objednávky, překročí $6000, platí pro všechny nové pořadí 10 % vypnout slevu a upozorňovat zákazník s e-mailu o tomto slevy pro budoucí objednávky.
+Pokud celková částka zakoupené ze strany zákazníka v úložišti, napříč libovolným počtem objednávky, překročí 6 000 $, platí pro každou novou objednávku 10 % sleva na produkt slevy a informovat zákazníka s e-mailu o tuto slevu pro budoucí objednávky.
 
 ## <a name="implementing-domain-events"></a>Implementace události domény
 
-V jazyce C# domény událostí je jednoduše data za ruku struktura nebo třídy, jako je DTO, všechny informace související s co se právě stalo v doméně, jak je znázorněno v následujícím příkladu:
+V jazyce C# událost domény je jednoduše ruku datové struktury nebo třídy, jako je objekt DTO, všechny informace související s co se právě stalo v doméně, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 public class OrderStartedDomainEvent : INotification
@@ -106,27 +106,27 @@ public class OrderStartedDomainEvent : INotification
 }
 ```
 
-Toto je v podstatě třídu, která obsahuje všechna data související s OrderStarted události.
+Toto je v podstatě třída, která obsahuje všechna data související s OrderStarted událostí.
 
-Z hlediska všudypřítomný jazyka domény vzhledem k tomu, že událost je něco, co se stalo v minulosti, název třídy události by měl být reprezentován jako minulost operace, jako je OrderStartedDomainEvent nebo OrderShippedDomainEvent. To je, jak je implementovaná událost domény v řazení mikroslužbu v eShopOnContainers.
+Z hlediska všudypřítomná jazyk domény, protože událost je něco, co se stalo v minulosti, název třídy události by měly být zastoupeny jako minulý čas operace, jako je OrderStartedDomainEvent nebo OrderShippedDomainEvent. Je to, jak je v pořadí mikroslužeb v aplikaci eShopOnContainers implementovaná událost domény.
 
-Jak již bylo uvedeno dříve, důležitou vlastností událostí je, že vzhledem k tomu, že událost je něco, co se stalo v minulosti, neměli měnit. Proto musí být třídu neměnné. Zobrazí se v předchozí kód, který vlastnosti jsou jen pro čtení z mimo objekt. Jediný způsob, jak aktualizovat objekt je pomocí konstruktoru, při vytváření objektu události.
+Jak je uvedeno výše, je důležitou vlastnost událostí, že vzhledem k tomu, že událost je něco, co se stalo v minulosti by neměly měnit. Proto musí být neměnné třídy. Zobrazí se v předcházejícím kódu, které vlastnosti jsou jen pro čtení z mimo objektu. Jediný způsob, jak aktualizovat objekt je pomocí konstruktoru, při vytváření objektu události.
 
-### <a name="raising-domain-events"></a>Vyvolání událostí domény
+### <a name="raising-domain-events"></a>Vyvolávání událostí domény
 
-Další otázka se vyvolat událost domény, takže se dosáhne jeho obslužné rutiny událostí související postupy. Můžete použít několik přístupů.
+Další otázkou je postup vyvolat událost domény, tak se dosáhne své obslužné rutině související události. Můžete použít několik přístupů.
 
-Původně navrhované UDI Dahan (například v několika související s příspěvky, jako například [události domény – trvat 2](http://udidahan.com/2008/08/25/domain-events-take-2/)) pomocí statická třída pro správu a vyvolávání událostí. To může zahrnovat statické třídy s názvem DomainEvents, který by vyvolávání událostí domény okamžitě, když je volána, pomocí syntaxe jako DomainEvents.Raise (MyEvent má mít událostí). Jimmy Bogard napsali blogový příspěvek ([posílení vaší domény: domény události](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)), doporučuje podobný postup.
+Původně navrhl UDI Dahan (například v několika souvisejících příspěvků, jako například [události domény – trvat 2](http://udidahan.com/2008/08/25/domain-events-take-2/)) pomocí statické třídy pro správu a vyvolávání událostí. To může zahrnovat statickou třídu s názvem DomainEvents, který by vyvolat události domény okamžitě, když je volána, pomocí syntaxe jako DomainEvents.Raise (Event myEvent). Jimmy Bogard napsal příspěvek na blog ([posílení vaší domény: domény události](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)), která doporučuje podobný přístup.
 
-Ale když statické třídy události domény se také odešle do obslužné rutiny okamžitě. Díky testování a ladění obtížnější, protože obslužných rutin událostí pomocí logiky vedlejší účinky jsou vykonány ihned po vyvolání události. Když jsou testování a ladění, chcete zaměřit na to, a stejně, co se děje v aktuální agregační třídy; nechcete náhle přesměrovat na ostatních obslužných rutin událostí pro vedlejší účinky související do jiných agregací nebo aplikační logiku. Z tohoto důvodu vyvinuly jiné postupy, jak je popsáno v následující části.
+Ale když doménová třída událostí je statická, také odešle do obslužné rutiny okamžitě. To umožňuje testování a ladění obtížnější, protože obslužných rutin událostí pomocí logiky vedlejší účinky jsou spouštěny ihned poté, co se vyvolá událost. Při testování a ladění, chcete zaměřit se na a právě, co se děje v aktuální agregační třídy; nechcete náhle přesměrováni na jiné obslužné rutiny událostí pro vedlejší účinky související s jinými agregace nebo aplikaci logiky. To je důvod, proč se vyvinula další přístupy, jak je vysvětleno v další části.
 
-#### <a name="the-deferred-approach-for-raising-and-dispatching-events"></a>Odložené přístup pro vyvolání a odeslání události
+#### <a name="the-deferred-approach-for-raising-and-dispatching-events"></a>Odložené přístup pro vyvolávání a odeslání události
 
-Místo odeslání na obslužnou rutinu události domény okamžitě, je lepší způsob přidání události domény do kolekce a potom k odesílání událostí tyto domény *bezprostředně před* nebo *správné*  *Po* potvrzení transakce (stejně jako u SaveChanges v EF). (Tento přístup byl Jimmy Bogard popsaného v tomto blogu [lepší vzor události domény](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/).)
+Místo agresivnějším odesláním do obslužné rutiny události domény okamžitě, lepším řešením je přidat do kolekce událostí domény a pak k odeslání události domény *bezprostředně před* nebo *správné*  *Po* potvrzování transakcí (stejně jako u SaveChanges v EF). (Tento přístup se v tomto příspěvku popsal Jimmy Bogard [lepší vzor události domény](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/).)
 
-Při rozhodování o tom, pokud je odeslat události domény hned před nebo správné za potvrzení transakce je důležité, protože určuje, zda bude obsahovat vedlejší účinky v rámci stejné transakci nebo jinou transakcí. V takovém případě budete muset řešit případné konzistence napříč více agregace. Toto téma je popsané v další části.
+Rozhodování o tom, pokud budete události odesílat na domény hned před nebo pravou za potvrzování transakcí je důležité, protože určuje, zda bude obsahovat vedlejší účinky v rámci stejné transakce nebo v jiné transakce. V takovém případě budete muset pracovala s konečnou konzistencí napříč více agregací. V tomto tématu jsou popsány v následující části.
 
-Odložené přístup je, jaké eShopOnContainers používá. Nejprve přidejte události děje ve vašem entity do kolekce nebo seznamu událostí za entity. Tento seznam musí být součástí objektu entity, nebo i lépe součástí třídy základní entitu, jak je znázorněno v následujícím příkladu základní třídy Entity:
+Odložené přístup je, jaké aplikaci eShopOnContainers používá. Nejprve přidejte události děje ve vaše entity do kolekce nebo seznamu událostí za entity. Tento seznam by měl být součástí objektu entity, nebo ještě lepší část třídy základní entitu, jak je znázorněno v následujícím příkladu základní třída Entity:
 
 ```csharp
 public abstract class Entity
@@ -150,9 +150,9 @@ public abstract class Entity
 }
 ```
 
-Když chcete vyvolat událost, stačí ho přidáte do kolekce událostí z kódu v jakékoli metody objektu entity agregace root.
+Pokud chcete vyvolat událost, stačí přidat jej do kolekce událostí z kódu v jakékoli metody objektu agregace kořenové entity.
 
-Následující kód, součástí [pořadí agregace root na eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs), ukazuje příklad:
+Následující kód, součástí [pořadí kořenové agregace v aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs), ukazuje příklad:
 
 ```csharp
 var orderStartedDomainEvent = new OrderStartedDomainEvent(this, //Order object
@@ -163,9 +163,9 @@ var orderStartedDomainEvent = new OrderStartedDomainEvent(this, //Order object
 this.AddDomainEvent(orderStartedDomainEvent);
 ```
 
-Všimněte si, že je jediné, co dělají metodu AddDomainEvent přidání události do seznamu. Žádná událost je odeslána ještě a ještě volána žádná obslužná rutina události.
+Všimněte si, že pouze jednu metodu AddDomainEvent probíhající činnosti je přidání události do seznamu. Žádná událost je odeslána ještě a žádná obslužná rutina události je vyvolána ještě.
 
-Chcete skutečně později na odeslání události při potvrzení transakce do databáze. Pokud používáte Entity Framework Core, znamená to v metodě SaveChanges vaší EF DbContext, jako v následujícím kódu:
+Ve skutečnosti budete chtít později při odeslání události při potvrzení transakce v databázi. Pokud používáte Entity Framework Core, která znamená, že metoda SaveChanges vaše EF DbContext, stejně jako v následujícím kódu:
 
 ```csharp
 // EF Core DbContext
@@ -185,59 +185,59 @@ public class OrderingContext : DbContext, IUnitOfWork
         await _mediator.DispatchDomainEventsAsync(this);
 
         // After this line runs, all the changes (from the Command Handler and Domain
-        // event handlers) performed through the DbContext will be commited
+        // event handlers) performed through the DbContext will be committed
         var result = await base.SaveChangesAsync();
     }
 }
 ```
 
-S tímto kódem odeslání události entity k svým obslužným příslušné události.
+S tímto kódem odeslání události entity na jejich odpovídající událost obslužné rutiny.
 
-Celkové výsledkem je, že budete mít odpojené vyvolání události domény (jednoduchou přidat do seznamu v paměti) od odeslání do obslužné rutiny události. Kromě toho v závislosti na tom, jaký druh dispečera používáte, může odeslat události synchronně nebo asynchronně.
+Celkový výsledek je, že můžete mít oddělení vyvolání události domény (jednoduchý přidat do seznamu v paměti) od agresivnějším odesláním do obslužné rutiny události. Kromě toho v závislosti na tom, jaký druh dispečer používáte, může odesílat události synchronně nebo asynchronně.
 
-Mějte na paměti zde přehrání transakční hranice začalo významné. Pokud je vaše jednotka práce a transakce může mít rozsah více než jeden agregace (stejně jako při používání jádra EF a relační databáze), to může fungovat správně. Ale pokud transakce nelze span agregace, jako je například při použití databáze NoSQL, jako je Azure DocumentDB, je nutné implementovat další kroky k zajištění konzistence. To je další důvod, proč trvalost které není universal; To závisí na systému úložiště, které používáte.
+Mějte na paměti zde přehrát transakční začne významné hranice. Pokud jednotka práce a transakce může zahrnovat více než jeden agregace (stejně jako při použití EF Core a relační databáze), to dobře fungovat. Ale pokud transakce nemůžou zahrnovat agregace, jako je například při použití databáze NoSQL, jako je Azure DocumentDB, je nutné implementovat další kroky k zajištění konzistence. To je další důvod, proč není univerzální; neznalosti trvalosti To závisí na úložný systém, který používáte.
 
-### <a name="single-transaction-across-aggregates-versus-eventual-consistency-across-aggregates"></a>Jediné transakce napříč agregace versus konzistence typu případné napříč agregace
+### <a name="single-transaction-across-aggregates-versus-eventual-consistency-across-aggregates"></a>Jediné transakce napříč agregace oproti konečné konzistence napříč agregace
 
-Dotaz, zda provést jediné transakce napříč agregace versus spoléhat na konzistence typu případné mezi tyto agregace je sporná. Mnoho DDD autoři jako zařízení Evans Erica a Vaughn Vernon doporučují pravidlo této jednu transakci = jeden agregace a proto uvádějí pro konzistence typu případné napříč agregace. Například v jeho kniha *Domain-Driven návrhu*, zařízení Erica Evans uvádí toto:
+Na otázku, jestli se má provést jedné transakce napříč agregace oproti spoléhat na konečnou konzistenci napříč těmito agregace je kontroverzním. Mnoho DDD autoři jako Eric Evans a Vaughn Vernon pomocníků pro pravidlo jednu transakci = jedné agregace a proto tvrdí pro konečnou konzistenci napříč agregace. Například ve své knize *Domain-Driven Design*, Eric Evans uvádí, že toto:
 
-Jakékoli pravidlo, které zahrnuje agregace nebude možné očekává aktuální za všech okolností. Prostřednictvím zpracování událostí, dávkové zpracování nebo jiných mechanismů aktualizace může být další závislosti vyřešen v určité chvíli. (stránka 128)
+Jakékoli pravidlo, které zahrnuje agregace se očekává se aktuální za všech okolností. Zpracování událostí, dávkové zpracování nebo jiných mechanismů aktualizace může být další závislosti přeložit v určité chvíli. (stránka 128)
 
-Vaughn Vernon uvádí následující [efektivní návrh agregace. Část II: Provádění agreguje pracovní společně](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf):
+Vaughn Vernon říká takto [efektivní návrh agregace. Část II: Provádění agreguje pracovní společně](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf):
 
-Proto pokud spouštění příkazu na jednom agregační instance vyžaduje, že další obchodní pravidla spustit na jeden nebo více agregace, použijte konzistence typu případné \[...\] Je praktický způsob, jak podporovat konzistence typu případné ve DDD model. Agregační metoda publikuje domény událost, která je v čase se doručí na jeden nebo více asynchronní odběratele.
+Proto pokud spuštění příkazu v jednom agregace instance vyžaduje další obchodní pravidla můžete spustit na jeden nebo více agregace, použijte konečné konzistence \[...\] Existuje praktický způsob, jak v modelu DDD podporu konečné konzistence. Agregační metoda publikuje domény událost, která je v čase se doručí do jednoho nebo více asynchronních předplatitele.
 
-Tato odůvodnění je založena na přijetí podrobných transakce místo transakce mnoho agregace nebo entity. Cílem je, že v druhém případě počtu uzamčení databáze bude výrazně v aplikace ve velkém měřítku s vysokou škálovatelnost požadavky. Přijetí skutečnost, že vysoce škálovatelné aplikace potřebují nemá rychlých transakční konzistence mezi více agregace pomáhá s přijetím koncept konzistence typu případné. Atomic firmy často není potřebné změny, a je v žádném případě odpovědnost domény odborníků. Tím vyjádříte, jestli konkrétní operace musí jednotlivé transakce, nebo ne. Pokud operace vždy potřebuje transakcích mezi více agregace, může požádat, jestli vaše agregace musí být větší nebo nebyl navržen správně.
+Tato důvody vychází středu podrobných transakce místo transakce zahrnující mnoho agregace nebo entity. Cílem je, že v druhém případě počtu uzamčení databáze bude podstatný rozsáhlé aplikace s požadavky na vysokou škálovatelnost. Středu skutečnost, že vysoce škálovatelné aplikace nemusí mít okamžitý transakční konzistenci mezi více agregace pomáhá s přijetím koncept konečné konzistence. Atomic změny jsou často není potřeba podnikání a je v žádném případě odpovědnost odborníků domény říct, jestli konkrétní operace potřebovat atomické transakce, nebo ne. Pokud je operace vždy nutné jednu atomickou transakci mezi více agregace, můžete pokládat, jestli vaše agregace by měla být větší nebo nebyl správně určen.
 
-Ostatní vývojáři a architektům jako Jimmy Bogard jsou však nevadí pokrývání uzlů jediné transakce napříč několika agregace – ale jenom, když jsou tyto další agregace relaci k vedlejší účinky pro stejný původní příkaz. Například v [lepší vzor události domény](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/), Bogard uvádí toto:
+Další vývojářům a architektům jako Jimmy Bogard ale pořádku, pokud je pokrývání uzlů jedné transakce napříč několika agregace, ale pouze pokud tyto další agregace souvisejí s vedlejší účinky pro stejný příkaz původní. Například v [lepší vzor události domény](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/), Bogard uvádí, že toto:
 
-Obvykle chci vedlejší účinky domény události dochází v rámci stejné logické transakci, ale nemusí nutně jít ve stejném oboru z vyvolá událost domény \[...\] Těsně před jsme potvrzení naše transakce, jsme dispatch naše události na jejich odpovídající obslužné rutiny.
+Obvykle chci vedlejší účinky domény události dojde v rámci jedné logické transakce, ale nemusí nutně jít v rámci stejné vyvolání události domény k \[...\] Těsně před plánovaným začátkem potvrzení jsme naše transakce, jsme odeslání náš událostí do jejich odpovídajících obslužné rutiny.
 
-Pokud dispatch právo události domény *před* potvrzování původní transakce, je to proto, chcete-li vedlejší účinky těchto událostí, které mají být zahrnuty ve stejné transakci. Například pokud metoda EF DbContext SaveChanges selže, transakce se vrátit zpět všechny změny, včetně výsledek žádné vedlejším účinkem operace implementované obslužné rutiny událostí související domény. To je protože oboru životnosti DbContext je ve výchozím nastavení definovaný jako "vymezen." Proto je objekt DbContext sdílet mezi více objektů úložiště vytváření instancí v rámci stejného oboru nebo grafu objektu. To se shoduje s oboru požadavku HTTP při vývoji aplikace webového rozhraní API nebo MVC.
+Pokud odeslání události vpravo domény *před* potvrzování původní transakce, je proto vedlejším účinkům tyto události mají být zahrnuty v rámci jedné transakce. Například pokud metoda EF DbContext SaveChanges selže, transakce se vrátit zpět všechny změny, včetně výsledku žádné vedlejší účinek operace implementované obslužné rutiny událostí související domény. Toto je vzhledem k tomu, že obor života DbContext je ve výchozím nastavení definován jako "v oboru." Proto objekt DbContext je sdílen mezi více objektů úložiště instance v rámci stejného oboru nebo grafu objektů. To se shoduje s rozsahem HttpRequest při vývoji aplikace webového rozhraní API nebo MVC.
 
-Ve skutečnosti může být správné obou přístupů (jedné atomic transakce a konzistence typu případné). Ve skutečnosti závisí na vaší domény nebo organizační požadavky a co se odborníka domény zjistíte. Také závisí na tom, jak škálovatelné musí až bude služba (podrobnější transakce mají menší dopad s ohledem na uzamčení databáze). A závisí na tom, kolik investice jste ochotni proveďte v kódu, protože konzistence typu případné vyžaduje složitější kód zjistit možné nekonzistence mezi agregace a není nutné k implementaci vyrovnávací akce. Vezměte v úvahu, že pokud provedete změny původní agregace a později, když jsou události distribuovanou, nastane problém a obslužné rutiny událostí nelze potvrdit jejich vedlejší účinky, budete mít nekonzistence mezi agregace.
+Ve skutečnosti může být oba přístupy (jediné atomické transakce a konečné konzistence) vpravo. Tato skutečnost závisí na vaší domény nebo obchodní požadavky a co odborníky na domény zjistíte. Také závisí na způsobu škálovatelné, je třeba služba bude (podrobnější transakce mít menší dopad s ohledem na zámků databáze). A závisí na tom, kolik investice jste natolik, aby ve vašem kódu, protože konečné konzistence vyžaduje složitější kód k detekci případným nekonzistencím napříč agregace a není nutné implementovat vyrovnávací akce. Vezměte v úvahu, že pokud změny potvrdíte do původní agregaci a později, když jsou odeslána události, dochází k potížím a obslužné rutiny událostí nelze potvrdit jejich vedlejších účinků, budete mít nekonzistence mezi agregace.
 
-Způsob, jak povolit vyrovnávací akce by k uložení událostí domény v tabulkách další databáze, aby mohly být součástí původní transakce. Později může mít batch proces, který zjistí nekonzistence a spustí vyrovnávací akce tak, že porovnáte seznam událostí s aktuálním stavem agregací. Vyrovnávací akce, které jsou součástí komplexní téma, které bude vyžadovat hloubkovou analýzu z vaší strany, včetně diskuse s business uživatelů a domény odborníky.
+Způsob, jak povolit vyrovnávací akce by k uložení událostí domény v tabulkách další databáze, tak můžou být součástí původní transakce. Později může mít dávkové zpracování, která nekonzistence a spouští akce vyrovnávací porovnáním seznam událostí s aktuálním stavem agregací. Náhradní akce, které jsou součástí složité téma, které se vyžadují hlubší analýzy z vaší strany, která zahrnuje diskutovat s obchodnímu uživateli a odborníky na domény.
 
-V každém případě můžete přístupů, které potřebujete. Počáteční odložení přístup, ale – vyvolání události před potvrzením, takže můžete použít jen jednu transakci – je nejjednodušším přístupem při použití EF jádra a relační databáze. Je usnadnil a v mnoha případech firmy. Je také metoda používaná v řazení mikroslužbu v eShopOnContainers.
+V každém případě můžete zvolit přístup, které potřebujete. Počáteční odložené přístup, ale – vyvolání události před potvrzením, takže pomocí jedné transakce – je nejjednodušším přístupem při používání EF Core a relační databáze. Je snadněji implementovat a platný v mnoha obchodních případů. Je také použitý v pořadí mikroslužeb v aplikaci eShopOnContainers přístup.
 
-Ale jak je ve skutečnosti odeslání události, k jejich obslužné rutiny událostí odpovídajících? Co je \_zprostředkovatel objekt, který se zobrazí v předchozím příkladu? Který má dělat s technik a artefaktů, které můžete použít pro mapování mezi událostí a jejich obslužných rutin.
+Ale jak je ve skutečnosti odeslání těchto událostí na jejich obslužné rutiny událostí odpovídajících? Co je \_zprostředkovatel objekt, který se zobrazí v předchozím příkladu? Který má s techniky a artefakty, které lze použít k mapování mezi událostmi a jejich obslužné rutiny událostí.
 
-### <a name="the-domain-event-dispatcher-mapping-from-events-to-event-handlers"></a>Dispečer událostí domény: mapování z událostí na obslužné rutiny událostí
+### <a name="the-domain-event-dispatcher-mapping-from-events-to-event-handlers"></a>Dispečer události domény: mapování z událostí k obslužné rutiny událostí
 
-Jakmile budete moct odeslat nebo publikovat události, je nutné nějaký druh artefaktů, která bude publikovat události, tak, aby každý související rutiny můžete ho získat a zpracovat vedlejší účinky na základě této události.
+Když budete moct odesílat ani publikovat události, je potřeba nějaký druh artefaktu, která bude publikovat událost, tak, aby každý související obslužnou rutinu můžete získat a zpracovávat vedlejší účinky na základě této události.
 
-Jeden z přístupů je skutečně zasílání zpráv systému nebo i událostí sběrnici, případně založená na služby service bus a události v paměti. Pro první případ skutečných zasílání zpráv by však bylo přehnaně pro zpracování události domény, protože stačí ke zpracování těchto událostí v rámci stejného procesu (to znamená, v rámci stejné vrstvě domény a aplikace).
+Jedním z přístupů je systém reálné zasílání zpráv nebo dokonce sběrnice událostí, případně podle služby Service bus, na rozdíl od události v paměti. První případu skutečném zasílání zpráv by však bylo přehnaně pro zpracování události domény, protože potřebujete jenom pro zpracování těchto událostí v rámci stejného procesu (to znamená, že v rámci stejné vrstvy domény a aplikace).
 
-Dalším způsobem se mapují události do více obslužných rutin událostí je prostřednictvím registrace typy v kontejner IoC, takže můžete dynamicky odvození kde odeslání události. Jinými slovy budete muset vědět, jaké obslužné rutiny událostí je potřeba získat konkrétní události. Obrázek 9 až 16 ukazuje zjednodušený přístup k této.
+Dalším způsobem, jak namapovat více obslužných rutin událostí události je prostřednictvím registrace typů v kontejner IoC, takže můžete dynamicky odvodit where k odeslání události. Jinými slovy je potřeba vědět, co obslužné rutiny událostí musel určité události. Obrázek 9 až 16 ukazuje zjednodušený postup pro tento.
 
 ![](./media/image17.png)
 
-**Obrázek 9 až 16**. Dispečer událostí domény pomocí technologie IoC
+**Obrázek 9 až 16**. Dispečer události domény pomocí technologie IoC
 
-Můžete vytvořit všechny vložení a artefaktů k implementaci tohoto přístupu podle sami. Však můžete použít také k dispozici knihovny jako [MediatR](https://github.com/jbogard/MediatR), který pod pozadí používá vaše kontejner IoC. Proto přímo můžete vytvořit předdefinované rozhraní a metody publikování nebo odeslání objekt zprostředkovatel.
+Můžete vytvářet zajistí funkčnost systému a artefakty k implementaci tohoto přístupu sami. Však můžete také použít dostupných knihoven jako [MediatR](https://github.com/jbogard/MediatR), který na pozadí používá svůj kontejner IoC. Můžete proto přímo použít předdefinované rozhraní a metody publikování/odeslání zprostředkovatel objektu.
 
-V kódu, je nutné nejprve zaregistrovat typy obslužných rutin událostí v vaší kontejner IoC, jak je znázorněno v následujícím příkladu v [eShopOnContainers řazení mikroslužbu](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Infrastructure/AutofacModules/MediatorModule.cs):
+V kódu, musíte nejprve zaregistrovat typy obslužných rutin událostí ve vašem kontejneru IoC, jak je znázorněno v následujícím příkladu v [aplikaci eShopOnContainers řazení mikroslužeb](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Infrastructure/AutofacModules/MediatorModule.cs):
 
 ```csharp
 public class MediatorModule : Autofac.Module
@@ -255,22 +255,22 @@ public class MediatorModule : Autofac.Module
 }
 ```
 
-Kód nejprve identifikuje sestavení, které obsahuje obslužné rutiny událostí domény tím, že je sestavení, které obsahuje všechny obslužné rutiny (pomocí typeof(ValidateOrAddBuyerAggregateWhenXxxx), ale by vybrány žádné jiné obslužné rutiny události k nalezení sestavení). Vzhledem k tomu, že všechny obslužné rutiny událostí implementovat rozhraní IAsyncNotificationHandler, kód pak vyhledá jenom ty typy a zaregistruje všechny obslužné rutiny událostí.
+Kód nejprve identifikuje sestavení, které obsahuje obslužné rutiny událostí domény vyhledáním sestavení, které obsahuje některý z obslužné rutiny (pomocí typeof(ValidateOrAddBuyerAggregateWhenXxxx), ale může vybrali jakékoli jiné obslužné rutiny události pro nalezení sestavení). Protože všechny obslužné rutiny událostí implementovat rozhraní IAsyncNotificationHandler, kód a hledání jenom pro ty typy a zaregistruje všechny obslužné rutiny událostí.
 
-### <a name="how-to-subscribe-to-domain-events"></a>Tom, jak se přihlásit k odběru událostí domény
+### <a name="how-to-subscribe-to-domain-events"></a>Postup přihlášení k odběru událostí domény
 
-Při použití MediatR každý obslužné rutiny události musí používat typ události, který je k dispozici na obecný parametr INotificationHandler rozhraní, jak můžete vidět v následujícím kódu:
+Při použití MediatR Každá obslužná rutina události musí používat typ události, která je k dispozici pro obecný parametr INotificationHandler rozhraní, jak je vidět v následujícím kódu:
 
 ```csharp
 public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
   : IAsyncNotificationHandler<OrderStartedDomainEvent>
 ```
 
-Na základě vztahu mezi událostí a obslužná rutina události, která lze považovat za předplatné, artefaktů MediatR zjistit všechny obslužné rutiny události pro všechny události a aktivuje každý z těchto obslužných rutin událostí.
+Na základě vztahu mezi událostí a obslužnou rutinu události, která lze považovat za předplatné, artefaktů MediatR zjistit všechny obslužné rutiny události pro každou jednotlivou událost a aktivuje každá z těchto obslužných rutin událostí.
 
-### <a name="how-to-handle-domain-events"></a>Postupy: zpracování události domény
+### <a name="how-to-handle-domain-events"></a>Zpracování události domény
 
-Nakonec obslužné rutiny události obvykle implementuje aplikační vrstvy kód, který používá infrastrukturu úložiště získat požadovaná další agregace a provést logiku domény vedlejším účinkem. Následující [domény kód obslužné rutiny událostí v eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/DomainEventHandlers/OrderStartedEvent/ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler.cs), ukazuje příklad implementace.
+A konečně obslužná rutina události obvykle implementuje aplikace vrstvu kódu, který používá infrastrukturu úložiště získat požadované další agregace a spustit logiku domény vedlejší efekt. Následující [domény kód obslužné rutiny událostí v aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/DomainEventHandlers/OrderStartedEvent/ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler.cs), ukazuje příklad implementace.
 
 ```csharp
 public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
@@ -319,37 +319,37 @@ public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
 }
 ```
 
-Předchozí kód obslužné rutiny událostí domény považuje za vrstvy kódu aplikace protože ji používá infrastrukturu úložiště, jak je vysvětleno v další části na vrstvě infrastruktury trvalost. Obslužné rutiny událostí může také použít další součásti infrastruktury.
+Předchozí kód obslužné rutiny události domény se považuje za vrstvu kódu aplikace vzhledem k tomu používá infrastrukturu úložiště, jak je vysvětleno v další části vrstvy trvalosti infrastruktury. Obslužné rutiny události použít i další komponenty infrastruktury.
 
-#### <a name="domain-events-can-generate-integration-events-to-be-published-outside-of-the-microservice-boundaries"></a>Události domény může generovat události integrace publikována mimo hranice mikroslužbu
+#### <a name="domain-events-can-generate-integration-events-to-be-published-outside-of-the-microservice-boundaries"></a>Události domény může generovat události integrace zveřejnit mimo hranic mikroslužby
 
-Nakonec je důležité zmínili, může někdy chcete rozšíří události na více mikroslužeb. Který považuje za událost integrace a může být publikován přes sběrnici událostí z obslužné rutiny události žádné konkrétní doméně.
+Nakonec je důležité zmínit, že můžete někdy chtít rozšířit události napříč různými mikroslužbami. Bude se považovat za událost integrace a může být zveřejněna prostřednictvím sběrnice událostí z libovolné obslužné rutiny události konkrétní doménu.
 
-## <a name="conclusions-on-domain-events"></a>Závěrů na události domény
+## <a name="conclusions-on-domain-events"></a>Závěry domény událostí
 
-Jak jsme uvedli, pomocí události domény explicitní implementace vedlejší účinky změn ve vaší doméně. Terminologie DDD, použití události domény explicitně implementovat vedlejší účinky přes jeden nebo více agregace. Kromě toho a lepší škálovatelnost a menší dopad na uzamčení databáze použijte konzistence typu případné mezi agregace ve stejné doméně.
+Jak jsme uvedli, používejte události domény o explicitní implementaci vedlejší účinky změn v rámci vaší domény. Použití terminologie DDD, používejte události domény o explicitní implementaci vedlejší účinky přes jeden nebo více agregací. Kromě toho a pro lepší škálovatelnost a menší dopad na zámků databáze pomocí konečné konzistenci mezi agregací ve stejné doméně.
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Gregu Young. Co je událost domény?**
+-   **Grega Younga:. Co je událost domény?**
     [*http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/*](http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/)
 
--   **Jan Stenberg. Události domény a konzistence typu případné**
+-   **Jan Stenberg. Události domény a konečné konzistence**
     [*https://www.infoq.com/news/2015/09/domain-events-consistency*](https://www.infoq.com/news/2015/09/domain-events-consistency)
 
--   **Jimmy Bogard. Lepší vzor události domény**
+-   **Jimmy Bogard. Lepší události modelu domény**
     [*https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/*](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)
 
--   **Vaughn Vernon. Efektivní návrh agregace část II: Provádění agregací pracovní společně**
+-   **Vaughn Vernon. Efektivní návrh agregace část II: Provádění agregací spolupracují**
     [*http://dddcommunity.org/wp-content/uploads/files/pdf\_articles/Vernon\_2011\_2.pdf*](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
 
 -   **Jimmy Bogard. Posílení vaší domény: domény události**
     *<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/> *
 
--   **ADAM Truong. Příklad vzoru události domény**
+-   **ADAM Truong. Příklad události modelu domény**
     [*https://www.tonytruong.net/domain-events-pattern-example/*](https://www.tonytruong.net/domain-events-pattern-example/)
 
--   **Udi Dahan. Postup vytvoření plně zapouzdřené domény modely**
+-   **Udi Dahan. Vytvoření plně zapouzdřené doménových modelů**
     [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
 
 -   **Udi Dahan. Události domény – trvat 2**
@@ -358,10 +358,10 @@ Jak jsme uvedli, pomocí události domény explicitní implementace vedlejší �
 -   **Udi Dahan. Události domény – Salvation**
     [*http://udidahan.com/2009/06/14/domain-events-salvation/*](http://udidahan.com/2009/06/14/domain-events-salvation/)
 
--   **Jan Kronquist. Nemáte publikovat události domény, obnoví v nich!**
+-   **Jan Kronquist. Není publikovat události domény, vraťte je!**
     [*https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/*](https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/)
 
--   **Cesaru členka Torre. Domény události vs. Integrace události v případě architektur se DDD a mikroslužeb**
+-   **De la Torre Cesarovi. Domény události vs. Integrace událostí v architektur mikroslužeb a DDD**
     [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/)
 
 

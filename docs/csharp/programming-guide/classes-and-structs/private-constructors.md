@@ -6,27 +6,27 @@ helpviewer_keywords:
 - private constructors [C#]
 ms.assetid: 29eeaa7d-8d81-453c-94b9-0e2800172621
 ms.openlocfilehash: e8f1f097a62f022d305987800e89353b038f42ae
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33315786"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244462"
 ---
 # <a name="private-constructors-c-programming-guide"></a>Soukromé konstruktory (Průvodce programováním v C#)
-Soukromý konstruktor je konstruktor speciální instanci. Používá se obvykle v tříd, které obsahují pouze statické členy. Pokud třída má jeden nebo více soukromé konstruktory a žádné veřejné konstruktory, ostatní třídy (s výjimkou vnořené třídy) nelze vytvořit instance této třídy. Příklad:  
+Soukromý konstruktor je speciální instanci konstruktoru. Obecně se používá ve třídách, které obsahují pouze statické členy. Pokud třída obsahuje jeden nebo více privátních konstruktorů a žádné veřejné konstruktory, jiné třídy (s výjimkou vnořené třídy) nelze vytvořit instance této třídy. Příklad:  
   
  [!code-csharp[csProgGuideObjects#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_1.cs)]  
   
- Prohlášení o prázdný konstruktor brání automatické generování výchozí konstruktor. Všimněte si, že pokud nepoužijete – modifikátor přístupu s konstruktorem ho budete mít privátní ve výchozím nastavení. Ale [privátní](../../../csharp/language-reference/keywords/private.md) modifikátor se obvykle používá k zajištění ji explicitně vymazat, že nelze vytvořit instanci třídy.  
+ Deklaraci prázdného konstruktoru brání automatické generování výchozího konstruktoru. Všimněte si, že pokud použijete modifikátor přístupu pomocí konstruktoru dál ho budete mít ve výchozím nastavení privátní. Ale [privátní](../../../csharp/language-reference/keywords/private.md) modifikátor se obvykle používá k němu explicitně vymazat, že nelze vytvořit instanci třídy.  
   
- Soukromé konstruktory se používají k zabránění vytvoření instance třídy, pokud nejsou žádné pole instance nebo metody, jako například <xref:System.Math> třídy, nebo když je volána metoda získat instance třídy. Pokud všechny metody ve třídě, jsou statické, zvažte, že dokončení třídu statické. Další informace najdete v části [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
+ Soukromé konstruktory se používají k zabránění vytváření instancí třídy, pokud neexistují žádné pole instance nebo metod, jako <xref:System.Math> třídy, nebo když je metoda volána k získání instance třídy. Pokud jsou všechny metody ve třídě statické, zvažte úplnou třídu statické. Další informace najdete v části [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
 ## <a name="example"></a>Příklad  
- Následuje příklad třídy pomocí soukromý konstruktor.  
+ Následuje příklad používání soukromý konstruktor třídy.  
   
  [!code-csharp[csProgGuideObjects#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_2.cs)]  
   
- Všimněte si, že pokud zrušte komentář u následujícího příkazu z příkladu, vygeneruje chybu protože konstruktoru je nepřístupný z důvodu jeho úroveň ochrany:  
+ Všimněte si, že pokud zrušte komentář u následujícího příkazu z příkladu, vygeneruje chybu protože konstruktoru je nepřístupný z důvodu úrovně ochrany:  
   
  [!code-csharp[csProgGuideObjects#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_3.cs)]  
   

@@ -1,5 +1,5 @@
 ---
-title: . Operátor (referenční dokumentace jazyka C#)
+title: . – Operátor (referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 f1_keywords:
 - ._CSharpKeyword
@@ -9,36 +9,36 @@ helpviewer_keywords:
 - dot operator (.) [C#]
 ms.assetid: a1f54b52-b686-4ae5-a48e-a2a9ebd0eb7b
 ms.openlocfilehash: 088f1991cafa92a69e11ca14bd2d983b36c0e3ca
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33271026"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244696"
 ---
-# <a name="-operator-c-reference"></a>. Operátor (referenční dokumentace jazyka C#)
-Operátor tečky (`.`) se používá pro přístup ke členu. Operátor tečky určuje člena typu nebo oboru názvů. Například operátor tečky slouží k přístupu konkrétním metod v rámci knihovny tříd rozhraní .NET Framework:  
+# <a name="-operator-c-reference"></a>. – Operátor (referenční dokumentace jazyka C#)
+Tečka – operátor (`.`) se používá pro přístup ke členu. Operátor tečky Určuje typ nebo obor názvů. Například operátor tečky slouží k přístupu k určité metody v rámci knihovny tříd rozhraní .NET Framework:  
   
  [!code-csharp[csRefOperators#16](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_1.cs)]  
   
- Zvažte například následující třídy:  
+ Představte si třeba následující třídy:  
   
  [!code-csharp[csRefOperators#17](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_2.cs)]  
   
  [!code-csharp[csRefOperators#18](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_3.cs)]  
   
- Proměnná `s` má dva členy `a` a `b`; chcete přistupovat k nim, použijte operátor tečky:  
+ Proměnná `s` se dvěma členy `a` a `b`; pokud ho chcete přistupovat k nim, použijte operátor tečky:  
   
  [!code-csharp[csRefOperators#19](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_4.cs)]  
   
- Tečky slouží také k formuláři kvalifikované názvy, které jsou názvy, které určují obor názvů nebo rozhraní, například, do které patří.  
+ Tečka slouží také k vytvoření kvalifikované názvy, které jsou názvy, které určují obor názvů nebo rozhraní, například, ke kterému patří.  
   
  [!code-csharp[csRefOperators#20](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_5.cs)]  
   
- Using – direktiva umožňuje některé kvalifikace názvu volitelné:  
+ Using – direktiva provádí některé kvalifikace názvu volitelné:  
   
  [!code-csharp[csRefOperators#21](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_6.cs)]  
   
- Ale když identifikátor je nejednoznačné, musí být kvalifikovaný:  
+ Ale pokud identifikátor je dvojznačný, musí být kvalifikován:  
   
  [!code-csharp[csRefOperators#22](../../../csharp/language-reference/operators/codesnippet/CSharp/member-access-operator_7.cs)]  
   

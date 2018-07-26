@@ -1,25 +1,25 @@
 ---
-title: příkaz serveru sestavení DotNet - .NET Core rozhraní příkazového řádku
-description: Serveru sestavení dotnet komunikuje se servery, které jsou spouštěné sestavení.
+title: příkaz DotNet server sestavení – rozhraní příkazového řádku .NET Core
+description: Příkaz dotnet sestavení serveru komunikuje se servery tím, že sestavení.
 author: mairaw
 ms.author: mairaw
-ms.date: 05/29/2018
-ms.openlocfilehash: 929b8d74aa5f3f0ad73b108be8a5bf22f86e30d6
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.date: 07/02/2018
+ms.openlocfilehash: 1c59c85f246b79c7e2552f704db5b4f076f9b502
+ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696251"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37404330"
 ---
-# <a name="dotnet-build"></a>sestavení pro DotNet.
+# <a name="dotnet-build-server"></a>DotNet – server sestavení
 
 [!INCLUDE [topic-appliesto-net-core-21plus](../../../includes/topic-appliesto-net-core-21plus.md)]
 
 ## <a name="name"></a>Název
 
-`dotnet build-server` -Komunikuje se servery, které jsou spouštěné sestavení.
+`dotnet build-server` -Komunikuje se servery pro spuštění sestavení.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Souhrn
 
 ```
 dotnet build-server shutdown [--msbuild] [--razor] [--vbcscompiler]
@@ -31,22 +31,22 @@ dotnet build-server [-h|--help]
 
 `shutdown`
 
-Vypne servery sestavení, které jsou spuštěné z dotnet. Ve výchozím nastavení jsou všechny servery vypnout.
+Vypne sestavovací servery, které jsou spuštěny z dotnet. Ve výchozím nastavení jsou všechny servery vypnout.
 
 ## <a name="options"></a>Možnosti
 
 `-h|--help`
 
-Vytiskne krátké nápovědy pro příkaz.
+Vytiskne krátký nápovědy pro příkaz.
 
 `--msbuild`
 
-Jejím ukončení MSBuild sestavení serveru.
+Ukončí MSBuild serveru sestavení.
 
 `--razor`
 
-Jejím ukončení syntaxi Razor sestavení serveru.
+Server sestavení vypne syntaxi Razor.
 
 `--vbcscompiler`
 
-Ukončí jazyce Visual Basic / kompilátor jazyka C# sestavení serveru.
+Vypne jazyce Visual Basic / server sestavení kompilátor jazyka C#.

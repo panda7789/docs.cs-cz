@@ -11,19 +11,19 @@ helpviewer_keywords:
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
 ms.openlocfilehash: d6dfdf14b518582388e655ec5616904928dfd8b5
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696436"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37961428"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (Referenční dokumentace jazyka C#)
-Try-catch – příkaz se skládá z `try` bloku, za nímž následuje jeden nebo více `catch` klauzule, které určují obslužné rutiny pro různé výjimky.  
+Příkaz try-catch se skládá z `try` bloku, za nímž následuje jedna nebo více `catch` klauzule, které určují obslužné rutiny pro různé výjimky.  
   
 ## <a name="remarks"></a>Poznámky  
- Když je vyvolána výjimka, modul CLR (CLR) hledá `catch` příkaz, který zpracovává výjimku. Pokud například neobsahuje metodu aktuálně prováděné `catch` blok CLR vypadá na metodu, která volá metodu aktuální, a tak dále zásobníkem volání. Pokud žádné `catch` blok a pak modulu CLR, zobrazí se zpráva neošetřené výjimky pro uživatele a zastaví provádění tohoto programu.  
+ Když je vyvolána výjimka, modul CLR (CLR) hledá `catch` příkaz, který zpracovává tuto výjimku. Pokud aktuálně prováděné metody neobsahuje, `catch` blokovat, vyhledá CLR na metodu, která volá metodu aktuální výše v zásobníku volání a tak dále. Pokud ne `catch` nalezen blok a pak zobrazí uživateli zprávu neošetřené výjimky CLR a zastaví provádění programu.  
   
- `try` Blok obsahuje chráněného kód, který může způsobit výjimku. Blok je provést, dokud je vyvolána výjimka, nebo je byla úspěšně dokončena. Například následující pokus přetypovat `null` objektu vyvolá <xref:System.NullReferenceException> výjimka:  
+ `try` Blok obsahuje chráněné kód, který může způsobit výjimku. Blok je udělat, dokud je vyvolána výjimka nebo je byla úspěšně dokončena. Například následující pokusili přetypovat `null` objektu vyvolá <xref:System.NullReferenceException> výjimka:  
   
 ```csharp  
 object o2 = null;  
@@ -33,7 +33,7 @@ try
 }  
 ```  
   
- I když `catch` klauzuli lze použít bez argumentů k zachycení jakýkoli typ výjimky, toto využití se nedoporučuje. Obecně platí by měla pouze zachytit tyto výjimky, kterých víte, jak jej obnovit. Proto musíte vždycky zadat argument objekt odvozené z <xref:System.Exception?displayProperty=nameWithType> například:  
+ I když `catch` klauzuli lze použít bez argumentů pro zachycení jakéhokoli typu výjimky, toto využití se nedoporučuje. Obecně platí měli byste zachytit pouze takové výjimky, které víte, jak provést obnovení. Proto musíte vždycky zadat argument objekt odvozený od <xref:System.Exception?displayProperty=nameWithType> například:  
   
 ```csharp  
 catch (InvalidCastException e)   
@@ -41,9 +41,9 @@ catch (InvalidCastException e)
 }  
 ```  
   
- Je možné použít více než jeden konkrétní `catch` klauzule v jednom příkazu try-catch. V tomto případě pořadí `catch` klauzule je důležité, protože `catch` klauzule se zkontrolují v pořadí. Před méně konkrétní ty catch konkrétnější výjimky. Kompilátor vyvolá chybu, je-li pořadí, že vaše catch blokuje tak, aby nikdy dostupný novější blok.  
+ Je možné použít více než jeden konkrétní `catch` klauzule ve stejném příkazu try-catch. V takovém případě pořadí `catch` klauzulí je důležité, protože `catch` klauzule jsou zkoumány podle pořadí. Zachycení více specifické výjimky než těch, které jsou specifické pro less. Kompilátor vytvoří chybu, pokud řazení, že vaše catch blokuje tak, aby novější bloku můžou být nikdy dosažen.  
   
- Pomocí `catch` argumentů je jeden způsob, jak filtrovat výjimky, které chcete zpracovávat.  Můžete také použít filtr výjimek, která prověřuje další výjimka můžete rozhodnout, jestli se nezdařilo.  Filtr výjimek vrací hodnotu false, potom pokračuje hledání pro obslužnou rutinu.  
+ Pomocí `catch` argumentů je jedním ze způsobů filtrování pro výjimky, kterou chcete zpracovat.  Můžete také pomocí filtru výjimek, který prověří další výjimky můžete rozhodnout, jestli ji zpracovat.  Pokud filtr výjimek vrací hodnotu false, pak hledání pro obslužnou rutinu, bude pokračovat.  
   
 ```csharp  
 catch (ArgumentException e) when (e.ParamName == "…")  
@@ -51,9 +51,9 @@ catch (ArgumentException e) when (e.ParamName == "…")
 }  
 ```  
   
- Filtry výjimek, je vhodnější zachytávání a opětné vyvolání (vysvětleno níže), protože zásobník nepoškozená nechte filtry.  Pokud obslužnou rutinu novější výpisy zásobníku, uvidíte, kde výjimka původně pochází, nikoli pouze poslední, který byl znovu vyvolány místo.  Běžně se používají výrazy filtru výjimek je protokolování.  Můžete vytvořit filtr, který vždy vrátí hodnotu false, který také výstupy do protokolů, jako přejde bez nutnosti mohli je zpracovat a opětovné můžete protokolovat výjimky.  
+ Filtry výjimek jsou upřednostňovány vůči zachytávání a opětné vyvolání (vysvětleno níže), protože filtry ponechte nepoškozená zásobníku.  Pokud je novější rutinu výpisy zásobníku, naleznete v tématu výjimka původně, odkud, ne jenom poslední místo, které byla vyvolána.  Běžné použití výrazu filtru výjimky je protokolování.  Můžete vytvořit filtr, která vždy vrátí hodnotu false, která také výstup protokolu, může protokolování výjimek, jako jsou přejít bez nutnosti jejich zpracování a znovu vyvolat.  
   
- A [throw](../../../csharp/language-reference/keywords/throw.md) příkaz lze použít v `catch` blok k znovu vyvolání výjimky, která bude zachycena `catch` příkaz. Následující příklad extrahuje informace o zdroji ze <xref:System.IO.IOException> výjimka a potom vyvolá výjimku pro nadřazenou metodu.  
+ A [throw](../../../csharp/language-reference/keywords/throw.md) příkaz lze použít v `catch` pro opětovné vyvolání výjimky, která je zachycena `catch` příkazu. Následující příklad extrahuje informace o zdroji ze <xref:System.IO.IOException> výjimky a potom vyvolá výjimku pro nadřazenou metodu.  
   
 ```csharp  
 catch (FileNotFoundException e)  
@@ -70,7 +70,7 @@ catch (IOException e)
 }  
 ```  
   
- Můžete zachytit jednu výjimku a vyvolat různé výjimky. Když to uděláte, zadejte výjimku, která zachycena jako v popisu vnitřní výjimky, jak je znázorněno v následujícím příkladu.  
+ Můžete zachytit jednu výjimku a jinou výjimku. Když toto provedete, zadejte výjimku, která je zachycena jako vnitřní výjimku, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  
 catch (InvalidCastException e)   
@@ -80,7 +80,7 @@ catch (InvalidCastException e)
 }  
 ```  
   
- Můžete také znovu vyvolat výjimku, pokud je zadaná podmínka hodnotu true, jak je znázorněno v následujícím příkladu.  
+ Můžete také znovu vyvolat výjimku při je zadaná podmínka pravdivá, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  
 catch (InvalidCastException e)  
@@ -97,7 +97,7 @@ catch (InvalidCastException e)
 ```  
 
 > [!NOTE]
-> Je také možné používat k získání výsledku podobně jako v často čisticí způsobem (stejně jako není úprava zásobníku, jak je popsáno výše v tomto dokumentu) filtru výjimek. Následující příklad obsahuje podobné chování pro volající jako předchozí příklad. Funkce vyvolá `InvalidCastException` zpět do volající při `e.Data` je `null`.
+> Je také možné použít k získání výsledku podobně jako v často přehlednější způsobem (stejně jako místo abyste upravili zásobníku, jak je popsáno dříve v tomto dokumentu) filtr výjimek. Následující příklad je podobné chování pro volající jako předchozí příklad. Funkce vyvolá `InvalidCastException` zpět do volajícího při `e.Data` je `null`.
 > 
 > ```csharp
 > catch (InvalidCastException e) when (e.Data != null)   
@@ -106,7 +106,7 @@ catch (InvalidCastException e)
 > }
 > ```   
 
- Z uvnitř `try` blokovat, inicializovat pouze proměnné, které jsou deklarované v něm. Výjimku, jinak může dojít, než bude dokončeno spuštění bloku. Například v následujícím příkladu kódu proměnnou `n` je inicializován uvnitř `try` bloku. Pokus o použití této proměnné mimo `try` blokovat `Write(n)` příkaz vygeneruje se chybová zpráva kompilátoru.  
+ Z uvnitř `try` blokovat, inicializovat pouze proměnné, které jsou deklarovány v něm. V opačném případě výjimce může dojít předtím, než se dokončí provádění bloku. Například v následujícím příkladu kódu proměnné `n` je inicializován uvnitř `try` bloku. Pokus o použití této proměnné mimo `try` blokovat `Write(n)` příkaz vygeneruje chybu kompilátoru.  
   
 ```csharp  
 static void Main()   
@@ -125,46 +125,46 @@ static void Main()
 }  
 ```  
   
- Další informace o catch najdete v tématu [try-catch-finally –](../../../csharp/language-reference/keywords/try-catch-finally.md).  
+ Další informace o catch, naleznete v tématu [konstrukce try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md).  
   
-## <a name="exceptions-in-async-methods"></a>Výjimky v asynchronní metody  
- Asynchronní metody je označena kvalifikátorem [asynchronní](../../../csharp/language-reference/keywords/async.md) modifikátor a obvykle obsahuje jeden nebo více await výrazy nebo příkazy. Await výraz se vztahuje [await](../../../csharp/language-reference/keywords/await.md) operátorovi <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>.  
+## <a name="exceptions-in-async-methods"></a>Výjimky v asynchronních metodách  
+ Asynchronní metoda je označena [asynchronní](../../../csharp/language-reference/keywords/async.md) modifikátor a obvykle obsahuje jeden nebo více await výrazy nebo příkazy. Výraz await se vztahuje [await](../../../csharp/language-reference/keywords/await.md) operátor <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>.  
   
- Při řízení dosáhnou `await` v asynchronní metody, je průběh v metodě pozastaveno, dokud dokončení awaited úlohy. Po dokončení úlohy provádění může pokračovat v metodě. Další informace najdete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md) a [řízení toku v asynchronních programech](../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md).  
+ Když ovládací prvek dosáhne `await` v asynchronní metodě, je pozastavený průběh v metodě, až do dokončení očekávané úlohy. Po dokončení úlohy se provádění může pokračovat v metodě. Další informace najdete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md) a [tok řízení v asynchronních programech](../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md).  
   
- Dokončené úlohy, ke kterému `await` platí může být v chybovém stavu z důvodu neošetřené výjimce v metodě, který vrátí úlohu. Systém čeká na úlohu vyvolá výjimku. Úlohu můžete také skončit ve zrušené stavu, pokud se zruší asynchronní proces, který vrátí ji. Systém čeká na zrušené úlohy vyvolá `OperationCanceledException`. Další informace o tom, jak zrušit asynchronní proces najdete v tématu [Fine-Tuning vaše asynchronní aplikace](../../programming-guide/concepts/async/fine-tuning-your-async-application.md).  
+ Dokončené úlohy, ke kterému `await` platí může být v chybovém stavu kvůli neošetřené výjimce v metodě, která vrátí úkol. Čekání na výjimku. Úkol může také skončit ve zrušeném stavu Pokud se zruší asynchronní proces, který vrátí jej. Čeká na zrušenou úlohu vyvolá `OperationCanceledException`. Další informace o tom, jak zrušit asynchronní proces najdete v tématu [asynchronní aplikace Fine-Tuning](../../programming-guide/concepts/async/fine-tuning-your-async-application.md).  
   
- K zachycení výjimky, kde čekají na úlohu v `try` blokovat a zachycení výjimky v přidruženém `catch` bloku. Příklad najdete v části "Příklad".  
+ K zachycení výjimky, await úkol v `try` blokovat a zachytit výjimku v přidruženém `catch` bloku. Příklad najdete v části "Vzorový".  
   
- Úloha může být v chybovém stavu, protože několik výjimek došlo k chybě v očekávané asynchronní metody. Úloha může být například výsledek volání <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Když jste await takových úloh, pouze jeden z výjimky je zachycena a nemůžete předpovědět, které k výjimce. Příklad najdete v části "Příklad".  
+ Úloha může být v chybovém stavu, protože došlo k více výjimek v očekávaná asynchronní metody. Úloha může být například výsledek volání <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Když budete očekávat takový úkol, je zachycena pouze jednu z výjimek a nelze předpovědět, které k výjimce. Příklad najdete v části "Vzorový".  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `try` blok obsahuje volání `ProcessString` metoda, která může způsobit výjimku. `catch` Klauzule WHERE obsahuje jenom na obrazovce se objeví zpráva obslužná rutina výjimky. Když `throw` příkaz je volána z uvnitř `MyMethod`, hledá v systému `catch` příkaz a zobrazí zprávu `Exception caught`.  
+ V následujícím příkladu `try` blok obsahuje volání `ProcessString` metodu, která může způsobit výjimku. `catch` Klauzule obsahujícím obslužnou rutinu výjimky, která zobrazuje pouze zprávu na obrazovce. Při `throw` příkazu je volána z uvnitř `MyMethod`, hledá systému `catch` příkaz a zobrazí se zpráva `Exception caught`.  
   
  [!code-csharp[csrefKeywordsExceptions#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch_1.cs)]  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu se používají dva bloky catch a nejvíce výjimka, která dodává první, je zachycena.  
+ V následujícím příkladu se používají dva bloky catch a nejspecifičtější výjimku, která nastane dřív, je zachycena.  
   
- K zachycení výjimky nejméně specifická, můžete nahradit v příkazu throw `ProcessString` s následující příkaz: `throw new Exception()`.  
+ K zachycení nejméně konkrétní výjimky, můžete nahradit příkaz throw v `ProcessString` pomocí následujícího příkazu: `throw new Exception()`.  
   
- Pokud nejprve umístit blok catch nejmenší konkrétní v příkladu se zobrazí následující chybová zpráva: `A previous catch clause already catches all exceptions of this or a super type ('System.Exception')`.  
+ Pokud v příkladu nejdřív umístíte blok catch nejméně specifická, zobrazí se následující chybová zpráva: `A previous catch clause already catches all exceptions of this or a super type ('System.Exception')`.  
   
  [!code-csharp[csrefKeywordsExceptions#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch_2.cs)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ilustruje zpracování výjimek pro asynchronní metody. Zachytit výjimku, která vyvolá asynchronní úlohy, umístit `await` výrazu v `try` blokovat a zachycení výjimky v `catch` bloku.  
+ Následující příklad ukazuje zpracování výjimek pro asynchronní metody. Pokud chcete zachytit výjimku, která vyvolá asynchronní úlohy, umístěte `await` výrazu v `try` blokovat a zachytit výjimku v `catch` bloku.  
   
- Zrušením komentáře u `throw new Exception` řádku v příkladu za účelem ukázky zpracování výjimek. Úkolu `IsFaulted` je nastavena na `True`, úkolu `Exception.InnerException` je nastavena na výjimku a je výjimka zachycena v `catch` bloku.  
+ Zrušením komentáře u `throw new Exception` řádek v příkladu předvést zpracování výjimek. Úkolu `IsFaulted` je nastavena na `True`, úkolu `Exception.InnerException` je nastavena na výjimky a výjimky je zachycena v `catch` bloku.  
   
- Zrušením komentáře u `throw new OperationCancelledException` řádku k předvedení toho, co se stane, když zrušíte asynchronní proces. Úkolu `IsCanceled` je nastavena na `true`, a je výjimka zachycena v `catch` bloku. Za určitých podmínek, které se nevztahují na tomto příkladu úlohu na `IsFaulted` je nastavena na `true` a `IsCanceled` je nastaven na `false`.  
+ Zrušením komentáře u `throw new OperationCancelledException` řádku předvést, co se stane, když zrušíte asynchronní proces. Úkolu `IsCanceled` je nastavena na `true`, která je zachycena výjimka v `catch` bloku. Za určitých podmínek, které se nevztahují na tohoto příkladu, úloha `IsFaulted` je nastavena na `true` a `IsCanceled` je nastavena na `false`.  
   
  [!code-csharp[csAsyncExceptions#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch_3.cs)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje zpracování výjimek, kde více úloh může mít za následek více výjimek. `try` Bloku čeká úloha, která se vrátí po volání <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Po dokončení tři úloh, pro které je použito WhenAll dokončení úkolu.  
+ Následující příklad ukazuje zpracování výjimek, kde více úkolů může vést k více výjimek. `try` Bloku očekává úkol, který je vrácen voláním <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Po dokončení tři úkolů, u kterých je použitá WhenAll je úloha dokončena.  
   
- Jednotlivé tři úlohy dojde k výjimce. `catch` Bloku iteruje výjimky, které jsou součástí `Exception.InnerExceptions` vlastnost úloha, která vrátila <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>.  
+ Všechny tři úkoly dojde k výjimce. `catch` Bloku prochází výjimky, které jsou součástí `Exception.InnerExceptions` vlastnosti úkolu, který byl vrácen <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>.  
   
  [!code-csharp[csAsyncExceptions#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch_4.cs)]  
   

@@ -1,183 +1,113 @@
 ---
-title: Implementace vzoru jistič
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace vzoru jistič
+title: Implementace vzoru Circuit Breaker
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Implementace vzoru Circuit Breaker jako doplňkové systém k opakování Http
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 11/12/2017
-ms.openlocfilehash: 2c89992c4c60ca7f1085050e6fed4922ecd4d8cc
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 07/03/2018
+ms.openlocfilehash: d5902c5a0744d74ae5086a4df3aee606b24b6030
+ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106123"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37875164"
 ---
-# <a name="implementing-the-circuit-breaker-pattern"></a>Implementace vzoru jistič
+# <a name="implement-the-circuit-breaker-pattern"></a>Implementace vzoru Circuit Breaker
 
-Jak jsme uvedli výše, by měla řídit chyb, které může trvat proměnné množství času dostat z, může dojít při pokusu o připojení k vzdálené služby nebo prostředku. Tento typ chyby zpracování může zvýšit stabilitu a odolnost aplikace.
+Jak bylo uvedeno dříve, by měl zpracovává chyby, které může trvat různě dlouho obnovit, protože k tomu může dojít při pokusu o připojení ke vzdálené službě nebo prostředku. Zpracování tohoto typu chyby může zlepšit stabilitu a odolnost aplikace.
 
-V distribuovaném prostředí volání vzdálené prostředky a služby může selhat z důvodu přechodných chyb, jako je pomalé síťové připojení a vypršení časových limitů, nebo pokud jsou prostředky zpomalit nebo jsou dočasně nedostupné. Tyto chyby obvykle opravte po krátkou dobu sami a je třeba připravit robustní cloudových aplikací k jejich zpracování pomocí strategie jako vzor opakování.
+V distribuovaném prostředí můžou volání vzdálených prostředků a služeb můžete selhat z důvodu přechodných chyb, jako jsou pomalé síťové připojení a časové limity, nebo pokud prostředky se pomalé nebo jsou dočasně nedostupné. Tyto chyby obvykle opraví po krátkou dobu samy a robustní Cloudová aplikace by měla být připravena je zvládnout pomocí strategie, jako je model"opakování". 
 
-Však může také nastat situace, kde jsou chyb z důvodu neočekávané události, které může trvat déle, chcete-li odstranit. Tyto chyby může být v rozsahu v závažnosti od částečné ztrátě připojení k úplnému selhání služby. V těchto situacích může být zbytečný pro aplikaci neustále opakujte operaci, která je pravděpodobně úspěšné. Místo toho by měly být napsané aplikace potvrďte, že operace se nezdařila a zpracování selhání odpovídajícím způsobem.
+Však mohou také existovat situace, kdy jsou chyby způsobeny nepředvídatelnými událostmi, které může trvat déle, chcete-li vyřešit. Tyto chyby můžou být různě od částečného výpadku připojení až po úplné selhání služby. V těchto situacích může být bezúčelné pro aplikaci neustále opakovat operaci, která pravděpodobně nebude úspěšná. 
 
-Vzor jistič má jiný účel než vzor opakování. Vzor opakování povolí aplikaci opakovat operace v očekávání, který nakonec operace proběhne úspěšně. Vzor jistič brání aplikaci v provádění operace, která je pravděpodobně selžou. Aplikace můžete kombinovat tyto dvě vzory pomocí vzoru opakování k vyvolání operace prostřednictvím jistič. Ale logika opakovaných pokusů by měla být citlivé na jakékoli výjimky vrácený vypínač a pokud vypínač signalizuje, že chybu není přechodný ho měli abandon počet pokusů o opakování.
+Místo toho aplikace by měly být kódovány potvrďte, že operace se nezdařila a odpovídajícím způsobem chybu zpracovat.
 
-## <a name="implementing-a-circuit-breaker-pattern-with-polly"></a>Implementace vzoru jistič s Polly
+Použití opakování Http neuváženě může vést k vytváření cílem odepření služeb ([DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack)) útoku v rámci vlastního softwaru. Mikroslužby selže nebo pomalu, více klientů může opakovaně opakování neúspěšných žádostí. Který vytváří nebezpečné riziko exponenciálně prodlužuje provozu zaměřený na selhávající službu.
 
-Jako při implementaci opakování, umožní využít Principy knihovny .NET, jako je Polly je doporučený postup pro moduly okruh dělení.
+Proto je nutné nějaký druh defense barrier, aby opakované pokusy zastavit požadavky, když není za to pořád snažit. Této bariéry defense je přesně jističe.
 
-Při implementaci HTTP opakování, používá aplikace eShopOnContainers Polly jistič zásad. Ve skutečnosti aplikace platí obě zásady pro třídu ResilientHttpClient nástroj. Vždy, když použijete objekt typu ResilientHttpClient požadavků HTTP (od eShopOnContainers), budou uplatňovat obě tyto zásady, ale můžete přidat další zásady, příliš.
+Model jistič má jiný účel než "model opakování". Model opakování"" umožňuje aplikaci opakovat operaci s předpokladem, že operace bude nakonec úspěšná. Model jistič zabraňuje aplikaci provést operaci, která pravděpodobně selže. Aplikace může tyto dva modely zkombinovat. Ale logika opakovaných pokusů by měl být citlivé na jakoukoliv výjimku, vrácené jističem a by provádět opakované pokusy, pokud jistič signalizuje, že chyba není přechodná.
 
-Pouze přidání sem do kód použitý pro opakování volání HTTP je kód, kdy přidáte jistič zásad do seznamu zásad použití, jak je znázorněno na konci následující kód:
+## <a name="implement-circuit-breaker-pattern-with-httpclientfactory-and-polly"></a>Implementace vzoru Circuit Breaker HttpClientFactory a Polly
+
+Při implementaci opakovaných pokusů, využívat osvědčené knihovny .NET, jako jsou knihovny Polly a jeho nativní integraci se sadou HttpClientFactory je doporučený postup pro jističe.
+
+Přidání zásady jistič do vaší HttpClientFactory odchozí kanál middlewaru je stejně jednoduché jako přidání přírůstkové jednoduchým kódu, které už jste při použití HttpClientFactory.
+
+Jenom přidávat tady na kód použitý pro opakování volání HTTP je kód, kde přidáte zásady jistič do seznamu zásad k použití, jak je znázorněno v následujícím kódu přírůstkové, součást ConfigureServices() metody.
 
 ```csharp
-public ResilientHttpClient CreateResilientHttpClient()
-    => new ResilientHttpClient(CreatePolicies(), _logger);
-
-private Policy[] CreatePolicies()
-    => new Policy[]
-    {
-        Policy.Handle<HttpRequestException>()
-            .WaitAndRetryAsync(
-            // number of retries
-            6,
-            // exponential backofff
-            retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
-            // on retry
-            (exception, timeSpan, retryCount, context) =>
-            {
-                var msg = $"Retry {retryCount} implemented with Polly RetryPolicy " +
-                    $"of {context.PolicyKey} " +
-                    $"at {context.ExecutionKey}, " +
-                    $"due to: {exception}.";
-                _logger.LogWarning(msg);
-                _logger.LogDebug(msg);
-            }),
-            Policy.Handle<HttpRequestException>()
-                .CircuitBreakerAsync(
-                    // number of exceptions before breaking circuit
-                    5,
-                    // time circuit opened before retry
-                    TimeSpan.FromMinutes(1),
-                    (exception, duration) =>
-                    {
-                        // on circuit opened
-                        _logger.LogTrace("Circuit breaker opened");
-                    },
-                    () =>
-                    {
-                        // on circuit closed
-                        _logger.LogTrace("Circuit breaker reset");
-                    })
-    };
-}
+//ConfigureServices()  - Startup.cs
+services.AddHttpClient<IBasketService, BasketService>()
+        .SetHandlerLifetime(TimeSpan.FromMinutes(5))  //Set lifetime to 5 minutes
+        .AddPolicyHandler(GetRetryPolicy())
+        .AddPolicyHandler(GetCircuitBreakerPolicy());
 ```
 
-Kód přidá zásadu pro obálku protokolu HTTP. Aby zásad definuje jistič, které se otevře při kód zjistí zadaný počet po sobě jdoucích výjimek (výjimky v řádku), jako předán v parametru exceptionsAllowedBeforeBreaking (v tomto případě 5). Když okruh je otevřená, nefungují požadavků HTTP, ale je vyvolána výjimka.
+`AddPolicyHandler()`Metoda je co přidá do HttpClient objekty, kterou použijete zásady. V takovém případě ji je přidání zásad Polly pro jističe.
 
-Moduly dělení okruh by měla být používána pro přesměrování požadavků na infrastrukturu záložní, pokud může mít problémy v konkrétní prostředek, který je nasazen v jiném prostředí než klientská aplikace nebo služba, která provádí volání protokolu HTTP. Tímto způsobem, pokud dojde k výpadku v datovém centru, které ovlivňuje pouze vaše mikroslužeb back-end, ale ne klienta aplikace, můžete klientské aplikace přesměrovat do záložního služeb. Polly je plánování nové zásady k automatizaci to [zásad převzetí služeb při selhání](https://github.com/App-vNext/Polly/wiki/Polly-Roadmap#failover-policy) scénář.
-
-Samozřejmě všechny tyto funkce jsou pro případy, kdy spravujete převzetí služeb při selhání v rámci kód rozhraní .NET a nutnosti ho automaticky pro vás spravuje služba Azure, s průhlednost umístění.
-
-## <a name="using-the-resilienthttpclient-utility-class-from-eshoponcontainers"></a>Používání třídy nástroj ResilientHttpClient z eShopOnContainers
-
-Můžete použít třídu nástroj ResilientHttpClient způsob použití třídy rozhraní .NET HttpClient podobným způsobem. V následujícím příkladu z webové aplikace MVC eShopOnContainers (OrderingService agenta třídu používá OrderController) je objekt ResilientHttpClient vložit prostřednictvím parametru httpClient konstruktoru. Objekt se pak používá k provedení požadavky HTTP.
+Pokud chcete mít modulárnější přístup, je definován jistič zásad v samostatné metodě s názvem GetCircuitBreakerPolicy() jako následující kód.
 
 ```csharp
-public class OrderingService : IOrderingService
+static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy()
 {
-    private IHttpClient _apiClient;
-    private readonly string _remoteServiceBaseUrl;
-    private readonly IOptionsSnapshot<AppSettings> _settings;
-    private readonly IHttpContextAccessor _httpContextAccesor;
-
-    public OrderingService(IOptionsSnapshot<AppSettings> settings,
-        IHttpContextAccessor httpContextAccesor,
-        IHttpClient httpClient)
-    {
-        _remoteServiceBaseUrl = $"{settings.Value.OrderingUrl}/api/v1/orders";
-        _settings = settings;
-        _httpContextAccesor = httpContextAccesor;
-        _apiClient = httpClient;
-    }
-
-    async public Task<List<Order>> GetMyOrders(ApplicationUser user)
-    {
-        var context = _httpContextAccesor.HttpContext;
-        var token = await context.Authentication.GetTokenAsync("access_token");
-        _apiClient.Inst.DefaultRequestHeaders.Authorization = new
-            System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-        var ordersUrl = _remoteServiceBaseUrl;
-        var dataString = await _apiClient.GetStringAsync(ordersUrl);
-        var response = JsonConvert.DeserializeObject<List<Order>>(dataString);
-        return response;
-    }
-
-    // Other methods ...
-    async public Task CreateOrder(Order order)
-    {
-        var context = _httpContextAccesor.HttpContext;
-        var token = await context.Authentication.GetTokenAsync("access_token");
-        _apiClient.Inst.DefaultRequestHeaders.Authorization = new
-            System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-        _apiClient.Inst.DefaultRequestHeaders.Add("x-requestid",
-            order.RequestId.ToString());
-        var ordersUrl = $"{_remoteServiceBaseUrl}/new";
-        order.CardTypeId = 1;
-        order.CardExpirationApiFormat();
-        SetFakeIdToProducts(order);
-        var response = await _apiClient.PostAsync(ordersUrl, order);
-        response.EnsureSuccessStatusCode();
-    }
+    return HttpPolicyExtensions
+        .HandleTransientHttpError()
+        .CircuitBreakerAsync(5, TimeSpan.FromSeconds(30));
 }
 ```
 
-Vždy, když \_apiClient člen objekt se používá, interně používá třídu obálky s Polly policiesؙ – zásady opakovaných pokusů, jistič zásady a jiné zásady, které můžete chtít použít z kolekce Polly zásady.
+Ve výše uvedeném příkladu kódu jistič nakonfigurované tak, aby přeruší nebo otevře okruh, když byly pět výjimky při opakování požadavků Http. Potom 30 sekund bude trvání nebo přerušení.
 
-## <a name="testing-retries-in-eshoponcontainers"></a>Testování opakování v eShopOnContainers
+Jističe by měla také sloužit k přesměrování požadavků na infrastrukturu pro použití náhradní lokality, pokud jste měli problémy v konkrétní prostředek, který je nasazený v jiném prostředí než klientská aplikace nebo služba, která provádí volání HTTP. Tímto způsobem, pokud dojde k výpadku datového centra, který ovlivňuje pouze mikroslužby back-endu, ale ne klientských aplikací, klientské aplikace můžete přesměrovat náhradní služby. Polly je plánování novou zásadu pro tento proces zautomatizovat [zásady převzetí služeb při selhání](https://github.com/App-vNext/Polly/wiki/Polly-Roadmap#failover-policy) scénář. 
 
-Při každém spuštění eShopOnContainers řešení v nástroji Docker hostitele, musí se spustit několika kontejnerů. Některé z kontejnerů jsou pomalejší spuštění a inicializaci jako kontejneru systému SQL Server. To platí hlavně při prvním nasazení aplikace eShopOnContainers do Docker, protože je nutné nastavit bitové kopie a databáze. Skutečnost, že některé kontejnery něco pomalejší, než ostatní může způsobit zbytek služby původně vyvolat výjimky HTTP, i když nastavíte závislosti mezi kontejnery na spuštění docker compose úrovni, jak je popsáno v předchozí části. Ty docker tvoří závislosti mezi kontejnery jsou jenom na úrovni procesu. Kontejneru vstupní bod proces může být spuštěn, ale nemusí být připravené pro dotazy SQL Server. Výsledkem mohou být cascade chyb a aplikaci můžete získat výjimku při pokusu o využívání tohoto konkrétního kontejneru.
+Všechny tyto funkce jsou určené pro případy, kde spravujete převzetí služeb při selhání z kódu .NET, na rozdíl od to spravuje automaticky za vás Azure, se místo průhlednosti. 
 
-Můžete si také prohlédnout tohoto typu chyby na spuštění při nasazení aplikace v cloudu. V takovém případě orchestrators může být přesunutí kontejnery z jednoho uzlu nebo virtuální počítač na jiný (které spouští nové instance) při vyrovnávání počet kontejnerů mezi uzly clusteru.
+Z využití hlediska, když pomocí položky HttpClient není potřeba nic nového přidejte sem kód je stejný než při použití HttpClient s HttpClientFactory, jak je znázorněno v předchozích částech. 
 
-Způsob eShopOnContainers řeší tento problém je pomocí opakování vzor, který jsme jsme si uváděli dříve. Je také proč, při spouštění řešení, mohou se zobrazovat protokolu trasování nebo upozornění takto:
+## <a name="testing-http-retries-and-circuit-breakers-in-eshoponcontainers"></a>Testování opakování Http a jističe v aplikaci eShopOnContainers
 
-> "**Opakujte 1 implementováno s RetryPolicy na Polly**, kvůli: System.Net.Http.HttpRequestException: při odesílání požadavku došlo k chybě. ---&gt; System.Net.Http.CurlException: Nelze se připojit k serveru\\n v System.Net.Http.CurlHandler.ThrowIfCURLEError (Chyba CURLcode)\\n v \[... \].
 
-## <a name="testing-the-circuit-breaker-in-eshoponcontainers"></a>Testování vypínač v eShopOnContainers
+Pokaždé, když spustíte aplikaci eShopOnContainers řešení v hostitele Docker, je potřeba spustit několik kontejnerů. Některé z kontejnerů jsou pomalejší spuštění a inicializaci, jako je kontejner SQL serveru. To platí zejména při prvním nasazení aplikace aplikaci eShopOnContainers do Docker, protože se musí nastavit databázi a imagí. Skutečnost, že některé kontejnery pomaleji, než ostatní může způsobit rest služby, které mají zpočátku vyvolávat výjimky HTTP, i když nastavíte závislosti mezi kontejnery na spuštění docker-compose úroveň, jak je popsáno v předchozích částech. Ty docker-compose závislosti mezi kontejnery jsou pouze na úrovni procesu. Může spuštění kontejneru vstupní bod procesu, ale systém SQL Server pravděpodobně není připravena pro dotazy. Výsledkem může být kaskádové chyby a aplikaci můžete získat výjimku při pokusech o využívání této konkrétní kontejner. 
 
-Existuje několik způsobů, můžete otevřít okruhu a otestovat s eShopOnContainers.
+Můžete si také prohlédnout tohoto typu chyby při spuštění po nasazení aplikace do cloudu. V takovém případě orchestrátorů může být přesunování kontejnerů z jednoho uzlu nebo virtuální počítač do jiného (který se spouštěním nových instancí) při vyrovnávání zatížení počet kontejnerů napříč uzly clusteru.
 
-Jednou z možností je na nižší povolený počet opakování 1 v zásadách jistič a znovu nasaďte celé řešení do Docker. Pomocí jednoho opakování je dobré pravděpodobné, že požadavek HTTP se nezdaří během nasazení, se otevře jistič a dojde k chybě.
+Způsob "aplikaci eShopOnContainers" řeší tyto problémy při spuštění všech kontejnerů pomocí modelu opakování jsme si uváděli dříve. 
 
-Další možností je použít vlastní middleware, která je implementována v `Basket` mikroslužby. Pokud je povoleno tento middleware, zachytí všechny požadavky protokolu HTTP a vrátí stavový kód 500. Můžete povolit middleware tím, že požadavek GET na selhání identifikátor URI, třeba takto:
+### <a name="testing-the-circuit-breaker-in-eshoponcontainers"></a>Testování jističe v aplikaci eShopOnContainers
 
--   ZÍSKAT/selhání
+Existuje několik způsobů můžete přerušení/open okruh a testování s aplikaci eShopOnContainers.
 
-Tento požadavek vrátí aktuální stav middleware. Pokud je povoleno middleware, žádost vrátí stavový kód 500. Pokud je zakázána middleware, nepřijde žádná odpověď.
+Jednou z možností je na nižší povolený počet opakovaných pokusů pro 1 v zásadách jistič a znovu nasadit celé řešení do Docker. Pomocí jednoho opakování je dobré pravděpodobné, že během nasazení se nezdaří požadavek HTTP, jistič se otevře a dojde k chybě.
 
--   ZÍSKAT/nedaří? povolit
+Další možností je použití vlastního middlewaru, který je implementován v košíku mikroslužeb. Pokud je povoleno tento middleware, zachytí všechny požadavky HTTP a vrátí stavový kód 500. Můžete povolit middleware provedením požadavku GET selhání identifikátor URI, jako je následující:
 
-Tento požadavek umožňuje middleware.
+- `GET http://localhost:5103/failing`
 
--   ZÍSKAT/nedaří? zakázat
+Tento požadavek vrátí aktuální stav middlewaru. Pokud je povolené middleware, požadavek vrátit stavový kód 500. Pokud je zakázané middleware, nepřijde žádná odpověď. 
 
-Tento požadavek zakáže middleware.
+- `GET http://localhost:5103/failing?enable`
 
-Například když aplikace běží, můžete povolit middleware pomocí libovolného prohlížeče v následující identifikátor URI požadavku. Všimněte si, že řazení mikroslužbu používá port 5103.
+Tento požadavek umožňuje middleware. 
 
-http://localhost:5103/failing?enable
+- `GET http://localhost:5103/failing?disable`
 
-Potom můžete zkontrolovat stav pomocí identifikátoru URI [ http://localhost:5103/failing ](http://localhost:5103/failing), jak je znázorněno na obrázku 10-4.
+Tento požadavek zakáže middleware. 
+
+Pro instanci Jakmile je aplikace spuštěna, můžete povolit middleware tím, že žádost pomocí následující identifikátor URI v jakémkoli prohlížeči. Všimněte si, že pořadí mikroslužeb používá port 5103.
+
+`http://localhost:5103/failing?enable` 
+
+Potom můžete zkontrolovat stav použitím tohoto identifikátoru URI http://localhost:5103/failing, jak ukazuje obrázek 10 až 4.
 
 ![](./media/image4.png)
 
-**Obrázek 10-4**. Kontroluje se stav "Selhání" middleware ASP.NET – v takovém případě zakázána. 
+**Obrázek 10-4**. Kontroluje se stav "Selhání" middleware ASP.NET – v takovém případě zakázané. 
 
-V tomto okamžiku odpoví mikroslužbu nákupního košíku se stavovým kódem 500 vždy, když zavoláte ji použít.
+V tomto okamžiku nákupní košík mikroslužeb odpoví stavový kód 500 pokaždé, když voláte ho vyvolat.
 
-Jakmile middleware běží, můžete zkusit provedení pořadí z webové aplikace MVC. Protože žádosti se nezdařilo, otevře se okruh.
+Jakmile middleware běží, můžete zkusit provádění objednávky z webové aplikace MVC. Protože požadavky nesplní, otevře se okruh. 
 
-V následujícím příkladu vidíte, že má webová aplikace MVC catch blokovat v logiku pro umístění pořadí. Pokud kód zachytí výjimky otevřete okruh, ukazuje uživateli popisný zpráva s upozorněním čekání.
+V následujícím příkladu vidíte, že má webová aplikace MVC bloku catch bloku v logiku pro zadání objednávky.  Pokud kód zachytí výjimku open okruhu, ukazuje uživateli popisný zpráva s upozorněním čekání.
 
 ```csharp
 public class CartController : Controller
@@ -186,8 +116,11 @@ public class CartController : Controller
     public async Task<IActionResult> Index()
     {
         try
-        {
-            //… Other code
+        {          
+            var user = _appUserParser.Parse(HttpContext.User);
+            //Http requests using the Typed Client (Service Agent)
+            var vm = await _basketSvc.GetBasket(user);
+            return View(vm);
         }
         catch (BrokenCircuitException)
         {
@@ -204,42 +137,22 @@ public class CartController : Controller
 }
 ```
 
-Zde je souhrn. Zásady opakování pokusí provést několikrát, chcete-li požadavek HTTP a získá chyby protokolu HTTP. Když počet pokusů dosáhne maximální číslo nastavené zásady jistič (v tomto případě 5), vyvolá aplikace BrokenCircuitException. Výsledkem je přátelskou zprávou, jak ukazuje obrázek 10-5.
+Toto je souhrn. Zásady opakování se pokusí několikrát, chcete-li požadavek HTTP a získá chyby protokolu HTTP. Maximální číslo nastavené zásady jistič (v tomto případě 5) dosáhne počet opakovaných pokusů, vyvolá výjimku BrokenCircuitException aplikace. Výsledkem je přátelskou zprávou, jak ukazuje obrázek 10 – 5.
 
 ![](./media/image5.png)
 
-**Obrázek 10-5**. Jistič vrátila chybu do uživatelského rozhraní
+**Obrázek 10 až 5**. Jistič vrátit chybu v uživatelském rozhraní
 
-Můžete implementovat jiný logiku pro při otevření okruh. Nebo můžete zkusit požadavek HTTP proti různých mikroslužbu back-end, pokud záložní datacenter nebo redundantní systému back-end.
+Můžete implementovat jiný logiku pro případ otevřít/přerušení okruh. Nebo můžete zkusit požadavek HTTP na různé back-end mikroslužeb, pokud záložního datacentra nebo redundantní back endovému systému. 
 
-Nakonec je další možností CircuitBreakerPolicy použití Isolate (která vynutí otevřete a obsahuje otevřete okruhu) a resetování (který zavře znovu). To může vytvořit nástroj pro koncový bod protokolu HTTP, která volá Isolate a resetování přímo na zásady. Takové koncový bod HTTP také může, vhodně zabezpečená, v produkčním prostředí dočasně oddělit podřízené systému, například když chcete upgradovat. Nebo ji může dojít okruhu ručně ochrana podřízené systému, které předpokládáte, chcete-li být chybující.
+A konečně Další možností pro `CircuitBreakerPolicy` je použití `Isolate` (což vynutí otevřít barvy a obsahuje otevřené okruhu) a `Reset` (který ukončí ho znovu). Ty se používal k sestavení nástroj koncový bod HTTP, vyvolávající izolovat a obnovit přímo v této zásadě.  Takové koncový bod HTTP také lze použít řádně zabezpečená, v produkčním prostředí pro příjem dat systému, například když chcete upgradovat dočasně izolaci. Nebo ji může dojít okruh ručně, aby se ochrana systému příjem dat, které předpokládáte, chcete-li být chybující.
 
-## <a name="adding-a-jitter-strategy-to-the-retry-policy"></a>Přidávání zpoždění strategie do zásady opakovaných pokusů
-
-Regulární zásady opakování může mít vliv na váš systém v případech vysoké souběžnosti a škálovatelnost a v části vysoké kolizí. K překonání vrcholů podobné opakování pocházejících z velkého počtu klientů v případě částečné výpadky, je dobré řešení přidat strategie kolísání do algoritmus nebo zásady opakování. Tím lze vylepšit celkový výkon systému začátku do konce přidáním náhodnost exponenciálního omezení rychlosti. To šíří se špičky případných problémech. Při použití Polly kód pro implementaci zpoždění může vypadat jako v následujícím příkladu:
-
-```csharp
-Random jitterer = new Random();
-Policy.Handle<HttpResponseException>() // etc
-    .WaitAndRetry(5, // exponential back-off plus some jitter
-        retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
-            + TimeSpan.FromMilliseconds(jitterer.Next(0, 100))
-    );
-```
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Opakujte vzor**
-    [*https://docs.microsoft.com/azure/architecture/patterns/retry*](https://docs.microsoft.com/azure/architecture/patterns/retry)
 
--   **Odolnost připojení** (Entity Framework jader) [*https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency*](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency)
-
--   **Polly** (.NET odolnost a přechodná. selhání zpracování knihovny) [*https://github.com/App-vNext/Polly*](https://github.com/App-vNext/Polly)
-
--   **Vzor jistič**
+-   **Model jistič**
     [*https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker*](https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker)
-
--   **Marc Brooker. Zpoždění: Aby lépe s náhodnost** https://brooker.co.za/blog/2015/03/21/backoff.html
 
 
 >[!div class="step-by-step"]

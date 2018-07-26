@@ -1,10 +1,10 @@
-### <a name="crash-in-selector-when-removing-an-item-from-a-custom-incc-collection"></a>Při odebírání položky z kolekce vlastní INCC havárií v selektoru
+### <a name="crash-in-selector-when-removing-an-item-from-a-custom-incc-collection"></a>Při odebrání položky z vlastní kolekce INCC k chybě v oblasti pro výběr
 
 |   |   |
 |---|---|
-|Podrobnosti|<code>T:System.InvalidOperationException</code> Situace může nastat v následujícím scénáři:<ul><li>Položka ItemsSource pro <code>T:System.Windows.Controls.Primitives.Selector</code> je kolekce s vlastní implementaci <code>T:System.Collections.Specialized.INotifyCollectionChanged</code>.</li><li>Vybraná položka je odebrána z kolekce.</li><li><code>T:System.Collections.Specialized.NotifyCollectionChangedEventArgs</code> Má <code>P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.OldStartingIndex</code> = -1 (označující Neznámý pozice).</li></ul>Zásobník volání v výjimky začíná na System.Windows.Threading.Dispatcher.VerifyAccess() v System.Windows.DependencyObject.GetValue (Vlastnost DependencyProperty distribučního bodu) v System.Windows.Controls.Primitives.Selector.GetIsSelected (DependencyObject Element) této výjimce může dojít v rozhraní .NET Framework 4.5, pokud aplikace má více než jedno vlákno dispečera. V rozhraní .NET Framework 4.7 výjimka může dojít také v aplikacích s jedním vláknem dispečera. Je problém vyřešen v rozhraní .NET Framework 4.7.1.|
+|Podrobnosti|<code>T:System.InvalidOperationException</code> Může dojít v následujících situacích:<ul><li>Vlastnost ItemsSource pro <code>T:System.Windows.Controls.Primitives.Selector</code> je kolekce s vlastní implementace <code>T:System.Collections.Specialized.INotifyCollectionChanged</code>.</li><li>Vybraná položka je odebrán z kolekce.</li><li><code>T:System.Collections.Specialized.NotifyCollectionChangedEventArgs</code> Má <code>P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.OldStartingIndex</code> = -1 (značí, že neznámé místo).</li></ul>Zásobník volání výjimky začíná System.Windows.Threading.Dispatcher.VerifyAccess() na na System.Windows.Controls.Primitives.Selector.GetIsSelected (DependencyObject System.Windows.DependencyObject.GetValue (Vlastnost DependencyProperty distribučního bodu) Element) této výjimce může dojít v rozhraní .NET Framework 4.5, pokud má aplikace více než jedno vlákno dispečera. V rozhraní .NET Framework 4.7 výjimky může vzniknout také v aplikacích s jedním vláknem a Dispečerem. Problém je vyřešen v rozhraní .NET Framework 4.7.1.|
 |Návrh|Upgrade na rozhraní .NET Framework 4.7.1.|
 |Rozsah|Vedlejší|
 |Version|4.7|
-|Typ|modul runtime|
+|Typ|Modul runtime|
 

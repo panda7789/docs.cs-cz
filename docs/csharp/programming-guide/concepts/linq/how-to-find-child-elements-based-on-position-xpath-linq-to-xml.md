@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: hledání podřízených elementů na základě pozice (XPath-technologie LINQ to XML) (C#)'
+title: 'Postupy: vyhledání podřízených elementů na základě pozice (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: e35bb269-ec86-4c96-8321-12491a0eb2c3
 ms.openlocfilehash: ffe10bd5b263e56b6f2ee1708688523a2b0dd018
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33317499"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39245051"
 ---
-# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>Postupy: hledání podřízených elementů na základě pozice (XPath-technologie LINQ to XML) (C#)
-Někdy budete chtít najít elementy, které jsou založeny na jejich umístění. Můžete chtít najít druhý prvkem, nebo můžete chtít najít třetí prostřednictvím páté elementu.  
+# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>Postupy: vyhledání podřízených elementů na základě pozice (XPath – LINQ to XML) (C#)
+Někdy budete chtít najít prvky založené na jejich umístění. Můžete chtít najít druhý element nebo můžete chtít najít třetí prostřednictvím pátého prvku pole.  
   
  Výraz XPath je:  
   
  `Test[position() >= 2 and position() <= 4]`  
   
- Existují dva přístupy k zápisu to [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazu opožděné způsobem. Můžete použít <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A> operátory, nebo můžete použít <xref:System.Linq.Enumerable.Where%2A> přetížení, které přijímá indexu. Při použití <xref:System.Linq.Enumerable.Where%2A> přetížení, použijte výraz lambda, která přebírá dva argumenty. Následující příklad ukazuje obě metody výběru na základě pozice.  
+ Existují dva přístupy k psaní to [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazu opožděné způsobem. Můžete použít <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A> operátory, nebo můžete použít <xref:System.Linq.Enumerable.Where%2A> přetížení přebírající indexu. Při použití <xref:System.Linq.Enumerable.Where%2A> přetížení, můžete použít výraz lambda, který přebírá dva argumenty. Následující příklad ukazuje obě metody na základě pozice výběru.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vyhledá druhý prostřednictvím čtvrtý `Test` elementu. Výsledkem je kolekci elementů.  
+ Tento příklad vyhledá druhé až čtvrté `Test` elementu. Výsledkem je kolekci elementů.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: Konfigurace testu (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-test-configuration-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: Konfigurace testu (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-test-configuration-linq-to-xml.md).  
   
 ```csharp  
 XElement testCfg = XElement.Load("TestConfig.xml");  
@@ -79,4 +79,4 @@ Results are identical
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML pro uživatele XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+ [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

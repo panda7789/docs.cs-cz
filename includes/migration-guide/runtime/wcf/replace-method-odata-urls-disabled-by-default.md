@@ -1,11 +1,11 @@
-### <a name="the-replace-method-in-odata-urls-is-disabled-by-default"></a>Ve výchozím nastavení vypnutá metodu nahraďte v adresách URL OData
+### <a name="the-replace-method-in-odata-urls-is-disabled-by-default"></a>Nahraďte metodu v adresách URL OData je ve výchozím nastavení zakázána.
 
 |   |   |
 |---|---|
-|Podrobnosti|Od verze rozhraní .NET Framework 4.5, metoda nahraďte v adresách URL OData ve výchozím nastavení vypnutá. Pokud je zakázáno nahradit OData (nyní ve výchozím nastavení), veškeré žádosti uživatelů, včetně funkcí nahradit, (které nejsou běžné) se nezdaří.|
-|Návrh|Pokud se vyžaduje metoda nahrazení (což neobvyklé), může být znovu zapnout pomocí nastavení konfigurace (<xref:System.Data.Services.Configuration.DataServicesFeaturesSection.ReplaceFunction?displayProperty=name>). Metodu povoleno nahradit však můžete otevřít bezpečnostní zranitelná místa a musí být použit pouze po pečlivě zkontrolujte.|
+|Podrobnosti|Počínaje rozhraním .NET Framework 4.5, nahraďte metodu v adresách URL OData je standardně zakázáno. Pokud nahradit OData je zakázáno (nyní ve výchozím nastavení), veškeré žádosti uživatelů, včetně funkcí nahradit, (které neobvyklé) se nezdaří.|
+|Návrh|Pokud je potřeba nahradit – metoda (což je běžné), může být znovu zapnout pomocí nastavení konfigurace (<xref:System.Data.Services.Configuration.DataServicesFeaturesSection.ReplaceFunction?displayProperty=name>). Metodu povoleno nahradit však můžete otevřít bezpečnostní zranitelná místa a by měla sloužit pouze po pečlivou revizi.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|modul runtime|
+|Typ|Modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Data.Services.DataService%601?displayProperty=nameWithType></li></ul>|
 

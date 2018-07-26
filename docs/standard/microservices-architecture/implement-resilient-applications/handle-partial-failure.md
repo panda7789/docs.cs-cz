@@ -1,43 +1,43 @@
 ---
-title: Částečné selhání zpracování
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Částečné selhání zpracování
+title: Zpracování částečného selhání
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Zpracování částečného selhání
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
-ms.openlocfilehash: 957a0b1b8b4d217fac591db54e4ee053098bc7da
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 06/08/2018
+ms.openlocfilehash: 723719b22c1c7de63f19f68acf91e6499c1a4e43
+ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105192"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37875180"
 ---
-# <a name="handling-partial-failure"></a>Částečné selhání zpracování
+# <a name="handling-partial-failure"></a>Zpracování částečného selhání
 
-V distribuovaných systémech jako aplikace založené na mikroslužeb existuje všudypřítomné nebezpečí částečné selhání. Pro instanci jediný mikroslužbu nebo kontejner může selhat nebo nemusí být k dispozici po krátkou dobu reagovat, nebo jeden virtuální počítač nebo server může dojít k chybě. Vzhledem k tomu, že služby a klienti jsou samostatné procesy, nemusí být schopné reagovat včas na žádost klienta služby. Služba může být požadavky přetížené a reagování na velmi pomalu nebo nemusí být dostupný po krátkou dobu jednoduše z důvodu problémů se sítí.
+V distribuovaných systémech, jako je aplikace založená na mikroslužbách je všudypřítomnou riziko částečného selhání. Například jeden mikroslužeb nebo kontejnerů může selhat nebo nemusí být možné reagovat na krátkou dobu, nebo jeden virtuální počítač nebo server může dojít k chybě. Od klientů a služeb jsou samostatné procesy, služba nemusí být schopné reagovat včas na žádost klienta. Služba může být přetížená a odpovídá velmi pomalu do požadavků nebo nemusí být dostupný na krátkou dobu jednoduše z důvodu problémů se sítí.
 
-Představte si třeba stránce s podrobnostmi o pořadí z eShopOnContainers ukázkovou aplikaci. Pokud je řazení mikroslužbu reagovat při pokusu uživatele o odešlete odbejdnávku, chybný provádění procesu klienta (webová aplikace MVC) – například pokud kód klienta použili synchronní RPC s bez časového limitu – by po neomezenou dobu blokování vláken Čekání na odpověď. Kromě vytváření nepříjemné zkušenosti, každých reagovat čekání používá nebo blokuje vlákno a vláken jsou velmi cenné ve vysoce škálovatelné aplikace. Pokud je počet pozastavených vláken, nakonec běhu aplikace můžete spustit z vláken. V takovém případě může stát aplikace místo globálně reagovat jen částečně reagovat, jak je vidět v obrázek 10-1.
+Představte si třeba stránka Podrobnosti objednávky z aplikaci eShopOnContainers ukázkovou aplikaci. Pokud řazení mikroslužba přestane reagovat při pokusu uživatele o odešlete odbejdnávku, chybnou implementací procesu klientů (webová aplikace MVC) – například, pokud kód klienta chtěli použít synchronní RPC bez časového limitu, bude blokovaná vlákna Čekání na odpověď. Kromě vytvoření nepříjemné zkušenosti, každý reagovat používá nebo blokuje vlákno a vlákna jsou extrémně cennou ve vysoce škálovatelných aplikací. Pokud existují mnoho blokovaná vlákna, nakonec modulu runtime aplikace můžete zjistit nedostatek podprocesů. V takovém případě může přestat aplikace globálně reagovat místo jen částečně reagovat, jak je vidět v obrázek 10-1.
 
 ![](./media/image1.png)
 
-**Obrázek 10-1**. Částečné selhání kvůli závislosti, které mít dopad na dostupnost služby přístup z více vláken
+**Obrázek 10-1**. Částečně neúspěšné z důvodu závislosti, které ovlivňují dostupnost služeb vlákna
 
-V rozsáhlé aplikace na základě mikroslužeb může být rozšířena jakákoli částečné chyba, hlavně v případě, že většina interní mikroslužeb interakce je založen na synchronní volání protokolu HTTP (které považuje za proti vzor). Vezměte v úvahu systému, která bude přijímat miliony příchozí volání za den. Pokud má váš systém chybný návrh, který je založen na dlouhé řetězy synchronní volání protokolu HTTP, tyto příchozí volání může vést v mnoha milionů další odchozí volání (Předpokládejme poměr 1:4) desítek interní mikroslužeb jako synchronní závislosti. Tato situace se zobrazí v 10 obrázek-2, zejména závislostí \#3.
+V případě velkých aplikací založených na mikroslužbách může být rozšířena jakékoli částečného selhání, zejména v případě, že většina interakce interní mikroslužeb je založen na synchronní volání HTTP (což se považuje za proti vzor). Představte si systém, která bude přijímat miliony příchozí volání za den. Pokud váš systém má chybný návrh, který je založen na dlouhé řetězce synchronní volání HTTP, tato příchozí volání může způsobit další miliony odchozích volání (Předpokládejme poměr 1:4) k desítkám interní mikroslužeb jako synchronní závislosti. Tato situace se zobrazí v 10 obrázek-2, zejména závislost \#3.
 
 ![](./media/image2.png)
 
-**Obrázek 10-2**. Dopad toho, že nesprávné návrh s funkcí dlouho řetězy požadavků HTTP
+**Obrázek 10-2**. Dopad s při nesprávné návrhu s dlouhé řetězce požadavků protokolu HTTP
 
-Občasné selhání je v podstatě zaručit v distribuované a cloud na bázi systému, i v případě, že všechny závislosti, samotné má vynikající dostupnosti. To by měl být faktů, které je třeba vzít v úvahu.
+Občasné selhání je zaručeno, že v systému distribuované a založené na cloudu, i v případě, že všechny závislosti, samotný má skvělé dostupnosti. Je fakt, které je potřeba zvážit.
 
-Pokud nemáte navrhnout a implementovat techniky k zajištění odolnosti proti chybám, může být rozšířena i malé výpadky způsobené nástrojem. Jako příklad by kvůli tomu ripple 50 závislosti každý s 99,99 % dostupnost způsobilo několik hodin výpadku každý měsíc. Když závislost mikroslužbu selže při zpracování k velkému počtu požadavků, které selhání můžete rychle saturate všechna vlákna požadavek k dispozici v jednotlivých služeb a havárií celou aplikaci.
+Pokud není navrhovat a implementovat techniky k zajištění odolnosti proti chybám, může být rozšířena i malá výpadky. Jako příklad způsobí 50 závislosti každý s 99,99 % dostupnost několik hodin výpadků každý měsíc z důvodu tohoto efektu Zvlnění. Když závislost mikroslužeb selže při zpracovávání požadavků, které selhání můžete rychle saturate všechna vlákna žádosti k dispozici v jednotlivých služeb a chybách u aplikací celou aplikaci.
 
 ![](./media/image3.png)
 
-**Obrázek 10-3**. Částečné selhání doplněné mikroslužeb s dlouhou řetězy synchronní volání protokolu HTTP
+**Obrázek 10-3**. Pomocí mikroslužeb s dlouhé řetězce o synchronních voláních HTTP částečného selhání
 
-Chcete-li minimalizovat tento problém, v části "*asynchronní mikroslužbu integrace vynutit nezávislé na mikroslužbu*" (v kapitole architektura), můžeme vám umožní používat asynchronní komunikaci mezi interní podporovat mikroslužeb. Stručně objasníme více v další části.
+Chcete-li minimalizovat potíže, v části "*asynchronní mikroslužeb integrace vynutit na mikroslužbách autonomie*" (v kapitole architektury), tyto pokyny doporučuje použít asynchronní komunikaci napříč interní mikroslužeb. 
 
-Kromě toho je důležité, navrhnout vaše mikroslužeb a klientské aplikace pro zpracování částečné selhání – to znamená, vytvářet odolné mikroslužeb a klientské aplikace.
+Kromě toho je nezbytné, navrhnout vaše mikroslužeb a klientských aplikací pro zpracování částečného selhání – to znamená, vytvářet odolné mikroslužeb a klientské aplikace.
 
 
 >[!div class="step-by-step"]

@@ -2,9 +2,9 @@
 
 |   |   |
 |---|---|
-|Podrobnosti|Chyby v rozhraní .NET Framework 4.5 způsobí, že hodnotami nastavenými prostřednictvím prázdná operace slučování nebude viditelné v ladicím programu okamžitě po provedení operace přiřazení při spuštění v 64bitové verzi rozhraní.|
-|Návrh|Krokování s jednou další v ladicím programu způsobí, že hodnotu místní nebo pole správně aktualizovat. Navíc tento problém byl opraven v rozhraní .NET Framework 4.6; upgrade na tuto verzi rozhraní by měla potíže vyřešit.|
+|Podrobnosti|Chyby v rozhraní .NET Framework 4.5 způsobí, že hodnoty nastavené přes operaci sloučení null nebude viditelné v ladicím programu okamžitě po provedení operace přiřazení je spuštěná v 64bitové verzi rozhraní Framework.|
+|Návrh|Krokování další jednou v ladicím programu způsobí, že místní/hodnoty tohoto pole správně aktualizovat. Navíc tento problém byl vyřešen v rozhraní .NET Framework 4.6; upgrade na tuto verzi rozhraní Framework by mělo vyřešit problém.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|modul runtime|
+|Typ|Modul runtime|
 

@@ -12,35 +12,35 @@ helpviewer_keywords:
 ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b0d9ddbd6c7b027a7c342f4c14192a7571beb592
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 314ceb86219ce143e84a00392727d610c0779e48
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397881"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39243675"
 ---
 # <a name="securing-method-access"></a>Zabezpečení přístupu k metodě
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- Některé metody nemusí být vhodné pro povolení libovolného nedůvěryhodného kódu k volání. Tyto metody představují několik rizika: metoda může poskytovat některé informace s omezeným přístupem; může věřit všechny informace do ní; nemusí provést kontrolu chyb na parametry; nebo se nesprávné parametry, může selhat nebo udělat něco škodlivého. Musí mít na paměti tyto případy a provést akci k ochraně metodu.  
+ Některé metody nemusí být vhodný umožňující libovolného nedůvěryhodný kód pro volání. Tyto metody představují několik rizika: metoda může poskytnout určité omezené informace; může věřit žádné informace o předán. nemusí provést kontrolu chyb na parametry. nebo se nesprávné parametry, může selhat nebo škodlivé něco udělat. By měl mít na paměti tyto případy a provedete akce vedoucí k ochraně metodu.  
   
- V některých případech může být nutné k omezení metody, které nejsou určeny pro veřejné použití, ale stále musí být veřejné. Například může mít rozhraní, které musí být voláno prostřednictvím vlastních knihoven DLL a proto musí být veřejné, ale nechcete zveřejnění veřejně zákazníkům zabránit použití nebo zabránit zneužití vstupním bodem do příslušné součásti škodlivý kód. Jiné běžným důvodem k omezení metody není určen pro veřejné (ale musí být veřejná) je-li se vyhnout dokumentů a podpory, které mohou být velmi vnitřní rozhraní.  
+ V některých případech můžete potřebovat k omezení metody, které nejsou určeny pro veřejně přístupný, ale přesto musejí být veřejné. Například může být rozhraní, které musí být volána v rámci vlastní knihovny DLL a proto musí být veřejné, ale nechcete zveřejnit veřejně, aby se zabránilo zákazníci využívat nebo zabránit škodlivým kódem využívajícím vstupní bod do příslušné součásti. Dalším běžným důvodem k omezení metody nejsou určené pro veřejně přístupný (ale musí být veřejná) je vyhnout se nutnosti dokumentů a podpory, které mohou být velmi interní rozhraní.  
   
  Spravovaný kód nabízí několik způsobů, jak omezit přístup k metodě:  
   
--   Omezte rozsah usnadnění přístupu ke třídě, sestavení nebo odvozené třídy, pokud mohou být důvěryhodné. Toto je nejjednodušší způsob, jak omezit přístup k metodě. Všimněte si, že obecně odvozených tříd může být méně důvěryhodné než třídy, na kterou odvozují, i když v některých případech sdílejí identity nadřazené třídy. Konkrétně nelze odvodit důvěryhodnosti z klíčového slova **chráněné**, který není nutně používá v kontextu zabezpečení.  
+-   Omezte její obor usnadnění přístupu pro třídy, sestavení nebo odvozené třídy, pokud se může považovat za důvěryhodné. Toto je nejjednodušší způsob, jak omezit přístup k metodě. Všimněte si, že obecně odvozené třídy mohou být méně důvěryhodné než třídy, které vyplývají z, i když v některých případech sdílejí identity nadřazené třídy. Zejména nelze odvodit vztah důvěryhodnosti z klíčového slova **chráněné**, což není nutně použít v kontextu zabezpečení.  
   
--   Omezit přístup k metodě pro volající zadané identity--v podstatě žádné konkrétní [důkaz](http://msdn.microsoft.com/library/64ceb7c8-a0b4-46c4-97dc-6c22da0539da) (silný název, vydavatele, zóně a tak dále) zvolíte.  
+-   Omezit přístup k metodě volajícím zadané identity – v podstatě žádné konkrétní [důkazy](http://msdn.microsoft.com/library/64ceb7c8-a0b4-46c4-97dc-6c22da0539da) (silný název, vydavatele, zóny a podobně) vyberete.  
   
--   Omezte přístup metoda pro volající mají všechna oprávnění, které vyberete.  
+-   Omezte přístup metoda volajícím mají všechna oprávnění, které jste vybrali.  
   
- Podobně deklarativní zabezpečení umožňuje řízení dědění tříd. Můžete použít **InheritanceDemand** proveďte následující:  
+ Deklarativní zabezpečení obdobně umožňuje řídit dědičnosti tříd. Můžete použít **InheritanceDemand** můžete provádět následující:  
   
--   Odvozené třídy mít zadanou identitou nebo oprávnění vyžadují.  
+-   Vyžadovat odvozené třídy zadané identity nebo oprávnění.  
   
--   Odvozené třídy, které potlačí konkrétní metody mít zadanou identitou nebo oprávnění vyžadují.  
+-   Vyžadovat odvozené třídy, které přepíší specifických metod mít zadané identity nebo oprávnění.  
   
- Následující příklad ukazuje, jak k ochraně veřejnou třídu pro omezený přístup vyžadováním, aby byly podepsány volající konkrétní silným názvem. Tento příklad používá <xref:System.Security.Permissions.StrongNameIdentityPermissionAttribute> s **vyžádání** pro silný název. Založený na úlohách informace o tom, jak podepsání sestavení se silným názvem naleznete v tématu [vytvoření a použití sestavení](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md).  
+ Následující příklad ukazuje, jak můžete ochránit veřejnou třídu pro omezený přístup tím, že vyžaduje, aby byly podepsány volající konkrétní silným názvem. V tomto příkladu <xref:System.Security.Permissions.StrongNameIdentityPermissionAttribute> s **vyžádání** pro silný název. Založený na úlohách informace o tom, jak podepsat sestavení silným názvem naleznete v tématu [vytvoření a použití sestavení](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md).  
   
 ```vb  
 <StrongNameIdentityPermissionAttribute(SecurityAction.Demand, PublicKey := "…hex…", Name := "App1", Version := "0.0.0.0")>  _  
@@ -57,14 +57,14 @@ public class Class1
 ```  
   
 ## <a name="excluding-classes-and-members-from-use-by-untrusted-code"></a>Vyloučení tříd a členů z použití nedůvěryhodným kódem  
- Pomocí deklarace uvedené v této části zabránit, aby určité třídy a metody, a také vlastnosti a události, používal částečně důvěryhodným kódem. Použitím tyto deklarace na třídu použijete ochranu pro všechny její metody, vlastnosti a události; Všimněte si však, že přístup k poli není ovlivněn deklarativní zabezpečení. Všimněte si také, že požadavky na odkaz zajistit ochranu proti pouze okamžitou volající a může podléhat stále útokům typu luring.  
+ Jak zabránit používán částečně důvěryhodným kódem konkrétní třídy a metody, stejně jako vlastnosti a události, pomocí deklarace uvedené v této části. Použitím tyto deklarace třídy nastavují ochranu pro všechny jeho metody, vlastnosti a události. Mějte však na paměti, že přístup k poli není ovlivněn deklarativní zabezpečení. Všimněte si také, že požadavky propojení pomáhá chránit před jenom okamžitý volající a můžou i nadále být vystavené útokům typu luring.  
   
 > [!NOTE]
->  Nový model průhlednost byla zavedena v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. [Kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md) modelu identifikuje zabezpečený kód pomocí <xref:System.Security.SecurityCriticalAttribute> atribut. Kód kritický pro zabezpečení vyžaduje volající a dědice být plně důvěryhodná. Sestavení, které jsou spuštěny v pravidla zabezpečení přístupu kódu z dřívějších verzí rozhraní .NET Framework můžete volat sestavení úrovně 2. V takovém případě kritické pro zabezpečení atributy budou považovány za požadavky na odkaz pro úplný vztah důvěryhodnosti.  
+>  Nový model transparentnosti je zavedený v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. [Kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md) identifikuje zabezpečený kód pomocí modelu <xref:System.Security.SecurityCriticalAttribute> atribut. Kód kritický pro zabezpečení vyžaduje volající a dědice plně důvěryhodné. Sestavení, které jsou spuštěny v pravidla zabezpečení přístupu kódu z předchozích verzí rozhraní .NET Framework mohou volat sestavení úrovně 2. Kritické pro zabezpečení atributy v tomto případě bude zacházeno jako požadavky propojení pro úplný vztah důvěryhodnosti.  
   
- V sestavení se silným názvem [LinkDemand](../../../docs/framework/misc/link-demands.md) se použije na všechny veřejně přístupné metody, vlastnosti a události v něm omezil jejich použití u plně důvěryhodný pro volající. Chcete-li tuto funkci zakázat, je nutné použít <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut. Proto explicitní označení tříd pro vyloučení nedůvěryhodných volajících je potřebný jenom u nepodepsaná sestavení nebo sestavení pomocí tohoto atributu; můžete použít tyto deklarace v něm označit podmnožinu typy, které nejsou určeny pro nedůvěryhodné volající.  
+ V sestavení se silným názvem [LinkDemand](../../../docs/framework/misc/link-demands.md) platí pro všechny veřejně přístupné metody, vlastnosti a události v něm můžete omezit jejich použití k plně důvěryhodné volající. Pokud chcete zakázat tuto funkci, musíte použít <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut. Proto explicitní označení třídy pro vyloučení nedůvěryhodných volajících je potřebný jenom u nepodepsaná sestavení nebo sestavení pomocí tohoto atributu. můžete použít tyto deklarace k označení podmnožinu typů v něm, které nejsou určeny pro nedůvěryhodných volajících.  
   
- Následující příklady ukazují, jak zabránit používá nedůvěryhodnými třídy a členy.  
+ Následující příklady ukazují, jak zabránit používá nedůvěryhodný kód třídy a členy.  
   
  Pro veřejné neuzavřené třídy:  
   
@@ -83,7 +83,7 @@ public class CanDeriveFromMe
 }  
 ```  
   
- Pro veřejné uzavřené třídy:  
+ Pro veřejné zapečetěné třídy:  
   
 ```vb  
 <System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.LinkDemand, Name := "FullTrust")>  _  
@@ -110,10 +110,10 @@ End Class
 ```csharp  
 [System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.InheritanceDemand, Name="FullTrust")]  
 [System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.LinkDemand, Name="FullTrust")]  
-public abstract class CannotCreateInstanceOfMe_CanCastToMe{}  
+public abstract class CannotCreateInstanceOfMe_CanCastToMe {}  
 ```  
   
- Pro veřejné virtuální funkce:  
+ Pro veřejnou virtuální funkce:  
   
 ```vb  
 Class Base1   
@@ -145,7 +145,7 @@ End Class 'Base2
 ```  
   
 ```csharp  
-abstract class Base2{  
+abstract class Base2 {  
 [System.Security.Permissions.PermissionSetAttribute(  
 System.Security.Permissions.SecurityAction.InheritanceDemand, Name = "FullTrust")]  
 [System.Security.Permissions.PermissionSetAttribute(  
@@ -154,7 +154,7 @@ public abstract void MustOverrideMe();
 }  
 ```  
   
- Pro veřejné funkce přepsání kde základní třída nevyžaduje úplný vztah důvěryhodnosti:  
+ Pro veřejné funkce přepsání Pokud základní třída nevyžaduje úplný vztah důvěryhodnosti:  
   
 ```vb  
 Class Derived  
@@ -177,7 +177,7 @@ class Derived : Base1
 }  
 ```  
   
- Pro veřejné funkce přepsání kde základní třída vyžaduje úplný vztah důvěryhodnosti:  
+ Pro veřejné funkce přepsání kde základní třídy vyžaduje úplný vztah důvěryhodnosti:  
   
 ```vb  
 Class Derived  
@@ -234,11 +234,11 @@ class Implemented : ICanCastToMe
 ## <a name="virtual-internal-overrides-or-overloads-overridable-friend"></a>Virtuální interní přepisy nebo přetížení přepsatelného přítele  
   
 > [!NOTE]
->  V této části upozorní o porušení zabezpečení deklarace metody jako obou `virtual` a `internal` (`Overloads``Overridable``Friend` v jazyce Visual Basic). Toto upozornění se vztahuje pouze na rozhraní .NET Framework verze 1.0 a 1.1, nevztahuje se na novější verzi.  
+>  V této části upozorní potíže se zabezpečením při deklaraci metody jako `virtual` a `internal` (`Overloads``Overridable``Friend` v jazyce Visual Basic). Toto upozornění se vztahuje pouze na rozhraní .NET Framework verze 1.0 a 1.1, nevztahuje se na novější verze.  
   
- V rozhraní .NET Framework verze 1.0 a 1.1 musíte být vědomi nuance usnadnění systému typ při potvrzení, že váš kód je k dispozici jiným sestavením. Metoda, která je deklarovaná **virtuální** a **interní** (**přetížení přepsatelné** v jazyce Visual Basic) můžete přepsat položku vtable nadřazené třídy a dá se použít jenom z v rámci stejného sestavení vzhledem k tomu, že je interní. Nicméně, je dáno usnadnění přístupu pro přepsání **virtuální** – klíčové slovo a to může být přepsáno z jiného sestavení, dokud tento kód má přístup k vlastní třídy. Pokud možnost přepsat vytváří problém, použijte deklarativní zabezpečení opravit nebo odebrat **virtuální** – klíčové slovo, pokud není nezbytně nutné.  
+ V rozhraní .NET Framework verze 1.0 a 1.1 musíte být vědomi nuance typ – usnadnění systému při potvrzení, že váš kód je k dispozici pro jiná sestavení. Metoda, která je deklarována **virtuální** a **interní** (**přetížení přepsatelného přítele** v jazyce Visual Basic) můžete přepsat položku vtable nadřazené třídy a lze použít pouze v v rámci stejného sestavení vzhledem k tomu, že je interní. Ale je určená pro usnadnění pro přepsání **virtuální** – klíčové slovo a to může být přepsána z jiného sestavení za předpokladu, že kód má přístup k samotné třídě. Pokud možnost přepsat představuje problém, používejte deklarativní zabezpečení a opravit ho nebo odebrat **virtuální** – klíčové slovo, pokud to není nezbytně nutné.  
   
- Všimněte si, že i v případě, že kompilátor jazyka brání tato přepsání kvůli chybě kompilace, je možné pro kód zapisovaný s jinými kompilátory přepsat.  
+ Všimněte si, že i v případě, že kompilátor jazyka zabraňuje tato přepsání kvůli chybě kompilace, je možné pro kód zapisovaný s jinými kompilátory pro přepsání.  
   
 ## <a name="see-also"></a>Viz také  
  [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)

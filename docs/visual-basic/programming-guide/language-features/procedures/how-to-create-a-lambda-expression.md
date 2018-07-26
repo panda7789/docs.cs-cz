@@ -6,18 +6,18 @@ helpviewer_keywords:
 - expressions [Visual Basic], lambda
 ms.assetid: 3279bd5c-80f7-410a-a7ba-f7085ed36aa5
 ms.openlocfilehash: f437166bc5206b4145d6508aa2131ec94d6eca95
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33653543"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244891"
 ---
 # <a name="how-to-create-a-lambda-expression-visual-basic"></a>Postupy: Vytvoření výrazu lambda (Visual Basic)
-A *výrazu lambda* je funkce nebo podprogramu, který nemá název. Výraz lambda lze použít bez ohledu na typ delegáta je platný.  
+A *výraz lambda* je funkce nebo podprogramu, který nemá název. Výraz lambda je možné bez ohledu na typ delegáta je platný.  
   
-### <a name="to-create-a-single-line-lambda-expression-function"></a>Chcete-li vytvořit funkci výrazu lambda jeden řádek  
+### <a name="to-create-a-single-line-lambda-expression-function"></a>Vytvořit funkci výraz lambda jednořádkového  
   
-1.  V každé situaci, kdy může použít typem delegáta, zadejte klíčové slovo `Function`, jako v následujícím příkladu:  
+1.  V každé situaci, kdy může použít typ delegáta, zadejte klíčové slovo `Function`, jako v následujícím příkladu:  
   
      `Dim add1 =`   `Function`  
   
@@ -25,25 +25,25 @@ A *výrazu lambda* je funkce nebo podprogramu, který nemá název. Výraz lambd
   
      `Dim add1 = Function`   `(num As Integer)`  
   
-3.  Následující seznam parametrů zadejte jako text funkce jeden výraz. Hodnota, která je výsledkem výrazu je hodnota vráceným funkcí. Nepoužívejte `As` klauzule zadat návratový typ.  
+3.  Následující seznam parametrů zadejte jeden výraz jako tělo funkce. Výraz je vyhodnocen jako hodnota je hodnota vrácená funkcí. Je velmi riskantní používat `As` klauzule k určení návratového typu.  
   
      [!code-vb[VbVbalrLambdas#1](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_1.vb)]  
   
-     Můžete pro volání výrazu lambda předávání v argument celé číslo.  
+     Můžete pro volání výrazu lambda předáním celočíselný argument.  
   
      [!code-vb[VbVbalrLambdas#2](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_2.vb)]  
   
-4.  Alternativně stejného výsledku se dosahuje prostřednictvím v následujícím příkladu:  
+4.  Případně stejného výsledku lze dosáhnout v následujícím příkladu:  
   
      [!code-vb[VbVbalrLambdas#3](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_3.vb)]  
   
-### <a name="to-create-a-single-line-lambda-expression-subroutine"></a>Chcete-li vytvořit podprogramu výrazu lambda jeden řádek  
+### <a name="to-create-a-single-line-lambda-expression-subroutine"></a>Chcete-li vytvořit výraz lambda jednořádkového podprogram  
   
-1.  V každé situaci, kdy může použít typem delegáta, zadejte klíčové slovo `Sub`, jak je znázorněno v následujícím příkladu.  
+1.  V každé situaci, kdy může použít typ delegáta, zadejte klíčové slovo `Sub`, jak je znázorněno v následujícím příkladu.  
   
      `Dim add1 =`   `Sub`  
   
-2.  V závorkách přímo po `Sub`, parametry podprogramu typu. Všimněte si, že nezadáte název po `Sub`.  
+2.  V závorkách přímo po `Sub`, typ parametrů volanému podprogramu. Všimněte si, že nezadáte název po `Sub`.  
   
      `Dim add1 = Sub`   `(msg As String)`  
   
@@ -51,13 +51,13 @@ A *výrazu lambda* je funkce nebo podprogramu, který nemá název. Výraz lambd
   
      [!code-vb[VbVbalrLambdas#17](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_4.vb)]  
   
-     Můžete pro volání výrazu lambda předávání v argument řetězce.  
+     Můžete pro volání výrazu lambda předáním jako argument řetězec.  
   
      [!code-vb[VbVbalrLambdas#18](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_5.vb)]  
   
-### <a name="to-create-a-multiline-lambda-expression-function"></a>Chcete-li vytvořit výraz funkce Víceřádkový lambda  
+### <a name="to-create-a-multiline-lambda-expression-function"></a>K vytvoření víceřádkového výrazu lambda výraz funkce  
   
-1.  V každé situaci, kdy může použít typem delegáta, zadejte klíčové slovo `Function`, jak je znázorněno v následujícím příkladu.  
+1.  V každé situaci, kdy může použít typ delegáta, zadejte klíčové slovo `Function`, jak je znázorněno v následujícím příkladu.  
   
      `Dim add1 =`   `Function`  
   
@@ -67,40 +67,40 @@ A *výrazu lambda* je funkce nebo podprogramu, který nemá název. Výraz lambd
   
 3.  Stiskněte klávesu ENTER. `End Function` Je automaticky přidán příkaz.  
   
-4.  V hlavní funkce přidejte následující kód k vytvoření výrazu a vrátí hodnotu. Nepoužívejte `As` klauzule zadat návratový typ.  
+4.  V těle funkce přidejte následující kód k vytvoření výrazu a vrátí hodnotu. Je velmi riskantní používat `As` klauzule k určení návratového typu.  
   
      [!code-vb[VbVbalrLambdas#19](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_6.vb)]  
   
-     Můžete pro volání výrazu lambda předávání v argument celé číslo.  
+     Můžete pro volání výrazu lambda předáním celočíselný argument.  
   
      [!code-vb[VbVbalrLambdas#20](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_7.vb)]  
   
-### <a name="to-create-a-multiline-lambda-expression-subroutine"></a>Chcete-li vytvořit výraz podprogramu Víceřádkový lambda  
+### <a name="to-create-a-multiline-lambda-expression-subroutine"></a>K vytvoření víceřádkového výrazu lambda výraz podprogram  
   
-1.  V každé situaci, kdy může použít typem delegáta, zadejte klíčové slovo `Sub`, jak je znázorněno v následujícím příkladu:  
+1.  V každé situaci, kdy může použít typ delegáta, zadejte klíčové slovo `Sub`, jak je znázorněno v následujícím příkladu:  
   
      `Dim add1 =`   `Sub`  
   
-2.  V závorkách přímo po `Sub`, parametry podprogramu typu. Všimněte si, že nezadáte název po `Sub`.  
+2.  V závorkách přímo po `Sub`, typ parametrů volanému podprogramu. Všimněte si, že nezadáte název po `Sub`.  
   
      `Dim add1 = Sub`  `(msg As String)`  
   
 3.  Stiskněte klávesu ENTER. `End Sub` Je automaticky přidán příkaz.  
   
-4.  V hlavní funkce přidejte následující kód provést při vyvolání podprogramu.  
+4.  V těle funkce přidejte následující kód pro spuštění při vyvolání podprogramu.  
   
      [!code-vb[VbVbalrLambdas#21](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_8.vb)]  
   
-     Můžete pro volání výrazu lambda předávání v argument řetězce.  
+     Můžete pro volání výrazu lambda předáním jako argument řetězec.  
   
      [!code-vb[VbVbalrLambdas#22](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_9.vb)]  
   
 ## <a name="example"></a>Příklad  
- Běžné použití výrazů lambda je určit funkce, které lze předat ve jako argument pro parametr s jiným typem `Delegate`. V následujícím příkladu <xref:System.Diagnostics.Process.GetProcesses%2A> metoda vrátí pole procesů spuštěných v místním počítači. <xref:System.Linq.Enumerable.Where%2A> Metoda z <xref:System.Linq.Enumerable> vyžaduje třídy `Boolean` delegovat jako její argument. Výraz lambda v příkladu se používá k tomuto účelu. Vrátí `True` pro každý proces, který má pouze jedno vlákno, a ty, které jsou vybrány v `filteredList`.  
+ Běžné použití výrazů lambda je definice funkce, které lze předat jako argument pro parametr, jehož typ je `Delegate`. V následujícím příkladu <xref:System.Diagnostics.Process.GetProcesses%2A> metoda vrátí pole z procesů spuštěných na místním počítači. <xref:System.Linq.Enumerable.Where%2A> Metodu z <xref:System.Linq.Enumerable> vyžaduje třídu `Boolean` jako svůj argument. Výraz lambda v příkladu se používá pro tento účel. Vrátí `True` pro každý proces, který má pouze jedno vlákno, a ty jsou vybrány v `filteredList`.  
   
  [!code-vb[VbVbalrLambdas#10](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_10.vb)]  
   
- Předchozí příklad je ekvivalentní následující kód, který je napsána v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] syntaxe:  
+ Předchozí příklad je ekvivalentní následující kód, který je napsán v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] syntaxi:  
   
  [!code-vb[VbVbalrLambdas#11](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_11.vb)]  
   
@@ -112,4 +112,4 @@ A *výrazu lambda* je funkce nebo podprogramu, který nemá název. Výraz lambd
  [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)  
  [Postupy: předání procedur jiné proceduře v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)  
  [Příkaz Delegate](../../../../visual-basic/language-reference/statements/delegate-statement.md)  
- [Úvod do LINQ v jazyku Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+ [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

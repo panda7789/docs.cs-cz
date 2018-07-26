@@ -8,36 +8,36 @@ helpviewer_keywords:
 - where clause [C#]
 ms.assetid: 7f9bf952-7744-4f91-b676-cddb55d107c3
 ms.openlocfilehash: bc040e17f5c612b9fc43a9ef24fb6f15f0942b8e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33284300"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39243991"
 ---
 # <a name="where-clause-c-reference"></a>where – klauzule (Referenční dokumentace jazyka C#)
-`where` Klauzule ve výrazu dotazu slouží k určení, které prvky ze zdroje dat bude vrácen ve výrazu dotazu. Platí Boolean podmínku (*predikát*) pro každý element source (odkazuje proměnná rozsahu) a vrátí ty, pro které je zadaná podmínka pravdivá. Výraz jeden dotaz může obsahovat více `where` klauzule a jedna klauzule může obsahovat několik predikátů podvýrazy.  
+`where` Klauzule se používá ve výrazu dotazu k určení, které elementy ze zdroje dat se vrátí ve výrazu dotazu. Použije se logická podmínka (*predikátu*) pro každý prvek zdroje (odkazuje proměnnou rozsahu) a vrátí těch, u kterých je zadaná podmínka pravdivá. Výraz jeden dotaz může obsahovat více `where` klauzule a jedna klauzule může obsahovat několik dílčích výrazů predikátu.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `where` klauzule filtruje všechna čísla kromě těch, které jsou menší než 5. Pokud odeberete `where` klauzule, všechna čísla ze zdroje dat by vrátila. Výraz `num < 5` je predikát, který se použije pro každý prvek.  
+ V následujícím příkladu `where` klauzule odfiltruje všechna čísla s výjimkou těch, které jsou méně než pět. Pokud odeberete `where` klauzule všechna čísla ve zdroji dat by vrátila. Výraz `num < 5` je predikát, který se použije na každý prvek.  
   
  [!code-csharp[cscsrefQueryKeywords#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-clause_1.cs)]  
   
 ## <a name="example"></a>Příklad  
- V rámci jednoho `where` klauzuli tolik predikáty podle potřeby můžete zadat pomocí [ && ](../../../csharp/language-reference/operators/conditional-and-operator.md) a [ &#124; &#124; ](../../../csharp/language-reference/operators/conditional-or-operator.md) operátory. V následujícím příkladu dotaz určuje dvě predikáty Chcete-li vybrat pouze sudá čísla, které jsou menší než 5.  
+ V jednom `where` klauzule, podle potřeby můžete zadat libovolný počet predikátů s použitím [ && ](../../../csharp/language-reference/operators/conditional-and-operator.md) a [ &#124; &#124; ](../../../csharp/language-reference/operators/conditional-or-operator.md) operátory. V následujícím příkladu dotaz určuje dva predikáty abyste mohli vybrat pouze sudá čísla, které jsou méně než pět.  
   
  [!code-csharp[cscsrefQueryKeywords#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-clause_2.cs)]  
   
 ## <a name="example"></a>Příklad  
- A `where` klauzule může obsahovat jednu nebo více metod, které vracejí logické hodnoty. V následujícím příkladu `where` klauzule používá k určení, zda je aktuální hodnota proměnné rozsahu popisných metody.  
+ A `where` klauzule může obsahovat jednu nebo více metod, které vracejí logické hodnoty. V následujícím příkladu `where` klauzule používá metodu k určení, zda je aktuální hodnota proměnné rozsahu sudý, nebo lichý.  
   
  [!code-csharp[cscsrefQueryKeywords#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-clause_3.cs)]  
   
 ## <a name="remarks"></a>Poznámky  
- `where` Mechanismus filtrování je klauzule. Je možné umístit téměř odkudkoli ve výrazu dotazu s výjimkou nemůže být klauzuli první nebo poslední. A `where` před nebo po, může se zobrazit klauzule [skupiny](../../../csharp/language-reference/keywords/group-clause.md) klauzule v závislosti na tom, jestli máte k filtrování zdrojové elementy před nebo po jsou seskupené.  
+ `where` Klauzule virtuálních sítí je mechanismus filtrování. To může být umístěné skoro kdekoli ve výrazu dotazu, s výjimkou nemůže být prvním nebo posledním klauzuli. A `where` klauzule může být buď před, nebo po [skupiny](../../../csharp/language-reference/keywords/group-clause.md) klauzule v závislosti na tom, zda je třeba k filtrování zdrojové prvky před nebo po jsou seskupené.  
   
- Pokud zadaným predikátem není platný pro elementy ve zdroji dat, dojde k chybě kompilace. Toto je jednou z výhod silné – kontrola typu poskytované [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].  
+ Pokud zadaný predikát není platná pro elementy ve zdroji dat, způsobí chybu kompilace. Toto je jednou z výhod silné kontroly typů poskytované [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].  
   
- Při kompilaci `where` – klíčové slovo je převeden na volání <xref:System.Linq.Enumerable.Where%2A> metoda standardní – operátor dotazu.  
+ V době kompilace `where` – klíčové slovo se převede na volání <xref:System.Linq.Enumerable.Where%2A> metody standardního operátoru dotazu.  
   
 ## <a name="see-also"></a>Viz také  
  [Klíčová slova dotazu (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)  

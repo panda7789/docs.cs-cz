@@ -7,28 +7,32 @@ f1_keywords:
 helpviewer_keywords:
 - implicit keyword [C#]
 ms.assetid: 34db590e-eb3a-4f11-88d0-ffb3cd753dab
-ms.openlocfilehash: 160d9f7c0d58abd685bf1d799b53cc96a26aebe8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c731799fd51397b2bbbb190efcec63321ebae940
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33215014"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39243732"
 ---
 # <a name="implicit-c-reference"></a>implicit (referenční dokumentace jazyka C#)
-`implicit` – Klíčové slovo se používá k deklaraci operátor implicitní uživatelsky definovaný typ. převod. Můžete povolit implicitní převody mezi uživatelem definovaný typ a jiného typu, pokud převod záruku, že nechcete mít za následek ztrátu dat.  
-  
-## <a name="example"></a>Příklad  
- [!code-csharp[csrefKeywordsConversion#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/implicit_1.cs)]  
-  
- Odstraněním nepotřebných přetypování implicitní převody zlepšit čitelnost zdrojového kódu. Ale protože implicitní převody nevyžadují programátorům explicitně přetypování z jednoho typu na druhý, musí dát pozor na zabránit neočekávané výsledky. Operátory implicitního převodu obecně by nikdy generování výjimek a nikdy dojít ke ztrátě informací, tak, aby bylo možné bezpečně bez vědomí pro programátory. Pokud operátor převodu nelze splňují tato kritéria, by měl být označen `explicit`. Další informace najdete v tématu [použití operátorů převodu](../../../csharp/programming-guide/statements-expressions-operators/using-conversion-operators.md).  
-  
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [explicit](../../../csharp/language-reference/keywords/explicit.md)  
- [Operátor (referenční dokumentace jazyka C#)](../../../csharp/language-reference/keywords/operator.md)  
- [Postupy: Implementace uživatelem definovaných převodů mezi strukturami](../../../csharp/programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)
+
+`implicit` – Klíčové slovo se používá k deklaraci implicitního uživatelem definovaného typu operátoru převodu. Pokud převod je zaručeno, že způsobit ztrátu dat, použijte ji Pokud chcete povolit implicitní převody mezi uživatelem definovaného typu a jiného typu.
+
+## <a name="example"></a>Příklad
+
+[!code-csharp[csrefKeywordsConversion#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsConversion/CS/csrefKeywordsConversion.cs#5)]
+
+Odstraněním nepotřebných přetypování implicitní převod může zlepšit čitelnost zdrojového kódu. Ale protože implicitní převody nevyžadují, aby programátoři explicitně přetypovat z jednoho typu na druhý, musí věnovat pozornost zabránit neočekávaným výsledkům. Operátory implicitního převodu by měla obecně platí, nikdy nevyvolají výjimky a tak, aby bylo možné bezpečně bez sledování serverů programátora nikdy dojít ke ztrátě informací. Pokud se operátor převodu nemůže splnění těchto kritérií, by měla být označena `explicit`. Další informace najdete v tématu [použití operátorů převodu](../../../csharp/programming-guide/statements-expressions-operators/using-conversion-operators.md).
+
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+
+## <a name="see-also"></a>Viz také:
+
+[Referenční dokumentace jazyka C#](../index.md)  
+[Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
+[Klíčová slova jazyka C#](index.md)  
+[explicit](explicit.md)  
+[– Operátor (referenční dokumentace jazyka C#)](operator.md)  
+[Postupy: Implementace uživatelem definovaných převodů mezi strukturami](../../programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)

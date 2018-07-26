@@ -8,18 +8,18 @@ helpviewer_keywords:
 - internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
 ms.openlocfilehash: d2fcc19bb7bc6de373412e7728f3025647c0435d
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
-ms.locfileid: "34172669"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37961479"
 ---
 # <a name="internal-c-reference"></a>internal (Referenční dokumentace jazyka C#)
-`internal` – Klíčové slovo je [– modifikátor přístupu](../../../csharp/language-reference/keywords/access-modifiers.md) pro různé typy a členy typu. 
+`internal` – Klíčové slovo je [modifikátor přístupu](../../../csharp/language-reference/keywords/access-modifiers.md) pro typy a členy typu. 
   
- > Tato stránka popisuje `internal` přístup. `internal` – Klíčové slovo je také součástí [ `protected internal` ](./protected-internal.md) – modifikátor přístupu.
+ > Tato stránka popisuje `internal` přístup. `internal` – Klíčové slovo je také součástí [ `protected internal` ](./protected-internal.md) modifikátor přístupu.
   
-Vnitřní typy nebo členové jsou přístupné pouze v rámci soubory ve stejném sestavení jako v následujícím příkladu:  
+Vnitřní typy nebo členy jsou přístupné jenom v souborech ve stejném sestavení, jako v následujícím příkladu:  
   
 ```csharp  
 public class BaseClass   
@@ -29,16 +29,16 @@ public class BaseClass
 }  
 ```  
 
- Porovnání `internal` s další modifikátory přístupu, přečtěte si téma [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md) a [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
+ Porovnání `internal` jiných přístupu modifikátory přístupu, najdete v článku [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md) a [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
- Další informace o sestavení najdete v tématu [sestavení a globální mezipaměť sestavení](../../../csharp/programming-guide/concepts/assemblies-gac/index.md).  
+ Další informace o sestavení, naleznete v tématu [sestavení a globální mezipaměť sestavení](../../../csharp/programming-guide/concepts/assemblies-gac/index.md).  
   
- Běžně používá interní přístupu se vývojem na základě součást, protože umožňuje skupina součástí, aby spolupracovali privátní způsobem bez zasahování přímo do zbytku kódu aplikace. Například může poskytnout architektura pro vytváření grafické uživatelské rozhraní `Control` a `Form` třídy, které spolupracují s pomocí členy s interní přístup. Vzhledem k tomu, že tito členové jsou interní, že nejsou zveřejněné kód, který používá rozhraní.  
+ Běžné použití interního přístupu je ve vývoji založených na komponentách, protože umožňuje skupina součástí privátní způsobem spolupracovat bez zasahování přímo do zbytku kódu aplikace. Například může poskytovat architekturu pro tvorbu grafické uživatelské rozhraní `Control` a `Form` třídy, které spolupracují s použitím členy mají interní přístup. Vzhledem k tomu, že tyto členy jsou interní, že nejsou zveřejněné kód, který používá rozhraní.  
   
- Jedná se o chybu tak, aby odkazovaly typ nebo člen s interní přístup mimo sestavení, ve kterém byl definován.  
+ Jedná se o chybu, chcete-li odkazovat typ nebo člen interní přístup mimo sestavení, ve kterém byl definován.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad obsahuje dva soubory, `Assembly1.cs` a `Assembly1_a.cs`. První soubor obsahuje interní základní třída, `BaseClass`. V souboru druhý pokus o vytvoření instance `BaseClass` způsobí chybu.  
+ Tento příklad obsahuje dva soubory `Assembly1.cs` a `Assembly1_a.cs`. První soubor obsahuje interní základní třída, `BaseClass`. V souboru druhý pokus o vytvoření instance `BaseClass` dojde k chybě.  
   
 ```csharp  
 // Assembly1.cs  
@@ -62,7 +62,7 @@ class TestAccess
 ```  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu použijte stejné soubory, které jste použili v příkladu 1 a změňte úroveň usnadnění `BaseClass` k `public`. Také změnit úroveň usnadnění člena `IntM` k `internal`. V takovém případě může vytvořit instanci třídy, ale nemůže přístup k interní členovi.  
+ V tomto příkladu použijte stejné soubory, které jste použili v příkladu 1 a změňte úroveň usnadnění `BaseClass` k `public`. Také změnit úroveň přístupnost člena `IntM` k `internal`. V takovém případě můžete vytvořit instanci třídy, ale k interní členu nelze přistupovat.  
   
 ```csharp  
 // Assembly2.cs  

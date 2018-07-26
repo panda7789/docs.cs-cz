@@ -1,35 +1,35 @@
 ---
-title: 'Začínáme s F # pomocí nástroje příkazového řádku'
-description: 'Naučte se vytvářet jednoduché řešení vícenásobného projektu na F # pomocí rozhraní příkazového řádku .NET Core v jakémkoliv operačním systému (Windows, systému macOs nebo Linux).'
+title: 'Začínáme s jazykem F # pomocí nástrojů příkazového řádku'
+description: 'Informace o vytvoření jednoduchého řešení vícenásobného projektu v F # s použitím rozhraní příkazového řádku .NET Core pro všechny operační systémy (Windows, macOs nebo Linux).'
 ms.date: 03/26/2018
-ms.openlocfilehash: 35ec2313742a0b14c92f3de2662a16aff389b214
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6cdb2b42781dba6ba00c03b20e6a76d033e03063
+ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33562034"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37875011"
 ---
-# <a name="get-started-with-f-with-the-net-core-cli"></a>Začínáme s F # pomocí rozhraní příkazového řádku .NET Core
+# <a name="get-started-with-f-with-the-net-core-cli"></a>Začínáme s jazykem F # pomocí rozhraní příkazového řádku .NET Core
 
-Tento článek popisuje, jak můžete začít používat v jakémkoliv operačním systému (Windows, systému macOS nebo Linux) pomocí rozhraní příkazového řádku .NET Core a F #. Projde vytváření řešení vícenásobného projektu s knihovnou tříd, která je volána konzolové aplikace.
+Tento článek popisuje, jak můžete začít s jazykem F # pro všechny operační systémy (Windows, macOS nebo Linux) pomocí rozhraní příkazového řádku .NET Core. Prochází přes vytváření řešení vícenásobného projektu knihovny tříd, která je volána pomocí konzolové aplikace.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Pokud chcete začít, musíte nainstalovat [.NET Core SDK 1.0 nebo novější](https://www.microsoft.com/net/download/). Není nutné odinstalovat předchozí verzi rozhraní .NET Core SDK, jako podporuje instalace vedle sebe.
+Pokud chcete začít, musíte nainstalovat nejnovější [.NET Core SDK](https://www.microsoft.com/net/download/).
 
-Tento článek předpokládá, že znáte postup pomocí příkazového řádku a máte upřednostňované textový editor. Pokud už nepoužíváte, [Visual Studio Code](https://code.visualstudio.com) představuje skvělou možnost jako textový editor pro F #. Chcete-li získat Super funkcí, jako je technologie IntelliSense, lepší zvýraznění syntaxe a další, můžete stáhnout [Ionide rozšíření](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp).
+Tento článek předpokládá, že znáte postup pomocí příkazového řádku a mít upřednostňovaném textovém editoru. Pokud už nepoužíváte, [Visual Studio Code](get-started-vscode.md) je skvělou možností jako textový editor jazyka F #.
 
-## <a name="build-a-simple-multi-project-solution"></a>Vytvoření jednoduché řešení vícenásobného projektu
+## <a name="build-a-simple-multi-project-solution"></a>Vytvoření jednoduchého řešení vícenásobného projektu
 
-Otevřete příkazový řádek nebo terminál a použít [dotnet nové](../../core/tools/dotnet-new.md) příkaz pro vytvoření nového souboru řešení s názvem `FSNetCore`:
+Otevřete terminál nebo příkazový řádek a použít [dotnet nové](../../core/tools/dotnet-new.md) příkazu vytvořte nový soubor řešení `FSNetCore`:
 
-```
+```console
 dotnet new sln -o FSNetCore
 ```
 
-Po spuštění předchozí příkaz vytváří následující adresářovou strukturu:
+Následující adresářovou strukturu je vytvořen po spuštění předchozího příkazu:
 
-```
+```console
 FSNetCore
     ├── FSNetCore.sln
 ```
@@ -38,15 +38,15 @@ FSNetCore
 
 Přejděte do adresáře *FSNetCore*.
 
-Použití `dotnet new` příkaz, vytvořte v projektu knihovny tříd **src** složku s názvem knihovny.
+Použití `dotnet new` příkaz, vytvořte projekt knihovny tříd v **src** složku s názvem knihovny.
 
-```
+```console
 dotnet new lib -lang F# -o src/Library
 ```
 
-Po spuštění předchozí příkaz vytváří následující adresářovou strukturu:
+Následující adresářovou strukturu je vytvořen po spuštění předchozího příkazu:
 
-```
+```console
 └── FSNetCore
     ├── FSNetCore.sln
     └── src
@@ -68,29 +68,29 @@ let getJsonNetJson value =
 
 Přidejte balíček Newtonsoft.Json NuGet do projektu knihovny.
 
-```
+```console
 dotnet add src/Library/Library.fsproj package Newtonsoft.Json
 ```
 
-Přidat `Library` projektu do `FSNetCore` řešení pomocí [dotnet SLN – přidat](../../core/tools/dotnet-sln.md) příkaz:
+Přidat `Library` projektu `FSNetCore` pomocí řešení [přidat příkaz dotnet sln](../../core/tools/dotnet-sln.md) příkaz:
 
-```
+```console
 dotnet sln add src/Library/Library.fsproj
 ```
 
-Obnovit pomocí závislostí NuGet `dotnet restore` příkazu ([viz Poznámka](#dotnet-restore-note)) a spusťte `dotnet build` a tím projekt sestavit.
+Spustit `dotnet build` k sestavení projektu. Nevyřešené závislosti se obnoví při sestavování.
 
-### <a name="write-a-console-application-that-consumes-the-class-library"></a>Zápis konzolovou aplikaci, která využívá knihovny tříd
+### <a name="write-a-console-application-that-consumes-the-class-library"></a>Napíšeme konzolovou aplikaci, která využívá knihovna tříd
 
 Použití `dotnet new` příkaz, vytvořte konzolovou aplikaci v **src** složku s názvem aplikace.
 
-```
+```console
 dotnet new console -lang F# -o src/App
 ```
 
-Po spuštění předchozí příkaz vytváří následující adresářovou strukturu:
+Následující adresářovou strukturu je vytvořen po spuštění předchozího příkazu:
 
-```
+```console
 └── FSNetCore
     ├── FSNetCore.sln
     └── src
@@ -102,7 +102,7 @@ Po spuštění předchozí příkaz vytváří následující adresářovou stru
             └── Library.fsproj
 ```
 
-Nahraďte obsah `Program.fs` soubor s následujícím kódem:
+Nahraďte obsah `Program.fs` souboru následujícím kódem:
 
 ```fsharp
 open System
@@ -119,35 +119,36 @@ let main argv =
     0 // return an integer exit code
 ```
 
-Přidat odkaz na `Library` projektu pomocí [dotnet přidat odkaz](../../core/tools/dotnet-add-reference.md).
+Přidejte odkaz na `Library` projektu pomocí [se příkaz dotnet add odkaz](../../core/tools/dotnet-add-reference.md).
 
-```
+```console
 dotnet add src/App/App.fsproj reference src/Library/Library.fsproj
 ```
 
-Přidat `App` projektu do `FSNetCore` řešení pomocí `dotnet sln add` příkaz:
+Přidat `App` projektu `FSNetCore` pomocí řešení `dotnet sln add` příkaz:
 
-```
+```console
 dotnet sln add src/App/App.fsproj
 ```
 
-Obnovte závislosti NuGet `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) a spusťte `dotnet build` a tím projekt sestavit.
+Obnovení závislostí NuGet `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) a spusťte `dotnet build` k sestavení projektu.
 
-Změnit adresář `src/App` konzole projektu a spusťte projekt předávání `Hello World` jako argumenty:
+Změňte adresář na `src/App` konzoly projektu a spusťte projekt pro předání `Hello World` jako argumenty:
 
-```
+```console
 cd src/App
 dotnet run Hello World
 ```
 
-Byste měli vidět následující výsledky:
+Zobrazí se následující výsledky:
 
-```
+```console
 Nice command-line arguments! Here's what JSON.NET has to say about them:
 
 I used to be Hello but now I'm ""Hello"" thanks to JSON.NET!
 I used to be World but now I'm ""World"" thanks to JSON.NET!
 ```
 
-<a name="dotnet-restore-note"></a>
-[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+## <a name="next-steps"></a>Další kroky
+
+V dalším kroku se podívejte [Tour F #](../tour.md) získat další informace o různých funkcí F #.

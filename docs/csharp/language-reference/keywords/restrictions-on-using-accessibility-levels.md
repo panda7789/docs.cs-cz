@@ -5,38 +5,38 @@ helpviewer_keywords:
 - access modifiers [C#], accessibility level restrictions
 ms.assetid: 987e2f22-46bf-4fea-80ee-270b9cd01045
 ms.openlocfilehash: fd2f9b11523aac1cb720559db44aa36029d52ddb
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
-ms.locfileid: "34172406"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37960902"
 ---
 # <a name="restrictions-on-using-accessibility-levels-c-reference"></a>Omezení používání úrovní přístupu (Referenční dokumentace jazyka C#)
-Když zadáte v deklaraci typu, zkontrolujte, zda usnadnění úroveň tohoto typu je závislé na úrovni přístupu člena nebo jiného typu. Například přímé základní třídu, musí být dostupné jako odvozené třídy. Následující deklarace způsobit chyby kompilátoru, protože základní třída `BaseClass` je méně přístupný než `MyClass`:  
+Při zadávání typu v deklaraci, zkontrolujte, zda úroveň přístupnost typu je závislé na úrovni přístupu člena nebo jiného typu. Například přímou základní třídu, musí být přinejmenším stejně dostupná jako odvozené třídy. Následující deklarace způsobí chybu kompilátoru, protože základní třída `BaseClass` je méně dostupný než `MyClass`:  
   
 ```csharp  
 class BaseClass {...}  
 public class MyClass: BaseClass {...} // Error  
 ```  
   
- Následující tabulka shrnuje omezení na úrovní deklarované přístupu.  
+ Následující tabulka shrnuje omezení úrovní deklarovaná přístupnost.  
   
 |Kontext|Poznámky|  
 |-------------|-------------|  
-|[Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)|Základní třídy přímé typu třídy musí být dostupné jako typ třídy.|  
-|[Rozhraní](../../../csharp/programming-guide/interfaces/index.md)|Rozhraní explicitní základní typ rozhraní musí být dostupné jako vlastní typ rozhraní.|  
-|[Delegáti](../../../csharp/programming-guide/delegates/index.md)|Návratový typ a typy parametrů typu delegáta musí být dostupné jako vlastní typ delegáta.|  
-|[Konstanty](../../../csharp/programming-guide/classes-and-structs/constants.md)|Typ konstanty musí být dostupné jako konstanta sám sebe.|  
-|[Pole](../../../csharp/programming-guide/classes-and-structs/fields.md)|Typ pole musí být dostupné jako vlastní pole.|  
-|[Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)|Návratový typ a typy parametrů metody musí být přístupné metoda sama.|  
-|[Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)|Typ vlastnosti musí být dostupné jako samotné vlastnosti.|  
-|[Události](../../../csharp/programming-guide/events/index.md)|Typ události musí být dostupné jako samotné události.|  
-|[Indexery](../../../csharp/programming-guide/indexers/index.md)|Typ a parametr typy indexer musí být dostupné jako indexeru sám sebe.|  
-|[Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)|Návratový typ a typy parametrů operátoru musí být dostupné jako operátor.|  
-|[Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)|Typy parametrů konstruktor musí být dostupné jako konstruktoru sám sebe.|  
+|[Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)|Přímou základní třídu typu třídy musí být přinejmenším stejně dostupná jako typ třídy.|  
+|[Rozhraní](../../../csharp/programming-guide/interfaces/index.md)|Explicitní základní rozhraní typu rozhraní musí být přinejmenším stejně dostupná jako samotného typu rozhraní.|  
+|[Delegáti](../../../csharp/programming-guide/delegates/index.md)|Návratový typ a typy parametrů typu delegáta musí být přinejmenším stejně dostupná jako samotného typu delegáta.|  
+|[Konstanty](../../../csharp/programming-guide/classes-and-structs/constants.md)|Typ konstanty musí být přinejmenším stejně dostupná jako konstanta samotný.|  
+|[Pole](../../../csharp/programming-guide/classes-and-structs/fields.md)|Typ pole musí být přinejmenším stejně dostupná jako vlastní pole.|  
+|[Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)|Návratový typ a typy parametrů metody musí být přinejmenším stejně dostupná jako metoda sama.|  
+|[Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)|Typ vlastnosti musí být přinejmenším stejně dostupná jako samotné vlastnosti.|  
+|[Události](../../../csharp/programming-guide/events/index.md)|Typ události musí být přinejmenším stejně dostupná jako samotné události.|  
+|[Indexery](../../../csharp/programming-guide/indexers/index.md)|Typ a parametrem typy indexer musí být přinejmenším stejně dostupná jako samotný indexeru.|  
+|[Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)|Návratový typ a typy parametrů operátoru musí být přinejmenším stejně dostupná jako operátor.|  
+|[Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)|Typy parametrů konstruktoru musí být přinejmenším stejně dostupná jako konstruktor samotný.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad obsahuje chybné deklarace různých typů. Komentář následující každá deklarace značí chybu očekávané kompilátoru.  
+ Následující příklad obsahuje chybné deklarace různých typů. Komentář po deklaraci označuje chybu kompilátoru očekávané.  
   
 ```csharp  
 // Restrictions on Using Accessibility Levels  

@@ -11,15 +11,15 @@ ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 56912e09d24fc83e93a91cc42b1d96dcc68210f2
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 9b6e01906c31316cfa8f148ed96944f309517f95
+ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32741890"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37874920"
 ---
 # <a name="ltsmtpgt-element-network-settings"></a>&lt;SMTP&gt; – Element (nastavení sítě)
-Nakonfiguruje formát doručení, metodu doručení a z adresy pro odesílání e-mailů.  
+Nastaví formát dodání, způsob dodání a adresu odesílatele pro zasílání e-mailů.  
   
  \<Konfigurace >  
 \<system.net>  
@@ -45,31 +45,31 @@ Nakonfiguruje formát doručení, metodu doručení a z adresy pro odesílání 
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`deliveryFormat`|Určuje formát doručení pro odchozí e-mailů. Přípustné hodnoty jsou SevenBit a mezinárodní.|  
-|`deliveryMethod`|Určuje metodu doručení e-mailů. Přípustné hodnoty jsou sítě, pickupDirectoryFromIis a specifiedpickupdirectory –.|  
-|`from`|Určuje z adresy pro odchozí e-mailů.|  
+|`deliveryFormat`|Určuje formát doručení odchozích e-mailů. Přípustné hodnoty jsou SevenBit a mezinárodní.|  
+|`deliveryMethod`|Určuje způsob doručení e-mailů. Přípustné hodnoty jsou síť, PickupDirectoryFromIis a SpecifiedPickupDirectory.|  
+|`from`|Určuje, adresu od pro odchozí e-maily.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`specifiedPickupDirectory`|Nakonfiguruje místní adresář pro přenos protokolu SMTP (Simple Mail) serveru.|  
-|`network`|Nakonfiguruje možnosti sítě pro externí server SMTP.|  
+|`specifiedPickupDirectory`|Konfiguruje místní adresář pro server Simple Mail Transport Protocol (SMTP).|  
+|`network`|Konfiguruje možnosti sítě pro externí server SMTP.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**– Element**|**Popis**|  
 |-----------------|---------------------|  
-|[\<mailSettings – > elementu (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|Nakonfiguruje možnosti odesílání e-mailu.|  
+|[\<mailSettings – > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|Konfiguruje možnosti pro odesílání pošty.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad určuje vhodné parametry SMTP pro odeslání e-mailu pomocí výchozích pověření sítě.  
+ Následující příklad určuje příslušné parametry protokolu SMTP k odesílání e-mailů pomocí výchozích síťových přihlašovacích údajů.  
   
 ```xml  
 <configuration>  
   <system.net>  
     <mailSettings>  
-      <smtp deliveryMethod="network" deliveryFormat="SevenBit"  from="ben@contoso.com">  
+      <smtp deliveryMethod="Network" deliveryFormat="SevenBit"  from="ben@contoso.com">  
         <network  
           host="localhost"  
           port="25"  

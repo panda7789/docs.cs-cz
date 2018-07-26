@@ -3,42 +3,42 @@ title: 'Návod: Vložení informací o typu ze sestavení sady Microsoft Office 
 ms.date: 07/20/2015
 ms.assetid: 26b44286-5066-4ad4-8e6a-c24902be347c
 ms.openlocfilehash: 6a28e95f9c3cfcc2481c8f4f9f83303648df43cd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643819"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244045"
 ---
 # <a name="walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-visual-studio-visual-basic"></a>Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (Visual Basic)
-Pokud vložit informace typu v aplikaci, která odkazuje na objekty modelu COM, můžete eliminovat potřebu primární spolupracující sestavení (PIA). Informace o vložených typu navíc umožňuje dosáhnout nezávislost verze pro vaši aplikaci. To znamená váš program může být napsán používat typy z více verzí knihovny COM bez nutnosti konkrétní PIA – pro každou verzi. Toto je běžný scénář pro aplikace, které používají objekty z knihovny Microsoft Office. Vložení informací o typu umožňuje ve stejném sestavení programu pro práci s různými verzemi nástroje Microsoft Office na různých počítačích bez nutnosti znovu nasaďte program nebo PIA – pro každou verzi systému Microsoft Office.  
+Je-li vložit informace o typu v aplikaci, která odkazuje na objekty modelu COM, můžete vyloučit potřebu primárního sestavení interop (PIA). Kromě toho informace o typu embedded vám umožní dosáhnout nezávislosti na verzi pro vaši aplikaci. To znamená váš program může zapisovat používat typy z více verzí knihovny COM bez nutnosti zvláštního PIA pro každou verzi. Toto je běžný scénář pro aplikace, které používají objekty z knihoven Microsoft Office. Vložení informací o typu umožňuje jednomu sestavení programu pracovat s různými verzemi sady Microsoft Office na různých počítačích bez nutnosti znovu nasazovat program nebo PIA pro každou verzi sady Microsoft Office.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ## <a name="prerequisites"></a>Požadavky  
  Tento postup vyžaduje následující:  
   
--   Počítač, na kterém jsou nainstalované sady Visual Studio a aplikaci Microsoft Excel.  
+-   Počítač, na kterém je nainstalováno Visual Studio a Microsoft Excelu.  
   
--   Druhý počítač, na kterém jsou nainstalované rozhraní .NET Framework 4 nebo vyšší a jinou verzi aplikace Excel.  
+-   Druhý počítač, na kterém je nainstalováno rozhraní .NET Framework 4 nebo vyšší a jinou verzi aplikace Excel.  
   
-##  <a name="BKMK_createapp"></a> Chcete-li vytvořit aplikaci, která funguje s více verzemi systému Microsoft Office  
+##  <a name="BKMK_createapp"></a> Chcete-li vytvořit aplikaci, která pracuje s více verzemi sady Microsoft Office  
   
-1.  Spuštění sady Visual Studio v počítači, na kterém je nainstalována aplikace Excel.  
+1.  Spusťte sadu Visual Studio na počítači, na kterém je nainstalována aplikace Excel.  
   
-2.  Na **soubor** nabídce zvolte **nový**, **projektu**.  
+2.  Na **souboru** nabídce zvolte **nový**, **projektu**.  
   
-3.  V **nový projekt** dialogovém **typy projektů** podokně, ujistěte se, že **Windows** je vybrána. Vyberte **konzolové aplikace** v **šablony** podokně. V **název** zadejte `CreateExcelWorkbook`a potom zvolte **OK** tlačítko. Vytvoření nového projektu.  
+3.  V **nový projekt** v dialogu **typy projektů** podokno, ujistěte se, že **Windows** zaškrtnuto. Vyberte **konzolovou aplikaci** v **šablony** podokně. V **název** zadejte `CreateExcelWorkbook`a klikněte na tlačítko **OK** tlačítko. Vytvoření nového projektu.  
   
-4.  Otevřete místní nabídky projektu CreateExcelWorkbook a zvolte **vlastnosti**. Vyberte **odkazy** kartě. Vyberte **přidat** tlačítko.  
+4.  Otevřete místní nabídku pro projekt CreateExcelWorkbook a pak zvolte **vlastnosti**. Zvolte **odkazy** kartu. Zvolte **přidat** tlačítko.  
   
-5.  Na **.NET** , zvolte nejnovější verzi `Microsoft.Office.Interop.Excel`. Například **Microsoft.Office.Interop.Excel 14.0.0.0**. Vyberte **OK** tlačítko.  
+5.  Na **.NET** kartu, zvolte nejnovější verzi `Microsoft.Office.Interop.Excel`. Například **Microsoft.Office.Interop.Excel 14.0.0.0**. Zvolte **OK** tlačítko.  
   
-6.  V seznamu odkazů pro **CreateExcelWorkbook** projekt, vyberte odkaz pro `Microsoft.Office.Interop.Excel` kterou jste přidali v předchozím kroku. V **vlastnosti** okna, ujistěte se, že `Embed Interop Types` je nastavena na `True`.  
+6.  V seznamu odkazů pro **CreateExcelWorkbook** projektu, vyberte odkaz pro `Microsoft.Office.Interop.Excel` , který jste přidali v předchozím kroku. V **vlastnosti** okno, ujistěte se, že `Embed Interop Types` je nastavena na `True`.  
   
     > [!NOTE]
-    >  Z důvodu informace o vložených zprostředkovatele komunikace s objekty typu spuštění aplikace vytvořené v tomto návodu s různými verzemi nástroje Microsoft Office. Pokud `Embed Interop Types` je nastavena na `False`, je nutné zahrnout PIA – pro každou verzi systému Microsoft Office, které aplikace poběží s.  
+    >  Aplikace vytvořené v tomto názorném postupu se spouští s různými verzemi sady Microsoft Office z důvodu informace o vloženém typu spolupráce. Pokud `Embed Interop Types` je nastavena na `False`, musíte zahrnout PIA pro každou verzi sady Microsoft Office, která bude aplikace spuštěna s.  
   
-7.  Otevřete soubor Module1.vb. Nahraďte kód v souboru s následujícím kódem:  
+7.  Otevřete soubor Module1.vb. Nahraďte kód v souboru následujícím kódem:  
   
     ```vb  
     Imports Excel = Microsoft.Office.Interop.Excel  
@@ -95,20 +95,20 @@ Pokud vložit informace typu v aplikaci, která odkazuje na objekty modelu COM, 
   
 8.  Uložte projekt.  
   
-9. Stisknutím klávesy CTRL + F5 sestavit a spustit projekt. Ověřte, že sešit aplikace Excel byl vytvořen v umístění zadaném v ukázkový kód: C:\SampleFolder\SampleWorkbook.xls.  
+9. Stisknutím kláves CTRL + F5 sestavte a spusťte projekt. Ověřte, zda byl vytvořen sešit aplikace Excel v umístění zadaném v příkladu kódu: C:\SampleFolder\SampleWorkbook.xls.  
   
-##  <a name="BKMK_publishapp"></a> Publikování aplikace do počítače, na kterém je nainstalovaná jiná verze systému Microsoft Office  
+##  <a name="BKMK_publishapp"></a> K publikování aplikace na počítači, na kterém je nainstalovaná jiná verze systému Microsoft Office  
   
-1.  Otevřete projekt vytvořené tento návod v sadě Visual Studio.  
+1.  Otevřete projekt vytvořený v rámci tohoto návodu v sadě Visual Studio.  
   
-2.  Na **sestavení** nabídce zvolte **publikování CreateExcelWorkbook**. Postupujte podle kroků v Průvodci publikováním vytvořit instalovatelných verzi aplikace. Další informace najdete v tématu [Průvodci publikováním (vývoj pro Office v sadě Visual Studio)](https://msdn.microsoft.com/library/bb625071).  
+2.  Na **sestavení** nabídce zvolte **publikovat CreateExcelWorkbook**. Postupujte podle kroků v Průvodci publikováním vytvoření instalovatelnou verzi aplikace. Další informace najdete v tématu [Průvodce publikováním (vývoj pro Office v sadě Visual Studio)](https://msdn.microsoft.com/library/bb625071).  
   
-3.  Nainstalujte aplikaci na počítač, na kterém jsou nainstalované rozhraní .NET Framework 4 nebo vyšší a jinou verzi aplikace Excel.  
+3.  Nainstalujte aplikace na počítači, na kterém je nainstalováno rozhraní .NET Framework 4 nebo vyšší a jinou verzi aplikace Excel.  
   
 4.  Po dokončení instalace spusťte nainstalovaný program.  
   
-5.  Ověřit, že sešit aplikace Excel byl vytvořen v umístění zadaném v ukázkovém kódu: C:\SampleFolder\SampleWorkbook.xls.  
+5.  Ověřte, zda byl vytvořen sešit aplikace Excel v umístění zadaném ve vzorovém kódu: C:\SampleFolder\SampleWorkbook.xls.  
   
 ## <a name="see-also"></a>Viz také  
- [Návod: Vložení typů z řízených sestavení v sadě Visual Studio (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md)  
+ [Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md)  
  [/ Link (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/link.md)

@@ -1,76 +1,113 @@
 ---
-title: Architekti moderních webových aplikací pomocí ASP.NET Core a Azure
-description: Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | Úvod
+title: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
+description: Průvodce, který obsahuje pokyny k začátku do konce vytváření monolitické webových aplikací pomocí ASP.NET Core a Azure.
 author: ardalis
 ms.author: wiwagn
-ms.date: 10/06/2017
-ms.openlocfilehash: 085ec85002fc1661d6e20b3c3f11cf4b6ea2161b
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 06/28/2018
+ms.openlocfilehash: e2d2545108b55043c322baffbd609b2422d2743b
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37103916"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37936981"
 ---
-# <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Architekti moderních webových aplikací pomocí ASP.NET Core a Azure
+# <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
 
-![Obrázek titulní](./media/cover.jpg)
+![titulní obrázek](./media/cover.png)
 
+PUBLIKOVAL(A)
 
-.NET core a ASP.NET Core nabízí několik výhod oproti tradičním .NET – vývoj. .NET Core byste měli použít pro serverové aplikace, pokud některé nebo všechny z následujících akcí, které jsou důležité pro úspěch vaší aplikace:
+Microsoft Developer Division, .NET a Visual Studio produktových týmů
 
--   Podpora více platforem
+Divize Microsoft Corporation.
 
--   Použití mikroslužeb
+One Microsoft Way
 
--   Použití kontejnerů Docker
+Redmond, Washington 98052-6399
 
--   Vysoký výkon a škálovatelnost požadavky
+Copyright © 2018 Microsoft Corporation
 
--   Souběžně sdílená verze rozhraní .NET verze aplikace na stejném serveru
+Všechna práva vyhrazena. Žádná část obsahu této knihy může reprodukovat nebo v libovolné formě nebo jakýmikoli prostředky bez písemného souhlasu vydavatele.
 
-Tradiční aplikace .NET může a proveďte podporu těchto požadavků, ale jsou optimalizované ASP.NET Core a .NET Core nabízí vylepšenou podporu pro výše uvedené scénáře.
+Tato kniha je k dispozici "jako-je" a vyjadřuje zobrazení autora a názory. Zobrazení, názory a informace v této knize, včetně adres URL a jiných odkazů na internetové weby, mohou změnit bez předchozího upozornění.
 
-Organizace více výběru pro hostování své webové aplikace v cloudu pomocí služby, jako je Microsoft Azure. Měli byste zvážit hostování vaší aplikace v cloudu, pokud tady jsou důležité pro vaše aplikace nebo organizace:
+Některé zde uvedené příklady jsou k dispozici pouze pro ilustraci a jsou smyšlené. Žádný skutečný vztah nebo spojení ani je určena ji vyvozovat.
 
--   Snížené investice do datového centra náklady (hardwaru, softwaru, místo, nástroje atd.)
+Microsoft a ochranné známky uvedený na https://www.microsoft.com na webové stránce "Ochranné známky" jsou obchodní známky společností skupiny Microsoft.
 
--   Flexibilní ceny (platím na základě využití, ne pro nečinnosti kapacity)
+Mac a macOS jsou ochranné známky společnosti Apple Inc.
 
--   Extrémně spolehlivosti
+Velryba logo Dockeru je registrovaná ochranná známka společnosti Docker, Inc. Použít oprávnění.
 
--   Vylepšené aplikace mobility; snadno změnit kde a jak vaše aplikace je nasazená
+Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.
 
--   Flexibilní kapacity; škálování směrem nahoru nebo dolů na základě skutečné požadavky
+Autor:
 
-Vytváření webových aplikací pomocí ASP.NET Core, hostované ve službě Microsoft Azure nabízí řadu výhod konkurenční přes tradiční alternativy. ASP.NET Core je optimalizovaná pro postupy vývoj moderních webových aplikací a na cloudový hosting scénáře. V tomto průvodci se dozvíte, jak do architektury aplikace ASP.NET Core nejlépe využít těchto funkcí.
+> **Steve Smith (@ardalis)**, Poradce pro architekturu softwaru, [Ardalis.com](https://ardalis.com)
+
+Editory:
+
+> **Maira Wenzel**
+
+## <a name="introduction"></a>Úvod
+
+.NET core a ASP.NET Core nabízí několik výhod oproti tradičním vývoj na platformě .NET. Pokud některé nebo všechny z následujících akcí, které jsou důležité pro úspěch vaší aplikace byste měli používat .NET Core pro serverové aplikace:
+
+- Podpora víc platforem.
+
+- Používání mikroslužeb.
+
+- Použití kontejnerů Dockeru.
+
+- Vysoké požadavky na výkon a škálovatelnost.
+
+- Správa verzí vedle sebe verzí rozhraní .NET v aplikaci na stejném serveru.
+
+Tradiční aplikace rozhraní .NET můžete a dělat vyhovění těmto požadavkům, ale v ASP.NET Core a .NET Core byly optimalizovány a nabídnout Vylepšená podpora pro výše zmíněné situace umožnili.
+
+Více organizací volí k hostování webových aplikací v cloudu pomocí služeb, jako je Microsoft Azure. Měli byste zvážit hostování vaší aplikace v cloudu, pokud tady jsou důležité pro vaše aplikace nebo organizace:
+
+- Snížení investice do datového centra náklady (hardware, software, místa, nástroje atd.)
+
+- Flexibilní ceny (placené podle používání, ne za nevyužitou kapacitu).
+
+- Extrémní spolehlivost.
+
+- Vylepšené aplikace mobility; snadno změnit, kde a jak je aplikace nasazená.
+
+- Flexibilní kapacity; vertikálně navyšovat nebo snižovat podle skutečných potřeb.
+
+Vytváření webových aplikací pomocí ASP.NET Core, hostované v Azure, nabízí mnoho konkurenční výhody oproti tradičním alternativy. ASP.NET Core je optimalizovaná pro postupy vývoje moderních webových aplikací a cloudových scénářích hostování. V této příručce se dozvíte, jak navrhovat aplikace ASP.NET Core nejlíp využít tyto možnosti.
 
 ## <a name="purpose"></a>Účel
 
-Tato příručka obsahuje pokyny začátku do konce k vytváření monolitický webových aplikací pomocí ASP.NET Core a Azure.
+Tato příručka obsahuje pokyny k začátku do konce vytváření monolitické webových aplikací pomocí ASP.NET Core a Azure.
 
-Tato příručka je doplňkem k "*Architecting a vývoj Kontejnerizované a na základě Mikroslužbu aplikace pomocí rozhraní .NET*" která se zaměřuje další na Docker, Mikroslužeb a nasazení kontejnerů do firemní sítě hostitele aplikace.
+Tento průvodce je pouze doplnění ["_Mikroslužby .NET. Architektura pro Kontejnerizovaných aplikací .NET_"](../microservices-architecture/index.md) který se zaměřuje další on Docker, Mikroslužby a nasazení kontejnerů pro hostování podnikových aplikací.
 
-> ### <a name="architecting-and-developing-containerized-microservice-based-apps-in-net"></a>Architektury a vývoj Kontejnerizované Mikroslužbu na základě aplikací v rozhraní .NET
-> - **elektronická kniha**  
-> <http://aka.ms/MicroservicesEbook>
-> - **Ukázkové aplikace**  
-> <http://aka.ms/microservicesarchitecture>
+### <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET. Architektura pro Kontejnerizované aplikace .NET
 
-## <a name="who-should-use-this-guide"></a>Tato příručka, kdo by měl používat
+- **(elektronická kniha)**  
+  <https://aka.ms/MicroservicesEbook>
+- **Ukázkové aplikace**  
+  <https://aka.ms/microservicesarchitecture>
 
-Cílovou skupinu tohoto průvodce je především vývojáře, zájemců vývoj a architektům, kteří mají zájem o vytváření moderních webových aplikací pomocí Microsoft technologií a služeb v cloudu.
+## <a name="who-should-use-this-guide"></a>Kdo by měl používat tohoto průvodce
 
-Sekundární cílové skupiny je technické vedoucím pracovníkům, kteří jsou již obeznámeni ASP.NET nebo Azure a hledáte informace o tom, jestli má smysl pro upgrade na ASP.NET Core pro nové nebo existující projekty.
+Cílovou skupinu tohoto průvodce je především vývojáře, vedoucími vývoje a architektů, kteří mají zájem o vývoj moderních webových aplikací pomocí Microsoft technologie a služby v cloudu.
 
-## <a name="how-you-can-use-this-guide"></a>Použití této příručce
+Sekundární skupina jsou technické pracovníky s rozhodovací pravomocí, kteří jsou již známé technologie ASP.NET nebo v Azure a hledáte informace o tom, zda má smysl pro upgrade na technologie ASP.NET Core pro nové nebo existující projekty.
 
-Tato příručka obsahuje byla vyjádřit těmito poměrně malý dokument, který se zaměřuje na tvorbu webových aplikací s moderním technologie .NET a systému Windows Azure. Jako takový ho můžete přečíst v celé jeho šíři poskytnout základní principy tyto aplikace a jejich technické aspekty. V průvodci, společně s ukázkovou aplikaci, může taky sloužit jako výchozí bod nebo odkaz. Pomocí aplikace přidružené sample jako šablona pro vaše vlastní aplikace nebo zjistit, jak můžete organizovat součásti vaší aplikace. Při odkazovat zpět v Průvodci principy a pokrytí architektura a možnosti technologií a rozhodnutí vážení tyto možnosti pro vlastní aplikaci.
+## <a name="how-you-can-use-this-guide"></a>Použití tohoto průvodce
 
-Nebojte se, že předávání této příručce si s týmem k zajištění výklad tyto požadavky a možnosti. Má každý uživatel práce z společnou sadu terminologie a základních zásad vám pomůže zajistit konzistentní použití architektury vzory a postupy.
+Tato příručka obsahuje byla zhušťovat do poměrně málo početnému dokumentu, který se zaměřuje na tvorbu webových aplikací s moderní technologie .NET a Windows Azure. V důsledku toho může být číst v celém rozsahu na poskytují základní principy těchto aplikací a jejich technické aspekty. V průvodci, spolu s ukázkovou aplikaci, může sloužit také jako výchozí bod nebo odkaz. Použijte související ukázkové aplikace jako šablonu pro vaše vlastní aplikace, nebo můžete zobrazit, jak můžete organizovat součásti vaší aplikace. Při odkazovat zpět v Průvodci principy a pokrytí architektury a možnosti technologií a důležité informace o rozhodnutí při vážení tyto možnosti pro svoji vlastní aplikaci.
+
+Můžete dál v této příručce k vašemu týmu pomoct zajistit, aby tyto aspekty a příležitosti. S Vystoupením práce z společnou sadu terminologie a základní principy pomáhá zajistit konzistentní použití architektury vzory a postupy.
 
 ## <a name="references"></a>Odkazy
+
 - **Volba mezi .NET Core a .NET Framework pro serverové aplikace**  
-<https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server>
+  <https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server>
 
 >[!div class="step-by-step"]
 [Next](modern-web-applications-characteristics.md)

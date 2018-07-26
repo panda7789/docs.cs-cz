@@ -1,29 +1,29 @@
 ## <a name="installation-instructions"></a>Pokyny k instalaci 
 
-Existují dva různé způsoby jak najít **SDK pro platformu .NET kompilátoru** v **instalační program Visual Studio**:
+Existují dva různé způsoby, jak najít **sada SDK platformy kompilátoru .NET** v **instalační program sady Visual Studio**:
 
 ### <a name="install-using-the-workloads-view"></a>Instalace pomocí zobrazení úloh
 
-.NET SDK platformy kompilátoru není automaticky vybrán jako součást úlohy vývoj rozšíření sady Visual Studio. Je třeba vybrat jako volitelnou součást.
+Sada SDK platformy kompilátoru .NET nebude automaticky označen jako součást sady funkcí vývoj rozšíření sady Visual Studio. Je třeba vybrat jako volitelnou komponentu.
 
 1. Spustit **instalační program sady Visual Studio** 
 1. Vyberte **upravit** 
-1. Zkontrolujte **vývoj rozšíření pro Visual Studio** zatížení.
-1. Otevřete **vývoj rozšíření pro Visual Studio** uzel ve stromu souhrnu.
-1. Zaškrtněte políčko pro **SDK pro platformu .NET kompilátoru**. Najdete ho poslední pod volitelné součásti.
+1. Zkontrolujte, **vývoj rozšíření sady Visual Studio** pracovního vytížení.
+1. Otevřít **vývoj rozšíření sady Visual Studio** uzel ve stromu souhrnu.
+1. Zaškrtněte políčko u **sada SDK platformy kompilátoru .NET**. Najdete ho naposledy pod volitelné součásti.
 
-Volitelně můžete také budete muset **DGML editor** zobrazit grafy v vizualizér:
+V případě potřeby je také vhodné **DGML editor** zobrazit grafy ve vizualizátoru:
 
-1. Otevřete **jednotlivých součástí** uzel ve stromu souhrnu.
-1. Zaškrtněte políčko pro **DGML editoru**
+1. Otevřít **jednotlivé komponenty** uzel ve stromu souhrnu.
+1. Zaškrtněte políčko u **DGML editor**
 
-### <a name="install-using-the-individual-components-tab"></a>Instalace s kartě jednotlivých součástí
+### <a name="install-using-the-individual-components-tab"></a>Instalace na kartě jednotlivé komponenty
 
 1. Spustit **instalační program sady Visual Studio** 
 1. Vyberte **upravit** 
-1. Vyberte **jednotlivých součástí** karta 
-1. Zaškrtněte políčko pro **SDK pro platformu .NET kompilátoru**. Najdete v horní části v rámci **kompilátory, sestavení nástroje a moduly runtime** části.
+1. Vyberte **jednotlivé komponenty** kartu 
+1. Zaškrtněte políčko u **sada SDK platformy kompilátoru .NET**. Najdete v horní části stránky v části **sestavení kompilátory, nástroje a moduly runtime** oddílu.
 
-Volitelně můžete také budete muset **DGML editor** zobrazit grafy v vizualizér:
+V případě potřeby je také vhodné **DGML editor** zobrazit grafy ve vizualizátoru:
 
-1. Zaškrtněte políčko pro **DGML editor**. Najdete je v části **Code nástroje** části.
+1. Zaškrtněte políčko u **DGML editor**. Najdete ho pod **kódu nástroje** oddílu.

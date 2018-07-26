@@ -1,80 +1,80 @@
 ---
-title: Charakteristika moderních webových aplikací
-description: Architektury moderních webových aplikací pomocí ASP.NET Core a Azure | charakteristika moderních webových aplikací
+title: Vlastnosti moderních webových aplikací
+description: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure | Vlastnosti moderních webových aplikací
 author: ardalis
 ms.author: wiwagn
-ms.date: 10/06/2017
-ms.openlocfilehash: cc4493bf8e45c41a94e8e6f719318b14ad5b05f1
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 06/28/2018
+ms.openlocfilehash: 4c73ab59148325f66d3ee17db3fb78d397b73f15
+ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105804"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37404483"
 ---
-# <a name="characteristics-of-modern-web-applications"></a>Charakteristika moderních webových aplikací
+# <a name="characteristics-of-modern-web-applications"></a>Vlastnosti moderních webových aplikací
 
-> "… v návrhu správné funkce levné pocházet. Tento přístup je náročnou, ale stále úspěšná."  
+> "… u správné návrhu levně vytvářet funkce. Tento přístup je namáhavý, ale stále úspěšný."  
 > _\- Dennis Ritchie_
 
-## <a name="summary"></a>Souhrn
+Moderní webové aplikace mají vyšší očekávání uživatele a větší nároky než kdy dřív. Dnešní webové aplikace se očekává dostupná 24 hodin denně, 7 z kdekoli ve světě a použít z libovolného zařízení, nebo se velikost obrazovky. Webové aplikace musí být zabezpečené, flexibilní a škálovatelnost, aby splňovalo špičky v poptávce. Komplexní scénáře stále, měla by ji zpracovat bohaté možnosti uživatelského prostředí založená na straně klienta pomocí JavaScriptu a efektivně komunikují prostřednictvím webových rozhraní API.
 
-Moderních webových aplikací mít vyšší očekávání uživatele a větší nároky na než kdy dřív. Dnešní webové aplikace se měl být k dispozici 24 hodin denně 7 z kdekoliv ve světě a dá se použít z libovolného zařízení nebo velikost obrazovky. Webové aplikace musí být zabezpečené, flexibilní a škálovatelné pro splnění požadavků na špičky. Komplexní scénáře stále, měla by ji zpracovat bohaté uživatelského prostředí, které jsou vytvořené na straně klienta pomocí jazyka JavaScript a efektivně komunikaci prostřednictvím webových rozhraní API.
+ASP.NET Core je optimalizované pro moderní webové aplikace a cloudové scénáře hostingu. Jeho modulárního návrhu umožňuje aplikacím závisí na pouze funkce, které skutečně používají, zlepšuje výkon a snižuje nutnost hostování požadavky na prostředky a zabezpečení aplikace.
 
-ASP.NET Core je optimalizovaná pro moderní webové aplikace a scénáře hostingu cloudu. Modulární návrh umožňuje aplikacím závisí na jenom ty funkce, které ve skutečnosti používají, vylepšení zabezpečení aplikací a výkonu při současném snížení hostování požadavky na prostředky.
+## <a name="reference-application-eshoponweb"></a>Odkaz aplikace: eShopOnWeb
 
-## <a name="reference-application-eshoponweb"></a>Referenční aplikace: eShopOnWeb
-
-V tomto návodu obsahuje odkaz na aplikaci, *eShopOnWeb*, který ukazuje některé principy a doporučení. Aplikace je jednoduchý online úložiště, které podporuje projdete katalog košile, hrnky kávy a další marketing položky. Odkaz na aplikaci je záměrně jednoduchá, aby bylo možné snadno pochopit.
+Tento návod obsahuje odkaz na aplikaci, _eShopOnWeb_, který ukazuje některé principy a doporučení. Aplikace je jednoduchá online obchod, který podporuje procházení katalogu košile, hrnky kávy a dalších marketingových položek. Referenční aplikace je záměrně jednoduchý, aby bylo možné je snadno pochopitelný.
 
 **Obrázek 2-1.** eShopOnWeb
 
 ![](./media/image2-1.png)
 
 > ### <a name="reference-application"></a>Odkaz na aplikaci
+>
 > - **eShopOnWeb**  
-> <https://github.com/dotnet/eShopOnWeb>
+>   <https://github.com/dotnet/eShopOnWeb>
 
-## <a name="cloud-hosted-and-scalable"></a>Hostovaných v cloudu a škálovatelné
+## <a name="cloud-hosted-and-scalable"></a>Hostované v cloudu a škálovatelné
 
-ASP.NET Core je optimalizovaná pro cloudu (veřejný cloud, privátního cloudu, žádné cloudu), protože se jedná o nedostatku paměti a vysokou propustností. Menší nároky na aplikace ASP.NET Core znamená můžete hostovat některých z nich na stejném hardwaru a platíte za méně prostředků při použití platím jako můžete přejít cloudových hostitelských služeb. Vyšší propustnost znamená, že může sloužit více zákazníků z aplikace, zadaný stejný hardware, dále snižuje potřeba investovat do servery a hostování infrastrukturu.
+ASP.NET Core je optimalizováno pro cloudové prostředí (veřejném cloudu, privátního cloudu, libovolný cloud), protože se jedná o nedostatku paměti a vysokou propustností. Menší nároky na místo aplikací ASP.NET Core znamená, že může hostovat více z nich na stejném hardwaru, a platíte za méně prostředků, pokud platit jako můžete pomocí cloudu, který je hostitelem služby. Vyšší propustnost znamená, že může sloužit více zákazníků z aplikace zadaný stejný hardware, což dále snižuje potřebu s investicemi v serverech a infrastruktury hostování.
 
 ## <a name="cross-platform"></a>Různé platformy
 
-ASP.NET Core je napříč platformami a můžete spustit na Linux a systému MacOS, jakož i Windows. Otevře se mnoho nové možnosti pro vývoj a nasazení aplikace vytvořené s ASP.NET Core. Docker kontejnery, které obvykle běží Linux dnes, může hostovat aplikace ASP.NET Core, což jim umožní využívat výhody [kontejnery a mikroslužeb](../microservices-architecture/index.md).
+ASP.NET Core je multiplatformní a můžete spustit na Linuxu a MacOS, jakož i Windows. Otevře spousta nových možností pro vývoj a nasazení aplikace vytvořené pomocí ASP.NET Core. Kontejnery dockeru, které zpravidla běží Linux ještě dnes, můžete hostovat aplikace ASP.NET Core, což jim umožní využít výhody [kontejnery a mikroslužby](../microservices-architecture/index.md).
 
-## <a name="modular-and-loosely-coupled"></a>Modulární a volně párované
+## <a name="modular-and-loosely-coupled"></a>Modulární a volně svázané
 
-Balíčky NuGet jsou prvotřídní občanů v .NET Core a ASP.NET Core aplikace se skládají z mnoha knihovny prostřednictvím balíčku NuGet. Tato členitost funkce pomáhá zajistit pouze závisí na aplikace a nasazení funkce, kterou ve skutečnosti vyžadují, snižuje jejich nároky a zabezpečení ohrožení zabezpečení útoku.
+Balíčky NuGet jsou prvotřídní občanům v .NET Core a aplikace ASP.NET Core se skládají z mnoha knihoven prostřednictvím balíčku NuGet. Členitost tato funkce pomáhá zajistit pouze závisí na aplikace a nasazení funkce, které skutečně potřebují, omezení jejich nároky na místo a zabezpečení ohrožení zabezpečení plochy.
 
-Jádro ASP.NET také plně podporuje vkládání závislostí interně i na úrovni aplikace. Rozhraní může mít několik implementací, které můžete odložit podle potřeby. Vkládání závislostí umožňuje aplikacím volně několika do těchto rozhraní je snadněji rozšířit, udržovat a testování.
+ASP.NET Core také podporuje vkládání závislostí interně i na úrovni aplikace. Rozhraní může mít několik implementací, které mohou být odloženy podle potřeby. Injektáž závislostí umožňuje aplikacím několik volně do těchto rozhraní, takže se jednodušeji rozšířit, údržbu a testování.
 
-## <a name="easily-tested-with-automated-tests"></a>Snadno testovány s automatizované testy
+## <a name="easily-tested-with-automated-tests"></a>Snadno testovat pomocí automatizovaných testů
 
-Aplikace ASP.NET Core podporují testování částí a jejich volné párování a podpora pro závislosti injekce usnadňuje Prohodit riziko z hlediska infrastruktury s falešných implementace pro účely testování. ASP.NET Core také dodává TestServer, který slouží k hostiteli aplikace v paměti. Funkčních testů můžete pak zkontrolujte požadavky na tento server v paměti výkonu zásobník úplné aplikací (včetně middleware, směrování, model vazby, filtry, atd.) a získat odpověď, všechny za zlomek času by byly třeba k hostování aplikace na skutečné serveru a provádět požadavky prostřednictvím síťovou vrstvou. Tyto testy jsou obzvláště snadno k zápisu a cenné pro rozhraní API, která jsou stále důležité v moderních webových aplikací.
+Podpora aplikací ASP.NET Core pro testování částí a jejich volné párování a podpory pro závislost injektáže umožňuje snadno přepínat starostí o infrastrukturu s falešnou implementace pro účely testování. ASP.NET Core se také dodává TestServer, který slouží k hostování aplikací v paměti. Funkční testy lze pak proveďte požadavky na tento server v paměti, výkonu zásobníku celou aplikaci (včetně middleware, směrování, model vazby, filtry atd.) a získat odpověď, všechny za zlomek času by to obnášelo pro hostování aplikace skutečný serveru a vytvářet požadavky přes síťové vrstvy. Tyto testy jsou obzvláště usnadňují zápis a cenné pro rozhraní API, které jsou nabývá na důležitosti v moderních webových aplikací.
 
-## <a name="traditional-and-spa-behaviors-supported"></a>Tradiční a chování SPA podporováno
+## <a name="traditional-and-spa-behaviors-supported"></a>Tradiční i SPA chování podporována
 
-Tradiční webových aplikací mít podílejí málo chování klienta, ale místo toho máte spoléhali na serveru pro navigaci, dotazů a aktualizace, které aplikace může být nutné provést. Každé nové operace provedené uživatelem by přeložit na webový požadavek, výsledkem je načtěte celou stránku v prohlížeči koncového uživatele. Classic architektury Model-View-Controller (MVC) stejný přístup, obvykle s každý nový požadavek na odpovídající jiný řadič akce, který pak bude pracovat s modelem a vrátit zobrazení. Některé jednotlivých operací na danou stránku může být rozšířené o funkci AJAX (asynchronní JavaScript a XML), ale přehled architektury aplikace používá mnoho různých zobrazení MVC a adresy URL koncových bodů.
+Tradiční webových aplikací zahrnovaly trochu chování na straně klienta, ale místo toho mají spoléhal na serveru pro navigaci, dotazů a aktualizace, které aplikace může být nutné provést. Každé nové operace provedené uživatelem by byl přeložen do webového požadavku, s výsledkem se znova načíst celou stránku v prohlížeči koncového uživatele. Klasické architektury Model-View-Controller (MVC) obvykle použijte tento přístup se každý nový požadavek na odpovídající akce jiný kontroler, který pak bude pracovat s modelem a vrátit zobrazení. Některé jednotlivé operace na dané stránce může rozšířeného s funkcí AJAX (asynchronní JavaScript a XML), ale architektury aplikace používá mnoho různých zobrazení MVC a koncové body adres URL.
 
-Jednostránkové aplikace (SPA), naopak zahrnovat velmi málo načtení dynamicky generovaném stránky na straně serveru (pokud existuje). Mnoho SPA jsou inicializovány v rámci statický soubor HTML, který načte potřebné knihovny JavaScript spuštění a spuštění aplikace. Tyto aplikace zkontrolujte velkou využití webových rozhraní API pro potřeby jejich dat a může poskytnout dojde mnohem širší uživatele.
+Jednostránkové aplikace (SPA), oproti tomu obsahují velmi málo načtení dynamicky generované stránky na straně serveru (pokud existuje). Mnoho SPA jsou inicializovány v rámci statický soubor HTML, který načte potřebné knihovny jazyka JavaScript a spustíte aplikaci. Tyto aplikace vytvořit silná využití webových rozhraní API pro potřeby svých dat a může poskytnout že mnohem bohatší uživatelské prostředí.
 
-Mnoho webových aplikací zahrnují kombinaci chování tradiční webové aplikace (obvykle pro obsah) a SPA (pro interaktivity). Jádro ASP.NET podporuje MVC a webových rozhraní API ve stejné aplikaci, pomocí stejné sady nástrojů a základní knihovny framework.
+Mnoho webových aplikací zahrnují kombinaci tradiční aplikace chování (obvykle pro obsah) a webových SPA (pro interaktivitu). ASP.NET Core podporuje MVC (zobrazení a/nebo stránky Razor) a webových rozhraní API ve stejné aplikaci pomocí stejné sady nástrojů a základní knihovny rozhraní.
 
 ## <a name="simple-development-and-deployment"></a>Jednoduchý vývoj a nasazení
 
-Aplikace ASP.NET Core lze zapsat pomocí jednoduchého textové editory a rozhraní příkazového řádku nebo plnohodnotné vývojové prostředí jako v aplikaci Visual Studio. Obvykle se monolitický aplikace nasadí do jednoho koncového bodu. Nasazení lze snadno automatizovat proběhnout jako součást průběžnou integraci (CI) a nastavené průběžné doručování (CD) kanálu. Kromě tradičních CI/CD nástroje Windows Azure je integrovaná podpora pro úložiště git a můžete automaticky nasadit aktualizace, jako jsou vytvářeny zadaný git větev nebo značky.
+Aplikace ASP.NET Core může být napsán pomocí jednoduchého textových editorů a rozhraní příkazového řádku nebo plnohodnotné vývojové prostředí, jako je Visual Studio. Monolitické aplikace se obvykle nasazují do jednoho koncového bodu. Nasazení je možné snadno automatizovat jako součást průběžné integrace (CI) a kanál průběžného doručování (CD). Kromě tradičních nástrojů CI/CD Windows Azure je integrovaná podpora pro úložiště git a můžete automaticky nasazovat aktualizace, protože byly provedeny na zadané git pobočku nebo značku.
 
-## <a name="traditional-aspnet-and-web-forms"></a>Tradiční ASP.NET a webové formuláře
+## <a name="traditional-aspnet-and-web-forms"></a>Tradiční ASP.NET a webových formulářů
 
-Kromě ASP.NET Core, tradiční ASP.NET 4.x je stále výkonné a spolehlivé platforma pro vytváření webových aplikací. Technologie ASP.NET podporuje vývoj modely MVC a webového rozhraní API a také webových formulářů, které je vhodné řešení pro vývoj aplikací bohaté na stránce a funkce ekosystém bohaté komponenty jiných výrobců. Windows Azure má dlouhodobě podpory pro aplikace ASP.NET 4.x a celá řada vývojářů obeznámeni s tuto platformu.
+Kromě ASP.NET Core, tradiční ASP.NET 4.x i nadále robustní a spolehlivou platformu pro vytváření webových aplikací. Podporuje technologie ASP.NET MVC a webového rozhraní API vývoje modelů, stejně jako webových formulářů, které je vhodné řešení pro vývoj bohaté možnosti aplikací založených na stránky a funkce ekosystému bohaté komponenty třetích stran. Windows Azure nabízí skvělou dlouhodobě podporu pro aplikace ASP.NET 4.x a celá řada vývojářů obeznámeni s touto platformou.
 
 > ### <a name="references--modern-web-applications"></a>Odkazy – moderních webových aplikací
+>
 > - **Úvod do ASP.NET Core**  
-> <https://docs.microsoft.com/aspnet/core/>
-> - **Šest klíč výhody z ASP.NET Core které různé a lepší**  
-> <https://blog.trigent.com/six-key-benefits-of-asp-net-core-1-0-which-make-it-different-better/>
+>   <https://docs.microsoft.com/aspnet/core/>
+> - **Šest klíč výhody z ASP.NET Core umožňují různé a lepší**  
+>   <https://blog.trigent.com/six-key-benefits-of-asp-net-core-1-0-which-make-it-different-better/>
 > - **Testování v ASP.NET Core**  
-> <https://docs.microsoft.com/aspnet/core/testing/>
+>   <https://docs.microsoft.com/aspnet/core/testing/>
 
 >[!div class="step-by-step"]
 [Předchozí](index.md)

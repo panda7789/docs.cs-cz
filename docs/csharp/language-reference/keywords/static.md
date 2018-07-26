@@ -8,52 +8,52 @@ helpviewer_keywords:
 - static keyword [C#]
 ms.assetid: 5509e215-2183-4da3-bab4-6b7e607a4fdf
 ms.openlocfilehash: b7e2981c8832d6ac1744c102d5bde55bbe25c256
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33287264"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37959982"
 ---
 # <a name="static-c-reference"></a>static – modifikátor (Referenční dokumentace jazyka C#)
-Použití `static` modifikátor deklarovat statický člen, který patří k samotného typu, nikoli na konkrétní objekt. `static` Modifikátor lze použít s třídy, pole, metody, vlastnosti, operátory, události a konstruktory, ale nedá se použít s indexery, finalizační metody nebo jiného typu než třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
+Použití `static` modifikátor deklarovat statický člen, který patří do samotného typu, nikoli s určitým objektem. `static` Modifikátor lze použít s třídami, pole, metody, vlastnosti, operátory, události a konstruktory, ale nelze použít s indexery, finalizační metody nebo jiné typy než třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
 ## <a name="example"></a>Příklad  
- Následující třídy je deklarován jako `static` a obsahuje pouze `static` metody:  
+ Následující třída je deklarována jako `static` a obsahuje pouze `static` metody:  
   
  [!code-csharp[csrefKeywordsModifiers#18](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_1.cs)]  
   
- Konstanta nebo typ deklarace je implicitně je statický člen.  
+ Deklarace konstanty nebo typu je implicitně statický člen.  
   
- Statický člen nemůže odkazovat pomocí instance. Místo toho se odkazuje prostřednictvím název typu. Zvažte například následující třídy:  
+ Statický člen se nedá odkazovat prostřednictvím instance. Místo toho se odkazuje pomocí názvu typu. Představte si třeba následující třídy:  
   
  [!code-csharp[csrefKeywordsModifiers#19](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_2.cs)]  
   
- K odkazování na statický člen `x`, použijte plně kvalifikovaný název `MyBaseC.MyStruct.x`, pokud člen je přístupná ze stejného oboru:  
+ Odkazovat na statického člena `x`, použijte plně kvalifikovaný název `MyBaseC.MyStruct.x`, pokud člen není přístupný ze stejného oboru:  
   
 ```csharp  
 Console.WriteLine(MyBaseC.MyStruct.x);  
 ```  
   
- Při instance třídy obsahuje kopii všechna pole instance třídy, existuje pouze jedna kopie každého statické pole.  
+ Zatímco instance třídy obsahuje kopii všechna pole instancí třídy, je jenom jednu kopii každého statické pole.  
   
- Není možné použít [to](../../../csharp/language-reference/keywords/this.md) tak, aby odkazovaly statické metody nebo vlastnosti přistupující objekty.  
+ Není možné použít [to](../../../csharp/language-reference/keywords/this.md) odkazovat statické metody nebo přistupující objekty vlastnosti.  
   
- Pokud `static` – klíčové slovo použijí na třídu, musí být statické všichni členové třídy.  
+ Pokud `static` – klíčové slovo je aplikován na třídu, musí být statické členy třídy.  
   
- Statické konstruktory mohou mít třídy a statické třídy. Statické konstruktory jsou volány v určitém okamžiku mezi při spuštění programu a vytvoření instance třídy.  
+ Statické třídy a třídy mohou mít statické konstruktory. Statické konstruktory jsou volány v určitém okamžiku mezi při spuštění programu a je vytvořena instance třídy.  
   
 > [!NOTE]
->  `static` – Klíčové slovo má více omezenou používá než v jazyce C++. K porovnání s – klíčové slovo C++, najdete v části [třídy úložiště (C++)](/cpp/cpp/storage-classes-cpp#static).
+>  `static` – Klíčové slovo má omezenější použití než v jazyce C++. Porovnat s klíčovým slovem C++, naleznete v tématu [třídy úložiště (C++)](/cpp/cpp/storage-classes-cpp#static).
   
- K předvedení statické členy, zvažte třída, která představuje zaměstnanci společnosti. Předpokládejme, že třída obsahuje metody pro počet zaměstnanci a pole slouží k uložení počet zaměstnanců. Metoda a pole nepatří do žádné instance zaměstnanců. Místo toho, které patří třída společnosti. Proto že by měl deklarované jako statické členy třídy.  
+ Abychom si předvedli statické členy, vezměte v úvahu třídu, která představuje zaměstnance společnosti. Předpokládejme, že třída obsahuje metody pro počet zaměstnanců a pole pro uložení tohoto čísla zaměstnanců. Metody a pole nepatří do jakékoli instance zaměstnance. Místo toho patří do třídy společnosti. Proto by měly být deklarovány jako statické členy třídy.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad načte název a ID nové zaměstnance, zvýší čítač zaměstnanec jedním a zobrazí informace o nové zaměstnance a nové číslo zaměstnance. Tento program pro jednoduchost, čte aktuální počet zaměstnanci z klávesnice. V reálné aplikaci musí být tyto informace čtení ze souboru.  
+ Tento příklad načte název a ID nového zaměstnance, zvýší čítač zaměstnance jednou a zobrazí informace o nových zaměstnanců a nový počet zaměstnanců. Pro zjednodušení tento program přečte aktuální počet zaměstnanců z klávesnice. V reálné aplikaci by měli číst tyto informace ze souboru.  
   
  [!code-csharp[csrefKeywordsModifiers#20](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_3.cs)]  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje, že i když můžete inicializovat statické pole s použitím jiné statické pole ještě nebyla deklarována, výsledky se nedefinované dokud explicitně přiřadit hodnotu statické pole.  
+ Tento příklad ukazuje, že i když inicializujete statické pole pomocí jiné statické pole ještě nebyla deklarována, budou výsledky nedefinované dokud explicitně přiřadit hodnotu statické pole.  
   
  [!code-csharp[csrefKeywordsModifiers#21](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_4.cs)]  
   

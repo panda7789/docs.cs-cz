@@ -2,9 +2,9 @@
 
 |   |   |
 |---|---|
-|Podrobnosti|Zprávy ve WCF web služby hostované v Internetové informační služby (IIS) nebo vývojový Server ASP.NET, které překračují maxRequestLength (technologie ASP.NET) nebo maxReceivedMessageSize (ve službě WCF) mají různé chyby stavový kód codeThe HTTP se změnil z hodnoty 400 (Chybný požadavek ) 413 (požádat o Entity příliš velký) a zprávy, které překročí maxRequestLength nebo nastavení maxReceivedMessageSize throw <xref:System.ServiceModel.ProtocolException?displayProperty=name> výjimka. To zahrnuje případy, ve kterých je streamování režim přenosu.|
-|Návrh|Tato změna usnadňuje ladění v případech, kde délka zpráva překračuje omezení povolenou technologie ASP.NET nebo WCF. Je třeba upravit kód, který provádí zpracování podle stavový kód HTTP 400.|
+|Podrobnosti|Zprávy ve službě WCF web služby hostované v Internetové informační služby (IIS) nebo vývojový Server ASP.NET, které překračují maxRequestLength (v technologii ASP.NET) nebo maxReceivedMessageSize (v WCF) mají různé chybové codeThe HTTP stavový kód byl změněn z 400 (Chybný požadavek ) na 413 (příliš velký požadavek Entity) a zprávy, které překračují buď nastavení maxReceivedMessageSize nebo maxRequestLength vyvolat <xref:System.ServiceModel.ProtocolException?displayProperty=name> výjimky. To zahrnuje případy, ve kterých je režim přenosu nedochází.|
+|Návrh|Tato změna usnadňuje ladění v případech, kde délka zprávy překročí limity povolené rozhraním ASP.NET nebo WCF. Je třeba upravit jakýkoli kód, který provádí zpracování založené na stavovém kódu HTTP 400.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|modul runtime|
+|Typ|Modul runtime|
 

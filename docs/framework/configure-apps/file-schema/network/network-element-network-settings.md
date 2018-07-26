@@ -1,5 +1,5 @@
 ---
-title: '&lt;sítě&gt; – Element (nastavení sítě)'
+title: '&lt;síť&gt; – Element (nastavení sítě)'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#network
@@ -11,15 +11,15 @@ ms.assetid: 2c2c6ad4-ed11-48ab-b28e-2bc0ba9b42c7
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: e53d39f15a01f751a93c5531b3079d77bf0040e4
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: e6cf78b06d5afe950dd97381e99ba9eb77f818ca
+ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32744665"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37874556"
 ---
-# <a name="ltnetworkgt-element-network-settings"></a>&lt;sítě&gt; – Element (nastavení sítě)
-Nakonfiguruje možnosti sítě pro externí server přenosu protokolu SMTP (Simple Mail).  
+# <a name="ltnetworkgt-element-network-settings"></a>&lt;síť&gt; – Element (nastavení sítě)
+Konfiguruje možnosti sítě pro externí server Simple Mail Transport Protocol (SMTP).  
   
  \<Konfigurace >  
 \<system.net>  
@@ -49,14 +49,14 @@ Nakonfiguruje možnosti sítě pro externí server přenosu protokolu SMTP (Simp
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`clientDomain`|Určuje název domény klienta pro použití v počáteční žádosti protokolu SMTP pro připojení k poštovnímu serveru SMTP. Výchozí hodnota je localhost název místního počítače odesílání požadavku.|  
-|`defaultCredentials`|Určuje, zda by měl používat výchozí uživatelská pověření pro přístup k poštovnímu serveru SMTP pro transakce SMTP. Výchozí hodnota je `false`.|  
-|`enableSsl`|Určuje, jestli je pro přístup k serveru SMTP e-mailu používat protokol SSL. Výchozí hodnota je `false`.|  
+|`clientDomain`|Určuje název domény klienta pro použití v prvotní žádosti protokolu SMTP pro připojení k poštovnímu serveru SMTP. Výchozí hodnota je localhost název místního počítače, které odesílá požadavek.|  
+|`defaultCredentials`|Určuje, zda by měl použít výchozí pověření uživatele pro přístup k poštovnímu serveru SMTP pro transakce SMTP. Výchozí hodnota je `false`.|  
+|`enableSsl`|Určuje, zda se používá protokol SSL pro přístup k poštovnímu serveru SMTP. Výchozí hodnota je `false`.|  
 |`host`|Určuje název hostitele poštovního serveru SMTP pro transakce SMTP. Tento atribut nemá žádnou výchozí hodnotu.|  
-|`password`|Určuje heslo používané při ověřování k poštovnímu serveru SMTP. Tento atribut nemá žádnou výchozí hodnotu.|  
+|`password`|Určuje heslo pro účely ověření k poštovnímu serveru SMTP. Tento atribut nemá žádnou výchozí hodnotu.|  
 |`port`|Udává číslo portu pro připojení k poštovnímu serveru SMTP. Výchozí hodnota je 25.|  
-|`targetName`|Určuje název zprostředkovatele služby (SPN) pro ověřování pomocí při použití Rozšířená ochrana pro transakce SMTP. Tento atribut nemá žádnou výchozí hodnotu.|  
-|`userName`|Určuje uživatelské jméno, které používají k ověřování pro poštovní server SMTP. Tento atribut nemá žádnou výchozí hodnotu.|  
+|`targetName`|Určuje název zprostředkovatele služby (SPN) pro účely ověření při používání rozšířené ochrany pro transakce SMTP. Tento atribut nemá žádnou výchozí hodnotu.|  
+|`userName`|Určuje uživatelské jméno pro účely ověření k poštovnímu serveru SMTP. Tento atribut nemá žádnou výchozí hodnotu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -65,40 +65,40 @@ Nakonfiguruje možnosti sítě pro externí server přenosu protokolu SMTP (Simp
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<SMTP > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/smtp-element-network-settings.md)|Nakonfiguruje možnosti odesílání e-mailu přenosu protokolu SMTP (Simple Mail).|  
+|[\<SMTP > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/smtp-element-network-settings.md)|Konfiguruje možnosti pro odesílání pošty Simple Mail Transport Protocol (SMTP).|  
   
 ## <a name="remarks"></a>Poznámky  
- Některé servery SMTP vyžadují ověření sami k serveru před použitím. Pokud chcete ověřit sami pomocí výchozích pověření sítě na hostiteli, nastavte `defaultCredentials` atribut `true`. <xref:System.Net.Configuration.SmtpNetworkElement.DefaultCredentials%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnota `defaultCredentials` atribut z příslušných konfiguračních souborů.  
+ Některé servery SMTP vyžadují ověření sami na server před použitím. Pokud chcete provést ověření pomocí výchozích síťových přihlašovacích údajů na hostiteli, nastavte `defaultCredentials` atribut `true`. <xref:System.Net.Configuration.SmtpNetworkElement.DefaultCredentials%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnoty `defaultCredentials` atribut z příslušných konfiguračních souborů.  
   
- Můžete také použít základní ověřování (uživatelské jméno a heslo) k ověření se k serveru SMTP. Chcete-li použít tuto možnost, musíte zadat platné uživatelské jméno a heslo pro zadaný server SMTP.  
+ Můžete také použít základní ověřování (uživatelské jméno a heslo) k sami ověření serveru SMTP. Pokud chcete použít tuto možnost, musíte zadat platné uživatelské jméno a heslo pro zadaný server SMTP.  
   
 > [!NOTE]
->  Odešle základní ověřování `userName` a `password` hodnoty k serveru bez šifrování. Každý, kdo monitorování síťového provozu můžete zobrazit vaše přihlašovací údaje a použít je k připojení k serveru. Měli byste zvážit použití bezpečnější mechanismus ověřování, jako je například ověřování protokolu Kerberos nebo NT LAN Manager (NTLM). Pokud `defaultCredentials` je `true`, Kerberos nebo NTLM bude použit, pokud server podporuje tyto protokoly.  
+>  Základní ověřování odešle `userName` a `password` hodnoty server v nezašifrované. Kdokoli na nich monitorování síťového provozu můžete zobrazit svoje přihlašovací údaje a použít pro připojení k serveru. Měli byste zvážit použití bezpečnější mechanismu ověřování, jako je protokol Kerberos nebo NT LAN Manager (NTLM). Pokud `defaultCredentials` je `true`, Kerberos nebo NTLM bude použit, pokud server podporuje tyto protokoly.  
   
- Základní ověřování a výchozí síťové přihlašovací údaje možnosti se vzájemně vylučují. Pokud nastavíte `defaultCredentials` k `true` a zadejte uživatelské jméno a heslo, se používá výchozí pověření sítě a data základní ověřování je ignorována.  
+ Základní ověřování a výchozí síťové přihlašovací údaje možnosti se vzájemně vylučují. Pokud nastavíte `defaultCredentials` k `true` a zadejte uživatelské jméno a heslo, se používá výchozí pověření sítě a data základního ověřování, je ignorován.  
   
- Pro základní ověřování, pokud zadáte `userName`, musíte také zadat `password` ověřování sami, abyste je poštovní server.  
+ Pro základní ověřování, pokud zadáte `userName`, byste zadat také `password` ověřování sami poštovním serveru.  
   
- <xref:System.Net.Configuration.SmtpNetworkElement.UserName%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnota `userName` atribut z příslušných konfiguračních souborů. <xref:System.Net.Configuration.SmtpNetworkElement.Password%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnota `password` atribut z příslušných konfiguračních souborů. A `password` by za normálních okolností je třeba zadat atribut v konfiguračních souborech z bezpečnostních důvodů.  
+ <xref:System.Net.Configuration.SmtpNetworkElement.UserName%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnoty `userName` atribut z příslušných konfiguračních souborů. <xref:System.Net.Configuration.SmtpNetworkElement.Password%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnoty `password` atribut z příslušných konfiguračních souborů. A `password` by normálně je třeba zadat atribut v konfiguračních souborech z bezpečnostních důvodů.  
   
- `clientDomain` Název domény klienta, který je použitý v počáteční žádosti protokolu SMTP na SMTP server, změní se atribut. `clientDomain` Atribut lze nastavit do domény plně kvalifikovaný název místního počítače, nikoli název místního hostitele, který se používá ve výchozím nastavení. To poskytuje větší dodržování standardů protokolu SMTP. Výchozí hodnota je localhost název místního počítače odesílání požadavku. <xref:System.Net.Configuration.SmtpNetworkElement.ClientDomain%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnota `clientDomain` atribut z příslušných konfiguračních souborů.  
+ `clientDomain` Atribut změní název domény klienta použitý v původní žádost protokolu SMTP na serveru SMTP. `clientDomain` Atribut může být nastaven plně kvalifikovaný název domény z místního počítače, nikoli název localhost, který se používá ve výchozím nastavení. To poskytuje větší dodržování standardů protokol SMTP. Výchozí hodnota je localhost název místního počítače, které odesílá požadavek. <xref:System.Net.Configuration.SmtpNetworkElement.ClientDomain%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnoty `clientDomain` atribut z příslušných konfiguračních souborů.  
   
- `targetName` Atribut se používá k ověřování při použití rozšířené ochrany. Výchozí hodnota je ve formátu "SMTPSVC /\<hostitele >" kde \<hostitele > je název hostitele serveru SMTP, e-mailu. <xref:System.Net.Configuration.SmtpNetworkElement.TargetName%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnota `targetName` atribut z příslušných konfiguračních souborů.  
+ `targetName` Atribut se používá k ověřování při použití rozšířenou ochranu. Výchozí hodnota je ve formátu "SMTPSVC /\<hostitele >" kde \<hostitele > je název hostitele serveru SMTP, e-mailu. <xref:System.Net.Configuration.SmtpNetworkElement.TargetName%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnoty `targetName` atribut z příslušných konfiguračních souborů.  
   
- `enableSsl` Atribut určuje, jestli je pro přístup k serveru SMTP e-mailu používat protokol SSL. <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType> Třída podporuje pouze rozšíření pro službu SMTP pro zabezpečené SMTP přes Transport Layer Security jak jsou definovány v dokumentu RFC 3207. V tomto režimu SMTP relace začíná v nezašifrované kanály a potom příkaz STARTTLS vydává klienta k serveru a přepněte do zabezpečené komunikace pomocí protokolu SSL. Najdete v dokumentu RFC 3207 publikovaná pomocí Engineering Task Force IETF (Internet) Další informace.  
+ `enableSsl` Atribut určuje, zda se používá protokol SSL pro přístup k poštovnímu serveru SMTP. <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType> Třídy podporuje pouze rozšíření služby SMTP pro zabezpečený protokol SMTP přes Transport Layer Security jak jsou definovány v dokumentu RFC 3207. V tomto režimu SMTP relace začíná nešifrovaný kanál a pak je vydán příkaz STARTTLS klienta k serveru a přepnout na zabezpečenou komunikaci pomocí protokolu SSL. Najdete v dokumentu RFC 3207 publikovaná pomocí Engineering Task Force IETF (Internet) pro další informace.  
   
- Metodu alternativní připojení je, kde je relace SSL navázat předem před libovolný protokol pro příkazy jsou odeslána. Tato metoda připojení se někdy označuje jako SMTPS a ve výchozím nastavení používá port 465. Tato metoda alternativní připojení pomocí protokolu SSL není aktuálně podporován.  
+ Metodu připojení je, kde relace SSL pokládáme stav, ještě před zahájením před libovolného protokolu pro odeslání příkazy. Tato metoda připojení se někdy označuje jako SMTPS a ve výchozím nastavení používá port 465. Tato metoda připojení pomocí protokolu SSL se momentálně nepodporuje.  
   
- <xref:System.Net.Configuration.SmtpNetworkElement.EnableSsl%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnota `enableSsl` atribut z příslušných konfiguračních souborů.  
+ <xref:System.Net.Configuration.SmtpNetworkElement.EnableSsl%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnoty `enableSsl` atribut z příslušných konfiguračních souborů.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad určuje vhodné parametry SMTP pro odeslání e-mailu pomocí výchozích pověření sítě.  
+ Následující příklad určuje příslušné parametry protokolu SMTP k odesílání e-mailů pomocí výchozích síťových přihlašovacích údajů.  
   
 ```xml  
 <configuration>  
   <system.net>  
     <mailSettings>  
-      <smtp deliveryMethod="network">  
+      <smtp deliveryMethod="Network">  
         <network  
           clientDomain="www.contoso.com"  
           defaultCredentials="true"  

@@ -1,29 +1,29 @@
 ---
-title: 'Postupy: Stream fragmenty XML z XmlReader (C#)'
+title: 'Postupy: Stream fragmentů XML ze třídy XmlReader (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4a8f0e45-768a-42e2-bc5f-68bdf0e0a726
 ms.openlocfilehash: 8e2baed3ca32ea4273993fe5bed43fef768204ce
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: f6343b070f3c66877338a05c8bfb0be9985255e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33321061"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39221007"
 ---
-# <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>Postupy: Stream fragmenty XML z XmlReader (C#)
-Až budete mít ke zpracování velkých souborů XML, nemusí být vhodný načíst celý strom XML do paměti. Toto téma ukazuje, jak k vysílání datového proudu fragmenty pomocí <xref:System.Xml.XmlReader>.  
+# <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>Postupy: Stream fragmentů XML ze třídy XmlReader (C#)
+Až budete mít ke zpracování velkých souborů XML, nemusí být možné načíst celý strom XML do paměti. Toto téma ukazuje, jak streamování fragmentů pomocí <xref:System.Xml.XmlReader>.  
   
- Jedním z nejúčinnějších způsobů, jak používat <xref:System.Xml.XmlReader> číst <xref:System.Xml.Linq.XElement> objektů je napsat vlastní metodu vlastní osy. Metodu osy, jako obvykle vrátí kolekci <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, jak je znázorněno v příkladu v tomto tématu. V metodě vlastní osy, po vytvoření XML fragment voláním <xref:System.Xml.Linq.XNode.ReadFrom%2A> metoda, vrátí kolekce používá `yield return`. To poskytuje sémantiku odložené provedení metodu vlastní osy.  
+ Jeden z nejefektivnějších způsobech použití <xref:System.Xml.XmlReader> číst <xref:System.Xml.Linq.XElement> objekty je napsat vlastní metodu vlastní osy. Metodu osy, jako obvykle vrátí kolekci <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, jak je znázorněno v příkladu v tomto tématu. V metodě vlastní osy, po vytvoření XML fragment voláním <xref:System.Xml.Linq.XNode.ReadFrom%2A> metody, vrátí kolekci pomocí `yield return`. To poskytuje sémantiku odložené provedení metodě vlastní osy.  
   
- Když vytvoříte strom XML z <xref:System.Xml.XmlReader> objekt, <xref:System.Xml.XmlReader> musí být umístěn v elementu. <xref:System.Xml.Linq.XNode.ReadFrom%2A> Metoda nevrátí před přečtením značka ukončení elementu.  
+ Při vytváření stromu XML ze <xref:System.Xml.XmlReader> objektu, <xref:System.Xml.XmlReader> musí být umístěna na elementu. <xref:System.Xml.Linq.XNode.ReadFrom%2A> Metoda nevrací před přečtením uzavíracím tagem elementu.  
   
  Pokud chcete vytvořit částečné stromové struktury, můžete vytvořit instanci <xref:System.Xml.XmlReader>, pozice čtenáře na uzlu, který chcete převést na <xref:System.Xml.Linq.XElement> stromu a pak vytvořte <xref:System.Xml.Linq.XElement> objektu.  
   
- Téma [postup: datový proud XML fragmenty se přístup k informacím o záhlaví (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md) obsahuje informace a příklad o tom, jak stream složitější dokumentu.  
+ Téma [jak: Stream fragmentů XML pomocí přístup k informacím hlavičky (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md) obsahuje informace a příklad toho, jak Streamovat složitější dokumentu.  
   
- Téma [postup: provedení vysílání datového proudu transformace z velké dokumentů XML (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md) obsahuje příklad použití technologie LINQ to XML k transformaci velmi velký dokumentů XML při zachování nároků paměti.  
+ Téma [postupy: provádění datových proudů transformace z velké dokumentů XML (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md) obsahuje příklad použití LINQ to XML k transformaci velmi velké dokumentů XML a přitom malá paměťové nároky.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vytvoří vlastní osy metoda. Se můžete dotazovat pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu. Metodu vlastní osy `StreamRootChildDoc`, je metoda, která je určená speciálně pro čtení dokumentu, který má opakující se `Child` elementu.  
+ Tento příklad vytvoří metodu vlastní osy. Můžete ji dotazovat s použitím [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu. Metoda vlastní osy `StreamRootChildDoc`, je metoda, která je navržená speciálně pro čtení dokumentu, který má s opakováním `Child` elementu.  
   
 ```csharp  
 static IEnumerable<XElement> StreamRootChildDoc(StringReader stringReader)  
@@ -80,7 +80,7 @@ bbb
 ccc  
 ```  
   
- V tomto příkladu jsou velmi malé zdrojový dokument. Ale i v případě, že bylo miliony `Child` elementy, v tomto příkladu by mít stále malou paměťovou zátěž.  
+ V tomto příkladu je velmi malý zdrojovém dokumentu. Nicméně i v případě, že došlo k milionům `Child` prvky, v tomto příkladu by stále mají malé paměťové nároky.  
   
 ## <a name="see-also"></a>Viz také  
  [Analýza kódu XML (C#)](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)

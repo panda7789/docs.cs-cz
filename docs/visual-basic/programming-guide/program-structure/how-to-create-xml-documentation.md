@@ -6,35 +6,35 @@ helpviewer_keywords:
 - XML documentation [Visual Basic], creating
 ms.assetid: 27b5b06c-09b9-496a-8245-f9542d846230
 ms.openlocfilehash: 7fb56da8a28367a6dcd5e28f208b4519510d7d95
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33650878"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39243876"
 ---
 # <a name="how-to-create-xml-documentation-in-visual-basic"></a>Postupy: Vytvoření dokumentace XML v jazyce Visual Basic
-Tento příklad ukazuje, jak přidat dokumentační komentáře XML do vašeho kódu.  
+Tento příklad ukazuje, jak přidat komentáře k dokumentaci XML do kódu.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ### <a name="to-create-xml-documentation-for-a-type-or-member"></a>K vytvoření dokumentace XML pro typ nebo člen  
   
-1.  V **Editor kódu**, umístěte kurzor na řádku výše typ nebo člen, pro který chcete vytvořit dokumentaci.  
+1.  V **Editor kódu**, umístěte kurzor na řádek nad tento typ nebo člen, pro kterou chcete vytvořit dokumentaci.  
   
-2.  Typ `'''` (tři jednoduchých uvozovek).  
+2.  Typ `'''` (tří jednoduchých uvozovek).  
   
-     Kostru XML pro typ nebo člen je přidaný do **Editor kódu**.  
+     Kostra XML pro typ nebo člen bude přidán do **Editor kódu**.  
   
-3.  Přidejte popisné informace mezi odpovídající značky.  
+3.  Přidáte popisné informace mezi odpovídající značky.  
   
     > [!NOTE]
-    >  Pokud chcete přidat další řádky uvnitř bloku dokumentace XML, musí každý řádek začínat `'''`.  
+    >  Pokud chcete přidat další řádky v rámci bloku dokumentace XML, musí začínat každého řádku `'''`.  
   
-4.  Přidejte další kód, který používá typ nebo člen s nové dokumentační komentáře XML.  
+4.  Přidejte další kód, který používá typ nebo člen pomocí nového komentáře k dokumentaci XML.  
   
-     IntelliSense zobrazí text z \<souhrnné > značky pro typ nebo člen.  
+     Technologie IntelliSense zobrazí text z \<summary > značky pro tento typ nebo člen.  
   
-5.  Zkompilujte kód generovat soubor XML obsahující dokumentační komentáře. Další informace najdete v tématu [/doc](../../../visual-basic/reference/command-line-compiler/doc.md).  
+5.  Zkompilujte kód a vygenerovat soubor XML obsahující komentáře k dokumentaci. Další informace najdete v tématu [/doc](../../../visual-basic/reference/command-line-compiler/doc.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Dokumentace kódu s XML](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)  

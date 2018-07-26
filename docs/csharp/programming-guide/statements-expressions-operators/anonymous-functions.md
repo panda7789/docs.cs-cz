@@ -6,37 +6,38 @@ helpviewer_keywords:
 - anonymous functions [C#]
 - anonymous methods [C#]
 ms.assetid: 6ce3f04d-0c71-4728-9127-634c7e9a8365
-ms.openlocfilehash: 51a3c2e8399fdaae19ebe33f0d9ecc4bfd598799
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e368105c090f95435a4529470bdf1b41346d039c
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33321844"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37936747"
 ---
 # <a name="anonymous-functions-c-programming-guide"></a>Anonymní funkce (Průvodce programováním v C#)
-Anonymní funkce je "vložené" příkaz nebo výraz, který lze použít bez ohledu na očekáván je typ delegáta. Můžete ji k inicializaci pojmenované delegáta nebo předat místo typu s názvem delegáta jako parametr metody.  
+Anonymní funkce je "vloženě" příkaz nebo výraz, který se dá použít, kdykoli se očekává typ delegáta. Slouží k inicializaci pojmenovaný delegát nebo předat místo pojmenovaný delegát typu jako parametr metody.  
   
- Existují dva druhy anonymní funkce, které jsou jednotlivě popsané v následujících tématech:  
+ Existují dva druhy anonymní funkce, které jsou jednotlivě podrobněji popsána v následujících tématech:  
   
--   [Lambda – výrazy](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
+-   [Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
 -   [Anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)  
   
     > [!NOTE]
-    >  Lambda – výrazy mohou být vázány stromů výrazů a delegáti.  
+    >  Výrazy lambda mohou být vázány na stromy výrazů a také na delegáty.  
   
-## <a name="the-evolution-of-delegates-in-c"></a>Vývoj Delegáti v jazyce C#  
- V C# 1.0 jste vytvořili instanci delegáta pomocí explicitní inicializaci pomocí metody, která byla definována někde v kódu. C# 2.0 zaveden koncept anonymní metody jako způsob, jak zapisuje nepojmenované vložené příkaz bloky, které mohou být provedeny v vyvolání delegáta. Lambda – výrazy, které jsou v principu podobná anonymní metody ale výrazovou a stručným se zavedl C# 3.0. Tyto dvě funkce se souhrnně označují jako *anonymní funkce*. Obecně platí, aplikace, jejichž cílem verze 3.5 nebo novější z [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] by použití výrazů lambda.  
+## <a name="the-evolution-of-delegates-in-c"></a>Vývoj v jazyce C# delegátů  
+ V jazyce C# 1.0 vytvořeného instanci delegáta explicitně inicializuje s metodu, která byla definována kdekoli v kódu. 2.0 C# představila koncept anonymní metody jako způsob, jak zapsat vložený nepojmenovaný výkazu bloků, které mohou být provedeny v vyvolání delegáta. C# 3.0 představila výrazy lambda, které jsou v principu podobná anonymní metody, ale výrazová a stručné. Tyto dvě funkce se souhrnně nazývají *anonymní funkce*. Obecně platí, aplikace, jejichž cílem verze 3.5 a novější [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] by měl použití výrazů lambda.  
   
- Následující příklad ukazuje vývoj delegáta vytvoření z jazyka C# 1.0 pro C# 3.0:  
+ Následující příklad ukazuje vývoj vytvoření delegáta z 1.0 C# do jazyka C# 3.0:  
   
  [!code-csharp[csProgGuideLINQ#65](../../../csharp/programming-guide/arrays/codesnippet/CSharp/anonymous-functions_1.cs)]  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Příkazy, výrazy a operátory](../../../csharp/programming-guide/statements-expressions-operators/index.md)  
- [Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
- [Stromy výrazů](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)
+## <a name="see-also"></a>Viz také:
+
+[Příkazy, výrazy a operátory](../../../csharp/programming-guide/statements-expressions-operators/index.md)  
+[Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
+[Delegáti](../../../csharp/programming-guide/delegates/index.md)  
+[Stromy výrazů (C#)](../concepts/expression-trees/index.md)  

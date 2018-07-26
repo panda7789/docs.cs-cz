@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: vygenerování XML ze souborů CSV (C#)'
+title: 'Postupy: Generování XML ze souborů CSV (C#)'
 ms.date: 07/20/2015
 ms.assetid: 57b9ccde-f983-4a21-ae61-70ecede30307
 ms.openlocfilehash: 71fc10d4b48737a816532fa16f4e621c81050ab3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33325653"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244722"
 ---
-# <a name="how-to-generate-xml-from-csv-files-c"></a>Postupy: vygenerování XML ze souborů CSV (C#)
-Tento příklad ukazuje, jak používat [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] generovat soubor XML ze souboru oddělovači (CSV).  
+# <a name="how-to-generate-xml-from-csv-files-c"></a>Postupy: Generování XML ze souborů CSV (C#)
+Tento příklad ukazuje způsob použití [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ke generování souboru XML ze souboru hodnot oddělených čárkami (CSV).  
   
 ## <a name="example"></a>Příklad  
- Provádí následující kód [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz na pole řetězců.  
+ Následující kód provede [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz na pole řetězců.  
   
- Dotaz používá `let` klauzule každý řetězec rozdělením pole polí.  
+ Použije dotaz `let` klauzule pro každý řetězec rozdělit do pole polí.  
   
 ```csharp  
 // Create the text file.  
@@ -108,4 +108,4 @@ Console.WriteLine(cust);
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Projekce a transformace (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+ [Projekce a transformace (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

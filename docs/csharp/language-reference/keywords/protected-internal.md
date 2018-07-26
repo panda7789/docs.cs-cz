@@ -1,19 +1,19 @@
 ---
-title: chráněné vnitřní (C# referenční dokumentace)
+title: chráněné vnitřní (C# Reference)
 ms.date: 11/15/2017
 author: sputier
 ms.openlocfilehash: 5ba2c811a1a4f095bcee65ed6678a7dc50fe94db
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
-ms.locfileid: "34172238"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39244855"
 ---
-# <a name="protected-internal-c-reference"></a>chráněné vnitřní (C# referenční dokumentace)
-`protected internal` – Kombinace klíčových slov je modifikátor přístupu členů. Chráněný člen interní je přístupný z aktuální sestavení nebo z typů, které jsou odvozeny od obsahující třídy. Porovnání `protected internal` s další modifikátory přístupu, přečtěte si téma [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). 
+# <a name="protected-internal-c-reference"></a>chráněné vnitřní (C# Reference)
+`protected internal` – Kombinace klíčových slov je modifikátor přístupu členu. Chráněné vnitřní člen je přístupný z aktuálního sestavení nebo typy, které jsou odvozeny ze třídy obsahující. Porovnání `protected internal` jiných přístupu modifikátory přístupu, najdete v článku [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). 
    
 ## <a name="example"></a>Příklad  
- Chráněný vnitřní člen základní třídy je přístupná z libovolného typu v rámci jeho obsahující sestavení. Je také přístupné v odvozené třídě nachází v jiném sestavení pouze v případě, že dojde k přístupu pomocí proměnné typu odvozené třídy. Zvažte například následující segment kódu:  
+ Chráněné vnitřní člena základní třídy je přístupný z libovolného typu v rámci jeho obsahujícího sestavení. Je také dostupná v odvozené třídě nachází v jiném sestavení pouze v případě, že dojde k přístup prostřednictvím proměnné typu odvozené třídy. Představte si třeba následující segment kódu:  
 
 ```csharp
 // Assembly1.cs  
@@ -52,9 +52,9 @@ class DerivedClass : BaseClass
     }
 } 
 ```  
- Tento příklad obsahuje dva soubory, `Assembly1.cs` a `Assembly2.cs`. První soubor obsahuje veřejný základní třídu, `BaseClass`a jinou třídu, `TestAccess`. `BaseClass` vlastní chráněný vnitřní člen, `myValue`, který přistupuje `TestAccess` typu. V souboru druhý pokus o přístup `myValue` prostřednictvím instance `BaseClass` vygeneruje chybu při přístupu do tohoto člena prostřednictvím instance odvozené třídy, `DerivedClass` bude úspěšné. 
+ Tento příklad obsahuje dva soubory `Assembly1.cs` a `Assembly2.cs`. První soubor obsahuje veřejnou základní třídu, `BaseClass`a jiné třídy `TestAccess`. `BaseClass` vlastní chráněný interní člen `myValue`, který přistupuje `TestAccess` typu. V souboru druhý pokus o přístup k `myValue` prostřednictvím instance `BaseClass` dojde k chybě při přístupu do tohoto člena prostřednictvím instance třídy odvozená `DerivedClass` proběhne úspěšně. 
 
- Struktura členové nemohou být `protected internal` protože struct nemůže být zděděno.  
+ Členy struktury nemůžou být `protected internal` protože struktury nelze dědit.  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
@@ -69,4 +69,4 @@ class DerivedClass : BaseClass
  [Veřejné](../../../csharp/language-reference/keywords/public.md)   
  [Privátní](../../../csharp/language-reference/keywords/private.md)   
  [Interní](../../../csharp/language-reference/keywords/internal.md)   
- [Otázky zabezpečení pro interní virtuální klíčová slova](https://msdn.microsoft.com/library/heyd8kky(v=vs.110))
+ [Zajištění zabezpečení pro klíčových slov internal virtual](https://msdn.microsoft.com/library/heyd8kky(v=vs.110))

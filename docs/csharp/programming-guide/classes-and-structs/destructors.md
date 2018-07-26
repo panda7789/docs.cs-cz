@@ -1,5 +1,5 @@
 ---
-title: Finalizační metody (C# Průvodce programováním)
+title: Finalizační metody (C# Programming Guide)
 ms.date: 05/10/2017
 helpviewer_keywords:
 - ~ [C#], in finalizers
@@ -7,36 +7,36 @@ helpviewer_keywords:
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
 ms.openlocfilehash: fc15818883736015419f8599d482185bbab5120a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33313963"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37960508"
 ---
-# <a name="finalizers-c-programming-guide"></a>Finalizační metody (C# Průvodce programováním)
-Finalizační metody se používají k destruct instance tříd.  
+# <a name="finalizers-c-programming-guide"></a>Finalizační metody (C# Programming Guide)
+Finalizační metody se používají k destrukci instancí tříd.  
   
 ## <a name="remarks"></a>Poznámky  
   
--   Finalizační metody nemůže být definovaný ve struktury. Použijí se jenom s třídami.  
+-   Finalizační metody nelze definovat ve strukturách. Používají se jenom s třídami.  
   
 -   Třída může mít pouze jeden finalizační metodu.  
   
--   Finalizační metody nelze zděděná nebo přetížený.  
+-   Finalizační metody nemůže zděděné nebo přetížené.  
   
 -   Nelze volat finalizační metody. Jsou vyvolány automaticky.  
   
--   Finalizační metody nemá trvat modifikátory nebo mít parametry.  
+-   Finalizační metoda nepodporuje trvat modifikátory ani mít parametry.  
   
- Například následující je deklaraci finalizační metodu pro `Car` třídy.
+ Například tady je deklarace finalizační metodu pro `Car` třídy.
   
  [!code-csharp[csProgGuideObjects#86](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/destructors_1.cs)]  
 
-Finalizační metody lze také implementovat jako definici textu výrazu, jak ukazuje následující příklad.
+Finalizační metoda je také možné implementovat jako definici tělo výrazu, jak ukazuje následující příklad.
 
 [!code-csharp[expression-bodied-finalizer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-destructor.cs#1)]  
   
- Implicitně volá finalizační metodu <xref:System.Object.Finalize%2A> na základní třídu objektu. Proto volání finalizační metody implicitně převést na následující kód:  
+ Implicitně volá finalizační metodu <xref:System.Object.Finalize%2A> v základní třídě objektu. Proto volání finalizační metoda implicitně převádějí na následující kód:  
   
 ```csharp  
 protected override void Finalize()  
@@ -52,22 +52,22 @@ protected override void Finalize()
 }  
 ```  
   
- To znamená, že `Finalize` metoda je volána rekurzivně pro všechny instance v řetězu dědičnosti z většinou odvozených pro odvozené nejmenší.  
+ To znamená, že `Finalize` metoda se volá rekurzivně pro všechny instance v řetězu dědičnosti z nejvíce odvozenému pro nejméně odvozené.  
   
 > [!NOTE]
->  Prázdné finalizační metody by nemělo být použito. Pokud třída obsahuje finalizační metody, vytvoří se záznam v `Finalize` fronty. Při volání finalizační metodu volá se ke zpracování fronty uvolňování paměti. Prázdné finalizační metodu právě způsobí, že zbytečně snížením výkonu.  
+>  Prázdné finalizační metody se nesmí používat. Pokud třída obsahuje finalizační metodu, je vytvořena položka v `Finalize` fronty. Když je zavolána finalizační metodu, je vyvolána systému uvolňování paměti ke zpracování fronty. Prázdná finalizační metoda způsobí pouze zbytečně ke ztrátě výkonu.  
   
- Programátorů nemá žádnou kontrolu nad při volání finalizační metodu, protože to je dáno uvolňování paměti. Uvolňování paměti kontroluje pro objekty, které jsou již používá aplikace. Pokud objekt považuje vhodné pro dokončení, zavolá finalizační metodu (pokud existuje) a uvolní paměť použitá k uložení objektu. Finalizační metody se také nazývají při ukončení programu.  
+ Programátor nemá žádnou kontrolu nad při finalizační metoda je volána, protože ta se určují podle systému uvolňování paměti. Kontroluje, systému uvolňování paměti pro objekty, které jsou již nejsou déle používány aplikací. Pokud bude objekt oprávnění k dokončení, volá finalizační metody (pokud existuje) a uvolňování paměti pro ukládání objektu. Finalizační metody se také označují jako při ukončení programu.  
   
- Je možné vynutit uvolňování voláním <xref:System.GC.Collect%2A>, ale ve většině případů, to je nutno vzhledem k tomu může způsobit problémy s výkonem.  
+ Je možné vynutit uvolnění voláním <xref:System.GC.Collect%2A>, ale ve většině případů, toto by měl být vyhnout, protože může způsobit problémy s výkonem.  
   
-## <a name="using-finalizers-to-release-resources"></a>Pomocí finalizační metody k prostředkům verze  
- Obecně platí jazyka C# nevyžaduje, aby Správa tolik paměti, jako je potřeba při vývoji v jazyce, který není zaměřen modulu runtime s uvolňování paměti. To je proto garbage collector v rozhraní .NET Framework implicitně spravuje přidělování a uvolňování paměti pro objektů. Ale při aplikaci zapouzdří nespravovaných prostředků, jako jsou windows, soubory a připojení k síti, byste měli použít finalizační metody k uvolnění těchto prostředků. Pokud je objekt vhodné pro dokončení, bude systém uvolňování běží `Finalize` metodu objektu.  
+## <a name="using-finalizers-to-release-resources"></a>Pomocí finalizační metody k uvolnění prostředků  
+ Obecně platí C# nevyžaduje, aby Správa tolik paměti, jak je zapotřebí při vývoji v jazyce, který sdělení nebudete cílit na modul runtime s uvolňování paměti. Je to proto, že uvolňování paměti rozhraní .NET Framework implicitně spravuje přidělování a uvolňování paměti pro objekty. Ale když vaše aplikace zapouzdřuje nespravované prostředky, jako jsou windows, soubory a připojení k síti, by měl použít finalizační metody k uvolnění těchto prostředků. Pokud je objekt oprávnění k dokončení, uvolňování paměti běží `Finalize` metodu objektu.  
   
 ## <a name="explicit-release-of-resources"></a>Explicitní uvolnění prostředků  
- Pokud vaše aplikace používá nákladné externí prostředek, doporučujeme také zadat způsob, jak explicitně verzi prostředku před uvolňování uvolní objekt. To provedete tím, že implementujete `Dispose` metoda z <xref:System.IDisposable> rozhraní, které provádí nezbytné vyčištění pro objekt. To může výrazně zlepšit výkon aplikace. I přes tato explicitní kontrolu nad prostředky finalizační metodu bude chránit vyčištění prostředků, pokud volání `Dispose` metoda se nezdařilo.  
+ Pokud vaše aplikace používá nákladné externí prostředek, doporučujeme také, že poskytují způsob, jak explicitně uvolnění prostředku před systému uvolňování paměti uvolní objekt. Můžete to provést pomocí implementace `Dispose` metodu z <xref:System.IDisposable> rozhraní, které provádí potřebné vyčištění objektu. To může výrazně zlepšit výkon aplikace. I při tomto explicitní kontrolu nad prostředky, finalizační metodu, stane se ochrana pro vyčištění prostředků, pokud volání `Dispose` metody se nezdařilo.  
   
- Další podrobnosti o vymazání prostředků najdete v následujících tématech:  
+ Podrobné informace o vymazání prostředků naleznete v následujících tématech:  
   
 -   [Vymazání nespravovaných prostředků](../../../standard/garbage-collection/unmanaged.md)  
   
@@ -76,7 +76,7 @@ protected override void Finalize()
 -   [using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří tři třídy, které Ujistěte se, řetězce dědičnosti. Třída `First` je základní třídou `Second` je odvozený od `First`, a `Third` je odvozený od `Second`. Všechny tři mít finalizační metody. V `Main`, je vytvořena instance většinou odvozených tříd. Když se program spouští, Všimněte si, že finalizační metody pro tři třídy jsou volány automaticky a v pořadí, z většinou odvozených pro odvozené nejmenší.  
+ Následující příklad vytvoří tři třídy, které usnadňují řetězu dědičnosti. Třída `First` je základní třídou `Second` je odvozen z `First`, a `Third` je odvozen z `Second`. Všechny tři mají finalizační metody. V `Main`, je vytvořena instance třídy odvozený. Když se program spouští, Všimněte si, že finalizační metody pro tři třídy jsou volaní automaticky a v pořadí, nejvíce odvozenému na typ derived nejméně.  
   
  [!code-csharp[csProgGuideObjects#85](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/destructors_2.cs)]  
   

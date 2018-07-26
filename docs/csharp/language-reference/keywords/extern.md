@@ -9,38 +9,38 @@ helpviewer_keywords:
 - extern keyword [C#]
 ms.assetid: 9c3f02c4-51b8-4d80-9cb2-f2b6e1ae15c7
 ms.openlocfilehash: aca1a9fa0b57e9b3b0a515a805039ade2fe0c2f1
-ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
+ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37027912"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39199414"
 ---
 # <a name="extern-c-reference"></a>extern (Referenční dokumentace jazyka C#)
 
-`extern` Modifikátor se používá k deklaraci metodu, která je implementována externě. Běžně se používají `extern` se modifikátor s `DllImport` atributu při použití zprostředkovatele komunikace s objekty služby volat nespravovaný kód. V takovém případě metoda musí být deklarován také jako `static`, jak je znázorněno v následujícím příkladu:
+`extern` Modifikátor se používá k deklaraci metody, která je implementována externě. Běžně `extern` modifikátor se `DllImport` atribut, pokud používáte služby Interop pro volání nespravovaného kódu. V takovém případě metoda musí být deklarovány také jako `static`, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 [DllImport("avifil32.dll")]
 private static extern void AVIFileInit();
 ```
 
-`extern` – Klíčové slovo můžete také definovat alias externí sestavení, která vám umožní tak, aby odkazovaly různé verze stejné komponenty z v rámci jednoho sestavení. Další informace najdete v tématu [extern alias](extern-alias.md).
+`extern` – Klíčové slovo lze také definovat alias externího sestavení, který umožňuje odkazovat na různé verze stejné součásti v rámci jednoho sestavení. Další informace najdete v tématu [externí alias](extern-alias.md).
 
-Jedná se o chybu používat [abstraktní](abstract.md) a `extern` modifikátory společně k úpravě stejného člena. Pomocí `extern` modifikátor znamená, že je metoda implementována mimo kód C# zatímco pomocí `abstract` modifikátor znamená, že není zadaný implementace metody ve třídě.
+Jedná se o chybu používat [abstraktní](abstract.md) a `extern` modifikátory pro změny stejného členu. Použití `extern` modifikátor znamená, že je metoda implementována mimo kód jazyka C#, zatímco použití `abstract` modifikátor znamená, že implementace metody není k dispozici ve třídě.
 
 Externí klíčové slovo má v jazyce C# omezenější použití než v jazyce C++. Chcete-li porovnat klíčové slovo C# s klíčovým slovem C++, přečtěte si informace v kapitole Určení zapojení v referenci jazyka C++.
 
 ## <a name="example-1"></a>Příklad 1
 
-V tomto příkladu program od uživatele přijímá řetězec a zobrazí v okně se zprávou. Program používá `MessageBox` metoda naimportované z knihovny User32.dll.
+V tomto příkladu program přijme od uživatele řetězec a zobrazí ho v okně se zprávou. Program používá `MessageBox` metoda naimportované z knihovny User32.dll.
 
 [!code-csharp[csrefKeywordsModifiers#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#8)]
 
 ## <a name="example-2"></a>Příklad 2
 
-Tento příklad ukazuje programu C#, který volá do knihovny jazyka C (nativní knihovny DLL).
+Tento příklad znázorňuje program C#, který volá knihovnu jazyka C (nativní knihovnu DLL).
 
-1. Vytvoření následujícího souboru C a pojmenujte ji `cmdll.c`:
+1. Vytvořte následující soubor C s názvem `cmdll.c`:
 
 ```c
 // cmdll.c
@@ -51,9 +51,9 @@ int __declspec(dllexport) SampleMethod(int i)
 }
 ```
 
-2. Otevřete okno sady Visual Studio x64 (nebo x32) nativní nástroje pro příkazový řádek z instalačního adresáře nástroje Visual Studio a kompilaci `cmdll.c` souboru zadáním **cl -LD cmdll.c** na příkazovém řádku.
+2. Otevřete okno příkazového řádku nativních nástrojů x64 (nebo x32) sady Visual Studio z adresáře instalace sady Visual Studio a zkompilovat `cmdll.c` souboru tak, že zadáte **cl -LD cmdll.c** příkazového řádku.
 
-3. Ve stejném adresáři, vytvořte následující soubor C# a pojmenujte ji `cm.cs`:
+3. Ve stejném adresáři vytvořte následující soubor C# a pojmenujte ho `cm.cs`:
 
 ```csharp
 // cm.cs
@@ -71,13 +71,13 @@ public class MainClass
 }
 ```
 
-4. Otevřete okno sady Visual Studio x64 (nebo x32) nativní nástroje pro příkazový řádek z instalačního adresáře nástroje Visual Studio a kompilaci `cm.cs` souboru zadáním:
+4. Otevřete okno příkazového řádku nativních nástrojů x64 (nebo x32) sady Visual Studio z adresáře instalace sady Visual Studio a zkompilovat `cm.cs` souboru tak, že zadáte:
 
-> **CSC cm.cs** (pro x64 příkazového řádku) – nebo – **csc-platformy: x 86 cm.cs** (pro x32 příkazového řádku)
+> **CSC cm.cs** (pro x64 příkazového řádku) – nebo – **csc-platform: x 86 cm.cs** (pro x32 příkazového řádku)
 
 Tím se vytvoří spustitelný soubor `cm.exe`.
 
-5. Spustit `cm.exe`. `SampleMethod` Metoda předá hodnotu 5 soubor knihovny DLL, která vrátí hodnotu násobí hodnotou 10.  Program vytvoří následující výstup:
+5. Spustit `cm.exe`. `SampleMethod` Metoda předává hodnota 5 souboru knihovny DLL, která vrací hodnotu vynásobenou 10.  Program vygeneruje následující výstup:
 
 ```
 SampleMethod() returns 50.

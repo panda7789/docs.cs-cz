@@ -1,11 +1,11 @@
-### <a name="wpf-textbox-defaults-to-undo-limit-of-100"></a>Výchozí hodnota je WPF TextBox vrátit zpět limit 100
+### <a name="wpf-textbox-defaults-to-undo-limit-of-100"></a>Výchozí hodnota je textové pole WPF zrušit limit 100
 
 |   |   |
 |---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.5 je výchozí limit vrácení zpět pro textové pole WPF 100 (na rozdíl od vrácení neomezená v rozhraní .NET Framework 4.0)|
-|Návrh|Pokud limit 100 vrácení zpět je příliš nízké, může být explicitně nastavena limit s <xref:System.Windows.Controls.Primitives.TextBoxBase.UndoLimit>|
+|Podrobnosti|Výchozí limit vrácení zpět pro textové pole s WPF v rozhraní .NET Framework 4.5, je 100 (na rozdíl od vrácení neomezený počet v rozhraní .NET Framework 4.0)|
+|Návrh|Pokud zpět maximálně 100 je příliš nízké, limit lze nastavit explicitně pomocí <xref:System.Windows.Controls.Primitives.TextBoxBase.UndoLimit>|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|modul runtime|
+|Typ|Modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Windows.Controls.TextBox?displayProperty=nameWithType></li></ul>|
 

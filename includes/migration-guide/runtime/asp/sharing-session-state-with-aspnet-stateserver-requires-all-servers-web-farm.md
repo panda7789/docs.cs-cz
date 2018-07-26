@@ -2,10 +2,10 @@
 
 |   |   |
 |---|---|
-|Podrobnosti|Při povolování <xref:System.Web.SessionState.SessionStateMode.StateServer?displayProperty=name> stavu relace, všechny servery ve farmě dané webové musí používat stejnou verzi rozhraní .NET Framework v pořadí pro stav tak, aby se správně sdílené.|
-|Návrh|Ujistěte se, že upgrade verze rozhraní .NET Framework na webové servery, které sdílejí stavu ve stejnou dobu.|
+|Podrobnosti|Při povolování <xref:System.Web.SessionState.SessionStateMode.StateServer?displayProperty=name> stavu relace, všechny servery v dané webové farmě musí používat stejnou verzi rozhraní .NET Framework v pořadí pro stav tak, aby správně sdílené.|
+|Návrh|Ujistěte se, že upgrade verze rozhraní .NET Framework na webových serverech, které sdílejí stavu ve stejnou dobu.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|modul runtime|
+|Typ|Modul runtime|
 |Ovlivněné rozhraní API|<ul><li><xref:System.Web.SessionState.SessionStateMode.StateServer?displayProperty=nameWithType></li></ul>|
 

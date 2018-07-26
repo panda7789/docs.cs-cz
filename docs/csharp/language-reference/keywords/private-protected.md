@@ -1,22 +1,22 @@
 ---
-title: privátní chráněné (referenční dokumentace jazyka C#)
+title: Private protected (referenční dokumentace jazyka C#)
 ms.date: 11/15/2017
 author: sputier
 ms.openlocfilehash: 0d511f55f44511590fbe92a98cef118e0cb482e2
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34457248"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37961129"
 ---
-# <a name="private-protected-c-reference"></a>privátní chráněné (referenční dokumentace jazyka C#)
-`private protected` – Kombinace klíčových slov je modifikátor přístupu členů. Privátní chráněného člena je přístupný pro typy odvozené od obsahující třídy, ale pouze v rámci jeho obsahující sestavení. Porovnání `private protected` s další modifikátory přístupu, přečtěte si téma [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). 
+# <a name="private-protected-c-reference"></a>Private protected (referenční dokumentace jazyka C#)
+`private protected` – Kombinace klíčových slov je modifikátor přístupu členu. Privátní chráněný člen je přístupný pro typy odvozené od obsahující třídy, ale pouze v rámci jeho obsahujícího sestavení. Porovnání `private protected` jiných přístupu modifikátory přístupu, najdete v článku [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). 
 
 > [!NOTE]
-> `private protected` – Modifikátor přístupu je platná v C# verzi 7.2 a novější.
+> `private protected` Modifikátor přístupu je platný v jazyce C# verze 7.2 nebo novější.
    
 ## <a name="example"></a>Příklad  
- Privátní chráněného člena základní třídy je přístupná ze odvozené typy v jeho obsahující sestavení, pouze je-li statické typ proměnné typu odvozené třídy. Zvažte například následující segment kódu:  
+ Privátní chráněného člena základní třídy je přístupný z odvozených typů v sestavení obsahující pouze v případě, statický typ proměnné je typ odvozené třídy. Představte si třeba následující segment kódu:  
   
  ```csharp
  // Assembly1.cs  
@@ -55,10 +55,10 @@ ms.locfileid: "34457248"
      }
  }
 ```  
- Tento příklad obsahuje dva soubory, `Assembly1.cs` a `Assembly2.cs`. První soubor obsahuje veřejný základní třídu, `BaseClass`a typ odvozený z něj `DerivedClass1`. `BaseClass` vlastní privátní chráněného člena `myValue`, které `DerivedClass1` pokusí o přístup k dvěma způsoby. První pokus o přístup k `myValue` prostřednictvím instance `BaseClass` způsobí chybu. Ale pokus můžete použít jako zděděného členu v `DerivedClass1` bude úspěšné.
-V souboru druhý pokus o přístup `myValue` jako zděděné členem `DerivedClass2` způsobí chybu, protože se jedná pouze přístupný pro odvozené typy v Assembly1. 
+ Tento příklad obsahuje dva soubory `Assembly1.cs` a `Assembly2.cs`. První soubor obsahuje veřejnou základní třídu, `BaseClass`a typ odvozený z ní, `DerivedClass1`. `BaseClass` vlastní privátní chráněný člen `myValue`, což `DerivedClass1` pokusí o přístup k dvěma způsoby. První pokus o přístup k `myValue` prostřednictvím instance `BaseClass` dojde k chybě. Nicméně pokus o jeho použití jako zděděného člena v `DerivedClass1` proběhne úspěšně.
+V souboru druhý pokus o přístup k `myValue` jako zděděný člen `DerivedClass2` dojde k chybě, protože byl přístupný pouze odvozenými typy v Assembly1. 
 
- Struktura členové nemohou být `private protected` protože struct nemůže být zděděno.  
+ Členy struktury nemůžou být `private protected` protože struktury nelze dědit.  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
@@ -73,4 +73,4 @@ V souboru druhý pokus o přístup `myValue` jako zděděné členem `DerivedCla
  [Veřejné](../../../csharp/language-reference/keywords/public.md)   
  [Privátní](../../../csharp/language-reference/keywords/private.md)   
  [Interní](../../../csharp/language-reference/keywords/internal.md)   
- [Otázky zabezpečení pro interní virtuální klíčová slova](https://msdn.microsoft.com/library/heyd8kky(v=vs.110))
+ [Zajištění zabezpečení pro klíčových slov internal virtual](https://msdn.microsoft.com/library/heyd8kky(v=vs.110))

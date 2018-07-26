@@ -1,4 +1,4 @@
-| Standardní rozhraní .NET              | [1.0] | [1.1]  | [1.2] | [1.3] | [1.4] | [1.5]      | [1.6]      | [2.0]      |
+| .NET standard              | [1.0] | [1.1]  | [1.2] | [1.3] | [1.4] | [1.5]      | [1.6]      | [2.0]      |
 |----------------------------|-------|--------|-------|-------|-------|------------|------------|------------|
 | .NET Core                  | 1.0   | 1.0    | 1.0   | 1.0   | 1.0   | 1.0        | 1.0        | 2.0        |
 | Rozhraní .NET framework <sup>1</sup>| 4.5   | 4.5    | 4.5.1 | 4.6   | 4.6.1 | 4.6.1      | 4.6.1      | 4.6.1      |
@@ -11,12 +11,12 @@
 | Windows Phone              | 8.1   | 8.1    | 8.1   |       |       |            |            |            |
 | Windows Phone Silverlight  | 8.0   |        |       |       |       |            |            |            |
 
-<sup>1 verzí uvedených pro rozhraní .NET Framework se vztahují na rozhraní .NET Core SDK 2.0 a novějších verzích nástrojů. Starší verze použít jiné mapování pro standardní 1.5 .NET a vyšší. </sup>
+<sup>1 uvedené verze pro rozhraní .NET Framework se vztahují na .NET Core SDK 2.0 a novější verze nástrojů. Starší verze použít jiné mapování pro .NET Standard 1.5 nebo novější. </sup>
 
-- Sloupce, které představují .NET Standard verze. Každý datovou buňku je odkaz na dokument, který ukazuje, které rozhraní API získali přidána do této verze .NET Standard.
-- Řádky představují různé implementace rozhraní .NET.
-- Určuje číslo verze v každé buňce *minimální* verzi budete potřebovat za účelem cílení na tuto verzi rozhraní .NET standardní implementace.
-- Interaktivní tabulka, najdete v části [.NET Standard verze](http://immo.landwerth.net/netstandard-versions/#).
+- Sloupce, které představují verze .NET Standard. Každá buňka záhlaví je odkaz na dokument, který ukazuje, které rozhraní API je teď přidáno ve verzi .NET Standard.
+- Řádky představují různé implementace .NET.
+- Určuje číslo verze v každé buňce *minimální* verzi implementace budete potřebovat k cílení na tuto verzi rozhraní .NET Standard.
+- Interaktivní tabulky, najdete v části [.NET Standard verze](http://immo.landwerth.net/netstandard-versions/#).
 
 [1.0]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.0.md
 [1.1]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.1.md

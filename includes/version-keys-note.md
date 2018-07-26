@@ -1,3 +1,3 @@
 
 > [!IMPORTANT]
-> Následující tabulka uvádí klíče vydaných verzí rozhraní .NET Framework. Zobrazí nemá seznam klíče preview nebo předběžné verze.
+> V následující tabulce jsou uvedeny klíčů vydaných verzích rozhraní .NET Framework. Neobsahuje klíče ve verzi preview nebo předběžné verze.
