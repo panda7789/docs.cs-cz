@@ -8,41 +8,41 @@ helpviewer_keywords:
 - decimal keyword [C#]
 ms.assetid: b6522132-b5ee-4be3-ad13-3adfdb7de7a1
 ms.openlocfilehash: 18924abefb85012fc6c61073603c594de906b58d
-ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37027951"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37961193"
 ---
 # <a name="decimal-c-reference"></a>decimal (Referenční dokumentace jazyka C#)
 
-`decimal` – Klíčové slovo označuje typ dat 128-bit. Porovnání na jiné typy s plovoucí desetinnou čárkou `decimal` typ má více přesnost i s menším rozsahem, takže je vhodné pro finanční a peněžní výpočty. Přibližná rozsah a přesnost pro `decimal` typu jsou uvedené v následující tabulce.
+`decimal` – Klíčové slovo označuje typ 128bitových dat. Ve srovnání s jinými typy s plovoucí desetinnou čárkou `decimal` typ má větší přesnost a menší rozsah, díky čemuž je vhodný pro výpočty finančních a přepočty měn. Přibližný rozsah a přesnost `decimal` typu jsou uvedeny v následující tabulce.
 
 |Typ|Přibližný rozsah|Přesnost|Typ formátu .NET|
 |----------|-----------------------|---------------|-------------------------|
-|`decimal`|(-7.9 × 10<sup>28</sup> 7.9 × 10<sup>28</sup>) / (10<sup>0</sup> na 10<sup>28</sup>)|28–29 významných číslic|<xref:System.Decimal?displayProperty=nameWithType>|
+|`decimal`|(-7.9 x 10<sup>28</sup> 7.9 x 10<sup>28</sup>) / (10<sup>0</sup> 10<sup>28</sup>)|28–29 významných číslic|<xref:System.Decimal?displayProperty=nameWithType>|
 
 Výchozí hodnota `decimal` je 0 m.
 
 ## <a name="literals"></a>Literály
 
-Pokud chcete, aby číselný literál skutečné považován za `decimal`, použít příponu m nebo M, například:
+Pokud chcete, aby číselný literál reálného čísla jsou považovány za `decimal`, použijte příponu m nebo M, například:
 
 ```csharp
 decimal myMoney = 300.5m;
 ```
 
-Bez přípony m číslo považován za [dvojité](../../../csharp/language-reference/keywords/double.md) a vygeneruje chyby kompilátoru.
+Bez přípony m je číslo považováno za [double](../../../csharp/language-reference/keywords/double.md) a vygeneruje chybu kompilátoru.
 
 ## <a name="conversions"></a>Převody
 
-Celočíselné typy jsou implicitně převést na `decimal` a vyhodnotí jako výsledek `decimal`. Z tohoto důvodu můžete inicializovat proměnnou desítkového čísla pomocí celočíselného literálu bez přípony, a to následovně:
+Integrální typy jsou implicitně převedeny na `decimal` a výsledek je vyhodnocen jako `decimal`. Z tohoto důvodu můžete inicializovat proměnnou desítkového čísla pomocí celočíselného literálu bez přípony, a to následovně:
 
 ```csharp
 decimal myMoney = 300;
 ```
 
-Neexistuje žádný implicitní převod mezi jiné typy s plovoucí desetinnou čárkou a `decimal` typ; proto přetypování použije pro převod mezi těmito dvěma typy. Příklad:
+Neexistuje žádný implicitní převod mezi ostatní typy s plovoucí desetinnou čárkou a `decimal` typ; proto přetypování musí použít k převodu mezi těmito dvěma typy. Příklad:
 
 ```csharp
 decimal myMoney = 99.9m;
@@ -50,19 +50,19 @@ double x = (double)myMoney;
 myMoney = (decimal)x;
 ```
 
-Můžete také kombinovat `decimal` a číselnými integrální typy ve stejném výrazu. Kombinování však `decimal` a dalších typů s plovoucí desetinnou čárkou bez přetypování způsobí chybu kompilace.
+Můžete také kombinovat `decimal` a numerické integrální typy ve stejném výrazu. Kombinace `decimal` a jiné typy s plovoucí desetinnou čárkou bez přetypování způsobí chybu kompilace.
 
-Další informace o implicitních číselných převodů najdete v tématu [implicitní číselné převody tabulky](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md).
+Další informace o implicitním číselném převodu naleznete v tématu [Implicit Numeric Conversions Table](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md).
 
-Další informace o explicitních číselných převodů najdete v tématu [explicitní číselné převody tabulky](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md).
+Další informace o explicitním číselném převodu naleznete v tématu [Explicit Numeric Conversions Table](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md).
 
-## <a name="formatting-decimal-output"></a>Decimal výstupní formátování
+## <a name="formatting-decimal-output"></a>Formátování desítkového výstupu
 
-Výsledky můžete naformátovat pomocí `String.Format` metoda, nebo pomocí <xref:System.Console.Write%2A?displayProperty=nameWithType> metodu, která volá `String.Format()`. Formát měny je určen pomocí řetězce standardního formátu měny "C" nebo "c", jak je uvedeno v druhém příkladu dále v tomto článku. Další informace o `String.Format` metodu, najdete v části <xref:System.String.Format%2A?displayProperty=nameWithType>.
+Výsledky můžete naformátovat pomocí `String.Format` metodu, nebo prostřednictvím <xref:System.Console.Write%2A?displayProperty=nameWithType> metoda, která volá `String.Format()`. Formát měny je určen pomocí řetězce standardního formátu měny "C" nebo "c", jak je uvedeno v druhém příkladu dále v tomto článku. Další informace o `String.Format` metodu, najdete v článku <xref:System.String.Format%2A?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad způsobí chybu kompilátoru tak, že zkusíte přidat [dvojité](../../../csharp/language-reference/keywords/double.md) a `decimal` proměnné.
+Následující příklad způsobí chybu kompilátoru při kompilaci přidáním [double](../../../csharp/language-reference/keywords/double.md) a `decimal` proměnné.
 
 ```csharp
 decimal dec = 0m;
@@ -80,13 +80,13 @@ Výsledkem je následující chyba:
 
 `Operator '+' cannot be applied to operands of type 'double' and 'decimal'`
 
-V tomto příkladu `decimal` a [int](../../../csharp/language-reference/keywords/int.md) jsou kombinované ve stejném výrazu. Výsledek se vyhodnocuje `decimal` typu.
+V tomto příkladu `decimal` a [int](../../../csharp/language-reference/keywords/int.md) jsou kombinované ve stejném výrazu. Výsledek je vyhodnocen `decimal` typu.
 
 [!code-csharp[csrefKeywordsTypes#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#6)]
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu je výstup naformátován pomocí řetězce formátu měny. Všimněte si, že `x` se zaokrouhlí, protože překročila $0,99 desetinných míst. Proměnná `y`, která představuje maximální číslice, se zobrazí přesně ve správném formátu.
+V tomto příkladu je výstup naformátován pomocí řetězce formátu měny. Všimněte si, že `x` je zaokrouhlena, protože desetinná místa překračují hodnotu $0.99. Proměnná `y`, která představuje maximální přesné číslice, se zobrazí přesně ve správném formátu.
 
 [!code-csharp[csrefKeywordsTypes#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#7)]
 

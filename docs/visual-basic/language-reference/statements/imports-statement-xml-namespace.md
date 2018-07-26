@@ -1,5 +1,5 @@
 ---
-title: Imports – Příkaz (obor názvů XML)
+title: Imports – příkaz - Namespace XML (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.ImportsXmlns
@@ -9,15 +9,15 @@ helpviewer_keywords:
 - Imports statement [Visual Basic]
 - namespaces [Visual Basic], importing
 ms.assetid: 1f4d50a6-08c7-4c2e-8206-ccae35fcd1b4
-ms.openlocfilehash: ba7475416d8a4e2eb3c892d457c03eeb695045eb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 51b63a11fd2987d82f9a7599b39d15856a0abb1d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604559"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39243825"
 ---
 # <a name="imports-statement-xml-namespace"></a>Imports – Příkaz (obor názvů XML)
-Importuje předpon oboru názvů XML pro použití v literály XML a vlastnosti osy XML.  
+Importuje předpon názvového prostoru XML pro použití v literály XML a vlastnosti OS XML.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,26 +27,26 @@ Imports <xmlns:xmlNamespacePrefix = "xmlNamespaceName">
   
 ## <a name="parts"></a>Součásti  
  `xmlNamespacePrefix`  
- Volitelné. Řetězec, ve které XML elementů a atributů může odkazovat na `xmlNamespaceName`. Pokud žádné `xmlNamespacePrefix` je uvedený importované obor názvů XML je výchozí obor názvů XML. Musí být platný identifikátor XML. Další informace najdete v tématu [názvy z deklarovaný XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).  
+ Volitelné. Řetězec, ve které XML elementů a atributů mohou odkazovat na `xmlNamespaceName`. Pokud ne `xmlNamespacePrefix` je zadán, importované oboru názvů XML je výchozí obor názvů XML. Musí být platný identifikátor XML. Další informace najdete v tématu [názvy z deklarované XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).  
   
  `xmlNamespaceName`  
- Požadováno. Řetězec identifikující importovaných obor názvů XML.  
+ Požadováno. Řetězec, který identifikuje importované oboru názvů XML.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít `Imports` příkaz k definování globální obory názvů XML, který můžete použít s literály XML a vlastnosti osy XML nebo jako parametry předat `GetXmlNamespace` operátor. (Informace o používání `Imports` příkaz pro import alias, který je možné, kdy se používá název typu ve vašem kódu najdete v části [příkaz Imports (Namespace .NET a typ)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).) Syntaxe deklarace oboru názvů XML s použitím `Imports` příkaz je shodná se syntaxí používá v kódu XML. Proto můžete zkopírovat deklaraci oboru názvů ze souboru XML a použít ho `Imports` příkaz.  
+ Můžete použít `Imports` příkaz k definování globálními názvovými prostory XML, který vám pomůže s literály XML a vlastnosti OS XML, nebo jako parametry předat `GetXmlNamespace` operátor. (Další informace o použití `Imports` smlouvu pro import alias, který je možné, kde se používají názvy typů ve vašem kódu, naleznete v tématu [příkaz Imports (Namespace .NET a typ)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).) Syntaxe pro deklarování obor názvů XML s použitím `Imports` příkaz je stejná jako syntaxe používané ve formátu XML. Proto, můžete zkopírovat deklarace oboru názvů ze souboru XML a použít ho `Imports` příkazu.  
   
- XML – předpony oboru názvů jsou užitečné, pokud chcete vytvořit opakovaně elementů XML, které jsou ze stejného oboru názvů. Předpona oboru názvů XML deklarovat s `Imports` příkaz je globální v tom smyslu, že je k dispozici všechny kód v souboru. Můžete ho použít při vytváření element literály XML a při přístup k vlastnosti osy XML. Další informace najdete v tématu [literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) a [vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md).  
+ Předpony oboru názvů XML jsou užitečné, pokud chcete vytvořit opakovaně elementů XML, které pocházejí ze stejného oboru názvů. Předpona oboru názvů XML deklarována s `Imports` příkaz je globální v tom smyslu, že je k dispozici pro všechen kód v souboru. Můžete ho používat při vytváření elementu literály XML a při přístupu k vlastnosti osy XML. Další informace najdete v tématu [literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) a [vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md).  
   
- Pokud definujete globální obor názvů XML bez předpony oboru názvů (například `Imports <xmlns="http://SomeNameSpace>"`), tento obor názvů se považuje za výchozí obor názvů XML. U elementu XML – literály nebo vlastnosti osy atributu XML, které explicitně nezadávejte obor názvů se používá výchozí obor názvů XML. Výchozí obor názvů se také používá, pokud je zadaný obor názvů prázdného oboru názvů (tedy `xmlns=""`). Výchozí obor názvů XML nevztahuje atributům XML v literálech XML a vlastnosti osy atributu XML, které nemají obor názvů.  
+ Pokud můžete definovat globální obor názvů XML bez předpony oboru názvů (například `Imports <xmlns="http://SomeNameSpace>"`), tento obor názvů se považuje za výchozí obor názvů XML. Výchozí obor názvů XML se používá pro jakoukoli element literály XML a vlastnosti osy atributu XML, které není explicitně zadán obor názvů. Výchozí obor názvů se také používá, pokud zadaný obor názvů není prázdný obor názvů (to znamená `xmlns=""`). Výchozí obor názvů XML se nevztahuje k atributům XML v literálech XML a vlastnosti osy atributu XML, které nemají žádný obor názvů.  
   
- XML obory názvů, které jsou definovány v XML literálu, které se nazývají *místní obory názvů XML*, mají přednost před obory názvů XML, které jsou definovány `Imports` příkaz jako globální. Obory názvů XML, které jsou definovány `Imports` příkaz mají přednost před obory názvů XML importu projektu jazyka Visual Basic. Pokud literál XML definuje obor názvů XML, že místní obor názvů se nevztahuje na vložené výrazy.  
+ Obory názvů XML, které jsou definovány v XML literál, který se nazývá *místní obory názvů XML*, přednost před obory názvů XML, které jsou definovány `Imports` příkaz jako globální. Obory názvů XML, které jsou definovány `Imports` příkaz přednost importovat pro projekt jazyka Visual Basic obory názvů XML. Pokud literál XML definuje obor názvů XML, že místní obor názvů se nevztahují na vložené výrazy.  
   
- Globální obory názvů XML použijte stejná nastavení oboru a definice pravidla jako obory názvů v rozhraní .NET Framework. V důsledku toho můžete použít `Imports` příkaz k definování globální obor názvů XML kdekoli můžete importovat obor názvů rozhraní .NET Framework. To zahrnuje soubory kódu a importovaných oborů názvů úrovni projektu. Informace o úrovni projektu importovaných oborů názvů najdete v tématu [stránka odkazy, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic).  
+ Globálními názvovými prostory XML řídit stejnými pravidly určení oboru a definice jako obory názvů rozhraní .NET Framework. V důsledku toho může obsahovat `Imports` příkaz k definování globální obor názvů XML kdekoli můžete importovat obor názvů rozhraní .NET Framework. To zahrnuje soubory s kódem a importovaných oborů názvů na úrovni projektu. Informace o importovaných oborů názvů na úrovni projektu, naleznete v tématu [odkazy na stránky, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic).  
   
- Každý zdrojový soubor může obsahovat libovolný počet `Imports` příkazy. Tyto postupujte možnost deklarace, jako `Option Strict` příkaz a musí předcházet programovací element deklarace, jako například `Module` nebo `Class` příkazy.  
+ Každý zdrojový soubor může obsahovat libovolný počet `Imports` příkazy. Tyto musí následovat možnost deklarace, jako `Option Strict` příkaz a musí předcházet programovací element deklarace, jako například `Module` nebo `Class` příkazy.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad importuje výchozí obor názvů XML a označeny předponu oboru názvů XML `ns`. Pak vytvoří literálů XML, které používají oba obory názvů.  
+ Následující příklad importuje výchozí názvový prostor XML a obor názvů XML identifikovat s předponou `ns`. Potom vytvoří literály XML, které používají oba obory názvů.  
   
  [!code-vb[VbXMLSamples#45](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/imports-statement-xml-namespace_1.vb)]  
   
@@ -62,7 +62,7 @@ Imports <xmlns:xmlNamespacePrefix = "xmlNamespaceName">
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad importuje Předpona oboru názvů XML `ns`. Pak vytvoří literálu kód XML, který používá Předpona oboru názvů a zobrazí poslední formulář elementu.  
+ Následující příklad importuje předponu oboru názvů XML `ns`. Potom vytvoří literál XML, který používá předponu oboru názvů a zobrazí poslední formulář daného elementu.  
   
  [!code-vb[VbXMLSamples#22](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/imports-statement-xml-namespace_2.vb)]  
   
@@ -77,10 +77,10 @@ Imports <xmlns:xmlNamespacePrefix = "xmlNamespaceName">
 </ns:outer>  
 ```  
   
- Všimněte si, že kompilátor převést Předpona oboru názvů XML z globální předpony na definici místní předponu.  
+ Všimněte si, že kompilátor převést předponu oboru názvů XML z globální předpony s definicí místní předponu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad importuje Předpona oboru názvů XML `ns`. Poté použije Předpona oboru názvů k vytvoření literál XML a přístup k první podřízený uzel s kvalifikovaný název `ns:name`.  
+ Následující příklad importuje předponu oboru názvů XML `ns`. Poté použije předponu oboru názvů XML vytvoření literálu a přístup k první podřízený uzel s kvalifikovaným názvem `ns:name`.  
   
  [!code-vb[VbXMLSamples#19](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/imports-statement-xml-namespace_3.vb)]  
   

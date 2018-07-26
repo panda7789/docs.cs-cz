@@ -2,30 +2,30 @@
 title: 'Postupy: Vytvoření kontraktu požadavku a odpovědi'
 ms.date: 03/30/2017
 ms.assetid: 801d90da-3d45-4284-9c9f-56c8aadb4060
-ms.openlocfilehash: 76a3bbb9415a34218896bc561066c7ac4a30e6b9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0d41973d04fc75f70011505a3361e71e89a05276
+ms.sourcegitcommit: f6343b070f3c66877338a05c8bfb0be9985255e2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33489570"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39220981"
 ---
 # <a name="how-to-create-a-request-reply-contract"></a>Postupy: Vytvoření kontraktu požadavku a odpovědi
-Kontraktu požadavku a odpovědi určuje metodu, která vrátí odpověď. Odpovědi musí být odeslána a korelována žádost v souladu s podmínkami této smlouvy. I v případě, že metoda vrátí odpověď (`void` v jazyce C# nebo `Sub` v jazyce Visual Basic), infrastruktura vytvoří a odešle zprávu o prázdný volajícímu. Aby odesílání zprávy odpovědi prázdná, použijte jednosměrného kontraktu pro operaci.  
+Určuje kontraktů požadavek odpověď, která vrací odpověď. Odpovědi musí být odeslána a korelována žádost podle podmínek této smlouvy. I v případě, že metoda vrátí odpověď (`void` v jazyce C#, nebo `Sub` v jazyce Visual Basic), infrastruktura vytvoří a odešle zprávu o prázdný volajícímu. Pokud chcete zabránit odeslání odpovědi prázdný, použijte jednosměrného kontraktu pro operaci.  
   
-### <a name="to-create-a-request-reply-contract"></a>K vytvoření kontraktu požadavku a odpovědi  
+### <a name="to-create-a-request-reply-contract"></a>Vytvoření kontraktu požadavku a odpovědi  
   
-1.  Vytvořte rozhraní v programovací jazyk podle vašeho výběru.  
+1.  Vytvoření rozhraní v programovacím jazyce podle vašeho výběru.  
   
 2.  Použít <xref:System.ServiceModel.ServiceContractAttribute> atribut rozhraní.  
   
-3.  Použít <xref:System.ServiceModel.OperationContractAttribute> atribut každá metoda, který lze vyvolat klientů.  
+3.  Použít <xref:System.ServiceModel.OperationContractAttribute> atribut pro jednotlivé metody, který může vyvolat klientů.  
   
-4.  Volitelné. Nastavte hodnotu <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost `true` zabránit odesílání zprávy prázdnou odpověď. Ve výchozím nastavení jsou všechny operace kontraktů požadavek odpověď.  
+4.  Volitelné. Nastavte hodnotu <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost `true` zabránit odeslání zprávy prázdnou odpověď. Ve výchozím nastavení jsou všechny operace kontraktů požadavek odpověď.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad definuje kontrakt služby kalkulačky, která poskytuje `Add` a `Subtract` metody. `Multiply` Metoda není součástí kontraktu protože není označena pomocí <xref:System.ServiceModel.OperationContractAttribute> třídy a proto není přístupná pro klienty.  
+ Následující příklad definuje kontrakt pro službu kalkulačky, která poskytuje `Add` a `Subtract` metody. `Multiply` Metoda není součástí kontraktu proto není označeno atributem <xref:System.ServiceModel.OperationContractAttribute> třídy a proto není přístupný pro klienty.  
   
-```
+```csharp
 using System.ServiceModel;
 
 [ServiceContract]
@@ -43,9 +43,9 @@ public interface ICalculator
 }
 ```
   
--   Další informace o tom, jak určit kontrakty operaci najdete v tématu <xref:System.ServiceModel.OperationContractAttribute> třídy a <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost.  
+-   Další informace o tom, jak určit operace kontrakty, najdete v článku <xref:System.ServiceModel.OperationContractAttribute> třídy a <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost.  
   
--   Použití <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> atributy způsobí automatické generování definice kontraktu služby webové služby popis Language (WSDL) dokumentu po nasazení služby. Stažení dokumentu připojením `?wsdl` na HTTP základní adresa pro službu. Třeba `http://microsoft/CalculatorService?wsdl`.  
+-   Použití <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> atributy způsobí, že se automatické generování definice kontraktu služby ve webové služby WSDL (Description Language) dokumentu po nasazení služby. Dokument se stáhne přidáním `?wsdl` na HTTP základní adresa pro službu. Třeba `http://microsoft/CalculatorService?wsdl`.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.OperationContractAttribute>  

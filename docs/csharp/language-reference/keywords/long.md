@@ -8,15 +8,15 @@ helpviewer_keywords:
 - long keyword [C#]
 ms.assetid: f9b24319-1f39-48be-a42b-d528ee28a7fd
 ms.openlocfilehash: 106b832801a373ca387be455ef1c0df4233621d0
-ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
+ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37027821"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37961336"
 ---
 # <a name="long-c-reference"></a>long (Referenční dokumentace jazyka C#)
 
-`long` označuje typ integrální, který ukládá hodnoty podle velikosti a rozsah uvedené v následující tabulce.  
+`long` označuje integrální typ, který uchovává hodnoty podle toho, velikost a rozsah je znázorněno v následující tabulce.  
   
 |Typ|Rozsah|Velikost|Typ formátu .NET|  
 |----------|-----------|----------|-------------------------|  
@@ -24,75 +24,75 @@ ms.locfileid: "37027821"
   
 ## <a name="literals"></a>Literály 
 
-Můžete deklarace a inicializace `long` proměnné přiřazením decimal literál, hexadecimální literál, nebo (počínaje 7.0 C#) binární literálu do ní. 
+Můžete deklarovat a inicializovat `long` proměnné přiřazením literál desítkové, hexadecimální literál, nebo (od verze C# 7.0) binární literál k němu. 
 
-V následujícím příkladu, celá čísla rovno 4 294 967 296 jsou reprezentovány jako decimal, šestnáctkové, a binární literály jsou přiřazeny k `long` hodnoty.  
+V následujícím příkladu celých čísel rovnat do 4 294 967 296 jsou reprezentovány jako desítkové, hexadecimální, a binární literály jsou přiřazeny k `long` hodnoty.  
   
 [!code-csharp[long](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#Long)]  
 
 > [!NOTE] 
-> Použijte předponu `0x` nebo `0X` k označení hexadecimální literál a předponu `0b` nebo `0B` k označení binární literál. Decimal literály mít žádná předpona. 
+> Použijte předponu `0x` nebo `0X` k označení šestnáctkové literal a předponu `0b` nebo `0B` k označení binární literál. Desítkové literály mají žádná předpona. 
 
-Od verze jazyka C# 7.0, byly přidány několik funkcí za účelem zlepšení čitelnosti. 
- - C# 7.0 umožňuje použití znak podtržítka `_`, jako oddělovač číslice.
- - C# 7.2 umožňuje `_` má být použit jako číslice oddělovače pro binární nebo hexadecimální literál, po předponu. Decimal literál není povolená tak, aby měl úvodní podtržítka.
+Od verze C# 7.0, přidali několik funkcí za účelem zlepšení čitelnosti. 
+ - C# 7.0 umožňuje použití znaku podtržítka `_`, jako oddělovač číslic.
+ - C# 7.2 umožňuje `_` má být použit jako oddělovač číslici šestnáctkové nebo binární literál po předponu. Desítkový literál není povoleno mít vedoucího podtržítka.
 
-Níže jsou uvedeny některé příklady.
+Níže je uvedeno několik příkladů.
 
 [!code-csharp[long](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#LongS)]  
  
- Literály celé číslo může obsahovat také příponu, která označuje typ. Přípona `L` označuje `long`. Následující příklad používá `L` příponu k označení dlouhých celých čísel:
+ Literály celých čísel může také obsahovat příponu, která označuje typ. Přípona `L` označuje `long`. V následujícím příkladu `L` příponu k označení dlouhé celé číslo:
  
 ```csharp
 long value = 4294967296L;  
 ```  
 
 > [!NOTE]
->  Můžete taky malé písmeno "l" jako příponu. Ale tím se vygeneruje upozornění kompilátoru protože písmeno "l" je snadno zaměnit s číslice "1". Pro přehlednost použijte "L".  
+>  Malé písmeno "l" můžete také použít jako příponu. Nicméně tím se vygeneruje upozornění kompilátoru protože písmeno "l" je snadno zaměnitelná s číslicí "1". Pro přehlednost použijte "L".  
   
- Když použijete tuto příponu `L`, typ literálu celého čísla, je určen být buď `long` nebo [ulong](../../../csharp/language-reference/keywords/ulong.md), v závislosti na jeho velikost. V takovém případě je `long` protože je menší než rozsah [ulong](../../../csharp/language-reference/keywords/ulong.md).  
+ Pokud použijete tuto příponu `L`, vyhodnotí typu literál celého čísla buď `long` nebo [ulong](../../../csharp/language-reference/keywords/ulong.md), v závislosti na jeho velikost. V takovém případě je `long` vzhledem k tomu je méně než rozsah [ulong](../../../csharp/language-reference/keywords/ulong.md).  
   
- Běžně se používají přípona je volání přetížené metody. Například následující přetížené metody mít parametry typu `long` a [int](../../../csharp/language-reference/keywords/int.md):  
+ Běžné použití přípona je volání přetížené metody. Například následující přetížené metody mít parametry typu `long` a [int](../../../csharp/language-reference/keywords/int.md):  
   
 ```csharp
 public static void SampleMethod(int i) {}  
 public static void SampleMethod(long l) {}  
 ```  
   
- `L` Příponu zaručuje, že správné přetížení nazývá:  
+ `L` Přípona zaručuje, že je volána správné přetížení:  
   
 ```csharp  
 SampleMethod(5);    // Calls the method with the int parameter  
 SampleMethod(5L);   // Calls the method with the long parameter  
 ```  
-Pokud celé literál bez přípony, je její typ první z těchto typů, ve kterých může být reprezentován jeho hodnotu: 
+Pokud celočíselného literálu bez přípony, jeho typ je první z těchto typů, ve kterých může být reprezentována jeho hodnotu: 
 
 1. [int](int.md)
 2. [uint](../../../csharp/language-reference/keywords/uint.md)
 3. `long`
 4. [ulong](../../../csharp/language-reference/keywords/ulong.md) 
 
-Literál 4294967296 v předchozích příkladech je typu `long`, protože překračuje rozsah [Celé_číslo](../../../csharp/language-reference/keywords/uint.md) (viz [tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md) velikostí úložiště celočíselných typů).  
+Typ je literál 4294967296 v předchozích příkladech `long`, protože překračuje rozsah [uint](../../../csharp/language-reference/keywords/uint.md) (naleznete v tématu [integrální typy tabulky](../../../csharp/language-reference/keywords/integral-types-table.md) pro velikosti úložiště celočíselných typů).  
   
- Pokud použijete `long` je typ s jinými integrální typy ve stejném výrazu výraz vyhodnocen jako `long` (nebo [bool](../../../csharp/language-reference/keywords/bool.md) v případě výrazy relační nebo logická hodnota). Například následující výraz vyhodnotí jako `long`:  
+ Pokud používáte `long` typ s jiné typy celých čísel ve stejném výrazu, výrazu je vyhodnoceno jako `long` (nebo [bool](../../../csharp/language-reference/keywords/bool.md) v případě relační nebo logické výrazy). Například následující výraz se vyhodnocuje jako `long`:  
   
 ```csharp  
 898L + 88  
 ```  
   
- Informace v aritmetických výrazech s smíšený typy s plovoucí desetinnou čárkou a integrální typy najdete v tématu [float](../../../csharp/language-reference/keywords/float.md) a [dvojité](../../../csharp/language-reference/keywords/double.md).  
+ Informace v aritmetických výrazech s smíšené typy s plovoucí desetinnou čárkou a celočíselných typů naleznete v tématu [float](../../../csharp/language-reference/keywords/float.md) a [double](../../../csharp/language-reference/keywords/double.md).  
   
 ## <a name="conversions"></a>Převody  
- Je předdefinovaný implicitní převod z `long` k [float](../../../csharp/language-reference/keywords/float.md), [dvojité](../../../csharp/language-reference/keywords/double.md), nebo [decimal](../../../csharp/language-reference/keywords/decimal.md). V opačném případě je nutné použít přetypování. Například následující příkaz vytvoří chybu kompilace bez explicitní přetypování:  
+ Není předdefinovanou implicitní převod z `long` k [float](../../../csharp/language-reference/keywords/float.md), [double](../../../csharp/language-reference/keywords/double.md), nebo [desítkové](../../../csharp/language-reference/keywords/decimal.md). V opačném případě se musí použít přetypování. Například následující příkaz vytvoří chybu kompilace bez explicitního přetypování:  
   
 ```csharp  
 int x = 8L;        // Error: no implicit conversion from long to int  
 int x = (int)8L;   // OK: explicit conversion to int  
 ```  
   
- Je předdefinovaný implicitní převod z [sbyte](../../../csharp/language-reference/keywords/sbyte.md), [bajtů](../../../csharp/language-reference/keywords/byte.md), [krátké](../../../csharp/language-reference/keywords/short.md), [ushort](../../../csharp/language-reference/keywords/ushort.md), [int](../../../csharp/language-reference/keywords/int.md), [Celé_číslo](../../../csharp/language-reference/keywords/uint.md), nebo [char](../../../csharp/language-reference/keywords/char.md) k `long`.  
+ Není předdefinovanou implicitní převod z [sbyte](../../../csharp/language-reference/keywords/sbyte.md), [bajtů](../../../csharp/language-reference/keywords/byte.md), [krátký](../../../csharp/language-reference/keywords/short.md), [ushort](../../../csharp/language-reference/keywords/ushort.md), [int](../../../csharp/language-reference/keywords/int.md), [uint](../../../csharp/language-reference/keywords/uint.md), nebo [char](../../../csharp/language-reference/keywords/char.md) k `long`.  
   
- Všimněte si také, že neexistuje žádná implicitní převod z typů s plovoucí desetinnou čárkou na `long`. Například následující příkaz vygeneruje Chyba kompilátoru, pokud se používá explicitní přetypování:  
+ Všimněte si také, že neexistuje žádný implicitní převod z typů s plovoucí desetinnou čárkou `long`. Například následující příkaz vygeneruje chybu kompilátoru, pokud používá explicitní přetypování:  
   
 ```csharp  
 long x = 3.0;         // Error: no implicit conversion from double  
