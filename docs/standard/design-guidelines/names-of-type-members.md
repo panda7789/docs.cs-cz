@@ -1,5 +1,5 @@
 ---
-title: Názvy členy typu
+title: Názvy členů typu
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -15,19 +15,19 @@ ms.assetid: af5a0903-36af-4c2a-b848-cf959affeaa5
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 25fe93b63c518f54ee72300f26dfcb3f3ad21d76
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 07/26/2018
 ms.locfileid: "33575346"
 ---
-# <a name="names-of-type-members"></a>Názvy členy typu
-Typy jsou vytvářeny členů: metody, vlastnosti, události, konstruktory a pole. Následující části popisují pokyny pro pojmenování členy typu.  
+# <a name="names-of-type-members"></a>Názvy členů typu
+Typy jsou tvořeny členů: metody, vlastnosti, události, konstruktory a pole. Pokyny pro vytváření názvů členů typů v následujících částech.  
   
 ## <a name="names-of-methods"></a>Názvy metod  
- Vzhledem k tomu, že jsou metody způsob akce, pokynů pro návrh vyžadují, aby metoda názvy příkazy nebo akce frází. Toto platí také následující slouží k rozlišení názvů metoda z vlastnost a zadejte názvy, které jsou podstatné jméno a přídavných jmen frází.  
+ Protože metody jsou prostředky opatření, pokyny pro návrh vyžadují, aby názvy metod akce nebo operace frází. Také následující toto pravidlo slouží k odlišení názvy metod z vlastnost a zadejte názvy, které jsou věty podstatné jméno nebo přídavného jména.  
   
- **PROVEĎTE ✓** zadejte název metody, které jsou, nebo příkaz frází.  
+ **PROVEĎTE ✓** poskytují názvy metod, které jsou, nebo příkaz frází.  
   
 ```  
 public class String {  
@@ -38,24 +38,24 @@ public class String {
 ```  
   
 ## <a name="names-of-properties"></a>Názvy vlastností  
- Na rozdíl od jiných členů by měly mít vlastnosti frázi podstatné jméno nebo tvary přídavných jmen názvy. Je to způsobeno odkazuje vlastnost k datům a název vlastnosti, která odráží. PascalCasing se vždy používá pro názvy vlastností.  
+ Na rozdíl od jiných členů vlastnosti by se měly provádět podstatné jméno fráze nebo tvary přídavných jmen názvy. Důvodem je skutečnost, že vlastnost odkazuje na data, a název vlastnosti, která odráží. PascalCasing se vždy používá pro názvy vlastností.  
   
- **PROVEĎTE ✓** název vlastnosti pomocí podstatné jméno, heslo podstatné jméno nebo přídavných jmen.  
+ **PROVEĎTE ✓** název vlastnosti pomocí podstatné jméno, podstatné jméno fráze nebo přídavného jména.  
   
- **X nesmí** mít vlastnosti, které odpovídají názvu metody "Get" jako v následujícím příkladu:  
+ **X neměňte** mít vlastnosti, které odpovídají názvu metody "Get" jako v následujícím příkladu:  
   
  `public string TextWriter { get {...} set {...} }`  
  `public string GetTextWriter(int value) { ... }`  
   
- Tento vzor obvykle označuje vlastnost by měla být skutečně metodu.  
+ Tento model obvykle indikuje vlastnost by měla být skutečně metodu.  
   
- **PROVEĎTE ✓** název vlastnosti v kolekci s množném čísle frázi popisující položky v kolekci místo použití singulární frázi následuje "seznam" nebo "Kolekce."  
+ **PROVEĎTE ✓** název vlastnosti kolekce s množném čísle věta popisující položek v kolekci namísto použití singulární frázi "Seznam" nebo "Kolekce."  
   
- **PROVEĎTE ✓** název logické vlastnosti s kladných frázi (`CanSeek` místo `CantSeek`). Volitelně můžete také předpony logická hodnota vlastnosti s "Je", "můžete" nebo "Má" ale pouze tam, kde se přidá hodnotu.  
+ **PROVEĎTE ✓** název logické vlastnosti s nevyjádřil fráze (`CanSeek` místo `CantSeek`). Volitelně můžete také před logické vlastnosti pomocí "Je", "můžete" nebo "Má" pouze, pokud přidá hodnotu.  
   
- **✓ ZVAŽTE** poskytnutí stejný název jako typ vlastnosti.  
+ **✓ ZVAŽTE** poskytuje vlastnost se stejným názvem jako jeho typu.  
   
- Například následující vlastnost správně získá a nastaví hodnotu výčtu s názvem `Color`, takže je název vlastnosti `Color`:  
+ Například následující vlastnost správně získá a nastaví hodnotu výčtu s názvem `Color`, takže název vlastnosti `Color`:  
   
 ```  
 public enum Color {...}  
@@ -65,42 +65,42 @@ public class Control {
 ```  
   
 ## <a name="names-of-events"></a>Názvy událostí  
- Události se vždy odkazují na některé akce, a to buď jednu, která je situaci nebo ten, který došlo k chybě. Stejně jako u metody, proto události jsou pojmenované s příkazy a slovesného příkaz času slouží k označení doby, kdy je vyvolána událost.  
+ Události odkazují na určitou akci, buď ten, který se děje, nebo aplikace, došlo k chybě. Proto stejně jako u metod, událostí jsou pojmenované s příkazy a čas příkaz slouží k určení doby, kdy je vyvolána událost.  
   
- **PROVEĎTE ✓** název události s operaci nebo frázi operaci.  
+ **PROVEĎTE ✓** název události operaci nebo operace frází.  
   
- Mezi příklady patří `Clicked`, `Painting`, `DroppedDown`a tak dále.  
+ Mezi příklady patří `Clicked`, `Painting`, `DroppedDown`, a tak dále.  
   
- **PROVEĎTE ✓** zadejte název události s koncept před a po, pomocí přítomen a časů v minulosti.  
+ **PROVEĎTE ✓** pojmenovat události s koncept před a po ní, pomocí k dispozici a rodu minulosti.  
   
- Například by názvem zavřít událost, která je vyvolána před zavřením okna `Closing`, a ten, který je vyvolána po zavření okna by se volat `Closed`.  
+ Například by byla volána zavřít událost, která je aktivována před zavřením okna `Closing`, a ten, který je aktivována po zavření okna by byla volána `Closed`.  
   
- **X nesmí** použijte "Před" nebo "Po" předpony nebo postfixes k označení před a po události. Použití přítomen a časy minulosti jako právě popsané.  
+ **X neměňte** použijte "Before" nebo "After" předpony nebo postfixes udávajících před a po událostech. Použití, které jsou k dispozici a minulosti rodu, jak bylo právě popsáno.  
   
- **PROVEĎTE ✓** název obslužné rutiny událostí (delegáti používat jako typy událostí) s příponou "Obslužná rutina události", jak je znázorněno v následujícím příkladu:  
+ **PROVEĎTE ✓** název s příponou "EventHandler" obslužné rutiny události (delegáty používané jako typy událostí), jak je znázorněno v následujícím příkladu:  
   
  `public delegate void ClickedEventHandler(object sender, ClickedEventArgs e);`  
   
- **PROVEĎTE ✓** použít dva parametry s názvem `sender` a `e` v obslužné rutiny událostí.  
+ **PROVEĎTE ✓** použití dvou parametrů s názvem `sender` a `e` v obslužných rutinách událostí.  
   
- Parametr odesílatele představuje objekt, který vyvolá událost. Parametr odesílatele je obvykle typu `object`i v případě, že je možné využívat více konkrétního typu.  
+ Parametr odesílatele představuje objekt, který vyvolal událost. Parametr odesílatele je obvykle typu `object`i v případě, že je možné využívat více určitého typu.  
   
- **PROVEĎTE ✓** název události třídy argument s příponou "EventArgs".  
+ **PROVEĎTE ✓** pojmenujte událost třídy argument s příponou "EventArgs".  
   
 ## <a name="names-of-fields"></a>Názvy polí  
- Pole názvy pokyny se vztahují k statických polí veřejné a chráněné. Interní a privátní pole nejsou předmětem pokyny a veřejné nebo chráněné instance pole nejsou povoleny [pokynů pro návrh člen](../../../docs/standard/design-guidelines/member.md).  
+ Pokyny pro pojmenování pole platí pro statické veřejné a chráněné položky. Interní a privátní pole nejsou pokryty všemi pokyny a pole veřejné nebo chráněné instance nejsou povoleny [pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md).  
   
  **PROVEĎTE ✓** použít PascalCasing v názvech polí.  
   
- **PROVEĎTE ✓** název pole pomocí podstatné jméno, heslo podstatné jméno nebo přídavných jmen.  
+ **PROVEĎTE ✓** pojmenovat pole pomocí podstatné jméno, podstatné jméno fráze nebo přídavného jména.  
   
- **X nesmí** použijte předponu pro názvy polí.  
+ **X neměňte** použijte předponu pro názvy polí.  
   
- Nepoužívejte například "g_" nebo "s_" k označení statických polí.  
+ Nepoužívejte například "g_" nebo "s_" k označení statická pole.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také  
  [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
