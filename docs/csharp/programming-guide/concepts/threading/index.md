@@ -2,12 +2,12 @@
 title: Dělení na vlákna (C#)
 ms.date: 07/20/2015
 ms.assetid: 236d157d-37c0-4ee8-89fc-721e6c596325
-ms.openlocfilehash: 8325132a359c8b65572943bb79c9f02a485eb290
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: f9ba0793876f38b3ada2f65c4594562ea1a66983
+ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37874663"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39296179"
 ---
 # <a name="threading-c"></a>Dělení na vlákna (C#)
 Práce s vlákny umožňuje programu jazyka C# provádět souběžné zpracování tak, že máte více než jednu operaci najednou. Například můžete dělení na vlákna pro monitorování vstup od uživatele, provedení úlohy na pozadí a zpracování současných vstupů.  
@@ -38,8 +38,6 @@ Práce s vlákny umožňuje programu jazyka C# provádět souběžné zpracován
 |Název|Popis|  
 |-----------|-----------------|  
 |[Vícevláknové aplikace (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)|Popisuje postup vytvoření a používání vláken.|  
-|[Parametry a návratové hodnoty pro procedury ve více vláknech (C#)](../../../../csharp/programming-guide/concepts/threading/parameters-and-return-values-for-multithreaded-procedures.md)|Popisuje, jak předat a vrátí parametry s aplikací s více vlákny.|  
-|[Návod: Multithreading s komponentou BackgroundWorker (C#)](../../../../csharp/programming-guide/concepts/threading/walkthrough-multithreading-with-the-backgroundworker-component.md)|Ukazuje, jak vytvořit jednoduchou aplikaci s více vlákny.|  
 |[Synchronizace vláken (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)|Popisuje, jak řídit interakce vlákna.|  
 |[Vlákno sdružování (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md)|Popisuje způsob použití fondu pracovních vláken, které jsou spravované systémem.|  
 |[Postupy: použití fondu vláken (C#)](../../../../csharp/programming-guide/concepts/threading/how-to-use-a-thread-pool.md)|Ukazuje použití synchronizované z více vláken ve fondu vláken.|  
