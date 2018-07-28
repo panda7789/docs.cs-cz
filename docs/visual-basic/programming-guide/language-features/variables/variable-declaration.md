@@ -18,41 +18,41 @@ helpviewer_keywords:
 - scope [Visual Basic], variables
 ms.assetid: d8f10226-92b1-480f-9f53-df377b2d7e15
 ms.openlocfilehash: 6890ddfd8b463cd731ab3d8f39565b50a31a1192
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33656136"
+ms.lasthandoff: 07/28/2018
+ms.locfileid: "39332730"
 ---
 # <a name="variable-declaration-in-visual-basic"></a>Deklarace proměnné v jazyce Visual Basic
-Je deklarovat proměnnou a určit její název a vlastností. Příkaz deklarace pro proměnné [Dim – příkaz](../../../../visual-basic/language-reference/statements/dim-statement.md). Její umístění a obsah zadat vlastnosti proměnnou.  
+Deklarujete proměnnou k určení jeho název a vlastnosti. Příkaz deklarace proměnných [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md). Jeho umístění a obsah zadat vlastnosti proměnnou.  
   
- Proměnné pravidla pojmenování a požadavky najdete v tématu [deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+ Proměnné pravidla pojmenování, najdete v článku [deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
 ## <a name="declaration-levels"></a>Deklarace úrovně  
   
 ### <a name="local-and-member-variables"></a>Místní a členské proměnné  
- A *místní proměnné* je ten, který je deklarován v rámci procedury. A *členské proměnné* je členem skupiny typu jazyka Visual Basic; je deklarovaný na úrovni modulu, uvnitř třídy, struktury nebo modul, ale není v rámci žádné procedury interní třídy, struktury nebo modul.  
+ A *lokální proměnná* je ten, který je deklarován v rámci procedury. A *členskou proměnnou* je členem typu jazyka Visual Basic je deklarován na úrovni modulu uvnitř třídy, struktury nebo modulu, ale ne v rámci žádné procedury interní této třídy, struktury nebo modulu.  
   
-### <a name="shared-and-instance-variables"></a>Sdílené a instanci proměnné  
- Ve třídě nebo struktuře kategorii členské proměnné závisí na tom, jestli je sdílené. Pokud je deklarovaný s [sdílené](../../../../visual-basic/language-reference/modifiers/shared.md) – klíčové slovo, je *sdílené proměnné*, a existuje v jedné kopie sdílí všechny instance třídu nebo strukturu.  
+### <a name="shared-and-instance-variables"></a>Sdílené a Instance proměnné  
+ Ve třídě nebo struktuře kategorie členskou proměnnou závisí Určuje, jestli se sdílí. Pokud je deklarovaná s [Shared](../../../../visual-basic/language-reference/modifiers/shared.md) – klíčové slovo, je *sdílené proměnné*, a existuje v jedné kopii sdílí mezi všemi instancemi třídy nebo struktury.  
   
- V opačném případě je *proměnnou instance*, a samostatnou kopii se vytvoří pro každou instanci třídu nebo strukturu. Kopii proměnnou instance dané je k dispozici pouze pro instanci třídu nebo strukturu, ve kterém byla vytvořena. Je nezávislé na kopii této instance proměnné v jeho ostatní instance třídu nebo strukturu.  
+ V opačném případě se *proměnnou instance*, a samostatnou kopii se vytvoří pro každou instanci třídy nebo struktury. Dané kopie proměnnou instance je k dispozici pouze pro instanci třídy nebo struktury, ve kterém byla vytvořena. Je nezávislé na kopii této instance proměnné v jeho ostatní instance dané třídy nebo struktury.  
   
 ## <a name="declaring-data-type"></a>Deklarující typ dat  
- [Jako](../../../../visual-basic/language-reference/statements/as-clause.md) klauzule příkazu deklarace umožňuje definovat datový typ nebo typ objektu proměnné jsou deklarace. Můžete zadat jakýkoli z následujících typů proměnné:  
+ [Jako](../../../../visual-basic/language-reference/statements/as-clause.md) klauzuli v příkazu deklarace umožňuje definovat datový typ nebo typ objektu se deklarace proměnné. Můžete určit kterékoli z následujících typů proměnné:  
   
 -   Základní datový typ, jako například `Boolean`, `Long`, nebo `Decimal`  
   
--   Složené datové typu, například pole nebo struktura  
+-   Složený datový typ, jako je například pole nebo strukturu  
   
--   Typ objektu nebo třída definovaná v aplikaci nebo v jiné aplikaci  
+-   Typ objektu nebo třída definovaná ve vaší aplikaci nebo v jiné aplikaci  
   
 -   A [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] třídy, jako například <xref:System.Windows.Forms.Label> nebo <xref:System.Windows.Forms.TextBox>  
   
 -   Typ rozhraní, jako například <xref:System.IComparable> nebo <xref:System.IDisposable>  
   
- Bez nutnosti opakování datový typ je možné deklarovat několik proměnné v jednom příkazu. V následující příkazy, proměnné `i`, `j`, a `k` je deklarován jako typ `Integer`, `l` a `m` jako `Long`, a `x` a `y` jako `Single`:  
+ Je možné deklarovat několik proměnných v jednom příkazu bez nutnosti opakování datového typu. V následující příkazy, proměnné `i`, `j`, a `k` jsou deklarovány jako typ `Integer`, `l` a `m` jako `Long`, a `x` a `y` jako `Single`:  
   
 ```  
 Dim i, j, k As Integer  
@@ -61,21 +61,21 @@ Dim l, m As Long, x, y As Single
 ' In the preceding statement, l and m are Long, x and y are Single.  
 ```  
   
- Další informace o typech dat najdete v tématu [datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md). Další informace o objektech, najdete v části [objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md) a [programování s komponentami](http://msdn.microsoft.com/library/d4d4fcb4-e0b8-46b3-b679-7ee0026eb9e3).  
+ Další informace o typech dat najdete v části [datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md). Další informace o objektech naleznete v tématu [objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md) a [programování pomocí komponent](http://msdn.microsoft.com/library/d4d4fcb4-e0b8-46b3-b679-7ee0026eb9e3).  
   
 ## <a name="local-type-inference"></a>Odvození místního typu  
- *Odvození typu* slouží k určení datové typy lokální proměnné deklarované bez `As` klauzule. Kompilátor odvodí typ proměnné z typu inicializace výrazu. To umožňuje deklarujte proměnné bez explicitně s uvedením typu. V následujícím příkladu obě `num1` a `num2` jsou silného typu jako celá čísla.  
+ *Odvození typu* slouží k určení typů dat místní proměnné deklarované bez `As` klauzuli. Kompilátor odvodí typ proměnné z typu výrazu inicializace. To umožňuje deklarovat proměnné bez explicitní uvedení typu. V následujícím příkladu obě `num1` a `num2` jsou silného typu jako celá čísla.  
   
  [!code-vb[VbVbalrTypeInference#1](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/variable-declaration_1.vb)]  
   
- Pokud chcete použít odvození místního typu `Option Infer` musí být nastavena na `On`. Další informace najdete v tématu [odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md) a [Option Infer – příkaz](../../../../visual-basic/language-reference/statements/option-infer-statement.md).  
+ Pokud chcete použít odvození místního typu `Option Infer` musí být nastaveno na `On`. Další informace najdete v tématu [odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md) a [Option Infer – příkaz](../../../../visual-basic/language-reference/statements/option-infer-statement.md).  
   
-## <a name="characteristics-of-declared-variables"></a>Vlastnosti deklarované proměnných  
- *Životnost* proměnné je doba, během které it je k dispozici pro použití. Obecně platí existuje proměnná tak dlouho, dokud elementu, který deklaruje (například postup nebo třída) i nadále existovat. Pokud proměnnou nemusíte pokračovat, existující mimo dobu životnosti obsaženého prvku, není potřeba provádět žádné zvláštní v deklaraci. Pokud proměnná musí pokračovat déle, než jeho obsahující element existovat, můžete zahrnout `Static` nebo `Shared` – klíčové slovo v jeho `Dim` příkaz. Další informace najdete v tématu [doba platnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).  
+## <a name="characteristics-of-declared-variables"></a>Vlastnosti deklarované proměnné  
+ *Životnost* proměnné je časové období, během které je k dispozici pro použití. Obecně platí proměnná existuje jako prvek, který deklaruje (například procedury nebo třídy) i nadále existovat. Pokud proměnná není potřeba pokračovat, existující za dobu života jeho nadřazeného elementu, není potřeba dělat nic zvláštního v deklaraci. Pokud proměnná je potřeba pokračovat déle než jeho nadřazený element, můžete zahrnout `Static` nebo `Shared` – klíčové slovo v jeho `Dim` příkazu. Další informace najdete v tématu [životnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).  
   
- *Oboru* proměnné je sada všechen kód, který může na ni odkazuje bez určení názvu. Proměnnou rozsahu je určen podle kde je deklarován. Kód umístěný v dané oblasti, můžete použít proměnné definované v této oblasti bez nutnosti kvalifikaci jejich názvy. Další informace najdete v tématu [oboru v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md).  
+ *Oboru* proměnné je sada veškerý kód, který na ni můžete odkazovat bez kvalifikace názvu. Obor proměnné je určeno ve kterém je deklarována. Proměnné definované v dané oblasti, aniž byste museli kvalifikovat jejich názvy můžete použít kód umístěný v dané oblasti. Další informace najdete v tématu [obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md).  
   
- Proměnnou *úroveň přístupu* je rozsah kód, který má oprávnění k přístupu. To je dáno – modifikátor přístupu (například [veřejné](../../../../visual-basic/language-reference/modifiers/public.md) nebo [privátní](../../../../visual-basic/language-reference/modifiers/private.md)) použitý v `Dim` příkaz. Další informace najdete v tématu [úrovně v jazyce Visual Basic přístupu](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Proměnné *úroveň přístupu* je rozsah kód, který má oprávnění k přístupu. Ta se určují podle modifikátor přístupu (například [veřejné](../../../../visual-basic/language-reference/modifiers/public.md) nebo [privátní](../../../../visual-basic/language-reference/modifiers/private.md)), který používáte v `Dim` příkaz. Další informace najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Postupy: Vytvoření nové proměnné](../../../../visual-basic/programming-guide/language-features/variables/how-to-create-a-new-variable.md)  

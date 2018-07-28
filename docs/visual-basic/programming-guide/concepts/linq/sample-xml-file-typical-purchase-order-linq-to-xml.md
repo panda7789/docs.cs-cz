@@ -1,16 +1,16 @@
 ---
-title: 'Ukázkový soubor XML: Typické nákupní objednávka (technologie LINQ to XML)'
+title: 'Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 65321b9c-1239-45e4-af40-eb86cedf7abd
 ms.openlocfilehash: 4a0d16013ba85eace6cca374f2f284c4a6e39f69
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33644898"
+ms.lasthandoff: 07/28/2018
+ms.locfileid: "39332650"
 ---
-# <a name="sample-xml-file-typical-purchase-order-linq-to-xml"></a>Ukázkový soubor XML: Typické nákupní objednávka (technologie LINQ to XML)
-Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor je typické nákupní objednávka.  
+# <a name="sample-xml-file-typical-purchase-order-linq-to-xml"></a>Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)
+Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor je typická nákupní objednávka.  
   
 ## <a name="purchaseorderxml"></a>PurchaseOrder.xml  
   

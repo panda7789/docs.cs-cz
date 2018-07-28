@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: načtení jeden atribut (technologie LINQ to XML) (Visual Basic)'
+title: 'Postupy: Načtení jednoho atributu (LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 11b938d7-c011-4048-900e-8b9183c41c94
 ms.openlocfilehash: e9e4dce95e9c3202b1cd2a53c186126deac0913c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33642951"
+ms.lasthandoff: 07/28/2018
+ms.locfileid: "39332685"
 ---
-# <a name="how-to-retrieve-a-single-attribute-linq-to-xml-visual-basic"></a>Postupy: načtení jeden atribut (technologie LINQ to XML) (Visual Basic)
-Toto téma vysvětluje, jak načíst jeden atribut elementu, název atributu. To je užitečné pro zápis výrazy dotazů, ve které chcete najít element, který obsahuje konkrétní atribut.  
+# <a name="how-to-retrieve-a-single-attribute-linq-to-xml-visual-basic"></a>Postupy: Načtení jednoho atributu (LINQ to XML) (Visual Basic)
+Toto téma vysvětluje, jak načíst jeden atribut elementu, název atributu. To je užitečné pro psaní výrazů dotazů, ve které chcete najít element, který se má určitý atribut.  
   
- <xref:System.Xml.Linq.XElement.Attribute%2A> Metodu <xref:System.Xml.Linq.XElement> vrací <xref:System.Xml.Linq.XAttribute> se zadaným názvem.  
+ <xref:System.Xml.Linq.XElement.Attribute%2A> Metodu <xref:System.Xml.Linq.XElement> třídy vrátí <xref:System.Xml.Linq.XAttribute> se zadaným názvem.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.Xml.Linq.XElement.Attribute%2A> metoda.  
+ V následujícím příkladu <xref:System.Xml.Linq.XElement.Attribute%2A> metody.  
   
 ```vb  
 Dim cust As XElement = <PhoneNumbers>  
@@ -28,7 +28,7 @@ For Each e As XElement In elList
 Next  
 ```  
   
- Tento příklad vyhledá všech potomků ve stromové struktuře s názvem `Phone`a pak najde atribut s názvem `type`.  
+ Tento příklad vyhledá všechny následníky ve stromové struktuře s názvem `Phone`a následně vyhledá atribut s názvem `type`.  
   
  Tento kód vytvoří následující výstup:  
   
@@ -38,7 +38,7 @@ work
 ```  
   
 ## <a name="example"></a>Příklad  
- Pokud chcete k načtení hodnoty atributu, může odevzdat stejným způsobem jako s <xref:System.Xml.Linq.XElement> objekty. Následující příklad ukazuje to.  
+ Pokud chcete načíst hodnotu atributu, lze jej přetypovat, stejně jako u s <xref:System.Xml.Linq.XElement> objekty. Následující příklad ukazuje to.  
   
 ```vb  
 Dim cust As XElement = <PhoneNumbers>  
@@ -60,10 +60,10 @@ home
 work  
 ```  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje explicitní přetypování operátory <xref:System.Xml.Linq.XAttribute> třídy k `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID`a `GUID?`.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje explicitní přetypování operátory pro <xref:System.Xml.Linq.XAttribute> třídu `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID`a `GUID?`.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný kód pro atribut, který je v oboru názvů. Další informace najdete v tématu [práci s obory názvů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Následující příklad ukazuje stejný kód pro atribut, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -93,4 +93,4 @@ work
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML osy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+ [Osy LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

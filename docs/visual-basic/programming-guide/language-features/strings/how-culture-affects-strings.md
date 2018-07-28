@@ -6,79 +6,79 @@ helpviewer_keywords:
 - strings [Visual Basic], locale dependence
 ms.assetid: c4664444-ee0d-47bf-bef1-eaa3c54bdd7f
 ms.openlocfilehash: 41fd612695fbeacbc7b53cb9e5dbf67939e73482
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33654736"
+ms.lasthandoff: 07/28/2018
+ms.locfileid: "39332590"
 ---
 # <a name="how-culture-affects-strings-in-visual-basic"></a>Vliv jazykové verze na řetězce v jazyce Visual Basic
-Tato stránka nápovědy popisuje, jak Visual Basic používá provést převod řetězců a porovnávání informací o jazykové verzi.  
+Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace o jazykové verzi provádět převody řetězce a porovnávání řetězců.  
   
-## <a name="when-to-use-culture-specific-strings"></a>Kdy použít řetězce specifické pro jazykovou verzi  
- By měl obvykle použijte řetězce specifické pro jazykovou verzi pro všechna data prezentovaná a číst od uživatelů a použijte řetězce neutrální jazykovou verzi pro interní data aplikace.  
+## <a name="when-to-use-culture-specific-strings"></a>Kdy použít řetězců specifické pro jazykovou verzi  
+ By obvykle řetězce specifické pro jazykovou verzi použít pro všechna data budou zobrazovat a číst od uživatelů a použít invariantní jazyková verze řetězce pro interní data vaší aplikace.  
   
- Například pokud vaše aplikace zobrazí uživatelům zadat datum jako řetězec, očekávat uživatelům řetězce podle jejich jazykovou verzi formátu a aplikace by měl správně převést řetězec. Pokud vaše aplikace se pak uvede datum ve svém uživatelském rozhraní, se musí zobrazit ve jazykovou verzi uživatele.  
+ Pokud vaše aplikace zobrazí uživatelé zadat datum jako řetězec, očekávat uživatelé k formátování řetězce podle jeho jazykovou verzi a aplikace by měla odpovídajícím způsobem převést řetězec. Pokud vaše aplikace se pak zobrazí data ve svém uživatelském rozhraní, se by se měl prokázat v jazykové verzi uživatele.  
   
- Ale pokud aplikace odesílá data do centrální server, měli formátu řetězce podle jeden konkrétní jazykové verzi, aby nedošlo k záměně mezi formáty potenciálně jiné datum.  
+ Nicméně pokud aplikace odešle data do centrálního serveru, by měl formátu řetězce podle jeden konkrétní jazykovou verzi, aby se zabránilo záměny potenciálně různé formáty.  
   
 ## <a name="culture-sensitive-functions"></a>Jazykové funkce  
- Všechny funkce Převod řetězce jazyka Visual Basic (s výjimkou `Str` a `Val` funkce) pomocí informací o jazykové verzi aplikace se ujistěte, že převody a porovnání jsou vhodné pro jazykovou verzi aplikace uživatel.  
+ Všechny funkce pro převod řetězců jazyka Visual Basic (s výjimkou `Str` a `Val` funkce) ujistěte se, že převod a porovnání jsou vhodné pro jazykovou verzi vaší aplikace pomocí informací o jazykové verzi aplikace uživatel.  
   
- Klíč k úspěšně pomocí funkcí převod řetězce na aplikace, které běží na počítačích s jinou jazykovou verzi nastavení je pochopit funkcích, které používají nastavení konkrétní jazykové verze a které používají nastavení aktuální jazykové verze. Všimněte si, že nastavení jazykové verze aplikace, ve výchozím nastavení, dědí z nastavení jazykové verze operačního systému. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Strings.Asc%2A>, <xref:Microsoft.VisualBasic.Strings.AscW%2A>, <xref:Microsoft.VisualBasic.Strings.Chr%2A>, <xref:Microsoft.VisualBasic.Strings.ChrW%2A>, <xref:Microsoft.VisualBasic.Strings.Format%2A>, <xref:Microsoft.VisualBasic.Conversion.Hex%2A>, <xref:Microsoft.VisualBasic.Conversion.Oct%2A>, a [funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md).  
+ Klíčem k úspěšně pomocí funkce pro převod řetězců v aplikacích, které běží na počítačích s nastavením jinou jazykovou verzi je pochopit, které funkce pomocí konkrétní jazykové verze nastavení a nastavení aktuální jazykové verze, která použít. Všimněte si, že nastavení jazykové verze aplikace se ve výchozím nastavení, dědí z nastavení jazykové verze operačního systému. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Strings.Asc%2A>, <xref:Microsoft.VisualBasic.Strings.AscW%2A>, <xref:Microsoft.VisualBasic.Strings.Chr%2A>, <xref:Microsoft.VisualBasic.Strings.ChrW%2A>, <xref:Microsoft.VisualBasic.Strings.Format%2A>, <xref:Microsoft.VisualBasic.Conversion.Hex%2A>, <xref:Microsoft.VisualBasic.Conversion.Oct%2A>, a [funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md).  
   
- `Str` (Převádí čísla do řetězců) a `Val` funkce (převede řetězců na čísla) při převádění mezi řetězci a čísla nepoužívejte informací o jazykové verzi aplikace. Místo toho budou pouze tečku (.) rozpoznat jako platný oddělovač desetinných míst. Zohledňuje podobných operací těchto funkcí jsou:  
+ `Str` (Převádí čísla na řetězce) a `Val` (převede řetězců na čísla) funkce nepoužívejte informace o jazykové verzi aplikace, když převod mezi řetězci a čísla. Místo toho jsou pouze tečkou (.) rozpoznán jako platný oddělovač desetinných míst. V kulturách s ohledem na analogy z těchto funkcí jsou:  
   
--   **Převody, které používají aktuální jazykovou verzi.** `CStr` a `Format` funkce převést na řetězec, číslo a `CDbl` a `CInt` funkce převést řetězec na číslo.  
+-   **Převody, které používají aktuální jazykovou verzi.** `CStr` a `Format` funkcí převede číslo na řetězec a `CDbl` a `CInt` funkce převádějí řetězec na číslo.  
   
--   **Převody, které používají konkrétní jazykové verze.** Každý objekt číslo má `ToString(IFormatProvider)` metoda, která převádí číslo na řetězec, a `Parse(String, IFormatProvider)` metoda, která převede řetězec na číslo. Například `Double` typ poskytuje <xref:System.Double.ToString%28System.IFormatProvider%29> a <xref:System.Double.Parse%28System.String%2CSystem.IFormatProvider%29> metody.  
+-   **Převody, které používají konkrétní jazykovou verzi.** Má každé číslo objekt `ToString(IFormatProvider)` metodu, která převede číslo na řetězec a `Parse(String, IFormatProvider)` metodu, která převede řetězec na číslo. Například `Double` typ poskytuje <xref:System.Double.ToString%28System.IFormatProvider%29> a <xref:System.Double.Parse%28System.String%2CSystem.IFormatProvider%29> metody.  
   
  Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Conversion.Str%2A> a <xref:Microsoft.VisualBasic.Conversion.Val%2A>.  
   
 ## <a name="using-a-specific-culture"></a>Pomocí konkrétní jazykové verze  
- Představte si, že vyvíjíte aplikaci, která odesílá data (naformátovaná jako řetězec) k webové službě. V takovém případě musí vaše aplikace používat konkrétní jazykové verze pro převod řetězce. Pro ilustraci důvod, proč, zvažte výsledek pomocí datum <xref:System.DateTime.ToString> metoda: Pokud vaše aplikace používá dané metody k formátování data 4 červenec 2005, vrátí "4/7/2005 12:00:00 AM" spuštění s jazykové verze Angličtina USA (en US), ale vrátí " 04.07.2005 00:00:00 "spuštění s jazykovou verzi němčina (de-DE).  
+ Představte si, že vyvíjíte aplikaci, která odesílá data (naformátovaná jako řetězec) k webové službě. V takovém případě musí aplikace použít konkrétní jazykovou verzi pro převod řetězce. Pro ilustraci, důvod, proč, vezměte v úvahu výsledek použití datum <xref:System.DateTime.ToString> metoda: Pokud vaše aplikace používá k formátování data 4. července 2005, tato metoda vrátí "7/4/2005 12:00:00 AM" při spuštění pomocí jazykové verze Angličtina-Spojené státy (en US), ale vrátí " 04.07.2005 00:00:00 "při spuštění s němčina (de-DE) jazykovou verzi.  
   
- Pokud potřebujete provést převod řetězce ve formátu konkrétní jazykové verzi, měli byste použít `CultureInfo` třídu, která je integrovaná [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Můžete vytvořit nový `CultureInfo` objekt pro konkrétní jazykové verzi předáním název pro jazykovou verzi <xref:System.Globalization.CultureInfo.%23ctor%2A> konstruktor. Názvy jazykové verze jsou uvedeny v <xref:System.Globalization.CultureInfo> stránku nápovědy třídy.  
+ Když potřebujete provést konverzi na řetězec ve formátu konkrétní jazykové verze, byste měli použít `CultureInfo` třídu, která je integrovaná [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Můžete vytvořit nový `CultureInfo` pro konkrétní jazykovou verzi předáním název pro jazykovou verzi <xref:System.Globalization.CultureInfo.%23ctor%2A> konstruktoru. Názvy podporované jazykové verze jsou uvedeny v <xref:System.Globalization.CultureInfo> třídy stránku nápovědy.  
   
- Alternativně můžete získat instanci *neutrální jazykovou verzi* z <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost. Neutrální jazykovou verzi je založena na anglické jazykové verzi, ale existují určité rozdíly. Například neutrální jazykovou verzi určuje 24 hodin místo 12 hodin.  
+ Alternativně můžete získat instanci *invariantní jazyková verze* z <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost. Neutrální jazykové verze je založená na anglické jazykové verzi, ale existují určité rozdíly. Například určuje neutrální jazykové verze 24hodinový formát místo 12 hodin.  
   
- Datum převést na řetězec pro jazykovou verzi, předat <xref:System.Globalization.CultureInfo> objekt k objektu datum <xref:System.DateTime.ToString%28System.IFormatProvider%29> metoda. Například následující kód zobrazí "07/04/2005 00:00:00", bez ohledu na to nastavení jazykové verze aplikace.  
+ Datum převést na řetězec pro jazykovou verzi, předejte <xref:System.Globalization.CultureInfo> do objektu date <xref:System.DateTime.ToString%28System.IFormatProvider%29> metoda. Například následující kód zobrazí "07/04/2005 00:00:00", bez ohledu na nastavení jazykové verze vaší aplikace.  
   
  [!code-vb[VbVbalrConcepts#1](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/codesnippet/VisualBasic/how-culture-affects-strings_1.vb)]  
   
 > [!NOTE]
->  Date – literály se vždy interpretují podle jazykové verze Angličtina.  
+>  Date – literály jsou vždy interpretováno podle jazykové verze Angličtina.  
   
 ## <a name="comparing-strings"></a>Porovnávání řetězců  
- Existují dvě důležité situacích, kde jsou potřeba porovnání řetězců:  
+ Existují dvě důležité situace, kde jsou potřeba porovnávání řetězců:  
   
--   **Řazení dat pro zobrazení pro uživatele.** Pomocí operace založené na aktuální jazykové verze, takže řetězce seřadit správně.  
+-   **Řazení dat v zobrazení pro uživatele.** Použití operací na základě aktuální jazykovou verzi tak řazení řetězců odpovídajícím způsobem.  
   
--   **Zjišťuje se, pokud dva řetězce interní aplikace přesně shodovat (obvykle pro účely zabezpečení).** Pomocí operace, které ignorovat aktuální jazykovou verzi.  
+-   **Určení, pokud dva řetězce interní aplikace přesně odpovídat (obvykle pro účely zabezpečení).** Pomocí operace, které ignorovat aktuální jazykové verze.  
   
- Můžete provádět oba typy porovnání v jazyce Visual Basic <xref:Microsoft.VisualBasic.Strings.StrComp%2A> funkce. Zadejte nepovinný `Compare` argument řídit typ porovnání: `Text` pro většinu vstup a výstup `Binary` pro určení přesné shody.  
+ Oba typy porovnání s jazykem Visual Basic můžete provádět <xref:Microsoft.VisualBasic.Strings.StrComp%2A> funkce. Zadejte nepovinný `Compare` argument řídit typ porovnání: `Text` pro většinu vstupů a výstupů `Binary` pro určení přesné shody.  
   
- `StrComp` Funkce vrátí celé číslo, které určuje vztah mezi dvěma porovnání řetězce podle pořadí řazení. Kladné číslo pro výsledek označuje, že první řetězec je větší než druhý řetězec. Záporný výsledek označuje první řetězec je menší, a nula označuje rovnosti mezi řetězce.  
+ `StrComp` Funkce vrátí celé číslo, které označuje vztah mezi dvěma porovnání řetězce podle pořadí řazení. Kladnou hodnotu pro výsledek označuje, zda je první řetězec větší než druhý řetězec. Záporný výsledek označuje první řetězec, který je menší a nula znamená rovnost řetězců.  
   
  [!code-vb[VbVbalrStrings#22](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-culture-affects-strings_2.vb)]  
   
- Můžete také [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] partnera `StrComp` funkce, <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda. Toto je statická, přetížené metoda řetězec základní třídy. Následující příklad ilustruje, jak tato metoda se používá:  
+ Můžete také použít [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] partner `StrComp` funkce, <xref:System.String.Compare%2A?displayProperty=nameWithType> metody. Toto je statické, přetížené metody třídy base řetězec. Následující příklad ukazuje, jak tato metoda se používá:  
   
  [!code-vb[VbVbalrStrings#48](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-culture-affects-strings_3.vb)]  
   
- Pro lepší kontrolu nad jak porovnání se provádí, můžete použít další přetížení <xref:System.String.Compare%2A> metoda. S <xref:System.String.Compare%2A?displayProperty=nameWithType> metodu, můžete použít `comparisonType` argument určit typ porovnání používat.  
+ Pro lepší kontrolu nad jak porovnání se provádí, můžete použít další přetížení <xref:System.String.Compare%2A> metody. S <xref:System.String.Compare%2A?displayProperty=nameWithType> metodu, můžete použít `comparisonType` argument určit typ porovnání, které se použít.  
   
-|Hodnota `comparisonType` argument|Typ porovnání|Kdy použít|  
+|Hodnota pro `comparisonType` argument|Typ porovnání|Kdy použít|  
 |---|---|---|  
-|`Ordinal`|Porovnání podle bajtů řetězce se součástí.|Tuto hodnotu použijte, pokud porovnávání: malá a velká písmena identifikátorů, nastavení související se zabezpečením nebo dalších mimo jazykových identifikátorů kde bajtů musí přesně shodovat.|  
-|`OrdinalIgnoreCase`|Porovnání podle bajtů řetězce se součástí.<br /><br /> `OrdinalIgnoreCase` používá informace neutrální jazykovou verzi pro určení, kdy dva znaky se liší pouze ve velkých písmen.|Tuto hodnotu použijte, pokud porovnávání: velká a malá písmena identifikátorů, související se zabezpečením nastavení a data uložená v systému Windows.|  
-|`CurrentCulture` Nebo `CurrentCultureIgnoreCase`|Porovnání podle interpretace na řetězce v aktuální jazykovou verzi.|Při porovnávání používají tyto hodnoty: data, která se zobrazí uživateli, většina vstup uživatele a další data, která vyžaduje lingvistické interpretace.|  
-|`InvariantCulture` Nebo `InvariantCultureIgnoreCase`|Porovnání podle interpretace na řetězce v neutrální jazykovou verzi.<br /><br /> Liší se od `Ordinal` a `OrdinalIgnoreCase`, protože neutrální jazykovou verzi považuje za odpovídající invariantní znaky znaky mimo jeho přijatém rozsahu.|Tyto hodnoty použijte, pouze při porovnávání zachování dat nebo zobrazování jazykově relevantní data, která vyžaduje pevnou řazení.|  
+|`Ordinal`|Porovnání podle bajtů součást řetězců.|Tuto hodnotu použijte, pokud porovnávání: malá a velká písmena identifikátorů, nastavení související se zabezpečením nebo jiné nejazykové identifikátory, kde počet bajtů se musí přesně shodovat.|  
+|`OrdinalIgnoreCase`|Porovnání podle bajtů součást řetězců.<br /><br /> `OrdinalIgnoreCase` používá invariantní jazyková verze informace k určení, kdy dva znaky se liší pouze velikostí malá a velká písmena.|Tuto hodnotu použijte, pokud porovnávání: malá a velká písmena identifikátorů, bezpečnostních nastavení a data uložená ve Windows.|  
+|`CurrentCulture` Nebo `CurrentCultureIgnoreCase`|Porovnání podle interpretace řetězců v aktuální jazykové verze.|Použijte tyto hodnoty při porovnání: data, která se zobrazí uživateli, většina vstup uživatele a další data, která vyžaduje lingvistické výkladu.|  
+|`InvariantCulture` Nebo `InvariantCultureIgnoreCase`|Porovnání podle interpretace řetězců v invariantní jazykové verzi.<br /><br /> To se liší od `Ordinal` a `OrdinalIgnoreCase`, protože invariantní jazyková verze považuje za znaky mimo rozsah přijatelných ekvivalentní invariantní znaků.|Tyto hodnoty použijte jen při porovnávání trvalá data nebo zobrazení lingvistických relevantní data, která vyžaduje pevnou řazení.|  
   
 ### <a name="security-considerations"></a>Důležité informace o zabezpečení  
- Pokud vaše aplikace provede rozhodnutí o zabezpečení na základě výsledku porovnání nebo operace změny velikosti písmen, pak by měl použít operaci <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda a předejte jí `Ordinal` nebo `OrdinalIgnoreCase` pro `comparisonType` argument.  
+ Pokud vaše aplikace provádí rozhodnutí o zabezpečení založeno na výsledku porovnání nebo operaci změny velikosti písmen, pak by měl použít operaci <xref:System.String.Compare%2A?displayProperty=nameWithType> a předáte `Ordinal` nebo `OrdinalIgnoreCase` pro `comparisonType` argument.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Globalization.CultureInfo>  
- [Představení řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)  
+ [Úvod do řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)  
  [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)
