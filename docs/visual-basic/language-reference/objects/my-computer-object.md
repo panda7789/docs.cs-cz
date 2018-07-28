@@ -1,28 +1,28 @@
 ---
-title: My.Computer – objekt
+title: My.Computer – objekt (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer object
 ms.assetid: cc814d79-6f7f-4e54-8b9d-5ecfdd77a0b8
-ms.openlocfilehash: c3af674bf56694d1ccf589033f97421faafd8c46
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0518a380ee8b1e33a9b1ceeac7db6c0251c48edf
+ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33597344"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39323037"
 ---
 # <a name="mycomputer-object"></a>My.Computer – objekt
-Poskytuje vlastnosti pro manipulaci s počítači komponenty, například zvuk, hodiny, klávesnice, systém souborů a tak dále.  
+Poskytuje vlastnosti pro práci s počítači komponenty např. zvuk, hodiny, klávesnice, systém souborů a tak dále.  
   
 ## <a name="remarks"></a>Poznámky  
- Informace o metody a vlastnosti `My.Computer` objektu, najdete v části <xref:Microsoft.VisualBasic.Devices.Computer>. Základní třída <xref:Microsoft.VisualBasic.Devices.ServerComputer> poskytuje členů, které jsou k dispozici ve všech projektech.  
+ Informace o tom, metody a vlastnosti `My.Computer` objektu, najdete v článku <xref:Microsoft.VisualBasic.Devices.Computer>. Základní třída <xref:Microsoft.VisualBasic.Devices.ServerComputer> obsahuje členy, které jsou k dispozici ve všech projektech.  
   
 ## <a name="requirements"></a>Požadavky  
  **Namespace:** <xref:Microsoft.VisualBasic.Devices>  
   
- **Třída:** <xref:Microsoft.VisualBasic.Devices.Computer> (základní třída <xref:Microsoft.VisualBasic.Devices.ServerComputer> poskytuje členů, které jsou k dispozici ve všech projektech).  
+ **Třída:** <xref:Microsoft.VisualBasic.Devices.Computer> (základní třída <xref:Microsoft.VisualBasic.Devices.ServerComputer> obsahuje členy, které jsou k dispozici ve všech projektech).  
   
- **Sestavení:** jazyka Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
+ **Sestavení:** knihovny prostředí Runtime jazyka Visual Basic (v souboru Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Viz také  
  [Objekt My.Computer.Audio](../../../visual-basic/language-reference/objects/my-computer-audio-object.md)  
