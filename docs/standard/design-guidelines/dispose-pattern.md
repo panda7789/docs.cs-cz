@@ -41,15 +41,15 @@ Všechny programy získat jeden nebo více systémových prostředků, napříkl
   
  Hlavní motivace pro vzor je ke snížení složitosti implementace <xref:System.Object.Finalize%2A> a <xref:System.IDisposable.Dispose%2A> metody. Složitost vyplývá z faktu, že metody sdílet některé, ale ne všechny cesty kódu (rozdíly jsou popsány dále v kapitole). Kromě toho jsou historických důvody pro některé prvky vzoru související s vývoj jazyková podpora pro správu prostředků deterministický.  
   
- **PROVEĎTE ✓** implementace základní Dispose vzoru na typy obsahující instance uvolnitelné typy. Najdete v článku [základní vzor Dispose](#basic_pattern) část Podrobnosti o základní vzor.  
+ **✓ DO** implementace základní Dispose vzoru na typy obsahující instance uvolnitelné typy. Najdete v článku [základní vzor Dispose](#basic_pattern) část Podrobnosti o základní vzor.  
   
  Pokud je zodpovědná za dobu životnosti jiné na jedno použití objekty typu, vývojáři potřebovat způsob, jak k uvolnění z nich, příliš. Pomocí kontejneru `Dispose` metoda je pohodlný způsob, jak to umožňují.  
   
- **PROVEĎTE ✓** implementovat základní vzor Dispose a zadejte finalizační metody pro typy prostředků podniku, které je potřeba explicitně uvolnit a které nemají finalizační metody.  
+ **✓ DO** implementovat základní vzor Dispose a zadejte finalizační metody pro typy prostředků podniku, které je potřeba explicitně uvolnit a které nemají finalizační metody.  
   
  Například by měla být implementována vzoru na typy ukládání nespravované paměti vyrovnávací paměti. [Finalizable typy](#finalizable_types) část popisuje pokyny týkající se implementace finalizační metody.  
   
- **✓ ZVAŽTE** implementace vzoru Dispose základní na třídách sami nemáte uložení nespravovaných prostředků nebo na jedno použití objekty jsou ale mohou mít podtypů, které provádějí.  
+ **✓ CONSIDER** implementace vzoru Dispose základní na třídách sami nemáte uložení nespravovaných prostředků nebo na jedno použití objekty jsou ale mohou mít podtypů, které provádějí.  
   
  Je to skvělý například <xref:System.IO.Stream?displayProperty=nameWithType> třídy. Přestože je abstraktní základní třída, která nebude obsahovat žádné prostředky, nezadávejte většinu jeho podtřídy a z toho důvodu se implementuje tohoto vzoru.  
   
@@ -85,7 +85,7 @@ public class DisposableResourceHolder : IDisposable {
   
  Tato část platí také, pro třídy na bázi, který již neimplementuje vzoru Dispose. Pokud se dědí z třídy, která již implementuje vzor, jednoduše přepsat `Dispose(bool)` metody můžete zajistit logiku čištění dalších prostředků.  
   
- **PROVEĎTE ✓** deklarovat `protected virtual void Dispose(bool disposing)` metoda a centralizovat veškerou logiku s uvolňováním nespravovaných prostředků.  
+ **✓ DO** deklarovat `protected virtual void Dispose(bool disposing)` metoda a centralizovat veškerou logiku s uvolňováním nespravovaných prostředků.  
   
  Tato metoda by měla dojít všechny vyčištění prostředků. Metoda je volána z obou finalizační metodu a `IDisposable.Dispose` metoda. Parametr bude mít hodnotu false, pokud volané z uvnitř finalizační metody. Slouží k zajištění, že jakýkoli kód spuštěn během dokončení není přístup k jiné finalizable objekty. Podrobnosti implementace finalizační metody jsou popsané v další části.  
   
@@ -97,7 +97,7 @@ protected virtual void Dispose(bool disposing) {
 }  
 ```  
   
- **PROVEĎTE ✓** implementovat `IDisposable` rozhraní jednoduše voláním `Dispose(true)` následuje `GC.SuppressFinalize(this)`.  
+ **✓ DO** implementovat `IDisposable` rozhraní jednoduše voláním `Dispose(true)` následuje `GC.SuppressFinalize(this)`.  
   
  Volání `SuppressFinalize` by měl použít pouze v případě `Dispose(true)` úspěšně spustí.  
   
@@ -108,7 +108,7 @@ public void Dispose(){
 }  
 ```  
   
- **X nesmí** zkontrolujte bezparametrový `Dispose` metoda virtuální.  
+ **X DO NOT** zkontrolujte bezparametrový `Dispose` metoda virtuální.  
   
  `Dispose(bool)` Metoda je ten, který by měla být potlačena podtřídy.  
   
@@ -126,11 +126,11 @@ public class DisposableResourceHolder : IDisposable {
 }  
 ```  
   
- **X nesmí** deklarovat žádné přetížení `Dispose` jinak než `Dispose()` a `Dispose(bool)`.  
+ **X DO NOT** deklarovat žádné přetížení `Dispose` jinak než `Dispose()` a `Dispose(bool)`.  
   
  `Dispose` měli byste zvážit vyhrazené slovo pomohou kodifikovat tohoto vzoru a nedošlo k záměně mezi implementátory informačních technologií, uživatelů a kompilátory. Některé jazyky vybrat automaticky implementovat tento vzor na určité typy.  
   
- **PROVEĎTE ✓** povolit `Dispose(bool)` metoda, která se má volat více než jednou. Zvolit metodu se nic nestane. po prvním volání.  
+ **✓ DO** povolit `Dispose(bool)` metoda, která se má volat více než jednou. Zvolit metodu se nic nestane. po prvním volání.  
   
 ```csharp
 public class DisposableResourceHolder : IDisposable {  
@@ -146,13 +146,13 @@ public class DisposableResourceHolder : IDisposable {
 }  
 ```  
   
- **X nepoužívejte** došlo k výjimce z uvnitř `Dispose(bool)` nejsou pod kritických situací, kdy je proces obsahující poškozená (nevracení, nekonzistentní sdíleného stavu atd.).  
+ **X AVOID** došlo k výjimce z uvnitř `Dispose(bool)` nejsou pod kritických situací, kdy je proces obsahující poškozená (nevracení, nekonzistentní sdíleného stavu atd.).  
   
  Uživatelé očekávají, že který volání `Dispose` nebude vyvolat výjimku.  
   
  Pokud `Dispose` může vyvolat výjimku, nebude spustit další blok finally čištění logiky. Chcete-li tento problém obejít, bude uživatel muset zabalení každé volání `Dispose` (v rámci nakonec blokovat!) v bloku try, což vede k velmi složité čištění obslužné rutiny. Pokud provádění `Dispose(bool disposing)` metoda, nikdy throw výjimku, pokud uvolnění je false. Díky tomu bude ukončit proces, pokud provádění uvnitř kontextu finalizační metodu.  
   
- **PROVEĎTE ✓** throw <xref:System.ObjectDisposedException> z kteréhokoli člena, který nelze použít po objekt byl vyřazen.  
+ **✓ DO** throw <xref:System.ObjectDisposedException> z kteréhokoli člena, který nelze použít po objekt byl vyřazen.  
   
 ```csharp
 public class DisposableResourceHolder : IDisposable {  
@@ -173,7 +173,7 @@ public class DisposableResourceHolder : IDisposable {
 }  
 ```  
   
- **✓ ZVAŽTE** poskytuje metoda `Close()`, kromě `Dispose()`, pokud je zavřete standardní terminologii v oblasti.  
+ **✓ CONSIDER** poskytuje metoda `Close()`, kromě `Dispose()`, pokud je zavřete standardní terminologii v oblasti.  
   
  Když to uděláte, je důležité, abyste vytvořili `Close` implementace identické `Dispose` a zvažte implementaci `IDisposable.Dispose` metoda explicitně.  
   
@@ -230,15 +230,15 @@ public class ComplexResourceHolder : IDisposable {
 }  
 ```  
   
- **X nepoužívejte** provedení finalizable typy.  
+ **X AVOID** provedení finalizable typy.  
   
  Pečlivě zvažte žádné případ, ve kterém si myslíte, že je potřeba finalizační metody. Je o skutečné náklady spojené s instancemi s finalizační metody, z hlediska výkonu i kód složitost. Dáváte přednost pomocí obálky prostředků, jako třeba <xref:System.Runtime.InteropServices.SafeHandle> k zapouzdření nespravovaných prostředků, kde je to možné, v takovém případě finalizační metody stane nepotřebné protože obálku zodpovídá za vlastní vyčištění prostředků.  
   
- **X nesmí** zkontrolujte finalizable typy hodnot.  
+ **X DO NOT** zkontrolujte finalizable typy hodnot.  
   
  Pouze typy odkazů ve skutečnosti získat CLR dokončené, a proto bude ignorována pokusy o umístit finalizační metody na typ hodnoty. C# a C++ kompilátory vynutit toto pravidlo.  
   
- **PROVEĎTE ✓** zkontrolujte finalizable typu, pokud typ je zodpovědná za uvolnění nespravovaných zdrojů, který nemá vlastní finalizační metodu.  
+ **✓ DO** zkontrolujte finalizable typu, pokud typ je zodpovědná za uvolnění nespravovaných zdrojů, který nemá vlastní finalizační metodu.  
   
  Při implementaci finalizační metodu, jednoduše volání `Dispose(false)` a umístěte veškerou logiku vyčištění prostředků uvnitř `Dispose(bool disposing)` metoda.  
   
@@ -255,25 +255,25 @@ public class ComplexResourceHolder : IDisposable {
 }  
 ```  
   
- **PROVEĎTE ✓** implementovat základní vzor Dispose u každé finalizable typu.  
+ **✓ DO** implementovat základní vzor Dispose u každé finalizable typu.  
   
  To poskytuje prostředky ke explicitně vyčistit deterministický tyto stejné prostředky, pro které finalizační metodu zodpovídá uživatelům typu.  
   
- **X nesmí** přístup finalizable objekty v kódové cestě finalizační metodu, protože významné riziko, že se bude mít již byl dokončen.  
+ **X DO NOT** přístup finalizable objekty v kódové cestě finalizační metodu, protože významné riziko, že se bude mít již byl dokončen.  
   
  Například finalizable objekt, A který obsahuje odkaz na jiný objekt finalizable B v nelze použít spolehlivě B na finalizační metodu, nebo naopak. Finalizační metody se nazývají v náhodném pořadí (souborem slabé řazení záruku kritické finalizace).  
   
  Mějte také na objekty uložené v statické proměnné se získat shromažďovat v určitých bodech během uvolnění domény aplikace nebo při ukončení procesu. Přístup k statické proměnné, která odkazuje na objekt finalizable (nebo volání statickou metodu, která může používat hodnotami uloženými v statické proměnné) nemusí být bezpečné Pokud <xref:System.Environment.HasShutdownStarted%2A?displayProperty=nameWithType> vrací hodnotu true.  
   
- **PROVÉST ✓** zkontrolujte vaše `Finalize` metoda chráněný.  
+ **✓ DO** zkontrolujte vaše `Finalize` metoda chráněný.  
   
  C#, C++ a VB.NET vývojáři nemusíte starat o to, protože kompilátory vám pomoct vynutit tyto obecné zásady.  
   
- **X nesmí** řídicí umožňují výjimky z finalizační metodu logiku, s výjimkou systému kritické chyby.  
+ **X DO NOT** řídicí umožňují výjimky z finalizační metodu logiku, s výjimkou systému kritické chyby.  
   
  Pokud z finalizační metody je vyvolána výjimka, modul CLR se zastaví celý proces (od verze rozhraní .NET Framework verze 2.0), dalších finalizační metody brání provádění a prostředky uvolnění řízené způsobem.  
   
- **✓ ZVAŽTE** vytváření a používání objekt kritické finalizable (typu s hierarchie typů, která obsahuje <xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject>) pro situace, ve kterých finalizační metody absolutně musí být spuštěn i při krátkodobém uvolnění domény aplikace vynucené a přístup z více vláken zruší.  
+ **✓ CONSIDER** vytváření a používání objekt kritické finalizable (typu s hierarchie typů, která obsahuje <xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject>) pro situace, ve kterých finalizační metody absolutně musí být spuštěn i při krátkodobém uvolnění domény aplikace vynucené a přístup z více vláken zruší.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
