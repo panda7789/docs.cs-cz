@@ -18,29 +18,29 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
 ms.locfileid: "33571183"
 ---
-# <a name="naming-resources"></a><span data-ttu-id="e25e7-102">Názvy prostředků</span><span class="sxs-lookup"><span data-stu-id="e25e7-102">Naming Resources</span></span>
-<span data-ttu-id="e25e7-103">Protože lokalizovatelný prostředků může být odkazováno prostřednictvím určité objekty, jako kdyby byly vlastnosti, jsou podobné vlastnost pokyny pro pojmenování pokyny pro prostředky.</span><span class="sxs-lookup"><span data-stu-id="e25e7-103">Because localizable resources can be referenced via certain objects as if they were properties, the naming guidelines for resources are similar to property guidelines.</span></span>  
+# <a name="naming-resources"></a><span data-ttu-id="257c4-102">Názvy prostředků</span><span class="sxs-lookup"><span data-stu-id="257c4-102">Naming Resources</span></span>
+<span data-ttu-id="257c4-103">Protože lokalizovatelný prostředků může být odkazováno prostřednictvím určité objekty, jako kdyby byly vlastnosti, jsou podobné vlastnost pokyny pro pojmenování pokyny pro prostředky.</span><span class="sxs-lookup"><span data-stu-id="257c4-103">Because localizable resources can be referenced via certain objects as if they were properties, the naming guidelines for resources are similar to property guidelines.</span></span>  
   
- <span data-ttu-id="e25e7-104">**PROVEĎTE ✓** použít PascalCasing v klíčů prostředku.</span><span class="sxs-lookup"><span data-stu-id="e25e7-104">**✓ DO** use PascalCasing in resource keys.</span></span>  
+ <span data-ttu-id="257c4-104">**✓ DO** použít PascalCasing v klíčů prostředku.</span><span class="sxs-lookup"><span data-stu-id="257c4-104">**✓ DO** use PascalCasing in resource keys.</span></span>  
   
- <span data-ttu-id="e25e7-105">**PROVEĎTE ✓** zadat popisný místo krátké identifikátory.</span><span class="sxs-lookup"><span data-stu-id="e25e7-105">**✓ DO** provide descriptive rather than short identifiers.</span></span>  
+ <span data-ttu-id="257c4-105">**✓ DO** zadat popisný místo krátké identifikátory.</span><span class="sxs-lookup"><span data-stu-id="257c4-105">**✓ DO** provide descriptive rather than short identifiers.</span></span>  
   
- <span data-ttu-id="e25e7-106">**X nesmí** používat klíčová slova jazyka hlavní jazyky CLR.</span><span class="sxs-lookup"><span data-stu-id="e25e7-106">**X DO NOT** use language-specific keywords of the main CLR languages.</span></span>  
+ <span data-ttu-id="257c4-106">**X DO NOT** používat klíčová slova jazyka hlavní jazyky CLR.</span><span class="sxs-lookup"><span data-stu-id="257c4-106">**X DO NOT** use language-specific keywords of the main CLR languages.</span></span>  
   
- <span data-ttu-id="e25e7-107">**PROVEĎTE ✓** použijte pouze alfanumerické znaky a podtržítka v pojmenování prostředky.</span><span class="sxs-lookup"><span data-stu-id="e25e7-107">**✓ DO** use only alphanumeric characters and underscores in naming resources.</span></span>  
+ <span data-ttu-id="257c4-107">**✓ DO** použijte pouze alfanumerické znaky a podtržítka v pojmenování prostředky.</span><span class="sxs-lookup"><span data-stu-id="257c4-107">**✓ DO** use only alphanumeric characters and underscores in naming resources.</span></span>  
   
- <span data-ttu-id="e25e7-108">**PROVEĎTE ✓** použít následující konvence pro prostředků zprávy výjimek.</span><span class="sxs-lookup"><span data-stu-id="e25e7-108">**✓ DO** use the following naming convention for exception message resources.</span></span>  
+ <span data-ttu-id="257c4-108">**✓ DO** použít následující konvence pro prostředků zprávy výjimek.</span><span class="sxs-lookup"><span data-stu-id="257c4-108">**✓ DO** use the following naming convention for exception message resources.</span></span>  
   
- <span data-ttu-id="e25e7-109">Identifikátor prostředku musí být název typu výjimka plus krátké identifikátor výjimky:</span><span class="sxs-lookup"><span data-stu-id="e25e7-109">The resource identifier should be the exception type name plus a short identifier of the exception:</span></span>  
+ <span data-ttu-id="257c4-109">Identifikátor prostředku musí být název typu výjimka plus krátké identifikátor výjimky:</span><span class="sxs-lookup"><span data-stu-id="257c4-109">The resource identifier should be the exception type name plus a short identifier of the exception:</span></span>  
   
  `ArgumentExceptionIllegalCharacters`  
  `ArgumentExceptionInvalidName`  
  `ArgumentExceptionFileNameIsMalformed`  
   
- <span data-ttu-id="e25e7-110">*Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*</span><span class="sxs-lookup"><span data-stu-id="e25e7-110">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
+ <span data-ttu-id="257c4-110">*Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*</span><span class="sxs-lookup"><span data-stu-id="257c4-110">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
   
- <span data-ttu-id="e25e7-111">*Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*</span><span class="sxs-lookup"><span data-stu-id="e25e7-111">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
+ <span data-ttu-id="257c4-111">*Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*</span><span class="sxs-lookup"><span data-stu-id="257c4-111">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e25e7-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="e25e7-112">See Also</span></span>  
- [<span data-ttu-id="e25e7-113">Pokyny k návrhu architektury</span><span class="sxs-lookup"><span data-stu-id="e25e7-113">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)  
- [<span data-ttu-id="e25e7-114">Pokyny pro pojmenování</span><span class="sxs-lookup"><span data-stu-id="e25e7-114">Naming Guidelines</span></span>](../../../docs/standard/design-guidelines/naming-guidelines.md)
+## <a name="see-also"></a><span data-ttu-id="257c4-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="257c4-112">See Also</span></span>  
+ [<span data-ttu-id="257c4-113">Pokyny k návrhu architektury</span><span class="sxs-lookup"><span data-stu-id="257c4-113">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)  
+ [<span data-ttu-id="257c4-114">Pokyny pro pojmenování</span><span class="sxs-lookup"><span data-stu-id="257c4-114">Naming Guidelines</span></span>](../../../docs/standard/design-guidelines/naming-guidelines.md)
