@@ -23,23 +23,23 @@ ms.locfileid: "33572733"
 # <a name="struct-design"></a>Struktura návrhu
 Typ hodnoty pro obecné účely se nejčastěji označuje jako struktury, jeho C# – klíčové slovo. Tato část obsahuje pokyny pro návrh obecná struktura.  
   
- **X nesmí** zadejte výchozí konstruktor pro struktury.  
+ **X DO NOT** zadejte výchozí konstruktor pro struktury.  
   
  Následující obecné této zásady umožňuje pole struktur, který se má vytvořit bez nutnosti spuštění konstruktoru na každou položku pole. Všimněte si, že C# neumožňuje struktury tak, aby měl výchozí konstruktory.  
   
- **X nesmí** definování typů měnitelný hodnotu.  
+ **X DO NOT** definování typů měnitelný hodnotu.  
   
  Typy hodnot měnitelný mít několik problémů. Například v případě, že metoda getter vlastnosti vrátí typ hodnoty, volající obdrží kopii. Protože kopie je vytvořena implicitně, nemusíte být vědomi, mutace kopií a není původní hodnota vývojáři. Některé jazyky (dynamické jazyky konkrétně) také mít problémy pomocí typy měnitelný hodnot, protože dokonce i místní proměnné, když vyhodnoceny odkazy, způsobit kopie má být provedeno.  
   
- **PROVEĎTE ✓** jistotu, že stav, kde všechny instance dat je nastavený na nulu, false, nebo hodnotu null (podle potřeby) je platný.  
+ **✓ DO** jistotu, že stav, kde všechny instance dat je nastavený na nulu, false, nebo hodnotu null (podle potřeby) je platný.  
   
  Při vytváření pole struktury zabrání náhodnému vytváření instancí neplatný.  
   
- **PROVEĎTE ✓** implementovat <xref:System.IEquatable%601> u typů hodnot.  
+ **✓ DO** implementovat <xref:System.IEquatable%601> u typů hodnot.  
   
  <xref:System.Object.Equals%2A?displayProperty=nameWithType> Metoda u typů hodnot způsobí, že zabalení a jeho výchozí implementace není velmi efektivní, protože používá reflexe. <xref:System.IEquatable%601.Equals%2A> může mít mnohem lepší výkon a může být implementováno tak, aby nezpůsobí zabalení.  
   
- **X nesmí** explicitně rozšířit <xref:System.ValueType>. Většina jazyků zabránit ve skutečnosti to.  
+ **X DO NOT** explicitně rozšířit <xref:System.ValueType>. Většina jazyků zabránit ve skutečnosti to.  
   
  Obecně platí struktury může být velmi užitečná, ale musí být použit pouze pro malé, jeden, neměnné hodnoty, které nebudou často do pole.  
   

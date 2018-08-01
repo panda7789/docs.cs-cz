@@ -27,35 +27,35 @@ ms.locfileid: "36338101"
 Tato část popisuje obecné zásady vytváření názvů vztahující se k výběru word pokyny k používání zkratky a zkratky a doporučení na tom, jak zamezit pomocí názvů konkrétní jazyk.  
   
 ## <a name="word-choice"></a>Výběr aplikace Word  
- **PROVEĎTE ✓** zvolte snadno čitelné identifikátor názvy.  
+ **✓ DO** zvolte snadno čitelné identifikátor názvy.  
   
  Například vlastnost s názvem `HorizontalAlignment` je angličtina srozumitelnější než `AlignmentHorizontal`.  
   
- **PROVEĎTE ✓** upřednostnit čitelnost přes jako stručný výtah.  
+ **✓ DO** upřednostnit čitelnost přes jako stručný výtah.  
   
  Název vlastnosti `CanScrollHorizontally` je lepší, než `ScrollableX` (skrytého odkaz na ose x).  
   
- **X nesmí** použít podtržítka, pomlčky nebo jiné nealfanumerické znaky.  
+ **X DO NOT** použít podtržítka, pomlčky nebo jiné nealfanumerické znaky.  
   
- **X nesmí** použijte Maďarská zápis.  
+ **X DO NOT** použijte Maďarská zápis.  
   
- **X nepoužívejte** pomocí identifikátorů, které je v konfliktu s slov široce používá programovací jazyky.  
+ **X AVOID** pomocí identifikátorů, které je v konfliktu s slov široce používá programovací jazyky.  
   
  Podle pravidla 4 z specifikace CLS (Common Language) musíte zadat všechny jazyky kompatibilní mechanismus, který umožňuje přístup k pojmenované položky, které používají klíčové slovo daného jazyka jako identifikátor. C#, například používá znak jako mechanismus řídicí v tomto případě @. Je však stále vhodné se vyhnout běžné klíčová slova, protože je mnohem obtížnější pro použití metody s řídicí sekvence než jeden bez ní.  
   
 ## <a name="using-abbreviations-and-acronyms"></a>Pomocí zkratky a zkratky  
- **X nesmí** použít zkratky nebo staženiny jako součást identifikátoru názvy.  
+ **X DO NOT** použít zkratky nebo staženiny jako součást identifikátoru názvy.  
   
  Například použít `GetWindow` místo `GetWin`.  
   
- **X nesmí** žádné režim, které nejsou široce používaný a to i v případě, že jsou pouze v případě, že je nutné použít.  
+ **X DO NOT** žádné režim, které nejsou široce používaný a to i v případě, že jsou pouze v případě, že je nutné použít.  
   
 ## <a name="avoiding-language-specific-names"></a>Zamezení názvy konkrétní jazyk  
- **PROVEĎTE ✓** používá sémanticky zajímavé názvy namísto klíčová slova specifická pro jazyk pro názvy typů.  
+ **✓ DO** používá sémanticky zajímavé názvy namísto klíčová slova specifická pro jazyk pro názvy typů.  
   
  Například `GetLength` je lepší název než `GetInt`.  
   
- **PROVEĎTE ✓** použít obecný název typu CLR, nikoli název konkrétní jazyk, ve výjimečných případech, pokud identifikátor nemá význam sémantického nad rámec jeho typu.  
+ **✓ DO** použít obecný název typu CLR, nikoli název konkrétní jazyk, ve výjimečných případech, pokud identifikátor nemá význam sémantického nad rámec jeho typu.  
   
  Například metoda převodu na <xref:System.Int64> by měl být pojmenován `ToInt64`, nikoli `ToLong` (protože <xref:System.Int64> je název CLR jazyka C# – konkrétní alias `long`). Následující tabulka představuje několik základních datových typů pomocí názvy typů CLR (stejně jako odpovídající názvy typů pro C#, Visual Basic a C++).  
   
@@ -76,24 +76,24 @@ Tato část popisuje obecné zásady vytváření názvů vztahující se k výb
 |**string**|**Řetězec**|**Řetězec**|**Řetězec**|  
 |**object**|**objekt**|**objekt**|**objekt**|  
   
- **PROVEĎTE ✓** použít běžný název, například `value` nebo `item`, místo opakování název typu ve výjimečných případech, pokud identifikátor nemá žádný význam sémantického a typ parametru není důležité.  
+ **✓ DO** použít běžný název, například `value` nebo `item`, místo opakování název typu ve výjimečných případech, pokud identifikátor nemá žádný význam sémantického a typ parametru není důležité.  
   
 ## <a name="naming-new-versions-of-existing-apis"></a>Pojmenování nové verze stávajících rozhraní API  
- **PROVEĎTE ✓** použijte název podobná staré rozhraní API, při vytváření nové verze existujícího rozhraní API.  
+ **✓ DO** použijte název podobná staré rozhraní API, při vytváření nové verze existujícího rozhraní API.  
   
  To pomůže zvýrazněte vztah mezi rozhraní API.  
   
- **PROVEĎTE ✓** přednost přidání příponu místo předpony označující novou verzi existujícího rozhraní API.  
+ **✓ DO** přednost přidání příponu místo předpony označující novou verzi existujícího rozhraní API.  
   
  To vám pomůže zjišťování při procházení dokumentace, nebo pomocí IntelliSense. Stará verze rozhraní API se uspořádají blízko nových rozhraní API, protože většina prohlížečů a IntelliSense zobrazí identifikátory v abecedním pořadí.  
   
- **✓ ZVAŽTE** pomocí identifikátor úplně nový, ale smysluplný místo přidávání příponu nebo předponu.  
+ **✓ CONSIDER** pomocí identifikátor úplně nový, ale smysluplný místo přidávání příponu nebo předponu.  
   
- **PROVEĎTE ✓** používá číselnou příponou se k označení novou verzi existujícího rozhraní API, zvlášť pokud existující název rozhraní API je pouze název, který dává smysl (tj. Pokud je oborový standard) a Pokud Přidání všechny smysluplný přípony (nebo změna názvu) není aplikace možnost ropriate.  
+ **✓ DO** používá číselnou příponou se k označení novou verzi existujícího rozhraní API, zvlášť pokud existující název rozhraní API je pouze název, který dává smysl (tj. Pokud je oborový standard) a Pokud Přidání všechny smysluplný přípony (nebo změna názvu) není aplikace možnost ropriate.  
   
- **X nesmí** "Ex" (nebo podobná) používat příponu pro identifikátor ho odlišuje od dřívější verzi rozhraní API stejné.  
+ **X DO NOT** "Ex" (nebo podobná) používat příponu pro identifikátor ho odlišuje od dřívější verzi rozhraní API stejné.  
   
- **PROVEĎTE ✓** používají "64" příponu zaváděné verze rozhraní API, která pracovat 64bitové celé číslo (dlouhých celých čísel) namísto 32bitové celé číslo. Potřebujete použít tuto metodu, pokud existuje existujícího rozhraní API 32-bit; nedělají nic pro nové rozhraní API s 64bitovou verzi.  
+ **✓ DO** používají "64" příponu zaváděné verze rozhraní API, která pracovat 64bitové celé číslo (dlouhých celých čísel) namísto 32bitové celé číslo. Potřebujete použít tuto metodu, pokud existuje existujícího rozhraní API 32-bit; nedělají nic pro nové rozhraní API s 64bitovou verzi.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

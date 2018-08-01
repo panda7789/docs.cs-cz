@@ -22,7 +22,7 @@ Jedna z funkcí objektově orientované rozhraní se vývojáři můžou rozší
   
  Zapečetění je výkonný mechanismus, který brání rozšíření. Můžete ji třídu nebo jednotlivé členy. Zapečetění třídu zabraňuje uživatelům v dědění ze třídy. Zapečetění členem zabraňuje uživatelům v přepsání konkrétní člena.  
   
- **X nesmí** zapečetit třídy bez nutnosti důvodem k tomu.  
+ **X DO NOT** zapečetit třídy bez nutnosti důvodem k tomu.  
   
  Zapečetění třídu, protože nelze úvahách o scénářem rozšíření není dobrý důvod. Uživatelé Framework jako dědění ze třídy z různých důvodů nonobvious, například přidávání členů pohodlí. V tématu [Nezapečetěné třídy](../../../docs/standard/design-guidelines/unsealed-classes.md) příklady nonobvious důvodů uživatelé chtějí dědit z typu.  
   
@@ -36,11 +36,11 @@ Jedna z funkcí objektově orientované rozhraní se vývojáři můžou rozší
   
 -   Třída je atribut, který vyžaduje modul runtime velmi rychlé hledání. Zapečetěné atributů mají mírně vyšší úrovně výkonu než ty, které jsou nezapečetěné. v tématu [atributy](../../../docs/standard/design-guidelines/attributes.md).  
   
- **X nesmí** deklarovat chráněný nebo virtuální členy v zapečetěných typech.  
+ **X DO NOT** deklarovat chráněný nebo virtuální členy v zapečetěných typech.  
   
  Podle definice nemůžou být zděděny zapečetěných typech. To znamená, že chráněné členy v zapečetěných typech nelze volat v zapečetěných typech virtuální metody nelze přepsat.  
   
- **✓ ZVAŽTE** zapečetění členů, které můžete přepsat.  
+ **✓ CONSIDER** zapečetění členů, které můžete přepsat.  
   
  Problémy, které může být důsledkem představení virtuální členové (popsané v [virtuální členové](../../../docs/standard/design-guidelines/virtual-members.md)) použít k přepsání i, i když mírně menší míře. Zapečetění přepsání chrání před tyto problémy od tohoto bodu v hierarchii dědičnosti.  
   

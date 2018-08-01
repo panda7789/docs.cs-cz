@@ -25,29 +25,29 @@ Výčty jsou zvláštní druh typ hodnoty. Existují dva druhy výčty: jednoduc
   
  Příznak výčty jsou navrženy pro podporu bitové operace na hodnoty výčtu. Běžným příkladem je výčet příznaků je seznam možností.  
   
- **PROVEĎTE ✓** pomocí výčet parametry, vlastnosti, silného typu a návratové hodnoty, které představují sadu hodnot.  
+ **✓ DO** pomocí výčet parametry, vlastnosti, silného typu a návratové hodnoty, které představují sadu hodnot.  
   
- **PROVEĎTE ✓** upřednostnit pomocí výčet místo statické konstanty.  
+ **✓ DO** upřednostnit pomocí výčet místo statické konstanty.  
   
- **X nesmí** používat výčet pro otevřené sady (například verzi operačního systému, názvy přátel, atd.).  
+ **X DO NOT** používat výčet pro otevřené sady (například verzi operačního systému, názvy přátel, atd.).  
   
- **X nesmí** poskytují vyhrazené výčet hodnot, které jsou určené pro budoucí použití.  
+ **X DO NOT** poskytují vyhrazené výčet hodnot, které jsou určené pro budoucí použití.  
   
  Vždy jednoduše přidáním hodnoty do existující výčtu v pozdější fázi. V tématu [přidání hodnoty výčty](#add_value) Další informace o přidání hodnot do výčty. Vyhrazené hodnoty právě znečištění směrovány správu sadu skutečné hodnoty a vede k chyby uživatele.  
   
- **X nepoužívejte** veřejně vystavení výčty pomocí pouze jednu hodnotu.  
+ **X AVOID** veřejně vystavení výčty pomocí pouze jednu hodnotu.  
   
  Běžnou praxí pro zajištění budoucí rozšíření rozhraní API jazyka C je přidání vyhrazené parametrů do metoda signatur. Takové vyhrazené parametry může být vyjádřený jako výčty pomocí jednoho výchozí hodnotu. To by neměl spravované rozhraní API. Přetěžování metody umožňuje přidání parametrů v budoucích vezích se.  
   
- **X nesmí** zahrnout sentinel hodnoty výčty.  
+ **X DO NOT** zahrnout sentinel hodnoty výčty.  
   
  I když jsou někdy jsou užitečné pro vývojáře framework, sentinel hodnoty jsou pro uživatele Framework matoucí. Používají se ke sledování stavu vrácení, jedna z hodnot výčtu spíše než ze sady reprezentována výčtového typu.  
   
- **PROVEĎTE ✓** zadejte hodnotu nula na jednoduchý výčty.  
+ **✓ DO** zadejte hodnotu nula na jednoduchý výčty.  
   
  Zvažte možnost volání hodnota něco podobného jako "None." Pokud tuto hodnotu není vhodná pro tento konkrétní výčet, je vhodné nejběžnější výchozí hodnota pro výčet přiřadit základní hodnota nula.  
   
- **✓ ZVAŽTE** pomocí <xref:System.Int32> (výchozí ve většině programovacích jazycích) jako nadřazený typ enum Pokud žádné z následujících:  
+ **✓ CONSIDER** pomocí <xref:System.Int32> (výchozí ve většině programovacích jazycích) jako nadřazený typ enum Pokud žádné z následujících:  
   
 -   Je výčet je výčet příznaků a máte víc než 32 příznaky, nebo se očekávají, že mají více v budoucnu.  
   
@@ -63,33 +63,33 @@ Výčty jsou zvláštní druh typ hodnoty. Existují dva druhy výčty: jednoduc
   
  Pro použití v paměti, uvědomte si, že spravované objekty jsou vždy `DWORD`-zarovnán, proto musíte efektivně více výčty nebo jiné malé struktury v instanci do pack menší výčtu s aby rozdíl, protože velikost celkový instance je vždy má být zaokrouhlené nahoru `DWORD`.  
   
- **PROVEĎTE ✓** název příznak výčty pomocí množném čísle podstatná jména či fráze podstatné jméno a jednoduchý výčty pomocí singulární podstatná jména či fráze podstatné jméno.  
+ **✓ DO** název příznak výčty pomocí množném čísle podstatná jména či fráze podstatné jméno a jednoduchý výčty pomocí singulární podstatná jména či fráze podstatné jméno.  
   
- **X nesmí** rozšířit <xref:System.Enum?displayProperty=nameWithType> přímo.  
+ **X DO NOT** rozšířit <xref:System.Enum?displayProperty=nameWithType> přímo.  
   
  <xref:System.Enum?displayProperty=nameWithType> je speciální typ používaný službou modulu CLR vytvořit uživateli definované výčty. Většina programovacích jazyků zadejte programovací element, který umožňuje přístup k této funkce. Například v jazyce C# `enum` – klíčové slovo se používá k definování výčet.  
   
 <a name="design"></a>   
 ### <a name="designing-flag-enums"></a>Návrh příznak výčty  
- **PROVEĎTE ✓** použít <xref:System.FlagsAttribute?displayProperty=nameWithType> na příznak výčty. Tento atribut nevztahují na jednoduchý výčty.  
+ **✓ DO** použít <xref:System.FlagsAttribute?displayProperty=nameWithType> na příznak výčty. Tento atribut nevztahují na jednoduchý výčty.  
   
- **PROVEĎTE ✓** použít zajišťuje dva pro hodnoty výčtu příznak, mohou být volně kombinovány pomocí bitové operace OR.  
+ **✓ DO** použít zajišťuje dva pro hodnoty výčtu příznak, mohou být volně kombinovány pomocí bitové operace OR.  
   
- **✓ ZVAŽTE** poskytování hodnot speciální výčtu pro běžně používá kombinace příznaků.  
+ **✓ CONSIDER** poskytování hodnot speciální výčtu pro běžně používá kombinace příznaků.  
   
  Bitové operace jsou rozšířené koncept a nesmí být požadovány pro jednoduché úlohy. <xref:System.IO.FileAccess.ReadWrite> je příklad speciální hodnoty.  
   
- **X nepoužívejte** vytváření výčtů příznak, kde jsou neplatné určité kombinace hodnot.  
+ **X AVOID** vytváření výčtů příznak, kde jsou neplatné určité kombinace hodnot.  
   
- **X nepoužívejte** pomocí příznak hodnoty výčtu nula, pokud hodnota představuje "všechny příznaky jsou vymazány" a je správně podle další obecné zásady s názvem.  
+ **X AVOID** pomocí příznak hodnoty výčtu nula, pokud hodnota představuje "všechny příznaky jsou vymazány" a je správně podle další obecné zásady s názvem.  
   
- **PROVEĎTE ✓** název nulové hodnoty příznak výčtů `None`. Pro příkaz enum příznak musí hodnota vždy význam "všechny příznaky jsou vymazány."  
+ **✓ DO** název nulové hodnoty příznak výčtů `None`. Pro příkaz enum příznak musí hodnota vždy význam "všechny příznaky jsou vymazány."  
   
 <a name="add_value"></a>   
 ### <a name="adding-value-to-enums"></a>Přidáním hodnoty pro výčty  
  Je velmi běžné ke zjištění, budete muset po jste již odeslali ho přidat hodnoty výčtu. Potenciální problémy s kompatibilitou aplikací Pokud nastane je vrácena hodnota nově přidané z existujícího rozhraní API, protože chybně napsané aplikace nemusí správně zpracovat novou hodnotu.  
   
- **✓ ZVAŽTE** přidání hodnot do výčty navzdory riziko malé kompatibility.  
+ **✓ CONSIDER** přidání hodnot do výčty navzdory riziko malé kompatibility.  
   
  Pokud máte reálná data o aplikace nekompatibility způsobené doplňky výčet, zvažte přidání nového rozhraní API, který vrací hodnoty novém i starém a přestat používat staré rozhraní API, které by měly pokračovat ve vrací pouze původní hodnoty. Tím bude zajištěno, že zůstanou existující aplikace kompatibilní.  
   

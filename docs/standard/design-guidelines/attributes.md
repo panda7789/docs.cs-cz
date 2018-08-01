@@ -26,25 +26,25 @@ ms.locfileid: "33574631"
   
  Vlastnosti, které není potřeba zadat, kdy je použit atribut se nazývají volitelných vlastností (nebo volitelné argumenty). Jsou zobrazeny v nastavit vlastnosti. Kompilátory poskytují speciální syntaxe a nastavte tyto vlastnosti, když se použije atribut. Například <xref:System.AttributeUsageAttribute.Inherited%2A?displayProperty=nameWithType> vlastnost představuje za volitelným argumentem.  
   
- **PROVEĎTE ✓** název třídy vlastních atributů s příponou "Atribut."  
+ **✓ DO** název třídy vlastních atributů s příponou "Atribut."  
   
- **PROVEĎTE ✓** použít <xref:System.AttributeUsageAttribute> vlastních atributů.  
+ **✓ DO** použít <xref:System.AttributeUsageAttribute> vlastních atributů.  
   
- **PROVEĎTE ✓** zadejte nastavit vlastnosti pro volitelné argumenty.  
+ **✓ DO** zadejte nastavit vlastnosti pro volitelné argumenty.  
   
- **PROVEĎTE ✓** zadejte vlastnosti jen get pro povinnými argumenty.  
+ **✓ DO** zadejte vlastnosti jen get pro povinnými argumenty.  
   
- **PROVEĎTE ✓** zadat parametry konstruktor k chybě při inicializaci vlastnosti odpovídající povinnými argumenty. Každý parametr by měl mít stejný název (i když se jiný velká a malá písmena) jako odpovídající vlastnost.  
+ **✓ DO** zadat parametry konstruktor k chybě při inicializaci vlastnosti odpovídající povinnými argumenty. Každý parametr by měl mít stejný název (i když se jiný velká a malá písmena) jako odpovídající vlastnost.  
   
- **X nepoužívejte** poskytuje konstruktor parametry k chybě při inicializaci vlastnosti odpovídající volitelné argumenty.  
+ **X AVOID** poskytuje konstruktor parametry k chybě při inicializaci vlastnosti odpovídající volitelné argumenty.  
   
  Jinými slovy nemají vlastnosti, které lze nastavit pomocí konstruktoru a setter. Toto platí umožňuje velmi explicitní argumenty, které jsou volitelné a které jsou požadovány a tomu není nutné dva způsoby, jak to samé.  
   
- **X nepoužívejte** přetížení konstruktory vlastních atributů.  
+ **X AVOID** přetížení konstruktory vlastních atributů.  
   
  Má jenom jeden konstruktor jasně komunikuje uživateli, které argumenty jsou povinné a jsou volitelné.  
   
- **PROVEĎTE ✓** zapečetit vlastní atribut třídy, pokud je to možné. Díky tomu rychlejší hledání pro atribut.  
+ **✓ DO** zapečetit vlastní atribut třídy, pokud je to možné. Díky tomu rychlejší hledání pro atribut.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

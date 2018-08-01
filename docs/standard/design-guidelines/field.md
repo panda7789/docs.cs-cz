@@ -23,19 +23,19 @@ Princip zapouzdření je jedním z nejdůležitějších pojmy v objektově orie
   
  Konstanty a statické pole jen pro čtení jsme vyloučit z tohoto striktní omezení, protože takové pole, téměř podle definice nikdy musí změnit.  
   
- **X nesmí** zadejte pole instance, která jsou veřejných nebo chráněný.  
+ **X DO NOT** zadejte pole instance, která jsou veřejných nebo chráněný.  
   
  Pro přístup k pole místo provedení je veřejný nebo chráněného by měl poskytovat vlastnosti.  
   
- **PROVEĎTE ✓** pro konstanty, které se budou měnit nikdy používat konstantní pole.  
+ **✓ DO** pro konstanty, které se budou měnit nikdy používat konstantní pole.  
   
  Kompilátor je nastaven hodnoty polí const přímo do volání kódu. Proto const hodnoty nesmí nikdy změnit bez poškození kompatibility.  
   
- **PROVEĎTE ✓** použít veřejné statické `readonly` pole pro instance předdefinovaných objektů.  
+ **✓ DO** použít veřejné statické `readonly` pole pro instance předdefinovaných objektů.  
   
  Pokud jsou předdefinované instance typu, deklarujte je jako veřejné jen pro čtení statických polí samotného typu.  
   
- **X nesmí** přiřadit instancí měnitelný typy `readonly` pole.  
+ **X DO NOT** přiřadit instancí měnitelný typy `readonly` pole.  
   
  Měnitelný typ je typ s instancí, které můžete změnit, jakmile jsou vytvořeny instance. Například pole, většina kolekce a datové proudy jsou měnitelný typy, ale <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Uri?displayProperty=nameWithType>, a <xref:System.String?displayProperty=nameWithType> jsou všechny neměnné. Modifikátor jen pro čtení na referenční typ pole brání instance uložené v poli od nahrazují, ale nezabrání data instance pole z upravována volání členové změna instance.  
   

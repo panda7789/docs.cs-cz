@@ -20,17 +20,17 @@ ms.lasthandoff: 05/04/2018
 ms.locfileid: "33570538"
 ---
 # <a name="abstract-class-design"></a>Abstraktní třída návrhu
-**X nesmí** definice veřejných nebo chráněného interní konstruktorů v abstraktních typech.  
+**X DO NOT** definice veřejných nebo chráněného interní konstruktorů v abstraktních typech.  
   
  Konstruktory by měly být veřejné pouze v případě, že uživatelé budou potřebovat pro vytvoření instance typu. Protože nelze vytvořit instanci abstraktního typu, s veřejný konstruktor abstraktní typ je nesprávně navrženou a zavádějící uživatelům.  
   
- **PROVEĎTE ✓** definice s chráněným nebo interní konstruktor v abstraktní třídy.  
+ **✓ DO** definice s chráněným nebo interní konstruktor v abstraktní třídy.  
   
  Chráněný konstruktor je dnes běžné a jednoduše umožňuje udělat vlastní inicializaci, když se vytvoří podtypů základní třídy.  
   
  Interní konstruktor lze použít k omezení konkrétní implementace abstraktní třídu pro sestavení definice třídy.  
   
- **PROVEĎTE ✓** zadejte alespoň jeden konkrétní typ, který dědí z každé abstraktní třída, která můžete dodávat.  
+ **✓ DO** zadejte alespoň jeden konkrétní typ, který dědí z každé abstraktní třída, která můžete dodávat.  
   
  Díky této pomáhá ověření návrhu abstraktní třídy. Například <xref:System.IO.FileStream?displayProperty=nameWithType> je implementací <xref:System.IO.Stream?displayProperty=nameWithType> abstraktní třídy.  
   

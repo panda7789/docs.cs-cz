@@ -22,23 +22,23 @@ Zpětná volání jsou body rozšiřitelnosti, které umožňují rozhraní pro 
   
  Události jsou ve speciálním případě zpětná volání, který podporuje pohodlný a konzistentní syntaxe pro zadávání delegáta (obslužné rutiny události). Kromě toho Visual Studio dokončování a návrháři poskytnutí nápovědy v pomocí rozhraní API založené na události. (Viz [událostí návrhu](../../../docs/standard/design-guidelines/event.md).)  
   
- **✓ ZVAŽTE** pomocí zpětná volání umožníte uživatelům poskytnout vlastní kód, který bude proveden podle rozhraní.  
+ **✓ CONSIDER** pomocí zpětná volání umožníte uživatelům poskytnout vlastní kód, který bude proveden podle rozhraní.  
   
- **✓ ZVAŽTE** pomocí události umožníte uživatelům přizpůsobit chování prostředí bez nutnosti Princip objektově orientované návrhu.  
+ **✓ CONSIDER** pomocí události umožníte uživatelům přizpůsobit chování prostředí bez nutnosti Princip objektově orientované návrhu.  
   
- **PROVEĎTE ✓** raději události přes prostý zpětná volání, protože jsou známější pro širší vývojářů a jsou integrované s dokončování Visual Studio.  
+ **✓ DO** raději události přes prostý zpětná volání, protože jsou známější pro širší vývojářů a jsou integrované s dokončování Visual Studio.  
   
- **X nepoužívejte** pomocí zpětná volání rozhraní API náročné na výkon.  
+ **X AVOID** pomocí zpětná volání rozhraní API náročné na výkon.  
   
- **PROVEĎTE ✓** pomocí nové `Func<...>`, `Action<...>`, nebo `Expression<...>` typy místo vlastní delegáty, při definování rozhraní API s zpětných volání.  
+ **✓ DO** pomocí nové `Func<...>`, `Action<...>`, nebo `Expression<...>` typy místo vlastní delegáty, při definování rozhraní API s zpětných volání.  
   
  `Func<...>` a `Action<...>` představují obecní delegáti. `Expression<...>` Definice představuje funkcí, které můžete zkompilovat a následně vyvolat za běhu, ale mohou také být serializované a předaný vzdálených procesů.  
   
- **PROVEĎTE ✓** měřit a chápat výkonu důsledky použití `Expression<...>`, místo použití `Func<...>` a `Action<...>` delegáti.  
+ **✓ DO** měřit a chápat výkonu důsledky použití `Expression<...>`, místo použití `Func<...>` a `Action<...>` delegáti.  
   
  `Expression<...>` typy jsou ve většině případů logicky ekvivalentní `Func<...>` a `Action<...>` delegáti. Hlavní rozdíl mezi nimi je, že delegáty jsou určena pro použití ve scénářích místní proces. výrazy jsou určeny k případech, kdy je výhodné a možných při vyhodnocování výrazu v vzdáleného procesu nebo počítači.  
   
- **PROVEĎTE ✓** pochopit, jsou prováděny voláním delegáta libovolný kód a který může mít dopad na zabezpečení, správnost a kompatibility.  
+ **✓ DO** pochopit, jsou prováděny voláním delegáta libovolný kód a který může mít dopad na zabezpečení, správnost a kompatibility.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

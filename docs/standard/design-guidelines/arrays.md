@@ -14,13 +14,14 @@ ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/04/2018
+ms.locfileid: "33570392"
 ---
 # <a name="arrays"></a>Pole
-**PROVEĎTE ✓** raději pomocí kolekcí přes pole v veřejná rozhraní API. [Kolekce](../../../docs/standard/design-guidelines/guidelines-for-collections.md) oddíl obsahuje podrobné informace o tom, jak si vybrat mezi kolekcí a pole.  
+**✓ DO** raději pomocí kolekcí přes pole v veřejná rozhraní API. [Kolekce](../../../docs/standard/design-guidelines/guidelines-for-collections.md) oddíl obsahuje podrobné informace o tom, jak si vybrat mezi kolekcí a pole.  
   
- **X nesmí** použít pole pouze pro čtení. Vlastní pole je jen pro čtení a nelze změnit, ale lze změnit prvků v poli.  
+ **X DO NOT** použít pole pouze pro čtení. Vlastní pole je jen pro čtení a nelze změnit, ale lze změnit prvků v poli.  
   
- **✓ ZVAŽTE** pomocí Vícenásobná pole místo vícerozměrná pole.  
+ **✓ CONSIDER** pomocí Vícenásobná pole místo vícerozměrná pole.  
   
  Vícenásobná pole je pole s prvky, které jsou také pole. Pole, které tvoří elementy lze různých velikostí, což méně nevyužité místo pro některé sady dat (např. zhuštěný matice) ve srovnání s vícerozměrná pole. Navíc modulu CLR optimalizuje operace indexu na Vícenásobná pole, takže se mohou vykazovat lepší běhový výkon v některých scénářích.  
   

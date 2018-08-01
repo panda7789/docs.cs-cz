@@ -24,11 +24,11 @@ Přesněji řečeno třídu změní základní třídy, pokud je z něj odvozeno
   
  Jak je uvedeno výše, základní třídy pro uživatele, kteří potřebují k implementaci abstrakce poskytnout neocenitelnou pomocí nápovědy, ale současně se může být důležité odpovědnosti. Jejich přidejte útoku a zvýšit hloubku hierarchie dědičnosti a proto koncepčně zkomplikovat rozhraní. Proto základní třídy by měl používat pouze v případě, že poskytují významné zlepšení uživatelům rozhraní. Budou se vyhnout, pokud poskytují hodnotu pouze pro implementátory architekturu, ve kterém případu delegování interní implementace místo dědění ze základní třídy silného považovat.  
   
- **✓ ZVAŽTE** provedení základní třídy abstraktní i v případě, že neobsahují žádné abstraktní členy. To jasně komunikuje uživatelům určený výhradně k možné zdědit z třídy.  
+ **✓ CONSIDER** provedení základní třídy abstraktní i v případě, že neobsahují žádné abstraktní členy. To jasně komunikuje uživatelům určený výhradně k možné zdědit z třídy.  
   
- **✓ ZVAŽTE** umístění základních tříd do samostatného oboru názvů z nejdůležitějších scénář typů. Podle definice základní třídy jsou určené pro scénáře pokročilé rozšiřitelnost a proto nejsou zajímavé pro většinu uživatelů.  
+ **✓ CONSIDER** umístění základních tříd do samostatného oboru názvů z nejdůležitějších scénář typů. Podle definice základní třídy jsou určené pro scénáře pokročilé rozšiřitelnost a proto nejsou zajímavé pro většinu uživatelů.  
   
- **X nepoužívejte** pojmenování základní třídy s příponou "Základní", pokud třída je určena pro použití v veřejná rozhraní API.  
+ **X AVOID** pojmenování základní třídy s příponou "Základní", pokud třída je určena pro použití v veřejná rozhraní API.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

@@ -30,50 +30,50 @@ Existují dva druhy konstruktory: Zadejte konstruktory a konstruktory instancí.
   
  Konstruktory jsou nejvíce přirozené způsob, jak vytvořit instance typu. Většina vývojářů bude hledat a pokuste se použít konstruktor před jejich zvažte alternativní způsoby vytváření instancí (například metody vytváření).  
   
- **✓ ZVAŽTE** poskytuje jednoduchý, v ideálním případě výchozí, konstruktory.  
+ **✓ CONSIDER** poskytuje jednoduchý, v ideálním případě výchozí, konstruktory.  
   
  Jednoduché konstruktor má velmi malý počet parametrů a všechny parametry jsou primitiv nebo výčty. Tyto jednoduché konstruktory zvýšit použitelnost rozhraní.  
   
- **✓ ZVAŽTE** pomocí metody statické factory místo konstruktoru, pokud sémantiku požadovaná operace se nemapují přímo do vytváření nové instance, nebo pokud následující pokyny pro návrh konstruktor funguje nepřirozené.  
+ **✓ CONSIDER** pomocí metody statické factory místo konstruktoru, pokud sémantiku požadovaná operace se nemapují přímo do vytváření nové instance, nebo pokud následující pokyny pro návrh konstruktor funguje nepřirozené.  
   
- **PROVEĎTE ✓** použít konstruktor parametry jako zástupce pro nastavení hlavní vlastností.  
+ **✓ DO** použít konstruktor parametry jako zástupce pro nastavení hlavní vlastností.  
   
  Měla by existovat žádný rozdíl ve smyslu sémantiky mezi pomocí prázdného konstruktoru následuje některé sady vlastností a pomocí konstruktoru více argumentů.  
   
- **PROVEĎTE ✓** používají stejný název pro konstruktor parametry a vlastnosti, pokud se parametry konstruktor používají se jednoduše nastavit vlastnost.  
+ **✓ DO** používají stejný název pro konstruktor parametry a vlastnosti, pokud se parametry konstruktor používají se jednoduše nastavit vlastnost.  
   
  Jediným rozdílem mezi tyto parametry a vlastnosti by měl být velká a malá písmena.  
   
- **PROVEĎTE ✓** minimálním úsilím v konstruktoru.  
+ **✓ DO** minimálním úsilím v konstruktoru.  
   
  Konstruktory neměli dělat spoustu práce než zachycení parametry konstruktor. Náklady na další zpracování by měl odloží až požadovaných.  
   
- **PROVEĎTE ✓** vyvolat výjimky z konstruktory instancí, podle potřeby.  
+ **✓ DO** vyvolat výjimky z konstruktory instancí, podle potřeby.  
   
- **PROVEĎTE ✓** explicitně deklarovat veřejný výchozí konstruktor ve třídách, pokud je potřeba takový konstruktor.  
+ **✓ DO** explicitně deklarovat veřejný výchozí konstruktor ve třídách, pokud je potřeba takový konstruktor.  
   
  Pokud na typ není explicitně deklarovat všechny konstruktory, mnoha jazycích (například C#) automaticky přidá výchozí veřejný konstruktor. (Abstraktní třídy získat chráněný konstruktor.)  
   
  Přidání parametrizovaného konstruktor na třídu zabrání kompilátoru přidávání výchozí konstruktor. To často způsobuje náhodných nejnovější změny.  
   
- **X nepoužívejte** explicitně na struktury definování výchozí konstruktory.  
+ **X AVOID** explicitně na struktury definování výchozí konstruktory.  
   
  Díky tomu pole vytvoření rychlejší, protože pokud není definován výchozí konstruktor, nemá ke spuštění na každý slot v poli. Všimněte si, že mnoho kompilátory, včetně C#, Nepovolit struktury tak, aby měl bezparametrové konstruktory z tohoto důvodu.  
   
- **X nepoužívejte** volání virtuální členové objektu uvnitř jeho konstruktoru.  
+ **X AVOID** volání virtuální členové objektu uvnitř jeho konstruktoru.  
   
  Volání metody člena virtuální způsobí, že nejodvozenějších přepsání, která se má volat, i když konstruktoru nejvíce odvozený typ dosud nebyla spuštěna plně.  
   
 ### <a name="type-constructor-guidelines"></a>Pokyny pro konstruktor typu  
- **PROVEĎTE ✓** soukromá statické konstruktory.  
+ **✓ DO** soukromá statické konstruktory.  
   
  Statický konstruktor, označované taky jako konstruktoru třídy, se používá k chybě při inicializaci typu. Modul CLR volá statického konstruktoru dřív, než se vytvoří první instance typu nebo se nazývají všechny statické členy tohoto typu. Uživatel nemá žádnou kontrolu nad kdy se nazývá statického konstruktoru. Statický konstruktor není privátní, může být volána kódu než modulu CLR. V závislosti na operací prováděných v konstruktoru to může způsobit neočekávané chování. Kompilátor jazyka C# vynutí statické konstruktory důvěrné.  
   
- **X nesmí** generování výjimek ze statické konstruktory.  
+ **X DO NOT** generování výjimek ze statické konstruktory.  
   
  Pokud z konstruktoru typu je vyvolána výjimka, typ není v aktuální doméně aplikace.  
   
- **✓ ZVAŽTE** inicializace statického pole vloženě než explicitně pomocí statické konstruktory, protože modul runtime je schopen optimalizovat výkon typy, které nemají explicitně definovaných statického konstruktoru.  
+ **✓ CONSIDER** inicializace statického pole vloženě než explicitně pomocí statické konstruktory, protože modul runtime je schopen optimalizovat výkon typy, které nemají explicitně definovaných statického konstruktoru.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

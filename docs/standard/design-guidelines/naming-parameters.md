@@ -18,20 +18,20 @@ ms.locfileid: "33570483"
 # <a name="naming-parameters"></a>Názvy parametrů
 Nad rámec zřejmé čitelnosti důvod, proč je důležité postupujte podle pokynů pro názvy parametrů, protože parametry jsou zobrazeny v dokumentaci a v návrháři, když nástrojů visual návrhu poskytují Intellisense a třída procházení funkce.  
   
- **PROVEĎTE ✓** použít camelCasing v názvech parametrů.  
+ **✓ DO** použít camelCasing v názvech parametrů.  
   
- **PROVEĎTE ✓** použít parametr popisné názvy.  
+ **✓ DO** použít parametr popisné názvy.  
   
- **✓ ZVAŽTE** pomocí názvů založených na parametr význam, nikoli typ parametru.  
+ **✓ CONSIDER** pomocí názvů založených na parametr význam, nikoli typ parametru.  
   
 ### <a name="naming-operator-overload-parameters"></a>Názvy parametrů přetížení operátoru  
- **PROVEĎTE ✓** použít `left` a `right` pro názvy parametrů přetížení binární operátor Pokud neexistuje žádný význam na parametry.  
+ **✓ DO** použít `left` a `right` pro názvy parametrů přetížení binární operátor Pokud neexistuje žádný význam na parametry.  
   
- **PROVEĎTE ✓** použít `value` pro unární operátor přetížení názvy parametrů, pokud neexistuje žádný význam na parametry.  
+ **✓ DO** použít `value` pro unární operátor přetížení názvy parametrů, pokud neexistuje žádný význam na parametry.  
   
- **✓ ZVAŽTE** smysluplný názvy pro operátor přetížení parametry, pokud tento postup zvětší významné zlepšení.  
+ **✓ CONSIDER** smysluplný názvy pro operátor přetížení parametry, pokud tento postup zvětší významné zlepšení.  
   
- **X nesmí** používání zkratky nebo číselné indexů pro operátor přetížení názvy parametrů.  
+ **X DO NOT** používání zkratky nebo číselné indexů pro operátor přetížení názvy parametrů.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

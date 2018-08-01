@@ -27,24 +27,24 @@ Jako s další pokyny pro pojmenování, cílem obory názvů v názvu je vytvo�
  `Fabrikam.Math`  
  `Litware.Security`  
   
- **PROVEĎTE ✓** předpony oboru názvů názvy s název společnosti, aby se zabránilo obory názvů v jiné společnosti z který má stejný název.  
+ **✓ DO** předpony oboru názvů názvy s název společnosti, aby se zabránilo obory názvů v jiné společnosti z který má stejný název.  
   
- **PROVEĎTE ✓** použít název stabilní, nezávislé na verzi produktu, na druhé úrovni název oboru názvů.  
+ **✓ DO** použít název stabilní, nezávislé na verzi produktu, na druhé úrovni název oboru názvů.  
   
- **X nesmí** používat organizační hierarchie jako základ pro názvy v oboru názvů hierarchií, protože názvy skupin v rámci společnosti jsou obvykle krátkodobou. Uspořádejte hierarchie oborů názvů kolem skupiny souvisejících technologiích.  
+ **X DO NOT** používat organizační hierarchie jako základ pro názvy v oboru názvů hierarchií, protože názvy skupin v rámci společnosti jsou obvykle krátkodobou. Uspořádejte hierarchie oborů názvů kolem skupiny souvisejících technologiích.  
   
- **PROVEĎTE ✓** PascalCasing a komponenty samostatného oboru názvů pomocí tečky (například `Microsoft.Office.PowerPoint`). Pokud vaší značkou aktivuje netradičních velká a malá písmena, řiďte se malá a velká písmena definované vaší značkou, i v případě, že odchylují od normální obor názvů velká a malá písmena.  
+ **✓ DO** PascalCasing a komponenty samostatného oboru názvů pomocí tečky (například `Microsoft.Office.PowerPoint`). Pokud vaší značkou aktivuje netradičních velká a malá písmena, řiďte se malá a velká písmena definované vaší značkou, i v případě, že odchylují od normální obor názvů velká a malá písmena.  
   
- **✓ ZVAŽTE** pomocí názvy v množném čísle obor názvů, kde je to vhodné.  
+ **✓ CONSIDER** pomocí názvy v množném čísle obor názvů, kde je to vhodné.  
   
  Například použít `System.Collections` místo `System.Collection`. Značky jména a zkratky jsou ale výjimky pro toto pravidlo. Například použít `System.IO` místo `System.IOs`.  
   
- **X nesmí** používají stejný název pro obor názvů a typ v daném oboru názvů.  
+ **X DO NOT** používají stejný název pro obor názvů a typ v daném oboru názvů.  
   
  Například nepoužívejte `Debug` jako obor názvů název a také poskytují třídy s názvem `Debug` ve stejném oboru názvů. Několik kompilátory vyžadují tyto typy jako plně kvalifikovaný.  
   
 ### <a name="namespaces-and-type-name-conflicts"></a>Obory názvů a typ konflikty názvů  
- **X nesmí** zavést názvy obecného typu, jako `Element`, `Node`, `Log`, a `Message`.  
+ **X DO NOT** zavést názvy obecného typu, jako `Element`, `Node`, `Log`, a `Message`.  
   
  Je velmi vysoká pravděpodobnost, že povede k zadání názvu Pokud tak učiníte, je v konfliktu společné scénáře. Použijte následující postup názvy obecného typu (`FormElement`, `XmlNode`, `EventLog`, `SoapMessage`).  
   
@@ -57,7 +57,7 @@ Jako s další pokyny pro pojmenování, cílem obory názvů v názvu je vytvo�
      `System.Windows*`   
      `System.Web.UI*`  
   
-     **X nesmí** předáte typy v oborech názvů v rámci jedné aplikace model se stejným názvem.  
+     **X DO NOT** předáte typy v oborech názvů v rámci jedné aplikace model se stejným názvem.  
   
      Například nepřidávejte typ s názvem `Page` k <xref:System.Web.UI.Adapters?displayProperty=nameWithType> obor názvů, protože <xref:System.Web.UI?displayProperty=nameWithType> obor názvů již obsahuje typ s názvem `Page`.  
   
@@ -69,7 +69,7 @@ Jako s další pokyny pro pojmenování, cílem obory názvů v názvu je vytvo�
   
      Obory názvů základní zahrnout všechny `System` obory názvů, s výjimkou obory názvů modelů aplikace a infrastrukturu obory názvů. Obory názvů jádra, patří mimo jiné, `System`, `System.IO`, `System.Xml`, a `System.Net`.  
   
-     **X nesmí** udělení typy názvy, které by byl v konfliktu s žádným typem v oborech názvů jádra.  
+     **X DO NOT** udělení typy názvy, které by byl v konfliktu s žádným typem v oborech názvů jádra.  
   
      Například nikdy nepoužívejte `Stream` jako název typu. By byl v konfliktu s <xref:System.IO.Stream?displayProperty=nameWithType>, velmi často používá typu.  
   
@@ -77,9 +77,9 @@ Jako s další pokyny pro pojmenování, cílem obory názvů v názvu je vytvo�
   
      Tato kategorie zahrnuje všechny obory názvů se stejným první dva uzly obor názvů `(<Company>.<Technology>*`), jako například `Microsoft.Build.Utilities` a `Microsoft.Build.Tasks`. Je důležité, aby typy, které patří do jedné technologie nedošlo ke konfliktu mezi sebou.  
   
-     **X nesmí** přiřadit názvy typů, které by byl v konfliktu s jinými typy v rámci jedné technologie.  
+     **X DO NOT** přiřadit názvy typů, které by byl v konfliktu s jinými typy v rámci jedné technologie.  
   
-     **X nesmí** zavést typ konflikty v názvech mezi typy v oborech názvů technologii a na obor názvů modelu aplikace (Pokud je tato technologie není určena pro použití s modelem aplikace).  
+     **X DO NOT** zavést typ konflikty v názvech mezi typy v oborech názvů technologii a na obor názvů modelu aplikace (Pokud je tato technologie není určena pro použití s modelem aplikace).  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

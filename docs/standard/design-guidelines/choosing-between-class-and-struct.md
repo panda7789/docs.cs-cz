@@ -36,9 +36,9 @@ Jeden základní rozhodnutí o návrhu, které každý framework Návrhář oto�
   
  Existuje pravidlo musí být většinu typů v rámci třídy. Existují však některé situace, ve kterých charakteristiky typ hodnoty Ujistěte se, je vhodnější použít struktury.  
   
- **✓ ZVAŽTE** definice struktury místo třídu, pokud instance typu jsou malé a běžně krátkodobou nebo jsou běžně součástí jiné objekty.  
+ **✓ CONSIDER** definice struktury místo třídu, pokud instance typu jsou malé a běžně krátkodobou nebo jsou běžně součástí jiné objekty.  
   
- **X nepoužívejte** definice struktury, pokud má tento typ všechny následující vlastnosti:  
+ **X AVOID** definice struktury, pokud má tento typ všechny následující vlastnosti:  
   
 -   Logicky reprezentuje jednu hodnotu, podobně jako primitivní typy (`int`, `double`atd.).  
   

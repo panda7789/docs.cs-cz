@@ -23,23 +23,23 @@ I když většina rozhraní API jsou nejlépe modelovány pomocí třídy a stru
   
  Další situace při definování, které je vhodné rozhraní je při vytváření jednotné rozhraní, které může podporovat několik typů, včetně některých typů hodnot. Typy hodnot nemůže Zdědit z typy jiné než <xref:System.ValueType>, ale implementovaly rozhraní, tak přes rozhraní je jedinou možností Chcete-li poskytovat běžné základního typu.  
   
- **PROVEĎTE ✓** definovat rozhraní, pokud potřebujete některé společné rozhraní API jsou podporováni sada typy, které obsahuje typy hodnot.  
+ **✓ DO** definovat rozhraní, pokud potřebujete některé společné rozhraní API jsou podporováni sada typy, které obsahuje typy hodnot.  
   
- **✓ ZVAŽTE** definování rozhraní, pokud potřebujete podporu pro typy, které již dědí od jiný typ jeho funkcí.  
+ **✓ CONSIDER** definování rozhraní, pokud potřebujete podporu pro typy, které již dědí od jiný typ jeho funkcí.  
   
- **X nepoužívejte** pomocí rozhraní značky (rozhraní s žádní členové).  
+ **X AVOID** pomocí rozhraní značky (rozhraní s žádní členové).  
   
  Pokud potřebujete označte třídu tak, že má zvláštní vlastností (značka), obecně platí, použijte vlastní atribut, nikoli rozhraní.  
   
- **PROVEĎTE ✓** zadejte alespoň jeden typ, který je implementací rozhraní.  
+ **✓ DO** zadejte alespoň jeden typ, který je implementací rozhraní.  
   
  Díky této pomáhá ověření návrhu rozhraní. Například <xref:System.Collections.Generic.List%601> je implementací <xref:System.Collections.Generic.IList%601> rozhraní.  
   
- **PROVEĎTE ✓** zadejte alespoň jeden rozhraní API, které zabírá jednotlivá rozhraní definujete (metoda, která bere rozhraní jako parametr nebo vlastnost zadán jako rozhraní).  
+ **✓ DO** zadejte alespoň jeden rozhraní API, které zabírá jednotlivá rozhraní definujete (metoda, která bere rozhraní jako parametr nebo vlastnost zadán jako rozhraní).  
   
  Díky této pomáhá ověření návrhu rozhraní. Například <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> spotřebovává <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> rozhraní.  
   
- **X nesmí** přidat členy do rozhraní, které se dříve dodaný.  
+ **X DO NOT** přidat členy do rozhraní, které se dříve dodaný.  
   
  Tím by došlo k přerušení implementace rozhraní. Aby se zabránilo problémům s verzemi, byste měli vytvořit nové rozhraní.  
   

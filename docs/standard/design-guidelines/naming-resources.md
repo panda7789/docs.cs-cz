@@ -21,15 +21,15 @@ ms.locfileid: "33571183"
 # <a name="naming-resources"></a>Názvy prostředků
 Protože lokalizovatelný prostředků může být odkazováno prostřednictvím určité objekty, jako kdyby byly vlastnosti, jsou podobné vlastnost pokyny pro pojmenování pokyny pro prostředky.  
   
- **PROVEĎTE ✓** použít PascalCasing v klíčů prostředku.  
+ **✓ DO** použít PascalCasing v klíčů prostředku.  
   
- **PROVEĎTE ✓** zadat popisný místo krátké identifikátory.  
+ **✓ DO** zadat popisný místo krátké identifikátory.  
   
- **X nesmí** používat klíčová slova jazyka hlavní jazyky CLR.  
+ **X DO NOT** používat klíčová slova jazyka hlavní jazyky CLR.  
   
- **PROVEĎTE ✓** použijte pouze alfanumerické znaky a podtržítka v pojmenování prostředky.  
+ **✓ DO** použijte pouze alfanumerické znaky a podtržítka v pojmenování prostředky.  
   
- **PROVEĎTE ✓** použít následující konvence pro prostředků zprávy výjimek.  
+ **✓ DO** použít následující konvence pro prostředků zprávy výjimek.  
   
  Identifikátor prostředku musí být název typu výjimka plus krátké identifikátor výjimky:  
   

@@ -28,11 +28,11 @@ Abstrakci je typ, který popisuje kontraktu, ale neposkytuje úplnou implementac
   
  Abstrakce však poskytují velmi výkonné rozšíření, což často nemůže shodovat na rozšiřitelnost mechanismy. Jsou jádrem mnoho architektury vzory, třeba moduly plug-in inverzi řízení (IoC), kanálů a tak dále. Jsou také velmi důležité pro testovatelnosti architektury. Dobrý abstrakce umožňují se zakázaným inzerováním out velkou závislosti pro účely testování jednotek. V souhrnu jsou zodpovědní za sought-after bohatost moderní architektury objektově orientované abstrakce.  
   
- **X nesmí** zadejte abstrakce, pokud jsou neotestovali ve vývoji několik rozhraní API využívání abstrakce a konkrétní implementace.  
+ **X DO NOT** zadejte abstrakce, pokud jsou neotestovali ve vývoji několik rozhraní API využívání abstrakce a konkrétní implementace.  
   
- **PROVEĎTE ✓** zvolit pečlivě abstraktní třídy a rozhraní při navrhování abstrakci.  
+ **✓ DO** zvolit pečlivě abstraktní třídy a rozhraní při navrhování abstrakci.  
   
- **✓ ZVAŽTE** poskytuje odkaz testy pro konkrétní implementace abstrakce. Tyto testy by měl povolit uživatelům otestovat, zda jejich implementace správně implementaci kontraktu.  
+ **✓ CONSIDER** poskytuje odkaz testy pro konkrétní implementace abstrakce. Tyto testy by měl povolit uživatelům otestovat, zda jejich implementace správně implementaci kontraktu.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

@@ -22,25 +22,25 @@ Přetížení operátoru povolit framework typy zobrazí, jako by byly primitiv 
   
  I když je povolené a užitečné v některých situacích Ano, je třeba přetížení operátoru použít opatrně. Existují mnoho případy, ve které operátor přetížení má byla zneužít, například při spuštění framework návrhářů, chcete-li používat pro operace, které by měly být jednoduché metody. Následující pokyny by měly pomoci při rozhodování, kdy a jak použití přetížení operátoru.  
   
- **X nepoužívejte** definování přetížení operátoru v typy, které by měl působí jako primitivní typy (Předdefinované).  
+ **X AVOID** definování přetížení operátoru v typy, které by měl působí jako primitivní typy (Předdefinované).  
   
- **✓ ZVAŽTE** definování přetížení operátoru v typu, který by měl působí jako primitivního typu.  
+ **✓ CONSIDER** definování přetížení operátoru v typu, který by měl působí jako primitivního typu.  
   
  Například <xref:System.String?displayProperty=nameWithType> má `operator==` a `operator!=` definované.  
   
- **PROVEĎTE ✓** v struktury, která představují čísla definovat přetížení operátoru (například <xref:System.Decimal?displayProperty=nameWithType>).  
+ **✓ DO** v struktury, která představují čísla definovat přetížení operátoru (například <xref:System.Decimal?displayProperty=nameWithType>).  
   
- **X nesmí** být cute při definování přetížení operátoru.  
+ **X DO NOT** být cute při definování přetížení operátoru.  
   
  Přetížení operátoru je užitečné v případech, ve kterých je hned zjevné co bude výsledek operace. Například má smysl moct odečtena jeden <xref:System.DateTime> z jiné `DateTime` a získat <xref:System.TimeSpan>. Však není vhodné používat logický operátor union, union dotazy dvě databáze nebo použít operátor posunutí k zápisu do datového proudu.  
   
- **X nesmí** zadejte operátor přetížení pokud alespoň jeden z operandy typu definování přetížení.  
+ **X DO NOT** zadejte operátor přetížení pokud alespoň jeden z operandy typu definování přetížení.  
   
- **PROVEĎTE ✓** přetížení operátory symetrický způsobem.  
+ **✓ DO** přetížení operátory symetrický způsobem.  
   
  Například, pokud jste přetížení `operator==`, by také přetížení `operator!=`. Podobně pokud jste přetížení `operator<`, by také přetížení `operator>`a tak dále.  
   
- **✓ ZVAŽTE** poskytování metody popisné názvy, které odpovídají každé přetížené operátor.  
+ **✓ CONSIDER** poskytování metody popisné názvy, které odpovídají každé přetížené operátor.  
   
  Mnoho jazyků nepodporují přetížení operátoru. Z tohoto důvodu se doporučuje, aby typy, které přetížení operátory o sekundární metodu s názvem příslušné specifické pro doménu, která poskytuje ekvivalentní funkci.  
   
@@ -93,21 +93,21 @@ Přetížení operátoru povolit framework typy zobrazí, jako by byly primitiv 
 ### <a name="conversion-operators"></a>Operátory převodu  
  Operátory převodu jsou unární operátory, které umožňují převod z jednoho typu. Operátory musí být definován jako statické členy na operand nebo návratový typ. Existují dva typy operátory převodu: implicitní a explicitní.  
   
- **X nesmí** operátora převodu může poskytovat, pokud takový převod neočekává jasně koncoví uživatelé.  
+ **X DO NOT** operátora převodu může poskytovat, pokud takový převod neočekává jasně koncoví uživatelé.  
   
- **X nesmí** definovat operátory převodu mimo typ domény.  
+ **X DO NOT** definovat operátory převodu mimo typ domény.  
   
  Například <xref:System.Int32>, <xref:System.Double>, a <xref:System.Decimal> jsou všechny číselné typy, zatímco <xref:System.DateTime> není. Proto, měla by existovat žádné operátor převodu převést `Double(long)` k `DateTime`. V takovém případě je upřednostňovaný konstruktor.  
   
- **X nesmí** zadat operátor implicitní převod, pokud převod potenciálně míru ztrát.  
+ **X DO NOT** zadat operátor implicitní převod, pokud převod potenciálně míru ztrát.  
   
  Například by nemělo být ke implicitní převod z `Double` k `Int32` protože `Double` má více typů než `Int32`. Explicitní převod operátor lze zadat, i když je převod potenciálně míru ztrát.  
   
- **X nesmí** vyvolat výjimky z implicitní přetypování.  
+ **X DO NOT** vyvolat výjimky z implicitní přetypování.  
   
  Je velmi obtížné koncovým uživatelům pochopit, co se děje, protože mohou být vědět, Probíhá převod.  
   
- **PROVEĎTE ✓** throw <xref:System.InvalidCastException?displayProperty=nameWithType> Pokud volání operátor přetypování výsledkem míru ztrát převod a kontrakt operátoru neumožňuje míru ztrát převody.  
+ **✓ DO** throw <xref:System.InvalidCastException?displayProperty=nameWithType> Pokud volání operátor přetypování výsledkem míru ztrát převod a kontrakt operátoru neumožňuje míru ztrát převody.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

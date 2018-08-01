@@ -21,7 +21,7 @@ ms.locfileid: "33575333"
 # <a name="exceptions-and-performance"></a>Výjimky a výkonu
 Jeden běžný problém související s výjimkami je, že pokud se výjimky použijí pro kód, který pravidelně selže, výkon implementace nepřijatelné. Jde o platný problém. Pokud člen, vyvolá výjimku, může být jeho výkon pořadí podle velikosti pomalejší. Je však možné, abyste dosáhli dobrého výkonu při zachování výhradně výjimka pokyny, které zakáže použití kódy chyb. Dva vzory popsaných v této části zjistíte, jak to udělat.  
   
- **X nesmí** z důvodu obavy, že výjimky může ovlivnit výkon negativně používat kódy chyb.  
+ **X DO NOT** z důvodu obavy, že výjimky může ovlivnit výkon negativně používat kódy chyb.  
   
  Pokud chcete zvýšit výkon, je možné použít vzor Tester Doer nebo vzoru zkuste analýzy popsané v následujících dvou částech.  
   
@@ -45,7 +45,7 @@ if(!numbers.IsReadOnly){
   
  Člen používá k testování podmínku, která v našem příkladu je vlastnost `IsReadOnly`, se označuje jako zkušební zařízení. Člen používá k provádění potenciálně aktivační operace, `Add` metoda v našem příkladu se označuje jako doer.  
   
- **✓ ZVAŽTE** Tester Doer vzor pro členy, které může vyvolat výjimky společné scénáře, aby se zabránilo problémům s výkonem souvisejících s výjimkami.  
+ **✓ CONSIDER** Tester Doer vzor pro členy, které může vyvolat výjimky společné scénáře, aby se zabránilo problémům s výkonem souvisejících s výjimkami.  
   
 ## <a name="try-parse-pattern"></a>Try analýzy vzor  
  Pro rozhraní API velmi náročné na výkon je třeba použít vzor ještě rychlejší než vzoru Tester Doer popsané v předchozí části. Vzor volání pro přizpůsobení název člena, aby dobře definované testovací případ součástí sémantiku člen. Například <xref:System.DateTime> definuje <xref:System.DateTime.Parse%2A> metoda, která vyvolá výjimku, pokud analýza řetězce nezdaří. Také definuje odpovídající <xref:System.DateTime.TryParse%2A> metoda, která se pokusí analyzovat, ale vrací hodnotu false Pokud analýza neúspěšná a vrátí výsledek úspěšné analýzy pomocí `out` parametr.  
@@ -63,11 +63,11 @@ public struct DateTime {
   
  Pokud používáte tento vzor, je důležité určit, zkuste funkce v striktní podmínky. Pokud z nějakého důvodu než dobře definovaný zkuste selže člen, musí člen stále odpovídající výjimku vyvolat.  
   
- **✓ ZVAŽTE** zkuste analýzy vzor pro členy, které může vyvolat výjimky společné scénáře, aby se zabránilo problémům s výkonem souvisejících s výjimkami.  
+ **✓ CONSIDER** zkuste analýzy vzor pro členy, které může vyvolat výjimky společné scénáře, aby se zabránilo problémům s výkonem souvisejících s výjimkami.  
   
- **PROVEĎTE ✓** použijte předponu "Zkuste" a logickou hodnotu návratový typ pro metody implementace tohoto vzoru.  
+ **✓ DO** použijte předponu "Zkuste" a logickou hodnotu návratový typ pro metody implementace tohoto vzoru.  
   
- **PROVEĎTE ✓** zadejte člena vyvolávání výjimek pro každého člena pomocí vzoru zkuste analýzy.  
+ **✓ DO** zadejte člena vyvolávání výjimek pro každého člena pomocí vzoru zkuste analýzy.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

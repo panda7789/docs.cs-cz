@@ -26,21 +26,21 @@ Vnořené typy je typem definovaným v rámci oboru jiného typu, který se naz�
   
  Vnořené typy jsou nejvhodnější pro modelování podrobnosti implementace jejich nadřazených typů. Koncový uživatel by měl obvykle nemusí deklarujte proměnné vnořené typy a téměř žádné musí mít explicitně instance vnořené typy. Enumerátor kolekce může být například vnořené typ této kolekce. Výčty jsou obvykle mohl vytvořit jeho instanci názvy jejich nadřazených typů a mnoha jazycích nepodporují příkazu foreach, enumerátor proměnné zřídka mají deklarovat koncovým uživatelem.  
   
- **PROVEĎTE ✓** použití vnořené typy vztah mezi vnořené typy a jeho vnější typ tak, aby člen usnadnění sémantika je žádoucí.  
+ **✓ DO** použití vnořené typy vztah mezi vnořené typy a jeho vnější typ tak, aby člen usnadnění sémantika je žádoucí.  
   
- **X nesmí** použití veřejného vnořené typy jako logické seskupení vytvořit; pomocí oborů názvů pro tuto.  
+ **X DO NOT** použití veřejného vnořené typy jako logické seskupení vytvořit; pomocí oborů názvů pro tuto.  
   
- **X nepoužívejte** veřejně vystaven vnořené typy. Jedinou výjimkou je, pokud proměnné vnořené typy potřeba deklarovat pouze ve výjimečných případech, například vytvoření podtřídy či jiné scénáře vlastní nastavení.  
+ **X AVOID** veřejně vystaven vnořené typy. Jedinou výjimkou je, pokud proměnné vnořené typy potřeba deklarovat pouze ve výjimečných případech, například vytvoření podtřídy či jiné scénáře vlastní nastavení.  
   
- **X nesmí** použijte vnořené typy, pokud typ je pravděpodobně bude odkazovat mimo nadřazeného typu.  
+ **X DO NOT** použijte vnořené typy, pokud typ je pravděpodobně bude odkazovat mimo nadřazeného typu.  
   
  Například výčet předaný metodě definovaný pro třídu nesmí být definována jako typ vnořené v třídě.  
   
- **X nesmí** použít vnořené typy, pokud je nutné vytvořit instanci kódem na straně klienta.  Pokud typ má konstruktor public, ho měli pravděpodobně není nelze vnořit.  
+ **X DO NOT** použít vnořené typy, pokud je nutné vytvořit instanci kódem na straně klienta.  Pokud typ má konstruktor public, ho měli pravděpodobně není nelze vnořit.  
   
  Pokud typ se dá vytvořit instance, která zdá se, že k označení, typ je na místě v rozhraní framework svoje vlastní (můžete ji vytvořit, s ním pracovat a zrušení bez někdy pomocí vnější typu) a proto by neměl být vnořený. Vnitřní typy by neměly znovu široce mimo vnější typu bez žádný vztah jakékoli vnější typu.  
   
- **X nesmí** definovat vnořené typy jako člen rozhraní. Mnoho jazyků nepodporují takové konstrukce.  
+ **X DO NOT** definovat vnořené typy jako člen rozhraní. Mnoho jazyků nepodporují takové konstrukce.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

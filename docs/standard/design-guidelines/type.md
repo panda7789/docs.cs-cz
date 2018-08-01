@@ -32,7 +32,7 @@ Z pohledu CLR existují pouze dvě kategorie typů – reference a hodnotové ty
   
  Delegáti, výjimky, atributy, pole a kolekce jsou všechny zvláštních případech odkazové typy určené pro konkrétní účely a pokyny pro jejich využití a návrhu jsou popsané jinde v této příručce.  
   
- **PROVEĎTE ✓** zajistěte, aby byl každý typ dobře definované sadě souvisejících členů, nejen náhodné kolekce funkcí, které nejsou.  
+ **✓ DO** zajistěte, aby byl každý typ dobře definované sadě souvisejících členů, nejen náhodné kolekce funkcí, které nejsou.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Volba mezi třídou a strukturou](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md)  

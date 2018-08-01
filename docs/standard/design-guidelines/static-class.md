@@ -24,15 +24,15 @@ Statická třída je definovaný jako třída, která obsahuje jenom statické �
   
  Statické třídy jsou kompromis mezi čistý objektově orientované návrhu a jednoduchost. Běžně se používají k poskytování zástupce dalších operací (například <xref:System.IO.File?displayProperty=nameWithType>), držitele rozšiřující metody nebo funkce, pro které je úplné objektově orientované obálku bude vyplacena neoprávněně (například <xref:System.Environment?displayProperty=nameWithType>).  
   
- **PROVEĎTE ✓** statické třídy používejte opatrně.  
+ **✓ DO** statické třídy používejte opatrně.  
   
  Statické třídy má být použit pouze jako podpora třídy pro základní objektově orientované rozhraní Framework.  
   
- **X nesmí** statické třídy považovat za různé sady.  
+ **X DO NOT** statické třídy považovat za různé sady.  
   
- **X nesmí** deklarovat nebo přepsání instance členové statické třídy.  
+ **X DO NOT** deklarovat nebo přepsání instance členové statické třídy.  
   
- **PROVEĎTE ✓** deklarovat statické třídy jako zapečetěné, abstraktní a přidejte konstruktor privátní instance, pokud si programovací jazyk nemá integrovanou podporu pro statické třídy.  
+ **✓ DO** deklarovat statické třídy jako zapečetěné, abstraktní a přidejte konstruktor privátní instance, pokud si programovací jazyk nemá integrovanou podporu pro statické třídy.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

@@ -21,15 +21,15 @@ Pokyny pro vyvolávání výjimek popsaných v této části vyžadují dobrý d
   
  Většina vývojářů se tedy se použití výjimek pro využití chyby jako např. dělení nulou či odkazy s hodnotou null. V rozhraní Framework výjimky se používají pro všechny chybové stavy, včetně chyby spuštění.  
   
- **X nesmí** návratové kódy chyb.  
+ **X DO NOT** návratové kódy chyb.  
   
  Výjimky jsou primární způsob zasílání zpráv o chybách v rozhraní.  
   
- **PROVEĎTE ✓** sestavy selhání spuštění ve vyvolání výjimky.  
+ **✓ DO** sestavy selhání spuštění ve vyvolání výjimky.  
   
- **✓ ZVAŽTE** proces se ukončuje voláním `System.Environment.FailFast` (funkce rozhraní .NET Framework 2.0) namísto došlo k výjimce, pokud váš kód zjistí situaci, kde nezabezpečený pro další zpracování.  
+ **✓ CONSIDER** proces se ukončuje voláním `System.Environment.FailFast` (funkce rozhraní .NET Framework 2.0) namísto došlo k výjimce, pokud váš kód zjistí situaci, kde nezabezpečený pro další zpracování.  
   
- **X nesmí** používat výjimky pro normálního toku řízení, pokud je to možné.  
+ **X DO NOT** používat výjimky pro normálního toku řízení, pokud je to možné.  
   
  S výjimkou chyby systému a operace s potenciální konflikty časování měli framework Designer navrhnout rozhraní API, uživatelé můžete napsat kód, který nevyvolá výjimku výjimky. Můžete například zadat způsob, jak zkontrolovat předběžné podmínky před voláním členem, takže uživatelé můžete napsat kód, který nevyvolá výjimku výjimky.  
   
@@ -37,29 +37,29 @@ Pokyny pro vyvolávání výjimek popsaných v této části vyžadují dobrý d
   
  Pokud vzor Tester Doer může mít nepřijatelné zatížení existují případy. V takových případech vzoru takzvané zkuste analýzy považovat (viz [výjimky a výkonu](../../../docs/standard/design-guidelines/exceptions-and-performance.md) Další informace).  
   
- **✓ ZVAŽTE** vliv na výkon u vyvolávání výjimek. Throw sazby vyšší než 100 za sekundu se pravděpodobně výrazně ovlivnit výkon většinu aplikací.  
+ **✓ CONSIDER** vliv na výkon u vyvolávání výjimek. Throw sazby vyšší než 100 za sekundu se pravděpodobně výrazně ovlivnit výkon většinu aplikací.  
   
- **PROVEĎTE ✓** dokumentu všechny výjimky vyvolané veřejně s členy z důvodu narušení člena smlouvy (místo selhání systému) a je považovat za část vaše smlouvy.  
+ **✓ DO** dokumentu všechny výjimky vyvolané veřejně s členy z důvodu narušení člena smlouvy (místo selhání systému) a je považovat za část vaše smlouvy.  
   
  Výjimky, které jsou součástí smlouvy nesmí změnit z jedné verze na další (tj, nesmí změnit typ výjimky a by neměly být přidávány nové výjimky).  
   
- **X nesmí** veřejné členy, které můžete buď throw nebo není na některé možnost základě.  
+ **X DO NOT** veřejné členy, které můžete buď throw nebo není na některé možnost základě.  
   
- **X nesmí** mají veřejné členy, které vracejí výjimky jako návratová hodnota nebo `out` parametr.  
+ **X DO NOT** mají veřejné členy, které vracejí výjimky jako návratová hodnota nebo `out` parametr.  
   
  Vrácení výjimky z veřejné rozhraní API místo vyvolání je účinně chrání před řadu výhod zasílání zpráv o chybách na základě výjimky.  
   
- **✓ ZVAŽTE** pomocí metody tvůrce výjimky.  
+ **✓ CONSIDER** pomocí metody tvůrce výjimky.  
   
  Je běžné vyvolat stejnou výjimku z různých místech. Předejdete tomu kódu použitím pomocné metody, které vytvořit výjimky a jejich vlastnosti inicializace.  
   
  Také nejsou členy, kteří throw výjimky získávání vložená. Přesunutí příkaz throw do Tvůrce, mohou povolovat člen být vložená.  
   
- **X nesmí** vyvolat výjimky z bloky filtru výjimek.  
+ **X DO NOT** vyvolat výjimky z bloky filtru výjimek.  
   
  Pokud filtr výjimek vyvolá výjimku, je výjimka zachycena CLR a filtr, vrátí hodnotu false. Toto chování je lišit od filtr provádění a vrácení hodnoty false explicitně a je proto velmi obtížné ladění.  
   
- **X nepoužívejte** explicitně vyvolání výjimky z finally – bloky. Výsledkem volání metody, které vyvolají implicitně vyvolané výjimky jsou přijatelné.  
+ **X AVOID** explicitně vyvolání výjimky z finally – bloky. Výsledkem volání metody, které vyvolají implicitně vyvolané výjimky jsou přijatelné.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

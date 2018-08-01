@@ -18,25 +18,25 @@ ms.locfileid: "33577090"
 # <a name="property-design"></a>Vlastnost návrhu
 I když jsou vlastnosti technicky velmi podobné metody, se výrazně lišit podle toho scénáře jejich použití. Měla by se zobrazit jako inteligentní pole. Mají volání syntaxe polí a flexibilitu metod.  
   
- **PROVEĎTE ✓** vytvořit vlastnosti jen pro get, pokud má volající neměli mít možnost ke změně hodnoty vlastnosti.  
+ **✓ DO** vytvořit vlastnosti jen pro get, pokud má volající neměli mít možnost ke změně hodnoty vlastnosti.  
   
  Mějte na paměti že pokud typ je typ Měnitelná odkazu vlastnost, hodnota vlastnosti lze změnit, i když je vlastnost pouze pro získání.  
   
- **X nesmí** poskytnout setter s širší usnadnění než metoda getter vlastnosti jen pro sadu nebo vlastnosti.  
+ **X DO NOT** poskytnout setter s širší usnadnění než metoda getter vlastnosti jen pro sadu nebo vlastnosti.  
   
  Například nepoužívejte vlastnosti s veřejnou metodu setter a chráněné getter.  
   
  Pokud metoda getter vlastnosti nelze zadat, implementujte funkce jako metodu. Vezměte v úvahu spouštění název metody s `Set` a postupujte podle pokynů s co jste by mít s názvem vlastnosti. Například <xref:System.AppDomain> má metodu s názvem `SetCachePath` místo nutnosti ryze sadu vlastnost s názvem `CachePath`.  
   
- **PROVEĎTE ✓** zadejte rozumný výchozí hodnoty pro všechny vlastnosti, zajistíte, že výchozí hodnoty nezpůsobovalo neustálé bezpečnostní riziko nebo terribly neefektivní kód.  
+ **✓ DO** zadejte rozumný výchozí hodnoty pro všechny vlastnosti, zajistíte, že výchozí hodnoty nezpůsobovalo neustálé bezpečnostní riziko nebo terribly neefektivní kód.  
   
- **PROVEĎTE ✓** povolit vlastnosti nastavit v libovolném pořadí, i když to vede k dočasné neplatný stav objektu.  
+ **✓ DO** povolit vlastnosti nastavit v libovolném pořadí, i když to vede k dočasné neplatný stav objektu.  
   
  Je běžné, že dvě nebo více vlastností být vzájemně souvisejících do bodu, kde některé hodnoty jednu vlastnost může být neplatný zadané hodnotách jiných vlastností na stejný objekt. V takových případech by výjimky vzniklé v neplatném stavu posunut, dokud vzájemně souvisejících vlastnosti jsou ve skutečnosti společně použít objekt.  
   
- **PROVEĎTE ✓** zachovat předchozí hodnotu, pokud metoda setter vlastnosti vyvolá výjimku.  
+ **✓ DO** zachovat předchozí hodnotu, pokud metoda setter vlastnosti vyvolá výjimku.  
   
- **X nepoužívejte** vyvolání výjimky z metody vlastnost getter.  
+ **X AVOID** vyvolání výjimky z metody vlastnost getter.  
   
  Mechanismy získání vlastnost by měla být jednoduché operace a nesmí mít žádné předpoklady. Pokud příjemce může vyvolat výjimku, by pravděpodobně přepracovali metodu. Všimněte si, že toto pravidlo se nevztahuje na indexery, kde Očekáváme, že výjimky v důsledku ověřování argumenty.  
   
@@ -45,42 +45,42 @@ I když jsou vlastnosti technicky velmi podobné metody, se výrazně lišit pod
   
  Indexované vlastnosti se běžně označují jako indexery. Indexery by měl použít pouze v rozhraní API, které poskytují přístup k položkám v logické kolekce. Například řetězec je kolekce znaky a indexeru na <xref:System.String?displayProperty=nameWithType> byl přidán k jeho znaků.  
   
- **✓ ZVAŽTE** použití indexery pro poskytnutí přístupu k datům uloženým v interní pole.  
+ **✓ CONSIDER** použití indexery pro poskytnutí přístupu k datům uloženým v interní pole.  
   
- **✓ ZVAŽTE** poskytuje indexery na typy reprezentující kolekce položek.  
+ **✓ CONSIDER** poskytuje indexery na typy reprezentující kolekce položek.  
   
- **X nepoužívejte** použití indexovaných vlastností s více než jeden parametr.  
+ **X AVOID** použití indexovaných vlastností s více než jeden parametr.  
   
  Pokud návrh vyžaduje několik parametrů, znovu zda přistupující objekt vlastnosti skutečně představuje logické kolekce. Pokud ne, používejte metody. Vezměte v úvahu spouštění název metody s `Get` nebo `Set`.  
   
- **X nepoužívejte** indexery s typy parametrů jinak než <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Int64?displayProperty=nameWithType>, <xref:System.String?displayProperty=nameWithType>, <xref:System.Object?displayProperty=nameWithType>, nebo výčet.  
+ **X AVOID** indexery s typy parametrů jinak než <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Int64?displayProperty=nameWithType>, <xref:System.String?displayProperty=nameWithType>, <xref:System.Object?displayProperty=nameWithType>, nebo výčet.  
   
  Pokud návrh vyžaduje jiné typy parametrů, důrazně přehodnocovat zda rozhraní API skutečně představuje přistupující objekt logické kolekce. Pokud ne, použijte metodu. Vezměte v úvahu spouštění název metody s `Get` nebo `Set`.  
   
- **PROVEĎTE ✓** použijte název `Item` pro indexovaných vlastností, pokud je samozřejmě lepší název (například najdete v článku <xref:System.String.Chars%2A> vlastnost na `System.String`).  
+ **✓ DO** použijte název `Item` pro indexovaných vlastností, pokud je samozřejmě lepší název (například najdete v článku <xref:System.String.Chars%2A> vlastnost na `System.String`).  
   
  V jazyce C# indexery jsou ve výchozím nastavení s názvem položky. <xref:System.Runtime.CompilerServices.IndexerNameAttribute> Můžete použít k přizpůsobení tento název.  
   
- **X nesmí** zadejte indexer a metody, které jsou sémanticky ekvivalentní.  
+ **X DO NOT** zadejte indexer a metody, které jsou sémanticky ekvivalentní.  
   
- **X nesmí** zadat více než jednu řadu přetížené indexery jednomu typu.  
+ **X DO NOT** zadat více než jednu řadu přetížené indexery jednomu typu.  
   
  Tato velikost je vyžadována kompilátorem C#.  
   
- **X nesmí** nevýchozí použití indexovaných vlastností.  
+ **X DO NOT** nevýchozí použití indexovaných vlastností.  
   
  Tato velikost je vyžadována kompilátorem C#.  
   
 ### <a name="property-change-notification-events"></a>Vlastnosti události oznámení změny  
  Někdy je užitečné k poskytování událost upozornění uživatele o změnách v hodnotě vlastnosti. Například `System.Windows.Forms.Control` vyvolá `TextChanged` události po hodnotu jeho `Text` došlo ke změně vlastností.  
   
- **✓ ZVAŽTE** vyvolání změnit události oznámení při změně hodnoty vlastností v vysoké úrovně rozhraní API (obvykle návrháře komponenty).  
+ **✓ CONSIDER** vyvolání změnit události oznámení při změně hodnoty vlastností v vysoké úrovně rozhraní API (obvykle návrháře komponenty).  
   
  Pokud je dobré scénář pro uživatele vědět, když je změna vlastnost objektu, objektu by měla vyvolat událost upozornění změnu pro vlastnost.  
   
  Je však pravděpodobně být vhodné režii vyvolat takové události pro nízké úrovně rozhraní API, například základní typy nebo kolekce. Například <xref:System.Collections.Generic.List%601> nebude vyvolat tyto události při přidání nové položky do seznamu a `Count` změny vlastností.  
   
- **✓ ZVAŽTE** vyvolání události oznámení při změně hodnoty vlastnosti prostřednictvím externí vynutí změn.  
+ **✓ CONSIDER** vyvolání události oznámení při změně hodnoty vlastnosti prostřednictvím externí vynutí změn.  
   
  Pokud se změní hodnotu vlastnosti prostřednictvím některé externí force (způsobem, jinak než pomocí volání metody u objektu), vyvolat události označují vývojář, že hodnota se mění a došlo ke změně. Dobrým příkladem je `Text` vlastností ovládacího prvku textové pole. Když uživatel zadá text v `TextBox`, hodnota vlastnosti automaticky změní.  
   

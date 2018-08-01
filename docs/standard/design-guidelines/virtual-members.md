@@ -25,13 +25,13 @@ Virtuální členové lze přepsat, čímž dojde ke změně chování podtříd
   
  Virtuální členové, jako je zpětných volání (a může být více než zpětná volání), jsou nákladná pro návrh, testování a udržovat, protože všechny volání člena virtuální mohou být přepsána nastaveními v nepředvídatelnými způsoby a mohou spustit libovolný kód. Kromě toho mnohem víc úsilí většinou vyžaduje jasně definovat kontrakt virtuální členové tak, aby vyšší náklady na návrh a dokumentaci jejich.  
   
- **X nesmí** zkontrolujte virtuální členy, pokud máte dobrý důvod k tomu a jste si vědomi veškeré náklady související s návrh, testování a údržbě virtuální členy.  
+ **X DO NOT** zkontrolujte virtuální členy, pokud máte dobrý důvod k tomu a jste si vědomi veškeré náklady související s návrh, testování a údržbě virtuální členy.  
   
  Virtuální členové jsou menší dovolí z hlediska změn, které můžete provedeny k nim, aniž by vás kompatibility. Navíc jsou nižší než nevirtuálních členy nejčastěji, protože nejsou vloženou obslužnou volání virtuální členové.  
   
- **✓ ZVAŽTE** omezení rozšiřitelnost pouze co je to nezbytně nutné.  
+ **✓ CONSIDER** omezení rozšiřitelnost pouze co je to nezbytně nutné.  
   
- **PROVEĎTE ✓** raději chráněné usnadnění přes veřejnou dostupnost pro virtuální členy. Veřejné členy by měl poskytovat rozšiřitelnost (v případě potřeby) pomocí volání do chráněného člena virtuální.  
+ **✓ DO** raději chráněné usnadnění přes veřejnou dostupnost pro virtuální členy. Veřejné členy by měl poskytovat rozšiřitelnost (v případě potřeby) pomocí volání do chráněného člena virtuální.  
   
  Veřejné členy třídy by měl poskytovat správnou sadu funkcí pro přímé příjemce této třídy. Virtuální členové jsou určeny k přepsání v podtřídách a chráněné usnadnění je skvělý způsob, jak obor všechny body rozšiřitelnosti virtuální kterém můžou použít.  
   

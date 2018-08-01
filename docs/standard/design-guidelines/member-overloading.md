@@ -34,23 +34,23 @@ public static class Console {
   
  Přetížení je jedním z nejdůležitějších techniky pro zlepšení použitelnost, produktivity a čitelnost opakovaně použitelné knihovny. Přetížení pro počet parametrů je možné poskytnout jednodušší verze konstruktorů a metod. Přetížení na typ parametru umožňuje použít stejný název člena pro členy provádí na vybranou sadu různé typy stejné operace.  
   
- **PROVEĎTE ✓** zkuste použít parametr popisné názvy označíte, výchozí hodnotu použitou kratší přetíženími.  
+ **✓ DO** zkuste použít parametr popisné názvy označíte, výchozí hodnotu použitou kratší přetíženími.  
   
- **X nepoužívejte** nahodile různými názvy parametrů v přetížení. Pokud parametr v jedním přetížením představuje stejné vstupu jako parametr v jiné přetížení, parametry musí mít stejný název.  
+ **X AVOID** nahodile různými názvy parametrů v přetížení. Pokud parametr v jedním přetížením představuje stejné vstupu jako parametr v jiné přetížení, parametry musí mít stejný název.  
   
- **X nepoužívejte** nekonzistentní v pořadí parametrů v přetížen členy. Parametry se stejným názvem by se zobrazit ve stejné pozici v všechny přetížení.  
+ **X AVOID** nekonzistentní v pořadí parametrů v přetížen členy. Parametry se stejným názvem by se zobrazit ve stejné pozici v všechny přetížení.  
   
- **PROVEĎTE ✓** zkontrolujte virtuální pouze nejdelší přetížení (Pokud je vyžadována rozšíření). Kratší přetížení by měly volat jednoduše prostřednictvím delší přetížení.  
+ **✓ DO** zkontrolujte virtuální pouze nejdelší přetížení (Pokud je vyžadována rozšíření). Kratší přetížení by měly volat jednoduše prostřednictvím delší přetížení.  
   
- **X nesmí** použít `ref` nebo `out` modifikátory k přetížení členy.  
+ **X DO NOT** použít `ref` nebo `out` modifikátory k přetížení členy.  
   
  Některé jazyky nelze vyřešit volání přetížení takto. Kromě toho tyto přetížení obvykle mají úplně jiné sémantiku a pravděpodobně by neměla být přetížení ale dvě samostatné metody místo.  
   
- **X nesmí** , mají přetížení s parametry na stejné pozici a podobné typy, ale s jinou sémantiku.  
+ **X DO NOT** , mají přetížení s parametry na stejné pozici a podobné typy, ale s jinou sémantiku.  
   
- **PROVEĎTE ✓** povolit `null` předávané volitelné argumenty.  
+ **✓ DO** povolit `null` předávané volitelné argumenty.  
   
- **PROVEĎTE ✓** použít člen přetížení než definování členy s výchozí argumenty.  
+ **✓ DO** použít člen přetížení než definování členy s výchozí argumenty.  
   
  Výchozí argumenty nejsou kompatibilní se specifikací CLS.  
   

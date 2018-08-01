@@ -43,9 +43,9 @@ Podle pokynů v této kapitoly rozložení se jednoduše pomocí případu, kdy 
  `ioStream`  
  `htmlTag`  
   
- **PROVEĎTE ✓** použít PascalCasing pro všechny veřejné člen, typ a obor názvů názvy skládající se z více slov.  
+ **✓ DO** použít PascalCasing pro všechny veřejné člen, typ a obor názvů názvy skládající se z více slov.  
   
- **PROVEĎTE ✓** použít camelCasing pro názvy parametrů.  
+ **✓ DO** použít camelCasing pro názvy parametrů.  
   
  Následující tabulka popisuje pravidla použití velkých písmen pro různé typy identifikátorů.  
   
@@ -64,7 +64,7 @@ Podle pokynů v této kapitoly rozložení se jednoduše pomocí případu, kdy 
 ## <a name="capitalizing-compound-words-and-common-terms"></a>Na velká písmena složených slov a běžné podmínky  
  Většina složené podmínky jsou považovány za jednoho slova pro účely malá a velká písmena.  
   
- **X nesmí** převedení na velká písmena jednotlivých slov ve složených slov takzvané uzavřený formuláře.  
+ **X DO NOT** převedení na velká písmena jednotlivých slov ve složených slov takzvané uzavřený formuláře.  
   
  Toto jsou složených slov zapisují jako jednoho slova, jako je například koncový bod. Pro účely pokyny velká a malá písmena považovat za složené slovo uzavřený formuláře jednoho slova. Slovník aktuální použijte k určení, pokud složené slovo je napsána v uzavřené formuláře.  
   
@@ -99,7 +99,7 @@ Podle pokynů v této kapitoly rozložení se jednoduše pomocí případu, kdy 
 ## <a name="case-sensitivity"></a>Rozlišování velkých a malých písmen  
  Jazyky, které můžou běžet na modulu CLR nejsou povinné pro podporu rozlišování, i když některé provést. I v případě, že váš jazyk podporuje, další jazyky, které může získat přístup k vaší framework nepodporují. Všechny rozhraní API, které jsou dostupné externě, nelze proto spoléhají na případ samostatně k rozlišení mezi dva názvy v rámci stejné.  
   
- **X nesmí** předpokládají, že jsou všechny programovací jazyky velká a malá písmena. Nejsou. Názvy nemůže lišit o případ samostatně.  
+ **X DO NOT** předpokládají, že jsou všechny programovací jazyky velká a malá písmena. Nejsou. Názvy nemůže lišit o případ samostatně.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

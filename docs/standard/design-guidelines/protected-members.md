@@ -24,9 +24,9 @@ Chráněné členy samy o sobě neposkytují žádné rozšíření, ale mohli p
   
  Návrháři Framework muset buďte opatrní s chráněné členy, protože název "chráněné" může poskytnout false představu o zabezpečení. Každý, kdo je možné podtřídami třídu nezapečetěné a přístupu k chráněným členy, a proto všechny stejné Obranným kódování postupům používaným pro veřejné členy týkají chráněné členy.  
   
- **✓ ZVAŽTE** pomocí chráněné členy pro vlastní nastavení.  
+ **✓ CONSIDER** pomocí chráněné členy pro vlastní nastavení.  
   
- **PROVEĎTE ✓** považovat chráněné členy v nezapečetěných třídy jako veřejné pro účely analýzy zabezpečení, dokumentace a kompatibility.  
+ **✓ DO** považovat chráněné členy v nezapečetěných třídy jako veřejné pro účely analýzy zabezpečení, dokumentace a kompatibility.  
   
  Každý, kdo může dědí z třídy a přístup k chráněné členy.  
   

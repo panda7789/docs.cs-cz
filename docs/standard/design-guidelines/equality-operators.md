@@ -21,29 +21,29 @@ ms.locfileid: "33571014"
 # <a name="equality-operators"></a>Operátory rovnosti
 Tato část popisuje přetížení operátory rovnosti a odkazuje na `operator==` a `operator!=` jako operátory rovnosti.  
   
- **X nesmí** přetížení jeden operátory rovnosti a ne na druhou.  
+ **X DO NOT** přetížení jeden operátory rovnosti a ne na druhou.  
   
- **PROVEĎTE ✓** Ujistěte se, že <xref:System.Object.Equals%2A?displayProperty=nameWithType> a operátory rovnosti obsahovat přesně stejnou sémantiku a podobné výkonové charakteristiky.  
+ **✓ DO** Ujistěte se, že <xref:System.Object.Equals%2A?displayProperty=nameWithType> a operátory rovnosti obsahovat přesně stejnou sémantiku a podobné výkonové charakteristiky.  
   
  To často znamená, že `Object.Equals` musí být potlačena, pokud jsou přetížené operátory rovnosti.  
   
- **X nepoužívejte** generování výjimek ve operátory rovnosti.  
+ **X AVOID** generování výjimek ve operátory rovnosti.  
   
  Vrátí hodnotu false, pokud jeden z argumentů hodnotu null místo vyvolání `NullReferenceException`.  
   
 ## <a name="equality-operators-on-value-types"></a>Operátory rovnosti u typů hodnot  
- **PROVEĎTE ✓** přetížení operátory rovnosti u typů hodnot, pokud má smysl rovnosti.  
+ **✓ DO** přetížení operátory rovnosti u typů hodnot, pokud má smysl rovnosti.  
   
  Ve většině programovacích jazyků, neexistuje žádný výchozí implementaci třídy `operator==` u typů hodnot.  
   
 ## <a name="equality-operators-on-reference-types"></a>Operátory rovnosti na odkazových typech  
- **X nepoužívejte** přetížení operátory rovnosti na proměnlivé odkazové typy.  
+ **X AVOID** přetížení operátory rovnosti na proměnlivé odkazové typy.  
   
  Mnoho jazyky mají operátory rovnosti předdefinované pro odkazové typy. Předdefinované operátory obvykle implementovat referenční rovnosti a když se změní výchozí chování na rovnosti hodnoty překvapil celá řada vývojářů.  
   
  Protože neměnitelnosti znesnadňuje mnohem Všimněte rozdíl mezi referenční rovnosti a rovnosti hodnoty pro neměnné odkazové typy zmírnit tento problém.  
   
- **X nepoužívejte** přetížení operátory rovnosti na odkazových typech Pokud implementace by výrazně pomalejší než referenční rovnosti.  
+ **X AVOID** přetížení operátory rovnosti na odkazových typech Pokud implementace by výrazně pomalejší než referenční rovnosti.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   

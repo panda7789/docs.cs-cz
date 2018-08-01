@@ -17,26 +17,26 @@ Vlastnost závislosti (DP) je regulární vlastnost, která ukládá v úložiš
   
  Ve vlastnosti připojené závislostí je druh vlastnost závislosti, které jsou modelovat jako statické metody Get a sady reprezentující "vlastnosti" popisující vztahy mezi objekty a jejich kontejnery (například pozici `Button` objekt v `Panel` kontejner).  
   
- **PROVEĎTE ✓** zadejte vlastnosti závislosti, pokud budete potřebovat k podpoře funkce WPF například stylů, aktivační události, vazby dat, animací, dynamické prostředky a dědičnosti vlastností.  
+ **✓ DO** zadejte vlastnosti závislosti, pokud budete potřebovat k podpoře funkce WPF například stylů, aktivační události, vazby dat, animací, dynamické prostředky a dědičnosti vlastností.  
   
 ## <a name="dependency-property-design"></a>Návrh vlastnost závislosti  
- **PROVEĎTE ✓** dědí <xref:System.Windows.DependencyObject>, nebo jeden z jeho podtypech při implementaci vlastností závislostí. Typ poskytuje velmi efektivní implementaci úložiště vlastností a automaticky podporuje datové vazby WPF.  
+ **✓ DO** dědí <xref:System.Windows.DependencyObject>, nebo jeden z jeho podtypech při implementaci vlastností závislostí. Typ poskytuje velmi efektivní implementaci úložiště vlastností a automaticky podporuje datové vazby WPF.  
   
- **PROVEĎTE ✓** zadejte regulární vlastnost CLR a veřejné statické jen pro čtení pole ukládání instanci <xref:System.Windows.DependencyProperty?displayProperty=nameWithType> pro každou vlastnost závislosti.  
+ **✓ DO** zadejte regulární vlastnost CLR a veřejné statické jen pro čtení pole ukládání instanci <xref:System.Windows.DependencyProperty?displayProperty=nameWithType> pro každou vlastnost závislosti.  
   
- **PROVEĎTE ✓** implementovat vlastností závislostí voláním metod instance <xref:System.Windows.DependencyObject.GetValue%2A?displayProperty=nameWithType> a <xref:System.Windows.DependencyObject.SetValue%2A?displayProperty=nameWithType>.  
+ **✓ DO** implementovat vlastností závislostí voláním metod instance <xref:System.Windows.DependencyObject.GetValue%2A?displayProperty=nameWithType> a <xref:System.Windows.DependencyObject.SetValue%2A?displayProperty=nameWithType>.  
   
- **PROVEĎTE ✓** názvů statické pole vlastnosti závislosti suffixing název vlastnosti s "Vlastnost."  
+ **✓ DO** názvů statické pole vlastnosti závislosti suffixing název vlastnosti s "Vlastnost."  
   
- **X nesmí** explicitně nastavit výchozí hodnoty vlastností závislostí v kódu; nastavte je v metadatech.  
+ **X DO NOT** explicitně nastavit výchozí hodnoty vlastností závislostí v kódu; nastavte je v metadatech.  
   
  Pokud nastavíte výchozí vlastnost explicitně, vám může zabránit tuto vlastnost se nastavuje některé implicitní prostředky, jako je například stylů.  
   
- **X nesmí** vkládat kód do vlastnosti přistupující objekty než standardní kód pro přístup k statické pole.  
+ **X DO NOT** vkládat kód do vlastnosti přistupující objekty než standardní kód pro přístup k statické pole.  
   
  Statické pole, kód nebude spustit, pokud je vlastnost nastavena implicitní prostředky, jako je například stylů, protože styly používá přímo.  
   
- **X nesmí** zabezpečené data pomocí vlastností závislostí. Veřejně přístupná vlastností i privátní závislostí.  
+ **X DO NOT** zabezpečené data pomocí vlastností závislostí. Veřejně přístupná vlastností i privátní závislostí.  
   
 ## <a name="attached-dependency-property-design"></a>Návrh vlastnost připojené závislostí  
  Závislost vlastností popsaných v předchozí části představují vnitřní vlastnosti deklarující typ; například `Text` vlastnost je vlastností `TextButton`, který deklaruje ho. Zvláštní druh vlastnost závislosti je vlastnost připojené závislosti.  
@@ -82,15 +82,15 @@ public class Grid {
   
  Přístupové objekty vlastnosti závislosti bohužel nemůže obsahovat libovolný ověřovacího kódu. Místo toho je třeba zadat během registrace vlastnost logiku ověření pro vlastnost závislosti.  
   
- **X nesmí** chápat logiku ověření pro vlastnost závislosti vlastnosti přistupující objekty. Místo toho předat zpětné volání pro ověření do `DependencyProperty.Register` metoda.  
+ **X DO NOT** chápat logiku ověření pro vlastnost závislosti vlastnosti přistupující objekty. Místo toho předat zpětné volání pro ověření do `DependencyProperty.Register` metoda.  
   
 ## <a name="dependency-property-change-notifications"></a>Oznámení o změnách závislostí vlastnost  
- **X nesmí** implementovat logiku oznámení změn v přístupové objekty vlastnosti závislosti. Vlastnosti závislosti mají funkce oznámení předdefinované změnu, která použije zadáním zpětné volání oznámení změny na <xref:System.Windows.PropertyMetadata>.  
+ **X DO NOT** implementovat logiku oznámení změn v přístupové objekty vlastnosti závislosti. Vlastnosti závislosti mají funkce oznámení předdefinované změnu, která použije zadáním zpětné volání oznámení změny na <xref:System.Windows.PropertyMetadata>.  
   
 ## <a name="dependency-property-value-coercion"></a>Převod hodnotu vlastnosti závislosti  
  Vlastnost převod probíhá při hodnotě zadané pro vlastnost setter je upraveném nastavovací metoda předtím, než je ve skutečnosti Změna úložiště vlastnost.  
   
- **X nesmí** implementovat logiku na převod přístupové objekty vlastnosti závislosti.  
+ **X DO NOT** implementovat logiku na převod přístupové objekty vlastnosti závislosti.  
   
  Vlastností závislostí obsahují předdefinované převod funkci a použitím zadáním zpětné volání pro převod `PropertyMetadata`.  
   

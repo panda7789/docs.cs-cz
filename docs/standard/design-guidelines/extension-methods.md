@@ -17,31 +17,31 @@ Rozšiřující metody jsou jazyk funkce, která umožňuje statické metody, kt
   
  Třídu, která definuje tyto rozšiřující metody se označuje jako "sponzor" třída a ho musí být deklarována jako statické. Použití metod rozšíření, jeden musíte importovat definice třídy sponzor obor názvů.  
   
- **X nepoužívejte** frivolously definování rozšiřující metody, hlavně na typech nevlastníte.  
+ **X AVOID** frivolously definování rozšiřující metody, hlavně na typech nevlastníte.  
   
  Pokud jste vlastníkem zdrojového kódu typu, zvažte použití metody normální instanci. Pokud nevlastníte a které chcete přidat metodu, buďte velmi opatrní. Volná použití metody rozšíření má potenciál zbytečného rozhraní API typů, které nebyly navrženy tak, aby tyto metody.  
   
- **✓ ZVAŽTE** metodami rozšíření v některém z následujících scénářů:  
+ **✓ CONSIDER** metodami rozšíření v některém z následujících scénářů:  
   
 -   Zajistit pomocné funkce, které jsou relevantní pro každou implementaci rozhraní, pokud uvedená funkce může být napsán z hlediska základní rozhraní. Je to proto, že konkrétní implementace v opačném případě nemůže být přiřazen rozhraní. Například `LINQ to Objects` operátory jsou implementované jako rozšiřující metody pro všechny <xref:System.Collections.Generic.IEnumerable%601> typy. Proto všechny `IEnumerable<>` implementace je automaticky povolené LINQ.  
   
 -   Když metoda instance by vznikla závislost na nějaký typ, ale tato závislost by došlo k přerušení pravidla správy závislostí. Například závislost z <xref:System.String> k <xref:System.Uri?displayProperty=nameWithType> je pravděpodobně není žádoucí a tak `String.ToUri()` instance metoda vrací `System.Uri` by nesprávný návrhu z hlediska správy závislostí. Statické rozšíření metoda `Uri.ToUri(this string str)` vrácení `System.Uri` by mnohem lepší návrh.  
   
- **X nepoužívejte** definování rozšiřující metody na <xref:System.Object?displayProperty=nameWithType>.  
+ **X AVOID** definování rozšiřující metody na <xref:System.Object?displayProperty=nameWithType>.  
   
  VB uživatelé nebudou moci volat tyto metody pro objekt odkazů pomocí syntaxe využívající metody rozšíření. Jazyk Visual Basic nepodporuje volání těchto metod, protože deklarace odkaz jako objekt vynutí všechna volání metod na něm být pozdní vázán v jazyce Visual Basic, (skutečného člena s názvem je určena za běhu), zatímco vazby na rozšiřující metody jsou určeny při kompilaci (časná vázaný).  
   
  Všimněte si, že obecných zásad platí pro další jazyky, kde je přítomen stejné chování vazby, nebo pokud rozšíření metody nejsou podporovány.  
   
- **X nesmí** umístění rozšiřujících metod v jako typ rozšířené o stejný obor názvů, pokud je pro přidání metody do rozhraní nebo správě závislosti.  
+ **X DO NOT** umístění rozšiřujících metod v jako typ rozšířené o stejný obor názvů, pokud je pro přidání metody do rozhraní nebo správě závislosti.  
   
- **X nepoužívejte** definování dvě nebo více metod rozšíření se stejným podpisem, i v případě, že jsou umístěny v různých oborech názvů.  
+ **X AVOID** definování dvě nebo více metod rozšíření se stejným podpisem, i v případě, že jsou umístěny v různých oborech názvů.  
   
- **✓ ZVAŽTE** definování rozšiřující metody v jako typ rozšířené o stejný obor názvů, pokud typ je rozhraní, a pokud rozšiřující metody jsou určené pro použití ve většině nebo všem případů.  
+ **✓ CONSIDER** definování rozšiřující metody v jako typ rozšířené o stejný obor názvů, pokud typ je rozhraní, a pokud rozšiřující metody jsou určené pro použití ve většině nebo všem případů.  
   
- **X nesmí** definovat rozšiřující metody, které implementují funkce v obory názvů, které jsou obvykle spojené s jinými funkcemi. Místo toho je definujte v oboru názvů související s funkcí, ke které patří.  
+ **X DO NOT** definovat rozšiřující metody, které implementují funkce v obory názvů, které jsou obvykle spojené s jinými funkcemi. Místo toho je definujte v oboru názvů související s funkcí, ke které patří.  
   
- **X nepoužívejte** obecné názvy oborů názvů vyhrazený pro metody rozšíření (například "rozšíření"). Použijte popisný název (například "směrování") místo.  
+ **X AVOID** obecné názvy oborů názvů vyhrazený pro metody rozšíření (například "rozšíření"). Použijte popisný název (například "směrování") místo.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
