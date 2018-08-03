@@ -1,1 +1,1 @@
-<span data-ttu-id="850df-101">Aplikace .NET pro Windows 8.x Store</span><span class="sxs-lookup"><span data-stu-id="850df-101">.NET for Windows 8.x Store apps</span></span>
+<span data-ttu-id="9a7b1-101">Aplikace .NET pro Windows 8.x Store</span><span class="sxs-lookup"><span data-stu-id="9a7b1-101">.NET for Windows 8.x Store apps</span></span>
