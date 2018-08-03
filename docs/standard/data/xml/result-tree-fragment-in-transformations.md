@@ -1,24 +1,24 @@
 ---
-title: Fragment stromu výsledek v transformace
+title: Fragment stromu výsledků v transformacích
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: df363480-ba02-4233-9ddf-8434e421c4f1
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2c64baef3037cdb7b45ede3febacdbc1e76304c0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e8dc507cfdaad504fc9d4c83d28d24569dcef91c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 08/03/2018
 ms.locfileid: "33574696"
 ---
-# <a name="result-tree-fragment-in-transformations"></a>Fragment stromu výsledek v transformace
+# <a name="result-tree-fragment-in-transformations"></a>Fragment stromu výsledků v transformacích
 > [!NOTE]
->  <xref:System.Xml.Xsl.XslTransform> Třída je zastaralá ve [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]. Můžete provést jazyk XSL pro transformace transformace XSLT () pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy. V tématu [pomocí třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) Další informace.  
+>  <xref:System.Xml.Xsl.XslTransform> Třída je zastaralá ve [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]. Můžete provádět rozšiřitelný jazyk šablony stylů transformace XSLT () transformaci pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Zobrazit [používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) Další informace.  
   
- Výsledek stromu fragmenty, také známé jako výsledek stromu fragmenty, jsou nic jiného než zvláštním typem sada uzlů. Můžete provádět žádné funkce na nich, které lze provést na sada uzlů. Nebo můžete také převést fragment výsledek stromu na uzel nastavit pomocí `node-set()` funkce a následně použít jakékoli místo lze sada uzlů.  
+ Fragmenty stromu výsledek, označované také jako fragmenty stromu výsledek nejsou nic jiného než speciální typ sady uzlů. Všechny funkce můžete provádět s nimi, které lze provést na sadu uzlu. Nebo můžete také převést fragment stromu výsledek uzel sady s použitím `node-set()` funkce a následně ji jakéhokoli místa, že sada uzlů je možné použít.  
   
- Fragment stromu výsledek je vytvořen v důsledku použití `<xsl:variable>` nebo `<xsl:param>` element konkrétní způsobem v šabloně stylů. Syntaxe `variable` a `parameter` elementy vypadá takto:  
+ Fragment stromu výsledek je vytvořen pomocí `<xsl:variable>` nebo `<xsl:param>` element specifickým způsobem v šabloně stylů. Syntaxe `variable` a `parameter` prvky vypadá takto:  
   
 ```xml  
 <xsl:param name=Qname select= XPath Expression >  
@@ -30,17 +30,17 @@ ms.locfileid: "33574696"
 </xsl:variable>  
 ```  
   
- Pro `parameter` element, hodnota je přiřazen k úplný název (`Qname`) několika způsoby. Můžete přiřadit výchozí hodnotu parametru vrácením obsah z výrazu XML Path Language (XPath) v `select` atribut, nebo pomocí jeho přiřazení obsah textu šablony.  
+ Pro `parameter` elementu, je hodnota přiřazena kvalifikovaný název (`Qname`) několika způsoby. Můžete přiřadit výchozí hodnotu parametru tak, že vrací obsah z výraz jazyk XML Path (XPath) v `select` atribut, nebo za její přiřazení obsahu těla šablony.  
   
- Pro `variable` elementu, hodnota je také přiřazený několika způsoby. Můžete je přiřadit vrácením obsah z výraz XPath v `select` atribut, nebo pomocí jeho přiřazení obsah textu šablony.  
+ Pro `variable` elementu, hodnota je také přiřazený několika způsoby. Vrácením obsahu z výrazu XPath v ji můžete přiřadit `select` atribut, nebo za její přiřazení obsahu těla šablony.  
   
- Pro oba `parameter` a `variable` prvky, pokud hodnota je přiřazena službou výraz XPath, pak jedním ze čtyř základních typů XPath, bude vrácen: logická hodnota, řetězec, číslo nebo uzel nastavit. Pokud je zadána hodnota pomocí šablony neprázdný text vracen datový typ jiný XPath a který bude fragment stromu výsledek.  
+ Pro obě `parameter` a `variable` prvky, pokud je hodnota přiřazena pomocí výrazu XPath, pak jednu z čtyři základní typy jazyka XPath bude vrácen: logická hodnota, řetězec, číslo nebo uzel nastavení. Pokud hodnota je uvedená pomocí prázdné šablony textu, pak je vrácený datový typ výraz XPath a bude fragment stromu výsledek.  
   
- Pokud proměnnou je vázán na fragment výsledek stromu místo jedním ze čtyř typů dat základní XPath, to je jenom jednou, dotaz XPath vrátí typ, který není jedním z čtyři typy objektů jazyka XPath. Výsledek stromu fragmenty a jejich chování jsou popsané v specifikace World Wide Web Consortium (W3C) na www.w3.org/XSLT, část 11.1 výsledek stromu fragmenty prostřednictvím části 11.6 předání parametrů šablon. Také část 1 Úvod popisuje, jak šablony může obsahovat elementy z oboru názvů XSLT, které vrátí nebo vytvoří výsledek fragmenty stromu.  
+ Pokud proměnná je vázán k fragment stromu výsledek místo jedné z čtyři základní typy dat XPath, pak toto je pouze, že dotaz XPath vrátí typ, který není jedním ze čtyř typů objektů jazyka XPath. Jejich chování a výsledků fragmenty jsou uvedeny ve specifikaci World Wide Web Consortium (W3C) na www.w3.org/XSLT části 11.1 výsledků fragmenty prostřednictvím části 11.6 předání parametrů do šablony. Také část 1 Úvod popisuje, jak šablony může obsahovat elementy z oboru názvů XSLT, které vrátí nebo vytvoří výsledků fragmenty stromu.  
   
- Fragment stromu výsledek koncept, se chová jako uzel s nic jiného než jediném kořenovém uzlu. Zbývající uzly vrátil jsou však podřízené uzly. Podřízené uzly prostřednictvím kódu programu najdete zkopírujte fragment stromu výsledek výsledek stromu pomocí `<xsl:copy-of>` elementu. Při kopírování z provádí, jsou všechny podřízené uzly také zkopírován do stromu výsledek v pořadí. Dokud `copy` nebo `copy-of` se používá, fragment stromu výsledek není součástí stromu výsledek nebo výstup transformace.  
+ Fragment stromu výsledek koncept, se chová jako uzel nastavení, není nic víc než jeden kořenový uzel. Ostatní uzly vrátil jsou však podřízené uzly. Programově zobrazit podřízené uzly, zkopírujte do stromu výsledek pomocí stromu fragmentu výsledek `<xsl:copy-of>` elementu. Při kopírování sady se provádí, všechny podřízené uzly jsou zkopírovány také do stromu výsledek v sekvenci. Dokud `copy` nebo `copy-of` se používá, fragment stromu výsledek není součástí stromu výsledek nebo výstup z transformace.  
   
- Iterace nad vrácený uzly stromu fragment výsledek <xref:System.Xml.XPath.XPathNavigator> se používá. Následující ukázka kódu ukazuje, jak vytvořit fragment výsledek stromové struktury v rámci šablony stylů voláním funkce s parametrem `fragment`, který obsahuje XML.  
+ K iteraci přes vrácená uzlů fragment stromu výsledek <xref:System.Xml.XPath.XPathNavigator> se používá. Následující příklad kódu ukazuje, jak vytvořit fragment stromu výsledek předloze se styly voláním funkce s parametrem `fragment`, který obsahuje XML.  
   
 ```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
@@ -68,7 +68,7 @@ ms.locfileid: "33574696"
 </xsl:stylesheet>  
 ```  
   
- Zde je další ukázku zobrazující proměnnou, která je ve formátu RTF (RICH Text Format), a proto nastavte typ fragment stromu výsledek, který není převeden do uzlu. Místo toho je předán do funkce skript a <xref:System.Xml.XPath.XPathNavigator> se používá k přejděte přes uzly.  
+ Tady je další ukázku zobrazující proměnnou, která je ve formátu RTF (RICH Text Format), a proto nastavení typu stromu fragmentu výsledek, který není převedena na uzlu. Místo toho je předán do funkce skriptu a <xref:System.Xml.XPath.XPathNavigator> slouží k navigaci v uzlech.  
   
 ```xml  
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
@@ -110,7 +110,7 @@ ms.locfileid: "33574696"
 </xsl:stylesheet>  
 ```  
   
- Výsledek převod žádné XML pomocí této šablony stylů se zobrazí v následující výstup.  
+ Výsledek transformace všechny XML pomocí této šablony stylů se zobrazí následující výstup.  
   
 ## <a name="output"></a>Výstup  
   
@@ -118,15 +118,15 @@ ms.locfileid: "33574696"
 <first_book xmlns:user="urn:books">Book1</first_book>  
 ```  
   
- Jak jsme uvedli výše, `node-set` funkce umožňuje převést fragment stromu výsledek sada uzlů. Výsledný uzel vždy obsahuje jeden uzel, který je kořenový uzel stromu. Pokud převedete fragment výsledek stromu na uzel nastavit, a můžete ji použít kdekoli sada regulární uzlů se používá, například jako pro každý příkaz nebo v hodnotě `select` atribut. Následující řádky kódu ukazují fragment převáděn na uzlu nastavení a použita jako sada uzlů:  
+ Jak je uvedeno výše, `node-set` funkce lze převést na sadu uzlu fragment stromu výsledek. Výsledný uzel vždy obsahuje jeden uzel, který je kořenový uzel stromu. Pokud převedete fragment výsledkového stromu na uzel nastavena, pak jste ji mohli používat kdekoli sadu regulární uzlu se používá, například jako v pro každý příkaz nebo v hodnotě `select` atribut. Následující řádky kódu zobrazit fragment převáděn na nastavit a použít jako sada uzlů uzlu:  
   
  `<xsl:for-each select="msxsl:node-set($node-fragment)">`  
   
  `<xsl:value-of select="user:func(msxsl:node-set($node-fragment))"/>`  
   
- Při převodu fragment sada uzlů, nadále používat <xref:System.Xml.XPath.XPathNavigator> přejděte nad ním. Pro sada uzlů můžete použít <xref:System.Xml.XPath.XPathNodeIterator> místo.  
+ Když fragment je převést na sadu uzlu, kterou již nebudete používat <xref:System.Xml.XPath.XPathNavigator> přejít nad ním. Pro sadu uzlu, je použít <xref:System.Xml.XPath.XPathNodeIterator> místo.  
   
- V následujícím příkladu `$var` je proměnná, která je uzel stromu v šabloně stylů. Příkaz pro každou kombinaci s `node-set` fungovat, umožňuje uživatelům Iterujte přes tento strom jako sada uzlů.  
+ V následujícím příkladu `$var` je proměnná, která je uzel stromu v šabloně stylů. Pro každý příkaz v kombinaci s `node-set` fungovala, umožňuje uživateli k iteraci přes tento strom jako sada uzlů.  
   
 ```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
@@ -146,7 +146,7 @@ ms.locfileid: "33574696"
 </xsl:stylesheet>  
 ```  
   
- Dalším příkladem proměnné, která je ve formátu RTF, a proto fragment stromu výsledek typu, který je převést na uzlu nastavit před předáním funkce skriptu jako XPathNodeIterator.  
+ Tady je další příklad proměnné, která je ve formátu RTF, a proto z modulu snap-in fragment stromu výsledek typu, který je převeden na uzel nastaven před předáním funkci skript tak, aby objekt XPathNodeIterator.  
   
 ```xml  
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
@@ -185,7 +185,7 @@ ms.locfileid: "33574696"
 </xsl:stylesheet>  
 ```  
   
- Toto je výsledek transformace XML pomocí této šablony stylů:  
+ Výsledek transformace XML pomocí této šablony stylů je následující:  
   
 ```xml  
 <books xmlns:user="urn:books">Book1Book2Book3Book4</books>  

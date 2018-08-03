@@ -1,123 +1,134 @@
 ---
-title: Vytváření bitových kopií Docker .NET Core
-description: Seznámení s imagí Dockeru a .NET Core
+title: Vytváření Imagí Dockeru .NET Core
+description: Principy imagí Dockeru a .NET Core
 author: jralexander
 ms.author: johalex
 ms.date: 11/06/2017
 ms.topic: tutorial
 ms.custom: mvc
 ms.openlocfilehash: e48a263334ebb93a5d281032336aeb4073d8467c
-ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
+ms.sourcegitcommit: e8dc507cfdaad504fc9d4c83d28d24569dcef91c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
+ms.lasthandoff: 08/03/2018
 ms.locfileid: "34827336"
 ---
 # <a name="building-docker-images-for-net-core-applications"></a>Vytváření Imagí Dockeru pro aplikace .NET Core
 
- V tomto kurzu zaměříme na použití .NET Core na Docker. Nejdřív jsme prozkoumejte různé imagí Dockeru nabízí a spravován společností Microsoft a případy použití. Potom jsme zjistěte, jak vytvářet a dockerize aplikace ASP.NET Core.
+ V tomto kurzu se zaměříme na tom, jak pomocí .NET Core v Dockeru. Nejprve podíváme na různé imagí Dockeru k dispozici a spravován společností Microsoft a případy použití. Potom jsme zjistěte, jak sestavit a dockerizace aplikace ASP.NET Core.
 
-V průběhu tohoto kurzu se seznámíte:
+V průběhu tohoto kurzu se dozvíte:
 > [!div class="checklist"]
-> * Další informace o rozhraní Microsoft .NET Core Docker obrázků 
-> * Získat ukázkovou aplikaci k Dockerize ASP.NET Core
-> * Místní spuštění ukázkové aplikace ASP.NET
-> * Sestavení a spuštění vzorového Linux kontejnerů pomocí Docker
-> * Sestavení a spuštění vzorového s kontejnery Docker pro Windows
+> * Další informace o imagích Dockeru rozhraní Microsoft .NET Core 
+> * Získat ASP.NET Core ukázkovou aplikaci do Dockerize
+> * Spuštění ukázkové aplikace ASP.NET místně
+> * Sestavte a spusťte ukázku s prostředím Docker pro kontejnery Linuxu
+> * Sestavte a spusťte ukázku s kontejnery Docker pro Windows
 
-## <a name="docker-image-optimizations"></a>Optimalizace na obrázku docker
+## <a name="docker-image-optimizations"></a>Optimalizace Image dockeru
 
-Při vytváření imagí Dockeru pro vývojáře, zaměřili jsme se na třech hlavních scénářích:
+Při vytváření imagí Dockeru pro vývojáře, jsme se zaměřili na třech hlavních scénářích:
 
-* Obrázků použitých k vývoji aplikací .NET Core
-* Bitové kopie sloužící k vytvoření aplikace .NET Core
-* Bitové kopie používá ke spouštění aplikací .NET Core
+* Obrázky používané pro vývoj aplikací .NET Core
+* Image sloužící k sestavení aplikace .NET Core
+* Obrázky používané ke spouštění aplikací .NET Core
 
 Proč tři Image?
-Při vyvíjení, vytváření a běh aplikací kontejnerizované, máme různých priorit.
+Při vývoji, vytváření a spouštění kontejnerizovaných aplikací, jsme mají různé priority.
 
-* **Vývoj:** se zaměřuje priority na rychle iterovat změny a možnost ladění změny. Velikost bitové kopie není jako důležité, místo můžete provádět změny kódu a rychle vidět?
+* **Vývoj:** prioritou se zaměřuje na rychle iterovat změny a možnost ladit změny. Velikost bitové kopie není důležité, místo toho můžete provést změny kódu a rychle vidět?
 
-* **Sestavení:** tato bitová kopie obsahuje vše potřebné ke kompilaci aplikace, která zahrnuje kompilátor a další závislosti za účelem optimalizace binární soubory.  Bitovou kopii sestavení použijete k vytvoření prostředků, které umístíte do bitové kopie produkční. Sestavení image se použije pro nepřetržitou integraci, nebo v prostředí sestavení. Tento přístup umožňuje sestavení agenta pro zkompilování a vybuildování aplikace (s všechny požadované závislosti) v instanci sestavení bitové kopie. Agenta sestavení pouze musí vědět, jak spustit tento Docker image.
+* **Sestavení:** tento obrázek obsahuje vše potřebné pro kompilaci aplikace, které zahrnují kompilátor a další závislosti optimalizovat binární soubory.  Sestavení image použijete k vytvoření majetek, který umístíte do produkčního prostředí image. Sestavení image se použije pro průběžnou integraci, nebo v prostředí sestavení. Tento přístup umožňuje agenta sestavení pro zkompilování a vybuildování aplikace (s všechny požadované závislosti) v instanci bitové kopie sestavení. Agenta sestavení stačí vědět, jak ke spuštění této image Dockeru.
 
-* **Produkční:** rychlost můžete nasadit a spustit image? Tento image je malý, takže je optimalizován výkon sítě z registru Docker do hostitelů Docker. Obsah je připraven ke spuštění povolení nejrychlejší čas z Docker spustit, aby se zpracování výsledků. Kompilace dynamický kód není potřeba mít ve Docker model. Obsah, který můžete umístit na tomto obrázku bude omezeno na binární soubory a obsah potřebné ke spuštění aplikace.
+* **Produkční:** jak rychle můžete nasadit a spustit image? Tato image je malé, takže je optimalizován výkon sítě z registru Dockeru do Docker hostitelů. Obsah je připraven ke spuštění povolení nejrychlejší doba od Dockeru, spusťte na zpracování výsledků. Dynamický kód kompilace, není nutná v modelu Dockeru. Obsah, který umístíte do této bitové kopie omezeny na binární soubory a obsah potřebný ke spuštění aplikace.
 
     Například `dotnet publish` výstup obsahuje:
 
     * kompilované binární soubory
-    * soubory .js a .css
+    * soubory JS a CSS
 
 
-Z důvodu zahrnout `dotnet publish` výstupu příkazu v bitové kopii produkčního je zachování jeho velikost na minimum.
+Z důvodu chcete zahrnout `dotnet publish` výstupu příkazu v bitové kopii produkčního prostředí o jeho velikost na minimum.
 
-Některé obrázky, .NET Core sdílet vrstvy mezi různé značky, stahuje nejnovější značky je relativně jednoduché proces. Pokud již máte starší verze na počítači, sníží tato architektura místo na disku potřebné.
+Některé obrázky .NET Core sdílení vrstev mezi různých klíčových slov, takže stahování nejnovějších značka je poměrně jednoduchý proces. Pokud už máte starší verzi na svém počítači, tato architektura zmenšuje místo na disku potřebné.
 
-Když se více aplikací používat běžné bitové kopie na stejném počítači, paměti jsou sdílena mezi běžné bitové kopie. Image se musí shodovat s ke sdílení.
+Při obvyklých imagí používat více aplikací ve stejném počítači, je paměť sdílená mezi obvyklých imagí. Image se musí shodovat s ke sdílení.
 
-## <a name="docker-image-variations"></a>Variace docker bitové kopie
+## <a name="docker-image-variations"></a>Variace image dockeru
 
-K dosažení výše uvedené cíle, poskytujeme variant bitové kopie v rámci [ `microsoft/dotnet` ](https://hub.docker.com/r/microsoft/dotnet/).
+K dosažení cílů výše, poskytujeme varianty image v rámci [ `microsoft/dotnet` ](https://hub.docker.com/r/microsoft/dotnet/).
 
-* `microsoft/dotnet:<version>-sdk`(`microsoft/dotnet:2.1-sdk`) Tato bitová kopie obsahuje .NET Core SDK, která zahrnuje .NET Core a nástroje příkazového řádku (CLI). Tuto bitovou kopii se mapuje **vývoj scénář**. Můžete použít tuto bitovou kopii pro místní vývoj, ladění a testování částí. Tuto bitovou kopii lze také použít pro vaše **sestavení** scénáře. Pomocí `microsoft/dotnet:sdk` vždy obsahuje nejnovější verzi.
+* `microsoft/dotnet:<version>-sdk`(`microsoft/dotnet:2.1-sdk`) Tento obrázek obsahuje sady .NET Core SDK, která zahrnuje .NET Core a nástroje příkazového řádku (CLI). Tento obrázek mapuje **scénář vývoje**. Použít tuto bitovou kopii pro místní vývoj, ladění a testování částí. Tato image je také možné pro vaši **sestavení** scénáře. Pomocí `microsoft/dotnet:sdk` vždy obsahuje nejnovější verzi.
 
 > [!TIP]
-> Pokud si nejste jistí o vašim potřebám, kterou chcete použít `microsoft/dotnet:<version>-sdk` bitové kopie. Jako "de facto" bitovou kopii, je určený pro použití jako throw tokeny kontejneru (připojit zdrojový kód a spusťte kontejner a spusťte aplikaci) a jako základní bitovou kopii k vytvoření jiných obrázků z.
+> Pokud si nejste jistí o vašim potřebám, kterou chcete použít `microsoft/dotnet:<version>-sdk` bitové kopie. Jako "de facto stane" image, je určený pro použití jako throw tokeny kontejneru (připojit svůj zdrojový kód a spustit kontejner pro spuštění vaší aplikace) a jako základní image k vytvoření další Image z.
 
-* `microsoft/dotnet:<version>-runtime`: Tento image obsahuje .NET Core (runtime a knihovny) a je optimalizovaná pro spouštění aplikací .NET Core **produkční**.
+* `microsoft/dotnet:<version>-runtime`: Tento obrázek obsahuje .NET Core (prostředí runtime a knihovny) a je optimalizovaná pro spouštění aplikací .NET Core **produkční**.
 
-## <a name="alternative-images"></a>Alternativní bitové kopie
+## <a name="alternative-images"></a>Alternativní imagí
 
-Kromě optimalizované scénářů vývoj, sestavení a produkční poskytujeme další bitové kopie:
+Kromě optimalizované scénáře vývoje, sestavení a produkčním prostředí Nabízíme další Image:
 
-* `microsoft/dotnet:<version>-runtime-deps`: **Runtime deps** bitová kopie obsahuje operační systém s všechny nativní závislosti vyžaduje .NET Core. Tento image je pro [nezávislý aplikace](../deploying/index.md).
+* `microsoft/dotnet:<version>-runtime-deps`: **Runtime deps** bitová kopie obsahuje operační systém se všemi nativní závislosti vyžadované .NET Core. Tento obrázek pochází pro [samostatná aplikace](../deploying/index.md).
 
-Nejnovější verze jednotlivých variant:
+Nejnovější verze každého typu variant:
 
 * `microsoft/dotnet` nebo `microsoft/dotnet:latest` (alias pro bitovou kopii sady SDK)
 * `microsoft/dotnet:sdk`
 * `microsoft/dotnet:runtime`
 * `microsoft/dotnet:runtime-deps`
 
-## <a name="samples-to-explore"></a>Ukázky a prozkoumejte
+## <a name="samples-to-explore"></a>Prozkoumejte ukázky
 
-* [Tato ukázka ASP.NET Core Docker](https://github.com/dotnet/dotnet-docker/tree/master/samples/aspnetapp) ukazuje osvědčených postupů vzor pro vytváření imagí Dockeru pro ASP.NET Core aplikace pro produkční prostředí. Ukázka funguje s kontejnery Linux a Windows.
+* [Tato ukázka ASP.NET Core Docker](https://github.com/dotnet/dotnet-docker/tree/master/samples/aspnetapp) ukazuje vzoru osvědčených postupů pro vytváření imagí Dockeru pro ASP.NET Core aplikace pro produkční prostředí. Ukázka funguje s kontejnery Windows i Linux.
 
-* Tento příklad .NET Core Docker znázorňuje osvědčených postupů vzor [vytváření imagí Dockeru pro aplikace .NET Core pro produkční prostředí.](https://github.com/dotnet/dotnet-docker/tree/master/samples/dotnetapp)
+* V této aplikaci .NET Core Docker ukázce vzoru osvědčených postupů pro [vytváření imagí Dockeru pro aplikace .NET Core pro produkční prostředí.](https://github.com/dotnet/dotnet-docker/tree/master/samples/dotnetapp)
 
-## <a name="your-first-aspnet-core-docker-app"></a>První aplikace ASP.NET Core Docker
+## <a name="forward-the-request-scheme-and-original-ip-address"></a>Schéma požadavku a původní IP adresa
 
-V tomto kurzu umožňuje použití ukázkové aplikace ASP.NET Core Docker pro aplikaci, kterou chceme dockerize. Tato ukázková aplikace ASP.NET Core Docker představuje nejlepší postup vzor pro vytváření imagí Dockeru pro ASP.NET Core aplikace pro produkční prostředí. Ukázka funguje s kontejnery Linux a Windows.
+Proxy servery, nástroje pro vyrovnávání zatížení a jiných síťových zařízení často skryl informace o požadavku předtím, než dosáhne kontejnerizovanou aplikaci:
 
-Ukázkový soubor Docker vytvoří image Docker aplikace ASP.NET Core na základě technologie ASP.NET Core Runtime Docker základní bitovou kopii.
+* Pokud požadavky HTTPS jsou směrovány přes proxy server pomocí protokolu HTTP, původní schéma (HTTPS) ztratí a musí předávat v hlavičce.
+* Protože aplikace obdrží žádost z proxy serveru a není true zdroj na Internetu nebo podnikové sítě, musí v hlavičce předané původní IP adresa klienta.
 
-Použije [Docker více fáze sestavení funkce](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) na:
+Tyto informace mohou být důležité pro zpracování žádostí, například v přesměrování ověřování, generování odkazů, hodnocení zásad a informace o zeměpisné poloze klienta.
 
-* sestavit ukázku v kontejneru na základě **větší** základní image ASP.NET Core sestavení Docker 
-* zkopíruje do Docker image na základě výsledku poslední sestavení **menší** základní image ASP.NET Core Docker Runtime
+Přeposílat schéma a původní IP adresy pro kontejnerizované aplikace ASP.NET Core, používají předané Middleware záhlaví. Další informace najdete v tématu [konfigurace ASP.NET Core práci se servery proxy a nástroje pro vyrovnávání zatížení](/aspnet/core/host-and-deploy/proxy-load-balancer).
+
+## <a name="your-first-aspnet-core-docker-app"></a>Vaše první aplikace ASP.NET Core Dockeru
+
+Pro účely tohoto kurzu umožňuje aplikaci, kterou chceme dockerizace pomocí ukázkové aplikace ASP.NET Core Dockeru. Tato ukázková aplikace ASP.NET Core Docker ukazuje vzoru osvědčených postupů pro vytváření imagí Dockeru pro ASP.NET Core aplikace pro produkční prostředí. Ukázka funguje s kontejnery Windows i Linux.
+
+Soubor Dockerfile vzorovým kódem se vytvoří image Dockeru aplikace ASP.NET Core na základě základní image Dockeru modulu Runtime ASP.NET Core.
+
+Používá [Docker vícefázových sestavení funkce](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) na:
+
+* sestavit ukázku v kontejneru na základě **větší** základní image Dockeru sestavení ASP.NET Core 
+* zkopíruje výsledek poslední sestavení do image Dockeru na základě **menší** základní imagi modulu Runtime ASP.NET Core Dockeru
 
 > [!NOTE]
-> Sestavení bitová kopie obsahuje požadované nástroje k vytváření aplikací při bitovou kopii runtime neexistuje.
+> Sestavení image obsahuje potřebné nástroje pro vytváření aplikací, ale nikoli bitové kopie modulu runtime.
 
 ### <a name="prerequisites"></a>Požadavky
 
-Sestavení a spuštění, nainstalujte následující položky:
+Sestavte a spusťte, nainstalujte následující položky:
 
 #### <a name="net-core-21-sdk"></a>.NET core 2.1 SDK
 
 * Nainstalujte [.NET Core SDK 2.1](https://www.microsoft.com/net/core).
 
-* Pokud jste to ještě neudělali, nainstalujte editor vaše oblíbené kódu.
+* Pokud jste tak dosud neučinili, nainstalujte váš oblíbený editor kódu.
 
 > [!TIP]
 > Je potřeba nainstalovat editor kódu? Zkuste [sady Visual Studio](https://visualstudio.com/downloads)!
 
-#### <a name="installing-docker-client"></a>Instalace klienta Docker
+#### <a name="installing-docker-client"></a>Instalace klienta Dockeru
 
-Nainstalujte [Docker 18.03](https://docs.docker.com/release-notes/docker-ce/) nebo novější Docker klienta.
+Nainstalujte [Docker 18.03](https://docs.docker.com/release-notes/docker-ce/) nebo novější klienta Dockeru.
 
-Klient Docker může být nainstalován v:
+Klienta Dockeru se dá nainstalovat ve:
 
-* Distribuce systému Linux
+* Linuxové distribuce
 
    * [CentOS](https://www.docker.com/docker-centos-distribution)
 
@@ -133,23 +144,23 @@ Klient Docker může být nainstalován v:
 
 #### <a name="installing-git-for-sample-repository"></a>Instalace Gitu pro ukázkové úložiště
 
-* Nainstalujte [git](https://git-scm.com/download) Pokud chcete klonovat úložiště.
+* Nainstalujte [git](https://git-scm.com/download) Pokud budete chtít naklonujte úložiště.
 
-### <a name="getting-the-sample-application"></a>Získávání ukázkové aplikace
+### <a name="getting-the-sample-application"></a>Načítání ukázkové aplikace
 
-Nejjednodušší způsob, jak získat ukázce je klonováním [úložiště .NET Core Docker](https://github.com/dotnet/dotnet-docker) s gitem, pomocí následujících pokynů: 
+Nejjednodušší způsob, jak získat ukázky je to klonováním [úložiště .NET Core Dockeru](https://github.com/dotnet/dotnet-docker) s úložištěm git, pomocí následujících pokynů: 
 
 ```console
 git clone https://github.com/dotnet/dotnet-docker
 ```
 
-Můžete také stáhnout úložiště (je malý) jako zip z úložiště .NET Core Docker.
+Úložiště (je malé) můžete také stáhnout jako soubor zip z úložiště .NET Core Docker.
 
 ### <a name="run-the-aspnet-app-locally"></a>Místní spuštění aplikace ASP.NET
 
-Jako referenční bod před jsme containerize aplikace, nejprve spustíte aplikaci místně.
+Pro referenční bod než jsme kontejnerizace aplikace, nejprve spusťte aplikaci místně.
 
-Můžete sestavit a spustit aplikaci místně pomocí .NET SDK 2.1 základní pomocí následujících příkazů (pokyny předpokládají kořenovém adresáři úložiště):
+Můžete sestavit a spustit aplikaci místně pomocí sady SDK .NET Core 2.1 pomocí následujících příkazů (pokyny předpokládají kořenovém adresáři úložiště):
 
 ```console
 cd dotnet-docker
@@ -162,9 +173,9 @@ dotnet run
 
 Po spuštění aplikace, navštivte **http://localhost:5000** ve webovém prohlížeči.
 
-### <a name="build-and-run-the-sample-with-docker-for-linux-containers"></a>Sestavení a spuštění vzorového Linux kontejnerů pomocí Docker
+### <a name="build-and-run-the-sample-with-docker-for-linux-containers"></a>Sestavte a spusťte ukázku s prostředím Docker pro kontejnery Linuxu
 
-Můžete sestavit a spustit ukázku v Docker použití kontejnerů Linux pomocí následujících příkazů (pokyny předpokládají kořenovém adresáři úložiště):
+Můžete sestavit a spustit ukázku v Dockeru pomocí kontejnerů Linuxu pomocí následujících příkazů (pokyny předpokládají kořenovém adresáři úložiště):
 
 ```console
 cd dotnet-docker
@@ -176,13 +187,13 @@ docker run -it --rm -p 5000:80 --name aspnetcore_sample aspnetapp
 ```
 
 > [!NOTE]
-> `docker run` '-P' argument port 5000 na místním počítači na port 80 v kontejneru mapy (formulář mapování portů `host:container`). Další informace najdete v tématu [docker spustit](https://docs.docker.com/engine/reference/commandline/exec/) odkazu na parametry příkazového řádku.
+> `docker run` "-P" argument portu 5000 na místním počítači na port 80 v kontejneru mapy (formulář mapování portů je `host:container`). Další informace najdete v tématu [dockeru spustit](https://docs.docker.com/engine/reference/commandline/exec/) odkaz na parametry příkazového řádku.
 
 Po spuštění aplikace, navštivte **http://localhost:5000** ve webovém prohlížeči.
 
-### <a name="build-and-run-the-sample-with-docker-for-windows-containers"></a>Sestavení a spuštění vzorového s kontejnery Docker pro Windows
+### <a name="build-and-run-the-sample-with-docker-for-windows-containers"></a>Sestavte a spusťte ukázku s kontejnery Docker pro Windows
 
-Můžete sestavit a spustit ukázku v Docker použití Windows kontejnerů pomocí následujících příkazů (pokyny předpokládají kořenovém adresáři úložiště):
+Můžete sestavit a spustit ukázku v Dockeru pomocí kontejnerů Windows pomocí následujících příkazů (pokyny předpokládají kořenovém adresáři úložiště):
 
 ```console
 cd dotnet-docker
@@ -194,17 +205,17 @@ docker run -it --rm --name aspnetcore_sample aspnetapp
 ```
 
 > [!IMPORTANT]
-> Je nutné na Přejít **kontejneru IP adresu** (Naproti tomu http://localhost) v prohlížeči přímo při použití Windows kontejnerů. Můžete získat IP adresu vašeho kontejneru pomocí následujících kroků:
+> Je nutné na Přejít **IP adresu kontejneru** (nikoli http://localhost) v prohlížeči přímo při používání kontejnerů Windows. Můžete získat IP adresu vašeho kontejneru pomocí následujících kroků:
 
 * Otevřete jiného příkazového řádku.
-* Spustit `docker ps` zobrazíte spuštěných kontejnerů. Kontejner "aspnetcore_sample" by měla existovat.
-* Run `docker exec aspnetcore_sample ipconfig`.
-* IP adresa kontejneru zkopírujte a vložte do prohlížeče (například 172.29.245.43).
+* Spustit `docker ps` zobrazte spuštěné kontejnery. Kontejner "aspnetcore_sample" by měl být existuje.
+* Spustit `docker exec aspnetcore_sample ipconfig`.
+* Zkopírujte IP adresu kontejneru a vložte do prohlížeče (například 172.29.245.43).
 
 > [!NOTE]
-> Docker exec podporuje identifikační kontejnery s názvem nebo hodnoty hash. V našem příkladu se používá název (aspnetcore_sample).
+> Docker exec podporuje identifikační kontejnery s názvem nebo hodnoty hash. Název (aspnetcore_sample) se používá v našem příkladu.
 
-Podívejte se na následující příklad toho, jak získat IP adresu spuštěné kontejneru systému Windows.
+Podívejte se na následující příklad toho, jak získat IP adresu spuštěný kontejner Windows.
 
 ```console
 docker exec aspnetcore_sample ipconfig
@@ -221,54 +232,53 @@ Ethernet adapter Ethernet:
 ```
 
 > [!NOTE]
-> Docker exec spustí nový příkaz v běžící kontejneru. Další informace najdete v tématu [docker exec odkaz](https://docs.docker.com/engine/reference/commandline/exec/) na parametry příkazového řádku.
+> Nový příkaz exec dockeru běží v spuštěný kontejner. Další informace najdete v tématu [docker exec odkaz](https://docs.docker.com/engine/reference/commandline/exec/) na parametry příkazového řádku.
 
-Může vytvářet aplikace, která je připravená k nasazení do produkčního prostředí místně pomocí [dotnet publikování](../tools/dotnet-publish.md) příkaz.
+Můžete vytvářet aplikace, která je připravená k nasazení do produkčního prostředí místně s použitím [dotnet publikovat](../tools/dotnet-publish.md) příkazu.
 
 ```console
 dotnet publish -c Release -o published
 ```
 
 > [!NOTE]
-> - C argument verze sestavení aplikace v režimu vydání (výchozí hodnota je režim ladění). Další informace najdete v tématu [dotnet. Spusťte odkaz](../tools/dotnet-run.md) na parametry příkazového řádku.
+> - C verze argument sestavení aplikace v režimu vydání (výchozí hodnota je režim ladění). Další informace najdete v tématu [dotnet spusťte odkaz](../tools/dotnet-run.md) na parametry příkazového řádku.
 
-Spuštění aplikace na **Windows** pomocí následujícího příkazu.
+Aplikaci můžete spustit na **Windows** pomocí následujícího příkazu.
 
 ```console
 dotnet published\aspnetapp.dll
 ```
 
-Spuštění aplikace na **Linux** nebo **systému macOS** pomocí následujícího příkazu.
+Aplikaci můžete spustit na **Linux** nebo **macOS** pomocí následujícího příkazu.
 
 ```bash
 dotnet published/aspnetapp.dll
 ```
 
-### <a name="docker-images-used-in-this-sample"></a>Docker obrázků použitých v této ukázce
+### <a name="docker-images-used-in-this-sample"></a>Používané v tomto příkladu Imagí dockeru
 
-V této ukázce soubor docker se používají následující imagí Dockeru.
+Následující Image Dockeru se používají v této ukázce souboru dockerfile.
 
 * `microsoft/dotnet:2.1-sdk`
 * `microsoft/dotnet:2.1-aspnetcore-runtime`
 
-Blahopřejeme! máte právě:
+Blahopřejeme! máte jen:
 > [!div class="checklist"]
-> * Naučili o imagí Dockeru základní rozhraní Microsoft .NET
-> * Tu ASP.NET Core ukázkové aplikaci Dockerize
-> * Byla spuštěna místně ukázková aplikace ASP.NET
-> * Vytvořené a spustil ukázku pomocí Docker pro Linux kontejnery
-> * Vytvořené a spustil vzorku s kontejnery Docker pro Windows
-
+> * Dozvěděli jste se o imagích Dockeru rozhraní Microsoft .NET Core
+> * Ukázkovou aplikaci do Dockerize je teď v ASP.NET Core
+> * Spuštění ukázkové aplikace ASP.NET místně
+> * Vytvořené a spustili ukázku s prostředím Docker pro kontejnery Linuxu
+> * Vytvořené a spustili ukázku s kontejnery Docker pro Windows
 
 **Další kroky**
 
-Zde jsou některé další kroky, které můžete provést:
+Tady jsou některé další kroky, které si můžete:
 
-* [Práce s nástroji Visual Studio Docker](https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker)
-* [Nasazení bitových kopií Docker z registru kontejner Azure do Azure kontejner instancí](https://blogs.msdn.microsoft.com/stevelasker/2017/07/28/deploying-docker-images-from-the-azure-container-registry-to-azure-container-instances/)
-* [Ladění pomocí kódu v sadě Visual Studio](https://code.visualstudio.com/docs/nodejs/debugging-recipes#_nodejs-typescript-docker-container) 
-* [Načítání rukou pomocí sady Visual Studio pro Mac, kontejnery a bez serveru kódu v cloudu](https://blogs.msdn.microsoft.com/visualstudio/2017/08/31/hands-on-with-visual-studio-for-mac-containers-serverless-code-in-the-cloud/#comments)
-* [Začínáme s Docker a Visual Studio pro Mac testovacího prostředí](https://github.com/Microsoft/vs4mac-labs/tree/master/Docker/Getting-Started)
+* [Práce s nástroji Dockeru pro Visual Studio](https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker)
+* [Nasazování Imagí Dockeru ze služby Azure Container Registry do služby Azure Container Instances](https://blogs.msdn.microsoft.com/stevelasker/2017/07/28/deploying-docker-images-from-the-azure-container-registry-to-azure-container-instances/)
+* [Ladění ve Visual Studiu Code](https://code.visualstudio.com/docs/nodejs/debugging-recipes#_nodejs-typescript-docker-container) 
+* [Praktické ukázky sady Visual Studio pro Mac, kontejnery a kód bez serveru v cloudu](https://blogs.msdn.microsoft.com/visualstudio/2017/08/31/hands-on-with-visual-studio-for-mac-containers-serverless-code-in-the-cloud/#comments)
+* [Začínáme s Dockerem a sady Visual Studio pro Mac testovacího prostředí](https://github.com/Microsoft/vs4mac-labs/tree/master/Docker/Getting-Started)
 
 > [!NOTE]
-> Pokud nemáte předplatné Azure, [Přihlaste se ještě dnes](https://azure.microsoft.com/free/?b=16.48) bezplatný účet 30 dnů a 200 USD get v kredity Azure můžete vyzkoušet na libovolnou kombinaci služby Azure.
+> Pokud nemáte předplatné Azure, [zaregistrujte se ještě dnes](https://azure.microsoft.com/free/?b=16.48) pro bezplatný účet 30 dní a získat 200 USD v kreditech Azure pro vyzkoušení jakékoli kombinace služeb Azure.

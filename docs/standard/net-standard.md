@@ -1,132 +1,150 @@
 ---
-title: Standardní rozhraní .NET
-description: Další informace o .NET Standard, její verze a implementace rozhraní .NET, které ji podporují.
+title: .NET standard
+description: Další informace o .NET Standard, jeho verze a implementace .NET, kteří jej podporují.
 author: mairaw
 ms.author: mairaw
-ms.date: 05/18/2018
+ms.date: 07/19/2018
 ms.technology: dotnet-standard
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
 ms.openlocfilehash: 8f4490edfc06fcc3ec06daffdb0966ac9ee72e23
-ms.sourcegitcommit: ceca5a1c027627abcca2767567703c3879f33325
+ms.sourcegitcommit: e8dc507cfdaad504fc9d4c83d28d24569dcef91c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2018
+ms.lasthandoff: 08/03/2018
 ms.locfileid: "36298172"
 ---
-# <a name="net-standard"></a>Standardní rozhraní .NET
+# <a name="net-standard"></a>.NET standard
 
-[.NET Standard](https://github.com/dotnet/standard) je formální specifikace rozhraní API .NET, která by měla být k dispozici na všech implementace rozhraní .NET. Motivace za .NET Standard je stanovení větší jednotnost v ekosystému .NET. [ECMA 335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) pokračuje k navázání jednotnost chování implementace rozhraní .NET, ale neexistuje žádné podobné specifikace pro knihovny pro třídy Base rozhraní .NET (BCL) pro implementace knihovny .NET. 
+[.NET Standard](https://github.com/dotnet/standard) je formální specifikaci rozhraní API .NET, která mají být k dispozici na všech implementace .NET. Motivace za .NET Standard navazuje větší sjednocení v ekosystému .NET. [335 Standard ECMA](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) pokračuje k navázání sjednocení pro chování implementace .NET, ale neexistuje žádná podobné specifikace pro knihovny pro třídy Base .NET (BCL) pro implementace knihovny .NET.
 
-Standardní rozhraní .NET umožňuje následující klíčové scénáře: 
+.NET Standard umožňuje následující klíčové scénáře:
 
-- Definuje uniform sadu rozhraní API BCL pro všechny implementace rozhraní .NET pro implementovat, nezávisle na zatížení.
-- Umožňuje vývojářům vytvářet přenosné knihovny, které jsou použitelné pro implementace rozhraní .NET, pomocí této stejnou sadu rozhraní API.
-- Snižuje nebo i eliminuje Podmíněná kompilace sdílené zdroje z důvodu rozhraní API technologie .NET, pouze pro rozhraní API operačního systému.
+- Definuje jednotnou sadu BCL API pro všechny implementace .NET k implementaci, nezávisle na úloze.
+- Umožňuje vývojářům vytvářet přenosných knihoven, které jsou použitelné v rámci implementace .NET pomocí stejné sady rozhraní API.
+- Snižuje nebo dokonce eliminuje podmíněné kompilace sdílené zdroje z důvodu rozhraní API pro .NET, jenom pro rozhraní API operačního systému.
 
-Různé implementace rozhraní .NET mít určité verze .NET Standard. Každou verzi implementace rozhraní .NET oznamuje, že nejvyšší .NET Standard verze, které podporuje, příkazu, který znamená, že také podporuje předchozí verze. Například rozhraní .NET Framework 4.6 implementuje standardní 1.3 .NET, což znamená, že zpřístupňuje všechna rozhraní API definované v rozhraní .NET standardní verze 1.0 prostřednictvím 1.3. Podobně rozhraní .NET Framework 4.6.1 implementuje .NET standardní 1.4, zatímco .NET Core 1.0 implementuje standardní 1.6 .NET.
+Různé implementace .NET cílit na konkrétní verzi .NET Standard. Každá verze implementace .NET inzeruje, že nejvyšší .NET Standard verze, které podporuje, příkaz, který znamená, že podporuje taky předchozí verze. Například rozhraní .NET Framework 4.6 implementuje .NET Standard 1.3, což znamená, že poskytuje všechna rozhraní API definované v .NET Standard verze 1.0 prostřednictvím 1.3. Obdobně rozhraní .NET Framework 4.6.1 implementuje .NET Standard 1.4, zatímco .NET Core 1.0 implementuje .NET Standard 1.6.
 
-## <a name="net-implementation-support"></a>Podpora implementace rozhraní .NET
+## <a name="net-implementation-support"></a>Podpora pro implementaci rozhraní .NET
 
-V následující tabulce jsou uvedeny všechny verze rozhraní .NET Standard a podporované platformy:
+V následující tabulce jsou uvedeny minimální verze platformy, které podporují jednotlivé verze rozhraní .NET Standard.
 
 [!INCLUDE [net-standard-table](~/includes/net-standard-table.md)]
 
-K vyhledání nejvyšší verze Standard .NET, můžete se zaměřit, postupujte takto:
-1. Najde řádek, která určuje, které chcete spustit na implementaci rozhraní .NET.
-2. Sloupec najít v daném řádku, která určuje vaší verzí spouštění zprava doleva.
-3. Záhlaví sloupce určuje .NET Standard verzi, která podporuje cílových (a je také podporuje všechny nižší verze .NET Standard).
-4. Tento postup opakujte pro každou platformu, kterou chcete zacílit. Pokud máte více než jeden cílovou platformu, měli byste vybrat menší verze mezi nimi. Pokud chcete spustit v rozhraní .NET Framework 4.5 a .NET Core 1.0, je nejvyšší verze .NET Standard, které můžete použít například standardní .NET 1.1.
+K nalezení nejvyšší verze rozhraní .NET Standard, která se může zaměřit, proveďte následující kroky:
 
-### <a name="which-net-standard-version-to-target"></a>Která verze .NET Standard k cíli
+1. Najděte řádek, který označuje, který chcete spustit na implementaci rozhraní .NET.
+2. Najdete sloupce v daném řádku, která určuje verzi od zprava doleva.
+3. Záhlaví sloupce označuje .NET Standard, která podporuje vaše cílové verze (a jakékoli nižší verze rozhraní .NET Standard bude podporovat také).
+4. Tento postup opakujte pro každou platformu, kterou chcete cílit. Pokud máte více než jedna cílová platforma, měli byste vybrat menší verze mezi nimi. Například pokud chcete spustit v rozhraní .NET Framework 4.5 a .NET Core 1.0, nejvyšší verze .NET Standard, která vám pomůže je standardní 1.1 rozhraní .NET.
 
-Při výběru .NET Standard verze, je třeba zvážit tento kompromis:
+### <a name="which-net-standard-version-to-target"></a>Kterou verzi .NET Standard do cíle
+
+Při výběru verze .NET Standard, je třeba zvážit tento kompromis:
 
 - Vyšší verzi, další rozhraní API jsou k dispozici.
-- Čím nižší verzi, další platformy implementaci.
+- Čím nižší verzi, další platformy, pro jeho implementaci.
 
-Obecně doporučujeme cílit *nejnižší* verzi rozhraní .NET standardní možné. Ano po zjistíte, nejvyšší verze .NET Standard, které můžete vybrat, postupujte takto:
-1. Cíle další nižší verze .NET Standard a sestavte projekt.
-2. Pokud váš projekt sestavení úspěšně, opakujte krok 1. Změňte cíl, jinak hodnota na další vyšší verzi, kterým je verze, kterou byste měli používat.
+Obecně platí, doporučujeme vám umožní zacílit *nejnižší* verzi .NET Standard možné. Po nalezení nejvyšší verze .NET Standard, kterou je možné cílit na Ano, postupujte takto:
 
-### <a name="net-standard-versioning-rules"></a>Rozhraní .NET standardní pravidla Správa verzí
+1. Cílení na další nižší verzi .NET Standard a sestavte projekt.
+2. Pokud váš projekt se sestaví úspěšně, opakujte kroku 1. V opačném případě změnit cílení na další vyšší verze a verze, kterou byste měli použít.
 
-Existují dvě pravidla primární Správa verzí:
+### <a name="net-standard-versioning-rules"></a>.NET standard pravidla správy verzí
 
-- Doplňkové: Standardní verze rozhraní .NET jsou logicky soustředných kroužky: vyšších verzí obsahovat všechna rozhraní API z předchozích verzí. Neexistují žádné narušující změny mezi verzemi.
-- Neměnný Po odeslání, verze .NET Standard jsou pozastaveny. Nejprve bude dostupná v konkrétní implementace rozhraní .NET, jako je například .NET Core nových rozhraní API. Pokud .NET Standard zkontrolujte panel dochází k závěru, že nová rozhraní API by měly být k dispozici everywhere, přidá se v nové verzi .NET Standard.
+Existují dvě pravidla primární správy verzí:
 
-## <a name="comparison-to-portable-class-libraries"></a>Porovnání se knihovny přenosných tříd
-
-.NET standard je náhradou [přenosných třída knihovny PCL ()](./cross-platform/cross-platform-development-with-the-portable-class-library.md). .NET Standard zlepšuje na vlastní uživatelské prostředí vytvoření přenosné knihovny Správa standardní BCL a v důsledku vytvoření větší jednotnost napříč implementace rozhraní .NET. Knihovnu, která je cílena .NET Standard je PCL nebo ".NET založené na standardu PCL". Existující PCLs jsou "na základě profilu PCLs".
-
-Profily rozhraní .NET standardní a PCL byly vytvořeny pro podobné účely, ale způsoby klíče se také liší.
-
-Podobnosti:
-
-- Definuje rozhraní API, která lze použít pro sdílení binární kód.
-
-Rozdíly:
-
-- .NET standard je kurátorované sady rozhraní API, zatímco PCL profily jsou definovány průnikům existujícími platformami.
-- .NET standard lineárně verze, zatímco PCL profily nepodporují.
-- Profily PCL představuje platformy Microsoft, zatímco .NET Standard nerozlišuje platformy.
+- Additive: Standardní verze rozhraní .NET jsou logicky soustředných kruhy: vyšších verzích začlenit všechna rozhraní API z předchozích verzí. Nejsou žádné zásadní změny mezi verzí.
+- Neměnné: Po vydání verze .NET Standard jsou zmražená. Nová rozhraní API nejdříve zpřístupněny v konkrétní implementace .NET, jako je .NET Core. Pokud panelu .NET Standard revize se řídí zásadou nová rozhraní API by měla být k dispozici pro všechny implementace .NET, přidané v nové verzi .NET Standard.
 
 ## <a name="specification"></a>Specifikace
 
-Specifikace .NET Standard je sada standardních rozhraní API. Specifikace se spravuje pomocí rozhraní .NET implementors, konkrétně společnosti Microsoft (zahrnuje rozhraní .NET Framework, .NET Core a Mono) a Unity. Proces veřejné zpětné vazby se používá jako součást vytvoření nové verze .NET Standard prostřednictvím [Githubu](https://github.com/dotnet/standard).
+Specifikaci .NET Standard je sada standardních rozhraní API. Specifikace se spravuje pomocí .NET implementors, konkrétně Microsoft (zahrnuje rozhraní .NET Framework a .NET Core, Mono) a Unity. Veřejné zpětnou vazbu proces se používá jako součást vytváření nové verze .NET Standard prostřednictvím [Githubu](https://github.com/dotnet/standard).
 
 ### <a name="official-artifacts"></a>Oficiální artefaktů
 
-Specifikace oficiální je sada .cs soubory, které definují rozhraní API, které jsou součástí standardní. [Ref directory](https://github.com/dotnet/standard/tree/master/netstandard/ref) v [dotnet a standardní úložiště](https://github.com/dotnet/standard) definuje standardní API technologie .NET.
+Oficiální specifikace je sada .cs soubory, které definují rozhraní API, která jsou součástí standardní. [Ref directory](https://github.com/dotnet/standard/tree/master/netstandard/ref) v [úložišti dotnet/standard](https://github.com/dotnet/standard) definuje standardní rozhraní API .NET.
 
-[NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library) metapackage ([zdroj](https://github.com/dotnet/standard/blob/master/netstandard/pkg/NETStandard.Library.dependencies.props)) popisuje sadu knihoven, které definují (součást) jeden nebo více .NET Standard verze.
+[NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library) Microsoft.aspnetcore.all ([zdroj](https://github.com/dotnet/standard/blob/master/netstandard/pkg/NETStandard.Library.dependencies.props)) popisuje sadu knihoven, které definují (částečně) jednu nebo více verzí rozhraní .NET Standard.
 
-Dané součásti, jako je System.Runtime, popisuje:
+Objekt zadaný komponenty, jako jsou `System.Runtime`, popisuje:
 
-- Část Standard .NET (jenom jeho rozsah).
-- Několik verzí .NET Standard pro tento obor.
+- Součást .NET Standard (pouze jeho oboru).
+- Několik verzí .NET Standard, pro tento obor.
 
-Odvozené artefakty jsou k dispozici, povolte čtení pohodlnější a povolit určité scénáře developer (například pomocí kompilátor).
+Odvozená díla artefakty jsou k dispozici, povolte čtení pohodlnější a povolení určitých scénářích pro vývojáře (například pomocí kompilátoru).
 
 - [Rozhraní API seznamu v markdownu](https://github.com/dotnet/standard/tree/master/docs/versions)
-- Referenční sestavení, distribuovaných jako [balíčky NuGet](../core/packages.md) a odkazuje [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) metapackage.
+- Odkazovat na sestavení, distribuuje jako [balíčky NuGet](../core/packages.md) a odkazuje [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) Microsoft.aspnetcore.all.
 
 ### <a name="package-representation"></a>Reprezentace balíčku
 
-Vehicle primární distribuce pro .NET Standard referenční sestavení je [balíčky NuGet](../core/packages.md). Implementace budou doručeny různými způsoby, které jsou vhodné pro každý implementace rozhraní .NET.
+Primární distribuce prostředkem pro .NET Standard referenční sestavení je [balíčky NuGet](../core/packages.md). Implementace se doručují různými způsoby, které jsou vhodné pro každou implementaci rozhraní .NET.
 
-Balíčky NuGet cílí na jeden nebo více [rozhraní](frameworks.md). .NET Standard balíčky cílí na rozhraní ".NET Standard". Můžete se zaměřit na rozhraní .NET Framework standardní pomocí `netstandard` [compact TFM](frameworks.md) (například `netstandard1.4`). Cílem toto rozhraní by měl být knihovny, které jsou určeny ke spuštění na víc moduly runtime. 
+Balíčky NuGet cílit na jeden nebo více [architektury](frameworks.md). Balíčky .NET Standard cílit na rozhraní ".NET Standard". Můžete cílit na .NET Standard framework pomocí `netstandard` [compact TFM](frameworks.md) (například `netstandard1.4`). Cílem tohoto rozhraní by měl knihovny, které jsou určeny ke spuštění ve více modulů – runtime. Si nejširší škálu rozhraní API cílit `netstandard2.0` vzhledem k tomu, že počet dostupných rozhraní API více než dvojnásobný až .NET Standard 1.6 2.0.
 
-`NETStandard.Library` Metapackage odkazuje kompletní sadu balíčky NuGet, které definují .NET Standard.  Nejběžnější způsob, jak cíl `netstandard` je odkazující na tuto metapackage. Popisuje a poskytuje přístup k ~ 40 knihovny .NET a přidružených rozhraní API, které definují .NET Standard. Další balíčky můžete odkazovat cílených `netstandard` získat přístup k další rozhraní API. 
+[ `NETStandard.Library` ](https://www.nuget.org/packages/NETStandard.Library/) Microsoft.aspnetcore.all odkazuje na kompletní sadu balíčků NuGet, které definují .NET Standard.  Nejběžnější způsob, jak cílové `netstandard` je pomocí odkazu na toto Microsoft.aspnetcore.all. Popisuje a poskytuje přístup k přibližně 40 knihovny .NET a přidružených rozhraní API, které definují .NET Standard. Můžete využít další balíčky, které se zaměřují `netstandard` získat přístup k další rozhraní API.
 
 ### <a name="versioning"></a>Správa verzí
 
-Specifikace není jednotném čísle, ale postupně narůstají a lineárně verzí sadu rozhraní API. První verze součásti standardní vytváří základní sada rozhraní API. Další verze přidat rozhraní API a dědí definované v předchozích verzích rozhraní API. Neexistuje žádné zavedených zřizování pro odebrání ze standardní rozhraní API.
+Specifikace není jednotném čísle, ale postupně rozrůstá a lineárně označené verzí sady rozhraní API. První verze standard vytvoří sada standardních rozhraní API. Následné verze přidat rozhraní API a dědí definované v předchozích verzích rozhraní API. Neexistuje žádné zavedené zřizování pro odebrání standardní rozhraní API.
 
-.NET standard, která není specifická pro žádné jeden implementace rozhraní .NET, ani neshoduje verze schématu žádnou z těchto moduly runtime.
+.NET standard, která není specifická pro žádné jedné implementace rozhraní .NET, ani neodpovídá schématu vytváření verzí kterékoli z těchto modulů runtime.
 
-Přidání rozhraní API do jakéhokoli z implementace (například, rozhraní .NET Framework, .NET Core a Mono) lze považovat za kandidáty pro přidání do specifikace, především v případě, že jsou považované za základní ve své podstatě. Nové [verze rozhraní .NET standardní](https://github.com/dotnet/standard/blob/master/docs/versions.md) vytvářejí podle verze implementace rozhraní .NET, umožňuje cíle nových rozhraní API z standardní PCL rozhraní .NET. Správa verzí mechanismů jsou podrobněji popsané v v [verze rozhraní .NET Core](../core/versions/index.md).
+K některému z implementace (například rozhraní .NET Framework, .NET Core a Mono) přidali rozhraní API lze považovat za kandidáty pro přidání do specifikace, zejména v případě, že jsou považované za základní ze své podstaty. Nové [verzích .NET Standard](https://github.com/dotnet/standard/blob/master/docs/versions.md) jsou vytvořeny podle verze implementace .NET, můžete cílit na nová rozhraní API z .NET Standard PCL. Mechanismy správy verzí jsou popsány podrobněji [správy verzí rozhraní .NET Core](../core/versions/index.md).
 
-Správa verzí .NET standard je důležité pro použití. S ohledem na rozhraní .NET standardní verzi, můžete použít knihovny, které tuto verzi stejnou nebo nižší. Následující postup popisuje pracovní postup pro používání rozhraní .NET standardní PCLs specifické pro cílení na rozhraní .NET standardní.
+Je důležité pro použití .NET standard správy verzí. Zadaná .NET Standard verze, můžete použít knihovny cílené na tuto verzi stejné nebo nižší. Následující postup popisuje pracovní postup pro použití .NET Standard PCLs specifické pro cílení na .NET Standard.
 
-- Vyberte .NET Standard verze se má použít pro vaše PCL.
-- Použití knihovny, které jsou závislé na stejné verzi rozhraní .NET standardní nebo nižší.
-- Pokud najít knihovnu, která je závislá na vyšší verzi rozhraní .NET standardní, buď musíte použít stejnou verzi nebo rozhodnout, že použití této knihovny.
+- Vyberte verzi .NET Standard pro vaše PCL.
+- Použití knihovny, které jsou závislé na stejné verzi .NET Standard nebo nižší.
+- Pokud narazíte na knihovnu, která závisí na vyšší verzi rozhraní .NET Standard, buď musíte přijmout stejnou verzi nebo rozhodnot nepoužívat této knihovny.
 
-### <a name="pcl-compatibility"></a>PCL kompatibility
+## <a name="targeting-net-standard"></a>Cílení na .NET Standard
 
-.NET standard je kompatibilní s podmnožinu PCL profily. .NET standardní 1.0, 1.1 a 1.2 Každý překrývají s sada PCL profilů. Tato překrývají byl vytvořen dvou důvodů:
+Je možné [vytvářet knihovny .NET Standard](../core/tutorials/libraries.md) pomocí kombinace `netstandard` rozhraní framework a Microsoft.aspnetcore.all NETStandard.Library. Můžete zobrazit příklady [cílí na .NET Standard s nástroji .NET Core](../core/packages.md).
+
+## <a name="net-framework-compatibility-mode"></a>Režim kompatibility rozhraní .NET framework
+
+Počínaje rozhraním .NET Standard 2.0, byla zavedena režimu kompatibility rozhraní .NET Framework. Tento režim kompatibility umožňuje projekty .NET Standard teď k odkazování knihoven .NET Framework, jako kdyby byly zkompilovány pro .NET Standard. Odkazování na knihovny rozhraní .NET Framework nefunguje pro všechny projekty, jako jsou knihovny, které používají Windows Presentation Foundation (WPF) rozhraní API.
+
+Další informace najdete v tématu [režim kompatibility rozhraní .NET Framework](../core/porting/third-party-deps.md#net-framework-compatibility-mode).
+
+## <a name="net-standard-libraries-and-visual-studio"></a>Knihovny .NET standard a sady Visual Studio
+
+Aby bylo možné vytvářet knihovny .NET Standard v sadě Visual Studio, ujistěte se, že máte [Visual Studio 2017 verze 15.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) nebo novější verzi Windows, nebo [Visual Studio pro Mac verze 7.1](https://visualstudio.microsoft.com/vs/visual-studio-mac/) nebo novější verzi macOS.
+
+Pokud potřebujete pouze knihoven .NET Standard 2.0 ve svých projektech, můžete provést také, která v sadě Visual Studio 2015. Ale musíte NuGet nainstalovat klienta 3.6 nebo novější. Můžete stáhnout klienta NuGet pro Visual Studio 2015 z [stáhne NuGet](https://www.nuget.org/downloads) stránky.
+
+## <a name="comparison-to-portable-class-libraries"></a>Porovnání pro přenosné knihovny tříd
+
+.NET standard je náhradou [přenosné knihovny tříd (PCL)](./cross-platform/cross-platform-development-with-the-portable-class-library.md). .NET Standard zlepšuje prostředí tak, že správa standardní BCL a zřízení větší uniformita napříč implementace .NET v důsledku vytvoření přenosných knihoven. Knihovnu, která cílí na .NET Standard je PCL nebo ".NET Standard-based PCL". Existující PCLs jsou "na základě profilu PCLs".
+
+Profily .NET standard a PCL bylo vytvořeno za účelem podobné, ale klíčovými způsoby se také liší.
+
+Podobnosti:
+
+- Definice rozhraní API, která slouží ke sdílení binárního kódu.
+
+Rozdíly:
+
+- .NET standard je kurátorovanou sadu rozhraní API, zatímco PCL profily, které jsou definovány pomocí průniky existujícími platformami.
+- .NET standard lineárně verze, zatímco PCL profily tomu tak není.
+- Profily PCL představuje platformy Microsoft .NET Standard je nezávislý na platformě.
+
+### <a name="pcl-compatibility"></a>Kompatibilita PCL
+
+.NET standard je kompatibilní s použitím podmnožiny PCL profily. Rozhraní .NET standard 1.0, 1.1 a 1.2 Každý překrytí sadu PCL profily. Toto překrývání bylo vytvořeno za dva důvody:
 
 - Povolte .NET Standard na základě PCLs tak, aby odkazovaly na základě profilu PCLs.
-- Povolte na základě profilu PCLs k zabalené jako .NET Standard na základě PCLs.
+- Povolte na základě profilu PCLs chcete mít podobu balíčku .NET Standard na základě PCLs.
 
-Na základě profilu kompatibility PCL zajišťuje [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) balíček NuGet. Při odkazování na balíčky NuGet, které obsahují PCLs na základě profilu, je potřeba tuto závislost.
+Je poskytován na základě profilu PCL kompatibility [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) balíček NuGet. Při odkazování na balíčky NuGet, které obsahují PCLs na základě profilu je potřeba tuto závislost.
 
-Na základě profilu PCLs zabalené jako `netstandard` se snadněji využívat než obvykle zabalené PCLs na základě profilu. `netstandard` balení je kompatibilní s stávající uživatele.
+Na základě profilu PCLs lze zabalit jako `netstandard` usnadňuje využívání než obvykle zabalené PCLs na základě profilu. `netstandard` balení je kompatibilní se stávajícím uživatelům.
 
-Sady profilů PCL, které jsou kompatibilní s .NET Standard, můžete zjistit: 
+Můžete vidět sadu PCL profily, které jsou kompatibilní s .NET Standard:
 
-| PCL profilu | Standardní rozhraní .NET | PCL platformy
+| Profilem PCL | .NET standard | PCL platformy
 |:-----------:|:-------------:|------------------------------------------------------------------------------
 | Profile7    | 1.1           | Rozhraní .NET framework 4.5, Windows 8
 | Profile31   | 1.0           | Windows 8.1, Windows Phone Silverlight 8.1
@@ -140,10 +158,6 @@ Sady profilů PCL, které jsou kompatibilní s .NET Standard, můžete zjistit:
 | Profile157  | 1.0           | Windows 8.1, Windows Phone 8.1, Windows Phone Silverlight 8.1
 | Profile259  | 1.0           | Rozhraní .NET framework 4.5, Windows 8, Windows Phone 8.1, Windows Phone Silverlight 8
 
-
-## <a name="targeting-net-standard"></a>Cílení na rozhraní .NET Standard
-
-Můžete [sestavení standardní knihovny .NET](../core/tutorials/libraries.md) pomocí kombinace `netstandard` framework a NETStandard.Library metapackage. Zobrazí příklady [cílí na Standard .NET pomocí nástrojů .NET Core](../core/packages.md).
-
 ## <a name="see-also"></a>Viz také:
-[Standardní verze rozhraní .NET](https://github.com/dotnet/standard/blob/master/docs/versions.md)
+
+[Verze rozhraní .NET standard](https://github.com/dotnet/standard/blob/master/docs/versions.md)

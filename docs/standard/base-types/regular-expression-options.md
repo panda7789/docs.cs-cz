@@ -15,60 +15,60 @@ ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f3c229b0fc463863b7113c7ba73890b84e86553b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e8dc507cfdaad504fc9d4c83d28d24569dcef91c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 08/03/2018
 ms.locfileid: "33579649"
 ---
 # <a name="regular-expression-options"></a>Možnosti regulárních výrazů
-<a name="Top"></a> Ve výchozím nastavení při porovnání vstupní řetězec se znaky literálu v vzor regulárního výrazu je velká a malá písmena, prázdné znaky v vzor regulárního výrazu interpretována jako literál prázdné znaky a zaznamenávání skupiny v regulárním výrazu jsou pojmenované implicitně také jako explicitně. Tyto a několik dalších aspektů výchozího chování regulárních výrazů můžete upravit zadáním možnosti regulárních výrazů. Tyto možnosti, které jsou uvedené v následující tabulce, mohou být zahrnuty vložené jako součást regulární výraz nebo mohou být poskytnuty <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické vzor jako odpovídající metodu <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> hodnota výčtu.  
+<a name="Top"></a> Ve výchozím nastavení porovnání vstupního řetězce s jakýmikoli literálními znaky ve vzorku regulárního výrazu je velká a malá písmena, prázdný znak ve vzorku regulárního výrazu je interpretován jako literální prázdné znaky a zachytávajících skupinách v regulárním výrazu jsou pojmenovány implicitně a také explicitně. Můžete změnit tyto a několik jiných aspektů výchozího chování regulárních výrazů zadáním možností regulárních výrazů. Tyto možnosti, které jsou uvedeny v následující tabulce, mohou být zahrnuty vložené jako součást vzorku regulárního výrazu nebo mohou být poskytnuty <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické metodě porovnávání vzorků jako <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> hodnota výčtu.  
   
 |Člen RegexOptions|Vložený znak|Efekt|  
 |-------------------------|----------------------|------------|  
-|<xref:System.Text.RegularExpressions.RegexOptions.None>|Není k dispozici|Použijte výchozí chování. Další informace najdete v tématu [výchozí možnosti](#Default).|  
+|<xref:System.Text.RegularExpressions.RegexOptions.None>|Není k dispozici|Použije výchozí chování. Další informace najdete v tématu [výchozí možnosti](#Default).|  
 |<xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase>|`i`|Použije porovnávání, které nerozlišuje velká a malá písmena. Další informace najdete v tématu [porovnávání](#Case).|  
-|<xref:System.Text.RegularExpressions.RegexOptions.Multiline>|`m`|Použití víceřádkového režimu, kde `^` a `$` odpovídají začátku a konci řádku (namísto začátek a konec vstupní řetězec). Další informace najdete v tématu [víceřádkových režimu](#Multiline).|  
-|<xref:System.Text.RegularExpressions.RegexOptions.Singleline>|`s`|Použití režimu jeden řádek, kde tečka (.) odpovídá každý znak (místo každých znaku kromě `\n`). Další informace najdete v tématu [Jednořákový režim](#Singleline).|  
-|<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture>|`n`|Nezachytí nepojmenované skupiny. Jediné platné zachycení explicitně s názvem nebo číslované skupiny formuláře `(?<` *název* `>` *dílčím výrazu*`)`. Další informace najdete v tématu [pouze explicitní zachycení](#Explicit).|  
-|<xref:System.Text.RegularExpressions.RegexOptions.Compiled>|Není k dispozici|Zkompilujte regulární výraz k sestavení. Další informace najdete v tématu [kompilované regulární výrazy](#Compiled).|  
-|<xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace>|`x`|Vyloučit z vzoru prázdný znak a povolte komentáře po znaku (`#`). Další informace najdete v tématu [ignorovat mezer](#Whitespace).|  
-|<xref:System.Text.RegularExpressions.RegexOptions.RightToLeft>|Není k dispozici|Změňte směr vyhledávání. Hledání přesune zprava doleva místo zleva doprava. Další informace najdete v tématu [režim zprava doleva](#RightToLeft).|  
-|<xref:System.Text.RegularExpressions.RegexOptions.ECMAScript>|Není k dispozici|Povolte chování ECMAScript výrazu. Další informace najdete v tématu [ECMAScript chování porovnávání](#ECMAScript).|  
-|<xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant>|Není k dispozici|Ignorujte rozdíly v jazyce. Další informace najdete v tématu [porovnání s použitím neutrální jazykovou verzi](#Invariant).|  
+|<xref:System.Text.RegularExpressions.RegexOptions.Multiline>|`m`|Použije víceřádkový režim, ve kterém `^` a `$` odpovídají začátku a konci každého řádku (místo začátku a konci vstupního řetězce). Další informace najdete v tématu [víceřádkový režim](#Multiline).|  
+|<xref:System.Text.RegularExpressions.RegexOptions.Singleline>|`s`|Použití jednořádkový mód, kde tečka (.) odpovídá každému znaku (namísto každého znaku s výjimkou `\n`). Další informace najdete v tématu [jednořádkový režim](#Singleline).|  
+|<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture>|`n`|Nezachytí nepojmenované skupiny. Pouze platná zachycení jsou explicitně pojmenované nebo číslované skupiny formuláře `(?<` *název* `>` *dílčí výraz*`)`. Další informace najdete v tématu [pouze explicitní zachycení](#Explicit).|  
+|<xref:System.Text.RegularExpressions.RegexOptions.Compiled>|Není k dispozici|Kompilaci regulárních výrazů do sestavení. Další informace najdete v tématu [zkompilované regulární výrazy](#Compiled).|  
+|<xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace>|`x`|Prázdné znaky bez řídících vyloučit ze vzorku a povolí komentáře po číselném znaku (`#`). Další informace najdete v tématu [Ignorovat prázdné znaky](#Whitespace).|  
+|<xref:System.Text.RegularExpressions.RegexOptions.RightToLeft>|Není k dispozici|Změňte směr hledání. Vyhledávání se přesunuje zprava doleva namísto zleva doprava. Další informace najdete v tématu [režim zprava doleva](#RightToLeft).|  
+|<xref:System.Text.RegularExpressions.RegexOptions.ECMAScript>|Není k dispozici|Povolte chování standardu ECMAScript pro výraz. Další informace najdete v tématu [chování porovnávání ECMAScript](#ECMAScript).|  
+|<xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant>|Není k dispozici|Ignoruje kulturní rozdíly v jazyce. Další informace najdete v tématu [porovnávání pomocí neutrální jazykové verze](#Invariant).|  
   
-## <a name="specifying-the-options"></a>Zadání možností  
- Možnosti regulárních výrazů můžete zadat v jednom ze tří způsobů:  
+## <a name="specifying-the-options"></a>Určení možností  
+ Můžete určit možnosti pro regulární výrazy jedním ze tří způsobů:  
   
--   V `options` parametr <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické (`Shared` v jazyce Visual Basic) porovnávání metoda, jako například <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType>. `options` Parametr je bitovou kombinaci nebo <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> uvedené hodnoty.  
+-   V `options` parametr <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické (`Shared` v jazyce Visual Basic) metodu porovnávání vzorů, jako například <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType>. `options` Parametr je bitová kombinace OR <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> hodnot výčtu.  
   
-     Když jsou možnosti zadaný do <xref:System.Text.RegularExpressions.Regex> instance pomocí `options` parametr konstruktoru třídy, možnosti jsou přiřazené k <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> vlastnost. Ale <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> vlastnost nezohledňuje vložených možností v samotné vzor regulárního výrazu.  
+     Pokud se poskytne možnosti <xref:System.Text.RegularExpressions.Regex> instance pomocí `options` parametr konstruktoru třídy možnosti jsou jsou přiřazeny k <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> vlastnost. Ale <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> vlastnost neodráží vložené možnosti ve vzorku regulárního výrazu, samotného.  
   
-     V následujícím příkladu je uvedena ukázka. Použije `options` parametr <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> metoda pro povolení porovnávání a ignorování prázdných znaků při identifikaci slova začínající písmenem "d".  
+     V následujícím příkladu je uvedena ukázka. Používá `options` parametr <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> metodu pro povolení porovnávání velkých a malých písmen a ignorování vzorků prázdných znaků při identifikaci slov začínajících na písmeno "d".  
   
      [!code-csharp[Conceptual.Regex.Language.Options#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#6)]
      [!code-vb[Conceptual.Regex.Language.Options#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#6)]  
   
--   Použitím vložených možností v vzor regulárního výrazu se syntaxí `(?imnsx-imnsx)`. Možnost se vztahuje na vzoru z bodu, zda je možnost definováno buď na konec vzoru nebo do bodu, kdy je možnost zrušena pomocí jiné vložené možnosti. Všimněte si, že <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> vlastnost <xref:System.Text.RegularExpressions.Regex> instance nebere v úvahu tyto možnosti vložené. Další informace najdete v tématu [různé vytvoří](../../../docs/standard/base-types/miscellaneous-constructs-in-regular-expressions.md) tématu.  
+-   Použitím vložené možnosti ve vzorku regulárního výrazu se syntaxí `(?imnsx-imnsx)`. Možnost se vztahuje na vzorek od bodu, kdy je možnost definována do konce vzoru nebo do bodu, ve kterém je možnost zrušena definicí jiné vložené možnosti. Všimněte si, že <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> vlastnost <xref:System.Text.RegularExpressions.Regex> instance nebere v úvahu tyto vložené možnosti. Další informace najdete v tématu [různé vytvoří](../../../docs/standard/base-types/miscellaneous-constructs-in-regular-expressions.md) tématu.  
   
-     V následujícím příkladu je uvedena ukázka. Používá vložené možnosti pro povolení porovnávání a ignorování prázdných znaků při identifikaci slova začínající písmenem "d".  
+     V následujícím příkladu je uvedena ukázka. Použije vložené možnosti pro povolení porovnávání velkých a malých písmen a ignorování vzorků prázdných znaků při identifikaci slov začínajících na písmeno "d".  
   
      [!code-csharp[Conceptual.Regex.Language.Options#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#7)]
      [!code-vb[Conceptual.Regex.Language.Options#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#7)]  
   
--   Použitím vložených možností v konkrétní skupině vytvořit v vzor regulárního výrazu se syntaxí `(?imnsx-imnsx:` *dílčím výrazu*`)`. Žádné přihlášení, než sada možností zapne sadu; znaménkem minus před sadu možností sadu vypne. (`?` je pevnou součástí syntaxe jazyka konstrukce, která je požadována, jestli jsou možnosti povolená nebo zakázaná.) Možnost se vztahuje pouze na tuto skupinu. Další informace najdete v tématu [seskupení vytvoří](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+-   Použitím vložených možností v konkrétní skupině konstrukci ve vzorku regulárního výrazu se syntaxí `(?imnsx-imnsx:` *dílčí výraz*`)`. Žádné znaménko před sadou možností zapne sadu; znaménko minus před sadou možností sadu vypne. (`?` je pevnou součástí syntaxe konstrukce jazyka, která je požadována, zda jsou možnosti povoleny nebo zakázány.) Možnost se vztahuje pouze na tuto skupinu. Další informace najdete v tématu [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
-     V následujícím příkladu je uvedena ukázka. Pro povolení porovnávání a ignorování prázdných znaků při identifikaci slova začínající písmenem "d" použije v seskupovací konstrukce vložených možností.  
+     V následujícím příkladu je uvedena ukázka. Používá vložené možnosti v konstrukci seskupení pro povolení porovnávání velkých a malých písmen a ignorování vzorků prázdných znaků při identifikaci slov začínajících na písmeno "d".  
   
      [!code-csharp[Conceptual.Regex.Language.Options#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#8)]
      [!code-vb[Conceptual.Regex.Language.Options#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#8)]  
   
- Pokud jsou možnosti zadaný vložené znaménkem minus (`-`) před možností nebo sadou možností vypne tyto možnosti. Můžete například vytvořit vložený `(?ix-ms)` Zapne <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> a vypne možnosti <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> možnosti. Ve výchozím nastavení jsou vypnuté všechny možnosti regulárních výrazů.  
+ Pokud jsou možnosti zadány jako vložené, mínus (`-`) před možností nebo sadou možností vypne tyto možnosti. Například vložená konstrukce `(?ix-ms)` Zapne <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> a vypne možnosti <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> možnosti. Všechny možnosti regulárních výrazů jsou ve výchozím nastavení vypnuta.  
   
 > [!NOTE]
->  Pokud zadané možnosti regulárních výrazů v `options` zadán parametr konstruktoru nebo metoda konfliktu volání s možností vložené v vzor regulárního výrazu, jsou použity vložené možnosti.  
+>  Pokud možnosti regulárních výrazů zadané v `options` vložené zadán parametr konstruktoru nebo metody volání konfliktu s možnostmi ve vzorku regulárního výrazu, jsou použity vložené možnosti.  
   
- Následujících pět možnosti regulárních výrazů můžete nastavit, jak se parametr možností a vložené:  
+ Následujících pět možností regulárních výrazů lze nastavit, jak s parametrem možnosti a vložené:  
   
 -   <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>  
   
@@ -80,7 +80,7 @@ ms.locfileid: "33579649"
   
 -   <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType>  
   
- Následujících pět možnosti regulárních výrazů se dá nastavit pomocí `options` parametru ale nejde nastavit vložený:  
+ Následujících pět možností regulárních výrazů lze nastavit pomocí `options` parametr, ale nelze je nastavit pomocí vložených:  
   
 -   <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType>  
   
@@ -92,58 +92,58 @@ ms.locfileid: "33579649"
   
 -   <xref:System.Text.RegularExpressions.RegexOptions.ECMAScript?displayProperty=nameWithType>  
   
-## <a name="determining-the-options"></a>Určení možnosti  
- Můžete určit, které možnosti byly poskytnuty <xref:System.Text.RegularExpressions.Regex> objektu, když byla vytvořena instance načtením hodnotu jen pro čtení <xref:System.Text.RegularExpressions.Regex.Options%2A?displayProperty=nameWithType> vlastnost. Tato vlastnost je obzvláště užitečné pro určení možnosti, které jsou definovány pro kompilované regulární výraz vytvořené <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> metoda.  
+## <a name="determining-the-options"></a>Určení možností  
+ Můžete určit, které možnosti byly poskytnuty <xref:System.Text.RegularExpressions.Regex> objektu, když byla vytvořena jeho instance načtením hodnoty jen pro čtení <xref:System.Text.RegularExpressions.Regex.Options%2A?displayProperty=nameWithType> vlastnost. Tato vlastnost je zvláště užitečná pro určení možností, které jsou definovány pro kompilované regulární výrazy vytvořené metodou <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> metody.  
   
- K testování přítomnost jakákoliv možnost, s výjimkou <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType>, provedení určité operace, a s hodnotou <xref:System.Text.RegularExpressions.Regex.Options%2A?displayProperty=nameWithType> vlastnost a <xref:System.Text.RegularExpressions.RegexOptions> hodnotu, která vás zajímá. Pak test, zda se výsledek rovná <xref:System.Text.RegularExpressions.RegexOptions> hodnotu. Následující příklad testy jestli <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> byla nastavena možnost.  
+ Chcete-li testovat přítomnost jakýchkoli možností kromě <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType>, proveďte operaci AND s hodnotou <xref:System.Text.RegularExpressions.Regex.Options%2A?displayProperty=nameWithType> vlastnost a <xref:System.Text.RegularExpressions.RegexOptions> hodnotu, která vás zajímá. Poté otestujte, zda se výsledek rovná <xref:System.Text.RegularExpressions.RegexOptions> hodnotu. Následující příklad testuje, jestli <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> byla nastavena možnost.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#19](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/determine1.cs#19)]
  [!code-vb[Conceptual.Regex.Language.Options#19](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/determine1.vb#19)]  
   
- K testování pro <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType>, určit, zda hodnota <xref:System.Text.RegularExpressions.Regex.Options%2A?displayProperty=nameWithType> vlastnost rovná <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType>, jak ukazuje následující příklad.  
+ Pro testování <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType>, určit, zda hodnota <xref:System.Text.RegularExpressions.Regex.Options%2A?displayProperty=nameWithType> vlastnost je rovna <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType>, jak ukazuje následující příklad.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/determine1.cs#20)]
  [!code-vb[Conceptual.Regex.Language.Options#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/determine1.vb#20)]  
   
- Následující části uvádějí možnosti podporované regulárnímu výrazu v rozhraní .NET.  
+ V následujících částech jsou uvedeny možnosti podporované regulárními výrazy v rozhraní .NET.  
   
 <a name="Default"></a>   
 ## <a name="default-options"></a>Výchozí možnosti  
- <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType> Možnost označuje, že nebyly zadány žádné možnosti a modul regulární výraz používá jeho výchozí chování. To zahrnuje následující:  
+ <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType> Možnost označuje, že nebyly zadány žádné možnosti a modul regulárních výrazů používá jeho výchozí chování. Ta zahrnují následující:  
   
--   Vzor interpretována jako kanonický spíše než regulární výraz ECMAScript.  
+-   Vzorek je interpretován jako kanonický spíše než regulární výraz ECMAScript.  
   
--   Regulární výraz je nalezena shoda s ve vstupním řetězci zleva doprava.  
+-   Vzor regulárního výrazu je porovnán vstupním řetězcem zleva doprava.  
   
--   Porovnávání rozlišuje velká a malá písmena.  
+-   Porovnávání rozlišuje malá a velká písmena.  
   
--   `^` a `$` odpovídat prvků jazyka začátek a konec vstupní řetězec.  
+-   `^` a `$` prvky jazyka odpovídají začátku a konci vstupního řetězce.  
   
--   `.` Jazyk element odpovídá každých znaku kromě `\n`.  
+-   `.` Prvek jazyka odpovídá každému znaku s výjimkou `\n`.  
   
--   Všechny prázdné znaky v vzor regulárního výrazu interpretována jako literál mezerou.  
+-   Jakýkoli prázdný znak ve vzorku regulárního výrazu je interpretován jako literální znak mezery.  
   
--   Porovnávání vzoru vstupní řetězec se používají konvence aktuální jazykové verze.  
+-   Konvence aktuální jazykové verze se používají při porovnávání vzoru se vstupním řetězcem.  
   
--   Implicitní, jakož i explicitní jsou zaznamenávání skupiny regulární výraz.  
+-   Zachycující skupiny ve vzorku regulárních výrazů jsou implicitní i explicitní.  
   
 > [!NOTE]
->  <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType> Možnost nemá žádný vložený ekvivalent. Po přiřazený možnosti regulárních výrazů se výchozí chování je obnovena na základě možnost možnost vypnutím určité možnosti. Například `(?i)` zapne porovnávání, a `(?-i)` obnoví výchozí porovnávání malá a velká písmena.  
+>  <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType> Možnost nemá žádný vložený ekvivalent. Když jsou možnosti regulárních výrazů uplatňovány jako vložené, je obnoveno výchozí chování na základě možnost po možnosti vypnutím určité možnosti. Například `(?i)` zapne porovnávání, a `(?-i)` obnoví výchozí porovnávání s malá a velká písmena.  
   
- Protože <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType> možnost představuje výchozí chování modul regulárních výrazů, jsou zřídka explicitně zadány při volání metody. Konstruktor nebo statickou metodu porovnávání bez `options` parametr se nazývá místo.  
+ Vzhledem k tomu, <xref:System.Text.RegularExpressions.RegexOptions.None?displayProperty=nameWithType> možnost představuje výchozí chování modulu regulárních výrazů, to je zřídka explicitně zadána ve volání metody. Konstruktor nebo statické metody porovnávání vzorků bez `options` parametr se nazývá místo.  
   
  [Zpět na začátek](#Top)  
   
 <a name="Case"></a>   
 ## <a name="case-insensitive-matching"></a>Porovnávání  
- <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase> Možnost, nebo `i` poskytuje možnost inline porovnávání. Ve výchozím nastavení se používají konvence velká a malá písmena aktuální jazykové verze.  
+ <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase> Možnost, nebo `i` vloženou možnost poskytuje porovnávání. Ve výchozím nastavení se používají konvence velká a malá písmena aktuální jazykové verze.  
   
- V následujícím příkladu definuje vzor regulárního výrazu `\bthe\w*\b`, který odpovídá všechna slova začínající na "na". Vzhledem k tomu, že první volání <xref:System.Text.RegularExpressions.Regex.Match%2A> metoda používá výchozí porovnání malá a velká písmena, výstup znamená, že řetězec "Na", který začíná věta se neshoduje. Je nalezena shoda při <xref:System.Text.RegularExpressions.Regex.Match%2A> metoda je volána s možnostmi nastavenými na <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase>.  
+ Následující příklad definuje vzorek regulárního výrazu `\bthe\w*\b`, který odpovídá všem slovům začínajícím na "the". Protože první volání <xref:System.Text.RegularExpressions.Regex.Match%2A> metoda používá výchozí porovnání velká a malá písmena, výstup označuje, že řetězec "The", který začíná věta, se neshoduje. Je nalezena shoda při <xref:System.Text.RegularExpressions.Regex.Match%2A> metoda je volána s možnostmi nastavenými na <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase>.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/case1.cs#1)]
  [!code-vb[Conceptual.Regex.Language.Options#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/case1.vb#1)]  
   
- Následující příklad změní vzor regulárního výrazu z předchozího příkladu použití možností vložené místo `options` parametr pro poskytnutí porovnávání. První vzorek definuje volbou rozlišování velikosti písmen v seskupovací konstrukce, která se vztahuje pouze na písmeno "t" v řetězci "na". Protože konstrukce možnosti vyskytuje na začátku vzor, druhý vzorek použije volbou rozlišování velikosti písmen na celý regulární výraz.  
+ Následující příklad upravuje vzorek regulárního výrazu z předchozího příkladu pro použití vložených možností místo `options` parametr pro poskytnutí porovnávání. První vzorek definuje volbou rozlišování velikosti písmen v seskupující konstrukci, která se týká pouze písmene "t" v řetězci "the". Protože se konstrukce možnosti vyskytuje na začátku vzor, druhý vzorek použije možnost velkých a malých písmen na celý regulární výraz.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/case2.cs#2)]
  [!code-vb[Conceptual.Regex.Language.Options#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/case2.vb#2)]  
@@ -151,17 +151,17 @@ ms.locfileid: "33579649"
  [Zpět na začátek](#Top)  
   
 <a name="Multiline"></a>   
-## <a name="multiline-mode"></a>Víceřádkového režimu  
- <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> Možnost, nebo `m` možnost inline umožňuje modulu regulární výraz zpracovat vstupní řetězec, který se skládá z více řádků. Změní výklad `^` a `$` jazykové elementy tak, aby odpovídaly začátku a konci řádku, místo začátek a konec vstupní řetězec.  
+## <a name="multiline-mode"></a>Víceřádkový režim  
+ <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> Možnost, nebo `m` vloženou možnost umožňuje modulu regulárních výrazů zpracovat vstupní řetězec, který se skládá z více řádků. Změní výklad `^` a `$` prvky jazyka, aby odpovídaly začátku a konci řádku namísto začátku a konci vstupního řetězce.  
   
- Ve výchozím nastavení `$` odpovídá pouze konci vstupní řetězec. Pokud zadáte <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> možnost, odpovídá buď znaku (`\n`) nebo na konci vstupní řetězec. Ale neodpovídá kombinaci znaků vrátit znaků CR/nového řádku. Chcete-li úspěšně porovnávat, použijte dílčí výraz `\r?$` místo právě `$`.  
+ Ve výchozím nastavení `$` odpovídá pouze konci vstupního řetězce. Pokud zadáte <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> možnost, odpovídá buď znaku (`\n`) nebo na konci vstupního řetězce. Avšak neodpovídá kombinaci znaků návrat vozíku/nového řádku. Chcete-li úspěšně porovnávat, použijte dílčí výraz `\r?$` namísto pouze `$`.  
   
- Následující příklad extrahuje jména a skóre nadhazovačů a přidá je do <xref:System.Collections.Generic.SortedList%602> kolekce, která je seřadí v sestupném pořadí. <xref:System.Text.RegularExpressions.Regex.Matches%2A> Metoda je volána dvakrát. Při prvním volání metoda regulární výraz je `^(\w+)\s(\d+)$` a nejsou nastaveny žádné možnosti. Jak ukazuje výstup, protože modul regulárních výrazů se nemůže shodovat vstupní vzor společně s začátek a konec vstupní řetězec, nebyly nalezeny žádné odpovídající položky. V druhé volání metody s regulárním výrazem se změní na `^(\w+)\s(\d+)\r?$` a možnosti jsou nastaveny na <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType>. Jak ukazuje výstup, názvy a skóre jsou úspěšně porovnány a skóre jsou zobrazeny v sestupném pořadí.  
+ Následující příklad extrahuje jména a skóre nadhazovačů a přidá je do <xref:System.Collections.Generic.SortedList%602> kolekce, která je seřadí v sestupném pořadí. <xref:System.Text.RegularExpressions.Regex.Matches%2A> Metoda je volána dvakrát. Při prvním volání metody regulární výraz je `^(\w+)\s(\d+)$` a nejsou nastaveny žádné možnosti. Jak ukazuje výstup, protože modul regulárních výrazů nemůže porovnat vstupní vzorek se začátkem a koncem vstupního řetězce, nejsou nalezeny žádné shody. Ve druhém volání metody regulárních výrazů se změní na `^(\w+)\s(\d+)\r?$` a možnosti jsou nastaveny na <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType>. Jak ukazuje výstup, jména a skóre jsou úspěšně porovnány a skóre jsou zobrazena v sestupném pořadí.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/multiline1.cs#3)]
  [!code-vb[Conceptual.Regex.Language.Options#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/multiline1.vb#3)]  
   
- Regulární výraz `^(\w+)\s(\d+)\r*$` je definovaný jak je znázorněno v následující tabulce.  
+ Vzor regulárního výrazu `^(\w+)\s(\d+)\r*$` je definován, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
@@ -169,10 +169,10 @@ ms.locfileid: "33579649"
 |`(\w+)`|Porovná jeden nebo více znaků slova. Toto je první zachytávající skupina.|  
 |`\s`|Porovná prázdný znak.|  
 |`(\d+)`|Porovná jednu nebo více desítkových číslic. Toto je druhá zachytávající skupina.|  
-|`\r?`|Odpovídat návratový znak žádnou nebo jednu.|  
-|`$`|Ukončení na konci řádku.|  
+|`\r?`|Porovná žádný nebo jeden návratový znak návrat na začátek řádku.|  
+|`$`|Skončí na konci řádku.|  
   
- Následující příklad je ekvivalentní k té předchozí, s tím rozdílem, že používá možnost inline `(?m)` nastavit možnost víceřádkový.  
+ Následující příklad je ekvivalentní předchozímu, s tím rozdílem, že používá vloženou možnost `(?m)` nastavení víceřádkové možnosti.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/multiline2.cs#4)]
  [!code-vb[Conceptual.Regex.Language.Options#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/multiline2.vb#4)]  
@@ -180,15 +180,15 @@ ms.locfileid: "33579649"
  [Zpět na začátek](#Top)  
   
 <a name="Singleline"></a>   
-## <a name="single-line-mode"></a>Jeden řádek režimu  
- <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> Možnost, nebo `s` možnost inline způsobí, že modul regulární výraz zachází vstupní řetězec, jako kdyby se skládá z jednoho řádku. Dělá to tak, že změníte chování období (`.`) jazyk elementu, které odpovídá každý znak, místo odpovídající každý znak s výjimkou znak nového řádku `\n` nebo \u000A.  
+## <a name="single-line-mode"></a>Jednořádkový režim  
+ <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> Možnost, nebo `s` vloženou možnost způsobí, že modul regulárních výrazů zachází se vstupním řetězcem, jako by se skládal z jednoho řádku. Dělá to tak, že změníte chování období (`.`) elementu jazyka tak, že odpovídá každému znaku, namísto všech znaků s výjimkou znaku nového řádku `\n` nebo \u000A.  
   
- Následující příklad ukazuje, jak chování `.` jazyk element změny při použití <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> možnost. Regulární výraz `^.+` spustí na začátku řetězce a odpovídá každý znak. Ve výchozím nastavení shody končí na konci prvního řádku. regulární výraz odpovídá znakem konce řádku, `\r` nebo \u000D, ale neodpovídá `\n`. Protože <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> možnost interpretuje celý vstupní řetězec jako jeden řádek, porovnává každý znak ve vstupním řetězci, včetně `\n`.  
+ Následující příklad ukazuje, jak chování `.` prvek jazyka změní při použití <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> možnost. Regulární výraz `^.+` začne na začátku řetězce a porovnává každý znak. Standardně je porovnávání ukončeno na konci prvního řádku. vzorek regulárního výrazu porovnává návratový znak, `\r` nebo \u000D, ale neodpovídá `\n`. Vzhledem k tomu, <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> možnost interpretuje celý vstupní řetězec jako jediný řádek, porovnává každý znak ve vstupním řetězci, včetně `\n`.  
   
  [!code-csharp[Conceptual.Regex.Language.CharacterClasses#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/any2.cs#5)]
  [!code-vb[Conceptual.Regex.Language.CharacterClasses#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/any2.vb#5)]  
   
- Následující příklad je ekvivalentní k té předchozí, s tím rozdílem, že používá možnost inline `(?s)` chcete povolit režim jeden řádek.  
+ Následující příklad je ekvivalentní předchozímu, s tím rozdílem, že používá vloženou možnost `(?s)` umožňující jednořádkový režim.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/singleline1.cs#5)]
  [!code-vb[Conceptual.Regex.Language.Options#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/singleline1.vb#5)]  
@@ -196,41 +196,41 @@ ms.locfileid: "33579649"
  [Zpět na začátek](#Top)  
   
 <a name="Explicit"></a>   
-## <a name="explicit-captures-only"></a>Explicitní zaznamená  
- Ve výchozím nastavení zaznamenávání skupiny jsou definované závorky v regulární výraz. S názvem skupiny přiřazené názvu nebo čísla podle `(?<` *název*`>`*dílčím výrazu* `)` možnosti jazyka nepojmenované skupiny jsou přístupné pro index. V <xref:System.Text.RegularExpressions.GroupCollection> objektu nepojmenované skupiny předcházejí s názvem skupiny.  
+## <a name="explicit-captures-only"></a>Pouze explicitní zachycení  
+ Ve výchozím nastavení jsou zachycující skupiny definovány pomocí závorek ve vzorku regulárního výrazu. Pojmenovaným skupinám jsou přiřazovány názvy nebo čísla podle `(?<` *název*`>`*dílčí výraz* `)` možnosti jazyka nepojmenované skupiny jsou přístupné pomocí indexů. V <xref:System.Text.RegularExpressions.GroupCollection> objektu nepojmenované skupiny předcházejí pojmenované skupiny.  
   
- Seskupovací konstrukce se často používají jenom pro použití kvantifikátory víc elementů jazyka a zachycené podřetězce nejsou nejsou důležité. Například pokud následujícímu regulárnímu výrazu:  
+ Seskupovací konstrukce jsou často používány pouze k aplikaci kvantifikátorů pro násobení prvků jazyka a zachycené podřetězce nejsou podstatné. Například pokud následující regulární výraz:  
   
 ```  
 \b\(?((\w+),?\s?)+[\.!?]\)?  
 ```  
   
- je určen pouze k extrahování věty obsahující končit tečkou, vykřičník nebo otazník z dokumentu, pouze výsledná věta (která je reprezentována <xref:System.Text.RegularExpressions.Match> objektu) je určen. Jednotlivých slov v kolekci nejsou.  
+ je určen pouze k extrahování vět, které končí tečkou, vykřičníkem nebo otazníkem z dokumentu. pouze výsledná věta (která je reprezentována <xref:System.Text.RegularExpressions.Match> objekt) je relevantní. Jednotlivá slova v kolekci nejsou.  
   
- Zaznamenání skupiny, které nepoužívají následně může být náročné, protože modul regulárních výrazů musí naplnit obě <xref:System.Text.RegularExpressions.GroupCollection> a <xref:System.Text.RegularExpressions.CaptureCollection> objekty kolekce. Jako alternativu, můžete použít buď <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> možnost nebo `n` vložené možnost určit, že jsou jediné platné zachycení explicitně s názvem nebo číslované skupiny, které jsou určené, které `(?<` *název* `>` *dílčím výrazu* `)` vytvořit.  
+ Zachycující skupiny, které se nepoužívají následně může být nákladné, protože modul regulárních výrazů musí naplnit obě <xref:System.Text.RegularExpressions.GroupCollection> a <xref:System.Text.RegularExpressions.CaptureCollection> objekty kolekce. Jako alternativu můžete použít buď <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> možnost nebo `n` vloženou možnost určit, že budou pouze platná zachycení jsou explicitně s názvem nebo číslované skupiny, které jsou určené `(?<` *název* `>` *dílčí výraz* `)` vytvořit.  
   
- Tento příklad zobrazuje informace o shodách vrácené `\b\(?((\w+),?\s?)+[\.!?]\)?` vzor regulárního výrazu, kdy <xref:System.Text.RegularExpressions.Regex.Match%2A> metoda je volána s i bez <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> možnost. Jako výstup z první metodu ukazuje volání, modul regulárních výrazů plně naplní <xref:System.Text.RegularExpressions.GroupCollection> a <xref:System.Text.RegularExpressions.CaptureCollection> kolekce objektů s informacemi o zaznamenané dílčích řetězců. Protože druhý metoda je volána s `options` nastavena na <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType>, nezachycuje informace o skupinách.  
+ Následující příklad zobrazí informace o shodách vrácené `\b\(?((\w+),?\s?)+[\.!?]\)?` vzorku regulárního výrazu, kdy <xref:System.Text.RegularExpressions.Regex.Match%2A> metoda je volána a nemusíte <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> možnost. Jak výstup z první metoda ukazuje volání, modul regulárních výrazů plně naplní <xref:System.Text.RegularExpressions.GroupCollection> a <xref:System.Text.RegularExpressions.CaptureCollection> kolekce objektů s informacemi o zachycených podřetězcích. Protože je druhá metoda volána s `options` nastavena na <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType>, nezachycuje informace o skupinách.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/explicit1.cs#9)]
  [!code-vb[Conceptual.Regex.Language.Options#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/explicit1.vb#9)]  
   
- Regulární výraz`\b\(?((?>\w+),?\s?)+[\.!?]\)?` je definovaný jak je znázorněno v následující tabulce.  
+ Vzor regulárního výrazu`\b\(?((?>\w+),?\s?)+[\.!?]\)?` je definován, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`\b`|Začněte na hranici slova.|  
-|`\(?`|Porovná žádnou nebo jednu výskytů levé závorky ("(").|  
-|`(?>\w+),?`|Porovná jeden nebo více znaků slova následuje žádnou nebo jednu čárkami. Nevrací se při kontrole shody znaků slova.|  
+|`\(?`|Porovná žádný nebo jeden výskytů levou závorku ("(").|  
+|`(?>\w+),?`|Porovná jeden nebo více znaků slova, následované žádnou nebo jednou tečkou. Nevracejte se při porovnávání znaků slova.|  
 |`\s?`|Porovná žádný nebo jeden prázdný znak.|  
-|`((\w+),?\s?)+`|Shodovat s kombinací jeden nebo více znaků slova, žádnou nebo jednu čárkami a nula nebo jeden prázdným znakem jeden či více krát.|  
-|`[\.!?]\)?`|Odpovídat žádné z tří interpunkčních znamének, za nímž následuje žádnou nebo jednu uzavírací závorky (")").|  
+|`((\w+),?\s?)+`|Porovná kombinaci jednoho nebo více znaků slova, žádné nebo jedné čárky a nula nebo jedním prázdným znakem jednou nebo vícekrát.|  
+|`[\.!?]\)?`|Shodují s některým z tří interpunkčních znamének, následované žádnou nebo jednou pravou závorkou (")").|  
   
- Můžete také `(?n)` vloženého elementu pro potlačení automatických zachycení. Následující příklad změní použitím předchozího vzoru názvů regulární výraz k použití `(?n)` vloženého elementu místo <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> možnost.  
+ Můžete také použít `(?n)` vloženého elementu k potlačení automatického zachycení. Následující příklad upravuje předchozí vzorek regulárního výrazu pro použití `(?n)` vloženého elementu namísto <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> možnost.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/explicit2.cs#10)]
  [!code-vb[Conceptual.Regex.Language.Options#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/explicit2.vb#10)]  
   
- Nakonec můžete použít skupiny vloženého elementu `(?n:)` pro potlačení automatických zachycení na základě podle skupiny. Následující příklad změní použitím předchozího vzoru názvů pro potlačení nepojmenované zachycení ve vnější skupiny `((?>\w+),?\s?)`. Všimněte si, že to potlačí nepojmenované zaznamená v informacích o vnitřní skupiny.  
+ Nakonec můžete použít vložený prvek skupiny `(?n:)` k potlačení automatického zachycení na základě skupin podle skupiny. Následující příklad upravuje předchozí vzorek potlačí nepojmenované zachycení ve skupině vnější `((?>\w+),?\s?)`. Všimněte si, že toto potlačí nepojmenované zachycení také ve vnitřních skupinách.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/explicit3.cs#11)]
  [!code-vb[Conceptual.Regex.Language.Options#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/explicit3.vb#11)]  
@@ -239,62 +239,62 @@ ms.locfileid: "33579649"
   
 <a name="Compiled"></a>   
 ## <a name="compiled-regular-expressions"></a>Kompilované regulární výrazy  
- Ve výchozím nastavení se interpretují regulární výrazy v rozhraní .NET. Když <xref:System.Text.RegularExpressions.Regex> je objekt vytvořenou instanci nebo statické <xref:System.Text.RegularExpressions.Regex> metoda je volána, regulární výraz je analyzován do sady vlastních operačních kódů a překladač používá tyto operační kódy ke spuštění regulárního výrazu. To vyžaduje kompromis: náklady inicializace modulu regulární výraz je minimalizován za cenu výkon.  
+ Ve výchozím nastavení jsou interpretovány regulární výrazy v rozhraní .NET. Když <xref:System.Text.RegularExpressions.Regex> objekt je instance nebo statické <xref:System.Text.RegularExpressions.Regex> metoda je volána, vzorek regulárního výrazu je analyzován do sady vlastních operačních kódů a překladač používá tyto operační kódy ke spuštění regulárního výrazu. To zahrnuje kompromis: náklady na inicializaci modulu regulárních výrazů je minimalizován za cenu výkonu za běhu.  
   
- Můžete použít zkompilován místo interpretovaný regulární výrazy s použitím <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> možnost. V takovém případě když vzor předána modul regulárních výrazů, ho je analyzován do sady operačních kódů a potom převedou do Microsoft (MSIL intermediate language), které lze předat přímo modul common language runtime. Kompilované regulární výrazy maximalizovat výkon za cenu čas inicializace.  
-  
-> [!NOTE]
->  Regulární výraz může být zkompilovány pouze zadáním <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> hodnotu `options` parametr <xref:System.Text.RegularExpressions.Regex> konstruktoru třídy nebo statickou metodu porovnávání. Není k dispozici možnost vložené.  
-  
- Můžete použít kompilované regulární výrazy ve voláních statických a instance regulární výrazy. V statické regulární výrazy <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> možnost předána `options` parametru metody porovnávání regulární výraz. V regulárních výrazech instanci, je předána `options` parametr <xref:System.Text.RegularExpressions.Regex> konstruktoru třídy. V obou případech je výsledkem lepší výkon.  
-  
- Toto zvýšení výkonu však dochází pouze za následujících podmínek:  
-  
--   A <xref:System.Text.RegularExpressions.Regex> objekt, který reprezentuje konkrétní regulární výraz se používá v několika volání metody porovnávání regulárních výrazů.  
-  
--   <xref:System.Text.RegularExpressions.Regex> Objektu nelze dostala mimo rozsah, proto ji můžete znovu použít.  
-  
--   Statické regulární výraz se používá v několika volání metody porovnávání regulárních výrazů. (Zlepšení výkonu je možné, protože používá při voláních statickou metodu regulární výrazy jsou uloženy v mezipaměti modul regulárních výrazů.)  
+ Můžete použít namísto interpretovaných regulárních výrazů zkompilován s použitím <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> možnost. V tomto případě když je vzorek předán modulu regulárních výrazů, to je analyzován na sadu operačních kódů a poté převeden na jazyk Microsoft intermediate language (MSIL), který může být přímo předán modulu common language runtime. Kompilované regulární výrazy maximalizují výkon na úkor doby inicializace.  
   
 > [!NOTE]
->  <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> Možnost je nezávislá na <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> metoda, která vytvoří speciální sestavení, která obsahuje předdefinované kompilované regulární výrazy.  
+>  Regulární výraz lze kompilovat pouze zadáním <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> hodnota, která se `options` parametr <xref:System.Text.RegularExpressions.Regex> konstruktoru třídy nebo statické metody porovnávání vzorků. Není k dispozici jako vložená možnost.  
+  
+ Můžete použít kompilované regulární výrazy ve voláních statických i instančních regulárních výrazů. Ve statických regulárních výrazů <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> možnost je předána `options` parametr metody porovnávání se vzorem regulárního výrazu. V instančních regulárních výrazech je předána `options` parametr <xref:System.Text.RegularExpressions.Regex> konstruktoru třídy. V obou případech je výsledkem lepší výkon.  
+  
+ K tomuto zlepšení výkonu však dochází pouze za následujících podmínek:  
+  
+-   A <xref:System.Text.RegularExpressions.Regex> objekt představující konkrétní regulární výraz se používá ve více voláních metod porovnávání vzorků regulárních výrazů.  
+  
+-   <xref:System.Text.RegularExpressions.Regex> Objektu není povoleno přejít mimo rozsah, takže je možné využít znovu.  
+  
+-   Statický regulární výraz se používá ve více voláních metod porovnávání vzorků regulárních výrazů. (Zlepšení výkonu je možné, protože regulární výrazy použité ve volání statické metody jsou ukládány do mezipaměti modulem regulárních výrazů.)  
+  
+> [!NOTE]
+>  <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> Možnost je nezávislá na <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> metodu, která vytvoří sestavení se speciálním účelem obsahující předdefinované kompilované regulární výrazy.  
   
  [Zpět na začátek](#Top)  
   
 <a name="Whitespace"></a>   
-## <a name="ignore-white-space"></a>Ignorovat prázdné znaky  
- Ve výchozím nastavení je prázdné místo v vzor regulárního výrazu důležité; Vynutí modul regulárních výrazů tak, aby odpovídaly prázdný znak ve vstupním řetězci. Z toho důvodu regulární výraz "`\b\w+\s`"a"`\b\w+` " jsou přibližně ekvivalentem regulární výrazy. Kromě toho když křížku (#) se vyskytuje v vzor regulárního výrazu, je interpretován jako literál znak pro porovnání.  
+## <a name="ignore-white-space"></a>Ignorování prázdných znaků  
+ Ve výchozím nastavení je důležité; prázdný znak ve vzorku regulárního výrazu nutí modul regulárních výrazů tak, aby odpovídaly prázdný znak ve vstupním řetězci. Z toho důvodu regulárního výrazu "`\b\w+\s`"a"`\b\w+` " zhruba ekvivalentní regulární výrazy. Kromě toho při křížku (#) se narazí ve vzorku regulárního výrazu, je interpretován jako literální znak pro porovnání.  
   
- <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> Možnost, nebo `x` možnost inline změní toto výchozí chování následujícím způsobem:  
+ <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> Možnost, nebo `x` vloženou možnost, změní toto výchozí chování následujícím způsobem:  
   
--   Prázdný znak v regulární výraz je ignorován. Jako součást vzor regulárního výrazu, je nutné uvést prázdné znaky (například jako `\s` nebo "`\` ").  
+-   Prázdný znak ve vzorku regulárního výrazu je ignorován. Jako součást vzorku regulárního výrazu, musí být uvozena prázdné znaky (například jako `\s` nebo "`\` ").  
   
--   Znaménko čísla (#) interpretována jako začátek komentář, nikoli jako literál znak. Veškerého textu v vzor regulárního výrazu z znak # na konci řetězce interpretována jako komentář.  
+-   Znak čísla (#) je interpretován jako začátek komentáře, nikoli jako literální znak. Veškerý text ve vzorku regulárního výrazu od znaku # na konec řetězce je interpretován jako komentář.  
   
- Ale v těchto případech prázdné znaky v regulárním výrazu nejsou ignorovány, i když používáte <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> možnost:  
+ Ale v následujících případech prázdné znaky v regulárním výrazu nejsou ignorovány, i když používáte <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> možnost:  
   
--   Prázdné znaky v rámci třídy znak je vždy interpretovány oznámena. Například vzor regulárního výrazu `[ .,;:]` odpovídá žádné jeden prázdný znak, období, čárkou, středníkem nebo středníkem.  
+-   Mezer v rámci třídy znaků je vždy interpretován literálně. Například vzor regulárního výrazu `[ .,;:]` odpovídá jakékoli jeden prázdný znak, období, čárka, středník nebo dvojtečka.  
   
--   Mezer není povolen v závorkách kvantifikátor, jako například `{` *n*`}`, `{` *n*`,}`, a `{` *n* `,` *m*`}`. Například vzor regulárního výrazu `\d{1. 3}` selže tak, aby odpovídaly žádné posloupností číslic od jedné do tří číslic, protože obsahuje prázdné znaky.  
+-   Není povolen prázdný znak v závorkách kvantifikátor, jako například `{` *n*`}`, `{` *n*`,}`, a `{` *n* `,` *m*`}`. Například vzor regulárního výrazu `\d{1, 3}` selže při porovnávání nějaké sekvence číslic od jedné do tří číslic, protože obsahuje prázdný znak.  
   
--   Prázdné znaky není povoleno v rámci sekvence znaků, která představuje element jazyka. Příklad:  
+-   V rámci sekvence znaků, která představuje prvek jazyka není povolen prázdný znak. Příklad:  
   
-    -   Element jazyk `(?:` *dílčím výrazu* `)` představuje skupinu bez zachycení a `(?:` část elementu nelze vložených mezer. Vzor `(? :` *dílčím výrazu* `)` vyvolá <xref:System.ArgumentException> v spustit času, protože modul regulárních výrazů nelze analyzovat vzoru a vzor `( ?:` *dílčím výrazu*  `)` selže tak, aby odpovídaly *dílčím výrazu*.  
+    -   Language element `(?:` *dílčí výraz* `)` představuje skupinu bez zachytávání a `(?:` část element nemůže mít vložené mezery. Vzor `(? :` *dílčí výraz* `)` vyvolá <xref:System.ArgumentException> běhu vzhledem k tomu, že modul regulárních výrazů nelze parsovat vzor a vzor `( ?:` *dílčí výraz*  `)` selže při porovnávání *dílčí výraz*.  
   
-    -   Element jazyk `\p{` *název*`}`, která představuje kategorii Unicode nebo pojmenovaného blok, nesmí obsahovat mezery v `\p{` část elementu. Pokud obsahovat prázdné znaky, vyvolá elementu <xref:System.ArgumentException> za běhu.  
+    -   Language element `\p{` *název*`}`, který představuje kategorie sady Unicode nebo pojmenovaného blok, nesmí obsahovat mezery v `\p{` část elementu. Pokud zahrnete prázdné znaky, vyvolá elementu <xref:System.ArgumentException> v době běhu.  
   
- Povolením této možnosti pomáhá zjednodušit regulární výrazy, které jsou často obtížně analyzovat a pochopit. Zlepšuje čitelnost a umožňuje dokumentu regulární výraz.  
+ Povolením této možnosti pomáhá zjednodušit regulární výrazy, které je často obtížné analyzovat a pochopit. Zlepšuje čitelnost a umožňuje dokumentovat regulární výrazy.  
   
- V následujícím příkladu definuje následující vzor regulárního výrazu:  
+ Následující příklad definuje následující vzorek regulárního výrazu:  
   
  `\b \(? ( (?>\w+) ,?\s? )+  [\.!?] \)? # Matches an entire sentence.`  
   
- Je podobná vzoru definované v tomto vzoru [pouze explicitní zachycení](#Explicit) tématu, s tím rozdílem, že se používá <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> možnosti ignorování prázdných znaků.  
+ Tento model je podobný vzorku definovanému v [pouze explicitní zachycení](#Explicit) tématu, s tím rozdílem, že používá <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> možnost ignorování vzorků prázdných znaků.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/whitespace1.cs#12)]
  [!code-vb[Conceptual.Regex.Language.Options#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/whitespace1.vb#12)]  
   
- Následující příklad používá možnost inline `(?x)` ignorovat prázdných znaků.  
+ Následující příklad používá vloženou možnost `(?x)` pro ignorování prázdných znaků.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#13](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/whitespace2.cs#13)]
  [!code-vb[Conceptual.Regex.Language.Options#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/whitespace2.vb#13)]  
@@ -303,93 +303,93 @@ ms.locfileid: "33579649"
   
 <a name="RightToLeft"></a>   
 ## <a name="right-to-left-mode"></a>Režim zprava doleva  
- Ve výchozím nastavení modul regulárních výrazů vyhledá zleva doprava. Můžete obrátit směr vyhledávání pomocí <xref:System.Text.RegularExpressions.RegexOptions.RightToLeft?displayProperty=nameWithType> možnost. Hledání automaticky začíná na poslední pozice znaku řetězce. Pro porovnávání metody, které zahrnují počáteční pozice parametru, jako například <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.Int32%29?displayProperty=nameWithType>, počáteční pozice je index nejvíce vpravo znak na pozici, na které má začít prohledávání.  
+ Ve výchozím nastavení modul regulárních výrazů vyhledává zleva doprava. Můžete obrátit směr vyhledávání použitím <xref:System.Text.RegularExpressions.RegexOptions.RightToLeft?displayProperty=nameWithType> možnost. Vyhledávání automaticky začne na pozicí posledního znaku řetězce. U metod porovnávání vzorků, které zahrnují počáteční pozice parametru, například <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.Int32%29?displayProperty=nameWithType>, počáteční pozice je index pozice znaku zcela vpravo, na které má vyhledávání začít.  
   
 > [!NOTE]
->  Režim vzorku zprava doleva je k dispozici pouze zadáním <xref:System.Text.RegularExpressions.RegexOptions.RightToLeft?displayProperty=nameWithType> hodnotu `options` parametr <xref:System.Text.RegularExpressions.Regex> konstruktoru třídy nebo statickou metodu porovnávání. Není k dispozici možnost vložené.  
+>  Režim vzorku zprava doleva je k dispozici pouze prostřednictvím zadání <xref:System.Text.RegularExpressions.RegexOptions.RightToLeft?displayProperty=nameWithType> hodnota, která se `options` parametr <xref:System.Text.RegularExpressions.Regex> konstruktoru třídy nebo statické metody porovnávání vzorků. Není k dispozici jako vložená možnost.  
   
- <xref:System.Text.RegularExpressions.RegexOptions.RightToLeft?displayProperty=nameWithType> Možnost změny pouze směr vyhledávání; neinterpretuje vzor regulárního výrazu zprava doleva. Například regulární výraz `\bb\w+\s` odpovídá slova, která začíná písmenem "b" a jsou následuje prázdný znak. V následujícím příkladu vstupní řetězec skládá ze tří slov, které obsahují jeden nebo více znaků "b". První slovo začíná "b", "b" a třetí druhé končí obsahuje dva znaky "b" uprostřed slova. Jak ukazuje výstup z příkladu, odpovídá pouze první slovo regulární výraz.  
+ <xref:System.Text.RegularExpressions.RegexOptions.RightToLeft?displayProperty=nameWithType> Možnost změní pouze směr vyhledávání; nezpůsobí interpretování vzorku regulárního výrazu zprava doleva. Například regulární výraz `\bb\w+\s` odpovídá slovům, která začínají písmenem "b" a jsou následována prázdným znakem. V následujícím příkladu vstupní řetězec skládá ze tří slov, které zahrnují jeden nebo více znaků "b". První slovo začíná písmenem "b", druhé končí "b" a třetí obsahuje dva znaky "b" uprostřed slova. Jak ukazuje výstup z příkladu, pouze první slovo odpovídá vzorku regulárního výrazu.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#17](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/righttoleft1.cs#17)]
  [!code-vb[Conceptual.Regex.Language.Options#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/righttoleft1.vb#17)]  
   
- Všimněte si také, že dopředné ( `(?=` *dílčím výrazu* `)` element jazyk) a kontrolní výraz ( `(?<=` *dílčím výrazu* `)`jazyk element) nemění směr. Kontrolní výrazy s dopředným vyhledáváním hledají zprava. zpětné vyhledávání hledá na levé straně. Například regulární výraz `(?<=\d{1,2}\s)\w+,?\s\d{4}` používá kontrolní výraz k testování data, která předchází název měsíce. Regulární výraz pak odpovídá měsíce a roku. Informace o s dopředným vyhledáváním a zpětných hledáních najdete v tématu [seskupení vytvoří](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+ Všimněte si také, že kontrolní výraz dopředného vyhledávání ( `(?=` *dílčí výraz* `)` prvek jazyka) a kontrolní výraz zpětného vyhledávání ( `(?<=` *dílčí výraz* `)`prvek jazyka) nemění směr. Kontrolní výrazy dopředného vyhledávání hledají zprava; kontrolní výrazy zpětného vyhledávání hledají zleva. Například regulární výraz `(?<=\d{1,2}\s)\w+,?\s\d{4}` používá kontrolní výraz zpětného vyhledávání pro testování datum, které předchází název měsíce. Regulární výraz poté porovnává měsíc a rok. Informace o dopředných a zpětných hledáních naleznete v tématu [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
  [!code-csharp[Conceptual.Regex.Language.Options#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/righttoleft2.cs#18)]
  [!code-vb[Conceptual.Regex.Language.Options#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/righttoleft2.vb#18)]  
   
- Regulární výraz je definována, jak je znázorněno v následující tabulce.  
+ Vzor regulárního výrazu je definován, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
-|`(?<=\d{1,2}\s)`|Na začátek shody musí předcházet jedno nebo dvě desetinných míst následované mezerou.|  
+|`(?<=\d{1,2}\s)`|Začátek porovnávání musí být předcházen jednou nebo dvěma desítkovými číslicemi mezeru.|  
 |`\w+`|Porovná jeden nebo více znaků slova.|  
-|`,?`|Porovná nula nebo jeden znak čárkami.|  
+|`,?`|Porovná žádný nebo jeden znak čárky.|  
 |`\s`|Porovná prázdný znak.|  
-|`\d{4}`|Porovná čtyři desítková číslice.|  
+|`\d{4}`|Porovná čtyři desítková čísla.|  
   
  [Zpět na začátek](#Top)  
   
 <a name="ECMAScript"></a>   
-## <a name="ecmascript-matching-behavior"></a>ECMAScript chování porovnávání  
- Ve výchozím nastavení modul regulárních výrazů používá kanonické chování při kontrole shody regulárního výrazu ke vkládání textu. Ale můžete určit, aby používal chování porovnávání zadáním ECMAScript modul regulární výraz <xref:System.Text.RegularExpressions.RegexOptions.ECMAScript?displayProperty=nameWithType> možnost.  
+## <a name="ecmascript-matching-behavior"></a>Chování porovnávání ECMAScript  
+ Ve výchozím nastavení modul regulárních výrazů používá kanonické chování při porovnávání vzorku regulárního výrazu se vstupním textem. Ale můžete dát pokyn, modul regulárních výrazů zadáním chování porovnávání ECMAScript používat <xref:System.Text.RegularExpressions.RegexOptions.ECMAScript?displayProperty=nameWithType> možnost.  
   
 > [!NOTE]
->  Chování ECMAScript je k dispozici pouze zadáním <xref:System.Text.RegularExpressions.RegexOptions.ECMAScript?displayProperty=nameWithType> hodnotu `options` parametr <xref:System.Text.RegularExpressions.Regex> konstruktoru třídy nebo statickou metodu porovnávání. Není k dispozici možnost vložené.  
+>  Chování standardu ECMAScript je k dispozici pouze prostřednictvím zadání <xref:System.Text.RegularExpressions.RegexOptions.ECMAScript?displayProperty=nameWithType> hodnota, která se `options` parametr <xref:System.Text.RegularExpressions.Regex> konstruktoru třídy nebo statické metody porovnávání vzorků. Není k dispozici jako vložená možnost.  
   
- <xref:System.Text.RegularExpressions.RegexOptions.ECMAScript?displayProperty=nameWithType> Možnost je možné kombinovat pouze s <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> možnosti. Výsledkem použití jakékoli jiné možnosti regulární výraz <xref:System.ArgumentOutOfRangeException>.  
+ <xref:System.Text.RegularExpressions.RegexOptions.ECMAScript?displayProperty=nameWithType> Možnosti lze kombinovat jen s <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> možnosti. Použití jiné možnosti v regulárním výrazu vede <xref:System.ArgumentOutOfRangeException>.  
   
- Chování ECMAScript a kanonické regulární výrazy se liší do tří oblastí: znak syntaxe třídy, odkazující zaznamenávání skupin a osmičková versus zpětných odkazů.  
+ Chování ECMAScript a kanonické regulární výrazy se liší ve třech oblastech: znak syntaxe třídy, samoodkazující skupiny zachytávání a interpretace osmičková versus interpretace na zpětný odkaz.  
   
--   Syntaxe třídy znaků. Protože kanonický regulární výrazy podporují kódování Unicode, zatímco ECMAScript nemá, třídy znaků v ECMAScript mají omezenější syntaxi a některé prvky jazyka třída znak mít jiný význam. Například ECMAScript nepodporuje jazyk prvky, jako jsou například elementy kategorie nebo blok kódu Unicode `\p` a `\P`. Podobně `\w` element, který odpovídá znaku slova, je ekvivalentní `[a-zA-Z_0-9]` znak třída při použití ECMAScript a `[\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]` při použití kanonické chování. Další informace najdete v tématu [třídy znaků](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).  
+-   Syntaxe třídy znaků. Vzhledem k tomu, že kanonické regulární výrazy podporují Unicode, zatímco ECMAScript nepodporuje, třídy znaků v ECMAScript mají omezenější syntaxi a některé jazykové prvky třídy znaků mají různý význam. Například ECMAScript nepodporuje jazykové prvky, jako jsou například prvky kategorie nebo blok sady Unicode `\p` a `\P`. Podobně `\w` element, který odpovídá znaku slova, odpovídá `[a-zA-Z_0-9]` třídy znaků, při použití ECMAScript a `[\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]` při použití kanonické chování. Další informace najdete v tématu [třídy znaků](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).  
   
-     Následující příklad ukazuje rozdíl mezi kanonické a ECMAScript porovnávání vzorů. Definuje regulární výraz, `\b(\w+\s*)+`, který odpovídá slova, za nímž následuje prázdné znaky. Vstup se skládá z dva řetězce, ten, který používá sadu latinky znaků a druhý používá azbuce znaková sada. Jak ukazuje výstup, volání <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> metoda, která používá odpovídající ECMAScript selže tak, aby odpovídaly azbuce slova, zatímco volání metody, které používá kanonické porovnávání neshoduje tato slova.  
+     Následující příklad ukazuje rozdíl mezi kanonickým a ECMAScript porovnáváním vzorů. Definuje regulární výraz `\b(\w+\s*)+`, který odpovídá slovům, následovaným prázdnými znaky. Vstupní řetězec se skládá ze dvou řetězců, jeden používá sadu znaků latinky a, druhý používá znakovou sadu cyrilice. Jak ukazuje výstup, volání <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> metodu, která používá porovnávání ECMAScript selže při porovnávání slov cyrilice, že volání metody, které používá kanonické porovnávání neodpovídá tato slova.  
   
      [!code-csharp[Conceptual.Regex.Language.Options#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/ecmascript1.cs#16)]
      [!code-vb[Conceptual.Regex.Language.Options#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/ecmascript1.vb#16)]  
   
--   Odkazující samy na sebe zaznamenávání skupiny. Třída zachycení regulárních výrazů s zpětný odkaz sám na sebe musí aktualizovat při každé iteraci zachycení. Jak ukazuje následující příklad, tato funkce umožňuje regulárnímu výrazu `((a+)(\1) ?)+` tak, aby odpovídaly vstupní řetězec "aa aaaa aaaaaa" při použití ECMAScript, ale ne v případě, že používá kanonické porovnávání.  
+-   Seskupí odkazující samy na zachycení. Třída zachycení regulárních výrazů se zpětným odkazem na sebe sama musí být aktualizována při každé iteraci zachycení. Jak ukazuje následující příklad, tato funkce umožňuje regulárnímu výrazu `((a+)(\1) ?)+` tak, aby odpovídaly vstupní řetězec "aa aaaa aaaaaa" při použití ECMAScript, ale ne v případě, že používá kanonické porovnávání.  
   
      [!code-csharp[Conceptual.Regex.Language.Options#21](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/ecmascript2.cs#21)]
      [!code-vb[Conceptual.Regex.Language.Options#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/ecmascript2.vb#21)]  
   
-     Regulární výraz je definována, jak je znázorněno v následující tabulce.  
+     Regulární výraz je definován, jak je znázorněno v následující tabulce.  
   
     |Vzor|Popis|  
     |-------------|-----------------|  
-    |(+)|Porovnává písmenem "a" jeden nebo více krát. Toto je druhá zachytávající skupina.|  
-    |(\1)|Porovná podřetězec zachycenou první zaznamenávání skupinu. Toto je třetí zachytávající skupina.|  
-    |?|Odpovídat nula nebo jeden znak mezery.|  
-    |((a+)(\1)?) +|Shoda vzoru jeden nebo více znaků "a následuje řetězec, který odpovídá skupině první zaznamenávání" následuje žádnou nebo jednu místo znaků jeden či více krát. Toto je první zachytávající skupina.|  
+    |(a +)|Porovná písmeno "a" jednou nebo vícekrát. Toto je druhá zachytávající skupina.|  
+    |(\1)|Porovná podřetězec zachycený první zachycující skupinou. Toto je třetí zachytávající skupina.|  
+    |?|Porovná žádný nebo jeden znak mezery.|  
+    |((a+)(\1)?) +|Vzor jednoho nebo více znaků "a za nímž následuje řetězec, který se shoduje s první zachytávající skupina" následovaný mezerami žádnou nebo jednu shodu znakem jednou nebo vícekrát. Toto je první zachytávající skupina.|  
   
--   Řešení nejednoznačnosti mezi osmičková řídicí sekvence a zpětné odkazy. Následující tabulka shrnuje rozdíly v osmičková versus interpretace zpětných odkazů pomocí kanonické a ECMAScript regulární výrazy.  
+-   Rozlišení nejasností mezi osmičkovými řídícími znaky a zpětnými odkazy. Následující tabulka shrnuje rozdíly mezi interpretace osmičková versus interpretace na zpětný odkaz v kanonické a ECMAScript regulární výrazy.  
   
     |Regulární výraz|Kanonické chování|Chování ECMAScript|  
     |------------------------|------------------------|-------------------------|  
-    |`\0` Následuje osmičková číslice 0 až 2|Interpretujte jako osmičkové. Například `\044` vždy interpretována jako osmičkovou hodnotu a znamená "$".|Stejné chování.|  
-    |`\` následuje číslice od 1 do 9, za nímž následuje bez dalších desítkových číslic,|Interpretujte jako zpětný odkaz. Například `\9` vždy znamená zpětných odkazů 9, i když devátá zachycující skupina neexistuje. Pokud zaznamenávání skupina neexistuje, vyvolá analyzátor regulárních výrazů <xref:System.ArgumentException>.|Pokud jednu číslici desítkové soustavy zaznamenávání skupina existuje, zpětných odkazů na tuto číslici. Hodnota, jinak hodnota interpretujte jako literál.|  
-    |`\` následuje číslice od 1 do 9, za nímž následuje další desetinných míst|Číslice interpretujte jako desítkovou hodnotu. Pokud existuje zachycující skupina interpretujte výraz jako zpětný odkaz.<br /><br /> V opačném interpretovat počáteční osmičkové číslice hodnoty 377. To znamená vezměte v úvahu jenom nízkou 8 bitů hodnotu. Zbývající číslice interpretujte jako literály. Například ve výrazu `\3000`, pokud zachycující skupina 300 existuje, interpretovat jako zpětných odkazů 300; pokud zachycující skupina 300 neexistuje, interpretovat jako osmičková 300, za nímž následuje 0.|Interpretujte jako zpětný odkaz převedením tolik číslic nejdříve desetinnou hodnotu, která se může vztahovat k zachycení. Pokud žádné číslic lze převést, interpretujte jako osmičkové pomocí úvodní osmičková číslice hodnoty 377. Zbývající číslice interpretujte jako literály.|  
+    |`\0` následované 0 až 2 osmičkovými číslicemi|Interpretováno jako osmičkové. Například `\044` je vždy interpretováno jako osmičková hodnota a znamená "$".|Stejné chování.|  
+    |`\` následované číslicí od 1 do 9, nenásledované dalšími desítkovými číslicemi,|Interpretováno jako zpětný odkaz. Například `\9` vždy znamená zpětný odkaz na 9, i když devátá zachycující skupina neexistuje. Pokud zachycující skupina neexistuje, vyvolá analyzátor regulárních výrazů <xref:System.ArgumentException>.|Pokud je jednomístné číslo zachytávání skupina existuje, zpětný odkaz na tuto číslici. Jinak interpretujte hodnotu jako literál.|  
+    |`\` následované číslicí od 1 do 9, nenásledované dalšími desítkovými číslicemi|Interpretujte číslice jako desítkovou hodnotu. Pokud existuje zachycující skupina, interpretuje výraz jako zpětný odkaz.<br /><br /> Jinak interpretujte počáteční osmičkové číslice až do osmičkové hodnoty 377. To znamená vezměte v úvahu pouze na 8 bitech hodnoty. Interpretujte zbývající číslice jako literální. Například ve výrazu `\3000`, pokud existuje zachycující skupina 300 interpretována jako zpětný odkaz 300; pokud zachycující skupina 300 neexistuje, je interpretováno jako osmičková hodnota 300 následována 0.|Interpretováno jako zpětný odkaz převedením tolika číslic je možné, na desítkovou hodnotu, která může odkazovat zachycení. Pokud může být převedeny žádné číslice, interpretujte jako osmičkovou pomocí počáteční osmičkové číslice až do osmičkové hodnoty 377. Interpretujte zbývající číslice jako literální.|  
   
  [Zpět na začátek](#Top)  
   
 <a name="Invariant"></a>   
-## <a name="comparison-using-the-invariant-culture"></a>Porovnání s použitím neutrální jazykovou verzi  
- Ve výchozím nastavení když modul regulárních výrazů provádí porovnávání, použije konvencí aktuální jazykové verze pro určení ekvivalentních velká a malá písmena.  
+## <a name="comparison-using-the-invariant-culture"></a>Porovnávání pomocí neutrální jazykové verze  
+ Ve výchozím nastavení když modul regulárních výrazů provádí porovnávání bez rozlišování, používá konvence velká a malá písmena aktuální jazykové verze k určení ekvivalentních velká a malá písmena.  
   
- Toto chování je však nežádoucí u některých typů porovnávání, zejména při porovnání vstupu uživatele na názvy systémové prostředky, jako jsou hesla, soubory nebo adresy URL. Následující příklad ukazuje, jako je například scénář. Kód je určen k blokování přístupu k jakémukoli prostředku, jehož adresa URL začíná **FILE://**. Regulární výraz zkusí porovnávání s řetězcem pomocí regulárního výrazu `$FILE://`. Ale pokud aktuální systémovou kulturu tr-TR (turečtina-Turecko), "I" není velkým ekvivalentem "i". V důsledku volání <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metoda vrátí `false`, a je povolen přístup k souboru.  
+ Toto chování je však nežádoucí u některých typů porovnávání, zejména při porovnání vstupu uživatele s názvy systémových prostředků, jako jsou hesla, soubory nebo adresy URL. Následující příklad ukazuje takovýto scénář. Kód je určen k blokování přístupu k jakémukoli prostředku, jehož adresa URL začíná **FILE://**. Regulární výraz zkusí porovnávání s řetězci pomocí regulárního výrazu `$FILE://`. Nicméně, pokud je aktuální jazyková verze systému tr-TR (turečtina – Turecko), "I" není velkým ekvivalentem znaku "i". Ve výsledku volání <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> vrátí metoda `false`, a je povolen přístup k souboru.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/culture1.cs#14)]
  [!code-vb[Conceptual.Regex.Language.Options#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/culture1.vb#14)]  
   
 > [!NOTE]
->  Další informace o porovnávání řetězců, které jsou velká a malá písmena a které používají neutrální jazykovou verzi najdete v tématu [osvědčené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md).  
+>  Další informace o porovnávání řetězců, které jsou malá a velká písmena a používají invariantní jazykovou verzi, naleznete v tématu [osvědčené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md).  
   
- Namísto použití porovnávání aktuální jazykové verze, můžete zadat <xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant?displayProperty=nameWithType> možnost Ignorovat rozdíly v jazyce a používat pravidla neutrální jazykovou verzi.  
+ Namísto použití porovnávání aktuální jazykové verze, můžete zadat <xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant?displayProperty=nameWithType> možnost ignoruje kulturní rozdíly v jazyce a použít konvence pro invariantní jazykovou verzi.  
   
 > [!NOTE]
->  Porovnání s využitím neutrální jazykové verze je k dispozici pouze zadáním <xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant?displayProperty=nameWithType> hodnotu `options` parametr <xref:System.Text.RegularExpressions.Regex> konstruktoru třídy nebo statickou metodu porovnávání. Není k dispozici možnost vložené.  
+>  Porovnávání pomocí neutrální jazykové verze je k dispozici pouze prostřednictvím zadání <xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant?displayProperty=nameWithType> hodnota, která se `options` parametr <xref:System.Text.RegularExpressions.Regex> konstruktoru třídy nebo statické metody porovnávání vzorků. Není k dispozici jako vložená možnost.  
   
- Následující příklad je stejný jako předchozí příklad, vyjma toho, že statické <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> metoda je volána s možnostmi, které zahrnují <xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant?displayProperty=nameWithType>. I v případě, že je aktuální jazykovou verzi nastavené na turečtina (Turecko), je možné úspěšně shodovat s "Soubor" a "soubor" a blokovat přístup k souboru prostředků modul regulárních výrazů.  
+ Následující příklad je stejný jako předchozí příklad s výjimkou, že statické <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> metoda je volána s možnostmi, které zahrnují <xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant?displayProperty=nameWithType>. I v případě, že je aktuální jazyková verze nastavena na hodnotu turečtina (Turecko), modul regulárních výrazů je schopný úspěšně porovnat "FILE" a "file" a zablokovat přístup ke zdroji souboru.  
   
  [!code-csharp[Conceptual.Regex.Language.Options#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/culture1.cs#15)]
  [!code-vb[Conceptual.Regex.Language.Options#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/culture1.vb#15)]  

@@ -8,18 +8,18 @@ helpviewer_keywords:
 - fill [WPF], controlling
 ms.assetid: c1c94575-9eca-48a5-a49a-2ec65259f229
 ms.openlocfilehash: a9a17434f11f432f6446e09bd853ed0d2f23fbe8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e8dc507cfdaad504fc9d4c83d28d24569dcef91c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 08/03/2018
 ms.locfileid: "33563040"
 ---
 # <a name="how-to-control-the-fill-of-a-composite-shape"></a>Postupy: Řízení výplně složeného tvaru
-<xref:System.Windows.Media.GeometryGroup.FillRule%2A> Vlastnost <xref:System.Windows.Media.GeometryGroup> nebo <xref:System.Windows.Media.PathGeometry>, určuje "pravidlo" používaný k určení, zda je k danému bodu součástí geometrie kompozitních tvaru. Existují dvě možné hodnoty pro <xref:System.Windows.Media.FillRule>: <xref:System.Windows.Media.FillRule.EvenOdd> a <xref:System.Windows.Media.FillRule.Nonzero>. V následujících částech se popisují, jak používat tyto dvě pravidla.  
+<xref:System.Windows.Media.GeometryGroup.FillRule%2A> Vlastnost <xref:System.Windows.Media.GeometryGroup> nebo <xref:System.Windows.Media.PathGeometry>, určuje "pravidlo" který složeného tvaru používá k určení, zda daný bod je součástí geometrii. Existují dva možné hodnoty pro <xref:System.Windows.Media.FillRule>: <xref:System.Windows.Media.FillRule.EvenOdd> a <xref:System.Windows.Media.FillRule.Nonzero>. V následujících částech se popisují, jak používat tyto dvě pravidla.  
   
- **Hodnotou EvenOdd:** toto pravidlo určuje, zda bod je v oblasti výplně kreslení paprsek do nekonečna vede libovolným směrem od tohoto okamžiku a určovat počet segmentů cesty v rámci daného tvaru paprsek protne. Pokud je toto číslo liché, bod je uvnitř; Pokud i, se bod nachází mimo.  
+ **EvenOdd:** toto pravidlo určuje, zda bod je v oblasti výplně kreslení ray od tohoto okamžiku do nekonečna vede libovolným směrem a počtu segmentů cesty v rámci daného tvaru protne. Pokud je toto číslo liché, bod nachází uvnitř; Pokud ještě, se bod nachází mimo.  
   
- Například následující XAML vytvoří kompozitních tvaru skládá z řady instancí soustředných (cíl) s <xref:System.Windows.Media.GeometryGroup.FillRule%2A> nastavena na <xref:System.Windows.Media.FillRule.EvenOdd>.  
+ Například následující XAML vytvoří složeného tvaru, který se skládá z řady instancí soustředných (cíl) s <xref:System.Windows.Media.GeometryGroup.FillRule%2A> nastavena na <xref:System.Windows.Media.FillRule.EvenOdd>.  
   
  [!code-xaml[GeometriesMiscSnippets_snip#FillRuleEvenOddValue](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/FillRuleExample.xaml#fillruleevenoddvalue)]  
   
@@ -27,23 +27,23 @@ ms.locfileid: "33563040"
   
  ![Snímek obrazovky: Vlastnost FillRule EvenOdd](../../../../docs/framework/wpf/graphics-multimedia/media/fillruleevenoddfirstone.png "FillRuleEvenOddFirstOne")  
   
- Ve výše uvedeném obrázku Všimněte si, že nejsou plná center a 3. prstenec. To je proto paprsek čerpají z libovolného bodu v rámci některý z těchto dvou okruhů projdou sudý počet segmentů. Viz obrázek níže:  
+ Na výše uvedeném obrázku Všimněte si, že nejsou vyplněné System center a 3. kanál. Je to proto ray z libovolného bodu v některé z těchto dvou okruhů prochází sudý počet segmentů. Viz následující obrázek:  
   
  ![Diagram: Hodnota vlastnosti FillRule EvenOdd](../../../../docs/framework/wpf/graphics-multimedia/media/fillruleevenodd2.png "FillRuleEvenOdd2")  
   
- **NonZero:** toto pravidlo určuje, zda bod je v oblasti výplně cesty kreslení paprsek do nekonečna vede libovolným směrem od tohoto okamžiku a poté zkoumá místa, kde tento paprsek protne segment tvaru. Počínaje počet nula, přidejte po jedné čas paprsek protne Segment zleva doprava a jeden každý odečtena čas cestu tento paprsek protne segment zprava doleva. Po počítání provozovaných, pokud je výsledek nula. pak se bod nachází mimo cestu. Jinak je uvnitř.  
+ **NonZero:** toto pravidlo určuje, zda bod je v oblasti výplně cesty k vykreslení ray od tohoto okamžiku do nekonečna vede libovolným směrem a poté zkoumá místa, kde segment tvaru protne. Spuštění s počtem nula, přidejte každý čas Segment protne zleva doprava a odečítání každý čas cestu segmentu protne zprava doleva. Po počítání přechody, pokud je výsledek nula pak se bod nachází mimo cestu. V opačném případě se nachází uvnitř.  
   
  [!code-xaml[GeometriesMiscSnippets_snip#FillRuleNonZeroValueEllipseGeometry](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/FillRuleExample.xaml#fillrulenonzerovalueellipsegeometry)]  
   
- Použití v příkladu výše, hodnota <xref:System.Windows.Media.FillRule.Nonzero> pro <xref:System.Windows.Media.GeometryGroup.FillRule%2A> v důsledku dává na následujícím obrázku:  
+ Použijeme příklad výše, hodnota <xref:System.Windows.Media.FillRule.Nonzero> pro <xref:System.Windows.Media.GeometryGroup.FillRule%2A> poskytuje díky tomu na následujícím obrázku:  
   
- ![Snímek obrazovky: FillRule hodnotou NonZero](../../../../docs/framework/wpf/graphics-multimedia/media/fillrulenonzero1.png "FillRuleNonZero1")  
+ ![Snímek obrazovky: Hodnota FillRule NonZero](../../../../docs/framework/wpf/graphics-multimedia/media/fillrulenonzero1.png "FillRuleNonZero1")  
   
- Jak vidíte, jsou vyplněny všechny kroužky. Toto je vzhledem k tomu, že všechny segmenty běží ve stejném směru a tak, aby paprsek čerpají z libovolného bodu bude křížové jeden nebo více segmenty a součet provozovaných nebude rovné nule. Například na následující ilustraci red šipky představují směr, ve kterém jsou vykreslovány segmentů a bílé šipku představuje libovolné ray spuštěna z bodu v nejvnitřnější prstenec. Počínaje hodnota nula, pro každý segment, který paprsek protne, je přidat na hodnotu jedna, protože tento paprsek protne segment zleva doprava.  
+ Jak vidíte, jsou vyplněny všechny aktualizační kanály. Toto je vzhledem k tomu, že všechny segmenty jsou spuštěny ve stejném směru a tak, aby ray z libovolného bodu bude mezi jeden nebo více segmentů a součet hodnot přechodech nesmí být roven nule. Například na následující ilustraci red šipky představují směr, ve kterém jsou vykreslovány segmenty a bílé šipka označuje libovolné ray spuštěná z bodu ve vnitřní prstenec. Spuštění s hodnotou nula, pro každý segment protne, je přidat o hodnotu jedna, protože segment protne zleva doprava.  
   
- ![Diagram: Hodnota vlastnosti FillRule rovna NonZero](../../../../docs/framework/wpf/graphics-multimedia/media/fillrulenonzero2.png "FillRuleNonZero2")  
+ ![Diagramu: Hodnota vlastnosti FillRule rovna NonZero](../../../../docs/framework/wpf/graphics-multimedia/media/fillrulenonzero2.png "FillRuleNonZero2")  
   
- K předvedení lépe chování <xref:System.Windows.Media.FillRule.Nonzero> je požadováno pravidlo složitější obrazce s segmenty spuštěné v různých pokynů. Následující kód XAML vytvoří podobné obrazce jako předchozí příklad, s tím rozdílem, že je vytvořen pomocí <xref:System.Windows.Media.PathGeometry> místo pak <xref:System.Windows.Media.EllipseGeometry> vytváří čtyři soustředných oblouky místo pak plně uzavřený soustředných kroužky.  
+ Abychom lépe chování <xref:System.Windows.Media.FillRule.Nonzero> pravidlo složitější obrazec s segmenty spuštěné v různých pokynů je povinné. Následující kód XAML vytvoří obrazec podobné jako předchozí příklad s tím rozdílem, že je vytvořen s <xref:System.Windows.Media.PathGeometry> nikoli <xref:System.Windows.Media.EllipseGeometry> vytváří čtyři soustředných oblouky spíše plně zavřeny soustředných kruzích.  
   
  [!code-xaml[GeometriesMiscSnippets_snip#FillRuleNonZeroValuePathGeometry](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/FillRuleExample.xaml#fillrulenonzerovaluepathgeometry)]  
   
@@ -51,13 +51,13 @@ ms.locfileid: "33563040"
   
  ![Snímek obrazovky: Hodnota vlastnosti FillRule NonZero](../../../../docs/framework/wpf/graphics-multimedia/media/fillrulenonzero3.png "FillRuleNonZero3")  
   
- Všimněte si, že není vyplněna třetí oblouk z centra. Následující ilustrace zobrazuje, proč je to. Na obrázku red šipky představují směr, ve kterém jsou vykreslovány segmentů. Dva bílé šipky představují dva libovolný paprsky, které přepínají z bodu v oblasti "bez naplní". Jak je vidět z obrázku, aby součet hodnot z daného paprsek při překročení segmentů v cestě je nulová. Definuje výše, součet nula znamená, že bod se není součástí Geometrie (není součástí výplně) při sum, který je *není* nula, včetně záporná, je součástí geometrického útvaru.  
+ Všimněte si, že není vyplněno třetí oblouk v centru. Následující obrázek ukazuje, proč je to. Na obrázku red šipky představují směr, ve kterém jsou vykreslovány segmenty. Dvě šipky bílé představují dva libovolného paprsky, které přesunout ven z bodu v oblasti "nevyplněná". Jak je vidět z obrázku, aby součet hodnot z daného ray přecházení mezi segmenty v cestě je nula. Definované výše součet nula znamená, že bod není součástí Geometrie (není součástí výplně) při sum, která je *není* nula, včetně hodnota záporná, je součástí geometrii.  
   
  ![Diagram: Hodnota vlastnosti FillRule NonZero](../../../../docs/framework/wpf/graphics-multimedia/media/fillrulenonzero4.png "FillRuleNonZero4")  
   
- **Poznámka:** pro účely <xref:System.Windows.Media.FillRule>, všechny obrazce jsou považovány za uzavřen. Pokud existuje mezera v segmentu, kreslení čárou a tím ho zavřete. V předchozím příkladu jsou malé mezery v kroužky. To zadána jeden můžou očekávat paprsek používající prostřednictvím mezera umožnit jiný výsledek pak paprsek systémem v jiném směru. Níže je ilustraci zvětšeným jednoho z těchto mezery a "pomyslná segmentu" (segment, který je vykreslen pro účely použití <xref:System.Windows.Media.FillRule>), se zavře.  
+ **Poznámka:** pro účely <xref:System.Windows.Media.FillRule>, všechny obrazce se považují za uzavřen. Pokud existuje mezera v segmentu, nakreslete imaginární řádku ho zavřít. V předchozím příkladu jsou malé mezery v kroužky. To směru, očekávat paprsku, který projde mezera poskytnout jiné výsledky pak ray systémem v jiném směru. Níže je zvětšeným ilustraci jednu z těchto mezer a "imaginární segmentu" (segment, který je vykreslen pro účely <xref:System.Windows.Media.FillRule>), která ukončí.  
   
- ![Diagram: Pro vlastnost FillRule jsou segmenty vždy uzavřené](../../../../docs/framework/wpf/graphics-multimedia/media/fillruleclosedshapes.png "FillRuleClosedShapes")  
+ ![Diagram: Pro vlastnost FillRule segmenty jsou vždy uzavřen](../../../../docs/framework/wpf/graphics-multimedia/media/fillruleclosedshapes.png "FillRuleClosedShapes")  
   
 ## <a name="example"></a>Příklad  
   
