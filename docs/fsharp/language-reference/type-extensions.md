@@ -1,105 +1,174 @@
 ---
 title: Rozšíření typů (F#)
-description: 'Zjistěte, jak povolit rozšíření typů F #, že přidáte nové členy typu dříve definovaném objektu.'
-ms.date: 05/16/2016
+description: 'Zjistěte, jak povolit rozšíření typů F #, že přidáte nové členy dříve definovaného typu objektu.'
+ms.date: 07/20/2018
 ms.openlocfilehash: 2181745ea75894fbfe35d5522c130baaf1876455
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 78bcb629abdbdbde0e295b4e81f350a477864aba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 08/08/2018
 ms.locfileid: "33566883"
 ---
-# <a name="type-extensions"></a><span data-ttu-id="7702d-103">Rozšíření typů</span><span class="sxs-lookup"><span data-stu-id="7702d-103">Type Extensions</span></span>
+# <a name="type-extensions"></a><span data-ttu-id="bc9cb-103">Rozšíření typů</span><span class="sxs-lookup"><span data-stu-id="bc9cb-103">Type extensions</span></span>
 
-<span data-ttu-id="7702d-104">Typ rozšíření můžete přidat nové členy typu dříve definovaný objekt.</span><span class="sxs-lookup"><span data-stu-id="7702d-104">Type extensions let you add new members to a previously defined object type.</span></span>
+<span data-ttu-id="bc9cb-104">Rozšíření typů (také nazývané _rozšíření_) jsou řadu funkcí, které umožňují přidat nové členy dříve definovaného typu objektu.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-104">Type extensions (also called _augmentations_) are a family of features that let you add new members to a previously defined object type.</span></span> <span data-ttu-id="bc9cb-105">Jsou tři funkce:</span><span class="sxs-lookup"><span data-stu-id="bc9cb-105">The three features are:</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="7702d-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7702d-105">Syntax</span></span>
+* <span data-ttu-id="bc9cb-106">Rozšíření pro vnitřní typ</span><span class="sxs-lookup"><span data-stu-id="bc9cb-106">Intrinsic type extensions</span></span>
+* <span data-ttu-id="bc9cb-107">Volitelná rozšíření typů</span><span class="sxs-lookup"><span data-stu-id="bc9cb-107">Optional type extensions</span></span>
+* <span data-ttu-id="bc9cb-108">Rozšiřující metody</span><span class="sxs-lookup"><span data-stu-id="bc9cb-108">Extension methods</span></span>
+
+<span data-ttu-id="bc9cb-109">Každá lze použít v různých scénářích a má různé kompromisy.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-109">Each can be used in different scenarios and has different tradeoffs.</span></span>
+
+## <a name="syntax"></a><span data-ttu-id="bc9cb-110">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bc9cb-110">Syntax</span></span>
 
 ```fsharp
-// Intrinsic extension.
+// Intrinsic and optional extensions
 type typename with
     member self-identifier.member-name =
         body
     ...
-[ end ]
 
-// Optional extension.
-type typename with
-    member self-identifier.member-name =
+// Extension methods
+open System.Runtime.CompilerServices
+
+[<Extension>]
+type Extensions() =
+    [static] member self-identifier.extension-name (ty: typename, [args]) =
         body
     ...
-[ end ]
 ```
 
-## <a name="remarks"></a><span data-ttu-id="7702d-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7702d-106">Remarks</span></span>
-<span data-ttu-id="7702d-107">Existují dvě formy typ rozšíření, které mají mírně odlišné syntaxe a chování.</span><span class="sxs-lookup"><span data-stu-id="7702d-107">There are two forms of type extensions that have slightly different syntax and behavior.</span></span> <span data-ttu-id="7702d-108">*Vnitřní rozšíření* jako typ rozšiřovanou je rozšíření, které se zobrazí ve stejném oboru názvů nebo modul, ve stejném souboru zdroje a ve stejném sestavení (DLL nebo spustitelného souboru).</span><span class="sxs-lookup"><span data-stu-id="7702d-108">An *intrinsic extension* is an extension that appears in the same namespace or module, in the same source file, and in the same assembly (DLL or executable file) as the type being extended.</span></span> <span data-ttu-id="7702d-109">*Volitelné rozšíření* je rozšíření, které se zobrazí mimo původní modulu, obor názvů nebo sestavení rozšiřovanou typu.</span><span class="sxs-lookup"><span data-stu-id="7702d-109">An *optional extension* is an extension that appears outside the original module, namespace, or assembly of the type being extended.</span></span> <span data-ttu-id="7702d-110">Vnitřní rozšíření zobrazí na typ, pokud typ je zkontrolován pomocí reflexe, ale nechcete volitelná rozšíření.</span><span class="sxs-lookup"><span data-stu-id="7702d-110">Intrinsic extensions appear on the type when the type is examined by reflection, but optional extensions do not.</span></span> <span data-ttu-id="7702d-111">Volitelné rozšíření musí být v modulech a jsou pouze v oboru, když modul, který obsahuje rozšíření je otevřený.</span><span class="sxs-lookup"><span data-stu-id="7702d-111">Optional extensions must be in modules, and they are only in scope when the module that contains the extension is open.</span></span>
+## <a name="intrinsic-type-extensions"></a><span data-ttu-id="bc9cb-111">Rozšíření pro vnitřní typ</span><span class="sxs-lookup"><span data-stu-id="bc9cb-111">Intrinsic type extensions</span></span>
 
-<span data-ttu-id="7702d-112">V předchozích syntaxi *typename* představuje typ, který je právě rozšířeno.</span><span class="sxs-lookup"><span data-stu-id="7702d-112">In the previous syntax, *typename* represents the type that is being extended.</span></span> <span data-ttu-id="7702d-113">Je možné rozšířit žádný typ, který je přístupný, ale název typu musí být název skutečný typ zkratka typu.</span><span class="sxs-lookup"><span data-stu-id="7702d-113">Any type that can be accessed can be extended, but the type name must be an actual type name, not a type abbreviation.</span></span> <span data-ttu-id="7702d-114">Můžete definovat více členů v jeden typ rozšíření.</span><span class="sxs-lookup"><span data-stu-id="7702d-114">You can define multiple members in one type extension.</span></span> <span data-ttu-id="7702d-115">*Vlastní identifikátor* představuje instanci objektu volaná, stejně jako obyčejnou členy.</span><span class="sxs-lookup"><span data-stu-id="7702d-115">The *self-identifier* represents the instance of the object being invoked, just as in ordinary members.</span></span>
+<span data-ttu-id="bc9cb-112">Rozšíření vnitřního typu je typ rozšíření, která rozšiřuje uživatelem definovaného typu.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-112">An intrinsic type extension is a type extension that extends a user-defined type.</span></span>
 
-<span data-ttu-id="7702d-116">`end` – Klíčové slovo je v prostá syntaxe volitelné.</span><span class="sxs-lookup"><span data-stu-id="7702d-116">The `end` keyword is optional in lightweight syntax.</span></span>
+<span data-ttu-id="bc9cb-113">Rozšíření vnitřního typu musí být definován ve stejném souboru **a** ve stejném oboru názvů nebo modulu jako typ se rozšíření.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-113">Intrinsic type extensions must be defined in the same file **and** in the same namespace or module as the type they're extending.</span></span> <span data-ttu-id="bc9cb-114">Libovolná definice nebudou se [volitelná rozšíření typů](type-extensions.md#optional-type-extensions).</span><span class="sxs-lookup"><span data-stu-id="bc9cb-114">Any other definition will result in them being [optional type extensions](type-extensions.md#optional-type-extensions).</span></span>
 
-<span data-ttu-id="7702d-117">Stejně jako ostatní členové na typu třídy lze členy definovanou v rozšíření typu.</span><span class="sxs-lookup"><span data-stu-id="7702d-117">Members defined in type extensions can be used just like other members on a class type.</span></span> <span data-ttu-id="7702d-118">Podobně jako ostatní členové mohou být statické nebo instance členy.</span><span class="sxs-lookup"><span data-stu-id="7702d-118">Like other members, they can be static or instance members.</span></span> <span data-ttu-id="7702d-119">Tyto metody se také označují jako *rozšiřující metody*; vlastnosti se označují jako *– vlastnosti rozšíření*a tak dále.</span><span class="sxs-lookup"><span data-stu-id="7702d-119">These methods are also known as *extension methods*; properties are known as *extension properties*, and so on.</span></span> <span data-ttu-id="7702d-120">Volitelné rozšíření členy zkompilovány pro statické členy, pro které se implicitně předá instanci objektu jako první parametr.</span><span class="sxs-lookup"><span data-stu-id="7702d-120">Optional extension members are compiled to static members for which the object instance is passed implicitly as the first parameter.</span></span> <span data-ttu-id="7702d-121">Však budou fungovat, jako kdyby byly členy instancí nebo statické členy podle jak jsou deklarované.</span><span class="sxs-lookup"><span data-stu-id="7702d-121">However, they act as if they were instance members or static members according to how they are declared.</span></span> <span data-ttu-id="7702d-122">Implicitní rozšíření členové jsou zahrnuty mezi členy typu a dá se používat bez omezení.</span><span class="sxs-lookup"><span data-stu-id="7702d-122">Implicit extension members are included as members of the type and can be used without restriction.</span></span>
-
-<span data-ttu-id="7702d-123">Metody rozšíření nemůže být virtuální nebo abstraktní metody.</span><span class="sxs-lookup"><span data-stu-id="7702d-123">Extension methods cannot be virtual or abstract methods.</span></span> <span data-ttu-id="7702d-124">Se může přetížit jiných metod se stejným názvem, ale dává přednost bez rozšiřující metody v případě nejednoznačné volání do kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="7702d-124">They can overload other methods of the same name, but the compiler gives preference to non-extension methods in the case of an ambiguous call.</span></span>
-
-<span data-ttu-id="7702d-125">Pokud pro jeden typ existuje několik rozšíření vnitřního typu, všichni členové musí být jedinečný.</span><span class="sxs-lookup"><span data-stu-id="7702d-125">If multiple intrinsic type extensions exist for one type, all members must be unique.</span></span> <span data-ttu-id="7702d-126">Pro typ volitelné rozšíření mohou mít členové v jiný typ rozšíření do stejného typu stejné názvy.</span><span class="sxs-lookup"><span data-stu-id="7702d-126">For optional type extensions, members in different type extensions to the same type can have the same names.</span></span> <span data-ttu-id="7702d-127">Pouze v případě, že kód klienta otevře dva různé obory, které definují stejné názvy členů dojít k chybám nejednoznačnosti.</span><span class="sxs-lookup"><span data-stu-id="7702d-127">Ambiguity errors occur only if client code opens two different scopes that define the same member names.</span></span>
-
-<span data-ttu-id="7702d-128">V následujícím příkladu má typ v modulu vnitřní typ rozšíření.</span><span class="sxs-lookup"><span data-stu-id="7702d-128">In the following example, a type in a module has an intrinsic type extension.</span></span> <span data-ttu-id="7702d-129">Na kód klienta mimo modul typ rozšíření se zobrazí jako regulární člen typu ve všech ohledech.</span><span class="sxs-lookup"><span data-stu-id="7702d-129">To client code outside the module, the type extension appears as a regular member of the type in all respects.</span></span>
-
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet3701.fs)]
-
-<span data-ttu-id="7702d-130">Vnitřní typ rozšíření můžete použít k oddělení definici typu do oddílů.</span><span class="sxs-lookup"><span data-stu-id="7702d-130">You can use intrinsic type extensions to separate the definition of a type into sections.</span></span> <span data-ttu-id="7702d-131">To může být užitečné při správě definice rozsáhlého typu, například si nechat generované kompilátorem kód a kód vytvořené v samostatné nebo seskupit kód vytvořené jiné osoby nebo ve spojení s jinou funkci.</span><span class="sxs-lookup"><span data-stu-id="7702d-131">This can be useful in managing large type definitions, for example, to keep compiler-generated code and authored code separate or to group together code created by different people or associated with different functionality.</span></span>
-
-<span data-ttu-id="7702d-132">V následujícím příkladu rozšiřuje volitelné typu rozšíření `System.Int32` typ pomocí metody rozšíření `FromString` statický člen, který volá `Parse`.</span><span class="sxs-lookup"><span data-stu-id="7702d-132">In the following example, an optional type extension extends the `System.Int32` type with an extension method `FromString` that calls the static member `Parse`.</span></span> <span data-ttu-id="7702d-133">`testFromString` Metoda ukazuje, že stejně jako libovolný člen instance se nazývá nového člena.</span><span class="sxs-lookup"><span data-stu-id="7702d-133">The `testFromString` method demonstrates that the new member is called just like any instance member.</span></span>
-
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet3702.fs)]
-
-<span data-ttu-id="7702d-134">Nový člen instance se zobrazí jako jakékoliv jiné metody `Int32` typu v technologii IntelliSense, ale jenom v případě, že modul, který obsahuje rozšíření je otevřené nebo jinak v oboru.</span><span class="sxs-lookup"><span data-stu-id="7702d-134">The new instance member will appear like any other method of the `Int32` type in IntelliSense, but only when the module that contains the extension is open or otherwise in scope.</span></span>
-
-## <a name="generic-extension-methods"></a><span data-ttu-id="7702d-135">Obecný rozšiřující metody</span><span class="sxs-lookup"><span data-stu-id="7702d-135">Generic Extension Methods</span></span>
-<span data-ttu-id="7702d-136">Před F # 3.1, kompilátor jazyka F # nepodporovala použití jazyka C# – styl rozšiřující metody s proměnné obecného typu, typ pole, řazené kolekce členů nebo typu funkce F # jako parametr "Tento".</span><span class="sxs-lookup"><span data-stu-id="7702d-136">Before F# 3.1, the F# compiler didn't support the use of C#-style extension methods with a generic type variable, array type, tuple type, or an F# function type as the "this" parameter.</span></span> <span data-ttu-id="7702d-137">F # 3.1 podporuje použití těchto rozšíření členů.</span><span class="sxs-lookup"><span data-stu-id="7702d-137">F# 3.1 supports the use of these extension members.</span></span>
-
-<span data-ttu-id="7702d-138">Například v F # 3.1 kódu, můžete použít metody rozšíření s podpisy, které se podobají syntaxi v jazyce C#:</span><span class="sxs-lookup"><span data-stu-id="7702d-138">For example, in F# 3.1 code, you can use extension methods with signatures that resemble the following syntax in C#:</span></span>
-
-```csharp
-static member Method<T>(this T input, T other)
-```
-
-<span data-ttu-id="7702d-139">Tento postup je zvlášť užitečné, když je omezené parametr obecného typu.</span><span class="sxs-lookup"><span data-stu-id="7702d-139">This approach is particularly useful when the generic type parameter is constrained.</span></span> <span data-ttu-id="7702d-140">Navíc můžete teď deklarovat rozšíření členy takto v F # – kód a definovat další, sémanticky bohatou sadu rozšiřující metody.</span><span class="sxs-lookup"><span data-stu-id="7702d-140">Further, you can now declare extension members like this in F# code and define an additional, semantically rich set of extension methods.</span></span> <span data-ttu-id="7702d-141">V jazyce F # obvykle definovat rozšíření členy jako následující příklad ukazuje:</span><span class="sxs-lookup"><span data-stu-id="7702d-141">In F#, you usually define extension members as the following example shows:</span></span>
+<span data-ttu-id="bc9cb-115">Rozšíření vnitřního typu jsou někdy čistší způsob, jak oddělit od deklarace typu funkce.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-115">Intrinsic type extensions are sometimes a cleaner way to separate functionality from the type declaration.</span></span> <span data-ttu-id="bc9cb-116">Následující příklad ukazuje, jak definovat rozšíření vnitřního typu:</span><span class="sxs-lookup"><span data-stu-id="bc9cb-116">The following example shows how to define an intrinsic type extension:</span></span>
 
 ```fsharp
+namespace Example
+
+type Variant =
+    | Num of int
+    | Str of string
+  
+module Variant =
+    let print v =
+        match v with
+        | Num n -> printf "Num %d" n
+        | Str s -> printf "Str %s" s
+
+// Add a member to Variant as an extension
+type Variant with
+    member x.Print() = Variant.print x
+```
+
+<span data-ttu-id="bc9cb-117">Použití rozšíření typu umožňuje oddělit každou z následujících akcí:</span><span class="sxs-lookup"><span data-stu-id="bc9cb-117">Using a type extension allows you to separate each of the following:</span></span>
+
+* <span data-ttu-id="bc9cb-118">Deklarace `Variant` typu</span><span class="sxs-lookup"><span data-stu-id="bc9cb-118">The declaration of a `Variant` type</span></span>
+* <span data-ttu-id="bc9cb-119">Funkce pro tisk `Variant` třídy v závislosti na jeho "tvar"</span><span class="sxs-lookup"><span data-stu-id="bc9cb-119">Functionality to print the `Variant` class depending on its "shape"</span></span>
+* <span data-ttu-id="bc9cb-120">Přístup k funkci tisku stylem objekt `.`– zápis</span><span class="sxs-lookup"><span data-stu-id="bc9cb-120">A way to access the printing functionality with object-style `.`-notation</span></span>
+
+<span data-ttu-id="bc9cb-121">Jedná se o alternativu k definování vše jako člen na `Variant`.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-121">This is an alternative to defining everything as a member on `Variant`.</span></span> <span data-ttu-id="bc9cb-122">Ačkoli to není ze své podstaty lepším řešením, může být čisticí reprezentace funkce v některých situacích.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-122">Although it is not an inherently better approach, it can be a cleaner representation of functionality in some situations.</span></span>
+
+<span data-ttu-id="bc9cb-123">Rozšíření vnitřního typu jsou kompilovány jako členy typu, rozšíření a zobrazí u typu, když je typ zkontrolován pomocí reflexe.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-123">Intrinsic type extensions are compiled as members of the type they augment, and appear on the type when the type is examined by reflection.</span></span>
+
+## <a name="optional-type-extensions"></a><span data-ttu-id="bc9cb-124">Volitelná rozšíření typů</span><span class="sxs-lookup"><span data-stu-id="bc9cb-124">Optional type extensions</span></span>
+
+<span data-ttu-id="bc9cb-125">Rozšíření volitelného typu je rozšíření, které se objeví mimo původní modul, obor názvů a sestavení rozšiřovaného typu.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-125">An optional type extension is an extension that appears outside the original module, namespace, or assembly of the type being extended.</span></span>
+
+<span data-ttu-id="bc9cb-126">Volitelná rozšíření typů jsou užitečné pro rozšíření typu, který ještě nebyl definován sami.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-126">Optional type extensions are useful for extending a type that you have not defined yourself.</span></span> <span data-ttu-id="bc9cb-127">Příklad:</span><span class="sxs-lookup"><span data-stu-id="bc9cb-127">For example:</span></span>
+
+```fsharp
+module Extensions
+
 open System.Collections.Generic
 
 type IEnumerable<'T> with
     /// Repeat each element of the sequence n times
     member xs.RepeatElements(n: int) =
-        seq { for x in xs do for i in 1 .. n do yield x }
+        seq {
+            for x in xs do
+                for i in 1 .. n do
+                    yield x
+        }
 ```
 
-<span data-ttu-id="7702d-142">Ale pro obecný typ, nemusí být omezené proměnná typu.</span><span class="sxs-lookup"><span data-stu-id="7702d-142">However, for a generic type, the type variable may not be constrained.</span></span> <span data-ttu-id="7702d-143">Nyní můžete deklarovat C# – styl rozšíření člena v F # na toto omezení obejít.</span><span class="sxs-lookup"><span data-stu-id="7702d-143">You can now declare a C#-style extension member in F# to work around this limitation.</span></span> <span data-ttu-id="7702d-144">Když zkombinujete tento druh deklarace s vložených funkcí jazyka F #, může být obecné algoritmy jako rozšíření členy.</span><span class="sxs-lookup"><span data-stu-id="7702d-144">When you combine this kind of declaration with the inline feature of F#, you can present generic algorithms as extension members.</span></span>
+<span data-ttu-id="bc9cb-128">Teď umožňuje přistupovat k `RepeatElements` , pokud je člen <xref:System.Collections.Generic.IEnumerable%601> tak dlouho, dokud `Extensions` modulu je otevřen v oboru, který se k práci používáte.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-128">You can now access `RepeatElements` as if it's a member of <xref:System.Collections.Generic.IEnumerable%601> as long as the `Extensions` module is opened in the scope that you are working in.</span></span>
 
-<span data-ttu-id="7702d-145">Vezměte v úvahu následující prohlášení:</span><span class="sxs-lookup"><span data-stu-id="7702d-145">Consider the following declaration:</span></span>
+<span data-ttu-id="bc9cb-129">Volitelná rozšíření nejsou zobrazeny na rozšířený typ při zkontrolován pomocí reflexe.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-129">Optional extensions do not appear on the extended type when examined by reflection.</span></span> <span data-ttu-id="bc9cb-130">Musí být volitelné rozšíření v modulech a jsou to jenom v oboru modulu, který obsahuje rozšíření je otevřená nebo je jinak v oboru.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-130">Optional extensions must be in modules, and they're only in scope when the module that contains the extension is open or is otherwise in scope.</span></span>
+
+<span data-ttu-id="bc9cb-131">Volitelní Členové rozšíření jsou kompilováni do statických členů, pro které je implicitně předána instance objektu jako první parametr.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-131">Optional extension members are compiled to static members for which the object instance is passed implicitly as the first parameter.</span></span> <span data-ttu-id="bc9cb-132">Působí však jako v případě, že jsou členy instance nebo statickými členy podle toho, jak jsou deklarovány.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-132">However, they act as if they're instance members or static members according to how they're declared.</span></span>
+
+## <a name="generic-limitation-of-intrinsic-and-optional-type-extensions"></a><span data-ttu-id="bc9cb-133">Obecná omezení rozšíření pro vnitřní objekty a jsou volitelné typ</span><span class="sxs-lookup"><span data-stu-id="bc9cb-133">Generic limitation of intrinsic and optional type extensions</span></span>
+
+<span data-ttu-id="bc9cb-134">Je možné deklarovat typ rozšíření u obecného typu, kde je proměnná typu omezen.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-134">It's possible to declare a type extension on a generic type where the type variable is constrained.</span></span> <span data-ttu-id="bc9cb-135">Požadavek je, že omezení deklaraci rozšíření shoduje s jiným omezením deklarovaného typu.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-135">The requirement is that the constraint of the extension declaration matches the constraint of the declared type.</span></span>
+
+<span data-ttu-id="bc9cb-136">Ale i v případě, že omezení se shoda mezi deklarovaného typu a rozšíření typu, je možné, omezení a odvodit subjektem rozšířený člen, který má jiný požadavek na parametr typu než deklarovaného typu.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-136">However, even when constraints are matched between a declared type and a type extension, it's possible for a constraint to be inferred by the body of an extended member that imposes a different requirement on the type parameter than the declared type.</span></span> <span data-ttu-id="bc9cb-137">Příklad:</span><span class="sxs-lookup"><span data-stu-id="bc9cb-137">For example:</span></span>
 
 ```fsharp
+open System.Collections.Generic
+
+// NOT POSSIBLE AND FAILS TO COMPILE!
+//
+// The member 'Sum' has a different requirement on 'T than the type IEnumerable<'T>
+type IEnumerable<'T> with
+    member this.Sum() = Seq.sum this
+```
+
+<span data-ttu-id="bc9cb-138">Neexistuje žádný způsob, jak získat tento kód pro práci s rozšíření volitelného typu:</span><span class="sxs-lookup"><span data-stu-id="bc9cb-138">There is no way to get this code to work with an optional type extension:</span></span>
+
+* <span data-ttu-id="bc9cb-139">Je, `Sum` člen má jiné omezení `'T` (`static member get_Zero` a `static member (+)`) než co definuje typ rozšíření.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-139">As is, the `Sum` member has a different constraint on `'T` (`static member get_Zero` and `static member (+)`) than what the type extension defines.</span></span>
+* <span data-ttu-id="bc9cb-140">Úprava rozšíření typu mít stejné omezení jako `Sum` už nebude odpovídat definované omezení na `IEnumerable<'T>`.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-140">Modifying the type extension to have the same constraint as `Sum` will no longer match the defined constraint on `IEnumerable<'T>`.</span></span>
+* <span data-ttu-id="bc9cb-141">Provádění změna členu, který chcete `member inline Sum` vám poskytne chybu, že se neshodují omezení typu.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-141">Making changing the member to `member inline Sum` will give an error that type constraints are mismatched</span></span>
+
+<span data-ttu-id="bc9cb-142">Co je žádoucí jsou statické metody, které "float v prostoru" a lze zobrazit, jako by se při rozšiřování typu.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-142">What is desired are static methods that "float in space" and can be presented as if they're extending a type.</span></span> <span data-ttu-id="bc9cb-143">To je, kde budou nezbytné metody rozšíření.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-143">This is where extension methods become necessary.</span></span>
+
+## <a name="extension-methods"></a><span data-ttu-id="bc9cb-144">Rozšiřující metody</span><span class="sxs-lookup"><span data-stu-id="bc9cb-144">Extension methods</span></span>
+
+<span data-ttu-id="bc9cb-145">Nakonec metody rozšíření (někdy nazývané "C# styl členy rozšíření") lze deklarovat v jazyce F # jako metodu statického člena třídy.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-145">Finally, extension methods (sometimes called "C# style extension members") can be declared in F# as a static member method on a class.</span></span>
+
+<span data-ttu-id="bc9cb-146">Rozšiřující metody jsou užitečné pro když chcete definovat rozšíření u obecného typu, který bude proměnná typu omezení.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-146">Extension methods are useful for when you wish to define extensions on a generic type that will constrain the type variable.</span></span> <span data-ttu-id="bc9cb-147">Příklad:</span><span class="sxs-lookup"><span data-stu-id="bc9cb-147">For example:</span></span>
+
+```fsharp
+namespace Extensions
+
+open System.Runtime.CompilerServices
+
 [<Extension>]
-type ExtraCSharpStyleExtensionMethodsInFSharp () =
+type IEnumerableExtensions() =
     [<Extension>]
     static member inline Sum(xs: IEnumerable<'T>) = Seq.sum xs
 ```
 
-<span data-ttu-id="7702d-146">Pomocí tohoto prohlášení, můžete napsat kód, který se podobá následující ukázka.</span><span class="sxs-lookup"><span data-stu-id="7702d-146">By using this declaration, you can write code that resembles the following sample.</span></span>
+<span data-ttu-id="bc9cb-148">Když se použije, tento kód filtrovacího řetězce se zobrazí jako `Sum` je definován na <xref:System.Collections.Generic.IEnumerable%601>, tak dlouho, dokud `Extensions` byl otevřen nebo je v oboru.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-148">When used, this code will make it appear as if `Sum` is defined on <xref:System.Collections.Generic.IEnumerable%601>, so long as `Extensions` has been opened or is in scope.</span></span>
 
-```fsharp
-let listOfIntegers = [ 1 .. 100 ]
-let listOfBigIntegers = [ 1I to 100I ]
-let sum1 = listOfIntegers.Sum()
-let sum2 = listOfBigIntegers.Sum()
-```
+## <a name="other-remarks"></a><span data-ttu-id="bc9cb-149">Další poznámky</span><span class="sxs-lookup"><span data-stu-id="bc9cb-149">Other remarks</span></span>
 
-<span data-ttu-id="7702d-147">V tomto kódu má stejný kód obecné aritmetické použije dva typy seznamů bez přetížení definováním členem jedné rozšíření.</span><span class="sxs-lookup"><span data-stu-id="7702d-147">In this code, the same generic arithmetic code is applied to lists of two types without overloading, by defining a single extension member.</span></span>
+<span data-ttu-id="bc9cb-150">Rozšíření typu mít také následující atributy:</span><span class="sxs-lookup"><span data-stu-id="bc9cb-150">Type extensions also have the following attributes:</span></span>
 
+* <span data-ttu-id="bc9cb-151">Je možné rozšířit libovolný typ, který je přístupný.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-151">Any type that can be accessed can be extended.</span></span>
+* <span data-ttu-id="bc9cb-152">Můžete definovat rozšíření pro vnitřní objekty a jsou volitelné typ _jakékoli_ typ členu, ne jenom metody.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-152">Intrinsic and optional type extensions can define _any_ member type, not just methods.</span></span> <span data-ttu-id="bc9cb-153">Vlastnosti rozšíření jsou tedy také je to možné, např.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-153">So extension properties are also possible, for example.</span></span>
+* <span data-ttu-id="bc9cb-154">`self-identifier` Token [syntaxe](type-extensions.md#syntax) představuje instanci typu vyvolání, stejně jako běžné členy.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-154">The `self-identifier` token in the [syntax](type-extensions.md#syntax) represents the instance of the type being invoked, just like ordinary members.</span></span>
+* <span data-ttu-id="bc9cb-155">Rozšířené členy může být statická nebo členy instance.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-155">Extended members can be static or instance members.</span></span>
+* <span data-ttu-id="bc9cb-156">Proměnné typu na typ rozšíření musí odpovídat omezením deklarovaného typu.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-156">Type variables on a type extension must match the constraints of the declared type.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="7702d-148">Viz také</span><span class="sxs-lookup"><span data-stu-id="7702d-148">See Also</span></span>
-[<span data-ttu-id="7702d-149">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="7702d-149">F# Language Reference</span></span>](index.md)
+<span data-ttu-id="bc9cb-157">Pro rozšíření typu také existují následující omezení:</span><span class="sxs-lookup"><span data-stu-id="bc9cb-157">The following limitations also exist for type extensions:</span></span>
 
-[<span data-ttu-id="7702d-150">Členové</span><span class="sxs-lookup"><span data-stu-id="7702d-150">Members</span></span>](members/index.md)
+* <span data-ttu-id="bc9cb-158">Rozšíření typu nepodporují virtuální nebo abstraktní metody.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-158">Type extensions do not support virtual or abstract methods.</span></span>
+* <span data-ttu-id="bc9cb-159">Rozšíření typu nepodporují přepsání metody jako rozšíření.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-159">Type extensions do not support override methods as augmentations.</span></span>
+* <span data-ttu-id="bc9cb-160">Rozšíření typu nepodporují [statisticky vyřešených parametrů typu](generics/statically-resolved-type-parameters.md).</span><span class="sxs-lookup"><span data-stu-id="bc9cb-160">Type extensions do not support [Statically Resolved Type Parameters](generics/statically-resolved-type-parameters.md).</span></span>
+* <span data-ttu-id="bc9cb-161">Volitelné rozšíření typu nepodporují konstruktory jako rozšíření.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-161">Optional Type extensions do not support constructors as augmentations.</span></span>
+* <span data-ttu-id="bc9cb-162">Rozšíření typu nelze definovat na [typ – zkratky](type-abbreviations.md).</span><span class="sxs-lookup"><span data-stu-id="bc9cb-162">Type extensions cannot be defined on [type abbreviations](type-abbreviations.md).</span></span>
+* <span data-ttu-id="bc9cb-163">Rozšíření typu nejsou platné pro `byref<'T>` (i když mohou být deklarovány).</span><span class="sxs-lookup"><span data-stu-id="bc9cb-163">Type extensions are not valid for `byref<'T>` (though they can be declared).</span></span>
+* <span data-ttu-id="bc9cb-164">Rozšíření typu nejsou platné pro atributy (i když mohou být deklarovány).</span><span class="sxs-lookup"><span data-stu-id="bc9cb-164">Type extensions are not valid for attributes (though they can be declared).</span></span>
+* <span data-ttu-id="bc9cb-165">Můžete definovat rozšíření, která přetížit jiné metody se stejným názvem, ale kompilátor F # dává přednost metody rozšíření, pokud je nejednoznačné volání.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-165">You can define extensions that overload other methods of the same name, but the F# compiler gives preference to non-extension methods if there is an ambiguous call.</span></span>
+
+<span data-ttu-id="bc9cb-166">Nakonec pokud existuje více rozšíření vnitřního typu pro jeden typ, všechny členy musí být jedinečný.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-166">Finally, if multiple intrinsic type extensions exist for one type, all members must be unique.</span></span> <span data-ttu-id="bc9cb-167">Pro volitelná rozšíření typů členové v jiných typech rozšíření stejného typu mají stejné názvy.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-167">For optional type extensions, members in different type extensions to the same type can have the same names.</span></span> <span data-ttu-id="bc9cb-168">K chybám nejednoznačnosti dojde pouze v případě, že kód klienta otevře dva různé obory, které definují stejné názvy členů.</span><span class="sxs-lookup"><span data-stu-id="bc9cb-168">Ambiguity errors occur only if client code opens two different scopes that define the same member names.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="bc9cb-169">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bc9cb-169">See also</span></span>
+
+[<span data-ttu-id="bc9cb-170">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="bc9cb-170">F# Language Reference</span></span>](index.md)
+
+[<span data-ttu-id="bc9cb-171">Členové</span><span class="sxs-lookup"><span data-stu-id="bc9cb-171">Members</span></span>](members/index.md)
