@@ -1,65 +1,233 @@
 ---
 title: Výpočetní výrazy (F#)
-description: 'Naučte se vytvářet vhodné syntaxe pro psaní výpočtů v F #, která může být sekvencování a spojovat pomocí konstrukce toku řízení a vazeb.'
-ms.date: 05/16/2016
+description: 'Zjistěte, jak vytvořit pohodlné syntaxe zápisu výpočtů v jazyce F #, která může být sekvencování a spojovat pomocí konstruktorů toků řízení a vazby.'
+ms.date: 07/27/2018
 ms.openlocfilehash: 4995efc757d99a575ee9fad3abf0465a32398c44
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.sourcegitcommit: 78bcb629abdbdbde0e295b4e81f350a477864aba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
+ms.lasthandoff: 08/08/2018
 ms.locfileid: "36207430"
 ---
 # <a name="computation-expressions"></a>Výpočetní výrazy
 
-Výpočetní výrazy v jazyce F # poskytují pohodlný syntaxi pro zápis výpočtů, u kterých může být sekvencování a spojovat pomocí konstrukce toku řízení a vazeb. Slouží k poskytování vhodné syntaxe pro *monads*, funkční programovací funkce, která slouží ke správě dat, řízení a vedlejší efekty při funkční programy.
+Výpočetní výrazy v jazyce F # poskytuje pohodlné syntaxe pro zápis výpočty, které mohou být sekvencování a spojovat pomocí konstruktorů toků řízení a vazby. V závislosti na typ výrazu výpočtu, můžete představit jako způsob, jak vyjádřit monády, monoids, monad transformátory a applicative funktory. Ale na rozdíl od jiných jazyků (jako například *zápis* v Haskell), nejsou vázané na jednoho odběru a nespoléhejte na makra nebo jiné formy metaprogramování k provedení pohodlný a kontextová syntaxe.
 
+## <a name="overview"></a>Přehled
 
-## <a name="built-in-workflows"></a>Předdefinované pracovní postupy
+Výpočty mohou mít mnoho forem. Nejběžnější forma výpočtu je spouštění s jedním vláknem, které je snadno srozumitelný a upravit. Ne všechny formy výpočet jsou však tak přímočaré jako spuštění s jedním vláknem. Mezi příklady patří:
 
-Sekvenční výrazy jsou příkladem výpočetní výraz, jako jsou asynchronní pracovní postupy a výrazy dotazů. Další informace najdete v tématu [pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [výrazy dotazů](query-expressions.md).
+* Nedeterministické výpočty
+* Asynchronní výpočty
+* Effectful výpočty
+* Tvoří výpočty
 
-Některé funkce jsou společné pro sekvenční výrazy a asynchronní pracovní postupy a ilustrují, základní syntaxe pro výpočetní výraz:
+Obecně platí, existují *kontextové* výpočty, které je nutné provést v některých částí aplikace. Psaní kódu kontextové může být náročné, jako je "nevracení" výpočty mimo daný kontext bez odběrů a znemožnit vám tak snadné. Tato abstrakce jsou často náročné napsat sami, což je důvod, proč F # má zobecněné způsob, jak provést tzv **výrazech výpočtu**.
 
-```fsharp
-builder-name { expression }
+Výpočetní výrazy nabízí jednotnou syntaxi a abstrakce model pro kódování kontextové výpočty.
+
+Každý výraz výpočtu tímto modulem stojí *Tvůrce* typu. Typ Tvůrce definuje operace, které jsou k dispozici pro výrazu výpočtu. V tématu [vytváří se nový typ z výrazu výpočtu](computation-expressions.md#creating-a-new-type-of-computation-expression), který ukazuje, jak vytvořit vlastní výpočet výraz.
+
+### <a name="syntax-overview"></a>Přehled syntaxe
+
+Všechny výpočetní výrazy mají následující podobu:
+
+```
+builder-expr { cexper }
 ```
 
-Předchozí syntaxe Určuje, že je daný výraz výpočetní výraz typu určeného *název tvůrce*. Výpočetní výraz může být předdefinované pracovního postupu, jako například `seq` nebo `async`, nebo může být něco definujete. *Název tvůrce* je identifikátor instance speciální typ označovaný jako *typu Tvůrce*. Tvůrce typ je typ třídy, která definuje speciální metody, které řídí způsob fragmentů výpočetní výraz se zkombinují, který je kód, které řídí, jak se provádí výraz. Dalším způsobem popisují třídu Tvůrce je to znamená, že umožňuje přizpůsobit operaci mnoho F # konstrukce, jako jsou smyčky a vazby.
+kde `builder-expr` je název typu Tvůrce výrazu výpočtu definuje a `cexper` výraz tělo výrazu výpočtu. Například `async` kód výrazu výpočtu může vypadat například takto:
 
-Výpočetní výrazy je dostupná pro některé běžné jazykové konstrukty dva formuláře. Můžete vyvolat variant konstrukce pomocí! (bang) přípona na určité klíčová slova, jako například `let!`, `do!`a tak dále. Tyto speciální formuláře způsobit, že určité funkce definovaný ve třídě Tvůrce nahradit obyčejnou předdefinované chování těchto operací. Tyto formuláře vypadat `yield!` formu `yield` klíčové slovo, které se používá v pořadí výrazy. Další informace najdete v tématu [pořadí](sequences.md).
+```fsharp
+let fetchAndDownload url =
+    async {
+        let! data = downloadData url
 
+        let processedData = processData data
 
-## <a name="creating-a-new-type-of-computation-expression"></a>Vytvoření nového typu – výpočetní výraz
-Vytvoření třídy tvůrce a definováním některé speciální metody pro třídu můžete definovat vlastnosti vlastní výpočetní výrazy. Třída tvůrce můžete volitelně definovat metody, jak je uvedeno v následující tabulce.
+        return processedData
+    }
+```
 
-Následující tabulka popisuje metody, které lze použít v třídě Tvůrce pracovního postupu.
+Je syntaxe speciální, navíc k dispozici v rámci výrazu výpočtu, jak je znázorněno v předchozím příkladu. Následující výraz formuláře je možné pomocí výrazů výpočtu:
 
+```fsharp
+expr { let! ... }
+expr { do! ... }
+expr { yield ... }
+expr { yield! ... }
+expr { return ... }
+expr { return! ... }
+expr { match! ... }
+```
+
+Každá z těchto klíčových slov a ostatní standardní F # klíčová slova jsou k dispozici pouze ve výrazu výpočtu. Pokud byla definována v základní typ Tvůrce. Jedinou výjimkou je `match!`, což je samotný syntaktické sugar pro použití `let!` následuje porovnávání na výsledek.
+
+Typ Tvůrce je objekt, který definuje speciální metody, které řídí způsob, jakým jsou kombinované fragmenty výrazu výpočtu; To znamená její metody řídit chování výrazu výpočtu. Dalším způsobem, jak popisují třída tvůrců je Řekněme, že umožňuje přizpůsobit operace mnoho konstrukce F #, jako jsou smyčky a vazby.
+
+### `let!`
+
+`let!` – Klíčové slovo vytvoří vazbu na výsledek volání do jiného výrazu výpočtu k názvu:
+
+```fsharp
+let doThingsAsync url =
+    async {
+        let! data = getDataAsync url
+        ...
+    }
+```
+
+Pokud je vytvořit vazbu volání výrazu výpočtu s `let`, nezískáte výsledek výrazu výpočtu. Místo toho je bude ovládací prvek vázán hodnotu *Nerealizovaná* volání tohoto výrazu výpočtu. Použití `let!` vytvořit vazbu k výsledku.
+
+`let!` je definován `Bind(x, f)` člen v typu Tvůrce.
+
+### `do!`
+
+`do!` – Klíčové slovo je pro volání výrazu výpočtu, která vrátí `unit`– typ, jako jsou (definované `Zero` člen Tvůrce):
+
+```fsharp
+let doThingsAsync data url =
+    async {
+        do! sumbitData data url
+        ...
+    }
+```
+
+Pro [asynchronního pracovního postupu](asynchronous-workflows.md), tento typ je `Async<unit>`. U jiných výrazech výpočtu typ by mohla být `CExpType<unit>`.
+
+`do!` je definován `Bind(x, f)` člen v typu tvůrce, kde `f` vytváří `unit`.
+
+### `yield`
+
+`yield` – Klíčové slovo je tak, aby mohly využívat jako návratová hodnota z výrazu výpočtu <xref:System.Collections.Generic.IEnumerable%601>:
+
+```fsharp
+let squares =
+    seq {
+        for i in 1..10 do
+            yield i * i
+    }
+
+for sq in squares do
+    printfn "%d" sq
+```
+
+Stejně jako u [yield – klíčové slovo v jazyce C#](../../csharp/language-reference/keywords/yield.md), každý prvek ve výrazu výpočtu, je vhodné, protože je provést iteraci.
+
+`yield` je definován `Yield(x)` člen v typu tvůrce, kde `x` je položka výnosu zpět.
+
+### `yield!`
+
+`yield!` – Klíčové slovo je pro sloučení kolekci hodnot z výrazu výpočtu:
+
+```fsharp
+let squares =
+    seq {
+        for i in 1..3 -> i * i
+    }
+
+let cubes =
+    seq {
+        for i in 1..3 -> i * i * i
+    }
+
+let squaresAndCubes =
+    seq {
+        yield! squares
+        yield! cubes
+    }
+
+printfn "%A" squaresAndCubes // Prints - 1; 4; 9; 1; 8; 27
+```
+
+Po vyhodnocení výrazu výpočtu volány `yield!` budou mít položky vrátil zpět jeden po druhém, výsledek sloučení.
+
+`yield!` je definován `YieldFrom(x)` člen v typu tvůrce, kde `x` je kolekce hodnot.
+
+### `return`
+
+`return` – Klíčové slovo obtéká hodnotu v typu odpovídá výrazu výpočtu. Kromě použití výrazech výpočtu `yield`, používá se "Dokončit" výrazu výpočtu:
+
+```fsharp
+let req = // 'req' is of type is 'Async<data>'
+    async {
+        let! data = fetch url
+        return data
+    }
+
+// 'result' is of type 'data'
+let result = Async.RunSynchronously req
+```
+
+`return` je definován `Return(x)` člen v typu tvůrce, kde `x` je položka, kterou chcete zabalit.
+
+### `return!`
+
+`return!` – Klíčové slovo realizuje hodnotu výrazu výpočtu a zabalí výsledek typ odpovídající výrazu výpočtu:
+
+```fsharp
+let req = // 'req' is of type is 'Async<data>'
+    async {
+        return! fetch url
+    }
+
+// 'result' is of type 'data'
+let result = Async.RunSynchronously req
+```
+
+`return!` je definován `ReturnFrom(x)` člen v typu tvůrce, kde `x` je jiného výrazu výpočtu.
+
+### `match!`
+
+Od verze F # 4.5, `match!` – klíčové slovo vám umožní vložení volání jiného výpočtu výrazu a vzor se vyhledala shoda podle její výsledek:
+
+```fsharp
+let doThingsAsync url =
+    async {
+        match! callService url with
+        | Some data -> ...
+        | None -> ...
+    }
+```
+
+Při volání výrazu výpočtu s `match!`, značným výsledek volání, například `let!`. To se často používá při volání výrazu výpočtu, kde výsledkem je [volitelné](options.md).
+
+## <a name="built-in-computation-expressions"></a>Integrované výpočetní výrazy
+
+Základní knihovny F # definuje tři předdefinované výpočetní výrazy: [výrazech pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [– výrazy dotazů](query-expressions.md).
+
+## <a name="creating-a-new-type-of-computation-expression"></a>Vytvoření nového typu výrazu výpočtu.
+
+Vytvoření třídy tvůrce a definováním některých speciálních metod ve třídě můžete definovat vlastnosti výrazech výpočtu. Třída tvůrců Volitelně můžete definovat metody, jak je uvedeno v následující tabulce.
+
+Následující tabulka popisuje metody, které je možné ve třídě Tvůrce pracovního postupu.
 
 |**– Metoda**|**Typické podpisy**|**Popis**|
 |----|----|----|
-|`Bind`|`M<'T> * ('T -> M<'U>) -> M<'U>`|Volá se pro `let!` a `do!` v výpočetní výrazy.|
-|`Delay`|`(unit -> M<'T>) -> M<'T>`|Zabalí výpočetní výraz jako funkce.|
-|`Return`|`'T -> M<'T>`|Volá se pro `return` v výpočetní výrazy.|
-|`ReturnFrom`|`M<'T> -> M<'T>`|Volá se pro `return!` v výpočetní výrazy.|
-|`Run`|`M<'T> -> M<'T>` Nebo<br /><br />`M<'T> -> 'T`|Spustí výpočetní výraz.|
-|`Combine`|`M<'T> * M<'T> -> M<'T>` Nebo<br /><br />`M<unit> * M<'T> -> M<'T>`|Volá se pro sekvencování v výpočetní výrazy.|
-|`For`|`seq<'T> * ('T -> M<'U>) -> M<'U>` Nebo<br /><br />`seq<'T> * ('T -> M<'U>) -> seq<M<'U>>`|Volá se pro `for...do` výrazy v výpočetní výrazy.|
-|`TryFinally`|`M<'T> * (unit -> unit) -> M<'T>`|Volá se pro `try...finally` výrazy v výpočetní výrazy.|
-|`TryWith`|`M<'T> * (exn -> M<'T>) -> M<'T>`|Volá se pro `try...with` výrazy v výpočetní výrazy.|
-|`Using`|`'T * ('T -> M<'U>) -> M<'U> when 'U :> IDisposable`|Volá se pro `use` vazby do ve výpočetní výrazy.|
-|`While`|`(unit -> bool) * M<'T> -> M<'T>`|Volá se pro `while...do` výrazy v výpočetní výrazy.|
-|`Yield`|`'T -> M<'T>`|Volá se pro `yield` výrazy v výpočetní výrazy.|
-|`YieldFrom`|`M<'T> -> M<'T>`|Volá se pro `yield!` výrazy v výpočetní výrazy.|
-|`Zero`|`unit -> M<'T>`|Volá se pro prázdný `else` větví z `if...then` výrazy v výpočetní výrazy.|
-Mnoho z metod ve třídě Tvůrce použít a vrátit `M<'T>` konstrukce, což je většinou samostatně definovaný typ, který charakterizuje druh výpočty kombinováním, například, `Async<'T>` pro asynchronní pracovní postupy a `Seq<'T>` pořadí pracovních postupů. Podpisy z těchto metod je kombinaci a vnořené mezi sebou, povolit tak, aby pracovní postup objekt vrácený jeden konstrukce můžete předat na další. Kompilátor, při analýze výpočetní výraz Převede výraz na řadu vnořená volání funkcí pomocí metody v předchozí tabulce a kód v výpočetní výraz.
+|`Bind`|`M<'T> * ('T -> M<'U>) -> M<'U>`|Volá se pro `let!` a `do!` ve výrazech výpočtu.|
+|`Delay`|`(unit -> M<'T>) -> M<'T>`|Zabalí výrazu výpočtu jako funkce.|
+|`Return`|`'T -> M<'T>`|Volá se pro `return` ve výrazech výpočtu.|
+|`ReturnFrom`|`M<'T> -> M<'T>`|Volá se pro `return!` ve výrazech výpočtu.|
+|`Run`|`M<'T> -> M<'T>` Nebo<br /><br />`M<'T> -> 'T`|Provede výrazu výpočtu.|
+|`Combine`|`M<'T> * M<'T> -> M<'T>` Nebo<br /><br />`M<unit> * M<'T> -> M<'T>`|Volá se pro určení posloupnosti ve výrazech výpočtu.|
+|`For`|`seq<'T> * ('T -> M<'U>) -> M<'U>` Nebo<br /><br />`seq<'T> * ('T -> M<'U>) -> seq<M<'U>>`|Volá se pro `for...do` výrazy ve výrazech výpočtu.|
+|`TryFinally`|`M<'T> * (unit -> unit) -> M<'T>`|Volá se pro `try...finally` výrazy ve výrazech výpočtu.|
+|`TryWith`|`M<'T> * (exn -> M<'T>) -> M<'T>`|Volá se pro `try...with` výrazy ve výrazech výpočtu.|
+|`Using`|`'T * ('T -> M<'U>) -> M<'U> when 'U :> IDisposable`|Volá se pro `use` vazby ve výrazech výpočtu.|
+|`While`|`(unit -> bool) * M<'T> -> M<'T>`|Volá se pro `while...do` výrazy ve výrazech výpočtu.|
+|`Yield`|`'T -> M<'T>`|Volá se pro `yield` výrazy ve výrazech výpočtu.|
+|`YieldFrom`|`M<'T> -> M<'T>`|Volá se pro `yield!` výrazy ve výrazech výpočtu.|
+|`Zero`|`unit -> M<'T>`|Volá se pro prázdný `else` větve z `if...then` výrazy ve výrazech výpočtu.|
 
-Vnořené výraz je v následujícím formátu:
+Mnoho metod ve třídě Tvůrce používat a vrátit `M<'T>` konstrukce, která je obvykle samostatně definovaný typ, který charakterizuje druh výpočty se kombinovat, například, `Async<'T>` pro asynchronní pracovní postupy a `Seq<'T>` pro pracovní postupy pořadí. Podpisy z těchto metod je kombinovat a vnořené s kolegy a povolit tak, aby pracovní postup objekt vrácený z jednoho konstrukce mohou být předány Další. Kompilátor při analýze výrazu výpočtu, převede výraz na sérii volání vnořené funkce pomocí metod v předchozí tabulce a kódu ve výrazu výpočtu.
+
+Vnořený výraz má následující formát:
 
 ```fsharp
 builder.Run(builder.Delay(fun () -> {| cexpr |}))
 ```
 
-Ve výše uvedeném kódu volání `Run` a `Delay` byly vynechány, pokud nejsou definovány ve třídě výpočetní výraz Tvůrce. Tělo výpočetní výraz, zde označené jako `{| cexpr |}`, je přeložen do volání metody třídy tvůrce zahrnující překlady popsané v následující tabulce. Výpočetní výraz `{| cexpr |}` je definovaný rekurzivně podle těchto překladů kde `expr` je výraz F # a `cexpr` je výpočetní výraz.
+Ve výše uvedeném kódu volání `Run` a `Delay` jsou vynechány, pokud nejsou definovány ve třídě Tvůrce výrazu výpočtu. Hlavní část výrazu výpočtu, zde označený jako `{| cexpr |}`, je přeložen do volání metody třídy tvůrce zahrnující podle překlady jsou popsané v následující tabulce. Výrazu výpočtu `{| cexpr |}` je definované rekurzivně podle tyto překlady kde `expr` je výraz F # a `cexpr` je výrazu výpočtu.
 
 
 
@@ -85,9 +253,9 @@ Ve výše uvedeném kódu volání `Run` a `Delay` byly vynechány, pokud nejsou
 |<code>{&#124; cexpr1; cexpr2 &#124;}</code>|<code>builder.Combine({&#124;cexpr1 &#124;}, {&#124; cexpr2 &#124;})</code>|
 |<code>{&#124; other-expr; cexpr &#124;}</code>|<code>expr; {&#124; cexpr &#124;}</code>|
 |<code>{&#124; other-expr &#124;}</code>|`expr; builder.Zero()`|
-V předchozí tabulce `other-expr` popisuje výraz, který není v opačném případě uvedené v tabulce. Třída Tvůrce není nutné k implementaci všechny metody a podporovat všechny překladů uvedené v předchozí tabulce. Tyto koncepty, která nejsou implementované nejsou k dispozici v výpočetní výrazy daného typu. Například, pokud nechcete pro podporu `use` – klíčové slovo v výpočetní výrazy, můžete vynechat definice `Use` v třídě Tvůrce.
+V předchozí tabulce `other-expr` popisuje výraz, který není jinak uvedená v tabulce. Třída tvůrců není potřeba implementovat všechny metody a podporují všechny převody uvedené v předchozí tabulce. Tyto konstrukce, které nejsou implementované nejsou k dispozici ve výrazech výpočtu daného typu. Například, pokud nechcete podporu `use` – klíčové slovo ve výrazech výpočtu, můžete vynechat definici `Use` ve své třídě Tvůrce.
 
-Následující příklad kódu ukazuje výpočetní výraz, který zapouzdřuje výpočet jako sérii kroků, které lze vyhodnotit jeden krok najednou. Rozlišované sjednocení typ, A `OkOrException`, jak vyhodnotit dosavadní kóduje chybový stav výrazu. Tento kód ukazuje několik typické vzorů, které můžete použít v výpočetní výrazy, například standardní implementace některé metody Tvůrce.
+Následující příklad kódu ukazuje, který zapouzdřuje výpočtu jako sérii kroků, které lze vyhodnotit jeden krok po jednom výrazu výpočtu. Rozlišované sjednocení typu A `OkOrException`, jak vyhodnotit zatím kóduje chybový stav výrazu. Tento kód ukazuje některé typické postupy, které můžete použít ve výrazech výpočtu, jako je například implementace často používaný text některé metody Tvůrce.
 
 ```fsharp
 // Computations that can be run step by step
@@ -215,10 +383,23 @@ comp |> step |> step |> step |> step |> step |> step
 comp |> step |> step |> step |> step |> step |> step |> step |> step
 ```
 
-Výpočetní výraz má základní typ, který vrací výraz. Základní typ může představovat výsledku počítaný nebo zpožděné výpočtu, který lze provést, nebo ho může poskytnout způsob, jak iteraci v rámci nějaký typ kolekce. V předchozím příkladu základní typ byl **nakonec**. Pro výraz pořadí je základní typ <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>. Pro výraz dotazu je základní typ <xref:System.Linq.IQueryable?displayProperty=nameWithType>. Pracovním postupu asychronous je základní typ [ `Async` ](https://msdn.microsoft.com/library/03eb4d12-a01a-4565-a077-5e83f17cf6f7). `Async` Objekt představuje pracovní provést k výpočtu výsledek. Například volání [ `Async.RunSynchronously` ](https://msdn.microsoft.com/library/0a6663a9-50f2-4d38-8bf3-cefd1a51fd6b) ke spouštění výpočet a vrátí výsledek.
+Výrazu výpočtu má základní typ, který vrací výraz. Nadřazený typ může představovat vypočítaný výsledek nebo opožděné výpočty, které lze provést nebo může poskytnout způsob, jak k iteraci v rámci nějaký typ kolekce. V předchozím příkladu byl nadřazený typ **nakonec**. Pro výraz pořadí základní typ je <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>. Pro výraz dotazu, je základní typ <xref:System.Linq.IQueryable?displayProperty=nameWithType>. Pro asynchronní pracovní postup, je základní typ [ `Async` ](https://msdn.microsoft.com/library/03eb4d12-a01a-4565-a077-5e83f17cf6f7). `Async` Objekt představuje práce, která musí provést k výpočtu výsledku. Například volání [ `Async.RunSynchronously` ](https://msdn.microsoft.com/library/0a6663a9-50f2-4d38-8bf3-cefd1a51fd6b) k provedení výpočtu a vrátí výsledek.
 
 ## <a name="custom-operations"></a>Vlastní operace
-Můžete definovat vlastní operaci na výpočetní výraz a použít vlastní operaci jako operátor v výpočetní výraz. Operátor dotazu může obsahovat třeba ve výrazu dotazu. Když definujete vlastní operace, je nutné definovat výnos a pro metody ve Výpočetní výraz. Chcete-li definovat vlastní operace, umístí jej do Tvůrce třídy pro výpočetní výraz a potom použít [ `CustomOperationAttribute` ](https://msdn.microsoft.com/library/199f3927-79df-484b-ba66-85f58cc49b19). Tento atribut přebírá řetězec jako argument, což je název, který se má použít v rámci vlastní operace. Tento název se dodává do oboru na začátku otevření složené závorky výpočetní výraz. Proto byste neměli používat identifikátory, které mají stejný název jako vlastní operaci v tomto bloku. Například nepoužívejte identifikátorů například `all` nebo `last` ve výrazech dotazů.
+Můžete definovat vlastní operace na výrazu výpočtu a použít vlastní operace jako operátor ve výrazu výpočtu. Můžete například zahrnout – operátor dotazu ve výrazu dotazu. Když definujete vlastní operace, je nutné definovat výnos a pro metody ve výrazu výpočtu. K definování vlastní operace put ve třídě Tvůrce výrazu výpočtu a pak použít [ `CustomOperationAttribute` ](https://msdn.microsoft.com/library/199f3927-79df-484b-ba66-85f58cc49b19). Tento atribut přijímá řetězec jako argument, což je název, který se má použít v rámci vlastní operace. Tento název vstupu do oboru na začátku otevírající složenou závorku výrazu výpočtu. Proto byste neměli používat identifikátory, které mají stejný název jako vlastní operace v tomto bloku. Například vyhnout použití identifikátorů, jako `all` nebo `last` ve výrazech dotazů.
+
+### <a name="extending-existing-builders-with-new-custom-operations"></a>Rozšíření stávajících počítačů s nové vlastní operace
+Pokud už máte třídu tvůrce, je možné rozšířit své vlastní operace z mimo tuto třídu Tvůrce. Rozšíření musí deklarovat v modulech. Obory názvů nemůžou obsahovat členy rozšíření s výjimkou ve stejném souboru a do stejné skupiny deklarace oboru názvů, kde je definován typ.
+
+Následující příklad ukazuje rozšíření existující `Microsoft.FSharp.Linq.QueryBuilder` třídy.
+
+```fsharp
+type Microsoft.FSharp.Linq.QueryBuilder with
+
+    [<CustomOperation("existsNot")>]
+    member __.ExistsNot (source: QuerySource<'T, 'Q>, predicate) =
+        Enumerable.Any (source.Source, Func<_,_>(predicate)) |> not
+```
 
 ## <a name="see-also"></a>Viz také
 [Referenční dokumentace jazyka F#](index.md)

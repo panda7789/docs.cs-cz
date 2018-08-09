@@ -1,30 +1,34 @@
 ---
-title: C# atributy - přehled používání jazyka C#
-description: Další informace o deklarativní programování pomocí atributů v jazyce C#
+title: C# atributy – prohlídka jazyka C#
+description: Další informace o deklarativní programování v jazyce C# pomocí atributů
 ms.date: 08/10/2016
 ms.assetid: 753bcfe2-7ddd-4487-9513-ba70937fc8e9
 ms.openlocfilehash: 671023f268ae78d63db8868ef6046b8f13880659
-ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
+ms.sourcegitcommit: 78bcb629abdbdbde0e295b4e81f350a477864aba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 08/08/2018
 ms.locfileid: "34312232"
 ---
 # <a name="attributes"></a>Atributy
 
-Typy, členů a ostatní entity v programu v C# podporovat modifikátory, které řídí některé aspekty jejich chování. Například usnadnění metody je řízena pomocí `public`, `protected`, `internal`, a `private` modifikátory. C# umožňuje zobecnit této funkci tak, aby uživatelem definované typy deklarativní informací lze připojit k programu entity a načítat za běhu. Programy zadejte tyto informace další deklarativní definice a používání ***atributy***.
+Typy, členy a dalších entit v programu v jazyce C# podporují modifikátory, které ovládat některé aspekty jejich chování. Například pro usnadnění metody je řízen pomocí `public`, `protected`, `internal`, a `private` modifikátory. C# umožňuje zobecnit tuto funkci tak, uživatelem definované typy deklarativní informací můžete připojit k programu entity a načíst v době běhu. Programy zadejte tyto dodatečné informace deklarativní definice a používání ***atributy***.
 
-Následující příklad deklaruje `HelpAttribute` atribut, který je možné použít u entity program poskytnout odkazy na jejich související dokumentaci.
+Následující příklad deklaruje `HelpAttribute` atribut, který může být umístěn v programu entity, které obsahují odkazy na jejich související dokumentaci.
 
 [!code-csharp[AttributeDefined](../../../samples/snippets/csharp/tour/attributes/Program.cs#L3-L20)]
 
-Všechny třídy atributů odvozena od <xref:System.Attribute> základní třída poskytuje standardní knihovny. Tím, že jejich jména, společně s všechny argumenty uvnitř hranaté závorky těsně před přidružené deklaraci, můžete použít atributů. Pokud název atributu končí na `Attribute`, tuto část názvu lze vynechat, když je atribut. Například `HelpAttribute` je možné následujícím způsobem.
+Všechny třídy atributu odvozovat <xref:System.Attribute> základní třídy, které jsou k dispozici ve standardní knihovně. Atributy lze použít zadáním jeho názvu, spolu s žádné argumenty, v hranatých závorkách těsně před deklaraci přidružené. Pokud název atributu končí na `Attribute`, část názvu lze vynechat, pokud se odkazuje atribut. Například `HelpAttribute` je možné následujícím způsobem.
 
 [!code-csharp[AttributeApplied](../../../samples/snippets/csharp/tour/attributes/Program.cs#L22-L28)]
 
-Tento příklad se připojí `HelpAttribute` k `Widget` třídy. Přidá další `HelpAttribute` k `Display` metodu v třídě. Veřejné konstruktory atribut třídy řídit informace, které je třeba zadat při atribut je připojen k programu entity. Další informace se dá zajistit pod položkou veřejné vlastnosti třídy atributů pro čtení a zápis (například odkaz na `Topic` vlastnost dříve).
+Tento příklad připojí `HelpAttribute` k `Widget` třídy. Přidá další `HelpAttribute` k `Display` metody ve třídě. Veřejné konstruktory třídu atributu řídit informace, které musí být zadaná, když je připojena k entitě programu. Další informace lze zadat pomocí odkazu na veřejné čtení a zápis vlastnosti třídy atributů (jako je například odkaz na `Topic` vlastnost dříve).
 
-Vyžádání konkrétní atribut prostřednictvím reflexe v konstruktoru pro třídy atributů vyvolání informací uvedených v programu zdroj a se vrátí výsledný instance atributu. Pokud Další informace se poskytovaly prostřednictvím vlastnosti, tyto vlastnosti jsou nastaveny na dané hodnoty před vrácením instance atributu.
+Metadata definované atributy může číst a zpracovat za běhu pomocí operace reflection. Když konkrétní atribut je požadovaný touto technikou, konstruktor pro třídu atributu je vyvolán pomocí informací uvedených ve zdrojovém programu a vrátí se výsledná instance atributu. Pokud Další informace se poskytovaly prostřednictvím vlastností, tyto vlastnosti jsou nastavené na dané hodnoty před vrácením instance atributu.
+
+Následující příklad kódu ukazuje, jak získat `HelpAttribute` instance přidružené k `Widget` třídy a jeho `Display` metoda.
+
+[!code-csharp[AttributeRead](../../../samples/snippets/csharp/tour/attributes/Program.cs#ReadAttributes)]
 
 >[!div class="step-by-step"]
 [Předchozí](delegates.md)

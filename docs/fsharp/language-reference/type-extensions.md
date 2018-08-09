@@ -1,105 +1,174 @@
 ---
 title: Rozšíření typů (F#)
-description: 'Zjistěte, jak povolit rozšíření typů F #, že přidáte nové členy typu dříve definovaném objektu.'
-ms.date: 05/16/2016
+description: 'Zjistěte, jak povolit rozšíření typů F #, že přidáte nové členy dříve definovaného typu objektu.'
+ms.date: 07/20/2018
 ms.openlocfilehash: 2181745ea75894fbfe35d5522c130baaf1876455
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 78bcb629abdbdbde0e295b4e81f350a477864aba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 08/08/2018
 ms.locfileid: "33566883"
 ---
 # <a name="type-extensions"></a>Rozšíření typů
 
-Typ rozšíření můžete přidat nové členy typu dříve definovaný objekt.
+Rozšíření typů (také nazývané _rozšíření_) jsou řadu funkcí, které umožňují přidat nové členy dříve definovaného typu objektu. Jsou tři funkce:
+
+* Rozšíření pro vnitřní typ
+* Volitelná rozšíření typů
+* Rozšiřující metody
+
+Každá lze použít v různých scénářích a má různé kompromisy.
 
 ## <a name="syntax"></a>Syntaxe
 
 ```fsharp
-// Intrinsic extension.
+// Intrinsic and optional extensions
 type typename with
     member self-identifier.member-name =
         body
     ...
-[ end ]
 
-// Optional extension.
-type typename with
-    member self-identifier.member-name =
+// Extension methods
+open System.Runtime.CompilerServices
+
+[<Extension>]
+type Extensions() =
+    [static] member self-identifier.extension-name (ty: typename, [args]) =
         body
     ...
-[ end ]
 ```
 
-## <a name="remarks"></a>Poznámky
-Existují dvě formy typ rozšíření, které mají mírně odlišné syntaxe a chování. *Vnitřní rozšíření* jako typ rozšiřovanou je rozšíření, které se zobrazí ve stejném oboru názvů nebo modul, ve stejném souboru zdroje a ve stejném sestavení (DLL nebo spustitelného souboru). *Volitelné rozšíření* je rozšíření, které se zobrazí mimo původní modulu, obor názvů nebo sestavení rozšiřovanou typu. Vnitřní rozšíření zobrazí na typ, pokud typ je zkontrolován pomocí reflexe, ale nechcete volitelná rozšíření. Volitelné rozšíření musí být v modulech a jsou pouze v oboru, když modul, který obsahuje rozšíření je otevřený.
+## <a name="intrinsic-type-extensions"></a>Rozšíření pro vnitřní typ
 
-V předchozích syntaxi *typename* představuje typ, který je právě rozšířeno. Je možné rozšířit žádný typ, který je přístupný, ale název typu musí být název skutečný typ zkratka typu. Můžete definovat více členů v jeden typ rozšíření. *Vlastní identifikátor* představuje instanci objektu volaná, stejně jako obyčejnou členy.
+Rozšíření vnitřního typu je typ rozšíření, která rozšiřuje uživatelem definovaného typu.
 
-`end` – Klíčové slovo je v prostá syntaxe volitelné.
+Rozšíření vnitřního typu musí být definován ve stejném souboru **a** ve stejném oboru názvů nebo modulu jako typ se rozšíření. Libovolná definice nebudou se [volitelná rozšíření typů](type-extensions.md#optional-type-extensions).
 
-Stejně jako ostatní členové na typu třídy lze členy definovanou v rozšíření typu. Podobně jako ostatní členové mohou být statické nebo instance členy. Tyto metody se také označují jako *rozšiřující metody*; vlastnosti se označují jako *– vlastnosti rozšíření*a tak dále. Volitelné rozšíření členy zkompilovány pro statické členy, pro které se implicitně předá instanci objektu jako první parametr. Však budou fungovat, jako kdyby byly členy instancí nebo statické členy podle jak jsou deklarované. Implicitní rozšíření členové jsou zahrnuty mezi členy typu a dá se používat bez omezení.
-
-Metody rozšíření nemůže být virtuální nebo abstraktní metody. Se může přetížit jiných metod se stejným názvem, ale dává přednost bez rozšiřující metody v případě nejednoznačné volání do kompilátoru.
-
-Pokud pro jeden typ existuje několik rozšíření vnitřního typu, všichni členové musí být jedinečný. Pro typ volitelné rozšíření mohou mít členové v jiný typ rozšíření do stejného typu stejné názvy. Pouze v případě, že kód klienta otevře dva různé obory, které definují stejné názvy členů dojít k chybám nejednoznačnosti.
-
-V následujícím příkladu má typ v modulu vnitřní typ rozšíření. Na kód klienta mimo modul typ rozšíření se zobrazí jako regulární člen typu ve všech ohledech.
-
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet3701.fs)]
-
-Vnitřní typ rozšíření můžete použít k oddělení definici typu do oddílů. To může být užitečné při správě definice rozsáhlého typu, například si nechat generované kompilátorem kód a kód vytvořené v samostatné nebo seskupit kód vytvořené jiné osoby nebo ve spojení s jinou funkci.
-
-V následujícím příkladu rozšiřuje volitelné typu rozšíření `System.Int32` typ pomocí metody rozšíření `FromString` statický člen, který volá `Parse`. `testFromString` Metoda ukazuje, že stejně jako libovolný člen instance se nazývá nového člena.
-
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet3702.fs)]
-
-Nový člen instance se zobrazí jako jakékoliv jiné metody `Int32` typu v technologii IntelliSense, ale jenom v případě, že modul, který obsahuje rozšíření je otevřené nebo jinak v oboru.
-
-## <a name="generic-extension-methods"></a>Obecný rozšiřující metody
-Před F # 3.1, kompilátor jazyka F # nepodporovala použití jazyka C# – styl rozšiřující metody s proměnné obecného typu, typ pole, řazené kolekce členů nebo typu funkce F # jako parametr "Tento". F # 3.1 podporuje použití těchto rozšíření členů.
-
-Například v F # 3.1 kódu, můžete použít metody rozšíření s podpisy, které se podobají syntaxi v jazyce C#:
-
-```csharp
-static member Method<T>(this T input, T other)
-```
-
-Tento postup je zvlášť užitečné, když je omezené parametr obecného typu. Navíc můžete teď deklarovat rozšíření členy takto v F # – kód a definovat další, sémanticky bohatou sadu rozšiřující metody. V jazyce F # obvykle definovat rozšíření členy jako následující příklad ukazuje:
+Rozšíření vnitřního typu jsou někdy čistší způsob, jak oddělit od deklarace typu funkce. Následující příklad ukazuje, jak definovat rozšíření vnitřního typu:
 
 ```fsharp
+namespace Example
+
+type Variant =
+    | Num of int
+    | Str of string
+  
+module Variant =
+    let print v =
+        match v with
+        | Num n -> printf "Num %d" n
+        | Str s -> printf "Str %s" s
+
+// Add a member to Variant as an extension
+type Variant with
+    member x.Print() = Variant.print x
+```
+
+Použití rozšíření typu umožňuje oddělit každou z následujících akcí:
+
+* Deklarace `Variant` typu
+* Funkce pro tisk `Variant` třídy v závislosti na jeho "tvar"
+* Přístup k funkci tisku stylem objekt `.`– zápis
+
+Jedná se o alternativu k definování vše jako člen na `Variant`. Ačkoli to není ze své podstaty lepším řešením, může být čisticí reprezentace funkce v některých situacích.
+
+Rozšíření vnitřního typu jsou kompilovány jako členy typu, rozšíření a zobrazí u typu, když je typ zkontrolován pomocí reflexe.
+
+## <a name="optional-type-extensions"></a>Volitelná rozšíření typů
+
+Rozšíření volitelného typu je rozšíření, které se objeví mimo původní modul, obor názvů a sestavení rozšiřovaného typu.
+
+Volitelná rozšíření typů jsou užitečné pro rozšíření typu, který ještě nebyl definován sami. Příklad:
+
+```fsharp
+module Extensions
+
 open System.Collections.Generic
 
 type IEnumerable<'T> with
     /// Repeat each element of the sequence n times
     member xs.RepeatElements(n: int) =
-        seq { for x in xs do for i in 1 .. n do yield x }
+        seq {
+            for x in xs do
+                for i in 1 .. n do
+                    yield x
+        }
 ```
 
-Ale pro obecný typ, nemusí být omezené proměnná typu. Nyní můžete deklarovat C# – styl rozšíření člena v F # na toto omezení obejít. Když zkombinujete tento druh deklarace s vložených funkcí jazyka F #, může být obecné algoritmy jako rozšíření členy.
+Teď umožňuje přistupovat k `RepeatElements` , pokud je člen <xref:System.Collections.Generic.IEnumerable%601> tak dlouho, dokud `Extensions` modulu je otevřen v oboru, který se k práci používáte.
 
-Vezměte v úvahu následující prohlášení:
+Volitelná rozšíření nejsou zobrazeny na rozšířený typ při zkontrolován pomocí reflexe. Musí být volitelné rozšíření v modulech a jsou to jenom v oboru modulu, který obsahuje rozšíření je otevřená nebo je jinak v oboru.
+
+Volitelní Členové rozšíření jsou kompilováni do statických členů, pro které je implicitně předána instance objektu jako první parametr. Působí však jako v případě, že jsou členy instance nebo statickými členy podle toho, jak jsou deklarovány.
+
+## <a name="generic-limitation-of-intrinsic-and-optional-type-extensions"></a>Obecná omezení rozšíření pro vnitřní objekty a jsou volitelné typ
+
+Je možné deklarovat typ rozšíření u obecného typu, kde je proměnná typu omezen. Požadavek je, že omezení deklaraci rozšíření shoduje s jiným omezením deklarovaného typu.
+
+Ale i v případě, že omezení se shoda mezi deklarovaného typu a rozšíření typu, je možné, omezení a odvodit subjektem rozšířený člen, který má jiný požadavek na parametr typu než deklarovaného typu. Příklad:
 
 ```fsharp
+open System.Collections.Generic
+
+// NOT POSSIBLE AND FAILS TO COMPILE!
+//
+// The member 'Sum' has a different requirement on 'T than the type IEnumerable<'T>
+type IEnumerable<'T> with
+    member this.Sum() = Seq.sum this
+```
+
+Neexistuje žádný způsob, jak získat tento kód pro práci s rozšíření volitelného typu:
+
+* Je, `Sum` člen má jiné omezení `'T` (`static member get_Zero` a `static member (+)`) než co definuje typ rozšíření.
+* Úprava rozšíření typu mít stejné omezení jako `Sum` už nebude odpovídat definované omezení na `IEnumerable<'T>`.
+* Provádění změna členu, který chcete `member inline Sum` vám poskytne chybu, že se neshodují omezení typu.
+
+Co je žádoucí jsou statické metody, které "float v prostoru" a lze zobrazit, jako by se při rozšiřování typu. To je, kde budou nezbytné metody rozšíření.
+
+## <a name="extension-methods"></a>Rozšiřující metody
+
+Nakonec metody rozšíření (někdy nazývané "C# styl členy rozšíření") lze deklarovat v jazyce F # jako metodu statického člena třídy.
+
+Rozšiřující metody jsou užitečné pro když chcete definovat rozšíření u obecného typu, který bude proměnná typu omezení. Příklad:
+
+```fsharp
+namespace Extensions
+
+open System.Runtime.CompilerServices
+
 [<Extension>]
-type ExtraCSharpStyleExtensionMethodsInFSharp () =
+type IEnumerableExtensions() =
     [<Extension>]
     static member inline Sum(xs: IEnumerable<'T>) = Seq.sum xs
 ```
 
-Pomocí tohoto prohlášení, můžete napsat kód, který se podobá následující ukázka.
+Když se použije, tento kód filtrovacího řetězce se zobrazí jako `Sum` je definován na <xref:System.Collections.Generic.IEnumerable%601>, tak dlouho, dokud `Extensions` byl otevřen nebo je v oboru.
 
-```fsharp
-let listOfIntegers = [ 1 .. 100 ]
-let listOfBigIntegers = [ 1I to 100I ]
-let sum1 = listOfIntegers.Sum()
-let sum2 = listOfBigIntegers.Sum()
-```
+## <a name="other-remarks"></a>Další poznámky
 
-V tomto kódu má stejný kód obecné aritmetické použije dva typy seznamů bez přetížení definováním členem jedné rozšíření.
+Rozšíření typu mít také následující atributy:
 
+* Je možné rozšířit libovolný typ, který je přístupný.
+* Můžete definovat rozšíření pro vnitřní objekty a jsou volitelné typ _jakékoli_ typ členu, ne jenom metody. Vlastnosti rozšíření jsou tedy také je to možné, např.
+* `self-identifier` Token [syntaxe](type-extensions.md#syntax) představuje instanci typu vyvolání, stejně jako běžné členy.
+* Rozšířené členy může být statická nebo členy instance.
+* Proměnné typu na typ rozšíření musí odpovídat omezením deklarovaného typu.
 
-## <a name="see-also"></a>Viz také
+Pro rozšíření typu také existují následující omezení:
+
+* Rozšíření typu nepodporují virtuální nebo abstraktní metody.
+* Rozšíření typu nepodporují přepsání metody jako rozšíření.
+* Rozšíření typu nepodporují [statisticky vyřešených parametrů typu](generics/statically-resolved-type-parameters.md).
+* Volitelné rozšíření typu nepodporují konstruktory jako rozšíření.
+* Rozšíření typu nelze definovat na [typ – zkratky](type-abbreviations.md).
+* Rozšíření typu nejsou platné pro `byref<'T>` (i když mohou být deklarovány).
+* Rozšíření typu nejsou platné pro atributy (i když mohou být deklarovány).
+* Můžete definovat rozšíření, která přetížit jiné metody se stejným názvem, ale kompilátor F # dává přednost metody rozšíření, pokud je nejednoznačné volání.
+
+Nakonec pokud existuje více rozšíření vnitřního typu pro jeden typ, všechny členy musí být jedinečný. Pro volitelná rozšíření typů členové v jiných typech rozšíření stejného typu mají stejné názvy. K chybám nejednoznačnosti dojde pouze v případě, že kód klienta otevře dva různé obory, které definují stejné názvy členů.
+
+## <a name="see-also"></a>Viz také:
+
 [Referenční dokumentace jazyka F#](index.md)
 
 [Členové](members/index.md)

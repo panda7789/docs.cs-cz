@@ -11,29 +11,29 @@ ms.assetid: 89bc7e53-85f5-478a-866d-1cca003c4e8c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bdf8735894594acab31586e539f90e426db97f24
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 78bcb629abdbdbde0e295b4e81f350a477864aba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 08/08/2018
 ms.locfileid: "33289175"
 ---
 # <a name="-c-reference"></a>@ (Referenční dokumentace jazyka C#)
 
-`@` Speciální znak slouží jako typu verbatim identifikátor. Dá se následujícími způsoby:
+`@` Speciální znak slouží jako doslovný identifikátor. Je možné následujícími způsoby:
 
-1. Chcete-li povolit klíčová slova jazyka C# má být použit jako identifikátory. `@` Znak předpony element kódu, který kompilátor je interpretovat jako identifikátor, nikoli klíčové slovo C#. Následující příklad používá `@` znak zadat identifikátor s názvem `for` používající v `for` smyčky.
+1. Povolit klíčová slova jazyka C# má být použit jako identifikátory. `@` Znak předpon prvek kódu, který kompilátor, je interpretováno jako identifikátor místo klíčového slova jazyka C#. V následujícím příkladu `@` znak definovat identifikátor s názvem `for` používající v `for` smyčky.
 
    [!code-csharp[verbatim1](../../../../samples/snippets/csharp/language-reference/keywords/verbatim1.cs#1)]
 
-1. Označuje, že řetězcový literál doslovné interpretovat. `@` Definuje znak v této instanci *typu verbatim řetězcový literál*. Jednoduchý řídicí sekvence (, jako `"\\"` pro zpětné lomítko), šestnáctková řídicí sekvence (, jako `"\x0041"` pro velká A) a Unicode řídicí sekvence (například `"\u0041"` pro velká A) se interpretují oznámena. Uvozovky řídicí sekvence (`""`) neinterpretuje oznámena; vyvolá jednoduché uvozovky. Kromě toho v případě typu verbatim [interpolované řetězce](interpolated.md) složené závorce řídicích sekvencí (`{{` a `}}`) nejsou interpretovat oznámena; vytvářejí jeden závorek znaků. V následujícím příkladu definuje dvě cesty k souborům identické, jeden s použitím regulárních řetězcový literál a dalších pomocí typu verbatim řetězcový literál. Toto je jedna z více běžná použití služby typu verbatim textové literály.
+1. Označuje, že řetězcového literálu verbatim interpretovat. `@` Definuje znak v tomto případě *doslovný řetězec literálu*. Jednoduchá řídící sekvence (například `"\\"` pro zpětné lomítko), hexadecimální řídicí sekvence (, jako `"\x0041"` pro velká A) a řídicí sekvence Unicode (například `"\u0041"` pro velká A) jsou interpretovány literálně. Nabídky řídicí sekvence (`""`) nebyl interpretován doslovně; vytvoří jednoduchou uvozovku. Kromě toho v případě verbatim [interpolovaný řetězec](interpolated.md) složenou závorku řídicí sekvence (`{{` a `}}`) nejsou interpretován doslovně; vytvářejí jednu složenou závorku znaků. Následující příklad definuje dvě cesty k souborům identické, pomocí regulárních řetězcový literál a druhý s použitím doslovný řetězec literálu. Toto je jeden z více běžná použití služby verbatim řetězcové literály.
 
    [!code-csharp[verbatim2](../../../../samples/snippets/csharp/language-reference/keywords/verbatim1.cs#2)]
 
-   Následující příklad ilustruje účinek definování regulární řetězcový literál a typu verbatim řetězcový literál, které obsahují znak stejné pořadí.
+   Následující příklad ukazuje účinek definování regulárního řetězcový literál a doslovný řetězec literálu, které obsahují stejné znakové sekvence.
 
    [!code-csharp[verbatim3](../../../../samples/snippets/csharp/language-reference/keywords/verbatim1.cs#3)]
 
-1. Chcete-li povolit kompilátoru k rozlišení mezi atributy v případě konfliktu názvů. Atribut je typ, který je odvozen od <xref:System.Attribute>. Jeho název typu obvykle zahrnuje přípona **atribut**, i když kompilátor nevynucuje touto konvencí. Atribut může pak odkazovat v kódu buď jeho typ úplný název (například `[InfoAttribute]` nebo jeho zkrácený název (například `[Info]`). Ale ke konfliktu názvů v případě dva zkrátit názvy typů atributů jsou identické, a obsahuje jeden název typu **atribut** příponu ale dalších neexistuje. Například následující kód nepodaří kompilovat, protože kompilátor nemůže určit, zda `Info` nebo `InfoAttribute` je použit atribut `Example` – třída.
+1. Umožňuje kompilátoru k rozlišení mezi atributy v případě konfliktu názvů. Atribut je typ, který je odvozen od <xref:System.Attribute>. Obvykle obsahuje příponu názvu typu **atribut**, i když kompilátor nevynucuje Tato konvence. Atribut může poté odkazovat v kódu, buď pomocí jeho úplný název typu (například `[InfoAttribute]` nebo jeho zkrácený název (například `[Info]`). Ale ke konfliktu názvů v případě dvou zkrátila názvy typů atributů jsou identické, a zahrnuje jeden název typu **atribut** příponu, ale druhá ne. Například následující kód nejde zkompilovat, protože kompilátor nemůže určit, jestli `Info` nebo `InfoAttribute` atribut aplikován `Example` třídy.
 
    ```csharp
    using System;
@@ -70,7 +70,7 @@ ms.locfileid: "33289175"
    }
    ```  
 
-   Pokud typu verbatim identifikátor slouží k identifikaci `Info` atribut v příkladu se zkompiluje úspěšně.
+   Pokud Doslovný identifikátor se používá k identifikaci `Info` atribut, příklad se zkompiluje úspěšně.
 
    [!code-csharp[verbatim4](../../../../samples/snippets/csharp/language-reference/keywords/verbatim4.cs#1)]
 
