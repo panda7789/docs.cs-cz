@@ -304,7 +304,7 @@ Variant předán podle hodnoty a podle reference
   
  **Výchozí chování zařazování objekty a variant odkazem**  
   
- Rozšíří změny zpět do volající, musí být předán parametry odkazem. Například můžete použít **ref** – klíčové slovo v jazyce C# (nebo **ByRef** v jazyce Visual Basic spravovaný kód) předat parametry odkazem. V modelu COM, odkaz parametry se jí předávají pomocí ukazatele, jako třeba **variant \*** .  
+ Rozšíří změny zpět do volající, musí být předán parametry odkazem. Například můžete použít **ref** – klíčové slovo v jazyce C# (nebo **ByRef** v jazyce Visual Basic spravovaný kód) předat parametry odkazem. V modelu COM, odkaz parametry se jí předávají pomocí ukazatele, jako třeba **variant \***.  
   
 -   Při předávání objektu COM odkazem, zařazování vytvoří nové typu variant a zkopíruje obsah odkaz na objekt do varianta než při volání. Varianta předaný funkci nespravované kde je mohou změnit obsah varianta uživatele. Při návratu z volání všechny změny typu variant na nespravované straně rozšířeny zpět na původní objekt. Pokud typ varianty se liší od typu variant předána volání funkce, změny rozšířeny zpět do objektu jiného typu. To znamená typ objektu, který je předán do volání se může lišit od typ objektu vrácená z volání.  
   

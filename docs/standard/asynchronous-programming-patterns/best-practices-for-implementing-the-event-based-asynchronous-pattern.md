@@ -35,7 +35,7 @@ Asynchronní vzor založený na událostech poskytuje účinný způsob, jak vys
   
 -   Definování <em>MethodName</em>**dokončeno** události na stejné třídy jako metodu.  
   
--   Definování <xref:System.EventArgs> třídy a doprovodných delegáta pro <em>MethodName</em>**dokončeno** událost, která je odvozena z <xref:System.ComponentModel.AsyncCompletedEventArgs> třídy. Výchozí název třídy by měly mít tvar * MethodName ***CompletedEventArgs**.  
+-   Definování <xref:System.EventArgs> třídy a doprovodných delegáta pro <em>MethodName</em>**dokončeno** událost, která je odvozena z <xref:System.ComponentModel.AsyncCompletedEventArgs> třídy. Výchozí název třídy by měly mít tvar *MethodName***CompletedEventArgs**.  
   
 -   Ujistěte se, že <xref:System.EventArgs> třída je specifická pro vrácené hodnoty *MethodName* metody. Při použití <xref:System.EventArgs> třídy by nikdy vyžadujete vývojářům přetypujte výsledek.  
   
@@ -57,15 +57,15 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
   
 -   Nedefinujte <xref:System.EventArgs> třídy pro vrácení metody, které vracejí `void`. Místo toho použijte instanci <xref:System.ComponentModel.AsyncCompletedEventArgs> třídy.  
   
--   Ujistěte se, že vždy zvýšit *MethodName *** dokončeno** události. Při úspěšném dokončení, chybě nebo zrušení, by měla tato událost vyvolána. Aplikace by nikdy dojít k situaci, kdy jsou zůstat v nečinnosti a dokončení se nikdy neprovádí.  
+-   Ujistěte se, že vždy zvýšit *MethodName*** dokončeno** události. Při úspěšném dokončení, chybě nebo zrušení, by měla tato událost vyvolána. Aplikace by nikdy dojít k situaci, kdy jsou zůstat v nečinnosti a dokončení se nikdy neprovádí.  
   
 -   Ujistěte se, můžete zachytit žádné výjimky, které probíhá asynchronní operace a přiřaďte Zachycenou výjimku do <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> vlastnost.  
   
 -   Došlo k chybě, dokončení úkolu, výsledky by neměl být přístupný. Když <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> vlastnost není `null`, zkontrolujte, že přístup k žádné vlastnosti v <xref:System.EventArgs> struktury vyvolá výjimku. Použití <xref:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary%2A> metody k provedení tohoto ověření.  
   
--   Model vypršení časového limitu za chybu. Pokud dojde k vypršení časového limitu, zvýšit *MethodName *** dokončeno** událostí a přiřazení <xref:System.TimeoutException> k <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> vlastnost.  
+-   Model vypršení časového limitu za chybu. Pokud dojde k vypršení časového limitu, zvýšit *MethodName***dokončeno** událostí a přiřazení <xref:System.TimeoutException> k <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> vlastnost.  
   
--   Pokud vaše třída podporuje více souběžných volání, ujistěte se, že *MethodName *** dokončeno** událost obsahuje odpovídající `userSuppliedState` objektu.  
+-   Pokud vaše třída podporuje více souběžných volání, ujistěte se, že *MethodName***dokončeno** událost obsahuje odpovídající `userSuppliedState` objektu.  
   
 -   Ujistěte se, *MethodName *** dokončeno** událost se vyvolá u příslušné vlákna a v příslušnou dobu v životního cyklu aplikací. Další informace naleznete v oddílu zřetězení a kontexty.  
   
