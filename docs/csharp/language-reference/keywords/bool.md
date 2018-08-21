@@ -8,40 +8,40 @@ helpviewer_keywords:
 - bool keyword [C#]
 ms.assetid: 551cfe35-2632-4343-af49-33ad12da08e2
 ms.openlocfilehash: d6b0cb91dd9b8159919b0d155bb2f9773e7ba534
-ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36315105"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40239889"
 ---
 # <a name="bool-c-reference"></a>bool (Referenční dokumentace jazyka C#)
 
-`bool` – Klíčové slovo je zástupce <xref:System.Boolean?displayProperty=nameWithType>. Se používá k deklaraci proměnné, které chcete uložit logické hodnoty [true](../../../csharp/language-reference/keywords/true.md) a [false](../../../csharp/language-reference/keywords/false.md).
+`bool` – Klíčové slovo je alias pro <xref:System.Boolean?displayProperty=nameWithType>. Se používá k deklaraci proměnné k ukládání logické hodnoty [true](../../../csharp/language-reference/keywords/true.md) a [false](../../../csharp/language-reference/keywords/false.md).
 
 > [!NOTE]
-> Pokud požadujete logická hodnota proměnné, která může mít hodnotu `null`, použijte `bool?`. Další informace najdete v tématu [typy s možnou hodnotou Null](../../../csharp/programming-guide/nullable-types/index.md).
+> Pokud požadujete logickou hodnotu, která může také obsahovat hodnotu `null`, použijte `bool?`. Další informace najdete v tématu [typy připouštějící hodnotu Null](../../../csharp/programming-guide/nullable-types/index.md).
 
 ## <a name="literals"></a>Literály
 
-Můžete přiřadit logickou hodnotu k `bool` proměnné. Je také možné přiřadit výraz, který se vyhodnocuje `bool` k `bool` proměnné.
+Můžete přiřadit logickou hodnotu k `bool` proměnné. Můžete také přiřadit výraz, který se vyhodnotí `bool` k `bool` proměnné.
 
 [!code-csharp[csrefKeywordsTypes#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#1)]
 
-Výchozí hodnota `bool` proměnná `false`. Výchozí hodnota `bool?` proměnná `null`.
+Výchozí hodnota `bool` proměnná je `false`. Výchozí hodnota `bool?` proměnná je `null`.
 
 ## <a name="conversions"></a>Převody
 
-V jazyce C++ hodnotu typu `bool` lze převést na hodnotu typu `int`; jinými slovy, `false` se rovná nule a `true` je ekvivalentní nenulové hodnoty. V jazyce C#, neexistuje žádný převod mezi `bool` typu a dalších typů. Například následující `if` příkaz je neplatný v jazyce C#:
+V jazyce C++ je hodnota typu `bool` lze převést na hodnotu typu `int`; jinými slovy, `false` je ekvivalentní hodnotě nula a `true` odpovídá nenulové hodnoty. V jazyce C#, neexistuje žádný převod mezi `bool` typ a jiné typy. Například následující `if` příkaz není platný v jazyce C#:
 
 [!code-csharp[csrefKeywordsTypes#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#2)]
 
-K testování proměnné typu `int`, budete muset explicitně porovnávají ho na hodnotu, jako je například nula, následujícím způsobem:
+K otestování proměnné typu `int`, je nutné explicitně porovnejte ji s hodnotou, jako je nula, následujícím způsobem:
 
 [!code-csharp[csrefKeywordsTypes#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#3)]
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu zadejte znak z klávesnice a program ověří, zda vstupní znak je písmeno. Pokud je písmeno, zkontroluje, pokud je malá nebo velká písmena. Tyto kontroly se provádějí pomocí <xref:System.Char.IsLetter%2A>, a <xref:System.Char.IsLower%2A>, obě které vrátit `bool` typ:
+V tomto příkladu zadejte znak z klávesnice a program kontroluje, jestli vstupní znak je písmeno. Pokud je písmeno, se zkontroluje, jestli malá nebo velká písmena. Tyto kontroly se provádějí s <xref:System.Char.IsLetter%2A>, a <xref:System.Char.IsLower%2A>, jak které návratovou hodnotu `bool` typu:
 
 [!code-csharp[csrefKeywordsTypes#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#4)]
 

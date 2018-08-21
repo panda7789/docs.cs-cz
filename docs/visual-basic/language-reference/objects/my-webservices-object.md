@@ -1,5 +1,5 @@
 ---
-title: My.WebServices – objekt
+title: My.WebServices – objekt (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - My.WebServices
@@ -7,44 +7,44 @@ f1_keywords:
 helpviewer_keywords:
 - My.WebServices object
 ms.assetid: f188dc05-2c75-41b6-bb68-122d1c3110a2
-ms.openlocfilehash: 9519638c7609b9b1d0f5e07397c46975e2696c94
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7ae99bec5797591e53c6c77f5d9f88589352104c
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604689"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40240343"
 ---
 # <a name="mywebservices-object"></a>My.WebServices – objekt
-Poskytuje vlastnosti pro vytváření a přístup k jediné instance každého XML webové služby odkazuje v aktuálním projektu.  
+Poskytuje vlastnosti pro vytváření a přístup ke jednu instanci každé webové služby XML odkazuje aktuální projekt.  
   
 ## <a name="remarks"></a>Poznámky  
- `My.WebServices` Objekt poskytuje instanci každé webové služby odkazuje v aktuálním projektu. Každá instance je vytvořena na vyžádání. Tyto webové služby můžete přistupovat prostřednictvím vlastnosti `My.WebServices` objektu. Název vlastnosti je stejný jako název webové služby, který má přístup k vlastnosti. Všechny třídy, která dědí z <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> je webová služba. Informace o přidání do projektu webové služby najdete v tématu [přístup k aplikačním webovým službám](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
+ `My.WebServices` Objekt, který poskytuje instance každou webovou službu odkazuje aktuální projekt. Každá instance je vytvořena na vyžádání. Můžete k těmto webovým službám prostřednictvím vlastnosti `My.WebServices` objektu. Název vlastnosti je stejný jako název webové služby, který přistupuje k vlastnosti. Všechny třídy, která dědí z <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> je webová služba. Informace o přidání do projektu webové služby najdete v tématu [přístup k aplikačním webovým službám](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
   
- `My.WebServices` Objekt se poskytuje pouze webové služby přidružené k aktuální projekt. Neposkytuje přístup k webovým službám, které jsou deklarované v odkazované knihovny DLL. Pro přístup k webové službě, která poskytuje knihovnu DLL, musíte použít kvalifikovaný název webové služby, ve tvaru *názevsouboru*. *WebServiceName*. Další informace najdete v tématu [přístup k aplikačním webovým službám](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
+ `My.WebServices` Zpřístupňuje pouze webové služby přidružené k aktuálnímu projektu. Neposkytuje přístup k webovým službám, které jsou deklarované v odkazované knihovny DLL. Pro přístup k webové službě, která poskytuje knihovnu DLL, je nutné použít kvalifikovaný název webové služby ve formě *názevsouboru*. *WebServiceName*. Další informace najdete v tématu [přístup k aplikačním webovým službám](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
   
  Objekt a jeho vlastnosti nejsou k dispozici pro webové aplikace.  
   
 ## <a name="properties"></a>Vlastnosti  
- Každou vlastnost `My.WebServices` objekt poskytuje přístup k instanci webové služby odkazuje v aktuálním projektu. Název vlastnosti je stejný jako název webové služby, který má přístup k vlastnosti a typ vlastnosti je stejný jako typ webovou službu.  
+ Každou vlastnost `My.WebServices` objekt, který poskytuje přístup k instanci webové služby odkazuje aktuální projekt. Název vlastnosti je stejný jako název webové služby, který přistupuje k vlastnosti, a typ vlastnosti je stejný jako typ webové služby.  
   
 > [!NOTE]
->  Pokud je kolize názvů, je název vlastnosti pro přístup k webové službě *RootNamespace*_*Namespace*\_*ServiceName*. Představte si třeba dva webové služby s názvem `Service1`. Pokud jeden z těchto služeb je v kořenovém oboru názvů `WindowsApplication1` a v oboru názvů `Namespace1`, bude přístup k této službě pomocí `My.WebServices.WindowsApplication1_Namespace1_Service1`.  
+>  Pokud je kolize názvů, název vlastnosti pro přístup k webové službě je *RootNamespace*_*Namespace*\_*ServiceName*. Představte si třeba dvě webové služby s názvem `Service1`. Pokud jeden z těchto služeb se v kořenovém oboru názvů `WindowsApplication1` a v oboru názvů `Namespace1`, můžete tuto službu k pomocí `My.WebServices.WindowsApplication1_Namespace1_Service1`.  
   
- Pokud nejprve přístup mezi `My.WebServices` vlastností objektu vytvoří novou instanci třídy webové služby a uloží ji. Následných přístupech této vlastnosti vrátí tuto instanci webové služby.  
+ Při prvním přístupu jeden z `My.WebServices` vlastností objektu ji vytvoří novou instanci webové služby a uloží jej. Následující přístupy do této vlastnosti vrátit tuto instanci webové služby.  
   
- Můžete vyřazení webové služby přiřazením `Nothing` vlastnosti pro tuto webovou službu. Metoda setter vlastnosti přiřadí `Nothing` uložené hodnotě. Chcete-li přiřadit žádnou hodnotu než `Nothing` pro vlastnost, nastavovací metoda vyvolá <xref:System.ArgumentException> výjimka.  
+ Můžete uvolnit webové služby pomocí přiřazení `Nothing` vlastnosti pro tuto webovou službu. Metoda setter vlastnosti přiřadí `Nothing` k uložené hodnotě. Pokud přiřadíte libovolnou hodnotu jiné než `Nothing` na vlastnost, vyvolá metoda setter <xref:System.ArgumentException> výjimky.  
   
- Můžete zkontrolovat, zda vlastnost `My.WebServices` objekt ukládá instance webové služby pomocí `Is` nebo `IsNot` operátor. Tyto operátory můžete zkontrolovat, zda je hodnota vlastnosti `Nothing`.  
+ Můžete zkontrolovat, jestli vlastnost `My.WebServices` ukládá instance webové služby pomocí `Is` nebo `IsNot` operátor. Chcete-li zkontrolovat, zda je hodnota vlastnosti můžete použít tyto operátory `Nothing`.  
   
 > [!NOTE]
->  Obvykle `Is` nebo `IsNot` operátor má načíst hodnotu vlastnosti, která má-li provést porovnání. Ale pokud vlastnost aktuálně ukládá `Nothing`, vlastnost vytvoří novou instanci webové služby a vrátí tuto instanci. Ale Visual Basic – kompilátor zpracovává vlastnosti `My.WebServices` speciálně objektu a umožňuje `Is` nebo `IsNot` operátor a zkontrolujte stav vlastnosti beze změny jeho hodnotu.  
+>  Obvykle `Is` nebo `IsNot` operátor má být přečtena hodnota vlastnosti k provádění porovnání. Nicméně pokud aktuálně uchovává vlastnost `Nothing`, vlastnost vytvoří novou instanci webové služby a vrátí tuto instanci. Však kompilátor jazyka Visual Basic zpracovává vlastnosti `My.WebServices` speciálně objektu a umožňuje `Is` nebo `IsNot` operátor zkontrolovat stav vlastnost beze změny jeho hodnotu.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad volá `FahrenheitToCelsius` metodu `TemperatureConverter` XML webové služby a vrátí výsledek.  
+ Tento příklad příkladu volá `FahrenheitToCelsius` metodu `TemperatureConverter` webové služby XML a vrátí výsledek.  
   
  [!code-vb[VbVbalrMyWebService#1](../../../visual-basic/language-reference/objects/codesnippet/VisualBasic/my-webservices-object_1.vb)]  
   
- Pro tento příklad fungoval, musí odkazovat projektu webové služby s názvem `Converter`, a že webové služby musí vystavit `ConvertTemperature` metoda. Další informace najdete v tématu [přístup k aplikačním webovým službám](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
+ Pro tento příklad fungoval, musí váš projekt odkazovat webové služby s názvem `Converter`, a musí zveřejnit této webové služby `ConvertTemperature` metody. Další informace najdete v tématu [přístup k aplikačním webovým službám](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
   
  Tento kód nefunguje v projektu webové aplikace.  
   
@@ -54,13 +54,13 @@ Poskytuje vlastnosti pro vytváření a přístup k jediné instance každého X
   
 |Typ projektu|K dispozici|  
 |---|---|  
-|Aplikace systému Windows|**Ano**|  
+|Aplikace Windows|**Ano**|  
 |Knihovna tříd|**Ano**|  
 |Konzolová aplikace|**Ano**|  
 |Knihovna ovládacích prvků Windows|**Ano**|  
 |Knihovna webových prvků|**Ano**|  
 |Služba systému Windows|**Ano**|  
-|Webový server|Ne|  
+|Webové stránky|Ne|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Web.Services.Protocols.SoapHttpClientProtocol>  

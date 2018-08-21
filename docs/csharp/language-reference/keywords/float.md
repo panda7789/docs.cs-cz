@@ -9,53 +9,53 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 ms.assetid: 1e77db7b-dedb-48b7-8dd1-b055e96a9258
 ms.openlocfilehash: 9500aceed62904e68d6b7ee8bec569d12103bb18
-ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37028237"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40239876"
 ---
 # <a name="float-c-reference"></a>float (Referenční dokumentace jazyka C#)
 
-`float` – Klíčové slovo označuje jednoduchý typ, který ukládá 32bitové hodnoty s plovoucí desetinnou čárkou. Následující tabulka uvádí přesnost a přibližnou rozsah `float` typu.
+`float` – Klíčové slovo znamená jednoduchý typ, který ukládá 32bitové hodnoty s plovoucí desetinnou čárkou. V následující tabulce jsou uvedeny přesnosti a rozsahu pro `float` typu.
 
-|Typ|Přibližná rozsahu|Přesnost|Typ formátu .NET|  
+|Typ|Přibližný rozsah|Přesnost|Typ formátu .NET|  
 |----------|-----------------------|---------------|-------------------------|  
-|`float`|-3.4 × 10<sup>38</sup> + 3,4 × 10<sup>38</sup>|7 míst|<xref:System.Single?displayProperty=nameWithType>|  
+|`float`|-3.4 × 10<sup>38</sup> + 3,4 × 10<sup>38</sup>|7 číslic|<xref:System.Single?displayProperty=nameWithType>|  
 
 ## <a name="literals"></a>Literály
 
-Ve výchozím nastavení, je skutečně číselný literál na pravé straně operátoru přiřazení považován za [dvojité](double.md). Proto k chybě při inicializaci float proměnné, použijte příponu `f` nebo `F`, jako v následujícím příkladu:
+Ve výchozím nastavení, skutečné číselný literál na pravé straně operátoru přiřazení je považován za [double](double.md). Proto se inicializovat proměnnou s plovoucí desetinnou čárkou, použijte příponu `f` nebo `F`, jako v následujícím příkladu:
 
 ```csharp
 float x = 3.5F;
 ```
 
-Pokud nepoužijete příponou v předchozí deklaraci, zobrazí se chyba kompilace vzhledem k tomu, že se pokoušíte uložit [dvojité](double.md) hodnotu do `float` proměnné.
+Pokud je předchozí deklarace nepoužívají příponu, obdržíte chybu kompilace, protože se pokoušíte ukládat [double](double.md) hodnoty do `float` proměnné.
 
 ## <a name="conversions"></a>Převody
 
-Je možné kombinovat číselné integrální typy a typy s plovoucí desetinnou čárkou ve výrazu. Celočíselné typy v tomto případě se převedou na typy s plovoucí desetinnou čárkou. Vyhodnocení výrazu se provádí podle následujících pravidel:
+Integrální číselné typy a typy s plovoucí desetinnou čárkou ve výrazu můžete kombinovat. V takovém případě integrální typy jsou převedeny na typy s plovoucí desetinnou čárkou. Vyhodnocení výrazu se provádí dle následujících pravidel:
 
-- Pokud jeden z typů s plovoucí desetinnou čárkou je [dvojité](double.md), výsledkem výrazu [dvojité](double.md) nebo [bool](bool.md) ve výrazech relační nebo logická hodnota.
+- Pokud jeden z typů s plovoucí desetinnou čárkou je [double](double.md), je výraz vyhodnocen [double](double.md) nebo [bool](bool.md) v relačních nebo logické výrazy.
 
-- Pokud neexistuje žádné [dvojité](double.md) zadejte výraz výraz vyhodnocen jako `float` nebo [bool](bool.md) ve výrazech relační nebo logická hodnota.
+- Pokud není žádný [double](double.md) zadejte výraz, výraz je vyhodnocen jako `float` nebo [bool](bool.md) v relačních nebo logické výrazy.
 
-Výraz s plovoucí desetinnou čárkou mohou obsahovat následující sady hodnot:
+Výraz s plovoucí desetinnou čárkou může obsahovat následující sady hodnot:
 
-- Kladné a záporné nuly
+- Kladnou a zápornou nulou
 
-- Kladné a záporné infinity
+- Kladné a záporné nekonečno.
 
 - Hodnota not-a-Number (NaN)
 
-- Konečné sadu nenulové hodnoty
+- Konečná sada nenulové hodnoty
 
-Další informace o těchto hodnotách naleznete v tématu Standard IEEE pro binární aritmetiku, k dispozici na [IEEE](http://www.ieee.org) webu.
+Další informace o těchto hodnotách naleznete v části Standard IEEE pro binární aritmetiku, k dispozici na [IEEE](http://www.ieee.org) webu.
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu se [int](int.md), [krátké](short.md)a `float` jsou zahrnuty v matematickém výrazu, která poskytuje `float` výsledek. (Nezapomeňte, že `float` je alias <xref:System.Single?displayProperty=nameWithType> typu.) Všimněte si, že neexistuje žádná [dvojité](double.md) ve výrazu.
+V následujícím příkladu [int](int.md), [krátký](short.md)a `float` jsou zahrnuty v matematickém výrazu dává `float` výsledek. (Nezapomeňte, že `float` je alias pro <xref:System.Single?displayProperty=nameWithType> typu.) Všimněte si, že neexistuje žádná [double](double.md) ve výrazu.
 
 [!code-csharp[csrefKeywordsTypes#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#13)]
 
