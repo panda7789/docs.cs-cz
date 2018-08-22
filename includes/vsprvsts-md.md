@@ -1,1 +1,0 @@
-<span data-ttu-id="b243c-101">Visual Studio – správa životního cyklu aplikací</span><span class="sxs-lookup"><span data-stu-id="b243c-101">Visual Studio Application Lifecycle Management</span></span>
