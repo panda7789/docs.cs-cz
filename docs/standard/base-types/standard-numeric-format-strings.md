@@ -18,12 +18,12 @@ helpviewer_keywords:
 - format specifiers, standard numeric format strings
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f471d62ca31096b955dd6f703c70faabe91cb55b
-ms.sourcegitcommit: e8dc507cfdaad504fc9d4c83d28d24569dcef91c
+ms.openlocfilehash: f20db5cfb13f788ae0f8670f0d1c3b221db3e43b
+ms.sourcegitcommit: c66ba2df2d2ecfb214f85ee0687d298e4941c1a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "36208501"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42752130"
 ---
 # <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
 
@@ -55,7 +55,7 @@ ms.locfileid: "36208501"
 |----------------------|----------|-----------------|--------------|  
 |"C" nebo "c"|Měna|Výsledek: hodnota měny.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: definováno pomocí <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [specifikátor formátu měny ("C")](#CFormatString).|123.456 ("C" en US) -> $123,46<br /><br /> 123.456 ("C", fr-FR) -> 123,46 €<br /><br /> 123.456 ("C", ja-JP) -> ¥ 123<br /><br /> -123.456 ("C3", en US) -> (123.456$)<br /><br /> -123.456 ("C3", fr-FR) -> €-123,456<br /><br /> -123.456 ("C3", ja-JP) ->-¥ 123.456|  
 |"D" nebo "d"|Desetinné číslo|Výsledek: celá čísla s volitelným záporným znaménkem.<br /><br /> Podporováno: pouze integrálovými typy.<br /><br /> Specifikátor přesnosti: minimální počet číslic.<br /><br /> Výchozí specifikátor přesnosti: minimální požadovaný počet číslic.<br /><br /> Další informace: [specifikátor desítkového formátu](#DFormatString).|1234-1234 ("D") &GT;<br /><br /> -1234 ("D6") -&GT;-001234|  
-|"E" nebo "e"|Exponenciální (vědecký) zápis|Výsledek: exponenciální zápis.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: 6.<br /><br /> Další informace: [specifikátor exponenciálního ("E") formátu](#EFormatString).|1052.0329112756 ("E" en US) -> 1.052033E + 003<br /><br /> 1052.0329112756 ("e", fr-FR) -> 1 052033e + 003<br /><br /> -1052.0329112756 ("e2", en US) -> - 1.05e + 003<br /><br /> -1052.0329112756 ("E2", fr_FR) -> -1, 05E + 003|  
+|"E" nebo "e"|Exponenciální (vědecký) zápis|Výsledek: exponenciální zápis.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: 6.<br /><br /> Další informace: [specifikátor exponenciálního ("E") formátu](#EFormatString).|1052.0329112756 ("E" en US) -> 1.052033E + 003<br /><br /> 1052.0329112756 ("e", fr-FR) -> 1 052033e + 003<br /><br /> -1052.0329112756 ("e2", en US) -> - 1.05e + 003<br /><br /> -1052.0329112756 ("E2", fr-FR) -> -1, 05E + 003|  
 |"F" nebo "f"|Pevná desetinná čárka|Výsledek: integrální a desítkové číslo s volitelným záporným znaménkem.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: definováno pomocí <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [specifikátor formátu s pevnou desetinnou čárkou ("F")](#FFormatString).|1234.567 ("F" en US) -> 1234.57<br /><br /> 1234.567 ("F", de-DE) -> 1234,57<br /><br /> 1234 ("F1" en US) -> 1234.0<br /><br /> 1234 ("F1", de-DE) -> 1234,0<br /><br /> -1234.56 ("F4", en US) ->-1234.5600<br /><br /> -1234.56 ("F4", de-DE) -> - 1234,5600|  
 |"G" nebo "g"|Obecné|Výsledek: Další compact s pevnou desetinnou čárkou nebo vědecký zápis.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: počet nejvýznamnějších číslic.<br /><br /> Výchozí specifikátor přesnosti: závisí na číselném typu.<br /><br /> Další informace: [specifikátor obecného ("G") formátu](#GFormatString).|-123.456 ("G", en US) ->-123.456<br /><br /> -123.456 ("G", sv-SE) ->-123,456<br /><br /> 123.4546 ("G4" en US) -> 123.5<br /><br /> 123.4546 ("G4", sv-SE) -> 123,5<br /><br /> -1.234567890e – 25 ("G", en US) -> - 1.23456789E – 25<br /><br /> -1.234567890e – 25 ("G", sv-SE) -> -1, 23456789E 25|  
 |"N" nebo "n"|Číslo|Výsledek: integrální a desítkové číslice, oddělovače skupin a oddělovač desetinných míst s volitelným záporným znaménkem.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: požadovaný počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: definováno pomocí <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [specifikátor číselného ("N") formátu](#NFormatString).|1234.567 ("N" en US) -> 1,234.57<br /><br /> 1234.567 ("N", ru-RU) -> 1 234,57<br /><br /> 1234 ("N1" en US) -> 1,234.0<br /><br /> 1234 ("N1", ru-RU) -> 1 234,0<br /><br /> -1234.56 ("N3" en US) ->-1,234.560<br /><br /> -1234.56 ("N3", ru-RU) -> 234,560-1|  
