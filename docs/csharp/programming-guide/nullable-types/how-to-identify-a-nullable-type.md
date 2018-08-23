@@ -1,51 +1,39 @@
 ---
-title: 'Postupy: Identifikace typu s povolenou hodnotou Null (Průvodce programováním v C#)'
-ms.date: 07/20/2015
+title: 'Postupy: identifikace typu s možnou hodnotou Null (C# Programming Guide)'
+description: Zjistěte, jak určit, zda typ je typ připouštějící hodnotu null nebo je instance typu s možnou hodnotou Null
+ms.date: 08/06/2018
 helpviewer_keywords:
 - nullable types [C#], identifying
 ms.assetid: d4b67ee2-66e8-40c1-ae9d-545d32c71387
-ms.openlocfilehash: f3ac4ebd77fc92a133eb326919d5ba55264ced97
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bb7ab2b8c13c2b8b4b6cd60e7959a391cd7e75c1
+ms.sourcegitcommit: bd4fa78f5a46133efdead1bc692a9aa2811d7868
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33333180"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42754953"
 ---
-# <a name="how-to-identify-a-nullable-type-c-programming-guide"></a><span data-ttu-id="3c1ee-102">Postupy: Identifikace typu s povolenou hodnotou Null (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="3c1ee-102">How to: Identify a Nullable Type (C# Programming Guide)</span></span>
-<span data-ttu-id="3c1ee-103">Můžete použít jazyka C# [typeof](../../../csharp/language-reference/keywords/typeof.md) operátor k vytvoření <xref:System.Type> objekt, který představuje typ s možnou hodnotou NULL:</span><span class="sxs-lookup"><span data-stu-id="3c1ee-103">You can use the C# [typeof](../../../csharp/language-reference/keywords/typeof.md) operator to create a <xref:System.Type> object that represents a Nullable type:</span></span>  
+# <a name="how-to-identify-a-nullable-type-c-programming-guide"></a><span data-ttu-id="c2589-103">Postupy: identifikace typu s možnou hodnotou Null (C# Programming Guide)</span><span class="sxs-lookup"><span data-stu-id="c2589-103">How to: Identify a nullable type (C# Programming Guide)</span></span>
+
+<span data-ttu-id="c2589-104">Následující příklad ukazuje, jak určit, jestli <xref:System.Type?displayProperty=nameWithType> instance představuje typ připouštějící hodnotu NULL:</span><span class="sxs-lookup"><span data-stu-id="c2589-104">The following example shows how to determine whether a <xref:System.Type?displayProperty=nameWithType> instance represents a nullable type:</span></span>
+
+[!code-csharp-interactive[whether Type is nullable](../../../../samples/snippets/csharp/programming-guide/nullable-types/IdentifyNullableType.cs#1)]
+
+<span data-ttu-id="c2589-105">Jak ukazuje příklad, je použít [typeof](../../language-reference/keywords/typeof.md) operátoru pro vytvoření <xref:System.Type?displayProperty=nameWithType> objektu.</span><span class="sxs-lookup"><span data-stu-id="c2589-105">As the example shows, you use the [typeof](../../language-reference/keywords/typeof.md) operator to create a <xref:System.Type?displayProperty=nameWithType> object.</span></span>  
   
-```  
-System.Type type = typeof(int?);  
-```  
+<span data-ttu-id="c2589-106">Pokud chcete zjistit, jestli je instance typu s možnou hodnotou Null, nepoužívejte <xref:System.Object.GetType%2A?displayProperty=nameWithType> metodu k získání <xref:System.Type> instance má být testována s předchozím kódu.</span><span class="sxs-lookup"><span data-stu-id="c2589-106">If you want to determine whether an instance is of a nullable type, don't use the <xref:System.Object.GetType%2A?displayProperty=nameWithType> method to get a <xref:System.Type> instance to be tested with the preceding code.</span></span> <span data-ttu-id="c2589-107">Při volání <xref:System.Object.GetType%2A?displayProperty=nameWithType> metodu na instanci typu s možnou hodnotou Null, je instance [boxed](using-nullable-types.md#boxing-and-unboxing) k <xref:System.Object>.</span><span class="sxs-lookup"><span data-stu-id="c2589-107">When you call the <xref:System.Object.GetType%2A?displayProperty=nameWithType> method on an instance of a nullable type, the instance is [boxed](using-nullable-types.md#boxing-and-unboxing) to <xref:System.Object>.</span></span> <span data-ttu-id="c2589-108">Je ekvivalentní k zabalení hodnota základního typu boxing nenulovou instanci typu s možnou hodnotou Null <xref:System.Object.GetType%2A> vrátí <xref:System.Type> objekt, který představuje základní typ typu s možnou hodnotou NULL:</span><span class="sxs-lookup"><span data-stu-id="c2589-108">As boxing of a non-null instance of a nullable type is equivalent to boxing of a value of the underlying type, <xref:System.Object.GetType%2A> returns a <xref:System.Type> object that represents the underlying type of a nullable type:</span></span>
+
+[!code-csharp-interactive[GetType example](../../../../samples/snippets/csharp/programming-guide/nullable-types/IdentifyNullableType.cs#2)]
+
+<span data-ttu-id="c2589-109">Nepoužívejte [je](../../language-reference/keywords/is.md) operátor zjistit, zda instanci typu s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="c2589-109">Don't use the [is](../../language-reference/keywords/is.md) operator to determine whether an instance is of a nullable type.</span></span> <span data-ttu-id="c2589-110">Jak ukazuje následující příklad, nelze rozlišit typy instancí typu s možnou hodnotou Null a jeho nadřízeného typu s použitím `is` operátor:</span><span class="sxs-lookup"><span data-stu-id="c2589-110">As the following example shows, you cannot distinguish types of instances of a nullable type and its underlying type with using the `is` operator:</span></span>
+
+[!code-csharp-interactive[is operator example](../../../../samples/snippets/csharp/programming-guide/nullable-types/IdentifyNullableType.cs#3)]
+
+<span data-ttu-id="c2589-111">Kód uvedený v následujícím příkladu můžete použít k určení, zda je instance typu s možnou hodnotou NULL:</span><span class="sxs-lookup"><span data-stu-id="c2589-111">You can use the code presented in the following example to determine whether an instance is of a nullable type:</span></span>
+
+[!code-csharp-interactive[whether an instance is of a nullable type](../../../../samples/snippets/csharp/programming-guide/nullable-types/IdentifyNullableType.cs#4)]
   
- <span data-ttu-id="3c1ee-104">Můžete také použít třídy a metody <xref:System.Reflection> obor názvů pro generování <xref:System.Type> objekty, které reprezentují typy s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="3c1ee-104">You can also use the classes and methods of the <xref:System.Reflection> namespace to generate <xref:System.Type> objects that represent Nullable types.</span></span> <span data-ttu-id="3c1ee-105">Ale pokud pokusí získat informace o typu ze s možnou hodnotou Null proměnné za běhu pomocí <xref:System.Object.GetType%2A> metoda nebo `is` operátor, výsledkem je, <xref:System.Type> typ objektu, který představuje základní typ, není Nullable sám sebe.</span><span class="sxs-lookup"><span data-stu-id="3c1ee-105">However, if you try to obtain type information from Nullable variables at runtime by using the <xref:System.Object.GetType%2A> method or the `is` operator, the result is a <xref:System.Type> object that represents the underlying type, not the Nullable type itself.</span></span>  
-  
- <span data-ttu-id="3c1ee-106">Volání metody `GetType` v Nullable typ způsobí, že zabalení operaci provést, když je typ implicitně převést na <xref:System.Object>.</span><span class="sxs-lookup"><span data-stu-id="3c1ee-106">Calling `GetType` on a Nullable type causes a boxing operation to be performed when the type is implicitly converted to <xref:System.Object>.</span></span> <span data-ttu-id="3c1ee-107">Proto <xref:System.Object.GetType%2A> vždy vrátí hodnotu <xref:System.Type> objekt, který představuje základní typ, není typ s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="3c1ee-107">Therefore <xref:System.Object.GetType%2A> always returns a <xref:System.Type> object that represents the underlying type, not the Nullable type.</span></span>  
-  
-```  
-int? i = 5;  
-Type t = i.GetType();  
-Console.WriteLine(t.FullName); //"System.Int32"  
-```  
-  
- <span data-ttu-id="3c1ee-108">C# [je](../../../csharp/language-reference/keywords/is.md) operátor taky pracuje Nullable podkladovým typem.</span><span class="sxs-lookup"><span data-stu-id="3c1ee-108">The C# [is](../../../csharp/language-reference/keywords/is.md) operator also operates on a Nullable's underlying type.</span></span> <span data-ttu-id="3c1ee-109">Proto nelze použít `is` k určení, zda je proměnná typu s povolenou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="3c1ee-109">Therefore you cannot use `is` to determine whether a variable is a Nullable type.</span></span> <span data-ttu-id="3c1ee-110">Následující příklad ukazuje, že `is` operátor považuje Nullable\<int > proměnné jako typ int.</span><span class="sxs-lookup"><span data-stu-id="3c1ee-110">The following example shows that the `is` operator treats a Nullable\<int> variable as an int.</span></span>  
-  
-```  
-static void Main(string[] args)  
-{  
-  int? i = 5;  
-  if (i is int) // true  
-    //…  
-}  
-```  
-  
-## <a name="example"></a><span data-ttu-id="3c1ee-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="3c1ee-111">Example</span></span>  
- <span data-ttu-id="3c1ee-112">Pomocí následujícího kódu rozhodnout, jestli <xref:System.Type> objekt představuje typ s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="3c1ee-112">Use the following code to determine whether a <xref:System.Type> object represents a Nullable type.</span></span> <span data-ttu-id="3c1ee-113">Mějte na paměti, že tento kód vždy vrátí hodnotu false, pokud `Type` volání byl vrácen objekt <xref:System.Object.GetType%2A>, jak je popsáno výše v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="3c1ee-113">Remember that this code always returns false if the `Type` object was returned from a call to <xref:System.Object.GetType%2A>, as explained earlier in this topic.</span></span>  
-  
-```  
-if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>)) {…}  
-```  
-  
-## <a name="see-also"></a><span data-ttu-id="3c1ee-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="3c1ee-114">See Also</span></span>  
- [<span data-ttu-id="3c1ee-115">Typy s povolenou hodnotou Null</span><span class="sxs-lookup"><span data-stu-id="3c1ee-115">Nullable Types</span></span>](../../../csharp/programming-guide/nullable-types/index.md)  
- [<span data-ttu-id="3c1ee-116">Zabalení typů s povolenou hodnotou Null</span><span class="sxs-lookup"><span data-stu-id="3c1ee-116">Boxing Nullable Types</span></span>](../../../csharp/programming-guide/nullable-types/boxing-nullable-types.md)
+## <a name="see-also"></a><span data-ttu-id="c2589-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c2589-112">See also</span></span>
+
+[<span data-ttu-id="c2589-113">Typy s možnou hodnotou Null</span><span class="sxs-lookup"><span data-stu-id="c2589-113">Nullable types</span></span>](index.md)  
+[<span data-ttu-id="c2589-114">Použití typů s povolenou hodnotou Null</span><span class="sxs-lookup"><span data-stu-id="c2589-114">Using nullable types</span></span>](using-nullable-types.md)  
+<xref:System.Nullable.GetUnderlyingType%2A>  

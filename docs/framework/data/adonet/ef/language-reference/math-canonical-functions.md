@@ -2,31 +2,143 @@
 title: Matematické kanonické funkce
 ms.date: 03/30/2017
 ms.assetid: 6f6cddc6-b561-4ebe-84b6-841ef5b4113b
-ms.openlocfilehash: c61db6d977614b95ea507b38c3890f2da8228158
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: 0fc9f4942c3f76f139ab7e4400005f0bfe80204e
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39199291"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42752265"
 ---
-# <a name="math-canonical-functions"></a><span data-ttu-id="37dc8-102">Matematické kanonické funkce</span><span class="sxs-lookup"><span data-stu-id="37dc8-102">Math Canonical Functions</span></span>
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="37dc8-103"> zahrnuje matematické kanonické funkce.</span><span class="sxs-lookup"><span data-stu-id="37dc8-103"> includes math canonical functions.</span></span>  
+# <a name="math-canonical-functions"></a><span data-ttu-id="8b1c5-102">Matematické kanonické funkce</span><span class="sxs-lookup"><span data-stu-id="8b1c5-102">Math Canonical Functions</span></span>
+
+<span data-ttu-id="8b1c5-103">Entita SQL obsahuje následující matematické kanonické funkce:</span><span class="sxs-lookup"><span data-stu-id="8b1c5-103">Entity SQL includes the following math canonical functions:</span></span>
   
- <span data-ttu-id="37dc8-104">V následující tabulce jsou uvedeny výpočty [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.</span><span class="sxs-lookup"><span data-stu-id="37dc8-104">The following table shows the math [!INCLUDE[esql](../../../../../../includes/esql-md.md)] canonical functions.</span></span>  
+## <a name="absvalue"></a><span data-ttu-id="8b1c5-104">Abs(Value)</span><span class="sxs-lookup"><span data-stu-id="8b1c5-104">Abs(value)</span></span>
+
+<span data-ttu-id="8b1c5-105">Vrátí absolutní hodnotu `value`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-105">Returns the absolute value of `value`.</span></span>
+
+<span data-ttu-id="8b1c5-106">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-106">**Arguments**</span></span>
+
+<span data-ttu-id="8b1c5-107">`Int16`, `Int32`, `Int64`, `Byte`, `Single`, `Double`, A `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-107">An `Int16`, `Int32`, `Int64`, `Byte`, `Single`, `Double`, and `Decimal`.</span></span>
+
+<span data-ttu-id="8b1c5-108">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-108">**Return Value**</span></span>
+
+<span data-ttu-id="8b1c5-109">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-109">The type of `value`.</span></span>
+
+<span data-ttu-id="8b1c5-110">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-110">**Example**</span></span>
+
+`Abs(-2)`
+
+## <a name="ceilingvalue"></a><span data-ttu-id="8b1c5-111">CEILING(Value)</span><span class="sxs-lookup"><span data-stu-id="8b1c5-111">Ceiling(value)</span></span>
+
+<span data-ttu-id="8b1c5-112">Vrátí nejmenší celé číslo, které není menší než `value`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-112">Returns the smallest integer that is not less than `value`.</span></span>
+
+<span data-ttu-id="8b1c5-113">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-113">**Arguments**</span></span>
+
+<span data-ttu-id="8b1c5-114">A `Single`, `Double`, a `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-114">A `Single`, `Double`, and `Decimal`.</span></span>
+
+<span data-ttu-id="8b1c5-115">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-115">**Return Value**</span></span>
+
+<span data-ttu-id="8b1c5-116">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-116">The type of `value`.</span></span>
+
+<span data-ttu-id="8b1c5-117">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-117">**Example**</span></span>
+
+[!code-csharp[DP EntityServices Concepts#EDM_CEILING](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_ceiling)]
+[!code-sql[DP EntityServices Concepts#EDM_CEILING](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#edm_ceiling)]
+
+## <a name="floorvalue"></a><span data-ttu-id="8b1c5-118">Floor(Value)</span><span class="sxs-lookup"><span data-stu-id="8b1c5-118">Floor(value)</span></span>
+
+<span data-ttu-id="8b1c5-119">Vrátí největší celé číslo, které není větší než `value`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-119">Returns the largest integer that is not greater than `value`.</span></span>
+
+<span data-ttu-id="8b1c5-120">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-120">**Arguments**</span></span>
+
+<span data-ttu-id="8b1c5-121">A `Single`, `Double`, a `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-121">A `Single`, `Double`, and `Decimal`.</span></span>
+
+<span data-ttu-id="8b1c5-122">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-122">**Return Value**</span></span>
+
+<span data-ttu-id="8b1c5-123">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-123">The type of `value`.</span></span>
+
+<span data-ttu-id="8b1c5-124">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-124">**Example**</span></span>
+
+[!code-csharp[DP EntityServices Concepts#EDM_FLOOR](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_floor)]
+[!code-sql[DP EntityServices Concepts#EDM_FLOOR](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#edm_floor)]
+
+## <a name="powervalue-exponent"></a><span data-ttu-id="8b1c5-125">Napájení (hodnota, exponent)</span><span class="sxs-lookup"><span data-stu-id="8b1c5-125">Power(value, exponent)</span></span>
+
+<span data-ttu-id="8b1c5-126">Vrátí výsledek zadaného `value` do zadaného `exponent`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-126">Returns the result of the specified `value` to the specified `exponent`.</span></span>
+
+<span data-ttu-id="8b1c5-127">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-127">**Arguments**</span></span>
+
+|  |  |
+|--|--|
+|`value` | <span data-ttu-id="8b1c5-128">`Int32, Int64, Double`, Nebo `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-128">An `Int32, Int64, Double`, or `Decimal`.</span></span> |
+|`exponent` | <span data-ttu-id="8b1c5-129">`Int64`, `Double`, Nebo `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-129">An `Int64`, `Double`, or `Decimal`.</span></span> |
+
+<span data-ttu-id="8b1c5-130">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-130">**Return Value**</span></span>
+
+<span data-ttu-id="8b1c5-131">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-131">The type of `value`.</span></span>
+
+<span data-ttu-id="8b1c5-132">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-132">**Example**</span></span>
+
+`Power(748.58,2)`
+
+## <a name="roundvalue"></a><span data-ttu-id="8b1c5-133">Round(Value)</span><span class="sxs-lookup"><span data-stu-id="8b1c5-133">Round(value)</span></span>
+
+<span data-ttu-id="8b1c5-134">Vrátí celočíselnou část `value`, zaokrouhlený na nejbližší celé číslo.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-134">Returns the integer portion of `value`, rounded to the nearest integer.</span></span>
+
+<span data-ttu-id="8b1c5-135">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-135">**Arguments**</span></span>
+
+<span data-ttu-id="8b1c5-136">A `Single`, `Double`, a `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-136">A `Single`, `Double`, and `Decimal`.</span></span>
+
+<span data-ttu-id="8b1c5-137">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-137">**Return Value**</span></span>
+
+<span data-ttu-id="8b1c5-138">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-138">The type of `value`.</span></span>
+
+<span data-ttu-id="8b1c5-139">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-139">**Example**</span></span>
+
+`Round(748.58)`
+
+## <a name="roundvalue-digits"></a><span data-ttu-id="8b1c5-140">Round (hodnota číslic)</span><span class="sxs-lookup"><span data-stu-id="8b1c5-140">Round(value, digits)</span></span>
+
+<span data-ttu-id="8b1c5-141">Vrátí `value`, zaokrouhleno na nejbližší zadaný `digits`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-141">Returns the `value`, rounded to the nearest specified `digits`.</span></span>
+
+<span data-ttu-id="8b1c5-142">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-142">**Arguments**</span></span>
+
+|  |  |
+|--|--|
+|`value`|<span data-ttu-id="8b1c5-143">`Double` nebo `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-143">`Double` or `Decimal`.</span></span>|
+|`digits`|<span data-ttu-id="8b1c5-144">`Int16` nebo `Int32`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-144">`Int16` or `Int32`.</span></span>|
+
+<span data-ttu-id="8b1c5-145">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-145">**Return Value**</span></span>
+
+<span data-ttu-id="8b1c5-146">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-146">The type of `value`.</span></span>
+
+<span data-ttu-id="8b1c5-147">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-147">**Example**</span></span>
+
+`Round(748.58,1)`
+
+## <a name="truncatevalue-digits"></a><span data-ttu-id="8b1c5-148">Zkrátit (hodnota číslic)</span><span class="sxs-lookup"><span data-stu-id="8b1c5-148">Truncate(value, digits)</span></span>
+
+<span data-ttu-id="8b1c5-149">Vrátí `value`, došlo ke zkrácení na nejbližší zadaný `digits`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-149">Returns the `value`, truncated to the nearest specified `digits`.</span></span>
+
+<span data-ttu-id="8b1c5-150">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-150">**Arguments**</span></span>
+
+|  |  |
+|--|--|
+|`value`|<span data-ttu-id="8b1c5-151">`Double` nebo `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-151">`Double` or `Decimal`.</span></span>|
+|`digits`|<span data-ttu-id="8b1c5-152">`Int16` nebo `Int32`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-152">`Int16` or `Int32`.</span></span>|
+
+<span data-ttu-id="8b1c5-153">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-153">**Return Value**</span></span>
+
+<span data-ttu-id="8b1c5-154">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-154">The type of `value`.</span></span>
+
+<span data-ttu-id="8b1c5-155">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="8b1c5-155">**Example**</span></span>
+
+`Truncate(748.58,1)`  
   
-|<span data-ttu-id="37dc8-105">Funkce</span><span class="sxs-lookup"><span data-stu-id="37dc8-105">Function</span></span>|<span data-ttu-id="37dc8-106">Popis</span><span class="sxs-lookup"><span data-stu-id="37dc8-106">Description</span></span>|  
-|--------------|-----------------|  
-|`Abs(value)`|<span data-ttu-id="37dc8-107">Vrátí absolutní hodnotu `value`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-107">Returns the absolute value of `value`.</span></span><br /><br /> <span data-ttu-id="37dc8-108">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="37dc8-108">**Arguments**</span></span><br /><br /> <span data-ttu-id="37dc8-109">`Int16`, `Int32`, `Int64`, `Byte`, `Single`, `Double`, A `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-109">An `Int16`, `Int32`, `Int64`, `Byte`, `Single`, `Double`, and `Decimal`.</span></span><br /><br /> <span data-ttu-id="37dc8-110">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="37dc8-110">**Return Value**</span></span><br /><br /> <span data-ttu-id="37dc8-111">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-111">The type of `value`.</span></span><br /><br /> <span data-ttu-id="37dc8-112">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="37dc8-112">**Example**</span></span><br /><br /> `Abs(-2)`|  
-|`Ceiling(value)`|<span data-ttu-id="37dc8-113">Vrátí nejmenší celé číslo, které není menší než `value`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-113">Returns the smallest integer that is not less than `value`.</span></span><br /><br /> <span data-ttu-id="37dc8-114">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="37dc8-114">**Arguments**</span></span><br /><br /> <span data-ttu-id="37dc8-115">A `Single`, `Double`, a `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-115">A `Single`, `Double`, and `Decimal`.</span></span><br /><br /> <span data-ttu-id="37dc8-116">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="37dc8-116">**Return Value**</span></span><br /><br /> <span data-ttu-id="37dc8-117">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-117">The type of `value`.</span></span><br /><br /> <span data-ttu-id="37dc8-118">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="37dc8-118">**Example**</span></span><br /><br /> [!code-csharp[DP EntityServices Concepts#EDM_CEILING](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_ceiling)] <br /><br /> [!code-sql[DP EntityServices Concepts#EDM_CEILING](../../../../../../samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#edm_ceiling)]|  
-|`Floor(value)`|<span data-ttu-id="37dc8-119">Vrátí největší celé číslo, které není větší než `value`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-119">Returns the largest integer that is not greater than `value`.</span></span><br /><br /> <span data-ttu-id="37dc8-120">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="37dc8-120">**Arguments**</span></span><br /><br /> <span data-ttu-id="37dc8-121">A `Single`, `Double`, a `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-121">A `Single`, `Double`, and `Decimal`.</span></span><br /><br /> <span data-ttu-id="37dc8-122">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="37dc8-122">**Return Value**</span></span><br /><br /> <span data-ttu-id="37dc8-123">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-123">The type of `value`.</span></span><br /><br /> <span data-ttu-id="37dc8-124">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="37dc8-124">**Example**</span></span><br /><br /> [!code-csharp[DP EntityServices Concepts#EDM_FLOOR](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_floor)] <br /><br /> [!code-sql[DP EntityServices Concepts#EDM_FLOOR](../../../../../../samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#edm_floor)]|  
-|`Power(value, exponent)`|<span data-ttu-id="37dc8-125">Vrátí výsledek zadaného `value` do zadaného `exponent`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-125">Returns the result of the specified `value` to the specified `exponent`.</span></span><br /><br /> <span data-ttu-id="37dc8-126">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="37dc8-126">**Arguments**</span></span><br /><br /> <span data-ttu-id="37dc8-127">`value`: Celé `Int32, Int64, Double`, nebo `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-127">`value`: An `Int32, Int64, Double`, or `Decimal`.</span></span><br /><br /> <span data-ttu-id="37dc8-128">`exponent`: Celé `Int64`, `Double`, nebo `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-128">`exponent`: An `Int64`, `Double`, or `Decimal`.</span></span><br /><br /> <span data-ttu-id="37dc8-129">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="37dc8-129">**Return Value**</span></span><br /><br /> <span data-ttu-id="37dc8-130">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-130">The type of `value`.</span></span><br /><br /> <span data-ttu-id="37dc8-131">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="37dc8-131">**Example**</span></span><br /><br /> `Power(748.58,2)`|  
-|`Round(value)`|<span data-ttu-id="37dc8-132">Vrátí celočíselnou část `value`, zaokrouhlený na nejbližší celé číslo.</span><span class="sxs-lookup"><span data-stu-id="37dc8-132">Returns the integer portion of `value`, rounded to the nearest integer.</span></span><br /><br /> <span data-ttu-id="37dc8-133">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="37dc8-133">**Arguments**</span></span><br /><br /> <span data-ttu-id="37dc8-134">A `Single`, `Double`, a `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-134">A `Single`, `Double`, and `Decimal`.</span></span><br /><br /> <span data-ttu-id="37dc8-135">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="37dc8-135">**Return Value**</span></span><br /><br /> <span data-ttu-id="37dc8-136">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-136">The type of `value`.</span></span><br /><br /> <span data-ttu-id="37dc8-137">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="37dc8-137">**Example**</span></span><br /><br /> `Round(748.58)`|  
-|`Round(value, digits)`|<span data-ttu-id="37dc8-138">Vrátí `value`, zaokrouhleno na nejbližší zadaný `digits`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-138">Returns the `value`, rounded to the nearest specified `digits`.</span></span><br /><br /> <span data-ttu-id="37dc8-139">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="37dc8-139">**Arguments**</span></span><br /><br /> <span data-ttu-id="37dc8-140">`value`: `Double` nebo `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-140">`value`: `Double` or `Decimal`.</span></span><br /><br /> <span data-ttu-id="37dc8-141">`digits`: `Int16` nebo `Int32`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-141">`digits`: `Int16` or `Int32`.</span></span><br /><br /> <span data-ttu-id="37dc8-142">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="37dc8-142">**Return Value**</span></span><br /><br /> <span data-ttu-id="37dc8-143">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-143">The type of `value`.</span></span><br /><br /> <span data-ttu-id="37dc8-144">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="37dc8-144">**Example**</span></span><br /><br /> `Round(748.58,1)`|  
-|`Truncate(value, digits)`|<span data-ttu-id="37dc8-145">Vrátí `value`, došlo ke zkrácení na nejbližší zadaný `digits`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-145">Returns the `value`, truncated to the nearest specified `digits`.</span></span><br /><br /> <span data-ttu-id="37dc8-146">**Argumenty**</span><span class="sxs-lookup"><span data-stu-id="37dc8-146">**Arguments**</span></span><br /><br /> <span data-ttu-id="37dc8-147">`value`: `Double` nebo `Decimal`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-147">`value`: `Double` or `Decimal`.</span></span><br /><br /> <span data-ttu-id="37dc8-148">`digits`: `Int16` nebo `Int32`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-148">`digits`: `Int16` or `Int32`.</span></span><br /><br /> <span data-ttu-id="37dc8-149">**Návratová hodnota**</span><span class="sxs-lookup"><span data-stu-id="37dc8-149">**Return Value**</span></span><br /><br /> <span data-ttu-id="37dc8-150">Typ `value`.</span><span class="sxs-lookup"><span data-stu-id="37dc8-150">The type of `value`.</span></span><br /><br /> <span data-ttu-id="37dc8-151">**Příklad**</span><span class="sxs-lookup"><span data-stu-id="37dc8-151">**Example**</span></span><br /><br /> `Truncate(748.58,1)`|  
+ <span data-ttu-id="8b1c5-156">Tyto funkce vrátí `null` Pokud tento parametr zadaný `null` vstupu.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-156">These functions will return `null` if given `null` input.</span></span>  
   
- <span data-ttu-id="37dc8-152">Tyto funkce vrátí `null` Pokud tento parametr zadaný `null` vstupu.</span><span class="sxs-lookup"><span data-stu-id="37dc8-152">These functions will return `null` if given `null` input.</span></span>  
+ <span data-ttu-id="8b1c5-157">Ekvivalentní funkce je k dispozici ve zprostředkovateli spravovaného klienta Microsoft SQL.</span><span class="sxs-lookup"><span data-stu-id="8b1c5-157">Equivalent functionality is available in the Microsoft SQL Client Managed Provider.</span></span> <span data-ttu-id="8b1c5-158">Další informace najdete v tématu [SqlClient pro funkce Entity Framework](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).</span><span class="sxs-lookup"><span data-stu-id="8b1c5-158">For more information, see [SqlClient for Entity Framework Functions](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).</span></span>  
   
- <span data-ttu-id="37dc8-153">Ekvivalentní funkce je k dispozici ve zprostředkovateli spravovaného klienta Microsoft SQL.</span><span class="sxs-lookup"><span data-stu-id="37dc8-153">Equivalent functionality is available in the Microsoft SQL Client Managed Provider.</span></span> <span data-ttu-id="37dc8-154">Další informace najdete v tématu [SqlClient pro funkce Entity Framework](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).</span><span class="sxs-lookup"><span data-stu-id="37dc8-154">For more information, see [SqlClient for Entity Framework Functions](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="37dc8-155">Viz také</span><span class="sxs-lookup"><span data-stu-id="37dc8-155">See Also</span></span>  
- [<span data-ttu-id="37dc8-156">Kanonické funkce</span><span class="sxs-lookup"><span data-stu-id="37dc8-156">Canonical Functions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)
+## <a name="see-also"></a><span data-ttu-id="8b1c5-159">Viz také</span><span class="sxs-lookup"><span data-stu-id="8b1c5-159">See Also</span></span>  
+ [<span data-ttu-id="8b1c5-160">Kanonické funkce</span><span class="sxs-lookup"><span data-stu-id="8b1c5-160">Canonical Functions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)
