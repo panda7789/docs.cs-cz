@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ea151417a1cb53104ec29fff1e76e21f82ec9bb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6dfb0b404413351761d269c800be19e75acfb41f
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33431640"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42752275"
 ---
 # <a name="getassemblyidentityfromfile-function"></a>GetAssemblyIdentityFromFile – funkce
-Získá odkazy `IUnknown` objekt se zadaným `IID` v sestavení v zadaná cesta k souboru.  
+Získá ukazatel `IUnknown` objekt se zadaným `IID` v sestavení v cestě zadaného souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +40,21 @@ HRESULT GetAssemblyIdentityFromFile (
   
 #### <a name="parameters"></a>Parametry  
  `pwzFilePath`  
- [v] Platná cesta k požadované sestavení.  
+ [in] Platná cesta k požadované sestavení.  
   
  `riid`  
- [v] `IID` Rozhraní vrátit.  
+ [in] `IID` Rozhraní k vrácení.  
   
  `ppIdentity`  
- [out] Ukazatel vrácený rozhraní.  
+ [out] Vrácený ukazatel rozhraní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Fusion.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- <<!--zzxref:IUnknown --> `IUnknown`>  
+ [IUnknown](/cpp/atl/iunknown)  
  [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)

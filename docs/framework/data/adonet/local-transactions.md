@@ -5,44 +5,44 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ae3712f-ef5e-41a1-9ea9-b3d0399439f1
-ms.openlocfilehash: 394059481b5081586904d2d5ea5d4a3d3e0df42b
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 40ba9085905869ca5d3d8f39a3d7ce11639b1504
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32758890"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42752338"
 ---
 # <a name="local-transactions"></a>Místní transakce
-Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se používají, když chcete svázat více úkolů společně, aby se spustit jako na jednu jednotku práce. Představte si například, že aplikace provede dvě úlohy. Nejprve se informace o objednávce aktualizuje tabulku. Druhý aktualizuje tabulku, která obsahuje informace o inventáři, připsáním na stranu MD položky seřazené. Pokud selže buď úlohu, pak oba aktualizace jsou vrácena zpět.  
+Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se používají, když chcete vazby společně více úloh, takže se provést jako jednu jednotku práce. Představte si například, že aplikace provede dvě úlohy. Nejprve aktualizuje tabulku s informacemi o pořadí. Za druhé aktualizuje tabulku, která obsahuje informace o inventáři, připsáním na stranu MD položky seřazeny. Pokud buď úloha selže, pak obě aktualizace jsou vrácena zpět.  
   
 ## <a name="determining-the-transaction-type"></a>Určení typu transakce  
- Transakce se považuje za místní transakce, když je jednofázové transakce a je zpracovává databázi přímo. Transakce se považuje za distribuovanou transakci, při monitorování transakce koordinuje a používá pohotovostního mechanismy (například dvoufázový zápis) pro rozlišení transakce.  
+ Transakce se považuje za místní transakce, když je jednofázové transakce a zpracovává přímo v databázi. Transakce se považuje za distribuovanou transakci, když koordinuje přes monitorování transakce a používá pro rozlišení transakce odolný proti selhání mechanismy (například dvoufázového potvrzení).  
   
- Každý z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat má svou vlastní `Transaction` objekt pro provedení místní transakce. Pokud budete potřebovat transakce, které budou provedeny v databázi systému SQL Server, vyberte <xref:System.Data.SqlClient> transakce. Pro transakci Oracle, použijte <xref:System.Data.OracleClient> zprostředkovatele. Kromě toho je <xref:System.Data.Common.DbTransaction> třída, která je k dispozici pro psaní kódu nezávislé na zprostředkovatele, který vyžaduje transakce.  
+ Každá z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat má vlastní `Transaction` objekt pro provedení místní transakce. Pokud budete potřebovat transakce provést v databázi serveru SQL Server, vyberte <xref:System.Data.SqlClient> transakce. Transakci Oracle používat <xref:System.Data.OracleClient> zprostředkovatele. Kromě toho existuje <xref:System.Data.Common.DbTransaction> třídu, která je k dispozici pro psaní kódu nezávislé na zprostředkovatele, které vyžadují určitý počet transakcí.  
   
 > [!NOTE]
->  Transakce jsou nejúčinnější, když se provádí na serveru. Pokud pracujete s databází systému SQL Server, která využívá celou explicitních transakcí, vezměte v úvahu jejich zápis jako uložené procedury pomocí příkazu Transact-SQL BEGIN TRANSACTION. Další informace o provedení transakce na straně serveru najdete v části SQL Server Books Online.  
+> Transakce jsou nejúčinnější, když se provádí na serveru. Při práci s databází serveru SQL Server, který se příliš často používá explicitní transakce, zvažte vytvoření jako uložené procedury pomocí příkazu jazyka Transact-SQL BEGIN TRANSACTION.
   
 ## <a name="performing-a-transaction-using-a-single-connection"></a>Provádění transakcí pomocí jednoho připojení  
- V [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], řídit transakce s `Connection` objektu. Můžete spustit místní transakce s `BeginTransaction` metoda. Po zahájení transakce, můžete zařazení příkaz v této transakci s `Transaction` vlastnost `Command` objektu. Můžete pak potvrďte, nebo vrátit zpět změny provedené ve zdroji dat na základě úspěch nebo selhání součástí transakce.  
+ V [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], řídit transakce se `Connection` objektu. Můžete spustit místní transakce s `BeginTransaction` metody. Po zahájení transakce, může zařazení v transakci pomocí příkazu `Transaction` vlastnost `Command` objektu. Můžete pak potvrzení nebo vrátit zpět změny provedené ve zdroji dat na základě úspěchu nebo selhání součástí transakce.  
   
 > [!NOTE]
->  `EnlistDistributedTransaction` – Metoda by nemělo být použito pro místní transakce.  
+>  `EnlistDistributedTransaction` Metoda by neměla používat pro místní transakce.  
   
- Rozsah transakce je omezený na připojení. Následující příklad provádí explicitní transakce, který se skládá ze dvou samostatných příkazů v `try` bloku. Příkazy spusťte příkazy INSERT s tabulkou Production.ScrapReason v ukázkové databázi AdventureWorks SQL Server, které jsou potvrzené, pokud jsou vyvolány žádné výjimky. Kód `catch` bloku vrátí zpět transakci Pokud je vyvolána výjimka. Pokud transakce byla přerušena, nebo připojení je ukončeno před transakce byla dokončena, je automaticky vrácena zpět.  
+ Rozsah transakce je omezen na připojení. Následující příklad provádí, který se skládá ze dvou samostatných příkazů v explicitní transakci `try` bloku. Příkazy spustit příkazy INSERT s tabulkou Production.ScrapReason v ukázkové databázi AdventureWorks SQL serveru, které se potvrdí, pokud nejsou vyvolány žádné výjimky. Kód v `catch` bloku vrátí zpět transakce Pokud dojde k výjimce. Pokud transakce je přerušena nebo připojení je ukončené před dokončením transakce, to se automaticky vrátí zpět.  
   
 ## <a name="example"></a>Příklad  
- Postupujte podle těchto kroků k provedení transakce.  
+ Použijte následující postup provedení transakce.  
   
-1.  Volání <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objekt, který chcete označit zahájení transakce. <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> Metoda vrátí odkaz na transakci. Tento odkaz je přiřazena k <xref:System.Data.SqlClient.SqlCommand> objekty, které jsou zařazeny v transakci.  
+1.  Volání <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objektu k označení zahájení transakce. <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> Metoda vrátí odkaz na transakci. Je přiřazen tento odkaz <xref:System.Data.SqlClient.SqlCommand> objekty, které jsou v transakci zapsán.  
   
-2.  Přiřazení `Transaction` do objektu <xref:System.Data.SqlClient.SqlCommand.Transaction%2A> vlastnost <xref:System.Data.SqlClient.SqlCommand> spouštění. Pokud příkaz proveden u připojení s aktivní transakce a `Transaction` objekt nebyly přiřazeny do `Transaction` vlastnost `Command` objekt, je vyvolána výjimka.  
+2.  Přiřazení `Transaction` objektu <xref:System.Data.SqlClient.SqlCommand.Transaction%2A> vlastnost <xref:System.Data.SqlClient.SqlCommand> má být proveden. Pokud příkaz se provedl u připojení s aktivní transakce a `Transaction` nebyl přiřazen objekt `Transaction` vlastnost `Command` objektu, je vyvolána výjimka.  
   
 3.  Spusťte požadované příkazy.  
   
-4.  Volání <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> metodu <xref:System.Data.SqlClient.SqlTransaction> objekt, který chcete dokončit transakce, nebo volejte <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> metoda k ukončení transakce. Pokud je připojení ukončeno nebo zlikvidován před buď <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> nebo <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> metody byly provedeny, transakce je vrácena zpět.  
+4.  Volání <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> metodu <xref:System.Data.SqlClient.SqlTransaction> objekt dala dokončit transakce, nebo volání <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> metoda k ukončení transakce. Pokud je připojení ukončen nebo odstraněn před buď <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> nebo <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> metody spustily, transakce se zrušila.  
   
- Následující příklad kódu ukazuje, jak pomocí transakční logiku [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] s Microsoft SQL Server.  
+ Následující příklad kódu ukazuje použití transakční logiky [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] s Microsoft SQL Server.  
   
  [!code-csharp[DataWorks SqlTransaction.Local#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlTransaction.Local/CS/source.cs#1)]
  [!code-vb[DataWorks SqlTransaction.Local#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlTransaction.Local/VB/source.vb#1)]  
@@ -51,4 +51,4 @@ Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se použí
  [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
  [Distribuované transakce](../../../../docs/framework/data/adonet/distributed-transactions.md)  
  [Integrace System.Transactions s SQL Serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,36 +1,36 @@
 ---
-title: Použití Azure Key Vault k ochraně tajných klíčů v době výroby
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Použití Azure Key Vault k ochraně tajných klíčů v době výroby
+title: Pomocí služby Azure Key Vault k ochraně tajných kódů při produkci
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Pomocí služby Azure Key Vault k ochraně tajných kódů při produkci
 author: mjrousos
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 171d9120e4817065ddafc9dfa9caa362694ddeb3
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 84e016e4620b73444f800b02076489012ea5e844
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105281"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42752144"
 ---
-# <a name="using-azure-key-vault-to-protect-secrets-at-production-time"></a>Použití Azure Key Vault k ochraně tajných klíčů v době výroby
+# <a name="using-azure-key-vault-to-protect-secrets-at-production-time"></a>Pomocí služby Azure Key Vault k ochraně tajných kódů při produkci
 
-Tajné klíče uložené jako proměnné prostředí nebo uložené nástrojem pro tajný klíč Manager jsou stále místně uložených a bez šifrování v počítači. Bezpečnější možnost pro ukládání tajné klíče je [Azure Key Vault](https://azure.microsoft.com/services/key-vault/), která poskytuje zabezpečené, centrální umístění pro ukládání klíčů a tajných klíčů.
+Tajné kódy uložené jako proměnné prostředí nebo neukládá nástroj tajný klíč správce jsou stále místně uložená a nešifrované na počítači. Je bezpečnější možnost pro ukládání tajných kódů [Azure Key Vault](https://azure.microsoft.com/services/key-vault/), která poskytuje zabezpečené a centrální umístění pro ukládání klíčů a tajných kódů.
 
-Balíček Microsoft.Extensions.Configuration.AzureKeyVault umožňuje aplikaci ASP.NET Core číst informace o konfiguraci z Azure Key Vault. Chcete-li začít používat tajné klíče z Azure Key Vault, postupujte takto:
+Balíček Microsoft.Extensions.Configuration.AzureKeyVault umožňuje aplikaci ASP.NET Core číst informace o konfiguraci ze služby Azure Key Vault. Pokud chcete začít používat tajné kódy ze služby Azure Key Vault, postupujte takto:
 
-Nejprve zaregistrujte aplikaci jako aplikaci Azure AD. (Přístup k trezorů klíčů je spravované službou Azure AD). To lze provést prostřednictvím portálu správy Azure.
+Nejprve registrovat aplikaci jako aplikaci Azure AD. (Přístup k trezorům klíčů se spravuje přes Azure AD). To můžete udělat přes portál pro správu Azure.
 
-Případně, pokud chcete, aby aplikace k ověření pomocí certifikátu, místo hesla nebo klienta tajný klíč, můžete použít [New-AzureRmADApplication](https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.3.0/new-azurermadapplication) rutiny prostředí PowerShell. Certifikát, který zaregistrujete s Azure Key Vault musí pouze veřejný klíč. (Vaše aplikace bude používat privátní klíč.)
+Případně, pokud chcete, aby aplikace k ověřování pomocí certifikátu místo tajného klíče klienta nebo heslo, můžete použít [New-AzureRmADApplication](https://docs.microsoft.com/powershell/module/azurerm.resources/new-azurermadapplication) rutiny Powershellu. Certifikát, který zaregistrujete pomocí služby Azure Key Vault potřebuje pouze veřejný klíč. (Aplikace bude používat privátní klíč).
 
-Druhý udělte přístup zaregistrovanou aplikaci do trezoru klíčů vytvořením nového objektu služby. To provedete pomocí následujících příkazů prostředí PowerShell:
+Za druhé poskytují přístup zaregistrovanou aplikaci do služby key vault tak, že vytvoříte nový instanční objekt. Můžete provést pomocí následujících příkazů Powershellu:
 
 ```powershell
 $sp = New-AzureRmADServicePrincipal -ApplicationId "<Application ID guid>"
 Set-AzureRmKeyVaultAccessPolicy -VaultName "<VaultName>" -ServicePrincipalName $sp.ServicePrincipalNames[0] -PermissionsToSecrets all -ResourceGroupName "<KeyVault Resource Group>"
 ```
 
-Voláním metody rozšíření IConfigurationBuilder.AddAzureKeyVault při vytváření IConfigurationRoot instance třetí, obsahovat trezoru klíčů jako zdroj konfigurace v aplikaci. Všimněte si, že volání AddAzureKeyVault bude vyžadovat ID aplikace, který byl zaregistrován a poskytnut přístup k trezoru klíčů v předchozích krocích.
+Třetí volání metody rozšíření IConfigurationBuilder.AddAzureKeyVault při vytváření IConfigurationRoot instance zahrnují služby key vault jako zdroj konfigurace ve vaší aplikaci. Všimněte si, že volání AddAzureKeyVault bude vyžadovat ID aplikace, který byl zaregistrován a poskytnut přístup k trezoru klíčů v předchozích krocích.
 
-  V současné době .NET Standard a .NET Core podporují získávání informace o konfiguraci ze Azure Key Vault pomocí ID klienta a tajný klíč klienta. Aplikace rozhraní .NET framework, můžete použít přetížení IConfigurationBuilder.AddAzureKeyVault, která přebírá certifikát místo tajný klíč klienta. Době psaní tohoto textu je pracovní [v průběhu](https://github.com/aspnet/Configuration/issues/605) chcete zpřístupnit tento přetížení v rozhraní .NET Standard a .NET Core. Dokud AddAzureKeyVault přetížení, které přijímá certifikát je k dispozici aplikace ASP.NET Core můžete přístup k Azure Key Vault s ověřováním na základě certifikátu explicitně vytvořením objekt KeyVaultClient, jak je znázorněno v následujícím příkladu:
+  V současné době .NET Standard a .NET Core podporují získávání informací o konfiguraci ze služby Azure Key Vault pomocí ID klienta a tajný kód klienta. Aplikace rozhraní .NET framework můžete použít přetížení IConfigurationBuilder.AddAzureKeyVault, která přebírá certifikátu místo tajného klíče klienta. V době psaní tohoto textu je práce [probíhá](https://github.com/aspnet/Configuration/issues/605) chcete zpřístupnit tento přetížení v .NET Standard a .NET Core. Dokud AddAzureKeyVault přetížení, která přijímá certifikát je k dispozici, ASP.NET Core aplikace můžou k služby Azure Key Vault s ověřováním na základě certifikátů explicitně vytvořením objektu KeyVaultClient, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 // Configure Key Vault client
@@ -55,20 +55,20 @@ var kvClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(asyn
         new DefaultKeyVaultSecretManager());
 ```
 
-V tomto příkladu obsahuje volání AddAzureKeyVault na konci registraci zprostředkovatele konfigurace. Je osvědčeným postupem zaregistrovat Azure Key Vault jako poslední poskytovatel konfigurace tak, aby měl příležitost k přepsání hodnoty konfigurace z předchozí zprostředkovatele, a tak, aby žádné hodnoty konfigurace z jiných zdrojů přepíšou z trezoru klíčů.
+V tomto příkladu obsahuje volání AddAzureKeyVault na konci registraci zprostředkovatele konfigurace. Je osvědčeným postupem je registrace služby Azure Key Vault jako poslední poskytovatele konfigurace tak, aby měla možnost přepsat hodnoty konfigurace z předchozích poskytovatelů a tak, aby žádné hodnoty konfigurace z jiných zdrojů přepíšou z trezoru klíčů.
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Použití Azure Key Vault a k ochraně tajných klíčů aplikace**
+-   **Použití Azure Key Vault k ochraně tajných klíčů aplikací**
     [*https://docs.microsoft.com/azure/guidance/guidance-multitenant-identity-keyvault*](https://docs.microsoft.com/azure/guidance/guidance-multitenant-identity-keyvault)
 
--   **Bezpečné úložiště tajné klíče aplikace během vývoje**
+-   **Bezpečné ukládání tajných kódů aplikace během vývoje.**
     [*https://docs.microsoft.com/aspnet/core/security/app-secrets*](https://docs.microsoft.com/aspnet/core/security/app-secrets)
 
 -   **Konfigurace ochrany dat**
     [*https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/overview*](https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/overview)
 
--   **Správa klíčů a doba platnosti**
+-   **Správa klíčů a doba života**
     [*https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/default-settings\#data-protection-default-settings*](https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/default-settings#data-protection-default-settings)
 
 -   **Microsoft.Extensions.Configuration.DockerSecrets.** Úložiště GitHub.

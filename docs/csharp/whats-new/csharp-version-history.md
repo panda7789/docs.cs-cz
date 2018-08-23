@@ -3,12 +3,12 @@ title: Historie jazyka C# – průvodce v C#
 description: Co vzhled jazyka, jako je v jeho nejstarší verze a jak vyvinula od?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 227cb2899a509d56910a2a07533a2178f53ef818
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 90f480d7b25ebe308d1f1cb3d4c117f36f7dd9bf
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404590"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42753965"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C# #
 
@@ -105,7 +105,11 @@ Dynamická vazba dává potenciální chyby, ale také větší možnosti v rám
 C# verze 5.0 se cílené verze jazyka. Téměř všechny úsilí pro tuto verzi byly přidány do jiného konceptu přelomové jazyka: `async` a `await` model pro asynchronní programování.  Tady je seznam hlavních funkcí:
 
 - [Asynchronní členy](../async.md)
-- [Atributy informace o volajícím](https://www.codeproject.com/Tips/606379/Caller-Info-Attributes-in-Csharp)
+- [Atributy informace o volajícím](../programming-guide/concepts/caller-information.md)
+
+### <a name="see-also"></a>Viz také
+
+* [Kódu projektu: Atributy informace o volajícím v jazyce C# 5.0](https://www.codeproject.com/Tips/606379/Caller-Info-Attributes-in-Csharp)
 
 Informace o atributu volající umožňuje snadno načíst informace o kontextu, ve kterém spouštíte bez použití svislých spoustu často používaný kód reflexe. Má mnoho použití v diagnostiky a protokolování úloh.
 

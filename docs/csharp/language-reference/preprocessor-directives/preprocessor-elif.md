@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - '#elif directive [C#]'
 ms.assetid: 731d78df-08e0-4d51-b8c8-f193c27de13f
-ms.openlocfilehash: ecc5c4b48790d0cb6825883922f3903414bb2b26
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c6d797b68ad03023d6101b20cacae6d828abe0c1
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33275567"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42753963"
 ---
 # <a name="elif-c-reference"></a>#elif (referenční dokumentace jazyka C#)
-Výraz `#elif` umožňuje vytvořit složenou podmíněnou direktivu. `#elif` Výraz vyhodnotí, pokud předchozím [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) ani žádný předcházející, volitelné, `#elif` direktivy výrazy vyhodnocení `true`. Je-li výraz `#elif` vyhodnocen jako `true`, vyhodnotí kompilátor kód mezi výrazem `#elif` a další podmíněnou direktivou. Příklad:  
+Výraz `#elif` umožňuje vytvořit složenou podmíněnou direktivu. `#elif` Výraz bude vyhodnocen, pokud ani předchozí [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) ani žádné předchozí volitelné `#elif` vyhodnotit výrazy direktivy `true`. Je-li výraz `#elif` vyhodnocen jako `true`, vyhodnotí kompilátor kód mezi výrazem `#elif` a další podmíněnou direktivou. Příklad:  
   
 ```csharp
 #define VC7  
 //...  
 #if debug  
-    Console.Writeline("Debug build");  
+    Console.WriteLine("Debug build");  
 #elif VC7  
-    Console.Writeline("Visual Studio 7");  
+    Console.WriteLine("Visual Studio 7");  
 #endif  
 ```  
   
@@ -36,9 +36,9 @@ Výraz `#elif` umožňuje vytvořit složenou podmíněnou direktivu. `#elif` V�
 #if  
 ```  
   
- Pomocí `#elif` je jednodušší, protože každý `#if` vyžaduje [#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md), zatímco `#elif` lze použít bez odpovídající `#endif`.  
+ Pomocí `#elif` je jednodušší, protože každý `#if` vyžaduje [#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md), že `#elif` lze použít bez odpovídajícího `#endif`.  
   
- V tématu [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) příklad použití `#elif`.  
+ Zobrazit [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) příklad, jak používat `#elif`.  
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  

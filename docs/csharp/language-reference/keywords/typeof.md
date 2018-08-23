@@ -8,30 +8,30 @@ helpviewer_keywords:
 - typeof keyword [C#]
 ms.assetid: 0c08d880-515e-46bb-8cd2-48b8dd62c08d
 ms.openlocfilehash: 4203b597d7045a13ffed9e61ddbbde57e2113c23
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
-ms.locfileid: "34171938"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42753983"
 ---
 # <a name="typeof-c-reference"></a>typeof (Referenční dokumentace jazyka C#)
-Použít k získání `System.Type` objektu pro typ. A `typeof` výraz má následující podobu:  
+Používá k získání `System.Type` pro typ objektu. A `typeof` výrazu má následující podobu:  
   
 ```csharp  
 System.Type type = typeof(int);  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud chcete získat běhového typu výrazu, můžete použít metodu rozhraní .NET Framework <xref:System.Object.GetType%2A>, jako v následujícím příkladu:  
+ Pokud chcete získat run-time typu výrazu, můžete použít metodu rozhraní .NET Framework <xref:System.Object.GetType%2A>, jako v následujícím příkladu:  
   
 ```csharp  
 int i = 0;  
 System.Type type = i.GetType();  
 ```  
   
- `typeof` Operátor nemohou být přetíženy.  
+ `typeof` Operátor nelze přetížit.  
   
- `typeof` Operátor můžete použít taky u otevřete obecné typy. Typy s více než jeden parametr typu musí mít odpovídající počet čárky ve specifikaci. Následující příklad ukazuje, jak určit, zda je návratový typ metody obecný <xref:System.Collections.Generic.IEnumerable%601>. Předpokládejme, že metoda instance typu MethodInfo:  
+ `typeof` Operátor můžete použít také u otevřených obecných typů. Typy s více než jeden parametr typu musí mít odpovídající počet čárek ve specifikaci. Následující příklad ukazuje, jak zjistit, jestli návratový typ metody je obecný <xref:System.Collections.Generic.IEnumerable%601>. Předpokládejme, že je metoda instance MethodInfo typu:  
   
 ```csharp  
 string s = method.ReturnType.GetInterface  
@@ -42,7 +42,7 @@ string s = method.ReturnType.GetInterface
  [!code-csharp[csrefKeywordsOperator#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/typeof_1.cs)]  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu <xref:System.Object.GetType%2A> metoda určit typ, který se používá pro jiné výsledek číselný výpočet. To závisí na požadavky na úložiště výsledné číslo.  
+ Tento příklad používá <xref:System.Object.GetType%2A> metodu pro určení typu, který se používá pro jiné výsledek číselné výpočtu. To závisí na požadavky na úložiště z výsledné číslo.  
   
  [!code-csharp[csrefKeywordsOperator#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/typeof_2.cs)]  
   

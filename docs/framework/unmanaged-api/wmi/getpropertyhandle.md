@@ -1,6 +1,6 @@
 ---
 title: Funkce GetPropertyHandle (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce GetPropertyHandle vrací jedinečný popisovač identit, že bude vlastnost.
+description: Funkce GetPropertyHandle vrátí popisovač jedinečných identit, že bude vlastnost.
 ms.date: 11/06/2017
 api_name:
 - GetPropertyHandle
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 103e81dfa0e455157cfce5914b711347b15b578d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 94171b0708c97eb7510e916e451ed03645d706f3
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33460580"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42752317"
 ---
-# <a name="getpropertyhandle-function"></a>GetPropertyHandle – funkce
-Vrací jedinečný popisovač, který identifikuje vlastnost.
+# <a name="getpropertyhandle-function"></a>Funkce GetPropertyHandle
+Vrátí jedinečný popisovač identifikující vlastnosti.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
@@ -43,45 +43,45 @@ HRESULT GetPropertyHandle (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`  
-[v] Ukazatel na [IWbemObjectAccess](https://msdn.microsoft.com/library/aa391770(v=vs.85).aspx) instance.
+[in] Ukazatel [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) instance.
 
 `wszPropertyName`  
-[v] Řetězec kódovaný jazykem UTF16 characaters, který obsahuje název vlastnosti ukončené hodnotou null.   
+[in] Řetězec zakončený hodnotou null kódování UTF16 characaters, který obsahuje název vlastnosti.   
 
 `pType`  
-[out] Ukazatel [ `CIMTYPE` ](https://msdn.microsoft.com/library/aa386309(v=vs.85).aspx) člen výčtu, který představuje typ modelu CIM vlastnosti.
+[out] Ukazatel [ `CIMTYPE` ](https://msdn.microsoft.com/library/aa386309(v=vs.85).aspx) člen výčtu, který představuje typ CIM vlastnosti.
 
 `pHandle`   
-[out] Ukazatel na celé číslo, které obsahuje popisovače vlastnosti.
+[out] Ukazatel na celé číslo, které obsahuje popisovač vlastnosti.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaný název vlastnosti nebyl nalezen. |
+|`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaný název vlastnosti nebyla nalezena. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 |`WBEM_E_NOT_SUPPORTED` | 0x8004100c | Požadovaná vlastnost je typu jsou `CIM_OBJECT` nebo `CIM_ARRAY`. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemClassObject::GetPropertyHandle](https://msdn.microsoft.com/library/aa391771(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemClassObject::GetPropertyHandle](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemobjectaccess-getpropertyhandle) metody.
 
-Tento popisovač můžete použít k identifikaci vlastnosti při použití [IWbemObjectAccess](https://msdn.microsoft.com/library/aa391770(v=vs.85).aspx) metody pro čtení nebo zápis hodnot vlastností.
+Pomocí tohoto úchytu můžete identifikovat vlastnosti při použití [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) metody pro čtení nebo zápis hodnot vlastností.
 
-Zpracovává se nedají načíst pro vlastnosti všech typů dat než `CIM_OBJECT` a `CIM_ARRAY`. Vrátí popisovače pracovní napříč všemi instancemi třídy.
+Obslužné rutiny mohou být získána pro vlastnosti všech datových typů jiných než `CIM_OBJECT` a `CIM_ARRAY`. Vrátí popisovače práce napříč všemi instancemi třídy.
 
 ## <a name="requirements"></a>Požadavky  
-**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

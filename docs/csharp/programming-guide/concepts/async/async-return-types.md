@@ -2,12 +2,12 @@
 title: Asynchronní návratové typy (C#)
 ms.date: 05/29/2017
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-ms.openlocfilehash: 02e3cdd433d5d6d4d58667d56592b9fc2bf374c4
-ms.sourcegitcommit: dc02d7d95f1e3efcc7166eaf431b0ec0dc9d8dca
+ms.openlocfilehash: 5ea3ef538bd0e3d74bbdcbd41519ae5041556b7e
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37143554"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42753922"
 ---
 # <a name="async-return-types-c"></a>Asynchronní návratové typy (C#)
 Asynchronní metody může mít tyto návratové typy:
@@ -33,7 +33,7 @@ V následujícím příkladu `GetLeisureHours` asynchronní metoda obsahuje `ret
 
 Při `GetLeisureHours` je volat z výrazu await v `ShowTodaysInfo` metodu, výraz await získá celočíselnou hodnota (hodnotu `leisureHours`), který je uložen v úloze vrácené `GetLeisureHours` metoda. Další informace o výrazech await naleznete [await](../../../../csharp/language-reference/keywords/await.md).  
   
-Můžete lépe pochopit, jak to probíhá oddělením volání `GetLeisureHours` od aplikace `await`, jak ukazuje následující kód. Volání metody `TaskOfT_MethodAsync` , které není okamžitě očekáváno, vrátí `Task<int>`, dle očekávání od deklarace metody. Úkol je přidělen `integerTask` proměnné v příkladu. Protože `integerTask` je <xref:System.Threading.Tasks.Task%601>, obsahuje <xref:System.Threading.Tasks.Task%601.Result> vlastnost typu `TResult`. V tomto případě TResult představuje typ integer. Když `await` platí pro `integerTask`, výraz await se vyhodnocuje na obsah <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost `integerTask`. Je hodnota přiřazená `result2` proměnné.  
+Můžete lépe pochopit, jak to probíhá oddělením volání `GetLeisureHours` od aplikace `await`, jak ukazuje následující kód. Volání metody `GetLeisureHours` , které není okamžitě očekáváno, vrátí `Task<int>`, dle očekávání od deklarace metody. Úkol je přidělen `infoTask` proměnné v příkladu. Protože `infoTask` je <xref:System.Threading.Tasks.Task%601>, obsahuje <xref:System.Threading.Tasks.Task%601.Result> vlastnost typu `TResult`. V takovém případě `TResult` představuje typ integer. Když `await` platí pro `infoTask`, výraz await se vyhodnocuje na obsah <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost `infoTask`. Je hodnota přiřazená `ret` proměnné.  
   
 > [!IMPORTANT]
 >  <xref:System.Threading.Tasks.Task%601.Result%2A> Vlastností je vlastnost blokování. Pokud se pokusíte o přístup k ní před dokončením její úlohy, blokovaný vláknem, které je právě aktivní až do dokončení úlohy a hodnota je k dispozici. Ve většině případů byste měli přistupovat k hodnotě pomocí `await` namísto přímého přístupu. <br/> Načíst hodnotu z předchozího příkladu <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost blokování hlavního vlákna tak, aby `ShowTodaysInfo` metoda může předtím, než skončila aplikace dokončí provádění.  
@@ -49,7 +49,7 @@ V následujícím příkladu `WaitAndApologize` neobsahuje asynchronní metody `
   
 `WaitAndApologize` je očekáván pomocí příkazu await namísto výrazu await, podobného volání příkazu pro synchronní metody vracející hodnotu void. Použití operátoru await v tomto případě nevytvoří hodnotu.  
   
-Stejně jako v předchozím <xref:System.Threading.Tasks.Task%601> příkladu můžete oddělit volání `Task_MethodAsync` od použití operátoru await, jako je následující kód ukazuje. Nezapomeňte však, že `Task` nemá `Result` vlastnost a že se při použití operátoru await nevytvoří žádná hodnota `Task`.  
+Stejně jako v předchozím <xref:System.Threading.Tasks.Task%601> příkladu můžete oddělit volání `WaitAndApologize` od použití operátoru await, jako je následující kód ukazuje. Nezapomeňte však, že `Task` nemá `Result` vlastnost a že se při použití operátoru await nevytvoří žádná hodnota `Task`.  
   
 Následující kód oddělí volání `WaitAndApologize` metoda z čekajícího na úkol, který metoda vrátí.  
  

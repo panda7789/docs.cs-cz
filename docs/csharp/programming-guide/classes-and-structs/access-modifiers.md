@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C# Language, access modifiers
 - access modifiers [C#], about
 ms.assetid: 6e81ee82-224f-4a12-9baf-a0dca2656c5b
-ms.openlocfilehash: ec275d4782fee047b16fd114c4d22ceb03eecb11
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: 4be248b1d86692bd35491e55b1c649cd8428a33b
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39199228"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42753916"
 ---
 # <a name="access-modifiers-c-programming-guide"></a>Modifikátory přístupu (Průvodce programováním v C#)
 Všechny typy a členy typu mít úrovni přístupu, které řídí, jestli je možné použít od jiného kódu v sestavení nebo jiná sestavení. Následující modifikátory přístupu můžete použít k určení přístupnost typu nebo členu při jeho deklaraci:  
@@ -43,7 +43,7 @@ Všechny typy a členy typu mít úrovni přístupu, které řídí, jestli je m
   
  Odvozené třídy nemůže mít vyšší dostupnost než jejich základní typy. Jinými slovy, nemůže mít veřejnou třídu `B` , která je odvozena z interní třída `A`. Pokud to bylo povoleno, bude mít vliv na provádění `A` veřejné, protože všechny chráněné nebo interní členy `A` jsou přístupné z odvozené třídy.  
   
- Můžete povolit konkrétní jiná sestavení pro přístup k interní typy s použitím atributu InternalsVisibleToAttribute. Další informace najdete v tématu [přátelských sestavení](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055).  
+ Můžete povolit konkrétní jiná sestavení pro přístup k interní typy s použitím atributu InternalsVisibleToAttribute. Další informace najdete v tématu [přátelských sestavení](../concepts/assemblies-gac/friend-assemblies.md).  
   
 ## <a name="class-and-struct-member-accessibility"></a>Třídy a přístupnost členů struktury  
  Členy třídy (včetně vnořené třídy a struktury) mohou být deklarovány s žádným z šesti typy přístupu. Členy struktury nejde deklarovat jako chránit, protože struktury nepodporují dědičnosti.  

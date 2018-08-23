@@ -1,6 +1,6 @@
 ---
 title: this (Referenční dokumentace jazyka C#)
-description: This – klíčové slovo (referenční dokumentace jazyka C#)
+description: Toto klíčové slovo (referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 f1_keywords:
 - this
@@ -9,25 +9,25 @@ helpviewer_keywords:
 - this keyword [C#]
 ms.assetid: d4f827fe-4710-410b-89b8-867dad44b8a3
 ms.openlocfilehash: 04496079114be45388926993b67e8f1d3f2e9f15
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
-ms.locfileid: "34172032"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42753939"
 ---
 # <a name="this-c-reference"></a>this (Referenční dokumentace jazyka C#)
-`this` – Klíčové slovo odkazuje na aktuální instanci třídy a také slouží jako modifikátor první parametr metody rozšíření.  
+`this` – Klíčové slovo odkazuje na aktuální instanci třídy a slouží také jako modifikátor první parametr metody rozšíření.  
   
 > [!NOTE]
->  Tento článek popisuje použití `this` s instancí třídy. Další informace o jeho použití v metody rozšíření najdete v tématu [rozšiřující metody](../../../csharp/programming-guide/classes-and-structs/extension-methods.md).  
+>  Tento článek popisuje způsob používání `this` instancemi třídy. Další informace o jeho použití v metodách rozšíření naleznete v tématu [rozšiřující metody](../../../csharp/programming-guide/classes-and-structs/extension-methods.md).  
   
- Toto jsou běžná použití služby `this`:  
+ Tady jsou běžné způsoby použití `this`:  
   
--   Aby se dosáhlo nároku členy skryt podobné názvy, například:  
+-   K získání způsobilosti členy skryta podobnými názvy, například:  
   
  [!code-csharp[csrefKeywordsAccess#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_1.cs)]  
   
--   Chcete-li předat objekt jako parametr jinými metodami, například:  
+-   K předání objektu jako parametr do jiné metody, například:  
   
     ```csharp  
     CalcTax(this);  
@@ -37,10 +37,10 @@ ms.locfileid: "34172032"
   
  [!code-csharp[csrefKeywordsAccess#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_2.cs)]  
   
- Statické členské funkce, protože existují na úrovni třídy a nikoli jako součást objekt, nemají `this` ukazatel. Jedná se o chybu, který bude odkazovat na `this` v statickou metodu.  
+ Statické členské funkce, protože existují na úrovni třídy, nikoli jako součást objektu, není nutné `this` ukazatele. Jedná se o chybu k odkazování na `this` uvnitř statické metody.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `this` se použijí pro kvalifikaci `Employee` třídy členy, `name` a `alias`, které jsou podobné názvy skryté. Používá se také předat objekt metodu `CalcTax`, který patří do jiné třídy.  
+ V tomto příkladu `this` se použijí pro kvalifikaci `Employee` členy, třídy `name` a `alias`, které jsou skryté, podobně jako názvy. Používá se také k objektu předat metodě `CalcTax`, který patří do jiné třídy.  
   
  [!code-csharp[csrefKeywordsAccess#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_3.cs)]  
   

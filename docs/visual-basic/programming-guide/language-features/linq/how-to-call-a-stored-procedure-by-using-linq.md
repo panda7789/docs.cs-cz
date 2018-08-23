@@ -8,69 +8,69 @@ helpviewer_keywords:
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 6436d384-d1e0-40aa-8afd-451007477260
 ms.openlocfilehash: 8aad85ce3369f84e82100072bccf389b03c38221
-ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34826916"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42751900"
 ---
 # <a name="how-to-call-a-stored-procedure-by-using-linq-visual-basic"></a>Postupy: Volání uložené procedury pomocí LINQ (Visual Basic)
-Language-Integrated Query (LINQ) usnadňuje přístup k informacím databáze, včetně databázové objekty, jako uložené procedury.  
+Language Integrated Query (LINQ) usnadňuje přístup k informacím o databáze, včetně databázové objekty, jako uložené procedury.  
   
- Následující příklad ukazuje, jak vytvořit aplikaci, která volá uloženou proceduru v databázi systému SQL Server. Ukázka ukazuje způsob volání dva různé postupy uložené v databázi. Každý postup vrátí výsledky dotazu. Jeden procedura používá vstupní parametry a další postup nemusí provádět žádné parametry.  
+ Následující příklad ukazuje, jak vytvořit aplikaci, která volá uloženou proceduru v databázi serveru SQL Server. Vzorek ukazuje, jak volat dvě různé uložené procedury v databázi. Každý postup vrátí výsledky dotazu. Jeden procedura používá vstupní parametry a další postup nepřijímá parametry.  
   
- V příkladech v tomto tématu použijte ukázková databáze Northwind. Pokud jste tuto databázi ve svém vývojovém počítači, můžete ji stáhnout z webu Microsoft Download Center. Pokyny najdete v tématu [stažení ukázkové databáze](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+ V příkladech v tomto tématu se používá ukázkové databáze Northwind. Pokud tuto databázi na vašem vývojovém počítači nemáte, můžete si ho stáhnout z webu Microsoft Download Center. Pokyny najdete v tématu [Downloading Sample Databases](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md).  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ### <a name="to-create-a-connection-to-a-database"></a>Chcete-li vytvořit připojení k databázi  
   
-1.  V sadě Visual Studio otevřete **Průzkumníka serveru**/**Průzkumník databáze** kliknutím **Průzkumníka serveru**/**databáze Průzkumník** na **zobrazení** nabídky.  
+1.  V sadě Visual Studio, otevřete **Průzkumníka serveru**/**Průzkumník databáze** kliknutím **Průzkumníka serveru**/**databáze Průzkumník** na **zobrazení** nabídky.  
   
-2.  Klikněte pravým tlačítkem na **připojení dat** v **Průzkumníka serveru**/**Průzkumník databáze** a pak klikněte na **přidat připojení**.  
+2.  Klikněte pravým tlačítkem na **datová připojení** v **Průzkumníka serveru**/**Průzkumník databáze** a potom klikněte na tlačítko **přidat připojení**.  
   
-3.  Zadejte platné připojení k ukázková databáze Northwind.  
+3.  Zadejte platné připojení k ukázkové databázi Northwind.  
   
-### <a name="to-add-a-project-that-contains-a-linq-to-sql-file"></a>Chcete-li přidat projekt, který obsahuje LINQ to SQL souboru  
+### <a name="to-add-a-project-that-contains-a-linq-to-sql-file"></a>Chcete-li přidat projekt, který obsahuje souboru LINQ to SQL  
   
-1.  V sadě Visual Studio na **soubor** nabídky, přejděte na příkaz **nový** a pak klikněte na **projektu**. Vyberte jazyka Visual Basic **formulářové aplikace Windows** jako typ projektu.  
+1.  V sadě Visual Studio na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**. Výběr jazyka Visual Basic **formulářová aplikace Windows** jako typ projektu.  
   
 2.  Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**. Vyberte **třídy LINQ to SQL** šablony položky.  
   
-3.  Název souboru `northwind.dbml`. Klikněte na tlačítko **přidat**. Návrhář relací objektů (Návrhář relací objektů), je otevřené northwind.dbml souboru.  
+3.  Název souboru `northwind.dbml`. Klikněte na tlačítko **přidat**. Návrhář relací objektů (O/R Designer), je otevřené northwind.dbml souboru.  
   
-### <a name="to-add-stored-procedures-to-the-or-designer"></a>Chcete-li přidat uložené procedury pro Návrhář relací objektů  
+### <a name="to-add-stored-procedures-to-the-or-designer"></a>Chcete-li přidat úložné procedury do Návrháře relací objektů  
   
 1.  V **Průzkumníka serveru**/**Průzkumník databáze**, rozbalte možnost připojení k databázi Northwind. Rozbalte **uložené procedury** složky.  
   
-     Pokud jste zavřeli Návrhář relací objektů, můžete ho znovu otevřít dvojitým kliknutím na soubor northwind.dbml, které jste přidali dříve.  
+     Pokud jste zavřeli O/R Designer, můžete ho znovu otevřít poklikáním northwind.dbml soubor, který jste přidali dříve.  
   
-2.  Klikněte **prodeje podle roku** uložené procedury a přetáhněte ji do pravého podokna návrháře. Klikněte **deset nejvíce nákladné produkty** uložené procedury, přetáhněte ji do pravého podokna návrháře.  
+2.  Klikněte na tlačítko **prodeje podle roku** uložené procedury a přetáhněte ho do pravého podokna návrháře. Klikněte na tlačítko **deset nejvíce nákladné produktů** uložené procedury, přetáhněte ho do pravého podokna návrháře.  
   
-3.  Uložte změny a zavřít návrháře.  
+3.  Uložte změny a zavřete návrháře.  
   
 4.  Uložte projekt.  
   
-### <a name="to-add-code-to-display-the-results-of-the-stored-procedures"></a>Chcete-li přidat kód, který zobrazí výsledky uložené procedury  
+### <a name="to-add-code-to-display-the-results-of-the-stored-procedures"></a>Chcete-li přidat kód pro zobrazení výsledků uložených procedur  
   
-1.  Z **sada nástrojů**, přetáhněte ji <xref:System.Windows.Forms.DataGridView> na výchozí formuláře Windows pro svůj projekt Form1 ovládací prvek.  
+1.  Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.DataGridView> ovládacího prvku na výchozí formulář Windows pro váš projekt Form1.  
   
-2.  Dvakrát klikněte na Form1 přidání kódu k jeho `Load` událostí.  
+2.  Klikněte dvakrát na Form1 přidat kód pro jeho `Load` událostí.  
   
-3.  Pokud jste přidali uložené procedury Návrhář relací objektů, návrháře přidat <xref:System.Data.Linq.DataContext> objekt pro váš projekt. Tento objekt obsahuje kód, který musí mít přístup k tyto postupy. <xref:System.Data.Linq.DataContext> Objektu pro název projektu na základě názvu souboru DBML. Pro tento projekt <xref:System.Data.Linq.DataContext> názvem objektu `northwindDataContext`.  
+3.  Když jste přidali do Návrháře relací objektů uložených procedur, přidá návrháře <xref:System.Data.Linq.DataContext> objektu pro váš projekt. Tento objekt obsahuje kód, který musí mít pro přístup k těmto postupy. <xref:System.Data.Linq.DataContext> Objektu pro projekt je s názvem podle názvu souboru .dbml. Pro tento projekt <xref:System.Data.Linq.DataContext> se nazývá `northwindDataContext`.  
   
-     Můžete vytvořit instanci <xref:System.Data.Linq.DataContext> v kódu a volání metody uložené procedury určeného Návrhář relací objektů. K vytvoření vazby <xref:System.Windows.Forms.DataGridView> objektu, možná budete muset vynutit dotaz provést okamžitě voláním <xref:System.Linq.Enumerable.ToList%2A> metodu výsledky uložené procedury.  
+     Můžete vytvořit instanci <xref:System.Data.Linq.DataContext> v kódu a volání určené metody uloženou proceduru Návrháře relací objektů. K vytvoření vazby <xref:System.Windows.Forms.DataGridView> objektu, možná budete muset vynutit dotaz tak, aby okamžitě je spouštějte voláním <xref:System.Linq.Enumerable.ToList%2A> metodu na výsledky uložené procedury.  
   
-     Přidejte následující kód, který `Load` události zavolat buď uložené procedury, které jsou zveřejněné jako metody pro vaše data kontextu.  
+     Přidejte následující kód, který `Load` události a volání buď uložené procedury jako metody pro datový kontext.  
   
      [!code-vb[VbLINQtoSQLHowTos#1](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-call-a-stored-procedure-by-using-linq_1.vb)]  
     [!code-vb[VbLINQtoSQLHowTos#2](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-call-a-stored-procedure-by-using-linq_2.vb)]  
   
-4.  Stisknutím klávesy F5 spusťte projekt a zobrazit výsledky.  
+4.  Stisknutím klávesy F5 spusťte váš projekt a prohlédněte si výsledky.  
   
 ## <a name="see-also"></a>Viz také  
  [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
  [Dotazy](../../../../visual-basic/language-reference/queries/queries.md)  
  [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
- [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)  
- [Postupy: přiřazení uložené procedury k provedení aktualizací, vložení a odstranění (Návrhář relací objektů)](http://msdn.microsoft.com/library/e88224ab-ff61-4a3a-b6b8-6f3694546cac)
+ [Metody DataContext (O/R Designer)](/visualstudio/data-tools/datacontext-methods-o-r-designer)  
+ [Postupy: přiřazení uložených procedur za účelem aktualizace, vložení a odstranění (O/R Designer)](http://msdn.microsoft.com/library/e88224ab-ff61-4a3a-b6b8-6f3694546cac)

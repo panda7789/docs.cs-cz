@@ -8,50 +8,50 @@ helpviewer_keywords:
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
 ms.openlocfilehash: acc82ca370a71a0469fc543d042da9c279d69fb2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33334217"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42753985"
 ---
 # <a name="indexers-c-programming-guide"></a>Indexery (Průvodce programováním v C#)
 
-Indexery povolit instancí třídě nebo struktuře indexovaných stejně jako pole. Indexované hodnotu můžete nastavit nebo načíst bez zadání explicitně členem typ, nebo instance. Indexery vypadat [vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md) s tím rozdílem, že jejich přístupových objektů trvat parametry.  
+Indexery povolit instance třídy nebo struktury indexovaných stejně jako pole. Indexovanou hodnotu můžete nastavit nebo načíst bez explicitního určení typu nebo instance člena. Indexery se podobají [vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md) s tím rozdílem, že jejich přístupových objektů přijímají parametry.  
  
- Následující příklad definuje třídu obecné s jednoduchou [získat](../../../csharp/language-reference/keywords/get.md) a [nastavit](../../../csharp/language-reference/keywords/set.md) přístupových metod a přiřadit k získávání hodnot. `Program` Třída vytvoří instance této třídy pro ukládání řetězců.  
+ Následující příklad definuje obecné třídy s jednoduchou [získat](../../../csharp/language-reference/keywords/get.md) a [nastavit](../../../csharp/language-reference/keywords/set.md) přístupové metody pro přiřazení a načítat hodnoty. `Program` Třídy vytvoří instanci této třídy pro uložení řetězce.  
   
  [!code-csharp[indexers#1](../../../../samples/snippets/csharp/programming-guide/indexers/indexer-1.cs)]  
   
 > [!NOTE]
 >  Další příklady najdete v tématu [související oddíly](../../../csharp/programming-guide/indexers/index.md#BKMK_RelatedSections).  
   
-## <a name="expression-body-definitions"></a>Výraz definice textu  
+## <a name="expression-body-definitions"></a>Definice textu výrazu  
  
-Je běžné pro get indexer nebo přistupující objekt set sestává z jedné příkaz, který vrátí nebo nastaví hodnotu. Výraz vozidlo členy poskytují zjednodušenou syntaxi pro podporu tohoto scénáře. Od verze jazyka C# 6, indexer jen pro čtení se dá implementovat jako výraz vozidlo člena, jak ukazuje následující příklad.
+Je běžné, že indexování get nebo přístupový objekt set spočívají jediném příkazu, který vrátí nebo nastaví hodnotu. Členové tvoření poskytují zjednodušenou syntaxi pro podporu tohoto scénáře. Od verze C# 6, je možné implementovat jako člena s výrazem v těle, jak ukazuje následující příklad indexer jen pro čtení.
 
 [!code-csharp[indexers#2](../../../../samples/snippets/csharp/programming-guide/indexers/indexer-2.cs)]  
 
-Všimněte si, že `=>` představuje výraz text a který `get` – klíčové slovo nepoužívá. 
+Všimněte si, že `=>` představuje text výrazu a, který `get` – klíčové slovo se nepoužívá. 
 
-Od verze jazyka C# 7.0, i get a přistupující objekt set může být implementovaná jako výraz vozidlo členy. V takovém případě obě `get` a `set` klíčová slova se musí použít. Příklad:
+Od verze C# 7.0, jak získat a přístupový objekt set mohou být implementovaná jako členy s výrazem v těle. V takovém případě obě `get` a `set` klíčová slova musí být použita. Příklad:
 
 [!code-csharp[indexers#3](../../../../samples/snippets/csharp/programming-guide/indexers/indexer-3.cs)]  
   
 ## <a name="indexers-overview"></a>Přehled indexerů  
   
--   Indexery povolit objekty indexovaných podobným způsobem jako na pole.  
+-   Indexery povolují objekty, které mají být indexovány v podobným způsobem jako pole.  
   
--   A `get` přistupujícího objektu vrací hodnotu. A `set` přistupujícího objektu přiřazuje hodnotu.  
+-   A `get` přistupující objekt vrací hodnotu. A `set` přístupového objektu přiřadí hodnotu.  
   
 -   [To](../../../csharp/language-reference/keywords/this.md) – klíčové slovo se používá k definování indexeru.  
   
--   [Hodnotu](../../../csharp/language-reference/keywords/value.md) – klíčové slovo se používá k definování přiřazené podle `set` indexer.  
+-   [Hodnotu](../../../csharp/language-reference/keywords/value.md) – klíčové slovo se používá k definování přiřazené podle hodnoty `set` indexeru.  
   
--   Indexery nemusíte indexovat pomocí celočíselnou hodnotu; Můžete se rozhodnout, jak definovat mechanismus konkrétní hledání.  
+-   Indexery není nutné indexovat pomocí celočíselnou hodnotu; je jenom na vás, jak definovat konkrétní vyhledávací mechanismus.  
   
--   Indexery může být přetížený.  
+-   Indexery můžou být přetížené.  
   
--   Indexery může mít více než jeden formální parametr, například při přístupu k dvourozměrná pole.  
+-   Indexery může mít více než jeden formální parametr, například při přístupu k dvourozměrné pole.  
   
 ##  <a name="BKMK_RelatedSections"></a> Související oddíly  
   

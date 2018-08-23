@@ -1,18 +1,18 @@
 ---
 title: Implementace IEnumerable v jazyce Visual Basic
-ms.date: 07/20/2015
+ms.date: 07/31/2018
 helpviewer_keywords:
 - control flow [Visual Basic]
 - enumerable interfaces
 - loop structures [Visual Basic], optimizing performance
 - control flow [Visual Basic]
 ms.assetid: c60d7589-51f2-4463-a2d5-22506bbc1554
-ms.openlocfilehash: 2c2012261f38bccb704fe1a0300d496785e2129c
-ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
+ms.openlocfilehash: be2eefdc52d38df3071d457b7a71dbac6eaa2657
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332586"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42751920"
 ---
 # <a name="walkthrough-implementing-ienumerableof-t-in-visual-basic"></a>Návod: Implementace IEnumerable(Of T) v jazyce Visual Basic
 <xref:System.Collections.Generic.IEnumerable%601> Rozhraní je implementováno třídy, které může vrátit posloupnost hodnot položek najednou. Výhodou vracející data, která je jedna položka v čase, že nemáte k načtení úplná sada dat do paměti pro práci s ní. Stačí načtení jednu položku z dat pomocí dostatek paměti. Třídy, které implementují `IEnumerable(T)` rozhraní jde použít s `For Each` smyčky nebo dotazů LINQ.  
@@ -27,21 +27,68 @@ ms.locfileid: "39332586"
   
 ## <a name="creating-the-enumerable-class"></a>Vytvoření výčtu třídy  
   
-|Vytvoření projektu vyčíslitelné třídy|  
-|---|  
-|1.  V jazyce Visual Basic na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**.<br />2.  V **nový projekt** v dialogu **typy projektů** podokno, ujistěte se, že **Windows** zaškrtnuto. Vyberte **knihovny tříd** v **šablony** podokně. V **název** zadejte `StreamReaderEnumerable`a potom klikněte na tlačítko **OK**. Zobrazí se nový projekt.<br />3.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na soubor Class1.vb a klikněte na tlačítko **přejmenovat**. Přejmenujte soubor na `StreamReaderEnumerable.vb` a stiskněte klávesu ENTER. Přejmenování souboru se také přejmenujte třídu na `StreamReaderEnumerable`. Tato třída implementuje `IEnumerable(Of String)` rozhraní.<br />4.  Klikněte pravým tlačítkem na projekt StreamReaderEnumerable, přejděte na **přidat**a potom klikněte na tlačítko **nová položka**. Vyberte **třídy** šablony. V **název** zadejte `StreamReaderEnumerator.vb` a klikněte na tlačítko **OK**.|  
-  
+**Vytvořte projekt vyčíslitelné tříd**
+
+1.  V jazyce Visual Basic na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**.
+
+1.  V **nový projekt** v dialogu **typy projektů** podokno, ujistěte se, že **Windows** zaškrtnuto. Vyberte **knihovny tříd** v **šablony** podokně. V **název** zadejte `StreamReaderEnumerable`a potom klikněte na tlačítko **OK**. Zobrazí se nový projekt.
+
+1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na soubor Class1.vb a klikněte na tlačítko **přejmenovat**. Přejmenujte soubor na `StreamReaderEnumerable.vb` a stiskněte klávesu ENTER. Přejmenování souboru se také přejmenujte třídu na `StreamReaderEnumerable`. Tato třída implementuje `IEnumerable(Of String)` rozhraní.
+
+1.  Klikněte pravým tlačítkem na projekt StreamReaderEnumerable, přejděte na **přidat**a potom klikněte na tlačítko **nová položka**. Vyberte **třídy** šablony. V **název** zadejte `StreamReaderEnumerator.vb` a klikněte na tlačítko **OK**.
+
  První třídy v tomto projektu je vyčíslitelná třídy a implementuje `IEnumerable(Of String)` rozhraní. Tato obecná rozhraní implementuje <xref:System.Collections.IEnumerable> rozhraní a zaručuje, že příjemci této třídy můžete přístup k hodnoty zadané jako `String`.  
   
-|Přidání kódu k implementaci IEnumerable|  
-|---|  
-|1.  Otevřete soubor StreamReaderEnumerable.vb.<br />2.  Na řádku po `Public Class StreamReaderEnumerable`, zadejte následující příkaz a stiskněte klávesu ENTER.<br />     [!code-vb[VbVbalrIteratorWalkthrough#1](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_1.vb)]<br />     Visual Basic automaticky naplní třídu s členy, které jsou vyžadované `IEnumerable(Of String)` rozhraní.<br />3.  Tato třída vyčíslitelné bude číst řádky z jeden řádek textu souboru najednou. Přidejte následující kód do třídy vystavit veřejný konstruktor, který přijímá jako vstupní parametr cestu k souboru.<br />     [!code-vb[VbVbalrIteratorWalkthrough#2](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_2.vb)]<br />4.  Implementace <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> metodu `IEnumerable(Of String)` rozhraní vrátí novou instanci třídy `StreamReaderEnumerator` třídy. Provádění `GetEnumerator` metodu `IEnumerable` rozhraní nelze realizovat `Private`, protože je nutné vystavit pouze členové `IEnumerable(Of String)` rozhraní. Nahraďte kód generovaný pro Visual Basic `GetEnumerator` metody s následujícím kódem.<br />     [!code-vb[VbVbalrIteratorWalkthrough#3](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_3.vb)]|  
+**Přidejte kód k implementaci IEnumerable**
+
+1. Otevřete soubor StreamReaderEnumerable.vb.
+
+2. Na řádku po `Public Class StreamReaderEnumerable`, zadejte následující příkaz a stiskněte klávesu ENTER.
+
+   [!code-vb[VbVbalrIteratorWalkthrough#1](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_1.vb)]
+
+   Visual Basic automaticky naplní třídu s členy, které jsou vyžadované `IEnumerable(Of String)` rozhraní.
   
-|Chcete-li přidat kód pro implementaci IEnumerator|  
-|---|  
-|1.  Otevřete soubor StreamReaderEnumerator.vb.<br />2.  Na řádku po `Public Class StreamReaderEnumerator`, zadejte následující příkaz a stiskněte klávesu ENTER.<br />     [!code-vb[VbVbalrIteratorWalkthrough#4](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_4.vb)]<br />     Visual Basic automaticky naplní třídu s členy, které jsou vyžadované `IEnumerator(Of String)` rozhraní.<br />3.  Třída výčtu otevře textový soubor a provádí souboru vstupně-výstupních operací čtení řádků ze souboru. Přidejte následující kód do třídy vystavit veřejný konstruktor, který přijímá jako vstupní parametr cestu k souboru a otevřete textový soubor pro čtení.<br />     [!code-vb[VbVbalrIteratorWalkthrough#5](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_5.vb)]<br />4.  `Current` Vlastnosti pro obě `IEnumerator(Of String)` a `IEnumerator` rozhraní vrátit aktuální položky z textového souboru jako `String`. Provádění `Current` vlastnost `IEnumerator` rozhraní nelze realizovat `Private`, protože je nutné vystavit pouze členové `IEnumerator(Of String)` rozhraní. Nahraďte kód generovaný pro Visual Basic `Current` vlastnosti s následujícím kódem.<br />     [!code-vb[VbVbalrIteratorWalkthrough#6](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_6.vb)]<br />5.  `MoveNext` Metodu `IEnumerator` rozhraní přejde na další položku v textovém souboru a aktualizuje hodnotu, která je vrácena `Current` vlastnost. Pokud neexistují žádné další položky ke čtení, `MoveNext` vrátí metoda `False`; jinak vrátí hodnotu `MoveNext` vrátí metoda `True`. Přidejte následující kód, který `MoveNext` metody.<br />     [!code-vb[VbVbalrIteratorWalkthrough#7](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_7.vb)]<br />6.  `Reset` Metodu `IEnumerator` rozhraní přesměruje iterátor, který má odkazovat na začátku textový soubor a vymaže aktuální hodnotu položky. Přidejte následující kód, který `Reset` metody.<br />     [!code-vb[VbVbalrIteratorWalkthrough#8](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_8.vb)]<br />7.  `Dispose` Metodu `IEnumerator` rozhraní zaručuje, že jsou všechny nespravované prostředky uvolněny zničen iterátor. Popisovač souboru, který je používán `StreamReader` objektu je nespravovaný prostředek a musí být uzavřen zničen instance iterátoru. Nahraďte kód generovaný pro Visual Basic `Dispose` metodu s následujícím kódem.<br />     [!code-vb[VbVbalrIteratorWalkthrough#9](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_9.vb)]|  
+3. Tato třída vyčíslitelné bude číst řádky z jeden řádek textu souboru najednou. Přidejte následující kód do třídy vystavit veřejný konstruktor, který přijímá jako vstupní parametr cestu k souboru.
+
+   [!code-vb[VbVbalrIteratorWalkthrough#2](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_2.vb)]
+
+4. Implementace <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> metodu `IEnumerable(Of String)` rozhraní vrátí novou instanci třídy `StreamReaderEnumerator` třídy. Provádění `GetEnumerator` metodu `IEnumerable` rozhraní nelze realizovat `Private`, protože je nutné vystavit pouze členové `IEnumerable(Of String)` rozhraní. Nahraďte kód generovaný pro Visual Basic `GetEnumerator` metody s následujícím kódem.
+
+   [!code-vb[VbVbalrIteratorWalkthrough#3](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_3.vb)]  
   
-## <a name="using-the-sample-iterator"></a>Pomocí iterátoru vzorku  
+**Přidejte kód, který implementují IEnumerator**
+
+1. Otevřete soubor StreamReaderEnumerator.vb.
+
+2. Na řádku po `Public Class StreamReaderEnumerator`, zadejte následující příkaz a stiskněte klávesu ENTER.
+
+   [!code-vb[VbVbalrIteratorWalkthrough#4](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_4.vb)]
+
+   Visual Basic automaticky naplní třídu s členy, které jsou vyžadované `IEnumerator(Of String)` rozhraní.
+
+3. Třída výčtu otevře textový soubor a provádí souboru vstupně-výstupních operací čtení řádků ze souboru. Přidejte následující kód do třídy vystavit veřejný konstruktor, který přijímá jako vstupní parametr cestu k souboru a otevřete textový soubor pro čtení.
+
+   [!code-vb[VbVbalrIteratorWalkthrough#5](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_5.vb)]
+
+4. `Current` Vlastnosti pro obě `IEnumerator(Of String)` a `IEnumerator` rozhraní vrátit aktuální položky z textového souboru jako `String`. Provádění `Current` vlastnost `IEnumerator` rozhraní nelze realizovat `Private`, protože je nutné vystavit pouze členové `IEnumerator(Of String)` rozhraní. Nahraďte kód generovaný pro Visual Basic `Current` vlastnosti s následujícím kódem.
+
+   [!code-vb[VbVbalrIteratorWalkthrough#6](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_6.vb)]
+
+5. `MoveNext` Metodu `IEnumerator` rozhraní přejde na další položku v textovém souboru a aktualizuje hodnotu, která je vrácena `Current` vlastnost. Pokud neexistují žádné další položky ke čtení, `MoveNext` vrátí metoda `False`; jinak vrátí hodnotu `MoveNext` vrátí metoda `True`. Přidejte následující kód, který `MoveNext` metody.
+
+   [!code-vb[VbVbalrIteratorWalkthrough#7](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_7.vb)]
+
+6. `Reset` Metodu `IEnumerator` rozhraní přesměruje iterátor, který má odkazovat na začátku textový soubor a vymaže aktuální hodnotu položky. Přidejte následující kód, který `Reset` metody.
+
+   [!code-vb[VbVbalrIteratorWalkthrough#8](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_8.vb)]
+
+7. `Dispose` Metodu `IEnumerator` rozhraní zaručuje, že jsou všechny nespravované prostředky uvolněny zničen iterátor. Popisovač souboru, který je používán `StreamReader` objektu je nespravovaný prostředek a musí být uzavřen zničen instance iterátoru. Nahraďte kód generovaný pro Visual Basic `Dispose` metodu s následujícím kódem.
+
+   [!code-vb[VbVbalrIteratorWalkthrough#9](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_9.vb)] 
+  
+## <a name="using-the-sample-iterator"></a>Pomocí iterátoru vzorku
+
  Vyčíslitelná třídu lze použít ve vašem kódu společně s řídicí struktury, které vyžadují objekt, který implementuje `IEnumerable`, například `For Next` smyčky nebo dotazu LINQ. Následující příklad ukazuje `StreamReaderEnumerable` v dotazu LINQ.  
   
  [!code-vb[VbVbalrIteratorWalkthrough#10](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_10.vb)]  

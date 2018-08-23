@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8057406552525be19f8e6457de9faf841edc6e68
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3a0b3242e8ae29b9d21dc50d3ea0476967e9746f
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33429498"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42752258"
 ---
 # <a name="iassemblycacheitemcreatestream-method"></a>IAssemblyCacheItem::CreateStream – metoda
 Vytvoří datový proud se zadaným názvem a formát.  
@@ -42,25 +42,25 @@ HRESULT CreateStream (
   
 #### <a name="parameters"></a>Parametry  
  `dwFlags`  
- [v] Příznaky definované v Fusion.idl.  
+ [in] Příznaky definované v Fusion.idl.  
   
  `pszStreamName`  
- [v] Název datového proudu, který se má vytvořit.  
+ [in] Název datového proudu, který se má vytvořit.  
   
  `dwFormat`  
- [v] Formát souboru pro odesílání.  
+ [in] Formát souboru, který má být datovým proudem.  
   
  `dwFormatFlags`  
- [v] Specifické pro formát příznaky definované v Fusion.idl.  
+ [in] Příznaky formátu konkrétní definované v Fusion.idl.  
   
  `ppIStream`  
- [out] Ukazatel na adresu vrácený [IStream on Request](https://msdn.microsoft.com/library/aa380034.aspx) instance.  
+ [out] Ukazatel na adresu vráceného [IStream](/windows/desktop/api/objidl/nn-objidl-istream) instance.  
   
  `puliMaxSize`  
- [v, optional] Maximální velikost datového proudu odkazuje `ppIStream`.  
+ [in, volitelné] Maximální velikost datového proudu odkazuje `ppIStream`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Fusion.h  
   

@@ -1,50 +1,53 @@
 ---
-title: Pozastavování a obnovování vláken
+title: Pozastavení a přerušení vlákna
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- resuming threads
+- interrupting threads
 - threading [.NET Framework], pausing
 - pausing threads
 ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a9c2d58576098c83af110f2a713a0a8562e23aec
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 77dcdc95e0ca9d570c896fb036e0577f0475e164
+ms.sourcegitcommit: c66ba2df2d2ecfb214f85ee0687d298e4941c1a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33589120"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42752145"
 ---
-# <a name="pausing-and-resuming-threads"></a>Pozastavování a obnovování vláken
-Nejběžnější způsoby pro synchronizaci aktivity vláken jsou bloku a verzi vlákna nebo objekty uzamčení nebo oblastech kódu. Další informace o těchto zamykání a blokování mechanismy najdete v tématu [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
+# <a name="pausing-and-interrupting-threads"></a>Pozastavení a přerušení vlákna
+
+Nejběžnější způsoby pro synchronizaci činností vlákna jsou bloku a verzi vlákna, nebo uzamčení objektů nebo oblasti kódu. Další informace o těchto zamykání a blokování mechanismy, naleznete v tématu [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
   
- Můžete taky nechat vláken put sami do režimu spánku. Když jsou zablokované podprocesy nebo režimu spánku, můžete použít <xref:System.Threading.ThreadInterruptedException> pro přerušení je mimo stavy jejich čekání.  
+ Je také možné vlákna vložit samotné do režimu spánku. Když jsou zablokované podprocesy nebo režimu spánku, můžete použít <xref:System.Threading.ThreadInterruptedException> přerušení mimo jejich stavů čekání.  
   
-## <a name="the-threadsleep-method"></a>Metoda Thread.Sleep  
- Volání <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> metoda způsobí, že aktuální vlákno okamžitě blokování pro počet milisekund nebo časový interval, předáte metodě a vypočítá zbytek jeho časovém intervalu na jiné vlákno. Po uplynutí této interval obnoví spící vláken provádění.  
+## <a name="the-threadsleep-method"></a>Thread.Sleep – metoda
+
+ Volání <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> metoda způsobí, že aktuální vlákno, okamžitě zablokovat pro počet milisekund nebo časový interval předat metodě a vrací zbytek jeho časovém intervalu do jiného vlákna. Po uplynutí tohoto intervalu spící vlákno pokračuje v provádění.  
   
- Nelze volat jedno vlákno <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> na jiné vlákno.  <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> je statická metoda, která způsobí, že vždy aktuální vlákno do režimu spánku.  
+ Jedno vlákno nemůže volat <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> v jiném vlákně.  <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> je statická metoda, která způsobí, že vždy aktuální vlákno do režimu spánku.  
   
- Volání metody <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> s hodnotou <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType> způsobí, že vlákno do režimu spánku, dokud bude přerušen přívod jiné vlákno, která volá <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> metoda ve vlákně, v režimu spánku, nebo dokud není ukončen voláním jeho <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> metoda.  Následující příklad ilustruje obě metody přerušení spící vlákna.  
+ Volání <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> s hodnotou <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType> způsobí, že vlákno do režimu spánku, dokud je přerušeno jiným vláknem, která volá <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> metodu v režimu spánku vlákno nebo dokud nebude ukončen voláním jeho <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> metoda.  Následující příklad znázorňuje oba způsoby by bylo třeba přerušit vlákno režimu spánku.  
   
  [!code-csharp[Conceptual.Threading.Resuming#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.Threading.Resuming/cs/Sleep1.cs#1)]
  [!code-vb[Conceptual.Threading.Resuming#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.Threading.Resuming/vb/Sleep1.vb#1)]  
   
-## <a name="interrupting-threads"></a>Přerušení vláken  
- Čekání na vlákno může přerušit voláním <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> blokované vlákno vyvolá metodu <xref:System.Threading.ThreadInterruptedException>, která dělí vlákna mimo blokování volání. Vlákno by měl catch <xref:System.Threading.ThreadInterruptedException> a jakékoli je vhodné pokračovat v práci. Pokud vlákno ignoruje výjimka, modul runtime zachytí výjimky a zastaví vlákno.  
+## <a name="interrupting-threads"></a>Přerušení vlákna
+
+ Voláním můžete přerušit vlákno čeká <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> metodu na blokovaná vlákna vyvolání <xref:System.Threading.ThreadInterruptedException>, který přeruší vlákna mimo blokovacího hovoru. Vlákno byste zachytit <xref:System.Threading.ThreadInterruptedException> a dělat všechno, co je třeba pokračovat v práci. Pokud vlákno ignoruje výjimka, modul runtime zachytí výjimku a přestane vlákno.  
   
 > [!NOTE]
->  Pokud cílový vlákno není blokované při <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> je volána, vlákno proces se nepřerušil dokud bloky. Pokud vlákno nikdy blokuje, mohli dokončit bez někdy přerušena.  
+>  Pokud je cílové vlákno blokované, kdy <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> je volána, vlákno proces se nepřerušil dokud bloky. Pokud se nikdy blokuje vlákno, se stihlo dokončit bez nikdy přerušen.  
   
- Pokud čekání je spravovaný čekání, pak <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> a <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> obě vlákno probuzení okamžitě. Pokud čekání nespravované čekání (například platformu vyvolat volání Win32 [WaitForSingleObject](https://msdn.microsoft.com/library/windows/desktop/ms687032\(v=vs.85\).aspx) funkce), ani <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> ani <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> může převzít kontrolu nad vlákno, dokud vrátí nebo volá do spravovaného kódu. Ve spravovaném kódu chování je následující:  
+ Pokud čekání se spravované Počkejte, potom <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> a <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> obě funkce vlákno okamžitě. Při čekání na nespravované čekání (například voláním rozhraní Win32 vyvolání platformy [WaitForSingleObject](/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobject) funkce), ani <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> ani <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> může převzít kontrolu nad vlákno, dokud se vrátí do nebo volá do spravovaného kódu. Chování ve spravovaném kódu vypadá takto:  
   
--   <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> vlákna mimo žádné čekání to může být v a způsobí, že se probudí <xref:System.Threading.ThreadInterruptedException> vyvolání ve vlákně na cílový.  
+-   <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> vlákna mimo všechny čekání, je možné a způsobí, že se probudí <xref:System.Threading.ThreadInterruptedException> vyvolání v cílové vlákno.  
   
--   <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> vlákna mimo žádné čekání to může být v a způsobí, že se probudí <xref:System.Threading.ThreadAbortException> vyvolání na vlákno. Podrobnosti najdete v tématu [zničení vláken](../../../docs/standard/threading/destroying-threads.md).  
+-   <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> vlákna mimo všechny čekání, je možné a způsobí, že se probudí <xref:System.Threading.ThreadAbortException> vyvolání ve vlákně. Podrobnosti najdete v tématu [ničení vlákna](../../../docs/standard/threading/destroying-threads.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Threading.Thread>  

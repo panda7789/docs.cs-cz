@@ -1,5 +1,5 @@
 ---
-title: Serializace XML pomocí webové služby XML
+title: Serializace XML pomocí webových služeb XML
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,21 +17,21 @@ helpviewer_keywords:
 - literal XML serialization
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
-ms.openlocfilehash: fdf984cd52441fd2bbe38499f981542386bd56ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 781c78fde1a8bd9c5c09f64d66f730c28e670aef
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33591392"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42752164"
 ---
-# <a name="xml-serialization-with-xml-web-services"></a>Serializace XML pomocí webové služby XML
-Serializace XML je základní přenos mechanismus použít v architektuře XML webových služeb, prováděné <xref:System.Xml.Serialization.XmlSerializer> třídy. K řízení XML generované webové služby XML, můžete použít atributy uvedené v obou [atributy, řízení XML serializace](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) a [atributy, řízení kódovaný SOAP serializace](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) do třídy, návratové hodnoty, parametry a pole souboru, který se používá k vytvoření webové služby XML (.asmx). Další informace o vytváření webové služby XML, najdete v části [vytváření XML webové služby pomocí ASP.NET](https://msdn.microsoft.com/library/01dfc27c-c68e-4910-a0aa-5e4c2a766b0c).  
+# <a name="xml-serialization-with-xml-web-services"></a>Serializace XML pomocí webových služeb XML
+Serializace XML je základní přenos mechanismus použít v architektuře XML webových služeb, prováděné <xref:System.Xml.Serialization.XmlSerializer> třídy. Chcete-li řídit XML generovaných webové služby XML, můžete použít atributy uvedené v obou [atributy, aby ovládací prvek XML serializace](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) a [atributy, aby ovládací prvek kódovaný SOAP serializace](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) k třídy, vrácené hodnoty, parametry a pole souboru použitý k vytvoření webové služby XML (.asmx). Další informace o vytváření webové služby XML, naleznete v tématu [vytváření XML webové služby pomocí ASP.NET](https://msdn.microsoft.com/library/01dfc27c-c68e-4910-a0aa-5e4c2a766b0c).  
   
 ## <a name="literal-and-encoded-styles"></a>Literál a kódovaného stylů  
- XML generované webové služby XML může být ve formátu v jedné ze dvou způsobů, buď literál nebo kódování, jak je popsáno v [přizpůsobení protokolu SOAP zprávy](https://msdn.microsoft.com/library/1d777288-c0d9-4e6a-b638-f010da031952). Proto existují dvě sady atributů, které řídí serializace XML. Atributy uvedené v [atributy, řízení XML serializace](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) slouží k řízení literálu styl XML. Atributy uvedené v [atributy, řízení kódovaný SOAP serializace](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) řízení kódovaného styl. Použitím selektivní tyto atributy, můžete přizpůsobit aplikace má být vrácena, obojím stylů. Kromě toho tyto atributy lze použít (v závislosti) má být vrácen hodnoty a parametry.  
+ XML generovaných webové služby XML mohou být formátována v jednu ze dvou způsobů, buď literál nebo kódovat, jak je vysvětleno v [přizpůsobení zprávy protokolu SOAP](https://msdn.microsoft.com/library/1d777288-c0d9-4e6a-b638-f010da031952). Proto existují dvě sady atributů, které řídí serializace XML. Atributy uvedené v [atributy, aby ovládací prvek XML serializace](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) jsou určeny k řízení literálu styl XML. Atributy uvedené v [atributy, aby ovládací prvek kódovaný SOAP serializace](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) řídit kódovaného stylu. Použitím selektivní tyto atributy, můžete přizpůsobit aplikace má být vrácena, obojím stylů. Kromě toho tyto atributy lze použít (v závislosti) má být vrácen hodnoty a parametry.  
   
 ### <a name="example-of-using-both-styles"></a>Příklad použití obou stylů  
- Při vytváření webové služby XML, můžete použít obě sady atributů pro metody. V následujícím příkladu kódu s názvem třídy `MyService` obsahuje dvě metody webové služby XML, `MyLiteralMethod` a `MyEncodedMethod`. Obě metody provádět má stejnou funkci: vrací instanci `Order` třídy. V `Order` třídy, <xref:System.Xml.Serialization.XmlTypeAttribute> a <xref:System.Xml.Serialization.SoapTypeAttribute> oba atributy jsou použity k `OrderID` pole a oba atributy mají jejich `ElementName` vlastností nastavenou na různé hodnoty.  
+ Při vytváření webové služby XML, můžete použít obě sady atributů pro metody. V následujícím příkladu kódu s názvem třídy `MyService` obsahuje dvě metody webové služby XML, `MyLiteralMethod` a `MyEncodedMethod`. Obě metody provádět má stejnou funkci: vrací instanci `Order` třídy. V `Order` třídy, <xref:System.Xml.Serialization.XmlTypeAttribute> a <xref:System.Xml.Serialization.SoapTypeAttribute> oba atributy jsou použity k `OrderID` pole a oba atributy mají jejich `ElementName` vlastnost nastavena na různé hodnoty.  
   
  Chcete-li spustit příklad, vložte kód do soubor s příponou .asmx a umístění souboru do virtuálního adresáře spravované Internet Information Services (IIS). Z prohlížeče, HTML, jako je například Internet Explorer zadejte název počítače, virtuální adresář a soubor.  
   
@@ -69,14 +69,14 @@ using System;
 using System.Web.Services;  
 using System.Web.Services.Protocols;  
 using System.Xml.Serialization;  
-public class Order{  
+public class Order {  
     // Both types of attributes can be applied. Depending on which type  
     // the method used, either one will affect the call.  
     [SoapElement(ElementName = "EncodedOrderID")]  
     [XmlElement(ElementName = "LiteralOrderID")]  
     public String OrderID;  
 }  
-public class MyService{  
+public class MyService {  
     [WebMethod][SoapDocumentMethod]  
     public Order MyLiteralMethod(){  
         Order myOrder = new Order();  
@@ -221,7 +221,7 @@ End Class
 [XmlType("BigBooksService", Namespace = "http://www.cpandl.com")]  
 [SoapType("SoapBookService")]  
 [XmlRoot("BookOrderForm")]  
-public class Order{  
+public class Order {  
     // Both types of attributes can be applied. Depending on which  
     // the method used, either one will affect the call.  
     [SoapElement(ElementName = "EncodedOrderID")]  

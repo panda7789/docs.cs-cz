@@ -8,17 +8,18 @@ helpviewer_keywords:
 ms.assetid: 67e4a0eb-3095-4ea7-b20f-908faa476277
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 794dfe3dc8e8cded9f7008300351598bbd1dee07
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a382dbea239b66e60d666a0e2e7add01d6d7bd54
+ms.sourcegitcommit: c66ba2df2d2ecfb214f85ee0687d298e4941c1a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33582805"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42752142"
 ---
 # <a name="scheduling-threads"></a>Plánování vláken
-Každé vlákno má přiřazen prioritu přístup z více vláken. Vlákna v rámci modul common language runtime vytvořili původně přiřazené priority **ThreadPriority.Normal**. Vlákna vytvořen vně modulu runtime zachovat prioritu, kterou měla před jejich zadali spravovaném prostředí. Můžete získat nebo nastavit prioritu všech vlákno se **Thread.Priority** vlastnost.  
+
+Každé vlákno má priorita vlákna přiřazené. Vlákna vytvořená v rámci common language runtime jsou původně přiřazený prioritu <xref:System.Threading.ThreadPriority.Normal?displayProperty=nameWithType>. Vlákna vytvořená mimo modul runtime zachovat priorita, která měly před jejich spravované prostředí. Můžete získat nebo nastavit prioritu jakékoli vlákno s <xref:System.Threading.Thread.Priority?displayProperty=nameWithType> vlastnost.  
   
- Vláken je naplánováno spuštění na základě jejich priority. I když vláken jsou prováděny v modulu runtime, všechna vlákna přiřazené řezy čas procesoru v operačním systému. Podrobnosti o plánování algoritmus používaný k určení pořadí, ve kterém jsou prováděny vláken se liší podle každý operační systém. V některých operačních systémů je vždy vlákno s nejvyšší prioritou (z těchto vláken, které mohou být provedeny) naplánovat na spuštění první. Pokud více vláken se stejnou prioritou jsou všechny dostupné scheduler procházení vláken, na který tuto prioritu, udělíte každé vlákno pevné časovém intervalu, do kterého chcete provést. Tak dlouho, dokud je k dispozici pro spouštění vlákna s vyšší prioritou, nižší prioritu vláken Nezískávat provést. Když na uvedenou prioritou nejsou žádné další spustitelného vláken, Plánovač přesune na další nižší prioritu a plány vláken, na který tuto prioritu pro provedení. Pokud bude spustitelného vyšší priorita vlákna, nižší prioritu vlákno je zrušené a vyšší prioritu vlákno je povoleno spustit znovu. Nad všechny který operační systém můžete také upravit vlákno priority dynamicky jako uživatelské rozhraní aplikace jsou přesouvána mezi popředí a na pozadí. Jinými operačními systémy můžete použít jiný algoritmus plánování.  
+ Vlákna jsou naplánovány k provedení na základě jejich priority. I když jsou vlákna provádění v modulu runtime, všechna vlákna jsou přiřazeny procesoru časových řezů v operačním systému. Podrobnosti o plánování algoritmus používaný k určení pořadí, ve kterém jsou spouštěny vlákna se liší podle každý operační systém. V některých operačních systémů vlákno s nejvyšší prioritou (tato vlákna, které mohou být provedeny) vždy je naplánováno spuštění první. Pokud více vláken se stejnou prioritou jsou k dispozici, Plánovač procházení vlákna důležitostí, poskytuje každé vlákno pevném časovém řezu v, který se má spustit. Za předpokladu, vlákno s vyšší prioritou je k dispozici ke spuštění, nižší priorita vlákna nelze získat ke spuštění. Pokud neexistují žádné další spustitelné vlákna daného důležitostí, Plánovač přesune na další nižší prioritu a naplánuje vláken v této prioritu pro spouštění. Pokud spustitelný přestane být vyšší priorita vlákna, dojde ke zrušení nižší priorita vlákna a vyšší priorita vlákna je povoleno spustit znovu. Nad všechny možnosti, které operačního systému můžete také nastavit priority vlákna dynamicky podle uživatelského rozhraní aplikace se přesune mezi popředí a pozadí. Použít jiný algoritmus plánování zvolit jiné operační systémy.  
   
 ## <a name="see-also"></a>Viz také  
  [Použití vláken a dělení na vlákna](../../../docs/standard/threading/using-threads-and-threading.md)  

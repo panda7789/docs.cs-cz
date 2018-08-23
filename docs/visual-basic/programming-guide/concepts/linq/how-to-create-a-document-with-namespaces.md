@@ -1,26 +1,26 @@
 ---
-title: 'Postupy: vytvoření dokumentu s obory názvů (technologie LINQ to XML) (Visual Basic)'
+title: 'Postupy: vytvoření dokumentu s názvovými prostory (LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: cc5b0d4d-360c-4ada-94fa-2d2916e989be
 ms.openlocfilehash: 204d8a9cbb6ce47c6334c7309d27910c75b90ae0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643075"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42751904"
 ---
-# <a name="how-to-create-a-document-with-namespaces-linq-to-xml-visual-basic"></a>Postupy: vytvoření dokumentu s obory názvů (technologie LINQ to XML) (Visual Basic)
+# <a name="how-to-create-a-document-with-namespaces-linq-to-xml-visual-basic"></a>Postupy: vytvoření dokumentu s názvovými prostory (LINQ to XML) (Visual Basic)
 Toto téma ukazuje, jak vytvořit dokument s obory názvů v jazyce Visual Basic.  
   
- Pokud používáte literálů XML v jazyce Visual Basic, uživatelé mohou definovat jeden globální výchozí obor názvů XML. Tento obor názvů je výchozí obor názvů pro literály XML a vlastnosti XML. Výchozí obor názvů XML lze definovat na úrovni projektu nebo úrovni souborů. Pokud je definován na úrovni souborů, přepíše výchozí obor názvů na úrovni projektu.  
+ Při použití literálů XML v jazyce Visual Basic, uživatelé mohou definovat jeden globální výchozí názvový prostor XML. Tento obor názvů je výchozí obor názvů pro literály XML a vlastnosti XML. Výchozí obor názvů XML lze definovat na úrovni projektu nebo na úrovni souboru. Pokud je definován na úrovni souboru, přepíše výchozí obor názvů na úrovni projektu.  
   
- Můžete také definovat další obory názvů a zadejte předpony oboru názvů pro obory názvů.  
+ Můžete také definovat další obory názvů a zadat předpony oboru názvů pro obory názvů.  
   
  Definovat výchozí obory názvů a obory názvů s předponou pomocí `Imports` – klíčové slovo.  
   
- Další informace najdete v tématu [Úvod do literálů XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-xml-literals.md).  
+ Další informace najdete v tématu [Úvod k Literálům XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-xml-literals.md).  
   
- Všimněte si, že výchozí obor názvů XML se vztahuje pouze na elementy a atributy. Atributy jsou ve výchozím nastavení vždy v žádné oboru názvů. Můžete však použít předponu oboru názvů uvést atribut v oboru názvů.  
+ Všimněte si, že výchozí obor názvů XML se vztahuje pouze na prvky a atributy. Atributy jsou ve výchozím nastavení vždy bez oboru názvů. Ale můžete použít předponu oboru názvů do atribut v oboru názvů.  
   
 ## <a name="example"></a>Příklad  
  Tento příklad vytvoří dokument, který obsahuje obor názvů.  
@@ -77,9 +77,9 @@ End Module
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří dokument, který obsahuje více oborů názvů, jak pomocí předpony oboru názvů.  
+ Následující příklad vytvoří dokument, který obsahuje více oborů názvů, jak u předpony oboru názvů.  
   
- Při serializaci strom XML [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vysílá deklarace oboru názvů podle potřeby tak, aby každý prvek v jeho určené oboru názvů.  
+ Při serializaci stromu XML, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vysílá deklarace oboru názvů podle potřeby tak, aby každý prvek v jeho určený obor názvů.  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -115,4 +115,4 @@ End Module
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Práce s obory názvů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+ [Práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)

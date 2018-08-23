@@ -10,15 +10,15 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 21cea76f31bdf2ac5fcf434ee759f874f917617b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33653530"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42751889"
 ---
 # <a name="-refout-visual-basic"></a>-refout (Visual Basic)
 
-**- Refout** možnost určuje cestu k souboru, kde referenční sestavení by měla být výstup.
+**- Refout** možnost určuje, kde referenční sestavení by mělo být výstupní cestu k souboru.
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
 
@@ -30,20 +30,20 @@ ms.locfileid: "33653530"
 
 ## <a name="arguments"></a>Arguments
 
- `filepath` Cesta a název souboru referenční sestavení. Obecně je nutné v dílčí složce primární sestavení. Doporučené konvence (používané MSBuild) je umístit referenční sestavení v "ref nebo" podsložky relativně k primární sestavení. Všechny složky v `filepath` musí existovat; kompilátor je nevytvoří. 
+ `filepath` Cesta a název souboru referenční sestavení. Obecně by měl být v dílčí složce primární sestavení. Doporučené konvence (používány nástrojem MSBuild), je umístit odkaz na sestavení v "ref /" podsložku vzhledem k primární sestavení. Všechny složky v `filepath` musí existovat; kompilátor nevytvoří je. 
 
 ## <a name="remarks"></a>Poznámky
 
-Podporuje jazyka Visual Basic `-refout` přepínače, počínaje verzí 15.3.
+Visual Basic podporuje `-refout` přepnout od verze 15.3.
 
-Referenční sestavení jsou pouze metadata sestavení, které obsahují metadata, ale žádný kód implementace. Obsahují informace o typu a členu pro všechno kromě anonymní typy. Jejich těla metody nahrazená s jedním `throw null` příkaz. Důvod použití `throw null` těla metody (na rozdíl od žádné těla) je tak, aby PEVerify můžete spustit a předat (tedy ověření úplnost metadat).
+Referenční sestavení jsou pouze metadata sestavení, která obsahují metadata, ale žádný implementační kód. Patří mezi ně typů a členů informace pro všechno, co s výjimkou anonymních typů. Jejich těla metod jsou nahrazeny jednoho `throw null` příkazu. Důvod pro použití `throw null` těla metod (na rozdíl od bez těla) je tak, aby PEVerify může spuštění a předání (tedy ověřování úplnost metadata).
 
-Zahrnout odkaz na sestavení úrovni sestavení [ReferenceAssembly](xref:System.Runtime.CompilerServices.ReferenceAssemblyAttribute) atribut. Tento atribut je možné zadat zdroj (pak kompilátor nebudete muset syntetizace ji). Z důvodu tohoto atributu moduly runtime odmítnout načíst odkaz na sestavení pro spuštění (ale stále může být načteno do kontextu pouze pro reflexi). Nástroje, které odráží sestavení potřeba zajistit, že se načíst odkaz na sestavení jako pouze pro reflexi; jinak, modul runtime vyvolá <xref:System.BadImageFormatException>.
+Zahrnout odkaz na sestavení úrovni sestavení [ReferenceAssembly](xref:System.Runtime.CompilerServices.ReferenceAssemblyAttribute) atribut. Tento atribut může být zadaný ve zdroji (a kompilátor nebude nutné tak, aby odpovídaly ho). Z důvodu tohoto atributu moduly runtime odmítnout načíst referenční sestavení pro spuštění (ale stále může být načteny v kontextu pouze pro reflexi). Nástroje, které odpovídají na sestavení se muset ujistit, že se načítají referenční sestavení jako pouze pro reflexi; v opačném případě modul runtime vyvolá <xref:System.BadImageFormatException>.
 
 `-refout` a [ `-refonly` ](refonly-compiler-option.md) možnosti se vzájemně vylučují.
 
 ## <a name="see-also"></a>Viz také
-[-refonly](refonly-compiler-option.md)   
-[Visual Basic – kompilátor příkazového řádku](index.md)  
+[-refout](refonly-compiler-option.md)   
+[Kompilátor příkazového řádku jazyka Visual Basic](index.md)  
 [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)  
 

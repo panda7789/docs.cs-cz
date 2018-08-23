@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d2f0e766a3a310bdb58f7cbffd8d49404eb5e0b0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 24ba4b37cc8221df4e018d172996c0910ec07f7d
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33459636"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42752279"
 ---
-# <a name="getobjecttext-function"></a>GetObjectText – funkce
-Vrátí textovou vykreslit objekt ve formátu MOF (Managed Object) syntaxe.
+# <a name="getobjecttext-function"></a>Funkce GetObjectText
+Vrátí textovou vykreslování objektu v syntaxi formátu MOF (Managed Object).
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
@@ -42,47 +42,47 @@ HRESULT GetObjectText (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`  
-[v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
+[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `lFlags`  
-[v] Za normálních okolností 0. Pokud `WBEM_FLAG_NO_FLAVORS` (nebo 0x1) je zadán, jsou zahrnuty bez informací o šíření nebo příchuť kvalifikátory.
+[in] Obvykle 0. Pokud `WBEM_FLAG_NO_FLAVORS` (nebo 0x1) je zadán kvalifikátory jsou zahrnuty bez informací o šíření nebo flavor.
 
 `pstrObjectText`   
-[out] Ukazatel na `null` na položku. Na vrátit, nově přidělených `BSTR` vykreslování syntaxe MOF objektu, který obsahuje.  
+[out] Ukazatel `null` při vstupu. Na vrátit, nově přidělenou `BSTR` , který obsahuje syntaxi MOF vykreslení objektu.  
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
+|`WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Je k dispozici k dokončení operace není dostatek paměti. |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemClassObject::GetObjectText](https://msdn.microsoft.com/library/aa391448(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemClassObject::GetObjectText](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getobjecttext) metody.
 
-Vrátí text MOF neobsahuje všechny informace o objektu, ale pouze dostatek informací pro kompilátor MOF moct původní objekt znovu vytvořit. Žádné šířený kvalifikátory nebo vlastnosti nadřazené třídy pro instanci, jsou zahrnuty.
+MOF text vracený při neobsahuje všechny informace o objektu, ale pouze dostatek informací pro kompilátoru MOF být schopni obnovit na původní objekt. Žádné rozšíří kvalifikátory nebo vlastnosti nadřazené třídu pro instanci, jsou zahrnuté.
 
-Následující algoritmus se používá k rekonstrukci text parametry metody:
+Následující požadovaný algoritmus se používá k rekonstrukci text parametry metody:
 
-1. Parametry jsou resequenced v pořadí podle jejich hodnot identifikátoru.
-1. Parametry, které jsou určeny jako `[in]` a `[out]` jsou sloučeny do jednoho parametru.
+1. Parametry jsou resequenced v pořadí hodnot jejich identifikátoru.
+1. Parametry, které jsou určeny jako `[in]` a `[out]` jsou sloučeny do jediného parametru.
  
-`pstrObjectText` musí být ukazatel na `null` při volání funkce; nesmí bodu na řetězec, který je platný před voláním metody, protože ukazatel nesmí být navrácena.
+`pstrObjectText` musí být ukazatel `null` při volání funkce; nesmí odkazovat na řetězec, který je platný před voláním metody, protože ukazatel nebudou uvolněný.
 
 ## <a name="requirements"></a>Požadavky  
-**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

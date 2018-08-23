@@ -8,15 +8,15 @@ helpviewer_keywords:
 - codepage compiler option [C#]
 - -codepage compiler option [C#]
 ms.assetid: 75942989-b69a-4308-90a0-840c73d2c478
-ms.openlocfilehash: 04a0d3a62ebd2b3a938445995725994d72d5bd4a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 615160088ee3a884919628152f153bd34c81b8a9
+ms.sourcegitcommit: bd4fa78f5a46133efdead1bc692a9aa2811d7868
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33216922"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42755064"
 ---
 # <a name="-codepage-c-compiler-options"></a>-codepage (možnosti kompilátoru C#)
-Tato možnost určuje, které znakovou stránku pro použití během kompilace, pokud se požadovaná stránka není aktuální výchozí znaková stránka pro systém.  
+Tato možnost určuje, které znakovou stránku pro použití během kompilace, pokud se požadovaná stránka není aktuální výchozí znakovou stránku, která pro systém.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,14 +26,14 @@ Tato možnost určuje, které znakovou stránku pro použití během kompilace, 
   
 ## <a name="arguments"></a>Arguments  
  `id`  
- Id znaková stránka pro všechny soubory zdrojového kódu v kompilace.  
+ Id stránky kód pro všechny soubory zdrojového kódu dané kompilace.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je jeden nebo více soubory zdrojového kódu, které nebyly vytvořeny používat výchozí znakovou stránku ve vašem počítači, můžete použít **- codepage** možnost zadat znakovou stránku, která má být použita. **-codepage** se vztahuje na všechny soubory zdrojového kódu v kompilaci.  
+ Pokud kompilujete jeden nebo více souborů zdrojového kódu, které nebyly vytvořeny v počítači použít výchozí znakové stránky, můžete použít **- znaková stránka** možnost zadat znakovou stránku, která se má použít. **-codepage** se vztahuje na všechny soubory zdrojového kódu v kompilaci.  
   
- Pokud soubory zdrojového kódu, které byly vytvořeny pomocí stejné znakové stránky, která je umístěna ve vašem počítači nebo pokud soubory zdrojového kódu se vytvořily s UNICODE nebo UTF-8, není nutné použít **- codepage**.  
+ Pokud se stejnou znakovou stránku, která je v platnosti v počítači byly vytvořeny soubory zdrojového kódu nebo pokud soubory zdrojového kódu byly vytvořeny pomocí UNICODE nebo UTF-8, není nutné použít **- znaková stránka**.  
   
- V tématu [GetCPInfo](https://msdn.microsoft.com/library/dd318078(VS.85).aspx) informace o tom, jak najít které kódu stránky jsou podporovány v systému.  
+ Zobrazit [GetCPInfo](/windows/desktop/api/winnls/nf-winnls-getcpinfo) informace o tom, jak najít kódu stránky jsou podporovány v systému.  
   
  Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.  
   

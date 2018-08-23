@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4b5c26ab9c273b134915eea39078a83f569bcd32
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d314d85e7c1297636e8dd5cecaf050a527151518
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33462413"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42752329"
 ---
-# <a name="execnotificationquerywmi-function"></a>ExecNotificationQueryWmi – funkce
-Provede dotaz přijímat události. Volání vrátí okamžitě a volající může dotazovat vrácený enumerátor pro události, když dorazí. Uvolnění vrácený enumerátor zruší dotazu.  
+# <a name="execnotificationquerywmi-function"></a>Funkce ExecNotificationQueryWmi
+Provede dotaz přijímat události. Volání se vrátí okamžitě a volající může dotazovat vrácené enumerátor pro události při jejich doručení. Uvolnění vrácené enumerátor zruší dotazu.  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -49,79 +49,79 @@ HRESULT ExecNotificationQueryWmi (
 ## <a name="parameters"></a>Parametry
 
 `strQueryLanguage`    
-[v] Řetězec s platný dotaz jazyk podporovaný Správa systému Windows. Musí být "WQL", zkratka pro rozhraní WMI Query Language.
+[in] Řetězec s platnou dotazovací jazyk Windows Management podporuje. Musí být "WQL", používá zkratka dotazovacího jazyka rozhraní WMI.
 
 `strQuery`  
-[v] Text dotazu. Tento parametr nemůže být `null`.
+[in] Text dotazu. Tento parametr nemůže mít `null`.
 
 `lFlags`   
-[v] Kombinace následující dvěma příznaky, které ovlivňují chování této funkce. Tyto hodnoty jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty v kódu. 
+[in] Kombinace následující dva příznaky, které ovlivňují chování této funkce. Tyto hodnoty jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty ve vašem kódu. 
 
 | Konstanta | Hodnota  | Popis  |
 |---------|---------|---------|
-| `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | Příznak způsobí, že polosynchronní volání. Pokud není nastavený tento příznak, volání selže. Je to proto události při přijetí nepřetržitě, což znamená, že uživatel musí dotazovat vrácený enumerátor. Po neomezenou dobu blokování toto volání provádí, které znemožňuje. |
-| `WBEM_FLAG_FORWARD_ONLY` | 0x20 | Vrátí enumerátor dopředné. Obvykle dopředných enumerátory je rychlejší a využívají méně paměti než konvenční výčty, ale nepovoluje volání [klon](clone.md). |
+| `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | Příznak způsobí, že volání semisynchronní volání. Pokud není tento příznak nastaven, volání selže. Je to proto průběžně přijetí události to znamená, že uživatel se musí dotazovat vrácené enumerátor. Po neomezenou dobu blokování toto volání, který je nemožné. |
+| `WBEM_FLAG_FORWARD_ONLY` | 0x20 | Vrátí enumerátor pouze vpřed. Obvykle dopředné enumerátory jsou rychlejší a využívat méně paměti, než je běžné výčty, ale nejsou povoleny volání [klonování](clone.md). |
 
 `pCtx`  
-[v] Obvykle je tato hodnota `null`. Jinak je ukazatel na [IWbemContext](https://msdn.microsoft.com/library/aa391465(v=vs.85).aspx) instanci, která mohou být využívána zprostředkovatele, který poskytuje požadovaný události. 
+[in] Obvykle je tato hodnota `null`. V opačném případě je ukazatel [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) , jež lze použít poskytovatele, který poskytuje požadované události. 
 
 `ppEnum`  
-[out] Pokud nedojde k žádné chybě, obdrží má ukazatel na enumerátor, který umožňuje volajícímu načtení instancí v sadě výsledků dotazu. Najdete v článku [poznámky](#remarks) části Další informace.
+[out] Pokud nenastane žádná chyba přijímá ukazatel na enumerátor, který umožňuje volajícímu načtení instancí v sadě výsledků dotazu. Zobrazit [poznámky](#remarks) části Další informace.
 
 `authLevel`  
-[v] Úroveň ověřování.
+[in] Úroveň autorizace.
 
-`impLevel` [v] Úroveň zosobnění.
+`impLevel` [in] Úroveň zosobnění.
 
 `pCurrentNamespace`   
-[v] Ukazatel na [Služby IWbem](https://msdn.microsoft.com/library/aa392093(v=vs.85).aspx) objekt, který představuje aktuální obor názvů.
+[in] Ukazatel [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) objekt, který představuje aktuální obor názvů.
 
 `strUser`   
-[v] Uživatelské jméno. Najdete v článku [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
+[in] Uživatelské jméno. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
 
 `strPassword`   
-[v] Heslo. Najdete v článku [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
+[in] Heslo. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
 
 `strAuthority`   
-[v] Název domény uživatele. Najdete v článku [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
+[in] Název domény uživatele. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k zobrazení jeden nebo více tříd, které můžou vrátit funkce. |
-| `WBEM_E_FAILED` | 0x80041001 | Došlo k neurčené chybě. |
+| `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k zobrazení jeden nebo více tříd, které funkce může vrátit. |
+| `WBEM_E_FAILED` | 0x80041001 | Došlo k nespecifikované chybě. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 | `WBEM_E_INVALID_CLASS` | 0x80041010 | Dotaz Určuje třídu, která neexistuje. |
-| `WBEMESS_E_REGISTRATION_TOO_PRECISE` | 0x80042002 | Byla vyžádána příliš mnoho přesnost v doručení událostí. Větší tolerance dotazování musí být zadán. |
-| `WBEMESS_E_REGISTRATION_TOO_BROAD` | 0x80042001 | Requess dotaz může poskytovat další informace než Správa systému Windows. To `HRESULT` je vrácena, pokud dotaz událostí výsledkem požadavku dotazování všechny objekty v oboru názvů. |
-| `WBEM_E_INVALID_QUERY` | 0x80041017 | Dotaz byl chybu syntaxe. |
-| `WBEM_E_INVALID_QUERY_TYPE` | 0x80041018 | Jazyk požadovaný dotaz není podporován. |
+| `WBEMESS_E_REGISTRATION_TOO_PRECISE` | 0x80042002 | Příliš mnoho přesnost při doručování událostí, které se požaduje. Je třeba zadat větší tolerance cyklického dotazování. |
+| `WBEMESS_E_REGISTRATION_TOO_BROAD` | 0x80042001 | Requess dotazu může poskytovat více informací, než Windows Management. To `HRESULT` je vrácena, když dotaz události výsledkem požadavku dotazování všechny objekty v oboru názvů. |
+| `WBEM_E_INVALID_QUERY` | 0x80041017 | Dotazu došlo k chybě syntaxe. |
+| `WBEM_E_INVALID_QUERY_TYPE` | 0x80041018 | Požadovaný jazyk dotazu není podporován. |
 | `WBEM_E_QUOTA_VIOLATION` | 0x8004106c | Dotaz je příliš složitý. |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Je k dispozici k dokončení operace není dostatek paměti. |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
 | `WBEM_E_SHUTTING_DOWN` | 0x80041033 | Služba WMI byla pravděpodobně zastavena a restartování. Volání [ConnectServerWmi](connectserverwmi.md) znovu. |
-| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Propojení vzdáleného volání procedur (RPC) mezi aktuálním procesem a rozhraní WMI se nezdařilo. |
-| `WBEM_E_UNPARSABLE_QUERY` | 0x80041058 | Dotaz nelze analyzovat. |
+| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Odkaz vzdálené volání (procedur RPC) mezi aktuálním procesem a službou WMI se nezdařil. |
+| `WBEM_E_UNPARSABLE_QUERY` | 0x80041058 | Dotaz nelze parsovat. |
 | `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemServices::ExecNotificationQuery](https://msdn.microsoft.com/library/aa392105(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemServices::ExecNotificationQuery](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemservices-execnotificationquery) metody.
 
-Po funkce vrátí hodnotu, volající předá pravidelně vrácený `ppEnum` do objektu [Další](next.md) funkce, které chcete zobrazit, pokud jsou k dispozici žádné události.
+Po vrácení funkce volající předá pravidelně vráceného `ppEnum` objektu [Další](next.md) funkcí, pokud jsou k dispozici žádné události.
 
-Existují omezení počtu `AND` a `OR` klíčová slova, která lze použít v dotazech WQL. Velké počty klíčová slova jazyka WQL v dotazu komplexní může způsobit rozhraní WMI se vrátíte `WBEM_E_QUOTA_VIOLATION` (nebo 0x8004106c) kód chyby jako `HRESULT` hodnotu. Limit klíčová slova jazyka WQL, závisí na tom, jak složitá je dotaz.
+Existují omezení počtu `AND` a `OR` klíčová slova, které lze použít v dotazech WQL. Velký počet klíčových slov jazyka WQL použit ve složitých dotazů může způsobit rozhraní WMI se vraťte `WBEM_E_QUOTA_VIOLATION` (nebo 0x8004106c) kód chyby jako `HRESULT` hodnotu. Limit klíčová slova jazyka WQL závisí na tom, jak složitá je dotaz.
 
-Pokud volání funkce selže, můžete získat další informace o chybě při volání [GetErrorInfo –](geterrorinfo.md) funkce.
+Pokud selže volání funkce, můžete získat další informace o chybě při volání [GetErrorInfo –](geterrorinfo.md) funkce.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

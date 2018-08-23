@@ -6,14 +6,14 @@ helpviewer_keywords:
 - Visual C#, program structure
 ms.assetid: 9551354b-33f0-4e11-bbf0-1a35e3702b22
 ms.openlocfilehash: b1a6ab513420081ef4629eac93a5b5c568fc57b5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33339391"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42753970"
 ---
 # <a name="inside-a-c-program"></a>V programu v jazyce C#
-V části popisuje obecná struktura programu v C# a zahrnuje standardní "Hello, World!" Příklad.  
+V části popisuje obecná struktura programu v jazyce C# a obsahuje standardní "Hello, World!" Příklad.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
@@ -23,13 +23,13 @@ V části popisuje obecná struktura programu v C# a zahrnuje standardní "Hello
   
 ## <a name="related-sections"></a>Související oddíly  
   
--   [Začínáme s C#](../../../csharp/getting-started/index.md)  
+-   [Začínáme s jazykem C#](../../../csharp/getting-started/index.md)  
   
 -   [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
   
 -   [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
   
--   [\<paveover > C# ukázkové aplikace](http://msdn.microsoft.com/library/9a9d7aaa-51d3-4224-b564-95409b0f3e15)  
+-   [\<paveover > ukázkové aplikace C#](http://msdn.microsoft.com/library/9a9d7aaa-51d3-4224-b564-95409b0f3e15)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
