@@ -18,12 +18,12 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 35e9549c-1568-4768-ad07-17cc6dff11e1
-ms.openlocfilehash: a96641e6dd42e033f2d28b847fc071dfc514912d
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: e6aecd5957ae62e3c147af22c2a1b135a4c32310
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37936994"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42752147"
 ---
 # <a name="how-to-use-components-that-support-the-event-based-asynchronous-pattern"></a>Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech
 Řada komponent poskytují možnost asynchronní provádění své práce. <xref:System.Media.SoundPlayer> a <xref:System.Windows.Forms.PictureBox> komponenty, například umožňuje načíst podle názvu dalo čekat a Image "v pozadí" i když hlavní podproces stále spuštěná bez přerušení.  
@@ -63,4 +63,3 @@ ms.locfileid: "37936994"
 ## <a name="see-also"></a>Viz také  
  [Postupy: Spuštění operace na pozadí](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
  [Přehled asynchronních vzorů založených na událostech](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)  
- [Multithreading v jazyce Visual Basic](../../../docs/visual-basic/programming-guide/concepts/threading/multithreaded-applications.md)

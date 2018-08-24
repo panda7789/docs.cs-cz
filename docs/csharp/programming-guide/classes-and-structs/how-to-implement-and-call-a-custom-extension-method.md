@@ -5,41 +5,41 @@ helpviewer_keywords:
 - extension methods [C#], implementing and calling
 ms.assetid: 7dab2a56-cf8e-4a47-a444-fe610a02772a
 ms.openlocfilehash: 62dbbbfb7a63c8fb73661fe7d66e73d0eca73107
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33340304"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42753941"
 ---
 # <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>Postupy: Implementace a volání vlastní metody rozšíření (Průvodce programováním v C#)
-Toto téma ukazuje, jak implementovat vlastní metody rozšíření pro jakýkoli typ rozhraní .NET. Kód klienta můžete použít rozšiřující metody přidat odkaz na knihovnu DLL, která je obsahuje, a přidáním [pomocí](../../../csharp/language-reference/keywords/using-directive.md) direktiva, která určuje obor názvů, ve kterém jsou definovány rozšiřující metody.  
+Toto téma ukazuje, jak implementovat vlastní metody rozšíření pro jakýkoli typ .NET. Klientský kód můžete použít rozšiřující metody přidejte odkaz na knihovnu DLL, která je obsahuje, a přidáním [pomocí](../../../csharp/language-reference/keywords/using-directive.md) direktiva, která určuje obor názvů, ve kterém jsou definovány metody rozšíření.  
   
 ## <a name="to-define-and-call-the-extension-method"></a>K definování a volání metody rozšíření  
   
-1.  Definování statického [třída](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md) tak, aby obsahovala metodě rozšíření.  
+1.  Definovat statický [třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md) obsahuje metody rozšíření.  
   
-     Třída musí být viditelná pro kódu klienta. Další informace o usnadnění pravidla najdete v tématu [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
+     Třída musí být viditelná pro klientský kód. Další informace o usnadnění pravidel, naleznete v tématu [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
-2.  Implementace metody rozšíření jako statickou metodu s alespoň viditelná stejně jako obsahující třídy.  
+2.  Implementovat metodu rozšíření jako statickou metodu s alespoň stejnou viditelnost jako nadřazený třídy.  
   
-3.  První parametr metody Určuje typ, který zpracovává metodu; ho musí předcházet [to](../../../csharp/language-reference/keywords/this.md) modifikátor.  
+3.  První parametr metody Určuje typ, který pracuje metodu; musíte začínající [to](../../../csharp/language-reference/keywords/this.md) modifikátor.  
   
-4.  Přidejte kód volání `using` – direktiva k určení [obor názvů](../../../csharp/language-reference/keywords/namespace.md) obsahující rozšíření metoda třída.  
+4.  Ve volajícím kódu, přidejte `using` – direktiva k určení [obor názvů](../../../csharp/language-reference/keywords/namespace.md) , který obsahuje třídu – metoda rozšíření.  
   
-5.  Volání metody, jako kdyby byly metody instance typu.  
+5.  Volání metody, jako kdyby byly metodami instance typu.  
   
-     Upozorňujeme, že první parametr není zadán voláním kódu, protože představuje typ, na kterém se používá operátor a kompilátor již zná typ objektu. Budete muset zadat argumenty pro parametry 2 prostřednictvím `n`.  
+     Všimněte si, že první parametr není zadán voláním kódu, protože představuje typ, na které se právě používá operátor a kompilátor zná typu objektu. Budete muset zadat argumenty pro parametry 2 prostřednictvím `n`.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad implementuje metody rozšíření s názvem `WordCount` v `CustomExtensions.StringExtension` třídy. Metoda zpracovává <xref:System.String> třídy, která je zadána jako první parametr metody. `CustomExtensions` Obor názvů je importovat do oboru názvů aplikací a metoda je volána v rámci `Main` metoda.  
+ Následující příklad implementuje metodu rozšíření s názvem `WordCount` v `CustomExtensions.StringExtension` třídy. Metoda pracuje <xref:System.String> třídu, která je zadána jako první parametr metody. `CustomExtensions` Obor názvů se importují do oboru názvů aplikací a metoda je volána v rámci `Main` metody.  
   
  [!code-csharp[csProgGuideExtensionMethods#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-implement-and-call-a-custom-extension-method_1.cs)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Pokud chcete spustit tento kód, zkopírujte a vložte jej do Visual C# projektu konzolové aplikace vytvořené v sadě Visual Studio. Ve výchozím nastavení, tento projekt zaměřen na verzi 3.5 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], a obsahuje odkaz na System.Core.dll a `using` direktivy pro System.Linq. Pokud z projektu chybí jeden nebo více z těchto požadavků, můžete je přidat ručně.  
+ Tento kód spustit, zkopírujte a vložte ho do jazyka Visual C# projekt konzolové aplikace, který nebyl vytvořen v sadě Visual Studio. Ve výchozím nastavení, tento projekt zaměřen na verzi 3.5 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], a obsahuje odkaz na System.Core.dll a `using` směrnice pro System.Linq. Pokud z projektu chybí jeden nebo více z těchto požadavků, můžete je přidat ručně.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Rozšiřující metody k dispozici žádná konkrétní bezpečnostní ohrožení zabezpečení. Se nikdy slouží k zosobnění existující metody podle typu, protože jsou vyřešeny všechny kolize názvů považuje instance nebo statickou metodu definované vlastní typ. Rozšiřující metody nelze přístup k žádným privátní datům ve třídě rozšířené.  
+ Rozšiřující metody k dispozici žádná konkrétní zabezpečení ohrožení zabezpečení. Se nikdy slouží k zosobnění existující metody na typu, protože jsou vyřešeny všechny kolize názvů ve prospěch instance nebo statické metody definované v samotném typu. Rozšiřující metody nelze přístup k žádným privátním datům ve třídě rozšířené.  
   
 ## <a name="see-also"></a>Viz také  
  [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  

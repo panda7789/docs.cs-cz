@@ -10,15 +10,15 @@ api_type:
 ms.assetid: fb626b41-b888-4625-84c3-2c02b5e3866f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b197aa539e60a9dbcee55cf190c44b45da3a5fb4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 408b71bf38427d12418e05f8b509fe841bc95ef1
+ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402012"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42752268"
 ---
 # <a name="axlgetissuerpublickeyhash-function"></a>Funkce _AxlGetIssuerPublicKeyHash
-Načte hodnotu hash SHA-1 veřejný klíč přidružený privátní klíč, který se používá k podepisování zadaný certifikát.  
+Načte hodnotu hash SHA-1 veřejný klíč přidružený privátní klíč, který se používá k podepsání zadaný certifikát.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,13 +31,13 @@ HRESULT _AxlGetIssuerPublicKeyHash (
   
 #### <a name="parameters"></a>Parametry  
  `pChainContext`  
- [v] Zprostředkovatel kryptografických služeb veřejného klíče objektu blob. Najdete v článku [CRYPTOAPI_BLOB](http://msdn.microsoft.com/library/windows/desktop/aa380238.aspx) struktury.  
+ [in] Zprostředkovatel kryptografických služeb blob veřejného klíče. Zobrazit [CRYPTOAPI_BLOB](/windows/desktop/api/dpapi/ns-dpapi-_cryptoapi_blob) struktury.  
   
  `ppwszPublicKeyHash`  
- [out] Ukazatel na WCHAR * přijímat kódováním šestnáctkově token veřejného klíče.  
+ [out] Ukazatel na WCHAR * pro příjem šestnáctkově zakódovaného token veřejného klíče.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud funkci úspěšně. v opačném případě `S_FALSE`.  
+ `S_OK` Pokud je funkce úspěšná; v opačném případě `S_FALSE`.  
   
 ## <a name="see-also"></a>Viz také  
  [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)
