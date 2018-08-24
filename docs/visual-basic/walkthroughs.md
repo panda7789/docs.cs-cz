@@ -8,77 +8,77 @@ helpviewer_keywords:
 - walkthroughs [Visual Basic]
 ms.assetid: e4e1f849-e1ce-4cf7-8483-d9b4c4887a8e
 ms.openlocfilehash: 7248f352f95f2883fda9c92386f6ed769f9f2bf8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: bd4fa78f5a46133efdead1bc692a9aa2811d7868
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33654749"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42792370"
 ---
 # <a name="visual-basic-language-walkthroughs"></a>Návody pro jazyk Visual Basic
-Návody poskytují podrobné pokyny pro běžné scénáře, které vytváří dobrým místem, kde spustit získávání informací o produktu nebo oblasti určité funkce.  
+Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobrým začátkem získávání informací o produktu nebo konkrétní oblast.  
   
- [Psaní programů modifikátorem Async](./programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
+ [Writing an Async Program](./programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
  Ukazuje, jak vytvořit asynchronní řešení pomocí [asynchronní](../visual-basic/language-reference/modifiers/async.md) a [Await](../visual-basic/language-reference/operators/await-operator.md).  
   
  [Deklarace a vyvolávání událostí](../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)  
- Ukazuje, jak jsou události deklarovat a vyvolá v jazyce Visual Basic.  
+ Ukazuje, jak deklarovat a vyvolána v jazyce Visual Basic události.  
   
  [Zpracování událostí](../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md)  
- Ukazuje, jak zpracovat události buď pomocí standardní `WithEvents` – klíčové slovo nebo nové `AddHandler` / `RemoveHandler` klíčová slova.  
+ Ukazuje, jak zpracovávat události pomocí standardní `WithEvents` – klíčové slovo nebo do nového `AddHandler` / `RemoveHandler` klíčová slova.  
   
  [Vytvoření a implementace rozhraní](../visual-basic/programming-guide/language-features/interfaces/walkthrough-creating-and-implementing-interfaces.md)  
- Ukazuje, jak rozhraní deklarovat a implementovat v jazyce Visual Basic.  
+ Ukazuje, jak deklarovat a implementovat v jazyce Visual Basic rozhraní.  
   
- [Definice tříd](../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)  
- Popisuje, jak deklarace třídy a jeho pole, vlastnosti, metod a událostí.  
+ [Definování tříd](../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)  
+ Popisuje, jak deklarovat třídu a její pole, vlastnosti, metody a události.  
   
  [Zápis dotazů v jazyce Visual Basic](../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md)  
- Ukazuje, jak můžete použít funkce jazyka Visual Basic pro zápis [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dotaz výrazy.  
+ Ukazuje použití funkce jazyka Visual Basic pro zápis [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazech dotazů.  
   
  [Implementace IEnumerable(Of T) v jazyce Visual Basic](../visual-basic/programming-guide/language-features/control-flow/walkthrough-implementing-ienumerable-of-t.md)  
- Ukazuje, jak vytvořit třídu, která implementuje `IEnumerable(Of String)` rozhraní a třídy, která implementuje `IEnumerator(Of String)` rozhraní pro čtení textového souboru řádcích najednou.  
+ Ukazuje, jak vytvořit třídu, která implementuje `IEnumerable(Of String)` rozhraní a třídy, která implementuje `IEnumerator(Of String)` rozhraní ke čtení souboru jeden řádek textu v čase.  
   
- [Volání rozhraní API systému Windows](../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)  
- Vysvětluje, jak používat `Declare` příkazů a volání rozhraní API systému Windows. Obsahuje informace o používání atributů k řízení zařazování pro volání rozhraní API a jak vystavit volání rozhraní API jako metodu třídy.  
+ [Volání rozhraní Windows API](../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)  
+ Vysvětluje způsob používání `Declare` příkazy a volání rozhraní API Windows. Obsahuje informace o použití atributů k ovládání zařazování pro volání rozhraní API a jak publikovat volání rozhraní API jako metodu třídy.  
   
- [Vytváření objektů modelu COM pomocí jazyka Visual Basic](../visual-basic/programming-guide/com-interop/walkthrough-creating-com-objects.md)  
- Ukazuje, jak vytvořit objekty modelu COM v jazyce Visual Basic s i bez šablona třídy COM.  
+ [Vytváření objektů COM pomocí jazyka Visual Basic](../visual-basic/programming-guide/com-interop/walkthrough-creating-com-objects.md)  
+ Ukazuje, jak vytvořit objekty modelu COM v jazyce Visual Basic s i bez šablony třídy modelu COM.  
   
  [Implementace dědičnosti s objekty COM](../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
- Ukazuje, jak vytvořit objekt COM obsahující třídu pomocí Visual Basic 6.0 a použít jej jako základní třída v jazyce Visual Basic.  
+ Ukazuje, jak pomocí jazyka Visual Basic 6.0 můžete vytvořit objekt modelu COM, který obsahuje třídy a pak použít jako základní třídy v jazyce Visual Basic.  
   
- [Více vláken](http://msdn.microsoft.com/library/2cbf5116-8499-4af9-818c-6f7c1c2ad2c9)  
- Ukazuje, jak vytvořit vícevláknové aplikace, která hledá textového souboru pro výskytů slova.  
+ [Multithreading](http://msdn.microsoft.com/library/2cbf5116-8499-4af9-818c-6f7c1c2ad2c9)  
+ Ukazuje, jak vytvořit aplikaci s více vlákny, která hledá výskytů slova do textového souboru.  
   
  [Určení, kam objekt My.Application.Log zapisuje informace](../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)  
- Výchozí popisuje `My.Application.Log` nastavení a určení nastavení pro vaši aplikaci.  
+ Popisuje výchozí `My.Application.Log` nastavení a jak určit nastavení pro vaši aplikaci.  
   
  [Změna, kam objekt My.Application.Log zapisuje informace](../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)  
- Ukazuje, jak lze přepsat výchozí `My.Application.Log` a `My.Log` nastavení pro protokolování informací o událostech a `Log` objektu k zápisu do jiných součástí naslouchajících protokolům.  
+ Ukazuje, jak přepsat výchozí `My.Application.Log` a `My.Log` nastavení pro protokolování informací o událostech a `Log` objekt k zápisu do jiných naslouchacích procesů protokolu.  
   
  [Filtrování výstupu My.Application.Log](../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)  
- Ukazuje, jak změnit výchozí filtrování protokolování `My.Application.Log` objektu.  
+ Ukazuje, jak změnit výchozí filtrování pro protokolování `My.Application.Log` objektu.  
   
  [Vytváření vlastních součástí naslouchajících protokolům](../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)  
- Ukazuje, jak vytvořit vlastní protokol naslouchací proces a nakonfigurovat ji tak, aby naslouchala na výstupu `My.Application.Log` objektu.  
+ Ukazuje, jak vytvořit vlastní protokol naslouchací proces a nakonfigurujte ho tak, aby naslouchala na výstupu `My.Application.Log` objektu.  
   
- [Vložení typů z řízených sestavení](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)  
- Popisuje, jak vytvořit sestavení a program klienta, který vložení typů z něj.  
+ [Vložení typů ze spravovaných sestavení](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)  
+ Popisuje, jak vytvořit sestavení a klientský program, který začleňuje typy z něj.  
   
  [Ověření, že hesla jsou složitá (Visual Basic)](../visual-basic/programming-guide/language-features/strings/walkthrough-validating-that-passwords-are-complex.md)  
- Ukazuje, jak kontrolovat vlastnosti silného hesla a aktualizovat parametr řetězce s informacemi o tom, které kontroluje heslo selže.  
+ Ukazuje, jak zkontrolovat vlastnosti silné heslo a aktualizujte parametr řetězce s informacemi o tom, které kontroluje heslo selže.  
   
  [Šifrování a dešifrování řetězců v jazyce Visual Basic](../visual-basic/programming-guide/language-features/strings/walkthrough-encrypting-and-decrypting-strings.md)  
- Ukazuje, jak používat <xref:System.Security.Cryptography.DESCryptoServiceProvider> třída k šifrování a dešifrování řetězců.  
+ Ukazuje způsob použití <xref:System.Security.Cryptography.DESCryptoServiceProvider> třídy k šifrování a dešifrování řetězců.  
   
  [Práce se soubory a složky v jazyce Visual Basic](../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
- Ukazuje, jak používat Visual Basic – funkce k zjištění informací o souboru, vyhledejte řetězec v souboru a zápisu do souboru.  
+ Ukazuje, jak používat funkce jazyka Visual Basic zjištění informací o souboru, vyhledávání pro řetězce v souboru, a zapisovat do souboru.  
   
  [Manipulace se soubory pomocí metod rozhraní .NET Framework](../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
- Demonstruje použití [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody k zjištění informací o souboru, vyhledejte řetězec v souboru a zápisu do souboru.  
+ Ukazuje, jak používat [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody pro zjištění informací o souboru, vyhledávání řetězce v souboru a zápis do souboru.  
   
- [Uchování objektů v jazyce Visual Basic](http://msdn.microsoft.com/library/cb0a0917-08d5-4578-ad2b-3764ccf6167f)  
- Demonstruje postup vytvoření jednoduchého objektu a zachovat data do souboru.  
+ [Uchování objektu v jazyce Visual Basic](http://msdn.microsoft.com/library/cb0a0917-08d5-4578-ad2b-3764ccf6167f)  
+ Ukazuje, jak vytvořit jednoduchý objekt a zachovat data do souboru.  
   
- [Včasného testování podporu funkcí generování před využitím](http://msdn.microsoft.com/library/764c17a4-cd95-4c23-bf63-d92d9c5adfb2)  
- Demonstruje postup test první vývoj, ve kterém můžete nejdřív zápis testů částí a zapište si zdrojový kód, který testy úspěšné.
+ [Podpora včasného testování funkcí generování před využitím](http://msdn.microsoft.com/library/764c17a4-cd95-4c23-bf63-d92d9c5adfb2)  
+ Ukazuje, jak včasného testování vývoje, ve kterém nejprve zápis testů jednotek a teprve pak píšete kód zdroj provádět testy úspěšné.
