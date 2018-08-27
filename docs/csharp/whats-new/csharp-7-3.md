@@ -1,48 +1,48 @@
 ---
-title: Co je nového v C# 7.3
-description: Přehled nových funkcí v C# 7.3
+title: Co je nového v jazyce C# 7.3
+description: Přehled nových funkcí v jazyce C# 7.3
 ms.date: 05/16/2018
-ms.openlocfilehash: 135351fa06a498e4aa90cb4d9372880b8119de0f
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 921374773d57d3fa6f8dd614f2691d345cf6eab7
+ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106772"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42907731"
 ---
-# <a name="whats-new-in-c-73"></a>Co je nového v C# 7.3
+# <a name="whats-new-in-c-73"></a>Co je nového v jazyce C# 7.3
 
-Existují dvě hlavní motivy na vydání 7.3 C#. Jeden motiv poskytuje funkce, které umožňují bezpečné kódu, které původce jako nezabezpečený kód. Druhý motiv poskytuje postupných vylepšení stávajících funkcí. Kromě toho byly přidány nové možnosti kompilátoru v této verzi.
+Existují dva hlavní motivy na verzi C# 7.3. Jeden motiv poskytuje funkce, které umožňují bezpečný kód, které funguje jako nezabezpečený kód. Druhý motiv poskytuje několik postupných vylepšení stávajících funkcí. Kromě toho byly přidány nové možnosti kompilátoru v této verzi.
 
-Následující nové funkce podporují motiv lepší výkon pro bezpečné kód:
+Následující nové funkce podporují motiv lepší výkon pro bezpečný kód:
 
-- Pole pevné můžete přistupovat bez Připnutí.
-- Můžete opětovně přiřadit `ref` místní proměnné.
+- Oprava pole máte přístup bez Připnutí.
+- Můžete opětovně přiřazovat `ref` lokální proměnné.
 - Inicializátory můžete použít na `stackalloc` pole.
-- Můžete použít `fixed` příkazy s žádný typ, který podporuje vzor.
-- Můžete vytvořit další obecná omezení.
+- Můžete použít `fixed` příkazy s libovolný typ, který podporuje vzoru.
+- Můžete použít další obecná omezení.
 
 Byly provedeny následující vylepšení stávajících funkcí:
 
 - Můžete otestovat `==` a `!=` s typy řazené kolekce členů.
-- Výraz proměnné můžete použít na více místech.
-- Atributy může připojit k poli zálohování automaticky implementované vlastnosti.
-- Metoda řešení, pokud se liší argumenty `in` se zlepšila.
-- Řešení přetížení teď má méně dvojznačné případy.
+- Proměnné výrazů můžete použít na více místech.
+- Atributy mohou připojit k pomocné pole automaticky implementované vlastnosti.
+- Metoda rozlišení při argumenty liší `in` byla vylepšena.
+- Řešení přetížení má nyní méně dvojznačné případy.
 
 Nové možnosti kompilátoru jsou:
 
-- `-publicsign` Chcete-li povolit, otevřete zdroj softwaru (OSS) podepisování sestavení.
-- `-pathmap` zadat mapování pro zdrojového adresáře.
+- `-publicsign` Chcete-li povolit, Open Source Software (OSS) podepisování sestavení.
+- `-pathmap` Chcete-li zadat mapování pro adresáře zdrojových souborů.
 
-Zbývající část tohoto článku poskytuje podrobnosti a odkazy na další informace o jednotlivých vylepšení.
+Zbývající část tohoto článku poskytuje podrobnosti a odkazy na další informace o každé vylepšení.
 
-## <a name="enabling-more-performant-safe-code"></a>Povolení více původce bezpečné kódu
+## <a name="enabling-more-performant-safe-code"></a>Povolení více výkonné bezpečného kódu
 
-Nyní byste měli mít psaní kódu jazyka C#, bezpečně provádějící i nezabezpečený kód. Bezpečné kód zabraňuje třídy chyb, jako je přetečení vyrovnávací paměti, ukazatele stray a dalších chyb přístupu k paměti. Tyto nové funkce rozšíření schopností ověřitelný kód bezpečné. Snažit zapsat informace z vašeho kódu pomocí bezpečné konstrukce. Tyto funkce ujistěte, že jednodušší.
+Je třeba schopni napsat kód jazyka C#, bezpečně, který funguje stejně dobře jako nezabezpečený kód. Nouzový kód se vyhnete třídy chyb, jako je například přetečení vyrovnávací paměti, ukazatele stray a další chyby přístupu k paměti. Tyto nové funkce rozšířili schopnosti ověřitelný bezpečný kód. Snažit se psát více kódu pomocí bezpečné konstrukce. Tyto funkce to usnadní.
 
 ### <a name="indexing-fixed-fields-does-not-require-pinning"></a>Indexování `fixed` pole nevyžaduje Připnutí
 
-Vezměte v úvahu tato struktura:
+Vezměte v úvahu tuto strukturu:
 
 ```csharp
 unsafe struct S
@@ -51,7 +51,7 @@ unsafe struct S
 }
 ```
 
-V dřívějších verzích jazyka C#, je potřeba připnout proměnnou pro přístup k jedné celých čísel, které jsou součástí `myFixedField`. Následující kód zkompiluje teď v bezpečném kontextu:
+V dřívějších verzích jazyka C#, jste museli připnout proměnnou pro přístup k jedné celých čísel, které jsou součástí `myFixedField`. Nyní následující kód se zkompiluje v nouzovém kontextu:
 
 ```csharp
 class C
@@ -65,7 +65,7 @@ class C
 }
 ```
 
-Proměnná `p` přistupuje k jeden element ve `myFixedField`. Nemusíte samostatnou declare `int*` proměnné. Všimněte si, že budete potřebovat `unsafe` kontextu. V dřívějších verzích jazyka C# je třeba deklarovat druhý pevné ukazatel:
+Proměnná `p` přistupuje k jeden prvek `myFixedField`. Není nutné pro deklaraci samostatné `int*` proměnné. Všimněte si, že se můžete stále potřebovat `unsafe` kontextu. V dřívějších verzích jazyka C# musíte deklarovat ukazatel druhý pevné:
 
 ```csharp
 class C
@@ -82,29 +82,29 @@ class C
 }
 ```
 
-Další informace najdete v článku na [ `fixed` příkaz](../language-reference/keywords/fixed-statement.md).
+Další informace najdete v článku [ `fixed` příkaz](../language-reference/keywords/fixed-statement.md).
 
-### <a name="ref-local-variables-may-be-reassigned"></a>`ref` lokální proměnné mohou být přiděleny.
+### <a name="ref-local-variables-may-be-reassigned"></a>`ref` může být přeřazen lokální proměnné
 
-Nyní `ref` místní hodnoty mohou být přiděleny k odkazování na různé instance po inicializaci. Následující kód nyní zkompiluje:
+Nyní `ref` k odkazování na různých instancích po jejich inicializaci může být přeřazen místních hodnot. Následující kód nyní kompiluje:
 
 ```csharp
 ref VeryLargeStruct refLocal = ref veryLargeStruct; // initialization
 refLocal = ref anotherVeryLargeStruct; // reassigned, refLocal refers to different storage.
 ```
 
-Další informace najdete v článku na [ `ref` vrátí a `ref` místní hodnoty –](../programming-guide/classes-and-structs/ref-returns.md)a v článku na [ `foreach` ](../language-reference/keywords/foreach-in.md).
+Další informace najdete v článku na [ `ref` vrátí a `ref` lokální](../programming-guide/classes-and-structs/ref-returns.md)a v článku věnovaném [ `foreach` ](../language-reference/keywords/foreach-in.md).
 
 ### <a name="stackalloc-arrays-support-initializers"></a>`stackalloc` pole podporují inicializátory
 
-Bylo dříve možné zadat hodnoty pro elementy v matici, když je inicializovat:
+Je možné zadat hodnoty pro prvky v poli, když ji inicializovat:
 
 ```csharp
 var arr = new int[3] {1, 2, 3};
 var arr2 = new int[] {1, 2, 3};
 ```
 
-Teď, může tento stejnou syntaxi použijí na pole, které jsou deklarovány s `stackalloc`:
+Nyní, stejné syntaxe lze použít u polí, které jsou deklarovány pomocí `stackalloc`:
 
 ```csharp
 int* pArr = stackalloc int[3] {1, 2, 3};
@@ -112,60 +112,60 @@ int* pArr2 = stackalloc int[] {1, 2, 3};
 Span<int> arr = stackalloc [] {1, 2, 3};
 ```
 
-Další informace najdete v tématu [ `stackalloc` příkaz](../language-reference/keywords/stackalloc.md) článek v dokumentu.
+Další informace najdete v tématu [ `stackalloc` příkaz](../language-reference/keywords/stackalloc.md) článek v referenční příručka jazyka.
 
-### <a name="more-types-support-the-fixed-statement"></a>Další typy podporují `fixed` – příkaz
+### <a name="more-types-support-the-fixed-statement"></a>Podpora dalších typů `fixed` – příkaz
 
-`fixed` Příkaz podporován omezenou sadu typy. Od verze jazyka C# 7.3, žádný typ, který obsahuje `GetPinnableReference()` metodu, která vrátí `ref T` nebo `ref readonly T` může být `fixed`. Přidání této funkce znamená, že `fixed` lze použít s <xref:System.Span%601?displayProperty=nameWithType> a související typy.
+`fixed` Příkaz podporován omezenou sadu typů. Od verze C# 7.3, libovolný typ, který obsahuje `GetPinnableReference()` metodu, která vrací `ref T` nebo `ref readonly T` může být `fixed`. Přidání této funkce znamená, že `fixed` jde použít s <xref:System.Span%601?displayProperty=nameWithType> a souvisejících typů.
 
-Další informace najdete v tématu [ `fixed` příkaz](../language-reference/keywords/fixed-statement.md) článek v dokumentu.
+Další informace najdete v tématu [ `fixed` příkaz](../language-reference/keywords/fixed-statement.md) článek v referenční příručka jazyka.
 
-### <a name="enhanced-generic-constraints"></a>Rozšířené obecná omezení
+### <a name="enhanced-generic-constraints"></a>Vylepšené obecná omezení
 
-Nyní můžete určit typ <xref:System.Enum?displayProperty=nameWithType> nebo <xref:System.Delegate?displayProperty=nameWithType> jako základní třída omezení pro parametr typu.
+Teď můžete zadat typ <xref:System.Enum?displayProperty=nameWithType> nebo <xref:System.Delegate?displayProperty=nameWithType> jako základní třída omezení parametru typu.
 
-Můžete také použít nové `unmanaged` omezení, chcete-li určit, že musí být parametr typu **nespravované typu**. **Nespravované typu** je typ, který není typu odkazu a neobsahuje žádné odkaz na libovolnou úroveň vnoření.
+Můžete také použít novou `unmanaged` omezení, chcete-li určit, že musí být parametr typu **nespravovaný typ**. **Nespravovaný typ** je typ, který není typem odkazu a neobsahuje jakéhokoliv odkazového typu na libovolné úrovni vnoření.
 
 Další informace najdete v článcích na [ `where` obecná omezení](../language-reference/keywords/where-generic-type-constraint.md) a [omezení parametrů typů](../programming-guide/generics/constraints-on-type-parameters.md).
 
 ## <a name="make-existing-features-better"></a>Vylepšit stávajících funkcí
 
-Druhý motiv poskytuje přináší vylepšení funkcí v jazyce. Tyto funkce zlepšit produktivitu při zápisu C#.
+Druhý motiv přináší vylepšení v oblasti funkce v jazyce. Tyto funkce, zvyšují produktivitu při psaní C#.
 
 ### <a name="tuples-support--and-"></a>Podpora řazených kolekcí členů `==` a `!=`
 
-C# řazenou kolekci členů typy teď podporují `==` a `!=`. Další informace najdete v části zahrnut [rovnosti](../tuples.md#equality-and-tuples) v článku na [řazených kolekcí členů](../tuples.md).
+C# řazené kolekce členů typů teď podporují `==` a `!=`. Další informace najdete v oddílu, mezi které patří [rovnosti](../tuples.md#equality-and-tuples) v článku věnovaném [řazených kolekcí členů](../tuples.md).
 
-### <a name="attach-attributes-to-the-backing-fields-for-auto-implemented-properties"></a>Přiřadit atributy pole zálohování pro automaticky implementované vlastnosti
+### <a name="attach-attributes-to-the-backing-fields-for-auto-implemented-properties"></a>Připojit atributy na pomocné pole automaticky implementované vlastnosti
 
-Se teď podporuje tuto syntaxi:
+Tato syntaxe se teď podporuje:
 
 ```csharp
 [field: SomeThingAboutFieldAttribute]
 public int SomeProperty { get; set; }
 ```
 
-Atribut `SomeThingAboutFieldAttribute` se použije na pole Základní kompilátoru generované pro `SomeProperty`. Další informace najdete v tématu [atributy](../programming-guide/concepts/attributes/index.md) v příručce programovacího jazyka C#.
+Atribut `SomeThingAboutFieldAttribute` platí pro generovaný kompilátorem pomocné pole `SomeProperty`. Další informace najdete v tématu [atributy](../programming-guide/concepts/attributes/index.md) v Průvodci programovacího jazyka C#.
 
-### <a name="in-method-overload-resolution-tiebreaker"></a>`in` tiebreaker rozlišení přetížení – metoda
+### <a name="in-method-overload-resolution-tiebreaker"></a>`in` rozhodujícího prvku rozlišení přetížení – metoda
 
-Když `in` modifikátor argument byl přidán, tyto dvě metody způsobí to nejednoznačnost:
+Když `in` byl přidán modifikátor argument, tyto dvě metody by způsobit nejednoznačnost:
 
 ```csharp
 static void M(S arg);
 static void M(in S arg);
 ```
 
-Nyní hodnotou (nejprve v předchozím příkladu) je lepší, než přetížení verzí odkaz jen pro čtení. K volání na verzi s argumentem odkaz jen pro čtení, je nutné zahrnout `in` modifikátor při volání metody.
+Nyní podle hodnoty (první v předchozím příkladu) je lepší než přetížení odkaz verze jen pro čtení. Pro volání verze s argumentem reference jen pro čtení, je nutné zahrnout `in` modifikátor při volání metody.
 
 > [!NOTE]
-> Tato možnost byla implementovaná jako oprava chyb. To už je nejednoznačný i s jazyková verze nastavena na "7.2".
+> To bylo implementováno jako oprava chyby. To už je nejednoznačný i přes jazykové verze nastavena na "7.2".
 
-Další informace najdete v článku na [ `in` – modifikátor parametrů](../language-reference/keywords/in-parameter-modifier.md).
+Další informace najdete v článku na [ `in` modifikátor parametru](../language-reference/keywords/in-parameter-modifier.md).
 
-### <a name="extend-expression-variables-in-initializers"></a>Rozšíření proměnných výrazu v inicializátory
+### <a name="extend-expression-variables-in-initializers"></a>Rozšíření proměnných výrazu v inicializátorech
 
-Syntaxe přidali v C# 7.0 umožňuje `out` deklarace proměnných rozšířilo zahrnout pole inicializátory, vlastnost inicializátory, inicializátory konstruktoru, a dotaz klauzule. Umožňuje kódu, například v následujícím příkladu:
+Syntaxe v jazyce C# 7.0 umožňuje přidat `out` deklarace proměnných rozšířilo a obsahovat Inicializátory pole, vlastnosti, inicializátory konstruktoru a klauzulí dotazů. To umožňuje kódu jako v následujícím příkladu:
 
 ```csharp
 public class B
@@ -178,7 +178,7 @@ public class B
 
 public class D : B
 {
-   public D(int i) : B(i, out var j)
+   public D(int i) : base(i, out var j)
    {
       Console.WriteLine($"The value of 'j' is {j}");
    }
@@ -187,26 +187,26 @@ public class D : B
 
 ### <a name="improved-overload-candidates"></a>Vylepšené přetížení kandidáty
 
-V každé verzi pravidel řešení přetížení aktualizovat na situace, kdy volání metod nejednoznačný mít na volbu "zřejmé". Tato verze přináší tři nové pravidel pomohou kompilátoru vyberte zřejmé možnost:
+V každé verzi pravidla rozlišení přetížení aktualizovat na situace, kdy mají "viditelných" volba volání metod nejednoznačný. Tato verze přidává tři nová pravidla ke kompilátoru vyberte jasnou volbou:
 
-1. Pokud skupina metoda obsahuje instanci a statické členy, kompilátor zahodí členů instance, pokud metoda byla volána bez příjemce instance nebo kontextu. Kompilátor zahodí statické členy, pokud metoda byla volána s příjemce instance. Když není žádný příjemce, kompilátor zahrnuje pouze statické členy ve statickém kontextu, v opačném případě statické a instanci členy. Když příjemce je ambiguously instance nebo typu, kompilátor zahrnuje obě. Statickém kontextu, kde implicitní `this` příjemce instanci nelze použít, obsahuje tělo členů, kde ne `this` definované, například statické členy, jakož i kdy, kde `this` nelze použít, jako je například pole inicializátory a Inicializátory konstruktoru.
-1. Pokud metoda skupina obsahuje některé obecné metody, jejichž argumenty typu nesplňují jejich omezení, tito členové budou odebrány ze sady candidate.
-1. Pro převod skupin metoda candidate metody, jejichž návratový typ se neshoduje společně s ním vrátí typ se odeberou ze sady.
+1. Pokud skupina metoda obsahuje instanci a statické členy, kompilátor zahodí členy instance, pokud metoda byla vyvolána bez instance příjemce nebo kontextu. Kompilátor zahodí statické členy, pokud metoda byla vyvolána s přijímače instance. Pokud není žádný příjemce, kompilátor obsahuje pouze statické členy ve statickém kontextu, v opačném případě statických a členy instance. Když příjemce ambiguously instance nebo typ, kompilátor obsahuje. Statického kontextu, kde je implicitní `this` příjemce instanci nelze použít, obsahuje tělo členů, pokud `this` je definován, jako je například statické členy, jakož i kdy, kde `this` nelze použít, jako je například Inicializátory polí a Inicializátory konstruktoru.
+1. Pokud metoda skupina obsahuje některé obecné metody, jejichž argumentů typu nevyhovuje požadavkům jejich omezení, tyto členy, se odeberou ze sady Release candidate.
+1. Pro skupiny převod metody vrátí metody Release candidate, jejíž návratový typ neshoduje s delegáta typu se odeberou ze sady.
 
-Tato změna můžete si všimnout pouze protože najdete méně chyby kompilátoru o přetížení metody nejednoznačný když jste si jisti, jakou metodu je lepší.
+Tato změna všimnout pouze vzhledem k tomu, že zjistíte méně chyb kompilátoru pro přetížení metody nejednoznačný když jste si jisti, jakou metodu je lepší.
 
 ## <a name="new-compiler-options"></a>Nové možnosti kompilátoru
 
-Nové možnosti kompilátoru podporu nového sestavení a DevOps scénáře pro programy C#.
+Nové možnosti kompilátoru podporují scénáře DevOps a nové sestavení pro programy C#.
 
-### <a name="public-or-open-source-signing"></a>Veřejné nebo podepisování Open Source
+### <a name="public-or-open-source-signing"></a>Veřejný nebo podepisování Open Source
 
-`-publicsign` – Možnost kompilátoru dává pokyn kompilátoru k podepsání sestavení pomocí veřejného klíče. Sestavení je označena jako podepsané, ale podpis jsou převzaty z veřejného klíče. Tato možnost umožňuje vytvářet podepsaná sestavení z projektů open-source pomocí veřejného klíče.
+`-publicsign` – Možnost kompilátoru instruuje kompilátor, aby podepište sestavení pomocí veřejného klíče. Sestava je označena jako podepsané, ale signatura je převzata z veřejného klíče. Tato možnost vám umožní sestavovat podepsaná sestavení z open-source projektů pomocí veřejného klíče.
 
-Další informace najdete v tématu [- publicsign – možnost kompilátoru](../language-reference/compiler-options/publicsign-compiler-option.md) článku.
+Další informace najdete v tématu [– možnost kompilátoru - publicsign](../language-reference/compiler-options/publicsign-compiler-option.md) článku.
 
 ### <a name="pathmap"></a>pathmap
 
-`-pathmap` – Možnost kompilátoru dává pokyn kompilátoru nahradit mapovat zdrojových cest zdrojových cest z prostředí sestavení. `-pathmap` Možnost ovládací prvky podle kompilátor zapisují do souboru PDB soubory nebo pro zdrojovou cestu <xref:System.Runtime.CompilerServices.CallerFilePathAttribute>.
+`-pathmap` – Možnost kompilátoru instruuje kompilátor, aby nahraďte mapované zdrojových cest zdrojových cest z prostředí pro sestavení. `-pathmap` Možnost řídí napsaný v kompilátoru pro soubory PDB nebo pro zdrojovou cestu <xref:System.Runtime.CompilerServices.CallerFilePathAttribute>.
 
-Další informace najdete v tématu [- pathmap – možnost kompilátoru](../language-reference/compiler-options/pathmap-compiler-option.md) článku.
+Další informace najdete v tématu [– možnost kompilátoru - pathmap](../language-reference/compiler-options/pathmap-compiler-option.md) článku.

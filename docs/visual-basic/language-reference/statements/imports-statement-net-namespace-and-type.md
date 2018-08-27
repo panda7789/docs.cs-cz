@@ -1,5 +1,5 @@
 ---
-title: Imports – příkaz (obor názvů a typ rozhraní .NET)
+title: Imports – příkaz - Namespace .NET a typ (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Imports
@@ -16,15 +16,15 @@ helpviewer_keywords:
 - aliases [Visual Basic], import
 - declared elements [Visual Basic], container elements
 ms.assetid: 7062f8aa-d890-4232-9eed-92836e13fb6e
-ms.openlocfilehash: ef569b0ed6428d24d019e00c500e4d4b91c83d49
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0211438e8b4c02fead910dd7a32e0df9ed73ddc5
+ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604481"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42925595"
 ---
 # <a name="imports-statement-net-namespace-and-type"></a>Imports – příkaz (obor názvů a typ rozhraní .NET)
-Umožňuje zadat názvy bude odkazovat bez kvalifikace názvů.  
+Umožňuje zadat názvy se nesmí odkazovat bez kvalifikace názvů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,54 +38,54 @@ Imports [ aliasname = ] namespace.element
   
 |Termín|Definice|  
 |---|---|  
-|`aliasname`|Volitelné. *Importovat alias* nebo název, pomocí kterého může kódu odkazovat na `namespace` místo úplné kvalifikace řetězec. V tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
-|`namespace`|Požadováno. Plně kvalifikovaný název oboru názvů importována. Mohou být řetězec o délce obory názvů vnořené na libovolnou úroveň.|  
-|`element`|Volitelné. Název programovací element deklarované v oboru názvů. Může být libovolný element kontejneru.|  
+|`aliasname`|Volitelné. *Importovat alias* nebo název, pomocí kterého mohou kódu odkazovat na `namespace` místo úplné kvalifikace řetězce. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
+|`namespace`|Požadováno. Plně kvalifikovaný název oboru názvů importu. Mohou být řetězec s obory názvů vnořené na libovolné úrovni.|  
+|`element`|Volitelné. Název programovací element deklarovaný v oboru názvů. Může být libovolný prvek kontejneru.|  
   
 ## <a name="remarks"></a>Poznámky  
- `Imports` Příkaz umožňuje typy, které jsou obsaženy v daném oboru názvů bude odkazovat přímo.  
+ `Imports` Příkaz umožňuje typy, které jsou obsaženy v daném oboru názvů se nesmí odkazovat přímo.  
   
- Můžete zadat název jednoho oboru názvů nebo řetězec vnořené obory názvů. Každý vnořené obor názvů je oddělená od další vyšší úrovni oboru názvů tečkou (`.`), jak ukazuje následující příklad.  
+ Můžete zadat název jednoho oboru názvů nebo řetězec vnořené obory názvů. Každé vnořené oboru názvů je oddělen od další vyšší úroveň oboru názvů tečku (`.`), jak ukazuje následující příklad.  
   
  `Imports System.Collections.Generic`  
   
- Každý zdrojový soubor může obsahovat libovolný počet `Imports` příkazy. Tyto postupujte deklarace všechny možnosti, jako `Option Strict` příkaz a musí předcházet jakékoli programovací element deklarace, jako například `Module` nebo `Class` příkazy.  
+ Každý zdrojový soubor může obsahovat libovolný počet `Imports` příkazy. Tyto musí následovat deklarace všechny možnosti, jako `Option Strict` příkaz a musí předcházet jakékoli programovací element deklarace, jako například `Module` nebo `Class` příkazy.  
   
- Můžete použít `Imports` pouze na úrovni souborů. To znamená kontext deklarace pro import musí být zdrojový soubor a nemůže být obor názvů, třídy, struktury, modulu, rozhraní, postup nebo bloku.  
+ Můžete použít `Imports` pouze na úrovni souborů. To znamená, že kontext deklarace pro import musí být zdrojový soubor a nemůže být obor názvů, třídy, struktury, modulu, rozhraní, proceduru nebo blok.  
   
- Všimněte si, že `Imports` příkaz zpřístupnění elementy z jiných projekty a sestavení do projektu. Import nevyžaduje místní nastavení odkaz. Pouze eliminuje nutnost ke kvalifikaci názvy, které jsou již k dispozici do projektu. Další informace najdete v tématu "Import obsahující prvků" v [odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+ Všimněte si, `Imports` příkaz neprovede elementy z jiných projektů a sestavení k dispozici pro váš projekt. Import nepřijímá místo nastavení odkaz. Odebere pouze potřeba kvalifikovat názvy, které jsou k dispozici pro váš projekt. Další informace najdete v tématu "Import obsahující prvky" [odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
   
 > [!NOTE]
->  Můžete definovat implicitní `Imports` příkazy pomocí [stránka odkazy, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic). Další informace najdete v tématu [postupy: Přidání nebo odebrání importovaných oborů názvů (Visual Basic)](/visualstudio/ide/how-to-add-or-remove-imported-namespaces-visual-basic).  
+>  Můžete definovat implicitní `Imports` příkazy pomocí [odkazy na stránky, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic). Další informace najdete v tématu [postupy: Přidání nebo odebrání importovaných oborů názvů (Visual Basic)](/visualstudio/ide/how-to-add-or-remove-imported-namespaces-visual-basic).  
   
 ## <a name="import-aliases"></a>Import aliasů  
- *Importovat alias* definuje alias oboru názvů nebo typu. Import aliasů jsou užitečné, když potřebujete použití položek se stejným názvem, které jsou deklarované v jedné nebo více oborů názvů. Další informace a příklad najdete v tématu "Kvalifikující elementu název" v [odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+ *Importovat alias* alias pro obor názvů nebo typ definuje. Import aliasů jsou užitečné, pokud je třeba použít položky se stejným názvem, které jsou deklarovány v jedné nebo více oborů názvů. Další informace a příklad najdete v tématu "Kvalifikační Element Name" v [odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
   
- Nesmí deklarovat člena na úrovni modulu se stejným názvem jako `aliasname`. Pokud tak učiníte, Visual Basic – kompilátor používá `aliasname` pouze pro deklarované člena a už se rozpozná jako alias importu.  
+ By neměly deklarovat člena na úrovni modulu se stejným názvem jako `aliasname`. Pokud tak učiníte, kompilátor jazyka Visual Basic používá `aliasname` pouze pro deklarovaná členská a už se rozpozná jako alias importu.  
   
- I když syntaxe pro deklarování import alias se používá jako je například pro import předponu oboru názvů XML, výsledky se liší. Import alias můžete použít jako výraz ve vašem kódu, zatímco předponu oboru názvů XML lze použít pouze v literálech XML nebo vlastnosti osy XML jako předpona pro kvalifikované element nebo atribut name.  
+ I když syntaxe pro deklarování aliasu importu se tímto způsobem používá pro import předponu oboru názvů XML, výsledky se liší. Alias importu můžete použít jako výraz ve vašem kódu, zatímco předponu oboru názvů XML lze použít pouze v literály XML a vlastnosti OS XML jako předpona pro kvalifikovaný element nebo název atributu.  
   
 ### <a name="element-names"></a>Názvy elementů  
- Pokud zadáte `element`, musí představovat *kontejnerový element*, který je programovací element, který může obsahovat další prvky. Elementy kontejneru zahrnují třídy, struktury, moduly, rozhraní a výčty.  
+ Pokud zadáte `element`, musí představovat *elementu kontejneru*, to znamená, že programový element, který může obsahovat další prvky. Elementy kontejneru zahrnují třídy, struktury, moduly, rozhraní a výčty.  
   
- Rozsah elementy, které poskytují `Imports` příkaz závisí na tom, jestli je zadat `element`. Pokud zadáte pouze `namespace`, všechny jednoznačně s názvem Členové tento obor názvů a elementy kontejneru v daném oboru názvů, jsou k dispozici bez kvalifikace. Pokud zadáte oba `namespace` a `element`jen členové tohoto elementu jsou k dispozici bez kvalifikace.  
+ Rozsah prvků, které jsou k dispozici ve `Imports` příkaz závisí na, jestli mají určovat `element`. Pokud zadáte pouze `namespace`, všechny jedinečné s názvem Členové tohoto oboru názvů a prvky kontejneru v daném oboru názvů, jsou k dispozici bez kvalifikace. Pokud zadáte obě `namespace` a `element`pouze členové tohoto prvku jsou k dispozici bez kvalifikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vrátí všechny složky v adresáři C:\ pomocí <xref:System.IO.DirectoryInfo> třídy.  
+ Následující příklad vrátí všechny složky v adresáři C:\ s použitím <xref:System.IO.DirectoryInfo> třídy.  
   
- Kód neobsahuje žádné `Imports` příkazy v horní části souboru. Proto `DirectoryInfo`, <xref:System.Text.StringBuilder>, a <xref:Microsoft.VisualBasic.ControlChars.CrLf> jsou odkazy na všechny plně kvalifikovaný s obory názvů.  
+ Kód nemá žádné `Imports` příkazů v horní části souboru. Proto `DirectoryInfo`, <xref:System.Text.StringBuilder>, a <xref:Microsoft.VisualBasic.ControlChars.CrLf> odkazy jsou všechny plně kvalifikovaný s obory názvů.  
   
  [!code-vb[VbVbalrStatements#152](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/imports-statement-net-namespace-and-type_1.vb)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad obsahuje `Imports` příkazy pro odkazované obory názvů. Typy proto nemusí být plně kvalifikovaná s obory názvů.  
+ Následující příklad obsahuje `Imports` příkazy pro odkazované obory názvů. Typy proto nemusí být plně kvalifikovaný s obory názvů.  
   
  [!code-vb[VbVbalrStatements#153](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/imports-statement-net-namespace-and-type_2.vb)]  
   
  [!code-vb[VbVbalrStatements#154](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/imports-statement-net-namespace-and-type_3.vb)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad obsahuje `Imports` příkazy, které vytvořit aliasy pro odkazované obory názvů. Typy jsou kvalifikovaný s aliasy.  
+ Následující příklad obsahuje `Imports` příkazy, které vytvořit aliasy pro odkazované obory názvů. Typy jsou kvalifikované aliasy.  
   
  [!code-vb[VbVbalrStatements#155](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/imports-statement-net-namespace-and-type_4.vb)]  
   

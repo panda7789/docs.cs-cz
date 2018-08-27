@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: fc15818883736015419f8599d482185bbab5120a
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 5d1860a5703c79bd77331cfd821c3bff69f317ff
+ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37960508"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42925815"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finalizační metody (C# Programming Guide)
 Finalizační metody se používají k destrukci instancí tříd.  
@@ -57,7 +57,9 @@ protected override void Finalize()
 > [!NOTE]
 >  Prázdné finalizační metody se nesmí používat. Pokud třída obsahuje finalizační metodu, je vytvořena položka v `Finalize` fronty. Když je zavolána finalizační metodu, je vyvolána systému uvolňování paměti ke zpracování fronty. Prázdná finalizační metoda způsobí pouze zbytečně ke ztrátě výkonu.  
   
- Programátor nemá žádnou kontrolu nad při finalizační metoda je volána, protože ta se určují podle systému uvolňování paměti. Kontroluje, systému uvolňování paměti pro objekty, které jsou již nejsou déle používány aplikací. Pokud bude objekt oprávnění k dokončení, volá finalizační metody (pokud existuje) a uvolňování paměti pro ukládání objektu. Finalizační metody se také označují jako při ukončení programu.  
+ Programátor nemá žádnou kontrolu nad při finalizační metoda je volána, protože ta se určují podle systému uvolňování paměti. Kontroluje, systému uvolňování paměti pro objekty, které jsou již nejsou déle používány aplikací. Pokud bude objekt oprávnění k dokončení, volá finalizační metody (pokud existuje) a uvolňování paměti pro ukládání objektu. 
+ 
+ V aplikacích .NET Framework (ale ne v aplikacích .NET Core) finalizační metody se také označují jako při ukončení programu. 
   
  Je možné vynutit uvolnění voláním <xref:System.GC.Collect%2A>, ale ve většině případů, toto by měl být vyhnout, protože může způsobit problémy s výkonem.  
   

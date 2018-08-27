@@ -10,30 +10,30 @@ helpviewer_keywords:
 - data types [Visual Basic], assigning
 - Char data type [Visual Basic], character literals
 ms.assetid: cd7547a9-7855-4e8e-b216-35d74a362657
-ms.openlocfilehash: e672402535215ca30d19cc480e39b42b0364f137
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 09b0162068bc068bd77612816626897ec4a151d9
+ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33590805"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42911964"
 ---
 # <a name="char-data-type-visual-basic"></a>Char – datový typ (Visual Basic)
-Blokování nepodepsaného kódu (2bajtová) 16bitové body v rozmezí od 0 do 65535. Každý *code bodu*, nebo kód znaku, představuje jeden znak Unicode.  
+Body bez znaménka 16bitový kódů (2bajtových) obsahuje v rozmezí od 0 do 65535. Každý *kódu bodu*, nebo kód znaku, představuje jeden znak Unicode.  
   
 ## <a name="remarks"></a>Poznámky  
- Použití `Char` datový typ, když potřebujete obsahovat jenom jeden znak a není nutné nároky na `String`. V některých případech můžete použít `Char()`, pole `Char` elementy pro uložení více znaků.  
+ Použití `Char` datového typu, když budete chtít obsahovat pouze jeden znak a není nutné režii `String`. V některých případech můžete použít `Char()`, pole `Char` prvků pro uložení více znaků.  
   
- Výchozí hodnota `Char` je znak s bodem kód 0.  
+ Výchozí hodnota `Char` je znak s bodem kódu 0.  
   
 ## <a name="unicode-characters"></a>Znaky kódování Unicode  
- První body 128 kódu (0 – 127) Unicode odpovídají písmena a symboly standardní klávesnicích. Tyto první 128 kód body jsou stejné jako definuje znaková sada ASCII. Druhý body 128 kódu (128 – 255) představují speciální znaky, jako je například písmena abecedy latince, zvýraznění, tyto symboly a zlomků. Unicode používá zbývající body kódu (256 65 535) pro širokou škálu symboly, včetně po celém světě textové znaky, znaky s diakritikou a matematické a technické symboly.  
+ První body 128 kódu (0 – 127) Unicode odpovídají písmena a symboly na standardní klávesnici USA. Tyto první body 128 kódu jsou stejné jako definuje znakové sady ASCII. Druhý body 128 kódu (128 – 255) představují speciální znaky, jako je například písmena abecedy latince, zvýraznění, symboly měny a podíly. Unicode používá pro širokou škálu symboly, včetně po celém světě textové znaky, diakritická znaménka a symboly technické a matematické zbývající body kódu (256 – 65535).  
   
- Můžete použít metody, třeba <xref:System.Char.IsDigit%2A> a <xref:System.Char.IsPunctuation%2A> na `Char` proměnné můžete zjistit klasifikaci kódování Unicode.  
+ Můžete použít metody, jako je <xref:System.Char.IsDigit%2A> a <xref:System.Char.IsPunctuation%2A> na `Char` proměnnou k určení jeho klasifikace kódování Unicode.  
   
 ## <a name="type-conversions"></a>Převody typu  
- Visual Basic nepřevede přímo mezi `Char` a číselnými typy. Můžete použít <xref:Microsoft.VisualBasic.Strings.Asc%2A> nebo <xref:Microsoft.VisualBasic.Strings.AscW%2A> funkce pro převod `Char` hodnotu `Integer` představující jeho bod kódu. Můžete použít <xref:Microsoft.VisualBasic.Strings.Chr%2A> nebo <xref:Microsoft.VisualBasic.Strings.ChrW%2A> funkce pro převod `Integer` hodnotu `Char` obsahujícím bod tohoto kódu.  
+ Visual Basic nelze převést přímo mezi `Char` a číselné typy. Můžete použít <xref:Microsoft.VisualBasic.Strings.Asc%2A> nebo <xref:Microsoft.VisualBasic.Strings.AscW%2A> funkce pro převod `Char` hodnota, která se `Integer` , který představuje jeho bod kódu. Můžete použít <xref:Microsoft.VisualBasic.Strings.Chr%2A> nebo <xref:Microsoft.VisualBasic.Strings.ChrW%2A> funkce pro převod `Integer` hodnota, která se `Char` , který má tento bod kódu.  
   
- Pokud kontrola typu přepínač ([Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)) je na znak typu literálu musí připojit k délce jednoho znaku řetězcový literál pro identifikaci jako `Char` datového typu. Toto dokládá následující příklad.  
+ Pokud kontrola typu ([Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)) je, – znak typu literálu musí připojit k literálu jedním znakem pro identifikaci jako `Char` datového typu. Toto dokládá následující příklad.  
   
 ```  
 Option Strict On  
@@ -47,15 +47,15 @@ charVar = "Z"C
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
--   **Záporná čísla.** `Char` je typu bez znaménka a nemůže představují zápornou hodnotu. V každém případě byste neměli používat `Char` pro uložení číselné hodnoty.  
+-   **Záporná čísla.** `Char` je typ bez znaménka a nemůže představovat záporné hodnoty. V každém případě byste neměli používat `Char` pro uložení číselné hodnoty.  
   
--   **Spolupráce aspekty.** Pokud rozhraní s komponentami nezapíše pro rozhraní .NET Framework pro příklad objekty automatizace nebo COM, mějte na paměti, že typy znaků mají různé datové šířka (8 bitů) v jiných prostředích. Pokud předáte 8bitové argument pro tyto součásti, deklarujte ji jako `Byte` místo `Char` v váš nový kód jazyka Visual Basic.  
+-   **Spolupráce aspekty.** Pokud používáte rozhraní s komponentami, které nejsou napsané pro rozhraní .NET Framework pro příklad objekty automatizace nebo COM, mějte na paměti, že typy znaků mají odlišnou datovou šířku (8 bitů) v jiných prostředích. Pokud takové součásti předáváte 8bitové argument, deklarujte ho jako `Byte` místo `Char` v váš nový kód jazyka Visual Basic.  
   
 -   **Rozšíření.** `Char` Datový typ rozšiřuje na `String`. To znamená, že můžete převést `Char` k `String` a nebude narazíte <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
   
--   **Znaky typu.** Připojování znak typu literálu `C` na řetězec délce jednoho znaku literál vynutí, aby `Char` datového typu. `Char` nemá žádné – znak typu identifikátoru.  
+-   **Znaky typu.** Přidávání znak typu literálu `C` jeden znak řetězec literálu se z něj stane `Char` datového typu. `Char` nemá žádné – znak typu identifikátoru.  
   
--   **Typ Framework.** Typ odpovídající v rozhraní .NET Framework je <xref:System.Char?displayProperty=nameWithType> struktura.  
+-   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Char?displayProperty=nameWithType> struktury.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Char?displayProperty=nameWithType>  
@@ -63,7 +63,7 @@ charVar = "Z"C
  <xref:Microsoft.VisualBasic.Strings.AscW%2A>  
  <xref:Microsoft.VisualBasic.Strings.Chr%2A>  
  <xref:Microsoft.VisualBasic.Strings.ChrW%2A>  
- [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
  [Datový typ String](../../../visual-basic/language-reference/data-types/string-data-type.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
  [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  

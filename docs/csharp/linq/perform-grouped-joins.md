@@ -3,12 +3,12 @@ title: Provádění seskupených spojení (LINQ v JAZYKU C#)
 description: Zjistěte, jak k provádění seskupených spojení pomocí jazyka LINQ v jazyce C#.
 ms.date: 12/1/2016
 ms.assetid: 9667daf9-a5fd-4b43-a5c4-a9c2b744000e
-ms.openlocfilehash: d52aa8f75a1868c26f6a965553bf8047518bb447
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: f65faabcb039e186a2e0d18dda4373263ffd0b8b
+ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403999"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42911922"
 ---
 # <a name="perform-grouped-joins"></a>Provádění seskupených spojení
 
@@ -35,8 +35,8 @@ Group JOIN – klauzule jsou ideální pro vytváření XML pomocí LINQ to XML.
 
 ## <a name="see-also"></a>Viz také:
 
-<xref:System.Linq.Enumerable.Join%2A>  
-<xref:System.Linq.Enumerable.GroupJoin%2A>  
-[Provádění vnitřních spojení](perform-inner-joins.md)  
-[Provedení levých vnějších spojení](perform-left-outer-joins.md)  
-[Anonymní typy](../programming-guide/classes-and-structs/anonymous-types.md)  
+- <xref:System.Linq.Enumerable.Join%2A>  
+- <xref:System.Linq.Enumerable.GroupJoin%2A>  
+- [Provádění vnitřních spojení](perform-inner-joins.md)  
+- [Provedení levých vnějších spojení](perform-left-outer-joins.md)  
+- [Anonymní typy](../programming-guide/classes-and-structs/anonymous-types.md)  

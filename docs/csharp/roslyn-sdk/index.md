@@ -1,66 +1,66 @@
 ---
-title: Kompilátoru platformy .NET SDK (Roslyn rozhraní API)
-description: Naučte se používat sadu .NET SDK platformy kompilátoru (také nazývané Roslyn rozhraní API) a pochopit kód .NET, odhalit chyby, opravte tyto chyby.
+title: .NET Compiler Platform SDK (rozhraní Roslyn API)
+description: Zjistěte, jak pomocí sady SDK platformy kompilátoru .NET (také nazývané rozhraní Roslyn API) a pochopení kódu .NET, přímé chyby, opravte tyto chyby.
 ms.date: 10/10/2017
 ms.custom: mvc
-ms.openlocfilehash: e524cb8f2fcb5c59550932243b6586019ea7139b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4fb67b1d7ff963a01696ce163fdcef0b7944dcee
+ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33358978"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42925028"
 ---
-# <a name="the-net-compiler-platform-sdk"></a>Kompilátoru platformy .NET SDK
+# <a name="the-net-compiler-platform-sdk"></a>.NET Compiler Platform SDK
 
-Kompilátory sestavení podrobné model kódu aplikace podle jejich ověření syntaxe a sémantiku tento kód. Tento model používají k vytvoření spustitelného souboru výstup zdrojového kódu. Platforma kompilátoru .NET SDK poskytuje přístup k tomuto modelu. Stále, spoléháme na integrované vývojové prostředí (IDE) funkce, jako je technologie IntelliSense, refaktoring, inteligentního přejmenování "Najít všechny odkazy na" a "Přechod na definici" zvýšení naše produktivity. Spoléháme na nástrojů pro analýzu kódu ke zlepšení našeho kvality kódu a generátory kódu, které pomáhají při vytváření aplikace. Jak tyto nástroje lépe, třeba na další a další modelu, který pouze kompilátory vytvořit, protože budou zpracovávat kód aplikace přístup. To je zvláště jádra rozhraní API Roslyn: otevření až do černé polí a povolení nástrojů a koncovým uživatelům sdílet v rozsáhlých kompilátory informace mají o našem kódu.
-Namísto neprůhledného zdrojového kódu- a objekt kódu překladatelé prostřednictvím Roslyn, kompilátory stát platformy: rozhraní API, které můžete použít pro úlohy související s kódem v nástrojů a aplikací.
+Kompilátory sestavení prováděcí model kódu aplikace, protože ověří syntaxi a sémantiku tohoto kódu. Tento model se použít k sestavení spustitelného ze zdrojového kódu. Sada SDK platformy kompilátoru .NET poskytuje přístup k tomuto modelu. Čím dál, spoléháme na funkce integrovaného vývojového prostředí (IDE), jako jsou IntelliSense, refaktoring, inteligentní přejmenování "Najít všechny odkazy" a "Přejít k definici" zvýšit naši produktivitu. Spoléháme na nástroji pro analýzu kódu pro zlepšení našeho kvalitu kódu a generátory kódu pro vytváření aplikací. Protože tyto nástroje získat inteligentnější, přistupují potřebovat více a více modelu, který pouze kompilátory vytvořit, protože budou zpracovávat kódu aplikace. To je zvlášť jádro Roslyn API: černé skříňky vám otevírají a povolení nástrojů a koncovým uživatelům sdílet v řadu informace kompilátory si našeho kódu.
+Namísto neprůhledné zdrojového kódu – se změnami a objekt code-out překladatele, prostřednictvím Roslyn, kompilátory stát platformy: rozhraní API, která můžete použít pro úlohy související s kódem v nástroje a aplikace.
 
-## <a name="net-compiler-platform-sdk-concepts"></a>Koncepty SDK pro platformu .NET kompilátoru
+## <a name="net-compiler-platform-sdk-concepts"></a>Koncepce sady SDK platformy kompilátoru .NET
 
-.NET SDK platformy kompilátoru výrazně snižuje překážku vstupu pro vytváření kódu zaměřuje nástrojů a aplikací. Vytvoří mnoho příležitosti pro inovace v oblastech, jako např. meta-programovací generování kódu a transformace, interaktivní použít jazyky C# a VB a vložení jazyka C# a VB v jazycích konkrétní domény.
+Sada SDK platformy kompilátoru .NET výrazně snižuje překážku vstupu pro vytváření kódu, zaměřuje nástroje a aplikace. Vytvoří řadu příležitostí pro inovace v oblasti, jako je meta programování, generování kódu a transformace, interaktivní pomocí jazyků C# a VB a vkládání C# a VB v jazycích specifické domény.
 
-Platforma kompilátoru .NET SDK umožňuje vytvářet ***analyzátorů*** a ***code opravy*** , najít a opravit chyby kódování. ***Analyzátory*** pochopit syntaxe a struktury kódu a zjistit postupy, které by měly být opraveny. ***Kód opravy*** zadejte jednu nebo více oprav navržené pro adresování kódování chyby nalezené pomocí analyzátorů. Obvykle analyzátoru a opravy přidružený kód spojených společně v jednom projektu. 
+Sada SDK platformy kompilátoru .NET umožňuje vytvářet ***analyzátory*** a ***opravy kódu*** , najít a opravit chyby kódování. ***Analyzátory*** pochopení syntaxe a struktura kódu a zjišťování postupy, které by měly být opraveny. ***Opravy kódu*** adresování programovacích chyb zjištěných aplikací analyzátory zadejte jeden nebo více návrhy jejich oprav. Obvykle analyzátor a přidružený kód opravy jsou umístěné společně v jednom projektu. 
 
-Analyzátory a opravy kódu slouží k pochopení kódu statických analýzy. Není spustit kód nebo další testování výhody. Mohou, ale upozorňovat na postupy, které často vést k ověření standardní platí, unmaintanable kódu nebo chyby.
+Analyzátory a opravy kódu pomocí statické analýzy můžete pochopit kód. Nevytvářejí spusťte kód ani další testování výhody. Můžete však zdůraznit postupy, které často způsobit chyby, neudržovatelnému kódu nebo standardní obecných zásad ověřování.
 
-Sada SDK kompilátoru platformu .NET poskytuje jednu sadu rozhraní API, která vám umožní zkoumat a pochopit codebase C# nebo Visual Basic. Vzhledem k tomu, že budete moci použít tento jeden základu kódu, můžete napsat analyzátorů a kód opravy snadněji s využitím analýzy syntaktické a sémantické rozhraní API poskytovaných platformy kompilátoru .NET SDK. Vydání z velké úlohy replikace anaysis provádí kompilátor, můžete soustředit na úlohu přesněji zaměřené hledání a odstraňování běžných chyb kódování pro váš projekt nebo knihovny.
+Sada SDK platformy kompilátoru .NET poskytuje jednu sadu rozhraní API, která vám umožní zkoumat a pochopit základ kódu C# nebo Visual Basic. Vzhledem k tomu můžete tuto jedinou kódovou základnou, můžete napsat analyzátory a opravy kódu snadněji díky využití syntaktická a sémantická analýza rozhraní API poskytovaných platformě kompilátoru .NET SDK. Uvolněna z velké úlohy replikace analýzy kompilátorem, můžete soustředit na více zaměřených úlohu Najít a opravit běžné chyby kódování projektu nebo knihovny.
 
-Menší výhodou je, že analyzátory a opravy kódu jsou menší a použít mnohem méně paměti při načítání v sadě Visual Studio, než se by pokud jste napsali vlastní kód pochopit kódu v projektu. S využitím stejné třídy používané kompilátoru a Visual Studio, můžete vytvořit vlastní statické analytických nástrojů. To znamená, že váš tým můžete použít analyzátorů a kód opravy bez znatelný dopad na výkon rozhraní IDE.
+Menší výhodou je, že analyzátory a opravy kódu jsou menší a použít mnohem méně paměti při načtení v sadě Visual Studio, než se bude Pokud jste napsali vlastní codebase porozumět kódu v projektu. S využitím stejné třídy používané kompilátorem a sady Visual Studio, můžete vytvořit své vlastní nástroje pro statickou analýzu. To znamená, že váš tým může použít analyzátory a opravy kódu bez znatelnému dopadu na výkon, rozhraní IDE.
 
 Existují tři hlavní scénáře pro zápis analyzátory a opravy kódu:
 
-1. [*Vynutit team kódování standardy*](#enforce-team-coding-standards)
-1. [*Poskytovat pokyny balíčky knihovny*](#provide-guidance-with-library-packages)
-1. [*Zadejte obecné pokyny pro kódování*](#provide-general-coding-guidance)
+1. [*Vynucovat standardy kódování týmu*](#enforce-team-coding-standards)
+1. [*Poskytovat pokyny balíčků knihovny*](#provide-guidance-with-library-packages)
+1. [*Poskytují obecné pokyny pro psaní kódu*](#provide-general-coding-guidance)
 
-## <a name="enforce-team-coding-standards"></a>Vynutit team kódování standardy
+## <a name="enforce-team-coding-standards"></a>Vynucovat standardy kódování týmu
 
-Mnoho týmy mají kódování standardů, které se vynucují prostřednictvím kódu recenze s jinými členy týmu. Analyzátory a opravy kódu může být tento proces mnohem efektivnější. Kód recenze dojít v případě, že vývojář sdílí práci s ostatními uživateli v týmu. Vývojář se investovaly všechny čas potřebný k dokončení novou funkci před získáním jakékoli komentáře. Týdny může přejít při vývojář posiluje návyky, které se neshodují. tým služby postupy.
+Mnoho týmů mít kódování standardů, které se vynucují prostřednictvím revize kódu s ostatními členy týmu. Analyzátory a opravy kódu provést tento postup mnohem efektivnější. Když vývojář v týmu práci sdílí s ostatními probíhat revize kódu. Vývojář bude investovali všechny čas potřebný k dokončení novou funkci před získáním žádné komentáře. Týdny může jít zatímco vývojář posiluje návyky, které neodpovídají postupy týmu.
 
-Analyzátory spustit jako vývojář zapíše kódu. Vývojář získá okamžitou zpětnou vazbu, která podporuje následující pokyny okamžitě. Vývojář sestavení zvyklosti napsat kód, kompatibilní také začnou při vytváření prototypu. Když tato funkce je připraven pro člověka ke kontrole, bylo vynuceno standardní pokyny.
+Analyzátory spustit jako vývojář píše kód. Vývojář získá okamžitou zpětnou vazbu, která vývojářům umožňuje následující pokyny okamžitě. Vývojář vytvoří návyky psát kód kompatibilní, jakmile začnou vytváření prototypů. Když tato funkce je připravený pro člověka ke kontrole, bylo vynuceno standardní doprovodné materiály.
 
-Týmy můžete vytvořit analyzátorů a kód opravy podívejte se na tomto nejběžnější postupy, které porušují team kódování postupy. Ty lze nainstalovat na každý vývojář počítače k vynucení standardy.
+Týmy mohou vytvářet analyzátory a opravy kódu. Tento vzhled pro nejběžnější postupy, které porušují tým postupy psaní kódu. Ty lze nainstalovat na počítači každý vývojář vynucovat standardy.
 
-## <a name="provide-guidance-with-library-packages"></a>Poskytovat pokyny balíčky knihovny
+## <a name="provide-guidance-with-library-packages"></a>Poskytovat pokyny balíčků knihovny
 
-Nejsou k dispozici pro vývojáře .NET na NuGet širokou řadu knihovny.
-Některé z těchto přijde od Microsoftu, některé z jiných společností a ostatními členy komunity a dobrovolníků. Tyto knihovny získat další přijetí a vyšší recenze, když vývojáři může uspět s tyto knihovny.
+Nejsou k dispozici pro vývojáře na platformě .NET na webu NuGet velkému množství knihoven.
+Některé z těchto přijde od Microsoftu, některé z jiných společností a ostatními členy komunity a dobrovolníků. Tyto knihovny získat další přijetí a vyšší kontroly při vývojářů může uspět s těmito knihovnami.
 
-Kromě poskytují dokumentaci, můžete poskytnout analyzátory a opravy kódu, které najít a opravit běžné chybná používá své knihovny. Tyto okamžité opravy bude pomoci vývojářům při úspěšné rychleji. 
+Kromě toho, že dokumentace ke službě, můžete zadat analyzátory a opravy kódu, které najít a opravit běžné chybné použití knihovny. Tyto okamžité opravy se pomoci vývojářům při úspěšné rychleji. 
 
-Můžete balíček analyzátorů a kód opravy s knihovnu na NuGet. V tomto scénáři bude každý vývojář, který nainstaluje balíček NuGet také nainstalovat balíček analyzátor. Všechny vývojáře, kteří používají vaše knihovna okamžitě získat pokyny od vašeho týmu ve formě okamžitou zpětnou vazbu na chyb a navrhované opravy.
+Můžete zabalit analyzátory a opravy kódu ke knihovně na webu NuGet. V tomto scénáři se každý vývojář, který nainstaluje balíček NuGet také nainstalovat balíček analyzátor. Všichni vývojáři pomocí knihovny okamžitě získejte pokyny od vašeho týmu ve formě okamžitou zpětnou vazbu na chyby a navrhovaných oprav.
 
-## <a name="provide-general-guidance"></a>Zadejte obecné pokyny
+## <a name="provide-general-guidance"></a>Obecné pokyny
 
-Komunity vývojářů .NET zjistí prostřednictvím vzory prostředí, které pracují také a vzorů, které jsou nejlépe vyhnout. Několik členy komunity jste vytvořili analyzátory, které vynucují tyto doporučené vzorce. Jak jsme dozvědět víc, je vždy místo pro nové návrhy.
+Komunita vývojářů .NET byly zjištěny prostřednictvím prostředí vzory, které fungují dobře a vzory, které jsou nejlépe vyhnout. Několik členů komunity vytvořili analyzátory, které vynucují tyto doporučené způsoby. Jak se Učíme informace, je vždy místo pro nové nápady.
 
-Tyto analyzátorů lze uložit [Visual Studio Marketplace](https://marketplace.visualstudio.com/vs) a stáhnout vývojáři pomocí sady Visual Studio. Nové uživatele na jazyk a platformu rychle zjistěte zásad a zvýšení produktivity dříve v cestě .NET. Jak tyto stát více nejběžněji používané, Společenství přijme tyto postupy.
+Tyto analyzátory můžou být odeslán do [Visual Studio Marketplace](https://marketplace.visualstudio.com/vs) a stahují vývojářům používajícím Visual Studio. Nové uživatele na jazyk a platformu Seznamte se s postupy přijaté rychle a být tak produktivní dříve v cestě .NET. Podle těchto stane více široce využívají, komunity přijímá tyto postupy.
 
 ## <a name="next-steps"></a>Další kroky
 
-Sada SDK kompilátoru platformu .NET zahrnuje nejnovější objektové modely jazyk pro generování kódu, analýzu a refaktoring. Tato část obsahuje přehled sady SDK kompilátoru platformy .NET. Další podrobnosti naleznete v částech – elementy QuickStart, ukázky a výukové programy.
+Sada SDK platformy kompilátoru .NET obsahuje nejnovější objektové modely jazyka pro generování kódu, analýzy a refaktoringu. Tato část obsahuje přehled sady SDK platformy kompilátoru .NET. Další podrobnosti najdete v části šablony rychlý start, ukázek a kurzů.
 
-Podrobnější informace o konceptech v sadě SDK pro platformu .NET kompilátoru v těchto tématech čtyři:
+Vás podrobnější informace o konceptech v sadě SDK platformy kompilátoru .NET v těchto tématech čtyři:
 
  - [Prozkoumání kódu pomocí vizualizéru syntaxe](syntax-visualizer.md)
  - [Pochopení modelu rozhraní API kompilátoru](compiler-api-model.md)
@@ -68,7 +68,7 @@ Podrobnější informace o konceptech v sadě SDK pro platformu .NET kompilátor
  - [Práce se sémantikou](work-with-semantics.md)
  - [Práce s pracovním prostorem](work-with-workspace.md)
  
-Abyste mohli začít, budete muset nainstalovat **SDK pro platformu .NET kompilátoru**:
+Abyste mohli začít, budete muset nainstalovat **sada SDK platformy kompilátoru .NET**:
 
 [!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 

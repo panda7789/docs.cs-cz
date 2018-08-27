@@ -3,11 +3,11 @@ title: 'Ukázkový soubor XML: Konsolidované nákupní Orders3'
 ms.date: 07/20/2015
 ms.assetid: 7203da90-a514-415a-b978-6980e89f3e9c
 ms.openlocfilehash: 4de74aab208b3ee09a49210dd1f97c13af273789
-ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
+ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42751930"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42924808"
 ---
 # <a name="sample-xml-file-consolidated-purchase-orders"></a>Ukázkový soubor XML: Konsolidované nákupní objednávky
 Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor je sada nákupních objednávek různých tvarů z více společností. Nákupní objednávky z obou společností jsou v samostatných oborech názvů.  

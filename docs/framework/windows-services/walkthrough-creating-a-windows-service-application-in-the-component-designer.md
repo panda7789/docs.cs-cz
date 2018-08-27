@@ -10,33 +10,33 @@ helpviewer_keywords:
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
 manager: douge
-ms.openlocfilehash: c33b8badcacd4e228d70f8e770d4bf27144c29eb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 73f61ee3358edf50c11ae10ee53650c66b1c1400
+ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33520510"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42925799"
 ---
 # <a name="walkthrough-creating-a-windows-service-application-in-the-component-designer"></a>Návod: Vytvoření aplikace spouštěné jako služba systému Windows v návrháři součástí
-Tento článek ukazuje, jak vytvořit jednoduchou aplikaci služby systému Windows v sadě Visual Studio, která zapisuje zprávy do protokolu událostí. Zde jsou základní kroky, které jste při vytváření a používání služby:  
+Tento článek ukazuje, jak vytvořit jednoduchou aplikaci Windows služby v sadě Visual Studio, která zapisuje zprávy do protokolu událostí. Tady jsou základní kroky, které provádějí vytváření a používání služby:  
   
-1.  [Vytvoření služby](#BK_CreateProject) pomocí **služba systému Windows** projektu šablony a nakonfigurovat ho. Tato šablona vytvoří za vás, která dědí z třídy <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> a zapisuje většinu kódu základní služby, jako je například kód pro spuštění služby.  
+1.  [Vytvoření služby](#BK_CreateProject) pomocí **Windows Service** šablony projektu a nakonfigurujte ho. Tato šablona vytvoří třídu dědící z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> a velkou část základního kódu služby, jako je například kód ke spuštění služby.  
   
-2.  [Přidávání funkcí do služby](#BK_WriteCode) pro <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> postupy a přepsat jiné metody, které chcete znovu definovat.  
+2.  [Přidání funkcí do služby](#BK_WriteCode) pro <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> postupy a přepište všechny jiné metody, které chcete předefinovat.  
   
-3.  [Nastavení služby stavu](#BK_SetStatus). Ve výchozím nastavení vytvoří služby s <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> implementovat jenom podmnožinu příznaků stavu k dispozici. Pokud služby trvá dlouhou dobu spuštění, pozastavení nebo zastavit, můžete implementovat hodnoty stavu, jako je například čekající spustit nebo Zastavit čekající indikující, že funguje na operace.  
+3.  [Nastavení služby stavu](#BK_SetStatus). Ve výchozím nastavení, služby vytvořené pomocí <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> implementovat pouze podmnožinu příznaků stavu k dispozici. Pokud vaše služba trvá dlouhou dobu spuštění, pozastavení nebo ukončení, můžete implementovat hodnoty stavu, jako je například čeká na spuštění nebo zastavení čeká na vyřízení k označení, že funguje u určité operace.  
   
 4.  [Přidávání instalačních programů do služby](#BK_AddInstallers) pro aplikaci služby.  
   
-5.  (Volitelné) [Nastavit parametry spuštění](#BK_StartupParameters), zadejte výchozí argumenty spuštění a povolte uživatelům přepíší výchozí nastavení, když budou službu spustit ručně.  
+5.  (Volitelné) [Nastavit parametry pro spuštění](#BK_StartupParameters), zadat výchozí argumenty pro spuštění a umožňují uživatelům přepsat výchozí nastavení při spuštění služby ručně.  
   
 6.  [Vytváření služby](#BK_Build).  
   
-7.  [Nainstalovat službu](#BK_Install) v místním počítači.  
+7.  [Instalace služby](#BK_Install) v místním počítači.  
   
-8.  Přístup správce řízení služeb systému Windows a [spuštění a spuštěna služba](#BK_StartService).  
+8.  Přístup ke správci řízení služeb Windows a [spuštění a spuštěná služba](#BK_StartService).  
   
-9. [Odinstalace služby systému Windows](#BK_Uninstall).  
+9. [Odinstalace služby Windows](#BK_Uninstall).  
   
 > [!WARNING]
 >  Šablona projektu Služby systému Windows, která je zapotřebí pro tento návod, není k dispozici v edici Express sady Visual Studio.  
@@ -49,50 +49,50 @@ Tento článek ukazuje, jak vytvořit jednoduchou aplikaci služby systému Wind
   
 #### <a name="to-create-and-configure-your-service"></a>Vytvoření a konfigurace služby  
   
-1.  V sadě Visual Studio na řádku nabídek zvolte **soubor**, **nový**, **projektu**.  
+1.  V sadě Visual Studio v panelu nabídek zvolte **souboru**, **nový**, **projektu**.  
   
-     **Nový projekt** otevře se dialogové okno.  
+     **Nový projekt** zobrazí se dialogové okno.  
   
-2.  V seznamu šablon projektu jazyka Visual Basic a Visual C#, zvolte **služba systému Windows**a název projektu **MyNewService**. Zvolte **OK**.  
+2.  V seznamu šablon projektů jazyka Visual Basic nebo Visual C#, zvolte **Windows Service**a název projektu **MyNewService**. Zvolte **OK**.  
   
-     Šablona projektu automaticky přidá třídu součást s názvem `Service1` který dědí z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>.  
+     Šablona projektu automaticky přidá komponentní třídu s názvem `Service1` , která dědí z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>.  
   
-3.  Na **upravit** nabídce zvolte **najít a nahradit**, **hledání v souborech** (klávesové: Ctrl + Shift + F). Změňte všechny výskyty `Service1` k `MyNewService`. Instance najdete v Service1.cs, souboru Program.cs a Service1.Designer.cs (nebo jejich ekvivalenty VB).  
+3.  Na **upravit** nabídce zvolte **najít a nahradit**, **najít v souborech** (klávesnice: Ctrl + Shift + F). Změňte všechny výskyty `Service1` k `MyNewService`. Instance najdete v Service1.cs, Program.cs a Service1.Designer.cs (nebo jejich ekvivalenty .vb).  
   
-4.  V **vlastnosti** okna pro **Service1.cs [návrhu]** nebo **Service1.vb [návrhu]**, nastavte <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> a **(název)** Vlastnost pro `Service1` k **MyNewService**, pokud ještě není nastavena.  
+4.  V **vlastnosti** okně **Service1.cs [Design]** nebo **Service1.vb [Design]**, nastavte <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> a **(název)** Vlastnost `Service1` k **MyNewService**, pokud ještě není nastavený.  
   
 5.  V Průzkumníku řešení, přejmenujte **Service1.cs** k **MyNewService.cs**, nebo **Service1.vb** k **MyNewService.vb**.  
   
 <a name="BK_WriteCode"></a>   
 ## <a name="adding-features-to-the-service"></a>Přidání funkcí do služby  
- V této části přidáte vlastní protokol událostí pro službu systému Windows. Protokoly událostí nejsou nijak spojené se službami systému Windows. Zde <xref:System.Diagnostics.EventLog> součást slouží jako příklad typ součásti, které můžete přidat k službě systému Windows.  
+ V této části přidáte do služby Windows vlastního protokolu událostí. Protokoly událostí nejsou nijak spojené se službami systému Windows. Tady <xref:System.Diagnostics.EventLog> komponenty slouží jako příklad typ součásti, můžete přidat do služby Windows.  
   
 #### <a name="to-add-custom-event-log-functionality-to-your-service"></a>Přidání funkce vlastního protokolu událostí do služby  
   
-1.  V **Průzkumníku řešení**, otevřete kontextovou nabídku **MyNewService.cs** nebo **MyNewService.vb**a potom zvolte **Návrhář zobrazení**.  
+1.  V **Průzkumníka řešení**, otevřete kontextovou nabídku pro **MyNewService.cs** nebo **MyNewService.vb**a klikněte na tlačítko **Návrhář zobrazení**.  
   
-2.  Z **součásti** části **sada nástrojů**, přetáhněte <xref:System.Diagnostics.EventLog> součásti do návrháře.  
+2.  Z **součásti** část **nástrojů**, přetáhněte <xref:System.Diagnostics.EventLog> komponentu do návrháře.  
   
-3.  V **Průzkumníku řešení**, otevřete kontextovou nabídku **MyNewService.cs** nebo **MyNewService.vb**a potom zvolte **kód zobrazení**.  
+3.  V **Průzkumníka řešení**, otevřete kontextovou nabídku pro **MyNewService.cs** nebo **MyNewService.vb**a klikněte na tlačítko **zobrazit kód**.  
   
-4.  Přidejte deklaraci pro **protokolu událostí** objekt v `MyNewService` třída hned po řádek, který deklaruje `components` proměnné:  
+4.  Přidat deklaraci **protokolu událostí** objekt `MyNewService` třídy hned po řádek, který deklaruje `components` proměnné:  
   
      [!code-csharp[VbRadconService#16](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#16)]
      [!code-vb[VbRadconService#16](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#16)]  
   
-5.  Přidat nebo upravit konstruktor k definovat vlastní protokol událostí:  
+5.  Přidejte nebo upravte konstruktor pro definování vlastního protokolu událostí:  
   
      [!code-csharp[VbRadconService#2](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#2)]
      [!code-vb[VbRadconService#2](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#2)]  
   
 #### <a name="to-define-what-occurs-when-the-service-starts"></a>Definování toho, co se stane při spuštění služby  
   
--   Vyhledejte v editoru kódu <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodu, která byla automaticky přepsat při vytváření projektu a nahraďte kód následujícím kódem. Tento postup přidá položku do protokolu událostí při spuštění služby:  
+-   V editoru kódu vyhledejte <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodu, která byla automaticky přepsána při vytvoření projektu a nahraďte kód následujícím kódem. To přidá položku do protokolu událostí při spuštění služby:  
   
      [!code-csharp[VbRadconService#3](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#3)]
      [!code-vb[VbRadconService#3](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#3)]  
   
-     Aplikace služby je navržený jako dlouhodobé, takže obvykle dotazuje nebo monitoruje něco v systému. Monitorování je nastavený <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda. Ale <xref:System.ServiceProcess.ServiceBase.OnStart%2A> neprovádí ve skutečnosti monitorování. <xref:System.ServiceProcess.ServiceBase.OnStart%2A> Metoda musí vrátit do operačního systému po zahájení operace služby. Nesmí spustit nekonečnou smyčku ani blokovat. Pokud chcete nastavit jednoduché dotazování mechanismus, můžete použít <xref:System.Timers.Timer?displayProperty=nameWithType> součást následujícím způsobem: V <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda nastavit parametry na komponentu a potom nastavte <xref:System.Timers.Timer.Enabled%2A> vlastnost `true`. Časovač vyvolává události ve vašem kódu pravidelně, po kterém služby udělat jeho monitorování. K tomu můžete použít následující kód:  
+     Aplikace služby byla navržena jako dlouhotrvající, takže obvykle dotazuje nebo něco monitoruje v systému. Monitorování je nastavení <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody. Ale <xref:System.ServiceProcess.ServiceBase.OnStart%2A> neumí skutečně monitorování. <xref:System.ServiceProcess.ServiceBase.OnStart%2A> Metoda musí vracet v operačním systému po operaci služby. Nesmí spustit nekonečnou smyčku ani blokovat. Pokud chcete nastavit jednoduchý mechanismus dotazování, můžete použít <xref:System.Timers.Timer?displayProperty=nameWithType> komponenty následujícím způsobem: V <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodu, nastavení parametrů na komponentu a potom nastavte <xref:System.Timers.Timer.Enabled%2A> vlastnost `true`. Časovač vyvolává události ve vašem kódu pravidelně, po kterém může služba provádět monitorování. K tomu můžete použít následující kód:  
   
     ```csharp  
     // Set up a timer to trigger every minute.  
@@ -109,7 +109,7 @@ Tento článek ukazuje, jak vytvořit jednoduchou aplikaci služby systému Wind
     AddHandler timer.Elapsed, AddressOf Me.OnTimer  
     timer.Start()  
     ```  
-     Přidání členské proměnné na třídu. Bude obsahovat identifikátor další události, k zápisu do protokolu událostí.
+     Přidání členské proměnné třídy. Bude obsahovat identifikátor další události pro zápis do protokolu událostí.
 
     ```csharp
     private int eventId = 1;
@@ -119,7 +119,7 @@ Tento článek ukazuje, jak vytvořit jednoduchou aplikaci služby systému Wind
     Private eventId As Integer = 1
     ```
 
-     Přidáte kód pro zpracování událost časovače:  
+     Přidejte kód pro zpracování události časovače:  
   
     ```csharp  
     public void OnTimer(object sender, System.Timers.ElapsedEventArgs args)  
@@ -137,35 +137,35 @@ Tento článek ukazuje, jak vytvořit jednoduchou aplikaci služby systému Wind
     End Sub  
     ```  
   
-     Můžete chtít provádět úlohy pomocí pracovní vlákna na pozadí namísto spuštění všechnu práci na hlavní vlákno. Příklady, najdete v článku <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> stránka s referencemi k.  
+     Můžete chtít provádět úlohy pomocí pracovních vláken na pozadí místo spouštění veškerou práci na hlavním vlákně. Příkladem, najdete v článku <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> referenční stránce.  
   
 #### <a name="to-define-what-occurs-when-the-service-is-stopped"></a>Definování toho, co se stane při zastavení služby  
   
--   Nahraďte kód <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metoda následujícím kódem. Tento postup přidá položku do protokolu událostí po zastavení služby:  
+-   Nahraďte kód <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metoda následujícím kódem. To přidá položku do protokolu událostí po zastavení služby:  
   
      [!code-csharp[VbRadconService#4](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#4)]
      [!code-vb[VbRadconService#4](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#4)]  
   
- V další části, můžete přepsat <xref:System.ServiceProcess.ServiceBase.OnPause%2A>, <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>, a <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> metody můžete definovat další zpracování pro příslušné součásti.  
+ V další části, můžete přepsat <xref:System.ServiceProcess.ServiceBase.OnPause%2A>, <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>, a <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> metody definovat další zpracování pro komponentu.  
   
 #### <a name="to-define-other-actions-for-the-service"></a>Definování dalších akcí služby  
   
--   Vyhledejte metodu, kterou chcete zpracovat a přepsat definovat, co chcete dojít.  
+-   Vyhledejte metodu, kterou chcete zpracovat a přepsat definovat, co má vykonávat.  
   
-     Následující kód ukazuje, jak je možné přepsat <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> metoda:  
+     Následující kód ukazuje, jak je možné přepsat <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> metody:  
   
      [!code-csharp[VbRadconService#5](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#5)]
      [!code-vb[VbRadconService#5](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#5)]  
   
- Některé vlastní akce muset dojít, když je nainstalovaná služba systému Windows pomocí <xref:System.Configuration.Install.Installer> třídy. Sada Visual Studio může vytvořit tyto instalační programy speciálně pro službu systému Windows a přidat je do projektu.  
+ Některé vlastní akce musejí nastat při instalaci služby Windows podle <xref:System.Configuration.Install.Installer> třídy. Sada Visual Studio může vytvořit tyto instalační programy speciálně pro službu systému Windows a přidat je do projektu.  
   
 <a name="BK_SetStatus"></a>   
 ## <a name="setting-service-status"></a>Nastavení služby stavu  
- Sestavy služby Services jejich stav ke správci řízení služeb tak, aby uživatelé zjistíte, jestli služba funguje správně. Ve výchozím nastavení služby, které dědí od <xref:System.ServiceProcess.ServiceBase> omezenou sadu nastavení stavu, včetně zastavit, pozastavit a spouštění sestav. Pokud služba přijímá trochu při pro spuštění, se může být užitečné nahlásit stav spuštění čekání. Můžete taky implementovat nastavení stavu čekající spustit a zastavit čekající tak, že přidáte kód, který volá do systému Windows [SetServiceStatus funkce](http://msdn.microsoft.com/library/windows/desktop/ms686241.aspx).  
+ Služby oznamují svůj stav tak, aby uživatelé můžete říct, jestli služba správně funguje ke správci řízení služeb. Ve výchozím nastavení, služby, které dědí <xref:System.ServiceProcess.ServiceBase> omezenou sadu nastavení, stav, včetně zastaven, pozastaven a spouštění sestav. Pokud služba trvá o něco se spustí ho může být užitečné oznámit spuštění čeká na stav. Nastavení stavu čeká na spuštění a zastavení probíhající můžete také implementovat přidáním kódu, která volá Windows [SetServiceStatus funkce](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus).  
   
-#### <a name="to-implement-service-pending-status"></a>K implementaci služby čekající na vyřízení stavu  
+#### <a name="to-implement-service-pending-status"></a>K implementaci služby čekajícím stavu  
   
-1.  Přidat `using` příkaz nebo `Imports` deklarace k <xref:System.Runtime.InteropServices?displayProperty=nameWithType> oboru názvů v souboru MyNewService.cs nebo MyNewService.vb:  
+1.  Přidat `using` příkazu nebo `Imports` prohlášení <xref:System.Runtime.InteropServices?displayProperty=nameWithType> obor názvů v souboru MyNewService.cs nebo MyNewService.vb:  
   
     ```csharp  
     using System.Runtime.InteropServices;  
@@ -175,7 +175,7 @@ Tento článek ukazuje, jak vytvořit jednoduchou aplikaci služby systému Wind
     Imports System.Runtime.InteropServices  
     ```  
   
-2.  Přidejte následující kód do MyNewService.cs deklarovat `ServiceState` hodnoty a přidat do struktury na stav, který budete používat na platformě vyvolat volání:  
+2.  Přidejte následující kód k MyNewService.cs pro deklaraci `ServiceState` hodnoty a přidat strukturu pro stav, který budete používat ve volání funkce invoke:  
   
     ```csharp  
     public enum ServiceState  
@@ -225,7 +225,7 @@ Tento článek ukazuje, jak vytvořit jednoduchou aplikaci služby systému Wind
     End Structure  
     ```  
   
-3.  Nyní v `MyNewService` třídy, deklarovat [SetServiceStatus funkce](http://msdn.microsoft.com/library/windows/desktop/ms686241.aspx) pomocí platformy vyvolání:  
+3.  Teď v `MyNewService` třídy, deklarujte [SetServiceStatus funkce](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) pomocí platformy vyvolání:  
   
     ```csharp  
     [DllImport("advapi32.dll", SetLastError=true)]  
@@ -236,7 +236,7 @@ Tento článek ukazuje, jak vytvořit jednoduchou aplikaci služby systému Wind
     Declare Auto Function SetServiceStatus Lib "advapi32.dll" (ByVal handle As IntPtr, ByRef serviceStatus As ServiceStatus) As Boolean  
     ```  
   
-4.  K implementaci spuštění čeká na stav, přidejte následující kód do začátku <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda:  
+4.  K implementaci spuštění čeká na stav, přidejte následující kód do začátku <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody:  
   
     ```csharp  
     // Update the service state to Start Pending.  
@@ -254,7 +254,7 @@ Tento článek ukazuje, jak vytvořit jednoduchou aplikaci služby systému Wind
     SetServiceStatus(Me.ServiceHandle, serviceStatus)  
     ```  
   
-5.  Přidejte kód pro nastavení stavu spuštěná na konci <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda.  
+5.  Přidejte kód pro spuštění na konci nastavit stav <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody.  
   
     ```csharp
     // Update the service state to Running.  
@@ -268,54 +268,54 @@ Tento článek ukazuje, jak vytvořit jednoduchou aplikaci služby systému Wind
     SetServiceStatus(Me.ServiceHandle, serviceStatus)  
     ```  
   
-6.  (Volitelné) Tento postup zopakujte pro <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metoda.  
+6.  (Volitelné) Tento postup zopakujte pro <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metody.  
   
 > [!CAUTION]
->  [Správce řízení služeb](http://msdn.microsoft.com/library/windows/desktop/ms685150.aspx) používá `dwWaitHint` a `dwCheckpoint` členy [SERVICE_STATUS struktura](http://msdn.microsoft.com/library/windows/desktop/ms685996.aspx) k určení jak dlouho čekat na spuštění nebo vypnutí služby systému Windows. Pokud vaše <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metody spustit dlouhé, služby můžete požádat o víc času voláním [SetServiceStatus](http://msdn.microsoft.com/library/windows/desktop/ms686241.aspx) znovu s zvýšena `dwCheckPoint` hodnotu.  
+>  [Správce řízení služeb](/windows/desktop/Services/service-control-manager) používá `dwWaitHint` a `dwCheckpoint` členy [SERVICE_STATUS struktura](/windows/desktop/api/winsvc/ns-winsvc-_service_status) k určení doby čekání na službu Windows ke spuštění nebo vypnutí. Pokud vaše <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metody se spustí, long, vaše služba může požádat o víc času voláním [SetServiceStatus](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) znovu se zvýšena `dwCheckPoint` hodnotu.  
   
 <a name="BK_AddInstallers"></a>   
 ## <a name="adding-installers-to-the-service"></a>Přidávání instalačních programů do služby  
- Před spuštěním služby systému Windows, musíte nainstalovat ji, který registruje ho s správce řízení služeb. Instalační programy můžete přidat do projektu, který zpracovává podrobnosti registrace.  
+ Před spuštěním služby Windows, musíte nainstalovat, které je zaregistruje ho s správce řízení služeb. Přidání instalačních programů do projektu, který zpracovat podrobnosti registrace.  
   
 #### <a name="to-create-the-installers-for-your-service"></a>Vytvoření instalačních programů pro vaši službu  
   
-1.  V **Průzkumníku řešení**, otevřete kontextovou nabídku **MyNewService.cs** nebo **MyNewService.vb**a potom zvolte **Návrhář zobrazení**.  
+1.  V **Průzkumníka řešení**, otevřete kontextovou nabídku pro **MyNewService.cs** nebo **MyNewService.vb**a klikněte na tlačítko **Návrhář zobrazení**.  
   
 2.  Kliknutím na pozadí návrháře vyberte samotnou službu namísto některé z jejích komponent.  
   
-3.  Otevřete kontextu nabídku pro návrháře okno (Pokud používáte polohovací zařízení, klikněte pravým tlačítkem uvnitř okna) a potom zvolte **přidat instalační program**.  
+3.  Otevřete místní nabídku pro okna návrháře (Pokud používáte polohovací zařízení, klikněte pravým tlačítkem uvnitř okna) a klikněte na tlačítko **přidat instalační program**.  
   
-     Ve výchozím nastavení bude do projektu přidána komponentní třída, která obsahuje dva instalační programy. Součást jmenuje **ProjectInstaller**a instalační programy obsahuje instalační program služby a instalační program služby přidruženému procesu.  
+     Ve výchozím nastavení bude do projektu přidána komponentní třída, která obsahuje dva instalační programy. Komponenta má název **ProjectInstaller**a obsahuje instalační program pro vaši službu a instalační program služby přidruženého k tomuto procesu.  
   
-4.  V **návrhu** zobrazit **ProjectInstaller**, zvolte **serviceInstaller1** pro projektu jazyka Visual C#, nebo **ServiceInstaller1** pro zobrazení Základní projektu.  
+4.  V **návrhu** zobrazit **ProjectInstaller**, zvolte **serviceInstaller1** pro projekt jazyka Visual C#, nebo **ServiceInstaller1** vizuálu Základní projekt.  
   
-5.  V **vlastnosti** okno, zajistěte, aby <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> je nastavena na **MyNewService**.  
+5.  V **vlastnosti** okno, ujistěte se, že <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> je nastavena na **MyNewService**.  
   
-6.  Nastavte **popis** vlastnost, která má některé text, například "Ukázka služba". Tento text se zobrazí v okně služby a pomáhá uživatele k identifikaci služby a pochopit, co se používá.  
+6.  Nastavte **popis** vlastnost nějaký text, například "Ukázková služba". Tento text se zobrazí v okně služby a pomáhá uživatelům identifikaci služby a pochopit, co se používá.  
   
-7.  Nastavte <xref:System.ServiceProcess.ServiceInstaller.DisplayName%2A> vlastnost text, který se má zobrazit v okně služby v **název** sloupce. Můžete například zadat "MyNewService zobrazovaný název". Tento název se může lišit od <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> vlastnost, která je název používaný systému (například při použití `net start` příkaz ke spuštění služby).  
+7.  Nastavte <xref:System.ServiceProcess.ServiceInstaller.DisplayName%2A> vlastnost text, který se má zobrazit v okně služby **název** sloupec. Můžete například zadat "MyNewService zobrazované jméno". Tento název se může lišit od <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> vlastnost, která je název použitý v systému (třeba když použijete `net start` příkaz pro spuštění služby).  
   
 8.  Nastavte <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost <xref:System.ServiceProcess.ServiceStartMode.Automatic>.  
   
-     ![Vlastnosti Instalační služby systému Windows](../../../docs/framework/windows-services/media/windowsservice-installerproperties.PNG "WindowsService_InstallerProperties")  
+     ![Vlastnosti Instalační služby systému Windows služby](../../../docs/framework/windows-services/media/windowsservice-installerproperties.PNG "WindowsService_InstallerProperties")  
   
-9. V návrháři, zvolte **serviceProcessInstaller1** pro projektu jazyka Visual C#, nebo **ServiceProcessInstaller1** pro projektu jazyka Visual Basic. Nastavte <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> vlastnost <xref:System.ServiceProcess.ServiceAccount.LocalSystem>. To způsobí, že bude služba nainstalována a spuštěna s použitím účtu místní služby.  
+9. V návrháři, zvolte **serviceProcessInstaller1** pro projekt jazyka Visual C#, nebo **ServiceProcessInstaller1** pro projekt jazyka Visual Basic. Nastavte <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> vlastnost <xref:System.ServiceProcess.ServiceAccount.LocalSystem>. To způsobí, že bude služba nainstalována a spuštěna s použitím účtu místní služby.  
   
     > [!IMPORTANT]
-    >  <xref:System.ServiceProcess.ServiceAccount.LocalSystem> Účet má oprávnění široký, včetně možnost zapisovat do protokolu událostí. Používejte tento účet opatrně, protože může zvýšit riziko napadení škodlivým softwarem. Pro ostatní úlohy, zvažte použití pomocí <xref:System.ServiceProcess.ServiceAccount.LocalService> účet, který funguje jako uživatel bez oprávnění místního počítače a uvede anonymní přihlašovací údaje k žádnému vzdáleného serveru. V tomto příkladu se nezdaří, pokud se pokusíte použít <xref:System.ServiceProcess.ServiceAccount.LocalService> účet, protože je nutné oprávnění k zápisu do protokolu událostí.  
+    >  <xref:System.ServiceProcess.ServiceAccount.LocalSystem> Účet má širší oprávnění, včetně možnosti zapisovat do protokolu událostí. Používejte tento účet opatrně, protože může zvýšit riziko napadení škodlivým softwarem. Pro jiné úlohy zvažte použití <xref:System.ServiceProcess.ServiceAccount.LocalService> účet, který funguje jako neprivilegované uživatele v místním počítači a nabízí pověření anonymního a jakémukoli vzdálenému serveru. V tomto příkladu se nezdaří, pokud se pokusíte použít <xref:System.ServiceProcess.ServiceAccount.LocalService> účtu, proto, že potřebuje oprávnění k zápisu do protokolu událostí.  
   
-     Další informace o instalačních programů najdete v tématu [postupy: Přidání instalačních programů pro vaše aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+     Další informace o instalačních programů najdete v tématu [postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
   
 <a name="BK_StartupParameters"></a>   
-## <a name="set-startup-parameters"></a>Nastavit parametry spuštění  
- Služby systému Windows, jako je jakéhokoliv jiného spustitelného souboru, může přijmout argumenty příkazového řádku, nebo parametry spuštění. Když přidáte kód k parametrům spuštění procesu, uživatelé mohou spustit služby s vlastní parametry vlastní spuštění pomocí okna služby v Ovládacích panelech Windows. Tyto parametry spuštění však nejsou trvalé při příštím spuštění služby. Pokud chcete nastavit parametry spuštění trvale, můžete nastavit je v registru, jak je znázorněno v tomto postupu.  
+## <a name="set-startup-parameters"></a>Nastavit parametry pro spuštění  
+ Služba Windows, stejně jako jakéhokoliv jiného spustitelného souboru, může přijmout argumenty příkazového řádku, nebo parametry spuštění. Když přidáte kód do parametrů spuštění procesu, uživatelé mohou spustit služby s vlastní vlastní spouštěcí parametry pomocí okna služby v Ovládacích panelech Windows. Tyto spouštěcí parametry nejsou však zachované při příštím spuštění služby. Pokud chcete nastavit spouštěcí parametry trvale, můžete nastavit je v registru, jak je znázorněno v tomto postupu.  
   
 > [!NOTE]
->  Předtím, než se rozhodnete přidat parametry spuštění, zvažte, zda je to nejlepší způsob, jak předat informace k službě. I když jsou parametry spuštění snadno použitelný a analýzy a uživatelé mohou snadno nepřepíšete, mohou být těžší uživatelům zjišťovat a používat bez dokumentaci. Obecně platí Pokud služba vyžaduje více než jen pár parametry spuštění, měli byste zvážit použití registru nebo konfiguračního souboru místo toho. Všechny služby systému Windows má záznam v registru pod HKLM\System\CurrentControlSet\services. V klíči služby, můžete použít **parametry** podklíč k uložení informace, které můžete přístup k službě. Konfigurační soubory aplikace můžete použít pro službu systému Windows stejným způsobem jako u jiných typů programy. Příklad kódu, najdete v části <xref:System.Configuration.ConfigurationManager.AppSettings%2A>.  
+>  Předtím, než se rozhodnete přidat parametry spuštění, zvažte, jestli, která je nejlepší způsob, jak předávání informací do vaší služby. I když parametry spuštění jsou snadno použitelné a pro analýzy a uživatelé snadno je můžete přepsat, mohou být obtížnější uživatelům objevit a používat bez dokumentaci. Obecně platí Pokud vaše služba vyžaduje více než několik parametrů spuštění, měli byste zvážit použití registru nebo konfiguračního souboru místo toho. Každá služba Windows má záznam v registru pod HKLM\System\CurrentControlSet\services. V klíči služby, můžete použít **parametry** podklíč pro ukládání informací, které můžou přistupovat k vaší služby. Konfigurační soubory aplikace můžete použít pro službu Windows stejným způsobem jako u jiných typů aplikací. Příklad kódu naleznete v tématu <xref:System.Configuration.ConfigurationManager.AppSettings%2A>.  
   
 #### <a name="adding-startup-parameters"></a>Přidání parametrů spuštění  
   
-1.  V `Main` metoda v souboru Program.cs nebo v MyNewService.Designer.vb, přidejte argument příkazového řádku:  
+1.  V `Main` metodu v souboru Program.cs nebo MyNewService.Designer.vb, přidejte argument příkazového řádku:  
   
 ```csharp  
 static void Main(string[] args)
@@ -332,7 +332,7 @@ Shared Sub Main(ByVal cmdArgs() As String)
 End Sub
 ```  
   
-2.  Změna `MyNewService` konstruktor následujícím způsobem:  
+2.  Změnit `MyNewService` konstruktor následujícím způsobem:  
   
 ```csharp  
 public MyNewService(string[] args)
@@ -378,9 +378,9 @@ Public Sub New(ByVal cmdArgs() As String)
 End Sub  
 ```  
   
-Tento kód nastaví název zdroje a protokol událostí podle parametry zadané spuštění nebo používá výchozí hodnoty, pokud jsou zadány žádné argumenty.  
+Tento kód nastaví název zdroje a protokol událostí podle Zadaný spouštěcí parametry, nebo použije výchozí hodnoty, pokud nejsou dodány žádné argumenty.  
   
-3. Pokud chcete zadat argumenty příkazového řádku, přidejte následující kód, který `ProjectInstaller` třídy v ProjectInstaller.cs nebo ProjectInstaller.vb:  
+3. Chcete-li zadat argumenty příkazového řádku, přidejte následující kód, který `ProjectInstaller` třídy v ProjectInstaller.cs nebo ProjectInstaller.vb:  
   
 ```csharp  
 protected override void OnBeforeInstall(IDictionary savedState)
@@ -399,28 +399,28 @@ Protected Overrides Sub OnBeforeInstall(ByVal savedState As IDictionary)
 End Sub  
 ```  
   
-Tento kód upraví **ImagePath** klíč registru, který obvykle obsahuje úplnou cestu ke spustitelnému souboru pro službu systému Windows tak, že přidáte výchozí hodnoty parametrů. Uvozovky kolem cestu (a kolem každé jednotlivé parametr) se vyžadují pro službu, kterou chcete spustit správně. Chcete-li změnit parametry pro spuštění této služby systému Windows, uživatelé mohou změnit zadanými parametry **ImagePath** klíče registru, i když tím lépe způsobem je ho změnit prostřednictvím kódu programu a zpřístupnění funkcí pro uživatele v popisný způsobem (například nástroj pro správu nebo konfigurace).  
+Tento kód změní **ImagePath** klíč registru, který obvykle obsahuje úplnou cestu ke spustitelnému souboru pro službu Windows tak, že přidáte výchozí hodnoty parametrů. Uvozovky kolem cestu (a po každé jednotlivé parametr) jsou požadovány pro službu spustit správně. Chcete-li změnit spouštěcí parametry pro tuto službu Windows, uživatelé mohou změnit parametrech daných **ImagePath** klíč registru, i když lepší je vytvoření a změna programu zpřístupnění funkcí pro uživatele v popisný způsobem (třeba správu nebo konfigurace nástroje).  
   
 <a name="BK_Build"></a>   
 ## <a name="building-the-service"></a>Vytvoření služby  
   
 #### <a name="to-build-your-service-project"></a>Sestavení projektu služby  
   
-1.  V **Průzkumníku řešení**, otevřete v místní nabídce pro svůj projekt a zvolte **vlastnosti**. Zobrazí se na stránkách vlastností projektu.  
+1.  V **Průzkumníka řešení**, otevřete kontextovou nabídku pro váš projekt a klikněte na tlačítko **vlastnosti**. Stránky vlastností pro váš projekt se zobrazí.  
   
-2.  Na kartě aplikace v **spouštěcí objekt** vyberte **MyNewService.Program**.  
+2.  Na kartě aplikace v **spouštěcí objekt** klikněte na položku **MyNewService.Program**.  
   
-3.  V **Průzkumníku řešení**, otevřete v místní nabídce pro svůj projekt a zvolte **sestavení** pro sestavení projektu (klávesové: Ctrl + Shift + B).  
+3.  V **Průzkumníka řešení**, otevřete kontextovou nabídku pro váš projekt a klikněte na tlačítko **sestavení** a sestavte projekt (klávesnice: Ctrl + Shift + B).  
   
 <a name="BK_Install"></a>   
-## <a name="installing-the-service"></a>Nainstalovat službu  
- Teď, když jste sestavili službu systému Windows, můžete ho nainstalovat. K instalaci služby systému Windows, musíte mít pověření správce na počítači, na kterém instalujete ho.  
+## <a name="installing-the-service"></a>Instalace služby  
+ Teď, když jste vytvořili službu Windows, můžete ho nainstalovat. Instalace služby Windows, musí mít pověření správce na počítači, na kterém instalujete ho.  
   
-#### <a name="to-install-a-windows-service"></a>Chcete-li nainstalovat služby systému Windows  
+#### <a name="to-install-a-windows-service"></a>Chcete-li nainstalovat službu Windows  
   
-1.  Ve Windows 7 a Windows Server, otevřete **příkazový řádek vývojáře** pod **nástroje sady Visual Studio** v **spustit** nabídky. V systému Windows 8 nebo Windows 8.1, vyberte **nástroje sady Visual Studio** na dlaždici **spustit** obrazovky a pak spusťte příkazový řádek vývojáře s přihlašovacími údaji správce. (Pokud používáte myši, klikněte pravým tlačítkem na **příkazový řádek vývojáře**a potom zvolte **spustit jako správce**.)  
+1.  Ve Windows 7 a Windows serveru, otevřete **Developer Command Prompt** pod **Visual Studio Tools** v **Start** nabídky. V systému Windows 8 nebo Windows 8.1, zvolte **Visual Studio Tools** na dlaždici **Start** obrazovky a pak spusťte příkazový řádek pro vývojáře s přihlašovacími údaji správce. (Pokud používáte myš, klikněte pravým tlačítkem na **Developer Command Prompt**a klikněte na tlačítko **spustit jako správce**.)  
   
-2.  V okně příkazového řádku přejděte do složky, která obsahuje výstupní vašeho projektu. Například v rámci složky Dokumenty přejděte do složky Visual Studio 2013\Projects\MyNewService\bin\Debug.  
+2.  V okně příkazového řádku přejděte do složky, který obsahuje výstup projektu. Například v rámci složky Dokumenty přejděte do složky Visual Studio 2013\Projects\MyNewService\bin\Debug.  
   
 3.  Zadejte následující příkaz:  
   
@@ -428,45 +428,45 @@ Tento kód upraví **ImagePath** klíč registru, který obvykle obsahuje úplno
     installutil.exe MyNewService.exe  
     ```  
   
-     Pokud je služba nainstalována úspěšně, oznámí program installutil.exe úspěch. Pokud nelze najít InstallUtil.exe, ujistěte se, zda existuje ve vašem počítači. Tento nástroj je instalován s rozhraním .NET Framework ke složce `%WINDIR%\Microsoft.NET\Framework[64]\` *framework_version*. Například výchozí cesta pro 32bitovou verzi rozhraní .NET Framework 4, 4.5, 4.5.1 a 4.5.2 je `C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe`.  
+     Pokud je služba nainstalována úspěšně, oznámí program installutil.exe úspěch. Pokud systém nemůže najít InstallUtil.exe, ujistěte se, zda existuje ve vašem počítači. Tento nástroj je nainstalován pomocí rozhraní .NET Framework do složky `%WINDIR%\Microsoft.NET\Framework[64]\` *framework_version*. Například výchozí cesta pro 32bitové verze rozhraní .NET Framework 4, 4.5, 4.5.1 a 4.5.2 je `C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe`.  
   
-     Pokud proces installutil.exe ohlásí selhání, zkontrolujte v protokolu instalace a zjistěte, proč. Ve výchozím nastavení v protokolu je ve stejné složce jako spustitelný soubor služby. Instalace může selhat, pokud <xref:System.ComponentModel.RunInstallerAttribute> třída není obsažena v `ProjectInstaller` třídy, jinak atribut není nastavený na `true`, jinak `ProjectInstaller` třída není `public`.  
+     Pokud proces installutil.exe oznámí selhání, naleznete v protokolu instalace a zjistěte, proč. Ve výchozím nastavení protokolu je ve stejné složce jako spustitelný soubor služby. Instalace může selhat, pokud <xref:System.ComponentModel.RunInstallerAttribute> třída není k dispozici na `ProjectInstaller` třídy, jinak atribut není nastaven na `true`, jinak `ProjectInstaller` třída není `public`.  
   
      Další informace najdete v tématu [postupy: instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
   
 <a name="BK_StartService"></a>   
-## <a name="starting-and-running-the-service"></a>Spuštění a spuštěna služba  
+## <a name="starting-and-running-the-service"></a>Spuštění a spuštěná služba  
   
 #### <a name="to-start-and-stop-your-service"></a>Spuštění a zastavení služby  
   
-1.  V systému Windows, otevřete **spustit** obrazovky nebo **spustit** nabídce a typ `services.msc`.  
+1.  Ve Windows, otevřete **Start** obrazovky nebo **Start** nabídce a zadejte `services.msc`.  
   
-     Teď byste měli vidět **MyNewService** uvedené v **služby** okno.  
+     Teď byste měli vidět **MyNewService** uvedené v **služby** okna.  
   
-     ![MyNewService v okně služby. ] (../../../docs/framework/windows-services/media/windowsservices-serviceswindow.PNG "WindowsServices_ServicesWindow")  
+     ![MyNewService v okně služby. ](../../../docs/framework/windows-services/media/windowsservices-serviceswindow.PNG "WindowsServices_ServicesWindow")  
   
-2.  V **služby** oken, otevřete místní nabídku pro vaši službu a pak zvolte **spustit**.  
+2.  V **služby** okno, otevřete místní nabídku pro vaši službu a pak zvolte **Start**.  
   
-3.  Otevřete místní nabídku pro službu a potom zvolte **Zastavit**.  
+3.  Otevřete místní nabídku pro službu a klikněte na tlačítko **Zastavit**.  
   
 4.  (Volitelné) Z příkazového řádku, můžete použít příkazy `net start``ServiceName` a `net stop``ServiceName` spuštění a zastavení služby.  
   
 #### <a name="to-verify-the-event-log-output-of-your-service"></a>Ověření výstupu služby v protokolu událostí  
   
-1.  V sadě Visual Studio, otevřete **Průzkumníka serveru** (klávesové: Ctrl + Alt + S) a přístup **protokoly událostí** uzel pro místní počítač.  
+1.  V sadě Visual Studio, otevřete **Průzkumníka serveru** (klávesnice: Ctrl + Alt + S) a získat přístup **protokoly událostí** uzel v místním počítači.  
   
-2.  Vyhledejte položku **MyNewLog** (nebo **MyLogFile1**, pokud jste použili volitelný postup pro přidání argumenty příkazového řádku) a rozbalte ho. Měli byste vidět položky pro dvě akce (spouštění a zastavování) byla provedena služby.  
+2.  Vyhledejte výpis pro **MyNewLog** (nebo **MyLogFile1**, pokud jste použili volitelný postup k přidání argumentů příkazového řádku) a rozbalte ho. Měli byste vidět položky pro dvě akce (spouštění a zastavování) vaše služba provedla.  
   
-     ![Pomocí prohlížeče událostí zobrazíte položky protokolu událostí. ] (../../../docs/framework/windows-services/media/windowsservices-eventviewer.PNG "WindowsServices_EventViewer")  
+     ![Pomocí prohlížeče událostí zobrazíte položky protokolu událostí. ](../../../docs/framework/windows-services/media/windowsservices-eventviewer.PNG "WindowsServices_EventViewer")  
   
 <a name="BK_Uninstall"></a>   
-## <a name="uninstalling-a-windows-service"></a>Odinstalace služby systému Windows  
+## <a name="uninstalling-a-windows-service"></a>Odinstalace služby Windows  
   
 #### <a name="to-uninstall-your-service"></a>Odinstalace služby  
   
-1.  Otevřete příkazový řádek vývojáře s přihlašovacími údaji správce.  
+1.  Otevřete příkazový řádek pro vývojáře s přihlašovacími údaji správce.  
   
-2.  V okně příkazového řádku přejděte do složky, která obsahuje výstupní vašeho projektu. Například v rámci složky Dokumenty přejděte do složky Visual Studio 2013\Projects\MyNewService\bin\Debug.  
+2.  V okně příkazového řádku přejděte do složky, který obsahuje výstup projektu. Například v rámci složky Dokumenty přejděte do složky Visual Studio 2013\Projects\MyNewService\bin\Debug.  
   
 3.  Zadejte následující příkaz:  
   
@@ -477,11 +477,11 @@ Tento kód upraví **ImagePath** klíč registru, který obvykle obsahuje úplno
      Pokud je služba úspěšně odinstalována, program installutil.exe oznámí, že byla služba úspěšně odebrána. Další informace najdete v tématu [postupy: instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
   
 ## <a name="next-steps"></a>Další kroky  
- Můžete vytvořit samostatný instalační program, který ostatní můžete použít k instalaci služby Windows, ale vyžaduje další kroky. Technologie ClickOnce nepodporuje služby systému Windows, a proto nelze použít Průvodce publikováním. Můžete použít plnou edici nástroje InstallShield, kterou ale společnost Microsoft neposkytuje. Další informace o programu InstallShield najdete v tématu [InstallShield Limited Edition](/visualstudio/deployment/installshield-limited-edition). Můžete také [sada nástrojů XML pro instalační program systému Windows](http://go.microsoft.com/fwlink/?LinkId=249067) vytvořit instalační program pro službu systému Windows.  
+ Můžete vytvořit samostatný instalační program, který ostatní mohli používat k instalaci služby Windows, ale vyžaduje další kroky. Technologie ClickOnce nepodporuje služby systému Windows, a proto nelze použít Průvodce publikováním. Můžete použít plnou edici nástroje InstallShield, kterou ale společnost Microsoft neposkytuje. Další informace o nástroji InstallShield naleznete v tématu [InstallShield Limited Edition](/visualstudio/deployment/installshield-limited-edition). Můžete také použít [sady nástrojů XML Instalační služby systému Windows](http://go.microsoft.com/fwlink/?LinkId=249067) vytvořit instalační službu pro službu Windows.  
   
- Použití může zkoumat <xref:System.ServiceProcess.ServiceController> komponenta, která umožňuje odesílání příkazů do mají nainstalovánu službu.  
+ Použití může zkoumat <xref:System.ServiceProcess.ServiceController> součásti, která vám umožní odesílat příkazy do služby, které jste nainstalovali.  
   
- Pomocí instalačního programu můžete vytvořit protokol událostí při instalaci aplikace namísto vytvoření protokolu událostí po spuštění aplikace. Při odinstalaci aplikace navíc instalační program protokol událostí odstraní. Další informace najdete v tématu <xref:System.Diagnostics.EventLogInstaller> stránka s referencemi k.  
+ Pomocí instalačního programu můžete vytvořit protokol událostí při instalaci aplikace namísto vytvoření protokolu událostí po spuštění aplikace. Při odinstalaci aplikace navíc instalační program protokol událostí odstraní. Další informace najdete v tématu <xref:System.Diagnostics.EventLogInstaller> referenční stránce.  
   
 ## <a name="see-also"></a>Viz také  
  [Aplikace služby systému Windows](../../../docs/framework/windows-services/index.md)  
