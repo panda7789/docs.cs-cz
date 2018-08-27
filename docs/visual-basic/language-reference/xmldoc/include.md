@@ -5,12 +5,12 @@ helpviewer_keywords:
 - include XML tag
 - <include> XML tag
 ms.assetid: ba8e9173-82cd-460b-8938-a075a2dfb36d
-ms.openlocfilehash: 65bc0439696612cd8331a9c0718efcfee83af574
-ms.sourcegitcommit: 78bcb629abdbdbde0e295b4e81f350a477864aba
+ms.openlocfilehash: da7a6c15c558fc56dbc6a874d4a28c4434f67668
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "33602733"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42932961"
 ---
 # <a name="ltincludegt-visual-basic"></a>&lt;zahrnout&gt; (Visual Basic)
 Odkazuje na jiný soubor, který popisuje typy a členy ve zdrojovém kódu.  
@@ -60,4 +60,4 @@ Odkazuje na jiný soubor, který popisuje typy a členy ve zdrojovém kódu.
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+ [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

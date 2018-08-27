@@ -8,12 +8,12 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-ms.openlocfilehash: 747b2d420beeb63b89b21dd16d2977d12bc5d580
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: d14c196babb03b7f13dde6ab5b46508a30ba26d6
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39244186"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42930781"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Přehled interoperability (Průvodce programováním v C#)
 Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravovaného a nespravovaného kódu.  
@@ -24,7 +24,7 @@ Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravov
  Další informace najdete v tématu [používání nespravovaných funkcí DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md) a [postupy: použití vyvolání platformy pro přehrání souboru Wave](../../../csharp/programming-guide/interop/how-to-use-platform-invoke-to-play-a-wave-file.md).  
   
 > [!NOTE]
->  [Common Language Runtime](../../../standard/clr.md) (CLR) spravuje přístup k systémovým prostředkům. Volání nespravovaného kódu, který je mimo rámec platformy CLR obchází tento mechanismus zabezpečení a proto představuje bezpečnostní riziko. Nespravovaný kód například může volat prostředky v nespravovaném kódu přímo, bez použití mechanismy zabezpečení CLR. Další informace najdete v tématu [zabezpečení rozhraní .NET Framework](https://technet.microsoft.com/en-us/security/).  
+>  [Common Language Runtime](../../../standard/clr.md) (CLR) spravuje přístup k systémovým prostředkům. Volání nespravovaného kódu, který je mimo rámec platformy CLR obchází tento mechanismus zabezpečení a proto představuje bezpečnostní riziko. Nespravovaný kód například může volat prostředky v nespravovaném kódu přímo, bez použití mechanismy zabezpečení CLR. Další informace najdete v tématu [zabezpečení v rozhraní .NET](../../../standard/security/index.md).  
   
 ## <a name="c-interop"></a>interoperabilita C++  
  Interoperabilita C++, označované také jako ho právě funguje (IJW), můžete použít k zabalení nativních tříd jazyka C++, takže mohou být spotřebovány kód, který se vytváří v jazyce C# nebo jiný jazyk rozhraní .NET Framework. K tomuto účelu můžete psát kód C++ zalomení nativní knihovnu DLL nebo klasické komponenty COM. Na rozdíl od jiných jazycích rozhraní .NET Framework [!INCLUDE[vcprvc](~/includes/vcprvc-md.md)] má interoperability podporu, která umožňuje spravovaného a nespravovaného kódu budou umístěné ve stejné aplikaci a dokonce i ve stejném souboru. Potom sestavíte kódu jazyka C++ s použitím **/CLR** přepínače kompilátoru pro vytvoření spravované sestavení. Nakonec přidejte odkaz na sestavení v projektu C# a použít zabalenou objektů, stejně jako ostatní spravované třídy.  

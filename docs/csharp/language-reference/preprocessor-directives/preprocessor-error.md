@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - '#error directive [C#]'
 ms.assetid: f2a7f3af-4cf9-4111-b369-70204d24b26b
-ms.openlocfilehash: 9ea4c24dcc3c0a4d39499bee5900cb9c6cc768c9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ed43c1f85142ec6c54e44db5e3b0b7de3ef36bb8
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33269396"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42935291"
 ---
 # <a name="error-c-reference"></a>#error (referenční dokumentace jazyka C#)
-`#error` Umožňuje generovat chybu z určitého umístění ve vašem kódu. Příklad:  
+`#error` Umožňuje generovat [CS1029](../compiler-messages/cs1029.md) uživatelem definované chybové z určitého umístění ve vašem kódu. Příklad:  
   
 ```csharp
 #error Deprecated code in this method.  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Běžně se používají `#error` v podmíněného direktivu.  
+ Běžně `#error` v podmíněnou direktivu.  
   
- Je také možné upozornění na uživatelem definované s [#warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-warning.md).  
+ Je také možné generovat upozornění definované uživatelem s [#warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-warning.md).  
   
 ## <a name="example"></a>Příklad  
   
@@ -42,7 +42,8 @@ class MainClass
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)

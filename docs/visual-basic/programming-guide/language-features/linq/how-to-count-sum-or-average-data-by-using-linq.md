@@ -15,12 +15,12 @@ helpviewer_keywords:
 - query samples [Visual Basic]
 - count operator [LINQ in Visual Basic]
 ms.assetid: 51ca1f59-7770-4884-8b76-113002e54fc0
-ms.openlocfilehash: 4584f8ee8b0a87c2150217b1b9eb0c19bc122487
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 942cb889c595f8caaf86dee1c025a935bd7db1b1
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39244199"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42934776"
 ---
 # <a name="how-to-count-sum-or-average-data-by-using-linq-visual-basic"></a>Postupy: Počet, suma nebo průměr dat pomocí LINQ (Visual Basic)
 Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi a spouštění dotazů.  
@@ -79,8 +79,8 @@ Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi 
   
 ## <a name="see-also"></a>Viz také  
  [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
- [Dotazy](../../../../visual-basic/language-reference/queries/queries.md)  
+ [Dotazy](../../../../visual-basic/language-reference/queries/index.md)  
  [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
- [Metody DataContext (O/R Designer)](/visualstudio/data-tools/datacontext-methods-o-r-designer)  
+ [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)  
  [Klauzule Aggregate](../../../../visual-basic/language-reference/queries/aggregate-clause.md)  
  [Klauzule Group By](../../../../visual-basic/language-reference/queries/group-by-clause.md)

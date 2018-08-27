@@ -3,14 +3,14 @@ title: 'Ukázkový soubor XML: Zákazníci a objednávky v Namespace2'
 ms.date: 07/20/2015
 ms.assetid: 2da1c474-f658-4dca-a457-c35ef5ba4aff
 ms.openlocfilehash: 53ad3633361772dc4a9be337df7ae2e1b8a60a5a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33337207"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42929713"
 ---
 # <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a>Ukázkový soubor XML: Zákazníci a objednávky v Namespace
-Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor obsahuje zákazníci a objednávky. XML je v oboru názvů.  
+Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor obsahuje zákazníci a objednávky. XML je v oboru názvů.  
   
 ## <a name="customersordersinnamespacexml"></a>CustomersOrdersInNamespace.xml  
   

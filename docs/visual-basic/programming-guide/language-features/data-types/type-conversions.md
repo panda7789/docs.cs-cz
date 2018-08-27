@@ -10,38 +10,38 @@ helpviewer_keywords:
 - changing data types [Visual Basic]
 - data type conversion [Visual Basic]
 ms.assetid: 1cdacd21-ba31-4b62-b5be-395e41eeaa17
-ms.openlocfilehash: 7f1a571cda4f68222c5c03c3a8fe31c29eafd8c0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 026b2a250abfac0782feb0946bc50a94f504f7ed
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33647189"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42932283"
 ---
 # <a name="type-conversions-in-visual-basic"></a>Převody typů v jazyce Visual Basic
-Proces změny hodnoty z jednoho datového typu na jiný typ se nazývá *převod*. Převody jsou buď *rozšiřující* nebo *zužující*, v závislosti na data kapacitou typy související se situací. Jsou i *implicitní* nebo *explicitní*, v závislosti na syntaxi ve zdrojovém kódu.  
+Proces změny hodnotu z jednoho datového typu na jiný typ se nazývá *převod*. Převody jsou buď *rozšiřující* nebo *zúžení*, v závislosti na datové kapacity zahrnuté typů. Jsou také *implicitní* nebo *explicitní*, v závislosti na syntaxi ve zdrojovém kódu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)  
- Vysvětluje převody klasifikovaný sloupcem jestli typ cíle může obsahovat data.  
+ Vysvětluje převody klasifikuje Určuje, zda cílový typ může obsahovat data.  
   
  [Implicitní a explicitní převody](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
- Popisuje převody klasifikovaný sloupcem jestli jazyka Visual Basic provádí je automaticky.  
+ Tento článek popisuje klasifikuje Určuje, zda jazyka Visual Basic je automaticky provádí převody.  
   
  [Převody mezi řetězci a ostatními typy](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)  
- Znázorňuje převádění mezi řetězci a číselné literály, `Boolean`, nebo hodnoty data a času.  
+ Převod mezi řetězci a číselné literály, ukazuje `Boolean`, nebo hodnoty data a času.  
   
  [Postupy: převedení objektu na jiný typ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)  
- Ukazuje, jak převést `Object` proměnnou ostatních typů dat.  
+ Ukazuje, jak převést `Object` proměnné k jakýmkoli jiným datovým typem.  
   
  [Převody polí](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)  
- Vás provede procesem převodu mezi poli s různými datovými typy.  
+ Vás provede jednotlivými kroky procesu převodu mezi pole různých datových typů.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
- Představuje Visual Basic – datové typy a popisuje jejich použití.  
+ Představuje datové typy jazyka Visual Basic a popisuje, jak je používat.  
   
- [Datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
- Uvádí základní datové typy poskytl jazyka Visual Basic.  
+ [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
+ Seznam základních datových typů poskytnutých jazyka Visual Basic.  
   
  [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
- Popisuje některé běžné problémy, které mohou nastat při práci s datovými typy.
+ Tento článek popisuje některé běžné problémy, které mohou vzniknout při práci s datovými typy.

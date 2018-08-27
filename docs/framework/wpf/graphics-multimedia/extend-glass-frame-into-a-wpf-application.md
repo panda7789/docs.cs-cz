@@ -10,27 +10,27 @@ helpviewer_keywords:
 - extending glass frames into applications [WPF]
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-ms.openlocfilehash: 1e1efd6db6efa3a0b85d7d7794be7d3728da8c85
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 93eda6d6a13d6a510f2aeb06ab1c66d0cd40927f
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33557508"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42931537"
 ---
 # <a name="extend-glass-frame-into-a-wpf-application"></a>Rozšíření skleněného rámečku do aplikace WPF
-Toto téma ukazuje, jak rozšířit [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] pohotovostní rámce do oblasti klienta aplikace Windows Presentation Foundation (WPF).  
+Toto téma ukazuje, jak rozšířit [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] skleněného rámečku do aplikace Windows Presentation Foundation (WPF) v oblasti klienta.  
   
 > [!NOTE]
->  V tomto příkladu budou fungovat jenom na [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] počítač se systémem Manager okno plochy (správce) s pohotovostní povolena. [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] Domácí edice Basic nepodporuje transparentní skleněný efekt. Oblasti, které by obvykle vykreslení s transparentní skleněný efekt na jinou edici [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] vykreslují neprůhledné.  
+>  Tento příklad bude fungovat jenom na [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] počítač Správce oken plochy (DWM) pomocí skla povolena. [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] Edice Home Basic nepodporuje efekt skla transparentní. Oblasti, které by obvykle vykreslení s efekt skla transparentní na jinou edici [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] jsou generovány neprůhledné.  
   
 ## <a name="example"></a>Příklad  
- Následující obrázek ukazuje pohotovostní rámečku rozšířené do na adresu aplikace Internet Explorer 7.  
+ Následující obrázek ukazuje skleněného rámečku rozšířit do adresa aplikace Internet Explorer 7.  
   
- **Internet Explorer s rámečkem rozšířené pohotovostní za panel Adresa.**  
+ **Internet Explorer s rozšířenou skleněného rámečku za adresního řádku.**  
   
- ![IE7 s rámečkem pohotovostní rozšířeným za panel Adresa. ] (../../../../docs/framework/wpf/graphics-multimedia/media/ie7glasstopbar.PNG "IE7glasstopbar")  
+ ![Aplikace Internet Explorer 7 s rozšířeným za adresního řádku skleněného rámečku. ](../../../../docs/framework/wpf/graphics-multimedia/media/ie7glasstopbar.PNG "IE7glasstopbar")  
   
- Rozšíření rámce přehledné na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace, přístup k nespravované [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] je potřeba. Následující příklad kódu nemá nespravovaného (kódu pinvoke) pro dva [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] potřeba splnit pro rozšíření rámečku do klientské oblasti. Každá z těchto [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] jsou deklarované v třídy s názvem **NonClientRegionAPI**.  
+ Rozšíření skleněného rámečku na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací, přístupu k nespravované [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] je potřeba. Následující příklad kódu nemá nespravovaného kódu (pinvoke) pro dva [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] potřeba splnit pro rozšíření rámce do klientské oblasti. Každá z těchto [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] jsou deklarovány ve třídě volá **NonClientRegionAPI**.  
   
 ```csharp  
 [StructLayout(LayoutKind.Sequential)]  
@@ -62,10 +62,10 @@ public static extern int DwmExtendFrameIntoClientArea(
         End Function  
 ```  
   
- [Dwmextendframeintoclientarea –](https://msdn.microsoft.com/library/aa969512.aspx) je funkce Správce oken plochy, která rozšiřuje rámečku do klientské oblasti. Jak dlouho trvá dva parametry; Popisovač okna a [OKRAJE](https://msdn.microsoft.com/library/bb773244.aspx) struktura. [OKRAJE](https://msdn.microsoft.com/library/bb773244.aspx) Správce oken plochy pozná, kolik velmi rámečku by měla být rozšířena na klientské oblasti.  
+ [Dwmextendframeintoclientarea –](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea) je funkce Správce oken plochy, která rozšiřuje rámce do klientské oblasti. Přebírá dva parametry; Popisovač okna a [OKRAJE](/windows/desktop/api/uxtheme/ns-uxtheme-_margins) struktury. [OKRAJE](/windows/desktop/api/uxtheme/ns-uxtheme-_margins) Správce oken plochy pozná, kolik dalších rámce by měl být rozšířena na klientské oblasti.  
   
 ## <a name="example"></a>Příklad  
- Chcete-li použít [dwmextendframeintoclientarea –](https://msdn.microsoft.com/library/aa969512.aspx) funkce, musí být získána popisovač okna. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], můžete získat popisovač okna <xref:System.Windows.Interop.HwndSource.Handle%2A> vlastnost <xref:System.Windows.Interop.HwndSource>. V následujícím příkladu je rozšířeno rámečku do oblasti klienta na <xref:System.Windows.FrameworkElement.Loaded> událost okna.  
+ Použít [dwmextendframeintoclientarea –](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea) funkce, je potřeba pořídit popisovač okna. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], můžete získat popisovač okna <xref:System.Windows.Interop.HwndSource.Handle%2A> vlastnost <xref:System.Windows.Interop.HwndSource>. V následujícím příkladu je na rámce rozšíří do klientské oblasti <xref:System.Windows.FrameworkElement.Loaded> událostí okna.  
   
 ```csharp  
 void OnLoaded(object sender, RoutedEventArgs e)  
@@ -109,7 +109,7 @@ void OnLoaded(object sender, RoutedEventArgs e)
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje jednoduchý okno, ve kterém je rozšířeno rámečku do klientské oblasti. Rámečku je rozšířeno za horního ohraničení, který obsahuje dva <xref:System.Windows.Controls.TextBox> objekty.  
+ Následující příklad ukazuje, jednoduché okno, ve kterém je rámec rozšíří do klientské oblasti. Snímek je rozšířená za horního ohraničení, která obsahuje dvě <xref:System.Windows.Controls.TextBox> objekty.  
   
 ```xaml  
 <Window x:Class="SDKSample.Window1"  
@@ -143,13 +143,13 @@ void OnLoaded(object sender, RoutedEventArgs e)
 </Window>  
 ```  
   
- Následující obrázek ukazuje pohotovostní rámečku rozšířené na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace.  
+ Následující obrázek ukazuje skleněného rámečku do rozšířené [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace.  
   
- **Pohotovostní rámec rozšířený do**[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]**aplikace.**  
+ **Rozšíří skleněného rámečku do**[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]**aplikace.**   
   
- ![Skleněný rámec rozšířený do aplikace WPF. ] (../../../../docs/framework/wpf/graphics-multimedia/media/wpfextendedglassintoclient.PNG "WPFextendedGlassIntoClient")  
+ ![Skleněného rámečku rozšíří do aplikace WPF. ](../../../../docs/framework/wpf/graphics-multimedia/media/wpfextendedglassintoclient.PNG "WPFextendedGlassIntoClient")  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled Správce oken plochy](https://msdn.microsoft.com/library/aa969540.aspx)  
- [Přehled Správce oken plochy rozostření](https://msdn.microsoft.com/library/aa969537.aspx)  
- [DwmExtendFrameIntoClientArea](https://msdn.microsoft.com/library/aa969512.aspx)
+ [Přehled Správce oken plochy](/windows/desktop/dwm/dwm-overview)  
+ [Přehled Správce oken plochy rozostření](/windows/desktop/dwm/blur-ovw)  
+ [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea)

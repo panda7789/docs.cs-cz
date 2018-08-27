@@ -3,12 +3,12 @@ title: Dotazování na kolekci objektů (LINQ v JAZYKU C#)
 description: Zjistěte, jak dát dotaz na kolekce pomocí jazyka LINQ v jazyce C#.
 ms.date: 11/30/2016
 ms.assetid: 87a76f8a-0b58-4791-90ea-2fe0a30416c9
-ms.openlocfilehash: 87c7bbe789c165a6e189231df1979fc264a34dce
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 7bc59e7009f9ae8d8f66c24e9519d9100404c9c4
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403918"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42935538"
 ---
 # <a name="query-a-collection-of-objects"></a>Dotazování na kolekci objektů
 
@@ -26,5 +26,5 @@ Tento dotaz je záměrně jednoduchá umožňují snadno experimentovat. Napří
   
 ## <a name="see-also"></a>Viz také:
 
-[LINQ (Language Integrated Query)](index.md)  
-[Interpolace řetězců](../language-reference/tokens/interpolated.md)
+- [LINQ (Language Integrated Query)](index.md)  
+- [Interpolace řetězců](../language-reference/tokens/interpolated.md)

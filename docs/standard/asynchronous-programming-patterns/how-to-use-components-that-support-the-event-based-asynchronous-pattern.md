@@ -19,11 +19,11 @@ helpviewer_keywords:
 - AsyncCompletedEventArgs class
 ms.assetid: 35e9549c-1568-4768-ad07-17cc6dff11e1
 ms.openlocfilehash: e6aecd5957ae62e3c147af22c2a1b135a4c32310
-ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42752147"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42934835"
 ---
 # <a name="how-to-use-components-that-support-the-event-based-asynchronous-pattern"></a>Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech
 Řada komponent poskytují možnost asynchronní provádění své práce. <xref:System.Media.SoundPlayer> a <xref:System.Windows.Forms.PictureBox> komponenty, například umožňuje načíst podle názvu dalo čekat a Image "v pozadí" i když hlavní podproces stále spuštěná bez přerušení.  

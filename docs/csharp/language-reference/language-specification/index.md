@@ -1,5 +1,5 @@
 ---
-title: Specifikace jazyka C# 6.0 konceptu
+title: Specifikace konceptu jazyka C# 6.0
 ms.date: 05/22/2018
 ms.topic: language-reference
 helpviewer_keywords:
@@ -8,26 +8,27 @@ helpviewer_keywords:
 - Visual C#, C# language specification
 - language specification [C#]
 ms.assetid: e5d5a5cc-636b-4bff-b9c8-a8edc6207c22
-ms.openlocfilehash: 5ed035d5e1e524de9f86254d03e3276966293bf6
-ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
+ms.openlocfilehash: 976282ab51ec3e9990161abf2dd089798bd949dd
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2018
-ms.locfileid: "34472786"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42931273"
 ---
-# <a name="c-60-draft-language-specification"></a>Specifikace jazyka C# 6.0 konceptu
+# <a name="c-60-draft-language-specification"></a>Specifikace konceptu jazyka C# 6.0
 
-Specifikace jazyka C# je rozhodujícím zdrojem pro syntaxi a použití jazyka C#. Tato specifikace obsahuje podrobné informace o všech aspektech jazyka, včetně mnoha body, které nezahrnuje dokumentace pro jazyk C#.
+Specifikace jazyka C# je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#. Tato specifikace obsahuje podrobné informace o všech aspektech jazyka, včetně počtu bodů, které nepokrývá dokumentace pro jazyk C#.
 
-Verze 5.0 specifikace byla vydána v prosinec 2017 jako [standardní ECMA-334 5. edice](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf) dokumentu.
+Specifikace verze 5.0 vydala v prosinci 2017 jako [Standard ECMA-334 5th Edition](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf) dokumentu.
 
-Verze 6.0 specifikace nebyla schválena jako standard. Tento web obsahuje [ *koncept* specifikace jazyka C# 6.0](../../../../_csharplang/spec/introduction.md). Je sestaven z obsažené v souborech markdownu [úložiště GitHub dotnet/csharplang](https://github.com/dotnet/csharplang/blob/master/spec/README.md).
+Specifikace verze 6.0 nebyla schválena jako standard. Tento web obsahuje [ *koncept* specifikace jazyka C# 6.0](../../../../_csharplang/spec/introduction.md). Je sestaven z součástí souborů markdownu [úložiště GitHub dotnet/csharplang](https://github.com/dotnet/csharplang/blob/master/spec/README.md).
 
-Problémy na specifikaci konceptu by měl být vytvořen v [dotnet/csharplang](https://github.com/dotnet/csharplang/issues) úložiště. Nebo, pokud vás zajímá opravení chyb narazíte, můžete odeslat [žádost o přijetí změn](https://github.com/dotnet/csharplang/pulls) do stejného úložiště.
+Problémy na specifikace konceptu by měl být vytvořen v [dotnet/csharplang](https://github.com/dotnet/csharplang/issues) úložiště. Nebo, pokud vás zajímají opravení chyb můžete najít, můžete odeslat [žádostí o přijetí změn](https://github.com/dotnet/csharplang/pulls) do stejného úložiště.
 
-## <a name="see-also"></a>Viz také
- [Referenční dokumentace jazyka C#](../index.md)  
- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)  
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 
 >[!div class="step-by-step"]
 [Next](../../../../_csharplang/spec/introduction.md)

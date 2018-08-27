@@ -9,19 +9,20 @@ helpviewer_keywords:
 - casting [C#]
 - converting types [C#]
 ms.assetid: 568df58a-d292-4b55-93ba-601578722878
-ms.openlocfilehash: 0c17fc89d93bdbb01bdef7935e72f8a7d96b0a55
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 971f85b2cabe79237ff62eb36de43873df1d2ae5
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39296140"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933584"
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>Přetypování a převody typů (Průvodce programováním v C#)
-C# je staticky typovaný v době kompilace, jakmile je proměnná deklarována, nemůže být znovu deklarován nebo použít k uložení hodnoty jiného typu, pokud je tento typ lze převést na typ proměnné. Například neexistuje žádný převod z celočíselného do jakékoli libovolné řetězce. Proto po deklarování `i` jako celé číslo, nelze přiřadit řetězec "Hello", jak je znázorněno v následujícím kódu.  
+
+C# je staticky typovaný v době kompilace, jakmile je proměnná deklarována, nemůže být znovu deklarován nebo mu přiřazena hodnota jiného typu, pokud je tento typ implicitně převést na typ proměnné. Například `string` nejde implicitně převést na `int`. Proto po deklarování `i` jako `int`, nelze přiřadit řetězec "Hello", jak ukazuje následující kód:
   
 ```csharp  
 int i;  
-i = "Hello"; // Error: "Cannot implicitly convert type 'string' to 'int'"  
+i = "Hello"; // error CS0029: Cannot implicitly convert type 'string' to 'int'
 ```  
   
  Však můžete někdy potřebovat zkopírovat hodnotu do proměnné nebo metody parametr jiného typu. Například můžete mít celočíselnou proměnnou, která je potřeba předat metodě, jehož parametr zadán jako `double`. Nebo možná budete muset proměnné třídy přiřadit proměnné typu rozhraní. Tyto typy operací jsou volány *převody typů*. V jazyce C# můžete provést následující druhy převody:  
@@ -35,7 +36,7 @@ i = "Hello"; // Error: "Cannot implicitly convert type 'string' to 'int'"
 -   **Převod pomocí tříd pomocných rutin**: K převodu mezi nekompatibilními typy, jako jsou celá čísla a <xref:System.DateTime?displayProperty=nameWithType> objektů, nebo hexadecimálními řetězci a bajtová pole, můžete použít <xref:System.BitConverter?displayProperty=nameWithType> třídy, <xref:System.Convert?displayProperty=nameWithType> třídy a `Parse`metody předdefinované číselné typy, jako <xref:System.Int32.Parse%2A?displayProperty=nameWithType>. Další informace najdete v tématu [postupy: převedení pole bajtů na typ int](../../../csharp/programming-guide/types/how-to-convert-a-byte-array-to-an-int.md), [postupy: převedení řetězce na číslo](../../../csharp/programming-guide/types/how-to-convert-a-string-to-a-number.md), a [postupy: převod mezi hexadecimálními řetězci a číselnými typy](../../../csharp/programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md).  
   
 ## <a name="implicit-conversions"></a>Implicitní převody  
- Pro předdefinované číselné typy implicitní převod může vzít v úvahu hodnota, která má být uložen se vejde do proměnné bez zkrácen nebo zaokrouhleno. Například proměnná typu [dlouhé](../../../csharp/language-reference/keywords/long.md) (8 bajtů celé číslo) můžete ukládat některá hodnota, která [int](../../../csharp/language-reference/keywords/int.md) (4 bajty v počítači 32-bit) můžete ukládat. V následujícím příkladu kompilátor implicitně převede hodnotu na pravé straně na typ `long` před ji přiřadíte `bigNum`.  
+ Pro předdefinované číselné typy implicitní převod může vzít v úvahu hodnota, která má být uložen se vejde do proměnné bez zkrácen nebo zaokrouhleno. Například proměnná typu [dlouhé](../../../csharp/language-reference/keywords/long.md) (64bitové celé číslo) můžete ukládat některá hodnota, která [int](../../../csharp/language-reference/keywords/int.md) (32bitové celé číslo) můžete ukládat. V následujícím příkladu kompilátor implicitně převede hodnotu `num` na pravé straně na typ `long` před ji přiřadíte `bigNum`.  
   
  [!code-csharp[csProgGuideTypes#34](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/casting-and-type-conversions_1.cs)]  
   

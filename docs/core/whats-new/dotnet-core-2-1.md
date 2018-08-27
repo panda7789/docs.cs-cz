@@ -4,12 +4,12 @@ description: Informace o nových funkcích v .NET Core 2.1.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 06/06/2018
-ms.openlocfilehash: 52fe2d47dbca9bc43c2f1274b0d9e535ba9f9abc
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: ec9a8d238dc47f604a1ac0ee7628bf079e89b9c2
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37874569"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42935576"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co je nového v .NET Core 2.1
 
@@ -123,7 +123,7 @@ Pomocí sady .NET Core 2.0 SDK, samostatné aplikace jsou publikované s modulem
 
 ## <a name="windows-compatibility-pack"></a>Windows Compatibility Pack
 
-Když portujete existující kód z rozhraní .NET Framework do .NET Core, můžete použít [Windows Compatibility Pack](https://www.nuget.org/packages/Microsoft.Windows.Compatibility). Poskytuje přístup k 20 000 další rozhraní API, než je k dispozici v .NET Core. Tato rozhraní API patří typy v <xref:System.Drawing?displayProperty="nameWithType"> obor názvů, <xref:System.Diagnostics.EventLog> třídy, rozhraní WMI, čítače výkonu, služby Windows a Windows registru typy a členy.
+Když portujete existující kód z rozhraní .NET Framework do .NET Core, můžete použít [Windows Compatibility Pack](https://www.nuget.org/packages/Microsoft.Windows.Compatibility). Poskytuje přístup k 20 000 další rozhraní API, než je k dispozici v .NET Core. Tato rozhraní API patří typy v <xref:System.Drawing?displayProperty=nameWithType> obor názvů, <xref:System.Diagnostics.EventLog> třídy, rozhraní WMI, čítače výkonu, služby Windows a Windows registru typy a členy.
 
 ## <a name="jit-compiler-improvements"></a>Vylepšení kompilátoru JIT
 
@@ -195,7 +195,7 @@ Následující příklad používá <xref:System.Span%601> instance virtuální 
 
   - <xref:System.Security.Cryptography.CryptographicOperations.ZeroMemory%2A> je paměť vymazání rutinu, která nemůže být optimalizované.
 
-- Statické <xref:System.Security.Cryptography.RandomNumberGenerator.Fill%2A?displayProperty=fullName> metoda výplně <xref:System.Span%601> s náhodné hodnoty.
+- Statické <xref:System.Security.Cryptography.RandomNumberGenerator.Fill%2A?displayProperty=nameWithType> metoda výplně <xref:System.Span%601> s náhodné hodnoty.
 
 - <xref:System.Security.Cryptography.Pkcs.EnvelopedCms?displayProperty=nameWithType> Je nyní podporována v systému Linux a maxOS.
 
@@ -215,7 +215,7 @@ Implementaci soketů zavedena v rozhraní .NET Core 2.1 má několik výhod:
 
 - Konzistentní chování na všech platformách .NET Core.
 
-<xref:System.Net.Http.SocketsHttpHandler> je výchozí implementace v .NET Core 2.1. Ale můžete nakonfigurovat vaší aplikaci použít starší <xref:System.Net.Http.HttpClientHandler> třídy voláním <xref:System.AppContext.SetSwitch%2A?displayProperty="nameWithType"> metody:
+<xref:System.Net.Http.SocketsHttpHandler> je výchozí implementace v .NET Core 2.1. Ale můžete nakonfigurovat vaší aplikaci použít starší <xref:System.Net.Http.HttpClientHandler> třídy voláním <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> metody:
 
 ```csharp
 AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);

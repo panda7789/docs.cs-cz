@@ -1,16 +1,16 @@
 ---
-title: DEREF (entita SQL)
+title: DEREF (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 4c78e833-b260-453d-9bf4-eb39857dd0fa
-ms.openlocfilehash: ee3877ca256eb3847b0284ac2a7362a4a60aad48
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: abe47f8c72abe13bd5c27fe10a412ff94ab861cf
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32761477"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42930009"
 ---
-# <a name="deref-entity-sql"></a>DEREF (entita SQL)
-Dereferences hodnota odkazu a vytváří výsledek této dereference.  
+# <a name="deref-entity-sql"></a>DEREF (Entity SQL)
+Přístupů přes ukazatel referenčními hodnotami a vytváří výsledek, který přístup přes ukazatel.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,20 +20,20 @@ SELECT DEREF ( o.expression ) from Table as o;
   
 ## <a name="arguments"></a>Arguments  
  `expression`  
- Jakýkoli platný dotaz výraz, která vrátí kolekci.  
+ Libovolný výraz platný dotaz, který vrátí kolekci.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Hodnota entity, který se odkazuje.  
+ Hodnota entity, na který odkazuje.  
   
 ## <a name="remarks"></a>Poznámky  
- Operátor DEREF dereferences hodnota odkazu a vytváří výsledek této dereference. Například pokud `r` odkaz typu ref\<T >, `Deref``(r)` je výraz typu `T` , vypočítá entita odkazuje `r`. Pokud hodnota odkaz má hodnotu null nebo je nepropojená (který je cílem odkazu neexistuje), výsledkem operátoru DEREF má hodnotu null.  
+ Operátor DEREF přístupů přes ukazatel, hodnota odkazu a vytváří výsledek, který přístup přes ukazatel. Například pokud `r` odkaz na typ ref\<T >, `Deref(r)` je výraz typu `T` , která poskytuje entita odkazuje `r`. Pokud hodnota odkazu je null nebo je nepropojená (to znamená, že cíl odkazu neexistuje), výsledek operátoru DEREF má hodnotu null.  
   
 ## <a name="example"></a>Příklad  
- Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu pomocí operátoru DEREF dereference produktu dereference výsledek a hodnota odkazu. Dotaz je založen na modelu prodej AdventureWorks. Pro zkompilování a spuštění tohoto dotazu, postupujte takto:  
+ Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu používá operátor DEREF pokouší dereferencovat referenčními hodnotami a přístupu přes ukazatel výsledku, který vytvoří. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
   
-1.  Postupujte podle pokynů v [postup: provedení dotazu tohoto vrátí výsledky PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1.  Postupujte podle pokynů v [postup: provedení dotazu tohoto vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
   
-2.  Následující dotaz předejte jako argument metodu ExecutePrimitiveTypeQuery:  
+2.  Následující dotaz předejte jako argument k metodě ExecutePrimitiveTypeQuery:  
   
  [!code-csharp[DP EntityServices Concepts 2#DEREF](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#deref)]  
   

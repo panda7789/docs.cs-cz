@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c15c554e0ec135b33d671a83b5e27d0a2a89b731
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: faa9bc412e67e0e49ee969bd8b246a424fe628a0
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444253"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42930934"
 ---
 # <a name="imetadataemitapplyeditandcontinue-method"></a>IMetaDataEmit::ApplyEditAndContinue – metoda
 Aktualizuje aktuální obor sestavení změny provedené v Zadaná metadata.  
@@ -37,16 +37,16 @@ HRESULT ApplyEditAndContinue (
   
 #### <a name="parameters"></a>Parametry  
  `pImport`  
- [v] Ukazatel na <<!--zzxref:IUnknown --> `IUnknown`> objekt, který reprezentuje rozdílů metadat ze souboru přenosné spustitelný soubor (PE).  
+ \[v\] ukazatel [IUnknown](/cpp/atl/iunknown) objekt, který reprezentuje delta metadat ze souboru (PE portable executable).
   
- Metadata rozdílů je blok metadata, která obsahuje změny, které byly provedeny kopii skutečného metadat modulu.  
+ Metadata rozdílů je blok metadata, která obsahuje změny, které byly provedeny na kopii skutečného metadata modulu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** použit jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

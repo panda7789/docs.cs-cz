@@ -1,5 +1,5 @@
 ---
-title: -refonly (Visual Basic)
+title: -refout (Visual Basic)
 ms.date: 03/16/2018
 f1_keywords:
 - -refonly
@@ -10,15 +10,15 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e8f6c15084ac9b1a07aef8a0311edfcc4a93337c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33653043"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42932660"
 ---
-# <a name="-refonly-visual-basic"></a>-refonly (Visual Basic)
+# <a name="-refonly-visual-basic"></a>-refout (Visual Basic)
 
-**- Refonly** možnost znamená, že primární výstup kompilace by měl být referenční sestavení místo implementace sestavení. `-refonly` Parametr bezobslužně zakáže výstup vytvořeného soubory PDB, jako referenční sestavení nelze provést.
+**- Refout** možnost znamená, že primární výstup tohoto sestavení by měl být referenční sestavení místo sestavení implementace. `-refonly` Parametr tiše zakáže generování souborů pdb, jako referenční sestavení nelze spustit.
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
 
@@ -30,15 +30,15 @@ ms.locfileid: "33653043"
 
 ## <a name="remarks"></a>Poznámky
 
-Podporuje jazyka Visual Basic `-refout` přepínače, počínaje verzí 15.3.
+Visual Basic podporuje `-refout` přepnout od verze 15.3.
 
-Referenční sestavení jsou pouze metadata sestavení, které obsahují metadata, ale žádný kód implementace. Obsahují informace o typu a členu pro všechno kromě anonymní typy. Důvod použití `throw null` těla (na rozdíl od žádné těla) je, aby PEVerify může spouštět a předat (tedy ověření úplnost metadat).
+Referenční sestavení jsou pouze metadata sestavení, která obsahují metadata, ale žádný implementační kód. Patří mezi ně typů a členů informace pro všechno, co s výjimkou anonymních typů. Důvod pro použití `throw null` subjektů (na rozdíl od bez těla) je tak, aby PEVerify může spuštění a předání (tedy ověřování úplnost metadata).
 
-Zahrnout odkaz na sestavení úrovni sestavení [ReferenceAssembly](xref:System.Runtime.CompilerServices.ReferenceAssemblyAttribute) atribut. Tento atribut je možné zadat zdroj (pak kompilátor nebudete muset syntetizace ji). Z důvodu tohoto atributu moduly runtime odmítne načíst odkaz na sestavení pro spuštění (ale stále může být načteno do kontextu pouze pro reflexi). Nástroje, které odráží sestavení potřeba zajistit, že se načíst odkaz na sestavení jako pouze pro reflexi; jinak, modul runtime vyvolá <xref:System.BadImageFormatException>.
+Zahrnout odkaz na sestavení úrovni sestavení [ReferenceAssembly](xref:System.Runtime.CompilerServices.ReferenceAssemblyAttribute) atribut. Tento atribut může být zadaný ve zdroji (a kompilátor nebude nutné tak, aby odpovídaly ho). Z důvodu tohoto atributu moduly runtime odmítne načíst referenční sestavení pro spuštění (ale stále může být načteny v kontextu pouze pro reflexi). Nástroje, které odpovídají na sestavení se muset ujistit, že se načítají referenční sestavení jako pouze pro reflexi; v opačném případě modul runtime vyvolá <xref:System.BadImageFormatException>.
 
 `-refonly` a [ `-refout` ](refout-compiler-option.md) možnosti se vzájemně vylučují.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 [-refout](refout-compiler-option.md)   
-[Visual Basic – kompilátor příkazového řádku](index.md)  
+[Kompilátor příkazového řádku jazyka Visual Basic](index.md)  
 [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)   

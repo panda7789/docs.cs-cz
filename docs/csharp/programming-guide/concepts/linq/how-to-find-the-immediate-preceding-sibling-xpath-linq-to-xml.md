@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: vyhledání okamžitou předchozí stejné úrovni (XPath-technologie LINQ to XML) (C#)'
+title: 'Postupy: vyhledání okamžité předcházející na stejné úrovni (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 74c06201-0b1b-4b5e-b3ac-0092980614e6
 ms.openlocfilehash: 82c0ee6e7340ada18fb2077c0b8b04fb6a41671a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33318552"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42935190"
 ---
-# <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-c"></a>Postupy: vyhledání okamžitou předchozí stejné úrovni (XPath-technologie LINQ to XML) (C#)
-Někdy budete chtít najít okamžitou předchozí položky do uzlu. Kvůli rozdílu ve sémantika poziční predikáty pro předchozí na stejné úrovni osy v XPath naproti tomu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], to je jedno z zajímavějšího porovnání.  
+# <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-c"></a>Postupy: vyhledání okamžité předcházející na stejné úrovni (XPath – LINQ to XML) (C#)
+Někdy budete chtít najít okamžité předcházející na stejné k uzlu. Z důvodu rozdíly v sémantice poziční predikáty. pro předchozí osy na stejné úrovni ve výrazu XPath, nikoli [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], to je jedna z zajímavější porovnání.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotaz používá <xref:System.Linq.Enumerable.Last%2A> operátor najít poslední uzel v kolekci vrácený <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A>. Výraz XPath naopak používá k nalezení okamžitě předchozí prvek predikát s hodnotou 1.  
+ V tomto příkladu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotaz používá <xref:System.Linq.Enumerable.Last%2A> operátor najít poslední uzel v kolekci vrácené poskytovatelem <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A>. Výraz XPath naopak používá k nalezení prvku bezprostředně předcházející predikátu s hodnotou 1.  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -53,4 +53,4 @@ Results are identical
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML pro uživatele XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+ [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

@@ -13,11 +13,11 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 8342f1389718eb41d1138e0bdd166530c1f2a10e
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
-ms.translationtype: HT
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42907713"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933602"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Cesta formáty souborů v systémech Windows
 

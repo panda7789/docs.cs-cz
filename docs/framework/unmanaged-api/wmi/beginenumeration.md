@@ -1,6 +1,6 @@
 ---
-title: Funkce BeginEnumeration – funkce (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce funkce BeginEnumeration obnoví enumerátor na začátku výčtu
+title: Funkce BeginEnumeration (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce BeginEnumeration návrat na začátek výčtu enumerátor
 ms.date: 11/06/2017
 api_name:
 - BeginEnumeration
@@ -16,14 +16,14 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9699f0cfc4e9fdb989337681b164cc1e703c1e60
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 08406f7d93671b406b3c7cd8719a7a0e5e423184
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33461257"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42930627"
 ---
-# <a name="beginenumeration-function"></a>Funkce BeginEnumeration – funkce
+# <a name="beginenumeration-function"></a>Funkce BeginEnumeration
 Obnoví enumerátor zpět na začátek výčtu.  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -41,68 +41,68 @@ HRESULT BeginEnumeration (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
-`ptr` [v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
+`ptr` [in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `lEnumFlags`  
-[v] Bitová kombinace příznaků nebo hodnoty, které jsou popsané v [poznámky](#remarks) oddíl, který určuje vlastnosti zahrnuté ve výčtu.
+[in] Bitová kombinace příznaků nebo podle hodnoty [poznámky](#remarks) oddíl, který řídí vlastností obsažených ve výčtu.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Zadaná kombinace příznaků v `lEnumFlags` je neplatný nebo neplatný argument byl zadán. |
-|`WBEM_E_UNEXPECTED` | 0x8004101d | Druhé volání `BeginEnumeration` byl proveden bez použité volání [ `EndEnumeration` ](endenumeration.md). |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Je k dispozici zahájíte nové – výčet není dostatek paměti. |
+|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Kombinace příznaků v `lEnumFlags` není platný nebo neplatný argument byl zadán. |
+|`WBEM_E_UNEXPECTED` | 0x8004101d | Druhé volání `BeginEnumeration` proběhla bez opětovné volání [ `EndEnumeration` ](endenumeration.md). |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici zahájíte nový výčet. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemClassObject::BeginEnumeration](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) metoda.
+Tato funkce zalamuje volání na [IWbemClassObject::BeginEnumeration](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) metody.
 
-Příznaky, které lze předat jako `lEnumFlags` argument jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty v kódu.  Můžete kombinovat jeden příznak z každé skupiny libovolný příznakem z jiné skupiny. Příznaky ze stejné skupiny jsou však vzájemně vylučují. 
+Příznaky, které mohou být předány jako `lEnumFlags` argument jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty ve vašem kódu.  Můžete kombinovat jeden příznak z každé skupiny s všechny příznaky z jiné skupiny. Ale příznaky ze stejné skupiny se vzájemně vylučují. 
 
 **Skupina 1**
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_FLAG_KEYS_ONLY` | 0x4 | Obsahovat vlastnosti, které tvoří pouze klíč. |
-|`WBEM_FLAG_REFS_ONLY` | 0x8 | Obsahovat vlastnosti, které jsou pouze odkazy na objekty. |
+|`WBEM_FLAG_REFS_ONLY` | 0x8 | Zahrnují vlastnosti, které jsou pouze odkazy na objekty. |
 
 **Skupina 2**
 
 Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_FLAG_SYSTEM_ONLY` | 0x30 | Omezte výčtu pouze vlastnosti systému. |
-|`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | Obsahovat místní a šířený vlastnosti ale vyloučit vlastnosti systému z výčtu. |
+|`WBEM_FLAG_SYSTEM_ONLY` | 0x30 | Omezte výčet pouze vlastnosti systému. |
+|`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | Zahrnují vlastnosti místní a rozšíří ale vyloučit vlastnosti systému z výčtu. |
 
 Pro třídy:
 
 Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_FLAG_CLASS_OVERRIDES_ONLY` | 0x100 | Omezte výčtu vlastnosti přepsání v definici třídy. |
-|`WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES` | 0x100 | Omezte výčtu vlastnosti přepsání v aktuální definici třídy a vlastnosti nového definovaný ve třídě. |
-| `WBEM_MASK_CLASS_CONDITION` | 0x300 | A maskování (místo příznak) použít proti `lEnumFlags` hodnota ke kontrole, pokud má jedna `WBEM_FLAG_CLASS_OVERRIDES_ONLY` nebo `WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES` nastavena. |
-| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Omezte výčet vlastností, které jsou definované ani upravit v vlastní třídy. |
-| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Omezte výčet vlastností, které se dědí z třídy base. |
+|`WBEM_FLAG_CLASS_OVERRIDES_ONLY` | 0x100 | Omezte výčet vlastností přepsat v definici třídy. |
+|`WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES` | 0x100 | Omezte výčet vlastností přepsat v aktuální definici třídy a nové vlastnosti definované ve třídě. |
+| `WBEM_MASK_CLASS_CONDITION` | 0x300 | A maskování (místo příznak) Chcete-li použít proti `lEnumFlags` hodnotu a zkontrolujte, zda buď `WBEM_FLAG_CLASS_OVERRIDES_ONLY` nebo `WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES` nastavena. |
+| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Omezte výčet vlastností, které jsou definovány nebo upraveny v samotné třídě. |
+| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Omezte výčet vlastností, které se dědí ze základní třídy. |
 
 Pro instance:
 
 Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Omezte výčet vlastností, které jsou definované ani upravit v vlastní třídy. |
-| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Omezte výčet vlastností, které se dědí z třídy base. |
+| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Omezte výčet vlastností, které jsou definovány nebo upraveny v samotné třídě. |
+| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Omezte výčet vlastností, které se dědí ze základní třídy. |
 
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

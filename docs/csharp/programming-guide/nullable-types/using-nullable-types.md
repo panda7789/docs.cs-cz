@@ -1,103 +1,101 @@
 ---
-title: Použití typů s povolenou hodnotou Null (Průvodce programováním v C#)
-ms.date: 07/20/2015
+title: Použití typů s povolenou hodnotou Null (C# Programming Guide)
+description: Zjistěte, jak pracovat s typy s možnou hodnotou Null C#
+ms.date: 08/02/2018
 helpviewer_keywords:
 - nullable types [C#], about nullable types
 ms.assetid: 0bacbe72-ce15-4b14-83e1-9c14e6380c28
-ms.openlocfilehash: d2fe0f34c45d3de0516a71ca5ed4dc807df4bf93
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 600a18cc4dc9d3eda5577336f209c5814a7edb88
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33336918"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933122"
 ---
-# <a name="using-nullable-types-c-programming-guide"></a>Použití typů s povolenou hodnotou Null (Průvodce programováním v C#)
-Typy s možnou hodnotou Null může představovat všechny hodnoty základní typ a další [null](../../../csharp/language-reference/keywords/null.md) hodnotu. Typy s možnou hodnotou Null jsou deklarované v jednom ze dvou způsobů:  
+# <a name="using-nullable-types-c-programming-guide"></a>Použití typů s povolenou hodnotou Null (C# Programming Guide)
+
+Typy s možnou hodnotou Null jsou typy, které představují všechny hodnoty základního typu hodnoty `T`a další [null](../../language-reference/keywords/null.md) hodnotu. Další informace najdete v tématu [typy připouštějící hodnotu Null](index.md) tématu.
+
+Můžete odkazovat na typ připouštějící hodnotu Null v některém z následujících forem: `Nullable<T>` nebo `T?`. Tyto dvě formy jsou zaměnitelné.  
   
- `System.Nullable<T> variable`  
+## <a name="declaration-and-assignment"></a>Deklaraci a přiřazení
+
+Jako typ hodnoty lze implicitně převést na odpovídající typ s možnou hodnotou Null, přiřadíte hodnotu na typ připouštějící hodnotu null jako jeho základní typ hodnoty. Také můžete přiřadit `null` hodnotu.  Příklad:
   
- -nebo-  
+[!code-csharp[declare and assign](../../../../samples/snippets/csharp/programming-guide/nullable-types/NullableTypesUsage.cs#1)]
+
+## <a name="examination-of-a-nullable-type-value"></a>Zkoumání hodnotu typu s možnou hodnotou Null
+
+Použijte následující vlastnosti jen pro čtení sloužící ke zkoumání instanci typu s možnou hodnotou Null pro hodnotu null a načíst hodnotu podkladového typu:  
   
- `T? variable`  
+- <xref:System.Nullable%601.HasValue%2A?displayProperty=nameWithType> Označuje, zda obsahuje instanci typu s možnou hodnotou Null hodnotu jeho nadřízeného typu.
   
- `T` je základní typ typ s možnou hodnotou Null. `T` může být libovolný typ hodnoty včetně `struct`; nemůže být odkazového typu.  
+- <xref:System.Nullable%601.Value%2A?displayProperty=nameWithType> Získá hodnotu základního typu, pokud <xref:System.Nullable%601.HasValue%2A> je `true`. Pokud <xref:System.Nullable%601.HasValue%2A> je `false`, <xref:System.Nullable%601.Value%2A> vlastnost vyvolá <xref:System.InvalidOperationException>.
   
- Příklad může při použití typu s povolenou hodnotou Null, zvažte, jak obyčejnou Logická proměnná může mít dvě hodnoty: true a false. Neexistuje žádná hodnota, která označuje, že "undefined". V mnoha aplikacích programování zejména databáze interakce, proměnné se může objevit v nedefinované stavu. Například na pole v databázi mohou obsahovat hodnoty true nebo false, ale žádná hodnota může obsahovat také vůbec. Podobně odkazové typy může být nastaven na `null` indikující, že nejsou inicializovány.  
+Kód v následujícím příkladu používá `HasValue` vlastnost k ověření, zda proměnná obsahuje hodnotu před zobrazením jej:
   
- Tento rozdíl lze vytvořit velmi programovací pracovní s další proměnné, které se používají k ukládání informací o stavu, použití speciální hodnoty a tak dále. Typ s možnou hodnotou Null modifikátor umožňuje C# k vytvoření typu hodnoty proměnné, které označují nedefinovanou hodnotu.  
+[!code-csharp-interactive[use HasValue](../../../../samples/snippets/csharp/programming-guide/nullable-types/NullableTypesUsage.cs#2)]
   
-## <a name="examples-of-nullable-types"></a>Příklady typů s povolenou hodnotou Null  
- Libovolný typ hodnoty slouží jako základ pro typ s možnou hodnotou Null. Příklad:  
+Typ s možnou hodnotou Null proměnné se taky můžete porovnat `null` namísto použití `HasValue` vlastnosti, jako v následujícím příkladu:  
   
- [!code-csharp[csProgGuideTypes#4](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-nullable-types_1.cs)]  
+[!code-csharp-interactive[use comparison with null](../../../../samples/snippets/csharp/programming-guide/nullable-types/NullableTypesUsage.cs#3)]
+
+Od verze C# 7.0, můžete použít [porovnávání vzorů](../../pattern-matching.md) jak prozkoumat a získat hodnotu typu s možnou hodnotou NULL:
+
+[!code-csharp-interactive[use pattern matching](../../../../samples/snippets/csharp/programming-guide/nullable-types/NullableTypesUsage.cs#4)]
+
+## <a name="conversion-from-a-nullable-type-to-an-underlying-type"></a>Převod z typu s možnou hodnotou Null na základní typ.
+
+Pokud je potřeba přiřadit typ připouštějící hodnotu Null hodnotu typu Null, použijte [operátoru nulového sjednocení `??` ](../../language-reference/operators/null-coalescing-operator.md) zadat hodnotu pro přiřazení, pokud je typ připouštějící hodnotu Null hodnota null (můžete také použít <xref:System.Nullable%601.GetValueOrDefault(%600)?displayProperty=nameWithType> metodu který):
   
-## <a name="the-members-of-nullable-types"></a>Členové typy s možnou hodnotou Null  
- Každá instance typu s povolenou hodnotou Null má dvě veřejné vlastnosti jen pro čtení:  
+[!code-csharp-interactive[?? operator](../../../../samples/snippets/csharp/programming-guide/nullable-types/NullableTypesUsage.cs#5)]
+
+Použití <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> metody, pokud hodnota má být použit při hodnota s možnou hodnotou Null typu má hodnotu null musí být výchozí hodnota základního typu hodnoty.
   
--   `HasValue`  
+Můžete explicitně přetypován typ připouštějící hodnotu NULL do typu Null. Příklad:  
   
-     `HasValue` je typu `bool`. Je nastaven na hodnotu `true` Pokud proměnná obsahuje hodnotu než null.  
+[!code-csharp[explicit cast](../../../../samples/snippets/csharp/programming-guide/nullable-types/NullableTypesUsage.cs#6)]
+
+V době běhu, pokud hodnota s možnou hodnotou Null typu má hodnotu null, vyvolá explicitní přetypování <xref:System.InvalidOperationException>.
+
+Typ hodnotu null je implicitně převést na odpovídající typ s možnou hodnotou Null.
   
--   `Value`  
+## <a name="operators"></a>Operátory
+
+Předdefinované jednočlenné a binární operátory a operátory definované uživatelem, které existují pro typy hodnot může také sloužit typy s možnou hodnotou Null. Tyto operátory vytvořit hodnotu null, pokud jeden nebo oba operandy jsou null. v opačném případě operátor, který se používá omezením hodnoty k výpočtu výsledku. Příklad:  
   
-     `Value` je stejného typu jako nadřazený typ. Pokud `HasValue` je `true`, `Value` obsahuje hodnotu smysluplný. Pokud `HasValue` je `false`, přístupu k `Value` vyvolá výjimku <xref:System.InvalidOperationException>.  
+[!code-csharp[operators](../../../../samples/snippets/csharp/programming-guide/nullable-types/NullableTypesUsage.cs#7)]
   
- V tomto příkladu `HasValue` člen se používá k ověření, zda proměnná obsahuje hodnotu, než se pokusí ji zobrazit.  
+Pro relační operátory (`<`, `>`, `<=`, `>=`), pokud jeden nebo oba operandy hodnotu null, je výsledkem `false`. Nepředpokládejte, protože konkrétní porovnání (například `<=`) vrátí `false`, opačný porovnání (`>`) vrátí `true`. Následující příklad ukazuje, že je 10
+
+- ani větší než nebo rovna hodnotě null,
+- ani nižší než null.
   
- [!code-csharp[csProgGuideTypes#5](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-nullable-types_2.cs)]  
+[!code-csharp-interactive[relational and equality operators](../../../../samples/snippets/csharp/programming-guide/nullable-types/NullableTypesUsage.cs#8)]
   
- Testování pro hodnotu lze také provést jako v následujícím příkladu:  
+Výše uvedený příklad také ukazuje, že porovnání rovnosti dvou typů s povolenou hodnotou Null, které jsou obě hodnotu null je vyhodnocen jako `true`.
+
+## <a name="boxing-and-unboxing"></a>Zabalení a rozbalení
+
+Typ s možnou hodnotou null je [boxed](../types/boxing-and-unboxing.md) následujícími pravidly:
+
+- Pokud <xref:System.Nullable%601.HasValue%2A> vrátí `false`, je vytvořen nulový odkaz.  
+- Pokud <xref:System.Nullable%601.HasValue%2A> vrátí `true`, hodnota základního typu hodnoty `T` je zabalená, není instancí <xref:System.Nullable%601>.
+
+Hodnotový typ, který má odpovídající typ s možnou hodnotou Null, může unbox jako v následujícím příkladu:
+
+[!code-csharp-interactive[boxing and unboxing](../../../../samples/snippets/csharp/programming-guide/nullable-types/NullableTypesUsage.cs#9)]
+
+## <a name="the-bool-type"></a>Logická hodnota? Typ
+
+`bool?` Typ připouštějící hodnotu Null, může obsahovat tři různé hodnoty: [true](../../language-reference/keywords/true-literal.md), [false](../../language-reference/keywords/false-literal.md) a [null](../../language-reference/keywords/null.md). `bool?` Typ je jako logická typ proměnné, který se používá v SQL. Chcete-li zajistit výsledky vytvořené metodou `&` a `|` operátory jsou konzistentní s typem Boolean s hodnotou tři v SQL, jsou k dispozici následující předdefinované operátory:
+
+- `bool? operator &(bool? x, bool? y)`  
+- `bool? operator |(bool? x, bool? y)`  
   
- [!code-csharp[csProgGuideTypes#6](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-nullable-types_3.cs)]  
+Sémantika těchto operátorů je definována v následující tabulce:  
   
-## <a name="explicit-conversions"></a>Explicitní převody  
- Typ s možnou hodnotou Null lze převést na typu regulární explicitně s přetypování nebo pomocí `Value` vlastnost. Příklad:  
-  
- [!code-csharp[csProgGuideTypes#7](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-nullable-types_4.cs)]  
-  
- Pokud definovaná uživatelem definovaný převod mezi dvěma datovými typy, stejné převod mohou sloužit také s možnou hodnotou Null verze těchto datových typů.  
-  
-## <a name="implicit-conversions"></a>Implicitní převody  
- Proměnná typu s povolenou hodnotou Null lze nastavit na hodnotu null s `null` – klíčové slovo, jak je znázorněno v následujícím příkladu:  
-  
- [!code-csharp[csProgGuideTypes#8](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-nullable-types_5.cs)]  
-  
- Je implicitní převod z typu obyčejnou na typ s možnou hodnotou Null.  
-  
- [!code-csharp[csProgGuideTypes#9](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-nullable-types_6.cs)]  
-  
-## <a name="operators"></a>Operátory  
- Předdefinované Unární a binární operátory a uživatelem definované operátory, které existují u typů hodnot může také použít pro typy s možnou hodnotou Null. Tyto operátory vytvořit hodnotu null, pokud operandy jsou null. operátor, jinak používá obsažené hodnotu vypočítat výsledek. Příklad:  
-  
- [!code-csharp[csProgGuideTypes#10](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-nullable-types_7.cs)]  
-  
- Při provádění porovnávání s typy s možnou hodnotou Null, pokud jeden z typů s povolenou hodnotou Null hodnotu null a dalších není všechny porovnání vyhodnocení `false` s výjimkou `!=` (nerovná). Je důležité, abyste předpokládat, že vzhledem k tomu, že konkrétní porovnání vrátí `false`, opačném případě vrátí `true`. V následujícím příkladu 10 není větší než je menší než ani rovnat na hodnotu null. Pouze `num1 != num2` vyhodnocuje `true`.  
-  
- [!code-csharp[csProgGuideTypes#11](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-nullable-types_8.cs)]  
-  
- Porovnání rovnosti dva typy s možnou hodnotou Null, které jsou oba hodnotu null se vyhodnocuje `true`.  
-  
-## <a name="the--operator"></a>Na?? Operátor  
- `??` Operátor definuje výchozí hodnotu, která je vrácena, pokud typ s možnou hodnotou Null se přiřadí k použití hodnot Null typu.  
-  
- [!code-csharp[csProgGuideTypes#12](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-nullable-types_9.cs)]  
-  
- Tento operátor. můžete také použít s více typy s možnou hodnotou Null. Příklad:  
-  
- [!code-csharp[csProgGuideTypes#13](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-nullable-types_10.cs)]  
-  
-## <a name="the-bool-type"></a>Bool? Typ  
- `bool?` Typ s možnou hodnotou Null může obsahovat tři různé hodnoty: [true](../../../csharp/language-reference/keywords/true.md), [false](../../../csharp/language-reference/keywords/false.md) a [null](../../../csharp/language-reference/keywords/null.md). Informace o tom, jak převést z bool? bool, najdete v tématu [postupy: bezpečné přetypování z bool? na bool](../../../csharp/programming-guide/nullable-types/how-to-safely-cast-from-bool-to-bool.md).  
-  
- S možnou hodnotou Null logické hodnoty jsou stejné jako logická hodnota proměnné typ, který se používá v systému SQL. Zajistit, aby výsledky vyprodukované `&` a `|` operátory jsou konzistentní s typem Boolean s hodnotou tři v SQL, jsou k dispozici následující předdefinované operátory:  
-  
- `bool? operator &(bool? x, bool? y)`  
-  
- `bool? operator |(bool? x, bool? y)`  
-  
- Výsledky těchto operátorů jsou uvedené v následující tabulce:  
-  
-|X|y|x a y|x&#124;y|  
+|x|y|x & y|x&#124;y|  
 |-------|-------|---------|--------------|  
 |true|true|true|true|  
 |true|false|false|true|  
@@ -108,9 +106,11 @@ Typy s možnou hodnotou Null může představovat všechny hodnoty základní ty
 |null|true|null|true|  
 |null|false|false|null|  
 |null|null|null|null|  
+
+Všimněte si, že tyto dva operátory neodpovídají pravidel popsaných v [operátory](#operators) oddílu: výsledek vyhodnocení operátor může být jiná než null, i v případě, že jeden z operandů má hodnotu null.
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Typy s povolenou hodnotou Null](../../../csharp/programming-guide/nullable-types/index.md)  
- [Zabalení typů s povolenou hodnotou Null](../../../csharp/programming-guide/nullable-types/boxing-nullable-types.md)  
- [Typy hodnot s povolenou hodnotou Null](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
+## <a name="see-also"></a>Viz také:
+
+ [Typy s možnou hodnotou Null](index.md)  
+ [Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
+ [Co přesně pojem "zrušeno" znamená?](https://blogs.msdn.microsoft.com/ericlippert/2007/06/27/what-exactly-does-lifted-mean/)  

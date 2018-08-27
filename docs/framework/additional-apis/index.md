@@ -1,5 +1,5 @@
 ---
-title: Rozhraní API a knihovny další – třída
+title: Další knihovny tříd a rozhraní API
 ms.date: 01/29/2018
 helpviewer_keywords:
 - Additional class libraries
@@ -9,43 +9,43 @@ helpviewer_keywords:
 ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bdba02feb8cacc6ab1886c12f88716184aa2a81a
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 049268c29946e95ca7bb194f6cae38baf8f060f6
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32752426"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933527"
 ---
-# <a name="additional-class-libraries-and-apis"></a>Rozhraní API a knihovny další – třída
+# <a name="additional-class-libraries-and-apis"></a>Další knihovny tříd a rozhraní API
 
-Rozhraní .NET Framework je neustále vyvíjejí a za účelem zlepšení vývoj pro různé platformy nebo zavést nové funkce již v rané fázi pro naše zákazníky, vydáváme nové funkce vzdálenou správu (OOB). Toto téma obsahuje seznam projektů OOB, které poskytujeme dokumentaci.  
+Rozhraní .NET Framework se neustále vyvíjí. Zlepšení vývoje napříč platformami a již v rané fázi zavedení nových funkcí, jsou vydávány nové funkce mimo pásmo (OOB). Toto téma obsahuje seznam projektů OOB, které zajišťuje dokumentaci.  
   
-Kromě toho některé knihovny cíle specifické platformy nebo implementace rozhraní .NET Framework. Například <xref:System.Text.CodePagesEncodingProvider> třída provede kódování kódu stránky k dispozici pro aplikace UWP vyvinuté pomocí rozhraní .NET Framework. Toto téma obsahuje také tyto knihovny.  
+Kromě toho některé knihovny cílit na konkrétní platformy nebo implementace rozhraní .NET Framework. Například <xref:System.Text.CodePagesEncodingProvider> třídy zpřístupní kódování znakových stránek aplikací pro UWP vyvinuté pomocí rozhraní .NET Framework. Toto téma obsahuje také tyto knihovny.  
   
 ## <a name="oob-projects"></a>Projekty OOB
   
 | Projekt | Popis |  
 | ------- | ----------- |  
-| <xref:System.Collections.Immutable> | Poskytuje kolekcí, které jsou vlákno bezpečné a zaručenou nikdy změnit jejich obsah. |
-| <xref:System.Net.Http.WinHttpHandler> | Poskytuje obslužné rutiny zpráv pro <xref:System.Net.Http.HttpClient> založené na rozhraní WinHTTP systému Windows. |
-| [System.Numerics.Vectors](https://msdn.microsoft.com/library/mt452176.aspx) | Poskytuje knihovnu vektoru typy, které můžete využít výhod SIMD hardwarové akcelerace.| 
-| <xref:System.Threading.Tasks.Dataflow> | Knihovna toku dat TPL poskytuje součásti toku dat a pomáhá tak zvýšit robustnost aplikací s povolenými souběžnosti. |  
+| <xref:System.Collections.Immutable> | Obsahuje kolekce, které jsou vlákna bezpečné a zaručené nikdy nezmění jejich obsah. |
+| <xref:System.Net.Http.WinHttpHandler> | Poskytuje obslužné rutiny zpráv pro <xref:System.Net.Http.HttpClient> podle WinHTTP rozhraní Windows. |
+| [System.Numerics.Vectors](https://msdn.microsoft.com/library/mt452176.aspx) | Poskytuje knihovnu vektorové typy, které můžete využít výhod SIMD hardwarové akcelerace.| 
+| <xref:System.Threading.Tasks.Dataflow> | Knihovna TPL datového toku poskytuje součásti toku dat a pomáhá tak zvýšit odolnost aplikace pro práci s souběžnosti. |  
 
-## <a name="platform-specific-libraries"></a>Specifické pro platformu knihovny
+## <a name="platform-specific-libraries"></a>Knihovny pro konkrétní platformu
   
 | Projekt | Popis |  
 | ------- | ----------- |  
-| <xref:System.Text.CodePagesEncodingProvider> | Rozšiřuje <xref:System.Text.EncodingProvider> třídy pro zpřístupnění kódování stránky kód pro aplikace, které cílí na univerzální platformu Windows. |  
+| <xref:System.Text.CodePagesEncodingProvider> | Rozšiřuje <xref:System.Text.EncodingProvider> třídy pro zpřístupnění kódování znakových stránek pro aplikace, které cílí univerzální platformu Windows. |  
   
 ## <a name="private-apis"></a>Soukromé rozhraní API  
 
-Tato rozhraní API podpory produktu infrastruktury a nejsou určené/podporované pro použití přímo z vašeho kódu.  
+Tato rozhraní API podporují produktovou infrastrukturu a nejsou určené nebo podporované pro použití přímo v kódu.  
   
 | Název rozhraní API |
 | -------- |
-| [System.Net.Connection – třída](../../../docs/framework/additional-apis/connection.md) |
+| [Třída System.Net.Connection](../../../docs/framework/additional-apis/connection.md) |
 | [System.Net.Connection.m\_WriteList pole](../../../docs/framework/additional-apis/m_writelist.md) |
-| [System.Net.ConnectionGroup – třída](../../../docs/framework/additional-apis/connectiongroup.md) |
+| [Třída System.Net.ConnectionGroup](../../../docs/framework/additional-apis/connectiongroup.md) |
 | [System.Net.ConnectionGroup.m\_ConnectionList pole](../../../docs/framework/additional-apis/m_connectionlist.md) |
 | [System.Net.CoreResponseData Class](../../../docs/framework/additional-apis/coreresponsedata.md) |
 | [System.Net.CoreResponseData.m\_ResponseHeaders Field](../../../docs/framework/additional-apis/coreresponsedata_m_responseheaders.md) |
@@ -56,9 +56,9 @@ Tato rozhraní API podpory produktu infrastruktury a nejsou určené/podporovan�
 | [System.Net.ServicePoint.m\_ConnectionGroupList Field](../../../docs/framework/additional-apis/m_connectiongrouplist.md) |
 | [System.Net.ServicePointManager.s\_ServicePointTable Field](../../../docs/framework/additional-apis/s_servicepointtable.md) |
 | [System.Windows.Diagnostics.VisualDiagnostics.s\_isDebuggerCheckDisabledForTestPurposes Field](../../../docs/framework/additional-apis/s-isdebuggercheckdisabledfortestpurposes-field.md) |
-| [System.Windows.Forms.Design.DataMemberFieldEditor – třída](../../../docs/framework/additional-apis/datamemberfieldeditor-class.md) |
-| [System.Windows.Forms.Design.DataMemberListEditor – třída](../../../docs/framework/additional-apis/datamemberlisteditor-class.md) |
+| [Třída System.Windows.Forms.Design.DataMemberFieldEditor](../../../docs/framework/additional-apis/datamemberfieldeditor-class.md) |
+| [Třída System.Windows.Forms.Design.DataMemberListEditor](../../../docs/framework/additional-apis/datamemberlisteditor-class.md) |
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 [Rozhraní .NET Framework a nesvázaná vydání](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)

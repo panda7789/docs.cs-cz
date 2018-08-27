@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3f8189f0adb62aa32cd0b85ca5a653aa466c7032
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fb187719ff502abe61ac5deb69c6427a4a64ab44
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33460458"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42930224"
 ---
 # <a name="spawninstance-function"></a>SpawnInstance – funkce
 Vytvoří novou instanci třídy.    
@@ -41,45 +41,45 @@ HRESULT SpawnInstance (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`  
-[v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
+[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `lFlags`  
-[v] Vyhrazena. Tento parametr musí být 0.
+[in] Vyhrazená. Tento parametr musí být 0.
 
 `ppNewInstance`  
-[out] Obdrží má ukazatel na novou instanci třídy. Pokud dojde k chybě, nový objekt, který se vrátí, a `ppNewInstance` je ponechat beze změny doleva.
+[out] Přijímá ukazatel na novou instanci třídy. Pokud dojde k chybě, není objekt vrácen, a `ppNewInstance` je bez jakýchkoli úprav vlevo.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_INCOMPLETE_CLASS` | 0x80041020 | `ptr` není platnou třídu definice a nelze vytvořit nové instance. Buď je neúplný nebo nebyl zaregistrován s Správa systému Windows voláním [PutClassWmi](putclasswmi.md). |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Je k dispozici k dokončení operace není dostatek paměti. |
+| `WBEM_E_INCOMPLETE_CLASS` | 0x80041020 | `ptr` není platnou definicí třídy a nelze vytvořit podřízený nové instance. Je neúplný nebo nebyl zaregistrován pomocí Windows Management voláním [PutClassWmi](putclasswmi.md). |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `ppNewClass` je `null`. |
 | `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemClassObject::SpawnInstance](https://msdn.microsoft.com/library/aa391458(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemClassObject::SpawnInstance](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-spawninstance) metody.
 
-`ptr` musí být definice třídy získány z Správa systému Windows. (Všimněte si, že při vytváření kopie instance z instance je podporována, ale vrácené instance je prázdný.) Tato definice třídy pak použijete k vytvoření nové instance. Volání [PutInstanceWmi](putinstancewmi.md) funkce je povinný, pokud máte v úmyslu zápis instance správy systému Windows.
-
-
+`ptr` musí být definice třídy získat ze správy Windows. (Všimněte si, že vytváření podřízeného procesu instanci z instance je podporováno, ale vrácená instance je prázdný). Pak použijete této definici třídy k vytvoření nové instance. Volání [PutInstanceWmi](putinstancewmi.md) funkce je nutný, pokud máte v úmyslu instance zápisu ke správě Windows.
 
 
-Nový objekt vrácený v `ppNewClass` automaticky stane podtřídy aktuálního objektu. Toto chování nelze přepsat. Není k dispozici žádnou jinou metodu, pomocí kterého lze vytvořit podtřídy (odvozené třídy).
+
+
+Nový objekt vrácený v `ppNewClass` automaticky stane podtřídu aktuálního objektu. Toto chování nelze přepsat. Neexistuje žádná další metoda, podle kterého je možné vytvořit podtřídy (odvozené třídy).
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

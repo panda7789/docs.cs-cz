@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: seznam všech uzlů ve stromu (Visual Basic)'
+title: 'Postupy: výpis všech uzlů ve stromu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: e19289c4-26d1-435b-b0db-fb8bc856b753
 ms.openlocfilehash: b7bd2f3cebbf660209c47f5a4797f343b2b1e4e8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643744"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42929882"
 ---
-# <a name="how-to-list-all-nodes-in-a-tree-visual-basic"></a>Postupy: seznam všech uzlů ve stromu (Visual Basic)
-Někdy je užitečné k zobrazení seznamu všech uzlů ve stromu. To může být užitečné při učení, přesně jak metody nebo vlastnosti ovlivňuje stromu. Jeden ze způsobů seznam obsahující všechny uzly v textové formě je ke generování výraz XPath, který přesně a konkrétně identifikuje libovolného uzlu ve stromu.  
+# <a name="how-to-list-all-nodes-in-a-tree-visual-basic"></a>Postupy: výpis všech uzlů ve stromu (Visual Basic)
+Někdy je užitečné pro výpis všech uzlů ve stromu. To může být užitečné při učení, přesně jak metodu nebo vlastnost ovlivňuje stromu. Jedním z přístupů k výpisu všech uzlů v textové formě je generovat výraz XPath, který právě a konkrétně identifikuje libovolný uzel ve stromu.  
   
- Není zvlášť užitečná při spuštění výrazech XPath pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Výrazy jazyka XPath mít slabší výkon než [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy, a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy jsou mnohem silnější. Ale jako způsob, jak identifikovat uzly ve stromové struktuře XML, XPath pracuje správně.  
+ Není velmi užitečné ke spuštění výrazů XPath pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Výrazy XPath jsou horší výkon než [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy, a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy jsou výrazně výkonnější. Nicméně jako způsob, jak identifikovat uzlů ve stromu XML, XPath funguje dobře.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje funkce s názvem `GetXPath` který generuje konkrétní výraz XPath pro libovolný uzel ve stromové struktuře XML. Vygeneruje odpovídající výrazech XPath i v případě, že uzly jsou v oboru názvů. Výrazy jazyka XPath se generují pomocí předpony oboru názvů.  
+ Tento příklad ukazuje funkci s názvem `GetXPath` , který generuje konkrétní výraz XPath pro libovolný uzel ve stromové struktuře XML. Generuje odpovídající výrazy XPath i v případě, že uzly jsou v oboru názvů. Výrazy XPath jsou generovány pomocí předpony oboru názvů.  
   
- Tento příklad vytvoří malé stromu XML, který obsahuje příklad několik typů uzlů. Potom iteruje podřízených uzlů a vytiskne výraz XPath pro každý uzel.  
+ Příklad poté vytvoří malý stromu XML, který obsahuje příklad z několika typů uzlů. Pak Iteruje přes podřízených uzlů a vytiskne výraz XPath pro každý uzel.  
   
- Si všimnete, že deklarace XML není ve stromu na uzel.  
+ Můžete si všimnout, že deklarace XML není ve stromu na uzel.  
   
  Toto je soubor XML, který obsahuje několik typů uzlů:  
   
@@ -37,7 +37,7 @@ Někdy je užitečné k zobrazení seznamu všech uzlů ve stromu. To může bý
 </Root>  
 ```  
   
- Následuje seznam uzlů ve výše uvedené stromu XML, vyjádřené jako výrazech XPath:  
+ Následuje seznam uzlů ve výše uvedené stromu XML, vyjádřené jako výrazy XPath:  
   
 ```  
 /processing-instruction()  
@@ -264,4 +264,4 @@ End Module
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Pokročilé techniky dotazu (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+ [Pokročilé techniky dotazování (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

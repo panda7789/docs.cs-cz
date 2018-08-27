@@ -1,6 +1,6 @@
 ---
 title: Funkce GetCurrentApartmentType (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce GetCurrentApartmentType načte typu apartment, ve kterém je prováděna volající.
+description: Funkce GetCurrentApartmentType načte typ objektu apartment, ve kterém je spuštěn volající.
 ms.date: 11/06/2017
 api_name:
 - GetCurrentApartmentType
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ca7b5fa5bf6d845d542d3e80c0571e59f3d4c1e0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4de85eb310de70dc8fd61f7c06abca95ec267f87
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33461721"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42931412"
 ---
 # <a name="getcurrentapartmenttype-function"></a>GetCurrentApartmentType – funkce
-Načte typu apartment, ve kterém je prováděna volající.   
+Získá typ objektu apartment, ve kterém je spuštěn volající.   
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -41,32 +41,32 @@ HRESULT GetCurrentApartmentType (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`  
-[v] Ukazatel na [IComThreadingInfo](https://msdn.microsoft.com/library/windows/desktop/ms694502(v=vs.85).aspx) instance.
+[in] Ukazatel [IComThreadingInfo](/windows/desktop/api/objidlbase/nn-objidlbase-icomthreadinginfo) instance.
 
 `aptType`  
-[out] Ukazatel na [APTTYPE](https://msdn.microsoft.com/library/windows/desktop/ms693793(v=vs.85).aspx) hodnotu výčtu, která určuje apartment volajícího.
+[out] Ukazatel [APTTYPE](/windows/desktop/api/objidlbase/ne-objidlbase-_apttype) hodnotu výčtu, která určuje volajícího objektu apartment.
 
 ## <a name="return-value"></a>Návratová hodnota
 
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-| `S_OK` | 0 | Funkce byla úspěšně dokončena. |
-| `E_FAIL` | 0x80000008 | Volající není spuštěno v typu apartment. |
+| `S_OK` | 0 | Funkce, která byla úspěšně dokončena. |
+| `E_FAIL` | 0x80000008 | Volající není prováděna v komplexu. |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IComThreadingInfo::GetCurrentApartmentType](https://msdn.microsoft.com/library/windows/desktop/ms683752(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IComThreadingInfo::GetCurrentApartmentType](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) metody.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

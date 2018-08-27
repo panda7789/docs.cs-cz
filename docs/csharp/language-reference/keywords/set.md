@@ -7,33 +7,34 @@ f1_keywords:
 helpviewer_keywords:
 - set keyword [C#]
 ms.assetid: 30d7e4e5-cc2e-4635-a597-14a724879619
-ms.openlocfilehash: 5baab41a0f9fc81bbf9f606ef569f0653b873e26
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1a79dfb07ee28aaa203e648d50344bfe39c84d88
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33265785"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42934068"
 ---
 # <a name="set-c-reference"></a>set (Referenční dokumentace jazyka C#)
-`set` Definuje – klíčové slovo *přistupujícího objektu* metoda ve vlastnosti nebo indexer, který přiřazuje hodnotu pro vlastnost nebo indexer element. Další informace a příklady naleznete v tématu [vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md), [Auto-Implemented vlastnosti](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md), a [indexery](../../../csharp/programming-guide/indexers/index.md).  
+`set` Definuje – klíčové slovo *přistupující objekt* metoda ve vlastnosti nebo indexovacího člena, který se přiřadí hodnotu k vlastnosti nebo elementu indexeru. Další informace a příklady najdete v tématu [vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md), [implemented Properties](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md), a [indexery](../../../csharp/programming-guide/indexers/index.md).  
   
-V následujícím příkladu definuje, jak `get` a `set` přistupující objekt pro vlastnost s názvem `Seconds`. Používá soukromé pole s názvem `_seconds` zálohovat hodnotu vlastnosti.  
+Následující příklad definuje i `get` a `set` přístupový objekt pro vlastnost s názvem `Seconds`. Používá soukromé pole s názvem `_seconds` zálohovat hodnotu vlastnosti.  
  
  [!code-csharp[set#1](../../../../samples/snippets/csharp/language-reference/keywords/get/get-1.cs)]  
 
-Často `set` přistupujícího objektu se skládá z jednoho příkazu, který vrátí hodnotu, stejně jako v předchozím příkladu. Od verze 7.0 C#, můžete implementovat `set` přistupujícího objektu jako výraz vozidlo člena. Následující příklad implementuje i `get` a `set` přístupových objektů jako výraz vozidlo členy.
+Často se stává `set` přístupový objekt se skládá z jednoho příkazu, který vrací hodnotu, stejně jako v předchozím příkladu. Od verze C# 7.0, můžete implementovat `set` přístupového objektu jako člena s výrazem v těle. Následující příklad implementuje oba `get` a `set` přistupující objekty jako členy s výrazem v těle.
 
  [!code-csharp[set#3](../../../../samples/snippets/csharp/language-reference/keywords/get/get-3.cs)]   
     
-Pro jednoduché případy, kdy vlastnost `get` a `set` přístupové objekty provádět žádné operace, než nastavení nebo načtení hodnotu v poli privátní zálohování, můžete využít výhod podpory kompilátoru C# pro automaticky implementované vlastnosti. Následující příklad implementuje `Hours` jako ve automaticky implementované vlastnosti. 
+Pro jednoduché případech, ve kterém vlastnosti `get` a `set` přistupující objekty provádět žádné jiné operace než nastavení nebo načtení hodnoty v poli privátní zálohování, můžete využít výhod podpory kompilátor jazyka C# pro automaticky implementované vlastnosti. Následující příklad implementuje `Hours` jako automaticky implementované vlastnosti. 
   
  [!code-csharp[set#2](../../../../samples/snippets/csharp/language-reference/keywords/get/get-2.cs)]  
     
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
+- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)

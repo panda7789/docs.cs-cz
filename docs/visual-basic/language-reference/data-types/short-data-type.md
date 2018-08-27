@@ -18,37 +18,37 @@ helpviewer_keywords:
 - Short data type
 - literal type characters [Visual Basic], S
 ms.assetid: 65fcbcf3-a841-400e-885e-301497729a8b
-ms.openlocfilehash: ef99743828d8d80844486b651178622ff45fd554
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eb218a9b72208b13700ebd18dbf588066839203d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33590709"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42930149"
 ---
 # <a name="short-data-type-visual-basic"></a>Short – datový typ (Visual Basic)
-Blokování podepsané 16bitových celých čísel (2bajtová), které pohybovat v rozmezí-32 768 do 32 767.  
+Blokování podepsané 16bitová celá čísla (2bajtových), které v rozsahu od-32 768 až 32 767.  
   
 ## <a name="remarks"></a>Poznámky  
- Použití `Short` datový typ tak, aby obsahovala celé číslo hodnoty, které nevyžadují šířku úplná data `Integer`. V některých případech může modul common language runtime pack vaší `Short` proměnné úzce spolupracují a uložte využití paměti.  
+ Použití `Short` datový typ tak, aby obsahovala celočíselných hodnot, které nevyžadují šířku úplná `Integer`. V některých případech můžete sbalit modul common language runtime vaše `Short` proměnné úzce spolupracují a uložit spotřebu paměti.  
   
  Výchozí hodnota `Short` je 0.  
   
 ## <a name="literal-assignments"></a>Literál přiřazení
 
-Můžete deklarace a inicializace `Short` proměnné jeho přiřazení decimal literál, hexadecimální literál, osmičková literál, nebo (počínaje 2017 Visual Basic) binární literál. Pokud literálu celé číslo je mimo rozsah `Short` (tj. Pokud je menší než <xref:System.Int16.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.Int16.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilace.
+Můžete deklarovat a inicializovat `Short` proměnnou ji přiřadíte desítkový literál, šestnáctkové literál, osmičkové literální, nebo (od verze 2017 jazyka Visual Basic) binární literál. Pokud celočíselný literál je mimo rozsah `Short` (tj. Pokud je menší než <xref:System.Int16.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.Int16.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilace.
 
-V následujícím příkladu, celá čísla rovno 1,034, která jsou reprezentovány jako decimal, šestnáctkové, a binární literály jsou implicitně převést z [celé číslo](integer-data-type.md) k `Short` hodnoty.
+V následujícím příkladu celých čísel je rovno 1,034, které jsou reprezentovány jako desítkové, hexadecimální, a binární literály jsou implicitně převeden z [celé číslo](integer-data-type.md) k `Short` hodnoty.
 
 [!code-vb[Short](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#Short)]
 
 > [!NOTE]
-> Použijte předponu `&h` nebo `&H` k označení hexadecimální literál, předponu `&b` nebo `&B` k označení binární literál a předponu `&o` nebo `&O` k označení osmičková literál. Decimal literály mít žádná předpona.
+> Použijte předponu `&h` nebo `&H` k označení šestnáctkové literálu předpona `&b` nebo `&B` k označení binárního typu literal a předponu `&o` nebo `&O` k označení osmičkové literální. Desítkové literály mají žádná předpona.
 
-Počínaje 2017 Visual Basic, můžete také použít znak podtržítka `_`, jako oddělovač číslice za účelem zlepšení čitelnosti jako následující příklad ukazuje.
+Počínaje rokem 2017 jazyka Visual Basic, můžete použít také znak podtržítka `_`, jako oddělovač číslice za účelem zlepšení čitelnosti jako následující příklad ukazuje.
 
 [!code-vb[Short](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ShortS)]
 
-Od verze Visual Basic 15,5, můžete také použít znak podtržítka (`_`) jako oddělovač úvodní mezi předponu a hexadecimální, binary nebo osmičková číslice. Příklad:
+Od verze 15.5 jazyka Visual Basic, můžete také použít znak podtržítka (`_`) jako počáteční oddělovač mezi prefix a šestnáctkové, binární nebo osmičkové číslice. Příklad:
 
 ```vb
 Dim number As Short = &H_3264
@@ -56,7 +56,7 @@ Dim number As Short = &H_3264
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-Číselné literály může také obsahovat `S` [znak typu](../../programming-guide\language-features\data-types/type-characters.md) k označení `Short` datového typu, jak ukazuje následující příklad.
+Číselné literály může také zahrnovat `S` [znak](../../programming-guide\language-features\data-types/type-characters.md) k označení `Short` datového typu, jak ukazuje následující příklad.
 
 ```vb
 Dim number = &H_3264S
@@ -64,16 +64,16 @@ Dim number = &H_3264S
 
 ## <a name="programming-tips"></a>Tipy pro programování
 
--   **Rozšíření.** `Short` Datový typ rozšiřuje na `Integer`, `Long`, `Decimal`, `Single`, nebo `Double`. To znamená, že můžete převést `Short` na některý z těchto typů bez zjištění <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
+-   **Rozšíření.** `Short` Datový typ rozšiřuje na `Integer`, `Long`, `Decimal`, `Single`, nebo `Double`. To znamená, že můžete převést `Short` na některý z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
   
--   **Znaky typu.** Připojování znak typu literálu `S` k literál vynutí, aby `Short` datového typu. `Short` nemá žádné – znak typu identifikátoru.  
+-   **Znaky typu.** Přidávání znak typu literálu `S` k literálu se z něj stane `Short` datového typu. `Short` nemá žádné – znak typu identifikátoru.  
   
--   **Typ Framework.** Typ odpovídající v rozhraní .NET Framework je <xref:System.Int16?displayProperty=nameWithType> struktura.  
+-   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Int16?displayProperty=nameWithType> struktury.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
  <xref:System.Int16?displayProperty=nameWithType>  
- [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
  [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
  [Datový typ Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)  

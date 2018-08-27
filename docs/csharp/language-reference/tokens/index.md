@@ -12,22 +12,22 @@ helpviewer_keywords:
 ms.assetid: 4c5c0539-2e37-40b7-91ce-75af5aabd3f9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d69332988c698b7dd33aeadbc2cf5d1e9ed8f8be
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7cc105b335069635791e9e558fe6f9a28eba8b60
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33282113"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42931028"
 ---
-# <a name="c-special-characters"></a>Speciální znaky jazyka C#
+# <a name="c-special-characters"></a>C# speciální znaky
 
-Speciální znaky jsou předdefinované, kontextové znaky, které pro které budou se přidá jako předpona změnit program elementu (řetězcového literálu, identifikátor nebo název atributu). C# podporuje následující speciální znaky: 
+Speciální znaky jsou předdefinované, kontextové, které určuje, do které jsou před ovládací prvek programu (řetězcový literál, identifikátor nebo název atributu). C# podporuje tyto speciální znaky: 
 
-- [@](../../../csharp/language-reference/tokens/verbatim.md), typu verbatim identifikátor znak. 
+- [@](../../../csharp/language-reference/tokens/verbatim.md), znak verbatim identifikátoru. 
 
-- [$](../../../csharp/language-reference/tokens/interpolated.md), interpolované řetězce znaků.
+- [$](../../../csharp/language-reference/tokens/interpolated.md), interpolovaný řetězec znaků.
 
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+## <a name="see-also"></a>Viz také
 
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

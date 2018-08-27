@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 56a9b97f37240e385dbd1788bafea62578d687a7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0ec28c581b8e6e0aff3a2765720b6e9795be931b
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33457864"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42931701"
 ---
 # <a name="gettypelibinfo-function"></a>GetTypeLibInfo – funkce
-Vrátí informace o knihovně zadaný typ tak, že prověří jeho [TLIBATTR](https://msdn.microsoft.com/library/ms221376\(v=vs.85\).aspx) struktury.  
+Vrátí informace o zadané knihovny typů prozkoumáním jeho [TLIBATTR](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/ns-oaidl-tagtlibattr) struktury.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,30 +41,30 @@ HRESULT GetTypeLibInfo(
   
 #### <a name="parameters"></a>Parametry  
  `szFile`  
- [v] Název souboru knihovny typů.  
+ [in] Název souboru knihovny typů.  
   
  `pTypeLibID`  
  [out] Identifikátor GUID knihovny typů.  
   
  `pTypeLibLCID`  
- [out] Lokalizace ID knihovny typů.  
+ [out] ID lokalizace knihovny typů.  
   
  `pTypeLibPlatform`  
- [out] A [SYSKIND](https://msdn.microsoft.com/library/ms221272\(v=vs.85\).aspx) příznak, který identifikuje cílový operační systém pro knihovny typů. Běžné hodnoty jsou SYS_WIN32 a SYS_WIN64.  
+ [out] A [SYSKIND](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/ne-oaidl-tagsyskind) příznak, který identifikuje cílový operační systém pro knihovnu typů. Běžné hodnoty jsou SYS_WIN32 a SYS_WIN64.  
   
  `pTypeLibMajorVer`  
- [out] Hlavní číslo verze knihovny typů. Například pro verzi *x.y*, hlavní číslo verze je *x*.  
+ [out] Číslo hlavní verze knihovny typů. Například pro verzi *x.y*, je číslo hlavní verze *x*.  
   
  `pTypeLibMinorVer`  
  [out] Číslo podverze knihovny typů. Například pro verzi *x.y*, je číslo podverze *y*.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetTypeLibInfo` Funkce je volána [Tlbexp.exe (Exportér knihovny)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md). Tento nástroj generuje knihovny typů, které popisuje typy v sestavení běžné language runtime (CLR).  
+ `GetTypeLibInfo` Funkce je volána [Tlbexp.exe (Exportér knihovny typů)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md). Tento nástroj generuje knihovnu typů popisující typy v sestavení common language runtime (CLR).  
   
- Pokud je libovolný parametr hodnotu null, funkce vrátí hodnotu `HRESULT` z `E_POINTER`. Funkce `S_OK`.  
+ Pokud libovolný parametr má hodnotu null, funkce vrátí `HRESULT` z `E_POINTER`. V opačném případě vrátí `S_OK`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** TlbRef.h  
   
@@ -74,4 +74,4 @@ HRESULT GetTypeLibInfo(
   
 ## <a name="see-also"></a>Viz také  
  [Pomocné funkce Tlbexp](../../../../docs/framework/unmanaged-api/tlbexp/index.md)  
- [LoadTypeLibEx – funkce](https://msdn.microsoft.com/library/ms221249\(v=vs.85\).aspx)
+ [LoadTypeLibEx – funkce](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)

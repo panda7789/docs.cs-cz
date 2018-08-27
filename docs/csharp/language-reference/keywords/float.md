@@ -8,12 +8,12 @@ helpviewer_keywords:
 - float keyword [C#]
 - floating-point numbers [C#], float keyword
 ms.assetid: 1e77db7b-dedb-48b7-8dd1-b055e96a9258
-ms.openlocfilehash: 9500aceed62904e68d6b7ee8bec569d12103bb18
-ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
+ms.openlocfilehash: 98f89ba3d79f7679b69ce10fd875b3caf69c5257
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40239876"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42932907"
 ---
 # <a name="float-c-reference"></a>float (Referenční dokumentace jazyka C#)
 
@@ -21,7 +21,7 @@ ms.locfileid: "40239876"
 
 |Typ|Přibližný rozsah|Přesnost|Typ formátu .NET|  
 |----------|-----------------------|---------------|-------------------------|  
-|`float`|-3.4 × 10<sup>38</sup> + 3,4 × 10<sup>38</sup>|7 číslic|<xref:System.Single?displayProperty=nameWithType>|  
+|`float`|±1.5 x 10<sup>−45</sup> k ±3.4 x 10<sup>38</sup>|7 číslic|<xref:System.Single?displayProperty=nameWithType>|  
 
 ## <a name="literals"></a>Literály
 
@@ -37,9 +37,9 @@ Pokud je předchozí deklarace nepoužívají příponu, obdržíte chybu kompil
 
 Integrální číselné typy a typy s plovoucí desetinnou čárkou ve výrazu můžete kombinovat. V takovém případě integrální typy jsou převedeny na typy s plovoucí desetinnou čárkou. Vyhodnocení výrazu se provádí dle následujících pravidel:
 
-- Pokud jeden z typů s plovoucí desetinnou čárkou je [double](double.md), je výraz vyhodnocen [double](double.md) nebo [bool](bool.md) v relačních nebo logické výrazy.
+- Pokud jeden z typů s plovoucí desetinnou čárkou je [double](double.md), je výraz vyhodnocen [double](double.md), nebo [bool](bool.md) v relační porovnání nebo porovnání rovnosti.
 
-- Pokud není žádný [double](double.md) zadejte výraz, výraz je vyhodnocen jako `float` nebo [bool](bool.md) v relačních nebo logické výrazy.
+- Pokud neexistuje žádné [double](double.md) zadejte výraz, výraz je vyhodnocen jako `float`, nebo [bool](bool.md) v relační porovnání nebo porovnání rovnosti.
 
 Výraz s plovoucí desetinnou čárkou může obsahovat následující sady hodnot:
 
@@ -65,12 +65,12 @@ V následujícím příkladu [int](int.md), [krátký](short.md)a `float` jsou z
 
 ## <a name="see-also"></a>Viz také:
 
-<xref:System.Single>  
-[Referenční dokumentace jazyka C#](../index.md)  
-[Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
-[Přetypování a převody typů](../../programming-guide/types/casting-and-type-conversions.md)  
-[Klíčová slova jazyka C#](index.md)  
-[Tabulka celočíselných typů](integral-types-table.md)  
-[Tabulka předdefinovaných typů](built-in-types-table.md)  
-[Tabulka implicitních číselných převodů](implicit-numeric-conversions-table.md)  
-[Tabulka explicitních číselných převodů](explicit-numeric-conversions-table.md)  
+- <xref:System.Single>  
+- [Referenční dokumentace jazyka C#](../index.md)  
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
+- [Přetypování a převody typů](../../programming-guide/types/casting-and-type-conversions.md)  
+- [Klíčová slova jazyka C#](index.md)  
+- [Tabulka celočíselných typů](integral-types-table.md)  
+- [Tabulka předdefinovaných typů](built-in-types-table.md)  
+- [Tabulka implicitních číselných převodů](implicit-numeric-conversions-table.md)  
+- [Tabulka explicitních číselných převodů](explicit-numeric-conversions-table.md)  

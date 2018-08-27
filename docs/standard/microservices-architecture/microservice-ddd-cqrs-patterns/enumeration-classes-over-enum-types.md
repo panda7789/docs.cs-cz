@@ -1,27 +1,27 @@
 ---
-title: Pomocí třídy výčtu místo typy výčtu
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Pomocí třídy výčtu místo typy výčtu
+title: Použití tříd Enumeration místo typů výčtů
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Použití tříd Enumeration místo typů výčtů
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: eff87dbfad84ba5521f029064115a5fc54ee574b
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: f1b88d160d6532c2a768684b55cd236417699322
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106107"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933385"
 ---
-# <a name="using-enumeration-classes-instead-of-enum-types"></a>Pomocí třídy výčtu místo typy výčtu
+# <a name="using-enumeration-classes-instead-of-enum-types"></a>Použití tříd enumeration místo typů výčtů
 
-[Výčty](../../../../docs/csharp/language-reference/keywords/enum.md) (nebo *typy výčtu* pro zkrácení) jsou dynamické jazyk obálku kolem integrální typu. Můžete chtít omezit jejich použití k když ukládáte jednu hodnotu z uzavřených sadu hodnot. Klasifikace podle velikosti (malé, střední, velký) je dobrým příkladem. Pomocí výčty pro tok řízení nebo robustnější abstrakce může být [code pach](http://deviq.com/code-smells/). Tento typ využití vede k křehké kód s mnoha příkazy toku řízení kontrola hodnoty výčtového typu.
+[Výčty](../../../../docs/csharp/language-reference/keywords/enum.md) (nebo *typy výčtu* zkráceně) jsou dynamického zajišťování jazyk obálku celočíselného typu. Můžete chtít omezit jejich použití k když ukládáte jednu hodnotu z uzavřených sadu hodnot. Klasifikace na základě velikostí (malá, střední, velká) je typickým příkladem. Použití výčty pro tok řízení nebo robustnější abstrakce může být [kódu pach](http://deviq.com/code-smells/). Tento typ využití vede k křehké kódu s mnoha příkazech toku řízení kontrolu hodnoty výčtu.
 
-Místo toho můžete vytvořit výčet tříd, které povolit všechny bohaté funkce jazyka objektově orientovaný.
+Místo toho můžete vytvořit výčet tříd, které umožňují bohaté funkce objektově orientovaný jazyk.
 
-Ale to není důležité téma a v mnoha případech pro jednoduchost, můžete pořád použít regular [typy výčtu](../../../../docs/csharp/language-reference/keywords/enum.md) , pokud vaši volbu.
+Ale to není důležité tématu a v mnoha případech se pro jednoduchost, stále můžete pravidelně [typy výčtu](../../../../docs/csharp/language-reference/keywords/enum.md) Pokud tomu dáváte přednost.
 
-## <a name="implementing-an-enumeration-base-class"></a>Implementace základní třídu – výčet
+## <a name="implementing-an-enumeration-base-class"></a>Implementace základní třídy výčtu
 
-Řazení mikroslužbu v eShopOnContainers poskytuje implementaci základní třída výčtu ukázka, jak je znázorněno v následujícím příkladu:
+Pořadí mikroslužeb v aplikaci eShopOnContainers poskytuje implementaci základní třídy výčtu ukázka, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 public abstract class Enumeration : IComparable
@@ -43,22 +43,12 @@ public abstract class Enumeration : IComparable
     {
         return Name;
     }
-
-    public static IEnumerable<T> GetAll<T>() where T : Enumeration, new()
+    
+    public static IEnumerable<T> GetAll<T>() where T : Enumeration
     {
-        var type = typeof(T);
-        var fields = type.GetTypeInfo().GetFields(BindingFlags.Public |
-            BindingFlags.Static |
-            BindingFlags.DeclaredOnly);
-        foreach (var info in fields)
-        {
-            var instance = new T();
-            var locatedValue = info.GetValue(instance) as T;
-            if (locatedValue != null)
-            {
-                yield return locatedValue;
-            }
-        }
+        var fields = typeof(T).GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly);
+
+        return fields.Select(f => f.GetValue(null)).Cast<T>();
     }
 
     public override bool Equals(object obj)
@@ -82,47 +72,57 @@ public abstract class Enumeration : IComparable
 }
 ```
 
-Tuto třídu můžete použít jako typ v žádné entity nebo hodnota objektu jako následující CardType výčet tříd:
+Použijte tuto třídu jako typ v libovolném entity nebo hodnotu objektu, jako u následující třídy výčtu CardType:
 
 ```csharp
-public class CardType : Enumeration
+public abstract class CardType : Enumeration
 {
-    public static CardType Amex = new CardType(1, "Amex");
-    public static CardType Visa = new CardType(2, "Visa");
-    public static CardType MasterCard = new CardType(3, "MasterCard");
+    public static CardType Amex = new AmexCardType();
+    public static CardType Visa = new VisaCardType();
+    public static CardType MasterCard = new MasterCardType();
 
-    protected CardType() { }
-
-    public CardType(int id, string name)
+    protected CardType(int id, string name)
         : base(id, name)
     {
     }
 
-    public static IEnumerable<CardType> List()
+    private class AmexCardType : CardType
     {
-        return new[] { Amex, Visa, MasterCard };
+        public AmexCardType(): base(1, "Amex")
+        { }
     }
-    // Other util methods
+    
+    private class VisaCardType : CardType
+    {
+        public VisaCardType(): base(2, "Visa")
+        { }
+    }
+    
+    private class MasterCardType : CardType
+    {
+        public MasterCardType(): base(3, "MasterCard")
+        { }
+    }
 }
 ```
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Na výčtu jsou evil – aktualizace**
+-   **Výčtového jsou evil – aktualizovat**
     [*https://www.planetgeek.ch/2009/07/01/enums-are-evil/*](https://www.planetgeek.ch/2009/07/01/enums-are-evil/)
 
--   **ADAM Hardman. Jak výčty šíří nákazy – A jak ho Vytvrdit**
+-   **Daniel Hardman. Jak rozložit výčty stádiu – A jak ho Vytvrdit**
     [*https://codecraft.co/2012/10/29/how-enums-spread-disease-and-how-to-cure-it/*](https://codecraft.co/2012/10/29/how-enums-spread-disease-and-how-to-cure-it/)
 
--   **Jimmy Bogard. Třídy – výčet**
+-   **Jimmy Bogard. Výčet tříd**
     [*https://lostechies.com/jimmybogard/2008/08/12/enumeration-classes/*](https://lostechies.com/jimmybogard/2008/08/12/enumeration-classes/)
 
--   **Steve Smith. Výčet alternativy v jazyce C#**
+-   **Steve Smith. Alternativy výčtu v jazyce C#**
     [*https://ardalis.com/enum-alternatives-in-c*](https://ardalis.com/enum-alternatives-in-c)
 
--   **Enumeration.cs.** Základní třída výčet v eShopOnContainers [*https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/Enumeration.cs*](https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/Enumeration.cs)
+-   **Enumeration.cs.** Základní třída výčtu v aplikaci eShopOnContainers [*https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/Enumeration.cs*](https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/SeedWork/Enumeration.cs)
 
--   **CardType.cs**. Ukázka třídy výčet v eShopOnContainers.
+-   **CardType.cs**. Ukázka třídy výčtu v aplikaci eShopOnContainers.
     [*https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/BuyerAggregate/CardType.cs*](https://github.com/dotnet/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/BuyerAggregate/CardType.cs)
 
 

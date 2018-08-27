@@ -6,37 +6,37 @@ helpviewer_keywords:
 - C# language, arrays
 ms.assetid: bb79bdde-e570-4c30-adb0-1dd5759ae041
 ms.openlocfilehash: e01b9463eca88858633b847be256ae5b063459b2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33313498"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42936008"
 ---
 # <a name="arrays-c-programming-guide"></a>Pole (Průvodce programováním v C#)
-V strukturu dat pole můžete uložit více proměnných stejného typu. Pole je deklarovat s typem jejích elementů.  
+Ve struktuře dat pole lze uložit více proměnných stejného typu. Deklarujete pole zadáním typu jeho elementů.  
   
  `type[] arrayName;`  
   
- Následující příklady vytvořit jednorozměrná, multidimenzionální a vícenásobná pole:  
+ Následující příklady vytváří jedno/dvoudimenzionální a vícenásobná pole:  
   
  [!code-csharp[csProgGuideArrays#1](../../../csharp/programming-guide/arrays/codesnippet/CSharp/index_1.cs)]  
   
 ## <a name="array-overview"></a>Pole – přehled  
  Pole má následující vlastnosti:  
   
--   Pole může být [jednorozměrná](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md), [multidimenzionálního](../../../csharp/programming-guide/arrays/multidimensional-arrays.md) nebo [Jagged](../../../csharp/programming-guide/arrays/jagged-arrays.md).  
+-   Pole může být [Single-Dimensional](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md), [multidimenzionální](../../../csharp/programming-guide/arrays/multidimensional-arrays.md) nebo [vícenásobné](../../../csharp/programming-guide/arrays/jagged-arrays.md).  
   
--   Počet dimenzí a délka Každá dimenze se vytvářejí, když je vytvořena instance pole. Tyto hodnoty nelze změnit po dobu životnosti instance.  
+-   Počet rozměrů a délka každé dimenze jsou vytvořeny při vytvoření instance pole. Tyto hodnoty nelze změnit během životnosti instance.  
   
--   Výchozí hodnoty prvků číselná pole je nastaven na hodnotu nula a referenční dokumentace elementů jsou nastaveny na hodnotu null.  
+-   Výchozí hodnoty prvků číselného pole jsou nastaveny na nulu a prvky odkazu jsou nastaveny na hodnotu null.  
   
--   Vícenásobná pole je pole polí, a proto jeho prvky jsou odkazové typy a jsou inicializována tak, aby `null`.  
+-   Vícenásobné pole je pole polí, a proto jeho prvky jsou odkazové typy a jsou inicializovány na hodnotu `null`.  
   
--   Pole jsou nula indexované: pole s `n` elementy je indexovaný z `0` k `n-1`.  
+-   Pole jsou indexována nula: pole s `n` prvky je indexováno od `0` k `n-1`.  
   
--   Elementy pole může být jakéhokoli typu, včetně typu pole.  
+-   Prvky pole mohou být libovolného typu, včetně typu pole.  
   
--   Typy polí jsou [odkazové typy](../../../csharp/language-reference/keywords/reference-types.md) odvozené od abstraktní základní typ <xref:System.Array>. Vzhledem k tomu, že tento typ implementuje <xref:System.Collections.IEnumerable> a <xref:System.Collections.Generic.IEnumerable%601>, můžete použít [foreach](../../../csharp/language-reference/keywords/foreach-in.md) iterace v rámci všech polí v jazyce C#.  
+-   Typy pole jsou [referenční typy](../../../csharp/language-reference/keywords/reference-types.md) odvozené z abstraktního základního typu <xref:System.Array>. Protože tento typ implementuje <xref:System.Collections.IEnumerable> a <xref:System.Collections.Generic.IEnumerable%601>, můžete použít [foreach](../../../csharp/language-reference/keywords/foreach-in.md) iterace pro všechna pole v jazyce C#.  
   
 ## <a name="related-sections"></a>Související oddíly  
   
@@ -54,4 +54,4 @@ V strukturu dat pole můžete uložit více proměnných stejného typu. Pole je
 ## <a name="see-also"></a>Viz také  
  [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
  [Kolekce](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)  
- [Pole – Typ kolekce](http://msdn.microsoft.com/library/8a9964de-8941-47b1-a3cf-a01bc88db9e8)
+ [Array – typ kolekce](http://msdn.microsoft.com/library/8a9964de-8941-47b1-a3cf-a01bc88db9e8)

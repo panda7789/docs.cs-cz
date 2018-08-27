@@ -1,57 +1,57 @@
 ---
-title: Identifikátory (entita SQL)
+title: Identifikátory (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: d58a5edd-7b5c-48e1-b5d7-a326ff426aa4
-ms.openlocfilehash: 55b9ac101c7849c5b348ba8e48c695c0fa328105
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 390c69dec6caed1ffe6faccb5893174d2c211a6b
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32765877"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42932181"
 ---
-# <a name="identifiers-entity-sql"></a>Identifikátory (entita SQL)
-Identifikátory se používají v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] představují aliasy výraz dotazu, odkazy na proměnné, vlastnosti objektů, funkce a tak dále. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nabízí dva typy identifikátorů: jednoduché identifikátory a identifikátory v uvozovkách.  
+# <a name="identifiers-entity-sql"></a>Identifikátory (Entity SQL)
+Identifikátory se používají v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] představující aliasy výraz dotazu, odkazy na proměnné, vlastnosti objektů, funkcí a tak dále. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] poskytuje dva typy identifikátorů: jednoduché identifikátory a identifikátory v uvozovkách.  
   
 ## <a name="simple-identifiers"></a>Jednoduché identifikátory  
- Jednoduchý identifikátor v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je posloupnost alfanumerické znaky a podtržítka. Identifikátor první znak musí být abecedním znakem (a-z nebo A-Z).  
+ Jednoduchý identifikátor. v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je posloupnost alfanumerické znaky a znaky podtržení. První znak identifikátoru musí být abecední znak (a-z nebo A-Z).  
   
 ## <a name="quoted-identifiers"></a>Identifikátory v uvozovkách  
- Identifikátor uvozovkách je všechny posloupnost znaků uzavřeny do hranatých závorek ([]). Umožňují identifikátory v uvozovkách zadejte identifikátory s znaky, které nejsou platné v identifikátory. Všechny znaky mezi hranaté závorky se stanou součástí identifikátor, včetně všechny prázdné znaky.  
+ Identifikátor v uvozovkách je libovolnou posloupností znaků uzavřeny do hranatých závorek ([]). Umožňuje identifikátory v uvozovkách zadejte znaky, které nejsou platné v identifikátorech identifikátory. Všechny znaky mezi hranaté závorky se stanou součástí identifikátoru, včetně všech mezer.  
   
- Identifikátor uvozovkách nesmí obsahovat následující znaky:  
+ Identifikátor v uvozovkách nesmí obsahovat následující znaky:  
   
 -   Nový řádek.  
   
--   Návrat na začátek.  
+-   Návrat.  
   
 -   Karty.  
   
 -   BACKSPACE.  
   
--   Další hranaté závorky (tedy hranaté závorky v rámci hranaté závorky, které zobrazit identifikátor).  
+-   Další hranaté závorky (to znamená, hranaté závorky v hranatých závorkách, která od sebe odděluje identifikátor).  
   
- V uvozovkách identifikátor může obsahovat znaky znakové sady Unicode.  
+ V uvozovkách identifikátor může obsahovat znaky Unicode.  
   
- Identifikátory v uvozovkách umožňují vytvářet znaků název vlastnosti, které nejsou platné v identifikátory, jak je znázorněno v následujícím příkladu:  
+ Identifikátory v uvozovkách umožňují vytvářet znaky názvu vlastnosti, které nejsou platné v identifikátorech, jak je znázorněno v následujícím příkladu:  
   
  `SELECT c.ContactName AS [Contact Name] FROM customers AS c`  
   
- Identifikátory v uvozovkách můžete taky použít k určení identifikátor, který je vyhrazené klíčové slovo z [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Například pokud typ `Email` má vlastnost s názvem "Od", je můžete odstranit nejednoznačnost ho z rezervované klíčové slovo z pomocí hranaté závorky, následujícím způsobem:  
+ Identifikátory v uvozovkách můžete také použít k určení identifikátor, který je vyhrazené klíčové slovo z [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Například pokud typ `Email` má vlastnost s názvem "Z", je můžete odstranit nejednoznačnost ho z vyhrazené klíčové slovo z pomocí hranatých závorek:  
   
  `SELECT e.[From] FROM emails AS e`  
   
- Na pravé straně operátoru tečku (.) můžete použít identifikátor v uvozovkách.  
+ Na pravé straně operátoru tečka (.) můžete použít identifikátor v uvozovkách.  
   
  `SELECT t FROM ts as t WHERE t.[property] == 2`  
   
- V identifikátoru použít hranatá závorka, přidejte další hranatá závorka. V následujícím příkladu "`abc]`" je identifikátor:  
+ Chcete-li v identifikátoru použít hranatá závorka, přidejte další hranatá závorka. V následujícím příkladu "`abc]`" je identifikátor:  
   
  `SELECT t from ts as t WHERE t.[abc]]] == 2`  
   
- Porovnání sémantiku identifikátor v uvozovkách, najdete v části [vstup znaková sada](../../../../../../docs/framework/data/adonet/ef/language-reference/input-character-set-entity-sql.md).  
+ Sémantika porovnání identifikátor v uvozovkách, naleznete v tématu [vstupní znaková sada](../../../../../../docs/framework/data/adonet/ef/language-reference/input-character-set-entity-sql.md).  
   
 ## <a name="aliasing-rules"></a>Pravidla pro aliasy  
- Doporučujeme, abyste zadání aliasů v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazuje vždy, když je potřeba, včetně následujících [!INCLUDE[esql](../../../../../../includes/esql-md.md)] vytvoří:  
+ Doporučujeme, abyste zadání aliasů v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazuje pokaždé, když je nepotřebujete, včetně následujících [!INCLUDE[esql](../../../../../../includes/esql-md.md)] vytvoří:  
   
 -   Pole konstruktoru řádku.  
   
@@ -62,61 +62,61 @@ Identifikátory se používají v [!INCLUDE[esql](../../../../../../includes/esq
 -   Položky v klauzuli GROUP BY výrazu dotazu.  
   
 ### <a name="valid-aliases"></a>Platný aliasy  
- Platný aliasy v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jsou všechny jednoduchý identifikátor nebo identifikátor v uvozovkách.  
+ Platný aliasů v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jsou nějaké jednoduchý identifikátor nebo identifikátor v uvozovkách.  
   
 ### <a name="alias-generation"></a>Generování alias  
- Pokud není zadán žádný alias v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz výrazu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pokusí generovat alias na základě následujících pravidel jednoduchý:  
+ Pokud není zadán žádný alias v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] výrazu, dotazu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pokusí vygenerovat alias na základě následujících pravidel jednoduchý:  
   
--   Pokud ve výrazu dotazu (pro které je alias neurčené) je jednoduchý nebo identifikátor v uvozovkách, tento identifikátor se používá jako alias. Například `ROW(a, [b])` stane `ROW(a AS a, [b] AS [b])`.  
+-   Pokud výraz dotazu (pro který je alias neurčené) je jednoduchý nebo identifikátor v uvozovkách, tento identifikátor se používá jako alias. Například `ROW(a, [b])` stane `ROW(a AS a, [b] AS [b])`.  
   
--   Pokud ve výrazu dotazu je výraz složitější, ale poslední součástí výrazu tohoto dotazu je jednoduchý identifikátor, tento identifikátor se používá jako alias. Například `ROW(a.a1, b.[b1])` stane `ROW(a.a1 AS a1, b.[b1] AS [b1])`.  
+-   Pokud výraz dotazu je složitější výraz, ale poslední součástí tohoto výrazu dotazu je jednoduchý identifikátor, tento identifikátor se používá jako alias. Například `ROW(a.a1, b.[b1])` stane `ROW(a.a1 AS a1, b.[b1] AS [b1])`.  
   
- Doporučujeme vám, že nepoužíváte implicitní aliasy Pokud budete chtít později použít název aliasu. Kdykoliv konflikt aliasy (implicitním nebo explicitním) nebo se opakuje ve stejném oboru, bude k chybě kompilace. Implicitní alias předá kompilace, i když je explicitní nebo implicitní alias se stejným názvem.  
+ Doporučujeme, abyste je velmi riskantní používat implicitní aliasing. Pokud budete chtít později použít název aliasu. Kdykoli konfliktů aliasů (implicitní nebo explicitní) nebo jsou opakovaný ve stejném oboru, bude existovat chyby kompilace. Implicitní alias předá kompilace i v případě, že se explicitní nebo implicitní alias se stejným názvem.  
   
- Implicitní aliasy jsou vytvořeny automaticky založené na vstup uživatele. Například následující kód vygeneruje název jako alias pro oba sloupce a proto budou v konfliktu.  
+ Implicitní aliasy jsou automaticky generované na základě uživatelského zadání. Například následující řádek kódu bude generovat název jako alias pro oba sloupce a proto budou v konfliktu.  
   
 ```  
 SELECT product.NAME, person.NAME  
 ```  
   
- Následující řádek kódu, který používá explicitní aliasy, se také nezdaří. Selhání však bude více zřejmá načtením kód.  
+ Následující řádek kódu, který používá explicitní aliasy, se také nezdaří. Ale selhání bude více pozná se čtením kódu.  
   
 ```  
 SELECT 1 AS X, 2 AS X …  
 ```  
   
-## <a name="scoping-rules"></a>Pravidla rozsahu  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Definuje oboru pravidla, které určují, když konkrétní proměnné jsou viditelné v jazyce dotazu. Některé výrazy nebo příkazy zavést nové názvy. Oboru pravidla určují, kde se dají použít tyto názvy, a pokud nebo kde novou deklaraci se stejným názvem jako jiné můžete skrýt, jeho předchůdce.  
+## <a name="scoping-rules"></a>Pravidla vytváření oborů  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Definuje pravidel stanovení rozsahu, které určují, když konkrétní proměnné jsou viditelné v dotazovacím jazyce. Některé výrazy nebo příkazy zavádí nové názvy. Oboru pravidla určují, kde je možné tyto názvy a kdy a kde novou deklaraci se stejným názvem jako jiný lze skrýt jeho předchůdce.  
   
- Když se názvy jsou definovány v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu, se nazývá být definován v rámci oboru. Obor obsahuje celou oblast dotazu. Všechny výrazy nebo odkazy na název v rámci určitého oboru můžete zobrazit názvy, které jsou definovány v rámci tohoto oboru. Před zahájením oboru a po jeho ukončení, nelze odkazovat názvy, které jsou definovány v rámci oboru.  
+ Když se názvy jsou definovány v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu, se říká, že je definovat v rámci oboru. Obor pokrývá celou oblast dotazu. Všechny výrazy nebo odkazy na název v rámci určitého oboru můžete zobrazit názvy, které jsou definovány v daném oboru. Před zahájením oboru a po jeho skončení, názvy, které jsou definovány v rámci oboru nelze odkazovat.  
   
- Mohou být vnořené obory. Části [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zavést nové obory, které se týkají celé oblasti, a tyto oblasti může obsahovat jiné [!INCLUDE[esql](../../../../../../includes/esql-md.md)] výrazů, které také zavádět obory. Když jsou vnořené obory, názvy, které jsou definovány v nejvnitřnější oboru, který obsahuje odkaz na odkazy provádět. Odkazy lze také všechny názvy, které jsou definovány v jakékoli vnější obory. Žádné dva obory, které jsou definované v rámci stejného oboru jsou považovány za obory na stejné úrovni. Není možné provést odkazy na názvy, které jsou definovány v rámci oborů na stejné úrovni.  
+ Mohou být vnořené obory. Části [!INCLUDE[esql](../../../../../../includes/esql-md.md)] představují nové obory, které pokrývají celou oblastech, a tyto oblasti mohou obsahovat jiné [!INCLUDE[esql](../../../../../../includes/esql-md.md)] výrazy, které přinášejí s sebou obory. Když jsou vnořené obory, názvy, které jsou definovány v nejvnitřnější obor, který obsahuje odkaz na odkazy provádět. Odkazy taky provádět žádné názvy, které jsou definovány v jakékoli vnější obory. Žádné dva obory definované v rámci stejného oboru, jsou považovány za obory na stejné úrovni. Odkazy nelze nastavit na názvy, které jsou definovány v rámci oborů na stejné úrovni.  
   
- Pokud název deklarované v informacích o vnitřní oboru odpovídá názvu deklarovaným ve vnějším oboru, v rámci pro vnitřní obor nebo obory, které jsou deklarované v rámci tohoto oboru o odkazy jenom na nově deklarovaný název. Název v rámci vnějšího oboru je skrytý.  
+ Pokud je název deklarovaný ve vnitřním oboru odpovídá názvu deklarována ve vnějším oboru, vnitřní obor nebo v rámci oborů deklarované v rámci tohoto oboru odkazy pouze na název nově deklarovaný. Je skrytý názvu ve vnějším oboru.  
   
- I v rámci stejného oboru názvů se nemůže odkazovat předtím, než jsou definovány.  
+ Dokonce i v rámci stejného oboru názvů se nedá odkazovat předtím, než jsou definovány.  
   
- Globální názvy může existovat v rámci prostředí pro spuštění. To může zahrnovat názvy trvalé kolekce nebo proměnné prostředí. Název globální musí být deklarován v nejkrajnější oboru.  
+ Globální názvy může existovat jako součást spouštěcího prostředí. To může zahrnovat názvy kolekcí trvalé nebo proměnné prostředí. Název globální musí být deklarována ve vnějším oboru.  
   
- Parametry nejsou v oboru. Protože odkazy na parametry zahrnují speciální syntaxi, názvy parametrů se nikdy dojít ke konfliktu s další názvy v dotazu.  
+ Parametry nejsou v oboru. Protože odkazy na parametry zahrnují speciální syntaxi, názvy parametrů se nikdy kolidují s názvy jiných v dotazu.  
   
 ### <a name="query-expressions"></a>Výrazy dotazu  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Výraz zavádí nový obor dotazu. Názvy, které jsou definovány v klauzuli FROM vydávají do z oboru v pořadí podle vzhled zleva doprava. V seznamu připojení výrazy mohou odkazovat na názvy, které byly definované výše v seznamu. Veřejné vlastnosti (pole a tak dále) elementů určené v klauzuli FROM nejsou přidány do z oborem. Se musí být vždy odkazuje alias kvalifikovaný název. Obvykle jsou považovány všechny části vyberte výrazu za v rámci z oboru.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Zavádí nový obor výrazu dotazu. Názvy, které jsou definovány v klauzuli FROM umístěni do z oboru v pořadí vzhled, zleva doprava. V seznamu spojení výrazy mohou odkazovat na názvy, které byly dříve definovány v seznamu. Veřejné vlastnosti (pole a tak dále) prvků identifikované v klauzuli FROM nejsou přidány do z rozsahu. Musí být vždy odkazuje alias kvalifikovaný název. Obvykle jsou považovány všechny části vyberte výrazu za v rámci z oboru.  
   
- V klauzuli GROUP BY také zavádí nový obor na stejné úrovni. Každá skupina může mít skupina název, který odkazuje na kolekci elementů ve skupině. Každý výraz seskupení také zavádí nový název do oboru skupiny. Agregační vnoření (nebo pojmenovaná skupina) je navíc také přidat do oboru. V rámci z oborem jsou výrazy seskupení sami. Ale pokud je použita klauzule GROUP BY, (projekce) seznamu select, klauzuli HAVING a ORDER BY – klauzule jsou považovány za musí být v oboru skupiny a ne z obor. Agreguje přijímat zvláštní zacházení, jak je popsáno v následujícím seznamu s odrážkami.  
+ V klauzuli GROUP BY také zavádí nový obor na stejné úrovni. Každá skupina může mít skupina název, který odkazuje na kolekci prvků ve skupině. Každý výraz grouping také zavádí nový název do oboru skupiny. Vnoření agregace (nebo pojmenované skupiny) je navíc také přidat do oboru. Výrazy seskupení sami jsou v rámci z oboru. Ale při použití klauzule GROUP BY (projekce) seznamu select, klauzuli HAVING a ORDER BY – klauzule jsou považovány za v rámci oboru skupiny a ne z oboru. Agregace přijímat zvláštní zacházení, jak je popsáno v následujícím seznamu s odrážkami.  
   
- Zde jsou další poznámky o oborech:  
+ Tady jsou další poznámky o oborech:  
   
--   Seznamu vyberte lze do oboru, postupně zavádět nové názvy. Projekce výrazy vpravo může odkazovat na názvy projekci na levé straně.  
+-   Seznamu select můžou představovat nové názvy na obor, v pořadí. Projekce výrazy na pravé straně může odkazovat na názvy plánovaných na levé straně.  
   
--   Klauzuli ORDER by mohou odkazovat na názvy (aliasy) zadané v seznamu select.  
+-   Klauzule ORDER by mohou odkazovat na názvy (aliasy) zadané v seznamu select.  
   
--   Pořadí vyhodnocování v rámci vyberte výrazu klauzule určuje pořadí, že jsou názvy vložena do oboru. Klauzule FROM se vyhodnocují jako první, následuje klauzule WHERE, klauzule GROUP BY, klauzule HAVING, klauzuli SELECT a nakonec v klauzuli ORDER BY.  
+-   Pořadí vyhodnocování klauzule v rámci vyberte výraz určuje pořadí, že jsou názvy zařadit do oboru. Klauzule FROM vyčíslen první, za nímž následuje klauzule WHERE, GROUP BY – klauzule, klauzuli HAVING, klauzule SELECT a nakonec klauzule ORDER by.  
   
-### <a name="aggregate-handling"></a>Souhrnné zpracování  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje dvě formy agregace: na základě kolekce agregované a na základě skupiny položky. Na základě kolekce agregace jsou upřednostňované konstrukce v [!INCLUDE[esql](../../../../../../includes/esql-md.md)], a na základě skupiny agregace jsou podporovány pro SQL kompatibility.  
+### <a name="aggregate-handling"></a>Agregovat zpracování  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje dvě formy agregace: na základě kolekce agregace a agregace podle skupin. Na základě kolekce agregace jsou upřednostňované konstrukce v [!INCLUDE[esql](../../../../../../includes/esql-md.md)], a na základě skupin agregace jsou podporovány pro kompatibilitu SQL.  
   
- Při rozpoznávání agregace, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] poprvé pokusí o považovat za agregace se na základě kolekce. Pokud to nepomůže, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] transformuje agregační vstup na odkaz k agregaci vnoření a pokusí přeložit nové výrazu, jak je znázorněno v následujícím příkladu.  
+ Při překladu agregace, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nejdříve pokusí ji považovat za agregaci na základě kolekce. Pokud se to nepodaří, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] transformuje agregační vstup do odkazu vnoření agregaci a pokusí přeložit nový výrazu, jak je znázorněno v následujícím příkladu.  
   
  `AVG(t.c) becomes AVG(group..(t.c))`  
   

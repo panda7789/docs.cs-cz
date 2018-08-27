@@ -6,24 +6,24 @@ helpviewer_keywords:
 - XML literals [Visual Basic], embedded expressions
 ms.assetid: 75016fad-0141-42de-8564-5051be29487e
 ms.openlocfilehash: 41dc6ef8d2ec2ffd6cd1cf793911f2e09f1a1e77
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33652266"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42929513"
 ---
 # <a name="how-to-embed-expressions-in-xml-literals-visual-basic"></a>Postupy: Vložení výrazů do literálů XML (Visual Basic)
-XML – literály můžete kombinovat s vložené výrazy vytvořit dokument XML, fragment nebo elementu, který obsahuje obsah vytvořený v době běhu. Následující příklady ukazují, jak používat vložené výrazy k naplnění obsahu elementu, atributy a názvy elementu v době běhu.  
+Literály XML lze kombinovat s vložené výrazy pro vytvoření dokumentu XML, fragment nebo element, který obsahuje obsah vytvořený v době běhu. Následující příklady ukazují, jak používat vložené výrazy k naplnění obsah elementu, atributy a názvy elementů v době běhu.  
   
- Syntaxe pro embedded výrazu je `<%=` `exp` `%>`, který se stejnou syntaxí, [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] používá. Další informace najdete v tématu [vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
+ Syntaxe pro vložený výraz je `<%=` `exp` `%>`, což je podle stejné syntaxe, která [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] používá. Další informace najdete v tématu [vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
   
- Můžete také [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] rozhraní API pro vytvoření [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekty. Další informace naleznete v tématu <xref:System.Xml.Linq.XElement>.  
+ Můžete také použít [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] rozhraní API k vytvoření [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekty. Další informace naleznete v tématu <xref:System.Xml.Linq.XElement>.  
   
 ## <a name="procedures"></a>Procedury  
   
 #### <a name="to-insert-text-as-element-content"></a>Chcete-li vložit textového obsahu elementu  
   
--   Následující příklad ukazuje, jak vložit text, který je součástí `contactName` mezi otevřením a uzavření elementy, název proměnné.  
+-   Následující příklad ukazuje, jak vložit text, který je součástí `contactName` mezi prvky a na konci názvu proměnné.  
   
      [!code-vb[VbXMLSamples#39](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-embed-expressions-in-xml-literals_1.vb)]  
   
@@ -35,7 +35,7 @@ XML – literály můžete kombinovat s vložené výrazy vytvořit dokument XML
     </contact>  
     ```  
   
-#### <a name="to-insert-text-as-an-attribute-value"></a>Chcete-li vložit text hodnota atributu  
+#### <a name="to-insert-text-as-an-attribute-value"></a>Chcete-li vložit text hodnotu atributu  
   
 -   Následující příklad ukazuje, jak vložit text, který je součástí `phoneType` jako hodnotu proměnné `type` atribut.  
   
@@ -53,7 +53,7 @@ XML – literály můžete kombinovat s vložené výrazy vytvořit dokument XML
   
 -   Následující příklad ukazuje, jak vložit text, který je součástí `elementName` proměnné jako název elementu.  
   
-     Při vytváření elementů pomocí Tato technika, je třeba nejprve zavřít je \</ > značky.  
+     Při vytváření elementů tímto způsobem, je nutné zavřít jim \</ > značky.  
   
      [!code-vb[VbXMLSamples#41](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-embed-expressions-in-xml-literals_3.vb)]  
   

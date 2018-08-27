@@ -10,15 +10,15 @@ helpviewer_keywords:
 - From clause [Visual Basic]
 - From statement [Visual Basic]
 ms.assetid: 83e3665e-68a0-4540-a3a3-3d777a0f95d5
-ms.openlocfilehash: 1f113444efae83de7d299db330593937c7800bb3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 71573de48cc51c48291fc4b82a0628d2d0f96caa
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604715"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42932485"
 ---
 # <a name="from-clause-visual-basic"></a>From – klauzule (Visual Basic)
-Určuje jeden nebo více proměnných rozsahu a kolekce dotazu.  
+Určuje jednu nebo více proměnných rozsahu a kolekce pro dotaz.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,47 +31,47 @@ From element [ As type ] In collection [ _ ]
   
 |Termín|Definice|  
 |---|---|  
-|`element`|Požadováno. A *proměnnou rozsahu* použít k iteraci v rámci prvků kolekce. Proměnná rozsahu slouží k odkazování na každý člen `collection` jako iteruje dotaz `collection`. Musí být typu vyčíslitelná.|  
-|`type`|Volitelné. Typ `element`. Pokud žádné `type` je zadaný typ `element` je odvozeno z `collection`.|  
-|`collection`|Požadováno. Odkazuje na kolekci má být dotazován. Musí být typu vyčíslitelná.|  
+|`element`|Požadováno. A *proměnnou rozsahu* použít k iteraci prvků kolekce. Proměnná rozsahu se používá k odkazování na každý člen `collection` podle dotazu se Iteruje přes `collection`. Musí být typu výčtu.|  
+|`type`|Volitelné. Typ `element`. Pokud ne `type` je zadán typ `element` je odvozen z `collection`.|  
+|`collection`|Požadováno. Odkazuje na kolekci, aby se dalo dotazovat. Musí být typu výčtu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `From` Klauzule slouží k identifikaci zdroje dat pro dotaz a proměnné, které slouží k odkazování na element z kolekce zdroje. Tyto proměnné se nazývají *rozsahu proměnné*. `From` Klauzule se vyžaduje pro daný dotaz, s výjimkou případů, kdy `Aggregate` klauzule slouží k identifikaci vrátí pouze agregovat výsledky dotazu. Další informace najdete v tématu [Aggregate – klauzule](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
+ `From` Klauzule slouží k identifikaci zdrojová data pro dotaz a proměnné, které se používají k odkazování na prvek ze zdrojové kolekce. Tyto proměnné jsou volány *proměnné v rozsahu*. `From` Vyžádáním klauzule dotazu, kromě případů, kdy `Aggregate` klauzule slouží k identifikaci dotaz vrátí pouze agregovat výsledky. Další informace najdete v tématu [Aggregate – klauzule](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
   
- Můžete určit více `From` klauzule v dotazu k identifikaci více kolekcí, který se má spojit. Jsou-li více kolekcí, že jsou vstupní přes nezávisle nebo je můžete připojit, pokud se vztahují. Kolekce lze propojit implicitně pomocí `Select` klauzuli, nebo explicitně pomocí `Join` nebo `Group Join` klauzule. Jako alternativu, můžete určit více proměnné rozsahu a kolekcí v jediném `From` klauzule s každou proměnnou související rozsahu a do čárkami oddělených z jiné kolekce. Následující příklad kódu ukazuje obě možnosti syntaxe pro `From` klauzule.  
+ Lze zadat více `From` klauzule v dotazu k identifikaci více kolekcí, který se má spojit. Pokud jsou zadány více kolekcí, se vyhodnocují přes nezávisle na sobě nebo je můžete spojit, když se vztahují. Kolekce lze implicitně propojit pomocí `Select` klauzuli, nebo explicitně pomocí `Join` nebo `Group Join` klauzule. Jako alternativu můžete zadat více proměnných rozsahu a kolekce v jediném `From` klauzule s každou proměnnou rozsahu související a kolekce od ostatních oddělené čárkou. Následující příklad kódu ukazuje obě možnosti syntaxe pro `From` klauzuli.  
   
  [!code-vb[VbSimpleQuerySamples#21](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/from-clause_1.vb)]  
   
- `From` Klauzule definuje obor dotazu, který je podobný oboru `For` smyčky. Proto každý `element` proměnnou rozsahu v oboru dotazu musí mít jedinečný název. Protože můžete určit více `From` klauzule pro daný dotaz, následných `From` klauzule mohou odkazovat na proměnné rozsahu v `From` klauzuli, nebo se mohou odkazovat na proměnné rozsahu v předchozím `From` klauzule. Například následující příklad ukazuje vnořený `From` klauzule, kde je kolekce v druhé založena na vlastnost proměnnou rozsahu v klauzuli první.  
+ `From` Klauzule definuje rozsah dotazu, který je podobný oboru `For` smyčky. Proto se každá `element` proměnnou rozsahu v rámci dotazu musí mít jedinečný název. Vzhledem k tomu, že lze zadat více `From` klauzule dotazu, následné `From` klauzule mohou odkazovat na rozsah proměnné ve `From` klauzuli, nebo mohou odkazovat na proměnné rozsahu v předchozím `From` klauzuli. Například následující příklad ukazuje vnořený `From` klauzule kde kolekce do druhé klauzule je založena na vlastnost proměnnou rozsahu v první klauzuli.  
   
  [!code-vb[VbSimpleQuerySamples#22](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/from-clause_2.vb)]  
   
- Každý `From` klauzule může následovat libovolnou kombinaci klauzule další dotazu pro upřesnění dotazu. Dotaz můžete upřesnit následujícími způsoby:  
+ Každý `From` klauzule může být následován libovolnou kombinací další klauzule dotazu pro upřesnění dotazu. Dotaz můžete upřesnit následujícími způsoby:  
   
--   Implicitně kombinovat více kolekcí pomocí `From` a `Select` klauzule, nebo explicitně pomocí `Join` nebo `Group Join` klauzule.  
+-   Kombinace více kolekcí implicitně pomocí `From` a `Select` klauzule, nebo explicitně pomocí `Join` nebo `Group Join` klauzule.  
   
--   Použití `Where` klauzule filtrování výsledků dotazu.  
+-   Použití `Where` klauzule můžete filtrovat výsledku dotazu.  
   
--   Řazení výsledek pomocí `Order By` klauzule.  
+-   Řazení výsledků pomocí `Order By` klauzuli.  
   
--   Seskupit podobné výsledky pomocí `Group By` klauzule.  
+-   Seskupit podobné výsledky pomocí `Group By` klauzuli.  
   
--   Použití `Aggregate` klauzule k identifikaci agregační funkce vyhodnotit výsledek celý dotaz.  
+-   Použití `Aggregate` klauzule k identifikaci agregační funkce má vyhodnotit pro výsledek celého dotazu.  
   
--   Použití `Let` klauzule zavádět proměnné iterace, jehož hodnota je určena pomocí výrazu místo kolekce.  
+-   Použití `Let` klauzule zavést proměnnou iterace, jehož hodnota je určena výrazem místo kolekce.  
   
--   Použití `Distinct` klauzule ignorovat výsledky duplicitní dotazu.  
+-   Použití `Distinct` klauzule ignorovat duplicitní dotaz výsledky.  
   
--   Identifikaci částí výsledek určený k vrácení pomocí `Skip`, `Take`, `Skip While`, a `Take While` klauzule.  
+-   Identifikovat části výsledek určený k vrácení pomocí `Skip`, `Take`, `Skip While`, a `Take While` klauzule.  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz výraz používá `From` klauzule deklarovat proměnnou rozsahu `cust` pro každou `Customer` objekt v `customers` kolekce. `Where` Klauzule používá proměnnou rozsahu omezit výstupu na zákazníky ze zadané oblasti. `For Each` Smyčky zobrazuje název společnosti pro každého zákazníka ve výsledku dotazu.  
+ Následující dotaz používá výraz `From` klauzule k deklaraci proměnné rozsahu `cust` pro každou `Customer` objekt `customers` kolekce. `Where` Klauzule používá proměnnou rozsahu omezení výstup pro zákazníky ze zadané oblasti. `For Each` Smyčky zobrazuje název společnosti pro každého zákazníka ve výsledku dotazu.  
   
  [!code-vb[VbSimpleQuerySamples#23](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/from-clause_3.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Dotazy](../../../visual-basic/language-reference/queries/queries.md)  
- [Úvod do LINQ v jazyku Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ [Dotazy](../../../visual-basic/language-reference/queries/index.md)  
+ [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
  [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
  [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)  
  [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  

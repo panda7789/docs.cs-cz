@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: projektu výsledků dotazu (služby WCF Data Services)'
+title: 'Postupy: výsledky dotazů (WCF Data Services) na projekt'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,32 +10,32 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: 474ac625-8770-43ba-8320-d3315ea9530f
-ms.openlocfilehash: 4b75eb21cab7cd3acf25f7bcb9a3f009e8d5748b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c1eb2618e14f0e02aa5e1a2e91aa93fe0831c7c7
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33353889"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42932974"
 ---
-# <a name="how-to-project-query-results-wcf-data-services"></a>Postupy: projektu výsledků dotazu (služby WCF Data Services)
-Projekce poskytuje mechanismus ke snížení objemu dat vrácených dotazem zadáním jenom některé vlastnosti entity jsou vráceny v odpovědi. Projekce můžete provádět na výsledcích [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] buď pomocí dotazu `$select` dotaz možnost nebo pomocí [vyberte](~/docs/csharp/language-reference/keywords/select-clause.md) klauzule ([vyberte](~/docs/visual-basic/language-reference/queries/select-clause.md) v jazyce Visual Basic) v dotazu LINQ. Další informace najdete v tématu [dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
+# <a name="how-to-project-query-results-wcf-data-services"></a>Postupy: výsledky dotazů (WCF Data Services) na projekt
+Projekce poskytuje mechanismus ke snížení množství dat vrácených dotazem tak, že určíte, které jsou vráceny pouze určité vlastnosti entity v odpovědi. Projekce můžete provádět na výsledcích [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] dotazování s použitím `$select` možnosti dotazu nebo s použitím [vyberte](~/docs/csharp/language-reference/keywords/select-clause.md) – klauzule ([vyberte](~/docs/visual-basic/language-reference/queries/select-clause.md) v jazyce Visual Basic) v dotazu LINQ. Další informace najdete v tématu [dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
   
- V příkladu v tomto tématu používá Northwind ukázková data služby a automaticky generovaný klienta dat služby třídy. Tato služba a datové třídy klienta se vytvoří při dokončení [rychlého startu služby WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  
+ V příkladu v tomto tématu se používá Northwind ukázková data service a automaticky vygenerovaných tříd klientské datové služby. Tuto službu a třídy dat klientů jsou vytvořeny po dokončení [rychlý start služeb WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje dotaz LINQ této projekty zákazníkům entity do nový typ CustomerAddress, který obsahuje pouze vlastnosti specifické pro adresu plus vlastnost identity. To `CustomerAddress` třída definována na straně klienta a je nastavený atribut tak, aby klientské knihovny může rozpoznat jako typ entity.  
+ Následující příklad ukazuje dotaz LINQ této projektů zákazníků entity do nové CustomerAddress typ, který obsahuje pouze vlastnosti specifické pro adresu a vlastnost identity. To `CustomerAddress` třída je definována na straně klienta a má atribut tak, aby Klientská knihovna dokáže rozpoznat jako typ entity.  
   
  [!code-csharp[Astoria Northwind Client#SelectCustomerAddress](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#selectcustomeraddress)]
  [!code-vb[Astoria Northwind Client#SelectCustomerAddress](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#selectcustomeraddress)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje LINQ dotaz vrácené entity zákazníkům této projekty do nový typ CustomerAddressNonEntity, která obsahuje jenom adresy specifické vlastnosti a žádná vlastnost identity. To `CustomerAddressNonEntity` třída definována na straně klienta a není označené jako typ entity.  
+ Následující příklad ukazuje LINQ dotaz na tento zákazníkům entity vrácené projekty do nové CustomerAddressNonEntity typ, který obsahuje pouze adresy specifické vlastnosti a žádná vlastnost identity. To `CustomerAddressNonEntity` třída je definována na straně klienta a nemá atribut jako typ entity.  
   
  [!code-csharp[Astoria Northwind Client#SelectCustomerAddressNonEntity](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#selectcustomeraddressnonentity)]
  [!code-vb[Astoria Northwind Client#SelectCustomerAddressNonEntity](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#selectcustomeraddressnonentity)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje definice `CustomerAddress``CustomerAddressNonEntity` typy, které se používají v předchozích příkladech.  
+ Následující příklad ukazuje definici `CustomerAddress` a `CustomerAddressNonEntity` typy, které se používají v předchozích příkladech.  
   
  [!code-csharp[Astoria Northwind Client#CustomerAddressDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customeraddress.cs#customeraddressdefinition)]
  [!code-vb[Astoria Northwind Client#CustomerAddressDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customeraddress.vb#customeraddressdefinition)]

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - '#define directive [C#]'
 ms.assetid: 23638b8f-779c-450e-b600-d55682de7d01
-ms.openlocfilehash: f40c32a89641256e4f8fe30cd24f523b898139d5
-ms.sourcegitcommit: dc02d7d95f1e3efcc7166eaf431b0ec0dc9d8dca
+ms.openlocfilehash: 305d52c26fb2592874d06f2c9a75ec63b472a812
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37143476"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933061"
 ---
 # <a name="define-c-reference"></a>#define (referenční dokumentace jazyka C#)
 Použijete `#define` k definici symbolu. Při použití symbolu jako výraz, který je předán [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) direktiv, bude výraz vyhodnocen na `true`, jak je vidět v následujícím příkladu:  
@@ -25,7 +25,7 @@ Použijete `#define` k definici symbolu. Při použití symbolu jako výraz, kte
 > [!NOTE]
 >  `#define` – Direktiva nelze použít k deklarování konstantních hodnot, což se většinou děje v jazyce C a C++. Konstanty v jazyce C# jsou nejlépe definovány jako statické členy třídy nebo struktury. Pokud máte několik takových konstant, zvažte vytvoření samostatné třídy "Konstanty" pro jejich uložení.  
   
- Symboly lze použít k určení podmínek kompilace. Můžete vyzkoušet symbol s [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) nebo [#elif](../../../csharp/language-reference/preprocessor-directives/preprocessor-elif.md). Můžete také použít `conditional` atribut má provést Podmíněná kompilace.  
+ Symboly lze použít k určení podmínek kompilace. Můžete vyzkoušet symbol s [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) nebo [#elif](../../../csharp/language-reference/preprocessor-directives/preprocessor-elif.md). Můžete také použít <xref:System.Diagnostics.ConditionalAttribute> k provedení podmíněné kompilace.  
   
  Můžete definovat symbol, ale nelze přiřadit hodnotu symbolu. `#define` Direktiva musí být uvedená v souboru, než použijete pokyny, které nejsou zároveň i direktivy preprocesoru.  
   
@@ -63,11 +63,12 @@ public class TestDefine
   
  Příklad zrušení definice symbolu naleznete v tématu [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md).  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)  
- [const](../../../csharp/language-reference/keywords/const.md)  
- [Postupy: Podmíněná kompilace pomocí atributu Trace a Debug](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)  
- [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md)  
- [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)  
+- [const](../../../csharp/language-reference/keywords/const.md)  
+- [Postupy: Podmíněná kompilace pomocí atributu Trace a Debug](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)  
+- [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md)  
+- [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)

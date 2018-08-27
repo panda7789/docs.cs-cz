@@ -6,46 +6,46 @@ helpviewer_keywords:
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
 ms.openlocfilehash: 553b0a5e75364bc5c294867852265575fb9271b6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33324672"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42935497"
 ---
 # <a name="objects-c-programming-guide"></a>Objekty (Průvodce programováním v C#)
-Definice třídě nebo struktuře je jako matrici, která určuje, co můžete dělat typu. Objekt je v podstatě blok paměti, která je přidělena a nakonfigurovaný podle plánu. Program může vytvořit mnoho objektů stejné třídy. Objekty jsou také označovány jako instance a mohou být uloženy v proměnnou s názvem nebo v pole nebo kolekce. Kód klienta je kód, který používá tyto proměnné volání metody a přístup k veřejné vlastnosti objektu. V jazyce objektově orientované například C# typické program se skládá z více objektů dynamicky interakci.  
+Definice třídy nebo struktury je jako matrice, který určuje, co můžete dělat typu. Objekt je v podstatě blok paměti, která byla přidělena a nakonfigurovány podle podrobný plán. Program může vytvořit mnoho objektů stejné třídy. Objekty se také označují jako instance a mohou být uloženy v pojmenované proměnné nebo v poli nebo kolekci. Klientský kód je kód, který používá tyto proměnné pro volání metody a přístup k veřejné vlastnosti objektu. V jazyce objektově orientované jako je C# typický program se skládá z více objektů dynamicky interakci.  
   
 > [!NOTE]
->  Statické typy chovat jinak než co je zde popsán. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
+>  Statické typy chovat jinak než jak je popsán tady. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
-## <a name="struct-instances-vs-class-instances"></a>Struktura instancí vs. Instance třídy  
- Protože třídy jsou odkazové typy, proměnné objektu třídy obsahuje odkaz na adresu objektu na spravované haldě. Pokud druhý objekt stejného typu, je přiřazen k první objekt, obě proměnné odkazovat na objekt na této adrese. Tento bod je podrobněji popsána dále v tomto tématu.  
+## <a name="struct-instances-vs-class-instances"></a>Struktura instance vs. Instance třídy  
+ Vzhledem k tomu, že třídy jsou odkazové typy, proměnné objektu třídy obsahuje odkaz na adresu objektu na spravované haldě. Pokud se první objekt, který je přiřazen druhému objektu stejného typu, pak obě proměnné odkazovat na objekt na této adrese. Tento bod je podrobněji popsány dále v tomto tématu.  
   
- Instance třídy jsou vytvořené pomocí [operátor new](../../../csharp/language-reference/keywords/new-operator.md). V následujícím příkladu `Person` je typ a `person1` a `person 2` instance ani objekty daného typu.  
+ Instance třídy se vytvářejí pomocí [operátor new](../../../csharp/language-reference/keywords/new-operator.md). V následujícím příkladu `Person` je typ a `person1` a `person 2` instance ani objekty daného typu.  
   
  [!code-csharp[csProgGuideStatements#30](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/objects_1.cs)]  
   
- Protože struktury jsou typy hodnot, proměnné objektu struktura obsahuje kopii celý objekt. Instance struktury můžete také vytvořit pomocí `new` operátor, ale to není požadováno, jak je znázorněno v následujícím příkladu:  
+ Protože struktury jsou typy hodnot, proměnné objektu struktura obsahuje kopii celého objektu. Instance struktury můžete vytvořit také pomocí `new` operátoru, ale to se nevyžaduje, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideStatements#31](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/objects_2.cs)]  
   
- Paměť pro obě `p1` a `p2` je přidělená v zásobníku přístup z více vláken. Tuto paměť je uvolnit společně s typ nebo metoda, ve kterém je deklarovaná. Toto je jedním z důvodů, proč struktury zkopírují na přiřazení. Naopak paměti, která je přidělena pro instanci třídy je automaticky regenerovaný (uvolnění z paměti) modul common language runtime při všechny odkazy na objekt se nachází mimo obor. Není možné nepodmíněně odstranění objektu třídy, jako je možné v jazyce C++. Další informace o uvolňování paměti v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], najdete v části [uvolňování paměti](../../../standard/garbage-collection/index.md).  
+ Paměť pro obě `p1` a `p2` přidělené v zásobníku vlákna. Tuto paměť je uvolněn spolu se tento typ nebo metoda, ve kterém je deklarována. Toto je jedním z důvodů, proč strukturách kopírují na přiřazení. Naopak paměti přidělené pro instanci třídy, je automaticky uvolňovaného (uvolněna z paměti) modul common language runtime při všech odkazů na objekt nepřejdou mimo rozsah. Není možné nedeterministicky zničit objekt třídy jako můžete v jazyce C++. Další informace o uvolňování paměti v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], naleznete v tématu [uvolňování](../../../standard/garbage-collection/index.md).  
   
 > [!NOTE]
->  Přidělení a zrušení přidělení paměti na spravovaná halda je vysoce optimalizovaný v modulu CLR. Ve většině případů není žádné významné rozdíl ve výkonu náklady přidělování v haldě versus přidělování struktura instance v zásobníku instance třídy.  
+>  V modulu common language runtime je vysoce optimalizovaných přidělování a navracení zpět paměti na spravované haldě. Ve většině případů není žádný velký rozdíl náklady na výkon spojeným s přidělováním instance třídy v haldě a přidělování struktury instance v zásobníku.  
   
 ## <a name="object-identity-vs-value-equality"></a>Objekt Identity vs. Hodnota rovnosti  
- Při porovnávání dva objekty z hlediska rovnosti musí nejprve rozlišovat, jestli chcete zjistit, jestli dvě proměnné, které představují stejný objekt v paměti, nebo zda hodnoty jednoho nebo více jejich polí jsou ekvivalentní. Pokud se hodláte porovnat hodnoty, musíte zvážit, jestli jsou objekty instancí typy hodnot (struktury) nebo odkazové typy (třídy, delegáti, pole).  
+ Když porovnáte dva objekty z hlediska rovnosti, musí nejprve rozlišit, jestli chcete zjistit, jestli dvě proměnné, které představují stejný objekt v paměti nebo zda jsou ekvivalentní hodnoty jedné nebo více z jejich polí. Pokud je máte v úmyslu porovnat hodnoty, musíte zvážit, zda jsou objekty instance typů hodnot (struktury) nebo typy odkazů (tříd, delegátů, pole).  
   
--   K určení, zda dvě instance třídy odkazovat na stejné umístění v paměti (což znamená, že mají stejný *identity*), použijte statickou <xref:System.Object.Equals%2A> metoda. (<xref:System.Object?displayProperty=nameWithType> je implicitní základní třída pro všechny typy hodnot a typy odkazu, včetně uživatelem definované strukturám a třídám.)  
+-   K určení, zda dvě instance třídy odkazují na stejné místo v paměti (což znamená, že mají stejnou *identity*), použít statické <xref:System.Object.Equals%2A> metody. (<xref:System.Object?displayProperty=nameWithType> je implicitní základní třída pro všechny typy hodnot a odkazové typy, včetně uživatelem definované strukturám a třídám.)  
   
--   Chcete-li zjistit, jestli pole instance v dvě instance struktura mají stejné hodnoty, použijte <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> metoda. Protože všechny struktury implicitně dědí <xref:System.ValueType?displayProperty=nameWithType>, zavolejte metodu přímo na objektu, jak je znázorněno v následujícím příkladu:  
+-   Chcete-li zjistit, zda pole instancí ve dvou instancí struktury mají stejné hodnoty, použijte <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> metody. Protože implicitně dědí všechny struktury <xref:System.ValueType?displayProperty=nameWithType>, zavolejte metodu přímo na objekt, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideStatements#32](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/objects_3.cs)]  
   
- <xref:System.ValueType?displayProperty=nameWithType> Implementace `Equals` používá reflexe, protože musí být schopní určit, co jsou tato pole v jakékoli struktura. Při vytváření vlastní struktury, přepsat `Equals` metody můžete zajistit efektivní rovnosti algoritmu, který je určený výhradně pro vašeho typu.  
+ <xref:System.ValueType?displayProperty=nameWithType> Provádění `Equals` používá reflexi, protože musí být schopní určit pole jsou v libovolné struktury. Při vytváření vlastních struktur, přepsat `Equals` metodu k dispozici efektivní rovnosti algoritmus, který je specifický pro váš typ.  
   
--   Pokud chcete zjistit, zda jsou stejné hodnoty polí v dvě instance třídy, je možné použít <xref:System.Object.Equals%2A> metoda nebo [== – operátor](../../../csharp/language-reference/operators/equality-comparison-operator.md). Však použijte jenom je pokud třída má přepsat nebo přetížený mají poskytovat vlastní definice jaké "rovnosti" znamená, že pro objekty daného typu. Třída může také implementovat <xref:System.IEquatable%601> rozhraní nebo <xref:System.Collections.Generic.IEqualityComparer%601> rozhraní. Obě rozhraní poskytují metody, které lze použít k testování rovnosti hodnoty. Při navrhování vlastních tříd této přepsání `Equals`, ujistěte se, postupujte podle pokynů uvádí [postupy: definování rovnosti hodnoty pro typ](../../../csharp/programming-guide/statements-expressions-operators/how-to-define-value-equality-for-a-type.md) a <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>.  
+-   Pokud chcete zjistit, zda jsou stejné hodnoty polí v dvě instance třídy, je možné použít <xref:System.Object.Equals%2A> metoda nebo [== – operátor](../../../csharp/language-reference/operators/equality-comparison-operator.md). Ale pouze používejte, je pokud třída má přepsat nebo přetížené jim poskytnout vlastní definici z jaké "rovnosti" znamená, že objekty tohoto typu. Třída může implementovat taky <xref:System.IEquatable%601> rozhraní nebo <xref:System.Collections.Generic.IEqualityComparer%601> rozhraní. Obě rozhraní poskytuje metody, které můžete použít k testování rovnosti hodnoty. Při navrhování vlastních tříd toto přepsání `Equals`, ujistěte se, že dodržovat pokyny uvedené v [postupy: definování rovnosti hodnoty pro typ](../../../csharp/programming-guide/statements-expressions-operators/how-to-define-value-equality-for-a-type.md) a <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>.  
   
 ## <a name="related-sections"></a>Související oddíly  
  Další informace:  

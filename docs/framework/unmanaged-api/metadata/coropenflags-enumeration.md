@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6f231c4f9782518e30cbaa89c6b085c72aafcc92
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aa9e7a4dacceb492dfe037b4b64f22f231323de5
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445442"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933219"
 ---
 # <a name="coropenflags-enumeration"></a>CorOpenFlags – výčet
-Obsahuje příznak hodnoty, které řídí chování metadat při otevírání souborů manifestu.  
+Obsahuje příznak hodnoty, které řídí chování metadata po otevření souborů manifestu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,24 +52,24 @@ typedef enum CorOpenFlags
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ofRead`|Označuje, že soubor musí být otevřen jen pro čtení.|  
-|`ofWrite`|Označuje, že soubor musí být otevřen pro zápis.<br /><br /> Pokud používáte `ofWrite` příznak při otevření souboru .winmd, by také předáte `ofNoTransform` příznak.|  
+|`ofRead`|Označuje, že by soubor otevřen jen pro čtení.|  
+|`ofWrite`|Označuje, že soubor by měl být otevřena pro zápis.<br /><br /> Pokud používáte `ofWrite` příznak při otevírání souboru .winmd, je třeba také předat `ofNoTransform` příznak.|  
 |`ofReadWriteMask`|Maska pro čtení a zápis.|  
-|`ofCopyMemory`|Označuje, že byste si měli přečíst soubor do paměti. Metadata musí udržovat svůj vlastní kopie.|  
+|`ofCopyMemory`|Označuje, že by soubor načíst do paměti. Metadata musí udržovat vlastní kopii.|  
 |`ofCacheImage`|Zastaralé. Tento příznak se ignoruje.|  
 |`ofManifestMetadata`|Zastaralé. Tento příznak se ignoruje.|  
 |`ofReadOnly`|Označuje, že soubor musí být otevřen pro čtení a že volání `QueryInterface` pro [imetadataemit –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) nelze provést.|  
-|`ofTakeOwnership`|Označuje, že je paměť byl přidělen s použitím volání [CoTaskMemAlloc](http://msdn.microsoft.com/library/c4cb588d-9482-4f90-a92e-75b604540d5c) a využívalo metadata.|  
+|`ofTakeOwnership`|Označuje, že byla přidělena paměť pomocí volání do [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) a bude uvolněna metadata.|  
 |`ofNoTypeLib`|Zastaralé. Tento příznak se ignoruje.|  
-|`ofNoTransform`|Označuje, že by mělo být zakázáno automatické transformace .winmd souborů. Jinými slovy by mělo být zakázáno projekce typu na typ rozhraní .NET Framework prostředí Windows Runtime. Další informace najdete v tématu [pod kapotou s .NET a prostředí Windows Runtime](http://msdn.microsoft.com/magazine/jj651569.aspx).|  
+|`ofNoTransform`|Označuje, že by mělo být zakázáno automatické transformace soubory .winmd. Jinými slovy by mělo být zakázáno projekce typu modulu Windows Runtime na typ rozhraní .NET Framework. Další informace najdete v tématu [pod pokličkou pomocí .NET a modulem Windows Runtime](http://msdn.microsoft.com/magazine/jj651569.aspx).|  
 |`ofReserved1`|Vyhrazeno pro interní použití.|  
 |`ofReserved2`|Vyhrazeno pro interní použití.|  
 |`ofReserved`|Vyhrazeno pro interní použití.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Záhlaví:** Comimage_flags  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

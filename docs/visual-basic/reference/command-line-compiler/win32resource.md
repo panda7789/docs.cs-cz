@@ -12,14 +12,14 @@ ms.assetid: e226946d-19ce-4cc9-91f5-aed24f77aa2b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ac495e10be2ec1534dc9d9081aef369773d93e17
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33649871"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933048"
 ---
 # <a name="-win32resource"></a>-win32resource
-Vloží zdrojového souboru Win32 ve výstupním souboru.  
+Vloží soubor prostředku Win32 do výstupního souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,25 +29,25 @@ Vloží zdrojového souboru Win32 ve výstupním souboru.
   
 ## <a name="arguments"></a>Arguments  
  `filename`  
- Název souboru prostředků pro přidání do výstupního souboru. Uzavřete název souboru v uvozovkách ("") Pokud obsahuje mezeru.  
+ Název souboru prostředků pro přidání do výstupního souboru. Název souboru uzavřete do uvozovek ("") Pokud obsahuje mezery.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete vytvořit zdrojového souboru Win32 s Microsoft Windows prostředků kompilátoru (RC).  
+ Soubor prostředků Win32 lze vytvořit s Microsoft Windows Resource kompilátor (RC).  
   
- Win32 prostředků může obsahovat verzi nebo informace o bitové mapy (ikona), která pomáhá identifikovat aplikace v **Průzkumníka souborů**. Pokud nezadáte `-win32resource`, kompilátor vygeneruje informace o verzi na základě verze sestavení. `-win32resource` a `-win32icon` možnosti se vzájemně vylučují.  
+ Prostředek systému Win32 mohou obsahovat verzi nebo rastrový obrázek (ikona) informace, které pomáhá identifikovat aplikaci v **Průzkumníka souborů**. Pokud nezadáte `-win32resource`, kompilátor generuje informace o verzi na základě verze sestavení. `-win32resource` a `-win32icon` možnosti se vzájemně vylučují.  
   
- Najdete v části [- linkresource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/linkresource.md) k odkazu [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] souboru prostředků, nebo [-prostředku (Visual Basic)](../../../visual-basic/reference/command-line-compiler/resource.md) připojit [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] souboru prostředků.  
+ Naleznete v tématu [- linkresource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/linkresource.md) na odkaz [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] soubor prostředků, nebo [-prostředku (Visual Basic)](../../../visual-basic/reference/command-line-compiler/resource.md) připojit [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] souboru prostředků.  
   
 > [!NOTE]
->  `-win32resource` Možnost není k dispozici ve vývojovém prostředí sady Visual Studio, je k dispozici pouze při kompilaci z příkazového řádku.  
+>  `-win32resource` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici jenom při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `In.vb` a připojí zdrojového souboru Win32 `Rf.res`:  
+ Následující kód zkompiluje `In.vb` a připojí soubor prostředků Win32, `Rf.res`:  
   
 ```console  
 vbc -win32resource:rf.res in.vb  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

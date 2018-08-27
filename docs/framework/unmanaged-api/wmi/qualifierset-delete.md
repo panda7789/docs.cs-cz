@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e0e96ba458edfe7261fd5857b7bcb8486f4a6636
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7ca4cc9fb65d1a4bd8713f969bbda5551ce5a2e2
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33460042"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42929779"
 ---
 # <a name="qualifiersetdelete-function"></a>QualifierSet_Delete – funkce
 Odstraní zadaný kvalifikátor podle názvu.  
@@ -41,38 +41,38 @@ HRESULT QualifierSet_Delete (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`   
-[v] Ukazatel na [IWbemQualifierSet](https://msdn.microsoft.com/library/aa391860(v=vs.85).aspx) instance.
+[in] Ukazatel [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.
 
 `wszName`   
-[v] Název kvalifikátor odstranit.
+[in] Název kvalifikátor odstranit.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `wszName` Parametr není platný. |
-|`WBEM_E_INVALID_OPERATION` | 0x80041016 | Odstranění této kvalifikátor je neplatný. |
-|`WBEM_E_NOT_FOUND` | 0x80041002 | Nebyl nalezen zadaný kvalifikátor. |
+|`WBEM_E_INVALID_OPERATION` | 0x80041016 | Odstraňuje se tento kvalifikátor je neplatný. |
+|`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaný kvalifikátor se nenašel. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
-| `WBEM_S_RESET_TO_DEFAULT` | 0x40002 | Místní přepsání bylo odstraněno a původní kvalifikátor z nadřazeného objektu došlo k obnovení oboru. |
+| `WBEM_S_RESET_TO_DEFAULT` | 0x40002 | Místní přepsání byl odstraněn a oboru došlo k obnovení původního kvalifikátor z nadřazeného objektu. |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemQualifierSet::Delete](https://msdn.microsoft.com/library/aa391864(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemQualifierSet::Delete](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-delete) metody.
 
-Z důvodu kvalifikátor šíření pravidla kvalifikátor konkrétní může byly zděděno z jiného objektu a jenom přepsání v aktuální třídě nebo instanci. V takovém případě `QualifierSet_Delete` metoda obnoví kvalifikátor na jeho původní zděděná hodnota. Funkce v tomto případě vrátí stavový kód `WBEM_S_RESET_TO_DEFAULT`.
+Z důvodu pravidla pro šíření kvalifikátor zejména kvalifikátor může byly zděděné z jiného objektu a pouze přepsání v aktuální třídě nebo instanci. V takovém případě `QualifierSet_Delete` způsob, obnovíte na původní hodnotu zděděného kvalifikátor. V tomto případě vrátí stavový kód `WBEM_S_RESET_TO_DEFAULT`.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

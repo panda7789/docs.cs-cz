@@ -2,31 +2,31 @@
 title: Ukázka integrace názvového prostoru SystemWebRouting
 ms.date: 03/30/2017
 ms.assetid: f1c94802-95c4-49e4-b1e2-ee9dd126ff93
-ms.openlocfilehash: 52b908d354771cb2b351e339881647462340b716
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 944eb8f2bd907308e60525f8917fcad826caa472
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33806523"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42932063"
 ---
 # <a name="systemwebrouting-integration-sample"></a>Ukázka integrace názvového prostoru SystemWebRouting
-Tento příklad znázorňuje hostování vrstvě integrace s třídy v <xref:System.Web.Routing> oboru názvů. Třídy v <xref:System.Web.Routing> obor názvů povolit aplikaci použití adres URL, které neodpovídají přímo na fyzický prostředek. Použití směrování webové umožňuje vývojáři k vytvoření virtuální adresy pro protokol HTTP, která jsou pak mapována na skutečné služby WCF. To je užitečné, když musí být hostované služby WCF, bez nutnosti fyzického souboru či prostředku nebo když služby je nutné přistupovat pomocí adresy URL, které neobsahují soubory, jako je například HTML nebo .aspx. Tento příklad ukazuje, jak využívat <xref:System.Web.Routing.RouteTable> třídy za účelem vytvoření virtuální identifikátory URI, které jsou namapovány na spuštění služby definované v souboru global.asax. 
+V této ukázce integration hostování vrstvy s třídami v <xref:System.Web.Routing> oboru názvů. Třídy v <xref:System.Web.Routing> oboru názvů umožňují aplikaci pro použití adresy URL, které neodpovídají přímo fyzické prostředky. Použití směrování webových umožňuje vývojářům vytvářet virtuální adresy pro protokol HTTP, které jsou pak mapována na skutečné služby WCF. To je užitečné, když bez nutnosti fyzického souboru nebo prostředku, musí být hostovaný ve službě WCF, nebo když služby musí přistupovat pomocí adresy URL, které neobsahují soubory, jako jsou HTML nebo .aspx. Tato ukázka předvádí, jak využívat <xref:System.Web.Routing.RouteTable> třídy za účelem vytvoření virtuální identifikátory URI, která je namapována na spuštění služby definované v souboru global.asax. 
 
 > [!NOTE]
 >  Třídy v <xref:System.Web.Routing> obor názvů fungovat pouze pro služby hostované přes protokol HTTP.  
   
-Tento příklad používá k vytvoření dvou informačních kanálů RSS WCF: `movies` kanálu a `channels` informačního kanálu. Adresy URL k aktivaci služby neobsahují rozšíření a jsou zaregistrovány v `Application_Start` metodu `Global` třída odvozená z <xref:System.Web.HttpApplication> třídy.  
+Tento příklad používá k vytvoření dvou informační kanály RSS WCF: `movies` informační kanál a `channels` informačního kanálu. Adresy URL k aktivaci služby neobsahují rozšíření a jsou registrované ve `Application_Start` metodu `Global` třída odvozená z <xref:System.Web.HttpApplication> třídy.  
   
 > [!NOTE]
->  Tato ukázka funguje pouze v Internetové informační služby (IIS) 7.0 a novější, jako služby IIS 6.0 používá jinou metodu pro podporu adresy URL bez přípony.  
+>  Tento příklad funguje pouze v Internetové informační služby (IIS) 7.0 a novější, jako služby IIS 6.0 používá jinou metodu pro podporu adres URL bez přípon.  
 
 #### <a name="to-download-this-sample"></a>Chcete-li stáhnout tuto ukázku
   
-Tato ukázka může již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+Tato ukázka může již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
    
 `<InstallDrive>:\WF_WCF_Samples`  
    
- Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+ Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
    
 `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WebRoutingIntegration`  
   
@@ -34,54 +34,54 @@ Tato ukázka může již nainstalován ve vašem počítači. Před pokračován
   
 1.  Pomocí sady Visual Studio, otevřete soubor WebRoutingIntegration.sln.  
   
-2.  Pokud chcete spustit řešení a spustí webový server vývoj, stisknutím klávesy F5.  
+2.  Spuštění řešení a spustit webový server vývoje, stiskněte klávesu F5.  
   
-     Zobrazí se pro vzorovou výpis adresáře. Všimněte si, že neexistují žádné soubory s příponou souboru .svc.  
+     Zobrazí se seznam adresářů pro vzorku. Všimněte si, že neexistují žádné soubory s příponou souboru .svc.  
   
-3.  Na panelu Adresa přidat `movies` na adresu URL, takže to čte http://localhost:[port] / filmy a stiskněte klávesu ENTER.  
+3.  Na panelu Adresa přidat `movies` na adresu URL, takže se načte `http://localhost:[port]/movies` a stiskněte klávesu ENTER.  
   
-     Informační kanál filmy se zobrazí v prohlížeči.  
+     Informační kanál videa se zobrazí v prohlížeči.  
   
-4.  Na panelu Adresa přidat `channels` na adresu URL, takže se čtení http://localhost:[port] / kanálů a stiskněte klávesu ENTER.  
+4.  Na panelu Adresa přidat `channels` na adresu URL, to je čtení `http://localhost:[port]/channels` a stiskněte klávesu ENTER.  
   
-     Informační kanál kanály se zobrazí v prohlížeči.  
+     Informační kanály kanál se zobrazí v prohlížeči.  
   
 5.  Zavřete webový prohlížeč, stisknutím klávesy ALT + F4.  
   
-     Pokud není ukončený vývojový server, klikněte pravým tlačítkem myši na ikonu v oznamovací oblasti a vyberte **Zastavit**.  
+     Pokud není ukončený vývojový server, klikněte pravým tlačítkem na ikonu v oznamovací oblasti a vyberte **Zastavit**.  
   
-#### <a name="to-use-this-sample-when-hosted-in-iis"></a>Při použití tohoto příkladu při hostovaný ve službě IIS  
+#### <a name="to-use-this-sample-when-hosted-in-iis"></a>Pro fungování této ukázky, když jsou hostované ve službě IIS  
   
 1.  Pomocí sady Visual Studio, otevřete soubor WebRoutingIntegration.sln.  
   
-2.  Sestavení projektu, stisknutím kombinace kláves CTRL + SHIFT + B.  
+2.  Sestavte projekt, stisknutím kombinace kláves CTRL + SHIFT + B.  
   
 3.  Vytvoření webové aplikace ve Správci Internetové informační služby (IIS).  
   
-    1.  Ve Správci služby IIS klikněte pravým tlačítkem **Default Web Site** a vyberte **přidat aplikaci**.  
+    1.  Ve Správci služby IIS klikněte pravým tlačítkem myši **výchozí webový server** a vyberte **přidat aplikaci**.  
   
     2.  Pro **alias**, zadejte v `WebRoutingIntegration`.  
   
-    3.  Pro **fyzická cesta**, vyberte složku služby v projektu.  
+    3.  Pro **fyzická cesta**, vyberte složku služby v rámci projektu.  
   
-    4.  Press **OK**.  
+    4.  Stisknutím klávesy **OK**.  
   
-4.  Spustit aplikaci, tak, že kliknete pravým tlačítkem na webové aplikace a výběr **spravovat aplikace** a potom **Procházet**.  
+4.  Spuštění aplikace, že pravým tlačítkem myši na webovou aplikaci a vyberete **spravovat aplikaci** a potom **Procházet**.  
   
-5.  Na panelu Adresa přidat `movies` na adresu URL, takže se čtení http://localhost:[port] / filmy a stiskněte klávesu ENTER.  
+5.  Na panelu Adresa přidat `movies` na adresu URL, to je čtení `http://localhost:[port]/movies` a stiskněte klávesu ENTER.  
   
-     Informační kanál filmy se zobrazí v prohlížeči.  
+     Informační kanál videa se zobrazí v prohlížeči.  
   
-6.  Na panelu Adresa přidat `channels` na adresu URL, takže se čtení http://localhost:[port] / kanálů a stiskněte klávesu ENTER.  
+6.  Na panelu Adresa přidat `channels` na adresu URL, to je čtení `http://localhost:[port]/channels` a stiskněte klávesu ENTER.  
   
-     Informační kanál kanály se zobrazí v prohlížeči.  
+     Informační kanály kanál se zobrazí v prohlížeči.  
   
 7.  Zavřete webový prohlížeč, stisknutím klávesy ALT + F4.  
   
- Tento příklad ukazuje, že hostování vrstva je schopný skládání s třídy v <xref:System.Web.Routing> obor názvů pro směrování požadavků služby hostované přes protokol HTTP.  
+ Tento příklad ukazuje, že je schopen sestavování s třídami v hostování vrstvy <xref:System.Web.Routing> obor názvů pro směrování požadavků služby hostované přes protokol HTTP.  
   
 > [!NOTE]
->  Je nutné aktualizovat výchozí verze fondu aplikací na [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] Pokud je nastaven na hodnotu verze 2.  
+>  Je nutné aktualizovat na verzi fondu aplikací výchozí, aby [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] Pokud je nastavené na verzi 2.  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky trvalosti a hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193961)
+ [Hostování AppFabric a ukázky trvalosti](http://go.microsoft.com/fwlink/?LinkId=193961)

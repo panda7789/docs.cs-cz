@@ -1,6 +1,6 @@
 ---
-title: Funkce GetPropertyOrigin (referenční dokumentace rozhraní API Unmnaged)
-description: Funkce GetPropertyOrigin Určuje třídu, ve kterém je deklarovaná vlastnost.
+title: Funkce GetPropertyOrigin (Reference k rozhraní API Unmnaged)
+description: Funkce GetPropertyOrigin určuje třídy, ve kterém je deklarována vlastnost.
 ms.date: 11/06/2017
 api_name:
 - GetPropertyOrigin
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f16bc5ce23e6bf110a140d10f0e787935070dbcc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 86c512f25c40f201d818b6789c6410bfb095b878
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33461094"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933514"
 ---
-# <a name="getpropertyorigin-function"></a>GetPropertyOrigin – funkce
-Určuje třídu, ve kterém je deklarovaná vlastnost.
+# <a name="getpropertyorigin-function"></a>Funkce GetPropertyOrigin
+Určuje třídy, ve kterém je deklarována vlastnost.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
@@ -42,43 +42,43 @@ HRESULT GetPropertyOrigin (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`  
-[v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
+[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `wszMethodName`  
-[v] Název vlastnosti pro objekt, jehož vlastnícím třída je požadováno. 
+[in] Název vlastnosti pro objekt, jehož vlastnící třídy jsou požadovány. 
 
 `pstrClassName`  
 [out] Získá název třídy, která vlastní vlastnost.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
+|`WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná vlastnost nebyla nalezena. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Je k dispozici k dokončení operace není dostatek paměti. |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemClassObject::GetPropertyOrigin](https://msdn.microsoft.com/library/aa391449(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemClassObject::GetPropertyOrigin](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getpropertyorigin) metody.
 
-Protože třídu můžete dědí vlastnosti ze základní třídy jeden nebo více, vývojáři často chtějí zjistit vlastnosti, ve kterém je definovaný dané metody.
+Protože třída může dědit vlastnosti z jednoho nebo více základních tříd, vývojáři často chtějí zjistit vlastnosti, ve kterém je definována dané metody.
 
-`pstrClassName` Parametr nesmí přejděte na platnou `BSTR` předtím, než je volána funkce, protože se jedná `out` parametr; tato ukazatel není navrácena po funkce vrátí hodnotu.
+`pstrClassName` Parametr nesmí odkazovat na platnou `BSTR` před voláním funkce, protože se jedná `out` parametr; tato ukazatel není uvolněný po vrácení funkce.
 
 ## <a name="requirements"></a>Požadavky  
-**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

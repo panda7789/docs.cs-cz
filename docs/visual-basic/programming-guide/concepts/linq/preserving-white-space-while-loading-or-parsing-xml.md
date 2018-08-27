@@ -3,11 +3,11 @@ title: Zachování prázdných znaků při načítání nebo analýze XML2
 ms.date: 07/20/2015
 ms.assetid: ef6518e0-2c8d-462c-8b92-a16e9dc737ad
 ms.openlocfilehash: 3341bfae8ff9de5e17ba18273c60b525f77bff16
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
-ms.translationtype: HT
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42908160"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42935966"
 ---
 # <a name="preserving-white-space-while-loading-or-parsing-xml"></a>Zachování prázdných znaků při načítání nebo analýze XML
 Toto téma popisuje, jak řídit chování mezer [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  

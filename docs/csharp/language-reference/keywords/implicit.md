@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - implicit keyword [C#]
 ms.assetid: 34db590e-eb3a-4f11-88d0-ffb3cd753dab
-ms.openlocfilehash: c731799fd51397b2bbbb190efcec63321ebae940
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 70379136fd4b14403eac919ac15590250b17b416
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39243732"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42932728"
 ---
 # <a name="implicit-c-reference"></a>implicit (referenční dokumentace jazyka C#)
 
@@ -30,9 +30,9 @@ Odstraněním nepotřebných přetypování implicitní převod může zlepšit 
 
 ## <a name="see-also"></a>Viz také:
 
-[Referenční dokumentace jazyka C#](../index.md)  
-[Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
-[Klíčová slova jazyka C#](index.md)  
-[explicit](explicit.md)  
-[– Operátor (referenční dokumentace jazyka C#)](operator.md)  
-[Postupy: Implementace uživatelem definovaných převodů mezi strukturami](../../programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)
+- [Referenční dokumentace jazyka C#](../index.md)  
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
+- [Klíčová slova jazyka C#](index.md)  
+- [explicit](explicit.md)  
+- [– Operátor (referenční dokumentace jazyka C#)](operator.md)  
+- [Postupy: Implementace uživatelem definovaných převodů mezi strukturami](../../programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)

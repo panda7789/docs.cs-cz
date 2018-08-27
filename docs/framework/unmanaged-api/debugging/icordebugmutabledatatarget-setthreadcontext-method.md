@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 8c0d01d5-67e5-4522-9ccf-c8f3a78cb4fd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 05f0c0d23b4885f2d6fd351fdf845a25c899228e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d3826bacb935652a282eac359170d9b93518e5cd
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418415"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42931795"
 ---
 # <a name="icordebugmutabledatatargetsetthreadcontext-method"></a>ICorDebugMutableDataTarget::SetThreadContext – metoda
-Nastaví kontext (hodnot registru) vlákna.  
+Nastaví kontext (hodnot registru) pro vlákno.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,19 +24,19 @@ HRESULT SetThreadContext(
   
 #### <a name="parameters"></a>Parametry  
  `dwThreadID`  
- [v] Identifikátor vlákno definované operačního systému.  
+ [in] Identifikátor vlákna operačního systému definovaný.  
   
  `contextSize`  
- [v] Velikost `pContext` vyrovnávací paměť k zapsání.  
+ [in] Velikost `pContext` vyrovnávací paměti k zapsání.  
   
  `pContext`  
- [v] Ukazatel na bajtů, které mají být zapsána.  
+ [in] Ukazatel na počet bajtů k zápisu.  
   
 ## <a name="remarks"></a>Poznámky  
- `SetThreadContext` Metoda aktualizuje aktuální kontext pro vlákno určeného operačního systému definovaná `dwThreadID` argument. Formát kontextu záznamu je určen podle platformy indikován [icordebugdatatarget::getplatform –](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) metoda. V systému Windows, [kontextu](http://msdn.microsoft.com/library/windows/desktop/ms679284.aspx) struktura.  
+ `SetThreadContext` Metoda aktualizuje aktuální kontext pro vlákno určené parametrem operačního systému definovaný `dwThreadID` argument. Formát záznamu o kontextu je určen podle platformy indikován [icordebugdatatarget::getplatform –](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) metody. Na Windows, jde [kontextu](/windows/desktop/api/winnt/ns-winnt-_arm64_nt_context) struktury.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

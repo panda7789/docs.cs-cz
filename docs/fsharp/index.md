@@ -1,89 +1,67 @@
 ---
 title: Průvodce jazykem F#
-description: 'Tato příručka poskytuje přehled o různých studijních materiálů F # je funkční programovací jazyk, který běží na rozhraní .NET.'
-author: jackfoxy
-ms.date: 03/19/2018
-ms.openlocfilehash: cb829e904c006467e1470752b4fe8757ca694b05
-ms.sourcegitcommit: 895c7602386a6dfe7ca4facce3d965b27e5c6e87
+description: 'Tento průvodce obsahuje přehled různých studijních materiálů pro F # je funkcionální programovací jazyk, který běží na rozhraní .NET.'
+author: cartermp
+ms.date: 08/03/2018
+ms.openlocfilehash: d3e10b6eb99f35b8eddeaa1f0ae257dd17d5cc41
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34311998"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933919"
 ---
 # <a name="f-guide"></a>Průvodce jazykem F#
 
-F # je funkční programovací jazyk, který běží na rozhraní .NET. Je také plnou podporu pro objekty, že vám dovolí blend funkční a objekt programování pro protokol řešení jakýkoli problém.
+Průvodce jazykem F # poskytuje mnoho materiály a učte jazyka F #.
 
-```fsharp
-open System // Get access to functionality in System namespace.
+## <a name="learning-f"></a>Učení F # #
 
-// Function: takes a name and produces a greeting.
-let getGreeting name =
-    sprintf "Hello, %s! Isn't F# great?" name
+[Co je F #](what-is-fsharp.md) popisuje, co je jazyk F # a jaké programování v něm je, stejně jako s ukázkami krátký kód. To se doporučuje, pokud jste ještě do jazyka F #.
 
-// Use the EntryPoint attribute to run the program.
-[<EntryPoint>]
-let main args =
-    // Define a list of names
-    let names = [| "Don"; "Julia"; "Xi" |]
-    
-    // Print a fun greeting for each name!
-    names
-    |> Array.map getGreeting
-    |> Array.iter (fun greeting -> printfn "%s" greeting)
+[Prohlídka jazyka F #](tour.md) s přehledem funkcí hlavní jazyka s mnoha ukázek kódu. To se doporučuje, pokud vás zajímají zobrazuje funkce jádra F # v akci.
 
-    0
-```
+[Začínáme s jazykem F # v sadě Visual Studio](get-started/get-started-visual-studio.md) Pokud jste na Windows a vyžadují plnou funkčnost Visual Studio integrované vývojové prostředí (IDE).
 
-F # je o produktivitu svou podstatou. Podpora nástrojů pro F # je všudypřítomná a úplné pokročilých funkcí.
+[Začínáme s jazykem F # v sadě Visual Studio pro Mac](get-started/get-started-with-visual-studio-for-mac.md) Pokud jste v systému macOS a chcete použít Visual Studio IDE.
 
-## <a name="learning-f"></a>Learning F # #
+[Začínáme s jazykem F # v aplikaci Visual Studio Code](get-started/get-started-vscode.md) Pokud chcete, aby zjednodušené, multiplatformní a a prostředí IDE s mnoha funkcemi.
 
-[Prohlídka F #](tour.md) shrnovat hlavní jazykové funkce s mnoha ukázek kódu. To se doporučuje, když jste nový F # a chcete se podívat, jak jazyk funguje.
+[Začínáme s jazykem F # pomocí rozhraní příkazového řádku .NET Core](get-started/get-started-command-line.md) Pokud chcete používat nástroje příkazového řádku.
 
-[Začínáme s F # v sadě Visual Studio](get-started/get-started-visual-studio.md) Pokud jste v systému Windows a chcete úplné prostředí Visual Studio IDE (Integraded Development Environment).
+[Začínáme s F # a Xamarinu](https://docs.microsoft.com/xamarin/cross-platform/platform/fsharp/) pro mobilní programování v jazyce F #.
 
-[Začínáme s F # v sadě Visual Studio pro Mac](get-started/get-started-with-visual-studio-for-mac.md) Pokud jste v systému macOS a chcete použít Visual Studio IDE.
-
-[Začínáme s F # ve Visual Studio Code](get-started/get-started-vscode.md) Pokud chcete, aby lightweight, napříč platformami a prostředí IDE mnoha funkcemi.
-
-[Začínáme s F # pomocí rozhraní příkazového řádku .NET Core](get-started/get-started-command-line.md) Pokud chcete pomocí nástroje příkazového řádku.
-
-[Začínáme s F # a Xamarin](https://docs.microsoft.com/xamarin/cross-platform/platform/fsharp/) pro mobilní programování s F #.
-
-[F # pro poznámkové bloky Azure](https://notebooks.azure.com/Microsoft/libraries/samples/html/FSharp%20for%20Azure%20Notebooks.ipynb) kurzu pro učení F # v bezplatné hostované poznámkového bloku Jupyter.
+[F # pro poznámkových bloků Azure](https://notebooks.azure.com/Microsoft/libraries/samples/html/FSharp%20for%20Azure%20Notebooks.ipynb) je kurz vás naučí F # do bezplatné prostředí poznámkového bloku Jupyter.
 
 ## <a name="references"></a>Odkazy
 
-[Referenční dokumentace jazyka F #](language-reference/index.md) je odkaz na oficiální, komplexní pro všechny funkce jazyka F #. Každý článek vysvětluje syntaxe a zobrazuje ukázky kódu. Na panelu filtru v obsahu slouží k vyhledání konkrétní článků.
+[Referenční dokumentace jazyka F #](language-reference/index.md) je oficiální, komplexní referenční informace pro všechny funkce jazyka F #. Každý článek vysvětluje, syntaxe a ukázky kódu se zobrazí. Panel filtrů v obsahu můžete použít k vyhledání konkrétní článků.
 
-[F # referenční dokumentace hlavní knihovny](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-core-library-reference) je referenční dokumentace rozhraní API pro základní knihovny F #.
+[Referenční knihovna Core F #](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-core-library-reference) je odkaz na rozhraní API pro základní knihovny F #.
 
+## <a name="additional-guides"></a>Další návody
 
-## <a name="additional-guides"></a>Další příručky
+[F # pro zábavu a zisk](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/) je komplexní a velmi podrobné adresáře v jednotlivých studijních F #. Jeho obsah a Autor jsou milého komunity F #. Cílová skupina jsou primárně vývojářům objektově orientované programování na pozadí.
 
-[F # pro Fun a zisku](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/) je komplexní a velmi podrobné adresáře na učení F #. Jeho obsah a Autor jsou milého komunitou F #. Cílové skupiny je primárně vývojářům objektově orientované programování pozadí.
+[Programování wikibook pro F #](https://en.wikibooks.org/wiki/F_Sharp_Programming) je wikibook pro o studijních F #. Je také součin komunita F #. Cílová skupina jsou uživatelů, kteří začínají s F #, stačí nepatrné objektově orientované programování na pozadí.
 
-[Programování Wikibook F #](https://en.wikibooks.org/wiki/F_Sharp_Programming) je wikibook o učení F #. Je také produktu komunity F #. Cílové skupiny je lidí, kteří jsou nové pro F #, s chvilku objektově orientované programování pozadí.
+## <a name="learn-f-through-videos"></a>Naučit se F # prostřednictvím videí
 
-## <a name="learn-f-through-videos"></a>Další informace F # prostřednictvím videa
+[Kurz pro F # na webu YouTube](https://www.youtube.com/watch?v=c7eNDJN758U) představuje vynikající Úvod do jazyka F # pomocí sady Visual Studio, zobrazení spoustu skvělé příklady v průběhu 1,5 hodiny. Cílová skupina jsou Visual Studio získávají vývojáři, kteří začínají s F #.
 
-[F # – tutoriál na YouTube](https://www.youtube.com/watch?v=c7eNDJN758U) je skvělým Úvod do F # pomocí sady Visual Studio, zobrazuje v průběhu 1,5 hodiny velké množství skvělé příklady. Cílové skupiny je Visual Studio vývojáře, kteří jsou nové F #.
+[Úvod k programování v F #](https://www.youtube.com/watch?v=Teak30_pXHk&list=PLEoMzSkcN8oNiJ67Hd7oRGgD1d4YBxYGC) skvělé série videí, která používá jako hlavní editor Visual Studio Code. Série videí nic začíná a končí u vytváření hry založený na textu RPG videa. Cílová skupina jsou vývojáři, kteří dávají přednost Visual Studio Code (nebo odlehčené vývojové prostředí IDE) a teprve začínáte F #.
 
-[Úvod do programování s F #](https://www.youtube.com/watch?v=Teak30_pXHk&list=PLEoMzSkcN8oNiJ67Hd7oRGgD1d4YBxYGC) je skvělým video série, která používá Visual Studio Code jako hlavní editoru. Série videí začne nic a končí vytváření video hře RPG založený na textu. Cílové skupiny je vývojáře, kteří raději Visual Studio Code (nebo lightweight IDE) a nový F #.
+[Co je nového v sadě Visual Studio 2017 pro F # pro vývojáře v](https://www.linkedin.com/learning/what-s-new-in-visual-studio-2017-for-f-sharp-for-developers) je videokurz ukazuje některé nové funkce jazyka F # v sadě Visual Studio 2017. Cílová skupina jsou Visual Studio získávají vývojáři, kteří začínají s F #.
 
-[Co je nového ve Visual Studio 2017 vývojářům F # pro](https://www.linkedin.com/learning/what-s-new-in-visual-studio-2017-for-f-sharp-for-developers) je video kurzu, které jsou uvedeny některé nové funkce pro F # v Visual Studio 2017. Cílové skupiny je Visual Studio vývojáře, kteří jsou nové F #.
+## <a name="other-useful-resources"></a>Další užitečné zdroje informací
 
-## <a name="other-useful-resources"></a>Další užitečné zdroje
+[Webu fragmenty kódu F #](http://www.fssnip.net) obsahuje obrovské sady ukazující, jak provést téměř čehokoliv v jazyce F #, od absolutní Začátečník do vysoce pokročilé fragmenty kódu.
 
-[F # fragmenty webu](http://www.fssnip.net) obsahuje sadu masivní znázorňující udělat jenom o něco v F #, od absolutní Začátečník až vysoce pokročilé fragmenty fragmenty kódu.
+[F # Software Foundation Slack](http://fsharp.org/guides/slack/) je skvělým místem pro začátečníky a nabídne specialistů je vysoce aktivní, a má některé z celého světa nejlepší F # programátoři k dispozici pro chat. Důrazně doporučujeme připojení.
 
-[Slack Foundation softwaru F #](http://fsharp.org/guides/slack/) je skvělým místem pro začátečníky a odborníky agentem, je vysoce aktivní, a má některé světě nejlepší F # programátorů k dispozici pro ke konverzaci. Důrazně doporučujeme připojení.
+## <a name="the-f-software-foundation"></a>V F # Software Foundation
 
-## <a name="the-f-software-foundation"></a>Foundation softwaru F #
+I když společnost Microsoft se hlavního vývojáře jazyka F # a jeho nástrojů v sadě Visual Studio, F # je také zajištěná nezávislé foundation, F # Software Foundation (FSSF).
 
-I když společnost Microsoft se primární vývojáře jazyka F # a jejích nástrojů v sadě Visual Studio, F # je také zálohován nezávislé foundation, F # softwaru Foundation (FSSF).
+Mise Software Foundation F # je podporovat, ochranu a předem programovací jazyk, F # a podpora a usnadnění růstu různorodým a mezinárodní komunita F # programátorů.
 
-Zvláště Foundation softwaru F # je povýšit, ochranu a zálohy programovací jazyk, F # a pro podporu a usnadnění růst různých a mezinárodní komunita programátory v jazyce F #.
-
-Další informace a zahrňte, podívejte se na [fsharp.org](http://fsharp.org). Je bezplatná a síť F # vývojářů v základ je něco, které nechcete neproběhly out v!
+Další informace a zapojení, projděte si [fsharp.org](http://fsharp.org). Je zdarma pro připojení a sítě vývojáři F # v základ je něco, co nechcete nechat ujít!

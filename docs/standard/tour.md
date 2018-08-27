@@ -7,11 +7,11 @@ ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
 ms.openlocfilehash: f9b4e3d885725afc4181256e02e3b174318e3ece
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
-ms.translationtype: HT
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42907675"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42931550"
 ---
 # <a name="tour-of-net"></a>Prohlídka technologie .NET
 

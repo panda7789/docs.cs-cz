@@ -1,17 +1,17 @@
 ---
-title: 'Postupy: Vytvoření aplikace deklaracemi rozhraní ASP.NET Web Forms pomocí WIF'
+title: 'Postupy: Sestavení s deklaracemi identity aplikace webových formulářů ASP.NET pomocí WIF'
 ms.date: 03/30/2017
 ms.assetid: efb264dd-f47b-49a9-85ee-9f45d4425765
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: e8dc6b1c5073ac55be224eb0d410ad7f87d135d2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 764e7fba31a7fb3fc40ec85ab4d0fb6e18e57390
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33400091"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42931769"
 ---
-# <a name="how-to-build-claims-aware-aspnet-web-forms-application-using-wif"></a>Postupy: Vytvoření aplikace deklaracemi rozhraní ASP.NET Web Forms pomocí WIF
+# <a name="how-to-build-claims-aware-aspnet-web-forms-application-using-wif"></a>Postupy: Sestavení s deklaracemi identity aplikace webových formulářů ASP.NET pomocí WIF
 ## <a name="applies-to"></a>Platí pro  
   
 -   Microsoft® Windows® Identity Foundation (WIF)  
@@ -19,7 +19,7 @@ ms.locfileid: "33400091"
 -   ASP.NET® webových formulářů  
   
 ## <a name="summary"></a>Souhrn  
- Tento postup obsahuje podrobné podrobné postupy pro vytvoření jednoduché deklaracemi identity aplikace webových formulářů ASP.NET. Poskytuje také pokyny, jak k otestování jednoduché deklaracemi identity aplikace webových formulářů ASP.NET pro úspěšné dokončení implementace federovaného ověřování. Tento postup nemá podrobné pokyny pro vytvoření tokenu služby zabezpečení (STS) a předpokládá, že jste již nakonfigurovali služby tokenů zabezpečení.  
+ Tento návod obsahuje podrobně popisuje postupy pro vytvoření jednoduché s deklaracemi identity aplikace webových formulářů ASP.NET. Obsahuje také pokyny, jak otestovat jednoduchou aplikaci webových formulářů ASP.NET s deklaracemi identity pro úspěšnou implementaci federovaného ověřování. Tento návod neobsahuje podrobné pokyny pro vytvoření tokenu služby zabezpečení (STS) a předpokládá, že jste už nakonfigurovali služby tokenů zabezpečení.  
   
 ## <a name="contents"></a>Obsah  
   
@@ -27,43 +27,43 @@ ms.locfileid: "33400091"
   
 -   Přehled kroků  
   
--   Krok 1 – Vytvoření jednoduché rozhraní ASP.NET Web Forms aplikace  
+-   Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
   
--   Krok 2 – konfigurace aplikaci ASP.NET Web Forms pro ověřování založené na deklaracích  
+-   Krok 2 – konfigurace aplikace webových formulářů ASP.NET pro ověřování nezaloženého na deklaracích  
   
 -   Krok 3 – Otestování řešení  
   
 ## <a name="objectives"></a>Cíle  
   
--   Konfigurace aplikace webových formulářů ASP.NET pro ověřování založené na deklaracích  
+-   Konfigurovat webovou aplikaci webových formulářů ASP.NET pro ověřování nezaloženého na deklaracích  
   
--   Testování úspěšné deklaracemi identity aplikace webových formulářů ASP.NET  
+-   Testování úspěšné s deklaracemi identity aplikace webových formulářů ASP.NET  
   
 ## <a name="summary-of-steps"></a>Přehled kroků  
   
--   Krok 1 – Vytvoření jednoduché webové formuláře aplikace ASP.NET  
+-   Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
   
--   Krok 2 – konfigurace aplikaci ASP.NET Web Forms federovaného ověřování  
+-   Krok 2 – konfigurace aplikace webových formulářů ASP.NET federovaného ověřování  
   
 -   Krok 3 – Otestování řešení  
   
-## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Krok 1 – Vytvoření jednoduché rozhraní ASP.NET Web Forms aplikace  
+## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
  V tomto kroku vytvoříte novou aplikaci webových formulářů ASP.NET.  
   
 #### <a name="to-create-a-simple-aspnet-application"></a>Chcete-li vytvořit jednoduchou aplikaci ASP.NET  
   
-1.  Spuštění sady Visual Studio a klikněte na tlačítko **soubor**, **nový**a potom **projektu**.  
+1.  Spusťte sadu Visual Studio a klikněte na tlačítko **souboru**, **nový**a potom **projektu**.  
   
-2.  V **nový projekt** okně klikněte na tlačítko **aplikaci webových formulářů ASP.NET**.  
+2.  V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.  
   
 3.  V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.  
   
-## <a name="step-2--configure-aspnet-web-forms-application-for-claims-based-authentication"></a>Krok 2 – konfigurace aplikaci ASP.NET Web Forms pro ověřování založené na deklaracích  
- V tomto kroku budete přidávat položky konfigurace určené k *Web.config* konfigurační soubor aplikace webových formulářů ASP.NET, aby pracujícím s deklaracemi.  
+## <a name="step-2--configure-aspnet-web-forms-application-for-claims-based-authentication"></a>Krok 2 – konfigurace aplikace webových formulářů ASP.NET pro ověřování nezaloženého na deklaracích  
+ V tomto kroku přidáte položky konfigurace *Web.config* konfiguračního souboru k němu s deklaracemi identity aplikace webových formulářů ASP.NET.  
   
-#### <a name="to-configure-aspnet-application-for-claims-based-authentication"></a>Ke konfiguraci aplikace ASP.NET pro ověřování založené na deklaracích  
+#### <a name="to-configure-aspnet-application-for-claims-based-authentication"></a>Ke konfiguraci aplikace ASP.NET pro ověřování nezaloženého na deklaracích  
   
-1.  Následující části položky konfigurace k přidání *Web.config* konfigurační soubor ihned po  **\<konfigurace >** otevírání element:  
+1.  Přidejte následující část položky konfigurace k *Web.config* konfigurační soubor ihned po  **\<konfigurace >** počáteční element:  
   
     ```xml  
     <configSections>  
@@ -72,7 +72,7 @@ ms.locfileid: "33400091"
     </configSections>  
     ```  
   
-2.  Přidat  **\<umístění >** element, který umožňuje přístup k metadatům federace aplikace:  
+2.  Přidat  **\<umístění >** element, který umožňuje přístup k federační metadata aplikace:  
   
     ```xml  
     <location path="FederationMetadata">  
@@ -84,7 +84,7 @@ ms.locfileid: "33400091"
     </location>  
     ```  
   
-3.  Přidejte následující položky konfigurace v rámci  **\<system.web >** prvků tak, aby odepřel uživatelů, zakažte nativní ověřování a povolit WIF ke správě ověřování.  
+3.  Přidejte následující položky konfigurace v rámci  **\<system.web >** prvků, které mají odepřít uživatele, zakažte nativní ověřování a povolení WIF ke správě ověřování.  
   
     ```xml  
     <authorization>  
@@ -93,7 +93,7 @@ ms.locfileid: "33400091"
     <authentication mode="None" />  
     ```  
   
-4.  Přidat  **\<system.webServer >** element, který definuje moduly federovaného ověřování. Všimněte si, že *PublicKeyToken* atribut musí být stejná jako *PublicKeyToken* atribut pro  **\<configSections >** položky přidali dříve:  
+4.  Přidat  **\<system.webServer >** element, který definuje moduly federovaného ověřování. Všimněte si, že *PublicKeyToken* atribut musí být stejné jako *PublicKeyToken* atribut pro  **\<configSections >** položky přidané dříve:  
   
     ```xml  
     <system.webServer>  
@@ -104,7 +104,7 @@ ms.locfileid: "33400091"
     </system.webServer>  
     ```  
   
-5.  Přidejte následující technologie Windows Identity Foundation související položky konfigurace a ujistěte se, že vaše aplikace ASP.NET adresu URL a číslo portu shodují s hodnotami v  **\<audienceUris >** položky **sféry**  atribut  **\<wsFederation >** elementu a **odpověď** atribut  **\<wsFederation >** elementu. Také zkontrolujte, zda **vystavitele** hodnota odpovídá adresu URL vašeho tokenu služby zabezpečení (STS).  
+5.  Přidejte následující technologie Windows Identity Foundation související položky konfigurace a ujistěte se, že adresa URL aplikace ASP.NET a číslo portu odpovídají hodnotám v  **\<audienceUris >** položka, **sféry**  atribut  **\<wsFederation >** elementu a **odpověď** atribut  **\<wsFederation >** elementu. Také zajistěte, aby **vystavitele** hodnota vejde adresu URL svého službu tokenů zabezpečení (STS).  
   
     ```xml  
     <system.identityModel>  
@@ -122,22 +122,22 @@ ms.locfileid: "33400091"
     </system.identityModel>  
     <system.identityModel.services>  
         <federationConfiguration>  
-            <cookieHandler requireSsl="false" />  
-            <wsFederation passiveRedirectEnabled="true" issuer="http://localhost:13922/wsFederationSTS/Issue" realm="http://localhost:28503/" reply="http://localhost:28503/" requireHttps="false" />  
+            <cookieHandler requireSsl="true" />  
+            <wsFederation passiveRedirectEnabled="true" issuer="http://localhost:13922/wsFederationSTS/Issue" realm="http://localhost:28503/" reply="http://localhost:28503/" requireHttps="true" />  
         </federationConfiguration>  
     </system.identityModel.services>  
     ```  
   
-6.  Přidat odkaz na <xref:System.IdentityModel> sestavení.  
+6.  Přidat odkaz <xref:System.IdentityModel> sestavení.  
   
-7.  Řešení a ujistěte se, že nejsou žádné chyby kompilace.  
+7.  Řešení, abyste měli jistotu, že nejsou žádné chyby kompilace.  
   
 ## <a name="step-3--test-your-solution"></a>Krok 3 – Otestování řešení  
- V tomto kroku budete testovat aplikace webových formulářů ASP.NET nakonfigurovaná pro ověřování založené na deklaracích identity. Pokud chcete provést základní test, přidáte kód, který zobrazí deklarace identity v tokenem vydaným Security Token Service (STS).  
+ V tomto kroku otestujete aplikaci webových formulářů ASP.NET nakonfigurován pro ověřování nezaloženého na deklaracích. Pokud chcete provést základní test, přidáte kód, který zobrazí deklarace identity v tokenu vydané Security Token Service (STS).  
   
-#### <a name="to-test-your-aspnet-web-form-application-for-claims-based-authentication"></a>K testování aplikace ASP.NET webového formuláře pro ověřování založené na deklaracích  
+#### <a name="to-test-your-aspnet-web-form-application-for-claims-based-authentication"></a>Chcete-li otestovat aplikaci technologie ASP.NET webové formuláře pro ověřování nezaloženého na deklaracích  
   
-1.  Otevřete **Default.aspx** souboru pod **TestApp** projektu a nahraďte jeho existující značky následující kód:  
+1.  Otevřít **Default.aspx** soubor **TestApp** projektu a nahraďte jeho existující kód následujícím kódem:  
   
     ```  
     %@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>  
@@ -159,12 +159,12 @@ ms.locfileid: "33400091"
     </html>  
     ```  
   
-2.  Uložit **Default.aspx**a pak otevřete jeho kódu na pozadí soubor s názvem **Default.aspx.cs**.  
+2.  Uložit **Default.aspx**a pak otevřete soubor s názvem jeho kódu **Default.aspx.cs**.  
   
     > [!NOTE]
-    >  **Default.aspx.cs** mohou být skryty pod **Default.aspx** v Průzkumníku řešení. Pokud **Default.aspx.cs** nezobrazuje, rozbalte položku **Default.aspx** kliknutím na trojúhelníček vedle sebe.  
+    >  **Default.aspx.cs** může být skrytá pod **Default.aspx** v Průzkumníku řešení. Pokud **Default.aspx.cs** není viditelný, rozbalte **Default.aspx** klepnutím na trojúhelník vedle sebe.  
   
-3.  Nahraďte stávající kód v **Page_Load** metodu **Default.aspx.cs** následujícím kódem:  
+3.  Nahraďte existující kód ve třídě **Page_Load** metoda **Default.aspx.cs** následujícím kódem:  
   
     ```csharp  
     using System;  
@@ -205,6 +205,6 @@ ms.locfileid: "33400091"
   
 4.  Uložit **Default.aspx.cs**a sestavte řešení.  
   
-5.  Spuštění řešení stisknutím **F5** klíč.  
+5.  Spuštění řešení stisknutím kombinace kláves **F5** klíč.  
   
-6.  By se měla zobrazit stránky, které se zobrazí deklarace identity v tokenu, který byl vydán pomocí služby tokenů zabezpečení.
+6.  Mělo by se zobrazit na stránce zobrazí deklarace identity v tokenu, který byl vydán pro vás služba tokenů zabezpečení.

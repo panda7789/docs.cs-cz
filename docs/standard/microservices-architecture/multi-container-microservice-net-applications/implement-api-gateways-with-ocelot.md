@@ -4,12 +4,12 @@ description: Zjistěte, jak implementovat brány rozhraní API s Ocelot a použi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
-ms.openlocfilehash: 7400603aa11b2a741db727c97c2e4b2a17268ac0
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: dbb3fdb27175a86291d3a942ff168a5aae787c0c
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37878798"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42930795"
 ---
 # <a name="implementing-api-gateways-with-ocelot"></a>Implementace brány rozhraní API s Ocelot
 
@@ -65,6 +65,7 @@ Uvidíte, že katalog mikroslužba je obvyklou pro projekty webového rozhraní 
 ```csharp
 [HttpGet]
 [Route("items/{id:int}")]
+[ProducesResponseType((int)HttpStatusCode.BadRequest)]
 [ProducesResponseType((int)HttpStatusCode.NotFound)]
 [ProducesResponseType(typeof(CatalogItem),(int)HttpStatusCode.OK)]
 public async Task<IActionResult> GetItemById(int id)
@@ -545,7 +546,7 @@ Když nasadíte aplikaci eShopOnContainers do Kuberentes, zpřístupní několik
 
 -   `/` pro klienta webové aplikace SPA
 -   `/webmvc` pro klienta webové aplikace MVC
--   `/webstatus` Zobrazení stavu/healchecks klienta webové aplikace
+-   `/webstatus` Zobrazení stavu/healthchecks klienta webové aplikace
 -   `/webshoppingapigw` pro web BFF a nákupního obchodních procesů
 -   `/webmarketingapigw` pro web BFF a marketingové obchodních procesů
 -   `/mobileshoppingapigw` pro mobilní BFF a nákupního obchodních procesů

@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: c31e1663-c164-4e65-b66d-d3aa8750a154
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6625103da5b9e235b214a41d990d7accb2646e57
-ms.sourcegitcommit: e8dc507cfdaad504fc9d4c83d28d24569dcef91c
+ms.openlocfilehash: a6c86870bf0089c25d402cf8f28a513e953ef28f
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "36314936"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933700"
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>Vývoj napříč platformami pomocí přenosné knihovny tříd
 Typ projektu knihovny přenosných tříd rozhraní .NET Framework v sadě Visual Studio pomáhá rychle a snadno vytvářet aplikace pro různé platformy a knihovny pro platformy Microsoft.  
@@ -147,7 +147,7 @@ Dialogové okno cíle změn v sadě Visual Studio 2012
  Vyžaduje ➌ [knihovny klienta HTTP Microsoft](https://www.nuget.org/packages/Microsoft.Net.Http) balíčku  
   
 > [!WARNING]
->  Chyby mohou nastat, když odkazujete [Microsoft Compression](https://www.nuget.org/packages/Microsoft.Bcl.Compression) a [knihovny klienta HTTP Microsoft](https://www.nuget.org/packages/Microsoft.Net.Http) balíčků z přenosné knihovny používat aplikace pro Windows Phone Silverlight 8.1. Další informace najdete v tématu [kompatibilita platformy a zásadní změny pro aplikace pro Windows Phone Silverlight 8.1](/previous-versions/windows/apps/dn642084(v=vs.105)).  
+>  Chyby mohou nastat, když odkazujete [Microsoft Compression](https://www.nuget.org/packages/Microsoft.Bcl.Compression) a [knihovny klienta HTTP Microsoft](https://www.nuget.org/packages/Microsoft.Net.Http) balíčků z přenosné knihovny používat aplikace pro Windows Phone Silverlight 8.1. Další informace najdete v tématu [kompatibilita platformy a zásadní změny pro aplikace pro Windows Phone Silverlight 8.1](https://docs.microsoft.com/previous-versions/windows/apps/dn642084(v=vs.105)).  
   
 <a name="members"></a>   
 ## <a name="supported-types-and-members"></a>Podporované typy a členy  

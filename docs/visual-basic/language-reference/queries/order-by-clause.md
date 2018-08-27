@@ -10,15 +10,15 @@ helpviewer_keywords:
 - Order By clause [Visual Basic]
 - Order By statement [Visual Basic]
 ms.assetid: fa911282-6b81-44c7-acfa-46b5bb93df75
-ms.openlocfilehash: 7c60156ee81618530b42d5f61dbcac6f59c4f675
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d4abb5f0b75ae4069c1dbe695a5c810b1f7aa6e1
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604117"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42935484"
 ---
 # <a name="order-by-clause-visual-basic"></a>Order By – klauzule (Visual Basic)
-Určuje pořadí řazení výsledků dotazu.  
+Určuje pořadí řazení výsledku dotazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,30 +28,30 @@ Order By orderExp1 [ Ascending | Descending ] [, orderExp2 [...] ]
   
 ## <a name="parts"></a>Součásti  
  `orderExp1`  
- Požadováno. Minimálně jedno pole z aktuální výsledek dotazu, které zjišťují, jak pořadí vrácených hodnot. Názvy polí musí být oddělené čárkami (,). Každé pole můžete identifikovat jako seřazený ve vzestupném nebo sestupném pořadí pomocí `Ascending` nebo `Descending` klíčová slova. Pokud žádné `Ascending` nebo `Descending` je zadané klíčové slovo, je vzestupné výchozí pořadí řazení. Pole pořadí řazení mají přednost před zleva doprava.  
+ Požadováno. Nejméně jedno pole z aktuální výsledek dotazu, které určují způsob řazení vrácených hodnot. Názvy polí musí být odděleny čárkou (,). Každé pole můžete určit, jak seřadit ve vzestupném nebo sestupném pořadí pomocí `Ascending` nebo `Descending` klíčová slova. Pokud ne `Ascending` nebo `Descending` – klíčové slovo je zadán, je výchozí pořadí řazení vzestupně. Pole pořadí řazení přednost zleva doprava.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít `Order By` klauzule k řazení výsledků dotazu. `Order By` Klauzule může seřadit pouze výsledku založené na proměnnou rozsahu pro aktuální obor. Například `Select` klauzule zavádí nový obor ve výrazu dotazu s nové proměnné iterace pro tento obor. Proměnné definované před v rozsahu `Select` klauzuli v dotazu nejsou k dispozici po `Select` klauzule. Proto pokud chcete výsledky podle pole, která není k dispozici v pořadí `Select` klauzule, musíte umístit `Order By` klauzule před `Select` klauzule. Jedna je například pokud bude potřeba to udělat v případě, že chcete seřadit podle pole, které nejsou v rámci výsledku dotazu.  
+ Můžete použít `Order By` klauzule řazení výsledků dotazu. `Order By` Klauzule můžete řadit pouze výsledek založený na proměnnou rozsahu aktuálního oboru. Například `Select` klauzule zavádí nový obor ve výrazu dotazu s nové proměnné iterace pro tento obor. Proměnné definované před v rozsahu `Select` klauzule v dotazu nejsou k dispozici po `Select` klauzuli. Proto pokud chcete vaše výsledky podle pole, která není k dispozici v pořadí `Select` klauzule, je nutné umístit `Order By` klauzule před `Select` klauzuli. Jeden příklad, kdy budete muset udělat při chcete seřadit podle polí, které nebudou zobrazeny jako součást výsledku dotazu.  
   
- Vzestupné a sestupném pořadí pro pole je dáno implementace <xref:System.IComparable> rozhraní pro datový typ pole. Pokud datový typ neimplementuje <xref:System.IComparable> rozhraní, pořadí řazení je ignorována.  
+ Vzestupném a sestupném pořadí pro pole je dáno provádění <xref:System.IComparable> rozhraní pro datový typ pole. Pokud datový typ neimplementuje <xref:System.IComparable> rozhraní, pořadí řazení se ignoruje.  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz výraz používá `From` klauzule deklarovat proměnnou rozsahu `book` pro `books` kolekce. `Order By` Klauzule seřadí výsledek dotazu podle ceny ve vzestupném pořadí (výchozí). Knih za stejnou cenu. jsou seřazené podle názvu ve vzestupném pořadí. `Select` Klauzule vybere `Title` a `Price` vlastnosti jako hodnoty vrácených dotazem.  
+ Následující dotaz používá výraz `From` klauzule k deklaraci proměnné rozsahu `book` pro `books` kolekce. `Order By` Klauzule výsledku dotazu seřadí podle cena ve vzestupném pořadí (výchozí). Knihy se stejnou cenu jsou seřazeny podle názvu ve vzestupném pořadí. `Select` Klauzule vybere `Title` a `Price` vlastnosti jako hodnoty vrácené dotazem.  
   
  [!code-vb[VbSimpleQuerySamples#24](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/order-by-clause_1.vb)]  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz výraz používá `Order By` klauzule výsledek dotazu seřadit cenu v sestupném pořadí. Knih za stejnou cenu. jsou seřazené podle názvu ve vzestupném pořadí.  
+ Následující dotaz výraz používá `Order By` klauzule výsledku dotazu seřadit cena v sestupném pořadí. Knihy se stejnou cenu jsou seřazeny podle názvu ve vzestupném pořadí.  
   
  [!code-vb[VbSimpleQuerySamples#25](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/order-by-clause_2.vb)]  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz výraz používá `Select` klauzule vyberte název adresáře, cena, publikovat data a vytvářet. Pak naplní `Title`, `Price`, `PublishDate`, a `Author` pole proměnnou rozsahu nového oboru. `Order By` Klauzule řadí nové proměnné rozsahu jméno autora, název knihy a ceny. Každý sloupec je seřazen v pořadí (vzestupně).  
+ Následující dotaz používá výraz `Select` klauzule vyberte název knihy, ceny, datum publikování a vytvářet. Pak naplní `Title`, `Price`, `PublishDate`, a `Author` pole proměnné rozsahu nového oboru. `Order By` Klauzule orders nové proměnné rozsahu jméno autora, název knihy a ceny. Každý sloupec je seřazen v pořadí, výchozí (vzestupně).  
   
  [!code-vb[VbSimpleQuerySamples#26](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/order-by-clause_3.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Úvod do LINQ v jazyku Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Dotazy](../../../visual-basic/language-reference/queries/queries.md)  
+ [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ [Dotazy](../../../visual-basic/language-reference/queries/index.md)  
  [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
  [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)

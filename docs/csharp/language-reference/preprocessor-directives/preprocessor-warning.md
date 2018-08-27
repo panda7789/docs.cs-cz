@@ -6,32 +6,32 @@ f1_keywords:
 helpviewer_keywords:
 - '#warning directive [C#]'
 ms.assetid: e6fb496d-bb8b-4018-baf6-5b60a0c8902b
-ms.openlocfilehash: c56458e0100c23450655e48b2abfb346e18e0bb8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 59ca63d5089e377627a9116f24f9a0a1681bb4b2
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33268180"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42932674"
 ---
 # <a name="warning-c-reference"></a>#warning (referenční dokumentace jazyka C#)
-`#warning` Umožňuje generovat varováním na úrovni jednoho z určitého umístění ve vašem kódu. Příklad:  
+`#warning` Umožňuje generovat [CS1030](../../misc/cs1030.md) úroveň jedno upozornění kompilátoru z určitého umístění ve vašem kódu. Příklad:  
   
 ```csharp
 #warning Deprecated code in this method.  
 ```  
   
-## <a name="remarks"></a>Poznámky  
- Běžně se používají `#warning` v podmíněného direktivu. Je také možné generovat uživatelem definované chybové s [#error](../../../csharp/language-reference/preprocessor-directives/preprocessor-error.md).  
+## <a name="remarks"></a>Poznámky
+ Běžně `#warning` v podmíněnou direktivu. Je také možné vytvořit uživatelem definované chybové s [#error](../../../csharp/language-reference/preprocessor-directives/preprocessor-error.md).  
   
 ## <a name="example"></a>Příklad  
-  
+
 ```csharp
 // preprocessor_warning.cs  
 // CS1030 expected  
 #define DEBUG  
-class MainClass   
+class MainClass
 {  
-    static void Main()   
+    static void Main()
     {  
 #if DEBUG  
 #warning DEBUG is defined  
@@ -39,8 +39,9 @@ class MainClass
     }  
 }  
 ```  
-  
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)
+
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)

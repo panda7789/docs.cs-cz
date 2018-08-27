@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XML serialization, configuration
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
-ms.openlocfilehash: 5e48753b5e8383a1ad946a29636e30ef07ceee9c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 15fad472288a72a079991f41e6c2859776d78cca
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33581726"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42930084"
 ---
 # <a name="ltdatetimeserializationgt-element"></a>&lt;dateTimeSerialization&gt; – Element
 Určuje režim serializace <xref:System.DateTime> objekty.  
@@ -46,15 +46,15 @@ Určuje režim serializace <xref:System.DateTime> objekty.
 |System.XML.Serialization|Element nejvyšší úrovně pro řízení serializace XML.|  
   
 ## <a name="remarks"></a>Poznámky  
- Verze 1.0, 1.1, 2.0 nebo novější verze rozhraní .NET Framework, když je tato vlastnost nastavena na **místní**, <xref:System.DateTime> objekty jsou vždy formátovaný jako místní čas. Informace o zóně Místní čas je vždy součástí serializovaná data. Tuto vlastnost nastavit na **místní** pro zajištění kompatibility s starší verze rozhraní .NET Framework.  
+ Ve verzích 1.0 a 1.1, 2.0 a novějších verzích rozhraní .NET Framework, když je tato vlastnost nastavená na **místní**, <xref:System.DateTime> objekty jsou vždy formátována jako místní čas. Informace o zóně Místní čas je vždy součástí serializovaná data. Tuto vlastnost nastavte na **místní** k zajištění kompatibility se staršími verzemi rozhraní .NET Framework.  
   
- Ve verzi 2.0 a novější verze rozhraní .NET Framework, které mají tuto vlastnost nastavit na **umožňujícím zpětnou transformaci**, <xref:System.DateTime> objekty jsou prověřit, abyste zjistili, jestli jsou v místní, UTC nebo neurčené časové pásmo. <xref:System.DateTime> Objekty jsou pak serializován tak, že tyto informace je zachováno. Toto je výchozí chování a je doporučené chování pro všechny nové aplikace, které nekomunikují ve starších verzích rozhraní.  
+ Ve verzi 2.0 a novějších verzích rozhraní .NET Framework, které mají tato vlastnost nastavena na **umožňujícím zpětnou transformaci**, <xref:System.DateTime> objekty jsou prověřit, abyste zjistili, jestli jsou v místním, UTC nebo nespecifikované časového pásma. <xref:System.DateTime> Objekty jsou pak serializován tak, že tyto informace je zachováno. Toto je výchozí chování a je doporučené chování pro všechny nové aplikace, které nekomunikují ve starších verzích rozhraní.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.DateTime>  
  <xref:System.Xml.Serialization.XmlSchemaImporter>  
  <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>  
  [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)  
- [\<schemaImporterExtensions > elementu](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
- [\<Přidat > elementu pro \<xmlSchemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)  
+ [\<schemaImporterExtensions > – Element](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
+ [\<Přidat > – Element pro \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)  
  [\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)

@@ -16,39 +16,39 @@ helpviewer_keywords:
 ms.assetid: 5c38374a-18a1-4cc2-b493-299e3dcaa60f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 20a5a9182da50345f97331e6f01e0e3665a2a61c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 94ab72b2ac2678640697e3cfab426e5a7d6d889a
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33591418"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933149"
 ---
 # <a name="sbyte-data-type-visual-basic"></a>SByte – datový typ (Visual Basic)
 
-Blokování podepsaná celá čísla 8bitové (1bajtů), které pohybovat v rozmezí -128 do 127.  
+Blokování podepsané 8bitová celá čísla (1bajtový), které v rozsahu od -128 až 127.  
   
 ## <a name="remarks"></a>Poznámky
 
-Použití `SByte` datový typ tak, aby obsahovala celé číslo hodnoty, které nevyžadují šířku úplná data `Integer` nebo dokonce šířku poloviční data `Short`. V některých případech může být modul common language runtime moct pack vaší `SByte` proměnné úzce spolupracují a uložte využití paměti.
+Použití `SByte` datový typ tak, aby obsahovala celočíselných hodnot, které nevyžadují šířku úplná `Integer` nebo dokonce data poloviční šířku `Short`. V některých případech může být modul common language runtime moct pack vaše `SByte` proměnné úzce spolupracují a uložit spotřebu paměti.
 
 Výchozí hodnota `SByte` je 0.
 
 ## <a name="literal-assignments"></a>Literál přiřazení
   
-Můžete deklarace a inicializace `SByte` proměnné jeho přiřazení decimal literál, hexadecimální literál, osmičková literál, nebo (počínaje 2017 Visual Basic) binární literál.
+Můžete deklarovat a inicializovat `SByte` proměnnou ji přiřadíte desítkový literál, šestnáctkové literál, osmičkové literální, nebo (od verze 2017 jazyka Visual Basic) binární literál.
 
-V následujícím příkladu, celá čísla rovno-102, která jsou reprezentovány jako decimal, šestnáctkové, a binární literály jsou přiřazeny k `SByte` hodnoty. Tento příklad vyžaduje, aby kompilujete s `/removeintchecks` přepínače kompilátoru.
+V následujícím příkladu celých čísel je rovno-102, které jsou reprezentovány jako desítkové, hexadecimální, a binární literály jsou přiřazeny k `SByte` hodnoty. Tento příklad vyžaduje kompilaci s parametrem `/removeintchecks` přepínač kompilátoru.
 
 [!code-vb[SByte](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#SByte)]  
 
 > [!NOTE] 
-> Použijte předponu `&h` nebo `&H` k označení hexadecimální literál, předponu `&b` nebo `&B` k označení binární literál a předponu `&o` nebo `&O` k označení osmičková literál. Decimal literály mít žádná předpona.
+> Použijte předponu `&h` nebo `&H` k označení šestnáctkové literálu předpona `&b` nebo `&B` k označení binárního typu literal a předponu `&o` nebo `&O` k označení osmičkové literální. Desítkové literály mají žádná předpona.
 
-Počínaje 2017 Visual Basic, můžete také použít znak podtržítka `_`, jako oddělovač číslice za účelem zlepšení čitelnosti jako následující příklad ukazuje.
+Počínaje rokem 2017 jazyka Visual Basic, můžete použít také znak podtržítka `_`, jako oddělovač číslice za účelem zlepšení čitelnosti jako následující příklad ukazuje.
 
 [!code-vb[SByteSeparator](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#SByteS)]  
 
-Od verze Visual Basic 15,5, můžete také použít znak podtržítka (`_`) jako oddělovač úvodní mezi předponu a hexadecimální, binary nebo osmičková číslice. Příklad:
+Od verze 15.5 jazyka Visual Basic, můžete také použít znak podtržítka (`_`) jako počáteční oddělovač mezi prefix a šestnáctkové, binární nebo osmičkové číslice. Příklad:
 
 ```vb
 Dim number As SByte = &H_F9
@@ -56,28 +56,28 @@ Dim number As SByte = &H_F9
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-Pokud literálu celé číslo je mimo rozsah `SByte` (tj. Pokud je menší než <xref:System.SByte.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.SByte.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilace. Když celé literál bez přípony, [celé číslo](integer-data-type.md) je odvodit. Pokud literálu celé číslo je mimo rozsah `Integer` typ, [dlouho](long-data-type.md) je odvodit. To znamená, že v předchozích příkladech číselné literály `0x9A` a `0b10011010` se interpretují jako 32bitová podepsaná celá čísla s hodnotou 156, který přesahuje <xref:System.SByte.MaxValue?displayProperty=nameWithType>. Úspěšně zkompilovat kód jako to, který přiřazuje celé číslo bez desetinných k `SByte`, můžete provést jeden z následujících akcí:
+Pokud celočíselný literál je mimo rozsah `SByte` (tj. Pokud je menší než <xref:System.SByte.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.SByte.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilace. Pokud má celočíselného literálu bez přípony [celé číslo](integer-data-type.md) je odvozen. Pokud celočíselný literál je mimo rozsah `Integer` typ, [dlouhé](long-data-type.md) je odvozen. To znamená, že v předchozích příkladech číselné literály `0x9A` a `0b10011010` jsou interpretovány jako 32bitová celá čísla se znaménkem s hodnotou 156, což překračuje <xref:System.SByte.MaxValue?displayProperty=nameWithType>. Aby mohl úspěšně kompilovat kód následujícím způsobem, který přiřazuje nedesetinné číslo do `SByte`, můžete provést jeden z následujících akcí:
 
-- Kompilování pomocí zakázat kontroly rozsah celých čísel `/removeintchecks` přepínače kompilátoru.
+- Zakázat kontroly rozsah celých čísel s kompilací `/removeintchecks` přepínač kompilátoru.
 
-- Použití [znak typu](../../programming-guide\language-features\data-types/type-characters.md) explicitně definujte literálovou hodnotou, kterou chcete přiřadit `SByte`. Následující příklad přiřadí záporné literál `Short` hodnotu `SByte`. Všimněte si, že pro záporná čísla, musíte nastavit vysokou bitem aplikace word horní z číselný literál. V případě našem příkladu to je bit 15 literálové `Short` hodnotu.
+- Použití [znak](../../programming-guide\language-features\data-types/type-characters.md) explicitně definovat, kterou chcete přiřadit k hodnotě literálu `SByte`. Následující příklad přiřadí negativní literál `Short` hodnota, která se `SByte`. Všimněte si, že pro záporná čísla, musí být nastaven bit nejvyšším vyšší řád slova číselný literál. V případě v našem příkladu to je bit 15 literálu `Short` hodnotu.
 
    [!code-vb[SByteTypeChars](../../../../samples/snippets/visualbasic/language-reference/data-types/sbyte-assignment.vb#1)]
 
 ## <a name="programming-tips"></a>Tipy pro programování
   
--   **Souladu se specifikací CLS.** `SByte` Datový typ není součástí [Common Language Specification](http://www.ecma-international.org/publications/standards/Ecma-335.htm) CLS (), takže kompatibilní se specifikací CLS kódu nemůže využívat komponenty, která se používá.
+-   **Dodržování specifikace CLS.** `SByte` Datový typ není součástí [Common Language Specification](http://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS), takže kód kompatibilní se Specifikací CLS nemůže využívat komponentu, která ji používá.
 
--   **Rozšíření.** `SByte` Datový typ rozšiřuje na `Short`, `Integer`, `Long`, `Decimal`, `Single`, a `Double`. To znamená, že můžete převést `SByte` na některý z těchto typů bez zjištění <xref:System.OverflowException?displayProperty=nameWithType> chyby.
+-   **Rozšíření.** `SByte` Datový typ rozšiřuje na `Short`, `Integer`, `Long`, `Decimal`, `Single`, a `Double`. To znamená, že můžete převést `SByte` ke kterékoli z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.
   
--   **Znaky typu.** `SByte` nemá žádnou – znak typu literálu nebo – znak typu identifikátoru.  
+-   **Znaky typu.** `SByte` nemá žádný – znak typu literálu nebo – znak typu identifikátoru.  
   
--   **Typ Framework.** Typ odpovídající v rozhraní .NET Framework je <xref:System.SByte?displayProperty=nameWithType> struktura.
+-   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.SByte?displayProperty=nameWithType> struktury.
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
  <xref:System.SByte?displayProperty=nameWithType>  
- [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
  [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
  [Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)  

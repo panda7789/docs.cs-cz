@@ -1,66 +1,66 @@
 ---
-title: Vytvoření jednoduchého mikroslužbu CRUD řízené daty
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Vytvoření jednoduchého mikroslužbu CRUD řízené daty
+title: Vytvoření jednoduché mikroslužby CRUD řízené daty
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Vytvoření jednoduché mikroslužby CRUD řízené daty
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: d99480c1b703bc46228e25f6acd7e7fbbcae6228
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 18ffbf56cf9d324e86fc288a2ba4a387831af925
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106444"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42935390"
 ---
-# <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduchého mikroslužbu CRUD řízené daty
+# <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduché mikroslužby CRUD řízené daty
 
-Tato část obsahuje přehled, jak vytvořit jednoduchou mikroslužbu, který provádí vytváření, čtení, aktualizace a operace odstranění (CRUD) ve zdroji dat.
+Tento oddíl, který ukazuje jak vytvořit jednoduchou mikroslužeb, která provádí vytvořit, číst, aktualizace a odstranění (CRUD) operací na zdroj dat.
 
-## <a name="designing-a-simple-crud-microservice"></a>Navrhování jednoduché mikroslužbu CRUD
+## <a name="designing-a-simple-crud-microservice"></a>Navrhování jednoduché mikroslužby CRUD
 
-Z návrhu hlediska je velmi jednoduchý tento typ kontejnerizované mikroslužby. Možná je jednoduchá problém vyřešit, nebo možná implementace je pouze testování konceptu.
+Tento typ kontejnerizované mikroslužby z návrhu hlediska, je velmi jednoduché. Možná je jednoduchý problém vyřešit, nebo možná implementace je pouze testování konceptu.
 
 ![](./media/image4.png)
 
-**Obrázek 8-4**. Interní návrhu pro jednoduché mikroslužeb CRUD
+**Obrázek 8-4**. Interní návrhu pro jednoduché mikroslužby CRUD
 
-Příkladem tento druh jednoduché datové jednotky služby je mikroslužbu katalogu v eShopOnContainers ukázkové aplikaci. Tento typ služby implementuje všechny její funkce v jedné projekt webového rozhraní API ASP.NET Core, který obsahuje třídy pro svůj model dat, jeho obchodní logiky a jeho data přístupový kód. Také ukládá související data v databázi spuštěna v systému SQL Server (jako jiný kontejner pro účely vývoje/testování), ale mohou být také všechny regulární hostitele systému SQL Server, jak ukazuje obrázek 8-5.
+Příkladem tohoto druhu služby Jednoduché datové jednotky je mikroslužeb katalogu v aplikaci eShopOnContainers ukázkové aplikaci. Tento typ služby implementuje všechny jeho funkce v jednom projektu webového rozhraní API ASP.NET Core, který obsahuje třídy pro její datový model, jeho obchodní logiky a jeho kód přístupu k datům. Je také ukládá související data v databázi spuštěna v systému SQL Server (jako jiný kontejner pro účely vývoje a testování), ale mohou být také jakýmkoli regulární systému SQL Server hostitelem, jak ukazuje obrázek 8 – 5.
 
 ![](./media/image5.png)
 
-**Obrázek 8-5**. Jednoduché mikroslužbu data řízené/CRUD návrhu
+**Obrázek 8-5**. Jednoduché mikroslužby data-driven/CRUD návrhu
 
-Při vývoji tento druh služby, je třeba pouze [ASP.NET Core](https://docs.microsoft.com/aspnet/core/) a rozhraní API pro přístup k datům nebo ORM jako [Entity Framework Core](https://docs.microsoft.com/ef/core/index). Může také generovat [Swagger](https://swagger.io/) metadata automaticky přes [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) zajistit popis co nabízí služby, jak je popsáno v následující části.
+Při vývoji tento druh službu, potřebujete jenom [ASP.NET Core](https://docs.microsoft.com/aspnet/core/) a rozhraní API pro přístup k datům nebo ORM jako [Entity Framework Core](https://docs.microsoft.com/ef/core/index). Může také generovat [Swagger](https://swagger.io/) metadat automaticky prostřednictvím [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) k poskytnutí popisu co nabídek služby, jak je vysvětleno v další části.
 
-Všimněte si, že spuštění databázový server, jako je SQL Server v rámci kontejner Docker je skvělá pro vývojové prostředí, protože všechny závislosti může mít a bez nutnosti zřídit databázi v cloudu nebo místně. To je velmi praktické, když spouštění integrace testů. Ale pro provozní prostředí, serverem databáze v kontejneru nedoporučuje, protože se obvykle nezobrazí vysoká dostupnost s Tento přístup. Pro produkční prostředí v Azure se doporučuje používat databázi SQL Azure nebo jakékoli jiné databáze technologie, která můžete zajistit vysokou dostupnost a škálovatelnost vysoké. Například pro přístup NoSQL, můžete zvolit DocumentDB.
+Všimněte si, že databázový server, jako je SQL Server v kontejneru Dockeru se skvěle hodí pro vývojová prostředí, protože všechny závislosti může mít až systémem, aniž by museli o zřízení databáze v cloudu nebo místně. To je velmi praktické, když s integrací testy. Však pro produkční prostředí, databázový server v kontejneru nedoporučuje se používat, protože se obvykle nezobrazí vysokou dostupnost s možnostmi tento přístup. Pro produkční prostředí v Azure se doporučuje použít službu Azure SQL DB nebo jiné databázové technologie, která dokáže poskytovat vysokou dostupnost a vysokou škálovatelnost. Například pro NoSQL přístup, můžete se rozhodnout DocumentDB.
 
-Nakonec úpravy souborů metadat soubor Docker a docker-compose.yml, můžete konfigurovat vytváření bitové kopie tohoto kontejneru, jaký základní image budou používat plus návrh nastavení, jako například vnitřní a vnější názvy a porty TCP. 
+Nakonec pomocí úpravy souboru Docker a docker-compose.yml soubory metadat, můžete nakonfigurovat jak se vytvoří snímek tohoto kontejneru, jaké základní image budou používat plus návrh nastavení, jako je interní a externí názvy a porty TCP. 
 
-## <a name="implementing-a-simple-crud-microservice-with-aspnet-core"></a>Implementace jednoduchého mikroslužbu CRUD pomocí ASP.NET Core
+## <a name="implementing-a-simple-crud-microservice-with-aspnet-core"></a>Implementace jednoduché mikroslužby CRUD s ASP.NET Core
 
-Chcete-li implementovat jednoduché mikroslužbu CRUD pomocí .NET Core a Visual Studio, začněte vytvořením jednoduchého projektu webového rozhraní API ASP.NET Core (spuštěna na .NET Core, můžete spustit na hostiteli systému Linux Docker), jako obrázku 8-6.
+Provádět jednoduché mikroslužby CRUD pomocí .NET Core a Visual Studio spustíte tak, že vytvoříte jednoduchý projekt webového rozhraní API ASP.NET Core (spouštění v .NET Core tak může probíhat na hostitele linuxového Dockeru), jako ukazuje obrázek 8 až 6.
 
   ------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------
   ![](./media/image6.png)   ![](./media/image7.png)
   ------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------
 
-**Obrázek 8-6**. Vytvoření projektu webového rozhraní API ASP.NET Core v sadě Visual Studio
+**Obrázek 8 – 6**. Vytvoření projektu webového rozhraní API ASP.NET Core v sadě Visual Studio
 
-Po vytvoření projektu, můžete implementovat vaše řadiče MVC, stejně jako v jiných projekt webového rozhraní API pomocí rozhraní Entity Framework API nebo dalších rozhraní API. V nový projekt webového rozhraní API uvidíte, že pouze závislost máte, mikroslužby jsou v technologii ASP.NET Core sám sebe. Interně v rámci `Microsoft.AspNetCore.All` závislostí, odkazuje na Entity Framework a mnoho dalších balíčcích Nuget pro rozhraní .NET Core, jak je znázorněno na obrázku 8-7.
+Po vytvoření projektu, můžete implementovat vaše řadiče MVC, stejně jako v jiných projekt webového rozhraní API pomocí rozhraní API Entity Framework nebo jiném rozhraní API. V novém projektu webového rozhraní API zobrazí se pouze závislost mít v mikroslužba je v ASP.NET Core, samotný. Interně, v rámci `Microsoft.AspNetCore.All` závislostí, odkazuje Entity Framework a řada dalších balíčků .NET Core Nuget, jak ukazuje obrázek 8 – 7.
 
 ![](./media/image8.PNG)
 
-**Obrázek 8-7**. Závislosti v jednoduché mikroslužbu CRUD webového rozhraní API
+**Obrázek 8-7**. Závislosti v jednoduché mikroslužby CRUD webového rozhraní API
 
-### <a name="implementing-crud-web-api-services-with-entity-framework-core"></a>Implementace služby CRUD webového rozhraní API základní Entity Framework
+### <a name="implementing-crud-web-api-services-with-entity-framework-core"></a>Implementace CRUD webového rozhraní API služeb s Entity Framework Core
 
-Základní Entity Framework (EF) je lightweight rozšiřitelný, a přístup technologie a platformy verzi oblíbených datům Entity Framework. Základní EF je objekt relační mapper (ORM), která umožňuje vývojářům rozhraní .NET pro práci s objekty .NET pomocí databáze.
+Entity Framework (EF) Core je odlehčený, rozšiřitelné, a multiplatformní verze oblíbených dat Entity Framework přístup k technologii. EF Core je objektově relační Mapovač (ORM), který umožňuje vývojářům .NET pracovat s databází s použitím objektů .NET.
 
-Mikroslužbu katalogu používá EF a zprostředkovatele SQL Server, protože jeho databáze se spouští v kontejneru se systémem SQL Server pro Linux Docker bitovou kopii. Databáze však může být nasazený do všech ostatních SQL serverech, jako je Windows na pracovišti nebo v databázi SQL Azure. Jediné, co by se musela změnit je připojovací řetězec v rozhraní ASP.NET Web API mikroslužby.
+Mikroslužby katalogu používá EF a zprostředkovatele SQL Server, protože jeho databáze je spuštěna v kontejneru se serverem SQL Server pro image Dockeru pro Linux. Databáze však může být nasazený do SQL serveru, jako je například Windows on-premises nebo databázi SQL Azure. Jediné, co je třeba změnit je připojovací řetězec webového rozhraní API ASP.NET mikroslužeb.
 
 
 #### <a name="the-data-model"></a>Datový model
 
-Základní EF provádí se přístup k datům pomocí modelu. Model se skládá z tříd entit a odvozené kontext, který představuje relaci s databází, což umožňuje dotazování a uložit data. Můžete generovat model z existující databáze, ručně code model tak, aby odpovídaly vaší databáze nebo použijte EF migrace vytvořit databázi z modelu (a momentální ho jako váš model změny v čase). Mikroslužbu katalogu používáme poslední přístup. Vidíte příklad třídy entity CatalogItem v následujícím příkladu kódu, který je jednoduchý prostý původní objekt CLR ([objektů POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)) třídy entita.
+S EF Core provádí přístup k datům s použitím modelu. Model se skládá z tříd entit a odvozené kontext, který reprezentuje relaci s databází, umožňuje dotazování a uložit data. Můžete generovat model z existující databáze, ručně code model tak, aby odpovídaly vaší databáze nebo použít migraci EF k vytvoření databáze z vašeho modelu (a vyvíjejí ho jako model mění v průběhu času). Poslední přístup se používá pro mikroslužby katalogu. Vidíte příklad třídy entity catalogitem je například v následujícím příkladu kódu, který je jednoduchý prostý původní objekt CLR ([POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)) třída entity.
 
 ```csharp
 public class CatalogItem
@@ -86,7 +86,7 @@ public class CatalogItem
 }
 ```
 
-Budete také potřebovat DbContext, který představuje relaci s databází. Pro katalog mikroslužbu, CatalogContext třída je odvozena ze základní třídy DbContext, jak je znázorněno v následujícím příkladu:
+Budete také potřebovat DbContext, který reprezentuje relaci s databází. Pro mikroslužby katalogu CatalogContext třída je odvozena ze základní třídy DbContext, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 public class CatalogContext : DbContext
@@ -103,11 +103,11 @@ public class CatalogContext : DbContext
 }
 ```
 
-Můžete mít další `DbContext` implementace. Například v mikroslužbu Catalog.API ukázkové, je druhý `DbContext` s názvem `CatalogContextSeed` kde automaticky naplní ukázkových dat při prvním pokusu o přístup k databázi. Tato metoda je užitečná pro ukázková data, pro automatizované testování scénáře, také. V rámci `DbContext`, můžete použít `OnModelCreating` metodu za účelem přizpůsobení objektu a databáze entity mapování s a dalších [body rozšiřitelnosti EF](https://blogs.msdn.microsoft.com/dotnet/2016/09/29/implementing-seeding-custom-conventions-and-interceptors-in-ef-core-1-0/).
+Můžete mít další `DbContext` implementace. Například v ukázkové Catalog.API mikroslužeb, je druhý `DbContext` s názvem `CatalogContextSeed` kde automaticky naplní vzorová data při prvním pokusu o přístup k databázi. Tato metoda je užitečná pro ukázková data a pro automatizované testování, podporuje i scénáře. V rámci `DbContext`, je použít `OnModelCreating` metodu za účelem přizpůsobení entity mapování objektu a databáze a další [bodů rozšiřitelnosti EF](https://blogs.msdn.microsoft.com/dotnet/2016/09/29/implementing-seeding-custom-conventions-and-interceptors-in-ef-core-1-0/).
 
-##### <a name="querying-data-from-web-api-controllers"></a>Dotazování na data z řadičů webového rozhraní API
+##### <a name="querying-data-from-web-api-controllers"></a>Dotazování na data z kontrolerů rozhraní Web API
 
-Instance třídy entity jsou obvykle načteny z databáze pomocí jazyka integrovaného dotazu (LINQ), jak je znázorněno v následujícím příkladu:
+Instance třídy entity se obvykle načítají z databáze pomocí Language Integrated Query (LINQ), jak je znázorněno v následujícím příkladu:
 
 ```csharp
 [Route("api/v1/[controller]")]
@@ -158,7 +158,7 @@ public class CatalogController : ControllerBase
 
 ##### <a name="saving-data"></a>Ukládání dat
 
-Data je vytvořit, odstranit a upravit v databázi pomocí instance třídy entity. Můžete přidat kód jako následující pevně příklad (imitovaná data v tomto případě) k vašim řadičům webového rozhraní API.
+Data je vytvořit, odstranit a upravit v databázi pomocí instance třídy entity. Můžete přidat kód jako v následujícím pevně zakódované příkladu (mock data v tomto případě) k vašim řadičům webového rozhraní API.
 
 ```csharp
 var catalogItem = new CatalogItem() {CatalogTypeId=2, CatalogBrandId=2,
@@ -167,11 +167,11 @@ _context.Catalog.Add(catalogItem);
 _context.SaveChanges();
 ```
 
-##### <a name="dependency-injection-in-aspnet-core-and-web-api-controllers"></a>Vkládání závislostí v řadiče ASP.NET Core a webového rozhraní API
+##### <a name="dependency-injection-in-aspnet-core-and-web-api-controllers"></a>Injektáž závislostí do kontrolerů ASP.NET Core a webové rozhraní API
 
-V ASP.NET Core můžete ihned vkládání závislostí (DI). Není potřeba nastavit kontejner inverzi řízení (IoC) třetí strany, i když je možné připojit vaše upřednostňované kontejner IoC ASP.NET základní infrastruktury Chcete-li. V takovém případě znamená, že můžete přímo vložit požadované DBContext EF nebo další úložiště pomocí konstruktoru řadiče. V příkladu výše `CatalogController` třída, jsme jsou vložení objektu `CatalogContext` zadejte plus jiné objekty prostřednictvím `CatalogController()` konstruktor.
+V ASP.NET Core můžete ihned Dependency Injection (DI). Není potřeba nastavit kontejner řízení IOC (Inversion) třetí strany, i když můžete svůj upřednostňovaný kontejner IoC pružný infrastruktury ASP.NET Core, chcete-li. V tomto případě znamená, že můžete přímo vložit požadovaná DBContext EF nebo další úložiště prostřednictvím konstruktoru kontroleru. V příkladu výše `CatalogController` třídy, jsme se vkládá objekt `CatalogContext` zadejte plus dalších objektů prostřednictvím `CatalogController()` konstruktoru.
 
-Důležité konfigurační nastavení v projektu webového rozhraní API je registrace třídy DbContext do kontejneru služby IoC. Obvykle děláte proto v `Startup` třída voláním `services.AddDbContext<DbContext>()` metodu `ConfigureServices()` metoda, jak je znázorněno v následujícím příkladu:
+Důležité konfigurační nastavení v projektu webového rozhraní API je registrace třídy DbContext na kontejner IoC služby. To obvykle děláte, `Startup` třídy voláním `services.AddDbContext<DbContext>()` metodu `ConfigureServices()` způsob, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -217,9 +217,9 @@ public void ConfigureServices(IServiceCollection services)
 -   **Ukládání dat**
     [*https://docs.microsoft.com/ef/core/saving/index*](https://docs.microsoft.com/ef/core/saving/index)
 
-## <a name="the-db-connection-string-and-environment-variables-used-by-docker-containers"></a>DB připojovací řetězec a prostředí proměnné používané Docker kontejnery
+## <a name="the-db-connection-string-and-environment-variables-used-by-docker-containers"></a>DB připojovací řetězec a prostředí proměnné využívaných kontejnery Dockeru
 
-Můžete použít nastavení ASP.NET Core a přidejte vlastnost ConnectionString do souboru settings.json, jak je znázorněno v následujícím příkladu:
+Můžete použít nastavení ASP.NET Core a přidejte vlastnost ConnectionString do souboru Settings.JSON v nástroji, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 {
@@ -236,9 +236,9 @@ Můžete použít nastavení ASP.NET Core a přidejte vlastnost ConnectionString
 }
 ```
 
-Soubor settings.json může mít výchozí hodnoty pro vlastnost ConnectionString nebo pro žádné jiné vlastnosti. Tyto vlastnosti však bude možné přepsat hodnoty proměnné prostředí, které zadáte v soubor docker-compose.override.yml, při použití Docker.
+Výchozí hodnoty pro vlastnost ConnectionString nebo jakoukoli jinou vlastnosti můžou mít soubor Settings.JSON v nástroji. Tyto vlastnosti však přepíše hodnoty proměnných prostředí, které zadáte v souboru docker-compose.override.yml při použití Dockeru.
 
-Z docker-compose.yml nebo docker compose.override.yml souborů můžete inicializovat těchto proměnných prostředí tak, že Docker bude nastavit je jako proměnné prostředí operačního systému pro vás, jak je znázorněno v následující soubor docker-compose.override.yml (připojení řetězec a další řádky zalomení v tomto příkladu, ale nebude zalomení v souboru kódu).
+Ze svých souborů docker-compose.yml a docker-compose.override.yml můžete inicializovat těchto proměnných prostředí tak, které Docker se nastavit je jako proměnné prostředí operačního systému pro vás, jak je znázorněno v následujícím souboru docker-compose.override.yml (připojení řetězce a další řádky zalamovat v tomto příkladu, ale nebude zabalení v souboru kódu).
 
 ```yml
 # docker-compose.override.yml
@@ -252,29 +252,29 @@ catalog.api:
     - "5101:80"
 ```
 
-Soubory docker-compose.yml na úrovni řešení nejsou jenom flexibilnější než konfigurační soubory na úrovni projektu nebo mikroslužbu, ale také bezpečnější Pokud přepíšete deklarovat na docker-compose soubory s hodnotami nastavenými z proměnné prostředí vaše nasazení nástroje, jako například z úlohy nasazení služby VSTS Docker. 
+Soubory docker-compose.yml na úrovni řešení nejsou pouze flexibilnější, než konfigurační soubory na úrovni projektu nebo mikroslužeb, ale také vyšší úroveň zabezpečení Pokud přepíšete deklarované na docker-compose soubory s hodnotami z nastavení proměnné prostředí z VSTS Docker nasazení úloh, jako jsou nástroje pro nasazení. 
 
-Nakonec můžete získat tuto hodnotu z vašeho kódu pomocí konfigurace\["ConnectionString"\], jak je znázorněno v metodě ConfigureServices v předchozí příklad kódu.
+Nakonec můžete získat tuto hodnotu v kódu s použitím konfigurace\["ConnectionString"\], jak je znázorněno v metodě ConfigureServices v předchozím příkladu kódu.
 
-Pro produkční prostředí, můžete však prozkoumat další způsoby, jak na tom, jak ukládat tajné klíče jako připojovací řetězce. Obvykle, bude spravovat zvolené orchestrator, jako jsou aplikace [Docker Swarm správu tajné klíče](https://docs.docker.com/engine/swarm/secrets/).
+Pro produkční prostředí, můžete však prozkoumat další způsoby, jak na tom, jak ukládat tajné kódy jako jsou připojovací řetězce. Obvykle, který bude spravovat zvolený orchestrátor, jako je vám pomůžou s [Docker Swarm správu tajných kódů](https://docs.docker.com/engine/swarm/secrets/).
 
 ### <a name="implementing-versioning-in-aspnet-web-apis"></a>Implementace správy verzí v rozhraní ASP.NET Web API
 
-Mění obchodní požadavky, mohou být přidány nové kolekce prostředků, vztahy mezi prostředky mohou změnit a může být změněna strukturu dat v prostředky. Aktualizace webového rozhraní API pro zpracování nových požadavků je poměrně jednoduchý proces, ale musíte zvážit důsledky, které tyto změny budou mít na klientské aplikace využívají webové rozhraní API. I když vývojáři navrhování a implementace rozhraní Web API má plnou kontrolu nad toto rozhraní API, vývojář nemá stejnou úrovní kontrolu nad klientských aplikací, které může být vytvořené třetí strany organizace operační vzdáleně.
+Podle měnících se obchodních požadavků, mohou být přidány nové kolekce prostředků, může změnit vztahy mezi prostředky a může být změněna strukturu dat v prostředcích. Aktualizace webového rozhraní API pro zpracování nových požadavků je poměrně přímočarý proces, ale musíte zvážit důsledky, které tyto změny budou mít na klientské aplikace využívající webové rozhraní API. I když vývojář navrhující a implementující webové rozhraní API má plnou kontrolu nad tímto rozhraním API, vývojář nemá stejnou úroveň kontroly nad klientskými aplikacemi, které může být sestavena v třetích stran, vzdáleně působící organizace.
 
-Správa verzí umožňuje webového rozhraní API označíte, funkce a prostředky, které vystavuje. Klientská aplikace pak mohou odesílat požadavky na konkrétní verzi funkce nebo prostředků. Existuje několik přístupů k implementaci správy verzí:
+Správa verzí umožňuje webovému rozhraní API k označení funkce a prostředky, které vystavuje. Klientská aplikace může potom odesílat požadavky na konkrétní verzi funkce nebo prostředku. Existuje několik přístupů k implementaci správy verzí:
 
--   Identifikátor URI Správa verzí
+-   Identifikátor URI správy verzí
 
--   Správa verzí řetězec dotazu
+-   Správa verzí pomocí řetězce dotazu
 
--   Správa verzí hlavičky
+-   Správa verzí pomocí hlavičky
 
-Řetězec dotazu a správa verzí URI jsou nejjednodušší k implementaci. Správa verzí hlavičky je dobré přístup. Ale záhlaví verze není jako explicitní a jednoduché jako správa verzí identifikátor URI. Protože správa verzí adresa URL je nejjednodušší a většina explicitní, eShopOnContainers ukázková aplikace používá Správa verzí identifikátor URI.
+Řetězec dotazu a identifikátor URI správy verzí jsou nejjednodušší implementace. Správa verzí pomocí hlavičky je dobrý nápad. Nicméně správa verzí pomocí hlavičky, ne jako explicitní a přímočaré jako identifikátor URI správy verzí. Vzhledem k tomu, že adresa URL správy verzí je nejjednodušší a největší explicitní, aplikaci eShopOnContainers ukázková aplikace používá Správa verzí identifikátoru URI.
 
-Správa verzí URI jako eShopOnContainers ukázkovou aplikaci pokaždé, když upravíte webového rozhraní API nebo změnit schéma prostředky, přidejte číslo verze identifikátor URI pro každého prostředku. Existující identifikátory URI by měly být nadále fungovat jako dříve, vrácení prostředky, které odpovídají schématu, která odpovídá na požadovanou verzi.
+Pomocí správy verzí identifikátor URI, stejně jako v aplikaci eShopOnContainers ukázkovou aplikaci pokaždé, když upravíte webové rozhraní API nebo změníte schéma prostředků, přidejte číslo verze do identifikátoru URI každého prostředku. Existující identifikátory URI by měly nadále fungovat jako předtím, vracet prostředky, které odpovídají schématu, která odpovídá na požadovanou verzi.
 
-Jak ukazuje následující příklad kódu, může být verze nastavená pomocí atributů směrování v rozhraní Web API, která vytváří verze explicitní v identifikátoru URI (v tomto případě v1).
+Jak je znázorněno v následujícím příkladu kódu, může být verze nastavená pomocí atribut trasy v rozhraní Web API, takže verze explicitní v identifikátoru URI (verze 1 v tomto případě).
 
 ```csharp
 [Route("api/v1/[controller]")]
@@ -283,66 +283,66 @@ public class CatalogController : ControllerBase
     // Implementation ...
 ```
 
-Tento mechanismus správy verzí je jednoduchý a závisí na serveru pro směrování požadavku na příslušný koncový bod. Ale pro sofistikovanější Správa verzí a nejlepší metody při používání REST, doporučujeme použít hypermédií a implementovat [HATEOAS (Hypertext jako stav modulu aplikace)](https://docs.microsoft.com/azure/architecture/best-practices/api-design#using-the-hateoas-approach-to-enable-navigation-to-related-resources).
+Tento mechanismus správy verzí je jednoduché a závisí na směrování požadavků na příslušný koncový bod serveru. Pro složitější správy verzí a nejlepší metody při používání REST, můžete ale by měl používejte hypermédia a implementovat [HATEOAS (Hypertext as Engine of Application State)](https://docs.microsoft.com/azure/architecture/best-practices/api-design#using-the-hateoas-approach-to-enable-navigation-to-related-resources).
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Scott Hanselman. Správa verzí RESTful webová rozhraní API ASP.NET Core umožněno**
+-   **Scott Hanselman. Správa verzí RESTful webového rozhraní API ASP.NET Core snadné**
     [*https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx*](https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
 
 -   **Správa verzí RESTful webového rozhraní API**
     [*https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
 
--   **Royi Fielding. Správa verzí, hypermédií a REST**
+-   **Roy Fielding. Správa verzí, Hypermédia a REST**
     [*https://www.infoq.com/articles/roy-fielding-on-versioning*](https://www.infoq.com/articles/roy-fielding-on-versioning)
 
-## <a name="generating-swagger-description-metadata-from-your-aspnet-core-web-api"></a>Generování metadat Swagger popis z ASP.NET rozhraní Web API Core 
+## <a name="generating-swagger-description-metadata-from-your-aspnet-core-web-api"></a>Generování metadat Swagger popis z webové rozhraní API ASP.NET Core 
 
-[Swagger](https://swagger.io/) je běžně používané s otevřeným zdrojem framework zajišťoval velké ekosystém nástroje, které vám pomůžou návrhu, sestavení, dokumentu a používat vaše rozhraní RESTful API. Se stává stále standard pro doménu popis metadat rozhraní API. By měly obsahovat metadata Swagger popis s jakýmkoli mikroslužbu řízené daty mikroslužeb nebo pokročilejší řízené domény mikroslužeb (jak je popsáno v následující části).
+[Swagger](https://swagger.io/) je běžně používaný open source architektura zajištěná rozsáhlého ekosystému nástrojů, která vám pomůže návrhu, sestavení, dokument a využívání rozhraní RESTful API. To se stává standard pro doménu metadat popis rozhraní API. By měl obsahovat popis metadata Swagger s jakýmkoli mikroslužeb, mikroslužby s daty nebo pokročilejší mikroslužeb řízeného doménou (jak je popsáno v následující části).
 
-Srdcem Swagger je specifikace Swagger, což je popis metadat rozhraní API v souboru YAML nebo JSON. Specifikace vytvoří RESTful kontrakt pro vaše rozhraní API s podrobnostmi o všech prostředků a operace v obou lidské a machine readable formátu pro snadný vývoj, zjišťování a integrace.
+Srdce Swaggeru je specifikace Swaggeru, což je popis metadat rozhraní API v souboru JSON nebo YAML. Specifikace vytvoří RESTful smlouvy pro vaše rozhraní API s podrobnostmi o všech jeho prostředků a operací v obou lidské a machine readable formátu pro snadný vývoj, zjišťování a integrace.
 
-Specifikace je základem z specifikace OpenAPI (OAS) a je vyvinuta v komunitě otevřené, transparentní a spolupráce pro standardizaci způsob, jakým jsou definovány rozhraní RESTful.
+Specifikace je základem z specifikaci OpenAPI (OAS) a je vyvinuta v komunitě open transparentní a spolupráci ke standardizaci způsob, jakým jsou definovány rozhraní RESTful.
 
-Specifikace definuje strukturu pro jak může být zjištěn služby a jak se jeho funkce rozumí. Další informace, včetně editoru webové a příklady specifikace Swagger společností jako Spotify, Uber, Slack a společnosti Microsoft, najdete v části webu Swagger (<https://swagger.io/>).
+Specifikace definuje strukturu pro jak může služba zjistit a jak své možnosti srozumitelný. Další informace, včetně editoru webu a příklady specifikace Swagger ze společnosti, jako Spotify, Uber, Slack a Microsoft, naleznete v tématu Swagger lokality (<https://swagger.io/>).
 
 ### <a name="why-use-swagger"></a>Proč používat Swagger?
 
-Hlavních důvodů pro generování metadat Swagger pro vaše rozhraní API jsou uvedeny níže.
+Hlavní důvody ke generování metadat Swagger pro rozhraní API jsou uvedeny níže.
 
-**Možnost pro ostatní produkty automaticky využívat a integrovat vaše rozhraní API**. Desítek produktů a [komerční nástroje](https://swagger.io/commercial-tools/) a mnoho [knihoven a architektur](https://swagger.io/open-source-integrations/) podporu Swagger. Microsoft má vysoké úrovně produktů a nástroje, které mohou automaticky používat rozhraní API na základě Swagger, například následující:
+**Možnost pro ostatní produkty automaticky využívat a integrovat vaše rozhraní API**. Desítky produkty a [komerční nástroje](https://swagger.io/commercial-tools/) a mnoha [knihoven a architektur](https://swagger.io/open-source-integrations/) podporují Swagger. Microsoft má vysoké úrovně produkty a nástroje, které automaticky využívají rozhraní API založená na Swaggeru, jako je následující:
 
--   [AutoRest](https://github.com/Azure/AutoRest). Může automaticky vygenerovat třídy klienta rozhraní .NET pro volání Swagger. Tento nástroj můžete použít z rozhraní příkazového řádku a je integrován se sadou Visual Studio pro snadné použití prostřednictvím grafického uživatelského rozhraní.
+-   [AutoRest](https://github.com/Azure/AutoRest). Můžete automaticky vygenerovat třídy klienta rozhraní .NET pro volání Swagger. Tento nástroj se dá použít rozhraní příkazového řádku a také se integruje se sadou Visual Studio pro snadné použití prostřednictvím grafického uživatelského rozhraní.
 
--   [Tok Microsoft](https://flow.microsoft.com/en-us/). Můžete automaticky [používat a integrovat vaše rozhraní API](https://flow.microsoft.com/en-us/blog/integrating-custom-api/) do vysoké úrovně pracovního postupu Microsoft Flow, programování bez znalosti vyžaduje.
+-   [Microsoft Flow](https://flow.microsoft.com/en-us/). Můžete automaticky [použít a integrovat vaše rozhraní API](https://flow.microsoft.com/en-us/blog/integrating-custom-api/) do vysoké úrovně pracovního postupu Microsoft Flow, bez programování dovednosti nutné.
 
--   [Microsoft PowerApps](https://powerapps.microsoft.com/en-us/). Můžete automaticky využívat vaše rozhraní API z [mobilních aplikací PowerApps](https://powerapps.microsoft.com/en-us/blog/register-and-use-custom-apis-in-powerapps/) vytvořené s [PowerApps Studio](https://powerapps.microsoft.com/en-us/guided-learning/learning-powerapps-parts/), s žádné znalostí programování vyžaduje.
+-   [Microsoft PowerApps](https://powerapps.microsoft.com/en-us/). Můžete automaticky využití rozhraní API z [mobilní aplikace PowerApps](https://powerapps.microsoft.com/en-us/blog/register-and-use-custom-apis-in-powerapps/) vytvořených pomocí [PowerApps Studio](https://powerapps.microsoft.com/en-us/guided-learning/learning-powerapps-parts/), bez programování znalosti vyžaduje.
 
--   [Azure App Service Logic Apps](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-what-are-logic-apps). Můžete automaticky [používat a integrovat do aplikace logiky Azure App Service vaše rozhraní API](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-custom-hosted-api), s žádné znalostí programování vyžaduje.
+-   [Azure App Service Logic Apps](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-what-are-logic-apps). Můžete automaticky [použít a integrovat vaše rozhraní API do Azure App Service Logic App](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-custom-hosted-api), bez programování znalosti vyžaduje.
 
-**Umožňuje automaticky generovat dokumentaci k rozhraní API**. Při vytváření rozsáhlých rozhraní RESTful API, jako je například komplexní aplikace na základě mikroslužbu, je třeba zpracovat velký počet koncových bodů s různými datovými modely použité v datové části žádosti a odpovědi. S správné dokumentaci a s plnou explorer rozhraní API, jak získat s Swagger, se klíč pro úspěch vašeho rozhraní API a přijetí vývojáři.
+**Možnost automaticky generovat dokumentaci k rozhraní API**. Při vytváření rozsáhlých rozhraní RESTful API, jako je například komplexních aplikací založených na mikroslužbách, potřebujete zpracovávat mnoho koncových bodů s různými datovými modely použité v datových částí požadavků a odpovědí. Máte správnou dokumentaci a s plnou Průzkumník rozhraní API, budete si ve Swaggeru, je klíčem k úspěchu rozhraní API a přijetí vývojáři.
 
-Metadata swagger společnosti je Microsoft Flow, PowerApps a Azure Logic Apps pomocí pochopit, jak používat rozhraní API a připojit se k nim.
+Metadata swagger společnosti je, co Microsoft Flow, PowerApps a Azure Logic Apps můžete pochopit, jak používat rozhraní API a připojit se k nim.
 
 ### <a name="how-to-automate-api-swagger-metadata-generation-with-the-swashbuckle-nuget-package"></a>Jak automatizovat generování metadat Swagger rozhraní API pomocí balíčku Swashbuckle NuGet
 
-Generování metadat Swagger ručně (v souboru YAML nebo JSON) může být pracné. Však můžete automatizovat zjišťování rozhraní API ASP.NET Web API služeb pomocí [balíčku Swashbuckle NuGet](http://aka.ms/swashbuckledotnetcore) dynamicky generovat metadata Swagger rozhraní API.
+Generování metadat Swagger ručně (v souboru JSON nebo YAML) může být pracné. Však můžete automatizovat zjišťování rozhraní API služeb ASP.NET Web API s použitím [balíček Swashbuckle NuGet](http://aka.ms/swashbuckledotnetcore) dynamicky generovat metadata Swagger rozhraní API.
 
-Swashbuckle automaticky vytvoří metadata Swagger pro projekty ASP.NET Web API. Podporuje projekty webového rozhraní API ASP.NET Core a tradiční rozhraní ASP.NET Web API a dalších příchuť, jako je například aplikace API Azure, mobilní aplikace Azure, Azure Service Fabric mikroslužeb založené na technologii ASP.NET. Také podporuje prostý webového rozhraní API nasazené na kontejnery, jako v pro odkaz na aplikaci.
+Swashbuckle vygeneruje automaticky metadata Swagger pro projekty ASP.NET Web API. Podporuje projekty webového rozhraní API ASP.NET Core a tradiční rozhraní ASP.NET Web API a další charakter, například aplikaci API Azure, Azure mobilní aplikace mikroslužeb Azure Service Fabric, které jsou založeny na technologii ASP.NET. Také podporuje prostý webového rozhraní API nasazené v kontejnerech, stejně jako v referenční aplikace.
 
-Swashbuckle kombinuje Explorer rozhraní API a Swagger nebo [uživatelského rozhraní swagger](https://github.com/swagger-api/swagger-ui) zajistit bohaté zjišťování a dokumentace prostředí pro uživatele rozhraní API. Kromě jeho motoru generátor metadata Swagger Swashbuckle také obsahuje vložené verzi swagger – uživatelské rozhraní, které se bude automaticky sloužit až po instalaci Swashbuckle.
+Swashbuckle kombinuje Průzkumník rozhraní API a Swagger nebo [uživatelského rozhraní swagger](https://github.com/swagger-api/swagger-ui) k poskytování bohatých zjišťování a dokumentaci prostředí pro vaše zákazníky. Kromě motor generátor metadata Swagger Swashbuckle také obsahuje vložený verzi swaggeru – uživatelské rozhraní, které se bude automaticky poskytovat po instalaci Swashbuckle.
 
-To znamená, že můžete doplnit rozhraní API pomocí dobrý zjišťování uživatelského rozhraní, což vývojářům používat vaše rozhraní API. Protože je generován automaticky, umožňuje soustředit na rozhraní API vyžaduje velmi malé množství kódu a údržby. Výsledek pro rozhraní API Průzkumníka vypadá jako obrázek 8-8.
+To znamená, že můžou doplnit rozhraní API ve službě hezké zjišťování uživatelského rozhraní, což vývojářům umožňuje používat vaše rozhraní API. Vyžaduje velmi malé množství kódu a údržby, protože to není automaticky vygenerován, tak budete moct soustředit na vytváření rozhraní API. Výsledek pro Průzkumník rozhraní API bude vypadat podobně jako obrázek 8-8.
 
 ![](./media/image9.png)
 
-**Obrázek 8-8**. Swashbuckle rozhraní API Explorer na základě metadat Swagger – eShopOnContainers katalogu mikroslužbu
+**Obrázek 8 – 8**. Průzkumník rozhraní API Swashbuckle na základě metadat Swagger – aplikaci eShopOnContainers katalogu mikroslužeb
 
-Průzkumník rozhraní API není zde je třeba mít. Jakmile máte webového rozhraní API, která může sám sebe popisují v metadatech Swagger, rozhraní API slouží bezproblémově z nástrojů rozhraní Swagger, včetně generátory kódu třídu proxy klienta, které můžete cílit na mnoha platformách. Například jako uvedených [AutoRest](https://github.com/Azure/AutoRest) automaticky vygeneruje třídy klienta rozhraní .NET. Jako další nástroje, ale [swagger codegen](https://github.com/swagger-api/swagger-codegen) jsou také k dispozici, který povolí generování kódu rozhraní API klienta knihovny, server zástupných procedur a dokumentaci automaticky.
+Průzkumník rozhraní API není nejdůležitějším rozhodnutím. Jakmile máte webové rozhraní API, které můžete popsat sám sebe v metadatech Swaggeru, vaše rozhraní API je možné bez problémů ze Swaggeru nástrojů, včetně generátory kódu třídu proxy klienta, které můžete cílit na spoustě platforem. Příklad, jak bylo zmíněno [AutoRest](https://github.com/Azure/AutoRest) automaticky vygeneruje třídy klienta rozhraní .NET. Další nástroje, jako je, ale [swagger codegen](https://github.com/swagger-api/swagger-codegen) jsou také k dispozici, který umožňuje generování kódu rozhraní API klientské knihovny, server zástupné procedury a dokumentaci automaticky.
 
-V současné době Swashbuckle se skládá ze dvou několik interní balíčků NuGet v rámci vysoké úrovně metabalíček [Swashbuckle.Swashbuckle.AspNetCoreSwaggerGen](https://www.nuget.org/packages/Swashbuckle.AspNetCore/) verze 1.0.0 nebo novější pro aplikace ASP.NET Core.
+V současné době se skládá z několika interní balíčky NuGet v rámci základní meta-package Swashbuckle [Swashbuckle.AspNetCore](https://www.nuget.org/packages/Swashbuckle.AspNetCore/) verze 1.0.0 nebo novějším pro aplikace ASP.NET Core.
 
-Po instalaci těchto balíčků NuGet v projektu webového rozhraní API, musíte nakonfigurovat Swagger ve třídě, spuštění, jako v následujícím kódu:
+Po instalaci těchto balíčků NuGet v projektu webového rozhraní API, musíte nakonfigurovat Swagger ve třídě spuštění, stejně jako v následujícím kódu:
 
 ```csharp
 public class Startup
@@ -385,7 +385,7 @@ public class Startup
 }
 ```
 
-Až bude vše Hotovo, můžete spustit aplikaci a procházet vytvoření následujících koncových bodů JSON pro Swagger a uživatelského rozhraní, pomocí adres URL, například tyto:
+Až to uděláte, můžete spustit aplikaci a přejděte následující koncové body JSON pro Swagger a uživatelského rozhraní, pomocí adres URL, jako jsou tyto:
 
 ```json
   http://<your-root-url>/swagger/v1/swagger.json
@@ -393,23 +393,23 @@ Až bude vše Hotovo, můžete spustit aplikaci a procházet vytvoření násled
   http://<your-root-url>/swagger/
 ```
 
-Dříve jste viděli vygenerované uživatelské rozhraní vytvořené Swashbuckle pro adresu URL podobnou http://&lt;vaše kořenové url &gt; /swagger/uživatelského rozhraní. Obrázek 8-9 se také zobrazí jak můžete testovat libovolné metody rozhraní API.
+Dříve jste viděli vygenerované uživatelské rozhraní vytvořené Swashbuckle pro adresu URL jako třeba http://&lt;your kořenové url &gt; /swagger/uživatelského rozhraní. Obrázek 8 až 9 také uvidíte jak otestovat všechny metody rozhraní API.
 
 ![](./media/image10.png)
 
-**Obrázek 8-9**. Uživatelské rozhraní Swashbuckle testování metoda API nebo položky katalogu
+**Obrázek 8 až 9**. Uživatelské rozhraní nástroje Swashbuckle testování/položky katalogu rozhraní API – metoda
 
-Obrázek 8-10 ukazuje metadat JSON pro Swagger vygenerovat z mikroslužbu eShopOnContainers (což je nástroje použijte pod) při žádosti o &lt;vaše kořenové url&gt;/swagger/v1/swagger.json pomocí [Postman](https://www.getpostman.com/).
+Obrázek 8-10 ukazuje metadat JSON pro Swagger generují z mikroslužeb aplikaci eShopOnContainers (což je tyto nástroje používají pod) při žádosti o &lt;your kořenové url&gt;/swagger/v1/swagger.json pomocí [Postman](https://www.getpostman.com/).
 
 ![](./media/image11.png)
 
-**Obrázek 8-10**. Metadata JSON pro swagger
+**Obrázek 8-10**. Swagger JSON metadata
 
-Je to snadné. A protože se automaticky vygeneroval, Swagger metadata se zvýší při přidání dalších funkcí do rozhraní API.
+Je to jednoduché. A protože není automaticky vygenerován, Swagger metadata se zvýší, když přidáte další funkce do vašeho rozhraní API.
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Rozhraní ASP.NET Web API pomůže Pages pomocí Swagger**
+-   **ASP.NET Web API stránky nápovědy k využívající Swagger**
     [*https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger*](https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger)
 
 

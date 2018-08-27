@@ -1,38 +1,38 @@
 ---
-title: Testy spuštění selektivní jednotek
-description: Ukazuje, jak se použije ke spuštění testů jednotek selektivní test příkazem dotnet výraz filtru.
+title: Spouštění selektivních testů jednotek
+description: Ukazuje, jak pomocí výrazu filtru spouštění selektivních testů jednotek pomocí příkazu dotnet test.
 author: smadala
 ms.author: mairaw
 ms.date: 03/22/2017
-ms.openlocfilehash: caea91e9884dba6bc07a7ef6a99699e43d23399c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 428e31014f5d8d487deb7c4b4317ebcef13c294d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33210831"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42935177"
 ---
-# <a name="running-selective-unit-tests"></a>Testy spuštění selektivní jednotek
+# <a name="running-selective-unit-tests"></a>Spouštění selektivních testů jednotek
 
-Následující příklady použití `dotnet test`. Pokud používáte `vstest.console.exe`, nahraďte `--filter ` s `--testcasefilter:`.
+Následující příklady používají `dotnet test`. Pokud používáte `vstest.console.exe`, nahraďte `--filter ` s `--testcasefilter:`.
 
 ## <a name="mstest"></a>MSTest
 
 ```csharp
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 namespace MSTestNamespace
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-
     [TestClass]
-    public class UnitTestClass1
+    public class UnitTest1
     {
-        [Priority(2)]
+        [TestCategory("CategoryA")]
+        [Priority(1)]
         [TestMethod]
         public void TestMethod1()
         {
         }
 
-        [TestCategory("CategoryA")]
-        [Priority(3)]
+        [Priority(2)]
         [TestMethod]
         public void TestMethod2()
         {
@@ -43,39 +43,40 @@ namespace MSTestNamespace
 
 | Výraz | Výsledek |
 | ---------- | ------ |
-| `dotnet test --filter Method` | Spuštění testů, jehož `FullyQualifiedName` obsahuje `Method`. K dispozici v `vstest 15.1+`. |
+| `dotnet test --filter Method` | Spustí testy, jejichž `FullyQualifiedName` obsahuje `Method`. K dispozici v `vstest 15.1+`. |
 | `dotnet test --filter Name~TestMethod1` | Spustí testy, jejichž název obsahuje `TestMethod1`. |
-| `dotnet test --filter ClassName=MSTestNamespace.UnitTestClass1` | Spustí testy, které jsou ve třídě `MSTestNamespace.UnitTestClass1`.<br>**Poznámka:** `ClassName` hodnota musí mít obor názvů, takže `ClassName=UnitTestClass1` nebude fungovat. |
-| `dotnet test --filter FullyQualifiedName!=MSTestNamespace.UnitTestClass1.TestMethod1` | Spustí všechny testy kromě `MSTestNamespace.UnitTestClass1.TestMethod1`. |
-| `dotnet test --filter TestCategory=CategoryA` | Spustí testy, které jsou opatřen poznámkou `[TestCategory("CategoryA")]`. |
-| `dotnet test --filter Priority=3` | Spustí testy, které jsou opatřen poznámkou `[Priority(3)]`.<br>**Poznámka:** `Priority~3` je neplatná hodnota, protože není řetězec. |
+| `dotnet test --filter ClassName=MSTestNamespace.UnitTest1` | Spustí testy, které jsou ve třídě `MSTestNamespace.UnitTest1`.<br>**Poznámka:** `ClassName` hodnota by měla mít oboru názvů, tak `ClassName=UnitTest1` nebude fungovat. |
+| `dotnet test --filter FullyQualifiedName!=MSTestNamespace.UnitTest1.TestMethod1` | Spustí všechny testy s výjimkou `MSTestNamespace.UnitTest1.TestMethod1`. |
+| `dotnet test --filter TestCategory=CategoryA` | Spustí testy, které jsou opatřeny poznámkami s `[TestCategory("CategoryA")]`. |
+| `dotnet test --filter Priority=2` | Spustí testy, které jsou opatřeny poznámkami s `[Priority(2)]`.<br>
 
-**Podmíněné operátory pomocí | a &amp;**
+**Použití podmíněných operátorů | a &amp;**
 
 | Výraz | Výsledek |
 | ---------- | ------ |
-| <code>dotnet test --filter "FullyQualifiedName~UnitTestClass1&#124;TestCategory=CategoryA"</code> | Spustí testy, které mají `UnitTestClass1` v `FullyQualifiedName` **nebo** `TestCategory` je `CategoryA`. |
-| `dotnet test --filter "FullyQualifiedName~UnitTestClass1&TestCategory=CategoryA"` | Spustí testy, které mají `UnitTestClass1` v `FullyQualifiedName` **a** `TestCategory` je `CategoryA`. |
-| <code>dotnet test --filter "(FullyQualifiedName~UnitTestClass1&TestCategory=CategoryA)&#124;Priority=1"</code> | Spustí testy, které mají buď `FullyQualifiedName` obsahující `UnitTestClass1` **a** `TestCategory` je `CategoryA` **nebo** `Priority` je 1. |
+| <code>dotnet test --filter "FullyQualifiedName~UnitTest1&#124;TestCategory=CategoryA"</code> | Spustí testy, které mají `UnitTest1` v `FullyQualifiedName` **nebo** `TestCategory` je `CategoryA`. |
+| `dotnet test --filter "FullyQualifiedName~UnitTest1&TestCategory=CategoryA"` | Spustí testy, které mají `UnitTest1` v `FullyQualifiedName` **a** `TestCategory` je `CategoryA`. |
+| <code>dotnet test --filter "(FullyQualifiedName~UnitTest1&TestCategory=CategoryA)&#124;Priority=1"</code> | Spustí testy, které mají buď `FullyQualifiedName` obsahující `UnitTest1` **a** `TestCategory` je `CategoryA` **nebo** `Priority` 1. |
 
 ## <a name="xunit"></a>xUnit
 
 ```csharp
+using Xunit;
+
 namespace XUnitNamespace
 {
     public class TestClass1
     {
-        [Trait("Category", "bvt")]
+        [Trait("Category", "CategoryA")]
         [Trait("Priority", "1")]
         [Fact]
-        public void foo()
+        public void Test1()
         {
         }
 
-        [Trait("Category", "Nightly")]
         [Trait("Priority", "2")]
         [Fact]
-        public void bar()
+        public void Test2()
         {
         }
     }
@@ -84,21 +85,63 @@ namespace XUnitNamespace
 
 | Výraz | Výsledek |
 | ---------- | ------ |
-| `dotnet test --filter DisplayName=XUnitNamespace.TestClass1.Test1` | Spouští pouze jeden test `XUnitNamespace.TestClass1.Test1`. |
-| `dotnet test --filter FullyQualifiedName!=XUnitNamespace.TestClass1.Test1` | Spustí všechny testy kromě `XUnitNamespace.TestClass1.Test1`. |
-| `dotnet test --filter DisplayName~TestClass1` | Spustí testy, jejichž název zobrazení obsahuje `TestClass1`. |
+| `dotnet test --filter DisplayName=XUnitNamespace.TestClass1.Test1` | Pouze jeden test spouští `XUnitNamespace.TestClass1.Test1`. |
+| `dotnet test --filter FullyQualifiedName!=XUnitNamespace.TestClass1.Test1` | Spustí všechny testy s výjimkou `XUnitNamespace.TestClass1.Test1`. |
+| `dotnet test --filter DisplayName~TestClass1` | Spustí testy, jejichž zobrazované jméno obsahuje `TestClass1`. |
 
 V příkladu kódu, jsou definované vlastnosti s klíči `Category` a `Priority` lze použít pro filtrování.
 
 | Výraz | Výsledek |
 | ---------- | ------ |
-| `dotnet test --filter XUnit` | Spuštění testů, jehož `FullyQualifiedName` obsahuje `XUnit`.  K dispozici v `vstest 15.1+`. |
-| `dotnet test --filter Category=bvt` | Spustí testy, které mají `[Trait("Category", "bvt")]`. |
+| `dotnet test --filter XUnit` | Spustí testy, jejichž `FullyQualifiedName` obsahuje `XUnit`.  K dispozici v `vstest 15.1+`. |
+| `dotnet test --filter Category=CategoryA` | Spustí testy, které mají `[Trait("Category", "CategoryA")]`. |
 
-**Podmíněné operátory pomocí | a &amp;**
+**Použití podmíněných operátorů | a &amp;**
 
 | Výraz | Výsledek |
 | ---------- | ------ |
-| <code>dotnet test --filter "FullyQualifiedName~TestClass1&#124;Category=Nightly"</code> | Spustí testy, které má `TestClass1` v `FullyQualifiedName` **nebo** `Category` je `Nightly`. |
-| `dotnet test --filter "FullyQualifiedName~TestClass1&Category=Nightly"` | Spustí testy, které má `TestClass1` v `FullyQualifiedName` **a** `Category` je `Nightly`. |
-| <code>dotnet test --filter "(FullyQualifiedName~TestClass1&Category=Nightly)&#124;Priority=1"</code> | Spustí testy, které mají buď `FullyQualifiedName` obsahující `TestClass1` **a** `Category` je `CategoryA` **nebo** `Priority` je 1. |
+| <code>dotnet test --filter "FullyQualifiedName~TestClass1&#124;Category=CategoryA"</code> | Spuštění testů, které má `TestClass1` v `FullyQualifiedName` **nebo** `Category` je `CategoryA`. |
+| `dotnet test --filter "FullyQualifiedName~TestClass1&Category=CategoryA"` | Spuštění testů, které má `TestClass1` v `FullyQualifiedName` **a** `Category` je `CategoryA`. |
+| <code>dotnet test --filter "(FullyQualifiedName~TestClass1&Category=CategoryA)&#124;Priority=1"</code> | Spustí testy, které mají buď `FullyQualifiedName` obsahující `TestClass1` **a** `Category` je `CategoryA` **nebo** `Priority` 1. |
+
+## <a name="nunit"></a>NUnit
+
+```csharp
+using NUnit.Framework;
+
+namespace NUnitNamespace
+{
+    public class UnitTest1
+    {
+        [Category("CategoryA")]
+        [Property("Priority", 1)]
+        [Test]
+        public void TestMethod1()
+        {
+        }
+
+        [Property("Priority", 2)]
+        [Test]
+        public void TestMethod2()
+        {
+        }
+    }
+}
+```
+
+| Výraz | Výsledek |
+| ---------- | ------ |
+| `dotnet test --filter Method` | Spustí testy, jejichž `FullyQualifiedName` obsahuje `Method`. K dispozici v `vstest 15.1+`. |
+| `dotnet test --filter Name~TestMethod1` | Spustí testy, jejichž název obsahuje `TestMethod1`. |
+| `dotnet test --filter FullyQualifiedName~NUnitNamespace.UnitTest1` | Spustí testy, které jsou ve třídě `NUnitNamespace.UnitTest1`.<br>
+| `dotnet test --filter FullyQualifiedName!=NUnitNamespace.UnitTest1.TestMethod1` | Spustí všechny testy s výjimkou `NUnitNamespace.UnitTest1.TestMethod1`. |
+| `dotnet test --filter TestCategory=CategoryA` | Spustí testy, které jsou opatřeny poznámkami s `[Category("CategoryA")]`. |
+| `dotnet test --filter Priority=2` | Spustí testy, které jsou opatřeny poznámkami s `[Priority(2)]`.<br>
+
+**Použití podmíněných operátorů | a &amp;**
+
+| Výraz | Výsledek |
+| ---------- | ------ |
+| <code>dotnet test --filter "FullyQualifiedName~UnitTest1&#124;TestCategory=CategoryA"</code> | Spustí testy, které mají `UnitTest1` v `FullyQualifiedName` **nebo** `TestCategory` je `CategoryA`. |
+| `dotnet test --filter "FullyQualifiedName~UnitTest1&TestCategory=CategoryA"` | Spustí testy, které mají `UnitTest1` v `FullyQualifiedName` **a** `TestCategory` je `CategoryA`. |
+| <code>dotnet test --filter "(FullyQualifiedName~UnitTest1&TestCategory=CategoryA)&#124;Priority=1"</code> | Spustí testy, které mají buď `FullyQualifiedName` obsahující `UnitTest1` **a** `TestCategory` je `CategoryA` **nebo** `Priority` 1. |

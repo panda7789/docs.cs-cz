@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a6c7bf332d829a440fe216756f7a23ec1277e6c6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c9babd5e50166be2c2d1b7bc32a5fc11d1ad8ba9
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449283"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42930561"
 ---
 # <a name="imetadataassemblyimportfindassembliesbyname-method"></a>IMetaDataAssemblyImport::FindAssembliesByName – metoda
-Získá pole sestavení se zadaným `szAssemblyName` parametr pomocí standardní pravidla zaměstnaní modul CLR (CLR) pro řešení odkazů.  
+Získává pole sestavení se zadaným `szAssemblyName` parametr pomocí standardních pravidel použijí modulem common language runtime (CLR) k vyřešení odkazů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,45 +42,45 @@ HRESULT FindAssembliesByName (
   
 #### <a name="parameters"></a>Parametry  
  `szAppBase`  
- [v] Kořenový adresář, do kterého chcete vyhledat zadaného sestavení. Pokud tato hodnota nastavena na `null`, `FindAssembliesByName` hledat pouze v globální mezipaměti sestavení pro sestavení.  
+ [in] Kořenový adresář, do kterého chcete vyhledat dané sestavení. Pokud tato hodnota nastavená na `null`, `FindAssembliesByName` bude vypadat pouze v globální mezipaměti sestavení pro sestavení.  
   
  `szPrivateBin`  
- [v] Seznam oddělený středníkem podadresáře (například "bin; přihrádka 2), v kořenovém adresáři, ve kterém se má hledat sestavení. Tyto adresáře jsou zjištěný kromě platformám zadaným v výchozí pravidla zjišťování.  
+ [in] Seznam oddělený středníkem podadresáře (například "bin; bin2"), v kořenovém adresáři, ve kterém chcete hledat sestavení. Tyto adresáře jsou vystavovány kromě platformám zadaným v výchozí pravidla zjišťování.  
   
  `szAssemblyName`  
- [v] Název sestavení najít. Formát tohoto řetězce je definována v stránce referenční třídy <xref:System.Reflection.AssemblyName>.  
+ [in] Název sestavení k vyhledání. Formát tohoto řetězce je definována na referenční stránce třídy pro <xref:System.Reflection.AssemblyName>.  
   
  `ppIUnk`  
- [v] Pole typu <<!--zzxref:IUnknown --> `IUnknown`> ve které se umístí `IMetadataAssemblyImport` rozhraní ukazatele.  
+ [in] Pole typu [IUnknown](/cpp/atl/iunknown) ve které chcete umístit `IMetadataAssemblyImport` ukazatele rozhraní.  
   
  `cMax`  
  [out] Maximální počet ukazatele rozhraní, které mohou být umístěny v `ppIUnk`.  
   
  `pcAssemblies`  
- [out] Vrátí počet ukazatele rozhraní. To znamená, počet ukazatele rozhraní ve skutečnosti umístěných v `ppIUnk`.  
+ [out] Číslo vrácen ukazatele rozhraní. To znamená, počet ukazatelů rozhraní skutečně umístit v `ppIUnk`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`FindAssembliesByName` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné sestavení.|  
+|`S_OK`|`FindAssembliesByName` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádná sestavení.|  
   
 ## <a name="remarks"></a>Poznámky  
- Název sestavení, `FindAssembliesByName` metoda vyhledá sestavení pomocí následujících standardní pravidla pro řešení odkazy na sestavení. (Další informace najdete v tématu [jak modul Runtime vyhledává sestavení](../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).) `FindAssembliesByName` umožňuje volajícímu nakonfigurovat různé aspekty kontextu překladač sestavení, jako je například cesta k aplikaci základní a privátní vyhledávání.  
+ Název sestavení, `FindAssembliesByName` metoda vyhledá sestavení pomocí následujících standardní pravidla pro překlad odkazy na sestavení. (Další informace najdete v tématu [jak modul Runtime vyhledává sestavení](../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).) `FindAssembliesByName` umožňuje volajícímu nakonfigurovat různé aspekty kontextu překladač sestavení, jako je například základní a privátní vyhledávací cestu aplikace.  
   
- `FindAssembliesByName` Metoda vyžaduje CLR na inicializaci v procesu k vyvolání logice sestavení řešení. Proto musí volat [coinitializeee –](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) (předávání COINITEE_DEFAULT) před voláním `FindAssembliesByName`a pak postupujte podle pomocí volání [couninitializecor –](../../../../docs/framework/unmanaged-api/hosting/couninitializecor-function.md).  
+ `FindAssembliesByName` Metoda vyžaduje CLR v procesu inicializovat, aby bylo možné vyvolávajícími logiku sestavení řešení. Proto je nutné volat [coinitializeee –](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) (předávání COINITEE_DEFAULT) před voláním `FindAssembliesByName`a pak postupujte podle voláním [couninitializecor –](../../../../docs/framework/unmanaged-api/hosting/couninitializecor-function.md).  
   
- `FindAssembliesByName` Vrátí [imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) ukazatele souboru, který obsahuje manifest sestavení pro název sestavení, který se předává v. Pokud název zadaného sestavení není plně určena (například pokud neobsahuje verze), může být vrácena více sestavení.  
+ `FindAssembliesByName` Vrátí [imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) ukazatel na soubor obsahující manifest sestavení pro název sestavení, které je předáno. Pokud daný název sestavení není zadán úplně (například, pokud neobsahuje verzi), může být vrácena více sestavení.  
   
- `FindAssembliesByName` běžně používá kompilátoru, která se pokusí najít odkazované sestavení při kompilaci.  
+ `FindAssembliesByName` běžně používá kompilátor, který se pokusí najít odkazované sestavení v době kompilace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** použit jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -1,6 +1,6 @@
 ---
 title: Diagnostikování chyb pomocí asistentů spravovaného ladění
-ms.date: 03/30/2017
+ms.date: 08/14/2018
 f1_keywords:
 - EHMDA
 helpviewer_keywords:
@@ -31,155 +31,153 @@ helpviewer_keywords:
 ms.assetid: 76994ee6-9fa9-4059-b813-26578d24427c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 16a039a5edb0e1023551f97deefbf7874a19638b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b745fa6a78ab2a7ab0b3a94c9921883d3c56c1b7
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33392317"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42935741"
 ---
-# <a name="diagnosing-errors-with-managed-debugging-assistants"></a>Diagnostikování chyb pomocí asistentů spravovaného ladění
-Spravované ladění Pomocníci ladění (mda) pomůcek, které spolupracují se modul CLR (CLR) k poskytování informací o stav modulu runtime. Asistentům generovat informační zprávy o událostech runtime, které nelze jinak depeše. Mda můžete izolovat aplikace pevný najít chyby, které dojít, když přechod mezi spravovanými a nespravovanými kódu. Můžete povolit nebo zakázat všechny mda přidání klíče registru systému Windows nebo nastavením proměnné prostředí. Konkrétní mda můžete povolit pomocí nastavení konfigurace aplikace. Můžete nastavit další konfiguraci nastavení pro některé jednotlivé mda v konfiguračním souboru aplikace. Protože tyto konfigurační soubory jsou analyzovat při načtení modulu runtime, je nutné povolit MDA před spuštěním spravované aplikace. Nelze ji povolit pro aplikace, které jste již bylo zahájeno.  
-  
-> [!NOTE]
->  Pokud MDA je povoleno, bude aktivní i, pokud není váš kód provádění pod ladicí program. Pokud MDA událost se vyvolá, když není k dispozici ladicí program, zpráva o události se zobrazí v dialogovém okně neošetřených výjimek, i když není k neošetřené výjimce. Abyste se vyhnuli dialogové okno, odeberte nastavení povolení MDA při není provádění kódu v prostředí ladění.  
-  
-> [!NOTE]
->  Pokud váš kód je prováděna v sadě Visual Studio integrované vývojové prostředí (IDE), se můžete vyhnout dialogové okno výjimku, který se zobrazí určité události (mda). K tomu, na **ladění** nabídky, klikněte na tlačítko **výjimky**. (Pokud **ladění** nabídky neobsahuje **výjimky** příkaz, klikněte na tlačítko **přizpůsobit** na **nástroje** nabídky přidat.) V **výjimky** dialogové okno, rozbalte seznam **Pomocníci spravovaného ladění** seznamu a poté zrušte zaškrtnutí **vyvolaná** zaškrtnutí políčka pro jednotlivé (mda). Třeba, aby se zabránilo dialogové okno výjimky pro [contextSwitchDeadlock](../../../docs/framework/debug-trace-profile/contextswitchdeadlock-mda.md) vymazat **vyvolaná** zaškrtněte políčko vedle jeho názvu v **spravované ladění Pomocníci** seznamu. Tohoto dialogového okna můžete také povolit zobrazení MDA výjimka dialogových oken.  
-  
- Následující tabulka uvádí mda dodávaných s rozhraním .NET Framework.  
-  
-|||  
-|-|-|  
-|[asynchronousThreadAbort](../../../docs/framework/debug-trace-profile/asynchronousthreadabort-mda.md)|[bindingFailure](../../../docs/framework/debug-trace-profile/bindingfailure-mda.md)|  
-|[callbackOnCollectedDelegate](../../../docs/framework/debug-trace-profile/callbackoncollecteddelegate-mda.md)|[contextSwitchDeadlock](../../../docs/framework/debug-trace-profile/contextswitchdeadlock-mda.md)|  
-|[dangerousThreadingAPI](../../../docs/framework/debug-trace-profile/dangerousthreadingapi-mda.md)|[dateTimeInvalidLocalFormat](../../../docs/framework/debug-trace-profile/datetimeinvalidlocalformat-mda.md)|  
-|[dirtyCastAndCallOnInterface](../../../docs/framework/debug-trace-profile/dirtycastandcalloninterface-mda.md)|[disconnectedContext](../../../docs/framework/debug-trace-profile/disconnectedcontext-mda.md)|  
-|[dllMainReturnsFalse](../../../docs/framework/debug-trace-profile/dllmainreturnsfalse-mda.md)|[exceptionSwallowedOnCallFromCom](../../../docs/framework/debug-trace-profile/exceptionswallowedoncallfromcom-mda.md)|  
-|[failedQI](../../../docs/framework/debug-trace-profile/failedqi-mda.md)|[fatalExecutionEngineError](../../../docs/framework/debug-trace-profile/fatalexecutionengineerror-mda.md)|  
-|[gcManagedToUnmanaged](../../../docs/framework/debug-trace-profile/gcmanagedtounmanaged-mda.md)|[gcUnmanagedToManaged](../../../docs/framework/debug-trace-profile/gcunmanagedtomanaged-mda.md)|  
-|[illegalPrepareConstrainedRegion](../../../docs/framework/debug-trace-profile/illegalprepareconstrainedregion-mda.md)|[invalidApartmentStateChange](../../../docs/framework/debug-trace-profile/invalidapartmentstatechange-mda.md)|  
-|[invalidCERCall](../../../docs/framework/debug-trace-profile/invalidcercall-mda.md)|[invalidFunctionPointerInDelegate](../../../docs/framework/debug-trace-profile/invalidfunctionpointerindelegate-mda.md)|  
-|[invalidGCHandleCookie](../../../docs/framework/debug-trace-profile/invalidgchandlecookie-mda.md)|[invalidIUnknown](../../../docs/framework/debug-trace-profile/invalidiunknown-mda.md)|  
-|[invalidMemberDeclaration](../../../docs/framework/debug-trace-profile/invalidmemberdeclaration-mda.md)|[invalidOverlappedToPinvoke](../../../docs/framework/debug-trace-profile/invalidoverlappedtopinvoke-mda.md)|  
-|[invalidVariant](../../../docs/framework/debug-trace-profile/invalidvariant-mda.md)|[jitCompilationStart](../../../docs/framework/debug-trace-profile/jitcompilationstart-mda.md)|  
-|[loaderLock](../../../docs/framework/debug-trace-profile/loaderlock-mda.md)|[loadFromContext](../../../docs/framework/debug-trace-profile/loadfromcontext-mda.md)|  
-|[marshalCleanupError](../../../docs/framework/debug-trace-profile/marshalcleanuperror-mda.md)|[marshaling](../../../docs/framework/debug-trace-profile/marshaling-mda.md)|  
-|[memberInfoCacheCreation](../../../docs/framework/debug-trace-profile/memberinfocachecreation-mda.md)|[moduloObjectHashcode](../../../docs/framework/debug-trace-profile/moduloobjecthashcode-mda.md)|  
-|[nonComVisibleBaseClass](../../../docs/framework/debug-trace-profile/noncomvisiblebaseclass-mda.md)|[notMarshalable](../../../docs/framework/debug-trace-profile/notmarshalable-mda.md)|  
-|[openGenericCERCall](../../../docs/framework/debug-trace-profile/opengenericcercall-mda.md)|[overlappedFreeError](../../../docs/framework/debug-trace-profile/overlappedfreeerror-mda.md)|  
-|[pInvokeLog](../../../docs/framework/debug-trace-profile/pinvokelog-mda.md)|[pInvokeStackImbalance](../../../docs/framework/debug-trace-profile/pinvokestackimbalance-mda.md)|  
-|[raceOnRCWCleanup](../../../docs/framework/debug-trace-profile/raceonrcwcleanup-mda.md)|[reentrancy](../../../docs/framework/debug-trace-profile/reentrancy-mda.md)|  
-|[releaseHandleFailed](../../../docs/framework/debug-trace-profile/releasehandlefailed-mda.md)|[reportAvOnComRelease](../../../docs/framework/debug-trace-profile/reportavoncomrelease-mda.md)|  
-|[streamWriterBufferedDataLost](../../../docs/framework/debug-trace-profile/streamwriterbuffereddatalost-mda.md)|[virtualCERCall](../../../docs/framework/debug-trace-profile/virtualcercall-mda.md)|  
-  
- Ve výchozím nastavení aktivuje rozhraní .NET Framework podmnožinu mda pro všechny spravované ladicí programy. Můžete zobrazit výchozí nastavení v sadě Visual Studio kliknutím **výjimky** na **ladění** nabídce a rozšíření **Pomocníci spravovaného ladění** seznamu.  
-  
-## <a name="enabling-and-disabling-mdas"></a>Povolení a zákaz mda  
- Můžete povolit nebo zakázat mda pomocí klíče registru, proměnné prostředí a nastavení konfigurace aplikace. Je nutné povolit klíč registru nebo proměnné prostředí pro použití nastavení konfigurace aplikace.  
-  
- V sadě Visual Studio 2005 a novějších verzích Pokud proces hostování je povoleno, nelze zakázat mda, které jsou v sadě výchozí nebo povolit mda, které není ve výchozím nastavení. Proces hostování je zapnutá ve výchozím nastavení, takže musí být explicitně zakázány.  
-  
- Pokud chcete zakázat hostitelského procesu v sadě Visual Studio, postupujte takto:  
-  
-1.  V **Průzkumníku**, vyberte projektu.  
-  
-2.  Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.  
-  
-     **Návrhář projektu** se zobrazí v okně.  
-  
-3.  Klikněte **ladění** kartě.  
-  
-4.  V **povolit ladicí programy** část, zrušte **povolit sady Visual Studio proces hostování** zaškrtávací políčko.  
-  
- Zákaz hostitelského procesu však může ovlivnit výkon. Potřeba zakázat mda tak, že zabrání zobrazení dialogového okna (mda) vždy, když obdrží oznámení MDA Visual Studio se můžete vyhnout. To lze provést, klikněte na tlačítko **výjimky** na **ladění** nabídky, rozbalte **Pomocníci spravovaného ladění** seznamu a potom vyberte nebo zrušte **vyvolaná**zaškrtnutí políčka pro jednotlivé (mda).  
-  
-### <a name="enabling-and-disabling-mdas-by-using-a-registry-key"></a>Povolení a zákaz mda pomocí klíče registru  
- Můžete povolit mda přidáním HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. Podklíč NETFramework\MDA (typ REG_SZ, hodnota 1) v registru systému Windows. Do textového souboru s názvem MDAEnable.reg zkopírujte následující příklad. Otevřete Editor registru systému Windows (RegEdit.exe) a z **soubor** nabídce zvolte **Import**. Vyberte soubor MDAEnable.reg povolit mda na tomto počítači. Nastavení podklíč řetězec hodnotu 1 (ne hodnotu DWORD 1) umožňuje při čtení z nastavení MDA *ApplicationName.suffix*. mda.config souboru. (Například Poznámkový blok v souboru konfigurace (mda) by se jmenovala notepad.exe.mda.config)  
-  
-```  
-Windows Registry Editor Version 5.00  
-  
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework]  
-"MDA"="1"  
-```  
-  
- Pokud počítači běží 32bitová aplikace na 64bitový operační systém, by měl klíč MDA nastavit takto:  
-  
-```  
-      Windows Registry Editor Version 5.00   
-  
-[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework]  
-"MDA"="1"  
-```  
-  
- V tématu [povolení a zákaz mda pomocí nastavení konfigurace specifické pro aplikaci](#appConfig) Další informace. Nastavení registru mohou být přepsány COMPLUS_MDA proměnné prostředí. V tématu [povolení a zákaz mda pomocí proměnné prostředí](#envVariable) Další informace.  
-  
- Mda zakázat, nastavte podklíč (mda) na hodnotu 0 (nula) pomocí Editoru registru systému Windows.  
-  
- Ve výchozím nastavení jsou povolené některé mda při spuštění aplikace, který je připojen k ladicí program, i bez přidání klíče registru. Příkladem takových pomocníci jsou [pInvokeStackImbalance](../../../docs/framework/debug-trace-profile/pinvokestackimbalance-mda.md) a [invalidApartmentStateChange](../../../docs/framework/debug-trace-profile/invalidapartmentstatechange-mda.md). Tyto Pomocníci můžete vypnout spuštěním souboru MDADisable.reg, jak je popsáno výše v této části.  
-  
-<a name="envVariable"></a>   
-### <a name="enabling-and-disabling-mdas-by-using-an-environment-variable"></a>Povolení a zákaz mda pomocí proměnné prostředí  
- MDA aktivace může také řízena proměnnou prostředí COMPLUS_MDA, která přepisuje klíč registru. Řetězec COMPLUS_MDA je velká a malá písmena, oddělený středníkem seznam názvů (mda) nebo jiné speciální řídicí řetězce. Spuštění v rámci spravované nebo nespravované ladicí program umožňuje sadu mda ve výchozím nastavení. K tomu je potřeba implicitně předřazení seznam oddělený středníkem mda povolené ve výchozím nastavení v části ladicí programy na hodnotu v prostředí proměnná nebo klíč registru. Speciální řídicí řetězce jsou následující:  
-  
--   `0` -Deaktivuje všechny mda.  
-  
--   `1` -Načte nastavení MDA z *ApplicationName*. mda.config.  
-  
--   `managedDebugger` – Explicitně aktivuje všechny mda, které jsou aktivované implicitně při spuštění spravované spustitelný soubor v části ladicí program.  
-  
--   `unmanagedDebugger` – Explicitně aktivuje všechny mda, které jsou aktivované implicitně při spuštění spustitelného souboru nespravované pod ladicí program.  
-  
- Pokud jsou konfliktní nastavení, nejnovější nastavení přepsat předchozí nastavení:  
-  
--   `COMPLUS_MDA=0` Zakáže všechny mda, včetně těch, které implicitně povoleno pod ladicí program.  
-  
--   `COMPLUS_MDA=gcUnmanagedToManaged` umožňuje `gcUnmanagedToManaged` kromě všech mda, které jsou implicitně povoleny v rámci ladicí program.  
-  
--   `COMPLUS_MDA=0;gcUnmanagedToManaged` umožňuje `gcUnmanagedToManaged` ale zakáže mda, které by jinak implicitně povolit v části ladicí program.  
-  
-<a name="appConfig"></a>   
-### <a name="enabling-and-disabling-mdas-by-using-application-specific-configuration-settings"></a>Povolení a zákaz mda pomocí nastavení konfigurace specifické pro aplikaci  
- Můžete povolit, zakázat a nakonfigurovat některé Pomocníci jednotlivě v konfiguračním souboru (mda) pro aplikaci. Pokud chcete povolit použití konfiguračního souboru aplikace pro konfiguraci mda, musí být nastavena na klíč registru (mda) nebo proměnná prostředí COMPLUS_MDA. Konfigurační soubor aplikace se obvykle nachází ve stejném adresáři jako spustitelný soubor (.exe) soubor aplikace. Název souboru má tvar *ApplicationName*. mda.config, například notepad.exe.mda.config. Pomocníci, které jsou povoleny v konfiguračním souboru aplikace může mít atributy nebo elementy určená speciálně pro řízení chování tohoto pomocníka. Následující příklad ukazuje, jak povolit a nakonfigurovat [zařazování](../../../docs/framework/debug-trace-profile/marshaling-mda.md).  
-  
-```xml  
-<mdaConfig>  
-  <assistants>  
-    <marshaling>  
-      <methodFilter>  
-        <match name="*"/>  
-      </methodFilter>  
-      <fieldFilter>  
-        <match name="*"/>  
-      </fieldFilter>  
-    </marshaling>  
-  </assistants>  
-</mdaConfig>  
-```  
-  
- `Marshaling` MDA vysílá informace o spravovaný typ, který je právě zařazen do nespravovaný typ pro každý Přechod spravované na nespravované v aplikaci. `Marshaling` (Mda) můžete také filtrovat názvy metody a struktura pole zadaná v `<methodFilter>` a `<fieldFilter>` podřízených elementů v uvedeném pořadí.  
-  
- Následující příklad ukazuje, jak povolit více mda pomocí obnoveno výchozí nastavení.  
-  
-```xml  
-<mdaConfig>  
-  <assistants>  
-    <illegalPrepareConstrainedRegion />  
-    <invalidCERCall />  
-    <openGenericCERCall />  
-    <virtualCERCall />  
-  </assistants>  
-</mdaConfig>  
-```  
-  
+# <a name="diagnose-errors-with-managed-debugging-assistants"></a>Diagnostikování chyb pomocí asistentů spravovaného ladění
+
+Spravované Asistenti ladění (mda) jsou pomůcky pro ladění, které fungují ve spojení s modul CLR (CLR), která poskytují informace o stavu modulu runtime. Asistentů generovat informační zprávy o událostech modulu runtime, které nelze zachytit jinak. Mda můžete použít k izolování aplikace obtížné najít chyby, ke kterým dochází při přechodu mezi spravovaným a nespravovaným kódem.
+
+Je možné [povolit nebo zakázat](#enable-and-disable-mdas) všechny mda přidání klíče registru Windows nebo nastavením proměnné prostředí. Konkrétní mda můžete povolit pomocí nastavení konfigurace aplikace. Další nastavení konfigurace pro některé jednotlivých mda můžete nastavit v konfiguračním souboru aplikace. Protože tyto konfigurační soubory jsou analyzovány při načtení modulu runtime, je nutné povolit MDA před spuštěním spravované aplikace. Nelze ji povolit pro aplikace, které jste už začali.
+
+V následující tabulce jsou uvedeny mda, které se dodávají s rozhraním .NET Framework:
+
+|||
+|-|-|
+|[asynchronousThreadAbort](../../../docs/framework/debug-trace-profile/asynchronousthreadabort-mda.md)|[bindingFailure](../../../docs/framework/debug-trace-profile/bindingfailure-mda.md)|
+|[callbackOnCollectedDelegate](../../../docs/framework/debug-trace-profile/callbackoncollecteddelegate-mda.md)|[contextSwitchDeadlock](../../../docs/framework/debug-trace-profile/contextswitchdeadlock-mda.md)|
+|[dangerousThreadingAPI](../../../docs/framework/debug-trace-profile/dangerousthreadingapi-mda.md)|[dateTimeInvalidLocalFormat](../../../docs/framework/debug-trace-profile/datetimeinvalidlocalformat-mda.md)|
+|[dirtyCastAndCallOnInterface](../../../docs/framework/debug-trace-profile/dirtycastandcalloninterface-mda.md)|[disconnectedContext](../../../docs/framework/debug-trace-profile/disconnectedcontext-mda.md)|
+|[dllMainReturnsFalse](../../../docs/framework/debug-trace-profile/dllmainreturnsfalse-mda.md)|[exceptionSwallowedOnCallFromCom](../../../docs/framework/debug-trace-profile/exceptionswallowedoncallfromcom-mda.md)|
+|[failedQI](../../../docs/framework/debug-trace-profile/failedqi-mda.md)|[fatalExecutionEngineError](../../../docs/framework/debug-trace-profile/fatalexecutionengineerror-mda.md)|
+|[gcManagedToUnmanaged](../../../docs/framework/debug-trace-profile/gcmanagedtounmanaged-mda.md)|[gcUnmanagedToManaged](../../../docs/framework/debug-trace-profile/gcunmanagedtomanaged-mda.md)|
+|[illegalPrepareConstrainedRegion](../../../docs/framework/debug-trace-profile/illegalprepareconstrainedregion-mda.md)|[invalidApartmentStateChange](../../../docs/framework/debug-trace-profile/invalidapartmentstatechange-mda.md)|
+|[invalidCERCall](../../../docs/framework/debug-trace-profile/invalidcercall-mda.md)|[invalidFunctionPointerInDelegate](../../../docs/framework/debug-trace-profile/invalidfunctionpointerindelegate-mda.md)|
+|[invalidGCHandleCookie](../../../docs/framework/debug-trace-profile/invalidgchandlecookie-mda.md)|[invalidIUnknown](../../../docs/framework/debug-trace-profile/invalidiunknown-mda.md)|
+|[invalidMemberDeclaration](../../../docs/framework/debug-trace-profile/invalidmemberdeclaration-mda.md)|[invalidOverlappedToPinvoke](../../../docs/framework/debug-trace-profile/invalidoverlappedtopinvoke-mda.md)|
+|[invalidVariant](../../../docs/framework/debug-trace-profile/invalidvariant-mda.md)|[jitCompilationStart](../../../docs/framework/debug-trace-profile/jitcompilationstart-mda.md)|
+|[loaderLock](../../../docs/framework/debug-trace-profile/loaderlock-mda.md)|[loadFromContext](../../../docs/framework/debug-trace-profile/loadfromcontext-mda.md)|
+|[marshalCleanupError](../../../docs/framework/debug-trace-profile/marshalcleanuperror-mda.md)|[marshaling](../../../docs/framework/debug-trace-profile/marshaling-mda.md)|
+|[memberInfoCacheCreation](../../../docs/framework/debug-trace-profile/memberinfocachecreation-mda.md)|[moduloObjectHashcode](../../../docs/framework/debug-trace-profile/moduloobjecthashcode-mda.md)|
+|[nonComVisibleBaseClass](../../../docs/framework/debug-trace-profile/noncomvisiblebaseclass-mda.md)|[notMarshalable](../../../docs/framework/debug-trace-profile/notmarshalable-mda.md)|
+|[openGenericCERCall](../../../docs/framework/debug-trace-profile/opengenericcercall-mda.md)|[overlappedFreeError](../../../docs/framework/debug-trace-profile/overlappedfreeerror-mda.md)|
+|[pInvokeLog](../../../docs/framework/debug-trace-profile/pinvokelog-mda.md)|[pInvokeStackImbalance](../../../docs/framework/debug-trace-profile/pinvokestackimbalance-mda.md)|
+|[raceOnRCWCleanup](../../../docs/framework/debug-trace-profile/raceonrcwcleanup-mda.md)|[reentrancy](../../../docs/framework/debug-trace-profile/reentrancy-mda.md)|
+|[releaseHandleFailed](../../../docs/framework/debug-trace-profile/releasehandlefailed-mda.md)|[reportAvOnComRelease](../../../docs/framework/debug-trace-profile/reportavoncomrelease-mda.md)|
+|[streamWriterBufferedDataLost](../../../docs/framework/debug-trace-profile/streamwriterbuffereddatalost-mda.md)|[virtualCERCall](../../../docs/framework/debug-trace-profile/virtualcercall-mda.md)|
+
+Ve výchozím nastavení aktivuje rozhraní .NET Framework podmnožinu mda pro všechny spravované ladicí programy. Můžete zobrazit výchozí nastavení v sadě Visual Studio výběrem **Windows** > **nastavení výjimek** na **ladění** nabídky a pak rozšiřuje **Asistentů spravovaného ladění** seznamu.
+
+![Okno pro nastavení výjimek v sadě Visual Studio](media/diagnosing-errors-with-managed-debugging-assistants/exception-settings-mdas.png)
+
+## <a name="enable-and-disable-mdas"></a>Povolení a zakázání mda
+
+Můžete povolit nebo zakázat mda pomocí klíče registru, proměnné prostředí a nastavení konfigurace aplikace. Povolte klíč registru nebo proměnné prostředí použít nastavení konfigurace aplikace.
+
+> [!TIP]
+> Místo zákaz mda, můžete sady Visual Studio zabránit v zobrazování dialogových oken MDA při každém přijetí oznámení o MDA. Chcete-li to mohli udělat, zvolte **Windows** > **nastavení výjimek** na **ladění** nabídky, rozbalte **spravované ladění Asistenti**seznamu a pak zaškrtněte nebo zrušte **přerušení při vyvolání** zaškrtávací políčko pro jednotlivé MDA.
+
+### <a name="registry-key"></a>Klíč registru
+
+Chcete-li povolit mda, přidejte **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework\MDA** podklíč (typ REG_SZ, hodnota 1) v registru Windows. Následující příklad zkopírujte do textového souboru s názvem *MDAEnable.reg*. Otevřete Editor registru (RegEdit.exe), Windows a **souboru** nabídku zvolte **Import**. Vyberte *MDAEnable.reg* souboru mda na tomto počítači. Nastavení podklíče na hodnotu řetězce **1** (nikoli hodnotu DWORD s názvem **1**) povolí čtení nastavení MDA ze *ApplicationName.suffix*. mda.config souboru. Například konfigurační soubor MDA pro poznámkový blok by se pojmenoval notepad.exe.mda.config.
+
+```text
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework]
+"MDA"="1"
+```
+
+Pokud počítači běží 32bitová aplikace na 64bitový operační systém, by měl vypadat asi takto nastaven klíč MDA:
+
+```text
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework]
+"MDA"="1"
+```
+
+Zobrazit [nastavení konfigurace specifické pro aplikaci](#application-specific-configuration-settings) Další informace. Nastavení registru mohou být přepsány COMPLUS_MDA proměnné prostředí. Zobrazit [proměnné prostředí](#environment-variable) Další informace.
+
+Mda zakázat, nastavte na podklíč MDA **0** (nula) pomocí Editoru registru Windows.
+
+Ve výchozím nastavení jsou některé mda povoleny při spuštění aplikace, která je připojena k ladicímu programu, i bez přidání klíče registru. Můžete zakázat tyto Asistenti spuštěním *MDADisable.reg* souboru, jak je popsáno výše v této části.
+
+### <a name="environment-variable"></a>Proměnná prostředí
+
+Aktivace MDA lze také ovládat proměnnou prostředí COMPLUS_MDA, která přepisuje klíč registru. Řetězec COMPLUS_MDA je velká a malá písmena, oddělené středníky seznam názvů MDA nebo jiné speciální řídicí řetězce. Spouštění v ladicím programu spravované nebo nespravované povoluje sadu mda ve výchozím nastavení. To se provádí implicitně předponou v podobě seznam oddělený středníkem mda povolená ve výchozím nastavení v části ladicích programů na hodnotu proměnné nebo registru klíč prostředí. Speciální řídicí řetězce jsou následující:
+
+- `0` -Deaktivuje všechny mda.
+
+- `1` -Načte nastavení MDA ze *ApplicationName*. mda.config.
+
+- `managedDebugger` -Explicitně aktivuje všechny mda, které jsou aktivovány implicitně při spuštění spravovaného spustitelný soubor v ladicím programu.
+
+- `unmanagedDebugger` -Explicitně aktivuje všechny mda, které jsou aktivované implicitně, když se spustí spustitelný soubor nespravované v ladicím programu.
+
+Pokud konfliktní nastavení se nejnovější nastavení přepíše předchozí nastavení:
+
+- `COMPLUS_MDA=0` Zakáže všechny mda, včetně těch, které implicitně povoleno v ladicím programu.
+
+- `COMPLUS_MDA=gcUnmanagedToManaged` umožňuje `gcUnmanagedToManaged` kromě jakékoli mda, u kterých jde implicitně v ladicím programu.
+
+- `COMPLUS_MDA=0;gcUnmanagedToManaged` umožňuje `gcUnmanagedToManaged` ale zakáže mda, které by jinak implicitně povoleno v ladicím programu.
+
+### <a name="application-specific-configuration-settings"></a>Nastavení konfigurace specifické pro aplikaci
+
+Můžete povolit, zakázat a nakonfigurovat některé Asistenti jednotlivě v konfiguračním souboru MDA pro aplikaci. Pokud chcete povolit použití konfiguračního souboru aplikace pro konfiguraci mda, musí být nastavena MDA klíč registru nebo COMPLUS_MDA proměnné prostředí. Konfigurační soubor aplikace je obvykle umístěn ve stejném adresáři jako spustitelný soubor (.exe) soubor aplikace. Název souboru má podobu *ApplicationName*. mda.config, například notepad.exe.mda.config. Pomocníci, které jsou povoleny v konfiguračním souboru aplikace může mít atributy nebo elementy speciálně pro řízení chování této Pomocníka s nastavením.
+
+Následující příklad ukazuje, jak povolit a konfigurovat [zařazování](../../../docs/framework/debug-trace-profile/marshaling-mda.md):
+
+```xml
+<mdaConfig>
+  <assistants>
+    <marshaling>
+      <methodFilter>
+        <match name="*"/>
+      </methodFilter>
+      <fieldFilter>
+        <match name="*"/>
+      </fieldFilter>
+    </marshaling>
+  </assistants>
+</mdaConfig>
+```
+
+`Marshaling` MDA generuje informace o spravovaný typ, který je právě zařazení na nespravovaný typ pro každý Přechod spravované na nespravované aplikace. `Marshaling` MDA můžete také filtrovat názvy metody a pole struktury zadat v **methodFilter** a **fieldFilter** podřízené prvky v uvedeném pořadí.
+
+Následující příklad ukazuje, jak povolit více mda pomocí jejich výchozí nastavení:
+
+```xml
+<mdaConfig>
+  <assistants>
+    <illegalPrepareConstrainedRegion />
+    <invalidCERCall />
+    <openGenericCERCall />
+    <virtualCERCall />
+  </assistants>
+</mdaConfig>
+```
+
 > [!IMPORTANT]
->  Pokud zadáte více než jeden pomocníka v konfiguračním souboru, můžete musí seznam v abecedním pořadí. Například, pokud chcete povolit i `virtualCERCall` a `invalidCERCall` mda, je nutné přidat `<invalidCERCall />` položka před `<virtualCERCall />` položku. Pokud položky nejsou v abecedním pořadí, se zobrazí zpráva o výjimce souboru nezpracované neplatná konfigurace.  
-  
-### <a name="mda-output"></a>Výstup (mda)  
- MDA výstup se podobá následující příklad, který se zobrazuje výstup z `pInvokeStackImbalance` (mda).  
-  
- `A call to PInvoke function 'MDATest!MDATest.Program::StdCall' has unbalanced the stack. This is likely because the managed PInvoke signature does not match the unmanaged target signature. Check that the calling convention and parameters of the PInvoke signature match the target unmanaged signature.`  
-  
-## <a name="see-also"></a>Viz také  
- [Ladění, trasování a profilace](../../../docs/framework/debug-trace-profile/index.md)
+> Pokud zadáte více než jeden Pomocníka s nastavením v konfiguračním souboru, uveďte je v abecedním pořadí. Například, pokud chcete povolit obě `virtualCERCall` a `invalidCERCall` mda, je nutné přidat `<invalidCERCall />` položka před `<virtualCERCall />` položka. Pokud záznamy nejsou v abecedním pořadí, zobrazí se zprávou výjimky neošetřené neplatnou konfigurací souboru.
+
+## <a name="mda-exceptions"></a>Výjimky MDA
+
+Pokud je povolena MDA, je aktivní i když váš kód neprobíhá v ladicím programu. Pokud MDA událost se vyvolá, když ladicí program není k dispozici, zpráva o události se zobrazí v dialogovém okně neošetřenou výjimku, i když není k neošetřené výjimce. Aby se zabránilo dialogových oken, odeberte nastavení MDA povolení při není provádění kódu v prostředí ladění.
+
+Když se spustí váš kód v sadě Visual Studio integrované vývojové prostředí (IDE), se můžete vyhnout, který se zobrazí pro konkrétní události MDA dialogovém okně výjimky. K tomu, na **ladění** nabídce zvolte **Windows** > **nastavení výjimek**. V **nastavení výjimek** okna, rozbalte **asistentů spravovaného ladění** seznamu a poté zrušte zaškrtnutí **přerušení při vyvolání** zaškrtávací políčko pro jednotlivé MDA. Můžete také použít dialogové okno k *povolit* zobrazení MDA výjimka dialogových oknech.
+
+## <a name="mda-output"></a>Výstup MDA
+
+MDA výstup je podobný následujícím příkladu, který se zobrazuje výstup z `PInvokeStackImbalance` MDA:
+
+**Volání funkce PInvoke "MDATest! MDATest.Program::StdCall' má nevyvážená zásobníku. To je pravděpodobné, protože spravovaný podpis PInvoke neodpovídá nespravovanému cílovému podpisu. Zkontrolujte, jestli se konvence volání a parametry podpisu PInvoke odpovídají cílovému nespravovanému podpisu.**
+
+## <a name="see-also"></a>Viz také:
+
+- [Ladění, trasování a profilace](../../../docs/framework/debug-trace-profile/index.md)

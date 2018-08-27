@@ -1,5 +1,5 @@
 ---
-title: Cílové rozhraní
+title: Cílové architektury
 description: Další informace o cílové rozhraní pro aplikace .NET Core a knihovny.
 author: richlander
 ms.author: mairaw
@@ -7,52 +7,52 @@ ms.date: 05/31/2018
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
 ms.openlocfilehash: 346eece8fdb391fd62b369db6ef65964fcd6e67a
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34728313"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42934853"
 ---
-# <a name="target-frameworks"></a>Cílové rozhraní
+# <a name="target-frameworks"></a>Cílové architektury
 
-K identifikaci rozhraní v aplikaci nebo knihovna určujete sadu rozhraní API, které chcete zpřístupnit aplikace nebo knihovny. Určete cílové rozhraní v souboru projektu pomocí cílový Framework Monikery (TFMs).
+Pokud je cílem rozhraní v aplikaci nebo knihovny, zadáváte sadu rozhraní API, která chcete zpřístupnit pro aplikaci nebo knihovny. Cílová architektura, která zadáte v souboru projektu pomocí Monikery cílového rozhraní (Tfm).
 
-Aplikace nebo knihovny, můžete vybrat verzi [.NET Standard](~/docs/standard/net-standard.md). Verze rozhraní .NET standardní představují standardizované sadu rozhraní API přes všechny implementace rozhraní .NET. Například můžete knihovnu zacílit .NET Standard 1.6 a získat přístup k rozhraní API této funkce v .NET Core a rozhraní .NET Framework pomocí stejné základu kódu.
+Aplikace nebo knihovny můžete cílit na verzi [.NET Standard](~/docs/standard/net-standard.md). Verze .NET standard představují standardizované sady rozhraní API přes všechny implementace .NET. Například knihovny můžete cílit na .NET Standard 1.6 a získat přístup k rozhraní API pro tuto funkci v .NET Core a .NET Framework pomocí stejného základu kódu.
 
-Aplikace nebo knihovny, můžete také vybrat konkrétní implementace rozhraní .NET k získání přístupu k rozhraní API pro konkrétní implementaci. Například aplikace, která cílí Xamarin.iOS (například `Xamarin.iOS10`) získá přístup k rozhraní API pro zadaný Xamarin iOS obálek pro iOS 10 nebo aplikaci, která cílí na univerzální platformu Windows (UPW, `uap10.0`) má přístup k rozhraní API, která kompilace pro zařízení se systémem Windows 10.
+Konkrétní implementace rozhraní .NET získat přístup k rozhraní API pro specifický pro implementaci můžete také směrovat aplikace nebo knihovna. Například aplikace, která se zaměřuje Xamarin.iOS (například `Xamarin.iOS10`) získá přístup k rozhraní API pro zadaný Xamarin iOS obálky pro iOS 10 nebo aplikaci, která cílí na univerzální platformu Windows (UPW, `uap10.0`) má přístup k rozhraní API, která kompilovat pro zařízení se systémem Windows 10.
 
-Pro některé cílové rozhraní (například rozhraní .NET Framework) rozhraní API jsou definované sestavení, že rozhraní nainstaluje v systému a může zahrnovat aplikační rozhraní API (například ASP.NET).
+Rozhraní API pro několik cílových rozhraní (například rozhraní .NET Framework) jsou určené sestavení, rozhraní nainstaluje v systému a může zahrnovat Architektura aplikace na rozhraní API (například technologie ASP.NET).
 
-Na základě balíčku cílové rozhraní (například .NET Standard a .NET Core) rozhraní API definováno balíčky součástí aplikace nebo knihovny. A *metapackage* je balíčku NuGet, který nemá žádný obsah samostatně, ale je seznam závislosti (dalších balíčků). Na základě balíčku cílové rozhraní NuGet implicitně určuje metapackage, který odkazuje na všechny balíčky, které společně tvoří rozhraní.
+Pro využívající balíčky cílových rozhraní (například .NET Standard a .NET Core) rozhraní API určené balíčky, které jsou zahrnuty v aplikaci nebo knihovny. A *Microsoft.aspnetcore.all* je balíček NuGet, který nemá žádný obsah samostatně, ale je seznam závislostí (ostatní balíčky). Na základě balíčku cílového rozhraní framework NuGet implicitně určuje Microsoft.aspnetcore.all, který odkazuje na všechny balíčky, které společně tvoří rozhraní.
 
-## <a name="latest-target-framework-versions"></a>Nejnovější target framework verze
+## <a name="latest-target-framework-versions"></a>Nejnovější verze cílového rozhraní framework
 
-Následující tabulka definuje nejběžnější cílové rozhraní, jak se odkazuje a kterou verzi [.NET Standard](~/docs/standard/net-standard.md) implementace. Tyto target framework verze jsou nejnovější stabilní verze. Předběžných verzí se nezobrazí. Cílový Framework Přezdívka (TFM) je standardizovaná formát tokenu pro zadání cílové rozhraní aplikace .NET nebo knihovny.
+Následující tabulka definuje nejběžnější cílové architektury, jak budete odkazovat a kterou verzi [.NET Standard](~/docs/standard/net-standard.md) implementují. Tyto verze cílového rozhraní framework jsou nejnovější stabilní verze. Předběžné verze se nezobrazují. Moniker cílového rozhraní (TFM) je standardizovaný formát tokenu pro zadání cílové rozhraní framework aplikace .NET nebo knihovny.
 
-| Cílová architektura      | Latest (Nejnovější) <br/> Stabilní verze. | Cílový Framework Přezdívka (TFM) | Implementováno <br/> Standardní verze rozhraní .NET |
+| Cílová architektura      | Latest (Nejnovější) <br/> Stabilní verze | Moniker cílového rozhraní (TFM) | Implementováno <br/> Standardní verze rozhraní .NET |
 | :-------------------: | :-------------------------: | :----------------------------: | :-------------------------------------: |
-| Standardní rozhraní .NET         | 2.0                         | netstandard2.0                 | Není k dispozici                                     |
+| .NET standard         | 2.0                         | netstandard2.0                 | Není k dispozici                                     |
 | .NET Core             | 2.1                         | netcoreapp2.1                  | 2.0                                     |
 | .NET Framework        | 4.7.2                       | net472                         | 2.0                                     |
 
-## <a name="supported-target-framework-versions"></a>Podporované target framework verze
+## <a name="supported-target-framework-versions"></a>Podporované cílové verze rozhraní framework
 
-Cílové rozhraní se obvykle odkazuje TFM. V následující tabulce jsou uvedeny cílové rozhraní nepodporuje rozhraní .NET Core SDK a klienta NuGet. Ekvivalenty se zobrazí v závorkách. Například `win81` je ekvivalentní TFM k `netcore451`.
+Rozhraní .NET framework je obvykle odkazuje TFM. V následující tabulce jsou uvedeny cílové architektury, podporuje .NET Core SDK a klienta NuGet. Ekvivalenty jsou uvedeny v závorkách. Například `win81` je ekvivalentní TFM ke `netcore451`.
 
 | Cílová architektura           | TFM |
 | -------------------------- | --- |
-| Standardní rozhraní .NET              | netstandard1.0<br>netstandard1.1<br>netstandard1.2<br>netstandard1.3<br>netstandard1.4<br>netstandard1.5<br>netstandard1.6<br>netstandard2.0 |
+| .NET standard              | netstandard1.0<br>netstandard1.1<br>netstandard1.2<br>netstandard1.3<br>netstandard1.4<br>netstandard1.5<br>netstandard1.6<br>netstandard2.0 |
 | .NET Core                  | netcoreapp1.0<br>netcoreapp1.1<br>netcoreapp2.0<br>netcoreapp2.1 |
-| .NET Framework             | net11<br>net20<br>Net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47<br>net471<br>net472 |
-| Windows Store              | netcore [netcore45]<br>netcore45 [win] [win8]<br>netcore451 [win81] |
-| Malých rozhraní .NET Framework       | netmf |
+| .NET Framework             | net11<br>net20<br>net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47<br>net471<br>net472 |
+| Windows Store              | netcore [netcore45]<br>netcore45 [Windows] [win8]<br>netcore451 [win81] |
+| Micro rozhraní .NET Framework       | netmf |
 | Silverlight                | sl4<br>sl5 |
 | Windows Phone              | wp [wp7]<br>wp7<br>wp75<br>wp8<br>wp81<br>wpa81 |
 | Univerzální platforma pro Windows | uap [uap10.0]<br>uap10.0 [win10] [netcore50] |
 
-## <a name="how-to-specify-target-frameworks"></a>Určení cílové rozhraní
+## <a name="how-to-specify-target-frameworks"></a>Určení cílových platforem
 
-Cílové rozhraní jsou určené v souboru projektu. Pokud je zadána jedné cílové rozhraní, použijte **TargetFramework** elementu. Následující soubor projektu aplikace konzoly ukazuje, jak cílí na .NET Core 2.0:
+Cílové architektury jsou uvedeny v souboru projektu. Pokud je zadána jednu cílovou architekturu, použijte **TargetFramework** elementu. Následující soubor projektu aplikace konzoly ukazuje, jak cílit na .NET Core 2.0:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -65,9 +65,9 @@ Cílové rozhraní jsou určené v souboru projektu. Pokud je zadána jedné cí
 </Project>
 ```
 
-Pokud zadáte více cílové rozhraní, může podmíněně odkazujete na sestavení pro každé cílové rozhraní. V kódu, můžete podmíněně zkompilovat proti tyto sestavení pomocí preprocesoru symboly s *if potom else* logiku.
+Při zadávání více cílových rozhraní může podmíněně referenční sestavení pro každou cílovou architekturu. Ve vašem kódu, můžete podmíněné kompilaci proti tato sestavení pomocí symboly preprocesoru s *if-then-else* logiku.
 
-Následující soubor projektu knihovny cílem rozhraní API z Standard .NET (`netstandard1.4`) a rozhraní API rozhraní .NET Framework (`net40` a `net45`). Použijte množném čísle **TargetFrameworks** element s více cílové architektury. Poznámka: Jak `Condition` atributy patří balíčky závisí na implementaci při kompilaci knihovny pro dvě TFMs Framework .NET:
+Následující soubor Knihovního projektu cílí na rozhraní API z aplikaci .NET Standard (`netstandard1.4`) a rozhraní API rozhraní .NET Framework (`net40` a `net45`). Použít množném čísle **TargetFrameworks** element s větším počtem cílových rozhraní. Poznámka: Jak `Condition` atributy zahrnout balíčky specifický pro implementaci při kompilaci knihovny pro dva Tfm rozhraní .NET Framework:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -90,7 +90,7 @@ Následující soubor projektu knihovny cílem rozhraní API z Standard .NET (`n
 </Project>
 ```
 
-V rámci knihovny nebo aplikací zápisu podmíněného kód mohl zkompilovat pro každé cílové rozhraní:
+V rámci knihovny nebo aplikace napište kód podmíněné kompilace pro každou cílovou architekturu:
 
 ```csharp
 public class MyClass
@@ -108,22 +108,22 @@ public class MyClass
 }
 ```
 
-Systém sestavení si je vědoma preprocesoru symboly představující cílové rozhraní ukazuje [podporované target framework verze](#supported-target-framework-versions) tabulky. Pokud používáte symbol, který představuje .NET Standard nebo .NET Core TFM, nahraďte podtržítkem tečky a změnit malých písmen na velká písmena (například symbol pro `netstandard1.4` je `NETSTANDARD1_4`).
+Systém sestavení je seznámen symboly preprocesoru představující cílové architektury ukazuje [podporované verze cílového rozhraní framework](#supported-target-framework-versions) tabulky. Při použití symbolu, který představuje .NET Core TFM nebo .NET Standard, nahrazení tečky podtržítkem a změňte malá písmena na velká písmena (například symbol `netstandard1.4` je `NETSTANDARD1_4`).
 
-Úplný seznam preprocesoru symboly pro cílové rozhraní .NET Core je:
+Úplný seznam symboly preprocesoru pro cílové rozhraní .NET Core je:
 
 [!INCLUDE [Preprocessor symbols](~/includes/preprocessor-symbols.md)]
 
-## <a name="deprecated-target-frameworks"></a>Nepoužívané cílové rozhraní
+## <a name="deprecated-target-frameworks"></a>Nepoužívané cílových platforem
 
-Následující cílové architektury jsou zastaralé. Balíčky cílené na tyto cílové rozhraní měli migrovat na uvedené nahrazení.
+Následující cílové architektury jsou zastaralé. Balíčky, které cílí na těchto cílových rozhraní byste migrovat na uvedené nahrazení.
 
 | Nepoužívané TFM                                                                             | Nahrazení |
 | ------------------------------------------------------------------------------------------ | ----------- |
 | aspnet50<br>aspnetcore50<br>dnxcore50<br>dnx<br>dnx45<br>dnx451<br>dnx452                  | netcoreapp  |
-| DotNet.<br>dotnet50<br>dotnet51<br>dotnet52<br>dotnet53<br>dotnet54<br>dotnet55<br>dotnet56 | monikerů netstandard |
+| DotNet<br>dotnet50<br>dotnet51<br>dotnet52<br>dotnet53<br>dotnet54<br>dotnet55<br>dotnet56 | netstandard |
 | netcore50                                                                                  | uap10.0     |
-| Win                                                                                        | netcore45   |
+| Windows                                                                                        | netcore45   |
 | win8                                                                                       | netcore45   |
 | win81                                                                                      | netcore451  |
 | win10                                                                                      | uap10.0     |
@@ -135,6 +135,6 @@ Následující cílové architektury jsou zastaralé. Balíčky cílené na tyto
 [Vývoj knihoven pomocí nástrojů pro různé platformy](../core/tutorials/libraries.md)  
 [.NET Standard](net-standard.md)  
 [Správa verzí rozhraní .NET core](../core/versions/index.md)  
-[úložiště GitHub DotNet nebo standard](https://github.com/dotnet/standard)  
+[úložiště GitHub DotNet/standard](https://github.com/dotnet/standard)  
 [Úložiště GitHub nástroje NuGet](https://github.com/joelverhagen/NuGetTools)  
-[Profily Framework v rozhraní .NET](https://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)
+[Profily rozhraní v rozhraní .NET](https://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)

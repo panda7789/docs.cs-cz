@@ -7,27 +7,27 @@ f1_keywords:
 helpviewer_keywords:
 - BC42319
 ms.assetid: 62eeeba3-6811-48be-b1ef-c2e4feda3177
-ms.openlocfilehash: ee91513ef94e2abbe01d3ac09796b7fdf8e129ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: abe9fe0f6216f81fa223fe83a122b580577e1c32
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33597380"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42930025"
 ---
 # <a name="xml-comment-exception-must-have-a-39cref39-attribute"></a>Výjimka komentáře XML musí mít &#39;cref&#39; atribut
-\<Výjimka > Značka poskytuje způsob, jak dokumentu výjimky, které mohou být vyvolány metodou. Požadované `cref` atribut určuje název člena, který je zaškrtnuta možnost generátorem dokumentaci. Pokud existuje člena, je přeložit název kanonický elementu v dokumentaci k souboru.  
+\<Výjimky > značky poskytuje způsob, jak dokumentovat výjimky, které mohou být vyvolány metodou. Požadované `cref` atribut určuje název člena, který je zaškrtnuté políčko generátorem dokumentaci. Pokud existuje člen je přeložit název canonical elementu v souboru dokumentace.  
   
  **ID chyby:** BC42319  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Přidat `cref` atribut výjimka následujícím způsobem:  
+-   Přidat `cref` atribut na výjimku následujícím způsobem:  
   
     ```  
     '''<exception cref="member">description</exception>  
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [\<Výjimka >](../../../visual-basic/language-reference/xmldoc/exception.md)  
+ [\<výjimky >](../../../visual-basic/language-reference/xmldoc/exception.md)  
  [Postupy: Vytvoření dokumentace XML](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)  
- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+ [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

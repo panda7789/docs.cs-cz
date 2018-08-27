@@ -1,6 +1,6 @@
 ---
 title: Funkce InheritsFrom (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce InheritsFrom Určuje, zda třídy nebo instance je odvozena z konkrétní nadřazené třídy.
+description: Funkce InheritsFrom Určuje, zda třídy nebo instance je odvozena z určité nadřazené třídy.
 ms.date: 11/06/2017
 api_name:
 - InheritsFrom
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 87a1c1ee44d3b192747bd785f538c0332300ff50
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4784e22d5a3eec031fbee00441958a62d66b52df
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33461412"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42930919"
 ---
 # <a name="inheritsfrom-function"></a>InheritsFrom – funkce
-Určuje, zda aktuální třídy nebo instance je odvozena od třídy zadaný nadřazený.
+Určuje, zda aktuální třídy nebo instance je odvozena od třídy zadaný nadřazený prvek.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
@@ -41,34 +41,34 @@ HRESULT InheritsFrom (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`  
-[v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
+[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `wszAncestor`  
-[v] Název třídy. `wszAncestor` musí odkazovat na platný `LPCWSTR`.
+[in] Název třídy. `wszAncestor` musí odkazovat na platný `LPCWSTR`.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_S_NO_ERROR` | 0 | Aktuální objekt dědí z `wszAncestor`.  |
-| `WBEM_S_FALSE` | 1 | Aktuální objekt nedědí z `wszAncestor`. |
+| `WBEM_S_FALSE` | 1 | Aktuální objekt nedědí ze `wszAncestor`. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `wszAncestor` je `null`. |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemClassObject::InheritsFrom](https://msdn.microsoft.com/library/aa391452(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemClassObject::InheritsFrom](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-inheritsfrom) metody.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

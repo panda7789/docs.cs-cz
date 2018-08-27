@@ -7,26 +7,26 @@ helpviewer_keywords:
 - rapid application development (RAD), My.Settings
 - My.Resources object [Visual Basic], developing applications
 ms.assetid: 68284ab1-b685-4814-a2a4-01ae40445ff8
-ms.openlocfilehash: 808e02510d4f0a237ad4354b2edac8fa024b5f83
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7dbb15c43d044e21c9823c4a1652b0408006e5c3
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33582269"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42932564"
 ---
 # <a name="rapid-application-development-with-myresources-and-mysettings-visual-basic"></a>Rychlý vývoj aplikací s použitím objektů My.Resources a My.Settings (Visual Basic)
-`My.Resources` Objekt poskytuje přístup k prostředkům aplikace a umožňuje dynamicky načíst prostředky pro vaši aplikaci.  
+`My.Resources` Objekt poskytuje přístup k prostředkům vaší aplikace a vám umožní dynamicky načíst prostředky pro vaši aplikaci.  
   
 ## <a name="retrieving-resources"></a>Načítání prostředků  
- Počet prostředků, jako je například zvukové soubory, ikony, Image a řetězce mohou být načteny prostřednictvím `My.Resources` objektu. Například můžete přístup k souborům prostředků specifické pro jazykovou verzi aplikace. Následující příklad nastaví ikona formuláře na ikonu s názvem `Form1Icon` uložené v souboru prostředků aplikace.  
+ Počet prostředků, jako jsou zvukové soubory, ikony, obrázky a řetězce lze získat pomocí `My.Resources` objektu. Například můžete přistupovat soubory prostředků specifické pro jazykovou verzi aplikace. Následující příklad nastaví ikony ve formuláři na ikonu s názvem `Form1Icon` uložené v souboru prostředků aplikace.  
   
  [!code-vb[VbVbcnMy#7](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/rapid-application-development-with-my-resources-and-my-settings_1.vb)]  
   
- `My.Resources` Objekt se poskytuje pouze globální prostředky. Neposkytuje přístup k prostředku soubory spojené s formuláři. Ve formuláři musí přístup k prostředkům formuláře.  
+ `My.Resources` Zpřístupňuje pouze globální prostředky. Neposkytuje přístup k prostředku soubory spojené s formuláři. Musí přístup k prostředkům formuláře z formuláře.  
   
- Podobně `My.Settings` objekt poskytuje přístup k nastavení aplikace a umožňuje dynamicky ukládání a načítání nastavení vlastností a další informace pro vaši aplikaci. Další informace najdete v tématu [My.Resources – objekt](../../../visual-basic/language-reference/objects/my-resources-object.md) a [My.Settings – objekt](../../../visual-basic/language-reference/objects/my-settings-object.md).  
+ Podobně platí `My.Settings` objekt poskytuje přístup k nastavení aplikace a umožňuje dynamicky ukládat a načítat nastavení vlastností a další informace pro vaši aplikaci. Další informace najdete v tématu [My.resources – objekt](../../../visual-basic/language-reference/objects/my-resources-object.md) a [My.Settings – objekt](../../../visual-basic/language-reference/objects/my-settings-object.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Objekt My.Resources](../../../visual-basic/language-reference/objects/my-resources-object.md)  
  [Objekt My.Settings](../../../visual-basic/language-reference/objects/my-settings-object.md)  
- [Přístup k nastavení aplikace](../../../visual-basic/developing-apps/programming/app-settings/accessing-application-settings.md)
+ [Přístup k nastavení aplikace](../../../visual-basic/developing-apps/programming/app-settings/index.md)

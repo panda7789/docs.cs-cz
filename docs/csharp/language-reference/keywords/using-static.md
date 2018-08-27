@@ -1,61 +1,61 @@
 ---
-title: pomocí statické – direktiva (referenční dokumentace jazyka C#)
+title: Using static – direktiva (referenční dokumentace jazyka C#)
 ms.date: 03/10/2017
 helpviewer_keywords:
 - using static directive [C#]
 ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c9b7508c6e751f83fdc16a700ad68aa7de36e497
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 04e7368a6b6a4453f2dd07c7afdc0bffa7473ed1
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33285132"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42929675"
 ---
-# <a name="using-static-directive-c-reference"></a>pomocí statické – direktiva (referenční dokumentace jazyka C#)
+# <a name="using-static-directive-c-reference"></a>Using static – direktiva (referenční dokumentace jazyka C#)
 
-`using static` – Direktiva označí typu jejichž statické členy dostanete bez určení názvu typu. Jeho syntaxe je:
+`using static` – Direktiva Určuje typ, jehož statické členy a vnořené typy, které máte přístup bez určení názvu typu. Syntaxe je:
 
 ```csharp
-using static <fully-qualified-type-name>
+using static <fully-qualified-type-name>;
 ```
 
-kde *plně kvalifikovaný typ name* je název typu, jejichž statické členy může být odkazováno bez určení názvu typu. Pokud nezadáte název plně kvalifikovaný typ (název úplné oboru názvů společně s název typu), C# vygeneruje Chyba kompilátoru CS0246: "typu nebo oboru názvů '< typ name >' nebyl nalezen."
+kde *plně kvalifikovaný type-name* je název typu, jehož statické členy a vnořené typy může být odkazováno bez zadání názvu typu. Pokud nezadáte plně kvalifikovaného názvu (název oboru názvů úplné spolu s názvem typu), C# vygeneruje Chyba kompilátoru [CS0246](../compiler-messages/cs0246.md): "typ nebo obor názvů 'typ nebo obor názvů' nebyl nalezen. (nechybí using – direktiva nebo odkaz na sestavení?) ".
 
-`using static` – Direktiva platí pro žádný typ, který má statické členy, i v případě, že má také členů instance. Ale členů instance jde volat jenom pomocí instance typu.
+`using static` – Direktiva se vztahuje na libovolný typ, který má statické členy (nebo vnořené typy), i když má také členy instance. Však můžete členy instance volat pouze prostřednictvím instance typu.
 
-`using static` – Direktiva byla zavedena v C# 6.
+`using static` – Direktiva byla zavedena v jazyce C# 6.
 
 ## <a name="remarks"></a>Poznámky
  
-Normálně při volání je statický člen, zadejte název typu společně s název člena. Opakovaně zadejte přitom stejný název typu pro vyvolání členy typu, může mít za následek podrobné, skrytého kódu. Například následující definice `Circle` třída odkazuje na počet členů <xref:System.Math> třídy.
+Při volání statického člena, který je obvykle zadat název typu spolu s názvem člena. Opakovaně zadávat název typu pro vyvolání členy typu může mít za následek verbose, skrytého kódu. Například následující definice `Circle` třídy odkazuje na počet členů <xref:System.Math> třídy.
   
 [!code-csharp[using-static#1](../../../../samples/snippets/csharp/language-reference/keywords/using/using-static1.cs#1)]
 
-Odstraněním potřeba explicitně odkazovat <xref:System.Math> třídy pokaždé, když se odkazuje člena, `using static` – direktiva vytvoří mnoho čištění kódu:
+Že eliminuje nutnost explicitně odkazovat <xref:System.Math> třídy pokaždé, když se odkazuje člen, `using static` – direktiva vytvoří, jaká část čisticího modulu kódu:
 
 [!code-csharp[using-static#2](../../../../samples/snippets/csharp/language-reference/keywords/using/using-static2.cs#1)]
 
-`using static` Importuje pouze přístupné statické členy a vnořené typy, které jsou deklarované v zadaného typu.  Zděděné členy nebyly naimportovány.  Můžete importovat ze všech typů s názvem použití statické direktiva, včetně moduly jazyka Visual Basic.  Pokud funkce vysoké úrovně F # se zobrazí v metadatech jako statické členy s názvem typu, jehož jméno je platný identifikátor C#, lze importovat funkce F #.  
+`using static` Importuje pouze přístupné statické členy a vnořené typy deklarované v zadaném typu.  Zděděné členy nejsou naimportovány.  Můžete importovat z libovolný typ s názvem using static – direktiva, včetně modulů jazyka Visual Basic.  Pokud funkce nejvyšší úrovně F # se zobrazí v metadatech jako statické členy pojmenovaného typu, jehož název je platný identifikátor jazyka C#, je možné importovat funkcí F #.  
   
- `using static` Díky rozšiřující metody, které jsou deklarované v zadaný typ, který je k dispozici pro rozšíření metoda vyhledávání.  Názvy metod rozšíření však nejsou naimportovány do oboru pro neúplné odkaz v kódu.  
+ `using static` Díky rozšiřující metody deklarované v zadaném typu, který je k dispozici pro vyhledávání v metodě rozšíření.  Nicméně názvy metod rozšíření nejsou naimportovány do oboru pro nekvalifikovaný odkaz v kódu.  
   
- Metody se stejným názvem importovat z různých typů pomocí různých `using static` direktivy v oboru názvů na stejnou jednotku kompilace tvoří skupinu metoda.  Řešení přetížení v rámci těchto skupin metoda odpovídá normální C# pravidla.  
+ Metody se stejným názvem importován z různých typů podle různých `using static` direktivy ve stejné jednotce kompilace nebo obor názvů tvoří skupinu metod.  Řešení přetížení v rámci těchto skupin metody následuje běžných pravidel jazyka C#.  
   
 ## <a name="example"></a>Příklad
 
-Následující příklad používá `using static` – direktiva, aby statické členy <xref:System.Console>, <xref:System.Math>, a <xref:System.String> třídy, které jsou k dispozici bez nutnosti zadávat název jejich typu.
+V následujícím příkladu `using static` směrnice statické členy třídy <xref:System.Console>, <xref:System.Math>, a <xref:System.String> třídy, které jsou k dispozici bez nutnosti zadávat název jejich typu.
 
 [!code-csharp[using-static#3](../../../../samples/snippets/csharp/language-reference/keywords/using/using-static3.cs)]
 
-V příkladu `using static` – direktiva může také se aplikovaly <xref:System.Double> typu. To by provedli ho lze volat <xref:System.Double.TryParse(System.String,System.Double@)> metoda bez určení názvu typu. To však znamená méně čitelný kód, vzhledem k tomu, že bude nutné zkontrolovat `using static` tvrzení, abyste zjistili, jaké číselného typu `TryParse` metoda je volána.
+V tomto příkladu `using static` směrnice může také se použily <xref:System.Double> typu. To by provedly to lze zavolat <xref:System.Double.TryParse(System.String,System.Double@)> metody bez určení názvu typu. To však znamená méně čitelné kódu, protože bude nutné ke kontrole `using static` příkazy k určení číselného typu `TryParse` metoda je volána.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Using – direktiva](using-directive.md)   
-[Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)   
-[Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)   
-[Použití oboru názvů](../../../csharp/programming-guide/namespaces/using-namespaces.md)   
-[Namespace klíčová slova](../../../csharp/language-reference/keywords/namespace-keywords.md)   
-[Obory názvů](../../../csharp/programming-guide/namespaces/index.md)   
+- [Using – direktiva](using-directive.md)
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
+- [Použití oboru názvů](../../../csharp/programming-guide/namespaces/using-namespaces.md)
+- [Klíčová slova oboru názvů](../../../csharp/language-reference/keywords/namespace-keywords.md)
+- [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)

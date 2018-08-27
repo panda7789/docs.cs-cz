@@ -10,17 +10,17 @@ helpviewer_keywords:
 - string literals [C#]
 - string keyword [C#]
 ms.assetid: 3037e558-fb22-494d-bca1-a15ade11b11a
-ms.openlocfilehash: f92a44283e59bd80421758a63b40bc5289c3628b
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.openlocfilehash: 8b70f1c1dcb39dcdde6ba24a1bdcdfc3084cfc97
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
-ms.locfileid: "34172159"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42929270"
 ---
 # <a name="string-c-reference"></a>string (Referenční dokumentace jazyka C#)
-`string` Typ reprezentuje posloupnosti nula nebo více znaků Unicode. `string` je alias <xref:System.String> v rozhraní .NET.  
+`string` Typ představuje posloupnost nula nebo více znaků Unicode. `string` je alias pro <xref:System.String> v rozhraní .NET.  
   
- I když `string` typem je odkaz, operátory rovnosti (`==` a `!=`) jsou definovány pro porovnání hodnot `string` objekty, není odkazuje. Díky tomu bude testování rovnosti řetězec intuitivnější. Příklad:  
+ I když `string` je typem odkazu, operátory rovnosti (`==` a `!=`) jsou definovány pro porovnání hodnoty `string` objekty, ne odkazuje. Tím je testování rovnosti řetězců intuitivnější. Příklad:  
   
 ```csharp  
 string a = "hello";  
@@ -31,37 +31,37 @@ Console.WriteLine(a == b);
 Console.WriteLine((object)a == (object)b);  
 ```  
   
- Zobrazí "hodnotu True" a potom "False" vzhledem k tomu, že obsah řetězce jsou ekvivalentní, ale `a` a `b` neměly by konce odkazovat na stejnou instanci řetězec.  
+ Zobrazí "hodnotu True" a potom "False" protože obsah řetězce jsou ekvivalentní, ale `a` a `b` neodkazují na stejné instanci řetězce.  
   
- + – Operátor zřetězí řetězec:  
+ + – Operátor zřetězí řetězce:  
   
 ```csharp  
 string a = "good " + "morning";  
 ```  
   
- Tím se vytvoří objekt řetězec, který obsahuje "Dobré ráno".  
+ Tím se vytvoří objekt string obsahující "good morning".  
   
- Řetězce jsou *neměnné*– obsah objektu řetězce nelze změnit po vytvoření objektu, i když je syntaxe se objevit, jako kdyby to provedete. Když píšete tento kód, kompilátor ve skutečnosti vytvoří nový objekt řetězec k uložení nové pořadí znaků a tento nový objekt je přiřazen k b. Řetězec "h" je pak vhodné pro uvolňování paměti.  
+ Řetězce jsou *neměnné*– obsah řetězce objektu nelze změnit po vytvoření objektu, přestože je syntaxe zobrazí jako by tomu. Při psaní tohoto kódu kompilátor ve skutečnosti vytváří nový objekt řetězce pro uchování nového pořadí znaků a tento nový objekt je přiřazen b. Řetězec "h" je pak nárok uvolňování paměti.  
   
 ```csharp
 string b = "h";  
 b += "ello";  
 ```  
   
- [] – Operátor lze použít pro přístup jen pro čtení k jednotlivé znaky `string`:  
+ [] – Operátor slouží pro přístup jen pro čtení k jednotlivé znaky `string`:  
   
 ```csharp  
 string str = "test";  
 char x = str[2];  // x = 's';  
 ```  
   
- Textové literály jsou typu `string` a může být napsán ve dvou formách, v uvozovkách a @-quoted. V uvozovkách řetězec, který literály jsou uzavřené v uvozovkách ("):  
+ Řetězcové literály jsou typu `string` a může být zapsaný ve dvou formách, v uvozovkách a @-quoted. Citovaný řetězec, který literály jsou uzavřeny v dvojitých uvozovkách ("):  
   
 ```csharp  
 "good morning"  // a string literal  
 ```  
   
- Textové literály může obsahovat libovolný znak literálu. Řídicí sekvence jsou zahrnuty. Následující příklad používá řídicí sekvence `\\` pro zpětné lomítko, `\u0066` pro písmenem f, a `\n` pro nový řádek.  
+ Řetězcové literály může obsahovat libovolný znak literálu. Řídicí sekvence jsou zahrnuty. Následující příklad používá řídicí sekvence `\\` pro zpětné lomítko, `\u0066` písmenem f, a `\n` pro nový řádek.  
   
 ```csharp  
 string a = "\\\u0066\n";  
@@ -69,27 +69,27 @@ Console.WriteLine(a);
 ```  
   
 > [!NOTE]
->  Řídicí kód `\udddd` (kde `dddd` čtyři číslice) představuje znak Unicode U +`dddd`. Kódy řídicí Unicode číslice osm jsou také rozpoznána: `\Udddddddd`.  
+>  Řídicí kód `\udddd` (kde `dddd` je čtyřmístné číslo) představuje znak Unicode U +`dddd`. Osm číslice sady Unicode řídícími kódy jsou také rozpoznána: `\Udddddddd`.  
   
- Začínat typu verbatim textové literály `@` a jsou také uzavřena v uvozovkách. Příklad:  
+ Literály doslovný řetězec začínat `@` a jsou také uzavřen do dvojitých uvozovek. Příklad:  
   
 ```csharp  
 @"good morning"  // a string literal  
 ```  
   
- Výhodou typu verbatim řetězce je, že jsou řídicí sekvence *není* zpracovat, což usnadňuje zápisu, například plně kvalifikovaný název souboru:  
+ Výhodou doslovném řetězci je, že řídicí sekvence jsou *není* zpracování, což usnadňuje zapsat, například plně kvalifikovaný název:  
   
 ```csharp  
 @"c:\Docs\Source\a.txt"  // rather than "c:\\Docs\\Source\\a.txt"  
 ```  
   
- Zahrnout uvozovky v @-quoted řetězce, dvakrát ho:  
+ Zahrnout dvojitých uvozovek na @-quoted řetězec, uveďte ji dvakrát:  
   
 ```csharp  
 @"""Ahoy!"" cried the captain." // "Ahoy!" cried the captain.  
 ```  
   
- Pro další použití `@` speciální znak, najdete v části [@ – typu verbatim identifikátor](../tokens/verbatim.md).  
+ Pro další použití `@` speciální znak, naleznete v tématu [@ – Doslovný identifikátor](../tokens/verbatim.md).  
   
  Další informace o řetězcích v jazyce C# najdete v tématu [řetězce](../../../csharp/programming-guide/strings/index.md).  
   
@@ -99,14 +99,15 @@ Console.WriteLine(a);
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Doporučené postupy pro používání řetězců](../../../standard/base-types/best-practices-strings.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)  
- [Typy hodnot](../../../csharp/language-reference/keywords/value-types.md)  
- [Základní operace s řetězci](../../../standard/base-types/basic-string-operations.md)  
- [Vytváření nových řetězců](../../../standard/base-types/creating-new.md)  
- [Tabulka formátování číselných výsledků](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Doporučené postupy pro používání řetězců](../../../standard/base-types/best-practices-strings.md)  
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)  
+- [Typy hodnot](../../../csharp/language-reference/keywords/value-types.md)  
+- [Základní operace s řetězci](../../../standard/base-types/basic-string-operations.md)  
+- [Vytváření nových řetězců](../../../standard/base-types/creating-new.md)  
+- [Tabulka formátování číselných výsledků](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md)
