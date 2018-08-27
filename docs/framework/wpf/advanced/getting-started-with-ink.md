@@ -1,84 +1,116 @@
 ---
-title: Začínáme s inkoustem
-ms.date: 03/30/2017
+title: Vytvoření objektu InkCanvas v aplikaci WPF v sadě Visual Studio
+ms.date: 08/15/2018
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - procedural code in lieu of XAML [WPF]
-- gradient brush [WPF], animating colors of
 - XAML [WPF], procedural code in lieu of
-- animation [WPF], gradient brush colors
-- brushes [WPF], animating colors of
+- InkCanvas (WPF)
 ms.assetid: 760332dd-594a-475d-865b-01659db8cab7
-ms.openlocfilehash: 9a1b53d0513eeef377fe8e012a8d5d7ea3f8a984
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 600d8528125606c6e1af5b031e2fc31aabb79206
+ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33546234"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42925041"
 ---
-# <a name="getting-started-with-ink"></a><span data-ttu-id="354c3-102">Začínáme s inkoustem</span><span class="sxs-lookup"><span data-stu-id="354c3-102">Getting Started with Ink</span></span>
-<span data-ttu-id="354c3-103">Zařadit digitálního do svých aplikací je jednodušší než kdy dřív.</span><span class="sxs-lookup"><span data-stu-id="354c3-103">Incorporating digital ink into your applications is easier than ever.</span></span> <span data-ttu-id="354c3-104">Element Ink byla vyvinuta ze se nezbytným důsledkem metodu COM a systém Windows Forms programování k dosažení úplné integrace do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="354c3-104">Ink has evolved from being a corollary to the COM and Windows Forms method of programming to achieving full integration into the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span> <span data-ttu-id="354c3-105">Není nutné k instalaci modulu runtime knihovny nebo samostatné sady SDK.</span><span class="sxs-lookup"><span data-stu-id="354c3-105">You do not need to install separate SDKs or runtime libraries.</span></span>  
-  
-## <a name="prerequisites"></a><span data-ttu-id="354c3-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="354c3-106">Prerequisites</span></span>  
- <span data-ttu-id="354c3-107">Pokud chcete použít v následujících příkladech, je nutné nejprve nainstalovat Microsoft Visual Studio 2005 a [!INCLUDE[TLA2#tla_winfxsdk](../../../../includes/tla2sharptla-winfxsdk-md.md)].</span><span class="sxs-lookup"><span data-stu-id="354c3-107">To use the following examples, you must first install Microsoft Visual Studio 2005 and the [!INCLUDE[TLA2#tla_winfxsdk](../../../../includes/tla2sharptla-winfxsdk-md.md)].</span></span> <span data-ttu-id="354c3-108">Musíte taky vědět, jak pro psaní aplikací pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="354c3-108">You should also understand how to write applications for the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span> <span data-ttu-id="354c3-109">Další informace o začátcích se [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], najdete v části [návod: Můj první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).</span><span class="sxs-lookup"><span data-stu-id="354c3-109">For more information about getting started with the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], see [Walkthrough: My first WPF desktop application](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).</span></span>  
-  
-## <a name="quick-start"></a><span data-ttu-id="354c3-110">Rychlý Start</span><span class="sxs-lookup"><span data-stu-id="354c3-110">Quick Start</span></span>  
- <span data-ttu-id="354c3-111">Tato část vám pomůže psát jednoduché [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, která shromažďuje rukopisu.</span><span class="sxs-lookup"><span data-stu-id="354c3-111">This section helps you write a simple [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application that collects ink.</span></span>  
-  
- <span data-ttu-id="354c3-112">Pokud jste tak již neučinili, nainstalujte Microsoft Visual Studio 2005 a [!INCLUDE[TLA#tla_winfxsdk](../../../../includes/tlasharptla-winfxsdk-md.md)].</span><span class="sxs-lookup"><span data-stu-id="354c3-112">If you haven't already done so, install Microsoft Visual Studio 2005 and the [!INCLUDE[TLA#tla_winfxsdk](../../../../includes/tlasharptla-winfxsdk-md.md)].</span></span> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="354c3-113"> aplikace obvykle musí být zkompilovány, abyste mohli zobrazit i v případě, že se skládat pouze z [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].</span><span class="sxs-lookup"><span data-stu-id="354c3-113"> applications usually must be compiled before you can view them, even if they consist entirely of [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].</span></span> <span data-ttu-id="354c3-114">Ale [!INCLUDE[TLA#tla_winfxsdk](../../../../includes/tlasharptla-winfxsdk-md.md)] zahrnuje aplikace, aplikaci XamlPad, navržená tak, aby proces implementace [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]– na základě uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="354c3-114">However, the [!INCLUDE[TLA#tla_winfxsdk](../../../../includes/tlasharptla-winfxsdk-md.md)] includes an application, XamlPad, designed to speed up the process of implementing a [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]-based UI.</span></span> <span data-ttu-id="354c3-115">Tuto aplikaci můžete použít k zobrazení a pustíte do optimalizace s první několik ukázky v tomto dokumentu.</span><span class="sxs-lookup"><span data-stu-id="354c3-115">You can use that application to view and tinker with the first few samples in this document.</span></span> <span data-ttu-id="354c3-116">Proces vytváření kompilované aplikace [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je popsané dál v tomto dokumentu.</span><span class="sxs-lookup"><span data-stu-id="354c3-116">The process of creating compiled applications from [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] is covered later in this document.</span></span>  
-  
- <span data-ttu-id="354c3-117">Chcete-li spustit aplikaci XAMLPad, klikněte na tlačítko **spustit** nabídky, přejděte na příkaz **všechny programy**, přejděte na **Microsoft Windows SDK**, přejděte na příkaz **nástroje**a klikněte na tlačítko **Aplikaci XAMLPad**.</span><span class="sxs-lookup"><span data-stu-id="354c3-117">To launch XAMLPad, click the **Start** menu, point to **All Programs**, point to **Microsoft Windows SDK**, point to **Tools**, and click **XAMLPad**.</span></span> <span data-ttu-id="354c3-118">V podokně vykreslování vykreslí aplikaci XAMLPad XAML kód napsaný v podokně kódu.</span><span class="sxs-lookup"><span data-stu-id="354c3-118">In the rendering pane, XAMLPad renders the XAML code written in the code pane.</span></span> <span data-ttu-id="354c3-119">Můžete upravit kód XAML a změny se okamžitě zobrazí v podokně vykreslování.</span><span class="sxs-lookup"><span data-stu-id="354c3-119">You can edit the XAML code, and the changes immediately appear in the rendering pane.</span></span>  
-  
-#### <a name="got-ink"></a><span data-ttu-id="354c3-120">Máte rukopisu?</span><span class="sxs-lookup"><span data-stu-id="354c3-120">Got Ink?</span></span>  
- <span data-ttu-id="354c3-121">Spuštění prvního [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, která podporuje rukopisu:</span><span class="sxs-lookup"><span data-stu-id="354c3-121">To start your first [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application that supports ink:</span></span>  
-  
-1.  <span data-ttu-id="354c3-122">Otevřete sadu Microsoft Visual Studio 2005</span><span class="sxs-lookup"><span data-stu-id="354c3-122">Open Microsoft Visual Studio 2005</span></span>  
-  
-2.  <span data-ttu-id="354c3-123">Vytvořte novou **aplikace WPF (Windows)**</span><span class="sxs-lookup"><span data-stu-id="354c3-123">Create a new **Windows Application (WPF)**</span></span>  
-  
-3.  <span data-ttu-id="354c3-124">Typ `<InkCanvas/>` mezi `<Grid>` značky</span><span class="sxs-lookup"><span data-stu-id="354c3-124">Type `<InkCanvas/>` between the `<Grid>` tags</span></span>  
-  
-4.  <span data-ttu-id="354c3-125">Stiskněte klávesu **F5** ke spuštění aplikace v ladicím programu</span><span class="sxs-lookup"><span data-stu-id="354c3-125">Press **F5** to launch your application in the debugger</span></span>  
-  
-5.  <span data-ttu-id="354c3-126">Pomocí pera nebo myš, zápis **hello, world** v okně</span><span class="sxs-lookup"><span data-stu-id="354c3-126">Using a stylus or mouse, write **hello world** in the window</span></span>  
-  
- <span data-ttu-id="354c3-127">Napsání ekvivalentní rukopisu "hello, world" aplikace s pouze 12 stisknutí kláves!</span><span class="sxs-lookup"><span data-stu-id="354c3-127">You've written the ink equivalent of a "hello world" application with only 12 keystrokes!</span></span>  
-  
-#### <a name="spice-up-your-application"></a><span data-ttu-id="354c3-128">Okořeňte do vaší aplikace</span><span class="sxs-lookup"><span data-stu-id="354c3-128">Spice Up Your Application</span></span>  
- <span data-ttu-id="354c3-129">Umožňuje využít výhod některé funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="354c3-129">Let’s take advantage of some features of the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span>  <span data-ttu-id="354c3-130">Nahraďte všechno mezi otevření \<okno > a zavření \</Window > značky s následující kód k získání štětce přechodu pozadí na vaší ploše rukopisu.</span><span class="sxs-lookup"><span data-stu-id="354c3-130">Replace everything between the opening \<Window> and closing \</Window> tags with the following markup to get a gradient brush background on your inking surface.</span></span>  
-  
- [!code-xaml[DigitalInkTopics#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window1.xaml#1)]  
-[!code-xaml[DigitalInkTopics#1a](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window1.xaml#1a)]  
-  
-#### <a name="using-animation"></a><span data-ttu-id="354c3-131">Pomocí animace</span><span class="sxs-lookup"><span data-stu-id="354c3-131">Using Animation</span></span>  
- <span data-ttu-id="354c3-132">Cvičně si můžeme animace barvy štětce přechodu.</span><span class="sxs-lookup"><span data-stu-id="354c3-132">For fun, let's animate the colors of the gradient brush.</span></span> <span data-ttu-id="354c3-133">Přidejte následující [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] po zavření `</InkCanvas>` značky, ale před uzavírací `</Page>` značky.</span><span class="sxs-lookup"><span data-stu-id="354c3-133">Add the following [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] after the closing `</InkCanvas>` tag but before the closing `</Page>` tag.</span></span>  
-  
- [!code-xaml[DigitalInkTopics#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window1.xaml#2)]  
-  
-#### <a name="adding-some-code-behind-the-xaml"></a><span data-ttu-id="354c3-134">Přidání některé kódu XAML</span><span class="sxs-lookup"><span data-stu-id="354c3-134">Adding Some Code Behind the XAML</span></span>  
- <span data-ttu-id="354c3-135">Při XAML lze velmi snadno návrh uživatelského rozhraní, musí všechny reálné aplikaci přidat kód pro zpracování událostí.</span><span class="sxs-lookup"><span data-stu-id="354c3-135">While XAML makes it very easy to design the user interface, any real-world application needs to add code to handle events.</span></span> <span data-ttu-id="354c3-136">Zde je jednoduchý příklad, který zvětší rukopisu v reakci na klikněte pravým tlačítkem myši:</span><span class="sxs-lookup"><span data-stu-id="354c3-136">Here is a simple example that zooms in on the ink in response to a right-click from a mouse:</span></span>  
-  
- <span data-ttu-id="354c3-137">Nastavte `MouseRightButtonUp` obslužné rutiny ve vaší [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]:</span><span class="sxs-lookup"><span data-stu-id="354c3-137">Set the `MouseRightButtonUp` handler in your [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]:</span></span>  
-  
- [!code-xaml[DigitalInkTopics#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#3)]  
-  
- <span data-ttu-id="354c3-138">V Průzkumníku řešení v sadě Visual Studio rozbalte Windows1.xaml a otevřete soubor modelu code-behind, Window1.xaml.cs nebo Window1.xaml.vb, pokud používáte Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="354c3-138">In Visual Studio’s Solution Explorer, expand Windows1.xaml and open the code-behind file, Window1.xaml.cs or Window1.xaml.vb if you are using Visual Basic.</span></span> <span data-ttu-id="354c3-139">Přidejte následující kód obslužné rutiny událostí:</span><span class="sxs-lookup"><span data-stu-id="354c3-139">Add the following event handler code:</span></span>  
-  
- [!code-csharp[DigitalInkTopics#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml.cs#4)]
- [!code-vb[DigitalInkTopics#4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DigitalInkTopics/VisualBasic/Window2.xaml.vb#4)]  
-  
- <span data-ttu-id="354c3-140">Nyní spusťte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="354c3-140">Now, run your application.</span></span> <span data-ttu-id="354c3-141">Přidat rukopisu a pak klikněte pravým tlačítkem myši nebo provést ekvivalent stiskněte a podržte pomocí pera.</span><span class="sxs-lookup"><span data-stu-id="354c3-141">Add some ink and then right-click with the mouse or perform a press-and-hold equivalent with a stylus.</span></span>  
-  
-#### <a name="using-procedural-code-instead-of-xaml"></a><span data-ttu-id="354c3-142">Použití procedurální kódu místo XAML</span><span class="sxs-lookup"><span data-stu-id="354c3-142">Using Procedural Code Instead of XAML</span></span>  
- <span data-ttu-id="354c3-143">Můžete přístup k veškerým [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce z procedurální kódu.</span><span class="sxs-lookup"><span data-stu-id="354c3-143">You can access all [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] features from procedural code.</span></span> <span data-ttu-id="354c3-144">Tady je "Hello rukopisu World" aplikaci pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] , nepoužívá žádné [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vůbec.</span><span class="sxs-lookup"><span data-stu-id="354c3-144">Here is a "Hello Ink World" application for [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] that doesn’t use any [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] at all.</span></span> <span data-ttu-id="354c3-145">Vložte kód pod do prázdné aplikace konzoly v sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="354c3-145">Paste the code below into an empty Console Application in Visual Studio.</span></span> <span data-ttu-id="354c3-146">Přidejte odkazy na sestavení PresentationCore PresentationFramework a WindowsBase a sestavte aplikaci stisknutím **F5**:</span><span class="sxs-lookup"><span data-stu-id="354c3-146">Add references to the PresentationCore, PresentationFramework, and WindowsBase assemblies, and build the application by pressing **F5**:</span></span>  
-  
- [!code-csharp[InkCanvasConsoleApp#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InkCanvasConsoleApp/CSharp/Program.cs#1)]
- [!code-vb[InkCanvasConsoleApp#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InkCanvasConsoleApp/VisualBasic/Module1.vb#1)]  
-  
-## <a name="see-also"></a><span data-ttu-id="354c3-147">Viz také</span><span class="sxs-lookup"><span data-stu-id="354c3-147">See Also</span></span>  
- [<span data-ttu-id="354c3-148">Rukopis</span><span class="sxs-lookup"><span data-stu-id="354c3-148">Digital Ink</span></span>](../../../../docs/framework/wpf/advanced/digital-ink.md)  
- [<span data-ttu-id="354c3-149">Shromáždění rukopisu</span><span class="sxs-lookup"><span data-stu-id="354c3-149">Collecting Ink</span></span>](../../../../docs/framework/wpf/advanced/collecting-ink.md)  
- [<span data-ttu-id="354c3-150">Rozpoznávání textu psaného rukou</span><span class="sxs-lookup"><span data-stu-id="354c3-150">Handwriting Recognition</span></span>](../../../../docs/framework/wpf/advanced/handwriting-recognition.md)  
- [<span data-ttu-id="354c3-151">Uložení rukopisu</span><span class="sxs-lookup"><span data-stu-id="354c3-151">Storing Ink</span></span>](../../../../docs/framework/wpf/advanced/storing-ink.md)
+# <a name="get-started-with-ink-in-wpf"></a><span data-ttu-id="cea2a-102">Začínáme s inkoustem v subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="cea2a-102">Get Started with Ink in WPF</span></span>
+
+<span data-ttu-id="cea2a-103">Windows Presentation Foundation (WPF) obsahuje funkci rukopisu, se kterou snadno začlenit digitálních inkoust do vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="cea2a-103">Windows Presentation Foundation (WPF) has an ink feature that makes it easy to incorporate digital ink into your app.</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="cea2a-104">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cea2a-104">Prerequisites</span></span>
+
+<span data-ttu-id="cea2a-105">Chcete-li nejprve použít následující příklady, [instalaci sady Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017).</span><span class="sxs-lookup"><span data-stu-id="cea2a-105">To use the following examples, first [install Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017).</span></span> <span data-ttu-id="cea2a-106">Pomáhá také vědět, jak zapsat základní aplikace pro WPF.</span><span class="sxs-lookup"><span data-stu-id="cea2a-106">It also helps to know how to write basic WPF apps.</span></span> <span data-ttu-id="cea2a-107">Začínáme s WPF pomoc najdete v tématu [návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).</span><span class="sxs-lookup"><span data-stu-id="cea2a-107">For help getting started with WPF, see [Walkthrough: My first WPF desktop application](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).</span></span>
+
+## <a name="quick-start"></a><span data-ttu-id="cea2a-108">Rychlý Start</span><span class="sxs-lookup"><span data-stu-id="cea2a-108">Quick Start</span></span>
+
+<span data-ttu-id="cea2a-109">Tato část vám pomůže psát jednoduché aplikace WPF, která shromažďuje rukopisu.</span><span class="sxs-lookup"><span data-stu-id="cea2a-109">This section helps you write a simple WPF application that collects ink.</span></span>
+
+### <a name="got-ink"></a><span data-ttu-id="cea2a-110">Máte inkoustu?</span><span class="sxs-lookup"><span data-stu-id="cea2a-110">Got Ink?</span></span>
+
+<span data-ttu-id="cea2a-111">Vytvoření aplikace WPF, která podporuje rukopisu:</span><span class="sxs-lookup"><span data-stu-id="cea2a-111">To create a WPF app that supports ink:</span></span>
+
+1. <span data-ttu-id="cea2a-112">Otevřít Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="cea2a-112">Open Visual Studio.</span></span>
+
+2. <span data-ttu-id="cea2a-113">Vytvořte nový **aplikace WPF**.</span><span class="sxs-lookup"><span data-stu-id="cea2a-113">Create a new **WPF App**.</span></span>
+
+   <span data-ttu-id="cea2a-114">V **nový projekt** dialogového okna, rozbalte **nainstalováno** > **Visual C#** nebo **jazyka Visual Basic**  >   **Windows Desktop** kategorie.</span><span class="sxs-lookup"><span data-stu-id="cea2a-114">In the **New Project** dialog, expand the **Installed** > **Visual C#** or **Visual Basic** > **Windows Desktop** category.</span></span> <span data-ttu-id="cea2a-115">Vyberte **aplikace WPF (.NET Framework)** šablony aplikace.</span><span class="sxs-lookup"><span data-stu-id="cea2a-115">Then, select the **WPF App (.NET Framework)** app template.</span></span> <span data-ttu-id="cea2a-116">Zadejte název a potom vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="cea2a-116">Enter a name, and then select **OK**.</span></span>
+
+   <span data-ttu-id="cea2a-117">Visual Studio vytvoří projekt, a *souboru MainWindow.xaml* otevře v návrháři.</span><span class="sxs-lookup"><span data-stu-id="cea2a-117">Visual Studio creates the project, and *MainWindow.xaml* opens in the designer.</span></span>
+
+3. <span data-ttu-id="cea2a-118">Typ `<InkCanvas/>` mezi `<Grid>` značky.</span><span class="sxs-lookup"><span data-stu-id="cea2a-118">Type `<InkCanvas/>` between the `<Grid>` tags.</span></span>
+
+   ![Návrhář XAML s inkcanvas – značka](media/getting-started-with-ink/inkcanvas-xaml.png)
+
+4. <span data-ttu-id="cea2a-120">Stisknutím klávesy **F5** ke spuštění aplikace v ladicím programu.</span><span class="sxs-lookup"><span data-stu-id="cea2a-120">Press **F5** to launch your application in the debugger.</span></span>
+
+5. <span data-ttu-id="cea2a-121">Pomocí pera nebo myš, zápis **hello world** v okně.</span><span class="sxs-lookup"><span data-stu-id="cea2a-121">Using a stylus or mouse, write **hello world** in the window.</span></span>
+
+<span data-ttu-id="cea2a-122">Jste napsali ekvivalent inkoustu aplikace "hello world" pomocí pouze 12 stisknutí kláves!</span><span class="sxs-lookup"><span data-stu-id="cea2a-122">You've written the ink equivalent of a "hello world" application with only 12 keystrokes!</span></span>
+
+### <a name="spice-up-your-app"></a><span data-ttu-id="cea2a-123">Okořeňte kapacity aplikace</span><span class="sxs-lookup"><span data-stu-id="cea2a-123">Spice Up Your App</span></span>
+
+<span data-ttu-id="cea2a-124">Můžeme využít některé funkce WPF.</span><span class="sxs-lookup"><span data-stu-id="cea2a-124">Let’s take advantage of some features of the WPF.</span></span> <span data-ttu-id="cea2a-125">Nahradit vše, co mezi otevírací a zavírací \<okna > značky následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="cea2a-125">Replace everything between the opening and closing \<Window> tags with the following markup:</span></span>
+
+```xaml
+<Page>
+  <InkCanvas Name="myInkCanvas" MouseRightButtonUp="RightMouseUpHandler">
+    <InkCanvas.Background>
+      <LinearGradientBrush>
+        <GradientStop Color="Yellow" Offset="0.0" />
+          <GradientStop Color="Blue" Offset="0.5" />
+            <GradientStop Color="HotPink" Offset="1.0" />
+              </LinearGradientBrush>
+    </InkCanvas.Background>
+  </InkCanvas>
+</Page>
+```
+
+<span data-ttu-id="cea2a-126">Tento XAML vytvoří štětce přechodu pozadí na pera surface.</span><span class="sxs-lookup"><span data-stu-id="cea2a-126">This XAML creates a gradient brush background on your inking surface.</span></span>
+
+![Barvy přechodu na rukopis plochu v aplikaci WPF](media/getting-started-with-ink/gradient-colors.png)
+
+### <a name="add-some-code-behind-the-xaml"></a><span data-ttu-id="cea2a-128">Přidat některé kódu na pozadí XAML</span><span class="sxs-lookup"><span data-stu-id="cea2a-128">Add Some Code Behind the XAML</span></span>
+
+<span data-ttu-id="cea2a-129">Zatímco XAML velmi usnadňuje návrh uživatelského rozhraní, žádné reálné aplikaci je potřeba přidat kód pro zpracování událostí.</span><span class="sxs-lookup"><span data-stu-id="cea2a-129">While XAML makes it very easy to design the user interface, any real-world application needs to add code to handle events.</span></span> <span data-ttu-id="cea2a-130">Tady je jednoduchý příklad, který se přiblíží rukopisu v reakci klikněte pravým tlačítkem myši.</span><span class="sxs-lookup"><span data-stu-id="cea2a-130">Here is a simple example that zooms in on the ink in response to a right-click from a mouse.</span></span>
+
+1. <span data-ttu-id="cea2a-131">Nastavte `MouseRightButtonUp` obslužné rutiny ve vaší XAML:</span><span class="sxs-lookup"><span data-stu-id="cea2a-131">Set the `MouseRightButtonUp` handler in your XAML:</span></span>
+
+   [!code-xaml[DigitalInkTopics#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml#3)]
+
+1. <span data-ttu-id="cea2a-132">V **Průzkumníka řešení**, rozbalte soubor MainWindow.xaml a otevřete soubor kódu na pozadí (MainWindow.xaml.cs nebo soubor MainWindow.xaml.vb).</span><span class="sxs-lookup"><span data-stu-id="cea2a-132">In **Solution Explorer**, expand MainWindow.xaml and open the code-behind file (MainWindow.xaml.cs or MainWindow.xaml.vb).</span></span> <span data-ttu-id="cea2a-133">Přidejte následující kód obslužné rutiny události:</span><span class="sxs-lookup"><span data-stu-id="cea2a-133">Add the following event handler code:</span></span>
+
+   [!code-csharp[DigitalInkTopics#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DigitalInkTopics/CSharp/Window2.xaml.cs#4)]
+   [!code-vb[DigitalInkTopics#4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DigitalInkTopics/VisualBasic/Window2.xaml.vb#4)]
+
+1. <span data-ttu-id="cea2a-134">Spusťte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="cea2a-134">Run the application.</span></span> <span data-ttu-id="cea2a-135">Přidat nějaký inkoust a potom klikněte pravým tlačítkem myši nebo provést ekvivalent stiskněte a podržte pomocí pera.</span><span class="sxs-lookup"><span data-stu-id="cea2a-135">Add some ink, and then right-click with the mouse or perform a press-and-hold equivalent with a stylus.</span></span>
+
+   <span data-ttu-id="cea2a-136">Zobrazení přiblíží pokaždé, když klepnete pravým tlačítkem myši.</span><span class="sxs-lookup"><span data-stu-id="cea2a-136">The display zooms in each time you click with the right mouse button.</span></span>
+
+### <a name="use-procedural-code-instead-of-xaml"></a><span data-ttu-id="cea2a-137">Použít kód procedury namísto XAML</span><span class="sxs-lookup"><span data-stu-id="cea2a-137">Use Procedural Code Instead of XAML</span></span>
+
+<span data-ttu-id="cea2a-138">Všechny funkce WPF můžete přistupovat z kódu procedury.</span><span class="sxs-lookup"><span data-stu-id="cea2a-138">You can access all WPF features from procedural code.</span></span> <span data-ttu-id="cea2a-139">Postupujte podle těchto kroků můžete vytvořit "inkoustu aplikace Hello World" pro WPF, která nebude vůbec používat jakékoli XAML.</span><span class="sxs-lookup"><span data-stu-id="cea2a-139">Follow these steps to create a "Hello Ink World" application for WPF that doesn’t use any XAML at all.</span></span>
+
+1. <span data-ttu-id="cea2a-140">Vytvořte nový projekt konzolové aplikace v sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="cea2a-140">Create a new console application project in Visual Studio.</span></span>
+
+   <span data-ttu-id="cea2a-141">V **nový projekt** dialogového okna, rozbalte **nainstalováno** > **Visual C#** nebo **jazyka Visual Basic**  >   **Windows Desktop** kategorie.</span><span class="sxs-lookup"><span data-stu-id="cea2a-141">In the **New Project** dialog, expand the **Installed** > **Visual C#** or **Visual Basic** > **Windows Desktop** category.</span></span> <span data-ttu-id="cea2a-142">Vyberte **Konzolová aplikace (.NET Framework)** šablony aplikace.</span><span class="sxs-lookup"><span data-stu-id="cea2a-142">Then, select the **Console App (.NET Framework)** app template.</span></span> <span data-ttu-id="cea2a-143">Zadejte název a potom vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="cea2a-143">Enter a name, and then select **OK**.</span></span>
+
+1. <span data-ttu-id="cea2a-144">Vložte následující kód do souboru Program.cs nebo soubor Program.vb:</span><span class="sxs-lookup"><span data-stu-id="cea2a-144">Paste the following code into the Program.cs or Program.vb file:</span></span>
+
+   [!code-csharp[InkCanvasConsoleApp#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InkCanvasConsoleApp/CSharp/Program.cs#1)]
+   [!code-vb[InkCanvasConsoleApp#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InkCanvasConsoleApp/VisualBasic/Module1.vb#1)]
+
+1. <span data-ttu-id="cea2a-145">Přidat odkazy na sestavení PresentationCore PresentationFramework a WindowsBase kliknutím pravým tlačítkem na **odkazy** v **Průzkumníka řešení** a zvolíte **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="cea2a-145">Add references to the PresentationCore, PresentationFramework, and WindowsBase assemblies by right-clicking on **References** in **Solution Explorer** and choosing **Add Reference**.</span></span>
+
+   ![Zobrazuje PresentationCore a PresentationFramework správce odkazů](media/getting-started-with-ink/references.png)
+
+1. <span data-ttu-id="cea2a-147">Sestavte aplikaci stisknutím klávesy **F5**.</span><span class="sxs-lookup"><span data-stu-id="cea2a-147">Build the application by pressing **F5**.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="cea2a-148">Viz také</span><span class="sxs-lookup"><span data-stu-id="cea2a-148">See Also</span></span>
+
+- [<span data-ttu-id="cea2a-149">Rukopis</span><span class="sxs-lookup"><span data-stu-id="cea2a-149">Digital Ink</span></span>](../../../../docs/framework/wpf/advanced/digital-ink.md)
+- [<span data-ttu-id="cea2a-150">Shromáždění rukopisu</span><span class="sxs-lookup"><span data-stu-id="cea2a-150">Collecting Ink</span></span>](../../../../docs/framework/wpf/advanced/collecting-ink.md)
+- [<span data-ttu-id="cea2a-151">Rozpoznávání textu psaného rukou</span><span class="sxs-lookup"><span data-stu-id="cea2a-151">Handwriting Recognition</span></span>](../../../../docs/framework/wpf/advanced/handwriting-recognition.md)
+- [<span data-ttu-id="cea2a-152">Uložení rukopisu</span><span class="sxs-lookup"><span data-stu-id="cea2a-152">Storing Ink</span></span>](../../../../docs/framework/wpf/advanced/storing-ink.md)
