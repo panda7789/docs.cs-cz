@@ -17,18 +17,18 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 94171b0708c97eb7510e916e451ed03645d706f3
-ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42752317"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933343"
 ---
-# <a name="getpropertyhandle-function"></a><span data-ttu-id="7bfab-103">Funkce GetPropertyHandle</span><span class="sxs-lookup"><span data-stu-id="7bfab-103">GetPropertyHandle function</span></span>
-<span data-ttu-id="7bfab-104">Vrátí jedinečný popisovač identifikující vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="7bfab-104">Returns a unique handle that identifies a property.</span></span>
+# <a name="getpropertyhandle-function"></a><span data-ttu-id="be332-103">Funkce GetPropertyHandle</span><span class="sxs-lookup"><span data-stu-id="be332-103">GetPropertyHandle function</span></span>
+<span data-ttu-id="be332-104">Vrátí jedinečný popisovač identifikující vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="be332-104">Returns a unique handle that identifies a property.</span></span>
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
-## <a name="syntax"></a><span data-ttu-id="7bfab-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7bfab-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="be332-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="be332-105">Syntax</span></span>  
   
 ```  
 HRESULT GetPropertyHandle (
@@ -40,48 +40,48 @@ HRESULT GetPropertyHandle (
 ); 
 ```  
 
-## <a name="parameters"></a><span data-ttu-id="7bfab-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="7bfab-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="be332-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="be332-106">Parameters</span></span>
 
 `vFunc`  
-<span data-ttu-id="7bfab-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="7bfab-107">[in] This parameter is unused.</span></span>
+<span data-ttu-id="be332-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="be332-107">[in] This parameter is unused.</span></span>
 
 `ptr`  
-<span data-ttu-id="7bfab-108">[in] Ukazatel [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) instance.</span><span class="sxs-lookup"><span data-stu-id="7bfab-108">[in] A pointer to an [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) instance.</span></span>
+<span data-ttu-id="be332-108">[in] Ukazatel [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) instance.</span><span class="sxs-lookup"><span data-stu-id="be332-108">[in] A pointer to an [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) instance.</span></span>
 
 `wszPropertyName`  
-<span data-ttu-id="7bfab-109">[in] Řetězec zakončený hodnotou null kódování UTF16 characaters, který obsahuje název vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="7bfab-109">[in] A null-terminated string of UTF16-encoded characaters that contains the property name.</span></span>   
+<span data-ttu-id="be332-109">[in] Řetězec zakončený hodnotou null kódování UTF16 characaters, který obsahuje název vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="be332-109">[in] A null-terminated string of UTF16-encoded characaters that contains the property name.</span></span>   
 
 `pType`  
-<span data-ttu-id="7bfab-110">[out] Ukazatel [ `CIMTYPE` ](https://msdn.microsoft.com/library/aa386309(v=vs.85).aspx) člen výčtu, který představuje typ CIM vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="7bfab-110">[out] A pointer to a [`CIMTYPE`](https://msdn.microsoft.com/library/aa386309(v=vs.85).aspx) enumeration member that represents the CIM type of the property.</span></span>
+<span data-ttu-id="be332-110">[out] Ukazatel [ `CIMTYPE` ](https://msdn.microsoft.com/library/aa386309(v=vs.85).aspx) člen výčtu, který představuje typ CIM vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="be332-110">[out] A pointer to a [`CIMTYPE`](https://msdn.microsoft.com/library/aa386309(v=vs.85).aspx) enumeration member that represents the CIM type of the property.</span></span>
 
 `pHandle`   
-<span data-ttu-id="7bfab-111">[out] Ukazatel na celé číslo, které obsahuje popisovač vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="7bfab-111">[out] A pointer to an integer that contains the property handle.</span></span>
+<span data-ttu-id="be332-111">[out] Ukazatel na celé číslo, které obsahuje popisovač vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="be332-111">[out] A pointer to an integer that contains the property handle.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="7bfab-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="7bfab-112">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="be332-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="be332-112">Return value</span></span>
 
-<span data-ttu-id="7bfab-113">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="7bfab-113">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
+<span data-ttu-id="be332-113">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="be332-113">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
 
-|<span data-ttu-id="7bfab-114">Konstanta</span><span class="sxs-lookup"><span data-stu-id="7bfab-114">Constant</span></span>  |<span data-ttu-id="7bfab-115">Hodnota</span><span class="sxs-lookup"><span data-stu-id="7bfab-115">Value</span></span>  |<span data-ttu-id="7bfab-116">Popis</span><span class="sxs-lookup"><span data-stu-id="7bfab-116">Description</span></span>  |
+|<span data-ttu-id="be332-114">Konstanta</span><span class="sxs-lookup"><span data-stu-id="be332-114">Constant</span></span>  |<span data-ttu-id="be332-115">Hodnota</span><span class="sxs-lookup"><span data-stu-id="be332-115">Value</span></span>  |<span data-ttu-id="be332-116">Popis</span><span class="sxs-lookup"><span data-stu-id="be332-116">Description</span></span>  |
 |---------|---------|---------|
-|`WBEM_E_NOT_FOUND` | <span data-ttu-id="7bfab-117">0x80041002</span><span class="sxs-lookup"><span data-stu-id="7bfab-117">0x80041002</span></span> | <span data-ttu-id="7bfab-118">Zadaný název vlastnosti nebyla nalezena.</span><span class="sxs-lookup"><span data-stu-id="7bfab-118">The specified property name was not found.</span></span> |
-|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="7bfab-119">0x80041008</span><span class="sxs-lookup"><span data-stu-id="7bfab-119">0x80041008</span></span> | <span data-ttu-id="7bfab-120">Parametr není platný.</span><span class="sxs-lookup"><span data-stu-id="7bfab-120">A parameter is not valid.</span></span> |
-|`WBEM_E_NOT_SUPPORTED` | <span data-ttu-id="7bfab-121">0x8004100c</span><span class="sxs-lookup"><span data-stu-id="7bfab-121">0x8004100c</span></span> | <span data-ttu-id="7bfab-122">Požadovaná vlastnost je typu jsou `CIM_OBJECT` nebo `CIM_ARRAY`.</span><span class="sxs-lookup"><span data-stu-id="7bfab-122">The requested property is of type are `CIM_OBJECT` or `CIM_ARRAY`.</span></span> |
-|`WBEM_S_NO_ERROR` | <span data-ttu-id="7bfab-123">0</span><span class="sxs-lookup"><span data-stu-id="7bfab-123">0</span></span> | <span data-ttu-id="7bfab-124">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="7bfab-124">The function call was successful.</span></span>  |
+|`WBEM_E_NOT_FOUND` | <span data-ttu-id="be332-117">0x80041002</span><span class="sxs-lookup"><span data-stu-id="be332-117">0x80041002</span></span> | <span data-ttu-id="be332-118">Zadaný název vlastnosti nebyla nalezena.</span><span class="sxs-lookup"><span data-stu-id="be332-118">The specified property name was not found.</span></span> |
+|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="be332-119">0x80041008</span><span class="sxs-lookup"><span data-stu-id="be332-119">0x80041008</span></span> | <span data-ttu-id="be332-120">Parametr není platný.</span><span class="sxs-lookup"><span data-stu-id="be332-120">A parameter is not valid.</span></span> |
+|`WBEM_E_NOT_SUPPORTED` | <span data-ttu-id="be332-121">0x8004100c</span><span class="sxs-lookup"><span data-stu-id="be332-121">0x8004100c</span></span> | <span data-ttu-id="be332-122">Požadovaná vlastnost je typu jsou `CIM_OBJECT` nebo `CIM_ARRAY`.</span><span class="sxs-lookup"><span data-stu-id="be332-122">The requested property is of type are `CIM_OBJECT` or `CIM_ARRAY`.</span></span> |
+|`WBEM_S_NO_ERROR` | <span data-ttu-id="be332-123">0</span><span class="sxs-lookup"><span data-stu-id="be332-123">0</span></span> | <span data-ttu-id="be332-124">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="be332-124">The function call was successful.</span></span>  |
   
-## <a name="remarks"></a><span data-ttu-id="7bfab-125">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7bfab-125">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="be332-125">Poznámky</span><span class="sxs-lookup"><span data-stu-id="be332-125">Remarks</span></span>
 
-<span data-ttu-id="7bfab-126">Tato funkce zalamuje volání na [IWbemClassObject::GetPropertyHandle](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemobjectaccess-getpropertyhandle) metody.</span><span class="sxs-lookup"><span data-stu-id="7bfab-126">This function wraps a call to the [IWbemClassObject::GetPropertyHandle](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemobjectaccess-getpropertyhandle) method.</span></span>
+<span data-ttu-id="be332-126">Tato funkce zalamuje volání na [IWbemClassObject::GetPropertyHandle](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemobjectaccess-getpropertyhandle) metody.</span><span class="sxs-lookup"><span data-stu-id="be332-126">This function wraps a call to the [IWbemClassObject::GetPropertyHandle](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemobjectaccess-getpropertyhandle) method.</span></span>
 
-<span data-ttu-id="7bfab-127">Pomocí tohoto úchytu můžete identifikovat vlastnosti při použití [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) metody pro čtení nebo zápis hodnot vlastností.</span><span class="sxs-lookup"><span data-stu-id="7bfab-127">You can use this handle to identify properties when using  [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) methods to read or write property values.</span></span>
+<span data-ttu-id="be332-127">Pomocí tohoto úchytu můžete identifikovat vlastnosti při použití [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) metody pro čtení nebo zápis hodnot vlastností.</span><span class="sxs-lookup"><span data-stu-id="be332-127">You can use this handle to identify properties when using  [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) methods to read or write property values.</span></span>
 
-<span data-ttu-id="7bfab-128">Obslužné rutiny mohou být získána pro vlastnosti všech datových typů jiných než `CIM_OBJECT` a `CIM_ARRAY`.</span><span class="sxs-lookup"><span data-stu-id="7bfab-128">Handles can be retrieved for properties of all data types other than `CIM_OBJECT` and `CIM_ARRAY`.</span></span> <span data-ttu-id="7bfab-129">Vrátí popisovače práce napříč všemi instancemi třídy.</span><span class="sxs-lookup"><span data-stu-id="7bfab-129">Returned handles work across all instances of a class.</span></span>
+<span data-ttu-id="be332-128">Obslužné rutiny mohou být získána pro vlastnosti všech datových typů jiných než `CIM_OBJECT` a `CIM_ARRAY`.</span><span class="sxs-lookup"><span data-stu-id="be332-128">Handles can be retrieved for properties of all data types other than `CIM_OBJECT` and `CIM_ARRAY`.</span></span> <span data-ttu-id="be332-129">Vrátí popisovače práce napříč všemi instancemi třídy.</span><span class="sxs-lookup"><span data-stu-id="be332-129">Returned handles work across all instances of a class.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="7bfab-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7bfab-130">Requirements</span></span>  
-<span data-ttu-id="7bfab-131">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7bfab-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="be332-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="be332-130">Requirements</span></span>  
+<span data-ttu-id="be332-131">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="be332-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7bfab-132">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="7bfab-132">**Header:** WMINet_Utils.idl</span></span>  
+ <span data-ttu-id="be332-132">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="be332-132">**Header:** WMINet_Utils.idl</span></span>  
   
- <span data-ttu-id="7bfab-133">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="7bfab-133">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
+ <span data-ttu-id="be332-133">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="be332-133">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7bfab-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7bfab-134">See also</span></span>  
-[<span data-ttu-id="7bfab-135">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="7bfab-135">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="be332-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="be332-134">See also</span></span>  
+[<span data-ttu-id="be332-135">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="be332-135">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)

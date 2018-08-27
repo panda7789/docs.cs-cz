@@ -1,6 +1,6 @@
 ---
 title: Get – funkce (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce Get načte zadanou hodnotu vlastnosti.
+description: Funkce Get načte hodnotu zadané vlastnosti.
 ms.date: 11/06/2017
 api_name:
 - Get
@@ -16,19 +16,19 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2f837a526879f80177bc9979e1d7671edfcd8d4f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cb7475623961fe2ee5fc821c5f237f0a2acfae1a
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33460145"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933330"
 ---
-# <a name="get-function"></a><span data-ttu-id="7983e-103">Get – funkce</span><span class="sxs-lookup"><span data-stu-id="7983e-103">Get function</span></span>
-<span data-ttu-id="7983e-104">Pokud existuje, načte zadanou hodnotu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="7983e-104">Retrieves the specified property value if it exists.</span></span>
+# <a name="get-function"></a><span data-ttu-id="9b9a2-103">Get – funkce</span><span class="sxs-lookup"><span data-stu-id="9b9a2-103">Get function</span></span>
+<span data-ttu-id="9b9a2-104">Načte hodnotu zadané vlastnosti, pokud existuje.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-104">Retrieves the specified property value if it exists.</span></span>
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
-## <a name="syntax"></a><span data-ttu-id="7983e-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7983e-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9b9a2-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9b9a2-105">Syntax</span></span>  
   
 ```  
 HRESULT Get (
@@ -42,57 +42,57 @@ HRESULT Get (
 ); 
 ```  
 
-## <a name="parameters"></a><span data-ttu-id="7983e-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="7983e-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="9b9a2-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="9b9a2-106">Parameters</span></span>
 
 `vFunc`  
-<span data-ttu-id="7983e-107">[v] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="7983e-107">[in] This parameter is unused.</span></span>
+<span data-ttu-id="9b9a2-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-107">[in] This parameter is unused.</span></span>
 
 `ptr`  
-<span data-ttu-id="7983e-108">[v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.</span><span class="sxs-lookup"><span data-stu-id="7983e-108">[in] A pointer to an [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.</span></span>
+<span data-ttu-id="9b9a2-108">[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-108">[in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span></span>
 
 `wszName`  
-<span data-ttu-id="7983e-109">[v] Název vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="7983e-109">[in] The name of the property.</span></span>
+<span data-ttu-id="9b9a2-109">[in] Název vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-109">[in] The name of the property.</span></span>
 
-<span data-ttu-id="7983e-110">`lFlags` [v] Vyhrazena.</span><span class="sxs-lookup"><span data-stu-id="7983e-110">`lFlags` [in] Reserved.</span></span> <span data-ttu-id="7983e-111">Tento parametr musí být 0.</span><span class="sxs-lookup"><span data-stu-id="7983e-111">This parameter must be 0.</span></span>
+<span data-ttu-id="9b9a2-110">`lFlags` [in] Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-110">`lFlags` [in] Reserved.</span></span> <span data-ttu-id="9b9a2-111">Tento parametr musí být 0.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-111">This parameter must be 0.</span></span>
 
-<span data-ttu-id="7983e-112">`pVal` [out] Pokud funkce vrátí úspěšně, obsahuje hodnotu `wszName` vlastnost.</span><span class="sxs-lookup"><span data-stu-id="7983e-112">`pVal` [out] If the function returns successfully, contains the value of the `wszName` property.</span></span> <span data-ttu-id="7983e-113">`pval` Argument je přiřazen správný typ a hodnotu pro kvalifikátor.</span><span class="sxs-lookup"><span data-stu-id="7983e-113">The `pval` argument is assigned the correct type and value for the qualifier.</span></span>
+<span data-ttu-id="9b9a2-112">`pVal` [out] Pokud funkce vrátí úspěšně, obsahuje hodnotu `wszName` vlastnost.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-112">`pVal` [out] If the function returns successfully, contains the value of the `wszName` property.</span></span> <span data-ttu-id="9b9a2-113">`pval` Argument je přiřazena správný typ a hodnota pro kvalifikátor.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-113">The `pval` argument is assigned the correct type and value for the qualifier.</span></span>
 
-<span data-ttu-id="7983e-114">`pvtType` [out] Pokud funkce vrátí úspěšně, obsahuje [typ modelu CIM konstanta](https://msdn.microsoft.com/library/aa386309(v=vs.85).aspx) určující typ vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="7983e-114">`pvtType` [out] If the function returns successfully, contains a [CIM-type constant](https://msdn.microsoft.com/library/aa386309(v=vs.85).aspx) that indicates the property type.</span></span> <span data-ttu-id="7983e-115">Jeho hodnota může být také `null`.</span><span class="sxs-lookup"><span data-stu-id="7983e-115">Its value can also be `null`.</span></span> 
+<span data-ttu-id="9b9a2-114">`pvtType` [out] Pokud funkce vrátí úspěšně, obsahuje [konstantní typ modelu CIM](/windows/desktop/api/wbemcli/ne-wbemcli-tag_cimtype_enumeration) , který určuje typ vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-114">`pvtType` [out] If the function returns successfully, contains a [CIM-type constant](/windows/desktop/api/wbemcli/ne-wbemcli-tag_cimtype_enumeration) that indicates the property type.</span></span> <span data-ttu-id="9b9a2-115">Jeho hodnota může být také `null`.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-115">Its value can also be `null`.</span></span> 
 
-<span data-ttu-id="7983e-116">`plFlavor` [out] Pokud funkce vrátí úspěšně, obdrží informace o zdroji vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="7983e-116">`plFlavor` [out] If the function returns successfully, receives information about the origin of the property.</span></span> <span data-ttu-id="7983e-117">Jeho hodnota může být `null`, nebo jeden z následujících WBEM_FLAVOR_TYPE konstanty definované v *WbemCli.h* hlavičkový soubor:</span><span class="sxs-lookup"><span data-stu-id="7983e-117">Its value can be `null`, or one of the following WBEM_FLAVOR_TYPE constants defined in the *WbemCli.h* header file:</span></span> 
+<span data-ttu-id="9b9a2-116">`plFlavor` [out] Pokud funkce vrátí úspěšně, obdrží informace o původu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-116">`plFlavor` [out] If the function returns successfully, receives information about the origin of the property.</span></span> <span data-ttu-id="9b9a2-117">Jeho hodnota může být `null`, nebo jednu z následujících konstant WBEM_FLAVOR_TYPE definované v *WbemCli.h* hlavičkový soubor:</span><span class="sxs-lookup"><span data-stu-id="9b9a2-117">Its value can be `null`, or one of the following WBEM_FLAVOR_TYPE constants defined in the *WbemCli.h* header file:</span></span> 
 
-|<span data-ttu-id="7983e-118">Konstanta</span><span class="sxs-lookup"><span data-stu-id="7983e-118">Constant</span></span>  |<span data-ttu-id="7983e-119">Hodnota</span><span class="sxs-lookup"><span data-stu-id="7983e-119">Value</span></span>  |<span data-ttu-id="7983e-120">Popis</span><span class="sxs-lookup"><span data-stu-id="7983e-120">Description</span></span>  |
+|<span data-ttu-id="9b9a2-118">Konstanta</span><span class="sxs-lookup"><span data-stu-id="9b9a2-118">Constant</span></span>  |<span data-ttu-id="9b9a2-119">Hodnota</span><span class="sxs-lookup"><span data-stu-id="9b9a2-119">Value</span></span>  |<span data-ttu-id="9b9a2-120">Popis</span><span class="sxs-lookup"><span data-stu-id="9b9a2-120">Description</span></span>  |
 |---------|---------|---------|
-| `WBEM_FLAVOR_ORIGIN_SYSTEM` | <span data-ttu-id="7983e-121">0x40</span><span class="sxs-lookup"><span data-stu-id="7983e-121">0x40</span></span> | <span data-ttu-id="7983e-122">Vlastnost je standardní systém vlastnost.</span><span class="sxs-lookup"><span data-stu-id="7983e-122">The property is a standard system property.</span></span> |
-| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | <span data-ttu-id="7983e-123">0x20</span><span class="sxs-lookup"><span data-stu-id="7983e-123">0x20</span></span> | <span data-ttu-id="7983e-124">Pro třídu: vlastnost je zděděna od nadřazené třídy.</span><span class="sxs-lookup"><span data-stu-id="7983e-124">For a class: The property is inherited from the parent class.</span></span> </br> <span data-ttu-id="7983e-125">Pro instanci: vlastnost, zatímco zděděn od nadřazené třídy, se nezměnil instance.</span><span class="sxs-lookup"><span data-stu-id="7983e-125">For an instance: The property, while inherited from the parent class, has not been modified by the instance.</span></span>  |
-| `WBEM_FLAVOR_ORIGIN_LOCAL` | <span data-ttu-id="7983e-126">0</span><span class="sxs-lookup"><span data-stu-id="7983e-126">0</span></span> | <span data-ttu-id="7983e-127">Pro třídu: vlastnost náleží do odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="7983e-127">For a class: The property belongs to the derived class.</span></span> </br> <span data-ttu-id="7983e-128">Pro instanci: vlastnost je upravovat instance; To znamená, že byla zadána hodnota, nebo kvalifikátor byla přidána nebo upravena.</span><span class="sxs-lookup"><span data-stu-id="7983e-128">For an instance: The property is modified by the instance; that is, a value was supplied, or a qualifier was added or modified.</span></span> |
+| `WBEM_FLAVOR_ORIGIN_SYSTEM` | <span data-ttu-id="9b9a2-121">0x40</span><span class="sxs-lookup"><span data-stu-id="9b9a2-121">0x40</span></span> | <span data-ttu-id="9b9a2-122">Vlastnost je standardní systém vlastnost.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-122">The property is a standard system property.</span></span> |
+| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | <span data-ttu-id="9b9a2-123">0x20</span><span class="sxs-lookup"><span data-stu-id="9b9a2-123">0x20</span></span> | <span data-ttu-id="9b9a2-124">Pro třídu: vlastnost je zděděná z nadřazené třídy.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-124">For a class: The property is inherited from the parent class.</span></span> </br> <span data-ttu-id="9b9a2-125">Pro instanci: vlastnost, zatímco zděděná z nadřazené třídy nebyl změněn instancí.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-125">For an instance: The property, while inherited from the parent class, has not been modified by the instance.</span></span>  |
+| `WBEM_FLAVOR_ORIGIN_LOCAL` | <span data-ttu-id="9b9a2-126">0</span><span class="sxs-lookup"><span data-stu-id="9b9a2-126">0</span></span> | <span data-ttu-id="9b9a2-127">Pro třídu: vlastnost patří k odvozené třídě.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-127">For a class: The property belongs to the derived class.</span></span> </br> <span data-ttu-id="9b9a2-128">Instance: instance; je změněna vlastnost To znamená, že byla zadána hodnota nebo kvalifikátor byla přidána nebo upravena.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-128">For an instance: The property is modified by the instance; that is, a value was supplied, or a qualifier was added or modified.</span></span> |
 
-## <a name="return-value"></a><span data-ttu-id="7983e-129">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="7983e-129">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="9b9a2-129">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="9b9a2-129">Return value</span></span>
 
-<span data-ttu-id="7983e-130">Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:</span><span class="sxs-lookup"><span data-stu-id="7983e-130">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
+<span data-ttu-id="9b9a2-130">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="9b9a2-130">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
 
-|<span data-ttu-id="7983e-131">Konstanta</span><span class="sxs-lookup"><span data-stu-id="7983e-131">Constant</span></span>  |<span data-ttu-id="7983e-132">Hodnota</span><span class="sxs-lookup"><span data-stu-id="7983e-132">Value</span></span>  |<span data-ttu-id="7983e-133">Popis</span><span class="sxs-lookup"><span data-stu-id="7983e-133">Description</span></span>  |
+|<span data-ttu-id="9b9a2-131">Konstanta</span><span class="sxs-lookup"><span data-stu-id="9b9a2-131">Constant</span></span>  |<span data-ttu-id="9b9a2-132">Hodnota</span><span class="sxs-lookup"><span data-stu-id="9b9a2-132">Value</span></span>  |<span data-ttu-id="9b9a2-133">Popis</span><span class="sxs-lookup"><span data-stu-id="9b9a2-133">Description</span></span>  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | <span data-ttu-id="7983e-134">0x80041001</span><span class="sxs-lookup"><span data-stu-id="7983e-134">0x80041001</span></span> | <span data-ttu-id="7983e-135">Došlo k obecné chybě.</span><span class="sxs-lookup"><span data-stu-id="7983e-135">There has been a general failure.</span></span> |
-|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="7983e-136">0x80041008</span><span class="sxs-lookup"><span data-stu-id="7983e-136">0x80041008</span></span> | <span data-ttu-id="7983e-137">Jeden nebo více parametrů nejsou platné.</span><span class="sxs-lookup"><span data-stu-id="7983e-137">One or more parameters are not valid.</span></span> |
-|`WBEM_E_NOT_FOUND` | <span data-ttu-id="7983e-138">0x80041002</span><span class="sxs-lookup"><span data-stu-id="7983e-138">0x80041002</span></span> | <span data-ttu-id="7983e-139">Zadaná vlastnost nebyla nalezena.</span><span class="sxs-lookup"><span data-stu-id="7983e-139">The specified property was not found.</span></span> |
-|`WBEM_E_OUT_OF_MEMORY` | <span data-ttu-id="7983e-140">0x80041006</span><span class="sxs-lookup"><span data-stu-id="7983e-140">0x80041006</span></span> | <span data-ttu-id="7983e-141">Je k dispozici k dokončení operace není dostatek paměti.</span><span class="sxs-lookup"><span data-stu-id="7983e-141">Not enough memory is available to complete the operation.</span></span> |
-|`WBEM_S_NO_ERROR` | <span data-ttu-id="7983e-142">0</span><span class="sxs-lookup"><span data-stu-id="7983e-142">0</span></span> | <span data-ttu-id="7983e-143">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="7983e-143">The function call was successful.</span></span>  |
+|`WBEM_E_FAILED` | <span data-ttu-id="9b9a2-134">0x80041001</span><span class="sxs-lookup"><span data-stu-id="9b9a2-134">0x80041001</span></span> | <span data-ttu-id="9b9a2-135">Obecné selhání došlo.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-135">There has been a general failure.</span></span> |
+|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="9b9a2-136">0x80041008</span><span class="sxs-lookup"><span data-stu-id="9b9a2-136">0x80041008</span></span> | <span data-ttu-id="9b9a2-137">Jeden nebo více parametrů nejsou platné.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-137">One or more parameters are not valid.</span></span> |
+|`WBEM_E_NOT_FOUND` | <span data-ttu-id="9b9a2-138">0x80041002</span><span class="sxs-lookup"><span data-stu-id="9b9a2-138">0x80041002</span></span> | <span data-ttu-id="9b9a2-139">Zadaná vlastnost nebyla nalezena.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-139">The specified property was not found.</span></span> |
+|`WBEM_E_OUT_OF_MEMORY` | <span data-ttu-id="9b9a2-140">0x80041006</span><span class="sxs-lookup"><span data-stu-id="9b9a2-140">0x80041006</span></span> | <span data-ttu-id="9b9a2-141">Nedostatek paměti je k dispozici k dokončení operace.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-141">Not enough memory is available to complete the operation.</span></span> |
+|`WBEM_S_NO_ERROR` | <span data-ttu-id="9b9a2-142">0</span><span class="sxs-lookup"><span data-stu-id="9b9a2-142">0</span></span> | <span data-ttu-id="9b9a2-143">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-143">The function call was successful.</span></span>  |
   
-## <a name="remarks"></a><span data-ttu-id="7983e-144">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7983e-144">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="9b9a2-144">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9b9a2-144">Remarks</span></span>
 
-<span data-ttu-id="7983e-145">Tato funkce zabalí volání [IWbemClassObject::Get](https://msdn.microsoft.com/library/aa391442(v=vs.85).aspx) metoda.</span><span class="sxs-lookup"><span data-stu-id="7983e-145">This function wraps a call to the [IWbemClassObject::Get](https://msdn.microsoft.com/library/aa391442(v=vs.85).aspx) method.</span></span>
+<span data-ttu-id="9b9a2-145">Tato funkce zalamuje volání na [IWbemClassObject::Get](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-get) metody.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-145">This function wraps a call to the [IWbemClassObject::Get](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-get) method.</span></span>
 
-<span data-ttu-id="7983e-146">`Get` Funkce mohou vracet vlastnosti systému.</span><span class="sxs-lookup"><span data-stu-id="7983e-146">The `Get` function can also return system properties.</span></span>
+<span data-ttu-id="9b9a2-146">`Get` Funkce může vrátit také vlastnosti systému.</span><span class="sxs-lookup"><span data-stu-id="9b9a2-146">The `Get` function can also return system properties.</span></span>
 
-<span data-ttu-id="7983e-147">`pVal` Argument je přiřazen správný typ a hodnotu pro kvalifikátor a knihovny COM [VariantInit](https://msdn.microsoft.com/library/ms221402(v=vs.85).aspx) – funkce</span><span class="sxs-lookup"><span data-stu-id="7983e-147">The `pVal` argument is assigned the correct type and value for the qualifier and the COM [VariantInit](https://msdn.microsoft.com/library/ms221402(v=vs.85).aspx) function</span></span>
+<span data-ttu-id="9b9a2-147">`pVal` Argument je přiřazena správný typ a hodnota pro kvalifikátor a modelu COM [VariantInit](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit) – funkce</span><span class="sxs-lookup"><span data-stu-id="9b9a2-147">The `pVal` argument is assigned the correct type and value for the qualifier and the COM [VariantInit](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit) function</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="7983e-148">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7983e-148">Requirements</span></span>  
- <span data-ttu-id="7983e-149">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7983e-149">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9b9a2-148">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9b9a2-148">Requirements</span></span>  
+ <span data-ttu-id="9b9a2-149">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9b9a2-149">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7983e-150">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="7983e-150">**Header:** WMINet_Utils.idl</span></span>  
+ <span data-ttu-id="9b9a2-150">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="9b9a2-150">**Header:** WMINet_Utils.idl</span></span>  
   
- <span data-ttu-id="7983e-151">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="7983e-151">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
+ <span data-ttu-id="9b9a2-151">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="9b9a2-151">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7983e-152">Viz také</span><span class="sxs-lookup"><span data-stu-id="7983e-152">See also</span></span>  
-[<span data-ttu-id="7983e-153">Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="7983e-153">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="9b9a2-152">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9b9a2-152">See also</span></span>  
+[<span data-ttu-id="9b9a2-153">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="9b9a2-153">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)

@@ -1,32 +1,36 @@
 ---
-title: Tabulka typů s plovoucí desetinnou čárkou (Referenční dokumentace jazyka C#)
-ms.date: 07/20/2015
+title: Tabulka typů s plovoucí desetinnou čárkou (referenční dokumentace jazyka C#)
+description: Přehled vestavěné typy C# s plovoucí desetinnou čárkou
+ms.date: 08/20/2018
 helpviewer_keywords:
 - floating-point numbers [C#]
 - ranges of floating-point types [C#]
 - types [C#], floating-point types
 ms.assetid: da886cc5-e01e-4f62-b3ec-6428c8f7a102
-ms.openlocfilehash: 0a0d59e653138d5037eaec8d494313222e526ad8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 804e6529e67785ed5bcdb0db9efaeccb6b3a1a61
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33219271"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42933265"
 ---
-# <a name="floating-point-types-table-c-reference"></a><span data-ttu-id="187cd-102">Tabulka typů s plovoucí desetinnou čárkou (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="187cd-102">Floating-Point Types Table (C# Reference)</span></span>
-<span data-ttu-id="187cd-103">V následující tabulce jsou uvedeny přesnost a přibližnou rozsahy typů s plovoucí desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="187cd-103">The following table shows the precision and approximate ranges for the floating-point types.</span></span>  
+# <a name="floating-point-types-table-c-reference"></a><span data-ttu-id="543ca-103">Tabulka typů s plovoucí desetinnou čárkou (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="543ca-103">Floating-point types table (C# Reference)</span></span>
+
+<span data-ttu-id="543ca-104">V následující tabulce jsou uvedeny přesnosti a přibližné rozsahy typů s plovoucí desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="543ca-104">The following table shows the precision and approximate ranges for the floating-point types.</span></span>  
   
-|<span data-ttu-id="187cd-104">Typ</span><span class="sxs-lookup"><span data-stu-id="187cd-104">Type</span></span>|<span data-ttu-id="187cd-105">Přibližná rozsahu</span><span class="sxs-lookup"><span data-stu-id="187cd-105">Approximate range</span></span>|<span data-ttu-id="187cd-106">Přesnost</span><span class="sxs-lookup"><span data-stu-id="187cd-106">Precision</span></span>|  
+|<span data-ttu-id="543ca-105">Typ</span><span class="sxs-lookup"><span data-stu-id="543ca-105">Type</span></span>|<span data-ttu-id="543ca-106">Přibližný rozsah</span><span class="sxs-lookup"><span data-stu-id="543ca-106">Approximate range</span></span>|<span data-ttu-id="543ca-107">Přesnost</span><span class="sxs-lookup"><span data-stu-id="543ca-107">Precision</span></span>|  
 |----------|-----------------------|---------------|  
-|[<span data-ttu-id="187cd-107">float</span><span class="sxs-lookup"><span data-stu-id="187cd-107">float</span></span>](float.md)|<span data-ttu-id="187cd-108">±1.5e−45 k ±3.4e38</span><span class="sxs-lookup"><span data-stu-id="187cd-108">±1.5e−45 to ±3.4e38</span></span>|<span data-ttu-id="187cd-109">7 míst</span><span class="sxs-lookup"><span data-stu-id="187cd-109">7 digits</span></span>|  
-|[<span data-ttu-id="187cd-110">double</span><span class="sxs-lookup"><span data-stu-id="187cd-110">double</span></span>](double.md)|<span data-ttu-id="187cd-111">±5.0e−324 k ±1.7e308</span><span class="sxs-lookup"><span data-stu-id="187cd-111">±5.0e−324 to ±1.7e308</span></span>|<span data-ttu-id="187cd-112">15 až 16 číslic</span><span class="sxs-lookup"><span data-stu-id="187cd-112">15-16 digits</span></span>|  
+|[<span data-ttu-id="543ca-108">float</span><span class="sxs-lookup"><span data-stu-id="543ca-108">float</span></span>](float.md)|<span data-ttu-id="543ca-109">±1.5 x 10<sup>−45</sup> k ±3.4 x 10<sup>38</sup></span><span class="sxs-lookup"><span data-stu-id="543ca-109">±1.5 x 10<sup>−45</sup> to ±3.4 x 10<sup>38</sup></span></span>|<span data-ttu-id="543ca-110">7 číslic</span><span class="sxs-lookup"><span data-stu-id="543ca-110">7 digits</span></span>|  
+|[<span data-ttu-id="543ca-111">double</span><span class="sxs-lookup"><span data-stu-id="543ca-111">double</span></span>](double.md)|<span data-ttu-id="543ca-112">±5.0 × 10<sup>−324</sup> k ±1.7 × 10<sup>308</sup></span><span class="sxs-lookup"><span data-stu-id="543ca-112">±5.0 × 10<sup>−324</sup> to ±1.7 × 10<sup>308</sup></span></span>|<span data-ttu-id="543ca-113">15 až 16 číslic</span><span class="sxs-lookup"><span data-stu-id="543ca-113">15-16 digits</span></span>|  
+|[<span data-ttu-id="543ca-114">decimal</span><span class="sxs-lookup"><span data-stu-id="543ca-114">decimal</span></span>](decimal.md)|<span data-ttu-id="543ca-115">±1.0 x 10<sup>– 28</sup> k ±7.9228 x 10<sup>28</sup></span><span class="sxs-lookup"><span data-stu-id="543ca-115">±1.0 x 10<sup>-28</sup> to ±7.9228 x 10<sup>28</sup></span></span>|<span data-ttu-id="543ca-116">28 – 29 číslic</span><span class="sxs-lookup"><span data-stu-id="543ca-116">28-29 digits</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="187cd-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="187cd-113">See Also</span></span>  
- [<span data-ttu-id="187cd-114">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="187cd-114">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
- [<span data-ttu-id="187cd-115">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="187cd-115">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
- [<span data-ttu-id="187cd-116">Tabulka výchozích hodnot</span><span class="sxs-lookup"><span data-stu-id="187cd-116">Default Values Table</span></span>](default-values-table.md)  
- [<span data-ttu-id="187cd-117">Tabulka předdefinovaných typů</span><span class="sxs-lookup"><span data-stu-id="187cd-117">Built-In Types Table</span></span>](built-in-types-table.md)  
- [<span data-ttu-id="187cd-118">Tabulka celočíselných typů</span><span class="sxs-lookup"><span data-stu-id="187cd-118">Integral Types Table</span></span>](integral-types-table.md)  
- [<span data-ttu-id="187cd-119">Tabulka formátování číselných výsledků</span><span class="sxs-lookup"><span data-stu-id="187cd-119">Formatting Numeric Results Table</span></span>](formatting-numeric-results-table.md)  
- [<span data-ttu-id="187cd-120">Referenční tabulky pro typy</span><span class="sxs-lookup"><span data-stu-id="187cd-120">Reference Tables for Types</span></span>](reference-tables-for-types.md)  
- [<span data-ttu-id="187cd-121">decimal</span><span class="sxs-lookup"><span data-stu-id="187cd-121">decimal</span></span>](decimal.md)
+## <a name="see-also"></a><span data-ttu-id="543ca-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="543ca-117">See also</span></span>
+
+- [<span data-ttu-id="543ca-118">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="543ca-118">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="543ca-119">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="543ca-119">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="543ca-120">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="543ca-120">C# Keywords</span></span>](index.md)
+- [<span data-ttu-id="543ca-121">Referenční tabulky pro typy</span><span class="sxs-lookup"><span data-stu-id="543ca-121">Reference tables for types</span></span>](reference-tables-for-types.md)
+- [<span data-ttu-id="543ca-122">Tabulka celočíselných typů</span><span class="sxs-lookup"><span data-stu-id="543ca-122">Integral types table</span></span>](integral-types-table.md)
+- [<span data-ttu-id="543ca-123">Tabulka výchozích hodnot</span><span class="sxs-lookup"><span data-stu-id="543ca-123">Default values table</span></span>](default-values-table.md)
+- [<span data-ttu-id="543ca-124">Tabulka formátování číselných výsledků</span><span class="sxs-lookup"><span data-stu-id="543ca-124">Formatting numeric results table</span></span>](formatting-numeric-results-table.md)
+- [<span data-ttu-id="543ca-125">Tabulka předdefinovaných typů</span><span class="sxs-lookup"><span data-stu-id="543ca-125">Built-in types table</span></span>](built-in-types-table.md)
