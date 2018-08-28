@@ -8,12 +8,12 @@ helpviewer_keywords:
 - finally keyword [C#]
 - try-finally statement [C#]
 ms.assetid: c27623fb-7261-4464-862c-7a369d3c8f0a
-ms.openlocfilehash: 696eb531fe3e340f7fe0ae12483648119cf5a7eb
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
-ms.translationtype: HT
+ms.openlocfilehash: beb54cf6c4e6dc87b9a08b81586b24d72f92b84b
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925176"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43001419"
 ---
 # <a name="try-finally-c-reference"></a>try-finally (Referenční dokumentace jazyka C#)
 Pomocí `finally` blok, můžete vyčistit všechny prostředky, které jsou přiděleny v [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blok a kód můžete spustit i v případě, že dojde k výjimce v `try` bloku. Obvykle, prohlášení o `finally` blok spustit, jakmile opustí ovládací prvek `try` příkazu. Přenos řízení může nastat v důsledku normálního provedení, provedení `break`, `continue`, `goto`, nebo `return` příkazu, nebo šíření výjimky z `try` příkazu.  
@@ -38,12 +38,13 @@ Pomocí `finally` blok, můžete vyčistit všechny prostředky, které jsou př
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [try, throw a catch – příkazy (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)  
- [Příkazy zpracování výjimek](../../../csharp/language-reference/keywords/exception-handling-statements.md)  
- [throw](../../../csharp/language-reference/keywords/throw.md)  
- [try-catch](../../../csharp/language-reference/keywords/try-catch.md)  
- [Postupy: Explicitní generování výjimek](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
+- [try, throw a catch – příkazy (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)  
+- [Příkazy zpracování výjimek](../../../csharp/language-reference/keywords/exception-handling-statements.md)  
+- [throw](../../../csharp/language-reference/keywords/throw.md)  
+- [try-catch](../../../csharp/language-reference/keywords/try-catch.md)  
+- [Postupy: Explicitní generování výjimek](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

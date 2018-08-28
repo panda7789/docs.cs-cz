@@ -1,5 +1,5 @@
 ---
-title: -reference (Visual Basic)
+title: – referenční dokumentace (Visual Basic)
 ms.date: 03/13/2018
 helpviewer_keywords:
 - /reference compiler option [Visual Basic]
@@ -12,14 +12,14 @@ ms.assetid: 66bdfced-bbf6-43d1-a554-bc0990315737
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cb5d3b4c50a9c22880bdcc8406835cf51481e3cd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33654366"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43003122"
 ---
-# <a name="-reference-visual-basic"></a>-reference (Visual Basic)
-Způsobí, že kompilátor zpřístupnění informací o typu v zadaném sestavení do projektu, které jsou aktuálně kompilace.  
+# <a name="-reference-visual-basic"></a>– referenční dokumentace (Visual Basic)
+Způsobí, že kompilátor pro zpřístupnění informací o typu v zadaném sestavení pro projekt, který je aktuálně kompilován.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,24 +33,24 @@ Způsobí, že kompilátor zpřístupnění informací o typu v zadaném sestave
   
 |Termín|Definice|  
 |---|---|  
-|`fileList`|Požadováno. Čárkami oddělený seznam názvů souborů sestavení. Pokud název souboru obsahuje mezery, uzavřete název v uvozovkách.|  
+|`fileList`|Požadováno. Čárkami oddělený seznam názvů souborů sestavení. Pokud název souboru obsahuje mezery, uzavřete název do uvozovek.|  
   
 ## <a name="remarks"></a>Poznámky  
  Soubory, které importujete musí obsahovat metadata sestavení. Pouze veřejné typy jsou viditelné mimo sestavení. [/Addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) možnost Importuje metadata z modulu.  
   
- Pokud odkazujete na sestavení (sestavení A) které se odkazuje na sestavení (sestavení B), budete muset odkaz na sestavení B, pokud:  
+ Pokud odkazujete na sestavení (sestavení A) která sama odkazuje na jiné sestavení (sestavení B), budete muset odkaz na sestavení B, pokud:  
   
--   Typu ze sestavení A dědí z typu nebo implementuje rozhraní ze sestavení B.  
+-   Typ v sestavení A je odvozen z typu nebo implementuje rozhraní ze sestavení B.  
   
--   Pole, vlastnost, události nebo metodu, která má návratový typ nebo parametr typu ze sestavení B je volána.  
+-   Pole, vlastnosti, události nebo metodu, která má návratový typ nebo parametr typu ze sestavení B je vyvolána.  
   
- Použití [- libpath](../../../visual-basic/reference/command-line-compiler/libpath.md) na adresář, ve kterém se nachází jeden nebo více odkazů na sestavení.  
+ Použití [- libpath](../../../visual-basic/reference/command-line-compiler/libpath.md) určit adresář, ve kterém se nachází jeden nebo více odkazů na sestavení.  
   
- Kompilátor rozpoznat typu v sestavení (není modul) musí být vynutit pro vyřešení typu. Jeden příklad, jak můžete k tomu je k definování instance typu. Další způsoby jsou k dispozici pro překlad názvů typu v sestavení pro kompilátor. Například pokud jste dědí od typu v sestavení, název typu pak určen kompilátoru.  
+ Kompilátor rozpoznával typ v sestavení (ne modul) musíte jej donutit k přeložení typu. K definování instance typu je jeden příklad, jak to udělat. Další možnosti jsou k dispozici přeložení názvů typů v sestavení pro kompilátor. Například pokud je zděděn z typu v sestavení, název typu pak stane pro kompilátor známým.  
   
- Soubor odpovědí Vbc.rsp, jehož odkazy běžně používají [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sestavení, se používá ve výchozím nastavení. Použít `-noconfig` Pokud nechcete, aby kompilátor používal Vbc.rsp.  
+ Soubor Vbc.rsp odpovědi, kterými se běžně používá odkazy [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sestavení, se používá ve výchozím nastavení. Použít `-noconfig` Pokud nechcete, aby kompilátor používal Vbc.rsp.  
   
- Zkratka pro `-reference` je `/r`.  
+ Krátký tvar `-reference` je `/r`.  
   
 ## <a name="example"></a>Příklad  
  Následující příkaz zkompiluje zdrojový soubor `Input.vb` a odkaz na sestavení z `Metad1.dll` a `Metad2.dll` k vytvoření `Out.exe`.  
@@ -60,7 +60,7 @@ vbc -reference:metad1.dll,metad2.dll -out:out.exe input.vb
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
  [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)  
  [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)  
  [Public](../../../visual-basic/language-reference/modifiers/public.md)  

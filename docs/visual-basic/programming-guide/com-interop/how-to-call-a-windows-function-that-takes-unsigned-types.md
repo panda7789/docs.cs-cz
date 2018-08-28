@@ -14,27 +14,27 @@ helpviewer_keywords:
 - data types [Visual Basic], numeric
 - unsigned types [Visual Basic], using
 ms.assetid: c2c0e712-8dc2-43b9-b4c6-345fbb02e7ce
-ms.openlocfilehash: afec9965c4ff728094e901eb4924ac94c432b300
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 44c67470def430a9ba924483899f0db6a9c798a2
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643023"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42999906"
 ---
 # <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy (Visual Basic).
-Pokud jsou využívání třídu, modul nebo struktura, která má členů typů celé číslo bez znaménka, dostanete tito členové v jazyce Visual Basic.  
+Pokud spotřebovávají třídy, modulu nebo struktura, která obsahuje členy typů celé číslo bez znaménka, získáte přístup k těmto členům s jazykem Visual Basic.  
   
-### <a name="to-call-a-windows-function-that-takes-an-unsigned-type"></a>Volání funkce systému Windows, která má typ bez znaménka  
+### <a name="to-call-a-windows-function-that-takes-an-unsigned-type"></a>Pro volání funkce Windows, která přebírá typ bez znaménka  
   
-1.  Použití [deklarovat příkaz](../../../visual-basic/language-reference/statements/declare-statement.md) říct jazyka Visual Basic, které knihovna obsahuje funkce, jeho název je v této knihovně, co je jeho volací sekvence a jak převést řetězce při volání metody ho.  
+1.  Použití [deklaraci příkazu](../../../visual-basic/language-reference/statements/declare-statement.md) říct jazyka Visual Basic, která knihovna obsahuje funkce, jeho název je v této knihovně, co je jeho volací sekvence a převod řetězce při svém volání.  
   
-2.  V `Declare` příkaz, použijte `UInteger`, `ULong`, `UShort`, nebo `Byte` podle potřeby pro každý parametr typu bez znaménka.  
+2.  V `Declare` příkazu, použijte `UInteger`, `ULong`, `UShort`, nebo `Byte` podle potřeby pro každý parametr s typem bez znaménka.  
   
-3.  V dokumentaci pro funkce systému Windows, ke kterému se připojujete k vyhledání názvy a hodnoty konstant, které používá. Mnoho z těchto jsou definovány v souboru WINUSER.  
+3.  V dokumentaci pro funkci Windows, ke kterému se připojujete k vyhledání názvy a hodnoty konstant, které používá. Mnohé z nich jsou definovány v souboru WINUSER.  
   
-4.  Deklarujte nezbytné konstanty v kódu. Mnoho konstanty Windows jsou hodnoty bez znaménka 32bitová verze a by měly deklarovat tyto `As``UInteger`.  
+4.  Deklarujte nezbytné konstanty ve vašem kódu. Řada Windows konstanty jsou 32bitové hodnoty bez znaménka a by měla deklarovat tyto `As``UInteger`.  
   
-5.  Volání funkce běžným způsobem. V následujícím příkladu volání funkce systému Windows `MessageBox`, což trvá argument celé číslo bez znaménka.  
+5.  Volání funkce běžným způsobem. Následující příklad volá funkci Windows `MessageBox`, která přebírá argument, celé číslo bez znaménka.  
   
     ```  
     Public Class windowsMessage  
@@ -69,16 +69,16 @@ Pokud jsou využívání třídu, modul nebo struktura, která má členů typů
     ```  
   
     > [!CAUTION]
-    >  `UInteger`, `ULong`, `UShort`, A `SByte` datové typy nejsou součástí [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) CLS (), takže kompatibilní se specifikací CLS kódu nemůže využívat komponentu, používá je.  
+    >  `UInteger`, `ULong`, `UShort`, A `SByte` datových typů nejsou součástí [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS), takže kód kompatibilní se Specifikací CLS nemůže využívat komponentu, která je využívá.  
   
     > [!IMPORTANT]
-    >  Provádění volání nespravovaného kódu, například rozhraní (API) Windows zpřístupní kódu na potenciální rizika zabezpečení.  
+    >  Volání nespravovaného kódu, jako je například rozhraní (API), Windows poskytuje kódu na potenciální rizika zabezpečení.  
   
     > [!IMPORTANT]
-    >  Volání rozhraní API systému Windows vyžaduje oprávnění nespravovaného kódu, což může mít vliv na jeho spuštění v situacích s částečným vztahem důvěryhodnosti. Další informace najdete v tématu <xref:System.Security.Permissions.SecurityPermission> a [přístupová oprávnění kódu](http://msdn.microsoft.com/library/e5ae402f-6dda-4732-bbe8-77296630f675).  
+    >  Volání rozhraní API pro Windows vyžaduje oprávnění nespravovaného kódu, který může mít vliv na jeho spuštění v situacích částečné důvěryhodnosti. Další informace najdete v tématu <xref:System.Security.Permissions.SecurityPermission> a [oprávnění přístupu ke kódu](http://msdn.microsoft.com/library/e5ae402f-6dda-4732-bbe8-77296630f675).  
   
 ## <a name="see-also"></a>Viz také  
- [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
  [Datový typ Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
  [Datový typ UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
  [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  

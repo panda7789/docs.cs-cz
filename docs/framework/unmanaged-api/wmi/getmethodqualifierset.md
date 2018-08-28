@@ -1,6 +1,6 @@
 ---
 title: Funkce GetMethodQualifierSet (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce GetMethodQualifierSet načte metoda kvalifikátor sady.
+description: Funkce GetMethodQualifierSet načte sadu metod kvalifikátoru.
 ms.date: 11/06/2017
 api_name:
 - GetMethodQualifierSet
@@ -16,14 +16,14 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2b1f73e999738fbb59342aeab391132ac454c8dd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a363591f5db7a2dbcba1147df35d8c023c9b0707
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33459108"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43001406"
 ---
-# <a name="getmethodqualifierset-function"></a>GetMethodQualifierSet – funkce
+# <a name="getmethodqualifierset-function"></a>Funkce GetMethodQualifierSet
 Načte kvalifikátor nastavit pro konkrétní metody.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -42,20 +42,20 @@ HRESULT GetMethodQualifierSet (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`  
-[v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
+[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `wszMethod`  
-[v] Název metody. `wszMethod` musí odkazovat na platný `LPCWSTR`. 
+[in] Název metody. `wszMethod` musí odkazovat na platný `LPCWSTR`. 
 
 `ppQualSet`  
-[out] Ukazatel rozhraní, které umožňuje přístup k kvalifikátory metody obdrží. `ppQualSet` nemůže být `null`. Pokud dojde k chybě, nevrátí nový objekt a ukazatel je nastaven tak, aby odkazoval na `null`. 
+[out] Přijímá ukazatel rozhraní, která umožňuje přístup k kvalifikátory metody. `ppQualSet` nemůže být `null`. Pokud dojde k chybě, není vrátí nový objekt a ukazatel je nastaven tak, aby odkazoval na `null`. 
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
@@ -65,18 +65,18 @@ Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubo
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemClassObject::GetMethodQualifierSet](https://msdn.microsoft.com/library/aa391446(v=vs.85).aspx) metoda. 
+Tato funkce zalamuje volání na [IWbemClassObject::GetMethodQualifierSet](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethodqualifierset) metody. 
 
-Volání této funkce je podporována pouze v případě, že je aktuální objekt definice třídy CIM. Není k dispozici pro manipulaci s metoda [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) ponters, které odkazují na modelu CIM instancí.
+Voláním této funkce je podporována pouze v případě, že je aktuální objekt definice třídy CIM. Není k dispozici pro manipulaci s metoda [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ponters odkazující na instance CIM.
 
-Protože každá metoda může mít svůj vlastní kvalifikátory [IWbemQualifierSet ukazatel](https://msdn.microsoft.com/library/aa391860(v=vs.85).aspx) umožňuje přidat, upravit nebo odstranit tyto kvalifikátory volající.
+Protože každá metoda může mít svůj vlastní kvalifikátory [IWbemQualifierSet ukazatel](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) umožňuje volajícímu přidat, upravit nebo odstranit kvalifikátory.
 
 ## <a name="requirements"></a>Požadavky  
-**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

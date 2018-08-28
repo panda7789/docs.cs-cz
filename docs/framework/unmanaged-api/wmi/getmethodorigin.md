@@ -1,6 +1,6 @@
 ---
 title: Funkce GetMethodOrigin (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce GetMethodOrigin Určuje třídu, ve kterém je deklarovaná metodu.
+description: Funkce GetMethodOrigin určuje třídy, ve kterém je deklarována metodu.
 ms.date: 11/06/2017
 api_name:
 - GetMethodOrigin
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 35e56494d0082db970afce21da8e63a597f0a535
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d1cc754fcf7d1defa815bb0a74b7c2b4a6909478
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33458146"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42999390"
 ---
-# <a name="getmethodorigin-function"></a>GetMethodOrigin – funkce
-Určuje třídu, ve kterém je deklarovaná metodu.
+# <a name="getmethodorigin-function"></a>Funkce GetMethodOrigin
+Určuje třídy, ve kterém je deklarována metodu.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
@@ -42,20 +42,20 @@ HRESULT GetMethodOrigin (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`  
-[v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
+[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `wszMethodName`  
-[v] Název metody pro objekt, jehož vlastnícím třída je požadováno. 
+[in] Název metody pro objekt, jehož vlastnící třídy jsou požadovány. 
 
 `pstrClassName`  
 [out] Získá název třídy, která vlastní metodu.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
@@ -65,18 +65,18 @@ Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubo
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemClassObject::GetMethodOrigin](https://msdn.microsoft.com/library/aa391443(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemClassObject::GetMethodOrigin](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod) metody.
 
-Protože třída může dědit vlastnosti metody z jednoho nebo více základní třídy, vývojáři často chtějí určit třídu, ve kterém je definovaný dané metody.
+Protože třída může dědit z jednoho nebo více základních tříd metody, vývojáři často chtějí určit třídu, ve kterém je definována dané metody.
 
-`pstrClassName` Parametr nesmí přejděte na platnou `BSTR` předtím, než je volána funkce, protože se jedná `out` parametr; tato ukazatel není navrácena po funkce vrátí hodnotu.
+`pstrClassName` Parametr nesmí odkazovat na platnou `BSTR` před voláním funkce, protože se jedná `out` parametr; tato ukazatel není uvolněný po vrácení funkce.
 
 ## <a name="requirements"></a>Požadavky  
-**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

@@ -9,56 +9,57 @@ helpviewer_keywords:
 - literals [Visual Basic], coercing data type
 - declarations [Visual Basic], data types
 ms.assetid: 057206d2-3a5b-40b9-b3af-57446f9b52fa
-ms.openlocfilehash: 8d110ec17bcdb03f339d779b2950ba56d77957cc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1d030f8058cd497212c20bca8f064f2bedc99fce
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42999924"
 ---
 # <a name="constant-and-literal-data-types-visual-basic"></a>Datové typy konstanty a literálu (Visual Basic)
-Literál je hodnota, která je vyjádřena jako samotný a nikoli jako hodnota proměnné nebo výsledek výrazu, například číslo 3 nebo text "Hello". Konstanta je smysluplný název, který přebírá místo literál a uchovává tento stejnou hodnotu v rámci programu, a proměnnou, jehož hodnota může změnit.  
+Literál je hodnota, která je vyjádřena jako samotný, nikoli jako hodnota proměnné nebo výsledku výrazu, například číslo 3 nebo řetězec "Hello". Konstanta je smysluplný název, který probíhá literály a ponechá tato stejná hodnota v celém programu, na rozdíl od proměnné, jejíž hodnota se může změnit.  
   
- Když [Option Infer –](../../../../visual-basic/language-reference/statements/option-infer-statement.md) je `Off` a [možnost striktní](../../../../visual-basic/language-reference/statements/option-strict-statement.md) je `On`, musíte deklarovat všechny konstanty explicitně s datovým typem. V následujícím příkladu, datový typ `MyByte` explicitně je deklarován jako datový typ `Byte`:  
+ Když [Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md) je `Off` a [Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) je `On`, je třeba deklarovat všechny konstanty explicitně s datovým typem. V následujícím příkladu, datový typ `MyByte` je explicitně deklarována jako datový typ `Byte`:  
   
  [!code-vb[VbVbalrConstants#1](../../../../visual-basic/programming-guide/language-features/constants-enums/codesnippet/VisualBasic/constant-and-literal-data-types_1.vb)]  
   
- Když `Option Infer` je `On` nebo `Option Strict` je `Off`, můžou deklarovat konstanta bez zadání datový typ s `As` klauzule. Kompilátor Určuje typ konstanty z typu výraz. Ve výchozím nastavení je přetypovat celé číselný literál číslo `Integer` datového typu. Výchozí datový typ pro čísla s plovoucí desetinnou čárkou je `Double`a klíčová slova `True` a `False` zadejte `Boolean` konstantní.  
+ Když `Option Infer` je `On` nebo `Option Strict` je `Off`, je možné deklarovat konstanty bez zadání datový typ s `As` klauzuli. Kompilátor Určuje typ konstanty z typu výrazu. Ve výchozím nastavení je přetypování číselné celočíselný literál `Integer` datového typu. Výchozí datový typ pro čísla s plovoucí desetinnou čárkou je `Double`a klíčová slova `True` a `False` zadat `Boolean` konstantní.  
   
 ## <a name="literals-and-type-coercion"></a>Literály a převod typu  
- V některých případech můžete chtít vynutit literál na konkrétní typ; například při přiřazování zvlášť velké integrální literálovou hodnotou proměnné typu `Decimal`. Následující příklad vytvoří chybu:  
+ V některých případech můžete chtít vynutit literál na konkrétní datový typ; například při přiřazování k proměnné typu zejména velkou celočíselnou hodnotu literálu `Decimal`. Následující příklad generuje chybu:  
   
 ```  
 Dim myDecimal as Decimal  
 myDecimal = 100000000000000000000   ' This causes a compiler error.  
 ```  
   
- Chyba výsledků reprezentace literál. `Decimal` Datový typ může obsahovat hodnotu velké, ale literálové implicitně vyjádřené `Long`, který nelze.  
+ Chyba výsledků z reprezentace literál. `Decimal` Datový typ může obsahovat hodnotu velké, ale literálu je implicitně reprezentována jako `Long`, které nemohou.  
   
- Můžete coerce literál na konkrétní typ. dvěma způsoby: připojením – znak typu k němu nebo tím, že v rámci uzavření znaků. – Znak typu nebo uzavření znaky musí okamžitě předcházet nebo postupujte podle literál bez použité místo nebo znaků jakéhokoli druhu.  
+ Můžete vynucení literál na konkrétní datový typ dvěma způsoby: přidáním znaku typu nebo tak, že v rámci nadřazené znaků. Znak typu nebo orámování znaků musí bezprostředně předcházet nebo postupujte podle literál bez použité místo nebo znaky jakéhokoli druhu.  
   
- Chcete-li předchozí příklad fungovat, můžete připojit `D` zadejte znak, který má literál, což způsobí, že mohla být reprezentován jako `Decimal`:  
+ Aby předchozí příklad pracovat, můžete připojit `D` zadejte znak pro literál, který způsobí, že aby se dala vyjádřit jako `Decimal`:  
   
  [!code-vb[VbVbalrConstants#2](../../../../visual-basic/programming-guide/language-features/constants-enums/codesnippet/VisualBasic/constant-and-literal-data-types_2.vb)]  
   
- Následující příklad ukazuje správné použití typu znaků a nadřazených znaků:  
+ Následující příklad ukazuje správné použití typu a nadřazeného znaků:  
   
  [!code-vb[VbVbalrConstants#3](../../../../visual-basic/programming-guide/language-features/constants-enums/codesnippet/VisualBasic/constant-and-literal-data-types_3.vb)]  
   
- Následující tabulka uvádí nadřazených znaky a znaky typu dostupné v jazyce Visual Basic.  
+ Následující tabulka uvádí nadřazeného znaky a znaky typu, které jsou k dispozici v jazyce Visual Basic.  
   
-|Datový typ|Nadřazených znak|Znak připojením typu|  
+|Datový typ|Vnější znak|Znak typu připojený|  
 |---|---|---|  
-|`Boolean`|(žádný)|(žádný)|  
-|`Byte`|(žádný)|(žádný)|  
+|`Boolean`|(žádné)|(žádné)|  
+|`Byte`|(žádné)|(žádné)|  
 |`Char`|"|C|  
-|`Date`|#|(žádný)|  
-|`Decimal`|(žádný)|D nebo @|  
-|`Double`|(žádný)|R nebo #|  
-|`Integer`|(žádný)|I nebo %|  
-|`Long`|(žádný)|L nebo &|  
-|`Short`|(žádný)|S|  
-|`Single`|(žádný)|F nebo!|  
-|`String`|"|(žádný)|  
+|`Date`|#|(žádné)|  
+|`Decimal`|(žádné)|D nebo @|  
+|`Double`|(žádné)|R nebo #|  
+|`Integer`|(žádné)|Nebo %|  
+|`Long`|(žádné)|L nebo &|  
+|`Short`|(žádné)|S|  
+|`Single`|(žádné)|F nebo!|  
+|`String`|"|(žádné)|  
   
 ## <a name="see-also"></a>Viz také  
  [Uživatelem definované konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/user-defined-constants.md)  
@@ -69,5 +70,5 @@ myDecimal = 100000000000000000000   ' This causes a compiler error.
  [Přehled výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)  
  [Postupy: deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)  
  [Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)  
- [Datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
  [Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)

@@ -1,17 +1,17 @@
 ---
 title: Výčty (F#)
-description: 'Další informace o použití výčty F # místo literály, aby váš kód více čitelný a udržovatelný.'
+description: 'Další informace o použití výčty F # místo literály, aby byl kód čitelnější a udržovatelný.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 00faf6e2ad08a7b232a8ae35aa0f7deb1ba3e76a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b51df53caf2e193496cb3694c913cbae08f7eaf5
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33562989"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43003096"
 ---
 # <a name="enumerations"></a>Výčty
 
-*Výčty*, také známé jako *výčty*,, jsou celočíselné typy, kde se popisky přiřazené k podmnožině hodnoty. Můžete je používat místo literály, aby kód víc čitelný a udržovatelný.
+*Výčty*, označované také jako *výčty*,, jsou celočíselných typů, kde popisky jsou přiřazeny k podmnožině hodnoty. Můžete je použít místo literály aby byl kód čitelnější a udržovatelný.
 
 
 ## <a name="syntax"></a>Syntaxe
@@ -24,29 +24,31 @@ type enum-name =
 ```
 
 ## <a name="remarks"></a>Poznámky
-Výčet vypadá podobně jako rozlišovaná sjednocení, která má jednoduché hodnoty, s tím rozdílem, že lze zadat hodnoty. Hodnoty jsou obvykle celá čísla, které začínají 0 nebo 1 nebo celá čísla, které představují bit pozic. Pokud výčet slouží k reprezentaci pozic bit, byste měli použít také [příznaky](xref:System.FlagsAttribute) atribut.
+Výčet vypadá podobně jako diskriminované sjednocení, který má jednoduché hodnoty, s tím rozdílem, že můžete zadat hodnoty. Hodnoty jsou obvykle celých čísel, které začínají 0 nebo 1 nebo celých čísel představujících bitové pozice. Pokud výčet slouží k reprezentaci bitové pozice, měli byste také použít [příznaky](xref:System.FlagsAttribute) atribut.
 
-Základní typ výčtu je určit literál, který se používá, takže například můžete použít literály s příponou, jako například `1u`, `2u`a tak dále pro celé číslo bez znaménka (`uint32`) typu.
+Základní typ výčtu je určen z literál, který se používá, takže například můžete použít literály s příponou, jako například `1u`, `2u`, a tak dále pro celé číslo bez znaménka (`uint32`) typu.
 
-Když odkazujete na pojmenovaných hodnot, musíte použít název typu výčtu sám sebe jako kvalifikátor, který je `enum-name.value1`, ne jenom `value1`. Toto chování se liší od rozlišovaná sjednocení. Důvodem je, že výčty vždy k dispozici [RequireQualifiedAccess](https://msdn.microsoft.com/library/8b9b6ade-0471-4413-ac5d-638cd0de5f15) atribut.
+Při odkazování na pojmenované hodnoty, musíte použít název samotného typu výčtu jako kvalifikátoru, tedy `enum-name.value1`, nejen `value1`. Toto chování se liší od rozlišovaná sjednocení. Důvodem je, že výčty mají vždy [RequireQualifiedAccess](https://msdn.microsoft.com/library/8b9b6ade-0471-4413-ac5d-638cd0de5f15) atribut.
 
-Následující kód ukazuje deklarace a používání výčtu.
+Následující kód ukazuje deklaraci a užívání výčet.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2101.fs)]
 
-Můžete snadno převést výčty základní typ pomocí příslušné operátor, jak je znázorněno v následujícím kódu.
+Jak je znázorněno v následujícím kódu, můžete snadno převést výčty pro základní typ pomocí příslušného operátoru.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2102.fs)]
 
-Výčtové typy může mít jeden z následujících typů základní: `sbyte`, `byte`, `int16`, `uint16`, `int32`, `uint32`, `int64`, `uint16`, `uint64`, a `char`. Výčtové typy jsou vyjádřené v rozhraní .NET Framework typy, které se dědí z `System.Enum`, který je pak zděděno od `System.ValueType`. Proto jsou typy hodnot, které jsou umístěny v zásobníku nebo vložené v objekt obsahující a hodnotou základní typ není platná hodnota výčtu. To je důležité při porovnávání se na výčet hodnot, protože je nutné zadat vzor, který zachytí nepojmenované hodnoty.
+Výčtové typy může mít jednu z následujících typů základní: `sbyte`, `byte`, `int16`, `uint16`, `int32`, `uint32`, `int64`, `uint16`, `uint64`, a `char`. Typy výčtu jsou reprezentovány v rozhraní .NET Framework jako typy, které jsou zděděny z `System.Enum`, pak dědí se ze `System.ValueType`. Proto jsou typy hodnot, které jsou umístěny na zásobník nebo vloženého do nadřazeného objektu a platná hodnota výčtu je libovolná hodnota základního typu. To je důležité, když vzorec pro porovnávání na výčet hodnot, protože je nutné zadat vzor, který zachytává nepojmenovaných hodnot.
 
-`enum` Funkce knihovny F # lze použít ke generování hodnotou výčtu, i jiná hodnota než jeden z předdefinovaných, s názvem hodnoty. Můžete použít `enum` funkce následujícím způsobem.
+`enum` Funkce v knihovně F # lze použít ke generování hodnoty výčtu, dokonce i jiná hodnota než jeden z předdefinovaných, s názvem hodnoty. Můžete použít `enum` funkce následujícím způsobem.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2103.fs)]
 
-Výchozí hodnota `enum` funkce funguje s typem `int32`. Proto jej nelze použít s výčtové typy, které mají jiné základní typy. Místo toho použijte následující.
+Výchozí hodnota `enum` funkce pracuje s typem `int32`. Proto jej nelze použít s výčtové typy, které mají jiné základní typy. Místo toho použijte následující.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2104.fs)]
+
+Kromě toho případech pro výčty jsou vždy generované jako `public`. Je to tak, aby jejich zarovnání bylo pomocí C# a zbytek na platformě .NET.
     
 ## <a name="see-also"></a>Viz také
 [Referenční dokumentace jazyka F#](index.md)

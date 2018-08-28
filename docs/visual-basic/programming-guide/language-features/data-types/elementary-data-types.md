@@ -5,22 +5,22 @@ helpviewer_keywords:
 - elementary data types [Visual Basic]
 - data types [Visual Basic], elementary
 ms.assetid: dfad6fe9-2da6-49a4-b0b1-2d7ae0283de5
-ms.openlocfilehash: 57caaf33d3e67bc6a2a0caed9733bc42ffdb54be
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0db989bbfcb8aa00278eb20bd269872c9447616f
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33646375"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42998625"
 ---
 # <a name="elementary-data-types-visual-basic"></a>Základní datové typy (Visual Basic)
-Visual Basic poskytuje sadu předem definovaných datových typů, které můžete použít pro řadu programovací prvky. Tato část popisuje tyto typy a jejich použití.  
+Visual Basic poskytuje sadu předdefinovaných datových typů, které můžete použít pro celou řadu vaše programovací prvky. Tato část popisuje tyto typy a jejich použití.  
   
 > [!NOTE]
->  Všechny základní datové typy v jazyce Visual Basic nepodporuje strukturou nebo třídu, která je v <xref:System> oboru názvů. Kompilátor používá pro podkladová struktura nebo třída – klíčové slovo každý datový typ jako alias. Například deklarace proměnné pomocí vyhrazené slovo `Byte` je stejný jako deklarace s použitím struktura plně kvalifikovaný název <xref:System.Byte?displayProperty=nameWithType>.  
+>  Všechny základní datové typy v jazyce Visual Basic nepodporuje struktury nebo třídy, která je v <xref:System> oboru názvů. Kompilátor používá – klíčové slovo každý datový typ jako alias pro základní struktury nebo třídy. Například, deklarace proměnné pomocí vyhrazené slovo `Byte` je stejné jako deklarování pomocí struktury plně kvalifikovaný název <xref:System.Byte?displayProperty=nameWithType>.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Číselné datové typy](../../../../visual-basic/programming-guide/language-features/data-types/numeric-data-types.md)  
- Popisuje číselnými typy celých a celé číslo.  
+ Popisuje – neintegrální a integrální číselné typy.  
   
  [Znakové datové typy](../../../../visual-basic/programming-guide/language-features/data-types/character-data-types.md)  
  Popisuje `Char` a `String` typy.  
@@ -30,7 +30,7 @@ Visual Basic poskytuje sadu předem definovaných datových typů, které může
   
 ## <a name="related-sections"></a>Související oddíly  
  [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
- Představuje Visual Basic – datové typy a popisuje jejich použití.  
+ Představuje datové typy jazyka Visual Basic a popisuje, jak je používat.  
   
- [Datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
- Poskytuje přehled základní datové typy poskytl jazyka Visual Basic.
+ [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
+ Poskytuje přehled o základní datové typy, získáte ho od jazyka Visual Basic.

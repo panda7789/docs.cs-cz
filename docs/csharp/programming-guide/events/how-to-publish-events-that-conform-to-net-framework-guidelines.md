@@ -5,27 +5,27 @@ helpviewer_keywords:
 - events [C#], implementation guidelines
 ms.assetid: 9310ae16-8627-44a2-b08c-05e5976202b1
 ms.openlocfilehash: 830f86be43f1499bd87ff02690061b08f8f7f86d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33322634"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43001262"
 ---
 # <a name="how-to-publish-events-that-conform-to-net-framework-guidelines-c-programming-guide"></a>Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET Framework (Průvodce programováním v C#)
-Následující postup ukazuje, jak přidat události, které následují standardní [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vzor třídy a struktury. Všechny události v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] jsou na základě knihovny tříd <xref:System.EventHandler> delegáta, který je definován následujícím způsobem:  
+Následující postup ukazuje, jak přidat události, které dodržovat standardní [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vzor, který má třídy a struktury. Všechny události v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] knihovny tříd jsou založeny na <xref:System.EventHandler> delegovat, která je definovaná následujícím způsobem:  
   
 ```csharp  
 public delegate void EventHandler(object sender, EventArgs e);  
 ```  
   
 > [!NOTE]
->  [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] Představuje obecné verzi tohoto delegáta <xref:System.EventHandler%601>. Následující příklady ukazují, jak používat obě verze.  
+>  [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] Představuje obecné verzi tohoto delegáta <xref:System.EventHandler%601>. Následující příklady ukazují, jak použít obě verze.  
   
- I když událostí v třídách, které definujete, může být založené na libovolného typu platný delegáta, i delegáti, které vrací hodnotu, se obecně doporučuje založit události na [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vzor pomocí <xref:System.EventHandler>, jak je znázorněno v následujícím příkladu.  
+ I když události ve třídách, které definujete, může být založené na libovolný platný delegát i delegáty, které vrací hodnotu, obecně doporučujeme založit událostí na [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vzor s použitím <xref:System.EventHandler>, jak je znázorněno v následujícím příkladu.  
   
-### <a name="to-publish-events-based-on-the-eventhandler-pattern"></a>Chcete-li publikovat události na základě vzoru obslužná rutina události  
+### <a name="to-publish-events-based-on-the-eventhandler-pattern"></a>Chcete-li publikovat události založena na vzoru obslužná rutina události  
   
-1.  (Tento krok přeskočte a přejděte na krok 3a, pokud nemáte odeslat vlastní data s vaší událostí.) Deklarování třídy pro vaše vlastní data v oboru, který je viditelná pro třídy vydavatele a odběratele. Pak přidejte požadované členy pro uložení dat vlastních událostí. V tomto příkladu se vrátí jednoduchým řetězcem.  
+1.  (Tento krok přeskočit a přejít na krok 3a, pokud nemáte k odesílání vlastních dat s vaší události.) Deklarování třídy pro vaše vlastní data v oboru, který je viditelný na vydavatele a odběratele třídy. Pak přidejte požadované členy k uchování dat vlastních událostí. V tomto příkladu je vrácena jednoduchým řetězcem.  
   
     ```csharp  
     public class CustomEventArgs : EventArgs  
@@ -42,34 +42,34 @@ public delegate void EventHandler(object sender, EventArgs e);
     }  
     ```  
   
-2.  (Tento krok přeskočte, pokud používáte obecný verzi <xref:System.EventHandler%601> .) Ve třídě publikování delegáta deklarujte. Zadejte jeho název, který končí *obslužná rutina události*. Druhý parametr určuje vaše vlastní typ EventArgs.  
+2.  (Tento krok přeskočte, pokud používáte obecné verzi <xref:System.EventHandler%601> .) Deklarujte delegáta ve své třídě pro publikování. Přiřaďte jí název, který končí *EventHandler*. Druhý parametr určuje vašeho vlastního typu EventArgs.  
   
     ```csharp  
     public delegate void CustomEventHandler(object sender, CustomEventArgs a);  
     ```  
   
-3.  Deklarace událostí v třídě publikování pomocí jedné z následujících kroků.  
+3.  Deklarujte událost ve své třídě pro publikování pomocí jedné z následujících kroků.  
   
-    1.  Pokud máte žádné vlastní třídy EventArgs, bude váš typ události delegát neobecnou obslužná rutina události. Nemáte delegáta deklarovat, protože je již deklarována <xref:System> obor názvů, který je součástí při vytváření projektu C#. Přidejte následující kód do vaší třídy vydavatele.  
+    1.  Pokud žádné vlastní třídu EventArgs, bude váš typ události delegáta EventHandler Obecné. Nemusíte deklarovat delegáta, protože je již deklarován <xref:System> obor názvů, který je součástí při vytváření projektu C#. Přidejte následující kód do třídy vydavatele.  
   
         ```csharp  
         public event EventHandler RaiseCustomEvent;  
         ```  
   
-    2.  Pokud používáte verzi neobecnou <xref:System.EventHandler> a máte vlastní třídy odvozené od <xref:System.EventArgs>, deklarování událost v třídě publikování a použití delegáta z kroku 2 jako typ.  
+    2.  Pokud používáte verzi neobecnou <xref:System.EventHandler> a máte vlastní třídy odvozené od <xref:System.EventArgs>deklarovat událost uvnitř publikování třídy a použít jako typ delegáta z kroku 2.  
   
         ```csharp  
         public event CustomEventHandler RaiseCustomEvent;  
         ```  
   
-    3.  Pokud používáte obecný verze, není nutné vlastní delegáta. Místo toho v třídě publikování zadat typ vašeho událostí jako `EventHandler<CustomEventArgs>`, nahraďte název vlastní třídy mezi lomené závorky.  
+    3.  Pokud používáte obecné verzi, není nutné vlastního delegáta. Místo toho ve své třídě publikování zadáte jako typ události `EventHandler<CustomEventArgs>`, kde nahradíte název vlastní třídy mezi ostrých závorek.  
   
         ```csharp  
         public event EventHandler<CustomEventArgs> RaiseCustomEvent;  
         ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje předchozí kroky, pomocí vlastní třídy EventArgs a <xref:System.EventHandler%601> jako typ události.  
+ Následující příklad ukazuje v předchozích krocích pomocí vlastní třídy EventArgs a <xref:System.EventHandler%601> jako typ události.  
   
  [!code-csharp[csProgGuideEvents#2](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-publish-events-that-conform-to-net-framework-guidelines_1.cs)]  
   

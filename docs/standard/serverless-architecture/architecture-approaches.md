@@ -4,12 +4,12 @@ description: Úvod do architektury přístupů pro podnikové cloudové aplikace
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: b080e029fb1214ebf4d2717902c3b6d4af06d254
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 21e191f17e7d0b4f2d64454fb14c46a4831a8375
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404899"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42999885"
 ---
 # <a name="architecture-approaches"></a>Přístupy k architektuře
 
@@ -75,7 +75,7 @@ Bez serveru slouží k implementaci jednu nebo více vrstev.
 * Služby nejsou závislé na jednom datovém úložišti.
 * Systém je navržená s chybou v úvahu a aplikace může běžet i v případě selhání některých služeb.
 
-Mikroslužby nemusí být vzájemné další přístupy k architektuře. Například může použít N-vrstvou architekturu mikroslužeb pro střední vrstvy. Také je možné implementovat mikroslužby v celou řadu způsobů, z adresáře v hostitelích služby IIS do kontejnerů. Zkontrolujte charakteristiky mikroslužeb je zvláště ideální pro implementace bez serveru.
+Mikroslužby nemusí být vzájemně se vylučující k jiné přístupy k architektuře. Například může použít N-vrstvou architekturu mikroslužeb pro střední vrstvy. Také je možné implementovat mikroslužby v celou řadu způsobů, z adresáře v hostitelích služby IIS do kontejnerů. Zkontrolujte charakteristiky mikroslužeb je zvláště ideální pro implementace bez serveru.
 
 ![Architektura Mikroslužeb](./media/microservices-architecture.png)
 

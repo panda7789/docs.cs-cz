@@ -8,15 +8,15 @@ helpviewer_keywords:
 - types [C#], reference tables
 - C# language, data types
 ms.assetid: 1d2b6a9b-31fd-4fa6-a7b2-bfd9c806ac8a
-ms.openlocfilehash: c432140dfd009518290ac6a21129cfb968f661b2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a46766b17f413346c22dd6980b461421af26391c
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33266808"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42999104"
 ---
 # <a name="reference-tables-for-types-c-reference"></a>Referenční tabulky pro typy (Referenční dokumentace jazyka C#)
-Následující referenční tabulky Shrnutí typy C#:  
+Následující referenční tabulka představuje souhrn typů jazyka C#:  
   
  [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  
   
@@ -24,7 +24,7 @@ Následující referenční tabulky Shrnutí typy C#:
   
  [Typy s plovoucí desetinnou čárkou](../../../csharp/language-reference/keywords/floating-point-types-table.md)  
   
- [výchozí hodnoty](../../../csharp/language-reference/keywords/default-values-table.md)  
+ [Výchozí hodnoty](../../../csharp/language-reference/keywords/default-values-table.md)  
   
  [Typy hodnot](../../../csharp/language-reference/keywords/value-types-table.md)  
   
@@ -32,10 +32,11 @@ Následující referenční tabulky Shrnutí typy C#:
   
  [Tabulka explicitních číselných převodů](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)  
   
- Informace o Formátovaní výstupu číselnými typy najdete v tématu [formátování číselných výsledků tabulky](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md).  
+ Informace o formátování výstupu číselné typy najdete v tématu [tabulka formátování číselných výsledků](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md).  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)  
- [Typy hodnot](../../../csharp/language-reference/keywords/value-types.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)  
+- [Typy hodnot](../../../csharp/language-reference/keywords/value-types.md)

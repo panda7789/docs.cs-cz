@@ -12,59 +12,59 @@ helpviewer_keywords:
 - queries [LINQ in Visual Basic], data changes in database
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: cf52635f-0c1b-46c3-aff1-bdf181cf19b1
-ms.openlocfilehash: 617bb62f9009c507658b5d1262657cb4dfa860e9
-ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
+ms.openlocfilehash: afc8474cd12042b0c60c9afb4d1af79d8b260f63
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34827108"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43000960"
 ---
 # <a name="how-to-modify-data-in-a-database-by-using-linq-visual-basic"></a>Postupy: Změna dat v databázi pomocí LINQ (Visual Basic)
-Language-Integrated Query (LINQ) dotazy usnadňují přístup k informacím databáze a upravte hodnoty v databázi.  
+Language-Integrated Query (LINQ) dotazy umožňují snadno přistupovat k informací o databázi a hodnot v databázi.  
   
- Následující příklad ukazuje, jak vytvořit novou aplikaci, která načte a informace o aktualizacích v databázi systému SQL Server.  
+ Následující příklad ukazuje, jak vytvořit novou aplikaci, která načte a informací o aktualizacích v databázi serveru SQL Server.  
   
- V příkladech v tomto tématu použijte ukázková databáze Northwind. Pokud jste tuto databázi ve svém vývojovém počítači, můžete ji stáhnout z webu Microsoft Download Center. Pokyny najdete v tématu [stažení ukázkové databáze](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+ V příkladech v tomto tématu se používá ukázkové databáze Northwind. Pokud tuto databázi na vašem vývojovém počítači nemáte, můžete si ho stáhnout z webu Microsoft Download Center. Pokyny najdete v tématu [Downloading Sample Databases](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md).  
   
 ### <a name="to-create-a-connection-to-a-database"></a>Chcete-li vytvořit připojení k databázi  
   
-1.  V sadě Visual Studio otevřete **Průzkumníka serveru**/**Průzkumník databáze** kliknutím **zobrazení** nabídce a potom vyberte **Průzkumníka serveru** / **Databáze Explorer**.  
+1.  V sadě Visual Studio, otevřete **Průzkumníka serveru**/**Průzkumník databáze** kliknutím **zobrazení** nabídky a pak vyberte **Průzkumníka serveru** / **Databázového Průzkumníka**.  
   
-2.  Klikněte pravým tlačítkem na **připojení dat** v **Průzkumníka serveru**/**Průzkumník databáze**a klikněte na tlačítko **přidat připojení**.  
+2.  Klikněte pravým tlačítkem na **datová připojení** v **Průzkumníka serveru**/**Průzkumník databáze**a klikněte na tlačítko **přidat připojení**.  
   
-3.  Zadejte platné připojení k ukázková databáze Northwind.  
+3.  Zadejte platné připojení k ukázkové databázi Northwind.  
   
-### <a name="to-add-a-project-with-a-linq-to-sql-file"></a>Přidat k projektu s LINQ souboru SQL  
+### <a name="to-add-a-project-with-a-linq-to-sql-file"></a>Přidání projektu s LINQ na soubor SQL  
   
-1.  V sadě Visual Studio na **soubor** nabídky, přejděte na příkaz **nový** a pak klikněte na **projektu**. Vyberte jazyka Visual Basic **formulářové aplikace Windows** jako typ projektu.  
+1.  V sadě Visual Studio na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**. Výběr jazyka Visual Basic **formulářová aplikace Windows** jako typ projektu.  
   
 2.  Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**. Vyberte **třídy LINQ to SQL** šablony položky.  
   
-3.  Název souboru `northwind.dbml`. Klikněte na tlačítko **přidat**. Návrhář relací objektů (Návrhář relací objektů), je otevřené `northwind.dbml` souboru.  
+3.  Název souboru `northwind.dbml`. Klikněte na tlačítko **přidat**. Návrhář relací objektů (O/R Designer), je otevřené `northwind.dbml` souboru.  
   
-### <a name="to-add-tables-to-query-and-modify-to-the-designer"></a>Chcete-li přidat tabulky pro dotazování a upravit návrháře  
+### <a name="to-add-tables-to-query-and-modify-to-the-designer"></a>Chcete-li přidat tabulky k dotazování a modifikaci do návrháře  
   
 1.  V **Průzkumníka serveru**/**Průzkumník databáze**, rozbalte možnost připojení k databázi Northwind. Rozbalte **tabulky** složky.  
   
-     Pokud jste zavřeli Návrhář relací objektů, můžete ho znovu otevřít dvojitým kliknutím `northwind.dbml` soubor, který jste přidali dříve.  
+     Pokud jste zavřeli O/R Designer, můžete znovu otevřít jej dvojitým kliknutím `northwind.dbml` soubor, který jste přidali dříve.  
   
-2.  Klikněte na tabulku zákazníků a přetáhněte ji do levého podokna návrháře.  
+2.  Klikněte na tabulce Zákazníci a přetáhněte ji do levého podokna v návrháři.  
   
      Návrhář vytvoří nový objekt zákazníka pro váš projekt.  
   
-3.  Uložte změny a zavřít návrháře.  
+3.  Uložte změny a zavřete návrháře.  
   
 4.  Uložte projekt.  
   
-### <a name="to-add-code-to-modify-the-database-and-display-the-results"></a>Přidání kódu k úpravě databáze a zobrazit výsledky  
+### <a name="to-add-code-to-modify-the-database-and-display-the-results"></a>Přidání kódu k úpravám databáze a zobrazení výsledků  
   
-1.  Z **sada nástrojů**, přetáhněte ji <xref:System.Windows.Forms.DataGridView> na výchozí formuláře Windows pro svůj projekt Form1 ovládací prvek.  
+1.  Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.DataGridView> ovládacího prvku na výchozí formulář Windows pro váš projekt Form1.  
   
-2.  Při přidání tabulky do Návrhář relací objektů návrháře přidat <xref:System.Data.Linq.DataContext> objektu do projektu. Tento objekt obsahuje kód, který můžete použít pro přístup k tabulce zákazníků. Také obsahuje kód, který definuje objekt místní zákazníka a kolekci zákazníci pro tabulku. <xref:System.Data.Linq.DataContext> Objekt pro je s názvem projektu na základě názvu souboru DBML. Pro tento projekt <xref:System.Data.Linq.DataContext> názvem objektu `northwindDataContext`.  
+2.  Při přidání tabulky do Návrháře relací objektů, přidá návrháře <xref:System.Data.Linq.DataContext> objektu do projektu. Tento objekt obsahuje kód, který můžete použít pro přístup k tabulce Zákazníci. Také obsahuje kód, který definuje místní objekt zákazníka a kolekci zákazníků pro tabulku. <xref:System.Data.Linq.DataContext> Objektu pro váš projekt je s názvem podle názvu souboru .dbml. Pro tento projekt <xref:System.Data.Linq.DataContext> se nazývá `northwindDataContext`.  
   
-     Můžete vytvořit instanci <xref:System.Data.Linq.DataContext> objekt v kódu a dotazů a upravit kolekci zákazníkům určit Návrhář relací objektů. Změny provedené ke kolekci zákazníků se neprojeví v databázi, dokud odeslání voláním <xref:System.Data.Linq.DataContext.SubmitChanges%2A> metodu <xref:System.Data.Linq.DataContext> objektu.  
+     Můžete vytvořit instanci <xref:System.Data.Linq.DataContext> objekt v kódu a dotazování a úprava zákazníkům kolekci specifikované souborem Návrháře relací objektů. Změny provedené ke kolekci zákazníků se neprojeví v databázi, dokud odeslání je voláním <xref:System.Data.Linq.DataContext.SubmitChanges%2A> metodu <xref:System.Data.Linq.DataContext> objektu.  
   
-     Dvakrát klikněte na Windows formuláře, formulář1, přidejte kód, který <xref:System.Windows.Forms.Form.Load> událost, která má dotaz zákazníků tabulku, která je k dispozici jako vlastnost vaší <xref:System.Data.Linq.DataContext>. Přidejte následující kód:  
+     Klikněte dvakrát na Windows formuláři Form1, přidat kód pro <xref:System.Windows.Forms.Form.Load> událost dotaz Zákazníci tabulku, která je vystavena jako vlastnost vaše <xref:System.Data.Linq.DataContext>. Přidejte následující kód:  
   
     ```vb  
     Private db As northwindDataContext  
@@ -86,7 +86,7 @@ Language-Integrated Query (LINQ) dotazy usnadňují přístup k informacím data
     End Sub  
     ```  
   
-3.  Z **sada nástrojů**, přetáhněte tři <xref:System.Windows.Forms.Button> ovládací prvky na formuláři. Vyberte první `Button` ovládacího prvku. V **vlastnosti** nastavte `Name` z `Button` řídit k `AddButton` a `Text` k `Add`. Vyberte tlačítko druhý a nastavte `Name` vlastnost `UpdateButton` a `Text` vlastnost `Update`. Vyberte tlačítko třetí a nastavte `Name` vlastnost `DeleteButton` a `Text` vlastnost `Delete`.  
+3.  Z **nástrojů**, přetáhněte tři <xref:System.Windows.Forms.Button> ovládací prvky na formuláři. Vyberte první `Button` ovládacího prvku. V **vlastnosti** okno, nastaveno `Name` z `Button` ovládací prvek `AddButton` a `Text` k `Add`. Vyberte druhé tlačítko a nastavte `Name` vlastnost `UpdateButton` a `Text` vlastnost `Update`. Vyberte třetí tlačítko a nastavte `Name` vlastnost `DeleteButton` a `Text` vlastnost `Delete`.  
   
 4.  Dvakrát klikněte **přidat** tlačítko Přidat kód pro jeho `Click` událostí. Přidejte následující kód:  
   
@@ -155,11 +155,11 @@ Language-Integrated Query (LINQ) dotazy usnadňují přístup k informacím data
     End Sub  
     ```  
   
-7.  Stisknutím klávesy F5 spusťte projekt. Klikněte na tlačítko **přidat** přidat nový záznam. Klikněte na tlačítko **aktualizace** nový záznam upravit. Klikněte na tlačítko **odstranit** odstranit novém záznamu.  
+7.  Stisknutím klávesy F5 spusťte váš projekt. Klikněte na tlačítko **přidat** přidáte nový záznam. Klikněte na tlačítko **aktualizace** Upravit nový záznam. Klikněte na tlačítko **odstranit** nový záznam odstranit.  
   
 ## <a name="see-also"></a>Viz také  
  [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
- [Dotazy](../../../../visual-basic/language-reference/queries/queries.md)  
+ [Dotazy](../../../../visual-basic/language-reference/queries/index.md)  
  [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
  [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)  
- [Postupy: přiřazení uložené procedury k provedení aktualizací, vložení a odstranění (Návrhář relací objektů)](http://msdn.microsoft.com/library/e88224ab-ff61-4a3a-b6b8-6f3694546cac)
+ [Postupy: Přiřazení uložených procedur za účelem aktualizací, vkládání a odstraňování (Návrhář relací objektů)](http://msdn.microsoft.com/library/e88224ab-ff61-4a3a-b6b8-6f3694546cac)

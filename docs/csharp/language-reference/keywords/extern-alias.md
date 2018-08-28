@@ -8,12 +8,12 @@ helpviewer_keywords:
 - aliases [C#], extern keyword
 - aliases, extern keyword
 ms.assetid: f487bf4f-c943-4fca-851b-e540c83d9027
-ms.openlocfilehash: a2803d09ee64af854cad352f6a158fb84bb6d410
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 66210bc1a84e2c3239dcac72cdc194b14dcccf30
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37960580"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42999986"
 ---
 # <a name="extern-alias-c-reference"></a>externí alias (Referenční dokumentace jazyka C#)
 Budete muset odkazovat na dvě verze sestavení, která mají stejné názvy plně kvalifikovaných typů. Například budete muset použít dvě nebo více verzí sestavení ve stejné aplikaci. Obory názvů v každé sestavení dá zabalit pomocí alias externího sestavení v úrovni kořenového adresáře obory názvů s názvem podle aliasu, odkud můžou použít ve stejném souboru.  
@@ -40,10 +40,11 @@ Budete muset odkazovat na dvě verze sestavení, která mají stejné názvy pln
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Klíčová slova oboru názvů](../../../csharp/language-reference/keywords/namespace-keywords.md)  
- [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)  
- [/ Reference (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
+- [Klíčová slova oboru názvů](../../../csharp/language-reference/keywords/namespace-keywords.md)  
+- [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)  
+- [/ Reference (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)

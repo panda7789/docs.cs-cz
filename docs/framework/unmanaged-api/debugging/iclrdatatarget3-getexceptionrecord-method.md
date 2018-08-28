@@ -14,15 +14,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2b6a5a12cb2eac655600e1425a6f9480910caa34
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a43863477e902f6f02007ba291a25d2469283e91
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33407698"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43003252"
 ---
 # <a name="iclrdatatarget3getexceptionrecord-method"></a>ICLRDataTarget3::GetExceptionRecord – metoda
-Je volána službami modulu Common Language Runtime (CLR) pro přístup k datům za účelem získání záznamu o výjimce související s cílovým procesem. Například pro výpis cíl, by to bylo ekvivalentní předaný prostřednictvím záznam výjimka `ExceptionParam` argument [MiniDumpWriteDump](http://msdn.microsoft.com/library/windows/desktop/ms680360.aspx) funkce v knihovně k Windows ladění pomoci (DbgHelp).  
+Je volána službami modulu Common Language Runtime (CLR) pro přístup k datům za účelem získání záznamu o výjimce související s cílovým procesem. Například pro cíl s výpisem paměti, jde ekvivalentní k záznamu o výjimce předaný prostřednictvím `ExceptionParam` argument [MiniDumpWriteDump](/windows/desktop/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump) funkce ve Windows ladit knihovnu nápovědy (DbgHelp).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,30 +36,30 @@ HRESULT GetExceptionRecord(
   
 #### <a name="parameters"></a>Parametry  
  `bufferSize`  
- [v] Vstupní vyrovnávací paměť velikost v bajtech. Toto musí být roven `sizeof(` [MINIDUMP_EXCEPTION](http://msdn.microsoft.com/library/windows/desktop/ms680367.aspx)`)`.  
+ [in] Velikost vstupní vyrovnávací paměti v bajtech. Toto musí být rovna `sizeof(` [MINIDUMP_EXCEPTION](/windows/desktop/api/minidumpapiset/ns-minidumpapiset-_minidump_exception)`)`.  
   
  `bufferUsed`  
- [out] Ukazatel `ULONG32` typ, který obdrží počet bajtů ve skutečnosti zapsat do vyrovnávací paměti.  
+ [out] Ukazatel `ULONG32` typ, který přijímá počet bajtů ve skutečnosti zapsat do vyrovnávací paměti.  
   
  `buffer`  
- [out] Ukazatel na vyrovnávací paměť, která obdrží kopii záznam výjimka. Výjimka záznam se vrátí jako [MINIDUMP_EXCEPTION](http://msdn.microsoft.com/library/windows/desktop/ms680367.aspx) typu.  
+ [out] Ukazatel do vyrovnávací paměti, která obdrží kopii záznam o výjimce. Záznam o výjimce se vrátí jako [MINIDUMP_EXCEPTION](/windows/desktop/api/minidumpapiset/ns-minidumpapiset-_minidump_exception) typu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrácená hodnota je `S_OK` na úspěch nebo neúspěch `HRESULT` kód při selhání. `HRESULT` Kódy může zahrnovat, avšak nejsou omezeny na následující:  
+ Vrácená hodnota je `S_OK` na úspěch nebo neúspěch `HRESULT` kódu při selhání. `HRESULT` Kódy mohou zahrnovat, avšak nejsou omezeny na následující:  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
-|`S_OK`|Metoda byla úspěšná. Výjimka záznam byl zkopírován do výstupní vyrovnávací paměť.|  
-|`HRESULT_FROM_WIN32(ERROR_NOT_FOUND)`|Žádný záznam výjimka je přidružený k cíli.|  
-|`HRESULT_FROM_WIN32(ERROR_BAD_LENGTH)`|Velikost vstupní vyrovnávací paměť není rovno `sizeof(MINIDUMP_EXCEPTION)`.|  
+|`S_OK`|Metoda byla úspěšná. Záznam o výjimce byl zkopírován do výstupní vyrovnávací paměť.|  
+|`HRESULT_FROM_WIN32(ERROR_NOT_FOUND)`|Žádný záznam o výjimce je přidružený k cíli.|  
+|`HRESULT_FROM_WIN32(ERROR_BAD_LENGTH)`|Velikost vstupní vyrovnávací paměť není roven `sizeof(MINIDUMP_EXCEPTION)`.|  
   
 ## <a name="remarks"></a>Poznámky  
- [MINIDUMP_EXCEPTION](http://msdn.microsoft.com/library/windows/desktop/ms680367.aspx) je struktura definované v dbghelp.h a imagehlp.h ve Windows SDK.  
+ [MINIDUMP_EXCEPTION](/windows/desktop/api/minidumpapiset/ns-minidumpapiset-_minidump_exception) je struktura definované v dbghelp.h a imagehlp.h v sadě Windows SDK.  
   
- Tato metoda je implementována zapisovačem ladění aplikace.  
+ Tato metoda je implementováno tvůrci ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl, ClrData.h  
   

@@ -12,11 +12,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: 8842bb47ad32ae1e26eaa503398ea91afb7fd1dd
-ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42752285"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43003200"
 ---
 # <a name="internet-protocol-version-6"></a>Protokol IPv6
 Internet Protocol verze 6 (IPv6) je nová sada standardních protokolů pro síťové vrstvy z Internetu. Protokol IPv6 je navržená k řešení mnoha problémů je aktuální verze sady Internet Protocol (označují se termínem IPv4) s ohledem na plnění vyčerpávání, zabezpečení, automatickou konfiguraci, rozšíření a tak dále. Protokol IPv6 se rozšiřují možnosti Internetu povolit nové typy aplikací, jako jsou třeba aplikace peer-to-peer a mobilní. Toto jsou hlavní problémy aktuální protokolu IPv4:  

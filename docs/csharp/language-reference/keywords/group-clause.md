@@ -8,12 +8,12 @@ helpviewer_keywords:
 - group keyword [C#]
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
-ms.openlocfilehash: 8e3ddea3ba733cb9ba32e510b050a58407a7a477
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 157bd07f3332883f010ef26ba920dae88276051b
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404512"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43003226"
 ---
 # <a name="group-clause-c-reference"></a>group – klauzule (Referenční dokumentace jazyka C#)
 
@@ -87,12 +87,12 @@ V době kompilace `group` klauzule jsou přeloženy do volání <xref:System.Lin
 
 ## <a name="see-also"></a>Viz také:
 
-<xref:System.Linq.IGrouping%602>  
-<xref:System.Linq.Enumerable.GroupBy%2A>  
-<xref:System.Linq.Enumerable.ThenBy%2A>  
-<xref:System.Linq.Enumerable.ThenByDescending%2A>  
-[Klíčová slova dotazu](query-keywords.md)  
-[LINQ (Language Integrated Query)](../../linq/index.md)  
-[Vytvoření vnořené skupiny](../../linq/create-a-nested-group.md)  
-[Seskupení výsledků dotazu](../../linq/group-query-results.md)  
-[Provádění poddotazů na skupinách](../../linq/perform-a-subquery-on-a-grouping-operation.md)
+- <xref:System.Linq.IGrouping%602>  
+- <xref:System.Linq.Enumerable.GroupBy%2A>  
+- <xref:System.Linq.Enumerable.ThenBy%2A>  
+- <xref:System.Linq.Enumerable.ThenByDescending%2A>  
+- [Klíčová slova dotazu](query-keywords.md)  
+- [LINQ (Language Integrated Query)](../../linq/index.md)  
+- [Vytvoření vnořené skupiny](../../linq/create-a-nested-group.md)  
+- [Seskupení výsledků dotazu](../../linq/group-query-results.md)  
+- [Provádění poddotazů na skupinách](../../linq/perform-a-subquery-on-a-grouping-operation.md)

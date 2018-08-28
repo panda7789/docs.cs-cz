@@ -1,21 +1,21 @@
 ---
-title: '#Pokud preprocesoru – direktiva (referenční dokumentace jazyka C#)'
-ms.date: 02/13/2017
+title: '#Pokud se direktiva preprocesoru (referenční dokumentace jazyka C#)'
+ms.date: 06/30/2018
 f1_keywords:
 - '#if'
 helpviewer_keywords:
 - '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
-ms.openlocfilehash: 2ae0af6971dbf549b52e8168e035d8582bdab61d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c54a1fe0dba5f6d57b03b2ffeb4f1737fadfe039
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33287680"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43000934"
 ---
 # <a name="if-c-reference"></a>#if (referenční dokumentace jazyka C#)
 
-Když se zaznamená kompilátor jazyka C# `#if` – direktiva, a nakonec pomocí [#endif](preprocessor-endif.md) direktivy, se zkompiluje kód mezi direktivy pouze v případě, že je definován zadaný symbol. Na rozdíl od C a C++ nelze přiřadit číselnou hodnotu symbol. Příkaz #if v jazyce C# je logická hodnota a pouze testuje, zda je symbol byla definována nebo ne. Příklad:
+Pokud nalezne kompilátor jazyka C# `#if` směrnice, a nakonec za [#endif](preprocessor-endif.md) direktiv, kompiluje kód mezi direktivy pouze v případě, že je definován zadaný symbol. Na rozdíl od jazyka C a C++ nelze přiřadit číselné hodnoty symbolu. Příkazu #if v jazyce C# je logická hodnota a pouze kontroluje, zda byl definován symbol, nebo ne. Příklad:
 
 ```csharp
 #if DEBUG
@@ -23,31 +23,31 @@ Když se zaznamená kompilátor jazyka C# `#if` – direktiva, a nakonec pomocí
 #endif
 ```
 
-Můžete použít operátory [ == ](../operators/equality-comparison-operator.md) (rovnosti) a [! =](../operators/not-equal-operator.md) (nerovnost) pouze k testování pro [true](../keywords/true.md) nebo [false](../keywords/false.md). Hodnota TRUE znamená, že je definována symbolu. Příkaz `#if DEBUG` stejný význam jako `#if (DEBUG == true)`. Můžete použít operátory [ && ](../operators/conditional-and-operator.md) (a), [ &#124; &#124; ](../operators/conditional-or-operator.md) (nebo), a [!](../operators/logical-negation-operator.md) (ne) k vyhodnocení, zda byly definovány více symbolů. Symboly a operátory je také možné seskupovat pomocí závorek.
+Můžete použít operátory [ == ](../operators/equality-comparison-operator.md) (rovnost) a [! =](../operators/not-equal-operator.md) (nerovnost) pouze pro testování [true](../keywords/true.md) nebo [false](../keywords/false.md). Hodnota TRUE znamená, že je definován symbol. Příkaz `#if DEBUG` má stejný význam jako `#if (DEBUG == true)`. Můžete použít operátory [ && ](../operators/conditional-and-operator.md) (a), [ &#124; &#124; ](../operators/conditional-or-operator.md) (nebo), a [!](../operators/logical-negation-operator.md) (ne) k vyhodnocení, zda byly definovány více symbolů. Symboly a operátory je také možné seskupovat pomocí závorek.
 
 ## <a name="remarks"></a>Poznámky
 
-`#if`, spolu s [#else](preprocessor-else.md), [#elif](preprocessor-elif.md), [#endif](preprocessor-endif.md), [#define](preprocessor-define.md), a [#undef](preprocessor-undef.md) direktivy, vám umožní zahrnout nebo vyloučit kódu na základě existence jeden nebo více symbolů. To může být užitečné při kompilaci kódu pro sestavení ladicí verze, nebo při kompilaci pro konkrétní konfiguraci.
+`#if`, spolu s [#else](preprocessor-else.md), [#elif](preprocessor-elif.md), [#endif](preprocessor-endif.md), [#define](preprocessor-define.md), a [#undef](preprocessor-undef.md) direktivy, vám umožní zahrnout nebo vyloučit kód založený na existenci jedné nebo víc symbolů. To může být užitečné při kompilování kódu pro sestavení pro ladění nebo při kompilaci pro konkrétní konfiguraci.
 
-Podmíněné direktivy od verze `#if` – direktiva musí být explicitně ukončena s `#endif` – direktiva.
+Podmíněné direktivy od `#if` – direktiva musí být explicitně ukončen direktivou `#endif` směrnice.
 
-`#define` Umožňuje definovat symbol. Potom pomocí symbolu jako výraz předaný `#if` direktivy, vyhodnocen jako `true`.
+`#define` Umožňuje definovat symbol. Pak pomocí symbolu jako výraz předaný `#if` direktiv, je výraz vyhodnocen `true`.
 
-Můžete také definovat symbol s [/ define](../compiler-options/define-compiler-option.md) – možnost kompilátoru. Můžete nedefinované symbol s [#undef](preprocessor-undef.md).
+Můžete také definovat symbol s [-definovat](../compiler-options/define-compiler-option.md) – možnost kompilátoru. Můžete nedefinovat symbol s [#undef](preprocessor-undef.md).
 
-Symbol, který definujete s `/define` nebo s `#define` není v konfliktu s proměnné se stejným názvem. To znamená název proměnné nesmí být předaný direktivy preprocesoru a symbol lze vyhodnotit pouze direktivy preprocesoru.
+Symbol, který definujete pomocí `-define` nebo s `#define` nebude v rozporu s proměnnou se stejným názvem. To znamená název proměnné by neměl být předán direktivě preprocesoru a symbol lze vyhodnotit pouze pomocí direktivy preprocesoru.
 
-Rozsah symbol vytvořené pomocí `#define` je soubor, ve které byla definována.
+Rozsah symbolu vytvořené pomocí `#define` je soubor, ve kterém byl definován.
 
-Systém sestavení má také informace o předdefinovaných symbolů preprocesoru představující různé [cílové rozhraní](../../../standard/frameworks.md). Jsou užitečná při vytváření aplikace, které můžete vybrat víc než jeden implementace rozhraní .NET nebo verzi.
+Systém sestavení je také vědět, která představuje různé předdefinované symboly preprocesoru [platforem](../../../standard/frameworks.md). Jsou užitečné při vytváření aplikací určených více než jedné implementace rozhraní .NET nebo verzi.
 
 [!INCLUDE [Preprocessor symbols](~/includes/preprocessor-symbols.md)]
 
-Jiné předdefinované symboly obsahovat konstanty pro ladění a trasování. Můžete přepsat hodnoty nastavené pro projekt pomocí `#define`. Symbol ladění, například bude automaticky nastavena v závislosti na vaší vlastnosti konfigurace sestavení (režim "Ladění" nebo "Verze").
+Další předdefinované symboly zahrnovat konstanty ladění a trasování. Můžete přepsat hodnoty nastavené pro projekt pomocí `#define`. Symbol ladění, například se automaticky nastaví v závislosti na vlastností konfigurace sestavení (režim "Ladění" a "Vydání").
 
 ## <a name="examples"></a>Příklady
 
-Následující příklad ukazuje, jak definovat symbol test v souboru a poté otestujte hodnoty symbolů test a ladění. Výstup tohoto příkladu závisí na tom, jestli jste vytvořili projekt na režim ladění nebo verze konfigurace.
+Následující příklad ukazuje, jak definovat symbol test v souboru a poté otestujte hodnoty symbolů ladění a test. Výstup tohoto příkladu závisí na, jestli jste sestavili projekt na režim konfigurace ladění nebo vydání.
 
 ```csharp
 #define MYTEST
@@ -69,7 +69,7 @@ public class MyClass
 }
 ```
 
-Následující příklad ukazuje, jak k testování pro různé cílové rozhraní, abyste mohli používat novější rozhraní API, pokud je to možné:
+Následující příklad ukazuje, jak otestovat pro jiné cílové architektury, abyste mohli používat novějších rozhraní API, pokud je to možné:
 
 ```csharp
 public class MyClass
@@ -86,9 +86,9 @@ public class MyClass
 }
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-[Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-[C# Direktivy preprocesoru](index.md)  
-[Postupy: Podmíněná kompilace pomocí trasování a ladění](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md).
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [C# Direktivy preprocesoru](index.md)  
+- [Postupy: Podmíněná kompilace pomocí trasování a ladění](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md).

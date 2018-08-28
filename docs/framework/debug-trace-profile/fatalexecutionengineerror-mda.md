@@ -14,24 +14,24 @@ helpviewer_keywords:
 ms.assetid: 8b559e44-2393-4e4e-8160-7558d37a4a89
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4595049d4ea71de30cf13334e32cd4bb2699f2ad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f12b94198b88111d559cfe372c28bdbf4b37e3fe
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33392535"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42999132"
 ---
 # <a name="fatalexecutionengineerror-mda"></a>fatalExecutionEngineError – pomocník spravovaného ladění (MDA)
-`fatalExecutionEngine``Error` Pomocník spravovaného ladění (MDA) se aktivuje, když byla zjištěna závažná chyba v common language runtime (CLR). Proces bude ukončen.  
+`fatalExecutionEngineError` Pomocníka spravovaného ladění (MDA) se aktivuje, když byla zjištěna závažná chyba v modulu common language runtime (CLR). Proces bude ukončen.  
   
 ## <a name="symptoms"></a>Příznaky  
- Neočekávané proces dokončen. Ostatní příznaky nelze určit, protože selhání CLR může dojít z různých důvodů.  
+ Ukončení procesu pro neočekávané. Další příznaky nelze určit, protože může dojít k selhání modulu CLR pro celou řadu důvodů.  
   
 ## <a name="cause"></a>příčina  
- Modul CLR je smrtelně poškozená. Nejčastěji je to způsobeno poškození dat, který může být způsobeno několika problémy, jako například volání poškozený platformy vyvolání funkce a předání neplatná data do modulu CLR.  
+ Modul CLR byl fatálně poškozen. To je často způsobeno poškození dat, která může být způsobeno různé problémy, jako například volání na poškozené platformu vyvolání funkce a předáním neplatná data modulu CLR.  
   
 ## <a name="resolution"></a>Rozlišení  
- Povolení dalších mda mohou pomoci problém identifikovat. Následující mda může být zvláště užitečné při diagnostikování problému:  
+ Povolení dalších mda mohou pomoci při identifikaci problému. Následující mda může být zvláště užitečné při diagnostice problému:  
   
 -   [invalidOverlappedToPinvoke](../../../docs/framework/debug-trace-profile/invalidoverlappedtopinvoke-mda.md)  
   
@@ -57,11 +57,11 @@ ms.locfileid: "33392535"
   
 -   [invalidGCHandleCookie](../../../docs/framework/debug-trace-profile/invalidgchandlecookie-mda.md)  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Tato MDA nemá žádný vliv na modul runtime chování.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Toto MDA nemá žádný vliv na chování modulu runtime.  
   
 ## <a name="output"></a>Výstup  
- Adresa funkce CLR, která způsobila, že závažná chyba a ID vlákna, kde došlo k chybě, kód chyby.  
+ Adresa funkce modulu CLR, která způsobila závažná chyba a ID vlákna, kde došlo k chybě, kód chyby.  
   
 ## <a name="configuration"></a>Konfigurace  
   

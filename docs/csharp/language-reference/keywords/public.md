@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - public keyword [C#]
 ms.assetid: 0ae45d16-a551-4b74-9845-57208de1328e
-ms.openlocfilehash: 9bef5d076d9ab84aa15e2cdec2d176db8d1ac82b
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 853f9c9ebe36345a897337d4e793d3c88059e068
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37960241"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42998724"
 ---
 # <a name="public-c-reference"></a>public (Referenční dokumentace jazyka C#)
 `public` – Klíčové slovo je modifikátor přístupu pro typy a členy typu. Veřejný přístup je nejvíce omezující úroveň přístupu. Neexistují žádná omezení na přístup k veřejným členům, jako v následujícím příkladu:  
@@ -38,14 +38,15 @@ class SampleClass
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md)  
- [Úrovně přístupnosti](../../../csharp/language-reference/keywords/accessibility-levels.md)  
- [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)  
- [private](../../../csharp/language-reference/keywords/private.md)  
- [protected](../../../csharp/language-reference/keywords/protected.md)  
- [internal](../../../csharp/language-reference/keywords/internal.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)  
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
+- [Modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md)  
+- [Úrovně přístupnosti](../../../csharp/language-reference/keywords/accessibility-levels.md)  
+- [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)  
+- [private](../../../csharp/language-reference/keywords/private.md)  
+- [protected](../../../csharp/language-reference/keywords/protected.md)  
+- [internal](../../../csharp/language-reference/keywords/internal.md)

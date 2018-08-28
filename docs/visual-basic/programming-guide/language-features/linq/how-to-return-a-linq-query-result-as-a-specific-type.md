@@ -9,74 +9,74 @@ helpviewer_keywords:
 - queries [LINQ in Visual Basic], how-to topics
 - query samples [Visual Basic]
 ms.assetid: 621bb10a-e5d7-44fb-a025-317964b19d92
-ms.openlocfilehash: 2c3a10ed901832846da058018a91349be0c2495b
-ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
+ms.openlocfilehash: 720660153cb357c11168ab45ebf8343559faf82a
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34827082"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43000083"
 ---
 # <a name="how-to-return-a-linq-query-result-as-a-specific-type-visual-basic"></a>Postupy: Vrácení výsledku dotazu LINQ jako specifického typu (Visual Basic)
-Language-Integrated Query (LINQ) usnadňuje přístup k informacím databáze a spouštět dotazy. Ve výchozím nastavení dotazů LINQ vrátí seznam objektů jako anonymní typ. Můžete také určit, že dotaz vrátí seznam konkrétního typu pomocí `Select` klauzule.  
+Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi a spouštění dotazů. Ve výchozím nastavení dotazy LINQ vrací seznam objektů jako anonymního typu. Můžete také určit, že dotaz vrátí seznam určitého typu pomocí `Select` klauzuli.  
   
- Následující příklad ukazuje, jak vytvořit novou aplikaci, která provádí dotazy na databázi systému SQL Server a projekty výsledky jako specifického typu s názvem. Další informace najdete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md) a [klauzule Select](../../../../visual-basic/language-reference/queries/select-clause.md).  
+ Následující příklad ukazuje, jak vytvořit novou aplikaci, která provádí dotazy na databázi serveru SQL Server a projekty výsledky jako konkrétní pojmenovaného typu. Další informace najdete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md) a [klauzule Select](../../../../visual-basic/language-reference/queries/select-clause.md).  
   
- V příkladech v tomto tématu použijte ukázková databáze Northwind. Pokud jste tuto databázi ve svém vývojovém počítači, můžete ji stáhnout z webu Microsoft Download Center. Pokyny najdete v tématu [stažení ukázkové databáze](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+ V příkladech v tomto tématu se používá ukázkové databáze Northwind. Pokud tuto databázi na vašem vývojovém počítači nemáte, můžete si ho stáhnout z webu Microsoft Download Center. Pokyny najdete v tématu [Downloading Sample Databases](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md).  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ### <a name="to-create-a-connection-to-a-database"></a>Chcete-li vytvořit připojení k databázi  
   
-1.  V sadě Visual Studio otevřete **Průzkumníka serveru**/**Průzkumník databáze** kliknutím **Průzkumníka serveru**/**databáze Průzkumník** na **zobrazení** nabídky.  
+1.  V sadě Visual Studio, otevřete **Průzkumníka serveru**/**Průzkumník databáze** kliknutím **Průzkumníka serveru**/**databáze Průzkumník** na **zobrazení** nabídky.  
   
-2.  Klikněte pravým tlačítkem na **připojení dat** v **Průzkumníka serveru**/**Průzkumník databáze** a pak klikněte na **přidat připojení**.  
+2.  Klikněte pravým tlačítkem na **datová připojení** v **Průzkumníka serveru**/**Průzkumník databáze** a potom klikněte na tlačítko **přidat připojení**.  
   
-3.  Zadejte platné připojení k ukázková databáze Northwind.  
+3.  Zadejte platné připojení k ukázkové databázi Northwind.  
   
-### <a name="to-add-a-project-that-contains-a-linq-to-sql-file"></a>Chcete-li přidat projekt, který obsahuje LINQ to SQL souboru  
+### <a name="to-add-a-project-that-contains-a-linq-to-sql-file"></a>Chcete-li přidat projekt, který obsahuje souboru LINQ to SQL  
   
-1.  V sadě Visual Studio na **soubor** nabídky, přejděte na příkaz **nový** a pak klikněte na **projektu**. Vyberte jazyka Visual Basic **formulářové aplikace Windows** jako typ projektu.  
+1.  V sadě Visual Studio na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**. Výběr jazyka Visual Basic **formulářová aplikace Windows** jako typ projektu.  
   
 2.  Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**. Vyberte **třídy LINQ to SQL** šablony položky.  
   
-3.  Název souboru `northwind.dbml`. Klikněte na tlačítko **přidat**. Návrhář relací objektů (Návrhář relací objektů), je otevřené northwind.dbml souboru.  
+3.  Název souboru `northwind.dbml`. Klikněte na tlačítko **přidat**. Návrhář relací objektů (O/R Designer), je otevřené northwind.dbml souboru.  
   
-### <a name="to-add-tables-to-query-to-the-or-designer"></a>Chcete-li přidat tabulky k dotazování na Návrhář relací objektů  
+### <a name="to-add-tables-to-query-to-the-or-designer"></a>Přidání tabulek do dotazu do Návrháře relací objektů  
   
 1.  V **Průzkumníka serveru**/**Průzkumník databáze**, rozbalte možnost připojení k databázi Northwind. Rozbalte **tabulky** složky.  
   
-     Pokud jste zavřeli Návrhář relací objektů, můžete ho znovu otevřít dvojitým kliknutím na soubor northwind.dbml, které jste přidali dříve.  
+     Pokud jste zavřeli O/R Designer, můžete ho znovu otevřít poklikáním northwind.dbml soubor, který jste přidali dříve.  
   
-2.  Klikněte na tabulku zákazníků a přetáhněte ji do levého podokna návrháře.  
+2.  Klikněte na tabulce Zákazníci a přetáhněte ji do levého podokna v návrháři.  
   
-     Vytvoří novou návrháře `Customer` objekt pro váš projekt. Výsledek dotazu jako můžete promítnout `Customer` typu nebo jako typ, který vytvoříte. Tato ukázka vytvoříte nový typ v pozdějším postupu a výsledek dotazu jako tento typ projektu.  
+     Vytvoří nový Návrhář `Customer` objektu pro váš projekt. Jako výsledek dotazu můžete promítnout `Customer` typ nebo typ, který vytvoříte. Tato ukázka vytvoří nový typ v pozdějším postupu a výsledek dotazu jako tento typ projektu.  
   
-3.  Uložte změny a zavřít návrháře.  
+3.  Uložte změny a zavřete návrháře.  
   
 4.  Uložte projekt.  
   
-### <a name="to-add-code-to-query-the-database-and-display-the-results"></a>Chcete-li přidat kód pro dotazování databáze a zobrazit výsledky  
+### <a name="to-add-code-to-query-the-database-and-display-the-results"></a>Chcete-li přidat kód pro dotaz na databázi a zobrazení výsledků  
   
-1.  Z **sada nástrojů**, přetáhněte ji <xref:System.Windows.Forms.DataGridView> na výchozí formuláře Windows pro svůj projekt Form1 ovládací prvek.  
+1.  Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.DataGridView> ovládacího prvku na výchozí formulář Windows pro váš projekt Form1.  
   
-2.  Dvakrát klikněte na Form1 k úpravě Form1 třídy.  
+2.  Klikněte dvakrát na Form1 upravte třídu Form1.  
   
-3.  Po `End Class` příkaz Form1 třídy, přidejte následující kód k vytvoření `CustomerInfo` typ k ukládání výsledků dotazu pro tuto ukázku.  
+3.  Po `End Class` příkazu Form1 třídy, přidejte následující kód k vytvoření `CustomerInfo` typu k ukládání výsledků dotazu pro tuto ukázku.  
   
      [!code-vb[VbLINQToSQLHowTos#16](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-return-a-linq-query-result-as-a-specific-type_1.vb)]  
   
-4.  Při přidání tabulky do Návrhář relací objektů návrháře přidat <xref:System.Data.Linq.DataContext> objektu do projektu. Tento objekt obsahuje kód, který musíte mít přístup k těchto tabulek a pro přístup k jednotlivých objektů a kolekcí pro každou tabulku. <xref:System.Data.Linq.DataContext> Objekt pro je s názvem projektu na základě názvu souboru DBML. Pro tento projekt <xref:System.Data.Linq.DataContext> názvem objektu `northwindDataContext`.  
+4.  Při přidání tabulky do Návrháře relací objektů, přidá návrháře <xref:System.Data.Linq.DataContext> objektu do projektu. Tento objekt obsahuje kód, který musí mít pro přístup k těchto tabulek a pro přístup k jednotlivým objekty a kolekce pro každou tabulku. <xref:System.Data.Linq.DataContext> Objektu pro váš projekt je s názvem podle názvu souboru .dbml. Pro tento projekt <xref:System.Data.Linq.DataContext> se nazývá `northwindDataContext`.  
   
-     Můžete vytvořit instanci <xref:System.Data.Linq.DataContext> v kódu a dotazování tabulky určeného Návrhář relací objektů.  
+     Můžete vytvořit instanci <xref:System.Data.Linq.DataContext> v kódu a dotazování tabulky určené Návrháře relací objektů.  
   
-     V `Load` událostí Form1 třídy, přidejte následující kód k dotazování tabulky, které jsou zveřejněné jako vlastnosti vaše data kontextu. `Select` Klauzuli dotazu se vytvoří nové `CustomerInfo` typ místo anonymní typ pro každou položku výsledku dotazu.  
+     V `Load` událost třídy Form1, přidejte následující kód k dotazování tabulky, které jsou vystaveny jako vlastnosti datového kontextu. `Select` Klauzule dotazu se vytvoří nový `CustomerInfo` typ místo anonymního typu pro každou položku výsledku dotazu.  
   
      [!code-vb[VbLINQToSQLHowTos#15](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-return-a-linq-query-result-as-a-specific-type_2.vb)]  
   
-5.  Stisknutím klávesy F5 spusťte projekt a zobrazit výsledky.  
+5.  Stisknutím klávesy F5 spusťte váš projekt a prohlédněte si výsledky.  
   
 ## <a name="see-also"></a>Viz také  
  [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
- [Dotazy](../../../../visual-basic/language-reference/queries/queries.md)  
+ [Dotazy](../../../../visual-basic/language-reference/queries/index.md)  
  [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
  [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)

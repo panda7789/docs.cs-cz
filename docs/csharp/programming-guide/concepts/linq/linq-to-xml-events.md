@@ -1,18 +1,18 @@
 ---
-title: Technologie LINQ to XML událostí (C#)
+title: Události LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: ce7de951-cba7-4870-9962-733eb01cd680
 ms.openlocfilehash: 3dd4eaa0261ae7d878e188572d260b34b64fc031
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33322390"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42999938"
 ---
-# <a name="linq-to-xml-events-c"></a>Technologie LINQ to XML událostí (C#)
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] události umožňují být upozorněni, když je změnit strom XML.  
+# <a name="linq-to-xml-events-c"></a>Události LINQ to XML (C#)
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] události umožňují upozorněni, když je změněna stromu XML.  
   
- Události můžete přidat do instance libovolného <xref:System.Xml.Linq.XObject>. Obslužné rutiny události bude potom přijímat události pro změny, <xref:System.Xml.Linq.XObject> a všechny jeho podřízené položky. Můžete například přidat obslužné rutiny události ke kořenu stromu a zpracovat všechny změny do stromu z této obslužné rutiny události.  
+ Události můžete přidat do instance libovolného <xref:System.Xml.Linq.XObject>. Obslužná rutina události se pak zobrazí události pro změny, které <xref:System.Xml.Linq.XObject> a všech jejích potomků. Můžete například přidat obslužnou rutinu události pro kořen stromu a zpracovat všechny změny do stromové struktury z této obslužné rutiny události.  
   
  Příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] události, viz <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed>.  
   
@@ -24,17 +24,17 @@ ms.locfileid: "33322390"
 |<xref:System.Xml.Linq.XObjectChange>|Určuje typ události, když událost se vyvolá pro <xref:System.Xml.Linq.XObject>.|  
 |<xref:System.Xml.Linq.XObjectChangeEventArgs>|Poskytuje data pro <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed> události.|  
   
- Při úpravě strom XML, jsou vyvolány následující události:  
+ Při úpravě stromu XML jsou vyvolány následující události:  
   
 |Událost|Popis|  
 |-----------|-----------------|  
-|<xref:System.Xml.Linq.XObject.Changing>|Dojde k těsně před <xref:System.Xml.Linq.XObject> nebo některý z jeho následníky se chystáte změnit.|  
-|<xref:System.Xml.Linq.XObject.Changed>|Nastane při <xref:System.Xml.Linq.XObject> došlo ke změně nebo některé z jejich potomků změnily.|  
+|<xref:System.Xml.Linq.XObject.Changing>|Nastane bezprostředně před <xref:System.Xml.Linq.XObject> nebo libovolného z jeho potomků se to změnit.|  
+|<xref:System.Xml.Linq.XObject.Changed>|Vyvolá se při <xref:System.Xml.Linq.XObject> došlo ke změně nebo libovolného z jeho potomků změnily.|  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Události jsou užitečné, pokud chcete zachovat některé agregační informace ve stromu XML. Například můžete udržovat celkovou fakturu představuje součet položek řádku faktury. Tento příklad používá událostí udržovat celkový počet všech podřízených elementů v části komplexních prvků `Items`.  
+ Události jsou užitečné, pokud chcete zachovat některé agregované informace ve stromu XML. Například můžete udržovat celkovou fakturu, který je součtem řádku položek faktury. Tento příklad používá události k údržbě celkový součet všech podřízených elementů v rámci komplexních prvků `Items`.  
   
 ### <a name="code"></a>Kód  
   

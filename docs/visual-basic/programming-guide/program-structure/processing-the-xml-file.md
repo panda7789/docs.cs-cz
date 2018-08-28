@@ -4,40 +4,40 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - XML comments [Visual Basic], parsing [Visual Basic]
 ms.assetid: 78a15cd0-7708-4e79-85d1-c154b7a14a8c
-ms.openlocfilehash: 6be7597f1c03d8aa044eba70ef6287cfc07d9b84
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 524a54443b8f2365252f11282ca29fc492bef351
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33652035"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43000230"
 ---
 # <a name="processing-the-xml-file-visual-basic"></a>Zpracování souboru XML (Visual Basic)
-Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který se označí ke generování dokumentace. (Informace o tom, jak označit kódu najdete v tématu [značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md).) ID řetězec jednoznačně identifikuje konstruktu. Programy, které zpracovávají soubor XML můžete použít ID řetězec k identifikaci odpovídající [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] položky metadat/reflexe.  
+Kompilátor generuje řetězec ID pro každý konstrukce ve vašem kódu, který je označený ke generování dokumentace. (Informace o tom, jak označit kódu najdete v tématu [značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md).) Řetězec ID jednoznačně identifikuje konstrukce. Programy, které zpracování souboru XML slouží k identifikaci, odpovídající řetězec ID [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] položky metadat/reflexe.  
   
- Soubor XML není znázornění hierarchické kódu; je to plochý seznam s generovaného ID pro každý prvek.  
+ Soubor XML není Hierarchická reprezentace kódu; je seznam bez stromové struktury s vygenerované ID pro každý prvek.  
   
- Kompilátor dodržuje následující pravidla, když ji vygeneruje ID řetězce:  
+ Při generování ID řetězce, kompilátor dodržuje následující pravidla:  
   
--   Bez mezer je umístěn v řetězci.  
+-   Žádné jiné mezery, nachází v řetězci.  
   
--   První část řetězec ID identifikuje druh člen, které jsou označené pomocí jednoho znaku následovaným dvojtečkou. Se používají následující typy členů.  
+-   První část řetězec ID identifikuje typ členu, identifikují se jeden znak následovaný dvojtečkou. Se používají následující typy členů.  
   
 |Znak|Popis|  
 |---|---|  
-|N|– obor názvů<br /><br /> Dokumentační komentáře nelze přidat do oboru názvů, ale můžete vytvořit CREF odkazy, pokud je podporována.|  
+|N|– obor názvů<br /><br /> Dokumentační komentáře nelze přidat do oboru názvů, ale může být CREF odkazy, pokud je podporována.|  
 |T|Typ: `Class`, `Module`, `Interface`, `Structure`, `Enum`, `Delegate`|  
 |F|pole: `Dim`|  
 |P|Vlastnost: `Property` (včetně výchozí vlastnosti)|  
 |M|Metoda: `Sub`, `Function`, `Declare`, `Operator`|  
-|E|Události: `Event`|  
-|!|Řetězec chyby.<br /><br /> Zbývající řetězec poskytuje informace o této chybě. Visual Basic – kompilátor generuje informace o chybě pro odkazy, které nelze vyřešit.|  
+|E|událost: `Event`|  
+|!|Text chyby<br /><br /> Zbývající řetězec poskytuje informace o této chybě. Kompilátor jazyka Visual Basic generuje informace o chybě pro odkazy, které nelze rozpoznat.|  
   
--   Druhá část `String` je plně kvalifikovaný název položky začínající na kořen oboru názvů. Název položky, jeho nadřazených typů a obor názvů jsou odděleny tečkami. Pokud název samotné položky obsahuje období, se nahrazují křížku (#). Předpokládá se, že žádná položka má znaménko čísla přímo v jeho názvu. Třeba plně kvalifikovaný název `String` konstruktor by `System.String.#ctor`.  
+-   Druhá část `String` je plně kvalifikovaný název položky, počínaje kořenový obor názvů. Název položky, jeho nadřazené typy a obor názvů jsou odděleny tečkami. Obsahuje-li název samotné položky období, budou nahrazeny křížku (#). Předpokládá se, že nemá žádná položka číselném znaku přímo ve svém názvu. Například plně kvalifikovaný název `String` konstruktor by `System.String.#ctor`.  
   
--   Pro vlastnosti a metody Pokud jsou argumenty pro metodu, seznam argumentů uzavřený v závorkách následuje. Pokud neexistují žádné argumenty, jsou k dispozici žádné závorek. Argumenty, které jsou oddělené čárkami. Kódování každý argument přímo řídí, jak je zakódován do [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] podpis.  
+-   Vlastnosti a metody Pokud jsou argumenty metody, uzavřený do závorek seznamu argumentů se řídí. Pokud neexistují žádné argumenty, jsou k dispozici žádné závorky. Argumenty jsou odděleny čárkami. Kódování každý argument přímo řídí, jak je zakódován do [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] podpis.  
   
 ## <a name="example"></a>Příklad  
- Následující kód ukazuje, jak ID řetězce pro třídu a její členy se generují.  
+ Následující kód ukazuje, jak ID řetězce pro třídu a její členy jsou generovány.  
   
  [!code-vb[VbVbcnXmlDocComments#10](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/processing-the-xml-file_1.vb)]  
   

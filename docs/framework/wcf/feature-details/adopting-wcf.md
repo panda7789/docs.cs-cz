@@ -2,29 +2,25 @@
 title: Přijetí WCF
 ms.date: 03/30/2017
 ms.assetid: 49ba71e2-9468-4082-84c5-cf8daf95e34a
-ms.openlocfilehash: bcd6543e6cd47dc723b308acebec6f492fa14fb1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3ca2561356fb57fa685c778e509682581e317092
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33489128"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42999330"
 ---
 # <a name="adopting-windows-communication-foundation"></a>Přijetí WCF
-Můžete používat Windows Communication Foundation (WCF) pro nový vývoj nadále zachovat stávající aplikace vyvinuté pomocí technologie ASP.NET. Protože WCF má být nejvhodnější volbou pro usnadnění komunikace s aplikace vytvořené pomocí rozhraní .NET Framework v žádném scénáři, mohl sloužit jako standardní nástroj pro řešení širokou škálu problémy s komunikací softwaru tak, že technologie ASP.NET nelze provést.  
-  
- Nové aplikace WCF můžete nasadit na stejný počítače jako existující webové služby ASP.NET. Pokud existujících webových služeb ASP.NET použijte verzi rozhraní .NET Framework verze 2.0, můžete použít ASP.NET IIS Registration Tool selektivně nasazení do aplikace služby IIS, ve kterých jsou nové aplikace WCF pro hostování rozhraní .NET Framework 2.0. Tento nástroj je popsána v [ASP.NET IIS Registration Tool (Aspnet_regiis.exe)](http://go.microsoft.com/fwlink/?LinkId=94687), a je součástí uživatelské rozhraní konzoly pro správu služby IIS 6.0.  
-  
- WCF slouží k přidání nových funkcí do existující webových služeb ASP.NET přidáním služby WCF, které jsou nakonfigurovány na spuštění v režimu kompatibility ASP.NET do stávajících aplikací ASP.NET – webové služby ve službě IIS. Z důvodu režimu kompatibility ASP.NET, můžete používat a aktualizovat stejné informace o stavu aplikace jako existující kódu ASP.NET pomocí kód pro nové služby WCF <xref:System.Web.HttpContext> třídy. Aplikace můžou taky sdílet stejné knihovny tříd.  
-  
- Klienti WCF pomocí webových služeb ASP.NET. Služby WCF, které jsou nakonfigurovány s <xref:System.ServiceModel.BasicHttpBinding> mohou být využívána klienty webové služby ASP.NET. Webových služeb ASP.NET může existovat společně s aplikací služby WCF a WCF lze použít i pro přidání funkcí do existující webové služby ASP.NET. Zadány všechny tyto způsoby, ve kterých WCF a ASP.NET Web services můžete použít společně, můžete migrovat webových služeb ASP.NET na WCF pouze v případě, že budete potřebovat funkce, které jsou k dispozici službami WCF a není ASP.NET Web.  
-  
- I v několika případech, kdy je nezbytné pečlivě zvažte, že migrace kód z jednoho technologie do jiného je málokdy správný přístup. Důvodem pro přijetí nové technologie je splňují nové požadavky, které nelze splnit s dřívější technologie a v takovém případě správný krokem je návrhu nové řešení ke splnění nově rozšířit sadu požadavků. Nové výhody návrhu z vašich zkušeností s stávajícího systému a moudrý získávají vzhledem k tomu, že byla navržená tak, že systému. Nový design použít také veškeré funkce nové technologie a ne reprodukci staré návrhu na nové platformě. Po vytváření prototypů klíčové prvky nového návrhu bude jednodušší opětovné použití kódu z existujícího systému v rámci nového.  
-  
- Pro několik případů, kde portování z webových služeb ASP.NET na WCF je správným řešením, v následujícím oddílu najdete některé pokyny o tom, jak pokračovat. Není Rady, jak migrovat služby a jak migraci klientů.  
-  
- Dokončení analýzy o tom, jak migrovat existující webové služby ASP.NET na WCF najdete v tématu [webových služeb ASP.NET a Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkID=71761). Tato část popisuje, jak implementovat kompatibilní služby WCF z metadat pro vás webovou službu ASP.NET a jak migrovat ASP.NET Web kód klienta a služby WCF.  
-  
-## <a name="see-also"></a>Viz také  
- [Postupy: Načítání metadat a implementace kompatibilní služby](../../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md)  
- [Postupy: Migrace kódu webové služby ASP.NET na Windows Communication Foundation](../../../../docs/framework/wcf/feature-details/migrate-asp-net-web-service-to-wcf.md)  
- [Postupy: Migrace kódu klienta webové služby ASP.NET na Windows Communication Foundation](../../../../docs/framework/wcf/feature-details/migrate-asp-net-web-service-client-to-wcf.md)
+
+Můžete použít Windows Communication Foundation (WCF) pro vývoj nových projektů, když budete pokračovat k údržbě stávajících aplikací vyvinutých pomocí technologie ASP.NET. Protože WCF má být nejvhodnější volbou pro usnadnění komunikace s aplikací vytvořených pomocí rozhraní .NET Framework ve všech scénářích, může sloužit jako standardní nástroj pro řešení nejrůznější komunikační problémy se softwarem způsobem, že technologie ASP.NET nelze provést.
+
+Nové aplikace WCF je nasadit na stejných počítačů jako existující webové služby ASP.NET. Pokud existujících webových služeb ASP.NET s používat verzi rozhraní .NET Framework starší než verze 2.0, můžete používat ASP.NET IIS Registration Tool selektivně nasazení do aplikace služby IIS, ve kterých jsou nové aplikace WCF zajistit také jejich hostování rozhraní .NET Framework 2.0. Tento nástroj je popsána v [registrační nástroj služby IIS technologie ASP.NET (Aspnet_regiis.exe)](http://go.microsoft.com/fwlink/?LinkId=94687), a je součástí uživatelského rozhraní konzoly pro správu služby IIS 6.0.
+
+WCF slouží k přidání nových funkcí do existující webové služby ASP.NET tak, že přidáte služby WCF, které jsou nakonfigurovány na spouštění v režimu kompatibility ASP.NET do stávajících aplikací technologie ASP.NET webové služby ve službě IIS. Z důvodu režim kompatibility ASP.NET, můžete používat a aktualizovat stejné informace o stavu aplikace jako již existující kód technologie ASP.NET, pomocí kódu pro nové služby WCF <xref:System.Web.HttpContext> třídy. Aplikace můžou také sdílet stejné knihovny tříd.
+
+Klienti WCF pomocí webové služby ASP.NET. Služby WCF, které mají nakonfigurované <xref:System.ServiceModel.BasicHttpBinding> mohou využívat klienty webové služby ASP.NET. Webové služby ASP.NET může existovat vedle sebe s aplikací služby WCF a WCF slouží i k přidání funkcí do existující webové služby ASP.NET. S ohledem všechny z těchto způsobů, jimiž lze společně použít služby WCF a ASP.NET Web, můžete chtít migrace webových služeb ASP.NET na WCF pouze v případě, že vyžadujete funkce, které jsou k dispozici službami WCF a není v prostředí ASP.NET.
+
+I v několika případech, kdy je nezbytné je migrace kódu z jedné technologie do jiného zřídka správný přístup. Důvod pro přijetí nové technologie je splnit nové požadavky, které nelze splnit dřívějších technologií a v takovém případě je správnou věc udělat pro návrh nové řešení, které vyhoví nově rozšířit sadu požadavků. Nových návrhu výhodách z vašich zkušeností s ve stávajícím systému a při získané od takového systému byla navržena. Nový design můžete také použít všechny funkce nové technologie a ne reprodukce původního návrhu na nové platformě. Po vytváření prototypů klíčové prvky nového návrhu máme snadnější k opakovanému použití kódu z existujících systému v rámci nového.
+
+## <a name="see-also"></a>Viz také
+
+- [Postupy: Načítání metadat a implementace kompatibilní služby](../../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md)

@@ -1,6 +1,6 @@
 ---
 title: Osvědčené postupy pro používání řetězců v .NET
-ms.date: 03/30/2017
+ms.date: 08/22/2018
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -19,99 +19,99 @@ helpviewer_keywords:
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3bdc23c909be0f9df051d538ca93cbb0a8e31426
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 14945cc6812e4bcb14085656337c7df1abc0a5bf
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579727"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43000148"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Osvědčené postupy pro používání řetězců v .NET
-<a name="top"></a> .NET poskytuje rozsáhlou podporu pro vývoj lokalizovaných a globálních aplikací a umožňuje snadno použít konvence aktuální jazykové verze nebo konkrétní jazykové verze při provádění běžných operací, jako je například řazení a zobrazování řetězců. Ale řazení a porovnávání řetězců není vždy operace zohledňující jazykovou verzi. Například řetězce, které jsou používány interně aplikaci obvykle zpracování stejně jako všechny jazykové verze. Pokud jazykově nezávislá řetězcová data, jako je například XML značky HTML značky, uživatelská jména, cesty k souborům a názvy objektů systému jsou interpretovány, jako kdyby byly zohledňující jazykovou verzi, může jemně chyb, nízký výkon a v některých případech může být kód aplikace problémy se zabezpečením.  
+<a name="top"></a> .NET poskytuje rozsáhlou podporu pro vývoj globalizovaných a lokalizovaných aplikací a umožňuje snadno použít konvence aktuální jazykové verze nebo specifické jazykové verze při provádění běžných operací, jako je například řazení a zobrazení řetězce. Ale řazení a porovnávání řetězců není vždy operace zohledňující jazykovou verzi. Například by řetězců, které se používají interně aplikace obvykle zpracovává stejně jako všechny jazykové verze. Pokud jazykově nezávislá řetězec dat, jako jsou XML značky HTML značky, uživatelská jména, cesty k souborům a názvy systémové objekty, jsou interpretovány, jako by byly zohledňující jazykovou verzi, v souladu s drobné chyby, nízký výkon a v některých případech může být kód aplikace problémy se zabezpečením.  
   
- Toto téma zkoumá řazení řetězce, porovnání a metody velká a malá písmena v rozhraní .NET, uvede doporučení pro výběr odpovídající metody zpracování řetězců a poskytuje další informace o metodách zpracování řetězců. Také zkontroluje jak formátovaných dat, jako je například číselná data a data a času, používá k zobrazení a pro úložiště.  
+ Toto téma prozkoumá řazení řetězců, porovnání a metody malých a velkých písmen v .NET, nabízí doporučení pro výběr příslušné metody zpracování řetězců a poskytuje další informace o metodách zpracování řetězce. Také zkontroluje jak formátovaných dat, jako je například číselná data a data a času, se zpracovává k zobrazení a pro úložiště.  
   
  Toto téma obsahuje následující oddíly:  
   
 -   [Doporučení pro používání řetězců](#recommendations_for_string_usage)  
   
--   [Určení explicitního porovnávání řetězců](#specifying_string_comparisons_explicitly)  
+-   [Odstranit explicitním zadáním porovnávání řetězců](#specifying_string_comparisons_explicitly)  
   
 -   [Podrobnosti o porovnání řetězců](#the_details_of_string_comparison)  
   
--   [Výběr člena StringComparison pro vaše volání metody](#choosing_a_stringcomparison_member_for_your_method_call)  
+-   [Výběr člena StringComparison, který vaše volání metody](#choosing_a_stringcomparison_member_for_your_method_call)  
   
--   [Běžné metody porovnávání řetězců v rozhraní .NET](#common_string_comparison_methods_in_the_net_framework)  
+-   [Běžné metody pro porovnávání řetězců v .NET](#common_string_comparison_methods_in_the_net_framework)  
   
 -   [Metody, které nepřímo provést porovnání řetězců](#methods_that_perform_string_comparison_indirectly)  
   
--   [Zobrazení a zachování formátovaných dat](#Formatted)  
+-   [Zobrazení a uchování formátovaných dat](#Formatted)  
   
 <a name="recommendations_for_string_usage"></a>   
 ## <a name="recommendations-for-string-usage"></a>Doporučení pro používání řetězců  
- Při vývoji v rozhraní .NET postupujte podle následujících jednoduchých doporučení pro používání řetězců:  
+ Při vývoji pomocí .NET, postupujte podle těchto jednoduchých doporučení, při použití řetězce:  
   
--   Použijte přetížení, která explicitně zadáte pravidla porovnávání pro operace s řetězci. To obvykle zahrnuje volání přetížení metody, která má parametr typu <xref:System.StringComparison>.  
+-   Použijte přetížení, která explicitně zadáte pravidel pro porovnávání řetězců pro operace s řetězci. Obvykle to zahrnuje volání přetížení metody, která má parametr typu <xref:System.StringComparison>.  
   
--   Použití <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> nebo <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> pro porovnání jako výchozí bezpečnou pro porovnávání řetězců bez ohledu na jazykové verzi.  
+-   Použití <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> nebo <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> pro porovnání jako výchozí bezpečnou pro porovnávání řetězců nezávislá na jazykové verzi.  
   
--   Použití porovnávání s <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> nebo <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> pro dosažení vyššího výkonu.  
+-   Použít porovnávání s <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> nebo <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> pro zajištění lepšího výkonu.  
   
--   Pomocí operace s řetězci, které jsou založeny na <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType> při zobrazení výstupu pro uživatele.  
+-   Pomocí operace s řetězci, které jsou založeny na <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType> při zobrazení výstupu uživateli.  
   
--   Použití jazyce, <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> nebo <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> podle hodnoty místo operace s řetězci <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> po jazykově důležité porovnání (například symbolické).  
+-   Použít nejazykové <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> nebo <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> podle hodnoty místo operace s řetězci <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> při porovnání lingvistických bezvýznamná (například symbolických).  
   
 -   Použití <xref:System.String.ToUpperInvariant%2A?displayProperty=nameWithType> metoda místo <xref:System.String.ToLowerInvariant%2A?displayProperty=nameWithType> metoda při normalizujte řetězce pro porovnání.  
   
--   Použijte přetížení <xref:System.String.Equals%2A?displayProperty=nameWithType> metodu k ověření, zda jsou dva řetězce stejné.  
+-   Použijte přetížení <xref:System.String.Equals%2A?displayProperty=nameWithType> metodu k ověření, zda jsou dva řetězce rovny.  
   
--   Použití <xref:System.String.Compare%2A?displayProperty=nameWithType> a <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metody pro řazení řetězců, není pro kontrolu rovnosti.  
+-   Použití <xref:System.String.Compare%2A?displayProperty=nameWithType> a <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metody pro řazení řetězců, ne pro kontrolu rovnosti.  
   
--   Použijte formátování zohledňující jazykovou verzi pro zobrazení dat jiné než řetězec, například čísel a dat, v uživatelském rozhraní. Formátování s neutrální jazykovou verzi použijte k uchování dat jiné než řetězec ve formátu řetězce.  
+-   Formátování zohledňující jazykovou verzi použijte k zobrazení neřetězcová data, jako je například čísla a kalendářní data, v uživatelském rozhraní. Použití formátování pomocí neutrální jazykové verze k uchování neřetězcová data ve formátu řetězce.  
   
- Následující postupy předejít, když používáte řetězce:  
+ Nepoužívejte následující postupy pro používání řetězců:  
   
--   Nepoužívejte přetížení, které explicitně nebo implicitně zadejte pravidla pro porovnávání řetězců pro operace s řetězci.  
+-   Nepoužívejte přetížení, které explicitně nebo implicitně zadat pravidla pro porovnávání řetězců pro operace s řetězci.  
   
--   Nepoužívejte na základě operace s řetězci <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> ve většině případů. Jedním z několika výjimkami je, když uchováváte data, která ale jazykově smysluplný.  
+-   Nepoužívejte operace s řetězci závislé na základě <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> ve většině případů. Jednou z několika výjimkami je uchováváte data, která ale lingvistických smysluplné.  
   
--   Nepoužívejte přetížení <xref:System.String.Compare%2A?displayProperty=nameWithType> nebo <xref:System.String.CompareTo%2A> metoda a testování návratová hodnota nula. Chcete-li zjistit, zda jsou dva řetězce stejné.  
+-   Nepoužívejte přetížení <xref:System.String.Compare%2A?displayProperty=nameWithType> nebo <xref:System.String.CompareTo%2A> metoda a testování pro návratovou hodnotu nula, která určí, zda jsou dva řetězce stejné.  
   
--   Nepoužívejte formátování jazykové udržení číselná data nebo data datum a čas ve formátu řetězce.  
+-   Nepoužívejte formátování zohledňující jazykovou verzi se zachovat číselná data nebo data pro datum a čas ve formátu řetězce.  
   
  [Zpět na začátek](#top)  
   
 <a name="specifying_string_comparisons_explicitly"></a>   
-## <a name="specifying-string-comparisons-explicitly"></a>Určení explicitního porovnávání řetězců  
- Většinu metod manipulace s řetězci v .NET jsou přetížený. Jeden nebo více přetížení obvykle přijmout výchozí nastavení, zatímco ostatní přijměte žádné výchozí hodnoty a místo toho definují přesný způsob, kterým jsou porovnávány a s nimi manipulovat, řetězce. Většina z metody, které nespoléhejte na výchozím nastavení zahrnuje parametr typu <xref:System.StringComparison>, které je výčet, který explicitně určuje pravidla pro porovnání řetězců jazykovou verzi a případu. V následující tabulce jsou popsány <xref:System.StringComparison> členy výčtu.  
+## <a name="specifying-string-comparisons-explicitly"></a>Odstranit explicitním zadáním porovnávání řetězců  
+ Většina metod manipulace s řetězci v .NET jsou přetížené. Jeden nebo více přetížení obvykle přijmout výchozí nastavení, zatímco ostatní přijměte žádné výchozí hodnoty a místo toho určit přesné způsob, jakým jsou řetězce k porovnání nebo s nimi pracovat. Většina metod, které nespoléhejte na výchozím nastavení zahrnují parametr typu <xref:System.StringComparison>, což je výčet, který explicitně určuje pravidla pro porovnání řetězců podle jazykové verze a případ. V následující tabulce jsou popsány <xref:System.StringComparison> členy výčtu.  
   
 |Člen StringComparison|Popis|  
 |-----------------------------|-----------------|  
-|<xref:System.StringComparison.CurrentCulture>|Provádí malá a velká písmena porovnání s použitím aktuální jazykové verze.|  
-|<xref:System.StringComparison.CurrentCultureIgnoreCase>|Provede porovnávání s využitím aktuální jazykové verze.|  
-|<xref:System.StringComparison.InvariantCulture>|Provádí malá a velká písmena porovnání s použitím neutrální jazykovou verzi.|  
-|<xref:System.StringComparison.InvariantCultureIgnoreCase>|Provádí velká a malá písmena porovnání s použitím neutrální jazykovou verzi.|  
-|<xref:System.StringComparison.Ordinal>|Provede porovnávání podle pořadového čísla.|  
-|<xref:System.StringComparison.OrdinalIgnoreCase>|Provede porovnávání řadových číslovek.|  
+|<xref:System.StringComparison.CurrentCulture>|Provádí velká a malá písmena porovnání použitím aktuální jazykové verze.|  
+|<xref:System.StringComparison.CurrentCultureIgnoreCase>|Provádí porovnávání bez použitím aktuální jazykové verze.|  
+|<xref:System.StringComparison.InvariantCulture>|Provádí porovnání velká a malá písmena pomocí neutrální jazykové verze.|  
+|<xref:System.StringComparison.InvariantCultureIgnoreCase>|Provádí porovnávání pomocí neutrální jazykové verze.|  
+|<xref:System.StringComparison.Ordinal>|Provádí řadové porovnání.|  
+|<xref:System.StringComparison.OrdinalIgnoreCase>|Provádí pořadové porovnávání.|  
   
- Například <xref:System.String.IndexOf%2A> metoda, která vrátí index podřetězce v <xref:System.String> objekt, který odpovídá znak nebo řetězec, obsahuje devět přetížení:  
+ Například <xref:System.String.IndexOf%2A> metodu, která vrátí index podřetězce v <xref:System.String> objekt, který odpovídá znaku nebo řetězec, obsahuje devět přetížení:  
   
--   <xref:System.String.IndexOf%28System.Char%29>, <xref:System.String.IndexOf%28System.Char%2CSystem.Int32%29>, a <xref:System.String.IndexOf%28System.Char%2CSystem.Int32%2CSystem.Int32%29>, který ve výchozím nastavení provádí pořadovém místě (malá a velká písmena a na jazykové verzi) vyhledávání znaku v řetězci.  
+-   <xref:System.String.IndexOf%28System.Char%29>, <xref:System.String.IndexOf%28System.Char%2CSystem.Int32%29>, a <xref:System.String.IndexOf%28System.Char%2CSystem.Int32%2CSystem.Int32%29>, která ve výchozím nastavení provádí ordinální vyhledávání (malá a velká písmena a nezávislé na jazykové verzi) pro znak v řetězci.  
   
--   <xref:System.String.IndexOf%28System.String%29>, <xref:System.String.IndexOf%28System.String%2CSystem.Int32%29>, a <xref:System.String.IndexOf%28System.String%2CSystem.Int32%2CSystem.Int32%29>, který ve výchozím nastavení provádí velká a malá písmena a jazykovou vyhledávání podřetězce v řetězci.  
+-   <xref:System.String.IndexOf%28System.String%29>, <xref:System.String.IndexOf%28System.String%2CSystem.Int32%29>, a <xref:System.String.IndexOf%28System.String%2CSystem.Int32%2CSystem.Int32%29>, která ve výchozím nastavení provádí velká a malá písmena a zohledňující jazykovou verzi vyhledávání podřetězce v řetězci.  
   
--   <xref:System.String.IndexOf%28System.String%2CSystem.StringComparison%29>, <xref:System.String.IndexOf%28System.String%2CSystem.Int32%2CSystem.StringComparison%29>, a <xref:System.String.IndexOf%28System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.StringComparison%29>, mezi které patří parametr typu <xref:System.StringComparison> umožňuje formu porovnání zadat.  
+-   <xref:System.String.IndexOf%28System.String%2CSystem.StringComparison%29>, <xref:System.String.IndexOf%28System.String%2CSystem.Int32%2CSystem.StringComparison%29>, a <xref:System.String.IndexOf%28System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.StringComparison%29>, které obsahují parametr typu <xref:System.StringComparison> , která umožňuje formu porovnání zadání.  
   
- Doporučujeme vám, že jste vybrali přetížení, které nepoužívá výchozí hodnoty z následujících důvodů:  
+ Doporučujeme vám, že vyberete přetížení, která nepoužívá výchozí hodnoty z následujících důvodů:  
   
--   Některé přetížení s výchozí parametry (ty, které hledají <xref:System.Char> v instanci řetězce) provést ordinální porovnávání, zatímco ostatní (ty, které hledají řetězce v instanci řetězce) jsou závislé na jazykové verzi. Je obtížné mějte na paměti, která metoda používá danou výchozí hodnotu a snadno zaměnit přetížení.  
+-   Některá přetížení s výchozími parametry (těch, které hledají <xref:System.Char> v instanci string) provádět pořadové porovnávání, zatímco jiné (těch, které hledají řetězce v instanci string) jsou závislé na jazykové verzi. Je obtížné mějte na paměti, která metoda používá které výchozí hodnotu a snadno zaměnit přetížení.  
   
--   Záměr kód, který je založen na výchozí hodnoty pro volání metody není jasné. V následujícím příkladu, které závisí na výchozí hodnoty, je obtížné zjistit, zda se na vývojáře ve skutečnosti určené pořadí nebo lingvistické porovnání dvou řetězců nebo zda případu rozdíl mezi `protocol` a "http" může dojít k testování rovnosti Chcete-li vrátit `false`.  
+-   Záměr kódu, který závisí na výchozí hodnoty pro volání metody není jasný. V následujícím příkladu, který závisí na výchozí hodnoty, je obtížné zjistit, jestli vývojář skutečně určený ordinální číslo nebo jazykové porovnání dvou řetězců nebo zda případu rozdíl mezi `protocol` a "http" může způsobit, že testování rovnosti Chcete-li vrátit `false`.  
   
      [!code-csharp[Conceptual.Strings.BestPractices#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/explicitargs1.cs#1)]
      [!code-vb[Conceptual.Strings.BestPractices#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/explicitargs1.vb#1)]  
   
- Obecně doporučujeme volat metodu, která není závislý na výchozí hodnoty, protože umožňuje jednoznačným záměr kódu. Pak díky kód čitelnější a snazší ladit a údržbu. Následující příklad adresy otázky i o předchozí příklad. Umožňuje vymazat to pořadí porovnání se používá a že rozdíly v případě jsou ignorovány.  
+ Obecně platí doporučujeme volání metody, který není závislý na výchozí hodnoty, protože záměr kód je jednoznačný. Díky tomu kód lépe čitelný a snadněji vyladit a udržovat. V následujícím příkladu řeší otázky o z předchozího příkladu. Umožňuje vymazat to ordinálního porovnání se používá a že rozdíly v případě jsou ignorovány.  
   
  [!code-csharp[Conceptual.Strings.BestPractices#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/explicitargs1.cs#2)]
  [!code-vb[Conceptual.Strings.BestPractices#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/explicitargs1.vb#2)]  
@@ -120,82 +120,85 @@ ms.locfileid: "33579727"
   
 <a name="the_details_of_string_comparison"></a>   
 ## <a name="the-details-of-string-comparison"></a>Podrobnosti o porovnání řetězců  
- Porovnání řetězců jsou srdcem mnoho řetězec operace související, zejména řazení a testování rovnosti. Řazení řetězců v určené pořadí: Pokud "Moje" se zobrazuje před "řetězec" v seřazený seznam řetězců, "my" musí porovnat menší než nebo rovno "řetězec". Kromě toho porovnání implicitně definuje rovnosti. Operace porovnání vrátí pro řetězce, které se považuje za rovné nule. Dobrý výkladu je, že ani řetězec není menší než druhý. Většina smysluplných operací zahrnujících řetězce obsahuje jednu nebo obě tyto postupy: porovnávání s jiným řetězcem a provádění operace dobře definovaný řazení.  
-  
- Však vyhodnocení dva řetězce pro rovnosti nebo pořadí řazení nepřinese jeden správný výsledek. Výsledek závisí na kritéria použitá pro porovnání řetězců. Porovnání řetězců, které jsou pořadí nebo které jsou založeny na malá a velká písmena a řazení konvence aktuální jazykové verze nebo neutrální jazykovou verzi (bez ohledu na národním prostředí jazykovou verzi na základě v anglickém jazyce), mohou mít různé výsledky.  
+ Porovnání řetězců je srdcem mnoho řetězec operací souvisejících se zabezpečením, zejména řazení a testování rovnosti. V určeném pořadí řazení řetězců: Pokud "my" před "string" v seřazený seznam řetězců, "my" musí porovnat menší než nebo rovno "string". Kromě toho porovnání implicitně definuje rovnosti. Operace porovnání vrátí hodnotu 0 pro řetězce, které považuje za stejné. Dobré výkladu je, že žádný řetězec není menší než ten druhý. Smysluplných operací zahrnujících řetězce obsahuje jedno nebo obě z následujících postupů: Výsledkem porovnání s jiným řetězcem a provádění operace jasně definované řazení.  
+
+> [!NOTE]
+> Můžete stáhnout [řazení váhy tabulky](https://www.microsoft.com/en-us/download/details.aspx?id=10921), sadu textové soubory, které obsahují informace o tom váhy znaků použitých v operacích řazení a porovnávání pro operační systémy Windows.
+
+ Však vaše rozhodnutí vyzkoušet dva řetězce pro rovnost nebo pořadí řazení nevydává jeden správný výsledek. Výsledek závisí na kritéria použitá pro porovnání řetězců. Zejména porovnávání řetězců, které jsou podle pořadového čísla nebo které jsou založeny malých a velkých písmen a řazení konvence aktuální jazykové verze nebo neutrální jazykové verze (národní prostředí bez ohledu na jazykovou verzi na základě v anglickém jazyce) mohou mít různé výsledky.  
   
 <a name="current_culture"></a>   
-### <a name="string-comparisons-that-use-the-current-culture"></a>Porovnání řetězců, které používají aktuální jazykové verze  
- Jedno kritérium zahrnuje pomocí konvencí aktuální jazykové verze, pokud porovnávání řetězců. Porovnání, které jsou založeny na aktuální jazykové verze použít aktuální jazykovou verzi vlákna nebo národní prostředí. Pokud jazyková verze není nastavená uživatelem, nastaví se jako výchozí nastavení **místní nastavení** okno v Ovládacích panelech. Vždy byste měli používat porovnání, které jsou založeny na aktuální jazykové verze, když jazykově relevantní data a odráží interakci s uživatelem zohledňující jazykovou verzi.  
+### <a name="string-comparisons-that-use-the-current-culture"></a>Porovnávání řetězců, které používají aktuální jazykovou verzi  
+ Jedno kritérium zahrnuje při porovnávání řetězců pomocí konvencí aktuální jazykové verze. Porovnání, které jsou založeny na aktuální jazykovou verzi pomocí aktuální jazykové verze vlákna nebo národní prostředí. Pokud uživatel není nastavena jazyková verze, použije se výchozí nastavení **místní nastavení** okno v Ovládacích panelech. Vždy byste měli použít porovnávání, které jsou založeny na aktuální jazykové verze, pokud jsou jazykově relevantní data a odráží interakci s uživatelem zohledňující jazykovou verzi.  
   
- Chování při porovnání a velká a malá písmena v rozhraní .NET však změní při změně jazykové verze. To se stane, když je aplikace spuštěna v počítači, který má jinou jazykovou verzi než počítači, na kterém byla vyvinuta aplikace, nebo při změně provádění vlákna jazykové verze. Toto chování je záměrné, ale pořád není zřejmé celá řada vývojářů. Následující příklad ilustruje rozdíly v řazení mezi USA Angličtina ("en US") a švédská jazykové verze ("sv-SE"). Všimněte si, že slova "ångström", "Systém Windows" a "Visual Studio" se objeví na různých místech v polích seřazené řetězec.  
+ Chování porovnání a malých a velkých písmen v .NET změny však po změně jazykové verze. To se stane, když je aplikace spuštěna v počítači, který má jinou jazykovou verzi, než počítač, na kterém byla vyvinuta aplikace nebo při změně spuštěné vlákno jeho jazykovou verzi. Toto chování je záměrné, ale zůstane není zřejmé celá řada vývojářů. Následující příklad ukazuje rozdíly v řazení mezi USA Angličtina ("en US") a švédština jazykové verze ("sv-SE"). Všimněte si, že na různých místech v polích seřazený řetězec nezobrazí slova "ångström", "Windows" a "Sada Visual Studio".  
   
  [!code-csharp[Conceptual.Strings.BestPractices#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/comparison1.cs#3)]
  [!code-vb[Conceptual.Strings.BestPractices#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/comparison1.vb#3)]  
   
- Porovnávání, které používají aktuální jazykovou verzi jsou stejné jako Porovnání zohledňující jazykovou verzi, s tím rozdílem, že ignorují velikost písmen, protože závisí na aktuální jazykovou verzi vlákna. Toto chování může projevit v také pořadí řazení.  
+ Porovnávání, které používají aktuální jazykovou verzi jsou stejné jako Porovnání zohledňující jazykovou verzi, s tím rozdílem, že ignorovat velikost písmen podle aktuální jazykové verze vlákna. Toto chování se může projevit v pořadí řazení i.  
   
- Porovnání, které používají sémantiku aktuální jazykové verze jsou výchozí hodnoty pro následující metody:  
+ Porovnání, která používají sémantiku aktuální jazykové verze se na výchozí hodnoty pro následující metody:  
   
--   <xref:System.String.Compare%2A?displayProperty=nameWithType> přetížení, které neobsahují <xref:System.StringComparison> parametr.  
+-   <xref:System.String.Compare%2A?displayProperty=nameWithType> přetížení, které nejsou zahrnuté <xref:System.StringComparison> parametru.  
   
 -   <xref:System.String.CompareTo%2A?displayProperty=nameWithType> přetížení.  
   
--   Výchozí hodnota <xref:System.String.StartsWith%28System.String%29?displayProperty=nameWithType> metody a <xref:System.String.StartsWith%28System.String%2CSystem.Boolean%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> metoda s `null` <xref:System.Globalization.CultureInfo> parametr.  
+-   Výchozí hodnota <xref:System.String.StartsWith%28System.String%29?displayProperty=nameWithType> metoda a <xref:System.String.StartsWith%28System.String%2CSystem.Boolean%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> metodou `null` <xref:System.Globalization.CultureInfo> parametr.  
   
--   Výchozí hodnota <xref:System.String.EndsWith%28System.String%29?displayProperty=nameWithType> metody a <xref:System.String.EndsWith%28System.String%2CSystem.Boolean%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> metoda s `null` <xref:System.Globalization.CultureInfo> parametr.  
+-   Výchozí hodnota <xref:System.String.EndsWith%28System.String%29?displayProperty=nameWithType> metoda a <xref:System.String.EndsWith%28System.String%2CSystem.Boolean%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> metodou `null` <xref:System.Globalization.CultureInfo> parametr.  
   
--   <xref:System.String.IndexOf%2A?displayProperty=nameWithType> přetížení, které přijímají <xref:System.String> jako vyhledávání parametr a které nemají <xref:System.StringComparison> parametr.  
+-   <xref:System.String.IndexOf%2A?displayProperty=nameWithType> přetížení, které přijímají <xref:System.String> jako hledání parametr a které nemají <xref:System.StringComparison> parametru.  
   
--   <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> přetížení, které přijímají <xref:System.String> jako vyhledávání parametr a které nemají <xref:System.StringComparison> parametr.  
+-   <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> přetížení, které přijímají <xref:System.String> jako hledání parametr a které nemají <xref:System.StringComparison> parametru.  
   
- V každém případě doporučujeme volat přetížení, která má <xref:System.StringComparison> parametr, aby byl záměr metody volání zrušte.  
+ V každém případě doporučujeme volat přetížení, která má <xref:System.StringComparison> parametr, chcete záměr metody jasný volání.  
   
- Jemně a méně choulostivé chyby můžou vznikat, když data mimo jazykových řetězce interpretována jazykově, nebo když řetězcovými daty z konkrétní jazykové verze interpretována pomocí konvencí jiné jazykové verze. Kanonický příklad je turečtina-I problém.  
+ Jednoduchý a proto drobné chyby můžete objeví, když data nejazykové řetězec je interpretován lingvistických, nebo když řetězcovými daty z konkrétní jazykové verze je interpretován pomocí konvencí jinou jazykovou verzi. Canonical příkladu je turečtina-jsem problém.  
   
- Pro téměř všechny abeced latinky, včetně USA Angličtina, znak "i" (\u0069) je malá verzi znak "I" (\u0049). Toto pravidlo velikosti se výchozí někomu programování v takovéto jazykové verzi. Ale abecedy turečtina ("tr-TR") obsahuje "I s tečkou" znak "İ" (\u0130), což je velká verze z "i". Turečtina také obsahuje znak malá "i bez tečky", "ı" (\u0131), jehož velká "I". K tomuto chování dochází v také culture Ázerbájdžánština (az").  
+ Pro téměř všechna latinky písmena abecedy, včetně USA Angličtina, znak "i" (\u0069) je malá verze znaku "I" (\u0049). Toto pravidlo malých a velkých písmen rychle stane výchozí někdo programování v těchto jazykovou verzi. Ale obsahuje abecedy turečtina ("tr-TR") "I s tečkou" znak "İ" (\u0130), což je velká verze z "i". Turečtina také obsahuje znak malé písmeno "i bez tečky", "ı" (\u0131), jehož velká "I". K tomuto chování dochází v jazykové verzi Ázerbájdžánština ("az") i.  
   
- Proto předpokladům o psaní velkých písmen "i" nebo předpoklady "I" nejsou platné pro všechny jazykové verze. Pokud používáte výchozí přetížení rutin pro porovnávání řetězců, budou se odchylka mezi jazykové verze. Pokud data, která mají být porovnána mimo jazykových, použití výchozích přetížení může způsobit nežádoucí výsledky, protože následující pokus o provedení velká a malá písmena porovnání řetězce "soubor" a "Soubor" znázorňuje.  
+ Proto předpoklady o "i" na velká písmena nebo předpoklady "I" nejsou platné pro všechny jazykové verze. Pokud používáte výchozí přetížení rutin pro porovnávání řetězců, budou platit odchylky mezi jazykové verze. Pokud jsou data k porovnání nejazykové, pomocí přetížení výchozí může způsobit nežádoucí výsledky, jako je následující pokus o provádění porovnávání řetězců "file" a ukazuje "FILE".  
   
  [!code-csharp[Conceptual.Strings.BestPractices#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/turkish1.cs#11)]
  [!code-vb[Conceptual.Strings.BestPractices#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/turkish1.vb#11)]  
   
- Toto porovnání může způsobit významné problémy, pokud se nastavení citlivé na zabezpečení, jako v následujícím příkladu nechtěně používá jazykovou verzi. Volání metody, jako například `IsFileURI("file:")` vrátí `true` Pokud aktuální jazyková verze Angličtina, ale `false` Pokud turečtinu aktuální jazykovou verzi. Proto v tureckém systémech někdo mohl obejít bezpečnostní opatření, která blokují přístup k velká a malá písmena URI, které začínají řetězcem "souboru:".  
+ Toto porovnání může způsobit významné problémy, pokud citlivá nastavení zabezpečení, jako v následujícím příkladu neúmyslně používané jazykové verze. Volání metody, jako `IsFileURI("file:")` vrátí `true` Pokud je aktuální jazyková verze Angličtina, ale `false` Pokud je aktuální jazyková verze turečtinu. Proto v turecké systémech někdo mohl obejít bezpečnostních opatření, které blokují přístup k malá a velká písmena identifikátorů URI, který začíná pod "souboru:".  
   
  [!code-csharp[Conceptual.Strings.BestPractices#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/turkish1.cs#12)]
  [!code-vb[Conceptual.Strings.BestPractices#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/turkish1.vb#12)]  
   
- V takovém případě protože "souboru:" je určená interpretovat jako mimo jazykových nezávislé na jazykových identifikátor, kód by měl být zapsán jak je znázorněno v následujícím příkladu.  
+ V tomto případě protože "souboru:" je určená, je interpretován jako identifikátor nejazykové, nezávislých na jazykové verzi, kód by měl místo zapsání jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[Conceptual.Strings.BestPractices#13](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/turkish1.cs#13)]
  [!code-vb[Conceptual.Strings.BestPractices#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/turkish1.vb#13)]  
   
 ### <a name="ordinal-string-operations"></a>Ordinální operace s řetězci  
- Určení <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> nebo <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> hodnota ve volání metody znamená-lingvistické porovnání, ve kterém jsou ignorovány vlastnosti přirozeného jazyka. Metody, které jsou vyvolány pomocí těchto <xref:System.StringComparison> hodnoty rozhodovat řetězec operaci na porovnání jednotlivých bajtů místo velká a malá písmena nebo ekvivalenční tabulek, které jsou parametry podle jazykové verze. Ve většině případů se tento přístup nejlépe odpovídá zamýšlenému výkladu řetězce při vytváření kódu rychlejší a spolehlivější.  
+ Zadání <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> nebo <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> hodnotu ve volání metody označuje nejazykové porovnání, ve kterém jsou ignorovány funkcí přirozeného jazyka. Metody, které jsou vyvolány pomocí těchto <xref:System.StringComparison> hodnoty základní řetězec operace rozhodnutí o porovnání jednoduché bajtů namísto malých a velkých písmen nebo ekvivalence tabulek, které jsou parametrizovány podle jazykové verze. Ve většině případů se tento přístup nejlépe odpovídá určené interpretace řetězce při provádění kódu rychlejší a spolehlivější.  
   
- Ordinální porovnávání jsou porovnání řetězců, ve kterých se porovná každý byte řetězce bez lingvistické interpretace. například "systém windows" neodpovídá "Systém Windows". Toto je v podstatě volání C runtime `strcmp` funkce. Toto porovnání použijte, pokud kontext stanoví, že řetězce by si měly odpovídat přesně nebo požadavků konzervativní odpovídající zásady. Kromě toho porovnávání pořadového čísla je nejrychlejší operace porovnání, protože žádná lingvistické pravidla platí při určování výsledku.  
+ Ordinální porovnání jsou porovnávání řetězců, ve kterých každý bajt každého řetězce je porovnán bez lingvistické interpretace. například "windows" neodpovídá "Windows". Toto je v podstatě volání modulu C Runtime `strcmp` funkce. Porovnání použijte, pokud kontext určuje, že by řetězců přesně odpovídat nebo požadavků konzervativní odpovídající zásady. Kromě toho řadové porovnání je nejrychlejší operace porovnání, protože žádná jazyková pravidla platí při stanovení výsledku.  
   
- Řetězců v .NET může obsahovat vložené znaky null. Jedním z nejjednoznačnějším rozdílů mezi pořadí a jazykovou porovnání (včetně porovnání, které používají neutrální jazykovou verzi) se týká zpracování vložené znaky null v řetězci. Tyto znaky jsou ignorovány, při použití <xref:System.String.Compare%2A?displayProperty=nameWithType> a <xref:System.String.Equals%2A?displayProperty=nameWithType> metody k provádění porovnávání zohledňující jazykovou verzi (včetně porovnání, které používají neutrální jazykovou verzi). V důsledku toho v porovnávání jazykovou řetězce, které obsahují vložené znaky null lze považovat za rovna řetězce, které nepodporují.  
+ Řetězců v .NET může obsahovat vložené znaky null. Jedním z s nejjednoznačnějším rozdílů mezi porovnání podle pořadového čísla a zohledňující jazykovou verzi (včetně porovnání, která používají invariantní jazyková verze) se týká zpracování vložené znaky null v řetězci. Tyto znaky jsou ignorovány, pokud použijete <xref:System.String.Compare%2A?displayProperty=nameWithType> a <xref:System.String.Equals%2A?displayProperty=nameWithType> metody k provádění porovnání zohledňující jazykovou verzi (včetně porovnání, která používají invariantní jazyková verze). V důsledku toho v porovnání zohledňující jazykovou verzi, řetězce obsahující vložené znaky null lze považovat za rovno řetězci, které nepodporují.  
   
 > [!IMPORTANT]
->  I když metody porovnávání řetězců nezohledňují vložené znaky null, string vyhledávací metody, jako <xref:System.String.Contains%2A?displayProperty=nameWithType>, <xref:System.String.EndsWith%2A?displayProperty=nameWithType>, <xref:System.String.IndexOf%2A?displayProperty=nameWithType>, <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>, a <xref:System.String.StartsWith%2A?displayProperty=nameWithType> nepodporují.  
+>  I když metod pro porovnávání řetězců ignorovat vložené znaky null, řetězec hledání metody jako <xref:System.String.Contains%2A?displayProperty=nameWithType>, <xref:System.String.EndsWith%2A?displayProperty=nameWithType>, <xref:System.String.IndexOf%2A?displayProperty=nameWithType>, <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>, a <xref:System.String.StartsWith%2A?displayProperty=nameWithType> nepodporují.  
   
- Následující příklad provede porovnání zohledňující jazykovou verzi řetězec "Aa" se podobně jako řetězec, který obsahuje několik vložených znaků null mezi "A" a "a" a ukazuje, jak dva řetězce jsou považovány za shodné.  
+ Následující příklad provádí porovnání zohledňující jazykovou verzi řetězec "Aa" podobně jako řetězec, který obsahuje několik vložené znaky null mezi "A" a "a" a ukazuje, jak dva řetězce považovány za shodné.  
   
  [!code-csharp[Conceptual.Strings.BestPractices#19](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/embeddednulls1.cs#19)]
  [!code-vb[Conceptual.Strings.BestPractices#19](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/embeddednulls1.vb#19)]  
   
- Ale řetězce nejsou považovány za shodné při použití pořadí porovnání, jak ukazuje následující příklad.  
+ Ale řetězce nejsou považovány za shodné při použít řadové porovnání, jak ukazuje následující příklad.  
   
  [!code-csharp[Conceptual.Strings.BestPractices#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/embeddednulls2.cs#20)]
  [!code-vb[Conceptual.Strings.BestPractices#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/embeddednulls2.vb#20)]  
   
- Porovnávání bez pořadí jsou další nejvíce konzervativní přístup. Tato porovnání ignorovat většina velká a malá písmena; například "systém windows" odpovídá "Systém Windows". Při zpracovávání znaků ASCII, tato zásada je ekvivalentní <xref:System.StringComparison.Ordinal?displayProperty=nameWithType>, s tím rozdílem, že ignorují obvyklé velikosti znaků ASCII. Proto libovolný znak v [A, Z] (\u0041-\u005A) odpovídá odpovídající znaku v [a, z] (\u0061-\007A). Velká a malá písmena mimo rozsah ASCII používá tabulky neutrální jazykovou verzi. Proto na toto porovnání:  
+ Ordinální porovnání velká a malá písmena jsou další nejrestriktivnější přístup. Tato porovnání ignorovat většina malých a velkých písmen; například "windows" odpovídá "Windows". Při zpracování komplexnějších znaky ASCII, tato zásada je ekvivalentní <xref:System.StringComparison.Ordinal?displayProperty=nameWithType>, s tím rozdílem, že je ignorován obvykle ASCII velká a malá písmena. Proto jakémukoliv znaku v [A, Z] (\u0041-\u005A) odpovídá na odpovídající znak v [, z] (\u0061-\007A). Velká a malá písmena mimo rozsah ASCII používá invariantní jazyková verze tabulky. Proto se na toto porovnání:  
   
  [!code-csharp[Conceptual.Strings.BestPractices#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/comparison2.cs#4)]
  [!code-vb[Conceptual.Strings.BestPractices#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/comparison2.vb#4)]  
   
- je ekvivalentní (ale rychlejší než) Toto porovnání:  
+ je ekvivalentní k (ale rychlejší než) Toto porovnání:  
   
  [!code-csharp[Conceptual.Strings.BestPractices#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/comparison2.cs#5)]
  [!code-vb[Conceptual.Strings.BestPractices#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/comparison2.vb#5)]  
@@ -205,60 +208,60 @@ ms.locfileid: "33579727"
 > [!NOTE]
 >  Řetězec chování systému souborů, klíčů registru a hodnoty a proměnné prostředí je reprezentována nejlépe <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType>.  
   
- Obě <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> a <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> přímo použít binární hodnoty a jsou nejvhodnější pro párování. Pokud si nejste jisti o porovnání nastavení, použijte jednu z těchto dvou hodnot. Ale protože provádějí porovnání bajtové byte, neposkytují řazení lingvistické řazení (například anglický slovník), ale binární řazení. Výsledky vypadat nevhodně ve většině případů, pokud se zobrazí uživatelům.  
+ Obě <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> a <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> přímo použít binární hodnoty a jsou nejvhodnější pro porovnání. Pokud si nejste jisti o porovnání nastavení, použijte jednu z těchto dvou hodnot. Ale protože provádějí porovnání bajt po bajtu, neposkytují řazení lingvistické řazení (např. angličtinu slovník), ale binární řazení. Ve většině případů, pokud se zobrazí uživatelům může připadat výsledky.  
   
- Ordinální sémantika je výchozí nastavení pro <xref:System.String.Equals%2A?displayProperty=nameWithType> přetížení, které neobsahují <xref:System.StringComparison> argument (včetně operátor rovnosti). V každém případě doporučujeme volat přetížení, která má <xref:System.StringComparison> parametr.  
+ Ordinální sémantika je výchozí nastavení pro <xref:System.String.Equals%2A?displayProperty=nameWithType> přetížení, které nejsou zahrnuté <xref:System.StringComparison> argument (včetně operátor rovnosti). V každém případě doporučujeme volat přetížení, která má <xref:System.StringComparison> parametru.  
   
 ### <a name="string-operations-that-use-the-invariant-culture"></a>Operace s řetězci, které používají neutrální jazykovou verzi  
- Porovnání s použitím neutrální jazykovou verzi <xref:System.Globalization.CultureInfo.CompareInfo%2A> vlastnost vrácený statických <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost. Toto chování je stejné ve všech systémech. převádí všechny znaky mimo daný rozsah na které považuje za odpovídající invariantní znaky. Tato zásada může být užitečná pro údržbu jednu sadu řetězec chování napříč jazykové verze, ale často poskytuje neočekávané výsledky.  
+ Porovnávání pomocí neutrální jazykové verze <xref:System.Globalization.CultureInfo.CompareInfo%2A> vrácené statickou vlastnost <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost. Toto chování je stejné ve všech systémech. převádí všechny znaky mimo rozsah na co považuje za ekvivalentní invariantní znaků. Tato zásada může být užitečné pro zachování jednu sadu řetězec chování mezi jazykové verze, ale často poskytuje neočekávané výsledky.  
   
- Porovnávání s neutrální jazykovou verzi používá statickou <xref:System.Globalization.CultureInfo.CompareInfo%2A> vlastnost vrácený statických <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost pro informace o porovnávání. Případné případu rozdíly mezi těmito přeloženými znaky jsou ignorovány.  
+ Porovnávání pomocí neutrální jazykové verze používá statickou <xref:System.Globalization.CultureInfo.CompareInfo%2A> vrácené statickou vlastnost <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost pro informace o porovnávání. Všechny velikosti písmen rozdíly mezi těmito přeloženými znaky se ignorují.  
   
- Porovnání, které používají <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> a <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> pracovní stejně jako u řetězců ASCII. Ale <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> uskutečňuje lingvistické rozhodnutí, která nemusí být vhodné pro řetězce, které mají být interpretovat jako sada bajtů. `CultureInfo.InvariantCulture.CompareInfo` Objektu díky <xref:System.String.Compare%2A> metoda interpretovat určité sady znaků jako ekvivalentní. Například následující ekvivalence je platný v rámci neutrální jazykovou verzi:  
+ Porovnání, která používají <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> a <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> pracovat stejně jako na řetězce ASCII. Ale <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> díky lingvistické rozhodnutí, které nemusí být vhodný pro řetězce, které mají být vykládány jako řadu bajtů. `CultureInfo.InvariantCulture.CompareInfo` Objektu provede <xref:System.String.Compare%2A> metoda interpretovat jako ekvivalentní určité sady znaků. Například následující rovnost je platný pro invariantní jazykovou verzi:  
   
  InvariantCulture: + ̊ =  
   
- LATINSKÁ malé písmeno A znak "(\u0061), pokud je vedle KOMBINOVÁNÍ PRSTENEC výše znak" + "̊" (\u030a), se interpretují jako LATIN malé písmeno A s PRSTENEC výše znak "å" (\u00e5). Jak ukazuje následující příklad, toto chování se liší od pořadí porovnání.  
+ LATIN malé písmeno A znak "a" (\u0061), když je vedle KOMBINOVÁNÍ KROUŽKEM znak "+"̊"(\u030a), je interpretován jako LATINCE malé písmeno s KROUŽKEM znak"å"(\u00e5). Jak ukazuje následující příklad, toto chování se liší od ordinálního porovnání.  
   
  [!code-csharp[Conceptual.Strings.BestPractices#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/comparison3.cs#15)]
  [!code-vb[Conceptual.Strings.BestPractices#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/comparison3.vb#15)]  
   
- Při interpretaci názvy souborů, soubory cookie nebo cokoliv jiného, kde se může vyskytovat kombinaci jako je například "å", pořadí porovnání stále nabízí nejvíce transparentní a nejvhodnější chování.  
+ Při interpretaci názvů souborů, souborů cookie nebo cokoli jiného, kde se mohou objevit kombinaci, jako je například "å", pořadové porovnávání stále nabízet chování nejtransparentnější a nejvhodnější.  
   
- Neutrální jazykovou verzi na balance, má jen několik vlastností, které jsou užitečné pro porovnání. Provede porovnání jazykově relevantním způsobem, který zabraňuje v jeho zaručení plné ekvivalence, ale není volbou pro zobrazení v libovolné jazykové verzi. Jedním z několika důvodů používat <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> pro porovnání je zachování seřazených dat pro ve všech jazykových verzích stejné zobrazení. Například pokud soubor velkého množství dat, který obsahuje seznam seřazený identifikátory pro zobrazení doprovází aplikace, přidání do tohoto seznamu vyžadovat vložení pomocí stylu neutrální řazení.  
+ Neutrální jazykovou verzi na zůstatek, má jen několik vlastností, které jsou užitečné pro porovnání. Provede porovnání lingvistických relevantní způsobem, který brání jeho zaručení plné ekvivalence, ale není to volbou pro zobrazení v žádné jazykové verze. Jeden z několika důvodů, proč používat <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> pro porovnání je pro trvalé ukládání seřazený napříč kulturami stejné zobrazení. Například pokud soubor velkých objemů dat, který obsahuje seznam seřazený identifikátory pro zobrazení doprovází aplikace, přidání do tohoto seznamu vyžadovat vložení pomocí řazení ve stylu invariantní.  
   
  [Zpět na začátek](#top)  
   
 <a name="choosing_a_stringcomparison_member_for_your_method_call"></a>   
-## <a name="choosing-a-stringcomparison-member-for-your-method-call"></a>Výběr člena StringComparison pro vaše volání metody  
- Následující tabulka popisuje mapování ze sémantického kontext, který má <xref:System.StringComparison> – člen výčtu.  
+## <a name="choosing-a-stringcomparison-member-for-your-method-call"></a>Výběr člena StringComparison, který vaše volání metody  
+ Následující tabulka uvádí mapování z kontextu sémantického <xref:System.StringComparison> člena výčtu.  
   
 |Data|Chování|Odpovídající System.StringComparison<br /><br /> value|  
 |----------|--------------|-----------------------------------------------------|  
-|Interní identifikátory malá a velká písmena.<br /><br /> Malá a velká písmena identifikátory v standardy, jako je soubor XML a HTTP.<br /><br /> Malá a velká písmena nastavení související se zabezpečením.|Identifikátor jazyce, kde se přesně shodují bajtů.|<xref:System.StringComparison.Ordinal>|  
-|Interní identifikátory velká a malá písmena.<br /><br /> Velká a malá písmena identifikátory v standardy, jako je soubor XML a HTTP.<br /><br /> Cesty k souborům.<br /><br /> Klíče registru a hodnoty.<br /><br /> Proměnné prostředí.<br /><br /> Identifikátory prostředků (například názvy popisovač).<br /><br /> Velká a malá písmena nastavení související se zabezpečením.|Identifikátor mimo jazykových, kde je případ důležité; zejména data uložená v většina služeb systému Windows.|<xref:System.StringComparison.OrdinalIgnoreCase>|  
-|Některé trvalé, jazykově relevantní data.<br /><br /> Zobrazení lingvistické data, která vyžaduje pevnou řazení.|Která data, která je jazykově relevantní.|<xref:System.StringComparison.InvariantCulture><br /><br /> -nebo-<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|  
+|Malá a velká písmena identifikátorů interní.<br /><br /> Malá a velká písmena identifikátorů standardů, jako jsou XML a HTTP.<br /><br /> Malá a velká písmena nastavení související se zabezpečením.|Nejazykové identifikátor, kde se přesně shodují bajtů.|<xref:System.StringComparison.Ordinal>|  
+|Malá a velká písmena identifikátorů interní.<br /><br /> Malá a velká písmena identifikátorů standardů, jako jsou XML a HTTP.<br /><br /> Cesty k souborům.<br /><br /> Klíče registru a hodnoty.<br /><br /> Proměnné prostředí.<br /><br /> Identifikátory prostředků (například názvy popisovač).<br /><br /> Malá a velká písmena nastavení související se zabezpečením.|Nejazykové identifikátor, kde je bezvýznamná; případ zejména data uložená v většina služeb systému Windows.|<xref:System.StringComparison.OrdinalIgnoreCase>|  
+|Trvalé, lingvistických relevantní data.<br /><br /> Zobrazit údaje o jazyku, který vyžaduje pořadí opravené seřadit.|Jazykově nezávislá data, která je stále lingvistických relevantní.|<xref:System.StringComparison.InvariantCulture><br /><br /> -nebo-<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|  
 |Data zobrazená pro uživatele.<br /><br /> Většina vstupu uživatele.|Data, která vyžaduje místní lingvistické.|<xref:System.StringComparison.CurrentCulture><br /><br /> -nebo-<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|  
   
  [Zpět na začátek](#top)  
   
 <a name="common_string_comparison_methods_in_the_net_framework"></a>   
-## <a name="common-string-comparison-methods-in-net"></a>Běžné metody porovnávání řetězců v rozhraní .NET  
- Následující části popisují metody, které se běžně používají pro porovnání řetězců.  
+## <a name="common-string-comparison-methods-in-net"></a>Běžné metody pro porovnávání řetězců v .NET  
+ Následující části popisují metody, které se nejčastěji používají pro porovnání řetězců.  
   
 ### <a name="stringcompare"></a>String.Compare  
  Výchozí interpretaci: <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>.  
   
- Jako operace nejvíce zaměřují na interpretaci řetězce by měl všech instancí těchto volání metod prověřit, abyste zjistili, jestli řetězců by měla být interpretovat v souladu aktuální jazykové verze, nebo zrušit její přidružení z jazykové verze (symbolicky). Obvykle je k tomu a <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> porovnání by měl být místo toho použít.  
+ Jako většina centrální k interpretaci řetězec operace by měla být prozkoumána všech instancí těchto volání metod určit, zda řetězce by měla být interpretováno podle aktuální jazykové verze nebo oddělen od jazykovou verzi (symbolicky). Obvykle je ten a <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> porovnání by místo toho používat.  
   
- <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> Třídy, která je vrácený <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> také obsahuje vlastnosti, <xref:System.Globalization.CompareInfo.Compare%2A> metoda, která poskytuje velký počet odpovídajících možnosti (pořadí, ignoruje prázdné znaky, znaky abeced kana bude ignorována typ a tak dále) prostřednictvím <xref:System.Globalization.CompareOptions> příznak výčet.  
+ <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> Třída, která je vrácena <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> také obsahuje vlastnosti, <xref:System.Globalization.CompareInfo.Compare%2A> metodu, která obsahuje velký počet odpovídající možnosti (řádové, ignorování prázdných znaků, typu ignoruje kana a tak dále) prostřednictvím <xref:System.Globalization.CompareOptions> příznak výčet.  
   
 ### <a name="stringcompareto"></a>String.CompareTo  
  Výchozí interpretaci: <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>.  
   
- Tato metoda aktuálně nenabízí přetížení, které určuje <xref:System.StringComparison> typu. Obvykle je možné převést tuto metodu doporučené <xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> formuláře.  
+ Tato metoda aktuálně nenabízí přetížení, která určuje <xref:System.StringComparison> typu. Obvykle je možné převést tuto metodu na doporučenou <xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> formuláře.  
   
- Typy, které implementují <xref:System.IComparable> a <xref:System.IComparable%601> tuto metodu implementovat rozhraní. Protože nenabízí možnost <xref:System.StringComparison> parametr typy implementace často umožní uživateli zadat <xref:System.StringComparer> v jejich konstruktoru. V následujícím příkladu definuje `FileName` třídy, jejichž konstruktor třídy zahrnuje <xref:System.StringComparer> parametr. To <xref:System.StringComparer> objekt je pak použit v `FileName.CompareTo` metoda.  
+ Typy, které implementují <xref:System.IComparable> a <xref:System.IComparable%601> tuto metodu implementovat rozhraní. Vzhledem k tomu, že nenabízí možnost <xref:System.StringComparison> parametr, implementace typy často umožní uživateli zadat <xref:System.StringComparer> v jejich konstruktoru. Následující příklad definuje `FileName` třídy, jejíž konstruktor třídy zahrnuje <xref:System.StringComparer> parametru. To <xref:System.StringComparer> objekt se pak použije v `FileName.CompareTo` metody.  
   
  [!code-csharp[Conceptual.Strings.BestPractices#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/api1.cs#6)]
  [!code-vb[Conceptual.Strings.BestPractices#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/api1.vb#6)]  
@@ -266,74 +269,74 @@ ms.locfileid: "33579727"
 ### <a name="stringequals"></a>String.Equals  
  Výchozí interpretaci: <xref:System.StringComparison.Ordinal?displayProperty=nameWithType>.  
   
- <xref:System.String> Třída umožňuje testovat rovnost voláním buď statického nebo instanci <xref:System.String.Equals%2A> přetížení metody, nebo pomocí statického operátoru rovnosti. Ve výchozím nastavení používá přetížení a operátor porovnání pořadí. Však doporučujeme volat přetížení, které explicitně určuje <xref:System.StringComparison> typ i v případě, že chcete provést porovnávání podle pořadového čísla; to usnadňuje vyhledávání kódu pro určitých interpretací řetězce.  
+ <xref:System.String> Třída umožňuje testovat rovnost voláním buď statické, nebo instanci <xref:System.String.Equals%2A> přetížení metody, nebo pomocí operátoru rovnosti statické. Přetížení a operátor použít řadové porovnání ve výchozím nastavení. Ale doporučujeme, že můžete volat přetížení, které explicitně určuje <xref:System.StringComparison> typ i v případě, že chcete provést řadové porovnání; to usnadňuje vyhledávání kódu pro určité interpretace řetězce.  
   
 ### <a name="stringtoupper-and-stringtolower"></a>String.ToUpper a String.ToLower  
  Výchozí interpretaci: <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>.  
   
- Byste měli být opatrní při používání těchto metod, protože vynucení řetězce na velká nebo malá se často používá jako malá normalizace pro porovnávání řetězců bez ohledu na případ. Pokud ano, zvažte použití porovnávání.  
+ Měli byste být opatrní při použití těchto metod, protože vynucení řetězec na velká nebo malá písmena se často používá jako malé normalizace pro porovnávání řetězců bez ohledu na malá. V takovém případě zvažte použití porovnávání.  
   
- <xref:System.String.ToUpperInvariant%2A?displayProperty=nameWithType> a <xref:System.String.ToLowerInvariant%2A?displayProperty=nameWithType> metody jsou také k dispozici. <xref:System.String.ToUpperInvariant%2A> je standardní způsob, jak normalizování velikosti písmen. Porovnání pomocí <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> jsou složení dvou volání: volání metody <xref:System.String.ToUpperInvariant%2A> na oba argumenty řetězce a provedení porovnání s použitím <xref:System.StringComparison.Ordinal?displayProperty=nameWithType>.  
+ <xref:System.String.ToUpperInvariant%2A?displayProperty=nameWithType> a <xref:System.String.ToLowerInvariant%2A?displayProperty=nameWithType> metody jsou také k dispozici. <xref:System.String.ToUpperInvariant%2A> je standardní způsob, jak normalizovat případ. Porovnání pomocí <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> jsou složením dvě volání: volání <xref:System.String.ToUpperInvariant%2A> na řetězcové argumenty a to v porovnání s použitím <xref:System.StringComparison.Ordinal?displayProperty=nameWithType>.  
   
- Přetížení jsou také k dispozici pro převod na velká a malá písmena v konkrétní jazykové verzi, předáním <xref:System.Globalization.CultureInfo> objekt, který představuje tuto jazykovou verzi metodě.  
+ Přetížení jsou také k dispozici pro převod na velká a malá písmena v konkrétní jazykovou verzi, tím, že předáte <xref:System.Globalization.CultureInfo> objekt, který představuje tuto jazykovou verzi k metodě.  
   
-### <a name="chartoupper-and-chartolower"></a>Char.ToUpper a Char.ToLower  
+### <a name="chartoupper-and-chartolower"></a>Char.ToUpper – a Char.ToLower  
  Výchozí interpretaci: <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>.  
   
- Tyto metody fungují podobně jako <xref:System.String.ToUpper%2A?displayProperty=nameWithType> a <xref:System.String.ToLower%2A?displayProperty=nameWithType> metody popsané v předchozí části.  
+ Tyto metody fungují podobně jako <xref:System.String.ToUpper%2A?displayProperty=nameWithType> a <xref:System.String.ToLower%2A?displayProperty=nameWithType> metod popsaných v předchozí části.  
   
 ### <a name="stringstartswith-and-stringendswith"></a>String.StartsWith a String.EndsWith  
  Výchozí interpretaci: <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>.  
   
- Ve výchozím nastavení proveďte obě tyto metody porovnání zohledňující jazykovou verzi.  
+ Ve výchozím nastavení obě tyto metody provádět porovnání zohledňující jazykovou verzi.  
   
 ### <a name="stringindexof-and-stringlastindexof"></a>String.IndexOf a String.LastIndexOf  
  Výchozí interpretaci: <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>.  
   
- Není k dispozici souvisí s nedostatečnou konzistencí v tom, jak výchozí přetížení těchto metod provést porovnání. Všechny <xref:System.String.IndexOf%2A?displayProperty=nameWithType> a <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> metody, které zahrnují <xref:System.Char> parametr provést ordinální porovnávání, ale výchozí <xref:System.String.IndexOf%2A?displayProperty=nameWithType> a <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> metody, které zahrnují <xref:System.String> parametr provést zohledňující jazykovou verzi porovnání.  
+ Existuje souvisí s nedostatečnou konzistencí v jak výchozím přetížením metod provést porovnání. Všechny <xref:System.String.IndexOf%2A?displayProperty=nameWithType> a <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> metody, které patří <xref:System.Char> parametru provede pořadové porovnávání, ale výchozí <xref:System.String.IndexOf%2A?displayProperty=nameWithType> a <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType> metody, které obsahují <xref:System.String> parametru provede zohledňující jazykovou verzi porovnání.  
   
- Při volání <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> nebo <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> metoda a předejte ji řetězec pro vyhledání v aktuální instanci, doporučujeme volat přetížení, které explicitně určuje <xref:System.StringComparison> typu. Přetížení, které obsahují <xref:System.Char> argument neumožňuje zadat <xref:System.StringComparison> typu.  
+ Při volání <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> nebo <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> metoda a předejte jí řetězec pro vyhledání v aktuální instanci aplikace, doporučujeme vám, že můžete volat přetížení, které explicitně určuje <xref:System.StringComparison> typu. Přetížení, které obsahují <xref:System.Char> argument neumožňuje zadat <xref:System.StringComparison> typu.  
   
  [Zpět na začátek](#top)  
   
 <a name="methods_that_perform_string_comparison_indirectly"></a>   
 ## <a name="methods-that-perform-string-comparison-indirectly"></a>Metody, které nepřímo provést porovnání řetězců  
- Některé metody jiné než řetězec, které mají porovnávání řetězců jako centrální operaci používají <xref:System.StringComparer> typu. <xref:System.StringComparer> Třída obsahuje šest statické vlastnosti, které vracejí <xref:System.StringComparer> instance, jehož <xref:System.StringComparer.Compare%2A?displayProperty=nameWithType> metody provést následující typy porovnávání řetězců:  
+ Některé neřetězcové metody, které mají porovnání řetězců jako použití centrální operaci <xref:System.StringComparer> typu. <xref:System.StringComparer> Třída obsahuje šest statické vlastnosti, které vracejí <xref:System.StringComparer> instance, jejíž <xref:System.StringComparer.Compare%2A?displayProperty=nameWithType> metody provádět následující typy porovnávání řetězců:  
   
--   Porovnání řetězců pomocí aktuální jazykové verze. To <xref:System.StringComparer> objekt je vrácen rutinou <xref:System.StringComparer.CurrentCulture%2A?displayProperty=nameWithType> vlastnost.  
+-   Porovnání řetězců zohledňující jazykovou verzi pomocí aktuální jazykové verze. To <xref:System.StringComparer> objekt je vrácen rutinou <xref:System.StringComparer.CurrentCulture%2A?displayProperty=nameWithType> vlastnost.  
   
--   Porovnávání s využitím aktuální jazykové verze. To <xref:System.StringComparer> objekt je vrácen rutinou <xref:System.StringComparer.CurrentCultureIgnoreCase%2A?displayProperty=nameWithType> vlastnost.  
+-   Malá a velká písmena porovnání použitím aktuální jazykové verze. To <xref:System.StringComparer> objekt je vrácen rutinou <xref:System.StringComparer.CurrentCultureIgnoreCase%2A?displayProperty=nameWithType> vlastnost.  
   
--   Nezávislé na jazykových porovnání pomocí pravidel porovnávání slov neutrální jazykovou verzi. To <xref:System.StringComparer> objekt je vrácen rutinou <xref:System.StringComparer.InvariantCulture%2A?displayProperty=nameWithType> vlastnost.  
+-   Porovnání nezávislá na jazykové verzi pomocí pravidel pro slova porovnání invariantní jazykovou verzi. To <xref:System.StringComparer> objekt je vrácen rutinou <xref:System.StringComparer.InvariantCulture%2A?displayProperty=nameWithType> vlastnost.  
   
--   Porovnání velká a malá písmena a nezávislé na jazykových pomocí pravidel porovnávání slov neutrální jazykovou verzi. To <xref:System.StringComparer> objekt je vrácen rutinou <xref:System.StringComparer.InvariantCultureIgnoreCase%2A?displayProperty=nameWithType> vlastnost.  
+-   Porovnání velká a malá písmena a nezávislé na jazykové verzi pomocí pravidel pro slova porovnání invariantní jazykovou verzi. To <xref:System.StringComparer> objekt je vrácen rutinou <xref:System.StringComparer.InvariantCultureIgnoreCase%2A?displayProperty=nameWithType> vlastnost.  
   
--   Porovnání podle pořadového čísla. To <xref:System.StringComparer> objekt je vrácen rutinou <xref:System.StringComparer.Ordinal%2A?displayProperty=nameWithType> vlastnost.  
+-   Ordinálního porovnání. To <xref:System.StringComparer> objekt je vrácen rutinou <xref:System.StringComparer.Ordinal%2A?displayProperty=nameWithType> vlastnost.  
   
--   Porovnávání řadových číslovek. To <xref:System.StringComparer> objekt je vrácen rutinou <xref:System.StringComparer.OrdinalIgnoreCase%2A?displayProperty=nameWithType> vlastnost.  
+-   Malá a velká písmena ordinálního porovnání. To <xref:System.StringComparer> objekt je vrácen rutinou <xref:System.StringComparer.OrdinalIgnoreCase%2A?displayProperty=nameWithType> vlastnost.  
   
 ### <a name="arraysort-and-arraybinarysearch"></a>Array.Sort a Array.BinarySearch  
  Výchozí interpretaci: <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType>.  
   
- Při ukládání dat v kolekci nebo číst trvalou data ze souboru nebo databáze do kolekce, mohou zneplatnit přepínání aktuální jazykové verze výstupních podmínek v kolekci. <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType> Metoda předpokládá, že jsou již seřazeny prvků v poli má proběhnout. Seřadit libovolný prvek řetězce v poli <xref:System.Array.Sort%2A?displayProperty=nameWithType> volání metod <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda pořadí jednotlivých prvků. Pomocí porovnávače zohledňující jazykovou verzi může být nebezpečné, pokud budou prohledávány jazykovou verzi změny mezi časem seřazených pole a její obsah. Například následující kód, ukládání a načítání pracovat porovnávače, která je k dispozici implicitně `Thread.CurrentThread.CurrentCulture` vlastnost. Pokud jazykovou verzi můžete změnit mezi voláním `StoreNames` a `DoesNameExist`, a zejména v případě, že je obsah pole trvalý někde mezi volání dvě metody, binární vyhledávání se pravděpodobně nezdaří.  
+ Při ukládání dat v kolekci, nebo přečíst trvalá data ze souboru nebo databáze do kolekce, mohou zneplatnit přepínání aktuální jazykové verze výstupních podmínek v kolekci. <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType> Metoda předpokládá, že jsou již seřazeny prvků v poli pro hledání. Řazení libovolný prvek řetězce v poli, <xref:System.Array.Sort%2A?displayProperty=nameWithType> volání metod <xref:System.String.Compare%2A?displayProperty=nameWithType> metody pro řazení jednotlivých prvků. Použití porovnávání zohledňující jazykovou verzi může být nebezpečné, pokud jsou prohledávány změny jazykové verze mezi časem, který je seřazen pole a jeho obsah. Například v následujícím kódu, ukládání a načítání provádět porovnávací metody, která je k dispozici implicitně `Thread.CurrentThread.CurrentCulture` vlastnost. Pokud jazykovou verzi může změnit mezi volání `StoreNames` a `DoesNameExist`, a zejména v případě, že je obsah pole jsou trvalé někde mezi dvěma voláními, binární vyhledávání může selhat.  
   
  [!code-csharp[Conceptual.Strings.BestPractices#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/indirect1.cs#7)]
  [!code-vb[Conceptual.Strings.BestPractices#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/indirect1.vb#7)]  
   
- V následujícím příkladu, který používá stejnou metodu pořadí (na jazykové verzi) porovnání řazení a hledání pole se zobrazí doporučená variace. Změna kódu se projeví na řádcích označených `Line A` a `Line B` v obou příkladech.  
+ V následujícím příkladu, který používá stejné metody porovnání podle pořadového čísla (nezávislých na jazykové verzi), řazení a vyhledávání pole se zobrazí doporučená varianta. Změna kódu se projeví v řádcích označené `Line A` a `Line B` v obou příkladech.  
   
  [!code-csharp[Conceptual.Strings.BestPractices#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/indirect1.cs#8)]
  [!code-vb[Conceptual.Strings.BestPractices#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/indirect1.vb#8)]  
   
- Pokud tato data je trvalá a přesunuta mezi jazykové verze, a řazení se používá k zobrazení těchto dat uživatele, můžete zvážit použití <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType>, který funguje jazykově pro lepší uživatelský výstup, ale je ovlivněna změnami v jazykovou verzi. Následující příklad změní dva předchozí příklady použití neutrální jazykovou verzi pro řazení a vyhledávání pole.  
+ Pokud tato data je trvalá a přesouvat mezi jazykové verze a řazení se používá k zobrazení těchto dat pro uživatele, můžete zvážit použití <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType>, jež pracuje lingvistických pro lepší uživatelský výstup je ale nebudou výpadkem ovlivněny změnami v jazykové verzi. Následující příklad upravuje tyto dva příklady předchozí použití invariantní jazykovou verzi pro řazení a vyhledávání pole.  
   
  [!code-csharp[Conceptual.Strings.BestPractices#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/indirect1.cs#9)]
  [!code-vb[Conceptual.Strings.BestPractices#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/indirect1.vb#9)]  
   
 ### <a name="collections-example-hashtable-constructor"></a>Příklad kolekcí: konstruktor zatřiďovací tabulky  
- Řetězce hash poskytují v druhém příkladu operace, která je ovlivněna způsobem ve kterém jsou porovnávány řetězce.  
+ Druhý příklad: operace, která je tím ovlivněná tím, jak ve kterém jsou řetězce porovnány algoritmu hash řetězců poskytuje.  
   
- Následující příklad vytvoří <xref:System.Collections.Hashtable> objekt předáním ho <xref:System.StringComparer> objekt, který je vrácený <xref:System.StringComparer.OrdinalIgnoreCase%2A?displayProperty=nameWithType> vlastnost. Protože třída <xref:System.StringComparer> je odvozena z <xref:System.StringComparer> implementuje <xref:System.Collections.IEqualityComparer> rozhraní, jeho <xref:System.Collections.IEqualityComparer.GetHashCode%2A> metoda se používá k výpočtu hash řetězců v zatřiďovací tabulce.  
+ Následující příklad vytvoří <xref:System.Collections.Hashtable> objekt ji <xref:System.StringComparer> objekt, který je vrácený <xref:System.StringComparer.OrdinalIgnoreCase%2A?displayProperty=nameWithType> vlastnost. Protože třída <xref:System.StringComparer> , která je odvozena od <xref:System.StringComparer> implementuje <xref:System.Collections.IEqualityComparer> rozhraní, jeho <xref:System.Collections.IEqualityComparer.GetHashCode%2A> metoda se používá k výpočtu kódů hash řetězců v zatřiďovací tabulce.  
   
  [!code-csharp[Conceptual.Strings.BestPractices#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/indirect2.cs#10)]
  [!code-vb[Conceptual.Strings.BestPractices#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/indirect2.vb#10)]  
@@ -342,22 +345,22 @@ ms.locfileid: "33579727"
   
 <a name="Formatted"></a>   
 ## <a name="displaying-and-persisting-formatted-data"></a>Zobrazení a uchování formátovaných dat  
- Pokud má uživatelům zobrazit jiné než řetězec data, jako jsou čísla a data a časy, formátu je pomocí nastavení jazykové verze uživatele. Ve výchozím nastavení <xref:System.String.Format%2A?displayProperty=nameWithType> metoda a `ToString` metody číselnými typy a typy data a času použít pro formátování operations jazykové verze aktuálního vlákna. K explicitnímu zadání že formátování metoda by měla používat aktuální jazykovou verzi, můžete volat přetížení formátování metodu, která má `provider` parametr, například <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> nebo <xref:System.DateTime.ToString%28System.IFormatProvider%29?displayProperty=nameWithType>, možností a předejte ji <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost.  
+ Při zobrazení neřetězcová data, jako je například čísla a kalendářní data a časy pro uživatele, naformátujte s použitím nastavení jazykové verze uživatele. Ve výchozím nastavení <xref:System.String.Format%2A?displayProperty=nameWithType> metoda a `ToString` metody číselné typy a typy data a času používají aktuální jazykovou verzi vlákna pro operace formátování. Explicitně určit, že metoda formátování používejte aktuální jazykovou verzi, můžete volat přetížení metody pro formátování, který má `provider` parametr, například <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> nebo <xref:System.DateTime.ToString%28System.IFormatProvider%29?displayProperty=nameWithType>a předat ji <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost.  
   
- Jiné než řetězec dat můžete zachovat jako binární data, nebo jako formátovaná data. Pokud zvolíte možnost Uložit jako formátovaných dat, by měly volat formátování přetížení metody, která zahrnuje `provider` parametr a předejte ji <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost. Neutrální jazykovou verzi poskytuje konzistentní formát pro formátovaných dat, která je nezávislá jazykovou verzi a počítače. Naproti tomu zachování dat, který je naformátovaný pomocí jazykové verze než neutrální jazykovou verzi má několik omezení:  
+ Jako binární data nebo jako formátovaná data je možné zachovat neřetězcová data. Pokud se rozhodnete ji uložit jako formátovaných dat, měli byste zavolat formátování přetížení metody, která zahrnuje `provider` parametr a předat ji <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost. Neutrální jazykové verze poskytuje konzistentní formát pro formátovaných dat, který je nezávislý na jazykové verzi a počítače. Naproti tomu zachovává data, který je naformátovaný pomocí jazykové verze než neutrální jazykové verze má několik omezení:  
   
--   Data jsou pravděpodobně nebude možné použít, pokud načtením v systému, který má jinou jazykovou verzi, nebo pokud je uživatel v aktuálním systému změní aktuální jazykovou verzi a pokusí se načíst data.  
+-   Data jsou pravděpodobně nebude možné použít, pokud je načten v systému, který má jinou jazykovou verzi, nebo pokud uživatel aktuálního systému změní aktuální jazykovou verzi a pokusí se načíst data.  
   
--   Vlastnosti culture na konkrétním počítači se může lišit od standardních hodnot. Kdykoli může uživatel přizpůsobit zobrazení jazykové nastavení. Z toho důvodu formátovaných dat, který je uložený v systému nemusí být po čitelné uživatel upravuje nastavení jazykové verze. Přenositelnost formátovaných dat mezi počítači je pravděpodobně i omezenější.  
+-   Vlastnosti v určitém počítači jazykové verze se může lišit od standardních hodnot. V každém okamžiku může uživatel přizpůsobit nastavení zobrazení zohledňující jazykovou verzi. Z tohoto důvodu nemusí být formátovaná data, která je uložena v systému čitelné po uživatel upraví nastavení jazykové verze. Přenositelnost formátovaných dat mezi počítači by mohla být ještě více omezit.  
   
--   Mezinárodní, regionální nebo národní standardy, které řídí formátování čísel nebo data a časy časem změnit a tyto změny jsou součástí aktualizací operačního systému Windows. Při změně konvence formátování, může přestat data, která byla formátována pomocí předchozí konvence nečitelná.  
+-   Mezinárodní, místní nebo národní standardy, které řídí formátování čísla nebo kalendářní data a časy v průběhu času měnit a tyto změny jsou součástí aktualizací operačního systému Windows. Při změně konvence formátování, může stává se nečitelnou dat, který se naformátoval pomocí předchozí konvencí.  
   
- Následující příklad ilustruje omezenou přenositelnost, která je výsledkem použití formátování jazykové uchovávat data. Příklad uloží do souboru pole hodnoty data a času. Tyto jsou formátovaná pomocí konvencí jazykové verze Angličtina (Spojené státy). Po aplikaci změní jazykové verze aktuálního vlákna francouzština (Švýcarska), se pokusí načíst uložené hodnoty pomocí konvencí formátování aktuální jazykovou verzi. Pokus o čtení dat dvě položky vyvolává <xref:System.FormatException> výjimka a pole data teď obsahuje dvě nesprávné prvky, které se rovnají <xref:System.DateTime.MinValue>.  
+ Následující příklad ukazuje omezené přenositelnost, která je výsledkem použití formátování zohledňující jazykovou verzi uchovávat data. Příklad uloží do souboru pole hodnoty data a času. Tyto jsou formátovány pomocí úmluv jazykové verze Angličtina (Spojené státy). Po aplikaci se změní aktuální jazykovou verzi vlákna na Francouzština (Švýcarsko), pokusí se načíst uložené hodnoty pomocí formátovacích úmluv aktuální jazykové verze. Pokus o čtení dat dvě položky, vyvolá výjimku <xref:System.FormatException> výjimky a pole data nyní obsahuje dva nesprávné elementy, které se rovná <xref:System.DateTime.MinValue>.  
   
  [!code-csharp[Conceptual.Strings.BestPractices#21](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/persistence.cs#21)]
  [!code-vb[Conceptual.Strings.BestPractices#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/persistence.vb#21)]  
   
- Ale pokud nahradíte <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost s <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> v volání <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> a <xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>, trvalou datum a čas data úspěšně obnovena, jak ukazuje následující výstup.  
+ Ale pokud nahradíte <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost s <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> ve volání do <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> a <xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>, trvalý datum a čas, data se úspěšně obnovila, jak ukazuje následující výstup.  
   
 ```  
 06.05.1758 21:26  

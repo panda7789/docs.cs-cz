@@ -7,12 +7,12 @@ helpviewer_keywords:
 - where keyword [C#]
 - where clause [C#]
 ms.assetid: 7f9bf952-7744-4f91-b676-cddb55d107c3
-ms.openlocfilehash: bc040e17f5c612b9fc43a9ef24fb6f15f0942b8e
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 8607c79a8b1e9a9fd999e4f5b77ecfac786161b3
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39243991"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43003148"
 ---
 # <a name="where-clause-c-reference"></a>where – klauzule (Referenční dokumentace jazyka C#)
 `where` Klauzule se používá ve výrazu dotazu k určení, které elementy ze zdroje dat se vrátí ve výrazu dotazu. Použije se logická podmínka (*predikátu*) pro každý prvek zdroje (odkazuje proměnnou rozsahu) a vrátí těch, u kterých je zadaná podmínka pravdivá. Výraz jeden dotaz může obsahovat více `where` klauzule a jedna klauzule může obsahovat několik dílčích výrazů predikátu.  
@@ -39,10 +39,11 @@ ms.locfileid: "39243991"
   
  V době kompilace `where` – klíčové slovo se převede na volání <xref:System.Linq.Enumerable.Where%2A> metody standardního operátoru dotazu.  
   
-## <a name="see-also"></a>Viz také  
- [Klíčová slova dotazu (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)  
- [from – klauzule](../../../csharp/language-reference/keywords/from-clause.md)  
- [select – klauzule](../../../csharp/language-reference/keywords/select-clause.md)  
- [Filtrování dat](../../programming-guide/concepts/linq/filtering-data.md)  
- [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)  
- [Začínáme s dotazy LINQ v jazyce C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
+## <a name="see-also"></a>Viz také
+
+- [Klíčová slova dotazu (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)  
+- [from – klauzule](../../../csharp/language-reference/keywords/from-clause.md)  
+- [select – klauzule](../../../csharp/language-reference/keywords/select-clause.md)  
+- [Filtrování dat](../../programming-guide/concepts/linq/filtering-data.md)  
+- [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)  
+- [Začínáme s dotazy LINQ v jazyce C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)

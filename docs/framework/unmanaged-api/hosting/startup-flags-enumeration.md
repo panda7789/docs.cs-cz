@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bc1d3ffc34cd74d68bf10cb677b68f0a75bb7c67
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f4680187de7318a6438bf6a5e6bd7c5f3acd05c2
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444227"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42998900"
 ---
 # <a name="startupflags-enumeration"></a>STARTUP_FLAGS – výčet
-Obsahuje hodnoty, které označují chování při spouštění modulu common language runtime (CLR). Ve výchozím nastavení, uvolňování paměti je nesouběžného a to pouze v knihovně základní třída je načten do oblasti domény jazykově neutrální.  
+Obsahuje hodnoty, které označují chování při spouštění modulu common language runtime (CLR). Uvolňování paměti je standardně nesouběžné a pouze v knihovně základních tříd je načtena do doménově neutrální oblasti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -57,25 +57,25 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`STARTUP_CONCURRENT_GC`|Určuje, že má být použita souběžné uvolňování paměti. Volající požaduje serveru sestavení a souběžné uvolňování paměti na počítač s jedním procesorem, jsou sestavení pracovní stanice a nesouběžného uvolňování paměti Spusťte místo toho. **Poznámka:** souběžné uvolňování není podporována v aplikacích, které jsou spuštěny WOW64 x86 emulátoru na 64bitových systémech, které implementují architektuře Intel Itanium (dříve se označovaly jako platformu IA-64). Další informace o používání WOW64 v 64bitových systémech Windows najdete v tématu [spuštění 32bitové aplikace](http://msdn.microsoft.com/library/windows/desktop/aa384249.aspx).|  
-|`STARTUP_LOADER_OPTIMIZATION_MASK`|Určuje, že zavaděč optimalizace se probíhat.|  
-|`STARTUP_LOADER_OPTIMIZATION_SINGLE_DOMAIN`|Určuje, že žádné sestavení jsou načteny jako domény jazykově neutrální.|  
-|`STARTUP_LOADER_OPTIMIZATION_MULTI_DOMAIN`|Určuje, že jsou všechna sestavení načíst jako domény jazykově neutrální.|  
-|`STARTUP_LOADER_OPTIMIZATION_MULTI_DOMAIN_HOST`|Určuje, zda jsou načteny všechny sestavení se silným názvem, jako domény jazykově neutrální.|  
-|`STARTUP_LOADER_SAFEMODE`|Určí, že zásady verze CLR nebude použita na verzi předaná. Přesné verze zadaná CLR budou načteny. Shim nevyhodnocuje zásady, které určují nejnovější kompatibilní verzi.|  
-|`STARTUP_LOADER_SETPREFERENCE`|Určuje, že upřednostňované runtime budou nastavení, ale ve skutečnosti není spuštěna.|  
-|`STARTUP_SERVER_GC`|Určuje, že se použije uvolňování paměti serveru.|  
-|`STARTUP_HOARD_GC_VM`|Určuje, že uvolňování uchová virtuální adresu použitou.|  
-|`STARTUP_SINGLE_VERSION_HOSTING_INTERFACE`|Určuje, že kombinování hostingu rozhraní nebudou povolena.|  
-|`STARTUP_LEGACY_IMPERSONATION`|Určuje, že by neměl zosobnění toku přes asynchronní body ve výchozím nastavení.|  
-|`STARTUP_DISABLE_COMMITTHREADSTACK`|Určuje, že zásobníku úplné vlákno by neměl být potvrdit při spuštění vlákno.|  
-|`STARTUP_ALWAYSFLOW_IMPERSONATION`|Určuje, že spravované impersonations a impersonations dosáhnout pomocí platformy vyvolání bude procházet přes asynchronní body. Ve výchozím nastavení bude pouze spravované impersonations procházet přes asynchronní body.|  
-|`STARTUP_TRIM_GC_COMMIT`|Určuje, že uvolňování paměti použijí méně potvrdit místa při nedostatku systémové paměti. V tématu `gcTrimCommitOnLowMemory` v [optimalizace pro sdílené hostování webů](../../../../docs/standard/garbage-collection/optimization-for-shared-web-hosting.md).|  
-|`STARTUP_ETW`|Určuje, zda je povoleno trasování událostí pro Windows (ETW) pro běžné události modulu runtime jazyka. Počínaje Windows Vista, trasování událostí je vždy zapnutá, takže tento příznak nemá žádný vliv. V tématu [řízení přihlašování rozhraní .NET Framework](../../../../docs/framework/performance/controlling-logging.md).|  
-|`STARTUP_ARM`|Určuje, zda je povoleno sledování prostředků domény aplikace. Najdete v článku <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> vlastnost a [ \<appdomainresourcemonitoring – > Element](../../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md).|  
+|`STARTUP_CONCURRENT_GC`|Určuje, že má být použito souběžné uvolňování paměti. Pokud volající požaduje sestavení serveru a souběžné uvolňování paměti na počítači s jedním procesorem, sestavení pracovní stanice a nesouběžné uvolnění místo toho spuštěno. **Poznámka:** nepodporuje souběžné uvolňování paměti v aplikacích, které jsou spuštěny modulu WOW64 x86 emulátor v 64bitových systémech, které implementují Intel Itanium architekturu (dříve označovanou jako IA-64). Další informace o použití modulu WOW64 v 64bitových systémech Windows najdete v tématu [spuštění 32bitových aplikací](/windows/desktop/WinProg64/running-32-bit-applications).|  
+|`STARTUP_LOADER_OPTIMIZATION_MASK`|Určuje, že optimalizační zavaděč se vyskytují.|  
+|`STARTUP_LOADER_OPTIMIZATION_SINGLE_DOMAIN`|Určuje, že žádná sestavení nejsou načtena jako doménově neutrální.|  
+|`STARTUP_LOADER_OPTIMIZATION_MULTI_DOMAIN`|Určuje, že všechna sestavení jsou načtena jako doménově neutrální.|  
+|`STARTUP_LOADER_OPTIMIZATION_MULTI_DOMAIN_HOST`|Určuje, že všechna sestavení se silným názvem jsou načtena jako doménově neutrální.|  
+|`STARTUP_LOADER_SAFEMODE`|Určí, že zásada verze CLR nebude použita na předanou verzi. Přesnou verzi zadanou modulu CLR bude načtena. Překrytí nevyhodnocuje zásadu, aby určilo nejnovější kompatibilní verzi.|  
+|`STARTUP_LOADER_SETPREFERENCE`|Určuje, že upřednostňovaný modul runtime bude možné nastavit, ale ne spuštěn.|  
+|`STARTUP_SERVER_GC`|Určuje, že se použije uvolnění paměti serveru.|  
+|`STARTUP_HOARD_GC_VM`|Určuje, že uvolňování paměti zachová virtuální adresu použitou.|  
+|`STARTUP_SINGLE_VERSION_HOSTING_INTERFACE`|Určuje, že míchání hostitelského rozhraní nebude povoleno.|  
+|`STARTUP_LEGACY_IMPERSONATION`|Určuje, že by neměla zosobnění téct přes asynchronní body ve výchozím nastavení.|  
+|`STARTUP_DISABLE_COMMITTHREADSTACK`|Určuje, že zásobníku úplného vlákna by neměl být potvrzen při spuštění vlákna.|  
+|`STARTUP_ALWAYSFLOW_IMPERSONATION`|Určuje, že spravovaná zosobnění a zosobnění dosažená prostřednictvím platformy vyvolat budou téct přes asynchronní body. Ve výchozím nastavení budou pouze spravovaná zosobnění téct přes asynchronní body.|  
+|`STARTUP_TRIM_GC_COMMIT`|Určuje, že uvolňování paměti bude používat méně potvrzeného místa při nedostatku systémové paměti. Zobrazit `gcTrimCommitOnLowMemory` v [optimalizace pro sdílené hostování webů](../../../../docs/standard/garbage-collection/optimization-for-shared-web-hosting.md).|  
+|`STARTUP_ETW`|Určuje, že je povoleno trasování událostí pro Windows (ETW) pro common language runtime události. Od verze Windows Vista, je povoleno sledování událostí vždy, takže tento příznak nemá žádný vliv. Zobrazit [řízení přihlašování rozhraní .NET Framework](../../../../docs/framework/performance/controlling-logging.md).|  
+|`STARTUP_ARM`|Určuje, zda je povoleno sledování prostředků domény aplikace. Zobrazit <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> vlastnost a [ \<appdomainresourcemonitoring – > Element](../../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   

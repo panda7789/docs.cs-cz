@@ -1,5 +1,5 @@
 ---
-title: Property – příkaz
+title: Property – příkaz (Visual Basic)
 ms.date: 05/12/2018
 f1_keywords:
 - vb.PropertySet
@@ -11,15 +11,15 @@ helpviewer_keywords:
 - property procedures [Visual Basic], Property statements
 - Property keyword [Visual Basic]
 ms.assetid: 3155edaf-8ebd-45c6-9cef-11d5d2dc8d38
-ms.openlocfilehash: 3f3ced3f0c441518594820f75243c71fb0c3babd
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: 21ca15d6a6939d884c7e6abedc1f7919be079edd
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34235987"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42999522"
 ---
 # <a name="property-statement"></a>Property – příkaz
-Deklaruje název vlastnosti a vlastnosti postupy používají k ukládání a načítání hodnoty vlastnosti.  
+Deklaruje název vlastnosti a procedury vlastnosti používané k ukládání a načítání hodnoty vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,15 +44,15 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
 -   `attributelist`  
   
-     Volitelné. Seznam atributů, které platí pro tuto vlastnost nebo `Get` nebo `Set` postupu. V tématu [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).  
+     Volitelné. Seznam atributů, které se vztahují k této vlastnosti nebo `Get` nebo `Set` postup. Zobrazit [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).  
   
 -   `Default`  
   
-     Volitelné. Určuje, že je tato vlastnost Výchozí vlastnost pro třídu nebo strukturu, na kterém je definovaný. Výchozí vlastnosti musí přijmout parametry a může být nastavit a načíst bez zadání názvu vlastnosti. Pokud je deklarovat vlastnost jako `Default`, nemůžete použít `Private` na vlastnost nebo na některý z jeho procedury vlastností.  
+     Volitelné. Určuje, že tato vlastnost je výchozí vlastnost pro třídu nebo strukturu, na kterém je definována. Výchozí vlastnosti musí přijímat parametry a může být nastavit a načíst bez určení názvu vlastnosti. Je-li deklarována vlastnost jako `Default`, nemůžete použít `Private` na vlastnost nebo některý z jeho procedury vlastností.  
   
 -   `accessmodifier`  
   
-     Volitelné na `Property` příkaz a na maximálně jedno z `Get` a `Set` příkazy. Může být jedna z následujících akcí:  
+     Volitelné na `Property` příkazu a jenom jedna z `Get` a `Set` příkazy. Může být jedna z následujících akcí:  
   
     -   [Public](../../../visual-basic/language-reference/modifiers/public.md)  
   
@@ -62,11 +62,11 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
     -   [Private](../../../visual-basic/language-reference/modifiers/private.md)  
   
-    - [Chráněné Friend](../../language-reference/modifiers/protected-friend.md) 
+    - [Chráněné typu Friend](../../language-reference/modifiers/protected-friend.md) 
 
-    - [Privátní chráněný](../../language-reference/modifiers/private-protected.md)
+    - [Privátní, chráněné](../../language-reference/modifiers/private-protected.md)
   
-     V tématu [úrovně v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+     Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 -   `propertymodifiers`  
   
@@ -88,39 +88,39 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
 -   `Shared`  
   
-     Volitelné. V tématu [sdílené](../../../visual-basic/language-reference/modifiers/shared.md).  
+     Volitelné. Zobrazit [sdílené](../../../visual-basic/language-reference/modifiers/shared.md).  
   
 -   `Shadows`  
   
-     Volitelné. V tématu [stínů](../../../visual-basic/language-reference/modifiers/shadows.md).  
+     Volitelné. Zobrazit [stíny](../../../visual-basic/language-reference/modifiers/shadows.md).  
   
 -   `ReadOnly`  
   
-     Volitelné. V tématu [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).  
+     Volitelné. Zobrazit [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
 -   `WriteOnly`  
   
-     Volitelné. V tématu [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md).  
+     Volitelné. Zobrazit [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md).  
   
 -   `Iterator`  
   
-     Volitelné. V tématu [Iterator](../../../visual-basic/language-reference/modifiers/iterator.md).  
+     Volitelné. Zobrazit [iterátoru](../../../visual-basic/language-reference/modifiers/iterator.md).  
   
 -   `name`  
   
-     Požadováno. Název vlastnosti V tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+     Požadováno. Název vlastnosti Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
 -   `parameterlist`  
   
-     Volitelné. Seznam představující parametry této vlastnosti a možné další parametry místní názvy proměnných `Set` postupu. V tématu [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md).  
+     Volitelné. Seznam představující parametry této vlastnosti a je to možné další parametry místní názvy proměnných `Set` postup. Zobrazit [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md).  
   
 -   `returntype`  
   
-     Požadováno pokud `Option``Strict` je `On`. Datový typ hodnoty vrácené tuto vlastnost.  
+     Požadováno pokud `Option Strict` je `On`. Datový typ hodnoty vrácené touto vlastností.  
   
 -   `Implements`  
   
-     Volitelné. Označuje, že tato vlastnost implementuje jednu nebo více vlastností, každé z nich definované v rozhraní implementované obsahující třídu nebo strukturu tuto vlastnost. V tématu [implementuje příkaz](../../../visual-basic/language-reference/statements/implements-statement.md).  
+     Volitelné. Označuje, že tato vlastnost implementuje jednu nebo více vlastností, každý z nich definované v rozhraní implementované obsahující třídu nebo strukturu tuto vlastnost. Zobrazit [implementuje příkaz](../../../visual-basic/language-reference/statements/implements-statement.md).  
   
 -   `implementslist`  
   
@@ -128,82 +128,82 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
      `implementedproperty [ , implementedproperty ... ]`  
   
-     Každý `implementedproperty` má následující syntaxe a částí:  
+     Každý `implementedproperty` má následující syntaxi a části:  
   
      `interface.definedname`  
   
     |Část|Popis|  
     |---|---|  
-    |`interface`|Požadováno. Název rozhraní implementované tato vlastnost obsahující třídu nebo strukturu.|  
+    |`interface`|Požadováno. Název rozhraní implementovaná touto vlastností obsahující třídy nebo struktury.|  
     |`definedname`|Požadováno. Název, podle kterého je vlastnost definována v `interface`.|  
   
 -   `Get`  
   
-     Volitelné. Vyžaduje, pokud je vlastnost označena `WriteOnly`. Spustí `Get` procedury vlastnosti, která se používá k vrácení hodnoty vlastnosti.  
+     Volitelné. Povinné, pokud je vlastnost označena `WriteOnly`. Spustí `Get` procedura property, který se používá k vrácení hodnoty vlastnosti.  
   
 -   `statements`  
   
-     Volitelné. Blok příkazů ke spuštění v rámci `Get` nebo `Set` postupu.  
+     Volitelné. Blok příkazů ke spuštění v rámci `Get` nebo `Set` postup.  
   
 -   `End Get`  
   
-     Ukončí `Get` procedura property.  
+     Ukončuje `Get` procedura property.  
   
 -   `Set`  
   
-     Volitelné. Vyžaduje, pokud je vlastnost označena `ReadOnly`. Spustí `Set` procedury vlastnosti, která se používá k ukládání hodnotu vlastnosti.  
+     Volitelné. Povinné, pokud je vlastnost označena `ReadOnly`. Spustí `Set` procedura property, který se používá k uložení hodnoty vlastnosti.  
   
 -   `End Set`  
   
-     Ukončí `Set` procedura property.  
+     Ukončuje `Set` procedura property.  
   
 -   `End Property`  
   
      Ukončí definici této vlastnosti.  
   
 ## <a name="remarks"></a>Poznámky  
- `Property` Příkaz zavádí deklarace vlastnosti. Může mít vlastnost `Get` postupu (jen pro čtení), `Set` procedura (pouze pro zápis) nebo obě (pro čtení a zápis). Můžete vynechat `Get` a `Set` procedury při použití ve automaticky implementované vlastnosti. Další informace najdete v tématu [Auto-Implemented vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md).  
+ `Property` Příkaz zavádí deklaraci vlastnosti. Vlastnost může mít `Get` procedury (jen pro čtení), `Set` postupu (pouze pro zápis) nebo obě (čtení a zápis). Můžete vynechat `Get` a `Set` procedury při použití automaticky implementované vlastnosti. Další informace najdete v tématu [implemented Properties](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md).  
   
- Můžete použít `Property` jenom na úrovni třídy. To znamená *deklarace kontextu* pro vlastnost musí být třída, struktura, modul nebo rozhraní a nemůže být zdrojový soubor, obor názvů, postup nebo bloku. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+ Můžete použít `Property` pouze na úrovni třídy. To znamená, že *kontext deklarace* pro vlastnost musí být třída, struktura, modul nebo rozhraní a nemůže být zdrojový soubor, obor názvů, procedura nebo blok. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
   
- Ve výchozím nastavení použijte vlastnosti veřejný přístup. Úroveň přístupu vlastnosti s – modifikátor přístupu můžete upravit na `Property` příkaz a můžete případně upravit jeden z jeho vlastnost postupů k více omezující úroveň přístupu.  
+ Ve výchozím nastavení použijte vlastnosti veřejný přístup. Úroveň přístupu k vlastnosti s modifikátor přístupu můžete upravit na `Property` příkaz kde můžete volitelně nastavit jeden z jeho vlastnost postupy do více omezující úrovně přístupu.  
   
- Parametr, který se předá jazyka Visual Basic `Set` postup při přiřazení vlastnosti. Pokud nezadáte parametr pro `Set`, integrované vývojové prostředí (IDE) používá implicitní parametr s názvem `value`. Tento parametr obsahuje hodnota, která má být přiřazeno k vlastnosti. Obvykle uložte tuto hodnotu v privátní místní proměnné a obnoví v něm vždy, když `Get` procedura je volána.  
+ Visual Basic předá parametr `Set` postupu během přiřazení vlastnosti. Pokud nezadáte parametr `Set`, integrované vývojové prostředí (IDE) používá implicitní parametr s názvem `value`. Tento parametr obsahuje hodnotu pro přiřazení k vlastnosti. Obvykle tuto hodnotu v privátní místní proměnné a vrácení pokaždé, když `Get` volání procedury.  
   
-## <a name="rules"></a>Pravidla  
+## <a name="rules"></a>pravidla  
   
--   **Smíšenými úrovněmi přístupu.** Pokud definujete vlastnost pro čtení a zápis, Volitelně můžete zadat úroveň různý přístup pro buď `Get` nebo `Set` postup, ale ne obojí. Pokud to uděláte, musí být úroveň přístupu postup více omezující než úroveň přístupu vlastnosti. Například, pokud je deklarovaná vlastnost `Friend`, můžou deklarovat `Set` postup `Private`, ale ne `Public`.  
+-   **Smíšenými úrovněmi přístupu.** Pokud definujete vlastnosti pro čtení i zápis, Volitelně můžete zadat úroveň různý přístup pro buď `Get` nebo `Set` postup, ale ne obojí. Pokud to uděláte, musí být více omezující než úroveň přístupu vlastnosti úroveň řízení přístupu. Například, pokud je deklarována vlastnost `Friend`, lze deklarovat `Set` postup `Private`, ale ne `Public`.  
   
-     Pokud definujete `ReadOnly` nebo `WriteOnly` vlastnost, postup jedinou vlastností (`Get` nebo `Set`, v uvedeném pořadí) představuje všechny vlastnosti. Vzhledem k tomu, který se nastavuje dvě úrovně přístupu pro vlastnost nelze deklarovat různý přístup úroveň pro tento postup.  
+     Pokud definujete `ReadOnly` nebo `WriteOnly` vlastnosti, procedury jedné vlastnosti (`Get` nebo `Set`v uvedeném pořadí) představuje všechny vlastnosti. Úroveň různý přístup pro tento postup nemůže deklarovat, protože dvě úrovně přístupu pro vlastnost, která byste nastavili.  
   
--   **Návratový typ.** `Property` Příkaz můžou deklarovat datový typ hodnoty, vrátí hodnotu. Můžete zadat jakýkoli datový typ nebo název výčtu, struktura, třídy nebo rozhraní.  
+-   **Návratový typ.** `Property` Příkazu můžete deklarovat datový typ hodnoty vrácením. Můžete zadat libovolný datový typ nebo název výčtu, strukturu, třídu nebo rozhraní.  
   
      Pokud nezadáte `returntype`, vrátí vlastnost `Object`.  
   
--   **Implementace.** Pokud tuto vlastnost používá `Implements` – klíčové slovo, obsahující třídu nebo strukturu, musíte mít `Implements` bezprostředně za jeho `Class` nebo `Structure` příkaz. `Implements` Příkaz musí zahrnovat každé rozhraní zadaný v `implementslist`. Ale název, podle kterého rozhraní definuje `Property` (v `definedname`) nemusí být stejný jako název této vlastnosti (v `name`).  
+-   **Implementace.** Pokud tuto vlastnost používá `Implements` – klíčové slovo, obsahuje třídu nebo strukturu, musíte mít `Implements` příkaz ihned po jeho `Class` nebo `Structure` příkaz. `Implements` Příkazu musí obsahovat každé rozhraní, udávaná v `implementslist`. Ale název, pomocí kterého rozhraní definuje `Property` (v `definedname`) nebude muset být stejný jako název této vlastnosti (v `name`).  
   
 ## <a name="behavior"></a>Chování  
   
--   **Vrácení z procedury vlastnosti.** Když `Get` nebo `Set` postup vrátí kód volání, provádění pokračuje s příkazem následující příkaz, která je volána.  
+-   **Návrat z procedury vlastnosti.** Když `Get` nebo `Set` postup vrátí volajícímu kódu, provádění pokračuje s příkazu za příkazem, která je vyvolána.  
   
-     `Exit Property` a `Return` příkazy způsobí okamžité ukončení z procedury vlastnosti. Libovolný počet `Exit Property` a `Return` příkazy může vyskytovat kdekoli v postupu, a je možné kombinovat `Exit Property` a `Return` příkazy.  
+     `Exit Property` a `Return` příkazy způsobit okamžité ukončení z procedury vlastnosti. Libovolný počet `Exit Property` a `Return` příkazů může vyskytovat kdekoli v postupu, a je možné kombinovat `Exit Property` a `Return` příkazy.  
   
--   **Vrátí hodnotu.** Vrácení hodnoty z `Get` postup, můžete přiřadit hodnotu pro název vlastnosti nebo ji v zahrnout `Return` příkaz. Následující příklad přiřadí návratovou hodnotu pro název vlastnosti `quoteForTheDay` a použije je `Exit Property` příkaz, který má vrátit.  
+-   **Vrátí hodnotu.** Pro navrácení hodnoty z `Get` postup, můžete přiřadit hodnoty pro název vlastnosti, nebo ho v `Return` příkazu. Následující příklad přiřadí návratovou hodnotu pro název vlastnosti `quoteForTheDay` a použije je `Exit Property` příkazu vrátit.  
   
      [!code-vb[VbVbalrStatements#27](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_1.vb)]  
   
      [!code-vb[VbVbalrStatements#28](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_2.vb)]  
   
-     Pokud používáte `Exit Property` bez přiřazení hodnoty k `name`, `Get` postup vrátí výchozí hodnota pro typ dat vlastnosti.  
+     Pokud používáte `Exit Property` bez přiřazení hodnoty k `name`, `Get` procedura vrací výchozí hodnota pro typ dat vlastnosti.  
   
-     `Return` Příkaz ve stejnou dobu přiřazuje `Get` postup vracet hodnotu a ukončí proceduru. Následující příklad ukazuje to.  
+     `Return` Příkaz v době, přiřadí `Get` procedura vracet hodnotu a ukončí proceduru. Následující příklad ukazuje to.  
   
      [!code-vb[VbVbalrStatements#27](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_1.vb)]  
   
      [!code-vb[VbVbalrStatements#29](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_3.vb)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad deklaruje vlastnost v třídě.  
+ Následující příklad deklaruje vlastnosti ve třídě.  
   
  [!code-vb[VbVbalrStatements#51](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_4.vb)]  
   

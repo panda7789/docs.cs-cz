@@ -1,5 +1,5 @@
 ---
-title: Vývoj aplikací klienta se systémem Windows pomocí rozhraní .NET Framework
+title: Vývoj aplikací klienta se systémem Windows s využitím rozhraní .NET Framework
 ms.date: 01/09/2018
 helpviewer_keywords:
 - client application services
@@ -13,52 +13,52 @@ helpviewer_keywords:
 - Visual C#, creating applications
 - client/server applications, Windows applications
 ms.assetid: 2dfb50b7-5af2-4e12-9bbb-c5ade0e39a68
-ms.openlocfilehash: 279e0536f69ebd4b45d9458a88c4f930f6bb3262
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 987f8e25014e8ce6413c998f6eb78d821558ecec
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33389106"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42999692"
 ---
-# <a name="developing-client-applications-with-the-net-framework"></a>Vývoj klientských aplikací s rozhraním .NET Framework
+# <a name="developing-client-applications-with-the-net-framework"></a>Vývoj klientských aplikací s použitím rozhraní .NET Framework
 
-Existuje několik způsobů jak vyvíjet aplikace pro systém Windows s rozhraním .NET Framework. Můžete použít některou z těchto nástrojů a rozhraní: 
+Existuje několik způsobů, jak vyvíjet aplikace Windows využívající rozhraní .NET Framework. Můžete použít některý z těchto nástrojů a platforem: 
 
 * [Univerzální platforma Windows (UPW)](https://developer.microsoft.com/windows/apps)
 * [Windows Presentation Foundation (WPF)](../../docs/framework/wpf/index.md)
 * [Windows Forms](../../docs/framework/winforms/index.md)
 
-Tento oddíl obsahuje témata, které popisují, jak vytvářet aplikace pro systém Windows pomocí Windows Presentation Foundation nebo pomocí Windows Forms. Můžete však také vytvořit webových aplikací pomocí rozhraní .NET Framework a klientské aplikace pro počítače nebo zařízení, které dáte k dispozici prostřednictvím Microsoft Store.
+Tento oddíl obsahuje témata, která popisují, jak vytvářet aplikace pro systém Windows s použitím Windows Presentation Foundation nebo pomocí Windows Forms. Můžete ale také vytvořit webové aplikace pomocí rozhraní .NET Framework a klientských aplikací pro počítače nebo zařízení, které dáte k dispozici přes Microsoft Store.
  
 ## <a name="in-this-section"></a>V tomto oddílu
 
 [Windows Presentation Foundation](../../docs/framework/wpf/index.md)  
-Poskytuje informace o vývoji aplikací pomocí grafického subsystému WPF.
+Poskytuje informace o vývoji aplikací s použitím WPF.
 
 [Windows Forms](../../docs/framework/winforms/index.md)  
 Poskytuje informace o vývoji aplikací s použitím Windows Forms.
 
 [Technologie CCT (Common Client Technologies)](../../docs/framework/common-client-technologies/index.md)  
-Poskytuje informace o další technologie, které lze použít při vývoji klientských aplikací.
+Poskytuje informace o dalších technologiích, které se dá použít při vývoji klientských aplikací.
 
 ## <a name="related-sections"></a>Související oddíly
 
-[Univerzální platforma pro Windows](https://developer.microsoft.com/windows/apps)  
-Popisuje, jak vytvářet aplikace pro Windows 10, která můžete zpřístupnit uživatelům přes Windows Store.
+[Universal Windows Platform](https://developer.microsoft.com/windows/apps)  
+Popisuje, jak vytvářet aplikace pro Windows 10, která můžete zpřístupnit uživatelům prostřednictvím Windows Store.
 
-[.NET pro aplikace UWP](https://msdn.microsoft.com/library/windows/apps/mt185501.aspx)  
-Popisuje podporu rozhraní .NET Framework pro aplikace pro Store, které se dá nasadit na počítače se systémem Windows a zařízení.
+[.NET pro aplikace pro UPW](https://msdn.microsoft.com/library/windows/apps/mt185501.aspx)  
+Popisuje podporu rozhraní .NET Framework pro Store aplikace, které je možné nasadit do počítačů s Windows a zařízení.
 
-[Rozhraní API .NET pro Windows Phone Silverlight](https://docs.microsoft.com/en-us/previous-versions/windows/apps/jj207211\(v=vs.105\))  
-Uvádí API technologie .NET Framework, můžete použít pro vytváření aplikací s Windows Phone Silverlight.
+[Rozhraní .NET API pro Windows Phone Silverlight](https://docs.microsoft.com/previous-versions/windows/apps/jj207211\(v=vs.105\))  
+Zobrazí seznam API rozhraní .NET Framework můžete použít pro vytváření aplikací pro Windows Phone Silverlight.
   
 [Vývoj pro různé platformy](../../docs/standard/cross-platform/index.md)  
-Popisuje různé metody, které můžete použít rozhraní .NET Framework pro více typů aplikace klienta.
+Popisuje různé metody rozhraní .NET Framework můžete cílit na více typy klientských aplikací.
 
-[Začínáme s ASP.NET – webové servery](http://www.asp.net/get-started/websites)  
-Popisuje způsoby, jak můžete vyvíjet webové aplikace pomocí technologie ASP.NET.
+[Začínáme s weby ASP.NET](http://www.asp.net/get-started/websites)  
+Popisuje způsoby, kterými vám umožní vytvářet webové aplikace s využitím technologie ASP.NET.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 [.NET Standard](../../docs/standard/net-standard.md)  
 [Přehled](../../docs/framework/get-started/overview.md)  

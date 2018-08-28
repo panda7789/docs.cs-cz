@@ -1,6 +1,6 @@
 ---
 title: Funkce QualifierSet_BeginEnumeration (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce QualifierSet_BeginEnumeration obnoví enumerátor kvalifikátory objektu.
+description: Funkce QualifierSet_BeginEnumeration resetuje enumerátor kvalifikátory objektu.
 ms.date: 11/06/2017
 api_name:
 - QualifierSet_BeginEnumeration
@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1fac897f743ca452c38282143cdf822b682df1df
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2d20701237501834c611c4e498c39597cf275176
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33460112"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43001460"
 ---
 # <a name="qualifiersetbeginenumeration-function"></a>QualifierSet_BeginEnumeration – funkce
 Návrat na začátek výčtu enumerátor kvalifikátory objektu.  
@@ -41,45 +41,45 @@ HRESULT QualifierSet_BeginEnumeration (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`   
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`   
-[v] Ukazatel na [IWbemQualifierSet](https://msdn.microsoft.com/library/aa391860(v=vs.85).aspx) instance.
+[in] Ukazatel [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.
 
 `lFlags`   
-[v] Bitová kombinace příznaků nebo hodnoty, které jsou popsané v [poznámky](#remarks) oddíl, který určuje kvalifikátory zahrnout ve výčtu.
+[in] Bitová kombinace příznaků nebo podle hodnoty [poznámky](#remarks) oddíl, který určuje kvalifikátory zahrnout do výčtu.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `lFlags` Parametr není platný. |
-|`WBEM_E_UNEXPECTED` | 0x8004101d | Druhé volání `QualifierSet_BeginEnumeration` byl proveden bez použité volání [ `QualifierSet_EndEnumeration` ](qualifierset-endenumeration.md). |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Je k dispozici zahájíte nové – výčet není dostatek paměti. |
+|`WBEM_E_UNEXPECTED` | 0x8004101d | Druhé volání `QualifierSet_BeginEnumeration` proběhla bez opětovné volání [ `QualifierSet_EndEnumeration` ](qualifierset-endenumeration.md). |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici zahájíte nový výčet. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemQualifierSet::BeginEnumeration](https://msdn.microsoft.com/library/aa391861(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemQualifierSet::BeginEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-beginenumeration) metody.
 
-Výčet všech kvalifikátory na objekt, tato metoda musí být volána před prvním volání [QualifierSet_Next](qualifierset-next.md). Pořadí, ve kterém jsou uvedené kvalifikátory záruku, že se jako výchozí pro daný výčet.
+K vytvoření výčtu všech kvalifikátory pro objekt, musí tuto metodu volat před prvním volání [QualifierSet_Next](qualifierset-next.md). Pořadí, ve kterém jsou uvedené kvalifikátory je zaručeno, že bude neutrální pro daný výčet.
 
-Příznaky, které lze předat jako `lEnumFlags` argument jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty v kódu.   
+Příznaky, které mohou být předány jako `lEnumFlags` argument jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty ve vašem kódu.   
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |  | 0 | Vrátí názvy všech kvalifikátory. |
-| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Vraťte pouze názvy kvalifikátory specifické pro aktuální vlastnost nebo objekt. <br/> Pro vlastnost: vracet jenom kvalifikátory specifické pro vlastnost (včetně potlačení), a ne těchto kvalifikátory rozšíří z definice třídy. <br/> Pro instanci: vrátit pouze názvy kvalifikátor specifické pro instanci. <br/> Pro třídu: vracet jenom kvalifikátory specifické pro beiong třídy odvozené.
-|`WBEM_FLAG_PROPAGATED_ONLY` | 0x20 | Vraťte se rozšíří pouze názvy kvalifikátory z jiného objektu. <br/> Pro vlastnost: vrátit se rozšíří pouze kvalifikátory k této vlastnosti z definice třídy a ne z samotné vlastnosti. <br/> Pro instanci: vrátí jenom ty kvalifikátory rozšíří z definice třídy. <br/> Pro třídu: vrátit pouze názvy kvalifikátor zděděn od nadřazené třídy. |
+| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Vrátíte pouze názvy kvalifikátory konkrétní aktuální vlastnost nebo objekt. <br/> Pro vlastnost: vracet jenom v kvalifikátorech specifické pro vlastnost (včetně potlačení), a ne těchto kvalifikátory rozšířena z definice třídy. <br/> Pro instanci: vrátit pouze názvy instancí kvalifikátoru. <br/> Pro třídu: vracet jenom kvalifikátory jsou specifické pro beiong třída odvozena.
+|`WBEM_FLAG_PROPAGATED_ONLY` | 0x20 | Vrátit pouze názvy kvalifikátory rozšířena z jiného objektu. <br/> Pro vlastnost: vrátit jenom v kvalifikátorech rozšíří na tuto vlastnost z definice třídy a ne ty ze samotné vlastnosti. <br/> Pro instanci: vrátit pouze ty kvalifikátory rozšířena z definice třídy. <br/> Pro třídu: vrátit pouze názvy kvalifikátor zděděná z nadřazené třídy. |
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

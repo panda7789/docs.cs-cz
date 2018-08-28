@@ -7,22 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - BC31168
 ms.assetid: 45707363-55e4-4151-892d-d8729106355b
-ms.openlocfilehash: a784d305549df1035b60dc8f1585655023ed3406
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8546ed0a5032d93bcf7320c96424b02b3b6d5fa3
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33594306"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43000908"
 ---
 # <a name="xml-axis-properties-do-not-support-late-binding"></a>Vlastnosti osy XML nepodporují pozdní vazbu.
-Bylo odkazováno ve vlastnosti osy XML bez typu objektu.  
+Pro netypový kód objektu se odkazovalo vlastnosti osy XML.  
   
  **ID chyby:** BC31168  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Zajistěte, aby byl objekt silné typované <xref:System.Xml.Linq.XElement> objekt před odkazování na vlastnost osy XML.  
+-   Ujistěte se, že objekt silného typu <xref:System.Xml.Linq.XElement> objektu před odkazování na vlastnosti osy XML.  
   
 ## <a name="see-also"></a>Viz také  
- [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)  
+ [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)  
  [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)

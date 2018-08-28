@@ -1,6 +1,6 @@
 ---
 title: Funkce BeginMethodEnumeration (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce BeginMethodEnumeration začne výčet metod objektu
+description: Funkce BeginMethodEnumeration začíná výčet metod objektu
 ms.date: 11/06/2017
 api_name:
 - BeginMethodEnumeration
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d87627b8bb3414860d994273396dbb4e64acdea7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e69625184aca7d1ebd4bb0b7dc7c4958596b906a
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33459873"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43000340"
 ---
-# <a name="beginenumeration-function"></a>Funkce BeginEnumeration – funkce
-Zahájí výčet dostupné metody pro objekt.  
+# <a name="beginenumeration-function"></a>Funkce BeginEnumeration
+Začíná výčet dostupné metody pro objekt.  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
@@ -41,40 +41,40 @@ HRESULT BeginMethodEnumeration (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`  
-[v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
+[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `lEnumFlags`  
-[v] Nula (0) pro všechny metody nebo příznak, který určuje rozsah výčtu. Následující příznaky jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+[in] Nula (0) pro všechny metody nebo příznak, který určuje rozsah výčtu. Následující příznaky jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Omezte výčtu pro metody, které jsou definovány v vlastní třídy. |
-| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Omezte výčet vlastností, které se dědí z třídy base. |
+| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Omezte výčet metodám, které jsou definovány v samotné třídě. |
+| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Omezte výčet vlastností, které se dědí ze základní třídy. |
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `lEnnumFlags` není zadaný příznaky je nulová. |
+|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `lEnnumFlags` je nenulová a není součástí zadané příznaky. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemClassObject::BeginMethodEnumeration](https://msdn.microsoft.com/library/aa391435(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemClassObject::BeginMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-beginmethodenumeration) metody.
 
-Toto volání metody je podporována pouze, pokud se aktuální objekt definici třídy. Manipulace s metoda není k dispozici z [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) ukazatele, které odkazují na instancí. Pořadí, ve kterém jsou uvedené metody záruku, že se jako výchozí pro danou instanci [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx).
+Volání této metody je podporována pouze, pokud se aktuální objekt definice třídy. Zpracování metody není k dispozici [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ukazatele, které odkazují na instance. Pořadí, ve kterém jsou uvedené metody je zaručeno, že bude neutrální pro danou instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject).
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

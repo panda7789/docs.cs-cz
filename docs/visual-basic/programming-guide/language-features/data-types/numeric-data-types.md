@@ -23,60 +23,60 @@ helpviewer_keywords:
 - Single data type [Visual Basic], numeric types
 - Decimal data type [Visual Basic], numeric data types
 ms.assetid: a27bd4d0-7e14-43eb-9cc4-b42eaab323c9
-ms.openlocfilehash: 8fa88172c9914a071e1b24e959c9030e6d219a30
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6578a410e389a313b0bad70f043691240e288887
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33654200"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42999705"
 ---
 # <a name="numeric-data-types-visual-basic"></a>Numerické datové typy (Visual Basic)
-Visual Basic poskytuje několik *číselné datové typy* pro zpracování čísla v různých reprezentace. *Integrální* typy představují jenom celá čísla (kladnou, zápornou a nula), a *nonintegral* typy představují čísla s celým číslem a zlomkové části.  
+Visual Basic poskytuje několik *číselných datových typů* pro zpracování čísel v různé reprezentace. *Integrální* typy představují pouze celá čísla (kladná, záporná a nula), a *nonintegral* typy představují celé číslo a zlomkové části čísla.  
   
- Tabulka zobrazující porovnání vedle sebe Visual Basic – datové typy, najdete v části [datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md).  
+ Tabulka zobrazující vedle sebe porovnání datových typů jazyka Visual Basic, naleznete v tématu [datové typy](../../../../visual-basic/language-reference/data-types/index.md).  
   
 ## <a name="integral-numeric-types"></a>Integrální číselné typy  
  *Integrální datové typy* jsou ty, které představují pouze čísel bez zlomkové části.  
   
- *Podepsané* integrální datové typy jsou [SByte – datový typ](../../../../visual-basic/language-reference/data-types/sbyte-data-type.md) (8 bitů), [krátké datový typ](../../../../visual-basic/language-reference/data-types/short-data-type.md) (16 bitů), [Integer – datový typ](../../../../visual-basic/language-reference/data-types/integer-data-type.md) (32bitová verze) a [ Long – datový typ](../../../../visual-basic/language-reference/data-types/long-data-type.md) (64 bitů). Pokud proměnná obsahuje vždy celá čísla, nikoli desetinná čísla, deklarujte ji jako jeden z těchto typů.  
+ *Podepsané* integrální datové typy jsou [SByte – datový typ](../../../../visual-basic/language-reference/data-types/sbyte-data-type.md) (8 bitů), [krátký datový typ](../../../../visual-basic/language-reference/data-types/short-data-type.md) (16-bit), [Integer – datový typ](../../../../visual-basic/language-reference/data-types/integer-data-type.md) (32bitová verze) a [ Long – datový typ](../../../../visual-basic/language-reference/data-types/long-data-type.md) (64 bitů). Pokud proměnnou vždy uloží, celá čísla, spíše než desetinná čísla, deklarujte ho jako jeden z těchto typů.  
   
- *Nepodepsané* integrální typy jsou [Byte – datový typ](../../../../visual-basic/language-reference/data-types/byte-data-type.md) (8 bitů), [ushort – datový typ](../../../../visual-basic/language-reference/data-types/ushort-data-type.md) (16 bitů), [uinteger – datový typ](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md) (32bitová verze) a [ Ulong – datový typ](../../../../visual-basic/language-reference/data-types/ulong-data-type.md) (64 bitů). Pokud proměnná obsahuje binární data nebo data neznámé povahy, deklarujte ji jako jeden z těchto typů.  
+ *Bez znaménka* integrální typy jsou [Byte – datový typ](../../../../visual-basic/language-reference/data-types/byte-data-type.md) (8 bitů), [ushort – datový typ](../../../../visual-basic/language-reference/data-types/ushort-data-type.md) (16-bit), [uinteger – datový typ](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md) (32bitová verze) a [ Ulong – datový typ](../../../../visual-basic/language-reference/data-types/ulong-data-type.md) (64 bitů). Pokud proměnná obsahuje binární data nebo data neznámé fázi, deklarujte ho jako jeden z těchto typů.  
   
 ### <a name="performance"></a>Výkon  
- Aritmetické operace je rychlejší s integrální typy než jiných typů. Jsou nejrychlejší s `Integer` a `UInteger` typy v jazyce Visual Basic.  
+ Aritmetické operace jsou rychleji s využitím celočíselných typů než s jinými datovými typy. Jsou nejrychlejší `Integer` a `UInteger` typy v jazyce Visual Basic.  
   
-### <a name="large-integers"></a>Dlouhých celých čísel  
- Pokud potřebujete pro uložení celé číslo větší než `Integer` mohou být uloženy datový typ, můžete použít `Long` datový typ místo. `Long` proměnné mohou být uloženy čísla z-9,223,372,036,854,775,808 prostřednictvím 9,223,372,036,854,775,807. Operace s `Long` se nepatrně pomalejší v porovnání s `Integer`.  
+### <a name="large-integers"></a>Velkých celých čísel  
+ Pokud potřebujete k uložení celé číslo větší než `Integer` může obsahovat datový typ, můžete použít `Long` datový typ místo. `Long` proměnné můžou obsahovat čísla z-9,223,372,036,854,775,808 prostřednictvím 9,223,372,036,854,775,807. Operace s `Long` se nepatrně pomalejší v porovnání s `Integer`.  
   
- Pokud potřebujete i vyšší hodnoty, můžete použít [Decimal – datový typ](../../../../visual-basic/language-reference/data-types/decimal-data-type.md). Může obsahovat čísla z-79,228,162,514,264,337,593,543,950,335 prostřednictvím 79,228,162,514,264,337,593,543,950,335 v `Decimal` proměnnou, pokud se nepoužívá žádné desetinných míst. Ale operací s `Decimal` čísla je podstatně pomalejší než s žádným jiným typem číselná data.  
+ Pokud ještě větší hodnoty budete potřebovat, můžete použít [datový typ Decimal](../../../../visual-basic/language-reference/data-types/decimal-data-type.md). Může obsahovat čísla z-79,228,162,514,264,337,593,543,950,335 prostřednictvím 79,228,162,514,264,337,593,543,950,335 v `Decimal` proměnnou, pokud nepoužijete desetinná místa. Nicméně operace s `Decimal` čísla jsou mnohem pomalejší než s žádným jiným typem číselná data.  
   
-### <a name="small-integers"></a>Malá celá čísla  
- Pokud nepotřebujete plný rozsah `Integer` datového typu, můžete použít `Short` datového typu, která může pojmout celá čísla od-32 768 do 32 767. Pro nejmenší rozsah celých čísel `SByte` datový typ obsahuje celá čísla od -128 až 127. Pokud máte velký počet proměnných, které mají malý celá čísla, můžete modul common language runtime někdy uložit vaše `Short` a `SByte` proměnné efektivněji a uložte využití paměti. Ale operací s `Short` a `SByte` poněkud pomalejší, než se `Integer`.  
+### <a name="small-integers"></a>Malé celých čísel  
+ Pokud nepotřebujete celou škálu `Integer` datový typ, můžete použít `Short` datového typu, který může obsahovat celá čísla od-32 768 až 32 767. Pro nejmenší rozsah celých čísel `SByte` datového typu obsahuje celá čísla od -128 až 127. Pokud máte velký počet proměnné, které obsahují malé celých čísel, modul common language runtime může někdy ukládat vaše `Short` a `SByte` proměnné efektivněji a uložte si využití paměti. Nicméně operace s `Short` a `SByte` jsou o něco pomalejší než s `Integer`.  
   
 ### <a name="unsigned-integers"></a>Celá čísla bez znaménka  
- Pokud víte, že vaše proměnná nikdy musí obsahovat záporné číslo, můžete použít *typy bez znaménka*`Byte`, `UShort`, `UInteger`, a `ULong`. Každý z těchto typů dat mohou být uloženy kladné celé číslo dvakrát tak velké, jeho odpovídající podepsané typu (`SByte`, `Short`, `Integer`, a `Long`). Z hlediska výkonu je právě efektivní jako jeho odpovídající typ se znaménkem každého typu bez znaménka. Konkrétně `UInteger` sdílí s `Integer` rozdíl způsobená maximální efektivitou všechny základní číselné datové typy.  
+ Pokud víte, že vaše proměnná nikdy nemusí obsahovat záporné číslo, můžete použít *typy bez znaménka*`Byte`, `UShort`, `UInteger`, a `ULong`. Každý z těchto typů dat může obsahovat kladné celé číslo dvakrát zvětšit jak odpovídající typ se znaménkem (`SByte`, `Short`, `Integer`, a `Long`). Každý typ bez znaménka se z hlediska výkonu, přesně tak efektivní jako jeho odpovídající typ se znaménkem. Zejména `UInteger` sdílí s `Integer` rozlišení je nejúčinnější základní číselných datových typů.  
   
-## <a name="nonintegral-numeric-types"></a>Nonintegral číselnými typy  
- *Nonintegral datové typy* jsou ty, které představují čísla s celým číslem a zlomkové části.  
+## <a name="nonintegral-numeric-types"></a>Nonintegral číselné typy  
+ *Nonintegral datové typy* jsou ty, které představují číslice se celé číslo a zlomkové části.  
   
- Nonintegral číselné datové typy jsou `Decimal` (dlouhodobý bod 128-bit), [jeden datový typ](../../../../visual-basic/language-reference/data-types/single-data-type.md) (32bitová verze plovoucí desetinné čárky), a [dvojitý datový typ](../../../../visual-basic/language-reference/data-types/double-data-type.md) (64 bitů plovoucí desetinné čárky). Jsou všechny podepsané typy. Pokud proměnná může obsahovat zlomek, deklarujte ji jako jeden z těchto typů.  
+ Nonintegral číselné datové typy jsou `Decimal` (128bitové pevnému bodu) [jeden datový typ](../../../../visual-basic/language-reference/data-types/single-data-type.md) (32 bitů s plovoucí desetinnou čárkou bodu), a [datový typ Double](../../../../visual-basic/language-reference/data-types/double-data-type.md) (64 bitů s plovoucí desetinnou čárkou). Jsou všechny podepsané typy. Pokud proměnná může obsahovat zlomek, deklarujte ho jako jeden z těchto typů.  
   
- `Decimal` není typu data s plovoucí desetinnou čárkou. `Decimal` čísla mají binární celočíselná hodnota a škálování faktor celé číslo, která určuje, jaká část hodnoty je zlomek decimal.  
+ `Decimal` není typ s plovoucí desetinnou čárkou data. `Decimal` čísla mají binární celočíselnou hodnotou a škálovací faktor celého čísla, která určuje, jaká část hodnoty je desetinný zlomek.  
   
- Můžete použít `Decimal` proměnných pro hodnoty peníze. Výhoda spočívá v tom přesnost hodnoty. `Double` Datový typ je rychlejší a vyžaduje méně paměti, ale je předmětem zaokrouhlení chyby. `Decimal` Datový typ uchovává dokončení přesnost na 28 desetinná místa.  
+ Můžete použít `Decimal` proměnné pro peněžní hodnoty. Výhodou je přesnosti hodnoty. `Double` Datový typ je rychlejší a vyžaduje méně paměti, ale je v souladu s předešlo chybám při zaokrouhlování. `Decimal` Datový typ zachová úplný přesnost na 28 desetinná místa.  
   
- S plovoucí desetinnou čárkou (`Single` a `Double`) čísla mít větší rozsah než `Decimal` čísla, ale mohou být předmětem zaokrouhlení chyby. Typy s plovoucí desetinnou čárkou podporují menší počet platných číslic než `Decimal` , ale může představovat hodnoty větší rozsahem.  
+ S plovoucí desetinnou čárkou (`Single` a `Double`) čísla mají větší rozsah než `Decimal` čísla, ale může být v souladu s předešlo chybám při zaokrouhlování. Typy s plovoucí desetinnou čárkou podporují méně významných číslic než `Decimal` ale může představovat hodnoty větší velikosti.  
   
- Nonintegral číselné hodnoty může být vyjádřený jako mmmEeee, ve kterých je mmm *mantisa* (platných číslic) a je EEZ *exponent* (power 10). Nejvyšší kladné hodnoty nonintegral typy jsou 7.9228162514264337593543950335E + 28 pro `Decimal`, 3.4028235E + 38 pro `Single`a 1.79769313486231570E + 308 pro `Double`.  
+ Nonintegral číselných hodnot může být vyjádřený jako mmmEeee, ve kterých je mmm *mantisa* (významných číslic) a je EEZ *exponent* (násobky 10). Nejvyšší kladné hodnoty nonintegral typy jsou 7.9228162514264337593543950335E + 28 pro `Decimal`, 3.4028235E + 38 pro `Single`a 1.79769313486231570E + 308 pro `Double`.  
   
 ### <a name="performance"></a>Výkon  
- `Double` je nejúčinnější desetinné datové typy, protože procesory na aktuální platformy provádět operace s plovoucí desetinnou čárkou v dvojitou přesností. Ale operací s `Double` nejsou tak rychlý jako u celočíselných typů jako `Integer`.  
+ `Double` je nejefektivnější desetinné části datových typů, protože procesory na aktuální platformy provádět operace s plovoucí desetinnou čárkou v dvojité přesnosti. Nicméně operace s `Double` nejsou tak rychle, stejně jako u celočíselných typů, jako `Integer`.  
   
 ### <a name="small-magnitudes"></a>Malé veličin  
- Pro čísla s nejnižší možné hodnotou (nejblíže k 0) `Double` proměnné mohou být uloženy čísla co - 4.94065645841246544E-324 pro záporné hodnoty a 4.94065645841246544E-324 pro kladné hodnoty.  
+ Pro čísla s nejmenší možné velikost (nejbližší 0) `Double` proměnné můžou obsahovat čísla malá jako - 4.94065645841246544E-324 pro záporné hodnoty a 4.94065645841246544E-324 pro kladné hodnoty.  
   
-### <a name="small-fractional-numbers"></a>Malé desetinná čísla  
- Pokud nepotřebujete plný rozsah `Double` datového typu, můžete použít `Single` datového typu, která může pojmout čísla s plovoucí desetinnou čárkou od - 3.4028235E + 38 prostřednictvím 3.4028235E + 38. Nejmenší uskutečněných pro `Single` proměnné jsou – 1, 401298E-45 pro záporné hodnoty a 1, 401298E-45 pro kladné hodnoty. Pokud máte velký počet proměnných, které mají malý čísla s plovoucí desetinnou čárkou, modul CLR může někdy ukládat vaše `Single` proměnné efektivněji a uložte využití paměti.  
+### <a name="small-fractional-numbers"></a>Malé zlomkové číslice  
+ Pokud nepotřebujete celou škálu `Double` datový typ, můžete použít `Single` datového typu, který může obsahovat čísla s plovoucí desetinnou čárkou z - 3.4028235E + 38 prostřednictvím 3.4028235E + 38. Nejmenší řádově pro `Single` proměnné jsou – 1, 401298E-45 pro záporné hodnoty a 1, 401298E-45 pro kladné hodnoty. Pokud máte velký počet proměnné, které obsahují malé čísla s plovoucí desetinnou čárkou, modul common language runtime může někdy ukládat vaše `Single` proměnné efektivněji a uložte si využití paměti.  
   
 ## <a name="see-also"></a>Viz také  
  [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)  
