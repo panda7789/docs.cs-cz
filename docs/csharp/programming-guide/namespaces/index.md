@@ -6,42 +6,42 @@ helpviewer_keywords:
 - namespaces [C#]
 ms.assetid: b1c4ab46-3fad-4ffa-9deb-dd50a2d8c65a
 ms.openlocfilehash: 60e4c6e98ca9e71d1a095a0c7ee1df6be6d13f4b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33334347"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42934870"
 ---
 # <a name="namespaces-c-programming-guide"></a>Obory názvů (Průvodce programováním v C#)
-Obory názvů výraznou slouží v jazyce C# programování dvěma způsoby. Rozhraní .NET Framework nejprve používá obory názvů pro uspořádání mnoho tříd, následujícím způsobem:  
+Obory názvů často slouží v jazyce C# programming dvěma způsoby. Nejprve rozhraní .NET Framework používá obory názvů pro uspořádání mnoho tříd, následujícím způsobem:  
   
  [!code-csharp[csProgGuide#22](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/index_1.cs)]  
   
- `System` je obor názvů a `Console` je třída v daném oboru názvů. `using` – Klíčové slovo lze tak, aby úplný název není vyžadována, jako v následujícím příkladu:  
+ `System` obor názvů a `Console` je třída v tomto oboru názvů. `using` – Klíčové slovo je možné tak, že úplný název není povinné, jako v následujícím příkladu:  
   
  [!code-csharp[csProgGuide#1](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/index_2.cs)]  
   
  [!code-csharp[csProgGuide#25](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/index_3.cs)]  
   
- Další informace najdete v tématu [using – direktiva](../../../csharp/language-reference/keywords/using-directive.md).  
+ Další informace najdete v tématu [direktiva using](../../../csharp/language-reference/keywords/using-directive.md).  
   
- Druhý deklarace vlastní oborů názvů vám může pomoct řídit oboru názvů třídy a metody větší programovací projektů. Použití [obor názvů](../../../csharp/language-reference/keywords/namespace.md) – klíčové slovo k deklaraci oboru názvů, jako v následujícím příkladu:  
+ Za druhé deklarující vlastní obory názvů vám může pomoct určit obor názvů třídy a metody do větších programovací projektů. Použití [obor názvů](../../../csharp/language-reference/keywords/namespace.md) – klíčové slovo k deklarování oboru názvů, jako v následujícím příkladu:  
   
  [!code-csharp[csProgGuideNamespaces#6](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/index_4.cs)]  
   
-## <a name="namespaces-overview"></a>Přehled oborů názvů  
- Obory názvů mít následující vlastnosti:  
+## <a name="namespaces-overview"></a>Přehled názvových prostorů  
+ Obory názvů mají následující vlastnosti:  
   
--   Jejich uspořádání projekty velké kódu.  
+-   Organizují velkých kódových projektů.  
   
 -   Jsou oddělené pomocí `.` operátor.  
   
--   `using directive` Požadavek na zadejte název oboru názvů pro každou třídu, vyloučí.  
+-   `using directive` Požadavku k určení názvu oboru názvů pro každou třídu, vyloučí.  
   
--   `global` Obor názvů je obor názvů "root": `global::System` bude vždy odkaz na obor názvů rozhraní .NET Framework `System`.  
+-   `global` "Kořenový" obor názvů je obor názvů: `global::System` bude vždycky odkazovat na obor názvů rozhraní .NET Framework `System`.  
   
 ## <a name="related-sections"></a>Související oddíly  
- Najdete další informace o oborech názvů v následujících tématech:  
+ Zobrazit další informace o oborech názvů v následujících tématech:  
   
 -   [Použití oboru názvů](../../../csharp/programming-guide/namespaces/using-namespaces.md)  
   

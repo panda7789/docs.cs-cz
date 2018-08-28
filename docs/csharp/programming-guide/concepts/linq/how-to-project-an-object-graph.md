@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: projektu grafu objektu (C#)'
+title: 'Postupy: projektování grafu objektu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 293d15d5-3eaf-48de-9a02-3e13cb117b5b
 ms.openlocfilehash: 8a1eef77e1e4cb25ffed489c49311dd40f7c9b58
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33321610"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42932989"
 ---
-# <a name="how-to-project-an-object-graph-c"></a>Postupy: projektu grafu objektu (C#)
-Toto téma ukazuje, jak projektu nebo naplněn, grafu objektů ze souboru XML.  
+# <a name="how-to-project-an-object-graph-c"></a>Postupy: projektování grafu objektu (C#)
+Toto téma ukazuje, jak do projektu, nebo vyplnit, grafu objektů ze souboru XML.  
   
 ## <a name="example"></a>Příklad  
- Následující kód naplní grafu objektu s `Address`, `PurchaseOrder`, a `PurchaseOrderItem` třídy z [ukázkový soubor XML: typické nákupní objednávka (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md) dokumentu XML.  
+ Následující kód naplní grafu objektu s `Address`, `PurchaseOrder`, a `PurchaseOrderItem` třídy z [ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md) dokumentu XML.  
   
 ```csharp  
 class Address  
@@ -215,7 +215,7 @@ class Program {
 }  
 ```  
   
- V tomto příkladu, výsledek [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu se vrátí jako <xref:System.Collections.Generic.IEnumerable%601> z `PurchaseOrderItem`. Položky v `PurchaseOrder` třídy jsou typu <xref:System.Collections.Generic.IEnumerable%601> z `PurchaseOrderItem`. Kód používá <xref:System.Linq.Enumerable.ToList%2A> rozšíření metodu pro vytvoření <xref:System.Collections.Generic.List%601> kolekce z výsledků dotazu.  
+ V tomto příkladu, výsledek [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz se vrátí jako <xref:System.Collections.Generic.IEnumerable%601> z `PurchaseOrderItem`. Položky v `PurchaseOrder` třídy jsou typu <xref:System.Collections.Generic.IEnumerable%601> z `PurchaseOrderItem`. Tento kód použije <xref:System.Linq.Enumerable.ToList%2A> metodu rozšíření k vytvoření <xref:System.Collections.Generic.List%601> kolekce z výsledků dotazu.  
   
  Tento příklad vytvoří následující výstup:  
   
@@ -259,4 +259,4 @@ ShipDate: 5/21/1999
 ## <a name="see-also"></a>Viz také  
  <xref:System.Linq.Enumerable.Select%2A>  
  <xref:System.Linq.Enumerable.ToList%2A>  
- [Projekce a transformace (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+ [Projekce a transformace (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
