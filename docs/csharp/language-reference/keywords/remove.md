@@ -6,22 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - remove event accessor [C#]
 ms.assetid: c8223426-c17b-4fe2-8406-01564cf1dd2b
-ms.openlocfilehash: 16a169ce1a0ef5dbc29739b2d808acb19737669e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 245ef0a16fd2cec2f36c86dd0ac3b8838a76b02e
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33269116"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "42999768"
 ---
-# <a name="remove-c-reference"></a><span data-ttu-id="85327-102">remove (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="85327-102">remove (C# Reference)</span></span>
-<span data-ttu-id="85327-103">`remove` Kontextové klíčové slovo se používá k definování vlastní události přistupujícího objektu, která je volána, když kód klienta odhlásí vaše [událostí](../../../csharp/language-reference/keywords/event.md).</span><span class="sxs-lookup"><span data-stu-id="85327-103">The `remove` contextual keyword is used to define a custom event accessor that is invoked when client code unsubscribes from your [event](../../../csharp/language-reference/keywords/event.md).</span></span> <span data-ttu-id="85327-104">Pokud zadáte vlastní `remove` přistupující objekt, je třeba zadat také [přidat](../../../csharp/language-reference/keywords/add.md) přistupujícího objektu.</span><span class="sxs-lookup"><span data-stu-id="85327-104">If you supply a custom `remove` accessor, you must also supply an [add](../../../csharp/language-reference/keywords/add.md) accessor.</span></span>  
+# <a name="remove-c-reference"></a><span data-ttu-id="7b57a-102">remove (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="7b57a-102">remove (C# Reference)</span></span>
+<span data-ttu-id="7b57a-103">`remove` Kontextové klíčové slovo se používá k definování přístupový objekt vlastní událost, která je volána, když kód klienta ruší registraci z vaší [události](../../../csharp/language-reference/keywords/event.md).</span><span class="sxs-lookup"><span data-stu-id="7b57a-103">The `remove` contextual keyword is used to define a custom event accessor that is invoked when client code unsubscribes from your [event](../../../csharp/language-reference/keywords/event.md).</span></span> <span data-ttu-id="7b57a-104">Pokud zadáte vlastní `remove` přístupový objekt, je třeba zadat také [přidat](../../../csharp/language-reference/keywords/add.md) přistupujícího objektu.</span><span class="sxs-lookup"><span data-stu-id="7b57a-104">If you supply a custom `remove` accessor, you must also supply an [add](../../../csharp/language-reference/keywords/add.md) accessor.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="85327-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="85327-105">Example</span></span>  
- <span data-ttu-id="85327-106">Následující příklad ukazuje událost s vlastní [přidat](../../../csharp/language-reference/keywords/add.md) a `remove` přistupující objekty.</span><span class="sxs-lookup"><span data-stu-id="85327-106">The following example shows an event with custom [add](../../../csharp/language-reference/keywords/add.md) and `remove` accessors.</span></span> <span data-ttu-id="85327-107">Úplný příklad najdete v tématu [postupy: implementace událostí rozhraní](../../../csharp/programming-guide/events/how-to-implement-interface-events.md).</span><span class="sxs-lookup"><span data-stu-id="85327-107">For the full example, see [How to:  Implement Interface Events](../../../csharp/programming-guide/events/how-to-implement-interface-events.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="7b57a-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="7b57a-105">Example</span></span>  
+ <span data-ttu-id="7b57a-106">Následující příklad ukazuje událost s vlastní [přidat](../../../csharp/language-reference/keywords/add.md) a `remove` přistupující objekty.</span><span class="sxs-lookup"><span data-stu-id="7b57a-106">The following example shows an event with custom [add](../../../csharp/language-reference/keywords/add.md) and `remove` accessors.</span></span> <span data-ttu-id="7b57a-107">Úplný příklad naleznete v tématu [postupy: implementace událostí rozhraní](../../../csharp/programming-guide/events/how-to-implement-interface-events.md).</span><span class="sxs-lookup"><span data-stu-id="7b57a-107">For the full example, see [How to:  Implement Interface Events](../../../csharp/programming-guide/events/how-to-implement-interface-events.md).</span></span>  
   
  [!code-csharp[csrefKeywordsContextual#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/remove_1.cs)]  
   
- <span data-ttu-id="85327-108">Obvykle není potřeba zadat vlastní vlastních přístupových objektů událostí.</span><span class="sxs-lookup"><span data-stu-id="85327-108">You do not typically need to provide your own custom event accessors.</span></span> <span data-ttu-id="85327-109">Přístupové objekty, které automaticky generuje služba kompilátor po deklarování událost postačí pro většinu scénářů.</span><span class="sxs-lookup"><span data-stu-id="85327-109">The accessors that are automatically generated by the compiler when you declare an event are sufficient for most scenarios.</span></span>  
+ <span data-ttu-id="7b57a-108">Obvykle není potřeba poskytovat vlastní vlastních přístupových objektů událostí.</span><span class="sxs-lookup"><span data-stu-id="7b57a-108">You do not typically need to provide your own custom event accessors.</span></span> <span data-ttu-id="7b57a-109">Přístupové objekty, které jsou automaticky generovány v kompilátoru při deklaraci události postačí pro většinu scénářů.</span><span class="sxs-lookup"><span data-stu-id="7b57a-109">The accessors that are automatically generated by the compiler when you declare an event are sufficient for most scenarios.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="85327-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="85327-110">See Also</span></span>  
- [<span data-ttu-id="85327-111">Události</span><span class="sxs-lookup"><span data-stu-id="85327-111">Events</span></span>](../../../csharp/programming-guide/events/index.md)
+## <a name="see-also"></a><span data-ttu-id="7b57a-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="7b57a-110">See Also</span></span>
+
+- [<span data-ttu-id="7b57a-111">Události</span><span class="sxs-lookup"><span data-stu-id="7b57a-111">Events</span></span>](../../../csharp/programming-guide/events/index.md)
