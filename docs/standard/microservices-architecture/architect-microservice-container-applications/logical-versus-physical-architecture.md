@@ -1,39 +1,39 @@
 ---
-title: Logická architektura versus fyzické architektura
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Logická architektura versus fyzické architektura
+title: Logická architektura versus fyzická architektura
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Logická architektura versus fyzická architektura
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: d675ba753903e181c67712e34eea82fed72df0d7
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: ebbae336761c6fa7954862cd41052e8832bf8e77
+ms.sourcegitcommit: 875ecc3ab2437e299b1d50076bd9b878fa8c64de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105432"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43238413"
 ---
-# <a name="logical-architecture-versus-physical-architecture"></a>Logická architektura versus fyzické architektura
+# <a name="logical-architecture-versus-physical-architecture"></a>Logická architektura versus fyzická architektura
 
-Je užitečné v tomto okamžiku zastavit a diskutovat o rozdíl mezi Logická architektura a architektura fyzických a jak to platí pro návrh aplikace založené na mikroslužby.
+To je užitečné v tuto chvíli zastavit a diskutovat o rozdíl mezi logickou architekturu a fyzická architektura a jak to platí pro návrh aplikací založených na mikroslužbách.
 
-Chcete-li začít vytvářet mikroslužeb nevyžaduje použití žádné konkrétní technologie. Například Docker kontejnery nejsou povinné, aby bylo možné vytvořit architektura založená na mikroslužby. Tyto mikroslužeb by bylo možné spustit také jako prostý procesy. Mikroslužeb je logická architektura.
+Pokud chcete začít, vytváření mikroslužeb nevyžaduje použití libovolné konkrétní technologie. Kontejnery Dockeru, nejsou povinné, chcete-li vytvořit architektury založené na mikroslužbách. Tyto mikroslužeb může také spustit jako obyčejný procesy. Mikroslužby jsou logickou architekturu.
 
-Kromě toho i v případě mikroslužbu může fyzicky implementovaný jako jeden služby, proces nebo kontejneru (pro saké na jednoduchost, která se přístup použitý v původní verzi [eShopOnContainers](http://aka.ms/MicroservicesArchitecture)), tato rozdíly mezi mikroslužbu obchodní a fyzické služby nebo kontejneru nemusí nutně ve všech případech při sestavování rozsáhlých a komplexních aplikace skládá z mnoha desítek nebo dokonce stovky služby.
+Kromě toho i v případě mikroslužba by mohl fyzicky implementované jako jedinou službou, procesu nebo kontejneru (pro saké na jednoduchost, který je přístup provedených v počáteční verzi [aplikaci eShopOnContainers](http://aka.ms/MicroservicesArchitecture)), tento rozdíly mezi obchodní mikroslužeb a fyzické služby nebo kontejner nemusí nutně ve všech případech při sestavování rozsáhlý a komplexní aplikace složené z mnoha desítky nebo stovky služeb.
 
-To je, kdy je rozdíl mezi Logická architektura a architektura fyzických dané aplikace. Logická architektura a logické hranice systému nemapovaly nutně 1: 1 na architektuře fyzický nebo nasazení. K tomu může dojít, ale je často nepoužívá.
+Tady je rozdíl mezi logickou architekturu a fyzická architektura aplikací. Logická architektura a logické hranice systému nemapovaly nutně architektury fyzických nebo nasazení 1: 1. K tomu může dojít, ale často neexistuje.
 
-I když může být zjištění určitých mikroslužeb firmy nebo ohraničenou kontextů, neznamená to, vždycky je nejlepší způsob, jak je provede vytvořením jedné služby (např. pro ASP.NET Web API) nebo jeden kontejner Docker pro každou obchodní mikroslužby. Pravidlo oznámením každé obchodní mikroslužbu má implementovaný pomocí jedné služby nebo kontejner je příliš pevné.
+I když možná jste našli určité obchodní mikroslužby nebo ohraničených kontextech, neznamená to, vždycky je nejlepší způsob, jak je implementovat vytvořením jedné služby (například rozhraní ASP.NET Web API) nebo u jednotlivých mikroslužeb obchodní jediným kontejnerem Dockeru. S oznámením o jednotlivých mikroslužeb obchodní pravidla musí implementovat s využitím jedné služby nebo kontejner je příliš přísné.
 
-Proto mikroslužbu firmy nebo ohraničenou kontextu je logická architektura, která může být časově shodují (nebo ne) s architekturou fyzické. Důležité je, že obchodní mikroslužbu nebo ohraničenou kontextu musí být autonomního tím, že kód a stav, který má být nezávisle verzí, nasazení a škálovat.
+Proto mikroslužeb firmy nebo ohraničená kontext je logická architektura, která se může shodovat (nebo nemusíte) s fyzická architektura. Důležité je, že je obchodní mikroslužeb nebo ohraničená kontext autonomní tím, že kód a stav nezávisle vyvíjených, nasadit a škálovat.
 
-Jak ukazuje obrázek 4-8, mikroslužbu obchodní katalogu může skládat z několika služeb nebo procesů. Může jít o více služeb ASP.NET Web API nebo jakýkoli jiný druh služeb pomocí protokolu HTTP ani žádný jiný protokol. Služby je důležité, může sdílet stejná data, tak dlouho, dokud tyto služby jsou získá na ucelenosti s ohledem na stejné domény firmy.
+Jak ukazuje obrázek 4. – 8 mikroslužeb obchodní katalogu může obsahovat několik služeb nebo procesů. Může se jednat víc služeb ASP.NET Web API nebo jakýkoli jiný druh služby přes protokol HTTP nebo libovolného protokolu. Důležitější je služby může sdílet stejná data, pokud jsou tyto služby získá na ucelenosti s ohledem na stejné obchodní domény.
 
 ![](./media/image8.png)
 
-**Obrázek 4 – 8**. Mikroslužbu obchodní s několika fyzických služeb
+**Obrázek 4. – 8**. Obchodní mikroslužeb fyzické službami
 
-Služby v příkladu sdílet stejný datový model, protože webového rozhraní API služby cílem stejná data jako službu vyhledávání. Ano fyzické implementace mikroslužbu firmy, jsou rozdělení které tuto funkci, je možné škálovat, každý z těchto služeb interní nahoru nebo dolů podle potřeby. Možná webového rozhraní API služby obvykle vyžaduje více instancí než službu vyhledávání a naopak.)
+Služby v příkladu sdílet stejný datový model, protože služba webového rozhraní API, zaměřuje stejná data jako službu Search. Proto ve fyzické implementaci mikroslužeb obchodní rozdělujete, které tuto funkci, můžete škálovat každá z těchto interních služeb směrem nahoru nebo dolů podle potřeby. Možná službou webového rozhraní API obvykle vyžaduje více instancí služby vyhledávání, nebo naopak.
 
-Stručně řečeno Logická architektura mikroslužeb vždy nemá se shoduje s architekturou fyzické nasazení. V této příručce vždy, když jsme zmínili mikroslužbu, jsme znamená obchodní nebo logické mikroslužbu, která by mohla mapování na jeden nebo více služeb. Ve většině případů to bude jedné služby, ale může být více.
+Stručně řečeno logickou architekturu mikroslužeb vždy nemá shodovat se architektura fyzického nasazení. V této příručce se pokaždé, když jsme zmínili, mikroslužby, představuje obchodní nebo logické mikroslužeb, která může mapovat na jednu nebo víc služeb. Ve většině případů to bude jedinou službou, ale může být více.
 
 
 >[!div class="step-by-step"]

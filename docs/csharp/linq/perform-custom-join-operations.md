@@ -3,12 +3,12 @@ title: Provádění vlastních operací spojování (LINQ v JAZYKU C#)
 description: Zjistěte, jak k provádění vlastních operací spojování LINQ v jazyce C#.
 ms.date: 12/1/2016
 ms.assetid: 56a2a4a5-7299-497d-b3c3-23c848678911
-ms.openlocfilehash: 09ed0a202627a07ac8958de6ac46d7dc6c2837d0
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: a0e08396c006f68949357c50a28b3b0982f0dd83
+ms.sourcegitcommit: 875ecc3ab2437e299b1d50076bd9b878fa8c64de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403967"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43238427"
 ---
 # <a name="perform-custom-join-operations"></a>Provádění vlastních operací spojování
 
@@ -43,6 +43,6 @@ V následujícím příkladu musí dotaz spojení dvou sekvencí založené na p
 
 ## <a name="see-also"></a>Viz také:
 
-[LINQ (Language Integrated Query)](index.md)  
-[join – klauzule](../language-reference/keywords/join-clause.md)  
-[Řazení výsledků klauzule join](order-the-results-of-a-join-clause.md)  
+- [LINQ (Language Integrated Query)](index.md)  
+- [join – klauzule](../language-reference/keywords/join-clause.md)  
+- [Řazení výsledků klauzule join](order-the-results-of-a-join-clause.md)  

@@ -7,18 +7,18 @@ helpviewer_keywords:
 - qualified names [Visual Basic]
 ms.assetid: d6301709-f4cc-4b7a-b8ba-80898f14ab46
 ms.openlocfilehash: 18f9920891e35517efe7adcfd4c03e03ac771478
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 875ecc3ab2437e299b1d50076bd9b878fa8c64de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33655808"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43238534"
 ---
 # <a name="references-to-declared-elements-visual-basic"></a>Odkazy na deklarované elementy (Visual Basic)
-Pokud váš kód odkazoval element deklarované, Visual Basic – kompilátor odpovídá názvu ve vašem odkaz na odpovídající deklarace s tímto názvem. Když se stejným názvem je deklarován více než jeden element, můžete řídit, která z těchto elementů má odkazovat *opravňující* její název.  
+Pokud váš kód odkazuje na element deklarovaný, kompilátor jazyka Visual Basic odpovídá názvu v referenci na příslušné prohlášení s tímto názvem. Pokud je teď deklarována více než jeden element se stejným názvem, můžete určit, které z těchto elementů je odkazovat *oprávněným* jeho název.  
   
- Kompilátor se pokusí o porovnání název odkaz na název deklarace s *zpomalit*. To znamená, že začne s kódem odkazu a funguje i přes následných úrovně obsahující elementy.  
+ Kompilátor se pokusí porovnat název odkazu na deklarace názvu s *od nejužšího oboru po*. To znamená, že začne s kódem odkazu a funguje směrem ven. prostřednictvím po sobě jdoucích úrovně obsahující prvky.  
   
- Následující příklad ukazuje, odkazy na dvě proměnné se stejným názvem. V příkladu deklaruje dvě proměnné, každý s názvem `totalCount`, na různých úrovních oboru v modulu `container`. Při procesu `showCount` zobrazí `totalCount` bez kvalifikace, Visual Basic – kompilátor přeloží odkaz na prohlášení s zpomalit, a to místní deklarace uvnitř `showCount`. Po vyfiltrování `totalCount` s modulem obsahující `container`, kompilátor vyřeší odkaz na prohlášení k širší oboru.  
+ Následující příklad ukazuje, odkazy na dvě proměnné se stejným názvem. Příklad deklaruje dvě proměnné, každý s názvem `totalCount`, na různých úrovních oboru v modulu `container`. Když postup `showCount` zobrazí `totalCount` bez kvalifikace, kompilátor jazyka Visual Basic přeloží odkaz na prohlášení s zpomalit, a to místní deklarace uvnitř `showCount`. Když kvalifikuje `totalCount` s modulem obsahující `container`, přeloží kompilátor odkaz na prohlášení s širším rozsahem.  
   
 ```vb  
 ' Assume these two modules are both in the same assembly.  
@@ -41,16 +41,16 @@ Module callingModule
 End Module  
 ```  
   
-## <a name="qualifying-an-element-name"></a>Kvalifikující název elementu  
- Pokud chcete přepsat tento proces vyhledávání a zadejte název deklarované v širší oboru, je nutné *kvalifikaci* názvu s obsahující element širší oboru. V některých případech budete také muset kvalifikaci obsahující element.  
+## <a name="qualifying-an-element-name"></a>Název elementu kvalifikace  
+ Pokud chcete tento proces hledání a zadejte název deklarovaný v širším rozsahem je nutné *kvalifikovat* k názvu obsahující element širším rozsahem. V některých případech budete také muset kvalifikovat nadřazeného elementu.  
   
- Určení názvu způsob předcházející v příkazu zdroje s informacemi, které určuje, kde je definován cílový element. Tyto informace se nazývá *kvalifikace řetězec*. Může obsahovat jednu nebo více obory názvů a modul, třídy a struktury.  
+ Kvalifikováním názvu prostředky před ve vámi zdroje s informacemi, které určuje, kde je definován cílový element. Tyto informace se volá *kvalifikace řetězec*. Může obsahovat jednu nebo více oborů názvů a modulu, třídy nebo struktury.  
   
- Řetězec kvalifikace musí jednoznačně určovat modulu, třídu nebo strukturu obsahující cílový element. Kontejner může zase nacházet v jiné obsahující elementu, obvykle obor názvů. Možná budete muset zahrnout několik obsahující prvky kvalifikace řetězce.  
+ Řetězec kvalifikace musí jednoznačně určovat modulu, třídy nebo struktury obsahující cílového prvku. Kontejner může zase nacházet v jiné nadřazeného elementu, obvykle obor názvů. Možná budete muset obsahují několik obsahující prvky v řetězci kvalifikace.  
   
-#### <a name="to-access-a-declared-element-by-qualifying-its-name"></a>Pro přístup k deklarovaný element podle určení jeho názvu  
+#### <a name="to-access-a-declared-element-by-qualifying-its-name"></a>Pro přístup k element deklarovaný kvalifikováním názvu  
   
-1.  Určete umístění, ve kterém byla definována elementu. To může zahrnovat obor názvů nebo i hierarchie oborů názvů. V rámci oboru názvů nejnižší úroveň element musí být součástí modulu, třídu nebo strukturu.  
+1.  Určení umístění, ve kterém je definována elementu. To může zahrnovat obor názvů nebo dokonce hierarchie oborů názvů. V rámci oboru názvů nejnižší úrovně elementu musí být součástí modulu, třídy nebo struktury.  
   
     ```vb  
     ' Assume the following hierarchy exists outside your code.  
@@ -66,23 +66,23 @@ End Module
     End Namespace  
     ```  
   
-2.  Určete cestu kvalifikace podle umístění cílového elementu. Začněte s nejvyšší obor názvů, pokračovat na nejnižší úrovni obor názvů a končit modulu, třídu nebo strukturu obsahující cílový element. Každý prvek v cestě musí obsahovat elementu, který následuje.  
+2.  Určení kvalifikace cestu na základě umístění cílového prvku. Začněte s nejvyšší úrovně oboru názvů, přejít k nejnižší úrovni oboru názvů a končit modulu, třídy nebo struktury obsahující cílového prvku. Každý prvek v cestě musí obsahovat element, která ji následuje.  
   
      `outerSpace` → `innerSpace` → `holdsTotals` → `totals`  
   
-3.  Připravte cílový element kvalifikace řetězec. Umístěte období (`.`) po každý element v cestě. Aplikace musí mít přístup k každý element ve vašem kvalifikace řetězci.  
+3.  Řetězec kvalifikace Příprava cílového prvku. Umístit tečku (`.`) po každý prvek v cestě. Aplikace musí mít přístup na každý prvek v řetězci vaše kvalifikace.  
   
     ```vb  
     outerSpace.innerSpace.holdsTotals.totals.  
     ```  
   
-4.  Zápis výraz nebo příkaz přiřazení odkazující na cílový element běžným způsobem.  
+4.  Zápis výrazu nebo příkazu přiřazení odkazující na cílový element běžným způsobem.  
   
     ```vb  
     grandTotal = 9000  
     ```  
   
-5.  Zadejte před název cílový element kvalifikace řetězec. Název by měl splňovat okamžitě období (`.`) modulu, třídu nebo strukturu, která obsahuje element, který následuje.  
+5.  Zadejte před název elementu target řetězcem kvalifikace. Název by měl bezprostředně následuje po období (`.`) modulu, třídy nebo struktury, který obsahuje element, který následuje.  
   
     ```vb  
     ' Assume the following module is part of your code.  
@@ -93,9 +93,9 @@ End Module
     End Module  
     ```  
   
-6.  Kompilátor používá k nalezení deklaraci jasné, jednoznačným, ke kterému může porovnat odkaz na element target kvalifikace řetězec.  
+6.  Kompilátor používá k nalezení jednoznačnou, kompletní vymazat deklarace, na který může porovnat odkaz na element target řetězec kvalifikace.  
   
- Také může mít pro kvalifikaci odkaz na název, pokud má aplikace přístup k více než jeden programovací element, který má stejný název. Například <xref:System.Windows.Forms> a <xref:System.Web.UI.WebControls> obory názvů obě obsahují `Label` – třída (<xref:System.Windows.Forms.Label?displayProperty=nameWithType> a <xref:System.Web.UI.WebControls.Label?displayProperty=nameWithType>). Pokud vaše aplikace používá oba, nebo pokud definuje vlastní `Label` třídu, musí rozlišovat různými `Label` objekty. Alias oboru názvů nebo import zahrňte do deklarace proměnné. Následující příklad používá alias importu.  
+ Budete také muset kvalifikovat název odkazu, pokud má vaše aplikace přístup k více než jeden programový element, který má stejný název. Například <xref:System.Windows.Forms> a <xref:System.Web.UI.WebControls> obory názvů oba obsahují `Label` třídy (<xref:System.Windows.Forms.Label?displayProperty=nameWithType> a <xref:System.Web.UI.WebControls.Label?displayProperty=nameWithType>). Pokud vaše aplikace používá obě nebo pokud jej definuje vlastní `Label` třídy, musí rozlišovat mezi různými `Label` objekty. Alias oboru názvů nebo import zahrňte v deklaraci proměnné. Alias importu v následujícím příkladu.  
   
 ```vb  
 ' The following statement must precede all your declarations.  
@@ -104,21 +104,21 @@ Imports win = System.Windows.Forms, web = System.Web.UI.WebControls
 Dim winLabel As New win.Label()  
 ```  
   
-## <a name="members-of-other-containing-elements"></a>Členové další obsahující elementy  
- Pokud používáte sdíleném členem jiné třídu nebo strukturu, musíte nejprve před název člena s proměnnou nebo výraz, který odkazuje na instanci třídu nebo strukturu. V následujícím příkladu `demoClass` je instance třídy s názvem `class1`.  
+## <a name="members-of-other-containing-elements"></a>Další prvky obsahující členy  
+ Při použití nesdílené členem jiné třídy nebo struktury, musí nejdřív kvalifikovat název člena proměnné nebo výraz, který odkazuje na instanci třídy nebo struktury. V následujícím příkladu `demoClass` je instance třídy s názvem `class1`.  
   
 ```vb  
 Dim demoClass As class1 = New class1()  
 demoClass.someSub[(argumentlist)]  
 ```  
   
- Samotný název třídy nelze použít k vyfiltrování člena, který není [sdílené](../../../../visual-basic/language-reference/modifiers/shared.md). Je nutné nejprve vytvořit instanci v proměnné objektu (v tomto případě `demoClass`) a pak na ni odkazujte podle názvu proměnné.  
+ Samotný název třídy nelze použít k vyfiltrování člena, který není [Shared](../../../../visual-basic/language-reference/modifiers/shared.md). Musíte nejprve vytvořit instanci v proměnné objektu (v tomto případě `demoClass`) a pak na něj odkazovat podle názvu proměnné.  
   
- Pokud má třídu nebo strukturu `Shared` člen kvalifikovat tento člen s názvem třídu nebo strukturu, nebo proměnnou nebo výraz, který odkazuje na instanci.  
+ Pokud má třída nebo struktura `Shared` člen, se můžete kvalifikovat tento člen s názvem třídy nebo struktury nebo proměnné nebo výraz, který odkazuje na instanci.  
   
- Modul nemá žádné samostatné instance, a všichni její členové jsou `Shared` ve výchozím nastavení. Proto kvalifikaci modulu člen s názvem modulu.  
+ Modul nemá žádné samostatných instancí služby, a všechny její členy jsou `Shared` ve výchozím nastavení. Proto kvalifikovat člen modul s názvem modulu.  
   
- Následující příklad ukazuje kvalifikované odkazy na postupy člen modulu. V příkladu deklaruje dvě `Sub` postupy, jak s názvem `perform`, v různých modulů v projektu. Každé z nich lze zadat bez kvalifikace v jeho vlastní modul ale musí být kvalifikovaný, pokud na něj odkazovat z někde jinde. Protože konečné odkaz v `module3` není způsobilá `perform`, kompilátor nelze přeložit tento odkaz.  
+ Následující příklad ukazuje kvalifikované odkazy na postupy člen modulu. Příklad deklaruje dvě `Sub` postupy, oba s názvem `perform`, v různých modulů v projektu. Každý z nich mohou být zadány bez kvalifikace v rámci své vlastní modul však musí být kvalifikovaný, pokud na něj odkazovat z jakéhokoliv jiného místa. Vzhledem k tomu, že poslední odkaz v `module3` nesplňuje `perform`, kompilátor nemůže vyřešit tento odkaz.  
   
 ```vb  
 ' Assume these three modules are all in the same assembly.  
@@ -150,9 +150,9 @@ End Module
 ```  
   
 ## <a name="references-to-projects"></a>Odkazy na projekty  
- Použít [veřejné](../../../../visual-basic/language-reference/modifiers/public.md) elementy definovaný v jiném projektu, musíte nejprve nastavit *odkaz* do knihovny typ nebo sestavení tohoto projektu. Chcete-li nastavit odkaz, klikněte na tlačítko **přidat odkaz na** na **projektu** nabídky, nebo použijte [/Reference (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md) – možnost kompilátoru příkazového řádku.  
+ Použití [veřejné](../../../../visual-basic/language-reference/modifiers/public.md) prvky definované v jiném projektu, musíte nejprve nastavit *odkaz* pro tento projekt sestavení nebo typ knihovny. Nastavit odkaz, klikněte na tlačítko **přidat odkaz** na **projektu** nabídky, nebo použijte [/Reference (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md) – možnost kompilátoru příkazového řádku.  
   
- Například můžete použít model objektu XML [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Pokud nastavíte na odkaz <xref:System.Xml> obor názvů, můžete deklarovat a použít některou z jejích tříd, jako třeba <xref:System.Xml.XmlDocument>. Následující příklad používá <xref:System.Xml.XmlDocument>.  
+ Například můžete použít objektový model XML [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Pokud nastavíte na odkaz <xref:System.Xml> obor názvů, můžete deklarovat a použít některou z jeho třídy, jako například <xref:System.Xml.XmlDocument>. Následující příklad používá <xref:System.Xml.XmlDocument>.  
   
 ```vb  
 ' Assume this project has a reference to System.Xml  
@@ -160,8 +160,8 @@ End Module
 Dim xDoc As System.Xml.XmlDocument  
 ```  
   
-## <a name="importing-containing-elements"></a>Import obsahující elementy  
- Můžete použít [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) k *importovat* obory názvů, které obsahují moduly nebo třídy, které chcete použít. To umožňuje odkazovat na elementy definované v importovaných oboru názvů bez plně kvalifikovaného jejich názvy. Následující příklad přepíše předchozí příklad k importu <xref:System.Xml> oboru názvů.  
+## <a name="importing-containing-elements"></a>Import, který obsahuje prvky  
+ Můžete použít [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) k *importovat* obory názvů, které obsahují moduly nebo třídy, které chcete použít. To umožňuje odkazovat na prvky definované v importované oboru názvů bez plně kvalifikovaného jejich názvy. Následující příklad přepíše předchozí příklad import <xref:System.Xml> oboru názvů.  
   
 ```vb  
 ' Assume this project has a reference to System.Xml  
@@ -171,7 +171,7 @@ Imports System.Xml
 Dim xDoc As XmlDocument  
 ```  
   
- Kromě toho `Imports` můžete definovat příkaz *importovat alias* pro jednotlivé importované obory názvů. To můžete provést ve zdrojovém kódu kratší a snadněji číst. Následující příklad přepíše předchozí příklad použití `xD` jako alias <xref:System.Xml> oboru názvů.  
+ Kromě toho `Imports` příkazu můžete definovat *importovat alias* pro jednotlivé importované obory názvů. Díky tomu se zdrojový kód kratší a snadněji čitelné. Následující příklad přepíše předchozí příklad použití `xD` jako alias pro <xref:System.Xml> oboru názvů.  
   
 ```vb  
 ' Assume this project has a reference to System.Xml  
@@ -181,17 +181,17 @@ Imports xD = System.Xml
 Dim xDoc As xD.XmlDocument  
 ```  
   
- `Imports` Příkaz zpřístupnění elementů od jiné projekty do vaší aplikace. Nevyžaduje tedy místní nastavení odkaz. Import oboru názvů právě eliminuje požadavek na kvalifikaci názvy definované v daném oboru názvů.  
+ `Imports` Příkaz neprovede elementy z jiných projektů k dispozici pro vaši aplikaci. To znamená ho nepřijímá místo nastavení odkaz. Import oboru názvů jenom eliminuje nutnost kvalifikovat názvy definované v tomto oboru názvů.  
   
- Můžete také `Imports` příkaz k importu modulů, tříd, struktur a výčty. Potom můžete členy z těchto prvků importované bez kvalifikace. Však musí vždy kvalifikaci sdíleném členy třídy a struktury s proměnnou nebo výraz, který se vyhodnotí na instanci třídu nebo strukturu.  
+ Můžete také použít `Imports` smlouvu pro import modulů, třídy, struktury a výčty. Potom můžete členy z těchto prvků importované bez kvalifikace. Musíte však vždy kvalifikovat nesdílené členy třídy a struktury s proměnné nebo výraz, který na instance dané třídy nebo struktury.  
   
 ## <a name="naming-guidelines"></a>Pokyny pro pojmenování  
- Když definujete dvou nebo více elementům programování, které mají stejný název, *název nejednoznačnosti* může dojít při kompilátor pokusí přeložit odkaz na tento název. Pokud se více než jednu definici nachází v oboru, nebo pokud žádné definice není v oboru, odkaz je irresolvable. Příklad naleznete v části "Kvalifikovaný odkaz na příklad" na této stránce nápovědy.  
+ Při definování nejmíň dva programovací prvky, které mají stejný název, *název nejednoznačnost* může dojít, pokud se kompilátor pokusí přeložit odkaz na tento název. Pokud více než jednu definici je v oboru nebo pokud se žádná definice není v oboru, odkaz je nevyřešitelná. Příklad naleznete v části "Příklad kvalifikovaný odkaz" na tuto stránku nápovědy.  
   
- Mnohoznačnosti názvů se můžete vyhnout tím, že všechny elementy jedinečné názvy. Pak můžete nastavit odkaz na libovolný element, aniž by museli kvalifikaci stejný název jako obor názvů, modulu nebo třída. Můžete také sníží pravděpodobnost omylem odkazující na chybný element.  
+ Mnohoznačnosti názvů můžete vyhnout tím, že všechny prvky jedinečné názvy. Potom můžete vytvořit odkaz na libovolný element bez nutnosti kvalifikovat stejný název jako obor názvů, modulu nebo třídy. Také snížit riziko omylem odkazující na chybný element.  
   
 ## <a name="shadowing"></a>Stínový provoz  
- Když dva programovací elementy sdílet stejný název, jednu z nich můžete skrýt, nebo *stínové*, jiný. Element stíněné není k dispozici pro referenci; Místo toho že pokud váš kód používá název stíněné elementu, Visual Basic – kompilátor ho přeloží na stínového provozu elementu. Podrobnější vysvětlení s příklady najdete v tématu [stínový provoz v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
+ Když dva programovací prvky sdílí se stejným názvem, jeden z nich můžete skrýt, nebo *stínové*, druhou. Stínovaný prvek není k dispozici pro referenci; Místo toho pokud váš kód používá název stínovaný elementu, kompilátor jazyka Visual Basic to je řešeno do elementu stínového provozu. Podrobnější vysvětlení s příklady najdete v tématu [stínění v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
