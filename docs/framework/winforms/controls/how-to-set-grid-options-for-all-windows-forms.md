@@ -8,26 +8,26 @@ helpviewer_keywords:
 - Windows Forms, grid options in designer
 - Windows Forms Designer
 ms.assetid: 36967466-1dfd-4fae-a7f1-7bf2cbc94048
-ms.openlocfilehash: 663e816cdc31ed7854f7ebd060bffcfa5b85f475
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f1779752cea467cbd7ee25235821ca99fc5cbdb5
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33535022"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43253349"
 ---
 # <a name="how-to-set-grid-options-for-all-windows-forms"></a>Postupy: Nastavení možností mřížky pro všechny formuláře Windows
-Jak se používá pro práci ve vývojovém prostředí sady Visual Studio, můžete nastavit předvolby pro všechny formuláře a projekty, se kterými můžete pracovat v Návrháři formulářů Windows.  
+Se používá k práce ve vývojovém prostředí sady Visual Studio, můžete nastavit předvolby pro všechny formuláře a projekty, které můžete pracovat v Návrháři formulářů Windows.  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
-### <a name="to-set-global-windows-forms-options"></a>Nastavení možností globální Windows Forms  
+### <a name="to-set-global-windows-forms-options"></a>Chcete-li nastavit globální možnosti Windows Forms  
   
 1.  Z **nástroje** nabídce vyberte možnost **možnosti**.  
   
-2.  V levém podokně **možnosti** dialogové okno, klikněte na tlačítko **Návrhář formulářů Windows**.  
+2.  V levém podokně **možnosti** dialogové okno, klikněte na tlačítko **Návrháře formulářů Windows**.  
   
-     V pravém podokně v části **nastavení rozložení** záhlaví, můžete nastavit výchozí nastavení mřížky pro všechny nové formuláře vytvoříte. Tato nastavení zahrnují velikost mřížky, zda se ovládací prvky přichytí k němu a zda je na ve výchozím nastavení. Kromě toho můžete vybrat mezi **SnapToGrid** a **zarovnávacích čar** režimech rozložení. Další informace o zarovnávacích čar, najdete v části [návod: uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md).  
+     V pravém podokně v části **nastavení rozložení** záhlaví, můžete nastavit výchozí nastavení mřížky pro všechny nové formuláře můžete vytvořit. Tato nastavení zahrnují velikost mřížky, zda se ovládací prvky přichytí k němu a zda je na ve výchozím nastavení. Kromě toho můžete vybrat mezi **SnapToGrid** a **zarovnávacích čar** režimech rozložení. Další informace o zarovnávacích čar najdete v tématu [návod: uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  

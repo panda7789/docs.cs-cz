@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - CS3024
 ms.assetid: fef9db31-9a7f-42d5-ad37-3e7faf661f95
-ms.openlocfilehash: c4c2f915d6172e3c30fc32c5c57fe9921c3f915d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5d8781117b80dbebe6a01488b8bd66feb12d3e3c
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33280342"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43252910"
 ---
 # <a name="compiler-warning-cs3024"></a>CS3024 upozornění kompilátoru
-Omezení typu "typ" není kompatibilní se specifikací CLS.  
+Typ omezení 'type' není kompatibilní se Specifikací CLS.  
   
- Kompilátor vydává toto upozornění, protože použití jiných kompatibilní se specifikací CLS typu jako omezení obecného typu může způsobit, že znemožňuje, aby kód napsaný v některých jazycích využívat obecná třída.  
+ Kompilátor toto upozornění vydá, protože použití typu bez-kompatibilní se Specifikací CLS jako omezení obecného typu může znemožnit pro kód napsaný v některých jazycích využívat obecná třída.  
   
-### <a name="to-eliminate-this-warning"></a>Chcete-li eliminovat toto upozornění  
+### <a name="to-eliminate-this-warning"></a>Chcete-li odstranit toto upozornění  
   
-1.  Kompatibilní se specifikací CLS typ použijte pro omezení typu.  
+1.  Kompatibilní se Specifikací CLS typ použijte pro omezení typu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří CS3024 v několika umístěních:  
+ Následující příklad generuje CS3024 v několika umístěních:  
   
 ```csharp  
 // cs3024.cs  
@@ -55,5 +55,6 @@ public class Test
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Omezení parametrů typů](../../csharp/programming-guide/generics/constraints-on-type-parameters.md)
+## <a name="see-also"></a>Viz také
+
+- [Omezení parametrů typů](../../csharp/programming-guide/generics/constraints-on-type-parameters.md)

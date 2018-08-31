@@ -3,14 +3,14 @@ title: Přehled Global.JSON
 description: Zjistěte, jak použít soubor global.json se nastavit verzi .NET Core SDK, při spuštění příkazů rozhraní příkazového řádku .NET Core.
 author: mairaw
 ms.author: mairaw
-ms.date: 07/02/2018
+ms.date: 07/30/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: a7c9301e1beea49eebace5c8f8a7d159a8c12466
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 8241b3afb518acf237c7b6181085e19576e5ce2f
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37936968"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43252957"
 ---
 # <a name="globaljson-overview"></a>Přehled Global.JSON
 
@@ -103,8 +103,8 @@ Toto upozornění signalizuje, že váš projekt se kompiluje ve verzi preview s
 > [!WARNING]
 > Při spuštění projektu "{výchozí projekt}" cíleného na rozhraní framework '. NETCoreApp' verze {targetFrameworkVersion}. Tato verze nástroje příkazového řádku .NET Core Entity Framework podporuje pouze verze 2.0 nebo vyšší. Informace o používání starší verze nástrojů najdete v tématu https://go.microsoft.com/fwlink/?linkid=871254
 
-Spouští se sadou .NET Core SDK 2.1 (vs. 2.1.300) `dotnet ef` příkaz je zahrnutý v sadě SDK. Toto upozornění signalizuje, že váš projekt cílí na EF Core 1.0 a 1.1, který není kompatibilní s .NET Core SDK 2.1 a novějších verzích. Chcete-li zkompilovat váš projekt, nainstalujte .NET Core SDK 2.0 (vs. 2.1.201) a starších na vašem počítači. Další informace najdete v tématu [nástroje příkazového řádku .NET Core EF](/ef/core/miscellaneous/cli/dotnet).
+Spouští se sadou .NET Core SDK 2.1 (vs. 2.1.300) `dotnet ef` příkaz je zahrnutý v sadě SDK. Toto upozornění signalizuje, že váš projekt cílí na EF Core 1.0 a 1.1, který není kompatibilní s .NET Core SDK 2.1 a novějších verzích. Chcete-li zkompilovat váš projekt, nainstalujte .NET Core SDK 2.0 (vs. 2.1.201) a starších na vašem počítači a definovat požadovanou verzi sady SDK pomocí *global.json* souboru. Další informace o `dotnet ef` naleznete [nástroje příkazového řádku .NET Core EF](/ef/core/miscellaneous/cli/dotnet).
 
 ## <a name="see-also"></a>Viz také:
 
-[Způsob řešení projekt sady SDK](/visualstudio/msbuild/how-to-use-project-sdk#how-project-sdks-are-resolved)
+* [Způsob řešení projekt sady SDK](/visualstudio/msbuild/how-to-use-project-sdk#how-project-sdks-are-resolved)

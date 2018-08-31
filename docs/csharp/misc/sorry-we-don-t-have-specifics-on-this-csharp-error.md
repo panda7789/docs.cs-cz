@@ -1,5 +1,5 @@
 ---
-title: Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě C#
+title: Je nám líto, ale můžeme zadávat&#39;nemá podrobnosti o této chybě C#
 ms.date: 07/20/2015
 f1_keywords:
 - CS1583
@@ -882,32 +882,33 @@ f1_keywords:
 helpviewer_keywords:
 - errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
-ms.openlocfilehash: 5e9c0aff2df5c46e707fa9f85506758327b58d80
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 81b33378519747060e604610ac1f3b9090332c11
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33314067"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43253651"
 ---
-# <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě C#
-Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete hledat text chyby číslo a zpráva k nalezení informací na webu. Nebo můžete požádat jinými vývojáři pomocí jedné z těchto fóra:  
+# <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>Je nám líto, ale můžeme zadávat&#39;nemá podrobnosti o této chybě C#
+Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete vyhledat text chyby číslo a zprávou k nalezení informací o na webu. Nebo můžete požádat o další vývojáři pomocí jedné z těchto fór:  
   
  [Jazyk Visual C#](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharplanguage)  
- Poskytuje fórum pro dotazy týkající se a v obecných diskusích syntaxe jazyka Visual C# a kompilátoru.  
+ Poskytuje diskusní fórum pro otázky týkající se obecné diskuse o kompilátoru a syntaxi jazyka Visual C#.  
   
- [Visual C# IDE](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharpide)  
- Poskytuje fórum pro dotazy o tom, jak fungují v prostředí Visual Studio.  
+ [Integrované vývojové prostředí Visual C#](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharpide)  
+ Poskytuje diskusní fórum pro otázky týkající se postupu při práci v prostředí sady Visual Studio.  
   
  [Visual C# obecné](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=csharpgeneral)  
- Poskytuje fórum pro otázky o a problémů s Visual C#, která nejsou popsané v dalších fóra.  
+ Poskytuje diskusní fórum pro otázky o a problémy s Visual C#, které nejsou popsány na jiných fórech.  
   
  [StackOverflow](http://stackoverflow.com/questions/tagged/c%23)  
- Poskytuje fórum pro otázky o a problémů s Visual C#.  
+ Poskytuje diskusní fórum pro otázky o a problémy s Visual C#.  
   
  Viz také:  
- [Další zdroje pro programátory v jazyce Visual C#](../../csharp/getting-started/additional-resources.md)  
+ [Další zdroje informací pro programátory v jazyce Visual C#](../../csharp/getting-started/additional-resources.md)  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../csharp/programming-guide/index.md)  
- [Referenční dokumentace jazyka C#](../../csharp/language-reference/index.md)  
- [Kontaktujte nás](/visualstudio/ide/talk-to-us)  
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../csharp/programming-guide/index.md)  
+- [Referenční dokumentace jazyka C#](../../csharp/language-reference/index.md)  
+- [Kontaktujte nás](/visualstudio/ide/talk-to-us)  

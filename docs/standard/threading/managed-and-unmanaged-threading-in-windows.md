@@ -9,59 +9,59 @@ helpviewer_keywords:
 ms.assetid: 4fb6452f-c071-420d-9e71-da16dee7a1eb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 50e709c8b5de505b17efea8ddf333633b2bd7400
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1be82fd9f26e382f20913551f67e8303cf20e03b
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33591687"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43257315"
 ---
 # <a name="managed-and-unmanaged-threading-in-windows"></a>Spravovaná a nespravovaná vlákna ve Windows
-Správa všechna vlákna se provádí prostřednictvím <xref:System.Threading.Thread> třídy, včetně vláken vytvořený modul common language runtime a ty mimo modul runtime, který zadejte spravované prostředí ke spouštění kódu. Modul runtime monitoruje všechna vlákna zpracování, které někdy provedli kódu v rámci spravovaného spouštění prostředí. Žádné další podprocesy sledovat. Vláken můžete zadat spravovaného spouštění prostředí pomocí zprostředkovatele komunikace s objekty COM (protože modul runtime zpřístupní spravované objekty jako objekty COM nespravované World), modelu COM [DllGetClassObject](https://msdn.microsoft.com/library/ms680760.aspx) funkce a vyvolání platformy.  
+Správa všech vláken se provádí prostřednictvím <xref:System.Threading.Thread> třídy, včetně vlákna vytvořená modulem common language runtime a ty mimo modul runtime, které zadat spravované prostředí ke spuštění kódu. Modul runtime monitoruje všechna vlákna v procesu, které jste dříve spustili kódu ve spravovaném spouštěcím prostředí. Sledovat ostatní vlákna. Vlákna můžete zadat spravovaném spouštěcím prostředí pomocí zprostředkovatele komunikace s objekty COM (protože modul runtime poskytuje spravované objekty jako objekty modelu COM pro nespravované celý svět), COM [DllGetClassObject](/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject) funkce a vyvolání platformy.  
   
- Nespravovaná vlákna zadá runtime prostřednictvím, například obálka volatelná aplikacemi COM, systém kontroluje, zda místní úložiště daném vláknu se podívat interní spravované <xref:System.Threading.Thread> objektu. Pokud je takový nalezen, je již vědět tohoto podprocesu modulu runtime. Pokud nelze najít jednu, vytvoří novou však modulu runtime <xref:System.Threading.Thread> objektu a nainstaluje v místním úložišti tento přístup z více vláken.  
+ Když nespravovaného vlákna do modulu runtime prostřednictvím, například obálku volatelnou modelem COM systém kontroluje, zda úložiště thread local bylo vlákno k vyhledání interní spravované <xref:System.Threading.Thread> objektu. Pokud ho najde, modul runtime je již vědět toto vlákno. Pokud nelze najít jeden, ale modul runtime vytvoří novou <xref:System.Threading.Thread> objektu a nainstaluje ho v úložišti thread local toto vlákno.  
   
- V dělení na spravovaná vlákna, <xref:System.Threading.Thread.GetHashCode%2A?displayProperty=nameWithType> je identifikace stabilní spravovaných vláken. Po dobu jeho existence váš přístup z více vláken nebude kolidují s hodnotou z jiné vlákno, bez ohledu na doménu aplikace, ze kterého můžete získat tuto hodnotu.  
+ V dělení na spravovaná vlákna, <xref:System.Threading.Thread.GetHashCode%2A?displayProperty=nameWithType> je identifikace stabilní spravované vlákno. Po dobu životnosti vašeho vlákna nebudou kolidovat s hodnotu z jiných vláken, bez ohledu na doménu aplikace, ze kterého můžete získat tuto hodnotu.  
   
 > [!NOTE]
->  Spouštění operačního systému **ID podprocesu** nemá žádný pevné vztah k spravované vlákno, protože nespravované hostitele můžete řídit vztah mezi spravovanými a nespravovanými vláken. Konkrétně sofistikované hostitele můžete použít rozhraní API Fiber, naplánovat mnoho spravovaných vláknech na stejném vlákně, v operačním systému nebo přesunout spravované vlákno mezi vláken jiného operačního systému.  
+>  Spouštění operačního systému **Idvlákna** nemá žádný pevné vztah spravovaná vlákna, protože nespravovaný hostitel může určit vztah mezi spravovanými a nespravovanými vlákna. Sofistikované hostitele můžete konkrétně byste měli použít rozhraní API Fiber naplánování mnoho spravovaná vlákna na stejném vlákně operačního systému, nebo přesunout spravované vlákno mezi vlákny jiný operační systém.  
   
-## <a name="mapping-from-win32-threading-to-managed-threading"></a>Mapování z vlákna Win32 pro dělení na spravovaná vlákna  
- Následující tabulka mapuje vláken elementy Win32 jejich přibližnou runtime ekvivalentní. Všimněte si, že toto mapování nepředstavuje identické funkce. Například **TerminateThread** nepracuje **nakonec** klauzule nebo uvolní prostředky a nelze zabránit. Ale <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> provede všech vašich kódech vrácení zpět, získá všechny prostředky a může být odepřen pomocí <xref:System.Threading.Thread.ResetAbort%2A>. Nezapomeňte si přečíst v dokumentaci těsně před odhad funkce.  
+## <a name="mapping-from-win32-threading-to-managed-threading"></a>Mapování z Win32 dělení na vlákna pro dělení na spravovaná vlákna  
+ Následující tabulka mapuje dělení na vlákna prvky Win32 k jejich přibližné runtime ekvivalentní. Všimněte si, že toto mapování nepředstavuje identické funkce. Například **TerminateThread** nespustí **nakonec** klauzule nebo uvolněte prostředky a nelze zabránit. Ale <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> spustí váš kód vrácení zpět, uvolní všechny prostředky a může být odepřen pomocí <xref:System.Threading.Thread.ResetAbort%2A>. Nezapomeňte si přečíst dokumentaci těsně před vyvozování předpokladů o funkce.  
   
 |V systému Win32|V modulu common language runtime|  
 |--------------|------------------------------------|  
-|**CreateThread**|Kombinace **vláken** a <xref:System.Threading.ThreadStart>|  
+|**CreateThread**|Kombinace **vlákna** a <xref:System.Threading.ThreadStart>|  
 |**TerminateThread**|<xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>|  
 |**SuspendThread**|<xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType>|  
 |**ResumeThread**|<xref:System.Threading.Thread.Resume%2A?displayProperty=nameWithType>|  
 |**Přejít do režimu spánku**|<xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType>|  
-|**WaitForSingleObject** na popisovač podprocesu|<xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType>|  
+|**Funkce WaitForSingleObject** na popisovač podprocesu|<xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType>|  
 |**ExitThread**|Žádný ekvivalent|  
 |**GetCurrentThread**|<xref:System.Threading.Thread.CurrentThread%2A?displayProperty=nameWithType>|  
 |**SetThreadPriority**|<xref:System.Threading.Thread.Priority%2A?displayProperty=nameWithType>|  
 |Žádný ekvivalent|<xref:System.Threading.Thread.Name%2A?displayProperty=nameWithType>|  
 |Žádný ekvivalent|<xref:System.Threading.Thread.IsBackground%2A?displayProperty=nameWithType>|  
-|Zavřete na **CoInitializeEx** (OLE32. KNIHOVNY DLL)|<xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType>|  
+|Zavřít **CoInitializeEx** (OLE32. KNIHOVNY DLL)|<xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType>|  
   
-## <a name="managed-threads-and-com-apartments"></a>Spravovaných vláknech a Apartment COM  
- Spravované vlákno, může být označen k označení, že bude hostitelem [jednovláknové](https://msdn.microsoft.com/library/windows/desktop/ms680112.aspx) nebo [vícevláknové](https://msdn.microsoft.com/library/windows/desktop/ms693421.aspx) typu apartment. (Další informace o modelu COM dělení na vlákna architektuře, najdete v části [procesy, vláken a Apartment](https://msdn.microsoft.com/library/windows/desktop/ms693344.aspx).) <xref:System.Threading.Thread.GetApartmentState%2A>, <xref:System.Threading.Thread.SetApartmentState%2A>, A <xref:System.Threading.Thread.TrySetApartmentState%2A> metody <xref:System.Threading.Thread> třídy vrátit a přiřaďte stav objektu apartment vlákna. Pokud stav není nastaven, <xref:System.Threading.Thread.GetApartmentState%2A> vrátí <xref:System.Threading.ApartmentState.Unknown?displayProperty=nameWithType>.  
+## <a name="managed-threads-and-com-apartments"></a>Spravovaná vlákna a objekty apartment modelu COM  
+ Spravované vlákno může být označený k označení, že bude hostovat [s jedním vláknem](/windows/desktop/com/single-threaded-apartments) nebo [s více vlákny](/windows/desktop/com/multithreaded-apartments) objektu apartment. (Další informace o modelu COM dělení na vlákna architektury, najdete v článku [procesy, vlákna a objekty apartment](https://msdn.microsoft.com/library/windows/desktop/ms693344.aspx).) <xref:System.Threading.Thread.GetApartmentState%2A>, <xref:System.Threading.Thread.SetApartmentState%2A>, A <xref:System.Threading.Thread.TrySetApartmentState%2A> metody <xref:System.Threading.Thread> třídy vrátit a přiřadit stav apartment vlákna. Pokud stav není nastavený, <xref:System.Threading.Thread.GetApartmentState%2A> vrátí <xref:System.Threading.ApartmentState.Unknown?displayProperty=nameWithType>.  
   
- Vlastnost lze nastavit pouze v případě, že se <xref:System.Threading.ThreadState.Unstarted?displayProperty=nameWithType> stavu; ho lze nastavit pouze jednou vlákna.  
+ Vlastnost lze nastavit pouze v případě, že vlákno je v <xref:System.Threading.ThreadState.Unstarted?displayProperty=nameWithType> stavu, lze ji nastavit pouze jednou pro vlákno.  
   
- Pokud stav objektu apartment není nastavena, před zahájením vlákno, vlákno je inicializován jako více vláken typu apartment (MTA). Vlákno finalizační metodu a všechna vlákna řízené <xref:System.Threading.ThreadPool> jsou modelu MTA.  
+ Pokud stav objektu apartment není nastavena, před spuštěním vlákno, vlákno je inicializován jako s více vlákny typu apartment (MTA). Vlákno finalizační metody a dokud všechna vlákna, které řídí <xref:System.Threading.ThreadPool> jsou MTA.  
   
 > [!IMPORTANT]
->  Pro spuštění kódu aplikace, je jediným způsobem, jak řídit stav objektu apartment použít <xref:System.MTAThreadAttribute> nebo <xref:System.STAThreadAttribute> položek bodu postupu. V rozhraní .NET Framework 1.0 a 1.1 <xref:System.Threading.Thread.ApartmentState%2A> vlastnost lze nastavit jako první řádek kódu. To není povoleno v rozhraní .NET Framework 2.0.  
+>  Pro spuštění kódu aplikace, je jediný způsob, jak řídit stav objektu apartment použít <xref:System.MTAThreadAttribute> nebo <xref:System.STAThreadAttribute> položku bodu postup. V rozhraní .NET Framework 1.0 a 1.1 <xref:System.Threading.Thread.ApartmentState%2A> vlastnost lze nastavit jako první řádek kódu. To není povolené v rozhraní .NET Framework 2.0.  
   
- Spravované objekty, které jsou zpřístupněny COM chovat, jako by se měl agregovat volné zařazování vláken. Jinými slovy bylo možné volat z jakékoli COM apartment způsobem podprocesy. Jenom spravované objekty, které nedojde toto chování podprocesy jsou tyto objekty, které jsou odvozeny od <xref:System.EnterpriseServices.ServicedComponent> nebo <xref:System.Runtime.InteropServices.StandardOleMarshalObject>.  
+ Spravované objekty, které jsou vystaveny rozhraní COM se chovají, jako by se měl agregují volným zařazováním vláken. Jinými slovy že lze volat z jakékoli objektu apartment modelu COM způsobem volných vláken. Pouze spravované objekty, které nejsou tímto způsobem chovat volných vláken jsou tyto objekty, které jsou odvozeny z <xref:System.EnterpriseServices.ServicedComponent> nebo <xref:System.Runtime.InteropServices.StandardOleMarshalObject>.  
   
- Ve spravovaném světě, neexistuje žádná podpora pro <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> Pokud nechcete použít kontexty a spravované instance kontextu vazby. Pokud používáte podnikové služby, pak objektu musí být odvozeny od <xref:System.EnterpriseServices.ServicedComponent> (který je sám odvozen z <xref:System.ContextBoundObject>).  
+ Ve spravovaném světě, neexistuje žádná podpora pro <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> Pokud nepoužíváte spravované instance vázané na kontext a kontexty. Pokud používáte podnikové služby, pak objekt musí být odvozen od <xref:System.EnterpriseServices.ServicedComponent> (což je samotný odvozen z <xref:System.ContextBoundObject>).  
   
- Když spravovaný kód zavolá objekty modelu COM, vždy následuje COM pravidla. Jinými slovy zavolá prostřednictvím proxy apartment COM a kontext obálky COM + 1.0 stanovená OLE32.  
+ Když spravovaný kód volá navýšení kapacity pro objekty modelu COM, vždy následuje COM pravidla. Jinými slovy volá prostřednictvím proxy modelu COM typu apartment a obálky kontext modelu COM + 1.0 určený OLE32.  
   
 ## <a name="blocking-issues"></a>Problémy s blokováním  
- Pokud vlákno provede volání nespravovaného do operačního systému, který má blokovaný vlákno v nespravovaném kódu, modul runtime nebude převzít kontrolu nad pro <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> nebo <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. U <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>, modul runtime označí vlákno pro **Abort** a provede kontrolu nad ho, když ho znovu vstupuje do spravovaného kódu. Je vhodnější pro použití spravovaných blokování místo nespravované blokování. <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType>,<xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType>, <xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType>, <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType>, <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType>, <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType>, <xref:System.GC.WaitForPendingFinalizers%2A?displayProperty=nameWithType>a tak dále jsou všechny reaguje na <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> a <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Navíc pokud váš přístup z více vláken ve single-threaded apartment, všechny tyto spravované blokování operace bude správně čerpadla zprávy ve vašem apartment při vaší vlákno je blokované.  
+ Pokud vlákno provede nespravovaného volání do operačního systému, který se zablokoval vlákna v nespravovaném kódu, modulu runtime nebude převzít kontrolu nad pro <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> nebo <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. V případě třídy <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>, modul runtime označí vlákno pro **přerušit** a provede kontrolu, když ho znovu přejde do spravovaného kódu. Je vhodné k použití spravované blokování namísto nespravovaného blokování. <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType>,<xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType>, <xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType>, <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType>, <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType>, <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType>, <xref:System.GC.WaitForPendingFinalizers%2A?displayProperty=nameWithType>, a tak dále všechny interaktivní <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> a <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Navíc pokud vaše vlákno je v jednovláknovém objektu apartment, všechny tyto spravované blokující operace bude správně pump zprávy v vašeho objektu apartment zatímco vaše vlákno blokované.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType>  

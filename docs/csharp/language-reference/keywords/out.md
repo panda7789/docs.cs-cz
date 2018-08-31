@@ -1,5 +1,5 @@
 ---
-title: out (Referenční dokumentace jazyka C#)
+title: out – klíčové slovo (referenční dokumentace jazyka C#)
 ms.date: 03/01/2017
 f1_keywords:
 - out_CSharpKeyword
@@ -8,19 +8,21 @@ helpviewer_keywords:
 - out [C#]
 - out keyword [C#]
 ms.assetid: 7e911a0c-3f98-4536-87be-d539b7536ca8
-ms.openlocfilehash: 83963cd101934d27fdc496a4368b9f8803ccdc0f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ecdaf8e94b3b799f41d6750d6ba5fca6895f0e93
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33266578"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43252834"
 ---
 # <a name="out-c-reference"></a>out (Referenční dokumentace jazyka C#)
-Můžete použít `out` – klíčové slovo v dvou kontextů:
 
-- Jako [– modifikátor parametrů](../../../csharp/language-reference/keywords/out-parameter-modifier.md), které lze předáte argument pro metodu odkazem a nikoli podle hodnoty.
+Můžete použít `out` – klíčové slovo ve dvou kontextů:
 
-- V [deklarace parametrů obecného typu](../../../csharp/language-reference/keywords/out-generic-modifier.md) rozhraní a delegátů, která určuje, že parametr typu je kovariant.
-   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- Jako [modifikátor parametru](out-parameter-modifier.md), který umožní můžete předat argument k metodě podle odkazu, nikoli podle hodnoty.
+
+- V [deklarací parametrů obecného typu](out-generic-modifier.md) rozhraní a delegátů, která určuje, že parametr typu je kovariant.
+
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)

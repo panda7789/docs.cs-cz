@@ -9,12 +9,12 @@ helpviewer_keywords:
 - parse strings
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
-ms.openlocfilehash: e2d788b27f54ac068922f0ebe558a2aea8a475ca
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: b6170be2dbb3f11906bbaa6e5c3be3e48a976246
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37960007"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43253071"
 ---
 # <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Postupy: Analýza řetězců metodou String.Split (Průvodce v C#)
 
@@ -32,9 +32,11 @@ Každá instance oddělovací znak produkuje hodnotu jako pole vrácené. Po sob
 
 Toto chování usnadňuje formáty jako oddělený čárkami souborů (CSV) představující tabulková data. Po sobě jdoucích čárek představují sloupec je prázdný.
 
-Můžete předat volitelně <xref:System.StringSplitOptions.RemoveEmptyEntries?displayProperty=nameWithType> parametr vyloučit jakékoli prázdné řetězce vrácené jako pole. Pro složitější zpracování vrácená kolekce, můžete použít [LINQ](../programming-guide/concepts/linq/index.md) k manipulaci s výsledkem pořadí.    
+Můžete předat volitelně <xref:System.StringSplitOptions.RemoveEmptyEntries?displayProperty=nameWithType> parametr vyloučit jakékoli prázdné řetězce vrácené jako pole. Pro složitější zpracování vrácená kolekce, můžete použít [LINQ](../programming-guide/concepts/linq/index.md) k manipulaci s výsledkem pořadí.
 
-<xref:System.String.Split%2A?displayProperty=nameWithType> můžete použít více znaky oddělovačů. Následující příklad používá mezery, čárky, tečky, dvojtečky a karty, všechny předané pole obsahující tyto znaky, pro oddělení <xref:System.String.Split%2A>.  Smyčka v dolní části kódu zobrazí jednotlivých slov v příspěvcích ve vrácené pole.  
+<xref:System.String.Split%2A?displayProperty=nameWithType> můžete použít více znaky oddělovačů.
+Následující příklad používá mezery, čárky, tečky, dvojtečky a karty, všechny předané pole obsahující tyto znaky, pro oddělení <xref:System.String.Split%2A>.
+Smyčka v dolní části kódu zobrazí jednotlivých slov v příspěvcích ve vrácené pole.  
 
 [!code-csharp-interactive[split strings using multiple separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#3)]
 
@@ -48,7 +50,8 @@ Po sobě jdoucích instancí žádné oddělovače způsobit prázdný řetězec
 
 Tyto ukázky můžete zkusit pohledem na kód v našich [úložiště GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako soubor zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
 
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../programming-guide/index.md)  
- [Řetězce](../programming-guide/strings/index.md)  
- [Regulárních výrazů .NET](../../standard/base-types/regular-expressions.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../programming-guide/index.md)  
+- [Řetězce](../programming-guide/strings/index.md)  
+- [Regulárních výrazů .NET](../../standard/base-types/regular-expressions.md)

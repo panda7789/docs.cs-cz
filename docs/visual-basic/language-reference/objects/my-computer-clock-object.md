@@ -5,11 +5,11 @@ helpviewer_keywords:
 - My.Computer.Clock object
 ms.assetid: a362b270-8a1b-404a-95c8-516a60c607dd
 ms.openlocfilehash: 431610030480ce4eb54882e519a5a7f7bbffe90a
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43000174"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43253487"
 ---
 # <a name="mycomputerclock-object"></a>My.Computer.Clock – objekt
 Poskytuje vlastnosti pro přístup k aktuálním místním časem a koordinovaný světový čas (ekvivalent greenwichský střední čas) ze systémových hodin.  

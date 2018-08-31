@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: cabd39307b6928302b40931c39fc61c3898821ed
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 75ef14032ee2211d3b8d355f050ced67b4a04930
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42929641"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43254473"
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Úvod do jazyka C# a rozhraní .NET Framework
 
@@ -66,7 +66,7 @@ C# je elegantní a typově bezpečný objektově orientované jazyka, který umo
   
  Další informace o rozhraní .NET Framework najdete v tématu [přehled rozhraní Microsoft .NET Framework](../../framework/get-started/overview.md).  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 
 - [C#](../../csharp/index.md)
 - [Začínáme s jazykem Visual C# a Visual Basic](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)

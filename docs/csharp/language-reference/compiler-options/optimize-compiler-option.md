@@ -12,15 +12,15 @@ helpviewer_keywords:
 - compiler optimization [C#]
 - o compiler option [C#]
 ms.assetid: 6dd5b6f2-cd1d-4593-a9f4-1c2ed9404ca0
-ms.openlocfilehash: 86c8ebb2d2061085be4c00e8ac95448e1c341161
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f8fec2c4da49aa6cac2f8dc1dc9b07c5864b837a
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33212459"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43256665"
 ---
 # <a name="-optimize-c-compiler-options"></a>-optimize (možnosti kompilátoru C#)
-**-Optimalizovat** možnost povolí nebo zakáže optimalizace provádí kompilátoru k vytvoření výstupního souboru menší, rychlejší a efektivnější.  
+**– Optimalizace** možnost povolí nebo zakáže optimalizace provedené kompilátorem za účelem zkontrolujte výstupní soubor menší, rychlejší a efektivnější.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,25 +29,25 @@ ms.locfileid: "33212459"
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- **-optimize** informuje o modul common language runtime optimalizovat kód za běhu.  
+ **-optimize** také říká modul common language runtime k optimalizaci kódu za běhu.  
   
- Ve výchozím nastavení jsou zakázány optimalizace. Zadejte **-optimalizovat +** povolit optimalizace.  
+ Ve výchozím nastavení jsou zakázané optimalizace. Zadejte **– optimalizace +** povolíte optimalizace.  
   
- Při sestavování modulu, který bude používán sestavení, použijte stejný **-optimalizovat** nastavení jako sestavení.  
+ Při vytváření modulu pro sestavení, použijte stejný **– optimalizace** nastavení jako sestavení.  
   
- **-o** je zkratka pro **-optimalizovat**.  
+ **-o** je zkratka pro **– optimalizace**.  
   
- Je možné kombinovat **-optimalizovat** a [– ladění](../../../csharp/language-reference/compiler-options/debug-compiler-option.md) možnosti.  
+ Je možné kombinovat **– optimalizace** a [– ladění](../../../csharp/language-reference/compiler-options/debug-compiler-option.md) možnosti.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevření projektu **vlastnosti** stránky.  
+1.  Otevřete v projektu **vlastnosti** stránky.  
   
-2.  Klikněte **sestavení** stránku vlastností.  
+2.  Klikněte na tlačítko **sestavení** stránku vlastností.  
   
-3.  Změnit **optimalizovat kód** vlastnost.  
+3.  Upravit **optimalizovat kód** vlastnost.  
   
- Informace o tom, jak nastavení této možnosti kompilátoru programu najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.Optimize%2A>.  
+ Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.Optimize%2A>.  
   
 ## <a name="example"></a>Příklad  
  Kompilace `t2.cs` a povolení optimalizace kompilátoru:  
@@ -57,5 +57,6 @@ csc t2.cs -optimize
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

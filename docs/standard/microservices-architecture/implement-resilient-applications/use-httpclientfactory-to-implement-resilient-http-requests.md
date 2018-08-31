@@ -4,12 +4,12 @@ description: HttpClientFactory je sebevědomý factory, dostupné od verze rozhr
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
-ms.openlocfilehash: 89382f266eacc97b5e1ee5416c92dbd662427cd1
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: 6fd30a9358ca9c07b2a6e2ec591e4c5d7db54ccb
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37878803"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43252821"
 ---
 # <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Použití HttpClientFactory k implementaci odolných požadavky HTTP
 
@@ -78,7 +78,7 @@ Sdružování obslužných rutin je žádoucí, protože každá obslužná ruti
 Objekt HttpMessageHandler objekty ve fondu mají životnost, který je doba, která instance objekt HttpMessageHandler ve fondu je možné využít znovu. Výchozí hodnota je dvě minuty, ale může být potlačen za klienta s názvem nebo zadaný základ. Pokud chcete ho přepsat, volejte SetHandlerLifetime() IHttpClientBuilder, která je vrácena při vytváření klienta, jak je znázorněno v následujícím kódu.
 
 ```csharp
-//Set 5 min as the lifetime for the HttpMessageHandler objects in the pool used for the Basket Typed Client 
+//Set 5 min as the lifetime for the HttpMessageHandler objects in the pool used for the Catalog Typed Client 
 services.AddHttpClient<ICatalogService, CatalogService>()
                  .SetHandlerLifetime(TimeSpan.FromMinutes(5));  
 ```

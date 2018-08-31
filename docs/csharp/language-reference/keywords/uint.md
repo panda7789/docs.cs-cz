@@ -7,47 +7,47 @@ f1_keywords:
 helpviewer_keywords:
 - uint keyword [C#]
 ms.assetid: e93e42c6-ec72-4b0b-89df-2fd8d36f7a7b
-ms.openlocfilehash: 8ee19688ff0a6687bcf761857958aa2022fdb0c8
-ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
+ms.openlocfilehash: e75abf8ac356eaed6c54dd0309316fb6755bf635
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37027808"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43256678"
 ---
 # <a name="uint-c-reference"></a>uint (Referenční dokumentace jazyka C#)
 
-`uint` – Klíčové slovo označuje integrální typ, který ukládá hodnoty podle velikosti a rozsah uvedené v následující tabulce.  
+`uint` – Klíčové slovo označuje integrální typ, který uchovává hodnoty podle toho, velikost a rozsah je znázorněno v následující tabulce.  
   
 |Typ|Rozsah|Velikost|Typ formátu .NET|  
 |----------|-----------|----------|-------------------------|  
-|`uint`|0 do 4 294 967 295|Celé číslo bez znaménka 32-bit|<xref:System.UInt32?displayProperty=nameWithType>|  
+|`uint`|0 do 4 294 967 295|Nepodepsané 32bitové celé číslo|<xref:System.UInt32?displayProperty=nameWithType>|  
   
- **Poznámka:** `uint` typ není kompatibilní se specifikací CLS. Použití `int` kdykoli je to možné.  
+ **Poznámka:** `uint` typ není kompatibilní se Specifikací CLS. Použití `int` kdykoli je to možné.  
   
 ## <a name="literals"></a>Literály  
 
-Můžete deklarace a inicializace `uint` proměnné přiřazením decimal literál, hexadecimální literál, nebo (počínaje 7.0 C#) binární literálu do ní. Pokud literálu celé číslo je mimo rozsah `uint` (tj. Pokud je menší než <xref:System.UInt32.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt32.MaxValue?displayProperty=nameWithType>), dojde k chybě kompilace.
+Můžete deklarovat a inicializovat `uint` proměnné přiřazením literál desítkové, hexadecimální literál, nebo (od verze C# 7.0) binární literál k němu. Pokud celočíselný literál je mimo rozsah `uint` (tj. Pokud je menší než <xref:System.UInt32.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt32.MaxValue?displayProperty=nameWithType>), dojde k chybě kompilace.
 
-V následujícím příkladu, celá čísla rovno 3,000,000,000, která jsou reprezentovány jako decimal, šestnáctkové, a binární literály jsou přiřazeny k `uint` hodnoty.  
+V následujícím příkladu celých čísel je rovno 3,000,000,000, které jsou reprezentovány jako desítkové, hexadecimální, a binární literály jsou přiřazeny k `uint` hodnoty.  
   
 [!code-csharp[uint](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#UInt)]  
 
 > [!NOTE] 
-> Použijte předponu `0x` nebo `0X` k označení hexadecimální literál a předponu `0b` nebo `0B` k označení binární literál. Decimal literály mít žádná předpona. 
+> Použijte předponu `0x` nebo `0X` k označení šestnáctkové literal a předponu `0b` nebo `0B` k označení binární literál. Desítkové literály mají žádná předpona. 
 
-Od verze jazyka C# 7.0, byly přidány několik funkcí za účelem zlepšení čitelnosti. 
- - C# 7.0 umožňuje použití znak podtržítka `_`, jako oddělovač číslice.
- - C# 7.2 umožňuje `_` má být použit jako číslice oddělovače pro binární nebo hexadecimální literál, po předponu. Decimal literál není povolená tak, aby měl úvodní podtržítka.
+Od verze C# 7.0, přidali několik funkcí za účelem zlepšení čitelnosti. 
+ - C# 7.0 umožňuje použití znaku podtržítka `_`, jako oddělovač číslic.
+ - C# 7.2 umožňuje `_` má být použit jako oddělovač číslici šestnáctkové nebo binární literál po předponu. Desítkový literál není povoleno mít vedoucího podtržítka.
 
-Níže jsou uvedeny některé příklady.
+Níže je uvedeno několik příkladů.
 
 [!code-csharp[uint](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#UIntS)]  
  
- Literály celé číslo může obsahovat také příponu, která označuje typ. Přípona `U` nebo "u" označuje buď `uint` nebo `ulong`, v závislosti na hodnotě číselný literál. Následující příklad používá `u` příponu k označení celé číslo bez znaménka obou typů. Všimněte si, že je první literál `uint` protože její hodnota je menší než <xref:System.UInt32.MaxValue?displayProperty=nameWithType>, zatímco druhý `ulong` vzhledem k tomu, že je jeho hodnota větší než <xref:System.UInt32.MaxValue?displayProperty=nameWithType>.
+ Literály celých čísel může také obsahovat příponu, která označuje typ. Přípona `U` nebo "u" označuje buď `uint` nebo `ulong`, v závislosti na číselnou hodnotu literálu. V následujícím příkladu `u` příponu k označení celé číslo bez znaménka obou typů. Všimněte si, že je první literál `uint` vzhledem k tomu, že její hodnota je menší než <xref:System.UInt32.MaxValue?displayProperty=nameWithType>, zatímco druhá je `ulong` vzhledem k tomu, že její hodnota je větší než <xref:System.UInt32.MaxValue?displayProperty=nameWithType>.
 
 [!code-csharp[usuffix](../../../../samples/snippets/csharp/language-reference/keywords/numeric-suffixes.cs#1)]  
  
-Pokud celé literál bez přípony, je její typ první z těchto typů, ve kterých může být reprezentován jeho hodnotu: 
+Pokud celočíselného literálu bez přípony, jeho typ je první z těchto typů, ve kterých může být reprezentována jeho hodnotu: 
 
 1. [int](int.md)
 2. `uint`
@@ -55,13 +55,13 @@ Pokud celé literál bez přípony, je její typ první z těchto typů, ve kter
 4. [ulong](../../../csharp/language-reference/keywords/ulong.md) 
   
 ## <a name="conversions"></a>Převody  
- Je předdefinovaný implicitní převod z `uint` k [dlouho](../../../csharp/language-reference/keywords/long.md), [ulong](../../../csharp/language-reference/keywords/ulong.md), [float](../../../csharp/language-reference/keywords/float.md), [dvojité](../../../csharp/language-reference/keywords/double.md), nebo [ Decimal](../../../csharp/language-reference/keywords/decimal.md). Příklad:  
+ Není předdefinovanou implicitní převod z `uint` k [dlouhé](../../../csharp/language-reference/keywords/long.md), [ulong](../../../csharp/language-reference/keywords/ulong.md), [float](../../../csharp/language-reference/keywords/float.md), [double](../../../csharp/language-reference/keywords/double.md), nebo [ desetinné](../../../csharp/language-reference/keywords/decimal.md). Příklad:  
   
 ```csharp  
 float myFloat = 4294967290;   // OK: implicit conversion to float  
 ```  
   
- Je předdefinovaný implicitní převod z [bajtů](../../../csharp/language-reference/keywords/byte.md), [ushort](../../../csharp/language-reference/keywords/ushort.md), nebo [char](../../../csharp/language-reference/keywords/char.md) k `uint`. V opačném případě je nutné použít přetypování. Například následující příkaz přiřazení způsobí chybu kompilace bez přetypování:  
+ Není předdefinovanou implicitní převod z [bajtů](../../../csharp/language-reference/keywords/byte.md), [ushort](../../../csharp/language-reference/keywords/ushort.md), nebo [char](../../../csharp/language-reference/keywords/char.md) k `uint`. V opačném případě je nutné použít přetypování. Přiřazovací příkaz například způsobí chybu kompilace bez přetypování:  
   
 ```csharp  
 long aLong = 22;  
@@ -71,7 +71,7 @@ uint uInt1 = aLong;
 uint uInt2 = (uint)aLong;  
 ```  
   
- Všimněte si také, že neexistuje žádná implicitní převod z typů s plovoucí desetinnou čárkou na `uint`. Například následující příkaz vygeneruje Chyba kompilátoru, pokud se používá explicitní přetypování:  
+ Všimněte si také, že neexistuje žádný implicitní převod z typů s plovoucí desetinnou čárkou `uint`. Například následující příkaz vygeneruje chybu kompilátoru, pokud používá explicitní přetypování:  
   
 ```csharp  
 // Error -- no implicit conversion from double:  
@@ -80,19 +80,20 @@ uint x = 3.0;
 uint y = (uint)3.0;   
 ```  
   
- Informace o aritmetických výrazech s smíšený typy s plovoucí desetinnou čárkou a integrální typy najdete v tématu [float](../../../csharp/language-reference/keywords/float.md) a [dvojité](../../../csharp/language-reference/keywords/double.md).  
+ Informace o aritmetických výrazech s smíšené typy s plovoucí desetinnou čárkou a celočíselných typů naleznete v tématu [float](../../../csharp/language-reference/keywords/float.md) a [double](../../../csharp/language-reference/keywords/double.md).  
   
- Další informace o pravidlech implicitní převod číselného najdete v tématu [implicitní číselné převody tabulky](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md).  
+ Další informace o pravidlech implicitní převod čísla, najdete v článku [Implicit Numeric Conversions Table](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md).  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.UInt32>  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)  
- [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  
- [Tabulka implicitních číselných převodů](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
- [Tabulka explicitních číselných převodů](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.UInt32>  
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
+- [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)  
+- [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  
+- [Tabulka implicitních číselných převodů](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
+- [Tabulka explicitních číselných převodů](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)

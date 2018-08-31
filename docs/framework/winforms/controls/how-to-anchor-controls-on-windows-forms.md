@@ -12,46 +12,46 @@ helpviewer_keywords:
 - Windows Forms, resizing
 - controls [Windows Forms], positioning
 ms.assetid: 59ea914f-fbd3-427a-80fe-decd02f7ae6d
-ms.openlocfilehash: 3d0885ac3acde6732a5c059063f992913a98b9c4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c7658eb11e0d9e28c93b0a4b72a248cc42bc705f
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33528441"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43253747"
 ---
 # <a name="how-to-anchor-controls-on-windows-forms"></a>Postupy: Ukotvování ovládacích prvků ve Windows Forms
-Při návrhu formuláře, který uživatel může změnit velikost za běhu, ovládací prvky na formuláři by měla velikost a změnit umístění správně. Změna velikosti ovládacích prvků dynamicky pomocí formuláře, můžete použít <xref:System.Windows.Forms.Control.Anchor%2A> vlastnosti ovládacích prvků Windows Forms. <xref:System.Windows.Forms.Control.Anchor%2A> Vlastnost definuje pozice ukotvení pro ovládací prvek. Když je ukotven ovládacího prvku na formulář a formulář se změnila velikost, ovládacího prvku udržuje vzdálenost mezi ovládacího prvku a pozice ukotvení. Pokud máte například <xref:System.Windows.Forms.TextBox> ovládací prvek, který je ukotven k levé, pravé a dolního okraje formuláře, při změně velikosti formuláře <xref:System.Windows.Forms.TextBox> vodorovně řízení změní velikost tak, aby udržuje stejnou vzdálenost od pravé a levé straně formuláře. Kromě toho ovládacího prvku umisťuje samotné svisle tak, aby jeho umístění je vždy stejnou vzdálenost od dolní části formuláře. Pokud není ukotven ovládacího prvku a formuláře, dojde ke změně pozice ovládacího prvku vůči okrajům formuláře.  
+Pokud navrhujete formulář, který uživatel může změnit velikost v době běhu, by měl ovládací prvky na formuláři změnit velikost a umístění správně. Změna velikosti ovládacích prvků dynamicky pomocí formuláře, můžete použít <xref:System.Windows.Forms.Control.Anchor%2A> vlastností ovládacích prvků Windows Forms. <xref:System.Windows.Forms.Control.Anchor%2A> Definuje vlastnost pozice ukotvení pro ovládací prvek. Když je ovládací prvek ukotven k formuláři a změně velikosti formuláře, ovládací prvek udržuje vzdálenost mezi ovládacím prvkem a pozice ukotvení. Například, pokud máte <xref:System.Windows.Forms.TextBox> ovládací prvek, který je ukotven doleva, doprava a dolů ve formuláři, při změně velikosti formuláře <xref:System.Windows.Forms.TextBox> vodorovně řídit změní tak, aby udržuje stejnou vzdálenost od pravá a levá strana formuláře. Kromě toho ovládací prvek umístí samotné svisle tak, aby jeho umístění je vždy stejnou vzdálenost od dolní části formuláře. Pokud není ukotven ovládacího prvku a změně velikosti formuláře, dojde ke změně pozice ovládacího prvku vzhledem k okrajům formuláře.  
   
- <xref:System.Windows.Forms.Control.Anchor%2A> Vlastnost komunikuje s <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost. Další informace najdete v tématu [přehled vlastnosti AutoSize](../../../../docs/framework/winforms/controls/autosize-property-overview.md).  
+ <xref:System.Windows.Forms.Control.Anchor%2A> Vlastnost komunikuje <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost. Další informace najdete v tématu [přehled vlastnosti AutoSize](../../../../docs/framework/winforms/controls/autosize-property-overview.md).  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
-### <a name="to-anchor-a-control-on-a-form"></a>Ukotvení ovládacího prvku ve formuláři  
+### <a name="to-anchor-a-control-on-a-form"></a>Chcete-li ukotvit ovládací prvek ve formuláři  
   
-1.  Vyberte ovládací prvek, který chcete ukotvení.  
+1.  Vyberte ovládací prvek, který chcete ukotvit.  
   
     > [!NOTE]
-    >  Stisknutím klávesy CTRL, klepnutím na každý ovládací prvek a vyberte ji a potom následující zbytek tohoto postupu můžete více ovládacích prvků ukotvení současně.  
+    >  Můžete ukotvit více ovládacích prvků současně klávesy CTRL, kliknutím na každý ovládací prvek a vyberte ho a budete postupovat zbývající část tohoto postupu.  
   
-2.  V **vlastnosti** okně klikněte na šipku napravo <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost.  
+2.  V **vlastnosti** okna, klikněte na šipku vpravo od <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost.  
   
-     Zobrazí se editoru, který ukazuje na křížek.  
+     Editoru se zobrazí, který ukazuje na křížek.  
   
-3.  Pokud chcete nastavit anchor, klikněte na tlačítko levému hornímu, pravé nebo dolní části křížek.  
+3.  Pokud chcete nastavit anchor, klikněte na tlačítko vlevo nahoře, pravé nebo dolní část křížového.  
   
      Ovládací prvky jsou ukotven k horní a levé ve výchozím nastavení.  
   
-4.  Zrušte straně ovládací prvek, který není ukotven, klikněte na tlačítko této arm křížek.  
+4.  Na straně ovládacího prvku, který není ukotven, klikněte na tento arm křížové.  
   
-5.  Zavřete <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost editor, klikněte <xref:System.Windows.Forms.Control.Anchor%2A> znovu název vlastnosti.  
+5.  Zavřete <xref:System.Windows.Forms.Control.Anchor%2A> editoru vlastností klikněte <xref:System.Windows.Forms.Control.Anchor%2A> znovu název vlastnosti.  
   
- Při svého formuláře se zobrazí v době běhu, změní velikost zůstat umístěného ve stejné vzdálenosti od levého okraje formuláře ovládacího prvku. Vzdálenost od levého okraje ukotvené vždy nezmění definovaným vzdálenost, když je ovládací prvek umístěn v Návrháři formulářů.  
+ Při formuláři se zobrazí v době běhu, zůstane umístěné ve stejné vzdálenosti od levého okraje formuláře změní velikost ovládacího prvku. Vzdálenost od levého okraje ukotvené vždy zůstává definovaný vzdálenost, když je ovládací prvek umístěný v Návrháři formulářů Windows.  
   
 > [!NOTE]
->  Některé ovládací prvky, jako například <xref:System.Windows.Forms.ComboBox> řídit, omezení pro jejich výšku. Ukotvení ovládacího prvku k dolnímu okraji jeho formuláře nebo kontejner nemůže vynutit překročení limitu výška ovládacího prvku.  
+>  Některé ovládací prvky, jako například <xref:System.Windows.Forms.ComboBox> řídit, omezení jejich výšku. Ukotvení ovládacího prvku do dolní části formuláře nebo kontejneru nelze vynutit překročí limit výšku ovládacího prvku.  
   
- Musí být zděděné ovládací prvky `Protected` mohli být pevnou. Chcete-li změnit úroveň přístupu tohoto ovládacího prvku, nastavte jeho `Modifiers` vlastnost **vlastnosti** okno.  
+ Zděděný ovládací prvky musí být `Protected` mohli být ukotven. Chcete-li změnit úroveň přístupu ovládacího prvku, nastavte jeho `Modifiers` vlastnost **vlastnosti** okna.  
   
 ## <a name="see-also"></a>Viz také  
  [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)  

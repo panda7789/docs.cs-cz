@@ -5,12 +5,12 @@ helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-ms.openlocfilehash: 68f7f799ebbfe52c99820083eb22761c79f66483
-ms.sourcegitcommit: f6343b070f3c66877338a05c8bfb0be9985255e2
+ms.openlocfilehash: 9c278a47c2072b3f2dac8cfd4cf0dab1c488411e
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39220747"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43256736"
 ---
 # <a name="statements-c-programming-guide"></a>Příkazy (Průvodce programováním v C#)
 Akce, které přijímá programu jsou vyjádřeny v příkazech. Běžné akce zahrnují deklarování proměnných, přiřazování hodnot, volání metod ve smyčce přes kolekce a vytváření větví do jednoho nebo jiného bloku kódu, v závislosti na danou podmínku. Pořadí, ve kterém jsou spouštěny příkazy v programu v jazyce se nazývá tok řízení toku provádění. Tok řízení se může lišit při každém spuštění programu, v závislosti na tom, jak program reaguje na vstup, že bude dostávat v době běhu.  
@@ -24,8 +24,8 @@ Akce, které přijímá programu jsou vyjádřeny v příkazech. Běžné akce z
   
 |Kategorie|Klíčová slova jazyka C# / poznámky|  
 |--------------|---------------------------|  
-|Příkazy deklarace|Příkazu deklarace zavádí novou proměnnou nebo konstantu. Deklarace proměnné volitelně přiřadit hodnotu k proměnné. V deklaraci konstanty se vyžaduje přiřazení.<br /><br /> [!code-csharp[csProgGuideStatements#23](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_2.cs)]|  
-|Příkazy výrazů|Příkazy výrazů, které vypočítá hodnotu uložit hodnotu do proměnné.<br /><br /> [!code-csharp[csProgGuideStatements#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_3.cs)]|  
+|[Příkazy deklarace](#declaration-statements)|Příkazu deklarace zavádí novou proměnnou nebo konstantu. Deklarace proměnné volitelně přiřadit hodnotu k proměnné. V deklaraci konstanty se vyžaduje přiřazení.|  
+|[Příkazy výrazů](expressions.md)|Příkazy výrazů, které vypočítá hodnotu uložit hodnotu do proměnné. Další informace najdete v tématu [příkazy výrazů](#expression-statements).|  
 |[Příkazy výběru](../../../csharp/language-reference/keywords/selection-statements.md)|Příkazy výběru umožňují větve na různé části kódu, v závislosti na jeden nebo více zadaných podmínek. Další informace naleznete v následujících tématech:<br /><br /> [Pokud](../../../csharp/language-reference/keywords/if-else.md), [else](../../../csharp/language-reference/keywords/if-else.md), [přepnout](../../../csharp/language-reference/keywords/switch.md), [případ](../../../csharp/language-reference/keywords/switch.md)|  
 |[Příkazy iterace](../../../csharp/language-reference/keywords/iteration-statements.md)|Příkazy iterace vám umožní projít kolekce například pole nebo opakovaně provádět stejnou sadu příkazů, dokud je zadaná podmínka splněna. Další informace naleznete v následujících tématech:<br /><br /> [proveďte](../../../csharp/language-reference/keywords/do.md), [pro](../../../csharp/language-reference/keywords/for.md), [foreach](../../../csharp/language-reference/keywords/foreach-in.md), [v](../../../csharp/language-reference/keywords/foreach-in.md), [při](../../../csharp/language-reference/keywords/while.md)|  
 |[Jump – příkazy](../../../csharp/language-reference/keywords/jump-statements.md)|Přenos řízení příkazy přejděte na jinou část kódu. Další informace naleznete v následujících tématech:<br /><br /> [Konec](../../../csharp/language-reference/keywords/break.md), [pokračovat](../../../csharp/language-reference/keywords/continue.md), [výchozí](../../../csharp/language-reference/keywords/switch.md), [goto](../../../csharp/language-reference/keywords/goto.md), [vrátit](../../../csharp/language-reference/keywords/return.md), [yield](../../../csharp/language-reference/keywords/yield.md)|  
@@ -36,9 +36,28 @@ Akce, které přijímá programu jsou vyjádřeny v příkazech. Běžné akce z
 |`fixed` – Příkaz|Fixed – příkaz zabraňuje přemístění proměnné přesouvatelný systému uvolňování paměti. Další informace najdete v tématu [oprava](../../../csharp/language-reference/keywords/fixed-statement.md).|  
 |`lock` – Příkaz|Příkaz lock umožňuje omezit přístup k bloky kódu, který pouze jedno vlákno v čase. Další informace najdete v tématu [Zámek](../../../csharp/language-reference/keywords/lock-statement.md).|  
 |Příkaz s popiskem|Můžete poskytnout příkaz popisek a potom použít [goto](../../../csharp/language-reference/keywords/goto.md) – klíčové slovo pro přechod na příkaz s popiskem. (Viz příklad na následujícím řádku.)|  
-|Prázdný příkaz|Prázdný příkaz se skládá z jedné středník. Nemá žádný účinek a je možné na místech, kde příkaz je povinný, ale potřeba provádět žádnou akci. Následující příklady ukazují dvě použití pro prázdný příkaz:<br /><br /> [!code-csharp[csProgGuideStatements#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_4.cs)]|  
+|[Prázdný příkaz](#the-empty-statement)|Prázdný příkaz se skládá z jedné středník. Nemá žádný účinek a je možné na místech, kde příkaz je povinný, ale potřeba provádět žádnou akci.|  
   
-## <a name="embedded-statements"></a>Vložené příkazy  
+## <a name="declaration-statements"></a>Příkazy deklarace
+
+Následující kód ukazuje příklady deklarace proměnných a nemusíte počátečního přiřazení a deklarace konstanty s inicializací nezbytné.
+
+[!code-csharp[csProgGuideStatements#23](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_2.cs)]
+
+## <a name="expression-statements"></a>Příkazy výrazů
+
+Následující kód ukazuje příklady příkazy výrazů, včetně přiřazení, vytváření objektů přiřazení a volání metody.
+
+[!code-csharp[csProgGuideStatements#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_3.cs)]
+
+## <a name="the-empty-statement"></a>Prázdný příkaz
+
+Následující příklady ukazují dvě použití pro prázdný příkaz:
+
+[!code-csharp[csProgGuideStatements#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_4.cs)]
+
+## <a name="embedded-statements"></a>Vložené příkazy
+
  Některé příkazy, včetně [proveďte](../../../csharp/language-reference/keywords/do.md), [při](../../../csharp/language-reference/keywords/while.md), [pro](../../../csharp/language-reference/keywords/for.md), a [foreach](../../../csharp/language-reference/keywords/foreach-in.md), mají vloženým příkazem, který následuje, je vždy. Tento příkaz vložený může být jeden příkaz nebo více příkazů uzavřených podle {} hranaté závorce v bloku příkazu. Ještě jeden řádek integrovaných prohlášení, můžou být uzavřená v {} hranaté závorky, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideStatements#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_5.cs)]  

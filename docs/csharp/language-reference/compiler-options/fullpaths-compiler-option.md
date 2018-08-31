@@ -10,15 +10,15 @@ helpviewer_keywords:
 - full paths [C#]
 - -fullpaths compiler option [C#]
 ms.assetid: d2a5f857-cbb2-430b-879c-d648aaf0b8c4
-ms.openlocfilehash: 29320ae2dc4b13381ecce76fb04101f18d214bba
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8f23bb683067c55f5b5213065c3082b843dd7dce
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33215307"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43258387"
 ---
 # <a name="-fullpaths-c-compiler-options"></a>-fullpaths (možnosti kompilátoru C#)
-**- Fullpaths** možnost způsobí, že kompilátor zadejte úplnou cestu k souboru, při výpisu kompilace chyby a upozornění.  
+**- Fullpaths** možnost způsobí, že kompilátor zadejte úplnou cestu k souboru při výpisu chyb a upozornění kompilace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,4 +32,5 @@ ms.locfileid: "33215307"
  Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)

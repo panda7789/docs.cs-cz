@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: vytvoření dokumentu s obory názvů (C#) (technologie LINQ to XML)'
+title: 'Postupy: vytvoření dokumentu s obory názvů (C#) (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 37e63c57-f86d-47ac-88a7-2c2d107def30
-ms.openlocfilehash: ab572e0af79d51205167ad60b1b80e8ba6b43707
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5937639fc48b82ee155450a3eaa1c7715ee3f9b9
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33330688"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43256723"
 ---
-# <a name="how-to-create-a-document-with-namespaces-c-linq-to-xml"></a>Postupy: vytvoření dokumentu s obory názvů (C#) (technologie LINQ to XML)
+# <a name="how-to-create-a-document-with-namespaces-c-linq-to-xml"></a>Postupy: vytvoření dokumentu s obory názvů (C#) (LINQ to XML)
 Toto téma ukazuje, jak vytvářet dokumenty s obory názvů.  
   
 ## <a name="example"></a>Příklad  
- Chcete-li vytvořit element nebo atribut, který je v oboru názvů, nejprve deklarovat a inicializovat <xref:System.Xml.Linq.XNamespace> objektu. Pak použijte přetížení operátor sčítání kombinovat oboru názvů s místní název, vyjádřené jako řetězec.  
+ Chcete-li vytvořit element nebo atribut, který je v oboru názvů, nejprve deklarujete a inicializujete <xref:System.Xml.Linq.XNamespace> objektu. Potom použijte přetížení operátoru sčítání kombinovat obor názvů s místním názvem vyjádřená jako řetězec.  
   
  Následující příklad vytvoří dokument s jeden obor názvů. Ve výchozím nastavení [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] serializuje tento dokument s výchozí obor názvů.  
   
@@ -35,7 +35,7 @@ Console.WriteLine(root);
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří dokument s jeden obor názvů. Vytvoří také atribut, který deklaruje předponu oboru názvů z oboru názvů. Pokud chcete vytvořit atribut, který deklaruje předponu oboru názvů, vytvořte atribut kde název atributu je Předpona oboru názvů, a tento název se <xref:System.Xml.Linq.XNamespace.Xmlns%2A> oboru názvů. Hodnota tohoto atributu je identifikátor URI oboru názvů.  
+ Následující příklad vytvoří dokument s jeden obor názvů. Vytvoří také atribut, který deklaruje předponu oboru názvů z oboru názvů. Chcete-li vytvořit atribut, který deklaruje oboru názvů s předponou, vytvořte atribut kde název atributu je Předpona oboru názvů, a tento název se <xref:System.Xml.Linq.XNamespace.Xmlns%2A> oboru názvů. Hodnota tohoto atributu je identifikátor URI oboru názvů.  
   
 ```csharp  
 // Create an XML tree in a namespace, with a specified prefix  
@@ -56,9 +56,9 @@ Console.WriteLine(root);
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje vytvoření dokumentu, který obsahuje dva obory názvů. Jeden je výchozí obor názvů. Jiné je obor názvů s předponou.  
+ Následující příklad ukazuje vytvoření dokumentu, který obsahuje dva obory názvů. Jeden je výchozí obor názvů. Další je obor názvů s předponou.  
   
- Zahrnutím atributy oboru názvů v kořenovém elementu se serializují obory názvů tak, aby http://www.adventure-works.com je výchozí obor názvů a www.fourthcoffee.com je serializovat předponu "fc". Chcete-li vytvořit atribut, který deklaruje výchozí obor názvů, vytvořte atribut se název "xmlns", bez oboru názvů. Hodnota atributu je výchozí obor názvů identifikátor URI.  
+ Zahrnutím atributy oboru názvů v kořenovém prvku serializují obory názvů tak, aby `http://www.adventure-works.com` je výchozí obor názvů a `www.fourthcoffee.com` serializovat s předponou "fc". Chcete-li vytvořit atribut, který deklaruje výchozí obor názvů, vytvořte atribut se názvu "xmlns", bez oboru názvů. Hodnota atributu je výchozí obor názvů identifikátoru URI.  
   
 ```csharp  
 // The http://www.adventure-works.com namespace is forced to be the default namespace.  
@@ -89,7 +89,7 @@ Console.WriteLine(root);
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří dokument, který obsahuje dva obory názvů, jak pomocí předpony oboru názvů.  
+ Následující příklad vytvoří dokument, který obsahuje dva obory názvů, jak u předpony oboru názvů.  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -119,11 +119,11 @@ Console.WriteLine(root);
 ```  
   
 ## <a name="example"></a>Příklad  
- Dalším způsobem dosažení stejného výsledku je použít rozšířené názvy místo deklarování a vytváření <xref:System.Xml.Linq.XNamespace> objektu.  
+ Jiný způsob k dosažení stejného výsledku je použít rozšířené názvy namísto deklarování a vytváření <xref:System.Xml.Linq.XNamespace> objektu.  
   
- Tento přístup má ovlivnit výkon. Pokaždé, když předáte řetězec, který obsahuje název rozšířené na [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] musí název analyzovat, najít atomized obor názvů a najít atomized název. Tento proces trvat doba využití procesoru. Pokud je důležité výkon, můžete chtít deklarování a použití <xref:System.Xml.Linq.XNamespace> explicitně objektu.  
+ Tento přístup má vliv na výkon. Pokaždé, když předáte řetězec, který obsahuje rozbalený název má [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] musíte analyzovat název, najít atomizované objekty obor názvů a vyhledání názvu atomizované objekty. Tento proces trvá čas procesoru. Pokud je důležitý výkon, může být vhodné k deklarování a použití <xref:System.Xml.Linq.XNamespace> objekt explicitně.  
   
- Pokud výkon je důležité problém, přečtěte si téma [před atomizace XName objekty (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/pre-atomization-of-xname-objects-linq-to-xml.md) Další informace  
+ Pokud výkon je důležitý problém, přečtěte si téma [předběžná atomizace XName objektů (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/pre-atomization-of-xname-objects-linq-to-xml.md) Další informace  
   
 ```csharp  
 // Create an XML tree in a namespace, with a specified prefix  
@@ -143,4 +143,4 @@ Console.WriteLine(root);
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Práce s obory názvů XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+ [Práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
