@@ -6,12 +6,12 @@ helpviewer_keywords:
 - schemaImporterExtensions element
 - <schemaImporterExtensions> element
 ms.assetid: 465ef2a0-f909-4ac1-9a56-0ead5c849698
-ms.openlocfilehash: c9f4f6800c2718c3b2c2b9b5b2b6d97e1114dbcb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8bcd8abb138c645f61bf833b49cda2631d1778dd
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33581326"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43255626"
 ---
 # <a name="ltschemaimporterextensionsgt-element"></a>&lt;schemaImporterExtensions&gt; – Element
 Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework. Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).  
@@ -21,14 +21,14 @@ Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchema
 ```xml  
 <schemaImporterExtensions>  
     <!-- Add types -->  
-</SchemaImporterExtension>  
+</schemaImporterExtensions>  
 ```  
   
 ## <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Přidat > elementu pro \<xmlSchemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)|Přidá typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> vytvořit mapování.|  
+|[\<Přidat > – Element pro \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)|Přidá typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> vytvoření mapování.|  
   
 ## <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -47,13 +47,13 @@ Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchema
         System.Web.Mobile, Version - 2.0.0.0, Culture = neutral,   
         PublicKeyToken = b03f5f6f11d40a3a" />  
     </schemaImporterExtensions>  
-/system.sxml.serializaiton>  
+</system.xml.serialization>  
 ```  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xml.Serialization.XmlSchemaImporter>  
  <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>  
  [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)  
- [\<dateTimeSerialization > elementu](../../../docs/standard/serialization/datetimeserialization-element.md)  
- [\<Přidat > elementu pro \<xmlSchemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)  
+ [\<dateTimeSerialization > – Element](../../../docs/standard/serialization/datetimeserialization-element.md)  
+ [\<Přidat > – Element pro \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)  
  [\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)

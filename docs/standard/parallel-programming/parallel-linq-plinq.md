@@ -7,17 +7,17 @@ helpviewer_keywords:
 ms.assetid: 3d4d0cd3-bde4-490b-99e7-f4e41be96455
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ccd30ee987fbc4ad75008a28c030c4f44a2368dd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 326fce55b13217bd08e58bf13a423fc9b6ffcbff
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33581378"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43254364"
 ---
 # <a name="parallel-linq-plinq"></a>Paralelní LINQ (PLINQ)
-Paralelní LINQ (PLINQ) je paralelní provádění LINQ na objekty. PLINQ implementuje kompletní LINQ standardní operátory dotazu jako rozšiřující metody pro <xref:System.Linq> obor názvů a má další operátory paralelních operací. PLINQ kombinuje jednoduchosti a přehlednosti syntaxe LINQ s možností paralelní programování. Stejně jako kód s cílem Task Parallel Library dotazy PLINQ škálovat v stupeň souběžnosti na základě schopností hostitelského počítače.  
+Paralelní LINQ (PLINQ) je implementace LINQ to Objects. PLINQ implementuje úplnou sadu operátorů standardního dotazu LINQ jako rozšiřující metody pro <xref:System.Linq> obor názvů a má další operátoři pro paralelních operací. PLINQ kombinuje jednoduchosti a přehlednosti syntaxi LINQ s výkonným paralelním programování. Stejně jako kód, který cílí Task Parallel Library, dotazy PLINQ horizontálně stupeň souběžnosti na základě možností hostitelského počítače.  
   
- V mnoha scénářích PLINQ výrazně zvýšit rychlost LINQ na objekty dotazy pomocí všechny dostupné jader na hostitelském počítači efektivněji. Toto zvýšení výkonu přináší vysoký výkon výpočetní výkon na pracovní plochu.  
+ V mnoha případech můžete PLINQ významně zvyšuje rychlost LINQ to Objects dotazů s použitím všech dostupných jader v hostitelském počítači efektivněji. Toto zvýšení výkonu přináší vysoce výkonné výpočetní výkon na pracovní plochu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Úvod do PLINQ](../../../docs/standard/parallel-programming/introduction-to-plinq.md)  

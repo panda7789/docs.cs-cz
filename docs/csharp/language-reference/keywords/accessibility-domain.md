@@ -4,20 +4,20 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - accessibility domain [C#]
 ms.assetid: 8af779c1-275b-44be-a864-9edfbca71bcc
-ms.openlocfilehash: 8e6af35ea41f6d062bc2b8ee771a1fac21667462
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: 01854b60fb58d4dcd0a217552f19d6c0cd32ec78
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36208351"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43258053"
 ---
 # <a name="accessibility-domain-c-reference"></a>Doména přístupnosti (Referenční dokumentace jazyka C#)
-Doména přístupnosti člena určuje, ve které části program může být odkazováno členem. Pokud člen vnořen v rámci jiného typu, jak je určen jeho doména přístupnosti [úrovni přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md) člena a doména přístupnosti okamžitě nadřazeného typu.  
+Doména přístupnosti člena určuje, ve které části programu může být odkazováno člena. Pokud člen je vnořená v rámci jiného typu, jak je určen jeho doméně přístupnosti [úrovni přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md) z člena a doménou přístupnosti bezprostředně nadřazeného typu.  
   
- Doména přístupnosti typu nejvyšší úrovně je alespoň text projekt, který je deklarován v programu. To znamená doména obsahuje všechny zdrojových souborů tohoto projektu. Doména přístupnosti vnořeného typu je alespoň text program typu, ve kterém je deklarovaná. To znamená že doménu je typu text, který obsahuje všechny vnořené typy. Doména přístupnosti vnořeného typu nikdy přesahuje nadřazeného typu. Tyto koncepty jsou ukázáno v následujícím příkladu.  
+ Doména přístupnosti člena typu nejvyšší úrovně je alespoň textem programu, který je deklarován v projektu. To znamená doména obsahuje všechny zdrojové soubory tohoto projektu. Doména přístupnosti vnořeného typu je alespoň textem programu typu, ve kterém je deklarována. To znamená že doménu je typu text, který zahrnuje všechny vnořené typy. Doména přístupnosti vnořeného typu nikdy překročí nadřazeného typu. Tyto koncepty je ukázán v následujícím příkladu.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad obsahuje typu nejvyšší úrovně `T1`a dva vnořené třídy `M1` a `M2`. Třídy obsahovat pole, které mají různé deklarované přístupnosti. V `Main` metody komentář následuje každý příkaz k označení doména přístupnosti u každého člena. Všimněte si, že jsou komentované příkazy, které se pokusí o odkazovat nepřístupný členy. Pokud chcete zobrazit chyby kompilátoru způsobené odkazování na člena nedostupné, odeberte komentáře jeden najednou.  
+ V tomto příkladu obsahuje typu nejvyšší úrovně `T1`a dvě vnořené třídy, `M1` a `M2`. Třídy obsahovat pole, které mají různé deklarované přístupnosti. V `Main` metody komentář následuje každý příkaz označíte, tak doména přístupnosti člena každý člen. Všimněte si, že příkazy, které se pokouší odkazovat nepřístupní členové jsou označené jako komentář. Pokud chcete zobrazit chyby kompilátoru způsobené odkazuje na nepřístupný člena, odeberte komentáře jeden po druhém.  
   
 [!code-csharp[csrefKeywordsModifiers#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#4)]
   
@@ -25,14 +25,14 @@ Doména přístupnosti člena určuje, ve které části program může být odk
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md)  
- [Úrovně přístupnosti](../../../csharp/language-reference/keywords/accessibility-levels.md)  
- [Omezení používání úrovní přístupu](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md)  
- [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)  
- [public](../../../csharp/language-reference/keywords/public.md)  
- [private](../../../csharp/language-reference/keywords/private.md)  
- [protected](../../../csharp/language-reference/keywords/protected.md)  
- [internal](../../../csharp/language-reference/keywords/internal.md)
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
+- [Modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md)  
+- [Úrovně přístupnosti](../../../csharp/language-reference/keywords/accessibility-levels.md)  
+- [Omezení používání úrovní přístupu](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md)  
+- [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)  
+- [public](../../../csharp/language-reference/keywords/public.md)  
+- [private](../../../csharp/language-reference/keywords/private.md)  
+- [protected](../../../csharp/language-reference/keywords/protected.md)  
+- [internal](../../../csharp/language-reference/keywords/internal.md)

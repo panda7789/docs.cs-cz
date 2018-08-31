@@ -9,54 +9,54 @@ helpviewer_keywords:
 - versioning [WCF]
 - data contracts [WCF], versioning
 ms.assetid: 4a0700cb-5f5f-4137-8705-3a3ecf06461f
-ms.openlocfilehash: 1ba51c51f30293e05dee17f9cf78cc049e1c751f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0e91bf597e344dd09e80bee5787e92383065b654
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33496283"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43254578"
 ---
 # <a name="data-contract-versioning"></a>Správa verzí kontraktů dat
-Jak vyvíjet aplikace, budete také muset změnit data měnící použití služby. Toto téma vysvětluje, jak kontrakty dat verze. Toto téma popisuje mechanismy Správa verzí kontraktů dat. Úplný přehled a správa verzí závazné pokyny najdete v tématu [osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
+Jak vyvíjet aplikace, budete také muset změnit data smluv týkajících se používání služby. Toto téma vysvětluje, jak kontraktů dat verze. Toto téma popisuje mechanismy správy verzí pomocí kontraktu dat. Úplný přehled a doporučené postupy správy verzí pokyny najdete v tématu [osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
   
-## <a name="breaking-vs-nonbreaking-changes"></a>Pozastavení vs. Pevných změny  
- Může být nejnovější změny kontraktu dat nebo pevných. Při změně kontraktu dat pevných způsobem, aplikace pomocí starší verze kontraktu může komunikovat s pomocí novější verze aplikace a aplikace pomocí novější verze nástroje kontrakt může komunikovat s aplikací pomocí starší verze. Na druhé straně narušující změně znemožňuje komunikaci v jednom či obou směrech.  
+## <a name="breaking-vs-nonbreaking-changes"></a>Zásadní vs. Méně zásadních změn  
+ Změny kontraktu dat může být dopadem na dřívější kód nebo pevná. Při změně kontraktu dat pevná způsobem, aplikaci pomocí starší verze kontraktu můžou klienti komunikovat pomocí novější verze aplikace a aplikace pomocí novější verze kontraktu může komunikovat s aplikací pomocí starší verze. Rozbíjející změny na druhé straně znemožňuje komunikaci v jednom či obou směrech.  
   
- Všechny změny na typ, které nemají vliv na tom, jak je odeslaných a přijatých jsou pevných. Tyto změny neměňte kontrakt dat, pouze s podkladovým typem. Například můžete změnit název pole pevných způsobem, pokud se pak můžete nastavit <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> k názvu starší verze. Následující kód ukazuje verze 1 kontraktu dat.  
+ Všechny změny na typ, které nemají vliv na tom, jak je odeslaných a přijatých jsou pevné. Tyto změny neměňte kontraktu dat pouze základního typu. Například můžete změnit název pole tak méně zásadních Pokud pak nastavíte <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> k názvu starší verze. Následující kód ukazuje verzi 1 služby data smlouvy.  
   
  [!code-csharp[C_DataContractVersioning#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractversioning/cs/source.cs#1)]
  [!code-vb[C_DataContractVersioning#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractversioning/vb/source.vb#1)]  
   
- Následující kód ukazuje pevných změnu.  
+ Následující kód ukazuje méně zásadních změn.  
   
  [!code-csharp[C_DataContractVersioning#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractversioning/cs/source.cs#2)]
  [!code-vb[C_DataContractVersioning#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractversioning/vb/source.vb#2)]  
   
- Některé změny upravit velikost přenášených dat, ale může nebo nemusí být dopadem na dřívější kód. Následující změny jsou vždy nejnovější:  
+ Některé změny upravovat přenášená data, ale může nebo nemusí být zásadní. Tyto změny jsou vždy dopadem na dřívější kód:  
   
--   Změna <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> nebo <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> hodnota kontraktu dat.  
+-   Změna <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> nebo <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> hodnota dat kontraktu.  
   
 -   Změna pořadí datových členů pomocí <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute>.  
   
--   Přejmenování člena.  
+-   Datový člen přejmenování.  
   
--   Změna kontrakt dat datového členu. Například změna typu dat člena z celé číslo na řetězec, nebo z typu s kontraktu dat s názvem "Zákazník" na typ s kontraktu dat s názvem "Osoba".  
+-   Změna kontraktu dat datový člen. Například změna typu datového členu z celého čísla na řetězec, nebo z typu s kontraktem dat s názvem "Customer" na typ s kontraktem dat s názvem "Osoba".  
   
- Následující změny je také možné.  
+ Tyto změny jsou také je to možné.  
   
-## <a name="adding-and-removing-data-members"></a>Přidávání a odebírání datové členy  
- Ve většině případů přidáním nebo odebráním datový člen není narušující změně, pokud požadujete striktní schématu platnosti (ověření proti staré schéma nové instance).  
+## <a name="adding-and-removing-data-members"></a>Přidávání a odebírání datových členů  
+ Ve většině případů přidáním nebo odebráním datového členu není rozbíjející změny, pokud vyžadujete striktní schéma platnosti (ověření proti schématu staré nové instance).  
   
- Když je typ s další pole deserializovat do typu s chybějící pole, doplňující informace se ignoruje. (Může být také uložen pro účely odezvy; Další informace najdete v části [kontrakty dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)).  
+ Když do typu s chybějící pole je deserializovat typ se další pole, je ignorován dodatečné informace. (Může být také uložena pro účely verzemi; Další informace, najdete v článku [kontraktů dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)).  
   
- Když je typ s chybějící pole deserializovat do typu s další pole, je navíc pole ponecháno na výchozí hodnotě, obvykle nula nebo `null`. (Výchozí hodnota může být změněn; Další informace najdete v tématu [verze proti chybám zpětná volání serializace tolerantní](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md).)  
+ Při typu s chybějící pole je deserializovat na typ s další pole, pole navíc je ponecháno na výchozí hodnotě, obvykle nula nebo `null`. (Výchozí hodnota může být změněn; Další informace najdete v tématu [tolerantní zpětná volání serializace](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md).)  
   
- Například můžete použít `CarV1` – třída v klientském počítači a `CarV2` třída na služby, nebo můžete použít `CarV1` třídy ve službě a `CarV2` – třída v klientském počítači.  
+ Například můžete použít `CarV1` třídy v klientském počítači a `CarV2` třídy na službu, nebo můžete použít `CarV1` třídy ve službě a `CarV2` třídy v klientském počítači.  
   
  [!code-csharp[C_DataContractVersioning#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractversioning/cs/source.cs#3)]
  [!code-vb[C_DataContractVersioning#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractversioning/vb/source.vb#3)]  
   
- Koncový bod verze 2 úspěšně může odesílat data do koncového bodu verze 1. Serializaci verze 2 `Car` kontrakt dat vypočítá XML podobný následujícímu.  
+ Koncový bod verze 2 můžete úspěšně odeslat data na koncový bod verze 1. Serializaci verze 2 `Car` kontraktu dat vrací XML podobný následujícímu.  
   
 ```xml  
 <Car>  
@@ -65,9 +65,9 @@ Jak vyvíjet aplikace, budete také muset změnit data měnící použití služ
 </Car>  
 ```  
   
- Deserializace modulu v V1 nebyly nalezeny odpovídající data člena `HorsePower` pole a zahodí data.  
+ Deserializace modulu ve V1 nelze najít odpovídající datový člen pro `HorsePower` pole a zahodí tato data.  
   
- Koncový bod verze 1 také může odesílat data do koncového bodu verze 2. Serializaci verze 1 `Car` kontrakt dat vypočítá XML podobný následujícímu.  
+ Koncový bod verze 1 může také odesílat data na koncový bod verze 2. Serializaci verze 1 `Car` kontraktu dat vrací XML podobný následujícímu.  
   
 ```xml  
 <Car>  
@@ -75,45 +75,45 @@ Jak vyvíjet aplikace, budete také muset změnit data měnící použití služ
 </Car>  
 ```  
   
- Verze 2 deserializátor nebude vědět, co je potřeba nastavit `HorsePower` pole, protože neexistuje žádná odpovídající data v příchozím kódu XML. Místo toho pole je nastaveno na výchozí hodnotu 0.  
+ Verze 2 deserializátor nezná co mají nastavit `HorsePower` pole, protože neexistuje žádná odpovídající data v příchozích XML. Místo toho pole je nastaveno na výchozí hodnotu 0.  
   
 ## <a name="required-data-members"></a>Požadované datové členy  
- Člen data mohou být označeny jako nich vyžaduje nastavením <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> k `true`. Pokud data chybí požadovaný při deserializaci, je vyvolána výjimka namísto nastavování datového člena na výchozí hodnotu.  
+ Datový člen může být označena jako požadovaným nastavením <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> k `true`. Pokud je to nutné, že data budou chybějící při deserializaci, je vyvolána výjimka místo nastavení na výchozí hodnotu datový člen.  
   
- Přidání člena požadovaných dat je narušující změně. To znamená novější typ stále možné odeslat do koncových bodů s starší typ, ale ne naopak. Odebrání člena data, která byla označena jako v jakékoli předchozí verze je také narušující změně.  
+ Přidání požadovaný datový člen je zásadní změnu. To znamená novější typ je stále možné odeslat do koncových bodů s starší typu, ale ne naopak. Odebrání datový člen, který byl označen jako v jakékoli předchozí verze je také k zásadní změně.  
   
- Změna <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> hodnota vlastnosti z `true` k `false` není dopadem na dřívější kód, ale změna ze `false` k `true` může být nejnovější Pokud všechny předchozí verze typu nemají datového člena v.  
+ Změna <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> hodnota vlastnosti z `true` k `false` není zásadní, ale změna ze `false` k `true` může být rozdělení všechny předchozí verze typu nemají datový člen dotyčný.  
   
 > [!NOTE]
->  I když <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> je nastavena na `true`, příchozích dat může mít hodnotu null nebo nula a typ musí být připraveno pro zpracování této možnosti. Nepoužívejte <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> jako vhodný mechanismus zabezpečení k ochraně proti chybná příchozí data.  
+>  I když <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> je nastavena na `true`, příchozích dat může mít hodnotu null nebo nula a typ musí být připravena ke zpracování této možnosti. Nepoužívejte <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> jako vhodný mechanismus zabezpečení pro ochranu před chybná příchozí data.  
   
-## <a name="omitted-default-values"></a>Není zadán výchozí hodnoty  
- Je možné (i když se nedoporučuje se) nastavit `EmitDefaultValue` vlastnost v atributu DataMemberAttribute `false`, jak je popsáno v [výchozí hodnoty členů Data](../../../../docs/framework/wcf/feature-details/data-member-default-values.md). Pokud toto nastavení je `false`, datový člen nebude vygenerované, pokud je nastaveno na výchozí hodnotu (obvykle nebo má nulovou hodnotu). To není kompatibilní s požadovaná data členů v různých verzích dvěma způsoby:  
+## <a name="omitted-default-values"></a>Vynechaný výchozí hodnoty  
+ Je možné (ale nedoporučuje se) Chcete-li nastavit `EmitDefaultValue` vlastnost u atributu DataMemberAttribute `false`, jak je popsáno v [výchozí hodnoty datových členů](../../../../docs/framework/wcf/feature-details/data-member-default-values.md). Pokud je toto nastavení `false`, nebude se emitovat datový člen, pokud je nastavena na výchozí hodnotu (obvykle nebo má nulovou hodnotu). Toto není kompatibilní s požadované datové členy v různých verzích dvěma způsoby:  
   
--   Kontrakt dat s dat člena, který je nutné v jedné verze nemůže přijímat výchozí (nebo má nulovou hodnotu) data z jiné verze, ve kterém má datový člen `EmitDefaultValue` nastavena na `false`.  
+-   Kontrakt dat s datovým členem, který je vyžadován v jedné verzi nemůže přijmout výchozí (nebo má nulovou hodnotu) dat z jiné verze, ve kterém má datový člen `EmitDefaultValue` nastavena na `false`.  
   
--   Požadovaná data člena, který má `EmitDefaultValue` nastavena na `false` nelze použít k serializaci jeho výchozí (nebo má nulovou hodnotu), hodnotu, ale mohou přijímat hodnota k deserializaci. Vzniká tak problém odezvy (data lze číst v ale stejná data nelze zapsat pak). Proto pokud `IsRequired` je `true` a `EmitDefaultValue` je `false` v jedné verzi stejné kombinace by se měly používat na všech ostatních verzí tak, aby žádná verze kontrakt dat budou moci vytvořit hodnotu, která nemá za následek dobu odezvy.  
+-   Povinný datový člen, který má `EmitDefaultValue` nastavena na `false` nelze použít k serializaci jeho výchozí (nebo má nulovou hodnotu), hodnotu, ale mohou přijímat taková hodnota k deserializaci. Vzniká tak problém verzemi (lze číst data v ale stejná data nelze poté zapíšou). Proto pokud `IsRequired` je `true` a `EmitDefaultValue` je `false` v jedné verzi stejnou kombinaci by se měly používat pro všechny ostatní verze tak, aby žádná verze kontraktu dat mohl by být schopen vytvořit hodnotu, která nemá za následek odezvy.  
   
 ## <a name="schema-considerations"></a>Důležité informace o schématu  
- Vysvětlení, co schématu pro typy kontraktů dat vytváří, najdete v článku [Přehled schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
+ Vysvětlení, jaké schéma je vytvořen pro typy kontraktů dat, najdete v článku [schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
   
- Schéma WCF vytvoří pro typy kontraktů dat znamená žádné předpisy pro správu verzí. To znamená schéma exportovaný z konkrétní verzi typu, obsahuje pouze data členů v této verzi. Implementace <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní schéma pro typ nezmění.  
+ Schéma WCF vytváří pro typy kontraktů dat znamená žádné ustanovení pro správu verzí. To znamená schéma exportované z verzi typu obsahuje pouze tyto datové členy v této verzi k dispozici. Implementace <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní nedojde ke změně schématu typu.  
   
- Datové členy exportují do schématu jako volitelné elementy ve výchozím nastavení. To znamená `minOccurs` (atribut XML) hodnota nastavena na hodnotu 0. Členy požadovaná data jsou exportovaný s `minOccurs` nastavena na hodnotu 1.  
+ Datové členy se vyexportují do schématu jako volitelné elementy ve výchozím nastavení. To znamená `minOccurs` hodnoty (atribut XML) je nastavena na hodnotu 0. Požadované datové členy se vyexportují se `minOccurs` nastavena na hodnotu 1.  
   
- Mnoho změn považuje za pevná jsou ve skutečnosti nejnovější Pokud stoprocentní schématu je potřeba. V předchozím příkladu `CarV1` instanci s jenom na `Model` element by vyhodnotit proti `CarV2` schématu (které má oba `Model` a `Horsepower`, ale obě jsou volitelné). Naopak však není pravda: `CarV2` instance dojde k selhání ověření na základě `CarV1` schématu.  
+ Mnoho změn považuje za pevná jsou ve skutečnosti přerušení, pokud se vyžaduje striktní dodržování schématu. V předchozím příkladu `CarV1` instanci s jenom `Model` element bude ověřovat proti `CarV2` schématu (který má obě `Model` a `Horsepower`, ale oba jsou volitelné). Ale, opak není pravdou: `CarV2` instance selže ověření proti `CarV1` schématu.  
   
- Odezvy také zahrnuje několik dalších důležitých informací. Další informace najdete v části "Schématu aspekty" v [kontrakty dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+ Verzemi zahrnuje také několik dalších důležitých informací. Další informace najdete v části "Požadavky schématu" v [kontraktů dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 ### <a name="other-permitted-changes"></a>Ostatní povolené změny  
- Implementace <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní je pevných změnu. Ale odezvy podporu neexistuje pro verze typu starší než verze, ve kterém <xref:System.Runtime.Serialization.IExtensibleDataObject> byl implementován. Další informace najdete v tématu [kontrakty dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+ Implementace <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní je méně zásadních změn. Ale verzemi podporu neexistuje pro verze starší než verze, ve kterém typu <xref:System.Runtime.Serialization.IExtensibleDataObject> bylo implementováno. Další informace najdete v tématu [kontraktů dat dopřednou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 ## <a name="enumerations"></a>Výčty  
- Přidání nebo odebrání člena výčtu je narušující změně. Změna názvu člena výčtu je porušením, pokud jeho název smlouvy je udržováno stejné jako v předchozí verzi aplikace pomocí `EnumMemberAtttribute` atribut. Další informace najdete v tématu [výčtové typy v kontraktech dat](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).  
+ Přidání nebo odebrání člen výčtového typu je zásadní změnu. Mění se název na člena výčtu je zásadní, pokud jeho název kontraktu zůstane stejná jako v předchozí verzi aplikace s použitím `EnumMemberAttribute` atribut. Další informace najdete v tématu [výčtové typy v kontraktech dat](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).  
   
 ## <a name="collections"></a>Kolekce  
- Většinu změn kolekce jsou pevných protože většina typy kolekcí se zaměňovat navzájem v datovém modelu kontrakt. Ale provedení noncustomized kolekce přizpůsobit nebo naopak je narušující změně. Změna nastavení přizpůsobení kolekce je taky narušující změně; To znamená změna jeho názvu kontraktu dat a obor názvů, opakující se název elementu, klíčovým prvkem název a hodnotu název elementu. Další informace o přizpůsobení kolekce najdete v tématu [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md).  
-Změna kontrakt dat obsahu kolekce (například změna ze seznamu celých čísel na seznam řetězců) je samozřejmě narušující změně.  
+ Většina změn kolekce jsou pevné protože většinu typů kolekcí jsou zaměnitelné mezi sebou v datovém modelu kontraktu. Ale vytváření noncustomized kolekci přizpůsobili nebo naopak je zásadní změnu. Změna nastavení přizpůsobení kolekce je také k zásadní změně; To znamená změně jeho názvem kontraktu dat a obor názvů, opakující se název elementu, klíčovým prvkem název a hodnotu názvu elementu. Další informace o shromažďování vlastního nastavení naleznete v tématu [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md).  
+Přirozeně změna kontraktu dat kolekce (například změna ze seznamu celých čísel do seznam řetězců) obsah je zásadní změnu.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A>  

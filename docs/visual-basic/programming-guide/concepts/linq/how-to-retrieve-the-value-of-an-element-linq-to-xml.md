@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: načtení hodnoty elementu (technologie LINQ to XML) (Visual Basic)'
+title: 'Postupy: načtení hodnoty elementu (LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 76b9b2a5-b3ba-49da-ba74-82100e1bd21c
 ms.openlocfilehash: ff2a1712a79bdedd74fe51391f01dd900ae585e6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643832"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43254224"
 ---
-# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-visual-basic"></a>Postupy: načtení hodnoty elementu (technologie LINQ to XML) (Visual Basic)
-Toto téma ukazuje, jak má být získána hodnota elementů. Chcete-li to provést dvěma způsoby. Jedním ze způsobů je přetypovat <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> na požadovaný typ. Explicitní převod operátor potom převede obsah elementu nebo atributu na zadaný typ a přiřadí ji k vaše proměnná. Alternativně můžete použít <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost nebo <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType> vlastnost.  
+# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-visual-basic"></a>Postupy: načtení hodnoty elementu (LINQ to XML) (Visual Basic)
+Toto téma ukazuje, jak má být získána hodnota prvků. Chcete-li to provést dvěma způsoby. Jedním ze způsobů je přetypování <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> do požadovaného typu. Operátor explicitního převodu potom převede obsah elementu nebo atributu na zadaný typ a přiřadí ji do proměnné. Alternativně můžete použít <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost nebo <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType> vlastnost.  
   
- V jazyce Visual Basic, je nejlepším postupem je použití <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost.  
+ Pomocí jazyka Visual Basic, nejlepším řešením je použít <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost.  
   
 ## <a name="example"></a>Příklad  
- K načtení hodnoty elementu, je právě přetypovat <xref:System.Xml.Linq.XElement> objekt, který má požadovaný typ. Element na řetězec, můžete vždy přetypovat následujícím způsobem:  
+ K načtení hodnoty prvku, jenom udělíte <xref:System.Xml.Linq.XElement> objekt požadovaného typu. Element na řetězec, můžete přetypovat vždy následujícím způsobem:  
   
 ```vb  
 Dim e As XElement = <StringElement>abcde</StringElement>  
@@ -31,7 +31,7 @@ Value of e:abcde
 ```  
   
 ## <a name="example"></a>Příklad  
- Můžete také přetypování elementy na typy jiné než řetězec. Například pokud máte elementu, který obsahuje celé číslo, vám může vysílat `int`, jak je znázorněno v následujícím kódu:  
+ Také můžete přetypovat prvky na typy jiné než řetězec. Například pokud máte element, který obsahuje celé číslo, lze jej přetypovat na `int`, jak je znázorněno v následujícím kódu:  
   
 ```vb  
 Dim e As XElement = <Age>44</Age>  
@@ -46,12 +46,12 @@ Console.WriteLine("Value of e:" & CInt(e))
 Value of e:44  
 ```  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje operátory explicitní přetypování pro následující typy dat: `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?` , `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID`, a `GUID?`.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje explicitní přetypování operátory pro následující typy dat: `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?` , `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID`, a `GUID?`.  
   
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje stejné operátory přetypování pro <xref:System.Xml.Linq.XAttribute> objekty.  
   
 ## <a name="example"></a>Příklad  
- Můžete použít <xref:System.Xml.Linq.XElement.Value%2A> vlastnost můžete načíst obsah elementu:  
+ Můžete použít <xref:System.Xml.Linq.XElement.Value%2A> vlastnost načíst obsah elementu:  
   
 ```vb  
 Dim e As XElement = <StringElement>abcde</StringElement>  
@@ -67,7 +67,7 @@ Value of e:abcde
 ```  
   
 ## <a name="example"></a>Příklad  
- Někdy pokusu načíst hodnotu elementu, i když si nejste jisti, že existuje. V takovém případě přiřadíte-li převedena element na typ s možnou hodnotou Null (buď `string` nebo jeden z typů s povolenou hodnotou Null v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]), pokud element neexistuje přiřazená proměnná je nastavená pouze na `Nothing`. Následující kód ukazuje, že pokud element může nebo nemusí existovat, je jednodušší použít přetypování než k použijte <xref:System.Xml.Linq.XElement.Value%2A> vlastnost.  
+ Někdy pokusu o načtení hodnoty elementu, i když si nejste jisti, že objekt že existuje. V takovém případě když přiřadíte elementu převedena na typ s možnou hodnotou Null (buď `string` nebo jeden z typů s povolenou hodnotou Null v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]), pokud element neexistuje přiřazená proměnná je nastavená pouze na `Nothing`. Následující kód ukazuje, že když element může nebo nemusí existovat, je jednodušší použít přetypování než <xref:System.Xml.Linq.XElement.Value%2A> vlastnost.  
   
 ```vb  
 Dim root As XElement = <Root>  
@@ -147,7 +147,7 @@ v3:element does not exist
 v4:element does not exist  
 ```  
   
- Obecně platí můžete napsat kód jednodušší při použití přetypování můžete načíst obsah elementů a atributů.  
+ Obecně platí můžete napsat kód jednodušší při použití přetypování načíst obsah elementů a atributů.  
   
 ## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML osy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+ [Osy LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

@@ -7,27 +7,28 @@ helpviewer_keywords:
 - increment operator (++) [C#]
 - ++ operator [C#]
 ms.assetid: e9dec353-070b-44fb-98ed-eb8fdf753feb
-ms.openlocfilehash: 0fe1150ca7267d02feeab33168eab7f79734c2a1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a52f614ce1bbfb8e9d9be686b277c1e69f6f9d35
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33275061"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43254279"
 ---
 # <a name="-operator-c-reference"></a>++ – operátor (Referenční dokumentace jazyka C#)
-Operátor přírůstku (`++`) jeho operand zvýší o 1. Operátor přírůstku může vyskytovat před nebo po jeho operand: `++variable` a `variable++`.  
+Operátor Inkrementace (`++`) svého operandu zvýší o hodnotu 1. Operátor Inkrementace může objevit před nebo po jeho operandu: `++variable` a `variable++`.  
   
 ## <a name="remarks"></a>Poznámky  
- První formulář je předpona přírůstek operace. Výsledkem operace je hodnota operand po byla zvýšena.  
+ První forma je operace Inkrementace předponu. Výsledkem operace je hodnota operandu po byla zvýšena.  
   
- Druhý formulář je operace operátory přírůstku. Výsledkem operace je hodnota operand předtím, než byla zvýšena.  
+ Druhá forma se operace Inkrementace přípony. Výsledkem operace je hodnota operandu předtím, než byla zvýšena.  
   
- Operátory přírůstku obsahuje předdefinované číselné a výčtové typy. Uživatelem definované typy může přetížit `++` operátor. Operace u celočíselných typů jsou obecně povoleny na výčtu.  
+ Operátory zvýšení obsahuje předdefinované číselné a výčet typů. Lze přetěžovat uživatelsky definované typy `++` operátor. Operace interních typů jsou obecně povoleny na výčet.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csRefOperators#3](../../../csharp/language-reference/operators/codesnippet/CSharp/increment-operator_1.cs)]  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)

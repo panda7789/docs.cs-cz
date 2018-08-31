@@ -4,18 +4,18 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: f7bd75ecdd85e49524ccdf67f3e59aa4be46bdce
-ms.sourcegitcommit: 702d5ffc6e733b6c4ded85bf1c92e2293638ee9a
+ms.openlocfilehash: 63576445a44df0c0bdbd22b263754bb3d2919963
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/04/2018
-ms.locfileid: "37792410"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43254908"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testování služeb ASP.NET Core a webové aplikace
 
 Kontrolery jsou klíčovou součást všem službám rozhraní API pro ASP.NET Core a ASP.NET MVC webové aplikace. V důsledku toho byste měli mít jistotu, které se chovají se tak, jak má pro vaši aplikaci. Automatizované testy vám můžou poskytnout tento spolehlivosti a dokáže detekovat chyby dřív, než dorazí produkčního prostředí.
 
-Je potřeba otestovat, jak se chová podle platný nebo neplatný vstupy kontroler a testovací kontroler odpovědi na základě výsledku obchodní operace, které provádí. Nicméně byste měli mít tyto druhy testů mikroslužby:
+Je potřeba otestovat, jak se chová podle platný nebo neplatný vstupy kontroler a testovací kontroler odpovědi na základě výsledku obchodní operace, které provádí. Nicméně byste měli mít tyto druhy testů pro mikroslužby:
 
 -   Testy jednotek. Tyto Ujistěte se, že jednotlivé komponenty aplikace fungovat podle očekávání. Kontrolní výrazy otestování rozhraní API součásti.
 
@@ -31,9 +31,9 @@ Testování částí zahrnuje testování částí aplikace v izolaci od jeho in
 
 Jako jednotku můžete testovat vaše akce kontroleru, ujistěte se, že se že zaměříte jenom na jejich chování. Řadič testu jednotek se vyhnete věci jako filtry, směrování nebo vazby modelu. Protože zaměřují se na testování pouze jednou z věcí, testování jednotek je obecně k zápisu snadné a rychlé spuštění. Kvalitně napsané sady testů jednotek můžete často spustit bez spojená tak velká režie.
 
-Testování částí se implementují podle testovacích architektur, jako jsou například xUnit.net, MSTest, Moq nebo NUnit. Pro ukázkovou aplikaci aplikaci eShopOnContainers používáme XUnit.
+Testování částí se implementují podle testovacích architektur, jako jsou například xUnit.net, MSTest, Moq nebo NUnit. Pro ukázkovou aplikaci aplikaci eShopOnContainers používáme xUnit.
 
-Při psaní testů jednotek pro kontroler Web API je vytvoření instance třídy controller přímo pomocí new – klíčové slovo v jazyce C\#tak, aby se tak rychle spustí test. Následující příklad ukazuje, jak na to, jestli používáte [XUnit](https://xunit.github.io/) jako rozhraní pro testování.
+Při psaní testů jednotek pro kontroler Web API je vytvoření instance třídy controller přímo pomocí new – klíčové slovo v jazyce C\#tak, aby se tak rychle spustí test. Následující příklad ukazuje, jak na to, jestli používáte [xUnit](https://xunit.github.io/) jako rozhraní pro testování.
 
 ```csharp
 [Fact]

@@ -1,5 +1,5 @@
 ---
-title: GetNames – funkce (referenční dokumentace nespravovaného rozhraní API)
+title: Funkce GetNames (referenční dokumentace nespravovaného rozhraní API)
 description: Funkce GetNames načte názvy vlastností objektu.
 ms.date: 11/06/2017
 api_name:
@@ -16,14 +16,14 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 108946428cdfadcfb9c653b7e444bf278dfa2782
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f53174bf060938d5a55cbd196944ac11916d59cd
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33461978"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43258108"
 ---
-# <a name="getnames-function"></a>GetNames – funkce
+# <a name="getnames-function"></a>Funkce GetNames
 Načte podmnožinu nebo všechny názvy vlastností objektu. 
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -44,72 +44,72 @@ HRESULT GetNames (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`  
-[v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
+[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `wszQualifierName`  
-[v] Ukazatel na platnou `LPCWSTR` určující kvalifikátor název, který funguje jako součást filtru. Další informace najdete v tématu [poznámky](#remarks) části. Tento parametr může být `null`. 
+[in] Ukazatel na platný `LPCWSTR` , který určuje název kvalifikátor, který funguje jako součást filtr. Další informace najdete v tématu [poznámky](#remarks) oddílu. Tento parametr může být `null`. 
 
 `lFlags`  
-[v] Kombinace bitových polí. Další informace najdete v tématu [poznámky](#remarks) části.
+[in] Kombinací bitových polí. Další informace najdete v tématu [poznámky](#remarks) oddílu.
 
 `pQualifierValue`   
-[v] Ukazatel na platnou `VARIANT` struktura inicializována tak, aby hodnota filtru. Tento parametr může být `null`. 
+[in] Ukazatel na platný `VARIANT` struktura inicializovány na hodnotu filtru. Tento parametr může být `null`. 
 
 `pstrNames`  
-[out] A `SAFEARRAY` struktura, která obsahuje názvy vlastností. Na záznam, musí být tento parametr vždycky ukazatel na `null`. Najdete v článku [poznámky](#remarks) části Další informace. 
+[out] A `SAFEARRAY` strukturu, která obsahuje názvy vlastností. V položce, musí mít tento parametr vždy ukazatel na `null`. Zobrazit [poznámky](#remarks) části Další informace. 
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
-|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Jeden nebo více parametrů nejsou platné nebo byl zadán nesprávný kombinace příznaky a parametry. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Je k dispozici k dokončení operace není dostatek paměti. |
+|`WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
+|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Jeden nebo více parametrů nejsou platné, nebo byl zadán nesprávný kombinace příznaků a parametry. |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemClassObject::GetNames](https://msdn.microsoft.com/library/aa391447(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemClassObject::GetNames](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getnames) metody.
 
-Pojmenované vrátil jsou řízeny kombinaci příznaky a parametry. Například funkce může vrátit názvy všech vlastností nebo pouze názvy klíčové vlastnosti.  Primárním filtru je uveden v `lFlags` parametr a ostatní parametry lišit v závislosti na jeho.
+Pojmenované vrátil řízeno pomocí kombinace příznaků a parametry. Funkce může vrátit třeba názvy všech vlastností nebo pouze názvy vlastnosti klíče.  Primární filtru je zadán v `lFlags` parametru a dalších parametrů se liší v závislosti na jeho.
 
 Příznak hodnoty v `lFlags` jsou bitová pole
 
 
-Příznaky, které lze předat jako `lEnumFlags` argument jsou bitová pole, které jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty v kódu.  Můžete kombinovat jeden příznak z každé skupiny libovolný příznakem z jiné skupiny. Příznaky ze stejné skupiny jsou však vzájemně vylučují. 
+Příznaky, které mohou být předány jako `lEnumFlags` argument jsou bitová pole, které jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty ve vašem kódu.  Můžete kombinovat jeden příznak z každé skupiny s všechny příznaky z jiné skupiny. Ale příznaky ze stejné skupiny se vzájemně vylučují. 
 
-| Příznaky skupina 1 |Hodnota  |Popis  |
+| Příznaky skupiny 1 |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_FLAG_ALWAYS` | 0 | Vrátí všechny názvy vlastností. `strQualifierName` a `pQualifierVal` se nepoužívá. |
-| `WBEM_FLAG_ONLY_IF_TRUE` | 1 | Vrátí pouze vlastnosti, které mají kvalifikátor název určený správcem `strQualifierName` parametr. Pokud tento příznak se používá, je nutné zadat `strQualifierName`. |
-|`WBEM_FLAG_ONLY_IF_FALSE` | 2 |  Vrátí pouze vlastnosti, které nemají kvalifikátor název zadaný `strQualifierName` parametr. Pokud tento příznak se používá, je nutné zadat `strQualifierName`. |
-|`WBEM_FLAG_ONLY_IF_IDENTICAL` | 3 | Vrátí pouze vlastnosti, které mají kvalifikátor název zadaný `wszQualifierName` parametr a mají také stejná jako určeného hodnotu `pQualifierVal` struktura. Pokud tento příznak se používá, musíte zadat oba `wszQualifierName` a `pQualifierValue`. |
+| `WBEM_FLAG_ALWAYS` | 0 | Vrátí všechny názvy vlastností. `strQualifierName` a `pQualifierVal` nejsou používány. |
+| `WBEM_FLAG_ONLY_IF_TRUE` | 1 | Vrátit pouze vlastnosti, které mají kvalifikátoru název určený `strQualifierName` parametru. Pokud tento příznak se používá, je nutné zadat `strQualifierName`. |
+|`WBEM_FLAG_ONLY_IF_FALSE` | 2 |  Vrátit pouze vlastnosti, které nemají kvalifikátoru název určený `strQualifierName` parametru. Pokud tento příznak se používá, je nutné zadat `strQualifierName`. |
+|`WBEM_FLAG_ONLY_IF_IDENTICAL` | 3 | Vrátit pouze vlastnosti, které mají kvalifikátoru název určený `wszQualifierName` parametr a také mít identické s klíči určenému hodnotu `pQualifierVal` struktury. Pokud tento příznak se používá, je nutné zadat obě `wszQualifierName` a `pQualifierValue`. |
 
-| Skupina 2 příznaky |Hodnota  |Popis  |
+| Příznaky skupiny 2 |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_FLAG_KEYS_ONLY` | 0x4 | Vrátí pouze názvy vlastností, které definují klíče. |
-|`WBEM_FLAG_REFS_ONLY` | 0x8 | Návratový pouze názvy vlastností, které jsou odkazy na objekty. |
+|`WBEM_FLAG_KEYS_ONLY` | 0x4 | Vrátíte pouze názvy vlastností, které definují klíče. |
+|`WBEM_FLAG_REFS_ONLY` | 0x8 | Vrácení pouze názvy vlastností, které jsou odkazy na objekty. |
 
 | Příznaky skupiny 3 |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Vrátí pouze názvy vlastností, které patří do nejvíce odvozené třídy. Vlastnosti vylučte z nadřazené třídy. |
-| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Vrátí pouze názvy vlastností, které patří do nadřazené třídy. |
-|`WBEM_FLAG_SYSTEM_ONLY` | 0x30 | Vrátí pouze názvy vlastností systému. |
-|`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | Vrátí pouze názvy nesystémové vlastnosti. |
+| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Vrátíte pouze názvy vlastností, které patří k nejvíce odvozené třídy. Vyloučíte vlastnosti od nadřazených tříd. |
+| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Vrátíte pouze názvy vlastností, které patří do nadřazené třídy. |
+|`WBEM_FLAG_SYSTEM_ONLY` | 0x30 | Vrátíte pouze názvy vlastností systému. |
+|`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | Vrátíte pouze názvy vlastností nesystémové. |
 
-Funkce vždy přiděluje nový `SAFEARRAY` vrátí-li `WBEM_S_NO_ERROR`, a `pstrNames` je vždycky nastavený tak, aby odkazoval na ni. Pole vrácené může mít elementy 0, pokud žádné vlastnosti, které odpovídají zadané filtry. Pokud funkce vrátí hodnotu než `WBM_S_NO_ERROR`, nový `SAFEARRAY` struktura nevrátí.
+Funkce vždy přidělí novou `SAFEARRAY` vrátí-li `WBEM_S_NO_ERROR`, a `pstrNames` je vždycky nastavený tak, aby odkazoval na ni. Vrácené pole může obsahovat 0 elementy, pokud určenému filtru neodpovídají žádné vlastnosti. Pokud funkce vrátí hodnotu jiné než `WBM_S_NO_ERROR`, nový `SAFEARRAY` struktura nevrátí.
  
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

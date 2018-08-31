@@ -3,12 +3,12 @@ title: Historie jazyka C# – průvodce v C#
 description: Co vzhled jazyka, jako je v jeho nejstarší verze a jak vyvinula od?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 90f480d7b25ebe308d1f1cb3d4c117f36f7dd9bf
-ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
+ms.openlocfilehash: 7a7030eb9479ebae553f3bb4d569c9a9f931db9a
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42753965"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43254935"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C# #
 
@@ -34,6 +34,10 @@ Hlavní funkce C# 1.0 zahrnuté:
 - [Příkazy](../programming-guide/statements-expressions-operators/statements.md)
 - [Atributy](../programming-guide/concepts/attributes/index.md)
 - Literály
+
+## <a name="c-version-12"></a>C# verze 1.2
+
+C# verze 1.2 dodávané s Visual Studio 2003. Obsahuje několik vylepšení malé na jazyk. Většina zajímavé je, že od s touto verzí, vytvořit kód v `foreach` smyčky volá <xref:System.IDisposable.Dispose%2A> na <xref:System.Collections.IEnumerator> při, který <xref:System.Collections.IEnumerator> implementované <xref:System.IDisposable>.
 
 ## <a name="c-version-20"></a>C# verze 2.0
 

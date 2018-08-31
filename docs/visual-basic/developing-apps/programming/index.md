@@ -5,37 +5,37 @@ helpviewer_keywords:
 - programming [Visual Basic], Visual Basic
 - programming
 ms.assetid: bc45a3de-ea36-46e6-a106-309a413d7804
-ms.openlocfilehash: 74fd333b97f2e5fbbee3771f6715cc36bbd12037
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5ffe44545e60bb74563180a6a5c87c78526ab566
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33587407"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43255199"
 ---
 # <a name="programming-in-visual-basic"></a>Programování v jazyce Visual Basic
-Tato část popisuje programovacích úloh, které chcete další informace o vytváření aplikace Visual Basic.  
+Tato část popisuje programovacích úloh, které můžete zobrazit další informace o vytváření aplikace Visual Basic.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přístup k prostředkům počítače](../../../visual-basic/developing-apps/programming/computer-resources/computer-resources.md)  
- Obsahuje dokumentaci týkající se používání `My.Computer` objekt, který má přístup informace o počítači, na kterém je aplikace spuštěna a postup řízení počítače.  
+ [Přístup k prostředkům počítače](../../../visual-basic/developing-apps/programming/computer-resources/index.md)  
+ Obsahuje dokumentaci, jak používat `My.Computer` objektu přístupu k informacím o počítači, na kterém je aplikace spuštěna a řízení počítače.  
   
- [Protokolování informací z aplikace](../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)  
- Obsahuje dokumentaci, jak k protokolování informací z aplikace pomocí `My.Application.Log` a `My.Log` objekty a jak rozšířit možnosti protokolování aplikace.  
+ [Protokolování informací z aplikace](../../../visual-basic/developing-apps/programming/log-info/index.md)  
+ Dokumentace k protokolování informací z aplikace pomocí obsahuje `My.Application.Log` a `My.Log` objekty a tom, jak rozšířit možnosti protokolování aplikace.  
   
  [Přístup k uživatelským datům](../../../visual-basic/developing-apps/programming/accessing-user-data.md)  
- Obsahuje dokumentaci, úlohy, které lze provádět pomocí `My.User` objektu.  
+ Obsahuje dokumentaci na úlohy, které lze provádět pomocí `My.User` objektu.  
   
  [Přístup k formulářům aplikace](../../../visual-basic/developing-apps/programming/accessing-application-forms.md)  
- Obsahuje dokumentaci o přístup k formulářům aplikace pomocí `My.Forms` a `My.Application` objekty.  
+ Obsahuje dokumentaci o přístup k formulářům aplikace s použitím `My.Forms` a `My.Application` objekty.  
   
  [Přístup k aplikačním webovým službám](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)  
- Obsahuje dokumentaci týkající se přístup k webovým službám odkazuje aplikace pomocí `My.WebServices` objektu.  
+ Obsahuje dokumentaci, jak získat přístup k webové služby odkazovat pomocí aplikace `My.WebServices` objektu.  
   
- [Přístup k nastavení aplikace](../../../visual-basic/developing-apps/programming/app-settings/accessing-application-settings.md)  
- Obsahuje dokumentaci o přístup k nastavení aplikace pomocí `My.Settings` objektu.  
+ [Přístup k nastavení aplikace](../../../visual-basic/developing-apps/programming/app-settings/index.md)  
+ Obsahuje dokumentaci pro přístup k nastavení aplikace pomocí `My.Settings` objektu.  
   
  [Zpracování jednotek, adresářů a souborů](../../../visual-basic/developing-apps/programming/drives-directories-files/processing.md)  
- Obsahuje dokumentaci, informace o přístupu k systému souborů pomocí `My.Computer.FileSystem` objektu.  
+ Obsahuje dokumentaci, jak získat přístup k systému souborů pomocí `My.Computer.FileSystem` objektu.  
   
 ## <a name="see-also"></a>Viz také  
  [Funkce jazyka Visual Basic](../../../visual-basic/programming-guide/language-features/index.md)  

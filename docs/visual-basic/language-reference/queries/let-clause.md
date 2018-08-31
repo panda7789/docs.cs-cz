@@ -8,15 +8,15 @@ helpviewer_keywords:
 - Let clause [Visual Basic]
 - Let statement [Visual Basic]
 ms.assetid: 981aa516-16eb-4c53-b1f1-5aa3e82f316e
-ms.openlocfilehash: 6484da5329c8240735b7c35f506637dd01cbeda4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 34c0fd239d9e08dab4a107cb8447941e7ab3ecbe
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604468"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43255818"
 ---
 # <a name="let-clause-visual-basic"></a>Let – klauzule (Visual Basic)
-Vypočítá hodnotu a přiřadí ji k nové proměnné v dotazu.  
+Vypočítá hodnotu a přiřadí ji nové proměnné v rámci dotazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,22 +28,22 @@ Let variable = expression [, ...]
   
 |Termín|Definice|  
 |---|---|  
-|`variable`|Požadováno. Alias, který slouží k odkazování výsledky zadaný výraz.|  
-|`expression`|Požadováno. Výraz, který bude vyhodnocen a přiřazené k zadané proměnné.|  
+|`variable`|Požadováno. Alias, který slouží k odkazování výsledky poskytnutý výraz.|  
+|`expression`|Požadováno. Výraz, který bude vyhodnocen a přiřazen k zadané proměnné.|  
   
 ## <a name="remarks"></a>Poznámky  
- `Let` Klauzule umožňuje výpočetní hodnoty pro každý výsledek dotazu a odkazujte na ně pomocí alias. Alias lze použít v jiných klauzulích, jako `Where` klauzule. `Let` Klauzule umožňuje vytvářet příkaz dotazu, který lze snadněji přečíst, protože můžete zadat alias pro klauzuli výraz, který je zahrnutý v dotazu a nahraďte alias pokaždé, když se používá v klauzuli výraz.  
+ `Let` Klauzule můžete k výpočtu hodnoty pro každý výsledek dotazu a na ně odkazovat pomocí alias. Alias je možné v jiných klauzulích, jako `Where` klauzuli. `Let` Klauzule vám umožní vytvořit příkaz dotazu, který je snazší přečíst, protože můžete zadat jako alias pro klauzuli výraz obsažena v dotazu a nahraďte aliasem, který se pokaždé, když se používá v klauzuli výrazu.  
   
- Může obsahovat libovolný počet `variable` a `expression` přiřazení v `Let` klauzule. Každé přiřazení oddělte čárkou (,).  
+ Může obsahovat libovolný počet `variable` a `expression` přiřazení v `Let` klauzuli. Každé přiřazení oddělte čárkou (,).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu používá `Let` klauzule k výpočtu 10 procent slevy na produkty.  
+ Následující příklad kódu používá `Let` klauzule compute 10 % slevu na produkty.  
   
  [!code-vb[VbSimpleQuerySamples#16](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/let-clause_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Úvod do LINQ v jazyku Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Dotazy](../../../visual-basic/language-reference/queries/queries.md)  
+ [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ [Dotazy](../../../visual-basic/language-reference/queries/index.md)  
  [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
  [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
  [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)

@@ -1,53 +1,53 @@
 ---
-title: Vývoj knihovny s křížové nástrojů platformy
-description: Naučte se vytvářet knihovny pro .NET pomocí nástrojů příkazového řádku .NET Core.
+title: Vývoj knihoven pomocí nástrojů pro různé platformy
+description: Zjistěte, jak vytvořit knihovny pro .NET pomocí nástrojů rozhraní příkazového řádku .NET Core.
 author: cartermp
 ms.author: mairaw
 ms.date: 05/01/2017
 ms.openlocfilehash: a6db7a15c484122600afd54814d19ea11bd1abc1
-ms.sourcegitcommit: ceca5a1c027627abcca2767567703c3879f33325
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "33218144"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43256193"
 ---
-# <a name="developing-libraries-with-cross-platform-tools"></a>Vývoj knihovny s křížové nástrojů platformy
+# <a name="developing-libraries-with-cross-platform-tools"></a>Vývoj knihoven pomocí nástrojů pro různé platformy
 
-Tento článek popisuje jak napsat knihovny pro rozhraní .NET pomocí nástrojů příkazového řádku pro různé platformy. Rozhraní příkazového řádku poskytuje efektivní a nízké úrovně prostředí, které funguje napříč libovolný podporovaný operační systém. Přesto můžete vytvořit knihovny pomocí sady Visual Studio, a pokud je prostředí upřednostňované [v sadě Visual Studio příručce](libraries-with-vs.md).
+Tento článek popisuje, jak napsat knihoven pro .NET pomocí nástrojů příkazového řádku pro různé platformy. Rozhraní příkazového řádku poskytuje efektivní a nízké úrovně funkce, která funguje v jakémkoli operačním systému podporovaný. Stále můžete vytvářet knihovny se zmírněními hrozeb Visual Studio, a pokud je to upřednostňovaný prostředí [příručce sady Visual Studio](libraries-with-vs.md).
 
 ## <a name="prerequisites"></a>Požadavky
 
-Je třeba [.NET Core SDK a rozhraní příkazového řádku](https://www.microsoft.com/net/core) nainstalovaný na počítači.
+Potřebujete [.NET Core SDK a rozhraní příkazového řádku](https://www.microsoft.com/net/core) na vašem počítači nainstalovaný.
 
-V částech tohoto dokumentu se zabývá verze rozhraní .NET Framework, musíte [rozhraní .NET Framework](http://getdotnet.azurewebsites.net/) nainstalovaná na počítači s Windows.
+V částech tohoto dokumentu se zabývá verze rozhraní .NET Framework, je nutné [rozhraní .NET Framework](http://getdotnet.azurewebsites.net/) nainstalovaná na počítači s Windows.
 
-Kromě toho, pokud chcete pro podporu starší rozhraní .NET Framework cíle, je potřeba nainstalovat cílení/vývojáře sady pro starší verze framework [.NET cílové platformy stránky](http://getdotnet.azurewebsites.net/target-dotnet-platforms.html). Najdete v této tabulce:
+Kromě toho pokud chcete podporovat starší cíle rozhraní .NET Framework, je potřeba nainstalovat cílení/developer Pack pro starší verze rozhraní framework z [.NET cílové platformy stránky](http://getdotnet.azurewebsites.net/target-dotnet-platforms.html). Najdete v této tabulce:
 
-| Verze rozhraní .NET framework | Co chcete stáhnout                                       |
+| Verze rozhraní .NET framework | Co se má stáhnout                                       |
 | ---------------------- | ------------------------------------------------------ |
-| 4.6.1                  | Pack cílení na rozhraní .NET framework 4.6.1                    |
-| 4.6                    | Pack cílení na rozhraní .NET framework 4.6                      |
+| 4.6.1                  | Rozhraní .NET framework 4.6.1 Targeting Pack                    |
+| 4.6                    | Rozhraní .NET framework 4.6 Targeting Pack                      |
 | 4.5.2                  | Rozhraní .NET framework 4.5.2 Developer Pack                    |
 | 4.5.1                  | Rozhraní .NET framework 4.5.1 Developer Pack                    |
 | 4.5                    | Sada Windows SDK pro aplikace pro Windows 8         |
-| 4.0                    | Windows SDK pro systém Windows 7 a rozhraní .NET Framework 4         |
+| 4.0                    | Windows SDK pro Windows 7 a rozhraní .NET Framework 4         |
 | 2.0, 3.0 a 3.5      | Modul Runtime rozhraní .NET framework 3.5 SP1 (nebo verze systému Windows 8 +) |
 
-## <a name="how-to-target-the-net-standard"></a>Postup cílí na Standard .NET
+## <a name="how-to-target-the-net-standard"></a>Tom, jak cílit na .NET Standard
 
-Pokud si nejste poměrně obeznámeni s .NET Standard, podívejte se na [.NET Standard](../../standard/net-standard.md) Další informace.
+Pokud si nejste zcela obeznámeni s .NET Standard, přečtěte si [.NET Standard](../../standard/net-standard.md) Další informace.
 
-V tomto článku je tabulka, která se mapuje na různé implementace .NET Standard verze:
+V tomto článku je tabulka, která mapuje na různé implementace .NET Standard verze:
 
 [!INCLUDE [net-standard-table](~/includes/net-standard-table.md)]
 
-Tady je tato tabulka znamená pro účely vytvoření knihovny:
+Zde je, co tato tabulka znamená, že pro účely vytvoření knihovny:
 
-Verze vyberete standardního .NET bude kompromis mezi přístup k nejnovější rozhraní API a schopnost cílové Další implementace rozhraní .NET a .NET Standard verze. Rozsah targetable platformy a verze řídit výběr verzi `netstandardX.X` (kde `X.X` je číslo verze) a její přidání do souboru projektu (`.csproj` nebo `.fsproj`).
+Verze .NET standardu vyberete bude kompromis mezi přístup k nejnovější rozhraní API a možnosti cílit na více implementací rozhraní .NET a .NET Standard verze. Řídit řadu targetable platformy a verze na verzi výběrem `netstandardX.X` (kde `X.X` je číslo verze) a jeho přidání do souboru projektu (`.csproj` nebo `.fsproj`).
 
-Máte tři možnosti primární, když se cílí na Standard .NET, podle potřeby.
+Existují tři primární možnosti při cílení na .NET Standard, v závislosti na potřebách.
 
-1. Můžete použít výchozí verze poskytl šablony - standardního .NET `netstandard1.4` – které dává vám přístup k většině rozhraní API v rozhraní .NET standardní ale stále mít kompatibilní s UPW, rozhraní .NET Framework 4.6.1 a chystaný standardní rozhraní .NET 2.0.
+1. Můžete použít výchozí verzi .NET Standard poskytuje šablony - `netstandard1.4` – které dává vám přístup k většině rozhraní API na .NET Standard, ale stále kompatibilní s UWP, rozhraní .NET Framework 4.6.1 a budoucích .NET Standard 2.0.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -57,20 +57,20 @@ Máte tři možnosti primární, když se cílí na Standard .NET, podle potřeb
     </Project>
     ```
 
-2. Můžete použít nižší nebo vyšší verze rozhraní .NET standardního změnou hodnoty v `TargetFramework` uzlu souboru projektu.
+2. Pomocí úpravy hodnoty v můžete použít nižší nebo vyšší verze rozhraní .NET Standard `TargetFramework` uzlu souboru projektu.
     
-    .NET standard verze jsou zpětně kompatibilní. To znamená, že `netstandard1.0` knihovny spusťte na `netstandard1.1` platformy a vyšší. Však neexistuje žádná dopřednou kompatibilitu – nižší platformy .NET standardní nemůže odkazovat na ty, které jsou vyšší. To znamená, že `netstandard1.0` knihovny nelze reference knihovny, které cílí `netstandard1.1` nebo vyšší. Vyberte standardní verzi, která má správné směs podpora rozhraní API a platformy pro vaše potřeby. Doporučujeme, abyste `netstandard1.4` teď.
+    Verze .NET standard jsou zpětně kompatibilní. To znamená, že `netstandard1.0` knihovny spouštět `netstandard1.1` platformy a vyšší. Však neexistuje žádná dopředné kompatibility – nižší platformy .NET Standard nemůže odkazovat na větší z nich. To znamená, že `netstandard1.0` knihovny nelze referenční dokumentace knihovny, které cílí `netstandard1.1` nebo vyšší. Vyberte verzi Standard, která má správné kombinace podpoře platforem a rozhraní API pro vaše potřeby. Doporučujeme `netstandard1.4` teď.
     
-3. Pokud budete chtít cílové verze rozhraní .NET Framework 4.0 nebo níže, nebo chcete použít rozhraní API, které jsou k dispozici v rozhraní .NET Framework, ale není v .NET Standard (například `System.Drawing`), přečtěte si následující části a zjistěte, jak multitarget.
+3. Pokud chcete cílit na rozhraní .NET Framework verze 4.0 nebo níže, nebo chcete použít rozhraní API, které jsou k dispozici v rozhraní .NET Framework, ale ne v .NET Standard (například `System.Drawing`), přečtěte si následující části a zjistěte, jak multitarget.
 
-## <a name="how-to-target-the-net-framework"></a>Postup cílové rozhraní .NET Framework
+## <a name="how-to-target-the-net-framework"></a>Jak se zaměřit na rozhraní .NET Framework
 
 > [!NOTE]
-> Tyto pokyny předpokládají, že máte rozhraní .NET Framework, který je nainstalovaný na počítači. Odkazovat [požadavky](#prerequisites) získat závislosti nainstalována.
+> Tyto pokyny předpokládají, že máte na svém počítači nainstalováno rozhraní .NET Framework. Odkazovat [požadavky](#prerequisites) získání závislostí nainstalovány.
 
-Mějte na paměti, že některá z verzí rozhraní .NET Framework použít se zde jsou již v technické podpory. Odkazovat [rozhraní .NET Framework podporu životního cyklu nejčastější dotazy k zásadám](https://support.microsoft.com/gp/framework_faq/en-us) o Nepodporovaná verze.
+Mějte na paměti, že některé verze rozhraní .NET Framework se tady použít jsou už v technické podpory. Odkazovat [rozhraní .NET Framework podpory životního cyklu nejčastější dotazy k zásadám](https://support.microsoft.com/gp/framework_faq/en-us) týkajících se nepodporovaných verzí.
 
-Pokud chcete k dosažení maximální počet vývojáři a projekty, použijte jako cíl vaše základní rozhraní .NET Framework 4.0. Pokud chcete zacílit rozhraní .NET Framework, musíte začít s využitím správný cílový Framework Přezdívka (TFM) odpovídající verzi rozhraní .NET Framework, které chcete podporovat.
+Pokud chcete dosáhnout maximálního počtu vývojáři a projekty, použijte jako základní cílové rozhraní .NET Framework 4.0. Chcete-li cílit na rozhraní .NET Framework, je potřeba začít s použitím správné cílové rozhraní Framework Moniker (TFM), která odpovídá verzi rozhraní .NET Framework, kterou chcete podporovat.
 
 ```
 .NET Framework 2.0   --> net20
@@ -86,7 +86,7 @@ Pokud chcete k dosažení maximální počet vývojáři a projekty, použijte j
 .NET Framework 4.7   --> net47
 ```
 
-Potom vložte tento TFM do `TargetFramework` části souboru projektu. Můžete zde je ukázka, jak by zápisu knihovnu, která cílí rozhraní .NET Framework 4.0:
+Vložte tento TFM do `TargetFramework` část souboru projektu. Například tady je způsob, měli byste napsat knihovnu, která cílí na rozhraní .NET Framework 4.0:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -96,18 +96,18 @@ Potom vložte tento TFM do `TargetFramework` části souboru projektu. Můžete 
 </Project>
 ```
 
-A je to! I když to zkompilovat pouze pro rozhraní .NET Framework 4, můžete v knihovně na novější verze rozhraní .NET Framework.
+A to je všechno! I když to zkompilovat pouze pro rozhraní .NET Framework 4, můžete použít knihovnu v novějších verzích rozhraní .NET Framework.
 
-## <a name="how-to-multitarget"></a>Postup Multitarget
+## <a name="how-to-multitarget"></a>Jak Multitarget
 
 > [!NOTE]
-> Následující pokyny předpokládají, že máte rozhraní .NET Framework, který je nainstalovaný na počítači. Odkazovat [požadavky](#prerequisites) části Další závislosti, které je třeba nainstalovat a kam je z chcete stáhnout.
+> Následující pokyny předpokládají, že máte na svém počítači nainstalováno rozhraní .NET Framework. Odkazovat [požadavky](#prerequisites) naleznete další závislosti, které je potřeba nainstalovat a kam stáhnete z.
 
-Musíte mít starší verze rozhraní .NET Framework Pokud projekt podporuje rozhraní .NET Framework a .NET Core. V tomto scénáři, pokud chcete použít novější rozhraní API a jazykové konstrukty pro novější cíle, použijte `#if` direktivy v kódu. Můžete také může být nutné přidat jiné balíčky a závislosti pro každou platformu, kterou jste cílení zahrnout různých rozhraní API pro každý případ potřeby.
+Budete muset svůj projekt podporuje rozhraní .NET Framework a .NET Core cíleny na starší verze rozhraní .NET Framework. V tomto scénáři, pokud chcete použít pro novější cíle novějších rozhraní API a jazykovým konstrukcím, použijte `#if` direktiv ve vašem kódu. Potřebujete také přidat různé balíčky a závislosti pro každou platformu, na kterou cílíte zahrnout do různých rozhraní API potřebné pro každý případ.
 
-Řekněme například, že je vaše knihovna, která provádí síťových operací přes protokol HTTP. Pro .NET Standard a rozhraní .NET Framework verze 4.5 nebo vyšší, můžete použít `HttpClient` třídy z `System.Net.Http` oboru názvů. Však nemají starší verze rozhraní .NET Framework `HttpClient` třídy, takže můžete použít `WebClient` třídy z `System.Net` obor názvů pro ty, místo toho.
+Řekněme například, že máte knihovnu, která provádí síťové operace přes protokol HTTP. Pro .NET Standard a .NET Framework verze 4.5 nebo vyšší, můžete použít `HttpClient` třídy z `System.Net.Http` oboru názvů. Však nemají dřívějších verzích rozhraní .NET Framework `HttpClient` třídy, takže můžete použít `WebClient` třídy z `System.Net` obor názvů pro ty místo.
 
-Soubor projektu může vypadat například takto:
+Váš soubor projektu může vypadat takto:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -128,17 +128,17 @@ Soubor projektu může vypadat například takto:
 </Project>
 ```
 
-Můžete si všimnout tři hlavní změny tady:
+Všimněte si tři hlavní změny tady:
 
-1. `TargetFramework` Uzlu nahradila `TargetFrameworks`, a tři TFMs jsou vyjádřeny v.
-1. Je `<ItemGroup>` uzel `net40 ` cíl stahování v jeden odkaz na rozhraní .NET Framework.
-1. Je `<ItemGroup>` uzel `net45` cíl stahování v odkazech na dvě rozhraní .NET Framework.
+1. `TargetFramework` Uzlu se nahradil `TargetFrameworks`, a tři Tfm jsou vyjádřeny v.
+1. Je `<ItemGroup>` uzel `net40 ` cílové souhrnné informace v jednom odkazu rozhraní .NET Framework.
+1. Je `<ItemGroup>` uzel `net45` cílové stahování dva odkazy na rozhraní .NET Framework.
 
-Systém sestavení si je vědoma následující preprocesoru symboly použité v `#if` direktivy:
+Systém sestavení je seznámen následující symboly preprocesoru používané `#if` direktivy:
 
 [!INCLUDE [Preprocessor symbols](~/includes/preprocessor-symbols.md)]
 
-Tady je příklad které využijí Podmíněná kompilace za cíl:
+Tady je příklad provedete použití podmíněné kompilace na cíle:
 
 ```csharp
 using System;
@@ -201,7 +201,7 @@ namespace MultitargetLib
 }
 ```
 
-Pokud vytvoříte tento projekt s `dotnet build`, můžete si všimnout tři adresáře `bin/` složky:
+Pokud vytvoříte tento projekt s `dotnet build`, uvidíte tři adresářů podřízených adresáři `bin/` složky:
 
 ```
 net40/
@@ -209,16 +209,16 @@ net45/
 netstandard1.4/
 ```
 
-Každá z těchto obsahovat `.dll` soubory pro každý cíl.
+Každý z nich obsahuje `.dll` soubory pro každý cíl.
 
-## <a name="how-to-test-libraries-on-net-core"></a>Postup testování knihovny na .NET Core
+## <a name="how-to-test-libraries-on-net-core"></a>Testování knihovny v rozhraní .NET Core
 
-Je důležité, abyste mohli otestovat napříč platformami. Můžete použít buď [xUnit](http://xunit.github.io/) nebo Mstestu z pole. Jsou obě perfektně vhodný pro testování vaší knihovny na .NET Core jednotky. Jak nastavit řešení pomocí projektů testování, bude záviset na [struktura řešení](#structuring-a-solution). V následujícím příkladu se předpokládá, že test a zdrojového adresáře za provozu ve stejném adresáři nejvyšší úrovně.
+Je důležité mít možnost Testovat napříč platformami. Můžete použít buď [xUnit](http://xunit.github.io/) nebo MSTest úprav. Obě jsou dokonale vhodný pro testování vaší knihovny v .NET Core. Jak nastavit řešení s testovacími projekty, bude záviset na [struktura vašeho řešení](#structuring-a-solution). V následujícím příkladu se předpokládá, že live test a zdrojového adresáře ve stejném adresáři nejvyšší úrovně.
 
 > [!NOTE]
-> To se využívá část [.NET Core rozhraní příkazového řádku](../tools/index.md). V tématu [dotnet nové](../tools/dotnet-new.md) a [SLN – dotnet](../tools/dotnet-sln.md) Další informace.
+> Tento mechanismus využívá některé [příkazy rozhraní příkazového řádku .NET Core](../tools/index.md). Zobrazit [dotnet nové](../tools/dotnet-new.md) a [dotnet sln](../tools/dotnet-sln.md) Další informace.
 
-1. Nastavte řešení. Můžete tak učinit pomocí následujících příkazů:
+1. Nastavení řešení. Můžete tak učinit pomocí následujících příkazů:
 
    ```bash
    mkdir SolutionWithSrcAndTest
@@ -230,7 +230,7 @@ Je důležité, abyste mohli otestovat napříč platformami. Můžete použít 
    dotnet sln add MyProject.Test/MyProject.Test.csproj
    ```
 
-   Tato akce vytvoří projekty a propojit je společně v řešení. V adresáři `SolutionWithSrcAndTest` by měla vypadat takto:
+   To vytvoří projekty a propojit dohromady v řešení. V adresáři `SolutionWithSrcAndTest` by měl vypadat takto:
 
    ```
    /SolutionWithSrcAndTest
@@ -239,14 +239,14 @@ Je důležité, abyste mohli otestovat napříč platformami. Můžete použít 
    |__MyProject.Test/
    ```
 
-1. Přejděte do adresáře k testovacímu projektu a přidejte odkaz na `MyProject.Test` z `MyProject`.
+1. Přejděte do adresáře projektu testu a přidejte odkaz na `MyProject.Test` z `MyProject`.
 
    ```bash
    cd MyProject.Test
    dotnet add reference ../MyProject/MyProject.csproj
    ```
 
-1. Obnovení balíčků a sestavení projektů:
+1. Obnovení balíčků a sestavit projekty:
 
    ```bash
    dotnet restore
@@ -255,20 +255,20 @@ Je důležité, abyste mohli otestovat napříč platformami. Můžete použít 
 
    [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-1. Ověřte, že xUnit běží spuštěním `dotnet test` příkaz. Pokud zvolíte použití Mstestu, měli místo toho spustit nástroj runner Mstestu konzoly.
+1. Ověřte, že xUnit běží spuštěním `dotnet test` příkazu. Pokud jste se rozhodli použít MSTest, byste místo toho spustit MSTest runner konzoly.
     
-A je to! Nyní můžete otestovat knihovnu pro všechny platformy, pomocí nástrojů příkazového řádku. Chcete-li pokračovat, testování nyní, když máte všechno nastavit, aby testování vaše knihovna je velmi jednoduchý:
+A to je všechno! Teď můžete otestovat vaši knihovnu na všech platformách pomocí nástrojů příkazového řádku. Pokračovat v testování teď, když máte všechno, co nastavíte, testování knihovny je velmi jednoduchý:
 
-1. Proveďte změny své knihovny.
-1. Spouštění testů z příkazového řádku v adresáři test pomocí `dotnet test` příkaz.
+1. Proveďte změny v knihovně.
+1. Spuštění testů z příkazového řádku v adresáři test s `dotnet test` příkazu.
 
-Váš kód bude automaticky znovu vytvořen při vyvolání `dotnet test` příkaz.
+Váš kód bude automaticky znovu vytvořen při vyvolání `dotnet test` příkazu.
 
-## <a name="how-to-use-multiple-projects"></a>Použití více projektů
+## <a name="how-to-use-multiple-projects"></a>Jak používat více projektů
 
-Běžné potřebu větší knihovny je funkce umístit do různých projektů.
+Běžné potřebu větší knihovny, je umístit funkce v různých projektech.
 
-Představte si, že jste si přáli pro sestavení knihovny, které by mohly spotřebovat v idiomatickou C# a F #. To znamená, že příjemci ve své knihovny je můžou využívat způsoby, které jsou přirozené C# nebo F #. Například v jazyce C# může využívat knihovně takto:
+Představte si, že jste si přáli sestavit knihovnu, která by mohla využívat idiomatickou jazyků C# a F #. To by znamenalo, že spotřebitelé knihovny je využívat způsoby, které jsou přirozené pro C# nebo F #. Například v jazyce C# může využívat knihovny takto:
 
 ```csharp
 using AwesomeLibrary.CSharp;
@@ -292,13 +292,13 @@ let doWork data = async {
 }
 ```
 
-Spotřeba scénáře, jako to znamená, že rozhraní API přistupuje musejí mít jinou strukturu pro C# a F #.  Společný přístup k provedení to je zohlednit veškerou logiku knihovny do projektu jádra, s projekty C# a F # definice rozhraní API vrstvy, které volání do tohoto projektu jádra.  Zbývající části použije tyto názvy:
+Scénáře využití, jako je to znamená, že rozhraní API, ke kterému přistupujete musí mít odlišnou strukturu pro C# a F #.  Běžným přístupem k provádění to je faktor veškerou logiku knihovny do projektu core, s projekty C# a F # definice rozhraní API vrstvy, které volají do tohoto projektu core.  Zbytek části budete používat následující názvy:
 
-* **AwesomeLibrary.Core** – základní projektu, který obsahuje veškerou logiku pro knihovnu
-* **AwesomeLibrary.CSharp** -projekt se veřejná rozhraní API určená pro používání v jazyce C#
-* **AwesomeLibrary.FSharp** -projekt se veřejná rozhraní API určená pro používání v jazyce F #
+* **AwesomeLibrary.Core** – základní projekt, který bude obsahovat veškerou logiku pro knihovnu
+* **AwesomeLibrary.CSharp** – projekt pomocí veřejných rozhraní API určené pro použití v jazyce C#
+* **AwesomeLibrary.FSharp** – projekt pomocí veřejných rozhraní API určené pro použití v jazyce F #
 
-V terminálu k vytvoření stejná struktura jako tento průvodce můžete spustit následující příkazy:
+Spuštěním následujících příkazů v terminálu vytvořit stejnou strukturu jako vodítko při tom tato:
 
 ```console
 mkdir AwesomeLibrary && cd AwesomeLibrary
@@ -314,17 +314,17 @@ dotnet sln add AwesomeLibrary.CSharp/AwesomeLibrary.CSharp.csproj
 dotnet sln add AwesomeLibrary.FSharp/AwesomeLibrary.FSharp.fsproj
 ```
 
-Tím se přidá výše tři projekty a řešení soubor, který je společně odkazů. Soubor řešení vytváření a propojování projekty vám umožní obnovit a sestavení projektů z nejvyšší úrovně.
+Tato možnost přidá výše uvedených tří projektů a soubor řešení, které propojí je dohromady. Vytváření souboru řešení a propojování projektů vám umožní obnovit a sestavit projekty z nejvyšší úrovně.
 
 ### <a name="project-to-project-referencing"></a>Odkazování na projekt na projekt
 
-Nejlepší způsob, jak odkazovat na projekt je použití rozhraní příkazového řádku .NET Core přidat odkaz na projekt. Z **AwesomeLibrary.CSharp** a **AwesomeLibrary.FSharp** adresáře projektu, můžete spustit následující příkaz:
+Použití rozhraní příkazového řádku .NET Core k přidání odkazu na projekt je nejlepší způsob, jak odkazovat na projekt. Z **AwesomeLibrary.CSharp** a **AwesomeLibrary.FSharp** adresáře projektu, můžete spustit následující příkaz:
 
 ```console
 $ dotnet add reference ../AwesomeLibrary.Core/AwesomeLibrary.Core.csproj
 ```
 
-Soubory projektu pro obě **AwesomeLibrary.CSharp** a **AwesomeLibrary.FSharp** bude nyní odkaz **AwesomeLibrary.Core** jako `ProjectReference` cíl.  Můžete to ověřit tak, že zkontrolujete soubory projektu a zobrazuje následující v nich:
+Soubory projektu pro obě **AwesomeLibrary.CSharp** a **AwesomeLibrary.FSharp** bude nyní odkaz **AwesomeLibrary.Core** jako `ProjectReference` cíl.  Můžete to ověřit tak kontrolu souborů projektu a zobrazuje v je následující:
 
 ```xml
 <ItemGroup>
@@ -332,8 +332,8 @@ Soubory projektu pro obě **AwesomeLibrary.CSharp** a **AwesomeLibrary.FSharp** 
 </ItemGroup>
 ```
 
-V této části můžete ručně přidat ke každému souboru projektu, pokud nechcete používat rozhraní příkazového řádku .NET Core.
+V této části můžete ručně přidat do každého souboru projektu, pokud nechcete používat rozhraní příkazového řádku .NET Core.
 
 ### <a name="structuring-a-solution"></a>Strukturování řešení
 
-Dalším důležitým aspektem řešení vícenásobného projektu navazuje dobrý celková struktura projektu. Kód můžete uspořádat, ale chcete, a také propojit každý projekt, ze souboru řešení s `dotnet sln add`, nebudete moci spustit `dotnet restore` a `dotnet build` na úrovni řešení.
+Jiný důležitý aspekt řešení vícenásobného projektu se vytvářejí dobré celkovou strukturu projektu. Kód můžete uspořádat, ale potřebujete, a tak dlouho, dokud každý projekt odkazujete na soubor řešení s `dotnet sln add`, bude možné spustit `dotnet restore` a `dotnet build` na úrovni řešení.

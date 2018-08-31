@@ -7,12 +7,12 @@ helpviewer_keywords:
 - concatenating strings [C#]
 - strings [C#], concatenation
 ms.assetid: 8e16736f-4096-4f3f-be0f-9d4c3ff63520
-ms.openlocfilehash: d4e57347a11b804f3ea7f4bb9736c134c4b71929
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 355e56acf36b6212ee4563f34722b10b56a0fb47
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37961303"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43256095"
 ---
 # <a name="how-to-concatenate-multiple-strings-c-guide"></a>Postupy: řetězení více řetězců (Průvodce v C#)
 
@@ -23,7 +23,6 @@ ms.locfileid: "37961303"
 Následující příklad používá zřetězení rozdělením dlouhý řetězec literálu řetězce menší za účelem zlepšení čitelnosti ve zdrojovém kódu. Tyto části zřetězeny do jednoho řetězce v době kompilace. Je zahrnutých bez poplatků za běhu výkonu bez ohledu na počet řetězců.  
   
  [!code-csharp-interactive[Combining strings at compile time](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#1)]  
-  
 
 K proměnné řetězce zřetězit, můžete použít `+` nebo `+=` operátory, [interpolace](../language-reference/tokens/interpolated.md) nebo <xref:System.String.Format%2A?displayProperty=nameWithType>, <xref:System.String.Concat%2A?displayProperty=nameWithType>, <xref:System.String.Join%2A?displayProperty=nameWithType> nebo <xref:System.Text.StringBuilder.Append%2A?displayProperty=nameWithType> metody. `+` Operátor se snadno používá a zajišťuje intuitivní kódu. I když použijete několik `+` operátory v jednom příkazu, řetězec obsahu zkopírován pouze jednou. Následující kód ukazuje příklady použití `+` a `+=` operátory zřetězení řetězců:
 
@@ -34,7 +33,7 @@ V některých výrazů je snazší ke zřetězení řetězců pomocí interpolac
 [!code-csharp-interactive[building strings using string interpolation](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#3)]  
   
 > [!NOTE]
->  V operacích zřetězení řetězec kompilátor jazyka C# považuje za řetězec null stejné prázdný řetězec.
+> V operacích zřetězení řetězec kompilátor jazyka C# považuje za řetězec null stejné prázdný řetězec.
 
 Jiné metody ke zřetězení řetězců je <xref:System.String.Format%2A?displayProperty=nameWithType>. Tato metoda funguje dobře, když vytváříte řetězec z malý počet součástí řetězce.
 
@@ -54,8 +53,9 @@ V poslední, můžete použít [LINQ](../programming-guide/concepts/linq/index.m
 
 Tyto ukázky můžete zkusit pohledem na kód v našich [úložiště GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako soubor zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
 
-## <a name="see-also"></a>Viz také  
- <xref:System.String>  
- <xref:System.Text.StringBuilder>  
- [Průvodce programováním v jazyce C#](../programming-guide/index.md)  
- [Řetězce](../programming-guide/strings/index.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.String>  
+- <xref:System.Text.StringBuilder>  
+- [Průvodce programováním v jazyce C#](../programming-guide/index.md)  
+- [Řetězce](../programming-guide/strings/index.md)

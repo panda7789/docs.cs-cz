@@ -3,12 +3,12 @@ title: Store výsledky dotazu v paměti
 description: Jak ukládat výsledky.
 ms.date: 11/30/2016
 ms.assetid: 5b863961-1750-4cf9-9607-acea5054d15a
-ms.openlocfilehash: 52d502a841c428bd90a26c803ba577e76c17197c
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 98a300b2c11eb037ed4ce34caea2673a4e0f8e6b
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404298"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43258079"
 ---
 # <a name="store-the-results-of-a-query-in-memory"></a>Store výsledky dotazu v paměti
 
@@ -30,4 +30,4 @@ Dotaz je v podstatě sadu pokynů pro načtení a organizujte data. Dotazy jsou 
 
 ## <a name="see-also"></a>Viz také:
 
-[LINQ (Language Integrated Query)](index.md)
+- [LINQ (Language Integrated Query)](index.md)

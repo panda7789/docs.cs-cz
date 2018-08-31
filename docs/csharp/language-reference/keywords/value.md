@@ -7,11 +7,11 @@ helpviewer_keywords:
 - value keyword [C#]
 ms.assetid: c99d6468-687f-4a46-89b4-a95e1b00bf6d
 ms.openlocfilehash: 1e120d68fc4a42f24feb225f652c14525fde3d71
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42931939"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43256076"
 ---
 # <a name="value-c-reference"></a>value (Referenční dokumentace jazyka C#)
 Kontextové klíčové slovo `value` se používá v přístupový objekt set v deklaracích běžnou vlastností. Je to podobné do vstupního parametru pro metodu. Slovo `value` odkazuje na hodnotu, která kód klienta se pokouší přiřadit vlastnosti. V následujícím příkladu `MyDerivedClass` má vlastnost s názvem `Name` , která používá `value` parametr přiřadit nový řetězec pro pole zálohování `name`. Z hlediska kódu klienta je zapsán operace jako jednoduchého přiřazení.  

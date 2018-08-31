@@ -1,51 +1,51 @@
 ---
-title: Testování v .NET Core jednotky
-description: Testování částí se nikdy nebyl snazší. V tématu Jak používat v .NET Core a .NET Standard projektů testování částí.
+title: Testování jednotek v .NET Core
+description: Testování částí nebylo nikdy jednodušší. Najdete informace o použití testování jednotek v projektech .NET Core a .NET Standard.
 author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
-ms.openlocfilehash: b3d8393cf285eae3493328b16c3dc038af208da6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4a1d880da796aac40da93ca2513b6163200ca3c1
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33212365"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43254787"
 ---
-# <a name="unit-testing-in-net-core-and-net-standard"></a>V .NET Core a .NET Standard testování částí
+# <a name="unit-testing-in-net-core-and-net-standard"></a>Testování jednotek v .NET Core a .NET Standard
 
-.NET core má byly navrženy s testovatelnosti na paměti, aby testů jednotek pro vaše aplikace je jednodušší než kdy dřív. Tento článek představuje stručně jednotka testy (a jak se liší od jiných druhů testů). Propojené prostředky ukazují, jak přidat projekt testu do řešení a potom spusťte testy jednotek pomocí příkazového řádku nebo Visual Studio.
+.NET core s testovatelností na paměti, byly navržené tak, aby vytváření testů jednotek pro vaše aplikace je jednodušší než kdy dřív. Tento článek stručně představuje jednotky testů (a jak se liší od jiných typů testů). Propojené prostředky ukazují, jak přidat do svého řešení projekt testu a pak spusťte testování částí pomocí příkazového řádku nebo Visual Studio.
 
-Podporuje rozhraní .NET 2.0 základní [standardní rozhraní .NET 2.0](../../standard/net-standard.md). Závisí na .NET Standard a bude fungovat v typy projektu knihovny použitá k předvedení jednotky testování v této části.
+.NET core 2.0 podporuje [.NET Standard 2.0](../../standard/net-standard.md). Knihovny použité k předvedení testování jednotek v této části využívají .NET Standard a bude fungovat v i ostatní typy projektů.
 
-Od verze rozhraní .NET 2.0 jádra, existují šablony projektů testů jednotek pro Visual Basic a F # a také C#.
+Od verze rozhraní .NET Core 2.0, existují šablony projektů testů jednotek pro C#, F # a Visual Basic.
 
-## <a name="getting-started-with-testing"></a>Začínáme s testování
+## <a name="getting-started-with-testing"></a>Začínáme s testováním
 
-Sada automatizovaných testů s je jedním z nejlepší způsobů, jak zajistit, že softwarová aplikace nemá co jeho autoři určené na práci. Existují různé druhy testů pro softwarové aplikace, včetně integrace testy, webové testy, zátěžových testů a dalších. Testy jednotek, které testování jednotlivých softwarové součásti nebo metody jsou nejnižší úrovni testy. Testování částí měli jenom otestovat kód v rámci ovládacího prvku pro vývojáře a neměli testování aspekty infrastruktury, jako jsou databáze, systémy souborů nebo síťovým prostředkům. Testování částí lze zapisovat pomocí [testovací řízené vývoj (TDD)](http://deviq.com/test-driven-development/), nebo mohou být přidány do stávajícího kódu pro potvrzení jeho správnost. V obou případech se musí být malé, dobře s názvem a rychlé, vzhledem k tomu, že v ideálním případě chcete být schopni spustit stovky je před odesláním změn do úložiště sdíleného kódu projektu.
+S sada automatických testů je jedním z nejlepších způsobů Ujistěte se, že softwarové aplikace dělá, co autorů určené na práci. Existují různé druhy testů pro softwarové aplikace, včetně testů integrace, webové testy, testy zatížení a dalších. Testy jednotek, které testují jednotlivé softwarové komponenty nebo metody jsou nejnižší úrovni testy. Testy jednotek by měl pouze testování kódu v rámci ovládacího prvku pro vývojáře a by neměl testu starostí o infrastrukturu, jako jsou databáze, systémy souborů nebo síťovým prostředkům. Testy jednotek jde zapsat pomocí [testu řízeného vývoje (TDD)](http://deviq.com/test-driven-development/), nebo je možné je přidat k existujícímu kódu k potvrzení jeho správnost. V obou případech se musí být malé, dobře pojmenované a rychlé, protože v ideálním případě ale chcete být schopni spustit stovky je před odesláním změn do úložiště projektu sdíleného kódu.
 
 > [!NOTE]
-> Vývojáři často potýkat s tím zajistily se objevuje s funkčním názvy pro své testovací třídy a metody. Jako počáteční bod, následuje produktový tým ASP.NET [tyto konvence](https://github.com/aspnet/Home/wiki/Engineering-guidelines#unit-tests-and-functional-tests).
+> Vývojáři se často potýkají s naráželi s dobrým názvy pro jejich testovací třídy a metody. Jako výchozí bod, produktový tým ASP.NET následuje [Tato konvence](https://github.com/aspnet/Home/wiki/Engineering-guidelines#unit-tests-and-functional-tests).
 
-Pokud zápis testů částí, dávejte pozor, nejsou omylem zavést závislosti na infrastruktuře. Tyto mívají aby testy pomalejší a více křehká a proto by se mělo vyhradit pro integraci testy. Tyto závislosti skrytá můžete vyhnout v kódu aplikace pomocí následujících [explicitní závislosti Princip](http://deviq.com/explicit-dependencies-principle/) a pomocí [vkládání závislostí](/aspnet/core/fundamentals/dependency-injection) k vyžádání závislostmi z rozhraní. Také můžete zabránit testů jednotek v samostatných projektu testů integrace a ujistěte se, že vaše projektu testování částí nemá odkazy na nebo závislosti na infrastruktuře balíčky.
+Při psaní testů jednotek, dbejte na to, že nezpůsobíte omylem závislosti na infrastruktuře. Tyto jsou obvykle provádět testy pomalejší a větší křehká a proto by se mělo vyhradit pro testy integrace. Vyhnete tyto skryté závislosti v kódu aplikace pomocí následujících [explicitní závislosti Princip](http://deviq.com/explicit-dependencies-principle/) a pomocí [injektáž závislostí](/aspnet/core/fundamentals/dependency-injection) k vyžádání závislosti z rozhraní framework. Můžete také ponechat testování částí v samostatném projektu z testů integrace a ujistěte se, že projektu jednotkového testu nemá odkazy nebo závislosti na balíčky infrastruktury.
 
-Další informace o testování v projektech .NET Core jednotky:
+Další informace o testování jednotek v projektech .NET Core:
 
-Projektů testování částí pro rozhraní .NET Core jsou podporovány pro [C#](../../csharp/index.md), [F #](../../fsharp/index.md) a [jazyka Visual Basic](../../visual-basic/index.md). Můžete také zvolit [xUnit](http://xunit.github.io), [NUnit](http://nunit.org) a [Mstestu](https://github.com/Microsoft/vstest-docs).
+Projekty testů jednotek pro .NET Core podporují [jazyka C#](../../csharp/index.md), [F #](../../fsharp/index.md) a [jazyka Visual Basic](../../visual-basic/index.md). Můžete také zvolit [xUnit](http://xunit.github.io), [NUnit](http://nunit.org) a [MSTest](https://github.com/Microsoft/vstest-docs).
 
-Další informace o těchto kombinace v těchto kurzů:
+Informace o najdete v těchto kurzech tyto kombinace:
 
-* Vytváření testů jednotek pomocí [ *XUnit* a *C#* pomocí rozhraní příkazového řádku .NET Core](unit-testing-with-dotnet-test.md).
-* Vytváření testů jednotek pomocí [ *NUnit* a *C#* pomocí rozhraní příkazového řádku .NET Core](unit-testing-with-nunit.md).
-* Vytváření testů jednotek pomocí [ *Mstestu* a *C#* pomocí rozhraní příkazového řádku .NET Core](unit-testing-with-mstest.md).
-* Vytváření testů jednotek pomocí [ *XUnit* a *F #* pomocí rozhraní příkazového řádku .NET Core](unit-testing-fsharp-with-dotnet-test.md).
-* Vytváření testů jednotek pomocí [ *NUnit* a *F #* pomocí rozhraní příkazového řádku .NET Core](unit-testing-fsharp-with-nunit.md).
-* Vytváření testů jednotek pomocí [ *Mstestu* a *F #* pomocí rozhraní příkazového řádku .NET Core](unit-testing-fsharp-with-mstest.md).
-* Vytváření testů jednotek pomocí [ *XUnit* a *jazyka Visual Basic* pomocí rozhraní příkazového řádku .NET Core](unit-testing-visual-basic-with-dotnet-test.md).
-* Vytváření testů jednotek pomocí [ *NUnit* a *jazyka Visual Basic* pomocí rozhraní příkazového řádku .NET Core](unit-testing-visual-basic-with-nunit.md).
-* Vytváření testů jednotek pomocí [ *Mstestu* a *jazyka Visual Basic* pomocí rozhraní příkazového řádku .NET Core](unit-testing-visual-basic-with-mstest.md).
+* Vytvoření testování částí pomocí [ *xUnit* a *jazyka C#* pomocí rozhraní příkazového řádku .NET Core](unit-testing-with-dotnet-test.md).
+* Vytvoření testování částí pomocí [ *NUnit* a *jazyka C#* pomocí rozhraní příkazového řádku .NET Core](unit-testing-with-nunit.md).
+* Vytvoření testování částí pomocí [ *MSTest* a *jazyka C#* pomocí rozhraní příkazového řádku .NET Core](unit-testing-with-mstest.md).
+* Vytvoření testování částí pomocí [ *xUnit* a *F #* pomocí rozhraní příkazového řádku .NET Core](unit-testing-fsharp-with-dotnet-test.md).
+* Vytvoření testování částí pomocí [ *NUnit* a *F #* pomocí rozhraní příkazového řádku .NET Core](unit-testing-fsharp-with-nunit.md).
+* Vytvoření testování částí pomocí [ *MSTest* a *F #* pomocí rozhraní příkazového řádku .NET Core](unit-testing-fsharp-with-mstest.md).
+* Vytvoření testování částí pomocí [ *xUnit* a *jazyka Visual Basic* pomocí rozhraní příkazového řádku .NET Core](unit-testing-visual-basic-with-dotnet-test.md).
+* Vytvoření testování částí pomocí [ *NUnit* a *jazyka Visual Basic* pomocí rozhraní příkazového řádku .NET Core](unit-testing-visual-basic-with-nunit.md).
+* Vytvoření testování částí pomocí [ *MSTest* a *jazyka Visual Basic* pomocí rozhraní příkazového řádku .NET Core](unit-testing-visual-basic-with-mstest.md).
 
-Můžete vybrat různé jazyky pro vaše knihovny tříd a vaše jednotkové testování knihovny. Dozvíte, jak pomocí kombinace a porovnávání názorné postupy odkazuje výše.
+Můžete použít různé jazyky pro knihovny tříd a jednotky testování knihovny. Dozvíte se, jak kombinace a porovnávání návody odkazuje výše.
 
-* Visual Studio Enterprise nabízí skvělý testování nástroje pro .NET Core. Podívejte se na [Live testování částí](/visualstudio/test/live-unit-testing) nebo [pokrytí kódu](https://github.com/Microsoft/vstest-docs/blob/master/docs/analyze.md#working-with-code-coverage) Další informace.
-* Další příklady a další informace o tom, jak pomocí filtrování testovací selektivní jednotky, najdete v části [spouštění testů jednotek selektivní](selective-unit-tests.md), nebo [zahrnutí a vyloučení testů pomocí sady Visual Studio](/visualstudio/test/live-unit-testing#including-and-excluding-test-projects-and-test-methods).
-* Týmem XUnit zápisem kurz, který ukazuje [použití xUnit s .NET Core a Visual Studio](http://xunit.github.io/docs/getting-started-dotnet-core.html).
+* Visual Studio Enterprise nabízí skvělé testovací nástroje pro .NET Core. Podívejte se na [Live Unit Testing](/visualstudio/test/live-unit-testing) nebo [pokrytí kódu](https://github.com/Microsoft/vstest-docs/blob/master/docs/analyze.md#working-with-code-coverage) Další informace.
+* Další informace a příklady, jak používat filtrování testů selektivní jednotky najdete v tématu [spouštění selektivních testů jednotek](selective-unit-tests.md), nebo [zahrnutí a vyloučení testy pomocí sady Visual Studio](/visualstudio/test/live-unit-testing#include-and-exclude-test-projects-and-test-methods).
+* Tým xUnit zapsala kurz, který ukazuje [použití xUnit s .NET Core a Visual Studio](http://xunit.github.io/docs/getting-started-dotnet-core.html).

@@ -1,33 +1,33 @@
 ---
 title: Parametry a argumenty (F#)
-description: 'Další informace o F # jazyková podpora pro definování parametry a předání argumentů do funkce, metod a vlastností.'
+description: 'Další informace o podpora jazyka F # pro definování parametrů a předávání argumentů do funkce, metody a vlastnosti.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 319cf0e7346d498ce34e41a9993fe0160038461a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9744339110314e4e6b3c3cf8d49b1c988bc25e3c
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33566217"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43254006"
 ---
 # <a name="parameters-and-arguments"></a>Parametry a argumenty
 
-Toto téma popisuje jazyková podpora pro definování parametry a předání argumentů do funkce, metod a vlastností. Obsahuje informace o tom, k předání odkazem a definování a používání metody, které může provádět proměnný počet argumentů.
+Toto téma popisuje podporu jazyka pro definování parametrů a předávání argumentů do funkce, metody a vlastnosti. Obsahuje informace o předávání pomocí odkazu a k definování a použití metod, které mohou provádět proměnný počet argumentů.
 
 
 ## <a name="parameters-and-arguments"></a>Parametry a argumenty
-Termín *parametr* se používá k popisu názvy hodnot, které se očekává, že je nutné zadat. Termín *argument* se používá pro hodnoty poskytnuté pro jednotlivé parametry.
+Termín *parametr* se používá k popisu názvy pro hodnoty, které se očekává, že @username. Termín *argument* se používá pro hodnoty poskytnuté pro každý parametr.
 
-Parametry lze v řazené kolekce členů nebo curryfikované formuláře nebo v některé kombinaci obojího. Argumenty můžete předat pomocí názvu objektu explicitní parametr. Parametry metody můžete zadat jako volitelné a zadané výchozí hodnotu.
+Parametry můžete zadat v n-tici nebo curryfikované formuláře, nebo určitou kombinaci obou. Pomocí názvu explicitní parametr můžete předat argumenty. Parametry metod můžete zadaný jako volitelný a zadaný výchozí hodnotu.
 
 
-## <a name="parameter-patterns"></a>Parametr vzory
-Parametry zadané pro funkce a metody jsou obecně vzory oddělené mezerami. To znamená, že v zásadě některé vzory popsané v [výrazy shody](match-expressions.md) lze použít v seznamu parametrů pro funkci nebo člen.
+## <a name="parameter-patterns"></a>Vzory parametrů
+Parametry zadané funkce a metody jsou obecně vzory oddělené mezerami. To znamená, že v zásadě, všechny tyto vzory se dají podle [odpovídající výrazy](match-expressions.md) lze použít v seznamu parametrů funkce nebo člen.
 
-Metody obvykle formulář řazené kolekce členů předávání argumentů. Toto dosahuje výsledku jasnější z perspektivy jinými jazyky rozhraní .NET, protože formuláře řazené kolekce členů odpovídá způsob, jakým jsou argumenty předané metod rozhraní .NET.
+Metody obvykle používají formě řazené kolekce členů předávání argumentů. Toto dosahuje jasnější výsledek z hlediska jinými jazyky rozhraní .NET, protože odpovídá formě řazené kolekce členů způsob, jakým jsou argumenty předávány v metod rozhraní .NET.
 
-Curryfikované formuláře se nejčastěji používá s funkcemi, které jsou vytvořeny pomocí `let` vazby.
+Curryfikované formuláře se nejčastěji používá s funkcemi, které jsou vytvářeny instalační sadou `let` vazby.
 
-Následující pseudokódu zobrazuje příklady řazené kolekce členů a curryfikované argumenty.
+Následujícím pseudokódu ukazuje příklady řazené kolekce členů a curryfikované argumenty.
 
 ```fsharp
 // Tuple form.
@@ -36,21 +36,21 @@ member this.SomeMethod(param1, param2) = ...
 let function1 param1 param2 = ...
 ```
 
-Kombinovaná formuláře je možné, pokud jsou některé argumenty v řazené kolekce členů a některé nejsou.
+Kombinované formuláře je možné, pokud některé argumenty jsou v řazených kolekcí členů a některé nejsou.
 
 ```fsharp
 let function2 param1 (param2a, param2b) param3 = ...
 ```
 
-Jiných vzorů můžete použít i v seznamy parametrů, ale pokud vzor parametr neodpovídá všechny možné vstupy, může být neúplné shoda v době běhu. Výjimka `MatchFailureException` se vygeneruje, když je hodnota argumentu neodpovídá vzory uvedený v seznamu parametrů. Vydá výstrahu, pokud parametr vzor umožňuje pro neúplné odpovídá. Alespoň jeden další vzor je často užitečné pro seznamy parametrů a který je zástupný znak – vzor. Použít zástupný znak – vzor v seznamu parametrů. Pokud chcete jednoduše ignorovat všechny argumenty, které jsou zadány. Následující kód ukazuje použití vzoru zástupný znak v seznam argumentů.
+Další způsoby lze také v seznamech parametrů, ale pokud vzor parametru se neshoduje s všech vstupů je to možné, může být nekompletní shoda v době běhu. Výjimka `MatchFailureException` se vygeneruje, když hodnota argumentu není odpovídající vzorům uvedeným v seznamu parametrů. Kompilátor vyvolá upozornění, pokud parametr vzoru umožňuje pro úplné shody. Alespoň jeden další vzorek je často užitečné pro seznamy parametrů a, který je vzor zástupných znaků. Vzorec zástupných znaků v seznamu parametrů. použijte chcete jednoduše ignorovat všechny argumenty, které jsou dodávány. Následující kód ukazuje použití zástupných v seznam argumentů.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-1/snippet3801.fs)]
 
-Zástupný znak – vzor může být užitečné vždy, když není nutné argumentů předaných v, například v hlavní vstupní bod programu, pokud si nejste zájem o argumenty příkazového řádku, které jsou obvykle poskytovány jako pole řetězců, jako v následujícím kódu.
+Vzorec zástupných znaků může být užitečné pokaždé, když není nutné předaných argumentech, například hlavní vstupní bod programu, když vás nezajímají argumentů příkazového řádku, které jsou obvykle dodávány jako pole řetězců, stejně jako v následujícím kódu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-1/snippet3802.fs)]
 
-Další vzory, které se někdy používají v argumentech `as` vzor a vzory identifikátor přidružené rozlišovaná sjednocení a aktivní vzorky. Můžete použít případě jedním rozlišovaná sjednocení – vzor následujícím způsobem.
+Další způsoby, které se občas používají v argumenty jsou `as` vzoru a vzorky identifikátoru přidružené rozlišovaná sjednocení a aktivní vzory. Rozlišovaná sjednocení vzor jedním případem můžete následujícím způsobem.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-1/snippet3803.fs)]
 
@@ -61,7 +61,7 @@ Data begins at 0 and ends at 4 in string Et tu, Brute?
 Et tu
 ```
 
-Aktivní vzorky může být užitečné jako parametry, například při transformaci argumentu na požadovaný formát, jako v následujícím příkladu:
+Aktivní vzory může být užitečné jako parametry, například při transformaci argumentu do požadovaného formátu, jako v následujícím příkladu:
 
 ```fsharp
 type Point = { x : float; y : float }
@@ -73,45 +73,45 @@ let radius (Polar(r, _)) = r
 let angle (Polar(_, theta)) = theta
 ```
 
-Můžete použít `as` vzor ukládání odpovídající hodnotu jako hodnotu místní, jak je znázorněno na následujícím řádku kódu.
+Můžete použít `as` vzor ukládání odpovídající hodnotu jako místní hodnoty, jak je znázorněno v následující řádek kódu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-1/snippet3805.fs)]
 
-Jiné vzor, který se používá příležitostně je funkce, která zůstane poslední argument nepojmenované tím, že poskytuje jako text funkce, která okamžitě provede vzor shody implicitní argument výrazu lambda. Příkladem je následující řádek kódu.
+Jiný model, který se používá čas od času je funkce, které se zasílají posledním argumentem nepojmenované poskytnutím jako tělo funkce, výraz lambda, který se okamžitě provede porovnávání na implicitní argument. Příkladem je následující řádek kódu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-1/snippet3804.fs)]
 
-Tento kód definuje funkci, která přebírá seznam obecné a vrátí `true` Pokud je seznam prázdný, a `false` jinak. Použití těchto postupů můžete nastavit kód obtížněji čitelný.
+Tento kód definuje funkci, která přebírá seznam obecných a vrací `true` Pokud je seznam prázdný, a `false` jinak. Použití těchto metod může ztížit kód ke čtení.
 
-V některých případech vzorů, které se týkají neúplné odpovídá jsou užitečné, například pokud jste si jisti, že seznamy v programu mají jenom tři prvky, můžete použít připomínat následující v seznamu parametrů.
+V některých případech způsoby, které se týkají neúplné shody jsou užitečné, například pokud víte, že seznamy v aplikaci mají pouze tři prvky, můžete použít model následujícím postupem v seznamu parametrů.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-1/snippet3806.fs)]
 
-Použití vzorů, které obsahuje neúplné odpovídající se nejlépe hodí pro rychlé při vytváření prototypu a dalších dočasné používá. Kompilátor vydá upozornění pro takový kód. Tyto vzory nelze zahrnují obecné malá všechny možné vstupy a proto nejsou vhodné pro součást rozhraní API.
+Použití vzorů, které obsahuje neúplné odpovídající se nejlépe hodí pro rychlé vytváření prototypů a jiné dočasné účely. Kompilátor vygeneruje upozornění pro takového kódu. Tyto vzory pokrýt obecné velikost všech vstupů je to možné a proto nejsou vhodné pro komponentu rozhraní API.
 
 ## <a name="named-arguments"></a>Pojmenované argumenty
-Argumenty pro metody lze zadat podle pozice v seznamu odděleném čárkami argument, nebo je můžete předat metodě explicitně tím, že poskytuje název, za nímž následuje znak rovná a hodnota, která má být předán. -Li zadána, poskytnutím názvu, se objeví v jiném pořadí, ze kterého v deklaraci.
+Argumenty pro metody je možné zadat tak pozice v seznamu oddělovači argumentů nebo je můžete předat metodě explicitně zadáním názvu, za nímž následuje rovnítko a hodnota, která má být předán v. -Li zadán zadáním názvu, můžete zobrazit v jiném pořadí z použitého v deklaraci.
 
-Pojmenované argumenty můžete provést kód srozumitelnější a další přizpůsobitelné určité typy změn v rozhraní API, jako je například změna pořadí parametrů metody.
+Pojmenované argumenty můžete provést kód lépe čitelný a další přizpůsobitelné určité typy změn v rozhraní API, jako je například změna pořadí parametrů metody.
 
-Pojmenované argumenty jsou povoleny pouze pro metody, ne pro `let`-vázána funkce, funkce hodnoty nebo výrazy lambda.
+Pojmenované argumenty jsou povoleny pouze pro metody, ne pro `let`-vázaná funkce, funkce hodnoty nebo výrazy lambda.
 
-Následující příklad kódu ukazuje použití pojmenovaných argumentech.
+Následující příklad kódu ukazuje použití pojmenované argumenty.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-1/snippet3807.fs)]
 
-Ve volání konstruktoru třídy můžete nastavit hodnoty vlastností třídy pomocí pomocí syntaxe podobná pojmenované argumenty. Následující příklad ukazuje tuto syntaxi.
+Ve volání konstruktoru třídy můžete nastavit hodnoty vlastností třídy pomocí syntaxe podobné pojmenované argumenty. Následující příklad ukazuje tuto syntaxi.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet3506.fs)]
 
 Další informace najdete v tématu [konstruktory (F #)](https://msdn.microsoft.com/library/2cd0ed07-d214-4125-8317-4f288af99f05).
 
 ## <a name="optional-parameters"></a>Volitelné parametry
-Můžete zadat volitelný parametr pro metodu pomocí otazník před název parametru. Volitelné parametry jsou interpretovány jako typ F # možnost, můžete zadávat dotazy běžným způsobem, že se dotaz typy možností, pomocí `match` výraz s `Some` a `None`. Volitelné parametry jsou povoleny pouze u členů, nikoli na funkce, které jsou vytvořeny pomocí `let` vazby.
+Můžete zadat volitelný parametr pro metodu s použitím otazník před název parametru. Volitelné parametry jsou interpretovány jako typ možnost jazyka F #, proto dotazování těchto běžným způsobem, že typy možností jsou dotazovat, pomocí `match` výraz s `Some` a `None`. Volitelné parametry jsou povolené jenom na členy, nikoli na funkce, které jsou vytvářeny instalační sadou `let` vazby.
 
-Můžete použít také funkci `defaultArg`, který nastaví výchozí hodnota je za volitelným argumentem. `defaultArg` Funkce přebírá volitelný parametr jako první argument a výchozí hodnotu jako druhý.
+Můžete použít také funkci `defaultArg`, která nastaví výchozí hodnota je nepovinný argument. `defaultArg` Funkce přebírá volitelný parametr jako první argument a výchozí hodnotu jako druhý.
 
-Následující příklad ukazuje použití volitelné parametry.
+Následující příklad ukazuje použití nepovinných parametrů.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-1/snippet3808.fs)]
 
@@ -123,31 +123,33 @@ Baud Rate: 4800 Duplex: Half Parity: false
 Baud Rate: 300 Duplex: Half Parity: true
 ```
 
-## <a name="passing-by-reference"></a>Předávání odkazem
-F # podporuje `byref` – klíčové slovo, které určuje, že je parametr předaný odkazem. To znamená, že po spuštění funkce se zachovají všechny změny na hodnotu. Hodnoty poskytnuté `byref` parametr musí být měnitelný. Alternativně můžete předat referenční buňky příslušného typu.
+## <a name="passing-by-reference"></a>Předávání odkazem.
+Předávání odkazem na hodnotu F # zahrnuje `byref` – klíčové slovo, které určuje, že ve skutečnosti ukazatel na hodnotu předávaný odkazem parametr. Libovolná hodnota předaná do metody s `byref` jako argument musí být `mutable`.
 
-Předání odkazem v jazycích .NET vyvinuly jako způsob, jak z funkce vrátí více než jednu hodnotu. V F # můžete vrátit řazené kolekce členů pro tento účel, nebo použít buňku proměnlivé odkazové jako parametr. `byref` Parametr je poskytován interoperability s knihovnami .NET.
+Protože parametru je ukazatel a hodnota je proměnlivá, všechny změny hodnoty se uchovávají po spuštění funkce.
 
-Následující příklady ilustrují použití `byref` – klíčové slovo. Všimněte si, že použijete-li odkaz na buňku jako parametr, musíte vytvořit odkaz na buňku jako hodnotu s názvem a použít je jako parametr, nejen přidat `ref` operátor, jak je znázorněno v prvním volání `Increment` v následujícím kódu. Vzhledem k tomu, že vytváření odkaz na buňku vytvoří kopii základní hodnoty, první volání právě zvýší dočasnou hodnotou.
+Můžete provést totéž s [odkazové buňky](reference-cells.md), ale je důležité si uvědomit, že **odkazové buňky a `byref`s nejsou totéž**. Odkazové buňky je kontejner pro hodnotu, která můžete zkontrolovat a změnit obsah, ale tato hodnota se nachází v haldě a je ekvivalentní s tím, že záznam s proměnlivou hodnotu jsou v něm obsaženy. A `byref` skutečný ukazatel, je tak, aby byl odlišnou sémantiku základní a použití pravidel (může být poměrně omezující).
+
+Následující příklady ilustrují použití `byref` – klíčové slovo. Všimněte si, že při použití odkazovou buňku jako parametr, musíte vytvořit odkazovou buňku jako hodnotu s názvem a použít jako parametr, ne jenom přidat `ref` operátor, jak je znázorněno v prvním volání `Increment` v následujícím kódu. Protože vytvoření odkazové buňky se vytvoří kopie zdrojové hodnoty, první volání pouze zvýší dočasná hodnota.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-1/snippet3809.fs)]
 
-Řazené kolekce členů jako návratová hodnota můžete použít k uložení žádné `out` parametry v metod knihovny .NET. Alternativně lze považovat `out` parametr jako `byref` parametr. Následující příklad kódu ukazuje obou směrech.
+Řazené kolekce členů jako návratovou hodnotu můžete použít k ukládání žádné `out` parametrů metod knihovny .NET. Alternativně lze považovat `out` parametrem jako `byref` parametru. Následující příklad kódu znázorňuje oba způsoby.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-1/snippet3810.fs)]
 
 ## <a name="parameter-arrays"></a>Pole parametrů
-Někdy je nutné definovat funkci, která přebírá libovolný počet parametrů heterogenní typu. Nebude potřeba vytvořit všechny možné přetížené metody pro účet pro všechny typy, které by mohly být použity. Implementace rozhraní .NET poskytuje podporu pro tyto metody prostřednictvím funkce parametr pole. Metoda, která přebírá parametr pole podpis lze zadat s libovolný počet parametrů. Parametry jsou vloženy do pole. Typ elementů pole určuje typy parametrů, které lze předat funkce. Pokud definujete pole parametrů s `System.Object` jako typ elementu, pak kód klienta můžete předat hodnoty libovolného typu.
+Někdy je potřeba definovat funkci, která přijímá libovolný počet parametrů typu heterogenní. Nemusí být praktické k vytvoření všech možných přetížených metod pro všechny typy, které by bylo možné použít. Implementace .NET poskytují podporu pro tyto metody prostřednictvím pole funkce parametr. Metodu, která přebírá parametr pole v jeho podpisu může zobrazovat libovolný počet parametrů. Parametry jsou vloženy do pole. Typ prvků pole určuje typy parametrů, které může být předán funkci. Při definování pole parametrů s `System.Object` jako typ elementu, pak klient může kód předat hodnoty libovolného typu.
 
-V jazyce F # můžete pole parametrů definována pouze v metodách. Nelze použít v samostatné funkce nebo funkce, které jsou definovány v modulech.
+V jazyce F # je pole parametrů definovat pouze v metodách. Nelze je použít v samostatné funkce nebo funkce, které jsou definovány v modulech.
 
-Pole parametrů se definují pomocí `ParamArray` atribut. `ParamArray` Atribut lze použít pouze na poslední parametr.
+Definování pole parametrů s použitím `ParamArray` atribut. `ParamArray` Atribut lze použít pouze pro poslední parametr.
 
-Následující kód ukazuje, jak volání metody rozhraní .NET, která použije parametr pole a definici typu v F #, která se má metoda, která přebírá parametr pole.
+Následující kód ukazuje obě volání metody rozhraní .NET, která přijímá pole parametrů a definice typu v jazyce F #, která obsahuje metodu, která přebírá parametr pole.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-2/snippet3811.fs)]
 
-Při spuštění v projektu, výstup předchozí kód je následující:
+Při spuštění v projektu, výstup předchozího kódu vypadá takto:
 
 ```
 a 1 10 Hello world 1 True

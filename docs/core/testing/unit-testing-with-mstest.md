@@ -1,23 +1,23 @@
 ---
-title: Testování C# s použitím Mstestu a .NET Core jednotky
-description: Další koncepty test jednotky v C# a .NET Core prostřednictvím interaktivní prostředí sestavování podrobné ukázkové řešení pomocí testovacích dotnet a Mstestu.
+title: Testování C# s MSTest a .NET Core
+description: Další koncepty testů jednotek v C# a .NET Core prostřednictvím interaktivního prostředí sestavení krok za krokem ukázkové řešení pomocí příkazu dotnet test a MSTest.
 author: ncarandini
 ms.author: wiwagn
 ms.date: 09/08/2017
-ms.openlocfilehash: 6cfc389a1ee526d8dc4383c5efd6fb3299eb08d8
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: efeb12eb43539b0a85168b1162e0f8b94ad67e90
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105599"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43257419"
 ---
-# <a name="unit-testing-c-with-mstest-and-net-core"></a>Testování C# s použitím Mstestu a .NET Core jednotky
+# <a name="unit-testing-c-with-mstest-and-net-core"></a>Testování C# s MSTest a .NET Core
 
-Tento kurz vás provede interaktivní prostředí vytváření ukázkové řešení podrobné další koncepty testování částí. Pokud chcete postupovat v kurzu pomocí předdefinovaných řešení, [zobrazení nebo stažení ukázkového kódu](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-mstest/) před zahájením. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Tento kurz vás provede interaktivní prostředí pro sestavování ukázkové řešení podrobné další testování konceptů. Pokud chcete postupovat podle kurzu pomocí předem připravených řešení [zobrazení nebo stažení ukázkového kódu](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-mstest/) předtím, než začnete. Pokyny ke stažení najdete v tématu [ukázek a kurzů](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ### <a name="creating-the-source-project"></a>Vytvoření projektu zdroje
 
-Otevřete okno prostředí. Vytvořte adresář s názvem *jednotky – testování pomocí mstestu* pro uložení řešení. Uvnitř tohoto nového adresáře, spusťte [ `dotnet new sln` ](../tools/dotnet-new.md) vytvořit nový soubor řešení pro knihovny tříd a k testovacímu projektu. Dále vytvořte *PrimeService* adresáře. Následující obrys doposud ukazuje strukturu adresáře a souboru:
+Otevřete okno prostředí. Vytvořte adresář s názvem *jednotky – testování použití mstest* pro uložení řešení. Uvnitř tohoto nového adresáře, spusťte [ `dotnet new sln` ](../tools/dotnet-new.md) vytvořte nový soubor řešení pro knihovny tříd a testovací projekt. Dále vytvořte *PrimeService* adresáře. Následující osnovy doposud znázorňuje strukturu adresáře a souboru:
 
 ```
 /unit-testing-using-mstest
@@ -25,7 +25,7 @@ Otevřete okno prostředí. Vytvořte adresář s názvem *jednotky – testová
     /PrimeService
 ```
 
-Ujistěte se, *PrimeService* aktuální adresář a spusťte [ `dotnet new classlib` ](../tools/dotnet-new.md) a vytvořte tak projekt zdroje. Přejmenování *Class1.cs* k *PrimeService.cs*. Použití vývoje řízeného testováním (TDD), vytvořte na selhání implementace `PrimeService` třídy:
+Ujistěte se, *PrimeService* aktuální adresář a spusťte [ `dotnet new classlib` ](../tools/dotnet-new.md) vytvoření zdrojového projektu. Přejmenovat *Class1.cs* k *PrimeService.cs*. Chcete-li použít vývoj řízený testováním (TDD), vytvoříte selhání provádění `PrimeService` třídy:
 
 ```csharp
 using System;
@@ -42,9 +42,9 @@ namespace Prime.Services
 }
 ```
 
-Změna adresáře zpět do *jednotky – testování pomocí mstestu* adresáře. Spustit [ `dotnet sln add PrimeService/PrimeService.csproj` ](../tools/dotnet-sln.md) přidání projektu knihovny tříd do řešení. 
+Vraťte do adresáře *jednotky – testování použití mstest* adresáře. Spustit [ `dotnet sln add PrimeService/PrimeService.csproj` ](../tools/dotnet-sln.md) přidat do řešení projekt knihovny tříd. 
 
-### <a name="creating-the-test-project"></a>Vytvoření projektu testů
+### <a name="creating-the-test-project"></a>Vytvoření testovacího projektu
 
 Dále vytvořte *PrimeService.Tests* adresáře. Zobrazí následující osnova adresářovou strukturu:
 
@@ -57,7 +57,7 @@ Dále vytvořte *PrimeService.Tests* adresáře. Zobrazí následující osnova 
     /PrimeService.Tests
 ```
 
-Ujistěte se, *PrimeService.Tests* adresář aktuální adresář a vytvoření nového projektu pomocí [ `dotnet new mstest` ](../tools/dotnet-new.md). Nový příkaz dotnet vytvoří testovací projekt, který používá Mstestu jako knihovně testu. Nástroj test runner v nakonfiguruje vygenerované šablony *PrimeServiceTests.csproj* souboru:
+Ujistěte se, *PrimeService.Tests* adresář aktuálního adresáře a vytvořte nový projekt pomocí [ `dotnet new mstest` ](../tools/dotnet-new.md). Nový příkaz dotnet vytvoří projekt testů, který používá MStest jako knihovna testu. Nakonfiguruje nástroj test runner v vygenerovanou šablonu *PrimeServiceTests.csproj* souboru:
 
 ```xml
 <ItemGroup>
@@ -67,15 +67,15 @@ Ujistěte se, *PrimeService.Tests* adresář aktuální adresář a vytvoření 
 </ItemGroup>
 ```
 
-K testovacímu projektu vyžaduje další balíčky k vytváření a spouštění testování částí. `dotnet new` v předchozím kroku přidat testovat Mstestu SDK, Mstestu framework a runner Mstestu. Nyní přidejte `PrimeService` knihovny tříd jako další závislosti do projektu. Použití [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:
+Projekt testů vyžaduje další balíčky pro vytváření a spouštění testování částí. `dotnet new` v předchozím kroku přidat testovací sady SDK MSTest, MSTest rozhraní framework a MSTest runner. Teď přidejte `PrimeService` knihovny tříd jako další závislost do projektu. Použití [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:
 
 ```
 dotnet add reference ../PrimeService/PrimeService.csproj
 ```
 
-Zobrazí celý soubor v [ukázky úložiště](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-mstest/PrimeService.Tests/PrimeService.Tests.csproj) na Githubu.
+Zobrazí celý soubor v [úložiště ukázek](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-mstest/PrimeService.Tests/PrimeService.Tests.csproj) na Githubu.
 
-Zobrazí následující osnova rozložení konečné řešení:
+Následující osnovy ukazuje rozložení konečné řešení:
 
 ```
 /unit-testing-using-mstest
@@ -88,11 +88,11 @@ Zobrazí následující osnova rozložení konečné řešení:
         PrimeServiceTests.csproj
 ```
 
-Spuštění [ `dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj` ](../tools/dotnet-sln.md) v *testování pomocí dotnet – testování* adresáře. 
+Spustit [ `dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj` ](../tools/dotnet-sln.md) v *testování použití dotnet testování částí* adresáře. 
 
 ## <a name="creating-the-first-test"></a>Vytvoření prvního testu
 
-Volá TDD přístup pro zápis jeden selhání test, což předat a zopakováním postupu. Odebrat *UnitTest1.cs* z *PrimeService.Tests* adresáře a vytvořte nový soubor C# s s názvem *PrimeService_IsPrimeShould.cs* s následujícím obsahem:
+Volá TDD přístup pro zápis jednoho selhává testování, takže předat a potom zopakováním postupu. Odebrat *UnitTest1.cs* z *PrimeService.Tests* adresář a vytvořit nový soubor jazyka C# s názvem *PrimeService_IsPrimeShould.cs* s následujícím obsahem:
 
 ```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -121,11 +121,11 @@ namespace Prime.UnitTests.Services
 }
 ```
 
-`[TestClass]` Atribut označuje třídu, která obsahuje testování částí. `[TestMethod]` Atribut uvádí, že je metoda metodou test. 
+`[TestClass]` Atribut označuje třídu, která obsahuje testy jednotek. `[TestMethod]` Atribut označuje, že metoda je testovací metodu. 
 
-Uložte tento soubor a spusťte [ `dotnet test` ](../tools/dotnet-test.md) vytvářet testy a knihovny tříd a poté spusťte testy. Nástroj test runner Mstestu obsahuje vstupní bod programu ke spuštění testů. `dotnet test` Spustí nástroj test runner pomocí projektu testů jednotek, které jste vytvořili.
+Tento soubor uložte a spusťte [ `dotnet test` ](../tools/dotnet-test.md) pro sestavení, testy a knihovny tříd a následné spuštění testů. Nástroj test runner MSTest obsahuje vstupní bod programu pro spouštění vašich testů. `dotnet test` Spustí nástroj test runner pomocí projektu testování částí, kterou jste vytvořili.
 
-Test se nezdaří. Nevytvořili jste ještě implementace. Ujistěte se, tento test předat napsáním kód nejjednodušší `PrimeService` třídu, která funguje:
+Test se nezdaří. Nevytvořili jste ještě implementace. Ujistěte se, tento test předat napsáním kódu nejjednodušší v `PrimeService` třídu, která funguje:
 
 ```csharp
 public bool IsPrime(int candidate)
@@ -138,22 +138,22 @@ public bool IsPrime(int candidate)
 }
 ```
 
-V *jednotky – testování pomocí mstestu* spusťte `dotnet test` znovu. `dotnet test` Příkaz spustí sestavení pro `PrimeService` projektu a pak `PrimeService.Tests` projektu. Po sestavení obou projektů, spustí se tento jeden test. Pak předá.
+V *jednotky – testování použití mstest* adresáře, spusťte `dotnet test` znovu. `dotnet test` Sestavení pro spuštění příkazu `PrimeService` projekt a potom `PrimeService.Tests` projektu. Po vytvoření oba projekty, poběží tento jeden test. Předá.
 
 ## <a name="adding-more-features"></a>Přidání další funkce
 
-Teď, když jste udělali jeden testovací předání, je čas zapsat informace. Existuje několik dalších jednoduchý případů pro prvočísel: 0, -1. Můžete přidat nové testování pomocí `[TestMethod]` atribut, ale které rychle stane zdlouhavé. Existují další Mstestu atributy, které vám umožní zápisu sada testů, podobně jako.  A `[DataTestMethod]`atribut představuje sada testů, které provést stejný kód, ale mají jinou vstupní argumenty. Můžete použít `[DataRow]` atribut zadat hodnoty pro tyto vstupy.
+Teď, když jste provedli, předejte jeden test, je čas zápisu informace. Existuje několik dalších jednoduché případů pro prvočísel: 0, -1. Můžete přidat nové testy s `[TestMethod]` atribut, ale rychle stane únavné. Existují jiné atributy MSTest, které umožňují také napsat sady podobné testování.  A `[DataTestMethod]`atribut představuje sadu testů, které spuštění stejný kód, ale mají různé vstupní argumenty. Můžete použít `[DataRow]` atribut můžete zadat hodnoty pro tyto vstupy.
 
-Místo vytváření nové testů, platí tyto dva atributy pro vytvoření testu jedné řízených daty. Test řízených daty je metoda, která porovná několik hodnoty menší než dva, což je s nejnižším číslem prime::
+Místo vytváření nové testy, platí tyto dva atributy pro vytvoření testu jedné řízené daty. Test na základě dat je metoda, která porovná několik méně než dvě hodnoty, což je nejnižší číslo prime:
 
 [!code-csharp[Sample_TestCode](../../../samples/core/getting-started/unit-testing-using-mstest/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
 
-Spustit `dotnet test`, a dvě z nich testy nezdaří. Chcete-li všechny testy průchodu, změnit `if` klauzule na začátku metody:
+Spustit `dotnet test`, a dvě z nich selhání testů. Chcete-li všechny průchodu testů, změňte `if` klauzule na začátku metody:
 
 ```csharp
 if (candidate < 2)
 ```
 
-Pokračujte k iteraci v přidáním další testy, další teorií a další kód v knihovně hlavní. Máte [dokončení verzi testy](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-mstest/PrimeService.Tests/PrimeService_IsPrimeShould.cs) a [dokončení implementace knihovny](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-mstest/PrimeService/PrimeService.cs).
+Pokračujte k iteraci tak, že přidáte další testy, další teorií a další kód v hlavní knihovny. Máte [hotovou verzi testy](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-mstest/PrimeService.Tests/PrimeService_IsPrimeShould.cs) a [úplnou implementaci knihovny](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-mstest/PrimeService/PrimeService.cs).
 
-Když jste sestavili malé knihovny a sadu testů jednotek pro danou knihovnu. Řešení si strukturovaná, tak, aby přidání nové balíčky a testy je součástí normálním pracovním postupu. Jste soustředí většinu čas a úsilí na řešení cílů aplikace.
+Začlenění malé knihovny a sadu testů jednotek pro knihovny. Řešení jsme strukturovaná, takže přidání nové balíčky a testů je součástí normálního pracovního postupu. Jste koncentrované většinu času a úsilí na řešení cíle aplikace.

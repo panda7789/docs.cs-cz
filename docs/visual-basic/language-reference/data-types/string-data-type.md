@@ -18,28 +18,28 @@ helpviewer_keywords:
 - String literals [Visual Basic]
 - identifier type characters [Visual Basic], $
 ms.assetid: 15ac03f5-cabd-42cc-a754-1df3893c25d9
-ms.openlocfilehash: 894638bbe50dad2cae1f74a2f7b7fe006f029d1b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 54f7dcd7de28e8aaa5376bb4ddd67fd53518511e
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592116"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43257949"
 ---
 # <a name="string-data-type-visual-basic"></a>String – datový typ (Visual Basic)
-Obsahuje pořadí, bodů nepodepsaný kód (2bajtová) 16bitové rozsahu v rozmezí 0 až 65535. Každý *code bodu*, nebo kód znaku, představuje jeden znak Unicode. Řetězec může obsahovat od 0 do přibližně dvě miliardy (2 ^ 31) znaky znakové sady Unicode.  
+Obsahuje pořadí bodů kódu (2bajtových) bez znaménka 16bitové tohoto rozsahu v rozmezí 0 až 65535. Každý *kódu bodu*, nebo kód znaku, představuje jeden znak Unicode. Řetězec se může skládat z 0 až přibližně dvě miliardy (2 ^ 31) znaků Unicode.  
   
 ## <a name="remarks"></a>Poznámky  
- Použití `String` datový typ pro uložení více znaky bez režie na správu pole těchto `Char()`, pole `Char` elementy.  
+ Použití `String` datový typ pro uložení více znaků bez režie na správu pole těchto `Char()`, pole `Char` elementy.  
   
- Výchozí hodnota `String` je `Nothing` (odkaz s hodnotou null). Všimněte si, že to není stejný jako prázdný řetězec (hodnota `""`).  
+ Výchozí hodnota `String` je `Nothing` (odkaz s hodnotou null). Všimněte si, že to není stejné jako prázdný řetězec (hodnota `""`).  
   
 ## <a name="unicode-characters"></a>Znaky kódování Unicode  
- První body 128 kódu (0 – 127) Unicode odpovídají písmena a symboly standardní klávesnicích. Tyto první 128 kód body jsou stejné jako definuje znaková sada ASCII. Druhý body 128 kódu (128 – 255) představují speciální znaky, jako je například písmena abecedy latince, zvýraznění, tyto symboly a zlomků. Unicode používá zbývající body kódu (256 65 535) pro celou řadu symboly. To zahrnuje po celém světě textové znaky, znaky s diakritikou a matematické a technické symboly.  
+ První body 128 kódu (0 – 127) Unicode odpovídají písmena a symboly na standardní klávesnici USA. Tyto první body 128 kódu jsou stejné jako definuje znakové sady ASCII. Druhý body 128 kódu (128 – 255) představují speciální znaky, jako je například písmena abecedy latince, zvýraznění, symboly měny a podíly. Unicode používá pro širokou škálu symboly zbývající body kódu (256 – 65535). To zahrnuje po celém světě textové znaky, znaky s diakritikou a technické a matematické symboly.  
   
- Můžete například použít metody <xref:System.Char.IsDigit%2A> a <xref:System.Char.IsPunctuation%2A> na jednotlivé znak v `String` proměnné můžete zjistit klasifikaci kódování Unicode.  
+ Můžete například použít metody <xref:System.Char.IsDigit%2A> a <xref:System.Char.IsPunctuation%2A> na jednotlivý znak ve `String` proměnnou k určení jeho klasifikace kódování Unicode.  
   
 ## <a name="format-requirements"></a>Požadavky na formát  
- Je nutné uzavřít `String` literálu do uvozovek (`" "`). Pokud jako jeden z znaků v řetězci musí zahrnovat uvozovky, můžete použít dva souvislý uvozovky (`""`). Toto dokládá následující příklad.  
+ Je nutné uzavřít `String` literál v uvozovkách (`" "`). Pokud jako jeden ze znaků v řetězci musí obsahovat znak uvozovek, je použít dva souvislých uvozovky (`""`). Toto dokládá následující příklad.  
   
 ```  
 Dim j As String = "Joe said ""Hello"" to me."  
@@ -51,12 +51,12 @@ MsgBox("Joe said " & """" & h & """" & " to me.")
 MsgBox("Joe said """ & h & """ to me.")  
 ```  
   
- Upozorňujeme, že jsou souvislý uvozovky, které představují uvozovky v řetězci nezávislé na uvozovky, které začínají a končí `String` literálu.  
+ Mějte na paměti, že jsou souvislé uvozovky, které představují uvozovka v řetězci nezávislé na uvozovky, které začínají i končí `String` literálu.  
   
 ## <a name="string-manipulations"></a>Manipulace s řetězci  
- Po přiřazení řetězec tak, aby `String` proměnné, je tento řetězec *neměnné*, což znamená, že nelze změnit, jeho délka nebo obsah. Když upravíte řetězec žádným způsobem, Visual Basic vytvoří nový řetězec a opustí předchozí. `String` Proměnná se pak odkazuje na nový řetězec.  
+ Po přiřazení řetězec `String` proměnné, je tento řetězec *neměnné*, což znamená, že nelze změnit jeho délka nebo obsah. Při změně řetězec žádným způsobem jazyka Visual Basic vytvoří nový řetězec a opustí předchozí. `String` Proměnná se pak odkazuje na nový řetězec.  
   
- Můžete upravit obsah `String` proměnné pomocí celou řadu funkcí řetězec. Následující příklad ukazuje <xref:Microsoft.VisualBasic.Strings.Left%2A> – funkce  
+ Můžete manipulovat s obsahem `String` proměnné pomocí celé řady funkcí řetězec. Následující příklad ukazuje, <xref:Microsoft.VisualBasic.Strings.Left%2A> – funkce  
   
 ```  
 Dim S As String = "Database"  
@@ -64,23 +64,23 @@ Dim S As String = "Database"
 S = Microsoft.VisualBasic.Left(S, 4)  
 ```  
   
- Řetězec vytvořený jinou součástí může být doplněno počáteční nebo koncové mezery. Pokud se zobrazí tyto řetězce, můžete použít <xref:Microsoft.VisualBasic.Strings.Trim%2A>, <xref:Microsoft.VisualBasic.Strings.LTrim%2A>, a <xref:Microsoft.VisualBasic.Strings.RTrim%2A> funkce odebrat tyto prostory.  
+ Řetězec vytvořené jinou komponentou může být, aby bylo vytvořeno úvodní a koncové mezery. Pokud obdržíte takový řetězec, můžete použít <xref:Microsoft.VisualBasic.Strings.Trim%2A>, <xref:Microsoft.VisualBasic.Strings.LTrim%2A>, a <xref:Microsoft.VisualBasic.Strings.RTrim%2A> funkce odebrat tyto mezery.  
   
- Další informace o manipulace s řetězci najdete v tématu [řetězce](../../../visual-basic/programming-guide/language-features/strings/index.md).  
+ Další informace o manipulace s řetězci, naleznete v tématu [řetězce](../../../visual-basic/programming-guide/language-features/strings/index.md).  
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
--   **Záporná čísla.** Mějte na paměti, že znaky držené `String` nejsou podepsané a nemůže představují záporné hodnoty. V každém případě byste neměli používat `String` pro uložení číselné hodnoty.  
+-   **Záporná čísla.** Mějte na paměti, že znaky drží `String` jsou bez znaménka a nemůže představovat záporné hodnoty. V každém případě byste neměli používat `String` pro uložení číselné hodnoty.  
   
--   **Spolupráce aspekty.** Pokud jsou během propojení s součásti, které nejsou určeny pro rozhraní .NET Framework pro příklad objekty automatizace nebo COM, mějte na paměti, že řetězec znaků mají odlišné datové šířka (8 bitů) v jiných prostředích. Argument řetězce znaků 8bitové předáte pro tyto součásti, deklarujte ji jako `Byte()`, pole `Byte` elementy, místo `String` v váš nový kód jazyka Visual Basic.  
+-   **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework pro příklad objekty automatizace nebo COM, mějte na paměti, že řetězec znaků mít odlišnou datovou šířku (8 bitů) v jiných prostředích. Pokud takové součásti předáváte argument řetězec znaků 8 bitů, deklarujte ho jako `Byte()`, pole `Byte` prvků, místo `String` v váš nový kód jazyka Visual Basic.  
   
--   **Znaky typu.** Připojování znak typu identifikátoru `$` na všechny identifikátor vynutí ho k `String` datového typu. `String` nemá žádné – znak typu literálu. Ale kompilátor zpracovává literály uzavřena v uvozovkách (`" "`) jako `String`.  
+-   **Znaky typu.** Přidávání znak typu identifikátoru `$` k libovolnému identifikátoru se z něj stane `String` datového typu. `String` nemá žádné – znak typu literálu. Ale kompilátor zpracovává literály uzavřena v uvozovkách (`" "`) jako `String`.  
   
--   **Typ Framework.** Typ odpovídající v rozhraní .NET Framework je <xref:System.String?displayProperty=nameWithType> třídy.  
+-   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.String?displayProperty=nameWithType> třídy.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.String?displayProperty=nameWithType>  
- [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
  [Datový typ Char](../../../visual-basic/language-reference/data-types/char-data-type.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
  [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  

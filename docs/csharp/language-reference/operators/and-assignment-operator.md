@@ -8,11 +8,11 @@ helpviewer_keywords:
 - '&= operator [C#]'
 ms.assetid: e8d58f3f-72dd-4b5a-b995-452fcce7e6bb
 ms.openlocfilehash: f3a6fe20ca89a90b5a64118d73fb39e9a364d1e9
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42933949"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43255127"
 ---
 # <a name="amp-operator-c-reference"></a>&amp;= – Operátor (referenční dokumentace jazyka C#)
 Operátor přiřazení AND.  
