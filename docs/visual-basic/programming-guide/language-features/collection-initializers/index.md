@@ -6,78 +6,78 @@ f1_keywords:
 helpviewer_keywords:
 - collection initializers [Visual Basic]
 ms.assetid: a9290329-77b0-4fdf-ae75-8fc17287f469
-ms.openlocfilehash: 20bf9b263a349f327f12d1f3c7753fb9f34436e2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e844a673f1a60d5a151a6ae612d4af7a6712eef4
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33654213"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43332549"
 ---
 # <a name="collection-initializers-visual-basic"></a>Inicializátory kolekcí (Visual Basic)
-*Inicializátory kolekcí* poskytují zkrácenou syntaxi, která umožňuje vytvořit kolekci a jeho naplnění počáteční sadu hodnot. Inicializátory kolekce jsou užitečné, když vytváříte kolekci ze sady známé hodnoty, například seznam možností v nabídce nebo kategorie, počáteční sadu číselných hodnot, seznam řetězců, jako je například den nebo měsíc názvy nebo zeměpisné umístění, jako statické seznam stavů, který se používá pro ověření.  
+*Inicializátory kolekcí* poskytují zkrácený syntaxi, která vám umožní vytvořit kolekci a přidejte do ní počáteční sadu hodnot. Inicializátory kolekcí jsou užitečné při vytváření kolekce na základě sady známé hodnoty, například seznam možností v nabídce nebo kategorie, počáteční sadu číselných hodnot, statický seznam řetězců, jako je například den nebo měsíc názvy nebo zeměpisné umístění, jako seznam stavů, který se používá k ověření.  
   
- Další informace o kolekcích najdete v tématu [kolekce](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b).  
+ Další informace o kolekcích najdete v tématu [kolekce](https://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b).  
   
- Identifikovat inicializátoru kolekce pomocí `From` – klíčové slovo, za nímž následuje složené závorky (`{}`). Toto je podobná syntaxi literálu pole, která je popsána v [pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md). Následující příklady ukazují různé způsoby použití inicializátory kolekce k vytvoření kolekce.  
+ Můžete identifikovat pomocí inicializátoru kolekce `From` – klíčové slovo následované složené závorky (`{}`). To se podobá syntaxi literálu pole, podle popisu v [pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md). Následující příklady ukazují různé způsoby, jak použít inicializátory kolekce k vytvoření kolekce.  
   
  [!code-vb[VbVbalrCollectionInitializers#1](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#1)]  
   
 > [!NOTE]
->  C# taky poskytuje Inicializátory kolekcí. Inicializátory kolekcí C# poskytovat stejné funkce jako Inicializátory kolekcí jazyka Visual Basic. Další informace o C# Inicializátory kolekcí najdete v tématu [inicializátory objektu a kolekce](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md).  
+>  C# obsahuje také inicializátory kolekce. Inicializátory kolekce jazyka C# poskytují stejné funkce jako inicializátory kolekce jazyka Visual Basic. Další informace o inicializátory kolekce jazyka C# najdete v tématu [inicializátory objektu a kolekce](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md).  
   
 ## <a name="syntax"></a>Syntaxe  
- Inicializátory kolekce sestává ze seznamu hodnot oddělených čárkami, které jsou uzavřené do složených závorek (`{}`), předcházet `From` – klíčové slovo, jak je znázorněno v následujícím kódu.  
+ Inicializátor kolekce se skládá ze seznamu hodnot oddělených čárkami, které jsou uzavřeny ve složených závorkách (`{}`), předchází `From` – klíčové slovo, jak je znázorněno v následujícím kódu.  
   
  [!code-vb[VbVbalrCollectionInitializers#2](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#2)]  
   
- Když vytvoříte kolekci, například <xref:System.Collections.Generic.List%601> nebo <xref:System.Collections.Generic.Dictionary%602>, je nutné zadat typ kolekce před inicializátoru kolekce, jak je znázorněno v následujícím kódu.  
+ Když vytvoříte kolekci, například <xref:System.Collections.Generic.List%601> nebo <xref:System.Collections.Generic.Dictionary%602>, jak je znázorněno v následujícím kódu je nutné zadat typ kolekce před inicializátor kolekce.  
   
  [!code-vb[VbVbalrCollectionInitializers#13](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#13)]  
   
 > [!NOTE]
->  Nelze kombinovat inicializátoru kolekce a inicializátoru objektu inicializovat stejného objektu kolekce. Inicializátory objektů můžete použít třeba inicializovat objekty v inicializátoru kolekce.  
+>  Inicializátor kolekce a inicializátoru objektu inicializovat stejného objektu kolekce nelze kombinovat. Inicializátory objektů můžete použít třeba inicializovat objekty v incializátoru kolekce.  
   
-## <a name="creating-a-collection-by-using-a-collection-intializer"></a>Vytvoření kolekce pomocí Intializer kolekce  
- Při vytváření kolekce pomocí inicializátoru kolekce, každá hodnota, která se dodává v inicializátoru kolekce je předán na příslušné `Add` metody kolekce. Například pokud vytvoříte <xref:System.Collections.Generic.List%601> pomocí inicializátoru kolekce každý řetězcová hodnota v kolekci inicializátoru předaný <xref:System.Collections.Generic.List%601.Add%2A> metoda. Pokud chcete vytvořit kolekci pomocí inicializátoru kolekce, zadaný typ musí být typ platný kolekce. Příklady typů platnou kolekci třídy, které implementují <xref:System.Collections.Generic.IEnumerable%601> rozhraní, nebo nastavte dědičnost <xref:System.Collections.CollectionBase> třídy. Zadaný typ musí vystavit také `Add` metoda, která splňuje následující kritéria.  
+## <a name="creating-a-collection-by-using-a-collection-intializer"></a>Vytvoření kolekce s použitím Intializer kolekce  
+ Při vytvoření kolekce pomocí inicializátoru kolekce, každá hodnota, která je zadána v inicializátoru kolekce je předána na příslušné `Add` metody kolekce. Například, pokud vytvoříte <xref:System.Collections.Generic.List%601> pomocí inicializátoru kolekce je předána hodnota každý řetězec v inicializátoru kolekce <xref:System.Collections.Generic.List%601.Add%2A> metody. Pokud chcete vytvořit kolekci pomocí inicializátoru kolekce, zadaný typ musí být typu platné kolekce. Příklady typů platné kolekce tříd, které implementují <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo dědí <xref:System.Collections.CollectionBase> třídy. Zadaný typ musí vystavit také `Add` metodu, která splňuje následující kritéria.  
   
--   `Add` Metoda musí být dostupné z oboru, ve kterém je volána inicializátoru kolekce. `Add` Metoda nemusí být veřejné, pokud používáte pomocí inicializátoru kolekce ve scénáři kde neveřejný kolekce jsou přístupné.  
+-   `Add` Metoda musí být k dispozici z oboru, ve kterém je volána inicializátor kolekce. `Add` Metody nemusí být veřejné, pokud použijete inicializátor kolekce v případě kdy je přístupná neveřejné metody kolekce.  
   
--   `Add` Metoda musí být členem instance nebo `Shared` členem třídy kolekce nebo metody rozšíření.  
+-   `Add` Metoda musí být členem instance nebo `Shared` člena kolekce třídy nebo metody rozšíření.  
   
--   `Add` Metoda musí existovat, je možné porovnávat, na základě pravidel, rozlišení přetížení, typům zadaných v inicializátoru kolekce.  
+-   `Add` Metodu musí existovat, který by se shodovala, na základě pravidel rozlišení přetížení, typy, které jsou dodávány v inicializátoru kolekce.  
   
- Například následující příklad kódu ukazuje, jak vytvořit `List(Of Customer)` kolekce pomocí inicializátoru kolekce. Pokud se kód je spuštěn, každý `Customer` je předán objekt `Add(Customer)` metoda obecné seznamu.  
+ Například následující příklad kódu ukazuje, jak vytvořit `List(Of Customer)` kolekce pomocí inicializátoru kolekce. Když je kód spuštěn, každý `Customer` objekt je předán `Add(Customer)` metoda obecného seznamu.  
   
  [!code-vb[VbVbalrCollectionInitializers#9](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#9)]  
   
- Následující příklad kódu zobrazuje ekvivalentní kód, který nepoužívá inicializátoru kolekce.  
+ Následující příklad kódu ukazuje odpovídající kód, který nepoužívá inicializátor kolekce.  
   
  [!code-vb[VbVbalrCollectionInitializers#10](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#10)]  
   
- Pokud má kolekce `Add` metoda, která obsahuje parametry, které odpovídají v konstruktoru pro `Customer` objektu, může vnořit hodnoty parametrů pro `Add` metoda v rámci Inicializátory kolekcí, jak je popsáno v následující části. Pokud například kolekce nemá `Add` metodu, můžete ji vytvořit jako metody rozšíření. Příklad vytvoření `Add` metoda jako metody rozšíření pro kolekci, najdete v části [postupy: vytvoření přidání rozšíření metoda používané inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md). Příklad, jak vytvořit vlastní kolekce, která je možné pomocí inicializátoru kolekce, naleznete v části [postupy: vytvoření kolekce používané inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md).  
+ Pokud má kolekce `Add` metodu, která obsahuje parametry, které odpovídají konstruktor pro `Customer` objektu, může vnořené hodnoty parametrů pro `Add` metody v rámci kolekce inicializátory, jak je popsáno v další části. Pokud například kolekce nemá `Add` metodu, můžete si ho vytvořit jako metody rozšíření. Příklad toho, jak vytvořit `Add` metody jako metody rozšíření pro kolekci, najdete v článku [postupy: vytvoření přidat rozšíření metoda používá inicializátor kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md). Příklad toho, jak vytvořit vlastní kolekce, která je možné pomocí inicializátoru kolekce, naleznete v tématu [postupy: vytvoření kolekce používané Inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md).  
   
 ## <a name="nesting-collection-initializers"></a>Inicializátory kolekcí vnoření  
- Lze vnořit hodnot v rámci inicializátoru kolekce k identifikaci na konkrétní přetížení `Add` metodu pro kolekci, která je právě vytvářena. Hodnoty předaný `Add` metoda musí být oddělené čárkami a uzavřené do složených závorek (`{}`), jako by se provádí v inicializátoru pole literál nebo kolekce.  
+ Je možné vnořovat hodnotami v inicializátoru kolekce k identifikaci na konkrétní přetížení `Add` metodu pro kolekci, která se vytváří. Hodnot předaných `Add` metoda musí být oddělené čárkami a uzavřeny ve složených závorkách (`{}`), stejně jako by v inicializátoru pole literálu nebo kolekci.  
   
- Když vytvoříte kolekci pomocí vnořené hodnot, každý element seznamu vnořené hodnota je předat jako argument k `Add` metodu, která odpovídá typy elementů. Například následující příklad kódu vytvoří <xref:System.Collections.Generic.Dictionary%602> ve kterém se klíče typu `Integer` a hodnoty jsou typu `String`. Všechny seznamy vnořené hodnota odpovídá <xref:System.Collections.Generic.Dictionary%602.Add%2A> metodu `Dictionary`.  
+ Při vytvoření kolekce pomocí vnořených hodnot, každý prvek seznamu Vnořená hodnota předána jako argument `Add` metodu, která odpovídá typy prvků. Například následující příklad kódu vytvoří <xref:System.Collections.Generic.Dictionary%602> v které klíče jsou typu `Integer` a hodnoty jsou typu `String`. Každého ze seznamů vnořené hodnoty odpovídají <xref:System.Collections.Generic.Dictionary%602.Add%2A> metodu `Dictionary`.  
   
  [!code-vb[VbVbalrCollectionInitializers#5](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#5)]  
   
- V předchozím příkladu kódu je ekvivalentní následující kód.  
+ V předchozím příkladu kódu je ekvivalentní následujícímu kódu.  
   
  [!code-vb[VbVbalrCollectionInitializers#6](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#6)]  
   
- Z první úroveň vnoření pouze hodnotu vnořené seznamy jsou odesílány `Add` metody pro typ kolekce. Hlubší úrovní vnoření, se považují za literály pole a hodnotu vnořené seznamy nejsou namapovat na `Add` metody žádné kolekce.  
+ Z první úroveň vnoření pouze vnořené hodnoty seznamy jsou odesílány `Add` metody pro typ kolekce. Hlubší úrovně vnoření jsou považovány za literály pole a seznamy vnořené hodnoty nejsou odpovídají `Add` metoda žádné kolekce.  
   
 ## <a name="related-topics"></a>Související témata  
   
 |Název|Popis|  
 |---|---|  
-|[Postupy: Vytvoření metody přidání rozšíření používané inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)|Ukazuje, jak vytvořit volat metody rozšíření `Add` který lze použít k naplnění kolekce hodnotami z inicializátoru kolekce.|  
-|[Postupy: Vytvoření kolekce používané inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)|Ukazuje, jak povolit pomocí inicializátoru kolekce zahrnutím `Add` metodu v třídě kolekce, který implementuje `IEnumerable`.|  
+|[Postupy: Vytvoření metody přidání rozšíření používané inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)|Ukazuje, jak vytvořit rozšiřující metoda volá `Add` , který slouží k naplnění kolekce s hodnotami z inicializátoru kolekce.|  
+|[Postupy: Vytvoření kolekce používané inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)|Ukazuje, jak povolit používání inicializátoru kolekce zahrnutím `Add` metody ve třídě kolekce, která implementuje `IEnumerable`.|  
   
 ## <a name="see-also"></a>Viz také  
- [Kolekce](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)  
+ [Kolekce](https://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)  
  [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  
  [Inicializátory objektů: pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
  [Operátor New](../../../../visual-basic/language-reference/operators/new-operator.md)  
@@ -85,5 +85,5 @@ ms.locfileid: "33654213"
  [Postupy: Inicializace proměnné pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)  
  [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
  [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
- [Úvod do LINQ v jazyku Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
  [Postupy: Vytvoření seznamu položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)

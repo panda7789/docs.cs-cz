@@ -5,15 +5,15 @@ helpviewer_keywords:
 - paramref XML tag
 - <paramref> XML tag
 ms.assetid: 8979d53b-beb1-41b7-b41e-6bbea1c17a03
-ms.openlocfilehash: 763e311dfb46ceeed358c3b3bebd6212d3e2489c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 153f5ddeeb7d09159049af4d466b0695f5cb6f23
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33598659"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43331356"
 ---
 # <a name="ltparamrefgt-visual-basic"></a>&lt;paramref&gt; (Visual Basic)
-Formátuje slovo jako parametr.  
+Formátuje slova jako parametr.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,17 +23,17 @@ Formátuje slovo jako parametr.
   
 #### <a name="parameters"></a>Parametry  
  `name`  
- Název parametru, který bude odkazovat na. Uzavřete název do dvojitých uvozovek nahoře ("").  
+ Název parametru jako reference. Název uzavřete do dvojitých uvozovek ("").  
   
 ## <a name="remarks"></a>Poznámky  
- `<paramref>` Značky poskytuje způsob, jak znamenat, že slovo parametr. Soubor XML lze zpracovat formátování tento parametr nějakým způsobem distinct.  
+ `<paramref>` Značky poskytuje způsob, jak určit, že je slovo parametru. Soubor XML mohou být zpracovány k nějakým způsobem odlišné formátování tento parametr.  
   
  Kompilovat s [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pro zpracování dokumentačních komentářů do souboru.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá `<paramref>` značky k odkazování na `id` parametr.  
+ Tento příklad používá `<paramref>` značku k odkazování `id` parametr.  
   
  [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/paramref_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+ [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

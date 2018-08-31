@@ -8,31 +8,31 @@ helpviewer_keywords:
 - Visual Basic code, data types
 - data types [Visual Basic], improving speed with
 ms.assetid: 5e1b9aaf-c7ca-4b29-9b22-0e82ed8e85e2
-ms.openlocfilehash: 855e32463284604fc27d4b73331ae48967dddefb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 83c3d9976f61513165e917da73dd50e846db3e83
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33650449"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43330942"
 ---
 # <a name="data-types-in-visual-basic"></a>Datové typy v jazyce Visual Basic
-*Datový typ* programovací elementu odkazuje na jaký typ dat může uchovávat a jak ho uloží data. Datové typy platí pro všechny hodnoty, které můžou být uložené v paměti počítače nebo účastnit vyhodnocení výrazu. Všechny proměnné, literál, konstanta, – výčet, vlastnost, parametru procedury, argumentu procedury a návratová hodnota procedury má datový typ.  
+*Datový typ* programovací element odkazuje na druhu dat může obsahovat a způsobu, jakým ukládá tato data. Datové typy platí pro všechny hodnoty, které mohou být uloženy v paměti počítače či k účasti na vyhodnocení výrazu. Každou proměnnou, literal, – konstanta, výčtu, vlastnost, parametr procedury, argumentu procedury a návratová hodnota procedury má datový typ.  
   
-## <a name="declared-data-types"></a>Deklarovaný datové typy  
- Můžete definovat programovací element s příkazem deklarace, a určit její datový typ s `As` klauzule. Následující tabulka uvádí příkazy, které použijete k deklarovat různé prvky.  
+## <a name="declared-data-types"></a>Deklarované typy dat  
+ Můžete definovat programovací element s příkazu deklarace, a určit její datový typ s `As` klauzuli. Následující tabulka uvádí příkazy, které používáte pro deklarování jednotlivých prvků.  
   
-|Element programování|Datový typ deklarace|  
+|Programování – element|Deklarace datového typu|  
 |-------------------------|---------------------------|  
 |Proměnná|V [Dim – příkaz](../../../../visual-basic/language-reference/statements/dim-statement.md)<br /><br /> `Dim`   `amount As Double`<br /><br /> `Static`   `yourName As String`<br /><br /> `Public`   `billsPaid As Decimal = 0`|  
-|Literál|S – znak typu literálu; najdete v části "Literálové znaky typu" v [– znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)<br /><br /> `Dim searchChar As Char = "."`  `C`|  
+|literál|Znak typu literálu; Viz "Typ literály" v [znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)<br /><br /> `Dim searchChar As Char = "."`  `C`|  
 |Konstanta|V [Const – příkaz](../../../../visual-basic/language-reference/statements/const-statement.md)<br /><br /> `Const`   `modulus As Single = 4.17825F`|  
 |Výčet|V [Enum – příkaz](../../../../visual-basic/language-reference/statements/enum-statement.md)<br /><br /> `Public`   `Enum`   `colors`|  
 |Vlastnost|V [Property – příkaz](../../../../visual-basic/language-reference/statements/property-statement.md)<br /><br /> `Property`   `region() As String`|  
-|Parametr postupu|V [Sub příkaz](../../../../visual-basic/language-reference/statements/sub-statement.md), [funkce příkaz](../../../../visual-basic/language-reference/statements/function-statement.md), nebo [Operator – příkaz](../../../../visual-basic/language-reference/statements/operator-statement.md)<br /><br /> `Sub addSale(ByVal`   `amount`   `As Double)`|  
-|Argumentu procedury|V kódu volání; Každý argument je programovací element, který již byl deklarován nebo výraz obsahující deklarované elementy<br /><br /> `subString = Left(`  `inputString`  `,`   `5`  `)`|  
+|Parametr procedury|V [dílčí příkaz](../../../../visual-basic/language-reference/statements/sub-statement.md), [funkce příkaz](../../../../visual-basic/language-reference/statements/function-statement.md), nebo [Operator – příkaz](../../../../visual-basic/language-reference/statements/operator-statement.md)<br /><br /> `Sub addSale(ByVal`   `amount`   `As Double)`|  
+|Argumentu procedury|Ve volajícím kódu; Každý argument je programovací element, který již byl deklarován nebo výrazu obsahujícího deklarované elementy<br /><br /> `subString = Left(`  `inputString`  `,`   `5`  `)`|  
 |Návratová hodnota procedury|V [funkce příkaz](../../../../visual-basic/language-reference/statements/function-statement.md) nebo [Operator – příkaz](../../../../visual-basic/language-reference/statements/operator-statement.md)<br /><br /> `Function convert(ByVal b As Byte)`   `As String`|  
   
- Seznam Visual Basic – datové typy, naleznete v části [datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md).  
+ Seznam datových typů jazyka Visual Basic najdete v tématu [datové typy](../../../../visual-basic/language-reference/data-types/index.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)  
@@ -44,5 +44,5 @@ ms.locfileid: "33650449"
  [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
  [Řazené kolekce členů](tuples.md)     
  [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
- [Datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
  [Účinné používání datových typů](../../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

@@ -2,50 +2,50 @@
 title: SRMP
 ms.date: 03/30/2017
 ms.assetid: cf37078c-dcb4-45e0-acaf-2f196521b226
-ms.openlocfilehash: c746897666ae78844df35c2989c803d852c3f70e
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 62075cccfa8ff2c6a181d633756a5f9bc8969932
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33805496"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43331267"
 ---
 # <a name="srmp"></a>SRMP
-Tato ukázka ukazuje, jak provést zpracovaných komunikace ve frontě pomocí služby Řízení front zpráv (MSMQ) přes protokol HTTP.  
+Tento příklad znázorňuje způsob provedení transakčního komunikaci ve frontě pomocí služby Řízení front zpráv (MSMQ) přes protokol HTTP.  
   
- V komunikaci ve frontě klient komunikuje se služby pomocí fronty. Přesněji řečeno klient odešle zprávy do fronty. Služba přijímá zprávy z fronty. Služba a klient proto nemusíte používat současně na komunikaci pomocí fronty.  
+ V komunikaci ve frontě klient komunikuje se služby pomocí fronty. Přesněji řečeno klient odešle zprávy do fronty. Služba přijímá zprávy z fronty. Klienta a služby, proto není potřeba běžet současně na komunikaci pomocí fronty.  
   
- MSMQ umožňuje použití protokolu HTTP (včetně použití protokolu HTTPS) k odesílání zpráv do fronty. V tomto příkladu jsme ukazují, že pomocí služby Windows Communication Foundation (WCF) zařazených do fronty komunikace a odesílání zpráv přes protokol HTTP. MSMQ používá protokol názvem SRMP, což je protokol založený na protokolu SOAP pro komunikaci přes protokol HTTP.  
+ MSMQ – umožňuje použití protokolu HTTP (včetně použití protokolu HTTPS) pro odesílání zpráv do fronty. V tomto příkladu jsme ukazují, jak pomocí služby Windows Communication Foundation (WCF) zařazených do fronty komunikace a jak odesílat zprávy pomocí protokolu HTTP. Protokol volá SRMP, což je protokol založený na protokolu SOAP pro komunikaci přes protokol HTTP používaný službou MSMQ.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-4.  Před spuštěním ukázky **přidat nebo odebrat součásti systému Windows**, ujistěte se, že služba MSMQ je nainstalována s podporou protokolu HTTP. Instalace podpory protokolu HTTP automaticky nainstaluje Internetové informační služby (IIS) a přidává podporu protokolu ve službě IIS pro službu MSMQ.  
+4.  Před spuštěním ukázky **přidat nebo odebrat součásti Windows**, ujistěte se, že je služba MSMQ nainstalovaná s podporou protokolu HTTP. Podpora protokolu HTTP instalace automaticky nainstaluje Internetové informační služby (IIS) a přidává podporu protokolu ve službě IIS pro službu MSMQ.  
   
-5.  Pokud chcete mít jistotu, že protokol HTTP se používá pro komunikaci, můžete povolit služby MSMQ v zesíleném režimu. Tím se zajistí, že žádné zprávy do fronty, všechny hostované na počítači můžete doručeny použití jakékoli přenosu jiným protokolem než HTTP.  
+5.  Pokud chcete mít jistotu, že protokol HTTP se používá pro komunikaci, můžete povolit služby MSMQ pro spuštění v zesíleném režimu. Tím se zajistí, že žádné zprávy do fronty hostované na počítači můžou přijít pomocí jakékoli přenosu jiným protokolem než HTTP.  
   
-6.  Po výběru služby MSMQ v zesíleném režimu, daný počítač vyžaduje znovu spustit na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].  
+6.  Po výběru služby MSMQ pro spuštění v zesíleném režimu, daný počítač vyžaduje restartování na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].  
   
-7.  Spusťte službu.  
+7.  Spuštění služby.  
   
-8.  Spuštění klienta. Ujistěte se, že změníte adresa koncového bodu tak, aby odkazoval na název počítače nebo IP adresu místo localhost. Klient odešle zprávu a ukončí.  
+8.  Spustíte klienta. Ujistěte se, že změníte adresu koncového bodu tak, aby odkazoval na název počítače nebo IP adresu místo localhost. Klient odešle zprávu a ukončí.  
   
 ## <a name="requirements"></a>Požadavky  
- Pokud chcete tuto ukázku spustit, služba IIS musí být nainstalován na službu a klientské počítače kromě služby MSMQ.  
+ Chcete-li tuto ukázku spustit, musí být nainstalovaná služba IIS ve službě a klientské počítače kromě služby MSMQ.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- Ukázka ukazuje odesílání WCF pomocí služby MSMQ přes HTTP zpráv zařazených do fronty. To je také označován SRMP zasílání zpráv. Když je odeslána zpráva zařazených do fronty, MSMQ na odesílání přenosů počítač zprávy, aby se využívá správce fronty pomocí přenosového protokolu TCP nebo HTTP. Výběrem SRMP označuje uživatele volba HTTP přenos pro přenos fronty. Zabezpečení SRMP umožňuje použití protokolu HTTPS.  
+ Vzorek ukazuje odesílání WCF přes protokol HTTP pomocí služby MSMQ zprávy zařazené do fronty. Označuje se také, SRMP zasílání zpráv. Zprávy ve frontě je odeslání, MSMQ na odesílání přenosů počítače zprávy, které využívá správce fronty přes protokol TCP nebo HTTP přenosu. Výběrem SRMP uživatele určuje řadu HTTP jako přenos pro přenos fronty. Zabezpečení SRMP umožňuje použití protokolu HTTPS.  
   
 ## <a name="example"></a>Příklad  
- Ukázkový kód je založena na zpracovaných vzorku. Jak odeslat zprávu do fronty a přijímat zprávy z fronty pomocí SRMP je stejný jako odesílání a přijímání zpráv pomocí nativního protokolu.  
+ Počet zrušených zpracovaných vzorku vychází ukázkový kód. Jak odeslat zprávu do fronty a přijímat zprávy z fronty pomocí SRMP je stejný jako odesílání a příjem zpráv pomocí nativního protokolu.  
   
- Konfigurace pro klienta se změní na znamenat výběr protokol fronty přenosu. Protokol fronty přenosu může mít jednu z nativní, SRMP nebo SrmpSecure. Ve výchozím nastavení je přenos protokolu nativní. Klient a služba zadejte v konfiguraci použít SRMP v tomto příkladu.  
+ K označení výběru fronty přenosu protokolu dojde ke změně konfigurace pro klienta. Protokol fronty přenosu může být jedna z nativní, SRMP nebo SrmpSecure. Ve výchozím nastavení je přenos protokolu nativní. Klient a služba zadejte v konfiguraci použít SRMP v tomto příkladu.  
   
- Je třeba SRMP omezení ve vztahu k zabezpečení přenosu. Zabezpečení přenosu služby MSMQ výchozí vyžaduje služby Active Directory, která vyžaduje, aby správce fronty odesílání a příjmu správce front jsou umístěny ve stejné doméně systému Windows. To není možné při odesílání zpráv přes HTTP hranici. Zabezpečení přenosu výchozí jako takový nefunguje. Zabezpečení přenosu musí být nastavena na certifikát, pokud se požaduje zabezpečení přenosu. Zabezpečení zpráv lze také zabezpečit zprávy. V této ukázce je zabezpečení přenosu a zprávy pro ilustraci zasílání zpráv SRMP vypnutý.  
+ Existují určitá omezení SRMP ve vztahu k zabezpečení přenosu. Zabezpečení přenosu služby MSMQ výchozí vyžaduje služby Active Directory, která vyžaduje, aby odesílající správce fronty a využívá správce fronty se nacházejí ve stejné doméně Windows. To není možné při odesílání zprávy přes hranice protokolu HTTP. Zabezpečení výchozího přenosu v důsledku toho nebude fungovat. Zabezpečení přenosu musí být nastavena na certifikát, pokud se vyžaduje zabezpečení přenosu. Zabezpečení zpráv lze použít také k zabezpečení zprávy. V této ukázce zabezpečení přenosu a zpráva je vypnuté, kvůli znázornění SRMP zasílání zpráv.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -75,7 +75,7 @@ Tato ukázka ukazuje, jak provést zpracovaných komunikace ve frontě pomocí s
 </configuration>  
 ```  
   
- Spuštění ukázky vypočítá následující výstup.  
+ Spuštění ukázky provede následující výstup.  
   
 ```  
 Processing Purchase Order: 556b70be-31ee-4a3b-8df4-ed5e538015a4   
@@ -88,11 +88,11 @@ OrderDetails
 ```  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\SRMP`  
   

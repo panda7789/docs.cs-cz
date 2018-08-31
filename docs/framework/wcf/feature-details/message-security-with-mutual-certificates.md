@@ -7,27 +7,27 @@ dev_langs:
 ms.assetid: 99d7a528-7ae4-4d39-a0f9-3066ea237de0
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 1407593bf90b28a1890a8c18564b31d0aa67e0cd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ad5862064966ccae4c313e7fa3d982ec9abbbcd2
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33494173"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43332184"
 ---
 # <a name="message-security-with-mutual-certificates"></a>Zabezpečení zpráv vzájemnými certifikáty
-Následující příklad ukazuje služby Windows Communication Foundation (WCF) a klienta zabezpečené pomocí režim zabezpečení zprávy. Klienta a služby se ověřují pomocí certifikátů.  
+Následující scénář ukazuje služby Windows Communication Foundation (WCF) a klient zabezpečené používají režim zabezpečených zpráv. Klient a služba se ověří pomocí certifikátů.  
   
- Tento scénář je umožňuje vzájemnou spolupráci, protože používá WS-zabezpečení s profilem tokenu certifikátu X.509.  
+ Tento scénář je interoperabilní, protože používá WS-Security se token profilu certifikátu X.509.  
   
 > [!NOTE]
->  Tento scénář neprovede vyjednávání certifikátu služby. Certifikát služby musí být zadaný pro klienta předem žádné komunikace. Certifikát serveru můžete distribuovat s aplikací nebo součástí out-of-band komunikace.  
+>  Tento scénář neprovádí vyjednávání certifikátu služby. Klientovi ještě před začátkem jakékoli komunikační musí být poskytnut certifikát služby. Certifikát serveru můžete distribuovat s aplikací nebo součástí out-of-band komunikace.  
   
- ![Zpráva zabezpečení vzájemnými certifikáty](../../../../docs/framework/wcf/feature-details/media/f4157312-b17c-416c-a5ee-fa7b54db211b.gif "f4157312-b17c-416c-a5ee-fa7b54db211b")  
+ ![Zabezpečení pomocí vzájemných certifikátů zpráv](../../../../docs/framework/wcf/feature-details/media/f4157312-b17c-416c-a5ee-fa7b54db211b.gif "f4157312-b17c-416c-a5ee-fa7b54db211b")  
   
-|Vlastnosti|Popis|  
+|Vlastnost|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení.|Zpráva|  
-|Interoperabilita|Ano, s WS-zabezpečení a X.509 certifikátu tokenu profil kompatibilní klienty a služby.|  
+|Režim zabezpečení|Zpráva|  
+|Interoperabilita|Ano, s WS-Security a X.509 certifikátu tokenu profilu kompatibilní klientů a služeb.|  
 |Ověřování|Vzájemné ověřování klienta a serveru.|  
 |Integrita|Ano|  
 |Důvěrnost|Ano|  
@@ -35,20 +35,20 @@ Následující příklad ukazuje služby Windows Communication Foundation (WCF) 
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>Služba  
- Následující kód a konfigurace jsou určená ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
+ Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
   
--   Vytvořte samostatnou službu pomocí kódu žádnou konfiguraci.  
+-   Vytvoření samostatné služby pomocí kódu bez konfigurace.  
   
--   Vytvoření služby pomocí zadaných konfigurací, ale nejsou definovány žádné koncové body.  
+-   Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
   
 ### <a name="code"></a>Kód  
- Následující kód vytvoří koncový bod služby, který používá zabezpečení zpráv. Služba vyžaduje certifikát ke svému ověření.  
+ Následující kód vytvoří koncový bod služby, který používá zabezpečení zpráv. Služba vyžaduje, aby certifikát ke svému ověření.  
   
  [!code-csharp[C_SecurityScenarios#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#13)]
  [!code-vb[C_SecurityScenarios#13](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#13)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující konfigurace lze namísto kód k vytvoření stejnou službu.  
+ Následující konfigurace lze namísto kódu vytvořit ve stejné službě.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -93,23 +93,23 @@ Následující příklad ukazuje služby Windows Communication Foundation (WCF) 
 ```  
   
 ## <a name="client"></a>Klient  
- Následující kód a konfigurace jsou určená ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
+ Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
   
--   Vytvořte samostatnou klienta pomocí kódu (a kód klienta).  
+-   Vytvoření samostatného klienta pomocí kódu (a kód klienta).  
   
--   Vytvoření klienta, které nejsou definovány žádné adresy koncových bodů. Místo toho použijte konstruktor klienta, který přijímá jako argument Název konfigurace. Příklad:  
+-   Vytvoření klienta, která nedefinuje žádné adresy koncových bodů. Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace. Příklad:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>Kód  
- Následující kód vytvoří klienta. Režim zabezpečení je nastaven na zprávu, a typu pověření klienta nastavena na certifikát.  
+ Následující kód vytvoří klienta. Režim zabezpečení je nastavena na zprávu a typu pověření klienta je nastavena na certifikát.  
   
  [!code-csharp[C_SecurityScenarios#20](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#20)]
  [!code-vb[C_SecurityScenarios#20](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#20)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující nakonfiguruje klienta. Klientský certifikát musí být určen pomocí [ \<clientCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md). Certifikát služby je zadána také pomocí [ \<defaultCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md).  
+ Následující nakonfiguruje klienta. Klientský certifikát musí být zadán pomocí [ \<clientCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md). Kromě toho certifikátu služby je určen pomocí [ \<defaultCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md).  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -162,5 +162,5 @@ Následující příklad ukazuje služby Windows Communication Foundation (WCF) 
   
 ## <a name="see-also"></a>Viz také  
  [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Model zabezpečení pro Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)  
- [Postupy: vytvoření a nainstalujte dočasných certifikátů ve službě WCF pro zabezpečení přenosu během vývoje](http://go.microsoft.com/fwlink/?LinkId=244264)
+ [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)  
+ [Postupy: vytvoření a instalace dočasných certifikátů ve službě WCF pro zabezpečení přenosu během vývoje.](https://go.microsoft.com/fwlink/?LinkId=244264)

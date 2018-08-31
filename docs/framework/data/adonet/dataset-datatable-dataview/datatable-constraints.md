@@ -1,39 +1,39 @@
 ---
-title: Omezení DataTable
+title: Omezení datových tabulek
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 27c9f2fd-f64d-4b4e-bbf6-1d24f47067cb
-ms.openlocfilehash: 95bbba30bc9cd75d1694d7d8062bc9a6e6105084
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: fa70af311d6b4fa4e17bb3ba6110e4cea420c34c
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32759735"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43332030"
 ---
-# <a name="datatable-constraints"></a>Omezení DataTable
-Omezení můžete vynutit omezení na datech v <xref:System.Data.DataTable>, aby udržení integrity dat. Omezení je automatické pravidlo použít na sloupec nebo související sloupce, který určuje postup, když je nějakým způsobem změnit hodnotu v řádku. Vynutí se omezení při `System.Data.DataSet.EnforceConstraints` vlastnost <xref:System.Data.DataSet> je **true**. Příklad kódu, který ukazuje, jak nastavit `EnforceConstraints` vlastnost, najdete v článku <xref:System.Data.DataSet.EnforceConstraints%2A> referenční téma.  
+# <a name="datatable-constraints"></a>Omezení datových tabulek
+Můžete vynutit omezení na datech z tohoto omezení <xref:System.Data.DataTable>, aby bylo možné udržovat tak integritu dat. Omezení je automatické pravidlo použít na sloupec nebo souvisejících sloupců, která určuje kurz akce při hodnota řádku je nějakým způsobem změněna. Jsou vynucena omezení při `System.Data.DataSet.EnforceConstraints` vlastnost <xref:System.Data.DataSet> je **true**. Příklad kódu, který ukazuje, jak nastavit `EnforceConstraints` vlastnost, najdete v článku <xref:System.Data.DataSet.EnforceConstraints%2A> téma referenčních informací.  
   
- Existují dva typy omezení v ADO.NET: <xref:System.Data.ForeignKeyConstraint> a <xref:System.Data.UniqueConstraint>. Ve výchozím nastavení, obě omezení jsou vytvořeny automaticky při vytvoření vztahu mezi dvěma nebo více tabulek přidáním <xref:System.Data.DataRelation> k **datovou sadu**. Toto chování však můžete zakázat zadáním **createConstraints** = **false** při vytváření vztah.  
+ Existují dva typy omezení v ADO.NET: <xref:System.Data.ForeignKeyConstraint> a <xref:System.Data.UniqueConstraint>. Ve výchozím nastavení, obě omezení se vytvoří automaticky při vytvoření vztahu mezi dvěma nebo více tabulek tak, že přidáte <xref:System.Data.DataRelation> k **datovou sadu**. Toto chování však můžete zakázat tak, že zadáte **createConstraints** = **false** při vytváření vztahu.  
   
 ## <a name="foreignkeyconstraint"></a>Objekt ForeignKeyConstraint  
- A **vlastnosti ForeignKeyConstraint** vynucuje pravidla o tom, jak rozšířit aktualizace a odstranění pro tabulky v relaci. Pokud hodnotu v řádku jedna tabulka je aktualizovat ani odstranit a stejné hodnoty se také používá v jednom nebo více souvisejících tabulek, například **vlastnosti ForeignKeyConstraint** Určuje, co se stane, že v související tabulky.  
+ A **Objekt ForeignKeyConstraint** vynucuje pravidla týkající se aktualizací a odstraňování souvisejících tabulkách jak nerozšíří. Pokud hodnotu v řádku jednu tabulku je aktualizovat ani odstranit a stejnou hodnotu se také používá v jednom nebo více souvisejících tabulek, například **Objekt ForeignKeyConstraint** Určuje, co se stane v souvisejících tabulkách.  
   
- <xref:System.Data.ForeignKeyConstraint.DeleteRule%2A> a <xref:System.Data.ForeignKeyConstraint.UpdateRule%2A> vlastnosti **vlastnosti ForeignKeyConstraint** definovat akce, které mají být provedeny, když se uživatel pokusí provést odstranění nebo aktualizaci řádku související tabulky. Následující tabulka popisuje různá nastavení, které jsou k dispozici pro **DeletRule** a **UpdateRule** vlastnosti **vlastnosti ForeignKeyConstraint**.  
+ <xref:System.Data.ForeignKeyConstraint.DeleteRule%2A> a <xref:System.Data.ForeignKeyConstraint.UpdateRule%2A> vlastnosti **Objekt ForeignKeyConstraint** definujete akce, jež mají být provedeny, když se uživatel pokusí odstranit nebo aktualizovat řádek v související tabulce. Následující tabulka popisuje různá nastavení, které jsou k dispozici pro **DeletRule** a **UpdateRule** vlastnosti **Objekt ForeignKeyConstraint**.  
   
 |Nastavení pravidla|Popis|  
 |------------------|-----------------|  
-|**CASCADE**|Odstranění nebo aktualizaci související řádky.|  
-|**SetNull**|Nastavení hodnot v související řádky, které **DBNull**.|  
-|**SetDefault**|Nastavte hodnoty v související řádky na výchozí hodnotu.|  
-|**None**|Na související řádky provádět žádnou akci. Toto nastavení je výchozí.|  
+|**Kaskádové**|Odstranit nebo aktualizovat související řádky.|  
+|**SetNull**|Nastavení hodnot v související řádky **DBNull**.|  
+|**SetDefault**|Nastavení hodnot v související řádky na výchozí hodnotu.|  
+|**None**|Neprovádět žádnou akci na související řádky. Toto nastavení je výchozí.|  
   
- A **vlastnosti ForeignKeyConstraint** můžete omezit, a také rozšířit, změny související sloupce. V závislosti na vlastnosti nastavit pro **vlastnosti ForeignKeyConstraint** sloupce, pokud **EnforceConstraints** vlastnost **datovou sadu** je **true**, provádění některých operací na řádek nadřazené bude mít za následek výjimku. Například pokud **DeletRule** vlastnost **vlastnosti ForeignKeyConstraint** je **žádné**, nadřazený řádek nelze odstranit, pokud má všechny podřízené řádky.  
+ A **Objekt ForeignKeyConstraint** můžete omezit, stejně jako rozšíření, změny související sloupce. V závislosti na vlastnosti nastavené pro **Objekt ForeignKeyConstraint** sloupce, pokud **EnforceConstraints** vlastnost **datovou sadu** je **true**, provádění některých operací na nadřazený řádek bude mít za následek výjimku. Například pokud **DeletRule** vlastnost **Objekt ForeignKeyConstraint** je **žádný**, nadřazený řádek nelze odstranit, pokud má všechny podřízené řádky.  
   
- Můžete vytvořit omezení cizího klíče mezi jednoho sloupce nebo pole sloupců pomocí **vlastnosti ForeignKeyConstraint** konstruktor. Předat výsledná **vlastnosti ForeignKeyConstraint** do objektu **přidat** metoda v tabulce **omezení** vlastnost, která je **objektu ConstraintCollection**. Můžete také předat argumenty konstruktoru několik přetížení **přidat** metodu **objektu ConstraintCollection** k vytvoření **vlastnosti ForeignKeyConstraint**.  
+ Můžete vytvořit omezení cizího klíče mezi jednoho sloupce nebo pole s použitím sloupců **Objekt ForeignKeyConstraint** konstruktoru. Předání výsledných **Objekt ForeignKeyConstraint** objektu **přidat** metoda v tabulce **omezení** vlastnost, která je **objektu ConstraintCollection**. Můžete také předat argumenty konstruktoru několik přetížení **přidat** metodu **objektu ConstraintCollection** k vytvoření **Objekt ForeignKeyConstraint**.  
   
- Při vytváření **vlastnosti ForeignKeyConstraint**, můžete předat **DeletRule** a **UpdateRule** hodnoty do konstruktoru jako argumenty, nebo můžete nastavit jako vlastnosti jako Následující příklad (kde **DeletRule** nastavena na hodnotu **žádné**).  
+ Při vytváření **Objekt ForeignKeyConstraint**, můžete předat **DeletRule** a **UpdateRule** hodnoty do konstruktoru jako argumenty, nebo můžete nastavit jako vlastnosti jako v následujícím příkladu (kde **DeletRule** nastavena na hodnotu **žádný**).  
   
 ```vb  
 Dim custOrderFK As ForeignKeyConstraint = New ForeignKeyConstraint("CustOrderFK", _  
@@ -54,25 +54,25 @@ custDS.Tables["OrdersTable"].Constraints.Add(custOrderFK);
 ```  
   
 ### <a name="acceptrejectrule"></a>AcceptRejectRule  
- Změny na řádky nelze přijmout pomocí **metoda AcceptChanges** metoda nebo zrušené pomocí **RejectChanges** metodu **datovou sadu**, **DataTable**, nebo **DataRow**. Když **datovou sadu** obsahuje **ForeignKeyConstraints**, volajícím **metoda AcceptChanges** nebo **RejectChanges** metody vynucuje  **AcceptRejectRule**. **AcceptRejectRule** vlastnost **vlastnosti ForeignKeyConstraint** Určuje akci, která bude provedena na podřízených řádků při **metoda AcceptChanges** nebo  **RejectChanges** se volá na řádek nadřazené.  
+ Jdou přijmout změny řádky pomocí **metoda AcceptChanges** metody nebo zrušené pomocí **RejectChanges** metodu **datovou sadu**, **DataTable**, nebo **DataRow**. Když **datovou sadu** obsahuje **ForeignKeyConstraints**, vyvolání **metoda AcceptChanges** nebo **RejectChanges** metody vynucuje  **AcceptRejectRule**. **AcceptRejectRule** vlastnost **Objekt ForeignKeyConstraint** Určuje akci, která se mají provést na podřízené řádky, kdy **metoda AcceptChanges** nebo  **RejectChanges** je volán na nadřazený řádek.  
   
- Následující tabulka uvádí nastavení k dispozici pro **AcceptRejectRule**.  
+ V následující tabulce jsou uvedeny dostupná nastavení **AcceptRejectRule**.  
   
 |Nastavení pravidla|Popis|  
 |------------------|-----------------|  
-|**CASCADE**|Přijmout nebo odmítnout změny na podřízené řádky.|  
-|**None**|V řádcích podřízené provádět žádnou akci. Toto nastavení je výchozí.|  
+|**Kaskádové**|Přijmout nebo odmítnout změny podřízených řádků.|  
+|**None**|Neprovádět žádnou akci na podřízených řádků. Toto nastavení je výchozí.|  
   
 ### <a name="example"></a>Příklad  
- Následující příklad vytvoří <xref:System.Data.ForeignKeyConstraint>, nastaví některé jeho vlastnosti, včetně <xref:System.Data.ForeignKeyConstraint.AcceptRejectRule%2A>a přidává ji k <xref:System.Data.ConstraintCollection> z <xref:System.Data.DataTable> objektu.  
+ Následující příklad vytvoří <xref:System.Data.ForeignKeyConstraint>, nastaví některé jeho vlastnosti, včetně <xref:System.Data.ForeignKeyConstraint.AcceptRejectRule%2A>a přidá jej do <xref:System.Data.ConstraintCollection> z <xref:System.Data.DataTable> objektu.  
   
  [!code-csharp[DataWorks Data.AcceptRejectRule#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks Data.AcceptRejectRule/CS/source.cs#1)]
  [!code-vb[DataWorks Data.AcceptRejectRule#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks Data.AcceptRejectRule/VB/source.vb#1)]  
   
 ## <a name="uniqueconstraint"></a>UniqueConstraint  
- **UniqueConstraint** objekt, který lze přiřadit jeden sloupec nebo pole sloupců **DataTable**, zajistí, že všechna data v zadaný sloupec nebo sloupce, bude jedinečný pro každého řádku. Jedinečné omezení sloupce nebo pole sloupců můžete vytvořit pomocí **UniqueConstraint** konstruktor. Předat výsledná **UniqueConstraint** do objektu **přidat** metoda v tabulce **omezení** vlastnost, která je **objektu ConstraintCollection**. Můžete také předat argumenty konstruktoru několik přetížení **přidat** metodu **objektu ConstraintCollection** k vytvoření **UniqueConstraint**. Při vytváření **UniqueConstraint** pro sloupec nebo sloupce, můžete volitelně můžete určit, zda sloupec nebo sloupce, primární klíč.  
+ **UniqueConstraint** objektu, který je možné přiřadit do jednoho sloupce nebo na pole sloupce ve **DataTable**, zajišťuje, že všechna data v zadaném sloupci nebo sloupcích jedinečná na každém řádku. Jedinečné omezení sloupce nebo pole sloupce můžete vytvořit pomocí **UniqueConstraint** konstruktoru. Předání výsledných **UniqueConstraint** objektu **přidat** metoda v tabulce **omezení** vlastnost, která je **objektu ConstraintCollection**. Můžete také předat argumenty konstruktoru několik přetížení **přidat** metodu **objektu ConstraintCollection** k vytvoření **UniqueConstraint**. Při vytváření **UniqueConstraint** pro sloupec nebo sloupce, Volitelně můžete zadat, zda sloupec nebo sloupce jsou primární klíč.  
   
- Můžete také vytvořit jedinečné omezení pro sloupec nastavením **jedinečný** vlastnost sloupce, který se **true**. Můžete taky nastavení **jedinečný** vlastnost jediný sloupec pro **false** odebere všechny jedinečné omezení, která mohou existovat. Definování sloupec nebo sloupce jako primární klíč pro tabulku automaticky vytvoří jedinečné omezení pro zadaný sloupec nebo sloupce. Pokud odeberete sloupce z **PrimaryKey** vlastnost **DataTable**, **UniqueConstraint** se odebere.  
+ Omezení unique pro sloupec můžete vytvořit také tak, že nastavíte **jedinečné** vlastnost sloupec, který se **true**. Další možností nastavení **jedinečné** vlastnost jediný sloupec pro **false** odebere jedinečné omezení, která mohou existovat. Definice sloupce nebo sloupců jako primární klíč pro tabulku automaticky vytvoří jedinečné omezení pro zadaný sloupec nebo sloupce. Pokud odeberete sloupec z **PrimaryKey** vlastnost **DataTable**, **UniqueConstraint** se odebere.  
   
  Následující příklad vytvoří **UniqueConstraint** pro dva sloupce **DataTable**.  
   
@@ -99,4 +99,4 @@ custDS.Tables["Customers"].Constraints.Add(custUnique);
  <xref:System.Data.UniqueConstraint>  
  [Definice schématu datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)  
  [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

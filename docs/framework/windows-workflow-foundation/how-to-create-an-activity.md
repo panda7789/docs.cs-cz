@@ -5,106 +5,106 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c09b1e99-21b5-4d96-9c04-ec31db3f4436
-ms.openlocfilehash: 18b03468646a4d016e383f5662d9827551d1141c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: deb1b6ca5c6fc996a015e32dd5e0c7b9bd6530fa
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33519604"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43332700"
 ---
 # <a name="how-to-create-an-activity"></a>Postupy: vytvoření aktivity
-Aktivity jsou core jednotky chování v [!INCLUDE[wf1](../../../includes/wf1-md.md)]. Logika spuštění aktivity můžete implementují ve spravovaném kódu nebo se dá implementovat pomocí jiné aktivity. Toto téma ukazuje, jak vytvořit dvě aktivity. První aktivita je jednoduchý aktivity, která používá kód k implementaci jeho logiku spouštění. Implementace druhá aktivita je definována pomocí jiné aktivity. Tyto aktivity se používají v následující kroky v tomto kurzu.  
+Aktivity jsou základní jednotka chování v [!INCLUDE[wf1](../../../includes/wf1-md.md)]. Je možné implementovat logiku spouštění aktivity ve spravovaném kódu nebo se dá implementovat pomocí další aktivity. Toto téma ukazuje, jak vytvořit dvě aktivity. První aktivita je jednoduchá aktivita, která používá kód implementovat logiku jeho spuštění. Implementace druhou aktivitu se definuje pomocí další aktivity. Tyto aktivity se používají v následujících krocích v tomto kurzu.  
   
 > [!NOTE]
->  Si můžete stáhnout dokončenou verzi kurzu [modelu Windows Workflow Foundation (WF45) - kurzu Začínáme](http://go.microsoft.com/fwlink/?LinkID=248976).  
+>  Chcete-li stáhnout úplnou verzi tohoto kurzu, přečtěte si téma [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
   
 ### <a name="to-create-the-activity-library-project"></a>Vytvoření projektu knihovny aktivit  
   
-1.  Otevřete [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] a zvolte **nový**, **projektu** z **souboru** nabídky.  
+1.  Otevřít [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] a zvolte **nový**, **projektu** z **souboru** nabídky.  
   
-2.  Rozbalte položku **jiné typy projektů** uzlu **nainstalovaná**, **šablony** seznam a vyberte **řešení sady Visual Studio**.  
+2.  Rozbalte **ostatní typy projektů** uzlu **nainstalováno**, **šablony** seznam a vyberte **řešení sady Visual Studio**.  
   
-3.  Vyberte **prázdného řešení** z **řešení sady Visual Studio** seznamu. Ujistěte se, že **rozhraní .NET Framework 4.5** je vybraný v rozevíracím seznamu verze rozhraní .NET Framework. Typ `WF45GettingStartedTutorial` v **název** pole a pak klikněte na **OK**.  
+3.  Vyberte **prázdné řešení** z **řešení sady Visual Studio** seznamu. Ujistěte se, že **rozhraní .NET Framework 4.5** je vybrali v rozevíracím seznamu verzi rozhraní .NET Framework. Typ `WF45GettingStartedTutorial` v **název** pole a potom klikněte na tlačítko **OK**.  
   
-4.  Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníku řešení** a zvolte **přidat**, **nový projekt**.  
+4.  Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníka řešení** a zvolte **přidat**, **nový projekt**.  
   
     > [!TIP]
-    >  Pokud **Průzkumníku řešení** se nezobrazí okno, vyberte **Průzkumníku řešení** z **zobrazení** nabídky.  
+    >  Pokud **Průzkumníka řešení** okno nezobrazí, vyberte **Průzkumníku řešení** z **zobrazení** nabídky.  
   
-5.  V **nainstalovaná** uzlu, vyberte **Visual C#**, **pracovního postupu** (nebo **jazyka Visual Basic**, **pracovního postupu**). Ujistěte se, že **rozhraní .NET Framework 4.5** vybrán [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] verze rozevíracího seznamu. Vyberte **knihovna aktivit** z **pracovního postupu** seznamu. Typ `NumberGuessWorkflowActivities` v **název** pole a pak klikněte na **OK**.  
+5.  V **nainstalováno** uzlu, vyberte **Visual C#**, **pracovního postupu** (nebo **jazyka Visual Basic**, **pracovního postupu**). Ujistěte se, že **rozhraní .NET Framework 4.5** výběru v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] verze rozevíracího seznamu. Vyberte **knihovny aktivit** z **pracovního postupu** seznamu. Typ `NumberGuessWorkflowActivities` v **název** pole a potom klikněte na tlačítko **OK**.  
   
     > [!NOTE]
-    >  V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v sadě Visual Studio **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky** v uzlu **nainstalovaná** uzlu.  
+    >  V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v sadě Visual Studio **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky** v uzlu **nainstalováno** uzlu.  
   
-6.  Klikněte pravým tlačítkem na **Activity1.xaml** v **Průzkumníku řešení** a zvolte **odstranit**. Klikněte na tlačítko **OK** k potvrzení.  
+6.  Klikněte pravým tlačítkem na **Activity1.xaml** v **Průzkumníka řešení** a zvolte **odstranit**. Klikněte na tlačítko **OK** potvrďte.  
   
-### <a name="to-create-the-readint-activity"></a>Chcete-li vytvořit readint – aktivity  
+### <a name="to-create-the-readint-activity"></a>Vytvořit aktivitu readint –  
   
 1.  Zvolte **přidat novou položku** z **projektu** nabídky.  
   
-2.  V **nainstalovaná**, **společné položky** uzlu, vyberte **pracovního postupu**. Vyberte **kód aktivity** z **pracovního postupu** seznamu.  
+2.  V **nainstalováno**, **společné položky** uzlu, vyberte **pracovního postupu**. Vyberte **aktivita s kódem** z **pracovního postupu** seznamu.  
   
-3.  Typ `ReadInt` do **název** pole a pak klikněte na **přidat**.  
+3.  Typ `ReadInt` do **název** pole a potom klikněte na tlačítko **přidat**.  
   
-4.  Nahradit existující `ReadInt` definice s následující definice.  
+4.  Nahraďte existující `ReadInt` definice s následující definicí.  
   
      [!code-csharp[CFX_WF_GettingStarted#1](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/readint.cs#1)]
      [!code-vb[CFX_WF_GettingStarted#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/readint.vb#1)]  
   
     > [!NOTE]
-    >  `ReadInt` Aktivity je odvozena z <xref:System.Activities.NativeActivity%601> místo <xref:System.Activities.CodeActivity>, což je výchozí nastavení pro šablony aktivit kódu. <xref:System.Activities.CodeActivity%601> lze použít, pokud aktivita poskytuje jeden výsledek, který je k dispozici prostřednictvím <xref:System.Activities.Activity%601.Result%2A> argument, ale <xref:System.Activities.CodeActivity%601> nepodporuje použití záložek, takže <xref:System.Activities.NativeActivity%601> se používá.  
+    >  `ReadInt` Aktivity je odvozena z <xref:System.Activities.NativeActivity%601> místo <xref:System.Activities.CodeActivity>, což je výchozí hodnota pro kód šablony aktivit. <xref:System.Activities.CodeActivity%601> lze použít, pokud aktivita poskytuje jeden výsledek, který je zveřejněný prostřednictvím <xref:System.Activities.Activity%601.Result%2A> argument, ale <xref:System.Activities.CodeActivity%601> nepodporuje používání záložek, takže <xref:System.Activities.NativeActivity%601> se používá.  
   
-### <a name="to-create-the-prompt-activity"></a>Chcete-li vytvořit výzva aktivity  
+### <a name="to-create-the-prompt-activity"></a>Vytvořit aktivitu příkazový řádek  
   
-1.  Sestavte projekt stisknutím kombinace kláves CTRL+SHIFT+B. Sestavení projektu umožňuje `ReadInt` aktivity v tomto projektu, který se má použít k vytvoření vlastní aktivity z tohoto kroku.  
+1.  Sestavte projekt stisknutím kombinace kláves CTRL+SHIFT+B. Vytváření projektu umožňuje `ReadInt` aktivity v tomto projektu, který se má použít k vytvoření vlastní aktivity v tomto kroku.  
   
 2.  Zvolte **přidat novou položku** z **projektu** nabídky.  
   
-3.  V **nainstalovaná**, **společné položky** uzlu, vyberte **pracovního postupu**. Vyberte **aktivity** z **pracovního postupu** seznamu.  
+3.  V **nainstalováno**, **společné položky** uzlu, vyberte **pracovního postupu**. Vyberte **aktivity** z **pracovního postupu** seznamu.  
   
-4.  Typ `Prompt` do **název** pole a pak klikněte na **přidat**.  
+4.  Typ `Prompt` do **název** pole a potom klikněte na tlačítko **přidat**.  
   
-5.  Klikněte dvakrát na **Prompt.xaml** v **Průzkumníku řešení** k zobrazení v návrháři, pokud již není zobrazen.  
+5.  Dvakrát klikněte na panel **Prompt.xaml** v **Průzkumníka řešení** se zobrazí v návrháři, pokud je už se nezobrazí.  
   
-6.  Klikněte na tlačítko **argumenty** v levém dolním straně Návrhář aktivity zobrazíte **argumenty** podokně.  
+6.  Klikněte na tlačítko **argumenty** v levého dolního rohu návrháře aktivit zobrazíte **argumenty** podokně.  
   
 7.  Klikněte na tlačítko **vytvořit Argument**.  
   
-8.  Typ `BookmarkName` do **název** vyberte **v** z **směr** rozevíracího seznamu vyberte **řetězec** z **Typ argumentu** rozevíracího seznamu a potom stiskněte klávesu ENTER pro uložení argument.  
+8.  Typ `BookmarkName` do **název** vyberte **v** z **směr** rozevíracího seznamu vyberte **řetězec** z **Typ argumentu** rozevíracího seznamu a potom stiskněte klávesu ENTER k uložení argument.  
   
 9. Klikněte na tlačítko **vytvořit Argument**.  
   
-10. Typ `Result` do **název** pole, které je pod nově přidaný `BookmarkName` argument, vyberte **Out** z **směr** rozevíracího seznamu, vyberte možnost **Int32** z **typ argumentu** rozevíracího seznamu a potom stiskněte klávesu ENTER.  
+10. Typ `Result` do **název** pole, které se nachází pod nově přidaný `BookmarkName` argument, vyberte **si** z **směr** rozevíracího seznamu vyberte možnost **Int32** z **typ argumentu** rozevíracího seznamu a potom stiskněte klávesu ENTER.  
   
 11. Klikněte na tlačítko **vytvořit Argument**.  
   
-12. Typ `Text` do **název** vyberte **v** z **směr** rozevíracího seznamu vyberte **řetězec** z **Typ argumentu** rozevíracího seznamu a potom stiskněte klávesu ENTER pro uložení argument.  
+12. Typ `Text` do **název** vyberte **v** z **směr** rozevíracího seznamu vyberte **řetězec** z **Typ argumentu** rozevíracího seznamu a potom stiskněte klávesu ENTER k uložení argument.  
   
-     Tyto tři argumenty je vázána na odpovídající argumenty <xref:System.Activities.Statements.WriteLine> a `ReadInt` aktivity, které jsou přidány do `Prompt` aktivity v následujících krocích.  
+     Tyto tři argumenty, které jsou vázány na odpovídající argument <xref:System.Activities.Statements.WriteLine> a `ReadInt` aktivity, které jsou přidány do `Prompt` aktivity v následujících krocích.  
   
-13. Klikněte na tlačítko **argumenty** v levém dolním straně Návrhář aktivity zavřete **argumenty** podokně.  
+13. Klikněte na tlačítko **argumenty** v levého dolního rohu návrháře aktivit, zavřete **argumenty** podokně.  
   
-14. Přetáhněte **pořadí** aktivity z **tok řízení** části **sada nástrojů** a umístěte jej do **aktivity sem umístěte** popisek **Výzva** Návrhář aktivity.  
-  
-    > [!TIP]
-    >  Pokud **sada nástrojů** se nezobrazí okno, vyberte **sada nástrojů** z **zobrazení** nabídky.  
-  
-15. Přetáhněte **WriteLine** aktivity z **primitiv** části **sada nástrojů** a umístěte jej do **aktivity sem umístěte** popisek **Pořadí** aktivity.  
-  
-16. Vytvoření vazby **Text** argument **WriteLine** aktivitu **Text** argument **výzva** aktivity zadáním `Text` do **zadejte výraz jazyka C#** nebo **zadejte výraz VB** pole **vlastnosti** okna a potom stiskněte klávesu na KARTĚ klíče dvakrát. To se zavře okno technologie IntelliSense seznam členů a uloží hodnotu vlastnosti přesunutím výběr vypnout vlastnost. Tuto vlastnost lze také nastavit tak, že zadáte `Text` do **zadejte výraz jazyka C#** nebo **zadejte výraz VB** pole na aktivity sám sebe.  
+14. Přetáhněte **pořadí** aktivita z **tok řízení** část **nástrojů** a umístěte ho do **Sem přetáhněte aktivitu** popisek **Výzvy** návrháře aktivit.  
   
     > [!TIP]
-    >  Pokud **vlastnosti – okno** není zobrazený, vyberte **vlastnosti – okno** z **zobrazení** nabídky.  
+    >  Pokud **nástrojů** okno nezobrazí, vyberte **nástrojů** z **zobrazení** nabídky.  
   
-17. Přetažení **readint –** aktivity z **NumberGuessWorkflowActivities** části **sada nástrojů** a umístěte jej do **pořadí** aktivity, které se řídí **WriteLine** aktivity.  
+15. Přetáhněte **WriteLine** aktivita z **primitiv** část **nástrojů** a umístěte ho do **Sem přetáhněte aktivitu** popisek **Pořadí** aktivity.  
   
-18. Vytvoření vazby **NázevZáložky** argument **readint –** aktivitu **NázevZáložky** argument **výzva** aktivity zadáním `BookmarkName` do **zadejte výraz VB** pole napravo od **NázevZáložky** argument ve **vlastnosti – okno**a potom stiskněte klávesu Tabulátor dva časový limit uložení vlastnosti a zavřete okno IntelliSense seznam členů.  
+16. Vytvoření vazby **Text** argument **WriteLine** aktivitu **Text** argument **výzvy** aktivitu tak, že zadáte `Text` do **zadejte výraz C#** nebo **zadejte výraz jazyka VB.** pole **vlastnosti** okno a poté stiskněte klávesu KARTĚ klíč dvakrát. Tím zavře okno technologie IntelliSense seznam členů a uloží hodnotu vlastnosti přesunutím výběr vypnout vlastnost. Tuto vlastnost můžete nastavit také tak, že zadáte `Text` do **zadejte výraz C#** nebo **zadejte výraz jazyka VB.** pole přímo na aktivitu.  
   
-19. Vytvoření vazby **výsledek** argument **readint –** aktivitu **výsledek** argument **výzva** aktivity zadáním `Result` do **zadejte výraz jazyka Visual Basic** pole napravo od **výsledek** argument **vlastnosti – okno**a potom stiskněte klávesu Tabulátor dvakrát.  
+    > [!TIP]
+    >  Pokud **okno vlastností** není zobrazený, vyberte **okno vlastností** z **zobrazení** nabídky.  
   
-20. Stisknutím kombinace kláves CTRL + SHIFT + B řešení sestavíte.  
+17. Přetáhněte **readint –** aktivita z **NumberGuessWorkflowActivities** část **nástrojů** a umístěte jej do **pořadí** aktivitu tak, že následuje **WriteLine** aktivity.  
   
-     Pokyny k vytvoření pracovního postupu pomocí těchto aktivit na další krok v tomto kurzu, najdete v tématu [postupy: vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md).  
+18. Vytvoření vazby **BookmarkName** argument **readint –** aktivitu **BookmarkName** argument **výzvy** aktivitu tak, že zadáte `BookmarkName` do **zadejte výraz jazyka VB.** políčka napravo od **BookmarkName** argumentu **okno Vlastnosti**a stiskněte klávesu TAB dvě časový limit zavřete okno technologie IntelliSense seznam členů a uložte vlastnosti.  
+  
+19. Vytvoření vazby **výsledek** argument **readint –** aktivitu **výsledek** argument **výzvy** aktivitu tak, že zadáte `Result` do **zadejte výraz jazyka VB.** políčka napravo od **výsledek** argumentu **okno vlastností**a potom stiskněte klávesu Tabulátor dvakrát.  
+  
+20. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
+  
+     Pokyny k vytvoření pracovního postupu pomocí těchto aktivit naleznete v části Další krok v tomto kurzu [postupy: vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Activities.CodeActivity>  

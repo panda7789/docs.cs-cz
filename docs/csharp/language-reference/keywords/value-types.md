@@ -8,12 +8,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 17bbb0280c4db7d91e5d3cc3d3b6233b8db89cdc
-ms.sourcegitcommit: bd4fa78f5a46133efdead1bc692a9aa2811d7868
+ms.openlocfilehash: 3bbaea9247d975c27ed6f49dedb749312f675296
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42754966"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43331847"
 ---
 # <a name="value-types-c-reference"></a>Typy hodnot (Referenční dokumentace jazyka C#)
 Typy hodnot se skládá ze dvou hlavních kategorií:  
@@ -97,11 +97,12 @@ Point p = new Point(); // Invoke default constructor for the struct.
   
  Informace o formátování výstupu číselné typy najdete v tématu [tabulka formátování číselných výsledků](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md).  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Typy](../../../csharp/language-reference/keywords/types.md)  
- [Referenční tabulky pro typy](../../../csharp/language-reference/keywords/reference-tables-for-types.md)  
- [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)  
- [Typy s možnou hodnotou Null](../../programming-guide/nullable-types/index.md)  
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
+- [Typy](../../../csharp/language-reference/keywords/types.md)  
+- [Referenční tabulky pro typy](../../../csharp/language-reference/keywords/reference-tables-for-types.md)  
+- [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)  
+- [Typy s možnou hodnotou Null](../../programming-guide/nullable-types/index.md)  

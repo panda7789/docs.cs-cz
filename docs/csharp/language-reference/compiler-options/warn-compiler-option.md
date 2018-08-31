@@ -12,15 +12,15 @@ helpviewer_keywords:
 - w compiler option [C#]
 - warn compiler option [C#]
 ms.assetid: 5f80ff59-4991-4382-9f9a-77da18446e71
-ms.openlocfilehash: 65a6348bb0364d79ed0e69daf3a31ea7aa1bf8ea
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 14656fa25ea1d01339bd63efb999e938e1243db8
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33218868"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43331938"
 ---
 # <a name="-warn-c-compiler-options"></a>-warn (možnosti kompilátoru C#)
-**-Warn** možnost určuje úroveň pro upozornění pro kompilátor zobrazovat.  
+**-Warn** určuje úroveň upozornění kompilátoru k zobrazení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,40 +30,41 @@ ms.locfileid: "33218868"
   
 ## <a name="arguments"></a>Arguments  
  `option`  
- Úroveň pro upozornění, které chcete zobrazit pro kompilace: nižší čísla zobrazují pouze vysokou závažností upozornění; vyšší čísla zobrazit další varování. Platné hodnoty jsou 0-4:  
+ Úroveň pro upozornění, které chcete zobrazit pro kompilaci: nižší číslice zobrazit pouze vysokou závažností upozornění; vyšší čísla popisují další varování. Platné hodnoty jsou 0-4:  
   
 |Úroveň upozornění|Význam|  
 |-------------------|-------------|  
-|0|Vypne vyvolávání všechny zprávy upozornění.|  
-|1|Zobrazí závažné zprávy upozornění.|  
-|2|Zobrazí upozornění úrovně 1 a některé méně závažné upozornění, jako jsou třeba upozornění o skrývání členy třídy.|  
-|3|Zobrazí upozornění úrovně 2 a některé méně závažné upozornění, jako jsou třeba upozornění o výrazech, které jsou vždy vyhodnoceny na `true` nebo `false`.|  
-|4 (výchozí)|Zobrazí všechny úrovně 3 upozornění a informační upozornění.|  
+|0|Vypne emise všechny zprávy upozornění.|  
+|1|Zobrazuje závažná upozornění.|  
+|2|Zobrazí upozornění úrovně 1 a některé, méně závažných upozornění, jako jsou třeba upozornění o skrývání členů třídy.|  
+|3|Zobrazí upozornění úrovně 2 a některé, méně závažných upozornění, jako jsou třeba upozornění, která se vždycky vyhodnotí výrazy `true` nebo `false`.|  
+|4 (výchozí)|Zobrazí všechna upozornění úrovně 3 a informační upozornění.|  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li získat informace o chybě nebo upozornění, můžete vyhledat kód chyby v rejstříku nápovědy. Další způsoby, jak získat informace o chybě nebo upozornění, naleznete v části [chyby kompilátoru jazyka C#](../../../csharp/language-reference/compiler-messages/index.md).  
+ Pokud chcete získat informace o chybě nebo upozornění, můžete vyhledat kód chyby v indexu nápovědy. Další způsoby, jak získat informace o chybě nebo upozornění, najdete v části [chyby kompilátoru jazyka C#](../../../csharp/language-reference/compiler-messages/index.md).  
   
- Použití [- warnaserror](../../../csharp/language-reference/compiler-options/warnaserror-compiler-option.md) zachází všech upozornění jako chyby. Použití [- nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) zakázat některé upozornění.  
+ Použití [- warnaserror](../../../csharp/language-reference/compiler-options/warnaserror-compiler-option.md) považovat všechna upozornění jako chyby. Použití [- nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) zakázat určitá upozornění.  
   
  **-w** je zkratka pro **-warn**.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevření projektu **vlastnosti** stránky.  
+1.  Otevřete v projektu **vlastnosti** stránky.  
   
-2.  Klikněte **sestavení** stránku vlastností.  
+2.  Klikněte na tlačítko **sestavení** stránku vlastností.  
   
-3.  Změnit **úroveň pro upozornění** vlastnost.  
+3.  Upravit **úroveň pro upozornění** vlastnost.  
   
- Informace o tom, jak nastavení této možnosti kompilátoru programu najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.WarningLevel%2A>.  
+ Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.WarningLevel%2A>.  
   
 ## <a name="example"></a>Příklad  
- Kompilace `in.cs` kompilátor zobrazuje pouze upozornění úrovně 1:  
+ Kompilace `in.cs` kompilátor zobrazí pouze upozornění úrovně 1:  
   
 ```console  
 csc -warn:1 in.cs  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

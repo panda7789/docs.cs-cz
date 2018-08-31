@@ -1,44 +1,44 @@
 ---
-title: Začínáme - průvodce v C#
-description: Najít krátké, jednoduché návodů, které vám umožní rychle zjistěte úvodní C# – koncepce a psaní aplikací .NET Core.
+title: Začínáme – průvodce v C#
+description: Najdete krátký, jednoduché kurzy, které vám umožní rychle zjistěte základní koncepty jazyka C# a psát aplikace .NET Core.
 helpviewer_keywords:
 - Visual C#, getting started
 - getting started, Visual C#
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/23/2017
-ms.openlocfilehash: 8c9b2803819b4ffcf0edce7994b9fdbc1c6c6951
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aa34c181073d089d137ac0ef64c85c8fe2772093
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33212626"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43331369"
 ---
-# <a name="get-started-with-c"></a>Začínáme s C# #
+# <a name="get-started-with-c"></a>Začínáme s C\#
 
-Tato část obsahuje krátké, jednoduché kurzy, které vám umožní rychle sestavení aplikace pomocí C# a .NET Core. Pro Visual Studio 2017 a Visual Studio Code jsou získávání témata oddílu Začínáme. Můžete vytvořit buď jednoduchou aplikaci Hello, World nebo, pokud máte Visual Studio 2017 jednoduchá knihovnu, kterou můžete použít jiné aplikace.
+V této části najdete krátký, jednoduché kurzy, které vám umožní rychle vytvářet aplikace pomocí jazyka C# a .NET Core. Pro Visual Studio 2017 a Visual Studio Code se zobrazuje témata oddílu Začínáme. Můžete vytvořit buď jednoduchou aplikaci Hello World nebo, pokud máte Visual Studio 2017, knihovnu jednoduchou třídu, která můžete použít v jiných aplikacích.
 
-K dispozici jsou následující témata:
+Jsou k dispozici v následujících tématech:
 
 * [Úvod do jazyka C# a rozhraní .NET Framework](introduction-to-the-csharp-language-and-the-net-framework.md)
 
-     Poskytuje přehled jazyk C# a rozhraní .NET.
+     Poskytuje přehled jazyka C# a .NET.
 
 * [Vytvoření aplikace Hello World v jazyce C# pomocí platformy .NET Core v sadě Visual Studio 2017](../../core/tutorials/with-visual-studio.md)
 
-   Visual Studio 2017, nejnovější verze sady Visual Studio, umožňuje kód, kompilovat, spouštět, ladit, profil a publikování aplikací z integrované vývojové prostředí pro systém Windows.
+   Visual Studio 2017 nejnovější verzi sady Visual Studio umožňuje kódu, kompilaci, spuštění, ladění, profilování a publikovat aplikace pro Windows z integrovaného vývojového prostředí.
 
-   Téma umožňuje vytvořit a spustit jednoduché aplikace Hello World a upravit ho spustit něco víc interaktivní aplikace Hello World. Po dokončení sestavení a spuštění aplikace, můžete si také přečíst postup [ladění ho](../../core/tutorials/debugging-with-visual-studio.md) a postup [publikováním](../../core/tutorials/publishing-with-visual-studio.md) tak, aby mohl být program spuštěn na žádnou platformu podporovanou nástrojem .NET Core.
+   Téma umožňuje vytvářet a spustí jednoduchou aplikaci Hello World a potom změňte jeho spuštění mírně vyšší interaktivitou aplikace Hello World. Jakmile dokončíte vytváření a používání aplikace, můžete dále jste zjistili, jak [ho ladit](../../core/tutorials/debugging-with-visual-studio.md) a jak [ji publikovat](../../core/tutorials/publishing-with-visual-studio.md) tak, aby ji můžete spustit na žádnou platformu podporovanou nástrojem .NET Core.
 
 * [Vytvoření knihovny tříd pomocí jazyka C# a platformy .NET Core v sadě Visual Studio 2017](../../core/tutorials/library-with-visual-studio.md)
 
-   Knihovny tříd umožňuje definovat typy a členy typu, které lze volat z jiné aplikace. Toto téma vám umožňuje vytvoření knihovny tříd s jedinou metodu, která určuje, zda řetězec začíná velké písmeno. Po dokončení vytváření knihovny, můžete vyvíjet [testování částí](../../core/tutorials/testing-library-with-visual-studio.md) zajistit, že funguje podle očekávání, a poté je může být k dispozici pro [aplikace, které chtějí využívat jeho](../../core/tutorials/consuming-library-with-visual-studio.md).
+   Knihovna tříd umožňuje definovat typy a členy typů, které lze volat z jiné aplikace. Toto téma vám umožňuje vytvoření knihovny tříd s jedinou metodu, která určuje, jestli řetězec začíná velkým písmenem. Jakmile budete hotovi s vytvářením knihovny, můžete vyvíjet [Jednotkový test](../../core/tutorials/testing-library-with-visual-studio.md) zajistíte, že funguje podle očekávání, a pak můžete si je k dispozici [aplikace, které chtějí](../../core/tutorials/consuming-library-with-visual-studio.md).
 
 * [Začínáme s jazykem C# a nástrojem Visual Studio Code](../../core/tutorials/with-visual-studio-code.md)
 
-   Visual Studio Code je bezplatná kód editor optimalizované pro sestavování a ladění moderní webové a cloudových aplikací. Podporuje technologii IntelliSense a je k dispozici pro Windows, Linux a systému macOS.
+   Visual Studio Code je bezplatného editoru kódu optimalizovaný pro vytváření a ladění moderních webových a cloudových aplikací. Podporuje technologii IntelliSense a je k dispozici pro Linux, macOS a Windows.
 
-   Toto téma ukazuje, jak vytvořit a spustit jednoduchou aplikaci Hello, World s Visual Studio Code a .NET Core.
+   V tomto tématu se dozvíte, jak vytvořit a spustí jednoduchou aplikaci Hello World pomocí Visual Studio Code a rozhraní .NET Core.
 
 ## <a name="related-sections"></a>Související oddíly
 
@@ -48,11 +48,11 @@ K dispozici jsou následující témata:
 
 * [Průvodce programováním v jazyce C#](../../csharp/programming-guide/index.md)
 
-    Poskytuje informace o konceptech programováním v C# a popisuje, jak provádět různé úlohy v jazyce C#.
+    Poskytuje informace o jazyce C# koncepty programování a popisuje, jak provádět různé úlohy v jazyce C#.
 
 * [Referenční dokumentace jazyka C#](../../csharp/language-reference/index.md)
 
-    Poskytuje podrobné referenční informace o C# klíčová slova, operátory, preprocesor – direktivy, možnosti kompilátoru a kompilátoru chyby a upozornění.
+    Poskytuje podrobné referenční informace o jazyce C# klíčová slova, operátory, direktivy preprocesoru, – možnosti kompilátoru a kompilátor chyby a upozornění.
 
 * [Ukázky sady Visual Studio](/visualstudio/ide/visual-studio-samples)
 
@@ -62,5 +62,6 @@ K dispozici jsou následující témata:
 
     Poskytuje odkazy na programovací návody, které používají jazyk C#, a stručný popis každého návodu.
 
-## <a name="see-also"></a>Viz také
- [Začínáme s Visual C# a Visual Basic pomocí sady Visual Studio](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
+## <a name="see-also"></a>Viz také:
+
+* [Začínáme s Visual C# a Visual Basic pomocí sady Visual Studio](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)

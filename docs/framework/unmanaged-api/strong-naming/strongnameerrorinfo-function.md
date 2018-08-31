@@ -20,15 +20,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: db818f638898da6379ce4dadfada8eccc3adeb12
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9ad328d484ba01e22557d7d23d1cfa21813de9c8
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33455416"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43332744"
 ---
 # <a name="strongnameerrorinfo-function"></a>StrongNameErrorInfo – funkce
-Získá poslední kód chyby, která byla vygenerována jedna z funkcí silným názvem.  
+Získá poslední kód chyby, která byla vygenerována pomocí jedné z funkcí silného názvu.  
   
  Tato funkce je zastaralá.  
   
@@ -39,13 +39,13 @@ HRESULT StrongNameErrorInfo ();
 ```  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Poslední kód chyby COM nastavit pomocí jedné z silný název funkce.  
+ Poslední modelu COM. kód chyby: nastavit podle jedné z funkcí silného názvu.  
   
 ## <a name="remarks"></a>Poznámky  
- Většina metod silného názvu vrátit jednoduchou `true` nebo `false` údaj o úspěšném dokončení. Použití `StrongNameErrorInfo` funkce načíst HRESULT určující poslední chyby generovaných silný název funkce.  
+ Většina metod silného názvu vrátit jednoduchý `true` nebo `false` údaj o úspěšném dokončení. Použití `StrongNameErrorInfo` funkce načtete HRESULT, který určuje poslední chyby generované silného názvu funkce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** StrongName.h  
   
@@ -54,4 +54,4 @@ HRESULT StrongNameErrorInfo ();
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také  
- [Silné pojmenování globálních statických funkcí](http://msdn.microsoft.com/library/efa715df-e8cc-48f2-9ec4-26586f0dc8d0)
+ [Silných názvů globálních statických funkcí](https://msdn.microsoft.com/library/efa715df-e8cc-48f2-9ec4-26586f0dc8d0)

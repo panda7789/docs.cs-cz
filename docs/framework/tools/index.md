@@ -9,21 +9,21 @@ helpviewer_keywords:
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4034a23b076bc0f3041f09dc4756646a926d6915
-ms.sourcegitcommit: c217b067985905cb21eafc5dd9a83568d7ff4e45
+ms.openlocfilehash: 208dc3048b52cc895a5142a7686829390d1d4503
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36314682"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43332517"
 ---
 # <a name="net-framework-tools"></a>.NET Framework – nástroje
 Nástroje .NET Framework usnadňují vývoj, nasazení a správu aplikací a komponent určených pro rozhraní .NET Framework.  
   
-Většina nástrojů rozhraní .NET Framework popsaná v této části je automaticky nainstalována se sadou Visual Studio. Stažení sady Visual Studio, přejděte [Visual Studio stáhne](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) stránky.
+Většina nástrojů rozhraní .NET Framework popsaná v této části je automaticky nainstalována se sadou Visual Studio. Stáhněte si Visual Studio, najdete v tématu [stahování sady Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) stránky.
   
  Veškeré nástroje, s výjimkou nástroje Assembly Cache Viewer (Shfusion.dll), lze spustit z příkazového řádku. K nástroji Shfusion.dll je nutné získat přístup z Průzkumníku souborů.  
   
- Nejlepším způsobem, jak spustit nástroje příkazového řádku, je použít příkazový řádek pro vývojáře pro sadu Visual Studio. Tyto nástroje umožňují spustit nástroje snadno, bez přechodu do instalační složky. Další informace najdete v tématu [příkazového řádku](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Nejlepším způsobem, jak spustit nástroje příkazového řádku, je použít příkazový řádek pro vývojáře pro sadu Visual Studio. Tyto nástroje umožňují spustit nástroje snadno, bez přechodu do instalační složky. Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
 > [!NOTE]
 >  Některé nástroje jsou určeny konkrétně pro 32bitové nebo 64bitové počítače. Ujistěte se, že spouštíte příslušnou verzi nástroje pro váš počítač.  
@@ -36,7 +36,7 @@ Většina nástrojů rozhraní .NET Framework popsaná v této části je automa
  Převádí definice typů v knihovně typů modelu COM pro ovládací prvek ActiveX na ovládací prvek Windows Forms.  
   
  [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)  
- Umožňuje zobrazit a konfigurovat zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad organizace. V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] a novější, tento nástroj neovlivní zásady (CAS) zabezpečení přístupu kódu, pokud [ \<legacyCasPolicy > element](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) je nastaven na `true`. Další informace najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
+ Umožňuje zobrazit a konfigurovat zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad organizace. V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] a později, tento nástroj neovlivní zásady zabezpečení (CA) přístupu kódu, pokud [ \<legacyCasPolicy > element](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) je nastavena na `true`. Další informace najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
   
  [Cert2spc.exe (nástroj pro testování certifikátu vydavatele softwaru)](../../../docs/framework/tools/cert2spc-exe-software-publisher-certificate-test-tool.md)  
  Vytvoří certifikát vydavatele softwaru (SPC) z jednoho nebo více certifikátů X.509. Tento nástroj slouží pouze pro účely testování.  
@@ -45,7 +45,7 @@ Většina nástrojů rozhraní .NET Framework popsaná v této části je automa
  Spravuje certifikáty, seznamy důvěryhodných certifikátů (CTL) a seznamy odvolaných certifikátů (CRL).  
   
  [Clrver.exe (nástroj verze CLR)](../../../docs/framework/tools/clrver-exe-clr-version-tool.md)  
- sestavy nainstalovaných verzí common language runtime (CLR) v počítači.  
+ sestavy nainstalovaných verzí modulu common language runtime (CLR) v počítači.  
   
  [CorFlags.exe (CorFlags – převodní nástroj)](../../../docs/framework/tools/corflags-exe-corflags-conversion-tool.md)  
  Dovoluje nastavit CorFlags sekci hlavičky obrazu přenositelného spustitelného souboru (PE).  
@@ -123,14 +123,14 @@ Většina nástrojů rozhraní .NET Framework popsaná v této části je automa
  Převede definice typu nalezené v knihovně typů modelu COM na ekvivalentní definice v sestavení Common Language Runtime.  
   
  [Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)](../../../docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md)  
- Exportuje sestavení rozhraní .NET Framework, který se zkompiluje jako soubor .winmdobj do komponenty prostředí Windows Runtime, který je zabalené jako .winmd soubor, který obsahuje jak informace metadat a implementace prostředí Windows Runtime.  
+ Exportuje sestavení .NET Framework, který je zkompilován jako soubor .winmdobj do komponenty prostředí Windows Runtime, která je zabalena jako soubor .winmd obsahující jak informace metadat a implementace prostředí Windows Runtime.  
   
  [Winres.exe (editor prostředků Windows Forms)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md)  
  Pomáhá lokalizovat prostředky (soubory .resx nebo .resources) uživatelského rozhraní (UI), které jsou používány modelem Windows Forms. Je možné přeložit řetězce a změnit velikost, přesunout a skrýt ovládací prvky pro přizpůsobení lokalizovaných řetězců.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Nástroje](http://msdn.microsoft.com/library/f533241c-317c-445e-88ca-c80c8d078fca)  
- Obsahuje nástroje, jako je nástroj pro kontrolu shody (isXPS.exe) a nástroje pro profilaci výkonu.  
+ [Nástroje](https://msdn.microsoft.com/library/f533241c-317c-445e-88ca-c80c8d078fca)  
+ Obsahuje nástroje, jako je například nástroj isxps pro kontrolu shody (isXPS.exe) a nástroje pro profilaci výkonu.  
   
  [Nástroje Windows Communication Foundation](../../../docs/framework/wcf/tools.md)  
  Obsahuje nástroje, které usnadňují vytváření, zavádění a správu aplikací služby Windows Communication Foundation (WCF).

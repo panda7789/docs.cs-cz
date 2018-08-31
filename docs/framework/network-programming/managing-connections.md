@@ -20,28 +20,28 @@ ms.assetid: 9b3d3de7-189f-4f7d-81ae-9c29c441aaaa
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 8702f2329b262fc5c5965ae49365d46ba34091d6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 29077a1c0f2b803270adb730e0d810143095e709
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33391170"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43330877"
 ---
 # <a name="managing-connections"></a>Správa připojení
-Aplikace, které používají protokol HTTP pro připojení k prostředkům dat můžete použít rozhraní .NET Framework <xref:System.Net.ServicePoint> a <xref:System.Net.ServicePointManager> třídy ke správě připojení k Internetu a pomáhá jim dosáhnout optimálního škálování a výkon.  
+Aplikace, které používají protokol HTTP pro připojení k datovým prostředkům můžete použít rozhraní .NET Framework <xref:System.Net.ServicePoint> a <xref:System.Net.ServicePointManager> třídy ke správě připojení k Internetu a aby to pomohl ostatním dosažení optimálního škálování a výkon.  
   
- **Servisním místem** třída poskytuje aplikace s koncovým bodem, který lze aplikace připojí k přístup k internetovým prostředkům. Každý **servisním místem** obsahuje informace, že pomáhá optimalizovat připojení pomocí internetového serveru pomocí sdílení informací optimalizace mezi připojení ke zlepšení výkonu.  
+ **ServicePoint** třída poskytuje aplikace s koncovým bodem, do které můžete připojit aplikaci pro přístup k internetovým prostředkům. Každý **ServicePoint** informacemi, že pomáhá optimalizovat připojení pomocí internetového serveru při sdílení informací o optimalizaci mezi připojení ke zlepšení výkonu.  
   
- Každý **servisním místem** je identifikován pomocí identifikátor URI (Uniform Resource) a je zařazený do kategorie podle fragmenty identifikátor a hostitele schéma identifikátoru URI. Například stejné **servisním místem** instance by poskytnout požadavky identifikátory URI http://www.contoso.com/index.htm a http://www.contoso.com/news.htm?date=today vzhledem k tomu, že mají stejný identifikátor schématu (http) a hostitele fragmenty (www.contoso.com). Pokud aplikace už má trvalé připojení k serveru www.contoso.com, používá toto připojení k načtení oba požadavky, takže není nutné vytvořit dvě připojení.  
+ Každý **ServicePoint** je identifikován podle identifikátor URI (Uniform Resource) a jsou rozdělené do kategorií podle schéma identifikátor a fragmentům hostitele identifikátoru URI. Například stejné **ServicePoint** instance by požadavky poskytovat identifikátory URI `http://www.contoso.com/index.htm` a `http://www.contoso.com/news.htm?date=today` protože mají stejný identifikátor schématu (http) a fragmentů hostitele (`www.contoso.com`). Pokud má aplikace již trvalé připojení k serveru `www.contoso.com`, použije toto připojení k načtení obou požadavků, takže není nutné vytvořit dvě připojení.  
   
- **ServicePointManager –** je statická třída, která spravuje vytváření a zničení **servisním místem** instance. **ServicePointManager –** vytvoří **servisním místem** při aplikace požádá o prostředek Internet, který není v kolekci existující **servisním místem** instance. **Servisním místem** instance jsou zničen čas překročení jejich maximální doby nečinnosti nebo pokud je to číslo existující **servisním místem** překračuje maximální počet instancí **servisním místem**instancí aplikace. Můžete ovládat maximální dobu výchozí nečinnosti a maximální počet **servisním místem** instance podle nastavení <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A> a <xref:System.Net.ServicePointManager.MaxServicePoints%2A> vlastnosti **ServicePointManager –**.  
+ **Třída ServicePointManager** je statická třída, která spravuje vytváření a ničení **ServicePoint** instancí. **Třída ServicePointManager** vytvoří **ServicePoint** když aplikace požádá o prostředek Internet, který se nenachází v kolekci stávajících **ServicePoint** instance. **ServicePoint** instancí jsou zničeny při překročení jejich maximální doba nečinnosti, nebo když se počet stávajících **ServicePoint** překračuje maximální počet instancí **ServicePoint**instancí aplikace. Můžete řídit, výchozí maximální doba nečinnosti a maximální počet **ServicePoint** instance tak, že nastavíte <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A> a <xref:System.Net.ServicePointManager.MaxServicePoints%2A> vlastnosti **Třída ServicePointManager**.  
   
- Počet připojení mezi klientem a serverem může mít výrazný dopad na propustnost aplikace. Ve výchozím nastavení aplikace pomocí <xref:System.Net.HttpWebRequest> třída používá maximálně dvě trvalé připojení k danému serveru, ale můžete nastavit maximální počet připojení na základě jednotlivých aplikací.  
+ Počet připojení mezi klientem a serverem, které může mít výrazný dopad na propustnost aplikace. Ve výchozím nastavení aplikace s využitím <xref:System.Net.HttpWebRequest> třída používá maximálně dvě trvalé připojení k danému serveru, ale můžete nastavit maximální počet připojení na základě jednotlivých aplikací.  
   
 > [!NOTE]
->  Specifikace protokolu HTTP/1.1 omezí počet připojení z aplikace do dvě připojení na server.  
+>  Specifikace protokolu HTTP/1.1 omezuje počet připojení z aplikace do dvou připojení na serveru.  
   
- Optimální počet připojení závisí na skutečné podmínky, ve kterých je aplikace spuštěná. Zvýšením počtu připojení aplikace k dispozici nemusí ovlivnit výkon aplikace. Pokud chcete zjistit dopad více připojení, spusťte testy výkonu a budeme obměňovat počet připojení. Můžete změnit počet připojení, které aplikace používá změnou statických <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> vlastnost **ServicePointManager –** třídy v inicializace aplikací, jak znázorňuje následující ukázka kódu.  
+ Optimální počet připojení, které závisí na skutečných podmínek, ve kterých je aplikace spuštěná. Zvýšení počtu připojení aplikace k dispozici nemusí mít vliv na výkon aplikace. Pokud chcete zjistit dopad další připojení, spuštění testů výkonu při různých počet připojení. Můžete změnit počet připojení, které aplikace používá tak, že změníte statické <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> vlastnost **Třída ServicePointManager** třídy při inicializaci aplikace, jak je znázorněno v následujícím příkladu kódu.  
   
 ```csharp  
 // Set the maximum number of connections per server to 4.  
@@ -53,7 +53,7 @@ ServicePointManager.DefaultConnectionLimit = 4;
 ServicePointManager.DefaultConnectionLimit = 4  
 ```  
   
- Změna **ServicePointManager.DefaultConnectionLimit** vlastnost nemá vliv na dříve inicializovaného **servisním místem** instance. Následující kód ukazuje, změna limitu připojení na existujícím **servisním místem** pro server http://www.contoso.com k s hodnotou uloženou v `newLimit`.  
+ Změna **ServicePointManager.DefaultConnectionLimit** vlastnost nemá vliv na dříve inicializován **ServicePoint** instancí. Následující kód ukazuje změnu limitu připojení na existující **ServicePoint** pro server `http://www.contoso.com` na hodnotu uloženou v `newLimit`.  
   
 ```csharp  
 Uri uri = new Uri("http://www.contoso.com/");  

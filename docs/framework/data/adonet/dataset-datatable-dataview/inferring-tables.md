@@ -1,25 +1,25 @@
 ---
-title: Odvození tabulky
+title: Odvozování tabulek
 ms.date: 03/30/2017
 ms.assetid: 74a288d4-b8e9-4f1a-b2cd-10df92c1ed1f
-ms.openlocfilehash: b14cbc39b02136ac7f226faf2636a69ac072f529
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 38709f91e01c7f85d9e8482bdd49bc0892121f09
+ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32757824"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43332850"
 ---
-# <a name="inferring-tables"></a>Odvození tabulky
-Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET nejdřív zjistí, které elementy XML představují tabulky. Následující struktury XML výsledkem tabulka pro **datovou sadu** schématu:  
+# <a name="inferring-tables"></a>Odvozování tabulek
+Po odvození schématu pro <xref:System.Data.DataSet> z dokumentu XML, ADO.NET nejdřív zjistí prvky XML, které představují tabulky. Tabulka pro za následek následující struktury XML **datovou sadu** schématu:  
   
 -   Elementy s atributy  
   
--   Elementy podřízené elementy  
+-   Elementů s podřízenými prvky  
   
 -   Opakující se elementy  
   
 ## <a name="elements-with-attributes"></a>Elementy s atributy  
- Prvky, které mají mít za následek zadané v nich atributy odvozené tabulky. Zvažte například následující kód XML:  
+ Prvky, které mají atributy určené v nich za následek odvozené tabulky. Zvažte například následující kód XML:  
   
 ```xml  
 <DocumentElement>  
@@ -28,7 +28,7 @@ Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET n
 </DocumentElement>  
 ```  
   
- Proces odvození vytvoří tabulku s názvem "Element1."  
+ Odvození proces vytvoří tabulku s názvem "Element1."  
   
  **Datová sada:** prvek DocumentElement  
   
@@ -36,11 +36,11 @@ Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET n
   
 |attr1|Element1_Text|  
 |-----------|--------------------|  
-|value1||  
-|Value2|Text1|  
+|Hodnota1||  
+|Hodnota2|Text1|  
   
-## <a name="elements-with-child-elements"></a>Elementy podřízené elementy  
- Prvky, které mají výsledek podřízené elementy v odvozené tabulky. Zvažte například následující kód XML:  
+## <a name="elements-with-child-elements"></a>Elementů s podřízenými prvky  
+ Prvky, které mají podřízené prvky výsledek v odvozené tabulky. Zvažte například následující kód XML:  
   
 ```xml  
 <DocumentElement>  
@@ -50,7 +50,7 @@ Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET n
 </DocumentElement>  
 ```  
   
- Proces odvození vytvoří tabulku s názvem "Element1."  
+ Odvození proces vytvoří tabulku s názvem "Element1."  
   
  **Datová sada:** prvek DocumentElement  
   
@@ -60,7 +60,7 @@ Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET n
 |-------------------|  
 |Text1|  
   
- Dokument nebo kořenové, element výsledek odvozené tabulky, pokud má atributy nebo podřízené prvky, které jsou odvozené jako sloupce. Pokud dokument prvek nemá žádné atributy a žádné podřízené prvky, které by odvodit jako sloupce, jako je odvodit elementu **datovou sadu**. Zvažte například následující kód XML:  
+ Dokumentu nebo kořenový element výsledek odvozené tabulky, pokud má atributy nebo podřízené prvky, které jsou odvozeny jako sloupce. Pokud má element dokumentu žádné atributy a žádné podřízené prvky, které by odvodit jako sloupce, jako je odvozený element **datovou sadu**. Zvažte například následující kód XML:  
   
 ```xml  
 <DocumentElement>  
@@ -69,17 +69,17 @@ Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET n
 </DocumentElement>  
 ```  
   
- Proces odvození vytvoří tabulku s názvem "Prvek DocumentElement."  
+ Odvození proces vytvoří tabulku s názvem "Prvek DocumentElement."  
   
  **Datová sada:** NewDataSet  
   
  **Tabulka:** prvek DocumentElement  
   
-|Element1|Element2|  
+|element1|element2|  
 |--------------|--------------|  
 |Text1|Text2|  
   
- Případně zvažte následující kód XML:  
+ Vezměte v úvahu taky následující kód XML:  
   
 ```xml  
 <DocumentElement>  
@@ -87,7 +87,7 @@ Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET n
 </DocumentElement>  
 ```  
   
- Proces odvození vytváří **datovou sadu** s názvem "Prvek DocumentElement" obsahující tabulku s názvem "Element1."  
+ Odvození proces vytvoří **datovou sadu** s názvem "Prvek DocumentElement", který obsahuje tabulku s názvem "Element1."  
   
  **Datová sada:** prvek DocumentElement  
   
@@ -95,10 +95,10 @@ Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET n
   
 |attr1|attr2|  
 |-----------|-----------|  
-|value1|Value2|  
+|Hodnota1|Hodnota2|  
   
 ## <a name="repeating-elements"></a>Opakující se elementy  
- Prvky, které opakujte výsledek v jedné odvozené tabulky. Zvažte například následující kód XML:  
+ Prvky, které opakují výsledek v jedné odvozené tabulky. Zvažte například následující kód XML:  
   
 ```xml  
 <DocumentElement>  
@@ -107,7 +107,7 @@ Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET n
 </DocumentElement>  
 ```  
   
- Proces odvození vytvoří tabulku s názvem "Element1."  
+ Odvození proces vytvoří tabulku s názvem "Element1."  
   
  **Datová sada:** prvek DocumentElement  
   
@@ -124,4 +124,4 @@ Pokud schéma pro odvození <xref:System.Data.DataSet> z dokumentu XML ADO.NET n
  [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  
  [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
  [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
