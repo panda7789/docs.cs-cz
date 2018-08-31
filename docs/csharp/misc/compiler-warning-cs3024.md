@@ -6,24 +6,24 @@ f1_keywords:
 helpviewer_keywords:
 - CS3024
 ms.assetid: fef9db31-9a7f-42d5-ad37-3e7faf661f95
-ms.openlocfilehash: c4c2f915d6172e3c30fc32c5c57fe9921c3f915d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5d8781117b80dbebe6a01488b8bd66feb12d3e3c
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33280342"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43252910"
 ---
-# <a name="compiler-warning-cs3024"></a><span data-ttu-id="2ac06-102">CS3024 upozornění kompilátoru</span><span class="sxs-lookup"><span data-stu-id="2ac06-102">Compiler Warning CS3024</span></span>
-<span data-ttu-id="2ac06-103">Omezení typu "typ" není kompatibilní se specifikací CLS.</span><span class="sxs-lookup"><span data-stu-id="2ac06-103">Constraint type 'type' is not CLS-compliant.</span></span>  
+# <a name="compiler-warning-cs3024"></a><span data-ttu-id="c0c63-102">CS3024 upozornění kompilátoru</span><span class="sxs-lookup"><span data-stu-id="c0c63-102">Compiler Warning CS3024</span></span>
+<span data-ttu-id="c0c63-103">Typ omezení 'type' není kompatibilní se Specifikací CLS.</span><span class="sxs-lookup"><span data-stu-id="c0c63-103">Constraint type 'type' is not CLS-compliant.</span></span>  
   
- <span data-ttu-id="2ac06-104">Kompilátor vydává toto upozornění, protože použití jiných kompatibilní se specifikací CLS typu jako omezení obecného typu může způsobit, že znemožňuje, aby kód napsaný v některých jazycích využívat obecná třída.</span><span class="sxs-lookup"><span data-stu-id="2ac06-104">The compiler issues this warning because the use of a non-CLS-compliant type as a generic type constraint could make it impossible for code written in some languages to consume your generic class.</span></span>  
+ <span data-ttu-id="c0c63-104">Kompilátor toto upozornění vydá, protože použití typu bez-kompatibilní se Specifikací CLS jako omezení obecného typu může znemožnit pro kód napsaný v některých jazycích využívat obecná třída.</span><span class="sxs-lookup"><span data-stu-id="c0c63-104">The compiler issues this warning because the use of a non-CLS-compliant type as a generic type constraint could make it impossible for code written in some languages to consume your generic class.</span></span>  
   
-### <a name="to-eliminate-this-warning"></a><span data-ttu-id="2ac06-105">Chcete-li eliminovat toto upozornění</span><span class="sxs-lookup"><span data-stu-id="2ac06-105">To eliminate this warning</span></span>  
+### <a name="to-eliminate-this-warning"></a><span data-ttu-id="c0c63-105">Chcete-li odstranit toto upozornění</span><span class="sxs-lookup"><span data-stu-id="c0c63-105">To eliminate this warning</span></span>  
   
-1.  <span data-ttu-id="2ac06-106">Kompatibilní se specifikací CLS typ použijte pro omezení typu.</span><span class="sxs-lookup"><span data-stu-id="2ac06-106">Use a CLS-compliant type for the type constraint.</span></span>  
+1.  <span data-ttu-id="c0c63-106">Kompatibilní se Specifikací CLS typ použijte pro omezení typu.</span><span class="sxs-lookup"><span data-stu-id="c0c63-106">Use a CLS-compliant type for the type constraint.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="2ac06-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="2ac06-107">Example</span></span>  
- <span data-ttu-id="2ac06-108">Následující příklad vytvoří CS3024 v několika umístěních:</span><span class="sxs-lookup"><span data-stu-id="2ac06-108">The following example generates CS3024 in several locations:</span></span>  
+## <a name="example"></a><span data-ttu-id="c0c63-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="c0c63-107">Example</span></span>  
+ <span data-ttu-id="c0c63-108">Následující příklad generuje CS3024 v několika umístěních:</span><span class="sxs-lookup"><span data-stu-id="c0c63-108">The following example generates CS3024 in several locations:</span></span>  
   
 ```csharp  
 // cs3024.cs  
@@ -55,5 +55,6 @@ public class Test
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="2ac06-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="2ac06-109">See Also</span></span>  
- [<span data-ttu-id="2ac06-110">Omezení parametrů typů</span><span class="sxs-lookup"><span data-stu-id="2ac06-110">Constraints on Type Parameters</span></span>](../../csharp/programming-guide/generics/constraints-on-type-parameters.md)
+## <a name="see-also"></a><span data-ttu-id="c0c63-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="c0c63-109">See Also</span></span>
+
+- [<span data-ttu-id="c0c63-110">Omezení parametrů typů</span><span class="sxs-lookup"><span data-stu-id="c0c63-110">Constraints on Type Parameters</span></span>](../../csharp/programming-guide/generics/constraints-on-type-parameters.md)

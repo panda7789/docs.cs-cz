@@ -12,50 +12,51 @@ helpviewer_keywords:
 - compiler optimization [C#]
 - o compiler option [C#]
 ms.assetid: 6dd5b6f2-cd1d-4593-a9f4-1c2ed9404ca0
-ms.openlocfilehash: 86c8ebb2d2061085be4c00e8ac95448e1c341161
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f8fec2c4da49aa6cac2f8dc1dc9b07c5864b837a
+ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33212459"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43256665"
 ---
-# <a name="-optimize-c-compiler-options"></a><span data-ttu-id="ff787-102">-optimize (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="ff787-102">-optimize (C# Compiler Options)</span></span>
-<span data-ttu-id="ff787-103">**-Optimalizovat** možnost povolí nebo zakáže optimalizace provádí kompilátoru k vytvoření výstupního souboru menší, rychlejší a efektivnější.</span><span class="sxs-lookup"><span data-stu-id="ff787-103">The **-optimize** option enables or disables optimizations performed by the compiler to make your output file smaller, faster, and more efficient.</span></span>  
+# <a name="-optimize-c-compiler-options"></a><span data-ttu-id="3075e-102">-optimize (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="3075e-102">-optimize (C# Compiler Options)</span></span>
+<span data-ttu-id="3075e-103">**– Optimalizace** možnost povolí nebo zakáže optimalizace provedené kompilátorem za účelem zkontrolujte výstupní soubor menší, rychlejší a efektivnější.</span><span class="sxs-lookup"><span data-stu-id="3075e-103">The **-optimize** option enables or disables optimizations performed by the compiler to make your output file smaller, faster, and more efficient.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ff787-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ff787-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3075e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3075e-104">Syntax</span></span>  
   
 ```console  
 -optimize[+ | -]  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="ff787-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ff787-105">Remarks</span></span>  
- <span data-ttu-id="ff787-106">**-optimize** informuje o modul common language runtime optimalizovat kód za běhu.</span><span class="sxs-lookup"><span data-stu-id="ff787-106">**-optimize** also tells the common language runtime to optimize code at runtime.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="3075e-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3075e-105">Remarks</span></span>  
+ <span data-ttu-id="3075e-106">**-optimize** také říká modul common language runtime k optimalizaci kódu za běhu.</span><span class="sxs-lookup"><span data-stu-id="3075e-106">**-optimize** also tells the common language runtime to optimize code at runtime.</span></span>  
   
- <span data-ttu-id="ff787-107">Ve výchozím nastavení jsou zakázány optimalizace.</span><span class="sxs-lookup"><span data-stu-id="ff787-107">By default, optimizations are disabled.</span></span> <span data-ttu-id="ff787-108">Zadejte **-optimalizovat +** povolit optimalizace.</span><span class="sxs-lookup"><span data-stu-id="ff787-108">Specify **-optimize+** to enable optimizations.</span></span>  
+ <span data-ttu-id="3075e-107">Ve výchozím nastavení jsou zakázané optimalizace.</span><span class="sxs-lookup"><span data-stu-id="3075e-107">By default, optimizations are disabled.</span></span> <span data-ttu-id="3075e-108">Zadejte **– optimalizace +** povolíte optimalizace.</span><span class="sxs-lookup"><span data-stu-id="3075e-108">Specify **-optimize+** to enable optimizations.</span></span>  
   
- <span data-ttu-id="ff787-109">Při sestavování modulu, který bude používán sestavení, použijte stejný **-optimalizovat** nastavení jako sestavení.</span><span class="sxs-lookup"><span data-stu-id="ff787-109">When building a module to be used by an assembly, use the same **-optimize** settings as those of the assembly.</span></span>  
+ <span data-ttu-id="3075e-109">Při vytváření modulu pro sestavení, použijte stejný **– optimalizace** nastavení jako sestavení.</span><span class="sxs-lookup"><span data-stu-id="3075e-109">When building a module to be used by an assembly, use the same **-optimize** settings as those of the assembly.</span></span>  
   
- <span data-ttu-id="ff787-110">**-o** je zkratka pro **-optimalizovat**.</span><span class="sxs-lookup"><span data-stu-id="ff787-110">**-o** is the short form of **-optimize**.</span></span>  
+ <span data-ttu-id="3075e-110">**-o** je zkratka pro **– optimalizace**.</span><span class="sxs-lookup"><span data-stu-id="3075e-110">**-o** is the short form of **-optimize**.</span></span>  
   
- <span data-ttu-id="ff787-111">Je možné kombinovat **-optimalizovat** a [– ladění](../../../csharp/language-reference/compiler-options/debug-compiler-option.md) možnosti.</span><span class="sxs-lookup"><span data-stu-id="ff787-111">It is possible to combine the **-optimize** and [-debug](../../../csharp/language-reference/compiler-options/debug-compiler-option.md) options.</span></span>  
+ <span data-ttu-id="3075e-111">Je možné kombinovat **– optimalizace** a [– ladění](../../../csharp/language-reference/compiler-options/debug-compiler-option.md) možnosti.</span><span class="sxs-lookup"><span data-stu-id="3075e-111">It is possible to combine the **-optimize** and [-debug](../../../csharp/language-reference/compiler-options/debug-compiler-option.md) options.</span></span>  
   
-### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a><span data-ttu-id="ff787-112">Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio</span><span class="sxs-lookup"><span data-stu-id="ff787-112">To set this compiler option in the Visual Studio development environment</span></span>  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a><span data-ttu-id="3075e-112">Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio</span><span class="sxs-lookup"><span data-stu-id="3075e-112">To set this compiler option in the Visual Studio development environment</span></span>  
   
-1.  <span data-ttu-id="ff787-113">Otevření projektu **vlastnosti** stránky.</span><span class="sxs-lookup"><span data-stu-id="ff787-113">Open the project's **Properties** page.</span></span>  
+1.  <span data-ttu-id="3075e-113">Otevřete v projektu **vlastnosti** stránky.</span><span class="sxs-lookup"><span data-stu-id="3075e-113">Open the project's **Properties** page.</span></span>  
   
-2.  <span data-ttu-id="ff787-114">Klikněte **sestavení** stránku vlastností.</span><span class="sxs-lookup"><span data-stu-id="ff787-114">Click the **Build** property page.</span></span>  
+2.  <span data-ttu-id="3075e-114">Klikněte na tlačítko **sestavení** stránku vlastností.</span><span class="sxs-lookup"><span data-stu-id="3075e-114">Click the **Build** property page.</span></span>  
   
-3.  <span data-ttu-id="ff787-115">Změnit **optimalizovat kód** vlastnost.</span><span class="sxs-lookup"><span data-stu-id="ff787-115">Modify the **Optimize Code** property.</span></span>  
+3.  <span data-ttu-id="3075e-115">Upravit **optimalizovat kód** vlastnost.</span><span class="sxs-lookup"><span data-stu-id="3075e-115">Modify the **Optimize Code** property.</span></span>  
   
- <span data-ttu-id="ff787-116">Informace o tom, jak nastavení této možnosti kompilátoru programu najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.Optimize%2A>.</span><span class="sxs-lookup"><span data-stu-id="ff787-116">For information on how to set this compiler option programmatically, see <xref:VSLangProj80.CSharpProjectConfigurationProperties3.Optimize%2A>.</span></span>  
+ <span data-ttu-id="3075e-116">Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.Optimize%2A>.</span><span class="sxs-lookup"><span data-stu-id="3075e-116">For information on how to set this compiler option programmatically, see <xref:VSLangProj80.CSharpProjectConfigurationProperties3.Optimize%2A>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ff787-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="ff787-117">Example</span></span>  
- <span data-ttu-id="ff787-118">Kompilace `t2.cs` a povolení optimalizace kompilátoru:</span><span class="sxs-lookup"><span data-stu-id="ff787-118">Compile `t2.cs` and enable compiler optimizations:</span></span>  
+## <a name="example"></a><span data-ttu-id="3075e-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="3075e-117">Example</span></span>  
+ <span data-ttu-id="3075e-118">Kompilace `t2.cs` a povolení optimalizace kompilátoru:</span><span class="sxs-lookup"><span data-stu-id="3075e-118">Compile `t2.cs` and enable compiler optimizations:</span></span>  
   
 ```console  
 csc t2.cs -optimize  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ff787-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="ff787-119">See Also</span></span>  
- [<span data-ttu-id="ff787-120">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="ff787-120">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)  
- [<span data-ttu-id="ff787-121">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="ff787-121">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
+## <a name="see-also"></a><span data-ttu-id="3075e-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="3075e-119">See Also</span></span>  
+
+- [<span data-ttu-id="3075e-120">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="3075e-120">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)  
+- [<span data-ttu-id="3075e-121">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="3075e-121">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
