@@ -1,171 +1,171 @@
 ---
-title: 'Postupy: Vytvoření služby WCF, ve které je povolený AJAX, a klienta ASP.NET přistupujícího k ní'
-ms.date: 03/30/2017
+title: Vytvoření služby WCF s podporou jazyka AJAX a klienta ASP.NET v sadě Visual Studio
+ms.date: 08/17/2018
 ms.assetid: 95012df8-2a66-420d-944a-8afab261013e
-ms.openlocfilehash: 58971d11ab76112627dd81d53381236932268e25
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 07a1e903991e09243572f2a99c19edae7f9793b6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33490627"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43384283"
 ---
-# <a name="how-to-create-an-ajax-enabled-wcf-service-and-an-aspnet-client-that-accesses-the-service"></a><span data-ttu-id="de4eb-102">Postupy: Vytvoření služby WCF, ve které je povolený AJAX, a klienta ASP.NET přistupujícího k ní</span><span class="sxs-lookup"><span data-stu-id="de4eb-102">How to: Create an AJAX-Enabled WCF Service and an ASP.NET Client that Accesses the Service</span></span>
-<span data-ttu-id="de4eb-103">Toto téma ukazuje, jak vytvořit služby technologie AJAX Windows Communication Foundation (WCF) a klienta ASP.NET přistupujícího k ní pomocí sady Visual Studio 2008.</span><span class="sxs-lookup"><span data-stu-id="de4eb-103">This topic shows how to use Visual Studio 2008 to create an AJAX-enabled Windows Communication Foundation (WCF) service and an ASP.NET client that accesses the service.</span></span> <span data-ttu-id="de4eb-104">Kód pro službu a klienta jsou uvedeny v části Příklad po kroky pro jejich vytváření jsou popsány v části postupy.</span><span class="sxs-lookup"><span data-stu-id="de4eb-104">The code for the service and for the client are provided in the Example section after the steps for creating them are described in the Procedures section.</span></span>  
-  
-### <a name="to-create-the-aspnet-client-application"></a><span data-ttu-id="de4eb-105">Chcete-li vytvořit klienta aplikace ASP.NET</span><span class="sxs-lookup"><span data-stu-id="de4eb-105">To create the ASP.NET client application</span></span>  
-  
-1.  <span data-ttu-id="de4eb-106">Otevřete [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="de4eb-106">Open [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span></span>  
-  
-2.  <span data-ttu-id="de4eb-107">Z **soubor** nabídce vyberte možnost **nový**, pak **projektu**, pak **webové**a potom vyberte **webovéaplikaceASP.NET**.</span><span class="sxs-lookup"><span data-stu-id="de4eb-107">From the **File** menu, select **New**, then **Project**, then **Web**, and then select **ASP.NET Web Application**.</span></span>  
-  
-3.  <span data-ttu-id="de4eb-108">Název projektu `SandwichServices` a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="de4eb-108">Name the Project `SandwichServices` and click **OK**.</span></span>  
-  
-### <a name="to-create-the-wcf-ajax-enabled-service"></a><span data-ttu-id="de4eb-109">Chcete-li vytvořit službu technologie WCF AJAX</span><span class="sxs-lookup"><span data-stu-id="de4eb-109">To create the WCF AJAX-enabled service</span></span>  
-  
-1.  <span data-ttu-id="de4eb-110">Klikněte pravým tlačítkem myši `SandwichServices` projektu v **Průzkumníku řešení** a vyberte **přidat**, pak **nová položka**a potom **podporou AJAXU služby WCF** .</span><span class="sxs-lookup"><span data-stu-id="de4eb-110">Right-click the `SandwichServices` project in the **Solution Explorer** window and select **Add**, then **New Item**, and then **AJAX-enabled WCF Service**.</span></span>  
-  
-2.  <span data-ttu-id="de4eb-111">Název služby `CostService` v **název** pole a klikněte na tlačítko **přidat**.</span><span class="sxs-lookup"><span data-stu-id="de4eb-111">Name the service `CostService` in the **Name** box and click **Add**.</span></span>  
-  
-3.  <span data-ttu-id="de4eb-112">Otevřete soubor CostService.svc.cs.</span><span class="sxs-lookup"><span data-stu-id="de4eb-112">Open the CostService.svc.cs file.</span></span>  
-  
-4.  <span data-ttu-id="de4eb-113">Zadejte `Namespace` pro <xref:System.ServiceModel.ServiceContractAttribute> jako `SandwichService`:</span><span class="sxs-lookup"><span data-stu-id="de4eb-113">Specify the `Namespace` for <xref:System.ServiceModel.ServiceContractAttribute> as `SandwichService`:</span></span>  
-  
-    ```  
-    namespace SandwichServices  
-    {  
-      [ServiceContract(Namespace = "SandwichServices")]  
-      [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]  
-       public class CostService  
-       {  
-         …  
-       }  
-     }  
-    ```  
-  
-5.  <span data-ttu-id="de4eb-114">Implementace operace ve službě.</span><span class="sxs-lookup"><span data-stu-id="de4eb-114">Implement the operations in the service.</span></span> <span data-ttu-id="de4eb-115">Přidat <xref:System.ServiceModel.OperationContractAttribute> všechny operace, které označuje, že jsou součástí smlouvy.</span><span class="sxs-lookup"><span data-stu-id="de4eb-115">Add the <xref:System.ServiceModel.OperationContractAttribute> to each of the operations to indicate that they are part of the contract.</span></span> <span data-ttu-id="de4eb-116">Následující příklad implementuje metodu, která vrátí náklady na dané množství sendviče.</span><span class="sxs-lookup"><span data-stu-id="de4eb-116">The following example implements a method that returns the cost of a given quantity of sandwiches.</span></span>  
-  
-    ```  
-    public class CostService  
-    {  
-        [OperationContract]  
-        public double CostOfSandwiches(int quantity)  
-        {  
-            return 1.25 * quantity;  
-        }  
-  
-    // Add more operations here and mark them with [OperationContract]  
-    }  
-    ```  
-  
-### <a name="to-configure-the-client-to-access-the-service"></a><span data-ttu-id="de4eb-117">Abyste mohli nakonfigurovat klienta k přístupu ke službě</span><span class="sxs-lookup"><span data-stu-id="de4eb-117">To configure the client to access the service</span></span>  
-  
-1.  <span data-ttu-id="de4eb-118">Otevřete stránku Default.aspx a vyberte **návrhu** zobrazení.</span><span class="sxs-lookup"><span data-stu-id="de4eb-118">Open the Default.aspx page and select the **Design** view.</span></span>  
-  
-2.  <span data-ttu-id="de4eb-119">Z **zobrazení** nabídce vyberte možnost **sada nástrojů**.</span><span class="sxs-lookup"><span data-stu-id="de4eb-119">From the **View** menu, select **Toolbox**.</span></span>  
-  
-3.  <span data-ttu-id="de4eb-120">Rozbalte **rozšíření AJAX** uzlu a přetažení **ScriptManager** na stránce Default.aspx.</span><span class="sxs-lookup"><span data-stu-id="de4eb-120">Expand the **AJAX Extensions** node and drag and drop a **ScriptManager** on to the Default.aspx page.</span></span>  
-  
-4.  <span data-ttu-id="de4eb-121">Klikněte pravým tlačítkem myši **ScriptManager** a vyberte **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="de4eb-121">Right-click the **ScriptManager** and select **Properties**.</span></span>  
-  
-5.  <span data-ttu-id="de4eb-122">Rozbalte **služby** kolekce v **vlastnosti** okno otevře **kolekce ServiceReference** okno.</span><span class="sxs-lookup"><span data-stu-id="de4eb-122">Expand the **Services** collection in the **Properties** window to open up the **ServiceReference Collection Editor** window.</span></span>  
-  
-6.  <span data-ttu-id="de4eb-123">Klikněte na tlačítko **přidat**, zadejte `CostService.svc` jako **cesta** odkazuje a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="de4eb-123">Click **Add**, specify `CostService.svc` as the **Path** referenced, and click **OK**.</span></span>  
-  
-7.  <span data-ttu-id="de4eb-124">Rozbalte **HTML** uzel v **sada nástrojů** a přetažení **vstup (tlačítko)** na stránce Default.aspx.</span><span class="sxs-lookup"><span data-stu-id="de4eb-124">Expand the **HTML** node in the **Toolbox** and drag and drop an **Input (Button)** on to the Default.aspx page.</span></span>  
-  
-8.  <span data-ttu-id="de4eb-125">Klikněte pravým tlačítkem myši **tlačítko** a vyberte **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="de4eb-125">Right-click the **Button** and select **Properties**.</span></span>  
-  
-9. <span data-ttu-id="de4eb-126">Změna **hodnotu** do `Price for 3 Sandwiches`.</span><span class="sxs-lookup"><span data-stu-id="de4eb-126">Change the **Value** field to `Price for 3 Sandwiches`.</span></span>  
-  
-10. <span data-ttu-id="de4eb-127">Dvakrát klikněte **tlačítko** pro přístup kód jazyka JavaScript.</span><span class="sxs-lookup"><span data-stu-id="de4eb-127">Double-click the **Button** to access the JavaScript code.</span></span>  
-  
-11. <span data-ttu-id="de4eb-128">Následující kód v JavaScriptu v rámci předávat <`script`> elementu.</span><span class="sxs-lookup"><span data-stu-id="de4eb-128">Pass in the following JavaScript code within the <`script`> element.</span></span>  
-  
-    ```  
-    function Button1_onclick() {  
-    var service = new SandwichServices.CostService();  
-    service.CostOfSandwiches(3, onSuccess, null, null);  
-    }  
-  
-    function onSuccess(result){  
-    alert(result);  
-    }  
-    ```  
-  
-### <a name="to-access-the-service-from-the-client"></a><span data-ttu-id="de4eb-129">Přístup ke službě z klienta</span><span class="sxs-lookup"><span data-stu-id="de4eb-129">To access the service from the client</span></span>  
-  
-1.  <span data-ttu-id="de4eb-130">Pomocí kombinace kláves Ctrl + F5 spusťte službu a webového klienta.</span><span class="sxs-lookup"><span data-stu-id="de4eb-130">Use Ctrl +F5 to launch the service and the Web client.</span></span> <span data-ttu-id="de4eb-131">Klikněte **ceny pro 3 Grilled sendviče** pro vygenerování očekávaný výstup "3,75".</span><span class="sxs-lookup"><span data-stu-id="de4eb-131">Click the **Price for 3 Grilled Sandwiches** button to generate the expected output of "3.75".</span></span>  
-  
-## <a name="example"></a><span data-ttu-id="de4eb-132">Příklad</span><span class="sxs-lookup"><span data-stu-id="de4eb-132">Example</span></span>  
- <span data-ttu-id="de4eb-133">Tento příklad obsahuje kód služby obsažené v souboru WCFService.svc.cs a kódem klientské obsažené v souboru Default.aspx.</span><span class="sxs-lookup"><span data-stu-id="de4eb-133">This example contains the service code contained in the WCFService.svc.cs file and the client code contained in the Default.aspx file.</span></span>  
-  
-```  
-//The service code contained in the CostService.svc.cs file.  
-  
-using System;  
-using System.Linq;  
-using System.Runtime.Serialization;  
-using System.ServiceModel;  
-using System.ServiceModel.Activation;  
-using System.ServiceModel.Web;  
-  
-namespace SandwichServices  
-{  
-    [ServiceContract(Namespace="SandwichServices")]  
-    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]  
-    public class CostService  
-    {  
-        // Add [WebGet] attribute to use HTTP GET  
-        [OperationContract]  
-        public double CostOfSandwiches(int quantity)  
-        {  
-            return 1.25 * quantity;  
-        }  
-  
-        // Add more operations here and mark them with [OperationContract]  
-    }  
-}  
-//The code for hosting the service is contained in the CostService.svc file.  
-  
-<%@ ServiceHost Language="C#" Debug="true" Service="SandwichServices.CostService" CodeBehind="CostService.svc.cs" %>  
-  
-//The client code contained in the Default.aspx file.  
-  
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SandwichServices._Default" %>  
-  
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
-  
-<html >  
-<head runat="server">  
-    <title>Untitled Page</title>  
-<script language="javascript" type="text/javascript">  
-// <!CDATA[  
-  
-function Button1_onclick() {  
-var service = new SandwichServices.CostService();  
-service.CostOfSandwiches(3, onSuccess, null, null);  
-}  
-  
-function onSuccess(result){  
-alert(result);  
-}  
-  
-// ]]>  
-</script>  
-</head>  
-<body>  
-    <form id="form1" runat="server">  
-    <div>  
-  
-    </div>  
-    <asp:ScriptManager ID="ScriptManager1" runat="server">  
-        <services>  
-            <asp:servicereference Path="CostService.svc" />  
-        </services>  
-    </asp:ScriptManager>  
-    </form>  
-    <p>  
-        <input id="Button1" type="button" value="Price for 3 Sandwiches" onclick="return Button1_onclick()" /></p>  
-</body>  
-</html>  
-```     
+# <a name="how-to-create-an-ajax-enabled-wcf-service-and-an-aspnet-client-that-accesses-the-service"></a><span data-ttu-id="71116-102">Postupy: Vytvoření služby WCF, ve které je povolený AJAX, a klienta ASP.NET přistupujícího k ní</span><span class="sxs-lookup"><span data-stu-id="71116-102">How to: Create an AJAX-Enabled WCF Service and an ASP.NET Client that Accesses the Service</span></span>
+
+<span data-ttu-id="71116-103">Toto téma ukazuje, jak pomocí sady Visual Studio k vytvoření služby s povoleným AJAX Windows Communication Foundation (WCF) a klienta ASP.NET přistupujícího k ní.</span><span class="sxs-lookup"><span data-stu-id="71116-103">This topic shows how to use Visual Studio to create an AJAX-enabled Windows Communication Foundation (WCF) service and an ASP.NET client that accesses the service.</span></span>
+
+## <a name="create-an-aspnet-web-app"></a><span data-ttu-id="71116-104">Vytvoření webové aplikace ASP.NET</span><span class="sxs-lookup"><span data-stu-id="71116-104">Create an ASP.NET web app</span></span>
+
+1. <span data-ttu-id="71116-105">Otevřít Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="71116-105">Open Visual Studio.</span></span>
+
+1. <span data-ttu-id="71116-106">Z **souboru** nabídce vyberte možnost **nový** > **projektu**</span><span class="sxs-lookup"><span data-stu-id="71116-106">From the **File** menu, select **New** > **Project**</span></span>
+
+1. <span data-ttu-id="71116-107">V **nový projekt** dialogového okna, rozbalte **nainstalováno** > **Visual C#** > **webové** kategorie a pak Vyberte **webová aplikace ASP.NET (.NET Framework)**.</span><span class="sxs-lookup"><span data-stu-id="71116-107">In the **New Project** dialog, expand the **Installed** > **Visual C#** > **Web** category, and then select **ASP.NET Web Application (.NET Framework)**.</span></span>
+
+1. <span data-ttu-id="71116-108">Pojmenujte projekt **SandwichServices** a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="71116-108">Name the Project **SandwichServices** and click **OK**.</span></span>
+
+1. <span data-ttu-id="71116-109">V **nová webová aplikace ASP.NET** dialogového okna, vyberte **prázdný** a pak vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="71116-109">In the **New ASP.NET Web Application** dialog, select **Empty** and then select **OK**.</span></span>
+
+   ![Technologie ASP.NET webové aplikace typu dialogu v sadě Visual Studio](../media/create-an-ajax-wcf-asp-net-client/new-asp-net-web-app-type.png)
+
+## <a name="add-a-web-form"></a><span data-ttu-id="71116-111">Přidejte webový formulář</span><span class="sxs-lookup"><span data-stu-id="71116-111">Add a web form</span></span>
+
+1. <span data-ttu-id="71116-112">Klikněte pravým tlačítkem na projekt SandwichServices v **Průzkumníka řešení** a vyberte **přidat** > **nová položka**.</span><span class="sxs-lookup"><span data-stu-id="71116-112">Right-click the SandwichServices project in **Solution Explorer** and select **Add** > **New Item**.</span></span>
+
+1. <span data-ttu-id="71116-113">V **přidat novou položku** dialogového okna, rozbalte **nainstalováno** > **Visual C#** > **webové** kategorie a pak Vyberte **webový formulář** šablony.</span><span class="sxs-lookup"><span data-stu-id="71116-113">In the **Add New Item** dialog, expand the **Installed** > **Visual C#** > **Web** category, and then select the **Web Form** template.</span></span>
+
+1. <span data-ttu-id="71116-114">Přijměte výchozí název (**formulář WebForm1**) a pak vyberte **přidat**.</span><span class="sxs-lookup"><span data-stu-id="71116-114">Accept the default name (**WebForm1**), and then select **Add**.</span></span>
+
+   <span data-ttu-id="71116-115">*WebForm1.aspx* se otevře v **zdroj** zobrazení.</span><span class="sxs-lookup"><span data-stu-id="71116-115">*WebForm1.aspx* opens in **Source** view.</span></span>
+
+1. <span data-ttu-id="71116-116">Přidejte následující kód uvnitř  **\<text >** značky:</span><span class="sxs-lookup"><span data-stu-id="71116-116">Add the following markup inside the **\<body>** tags:</span></span>
+
+   ```html
+   <input type="button" value="Price of 3 sandwiches" onclick="Calculate()"/>
+   <br />
+   <span id="additionResult"></span>
+   ```
+
+## <a name="create-an-ajax-enabled-wcf-service"></a><span data-ttu-id="71116-117">Vytvoření služby WCF s podporou jazyka AJAX</span><span class="sxs-lookup"><span data-stu-id="71116-117">Create an AJAX-enabled WCF service</span></span>
+
+1. <span data-ttu-id="71116-118">Klikněte pravým tlačítkem na projekt SandwichServices v **Průzkumníka řešení** a vyberte **přidat** > **nová položka**.</span><span class="sxs-lookup"><span data-stu-id="71116-118">Right-click the SandwichServices project in **Solution Explorer** and select **Add** > **New Item**.</span></span>
+
+1. <span data-ttu-id="71116-119">V **přidat novou položku** dialogového okna, rozbalte **nainstalováno** > **Visual C#** > **webové** kategorie a pak Vyberte **služby WCF (podporou jazyka AJAX)** šablony.</span><span class="sxs-lookup"><span data-stu-id="71116-119">In the **Add New Item** dialog, expand the **Installed** > **Visual C#** > **Web** category, and then select the **WCF Service (AJAX-enabled)** template.</span></span>
+
+   ![Šablona služby WCF (podporou jazyka AJAX) položku v sadě Visual Studio](../media/create-an-ajax-wcf-asp-net-client/add-wcf-service.png)
+
+1. <span data-ttu-id="71116-121">Pojmenujte službu **CostService** a pak vyberte **přidat**.</span><span class="sxs-lookup"><span data-stu-id="71116-121">Name the service **CostService** and then select **Add**.</span></span>
+
+   <span data-ttu-id="71116-122">*CostService.svc.cs* otevře v editoru.</span><span class="sxs-lookup"><span data-stu-id="71116-122">*CostService.svc.cs* opens in the editor.</span></span>
+
+1. <span data-ttu-id="71116-123">Implementace operace ve službě.</span><span class="sxs-lookup"><span data-stu-id="71116-123">Implement the operation in the service.</span></span> <span data-ttu-id="71116-124">Přidejte následující metodu do třídy CostService vypočítat náklady na množství sendviče:</span><span class="sxs-lookup"><span data-stu-id="71116-124">Add the following method to the CostService class to calculate the cost of a quantity of sandwiches:</span></span>
+
+    ```csharp
+    [OperationContract]
+    public double CostOfSandwiches(int quantity)
+    {
+        return 1.25 * quantity;
+    }
+    ```
+
+## <a name="configure-the-client-to-access-the-service"></a><span data-ttu-id="71116-125">Konfigurace klienta pro přístup ke službě</span><span class="sxs-lookup"><span data-stu-id="71116-125">Configure the client to access the service</span></span>
+
+1. <span data-ttu-id="71116-126">Otevřít *WebForm1.aspx* a vyberte možnost **návrhu** zobrazení.</span><span class="sxs-lookup"><span data-stu-id="71116-126">Open the *WebForm1.aspx* file and select the **Design** view.</span></span>
+
+2. <span data-ttu-id="71116-127">Z **zobrazení** nabídce vyberte možnost **nástrojů**.</span><span class="sxs-lookup"><span data-stu-id="71116-127">From the **View** menu, select **Toolbox**.</span></span>
+
+3. <span data-ttu-id="71116-128">Rozbalte **rozšíření AJAX** uzlu a přetáhněte **ScriptManager** do formuláře.</span><span class="sxs-lookup"><span data-stu-id="71116-128">Expand the **AJAX Extensions** node and drag and drop a **ScriptManager** onto the form.</span></span>
+
+4. <span data-ttu-id="71116-129">Zpátky **zdroj** zobrazení, přidejte následující kód mezi  **\<ovládacímu prvku ScriptManager >** značky a zadejte cestu ke službě WCF:</span><span class="sxs-lookup"><span data-stu-id="71116-129">Back in the **Source** view, add the following code between the **\<ScriptManager>** tags to specify the path to the WCF service:</span></span>
+
+    ```html
+    <Services>
+       <asp:ServiceReference Path="~/CostService.svc" />
+    </Services>
+    ```
+
+1. <span data-ttu-id="71116-130">Přidejte kód pro funkce jazyka Javascript `Calculate()`.</span><span class="sxs-lookup"><span data-stu-id="71116-130">Add the code for the Javascript function `Calculate()`.</span></span> <span data-ttu-id="71116-131">Umístěte následující kód **head** části webové formuláře:</span><span class="sxs-lookup"><span data-stu-id="71116-131">Place the following code in the **head** section of the web form:</span></span>
+
+    ```javascript
+    <script type="text/javascript">
+
+        function Calculate() {
+            CostService.CostOfSandwiches(3, onSuccess);
+        }
+
+        function onSuccess(result) {
+            var myres = $get("additionResult");
+            myres.innerHTML = result;
+        }
+
+    </script>
+    ```
+
+   <span data-ttu-id="71116-132">Tento kód volá metodu CostService k výpočtu ceny pro tři sendviče a potom zobrazí výsledky v rozpětí volá **additionResult**.</span><span class="sxs-lookup"><span data-stu-id="71116-132">This code calls the method of CostService to calculate the price for three sandwiches, and then displays the result in the span called **additionResult**.</span></span>
+
+## <a name="run-the-program"></a><span data-ttu-id="71116-133">Spuštění programu</span><span class="sxs-lookup"><span data-stu-id="71116-133">Run the program</span></span>
+
+<span data-ttu-id="71116-134">Ujistěte se, že *WebForm1.aspx* má právě fokus a potom stiskněte klávesu **Start** tlačítko Spustit webový klient.</span><span class="sxs-lookup"><span data-stu-id="71116-134">Make sure that *WebForm1.aspx* has focus, and then press **Start** button to launch the web client.</span></span> <span data-ttu-id="71116-135">Tlačítko se zeleným trojúhelníkem a řekne něco jako **služby IIS Express (Microsoft Edge)**.</span><span class="sxs-lookup"><span data-stu-id="71116-135">The button has a green triangle and says something like **IIS Express (Microsoft Edge)**.</span></span> <span data-ttu-id="71116-136">Nebo můžete stisknout **F5**.</span><span class="sxs-lookup"><span data-stu-id="71116-136">Or, you can press **F5**.</span></span> <span data-ttu-id="71116-137">Klikněte na tlačítko **cena 3 sendviče** pro vygenerování očekávaný výstup "3,75".</span><span class="sxs-lookup"><span data-stu-id="71116-137">Click the **Price of 3 sandwiches** button to generate the expected output of "3.75".</span></span>
+
+## <a name="example-code"></a><span data-ttu-id="71116-138">Příklad kódu</span><span class="sxs-lookup"><span data-stu-id="71116-138">Example code</span></span>
+
+<span data-ttu-id="71116-139">Tady je celý kód v *CostService.svc.cs* souboru:</span><span class="sxs-lookup"><span data-stu-id="71116-139">Following is the full code in the *CostService.svc.cs* file :</span></span>
+
+```csharp
+using System.ServiceModel;
+using System.ServiceModel.Activation;
+
+namespace SandwichServices
+{
+    [ServiceContract(Namespace = "")]
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    public class CostService
+    {
+        [OperationContract]
+        public double CostOfSandwiches(int quantity)
+        {
+            return 1.25 * quantity;
+        }
+    }
+}
+```
+
+<span data-ttu-id="71116-140">Následuje úplný obsah *WebForm1.aspx* stránky:</span><span class="sxs-lookup"><span data-stu-id="71116-140">Following is the full contents of the *WebForm1.aspx* page:</span></span>
+
+```aspx-csharp
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="SandwichServices.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script type="text/javascript">
+
+        function Calculate() {
+            CostService.CostOfSandwiches(3, onSuccess);
+        }
+
+        function onSuccess(result) {
+            var myres = $get("additionResult");
+            myres.innerHTML = result;
+        }
+
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Services>
+                <asp:ServiceReference Path="~/CostService.svc" />
+            </Services>
+        </asp:ScriptManager>
+
+        <input type="button" value="Price of 3 sandwiches" onclick="Calculate()" />
+        <br />
+        <span id="additionResult"></span>
+    </form>
+</body>
+</html>
+```
