@@ -1,5 +1,5 @@
 ---
-title: '#Region – direktiva'
+title: '#Region – direktiva (Visual Basic)'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Region
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - region directive (#region)
 - '#Region keyword [Visual Basic]'
 ms.assetid: 90a6a104-3cbf-47d0-bdc4-b585d0921b87
-ms.openlocfilehash: d25871140ef0674c013fc70d1306b2b4d0858556
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 204b53751fce4f9a3e038ae7c44634522d54657c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33588432"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385369"
 ---
 # <a name="region-directive"></a>#Region – direktiva
-Sbalí a skrytí sekcí kódu v souborech jazyka Visual Basic.  
+Sbalí a skryje části kódu v souborech Visual Basicu.  
   
 ## <a name="syntax"></a>Syntaxe  
 
@@ -31,14 +31,14 @@ Sbalí a skrytí sekcí kódu v souborech jazyka Visual Basic.
   
 |Termín|Definice|  
 |---|---|  
-|`identifier_string`|Požadováno. Řetězec, který funguje jako název oblasti, když je sbalená. Ve výchozím nastavení jsou sbaleny oblasti.|  
-|`#End Region`|Ukončí `#Region` bloku.|  
+|`identifier_string`|Požadováno. Řetězec, který funguje jako název oblasti, když je sbalené. Ve výchozím nastavení je sbalený oblastech.|  
+|`#End Region`|Ukončuje `#Region` bloku.|  
   
 ## <a name="remarks"></a>Poznámky  
- Použití `#Region` – direktiva blok kódu rozbalit nebo sbalit, když používáte funkci osnovy z editoru kódu sady Visual Studio. Můžete umístit, nebo *vnořit*, oblastem v jiných oblastech chcete seskupit podobné oblasti.  
+ Použití `#Region` směrnice určit blok kódu, který rozbalit nebo sbalit při použití funkce sbalování z editoru kódu sady Visual Studio. Můžete umístit, nebo *vnořit*, oblastem v jiných oblastech, které chcete seskupit podobné oblastech.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá `#Region` – direktiva.  
+ V tomto příkladu `#Region` směrnice.  
   
  [!code-vb[VbVbalrConditionalComp#4](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/region-directive_1.vb)]  
   

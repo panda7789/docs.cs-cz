@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 18ffbf56cf9d324e86fc288a2ba4a387831af925
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 28955b2309b3efb321e40e19db821052b8ce42ab
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42935390"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43396113"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduché mikroslužby CRUD řízené daty
 
@@ -326,7 +326,7 @@ Metadata swagger společnosti je, co Microsoft Flow, PowerApps a Azure Logic App
 
 ### <a name="how-to-automate-api-swagger-metadata-generation-with-the-swashbuckle-nuget-package"></a>Jak automatizovat generování metadat Swagger rozhraní API pomocí balíčku Swashbuckle NuGet
 
-Generování metadat Swagger ručně (v souboru JSON nebo YAML) může být pracné. Však můžete automatizovat zjišťování rozhraní API služeb ASP.NET Web API s použitím [balíček Swashbuckle NuGet](http://aka.ms/swashbuckledotnetcore) dynamicky generovat metadata Swagger rozhraní API.
+Generování metadat Swagger ručně (v souboru JSON nebo YAML) může být pracné. Však můžete automatizovat zjišťování rozhraní API služeb ASP.NET Web API s použitím [balíček Swashbuckle NuGet](https://aka.ms/swashbuckledotnetcore) dynamicky generovat metadata Swagger rozhraní API.
 
 Swashbuckle vygeneruje automaticky metadata Swagger pro projekty ASP.NET Web API. Podporuje projekty webového rozhraní API ASP.NET Core a tradiční rozhraní ASP.NET Web API a další charakter, například aplikaci API Azure, Azure mobilní aplikace mikroslužeb Azure Service Fabric, které jsou založeny na technologii ASP.NET. Také podporuje prostý webového rozhraní API nasazené v kontejnerech, stejně jako v referenční aplikace.
 

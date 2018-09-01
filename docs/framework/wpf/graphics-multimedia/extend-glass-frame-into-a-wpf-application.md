@@ -11,11 +11,11 @@ helpviewer_keywords:
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
 ms.openlocfilehash: 93eda6d6a13d6a510f2aeb06ab1c66d0cd40927f
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42931537"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43384296"
 ---
 # <a name="extend-glass-frame-into-a-wpf-application"></a>Rozšíření skleněného rámečku do aplikace WPF
 Toto téma ukazuje, jak rozšířit [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] skleněného rámečku do aplikace Windows Presentation Foundation (WPF) v oblasti klienta.  
@@ -145,7 +145,7 @@ void OnLoaded(object sender, RoutedEventArgs e)
   
  Následující obrázek ukazuje skleněného rámečku do rozšířené [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace.  
   
- **Rozšíří skleněného rámečku do**[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]**aplikace.**   
+ **Rozšíří skleněného rámečku do**[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]**aplikace.**  
   
  ![Skleněného rámečku rozšíří do aplikace WPF. ](../../../../docs/framework/wpf/graphics-multimedia/media/wpfextendedglassintoclient.PNG "WPFextendedGlassIntoClient")  
   

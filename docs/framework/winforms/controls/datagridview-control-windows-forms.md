@@ -14,11 +14,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms]
 ms.assetid: dbee73f2-bba6-4874-9389-cd21d44309be
 ms.openlocfilehash: 2ef387437befe3df67e261b719140456a3fde9dd
-ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43332504"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43397216"
 ---
 # <a name="datagridview-control-windows-forms"></a>DataGridView – ovládací prvek (Windows Forms)
 `DataGridView` Ovládacího prvku poskytuje výkonný a flexibilní způsob, jak zobrazit data ve formátu tabulky. Můžete použít `DataGridView` ovládací prvek zobrazení jen pro čtení malých objemů dat, nebo je možné škálovat zobrazit upravitelných zobrazeních velmi rozsáhlých datových sad.  

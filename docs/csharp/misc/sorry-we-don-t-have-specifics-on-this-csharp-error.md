@@ -883,11 +883,11 @@ helpviewer_keywords:
 - errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
 ms.openlocfilehash: 81b33378519747060e604610ac1f3b9090332c11
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43253651"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385210"
 ---
 # <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>Je nám líto, ale můžeme zadávat&#39;nemá podrobnosti o této chybě C#
 Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete vyhledat text chyby číslo a zprávou k nalezení informací o na webu. Nebo můžete požádat o další vývojáři pomocí jedné z těchto fór:  

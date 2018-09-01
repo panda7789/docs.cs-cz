@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/27/2018
-ms.openlocfilehash: 56c41a51cddeca6c74b09710f9536195a6a88904
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 45be99a86a52ed450b795ca5f91c01ab82c7da47
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404496"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43388625"
 ---
 # <a name="deploying-single-container-based-net-core-web-applications-on-linux-or-windows-nano-server-hosts"></a>Nasazování webových aplikací na základě jednoho kontejneru .NET Core v Linuxu nebo Windows hostiteli s Nano serverem
 
@@ -41,7 +41,7 @@ Nakonec se uzavření aplikace do kontejneru vynutí oddělení mezi obchodní l
 
 Aplikace používá pro ukládání katalogu do databáze SQL serveru. V kontejnerových nasazení této monolitické aplikace mohly přistupovat k úložišti dat jako aplikací založených na mikroslužbách. Aplikace je nakonfigurovaná pro spuštění systému SQL Server v kontejneru spolu s monolitickými aplikacemi. V produkčním prostředí SQL Server spustí na počítači s vysokou dostupností mimo hostitele Dockeru. Pro usnadnění práce v prostředí vývoj nebo testování se doporučuje systémem SQL Server do vlastního kontejneru.
 
-Počáteční sada pouze funkcí povolí procházení katalogu. Aktualizace by umožňují úplná sada funkcí kontejnerizované aplikace. A další pokročilé architektura pro webové monolitické aplikace je popsána v [postupy architektury webové aplikace ASP.NET](https://aka.ms/webappebook) e kniha a související [eShopOnWeb ukázkovou aplikaci](http://aka.ms/WebAppArchitecture).
+Počáteční sada pouze funkcí povolí procházení katalogu. Aktualizace by umožňují úplná sada funkcí kontejnerizované aplikace. A další pokročilé architektura pro webové monolitické aplikace je popsána v [postupy architektury webové aplikace ASP.NET](https://aka.ms/webappebook) e kniha a související [eShopOnWeb ukázkovou aplikaci](https://aka.ms/WebAppArchitecture).
 
 ## <a name="docker-support"></a>Podpora dockeru
 

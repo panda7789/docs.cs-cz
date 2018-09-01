@@ -1,5 +1,5 @@
 ---
-title: AddHandler – příkaz
+title: AddHandler – příkaz (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.AddHandlerMethod
@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - AddHandler statement [Visual Basic]
 ms.assetid: cfe69799-2a0f-42c0-a99e-09fed954da01
-ms.openlocfilehash: bc0dce442db9d62b9fbee857b6e711696ad87fb8
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: f731ff150bd901e325726fca5aa682ff1770f979
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37936812"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43396484"
 ---
 # <a name="addhandler-statement"></a>AddHandler – příkaz
 Přidruží událost k obslužné rutiny události v době běhu.  

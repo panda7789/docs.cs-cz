@@ -8,22 +8,22 @@ helpviewer_keywords:
 - DataRepeater, walkthrough
 ms.assetid: 65dcdb95-6c3e-47cc-987d-190000f71653
 ms.openlocfilehash: 8e64a819e9670a29e97140a32c81f5ff9006f83e
-ms.sourcegitcommit: 2ad7d06f4f469b5d8a5280ac0e0289a81867fc8e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35231503"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43388549"
 ---
 # <a name="walkthrough-displaying-data-in-a-datarepeater-control-visual-studio"></a>Návod: Zobrazení dat v ovládacím prvku DataRepeater (Visual Studio)
-Tento názorný postup obsahuje základní scénář zahájení dokončení pro zobrazení vázaných dat v <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
+Tento názorný postup obsahuje základní zahájení dokončení scénář pro zobrazení vázaných dat v <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
 ## <a name="prerequisite"></a>Předpoklad  
- Tento postup vyžaduje ukázková databáze Northwind.  
+ Tento návod vyžaduje ukázkové databáze Northwind.  
   
- Pokud jste tuto databázi ve svém vývojovém počítači, můžete ji stáhnout z webu Microsoft Download Center. Pokyny najdete v tématu [stažení ukázkové databáze](../../../framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+ Pokud tuto databázi na vašem vývojovém počítači nemáte, můžete si ho stáhnout z webu Microsoft Download Center. Pokyny najdete v tématu [Downloading Sample Databases](../../../framework/data/adonet/sql/linq/downloading-sample-databases.md).  
   
 ## <a name="overview"></a>Přehled  
- První část tohoto návodu se skládá z čtyři hlavní úkoly:  
+ První část tohoto návodu skládá ze čtyř hlavních úloh:  
   
 -   Vytvoření řešení.  
   
@@ -35,101 +35,101 @@ Tento názorný postup obsahuje základní scénář zahájení dokončení pro 
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-## <a name="creating-a-datarepeater-solution"></a>Vytváření řešení DataRepeater  
- V prvním kroku vytvořte projekt a řešení.  
+## <a name="creating-a-datarepeater-solution"></a>Vytvoření řešení DataRepeater  
+ V prvním kroku vytvoříte projekt a řešení.  
   
 #### <a name="to-create-a-datarepeater-solution"></a>Chcete-li vytvořit řešení DataRepeater  
   
-1.  V sadě Visual Studio **soubor** nabídky, klikněte na tlačítko **nový projekt**.  
+1.  V sadě Visual Studio **souboru** nabídky, klikněte na tlačítko **nový projekt**.  
   
-2.  V **typy projektů** v podokně **nový projekt** dialogové okno, rozbalte seznam **jazyka Visual Basic**a potom klikněte na **Windows**.  
+2.  V **typy projektů** v podokně **nový projekt** dialogového okna rozbalte **jazyka Visual Basic**a potom klikněte na tlačítko **Windows**.  
   
-3.  V **šablony** podokně klikněte na tlačítko **formulářové aplikace Windows**.  
+3.  V **šablony** podokně klikněte na tlačítko **formulářová aplikace Windows**.  
   
 4.  V **název** zadejte `DataRepeaterApp`.  
   
-5.  Click **OK**.  
+5.  Klikněte na tlačítko **OK**.  
   
      Otevře se Návrhář formulářů Windows.  
   
-6.  Vyberte formuláře v Návrháři formulářů Windows. V **vlastnosti** nastavte **velikost** vlastnost `800, 700`.  
+6.  Vyberte formulář v Návrháři formulářů Windows. V **vlastnosti** okno, nastaveno **velikost** vlastnost `800, 700`.  
   
 ## <a name="adding-a-datarepeater-control"></a>Přidání ovládacího prvku DataRepeater  
- V tomto kroku přidáte <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku do formuláře.  
+ V tomto kroku přidáte <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku na formuláři.  
   
 #### <a name="to-add-a-datarepeater-control"></a>Přidání ovládacího prvku DataRepeater  
   
-1.  Na **zobrazení** nabídky, klikněte na tlačítko **sada nástrojů**.  
+1.  Na **zobrazení** nabídky, klikněte na tlačítko **nástrojů**.  
   
-     **Sada nástrojů** otevře.  
+     **Nástrojů** otevře.  
   
-2.  Vyberte **PowerPacks jazyka Visual Basic** kartě.  
+2.  Vyberte **sady Visual Basic PowerPack** kartu.  
   
 3.  Přetáhněte <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> na ovládací prvek **Form1**.  
   
-4.  V okně vlastnosti nastavit **umístění** vlastnost `0, 25`.  
+4.  V okně Vlastnosti nastavte **umístění** vlastnost `0, 25`.  
   
 5.  Nastavte **velikost** vlastnost `460, 600`.  
   
 ## <a name="adding-a-data-source"></a>Přidání zdroje dat  
  V tomto kroku přidáte zdroj dat pro <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
-#### <a name="to-add-a-data-source"></a>Chcete-li přidat zdroje dat  
+#### <a name="to-add-a-data-source"></a>Chcete-li přidat zdroj dat  
   
 1.  Na **Data** nabídky, klikněte na tlačítko **zobrazit zdroje dat**.  
   
-2.  V **zdroje dat** okně klikněte na tlačítko **přidat nový zdroj dat**.  
+2.  V **zdroje dat** okna, klikněte na tlačítko **přidat nový zdroj dat**.  
   
-3.  Vyberte **databáze** na **zvolte typ zdroje dat** a pak klikněte na tlačítko **Další**.  
+3.  Vyberte **databáze** na **zvolte typ zdroje dat** stránce a potom klikněte na tlačítko **Další**.  
   
-4.  Na **vybrat datové připojení** proveďte některý z následujících kroků:  
+4.  Na **vyberte datové připojení** stránce, proveďte jednu z následujících kroků:  
   
-    -   Pokud je k dispozici v rozevíracím seznamu připojení dat k ukázková databáze Northwind, klikněte na něj.  
+    -   Pokud připojení dat k ukázkové databázi Northwind k dispozici v rozevíracím seznamu, klikněte na něj.  
   
          -nebo-  
   
-    -   Klikněte na tlačítko **nové připojení** konfigurace nové datové připojení. Další informace najdete v tématu [přidat nová připojení](/visualstudio/data-tools/add-new-connections).  
+    -   Klikněte na tlačítko **nové připojení** konfigurace nové datové připojení. Další informace najdete v tématu [přidat nové připojení](/visualstudio/data-tools/add-new-connections).  
   
-5.  Pokud databáze vyžaduje heslo, vyberte možnost obsahují citlivá data, a pak klikněte na **Další**.  
+5.  Pokud databáze vyžaduje heslo, vyberte možnost zahrnutí důvěrných osobních údajů a pak klikněte na tlačítko **Další**.  
   
     > [!NOTE]
     >  Pokud se zobrazí dialogové okno, klikněte na tlačítko **Ano** k uložení souboru do projektu.  
   
 6.  Klikněte na tlačítko **Další** na **uložit připojovací řetězec do konfiguračního souboru aplikace** stránky.  
   
-7.  Rozbalte **tabulky** uzlu **zvolte si databázové objekty** stránky.  
+7.  Rozbalte **tabulky** uzlu **zvolte vaše databázové objekty** stránky.  
   
-8.  Zaškrtněte políčka vedle **zákazníci** a **objednávky** tabulky a pak klikněte na tlačítko **Dokončit**.  
+8.  Zaškrtněte políčka vedle položky **zákazníkům** a **objednávky** tabulky a pak klikněte na tlačítko **Dokončit**.  
   
-     **NorthwindDataSet** se přidá do projektu a **zákazníci** a **objednávky** tabulky se zobrazí v **zdroje dat** okno.  
+     **NorthwindDataSet** se přidá do vašeho projektu a **zákazníkům** a **objednávky** tabulky se zobrazí v **zdroje dat** okna.  
   
 ## <a name="adding-data-bound-controls"></a>Přidání ovládacích prvků vázaných na Data  
- V tomto kroku přidáte ovládací prvky vázané na data na <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>.  
+ V tomto kroku přidáte ovládací prvky vázané na data <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>.  
   
 #### <a name="to-add-data-bound-controls"></a>Přidání ovládacích prvků vázaných na data  
   
-1.  V **zdroje dat** okně vyberte nejvyšší uzel **zákazníci** tabulky.  
+1.  V **zdroje dat** okno, vyberte uzel nejvyšší úrovně **zákazníkům** tabulky.  
   
-2.  Změňte typ tabulky na **podrobnosti** kliknutím **podrobnosti** v rozevíracím seznamu na uzlu tabulky.  
+2.  Změňte typ přetažení tabulky **podrobnosti** kliknutím **podrobnosti** v rozevíracím seznamu na uzel tabulky.  
   
-3.  Vyberte **zákazníci** tabulky uzel a přetáhněte ji na oblast šablony položky (horní oblasti) z <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
+3.  Vyberte **zákazníkům** tabulky uzlu a přetáhněte ji na šablonu oblast položky (horní oblasti) <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
-     A <xref:System.Windows.Forms.BindingNavigator> ovládací prvek přidán do formuláře a **NorthwindDataSet**, **CustomersBindingSource**, **CustomersTableAdapter**,  **TableAdapterManager**, a **CustomersBindingNavigator** součásti jsou přidány do komponent.  
+     A <xref:System.Windows.Forms.BindingNavigator> ovládací prvek je přidán do formuláře a **NorthwindDataSet**, **CustomersBindingSource**, **CustomersTableAdapter**,  **TableAdapterManager**, a **CustomersBindingNavigator** součásti jsou přidány do panelu komponent.  
   
-4.  Vyberte všechny pole a jejich přidružené popisky a umístit je téměř je levý okraj oblast šablony položky.  
+4.  Vyberte všechny pole a jejich přidružené popisky a umístit je u levého okraje oblasti šablony položek.  
   
-5.  Vyberte pole, posledních pět (**oblast**, **PSČ**, **země**, **Phone**, a **Fax**) a jejich přidružené popisky a přesuňte je v provozu a napravo od pole prvních šesti.  
+5.  Vyberte posledních pět polí (**oblasti**, **PSČ**, **země**, **Phone**, a **Fax**) a jejich přidružené popisky a je přesunout nahoru a napravo od prvních šest polí.  
   
-6.  Vyberte šablony položky (horní oblast ovládacího prvku).  
+6.  Vyberte šablonu položky (horní oblasti ovládacího prvku).  
   
-7.  V okně vlastnosti nastavit **velikost** vlastnost `427, 170`.  
+7.  V okně Vlastnosti nastavte **velikost** vlastnost `427, 170`.  
   
- V tuto chvíli máte funkční aplikaci, která se zobrazí seznam opakovaných zákazníků. Můžete stisknutím klávesy F5 aplikaci spustit, změnit data a přidat nebo odstranit záznamy o zákaznících.  
+ V tomto okamžiku máte funkční aplikaci, která se zobrazí s opakováním seznam zákazníků. Stisknutím klávesy F5 spusťte aplikaci, změnit data a přidat nebo odstranit záznamy o zákaznících.  
   
  V dalším volitelným krokům, se dozvíte, jak přizpůsobit <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
 ## <a name="next-steps-optional"></a>Další kroky (volitelné)  
- Tato část průvodce se skládá ze čtyř volitelné úkoly:  
+ Tato část návodu se skládá ze čtyř volitelné kroky:  
   
 -   Změna vzhledu <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
@@ -137,46 +137,46 @@ Tento názorný postup obsahuje základní scénář zahájení dokončení pro 
   
 -   Přidání schopností vyhledávání do <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
--   Přidávání seznamu a podrobností tabulka, která se <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
+-   Přidat tabulku do seznamu a podrobností <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
 ## <a name="changing-the-appearance-of-the-datarepeater-control"></a>Změna vzhledu ovládacího prvku DataRepeater  
- V tomto kroku volitelné změníte `BackColor` z <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku v době návrhu. Je také přidat kód pro zobrazení řádek v střídavých barvy a při změně štítku na `ForeColor` podmíněně.  
+ V tomto volitelný krok, můžete změnit `BackColor` z <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládací prvek v době návrhu. Je také přidat kód k zobrazení řádků v střídavých barvy a změnit popisku `ForeColor` podmíněně.  
   
-#### <a name="to-change-the-appearance-of-the-control"></a>Změna vzhledu ovládacího prvku  
+#### <a name="to-change-the-appearance-of-the-control"></a>Chcete-li změnit vzhled ovládacího prvku  
   
-1.  V Návrháři formulářů vyberte oblast hlavní (dolního) <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
+1.  V Návrháři formulářů Windows vyberte hlavní oblast (nižší) <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
-2.  V okně vlastnosti nastavit `BackColor` vlastnosti prázdné.  
+2.  V okně Vlastnosti nastavte `BackColor` vlastnost na bílou.  
   
-3.  Dvakrát klikněte <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> otevření editoru kódu.  
+3.  Dvakrát klikněte <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> otevřete Editor kódu.  
   
-4.  V editoru kódu, události rozevíracího seznamu, klikněte na tlačítko **DrawItem**.  
+4.  V editoru kódu, v případě rozevíracího seznamu, klikněte na tlačítko **DrawItem**.  
   
-5.  V <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem> obslužné rutiny události, přidejte následující kód do alternativní `BackColor`:  
+5.  V <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem> obslužná rutina události, přidejte následující kód do alternativní `BackColor`:  
   
      [!code-csharp[VbPowerPacksDataRepeaterWalkthrough#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_1.cs)]
      [!code-vb[VbPowerPacksDataRepeaterWalkthrough#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_1.vb)]  
   
-6.  V <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem> obslužné rutiny události, přidejte následující kód, chcete-li změnit `ForeColor` popisku v závislosti na podmínce:  
+6.  V <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem> obslužná rutina události, přidejte následující kód pro změnu `ForeColor` popisku v závislosti na podmínku:  
   
      [!code-csharp[VbPowerPacksDataRepeaterWalkthrough#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_2.cs)]
      [!code-vb[VbPowerPacksDataRepeaterWalkthrough#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_2.vb)]  
   
-7.  Stisknutím klávesy F5 spusťte aplikaci a zobrazit individuální nastavení.  
+7.  Stisknutím klávesy F5 spusťte aplikaci a zobrazit vlastní nastavení.  
   
 ## <a name="preventing-users-from-adding-or-deleting-records"></a>Zabránění uživatelům v přidávání nebo odstraňování záznamů  
- V tomto kroku volitelné přidáte kód, který zabrání uživatelům v přidávání nebo odstraňování záznamů <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
+ V tomto volitelném kroku přidáte kód, který zabrání uživatelům v přidávání nebo odstraňování záznamů v <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
 #### <a name="to-prevent-users-from-adding-and-deleting-records"></a>Chcete-li zabránit uživatelům v přidávání a odstraňování záznamů  
   
-1.  V Návrháři formulářů poklepejte na formulář pro otevření editoru kódu.  
+1.  V Návrháři formulářů Windows klikněte dvakrát na formuláři se otevřít Editor kódu.  
   
-2.  Přidejte následující kód, který `Form_Load` událostí:  
+2.  Přidejte následující kód, který `Form_Load` události:  
   
      [!code-csharp[VbPowerPacksDataRepeaterWalkthrough#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_3.cs)]
      [!code-vb[VbPowerPacksDataRepeaterWalkthrough#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_3.vb)]  
   
-3.  V rozevíracím seznamu název třídy, klikněte na **BindingNavigatorDeleteItem**. V rozevíracím seznamu název metody, klikněte na **EnabledChanged**.  
+3.  V rozevíracím seznamu názvu třídy, klikněte na tlačítko **BindingNavigatorDeleteItem**. V rozevíracím seznamu název metody, klikněte na tlačítko **EnabledChanged**.  
   
 4.  Přidejte následující kód, který `BindingNavigatorDeleteItem_EnabledChanged` obslužné rutiny události:  
   
@@ -184,52 +184,52 @@ Tento názorný postup obsahuje základní scénář zahájení dokončení pro 
      [!code-vb[VbPowerPacksDataRepeaterWalkthrough#4](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_4.vb)]  
   
     > [!NOTE]
-    >  Tento krok je nezbytný, protože <xref:System.Windows.Forms.BindingSource> povolí **DeleteItem** tlačítko pokaždé, když se změní na aktuální záznam.  
+    >  Tento krok je nezbytný, protože <xref:System.Windows.Forms.BindingSource> vám umožní **DeleteItem** tlačítko pokaždé, když se změní aktuální záznam.  
   
-5.  Stisknutím klávesy F5 spusťte aplikaci. Všimněte si, že **DeleteItem** tlačítko k dispozici a nelze odstranit položky po stisknutí klávesy odstranit.  
+5.  Stisknutím klávesy F5 spusťte aplikaci. Všimněte si, **DeleteItem** je tlačítko neaktivní a nelze odstranit položky, stisknutím klávesy DELETE.  
   
 ## <a name="adding-search-capability-to-the-datarepeater-control"></a>Přidání schopností vyhledávání do ovládacího prvku DataRepeater  
- V tomto volitelné kroku implementujete schopnost vyhledejte hodnotu v <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku. Pokud se řetězec najde, ovládacího prvku vybere položku, která obsahuje hodnotu a posune položky do zobrazení.  
+ V tomto kroku volitelné implementace umožňuje najít hodnotu v <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku. Pokud se řetězec najde, vybere ovládací prvek položky, který obsahuje hodnotu a položce se posune do zobrazení.  
   
-#### <a name="to-add-search-capability"></a>Přidání schopností vyhledávání  
+#### <a name="to-add-search-capability"></a>Můžete přidat možnosti vyhledávání  
   
-1.  Přetažení <xref:System.Windows.Forms.TextBox> řídit z **sada nástrojů** do formuláře, který obsahuje <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
+1.  Přetáhněte <xref:System.Windows.Forms.TextBox> ovládacího prvku **nástrojů** do formuláře, který obsahuje <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
-     Umístěte ho <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
+     Přesuňte ho pod <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
-2.  V okně vlastností změňte **název** vlastnost **SearchTextBox**.  
+2.  V okně Vlastnosti změňte **název** vlastnost **SearchTextBox**.  
   
-3.  Přetažení <xref:System.Windows.Forms.Button> řídit z **sada nástrojů** do formuláře, který obsahuje <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku. Umístěte ho <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
+3.  Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře, který obsahuje <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku. Přesuňte ho pod <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
-4.  V okně vlastností změňte **název** vlastnost **SearchButton**. Změna **Text** vlastnost **vyhledávání**.  
+4.  V okně Vlastnosti změňte **název** vlastnost **SearchButton**. Změnit **Text** vlastnost **hledání**.  
   
-5.  Dvakrát klikněte <xref:System.Windows.Forms.Button> řídit k otevření editoru kódu a přidejte následující kód do `SearchButton_Click` obslužné rutiny události.  
+5.  Dvakrát klikněte <xref:System.Windows.Forms.Button> ovládací prvek, otevře se Editor kódu a přidejte následující kód, který `SearchButton_Click` obslužné rutiny události.  
   
      [!code-csharp[VbPowerPacksDataRepeaterWalkthrough#5](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_5.cs)]
      [!code-vb[VbPowerPacksDataRepeaterWalkthrough#5](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_5.vb)]  
   
-6.  Stisknutím klávesy F5 spusťte aplikaci. Zadejte ID zákazníka v **SearchTextBox** a klikněte na **vyhledávání** tlačítko.  
+6.  Stisknutím klávesy F5 spusťte aplikaci. Zadejte ID zákazníka v **SearchTextBox** a klikněte na tlačítko **hledání** tlačítko.  
   
-## <a name="adding-a-master-and-detail-table-to-the-datarepeater"></a>Přidávání do DataRepeater hlavní a tabulka podrobností  
- V tomto kroku volitelné přidejte druhý <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> řízení k zobrazení související objednávky pro každého zákazníka.  
+## <a name="adding-a-master-and-detail-table-to-the-datarepeater"></a>Přidání do ovládacího prvku DateRepeater. hlavní a tabulka podrobností  
+ V tomto kroku volitelné přidejte druhý <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládací prvek zobrazí související objednávky pro každého zákazníka.  
   
-#### <a name="to-add-a-master-and-detail-table"></a>Chcete-li přidat tabulku seznamu a podrobností  
+#### <a name="to-add-a-master-and-detail-table"></a>Chcete-li přidat tabulku a podrobností  
   
-1.  Přetáhněte druhý <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> řídit z **PowerPacks jazyka Visual Basic** ve **sada nástrojů** do formuláře.  
+1.  Přetáhněte druhý <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku **sady Visual Basic PowerPack** kartu **nástrojů** do formuláře.  
   
-2.  V okně vlastnosti nastavit **umístění** vlastnost `465, 25`.  
+2.  V okně Vlastnosti nastavte **umístění** vlastnost `465, 25`.  
   
 3.  Nastavte **velikost** vlastnost `315, 600`.  
   
-4.  V **zdroje dat** okno, rozbalte **zákazníci** tabulky uzel a vyberte uzel podrobností pro **objednávky** tabulky.  
+4.  V **zdroje dat** okna, rozbalte **zákazníkům** tabulky uzlů a vyberte uzel podrobností pro **objednávky** tabulky.  
   
-5.  Změňte typ tohoto **objednávky** tabulky Podrobnosti o kliknutím **podrobnosti** v rozevíracím seznamu na uzlu tabulky.  
+5.  Změňte typ přetažení tohoto objektu **objednávky** tabulky Podrobnosti kliknutím **podrobnosti** v rozevíracím seznamu na uzel tabulky.  
   
-6.  Přetáhněte to **objednávky** uzlu tabulky na oblast šablony položky (horní oblasti) druhého <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
+6.  Přetáhněte toto **objednávky** uzel tabulky na oblast šablony položky (horní oblasti) druhého <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
-     **OrdersBindingSource** součásti a **OrdersTableAdapter** součásti jsou přidány do komponent.  
+     **OrdersBindingSource** komponenty a **OrdersTableAdapter** součásti jsou přidány do panelu komponent.  
   
-7.  Stisknutím klávesy F5 spusťte aplikaci. Když vyberete každého zákazníka v prvním <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> řídit, objednávky tohoto zákazníka jsou zobrazeny ve druhém <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
+7.  Stisknutím klávesy F5 spusťte aplikaci. Když vyberete každého zákazníka v prvním <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> řídit, objednávky daného zákazníka se zobrazí v druhé <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také  
  [Úvod do ovládacího prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)  
@@ -238,7 +238,7 @@ Tento názorný postup obsahuje základní scénář zahájení dokončení pro 
  [Postupy: Změna rozložení ovládacího prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-change-the-layout-of-a-datarepeater-control-visual-studio.md)  
  [Postupy: Zobrazení záhlaví položek v ovládacím prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-display-item-headers-in-a-datarepeater-control-visual-studio.md)  
  [Postupy: Vyhledávání dat v ovládacím prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-search-data-in-a-datarepeater-control-visual-studio.md)  
- [Postupy: vytvoření hlavního a podrobného formuláře pomocí dvou ovládacích prvků DataRepeater (Visual Studio)](../../../visual-basic/developing-apps/windows-forms/how-to-create-a-master-detail-form-by-using-two-datarepeater-controls.md)  
+ [Postupy: vytvoření hlavního/podrobného formuláře pomocí dvou ovládacích prvků DataRepeater (Visual Studio)](../../../visual-basic/developing-apps/windows-forms/how-to-create-a-master-detail-form-by-using-two-datarepeater-controls.md)  
  [Postupy: Změna vzhledu ovládacího prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio.md)  
  [Postupy: Zákaz přidávání a odstraňování položek DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio.md)  
  [Řešení potíží s ovládacím prvkem DataRepeater](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)

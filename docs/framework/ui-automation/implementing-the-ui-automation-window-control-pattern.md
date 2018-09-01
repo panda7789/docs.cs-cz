@@ -9,38 +9,38 @@ ms.assetid: a28cb286-296e-4a62-b4cb-55ad636ebccc
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 73a484ea6165b4e38901630730c7ba985a5608ba
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 551e4ac5dc8917931e41d7aaa7dca1f8613852bd
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33408018"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43396559"
 ---
 # <a name="implementing-the-ui-automation-window-control-pattern"></a>Implementace vzoru ovládacích prvků okno pro automatizaci uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Toto téma představuje pokyny a konvence pro implementaci <xref:System.Windows.Automation.Provider.IWindowProvider>, včetně informací o <xref:System.Windows.Automation.WindowPattern> vlastnosti, metod a události. Na konci tohoto tématu jsou uvedeny odkazy na další odkazy.  
+ Toto téma popisuje pravidla a zásady pro implementaci <xref:System.Windows.Automation.Provider.IWindowProvider>, včetně informací o <xref:System.Windows.Automation.WindowPattern> vlastnosti, metody a události. Odkazy na další odkazy jsou uvedeny na konci tohoto tématu.  
   
- <xref:System.Windows.Automation.WindowPattern> – Vzor ovládacích prvků se používá pro podporu ovládacích prvků, které poskytují základní funkce se systémem Windows v rámci tradiční [!INCLUDE[TLA#tla_gui](../../../includes/tlasharptla-gui-md.md)]. Příklady ovládacích prvků, které musí implementovat toto – vzor ovládacích prvků windows nejvyšší úrovně aplikace [!INCLUDE[TLA#tla_mdi](../../../includes/tlasharptla-mdi-md.md)] podřízená okna, ovládací prvky umožňující změnu velikosti rozdělení podokně, modálních dialogových oken a bublinách pomohou systému windows.  
+ <xref:System.Windows.Automation.WindowPattern> – Vzor ovládacích prvků slouží k podpoře ovládací prvky, které poskytuje základní funkce založené na oknech v rámci tradičního [!INCLUDE[TLA#tla_gui](../../../includes/tlasharptla-gui-md.md)]. Příklady ovládacích prvků, které musí implementovat toto – vzor ovládacích prvků nejvyšší úrovně aplikace pro windows, [!INCLUDE[TLA#tla_mdi](../../../includes/tlasharptla-mdi-md.md)] podřízených oken, ovládací prvky umožňující změnu velikosti rozdělení podokně, modální dialogová okna a bubliny pomáhají systému windows.  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Postup implementace a konvence  
- Když implementace vzoru ovládacích prvků okno, poznamenejte si následující pokyny a konvence:  
+## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
+ Při implementaci vzoru ovládacích prvků okno, poznamenejte si následující pokyny a konvence:  
   
--   Pro podporu možnost Upravit velikost obě okna a obrazovky pozice pomocí automatizace uživatelského rozhraní, musí implementovat ovládacího prvku <xref:System.Windows.Automation.Provider.ITransformProvider> kromě <xref:System.Windows.Automation.Provider.IWindowProvider>.  
+-   Chcete-li podporují možnost změnit velikost obě okna a obrazovky pozice použitím automatizace uživatelského rozhraní, musí implementovat ovládací prvek <xref:System.Windows.Automation.Provider.ITransformProvider> kromě <xref:System.Windows.Automation.Provider.IWindowProvider>.  
   
--   Ovládací prvky, které obsahují záhlaví a název panelu elementy, které povolte ovládacího prvku se přesune, po změně velikosti, Maximalizovaný, rychle minimalizovat nebo uzavřen se obvykle vyžadují k implementaci <xref:System.Windows.Automation.Provider.IWindowProvider>.  
+-   Ovládací prvky, které obsahují záhlaví a prvky název panelu, které povolte stažení ovládacího prvku přesune, velikost, maximalizované, minimalizovat nebo uzavřel jsou zpravidla vyžadovány k implementaci <xref:System.Windows.Automation.Provider.IWindowProvider>.  
   
--   Ovládací prvky, jako je například automaticky otevíraná okna popisek a pole se seznamem pole nebo nabídky rozevírací seznamy neimplementují obvykle <xref:System.Windows.Automation.Provider.IWindowProvider>.  
+-   Ovládací prvky, jako je například automaticky otevíraná okna popisu tlačítka a pole se seznamem pole nebo nabídky rozevíracích neimplementují obvykle <xref:System.Windows.Automation.Provider.IWindowProvider>.  
   
--   Bublině nápovědy systému windows jsou rozlišené ze základní popis automaticky otevíraná okna pomocí poskytování tlačítko Zavřít okno podobné.  
+-   Bublině nápovědy systému windows jsou rozlišené ze základní popis automaticky otevíraná okna tak, že zřídíte jako okno zavřít.  
   
--   Režim celé obrazovky není podporována IWindowProvider je specifické pro funkce k aplikaci a není chování typické okno.  
+-   Režim celé obrazovky není podporována IWindowProvider je specifické pro funkce k aplikaci a není chování typické okna.  
   
 <a name="Required_Members_for_IWindowProvider"></a>   
 ## <a name="required-members-for-iwindowprovider"></a>Požadované členy pro IWindowProvider  
- Následující vlastnosti, metod a události jsou požadovány pro rozhraní IWindowProvider.  
+ Následující vlastnosti, metody a události jsou požadovány pro IWindowProvider rozhraní.  
   
 |Povinný člen|Typ člena|Poznámky|  
 |---------------------|-----------------|-----------|  
@@ -55,16 +55,16 @@ ms.locfileid: "33408018"
 |<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A>|Metoda|Žádné|  
 |<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>|Událost|Žádné|  
 |<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>|Událost|Žádné|  
-|<xref:System.Windows.Automation.WindowInteractionState>|Událost|Není zaručena bezpečnost pro přístup <xref:System.Windows.Automation.WindowInteractionState.ReadyForUserInteraction>|  
+|<xref:System.Windows.Automation.WindowInteractionState>|Událost|Není zaručeno, že bude <xref:System.Windows.Automation.WindowInteractionState.ReadyForUserInteraction>|  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Výjimky  
- Zprostředkovatelé musí throw následující výjimky.  
+ Poskytovatelé musí vyvolání následující výjimky.  
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A><br /><br /> – Když ovládacího prvku nepodporuje požadované chování.|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A><br /><br /> – Když parametru není platné číslo.|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A><br /><br /> – Když ovládací prvek nepodporuje požadované chování.|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A><br /><br /> -Pokud parametr není platné číslo.|  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  

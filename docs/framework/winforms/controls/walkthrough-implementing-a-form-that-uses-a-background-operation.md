@@ -15,12 +15,12 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 4691b796-9200-471a-89c3-ba4c7cc78c03
-ms.openlocfilehash: 428dae2d10cd0f49a337c5b0439c5dcc72f83432
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: 435bc1c04bfd2f9b8a94ff8151369b5ef2fae6f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43257380"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385869"
 ---
 # <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>Návod: Implementace formuláře, který používá operaci na pozadí
 Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete uživatelského rozhraní (UI) přestane reagovat nebo "zablokování", můžete použít <xref:System.ComponentModel.BackgroundWorker> třídy k provedení operace v jiném vlákně.  
@@ -57,7 +57,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 5.  Přejmenování prvního <xref:System.Windows.Forms.Button> ovládací prvek `startAsyncButton` a nastavit <xref:System.Windows.Forms.Control.Text%2A> vlastnost `Start Async`. Přejmenujte druhý <xref:System.Windows.Forms.Button> ovládací prvek `cancelAsyncButton`a nastavte <xref:System.Windows.Forms.Control.Text%2A> vlastnost `Cancel Async`. Nastavte jeho <xref:System.Windows.Forms.Control.Enabled%2A> vlastnost `false`.  
   
-6.  Vytvořte obslužnou rutinu události pro obě <xref:System.Windows.Forms.Button> ovládacích prvků <xref:System.Windows.Forms.Control.Click> události. Podrobnosti najdete v tématu [postupy: vytváření událostí obslužné rutiny pomocí návrháře](http://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
+6.  Vytvořte obslužnou rutinu události pro obě <xref:System.Windows.Forms.Button> ovládacích prvků <xref:System.Windows.Forms.Control.Click> události. Podrobnosti najdete v tématu [postupy: vytváření událostí obslužné rutiny pomocí návrháře](https://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
   
 7.  Přetáhněte <xref:System.Windows.Forms.Label> ovládacího prvku **nástrojů** do formuláře a přejmenujte jej `resultLabel`.  
   
@@ -75,7 +75,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 #### <a name="to-implement-asynchronous-event-handlers"></a>K implementaci asynchronní obslužné rutiny  
   
-1.  V **vlastnosti** okně s <xref:System.ComponentModel.BackgroundWorker> stále vybranou možností komponenty, klikněte na tlačítko **události** tlačítko. Dvakrát klikněte <xref:System.ComponentModel.BackgroundWorker.DoWork> a <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> událostí pro vytváření obslužných rutin událostí. Další informace o tom, jak používat obslužné rutiny událostí, naleznete v tématu [postupy: vytváření událostí obslužné rutiny pomocí návrháře](http://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
+1.  V **vlastnosti** okně s <xref:System.ComponentModel.BackgroundWorker> stále vybranou možností komponenty, klikněte na tlačítko **události** tlačítko. Dvakrát klikněte <xref:System.ComponentModel.BackgroundWorker.DoWork> a <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> událostí pro vytváření obslužných rutin událostí. Další informace o tom, jak používat obslužné rutiny událostí, naleznete v tématu [postupy: vytváření událostí obslužné rutiny pomocí návrháře](https://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
   
 2.  Vytvoření nové metody, volá `ComputeFibonacci`, ve formuláři. Tato metoda provádí samotnou práci, a tok se spustí na pozadí. Tento kód ukazuje implementaci rekurzivní Fibonacciho algoritmu, který je zejména, přičemž exponenciálně delší dobu pro velké objemy. Používá se tady pro ilustraci, chcete-li zobrazit operace, která můžete zavést dlouhá zpoždění ve vaší aplikaci.  
   
@@ -166,8 +166,8 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
 ## <a name="see-also"></a>Viz také  
  <xref:System.ComponentModel.BackgroundWorker>  
  [Doporučené postupy dělení na spravovaná vlákna](../../../../docs/standard/threading/managed-threading-best-practices.md)  
- [Multithreading u komponent](http://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)  
- [NENÍ v sestavení: Multithreading v jazyce Visual Basic](http://msdn.microsoft.com/library/c731a50c-09c1-4468-9646-54c86b75d269)  
+ [Multithreading u komponent](https://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)  
+ [NENÍ v sestavení: Multithreading v jazyce Visual Basic](https://msdn.microsoft.com/library/c731a50c-09c1-4468-9646-54c86b75d269)  
  [Postupy: Implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  
  [Návod: Spuštění operace na pozadí](../../../../docs/framework/winforms/controls/walkthrough-running-an-operation-in-the-background.md)  
  [Komponenta BackgroundWorker](../../../../docs/framework/winforms/controls/backgroundworker-component.md)

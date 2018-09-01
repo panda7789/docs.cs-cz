@@ -2,20 +2,20 @@
 title: '&lt;webMessageEncoding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 892ca485-e21a-4a44-8e40-633161ef6796
-ms.openlocfilehash: fc1f83128dacb588d8179dea95c132da1ab2be91
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: eddda5e805d7e2cc361b6925d34d13eb8fd614f9
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32755263"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385391"
 ---
 # <a name="ltwebmessageencodinggt"></a>&lt;webMessageEncoding&gt;
-Umožňuje prostého textu XML, kódování zpráv JavaScript Object Notation (JSON) a "nezpracovaných" binární obsah čtení a zápis při použití ve vazbě Windows Communication Foundation (WCF).  
+Umožňuje prostého textu XML, zpráv kodovaných zápis JSON (JavaScript Object) a "neupravené" binární obsah ke čtení a zápis v vazby Windows Communication Foundation (WCF).  
   
  \<system.serviceModel>  
 \<vazby >  
-\<customBinding >  
-\<Vazba >  
+\<třídě customBinding >  
+\<Vytvoření vazby >  
 \<webMessageEncoding >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,34 +35,34 @@ writeEncoding="UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding" />
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`maxReadPoolSize`|Velikost zprávy, které lze číst souběžně bez přidělení nového čtečky. Větší velikosti fondu se systém odolnější vůči špičky aktivity za cenu větší pracovní sady. Výchozí hodnota je 64 čtečky pro každou z vnitřní kodéry (text, JSON a "nezpracovaných").<br /><br /> Zvýšit číslo spotřeba paměti zvýší, ale připraví kodér jak nakládat s nečekané shluky příchozí zprávy, protože je možné používat čtečky z fondu, které jsou již vytvořeny místo vytvoření nové.|  
-|`maxWritePoolSize`|Velikost zprávy, které lze najednou odeslat bez přidělení nového zapisovače. Větší velikosti fondu se systém odolnější vůči špičky aktivity za cenu větší pracovní sady. Výchozí hodnota je 16 zapisovače pro každou z vnitřní kodéry (text, JSON a "nezpracovaných").<br /><br /> Zvýšit číslo spotřeba paměti zvýší, ale připraví kodér jak nakládat s nečekané shluky odchozích zpráv, protože je možné použít zapisovače z fondu, které jsou již vytvořeny místo vytvoření nové.|  
-|`writeEncoding`|Určuje znakovou sadu kódování má být použit pro generování zpráv v rámci vazby. Platné hodnoty jsou:<br /><br /> -UnicodeFffeTextEncoding: Big Endian kódování Unicode.<br />-Utf16TextEncoding: Kódování Unicode.<br />-Utf8TextEncoding: 8bitové kódování.<br /><br /> Výchozí hodnota je Utf8TextEncoding. Tento atribut je typu <xref:System.Text.Encoding>.|  
+|`maxReadPoolSize`|Počet zpráv, které lze souběžně číst bez přidělení nových čtecích zařízení. Větší velikosti fondů byl systém odolnější vůči špičky aktivity za cenu větší pracovní sadu. Výchozí hodnota je 64 čtecí zařízení pro každou z vnitřní kodérů (text JSON a "neupravené").<br /><br /> Zvýšit počet spotřeba paměti zvýší, ale připravuje kodér řešit náhlým nárůstům příchozí zprávy, protože je možné použít čtenáři z fondu, které budou vytvořeny již místo vytvoření nové.|  
+|`maxWritePoolSize`|Počet zpráv, které lze souběžně odesílat bez přidělení nových modulů pro zápis. Větší velikosti fondů byl systém odolnější vůči špičky aktivity za cenu větší pracovní sadu. Výchozí hodnota je 16 zapisovače pro každou z vnitřní kodérů (text JSON a "neupravené").<br /><br /> Zvýšit počet spotřeba paměti zvýší, ale připravuje kodér řešit náhlým nárůstům odchozí zprávy, protože je možné použít zapisovače z fondu, které budou vytvořeny již místo vytvoření nové.|  
+|`writeEncoding`|Určuje znakovou sadu kódování pro vysílání zpráv z vazby. Platné hodnoty jsou:<br /><br /> -UnicodeFffeTextEncoding: Big Endian kódování Unicode.<br />-Utf16TextEncoding: Kódování Unicode.<br />-Utf8TextEncoding: 8 bitů kódování.<br /><br /> Výchozí hodnota je Utf8TextEncoding. Tento atribut je typu <xref:System.Text.Encoding>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<readerQuotas>](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Definuje omezení na složitosti protokolu SOAP zprávy, které lze zpracovat koncovými body, které jsou konfigurovány pomocí této vazby. Tento element je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
+|[\<readerQuotas>](https://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vazba >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vazba vlastní vazby.|  
+|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vázání pro vlastní vazbu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Proces transformace zprávu do pořadí bajtů kódování je. Dekódování je zpětné proces. Tyto procesy vyžadují specifikaci kódování znaků.  
+ Kódování je proces transformace zprávu do sekvence bajtů. Dekódování je opačný proces. Tyto procesy vyžadují specifikaci kódování znaků.  
   
- `webMessageEncoding` Element funguje tak, že delegování na řadu vnitřní kodéry pro zpracování formátu prostého textu XML a JSON kódování a "nezpracovaná" binární data. Toto delegování je potřeba kodéru složené zprávy.  
+ `webMessageEncoding` Element funguje tak, že delegováno na řadu vnitřní kodérů pro zpracování XML a JSON kódování prostého textu a "neupravené" binární data. Složená zpráva Kodér provádí toto delegování.  
   
- Tento element vazby a jeho složené kodér slouží k řízení kódování ve scénářích, které nepoužívají SOAP zasílání zpráv používané `webHttpBinding` elementu. Mezi tyto scénáře patří "Prostý formát XML" (POX), přenos REST (Representational State), skutečně jednoduché syndikace (RSS) a Atom syndikace a asynchronní JavaScript a XML (AJAX). Kodér složené zpráv nepodporuje SOAP nebo WS-Addressing.  
+ Tento element vazby a jeho složené kodér se používají k řízení kódování ve scénářích, které nepoužívají používá zasílání zpráv SOAP `webHttpBinding` elementu. Mezi tyto scénáře patří "Plain Old XML" (POX), Representational State Transfer (REST), syndikace RSS (Really Simple) a Atom syndikace a asynchronní JavaScript a XML (AJAX). Složená zpráva kodér nepodporuje SOAP nebo WS-Addressing.  
   
- Můžete nakonfigurovat prvku vazby kódování znaků zápis pomocí `writeEncoding` atribut. Zadaných <xref:System.Text.Encoding> hodnota určuje chování v zápisu JSON a XML textovou případech. Na čtení se rozumí všechny platné zprávy kódování a kódování textu.  
+ Element vazby se dá nakonfigurovat s kódováním znaků zápisu s použitím `writeEncoding` atribut. Zadané <xref:System.Text.Encoding> hodnota určuje chování v zápisu JSON a XML textové případů. Pro čtení je srozumitelný žádné kódování zpráv a kódování textu.  
   
- `maxReadPoolSize` a `maxWritePoolSize` lze také nastavit maximální počet čtení a zápis, která bude přidělena v uvedeném pořadí. Ve výchozím nastavení jsou přiděleny 64 čtení a zápis 16.  
+ `maxReadPoolSize` a `maxWritePoolSize` slouží také k nastavení maximálního počtu čtečky a zapisovače, které mají být přiděleny v uvedeném pořadí. Ve výchozím nastavení jsou přiděleny 64 čtečky a zapisovače 16.  
   
- Výchozí omezení složitost jsou nastaveny také, pomocí [ \<readerQuotas >](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd) elementu, který chcete chránit proti třídu odepření služby (DOS) před útoky tento pokus pomocí zpráv složitost vytížit zpracování koncového bodu prostředky.  
+ Výchozí omezení složitost jsou také nastavit pomocí [ \<readerQuotas >](https://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd) útoků, které se pokusí použít složitosti zpráv a jejich zapojení koncového bodu zpracování elementu pro ochranu před třídy s cílem odepření služby (DOS) prostředky.  
   
 ## <a name="example"></a>Příklad  
   
@@ -85,4 +85,4 @@ writeEncoding="UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding" />
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+ [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

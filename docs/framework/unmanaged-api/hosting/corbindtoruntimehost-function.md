@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8c1d83b32402343f3cd2b5403e328698abd6a930
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1952121a6c0c735926944c839c3c7e8a8db5fb53
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33436212"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43396828"
 ---
 # <a name="corbindtoruntimehost-function"></a>CorBindToRuntimeHost – funkce
-Umožňuje hostitelům načíst zadaná verze modulu common language runtime (CLR) do procesu.  
+Umožňuje hostitelům načíst zadanou verzi modulu common language runtime (CLR) do procesu.  
   
  Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
@@ -45,42 +45,42 @@ HRESULT CorBindToRuntimeHost (
   
 #### <a name="parameters"></a>Parametry  
  `pwszVersion`  
- [v] Řetězec, který popisuje verzi modulu CLR, které se má zatížení.  
+ [in] Řetězec, který popisuje verzi modulu CLR, který chcete načíst.  
   
- Číslo verze v rozhraní .NET Framework se skládá ze čtyř částí, které jsou odděleny tečkami: *major.minor.build.revision*. Řetězec předány jako `pwszVersion` musí začínat znak "v" následované první tři části číslo verze (například "v1.0.1529").  
+ Číslo verze v rozhraní .NET Framework se skládá ze čtyř částí oddělených tečkami: *major.minor.build.revision*. Řetězec předaný jako `pwszVersion` musí začínat znakem "v" následovaný prvními třemi částmi čísla verze (například "v1.0.1529").  
   
- Některé verze modulu CLR jsou nainstalovány s prohlášení o zásadách, která určuje kompatibility s předchozími verzemi modulu CLR. Ve výchozím nastavení, vyhodnotí shim spuštění `pwszVersion` proti příkazy zásad a zatížením nejnovější verzi modulu runtime, je kompatibilní s požadovanou verzí. Hostitel může vynutit shim přeskočit vyhodnocení zásad a načíst přesné verze zadaná v `pwszVersion` předáním hodnoty STARTUP_LOADER_SAFEMODE pro `startupFlags` parametr.  
+ Některé verze modulu CLR jsou nainstalovány s prohlášením o zásadách, které určuje kompatibilitu s předchozími verzemi modulu CLR. Ve výchozím nastavení překrytí spuštění vyhodnotí `pwszVersion` proti prohlášení zásad a načte nejnovější verze modulu runtime, který je kompatibilní s verzí, které jsou požadovány. Hostitel může donutit překrytí, aby přeskočilo hodnocení zásad a načetlo přesnou verzi zadané v `pwszVersion` předáním hodnoty startup_loader_safemode pro `startupFlags` parametru.  
   
- Pokud `pwszVersion` je `null,` metodu nenačte žádné verzi modulu CLR. Místo toho vrátí CLR_E_SHIM_RUNTIMELOAD, která označuje, že se nepodařilo načíst modul runtime.  
+ Pokud `pwszVersion` je `null,` metoda nenačte žádné verzi modulu CLR. Místo toho vrátí CLR_E_SHIM_RUNTIMELOAD, což znamená, že se nezdařilo načtení modulu runtime.  
   
  `pwszBuildFlavor`  
- [v] Řetězec, který určuje, jestli zatížení serveru nebo pracovní stanice sestavení CLR. Platné hodnoty jsou `svr` a `wks`. Sestavení serveru je optimalizovaná tak, aby využít výhod více procesorů pro kolekce a sestavení pracovní stanici je optimalizovaná pro klientské aplikace spuštěné na počítač s jedním procesorem.  
+ [in] Řetězec, který určuje, jestli se má načíst server nebo pracovní stanice sestavení CLR. Platné hodnoty jsou `svr` a `wks`. Sestavení serveru je optimalizováno pro využití více procesorů pro uvolňování paměti kolekce a sestavení pracovní stanice je optimalizována pro klientské aplikace spuštěné v počítači s jedním procesorem.  
   
- Pokud `pwszBuildFlavor` je nastaven na hodnotu null, je načíst sestavení pracovní stanice. Při spuštění na počítač s jedním procesorem, je vždy načteno sestavení pracovní stanice, i když `pwszBuildFlavor` je nastaven na `svr`. Ale pokud `pwszBuildFlavor` je nastaven na `svr` a je zadána souběžné uvolňování (naleznete v popisu `startupFlags` parametr), je načíst sestavení serveru.  
+ Pokud `pwszBuildFlavor` je nastavena na hodnotu null, je načteno sestavení pracovní stanice. Při spuštění v počítači s jedním procesorem je sestavení pracovní stanice vždy načteno, i když `pwszBuildFlavor` je nastavena na `svr`. Ale pokud `pwszBuildFlavor` je nastavena na `svr` a souběžné uvolňování je vyznačeno (viz popis `startupFlags` parametr), načte se sestavení serveru.  
   
 > [!NOTE]
->  Souběžné uvolňování není podporována v aplikacích spuštěných WOW64 x86 emulátoru na 64bitových systémech, které implementují architektuře Intel Itanium (dříve se označovaly jako platformu IA-64). Další informace o používání WOW64 v 64bitových systémech Windows najdete v tématu [spuštění 32bitové aplikace](http://msdn.microsoft.com/library/windows/desktop/aa384249.aspx).  
+>  Souběžné uvolňování paměti se nepodporuje v aplikacích spuštěných WOW64 x86 emulátor v 64bitových systémech, které implementují Intel Itanium architekturu (dříve označovanou jako IA-64). Další informace o použití modulu WOW64 v 64bitových systémech Windows najdete v tématu [spuštění 32bitových aplikací](/windows/desktop/WinProg64/running-32-bit-applications).  
   
  `pwszHostConfigFile`  
- [v] Název konfiguračního souboru hostitele, který určuje verzi modulu CLR načíst. Pokud název souboru neobsahuje plně kvalifikovanou cestu, předpokládá se, že soubor je ve stejném adresáři jako spustitelný soubor, který je uskutečněním hovoru.  
+ [in] Název konfiguračního souboru hostitele, který určuje verzi modulu CLR pro načtení. Pokud název souboru neobsahuje úplnou cestu, soubor je považován za ve stejném adresáři jako spustitelný soubor, který provádí volání.  
   
  `pReserved`  
- [v] Vyhrazeno pro budoucí rozšíření.  
+ [in] Vyhrazeno pro budoucí rozšíření.  
   
  `startupFlags`  
- [v] Sadu příznaky, které se řídí souběžné uvolňování domény neutrální kód a chování `pwszVersion` parametr. Výchozí hodnota je jedinou doménu, pokud žádné příznak nastaven. Seznam podporovaných hodnot najdete v tématu [STARTUP_FLAGS – výčet](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md).  
+ [in] Sada příznaků, které řídí souběžné uvolňování paměti, doménově neutrální kód a chování `pwszVersion` parametru. Pokud není nastaven žádný příznak, výchozí hodnota je jedinou doménu. Seznam podporovaných hodnot naleznete v tématu [startup_flags – výčet](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md).  
   
  `rclsid`  
- [v] `CLSID` Coclass, který implementuje buď [icorruntimehost –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [iclrruntimehost –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) rozhraní. Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
+ [in] `CLSID` Třídy typu coclass, která implementuje [icorruntimehost –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [iclrruntimehost –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) rozhraní. Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
   
  `riid`  
- [v] `IID` Rozhraní jste požádali. Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.  
+ [in] `IID` Rozhraní, které jste požádali. Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.  
   
  `ppv`  
- [out] Ukazatel rozhraní na verzi modulu runtime, která byla načtena.  
+ [out] Ukazatel rozhraní na verzi modulu runtime, který byl načten.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.idl  
   

@@ -1,19 +1,19 @@
 ---
-title: 'Příklady syntaxe dotazu na základě metod: Operátory Element'
+title: 'Příklady syntaxe dotazů založených na volání metody: Operátory elementů'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8438b995-bd07-4223-b22d-13adadef33fb
-ms.openlocfilehash: 0933b1852d87f4f00a77aacfd9ea2cf19a3e9a1f
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 4215dcddf44647d98ee70c6f2d06345737cba5de
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32761295"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43384587"
 ---
-# <a name="method-based-query-syntax-examples-element-operators"></a>Příklady syntaxe dotazu na základě metod: Operátory Element
-V příkladech v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.First%2A> metodu pro dotaz [Model prodeje společnosti AdventureWorks](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) pomocí syntaxe dotazu na základě metod. Model prodeje společnosti AdventureWorks použít v těchto příkladech je sestaven z kontaktu, adresu, produktu, SalesOrderHeader a podrobnosti prodejní objednávky tabulky v ukázkové databázi AdventureWorks.  
+# <a name="method-based-query-syntax-examples-element-operators"></a>Příklady syntaxe dotazů založených na volání metody: Operátory elementů
+Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.First%2A> metodu dotazu [AdventureWorks Sales Model](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) pomocí syntaxe dotazů založených na volání metody. Model prodeje AdventureWorks používá v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  
   
  V příkladu v tomto tématu používá následující `using` / `Imports` příkazy:  
   
@@ -23,7 +23,7 @@ V příkladech v tomto tématu ukazují, jak používat <xref:System.Linq.Enumer
 ## <a name="first"></a>první  
   
 ### <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.Linq.Enumerable.First%2A> metody k vyhledání prvního e-mailovou adresu, která se spouští s 'caroline'.  
+ V následujícím příkladu <xref:System.Linq.Enumerable.First%2A> metody k vyhledání prvního e-mailovou adresu, která se spustí s "caroline".  
   
  [!code-csharp[DP L2E Examples#FirstCondition_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#firstcondition_mq)]
  [!code-vb[DP L2E Examples#FirstCondition_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#firstcondition_mq)]  

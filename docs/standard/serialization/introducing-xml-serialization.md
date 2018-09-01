@@ -13,11 +13,11 @@ helpviewer_keywords:
 - XML Schema, serializing
 ms.assetid: 8c63200d-db63-4a03-a93d-21641623df62
 ms.openlocfilehash: 066c43ad84a079b40121bc55244d148679c49e48
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42933239"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43396389"
 ---
 # <a name="introducing-xml-serialization"></a>Představení serializace XML
 

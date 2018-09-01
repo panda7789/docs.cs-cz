@@ -5,32 +5,32 @@ helpviewer_keywords:
 - properties [C#], on interfaces
 - interfaces [C#], properties
 ms.assetid: 6503e9ed-33d7-44ec-b4c1-cc16c084b795
-ms.openlocfilehash: bfa03c7ebe82f3f6a03666d908a5fa9d4e386172
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eea2bb524496a3db22146586df323437d9f84242
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33325406"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43396728"
 ---
 # <a name="interface-properties-c-programming-guide"></a>Vlastnosti rozhraní (Průvodce programováním v C#)
-Vlastnosti lze deklarovat na [rozhraní](../../../csharp/language-reference/keywords/interface.md). Následuje příklad přistupující objekt indexer rozhraní:  
+Vlastnosti mohou být deklarovány na [rozhraní](../../../csharp/language-reference/keywords/interface.md). Následuje příklad přistupující objekt vlastnosti rozhraní:  
   
  [!code-csharp[csProgGuideProperties#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_1.cs)]  
   
- Přistupující objekt vlastnosti rozhraní nemá text. Účelem přístupové objekty tedy k označení, zda je vlastnost pro čtení a zápis, jen pro čtení nebo jen pro zápis.  
+ Přistupující objekt vlastnosti rozhraní nemá tělo. Účelem přistupující objekty tedy označující, zda je vlastnost pro čtení i zápis, jen pro čtení nebo jen pro zápis.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu rozhraní `IEmployee` má vlastnost pro čtení a zápis, `Name`a vlastnost určenou jen pro čtení, `Counter`. Třída `Employee` implementuje `IEmployee` rozhraní a používá tyto dvě vlastnosti. Program načte název nového zaměstnance a aktuální počet zaměstnanců a zobrazí zaměstnanec název a číslo počítaný.  
+ V tomto příkladu rozhraní `IEmployee` má vlastnost pro čtení i zápis, `Name`a vlastnost jen pro čtení, `Counter`. Třída `Employee` implementuje `IEmployee` rozhraní a používá tyto dvě vlastnosti. Program čte název nového zaměstnance a aktuální počet zaměstnanců a zobrazí jméno zaměstnance a vypočítané číslo.  
   
- Můžete použít plně kvalifikovaný název vlastnosti, která odkazuje na rozhraní, ve kterém je deklarovaná člena. Příklad:  
-  
- [!code-csharp[csProgGuideProperties#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_2.cs)]  
-  
- To se označuje jako [explicitní implementace rozhraní](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md). Například pokud třída `Employee` je implementace dvě rozhraní `ICitizen` a `IEmployee` a mít obě rozhraní `Name` vlastnost člena implementace explicitního rozhraní bude nutné. To znamená, deklarace následující vlastnosti:  
+ Můžete použít plně kvalifikovaný název vlastnosti, která odkazuje na rozhraní, ve kterém člen je deklarovaný. Příklad:  
   
  [!code-csharp[csProgGuideProperties#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_2.cs)]  
   
- implementuje `Name` vlastnost `IEmployee` rozhraní při následující prohlášení:  
+ Tento postup se nazývá [explicitní implementaci rozhraní](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md). Například pokud třída `Employee` implementuje dvě rozhraní `ICitizen` a `IEmployee` a mít obě rozhraní `Name` vlastnosti, bude explicitní implementace členu rozhraní nezbytné. To znamená, následující deklarace vlastnosti:  
+  
+ [!code-csharp[csProgGuideProperties#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_2.cs)]  
+  
+ implementuje `Name` vlastnost `IEmployee` rozhraní při následující deklarace:  
   
  [!code-csharp[csProgGuideProperties#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_3.cs)]  
   

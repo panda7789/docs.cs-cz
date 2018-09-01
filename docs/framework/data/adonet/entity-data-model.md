@@ -2,22 +2,22 @@
 title: Entity Data Model
 ms.date: 03/30/2017
 ms.assetid: 2dda3d5b-4582-4ba0-a91d-fcd7a1498137
-ms.openlocfilehash: bb3c529a19ca96ea5695061fb1b612f9179899be
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: e76527b497434ada06762fcab931522fffa2a16b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32765240"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385591"
 ---
 # <a name="entity-data-model"></a>Entity Data Model
-Entity Data Model (EDM) je sada koncepty, které popisují strukturu dat, bez ohledu na jeho uložené formuláře. Vychází z modelu vztah entit popsaného Petr Svoboda v 1976 jazyků EDM, ale také založený na modelu vztah entit a rozšiřuje jeho tradiční používá.  
+Entity Data Model (EDM) je sada koncepty, které popisují strukturu dat, bez ohledu na jeho uložených formuláře. Vypůjčí modelu EDM z relace Entity Model popsal Peter Svoboda v 1976, ale také založený na modelu relace Entity a rozšíří jeho tradiční použití.  
   
- EDM řeší problémy, které způsobit s daty uloženými v celou řadu forem. Představte si třeba firmy, která ukládá data v relačních databází, textové soubory, soubory XML, tabulky a sestavy. To představuje významné problémy v datech modelování, návrh aplikace a přístup k datům. Při navrhování aplikace data, na výzvu je napsat kód efektivní a udržovatelný bez omezení přístupu k datům efektivní, úložiště a škálovatelnost. Pokud data má relační strukturu, jsou velmi efektivní přístup k datům, úložiště a škálovatelnost, ale zápis efektivní a udržovatelného kódu je podstatně obtížnější. Pokud data strukturu objekt, jsou kompromisy vrátit: psaní kódu efektivní a udržovatelný dodává za cenu přístup k datům efektivní, úložiště a škálovatelnost. I když můžete najít rovnováhu mezi tyto kompromisy, vyvolány další výzvy při přesunutí dat z jednoho formátu do jiného. Datový Model Entity řeší tyto problémy prostřednictvím popisu strukturu dat z hlediska entity a vztahy, které jsou nezávislé na žádné schéma úložiště. Díky tomu uložené formu dat. důležité aplikace návrh a vývoj. A protože entity a vztahy popisují strukturu dat, protože se používá v aplikaci (ne jeho uložené formulář), můžete rozvíjet jako zpracovaní aplikace.  
+ EDM řeší výzvy související s daty uloženými v mnoha formách jsou vyvolány. Představte si třeba firma, která ukládá data v relačních databází, textové soubory, soubory XML, tabulky a sestavy. To představuje důležité výzvy při modelování dat, návrh aplikace a přístup k datům. Při navrhování aplikace orientované na data, před obrovskou výzvou – je efektivní a udržovatelný kód napsat bez omezení účinný data access, úložiště a škálovatelnosti. Pokud data obsahují relační struktury, jsou velmi efektivní přístup k datům, úložiště a škálovatelnosti, ale vytváření efektivní a udržovatelného kódu bude obtížnější. Pokud data obsahují objektovou strukturu, jsou v obráceném pořadí kompromisy konfigurace: psaní efektivní a udržovatelný kód obsahuje za cenu efektivní datové úložiště a škálovatelnosti. I když můžete najít správnou rovnováhu mezi těmito kompromisy, nové výzvy vzniknout, když jsou data přesouvána mezi jeden formulář do jiného. Modelu Entity Data Model řeší tyto problémy popisuje strukturu dat z hlediska entit a vztahů, které nezávisí na žádné schéma úložiště. Díky tomu formuláři uložených dat relevantní pro vývoj a návrh aplikace. A protože entitami a relacemi popisují strukturu dat, jako používá se v aplikaci (ne jeho uložené formulář), můžete vyvíjet s vyvíjí aplikace.  
   
- A `conceptual model` je konkrétní reprezentace strukturu dat jako entity a vztahy a je obvykle definováno v jazyce specifické pro doménu (DSL), který implementuje koncepty EDM. [Koncepční schéma definition language (CSDL)](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md) je příkladem jazyk specifické pro doménu. Entity a vztahy, které jsou popsané v konceptuálním modelu lze považovat za abstrakce objektů a přidružení v aplikaci. To umožňuje vývojářům soustředit na konceptuální model bez obav o schéma úložiště a umožňuje je napsat kód s efektivitu a jeho udržovatelnost v paměti. Mezitím Designer schéma úložiště můžete soustředit na efektivitu přístup k datům, úložiště a škálovatelnost.  
+ A `conceptual model` je konkrétní reprezentace strukturu dat jako entit a vztahů a je obecně podle jazyka specifického pro doménu (DSL), který implementuje koncepty modelu EDM. [Konceptuální schéma definici jazyka (CSDL)](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md) je příkladem takových jazyka specifického pro doménu. Entity a relace je popsáno v konceptuálním modelu můžete představit jako abstrakce objektů a přidružení v aplikaci. To umožňuje vývojářům soustředit se na konceptuální model bez obav o schéma úložiště a umožňuje psát kód s efektivitu a udržovatelnosti v úvahu. Mezitím návrháři schéma úložiště soustředit se na efektivitu přístup k datům, úložiště a škálovatelnosti.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- Témata v této části popisují koncepty datového modelu Entity. Všechny DSL, který implementuje EDM by měla obsahovat konceptů popsaných v tomto poli. Všimněte si, že [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) CSDL používá k definování konceptuálních modelech. Další informace najdete v tématu [CSDL specifikace](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md).  
+ Témata v této části popisují koncepty modelu Entity Data Model. Koncepty popsané tady by měl obsahovat všechny DSL, která implementuje modelu EDM. Všimněte si, že [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) CSDL používá k definování konceptuálních modelů. Další informace najdete v tématu [specifikace CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md).  
   
  [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
   
@@ -62,6 +62,6 @@ Entity Data Model (EDM) je sada koncepty, které popisují strukturu dat, bez oh
  [referential integrity constraint](../../../../docs/framework/data/adonet/referential-integrity-constraint.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Nástroje modelu ADO.NET Entity Data Model](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)  
- [Přehled souboru EDMX](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
+ [Datový Model Entity ADO.NET nástroje](https://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)  
+ [Přehled souboru EDMX](https://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
  [Specifikace CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)

@@ -9,24 +9,24 @@ helpviewer_keywords:
 - files [Visual Basic], transferring
 ms.assetid: ac479f81-c0e2-4b99-af73-217f446b73da
 ms.openlocfilehash: b0dc95674e17a7aba9b04a8b7e0b82c9c97c4180
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33590723"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385546"
 ---
 # <a name="how-to-download-a-file-in-visual-basic"></a>Postupy: Stažení souboru v jazyce Visual Basic
-<xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> Metoda slouží k stažení vzdáleného souboru a uložte ho do určitého umístění. Pokud `ShowUI` parametr je nastaven na `True`, zobrazí se dialogové okno zobrazující průběh stahování a umožníte uživatelům na tlačítko Storno. Ve výchozím nastavení nepřepisují existující soubory se stejným názvem; Pokud chcete přepsat existující soubory, nastavte `overwrite` parametru `True`.  
+<xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> Metodu je možné stáhnout soubor vzdálené a uloží je do určitého umístění. Pokud `ShowUI` parametr je nastaven na `True`, zobrazí se dialogové okno zobrazuje průběh stahování a uživatelé si můžou na zrušení operace. Ve výchozím nastavení nejsou přepsány existující soubory se stejným názvem. Pokud chcete přepsat existující soubory, nastavte `overwrite` parametr `True`.  
   
  Následující podmínky mohou způsobit výjimku:  
   
--   Název jednotky je neplatný (<xref:System.ArgumentException>).  
+-   Název disku je neplatný (<xref:System.ArgumentException>).  
   
--   Nebyl zadán nezbytné ověřování (<xref:System.UnauthorizedAccessException> nebo <xref:System.Security.SecurityException>).  
+-   Nebyla zadána potřebné ověřovací (<xref:System.UnauthorizedAccessException> nebo <xref:System.Security.SecurityException>).  
   
--   Server neodpověděl v rámci zadaného `connectionTimeout` (<xref:System.TimeoutException>).  
+-   Server neobjeví odpověď během zadaného `connectionTimeout` (<xref:System.TimeoutException>).  
   
--   Požadavek se odmítne webovým serverem (<xref:System.Net.WebException>).  
+-   Požadavek se zamítne na webu (<xref:System.Net.WebException>).  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -35,24 +35,24 @@ ms.locfileid: "33590723"
   
 ### <a name="to-download-a-file"></a>Ke stažení souboru  
   
--   Použití `DownloadFile` metoda stažení souboru, zadáním umístění cílového souboru jako řetězec nebo identifikátor URI a určením umístění, kam chcete soubor uložit. Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a ukládá ji do `C:\Documents and Settings\All Users\Documents`:  
+-   Použití `DownloadFile` metoda ke stažení souboru, zadáte umístění cílového souboru jako řetězec nebo identifikátor URI a zadání umístění, kam chcete soubor uložit. Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a ukládá ji do `C:\Documents and Settings\All Users\Documents`:  
   
      [!code-vb[VbResourceTasks#9](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-download-a-file_1.vb)]  
   
-### <a name="to-download-a-file-specifying-a-time-out-interval"></a>Ke stažení souboru, zadání interval časového limitu  
+### <a name="to-download-a-file-specifying-a-time-out-interval"></a>Ke stažení souboru, intervalem časového limitu  
   
--   Použití `DownloadFile` metoda stažení souboru, zadáním umístění cílového souboru jako řetězec nebo identifikátor URI, zadáte umístění, kam chcete uložit soubor a určením časového limitu v milisekundách (výchozí hodnota je 1000). Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a ukládá ji do `C:\Documents and Settings\All Users\Documents`, zadání interval časového limitu na 500 milisekund:  
+-   Použití `DownloadFile` metoda ke stažení souboru, určení umístění cílového souboru jako řetězec nebo identifikátor URI, zadáte umístění, kam chcete uložit soubor a intervalem časového limitu v milisekundách (výchozí hodnota je 1000). Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a ukládá ji do `C:\Documents and Settings\All Users\Documents`, intervalem časového limitu 500 MS:  
   
      [!code-vb[VbResourceTasks#10](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-download-a-file_2.vb)]  
   
-### <a name="to-download-a-file-supplying-a-user-name-and-password"></a>Ke stažení souboru, poskytnutí uživatelského jména a hesla  
+### <a name="to-download-a-file-supplying-a-user-name-and-password"></a>Ke stažení souboru, zadávání uživatelského jména a hesla  
   
--   Použití `DownLoadFile` metoda stažení souboru, zadáním umístění cílového souboru jako řetězec nebo identifikátor URI a zadáte umístění, kam chcete uložit soubor, uživatelské jméno a heslo. Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a ukládá ji do `C:\Documents and Settings\All Users\Documents`, s uživatelským jménem `anonymous` a prázdné heslo.  
+-   Použití `DownLoadFile` metoda ke stažení souboru, zadáte umístění cílového souboru jako řetězec nebo identifikátor URI a určení umístění, kam chcete uložit soubor, uživatelské jméno a heslo. Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a ukládá ji do `C:\Documents and Settings\All Users\Documents`, s uživatelským jménem `anonymous` a heslo necháte prázdné.  
   
      [!code-vb[VbResourceTasks#11](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-download-a-file_3.vb)]  
   
     > [!IMPORTANT]
-    >  Protokol FTP používá `DownLoadFile` metoda odesílá informace, včetně hesel ve formátu prostého textu a neměl by se používat k přenosu citlivých informací.  
+    >  Protokol FTP používá `DownLoadFile` metoda odesílá informace, včetně hesel ve formátu prostého textu a neměli byste používat k přenosu citlivých informací.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:Microsoft.VisualBasic.Devices.Network>  

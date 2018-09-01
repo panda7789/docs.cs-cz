@@ -8,11 +8,11 @@ helpviewer_keywords:
 - static keyword [C#]
 ms.assetid: 5509e215-2183-4da3-bab4-6b7e607a4fdf
 ms.openlocfilehash: db12ef80752bba913e6792ccb38f598a664efb0b
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43258414"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43397664"
 ---
 # <a name="static-c-reference"></a>static – modifikátor (Referenční dokumentace jazyka C#)
 Použití `static` modifikátor deklarovat statický člen, který patří do samotného typu, nikoli s určitým objektem. `static` Modifikátor lze použít s třídami, pole, metody, vlastnosti, operátory, události a konstruktory, ale nelze použít s indexery, finalizační metody nebo jiné typy než třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  

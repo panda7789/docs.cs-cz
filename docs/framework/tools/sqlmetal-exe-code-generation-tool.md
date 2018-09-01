@@ -9,15 +9,15 @@ helpviewer_keywords:
 - LINQ to SQL, DBML files
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
-ms.openlocfilehash: c9dab959628343cd99f75ffeda30e3f423f2aaf7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 94ed6328857f6e77cea150d69719322d3aaaea69
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33409799"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43396919"
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (nástroj pro vytváření kódu)
-Nástroj příkazového řádku na SqlMetal generuje kód a mapování [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] komponentu [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Použitím možností uvedených dále v tomto tématu můžete dát nástroji SqlMetal pokyn, aby provedl několik různých úkonů, které zahrnují následující:  
+Nástroj příkazového řádku SqlMetal generuje kód a mapování pro [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] komponentu [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Použitím možností uvedených dále v tomto tématu můžete dát nástroji SqlMetal pokyn, aby provedl několik různých úkonů, které zahrnují následující:  
   
 -   Vygenerování zdrojového kódu a atributů mapování nebo souboru mapování z databáze.  
   
@@ -25,12 +25,12 @@ Nástroj příkazového řádku na SqlMetal generuje kód a mapování [!INCLUDE
   
 -   Vygenerování zdrojového kódu a atributů mapování nebo souboru mapování ze souboru .dbml.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Ve výchozím nastavení, je uložen v souboru `drive`: \Program Files\Microsoft SDKs\Windows\v`n.nn`\bin. Pokud nenainstalujete Visual Studio, můžete získat také na SQLMetal soubor stáhněte [Windows SDK](http://go.microsoft.com/fwlink/?LinkId=142225).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Ve výchozím nastavení, se nachází v souboru `drive`: \Program Files\Microsoft SDKs\Windows\v`n.nn`\bin. Pokud nenainstalujete sady Visual Studio, můžete také si soubor SQLMetal Stáhnout [sady Windows SDK](https://go.microsoft.com/fwlink/?LinkId=142225).  
   
 > [!NOTE]
->  Vývojáři, kteří používají Visual Studio můžete také použít [!INCLUDE[vs_ordesigner_long](../../../includes/vs-ordesigner-long-md.md)] ke generování tříd entit. Metoda využívající příkazový řádek je vhodná u velkých databází. Protože SqlMetal je nástroj příkazového řádku, můžete ho použít v procesu sestavení.  
+>  Vývojáři, kteří používají Visual Studio můžete také použít [!INCLUDE[vs_ordesigner_long](../../../includes/vs-ordesigner-long-md.md)] k vytvoření tříd entit. Metoda využívající příkazový řádek je vhodná u velkých databází. Protože SqlMetal je nástroj příkazového řádku, můžete ho použít v procesu sestavení.  
   
- Chcete-li spustit tento nástroj, použijte příkazový řádek vývojáře (nebo příkazový řádek Visual Studio v systému Windows 7). Další informace najdete v tématu [příkazového řádku](../../../docs/framework/tools/developer-command-prompt-for-vs.md). Na příkazovém řádku zadejte následující příkaz:  
+ Chcete-li spustit tento nástroj, použijte příkazový řádek vývojáře (nebo příkazový řádek Visual Studio v systému Windows 7). Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md). Na příkazovém řádku zadejte následující příkaz:  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +39,7 @@ sqlmetal [options] [<input file>]
 ```  
   
 ## <a name="options"></a>Možnosti  
- Chcete-li zobrazit aktuální seznam možnost, zadejte `sqlmetal /?` na příkazovém řádku z umístění instalace.  
+ Pokud chcete zobrazit aktuální seznam možností, zadejte `sqlmetal /?` příkazového řádku z umístění instalace.  
   
  **Možnosti připojení**  
   
@@ -47,12 +47,12 @@ sqlmetal [options] [<input file>]
 |------------|-----------------|  
 |**/ Server:**  *\<name >*|Určuje název databázového serveru.|  
 |**/ databáze:**  *\<name >*|Určuje katalog databází na serveru.|  
-|**Parametr/user:**  *\<name >*|Určuje přihlašovací jméno uživatele. Výchozí hodnota: Použít ověřování systému Windows.|  
+|**/ user:**  *\<name >*|Určuje přihlašovací jméno uživatele. Výchozí hodnota: Použít ověřování systému Windows.|  
 |**/ Password:**  *\<heslo >*|Určuje heslo pro přihlášení. Výchozí hodnota: Použít ověřování systému Windows.|  
-|**/ kontext:**  *\<připojovací řetězec >*|Určuje připojovací řetězec databáze. Nelze použít s **/server**, **/databáze**, **User**, nebo **/Password** možnosti.<br /><br /> Nezahrnujte název souboru do připojovacího řetězce. Místo toho přidejte název souboru do příkazového řádku jako vstupní soubor. Například následující řádek určuje "c:\northwnd.mdf" jako vstupní soubor: **/code:"c:\northwind.cs na sqlmetal" /language:csharp "c:\northwnd.mdf"**.|  
+|**/ conn:**  *\<připojovací řetězec >*|Určuje připojovací řetězec databáze. Nelze použít s **/server**, **/database**, **/User**, nebo **/Password** možnosti.<br /><br /> Nezahrnujte název souboru do připojovacího řetězce. Místo toho přidejte název souboru do příkazového řádku jako vstupní soubor. Například následující řádek určuje "c:\northwnd.mdf" jako vstupní soubor: **sqlmetal /code:"c:\northwind.cs" /language:csharp "c:\northwnd.mdf"**.|  
 |**/ timeout:**  *\<sekund >*|Určuje hodnotu časového limitu při přístupu SqlMetal k databázi. Výchozí hodnota: 0 (to znamená žádný časový limit).|  
   
- **Možnosti extrakce**  
+ **Možnosti extrahování**  
   
 |Možnost|Popis|  
 |------------|-----------------|  
@@ -64,26 +64,26 @@ sqlmetal [options] [<input file>]
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/dbml** *[: soubor]*|Odešle výstup jako .dbml. Nelze použít s **/map** možnost.|  
-|**/ kódu** *[: soubor]*|Odešle výstup jako zdrojový kód. Nelze použít s **/dbml** možnost.|  
-|**/ map** *[: soubor]*|Generuje soubor mapování XML namísto atributů. Nelze použít s **/dbml** možnost.|  
+|**/dbml** *[: file]*|Odešle výstup jako .dbml. Nelze použít s **/map** možnost.|  
+|**/ code** *[: file]*|Odešle výstup jako zdrojový kód. Nelze použít s **/dbml** možnost.|  
+|**/ map** *[: file]*|Generuje soubor mapování XML namísto atributů. Nelze použít s **/dbml** možnost.|  
   
  **Různé**  
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/Language:**  *\<jazyka >*|Určuje jazyk zdrojového kódu.<br /><br /> Platný  *\<jazyk >*: vb, csharp.<br /><br /> Výchozí hodnota: Odvozeno z přípony názvu souboru kódu.|  
+|**/Language:**  *\<jazyk >*|Určuje jazyk zdrojového kódu.<br /><br /> Platný  *\<jazyk >*: vb, csharp.<br /><br /> Výchozí hodnota: Odvozeno z přípony názvu souboru kódu.|  
 |**/ NAMESPACE:**  *\<name >*|Určuje obor názvů generovaného kódu. Výchozí hodnota: Žádný obor názvů.|  
 |**/ Context:**  *\<typ >*|Určuje název třídy datového kontextu. Výchozí hodnota: Odvozen od názvu databáze.|  
 |**/entitybase:**  *\<typ >*|Určuje základní třídu z tříd entit v generovaném kódu. Výchozí hodnota: Entity nemají žádnou základní třídu.|  
-|**/ pluralizovat**|Automaticky převádí názvy tříd a členů do množného nebo jednotného čísla.<br /><br /> Tato možnost je dostupná pouze v USA Anglickou verzi.|  
-|**/Serialization:**  *\<možnost >*|Generuje serializovatelné třídy.<br /><br /> Platný  *\<možnost >*: None, Unidirectional. Výchozí hodnota: Žádný.<br /><br /> Další informace najdete v tématu [serializace](../../../docs/framework/data/adonet/sql/linq/serialization.md).|  
+|**/ pluralize**|Automaticky převádí názvy tříd a členů do množného nebo jednotného čísla.<br /><br /> Tato možnost je dostupná jenom v USA. Anglickou verzi.|  
+|**/Serialization:**  *\<možnost >*|Generuje serializovatelné třídy.<br /><br /> Platný  *\<možnost >*: žádný, jednosměrný. Výchozí hodnota: Žádný.<br /><br /> Další informace najdete v tématu [serializace](../../../docs/framework/data/adonet/sql/linq/serialization.md).|  
   
  **Vstupní soubor**  
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**\<vstupní soubor >**|Určuje soubor MDF systému SQL Server Express [!INCLUDE[ssEW](../../../includes/ssew-md.md)] soubor SDF nebo dbml pomocný soubor.|  
+|**\<vstupní soubor >**|Určuje soubor .mdf serveru SQL Server Express [!INCLUDE[ssEW](../../../includes/ssew-md.md)] soubor SDF nebo přechodný soubor .dbml.|  
   
 ## <a name="remarks"></a>Poznámky  
  Funkce SqlMetal ve skutečnosti probíhá ve dvou krocích:  
@@ -92,13 +92,13 @@ sqlmetal [options] [<input file>]
   
 -   Generování výstupního souboru s kódem.  
   
-     Pomocí možnosti příkazového řádku, můžete vytvořit zdrojového kódu Visual Basic a C# nebo může vytvořit mapování souboru XML.  
+     Pomocí vhodných možností příkazového řádku můžete vytvářet zdrojový kód jazyka Visual Basic nebo C#, nebo můžete vytvořit soubor mapování XML.  
   
  Chcete-li extrahovat metadata ze souboru .mdf, musíte zadat název souboru .mdf za všemi ostatními možnostmi.  
   
- Pokud žádné **/server** není zadaný, **localhost nebo sqlexpress** se předpokládá.  
+ Pokud ne **/server** není zadána, **localhost/sqlexpress** se předpokládá, že.  
   
- [!INCLUDE[sqprsqext](../../../includes/sqprsqext-md.md)] Pokud jeden nebo více z následujících podmínek jsou splněny, vyvolá výjimku:  
+ [!INCLUDE[sqprsqext](../../../includes/sqprsqext-md.md)] vyvolá výjimku, pokud platí jedna nebo více z následujících podmínek:  
   
 -   SqlMetal se pokusí extrahovat uloženou proceduru, která volá sama sebe.  
   
@@ -106,7 +106,7 @@ sqlmetal [options] [<input file>]
   
      SqlMetal tuto výjimku zachytí a ohlásí ji jako varování.  
   
- Chcete-li zadat název vstupního souboru, přidejte název souboru do příkazového řádku jako vstupní soubor. Včetně názvu souboru v připojovacím řetězci (pomocí **/kontext** možnost) není podporován.  
+ Chcete-li zadat název vstupního souboru, přidejte název souboru do příkazového řádku jako vstupní soubor. Včetně názvu souboru do připojovacího řetězce (pomocí **/conn** možnost) se nepodporuje.  
   
 ## <a name="examples"></a>Příklady  
  Vygenerování souboru .dbml obsahujícího extrahovaná metadata SQL:  
@@ -130,7 +130,7 @@ sqlmetal [options] [<input file>]
  **SqlMetal /server:myserver /database:northwind /namespace:nwind /code:nwind.cs /language:csharp**  
   
 > [!NOTE]
->  Při použití **/ pluralizovat** možnost s ukázková databáze Northwind, Všimněte si následujícího chování. Když SqlMetal vytváří názvy řádků pro tabulky, názvy tabulek jsou v jednotném čísle. Když umožňuje <xref:System.Data.Linq.DataContext> vlastnosti pro tabulky, názvy tabulek jsou množném čísle. Tabulky v ukázkové databázi Northwind jsou shodou okolností již v množném čísle. Proto neuvidíte, jak tato část funguje. Přestože jsou názvy tabulek databáze zpravidla zapisovány v jednotném čísle, v rozhraní .NET je rovněž obvyklé pojmenovávání kolekcí v množném čísle.  
+>  Při použití **/ pluralize** možnost s ukázkovou databází Northwind, pamatujte na následující chování. Když SqlMetal vytváří názvy řádků pro tabulky, názvy tabulek jsou v jednotném čísle. Který je <xref:System.Data.Linq.DataContext> vlastnosti pro tabulky, názvy tabulek jsou v množném čísle. Tabulky v ukázkové databázi Northwind jsou shodou okolností již v množném čísle. Proto neuvidíte, jak tato část funguje. Přestože jsou názvy tabulek databáze zpravidla zapisovány v jednotném čísle, v rozhraní .NET je rovněž obvyklé pojmenovávání kolekcí v množném čísle.  
   
 ## <a name="see-also"></a>Viz také  
  [Postupy: Generování objektového modelu v jazyce Visual Basic nebo C#](../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)  

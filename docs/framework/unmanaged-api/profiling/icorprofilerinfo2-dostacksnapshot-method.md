@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 338120932b0bcbe390332515856aaeaa3bc34a56
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3c65e48595f2b49abe06e649898649d76a0668a0
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33461695"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385906"
 ---
 # <a name="icorprofilerinfo2dostacksnapshot-method"></a>ICorProfilerInfo2::DoStackSnapshot – metoda
-Provede spravované rámce v zásobníku pro zadaný vlákno a odesílá informace do profileru prostřednictvím zpětné volání.  
+Provede spravované rámce zásobníku pro zadaný podproces a odešle informace prostřednictvím zpětné volání profileru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,66 +41,66 @@ HRESULT DoStackSnapshot(
   
 #### <a name="parameters"></a>Parametry  
  `thread`  
- [v] ID cílového vlákno.  
+ [in] ID cílového vlákna.  
   
- Předání hodnotou null v `thread` vypočítá snímek aktuální vlákno. Pokud `ThreadID` z jiné vlákno je předán, modul CLR (CLR) pozastaví daném vláknu, provede snímku a obnoví.  
+ Předání hodnotou null v `thread` vrací snímek aktuální vlákno. Pokud `ThreadID` z různých vláken je předán, common language runtime (CLR) pozastaví bylo vlákno, provádí snímku a obnoví.  
   
  `callback`  
- [v] Ukazatel na implementaci [stacksnapshotcallback –](../../../../docs/framework/unmanaged-api/profiling/stacksnapshotcallback-function.md) metodu, která je volána metodou CLR profileru poskytnout informace o každé spravované rámečkem a každé spuštění nespravované rámce.  
+ [in] Ukazatel na implementaci [stacksnapshotcallback –](../../../../docs/framework/unmanaged-api/profiling/stacksnapshotcallback-function.md) metodu, která je volána modulem CLR poskytnout informace pro každý spravovaný rámec a každé spuštění nespravované snímků profileru.  
   
- `StackSnapshotCallback` Je implementována metoda modul pro zápis profileru.  
+ `StackSnapshotCallback` Metoda je implementováno tvůrci profileru.  
   
  `infoFlags`  
- [v] Hodnota [COR_PRF_SNAPSHOT_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-snapshot-info-enumeration.md) výčtu, který určuje množství dat, které mají být předány zpět pro každý snímek pomocí `StackSnapshotCallback`.  
+ [in] Hodnota [cor_prf_snapshot_info –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-snapshot-info-enumeration.md) výčet, který určuje množství dat, které mají být předány zpět pro každý snímek podle `StackSnapshotCallback`.  
   
  `clientData`  
- [v] Ukazatel na klienta data, která je předána přímo do `StackSnapshotCallback` funkce zpětného volání.  
+ [in] Ukazatel na data klienta, která je předána přímo `StackSnapshotCallback` funkce zpětného volání.  
   
  `context`  
- [v] Ukazatel na Win32 `CONTEXT` strukturu, která se používá k procházení zásobníku počáteční hodnoty. Win32 `CONTEXT` struktura obsahuje hodnoty registrů procesoru a představuje stav procesoru v určitém okamžiku v čase.  
+ [in] Ukazatel na Win32 `CONTEXT` strukturou, který se používá k procházení zásobníku počáteční hodnoty. Win32 `CONTEXT` struktura obsahuje hodnoty registrů procesoru a představuje stav procesoru v určitém okamžiku v čase.  
   
- Počáteční hodnoty pomáhá určit, kde začít procházení zásobníku, pokud je horní části zásobníku kód pomocného objektu nespravované; modulu CLR počáteční hodnoty, jinak hodnota se ignoruje. Je nutné zadat počáteční hodnoty pro asynchronní procházení. Pokud byste synchronní procházení, je nutné žádné počáteční hodnoty.  
+ Počáteční hodnotu pomáhá určit, kde začít procházení zásobníku, pokud horní části zásobníku je kód pomocného objektu nespravovaného; CLR v opačném případě se ignoruje počáteční hodnotu. Základní hodnota musí být dodány pro asynchronní procházení. Pokud provádíte synchronní procházení, je nezbytné žádné počáteční hodnoty.  
   
- `context` Parametr je platný pouze v případě, že byla předána příznak COR_PRF_SNAPSHOT_CONTEXT `infoFlags` parametr.  
+ `context` Parametr je platný jenom v případě, že byla předána COR_PRF_SNAPSHOT_CONTEXT příznak `infoFlags` parametru.  
   
  `contextSize`  
- [v] Velikost `CONTEXT` strukturu, která odkazuje `context` parametr.  
+ [in] Velikost `CONTEXT` strukturu, která odkazuje `context` parametru.  
   
 ## <a name="remarks"></a>Poznámky  
- Předání hodnotou null pro `thread` vypočítá snímek aktuální vlákno. Snímky lze pořizovat další podprocesy pouze v případě, že cíl vlákno je pozastaveno v době.  
+ Předání hodnotou null pro `thread` vrací snímek aktuální vlákno. Snímky lze pouze v případě, že cílové vlákno je pozastaveno v době pořizovat z jiných vláken.  
   
- Profileru chce provede zásobníku, volá `DoStackSnapshot`. Před modulu CLR vrátí z tohoto volání, zavolá váš `StackSnapshotCallback` několikrát, jednou pro každý spravovaný rámce (nebo spuštění nespravované rámce) v zásobníku. Pokud nedojde k nespravované rámce, můžete musí provede je sami.  
+ Pokud profiler chce procházení zásobníku, volá `DoStackSnapshot`. Předtím, než se z tohoto volání vrátí hodnotu CLR, zavolá váš `StackSnapshotCallback` několikrát, jednou pro každé spravované rámce (nebo spuštění nespravované rámce) v zásobníku. Vyskytne nespravované snímků můžete musí si je sami.  
   
- Pořadí, ve kterém je proveden vaši firmu zásobníku je opakem jak snímky byly vloženy do zásobníku: poslední list (poslední nabídnutých) snímek první, hlavní (první nabídnutých) snímku.  
+ Pořadí, ve kterém je šel zásobníku je opakem jak snímky byly vloženy do zásobníku: listové poslední (naposledy vloženo) rámce první, hlavní (první vloženo) rámce.  
   
- Další informace o tom, jak program profileru vás spravované zásobníky najdete v tématu [profileru zásobníku proti v rozhraní .NET Framework 2.0: základy a kromě](http://go.microsoft.com/fwlink/?LinkId=73638).  
+ Další informace o tom, jak programovat profiler, aby procházel spravované zásobníky, viz [Profiler procházení zásobníku v rozhraní .NET Framework 2.0: základy a další](https://go.microsoft.com/fwlink/?LinkId=73638).  
   
  Procházení zásobníku může být synchronní nebo asynchronní, jak je popsáno v následujících částech.  
   
-## <a name="synchronous-stack-walk"></a>Procházení synchronní zásobníku  
- Procházení zásobníku synchronní zahrnuje proti zásobník aktuálního vlákna v reakci na zpětné volání. Nevyžaduje se synchronizace replik indexů nebo přechodem do režimu spánku.  
+## <a name="synchronous-stack-walk"></a>Synchronní zásobníku  
+ Procházení zásobníku synchronní zahrnuje procházení zásobníku aktuální vlákno v reakci na zpětné volání. Nevyžaduje se synchronizace replik indexů nebo pozastavení.  
   
- Provedete synchronní, při volání v reakci na CLR volání jedné z vaší profileru [icorprofilercallback –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) (nebo [icorprofilercallback2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)) volání metody, `DoStackSnapshot` vás zásobník aktuální vlákno. To je užitečné, když chcete zobrazit, co se zásobníkem vypadá na oznámení, jako [icorprofilercallback::objectallocated –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md). Stačí zavolat `DoStackSnapshot` uvnitř vaší `ICorProfilerCallback` metodu a předá hodnotu null v `context` a `thread` parametry.  
+ Provedení synchronního volání, když v reakci na volání jedné z váš profiler CLR [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) (nebo [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)) volání metody, `DoStackSnapshot` k procházení zásobníku aktuální vlákno. To je užitečné, pokud chcete zjistit, jak zásobníku funguje na oznámení, jako [ICorProfilerCallback::ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md). Stačí zavolat `DoStackSnapshot` v rámci vaší `ICorProfilerCallback` předejte null v `context` a `thread` parametry.  
   
-## <a name="asynchronous-stack-walk"></a>Procházení asynchronní zásobníku  
- Procházení zásobníku asynchronní zahrnuje procházení zásobníku jiné vlákno nebo procházení zásobníku aktuální vlákno, není v odpovědi na zpětné volání, ale podle weby ukazatel instrukce aktuální vlákno. Asynchronní procházení vyžaduje počáteční hodnoty, pokud je horní části zásobníku nespravovaného kódu, který není součástí platformy vyvolání (kódu PInvoke) nebo volání COM, ale kód pomocného objektu CLR sám sebe. Kód, který nemá kolekci kompilování nebo paměti za běhu (JIT) je například kód pomocného objektu.  
+## <a name="asynchronous-stack-walk"></a>Asynchronní zásobníku  
+ Procházení zásobníku asynchronní zahrnuje procházení zásobníku jiném vlákně, nebo procházení zásobníku aktuálního vlákna, nejsou v reakci na zpětné volání, ale můžete se zneužitím ukazatele na instrukci aktuální vlákno. Asynchronní procházení vyžaduje počáteční hodnoty, pokud je horní části zásobníku nespravovaný kód, který není součástí platformy pro vyvolání (PInvoke) nebo volání COM, ale kód pomocného objektu v prostředí CLR samotný. Například kód, který nemá just-in-time (JIT) kompilaci nebo uvolňování paměti kolekce je kód pomocného objektu.  
   
- Získáte počáteční hodnoty tak, že přímo pozastavení vláken cíl a proti jeho zásobníku sami, vyhledejte nejhornější spravovat rámce. Po cíl vlákno je pozastaveno, získáte aktuální kontext registrace vlákno cíl. Dále určit, zda kontext registrace odkazuje na nespravovaný kód voláním [icorprofilerinfo::getfunctionfromip –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctionfromip-method.md) – vrátí-li `FunctionID` rovná nule, je rámečku nespravovaného kódu. Nyní provede v zásobníku, dokud nepřejdete na první spravované rámce, pak vypočítat kontext počáteční hodnoty na základě kontextu registrace pro tento snímek.  
+ Získáte základní hodnota tak, že přímo pozastavení cílové vlákno a procházení svůj zásobník sami, dokud nenajdete horní spravované rámce. Po cílové vlákno je pozastaveno, získáte aktuální kontext register cílovým vláknem. V dalším kroku určete, zda kontext registru odkazuje na nespravovaný kód voláním [icorprofilerinfo::getfunctionfromip –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctionfromip-method.md) – vrátí-li `FunctionID` rovná nule, rámec je příkaz nespravovaného kódu. Nyní procházení zásobníku až do dosažení první spravovaný snímek a pak vypočítá kontextu počáteční hodnoty na základě kontextu registru pro tento rámec.  
   
- Volání `DoStackSnapshot` s váš kontext počáteční hodnoty zahájíte procházení asynchronní zásobníku. Pokud nezadáte počáteční hodnoty, `DoStackSnapshot` může přeskočit spravované rámce v horní části zásobníku a proto vám poskytne procházení zásobníku neúplné. Pokud zadáte počáteční hodnoty, musí odkazovat na kompilována nebo Native Image Generator (Ngen.exe)-generovaného kódu; v opačném `DoStackSnapshot` vrátí kód chyby CORPROF_E_STACKSNAPSHOT_UNMANAGED_CTX.  
+ Volání `DoStackSnapshot` s počáteční kontext začít asynchronní zásobníku. Pokud nezadáte počáteční hodnoty, `DoStackSnapshot` může přeskočit spravované rámce v horní části zásobníku a v důsledku toho vám poskytne procházení zásobníku neúplné. Pokud zadáte základní hodnota, musí odkazovat na zkompilovaný pomocí kompilátoru JIT nebo Native Image Generator (Ngen.exe) – generovaného kódu; v opačném případě `DoStackSnapshot` vrátí kód chyby, CORPROF_E_STACKSNAPSHOT_UNMANAGED_CTX.  
   
- Asynchronní procházení zásobníku můžete snadno způsobit zablokování nebo přistupovat k narušení, pokud jste postupovali podle těchto pokynů:  
+ Asynchronní zásobníku může snadno způsobit zablokování nebo přistupovat k narušení, pokud budete postupovat podle následujících pokynů:  
   
--   Po pozastavení přímo vláken, mějte na paměti, že pouze vlákno, které má nebude nikdy spuštěn spravovaného kódu můžete pozastavit jiné vlákno.  
+-   Při přímo pozastavit vlákna, mějte na paměti, že pouze vlákno, které dosud nespustil spravovaný kód může pozastavit jiné vlákno.  
   
--   Vždy blok ve vaší [icorprofilercallback::threaddestroyed –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threaddestroyed-method.md) zpětného volání až do dokončení daném vláknu procházení zásobníku.  
+-   Vždycky blokovat vaší [icorprofilercallback::threaddestroyed –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threaddestroyed-method.md) zpětné volání, dokud se nedokončí procházení zásobníku bylo vlákno.  
   
--   Podržte zámek není, pokud vaše profileru zavolá funkci CLR, které můžete aktivovat uvolňování paměti. To znamená není držitelem zámek Pokud vlastnícím vlákno může provádět volání, která aktivuje uvolnění paměti.  
+-   Při volání profileru do CLR funkci, která může spustit uvolňování paměti není držitelem zámku. To znamená, že není držitelem zámku Pokud vlastnící vláken činí volání, které spustí uvolnění.  
   
- K dispozici je také riziko vzájemného zablokování při volání `DoStackSnapshot` z vlákno, které vaše profileru vytvořil, aby můžete projde zásobník samostatný cílový vlákna. První vlákno, které jste vytvořili vstupuje do určité `ICorProfilerInfo*` metody (včetně `DoStackSnapshot`), modul CLR provede inicializaci specifické pro CLR v daném vláknu podle vláken. Pokud vaše profileru pozastavilo vlákno cíl jejichž zásobníku se pokoušíte provede, a pokud daném vláknu cíl se stalo s vlastní zámek potřebné k provedení této inicializace vlákno, dojde k zablokování. Abyste předešli této zablokování, provést počáteční volání do `DoStackSnapshot` z vaší profileru vytvořit vlákno vás samostatné cíle přístup z více vláken, ale není pozastavit nejprve vlákno cíl. Tento počáteční volání zajišťuje, zda inicializace vlákno dokončí bez vzájemného zablokování. Pokud `DoStackSnapshot` úspěšné a alespoň jeden snímek sestavy po tomto okamžiku je bezpečné pro přístup z tohoto profileru vytvořit vlákno pozastavit všechny cílové přístup z více vláken a volání `DoStackSnapshot` projde zásobník daném vláknu cíl.  
+ K dispozici je také riziku zablokování při volání `DoStackSnapshot` z vlákna, které váš profiler byl vytvořen tak, aby vás provedou zásobníku vlákna samostatný cílový. První vlákno, které jste vytvořili přejde do určité `ICorProfilerInfo*` metod (včetně `DoStackSnapshot`), modul CLR provede inicializaci jednotlivých vláken, specifická pro modul CLR v daném vláknu. Pokud váš profiler byla pozastavena cílové vlákno, jehož zásobníku se snažíte procházení a vlastnit zámek potřebný k provedení této vlákno inicializace došlo k této cílové vlákno, dojde k zablokování. Abyste zabránili tomuto vzájemnému zablokování, provést počáteční volání do `DoStackSnapshot` z vašeho vlákna profiler vytvořeného procesem samostatné cílové vlákno, ale ne pozastavit nejprve cílové vlákno. Tento počáteční volání zajišťuje, vlákno inicializace dokončit bez zablokování. Pokud `DoStackSnapshot` je úspěšné a aspoň jeden snímek sestavy od této chvíle bude bezpečný pro toto vlákno profileru vytvořili pozastavit všechny cílové vlákno a volání `DoStackSnapshot` procesem zásobníku bylo cílové vlákno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   

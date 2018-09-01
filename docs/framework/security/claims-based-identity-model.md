@@ -1,18 +1,18 @@
 ---
-title: Model na základě deklarace Identity
+title: Model deklarovaných identit
 ms.date: 03/30/2017
 ms.assetid: 4a96a9af-d980-43be-bf91-341a23401431
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: dadcc397783e003574d417aa6253ebc561ed28db
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 169a16126df395eabecfa969f63a004b9e27cb41
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33398892"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385339"
 ---
-# <a name="claims-based-identity-model"></a>Model na základě deklarace Identity
-Při vytváření aplikací pracujících s deklaracemi je identita uživatele ve vaší aplikaci reprezentována jako sada deklarací. Jedna deklarace může být uživatelské jméno, jiné můžou být e-mailovou adresu. Princip spočívá v tom, že je nakonfigurován externí systém identit, který vaší aplikaci poskytuje vše, co pro každou žádost potřebuje o uživateli vědět, a současně pomocí kryptografických metod zaručuje, že přijatá data identity pocházejí z důvěryhodného zdroje.  
+# <a name="claims-based-identity-model"></a>Model deklarovaných identit
+Při vytváření aplikací pracujících s deklaracemi je identita uživatele ve vaší aplikaci reprezentována jako sada deklarací. Deklarace může být jméno uživatele, jiné můžou být e-mailovou adresu. Princip spočívá v tom, že je nakonfigurován externí systém identit, který vaší aplikaci poskytuje vše, co pro každou žádost potřebuje o uživateli vědět, a současně pomocí kryptografických metod zaručuje, že přijatá data identity pocházejí z důvěryhodného zdroje.  
   
  Používání tohoto modelu nesmírně zjednodušuje jednotné přihlašování a aplikace již nemusí zodpovídat za následující činnosti:  
   
@@ -28,19 +28,19 @@ Při vytváření aplikací pracujících s deklaracemi je identita uživatele 
   
  Toto téma poskytuje následující informace:  
   
--   [Úvod do založené na deklaracích Identity](../../../docs/framework/security/claims-based-identity-model.md#BKMK_1)  
+-   [Představení deklarovaných identit](../../../docs/framework/security/claims-based-identity-model.md#BKMK_1)  
   
--   [Základní scénáře pro Model na základě deklarace Identity](../../../docs/framework/security/claims-based-identity-model.md#BKMK_2)  
+-   [Základní scénář pro Model deklarovaných identit](../../../docs/framework/security/claims-based-identity-model.md#BKMK_2)  
   
 <a name="BKMK_1"></a>   
 ## <a name="introduction-to-claims-based-identity"></a>Představení deklarovaných identit  
  Následující terminologie a koncepce vám pomohou pochopit tuto novou architekturu identit.  
   
 ### <a name="identity"></a>Identita  
- Pro účely popisující programovací model Windows Identity Foundation (WIF) používáme termín "identity" představují sadu atributů, které popisují uživatele nebo některé jiné entity v systému, který chcete zabezpečit.  
+ Pro účely popisu programovacího modelu Windows Identity Foundation (WIF) budeme termín "identita" používat k reprezentaci sady atributů popisujících uživatele nebo některé jiné entity v systému, kterou chcete zabezpečit.  
   
 ### <a name="claim"></a>Deklarace  
- Vezměte v úvahu deklarace identity jako část identity informace, jako je například název, e-mailovou adresu, stáří, členství v roli organizační jednotky prodej. Čím více deklarací vaše aplikace obdrží, tím více toho budete o uživateli vědět. Asi vás zajímá, proč toto nastavení se nazývá "deklarace identity," místo "atributy," jak se běžně používá v popisující podnikového adresáře. Důvod souvisí se způsobem doručení. V tomto modelu nevyhledává aplikace atributy uživatele v adresáři. Namísto toho uživatel poskytuje aplikaci deklarace a aplikace tyto deklarace zkoumá. Každou deklaraci vystavuje vystavitel, přičemž deklarace má stejnou důvěryhodnost jako její vystavitel. Deklarace od řadiče domény vaší společnosti má například větší důvěryhodnost než deklarace od samotného uživatele. WIF představuje deklarací identity <xref:System.Security.Claims.Claim> typu, který má <xref:System.Security.Claims.Claim.Issuer%2A> vlastnost, která umožňuje zjistit, kdo danou deklaraci vystavil.  
+ Přemýšlejte o deklaraci identity jako část informací o identitě, jako je jméno, e-mailová adresa, věk, členství v roli prodej. Čím více deklarací vaše aplikace obdrží, tím více toho budete o uživateli vědět. Asi vás zajímá Proč se označují jako "deklarace" místo "atributy" jak se obvykle používá při popisu podnikových adresářových. Důvod souvisí se způsobem doručení. V tomto modelu nevyhledává aplikace atributy uživatele v adresáři. Namísto toho uživatel poskytuje aplikaci deklarace a aplikace tyto deklarace zkoumá. Každou deklaraci vystavuje vystavitel, přičemž deklarace má stejnou důvěryhodnost jako její vystavitel. Deklarace od řadiče domény vaší společnosti má například větší důvěryhodnost než deklarace od samotného uživatele. Technologie WIF reprezentuje deklarace pomocí <xref:System.Security.Claims.Claim> typ, který má <xref:System.Security.Claims.Claim.Issuer%2A> vlastnost, která umožňuje zjistit, kdo tuto deklaraci vystavil.  
   
 ### <a name="security-token"></a>Token zabezpečení  
  Spolu s žádostí poskytuje uživatel vaší aplikaci sadu deklarací. Ve webové službě se tyto deklarace přenášejí v záhlaví zabezpečení obálky SOAP. Ve webové aplikaci využívající prohlížeč přicházejí deklarace z prohlížeče uživatele prostřednictvím metody POST protokolu HTTP a mohou být následně uloženy do mezipaměti v souboru cookie, pokud aplikace potřebuje pracovat s relacemi. Bez ohledu na způsob jejich doručení musejí být deklarace serializovány, a právě zde se uplatňují tokeny zabezpečení. Token zabezpečení je serializovaná sada deklarací, kterou digitálně podepsala vystavující autorita. Podpis je důležitý, protože poskytuje záruku, že vám uživatel jednoduše neposlal balík deklarací, které sám vytvořil. V situacích, kdy postačuje nízká úroveň zabezpečení a používání kryptografie je zbytečné nebo nevhodné, můžete používat nepodepsané tokeny, ale toto téma tento scénář nepopisuje.  
@@ -53,10 +53,10 @@ Při vytváření aplikací pracujících s deklaracemi je identita uživatele 
  Vystavující autorita, kterou si zvolíte, hraje ústřední roli ve vašem řešení identity. Tím, že ověřování přesunete mimo svou aplikaci a budete se namísto toho spoléhat na deklarace, předáváte zodpovědnost této autoritě a žádáte ji, aby uživatele ověřovala za vás.  
   
 ### <a name="security-token-service-sts"></a>Služba tokenů zabezpečení (STS)  
- Služba tokenů zabezpečení (STS) je komponenta služby, která vytváří, podepisuje a vystavuje tokeny zabezpečení v souladu s protokoly WS-Trust a WS-Federation. Implementace těchto protokolů vyžaduje velké množství práce, ale technologie WIF odvádí všechnu tuto práci za vás. Díky tomu je zprovoznění služby STS velmi snadné, i když nejste odborníkem na tyto protokoly. Předem připravené služby tokenů zabezpečení můžete použít jako [Active Directory® Federation Services (AD FS) 2.0](http://go.microsoft.com/fwlink/?LinkID=247516), cloudové služby tokenů zabezpečení, jako [služby Windows Azure přístup k řízení (ACS)](http://go.microsoft.com/fwlink/?LinkID=247517), nebo, pokud chcete vydávat vlastní tokeny nebo zadejte vlastní ověřování nebo autorizaci, můžete vytvořit vlastní vlastní službu tokenů zabezpečení pomocí WIF. Technologie WIF umožňuje snadno vytvořit vlastní službu STS.  
+ Služba tokenů zabezpečení (STS) je komponenta služby, která vytváří, podepisuje a vystavuje tokeny zabezpečení v souladu s protokoly WS-Trust a WS-Federation. Implementace těchto protokolů vyžaduje velké množství práce, ale technologie WIF odvádí všechnu tuto práci za vás. Díky tomu je zprovoznění služby STS velmi snadné, i když nejste odborníkem na tyto protokoly. Předem připravené služby tokenů zabezpečení můžete použít například [Active Directory® Federation Services (AD FS) 2.0](https://go.microsoft.com/fwlink/?LinkID=247516), cloudové služby STS, jako [Windows Azure Access Control Service (ACS)](https://go.microsoft.com/fwlink/?LinkID=247517), nebo pokud chcete vystavovat vlastní tokeny nebo zadejte vlastní ověřování nebo autorizaci, můžete vytvořit vlastní vlastní službu STS pomocí technologie WIF. Technologie WIF umožňuje snadno vytvořit vlastní službu STS.  
   
 ### <a name="relying-party-application"></a>Aplikace předávající strany  
- Když vytváříte aplikaci, která se spoléhá na deklarace, vytváříte aplikaci předávající strany. Synonyma pro RP zahrnují "deklaracemi identity aplikace" a "aplikace založené na deklaracích identity". Předávající stranou mohou být webové aplikace i webové služby. Aplikace předávající strany používá tokeny vystavené službou STS a extrahuje z tokenů deklarace, které používá pro úkoly související s identitami. Technologie WIF nabízí funkce, které pomáhají vytvářet aplikace předávající strany.  
+ Když vytváříte aplikaci, která se spoléhá na deklarace, vytváříte aplikaci předávající strany. Synonyma pro předávající Stranu patří "s deklaracemi identity aplikace" a "aplikace nezaložené na deklaracích". Předávající stranou mohou být webové aplikace i webové služby. Aplikace předávající strany používá tokeny vystavené službou STS a extrahuje z tokenů deklarace, které používá pro úkoly související s identitami. Technologie WIF nabízí funkce, které pomáhají vytvářet aplikace předávající strany.  
   
 ### <a name="standards"></a>Standardy  
  Pro zajištění vzájemné funkční spolupráce používá předešlý scénář několik standardů WS-*. Zásady jsou načítány s použitím standardu WS-MetadataExchange a samotná struktura zásad musí odpovídat specifikaci WS-Policy. Služba STS zveřejňuje koncové body implementující specifikaci WS-Trust, která popisuje, jak žádat o tokeny zabezpečení a jak je přijímat. Většina služeb STS dnes vystavuje tokeny, které jsou formátovány pomocí jazyka SAML (Security Assertion Markup Langauge). Jazyk SAML je slovník XML s podporou v celém odvětví, který umožňuje reprezentovat deklarace tak, aby byla zajištěna vzájemná funkční spolupráce. V případě používání více platforem také umožňuje komunikovat se službou STS na zcela jiné platformě a dosáhnout jednotného přihlašování napříč všemi aplikacemi bez ohledu na platformu.  

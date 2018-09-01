@@ -2,22 +2,23 @@
 title: Přiřazování zpráv metodám podle elementu těla
 ms.date: 03/30/2017
 ms.assetid: f64a3c04-62b4-47b2-91d9-747a3af1659f
-ms.openlocfilehash: a59f639fc0f1adad48bfda5fd8105340ac004cef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 449c153092d80bb457a2059b80158ea665bfc645
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43396375"
 ---
 # <a name="dispatch-by-body-element"></a>Přiřazování zpráv metodám podle elementu těla
-Tento příklad znázorňuje způsob implementace alternativní algoritmus pro přiřazení k operacím příchozí zprávy.  
+Tento příklad ukazuje, jak implementovat alternativní algoritmus pro přiřazení k operacím příchozí zprávy.  
   
- Ve výchozím nastavení vybere dispečera modelu služby příslušné zpracování metodu pro příchozí zprávy založené na protokolu WS-Addressing zprávy "Action" záhlaví nebo ekvivalentní informace v požadavku HTTP SOAP.  
+ Ve výchozím nastavení, vybere dispečer modelu služby příslušné zpracování metody pro příchozí zprávy podle zprávy WS-Addressing "Action" záhlaví nebo ekvivalentní informace v požadavku SOAP protokolu HTTP.  
   
- Některé SOAP 1.1 webových služeb zásobníky, které neodpovídají WS-I Basic Profile 1.1 pokyny není odesílání zpráv na základě v identifikátoru URI akce, ale spíš podle XML kvalifikovaný název první prvek uvnitř těla protokolu SOAP. Tyto balíčky na straně klienta, může odesílat zprávy s prázdná nebo libovolný HTTP SoapAction hlavičky, která byla povolena specifikací SOAP 1.1.  
+ Některé SOAP 1.1 webových služeb balíčky, které se neřídí WS-I Basic Profile 1.1 pokyny není odeslání zprávy založené na identifikátor URI akce, ale spíše založené na XML kvalifikovaný název prvního prvku uvnitř těla protokolu SOAP. Tyto balíčky na straně klienta, může odesílat zprávy pomocí prázdný nebo libovolné záhlaví HTTP SoapAction, které bylo povoleno ve specifikaci protokolu SOAP 1.1.  
   
- Chcete-li změnit způsob, jakým se odesílají zprávy do metod, implementuje vzorku <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> rozšiřitelnost rozhraní na `DispatchByBodyElementOperationSelector`. Tato třída vybere operace založené na první prvek textu zprávy.  
+ Chcete-li změnit způsob, jakým jsou zprávy odesílány metodám, ukázka implementuje <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> rozšiřitelnost rozhraní `DispatchByBodyElementOperationSelector`. Tato třída vybere operace založené na první prvek těla zprávy.  
   
- Konstruktoru třídy očekává slovník naplněný dvojici `XmlQualifiedName` a řetězce, kterým kvalifikované názvy označení názvu prvního podřízeného těla protokolu SOAP a řetězce znamenat odpovídající název operace. `defaultOperationName` Je název operace, která přijímá všechny zprávy, které nelze porovnání tohoto slovníku:  
+ Konstruktor třídy očekává, že vyplní dvojice slovník `XmlQualifiedName` a řetězce, kterým kvalifikované názvy odděluje název prvního podřízeného těla protokolu SOAP a řetězce označují odpovídající název operace. `defaultOperationName` Je název operace, která přijímá všechny zprávy, které nejde spárovat proti tomuto slovníku:  
   
 ```  
 class DispatchByBodyElementOperationSelector : IDispatchOperationSelector  
@@ -32,9 +33,9 @@ class DispatchByBodyElementOperationSelector : IDispatchOperationSelector
     }  
 ```  
   
- <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> implementace jsou velmi jednoduché, jako je pouze jednu metodu na rozhraní pro sestavení: <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A>. Úloha tato metoda je kontrola příchozí zprávy a vrátí řetězec, který se rovná názvu metody na kontrakt služby pro aktuální koncový bod.  
+ <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> implementace jsou velmi jednoduché k sestavení, protože existuje jenom jedna metoda v rozhraní: <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A>. Úloha této metody je ke kontrole příchozích zpráv a vrátí řetězec, který se rovná název metody u kontraktu služby pro aktuální koncový bod.  
   
- V této ukázce získá selektor operace <xref:System.Xml.XmlDictionaryReader> pro příchozí zprávy je text použití <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A>. Tato metoda již umisťuje čtečky na prvním podřízeným objektem těla zprávy, tak, aby se pro získání aktuálního elementu název a identifikátor URI oboru názvů a zkombinovat do dostatečná `XmlQualifiedName` , pak se používá pro vyhledávání odpovídající operaci provést z slovník držené selektor operace.  
+ V tomto příkladu získá selektor operace <xref:System.Xml.XmlDictionaryReader> pro příchozí zprávy textu v nástrojích <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A>. Tato metoda čtecí modul již umístí na prvním podřízeným těla zprávy tak, aby je dostatečné pro získání názvu a oboru názvů identifikátoru URI aktuálního elementu a zkombinujte je do `XmlQualifiedName` , která se pak použije pro vyhledávání odpovídající operace slovník drží selektor operace.  
   
 ```  
 public string SelectOperation(ref System.ServiceModel.Channels.Message message)  
@@ -54,7 +55,7 @@ public string SelectOperation(ref System.ServiceModel.Channels.Message message)
 }  
 ```  
   
- Přístup k tělo zprávy s <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> nebo některou z metod, které poskytují přístup k obsahu tělo zprávy způsobí, že zpráva byla označena jako "číst", což znamená, že zprávy je neplatný pro další zpracování. Proto selektor operace vytvoří kopii příchozí zprávy s metodou vidět v následujícím kódu. Protože pozice čtenáře nebylo změněno při kontrole, může být odkazován nově vytvořenou zprávu do které vlastnosti zprávy a záhlaví zprávy jsou také zkopírovali, což vede přesný klon na původní zprávu o:  
+ Přístup k textu zprávy s <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> nebo některou z metod, které poskytují přístup k obsahu těla zprávy způsobí, že zpráva, která má být označený jako "čtení", což znamená, že zpráva není platná pro další zpracování. Selektor operace proto vytvoří kopii příchozí zprávy s metodou je znázorněno v následujícím kódu. Protože při kontrole nedošlo ke změně pozice čtenáře, lze odkazovat pomocí nově vytvořeného zpráv ke kterému vlastnosti zprávy a záhlaví zpráv jsou zkopírovány také, což vede k přesné klon původní zprávy:  
   
 ```  
 private Message CreateMessageCopy(Message message,   
@@ -68,13 +69,13 @@ private Message CreateMessageCopy(Message message,
 ```  
   
 ## <a name="adding-an-operation-selector-to-a-service"></a>Přidání selektor operace služby  
- Selektory operace odesílání služby jsou rozšíření dispečera Windows Communication Foundation (WCF). Pro výběr metody zpětného volání kanál duplexní kontrakty, existují také selektory operace klienta, které fungují velmi podobně, jako jsou zde popsané selektory operace odesílání, ale které nejsou výslovně zahrnuty v této ukázce.  
+ Selektory operaci odeslání služby jsou rozšíření pro dispečera Windows Communication Foundation (WCF). Pro výběr metody zpětného volání kanál duplexní kontrakty, existují také selektory provozu klienta, které fungují velmi podobně jako selektory operaci odeslání je zde popsáno, ale která nejsou výslovně uvedena v této ukázce.  
   
- Jako většina rozšíření model služeb jsou selektory operace odesílání přidány do dispečera pomocí chování. A *chování* je objekt konfigurace, která přidá jeden nebo více rozšíření odesílání runtime (nebo modul runtime klienta) nebo v opačném případě se změní jeho nastavení.  
+ Jako většina rozšíření modelů služeb se přidají selektory operaci odeslání do dispečera pomocí chování. A *chování* je objekt konfigurace, která přidá jeden nebo více rozšíření modulu runtime odeslání (nebo modul runtime klienta) nebo v opačném případě se změní jeho nastavení.  
   
- Vzhledem k tomu, že selektory operace oboru kontrakt, příslušné chování k implementaci tady je <xref:System.ServiceModel.Description.IContractBehavior>. Protože rozhraní je implementováno na <xref:System.Attribute> odvozené třídy jak je znázorněno v následujícím kódu, chování deklarativně přidáním jakékoli servisní smlouvou. Vždy, když <xref:System.ServiceModel.ServiceHost> je otevřen a odesílání runtime vychází, všechny chování nalezena jako atributy na smlouvy, operace a implementací služby nebo jako element v konfiguraci služby se automaticky přidá a následně se zobrazí výzva k přispívat rozšíření nebo změnit výchozí konfiguraci.  
+ Vzhledem k tomu, že selektory operace kontraktu oboru, je odpovídající chování k implementaci tady <xref:System.ServiceModel.Description.IContractBehavior>. Protože rozhraní je implementováno v <xref:System.Attribute> odvozené třídy jak je znázorněno v následujícím kódu, chování lze deklarativně přidat do jakékoli kontrakt služby. Pokaždé, když se <xref:System.ServiceModel.ServiceHost> je otevřený a sestaven modul runtime odeslání, najít všechny chování jako atributy u kontraktů, operace a implementací služby nebo jako prvek v konfiguraci služby se automaticky přidá a následně vyzve k přispívat rozšíření nebo změnit výchozí konfiguraci.  
   
- Jako stručný výtah následující výpis kódu se zobrazí pouze implementace metody <xref:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior%2A>, který ovlivňuje změny konfigurace pro dispečera v této ukázce. Jiné metody nezobrazují, protože vracejí volajícímu bez jakékoli pracuje.  
+ Pro zkrácení, následující úryvek kódu se zobrazují jenom implementaci metody <xref:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior%2A>, což ovlivňuje změny konfigurace pro dispečera v této ukázce. Jiné metody se nezobrazují, vzhledem k tomu, aniž by každé dílo vrácení volajícímu.  
   
 ```  
 [AttributeUsage(AttributeTargets.Class|AttributeTargets.Interface)]  
@@ -85,11 +86,11 @@ class DispatchByBodyElementBehaviorAttribute : Attribute, IContractBehavior
     // public void Validate(...)  
 ```  
   
- Nejdřív <xref:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior%2A> implementace nastaví slovník vyhledávání pro selektor operace podle iterování přes <xref:System.ServiceModel.Description.OperationDescription> elementů v koncový bod služby <xref:System.ServiceModel.Description.ContractDescription>. Potom se každý popis operace prozkoumá přítomnost `DispatchBodyElementAttribute` chování, provádění <xref:System.ServiceModel.Description.IOperationBehavior> , je také definován v této ukázce. Když je tato třída také chování, je pasivní a není aktivně přispívat změny konfigurace modulu runtime odesílání. Všechny její metody vrátí volajícímu bez nutnosti převádět všechny akce. Operace chování existuje pouze tak, aby byla metadata potřebná pro nové odesílání mechanismus, konkrétně kvalifikovaný název prvku body na jejichž výskyt operace je vybrána, může být spojen s příslušnými operacemi.  
+ Nejprve je potřeba <xref:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior%2A> implementace vyhledávacího slovníku za selektor operace nastaví pomocí provádí iterace <xref:System.ServiceModel.Description.OperationDescription> prvky v koncovém bodě služby <xref:System.ServiceModel.Description.ContractDescription>. Potom se každý popis operace prozkoumá přítomnost `DispatchBodyElementAttribute` chování, implementace <xref:System.ServiceModel.Description.IOperationBehavior> , který je také definováno v této ukázce. Tato třída je také chování, je pasivní činnost a není aktivně přispět změny konfigurace modulu runtime odeslání. Všechny jeho metody vracet volajícímu bez jakékoli akce. Chování operace existuje pouze tak, aby byla metadata potřebná pro nové odeslání mechanismus, konkrétně kvalifikovaný název prvku textu na jehož výskyt operace zaškrtnuto, mohou být spojeny s příslušné operace.  
   
- Pokud je nalezen takové chování, dvojici hodnota vytvořené z XML úplný název (`QName` vlastnosti) a název operace (`Name` vlastnost) se přidá do slovníku.  
+ Pokud takové chování není nalezen, hodnota pár vytvořené z XML kvalifikovaný název (`QName` vlastnost) a název operace (`Name` vlastnost) se přidá do slovníku.  
   
- Po zaplnění slovníku, a nové `DispatchByBodyElementOperationSelector` je vytvořená pomocí těchto informací a nastavena jako selektor operace odesílání modulu runtime:  
+ Po naplnění slovníku nový `DispatchByBodyElementOperationSelector` je vytvořen pomocí těchto informací a nastavit jako selektor operace odeslání Runtime:  
   
 ```  
 public void ApplyDispatchBehavior(ContractDescription contractDescription, ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.DispatchRuntime dispatchRuntime)  
@@ -115,12 +116,12 @@ public void ApplyDispatchBehavior(ContractDescription contractDescription, Servi
 }  
 ```  
   
-## <a name="implementing-the-service"></a>Implementace služby  
- Chování implementována v této ukázce přímo ovlivňuje jak přenosu interpretovat a zpráv odeslaných, což je funkce kontrakt služby. Chování v důsledku toho musí deklarovat na úrovni kontraktu služby v implementaci žádné služby, který se tedy rozhodne použít ho.  
+## <a name="implementing-the-service"></a>Implementace této služby  
+ Chování, které jsou implementovány v této ukázce přímo ovlivní jak přenosu interpretován a zpráv odeslaných, což je funkce kontraktu služby. V důsledku toho by měly být deklarovány chování na úrovni kontraktu služby v jakékoli implementaci služby, který vybírá jeho použití.  
   
- Službu ukázkový projekt se vztahuje `DispatchByBodyElementBehaviorAttribute` smlouvy chování `IDispatchedByBody` služby kontrakt a štítky z těchto dvou operací `OperationForBodyA()` a `OperationForBodyB()` s `DispatchBodyElementAttribute` operaci chování. Po otevření hostitele služby pro službu, která implementuje tento kontrakt tato metadata převzata Tvůrce dispečera jak bylo popsáno dříve.  
+ Služba projektu vzorku se vztahuje `DispatchByBodyElementBehaviorAttribute` smlouvy chování `IDispatchedByBody` smlouvy a popisky z těchto dvou operací služby `OperationForBodyA()` a `OperationForBodyB()` s `DispatchBodyElementAttribute` chování operace. Při otevření hostitele služby pro službu, která implementuje tento kontrakt tato metadata je převzata tvůrcem dispečer jak bylo popsáno dříve.  
   
- Protože selektor operace odešle zprávu výhradně podle elementu těla zprávy a ignoruje "Action", je třeba, aby říct modul runtime není zkontroluje hlavičky "Action" na vrácený odpovědi přiřazením zástupný znak "*" k `ReplyAction` vlastnost <xref:System.ServiceModel.OperationContractAttribute>. Kromě toho je potřeba mít výchozí operaci, která má vlastnost "Action" nastavená na zástupný znak "\*". Výchozí operaci přijímá všechny zprávy, které nelze odeslat a nemá `DispatchBodyElementAttribute`:  
+ Protože modulu pro výběr operace odešle výhradně podle elementu těla zprávy a ignoruje "Action", je potřeba zjistit, modul runtime není ke kontrole "Action" záhlaví odpovědi vrácené přiřazením zástupný znak "*" na `ReplyAction` vlastnost <xref:System.ServiceModel.OperationContractAttribute>. Kromě toho je potřeba mít výchozí operaci, která má vlastnost "Action" nastavenou na zástupný znak "\*". Výchozí operaci přijímá všechny zprávy, které se nedají odbavovat a nemá `DispatchBodyElementAttribute`:  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples"),  
@@ -138,12 +139,12 @@ public interface IDispatchedByBody
 }  
 ```  
   
- Implementace služby ukázka je jednoduchá. EVERY – metoda zabalí přijatou zprávu do zprávu odpovědi a vrátí ji zpět do klienta.  
+ Ukázková implementace služby je jednoduché. EVERY – metoda zabalí do zprávy s odpovědí přijatou zprávu a vrátí ji zpět do klienta.  
   
 ## <a name="running-and-building-the-sample"></a>Spuštění a sestavování vzorku  
- Při spuštění vzorového obsah textu odpovědi operace se zobrazují v okně konzoly klienta podobné výstupu v následujícím (formátovaný).  
+ Při spuštění ukázky obsah textu odpovědi operace se zobrazují v okně konzoly klienta, podobně jako následující výstup (formátovaný).  
   
- Klient odešle tři zprávy do služby jehož obsahu je s názvem elementu těla `bodyA`, `bodyB`, a `bodyX`, v uvedeném pořadí. Jak může být odložen z předchozí popis a kontrakt služby zobrazí, příchozích zpráv s `bodyA` element odeslaných `OperationForBodyA()` metoda. Vzhledem k tomu, že neexistuje žádné explicitní odesílání cíl pro zprávu s `bodyX` body element je zpráva odeslána na `DefaultOperation()`. Každý operací služby zabalí obsah přijaté zprávy do elementu specifické pro metodu a vrátí, která se provádí korelaci vstup a výstup zprávy jasně pro tuto ukázku:  
+ Klient odešle tři zprávy do služby jehož obsahu je s názvem elementu těla `bodyA`, `bodyB`, a `bodyX`v uvedeném pořadí. Jako může být odložena z předchozí popis a kontrakt služby uvedené, příchozí zprávy s `bodyA` element je odeslána `OperationForBodyA()` metoda. Protože neexistuje žádný explicitní odeslání cíl pro zprávu s `bodyX` body element, je odeslána zpráva `DefaultOperation()`. Každá z operací služby zalomí text zprávy přijaté do elementu specifické pro metodu a vrátí jej, která se provádí korelaci vstupní a výstupní zprávy jasně pro tuto ukázku:  
   
 ```xml  
 <?xml version="1.0" encoding="IBM437"?>  
@@ -160,20 +161,20 @@ public interface IDispatchedByBody
 </replyDefault>  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Interop\AdvancedDispatchByBody`  
   

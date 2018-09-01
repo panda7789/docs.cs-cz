@@ -8,28 +8,31 @@ helpviewer_keywords:
 - let keyword [C#]
 - let clause [C#]
 ms.assetid: 13c9c1a4-ce57-48ef-8e1b-4c2a59b99fb4
-ms.openlocfilehash: 9d625db1231687cdad2e24303b2e08ecf736a50c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 62294df7f0f2ebb3249dffd72ba4910fbae984c8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33269637"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43396065"
 ---
 # <a name="let-clause-c-reference"></a>let – klauzule (Referenční dokumentace jazyka C#)
-Ve výrazu dotazu je někdy užitečné k ukládání výsledků dílčí výrazu, aby bylo možné používat v dalších klauzule. Můžete to provést pomocí `let` – klíčové slovo, které vytvoří novou proměnnou rozsahu a inicializuje s výsledkem výrazu zadáte. Jakmile inicializovaný s hodnotou, proměnnou rozsahu nelze použít k uložení jinou hodnotu. Ale pokud proměnnou rozsahu obsahuje dotazovatelné typu, může být dotazován.  
-  
-## <a name="example"></a>Příklad  
- V následujícím příkladu `let` slouží dvěma způsoby:  
-  
-1.  Chcete-li vytvořit vyčíslitelná typ, který je možné samotné dotázat.  
-  
-2.  Chcete-li povolit dotaz pro volání `ToLower` jenom jednou na proměnnou rozsahu `word`. Bez použití `let`, budete muset volat `ToLower` v každé predikát `where` klauzule.  
-  
- [!code-csharp[cscsrefQueryKeywords#28](../../../csharp/language-reference/keywords/codesnippet/CSharp/let-clause_1.cs)]  
-  
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Klíčová slova dotazu (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)  
- [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)  
- [Začínáme s dotazy LINQ v jazyce C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
- [Postupy: zpracování výjimek ve výrazech dotazů](../../../csharp/programming-guide/linq-query-expressions/how-to-handle-exceptions-in-query-expressions.md)
+
+Ve výrazu dotazu je někdy užitečné ukládat výsledek dílčí výraz. Chcete-li použít v následných klauzulí. Můžete to provedete `let` – klíčové slovo, které vytvoří novou proměnnou rozsahu a inicializuje ji s výsledkem výrazu zadáte. Po inicializaci s hodnotou proměnné rozsahu nelze použít pro ukládání hodnoty horní jiný. Nicméně pokud proměnnou rozsahu obsahuje dotazovatelný typ, může být dotazován.
+
+## <a name="example"></a>Příklad
+
+V následujícím příkladu `let` slouží dvěma způsoby:
+
+1. Chcete-li vytvořit Výčtový typ, který je sám možné zadávat dotazy.
+
+2. Povolit dotaz tak, aby volání `ToLower` pouze jednou na proměnnou rozsahu `word`. Bez použití `let`, budete muset volat `ToLower` v každé predikátu v `where` klauzuli.
+
+[!code-csharp[cscsrefQueryKeywords#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Let.cs#28)]
+
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../../language-reference/index.md)
+- [Klíčová slova dotazu (LINQ)](query-keywords.md)
+- [LINQ (Language Integrated Query)](../../linq/index.md)
+- [Začínáme s dotazy LINQ v jazyce C#](../../programming-guide/concepts/linq/getting-started-with-linq.md)
+- [Zpracování výjimek ve výrazech dotazů](../../linq/handle-exceptions-in-query-expressions.md)

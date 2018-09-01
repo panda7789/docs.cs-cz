@@ -4,29 +4,29 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Net profile TCP
 ms.assetid: e8475fe6-0ecd-407a-8e7e-45860561bb74
-ms.openlocfilehash: b51178c8ba84740598db62b9011fa33da318ca8a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d56c405fe9c46fcebaad8e5b217f44d709dc8db8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33502274"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43397783"
 ---
 # <a name="default-nettcpbinding"></a>Výchozí NetTcpBinding
-Tento příklad znázorňuje použití <xref:System.ServiceModel.NetTcpBinding> vazby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. V této ukázce služba se hostuje sama. Klient a služba jsou konzolové aplikace.  
+Tato ukázka demonstruje použití <xref:System.ServiceModel.NetTcpBinding> vazby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. V této ukázce je služba v místním prostředí. Klient a služba se konzolové aplikace.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\TCP\Default`  
   
- Vazba je zadána v konfiguračních souborech pro klienta a služby. Typ vazby je zadán v `binding` atribut [ \<endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element, jak je znázorněno v následující ukázka konfigurace.  
+ Vazba je zadán v konfiguračních souborech pro klienta a služby. Typ vazby je zadán v `binding` atribut [ \<koncový bod >](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) elementu, jak je znázorněno v následující ukázková konfigurace.  
   
 ```xml  
 <endpoint address=""  
@@ -34,7 +34,7 @@ Tento příklad znázorňuje použití <xref:System.ServiceModel.NetTcpBinding> 
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- Předchozí příklad ukazuje postup konfigurace koncového bodu pomocí `netTcpBinding` vazba s výchozím nastavením. Pokud chcete nakonfigurovat `netTcpBinding` vazby a změnit některé jeho nastavení, je nutné definovat Konfigurace vazeb. Koncový bod musí odkazovat Konfigurace vazeb podle názvu s `bindingConfiguration` atribut. V této ukázce je s názvem Konfigurace vazeb `Binding1` a je definovaný jak je znázorněno v následující ukázka konfigurace.  
+ Předchozí příklad ukazuje, jak nakonfigurovat koncový bod pro použití `netTcpBinding` vazby s výchozím nastavením. Pokud chcete nakonfigurovat `netTcpBinding` vazby a změnit některé jeho nastavení, je potřeba definovat konfiguraci vazby. Koncový bod musí odkazovat konfigurace vazby podle názvu pomocí `bindingConfiguration` atribut. V tomto příkladu má název konfigurace vazby `Binding1` a je definován, jak je znázorněno v následující ukázková konfigurace.  
   
 ```xml  
 <services>  
@@ -81,7 +81,7 @@ Tento příklad znázorňuje použití <xref:System.ServiceModel.NetTcpBinding> 
 </bindings>  
 ```  
   
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -92,7 +92,7 @@ Divide(22,7) = 3.14285714285714
 Press ENTER to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Nainstalujte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 pomocí následujícího příkazu.  
   
@@ -102,12 +102,12 @@ Press ENTER to terminate client.
   
 2.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
     > [!NOTE]
-    >  Protože server je vlastním hostováním, musíte zadat identity v souboru App.config klienta ke spuštění ukázky v konfiguraci s počítači.  
+    >  Vzhledem k tomu, že je server v místním prostředí, je nutné zadat identitu v souboru App.config klienta ke spuštění ukázky v konfiguraci mezi počítači.  
   
     ```xml  
     <client>  

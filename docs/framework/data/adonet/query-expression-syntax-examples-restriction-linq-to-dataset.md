@@ -1,52 +1,52 @@
 ---
-title: 'Příklady syntaxe výrazu dotazu: Omezení (LINQ na DataSet)'
+title: 'Příklady syntaxe výrazů dotazů: Omezení (LINQ to DataSet)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1daf42c2-c9f4-4cda-b291-7641b9c6d3fe
-ms.openlocfilehash: babe923132d8322ec81caae2a94678afea2a8095
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 556b1cc31f42cecc19492412120b31da83eff609
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33354220"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43397445"
 ---
-# <a name="query-expression-syntax-examples-restriction-linq-to-dataset"></a>Příklady syntaxe výrazu dotazu: Omezení (LINQ na DataSet)
-V příkladech v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Where%2A> metodu pro dotaz <xref:System.Data.DataSet> pomocí syntaxe výrazu dotazu.  
+# <a name="query-expression-syntax-examples-restriction-linq-to-dataset"></a>Příklady syntaxe výrazů dotazů: Omezení (LINQ to DataSet)
+Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Where%2A> metodu dotazu <xref:System.Data.DataSet> pomocí syntaxe výrazu dotazu.  
   
- `FillDataSet` Metodu použitou v těchto příkladech je uveden v [načítání dat do datové sady](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md).  
+ `FillDataSet` Metodu použitou v těchto příkladech je zadán v [načítání dat do datová sada](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md).  
   
- V příkladech v tomto tématu použijte kontaktu, adresu, produktu, SalesOrderHeader a podrobnosti prodejní objednávky tabulky v ukázkové databázi AdventureWorks.  
+ Příklady v tomto tématu použijte tabulky Kontakt, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  
   
- V příkladech v tomto tématu použijte následující `using` / `Imports` příkazy:  
+ V příkladech v tomto tématu se používá následující `using` / `Imports` příkazy:  
   
 [!code-csharp[DP LINQ to DataSetExamples#ImportsUsing](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#importsusing)]        
   
- Další informace najdete v tématu [postupy: vytvoření LINQ na DataSet projekt v sadě Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md).  
+ Další informace najdete v tématu [postupy: vytvoření LINQ to DataSet projektu v sadě Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md).  
   
 ## <a name="where"></a>Where  
   
 ### <a name="example"></a>Příklad  
- Tento příklad vrátí všechny online objednávky.  
+ V tomto příkladu vrátí všechny online objednávky.  
   
  [!code-csharp[DP LINQ to DataSet Examples#Where1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#where1)]  
  [!code-vb[DP LINQ to DataSet Examples#Where1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#where1)]     
   
 ### <a name="example"></a>Příklad  
- Tento příklad vrátí objednávky, kde je větší než 2 a menší než 6 množství objednávky.  
+ V tomto příkladu vrátí objednávky, kde je větší než 2 a méně než 6 množství objednávky.  
   
  [!code-csharp[DP LINQ to DataSet Examples#Where2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#where2)]  
  [!code-vb[DP LINQ to DataSet Examples#Where2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#where2)]     
   
 ### <a name="example"></a>Příklad  
- Tento příklad vrátí všechny red barevnou produkty.  
+ V tomto příkladu vrátí všechny produkty red barevný.  
   
  [!code-csharp[DP LINQ to DataSet Examples#Where3](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#where3)]  
  [!code-vb[DP LINQ to DataSet Examples#Where3](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#where3)]     
   
 ### <a name="example"></a>Příklad  
- Tento příklad používá <xref:System.Linq.Enumerable.Where%2A> metody k vyhledání objednávky, které byly provedeny po 1. prosince 2002 a pak používá <xref:System.Data.DataRow.GetChildRows%2A> metoda se získat podrobnosti pro každé pořadí.  
+ V tomto příkladu <xref:System.Linq.Enumerable.Where%2A> metody k vyhledání objednávky, které byly provedeny po 1. prosince 2002 a pak používá <xref:System.Data.DataRow.GetChildRows%2A> metodu k získání podrobností každé objednávky.  
   
  [!code-csharp[DP LINQ to DataSetExamples#WhereDrillDown](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#wheredrilldown)]       
  [!code-vb[DP LINQ to DataSet Examples#WhereDrillDown](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#wheredrilldown)]  
@@ -54,4 +54,4 @@ V příkladech v tomto tématu ukazují, jak používat <xref:System.Linq.Enumer
 ## <a name="see-also"></a>Viz také  
  [Načtení dat do datové sady](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)  
  [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)  
- [Přehled standardních operátorů dotazu](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)
+ [Přehled standardních operátorů dotazu](https://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)

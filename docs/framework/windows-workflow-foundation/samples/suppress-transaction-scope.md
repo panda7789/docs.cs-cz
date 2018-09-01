@@ -1,53 +1,53 @@
 ---
-title: Potlačit oboru transakce
+title: Potlačení oboru transakcí
 ms.date: 03/30/2017
 ms.assetid: 49fb6dd4-30d4-4067-925c-c5de44c8c740
-ms.openlocfilehash: b38d168e7da4510b75ebeda7f4984c26fb68898d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 44814d66a4de4b3e72bb33eb46019eb1088ab040
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33518457"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385191"
 ---
-# <a name="suppress-transaction-scope"></a>Potlačit oboru transakce
-Ukázka ukazuje, jak vytvořit vlastní `SuppressTransactionScope` aktivity k potlačení vedlejším spuštění transakce, pokud je k dispozici.  
+# <a name="suppress-transaction-scope"></a>Potlačení oboru transakcí
+Vzorek ukazuje, jak vytvořit vlastní `SuppressTransactionScope` aktivity k potlačení okolí transakce za běhu, pokud jsou k dispozici.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Transactions\SuppressTransactionScope`  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- Vlastní aktivita je užitečné, aby se zabránilo transakce z se plynoucích se k jiné službě Pokud toku transakcí není žádoucí pro konkrétní scénář. Má integrovanou podporu pro potlačení vedlejším transakce v modulu runtime pracovního postupu <xref:System.Activities.NativeActivity> třídu, ale chcete-li použít tato podpora je potřeba vytvořit vlastní <xref:System.Activities.NativeActivity> jako je třeba v této ukázce.  
+ Vlastní aktivita je užitečné zabránit transakce se tok si do jiné služby pokud tok transakcí nežádoucí u určitého scénáře. Modul runtime pracovního postupu obsahuje integrovanou podporu pro potlačení v okolí transakce <xref:System.Activities.NativeActivity> třídy, ale chcete-li použít tuto podporu, je potřeba vytvořit vlastní <xref:System.Activities.NativeActivity> jako je třeba v této ukázce.  
   
- Tento scénář se skládá ze tří částí. První, <xref:System.Activities.Statements.TransactionScope> vytvoří spuštění transakce, který se stává vedlejším. Je to ověřit pomocí vlastní aktivity, která vytiskne identifikátory místní a distribuované transakce. Transakce je pak předávány vzdálené služby před zahájením druhé části. Během druhé části vstupuje do pracovního postupu `SuppressTransactionScope` a znovu se opakuje proces tisku identifikátory transakce a předávaných transakce. Ale vlastní aktivita nenajde vedlejším transakce a zpráva předávány služby neobsahuje transakce. V důsledku toho služba vytvoří transakce, což znamená distribuované ID vytištěné na klienta a služby se neshodují. Poslední část dojde po `SuppressTransactionScope` ukončí a opakujte spuštění transakce stane vedlejším, jak ověřit pomocí další zprávu ve službě distribuované identifikátorem, který odpovídá identifikátor první zprávy.  
+ Tento scénář se skládá ze tří částí. První, <xref:System.Activities.Statements.TransactionScope> vytvoří, který se stane okolí transakce za běhu. To je ověřováno vlastní aktivitu, která vytiskne identifikátory místní a distribuované transakce. Transakce je poté naplněn vzdálené služby před zahájením druhé části. Během druhé části pracovního postupu přejde `SuppressTransactionScope` a znovu se opakuje proces tisku identifikátory transakce a tok transakce. Ale vlastní aktivity nenajde okolí transakce a zprávy byly převedeny do služby neobsahuje transakce. V důsledku toho služba vytvoří transakce, která znamená, že ID distribuované vytisknout na klienta a služby se neshodují. Poslední část dojde poté, co `SuppressTransactionScope` ukončí a znovu transakce za běhu bude okolí, jak ověřit pomocí jiného zpráv ve službě distribuované identifikátorem, který odpovídá identifikátor první zprávy.  
   
- Samotný aktivity je odvozena z <xref:System.Activities.NativeActivity> protože musíte naplánovat podřízené aktivity a přidat provádění vlastnost. `SuppressTransactionScope` Má <xref:System.Activities.Variable> typu <xref:System.Activities.RuntimeTransactionHandle>, které se musí použít místo poli instance typu <xref:System.Activities.RuntimeTransactionHandle> protože popisovač musí být inicializován. `Variable<RuntimeTransactionHandle>` Je přidat do aktivity metadat jako na proměnnou implementace protože používá se pouze interně.  
+ Aktivita samotného je odvozena z <xref:System.Activities.NativeActivity> protože musíte naplánovat podřízené aktivity a přidejte vlastnost spuštění. `SuppressTransactionScope` Má <xref:System.Activities.Variable> typu <xref:System.Activities.RuntimeTransactionHandle>, které musí být využity místo pole instance typu <xref:System.Activities.RuntimeTransactionHandle> protože popisovače musí být inicializován. `Variable<RuntimeTransactionHandle>` Se přidá do metadat aktivity jako proměnnou implementace vzhledem k tomu slouží pouze interně.  
   
- Při spuštění aktivity nejdřív zkontroluje, zda byl zadán text a pokud ano, nastaví `SuppressTransaction` vlastnost <xref:System.Activities.RuntimeTransactionHandle>. Jakmile je vlastnost nastavena, přidá se do vlastnosti zpracování a stane vedlejším. To znamená, že všechny aktivity, která je podřízená `SuppressTransactionScope` je schopen naleznete ve vlastnosti a proto vynucuje potlačení spuštění transakce a způsobí, že vnořený <xref:System.Activities.Statements.TransactionScope> vyvolá výjimku. Jakmile popisovač je přidat do vlastnosti provádění že textu je naplánováno spuštění.  
+ Při spuštění aktivity ji nejprve zkontroluje, zda byl zadán text a pokud ano, nastaví `SuppressTransaction` vlastnost <xref:System.Activities.RuntimeTransactionHandle>. Jakmile je vlastnost nastavena, je přidán k vlastnostem, provádění a stane okolí. To znamená, že všechny aktivity, který je podřízeným prvkem `SuppressTransactionScope` může zobrazit vlastnosti a proto vynucuje potlačení běhové transakce a způsobí, že vnořený <xref:System.Activities.Statements.TransactionScope> vyvolají výjimku. Jakmile popisovače je přidán k vlastnostem, spuštění, že text je naplánováno spuštění.  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
 1.  Otevřete řešení SuppressTransactionScope.sln v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Sestavte řešení, stiskněte CTRL + SHIFT + B nebo vyberte **sestavit řešení** z **sestavení** nabídky.  
+2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B nebo vyberte **sestavit řešení** z **sestavení** nabídky.  
   
-3.  Po sestavení proběhla úspěšně, klikněte pravým tlačítkem na řešení a vyberte **nastavit projekty po spuštění**. V dialogovém okně vyberte **více projektů po spuštění** a zajistit akci pro oba projekty **spustit**.  
+3.  Po úspěšném sestavení, klikněte pravým tlačítkem na řešení a vyberte **nastavit projekty po spuštění**. V dialogovém okně vyberte **více projektů po spuštění** a zajistit akci pro oba projekty **Start**.  
   
-4.  Stisknutím klávesy F5 nebo vyberte **spustit ladění** z **ladění** nabídky. Alternativně můžete stisknutím kláves CTRL + F5 nebo vybrat **spustit bez ladění** z **ladění** nabídku spustit bez ladění.  
+4.  Stiskněte F5 nebo vyberte **spustit ladění** z **ladění** nabídky. Alternativně můžete stisknutím kláves CTRL + F5 nebo vyberte **spustit bez ladění** z **ladění** nabídky spustit bez ladění.  
   
     > [!NOTE]
-    >  Server musí být spuštěn před spuštěním klienta. Výstup z okna konzoly, který je hostitelem služby určuje, kdy bylo zahájeno.  
+    >  Na serveru musí běžet před spuštěním klienta. Výstup z okna konzoly, který je hostitelem služby označuje, kdy byla spuštěna.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Transactions\SuppressTransactionScope`

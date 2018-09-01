@@ -1,32 +1,32 @@
 ---
-title: Aplikace ASP.NET pomocí obslužné rutiny čekání
+title: Aplikace ASP.NET využívající obslužné rutiny čekání
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: f588597a-49de-4206-8463-4ef377e112ff
-ms.openlocfilehash: 867b225336da2188b8d1709c09d480317a6d02e4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 608cec63f08869ebb3a6519f9de0fe7fa02a344f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33356460"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43386279"
 ---
-# <a name="aspnet-applications-using-wait-handles"></a>Aplikace ASP.NET pomocí obslužné rutiny čekání
-Zpětné volání a dotazování modelů pro zpracování asynchronní operace jsou užitečné, když vaše aplikace zpracovává vždy pouze jeden asynchronní operaci. Modely čekání umožňují flexibilnější zpracování více asynchronních operací. Existují dva modely čekání s názvem pro <xref:System.Threading.WaitHandle> metody použité k jejich implementaci: čekání (Any) modelu a modelu čekání (All).  
+# <a name="aspnet-applications-using-wait-handles"></a>Aplikace ASP.NET využívající obslužné rutiny čekání
+Zpětné volání a dotazování modelů pro zpracování asynchronní operace jsou užitečné, pokud vaše aplikace zpracovává pouze jedna asynchronní operace najednou. Modely čekání poskytují pružnější způsob zpracování více asynchronních operací. Existují dva modely čekání, s názvem pro <xref:System.Threading.WaitHandle> metody použité pro jejich implementaci: model čekání (všechny) a model čekání (vše).  
   
- Použít buď počkejte model, budete muset použít <xref:System.IAsyncResult.AsyncWaitHandle%2A> vlastnost <xref:System.IAsyncResult> objekt vrácený <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>, nebo <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> metody. <xref:System.Threading.WaitHandle.WaitAny%2A> a <xref:System.Threading.WaitHandle.WaitAll%2A> metody oba vyžadují k odeslání <xref:System.Threading.WaitHandle> objekty jako argument, seskupit do pole.  
+ Použití modelu buď Čekání, budete muset použít <xref:System.IAsyncResult.AsyncWaitHandle%2A> vlastnost <xref:System.IAsyncResult> objekt vrácený <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>, nebo <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> metody. <xref:System.Threading.WaitHandle.WaitAny%2A> a <xref:System.Threading.WaitHandle.WaitAll%2A> metody oba vyžadují k odeslání <xref:System.Threading.WaitHandle> objekty jako argument, seskupené dohromady v poli.  
   
- Obě metody čekání monitorování asynchronních operací, čeká na dokončení. <xref:System.Threading.WaitHandle.WaitAny%2A> Metoda čeká na dokončení operací nebo vypršení časového limitu. Jakmile víte, že dokončení určité operace, můžete zpracovat své výsledky a potom pokračovat v čekání na další na dokončení operace nebo vypršení časového limitu. <xref:System.Threading.WaitHandle.WaitAll%2A> Metoda čeká na všechny procesy v poli <xref:System.Threading.WaitHandle> instance k dokončení nebo vypršení časového limitu, než budete pokračovat.  
+ Obě metody Wait monitorovat asynchronní operace čekání na dokončení. <xref:System.Threading.WaitHandle.WaitAny%2A> Metoda čeká na dokončení operací nebo vypršení časového limitu. Jakmile budete vědět, že konkrétní operace se dokončila, zpracovávat jeho výsledky a potom pokračovat v čekání na další na dokončení operace nebo vypršení časového limitu. <xref:System.Threading.WaitHandle.WaitAll%2A> Metoda čeká na všechny procesy v poli <xref:System.Threading.WaitHandle> instancí k dokončení nebo vypršení časového limitu, než budete pokračovat.  
   
- Počkejte modely výhodou je většina působivý když budete muset spustit více operací některé délky na různých serverech, nebo když je váš server dostatečně výkonný zpracovat všechny dotazy ve stejnou dobu. V příkladech okomentovat tři dotazy emulovat dlouho procesy přidáním Příkazy WAITFOR z různých délek irelevantní vyberte dotazy.  
+ Tyto modely čekání výhodou je většina působivý Pokud budete muset spustit více operací některé délky na různých serverech, nebo pokud váš server není dostatečný výkon pro zpracování všech dotazů ve stejnou dobu. V příkladech okomentovat tři dotazy emulovat dlouho procesy tak, že přidáte příkazy WAITFOR z různých délek bezvýznamnými dotazů SELECT.  
   
 ## <a name="example-wait-any-model"></a>Příklad: Model čekání (všechny)  
- Následující příklad ilustruje čekání (Any) modelu. Po spuštění tři procesy asynchronní <xref:System.Threading.WaitHandle.WaitAny%2A> metoda je volána pro čekání na dokončení kterékoli z nich. Každý proces dokončení, <xref:System.Data.SqlClient.SqlCommand.EndExecuteReader%2A> metoda je volána a následné <xref:System.Data.SqlClient.SqlDataReader> čtení objektu. V tomto okamžiku by pravděpodobně používat reálné aplikaci <xref:System.Data.SqlClient.SqlDataReader> k naplnění část stránky. V tomto jednoduchém příkladu čas dokončení procesu se přidá do textového pole odpovídající proces. Dohromady, časy v textových polích ilustrují bodem: kód je proveden při každém dokončení procesu.  
+ Následující příklad ukazuje čekání (všechny) modelu. Jakmile se spustí tři asynchronní procesy, <xref:System.Threading.WaitHandle.WaitAny%2A> metoda je volána k čekání na dokončení některého z nich. Každý proces dokončení, <xref:System.Data.SqlClient.SqlCommand.EndExecuteReader%2A> volání metody a výsledné <xref:System.Data.SqlClient.SqlDataReader> čtení objektu. V tomto okamžiku by pravděpodobně reálné aplikaci používat <xref:System.Data.SqlClient.SqlDataReader> k naplnění části stránky. Čas dokončení procesu se v tomto jednoduchém příkladu přidá do textového pole odpovídající proces. Dohromady, časy v textových polích tento bod ilustrovali: kód se spustí pokaždé, když se dokončí proces.  
   
- Nastavit tento příklad, vytvořte nový projekt ASP.NET Web Site. Místní <xref:System.Web.UI.WebControls.Button> řízení a čtyřmi <xref:System.Web.UI.WebControls.TextBox> ovládací prvky na stránce (přijetí výchozí název pro každý ovládací prvek).  
+ Nastavit tento příklad, vytvořte nový projekt webu technologie ASP.NET. Místo <xref:System.Web.UI.WebControls.Button> ovládacího prvku a čtyři <xref:System.Web.UI.WebControls.TextBox> ovládacích prvků na stránce (přijmout výchozí název pro každý ovládací prvek).  
   
- Přidejte následující kód do třídy formuláře, úprava připojovacího řetězce v případě potřeby pro vaše prostředí.  
+ Přidejte následující kód do třídy formuláře, úprava připojovacího řetězce podle potřeby pro vaše prostředí.  
   
 ```vb  
 ' Add these to the top of the class  
@@ -312,14 +312,14 @@ void Button1_Click(object sender, System.EventArgs e)
 }  
 ```  
   
-## <a name="example-wait-all-model"></a>Příklad: Model čekání (všechny)  
- Následující příklad ilustruje čekání (vše) modelu. Po spuštění tři procesy asynchronní <xref:System.Threading.WaitHandle.WaitAll%2A> metoda je volána čekání procesy dokončení nebo vypršení časového limitu.  
+## <a name="example-wait-all-model"></a>Příklad: Model čekání (vše)  
+ Následující příklad ukazuje čekání (vše) modelu. Jakmile se spustí tři asynchronní procesy, <xref:System.Threading.WaitHandle.WaitAll%2A> metoda je volána k vyčkat, než procesy, které chcete dokončit nebo vypršení časového limitu.  
   
- Jako příklad čekání (Any) modelu je čas dokončení procesu přidán do textového pole odpovídající proces. Znovu, časy v textových polích ilustrují bodem: následující kód <xref:System.Threading.WaitHandle.WaitAny%2A> metoda se spustí až po dokončení se všechny procesy.  
+ Stejně jako u příkladu čekání (všechny) modelu čas dokončení procesu se přidá do textového pole odpovídající proces. Znovu, tento bod ilustrovali časy v textových polích: následující kód <xref:System.Threading.WaitHandle.WaitAny%2A> provedení metody pouze po dokončení všech procesů.  
   
- Nastavit tento příklad, vytvořte nový projekt ASP.NET Web Site. Místní <xref:System.Web.UI.WebControls.Button> řízení a čtyřmi <xref:System.Web.UI.WebControls.TextBox> ovládací prvky na stránce (přijetí výchozí název pro každý ovládací prvek).  
+ Nastavit tento příklad, vytvořte nový projekt webu technologie ASP.NET. Místo <xref:System.Web.UI.WebControls.Button> ovládacího prvku a čtyři <xref:System.Web.UI.WebControls.TextBox> ovládacích prvků na stránce (přijmout výchozí název pro každý ovládací prvek).  
   
- Přidejte následující kód do třídy formuláře, úprava připojovacího řetězce v případě potřeby pro vaše prostředí.  
+ Přidejte následující kód do třídy formuláře, úprava připojovacího řetězce podle potřeby pro vaše prostředí.  
   
 ```vb  
 ' Add these to the top of the class  
@@ -581,4 +581,4 @@ void Button1_Click(object sender, System.EventArgs e)
   
 ## <a name="see-also"></a>Viz také  
  [Asynchronní operace](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

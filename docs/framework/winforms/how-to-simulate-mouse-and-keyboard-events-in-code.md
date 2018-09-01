@@ -12,41 +12,41 @@ helpviewer_keywords:
 - mouse clicks [Windows Forms], simulating
 - mouse [Windows Forms], event simulation
 ms.assetid: 6abcb67e-3766-4af2-9590-bf5dabd17e41
-ms.openlocfilehash: cdb37fe549ebfbcdb5a0c5b6008a1922fdbf471b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 56c7d534d5428ff116c6de1aeffd9a31bd7a5063
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33541778"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43388387"
 ---
 # <a name="how-to-simulate-mouse-and-keyboard-events-in-code"></a>Postupy: Simulace událostí myši a klávesnice v kódu
-Windows Forms poskytuje několik možností pro simulaci prostřednictvím kódu programu myši a vstup z klávesnice. Toto téma obsahuje přehled těchto možností.  
+Windows Forms poskytuje několik možností pro simulaci programově myši a klávesnice. Toto téma obsahuje přehled těchto možností.  
   
-## <a name="simulating-mouse-input"></a>Simulaci vstup myši  
- Nejlepší způsob, jak simulace událostí myši je volat `On` *EventName* metoda, která se vyvolá událost, myš, kterou chcete simulovat. Tuto možnost obvykle je možné pouze v rámci vlastní ovládací prvky a formulářů, protože metody, které vyvolávání událostí jsou chráněné a nelze přistupovat mimo ovládacího prvku nebo formuláře. Například následující kroky ukazují, jak k simulaci, kliknete pravým tlačítkem myši v kódu.  
+## <a name="simulating-mouse-input"></a>Simulace vstup z myši  
+ Nejlepší způsob, jak simulace událostí myši je volání `On` *EventName* metodu, která vyvolává událost myši, kterou chcete simulovat. Tato možnost je obvykle možné pouze v rámci vlastní ovládací prvky a formuláře, protože jsou chráněné metody, které vyvolávají události a nelze přistupovat mimo ovládací prvek nebo formuláře. Například následující kroky ukazují, jak simulovat kliknutím pravým tlačítkem myši v kódu.  
   
-#### <a name="to-programmatically-click-the-right-mouse-button"></a>Prostřednictvím kódu programu kliknout pravým tlačítkem myši  
+#### <a name="to-programmatically-click-the-right-mouse-button"></a>Pravým tlačítkem myši na prostřednictvím kódu programu  
   
-1.  Vytvoření <xref:System.Windows.Forms.MouseEventArgs> jejichž <xref:System.Windows.Forms.MouseEventArgs.Button%2A> je nastavena na <xref:System.Windows.Forms.MouseButtons.Right?displayProperty=nameWithType> hodnotu.  
+1.  Vytvoření <xref:System.Windows.Forms.MouseEventArgs> jehož <xref:System.Windows.Forms.MouseEventArgs.Button%2A> je nastavena na <xref:System.Windows.Forms.MouseButtons.Right?displayProperty=nameWithType> hodnotu.  
   
-2.  Volání <xref:System.Windows.Forms.Control.OnMouseClick%2A> metoda pomocí této <xref:System.Windows.Forms.MouseEventArgs> jako argument.  
+2.  Volání <xref:System.Windows.Forms.Control.OnMouseClick%2A> metoda s tímto <xref:System.Windows.Forms.MouseEventArgs> jako argument.  
   
- Další informace o vlastních ovládacích prvcích najdete v tématu [vývoj ovládacích prvků Windows Forms v době návrhu](../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md).  
+ Další informace o vlastních ovládacích prvcích najdete v tématu [vývoj prvky Windows Forms v době návrhu](../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md).  
   
- Pro simulaci vstup z myši i jinými způsoby. Například můžete programově nastavit řízení vlastnost, která představuje stav, který se obvykle nastavuje prostřednictvím vstup z myši (například <xref:System.Windows.Forms.CheckBox.Checked%2A> vlastnost <xref:System.Windows.Forms.CheckBox> ovládací prvek), nebo přímo volat delegáta, který je připojen k události je Chcete simulovat.  
+ Existují jiné způsoby, jak simulovat vstup z myši. Například prostřednictvím kódu programu nastavit vlastnosti ovládacího prvku, který představuje stav, který se obvykle nastavuje pouze prostřednictvím vstup z myši (například <xref:System.Windows.Forms.CheckBox.Checked%2A> vlastnost <xref:System.Windows.Forms.CheckBox> ovládací prvek), nebo delegát, který je připojen k této události lze volat přímo můžete Chcete simulovat.  
   
-## <a name="simulating-keyboard-input"></a>Simulaci vstup z klávesnice  
- I když můžete simulovat vstup z klávesnice s použitím strategie výše popsané pro vstup z myši, Windows Forms poskytuje taky <xref:System.Windows.Forms.SendKeys> třídu pro odesílání stisknutí kláves aplikace aktivní.  
+## <a name="simulating-keyboard-input"></a>Simulace vstup z klávesnice  
+ I když můžete simulovat vstup z klávesnice s použitím strategie bylo uvedeno výše pro vstup z myši, Windows Forms poskytuje také <xref:System.Windows.Forms.SendKeys> třídu pro odesílání stisknutí kláves do aktivní aplikace.  
   
 > [!CAUTION]
->  Pokud vaše aplikace je určená pro mezinárodní s různými klávesnice, použití <xref:System.Windows.Forms.SendKeys.Send%2A?displayProperty=nameWithType> může vést k neočekávaným výsledkům yield a je nutno.  
+>  Pokud vaše aplikace je určena pro mezinárodní širokou škálu klávesnice, použití <xref:System.Windows.Forms.SendKeys.Send%2A?displayProperty=nameWithType> může vést k nepředvídatelným výsledkům a mělo by se vyhnout.  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.SendKeys> Třída byla aktualizována pro rozhraní .NET Framework 3.0, aby jeho použití v aplikacích, které běží na systému Windows Vista. Rozšířené zabezpečení systému Windows Vista (označované jako řízení uživatelských účtů nebo nástroje Řízení uživatelských účtů) zabraňuje předchozí implementace z pracovní podle očekávání.  
+>  <xref:System.Windows.Forms.SendKeys> Třídy byl aktualizován pro rozhraní .NET Framework 3.0 umožňuje jeho použití v aplikacích, které běží na Windows Vista. Zvýšené zabezpečení systému Windows Vista (označované jako řízení uživatelských účtů nebo nástroje Řízení uživatelských účtů) brání předchozích implementacích fungovat podle očekávání.  
 >   
->  <xref:System.Windows.Forms.SendKeys> Třída je ohrožena útoky založenými na problémy načasování, kterým byly někteří vývojáři obejít. Aktualizované implementace přesto náchylné k problémy načasování, ale je mírně rychlejší a může vyžadovat změny řešení. <xref:System.Windows.Forms.SendKeys> Třídy pokusí nejdříve použít předchozí implementace a pokud to nepomůže, používá novou implementací. V důsledku toho <xref:System.Windows.Forms.SendKeys> třída může chovat jinak v různých operačních systémech. Kromě toho, když <xref:System.Windows.Forms.SendKeys> třída používá nové implementace <xref:System.Windows.Forms.SendKeys.SendWait%2A> metoda nebude čekat na zprávy, které mají být zpracovány odeslání na jiný proces.  
+>  <xref:System.Windows.Forms.SendKeys> Třídy je náchylný k problémy načasování, což někteří vývojáři měli obejít. Aktualizovanou implementaci přesto náchylné k problémům časování, ale je mírně rychlejší a mohou vyžadovat změny řešení. <xref:System.Windows.Forms.SendKeys> Třídy se pokusí nejprve použít předchozí implementace a pokud se to nepodaří, používá novou implementaci. V důsledku toho <xref:System.Windows.Forms.SendKeys> třída může chovat jinak v různých operačních systémech. Kromě toho, když <xref:System.Windows.Forms.SendKeys> třída používá novou implementaci <xref:System.Windows.Forms.SendKeys.SendWait%2A> metoda nebude čekat zpráv pro zpracování odeslání na jiný proces.  
 >   
->  Pokud vaše aplikace závisí na konzistentní chování bez ohledu na operační systém, můžete vynutit <xref:System.Windows.Forms.SendKeys> třídu se má použít novou implementací přidáním následující nastavení aplikace do souboru app.config.  
+>  Pokud vaše aplikace závisí na chování konzistentní bez ohledu na operační systém, můžete vynutit <xref:System.Windows.Forms.SendKeys> třídy používat novou implementaci přidáním následujícího nastavení aplikace do souboru app.config.  
 >   
 >  `<appSettings>`  
 >   
@@ -54,22 +54,22 @@ Windows Forms poskytuje několik možností pro simulaci prostřednictvím kódu
 >   
 >  `</appSettings>`  
 >   
->  Chcete-li vynutit <xref:System.Windows.Forms.SendKeys> třídy, které chcete použít předchozí implementace, použijte hodnotu `"JournalHook"` místo.  
+>  Chcete-li vynutit <xref:System.Windows.Forms.SendKeys> třídy, které chcete použít předchozí implementaci, použijte hodnotu `"JournalHook"` místo toho.  
   
-#### <a name="to-send-a-keystroke-to-the-same-application"></a>K odeslání stisknutí klávesy stejná aplikace  
+#### <a name="to-send-a-keystroke-to-the-same-application"></a>K odesílání jedním stisknutím tlačítka do stejné aplikace  
   
-1.  Volání <xref:System.Windows.Forms.SendKeys.Send%2A> nebo <xref:System.Windows.Forms.SendKeys.SendWait%2A> metodu <xref:System.Windows.Forms.SendKeys> třídy. Zadaný stisknutí kláves dostane aktivní ovládací prvek aplikace. Následující příklad kódu používá <xref:System.Windows.Forms.SendKeys.Send%2A> k simulaci při poklepání prostor ve tvaru, stisknete klávesu ENTER. Tento příklad předpokládá <xref:System.Windows.Forms.Form> s jedním <xref:System.Windows.Forms.Button> ovládací prvek, který má pořadové číslo 0.  
+1.  Volání <xref:System.Windows.Forms.SendKeys.Send%2A> nebo <xref:System.Windows.Forms.SendKeys.SendWait%2A> metodu <xref:System.Windows.Forms.SendKeys> třídy. Aktivní ovládací prvek aplikace bude přijímat zadané stisknutí kláves. Následující příklad kódu používá <xref:System.Windows.Forms.SendKeys.Send%2A> pro simulaci stisknutím klávesy ENTER v situaci, kdy uživatel dvakrát klikne na plochu formuláře. Tento příklad předpokládá <xref:System.Windows.Forms.Form> pomocí jediného <xref:System.Windows.Forms.Button> ovládací prvek, který má pořadové číslo 0.  
   
      [!code-cpp[System.Windows.Forms.SimulateKeyPress#10](../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/cpp/form1.cpp#10)]
      [!code-csharp[System.Windows.Forms.SimulateKeyPress#10](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/CS/form1.cs#10)]
      [!code-vb[System.Windows.Forms.SimulateKeyPress#10](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/VB/form1.vb#10)]  
   
-#### <a name="to-send-a-keystroke-to-a-different-application"></a>K odeslání stisknutí klávesy jinou aplikaci  
+#### <a name="to-send-a-keystroke-to-a-different-application"></a>Odeslat stisknutí klávesy na novou aplikaci  
   
-1.  Aktivovat okna aplikace, která bude přijímat stisknutí kláves a potom zavolejte <xref:System.Windows.Forms.SendKeys.Send%2A> nebo <xref:System.Windows.Forms.SendKeys.SendWait%2A> metoda. Protože neexistuje žádná metoda spravované aktivovat jiná aplikace, je nutné použít nativní metody Windows vynutit fokus na jiné aplikace. Vyvolání platformou používá následující příklad kódu pro volání `FindWindow` a `SetForegroundWindow` metody aktivace okna aplikace kalkulačky a poté zavolá <xref:System.Windows.Forms.SendKeys.SendWait%2A> vystavit řadu Výpočty kalkulačky aplikace.  
+1.  Aktivovat okno aplikace, která bude přijímat stisknutí kláves a poté zavolejte <xref:System.Windows.Forms.SendKeys.Send%2A> nebo <xref:System.Windows.Forms.SendKeys.SendWait%2A> metody. Protože neexistuje žádná spravovaná metoda aktivovat jiná aplikace, je nutné použít nativní metody Windows k vynucení fokus na jiné aplikace. Vyvolání platformu používá následující příklad kódu pro volání `FindWindow` a `SetForegroundWindow` metody k aktivaci okno aplikace kalkulačky a poté zavolá <xref:System.Windows.Forms.SendKeys.SendWait%2A> vydat aplikace Kalkulačka řadu výpočty.  
   
     > [!NOTE]
-    >  Správné parametry `FindWindow` volání, která vyhledává aplikace Kalkulačka lišit v závislosti na vaší verzi systému Windows.  Následující kód vyhledá aplikace Kalkulačka v [!INCLUDE[win7](../../../includes/win7-md.md)]. Na [!INCLUDE[windowsver](../../../includes/windowsver-md.md)], změňte první parametr "SciCalc". Nástroje Spy ++ nástroj, zahrnutá v sadě Visual Studio, můžete určit správné parametry.  
+    >  Správné parametry `FindWindow` volání, která vyhledává aplikace Kalkulačka se liší v závislosti na vaší verzi Windows.  Následující kód najde aplikace Kalkulačka na [!INCLUDE[win7](../../../includes/win7-md.md)]. Na [!INCLUDE[windowsver](../../../includes/windowsver-md.md)], změnit první parametr "SciCalc". Spy ++ nástroj, součástí sady Visual Studio, můžete použít k určení správné parametry.  
   
      [!code-cpp[System.Windows.Forms.SimulateKeyPress#5](../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/cpp/form1.cpp#5)]
      [!code-csharp[System.Windows.Forms.SimulateKeyPress#5](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/CS/form1.cs#5)]
@@ -85,9 +85,9 @@ Windows Forms poskytuje několik možností pro simulaci prostřednictvím kódu
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na systém, System.Drawing a System.Windows.Forms sestavení.  
+-   Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
   
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic a Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [vytváření pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit zadáním nebo vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## <a name="see-also"></a>Viz také  
  [Uživatelský vstup ve Windows Forms](../../../docs/framework/winforms/user-input-in-windows-forms.md)

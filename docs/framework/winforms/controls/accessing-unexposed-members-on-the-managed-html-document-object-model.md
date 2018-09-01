@@ -8,20 +8,20 @@ helpviewer_keywords:
 - unexposed members
 - managed HTML DOM [Windows Forms], accessing unexposed members
 ms.assetid: 762295bd-2355-4aa7-b43c-5bff997a33e6
-ms.openlocfilehash: d2fbccfb3ecd7716420ca951e86f728798d25258
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8767ef0fb484d43ffad4888affebb9d6bb74cc3a
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33526430"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43384637"
 ---
 # <a name="accessing-unexposed-members-on-the-managed-html-document-object-model"></a>Přístup k nevystaveným členům v modelu spravovaného objektu dokumentu HTML
-Spravované HTML modelu DOM (Document Object) obsahuje třídu s názvem <xref:System.Windows.Forms.HtmlElement> která zveřejňuje vlastnosti, metod a události, které mají společnou všechny elementy HTML. V některých případech ale potřebujete pro přístup k členy, kteří použití spravovaného rozhraní nevystavuje přímo. Toto téma popisuje dva způsoby pro přístup k nevystaveným členům, včetně [!INCLUDE[jsprjscript](../../../../includes/jsprjscript-md.md)] a VBScript funkcí definovaných v rámci webové stránky.  
+Spravované HTML Document Object Model (DOM) obsahuje třídu s názvem <xref:System.Windows.Forms.HtmlElement> , která zveřejňuje vlastnosti, metody a události, které mají společnou všechny prvky jazyka HTML. V některých případech však můžete potřebovat pro přístup ke členům, které použití spravovaného rozhraní nevystavuje přímo. Toto téma popisuje dva způsoby, jak přístup k nevystaveným členům, včetně [!INCLUDE[jsprjscript](../../../../includes/jsprjscript-md.md)] a VBScript funkce definované uvnitř na webové stránce.  
   
 ## <a name="accessing-unexposed-members-through-managed-interfaces"></a>Přístup k Nevystaveným členům prostřednictvím spravovaného rozhraní  
- <xref:System.Windows.Forms.HtmlDocument> a <xref:System.Windows.Forms.HtmlElement> poskytují čtyři metody, které umožňují přístup k nevystaveným členům. Následující tabulka uvádí typy a jejich odpovídající metody.  
+ <xref:System.Windows.Forms.HtmlDocument> a <xref:System.Windows.Forms.HtmlElement> poskytují čtyři metody, které umožňují přístup k nevystaveným členům. V následující tabulce jsou uvedeny typy a jejich odpovídající metody.  
   
-|Typ členu|Metodu nebo metody|  
+|Typ členu|Metody|  
 |-----------------|-----------------|  
 |Vlastnosti (<xref:System.Windows.Forms.HtmlElement>)|<xref:System.Windows.Forms.HtmlElement.GetAttribute%2A><br /><br /> <xref:System.Windows.Forms.HtmlElement.SetAttribute%2A>|  
 |Metody|<xref:System.Windows.Forms.HtmlElement.InvokeMember%2A>|  
@@ -29,7 +29,7 @@ Spravované HTML modelu DOM (Document Object) obsahuje třídu s názvem <xref:S
 |Události (<xref:System.Windows.Forms.HtmlElement>)|<xref:System.Windows.Forms.HtmlElement.AttachEventHandler%2A><br /><br /> <xref:System.Windows.Forms.HtmlElement.DetachEventHandler%2A>|  
 |Události (<xref:System.Windows.Forms.HtmlWindow>)|<xref:System.Windows.Forms.HtmlWindow.AttachEventHandler%2A><br /><br /> <xref:System.Windows.Forms.HtmlWindow.DetachEventHandler%2A>|  
   
- Při použití těchto metod se předpokládá, že máte element správné základní typ. Předpokládejme, že chcete pro naslouchání na `Submit` události `FORM` elementu na HTML stránky, aby mohli provést některé předběžné zpracování na `FORM`na hodnoty předtím, než je uživatel odešle na server. V ideálním případě Pokud budete mít kontrolu nad HTML, můžete nadefinovat `FORM` tak, aby měl jedinečnou `ID` atribut.  
+ Při použití těchto metod se předpokládá, že máte element správného základního typu. Předpokládejme, že chcete naslouchat `Submit` události `FORM` elementu na HTML stránky tak, aby bylo možné provádět některé úkony předběžného zpracování na `FORM`od hodnoty předtím, než je uživatel odešle na server. V ideálním případě máte kontrolu nad HTML můžete nadefinovat `FORM` mít jedinečnou `ID` atribut.  
   
 ```  
 <HTML>  
@@ -47,15 +47,15 @@ Spravované HTML modelu DOM (Document Object) obsahuje třídu s názvem <xref:S
 </HTML>  
 ```  
   
- Po načtení této stránky do <xref:System.Windows.Forms.WebBrowser> ovládací prvek, můžete použít <xref:System.Windows.Forms.HtmlDocument.GetElementById%2A> metoda pro načtení `FORM` za běhu pomocí `form1` jako argument.  
+ Po načtení tuto stránku do <xref:System.Windows.Forms.WebBrowser> ovládacího prvku, lze použít <xref:System.Windows.Forms.HtmlDocument.GetElementById%2A> metodu pro načtení `FORM` za běhu pomocí `form1` jako argument.  
   
  [!code-csharp[System.Windows.Forms.HtmlElement#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlElement/CS/Form1.cs#10)]
  [!code-vb[System.Windows.Forms.HtmlElement#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlElement/VB/Form1.vb#10)]  
   
 ## <a name="accessing-unmanaged-interfaces"></a>Přístup k nespravovaná rozhraní  
- Můžete také přístup k nevystaveným členům v spravovaný model HTML DOM pomocí rozhraní nespravované modelu COM (Component Object) vystavené každé třídy modelu DOM. Tato možnost se doporučuje Pokud máte několik volání proti nevystaveným členům, nebo pokud nevystaveným členům vrátit dalších nespravované rozhraní, které nejsou zabalené službou spravované HTML DOM  
+ Můžete také přístup k nevystaveným členům v spravovaný model HTML DOM pomocí nespravovaná rozhraní modelu COM (Component Object) vystavené každou třídu modelu DOM. To se doporučuje, pokud je nutné provést několik volání proti nevystaveným členům, nebo pokud nevystaveným členům jiné nespravovaná rozhraní, které nejsou zabalené službou spravované HTML DOM  
   
- Následující tabulka uvádí všechna nespravované rozhraní vystavenou přes spravované HTML DOM Klikněte na další informace o jeho využití a například kód každého odkazu.  
+ Následující tabulka uvádí všechny nespravovaná rozhraní, které jsou vystaveny prostřednictvím spravované HTML DOM Klikněte na každý odkaz pro jeho použití a příklad kódu.  
   
 |Typ|Nespravovaná rozhraní|  
 |----------|-------------------------|  
@@ -64,12 +64,12 @@ Spravované HTML modelu DOM (Document Object) obsahuje třídu s názvem <xref:S
 |<xref:System.Windows.Forms.HtmlWindow>|<xref:System.Windows.Forms.HtmlWindow.DomWindow%2A>|  
 |<xref:System.Windows.Forms.HtmlHistory>|<xref:System.Windows.Forms.HtmlHistory.DomHistory%2A>|  
   
- Nejjednodušší způsob, jak používat rozhraní COM je přidat odkaz na knihovnu nespravované modelu DOM jazyka HTML (MSHTML.dll) z vaší aplikace, i když to není podporován. Další informace najdete v tématu [934368 článek znalostní báze Knowledge Base](http://support.microsoft.com/kb/934368).  
+ Nejjednodušší způsob, jak použít rozhraní modelu COM je přidat odkaz na nespravované knihovny HTML DOM (MSHTML.dll) z vašich aplikací, i když to není podporováno. Další informace najdete v tématu [934368 článku znalostní báze](https://support.microsoft.com/kb/934368).  
   
 ## <a name="accessing-script-functions"></a>Přístup k funkce skriptu  
- Na stránce HTML můžete definovat jednu nebo více funkcí pomocí skriptovací jazyk [!INCLUDE[jsprjscript](../../../../includes/jsprjscript-md.md)] nebo VBScript. Tyto funkce jsou umístěny uvnitř `SCRIPT` stránky na stránce a dá se spouštět na vyžádání nebo v reakci na události na modelu DOM.  
+ Stránku HTML můžete definovat jeden nebo více funkcí pomocí skriptovacího jazyka, jako [!INCLUDE[jsprjscript](../../../../includes/jsprjscript-md.md)] nebo VBScript. Tyto funkce jsou umístěny uvnitř `SCRIPT` stránky na stránce a lze je spustit na vyžádání nebo v reakci na události v modelu DOM.  
   
- Je možné volat jakékoli funkce skriptu definujete v stránky HTML pomocí <xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A> metoda. Pokud metoda skript vrátí HTML element, můžete použít přetypování převést tento návratový výsledek, který má <xref:System.Windows.Forms.HtmlElement>. Příklad kódu a podrobnosti najdete v tématu <xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A>.  
+ Je možné volat jakékoli funkce skriptu definujete ve stránce HTML pomocí <xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A> metody. Pokud metoda skript vrátí HTML element, můžete použít přetypování pro převod tento návratový výsledek <xref:System.Windows.Forms.HtmlElement>. Podrobnosti a příklady kódu naleznete v tématu <xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A>.  
   
 ## <a name="see-also"></a>Viz také  
  [Použití spravovaného modelu DOM (Document Object Model) HTML](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)

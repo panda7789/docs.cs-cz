@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c5020c31f590f527856f966ede512e98c07496ac
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3eb23da5accd89931ee4b883bfa162035ec26ddd
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33435385"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43384619"
 ---
 # <a name="iclrstrongnamestrongnamecompareassemblies-method"></a>ICLRStrongName::StrongNameCompareAssemblies – metoda
-Určuje, zda dva sestavení liší pouze jejich podpisy silným názvem.  
+Určuje, zda se dvě sestavení liší pouze v jejich podpisy se silným názvem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,25 +39,25 @@ HRESULT StrongNameCompareAssemblies (
   
 #### <a name="parameters"></a>Parametry  
  `wszAssembly1`  
- [v] Cesta k první sestavení.  
+ [in] Cesta k sestavení první.  
   
  `wszAssembly2`  
- [v] Cesta k sestavení druhý.  
+ [in] Cesta k druhé sestavení.  
   
  `pdwResult`  
- [out] Jedna z následujících hodnot:  
+ [out] Jeden z následujících hodnot:  
   
--   `SN_CMP_DIFFERENT` (0) - určuje, že sestavení obsahovat různé data.  
+-   `SN_CMP_DIFFERENT` (0) – určuje, zda sestavení obsahovat různé datové.  
   
--   `SN_CMP_IDENTICAL` (1) - určuje, že sestavení jsou stejné, včetně jejich podpisy a kontrolního součtu.  
+-   `SN_CMP_IDENTICAL` (1) – určuje, že sestavení jsou stejné, včetně jejich podpisy a kontrolního součtu.  
   
--   `SN_CMP_SIGONLY` (2) - určuje, že sestavení liší pouze podpisu a kontrolních součtů.  
+-   `SN_CMP_SIGONLY` (2) – určuje, že sestavení liší pouze v podpisu a kontrolního součtu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   
@@ -66,7 +66,7 @@ HRESULT StrongNameCompareAssemblies (
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="remarks"></a>Poznámky  
- Podpis silného názvu sestavení se skládá z textu název sestavení, verzi, jazykovou verzi a tokenu veřejného klíče.  
+ Podpis silného názvu sestavení se skládá z textový název sestavení, verzi, jazykovou verzi a token veřejného klíče.  
   
 ## <a name="see-also"></a>Viz také  
  [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

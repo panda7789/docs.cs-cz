@@ -32,11 +32,11 @@ ms.assetid: 76994ee6-9fa9-4059-b813-26578d24427c
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b745fa6a78ab2a7ab0b3a94c9921883d3c56c1b7
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42935741"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43384270"
 ---
 # <a name="diagnose-errors-with-managed-debugging-assistants"></a>Diagnostikování chyb pomocí asistentů spravovaného ladění
 

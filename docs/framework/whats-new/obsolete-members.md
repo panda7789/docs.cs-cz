@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5b39962d2d716d88d139ccaba5f4c445dad9ef6c
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 0a36e08c9b54dd6b47b11b36fd20993bff8c805e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42999478"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43386340"
 ---
 # <a name="obsolete-members-in-the-net-framework"></a>Zastaralé členy v rozhraní .NET Framework
 Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhraní .NET Framework 4.5 a novějších verzích uspořádané podle sestavení. Pokud chcete zobrazit seznam zastaralé členy a doporučené alternativy v každé sestavení pomocí následujících odkazů. Toto téma neobsahuje členy zastaralých typů. Seznam zastaralých typů najdete v tématu [zastaralých typů](../../../docs/framework/whats-new/obsolete-types.md).  
@@ -624,8 +624,8 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Web.HttpContext?displayProperty=nameWithType>|<xref:System.Web.HttpContext.GetConfig%2A>|Doporučenou alternativou je <xref:System.Web.HttpContext.GetSection%2A?displayProperty=nameWithType> v System.Web.dll.|  
 |<xref:System.Web.HttpUtility?displayProperty=nameWithType>|<xref:System.Web.HttpUtility.UrlEncodeUnicode%2A>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Tato metoda vytváří bez\-standardy\-kompatibilní výstup a má problémy s interoperabilitou. Upřednostňovanou alternativou je <xref:System.Web.HttpUtility.UrlEncode%28System.String%29>.|  
 |<xref:System.Web.HttpUtility?displayProperty=nameWithType>|<xref:System.Web.HttpUtility.UrlEncodeUnicodeToBytes%2A>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Tato metoda vytváří bez\-standardy\-kompatibilní výstup a má problémy s interoperabilitou. Upřednostňovanou alternativou je <xref:System.Web.HttpUtility.UrlEncodeToBytes%28System.String%29>.|  
-|<xref:System.Web.Configuration.AuthenticationMode?displayProperty=nameWithType>|<xref:System.Web.Configuration.AuthenticationMode.Passport>|Toto pole je zastaralé. Produkt ověřování služby Passport se už nepodporuje a bylo nahrazeno [Account Microsoft](http://go.microsoft.com/fwlink/?LinkId=733413).|  
-|<xref:System.Web.Configuration.AuthenticationSection?displayProperty=nameWithType>|<xref:System.Web.Configuration.AuthenticationSection.Passport%2A>|Tato vlastnost je zastaralá. Produkt ověřování služby Passport se už nepodporuje a bylo nahrazeno [Account Microsoft](http://go.microsoft.com/fwlink/?LinkId=733413).|  
+|<xref:System.Web.Configuration.AuthenticationMode?displayProperty=nameWithType>|<xref:System.Web.Configuration.AuthenticationMode.Passport>|Toto pole je zastaralé. Produkt ověřování služby Passport se už nepodporuje a bylo nahrazeno [Account Microsoft](https://go.microsoft.com/fwlink/?LinkId=733413).|  
+|<xref:System.Web.Configuration.AuthenticationSection?displayProperty=nameWithType>|<xref:System.Web.Configuration.AuthenticationSection.Passport%2A>|Tato vlastnost je zastaralá. Produkt ověřování služby Passport se už nepodporuje a bylo nahrazeno [Account Microsoft](https://go.microsoft.com/fwlink/?LinkId=733413).|  
 |<xref:System.Web.Configuration.HttpCapabilitiesBase?displayProperty=nameWithType>|<xref:System.Web.Configuration.HttpCapabilitiesBase.JavaScript%2A>|Doporučenou alternativou je <xref:System.Web.Configuration.HttpCapabilitiesBase.EcmaScriptVersion%2A?displayProperty=nameWithType> vlastnost. A <xref:System.Version.Major%2A?displayProperty=nameWithType> verze hodnotu větší než nebo rovno 1 znamená podporu jazyka JavaScript.|  
 |<xref:System.Web.Configuration.SystemWebSectionGroup?displayProperty=nameWithType>|<xref:System.Web.Configuration.SystemWebSectionGroup.MobileControls%2A>|System.Web.Mobile.dll je zastaralý.|  
 |<xref:System.Web.Routing.UrlRoutingModule?displayProperty=nameWithType>|<xref:System.Web.Routing.UrlRoutingModule.PostMapRequestHandler%2A>|Tato metoda je zastaralá. Přepsat <xref:System.Web.Routing.UrlRoutingModule.Init%2A> metoda se má použít <xref:System.Web.Routing.UrlRoutingModule.PostMapRequestHandler%2A> událostí.|  

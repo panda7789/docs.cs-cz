@@ -3,11 +3,11 @@ title: 'Základní komunikace: Podpora webového hostitele'
 ms.date: 03/30/2017
 ms.assetid: 034c501f-96f9-4ef7-9602-3ac21788fd3e
 ms.openlocfilehash: 8ee107ffcb9fab629541ce004d1c587fcad652c8
-ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42752313"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385965"
 ---
 # <a name="core-communications-webhost-support"></a>Základní komunikace: Podpora webového hostitele
 

@@ -9,56 +9,56 @@ helpviewer_keywords:
 - columns [Windows Forms], customizing in DataGridView control
 - cells [Windows Forms], customizing in DataGridView control
 ms.assetid: 9b7dc7b6-5ce6-4566-9949-902f74f17a81
-ms.openlocfilehash: 0a5d2dd5ac72d5199d143c6173e28457e1a80f6b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c183cb03535832dce9b2c3ed97eb4d68fab19796
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529130"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385761"
 ---
 # <a name="how-to-customize-cells-and-columns-in-the-windows-forms-datagridview-control-by-extending-their-behavior-and-appearance"></a>Postupy: Přizpůsobení buněk a sloupců v ovládacím prvku Windows Forms DataGridView rozšířením jeho chování a vzhledu
-<xref:System.Windows.Forms.DataGridView> Řízení poskytuje několik způsobů, jak přizpůsobit její vzhled a chování pomocí vlastností události a doprovodné třídy. V některých případech mohou mít požadavky pro vaše buněk, které překračují co může poskytnout tyto funkce. Můžete vytvořit vlastní vlastní <xref:System.Windows.Forms.DataGridViewCell> třída poskytovat rozšířené funkce.  
+<xref:System.Windows.Forms.DataGridView> Ovládacího prvku poskytuje několik způsobů, jak přizpůsobit její vzhled a chování pomocí vlastnosti, události a doprovodné třídy. V některých případech můžete mít požadavky pro vaše buňky, která přesahují co může poskytnout tyto funkce. Můžete vytvořit vlastní <xref:System.Windows.Forms.DataGridViewCell> třídy k zajištění rozšířené funkce.  
   
- Vytvoření vlastní <xref:System.Windows.Forms.DataGridViewCell> třídy odvozené z <xref:System.Windows.Forms.DataGridViewCell> základní třídu nebo jeden z jejich odvozené třídy. I když můžete zobrazit libovolného typu buňky v jakýkoli typ sloupce, obvykle vytvoříte vlastní <xref:System.Windows.Forms.DataGridViewColumn> třída specializované pro zobrazení vašeho typu buňky. Sloupec třídy jsou odvozeny od <xref:System.Windows.Forms.DataGridViewColumn> nebo jednoho z jeho odvozených typů.  
+ Vytvoření vlastní <xref:System.Windows.Forms.DataGridViewCell> třídy odvozené z <xref:System.Windows.Forms.DataGridViewCell> základní třídy nebo některé z odvozených tříd. I když můžete zobrazit libovolného typu buňky v jakýkoli typ sloupce, obvykle vytvoříte vlastní <xref:System.Windows.Forms.DataGridViewColumn> třídy specializované pro zobrazení typu buňky. Sloupec třídy odvozovat z <xref:System.Windows.Forms.DataGridViewColumn> nebo jeden z jeho odvozených typů.  
   
- V následujícím příkladu kódu vytvoříte vlastní buňky třídy s názvem `DataGridViewRolloverCell` , zjistí, že myš zadá a opustí hranice buněk. Při přesunutí myši v rámci hranice na buňku obdélníku inset vykreslením. Tento nový typ je odvozena z <xref:System.Windows.Forms.DataGridViewTextBoxCell> a v ostatních ohledech se chová jako svou základní třídu. Je volána třída sloupec doprovodné `DataGridViewRolloverColumn`.  
+ V následujícím příkladu kódu se vytvoří vlastní třídu s názvem `DataGridViewRolloverCell` , který zjistí, že ukazatel myši přejde a dostanou buňky. Kdy je myš v rámci hranice na buňku, inset obdélník vykreslením. Tento nový typ je odvozen od <xref:System.Windows.Forms.DataGridViewTextBoxCell> a ve všech ohledech se chová jako její základní třídě. Třídě doprovodných prvků sloupce se nazývá `DataGridViewRolloverColumn`.  
   
- K použití těchto tříd, vytvořit formulář obsahující <xref:System.Windows.Forms.DataGridView> řídit, přidejte jeden nebo více `DataGridViewRolloverColumn` objekty ke <xref:System.Windows.Forms.DataGridView.Columns%2A> kolekce a naplnit ovládací prvek s řádky obsahující hodnoty.  
-  
-> [!NOTE]
->  Tento příklad nebude pracovat správně, pokud přidáte prázdné řádky. Prázdné řádky se vytvoření, například při přidání řádků pro ovládací prvek nastavením <xref:System.Windows.Forms.DataGridView.RowCount%2A> vlastnost. Toto je vzhledem k tomu, že řádky přidat v tomto případě jsou automaticky sdíleny, to znamená, že `DataGridViewRolloverCell` objektů nejsou vytvořena, dokud nekliknete na jednotlivých buněk a způsobuje související řádky se nesdílené.  
-  
- Protože tento typ přizpůsobení buněk vyžaduje nesdílené řádky, není vhodné používat s velkých datových sad. Další informace o sdílení řádků najdete v tématu [osvědčené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
+ K použití těchto tříd, vytvořit formulář, který obsahuje <xref:System.Windows.Forms.DataGridView> řídit, přidejte jeden nebo více `DataGridViewRolloverColumn` objektů <xref:System.Windows.Forms.DataGridView.Columns%2A> kolekce a naplnit řádky obsahující hodnoty ovládacího prvku.  
   
 > [!NOTE]
->  Pokud odvozujete od <xref:System.Windows.Forms.DataGridViewCell> nebo <xref:System.Windows.Forms.DataGridViewColumn> a přidání nových vlastností do odvozené třídy, je nutné přepsat `Clone` metoda kopírování nové vlastnosti během operací klonování. Měli byste také zavolat základní třídy `Clone` metoda tak, aby vlastnosti základní třídy jsou zkopírovány do nového buňky nebo sloupec.  
+>  V tomto příkladu nebude fungovat správně, pokud chcete přidat prázdné řádky. Prázdné řádky se vytvoří, například při přidání řádků do ovládacího prvku tak, že nastavíte <xref:System.Windows.Forms.DataGridView.RowCount%2A> vlastnost. Důvodem je, že řádky přidané v tomto případě se automaticky sdílet, což znamená, že `DataGridViewRolloverCell` objekty nejsou vytvořena instance, dokud nekliknete na jednotlivé buňky a způsobuje související řádky, které mají být nejdříve zrušeno sdílení.  
+  
+ Vzhledem k tomu, že tento typ buňky přizpůsobení vyžaduje nesdílený řádky, není vhodné pro použití s velkými datovými sadami. Další informace o sdílení řádků, naleznete v tématu [osvědčené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
+  
+> [!NOTE]
+>  Pokud odvozujete od <xref:System.Windows.Forms.DataGridViewCell> nebo <xref:System.Windows.Forms.DataGridViewColumn> a přidání nových vlastností do odvozené třídy, je nutné přepsat `Clone` metoda kopírování nové vlastnosti během operace klonování. Měli byste také zavolat základní třídu `Clone` metodu tak, aby vlastností základní třídy jsou zkopírovány do nové buňky nebo sloupec.  
   
 ### <a name="to-customize-cells-and-columns-in-the-datagridview-control"></a>Přizpůsobení buněk a sloupců v ovládacím prvku DataGridView  
   
-1.  Odvození novou třídu buňky, s názvem `DataGridViewRolloverCell`, z <xref:System.Windows.Forms.DataGridViewTextBoxCell> typu.  
+1.  Odvodit novou třídu buňky, s názvem `DataGridViewRolloverCell`, z <xref:System.Windows.Forms.DataGridViewTextBoxCell> typu.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewRolloverCell#201](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRolloverCell/CS/rollovercell.cs#201)]
      [!code-vb[System.Windows.Forms.DataGridViewRolloverCell#201](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRolloverCell/VB/rollovercell.vb#201)]  
     [!code-csharp[System.Windows.Forms.DataGridViewRolloverCell#202](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRolloverCell/CS/rollovercell.cs#202)]
     [!code-vb[System.Windows.Forms.DataGridViewRolloverCell#202](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRolloverCell/VB/rollovercell.vb#202)]  
   
-2.  Přepsání <xref:System.Windows.Forms.DataGridViewTextBoxCell.Paint%2A> metoda v `DataGridViewRolloverCell` třídy. V přepsání nejdřív voláním implementace základní třídu, která zpracovává funkci hostované textové pole. Potom pomocí ovládacího prvku <xref:System.Windows.Forms.Control.PointToClient%2A> metoda pro transformaci pozice kurzoru (v souřadnice obrazovky) do <xref:System.Windows.Forms.DataGridView> souřadnice klientské oblasti. Pokud souřadnic myši spadal do hranice buňky, kreslení inset rámeček.  
+2.  Přepsat <xref:System.Windows.Forms.DataGridViewTextBoxCell.Paint%2A> metodu `DataGridViewRolloverCell` třídy. V přepsání nejprve volejte implementaci základní třídy, která zpracovává pole funkcí hostované text. Pak pomocí ovládacího prvku <xref:System.Windows.Forms.Control.PointToClient%2A> metody pro transformaci do pozice kurzoru (v souřadnicovém systému obrazovky) <xref:System.Windows.Forms.DataGridView> souřadnice klientské oblasti. Pokud souřadnice myši spadat do hranice buňky, kreslení obdélníku vložené.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewRolloverCell#210](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRolloverCell/CS/rollovercell.cs#210)]
      [!code-vb[System.Windows.Forms.DataGridViewRolloverCell#210](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRolloverCell/VB/rollovercell.vb#210)]  
   
-3.  Přepsání <xref:System.Windows.Forms.DataGridViewCell.OnMouseEnter%2A> a <xref:System.Windows.Forms.DataGridViewCell.OnMouseLeave%2A> metody v `DataGridViewRolloverCell` třída vynutit buněk překreslit sami, když ukazatel myši vstoupí do nebo je opustí.  
+3.  Přepsat <xref:System.Windows.Forms.DataGridViewCell.OnMouseEnter%2A> a <xref:System.Windows.Forms.DataGridViewCell.OnMouseLeave%2A> metody v `DataGridViewRolloverCell` třídy přinutit buňky, které chcete repaint sami, pokud ukazatel myši přejde do nebo je opustí.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewRolloverCell#220](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRolloverCell/CS/rollovercell.cs#220)]
      [!code-vb[System.Windows.Forms.DataGridViewRolloverCell#220](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRolloverCell/VB/rollovercell.vb#220)]  
   
-4.  Odvození novou třídu, s názvem `DataGridViewRolloverCellColumn`, z <xref:System.Windows.Forms.DataGridViewColumn> typu. V konstruktoru, přiřadit nový `DataGridViewRolloverCell` do objektu jeho <xref:System.Windows.Forms.DataGridViewColumn.CellTemplate%2A> vlastnost.  
+4.  Odvozovat nové třídy, nazvané `DataGridViewRolloverCellColumn`, z <xref:System.Windows.Forms.DataGridViewColumn> typu. V konstruktoru, přiřaďte nový `DataGridViewRolloverCell` objektu na jeho <xref:System.Windows.Forms.DataGridViewColumn.CellTemplate%2A> vlastnost.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewRolloverCell#300](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRolloverCell/CS/rollovercell.cs#300)]
      [!code-vb[System.Windows.Forms.DataGridViewRolloverCell#300](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRolloverCell/VB/rollovercell.vb#300)]  
   
 ## <a name="example"></a>Příklad  
- Úplný příklad kódu obsahuje formulář malý test, který ukazuje chování typu vlastní buňky.  
+ Příklad úplného kódu obsahuje formulář malý test, který ukazuje chování typu vlastní.  
   
  [!code-csharp[System.Windows.Forms.DataGridViewRolloverCell#000](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRolloverCell/CS/rollovercell.cs#000)]
  [!code-vb[System.Windows.Forms.DataGridViewRolloverCell#000](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRolloverCell/VB/rollovercell.vb#000)]  
@@ -68,7 +68,7 @@ ms.locfileid: "33529130"
   
 -   Odkazy na sestavení systému, System.Windows.Forms a System.Drawing.  
   
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic a Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [vytváření pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit zadáním nebo vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.DataGridView>  

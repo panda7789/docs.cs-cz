@@ -1,27 +1,27 @@
 ---
-title: Změna stromové struktury v paměti XML vs. Funkční konstrukce (technologie LINQ to XML) (C#)
+title: Změna stromu XML v paměti vs. Funkční konstrukce (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: b5afc31d-a325-4ec6-bf17-0ff90a20ffca
 ms.openlocfilehash: 3e6d86ac11f10d7dbb3d270410415fb23acb2e01
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33333733"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43397796"
 ---
-# <a name="in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml-c"></a>Změna stromové struktury v paměti XML vs. Funkční konstrukce (technologie LINQ to XML) (C#)
-Úprava strom XML na místě je tradiční přístup k změna tvaru dokument XML. Typická aplikace dokumentu načte do úložiště dat, jako je například DOM nebo [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]; používá programovací rozhraní vložení uzlů, odstranit uzly nebo změnit obsah uzly; a potom uloží do souboru XML nebo přenáší přes síť.  
+# <a name="in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml-c"></a>Změna stromu XML v paměti vs. Funkční konstrukce (LINQ to XML) (C#)
+Změna stromu XML v místě je tradiční přístup na měnící tvar dokumentu XML. Typická aplikace načte dokument do úložiště dat, jako je například modelu DOM nebo [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]; používá programovací rozhraní pro vložení uzlů, odstraňovat uzly nebo změnit obsah uzlů a pak uloží do souboru XML nebo přenáší přes síť.  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Umožňuje jiná možnost, která je užitečné v mnoha scénářích *: funkční konstrukce*. Funkční konstrukce zpracovává změny dat, jako problém transformace, nikoli jako podrobné manipulaci data Store. Pokud může trvat znázornění dat a transformují je efektivně z jednoho formátu do druhého, výsledek je stejný, jako kdyby trvalo jedno úložiště dat a s nimi manipulovat nějakým způsobem provést další obrazec. Klíč k funkční konstrukce přístup, je předat výsledky dotazů pro <xref:System.Xml.Linq.XDocument> a <xref:System.Xml.Linq.XElement> konstruktory.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Další možností, které jsou užitečné v mnoha scénářích umožňuje *: funkční konstrukce*. Funkční konstrukce zpracovává změny dat, jako problém transformace, nikoli jako podrobné manipulaci s úložištěm dat. Pokud můžete vzít vyjádření data a transformovali je efektivní z jednoho formuláře do jiného, výsledek je stejný, jako by trvalo jednoho úložiště dat a manipulovat nějakým způsobem provést jiný tvar. Klíč k přístupu funkční konstrukce je předat výsledky dotazů pro <xref:System.Xml.Linq.XDocument> a <xref:System.Xml.Linq.XElement> konstruktory.  
   
- V mnoha případech můžete napsat kód transformational za zlomek času, které by byly třeba k manipulaci s úložiště dat, a tento kód je robustnější a snadněji provádět údržbu. V těchto případech i když transformational přístup může trvat další výpočetní výkon, je efektivnější způsob, jak upravovat data. Pokud znáte funkční přístup vývojář se výsledný kód v mnoha případech je srozumitelnější. Je snadno najít kód, který upravuje jednotlivých součástí stromu.  
+ V mnoha případech můžete napsat kód transformace, jehož za zlomek času, který by to obnášelo k práci s úložišti dat a tento kód je robustní a jednodušší správu. V těchto případech i v případě, že transformace, jehož přístupu může trvat více výpočetního výkonu, je efektivnější způsob, jak upravovat data. Pokud vývojář zkušenosti s funkční přístup, je výsledný kód v mnoha případech lze snáze pochopit. Je snadné kód, který upravuje jednotlivých součástí stromu.  
   
- Přístup, kde můžete upravit XML stromu místní je známější mnoho DOM programátorům, zatímco kód napsaný funkční přístup může vypadat neznámého vývojáře, kteří ještě nerozumí tento přístup. Pokud je nutné provést pouze malé změny na velké strom XML, přístup, kde můžete upravit stromu zavedené v mnoha případech bude trvat méně času procesoru.  
+ Místo, kde upravíte XML stromu místní přístup je více do hloubky na mnoho programátorů modelu DOM, zatímco kód napsané s využitím funkční přístup může být nevypadá to povědomě pro vývojáře, kteří ještě nerozumí tento přístup. Pokud je nutné provést pouze malé změny do velké stromu XML, přístup místo, kde upravíte stromu je v mnoha případech bude trvat méně času procesoru.  
   
- Toto téma poskytuje příklad, který implementuje pomocí obou přístupů.  
+ V tomto tématu poskytuje příklad, který implementuje pomocí obou metod.  
   
-## <a name="transforming-attributes-into-elements"></a>Transformace atributy do elementů  
- Například předpokládejme, že chcete upravit následující jednoduché dokumentu XML tak, aby atributy stát elementy. Toto téma představuje první přístup úpravu tradičním na místě. Poté zobrazí funkční konstrukce přístup.  
+## <a name="transforming-attributes-into-elements"></a>Transformace atributů na prvky  
+ V tomto příkladu předpokládejme, že chcete změnit následující jednoduchý dokument XML tak, aby atributy stát elementů. Toto téma představuje první přístup tradiční místní úpravy. Potom zobrazí funkční konstrukce přístup.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -30,8 +30,8 @@ ms.locfileid: "33333733"
 </Root>  
 ```  
   
-### <a name="modifying-the-xml-tree"></a>Úprava stromu XML  
- Můžete napsat kód procedurální k vytváření prvků z atributů a pak odstraňte atributy, následujícím způsobem:  
+### <a name="modifying-the-xml-tree"></a>Změna stromu XML  
+ Můžete napsat kód procedury k vytváření prvků z atributů a atributů, odstraňte následujícím způsobem:  
   
 ```csharp  
 XElement root = XElement.Load("Data.xml");  
@@ -53,7 +53,7 @@ Console.WriteLine(root);
 ```  
   
 ### <a name="functional-construction-approach"></a>Funkční konstrukce přístup  
- Naopak funkční přístup se skládá z kódu a vytvořit novou větev, výběr a Výběr elementů a atributů ze stromu zdroj a je vhodné, když jsou přidávány do stromu nové transformace. Funkční přístup vypadá takto:  
+ Naopak funkční přístup se skládá z kódu k vytvoření nové větve, výběru a Výběr elementů a atributů ze stromu zdrojového kódu a transformují je podle potřeby, jako jsou přidány do nového stromu. Funkční přístup vypadá takto:  
   
 ```csharp  
 XElement root = XElement.Load("Data.xml");  
@@ -65,13 +65,13 @@ XElement newTree = new XElement("Root",
 Console.WriteLine(newTree);  
 ```  
   
- Tento příklad výstupu stejné XML jako v prvním příkladu. Všimněte si však, že ve skutečnosti najdete v části výsledné strukturu nový kód XML v funkční přístup. Uvidíte vytvoření `Root` element, kód, který žádá o `Child1` element ze stromu zdroje a kód, který transformuje atributy ze stromu zdroje na elementy ve stromové struktuře nové.  
+ V tomto příkladu vrátí stejné XML jako v prvním příkladu. Všimněte si však, že vidíte ve skutečnosti výsledný struktura nový kód XML v funkční přístup. Můžete zobrazit vytvořením `Root` elementu, kód, který si vyžádá `Child1` element ze stromu zdrojového kódu a kód, který transformuje atributy ze stromu zdrojového kódu na prvky do nového stromu.  
   
- Funkční příklad v tomto případě není žádná kratší než v prvním příkladu, a není skutečně jednodušší. Ale pokud máte mnoho změn, aby na strom XML, není funkční přístup se stane poměrně složitá a poněkud obtuse. Naproti tomu při použití funkční přístup, stále jenom formuláře požadované XML, vkládání dotazy a výrazy podle potřeby, požadovaný obsah stáhnout. Funkční způsob vypočítá kód, který je snazší správa.  
+ Funkční příklad v tomto případě není žádná kratší než v prvním příkladu, a není ve skutečnosti jednodušší. Nicméně pokud máte mnoho změn tak, aby stromu XML nefunkční přístup se stanou poměrně složité a trochu obtuse. Naopak při použití funkční přístup, stále pouze formulář požadované XML vkládat dotazy a výrazy podle potřeby, aby se načetla požadovaný obsah. Funkční přístup poskytuje kód, který je snazší Údržba.  
   
- Všimněte si, že v tomto případě funkční přístup pravděpodobně nebude provádět poměrně a také způsob zpracování stromu. Hlavní problém je, že funkční přístup vytváří více krátké povahy objektů. Kompromis je však efektivní jeden Pokud funkční přístup umožňuje vyšší produktivita programátory.  
+ Všimněte si, že v tomto případě funkční přístup pravděpodobně nebude provádět úplně stejně přístup zpracování stromu. Hlavní problém je, že vytvoří funkční přístup více krátký povahy objekty. Výměnou za to však je efektivní jeden, pokud pomocí funkční přístup umožňuje vyšší produktivita programátorů.  
   
- To je velmi jednoduchý příklad, ale funguje na tento rozdíl v filosofie mezi dva přístupy. Funkční způsob vypočítá větší zvýšení produktivity pro převod větší dokumentů XML.  
+ To je velmi jednoduchý příklad, ale funguje zobrazíte filozofie rozdíl mezi dvěma přístupy. Funkční přístup poskytuje větší zvýšení produktivity pro transformaci větší dokumentů XML.  
   
 ## <a name="see-also"></a>Viz také  
- [Úprava XML stromů (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+ [Změna stromů XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

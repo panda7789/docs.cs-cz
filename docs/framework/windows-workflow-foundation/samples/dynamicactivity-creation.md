@@ -1,22 +1,22 @@
 ---
-title: Vytvoření DynamicActivity
+title: Vytvoření dynamické aktivity
 ms.date: 03/30/2017
 ms.assetid: d8ebe82f-98c8-4452-aed7-2c60a512b097
-ms.openlocfilehash: 93435be69f90ca0b74dae6b934cb145fabb7afff
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 270066fafd5c71b2a720ca305433159c172872aa
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33518099"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385258"
 ---
-# <a name="dynamicactivity-creation"></a>Vytvoření DynamicActivity
-Tento příklad ukazuje dva různé způsoby vytvoření aktivitu pomocí modulu runtime <xref:System.Activities.DynamicActivity> aktivity.  
+# <a name="dynamicactivity-creation"></a>Vytvoření dynamické aktivity
+Tento příklad ukazuje dva různé způsoby vytvoření aktivity za běhu pomocí <xref:System.Activities.DynamicActivity> aktivity.  
   
- V této ukázce je aktivita vytvoří za běhu pomocí textu, který obsahuje <xref:System.Activities.Statements.Sequence> aktivity, která obsahuje <xref:System.Activities.Statements.ForEach%601> a <xref:System.Activities.Statements.Assign%601> aktivity. Vstupní seznam celých čísel, je předaná do aktivity a nastavit jako vlastnost. <xref:System.Activities.Statements.ForEach%601> Aktivita pak iteruje nad seznam hodnot a shromažďuje ho. V <xref:System.Activities.Statements.Assign%601> aktivity, průměrná hodnota se vypočítá jako podíl je zásobník a počet elementů v seznamu a přiřaďte ho ke průměr.  
+ V této ukázce se vytvoří aktivity za běhu pomocí textu, který obsahuje <xref:System.Activities.Statements.Sequence> aktivitu, která obsahuje <xref:System.Activities.Statements.ForEach%601> a <xref:System.Activities.Statements.Assign%601> aktivity. Vstupní seznam celých čísel je předána aktivitě a nastavit jako vlastnost. <xref:System.Activities.Statements.ForEach%601> Aktivita pak Iteruje přes seznam hodnot a shromažďuje ho. V <xref:System.Activities.Statements.Assign%601> aktivity, průměrná hodnota se vypočte tak, že je zásobník vydělením počtu prvků v seznamu a přiřadíte ho k průměr.  
   
- Ukázka ukazuje použití <xref:System.Activities.DynamicActivity> výstupní aktivity, která se zobrazí v seznamu proměnných jako vstupní argumenty a vrácení hodnot jako argumenty. Aktivita má jeden vstupní argument s názvem `Numbers` tedy seznam celých čísel. <xref:System.Activities.Statements.ForEach%601> Aktivita iteruje nad seznam hodnot a shromažďuje ho. V <xref:System.Activities.Statements.Assign%601> aktivity, průměrná hodnota je vypočítána dělení je zásobník počet elementů v seznamu a jeho přiřazení k průměr. Průměr je vrácen jako výstup argument s názvem `Average`.  
+ Vzorek ukazuje použití <xref:System.Activities.DynamicActivity> aktivita, která prochází v proměnné jako vstupní argumenty a vrací hodnoty jako výstupní argumenty. Aktivita má jeden vstupní argument s názvem `Numbers` , který je seznam celá čísla. <xref:System.Activities.Statements.ForEach%601> Aktivita Iteruje přes seznam hodnot a shromažďuje ho. V <xref:System.Activities.Statements.Assign%601> aktivity, průměrná hodnota se počítá tak, že je zásobník vydělením počtu prvků v seznamu a přiřadí průměr. Průměr se vrátí jako výstup argument s názvem `Average`.  
   
- Při vytvoření prostřednictvím kódu programu dynamické aktivity, vstupní a výstupní jsou deklarovány, jak je znázorněno v následujícím příkladu kódu.  
+ Po vytvoření dynamické aktivity prostřednictvím kódu programu vstup a výstup jsou deklarovány, jak je znázorněno v následujícím příkladu kódu.  
   
 ```csharp  
 DynamicActivity act = new DynamicActivity()  
@@ -42,7 +42,7 @@ DynamicActivity act = new DynamicActivity()
 };  
 ```  
   
- Následující příklad kódu ukazuje dokončení definice `DynamicActivity` , vypočítá průměrnou hodnotu hodnot v seznamu.  
+ Následující příklad kódu ukazuje úplnou definici `DynamicActivity` , která vypočítá průměr hodnot v seznamu.  
   
 ```  
 DynamicActivity act = new DynamicActivity()  
@@ -96,7 +96,7 @@ DynamicActivity act = new DynamicActivity()
 };  
 ```  
   
- Při vytvoření v jazyce XAML, vstupní a výstupní jsou deklarovány, jak je znázorněno v následujícím příkladu.  
+ Když v XAML, vstupu a výstupu jsou deklarovány, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <Activity x:Class="Microsoft.Samples.DynamicActivityCreation.FindAverage"  
@@ -112,13 +112,13 @@ DynamicActivity act = new DynamicActivity()
 </Activity>  
 ```  
   
- XAML lze vytvořit vizuálně pomocí [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)]. Pokud je zahrnutý v projektu sady Visual Studio, nezapomeňte nastavit jeho "sestavení Action" na "Žádný" zabráníte kompilován. XAML můžete načíst pak dynamicky pomocí následující volání.  
+ XAML je možné vytvářet vizuálně pomocí [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)]. Pokud je zahrnutý v projektu sady Visual Studio, nezapomeňte nastavit jeho "akce sestavení" na "Žádný" tak, aby se na kompilaci. XAML je možné načíst potom dynamicky použitím následujícího volání.  
   
 ```  
 Activity act2 = ActivityXamlServices.Load(@"FindAverage.xaml");  
 ```  
   
- <xref:System.Activities.DynamicActivity> Instance vytvořené prostřednictvím kódu programu, nebo prostřednictvím načítání XAML lze použít pracovní postup, jak je znázorněno v následujícím příkladu kódu. Upozorňujeme, že "jednat" předaný `WorkflowInvoker.Invoke` je "akce" <xref:System.Activities.Activity> definované v prvním příkladu kódu.  
+ <xref:System.Activities.DynamicActivity> Vytvořena instance programově nebo prostřednictvím načítání XAML pracovního postupu je možné, jak je znázorněno v následujícím příkladu kódu. Mějte prosím na paměti, že "fungovat" předán `WorkflowInvoker.Invoke` je "proces" <xref:System.Activities.Activity> definované v prvním příkladu kódu.  
   
 ```  
 IDictionary<string, object> results = WorkflowInvoker.Invoke(act, new Dictionary<string, object> { { "Numbers", numbers } });  
@@ -130,19 +130,19 @@ Console.WriteLine("The average calculated using the code activity is = " + resul
   
 1.  Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení DynamicActivityCreation.sln.  
   
-2.  Sestavte řešení, stiskněte CTRL + SHIFT + B.  
+2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-3.  Chcete-li spustit řešení, stiskněte CTRL + F5.  
+3.  Abyste mohli spustit řešení, stiskněte CTRL + F5.  
   
-## <a name="command-line-arguments"></a>Argumenty příkazového řádku.  
- Tato ukázka je možné zadat argumenty příkazového řádku. Uživatelé mohou poskytovat seznam čísel aktivity pro výpočet svoje průměru. Seznam čísel, který se má použít se předá jako seznam čísel oddělené mezerou. Například vypočítat průměr 5, 10 a 32 vyvolat ukázku pomocí následující příkazový řádek.  
+## <a name="command-line-arguments"></a>Argumenty příkazového řádku  
+ Tato ukázka přijímá argumenty příkazového řádku. Uživatelé mohou poskytovat seznam čísel aktivity k výpočtu jejich průměr. Seznam čísel, který se má použít, je předán jako seznam čísel oddělených mezerou. Průměr 5, 10 a 32 vyvolání k výpočtu vzorku pomocí následující příkazový řádek.  
   
  **DynamicActivityCreation 5 10 32**  
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\DynamicActivity\DynamicActivityCreation`

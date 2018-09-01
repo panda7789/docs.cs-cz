@@ -7,21 +7,21 @@ helpviewer_keywords:
 ms.assetid: 8104d208-7813-4a1d-8a75-58f9a7bcb8c9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1f4712970b2d3ebecf12cbb7b8f9b7fcdb317986
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9d00fb16ac5b71c8fb8f8560f68d20f1f33987d7
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33410348"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43396883"
 ---
 # <a name="secannotateexe-net-security-annotator-tool"></a>SecAnnotate.exe (nástroj Security Annotator rozhraní .NET)
-Nástroj Security Annotator rozhraní .NET (SecAnnotate.exe) je aplikace příkazového řádku, který identifikuje `SecurityCritical` a `SecuritySafeCritical` části jeden nebo více sestavení.  
+Nástroj .NET Security Annotator (SecAnnotate.exe) je aplikace příkazového řádku, který identifikuje `SecurityCritical` a `SecuritySafeCritical` části jedno nebo více sestavení.  
   
- Rozšíření sady Visual Studio, [popisování zabezpečení](http://go.microsoft.com/fwlink/?LinkId=198007), poskytuje grafické uživatelské rozhraní k SecAnnotate.exe a umožňuje spustit nástroj ze sady Visual Studio.  
+ Rozšíření sady Visual Studio [Security Annotator](https://go.microsoft.com/fwlink/?LinkId=198007), poskytuje grafické uživatelské rozhraní pro SecAnnotate.exe a umožňuje spouštět nástroj ze sady Visual Studio.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit tento nástroj, použijte příkazový řádek vývojáře (nebo příkazový řádek Visual Studio v systému Windows 7). Další informace najdete v tématu [příkazového řádku](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit tento nástroj, použijte příkazový řádek vývojáře (nebo příkazový řádek Visual Studio v systému Windows 7). Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
- Na příkazovém řádku zadejte následující příkaz, kde *parametry* jsou popsané v následující části, a *sestavení* obsahovat jeden nebo více sestavení názvy oddělené mezerami:  
+ Na příkazovém řádku zadejte následující příkaz, kde *parametry* jsou popsány v následující části, a *sestavení* skládat z jednoho nebo více názvů sestavení oddělených mezerami:  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,6 +52,6 @@ SecAnnotate.exe [parameters] [assemblies]
 ## <a name="remarks"></a>Poznámky  
  Parametry a sestavení mohou být rovněž poskytnuty v souboru odpovědí, který je zadán v příkazovém řádku a s předponou zavináč (@). Každý řádek v souboru odpovědí by měl obsahovat jediný parametr nebo název sestavení.  
   
- Další informace o popisování zabezpečení rozhraní .NET, naleznete v příspěvku [pomocí SecAnnotate analyzovat vaše sestavení pro průhlednost porušení](http://go.microsoft.com/fwlink/?LinkId=187648) v blogu zabezpečení rozhraní .NET.  
+ Další informace o .NET Security Annotator naleznete v příspěvku [použití SecAnnotate k analýze sestavení narušení průhlednosti](https://go.microsoft.com/fwlink/?LinkId=187648) v blogu .NET Security.  
   
 ## <a name="examples"></a>Příklady
