@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: c31e1663-c164-4e65-b66d-d3aa8750a154
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a6c86870bf0089c25d402cf8f28a513e953ef28f
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 628c571ce645710482a29c813adb4fe1a59fd349
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42933700"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43400179"
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>Vývoj napříč platformami pomocí přenosné knihovny tříd
 Typ projektu knihovny přenosných tříd rozhraní .NET Framework v sadě Visual Studio pomáhá rychle a snadno vytvářet aplikace pro různé platformy a knihovny pro platformy Microsoft.  
@@ -25,7 +25,7 @@ Typ projektu knihovny přenosných tříd rozhraní .NET Framework v sadě Visua
   
  I po vytvoření projektu přenosné knihovny tříd v sadě Visual Studio a začít s vývojem ho můžete změnit cílové platformy. Sada Visual Studio zkompiluje knihovny pomocí nové sestavení, který vám pomůže identifikovat změny, které je třeba provést v kódu.  
   
- Tento článek popisuje vývoj aplikací v sadě Visual Studio, ale Microsoft také poskytuje referenční sestavení knihovny přenosných tříd, které můžete použít k vývoji aplikací a knihovny se zmírněními hrozeb jiných nástrojů, například Xamarin. Tyto aplikace a knihovny můžete použít na všechny založené na platformě .NET runtime v jiné platformy než Microsoft. Další informace o referenční sestavení, naleznete v příspěvku blogu [Přenosná knihovna tříd (PCL) nyní k dispozici na všech platformách](http://blogs.msdn.com/b/dotnet/archive/2013/10/14/portable-class-library-pcl-now-available-on-all-platforms.aspx). Chcete-li stáhnout sestavení, naleznete v tématu [Microsoft .NET Portable Library referenční sestavení](http://www.microsoft.com/download/details.aspx?id=40727) webu Microsoft Download Center. Další informace o tom, jak používat sestavení s využitím kódu Xamarin, najdete v příspěvku na blogu [NuGet knihoven .NET pro Xamarin nyní k dispozici a PCL](http://blogs.msdn.com/b/dotnet/archive/2013/11/13/pcl-and-net-nuget-libraries-are-now-enabled-for-xamarin.aspx).  
+ Tento článek popisuje vývoj aplikací v sadě Visual Studio, ale Microsoft také poskytuje referenční sestavení knihovny přenosných tříd, které můžete použít k vývoji aplikací a knihovny se zmírněními hrozeb jiných nástrojů, například Xamarin. Tyto aplikace a knihovny můžete použít na všechny založené na platformě .NET runtime v jiné platformy než Microsoft. Další informace o referenční sestavení, naleznete v příspěvku blogu [Přenosná knihovna tříd (PCL) nyní k dispozici na všech platformách](https://blogs.msdn.com/b/dotnet/archive/2013/10/14/portable-class-library-pcl-now-available-on-all-platforms.aspx). Chcete-li stáhnout sestavení, naleznete v tématu [Microsoft .NET Portable Library referenční sestavení](https://www.microsoft.com/download/details.aspx?id=40727) webu Microsoft Download Center. Další informace o tom, jak používat sestavení s využitím kódu Xamarin, najdete v příspěvku na blogu [NuGet knihoven .NET pro Xamarin nyní k dispozici a PCL](https://blogs.msdn.com/b/dotnet/archive/2013/11/13/pcl-and-net-nuget-libraries-are-now-enabled-for-xamarin.aspx).  
   
  Visual Studio poskytuje šablony, které vám pomůžou s vývojem pomocí přenosné knihovny tříd. V závislosti na tom, kterou verzi sady Visual Studio používáte dostupné šablony a nabídky lišit od těch popsaných v tomto článku.  
   
@@ -110,7 +110,7 @@ Přenosné knihovny tříd stránku vlastností pro Visual Studio 2013 Update 2
   
  Při změně cíle, které rozhraní API, která jsou k dispozici pro vývoj projektu se změní podle vašeho výběru. Visual Studio hlásí chyby a upozornění, které mohou nastat v důsledku změny cíle.  
   
- Pokud chcete vyhodnotit přenositelnost vašeho sestavení před provádět změny v sadě Visual Studio, můžete použít [.NET Portability Analyzeru](http://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b).  
+ Pokud chcete vyhodnotit přenositelnost vašeho sestavení před provádět změny v sadě Visual Studio, můžete použít [.NET Portability Analyzeru](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b).  
   
  Nabídka možnosti se budou lišit v závislosti na verzi sady Visual Studio, kterou používáte.  
   
@@ -224,6 +224,6 @@ Příklad – informace o verzi
 ## <a name="see-also"></a>Viz také  
  [Používání knihovny přenosných tříd spolu s modelem MVVM](../../../docs/standard/cross-platform/using-portable-class-library-with-model-view-view-model.md)  
  [Prostředky aplikací pro knihovny cílené na více platforem](../../../docs/standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md)  
- [.NET portability Analyzeru](http://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b)  
+ [.NET portability Analyzeru](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b)  
  [Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)  
  [Nasazení](../../../docs/framework/deployment/net-framework-applications.md)

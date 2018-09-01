@@ -18,12 +18,12 @@ helpviewer_keywords:
 - format specifiers, standard numeric format strings
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f20db5cfb13f788ae0f8670f0d1c3b221db3e43b
-ms.sourcegitcommit: c66ba2df2d2ecfb214f85ee0687d298e4941c1a8
+ms.openlocfilehash: 7f304adb567e3568fb4624b3c5e9ec4585009a05
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "42752130"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43403186"
 ---
 # <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
 
@@ -33,8 +33,10 @@ ms.locfileid: "42752130"
   
 -   `xx` je volitelné celé číslo nazvané *specifikátor přesnosti*. Specifikátor přesnosti má rozsah od 0 do 99 a má vliv na počet číslic ve výsledku. Všimněte si, že specifikátor přesnosti určuje počet číslic v řetězcové reprezentaci čísla. Neprovádí zaokrouhlení samotného čísla. Chcete-li provést operaci zaokrouhlení, použijte <xref:System.Math.Ceiling%2A?displayProperty=nameWithType>, <xref:System.Math.Floor%2A?displayProperty=nameWithType>, nebo <xref:System.Math.Round%2A?displayProperty=nameWithType> metody.  
   
-     Když *specifikátor přesnosti* řídí počet zlomkových číslic ve výsledném řetězci, nastavení odráží výsledný řetězec čísla, která jsou zaokrouhleny směrem od nuly (to znamená, že použití <xref:System.MidpointRounding.AwayFromZero?displayProperty=nameWithType>).  
-  
+    Když *specifikátor přesnosti* ovládacích prvků zobrazuje počet zlomkových číslic ve výsledném řetězci, výsledný řetězec číslo, které se zaokrouhlí na reprezentovatelné výsledek nejblíže neomezeně přesné výsledky. Pokud existují dva stejně téměř reprezentovatelné výsledky:
+    - **Rozhraní .NET Framework a .NET Core až po .NET Core 2.0**, modul runtime vybere výsledek s větší nejméně významných číslic (to znamená, že použití <xref:System.MidpointRounding.AwayFromZero?displayProperty=nameWithType>).
+    - **V rozhraní .NET Core 2.1 nebo novější**, modul runtime vybere výsledků i nejméně významných číslic (to znamená, že použití <xref:System.MidpointRounding.ToEven?displayProperty=nameWithType>). 
+
     > [!NOTE]
     >  Specifikátor přesnosti určuje počet číslic ve výsledném řetězci. K vyplnění výsledný řetězec s úvodní a koncové mezery, použijte [složené formátování](../../../docs/standard/base-types/composite-formatting.md) funkcí a definování *součást zarovnání* v položce formátu.  
   

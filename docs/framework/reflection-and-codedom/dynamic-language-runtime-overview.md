@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: f769a271-8aff-4bea-bfab-6160217ce23d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 09cd345daffa2418b33f032e8bab47c81e2a8526
-ms.sourcegitcommit: e8dc507cfdaad504fc9d4c83d28d24569dcef91c
+ms.openlocfilehash: 5a4645efc9276429cbdb0812f1ca501c89ea5dbb
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "33397283"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43393764"
 ---
 # <a name="dynamic-language-runtime-overview"></a>Přehled DLR (Dynamic Language Runtime)
 *Dynamickým jazykovým modulem runtime* (DLR) je prostředí modulu runtime, který přidá sadu služeb pro dynamické jazyky common language runtime (CLR). DLR usnadňuje vývoj dynamické jazyky spustit na rozhraní .NET Framework a přidat dynamické funkce pro staticky typu jazyky.  
@@ -52,7 +52,7 @@ ms.locfileid: "33397283"
   
 -   Ironpythonu. K dispozici jako open source softwaru z [Githubu](https://github.com/IronLanguages/ironpython2) webu.  
   
--   IronRuby. K dispozici jako open source softwaru z [RubyForge](http://go.microsoft.com/fwlink/?LinkId=141044) webu.  
+-   IronRuby. K dispozici jako open source softwaru z [RubyForge](https://go.microsoft.com/fwlink/?LinkId=141044) webu.  
   
 ## <a name="primary-dlr-advantages"></a>Primární DLR výhody  
  DLR nabízí následující výhody.  
@@ -80,7 +80,7 @@ Architektura DLR
   
  DLR přidá sadu služeb pro modul CLR pro lepší podporuje dynamické jazyky. Tyto služby patří:  
   
--   Stromy výrazů. DLR používá stromů výrazů k reprezentaci sémantiku jazyka. Pro tento účel DLR má rozšířené stromům výrazů LINQ tok řízení, přiřazení a ostatní uzly jazykové modelování. Další informace najdete v tématu [stromů výrazů](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b).  
+-   Stromy výrazů. DLR používá stromů výrazů k reprezentaci sémantiku jazyka. Pro tento účel DLR má rozšířené stromům výrazů LINQ tok řízení, přiřazení a ostatní uzly jazykové modelování. Další informace najdete v tématu [stromů výrazů](https://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b).  
   
 -   Volání, ukládání do mezipaměti webu. A *dynamického volání webu* je místo, kde v kódu, kde provádět operace jako `a + b` nebo `a.b()` na dynamické objekty. DLR ukládá do mezipaměti charakteristiky `a` a `b` (obvykle typy tyto objekty) a informace o operaci. Pokud tato operace byla provedena dříve DLR načte všechny potřebné informace z mezipaměti pro odesílání rychlá.  
   
@@ -95,5 +95,5 @@ Architektura DLR
  <xref:System.Dynamic.ExpandoObject>  
  <xref:System.Dynamic.DynamicObject>  
  [Modul Common Language Runtime](../../../docs/standard/clr.md)  
- [Stromy výrazů](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)  
+ [Stromy výrazů](https://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)  
  [Návod: Vytváření a používání dynamických objektů](~/docs/csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
