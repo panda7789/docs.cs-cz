@@ -12,67 +12,67 @@ helpviewer_keywords:
 - child controls [Windows Forms], anchoring and docking
 - TableLayoutPanel control [Windows Forms], child controls
 ms.assetid: 0d267c35-25f1-49b8-8976-c64e8f0ddc0b
-ms.openlocfilehash: eee67d739de13b125aa1eb8ee86de19ba645a2f5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ad09c30b2118a08f4249433c4f531e5bcef4acd5
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529094"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43418949"
 ---
 # <a name="how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control"></a>Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel
-<xref:System.Windows.Forms.TableLayoutPanel> Podporuje ovládací prvek <xref:System.Windows.Forms.Control.Anchor%2A> a <xref:System.Windows.Forms.Control.Dock%2A> vlastností v jejích podřízených ovládacích prvků.  
+<xref:System.Windows.Forms.TableLayoutPanel> Podporuje ovládací prvek <xref:System.Windows.Forms.Control.Anchor%2A> a <xref:System.Windows.Forms.Control.Dock%2A> vlastnosti v jeho podřízených ovládacích prvků.  
   
-### <a name="to-align-a-child-control-in-a-tablelayoutpanel-cell"></a>Chcete-li zarovnat podřízený ovládací prvek v buňce TableLayoutPanel  
+### <a name="to-align-a-child-control-in-a-tablelayoutpanel-cell"></a>Chcete-li zarovnat podřízeného ovládacího prvku v buňce kontejneru TableLayoutPanel  
   
 1.  Vytvoření <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek na formuláři.  
   
-2.  Nastavte hodnotu <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel.ColumnCount%2A> a <xref:System.Windows.Forms.TableLayoutPanel.RowCount%2A> vlastnosti, které chcete **1**.  
+2.  Nastavte hodnotu <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel.ColumnCount%2A> a <xref:System.Windows.Forms.TableLayoutPanel.RowCount%2A> vlastností **1**.  
   
-3.  Vytvoření <xref:System.Windows.Forms.Button> řídit ve <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. <xref:System.Windows.Forms.Button> Sídlí levém horním rohu buňky.  
+3.  Vytvoření <xref:System.Windows.Forms.Button> v ovládacím prvku <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. <xref:System.Windows.Forms.Button> Zabírá levém horním rohu buňky.  
   
-4.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Left`. <xref:System.Windows.Forms.Button> Řízení přesune vyrovnání levého okraje buňky.  
+4.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Left`. <xref:System.Windows.Forms.Button> Ovládacího prvku přesune na bylo v souladu s levého ohraničení buňky.  
   
     > [!NOTE]
-    >  Toto chování se liší od chování další ovládací prvky kontejneru. V další ovládací prvky kontejneru ovládacího prvku podřízené nepřesouvá při <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost nastavena a vzdálenost mezi ukotvené ovládacího prvku a hranic nadřazený kontejner vyřešen v době <xref:System.Windows.Forms.Control.Anchor%2A> je nastavena.  
+    >  Toto chování se liší od chování další ovládací prvky kontejneru. V další ovládací prvky kontejneru podřízený ovládací prvek nepřesouvá při <xref:System.Windows.Forms.Control.Anchor%2A> je vlastnost nastavena a vzdálenost mezi ukotvené ovládacího prvku a hranice nadřazeného kontejneru je stanovena v době <xref:System.Windows.Forms.Control.Anchor%2A> je nastavena.  
   
-5.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Top, Left`. <xref:System.Windows.Forms.Button> Řízení přesune tak, aby zabíral levém horním rohu buňky.  
+5.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Top, Left`. <xref:System.Windows.Forms.Button> Ovládacího prvku přesune tak, aby obsadily levého horního rohu buňky.  
   
-6.  Opakujte krok 5 s hodnotou z `Top, Right` přesunout <xref:System.Windows.Forms.Button> řízení pravém horním rohu buňky. Opakování s hodnotami `Bottom, Left` a `Bottom, Right`.  
+6.  Opakováním kroku 5 s hodnotou `Top, Right` přesunout <xref:System.Windows.Forms.Button> ovládacího prvku na pravém horním rohu buňky. Opakování s hodnotami `Bottom, Left` a `Bottom, Right`.  
   
-### <a name="to-stretch-a-child-control-in-a-tablelayoutpanel-cell"></a>K roztahování podřízený ovládací prvek v buňce TableLayoutPanel  
+### <a name="to-stretch-a-child-control-in-a-tablelayoutpanel-cell"></a>Roztáhnout podřízeného ovládacího prvku v buňce kontejneru TableLayoutPanel  
   
-1.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Left, Right`. <xref:System.Windows.Forms.Button> Po změně velikosti k roztahování napříč buňky.  
+1.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Left, Right`. <xref:System.Windows.Forms.Button> Změně velikosti ovládacího prvku k roztahování v buňce.  
   
     > [!NOTE]
     >  Toto chování se liší od chování další ovládací prvky kontejneru. V další ovládací prvky kontejneru podřízený ovládací prvek není při změně velikosti <xref:System.Windows.Forms.Control.Anchor%2A> je nastavena na `Left, Right` nebo `Top, Bottom`.  
   
-2.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Top, Bottom`. <xref:System.Windows.Forms.Button> Po změně velikosti k roztahování z horní části do dolní části buňky.  
+2.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Top, Bottom`. <xref:System.Windows.Forms.Button> Změně velikosti ovládacího prvku k roztahování shora dolů buňce.  
   
-3.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Top, Bottom, Left, Right`. <xref:System.Windows.Forms.Button> Po změně velikosti k vyplnění buňky.  
+3.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `Top, Bottom, Left, Right`. <xref:System.Windows.Forms.Button> Změně velikosti ovládacího prvku tak, aby vyplnil buňku.  
   
-4.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `None`. <xref:System.Windows.Forms.Button> Změně velikosti nebo zarovnaný na střed v buňce ovládacího prvku.  
+4.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost `None`. <xref:System.Windows.Forms.Button> Změně velikosti nebo na střed v buňce ovládacího prvku.  
   
-5.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Left>. <xref:System.Windows.Forms.Button> Řízení přesune vyrovnání levého okraje buňky. <xref:System.Windows.Forms.Button> Ovládací prvek zachovává jeho šířka, ale jeho výšku se změnila velikost k vyplnění buňky svisle.  
+5.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Left>. <xref:System.Windows.Forms.Button> Ovládacího prvku přesune na bylo v souladu s levého ohraničení buňky. <xref:System.Windows.Forms.Button> Uchovává šířku ovládacího prvku, ale jeho výška svou velikost tak, aby vyplnil buňky svisle.  
   
     > [!NOTE]
-    >  Toto je stejné chování, k níž dojde v další ovládací prvky kontejneru.  
+    >  Toto je stejné chování, který se nachází v jiné ovládací prvky kontejneru.  
   
-6.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>. <xref:System.Windows.Forms.Button> Po změně velikosti k vyplnění buňky.  
+6.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>. <xref:System.Windows.Forms.Button> Změně velikosti ovládacího prvku tak, aby vyplnil buňku.  
   
 ## <a name="example"></a>Příklad  
- Následující obrázek znázorňuje pět tlačítek ukotvené v pěti samostatné <xref:System.Windows.Forms.TableLayoutPanel> buněk.  
+ Následující obrázek znázorňuje pět tlačítek ukotvené pět samostatné <xref:System.Windows.Forms.TableLayoutPanel> buňky.  
   
- ![TableLayoutPanel – ukotvení](../../../../docs/framework/winforms/controls/media/vs-tlpanchor.gif "VS_TLPanchor")  
+ ![Kontejner TableLayoutPanel ukotvení](../../../../docs/framework/winforms/controls/media/vs-tlpanchor.gif "VS_TLPanchor")  
   
- Následující obrázek znázorňuje čtyři tlačítka ukotvené v rozích čtyři samostatné <xref:System.Windows.Forms.TableLayoutPanel> buněk.  
+ Následující obrázek znázorňuje čtyři tlačítka ukotvené v rozích čtyři samostatné <xref:System.Windows.Forms.TableLayoutPanel> buňky.  
   
- ![TableLayoutPanel – ukotvení](../../../../docs/framework/winforms/controls/media/vs-tlpanchor2.gif "VS_TLPanchor2")  
+ ![Kontejner TableLayoutPanel ukotvení](../../../../docs/framework/winforms/controls/media/vs-tlpanchor2.gif "VS_TLPanchor2")  
   
- Následující obrázek znázorňuje tři tlačítka roztažen tak podle ukotvení v tři samostatné <xref:System.Windows.Forms.TableLayoutPanel> buněk.  
+ Následující obrázek znázorňuje tři tlačítka roztažená podle ukotvení tři samostatné <xref:System.Windows.Forms.TableLayoutPanel> buňky.  
   
- ![TableLayoutPanel – ukotvení](../../../../docs/framework/winforms/controls/media/vs-tlpanchor3.gif "VS_TLPAnchor3")  
+ ![Kontejner TableLayoutPanel ukotvení](../../../../docs/framework/winforms/controls/media/vs-tlpanchor3.gif "VS_TLPAnchor3")  
   
- Následující příklad kódu ukazuje všechny kombinace <xref:System.Windows.Forms.Control.Anchor%2A> hodnoty vlastností <xref:System.Windows.Forms.Button> řídit ve <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku.  
+ Následující příklad kódu ukazuje všechny kombinace <xref:System.Windows.Forms.Control.Anchor%2A> hodnot vlastností pro <xref:System.Windows.Forms.Button> v ovládacím prvku <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku.  
   
  [!code-csharp[System.Windows.Forms.TableLayoutPanel.AnchorExampleForm#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel.AnchorExampleForm/CS/TlpAnchorExampleForm.cs#1)]
  [!code-vb[System.Windows.Forms.TableLayoutPanel.AnchorExampleForm#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel.AnchorExampleForm/VB/TlpAnchorExampleForm.vb#1)]  
@@ -80,9 +80,9 @@ ms.locfileid: "33529094"
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na systém, System.Data, System.Drawing a System.Windows.Forms sestavení.  
+-   Odkazy na sestavení systému, System.Data, System.Drawing a System.Windows.Forms.  
   
- Informace o vytváření tento příklad z příkazového řádku pro visual Basic a Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [vytváření pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit zadáním nebo vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření použijeme příklad z příkazového řádku pro visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.TableLayoutPanel>  

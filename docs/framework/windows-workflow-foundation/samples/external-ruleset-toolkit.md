@@ -1,137 +1,137 @@
 ---
-title: Externí Ruleset Toolkit
+title: Externí Toolkit sady pravidel
 ms.date: 03/30/2017
 ms.assetid: a306d283-a031-475e-aa01-9ae86e7adcb0
-ms.openlocfilehash: 0c2dec4d28b60fe5caef13ed6bd0e5826713a56f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f418c71b39611e64afea168ed40418dbe981521a
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33520393"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43457210"
 ---
-# <a name="external-ruleset-toolkit"></a>Externí Ruleset Toolkit
-Za normálních okolností Pokud použijete pravidla v rámci aplikace pracovního postupu, pravidla jsou součástí sestavení. V některých případech můžete udržovat sady pravidel odděleně od sestavení tak, aby bylo možné aktualizovat bez opětovné sestavení a nasazení sestavení pracovního postupu. Tato ukázka vám umožňuje spravovat a upravovat sady pravidel v databázi a přístup k tyto sady pravidel z pracovního postupu za běhu. To umožňuje, aby automaticky začlenit RuleSet změny spuštěných instancí pracovního postupu.  
+# <a name="external-ruleset-toolkit"></a>Externí Toolkit sady pravidel
+Obvykle při použití pravidla v rámci aplikace pracovního postupu pravidla jsou součástí sestavení. V některých případech můžete chtít spravovat sady pravidel odděleně od sestavení tak, aby bylo možné aktualizovat bez nutnosti opětovného sestavování a nasazování sestavení pracovního postupu. Tato ukázka umožňuje spravovat a upravovat sady pravidel v databázi a zpřístupnit tyto sady pravidel z pracovního postupu za běhu. To umožňuje spuštěné instance pracovního postupu, jak automaticky začlenit změny sady pravidel.  
   
- Ukázka externí RuleSet Toolkit obsahuje nástroj založené na Windows Forms, který můžete použít ke správě a upravit RuleSet verze v databázi. Zahrnuje taky aktivitu a hostitele služby pro provádění těchto pravidel.  
+ Ukázka externích nástrojů sady pravidel obsahuje nástroj formulářů Windows, který vám pomůže spravovat a upravovat sady pravidel verze v databázi. Zahrnuje také aktivitu a hostitelská služba pro provádění těchto pravidel.  
   
 > [!NOTE]
->  Tato ukázka vyžaduje [Microsoft SQL Server](http://go.microsoft.com/fwlink/?LinkId=96181).  
+>  Tato ukázka vyžaduje [Microsoft SQL Server](https://go.microsoft.com/fwlink/?LinkId=96181).  
   
- [!INCLUDE[vsprvsext](../../../../includes/vsprvsext-md.md)] poskytuje editor RuleSet v rámci Windows Workflow Foundation (WF). Můžete spustit tento editor dvojitým kliknutím `Policy` aktivity v pracovním postupu; ho serializuje definovaný objekt RuleSet k souboru .rules přidružený k workflowu ( `Policy` aktivity spouští RuleSet instance pracovního postupu). Při sestavování projektu workflow, je soubor .rules zkompilovat do sestavení jako prostředek.  
+ [!INCLUDE[vsprvsext](../../../../includes/vsprvsext-md.md)] poskytuje editor sady pravidel v rámci Windows Workflow Foundation (WF). Můžete spustit tento editor dvojitým kliknutím `Policy` aktivity v pracovním postupu; serializuje definovaný objekt RuleSet .rules souboru spojené s pracovním postupem ( `Policy` aktivity spouští instanci sady pravidel pro pracovní postup). Při sestavování projektu pracovního postupu je .rules soubor zkompilovaný do sestavení jako prostředek.  
   
- Součástí této ukázkové zahrnout:  
+ Součástí této ukázky zahrnout:  
   
--   Sada pravidel pro grafické uživatelské rozhraní nástroj, který můžete použít k úpravám a správě verzí RuleSet v databázi.  
+-   Sada pravidel pro grafické uživatelské rozhraní nástroj, který můžete použít k úpravám a správě verzí sady pravidel v databázi.  
   
--   Sada pravidel pro služby, který je nakonfigurován na hostiteli aplikace a přistupuje k sady pravidel z databáze.  
+-   Služba sady pravidel, která je nakonfigurovaná na hostitelskou aplikaci a budou k dispozici sady pravidel z databáze.  
   
--   `ExternalPolicy` Aktivity, která požaduje RuleSet ze služby RuleSet a spouští sada pravidel pro pracovní postup.  
+-   `ExternalPolicy` Aktivitu, která požádá službu sady pravidel pravidel a spouští sada pravidel pro pracovní postup.  
   
- Interakce komponenty je znázorněno na obrázku 1. Následující části popisují jednotlivé komponenty.  
+ Na obrázku 1 je zobrazena interakce součástí. Následující části popisují jednotlivé komponenty.  
   
- ![Koncepční přehled externí ukázka RuleSet](../../../../docs/framework/windows-workflow-foundation/samples/media/rulesettoolkitsampleoverview.gif "RuleSetToolkitSampleOverview")  
+ ![Koncepční přehled externí ukázková RuleSet](../../../../docs/framework/windows-workflow-foundation/samples/media/rulesettoolkitsampleoverview.gif "RuleSetToolkitSampleOverview")  
   
- Obrázek 1: Ukázka přehled  
+ Obrázek 1: Přehled ukázky  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ExternalRuleSetToolKit`  
   
-## <a name="ruleset-tool"></a>Sada pravidel pro nástroj  
- Snímek obrazovky nástroje RuleSet je znázorněno na obrázku 2. Z **pravidlo úložiště** nabídky, můžete načíst z databáze k dispozici sady pravidel a uložit upravené sady pravidel zpět do úložiště. Konfigurační soubor aplikace obsahuje připojovací řetězec databáze pro databázi RuleSet. Když spustíte nástroj, automaticky se načte sady pravidel z nakonfigurované databáze.  
+## <a name="ruleset-tool"></a>Nástroje sady pravidel  
+ Snímek obrazovky nástroje sady pravidel je znázorněno na obrázku 2. Z **pravidlo Store** nabídku, můžete načíst dostupné sady pravidel z databáze a uložit změny pravidel zpět do úložiště. Konfigurační soubor aplikace obsahuje připojovací řetězec databáze pro databázi sady pravidel. Při spuštění nástroje, automaticky se načte sady pravidel z nakonfigurované databáze.  
   
- ![Externí RuleSet Toolket ukázkový výstup](../../../../docs/framework/windows-workflow-foundation/samples/media/rulesetbrowser.gif "RuleSetBrowser")  
+ ![Externí sady pravidel Toolket ukázkový výstup](../../../../docs/framework/windows-workflow-foundation/samples/media/rulesetbrowser.gif "RuleSetBrowser")  
   
  Obrázek 2: Sada pravidel pro prohlížeč  
   
- Sada pravidel pro nástroj aplikuje hlavní verze a podverze čísla sady pravidel, který vám umožní současně udržovat a uložit více verzí (poskytuje nástroj žádná konfigurace uzamčení nebo jiné funkce správy kromě schopnosti správy verzí). Pomocí nástroje, můžete vytvořit nové verze RuleSet nebo odstranit existující verze. Když kliknete na tlačítko **nový**, nástroj vytvoří nový název RuleSet a použije verze 1.0. Při kopírování na verzi, nástroj vytvoří kopii vybrané RuleSet verze, včetně obsažená pravidla a přiřadí čísla verzí nové, jedinečné. Tato čísla verze jsou založené na čísla verzí pro existující sady pravidel. Můžete změnit název a verze čísla RuleSet pomocí přidružených polí na formuláři.  
+ Nástroje sady pravidel se týká čísla hlavní verze a podverze sady pravidel, což vám umožní současně udržovat a uložit více verzí (nástroj poskytuje žádná konfigurace uzamčení nebo jiné funkce správy kromě funkce správy verzí). Pomocí nástroje, můžete vytvořit nové verze sady pravidel nebo odstranit existující verze. Po kliknutí na **nový**, nástroj vytvoří nový název sady pravidel a použije verze 1.0. Při kopírování s verzí, nástroj vytvoří kopii vybrané verze sady pravidel, včetně obsažených pravidel a přiřadí čísla verzí nové, jedinečné. Tato čísla verze jsou založeny na čísla verzí pro existující sady pravidel. Můžete změnit název a verzi čísla sady pravidel pomocí přidružené pole ve formuláři.  
   
- Když kliknete na tlačítko **upravit pravidla**, spustí RuleSet editor, jak je znázorněno na obrázku 3.  
+ Po kliknutí na **upravit pravidla**, spustí editor sady pravidel, jak je znázorněno na obrázku 3.  
   
- ![Ukázkový výstup externích nástrojů RuleSet](../../../../docs/framework/windows-workflow-foundation/samples/media/ruleseteditor.gif "RuleSetEditor")  
+ ![Ukázkový výstup externích nástrojů sady pravidel](../../../../docs/framework/windows-workflow-foundation/samples/media/ruleseteditor.gif "RuleSetEditor")  
   
  Obrázek 3: RuleSet editoru  
   
- Toto je znovu hostování editor dialogového okna, která je součástí doplňku Windows Workflow Foundation Visual Studio. Poskytuje stejné funkce, včetně podporu technologie Intellisense. Pravidla jsou vytvořené pro cílový typ (například pracovního postupu), který je přidružen RuleSet v nástroji; Když kliknete na tlačítko **Procházet** v dialogovém okně hlavní nástroj **typ pracovního postupu nebo selektor** dialogové okno se zobrazí, jak je znázorněno na obrázku 4.  
+ Toto je opětovné hostování editor dialogového okna, která je součástí doplňku sady Visual Studio Windows Workflow Foundation. Nabízí stejné funkce, včetně podporu technologie Intellisense. Pravidla pro čtení zleva doprava vůči cílový typ (například pracovní postup), který je spojen s sady pravidel v nástroji; Po kliknutí na **Procházet** v dialogovém okně hlavní nástroj **selektor pracovního postupu a typu** dialogového okna se zobrazí, jak je znázorněno na obrázku 4.  
   
- ![Pracovní postup &#47;zadejte výběr](../../../../docs/framework/windows-workflow-foundation/samples/media/71f08d57-e8f2-499e-8151-ece2cbdcabfd.gif "71f08d57-e8f2-499e-8151-ece2cbdcabfd")  
+ ![Pracovní postup &#47;výběru typu](../../../../docs/framework/windows-workflow-foundation/samples/media/71f08d57-e8f2-499e-8151-ece2cbdcabfd.gif "71f08d57-e8f2-499e-8151-ece2cbdcabfd")  
   
- Obrázek 4: Výběr pracovního postupu nebo typu  
+ Obrázek 4: Typ pracovního postupu/selektor  
   
- Můžete použít **typ pracovního postupu nebo selektor** dialogovém okně můžete zadat sestavení a konkrétní typ v této sestavě. Tento typ je typ cíle, proti kterému jsou pravidla vytvořena (a spuštění). V mnoha případech cílový typ je pracovní postup nebo jiný typ aktivity. Můžete však spouštění libovolného typu .NET RuleSet.  
+ Můžete použít **selektor pracovního postupu a typu** dialogové okno k zadání sestavení a určitého typu v rámci tohoto sestavení. Tento typ je cílový typ, proti kterému se pravidla vytvářejí (a spustit). V mnoha případech je cílový typ pracovního postupu nebo jiný typ aktivity. Však můžete spustit sady pravidel pro libovolný typ rozhraní .NET.  
   
- Cesta k souboru sestavení a typu `name are stored with the` RuleSet v databázi, takže pokud sada pravidel pro se načítají z databáze, nástroj pokusí automaticky načíst typ cíle.  
+ Cesta k souboru sestavení a typu `name are stored with the` sady pravidel v databázi tak, že pokud sada pravidel je načtena z databáze, nástroj se pokusí automaticky načíst typ cíle.  
   
- Když kliknete na tlačítko **OK** v **typ pracovního postupu nebo selektor** dialogové okno, ověřuje vybraného typu proti RuleSet, a zajistěte tak, že cílový typ všichni členové odkazuje pravidla. Chyby se zobrazují v **chyby ověření** dialogové okno (viz obrázek 5). Můžete pokračovat ve změně navzdory chyby nebo kliknutím na tlačítko **zrušit**. Z **nástroje** nabídky v dialogovém okně hlavní nástroj, můžete kliknout na **ověřením** znovu ověřit verzi RuleSet proti cílové aktivity.  
+ Po kliknutí na **OK** v **selektor pracovního postupu a typu** dialogového okna, ověřuje vybraného typu proti sady pravidel, zajistit, že všechny členy, které odkazují pravidla cílového typu. Zobrazují se chyby v **chyby ověření** dialogového okna (viz obrázek 5). Můžete pokračovat ve změně bez ohledu na chyby, nebo klikněte na **zrušit**. Z **nástroje** nabídky v dialogovém okně hlavní nástroj, můžete kliknout na **ověřit** znovu ověřit verzi sady pravidel na cílovou aktivitu.  
   
- ![Chyby ověření od externí RuleSet vzorku](../../../../docs/framework/windows-workflow-foundation/samples/media/validationerrorsruleset.png "ValidationErrorsRuleSet")  
+ ![Chyby ověření z externí ukázková RuleSet](../../../../docs/framework/windows-workflow-foundation/samples/media/validationerrorsruleset.png "ValidationErrorsRuleSet")  
   
  Obrázek 5: Ověření chyby  
   
- Z **Data** nabídky v nástroji můžete importovat a exportovat sady pravidel. Když kliknete na tlačítko **Import**, zobrazí se dialogové okno výběru souboru, ve kterém můžete vybrat soubor .rules. To se může nebo nemusí být soubor původně vytvořil v sadě Visual Studio. Soubor .rules by měl obsahovat serializovaný seznam `RuleDefinitions` instance, který obsahuje kolekci podmínek a kolekce sady pravidel. Nástroj nepoužívá kolekci podmínky, ale použít `RuleDefinitions` .rules formátu umožňující interakci s prostředí Visual Studio.  
+ Z **Data** nabídky v nástroji, můžete importovat a exportovat sady pravidel. Po kliknutí na **Import**, zobrazí se dialogové okno Výběr souboru, ve kterém můžete vybrat soubor .rules. To může nebo nemusí být soubor původně vytvořil v sadě Visual Studio. Soubor .rules by měl obsahovat serializovaného `RuleDefinitions` instance, která obsahuje kolekci podmínek a kolekce pravidel. Nástroj nevyužívá kolekci podmínek, ale nepoužívá `RuleDefinitions` .rules formátu umožňující interakci s prostředím Visual Studio.  
   
- Po výběru soubor .rules **RuleSet selektor** otevře se dialogové okno (viz obrázek 6). Dialogové okno můžete použít k výběru sady pravidel ze souboru, který chcete importovat (výchozí hodnota určuje všechny sady pravidel). Sady pravidel v souboru .rules nemají číslo verze, protože jejich verze v rámci projektu WF je stejná jako verze sestavení. Během procesu importu nástroj automaticky přiřadí další dostupné hlavní číslo verze (které můžete změnit po importu); Zobrazí číslo přiřazené verze v **RuleSet selektor** seznamu.  
+ Po výběru souboru .rules **selektor sady pravidel** se zobrazí dialogové okno (viz obrázek 6). Použijete dialogové okno pro výběr sady pravidel ze souboru, který chcete importovat (výchozí hodnota určuje všechny sady pravidel). Sady pravidel v souboru .rules nemají číslo verze, protože jejich správy verzí v rámci projektu pracovního postupu je stejná jako verze sestavení. Během procesu importu nástroj automaticky přiřadí další k dispozici hlavní číslo verze (které můžete změnit po importu); můžete zobrazit čísla verzí přiřazené v **selektor sady pravidel** seznamu.  
   
- Pro každý RuleSet mu nástroj pokusí vyhledat přidružený typ ze složky bin\Debug pod umístění souboru .rules (pokud existuje), založené na členy používány RuleSet. Pokud nástroj najde odpovídající více typů, pokusí se vybrat typ na základě shody mezi .rules název souboru a název typu (například `Workflow1` typ odpovídá Workflow1.rules). Pokud existuje více shod, zobrazí se výzva k výběru typu. Pokud tento mechanismus automaticky identifikace nepodaří najít odpovídající sestavení nebo typ, pak po importu můžete kliknout na **Procházet** v dialogovém okně hlavní nástroj přejděte na typ přidružený.  
+ U každé sady pravidel, který importuje nástroj pokusí vyhledat přidruženého typu ve složce bin\Debug podle umístění souboru .rules (pokud existuje), závisí na členy používané sady pravidel. Pokud nástroj zjistí, několik odpovídajících typů, pokusí se zvolte typ na základě shody mezi .rules název souboru a název typu (například `Workflow1` typu odpovídá Workflow1.rules). Pokud existuje více shod, zobrazí se výzva k výběru typu. Pokud tento mechanismus automatického identifikace nepodaří najít odpovídající sestavení nebo typ, pak po dokončení importu můžete kliknout na **Procházet** v dialogovém okně hlavní nástroj přejděte do přidruženého typu.  
   
- ![Sada pravidel pro selektor](../../../../docs/framework/windows-workflow-foundation/samples/media/rulesetselector.gif "RuleSetSelector")  
+ ![Selektor sady pravidel](../../../../docs/framework/windows-workflow-foundation/samples/media/rulesetselector.gif "RuleSetSelector")  
   
- Obrázek 6: Sada pravidel pro selektor  
+ Obrázek 6: Výběr sady pravidel  
   
- Když kliknete na tlačítko **Export dat** nabídce hlavní nástroj **RuleSet selektor** dialogové okno se zobrazí znovu, ze kterého můžete určit sady pravidel z databáze, kterou mají být exportovány. Když kliknete na tlačítko **OK**, **uložit soubor** otevře se dialogové okno, ve kterém můžete zadat název a umístění výsledný soubor .rules. Protože .rules soubor neobsahuje informace o verzi, můžete zvolit pouze jedna sada pravidel pro verze se daný název RuleSet.  
+ Po kliknutí na **Export dat** nabídce hlavní nástroj **selektor sady pravidel** se zobrazí dialogové okno znovu, ze kterého můžete určit sady pravidel z databáze, která mají být exportovány. Po kliknutí na **OK**, **uložit soubor** se zobrazí dialogové okno, ve kterém můžete zadat název a umístění souboru pro výslednou .rules. Protože .rules soubor neobsahuje informace o verzi, můžete vybrat pouze jedna verze sady pravidel se daný název sady pravidel.  
   
-## <a name="policyfromservice-activity"></a>PolicyFromService aktivity  
- Kód pro `PolicyFromService` aktivity je jednoduché. Funguje podobně jako `Policy` aktivita se poskytuje s WF, ale místo načítání cíl RuleSet ze souboru .rules, zavolá hostitele služby k získání RuleSet instance. Pak spustí RuleSet proti k instanci pracovního postupu aktivity root.  
+## <a name="policyfromservice-activity"></a>Aktivita PolicyFromService  
+ Kód `PolicyFromService` aktivity je jednoduché. Funguje to stejně jako `Policy` aktivity, které jsou součástí pracovního postupu, ale místo cílové sady pravidel se načítají ze souboru .rules, volá hostitelská služba pro získání instance sady pravidel. Pak spustí sady pravidel pro instanci kořenové aktivity pracovního postupu.  
   
- Chcete-li použít aktivitu v pracovním postupu, přidejte odkaz na `PolicyActivities` a `RuleSetService` sestavení z projektu pracovního postupu. Najdete v postupu na konci tohoto tématu informace o tom, jak přidat aktivity do sady nástrojů.  
+ Chcete-li použít aktivitu v pracovním postupu, přidejte odkaz na `PolicyActivities` a `RuleSetService` sestavení z projektu pracovního postupu. Najdete v postupu na konci tohoto tématu informace o tom, jak přidat aktivity do panelu nástrojů.  
   
- Po vložení aktivity do pracovního postupu, je nutné zadat název objektu RuleSet ke spuštění. Můžete zadat název jako literálovou hodnotou, nebo vytvořit vazbu k proměnné pracovního postupu nebo vlastnost jiné aktivity. Volitelně můžete zadat číslo verze pro konkrétní sada pravidel pro, který by měl být spuštěn. Pokud necháte výchozí hodnotu 0 pro hlavní verze a podverze čísla, se automaticky poskytuje nejnovější číslo verze v databázi pro aktivity.  
+ Po zahájení aktivity v pracovním postupu, musíte zadat název sady pravidel ke spuštění. Můžete zadat název jako hodnotu literálu nebo připojení k proměnné pracovního postupu nebo vlastnosti druhé aktivity. Volitelně můžete zadat čísla verzí pro konkrétní sady pravidel, která by se měl spustit. Pokud necháte výchozí hodnotu 0 pro čísla hlavní verze a podverze, nejnovější číslo verze v databázi je poskytována automaticky pro aktivity.  
   
-## <a name="ruleset-service"></a>Sada pravidel pro služby  
- Služba je odpovědná za načítání zadaná RuleSet verze z databáze a jeho vrácením volání aktivity. Dřív popsané, pokud hlavní verze a podverze hodnoty předané `GetRuleSet` volání jsou obě 0, služba načte nejnovější verzi. V tomto okamžiku se žádné ukládání do mezipaměti RuleSet definice nebo instance; Podobně neexistují žádné funkce pro označení RuleSet verze jako "nasazení" k jejich odlišení od probíhající sady pravidel.  
+## <a name="ruleset-service"></a>Služba sady pravidel  
+ Služba je zodpovědná za načítání zadaná verze sady pravidel z databáze a vrátilo se volání aktivity. Jak jsme uvedli, pokud hlavní verze a podverze hodnoty předané `GetRuleSet` volání jsou obě 0, služba načte nejnovější verzi. V tomto okamžiku není žádné ukládání do mezipaměti definice sady pravidel nebo instance; Podobně neexistují žádné funkce pro označení "nasazení" je odlišili od sady pravidel v průběhu s verzemi sady pravidel.  
   
- Databázi nelze přistupovat pomocí služby musí být nakonfigurovaný na hostiteli pomocí konfiguračního souboru aplikace.  
+ Databáze, kterou chcete mít přístup služby musí být nakonfigurovaný na hostiteli pomocí konfiguračního souboru aplikace.  
   
 #### <a name="to-run-the-tool"></a>Chcete-li spustit nástroj  
   
-1.  Soubor Setup.sql obsahuje složky, která nastaví RuleSet tabulky používané nástroje a služby. Můžete spustit Setup.cmd dávkový soubor k vytvoření pravidla databáze na SQL Express a nastavit v tabulce RuleSet.  
+1.  Složka, který nastaví kolekci pravidel tabulky používané nástroje a služby obsahuje Setup.sql souboru. Můžete spustit Setup.cmd dávkový soubor k vytvoření pravidla databáze na SQL Express a nastavení v tabulce sady pravidel.  
   
-2.  Pokud upravíte dávkového souboru nebo Setup.sql a určit pomocí SQL Express nebo umístění tabulky v databázi pojmenovali jinak než `Rules`, konfigurační soubory aplikace v nástroji RuleSet a `UsageSample` projekty by měl být upraven se stejným informace.  
+2.  Pokud upravíte dávkového souboru nebo Setup.sql a zadejte použít systém SQL Express nebo umístění tabulky v databázi pojmenovali jinak než `Rules`, konfigurační soubory aplikace v nástroji sady pravidel a `UsageSample` projekty by měl být upraven se stejným informace.  
   
-3.  Po spuštění skriptu Setup.sql, můžete vytvořit `ExternalRuleSetToolkit` řešení a potom spusťte sada pravidel pro nástroj z ExternalRuleSetTool projektu.  
+3.  Po spuštění skriptu Setup.sql můžete sestavit `ExternalRuleSetToolkit` řešení a pak spustit sady pravidel nástroje z ExternalRuleSetTool projektu.  
   
-4.  `RuleSetToolkitUsageSample` Sekvenčního pracovního postupu konzolové aplikace řešení zahrnuje ukázkového pracovního postupu. Pracovní postup se skládá z `PolicyFromService` aktivity a dvě proměnné, `orderValue` a `discount`, na která se spouští cílový RuleSet.  
+4.  `RuleSetToolkitUsageSample` Konzolová aplikace sekvenčního pracovního postupu řešení zahrnuje ukázkového pracovního postupu. Pracovní postup se skládá z `PolicyFromService` aktivity a dvě proměnné, `orderValue` a `discount`, na která se spouští cílový sady pravidel.  
   
-5.  Ukázku použít sestavení `RuleSetToolkitUsageSample` řešení. Z hlavní nabídky Nástroje RuleSet klikněte **Import dat** a přejděte k souboru DiscountRuleSet.rules ve složce RuleSetToolkitUsageSample. Klikněte na tlačítko **pravidlo úložiště-uložit** nabídky možnost uložení importované RuleSet do databáze.  
+5.  Použitím této ukázky sestavení `RuleSetToolkitUsageSample` řešení. Sady pravidel nástroje hlavní nabídky, klikněte na tlačítko **Import dat** a odkazování na soubor DiscountRuleSet.rules ve složce RuleSetToolkitUsageSample. Klikněte na tlačítko **Store ukládání pravidlo** nabídky uložte do databáze importované sady pravidel.  
   
-6.  Protože `PolicyActivities` sestavení se odkazuje z ukázkového projektu pracovního postupu, `PolicyFromService` aktivity se zobrazí v pracovním postupu. Ji, ale nezobrazí v panelu nástrojů ve výchozím nastavení. Přidat do sady nástrojů, postupujte takto:  
+6.  Vzhledem k tomu, `PolicyActivities` sestavení se odkazuje z ukázkového projektu pracovního postupu a `PolicyFromService` aktivity se zobrazí v pracovním postupu. Ne, ale nezobrazí v sadě nástrojů ve výchozím nastavení. Chcete-li přidat ho do panelu nástrojů, postupujte takto:  
   
     -   Klikněte pravým tlačítkem na panelu nástrojů a vyberte **zvolit položky** (to může chvíli trvat).  
   
-    -   Při **výběr položek sady nástrojů** otevře se dialogové okno, klikněte na tlačítko **aktivity** kartě.  
+    -   Při **zvolit položky nástrojů** se zobrazí dialogové okno, klikněte na tlačítko **aktivity** kartu.  
   
-    -   Vyhledejte `PolicyActivities` sestavení v `ExternalRuleSetToolkit` řešení a klikněte na tlačítko **otevřete**.  
+    -   Přejděte `PolicyActivities` sestavení v `ExternalRuleSetToolkit` řešení a klikněte na tlačítko **otevřít**.  
   
-    -   Ujistěte se, že `PolicyFromService` aktivity je vybraný v **výběr položek sady nástrojů** dialogové okno a potom klikněte na **OK**.  
+    -   Ujistěte se, že `PolicyFromService` aktivity je vybrán v **zvolit položky nástrojů** dialogového okna a pak klikněte na tlačítko **OK**.  
   
-    -   Aktivity by se měla zobrazit v panelu nástrojů v **RuleSetToolkitUsageSample součásti** kategorie.  
+    -   Aktivita by se měla objevit na panelu nástrojů v **RuleSetToolkitUsageSample součásti** kategorie.  
   
-7.  Sada pravidel pro služba je již nakonfigurována na hostiteli aplikace konzoly pomocí následujícího příkazu v souboru Program.cs.  
+7.  Služba sady pravidel je už nakonfigurovaná na hostiteli aplikace konzoly pomocí následujícího příkazu v souboru Program.cs.  
   
     ```  
     workflowRuntime.AddService(new RuleSetService());  
     ```  
   
-8.  Můžete také konfigurovat službu na hostiteli pomocí konfiguračního souboru; najdete v dokumentaci k sadě SDK podrobnosti.  
+8.  Můžete také nakonfigurovat službu na hostiteli pomocí konfiguračního souboru; Viz podrobnosti naleznete v dokumentaci sady SDK.  
   
-9. Konfigurační soubor aplikace se přidá do projektu workflow zadat připojovací řetězec databáze, která se použije službou. To by měl být stejný připojovací řetězec používaný RuleSet nástroj, který odkazuje na databázi, která obsahuje tabulku RuleSet.  
+9. Konfigurační soubor aplikace se přidá do projektu pracovního postupu zadat připojovací řetězec pro databáze, kterou chcete používat službu. To by měl být stejný připojovací řetězec používaný projektem nástroj sady pravidel, která odkazuje na databázi, která obsahuje tabulku sady pravidel.  
   
-10. Teď můžete spustit `RuleSetToolkitUsageSample` projektu stejně jako všechny ostatní konzolové aplikace pracovního postupu. Stiskněte klávesu F5 nebo Ctrl + F5 ve Visual Studiu nebo soubor RuleSetToolkitUsageSample.exe spustit přímo.  
+10. Teď můžete spustit `RuleSetToolkitUsageSample` projektu stejně jako jakékoli jiné Konzolová aplikace pracovního postupu. Stiskněte klávesu F5 nebo Ctrl + F5 v sadě Visual Studio nebo spusťte soubor RuleSetToolkitUsageSample.exe přímo.  
   
     > [!NOTE]
-    >  Protože nástroj načte sestavení ukázkové použití, je třeba nejprve zavřít nástroj RuleSet překompilovat ukázce využití.
+    >  Sada pravidel nástroj znovu zkompilovat ukázkový používání musí ukončit, protože se nástroj načte sestavení ukázkový používání.

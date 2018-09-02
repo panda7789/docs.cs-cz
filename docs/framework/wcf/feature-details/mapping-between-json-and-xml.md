@@ -2,12 +2,12 @@
 title: Mapování mezi JSON a XML
 ms.date: 03/30/2017
 ms.assetid: 22ee1f52-c708-4024-bbf0-572e0dae64af
-ms.openlocfilehash: e8cc356a30d11a6f07cf4444efbeda2faf5b0471
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 079ca9cebefcc96bffdb0ec4601a675ed83adefe
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42931466"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43421720"
 ---
 # <a name="mapping-between-json-and-xml"></a>Mapování mezi JSON a XML
 Čtečky a zapisovače vytvářených <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory> poskytují rozhraní API XML nad obsahem objektu zápis JSON (JavaScript). JSON zašifruje data pomocí některé podsady literálů objektů jazyka JavaScript. Čtečky a zapisovače vytvářených tento objekt pro vytváření se také používají při obsah JSON se odeslaný nebo přijatý aplikací Windows Communication Foundation (WCF) pomocí <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement> nebo <xref:System.ServiceModel.WebHttpBinding>.  
@@ -38,7 +38,7 @@ ms.locfileid: "42931466"
  Kromě toho pokud zprávu JSON v příkladu přijme službou WCF a přihlášení, zobrazí se fragment XML v předchozím protokolu.  
   
 ## <a name="mapping-between-json-and-the-xml-infoset"></a>Mapování mezi JSON a XML informační sadu  
- Formálně, mapování je mezi JSON, jak je popsáno v [RFC 4627](http://go.microsoft.com/fwlink/?LinkId=98808) (s výjimkou určitá omezení volný a některé další omezení, přidá) a XML informační sada (a nikoli textovou XML) jako je popsáno v [informace XML Nastavte](http://go.microsoft.com/fwlink/?LinkId=98809) . V tomto tématu pro definice *informačních položek* a polí v [hranaté závorky].  
+ Formálně, mapování je mezi JSON, jak je popsáno v [RFC 4627](https://go.microsoft.com/fwlink/?LinkId=98808) (s výjimkou určitá omezení volný a některé další omezení, přidá) a XML informační sada (a nikoli textovou XML) jako je popsáno v [informace XML Nastavte](https://go.microsoft.com/fwlink/?LinkId=98809) . V tomto tématu pro definice *informačních položek* a polí v [hranaté závorky].  
   
  Prázdný dokument JSON se mapuje na prázdný dokument XML a prázdný dokument XML, mapuje na prázdný dokument JSON. Na XML na JSON mapování nejsou povoleny mezery před a koncové prázdné znaky po dokumentu.  
   

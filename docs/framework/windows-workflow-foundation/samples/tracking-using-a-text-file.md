@@ -2,27 +2,27 @@
 title: Sledování pomocí textového souboru
 ms.date: 03/30/2017
 ms.assetid: 56a82682-73c2-4b91-a206-4d8bb12c561b
-ms.openlocfilehash: aa59ab8304c68873c938f42fc585be883b234ecc
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 19b4d544bc1d1c5bc9ebfa51b4ba28eb82c525d0
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33805795"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43422886"
 ---
 # <a name="tracking-using-a-text-file"></a>Sledování pomocí textového souboru
-Tato ukázka ukazuje, jak rozšířit tak, že vytvoříte vlastní sledování účastník sledování v systému Windows Workflow Foundation (WF). Sledování členové jsou třídy rozhraní .NET Framework, které dostanou záznamy sledování z modulu runtime, jak budou vygenerované. Můžete vytvořit účastník sledování přenos sledování události, které chcete podle toho, která je vyžadována pro váš scénář. Například účastník sledování ETW (trasování událostí pro Windows) k dispozici jako součást [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Sledování účastník v této ukázce zapíše záznamy ve formátu XML do textového souboru.  
+Tato ukázka předvádí, jak rozšířit tak, že vytvoříte vlastní sledování účastník sledování ve Windows Workflow Foundation (WF). Sledování účastníci se tříd rozhraní .NET Framework, které přijímají sledování záznamů z modulu runtime, jako jsou emitovány. Můžete vytvořit sledování účastník přenést událostí sledování k libovolným cíl je povinné pro váš scénář. Například je účastník sledování ETW (událost trasování pro Windows) poskytuje jako součást [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Účastník sledování v této ukázce zapíše záznamy ve formátu XML do textového souboru.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- K optimalizaci užitečnost a odolnost vaší sledování účastník, musí být vyplněna některé další kroky k správně propojit účastník sledování modulu runtime. Následující tabulka popisuje třídy používané v této ukázce vytvoření sledování člena, který je v souladu s osvědčenými postupy.  
+ K optimalizaci užitečnost a odolnosti sledování účastník, je třeba provést některé další kroky správně propojí účastník sledování modulu runtime. Následující tabulka popisuje třídy používané k vytvoření účastníkem sledování, která je v souladu s osvědčenými postupy v tomto příkladu.  
   
 |Třída|Popis|  
 |-----------|-----------------|  
-|`TextFileTrackingExtensionElement`|A <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> se používá k definování konfigurační oddíl slouží ke konfiguraci sledování účastník textového souboru. To umožňuje uživatelům zadat cílové umístění souboru protokolu pomocí standardní soubory konfigurace rozhraní .NET Framework.|  
-|`TextFileTrackingBehavior`|Chování ve WCF umožňují uživatelům vložit rozšíření do modulu runtime. Toto chování účastník sledování přidá do služby při spuštění služby.|  
-|`TextFileTrackingParticipant`|Sledování člena, který přijímá sledování účastníky v době běhu a ukládá je do souboru protokolu ve formátu XML.|  
+|`TextFileTrackingExtensionElement`|A <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> se používá k definování konfiguračního oddílu použít ke konfiguraci sledování účastník textového souboru. To umožňuje uživatelům zadat cíl protokolu pomocí standardní konfigurační soubory rozhraní .NET Framework.|  
+|`TextFileTrackingBehavior`|Chování ve službě WCF umožňují uživatelům vložení rozšíření do modulu runtime. Toto chování přidá účastník sledování ve službě při spuštění služby.|  
+|`TextFileTrackingParticipant`|Účastník sledování, který přijímá sledování účastníci za běhu a uloží je do souboru protokolu ve formátu XML.|  
   
-## <a name="behavior-extension-elements-configuration"></a>Konfigurace chování rozšíření elementy  
- Jeden krok je potřebný k použití elementu rozšíření chování výše popsané pomocí rozhraní .NET Framework konfigurační soubory. Následující konfigurace musí být umístěny v konfiguračních souborech, kde má být použita rozšíření.  
+## <a name="behavior-extension-elements-configuration"></a>Chování rozšíření elementy konfigurace  
+ Dalším krokem je nutné použít rozšíření elementu chování výše popsaný pomocí konfiguračních souborů rozhraní .NET Framework. Následující konfigurace musí být umístěn v konfiguračních souborech, ve kterém se má použít rozšíření.  
   
 ```xml  
 <system.serviceModel>  
@@ -36,60 +36,60 @@ Tato ukázka ukazuje, jak rozšířit tak, že vytvoříte vlastní sledování 
 ```  
   
 > [!NOTE]
->  Naleznete v souboru Web.config v ukázce použití kompletní příklad konfigurace elementů rozšíření chování.  
+>  Naleznete v souboru Web.config v ukázce Úplný příklad použití chování rozšíření elementů konfigurace.  
   
 ## <a name="custom-tracking-records"></a>Vlastní sledování záznamů  
- Soubor GetStockPrices.cs ukazuje, jak vytvořit vlastní sledování záznamy uvnitř <xref:System.Activities.CodeActivity>. Při spuštění ukázky, vyhledejte tento záznam.  
+ Soubor GetStockPrices.cs ukazuje, jak vytvořit vlastní záznamy sledování v rámci <xref:System.Activities.CodeActivity>. Vyhledejte tento záznam při spuštění ukázky.  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
 1.  Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení WFStockPriceApplication.sln.  
   
-2.  Sestavte řešení, stiskněte CTRL + SHIFT + B.  
+2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-3.  Chcete-li spustit řešení, stiskněte CTRL + F5.  
+3.  Abyste mohli spustit řešení, stiskněte CTRL + F5.  
   
-     Okno Prohlížeč otevře a ukazuje výpis pro aplikaci adresáře.  
+     Okno prohlížeče se otevře a zobrazí výpisu adresáře pro aplikaci.  
   
 4.  V prohlížeči klikněte na tlačítko StockPriceService.xamlx.  
   
-5.  Prohlížeč zobrazí **StockPriceService** stránky, který obsahuje adresu wsdl místní služby. Zkopírujte tuto adresu.  
+5.  Prohlížeč zobrazí **StockPriceService** stránky, který obsahuje adresu místní služby wsdl. Zkopírujte tuto adresu.  
   
-     Je například adresa wsdl místní služby http://localhost:53797/StockPriceService.xamlx?wsdl.  
+     Příkladem adresy místní služby wsdl je http://localhost:53797/StockPriceService.xamlx?wsdl.  
   
-6.  Pomocí [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], přejděte na vaše [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] složky (%SystemDrive%\Program Files\Microsoft Visual Studio 10.0 je výchozí instalační složku). Vyhledejte Common7\IDE\ podsložky.  
+6.  Pomocí [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)], přejděte na stránku vaší [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] složky (výchozí instalační složka je %SystemDrive%\Program Files\Microsoft Visual Studio 10.0). Vyhledejte podsložku Common7\IDE\.  
   
-7.  Poklikejte na soubor WcfTestClient.exe ke spuštění testovacího klienta WCF.  
+7.  Poklikejte na soubor WcfTestClient.exe a spustit klienta testu WCF.  
   
-8.  V testu klienta WCF, vyberte **přidat služby...** z **souboru** nabídky.  
+8.  Testovací klient WCF, vyberte **přidat službu...** z **souboru** nabídky.  
   
-9. Vložte adresu URL, které jste právě zkopírovali, do textového pole.  
+9. Vložte adresu URL, které jste zkopírovali do textového pole.  
   
 10. Klikněte na tlačítko **OK** zavřete dialogové okno.  
   
-11. Testování služby pomocí testovacího klienta WCF.  
+11. Test pomocí testovacího klienta WCF.  
   
-    1.  V testu klienta WCF, klikněte dvakrát na **GetStockPrice()** pod **IStockPriceService** uzlu.  
+    1.  Testovací klient WCF, dvakrát klikněte na panel **GetStockPrice()** pod **IStockPriceService** uzlu.  
   
-         **GetStockPrice()** metoda se zobrazí v pravém podokně se jeden parametr.  
+         **GetStockPrice()** metoda se zobrazí v pravém podokně s jedním parametrem.  
   
     2.  Zadejte ve společnosti Contoso jako hodnotu parametru.  
   
-    3.  Klikněte na tlačítko **vyvolání**.  
+    3.  Klikněte na tlačítko **vyvolat**.  
   
-12. Viz sledovaných události do souboru protokolu, který je umístěný v adresáři data aplikací v umístění % APPDATA%\trackingRecords.log.  
+12. Zobrazte sledované události do souboru protokolu, který je umístěný v adresáři data vaší aplikace v umístění % APPDATA%\trackingRecords.log.  
   
     > [!NOTE]
-    >  Data aplikací % je proměnná prostředí, který se přeloží na %SystemDrive%\Users\\< uživatelské jméno\>\AppData\Roaming v [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)], nebo Windows Server 2008.  
+    >  % APPDATA % je proměnná prostředí, který se přeloží %SystemDrive%\Users\\< uživatelské jméno\>\AppData\Roaming v [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)], nebo Windows Server 2008.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\TextFileTracking`  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky monitorování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193959)
+ [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

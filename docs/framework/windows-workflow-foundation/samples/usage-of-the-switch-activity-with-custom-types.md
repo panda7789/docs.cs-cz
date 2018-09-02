@@ -1,20 +1,20 @@
 ---
-title: Použití přepínače aktivity s vlastní typy
+title: Použití aktivity Switch s vlastními typy
 ms.date: 03/30/2017
 ms.assetid: 482a48c4-eb83-40c3-a4e2-2f9a8af88b75
-ms.openlocfilehash: 2b6f3109324064cb5e746de9c61e5a70c4c4d60b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b24a03573b31f3fb1c34d4aa6e03bc11f5b25455
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517878"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43423562"
 ---
-# <a name="usage-of-the-switch-activity-with-custom-types"></a>Použití přepínače aktivity s vlastní typy
-Tato ukázka popisuje, jak povolit <xref:System.Activities.Statements.Switch%601> aktivity k vyhodnocení, uživatelem definované komplexního typu za běhu. V nejvíce tradiční procedurální programovacích jazyků [přepínač](http://go.microsoft.com/fwlink/?LinkId=180521) příkaz vybere logiky provádění na základě podmíněného vyhodnocení proměnné. Obvyklým `switch` příkaz funguje na výraz, který lze vyhodnotit staticky. Například v jazyce C# to znamená, že pouze primitivní typy, jako například <xref:System.Boolean>, <xref:System.Int32>, <xref:System.String>, a podporované výčtové typy.  
+# <a name="usage-of-the-switch-activity-with-custom-types"></a>Použití aktivity Switch s vlastními typy
+Tento příklad popisuje, jak povolit <xref:System.Activities.Statements.Switch%601> aktivity k vyhodnocení, uživatelem definované komplexní typ v době běhu. V postupu Většina tradičních programovacích jazycích [přepnout](https://go.microsoft.com/fwlink/?LinkId=180521) příkaz vybere logikou provádění na základě podmíněného vyhodnocení proměnné. Tradičně `switch` příkaz funguje na výraz, který může být staticky vyhodnocen. Například v jazyce C# to znamená, že pouze primitivní typy, jako například <xref:System.Boolean>, <xref:System.Int32>, <xref:System.String>, a jsou podporovány typy výčtu.  
   
- Pokud chcete povolit přepnutí na vlastní třídu, musí být implementované logiku k vyhodnocení hodnot vlastní komplexního typu za běhu. Tento příklad ukazuje, jak povolit přepínání vlastní komplexní typ s názvem `Person`.  
+ Povolit přepínání na vlastní třídu, musí být implementované logiku k vyhodnocení hodnot vlastní komplexního typu za běhu. Tento příklad ukazuje, jak povolit přepínání na vlastní komplexní typ s názvem `Person`.  
   
--   Ve třídě vlastní `Person`, <xref:System.ComponentModel.TypeConverter> atribut je deklarovaný s názvem vlastní <xref:System.ComponentModel.TypeConverter>.  
+-   Ve třídě vlastní `Person`, <xref:System.ComponentModel.TypeConverter> je deklarován atribut s názvem vlastní <xref:System.ComponentModel.TypeConverter>.  
   
     ```  
     [TypeConverter(typeof(PersonConverter))]  
@@ -25,7 +25,7 @@ Tato ukázka popisuje, jak povolit <xref:System.Activities.Statements.Switch%601
     ...  
     ```  
   
--   Ve třídě vlastní `Person`, <xref:System.Object.Equals%2A> a <xref:System.Object.GetHashCode%2A> jsou přepsaná třídy.  
+-   Ve třídě vlastní `Person`, <xref:System.Object.Equals%2A> a <xref:System.Object.GetHashCode%2A> třídy jsou přepsány.  
   
     ```  
     public override bool Equals(object obj)  
@@ -51,7 +51,7 @@ Tato ukázka popisuje, jak povolit <xref:System.Activities.Statements.Switch%601
     }  
     ```  
   
--   Vlastní <xref:System.ComponentModel.TypeConverter> implementaci třídy, který provede převod instance třídy vlastní řetězec a řetězec na instanci vlastní třídy.  
+-   Vlastní <xref:System.ComponentModel.TypeConverter> třídy je implementováno, který provádí převod instance vlastní třídy na řetězec a řetězec na instanci vlastní třídy.  
   
     ```  
     public class PersonConverter : TypeConverter  
@@ -103,30 +103,30 @@ Tato ukázka popisuje, jak povolit <xref:System.Activities.Statements.Switch%601
     }  
     ```  
   
- Následující soubory jsou zahrnuty v této ukázce:  
+ Následující soubory jsou zahrnuté v této ukázce:  
   
 -   **Person.cs**: definuje `Person` třídy.  
   
--   **PersonConverter.cs**: převaděč typů pro `Person` třídy.  
+-   **PersonConverter.cs**: konvertor typu pro `Person` třídy.  
   
 -   **Sequence.XAML**: pracovní postup, který přepne `Person` typu.  
   
--   **Program.cs**: hlavní funkce, která spouští pracovní postup.  
+-   **Soubor program.cs**: hlavní funkci, na kterém běží pracovní postup.  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
 1.  Načíst Switch.sln v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Stisknutím kombinace kláves CTRL + SHIFT + B řešení sestavíte.  
+2.  Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
   
-3.  Stisknutím kombinace kláves CTRL + F5 ke spuštění ukázky.  
+3.  Stisknutím CTRL + F5 ke spuštění ukázky.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\Switch`  
   

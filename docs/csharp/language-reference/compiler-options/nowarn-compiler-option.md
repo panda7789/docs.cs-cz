@@ -8,15 +8,15 @@ helpviewer_keywords:
 - /nowarn compiler option [C#]
 - -nowarn compiler option [C#]
 ms.assetid: 6dcbc5e8-ae67-4566-9df3-f63cfdd9c4e4
-ms.openlocfilehash: 1c5e8bc7ad065c4662cd489930b2226e8a4b8962
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 76bb008c40d84ed6048b8f960f050048319273b9
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33215482"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43421925"
 ---
 # <a name="-nowarn-c-compiler-options"></a>-nowarn (možnosti kompilátoru C#)
-**- Nowarn** možnost umožňuje potlačit kompilátoru zobrazování jeden nebo více upozornění. Více čísel upozornění oddělte čárkou.  
+**- Nowarn** možnost umožňuje potlačit zobrazování upozornění na jeden nebo více kompilátorem. Více čísel upozornění oddělte čárkou.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,32 +26,33 @@ ms.locfileid: "33215482"
   
 ## <a name="arguments"></a>Arguments  
  `number1`, `number2`  
- Upozornění čísel, které chcete kompilátorem potlačit.  
+ Čísla upozornění, která má kompilátor potlačit.  
   
 ## <a name="remarks"></a>Poznámky  
- Měli byste zadat pouze číselnou část identifikátor upozornění. Například pokud chcete potlačit CS0028, můžete zadat `-nowarn:28`.  
+ Měli byste zadat pouze číselnou část identifikátoru upozornění. Například pokud chcete potlačit CS0028, budete moci zadat `-nowarn:28`.  
   
- Kompilátor bude tiše ignorovat čísla upozornění předaná `-nowarn` , které byly v předchozích verzích platný, ale které byly odebrány z kompilátoru. Například CS0679 platné v kompilátoru v sadě Visual Studio .NET 2002 ale následně bylo odebráno.  
+ Kompilátor bude tiše ignorovat upozornění čísla předaná `-nowarn` , která byla platná v předchozích verzích, ale které byly odebrány z kompilátoru. Například CS0679 byla platná v kompilátoru v sadě Visual Studio .NET 2002, ale později byl odebrán.  
   
- Následující upozornění nelze potlačit pomocí `-nowarn` možnost:  
+ Nelze potlačit následující upozornění `-nowarn` možnost:  
   
--   CS2002 kompilátoru upozornění (úroveň 1)  
+-   Kompilátor CS2002 upozornění (úroveň 1)  
   
--   CS2023 kompilátoru upozornění (úroveň 1)  
+-   Kompilátor CS2023 upozornění (úroveň 1)  
   
--   CS2029 kompilátoru upozornění (úroveň 1)  
+-   Kompilátor CS2029 upozornění (úroveň 1)  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevřete **vlastnosti** stránky pro projekt. Podrobnosti najdete v tématu [stránka sestavení, Návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).  
+1.  Otevřít **vlastnosti** stránky pro projekt. Podrobnosti najdete v tématu [stránku sestavení, Návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).  
   
-2.  Klikněte **sestavení** stránku vlastností.  
+2.  Klikněte na tlačítko **sestavení** stránku vlastností.  
   
-3.  Změnit **potlačit upozornění** vlastnost.  
+3.  Upravit **potlačit upozornění** vlastnost.  
   
- Informace o tom, jak nastavení této možnosti kompilátoru programu najdete v tématu <xref:VSLangProj80.ProjectProperties3.DelaySign%2A>.  
+ Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.ProjectProperties3.DelaySign%2A>.  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)  
- [Chyby kompilátoru jazyka C#](../../../csharp/language-reference/compiler-messages/index.md)
+
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)  
+- [Chyby kompilátoru jazyka C#](../../../csharp/language-reference/compiler-messages/index.md)

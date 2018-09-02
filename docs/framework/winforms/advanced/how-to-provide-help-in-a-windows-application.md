@@ -8,52 +8,52 @@ helpviewer_keywords:
 - HelpProvider component [Windows Forms]
 - forms [Windows Forms], providing Help
 ms.assetid: 7c4e5cec-2bd2-4f0b-8d75-c2b88929bd61
-ms.openlocfilehash: 3df8f6eaee72ebdd6cbd03d0bdfde5a7d2270129
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 98ed6d4e10d0eb80b99a36172980fcb33186c8ca
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33526527"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43419199"
 ---
 # <a name="how-to-provide-help-in-a-windows-application"></a>Postupy: Poskytnutí nápovědy v aplikaci Windows
-Můžete použít nástroje <xref:System.Windows.Forms.HelpProvider> součásti pro připojení ke konkrétní ovládacích prvků ve Windows Forms témata nápovědy v souboru nápovědy. Soubor nápovědy může být HTML nebo HTMLHelp 1.x nebo větší formát.  
+Lze použít <xref:System.Windows.Forms.HelpProvider> součásti pro připojení témata nápovědy v souboru nápovědy k určité ovládací prvky v modelu Windows Forms. Soubor nápovědy může být ve formátu HTML nebo HTMLHelp 1.x nebo větší formátu.  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
-### <a name="to-provide-help"></a>K poskytnutí nápovědy  
+### <a name="to-provide-help"></a>Získání nápovědy  
   
-1.  Z **sada nástrojů**, přetáhněte ji <xref:System.Windows.Forms.HelpProvider> součásti do svého formuláře.  
+1.  Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.HelpProvider> komponentu do formuláře.  
   
-     Součást se bude nacházet na hlavním panelu v dolní části Návrhář formulářů Windows.  
+     Komponenta se bude nacházet na hlavním panelu v dolní části Návrháře formulářů Windows.  
   
-2.  V **vlastnosti** nastavte <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> vlastnost chm., .col nebo .htm souboru nápovědy.  
+2.  V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> vlastnost v souboru nápovědy chm, .col nebo htm.  
   
-3.  Vyberte jiný ovládací prvek máte ve formuláři a v **vlastnosti** nastavte <xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A> vlastnost.  
+3.  Vyberte jiný ovládací prvek na formuláři máte a v **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A> vlastnost.  
   
-     Toto je řetězec předána <xref:System.Windows.Forms.HelpProvider> součásti k souboru nápovědy k výzvě příslušné téma nápovědy.  
+     Jedná se o řetězec, který předává <xref:System.Windows.Forms.HelpProvider> komponentu do souboru nápovědy k výzvě příslušné téma nápovědy.  
   
-4.  V **vlastnosti** nastavte <xref:System.Windows.Forms.HelpProvider.SetHelpNavigator%2A> vlastnost na hodnotu <xref:System.Windows.Forms.HelpNavigator> výčtu.  
+4.  V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.HelpProvider.SetHelpNavigator%2A> vlastnost na hodnotu <xref:System.Windows.Forms.HelpNavigator> výčtu.  
   
-     Určuje, jakým způsobem **HelpKeyword** předána vlastnost systému nápovědy. V následující tabulce jsou uvedeny možné nastavení a jejich popisy.  
+     Určuje, jakým způsobem **HelpKeyword** vlastnost předána do systému nápovědy. V následující tabulce jsou uvedeny možné nastavení a jejich popisy.  
   
     |Název členu|Popis|  
     |-----------------|-----------------|  
-    |AssociateIndex|Určuje, že index pro zadaný téma se provádí v zadané adrese URL.|  
+    |AssociateIndex|Určuje, že index určené téma se provádí v zadané adrese URL.|  
     |Najít|Určuje, že se zobrazí stránka hledat zadaná adresa URL.|  
-    |Index|Určuje, že se zobrazí index zadaná adresa URL.|  
-    |KeywordIndex|Určuje klíčového slova pro vyhledávání a pro případ v zadané adrese URL.|  
+    |Index|Určuje, že se zobrazí index zadané adresy URL.|  
+    |KeywordIndex|Určuje klíčové slovo k vyhledání a akce má být provedena v zadané adrese URL.|  
     |TableOfContents|Určuje, že se zobrazí obsah souboru nápovědy HTML 1.0.|  
-    |Téma|Určuje, že se zobrazí v tématu odkazuje na zadanou adresu URL.|  
+    |Téma|Určuje, že se zobrazí téma odkazuje na zadanou adresu URL.|  
   
- V době běhu, stisknutím klávesy F1 při ovládacího prvku – pro které jste nastavili **HelpKeyword** a **HelpNavigator** vlastnosti – má fokus se otevře soubor nápovědy přidružené který <xref:System.Windows.Forms.HelpProvider> součásti.  
+ V době běhu, stisknutím klávesy F1 při ovládacího prvku – pro které jste nastavili **HelpKeyword** a **HelpNavigator** vlastnosti – má fokus, otevře se soubor nápovědy spojený s ním <xref:System.Windows.Forms.HelpProvider> komponenty.  
   
- V současné době **HelpNamespace** vlastnost podporuje v následujících formátech tři soubory nápovědy: HTMLHelp 1.x HTMLHelp 2.0 a HTML. Proto můžete nastavit **HelpNamespace** vlastnost na adresu http://, jako je například na webové stránce. Když toto dokončíte, otevře výchozí prohlížeč na webovou stránku s řetězec zadaný v poli **HelpKeyword** vlastnost použitá jako ukotvení. Ukotvení se používá k přejít na určitou část stránku HTML.  
+ V současné době **HelpNamespace** vlastnost podporuje soubory nápovědy ve třech následujících formátech: HTMLHelp 1.x HTMLHelp 2.0 a ve formátu HTML. Proto můžete nastavit **HelpNamespace** nastavte na adresu http://, jako je například na webové stránce. Pokud to uděláte, otevře se výchozí prohlížeč na webovou stránku s řetězec zadaný v poli **HelpKeyword** vlastnost použit jako ukotvení. Ukotvení se používá pro přechod na určitou část stránku HTML.  
   
 > [!IMPORTANT]
->  Pečlivě zkontrolujte všechny informace, které se odesílá z klienta před jeho použitím ve vaší aplikaci. Uživatelé se zlými úmysly se může pokusit odeslat nebo vložit spustitelný soubor skriptu, příkazy SQL nebo jiný kód. Před zobrazení vstupu uživatele, uložte ho do databáze nebo s ním pracovat, zkontrolujte, zda neobsahuje potenciálně nebezpečného informace. Typické způsobem kontroly je použijte regulární výraz k vyhledání klíčová slova, jako je například "Skript", když obdrží vstup od uživatele.  
+>  Pečlivě zkontrolujte všechny informace odesílané z klienta před jeho použitím v aplikaci. Uživatelé se zlými úmysly se může pokusit o odeslání nebo vložit spustitelný soubor skriptu, příkazy SQL nebo jiný kód. Před zobrazení vstupu uživatele, ukládat v databázi nebo s ním pracovat, zkontrolujte neobsahuje informace o potenciálně nebezpečné. Typické způsob, jak zkontrolovat je použit regulární výraz k vyhledání klíčová slova, jako je "Skript" při přijímání vstupu od uživatele.  
   
- Můžete také <xref:System.Windows.Forms.HelpProvider> součást zobrazit automaticky otevírané okno nápovědu, i když máte konfigurace. Chcete-li zobrazit soubory nápovědy pro ovládací prvky Windows Forms. Další informace najdete v tématu [postupy: zobrazení místní nápovědy](../../../../docs/framework/winforms/advanced/how-to-display-pop-up-help.md).  
+ Můžete také použít <xref:System.Windows.Forms.HelpProvider> součásti k zobrazení místní nápovědy, i v případě, že jste si ji nakonfigurovali zobrazíte soubory nápovědy pro ovládací prvky ve formulářích Windows. Další informace najdete v tématu [postupy: zobrazení místní nápovědy](../../../../docs/framework/winforms/advanced/how-to-display-pop-up-help.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Postupy: Zobrazení místní nápovědy](../../../../docs/framework/winforms/advanced/how-to-display-pop-up-help.md)  

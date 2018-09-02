@@ -23,11 +23,11 @@ helpviewer_keywords:
 - string comparison [Visual Basic], Like operators
 ms.assetid: 966283ec-80e2-4294-baa8-c75baff804f9
 ms.openlocfilehash: c5b26bd1d3ebae5136718833c124e3c6e575e9b7
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42998803"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43452700"
 ---
 # <a name="like-operator-visual-basic"></a>Like – operátor (Visual Basic)
 Porovná řetězec oproti vzoru.  

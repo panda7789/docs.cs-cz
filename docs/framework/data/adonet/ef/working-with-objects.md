@@ -2,14 +2,14 @@
 title: Práce s objekty
 ms.date: 03/30/2017
 ms.assetid: 338d8a55-05cc-46b0-bbb8-1379d77068e9
-ms.openlocfilehash: 7fa8f0bc64ec4d0a641748cd3d7d4b9fe4e51e2b
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: ad6288b3b6ceabb419d88da9ff81abec177f55d2
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32762478"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43424059"
 ---
 # <a name="working-with-objects"></a>Práce s objekty
-[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Umožňuje dotazu, insert, update a odstranit data, která je vyjádřena jako typové běžné language runtime (CLR) objekty, které jsou instancemi třídy typy entit. Typy entit představují entit definované v konceptuálním modelu. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Mapuje entity a vztahy, které jsou definované v konceptuálním modelu ke zdroji dat. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Poskytuje funkce pro postupujte takto: vyhodnotit data vrácená z zdroji dat jako objekty; sledování změn, které byly provedeny na objekty; zpracování souběžnosti; rozšířit objekt změny zpět do zdroje dat; a připojení objektů k ovládacím prvkům.  
+[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Umožňuje dotazu, vložení, aktualizace a odstranění dat, která je vyjádřena jako zadaný common language runtime (CLR) objekty, které jsou instancemi typů entit. Typ entity představují entity definované v konceptuálním modelu. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Mapuje entit a vztahů, které jsou definované v konceptuálním modelu na zdroji dat. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Poskytuje funkce pro postupujte takto: sloučit data vrácená ze zdroje dat jako objektů; sledování změn, které byly provedeny na objekty; zpracování souběžnosti; objekt změny zpět do zdroje dat; a vytvoření vazby objektů k ovládacím prvkům.  
   
- Další informace o práci s objekty v nejnovější verzi rozhraní Entity Framework najdete [práce s objekty](http://go.microsoft.com/fwlink/?LinkId=235289).
+ Další informace o práci s objekty v nejnovější verzi rozhraní Entity Framework naleznete [práce s objekty](https://go.microsoft.com/fwlink/?LinkId=235289).

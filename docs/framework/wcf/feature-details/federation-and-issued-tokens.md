@@ -6,28 +6,28 @@ helpviewer_keywords:
 - issued tokens [WCF]
 - federation [WCF], issued tokens
 ms.assetid: 4c31ee7d-a820-4067-8b84-a83049021bb6
-ms.openlocfilehash: b6a5411b74b53cb5e3b18cced7fd8fc09e9a9676
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bdbd5c49197b65816da9b0f2c87d97afb893d79f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33491572"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43420207"
 ---
 # <a name="federation-and-issued-tokens"></a>Federace a vystavené tokeny
-S Windows Communication Foundation (WCF), můžete vytvořit klienty, kteří zabezpečeně komunikovat se službami, které implementují specifikace WS-Federation a WS-Trust. Specifikace poskytnout mechanismy, které umožňují ověřování a autorizace mezi různé důvěryhodnosti sfér pomocí XML, protokolu SOAP a webové služby popis Language (WSDL).  
+S Windows Communication Foundation (WCF), můžete vytvořit klienty, kteří zabezpečeně komunikují se službami, které implementují specifikace WS-Federation a WS-Trust. Specifikace poskytují mechanismy, které umožňují ověřování a autorizace ve sférách různých důvěryhodnosti pomocí XML a SOAP, webové služby WSDL (Description Language).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Federace](../../../../docs/framework/wcf/feature-details/federation.md)  
- Obsahuje přehled federace.  
+ Poskytuje přehled federace.  
   
  [Federace a důvěryhodnost](../../../../docs/framework/wcf/feature-details/federation-and-trust.md)  
- Jsou uvedené problémy návrhu znát při vytvoření federovaného služby nebo klientů.  
+ Uvádí problémy návrhu je potřeba vědět při vytváření federované služby nebo klientů.  
   
  [Postupy: Vytvoření federovaného klienta](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
  Popisuje základní informace o vytvoření federovaného klienta s použitím technologie WCF.  
   
  [Postupy: Konfigurace přihlašovacích údajů ve službě Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
- Popisuje kroky k vytvoření federované služby.  
+ Popisuje kroky k vytvoření federovaného služby.  
   
  [Postupy: Vytvoření WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
  Popisuje postup konfigurace klientů a služeb, které používají `WSFederationHttpBinding`.  
@@ -36,10 +36,10 @@ S Windows Communication Foundation (WCF), můžete vytvořit klienty, kteří za
  Popisuje kroky k vytvoření služby tokenů zabezpečení.  
   
  [Tokeny a deklarace identity jazyka SAML (Security Assertions Markup Language)](../../../../docs/framework/wcf/feature-details/saml-tokens-and-claims.md)  
- Popisuje tokeny zabezpečení kontrolní výrazy Markup Language (SAML), které jsou rozšiřitelný a povolit vytvářet bohaté typy deklarací identity.  
+ Popisuje tokeny zabezpečení kontrolní výrazy SAML (Markup Language), které jsou rozšiřitelné a umožňují vytvářet bohaté typy deklarací identity.  
   
  [Postupy: Konfigurace místního vystavitele](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)  
- Popisuje postup vytvoření místního vystavitele tokenů zabezpečení.  
+ Popisuje postup vytvoření lokálního vystavitele tokenů zabezpečení.  
   
  [Postupy: Zakázání zabezpečených relací u WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)  
  Popisuje postup zakázání zabezpečených relací na `WSFederationHttpBinding`. Zakázání zabezpečených relací je nezbytné, při vytváření webové farmy, která vyžaduje relaci pro každého klienta.  
@@ -64,4 +64,4 @@ S Windows Communication Foundation (WCF), můžete vytvořit klienty, kteří za
 ## <a name="see-also"></a>Viz také  
  [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)  
  [Vlastní tokeny](../../../../docs/framework/wcf/extending/custom-tokens.md)  
- [Model zabezpečení pro Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+ [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

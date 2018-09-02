@@ -7,15 +7,15 @@ helpviewer_keywords:
 - x:Uid attribute [XAML Services]
 - Uid attribute [XAML Services]
 ms.assetid: 81defade-483b-4a89-b76d-9b25bba34010
-ms.openlocfilehash: 667b722097d091902cb65f2e6f0485a039f8a2ca
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7075f8258e617d2d13d4585fdd5fb7aefaa50664
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33561833"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43452623"
 ---
 # <a name="xuid-directive"></a>x:Uid – direktiva
-Poskytuje jedinečný identifikátor pro prvky značek. V mnoha scénářích tohoto jedinečného identifikátoru je používán procesy lokalizace XAML a nástroje.  
+Poskytuje jedinečný identifikátor pro elementy značek. V mnoha scénářích používá tento jedinečný identifikátor nástroje a procesy lokalizace XAML.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -27,19 +27,19 @@ Poskytuje jedinečný identifikátor pro prvky značek. V mnoha scénářích to
   
 |||  
 |-|-|  
-|`identifier`|A vytvořit ručně nebo automaticky vygenerovanou řetězec, který by měl být jedinečný v souboru v případě je interpretována `x:Uid` příjemce.|  
+|`identifier`|A vytvořit ručně nebo automaticky generované řetězec, který by měl být jedinečný v souboru v případě, je interpretována `x:Uid` příjemce.|  
   
 ## <a name="remarks"></a>Poznámky  
- V [MS-XAML] `x:Uid` je definován jako direktivu. Další informace najdete v tématu [ \[MS-XAML\] části 5.3.6](http://go.microsoft.com/fwlink/?LinkId=114525).  
+ V [MS-XAML] `x:Uid` je definován jako směrnice. Další informace najdete v tématu [ \[MS-XAML\] části 5.3.6](https://go.microsoft.com/fwlink/?LinkId=114525).  
   
- `x:Uid` je diskrétní z `x:Name` i z důvodu stanovené scénář lokalizace XAML a tak, aby identifikátory, které se používají pro lokalizaci žádné závislosti na programovací model důsledky `x:Name`. Navíc `x:Name` se řídí XAML namescope; však `x:Uid` není řídí všechny XAML jazyk definované konceptu vynucení jedinečnosti. XAML procesorů v širokém smyslu (procesory, které nejsou součástí procesu lokalizace) neočekává vynutit jedinečnosti `x:Uid` hodnoty. Zda je odpovědnost koncepčně na původce hodnot. Očekávání jedinečnosti `x:Uid` hodnot v rámci jednoho zdroje XAML je možné logicky pro spotřebitele hodnot, jako jsou nástroje nebo vyhrazené globalizace procesy. Typické jedinečnosti modelu je, že `x:Uid` hodnoty jsou jedinečné v rámci soubor kódováním XML, který představuje XAML.  
+ `x:Uid` je diskrétní z `x:Name` i z důvodu stanovených scénář lokalizace XAML a tak, aby identifikátory, které se používají pro lokalizaci nemají žádné závislosti na programovacím modelu důsledcích `x:Name`. Navíc `x:Name` se řídí XAML namescope; však `x:Uid` neřídí žádné informace definované jazyka XAML jedinečnost výkonu. XAML procesorů v širokém smyslu (procesory, které nejsou součástí proces lokalizace) se nepředpokládá vynutit jedinečnost `x:Uid` hodnoty. Zodpovědnosti je téměř na odesílatel požadavku dostane informaci hodnoty. Očekávání jedinečnost `x:Uid` hodnot v rámci jednoho zdroje XAML je přijatelné pro spotřebitele hodnot, například vyhrazené globalizace procesů nebo nástroje. Typické jedinečnost modelu je, že `x:Uid` hodnoty jsou jedinečné v rámci souboru kódu XML, který představuje XAML.  
   
- Nástroje, které mají důležité informace o konkrétní schématu XAML můžete použít `x:Uid` pouze pro hodnotu true možnosti lokalizace řetězce, místo ve všech případech, kde se vyskytuje textovou hodnotu řetězce v kódu.  
+ Nástroje, které nemají důležité informace o konkrétní schématu XAML můžete zvolit použití `x:Uid` pouze pro true lokalizovatelných řetězců, místo pro všechny případy, ve kterém je došlo k textový řetězec v kódu.  
   
- Rozhraní můžete zadat konkrétní vlastnosti v jejich objektový model jako alias pro `x:Uid` použitím atribut <xref:System.Windows.Markup.UidPropertyAttribute> definující typu. Pokud rozhraní určuje konkrétní vlastnosti, není platné. Chcete-li zadat oba seznamy `x:Uid` a člen alias na stejný objekt. Pokud oba `x:Uid` a jsou zadaný člen alias, rozhraní .NET Framework XAML Services API obvykle vyvolá <xref:System.Xaml.XamlDuplicateMemberException> pro tento případ.  
+ Rozhraní můžete určit konkrétní vlastnost v modelu objektu jako alias pro `x:Uid` použitím atributu <xref:System.Windows.Markup.UidPropertyAttribute> k definování typu. Pokud rozhraní určuje konkrétní vlastnost, není platný pro zadání obou `x:Uid` a alias člena na stejný objekt. Pokud mají oba `x:Uid` a zadávají se člen alias, obvykle vyvolá rozhraní API .NET Framework XAML Services <xref:System.Xaml.XamlDuplicateMemberException> pro tento případ.  
   
-## <a name="wpf-usage-notes"></a>Poznámky pro použití WPF  
- Další informace o roli `x:Uid` v procesu lokalizace WPF a ve formě BAML XAML najdete v části [globalizace pro grafický subsystém WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md) nebo <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>  
+## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
+ Další informace o roli `x:Uid` proces lokalizace WPF a BAML formu XAML najdete v tématu [globalizace pro WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md) nebo <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>  

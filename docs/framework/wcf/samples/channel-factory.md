@@ -2,20 +2,20 @@
 title: Vytvoření postupu kanálu
 ms.date: 03/30/2017
 ms.assetid: 09b53aa1-b13c-476c-a461-e82fcacd2a8b
-ms.openlocfilehash: a528cc759ad550b21845dfd351d4e7808cfb6b56
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6bf0668c6b846671db12dc20465ee70137d70b35
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33501556"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43442756"
 ---
 # <a name="channel-factory"></a>Vytvoření postupu kanálu
-Tento příklad ukazuje, jak klientská aplikace můžete vytvořit kanál s <xref:System.ServiceModel.ChannelFactory> třída místo generovaného klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
+Tato ukázka předvádí, jak vytvořit kanál s klientskou aplikaci <xref:System.ServiceModel.ChannelFactory> třídy namísto generovaného klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- V tomto příkladu <xref:System.ServiceModel.ChannelFactory%601> třída k vytvoření kanálu pro koncový bod služby. Obvykle k vytvoření kanálu pro koncový bod služby, můžete vygenerovat typu klienta s [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) a vytvořit instanci typu generované. Můžete také vytvořit kanál pomocí <xref:System.ServiceModel.ChannelFactory%601> třídy, jak je předvedeno v této ukázce. Službu vytvořené následující vzorový kód je stejný jako do služby [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
+ Tento příklad používá <xref:System.ServiceModel.ChannelFactory%601> třídy za účelem vytvoření kanálu pro koncový bod služby. Obvykle k vytvoření kanálu pro koncový bod služby, můžete generovat typ klienta s [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) a vytvořte její instanci generovaným typem. Můžete také vytvořit kanál pomocí <xref:System.ServiceModel.ChannelFactory%601> třídy, jak je uvedeno v této ukázce. Služba vytvořené následující ukázkový kód je stejný jako službu v [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
   
 ```csharp  
 EndpointAddress address = new EndpointAddress("http://localhost/servicemodelsamples/service.svc");  
@@ -26,9 +26,9 @@ ICalculator channel = factory.CreateChannel();
 ```  
   
 > [!IMPORTANT]
->  Pokud používáte této ukázky ve scénáři mezi počítači, je potřeba "localhost" v předchozí kód nahradit plně kvalifikovaný název počítače, ve kterém je spuštěna služba. Tato ukázka nepoužívá konfigurace nastavit adresa koncového bodu, musí provést v kódu.  
+>  Pokud tuto ukázku spustíte ve scénáři mezi počítači, je "localhost" v předchozím kódu nahradit plně kvalifikovaný název počítače, na kterém je spuštěná služba. Tato ukázka nepoužívá konfigurace nastavit adresu koncového bodu, aby to je nutné provést v kódu.  
   
- Po vytvoření kanálu operací služby nelze vyvolat stejně jako v generovaného klienta.  
+ Po vytvoření kanálu můžete stejně jako u generovaného klienta vyvolat operace služby.  
   
 ```csharp  
 // Call the Add service operation.  
@@ -38,14 +38,14 @@ double result = channel.Add(value1, value2);
 Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result);  
 ```  
   
- Zavřete kanál, se musí nejprve přetypovat <xref:System.ServiceModel.IClientChannel> rozhraní. Důvodem je, že je v klientská aplikace používající deklarována kanál generovaná `ICalculator` rozhraní, které se má metody jako `Add` a `Subtract` ale ne `Close`. `Close` Metoda pochází <xref:System.ServiceModel.ICommunicationObject> rozhraní.  
+ Zavřete kanál, je nutné nejprve přetypovat na <xref:System.ServiceModel.IClientChannel> rozhraní. Důvodem je, že kanál generovaná je deklarován v klientská aplikace používající `ICalculator` rozhraní, které obsahuje metody jako `Add` a `Subtract` , ale ne `Close`. `Close` Metoda pochází <xref:System.ServiceModel.ICommunicationObject> rozhraní.  
   
 ```csharp  
 // Close the channel.  
  ((IClientChannel)client).Close();  
 ```  
   
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klientské aplikace.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klientské aplikace.  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -56,28 +56,28 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Všimněte si, že tato ukázka neumožňuje publikování metadat. Nejprve je nutné povolit publikování metadat pro tato ukázka se znova vygenerovat typ klienta.  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Všimněte si, že tato ukázka není povoleno publikování metadat. Nejprve je nutné povolit publikování metadat pro tuto ukázku se znova vygenerovat typu klienta.  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ### <a name="to-run-the-sample-cross-machine"></a>Ke spuštění ukázky pro různé počítače  
   
-1.  Nahraďte plně kvalifikovaný název počítače, ve kterém je spuštěna služba "localhost" v následujícím kódu.  
+1.  Nahraďte plně kvalifikovaný název počítače, na kterém je spuštěná služba "localhost" v následujícím kódu.  
   
     ```csharp  
     EndpointAddress address = new EndpointAddress("http://localhost/servicemodelsamples/service.svc");  
     ```  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\ChannelFactory`  
   

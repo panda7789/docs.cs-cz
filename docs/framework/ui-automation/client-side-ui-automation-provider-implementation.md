@@ -9,48 +9,48 @@ ms.assetid: 3584c0a1-9cd0-4968-8b63-b06390890ef6
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 0e1a8e6820d70e4c50599056e31563f7f792f6d7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a2873fc18d5eb18160bf361b07af2bf12eef32e4
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33400104"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43422220"
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a>Implementace zprostředkovatele automatizace uživatelského rozhraní na straně klienta
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Několik různých [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] rozhraní se používají v rámci [!INCLUDE[TLA#tla_ms](../../../includes/tlasharptla-ms-md.md)] operačních systémů, včetně [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)], a [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]. [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] zpřístupní informace o prvky uživatelského rozhraní pro klienty. Ale [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] není sám nemá povědomí o různé typy ovládacích prvků, které existují v těchto rozhraní a techniky, které jsou potřebné k extrakci informací z nich. Místo toho ponechá tuto úlohu na objekty nazývané poskytovatelé. Zprostředkovatel získá informace ze určitý ovládací prvek a předá tyto informace k [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], který pak ji uvede klientovi konzistentním způsobem.  
+ Několik různých [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] architektury se používají v rámci [!INCLUDE[TLA#tla_ms](../../../includes/tlasharptla-ms-md.md)] operačních systémů, včetně [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)], a [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]. [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] poskytuje informace o prvcích uživatelského rozhraní pro klienty. Ale [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sám nemá povědomí o různé typy ovládacích prvků, které existují v tyto architektury a techniky, které jsou potřeba k extrakci informací z nich. Místo toho ponechá tato úloha objekty nazývané poskytovatelé. Extrahuje informace z určitého ovládacího prvku zprostředkovatele a předá tyto informace [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], která prezentuje klientovi konzistentním způsobem.  
   
- Zprostředkovatelé může existovat na straně serveru nebo na straně klienta. Na straně serveru zprostředkovatele je implementováno modulem samotném ovládacím prvku. [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] elementy implementovat poskytovatelů, jak můžete všechny ovládací prvky třetích stran napsané pomocí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v paměti.  
+ Poskytovatelé mohou existovat na straně serveru nebo na straně klienta. Samotný ovládací prvek implementují zprostředkovatele na straně serveru. [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] prvky implementace zprostředkovatelů, stejně jako všechny ovládací prvky třetích stran napsané pomocí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v úvahu.  
   
- Ale starší ovládací prvky, jako jsou ty v [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] provést není přímo podporu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Tyto ovládací prvky se zpracovávají místo zprostředkovatelé, které existují v procesu klienta a získat informace o ovládacích prvků pomocí komunikace mezi procesy; například sledováním zpráv systému windows do a z ovládacích prvků. Poskytovatelé klienta se někdy označuje jako proxy servery.  
+ Nicméně starší ovládací prvky, jako například sítě na [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] proveďte nemají přímou podporu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Tyto ovládací prvky jsou místo toho obsluhuje zprostředkovatelů, které existují v procesu klientů a získat informace o ovládacích prvcích pomocí komunikace mezi procesy, například při sledování zpráv systému windows do a z ovládacích prvků. Tyto zprostředkovatele na straně klienta jsou někdy označovány jako proxy servery.  
   
- [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)] nabízí poskytovatele pro standardní [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] a ovládací prvky Windows Forms. Kromě toho poskytuje částečné záložní zprostředkovatele [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] podporu pro libovolný ovládací prvek, který není obsluhován jiného zprostředkovatele na straně serveru nebo proxy, ale má [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)] implementace. Všechny tyto zprostředkovatele jsou automaticky načíst a k dispozici pro klientské aplikace.  
+ [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)] zprostředkovatelé pro úroveň standard poskytuje [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] a ovládacích prvků Windows Forms. Kromě toho poskytuje částečné použití náhradní lokality poskytovatele [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] podporu pro libovolný ovládací prvek, který není obsluhuje jiného zprostředkovatele na straně serveru nebo proxy, ale nemá [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)] implementace. Tito poskytovatelé jsou automaticky načíst a dostupné pro klientské aplikace.  
   
- Další informace o podporu pro [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] a ovládací prvky Windows Forms, najdete v části [uživatelského rozhraní automatizace podpora pro standardní ovládací prvky](../../../docs/framework/ui-automation/ui-automation-support-for-standard-controls.md).  
+ Další informace o podpoře pro [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] a ovládacích prvků Windows Forms, naleznete v tématu [uživatelského rozhraní podporu automatizace pro standardní ovládací prvky](../../../docs/framework/ui-automation/ui-automation-support-for-standard-controls.md).  
   
- Aplikace lze také zaregistrovat jiných poskytovatelů na straně klienta.  
+ Aplikace můžete také registrovat další zprostředkovatele na straně klienta.  
   
 <a name="Distributing_Client-Side_Providers"></a>   
 ## <a name="distributing-client-side-providers"></a>Distribuce zprostředkovatele na straně klienta  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Očekává se najít zprostředkovatele na straně klienta v sestavení spravovaného kódu. Obor názvů v tomto sestavení musí mít stejný název jako sestavení. Sestavení nazvané ContosoProxies.dll by například obsahovat ContosoProxies obor názvů. V rámci oboru názvů, vytvoření <xref:UIAutomationClientsideProviders.UIAutomationClientSideProviders> třídy. Při provádění statických <xref:UIAutomationClientsideProviders.UIAutomationClientSideProviders.ClientSideProviderDescriptionTable> pole, vytvořte pole <xref:System.Windows.Automation.ClientSideProviderDescription> struktury, které popisují zprostředkovatele.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] očekává, že v sestavení spravovaného kódu najít zprostředkovatele na straně klienta. Obor názvů v tomto sestavení by měly mít stejný název jako sestavení. Například sestavení nazvané ContosoProxies.dll by obsahoval ContosoProxies oboru názvů. V rámci oboru názvů, vytvoření <xref:UIAutomationClientsideProviders.UIAutomationClientSideProviders> třídy. Při provádění statické <xref:UIAutomationClientsideProviders.UIAutomationClientSideProviders.ClientSideProviderDescriptionTable> pole, vytvořte pole <xref:System.Windows.Automation.ClientSideProviderDescription> struktury popisující zprostředkovatele.  
   
 <a name="Registering_and_Configuring_Client-Side_Providers"></a>   
 ## <a name="registering-and-configuring-client-side-providers"></a>Registrace a konfigurace zprostředkovatele na straně klienta  
- Zprostředkovatele na straně klienta v [!INCLUDE[TLA#tla_dll](../../../includes/tlasharptla-dll-md.md)] se načtou při volání <xref:System.Windows.Automation.ClientSettings.RegisterClientSideProviderAssembly%2A>. Žádná další akce je klientská aplikace, aby se vyžaduje použití zprostředkovatele.  
+ Zprostředkovatele na straně klienta v [!INCLUDE[TLA#tla_dll](../../../includes/tlasharptla-dll-md.md)] se načítají pomocí volání <xref:System.Windows.Automation.ClientSettings.RegisterClientSideProviderAssembly%2A>. Žádná další akce nevyžadovala klientskou aplikaci, aby pomocí poskytovatelů.  
   
- Zprostředkovatelé implementovat v kódu klienta vlastní jsou zaregistrovány pomocí <xref:System.Windows.Automation.ClientSettings.RegisterClientSideProviders%2A>. Tato metoda přijímá jako argument pole <xref:System.Windows.Automation.ClientSideProviderDescription> struktury, z nichž každý určuje následující vlastnosti:  
+ Implementovat v kódu klienta Vlastní zprostředkovatelé jsou registrované pomocí <xref:System.Windows.Automation.ClientSettings.RegisterClientSideProviders%2A>. Tato metoda přebírá jako argument pole <xref:System.Windows.Automation.ClientSideProviderDescription> struktury, z nichž každý určuje následující vlastnosti:  
   
 -   Funkce zpětného volání, která vytvoří objekt zprostředkovatele.  
   
--   Název třídy ovládacích prvků, které bude sloužit zprostředkovatele.  
+-   Název třídy pro ovládací prvky, které bude sloužit zprostředkovatele.  
   
--   Název bitové kopie aplikace (obvykle úplný název spustitelného souboru), která bude sloužit zprostředkovatele.  
+-   Název bitové kopie aplikace (obvykle celý název spustitelného souboru), který bude použit zprostředkovatel.  
   
--   Příznaky, které řídí, jak je název třídy shoda na základě třídy oken nalezen v cílové aplikaci.  
+-   Příznaky, které řídí, jak je název třídy hledána třídy okna v cílové aplikaci.  
   
- Poslední dva parametry jsou volitelné. Klient může zadejte název bitové kopie cílová aplikace, když chce používat různé zprostředkovatele pro různé aplikace. Například může klient použít jednoho poskytovatele pro [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] ovládací prvek v známé aplikace, která podporuje vzoru více zobrazení a další podobné ovládacího prvku v jiné známé aplikaci, která neprovádí seznamu.  
+ Poslední dva parametry jsou volitelné. Klient může zadejte název image cílové aplikace, když ji chce používat různé zprostředkovatele pro různé aplikace. Například může klient použít jednoho poskytovatele pro [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] seznamu ovládací prvek zobrazení ve známých aplikaci, která podporuje model více zobrazení a druhý pro podobně jako ovládací prvek v jiné známé aplikaci, která neexistuje.  
   
 ## <a name="see-also"></a>Viz také  
  [Vytvoření zprostředkovatele automatizace uživatelského rozhraní na straně klienta](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)  

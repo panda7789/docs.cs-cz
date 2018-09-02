@@ -2,17 +2,17 @@
 title: Ukázka samostatného diagnostického informačního kanálu
 ms.date: 03/30/2017
 ms.assetid: d31c6c1f-292c-4d95-8e23-ed8565970ea5
-ms.openlocfilehash: 730cf011208ea1b57929fff4a1953fd3a935335c
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 64222297373f194a33b5520ecd71b0acc7755359
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33807756"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43418294"
 ---
 # <a name="stand-alone-diagnostics-feed-sample"></a>Ukázka samostatného diagnostického informačního kanálu
-Tento příklad znázorňuje postup vytvoření informačního kanálu RSS nebo kanálu Atom pro syndikace Windows Communication Foundation (WCF). Je základní program "Hello World", který zobrazuje základní informace o objektu modelu a jak nastavit ve službě Windows Communication Foundation (WCF).  
+Tento příklad ukazuje, jak vytvořit pro syndikaci Windows Communication Foundation (WCF) informační kanál RSS/Atom. Je to základní program "Hello World", který ukazuje základy objektový model a jak ho nastavit na službu Windows Communication Foundation (WCF).  
   
- WCF modely jako operace služby, které vracejí speciální datového typu, informační kanály syndikace <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>. Instance <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> může serializovat informačního kanálu do formátů, jak technologie RSS 2.0 a Atom 1.0. Následující vzorový kód ukazuje kontrakt použít.  
+ WCF modely jako servisní operace, které vracejí zvláštní datový typ, informační kanály syndikace <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>. Instance <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> může serializovat informačního kanálu do formátů RSS 2.0 a Atom 1.0. Následující ukázkový kód ukazuje kontrakt použít.  
   
 ```  
 [ServiceContract(Namespace = "")]  
@@ -32,9 +32,9 @@ Tento příklad znázorňuje postup vytvoření informačního kanálu RSS nebo 
     }  
 ```  
   
- `GetProcesses` Je opatřen poznámkou operaci <xref:System.ServiceModel.Web.WebGetAttribute> atribut, který vám umožňuje řídit, jak WCF odešle zprávu, HTTP GET požadavky služby operations a určit formát zprávy odeslané.  
+ `GetProcesses` Operace je opatřen poznámkou <xref:System.ServiceModel.Web.WebGetAttribute> k operacím služby a určení formátu zpráv odeslaných požadavků atribut, který vám umožňuje řídit, jak WCF odešle HTTP GET.  
   
- Stejně jako služby WCF informační kanály syndikace může být sám sebou hostované ve všech spravovaných aplikací. Syndikace služby vyžadují konkrétní vazbu ( <xref:System.ServiceModel.WebHttpBinding>) a chování konkrétní koncový bod ( <xref:System.ServiceModel.Description.WebHttpBehavior>) fungovat správně. Nové <xref:System.ServiceModel.Web.WebServiceHost> třída poskytuje pohodlné rozhraní API pro vytváření těchto koncových bodů bez konkrétní konfigurace.  
+ Stejně jako libovolnou službu WCF může být informační kanály syndikace vlastní hostované v žádné spravované aplikace. Syndikace služby vyžadují konkrétní vazbu ( <xref:System.ServiceModel.WebHttpBinding>) a chování určitého koncového bodu ( <xref:System.ServiceModel.Description.WebHttpBehavior>) fungovala správně. Nové <xref:System.ServiceModel.Web.WebServiceHost> třída poskytuje pohodlné rozhraní API pro vytváření těchto koncových bodů bez určitou konfiguraci.  
   
 ```  
 WebServiceHost host = new WebServiceHost(typeof(ProcessService), new Uri("http://localhost:8000/diagnostics"));  
@@ -43,15 +43,15 @@ WebServiceHost host = new WebServiceHost(typeof(ProcessService), new Uri("http:/
             //using the proper binding (the WebHttpBinding) and endpoint behavior (the WebHttpBehavior)  
 ```  
   
- Alternativně můžete použít <xref:System.ServiceModel.Activation.WebServiceHostFactory> z v rámci soubor hostované službou IIS SVC ekvivalentní nakonfigurovánu (Tento postup není ukázáno v ukázkový kód).  
+ Alternativně můžete použít <xref:System.ServiceModel.Activation.WebServiceHostFactory> z v rámci souboru .svc hostované službou IIS ekvivalentní nakonfigurovánu (Tento postup není ukázáno v tomto ukázkovém kódu).  
   
 ```  
 <%@ ServiceHost Language="C#|VB" Debug="true" Service="ProcessService" %>  
 ```  
   
- Protože tato služba přijímá požadavky pomocí standardní HTTP GET, můžete použít libovolného klienta RSS nebo ATOM podporující přístup ke službě. Například můžete zobrazit výstup této služby přechodem na http://localhost:8000/diagnostics/feed/?format=atom nebo http://localhost:8000/diagnostics/feed/?format=rss v prohlížeči sítě podporující RSS, jako je například Internet Explorer 7.  
+ Protože tato služba přijímá požadavky pomocí standardní HTTP GET, můžete použít libovolného klienta RSS nebo s ohledem na ATOM pro přístup ke službě. Například můžete zobrazit výstup této služby tak, že přejdete do http://localhost:8000/diagnostics/feed/?format=atom nebo http://localhost:8000/diagnostics/feed/?format=rss v prohlížeči podporující RSS, jako je například Internet Explorer 7.  
   
- Můžete také [jak WCF syndikace objektu modelu mapy na Atom a RSS](../../../../docs/framework/wcf/feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md) ke čtení syndikovaný dat a zpracování pomocí imperativní kódu.  
+ Můžete také použít [jak the WCF syndikace objektu modelu mapuje na Atom a RSS](../../../../docs/framework/wcf/feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md) syndikovaný data číst a zpracovat je pomocí imperativního kódu.  
   
 ```  
 XmlReader reader = XmlReader.Create( "http://localhost:8000/diagnostics/feed/?format=rss",  
@@ -74,22 +74,22 @@ foreach (SyndicationItem i in feed.Items)
 }  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, zda máte oprávnění registrace správné adresy pro protokol HTTP a HTTPS v počítači, jak je popsáno v nastavení podle pokynů [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  Ujistěte se, že máte oprávnění registrace správné adresy pro protokol HTTP a HTTPS v počítači, jak je vysvětleno v nastavení podle pokynů v [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
 2.  Sestavte řešení.  
   
 3.  Spusťte konzolovou aplikaci.  
   
-4.  Je spuštěn konzolové aplikace, přejděte na http://localhost:8000/diagnostics/feed/?format=atom nebo http://localhost:8000/diagnostics/feed/?format=rss pomocí podporující RSS prohlížeče.  
+4.  Je spuštěn konzolovou aplikaci, přejděte na http://localhost:8000/diagnostics/feed/?format=atom nebo http://localhost:8000/diagnostics/feed/?format=rss pomocí prohlížeče podporující RSS.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Syndication\DiagnosticsFeed`  
   

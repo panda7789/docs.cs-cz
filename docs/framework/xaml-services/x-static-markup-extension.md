@@ -10,15 +10,15 @@ helpviewer_keywords:
 - Static markup extension in XAML [XAML Services]
 - XAML [XAML Services], x:Static markup extension
 ms.assetid: 056aee79-7cdd-434f-8174-dfc856cad343
-ms.openlocfilehash: 980bf6a1bdb19afd5c8d3c798d31037ab8cd7086
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8a14b00fe762d325028072cd0ea3eecf9b9206e3
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33565572"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43423983"
 ---
 # <a name="xstatic-markup-extension"></a>x:Static – rozšíření značek
-Každá entita kód statické podle hodnoty, která je definována v odkazuje [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]– kompatibilní způsob. Statické vlastnosti, která se odkazuje slouží k poskytování hodnotou vlastnosti v jazyce XAML.  
+Odkazuje na entitu kód statickou hodnotou, která je definována v [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]– kompatibilní způsobem. Statická vlastnost, která je popsána slouží k poskytnutí hodnoty vlastností v XAML.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -28,53 +28,59 @@ Každá entita kód statické podle hodnoty, která je definována v odkazuje [!
   
 ## <a name="xaml-values"></a>Hodnoty XAML  
   
-|||  
+| | |  
 |-|-|  
-|`prefix`|Volitelné. Předponu, která odkazuje na namapované, jiné než výchozí obor názvů jazyka XAML. `prefix` ukazuje explicitně využití zřídka odkazovat statické vlastnosti, které pocházejí z oboru názvů jazyka XAML výchozí. V části poznámky.|  
-|`typeName`|Požadováno. Název typu, který definuje požadované statický člen.|  
-|`staticMemberName`|Požadováno. Název člena požadovanou statickou hodnotu (konstanta, pomocí statické vlastnosti, pole nebo hodnotou výčtu).|  
+|`prefix`|Volitelné. Předpona, která odkazuje na mapovanou, jiné než výchozí obor názvů XAML. `prefix` je zobrazena explicitně ve využití vzhledem k tomu, že odkazujete zřídka statické vlastnosti, které pocházejí z výchozí obor názvů XAML. Viz poznámky.|  
+|`typeName`|Požadováno. Název typu, který definuje požadovaný statický člen.|  
+|`staticMemberName`|Požadováno. Jméno člena požadovanou statickou hodnotu (konstantu, statické vlastnosti, pole nebo hodnoty výčtu).|  
   
 ## <a name="remarks"></a>Poznámky  
- Entity kód, který se odkazuje musí mít jednu z následujících akcí:  
+
+Kód entita, na který odkazuje musí být jeden z následujících akcí:  
   
 -   Konstanta  
-  
--   Statické vlastnosti  
-  
+-   Statická vlastnost  
 -   Pole  
+-   Hodnota výčtu
+
+Určení jiné kód entitě, jako je například nestatické vlastnosti způsobí chybu kompilace při kompilaci kódu nebo výjimku během načítání analýzy XAML XAML.  
+
+Můžete provést `x:Static` odkazy na statické pole nebo vlastnosti, které nejsou ve výchozím oboru názvů XAML pro aktuální dokument XAML; to však vyžaduje mapování předpony. Obory názvů XAML jsou téměř vždy definována na kořenový element dokumentu XAML.  
+
+Operace vyhledávání pro statické vlastnosti lze provést pomocí rozhraní .NET Framework XAML Services a jeho XAML čtečky a zapisovače XAML, když jsou spuštěné s výchozí kontext schématu XAML. Tento kontext schématu XAML můžete CLR reflexe uvést nezbytné statické hodnoty pro vytváření grafu objektu. `typeName` Zadejte je ve skutečnosti XAML název typu, nikoli název typu CLR, i když tyto jsou v podstatě stejný název, při použití výchozí kontext schématu XAML nebo při použití všech stávajících architektur implementace XAML založené na modulu CLR.  
+
+Buďte opatrní při provedení `x:Static` odkazů, které nejsou přímo typ hodnoty vlastnosti. V XAML zpracování pořadí, zadané hodnoty z rozšíření značek není vyvolat převod další hodnoty. To platí i v případě vaší `x:Static` vytvoří odkaz na textový řetězec a převod hodnoty pro atribut hodnoty založené na textový řetězec obvykle dochází u tohoto konkrétního člena nebo pro všechny hodnoty členů návratového typu.  
+
+Nejčastějším typem syntaxe, která se používá u tohoto rozšíření značek, je syntaxe atributu. Řetězec s tokenem uvedený za `x:Static` řetězec identifikátoru je přiřazen jako <xref:System.Windows.Markup.StaticExtension.Member%2A> hodnoty základního <xref:System.Windows.Markup.StaticExtension> rozšíření třídy.  
+
+Existují dva další použití XAML, které je technicky možný. Tato použití jsou však méně častý, protože je zbytečně podrobný:  
+
+1.  Syntaxe elementu objektu.
+
+    ```xaml
+    <x:Static Member="prefix:typeName.staticMemberName" ... />
+    ```
+
+2.  Atribut syntaxi pomocí explicitní vlastnost člena pro inicializačního řetězce.
+
+    ```xaml
+    <object property="{x:Static Member=prefix:typeName.staticMemberName}" ... />
+    ```
+
+V implementaci rozhraní .NET Framework XAML Services zpracování tohoto rozšíření značek definováno <xref:System.Windows.Markup.StaticExtension> třídy.  
+
+`x:Static` je rozšíření značek. Všechna rozšíření značek XAML používá `{` a `}` znaků v syntaxi atributu, což je konvence, podle kterého procesoru XAML rozpozná, že rozšíření značek musí poskytovat hodnotu. Další informace o rozšíření značek, naleznete v tématu [– rozšíření značek XAML přehled](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md).  
   
--   Hodnota výčtu  
+## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
+ Výchozí obor názvů XAML můžete použít pro programování WPF obsahuje mnoho užitečných statické vlastnosti, a většina užitečné statické vlastnosti mají podporu například převaděče typů, které usnadňují použití bez nutnosti `{x:Static}` . Pro statické vlastnosti je nutné mapovat předponu pro obor názvů XAML, pokud platí jedna z následujících akcí:  
   
- Chyba kompilace zadání dalších kód entitu, jako je například nestatické vlastnost, dojde, pokud je XAML kompilaci kódu, nebo k výjimce při načtení analýzy XAML.  
+-   Odkazujete na typ, který existuje ve WPF, ale není součástí výchozí obor názvů XAML pro WPF ([!INCLUDE[TLA#tla_wpfxmlnsv1](../../../includes/tlasharptla-wpfxmlnsv1-md.md)]). Toto je celkem běžné scénáře použití `x:Static`. Například můžete použít `x:Static` odkaz s XAML mapování oboru názvů <xref:System> CLR obor názvů a mscorlib sestavení, aby bylo možné odkazovat statické vlastnosti <xref:System.Environment> třídy.  
   
- Můžete provést `x:Static` odkazy na statických polí nebo vlastnosti, které nejsou ve výchozí obor názvů jazyka XAML pro aktuální dokument XAML; to však vyžaduje mapování předpony. Obory názvů jazyka XAML jsou téměř vždy definována v kořenovém elementu dokumentu XAML.  
+-   Typ se odkazuje z vlastního sestavení.  
   
- Operace vyhledávání pro statické vlastnosti můžete provést pomocí rozhraní .NET Framework XAML Services a jeho XAML čtení a zápis XAML, pokud jsou spuštěny s výchozí kontext schématu XAML. Tento kontext schématu XAML zajistit potřebné statické hodnoty pro vytváření objektů grafu použít reflexe CLR. `typeName` Zadejte je ve skutečnosti XAML název typu, nikoli název typu CLR, i když tyto jsou v podstatě stejný název, když používáte výchozí kontext schématu XAML nebo při použití architektury všechny existující implementace XAML na základě CLR.  
+-   Typ, který existuje v sestavení WPF, se odkazuje, ale tento typ je v oboru názvů CLR, který nebyl namapován jako součást výchozí WPF XAML obor názvů. Mapování oborů názvů CLR do výchozí obor názvů XAML pro WPF se provádí pomocí definice v různých sestaveních WPF (Další informace o tento koncept najdete v tématu [obory názvů XAML a mapování Namespace pro WPF XAML](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)). Mapované na jiných oborů názvů CLR může existovat, pokud se tento obor názvů CLR skládá převážně z definice tříd, které nejsou určeny obvykle pro XAML, jako například <xref:System.Windows.Threading>.  
   
- Buďte opatrní při provádění `x:Static` odkazy, které nejsou přímo typ vlastnosti na hodnotu. V XAML zpracování pořadí, zadat hodnoty z rozšíření značek Nevolejte převod další hodnoty. To platí i v případě vaší `x:Static` odkaz vytvoří textový řetězec a převod hodnoty pro hodnoty atributů, které jsou založené na textový řetězec obvykle dochází pro konkrétní člena nebo všechny hodnoty členů návratového typu.  
-  
- Nejčastějším typem syntaxe, která se používá u tohoto rozšíření značek, je syntaxe atributu. Token řetězec zadaný po `x:Static` řetězec identifikátoru je přiřazen jako <xref:System.Windows.Markup.StaticExtension.Member%2A> hodnotu základní <xref:System.Windows.Markup.StaticExtension> rozšíření třídy.  
-  
- Existují dva další XAML použití, které jsou technicky možné. Tyto použití jsou však méně častých, protože je zbytečně podrobné:  
-  
- **Syntaxe objektu element:** `<x:Static Member="` `prefix` `:` `typeName` `.` `staticMemberName` `" .../>`  
-  
- **Atribut syntaxe s explicitní vlastnost člena pro inicializačního řetězce:** `<` `object` `` `property` `="{x:Static Member=` `prefix` `:` `typeName` `.` `staticMemberName` `}" .../>`  
-  
- Implementace rozhraní .NET Framework XAML Services je definované zpracování pro toto rozšíření značek <xref:System.Windows.Markup.StaticExtension> třídy.  
-  
- `x:Static` je rozšíření značek. Všechna rozšíření značek v XAML použití `{` a `}` znaků v jejich syntaxi atributů, což je konvence, podle kterého XAML procesor rozpozná, že rozšíření značek musíte zadat hodnotu. Další informace o rozšíření značek najdete v tématu [XAML přehled rozšíření značek pro](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md).  
-  
-## <a name="wpf-usage-notes"></a>Poznámky pro použití WPF  
- Výchozí obor názvů jazyka XAML použijete pro programování WPF neobsahuje mnoho užitečné statické vlastnosti a většina užitečné statické vlastnosti má podpory, jako je například převaděče typů, které usnadňují použití bez nutnosti `{x:Static}` . Statické vlastnosti je nutné mapovat předponu pro obor názvů jazyka XAML, pokud platí jedna z následujících akcí:  
-  
--   Je odkazováno na typ, který existuje v grafickém subsystému WPF, ale není součástí výchozí obor názvů jazyka XAML pro grafický subsystém WPF ([!INCLUDE[TLA#tla_wpfxmlnsv1](../../../includes/tlasharptla-wpfxmlnsv1-md.md)]). Toto je celkem běžné scénáře použití `x:Static`. Například můžete použít `x:Static` odkaz s mapování oboru názvů jazyka XAML do <xref:System> sestavení CLR obor názvů a mscorlib – Chcete-li odkazovat na statické vlastnosti <xref:System.Environment> třídy.  
-  
--   Typ odkazují z vlastního sestavení.  
-  
--   Je odkazováno na typ, který existuje v sestavení WPF, ale tento typ je v rámci oboru názvů CLR, který nebyl namapovaný jako součást WPF výchozí obor názvů jazyka XAML. Mapování obory názvů CLR do výchozí obor názvů jazyka XAML pro grafický subsystém WPF provádí definice v různých sestavení grafického subsystému WPF (Další informace o tento koncept najdete v tématu [obory názvů jazyka XAML a mapování Namespace pro jazyk XAML WPF](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)). Mapované bez obory názvů CLR může existovat, pokud tento obor názvů CLR tvoří většinou definice tříd, které nejsou určeny obvykle pro jazyk XAML, jako například <xref:System.Windows.Threading>.  
-  
- Další informace o tom, jak používat předpony a obory názvů jazyka XAML pro grafický subsystém WPF najdete v tématu [obory názvů jazyka XAML a Namespace mapování pro jazyk XAML WPF](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
+ Další informace o tom, jak používat předpony a obory názvů XAML pro WPF naleznete v tématu [obory názvů XAML a mapování Namespace pro WPF XAML](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
   
 ## <a name="see-also"></a>Viz také  
  [x:Type – rozšíření značek](../../../docs/framework/xaml-services/x-type-markup-extension.md)  

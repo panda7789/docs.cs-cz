@@ -6,12 +6,12 @@ helpviewer_keywords:
 - bugreport compiler option [Visual Basic]
 - /bugreport compiler option [Visual Basic]
 ms.assetid: e4325406-8dbd-4b48-b311-9ee0799e48bb
-ms.openlocfilehash: 0383a5e369ee4a8146764c13b2f12f48ebe52190
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: e8366e1050217f3d993d510683252728aba0c3d9
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42934574"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43452645"
 ---
 # <a name="-bugreport"></a>-bugreport
 Vytvoří soubor, který vám pomůže při souboru hlášení o chybě.  
@@ -65,4 +65,4 @@ vbc -bugreport:problem.txt t2.vb
  [-debug (Visual Basic)](../../../visual-basic/reference/command-line-compiler/debug.md)  
  [-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
- [trustLevel – Element pro securityPolicy (schéma nastavení technologie ASP.NET)](http://msdn.microsoft.com/library/729ab04c-03da-4ee5-86b1-be9d08a09369)
+ [trustLevel – Element pro securityPolicy (schéma nastavení technologie ASP.NET)](https://msdn.microsoft.com/library/729ab04c-03da-4ee5-86b1-be9d08a09369)

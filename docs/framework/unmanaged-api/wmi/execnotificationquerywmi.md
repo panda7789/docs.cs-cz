@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d314d85e7c1297636e8dd5cecaf050a527151518
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42932796"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43453048"
 ---
 # <a name="execnotificationquerywmi-function"></a>Funkce ExecNotificationQueryWmi
 Provede dotaz přijímat události. Volání se vrátí okamžitě a volající může dotazovat vrácené enumerátor pro události při jejich doručení. Uvolnění vrácené enumerátor zruší dotazu.  

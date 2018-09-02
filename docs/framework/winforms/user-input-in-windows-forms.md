@@ -7,33 +7,34 @@ helpviewer_keywords:
 - mouse input [Windows Forms], using in Windows Forms
 - keyboards [Windows Forms], keyboard input
 ms.assetid: 1486075f-1e06-4c9e-82c6-f948331db6d6
-ms.openlocfilehash: 2a618dae8d5f2f5ea6a6581fff2758fe8419f511
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fef51f57dd3c14c91572041a72c805823d6019a3
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43456662"
 ---
 # <a name="user-input-in-windows-forms"></a>Uživatelský vstup ve Windows Forms
-Windows Forms zahrnuje uživatelského vstupu modelu na základě událostí, které jsou vyvolány při zpracování související zpráv systému Windows. Témata v této části poskytují informace o myši a klávesnice vstupu uživatele, včetně příkladů kódu, které ukazují, jak provádět určité úlohy.  
+Windows Forms obsahuje model vstupu uživatele na základě událostí, které jsou vyvolány při zpracování související zprávy Windows. Témata v této části poskytují informace o myši a klávesnice uživatelský vstup, včetně příklady kódu, které ukazují, jak k provádění konkrétních úkolů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Uživatelský vstup v aplikaci Windows Forms](../../../docs/framework/winforms/user-input-in-a-windows-forms-application.md)  
- Poskytuje přehled událostí vstupu uživatele a metody, které zpracování zpráv systému Windows.  
+ Poskytuje přehled o události uživatelského vstupu a metody, které zpracovávají zprávy Windows.  
   
  [Vstup z klávesnice v aplikaci Windows Forms](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)  
- Obsahuje informace o zpracování, různé typy klíčů a události klávesnice zpráv klávesnice.  
+ Obsahuje informace o zpracování, různé typy klíčů a události klávesnice zprávy klávesnice.  
   
  [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)  
- Obsahuje informace o myši události a další související myši funkce, včetně ukazatele myši a zachycení myši.  
+ Poskytuje informace o myší, události a dalších souvisejících myši funkcí, včetně ukazatele myši a získá zachycení myši.  
   
  [Postupy: Simulace událostí myši a klávesnice v kódu](../../../docs/framework/winforms/how-to-simulate-mouse-and-keyboard-events-in-code.md)  
- Ukazuje několik různých způsobů, jak prostřednictvím kódu programu Simulace myši a vstup z klávesnice.  
+ Ukazuje několik různých způsobů programově Simulace myši a klávesnice.  
   
  [Postupy: Obsluha událostí uživatelského vstupu v ovládacích prvcích Windows Forms](../../../docs/framework/winforms/how-to-handle-user-input-events-in-windows-forms-controls.md)  
- Představuje příklad kódu, který zpracovává většina uživatelů vstupních událostech a hlásí informace o jednotlivých událostí.  
+ Představuje příklad kódu, který zpracovává většinu události uživatelského vstupu a hlásí informace o každé události.  
   
  [Ověřování uživatelského vstupu ve Windows Forms](../../../docs/framework/winforms/user-input-validation-in-windows-forms.md)  
  Popisuje metody k ověření vstupu uživatele v aplikacích Windows Forms.  
   
 ## <a name="related-sections"></a>Související oddíly  
- Viz také [vytváření obslužných rutin událostí v systému Windows Forms](http://msdn.microsoft.com/library/dacysss4\(v=vs.110\)).
+ Viz také [vytváření obslužných rutin událostí ve Windows Forms](https://msdn.microsoft.com/library/dacysss4\(v=vs.110\)).

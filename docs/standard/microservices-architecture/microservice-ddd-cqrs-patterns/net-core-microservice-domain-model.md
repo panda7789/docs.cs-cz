@@ -1,47 +1,47 @@
 ---
-title: Implementace modelu mikroslužbu domény s .NET Core
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace modelu mikroslužbu domény s .NET Core
+title: Implementace doménového modelu mikroslužby pomocí .NET Core
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Implementace doménového modelu mikroslužby pomocí .NET Core
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/09/2017
-ms.openlocfilehash: e836eda7fdc7b55ca7d1fe2ef5bf48a2d4ecb5a3
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: bb11d87cacf5bb6cbc980c879b0c42fae76f6246
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106262"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43420924"
 ---
-# <a name="implementing-a-microservice-domain-model-with-net-core"></a>Implementace modelu mikroslužbu domény s .NET Core 
+# <a name="implementing-a-microservice-domain-model-with-net-core"></a>Implementace doménového modelu mikroslužby pomocí .NET Core 
 
-V předchozí části byly vysvětlené základní principy a vzory návrhu modelu domény. Nyní je čas na vyzkoušení možné způsoby, jak implementovat modelu domény pomocí .NET Core (prostý C\# kódu) a základní EF. Všimněte si, že váš model domény bude skládat jednoduše vašeho kódu. Na EF bude mít jenom základní EF modelu požadavky, ale ne skutečné závislosti. Pevné závislosti nebo odkazy na základní EF nebo jiných ORM by neměl mít v modelu domény.
+V předchozí části byly vysvětlení principů návrhu základní a vzory pro navrhování modelu domény. Teď můžete prozkoumat možnosti, jak implementovat doménový model s využitím .NET Core (plain C\# kódu) a EF Core. Všimněte si, že doménový model se skládá pouze z kódu. Jenom požadavky modelu EF Core, ale ne skutečné závislosti bude mít na EF. Pevné závislosti nebo odkazy na EF Core nebo jiných ORM by neměl mít v doménovém modelu.
 
-## <a name="domain-model-structure-in-a-custom-net-standard-library"></a>Doménovou strukturu modelu v knihovně vlastní .NET Standard
+## <a name="domain-model-structure-in-a-custom-net-standard-library"></a>Doménovou strukturu modelu ve vlastní knihovny .NET Standard
 
-Složka organizace používá pro odkaz na aplikaci eShopOnContainers ukazuje DDD modelu pro danou aplikaci. Můžete se setkat jinou složku organizace více jasně komunikuje možnosti návrhu, které jsou vytvářeny pro vaši aplikaci. Jak vidíte v obrázek 9 – 10, v řazení modelu domény existují dvě agregace, agregace pořadí a kupujících agregace. Každý agregace je skupina domény entity a hodnota objekty, i když můžete mít agregace také skládá z jedné domény entity (agregační kořenové nebo kořenové entity).
+Složka organizaci použít aplikaci eShopOnContainers referenční aplikace ukazuje DDD modelů pro aplikaci. Můžete zjistit, že organizace jinou složku jasněji komunikuje návrhu volby provedené pro vaši aplikaci. Jak je vidět v obrázek 9-10, v pořadí doménový model existují dvě agregace, agregace pořadí a agregace odběratele. Každou agregaci je skupina domény entity a objekty hodnotu, i když jste mohli agregace také skládá z jedné domény entity (agregační kořenové nebo Kořenová entita).
 
 ![](./media/image11.png)
 
-**Obrázek 9 – 10**. Doménovou strukturu modelu pro řazení mikroslužbu v eShopOnContainers
+**Obrázek 9-10**. Doménovou strukturu modelu pro objednávání mikroslužeb v aplikaci eShopOnContainers
 
-Kromě toho vrstva modelu domény zahrnuje smlouvy úložiště (rozhraní), které jsou požadavky na infrastrukturu modelu domény. Jinými slovy, tyto rozhraní express jaké úložiště vrstvě infrastruktury musí implementovat a jak. Je důležité, aby implementace úložišť umístit mimo vrstva modelu domény, v knihovně infrastruktury vrstvy tak vrstva modelu domény není "napadeny" rozhraní API nebo třídy z infrastruktury technologie, jako je rozhraní Entity Framework.
+Kromě toho zahrnuje vrstvě doménového modelu smlouvy úložiště (rozhraní), které jsou požadavky na infrastrukturu modelu domény. Jinými slovy, tato rozhraní express jaké úložiště vrstvy infrastruktury musí implementovat a jak. Je velmi důležité, že implementace úložišť umístit mimo vrstvě doménového modelu, v knihovně infrastruktury vrstvu tak vrstvě doménového modelu není "napadeny" rozhraní API nebo třídy z infrastruktury technologie, jako jsou rozhraní Entity Framework.
 
-Můžete také zjistit [SeedWork](https://martinfowler.com/bliki/Seedwork.html) složku, která obsahuje vlastní základní třídy, které můžete použít jako základ pro entity domény a hodnota objekty, takže není nutné redundantní kódu v každé doméně třída objektu.
+Můžete také zobrazit [SeedWork](https://martinfowler.com/bliki/Seedwork.html) složku, která obsahuje vlastní základní třídy, které můžete použít jako základ pro entity domény a hodnota objekty, takže není nutné redundantní kód ve třídě objektu každé domény.
 
-## <a name="structuring-aggregates-in-a-custom-net-standard-library"></a>Strukturování agregací ve vlastní knihovna .NET Standard
+## <a name="structuring-aggregates-in-a-custom-net-standard-library"></a>Strukturování agregace ve vlastní knihovny .NET Standard
 
-Agregace odkazuje na clusteru s podporou objektů domény tak, aby odpovídaly transakční konzistence seskupeny dohromady. Tyto objekty může být instancí entit (z nichž jeden je agregační kořenový server WSUS nebo kořenové entity) plus všechny objekty další hodnotu.
+Agregace odkazuje na clusteru objektů domény seskupené dohromady tak, aby odpovídaly transakční konzistence. Tyto objekty může být instancí entit (z nichž jeden je agregační kořenový server WSUS nebo Kořenová entita) plus všechny objekty další hodnotu.
 
-Transakční konzistence znamená, že agregace záruku, že se konzistentní a aktuální na konci obchodní akce. Například agregace pořadí z eShopOnContainers řazení mikroslužbu modelu domény se skládá, jak ukazuje obrázek 9 – 11.
+Transakční konzistence znamená, že agregace je zaručeno, že byly konzistentní a aktuální na konci obchodní akce. Například pořadí agregace v aplikaci eShopOnContainers řazení doménového modelu mikroslužby se skládá, jak je znázorněno v obrázek 9 – 11.
 
 ![](./media/image12.png)
 
-**Obrázek 9-11**. Pořadí agregační v řešení sady Visual Studio
+**Obrázek 9 – 11**. Pořadí agregace v řešení sady Visual Studio
 
-Otevřete-li některý ze souborů ve složce aplikace agregační, uvidíte jak je označen jako vlastní základní třídu nebo rozhraní, jako je entity nebo hodnota objektu, jak jsou implementované ve [Seedwork](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Services/Ordering/Ordering.Domain/SeedWork) složky.
+Otevřete-li některý ze souborů ve složce aplikace agregace, zobrazí se jak je označen jako vlastní základní třídu nebo rozhraní, jako entity nebo hodnotu objektu, jak je implementován v [Seedwork](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Services/Ordering/Ordering.Domain/SeedWork) složky.
 
-## <a name="implementing-domain-entities-as-poco-classes"></a>Implementace entity domény jako třídy objektů POCO
+## <a name="implementing-domain-entities-as-poco-classes"></a>Implementace entity domény jako třídy POCO
 
-Implementaci modelu domény v rozhraní .NET a vytváření tříd objektů POCO, které implementují entity vaší domény. V následujícím příkladu je třída pořadí definovaná jako entity a také jako agregovaná kořenového adresáře. Protože pořadí třída odvozena z třídy base entita, můžete znovu použít společný kód související s entitami. Berte v úvahu, že tyto základní třídy a rozhraní jsou definované uživatelem v projektu modelu domény, tak, aby byl kód, není infrastruktury kód z ORM jako EF.
+Doménový model se implementovat v rozhraní .NET tak, že vytvoříte POCO třídy, které implementují entity domény. V následujícím příkladu je definována třída pořadí jako entity a také jako kořen agregace. Protože pořadí třída je odvozena ze základní třídy Entity, můžete znovu použít společný kód související s entitami. Berte v úvahu, že tyto základní třídy a rozhraní jsou definované uživatelem v projektu s modelem domény, tak, aby byl váš kód, ne infrastruktury kód z ORM jako je EF.
 
 ```csharp
 // COMPATIBLE WITH ENTITY FRAMEWORK CORE 2.0
@@ -93,21 +93,21 @@ public class Order : Entity, IAggregateRoot
 }
 ```
 
-Je důležité si uvědomit, že toto je entita domény, implementovaný jako třídu objektů POCO. Nástroj nemá žádné přímé závislost na Entity Framework Core nebo jiné infrastruktury framework. Tato implementace je jako by měl být v DDD, právě C\# kód implementace modelu domény.
+Je důležité si uvědomit, že se entita domény implementován jako třída POCO. Nemá přímou závislost na Entity Framework Core nebo libovolné jiné architektury infrastruktury. Tato implementace je jako by měl být v DDD, stačí C\# kód implementace modelu domény.
 
-Kromě toho je třída označených pomocí rozhraní s názvem IAggregateRoot. Toto rozhraní je prázdný rozhraní, někdy nazývané *rozhraní značek*, která je použít jenom k označení, že tato třída entity je také agregační kořenové.
+Kromě toho je třída upravena pomocí rozhraní s názvem IAggregateRoot. Toto rozhraní je prázdné rozhraní, říká se jim *rozhraní značky*, která je slouží jenom k označení, že tato třída entity je také agregační kořenové.
 
-Rozhraní značek se někdy považuje za proti vzor; je však také čistou způsob, jak označit třídu, zejména v případě, že rozhraní může být vyvíjející se. Atribut může být volba pro značky, ale je rychlejší najdete v části základní třídy (entita) vedle rozhraní IAggregate místo vložení agregační atribut značky nad třídu. Je metter preference, v každém případě.
+Rozhraní značky někdy považovat odolnou proti vzor; je však také čistý způsob, jak označit třídu, zejména v případě, že toto rozhraní může být vyvíjejí. Atribut může být volba pro značky, ale je rychlejší zobrazíte základní třídy (entita) vedle rozhraní IAggregate namísto vložení hodnoty značku agregační atribut nad třídu. Je na vás předvolby, v každém případě.
 
-S agregační kořenové znamená, že většinu kódu související s konzistence a obchodní pravidla na agregaci entit by měla být implementována jako metody ve třídě agregační kořenové pořadí (například AddOrderItem při přidávání objektu OrderItem do agregace) . Nesmí vytvořit nebo aktualizovat objekty OrderItems, samostatně nebo přímo. Třída AggregateRoot musí je udržovat v řízení a konzistence všechny operace aktualizace proti podřízených entit.
+Máte agregační kořenové znamená, že většinu kódu související s konzistence a obchodních pravidel agregaci entit by měla být implementována jako metody ve třídě kořenové agregační pořadí (například AddOrderItem při přidávání objektu OrderItem agregaci) . By neměl vytvořit nebo aktualizovat objekty OrderItems, nezávisle na sobě nebo přímo. Třída AggregateRoot uchovává ovládacího prvku a konzistence, všechny operace aktualizace s jeho podřízených entit.
 
-## <a name="encapsulating-data-in-the-domain-entities"></a>Zapouzdření dat v doméně entity
+## <a name="encapsulating-data-in-the-domain-entities"></a>Zapouzdření dat v entitách domény
 
-Častých problémů v modelech entity je, že jejich vystavit navigační vlastnosti kolekce jako veřejně přístupný seznamu typy. To umožňuje vývojáři žádné spolupracovník manipulovat s obsahem tyto kolekce typů, které mohou obejít zásadní obchodní pravidla pro kolekci, pravděpodobně nechat objekt v neplatném stavu. Toto řešení je vystavit přístup jen pro čtení k související kolekce a explicitně zadat metody, které definují způsoby, ve kterém můžete upravit klientů je.
+Běžný problém v modelech entity je, aby zveřejňovaly navigační vlastnosti kolekce jako seznam veřejně přístupné typy. To umožňuje vývojáři ocení spolupracovníka manipulovat s obsahem těchto kolekci typů, které mohou obejít důležitá obchodní pravidla pro kolekci, možná byste museli opustit objektu v neplatném stavu. Řešení, aby to je a vystavovat přístup jen pro čtení k souvisejících kolekcích explicitně poskytující metody, které definují způsoby, ve které klienty můžete s nimi manipulovat.
 
-V předchozí kód Všimněte si, že mnoho atributů jsou jen pro čtení nebo privátní a jsou pouze aktualizovat pomocí metody třídy, takže všechny aktualizace trvat do výstupních podmínek domény účtů business a logiku určenou v rámci metody třídy.
+V předchozím kódu mějte na paměti, že mnoho atributů jsou jen pro čtení nebo privátní a jsou pouze aktualizovatelné metody třídy tak všechny aktualizace trvá do výstupních účet obchodní domény podmínek a logiku určenou v rámci metod tříd.
 
-Například následující vzory DDD, měli byste *není* udělejte z libovolné příkaz obslužná rutina metoda nebo aplikaci vrstvy třídy:
+Například následující vzorů DDD, měli byste *není* udělejte z libovolné příkaz rutinu metody nebo aplikace vrstvy třídy:
 
 ```csharp
 // WRONG ACCORDING TO DDD PATTERNS – CODE AT THE APPLICATION LAYER OR
@@ -122,17 +122,17 @@ myOrder.OrderItems.Add(myNewOrderItem);
 //...
 ```
 
-Metodu Add. v takovém případě je čistě operace přidání dat s přímým přístupem ke kolekci OrderItems. Proto většinu logiku domény, pravidel nebo ověření související se, že operace podřízenými položkami, bude možné rozdělit do aplikační vrstvu (obslužné rutiny příkazů a řadičů webového rozhraní API).
+Metoda Add v tomto případě je čistě operace přidání dat s přímým přístupem do kolekce OrderItems. Proto se většina logiku domény, pravidla nebo ověření související se, že operace s podřízených entit bude možné rozdělit do aplikační vrstvy (obslužné rutiny příkazů a kontrolerů rozhraní Web API).
 
-Pokud přejdete kolem agregační kořenové, nemůže zaručit kořenu agregační jeho výstupních podmínek, jeho platnost nebo jeho konzistence. Nakonec bude mít špagety kód nebo kód transakční skriptu.
+Budete-li kolem agregační kořenové, agregační kořenové nemůže zaručit jeho výstupních podmínek, jeho platnost nebo jeho konzistence. Nakonec je třeba špagety kód nebo kód transakční skriptu.
 
-Podle vzorů DDD, nesmí mít entity v libovolné vlastnosti entity, veřejné setter. Změny v entitě by měl být doprovází explicitní metody s explicitní všudypřítomný jazyk o změny, které se provádí v entitě.
+Pokud chcete postupovat podle vzorů DDD, nesmí mít entity veřejné metody setter v jakékoli vlastnosti entity. Změny v entitě by měl vycházet explicitní metody explicitní všudypřítomná jazyk o změny, které provádějí v dané entitě.
 
-Kromě toho kolekce v rámci entity (např. pořadí položek) by měla být vlastnosti jen pro čtení (metoda AsReadOnly vysvětleno dále). Nyní byste měli mít pouze z aktualizovat v rámci metody třídy agregační kořenové nebo podřízené metody entity.
+Kromě toho kolekce v rámci entity (například položky objednávky) by měl být vlastnosti jen pro čtení (metoda AsReadOnly vysvětleno dále). Je třeba aktualizovat pouze z v rámci metody agregační kořenové třídy nebo metody podřízené entity.
 
-Jak můžete vidět v kódu pro kořenovou agregační pořadí, všechny setter musí být privátní nebo alespoň oprávnění jen pro čtení externě, tak, aby všechny operace proti entity data nebo jeho podřízených entit musí být provedena prostřednictvím metody ve třídě entity. Tím se zachová konzistence řízené a objektově orientované způsobem místo implementace kód transakční skriptu.
+Jak je vidět v kódu pro kořenový agregační pořadí, všechny metody setter by měla být privátní nebo alespoň oprávnění jen pro čtení externě, tak, aby žádné operace proti entity dat nebo její podřízené entity se provádí prostřednictvím metody ve třídě entity. To udržuje konzistenci způsobem řízeným a objektově orientované namísto implementace kódu transakční skriptu.
 
-Následující fragment kódu ukazuje správný způsob, jak můžete kód úkolu přidávání objekt OrderItem k agregaci pořadí.
+Následující fragment kódu ukazuje správný způsob, jak kód úkolu přidávání objekt OrderItem agregaci pořadí.
 
 ```csharp
 // RIGHT ACCORDING TO DDD--CODE AT THE APPLICATION LAYER OR COMMAND HANDLERS
@@ -146,36 +146,36 @@ myOrder.AddOrderItem(productId, productName, pictureUrl, unitPrice, discount, un
 //...
 ```
 
-V tento fragment kódu, bude většina ověření nebo logiku související vytvoření objektu OrderItem pod kontrolou agregační kořenu pořadí – v metodě AddOrderItem – zejména ověření a logiku související s další prvky v souhrnném. Například může získat položce produktu v důsledku několik volání AddOrderItem. V dané metody můžete prozkoumat položky produktu a konsolidovat stejné položek produktu do jednoho objektu OrderItem u několik jednotek. Kromě toho pokud existují různé slevu objemy, ale ID produktu je stejný, by pravděpodobně použijete vyšší slevy. Tato zásada se vztahuje na další logiku domény OrderItem objektu.
+V tomto fragmentu kódu, bude většinu ověření nebo logiky týkající se vytvoření objektu OrderItem pod kontrolou agregační kořenové pořadí – v metodě AddOrderItem – zejména ověření a logiku související s další prvky v agregaci. Například se mohou zobrazovat jako výsledek z více volání AddOrderItem jedné položce produktu. V této metodě můžete zkontrolovat položky produktu a konsolidovat do jediného objektu OrderItem s více jednotkami stejné položky produktu. Kromě toho pokud existují jiné slevy objemy, ale ID produktu je stejný, by pravděpodobně použijete vyšší slevy. Tento princip platí pro další logiku domény OrderItem objektu.
 
-Kromě toho nové OrderItem(params) operaci rovněž se řídí a provádí metodu AddOrderItem z kořene agregační pořadí. Proto většinu logiky nebo ověření související se, že operace, (zejména všechno, co má dopad na konzistenci mezi dalšími subjekty, podřízené) bude na jednom místě v kořenu agregační. Toto je ultimate účel agregační kořenové vzoru.
+Kromě toho novou operaci OrderItem(params) také být řízený a provádí metoda AddOrderItem z kořene agregační pořadí. Proto většinu logiku nebo ověření související se, že operace (zejména cokoli, co má vliv na konzistenci mezi ostatní podřízené entity) bude na jednom místě v kořenu agregace. To je účel ultimate agregační kořenové vzoru.
 
-Pokud používáte Entity Framework Core 1.1 nebo novější, DDD entita může být lépe vyjádřený protože umožňuje [mapování polí](https://docs.microsoft.com/ef/core/modeling/backing-field) kromě vlastností. To je užitečné, když chráníte kolekcí podřízených entit nebo hodnota objekty. Toto vylepšení můžete použít jednoduchý privátním polím místo vlastnosti a můžete implementovat žádné aktualizace ke kolekci pole v veřejné metody a poskytovat přístup jen pro čtení prostřednictvím metody AsReadOnly.
+Pokud používáte Entity Framework Core 1.1 nebo později, DDD entity můžete lépe vyjádřit protože umožňuje [mapování na pole](https://docs.microsoft.com/ef/core/modeling/backing-field) kromě vlastností. To je užitečné, když chráníte kolekce podřízených entit nebo hodnota objekty. Toto vylepšení místo vlastnosti můžete použít jednoduchý privátní pole a můžete implementovat jakýmkoli aktualizacím kolekce pole ve veřejné metody a prostřednictvím metody AsReadOnly poskytují přístup jen pro čtení.
 
-V DDD chcete entitu aktualizovat pouze prostřednictvím metody v entitě (nebo konstruktoru), aby bylo možné řídit všechny neutrální a konzistence dat takže vlastnosti jsou definované pouze s přistupující objekt get. Vlastnosti jsou zajišťované privátním polím. Soukromé členy pouze přístupná v rámci třídy. Ale zde jedna výjimka: základní EF je třeba nastavit také těchto polí.
+V DDD, které chcete aktualizovat entitu pouze prostřednictvím metod v entity (nebo konstruktoru), aby bylo možné řídit všechny invariantní a konzistenci dat takže vlastnosti jsou definovány pouze s přistupující objekt get. Vlastnosti se zálohují na soukromé pole. Soukromé členy lze přistupovat pouze z v rámci třídy. Nicméně tady jedna výjimka: EF Core je potřeba nastavit také tato pole.
 
 
-### <a name="mapping-properties-with-only-get-accessors-to-the-fields-in-the-database-table"></a>Mapování vlastností s pouze získat přístupové objekty na pole v tabulce databáze
+### <a name="mapping-properties-with-only-get-accessors-to-the-fields-in-the-database-table"></a>Mapování vlastností pomocí pouze získat přístupové objekty do polí v tabulce databáze
 
-Mapování vlastností na sloupce tabulky databáze není odpovědnost domény, ale součást vrstvě infrastruktury a trvalost. Jsme zmínili, tento tady jednoduše tak, že víte o nové funkce v EF základní 1.1 nebo později související na tom, jak můžete modelu entity. Další informace o tomto tématu jsou vysvětleny v sekci infrastruktury a trvalost.
+Mapování vlastnosti na sloupce tabulky databáze není odpovědnost domény, ale součástí infrastruktury a stálost vrstvu. Jsme zmínili, tento tady jenom, abyste měli přehled o novinkách v EF Core 1.1 nebo novější týkajících se jak lze modelovat entity. Další podrobnosti o tomto tématu jsou vysvětlené v oblasti infrastruktury a trvalost.
 
-Při použití EF základní 1.0, v rámci DbContext, budete muset mapy – vlastnosti, které jsou definovány pouze s mechanismy získání skutečné pole v tabulce databáze. To se provádí pomocí metody HasField PropertyBuilder třídy.
+Při použití EF Core 1.0, v rámci uvolněn objekt DbContext, budete muset mapy – vlastnosti, které jsou definovány pouze pomocí metody getter skutečné polí v tabulce databáze. To se provádí pomocí metody HasField PropertyBuilder třídy.
 
 ### <a name="mapping-fields-without-properties"></a>Mapování polí bez vlastností
 
-Funkce s EF základní 1.1 nebo novější k mapování sloupců na pole je také možné nepoužívat vlastnosti. Místo toho můžete namapovat jenom sloupce z tabulky na pole. Běžně používá pro tento je privátním polím pro vnitřní stav, který nemusí být subjekty mimo entity.
+S funkcí v EF Core 1.1 nebo vyšší sloupce mapovat na pole je také možné používat vlastnosti. Místo toho můžete namapovat pouze sloupce z tabulky na pole. Je běžným případem použití pro tento privátní pole pro vnitřní stav, který není potřeba přistupovat z mimo entitu.
 
-Například v předchozím příkladu kódu OrderAggregate neexistují několik privátní pole, jako je třeba `_paymentMethodId` pole, které mají žádné související vlastnost pro nastavení nebo getter. Toto pole může být také vypočítat v rámci obchodní logiku pořadí a použít z metod pořadí, ale je potřeba nastavit jako trvalý, v databázi také. Proto v EF jádra (od verze 1.1) je způsob, jak mapování pole bez související vlastnosti na sloupec v databázi. To je také podrobně [vrstvě infrastruktury](#the-infrastructure-layer) části této příručky.
+Například v předchozím příkladu kódu OrderAggregate existují několik privátní pole, jako je třeba `_paymentMethodId` pole, které mají žádné související vlastnost setter nebo getter. Toto pole také může vypočítá v rámci obchodní logiku pořadí a použití z metody pořadí, ale je potřeba nastavit jako trvalý, v databázi i. Takže v EF Core (od verze 1.1) je způsob, jak mapovat pole bez související vlastnost sloupec v databázi. To je také jsou vysvětlené v [vrstvy infrastruktury](#the-infrastructure-layer) části této příručky.
 
 ### <a name="additional-resources"></a>Další zdroje
 
 -   **Vaughn Vernon. Modelování agregace s DDD a Entity Framework.** Všimněte si, že toto je *není* Entity Framework Core.
     [*https://vaughnvernon.co/?p=879*](https://vaughnvernon.co/?p=879)
 
--   **Julie Lerman. Kódování řízené domény návrh: tipy pro Devs zaměřené na Data**
+-   **Julie Lerman. Kódování pro návrhy řízené doménou: tipy pro vývojáře, zaměřuje dat**
     [*https://msdn.microsoft.com/en-us/magazine/dn342868.aspx*](https://msdn.microsoft.com/en-us/magazine/dn342868.aspx)
 
--   **Udi Dahan. Postup vytvoření plně zapouzdřené domény modely**
+-   **Udi Dahan. Vytvoření plně zapouzdřené doménových modelů**
     [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
 
 

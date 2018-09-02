@@ -8,62 +8,62 @@ helpviewer_keywords:
 ms.assetid: ef2b31c3-7426-43e7-9924-92339b96556d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d7d1f7ba1a0384ed93932733f12aa3306e16b790
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 983c38567667da911132217dcfda37c009dc833c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33393916"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43423482"
 ---
 # <a name="clr-etw-events"></a>Události ETW CLR
-Témata v této části popisují trasování událostí pro události systému Windows (ETW). Každá událost má přidružené klíčového slova a úrovně, které jsou popsány v [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md) tématu. Modul CLR má dva poskytovatelé pro události:  
+Témata v této části popisují trasování událostí pro Windows (ETW). Každá událost má související klíčového slova a úrovně, které jsou popsány v [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md) tématu. Modul CLR má dva poskytovatelé pro události:  
   
--   Poskytovatel modulu runtime, který vyvolává události v závislosti na tom, které jsou povolené klíčová slova (kategorie událostí). Poskytovatel modulu runtime CLR GUID je e13c0d23-ccbc-4e12-931b-d9cc2eee27e4.  
+-   Zprostředkovatel běhového prostředí, které vyvolává události v závislosti na tom, které jsou povolené klíčová slova (kategorie události). Identifikátor GUID zprostředkovatele CLR runtime je e13c0d23-ccbc-4e12-931b-d9cc2eee27e4.  
   
--   Sekvence daneho poskytovatele, který má speciální používá. Sekvence daneho zprostředkovatel CLR GUID je a669021c-c450-4609-a035-5af59af4df18.  
+-   Zprostředkovatel doběhu, který má zvláštní účely. Identifikátor GUID zprostředkovatele doběhu modulu CLR je a669021c-c450-4609-a035-5af59af4df18.  
   
- Další informace o poskytovateli najdete v tématu [CLR ETW – zprostředkovatelé](../../../docs/framework/performance/clr-etw-providers.md).  
+ Další informace o poskytovatelích najdete v tématu [CLR ETW – zprostředkovatelé](../../../docs/framework/performance/clr-etw-providers.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Události běhových informací](../../../docs/framework/performance/runtime-information-etw-events.md)  
- Zaznamená informace o modulu runtime, SKU, číslo verze, způsobem, ve kterém byla aktivovaná modul runtime, včetně parametrů příkazového řádku, který byl spuštěn s, identifikátor GUID (pokud existuje) a další relevantní informace.  
+ Zaznamenává informace o modulu runtime, včetně SKU, číslo verze, způsobem, ve kterém se aktivovala modul runtime, parametry příkazového řádku, který byl spuštěn s GUID (Pokud je k dispozici) a další relevantní informace.  
   
  [Událost výjimky Thrown_V1](../../../docs/framework/performance/exception-thrown-v1-etw-event.md)  
- Zaznamená informace o výjimkách, které jsou vydány.  
+ Zaznamenává informace o výjimkách, které jsou vyvolány.  
   
  [Kolizní události](../../../docs/framework/performance/contention-etw-events.md)  
- Zaznamená informace o kolizí pro monitorování zámky nebo nativní zámky, které používá modul runtime.  
+ Zaznamenává informace o počtu kolizí zámků monitorování nebo nativní zámky, které používá modul runtime.  
   
  [Události fondu vláken](../../../docs/framework/performance/thread-pool-etw-events.md)  
- Zaznamená informace o přístup z více vláken fondy pracovních procesů a fondy vláken vstupně-výstupní operace.  
+ Zaznamenává informace o vlákně fondy pracovních procesů a fondy vláken vstupně-výstupních operací.  
   
  [Události zavaděče](../../../docs/framework/performance/loader-etw-events.md)  
- Zaznamená informace o načítání a uvolnění domény aplikace, sestavení a moduly.  
+ Zaznamenává informace o načítání a uvolňování domény aplikace, sestavení a modulů.  
   
  [Události metod](../../../docs/framework/performance/method-etw-events.md)  
- Zaznamená informace o metodách CLR pro překlad symbol.  
+ Zaznamenává informace o metodách CLR pro rozlišení symbolů.  
   
  [Události kolekce paměti](../../../docs/framework/performance/garbage-collection-etw-events.md)  
- Zaznamená informace týkající se uvolňování paměti, která vám pomůžou ladění a Diagnostika.  
+ Zaznamenává informace týkající se uvolňování paměti, které vám pomůžou Diagnostika a ladění.  
   
  [JIT – události trasování (CLR)](../../../docs/framework/performance/jit-tracing-etw-events.md)  
- Zaznamená informace o právě za běhu (JIT) vložené a volání tail.  
+ Zaznamenává informace o just-in-time (JIT) vkládání a volání funkce tail.  
   
  [Události interoperability](../../../docs/framework/performance/interop-etw-events.md)  
- Zaznamená informace o Microsoft (MSIL intermediate language) se zakázaným inzerováním generování a ukládání do mezipaměti.  
+ Zaznamenává informace o Microsoft intermediate language (MSIL) zástupné procedury generování a ukládání do mezipaměti.  
   
  [Události ARM](../../../docs/framework/performance/application-domain-resource-monitoring-arm-etw-events.md)  
- Zachycení podrobné diagnostické informace týkající se stavu služby domény aplikace.  
+ Zachycení podrobných diagnostických informací týkajících se stavu domény aplikace.  
   
  [Události zabezpečení](../../../docs/framework/performance/security-etw-events.md)  
- Zaznamená informace o silným názvem a ověření Authenticode.  
+ Zaznamenává informace týkající se silným názvem a ověření pomocí technologie Authenticode.  
   
  [Událost zásobníku](../../../docs/framework/performance/stack-etw-event.md)  
- Zaznamená informace, které se používá s jinými událostmi ke generování trasování zásobníku po je aktivována událost.  
+ Zaznamenává informace, které slouží ke generování trasování zásobníku, poté, co je vyvolána událost s jinými událostmi.  
   
 ## <a name="see-also"></a>Viz také  
- [Vylepšení ladění a optimalizace výkonu pomocí trasování událostí pro Windows](http://go.microsoft.com/fwlink/?LinkId=179696)  
- [Blog výkonu Windows](http://go.microsoft.com/fwlink/?LinkId=179509)  
+ [Vylepšení ladění a optimalizace výkonu pomocí trasování událostí pro Windows](https://go.microsoft.com/fwlink/?LinkId=179696)  
+ [Blog o Windows Performance](https://go.microsoft.com/fwlink/?LinkId=179509)  
  [Řízení přihlašování rozhraní .NET Framework](../../../docs/framework/performance/controlling-logging.md)  
  [Poskytovatelé Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-providers.md)  
  [Klíčová slova a úrovně Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)  

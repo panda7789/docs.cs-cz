@@ -23,11 +23,11 @@ ms.assetid: b4770c34-1804-4f8c-b512-c10b0893e516
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0b3970aad08f2be98d175b4175ef06711bcaf609
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42935439"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43452820"
 ---
 # <a name="long-data-type-visual-basic"></a>Long – datový typ (Visual Basic)
 

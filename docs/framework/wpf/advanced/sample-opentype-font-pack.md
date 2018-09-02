@@ -6,52 +6,52 @@ helpviewer_keywords:
 - fonts [WPF], OpenType font pack
 - typography [WPF], OpenType font pack
 ms.assetid: 56b46fa1-a44e-419b-8f14-25ad51c715c3
-ms.openlocfilehash: bec890f7937965c314ccf16b4142905c52ceff49
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 93bba86801ec4971e884cb4703d7a6323a2e94fe
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33546933"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43455741"
 ---
 # <a name="sample-opentype-font-pack"></a>Ukázková sada písem OpenType
-Toto téma obsahuje přehled vzorku [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma, která jsou distribuované s [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)]. Podporu je víc písem. ukázka rozšířené [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] funkce, které mohou být využívána [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  
+Toto téma obsahuje přehled ukázky [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma, které jsou distribuovány s [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)]. Rozšířená podpora písma ukázka [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] funkce, které mohou být využívána [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.  
   
   
 <a name="overview"></a>   
-## <a name="fonts-in-the-opentype-font-pack"></a>V sadě písem OpenType písem.  
- [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] Poskytuje sadu ukázka [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma, která můžete použít při vytváření [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Ukázka písem se zadávají v rámci licence od horní dotah Corporation. Tato písma implementovat pouze podmnožinu celkový počet funkcí, které jsou definované [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] formátu. Následující tabulka uvádí názvy vzorku [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem.  
+## <a name="fonts-in-the-opentype-font-pack"></a>V této sady sada písem OpenType je víc písem  
+ [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] Poskytuje sadu ukázkových [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem, které můžete použít při vytváření [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. Ukázka písma jsou dodávané v rámci licence od horní dotah Corporation. Těchto písmo implementovat pouze podmnožinu celkového funkce definované [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] formátu. Následující tabulka uvádí názvy vzorku [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma.  
   
 |**Jméno**|**Soubor**|  
 |--------------|--------------|  
 |Kootenay|Kooten.ttf|  
 |Lindsey|Linds.ttf|  
 |Miramonte|Miramo.ttf|  
-|Miramonte tučně|Miramob.ttf|  
+|Miramonte tučného písma|Miramob.ttf|  
 |Pericles|Peric.ttf|  
-|Lehký Pericles|Pericl.ttf|  
+|Pericles světla|Pericl.ttf|  
 |Pescadero|Pesca.ttf|  
-|Pescadero tučně|Pescab.ttf|  
+|Pescadero tučného písma|Pescab.ttf|  
   
- Následující obrázek ukazuje, jaké vzorku [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] vypadat písem.  
+ Následující obrázek znázorňuje, co ukázka [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] vypadat písma.  
   
- ![Seznam názvů písem v ukázkové sadě písem](../../../../docs/framework/wpf/advanced/media/samplefontpack01.gif "samplefontpack01")  
-V sadě písem OpenType písem.  
+ ![Seznam názvů písma v balík vzorových písmo](../../../../docs/framework/wpf/advanced/media/samplefontpack01.gif "samplefontpack01")  
+V této sady sada písem OpenType je víc písem  
   
- Ukázka písem se zadávají v rámci licence od horní dotah Corporation. Horní dotah je zprostředkovatel produktů pokročilé písma. Licence rozšířené nebo vlastní verzích ukázka písem, najdete v tématu [horní dotah Corporation webu](http://go.microsoft.com/fwlink/?LinkId=182627).  
+ Ukázka písma jsou dodávané v rámci licence od horní dotah Corporation. Horní dotah je poskytovatel produktů, pokročilé písma. Licence rozšířené nebo vlastní verze ukázka písma, najdete v článku [horní dotah Corporation webu](https://go.microsoft.com/fwlink/?LinkId=182627).  
   
 > [!NOTE]
->  Jako vývojář je vaší povinností ujistit, že máte požadovanou licenci práva pro libovolného písma vložení v aplikaci nebo v opačném případě znovu distribuovat.  
+>  Jako vývojář je vaší povinností ujistit, že máte potřebná licenční oprávnění pro všechny písmo vložit do aplikace nebo jinak znovu distribuovat.  
   
 <a name="installing_the_fonts"></a>   
-## <a name="installing-the-fonts"></a>Instalace písma  
- Máte možnost instalace vzorku [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem na výchozí hodnoty [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] písem directory **\WINDOWS\Fonts**. Použijte ovládací panel písma pro instalaci písem. Jakmile jsou tyto písem v počítači, které jsou přístupné na všechny aplikace, které odkazují na výchozí [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] písem. Můžete zobrazit reprezentativní sadu znaků v několika velikostí písma zvýší – klikněte na soubor písma. Následující snímek obrazovky ukazuje soubor písma Lindsey Linds.ttf.  
+## <a name="installing-the-fonts"></a>Instalace písem  
+ Máte možnost nainstalovat vzorovou [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma na výchozí hodnotu [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] adresář písma **\WINDOWS\Fonts**. Použijte ovládací panel písma k instalaci písem. Po těchto písmo v počítači, jsou přístupné pro všechny aplikace, které odkazují na výchozí [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] písma. Můžete zobrazit reprezentativní sadu znaků v několika velikostí písma zdvojnásobení – kliknutím na soubor písma. Následující snímek obrazovky ukazuje soubor Lindsey písma, Linds.ttf.  
   
  ![Písmo Lindsey &#40;OpenType&#41;](../../../../docs/framework/wpf/advanced/media/typographyinwpf-04.png "TypographyInWPF_04")  
-Zobrazení Písmo Lindsey  
+Zobrazení Lindsey písma  
   
 <a name="using_the_fonts"></a>   
 ## <a name="using-the-fonts"></a>Použití písem  
- Existují dva způsoby, které můžete písem v aplikaci. Písma můžete přidat do vaší aplikace jako obsahu položky, které nejsou vloženy jako prostředky v rámci sestavení projektu. Alternativně můžete přidat písem do vaší aplikace jako položky projektu prostředků, které jsou vloženy do souborů sestavení aplikace. Další informace najdete v tématu [balení písma s aplikacemi](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md).  
+ Existují dva způsoby, které můžete písem v aplikaci. Přidat písma do aplikace podle obsahu položky, které nejsou vloženy jako prostředky v rámci sestavení projektu. Alternativně můžete přidat písma do aplikace jako zdroj položek projektu, které jsou vloženy do souborů sestavení aplikace. Další informace najdete v tématu [balení písem s aplikacemi](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Documents.Typography>  

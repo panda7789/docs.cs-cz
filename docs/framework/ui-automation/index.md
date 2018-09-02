@@ -9,20 +9,20 @@ ms.assetid: e7ec856e-41ee-47b1-9d57-b75a3dad088c
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 79e67e58e6280d176969f770f91b5ab93d728b95
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 28686beeb030573ec195f46cea8305688d51c6a6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33400325"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43420886"
 ---
 # <a name="accessibility"></a>Usnadnění
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] je nové architektury usnadnění [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)]. Zaměřuje se na potřebách produktů využívajících technologie usnadnění a architektury automatizovaných testů tím, že poskytuje programový přístup k informacím o [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)]. Kromě toho [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] umožňuje vývojářům řízení a aplikace chcete zpřístupnit jejich produkty.  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] je nový rámec usnadnění pro [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)]. To řeší potřeby produktů využívajících technologie usnadnění a rozhraní automatizovaných testů tím, že poskytuje programový přístup k informacím o [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)]. Kromě toho [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] umožňuje vývojářům ovládacího prvku a aplikace pro zpřístupnění svých produktů.  
   
- Tato dokumentace popisuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)] pro spravovaný kód. Informace o programování pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v jazyce C++, najdete v části [automatizace uživatelského rozhraní pro aplikace Win32](https://msdn.microsoft.com/library/ms726294.aspx).  
+ Tato dokumentace popisuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)] pro spravovaný kód. Informace o programování pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v jazyce C++, naleznete v tématu [automatizace uživatelského rozhraní pro aplikace Win32](https://msdn.microsoft.com/library/ms726294.aspx).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Usnadnění – doporučené postupy](../../../docs/framework/ui-automation/accessibility-best-practices.md)  
@@ -35,4 +35,4 @@ ms.locfileid: "33400325"
  [Specifikace automatizace uživatelského rozhraní a příslib komunitě](../../../docs/framework/ui-automation/ui-automation-specification-and-community-promise.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ukázky usnadnění přístupu](https://msdn.microsoft.com/library/ms771315.aspx)
+ [Ukázky pro usnadnění](https://msdn.microsoft.com/library/ms771315.aspx)

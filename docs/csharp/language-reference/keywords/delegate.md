@@ -9,31 +9,31 @@ helpviewer_keywords:
 - delegate keyword [C#]
 - function pointers [C#]
 ms.assetid: 0bb8cb6d-2f87-47c7-9d1f-d65c1cd01e9f
-ms.openlocfilehash: ba1cfdcc56b3d2301a07ffa4af793e7002da21bb
-ms.sourcegitcommit: ed7b4b9b77d35e94a35a2634e8c874f46603fb2b
+ms.openlocfilehash: 7a5f46d137e22da01b2ab6cd3eee57d66c411e8f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36948420"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43442730"
 ---
 # <a name="delegate-c-reference"></a>delegate (Referenční dokumentace jazyka C#)
 
-Deklarace typu delegáta je podobná podpis metody. Má návratovou hodnotu a libovolný počet parametrů libovolného typu:
+Deklarace typu delegáta je podobná signatuře metody. Nemá návratovou hodnotu a libovolný počet parametrů typu:
 
 ```csharp
 public delegate void TestDelegate(string message);
 public delegate int TestDelegate(MyType m, long num);
 ```
 
-A `delegate` je odkaz na typ, který slouží k zapouzdření pojmenovaná nebo anonymní metody. Delegáti jsou podobná ukazatelů na funkce v jazyce C++; Delegáti jsou však bezpečnost typů a zabezpečení. Aplikace delegáti, naleznete v [delegáti](../../../csharp/programming-guide/delegates/index.md) a [obecní delegáti](../../../csharp/programming-guide/generics/generic-delegates.md).
+A `delegate` je typem odkazu, který můžete použít k zapouzdření pojmenovaná nebo anonymní metodu. Delegáti jsou podobní ukazatelům na funkci v jazyce C++; Delegáti jsou však typově bezpečné a zabezpečené. Aplikace delegátů viz [delegáti](../../../csharp/programming-guide/delegates/index.md) a [obecných delegátů](../../../csharp/programming-guide/generics/generic-delegates.md).
 
 ## <a name="remarks"></a>Poznámky
 
-Delegáti slouží jako základ pro [události](../../../csharp/programming-guide/events/index.md).
+Delegáti jsou základem [události](../../../csharp/programming-guide/events/index.md).
 
-Delegát se dá vytvořit instance tím, že přidružíte buď pomocí metody s názvem nebo anonymní. Další informace najdete v tématu [s názvem metody](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md) a [anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md).
+Delegát může být vytvořena tím, že přidružíte buď pomocí pojmenovaných nebo anonymní metodu. Další informace najdete v tématu [metody s názvem](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md) a [anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md).
 
-Delegát musí být vytvořena s metoda nebo lambda výraz, který má kompatibilní návratový typ a vstupní parametry. Další informace o stupeň odchylky, který je povolen v podpis metody naleznete v tématu [odchylky v delegátech](../../programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md). Pro použití s anonymní metody jsou delegát a kód, který se má přidružit ho deklarovat společně. Obou směrech konkretizujete Delegáti jsou popsané v této části.
+Delegát musí být vytvořena pomocí metody nebo lambda výraz, který je kompatibilní návratový typ a vstupní parametry. Další informace o stupeň odchylky, který je povolen v podpisu metody, naleznete v tématu [odchylky v delegátech](../../programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md). Pro použití s anonymní metody delegáta a kód k ní být přidruženo jsou deklarovány společně. Oba způsoby konkretizujete delegátů jsou popsány v této části.
 
 ## <a name="example"></a>Příklad
 
@@ -45,11 +45,11 @@ Delegát musí být vytvořena s metoda nebo lambda výraz, který má kompatibi
 
 ## <a name="see-also"></a>Viz také:
 
-[Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-[Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-[Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
-[Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)  
-[Delegáti](../../../csharp/programming-guide/delegates/index.md)  
-[Události](../../../csharp/programming-guide/events/index.md)  
-[Delegáti s pojmenovanými vs. anonymními metodami](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)  
-[Anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
+- [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)  
+- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
+- [Události](../../../csharp/programming-guide/events/index.md)  
+- [Delegáti s pojmenovanými vs. anonymními metodami](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)  
+- [Anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)

@@ -1,26 +1,26 @@
 ---
-title: Vytváření DataTable z v zobrazení DataView
+title: Vytvoření datové tabulky ze zobrazení dat
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2d45cf41-d8ae-4409-af3e-a96a7e476d85
-ms.openlocfilehash: a389f75ca6516f8bad55934717bee056aca65f1f
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: ccf95ff250cc7c23b1ff981087de0f1310472880
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32757057"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43418749"
 ---
-# <a name="creating-a-datatable-from-a-dataview"></a>Vytváření DataTable z v zobrazení DataView
-Po načtení dat ze zdroje dat a vyplněno <xref:System.Data.DataTable> s daty, můžete chtít seřadit, filtrovat nebo jinak omezit vrácená data bez načítání ho znovu. <xref:System.Data.DataView> Třída umožňuje to. Kromě toho, pokud je potřeba vytvořit novou <xref:System.Data.DataTable> z <xref:System.Data.DataView>, můžete použít <xref:System.Data.DataView.ToTable%2A> metoda zkopírovat všechny řádky a sloupce nebo jsou podmnožinou dat do nového <xref:System.Data.DataTable>. <xref:System.Data.DataView.ToTable%2A> Metoda poskytuje přetížení pro:  
+# <a name="creating-a-datatable-from-a-dataview"></a>Vytvoření datové tabulky ze zobrazení dat
+Po načtení dat ze zdroje dat a vyplnili <xref:System.Data.DataTable> s daty, můžete chtít řadit, filtrovat nebo jinak omezit vrácená data bez načtení znovu. <xref:System.Data.DataView> Třídy to kvůli tomu je to možné. Kromě toho, pokud je potřeba vytvořit nový <xref:System.Data.DataTable> z <xref:System.Data.DataView>, můžete použít <xref:System.Data.DataView.ToTable%2A> metoda zkopírovat všechny řádky a sloupce nebo podmnožinu dat do nového <xref:System.Data.DataTable>. <xref:System.Data.DataView.ToTable%2A> Metoda poskytuje přetížení:  
   
 -   Vytvoření <xref:System.Data.DataTable> sloupců, které jsou podmnožinu sloupců v obsahující <xref:System.Data.DataView>.  
   
--   Vytvoření <xref:System.Data.DataTable> , který obsahuje pouze jedinečné sloupce z <xref:System.Data.DataView>, analogicky na klíčové slovo DISTINCT v Transact-SQL.  
+-   Vytvoření <xref:System.Data.DataTable> , který obsahuje pouze jedinečné sloupce z <xref:System.Data.DataView>, analogicky k klíčové slovo DISTINCT v příkazů jazyka Transact-SQL.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad aplikace konzoly vytvoří <xref:System.Data.DataTable> obsahující data z **Person.Contact** tabulky v **AdventureWorks** ukázkové databáze. V dalším kroku v příkladu se vytváří seřazené a filtrovaných <xref:System.Data.DataView> na základě <xref:System.Data.DataTable>. Po zobrazení obsahu <xref:System.Data.DataTable> a <xref:System.Data.DataView>, v příkladu se vytvoří nový <xref:System.Data.DataTable> z <xref:System.Data.DataView> voláním <xref:System.Data.DataView.ToTable%2A> metody výběru pouze podmnožinu dostupných sloupců. Nakonec v příkladu se zobrazí obsah nové <xref:System.Data.DataTable>.  
+ Vytvoří v následujícím příkladu aplikace konzoly <xref:System.Data.DataTable> , který obsahuje data z **Person.Contact** v tabulku **AdventureWorks** ukázkovou databázi. V dalším kroku v příkladu se vytvoří seřazený a filtrovaný <xref:System.Data.DataView> na základě <xref:System.Data.DataTable>. Po zobrazení obsahu <xref:System.Data.DataTable> a <xref:System.Data.DataView>, v příkladu se vytvoří nový <xref:System.Data.DataTable> z <xref:System.Data.DataView> voláním <xref:System.Data.DataView.ToTable%2A> metoda vybrat pouze podmnožinu dostupných sloupců. Nakonec v příkladu se zobrazí obsah nového <xref:System.Data.DataTable>.  
   
 ```vb  
 Private Sub DemonstrateDataView()  
@@ -208,4 +208,4 @@ Console.WriteLine();
 ## <a name="see-also"></a>Viz také  
  <xref:System.Data.DataView.ToTable%2A>  
  [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

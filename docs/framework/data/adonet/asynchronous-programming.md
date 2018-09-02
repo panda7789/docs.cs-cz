@@ -2,16 +2,16 @@
 title: Asynchronní programování
 ms.date: 03/30/2017
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-ms.openlocfilehash: 29324a07ffdaf99d1b7631ad8e94e773ed509fcc
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 0c5c3f52f6afa0e1fa48d33167feabeb8d5b76f5
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32759904"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43425722"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
-Toto téma popisuje podporu pro asynchronní programování v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server (SqlClient) včetně vylepšení pro podporu asynchronní programování funkcí, které se zavedly v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+Toto téma popisuje podporu pro asynchronní programování v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server (SqlClient), včetně vylepšení pro podporu asynchronního programování funkcí, která byla zavedena v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
 ## <a name="legacy-asynchronous-programming"></a>Starší verze asynchronní programování  
  Před verzí [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], asynchronní programování s SqlClient bylo provedeno pomocí následujících metod a `Asynchronous Processing=true` vlastnost připojení:  
@@ -24,33 +24,33 @@ Toto téma popisuje podporu pro asynchronní programování v [!INCLUDE[dnprdnsh
   
  Tato funkce zůstane v SqlClient v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
- Počínaje [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], už nebudou potřebovat tyto metody `Asynchronous Processing=true` v připojovacím řetězci.  
+ Počínaje [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], tyto metody se už nevyžadují `Asynchronous Processing=true` v připojovacím řetězci.  
   
-## <a name="asynchronous-programming-features-added-in-includenetv45includesnet-v45-mdmd"></a>Asynchronní programování funkce přidané do [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]  
- Nový asynchronní programování funkce poskytuje jednoduché techniku, aby byl kód asynchronní.  
+## <a name="asynchronous-programming-features-added-in-includenetv45includesnet-v45-mdmd"></a>Asynchronní programování funkce přidané ve [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]  
+ Nová funkce pro asynchronní programování poskytuje jednoduché techniku, aby asynchronní kód.  
   
- Další informace o asynchronní programování funkce, která byla zavedena v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], najdete v části:  
+ Další informace o asynchronní programovací funkce, která byla zavedena v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], naleznete v tématu:  
   
 - [Asynchronní programování v jazyce C#](../../../csharp/async.md)
 
 - [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../visual-basic/programming-guide/concepts/async/index.md)
 
-- [Použití SqlDataReader na nový asynchronní metody v rozhraní .net 4.5 (část 1)](https://blogs.msdn.microsoft.com/adonet/2012/04/20/using-sqldatareaders-new-async-methods-in-net-4-5/)
+- [Použití SqlDataReader nový asynchronní metody v rozhraní .net 4.5 (část 1)](https://blogs.msdn.microsoft.com/adonet/2012/04/20/using-sqldatareaders-new-async-methods-in-net-4-5/)
 
-- [Použití SqlDataReader na nový asynchronní metody v rozhraní .net 4.5 (část 2)](https://blogs.msdn.microsoft.com/adonet/2012/07/15/using-sqldatareaders-new-async-methods-in-net-4-5-part-2-examples/)
+- [Použití SqlDataReader nový asynchronní metody v rozhraní .net 4.5 (část 2)](https://blogs.msdn.microsoft.com/adonet/2012/07/15/using-sqldatareaders-new-async-methods-in-net-4-5-part-2-examples/)
  
- Pokud vaše uživatelské rozhraní je reagovat nebo váš server není škálování, je pravděpodobné, je nutné, aby váš kód více asynchronní.  Psaní kódu asynchronní má tradičně podílejí instalaci zpětné volání (také nazývané pokračování) express logiky, která nastane po dokončení asynchronní operace. To komplikuje struktury asynchronní kódu ve srovnání s synchronní kódu.  
+ Když přestane reagovat uživatelské rozhraní nebo nejsou adekvátní váš server, je pravděpodobné, že potřebujete kódu, aby byl více asynchronní.  Psaní asynchronního kódu má obvykle součástí instalace zpětné volání (také nazývané pokračování) vyjádřit logiku, která nastane po dokončení asynchronní operace. To komplikuje strukturu asynchronní kód mezi synchronního kódu.  
   
- Můžete teď volání do asynchronní metody bez použití zpětná volání a bez rozdělení kódu mezi více metod nebo výrazy lambda.  
+ Můžete teď volání do asynchronní metody bez použití zpětných volání a bez rozdělení kódu napříč více metodách a výrazech lambda.  
   
- `async` Modifikátor Určuje, že je asynchronní metody. Při volání metody `async` metoda, je vrácen úlohu. Když `await` operátor se použije pro úlohu, aktuální metoda se okamžitě ukončí. Po dokončení této úlohy, provádění pokračuje v stejnou metodu.
+ `async` Modifikátor Určuje, že metoda je asynchronní. Při volání `async` metoda, je vrácena úkolu. Když `await` operátor je použít pro úlohu, okamžitě ukončí aktuální metoda. Až se úloha dokončí, provádění pokračuje v stejným způsobem.
   
 > [!WARNING]
->  Asynchronní volání nejsou podporovány, pokud aplikace používá také `Context Connection` klíčové slovo připojovacího řetězce.  
+>  Byla zahájena asynchronní volání nejsou podporovány, pokud aplikace také používá `Context Connection` klíčové slovo připojovacího řetězce.  
   
- Volání metody `async` metoda nepřidělí žádné další podprocesy. Existující vlákno dokončení vstupně-výstupní operace se může používat stručně na konci.  
+ Volání `async` metoda nepřidělovat žádné další vlákna. Stručně může použít existující vlákno dokončení vstupně-výstupních operací na konci.  
   
- Byly přidány následující metody v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] pro podporu asynchronní programování:  
+ Byly přidány následující metody [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] pro podporu asynchronního programování:  
   
 -   <xref:System.Data.Common.DbConnection.OpenAsync%2A?displayProperty=nameWithType>  
   
@@ -86,10 +86,10 @@ Toto téma popisuje podporu pro asynchronní programování v [!INCLUDE[dnprdnsh
   
 -   <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync%2A?displayProperty=nameWithType>  
   
- Jiní členové asynchronní byly přidány k podpoře [streamování podporují SqlClient](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md).  
+ Jiné asynchronní členy byly přidány pro podporu [streamování SqlClient podporují](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md).  
   
-### <a name="synchronous-to-asynchronous-connection-open"></a>Synchronní a asynchronní připojení otevřete  
- Můžete upgradovat stávající aplikace do používal novou funkci asynchronní. Předpokládejme například, aplikace má synchronní připojení algoritmus a blokuje vlákna uživatelského rozhraní pokaždé, když se připojuje k databázi, a po připojení aplikace volání uložené procedury, jež signály jiných uživatelů k tomu, který právě přihlášení.  
+### <a name="synchronous-to-asynchronous-connection-open"></a>Synchronní asynchronního připojení otevřené  
+ Můžete upgradovat stávající aplikace pro použití nové asynchronní funkce. Předpokládejme například, aplikace má synchronní připojení algoritmus a blokuje vlákno uživatelského rozhraní, pokaždé, když se připojuje k databázi a po připojení aplikace volá uloženou proceduru, která signalizuje jiných uživatelů k tomu, který právě přihlášení.  
   
 ```csharp
 using SqlConnection conn = new SqlConnection("…");  
@@ -102,7 +102,7 @@ using SqlConnection conn = new SqlConnection("…");
 }  
 ```  
   
- Při převodu používat nové funkce, asynchronní, bude vypadat program:  
+ Při převodu na použití nové asynchronní funkce, program bude vypadat:  
   
 ```csharp
 using System;  
@@ -131,8 +131,8 @@ class A {
 }  
 ```  
   
-### <a name="adding-the-new-asynchronous-feature-in-an-existing-application-mixing-old-and-new-patterns"></a>Přidání nové asynchronní funkce do stávající aplikace (kombinací staré a nové vzory)  
- Je také možné přidat novou funkci asynchronní (SqlConnection::OpenAsync) beze změny existujícího asynchronní logiku. Například pokud aplikace v současné době používá:  
+### <a name="adding-the-new-asynchronous-feature-in-an-existing-application-mixing-old-and-new-patterns"></a>Přidání nové asynchronní funkce v aplikaci stávající (staré a nové způsoby kombinování)  
+ Je také možné přidat nové asynchronní funkce (SqlConnection::OpenAsync) beze změny stávajících asynchronní logiku. Například pokud aplikace teď používá:  
   
 ```csharp
 AsyncCallback productList = new AsyncCallback(ProductList);  
@@ -142,7 +142,7 @@ SqlCommand cmd = new SqlCommand("SELECT * FROM [Current Product List]", conn);
 IAsyncResult ia = cmd.BeginExecuteReader(productList, cmd);  
 ```  
   
- Můžete začít používat nový asynchronní vzor bez podstatně Změna existující algoritmus.  
+ Můžete začít používat nový asynchronní vzor bez podstatně mění stávající algoritmus.  
   
 ```csharp
 using System;  
@@ -169,10 +169,10 @@ class A {
 }  
 ```  
   
-### <a name="using-the-base-provider-model-and-the-new-asynchronous-feature"></a>Pomocí modelu základní zprostředkovatel a nový asynchronní funkce  
- Musíte vytvořit nástroj, který je možné připojit do různých databází a spouštět dotazy. Můžete použít v modelu základní zprostředkovatel a nová funkce pro asynchronní.  
+### <a name="using-the-base-provider-model-and-the-new-asynchronous-feature"></a>Pomocí nové asynchronní funkce a základní zprostředkovatel modelu  
+ Budete muset vytvořit nástroj, který je možné se připojit k jiné databáze a spouštění dotazů. Můžete použít základní zprostředkovatel modelu a nové asynchronní funkce.  
   
- Microsoft řadiče pro distribuované transakce (MSDTC) musí na serveru povolený distribuované transakce. Informace o tom, jak povolit služby MSDTC najdete v tématu [postup povolení služby MSDTC na webovém serveru](http://msdn.microsoft.com/library/dd327979.aspx).  
+ Řadič služby Microsoft distribuované transakce (MSDTC) musí být povoleno na serveru pro distribuované transakce. Informace o tom, jak povolit MSDTC, naleznete v tématu [jak povolit MSDTC na webovém serveru](https://msdn.microsoft.com/library/dd327979.aspx).  
   
 ```csharp
 using System;  
@@ -217,7 +217,7 @@ class A {
 }  
 ```  
   
-### <a name="using-sql-transactions-and-the-new-asynchronous-feature"></a>Použití transakcí SQL a nový asynchronní funkce  
+### <a name="using-sql-transactions-and-the-new-asynchronous-feature"></a>Pomocí nové asynchronní funkce a transakcí SQL  
   
 ```csharp
 using System;  
@@ -283,8 +283,8 @@ class Program {
 }  
 ```  
   
-### <a name="using-sql-transactions-and-the-new-asynchronous-feature"></a>Použití transakcí SQL a nový asynchronní funkce  
- V podniková aplikace musíte přidat distribuovaných transakcí v některých scénářích, chcete-li povolit transakce mezi více servery databáze. Můžete použít System.Transactions – obor názvů a zařazení distribuované transakce, následujícím způsobem:  
+### <a name="using-sql-transactions-and-the-new-asynchronous-feature"></a>Pomocí nové asynchronní funkce a transakcí SQL  
+ Podniková aplikace budete muset přidat distribuované transakce v některých scénářích povolit transakce mezi více servery databáze. Můžete použít System.Transactions – obor názvů a zařazení distribuované transakce, následujícím způsobem:  
   
 ```csharp
 using System;  
@@ -345,7 +345,7 @@ class Program {
 ```  
   
 ### <a name="cancelling-an-asynchronous-operation"></a>Zrušení asynchronní operace  
- Asynchronní požadavek můžete zrušit pomocí <xref:System.Threading.CancellationToken>.  
+ Pomocí můžete zrušit asynchronní požadavek <xref:System.Threading.CancellationToken>.  
   
 ```csharp
 using System;  
@@ -385,7 +385,7 @@ namespace Samples {
 ```  
   
 ### <a name="asynchronous-operations-with-sqlbulkcopy"></a>Asynchronní operace s SqlBulkCopy.  
- Asynchronní funkce byly také přidány do <xref:System.Data.SqlClient.SqlBulkCopy?displayProperty=nameWithType> s <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync%2A?displayProperty=nameWithType>.  
+ Asynchronní funkce byly přidány také do <xref:System.Data.SqlClient.SqlBulkCopy?displayProperty=nameWithType> s <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync%2A?displayProperty=nameWithType>.  
   
 ```csharp
 using System;  
@@ -626,11 +626,11 @@ namespace SqlBulkCopyAsyncCodeSample {
 }  
 ```  
   
-## <a name="asynchronously-using-multiple-commands-with-mars"></a>Asynchronně pomocí MARS více příkazů  
- V příkladu otevře jednoho připojení k **AdventureWorks** databáze. Použití <xref:System.Data.SqlClient.SqlCommand> objekt, <xref:System.Data.SqlClient.SqlDataReader> je vytvořena. Jak se používá program pro čtení, a druhé <xref:System.Data.SqlClient.SqlDataReader> je otevřen pomocí dat z první <xref:System.Data.SqlClient.SqlDataReader> jako vstup do klauzule WHERE pro druhý čtečku.  
+## <a name="asynchronously-using-multiple-commands-with-mars"></a>Asynchronně více příkazů pomocí MARS  
+ V příkladu otevírá jediné připojení k **AdventureWorks** databáze. Použití <xref:System.Data.SqlClient.SqlCommand> objektu, <xref:System.Data.SqlClient.SqlDataReader> se vytvoří. Čtecí modul se používá, a druhý <xref:System.Data.SqlClient.SqlDataReader> je otevřen pomocí dat z první <xref:System.Data.SqlClient.SqlDataReader> jako vstup do klauzule WHERE pro druhý čtecí zařízení.  
   
 > [!NOTE]
->  Následující příklad používá vzorku **AdventureWorks** databáze je součástí systému SQL Server. V ukázkovém kódu v zadaném připojovacím řetězci předpokládá, že databáze je nainstalovaná a k dispozici v místním počítači. Upravte připojovací řetězec v případě potřeby pro vaše prostředí.  
+>  Následující příklad používá ukázku **AdventureWorks** databáze je součástí systému SQL Server. Ve vzorovém kódu v zadaném připojovacím řetězci se předpokládá, že databáze je nainstalováný a dostupný na místním počítači. Úprava připojovacího řetězce podle potřeby pro vaše prostředí.  
   
 ```csharp
 using System;  
@@ -696,13 +696,13 @@ class Class1 {
 }  
 ```  
   
-## <a name="asynchronously-reading-and-updating-data-with-mars"></a>Asynchronně čtení a aktualizace dat pomocí MARS  
- MARS umožňuje připojení, který se má použít pro obě operace a data manipulaci jazyk (DML) operací čtení s více než jedno čekající operace. Tato funkce eliminuje potřebu aplikace k řešení chyb zaneprázdněných připojení. Kromě toho můžete MARS nahradit uživatel kurzory na straně serveru, které obecně spotřebují více prostředků. Nakonec, protože více operací může být použita u jednoho připojení, mohou sdílet stejné transakce kontextu, což eliminuje nutnost používat **proceduru sp_getbindtoken** a **procedury sp_bindsession** systémové uložené postupy.  
+## <a name="asynchronously-reading-and-updating-data-with-mars"></a>Asynchronní čtení a aktualizace dat pomocí MARS  
+ MARS umožňuje připojení, který se má použít pro obě manipulaci s operací a data jazyka (DML) operace čtení s více než jedna čekající operace. Tato funkce eliminuje potřebu aplikace vypořádat s chybami připojení zaneprázdněný. Kromě toho můžete MARS nahradit uživatele kurzory na straně serveru, které obecně spotřebovávat více prostředků. A konečně, protože jedno připojení můžete provádět více operací, můžou sdílet stejný kontext transakce, tím eliminuje nutnost používat **proceduru sp_getbindtoken** a **sp_bindsession** systémové uložené postupy.  
   
- Následující aplikace konzoly ukazuje, jak používat dvě <xref:System.Data.SqlClient.SqlDataReader> objekty s třemi <xref:System.Data.SqlClient.SqlCommand> objektů a jeden <xref:System.Data.SqlClient.SqlConnection> objekt s MARS povolena. První objekt příkazu načte seznam dodavatelů, jejichž platební hodnocení je 5. Druhý objekt příkazu používá zadáno ID od dodavatele <xref:System.Data.SqlClient.SqlDataReader> načíst druhý <xref:System.Data.SqlClient.SqlDataReader> se všemi produktů pro konkrétní dodavatele. Každý záznam produktu je navštívené druhou <xref:System.Data.SqlClient.SqlDataReader>. Provádění výpočtu určit, jaké nové **OnOrderQty** by měl být. Třetí objekt příkazu se pak používá k aktualizaci **ProductVendor** tabulku s novou hodnotou. Tento celý proces probíhá v rámci jedné transakce, která je vrácena zpět na konci.  
+ Následující konzolové aplikace ukazuje, jak používat dvě <xref:System.Data.SqlClient.SqlDataReader> objekty s třemi <xref:System.Data.SqlClient.SqlCommand> objektů a jeden <xref:System.Data.SqlClient.SqlConnection> objekt s MARS povolena. Objekt první příkaz načte seznam dodavatelů, jehož kredit je 5. Druhý objekt, který příkaz používá zadané ID od dodavatele <xref:System.Data.SqlClient.SqlDataReader> načíst druhý <xref:System.Data.SqlClient.SqlDataReader> spolu s ostatními produkty pro konkrétní dodavatele. Každý záznam produktu je zobrazeny po sekundách <xref:System.Data.SqlClient.SqlDataReader>. Výpočet se provádí za účelem určení, jaké nové **OnOrderQty** by měl být. Třetí objekt příkazu se pak použije k aktualizaci **ProductVendor** tabulku s novou hodnotu. Celý tento proces probíhá v rámci jedné transakce, která se vrátí zpět na konci.  
   
 > [!NOTE]
->  Následující příklad používá vzorku **AdventureWorks** databáze je součástí systému SQL Server. V ukázkovém kódu v zadaném připojovacím řetězci předpokládá, že databáze je nainstalovaná a k dispozici v místním počítači. Upravte připojovací řetězec v případě potřeby pro vaše prostředí.  
+>  Následující příklad používá ukázku **AdventureWorks** databáze je součástí systému SQL Server. Ve vzorovém kódu v zadaném připojovacím řetězci se předpokládá, že databáze je nainstalováný a dostupný na místním počítači. Úprava připojovacího řetězce podle potřeby pro vaše prostředí.  
   
 ```csharp
 using System;  

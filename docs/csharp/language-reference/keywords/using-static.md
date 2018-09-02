@@ -7,11 +7,11 @@ ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 04e7368a6b6a4453f2dd07c7afdc0bffa7473ed1
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43257461"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43422676"
 ---
 # <a name="using-static-directive-c-reference"></a>Using static – direktiva (referenční dokumentace jazyka C#)
 

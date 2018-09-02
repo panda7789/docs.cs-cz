@@ -2,24 +2,24 @@
 title: Element &lt;messageSenderAuthentication&gt;
 ms.date: 03/30/2017
 ms.assetid: 8d979dfc-a6f9-42ec-96d5-7fbc13a48118
-ms.openlocfilehash: 898569796c65a7999583f4faba9f11a6172a5af8
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: cb727df7b8d7605cbe984a8f6737c89bf1bfb2be
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32750736"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43419384"
 ---
 # <a name="ltmessagesenderauthenticationgt-element"></a>Element &lt;messageSenderAuthentication&gt;
-Určuje možnosti ověřování pro odesílatelé zpráv peer-to-peer.  
+Určuje možnosti ověřování pro odesílatele zpráv peer-to-peer.  
   
- Další informace o programování peer-to-peer, najdete v části [Peer-to-Peer sítě](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).  
+ Další informace o programování peer-to-peer, naleznete v tématu [sítě Peer-to-Peer](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).  
   
  \<system.ServiceModel>  
 \<chování >  
-\<endpointBehaviors >  
+\<názvy endpointBehaviors >  
 \<chování >  
-\<clientCredentials >  
-\<sdílené >  
+\<třídu clientCredentials >  
+\<sdílená >  
 \<messageSenderAuthentication >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,40 +34,40 @@ trustedStoreLocation="CurrentUser/LocalMachine"
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují nadřazené elementy, atributy a podřízené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené elementy  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|customCertificateValidatorType|Typ a sestavení, které slouží k ověření vlastního typu. Tento atribut musí být nastaven při `certificateValidationMode` je nastaven na `Custom`.|  
-|certifcateValidationMode|Určuje jeden ze tří režimů slouží k ověření přihlašovacích údajů. Pokud nastavena na `Custom`, pak `customCertificateValidator` musí být uveden také.|  
-|revocationMode|Jeden z režimů používá k ověření pro seznamy odvolaných certifikátů (CRL).|  
-|trustedStoreLocation|Jedno z umístění úložiště dvě systému: `LocalMachine` nebo `CurrentUser`. Tato hodnota se používá, když je klientovi vyjednal certifikát služby. Ověření se provádí před **důvěryhodné osoby** uložit do umístění zadaného úložiště.|  
+|customCertificateValidatorType|Typ a sestavení používané pro ověření vlastního typu. Tento atribut musí být nastaven při `certificateValidationMode` je nastavena na `Custom`.|  
+|certifcateValidationMode|Určuje jeden ze tří režimů používaných pro ověření pověření. Pokud hodnotu `Custom`, o `customCertificateValidator` musí být rovněž dodán.|  
+|revocationMode|Jeden z režimů pro kontrolu seznamu odvolaných certifikátů (CRL).|  
+|trustedStoreLocation|Jeden z umístění dvou systémových úložišť: `LocalMachine` nebo `CurrentUser`. Tato hodnota se používá při certifikát služby se vyjedná do klienta. Ověření se provádí proti **důvěryhodné osoby** uložit do umístění určeného úložiště.|  
   
 ## <a name="customcertificatevalidatortype-attribute"></a>customCertificateValidatorType atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|String|Volitelné. Určuje název typu a sestavení a další data použít k vyhledání typu. Název oboru názvů a typ se minimálně, vyžadují. Volitelné informace zahrnují: název sestavení, číslo verze, jazykové verze a tokenu veřejného klíče.|  
+|String|Volitelné. Určuje název typu a sestavení a další data použít k vyhledání typu. Minimálně název oboru názvů a typ jsou požadovány. Volitelné informace zahrnují: název sestavení, číslo verze, jazykovou verzi a token veřejného klíče.|  
   
 ## <a name="certificatevalidationmode-attribute"></a>certificateValidationMode atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Výčet|Volitelné. Jeden z následujících hodnot: `None`, `PeerTrust`, `ChainTrust`, `PeerOrChainTrust`, `Custom`. Výchozí hodnota je `ChainTrust`. Výchozí hodnota je `ChainTrust`.<br /><br /> Další informace najdete v tématu [práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
+|Výčet|Volitelné. Jeden z následujících hodnot: `None`, `PeerTrust`, `ChainTrust`, `PeerOrChainTrust`, `Custom`. Výchozí hodnota je `ChainTrust`. Výchozí hodnota je `ChainTrust`.<br /><br /> Další informace najdete v tématu [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
   
 ## <a name="revocationmode-attribute"></a>revocationMode atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Výčet|Jeden z následujících hodnot: `NoCheck`, `Online`, `Offline`. Výchozí hodnota je `Online`.<br /><br /> Další informace najdete v tématu [práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
+|Výčet|Jeden z následujících hodnot: `NoCheck`, `Online`, `Offline`. Výchozí hodnota je `Online`.<br /><br /> Další informace najdete v tématu [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
   
 ## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Výčet|Jeden z následujících hodnot: `LocalMachine` nebo `CurrentUser`. Výchozí hodnota je `CurrentUser`. Pokud klientská aplikace běží pod účtem systému pak certifikát je obvykle v části `LocalMachine`. Pokud klientská aplikace běží pod účtem uživatele, pak tento certifikát je obvykle v `CurrentUser`. Výchozí hodnota je `CurrentUser`.|  
+|Výčet|Jeden z následujících hodnot: `LocalMachine` nebo `CurrentUser`. Výchozí hodnota je `CurrentUser`. Pokud klientská aplikace běží pod účtem systému, certifikátu je obvykle pod `LocalMachine`. Pokud klientská aplikace běží pod účtem uživatele, že certifikát je obvykle v `CurrentUser`. Výchozí hodnota je `CurrentUser`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -76,13 +76,13 @@ trustedStoreLocation="CurrentUser/LocalMachine"
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<peer>](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-clientcredentials-element.md)|Určí pověření používaná pro ověřování klienta do sdílené služby.|  
+|[\<peer>](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-clientcredentials-element.md)|Určuje pověření pro ověření klienta ke službě partnera.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento element musí být nakonfigurován, pokud je zvoleno ověřování zpráv. Pro výstup kanály, je každá zpráva podepsaná pomocí certifikátu poskytované [ \<certifikátu >](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-element.md). Všechny zprávy před doručí aplikaci, je zkontrolován pověřením zpráv pomocí validátor určeného `customCertificateValidatorType` atribut tohoto elementu. Validátor můžete buď přijmout nebo odmítnout přihlašovací údaje.  
+ Tento element musí být nakonfigurované, pokud je zvoleno ověřování zpráv. Pro výstup kanály, každá zpráva je podepsaná pomocí certifikátu poskytnutého [ \<certifikátu >](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-element.md). Všechny zprávy, předtím, než se doručí do aplikace, jsou porovnávána s přihlašovacími údaji zprávy pomocí validátor určené `customCertificateValidatorType` atribut tohoto elementu. Validátor můžete přijmout nebo odmítnout přihlašovací údaje.  
   
 ## <a name="example"></a>Příklad  
- Následující kód nastaví režim ověření odesílatele zprávy `PeerOrChainTrust`.  
+ Následující kód nastaví režim ověřování zpráv odesílatele `PeerOrChainTrust`.  
   
 ```xml  
 <behaviors>  
@@ -109,6 +109,6 @@ trustedStoreLocation="CurrentUser/LocalMachine"
  <xref:System.ServiceModel.Configuration.X509PeerCertificateAuthenticationElement>  
  [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
  [Síť rovnocenných počítačů](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
- [Ověřování zpráv rovnocenného kanálu](http://msdn.microsoft.com/library/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
- [Vlastní ověřování rovnocenného kanálu](http://msdn.microsoft.com/library/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
+ [Ověřování zpráv protokolu peer Channel](https://msdn.microsoft.com/library/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
+ [Vlastní ověřování protokolu peer Channel](https://msdn.microsoft.com/library/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
  [Zabezpečení aplikací protokolu Peer Channel](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)

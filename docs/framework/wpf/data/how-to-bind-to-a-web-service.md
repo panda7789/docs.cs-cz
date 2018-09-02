@@ -9,41 +9,41 @@ helpviewer_keywords:
 - Web service binding [WPF]
 - data binding [WPF], Web service
 ms.assetid: 77e2d373-69ba-4cbd-b6f5-2c83c38fc98b
-ms.openlocfilehash: 75d9d5b6981f868c7a172edd7f23cf923fedd525
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 84c5aee8d2bc7d31ebcfee98930d9a0847c527d5
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33557287"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43420299"
 ---
 # <a name="how-to-bind-to-a-web-service"></a>Postupy: Připojení k webové službě
-Tento příklad ukazuje, jak vytvořit vazbu na objektů vrácený volání metody webové služby.  
+Tento příklad ukazuje, jak svázat objekty vrácené z volání metody webové služby.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá [služba obsah na webu MSDN nebo TechNet publikování systému (MTPS)](http://go.microsoft.com/fwlink/?LinkId=95677) načíst seznam jazyků – podpora zadaný dokument.  
+ V tomto příkladu [služba obsah MSDN/TechNet Publishing System (MTPS)](https://go.microsoft.com/fwlink/?LinkId=95677) načíst seznam jazyků podporovaných zadaný dokument.  
   
- Před voláním webové služby, musíte vytvořit odkaz na něj. Chcete-li vytvořit odkaz na použití služby MTPS [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], postupujte podle následujících kroků:  
+ Než bude volat webovou službu, musíte vytvořit odkaz na něj. Chcete-li vytvořit webový odkaz na službu MTPS pomocí [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], postupujte podle následujících kroků:  
   
 1.  Otevřete projekt v [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)].  
   
-2.  Z **projektu** nabídky, klikněte na tlačítko **přidat odkaz na Web**.  
+2.  Z **projektu** nabídky, klikněte na tlačítko **přidat webový odkaz**.  
   
-3.  V dialogovém okně Nastavení **URL** k [ http://services.msdn.microsoft.com/contentservices/contentservice.asmx?wsdl ](http://services.msdn.microsoft.com/contentservices/contentservice.asmx?wsdl).  
+3.  V dialogovém okně nastavte **URL** k [ http://services.msdn.microsoft.com/contentservices/contentservice.asmx?wsdl ](https://services.msdn.microsoft.com/contentservices/contentservice.asmx?wsdl).  
   
-4.  Stiskněte klávesu **přejděte** a potom **přidat odkaz**.  
+4.  Stisknutím klávesy **Přejít** a potom **přidat odkaz na**.  
   
- Pak zavolejte metodu webové služby a nastavte <xref:System.Windows.FrameworkElement.DataContext%2A> vhodný ovládací prvek nebo okna vráceného objektu. **GetContent** metoda služby MTPS přebírá odkaz na **getContentRequest** objektu. Následující příklad proto nejprve nastavuje objekt žádosti:  
+ V dalším kroku volání metody webové služby a nastavení <xref:System.Windows.FrameworkElement.DataContext%2A> vhodný ovládací prvek nebo v okně pro vrácený objekt. **GetContent** metody MTPS služby používá odkaz na objekt **getContentRequest** objektu. Následující příklad proto nejprve nastaví objekt žádosti:  
   
  [!code-csharp[BindToWebService#Namespace](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindToWebService/CSharp/Window1.xaml.cs#namespace)]
  [!code-vb[BindToWebService#Namespace](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindToWebService/VisualBasic/Window1.xaml.vb#namespace)]  
 [!code-csharp[BindToWebService#WebServiceCall](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindToWebService/CSharp/Window1.xaml.cs#webservicecall)]
 [!code-vb[BindToWebService#WebServiceCall](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindToWebService/VisualBasic/Window1.xaml.vb#webservicecall)]  
   
- Po <xref:System.Windows.FrameworkElement.DataContext%2A> byl nastaven, můžete vytvořit vazby vlastností objektu, který <xref:System.Windows.FrameworkElement.DataContext%2A> byla nastavena na. V tomto příkladu <xref:System.Windows.FrameworkElement.DataContext%2A> je nastaven na **getContentResponse** objekt vrácený **GetContent** metoda. V následujícím příkladu <xref:System.Windows.Controls.ItemsControl> váže a zobrazí **národního prostředí** hodnoty **availableVersionsAndLocales** z **getContentResponse**.  
+ Po <xref:System.Windows.FrameworkElement.DataContext%2A> byl nastaven, můžete vytvořit vazby na vlastnosti objektu, který <xref:System.Windows.FrameworkElement.DataContext%2A> byla nastavena. V tomto příkladu <xref:System.Windows.FrameworkElement.DataContext%2A> je nastavena na **getContentResponse** objekt vrácený **GetContent** metoda. V následujícím příkladu <xref:System.Windows.Controls.ItemsControl> vazbu a zobrazí **národní prostředí** hodnoty **availableVersionsAndLocales** z **getContentResponse**.  
   
  [!code-xaml[BindToWebService#Binding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindToWebService/CSharp/Window1.xaml#binding)]  
   
- Informace o struktuře **getContentResponse**, najdete v části [služba obsah dokumentaci](http://services.msdn.microsoft.com/ContentServices/ContentService.asmx).  
+ Informace o struktuře **getContentResponse**, naleznete v tématu [dokumentace ke službě Content](https://services.msdn.microsoft.com/ContentServices/ContentService.asmx).  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  

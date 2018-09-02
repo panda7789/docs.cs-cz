@@ -2,12 +2,12 @@
 title: Jak článků (Průvodce v C#)
 description: Kolekce rychlé tipy a krátký, zaměřuje ukázky kódu
 ms.date: 12/20/2017
-ms.openlocfilehash: db3ba1982a26097c3d69ba91493164c8f2371be9
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 86e245873c8316cc4ddd52fe59a06f2cac648e6c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42999560"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43421194"
 ---
 # <a name="how-to-c"></a>Jak (C#)
 
@@ -21,7 +21,7 @@ Existuje několik tipů a triků, které jsou běžné postupy pro vývojáře j
 - [Další rozdíly mezi předáním struktury a třídy metody](../programming-guide/classes-and-structs/how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md).
 - [Použití výrazů lambda](../programming-guide/statements-expressions-operators/how-to-use-lambda-expressions-outside-linq.md).
 - [Řešení konfliktů název typu použití aliasu globálního oboru názvů](../programming-guide/namespaces/how-to-use-the-global-namespace-alias.md).
-- [Použití přetížení operátoru](../programming-guide/statements-expressions-operators/how-to-use-operator-overloading-to-create-a-complex-number-class.md).
+- [Použití přetížení operátoru](../language-reference/keywords/operator.md).
 - [Implementace a volání vlastní metody rozšíření](../programming-guide/classes-and-structs/how-to-implement-and-call-a-custom-extension-method.md).
 - Dokonce i programátoři v C# může být vhodné [použít `My` obor názvů z VB](../programming-guide/namespaces/how-to-use-the-my-namespace.md).
 - [Vytvoření nové metody pro `enum` zadejte pomocí metody rozšíření](../programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md).

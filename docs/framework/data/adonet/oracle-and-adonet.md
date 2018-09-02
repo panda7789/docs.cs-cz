@@ -5,22 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ee8e389-53cf-45cf-80bd-1df63ef34f2e
-ms.openlocfilehash: d4a86abeca19a0c634d362c1a8a41f5be7346ed7
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 9a60499674f0192bb7589f227bffb6f907f682d9
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32765786"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43452577"
 ---
 # <a name="oracle-and-adonet"></a>Oracle a ADO.NET
 > [!NOTE]
->  Typy v <xref:System.Data.OracleClient> jsou zastaralé. Typy zůstanou podporované v aktuální verzi of.NET Framework, ale bude v budoucí verzi odebrána. Společnost Microsoft doporučuje používat zprostředkovatele Oracle třetí strany.  
+>  Typy v <xref:System.Data.OracleClient> jsou zastaralé. Typy dál podporovat v aktuální verzi of.NET rozhraní Framework, ale bude v budoucí verzi odebrána. Společnost Microsoft doporučuje používat Zprostředkovatel Oracle třetích stran.  
   
- Tato část popisuje funkce a chování, které jsou specifické pro [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro databázi Oracle.  
+ Tato část popisuje funkce a chování, které jsou specifické pro [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro Oracle.  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatele dat pro databázi Oracle poskytuje přístup k databázi Oracle pomocí Oracle volání rozhraní (OCI) podle softwarem klienta Oracle. Funkce zprostředkovatele dat je navržený jako podobná [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat pro SQL Server, technologie OLE DB a rozhraní ODBC.  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Poskytuje přístup k databázi Oracle pomocí Oracle volání rozhraní (OCI) podle software klienta Oracle Data Provider pro Oracle. Funkce poskytovatele dat byla navržena jako podobný [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro SQL Server, technologie OLE DB a ODBC.  
   
- Použít [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro databázi Oracle, aplikace musí odkazovat <xref:System.Data.OracleClient> oboru názvů následujícím způsobem:  
+ Použít [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro Oracle, aplikace musí odkazovat <xref:System.Data.OracleClient> oboru názvů následujícím způsobem:  
   
 ```vb  
 Imports System.Data.OracleClient  
@@ -30,7 +30,7 @@ Imports System.Data.OracleClient
 using System.Data.OracleClient;  
 ```  
   
- Můžete také musí obsahovat odkaz na knihovnu DLL při kompilaci kódu. Například pokud jsou kompilace programu v C#, by měla obsahovat příkazového řádku:  
+ Také musíte zahrnout odkaz na knihovnu DLL při kompilaci kódu. Například při kompilaci programu v jazyce C#, by měl obsahovat příkazového řádku:  
   
 ```  
 csc /r:System.Data.OracleClient.dll  
@@ -38,45 +38,45 @@ csc /r:System.Data.OracleClient.dll
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Požadavky na systém](../../../../docs/framework/data/adonet/system-requirements-for-the-dotnet-data-provider-for-oracle.md)  
- Popisuje požadavky pro použití [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro databázi Oracle a popisuje řadu problémů znát při používání.  
+ Popisuje požadavky pro použití [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro Oracle a popisuje celou řadu problémů mějte na paměti při jeho použití.  
   
  [Soubory Oracle BFILE](../../../../docs/framework/data/adonet/oracle-bfiles.md)  
- Popisuje <xref:System.Data.OracleClient.OracleBFile> třídy, která se používá pro práci s datovým typem Oracle BFILE.  
+ Popisuje <xref:System.Data.OracleClient.OracleBFile> třídu, která se používá pro práci s datovým typem Oracle BFILE.  
   
  [Soubory Oracle LOB](../../../../docs/framework/data/adonet/oracle-lobs.md)  
- Popisuje <xref:System.Data.OracleClient.OracleLob> třídy, která se používá pro práci s datovými typy obchodní Oracle.  
+ Popisuje <xref:System.Data.OracleClient.OracleLob> třídu, která se používá pro práci s datovými typy Oracle LOB.  
   
  [Soubory Oracle REF CURSOR](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)  
- Popisuje podporu pro datový typ KURZORU REF Oracle.  
+ Popisuje podporu pro datový typ Oracle REF CURSOR.  
   
  [Typy Oracle](../../../../docs/framework/data/adonet/oracletypes.md)  
- Popisuje struktury můžete použít pro práci s datovými typy Oracle, včetně <xref:System.Data.OracleClient.OracleNumber> a <xref:System.Data.OracleClient.OracleString>.  
+ Popisuje, můžete použít pro práci s typy dat Oracle, včetně struktur <xref:System.Data.OracleClient.OracleNumber> a <xref:System.Data.OracleClient.OracleString>.  
   
  [Sekvence Oracle](../../../../docs/framework/data/adonet/oracle-sequences.md)  
- Popisuje podporu pro načítání hodnoty klíče generované serverem Oracle pořadí.  
+ Popisuje podporu pro načtení hodnoty klíče generovaný serverem sekvence Oracle.  
   
  [Mapování datových typů Oracle](../../../../docs/framework/data/adonet/oracle-data-type-mappings.md)  
- Uvádí typy dat Oracle a jejich mapování <xref:System.Data.OracleClient.OracleDataReader>.  
+ Zobrazí seznam datových typů Oracle a jejich mapování na <xref:System.Data.OracleClient.OracleDataReader>.  
   
  [Distribuované transakce Oracle](../../../../docs/framework/data/adonet/oracle-distributed-transactions.md)  
- Popisuje, jak <xref:System.Data.OracleClient.OracleConnection> objekt automaticky využívá v existující distribuované transakce, pokud zjistí, že je aktivní transakce.  
+ Popisuje, jak <xref:System.Data.OracleClient.OracleConnection> objekt automaticky využívá v existující distribuovanou transakci, pokud určí, že je aktivní transakce.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- Popisuje postupy pro zabezpečené kódování při použití [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
+ Popisuje zabezpečené kódování postupy při používání [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
   
  [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- Popisuje, jak vytvořit a použít `DataSets`, typu `DataSets`, `DataTables`, a `DataViews`.  
+ Popisuje, jak vytvořit a používat `DataSets`, zadaný `DataSets`, `DataTables`, a `DataViews`.  
   
  [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  Popisuje, jak pracovat s daty v ADO.NET.  
   
  [SQL Server a ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)  
- Popisuje, jak pracovat s funkcí, které jsou specifické pro systém SQL Server.  
+ Popisuje, jak využívat funkce, které jsou specifické pro systém SQL Server.  
   
  [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)  
- Popisuje obecné třídy, které vám umožní psaní kódu nezávislé na zprostředkovatele [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
+ Popisuje obecné třídy, které umožňuje psát kód nezávislý na zprostředkovatele [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
   
 ## <a name="see-also"></a>Viz také  
  [ADO.NET](../../../../docs/framework/data/adonet/index.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

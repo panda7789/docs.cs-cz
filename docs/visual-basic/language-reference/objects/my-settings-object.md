@@ -1,5 +1,5 @@
 ---
-title: My.Settings – objekt
+title: My.Settings – objekt (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - My.MySettingsProperty.Settings
@@ -7,29 +7,29 @@ f1_keywords:
 helpviewer_keywords:
 - My.Settings object
 ms.assetid: 41f30dc1-202a-4273-b9b7-5728941f996c
-ms.openlocfilehash: 54176ae6706311b17227c7dc21a5060c9b369753
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 83bba35340a917b649369fc1eb7a01a2bc6a2188
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33603029"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43442769"
 ---
 # <a name="mysettings-object"></a>My.Settings – objekt
 Poskytuje vlastnosti a metody pro přístup k nastavení aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- `My.Settings` Objekt poskytuje přístup k nastavení aplikace a umožňuje dynamicky ukládání a načítání nastavení vlastností a další informace pro vaši aplikaci. Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
+ `My.Settings` Objekt poskytuje přístup k nastavení aplikace a umožňuje dynamicky ukládat a načítat nastavení vlastností a další informace pro vaši aplikaci. Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
 ## <a name="properties"></a>Vlastnosti  
- Vlastnosti `My.Settings` objekt poskytnout přístup k nastavení aplikace. Chcete-li přidat nebo odebrat nastavení, použijte **nastavení návrháře**.  
+ Vlastnosti `My.Settings` objekt poskytnout přístup k nastavení aplikace. Chcete-li přidat nebo odebrat nastavení, použijte **návrháře nastavení**.  
   
- Každé nastavení má **název**, **typ**, **oboru**, a **hodnotu**, a tato nastavení určují, jak vlastnost, která má přístup každý nastavení Zobrazí se v `My.Settings` objektu:  
+ Každé nastavení má **název**, **typ**, **oboru**, a **hodnota**, a tato nastavení určují, jak vlastnost, která má přístup ke každé nastavení Zobrazí se v `My.Settings` objektu:  
   
 -   **Název** Určuje název vlastnosti.  
   
 -   **Typ** Určuje typ vlastnosti.  
   
--   **Obor** označuje, zda je vlastnost jen pro čtení. Pokud je hodnota **aplikace**, vlastnost je jen pro čtení; Pokud je hodnota **uživatele**, vlastnost je pro čtení a zápis.  
+-   **Obor** značí, zda je vlastnost jen pro čtení. Pokud je hodnota **aplikace**, vlastnost je jen pro čtení; Pokud je hodnota **uživatele**, je vlastnost pro čtení i zápis.  
   
 -   **Hodnota** je výchozí hodnota vlastnosti.  
   
@@ -40,17 +40,17 @@ Poskytuje vlastnosti a metody pro přístup k nastavení aplikace.
 |`Reload`|Znovu načte nastavení uživatele z poslední uložené hodnoty.|  
 |`Save`|Uloží aktuální nastavení uživatele.|  
   
- `My.Settings` Objekt také poskytuje rozšířené vlastnosti a metody, dědí z <xref:System.Configuration.ApplicationSettingsBase> třídy.  
+ `My.Settings` Objekt poskytuje také pokročilé vlastností a metod zděděných z <xref:System.Configuration.ApplicationSettingsBase> třídy.  
   
 ## <a name="tasks"></a>Úlohy  
- V následující tabulce jsou uvedeny příklady úkolů zahrnující `My.Settings` objektu.  
+ Následující tabulka uvádí příklady úloh týkajících `My.Settings` objektu.  
   
 |Chcete-li|Další informace naleznete v tématu|  
 |---|---|  
 |Čtení nastavení aplikace|[Postupy: čtení nastavení aplikace v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)|  
-|Změňte uživatelské nastavení|[Postupy: Změna uživatelského nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)|  
-|Zachování uživatelského nastavení|[Postupy: zachovaly uživatelská nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)|  
-|Vytvořit mřížku vlastností pro nastavení uživatele|[Postupy: vytváření mřížek vlastností pro uživatelská nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)|  
+|Změna uživatelského nastavení|[Postupy: Změna uživatelského nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)|  
+|Zachování uživatelského nastavení|[Postupy: zachování uživatelského nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)|  
+|Vytvořit mřížku vlastností pro uživatelská nastavení|[Postupy: vytváření mřížek vlastností pro uživatelská nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)|  
   
 ## <a name="example"></a>Příklad  
  Tento příklad zobrazuje hodnotu `Nickname` nastavení.  
@@ -63,6 +63,6 @@ Poskytuje vlastnosti a metody pro přístup k nastavení aplikace.
  <xref:System.Configuration.ApplicationSettingsBase>  
  [Postupy: čtení nastavení aplikace v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)  
  [Postupy: Změna uživatelského nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)  
- [Postupy: zachovaly uživatelská nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)  
+ [Postupy: zachování uživatelského nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)  
  [Postupy: vytváření mřížek vlastností pro uživatelská nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)  
  [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet)

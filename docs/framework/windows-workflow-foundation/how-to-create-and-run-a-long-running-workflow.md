@@ -1,88 +1,88 @@
 ---
-title: 'Postupy: vytvoření a spuštění s dlouhým spuštěný pracovní postup'
+title: 'Postupy: vytvoření a spuštění dlouhodobého spuštění pracovního postupu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: c0043c89-2192-43c9-986d-3ecec4dd8c9c
-ms.openlocfilehash: 63857ac96c85174407a4455d1ec582147bd33e3b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2c3368bc73d54f2848cad3c1086b1d9733205d2b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33520328"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43425608"
 ---
-# <a name="how-to-create-and-run-a-long-running-workflow"></a>Postupy: vytvoření a spuštění s dlouhým spuštěný pracovní postup
-Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime schopnost zachovat a uvolnit nečinnosti pracovní postupy pro databázi. Kroky v [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md) ukázán základní informace o hostování pracovního postupu pomocí konzolové aplikace. Příklady byly uvedeny počáteční pracovní postupy, obslužné rutiny životního cyklu pracovního postupu a opětovné záložky. K prokázání efektivně trvalost pracovního postupu, je vyžadován složitější hostitel pracovního postupu spuštění a obnovení několik instancí pracovního postupu, která podporuje. Tento krok v tomto kurzu ukazuje, jak vytvořit hostitele formuláře systému Windows, aplikace, která podporuje spouštění a obnovení více instancí pracovních postupů, trvalost pracovního postupu a poskytuje základ pro pokročilé funkce jako sledování a správa verzí, které jsou ukázáno v kurzu následné kroky.  
+# <a name="how-to-create-and-run-a-long-running-workflow"></a>Postupy: vytvoření a spuštění dlouhodobého spuštění pracovního postupu
+Jednou z centrální funkcí Windows Workflow Foundation (WF) je modul runtime schopnost zachovat a uvolnit nečinných pracovních postupů k databázi. Kroky v [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md) jsme vám ukázali základní informace o hostování pracovního postupu pomocí konzolové aplikace. Příklady zobrazila počáteční pracovní postupy, obslužné rutiny pracovních postupů životního cyklu a obnovení záložky. Ukázání efektivně trvalost pracovního postupu, se vyžaduje složitější hostitele pracovního postupu, který podporuje spouštění a obnovení několika instancí pracovních postupů. Tento krok úvodního kurzu ukazuje, jak vytvořit hostitele formuláře Windows, aplikace, která podporuje spouštění a obnovení několika instancí pracovních postupů, trvalost pracovního postupu a poskytuje základ pro pokročilé funkce, jako je sledování a správy verzí, které jsou jsme vám ukázali v následných kroků v kurzu.  
   
 > [!NOTE]
->  Tento kurz – krok a všechny následné kroky použít všechny tři typy pracovního postupu z [postupy: vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md). Pokud jste neprovedli všechny tři typy můžete stáhnout dokončenou verzi kroků z [modelu Windows Workflow Foundation (WF45) - kurzu Začínáme](http://go.microsoft.com/fwlink/?LinkID=248976).  
+>  Tento kurz – krok a všechny následné kroky použít všechny tři typy pracovních postupů z [postupy: vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md). Pokud jste neprovedli všechny tři typy můžete stáhnout úplnou verzi kroky z [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
   
 > [!NOTE]
->  Stažení dokončené verze nebo zobrazení na video s návodem kurzu, najdete v tématu [modelu Windows Workflow Foundation (WF45) - kurzu Začínáme](http://go.microsoft.com/fwlink/?LinkID=248976).  
+>  Pokud chcete stáhnout dokončený verzi nebo zobrazit na video s návodem tohoto kurzu, najdete v článku [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
   
 ## <a name="in-this-topic"></a>V tomto tématu  
   
--   [K vytvoření databáze trvalost](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_CreatePersistenceDatabase)  
+-   [K vytvoření databáze trvalosti](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_CreatePersistenceDatabase)  
   
 -   [Chcete-li přidat odkaz na sestavení DurableInstancing](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_AddReference)  
   
--   [Vytvoření pracovního postupu hostitele formuláře](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_CreateForm)  
+-   [Chcete-li vytvořit formulář hostitele pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_CreateForm)  
   
 -   [Chcete-li přidat vlastnosti a metody helper formuláře](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_AddHelperMethods)  
   
--   [Ke konfiguraci úložiště instance, obslužné rutiny životního cyklu pracovního postupu a rozšíření](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_ConfigureWorkflowApplication)  
+-   [Ke konfiguraci úložiště instancí, obslužné rutiny pracovních postupů životního cyklu a rozšíření](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_ConfigureWorkflowApplication)  
   
--   [Chcete-li povolit spuštění a obnovení více typů pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_WorkflowVersionMap)  
+-   [Povolit spuštění a obnovení více typy pracovních postupů](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_WorkflowVersionMap)  
   
 -   [Spuštění nového pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_StartWorkflow)  
   
 -   [Pracovní postup obnovit](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_ResumeWorkflow)  
   
--   [Ukončit pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_TerminateWorkflow)  
+-   [K ukončení pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_TerminateWorkflow)  
   
 -   [Sestavení a spuštění aplikace](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_BuildAndRun)  
   
-###  <a name="BKMK_CreatePersistenceDatabase"></a> K vytvoření databáze trvalost  
+###  <a name="BKMK_CreatePersistenceDatabase"></a> K vytvoření databáze trvalosti  
   
-1.  Otevřete SQL Server Management Studio a připojte se k místnímu serveru, například **. \SQLEXPRESS**. Klikněte pravým tlačítkem myši **databáze** uzlu na místním serveru a vyberte **novou databázi**. Název nové databáze **WF45GettingStartedTutorial**přijměte všechny ostatní hodnoty a vyberte **OK**.  
+1.  Otevřete SQL Server Management Studio a připojte se k místnímu serveru, třeba **. \SQLEXPRESS**. Klikněte pravým tlačítkem myši **databází** uzlu na místním serveru a vyberte **novou databázi**. Název nové databáze **WF45GettingStartedTutorial**přijměte všechny ostatní hodnoty a vyberte **OK**.  
   
     > [!NOTE]
     >  Ujistěte se, že máte **Create Database** oprávnění na místním serveru před vytvořením databáze.  
   
-2.  Zvolte **otevřete**, **soubor** z **souboru** nabídky. Přejděte do následující složky: `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en`  
+2.  Zvolte **otevřít**, **souboru** z **souboru** nabídky. Přejděte do následující složky: `C:\Windows\Microsoft.NET\Framework\v4.0.30319\sql\en`  
   
-     Vyberte následující dva soubory a klikněte na **otevřete**.  
+     Vyberte následující dva soubory a klikněte na tlačítko **otevřít**.  
   
     -   SqlWorkflowInstanceStoreLogic.sql  
   
     -   SqlWorkflowInstanceStoreSchema.sql  
   
-3.  Zvolte **SqlWorkflowInstanceStoreSchema.sql** z **okno** nabídky. Ujistěte se, že **WF45GettingStartedTutorial** je vybraný v **dostupné databáze** rozevíracího seznamu a vyberte **Execute** z **dotazu**nabídky.  
+3.  Zvolte **SqlWorkflowInstanceStoreSchema.sql** z **okno** nabídky. Ujistěte se, že **WF45GettingStartedTutorial** výběru v **dostupných databází** rozevírací seznam a zvolte **Execute** z **dotazu**nabídky.  
   
-4.  Zvolte **SqlWorkflowInstanceStoreLogic.sql** z **okno** nabídky. Ujistěte se, že **WF45GettingStartedTutorial** je vybraný v **dostupné databáze** rozevíracího seznamu a vyberte **Execute** z **dotazu**nabídky.  
+4.  Zvolte **SqlWorkflowInstanceStoreLogic.sql** z **okno** nabídky. Ujistěte se, že **WF45GettingStartedTutorial** výběru v **dostupných databází** rozevírací seznam a zvolte **Execute** z **dotazu**nabídky.  
   
     > [!WARNING]
-    >  Je důležité k provedení předchozí dva kroky ve správném pořadí. Pokud dotazy jsou spouštěny mimo pořadí, dojde k chybám a trvalost databáze není správně nakonfigurováno.  
+    >  Je důležité provést předchozí dva kroky ve správném pořadí. Pokud dotazy provádějí mimo pořadí, dojde k chybám a databáze trvalosti není správně nakonfigurována.  
   
 ###  <a name="BKMK_AddReference"></a> Chcete-li přidat odkaz na sestavení DurableInstancing  
   
-1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a vyberte **přidat odkaz na**.  
+1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníka řešení** a vyberte **přidat odkaz**.  
   
-2.  Vyberte **sestavení** z **přidat odkaz na** seznam a typ `DurableInstancing` do **hledání sestavení** pole. To filtruje sestavení a usnadňuje vyberte požadované odkazy.  
+2.  Vyberte **sestavení** z **přidat odkaz** a do pole `DurableInstancing` do **hledání sestavení** pole. Tím se filtruje sestavení a usnadňuje vyberte požadované odkazy.  
   
-3.  Zaškrtněte políčko vedle položky **System.Activities.DurableInstancing** a **System.Runtime.DurableInstancing** z **výsledky hledání** seznamu a klikněte na tlačítko **OK**.  
+3.  Zaškrtněte políčko vedle **System.Activities.DurableInstancing** a **System.Runtime.DurableInstancing** z **výsledky hledání** seznamu a klikněte na tlačítko **OK**.  
   
-###  <a name="BKMK_CreateForm"></a> Vytvoření pracovního postupu hostitele formuláře  
+###  <a name="BKMK_CreateForm"></a> Chcete-li vytvořit formulář hostitele pracovního postupu  
   
 > [!NOTE]
->  Kroky v tomto postupu popisují, jak přidat a nakonfigurovat formuláře ručně. V případě potřeby můžete stáhnout soubory řešení pro tento kurz a přidejte dokončené formuláře do projektu. Si můžete stáhnout kurz soubory [modelu Windows Workflow Foundation (WF45) - kurzu Začínáme](http://go.microsoft.com/fwlink/?LinkID=248976). Po stažení souborů, klikněte pravým tlačítkem na **NumberGuessWorkflowHost** a zvolte **přidat odkaz na**. Přidat odkaz na **System.Windows.Forms** a **System.Drawing**. Tyto odkazy se přidávají automaticky, pokud přidáte nový formulář z **přidat**, **nová položka** nabídce, ale musí být při importu formuláře přidat ručně. Jakmile jsou přidány odkazy, klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a zvolte **přidat**, **existující položka**. Vyhledejte `Form` složky v souborech projektu, vyberte **WorkflowHostForm.cs** (nebo **WorkflowHostForm.vb**) a klikněte na tlačítko **přidat**. Pokud se rozhodnete importovat formuláře a potom dolů na další část, můžete přeskočit [přidat vlastnosti a metody helper formuláře](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_AddHelperMethods).  
+>  Kroky v tomto postupu popisují, jak přidat a nakonfigurovat formuláře ručně. V případě potřeby můžete stáhnout soubory řešení pro tento kurz a přidejte dokončené formuláře do projektu. Stáhněte si kurz soubory, naleznete v tématu [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976). Jakmile se soubory stáhnou, klikněte pravým tlačítkem na **NumberGuessWorkflowHost** a zvolte **přidat odkaz**. Přidejte odkaz na **System.Windows.Forms** a **System.Drawing**. Tyto odkazy jsou přidány automaticky, pokud chcete přidat nového formuláře pomocí **přidat**, **nová položka** nabídky, ale musí přidat ručně, při importu formuláře. Jakmile jsou přidány odkazy, klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníka řešení** a zvolte **přidat**, **existující položku**. Přejděte `Form` složky v souborech projektu, vyberte **WorkflowHostForm.cs** (nebo **WorkflowHostForm.vb**) a klikněte na tlačítko **přidat**. Pokud se rozhodnete importovat formuláři a pak dolů na další část, můžete přeskočit [přidat vlastnosti a metody helper formuláře](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md#BKMK_AddHelperMethods).  
   
-1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a zvolte **přidat**, **novou položku**.  
+1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníka řešení** a zvolte **přidat**, **nová položka**.  
   
-2.  V **nainstalovaná** šablony vyberte **formuláře Windows**, typ `WorkflowHostForm` v **název** pole a klikněte na tlačítko **přidat**.  
+2.  V **nainstalováno** šablon klikněte na položku **formuláře Windows**, typ `WorkflowHostForm` v **název** pole a klikněte na tlačítko **přidat**.  
   
-3.  Nakonfigurujte následující vlastnosti na formuláři.  
+3.  Konfigurujte následující vlastnosti ve formuláři.  
   
     |Vlastnost|Hodnota|  
     |--------------|-----------|  
@@ -90,43 +90,43 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     |MaximizeBox|False|  
     |Velikost|400, 420|  
   
-4.  Přidejte následující ovládací prvky na formuláři v pořadí zadaný a konfigurovat vlastnosti podle pokynů.  
+4.  Přidejte následující ovládací prvky do formuláře v pořadí zadaný a nakonfigurujte vlastnosti, podle pokynů.  
   
-    |Ovládací prvek|Vlastnost: hodnota|  
+    |Ovládací prvek|Vlastnosti: hodnota|  
     |-------------|---------------------|  
-    |**Tlačítko**|Název: NewGame<br /><br /> Umístění: 13, 13<br /><br /> Velikost: 75, 23<br /><br /> Text: Nová hra|  
+    |**Tlačítko**|Název: NewGame<br /><br /> Umístění: 13, 13<br /><br /> Velikost: 75, 23<br /><br /> Text: Novou hru|  
     |**Popisek**|Umístění: 94, 18<br /><br /> Text: Číslo od 1 do uhodnout|  
-    |**ComboBox**|Název: NumberRange<br /><br /> DropDownStyle: rozevírací seznam<br /><br /> Položek: 10, 100, 1000<br /><br /> Umístění: 228, 12<br /><br /> Velikost: 143, 21|  
+    |**ComboBox**|Název: NumberRange<br /><br /> DropDownStyle: DropDownList<br /><br /> Položek: 10, 100, 1 000<br /><br /> Umístění: 228, 12<br /><br /> Velikost: 143, 21|  
     |**Popisek**|Umístění: 13, 43<br /><br /> Text: Typ pracovního postupu|  
-    |**ComboBox**|Název: WorkflowType<br /><br /> DropDownStyle: rozevírací seznam<br /><br /> Položky: SequentialNumberGuessWorkflow StateMachineNumberGuessWorkflow, FlowchartNumberGuessWorkflow,<br /><br /> Umístění: 94, 40<br /><br /> Velikost: 277, 21|  
+    |**ComboBox**|Název: WorkflowType<br /><br /> DropDownStyle: DropDownList<br /><br /> Položky: SequentialNumberGuessWorkflow StateMachineNumberGuessWorkflow FlowchartNumberGuessWorkflow,<br /><br /> Umístění: 94, 40<br /><br /> Velikost: 277, 21|  
     |**Popisek**|Název: WorkflowVersion<br /><br /> Umístění: 13, 362<br /><br /> Text: Verze pracovního postupu|  
     |**GroupBox**|Umístění: 13, 67<br /><br /> Velikost: 358, 287<br /><br /> Text: hra|  
   
     > [!NOTE]
-    >  Při přidávání následující ovládací prvky, umístí je do skupině.  
+    >  Při přidávání následující ovládací prvky, vytvořte z nich skupině.  
   
-    |Ovládací prvek|Vlastnost: hodnota|  
+    |Ovládací prvek|Vlastnosti: hodnota|  
     |-------------|---------------------|  
     |**Popisek**|Umístění: 7, 20<br /><br /> Text: Id Instance pracovního postupu|  
-    |**ComboBox**|Název: identifikátor InstanceId<br /><br /> DropDownStyle: rozevírací seznam<br /><br /> Umístění: 121, 17<br /><br /> Velikost: 227, 21|  
-    |**Popisek**|Umístění: 7, 47<br /><br /> Text: uhodnout|  
-    |**TextBox**|Název: uhodnout<br /><br /> Umístění: 50, 44<br /><br /> Velikost: 65, 20|  
-    |**Tlačítko**|Název: EnterGuess<br /><br /> Umístění: 121, 42<br /><br /> Velikost: 75, 23<br /><br /> Text: Odhad zadejte|  
+    |**ComboBox**|Název: InstanceId<br /><br /> DropDownStyle: DropDownList<br /><br /> Umístění: 121, 17<br /><br /> Velikost: 227, 21|  
+    |**Popisek**|Umístění: 7, 47<br /><br /> Text: odhad|  
+    |**TextBox**|Název: odhad<br /><br /> Umístění: 50, 44<br /><br /> Velikost: 65, 20|  
+    |**Tlačítko**|Název: EnterGuess<br /><br /> Umístění: 121, 42<br /><br /> Velikost: 75, 23<br /><br /> Text: Zadejte odhad|  
     |**Tlačítko**|Název: QuitGame<br /><br /> Umístění: 274, 42<br /><br /> Velikost: 75, 23<br /><br /> Text: ukončení|  
-    |**TextBox**|Název: argument WorkflowStatus<br /><br /> Umístění: 10, 73<br /><br /> Víceřádkových: True<br /><br /> Jen pro čtení: True<br /><br /> Posuvníky: svislé<br /><br /> Velikost: 338, 208|  
+    |**TextBox**|Název: WorkflowStatus<br /><br /> Umístění: 10, 73<br /><br /> Multiline: True<br /><br /> Jen pro čtení: True<br /><br /> Posuvníky: svislý<br /><br /> Velikost: 338, 208|  
   
 5.  Nastavte **AcceptButton** vlastnost formuláře **EnterGuess**.  
   
- Následující příklad ilustruje dokončené formuláře.  
+ Následující příklad ukazuje dokončený formulář.  
   
- ![WF45 Začínáme kurz pracovního postupu hostitele formuláře](../../../docs/framework/windows-workflow-foundation/media/wf45gettingstartedtutorialworkflowhostform.png "WF45GettingStartedTutorialWorkflowHostForm")  
+ ![WF45 Formulář hostitele pracovního postupu kurz Začínáme se službou](../../../docs/framework/windows-workflow-foundation/media/wf45gettingstartedtutorialworkflowhostform.png "WF45GettingStartedTutorialWorkflowHostForm")  
   
 ###  <a name="BKMK_AddHelperMethods"></a> Chcete-li přidat vlastnosti a metody helper formuláře  
- Postup v této části přidejte vlastnosti a pomocné metody do třídy formuláře, nakonfigurujete pro podporu systémem a obnovení workflowů číslo odhad rozhraní formuláře.  
+ Kroky v této části přidejte do třídy formuláře, která konfigurace uživatelského rozhraní ve formuláři pro podporu spouštění a obnovení workflowů číslo odhad vlastnosti a metody helper.  
   
-1.  Klikněte pravým tlačítkem na **WorkflowHostForm** v **Průzkumníku řešení** a zvolte **kód zobrazení**.  
+1.  Klikněte pravým tlačítkem na **WorkflowHostForm** v **Průzkumníka řešení** a zvolte **zobrazit kód**.  
   
-2.  Přidejte následující `using` (nebo `Imports`) příkazy v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.  
+2.  Přidejte následující `using` (nebo `Imports`) příkazů v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.  
   
     ```vb  
     Imports System.Windows.Forms  
@@ -144,7 +144,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     using System.IO;  
     ```  
   
-3.  Přidejte následující deklarace člena k **WorkflowHostForm** třídy.  
+3.  Přidejte následující deklarace členů na **WorkflowHostForm** třídy.  
   
     ```vb  
     Const connectionString = "Server=.\SQLEXPRESS;Initial Catalog=WF45GettingStartedTutorial;Integrated Security=SSPI"  
@@ -159,9 +159,9 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     ```  
   
     > [!NOTE]
-    >  Pokud připojovací řetězec je jiný, aktualizujte `connectionString` odkazovat na databázi.  
+    >  Pokud váš připojovací řetězec se liší, aktualizujte `connectionString` odkázat na databázi.  
   
-4.  Přidat `WorkflowInstanceId` vlastnost, která má `WorkflowFormHost` třídy.  
+4.  Přidat `WorkflowInstanceId` vlastnost `WorkflowFormHost` třídy.  
   
     ```vb  
     Public ReadOnly Property WorkflowInstanceId() As Guid  
@@ -185,9 +185,9 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-     `InstanceId` – Pole se seznamem zobrazí seznam identifikátorů instance pracovního postupu trvalý a `WorkflowInstanceId` vlastnost vrací aktuálně vybrané pracovní postup.  
+     `InstanceId` – Pole se seznamem se zobrazí seznam identifikátorů instance trvalá pracovního postupu a `WorkflowInstanceId` vlastnost vrátí aktuálně vybraný pracovní postup.  
   
-5.  Přidejte obslužnou rutinu pro daný formulář `Load` události. Chcete-li přidat obslužná rutina, přepněte na **zobrazení návrhu** formulář, klikněte na **události** ikona v horní části **vlastnosti** okno a poklikejte na soubor **zatížení**.  
+5.  Přidání obslužné rutiny pro formulář `Load` událostí. Chcete-li přidat obslužnou rutinu, přepněte **návrhové zobrazení** formuláře, klikněte na tlačítko **události** ikonu v horní části **vlastnosti** okno a dvakrát klikněte na **zatížení**.  
   
     ```vb  
     Private Sub WorkflowHostForm_Load(sender As Object, e As EventArgs) Handles Me.Load  
@@ -230,9 +230,9 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     ListPersistedWorkflows();  
     ```  
   
-     Při načtení formuláře, `SqlWorkflowInstanceStore` je nakonfigurován, výchozí hodnoty jsou nastaveny rozsah a pracovní postup typ pole se seznamem a instancí trvalou pracovních postupů jsou přidány do `InstanceId` – pole se seznamem.  
+     Při načtení formuláře, `SqlWorkflowInstanceStore` je nakonfigurován, rozsahu a pracovní postup polí se seznamem typ jsou nastaveny na výchozí hodnoty a instance trvalá pracovního postupu jsou přidány do `InstanceId` – pole se seznamem.  
   
-7.  Přidat `SelectedIndexChanged` obslužné rutiny pro `InstanceId`. Chcete-li přidat obslužná rutina, přepněte na **zobrazení návrhu** pro daný formulář, vyberte `InstanceId` – pole se seznamem, klikněte na tlačítko **události** ikona v horní části **vlastnosti** okno, a Klikněte dvakrát na **SelectedIndexChanged**.  
+7.  Přidat `SelectedIndexChanged` obslužné rutiny pro `InstanceId`. Chcete-li přidat obslužnou rutinu, přepněte **návrhové zobrazení** formuláře, vyberte `InstanceId` – pole se seznamem, klikněte na tlačítko **události** ikonu v horní části **vlastnosti** okna, a dvakrát klikněte na panel **SelectedIndexChanged**.  
   
     ```vb  
     Private Sub InstanceId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles InstanceId.SelectedIndexChanged  
@@ -247,7 +247,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-8.  Přidejte následující kód, který `InstanceId_SelectedIndexChanged`. Vždy, když uživatel vybere pracovního postupu pomocí pole se seznamem této obslužné rutiny aktualizace stavové okno.  
+8.  Přidejte následující kód, který `InstanceId_SelectedIndexChanged`. Pokaždé, když uživatel vybere pracovního postupu pomocí pole se seznamem touto obslužnou rutinou aktualizace stavové okno.  
   
     ```vb  
     If InstanceId.SelectedIndex = -1 Then  
@@ -341,9 +341,9 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-     `ListPersistedWorkflows` dotazuje úložiště instance k instancí trvalou pracovních postupů a přidá ID instance, které chcete `cboInstanceId` – pole se seznamem.  
+     `ListPersistedWorkflows` dotazy v úložišti instancí pro instance trvalá pracovního postupu a přidá ID instance do `cboInstanceId` – pole se seznamem.  
   
-10. Přidejte následující `UpdateStatus` metoda a odpovídající delegát třídy formuláře. Tato metoda aktualizuje stav aktuálně spuštěných pracovních postupů okně Stav na formuláři.  
+10. Přidejte následující `UpdateStatus` metoda a odpovídající delegát třídy formuláře. Tato metoda aktualizuje stav aktuálně spuštěné pracovního postupu stavové okno, ve formuláři.  
   
     ```vb  
     Private Delegate Sub UpdateStatusDelegate(msg As String)  
@@ -390,7 +390,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-11. Přidejte následující `GameOver` metoda a odpovídající delegát třídy formuláře. Po dokončení pracovního postupu, tato metoda aktualizace formuláře uživatelského rozhraní odebráním id instance pracovního postupu dokončené z **identifikátor InstanceId** – pole se seznamem.  
+11. Přidejte následující `GameOver` metoda a odpovídající delegát třídy formuláře. Po dokončení pracovního postupu, tato metoda aktualizuje formulář, uživatelského rozhraní tak, že odeberete id instance pracovního postupu dokončená z **InstanceId** – pole se seznamem.  
   
     ```vb  
     Private Delegate Sub GameOverDelegate()  
@@ -422,7 +422,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-###  <a name="BKMK_ConfigureWorkflowApplication"></a> Ke konfiguraci úložiště instance, obslužné rutiny životního cyklu pracovního postupu a rozšíření  
+###  <a name="BKMK_ConfigureWorkflowApplication"></a> Ke konfiguraci úložiště instancí, obslužné rutiny pracovních postupů životního cyklu a rozšíření  
   
 1.  Přidat `ConfigureWorkflowApplication` metodu do třídy formuláře.  
   
@@ -438,7 +438,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-     Tato metoda nakonfiguruje `WorkflowApplication`, přidá požadované rozšíření a přidá obslužné rutiny pro události životního cyklu pracovního postupu.  
+     Tato metoda nakonfiguruje `WorkflowApplication`, přidá požadované rozšíření a přidá obslužné rutiny pro pracovní postup události životního cyklu.  
   
 2.  V `ConfigureWorkflowApplication`, zadejte `SqlWorkflowInstanceStore` pro `WorkflowApplication`.  
   
@@ -452,7 +452,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     wfApp.InstanceStore = store;  
     ```  
   
-3.  Dále vytvořte `StringWriter` instance a přidejte ho do `Extensions` kolekce `WorkflowApplication`. Když `StringWriter` se přidá do rozšíření zachycení všechny `WriteLine` výstup aktivity. Když se stane nečinnosti, pracovní postup `WriteLine` výstup lze extrahovat z `StringWriter` a zobrazují na formuláři.  
+3.  Dále vytvořte `StringWriter` instance a přidejte ho do `Extensions` kolekce `WorkflowApplication`. Když `StringWriter` se přidá do rozšíření zachytí všechny `WriteLine` výstup aktivity. Při pracovního postupu změní nečinnosti, `WriteLine` výstup může být extrahována z `StringWriter` a zobrazí ve formuláři.  
   
     ```vb  
     'Add a StringWriter to the extensions. This captures the output  
@@ -468,7 +468,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     wfApp.Extensions.Add(sw);  
     ```  
   
-4.  Přidejte následující obslužnou rutinu pro `Completed` událostí. Když pracovní postup úspěšně dokončí, stane se z počet přijatých tak snadno uhodnout číslo se zobrazí v okně Stav. Pokud pracovní postup ukončí, zobrazí se informace o výjimce, která způsobila ukončení. Na konci obslužné rutiny `GameOver` metoda je volána, které dokončené pracovní postup odebere ze seznamu pracovního postupu.  
+4.  Přidejte následující obslužnou rutinu pro `Completed` událostí. Po úspěšném dokončení pracovního postupu změní počet přijatých uhodnutelné číslo se zobrazí v okně Stav. Pokud pracovní postup ukončí, zobrazí se informace o výjimce, která způsobila ukončení. Na konci obslužné rutiny `GameOver` metoda je volána, která odebere ze seznamu pracovní postup dokončený pracovní postup.  
   
     ```vb  
     wfApp.Completed = _  
@@ -509,7 +509,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     };  
     ```  
   
-5.  Přidejte následující `Aborted` a `OnUnhandledException` obslužné rutiny. `GameOver` Metoda není volána z `Aborted` obslužná rutina vzhledem k tomu, že pokud byl přerušen instanci pracovního postupu, není ukončit a je možné obnovit instanci později.  
+5.  Přidejte následující `Aborted` a `OnUnhandledException` obslužné rutiny. `GameOver` Metoda není volána z `Aborted` obslužná rutina protože při instanci pracovního postupu byla přerušena, nebyl ukončen a je možné obnovit instanci později.  
   
     ```vb  
     wfApp.Aborted = _  
@@ -547,7 +547,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     };  
     ```  
   
-6.  Přidejte následující `PersistableIdle` obslužné rutiny. Tato rutina načte `StringWriter` extrahuje výstup z rozšíření, která byla přidána `WriteLine` aktivity a zobrazí v okně Stav.  
+6.  Přidejte následující `PersistableIdle` obslužné rutiny. Tato obslužná rutina načte `StringWriter` rozšíření, které jste přidali, extrahuje výstup `WriteLine` aktivity a zobrazí jej v okně Stav.  
   
     ```vb  
     wfApp.PersistableIdle = _  
@@ -574,9 +574,9 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     };  
     ```  
   
-     <xref:System.Activities.PersistableIdleAction> Výčet má tří hodnot: <xref:System.Activities.PersistableIdleAction.None>, <xref:System.Activities.PersistableIdleAction.Persist>, a <xref:System.Activities.PersistableIdleAction.Unload>. <xref:System.Activities.PersistableIdleAction.Persist> příčiny pracovního postupu zachovat ale nezpůsobí odpojení pracovního postupu. <xref:System.Activities.PersistableIdleAction.Unload> pracovní postup se zachovat a jej odpojit.  
+     <xref:System.Activities.PersistableIdleAction> Výčet má tři hodnoty: <xref:System.Activities.PersistableIdleAction.None>, <xref:System.Activities.PersistableIdleAction.Persist>, a <xref:System.Activities.PersistableIdleAction.Unload>. <xref:System.Activities.PersistableIdleAction.Persist> způsobí, že pracovní postup a zachová jej ale nezpůsobí odpojení pracovního postupu. <xref:System.Activities.PersistableIdleAction.Unload> způsobí, že pracovní postup zachovat a být uvolněna.  
   
-     Následující příklad je dokončené `ConfigureWorkflowApplication` metoda.  
+     V následujícím příkladu je dokončené `ConfigureWorkflowApplication` metody.  
   
     ```vb  
     Private Sub ConfigureWorkflowApplication(wfApp As WorkflowApplication)  
@@ -691,12 +691,12 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-###  <a name="BKMK_WorkflowVersionMap"></a> Chcete-li povolit spuštění a obnovení více typů pracovního postupu  
- Chcete-li obnovit instanci pracovního postupu, hostitel má zajistit definice pracovního postupu. V tomto kurzu existují tři typy pracovního postupu a následné kroky kurzu zavádět několik verzí z těchto typů. `WorkflowIdentity` poskytuje způsob, jak hostitelskou aplikaci přidružení identifikační informace k instanci pracovního postupu trvalý. Postup v této části ukazují, jak vytvořit třídu nástroj vám pomůže při mapování identitu pracovního postupu z instance pracovního postupu trvalou na odpovídající definice pracovního postupu. Další informace o `WorkflowIdentity` a správu verzí, najdete v části [pomocí WorkflowIdentity a správa verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md).  
+###  <a name="BKMK_WorkflowVersionMap"></a> Povolit spuštění a obnovení více typy pracovních postupů  
+ Aby bylo možné obnovit do instance pracovního postupu, že hostitel má poskytnout definici pracovního postupu. V tomto kurzu jsou tři typy pracovních postupů a dalších kroků kurzu zavést více verzí z těchto typů. `WorkflowIdentity` poskytuje způsob pro hostitelskou aplikaci přidružit identifikační údaje trvalé instance práce. Kroky v této části ukazují, jak vytvořit nástroj třídu, která vám pomůže s mapování identita pracovního postupu z trvalé instance práce na odpovídající definici pracovního postupu. Další informace o `WorkflowIdentity` a správy verzí, naleznete v tématu [použití WorkflowIdentity a správy verzí](../../../docs/framework/windows-workflow-foundation/using-workflowidentity-and-versioning.md).  
   
-1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a zvolte **přidat**, **třída**. Typ `WorkflowVersionMap` do **název** pole a klikněte na tlačítko **přidat**.  
+1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníka řešení** a zvolte **přidat**, **třídy**. Typ `WorkflowVersionMap` do **název** pole a klikněte na tlačítko **přidat**.  
   
-2.  Přidejte následující `using` nebo `Imports` příkazy v horní části souboru k ostatním `using` nebo `Imports` příkazy.  
+2.  Přidejte následující `using` nebo `Imports` příkazů v horní části souboru k ostatním `using` nebo `Imports` příkazy.  
   
     ```vb  
     Imports NumberGuessWorkflowActivities  
@@ -708,7 +708,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     using System.Activities;  
     ```  
   
-3.  Nahraďte `WorkflowVersionMap` deklarace s následující deklaraci třídy.  
+3.  Nahradit `WorkflowVersionMap` deklarace s následující deklaraci třídy.  
   
     ```vb  
     Public Module WorkflowVersionMap  
@@ -806,11 +806,11 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-     `WorkflowVersionMap` obsahuje tři pracovní postup identit, které jsou mapovány na tři definice pracovního postupu z tohoto kurzu a se používá v následujících částech, když jsou pracovní postupy spuštěny a byl obnoven.  
+     `WorkflowVersionMap` obsahuje tři identity pracovního postupu, které se mapují do tří definice pracovního postupu z tohoto kurzu a používá v následujících částech se při zahájení a obnovení pracovních postupů.  
   
 ###  <a name="BKMK_StartWorkflow"></a> Spuštění nového pracovního postupu  
   
-1.  Přidat `Click` obslužné rutiny pro `NewGame`. Chcete-li přidat obslužná rutina, přepněte na **zobrazení návrhu** pro formulář a poklikejte na soubor `NewGame`. A `NewGame_Click` přidání obslužné rutiny a zobrazení přepne do zobrazení kódu pro daný formulář. Vždy, když uživatel klikne na toto tlačítko je spuštěn nový pracovní postup.  
+1.  Přidat `Click` obslužné rutiny pro `NewGame`. Chcete-li přidat obslužnou rutinu, přepněte **návrhové zobrazení** pro formulář a dvakrát klikněte na `NewGame`. A `NewGame_Click` přidání obslužné rutiny a zobrazení se přepne do zobrazení kódu pro formulář. Pokaždé, když uživatel stiskne toto tlačítko je spuštěn nový pracovní postup.  
   
     ```vb  
     Private Sub NewGame_Click(sender As Object, e As EventArgs) Handles NewGame.Click  
@@ -825,7 +825,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-2.  Přidejte následující kód do obslužná rutina kliknutí na. Tento kód vytvoří slovník vstupní argumenty pro pracovní postup, klíčovány pomocí názvu argument. Tohoto slovníku má jednu položku, která obsahuje řadu náhodně generovaným číslem načtena z pole se seznamem rozsahu.  
+2.  Přidejte následující kód do obslužné rutiny kliknutí. Tento kód vytvoří slovník vstupní argumenty pro pracovní postup, s klíči název argumentu. Tento slovník obsahuje jednu položku, která obsahuje řadu náhodně generované číslo z rozsahu pole se seznamem načíst.  
   
     ```vb  
     Dim inputs As New Dictionary(Of String, Object)()  
@@ -837,7 +837,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     inputs.Add("MaxNumber", Convert.ToInt32(NumberRange.SelectedItem));  
     ```  
   
-3.  Dál přidejte následující kód, který spustí pracovní postup. `WorkflowIdentity` a odpovídající typ pracovního postupu vybrali definice pracovního postupu se načítají pomocí `WorkflowVersionMap` pomocná třída. Další, nové `WorkflowApplication` instance je vytvořený pomocí definice pracovního postupu `WorkflowIdentity`a slovníku vstupní argumenty.  
+3.  V dalším kroku přidejte následující kód, který se spustí pracovní postup. `WorkflowIdentity` a odpovídající typu pracovního postupu vybrali definice pracovního postupu se načítají pomocí `WorkflowVersionMap` pomocná třída. Další, nové `WorkflowApplication` pomocí definice pracovního postupu je vytvořena instance `WorkflowIdentity`a slovníku vstupní argumenty.  
   
     ```vb  
     Dim identity As WorkflowIdentity = Nothing  
@@ -879,7 +879,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     WorkflowApplication wfApp = new WorkflowApplication(wf, inputs, identity);  
     ```  
   
-4.  Dál přidejte následující kód, který přidá pracovního postupu do seznamu pracovního postupu a zobrazí informace o verzi pracovního postupu na formuláři.  
+4.  Dále přidejte následující kód, který přidá pracovní postup do seznamu pracovního postupu a zobrazí informace o verzi pro pracovní postupy ve formuláři.  
   
     ```vb  
     'Add the workflow to the list and display the version information.  
@@ -897,7 +897,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     WorkflowStarting = false;  
     ```  
   
-5.  Volání `ConfigureWorkflowApplication` konfigurace instance úložiště, rozšíření a pracovní postup životního cyklu obslužných rutin pro tento `WorkflowApplication` instance.  
+5.  Volání `ConfigureWorkflowApplication` konfigurace instance úložiště, rozšíření a pracovních postupů životního cyklu obslužných rutin pro tento `WorkflowApplication` instance.  
   
     ```vb  
     'Configure the instance store, extensions, and   
@@ -911,7 +911,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     ConfigureWorkflowApplication(wfApp);  
     ```  
   
-6.  Nakonec volání `Run`.  
+6.  Nakonec proveďte volání `Run`.  
   
     ```vb  
     'Start the workflow.  
@@ -923,7 +923,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     wfApp.Run();  
     ```  
   
-     Následující příklad je dokončené `NewGame_Click` obslužné rutiny.  
+     V následujícím příkladu je dokončené `NewGame_Click` obslužné rutiny.  
   
     ```vb  
     Private Sub NewGame_Click(sender As Object, e As EventArgs) Handles NewGame.Click  
@@ -1005,7 +1005,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
   
 ###  <a name="BKMK_ResumeWorkflow"></a> Pracovní postup obnovit  
   
-1.  Přidat `Click` obslužné rutiny pro `EnterGuess`. Chcete-li přidat obslužná rutina, přepněte na **zobrazení návrhu** pro formulář a poklikejte na soubor `EnterGuess`. Vždy, když uživatel klikne na toto tlačítko je obnoven běh pracovního postupu.  
+1.  Přidat `Click` obslužné rutiny pro `EnterGuess`. Chcete-li přidat obslužnou rutinu, přepněte **návrhové zobrazení** pro formulář a dvakrát klikněte na `EnterGuess`. Pokaždé, když uživatel stiskne toto tlačítko se obnoví pracovní postup.  
   
     ```vb  
     Private Sub EnterGuess_Click(sender As Object, e As EventArgs) Handles EnterGuess.Click  
@@ -1020,7 +1020,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-2.  Přidejte následující kód do Ujistěte se, zda je pracovní postup vybrán v seznamu pracovního postupu, a zda je odhad uživatele platná.  
+2.  Přidejte následující kód k zajištění, že pracovní postup je vybrali v seznamu pracovního postupu a že odhad uživatele je platný.  
   
     ```vb  
     If WorkflowInstanceId = Guid.Empty Then  
@@ -1054,7 +1054,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-3.  V dalším kroku načíst `WorkflowApplicationInstance` instance trvalou pracovního postupu. A `WorkflowApplicationInstance` představuje instanci trvalou pracovního postupu, který ještě nebyl přidružen definice pracovního postupu. `DefinitionIdentity` z `WorkflowApplicationInstance` obsahuje `WorkflowIdentity` instance trvalou pracovního postupu. V tomto kurzu `WorkflowVersionMap` nástroj třída se používá k mapování `WorkflowIdentity` k definici správné pracovního postupu. Jakmile je načtena definice pracovního postupu, `WorkflowApplication` je vytvořený pomocí definice správné pracovního postupu.  
+3.  V dalším kroku načíst `WorkflowApplicationInstance` instance trvalá pracovního postupu. A `WorkflowApplicationInstance` představuje trvalé instance práce, který ještě nebyl přidružen s definicí pracovního postupu. `DefinitionIdentity` z `WorkflowApplicationInstance` obsahuje `WorkflowIdentity` instance trvalá pracovního postupu. V tomto kurzu `WorkflowVersionMap` utility třída se používá k mapování `WorkflowIdentity` k definici pracovního postupu správné. Jakmile je načtena definice pracovního postupu, `WorkflowApplication` je vytvořený pomocí definice pracovního postupu správné.  
   
     ```vb  
     Dim instance As WorkflowApplicationInstance = _  
@@ -1084,7 +1084,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
         new WorkflowApplication(wf, instance.DefinitionIdentity);  
     ```  
   
-4.  Jednou `WorkflowApplication` je vytvořen, konfigurovat úložiště instance, obslužné rutiny životního cyklu pracovního postupu a rozšíření voláním `ConfigureWorkflowApplication`. Tyto kroky je nutné provést pokaždé, když nový `WorkflowApplication` je vytvořen, a je třeba provést před k instanci pracovního postupu je načten do `WorkflowApplication`. Po načtení pracovního postupu je pokračuje s odhad uživatele.  
+4.  Jakmile `WorkflowApplication` je vytvořený, nakonfigurujte úložiště instancí, obslužné rutiny pracovních postupů životního cyklu a rozšíření voláním `ConfigureWorkflowApplication`. Tyto kroky je nutné provést pokaždé, když se nový `WorkflowApplication` se vytvoří a je třeba provést před načtením do instance pracovního postupu `WorkflowApplication`. Po načtení pracovního postupu se obnoví se uživatele.  
   
     ```vb  
     'Configure the extensions and lifecycle handlers.  
@@ -1112,7 +1112,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     wfApp.ResumeBookmark("EnterGuess", guess);  
     ```  
   
-5.  Nakonec vymažte textového pole odhad a příprava formuláře tak, aby přijímal jiné odhad.  
+5.  A konečně zrušte textové pole odhad a připravte formuláře tak, aby přijímal jiného odhad.  
   
     ```vb  
     'Clear the Guess textbox.  
@@ -1126,7 +1126,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     Guess.Focus();  
     ```  
   
-     Následující příklad je dokončené `EnterGuess_Click` obslužné rutiny.  
+     V následujícím příkladu je dokončené `EnterGuess_Click` obslužné rutiny.  
   
     ```vb  
     Private Sub EnterGuess_Click(sender As Object, e As EventArgs) Handles EnterGuess.Click  
@@ -1219,9 +1219,9 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-###  <a name="BKMK_TerminateWorkflow"></a> Ukončit pracovního postupu  
+###  <a name="BKMK_TerminateWorkflow"></a> K ukončení pracovního postupu  
   
-1.  Přidat `Click` obslužné rutiny pro `QuitGame`. Chcete-li přidat obslužná rutina, přepněte na **zobrazení návrhu** pro formulář a poklikejte na soubor `QuitGame`. Vždy, když uživatel klikne na toto tlačítko je ukončen aktuálně vybrané pracovní postup.  
+1.  Přidat `Click` obslužné rutiny pro `QuitGame`. Chcete-li přidat obslužnou rutinu, přepněte **návrhové zobrazení** pro formulář a dvakrát klikněte na `QuitGame`. Pokaždé, když uživatel stiskne toto tlačítko se ukončí aktuálně vybraného pracovního postupu.  
   
     ```vb  
     Private Sub QuitGame_Click(sender As Object, e As EventArgs) Handles QuitGame.Click  
@@ -1236,7 +1236,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-2.  Přidejte následující kód, který `QuitGame_Click` obslužné rutiny. Tento kód se nejdřív zkontroluje, zda pracovní postup je vybrán v seznamu pracovního postupu. Potom načte z trvalého instance `WorkflowApplicationInstance`, používá `DefinitionIdentity` k určení definice pracovního postupu správný a pak inicializuje `WorkflowApplication`. Další rozšíření a obslužné rutiny životního cyklu pracovního postupu jsou nakonfigurovány s volání `ConfigureWorkflowApplication`. Jednou `WorkflowApplication` je nakonfigurován, je načten a potom `Terminate` je volána.  
+2.  Přidejte následující kód, který `QuitGame_Click` obslužné rutiny. Tento kód nejprve zkontroluje, zda pracovní postup je vybrán v seznamu pracovního postupu. Následně načte do trvalé instanci `WorkflowApplicationInstance`, používá `DefinitionIdentity` k určení definice pracovního postupu správný a potom inicializuje `WorkflowApplication`. Další rozšíření a obslužné rutiny pracovních postupů životního cyklu jsou nakonfigurovány s volání `ConfigureWorkflowApplication`. Jednou `WorkflowApplication` je nakonfigurován, je načten a potom `Terminate` je volána.  
   
     ```vb  
     If WorkflowInstanceId = Guid.Empty Then  
@@ -1295,7 +1295,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
   
 ###  <a name="BKMK_BuildAndRun"></a> Sestavení a spuštění aplikace  
   
-1.  Klikněte dvakrát na **Program.cs** (nebo **Module1.vb**) v **Průzkumníku řešení** zobrazíte kód.  
+1.  Dvakrát klikněte na panel **Program.cs** (nebo **Module1.vb**) v **Průzkumníka řešení** zobrazíte kód této.  
   
 2.  Přidejte následující `using` (nebo `Imports`) příkaz v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.  
   
@@ -1307,7 +1307,7 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     using System.Windows.Forms;  
     ```  
   
-3.  Odeberte nebo komentář existující pracovní postup hostování kód z [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)a nahraďte ji následujícím kódem.  
+3.  Odstranit nebo okomentovat hostování kódu z existujícího pracovního postupu [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)a nahraďte ho následujícím kódem.  
   
     ```vb  
     Sub Main()  
@@ -1324,14 +1324,14 @@ Jedna z centrální funkcí Windows Workflow Foundation (WF) je modul runtime sc
     }  
     ```  
   
-4.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a zvolte **vlastnosti**. V **aplikace** zadejte **aplikace Windows** pro **výstupní typ**. Tento krok je volitelný, ale pokud není postupovali podle kromě formulář se zobrazí v okně konzoly.  
+4.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníka řešení** a zvolte **vlastnosti**. V **aplikace** kartu, zadejte **aplikace Windows** pro **typ výstupu**. Tento krok je volitelný, ale pokud se nedodrží kromě formuláři se zobrazí v okně konzoly.  
   
-5.  Stisknutím kombinace kláves Ctrl + Shift + B pro sestavení aplikace.  
+5.  Stiskněte kombinaci kláves Ctrl + Shift + B pro sestavení aplikace.  
   
-6.  Ujistěte se, že **NumberGuessWorkflowHost** je nastavena jako při spuštění aplikace a stiskněte klávesu Ctrl + F5 a spusťte aplikaci.  
+6.  Ujistěte se, že **NumberGuessWorkflowHost** je nastavena jako při spuštění aplikace a stiskněte klávesu Ctrl + F5 spusťte aplikaci.  
   
-7.  Vyberte rozsah hádání hry a typ pracovního postupu spustit, a klikněte na **nové herní**. Zadejte odhad v **odhad** pole a klikněte na tlačítko **přejděte** odeslat vaše odhad. Všimněte si, že výstupem `WriteLine` aktivity se zobrazí na formuláři.  
+7.  Vyberte oblast pro využití herních a typ pracovního postupu ke spouštění a klikněte na tlačítko **nová hra**. Zadejte odhad v **odhad** pole a klikněte na tlačítko **Přejít** k odeslání vašeho odhadu. Všimněte si, že výstup `WriteLine` aktivity se zobrazí ve formuláři.  
   
-8.  Spusťte několik pracovních postupů pomocí pracovního postupu různé typy a počet rozsahů, zadejte některé pokusů a přepínat mezi výběrem z pracovních postupů **Id Instance pracovního postupu** seznamu.  
+8.  Spustit několik pracovních postupů pomocí pracovního postupu různé typy a počet rozsahů, zadejte několik pokusů a přepínání pracovních postupů tak, že vyberete **Id Instance pracovního postupu** seznamu.  
   
-     Všimněte si, že při přepnutí do nového pracovního postupu předchozí pokusů a průběh pracovního postupu nejsou zobrazeny v okně Stav. Důvod stavu není k dispozici je, protože není zachytit a uložit kdekoli. V dalším kroku kurzu [postupy: vytvoření vlastní sledování účastník](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md), vytvoříte vlastní sledování člena, který uloží tyto informace.
+     Všimněte si, že když přepnete do nového pracovního postupu, předchozí pokusů a průběh pracovního postupu nejsou zobrazeny v okně Stav. Z důvodů, proč stavu není k dispozici je, protože není zachycena a uloženy kdekoli. V dalším kroku kurzu [postupy: vytvoření vlastního účastníka sledování](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md), vytvoření vlastního účastníka sledování, která ukládá tyto informace.

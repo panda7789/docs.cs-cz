@@ -7,12 +7,12 @@ helpviewer_keywords:
 - preprocessor directives [C#]
 - keywords [C#], preprocessor directives
 ms.assetid: f2406090-b244-4f7e-ab72-3698fefed724
-ms.openlocfilehash: 63a7bdb6d36794e0380ca84443926338fe926e4d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1c0a97cabce347be0bc9367f3d090a1fc699db19
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33279916"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43421998"
 ---
 # <a name="c-preprocessor-directives"></a>C# direktivy preprocesoru
 Tato část obsahuje informace o následujících C# direktivy preprocesoru:
@@ -32,12 +32,13 @@ Tato část obsahuje informace o následujících C# direktivy preprocesoru:
 - [#pragma warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md)
 - [#pragma checksum](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-checksum.md)
 
-V tématech jednotlivých Další informace a příklady.
+Viz témata pro další informace a příklady.
 
-I když kompilátor nemá samostatné preprocesor, direktivy popsaných v této části jsou zpracovávány jako kdyby nebyla jeden. Používají se k vám pomůžou Podmíněná kompilace. Na rozdíl od direktivy jazyka C a C++ nemůžete použít tyto direktivy makra.
+Ačkoli kompilátor nemá samostatné preprocesoru, direktivy popsané v této části jsou zpracovávány jako by došlo k jedné. Slouží k pomáhají v podmíněné kompilace. Na rozdíl od jazyka C a C++ direktivy nelze použít tyto direktivy makra.
 
-Direktivy preprocesoru musí být pouze pokyn na řádek.
+Direktivy preprocesoru musí být pouze instrukce na řádek.
 
-## <a name="see-also"></a>Viz také
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

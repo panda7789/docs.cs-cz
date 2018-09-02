@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual Basic code, walkthroughs
 - walkthroughs [Visual Basic]
 ms.assetid: e4e1f849-e1ce-4cf7-8483-d9b4c4887a8e
-ms.openlocfilehash: 7248f352f95f2883fda9c92386f6ed769f9f2bf8
-ms.sourcegitcommit: bd4fa78f5a46133efdead1bc692a9aa2811d7868
+ms.openlocfilehash: 5211e1cc55c4af9735f59e4ddecc11acb24b8ea0
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42792370"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43452791"
 ---
 # <a name="visual-basic-language-walkthroughs"></a>Návody pro jazyk Visual Basic
 Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobrým začátkem získávání informací o produktu nebo konkrétní oblast.  
@@ -47,7 +47,7 @@ Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobr�
  [Implementace dědičnosti s objekty COM](../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
  Ukazuje, jak pomocí jazyka Visual Basic 6.0 můžete vytvořit objekt modelu COM, který obsahuje třídy a pak použít jako základní třídy v jazyce Visual Basic.  
   
- [Multithreading](http://msdn.microsoft.com/library/2cbf5116-8499-4af9-818c-6f7c1c2ad2c9)  
+ [Multithreading](https://msdn.microsoft.com/library/2cbf5116-8499-4af9-818c-6f7c1c2ad2c9)  
  Ukazuje, jak vytvořit aplikaci s více vlákny, která hledá výskytů slova do textového souboru.  
   
  [Určení, kam objekt My.Application.Log zapisuje informace](../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)  
@@ -62,7 +62,7 @@ Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobr�
  [Vytváření vlastních součástí naslouchajících protokolům](../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)  
  Ukazuje, jak vytvořit vlastní protokol naslouchací proces a nakonfigurujte ho tak, aby naslouchala na výstupu `My.Application.Log` objektu.  
   
- [Vložení typů ze spravovaných sestavení](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)  
+ [Vložení typů ze spravovaných sestavení](https://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)  
  Popisuje, jak vytvořit sestavení a klientský program, který začleňuje typy z něj.  
   
  [Ověření, že hesla jsou složitá (Visual Basic)](../visual-basic/programming-guide/language-features/strings/walkthrough-validating-that-passwords-are-complex.md)  
@@ -77,8 +77,8 @@ Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobr�
  [Manipulace se soubory pomocí metod rozhraní .NET Framework](../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
  Ukazuje, jak používat [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody pro zjištění informací o souboru, vyhledávání řetězce v souboru a zápis do souboru.  
   
- [Uchování objektu v jazyce Visual Basic](http://msdn.microsoft.com/library/cb0a0917-08d5-4578-ad2b-3764ccf6167f)  
+ [Uchování objektu v jazyce Visual Basic](https://msdn.microsoft.com/library/cb0a0917-08d5-4578-ad2b-3764ccf6167f)  
  Ukazuje, jak vytvořit jednoduchý objekt a zachovat data do souboru.  
   
- [Podpora včasného testování funkcí generování před využitím](http://msdn.microsoft.com/library/764c17a4-cd95-4c23-bf63-d92d9c5adfb2)  
+ [Podpora včasného testování funkcí generování před využitím](https://msdn.microsoft.com/library/764c17a4-cd95-4c23-bf63-d92d9c5adfb2)  
  Ukazuje, jak včasného testování vývoje, ve kterém nejprve zápis testů jednotek a teprve pak píšete kód zdroj provádět testy úspěšné.

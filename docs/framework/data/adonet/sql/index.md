@@ -2,12 +2,12 @@
 title: SQL Server a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: c18b1fb1-2af1-4de7-80a4-95e56fd976cb
-ms.openlocfilehash: cfb24be22ebec9a49c489ddcbff4824c4cd3cf34
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 32fc946f46ddac63d87b7e5a3d8f7120799f7223
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42935081"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43423075"
 ---
 # <a name="sql-server-and-adonet"></a>SQL Server a ADO.NET
 Tato část popisuje funkce a chování, které jsou specifické pro zprostředkovatele dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>).  
@@ -45,4 +45,4 @@ Tato část popisuje funkce a chování, které jsou specifické pro zprostředk
  [Mapování datového typu v ADO.NET](../../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
  [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [Načítání a úpravy dat v ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -6,54 +6,54 @@ helpviewer_keywords:
 - nodes [XAML Services], XAML node stream
 - XAML [XAML Services], XAML node streams
 ms.assetid: 7c11abec-1075-474c-9d9b-778e5dab21c3
-ms.openlocfilehash: fc27426e4d48ae519fc743c8a4f7eb3d1e6a4e81
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 100de0a897538527b76b1a53cf40d59a8804d3ae
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33566649"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43423241"
 ---
 # <a name="understanding-xaml-node-stream-structures-and-concepts"></a>Principy struktur a koncepcí datových proudů uzlů XAML
-XAML čtení a zápis XAML, jak jsou implementované v rozhraní .NET Framework XAML Services jsou založené na návrh konceptu datový proud uzlu XAML. Datový proud uzlu XAML je koncepci sady uzlů XAML. V této koncepci procesor XAML provede strukturu uzlu vztahy v jazyce XAML, jeden v čase. V každém okamžiku existuje pouze jeden záznam na aktuální nebo aktuální pozici v otevřít datový proud uzlu XAML a mnoho aspektů rozhraní API sestavy pouze informace k dispozici z této pozice. Aktuální uzel v datový proud uzlu XAML lze popsat jako objekt, člen nebo hodnota. Tak, že považuje XAML jako datový proud uzlu XAML, můžete XAML čtečky komunikovat s zapisovače XAML a povolit program k zobrazení, pracovat s nebo alter obsah datový proud uzlu XAML při zatížení cestu nebo uložení operace cestu, která zahrnuje XAML. Rozhraní API návrhu XAML čtení a zápis a koncept datový proud uzlu XAML jsou například podobné předchozí související čtečky a návrhy zapisovače a koncepty, [!INCLUDE[TLA#tla_xmldom](../../../includes/tlasharptla-xmldom-md.md)] a <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> třídy. Toto téma popisuje koncepty datový proud uzlu XAML a popisuje, jak můžete napsat rutiny, které pracují se reprezentace XAML na úrovni uzlu XAML.  
+XAML čtečky a zapisovače XAML, jak je implementován v rozhraní .NET Framework XAML Services jsou založeny na konceptu návrhu datový proud uzlu XAML. Datový proud uzlu XAML je koncepci sadu uzlů XAML. V tomto koncepci procesoru XAML vás provede struktura uzel vztahů v XAML, jeden najednou. V každém okamžiku v otevřít datový proud uzlu XAML jenom jednomu záznamu v aktuální nebo current pozici existuje a mnoho aspektů rozhraní API sestavy pouze informace k dispozici z této pozici. Aktuální uzel v datovém proudu uzlu XAML lze popsat jako objekt, člen nebo hodnota. Zpracováním XAML jako datový proud uzlu XAML XAML čtenáři komunikovat se zapisovači XAML a povolit program k zobrazení, pracovat s nebo změnit obsah datový proud uzlu XAML během cesta načtení nebo uložení cesta operace, která zahrnuje XAML. Návrh XAML čtečky a zapisovače rozhraní API a koncept datový proud uzlu XAML podobají předchozí související čtečky a zapisovače návrhy a koncepty, jako [!INCLUDE[TLA#tla_xmldom](../../../includes/tlasharptla-xmldom-md.md)] a <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> třídy. Toto téma popisuje koncepty datový proud uzlu XAML a popisuje, jak může zapisovat rutiny, které pracují s reprezentací XAML na úrovni uzlu XAML.  
   
 <a name="loading_into_a_xaml_reader"></a>   
-## <a name="loading-xaml-into-a-xaml-reader"></a>Načtení XAML do čtečky XAML  
- Základní <xref:System.Xaml.XamlReader> třída nedeklaruje konkrétní technika pro načtení počáteční XAML do čtečky XAML. Místo toho odvozené třídě deklaruje a implementuje načítání techniku, včetně obecné vlastnosti a omezení jeho vstupní zdroj pro jazyk XAML. Například <xref:System.Xaml.XamlObjectReader> čte grafu objektů, počínaje od vstupní zdroj jeden objekt, který reprezentuje kořenový server WSUS nebo základní. <xref:System.Xaml.XamlObjectReader> Pak vytvoří datový proud uzlu XAML z grafu objektu.  
+## <a name="loading-xaml-into-a-xaml-reader"></a>Načítání XAML do čtečky XAML  
+ Základní <xref:System.Xaml.XamlReader> třídy nedeklaruje konkrétní postup načítání počáteční XAML do čtečky XAML. Místo toho odvozená třída deklaruje a implementuje načítání techniku, včetně obecné vlastnosti a omezení v jeho vstupního zdroje pro XAML. Například <xref:System.Xaml.XamlObjectReader> přečte grafu objektů, spouští se ze vstupního zdroje jeden objekt, který představuje kořenový server WSUS nebo base. <xref:System.Xaml.XamlObjectReader> Pak vytvoří datový proud uzlu XAML z grafu objektů.  
   
- Většina viditelného rozhraní .NET Framework XAML Services – definované <xref:System.Xaml.XamlReader> je podtřídou <xref:System.Xaml.XamlXmlReader>. <xref:System.Xaml.XamlXmlReader> načte počáteční XAML, buď načítání textového souboru přímo prostřednictvím datového proudu nebo cesta nebo nepřímo prostřednictvím čtečky související třídy, jako jsou například <xref:System.IO.TextReader>. <xref:System.Xaml.XamlReader> Si lze představit jako obsahující celého vstupní zdroj XAML po byl načten. Ale <xref:System.Xaml.XamlReader> základní rozhraní API je navržené tak, aby čtečka je interakci s jednoho uzlu XAML. Při prvním načtení první jeden uzel, na které narazíte je kořenem XAML a její spuštění objektu.  
+ Většina viditelného definovaných rozhraní .NET Framework XAML Services <xref:System.Xaml.XamlReader> je podtřídou <xref:System.Xaml.XamlXmlReader>. <xref:System.Xaml.XamlXmlReader> načte počáteční XAML, buď načtením do textového souboru přímo prostřednictvím datového proudu nebo souboru cesty nebo nepřímo prostřednictvím třídy související čtečky <xref:System.IO.TextReader>. <xref:System.Xaml.XamlReader> Si lze představit jako obsahující celého vstupního zdroje XAML po jeho načtení. Ale <xref:System.Xaml.XamlReader> základní rozhraní API je navržený tak, aby čtenář dixons carphone se jeden uzel XAML. Při prvním načtení, první jeden uzel, se kterými je kořenový adresář XAML a jeho spuštění objekt.  
   
-### <a name="the-xaml-node-stream-concept"></a>Koncept datový proud uzlu XAML  
- Pokud znáte obecně více DOM, jedná stromu nebo na základě dotazů přístup k přístupu na základě XML technologie, užitečné způsob, jak conceptualize datový proud uzlu XAML je následující. Představte si, že je načteno XAML DOM nebo stromu, kde je každý uzel možné úplně rozbalen a poté jsou předloženy lineárně. Jako přechodu prostřednictvím uzly, vám může být procházení "v" nebo "na" úrovní, které by byly relevantní pro DOM, ale datový proud uzlu XAML by neměly být explicitně sledovat vzhledem k tomu, že tyto úrovně koncepty nejsou relevantní pro datový proud uzlu. Datový proud uzlu má "aktuální" pozice, ale pokud jsou uloženy dalších částí datového proudu sami jako odkazy, každý aspekt datový proud uzlu než aktuální umístění uzlu je mimo zobrazení.  
+### <a name="the-xaml-node-stream-concept"></a>Koncept Stream uzlu XAML  
+ Pokud jste obecně více do hloubky modelu DOM, stromu jedná nebo založené na dotazech přístupu k přístupu k technologie založené na XML, je užitečný způsob, jak pohodlným datový proud uzlu XAML následujícím způsobem. Představte si, že je načteno XAML modelu DOM nebo stromové struktury, ve kterém je každý uzel je to možné úplně rozbalen a potom prezentovaná lineárně. Jako postupoval uzly vám může být procházení "v" nebo "out" úrovní, které by byly relevantní pro modelu DOM, ale datový proud uzlu XAML neudržuje explicitně sledování protože tyto koncepty úrovně nejsou relevantní pro datový proud uzlu. Datový proud uzlu má "aktuální" pozici, ale pokud jste uložili jiné části datového proudu sami sebe jako odkazy, každý aspekt datový proud uzlu, než je aktuální pozice uzlu je mimo zobrazení.  
   
- Koncept datový proud uzlu XAML má významné výhody, pokud přejdete prostřednictvím datový proud celého uzlu, budete mít jistotu, že byl zpracován celý XAML reprezentace; nemusíte si dělat starosti dotazu, operace DOM nebo některé nelineární přístup k informacím zpracování se byl vynechán některé části dokončení reprezentace XAML. Z tohoto důvodu je reprezentace datový proud uzlu XAML ideální pro připojení XAML čtení a zápis XAML i pro poskytování systému kde můžete vložit vlastní proces, který funguje mezi jednotlivé fáze XAML zpracování operace čtení a zápis. V mnoha případech řazení uzly v datový proud uzlu XAML je úmyslně optimalizované nebo přeuspořádány čtenářům XAML a jak může vypadat pořadí v zdrojový text, binary nebo grafu objektu. Toto chování je určený k vynucení architektura zpracování XAML při němž jsou XAML zapisovače nikdy v pozici, které se mají vrátit "" v datovém proudu uzlu. V ideálním případě by všechny XAML operací zápisu by měla být schopný tak, aby fungoval založena na kontext schématu plus aktuální pozici datový proud uzlu.  
+ Koncept datový proud uzlu XAML má významné výhodu v tom, že pokud při procházení datový proud celého uzlu, budete mít jistotu, že mají zpracovat celou znázornění XAML; nemusíte se obávat, že dotaz, operace DOM nebo jiný nelineárních přístup k informacím o zpracování byl vynechán některá část dokončení zastoupení XAML. Z tohoto důvodu je reprezentace datový proud uzlu XAML ideální pro připojení XAML čtečky a zapisovače XAML i pro poskytování systému ve kterém můžete vložit vlastní proces, který funguje mezi jednotlivými fázemi pro čtení a zápisu operace zpracování XAML. V mnoha případech řazení uzly v datovém proudu uzlu XAML je úmyslně optimalizované nebo přeuspořádány čtenářům XAML a jak pořadí se může objevit zdrojový text, binární soubor nebo objekt grafu. Toto chování slouží vynutit architektuře zpracování s XAML, kterým jsou XAML zapisovače nikdy v umístění, které se mají vrátit "" v datovém proudu uzlu. V ideálním případě by všechny XAML operace zápisu by být možné tak, aby fungoval založená na schéma kontext a aktuální pozici datovém proudu uzlu.  
   
 <a name="a_basic_reading_node_loop"></a>   
-## <a name="a-basic-reading-node-loop"></a>Základní čtení uzly smyčka  
- Základní čtení uzly smyčka pro zkoumání datový proud uzlu XAML se skládá z následujících koncepty. Pro účely tohoto uzlu smyčky popsané v tomto tématu se předpokládá, že čtete založený na textu, čitelná pro člověka XAML souboru pomocí <xref:System.Xaml.XamlXmlReader>. Odkazy v této části najdete konkrétní smyčky uzlu XAML API implementované <xref:System.Xaml.XamlXmlReader>.  
+## <a name="a-basic-reading-node-loop"></a>Smyčku základní čtení uzlu  
+ Základní čtení uzlu smyčky pro zkoumání datový proud uzlu XAML se skládá z následujících konceptů. Pro účely tohoto uzlu smyčky jak je popsáno v tomto tématu se předpokládá, že čtete založený na textu, čitelné XAML soubor pomocí <xref:System.Xaml.XamlXmlReader>. Odkazy v této části najdete konkrétní smyčky uzlu XAML rozhraní API implementované <xref:System.Xaml.XamlXmlReader>.  
   
--   Ujistěte se, že nejste na konci datový proud uzlu XAML (zkontrolujte <xref:System.Xaml.XamlXmlReader.IsEof%2A>, nebo použijte <xref:System.Xaml.XamlXmlReader.Read%2A> vrátit hodnotu). Pokud jste na konci tohoto datového proudu, není aktuální uzel a má ukončit.  
+-   Ujistěte se, že zatím nejste na konci datový proud uzlu XAML (zkontrolujte <xref:System.Xaml.XamlXmlReader.IsEof%2A>, nebo použijte <xref:System.Xaml.XamlXmlReader.Read%2A> návratová hodnota). Pokud jste na konci datového proudu, není aktuální uzel a má ukončit.  
   
--   Zkontrolujte, jaký typ uzlu datový proud uzlu XAML zpřístupní aktuálně voláním <xref:System.Xaml.XamlXmlReader.NodeType%2A>.  
+-   Zkontrolujte, jaký typ uzlu datový proud uzlu XAML nyní poskytuje voláním <xref:System.Xaml.XamlXmlReader.NodeType%2A>.  
   
--   Pokud máte přidružené zapisovače XAML objektu, který je připojený přímo, obecně volání <xref:System.Xaml.XamlWriter.WriteNode%2A> v tomto okamžiku.  
+-   Pokud máte přidružených zapisovače objektu XAML, která je připojena přímo, obecně volání <xref:System.Xaml.XamlWriter.WriteNode%2A> v tomto okamžiku.  
   
--   Závislosti na němž <xref:System.Xaml.XamlNodeType> hlášení jako aktuální záznam na aktuální uzel volání jednoho z těchto způsobů získat informace o obsahu uzlu:  
+-   Závislosti na němž <xref:System.Xaml.XamlNodeType> se ohlásí jako aktuální uzel nebo aktuální záznam volat jednu z následujících k získání informací o obsah uzlu:  
   
-    -   Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.StartMember> nebo <xref:System.Xaml.XamlNodeType.EndMember>, volání <xref:System.Xaml.XamlXmlReader.Member%2A> získat <xref:System.Xaml.XamlMember> informace o členem. Všimněte si, že může být člen <xref:System.Xaml.XamlDirective>, a proto nemusí být nutně konvenční člen definován typ předchozí objektu. Například `x:Name` u objektu se zobrazí jako člena XAML kde <xref:System.Xaml.XamlMember.IsDirective%2A> hodnotu true a <xref:System.Xaml.XamlMember.Name%2A> člena je `Name`, s jinými vlastnostmi označující, že tato direktiva je v rámci oboru názvů jazyka XAML jazyka XAML.  
+    -   Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.StartMember> nebo <xref:System.Xaml.XamlNodeType.EndMember>, volání <xref:System.Xaml.XamlXmlReader.Member%2A> získat <xref:System.Xaml.XamlMember> informace o členu. Všimněte si, že může být člen <xref:System.Xaml.XamlDirective>, a proto nemusí být nutně konvenční člen definován typ předchozí objektu. Například `x:Name` u objektu se zobrazí jako člena XAML kde <xref:System.Xaml.XamlMember.IsDirective%2A> má hodnotu true a <xref:System.Xaml.XamlMember.Name%2A> člena je `Name`, s jinými vlastnostmi označující, že tato direktiva je v oboru názvů XAML jazyka XAML.  
   
     -   Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.StartObject> nebo <xref:System.Xaml.XamlNodeType.EndObject>, volání <xref:System.Xaml.XamlXmlReader.Type%2A> získat <xref:System.Xaml.XamlType> informace o objektu.  
   
-    -   Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.Value>, volání <xref:System.Xaml.XamlXmlReader.Value%2A>. Uzel je hodnota, pouze pokud je nejjednodušší výrazu hodnoty pro člena nebo inicializace text pro objekt (ale byste měli znát typ převodu chování, jak je uvedeno v nadcházející část tohoto tématu).  
+    -   Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.Value>, volání <xref:System.Xaml.XamlXmlReader.Value%2A>. Uzel je hodnota pouze v případě, že je nejjednodušší výraz hodnotu člena nebo textové inicializace pro objekt (ale byste měli vědět o chování převodu typu, jak je uvedeno v následující části tohoto tématu).  
   
-    -   Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.NamespaceDeclaration>, volání <xref:System.Xaml.XamlXmlReader.Namespace%2A> se získat informace o oboru názvů pro uzlu oboru názvů.  
+    -   Pro <xref:System.Xaml.XamlXmlReader.NodeType%2A> z <xref:System.Xaml.XamlNodeType.NamespaceDeclaration>, volání <xref:System.Xaml.XamlXmlReader.Namespace%2A> získat informace o oboru názvů pro uzel oboru názvů.  
   
--   Volání <xref:System.Xaml.XamlXmlReader.Read%2A> přechodu čtečky XAML na další uzel v datový proud uzlu XAML a znovu opakujte kroky.  
+-   Volání <xref:System.Xaml.XamlXmlReader.Read%2A> čtečky XAML, přejděte k dalšímu uzlu v datovém proudu uzlu XAML, a opakujte znovu kroky.  
   
- Datový proud uzlu XAML poskytované rozhraní .NET Framework XAML Services XAML čtečky vždy poskytuje úplné, hloubkové traversal všech možných uzlů. Typické řízení toku techniky pro smyčku uzlu XAML zahrnuje definování text v rámci `while (reader.Read())`, vyhledávání a přepínání <xref:System.Xaml.XamlXmlReader.NodeType%2A> na každém uzlu bodu ve smyčce uzlu.  
+ Datový proud uzlu XAML poskytované rozhraní .NET Framework XAML Services XAML čtenáři vždy poskytuje úplné, podrobné procházení všech možných uzlů. Mezi dostupné techniky typické řízení toku pro smyčku uzlu XAML patří definování textu v rámci `while (reader.Read())`a přepnete <xref:System.Xaml.XamlXmlReader.NodeType%2A> v každém uzlu bodu ve smyčce uzlu.  
   
  Pokud datový proud uzlu je na konci souboru, aktuální uzel má hodnotu null.  
   
- Nejjednodušší smyčky, který používá čtení a zápis se podobá následujícímu příkladu.  
+ Nejjednodušší smyčky, která používá čtečky a zapisovače vypadá podobně jako v následujícím příkladu.  
   
 ```  
 XamlXmlReader xxr = new XamlXmlReader(new StringReader(xamlStringToLoad));  
@@ -64,88 +64,88 @@ while (xxr.Read()) {
 }  
 ```  
   
- Tady je příklad základní smyčku uzlu XAML cesta zatížení transparentně připojí XAML čtení a zápis XAML, jiné než v případě žádným způsobem při použití <xref:System.Xaml.XamlServices.Parse%2A?displayProperty=nameWithType>. Ale tato základní struktura je pak rozšířit tak, aby použít ke čtení nebo zápis scénář. Některé možné scénáře jsou následující:  
+ Tento základní příklad smyčku zatížení cesta XAML uzel připojí transparentně XAML čtečky a zapisovače XAML, to nic dělat jinak než v případě byste použili <xref:System.Xaml.XamlServices.Parse%2A?displayProperty=nameWithType>. Ale tato základní struktura je pak rozšířen použít pro čtení nebo zápis scénář. Některé možné scénáře jsou následující:  
   
--   Přepnout <xref:System.Xaml.XamlXmlReader.NodeType%2A>. Provádění různých akcí v závislosti na tom, který uzel typu načítán.  
+-   Přepnout <xref:System.Xaml.XamlXmlReader.NodeType%2A>. Proveďte různé akce v závislosti na tom, který uzel typu načítán.  
   
--   Nevolejte <xref:System.Xaml.XamlWriter.WriteNode%2A> ve všech případech. Volat pouze <xref:System.Xaml.XamlWriter.WriteNode%2A> v některých <xref:System.Xaml.XamlXmlReader.NodeType%2A> případech.  
+-   Nevolejte <xref:System.Xaml.XamlWriter.WriteNode%2A> ve všech případech. Volat pouze <xref:System.Xaml.XamlWriter.WriteNode%2A> v některých <xref:System.Xaml.XamlXmlReader.NodeType%2A> případy.  
   
--   V rámci logiku pro typ konkrétním uzlem analýza specifikace tento uzel a s nimi pracovat. Můžete například napsat pouze objekty, které pocházejí z konkrétní oboru názvů jazyka XAML a potom vyřaďte nebo odložení všechny objekty, nikoli z tohoto oboru názvů jazyka XAML. Nebo můžete vyřadit nebo jinak znovu zpracovat všechny direktivy jazyka XAML, které XAML systém nepodporuje v rámci vaší člena zpracování.  
+-   V rámci logiku pro konkrétní typ analyzovat specifika tento uzel a na jejich základě reagovat. Můžete například napsat pouze objekty, které pocházejí z konkrétní obor názvů XAML a potom vyřaďte nebo odložit všechny objekty nejsou z daného oboru názvů XAML. Nebo můžete vyřadit nebo jinak jako součást vaší člen zpracování znovu zpracovat všechny direktivy XAML, které váš systém XAML není podporováno.  
   
--   Definovat vlastní <xref:System.Xaml.XamlObjectWriter> , přepíše `Write*` metody, které by mohly mít provádění mapování typu, který obchází kontext schématu XAML.  
+-   Definování vlastní <xref:System.Xaml.XamlObjectWriter> , která přepíše `Write*` metody, pravděpodobně provádí mapování typu, který obchází kontext schématu XAML.  
   
--   Vytvořit <xref:System.Xaml.XamlXmlReader> používat kontext schématu XAML jiný než výchozí, tak přizpůsobené rozdíly v chování XAML se používají jak čtečka tak zapisovač.  
+-   Vytvořit <xref:System.Xaml.XamlXmlReader> používat jiný než výchozí kontext schématu XAML tak, aby vlastní rozdíly v chování XAML se používají i tak, že čtečky a zapisovače.  
   
-### <a name="accessing-xaml-beyond-the-node-loop-concept"></a>Přístup k nad rámec koncept smyčky uzlu XAML  
- Existují další způsoby, jak pracovat s znázornění XAML jinak než jako smyčku uzlu XAML. Například může existovat ke čtečku XAML, který může číst indexované uzlu, nebo na konkrétní přímo nástrojem přistupuje k uzly `x:Name`, pomocí `x:Uid`, nebo prostřednictvím jiné identifikátory. Rozhraní .NET framework XAML Services neposkytuje úplnou implementaci, ale poskytuje základní vzor navrhované prostřednictvím typů služeb a podpory. Další informace naleznete v tématu <xref:System.Xaml.IXamlIndexingReader> a <xref:System.Xaml.XamlNodeList>.  
+### <a name="accessing-xaml-beyond-the-node-loop-concept"></a>Přístup k XAML mimo smyčku koncept uzlu  
+ Existují další způsoby, jak pracovat s XAML reprezentaci jiných než jako smyčky uzlu XAML. Například může existovat čtečku XAML, který může číst indexované uzlu nebo zejména přímo nástrojem přistupuje k uzly `x:Name`, `x:Uid`, nebo prostřednictvím další identifikátory. Rozhraní .NET framework XAML Services neposkytuje úplnou implementaci, ale poskytuje navrhovaný model prostřednictvím typů služeb a podpory. Další informace naleznete v tématu <xref:System.Xaml.IXamlIndexingReader> a <xref:System.Xaml.XamlNodeList>.  
   
 > [!TIP]
->  Microsoft také vytváří o verzi out-of-band známé jako sada nástrojů pro XAML. Tato verze out-of-band je stále v jeho fází předběžné verze. Ale pokud jste ochotni pracovat s předběžné verze součásti, sada nástrojů pro XAML poskytuje některé zajímavé prostředky pro XAML nástrojů a statické analýzy XAML. Sada nástrojů pro XAML zahrnuje XAML DOM API, podpora pro FxCop analysis a kontext schématu XAML pro technologii Silverlight. Další informace najdete v tématu [sada nástrojů pro XAML](http://code.msdn.microsoft.com/XAML).  
+>  Microsoft také vytváří o verzi out-of-band označuje jako Microsoft XAML Toolkit. Toto vydání out-of-band stále probíhá jeho fází předběžné verze. Ale pokud jste ochotní pro práci s předběžných komponenty, Microsoft XAML Toolkit poskytuje některé zajímavé prostředky pro nástroje XAML a statické analýzy XAML. Microsoft XAML Toolkit obsahuje API modelu DOM XAML, podporu pro analýzu FxCop a kontext schématu XAML pro technologii Silverlight. Další informace najdete v tématu [Microsoft XAML Toolkit](https://code.msdn.microsoft.com/XAML).  
   
 <a name="working_with_the_current_node"></a>   
-## <a name="working-with-the-current-node"></a>Práce s aktuálním uzlu  
- Většina scénáře, které používají smyčku uzlu XAML pouze nečtou uzly. Většina scénářů zpracovat aktuální uzly a předejte každý uzel, jeden v čase do implementace <xref:System.Xaml.XamlWriter>.  
+## <a name="working-with-the-current-node"></a>Práce s aktuální uzel  
+ Většina scénářů, které používají smyčky uzlu XAML jenom nečtou uzlů. Většina scénářů zpracování aktuální uzly a předat každý uzel, jeden po druhém implementace <xref:System.Xaml.XamlWriter>.  
   
- Ve scénáři, cesta typické zatížení <xref:System.Xaml.XamlXmlReader> vytvoří datový proud uzlu XAML; uzlů XAML se zpracovávají podle logiky a kontext schématu XAML a uzly jsou předány <xref:System.Xaml.XamlObjectWriter>. Výsledný objekt grafu se pak integrovat do vaší aplikace nebo framework.  
+ Ve scénáři cesta obvyklém zatížení <xref:System.Xaml.XamlXmlReader> vytvoří datový proud uzlu XAML; uzlů XAML se zpracovávají podle logiky a kontext schématu XAML a uzly jsou předány <xref:System.Xaml.XamlObjectWriter>. Výsledný graf objektu se potom začlenit do vaší aplikace nebo rozhraní.  
   
- V typické Uložit cestu scénáři <xref:System.Xaml.XamlObjectReader> čte grafu objektů, jsou zpracovávány jednotlivé uzly XAML a <xref:System.Xaml.XamlXmlWriter> výstupy serializovaných výsledek v podobě textového souboru XAML. Klíč je, že cesty a scénáře zahrnují práci s přesně jednou uzlu XAML najednou a XAML uzly jsou k dispozici pro zpracování a standardizovaným způsobem, který je definován typ systém XAML a rozhraní.NET Framework XAML Services API.  
+ V typické Uložit cestu scénář <xref:System.Xaml.XamlObjectReader> přečte graf objektu, zpracování jednotlivých uzlů XAML a <xref:System.Xaml.XamlXmlWriter> výstupy serializovaná výsledek v podobě textového souboru XAML. Klíč je, že cesty a scénáře zahrnují práci se přesně jedna XAML uzlů najednou a uzlů XAML jsou k dispozici pro zpracování a standardizovaným způsobem, který je definován tak, že systém typů XAML a rozhraní.NET Framework XAML Services API.  
   
-### <a name="frames-and-scope"></a>Rámce a obor  
- Smyčku uzlu XAML provede datový proud uzlu XAML lineární způsobem. Datový proud uzlu prochází do objektů do členů, které obsahují další objekty a tak dále. Je často užitečné k udržování přehledu o oboru v rámci datový proud uzlu XAML implementací rámce zásobníku a koncept. To je zvlášť hodnota true, pokud jsou v ní jsou aktivně úpravě datový proud uzlu. Rámec a zásobníku podporovat, že můžete implementovat jako součást logiky smyčky uzlu může počet `StartObject` (nebo `GetObject`) a `EndObject` rozsahy jako sestup do struktury uzlu XAML, pokud je z hlediska DOM představit strukturu.  
+### <a name="frames-and-scope"></a>Rámce a oboru  
+ Smyčka uzlu XAML vás provede datový proud uzlu XAML lineárním způsobem. Datový proud uzlu prochází do objektů do členů, které obsahují další objekty a tak dále. Často je užitečné udržovat přehled o oboru v rámci datový proud uzlu XAML implementací koncept rámec a v zásobníku. To platí zejména pokud jsou v něm jsou aktivně upravit datový proud uzlu. Rámce a zásobníku podporují implementovat jako součást logiky smyčky uzel může počítat `StartObject` (nebo `GetObject`) a `EndObject` obory, jako sestup do struktury uzlu XAML, pokud je struktura mluvit z hlediska modelu DOM.  
   
 <a name="traversing_and_entering_object_nodes"></a>   
-## <a name="traversing-and-entering-object-nodes"></a>Procházení a zadáním objektu uzly  
- První uzel v uzlu datového proudu při otevření čtečkou XAML je objekt počáteční uzel kořenový objekt. Podle definice tento objekt je vždy jeden objekt uzel a nemá žádné partnerské publikace. V příkladu XAML žádné skutečné kořenový objekt je definován tak, aby měl jeden nebo více vlastností, které mají více objektů a tyto vlastnosti obsahovat člen uzly. Uzly člen pak máte jeden nebo více uzlů objektu, nebo může také ukončit v uzlu s hodnotou, se místo toho. Kořenový objekt obvykle definuje namescopes XAML, které jsou přiřazeny syntakticky jako atributy v text kód XAML ale mapování na `Namescope` typ uzlu v reprezentace datový proud uzlu XAML.  
+## <a name="traversing-and-entering-object-nodes"></a>Procházení a zadat uzly objektu  
+ Prvním uzlem v datovém proudu uzlu při otevření čtečka XAML je uzel počáteční objekt kořenového objektu. Podle definice tento objekt je vždy jeden objekt uzlu a nemá žádné partnerské uzly. V XAML jakékoli reálný příklad kořenový objekt je definován s jednu nebo více vlastností, které obsahují další objekty a členskými uzly mají tyto vlastnosti. Členskými uzly potom mít jeden nebo více uzly objektu, nebo může také ukončit v uzlu s hodnotou, se místo toho. Kořenový objekt obvykle definuje obory názvů XAML, které jsou přiřazeny syntakticky jako atributy ve značce XAML text, ale mapování na `Namescope` typ uzlu v reprezentaci datový proud uzlu XAML.  
   
- Prohlédněte si následující příklad XAML (to je libovolný XAML, není založenou na existující typy v rozhraní .NET Framework). Předpokládáme, že v tomto modelu objektu `FavorCollection` je `List<T>` z `Favor`, `Balloon` a `NoiseMaker` jsou přiřaditelný k `Favor`, `Balloon.Color` vlastnost je zálohovaný díky `Color` objekt podobná jak definuje WPF barvy jako názvy známé barev a `Color` podporuje převaděče typu atributu syntaxe.  
+ Zvažte následující příklad XAML (to je libovolný XAML, nezálohované existující typy v rozhraní .NET Framework). Předpokládejme, že v tomto modelu objektu `FavorCollection` je `List<T>` z `Favor`, `Balloon` a `NoiseMaker` jsou přiřaditelné k `Favor`, `Balloon.Color` vlastnost tímto modulem stojí `Color` objekt podobný jak definuje WPF barvy jako názvy známé barev a `Color` podporuje konvertor typu pro syntaxi atributů.  
   
-|Kód jazyka XAML|Výsledný datový proud uzlu XAML|  
+|Značky XAML|Výsledný datový proud uzlu XAML|  
 |-----------------|--------------------------------|  
 |`<Party`|`Namespace` uzel pro `Party`|  
 |`xmlns="PartyXamlNamespace">`|`StartObject` uzel pro `Party`|  
 |`<Party.Favors>`|`StartMember` uzel pro `Party.Favors`|  
 ||`StartObject` uzel pro implicitní `FavorCollection`|  
-||`StartMember` uzel pro implicitní `FavorCollection` položky vlastnost.|  
+||`StartMember` uzel pro implicitní `FavorCollection` vlastnosti položky.|  
 |`<Balloon`|`StartObject` uzel pro `Balloon`|  
-|`Color="Red"`|`StartMember` uzel pro `Color`<br /><br /> `Value` uzel pro řetězec hodnotu atributu `"Red"`<br /><br /> `EndMember` Pro `Color`|  
-|`HasHelium="True"`|`StartMember` uzel pro `HasHelium`<br /><br /> `Value` uzel pro řetězec hodnotu atributu `"True"`<br /><br /> `EndMember` Pro `HasHelium`|  
-|`>`|`EndObject` Pro `Balloon`|  
-|`<NoiseMaker>Loudest</NoiseMaker>`|`StartObject` uzel pro `NoiseMaker`<br /><br /> `StartMember` uzel pro `_Initialization`<br /><br /> `Value` uzel pro hodnotu inicializačního řetězce `"Loudest"`<br /><br /> `EndMember` uzel pro `_Initialization`<br /><br /> `EndObject` Pro `NoiseMaker`|  
-||`EndMember` uzel pro implicitní `FavorCollection` položky vlastnost.|  
+|`Color="Red"`|`StartMember` uzel pro `Color`<br /><br /> `Value` uzel pro řetězec hodnoty atributu `"Red"`<br /><br /> `EndMember` pro `Color`|  
+|`HasHelium="True"`|`StartMember` uzel pro `HasHelium`<br /><br /> `Value` uzel pro řetězec hodnoty atributu `"True"`<br /><br /> `EndMember` pro `HasHelium`|  
+|`>`|`EndObject` pro `Balloon`|  
+|`<NoiseMaker>Loudest</NoiseMaker>`|`StartObject` uzel pro `NoiseMaker`<br /><br /> `StartMember` uzel pro `_Initialization`<br /><br /> `Value` uzel pro hodnotu inicializačního řetězce `"Loudest"`<br /><br /> `EndMember` uzel pro `_Initialization`<br /><br /> `EndObject` pro `NoiseMaker`|  
+||`EndMember` uzel pro implicitní `FavorCollection` vlastnosti položky.|  
 ||`EndObject` uzel pro implicitní `FavorCollection`|  
-|`</Party.Favors>`|`EndMember` Pro `Favors`|  
-|`</Party>`|`EndObject` Pro `Party`|  
+|`</Party.Favors>`|`EndMember` pro `Favors`|  
+|`</Party>`|`EndObject` pro `Party`|  
   
- V datový proud uzlu XAML můžete spoléhat na následující chování:  
+ V datovém proudu uzlu XAML se spoléháte na toto chování:  
   
--   Pokud `Namespace` uzel existuje, přidá se do datového proudu bezprostředně před `StartObject` který deklarovaný oboru názvů jazyka XAML s `xmlns`. Podívejte se na předchozí tabulce s proud uzlu XAML a příklad znovu. Všimněte si jak `StartObject` a `Namespace` uzly se zdá, že se přehození a jejich deklarace pozice v textu značek. To je typický chování, kde uzly oboru názvů se vždy zobrazí před uzlu se vztahují na v datovém proudu uzlu. Účelem tohoto návrhu je, že informace oboru názvů je životně důležité objekt zapisovače a musí být známo před zapisovače objektu se pokusí provést typ mapování nebo jinak zpracování objektu. Umístění informací oboru názvů jazyka XAML před jeho oboru aplikace v datovém proudu usnadňuje vždy datový proud uzlu v jeho vidění pořadí zpracování.  
+-   Pokud `Namespace` uzel existuje, přidá se do datového proudu bezprostředně před `StartObject` , který je deklarován obor názvů XAML s `xmlns`. Podívejte se na předchozí tabulky pomocí XAML a příklad datovém proudu uzlu znovu. Všimněte si, že jak `StartObject` a `Namespace` uzly zdá se, že přehození oproti deklarace pozice v textu značky. Toto je zástupce chování, ve kterém uzly oboru názvů vždy zobrazují před uzlem použijí v datovém proudu uzlu. Účelem tohoto návrhu je, informace o oboru názvů je důležité objektu zapisovače a musí být známo předtím, než objekt zapisovače objekt se pokusí provést typ mapování nebo jinak zpracovat. Uvedení informace oboru názvů XAML náskok před jeho oboru aplikace v datovém proudu zjednodušuje vždy zpracovat datový proud uzlu v jeho prezentované pořadí.  
   
--   Z důvodu výše faktor je jeden nebo více `Namespace` uzlů, které si přečíst nejprve ve většině případů reálného značek při procházení uzly od začátku, není `StartObject` kořenu.  
+-   Z důvodu výše zvážit, je jeden nebo více `Namespace` uzly, které si přečíst nejprve ve většině případů značkách reálného světa při procházení uzly od začátku, ne `StartObject` kořene.  
   
--   A `StartObject` uzlu může následovat `StartMember`, `Value`, nebo okamžité `EndObject`. Nikdy následuje okamžitě jiné `StartObject`.  
+-   A `StartObject` uzlu může být následován `StartMember`, `Value`, nebo ihned `EndObject`. To se nikdy vzápětí jiného `StartObject`.  
   
--   A `StartMember` může následovat `StartObject`, `Value`, nebo okamžité `EndMember`. Můžete následuje `GetObject`, pro členy, kde hodnota by měla pocházet z existující hodnoty nadřazeného objektu, ne `StartObject` , by vytvořit instanci novou hodnotu. Můžete také provést pomocí `Namespace` uzlu, která se vztahuje na nadcházející `StartObject`. Nikdy následuje okamžitě jiné `StartMember`.  
+-   A `StartMember` může být následován `StartObject`, `Value`, nebo ihned `EndMember`. To může být následován `GetObject`, pro členy, kde hodnota by měl pocházet z existující hodnoty nadřazeného objektu spíše než `StartObject` , které byste měli vytvořit instanci novou hodnotu. To může být následován znakem `Namespace` uzlu, která se vztahuje na nadcházející `StartObject`. To se nikdy vzápětí jiného `StartMember`.  
   
--   A `Value` vlastní hodnota představuje uzel; neexistuje žádná hodnota "EndValue". Ho může následovat pouze `EndMember`.  
+-   A `Value` samotná hodnota představuje uzel; není žádný "EndValue". To může následovat pouze `EndMember`.  
   
-    -   Text XAML inicializace objektu jako může být používán konstrukce nevede strukturu hodnota objektu. Místo toho uzlem vyhrazené člena pro člena s názvem `_Initialization` je vytvořena. a tento uzel člen obsahuje hodnotu inicializačního řetězce. Pokud existuje, `_Initialization` je vždy první `StartMember`. `_Initialization` může být kvalifikovaný v některé reprezentace služby XAML s namescope XAML jazyka XAML, o vysvětlení, že `_Initialization` se nenachází ve vlastnosti definované v zálohování typy.  
+    -   Text XAML inicializace objektu by mohly používat konstrukce nemá za následek struktury hodnotu objektu. Místo toho uzel vyhrazené člena pro člena s názvem `_Initialization` se vytvoří. a tento člen uzel obsahuje inicializační řetězec hodnoty. Pokud existuje, `_Initialization` je vždy první `StartMember`. `_Initialization` může být kvalifikovaný v některých služeb reprezentace XAML s obor namescope XAML jazyka XAML pro vysvětlení, že `_Initialization` se nenachází ve vlastnosti definované v typy zálohování.  
   
-    -   Hodnota člena kombinaci představuje nastavení atributu hodnoty. Nakonec pravděpodobně převaděč hodnoty účastnící se zpracování tato hodnota a hodnota je prostý řetězec. Ale, který není vyhodnocují až zpracuje tento datový proud uzlu XAML objekt zapisovač. Objekt zapisovače XAML má nezbytné kontext schématu XAML, mapování typu systému a další podporu potřebné pro převody hodnot.  
+    -   Hodnota člena kombinaci představuje nastavení atributu hodnoty. Nakonec pravděpodobně převaděč hodnot při zpracování tato hodnota a hodnota je prostý řetězec. Nicméně, který není vyhodnocen, dokud zapisovače objektu XAML zpracuje tento datový proud uzlu. Objekt zapisovače XAML má potřebné kontext schématu XAML, mapování typu systému a další podporu potřebné pro převody hodnot.  
   
--   `EndMember` Uzlu může následovat `StartMember` uzel pro následné člena, nebo podle `EndObject` uzel vlastníka člen.  
+-   `EndMember` Uzlu může být následován znakem `StartMember` uzel pro následující člen, nebo podle `EndObject` uzlu vlastníka člena.  
   
--   `EndObject` Uzlu může následovat `EndMember` uzlu. Můžete také provést pomocí `StartObject` uzel pro případy, kdy objekty partnerské uzly v položky kolekce. Nebo můžete následované `Namespace` uzlu, která se vztahuje na nadcházející `StartObject`.  
+-   `EndObject` Uzlu může být následován `EndMember` uzlu. To může být následován znakem `StartObject` uzel pro případy, ve kterém jsou objekty partnerské uzly v položky kolekce. Nebo může být následován znakem `Namespace` uzlu, která se vztahuje na nadcházející `StartObject`.  
   
-    -   Pro jedinečný případ uzavření datový proud celého uzlu `EndObject` z kořenové nenásleduje nic; čtečka je nyní end souboru, a <xref:System.Xaml.XamlReader.Read%2A> vrátí `false`.  
+    -   Pro jedinečný případ ukončení datový proud celého uzlu `EndObject` z kořenové nenásleduje nic; čtecí modul je nyní end souboru, a <xref:System.Xaml.XamlReader.Read%2A> vrátí `false`.  
   
 <a name="value_converters_and_the_xaml_node_stream"></a>   
-## <a name="value-converters-and-the-xaml-node-stream"></a>Převodníky hodnot a datový proud uzlu XAML  
- Převaděč hodnoty je obecný termín pro rozšíření značek, převaděče typu (včetně hodnota serializátorů) nebo jiné vyhrazené třídy, která je uvedená jako převaděč hodnoty prostřednictvím systému typ XAML. Datový proud uzlu XAML použití převaděče typu a použití rozšíření značek mít velmi různé reprezentace.  
+## <a name="value-converters-and-the-xaml-node-stream"></a>Převaděče hodnot a Stream uzlu XAML  
+ Převaděč hodnoty je obecný termín pro rozšíření značek, konvertor typu (včetně hodnoty serializátory) nebo jiný vyhrazený třídu, která se hlásí jako převaděč hodnoty prostřednictvím typu systému XAML. V datovém proudu uzlu XAML mají velmi odlišné reprezentace použití převaděče typů a použití rozšíření značky.  
   
-### <a name="type-converters-in-the-xaml-node-stream"></a>Převaděče typů v datový proud uzlu XAML  
- Atribut nastavit, že server má za následek použití převaděče typu hlášení v datový proud uzlu XAML jako hodnotu člena. Datový proud uzlu XAML nebude pokoušet vytvořit objekt typ převaděče instance a předat hodnotu. Pomocí převaděče typů převod implementace vyžaduje vyvolání kontext schématu XAML a použití pro mapování typů. Kontext schématu XAML i určení, které třídy převaděč typ měli používá ke zpracování hodnota vyžaduje nepřímo. Pokud použijete výchozí kontext schématu XAML, tyto informace jsou dostupné z systém typů XAML. Pokud potřebujete informace o převaděč – třída typu na úrovni datový proud uzlu XAML před připojení k zapisovač XAML, můžete získat z <xref:System.Xaml.XamlMember> informace člena nastaveno. Ale, jinak hodnota vstup převaděče typu by měl být zachovaná v datový proud uzlu XAML jako hodnotu prostý, dokud zbývající operací, které vyžadují systém mapování typů a kontext schématu XAML se provádí, například vytvoření objektu podle XAML objekt zapisovače.  
+### <a name="type-converters-in-the-xaml-node-stream"></a>Převaděče typů v Stream uzlu XAML  
+ Atribut nastavit, že nakonec výsledkem použití převaděče typů v hlásí datový proud uzlu XAML jako hodnotu člena. Datový proud uzlu XAML se nebude pokoušet vytvořit objekt instance převaděče typů a do něj předáte hodnotu. Pomocí implementace převodu konvertor typu vyžaduje volání kontext schématu XAML a jeho použití pro mapování typu. Kontext schématu XAML dokonce určující, které třídy konvertor typu by měla sloužit ke zpracování hodnota vyžaduje nepřímo. Pokud použijete výchozí kontext schématu XAML, tyto informace jsou dostupné z typu systému XAML. Pokud potřebujete informace o převaděč třídy typu na úrovni datový proud uzlu XAML před připojení pro zápis XAML, získáte ho od <xref:System.Xaml.XamlMember> informace člen nastavena. Ale v opačném případě vstupní typ převaděče by měl být zachovaná v datovém proudu uzlu XAML jako obyčejný hodnotu, dokud se zbývající operace, které vyžadují systém mapování typů a kontext schématu XAML jsou prováděny, například vytvoření objektu pomocí XAML objekt zapisovače.  
   
- Zvažte například následující osnova – třída definice a použití XAML pro ni:  
+ Představte si třeba následující osnova – třída definice a používání XAML pro něj:  
   
 ```  
 public class BoardSizeConverter : TypeConverter {  
@@ -161,7 +161,7 @@ public class GameBoard {
 <GameBoard BoardSize="8x8"/>  
 ```  
   
- Reprezentace textu datový proud uzlu XAML pro toto použití může být vyjádřený jako následující:  
+ Textové vyjádření datový proud uzlu XAML pro toto použití může být vyjádřený jako následující:  
   
  `StartObject` s <xref:System.Xaml.XamlType> představující `GameBoard`  
   
@@ -169,53 +169,53 @@ public class GameBoard {
   
  `Value` uzel textovým řetězcem "`8x8`"  
   
- `EndMember` Odpovídá `BoardSize`  
+ `EndMember` Shody `BoardSize`  
   
- `EndObject` Odpovídá `GameBoard`  
+ `EndObject` Shody `GameBoard`  
   
- Všimněte si tento datový proud uzlu je žádná instance typ převaděče. Ale můžete získat informace o typu převaděč voláním <xref:System.Xaml.XamlMember.TypeConverter%2A?displayProperty=nameWithType> na <xref:System.Xaml.XamlMember> pro `BoardSize`. Pokud máte platný kontext schématu XAML, můžete také vyvolat metodu převaděč získáním instance z <xref:System.Xaml.Schema.XamlValueConverter%601.ConverterInstance%2A>.  
+ Všimněte si, že neexistuje žádná instance konvertor typu v tomto datovém proudu uzlu. Ale můžete získat informace o typu konvertoru voláním <xref:System.Xaml.XamlMember.TypeConverter%2A?displayProperty=nameWithType> na <xref:System.Xaml.XamlMember> pro `BoardSize`. Pokud máte platný kontext schématu XAML, můžete také vyvolat metody převaděč získat instanci ze <xref:System.Xaml.Schema.XamlValueConverter%601.ConverterInstance%2A>.  
   
-### <a name="markup-extensions-in-the-xaml-node-stream"></a>Rozšíření značek v datový proud uzlu XAML  
- Použití rozšíření značek je uvedená v datový proud uzlu XAML jako uzel k objektu v rámci člena, kde objekt představuje instanci rozšíření značek. Proto použití rozšíření značek jsou poskytovány více explicitně reprezentace datový proud uzlu než použití převaděče typu je a představuje další informace. <xref:System.Xaml.XamlMember> informace nelze slyšeli, že jste nic o rozšíření značek, protože využití je situational a liší se v každém případě možné značek; není vyhrazené a implicitní na typ nebo člen stejně jako v případě pomocí převaděče typu.  
+### <a name="markup-extensions-in-the-xaml-node-stream"></a>Rozšíření značek v Stream uzlu XAML  
+ Použití rozšíření značky se hlásí v datovém proudu uzlu XAML jako uzel objektu v členu, kde objekt představuje instanci rozšíření značek. Proto použití rozšíření značky se zobrazí více explicitně v reprezentaci datový proud uzlu než je použití převaděče typů a provede další informace. <xref:System.Xaml.XamlMember> informace nelze mít uvedli jako vám nic o rozšíření značek, protože využití je povědomí a liší se v každém případě je to možné značek; není vyhrazené a implicitní za typ nebo člen stejně jako v případě pomocí převaděče typů.  
   
- Reprezentace datový proud uzlu Rozšíření značek jako uzly objekt je v případě i v případě použití rozšíření značek byl proveden v podobě atributu v text kód XAML (což je často případ). Použití rozšíření značek, které používají element formuláře explicitní objekt jsou zpracovány stejným způsobem.  
+ Reprezentace datového proudu uzlu přípony označení jako uzly objektu platí i v případě použití rozšíření značky proběhla do formuláře atributů ve značkách XAML text (což se stává často). Použití rozšíření značky, které používají formuláři prvku objektu explicitní zachází stejně.  
   
- V rámci uzlu objektu rozšíření značek může být členy této – rozšíření značek. Reprezentace datový proud uzlu XAML zachovává použití tohoto – rozšíření značek, zda který být poziční parametr využití nebo použití s explicitní pojmenované parametry.  
+ V rámci uzlu objektu rozšíření značek mohou být členy tohoto rozšíření značek. Reprezentace datový proud uzlu XAML zachová využití tohoto rozšíření značek, jestli používání pozičních parametrů více dopředu nebo využití pomocí explicitní pojmenované parametry.  
   
- Pro použití poziční parametr datový proud uzlu XAML obsahuje vlastnost definované jazyka XAML `_PositionalParameters` který zaznamenává využití. Tato vlastnost je obecný <xref:System.Collections.Generic.List%601> s <xref:System.Object> omezení. Omezení je objekt a není řetězec, protože opačném případě využití poziční parametru může obsahovat vnořené značek použití rozšíření v něm. K poziční parametry z použití může iteraci v rámci seznamu a používat indexery pro jednotlivé seznamu hodnot.  
+ Pro použití pozičních parametrů více dopředu, datový proud uzlu XAML obsahuje vlastnost definovaný jazyk XAML `_PositionalParameters` , který zaznamenává využití. Tato vlastnost je obecný <xref:System.Collections.Generic.List%601> s <xref:System.Object> omezení. Omezení je objekt a není řetězec, protože odcizenou pozičních parametrů více dopředu využití může zahrnovat použití rozšíření značky vnořené v něm. Pro přístup k poziční parametry z využití, může iteraci v rámci seznamu a pomocí indexerů seznamu jednotlivých hodnot.  
   
- Pro použití s názvem parametru představuje všechny pojmenované parametry uzlu člen s tímto názvem v datovém proudu uzlu. Hodnoty členů, nemusí nutně být řetězce, protože může být použití rozšíření vnořené značek.  
+ Pojmenovaným parametrem využití každý pojmenovaný parametr reprezentované jako uzel člen s tímto názvem v datovém proudu uzlu. Člen hodnoty nejsou nutně řetězce, protože to může být použití rozšíření značky vnořené.  
   
- `ProvideValue` ještě není volá rozšíření se z kódu. Nicméně je volána, pokud připojíte XAML čtení a zápis XAML tak, aby `WriteEndObject` je volána v uzlu Rozšíření značek, když jej prozkoumat v datovém proudu uzlu. Z tohoto důvodu musíte obecně stejné XAML schématu kontext k dispozici, jako by se dají použít k formuláři grafu objektů v cestě zatížení. V opačném `ProvideValue` z všechny značky, rozšíření můžete vyvolat výjimky tady, protože nemá očekávaný služby, které jsou k dispozici.  
+ `ProvideValue` ještě není vyvolána rozšíření, od značky. Nicméně, je vyvolána, pokud připojíte XAML čtečky a zapisovače XAML tak, aby `WriteEndObject` vyvolání při zkoumání v datovém proudu uzlu na uzel rozšíření značek. Z tohoto důvodu musíte obecně stejné XAML schématu kontextu k dispozici, protože by se použily, aby bylo možné formulář grafu objektů v cestě zatížení. V opačném případě `ProvideValue` z jakoukoli marži rozšíření může vyvolat výjimky, protože nemá očekávaný služby, které jsou k dispozici.  
   
 <a name="xaml_and_xml_languagedefined_members_in_the_xaml_node_stream"></a>   
-## <a name="xaml-and-xml-language-defined-members-in-the-xaml-node-stream"></a>XAML a XML jazyk definovat členy v datový proud uzlu XAML  
- Některé členy vydávají na datový proud uzlu XAML z důvodu interpretace a konvence čtečku XAML místo prostřednictvím explicitního <xref:System.Xaml.XamlMember> lookup nebo konstrukce. Direktivy jazyka XAML jsou často členy. V některých případech je v rámci čtení XAML, který představuje direktivu do datový proud uzlu XAML. Jinými slovy, zadejte původní XAML text nebyla explicitně zadat direktivu člena, ale čtečky XAML vloží – direktiva splníte strukturální XAML názvů a sestavu informací o v datový proud uzlu XAML předtím, než dojde ke ztrátě těchto informací.  
+## <a name="xaml-and-xml-language-defined-members-in-the-xaml-node-stream"></a>XAML a XML definice jazyk členy v Stream uzlu XAML  
+ Některé členy zavedení do datový proud uzlu XAML z důvodu interpretace a konvence čtečku XAML namísto prostřednictvím explicitní <xref:System.Xaml.XamlMember> vyhledávání nebo konstrukce. Tyto členy jsou často, direktivy XAML. V některých případech je operace čtení XAML, který představuje direktivu do datový proud uzlu XAML. Jinými slovy, původní vstup XAML text nebyl explicitně zadat member – direktiva, ale čtečky XAML vloží směrnice splníte a strukturální XAML konvence a sestavy informace v datovém proudu uzlu XAML předtím, než dojde ke ztrátě informací.  
   
- Následující seznam uvádí všechny případů, kde je očekávána čtečku XAML zavádět direktivy člen uzlu XAML a jak se tento uzel člen identifikovat v rozhraní .NET Framework XAML Services implementace.  
+ Následující poznámky k seznamu, které jsou všechny případy, kde je očekávána čtečku XAML zavést direktiv uzel člena XAML, a jak se tento uzel člen identifikovat v implementacích rozhraní .NET Framework XAML Services.  
   
--   **Inicializace text pro uzel k objektu:** je název tohoto uzlu člen `_Initialization`, představuje direktivu XAML a je definován v oboru názvů jazyka XAML jazyka XAML. Můžete získat statické entity pro z <xref:System.Xaml.XamlLanguage.Initialization%2A>.  
+-   **Inicializace text pro objekt uzlu:** je název tohoto uzlu člen `_Initialization`, představuje direktivu XAML a je definován v oboru názvů jazyka XAML XAML. Statické entity můžete získat z <xref:System.Xaml.XamlLanguage.Initialization%2A>.  
   
--   **Poziční parametry pro rozšíření značek:** je název tohoto uzlu člen `_PositionalParameters`, a je definován v oboru názvů jazyka XAML jazyka XAML. Vždy obsahuje obecné seznam objektů, z nichž každý je poziční parametr předem oddělených rozdělení na `,` oddělovací znak dodávaný ve vstupu XAML. Můžete získat statické entity pro poziční parametry direktiva z <xref:System.Xaml.XamlLanguage.PositionalParameters%2A>.  
+-   **Poziční parametry pro rozšíření značek:** je název tohoto uzlu člen `_PositionalParameters`, a je definován v oboru názvů jazyka XAML XAML. Vždy obsahuje obecný seznam objektů, z nichž každý je poziční parametr předem oddělené rozdělení na `,` oddělovací znak jako dodaného vstup XAML. Statické entity můžete získat pro direktivu poziční parametry z <xref:System.Xaml.XamlLanguage.PositionalParameters%2A>.  
   
--   **Neznámý obsah:** je název tohoto uzlu člen `_UnknownContent`. Přesněji řečeno, je <xref:System.Xaml.XamlDirective>, a je definován v oboru názvů jazyka XAML jazyka XAML. Tato direktiva slouží jako sentinel pro případy, kdy element XAML objektu s obsahem ve zdroji XAML, ale žádná vlastnost obsahu lze určit podle aktuálně dostupné kontext schématu XAML. Tento případ můžete zjistit v datový proud uzlu XAML kontrolou pro členy s názvem `_UnknownContent`. Pokud nebyla provedena žádná další akce v zatížení cesta datový proud uzlu XAML, výchozí <xref:System.Xaml.XamlObjectWriter> vyvolá pokus o `WriteEndObject` když narazí `_UnknownContent` člen libovolného objektu. Výchozí hodnota <xref:System.Xaml.XamlXmlWriter> nevyvolá výjimku a považuje za implicitní člena. Můžete získat statické entity pro `_UnknownContent` z <xref:System.Xaml.XamlLanguage.UnknownContent%2A>.  
+-   **Neznámá obsah:** je název tohoto uzlu člen `_UnknownContent`. Přesněji řečeno, jde <xref:System.Xaml.XamlDirective>, a je definován v oboru názvů jazyka XAML XAML. Tato direktiva se používá jako sentinel pro případy, kdy elementu objektu XAML obsahuje obsah, zdroje XAML, ale v tuto chvíli k dispozici kontext schématu XAML se dá určit bez vlastnost content. Tento případ, v datovém proudu uzlu XAML můžete zjistit kontrolou pro členy s názvem `_UnknownContent`. Pokud nebyla provedena žádná další akce v XAML uzel zatížení cesty toku, výchozí <xref:System.Xaml.XamlObjectWriter> vyvolá pokus o `WriteEndObject` když narazí `_UnknownContent` člen libovolného objektu. Výchozí hodnota <xref:System.Xaml.XamlXmlWriter> nevyvolá a považuje za člena implicitní. Můžete získat statické entity pro `_UnknownContent` z <xref:System.Xaml.XamlLanguage.UnknownContent%2A>.  
   
--   **Vlastnost kolekce kolekce:** i když má základní typ CLR kolekce třídu, která se obvykle používá pro jazyk XAML vyhrazené s názvem vlastnosti, která obsahuje položky kolekce, systém typů XAML před zálohování typu nezná tuto vlastnost rozlišení. Místo toho datový proud uzlu XAML zavádí `Items` zástupný text jako člena kolekce typ jazyka XAML. Implementace rozhraní .NET Framework XAML Services název tato direktiva je člen v datovém proudu uzlu `_Items`. Konstanty pro tato direktiva můžete získat z <xref:System.Xaml.XamlLanguage.Items%2A>.  
+-   **Vlastnost kolekce kolekce:** i když má vyhrazené s názvem vlastnosti, která obsahuje položky kolekce základní typ CLR tohoto třídu kolekce, která se obvykle používá pro XAML, tato vlastnost není znám o typu systému XAML před zálohování typu řešení. Místo toho představuje datový proud uzlu XAML `Items` zástupný text jako člen kolekce typu XAML. V implementaci rozhraní .NET Framework XAML Services název této směrnice / člena v datovém proudu uzlu je `_Items`. Konstanty pro tuto direktivu lze získat z <xref:System.Xaml.XamlLanguage.Items%2A>.  
   
-     Všimněte si, že datový proud uzlu XAML může obsahovat ve vlastnosti položky s položkami, které není budou parseable na základě typu řešení zálohování a kontext schématu XAML. Například  
+     Všimněte si, že datový proud uzlu XAML může obsahovat vlastnosti Items s položkami, které ukázat nebudou parseable podle typu řešení zálohování a kontext schématu XAML. Například  
   
--   **XML definované členy:** definované XML `xml:base`, `xml:lang` a `xml:space` členové jsou oznamovány klientu jako direktivy jazyka XAML s názvem `base`, `lang`, a `space` v rozhraní .NET Framework XAML Services implementace. Obor názvů XML je obor názvů pro tyto `http://www.w3.org/XML/1998/namespace`. Konstanty pro každou z nich můžete získat z <xref:System.Xaml.XamlLanguage>.  
+-   **XML definované členy:** XML definované `xml:base`, `xml:lang` a `xml:space` členy označené jako s názvem direktivy XAML `base`, `lang`, a `space` v rozhraní .NET Framework XAML Services implementace. Obor názvů pro toto je obor názvů XML `http://www.w3.org/XML/1998/namespace`. Konstanty pro každou z nich můžete získat z <xref:System.Xaml.XamlLanguage>.  
   
 ## <a name="node-order"></a>Uzel pořadí  
- V některých případech <xref:System.Xaml.XamlXmlReader> změny pořadí uzlů XAML v datový proud uzlu XAML, a pořadí uzly zobrazí, pokud zobrazit do kódu nebo pokud zpracovat jako XML. Probíhá proto, aby bylo možné pořadí uzlů tak, aby <xref:System.Xaml.XamlObjectWriter> může zpracovat datový proud uzlu dopředné způsobem.  V rozhraní .NET Framework XAML Services čtečka XAML změní uzly místo opuštění této úlohy do zapisovače XAML jako optimalizace výkonu pro XAML objekt zapisovače příjemci datový proud uzlu.  
+ V některých případech <xref:System.Xaml.XamlXmlReader> změní pořadí uzlů XAML v proudu uzlu XAML, a pořadí uzly zobrazí-li zobrazit v kódu nebo pokud zpracování formátu XML. To se provádí, aby bylo možné pořadí uzly tak, aby <xref:System.Xaml.XamlObjectWriter> může zpracovat datový proud uzlu dopředné způsobem.  V rozhraní .NET Framework XAML Services čtečky XAML změní pořadí uzly spíše než byste museli opustit tuto úlohu do zapisovače XAML optimalizace výkonu pro spotřebitele zapisovače objektu XAML datový proud uzlu.  
   
- Některé direktivy jsou určeny konkrétně k poskytují další informace pro vytvoření objektu z objektu elementu. Jsou tyto direktivy: `Initialization`, `PositionalParameters`, `TypeArguments`, `FactoryMethod`, `Arguments`. Rozhraní .NET Framework XAML Services XAML čtečky pokusí umístit tyto direktivy jako první členy v datovém proudu uzlu následující objektu `StartObject`, z důvodů, které jsou vysvětlené v další části.  
+ Některé direktivy jsou určené konkrétně pro zajištění Další informace pro vytvoření objektu z objektu elementu. Tyto směrnice jsou: `Initialization`, `PositionalParameters`, `TypeArguments`, `FactoryMethod`, `Arguments`. Pokus o tyto direktivy umístit jako první členy v datovém proudu uzlu po objektu rozhraní .NET Framework XAML Services XAML čtenáři `StartObject`, z důvodů, které jsou vysvětlené v následující části.  
   
-### <a name="xamlobjectwriter-behavior-and-node-order"></a>Chování XamlObjectWriter a pořadí uzlu  
- `StartObject` k <xref:System.Xaml.XamlObjectWriter> není nutně signálu do zapisovače objektu XAML můžete okamžitě vytvořit instanci objektu. XAML zahrnuje několik funkcí jazyka, které umožňují možné inicializovat objekt s další vstup a nespoléhala se zcela na vyvolání výchozí konstruktor k vytvoření počáteční objektu a teprve potom vlastnosti nastavení. Tyto funkce patří: <xref:System.Windows.Markup.XamlDeferLoadAttribute>; inicializace textu. [x: TypeArguments –](../../../docs/framework/xaml-services/x-typearguments-directive.md); poziční parametry rozšíření značek; metodami pro vytváření a přidružených [x: Arguments](../../../docs/framework/xaml-services/x-arguments-directive.md) uzly (XAML 2009). Jednotlivých případech zpoždění konstrukce vlastním objektu a protože je datový proud uzlu přeuspořádány, zapisovače objektu XAML můžete spoléhá na chování vždy, když je členem počáteční došlo ve skutečnosti vytváření instance, které nejsou konkrétně konstrukce směrnice pro tento typ objektu.  
+### <a name="xamlobjectwriter-behavior-and-node-order"></a>Chování XamlObjectWriter a pořadí uzlů  
+ `StartObject` k <xref:System.Xaml.XamlObjectWriter> není nutně signál, který objekt zapisovače XAML okamžitě vytvořit instanci objektu. XAML obsahuje několik funkcí jazyka, které umožňují inicializovat objekt s další vstupy a nespoléhala se výhradně na vyvolání výchozího konstruktoru vytvoří počáteční objekt a teprve pak nastavení vlastnosti. Tyto funkce patří: <xref:System.Windows.Markup.XamlDeferLoadAttribute>; inicializace textu. [x: TypeArguments](../../../docs/framework/xaml-services/x-typearguments-directive.md); poziční parametry rozšíření značek; metody pro vytváření objektů a související [x: Arguments](../../../docs/framework/xaml-services/x-arguments-directive.md) uzly (XAML 2009). Každá z těchto případů zpoždění konstrukce skutečný objekt a vzhledem k tomu, že je pořadí změníte datový proud uzlu, můžete zapisovače objektu XAML Spolehněte se na chování ve skutečnosti vytváření instance pokaždé, když se zjistila člen start, které nejsou konkrétně konstrukce směrnice pro tento typ objektu.  
   
 ### <a name="getobject"></a>Funkce GetObject  
- `GetObject` představuje uzel XAML kde místo vytváření nového objektu, zapisovač XAML objektu by měla místo toho získat hodnotu obsahující vlastnosti objektu. Obvyklý případ kde `GetObject` zjistil se uzel v uzlu XAML datový proud je pro objekt kolekce nebo objekt slovníku, pokud je vlastnost obsahující úmyslně jen pro čtení v základní typ objektu modelu. V tomto scénáři kolekce nebo slovník často je vytvořen a inicializován (obvykle prázdné) logikou inicializace vlastnícím typu.  
+ `GetObject` představuje uzel s XAML, kde místo vytváření nového objektu zapisovače objektu XAML by měl místo toho získat hodnoty vlastnosti nadřazeného objektu. Obvyklý případ kde `GetObject` nebude nalezen uzel v uzlu XAML je pro objekt kolekce nebo objekt slovníku při nadřazenou vlastnost je záměrně jen pro čtení v objektovém modelu základního typu. V tomto scénáři kolekci ani slovník často je vytvořen a inicializován (obvykle prázdná) logikou inicializace vlastnícího typu.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xaml.XamlObjectReader>  

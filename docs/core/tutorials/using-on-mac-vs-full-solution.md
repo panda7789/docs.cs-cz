@@ -4,12 +4,12 @@ description: Toto téma vás provede sestavení řešení .NET Core, která obsa
 author: guardrex
 ms.author: mairaw
 ms.date: 06/12/2017
-ms.openlocfilehash: f8dfbb712957d22e5b4aa16920e7b003a79c4444
-ms.sourcegitcommit: e8dc507cfdaad504fc9d4c83d28d24569dcef91c
+ms.openlocfilehash: 17d7cc5b085b4d47ebf1e5ed9a766be9d5d8b01f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "36314695"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43457040"
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
@@ -95,7 +95,7 @@ Testování částí poskytuje software automatizované testování během vývo
            public void IgnoreCasing()
            {
                var wordCount = WordCount.GetWordCount("Jack", "Jack jack");
-   
+
                Assert.NotEqual(2, wordCount);
            }
        }
@@ -117,7 +117,7 @@ Testování částí poskytuje software automatizované testování během vývo
    ![Ikona ukotvení panelu testy jednotek](./media/using-on-mac-vs-full-solution/vsmacfull_UnitTestPanelDockIcon.png)
 
 1. Klikněte na tlačítko **spustit všechny** tlačítko.
-   
+
    Test se nezdaří, což je správný výsledek. Testovací metoda uplatňuje této dvě instance `inputString`, "Jan", nebudou zobrazeny z řetězce "Konektor jack" k dispozici na `GetWordCount` metoda. Protože slov velká a malá písmena se dostaneme out `GetWordCount` metody, jsou vráceny dvě instance. Výraz, který 2 *není roven* 2 selže. Toto je správný výsledek a logiku testovacím je dobrá.
 
    ![Selhání testu](./media/using-on-mac-vs-full-solution/vsmacfull09.png)
@@ -135,8 +135,8 @@ Testování částí poskytuje software automatizované testování během vývo
    [InlineData(0, "Ting", "Does not appear in the string.")]
    [InlineData(1, "Ting", "Ting appears once.")]
    [InlineData(2, "Ting", "Ting appears twice with Ting.")]
-   public void CountInstancesCorrectly(int count, 
-                                       string searchWord, 
+   public void CountInstancesCorrectly(int count,
+                                       string searchWord,
                                        string inputString)
    {
        Assert.NotEqual(count, WordCount.GetWordCount(searchWord,
@@ -145,7 +145,7 @@ Testování částí poskytuje software automatizované testování během vývo
    ```
 
    `CountInstancesCorrectly` Kontroluje, zda `GetWordCount` metoda správně vrátí. `InlineData` Poskytuje počet hledaným slovem a vstupní řetězec ke kontrole. Testovací metody spustí jednou pro každý řádek dat. Znovu Upozorňujeme, že jste už uplatnění selhání nejprve s použitím `Assert.NotEqual`, i když víte, že jsou správné počty v datech a, hodnoty odpovídají počtu vrácených `GetWordCount` metody. Provádí se krok záměrně selháním testu může jevit plýtvání čas první, ale Kontrola logiky testu pomocí služeb při selhání se nejdřív je důležité kontrolu na logiku testy. Pokud narazíte na testovací metodu, která úspěšný, pokud očekáváte, že selhala, našli jste chybu v logice testu. Je vhodné úsilí, abyste mohli tento krok pokaždé, když vytváříte testovací metody.
-   
+
 1. Uložte soubor a znovu spusťte testy. Velká a malá písmena test úspěšný, ale selže tři počet testů. To je přesně to co očekáváte, které se provedou.
 
    ![Selhání testu](./media/using-on-mac-vs-full-solution/vsmacfull11.png)
@@ -192,4 +192,4 @@ Testování částí poskytuje software automatizované testování během vývo
 
 ## <a name="see-also"></a>Viz také:
 
-[Visual Studio 2017 for Mac zpráva k vydání verze](/visualstudio/releasenotes/vs2017-mac-relnotes)
+* [Visual Studio 2017 for Mac zpráva k vydání verze](/visualstudio/releasenotes/vs2017-mac-relnotes)

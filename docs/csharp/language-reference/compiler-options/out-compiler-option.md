@@ -8,15 +8,15 @@ helpviewer_keywords:
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-ms.openlocfilehash: 0f33f003f31a3a668342c517d1562e80b0410e00
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ea371dc968c8d8bf1569d17531cf7f6faff1d315
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33218745"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43418577"
 ---
 # <a name="-out-c-compiler-options"></a>-out (možnosti kompilátoru C#)
-**-Out** možnost určuje název souboru výstupního souboru.  
+**-Out** parametr určuje název výstupního souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,45 +26,46 @@ ms.locfileid: "33218745"
   
 ## <a name="arguments"></a>Arguments  
  `filename`  
- Název výstupního souboru vytvořené kompilátoru.  
+ Název výstupní soubor vytvořený kompilátorem.  
   
 ## <a name="remarks"></a>Poznámky  
- Na příkazovém řádku je možné zadat více výstupní soubory pro kompilaci. Kompilátor očekává, že jeden nebo více zdrojových souborů následující **-out** možnost. Potom všechny soubory zdrojového kódu se zkompiluje do výstupního souboru, který určeného **-out** možnost.  
+ Na příkazovém řádku je možné zadat víc výstupních souborů pro kompilaci. Kompilátor očekává, že jeden nebo více zdrojových souborů po **-out** možnost. Potom všechny soubory zdrojového kódu se zkompiluje do výstupní soubor určený parametrem, který **-out** možnost.  
   
  Zadejte úplný název a příponu souboru, který chcete vytvořit.  
   
  Pokud nezadáte název výstupního souboru:  
   
--   .exe bude trvat její název ze zdrojového souboru kódu, který obsahuje **hlavní** metoda.  
+-   .Exe bude trvat, než jeho název souboru se zdrojovým kódem, který obsahuje **hlavní** metody.  
   
--   .Dll nebo .netmodule převezme název z první souboru se zdrojovým kódem.  
+-   .Dll nebo .netmodule bude trvat, než jeho název prvního souboru se zdrojovým kódem.  
   
- Soubor zdrojového kódu použít zkompilovat jednu výstupní soubor nelze použít ve stejné kompilaci pro kompilaci jiného výstupního souboru.  
+ Soubor zdrojového kódu používá ke kompilaci jeden výstupní soubor nelze použít ve stejné kompilaci pro kompilaci jiné výstupní soubor.  
   
- Při vytváření více výstupních souborů v kompilaci příkazového řádku, mějte na paměti, že pouze jeden výstupních souborů může být sestavení a pouze první výstupní soubor zadaný (implicitně nebo explicitně s **-out**) může být sestavení .  
+ Při vytváření několika výstupních souborů do příkazového řádku kompilace, mějte na paměti, kterou lze pouze jednu z výstupních souborů sestavení a pouze první výstupní soubor zadaný (implicitně nebo explicitně s **-out**) může být sestavení .  
   
- Všechny moduly, vytvořené jako součást kompilace stát soubory přidružené k žádné sestavení také vytvořené ve kompilaci. Použití [ildasm.exe](../../../framework/tools/ildasm-exe-il-disassembler.md) zobrazíte manifest sestavení zobrazíte přidružené soubory.  
+ Všechny moduly, které vytváří jako část kompilace stát soubory přidružené k žádné sestavení také vytvořit za kompilace. Použití [ildasm.exe](../../../framework/tools/ildasm-exe-il-disassembler.md) zobrazíte zobrazit přidružené soubory v manifestu sestavení.  
   
- -Out – možnost kompilátoru je nutná pro exe jako cíl přátelského sestavení. Další informace najdete v části [přátelských sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).  
+ -Out – možnost kompilátoru je nutná pro exe cíl sestavení typu friend. Další informace najdete v části [přátelských sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevření projektu **vlastnosti** stránky.  
+1.  Otevřete v projektu **vlastnosti** stránky.  
   
-2.  Klikněte **aplikace** stránku vlastností.  
+2.  Klikněte na tlačítko **aplikace** stránku vlastností.  
   
-3.  Změnit **název sestavení** vlastnost.  
+3.  Upravit **název sestavení** vlastnost.  
   
-     Nastavení této možnosti kompilátoru programu: <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> je jen pro čtení vlastnost, která je určena kombinací typu projektu (exe, knihovny a tak dále) a název sestavení. Úprava jednoho nebo obou těchto vlastností bude nutné nastavit název výstupního souboru.  
+     Programové nastavení tohoto parametru kompilátoru: <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> je vlastnost jen pro čtení, což je určeno ke kombinaci komponent typu projektu (exe, knihovny a tak dále) a název sestavení. Úprava jeden nebo oba z těchto vlastností bude nutné nastavit název výstupního souboru.  
   
 ## <a name="example"></a>Příklad  
- Kompilace `t.cs` a vytvoření výstupního souboru `t.exe`, a také sestavení `t2.cs` a vytvoření výstupního souboru modulu `mymodule.netmodule`:  
+ Kompilace `t.cs` a vytvořit výstupní soubor `t.exe`, a také sestavení `t2.cs` a vytvoří výstupní soubor modulu `mymodule.netmodule`:  
   
 ```console  
 csc t.cs -out:mymodule.netmodule -target:module t2.cs  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Přátelská sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Přátelská sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

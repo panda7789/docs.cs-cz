@@ -11,35 +11,35 @@ helpviewer_keywords:
 - layout [Windows Forms], TableLayoutPanel control
 - TableLayoutPanel control [Windows Forms], about TableLayoutPanel control
 ms.assetid: 337661c8-61cb-44ee-93e0-3662bddec327
-ms.openlocfilehash: 4514901870d9073b611746070a1f53d01db95766
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: be7ef4055d809349fe97a3d48e29158c5449576b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33541362"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43419826"
 ---
 # <a name="tablelayoutpanel-control-overview"></a>TableLayoutPanel – přehled ovládacího prvku
-<xref:System.Windows.Forms.TableLayoutPanel> Řízení uspořádá jeho obsah v mřížce. Protože je prováděna rozložení i v době návrhu a běh, ho můžete změnit dynamicky jako změny prostředí aplikace. To umožňuje ovládacích prvků v panelu se úměrně změnit velikost, tak může reagovat na změny, jako je například změna velikosti nadřazeného ovládacího prvku nebo text délka změna z důvodu lokalizace.  
+<xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek uspořádá její obsah do mřížky. Protože je prováděna rozložení i v době návrhu a běhu, můžete změnit dynamicky se změnami prostředí aplikace. To umožňuje ovládací prvky v panelu proporcionálně velikost, tak můžou reagovat na změny, jako je například změna velikosti nadřazeného ovládacího prvku nebo text délka mění kvůli lokalizace.  
   
- Libovolný ovládací prvek Windows Forms může být podřízená <xref:System.Windows.Forms.TableLayoutPanel> řízení, včetně ostatní instance <xref:System.Windows.Forms.TableLayoutPanel>. Umožňuje vytvořit sofistikované rozložení, které se změny v době běhu přizpůsobit.  
+ Libovolný ovládací prvek Windows Forms může být podřízený <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek, včetně dalších instancí <xref:System.Windows.Forms.TableLayoutPanel>. To umožňuje vytvořit sofistikované rozložení, které přizpůsoboval změnám v době běhu.  
   
- <xref:System.Windows.Forms.TableLayoutPanel> Řízení můžete rozšířit, aby odpovídala nové ovládací prvky, když budou přidány, v závislosti na hodnotě <xref:System.Windows.Forms.TableLayoutPanel.RowCount%2A>, <xref:System.Windows.Forms.TableLayoutPanel.ColumnCount%2A>, a <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A> vlastnosti. Nastavení buď <xref:System.Windows.Forms.TableLayoutPanel.RowCount%2A> nebo <xref:System.Windows.Forms.TableLayoutPanel.ColumnCount%2A> vlastnost na hodnotu 0 určuje, že <xref:System.Windows.Forms.TableLayoutPanel> bude nevázaných v odpovídající směru.  
+ <xref:System.Windows.Forms.TableLayoutPanel> Ovládacího prvku můžete rozšířit tak, aby vyhovovaly nových ovládacích prvků, když se přidají, závisí na hodnotě <xref:System.Windows.Forms.TableLayoutPanel.RowCount%2A>, <xref:System.Windows.Forms.TableLayoutPanel.ColumnCount%2A>, a <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A> vlastnosti. Nastavení buď <xref:System.Windows.Forms.TableLayoutPanel.RowCount%2A> nebo <xref:System.Windows.Forms.TableLayoutPanel.ColumnCount%2A> vlastnost na hodnotu 0 určuje, že <xref:System.Windows.Forms.TableLayoutPanel> bude nevázaných ve směru odpovídající.  
   
- Můžete taky řídit směr rozšíření (vodorovné nebo svislé), po <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek je plná podřízených ovládacích prvků. Ve výchozím nastavení <xref:System.Windows.Forms.TableLayoutPanel> řízení rozšíří dolů přidáním řádků.  
+ Můžete také řídit směr rozbalení (horizontal nebo vertical) po <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek je plná podřízených ovládacích prvků. Ve výchozím nastavení <xref:System.Windows.Forms.TableLayoutPanel> rozbalí přidáním řádků ovládacího prvku.  
   
- Pokud chcete řádky a sloupce, které se chovají jinak než výchozí chování, můžete řídit vlastnosti řádků a sloupců pomocí <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> a <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> vlastnosti. Vlastnosti řádky nebo sloupce můžete nastavit samostatně.  
+ Pokud chcete řádky a sloupce, které se chovají odlišně od výchozí chování, můžete řídit vlastnosti řádků a sloupců pomocí <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> a <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> vlastnosti. Můžete nastavit vlastnosti řádky nebo sloupce samostatně.  
   
- <xref:System.Windows.Forms.TableLayoutPanel> Řízení přidá následující vlastnosti do jeho podřízených ovládacích prvků: `Cell`, `Column`, `Row`, `ColumnSpan`, a `RowSpan`.  
+ <xref:System.Windows.Forms.TableLayoutPanel> Ovládacího prvku přidá následující vlastnosti do jeho podřízených ovládacích prvků: `Cell`, `Column`, `Row`, `ColumnSpan`, a `RowSpan`.  
   
- Sloučením buněk v <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek pro nastavení `ColumnSpan` nebo `RowSpan` vlastností podřízeného prvku.  
+ Můžete sloučit buňky v <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku tak, že nastavíte `ColumnSpan` nebo `RowSpan` vlastnosti na podřízený ovládací prvek.  
   
-1.  [Postupy: Zarovnání a roztažení ovládacího prvku v ovládacím prvku TableLayoutPanel](http://msdn.microsoft.com/library/ms171688\(v=vs.110\))  
+1.  [Postupy: Zarovnání a roztažení ovládacího prvku v ovládacím prvku TableLayoutPanel](how-to-align-and-stretch-a-control-in-a-tablelayoutpanel-control.md)  
   
-2.  [Postupy: Nastavení rozpětí řádků a sloupců v ovládacím prvku TableLayoutPanel](http://msdn.microsoft.com/library/ms171687\(v=vs.110\))  
+2.  [Postupy: Nastavení rozpětí řádků a sloupců v ovládacím prvku TableLayoutPanel](how-to-span-rows-and-columns-in-a-tablelayoutpanel-control.md)  
   
-3.  [Postupy: Upravování sloupců a řádků v ovládacím prvku TableLayoutPanel](http://msdn.microsoft.com/library/ms171686\(v=vs.110\))  
+3.  [Postupy: Upravování sloupců a řádků v ovládacím prvku TableLayoutPanel](how-to-edit-columns-and-rows-in-a-tablelayoutpanel-control.md)  
   
-4.  [Postupy: Uspořádání ovládacích prvků na Windows Forms s použitím ovládacího prvku TableLayoutPanel](http://msdn.microsoft.com/library/w4yc3e8c\(v=vs.110\))  
+4.  [Postupy: Uspořádání ovládacích prvků na Windows Forms s použitím ovládacího prvku TableLayoutPanel](https://msdn.microsoft.com/library/w4yc3e8c\(v=vs.110\))  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.FlowLayoutPanel>  

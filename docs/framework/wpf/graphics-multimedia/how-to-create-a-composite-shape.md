@@ -9,15 +9,15 @@ helpviewer_keywords:
 - composite shapes [WPF]
 - graphics [WPF], composite shapes
 ms.assetid: 8e5c7ef4-d7ed-4c43-afc9-ca01325c300b
-ms.openlocfilehash: 6bb2a8a32938682af52343b971b840dbed16bcef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9892120d13a067586dbf6472a6873b6a52c2d8b4
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33559966"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43457080"
 ---
 # <a name="how-to-create-a-composite-shape"></a>Postupy: Vytvoření složeného tvaru
-Tento příklad ukazuje postup vytvoření složeného obrazců pomocí <xref:System.Windows.Media.Geometry> objekty a jejich zobrazení pomocí <xref:System.Windows.Shapes.Path> elementu. V následujícím příkladu <xref:System.Windows.Media.LineGeometry>, <xref:System.Windows.Media.EllipseGeometry>a <xref:System.Windows.Media.RectangleGeometry> se používají s <xref:System.Windows.Media.GeometryGroup> vytvořte kompozitních tvaru. Geometrie jsou pak vykreslovány pomocí <xref:System.Windows.Shapes.Path> elementu.  
+Tento příklad ukazuje, jak vytvořit složené obrazce pomocí <xref:System.Windows.Media.Geometry> objektů a jejich zobrazení pomocí <xref:System.Windows.Shapes.Path> elementu. V následujícím příkladu <xref:System.Windows.Media.LineGeometry>, <xref:System.Windows.Media.EllipseGeometry>a <xref:System.Windows.Media.RectangleGeometry> produkty slouží spolu s <xref:System.Windows.Media.GeometryGroup> vytvoření složeného tvaru. Geometrie jsou pak vykreslen <xref:System.Windows.Shapes.Path> elementu.  
   
 ## <a name="example"></a>Příklad  
  [!code-xaml[GeometrySample#19](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/combininggeometriesexample.xaml#19)]  
@@ -27,9 +27,9 @@ Tento příklad ukazuje postup vytvoření složeného obrazců pomocí <xref:Sy
   
  Následující obrázek znázorňuje tvar vytvořený v předchozím příkladu.  
   
- ![Kombinovaná geometrie vytvořený objekt GeometryGroup](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-compositegeometryexample1.jpg "wcpsdk_graphicsmm_compositegeometryexample1")  
-Složené geometrie  
+ ![Složený geometrie vytvořené pomocí GeometryGroup](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-compositegeometryexample1.jpg "wcpsdk_graphicsmm_compositegeometryexample1")  
+Složený geometrie  
   
- Složitější tvary, například mnohoúhelníky a obrazců pomocí zakřivené segmenty, může být vytvořený <xref:System.Windows.Media.PathGeometry>. Příklad způsobu vytvoření obrazce pomocí <xref:System.Windows.Media.PathGeometry>, najdete v části [vytvořit obrazce pomocí Objekt PathGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-shape-by-using-a-pathgeometry.md).  I když v tomto příkladu vykreslí obrazce pomocí obrazovky <xref:System.Windows.Shapes.Path> elementu <xref:System.Windows.Media.Geometry> objekty může taky sloužit k popisu obsahu <xref:System.Windows.Media.GeometryDrawing> nebo <xref:System.Windows.Media.DrawingContext>. Může být rovněž používají pro výstřižek a stiskněte klávesu testování.  
+ Složitější obrazce, jako je například mnohoúhelníků a obrazců pomocí zakřivené segmenty, mohou být vytvořeny pomocí <xref:System.Windows.Media.PathGeometry>. Příklad ukazuje, jak vytvořit pomocí tvaru <xref:System.Windows.Media.PathGeometry>, naleznete v tématu [vytvoření tvaru použitím PathGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-shape-by-using-a-pathgeometry.md).  I když v tomto příkladu vykreslí tvar na obrazovce pomocí <xref:System.Windows.Shapes.Path> elementu <xref:System.Windows.Media.Geometry> objekty také lze popsat její obsah <xref:System.Windows.Media.GeometryDrawing> nebo <xref:System.Windows.Media.DrawingContext>. Může se také využít k oříznutí a spuštění testu.  
   
- Tato ukázka je součástí větší ukázky; Kompletní příklad, najdete v článku [geometrie ukázka](http://go.microsoft.com/fwlink/?LinkID=159989).
+ V tomto příkladu je součástí větší ukázky; úplnou ukázku najdete v tématu [geometrie ukázka](https://go.microsoft.com/fwlink/?LinkID=159989).

@@ -2,20 +2,20 @@
 title: Nastavení vlastností Use a Style
 ms.date: 03/30/2017
 ms.assetid: c09a0600-116f-41cf-900a-1b7e4ea4e300
-ms.openlocfilehash: 74d5baca77fd1af6260def762094b3ce01816179
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d5e6409e3921d40b14b940786f6344aea657b84b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33506813"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43421347"
 ---
 # <a name="setting-the-use-and-style-properties"></a>Nastavení vlastností Use a Style
-Tento příklad znázorňuje způsob použití vlastností použití a stylu na <xref:System.ServiceModel.XmlSerializerFormatAttribute> a <xref:System.ServiceModel.DataContractFormatAttribute>. Tyto vlastnosti vliv na způsob formátování zprávy. Ve výchozím nastavení, je formátovaného textu zprávy se stylem nastavena na <xref:System.ServiceModel.OperationFormatStyle.Document>. Tato nastavení lze na úrovni kontraktu služby nebo úroveň kontrakt operaci.  
+Tento příklad znázorňuje způsob použití vlastností použití a stylu na <xref:System.ServiceModel.XmlSerializerFormatAttribute> a <xref:System.ServiceModel.DataContractFormatAttribute>. Tyto vlastnosti vliv na způsob formátování zprávy. Ve výchozím nastavení, text zprávy je formátováno s stylu nastavena na <xref:System.ServiceModel.OperationFormatStyle.Document>. Tato nastavení se dá nastavit na úrovni kontraktu služby nebo úroveň operace kontraktu.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- <xref:System.ServiceModel.DataContractFormatAttribute.Style%2A> Vlastnost stylu určuje způsob formátování WSDL metadata pro službu. Možné hodnoty jsou <xref:System.ServiceModel.OperationFormatStyle.Document>, a <xref:System.ServiceModel.OperationFormatStyle.Rpc>. RPC znamená, že WSDL reprezentace zprávy vyměňují operace obsahuje parametry, jako by šlo vzdálené volání procedury. Následuje příklad.  
+ <xref:System.ServiceModel.DataContractFormatAttribute.Style%2A> Vlastnost stylu určuje formátování WSDL metadat služby. Možné hodnoty jsou <xref:System.ServiceModel.OperationFormatStyle.Document>, a <xref:System.ServiceModel.OperationFormatStyle.Rpc>. RPC znamená, že WSDL reprezentace pro operace, které si vyměňují zprávy obsahuje parametry, jako by šlo vzdálené volání procedury. Následuje příklad.  
   
 ```xml  
 <wsdl:message name="IUseAndStyleCalculator_Add_InputMessage">  
@@ -24,7 +24,7 @@ Tento příklad znázorňuje způsob použití vlastností použití a stylu na 
 </wsdl:message>  
 ```  
   
- Nastavení stylu <xref:System.ServiceModel.OperationFormatStyle.Document> znamená, že reprezentace WSDL obsahuje jediný prvek, který reprezentuje dokument, který se vyměňují operace, jak je znázorněno v následujícím příkladu.  
+ Nastavení stylu <xref:System.ServiceModel.OperationFormatStyle.Document> znamená, že reprezentace WSDL obsahuje jeden element, který představuje dokument, který se vyměňují pro operace, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <wsdl:message name="IUseAndStyleCalculator_Add_InputMessage">  
@@ -32,7 +32,7 @@ Tento příklad znázorňuje způsob použití vlastností použití a stylu na 
 </wsdl:message>  
 ```  
   
- <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> Vlastnost určuje formát zprávy. Možné hodnoty jsou <xref:System.ServiceModel.OperationFormatUse.Literal> a <xref:System.ServiceModel.OperationFormatUse.Encoded>; výchozí hodnota je <xref:System.ServiceModel.OperationFormatUse.Literal>. Literál znamená, že zpráva není literál instanci schéma ve schématu WSDL, jak je znázorněno v následujícím dokumentu / literálu příklad.  
+ <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> Vlastnost určuje formát zprávy. Možné hodnoty jsou <xref:System.ServiceModel.OperationFormatUse.Literal> a <xref:System.ServiceModel.OperationFormatUse.Encoded>; výchozí hodnota je <xref:System.ServiceModel.OperationFormatUse.Literal>. Literál znamená, že zprávy je literál instance schématu ve schématu WSDL, jak je znázorněno v následujícím dokumentu nebo literál příklad.  
   
 ```xml  
 <Add xmlns="http://Microsoft.ServiceModel.Samples">  
@@ -41,7 +41,7 @@ Tento příklad znázorňuje způsob použití vlastností použití a stylu na 
 </Add>  
 ```  
   
- Kódovaný znamená, že schémata ve schématu WSDL jsou abstraktní specifikace, které jsou zakódovány podle pravidel najít v protokolu SOAP 1.1 část 5. Následuje příklad RPC/kódováno.  
+ Kódování znamená, že se schémata ve schématu WSDL jsou abstraktní specifikace, které jsou kódovány podle pravidel nalezena v protokolu SOAP 1.1 oddíl 5. Následuje příklad RPC a Encoded.  
   
 ```xml  
 <q1:Add xmlns:q1="http://Microsoft.ServiceModel.Samples">  
@@ -50,11 +50,11 @@ Tento příklad znázorňuje způsob použití vlastností použití a stylu na 
 </q1:Add>  
 ```  
   
- WS-I Basic 1.0 profil zakáže použití <xref:System.ServiceModel.OperationFormatUse.Encoded> a měli používat jenom ho Pokud to vyžaduje starší verze služby. `Encoded` Formát zprávy je k dispozici pouze při použití třídy XmlSerializer.  
+ WS-I základní profil 1.0 zakazují použití <xref:System.ServiceModel.OperationFormatUse.Encoded> a musí ho používáte jenom v případě potřeby ve starších verzí služeb. `Encoded` Formát zprávy je k dispozici pouze při používání třídy XmlSerializer.  
   
- Abyste mohli zobrazit zprávy se odesílají a přijímají, je na základě této ukázce [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md). Konfigurace služby a zdrojového kódu bylo upraveno, aby povolit a využívat trasování a protokolování zpráv. Kromě toho <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> byl nakonfigurován bez zabezpečení, takže zaznamenané zprávy lze zobrazit v nezašifrované podobě. Výsledný protokoly trasování (System.ServiceModel.e2e a Message.log) by měl zobrazit pomocí [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Trasování jsou konfigurována pro vytvořit ve složce C:\LOGS. Před spuštěním ukázky vytvořte složku. Chcete-li zobrazit obsah zprávy v nástroji Prohlížeč trasování, vyberte **zprávy** v vlevo a vpravo podokna nástroje.  
+ Aby bylo možné zobrazit zprávy se odeslané a přijaté, tato ukázka je založena na [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md). Konfigurace služby a zdrojový kód se upravila tak povolit a využívat trasování a protokolování zpráv. Kromě toho <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> není nakonfigurovaná bez zabezpečení, takže protokolované zprávy lze zobrazit v nezašifrované podobě. Výsledný protokoly trasování (System.ServiceModel.e2e a Message.log) by měl zobrazit pomocí [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Bude vytvořena ve složce C:\LOGS se konfigurují trasování. Vytvořte složku před spuštěním ukázky. Chcete-li zobrazit obsah zprávy v nástroji prohlížeče trasování, vyberte **zprávy** vlevo a vpravo podokna nástroje.  
   
- Následující kód ukazuje kontrakt služby s <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> vlastnost nastavena na hodnotu <xref:System.ServiceModel.OperationFormatUse> a formát text zprávy se změnil z výchozí <xref:System.ServiceModel.OperationFormatStyle> k <xref:System.ServiceModel.OperationFormatStyle.Document>.  
+ Následující kód ukazuje kontrakt služby s <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> vlastnost nastavena na hodnotu <xref:System.ServiceModel.OperationFormatUse> a změnit formát těla zprávy z výchozího <xref:System.ServiceModel.OperationFormatStyle> k <xref:System.ServiceModel.OperationFormatStyle.Document>.  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples"),  
@@ -73,24 +73,24 @@ public interface IUseAndStyleCalculator
 }  
 ```  
   
- Rozdíl mezi různými <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> a <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A> nastavení, je upravit ve službě, znovu vygenerovat klienta, spuštění vzorového a zkontrolujte soubor c:\logs\message.logs pomocí nástroje prohlížeče trasování služeb. Také sledovat dopad na metadata zobrazením http://localhost/ServiceModelSamples/service.svc?wsdl. Metadata pro služby je obvykle rozdělena na více stránkách. Tato stránka hlavní wsdl obsahuje WSDL vazby, ale zobrazit http://localhost/ServiceModelSamples/service.svc?wsdl=wsdl0 sledovat definice zpráv.  
+ Pokud chcete zobrazit rozdíl mezi různými <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> a <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A> nastavení, upravovat ve službě, znovu vygenerovat klienta, spusťte ukázku a zkontrolujte soubor c:\logs\message.logs pomocí nástroje prohlížeče trasování služeb. Také sledovat dopad na metadata zobrazením http://localhost/ServiceModelSamples/service.svc?wsdl. Metadata služby je obvykle rozdělit do více stránek. Na stránce hlavní wsdl obsahuje vazby WSDL, ale zobrazit http://localhost/ServiceModelSamples/service.svc?wsdl=wsdl0 sledovat definice zpráv.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Vytvořte C:\LOGS adresář pro protokolování zpráv. Síťová služba zápisu oprávnění pro tento adresář uživateli přidělte.  
+2.  Vytvoření C:\LOGS adresáře pro protokolování zpráv. Dejte uživateli oprávnění pro tento adresář k zápisu síťové služby.  
   
-3.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\UseAndStyle`  
   

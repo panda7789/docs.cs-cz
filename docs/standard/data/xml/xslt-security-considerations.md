@@ -5,58 +5,58 @@ ms.technology: dotnet-standard
 ms.assetid: fea695be-617c-4977-9567-140e820436fc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9c448e4cd4f40865a11a23af51e134da4b8ba2f7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e369f570adf51355d02c73bde5d4b1a462e59870
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33575411"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43422790"
 ---
 # <a name="xslt-security-considerations"></a>Aspekty zabezpečení XSLT
-Jazyk XSLT obsahuje bohatou sadu funkcí, které vám poskytnou značnou část výkon a flexibilitu. Obsahuje řadu funkcí, které sice užitečná, může také zneužít vnějšího zdroje. Abyste mohli bezpečně používat XSLT, musíte pochopit druhy problémy zabezpečení, které vznikají při použití XSLT a základní strategií, které můžete použít k toto riziko omezit.  
+Jazyka XSLT obsahuje bohatou sadu funkcí, které vám poskytnou spoustu výkon a flexibilitu. Obsahuje řadu funkcí, které sice užitečná, může také zneužít vnějšího zdroje. Pokud chcete bezpečně používat XSLT, musí porozumět typům problémy se zabezpečením, které vznikají při použití XSLT a základní strategie, které můžete použít pokud chcete toto riziko omezit.  
   
 ## <a name="xslt-extensions"></a>Rozšíření XSLT  
- Dvě oblíbených XSLT rozšíření jsou objekty skriptování a rozšíření list stylu. Tato rozšíření umožňují XSLT procesor pro spouštění kódu.  
+ Dvě oblíbené rozšíření XSLT jsou objekty, skriptování a rozšíření list stylu. Tato rozšíření umožňují spouštět kód procesoru XSLT.  
   
--   Rozšíření objektů přidat programovací funkce XSL transformace.  
+-   Objekty rozšíření přidat možnosti programování na transformace XSL.  
   
--   Skripty, lze jej vkládat do listu styl pomocí `msxsl:script` elementu rozšíření.  
+-   Skripty můžete vložit pomocí list stylu `msxsl:script` element rozšíření.  
   
 ### <a name="extension-objects"></a>Rozšíření objektů  
- Rozšíření objekty jsou přidány, pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metoda. Sada oprávnění FullTrust je vyžadovaný jako podpora objektů rozšíření. Tím se zajistí, že zvýšení úrovně oprávnění neodehrává při spuštění kódu objekt rozšíření. Probíhá pokus o volání <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metoda bez oprávnění FullTrust za následek výjimku zabezpečení hlášeny.  
+ Rozšíření objekty jsou přidány pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metody. Sada oprávnění FullTrust nutný k podpoře objektů rozšíření. Tím se zajistí, že zvýšení úrovně oprávnění neproběhne ani při spuštění rozšíření objektového kódu. Pokus o volání <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metody bez oprávnění FullTrust za následek vyvolané výjimce zabezpečení.  
   
-### <a name="style-sheet-scripts"></a>Skripty list stylu  
- Skripty, lze jej vkládat do listu styl pomocí `msxsl:script` elementu rozšíření. Podpora skriptu je volitelná funkce v <xref:System.Xml.Xsl.XslCompiledTransform> třídu, která je ve výchozím nastavení zakázané. Může být povoleno skriptování nastavením <xref:System.Xml.Xsl.XsltSettings.EnableScript%2A?displayProperty=nameWithType> vlastnost `true` a předání <xref:System.Xml.Xsl.XsltSettings> do objektu <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metoda.  
+### <a name="style-sheet-scripts"></a>Styl listu skriptů  
+ Skripty můžete vložit pomocí list stylu `msxsl:script` element rozšíření. Skript podpory je volitelná funkce na <xref:System.Xml.Xsl.XslCompiledTransform> třídu, která je ve výchozím nastavení zakázané. Skriptování, můžete jej povolit nastavením <xref:System.Xml.Xsl.XsltSettings.EnableScript%2A?displayProperty=nameWithType> vlastnost `true` a předání <xref:System.Xml.Xsl.XsltSettings> objektu <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metoda.  
   
 #### <a name="guidelines"></a>Pokyny  
- Povolte skriptování, pouze když šablony stylů pochází z důvěryhodného zdroje. Pokud nemůžete ověřit zdroj šablony stylů nebo šablony stylů nepochází z důvěryhodného zdroje, předejte `null` nastavení argumentu XSLT.  
+ Povolte skriptování, pouze když stylů pochází z důvěryhodného zdroje. Pokud nemůžete ověřit zdroj šablony stylů nebo šablony stylů nepochází z důvěryhodného zdroje, předejte `null` argument nastavení XSLT.  
   
 ## <a name="external-resources"></a>Externí zdroje  
- Jazyk XSLT je funkce, jako `xsl:import`, `xsl:include`, nebo `document()` funkce, kde je potřeba vyřešit URI odkazy na procesor. <xref:System.Xml.XmlResolver> Třída se používá k překladu externím prostředkům. Externí prostředky muset být vyřešen v těchto dvou případů:  
+ Jazyka XSLT, jako má funkce `xsl:import`, `xsl:include`, nebo `document()` funkce, kde je potřeba vyřešit identifikátor URI odkazy procesoru. <xref:System.Xml.XmlResolver> Třída se používá k překladu externích prostředků. Externí prostředky může být potřeba vyřešit v těchto dvou případů:  
   
--   Při kompilaci šablony stylů <xref:System.Xml.XmlResolver> se používá pro `xsl:import` a `xsl:include` řešení.  
+-   Při kompilaci šablony stylů, <xref:System.Xml.XmlResolver> se používá pro `xsl:import` a `xsl:include` řešení.  
   
--   Při provádění transformace, <xref:System.Xml.XmlResolver> se používá k překladu `document()` funkce.  
+-   Při provádění transformace <xref:System.Xml.XmlResolver> se používá k překladu `document()` funkce.  
   
     > [!NOTE]
-    >  `document()` Funkce je ve výchozím nastavení zakázán na <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Tato funkce se dá nastavit podle nastavení <xref:System.Xml.Xsl.XsltSettings.EnableDocumentFunction%2A?displayProperty=nameWithType> vlastnost `true` a předání <xref:System.Xml.Xsl.XsltSettings> do objektu <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metoda.  
+    >  `document()` Funkce je ve výchozím nastavení zakázán na <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Tuto funkci je možné povolit nastavením <xref:System.Xml.Xsl.XsltSettings.EnableDocumentFunction%2A?displayProperty=nameWithType> vlastnost `true` a předání <xref:System.Xml.Xsl.XsltSettings> objektu <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metoda.  
   
- <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> a <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody každý patří přetížení, které přijímají <xref:System.Xml.XmlResolver> jako jeden z jeho argumenty. Pokud <xref:System.Xml.XmlResolver> není určena, výchozí <xref:System.Xml.XmlUrlResolver> bez pověření se používá.  
+ <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> a <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody každý patří přetížení <xref:System.Xml.XmlResolver> jako jeden z jejích argumentů. Pokud <xref:System.Xml.XmlResolver> nezadá, výchozí <xref:System.Xml.XmlUrlResolver> se používá bez pověření.  
   
 #### <a name="guidelines"></a>Pokyny  
  Povolit `document()` fungovat pouze v případě, že šablony stylů pochází z důvěryhodného zdroje.  
   
- Následující seznam popisuje, pokud chcete zadat <xref:System.Xml.XmlResolver> objektu:  
+ Následující seznam popisuje, kdy je vhodné zadat <xref:System.Xml.XmlResolver> objektu:  
   
--   Pokud proces XSLT potřebuje pro přístup k prostředkům sítě, který vyžaduje ověření, můžete použít <xref:System.Xml.XmlResolver> s potřebná pověření.  
+-   Pokud XSLT procesu potřebuje přístup k síťovému prostředku, který vyžaduje ověření, můžete použít <xref:System.Xml.XmlResolver> s potřebné přihlašovací údaje.  
   
--   Pokud chcete omezit prostředky, ke kterým mají přístup proces XSLT, můžete použít <xref:System.Xml.XmlSecureResolver> s oprávněním správné nastavení. Použití <xref:System.Xml.XmlSecureResolver> třídy, pokud je třeba otevřít prostředek není řídíte, nebo které není důvěryhodný.  
+-   Pokud chcete omezit prostředky, které můžete přistupovat k procesu XSLT, můžete použít <xref:System.Xml.XmlSecureResolver> nastavte správné oprávnění. Použití <xref:System.Xml.XmlSecureResolver> třídy, pokud je potřeba otevřít prostředek, který není pod kontrolou, nebo, který není důvěryhodný.  
   
--   Pokud chcete přizpůsobit chování, můžete implementovat vlastní <xref:System.Xml.XmlResolver> třídy a použít ho k vyřešení prostředky.  
+-   Pokud chcete přizpůsobit chování, můžete implementovat vlastní <xref:System.Xml.XmlResolver> třídy a použít ho k vyřešení zdroje.  
   
--   Pokud chcete zajistit, že žádné externí prostředky ke kterým se přistupuje, můžete zadat `null` pro <xref:System.Xml.XmlResolver> argument.  
+-   Pokud chcete zajistit, že jsou přístupné žádné externí prostředky, můžete zadat `null` pro <xref:System.Xml.XmlResolver> argument.  
   
 ## <a name="see-also"></a>Viz také  
  [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
  [Překlad externích prostředků během zpracování XSLT](../../../../docs/standard/data/xml/resolving-external-resources-during-xslt-processing.md)  
- [Zabezpečení přístupu kódu](http://msdn.microsoft.com/library/23a20143-241d-4fe5-9d9f-3933fd594c03)
+ [Zabezpečení přístupu kódu](https://msdn.microsoft.com/library/23a20143-241d-4fe5-9d9f-3933fd594c03)

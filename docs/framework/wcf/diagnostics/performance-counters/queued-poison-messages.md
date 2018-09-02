@@ -2,17 +2,17 @@
 title: Počet poškozených zpráv
 ms.date: 03/30/2017
 ms.assetid: 8257ba45-08ac-4301-93c3-c93b4b78737a
-ms.openlocfilehash: e8dc50ad4396364bb6479b8b870cb0d802f96d54
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aa688be3a5907de75fcb5c4fdb92e0f3fe88bfbe
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33470273"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43422151"
 ---
 # <a name="queued-poison-messages"></a>Počet poškozených zpráv
-Název čítače: Počet poškozených zpráv.  
+Název čítače: Nezpracovatelných zpráv zařazených do fronty.  
   
 ## <a name="description"></a>Popis  
- Počet zpráv, které jsou označené s frontou zařazených do fronty přenosu v této služby.  
+ Počet zpráv, které jsou označeny zařazených do fronty přenosu v této službě.  
   
- V tématu [zpracování zpráv Poison](http://go.microsoft.com/fwlink/?LinkID=96233) Další informace o zprávy, když jsou označena poškozená po.
+ Zobrazit [zpracování zpráv Poison](https://go.microsoft.com/fwlink/?LinkID=96233) Další informace o při zprávy jsou označeny.

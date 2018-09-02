@@ -8,24 +8,24 @@ helpviewer_keywords:
 - properties [Windows Forms], defining in code
 - custom controls [Windows Forms], defining properties in code
 ms.assetid: c2eb8277-a842-4d99-89a9-647b901a0434
-ms.openlocfilehash: dc47d7152419d55b3e52aec70257e2b39e9aaca0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c21aee867fc78c55e62eb183bb1a12ebf1c472e8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33528320"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43425577"
 ---
 # <a name="defining-a-property-in-windows-forms-controls"></a>Definování vlastnosti v ovládacích prvcích Windows Forms
-Přehled vlastností najdete v tématu [přehled vlastností](http://msdn.microsoft.com/library/8f1a1ff1-0f05-40e0-bfdf-80de8fff7d52). Existuje několik důležitých rozhodnutí při definování vlastnosti:  
+Přehled vlastností naleznete v tématu [přehled vlastností](https://msdn.microsoft.com/library/8f1a1ff1-0f05-40e0-bfdf-80de8fff7d52). Při definování vlastnosti se několik důležité aspekty:  
   
--   Je nutné použít atributy pro vlastnosti, které definujete. Atributy určují, jak by měla návrhář zobrazit vlastnosti. Podrobnosti najdete v tématu [atributy doby návrhu pro součásti](http://msdn.microsoft.com/library/12050fe3-9327-4509-9e21-4ee2494b95c3).  
+-   Musíte použít atributy k vlastnosti, které definujete. Atributy určují, jak má návrhář zobrazit vlastnosti. Podrobnosti najdete v tématu [atributy doby návrhu pro komponenty](https://msdn.microsoft.com/library/12050fe3-9327-4509-9e21-4ee2494b95c3).  
   
--   Změna vlastnosti ovlivní visual zobrazení ovládacího prvku, kontaktujte <xref:System.Windows.Forms.Control.Invalidate%2A> – metoda (která vlastního ovládacího prvku dědí z <xref:System.Windows.Forms.Control>) z `set` přistupujícího objektu. <xref:System.Windows.Forms.Control.Invalidate%2A> volá <xref:System.Windows.Forms.Control.OnPaint%2A> metodu, která ho překreslí ovládacího prvku. Více volá, aby se <xref:System.Windows.Forms.Control.Invalidate%2A> mít za následek jediné volání <xref:System.Windows.Forms.Control.OnPaint%2A> pro efektivitu.  
+-   Při změně hodnoty vlastnosti ovlivňuje vizuální zobrazení ovládacího prvku, kontaktujte <xref:System.Windows.Forms.Control.Invalidate%2A> – metoda (ovládací prvek dědící z <xref:System.Windows.Forms.Control>) z `set` přistupujícího objektu. <xref:System.Windows.Forms.Control.Invalidate%2A> volá <xref:System.Windows.Forms.Control.OnPaint%2A> metodu, která překreslí ovládacího prvku. Více volání <xref:System.Windows.Forms.Control.Invalidate%2A> výsledkem jednoho volání <xref:System.Windows.Forms.Control.OnPaint%2A> efektivitu.  
   
--   Knihovna tříd rozhraní .NET Framework poskytuje převaděčů typů pro běžné typy dat jako celá čísla, desetinná čísla, logické hodnoty a dalších. Účelem převaděče typů je obecně zajistit převod řetězcovou hodnotu (z dat řetězců na jiné datové typy). Běžné typy dat jsou přidruženy k výchozí převaděče typů, které převodu hodnoty na řetězce a řetězců do příslušné datové typy. Pokud definujete vlastnosti, která je vlastní (to znamená, nestandardní) datového typu, budete muset použít atribut, který určuje typ převaděč přidružení k této vlastnosti. Atribut také můžete přiřadit k vlastnosti vlastní editor typů uživatelského rozhraní. Editor typů uživatelského rozhraní poskytuje uživatelské rozhraní pro úpravu typu vlastnost nebo data. Výběr barvy a je příkladem editor typů uživatelského rozhraní. Na konci tohoto tématu jsou uvedeny příklady atributů.  
+-   Knihovna tříd rozhraní .NET Framework poskytuje převaděčů typů pro běžné typy dat, jako je například celých čísel, desetinná čísla, logické hodnoty a dalších. Účelem konvertor typu je obecně poskytují převod řetězcovou hodnotu (od data řetězce na jiné datové typy). Běžné typy dat jsou spojeny s výchozí převodníky typů, které provádějí převod hodnot do řetězce a řetězce do příslušné datové typy. Je-li definovat vlastnost, která je vlastní (to znamená, používá se nestandardní) datový typ, budete muset použít atribut, který určuje typ převaděče pro přidružení k této vlastnosti. Atribut také můžete přiřadit k vlastnosti vlastního editoru typů uživatelského rozhraní. Editor typu uživatelského rozhraní poskytuje uživatelské rozhraní pro úpravu vlastností nebo datového typu. Výběr barev je příkladem editoru typů uživatelského rozhraní. Na konci tohoto tématu jsou uvedeny příklady atributů.  
   
     > [!NOTE]
-    >  Pokud není k dispozici pro vlastní vlastnost převaděče typů nebo editor typů uživatelského rozhraní, můžete implementovat jednu jak je popsáno v [rozšíření podpory návrhu](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2).  
+    >  Pokud není k dispozici pro vaši vlastní vlastnost konvertor typu nebo editoru typů uživatelského rozhraní, můžete implementovat jednu jak je popsáno v [rozšíření podpory během návrhu](https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2).  
   
  Následující fragment kódu definuje vlastní vlastnost s názvem `EndColor` pro vlastní ovládací prvek `FlashTrackBar`.  
   
@@ -95,7 +95,7 @@ public class FlashTrackBar : Control {
 }  
 ```  
   
- Následující fragment kódu přidruží převaděče typů a editor typů uživatelského rozhraní s vlastností `Value`. V takovém případě `Value` je celé číslo a má převodník výchozí typ, ale <xref:System.ComponentModel.TypeConverterAttribute> platí převaděč vlastního typu atributu (`FlashTrackBarValueConverter`) umožňující návrháře zobrazíte v procentech. Editor typů uživatelského rozhraní `FlashTrackBarValueEditor`, umožňuje procento, který se má zobrazit vizuálně. Tento příklad také ukazuje, že převaděče typů nebo editor určeného <xref:System.ComponentModel.TypeConverterAttribute> nebo <xref:System.ComponentModel.EditorAttribute> atribut přepíše výchozí převaděč.  
+ Následující fragment kódu Přidruží konvertor typu a editoru typů uživatelského rozhraní s vlastností `Value`. V tomto případě `Value` je celé číslo a má výchozí převaděč typu, ale <xref:System.ComponentModel.TypeConverterAttribute> platí konvertor typu pro vlastní atribut (`FlashTrackBarValueConverter`), která umožňuje návrháře zobrazení v procentech. Editor typu uživatelského rozhraní `FlashTrackBarValueEditor`, umožňuje možné zobrazit vizuálně, procentuální hodnotu. Tento příklad také ukazuje, že konvertor typu nebo editor určené <xref:System.ComponentModel.TypeConverterAttribute> nebo <xref:System.ComponentModel.EditorAttribute> atribut přepíše výchozí převaděč.  
   
 ```vb  
 <Category("Flash"), _  

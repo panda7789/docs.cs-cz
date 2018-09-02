@@ -1,28 +1,28 @@
 ---
-title: Aplikace systému Windows pomocí zpětných volání
+title: Aplikace Windows pomocí zpětných volání
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: ae2ea457-0764-4b06-8977-713c77e85bd2
-ms.openlocfilehash: 7f8a23c32d4c1e2a91cd83770935b071764943e8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9f1e3fe6d53266a4e1366c1a3d5396688a25df0f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33365472"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43457018"
 ---
-# <a name="windows-applications-using-callbacks"></a>Aplikace systému Windows pomocí zpětných volání
-Ve většině scénářů asynchronní zpracování, kterou chcete spustit operaci databáze a pokračovat v provozu jiné procesy bez čekání na dokončení operace databáze. Mnoho scénářů vyžadují dělat něco po operace databáze byla ukončena. V aplikaci Windows například můžete delegovat dlouho běžící operace vlákna na pozadí při povolení uživatelské rozhraní vlákno zůstat reaguje. Ale po dokončení operace databáze chcete použít výsledky k vyplnění formuláře. Tento typ scénářů je nejlepší implementováno s zpětné volání.  
+# <a name="windows-applications-using-callbacks"></a>Aplikace Windows pomocí zpětných volání
+Ve většině případů asynchronní zpracování budete chtít spustit operaci databáze a pokračování ve spouštění jiných procesů bez čekání na dokončení operace databáze. Mnoho scénářů však vyžaduje něco, jakmile byla ukončena operace databáze. V aplikaci Windows například můžete delegovat dlouho běžící operace ve vlákně na pozadí při povolení vlákně uživatelského rozhraní nadále reagovat. Ale po dokončení operace databáze budete chtít použít výsledky k naplnění formuláře. Tento druh scénář nejlépe implementuje pomocí zpětného volání.  
   
- Zadáním definujete zpětného volání <xref:System.AsyncCallback> delegovat v <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>, nebo <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> metoda. Delegát je volána po dokončení operace. Delegát můžete předat odkaz na <xref:System.Data.SqlClient.SqlCommand> sebe, což usnadňuje přístup <xref:System.Data.SqlClient.SqlCommand> objektu a volejte příslušnou `End` metoda bez nutnosti použití globální proměnné.  
+ Definujte zpětné volání tak, že určíte <xref:System.AsyncCallback> delegování v <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>, nebo <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> metoda. Delegát je volána po dokončení operace. Můžete předat delegáta odkaz na <xref:System.Data.SqlClient.SqlCommand> samostatně, což usnadňuje přístup <xref:System.Data.SqlClient.SqlCommand> objektu a volat odpovídající `End` metody bez nutnosti použít globální proměnné.  
   
 ## <a name="example"></a>Příklad  
- Následující aplikace Windows demonstruje použití <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> metoda, provádění příkaz Transact-SQL, který zahrnuje zpoždění pár sekund (emulace příkaz dlouho běžící).  
+ Následující aplikace Windows demonstruje použití <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> metoda provádí příkaz jazyka Transact-SQL, který zahrnuje trvat několik sekund (emulace příkaz dlouho probíhající).  
   
- Tento příklad ukazuje počet důležité techniky, včetně voláním metody, která interaguje s formuláře z samostatné vlákna. Kromě toho tento příklad ukazuje, jak musí zabránění uživatelům v souběžně spouštění příkazu několikrát, a jak musíte zajistit, aby formulář nezavře před zpětného volání procedury je volána.  
+ Tento příklad ukazuje několik technik důležité, včetně volání metody, která komunikuje s formuláři v samostatném vlákně. Kromě toho tento příklad ukazuje, jak musí zablokuje uživatelům možnost souběžně spuštění příkazu více než jednou, a jak musíte zajistit, aby formuláři nezavře před postupem zpětného volání je volána.  
   
- Nastavit tento příklad, vytvořte novou aplikaci systému Windows. Místní <xref:System.Windows.Forms.Button> řízení a dvě <xref:System.Windows.Forms.Label> ovládací prvky na formuláři (přijetí výchozí název pro každý ovládací prvek). Přidejte následující kód do třídy formuláře, úprava připojovacího řetězce v případě potřeby pro vaše prostředí.  
+ Nastavit tento příklad, vytvořte novou aplikaci Windows. Místo <xref:System.Windows.Forms.Button> ovládacího prvku a dva <xref:System.Windows.Forms.Label> ovládacích prvků na formuláři (přijmout výchozí název pro každý ovládací prvek). Přidejte následující kód do třídy formuláře, úprava připojovacího řetězce podle potřeby pro vaše prostředí.  
   
 ```vb  
 ' Add these to the top of the class:  
@@ -380,4 +380,4 @@ private void Form1_Load(object sender, System.EventArgs e)
   
 ## <a name="see-also"></a>Viz také  
  [Asynchronní operace](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

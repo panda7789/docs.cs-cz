@@ -1,80 +1,80 @@
 ---
-title: Zpracování událostí DataTable
+title: Zpracování událostí datové tabulky
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 62f404a5-13ea-4b93-a29f-55b74a16c9d3
-ms.openlocfilehash: e6779f7d8be1cf795aeb4956b0fc257c9cb7a482
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 542437b419547ffd00dff193546b6d29cdc7e63a
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32760226"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43424188"
 ---
-# <a name="handling-datatable-events"></a>Zpracování událostí DataTable
-<xref:System.Data.DataTable> Objekt poskytuje řadu událostí, které může zpracovat aplikace. Následující tabulka popisuje `DataTable` události.  
+# <a name="handling-datatable-events"></a>Zpracování událostí datové tabulky
+<xref:System.Data.DataTable> Objekt, který poskytuje řadu událostí, které mohou být zpracovány aplikací. Následující tabulka popisuje `DataTable` události.  
   
 |Událost|Popis|  
 |-----------|-----------------|  
-|<xref:System.Data.DataTable.Initialized>|Nastane po <xref:System.Data.DataTable.EndInit%2A> metodu `DataTable` je volána. Tato událost je určená hlavně pro podporu scénáře návrhu.|  
-|<xref:System.Data.DataTable.ColumnChanged>|Vyskytne se po hodnotu po úspěšném provedení změny v <xref:System.Data.DataColumn>.|  
-|<xref:System.Data.DataTable.ColumnChanging>|Nastane, když byla odeslána hodnotu pro `DataColumn`.|  
-|<xref:System.Data.DataTable.RowChanged>|Nastane po `DataColumn` hodnotu nebo <xref:System.Data.DataRow.RowState%2A> z <xref:System.Data.DataRow> v `DataTable` úspěšně změnil.|  
-|<xref:System.Data.DataTable.RowChanging>|Nastane, když byla odeslána pro změnu `DataColumn` hodnotu nebo `RowState` z `DataRow` v `DataTable`.|  
+|<xref:System.Data.DataTable.Initialized>|Nastane po <xref:System.Data.DataTable.EndInit%2A> metodu `DataTable` je volána. Tato událost je určený primárně pro zajištění podpory scénářů návrhu.|  
+|<xref:System.Data.DataTable.ColumnChanged>|Vyvolá se po hodnotu po úspěšném provedení změny v <xref:System.Data.DataColumn>.|  
+|<xref:System.Data.DataTable.ColumnChanging>|Nastane, pokud hodnota byla odeslána k `DataColumn`.|  
+|<xref:System.Data.DataTable.RowChanged>|Nastane po `DataColumn` hodnotu nebo <xref:System.Data.DataRow.RowState%2A> z <xref:System.Data.DataRow> v `DataTable` byl úspěšně změněn.|  
+|<xref:System.Data.DataTable.RowChanging>|Nastane, pokud se odeslal změnu `DataColumn` hodnotu nebo `RowState` z `DataRow` v `DataTable`.|  
 |<xref:System.Data.DataTable.RowDeleted>|Nastane po `DataRow` v `DataTable` byl označen jako `Deleted`.|  
-|<xref:System.Data.DataTable.RowDeleting>|Dojde před `DataRow` v `DataTable` je označena jako `Deleted`.|  
-|<xref:System.Data.DataTable.TableCleared>|Nastane po volání <xref:System.Data.DataTable.Clear%2A> metodu `DataTable` má úspěšně vymazán každých `DataRow`.|  
-|<xref:System.Data.DataTable.TableClearing>|Nastane po `Clear` metoda je volána ale předtím, než `Clear` začíná operace.|  
-|<xref:System.Data.DataTable.TableNewRow>|Nastane po novou `DataRow` byla vytvořena ve volání `NewRow` metodu `DataTable`.|  
-|<xref:System.ComponentModel.MarshalByValueComponent.Disposed>|Nastane při `DataTable` je `Disposed`. Zděděno z <xref:System.ComponentModel.MarshalByValueComponent>.|  
+|<xref:System.Data.DataTable.RowDeleting>|Vyvolá se před `DataRow` v `DataTable` je označen jako `Deleted`.|  
+|<xref:System.Data.DataTable.TableCleared>|Vyvolá se po volání <xref:System.Data.DataTable.Clear%2A> metodu `DataTable` úspěšně vymazala každý `DataRow`.|  
+|<xref:System.Data.DataTable.TableClearing>|Nastane po `Clear` metoda je volána, ale předtím, než `Clear` zahájení operace.|  
+|<xref:System.Data.DataTable.TableNewRow>|Dojde poté, co je nového `DataRow` je vytvořen voláním `NewRow` metodu `DataTable`.|  
+|<xref:System.ComponentModel.MarshalByValueComponent.Disposed>|Nastane, když `DataTable` je `Disposed`. Zděděno z <xref:System.ComponentModel.MarshalByValueComponent>.|  
   
 > [!NOTE]
->  Většinu operací, které přidání nebo odstranění řádků není vyvolat `ColumnChanged` a `ColumnChanging` události. Však `ReadXml` vyvolat metodu `ColumnChanged` a `ColumnChanging` událostí, pokud `XmlReadMode` je nastaven na `DiffGram` nebo je nastaven na `Auto` po dokument XML, který je čten `DiffGram`.  
+>  Většinu operací, které přidávat a odstraňovat řádky nevyvolávejte `ColumnChanged` a `ColumnChanging` události. Ale `ReadXml` vyvolat metodu `ColumnChanged` a `ColumnChanging` události, není-li `XmlReadMode` je nastavena na `DiffGram` nebo je nastaven na `Auto` po dokumentu XML, který je čten `DiffGram`.  
   
 > [!WARNING]
->  Poškození dat může dojít, pokud je při změně dat `DataSet` ze kterého `RowChanged` událost se vyvolá. Pokud dojde k poškození těchto dat, bude vyvolána žádná výjimka.  
+>  Poškození dat může dojít, pokud se při změně dat `DataSet` ze kterého `RowChanged` událost se vyvolá. Pokud dojde k poškození těchto dat, bude vyvolána žádná výjimka.  
   
 ## <a name="additional-related-events"></a>Další související události  
- <xref:System.Data.DataTable.Constraints%2A> Vlastnost blokování <xref:System.Data.ConstraintCollection> instance. <xref:System.Data.ConstraintCollection> Třídy zpřístupňuje <xref:System.Data.ConstraintCollection.CollectionChanged> událostí. Tato událost aktivuje se v případě omezení je přidat, upravit nebo odebrat z `ConstraintCollection`.  
+ <xref:System.Data.DataTable.Constraints%2A> Obsahuje vlastnost <xref:System.Data.ConstraintCollection> instance. <xref:System.Data.ConstraintCollection> Třídy zpřístupňuje <xref:System.Data.ConstraintCollection.CollectionChanged> událostí. Tato událost se aktivuje při přidání, změnit nebo odebrat z omezení `ConstraintCollection`.  
   
- <xref:System.Data.DataTable.Columns%2A> Vlastnost blokování <xref:System.Data.DataColumnCollection> instance. `DataColumnCollection` Třídy zpřístupňuje <xref:System.Data.DataColumnCollection.CollectionChanged> událostí. Tato událost aktivuje, když `DataColumn` je přidat, upravit nebo odebrat z `DataColumnCollection`. Úpravy, které způsobí na aktivaci události zahrnují změny název, typ, výraz nebo pořadové číslo pozice sloupce.  
+ <xref:System.Data.DataTable.Columns%2A> Obsahuje vlastnost <xref:System.Data.DataColumnCollection> instance. `DataColumnCollection` Třídy zpřístupňuje <xref:System.Data.DataColumnCollection.CollectionChanged> událostí. Tato událost aktivuje, když `DataColumn` je přidat, upravit nebo odebrat z `DataColumnCollection`. Změny, které způsobují na aktivaci události zahrnují změny názvu, typu, výraz nebo pořadí sloupce.  
   
- <xref:System.Data.DataSet.Tables%2A> Vlastnost <xref:System.Data.DataSet> obsahuje <xref:System.Data.DataTableCollection> instance. `DataTableCollection` Třída zpřístupňuje jak `CollectionChanged` a `CollectionChanging` událostí. Tyto události provést, když `DataTable` je přidat nebo odebrat z `DataSet`.  
+ <xref:System.Data.DataSet.Tables%2A> Vlastnost <xref:System.Data.DataSet> obsahuje <xref:System.Data.DataTableCollection> instance. `DataTableCollection` Třídy vystaví oba `CollectionChanged` a `CollectionChanging` událostí. Vyvolat tyto události, kdy `DataTable` je přidán či odebrán z `DataSet`.  
   
- Změny `DataRows` můžou taky aktivovat události pro přidružené <xref:System.Data.DataView>. `DataView` Třídy zpřístupňuje <xref:System.Data.DataView.ListChanged> událost, která se spustí při `DataColumn` změny hodnot nebo při změně složení nebo řazení pořadí zobrazení. <xref:System.Data.DataRowView> Třídy zpřístupňuje <xref:System.Data.DataRowView.PropertyChanged> událost, která aktivuje se v případě přiřazený `DataColumn` hodnotu změny.  
+ Změny `DataRows` také mohou aktivovat události pro přidružené <xref:System.Data.DataView>. `DataView` Třídy zpřístupňuje <xref:System.Data.DataView.ListChanged> událost, která se spustí při `DataColumn` změny hodnot nebo když se změní složení nebo pořadí řazení zobrazení. <xref:System.Data.DataRowView> Třídy zpřístupňuje <xref:System.Data.DataRowView.PropertyChanged> událost, která je vyvoláno, když je přiřazený `DataColumn` hodnota se mění.  
   
 ## <a name="sequence-of-operations"></a>Posloupnost operací  
- Tady je pořadí operací, ke kterým dochází při `DataRow` je přidat, upravit nebo odstranit:  
+ Tady je posloupnost operací, ke kterým dochází při `DataRow` je přidat, upravit nebo odstranit:  
   
-1.  Navrhované záznam vytvořit a použít všechny změny.  
+1.  Vytváření navrhovaná záznam a použity všechny změny.  
   
-2.  Zkontrolujte omezení pro výraz sloupce.  
+2.  Kontrola omezení u sloupců bez výrazu.  
   
-3.  Vyvolat `RowChanging` nebo `RowDeleting` události podle vhodnosti.  
+3.  Vyvolat `RowChanging` nebo `RowDeleting` události podle potřeby.  
   
-4.  Nastavte navrhované záznam na aktuální záznam.  
+4.  Nastavte navrhovaných záznam na aktuální záznam.  
   
 5.  Aktualizujte všechny přidružené indexy.  
   
 6.  Vyvolat `ListChanged` související události pro `DataView` objekty a `PropertyChanged` související události pro `DataRowView` objekty.  
   
-7.  Vyhodnocení výrazu všechny sloupce, ale zpoždění kontroly žádná omezení pro tyto sloupce.  
+7.  Vyhodnoťte všechny sloupce výrazu, ale zpoždění kontroly jakákoliv omezení u těchto sloupců.  
   
-8.  Vyvolat `ListChanged` související události pro `DataView` objekty a `PropertyChanged` související události pro `DataRowView` objekty vliv hodnocení sloupec výrazu.  
+8.  Vyvolat `ListChanged` související události pro `DataView` objekty a `PropertyChanged` související události pro `DataRowView` objekty ovlivněné vyhodnocení výrazu sloupce.  
   
-9. Vyvolat `RowChanged` nebo `RowDeleted` události podle vhodnosti.  
+9. Vyvolat `RowChanged` nebo `RowDeleted` události podle potřeby.  
   
-10. Zkontrolujte omezení výrazu sloupce.  
+10. Kontrola omezení na sloupec.  
   
 > [!NOTE]
->  Změny na výrazu sloupce nikdy vyvolat `DataTable` události. Změny na výrazu sloupce pouze vyvolat `DataView` a `DataRowView` události. Výraz sloupce může mít závislosti na více jiných sloupců a může být vyhodnocen vícekrát během jedné `DataRow` operaci. Každé vyhodnocení výrazu vyvolá události a jedinou `DataRow` operace může být spojeno víc `ListChanged` a `PropertyChanged` událostí v případě, že výraz sloupce jsou ovlivněni, včetně více událostí pro stejný výraz na sloupec.  
+>  Změny výrazu sloupce nikdy vyvolat `DataTable` události. Změny výrazu sloupce pouze zvýšit `DataView` a `DataRowView` události. Výraz sloupce mohou mít závislosti na několik dalších sloupců a může být vyhodnocen více než jednou během jediné `DataRow` operace. Každé vyhodnocení výrazu vyvolává události a jediného `DataRow` může operace vyvolat více `ListChanged` a `PropertyChanged` události, kdy výrazu sloupce ovlivňuje, včetně více událostí pro stejný sloupec výrazu.  
   
 > [!WARNING]
->  Nevyvolá výjimku <xref:System.NullReferenceException> v rámci `RowChanged` obslužné rutiny události. Pokud <xref:System.NullReferenceException> je vyvolána v rámci `RowChanged` události `DataTable`, pak se `DataTable` poškozen.  
+>  Nevyvolají výjimku <xref:System.NullReferenceException> v rámci `RowChanged` obslužné rutiny události. Pokud <xref:System.NullReferenceException> je vyvolána v rámci `RowChanged` události `DataTable`, pak bude `DataTable` poškozen.  
   
 ### <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak vytvořit obslužné rutiny pro `RowChanged`, `RowChanging`, `RowDeleted`, `RowDeleting`, `ColumnChanged`, `ColumnChanging`, `TableNewRow`, `TableCleared`, a `TableClearing` události. Každý obslužná rutina události zobrazí výstup v okně konzoly, když je aktivována.  
+ Následující příklad ukazuje, jak vytvořit obslužné rutiny událostí pro `RowChanged`, `RowChanging`, `RowDeleted`, `RowDeleting`, `ColumnChanged`, `ColumnChanging`, `TableNewRow`, `TableCleared`, a `TableClearing` události. Když se aktivuje Každá obslužná rutina události zobrazí výstup v okně konzoly.  
   
  [!code-csharp[DataWorks DataTable.Events#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTable.Events/CS/source.cs#1)]
  [!code-vb[DataWorks DataTable.Events#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTable.Events/VB/source.vb#1)]  
@@ -83,4 +83,4 @@ ms.locfileid: "32760226"
  [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
  [Zpracování událostí adaptéru dat](../../../../../docs/framework/data/adonet/handling-dataadapter-events.md)  
  [Zpracování událostí datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-dataset-events.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

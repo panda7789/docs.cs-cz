@@ -2,44 +2,45 @@
 title: Architektura aktivace WAS
 ms.date: 03/30/2017
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
-ms.openlocfilehash: 0c91ebd605fbe503dd11da7167512648afd86449
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 64219649e7b743b7dd3a67673c3f2409aeeba486
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43457157"
 ---
 # <a name="was-activation-architecture"></a>Architektura aktivace WAS
-Toto téma rozepisuje a součástí aktivační služba procesů systému Windows (WAS).  
+V tomto tématu najdete výčet a tento článek popisuje komponenty služby Aktivace procesu Windows (WAS).  
   
 ## <a name="activation-components"></a>Aktivace součásti  
- SE skládá z několika součástí architektury:  
+ SE skládá z několika komponent architektury:  
   
--   Naslouchací proces adaptéry. Služby systému Windows, které přijímat zprávy na konkrétních síťových protokolech a komunikovat se službou WAS pro směrování příchozích zpráv do správné pracovního procesu.  
+-   Naslouchací proces adaptéry. Služby Windows, které přijímají zprávy na konkrétních síťových protokolech a komunikovat s WAS můžete směrovat příchozí zprávy správné pracovního procesu.  
   
--   BYLA. Služba systému Windows, která spravuje vytváření a dobu života pracovních procesů.  
+-   BYLA. Služba Windows, která spravuje vytváření a dobu života pracovních procesů.  
   
 -   Obecný pracovní proces spustitelný soubor (w3wp.exe).  
   
 -   Správce aplikací. Spravuje vytváření a dobu života aplikační domény, které zpracovávají hostování aplikací v rámci pracovního procesu.  
   
--   Obslužné rutiny protokolu. Protokol konkrétní součásti, které spustit v pracovním procesu a spravovat komunikaci mezi pracovního procesu a adaptéry pro jednotlivé naslouchací proces. Existují dva typy obslužných rutin protokolů: zpracovat obslužných rutin protokolů a obslužných rutin protokolů doménu aplikace.  
+-   Obslužné rutiny protokolu. Konkrétní součásti, které běží v procesu pracovního procesu a správu komunikace mezi pracovního procesu a adaptéry jednotlivý naslouchací proces. Existují dva typy obslužné rutiny protokolu: zpracování obslužné rutiny protokolu a obslužné rutiny protokolu domény aplikace.  
   
- Když WAS aktivuje instance procesu pracovního procesu, obslužné rutiny protokolu proces vyžaduje do pracovní proces načítá a používá k vytvoření domény aplikace k hostování aplikace Správce aplikací. Doména aplikace načte kódu aplikace a také protokol AppDomain obslužných rutin, které používá síťové protokoly aplikace potřebují.  
+ Když služba WAS aktivuje instance procesu pracovního procesu, načítá obslužné rutiny protokolu procesu vyžaduje do pracovního procesu a používá správce aplikace pro vytvoření domény aplikace pro hostování aplikace. Doména aplikace načte kódu vaší aplikace, stejně jako obslužné rutiny protokolu domény aplikace, které používá síťové protokoly aplikace vyžadovat.  
   
- ![Architektura byla](../../../../docs/framework/wcf/feature-details/media/wasarchitecture.gif "WASArchitecture")  
+ ![Architektura WAS](../../../../docs/framework/wcf/feature-details/media/wasarchitecture.gif "WASArchitecture")  
   
-### <a name="listener-adapters"></a>Naslouchací proces adaptéry  
- Naslouchací proces adaptéry jsou jednotlivé služby systému Windows, které implementují logiku komunikace sítě slouží k přijímání zpráv pomocí síťového protokolu, na kterém naslouchat. Následující tabulka uvádí adaptéry naslouchací proces pro protokoly systému Windows Communication Foundation (WCF).  
+### <a name="listener-adapters"></a>Adaptéry naslouchací proces  
+ Naslouchací proces adaptéry jsou jednotlivé služby Windows, které implementují logiku komunikace sítě používá pro příjem zpráv pomocí síťového protokolu se naslouchat. V následující tabulce jsou uvedeny adaptéry naslouchací proces pro protokoly Windows Communication Foundation (WCF).  
   
-|Název služby adaptér naslouchání|Protokol|Poznámky|  
+|Název služby adaptér naslouchací proces|Protokol|Poznámky|  
 |-----------------------------------|--------------|-----------|  
-|W3SVC|http|Běžné komponenta, která poskytuje aktivace protokolu HTTP pro službu IIS 7.0 a WCF.|  
-|NetTcpActivator|net.tcp|Závisí na službě NetTcpPortSharing.|  
+|W3SVC|http|Běžné komponenty, která poskytuje Aktivace protokolem HTTP pro internetové informační služby 7.0 nebo WCF.|  
+|NetTcpActivator|net.tcp|Závisí na konfiguraci služby NetTcpPortSharing službě.|  
 |NetPipeActivator|net.pipe||  
-|NetMsmqActivator|NET.MSMQ|Pro použití s aplikacemi na základě WCF služby Řízení front zpráv.|  
+|NetMsmqActivator|NET.MSMQ|Pro použití s aplikací na základě WCF služby Řízení front zpráv.|  
 |NetMsmqActivator|MSMQ.formatname|Poskytuje zpětné kompatibilitě se stávajícími aplikacemi služby Řízení front zpráv.|  
   
- Adaptéry naslouchací proces pro konkrétní protokoly jsou registrované během instalace v souboru applicationHost.config, jak je znázorněno v následujícím příkladu kódu XML.  
+ Adaptéry naslouchací proces pro konkrétní protokoly jsou registrovány během instalace v souboru applicationHost.config, jak je znázorněno v následujícím příkladu XML.  
   
 ```xml  
 <system.applicationHost>  
@@ -58,7 +59,7 @@ Toto téma rozepisuje a součástí aktivační služba procesů systému Window
 ```  
   
 ### <a name="protocol-handlers"></a>Obslužné rutiny protokolu  
- Proces a obslužných rutin protokolů doménu aplikace pro konkrétní protokoly jsou zaregistrovány v souboru Web.config úrovni počítače.  
+ Proces a obslužné rutiny protokolu domény aplikace pro konkrétní protokoly jsou registrované v souboru Web.config úrovni počítače.  
   
 ```xml  
 <system.web>  
@@ -86,4 +87,4 @@ Toto téma rozepisuje a součástí aktivační služba procesů systému Window
   
 ## <a name="see-also"></a>Viz také  
  [Konfigurace WAS pro použití s WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)  
- [Hostování funkcí systému Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=201276)
+ [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

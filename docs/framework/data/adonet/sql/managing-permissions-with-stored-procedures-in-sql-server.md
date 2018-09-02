@@ -2,12 +2,12 @@
 title: Správa oprávnění pomocí uložených procedur na SQL serveru
 ms.date: 03/30/2017
 ms.assetid: 08fa34e8-2ffa-470d-ba62-e511a5f8558e
-ms.openlocfilehash: d16a6609603cfb83fc6523606cc7ec9e7bfd8dba
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: e6161195682964ac9063cbee65d26ade601ef66c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42912062"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43425195"
 ---
 # <a name="managing-permissions-with-stored-procedures-in-sql-server"></a>Správa oprávnění pomocí uložených procedur na SQL serveru
 Jedním ze způsobů vytvoření více řádků obrany kolem vaše databáze je k implementaci všech přístup k datům pomocí uložených procedur a uživatelem definované funkce. Odvolat nebo odepřít všechna oprávnění pro příslušné objekty, jako jsou tabulky a udělení oprávnění EXECUTE na uložené procedury. Tím se vytvoří efektivně bezpečnostní hraniční sítě kolem dat a databázových objektů.  
@@ -54,7 +54,7 @@ Jedním ze způsobů vytvoření více řádků obrany kolem vaše databáze je 
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Uložené procedury](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) a [útok prostřednictvím injektáže SQL](http://go.microsoft.com/fwlink/?LinkId=98234) v Online knihách serveru SQL|Témata popisují postup vytvoření uložených procedur a jak funguje útok prostřednictvím injektáže SQL.|  
+|[Uložené procedury](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) a [útok prostřednictvím injektáže SQL](https://go.microsoft.com/fwlink/?LinkId=98234) v Online knihách serveru SQL|Témata popisují postup vytvoření uložených procedur a jak funguje útok prostřednictvím injektáže SQL.|  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
@@ -64,4 +64,4 @@ Jedním ze způsobů vytvoření více řádků obrany kolem vaše databáze je 
  [Podepisování uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)  
  [Přizpůsobení oprávnění se zosobněním na SQL Serveru](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)  
  [Úpravy dat pomocí uložených procedur](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

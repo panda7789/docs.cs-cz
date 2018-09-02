@@ -2,30 +2,30 @@
 title: Vlastní kritérium hledání
 ms.date: 03/30/2017
 ms.assetid: b2723929-8829-424d-8015-a37ba2ab4f68
-ms.openlocfilehash: 6c9363add13e38ded75685e4115a5084629d6505
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 699260fcef7680710f721d213dbf1126ebf7a896
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33503207"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43421447"
 ---
 # <a name="custom-find-criteria"></a>Vlastní kritérium hledání
-Tento příklad znázorňuje, jak vytvořit vlastní rozsah odpovídající pomocí logiky a jak implementovat vlastní zjišťování služby. Klienti používají k zpřesnění a další sestavení nad funkce poskytované systémem najít zjišťování WCF vlastní rozsah odpovídající funkce. Scénáře, který popisuje tato ukázka je následující:  
+Tato ukázka předvádí, jak vytvořit vlastní obor shoda pomocí logiky a jak implementovat vlastní zjišťování služby. Klienti používají vlastní obor funkci přiřazování k upřesnění a další postaveny funkce poskytované systémem hledání zjišťování WCF. Scénář, který obsahuje tato ukázka je následujícím způsobem:  
   
 1.  Klient hledá službu kalkulačky.  
   
-2.  Upřesněte hledání, klient musí použít obor vlastní pravidlo pro porovnávání.  
+2.  Upřesněte své hledání, klient musí použít vlastní obor pravidlo pro porovnávání.  
   
-3.  Podle tohoto pravidla odpoví služby zpět do klienta, pokud svůj koncový bod odpovídá některému z rozsahy určené klientem.  
+3.  Podle tohoto pravidla odpoví služby zpět do klienta, pokud svůj koncový bod odpovídá některému z oborů určená klientem.  
   
 ## <a name="demonstrates"></a>Demonstruje  
   
 -   Vytvoření vlastní zjišťování služby.  
   
--   Implementace odpovídající vlastní rozsah algoritmem.  
+-   Implementace vlastní obor shoda algoritmem.  
   
-## <a name="discussion"></a>Diskusní  
- Klient hledá "Nebo" typ odpovídající kritériím. Služby zpět odpoví, je-li obory na své koncové body odpovídat oborů zadaných klientem. V tomto případě klient hledá službu kalkulačky, která obsahuje některý z oborů v následujícím seznamu:  
+## <a name="discussion"></a>Diskuse  
+ Klient hledá "Nebo" typ odpovídající kritériím. Služba zpět odpovídá, pokud obory na své koncové body shodují s některým z obory poskytnuté klientem. V tomto případě klient hledá službu kalkulačky, která obsahuje některý z obory v následujícím seznamu:  
   
 1.  `net.tcp://Microsoft.Samples.Discovery/RedmondLocation`  
   
@@ -33,39 +33,39 @@ Tento příklad znázorňuje, jak vytvořit vlastní rozsah odpovídající pomo
   
 3.  `net.tcp://Microsoft.Samples.Discovery/PortlandLocation`  
   
- K tomu, přesměruje klienta pro použití obor vlastní pravidlo pro porovnávání předáním porovnání vlastní rozsah identifikátorem URI. Usnadňuje odpovídající vlastní rozsah služby musíte použít vlastní zjišťování služba, která jste srozuměni s tím pravidla shody vlastní rozsah a přidružené logiky odpovídající implementuje.  
+ K tomu, přesměruje klienta služby použít vlastní pravidlo pro porovnávání předáním ve vlastní obor identifikátorem URI oboru. Usnadnit odpovídající vlastní obor služby musíte použít vlastní zjišťování služby rozumí pravidla shody vlastní obor, který implementuje přidružené odpovídající logiky.  
   
- V projektu klienta otevřete soubor Program.cs. Všimněte si, že `ScopeMatchBy` pole z `FindCriteria` je nastavena na konkrétní identifikátor URI. Tento identifikátor se odešle do služby. Pokud službu nerozumí toto pravidlo, ignoruje požadavek klienta najít.  
+ V klientském projektu otevřete soubor Program.cs. Všimněte si, že `ScopeMatchBy` pole `FindCriteria` je nastaven na konkrétní identifikátor URI. Tento identifikátor je odeslána do služby. Pokud služba nerozumí toto pravidlo, ignoruje požadavek klienta najít.  
   
- Otevřete projekt služby. Tři soubory se používají k implementaci vlastních zjišťování služby:  
+ Otevřete projekt služby. Pro implementaci této vlastní zjišťování služby se používají tři soubory:  
   
-1.  **AsyncResult.cs**: Toto je implementace `AsyncResult` který je vyžadován na základě metody zjišťování.  
+1.  **AsyncResult.cs**: Toto je implementace `AsyncResult` , který vyžaduje metody zjišťování.  
   
-2.  **CustomDiscoveryService.cs**: Tento soubor implementuje vlastní zjišťování služby. Implementace rozšiřuje <xref:System.ServiceModel.Discovery.DiscoveryService> třídy a přepíše nezbytné metody. Poznámka: implementace <xref:System.ServiceModel.Discovery.DiscoveryService.OnBeginFind%2A> metoda. Metoda zkontroluje, zda byl zadán vlastní rozsah shody pravidlem klientem. Toto je stejný vlastní identifikátor URI, který klient zadali dřív. Pokud je zadán vlastní pravidlo, je následovaný kódová cesta, který implementuje logiku shodu "Nebo".  
+2.  **CustomDiscoveryService.cs**: Tento soubor implementuje vlastní zjišťování služby. Rozšiřuje implementaci <xref:System.ServiceModel.Discovery.DiscoveryService> třídy a přepíše nezbytné metody. Všimněte si, provádění <xref:System.ServiceModel.Discovery.DiscoveryService.OnBeginFind%2A> metody. Metoda zkontroluje, zda byl zadán vlastní obor shoda pravidlem klientem. Toto je stejný vlastní identifikátor URI, který klient zadali dřív. Pokud je zadán vlastní pravidlo, je a potom do cesty kódu, který implementuje shoda logiky "Nebo".  
   
-     Tato vlastní logiky projde všechny obory ve všech koncových bodů, které má služba. Pokud se žádné rozsahy pro koncový bod shodují oborů poskytnutý klientem, přidá službu zjišťování tohoto koncového bodu do odpovědi, která je odeslána zpět klientovi.  
+     Tato vlastní logiku prochází všechny obory ve všech koncových bodů, které má služba. Pokud některý z koncového bodu obory shodují s některým z obory poskytnuté klientem, přidá službu zjišťování tohoto koncového bodu do odpovědi, která je odeslána zpět klientovi.  
   
-3.  **CustomDiscoveryExtension.cs**: poslední krok při provádění zjišťování služby je připojení Tato implementace vlastní zjišťování služby na hostitele služby. Pomocná třída použít zde je `CustomDiscoveryExtension` třídy. Tato třída rozšiřuje <xref:System.ServiceModel.Discovery.DiscoveryServiceExtension> třídy. Uživatel musí přepsat <xref:System.ServiceModel.Discovery.DiscoveryServiceExtension.GetDiscoveryService%2A> metoda. V takovém případě metoda vrací instanci třídy služby vlastní zjišťování, který byl vytvořen ještě před. `PublishedEndpoints` je <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> obsahující všechny koncové body aplikace, které jsou přidány do <xref:System.ServiceModel.ServiceHost>. Služba vlastní zjišťování to používá k naplnění svůj vnitřní seznam. Uživatel může přidat další koncový bod metadata.  
+3.  **CustomDiscoveryExtension.cs**: poslední krok při provádění zjišťování služby je pro tuto implementaci vlastní připojení zjišťování služby na hostitele služby. Je pomocnou třídu použitou tady `CustomDiscoveryExtension` třídy. Tato třída rozšiřuje <xref:System.ServiceModel.Discovery.DiscoveryServiceExtension> třídy. Uživatel musí přepsat <xref:System.ServiceModel.Discovery.DiscoveryServiceExtension.GetDiscoveryService%2A> metody. V tomto případě vrátí metoda instance služby vlastní zjišťování, který byl vytvořen ještě před. `PublishedEndpoints` je <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> , která obsahuje všechny koncové body aplikace, které jsou přidány do <xref:System.ServiceModel.ServiceHost>. Vlastní zjišťování služby to používá k naplnění jeho vnitřní seznam. Uživatel může pro přidání dalších koncový bod metadat.  
   
- Nakonec otevřete Program.cs. Všimněte si, že jak <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> a `CustomDiscoveryExtension` jsou přidány do hostitele. Jakmile to provádí a hostitele má koncový bod pro které bude přijímat zprávy zjišťování, aplikace můžete použít vlastní zjišťování služby.  
+ A konečně otevřete soubor Program.cs. Všimněte si, jak <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> a `CustomDiscoveryExtension` jsou přidány do hostitele. Jakmile se to a že hostitel má koncový bod, přes které se budou přijímat zprávy zjišťování může aplikace použít vlastní zjišťování služby.  
   
- Zkontrolujte, že klient je možné najít službu, aniž by věděly, jeho adresy.  
+ Podívejte se, že je klient nemůže najít službu bez znalosti jeho adresu.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Otevřete řešení obsahující projekt.  
+1.  Otevřete řešení, které obsahuje projekt.  
   
 2.  Sestavte projekt.  
   
-3.  Spusťte aplikaci služby.  
+3.  Spuštění služby aplikace.  
   
-4.  Spusťte klientskou aplikaci.  
+4.  Spuštění klientské aplikace.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\CustomFindCriteria`
