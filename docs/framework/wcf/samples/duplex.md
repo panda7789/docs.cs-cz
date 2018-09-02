@@ -4,19 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Duplex Service Contract
 ms.assetid: bc5de6b6-1a63-42a3-919a-67d21bae24e0
-ms.openlocfilehash: c132b49c3d1ff1cd72c7a02f66ad4bf6d2d65d1b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 54b941541ae0da4900608e61f08f4ed99c9ea472
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43462490"
 ---
 # <a name="duplex"></a>Duplex
-Duplexní ukázka ukazuje, jak definovat a implementovat duplexního kontraktu. Duplexní komunikace nastane, když klient vytvoří relaci se službou a poskytuje služby kanál, na kterém služba mohou zasílat zprávy zpět do klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Duplexní kontrakt je definován jako dvojice rozhraní – primární rozhraní z klienta pro službu a rozhraní pro zpětné volání ze služby do klienta. V této ukázce `ICalculatorDuplex` rozhraní, které umožňuje provádět matematické operace, výpočet výsledek přes relaci klienta. Služba vrátí výsledky na `ICalculatorDuplexCallback` rozhraní. Duplexní kontrakt vyžaduje relaci, protože kontextu musí být stanovena ke korelaci sadu zprávy odesílané mezi klientem a službu.  
+Duplexní ukázka ukazuje, jak definovat a implementovat duplexního kontraktu. Duplexní komunikaci nastane, pokud klient vytvoří relaci se službou a poskytuje službu na kanál, na kterém služba odesílat zprávy o zpět do klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Duplexní kontrakt je definován jako dvojici rozhraní – primární rozhraní z klienta do služby a rozhraní zpětného volání ze služby ke klientovi. V této ukázce `ICalculatorDuplex` rozhraní umožňuje klientovi k provádění matematických operací výpočtu výsledku přes relaci. Služba vrátí výsledky v `ICalculatorDuplexCallback` rozhraní. Duplexní kontrakt vyžaduje relaci, protože kontextu musí být stanovena ke korelaci sadu zprávy odesílané mezi klientem a službou.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- V této ukázce klienta je konzolová aplikace (.exe) a služba je hostovaná Internetové informační služby (IIS). Duplexní kontrakt je definován následujícím způsobem:  
+ V této ukázce je konzolová aplikace (.exe) klient a služba je hostována v Internetové informační služby (IIS). Duplexní kontrakt je definovaná následujícím způsobem:  
   
 ```  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples", SessionMode=SessionMode.Required,  
@@ -44,7 +45,7 @@ public interface ICalculatorDuplexCallback
 }  
 ```  
   
- `CalculatorService` Třída implementuje primární `ICalculatorDuplex` rozhraní. Služba používá <xref:System.ServiceModel.InstanceContextMode.PerSession> instance režimu zachování výsledek pro každou relaci. Soukromá vlastnost s názvem `Callback` se používá pro přístup k kanál zpětného volání pro klienta. Služba používá zpětné volání pro odesílání zpráv zpět do klienta přes rozhraní zpětného volání.  
+ `CalculatorService` Třída implementuje primární `ICalculatorDuplex` rozhraní. Služba používá <xref:System.ServiceModel.InstanceContextMode.PerSession> režimu instance udržovat výsledek pro každou relaci. Soukromá vlastnost s názvem `Callback` slouží k přístupu k zpětného volání kanálu ke klientovi. Služba používá zpětné volání pro odesílání zpráv zpět do klienta prostřednictvím rozhraní zpětného volání.  
   
 ```  
 [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]  
@@ -81,7 +82,7 @@ public class CalculatorService : ICalculatorDuplex
 }  
 ```  
   
- Klient musí poskytnout třídu, která implementuje rozhraní zpětné volání duplexního kontraktu pro příjem zpráv ze služby. V ukázce `CallbackHandler` třída definovaná implementovat `ICalculatorDuplexCallback` rozhraní.  
+ Klient musí poskytnout třídu, která implementuje rozhraní zpětného volání duplexní kontrakt pro příjem zpráv ze služby. V ukázce `CallbackHandler` třída je definována pro implementaci `ICalculatorDuplexCallback` rozhraní.  
   
 ```  
 public class CallbackHandler : ICalculatorDuplexCallback  
@@ -98,7 +99,7 @@ public class CallbackHandler : ICalculatorDuplexCallback
 }  
 ```  
   
- Proxy server, který se vygeneruje pro vyžaduje duplexního kontraktu <xref:System.ServiceModel.InstanceContext> při vytváření, musíte zadat. To <xref:System.ServiceModel.InstanceContext> slouží jako lokality pro objekt, který implementuje rozhraní zpětného volání a zpracovává zprávy, které se odesílají zpět ze služby. <xref:System.ServiceModel.InstanceContext> Je vytvořený pomocí instance `CallbackHandler` třídy. Tento objekt zpracovává zprávy odeslané ze služby pro klienta v rozhraní zpětného volání.  
+ Proxy server, který je vygenerován pro duplexní kontrakt vyžaduje <xref:System.ServiceModel.InstanceContext> poskytované při konstrukci. To <xref:System.ServiceModel.InstanceContext> se používá jako web pro objekt, který implementuje rozhraní zpětného volání a zpracovává zprávy odeslané ze služby. <xref:System.ServiceModel.InstanceContext> Je vytvořený pomocí instance `CallbackHandler` třídy. Tento objekt zpracovává zprávy odeslané do klienta v rozhraní zpětného volání ze služby.  
   
 ```  
 // Construct InstanceContext to handle messages on callback interface.  
@@ -135,7 +136,7 @@ Console.ReadLine();
 client.Close();  
 ```  
   
- Má být poskytnuta vazba, která podporuje komunikaci relace a duplexní komunikace se změnila konfigurace. `wsDualHttpBinding` Podporuje komunikaci relace a umožňuje duplexní komunikace tím, že poskytuje duální připojení protokolu HTTP, jeden pro všechny směry. Ve službě je jediným rozdílem v konfiguraci vazby, který se používá. Na klientovi je nutné nakonfigurovat adresu, která server můžete použít pro připojení k klienta, jak je znázorněno v následující ukázka konfigurace.  
+ Konfigurace se změnila má být poskytnuta vazba, která podporuje komunikace relace a duplexní komunikaci. `wsDualHttpBinding` Podporuje komunikaci relace a umožňuje duplexní komunikaci poskytnutím duální připojení pomocí protokolu HTTP, jeden pro každý směr. Ve službě je jediným rozdílem v konfiguraci vazby, který se používá. Na straně klienta je nutné nakonfigurovat adresu serveru můžete použít pro připojení ke klientovi, jak je znázorněno v následující ukázková konfigurace.  
   
 ```xml  
 <client>  
@@ -156,18 +157,18 @@ client.Close();
 </bindings>  
 ```  
   
- Při spuštění vzorového uvidíte zprávy, které se vrátí klientovi v rozhraní zpětné volání, která je odeslána ze služby. Zobrazí se každý zprostředkující výsledek, za nímž následuje celý rovnice po dokončení všech operací. Stisknutím klávesy ENTER vypnout klienta.  
+ Když spustíte ukázku, uvidíte zprávy, které jsou vráceny do klienta na rozhraní zpětného volání, která je odeslána ze služby. Zobrazí se každý přechodný výsledek, za nímž následuje celou rovnici. Po dokončení všech operací. Stiskněte klávesu ENTER pro vypnutí klient.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C#, C++ nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C#, C++ nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
     > [!IMPORTANT]
-    >  Při spuštění klienta v počítači konfiguraci, nezapomeňte nahradit "localhost" v obou `address` atribut [koncový bod](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) elementu a `clientBaseAddress` atribut [ \< Vazba >](../../../../docs/framework/misc/binding.md) element [ \<– wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md) element s názvem příslušný počítač, jak je uvedené v následující:  
+    >  Při spuštění klienta v konfiguraci mezi počítači, nezapomeňte nahradit "localhost" v obou `address` atribut [koncový bod](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) elementu a `clientBaseAddress` atribut [ \< Vytvoření vazby >](../../../../docs/framework/misc/binding.md) elementu [ \<wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md) element s názvem příslušný počítač, jak je znázorněno v následující:  
   
     ```xml  
     <client>  
@@ -183,11 +184,11 @@ client.Close();
     ```  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Duplex`  
   

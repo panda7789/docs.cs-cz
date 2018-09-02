@@ -5,25 +5,25 @@ helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: c6c2bae39764e78fad2510bbc8937b0ac790bef5
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.openlocfilehash: 91020886e381d8410358cae9511107e28c51452a
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
-ms.locfileid: "34172003"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43464905"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Implicitně typované lokální proměnné (Průvodce programováním v C#)
-Lokální proměnné lze deklarovat bez nutnosti poskytnutí explicitního typu. `var` – Klíčové slovo instruuje kompilátor, aby odvození typu proměnné z výrazu na pravé straně příkazu inicializace. Odvozené typ může být předdefinovaný typ, anonymní typ, uživatelem definovaný typ nebo typem definovaným v knihovně tříd rozhraní .NET Framework. Další informace o tom, jak inicializovat pole s `var`, najdete v části [implicitně typované pole](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  
+Lokální proměnné mohou být deklarovány bez explicitního typu. `var` – Klíčové slovo instruuje kompilátor k odvození typu proměnné z výrazu na pravé straně výrazu inicializace. Odvozený typ může být předdefinovaný typ, anonymního typu, uživatelem definovaný typ nebo typ definovaný v knihovně tříd rozhraní .NET Framework. Další informace o tom, jak inicializovat pole s `var`, naleznete v tématu [implicitně typované pole](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  
   
- Následující příklady ukazují různé způsoby, ve kterých mohou být místní proměnné deklarovány s `var`:  
+ Následující příklady znázorňují různé způsoby, jimiž lze deklarovat lokální proměnné s `var`:  
   
  [!code-csharp[csProgGuideLINQ#43](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-local-variables_1.cs)]  
   
- Je důležité pochopit, že `var` – klíčové slovo neznamená "variantou" a neindikuje volně je proměnná typu nebo pozdní vazbu. Právě znamená, že kompilátor určí a přiřadí nejvhodnější typ.  
+ Je důležité si uvědomit, že `var` – klíčové slovo neznamená "varianta" a neznamená, že proměnná je volně typem nebo s pozdní vazbou. Znamená pouze to, že kompilátor zjistí a přiřadí nejvhodnější typ.  
   
- `var` – Klíčové slovo je možné použít následující kontexty:  
+ `var` – Klíčové slovo lze použít v následujících kontextů:  
   
--   Na lokální proměnné (proměnných deklarovaných v oboru metoda) jako v předchozím příkladu.  
+-   Na lokální proměnné (proměnné deklarované v oboru metoda) jak je znázorněno v předchozím příkladu.  
   
 -   V [pro](../../../csharp/language-reference/keywords/for.md) příkaz inicializace.  
   
@@ -37,41 +37,41 @@ Lokální proměnné lze deklarovat bez nutnosti poskytnutí explicitního typu.
     foreach(var item in list){...}  
     ```  
   
--   V [pomocí](../../../csharp/language-reference/keywords/using-statement.md) příkaz.  
+-   V [pomocí](../../../csharp/language-reference/keywords/using-statement.md) příkazu.  
   
     ```csharp  
     using (var file = new StreamReader("C:\\myfile.txt")) {...}  
     ```  
   
- Další informace najdete v tématu [postupy: použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu](../../../csharp/programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).  
+ Další informace najdete v tématu [postupy: použití implicitně typované lokálních proměnných a polí ve výrazu dotazu](../../../csharp/programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).  
   
 ## <a name="var-and-anonymous-types"></a>var a anonymní typy  
- V mnoha případech použití `var` je volitelný a je právě syntaktické pohodlí. Ale pokud proměnnou je inicializována s anonymní typ musíte deklarovat proměnnou jako `var` Pokud budete potřebovat pro přístup k vlastnosti objektu později. Toto je běžný scénář v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu výrazy. Další informace najdete v tématu [anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
+ V mnoha případech použití `var` je volitelný a je právě syntaktické pohodlí. Ale když proměnná je inicializována pomocí anonymního typu je třeba deklarovat jako proměnnou `var` Pokud potřebujete přístup k vlastnostem objektu později. Toto je běžný scénář v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazech dotazů. Další informace najdete v tématu [anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
   
- Z hlediska zdrojového kódu anonymní typ nemá název. Proto pokud proměnnou dotazu byl inicializován s `var`, pak jedině pro přístup k vlastnostem v pořadí vrácených objektů, které se má používat `var` jako typ proměnné iterace ve `foreach` příkaz.  
+ Z hlediska zdrojového kódu anonymního typu nemá žádný název. Proto pokud proměnné dotazu byl inicializován s `var`, je jediný způsob, jak přistupovat k vlastnosti ve vrácené posloupnosti objekty používat `var` jako typ proměnné iterace ve `foreach` příkazu.  
   
  [!code-csharp[csProgGuideLINQ#44](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-local-variables_2.cs)]  
   
 ## <a name="remarks"></a>Poznámky  
- Implicitně typované deklarace proměnných, které se vztahují následující omezení:  
+ Implicitně typované proměnné deklaracích platí následující omezení:  
   
--   `var` lze použít pouze při místní proměnné je deklarovaná a inicializovat v jednom příkazu; proměnnou nelze inicializovat na hodnotu null nebo ke skupině metoda nebo anonymní funkce.  
+-   `var` jde použít jenom při místní proměnné je deklarovat a inicializovat ve stejném příkazu; proměnnou nejde inicializovat na null nebo na skupinu metod nebo anonymní funkce.  
   
--   `var` nelze použít na pole v rozsahu třídy.  
+-   `var` nelze použít na pole v oboru třídy.  
   
--   Proměnných deklarovaných pomocí `var` nelze použít ve výrazu inicializace. Jinými slovy, je tento výraz právní`: int i = (i = 20);` , ale tento výraz způsobí chybu kompilace: `var i = (i = 20);`  
+-   Proměnné deklarované s použitím `var` nelze použít ve výrazu inicializace. Jinými slovy, tento výraz je právní`: int i = (i = 20);` , ale tento výraz způsobí chybu kompilace: `var i = (i = 20);`  
   
--   Více implicitně typované proměnné nelze inicializovat v jednom příkazu.  
+-   Více implicitně typované proměnné nelze inicializovat ve stejném příkazu.  
   
--   Pokud název typu `var` nachází v oboru, pak se `var` – klíčové slovo bude odkazující na název tohoto typu a nebude považován za součást implicitně typovaná deklarace místní proměnné.  
+-   Pokud typ s názvem `var` je v oboru, pak bude `var` – klíčové slovo se přeloží název tohoto typu a se nezpracuje jako součást implicitně typované lokální proměnné deklarace.  
   
- Můžete zjistit, že `var` může být také užitečná pro výrazy dotazů, ve kterých je obtížné určit přesnou vytvořený typ proměnné v dotazu. Tato situace může nastat s seskupování a řazení operace.  
+ Možná zjistíte, `var` může být také užitečný v případě výrazy dotazů, ve kterých je obtížné určit přesné konstruovaný typ proměnné dotazu. Tato situace může nastat s seskupování a řazení operace.  
   
- `var` – Klíčové slovo může také být užitečné při specifický typ proměnné je zdlouhavé na typ na klávesnici, nebo je zřejmé nebo nepřidá do čitelnost kódu. Jedním z příkladů kde `var` je užitečné v tomto způsobem je s vnořené obecné typy, jako jsou ty používané s operacemi skupiny. V následující dotaz, je typ proměnné dotazu `IEnumerable<IGrouping<string, Student>>`. Tak dlouho, dokud uživatelů musí zachovat kódu lepší vysvětlení, neexistuje žádný problém s použitím implicitního zadáním kvůli pohodlí a jako stručný výtah.  
+ `var` – Klíčové slovo může být také užitečné, když konkrétní typ proměnné je únavné pro psaní na klávesnici, nebo je zřejmé nebo nepřidá do čitelnost kódu. Jedním z příkladů kde `var` je užitečné v tomto způsob je pomocí vnořených obecných typech, jako jsou ty používané s operacemi skupiny. V následující dotaz, je typ proměnné dotazu `IEnumerable<IGrouping<string, Student>>`. Za předpokladu, můžete vy a ostatní, kteří musí udržovat váš kód pochopit, neexistuje žádný problém s použitím implicitního zápisu pro usnadnění práce a zkrácení.  
   
  [!code-csharp[cscsrefQueryKeywords#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/implicitly-typed-local-variables_3.cs)]  
   
- Ale použití `var` mít minimálně potenciální, aby byl váš kód více těžko srozumitelné pro ostatní vývojáři. Z tohoto důvodu dokumentace jazyka C# obecně používá `var` pouze pokud je požadovaná.  
+ Nicméně použití `var` mohou mít alespoň potenciálně ztížit váš kód pochopit pro jiné vývojáře. Z tohoto důvodu dokumentace jazyka C# obecně používá `var` pouze pokud je povinný.  
   
 ## <a name="see-also"></a>Viz také  
  [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
@@ -81,7 +81,7 @@ Lokální proměnné lze deklarovat bez nutnosti poskytnutí explicitního typu.
  [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
  [var](../../../csharp/language-reference/keywords/var.md)  
  [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)  
- [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
+ [LINQ (Language-Integrated Query)](../../../csharp/linq/index.md)  
  [for](../../../csharp/language-reference/keywords/for.md)  
  [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)  
  [using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)

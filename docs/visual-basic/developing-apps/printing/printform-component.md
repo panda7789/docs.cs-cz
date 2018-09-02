@@ -4,59 +4,59 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - PrintForm component [Visual Basic]
 ms.assetid: 03de98b8-b54c-4764-91d7-83c64e974750
-ms.openlocfilehash: 6cb7cfe022b2b4d23f47a47ec70f08d5c0ccbc7e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 879d31c5a572689d84af6b2e46f3d33e1a8841c8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33591405"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43472082"
 ---
 # <a name="printform-component-visual-basic"></a>PrintForm – součást (Visual Basic)
-<xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> Součást jazyka Visual Basic umožňuje vytisknout image Windows Form v době běhu. Své chování nahrazuje u `PrintForm` metoda v dřívějších verzích jazyka Visual Basic.  
+<xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> Komponenty v jazyce Visual Basic umožňuje tisk formuláře Windows obrázku za běhu. Své chování nahradí `PrintForm` metodu ve starších verzích jazyka Visual Basic.  
   
- Ovládací prvky PowerPack jsou již zahrnuty v sadě Visual Studio, ale si můžete stáhnout z [Download Center](http://www.microsoft.com/en-us/download/details.aspx?id=25169).  
+ Ovládací prvky PowerPack již nejsou zahrnuty v sadě Visual Studio, ale můžete stáhnout z [Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=25169).  
   
-## <a name="printform-component-overview"></a>PrintForm – součást – přehled  
- Běžný scénář pro Windows Forms je vytvořit formulář, který je naformátován tak, aby připomínaly dokumentu formuláře nebo sestavy, a potom k tisku obrázek ve formátu. Přestože je možné použít <xref:System.Drawing.Printing.PrintDocument> součást k tomu, bude vyžadovat velké množství kódu. <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> Součást umožňuje tisk obrázku formuláře k tiskárně, okno náhledu tisku nebo do souboru bez použití <xref:System.Drawing.Printing.PrintDocument> součásti.  
+## <a name="printform-component-overview"></a>Přehled komponenty PrintForm  
+ Běžný scénář pro model Windows Forms, je vytvořit formulář, který je formátován tak, aby připomínaly formuláře dokument nebo zprávu, a potom k tisku obrázku ve formátu. Přestože lze použít <xref:System.Drawing.Printing.PrintDocument> součásti k tomu, bude vyžadovat velké množství kódu. <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> Komponenty umožňuje tisk formuláře k tiskárně, okno náhledu tisku nebo soubor bitové kopie bez použití <xref:System.Drawing.Printing.PrintDocument> komponenty.  
   
- <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> Součást se nachází na **PowerPacks jazyka Visual Basic** kartě **sada nástrojů**. Když je přetáhli formulář se zobrazí na hlavním panelu součást oblasti malé pod dolní ohraničení tvaru. Pokud je součást vybraná, vlastnosti, které definují své chování může být nastavena v **vlastnosti** okno. Všechny tyto vlastnosti můžete také nastavit v kódu. Můžete také vytvořit instanci <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> součásti v kódu bez přidání komponentu v době návrhu.  
+ <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> Komponenty se nachází na **sady Visual Basic PowerPack** karty **nástrojů**. Když je přetáhnout do formuláře se zobrazí v panelu komponent malé oblast pod spodní okraj pracovního formuláře. Pokud je součást vybraná, vlastnosti, které definují chování aplikace je možné nastavit v **vlastnosti** okna. Všechny tyto vlastnosti můžete také nastavit v kódu. Můžete také vytvořit instanci <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> komponentu v kódu bez přidání komponenty v době návrhu.  
   
- Při tisku formuláře je vytištěno vše v klientské oblasti formuláře. To zahrnuje všechny ovládací prvky a libovolný text nebo grafické vykresleny na formuláři pomocí jiných metod grafiky. Ve výchozím nastavení nejsou vytištěny záhlaví formuláře, posuvníky a ohraničení. Také ve výchozím nastavení <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> součást vytiskne viditelné části formuláře. Například pokud uživatel změní velikost formuláře za běhu, pouze ovládací prvky a obrázky, které jsou aktuálně viditelné jsou vytisknout.  
+ Při tisku formuláře je vytištěna všechno, co je v klientské oblasti formuláře. To zahrnuje všechny ovládací prvky a všechny textové nebo grafické vykreslené metody grafiky ve formuláři. Ve výchozím nastavení nejsou zobrazeny záhlaví okna formuláře, posuvníky a ohraničení. Také ve výchozím nastavení <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> komponenty vytiskne jenom viditelné části formuláře. Například pokud uživatel změní velikost formuláře v době běhu, pouze ovládací prvky a grafiku, které jsou aktuálně viditelné jsou zobrazeny.  
   
- Tiskárny výchozí používané <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> součásti je určen podle nastavení ovládacích panelů operačního systému.  
+ Výchozí tiskárna používané <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> komponenta je určeno nastavení ovládacích panelů operačního systému.  
   
- Po inicializaci tisk standardní <xref:System.Drawing.Printing.PrintDocument> se zobrazí dialogové okno tisku. Toto dialogové okno umožňuje uživatelům tiskovou úlohu zrušit.  
+ Po inicializaci tisk standardní <xref:System.Drawing.Printing.PrintDocument> se zobrazí dialogové okno Tisk. Toto dialogové okno umožňuje uživatelům tiskovou úlohu zrušit.  
   
-### <a name="key-methods-properties-and-events"></a>Klíče metody, vlastnosti a události  
- Metodě klíče <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> součást je <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> metodu, která vytiskne obrázek formuláře tiskárny, okno náhledu tisku nebo souboru. Existují dvě verze <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> metoda:  
+### <a name="key-methods-properties-and-events"></a>Klíčové metody, vlastnosti a události  
+ Metodu klíče <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> komponenta je <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> metodu, která vytiskne formuláře tiskárny, okno náhledu tisku nebo soubor bitové kopie. Existují dvě verze <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> metody:  
   
 -   Základní verze bez parametrů: `Print()`  
   
--   Přetížené verze s parametry, které určují tisk chování: `Print(printForm As Form, printFormOption As PrintOption)`  
+-   Přetížené verze s parametry, které určují chování tisku: `Print(printForm As Form, printFormOption As PrintOption)`  
   
-     `PrintOption` Přetížené metody, určuje základní implementaci používá k vytištění formuláře, zda záhlaví formuláře, posuvníky a ohraničení vytisknou a jestli jsou vytisknout posouvatelného části formuláře.  
+     `PrintOption` Parametr přetížené metody určuje základní implementace používá k vytištění formuláře, určuje, zda jsou zobrazeny záhlaví formuláře, posuvníky a ohraničení a určuje, zda jsou zobrazeny posuvný části formuláře.  
   
- <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> Vlastnost je klíčovou vlastnost <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> součásti. Tato vlastnost určuje, zda je výstup odeslán na tiskárnu, zobrazí okno náhledu tisku nebo uložený jako soubor Encapsulated PostScript. Pokud <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> je nastavena na <xref:System.Drawing.Printing.PrintAction.PrintToFile>, <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintFileName%2A> vlastnost určuje název a cesta k souboru.  
+ <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> Vlastnost je klíčovou vlastnost <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> komponenty. Tato vlastnost určuje, zda výstup je odeslán na tiskárnu, zobrazí v okně Náhled tisku nebo uložený jako soubor zapouzdřené PostScript. Pokud <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> je nastavena na <xref:System.Drawing.Printing.PrintAction.PrintToFile>, <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintFileName%2A> vlastnost určuje název a cesta k souboru.  
   
- <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrinterSettings%2A> Vlastnost poskytuje přístup k základní <xref:System.Drawing.Printing.PrintDocument.PrinterSettings%2A> objekt, který umožňuje určit taková nastavení jako tiskárny, které mají být použity a počet kopií. Můžete taky zadat dotaz tiskárny funkce, například barvu nebo duplexní podpory. Tato vlastnost pravděpodobně není v **vlastnosti** okno; přístupná jenom z kódu.  
+ <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrinterSettings%2A> Vlastnost poskytuje přístup k podkladové <xref:System.Drawing.Printing.PrintDocument.PrinterSettings%2A> objekt, který umožňuje určit tato nastavení jako tiskárny, kterou chcete použít a počet kopií k vytištění. Dotazovat můžete také možnosti tiskárny, například barvy nebo duplexní podpory. Tato vlastnost se nezobrazují v **vlastnosti** okno; je přístupný pouze z kódu.  
   
- <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Form%2A> Vlastnost se používá k určení formátu tisknout při vyvolání <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> součást prostřednictvím kódu programu. Pokud komponentu je přidán do formuláře v době návrhu, které tvoří je výchozí.  
+ <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Form%2A> Vlastnost se používá k určení formuláře k vytištění při vyvolání <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> komponenty prostřednictvím kódu programu. Pokud součást je přidán do formuláře v době návrhu, výchozím nastavením je tento formulář.  
   
  Klíče událostí <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> součásti zahrnují následující:  
   
--   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.BeginPrint> událost. Nastane při <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> metoda je volána a před první stránka výtisků dokumentu.  
+-   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.BeginPrint> události. Nastane, když <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> metoda je volána a před první stránka dokument vytiskne.  
   
--   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.EndPrint> událost. Vyskytne se po poslední tisknout.  
+-   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.EndPrint> události. Vyvolá se po vytištění poslední stránky.  
   
--   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.QueryPageSettings> událost. Nastane bezprostředně před každou tisknout.  
+-   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.QueryPageSettings> události. Nastane bezprostředně před každou tisknout.  
   
 ### <a name="remarks"></a>Poznámky  
- Pokud formulář obsahuje text nebo grafické vykresleny podle <xref:System.Drawing.Graphics> metody, použijte základní <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> (`Print()`) metoda k jeho tisku. U některých operačních systémů nemusí vykreslení grafiky při přetížené <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> metoda se používá.  
+ Pokud formulář obsahuje textové nebo grafické vykreslené <xref:System.Drawing.Graphics> metody, použijte základní <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> (`Print()`) metoda ho vytisknout. U některých operačních systémů se nemusí vykreslit grafiky při přetížené <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> metoda se používá.  
   
- Je-li ve tvaru, který je širší než šířka papíru v tiskárně, může být oříznutí pravé straně formuláře. Při návrhu formuláře pro tisk, ujistěte se, že formulář vešel na papír standardní velikosti.  
+ Pokud je formuláře širší než šířka papíru v tiskárně, může být oříznou pravé části formuláře. Při návrhu formuláře pro tisk, ujistěte se, že formulář vejde na papír velikosti standard.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, běžně se používají <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> součásti.  
+ Následující příklad ukazuje, běžně <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> komponenty.  
   
 ```  
 ' Visual Basic.  

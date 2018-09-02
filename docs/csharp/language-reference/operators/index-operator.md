@@ -9,12 +9,12 @@ helpviewer_keywords:
 - '[] operator [C#]'
 - indexing operator [C#]
 ms.assetid: 5c16bb45-88f7-45ff-b42c-1af1972b042c
-ms.openlocfilehash: 65908bb3bcd8912ef81fc094e5958ae8dc4ae1f1
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 19283a795f8cfc444dfcb186dcecc0ea86eb27fd
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37961436"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43467429"
 ---
 # <a name="-operator-c-reference"></a>[] – operátor (Referenční dokumentace jazyka C#)
 Hranaté závorky (`[]`) se používají pro pole, indexery a atributy. Můžete také používají s ukazateli.  
@@ -30,7 +30,7 @@ Hranaté závorky (`[]`) se používají pro pole, indexery a atributy. Můžete
   
  Pokud pole indexu je mimo rozsah, je vyvolána výjimka.  
   
- Pole indexování operátor nelze přetížit; typy však můžete definovat, indexery a vlastnosti, které provést jeden nebo více parametrů. Indexer parametry jsou uzavřeny do hranatých závorek, stejně jako indexy pole, ale mohou být deklarovány parametry indexer bude libovolný typ, na rozdíl od indexy pole, které musí být integrálního typu.  
+ Pole indexování operátor nelze přetížit; typy však můžete definovat indexerů, které provést jeden nebo více parametrů. Indexer parametry jsou uzavřeny do hranatých závorek, stejně jako indexy pole, ale mohou být deklarovány parametry indexer bude libovolný typ, na rozdíl od indexy pole, které musí být integrálního typu.  
   
  Například rozhraní .NET Framework definuje `Hashtable` typ, který přidruží klíče a hodnoty libovolného typu:  
   
@@ -49,11 +49,12 @@ Hranaté závorky (`[]`) se používají pro pole, indexery a atributy. Můžete
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)  
- [Pole](../../../csharp/programming-guide/arrays/index.md)  
- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
- [unsafe](../../../csharp/language-reference/keywords/unsafe.md)  
- [fixed – příkaz](../../../csharp/language-reference/keywords/fixed-statement.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)  
+- [Pole](../../../csharp/programming-guide/arrays/index.md)  
+- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
+- [unsafe](../../../csharp/language-reference/keywords/unsafe.md)  
+- [fixed – příkaz](../../../csharp/language-reference/keywords/fixed-statement.md)

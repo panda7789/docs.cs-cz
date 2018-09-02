@@ -8,11 +8,11 @@ helpviewer_keywords:
 - using keyword [C#]
 ms.assetid: 124e1a63-2a4b-4132-b269-3b6d8d3ef72d
 ms.openlocfilehash: 2d96301e083b5c5340bea8b04943ca90c90e71ac
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43257181"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43471897"
 ---
 # <a name="using-c-reference"></a>using (Referenční dokumentace jazyka C#)
 `using` – Klíčové slovo má dvě hlavní využití:  

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 8658b162-2ddf-4162-a869-aa517a42288a
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 836e920ef7c95d4a7a2b752c2f76f29d8c880e7c
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: de2fc0f562b079d5310ed2cd81211e14d4257515
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32750463"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43468543"
 ---
 # <a name="ltsecuritygt-of-ltwshttpbindinggt"></a>&lt;security&gt; – &lt;wsHttpBinding&gt;
 Představuje možnosti zabezpečení [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
@@ -17,7 +17,7 @@ Představuje možnosti zabezpečení [ \<wsHttpBinding >](../../../../../docs/fr
  \<system.ServiceModel>  
 \<vazby >  
 \<wsHttpBinding>  
-\<Vazba >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,22 +40,22 @@ Představuje možnosti zabezpečení [ \<wsHttpBinding >](../../../../../docs/fr
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují nadřazené elementy, atributy a podřízené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené elementy  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|režim|-Volitelné. Určuje typ zabezpečení, který se použije. Výchozí hodnota je `Message`.<br />-Tento atribut je typu <xref:System.ServiceModel.SecurityMode>.|  
+|režim|– Volitelné. Určuje typ zabezpečení, který se použije. Výchozí hodnota je `Message`.<br />– Tento atribut je typu <xref:System.ServiceModel.SecurityMode>.|  
   
 ## <a name="mode-attribute"></a>režim atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|Zabezpečení je vypnuté.|  
-|Přenos|Zabezpečení je k dispozici pomocí protokolu HTTPS. Službu je potřeba nakonfigurovat s certifikáty protokolu SSL. Zpráva je zcela zabezpečené pomocí protokolu HTTPS a ověření klienta pomocí certifikátu SSL služby. Ověření klienta je řízen pomocí `ClientCredentials` atribut. z [ \<přenosu >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-wshttpbinding.md).|  
-|Zpráva|Zabezpečení je k dispozici pomocí zabezpečení zpráv protokolu SOAP. Ve výchozím nastavení těla protokolu SOAP je zašifrovaná a podepsaná. Tento režim nabízí celou řadu funkcí, např. zda jsou k dispozici na straně klienta vzdálené správy, sada algoritmů, které chcete použít, přihlašovací údaje služby a jakou úroveň ochrany, která platí pro tělo zprávy prostřednictvím vlastnosti Security.Message. Ověření klienta se provádí jednou za relace a výsledky ověřování jsou uloženy v mezipaměti po dobu trvání relace.|  
-|TransportWithMessageCredential|V tomto režimu HTTPS poskytuje integrity, šifrování a ověřování serveru a zabezpečení zpráv protokolu SOAP poskytuje ověření klienta. Ve výchozím nastavení ověření klienta se provádí jednou za relace a výsledky ověřování jsou uloženy v mezipaměti po dobu trvání relace.|  
+|Žádné|Zabezpečení je zakázaná.|  
+|Přenos|Zabezpečení je k dispozici pomocí protokolu HTTPS. Služba je potřeba nakonfigurovat s využitím certifikátů SSL. Zprávu je zcela zabezpečené pomocí protokolu HTTPS a je ověřený pomocí klienta pomocí certifikátu SSL služby. Ověření klienta je řízen pomocí `ClientCredentials` atribut. nástroje [ \<přenosu >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-wshttpbinding.md).|  
+|Zpráva|Poskytuje zabezpečení pomocí zabezpečení zprávy protokolu SOAP. Ve výchozím nastavení těle SOAP je šifrovaný a podpisu. Tento režim nabízí širokou škálu funkcí, jako je například, jestli přihlašovací údaje služby najdete na adrese klienta vzdáleně, sada algoritmů, které chcete použít a jaké úroveň ochrany a platí pro tělo zprávy prostřednictvím vlastnosti Security.Message. Ověření klienta se provádí jednou na relaci a výsledky ověření jsou ukládány do mezipaměti po dobu trvání relace.|  
+|TransportWithMessageCredential|V tomto režimu HTTPS poskytuje integritu, šifrování a ověřování serveru a zabezpečení zpráv SOAP poskytuje ověření klienta. Ve výchozím nastavení ověření klienta se provádí jednou na relaci a výsledky ověření jsou ukládány do mezipaměti po dobu trvání relace.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -71,7 +71,7 @@ Představuje možnosti zabezpečení [ \<wsHttpBinding >](../../../../../docs/fr
 |[\<wsHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)|Zabezpečené vazby pro aplikace přenos HTTP.|  
   
 ## <a name="remarks"></a>Poznámky  
- Třída WSHttpBinding je navržena pro vzájemná spolupráce pomocí služby, které implementují WS-* specifikace. Zabezpečení přenosu pro tuto vazbu Secure Sockets Layer (SSL) je protokol HTTP nebo HTTPS.  
+ Třída WSHttpBinding je navržena pro spolupráci se službami, které implementují WS-* specifikace. Zabezpečení přenosu pro tuto vazbu je vrstva SSL (Secure Sockets) prostřednictvím protokolu HTTP nebo HTTPS.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.WSHttpSecurity>  
@@ -81,5 +81,5 @@ Představuje možnosti zabezpečení [ \<wsHttpBinding >](../../../../../docs/fr
  [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<Vazba >](../../../../../docs/framework/misc/binding.md)
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

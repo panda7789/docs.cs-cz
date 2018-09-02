@@ -2,36 +2,36 @@
 title: Důvěryhodná služba facade
 ms.date: 03/30/2017
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
-ms.openlocfilehash: d5a4cfe63f2fc6facbe4ce78d1c0047349e303fd
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 6acea5204ae2c05483978eb6187d1de02ae1b268
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33807658"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43463179"
 ---
 # <a name="trusted-facade-service"></a>Důvěryhodná služba facade
-Tento ukázkový scénář ukazuje, jak přenést informace identitu volajícího z jedné služby do jiného pomocí služby Windows Communication Foundation (WCF) Infrastruktura zabezpečení.  
+Tento ukázkový scénář ukazuje, jak tok volajícího informace o identitách z jedné služby do jiného pomocí Windows Communication Foundation (WCF) Infrastruktura zabezpečení.  
   
- Je běžné vzoru návrhu ke zveřejnění funkce poskytované službou k veřejné síti pomocí průčelí za služby. Služba průčelí za většinou nachází v hraniční síti (označované také jako DMZ, demilitarizovaná zóna a monitorovaná podsíť) a komunikuje se službou back-end, který implementuje obchodní logiky a má přístup k interní data. Komunikační kanál mezi průčelí za služby a služby back-end přejde přes bránu firewall a je obvykle omezené pro pouze jedinému účelu.  
+ To je běžný vzor návrhu ke zveřejnění funkce poskytované službou ve veřejné síti pomocí služby průčelí. Služba průčelí obvykle nachází v hraniční síti (označované také jako DMZ, demilitarizovaná zóna a monitorovaná podsíť) a komunikuje s back-end službu, která implementuje obchodní logiku a má přístup k interní data. Komunikační kanál mezi službou průčelí a back-end službu prochází přes bránu firewall a je obvykle omezené pouze jedinému účelu.  
   
- Tato ukázka se skládá z následujících součástí:  
+ Tento příklad se skládá z následujících součástí:  
   
--   Kalkulačky klienta  
+-   Kalkulačka klienta  
   
--   Kalkulačky průčelí za služby  
+-   Kalkulačka průčelí služby  
   
--   Back-end službu kalkulačky  
+-   Kalkulačka back-end službou  
   
- Službu průčelí za zodpovídá za ověření žádosti a ověřování volající. Po úspěšném ověření a ověření se předá požadavek back-end službu pomocí řízené komunikační kanál z hraniční sítě k interní síti. Jako součást předaný požadavek službu průčelí za obsahuje informace o identitu volajícího, aby službě back-end tyto informace můžete použít v jeho zpracování. Identitu volajícího se přenášejí pomocí `Username` token zabezpečení uvnitř zprávu `Security` záhlaví. Příklad používá k přenosu a získání informací o z Infrastruktura zabezpečení WCF `Security` záhlaví.  
+ Adaptační vrstva služby zodpovídá za ověření žádosti a ověřování volající. Po úspěšném ověření a ověření předá požadavek do služby back-end pomocí řízené komunikační kanál z hraniční sítě k interní síti. Jako součást předaný požadavek průčelí služba obsahuje informace o identitu volajícího tak, aby službě back-end tyto informace můžete použít v jeho zpracování. Identita volajícího se přenáší prostřednictvím `Username` token zabezpečení ve zprávě `Security` záhlaví. Ukázka používá k přenosu a získání informací z Infrastruktura zabezpečení WCF `Security` záhlaví.  
   
 > [!IMPORTANT]
->  Back-end službu důvěřuje průčelí za službu, kterou chcete ověřit volající. Z toho důvodu back-end službu neověřuje volající znovu; používá informace o identitě poskytovaný službou průčelí za v přesměrovaná žádosti. Díky tomuto vztahu důvěryhodnosti musí ověřit službě back-end službu průčelí za tak, aby zajistila, že přesměrovaná zpráva pochází z důvěryhodného zdroje – v takovém případě průčelí za službu.  
+>  Back-end službu vztahy důvěryhodnosti služby průčelí ověřit volající. Z tohoto důvodu back-end službu neověřuje volající znovu. používá informace o identitě poskytovaný službou průčelí v předaný požadavek. Díky tomuto vztahu důvěryhodnosti musí back-end službu ověřit službě průčelí a ujistěte se, že přesměrovaná zpráva pochází z důvěryhodného zdroje – v takovém případě adaptační vrstva služby.  
   
 ## <a name="implementation"></a>Implementace  
- Existují dva komunikační cesty v této ukázce. Nejprve je mezi klientem a službu průčelí za sekundu je mezi průčelí za služby a služby back-end.  
+ Existují dvě cesty komunikace v této ukázce. Nejprve je mezi klientem a službu průčelí, druhá je mezi službou průčelí a back-end službu.  
   
-### <a name="communication-path-between-client-and-faade-service"></a>Komunikační trasa mezi klientem a službou průčelí za  
- Klient k cestě komunikace služby průčelí za používá `wsHttpBinding` s `UserName` typu pověření klienta. To znamená, že klient použije uživatelské jméno a heslo k ověření průčelí za služby a služby průčelí za používá certifikát X.509 k ověření klienta. Konfigurace vazeb vypadá jako v následujícím příkladu.  
+### <a name="communication-path-between-client-and-faade-service"></a>Komunikační trasa mezi klientem a službou průčelí  
+ Klient do cesty komunikace služby průčelí používá `wsHttpBinding` s `UserName` typu pověření klienta. To znamená, že klient používá uživatelské jméno a heslo k ověření průčelí služba a služba průčelí certifikát X.509 používá k ověření klienta. Konfigurace vazby vypadá jako v následujícím příkladu.  
   
 ```xml  
 <bindings>  
@@ -45,7 +45,7 @@ Tento ukázkový scénář ukazuje, jak přenést informace identitu volajícíh
 </bindings>  
 ```  
   
- Službu průčelí za ověří volajícího pomocí vlastní `UserNamePasswordValidator` implementace. Pro demonstrační účely ověřování jenom zaručí, že uživatelské jméno volajícího odpovídá vidění heslo. V případě skutečných pravděpodobně ověření uživatele pomocí služby Active Directory nebo vlastního zprostředkovatele členství technologie ASP.NET. Implementace validátoru se nachází v `FacadeService.cs` souboru.  
+ Službu průčelí ověřuje pomocí vlastního volajícího `UserNamePasswordValidator` implementace. Pro demonstrační účely ověřování pouze zaručí, že uživatelské jméno volajícího odpovídá prezentované heslo. V reálné situaci pravděpodobně ověření uživatele pomocí služby Active Directory nebo vlastního poskytovatele členství technologie ASP.NET. Program pro ověření implementace se nachází v `FacadeService.cs` souboru.  
   
 ```  
 public class MyUserNamePasswordValidator : UserNamePasswordValidator  
@@ -63,7 +63,7 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
 }  
 ```  
   
- Vlastní validátor je nakonfigurována pro používání uvnitř `serviceCredentials` chování v konfiguračním souboru průčelí za služby. Toto chování je také použít ke konfiguraci služby certifikát X.509.  
+ Vlastní validátor je nakonfigurován pro použití v `serviceCredentials` chování v konfiguračním souboru služby adaptační vrstva. Toto chování se také používá ke konfiguraci certifikátu X.509 služby.  
   
 ```xml  
 <behaviors>  
@@ -92,10 +92,10 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
 </behaviors>  
 ```  
   
-### <a name="communication-path-between-faade-service-and-backend-service"></a>Komunikační trasa mezi službou průčelí za a back-end službu  
- Používá službu průčelí za cestu komunikace služby back-end `customBinding` který se skládá z několika součástí vazby. Tato vazba má dvě věci. Ověřuje průčelí za služby a back-end službu zajistěte, aby komunikace zabezpečená a pochází z důvěryhodného zdroje. Kromě toho také přenášení počáteční volajícího identity uvnitř `Username` tokenu zabezpečení. V tomto případě se přenáší pouze uživatelské jméno počáteční volajícího na službě back-end, heslo není součástí zprávy. Je to proto, že back-end službu důvěřuje průčelí za službu, kterou chcete ověřit volající před předáním požadavku na ni. Protože průčelí za služby se ověří na službě back-end, můžete informace obsažené v předaný požadavek důvěřovat back-end službu.  
+### <a name="communication-path-between-faade-service-and-backend-service"></a>Komunikační trasa mezi službou průčelí a back-end službou  
+ Používá službu průčelí komunikační trasa back-end službu `customBinding` , který se skládá z několika elementů vazby. Tato vazba provede dvě věci. Ověří se průčelí služby a back-end službu, aby zajistila, že komunikace je zabezpečená a pochází z důvěryhodného zdroje. Kromě toho také přenáší identitu volajícího počáteční uvnitř `Username` token zabezpečení. V takovém případě se přenášejí pouze uživatelské jméno volajícího počáteční do back-end službu, heslo není součástí zprávy. Je to proto, že back-end službu vztahy důvěryhodnosti služby průčelí ověřit volající před předáním požadavku k němu. Protože průčelí service ověří ve službě back-endu, back-end službu můžete důvěřovat informace obsažené v předaný požadavek.  
   
- Zde je konfigurace vazeb pro tuto cestu komunikace.  
+ Následuje konfigurace vazby pro tuto cestu komunikace.  
   
 ```xml  
 <bindings>  
@@ -109,11 +109,11 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
 </bindings>  
 ```  
   
- [ \<Zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) prvku vazby má na starosti přenosu uživatelského jména a extrakce počáteční volajícího. [ \<WindowsStreamSecurity >](../../../../docs/framework/configure-apps/file-schema/wcf/windowsstreamsecurity.md) a [ \<tcpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md) postará o ověřování průčelí za a back-end služby a zpráv ochrany.  
+ [ \<Zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) postará element vazby přenosu uživatelského jména a extrakce počáteční volající. [ \<Zabezpečení windowsstreamsecurity iniciuje >](../../../../docs/framework/configure-apps/file-schema/wcf/windowsstreamsecurity.md) a [ \<tcpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md) postará o ověřování fasádu a back-endové služby a zprávu ochrany.  
   
- Chcete-li předá žádost, implementace služby průčelí za poskytnout počáteční volajícího uživatelské jméno, že infrastruktura zabezpečení WCF to můžete umístit do přesměrovaná zpráva. Počáteční volajícího uživatelské jméno je součástí implementace služby průčelí za nastavením v `ClientCredentials` vlastnost na instanci proxy serveru klienta služby průčelí za používá ke komunikaci s back-end službu.  
+ Tento požadavek předá dál, implementace služby průčelí musíte zadat uživatelské jméno počáteční volající tak tuto infrastrukturu zabezpečení WCF to můžete umístit do přesměrovaná zpráva. Uživatelské jméno počáteční volající je součástí implementace služby průčelí nastavením v `ClientCredentials` vlastnost na instanci proxy serveru klienta služby průčelí používá ke komunikaci s back-end službu.  
   
- Následující kód ukazuje, jak `GetCallerIdentity` metoda se implementuje na průčelí za službu. Ostatní metody pomocí stejného vzoru.  
+ Následující kód ukazuje, jak `GetCallerIdentity` metoda je implementována ve službě adaptační vrstva. Jiné metody nepoužívají stejným vzorem.  
   
 ```  
 public string GetCallerIdentity()  
@@ -126,9 +126,9 @@ public string GetCallerIdentity()
 }  
 ```  
   
- Jak ukazuje předchozí kód, heslo není nastaven na `ClientCredentials` , pouze uživatelské jméno je nastavena. Infrastruktura zabezpečení WCF vytvoří token zabezpečení uživatelské jméno bez zadání hesla v tomto případě tedy přesně co je nutné v tomto scénáři.  
+ Jak je znázorněno v předchozím kódu, heslo nenastaví na `ClientCredentials` , pouze uživatelské jméno je nastavena. Infrastruktura zabezpečení WCF vytvoří token zabezpečení uživatelské jméno bez hesla v tomto případě tedy přesně toho, co vyžaduje v tomto scénáři.  
   
- Na službě back-end musí být ověřeny informací obsažených v tokenu zabezpečení, uživatelské jméno. Ve výchozím nastavení zabezpečení WCF pokusí mapovat uživatele na účet systému Windows pomocí zadaného hesla. V takovém případě není zadané heslo a back-end službu není nutné k ověření uživatelského jména, protože již bylo provedeno ověření službou průčelí za. Tuto funkci implementovat ve WCF, vlastní `UserNamePasswordValidator` je k dispozici, pouze vynucuje, uživatelské jméno je zadána v tokenu a nebude provádět žádné další ověřování.  
+ Ve službě back-endu musí být ověřené informace obsažené v tokenu zabezpečení uživatelské jméno. Ve výchozím nastavení zabezpečení WCF pokusí mapovat uživatele na Windows účet pomocí zadaného hesla. V takovém případě není zadáno žádné heslo a k ověření uživatelského jména, protože již bylo provedeno ověření službou průčelí není vyžadována back-end službu. Pro implementaci této funkce ve službě WCF, vlastní `UserNamePasswordValidator` je k dispozici, pouze vynutí, že uživatelské jméno je zadán v tokenu a nebude provádět žádné další ověřování.  
   
 ```  
 public class MyUserNamePasswordValidator : UserNamePasswordValidator  
@@ -149,7 +149,7 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
 }  
 ```  
   
- Vlastní validátor je nakonfigurována pro používání uvnitř `serviceCredentials` chování v konfiguračním souboru průčelí za služby.  
+ Vlastní validátor je nakonfigurován pro použití v `serviceCredentials` chování v konfiguračním souboru služby adaptační vrstva.  
   
 ```xml  
 <behaviors>  
@@ -166,7 +166,7 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
 </behaviors>  
 ```  
   
- Extrahovat informace uživatelského jména a informace o účtu služby průčelí za důvěryhodné, používá implementace služby back-end `ServiceSecurityContext` třídy. Následující kód ukazuje jak `GetCallerIdentity` metoda není implementována.  
+ Extrahovat informace uživatelského jména a informace o účtu služby důvěryhodného průčelí, implementace služby back-endu používá `ServiceSecurityContext` třídy. Následující kód ukazuje jak `GetCallerIdentity` metoda je implementována.  
   
 ```  
 public string GetCallerIdentity()  
@@ -209,10 +209,10 @@ public string GetCallerIdentity()
 }  
 ```  
   
- Informace o účtu služby průčelí za je extrahována pomocí `ServiceSecurityContext.Current.WindowsIdentity` vlastnost. Pro přístup k informacím o počáteční volající používá služba back-end `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` vlastnost. Hledá `Identity` deklarace identity s typem `Name`. Infrastruktura zabezpečení WCF z informací obsažených v automaticky vygeneruje tuto deklaraci `Username` tokenu zabezpečení.  
+ Informace o účtu služby průčelí se extrahují pomocí `ServiceSecurityContext.Current.WindowsIdentity` vlastnost. Přístup k informacím o počáteční volající back-end služba používá `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` vlastnost. Vyhledá `Identity` deklarace identity s typem `Name`. Tato deklarace identity není automaticky vygenerován pomocí WCF zabezpečení infrastruktury z informací obsažených v `Username` token zabezpečení.  
   
 ## <a name="running-the-sample"></a>Spuštění ukázky  
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta. Můžete stisknutím klávesy ENTER v oknech konzoly služby průčelí za a back-end vypnutí služby.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient. Stisknutím klávesy ENTER v oknech konzoly služby fasádu a back-endu pro vypnutí služby.  
   
 ```  
 Username authentication required.  
@@ -230,13 +230,13 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
- Dávkový soubor Setup.bat součástí ukázkový scénář důvěryhodné Facade umožňuje nakonfigurovat server se příslušný certifikát ke spuštění průčelí za služby, která vyžaduje zabezpečení na základě certifikátu k vlastnímu ověření klienta. Přečtěte si postup instalace na konci tohoto tématu podrobnosti.  
+ Dávkový soubor Setup.bat součástí ukázkový scénář důvěryhodné Facade umožňuje nakonfigurovat server se příslušný certifikát ke spuštění služby průčelí, které vyžadují zabezpečení na základě certifikátů ke svému ověření ke klientovi. Zobrazit postup nastavení na konci tohoto tématu, kde podrobnosti.  
   
- Následující poskytuje stručný přehled různých oddílů dávkové soubory.  
+ Následující body nabízí stručný přehled o různých částech dávkové soubory.  
   
--   Vytvoření certifikátu serveru.  
+-   Vytváří se certifikát serveru.  
   
-     Následující řádky z dávkového souboru Setup.bat vytvořit certifikát serveru, který chcete použít.  
+     Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít.  
   
     ```  
     echo ************  
@@ -248,46 +248,46 @@ Press <ENTER> to terminate client.
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
     ```  
   
-     `%SERVER_NAME%` Proměnná Určuje název serveru – výchozí hodnota je localhost. Certifikát je uložen v úložišti LocalMachine.  
+     `%SERVER_NAME%` Proměnné Určuje název serveru – výchozí hodnota je localhost. Certifikát je uložen v úložišti LocalMachine.  
   
--   Instalace služby průčelí za certifikátu do úložiště důvěryhodných certifikátů klienta.  
+-   Instalace služby průčelí certifikátu do úložiště důvěryhodných certifikátů klienta.  
   
-     Následující řádek zkopíruje do úložiště důvěryhodných osob na klientský certifikát průčelí za služby. Tento krok je povinný, protože certifikáty generované infrastrukturou Makecert.exe nejsou důvěryhodný implicitně systému klienta. Pokud již máte certifikát, který je integrován do důvěryhodného kořenového certifikátu klienta – například certifikát vystavený Microsoft – v tomto kroku naplnění úložišti certifikátů klienta s certifikátem serveru se nevyžaduje.  
+     Následující řádek certifikát služby průčelí zkopíruje do úložiště důvěryhodných osob klienta. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikát vydaný společností Microsoft – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.  
   
     ```  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
     ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-#### <a name="to-run-the-sample-on-the-same-machine"></a>Ke spuštění ukázky na stejném počítači  
+#### <a name="to-run-the-sample-on-the-same-machine"></a>Ke spuštění ukázky ve stejném počítači  
   
-1.  Ujistěte se, že cesta obsahuje složku, kde je umístěna Makecert.exe.  
+1.  Ujistěte se, že cesta obsahuje složku, kde je umístěn Makecert.exe.  
   
-2.  Spuštění Setup.bat od vzorku instalační složku. Tím se nainstaluje všechny certifikáty, které jsou potřebné ke spuštění ukázky.  
+2.  Spusťte Setup.bat z instalační složky s ukázkou. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky.  
   
-3.  Spusťte BackendService.exe z adresáře \BackendService\bin v okně samostatné konzoly  
+3.  Spuštění BackendService.exe z adresáře \BackendService\bin v okně samostatné konzoly  
   
-4.  Spusťte FacadeService.exe z adresáře \FacadeService\bin v okně samostatné konzoly  
+4.  Spuštění FacadeService.exe z adresáře \FacadeService\bin v okně samostatné konzoly  
   
-5.  Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientskou aplikaci konzoly.  
+5.  Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-6.  Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+6.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
-#### <a name="to-clean-up-after-the-sample"></a>Vyčistěte po vzorku  
+#### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
-1.  Po dokončení spuštění ukázky, spusťte Cleanup.bat ve složce Ukázky.  
+1.  Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\TrustedFacade`  
   

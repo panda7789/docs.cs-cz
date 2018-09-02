@@ -15,32 +15,33 @@ helpviewer_keywords:
 - Visual C# compiler, enabling
 - compiling source code, from command line
 ms.assetid: 7ec09480-5612-4f6a-8d00-ad90ea9bca5d
-ms.openlocfilehash: 0935cb62244691af7fa450fef9c1ab8f6c616579
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 77375e428fe0563c0b533ca97abd21070e850682
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33214988"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43466735"
 ---
 # <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Postup: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio
 
-Soubor VsDevCmd.bat nastaví příslušné proměnné prostředí příkazovém řádku. Další informace o VsDevCmd.bat najdete v tématu [článku znalostní báze Q248802](https://support.microsoft.com/help/248802/you-receive-the-out-of-environment-space-error-message-when-you-execut).  
+Soubor VsDevCmd.bat nastaví příslušné proměnné prostředí povolit sestavení příkazového řádku. Další informace o VsDevCmd.bat najdete v tématu [článku Q248802 znalostní báze](https://support.microsoft.com/help/248802/you-receive-the-out-of-environment-space-error-message-when-you-execut).  
 
 > [!NOTE]
-> Soubor VsDevCmd.bat je nový soubor s Visual Studio 2017 doručit. Visual Studio 2015 a starší verze použít VSVARS32.bat k tomuto účelu. Tento soubor byla uložená v sadě Visual Studio \Program Files\Microsoft\\*verze*\Common7\Tools nebo Program Files (x86) \Microsoft Visual Studio\\*verze*\Common7\Tools.
+> Soubor VsDevCmd.bat je nový soubor dodávají s Visual Studio 2017. Visual Studio 2015 a starší používala VSVARS32.bat ke stejnému účelu. Tento soubor byl uložen v sadě Visual Studio \Program Files\Microsoft\\*verze*\Common7\Tools nebo Program Files (x86) \Microsoft Visual Studio\\*verze*\Common7\Tools.
   
-Pokud je aktuální verze sady Visual Studio nainstalovaná na počítači, který má také starší verze sady Visual Studio, nespouštějte VsDevCmd.bat a VSVARS32. BAT z různých verzí ve stejném okně příkazového řádku. Místo toho byste měli spustit příkaz pro každou verzi v samostatném okně.
+Pokud na počítači, který také používá starší verzi sady Visual Studio je nainstalovaná aktuální verze sady Visual Studio, byste neměli spouštět VsDevCmd.bat a VSVARS32. SPOLEHNUTÍ z různých verzí ve stejném okně příkazového řádku. Místo toho by měl spustit příkaz pro každou verzi v samostatném okně.
   
 ### <a name="to-run-vsdevcmdbat"></a>Ke spuštění VsDevCmd.BAT  
   
-1.  Z **spustit** nabídky, otevřete **příkazový řádek vývojáře pro VS 2017**.  Je v **Visual Studio 2017** složky.
+1.  Z **Start** nabídky, otevřete **Developer Command Prompt for VS 2017**.  Je **Visual Studio 2017** složky.
   
-2.  Změnit na \Program Files\Microsoft Visual Studio\\*verze*\\*nabídky*\Common7\Tools nebo \Program soubory (x86) \Microsoft Visual Studio\\ *Verze*\\*nabídky*\Common7\Tools podadresáři instalace.  (*Verze* je *2017* pro aktuální verzi. *Nabídka* je jedním z *Enterprise*, *Professional* nebo *komunity*.)
+2.  Změňte na \Program Files\Microsoft Visual Studio\\*verze*\\*nabídky*\Common7\Tools nebo \Program soubory (x86) \Microsoft Visual Studio\\ *Verze*\\*nabídky*\Common7\Tools podadresář instalace.  (*Verze* je *2017* pro aktuální verzi. *Nabídka* je jedním z *Enterprise*, *Professional* nebo *komunity*.)
   
-3.  Spustit VsDevCmd.bat zadáním **VsDevCmd**.  
+3.  Spusťte VsDevCmd.bat zadáním **VsDevCmd**.  
   
     > [!CAUTION]
-    >  VsDevCmd.bat se může lišit od počítače na počítač. Nepřepisovat existující soubor nebo je poškozena VsDevCmd.bat s VsDevCmd.bat z jiného počítače. Namísto toho nahraďte chybějící soubor opětovným spuštěním instalačního programu.  
+    >  VsDevCmd.bat se může lišit od počítače na počítač. Nenahrazujte VsDevCmd.bat z jiného počítače VsDevCmd.bat soubor chybí nebo je poškozen. Namísto toho nahraďte chybějící soubor opětovným spuštěním instalačního programu.  
   
 ## <a name="see-also"></a>Viz také  
- [Sestavování pomocí programu csc.exe v příkazovém řádku](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)
+
+- [Sestavování pomocí programu csc.exe v příkazovém řádku](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)

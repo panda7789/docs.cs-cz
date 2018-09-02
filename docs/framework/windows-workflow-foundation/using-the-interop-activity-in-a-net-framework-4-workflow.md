@@ -1,52 +1,52 @@
 ---
-title: Pomocí zprostředkovatele komunikace s objekty aktivity v pracovním postupu rozhraní .NET Framework 4
+title: Použití aktivity interoperability v pracovním postupu rozhraní .NET Framework 4
 ms.date: 03/30/2017
 ms.assetid: 9bb747f0-eb33-4f70-84cd-317382372dcd
-ms.openlocfilehash: 64e8aef01aefa23dc98b42ab835de097d6c222df
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 02eeaf5bb7ff484ba5982197fc395e247cd5a87f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33520224"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43466722"
 ---
-# <a name="using-the-interop-activity-in-a-net-framework-4-workflow"></a>Pomocí zprostředkovatele komunikace s objekty aktivity v pracovním postupu rozhraní .NET Framework 4
-Aktivity vytvořené pomocí [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] nebo [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] mohou být používány [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovní postup pomocí <xref:System.Activities.Statements.Interop> aktivity. Toto téma obsahuje základní informace o použití <xref:System.Activities.Statements.Interop> aktivity.  
+# <a name="using-the-interop-activity-in-a-net-framework-4-workflow"></a>Použití aktivity interoperability v pracovním postupu rozhraní .NET Framework 4
+Aktivity vytvořené pomocí [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] nebo [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] lze použít v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu pomocí <xref:System.Activities.Statements.Interop> aktivity. Toto téma obsahuje přehled používání <xref:System.Activities.Statements.Interop> aktivity.  
   
 > [!NOTE]
->  <xref:System.Activities.Statements.Interop> Aktivita se nezobrazí v panelu nástrojů Návrháře pracovního postupu nezadáte pracovního postupu projekt má svůj **cílové rozhraní** nastavení **rozhraní .net Framework 4** nebo novější.  
+>  <xref:System.Activities.Statements.Interop> Aktivity se nezobrazí v panelu nástrojů návrháře postupu, pokud projekt pracovního postupu neobsahuje jeho **Cílová architektura** nastavení **rozhraní .net Framework 4** nebo novější.  
   
-## <a name="using-the-interop-activity-in-net-framework-45-workflows"></a>Pomocí zprostředkovatele komunikace s objekty aktivity v pracovních postupech rozhraní .NET Framework 4.5  
- V tomto tématu [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] knihovna aktivit je vytvořen, který obsahuje `DiscountCalculator` aktivity. `DiscountCalculator` Vypočítá slevu na základě množství nákupu a skládá se z <xref:System.Workflow.Activities.SequenceActivity> obsahující <xref:System.Workflow.Activities.PolicyActivity>.  
+## <a name="using-the-interop-activity-in-net-framework-45-workflows"></a>Použití aktivity interoperability v pracovních postupech rozhraní .NET Framework 4.5  
+ V tomto tématu [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] obsahující vytvoření knihovny aktivit `DiscountCalculator` aktivity. `DiscountCalculator` Vypočítá a uplatnit tak slevu na základě částky nákupu a skládá se z <xref:System.Workflow.Activities.SequenceActivity> , která obsahuje <xref:System.Workflow.Activities.PolicyActivity>.  
   
 > [!NOTE]
->  [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] Používá aktivita vytvořená v tomto tématu <xref:System.Workflow.Activities.PolicyActivity> implementovat logiku aktivity. Je není potřeba použít vlastní [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] aktivity nebo <xref:System.Activities.Statements.Interop> aktivitu, chcete-li použít pravidla v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu. Příklad použití pravidel v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu bez použití <xref:System.Activities.Statements.Interop> aktivity, najdete v článku [činnost zásad v rozhraní .NET Framework 4.5](../../../docs/framework/windows-workflow-foundation/samples/policy-activity-in-net-framework-4-5.md) ukázka.  
+>  [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] Používá aktivita vytvořená v tomto tématu <xref:System.Workflow.Activities.PolicyActivity> implementovat logiku aktivity. To není nutné používat vlastní [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] aktivity nebo <xref:System.Activities.Statements.Interop> aktivitu, chcete-li použít pravidla v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu. Příklad použití pravidel v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu bez použití <xref:System.Activities.Statements.Interop> aktivity, najdete v článku [aktivita Policy v rozhraní .NET Framework 4.5](../../../docs/framework/windows-workflow-foundation/samples/policy-activity-in-net-framework-4-5.md) vzorku.  
   
 #### <a name="to-create-the-net-framework-35-activity-library-project"></a>Vytvoření projektu knihovny aktivit rozhraní .NET Framework 3.5  
   
-1.  Otevřete [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] a vyberte **nový** a potom **projektu...** z **souboru** nabídky.  
+1.  Otevřít [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] a vyberte **nový** a potom **projektu...** z **souboru** nabídky.  
   
-2.  Rozbalte položku **jiné typy projektů** uzlu **nainstalovaných šablonách** panelu a vyberte **řešení sady Visual Studio**.  
+2.  Rozbalte **ostatní typy projektů** uzlu **nainstalované šablony** podokně a vyberte **řešení sady Visual Studio**.  
   
-3.  Vyberte **prázdného řešení** z **řešení sady Visual Studio** seznamu. Typ `PolicyInteropDemo` v **název** pole a klikněte na tlačítko **OK**.  
+3.  Vyberte **prázdné řešení** z **řešení sady Visual Studio** seznamu. Typ `PolicyInteropDemo` v **název** pole a klikněte na tlačítko **OK**.  
   
-4.  Klikněte pravým tlačítkem na **PolicyInteropDemo** v **Průzkumníku řešení** a vyberte **přidat** a potom **nový projekt...** .  
+4.  Klikněte pravým tlačítkem na **PolicyInteropDemo** v **Průzkumníka řešení** a vyberte **přidat** a potom **nový projekt...** .  
   
     > [!TIP]
-    >  Pokud **Průzkumníku řešení** okno není viditelná, vyberte **Průzkumníku řešení** z **zobrazení** nabídky.  
+    >  Pokud **Průzkumníka řešení** okno není viditelný, vyberte **Průzkumníka řešení** z **zobrazení** nabídky.  
   
-5.  V **nainstalovaných šablonách** seznamu, vyberte **Visual C#** a potom **pracovního postupu**. Vyberte **rozhraní .NET Framework 3.5** z rozhraní .NET Framework verze rozevíracího seznamu a pak vyberte **knihovny aktivit pracovních postupů** z **šablony** seznamu.  
+5.  V **nainstalované šablony** seznamu vyberte **Visual C#** a potom **pracovního postupu**. Vyberte **rozhraní .NET Framework 3.5** z rozhraní .NET Framework verze rozevíracího seznamu a pak vyberte **knihovny aktivit pracovních postupů** z **šablony** seznamu.  
   
 6.  Typ `PolicyActivityLibrary` v **název** pole a klikněte na tlačítko **OK**.  
   
-7.  Klikněte pravým tlačítkem na **Activity1.cs** v **Průzkumníku řešení** a vyberte **odstranit**. Klikněte na tlačítko **OK** k potvrzení.  
+7.  Klikněte pravým tlačítkem na **Activity1.cs** v **Průzkumníka řešení** a vyberte **odstranit**. Klikněte na tlačítko **OK** potvrďte.  
   
-#### <a name="to-create-the-discountcalculator-activity"></a>Chcete-li vytvořit DiscountCalculator aktivity  
+#### <a name="to-create-the-discountcalculator-activity"></a>Vytvořit aktivitu DiscountCalculator  
   
-1.  Klikněte pravým tlačítkem na **PolicyActivityLibrary** v **Průzkumníku řešení** a vyberte **přidat** a potom **aktivity...** .  
+1.  Klikněte pravým tlačítkem na **PolicyActivityLibrary** v **Průzkumníka řešení** a vyberte **přidat** a potom **aktivit...** .  
   
-2.  Vyberte **aktivity (s odděleným kódem)** z **Visual C# položky** seznamu. Typ `DiscountCalculator` v **název** pole a klikněte na tlačítko **OK**.  
+2.  Vyberte **aktivita (s rozdělením kódu)** z **položky Visual C#** seznamu. Typ `DiscountCalculator` v **název** pole a klikněte na tlačítko **OK**.  
   
-3.  Klikněte pravým tlačítkem na **DiscountCalculator.xoml** v **Průzkumníku řešení** a vyberte **kód zobrazení**.  
+3.  Klikněte pravým tlačítkem na **DiscountCalculator.xoml** v **Průzkumníka řešení** a vyberte **zobrazit kód**.  
   
 4.  Přidejte následující tři vlastnosti, které chcete `DiscountCalculator` třídy.  
   
@@ -59,23 +59,23 @@ Aktivity vytvořené pomocí [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-
     }  
     ```  
   
-5.  Klikněte pravým tlačítkem na **DiscountCalculator.xoml** v **Průzkumníku řešení** a vyberte **Návrhář zobrazení**.  
+5.  Klikněte pravým tlačítkem na **DiscountCalculator.xoml** v **Průzkumníka řešení** a vyberte **Návrhář zobrazení**.  
   
-6.  Přetažení **zásad** aktivity z **v3.0 Windows Workflow** části **sada nástrojů** a umístěte jej do **DiscountCalculator** aktivity .  
-  
-    > [!TIP]
-    >  Pokud **sada nástrojů** okno není viditelná, vyberte **sada nástrojů** z **zobrazení** nabídky.  
-  
-#### <a name="to-configure-the-rules"></a>Pro konfiguraci pravidel  
-  
-1.  Klikněte na nově přidaný **zásad** aktivity vyberte, pokud již není vybrána.  
-  
-2.  Klikněte na tlačítko **RuleSetReference** vlastnost **vlastnosti** okna vyberte ho a klikněte na tlačítko se třemi tečkami napravo od vlastnost.  
+6.  Přetáhněte **zásady** aktivita z **v3.0 pracovního postupu Windows** část **nástrojů** a umístěte jej do **DiscountCalculator** aktivity .  
   
     > [!TIP]
-    >  Pokud **vlastnosti** okno není viditelná, vyberte **vlastnosti – okno** z **zobrazení** nabídky.  
+    >  Pokud **nástrojů** okno není viditelný, vyberte **nástrojů** z **zobrazení** nabídky.  
   
-3.  Vyberte **klikněte na tlačítko Nový...** .  
+#### <a name="to-configure-the-rules"></a>Konfigurace pravidla  
+  
+1.  Klikněte na nově přidaných **zásady** aktivity vyberte, pokud ještě není vybraná.  
+  
+2.  Klikněte na tlačítko **RuleSetReference** vlastnost **vlastnosti** okno ho vyberte a klikněte na tlačítko se třemi tečkami napravo od vlastnost.  
+  
+    > [!TIP]
+    >  Pokud **vlastnosti** okno se nezobrazuje, vyberte **okno vlastností** z **zobrazení** nabídky.  
+  
+3.  Vyberte **na nový...** .  
   
 4.  Klikněte na tlačítko **přidat pravidlo**.  
   
@@ -125,13 +125,13 @@ Aktivity vytvořené pomocí [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-
     this.Total = this.Subtotal  
     ```  
   
-14. Klikněte na tlačítko **OK** zavřete **Editor nastavit pravidla** dialogové okno.  
+14. Klikněte na tlačítko **OK** zavřete **editoru nastavte pravidlo** dialogové okno.  
   
-15. Zajistěte, aby nově vytvořené <xref:System.Workflow.Activities.Rules.RuleSet> vybrán **název** seznamu a klikněte na tlačítko **OK**.  
+15. Ujistěte se, že nově vytvořené <xref:System.Workflow.Activities.Rules.RuleSet> výběru v **název** seznamu a klikněte na tlačítko **OK**.  
   
-16. Stisknutím kombinace kláves CTRL + SHIFT + B řešení sestavíte.  
+16. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
   
- Pravidla přidán do `DiscountCalculator` aktivity v tomto postupu jsou uvedeny v následujícím příkladu kódu.  
+ Přidaná do pravidla `DiscountCalculator` aktivity v tomto postupu jsou uvedeny v následujícím příkladu kódu.  
   
 ```  
 Rule1: IF this.Subtotal >= 50 && this.Subtotal < 100   
@@ -145,43 +145,43 @@ Rule3: IF this.DiscountPercent > 0
        ELSE this.Total = this.Subtotal  
 ```  
   
- Když <xref:System.Workflow.Activities.PolicyActivity> provede tyto tři pravidla vyhodnotit a upravit `Subtotal`, `DiscountPercent`, a `Total` hodnot vlastností `DiscountCalculator` aktivity k výpočtu požadované slevy.  
+ Když <xref:System.Workflow.Activities.PolicyActivity> spustí tyto tři pravidla vyhodnotit a upravit `Subtotal`, `DiscountPercent`, a `Total` hodnoty vlastností `DiscountCalculator` aktivity pro výpočet požadovaného slevy.  
   
-## <a name="using-the-discountcalculator-activity-with-the-interop-activity"></a>Aktivita DiscountCalculator pomocí zprostředkovatele komunikace s objekty aktivity  
+## <a name="using-the-discountcalculator-activity-with-the-interop-activity"></a>Použití aktivity DiscountCalculator pomocí aktivity interoperability  
  Použít `DiscountCalculator` aktivity uvnitř [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu, <xref:System.Activities.Statements.Interop> aktivita se používá. V této části dva pracovní postupy jsou vytvářeny, jeden pomocí kódu a pomocí návrháře pracovních postupů, které ukazují, jak používat <xref:System.Activities.Statements.Interop> aktivitu `DiscountCalculator` aktivity. Stejné hostitelské aplikace se používá pro obě pracovních postupů.  
   
 #### <a name="to-create-the-host-application"></a>Chcete-li vytvořit hostitelskou aplikaci  
   
-1.  Klikněte pravým tlačítkem na **PolicyInteropDemo** v **Průzkumníku řešení** a vyberte **přidat**a potom **nový projekt...** .  
+1.  Klikněte pravým tlačítkem na **PolicyInteropDemo** v **Průzkumníka řešení** a vyberte **přidat**a potom **nový projekt...** .  
   
-2.  Ujistěte se, že **rozhraní .NET Framework 4.5** je vybraný v rozevíracím seznamu verze rozhraní .NET Framework a vyberte **pracovního postupu konzolové aplikace** z **Visual C# položky** seznamu.  
+2.  Ujistěte se, že **rozhraní .NET Framework 4.5** je vybrali v rozevíracím seznamu verzi rozhraní .NET Framework a vyberte **Konzolová aplikace pracovního postupu** z **položky Visual C#** seznamu.  
   
 3.  Typ `PolicyInteropHost` do **název** pole a klikněte na tlačítko **OK**.  
   
-4.  Klikněte pravým tlačítkem na **PolicyInteropHost** v **Průzkumníku řešení** a vyberte **vlastnosti**.  
+4.  Klikněte pravým tlačítkem na **PolicyInteropHost** v **Průzkumníka řešení** a vyberte **vlastnosti**.  
   
-5.  V **cílové rozhraní** rozevíracího seznamu, změňte výběr z **rozhraní .NET Framework 4 Client Profile** k **rozhraní .NET Framework 4.5**. Klikněte na tlačítko **Ano** k potvrzení.  
+5.  V **Cílová architektura** rozevírací seznamu, změnit výběr z **rozhraní .NET Framework 4 Client Profile** k **rozhraní .NET Framework 4.5**. Klikněte na tlačítko **Ano** potvrďte.  
   
-6.  Klikněte pravým tlačítkem na **PolicyInteropHost** v **Průzkumníku řešení** a vyberte **přidat odkaz na...** .  
+6.  Klikněte pravým tlačítkem na **PolicyInteropHost** v **Průzkumníka řešení** a vyberte **přidat odkaz...** .  
   
-7.  Vyberte **PolicyActivityLibrary** z **projekty** a klikněte na **OK**.  
+7.  Vyberte **PolicyActivityLibrary** z **projekty** kartě a klikněte na tlačítko **OK**.  
   
-8.  Klikněte pravým tlačítkem na **PolicyInteropHost** v **Průzkumníku řešení** a vyberte **přidat odkaz na...** .  
+8.  Klikněte pravým tlačítkem na **PolicyInteropHost** v **Průzkumníka řešení** a vyberte **přidat odkaz...** .  
   
-9. Vyberte **System.Workflow.Activities**, **System.Workflow.ComponentModel**a potom **System.Workflow.Runtime** z **.NET**a klikněte na **OK**.  
+9. Vyberte **System.Workflow.Activities**, **System.Workflow.ComponentModel**a potom **System.Workflow.Runtime** z **.NET**kartě a klikněte na tlačítko **OK**.  
   
-10. Klikněte pravým tlačítkem na **PolicyInteropHost** v **Průzkumníku řešení** a vyberte **nastavit jako spouštěný projekt**.  
+10. Klikněte pravým tlačítkem na **PolicyInteropHost** v **Průzkumníka řešení** a vyberte **nastavit jako spouštěný projekt**.  
   
-11. Stisknutím kombinace kláves CTRL + SHIFT + B řešení sestavíte.  
+11. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
   
-### <a name="using-the-interop-activity-in-code"></a>Pomocí zprostředkovatele komunikace s objekty aktivity v kódu  
- V tomto příkladu se vytvoří pomocí kódu, který obsahuje definici pracovního postupu <xref:System.Activities.Statements.Interop> aktivity a `DiscountCalculator` aktivity. Tento pracovní postup je vyvolána pomocí <xref:System.Activities.WorkflowInvoker> a výsledky vyhodnocení pravidla se zapisují do pomocí konzoly <xref:System.Activities.Statements.WriteLine> aktivity.  
+### <a name="using-the-interop-activity-in-code"></a>Použití aktivity interoperability v kódu  
+ V tomto příkladu se vytvoří pomocí kódu, který obsahuje definici pracovního postupu <xref:System.Activities.Statements.Interop> aktivity a `DiscountCalculator` aktivity. Tento pracovní postup je vyvolán pomocí <xref:System.Activities.WorkflowInvoker> a výsledky vyhodnocení pravidla se zapisují do konzoly pomocí <xref:System.Activities.Statements.WriteLine> aktivity.  
   
-##### <a name="to-use-the-interop-activity-in-code"></a>Pomocí zprostředkovatele komunikace s objekty aktivity v kódu  
+##### <a name="to-use-the-interop-activity-in-code"></a>Použití aktivity interoperability v kódu  
   
-1.  Klikněte pravým tlačítkem na **Program.cs** v **Průzkumníku řešení** a vyberte **kód zobrazení**.  
+1.  Klikněte pravým tlačítkem na **Program.cs** v **Průzkumníka řešení** a vyberte **zobrazit kód**.  
   
-2.  Přidejte následující `using` příkaz v horní části souboru.  
+2.  Přidejte následující `using` příkazu v horní části souboru.  
   
     ```csharp  
     using PolicyActivityLibrary;  
@@ -196,7 +196,7 @@ Rule3: IF this.DiscountPercent > 0
     }  
     ```  
   
-4.  Vytvoření nové metody v `Program` třídu s názvem `CalculateDiscountUsingCodeWorkflow` obsahující následující kód.  
+4.  Vytvoření nové metody v `Program` třídu s názvem `CalculateDiscountUsingCodeWorkflow` , který obsahuje následující kód.  
   
     ```csharp  
     static void CalculateDiscountUsingCodeWorkflow()  
@@ -246,9 +246,9 @@ Rule3: IF this.DiscountPercent > 0
     ```  
   
     > [!NOTE]
-    >  `Subtotal`, `DiscountPercent`, A `Total` vlastnosti `DiscountCalculator` aktivity jsou prezentované jako argumenty <xref:System.Activities.Statements.Interop> aktivity a proměnných vázaná na místní pracovní postup ve <xref:System.Activities.Statements.Interop> aktivity <xref:System.Activities.Statements.Interop.ActivityProperties%2A> kolekce. `Subtotal` je přidána jako <xref:System.Activities.ArgumentDirection.In> argument protože `Subtotal` tok dat do <xref:System.Activities.Statements.Interop> aktivitu, a `DiscountPercent` a `Total` jsou přidány jako <xref:System.Activities.ArgumentDirection.Out> argumenty vzhledem k tomu, že jejich data proudí mimo <xref:System.Activities.Statements.Interop> aktivity. Všimněte si, že dva <xref:System.Activities.ArgumentDirection.Out> argumenty jsou přidány s názvy `DiscountPercentOut` a `TotalOut` k označení, že představují <xref:System.Activities.ArgumentDirection.Out> argumenty. `DiscountCalculator` Typ určený jako <xref:System.Activities.Statements.Interop> aktivity <xref:System.Activities.Statements.Interop.ActivityType%2A>.  
+    >  `Subtotal`, `DiscountPercent`, A `Total` vlastnosti `DiscountCalculator` aktivity jsou prezentované jako argumenty <xref:System.Activities.Statements.Interop> aktivity a pracovní postup vázaná na místní proměnné v <xref:System.Activities.Statements.Interop> aktivity <xref:System.Activities.Statements.Interop.ActivityProperties%2A> kolekce. `Subtotal` se přidá jako <xref:System.Activities.ArgumentDirection.In> argument protože `Subtotal` data budou téci do <xref:System.Activities.Statements.Interop> aktivitu, a `DiscountPercent` a `Total` jsou přidány jako <xref:System.Activities.ArgumentDirection.Out> argumenty vzhledem k tomu, že svá data toky z celkového počtu <xref:System.Activities.Statements.Interop> aktivity. Všimněte si, že dva <xref:System.Activities.ArgumentDirection.Out> argumenty se dají s názvy `DiscountPercentOut` a `TotalOut` k označení, že představují <xref:System.Activities.ArgumentDirection.Out> argumenty. `DiscountCalculator` Type je zadaný jako <xref:System.Activities.Statements.Interop> aktivity <xref:System.Activities.Statements.Interop.ActivityType%2A>.  
   
-5.  Stisknutím klávesy CTRL + F5 sestavení a spuštění aplikace. Nahraďte různé hodnoty pro `Subtotal` hodnotu k otestování úrovní záznamu do různých slevu poskytované `DiscountCalculator` aktivity.  
+5.  Stisknutím kláves CTRL + F5 sestavte a spusťte aplikaci. Nahraďte různé hodnoty `Subtotal` hodnotu k otestování slevu na různé úrovně poskytovaných `DiscountCalculator` aktivity.  
   
     ```csharp  
     Variable<double> Subtotal = new Variable<double>  
@@ -258,65 +258,65 @@ Rule3: IF this.DiscountPercent > 0
     };  
     ```  
   
-### <a name="using-the-interop-activity-in-the-workflow-designer"></a>Pomocí zprostředkovatele komunikace s objekty aktivity v Návrháři pracovních postupů  
- V tomto příkladu je pracovní postup vytvořený pomocí návrháře pracovních postupů. Tento pracovní postup má stejnou funkci jako předchozí příklad, s výjimkou než místo použití <xref:System.Activities.Statements.WriteLine> aktivita se má zobrazit slevu hostitelskou aplikaci načte a zobrazí informace o tomto slevu při dokončení pracovního postupu. Nepoužívejte proměnné místní pracovního postupu tak, aby obsahovala data také argumenty jsou vytvořené v Návrháři pracovních postupů a jsou hodnoty předané z hostitele při vyvolání pracovního postupu.  
+### <a name="using-the-interop-activity-in-the-workflow-designer"></a>Použití aktivity interoperability v Návrháři postupu provádění  
+ V tomto příkladu se vytvoří pracovní postup pomocí návrháře postupu provádění. Tento pracovní postup má stejnou funkci jako předchozí příklad s výjimkou než místo <xref:System.Activities.Statements.WriteLine> aktivita k zobrazení slevy, hostitelské aplikace načte a zobrazí informace o slevy po dokončení pracovního postupu. Také namísto použití místního pracovního postupu proměnné tak, aby obsahovala data, argumenty jsou vytvořené v Návrháři pracovních postupů a hodnoty jsou předány v z hostitele, když uživatel vyvolá pracovní postup.  
   
-##### <a name="to-host-the-policyactivity-using-a-workflow-designer-created-workflow"></a>K hostování aktivitě PolicyActivity pomocí návrháře pracovních postupů vytvořit pracovní postup  
+##### <a name="to-host-the-policyactivity-using-a-workflow-designer-created-workflow"></a>K hostování aktivitě PolicyActivity pomocí návrháře postupu provádění vytvoření pracovního postupu  
   
-1.  Klikněte pravým tlačítkem na **Workflow1.xaml** v **Průzkumníku řešení** a vyberte **odstranit**. Klikněte na tlačítko **OK** k potvrzení.  
+1.  Klikněte pravým tlačítkem na **Workflow1.xaml** v **Průzkumníka řešení** a vyberte **odstranit**. Klikněte na tlačítko **OK** potvrďte.  
   
-2.  Klikněte pravým tlačítkem na **PolicyInteropHost** v **Průzkumníku řešení** a vyberte **přidat**, **novou položku...** .  
+2.  Klikněte pravým tlačítkem na **PolicyInteropHost** v **Průzkumníka řešení** a vyberte **přidat**, **novou položku...** .  
   
-3.  Rozbalte **Visual C# položky** uzel a vyberte možnost **pracovního postupu**. Vyberte **aktivity** z **Visual C# položky** seznamu.  
+3.  Rozbalte **položky Visual C#** uzel a vyberte možnost **pracovního postupu**. Vyberte **aktivity** z **položky Visual C#** seznamu.  
   
 4.  Typ `DiscountWorkflow` do **název** pole a klikněte na tlačítko **přidat**.  
   
-5.  Klikněte na tlačítko **argumenty** tlačítko na spodní levou stranu Návrháře pracovního postupu pro zobrazení **argumenty** podokně.  
+5.  Klikněte na tlačítko **argumenty** tlačítko v levém dolním rohu návrháře postupu provádění zobrazit **argumenty** podokně.  
   
 6.  Klikněte na tlačítko **vytvořit Argument**.  
   
-7.  Typ `Subtotal` do **název** vyberte **v** z **směr** rozevíracího seznamu, vyberte **dvojité** z **Typ argumentu** rozevíracího seznamu, a stiskněte klávesu ENTER pro uložení argument.  
+7.  Typ `Subtotal` do **název** vyberte **v** z **směr** rozevíracího seznamu, vyberte **Double** z **Typ argumentu** rozevíracího seznamu, a stiskněte klávesu ENTER, chcete-li uložit argument.  
   
     > [!NOTE]
-    >  Pokud **dvojité** se nepoužívá **typ argumentu** rozevíracího seznamu vyberte **Procházet pro typy...** , typ `System.Double` v **název typu** pole a klikněte na tlačítko **OK**.  
+    >  Pokud **Double** se nepoužívá **typ argumentu** rozevíracího seznamu vyberte **vyhledat typy...** , typ `System.Double` v **název typu** pole a klikněte na tlačítko **OK**.  
   
 8.  Klikněte na tlačítko **vytvořit Argument**.  
   
-9. Typ `DiscountPercent` do **název** vyberte **Out** z **směr** rozevíracího seznamu, vyberte **dvojité** z **Typ argumentu** rozevíracího seznamu, a stiskněte klávesu ENTER pro uložení argument.  
+9. Typ `DiscountPercent` do **název** vyberte **si** z **směr** rozevíracího seznamu, vyberte **Double** z **Typ argumentu** rozevíracího seznamu, a stiskněte klávesu ENTER, chcete-li uložit argument.  
   
 10. Klikněte na tlačítko **vytvořit Argument**.  
   
-11. Typ `Total` do **název** vyberte **Out** z **směr** rozevíracího seznamu, vyberte **dvojité** z **Typ argumentu** rozevíracího seznamu, a stiskněte klávesu ENTER pro uložení argument.  
+11. Typ `Total` do **název** vyberte **si** z **směr** rozevíracího seznamu, vyberte **Double** z **Typ argumentu** rozevíracího seznamu, a stiskněte klávesu ENTER, chcete-li uložit argument.  
   
-12. Klikněte **argumenty** tlačítko v levém dolním rohu zavřete návrháře pracovních postupů **argumenty** podokně.  
+12. Klikněte na tlačítko **argumenty** tlačítko v levém dolním rohu návrháře postupu provádění, zavřete **argumenty** podokně.  
   
-13. Přetažení **pořadí** aktivity z **tok řízení** části **sada nástrojů** na plochu návrháře pracovního postupu.  
+13. Přetáhněte **pořadí** aktivita z **tok řízení** část **nástrojů** a umístěte jej na plochu návrháře pracovního postupu.  
   
-14. Přetáhněte **zprostředkovatel komunikace s objekty** aktivity z **migrace** části **sada nástrojů** a umístěte jej do **pořadí** aktivity.  
+14. Přetáhněte **zprostředkovatele komunikace s objekty** aktivita z **migrace** část **nástrojů** a umístěte jej do **pořadí** aktivity.  
   
-15. Klikněte **zprostředkovatel komunikace s objekty** aktivity na **klikněte na tlačítko Procházet...** označení, zadejte **DiscountCalculator** v **název typu** pole a klikněte na tlačítko **OK**.  
+15. Klikněte na tlačítko **zprostředkovatele komunikace s objekty** aktivity **klikněte na tlačítko Procházet...** Popisek, zadejte **DiscountCalculator** v **název typu** pole a klikněte na tlačítko **OK**.  
   
     > [!NOTE]
-    >  Když <xref:System.Activities.Statements.Interop> je přidána do pracovního postupu a `DiscountCalculator` typ určený jako jeho <xref:System.Activities.Statements.Interop.ActivityType%2A>, <xref:System.Activities.Statements.Interop> aktivity zpřístupní tři <xref:System.Activities.ArgumentDirection.In> argumenty a tři <xref:System.Activities.ArgumentDirection.Out> argumenty, které představují tři veřejné vlastnosti `DiscountCalculator` aktivity. <xref:System.Activities.ArgumentDirection.In> Argumenty mít stejný název jako tři veřejné vlastnosti a tři <xref:System.Activities.ArgumentDirection.Out> argumenty mají stejné názvy s **Out** připojeným k názvu vlastnosti. V následujících krocích argumenty pracovního postupu vytvořili v předchozích krocích je vázána na <xref:System.Activities.Statements.Interop> argumenty aktivity.  
+    >  Když <xref:System.Activities.Statements.Interop> je aktivita přidána do pracovního postupu a `DiscountCalculator` type je zadaný jako jeho <xref:System.Activities.Statements.Interop.ActivityType%2A>, <xref:System.Activities.Statements.Interop> aktivita poskytuje tři <xref:System.Activities.ArgumentDirection.In> argumenty a tři <xref:System.Activities.ArgumentDirection.Out> argumenty, které představují tři public vlastnosti `DiscountCalculator` aktivity. <xref:System.Activities.ArgumentDirection.In> Argumentů mají stejný název jako tři veřejné vlastnosti a tři <xref:System.Activities.ArgumentDirection.Out> argumentů mají stejné názvy s **si** připojeným k názvu vlastnosti. V následujících krocích argumenty pracovní postup vytvořený v předchozích krocích jsou vázány na <xref:System.Activities.Statements.Interop> argumenty aktivity.  
   
-16. Typ `DiscountPercent` do **zadejte výraz VB** pole napravo od **DiscountPercentOut** vlastnost a stiskněte klávesu TAB.  
+16. Typ `DiscountPercent` do **zadejte výraz jazyka VB.** napravo od pole **DiscountPercentOut** vlastnosti a stiskněte klávesu TAB.  
   
-17. Typ `Subtotal` do **zadejte výraz VB** pole napravo od **Mezisoučet** vlastnost a stiskněte klávesu TAB.  
+17. Typ `Subtotal` do **zadejte výraz jazyka VB.** napravo od pole **Mezisoučet** vlastnosti a stiskněte klávesu TAB.  
   
-18. Typ `Total` do **zadejte výraz VB** pole napravo od **TotalOut** vlastnost a stiskněte klávesu TAB.  
+18. Typ `Total` do **zadejte výraz jazyka VB.** napravo od pole **TotalOut** vlastnosti a stiskněte klávesu TAB.  
   
-19. Klikněte pravým tlačítkem na **Program.cs** v **Průzkumníku řešení** a vyberte **kód zobrazení**.  
+19. Klikněte pravým tlačítkem na **Program.cs** v **Průzkumníka řešení** a vyberte **zobrazit kód**.  
   
-20. Přidejte následující `using` příkaz v horní části souboru.  
+20. Přidejte následující `using` příkazu v horní části souboru.  
   
     ```csharp  
     using System.Collections.Generic;  
     ```  
   
-21. Komentář volání `CalculateDiscountInCode` metoda v `Main` metoda a přidejte následující kód.  
+21. Odkomentujte volání `CalculateDiscountInCode` metodu `Main` metoda a přidejte následující kód.  
   
     > [!NOTE]
-    >  Pokud není podle předchozího postupu a ve výchozím nastavení `Main` kód je k dispozici, nahradí obsah `Main` následujícím kódem.  
+    >  Pokud jste neřídil předchozího postupu a výchozí `Main` kód je k dispozici, nahradí obsah `Main` následujícím kódem.  
   
     ```csharp  
     static void Main(string[] args)  
@@ -326,7 +326,7 @@ Rule3: IF this.DiscountPercent > 0
     }  
     ```  
   
-22. Vytvoření nové metody v `Program` třídu s názvem `CalculateDiscountUsingDesignerWorkflow` obsahující následující kód.  
+22. Vytvoření nové metody v `Program` třídu s názvem `CalculateDiscountUsingDesignerWorkflow` , který obsahuje následující kód.  
   
     ```csharp  
     static void CalculateDiscountUsingDesignerWorkflow()  
@@ -348,22 +348,22 @@ Rule3: IF this.DiscountPercent > 0
     }  
     ```  
   
-23. Stisknutím klávesy CTRL + F5 sestavení a spuštění aplikace. Pokud chcete zadat jinou `Subtotal` částka, změňte hodnotu `SubtotalValue` v následujícím kódu.  
+23. Stisknutím kláves CTRL + F5 sestavte a spusťte aplikaci. Pokud chcete zadat jinou `Subtotal` amount, změňte hodnotu vlastnosti `SubtotalValue` v následujícím kódu.  
   
     ```csharp  
     double SubtotalValue = 125.99; // Change this value.  
     ```  
   
 ## <a name="rules-features-overview"></a>Přehled funkcí pravidla  
- [!INCLUDE[wf1](../../../includes/wf1-md.md)] Stroj pravidel poskytuje podporu pro zpracování pravidel s podporou dál řetězení způsobem na základě priority. Pravidla může být vyhodnocen pro jednu položku nebo pro položky v kolekci. Přehled pravidla a informace o funkcích konkrétními pravidly naleznete v následující tabulce.  
+ [!INCLUDE[wf1](../../../includes/wf1-md.md)] Stroj pravidel poskytuje podporu pro zpracování pravidel na základě priority způsobem s podporou pro řetězení vpřed. Pravidla může být vyhodnocen pro jednu položku nebo položky v kolekci. Přehled pravidel a informace o funkcích konkrétními pravidly najdete v následující tabulce.  
   
 |Funkce pravidel|Dokumentace|  
 |-------------------|-------------------|  
-|Přehled pravidel|[Úvod k modulu Windows Workflow Foundation pravidla](http://go.microsoft.com/fwlink/?LinkID=152836)|  
-|Sada pravidel pro|[Použití sady pravidel v pracovních postupech](http://go.microsoft.com/fwlink/?LinkId=178516) a <xref:System.Workflow.Activities.Rules.RuleSet>|  
-|Vyhodnocení pravidla|[Vyhodnocení pravidla v sady pravidel](http://go.microsoft.com/fwlink/?LinkId=178517)|  
-|Pravidla řetězení|[Předat dál řetězení řízení](http://go.microsoft.com/fwlink/?LinkId=178518) a [dál řetězení pravidel](http://go.microsoft.com/fwlink/?LinkId=178519)|  
-|Zpracování kolekce pravidel|[Zpracování kolekce pravidel](http://go.microsoft.com/fwlink/?LinkId=178520)|  
-|Pomocí aktivitě PolicyActivity|[Pomocí aktivity aktivitě PolicyActivity](http://go.microsoft.com/fwlink/?LinkId=178521) a <xref:System.Workflow.Activities.PolicyActivity>|  
+|Přehled pravidel|[Úvod do pravidla modul Windows Workflow Foundation](https://go.microsoft.com/fwlink/?LinkID=152836)|  
+|Sady pravidel|[Použití sady pravidel v pracovních postupech](https://go.microsoft.com/fwlink/?LinkId=178516) a <xref:System.Workflow.Activities.Rules.RuleSet>|  
+|Vyhodnocení pravidel|[Vyhodnocení pravidla v sady pravidel](https://go.microsoft.com/fwlink/?LinkId=178517)|  
+|Pravidla řetězení|[Vpřed řetězení ovládací prvek](https://go.microsoft.com/fwlink/?LinkId=178518) a [vpřed řetězení pravidel](https://go.microsoft.com/fwlink/?LinkId=178519)|  
+|Zpracování kolekce pravidel|[Zpracování kolekce pravidel](https://go.microsoft.com/fwlink/?LinkId=178520)|  
+|Pomocí aktivitě PolicyActivity|[Použití aktivity aktivitě PolicyActivity](https://go.microsoft.com/fwlink/?LinkId=178521) a <xref:System.Workflow.Activities.PolicyActivity>|  
   
- Pracovní postupy vytvořené v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] nepoužívejte všechny pravidla funkce poskytované [!INCLUDE[wf1](../../../includes/wf1-md.md)], jako jsou podmínky deklarativní aktivity a podmíněného aktivity, jako <xref:System.Workflow.Activities.ConditionedActivityGroup> a <xref:System.Workflow.Activities.ReplicatorActivity>. V případě potřeby, tato funkce je dostupná pro pracovní postupy vytvořené pomocí [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] a [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. Další informace najdete v tématu [migrace pokyny](../../../docs/framework/windows-workflow-foundation/migration-guidance.md).
+ Pracovní postupy vytvořené v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] nepoužívejte všechna pravidla funkcí poskytovaných službou [!INCLUDE[wf1](../../../includes/wf1-md.md)], jako je například deklarativní aktivita podmínky a podmíněné aktivity, jako <xref:System.Workflow.Activities.ConditionedActivityGroup> a <xref:System.Workflow.Activities.ReplicatorActivity>. Pokud je to nutné, tato funkce je dostupná pro pracovní postupy vytvořené pomocí [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] a [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. Další informace najdete v tématu [pokyny k migraci](../../../docs/framework/windows-workflow-foundation/migration-guidance.md).

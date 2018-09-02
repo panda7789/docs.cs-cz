@@ -5,26 +5,26 @@ helpviewer_keywords:
 - ClearType [WPF], registry settings
 - typography [WPF], ClearType registry settings
 ms.assetid: 56f314bb-b30b-4f67-8492-8b8a9fa432ae
-ms.openlocfilehash: cacdc47a35bfd197bcac29edc6f7c780d3b8578f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d6a121e2a95ce4005b43937f83c6c74ec7d8f1c1
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33541710"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43474002"
 ---
 # <a name="cleartype-registry-settings"></a>Nastavení registru ClearType
-Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] nastavení registru, které jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
+Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] nastavení registru, které jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
   
   
 <a name="overview"></a>   
 ## <a name="technology-overview"></a>Přehled technologie  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, které vykreslení text, který se k využívání zařízení zobrazení [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funkce zajistit lepší čtení prostředí. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] je technologie softwaru vyvinuté [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] která zlepšuje čitelnost textu na existující monitorů LCD (zobrazí se Crystal kapaliny), například přenosný počítač obrazovky, Pocket PC obrazovky a ploché monitory. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funguje díky přístupu k elementů stripe jednotlivých svislé barev v každé pixelů displeje. Další informace o [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)], najdete v části [ClearType přehled](../../../../docs/framework/wpf/advanced/cleartype-overview.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací, které vykreslují text, který má použít zařízení zobrazení [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funkce a zajistit rozšířené čtení prostředí. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] je software technologie vyvinutá společností [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] , který zlepšuje čitelnost textu na existující monitorů LCD (zobrazí se Liquid Crystal), například Notebook obrazovky, obrazovky v prostředí Pocket PC a monitorování plochý. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funguje díky přístupu do jednotlivých svislé barevné prvky stripe v každý pixel displeje. Další informace o [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)], naleznete v tématu [ClearType – přehled](../../../../docs/framework/wpf/advanced/cleartype-overview.md).  
   
- Text, který je vykreslen pomocí [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] může vyskytovat výrazně odlišné při prohlížení na různých zařízeních zobrazení. Například malý počet monitorů implementovat prvky stripe barev v pořadí modré, zelené, red místo častější red, zelená, modrá ( [!INCLUDE[TLA#tla_rgb](../../../../includes/tlasharptla-rgb-md.md)]) pořadí.  
+ Text, který je vykreslen pomocí [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] se může objevit výrazně liší při prohlížení na různá zobrazení zařízení. Například implementovat malý počet monitorů prvky stripe barvy v pořadí modrý, zelená, red spíše než běžné červená, zelená, modrá ( [!INCLUDE[TLA#tla_rgb](../../../../includes/tlasharptla-rgb-md.md)]) pořadí.  
   
- Text, který je vykreslen pomocí [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] může zobrazit i výrazně odlišné, při zobrazení jednotlivci s různými úrovněmi barva velkých a malých písmen. Některé jednotlivce může rozpoznat drobné rozdíly v barva lépe než jiné.  
+ Text, který je vykreslen pomocí [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] se může zobrazit i výrazně liší, při zobrazení jednotlivci s různými úrovněmi barva citlivosti. Některé jednotlivce dokáže rozpoznat mírné rozdíly v barva lepší než jiné.  
   
- V každé z těchto případech [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funkce potřeba upravit Chcete-li poskytovat nejlepší čtení prostředí pro každého uživatele.  
+ Ve všech těchto případech [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] funkce je třeba upravit tak, aby poskytují to nejlepší prostředí pro čtení pro jednotlivé uživatele.  
   
 <a name="registry_settings"></a>   
 ## <a name="registry-settings"></a>Nastavení registru  
@@ -32,88 +32,88 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
   
 |Nastavení|Popis|  
 |-------------|-----------------|  
-|[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úroveň|Popisuje úroveň [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] barvu přehlednost.|  
-|Úroveň gama|Popisuje úroveň komponentu barev pixelů pro zobrazení zařízení.|  
-|Struktura pixelů|Popisuje uspořádání pixelů pro zobrazení zařízení.|  
-|Úroveň kontrast textu|Popisuje úroveň kontrast pro zobrazený text.|  
+|[!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úroveň|Popisuje úroveň [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] barva nejasnostem.|  
+|Funkce gamma úroveň|Popisuje úroveň složku barvy obrazových bodů pro zobrazovací zařízení.|  
+|Struktura pixelů|Popisuje uspořádání pixelů pro zobrazovací zařízení.|  
+|Úroveň kontrastu text|Popisuje úroveň kontrastu zobrazeného textu.|  
   
- Tato nastavení mají přístup externí konfigurace nástroj, který umí tak, aby odkazovaly identifikovanou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nastavení registru. Tato nastavení taky můžou vytvořit nebo upravit přístup k hodnoty přímo pomocí [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] Editor registru.  
+ Tato nastavení je možný přes externí konfigurační nástroj, který ví, jak odkazovat zjištěné [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nastavení registru. Tato nastavení také můžou vytvořit nebo upravit přístup k hodnoty přímo s použitím [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] Editor registru.  
   
- Pokud [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nastavení registru (což je výchozí stav), nejsou nastaveny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace dotazy [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] systémové informace parametry vyhlazení nastavení písma.  
+ Pokud [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nastavení registru (což je výchozí stav), nejsou nastaveny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace dotazy [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] systému informace o parametrech pro font smoothing nastavení.  
   
 > [!NOTE]
 >  Informace o vytváření výčtů zobrazované názvy zařízení, najdete v článku `SystemParametersInfo` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkce.  
   
 <a name="ClearType_level"></a>   
-## <a name="cleartype-level"></a>Úroveň ClearType  
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] Úroveň umožňuje upravit vykreslování textu na základě barva velkých a malých písmen a dojem jednotlivce. Pro některé jednotlivce vykreslování textu, který používá [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] na nejvyšší úrovni nevytváří nejvhodnější čtení prostředí.  
+## <a name="cleartype-level"></a>ClearType – úrovně  
+ [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] Úroveň umožňuje upravit vykreslení textu na základě citlivosti barvu a dojem jednotlivec. Několik jednotlivců, vykreslování textu, který používá [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] na nejvyšší úrovni nevytváří nejlepší prostředí pro čtení.  
   
- [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] Úroveň je celočíselná hodnota, která rozsah od 0 do 100. Výchozí úroveň je 100, což znamená, že [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] používá funkci maximální elementů stripe barva zobrazovací zařízení. Ale [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] text jako šedé vykreslí nastavena na hodnotu 0. Nastavením [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úrovni někde mezi 0 a 100, můžete vytvořit pokročilou úroveň, který je vhodný pro jednotlivce barva velkých a malých písmen.  
+ [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] Úroveň je celočíselnou hodnotu od 0 do 100. Výchozí úroveň je 100, což znamená, že [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] používá maximální funkce prvky stripe barev zobrazení zařízení. Ale [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úroveň 0 generuje text jako šedé. Tím, že nastavíte [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úrovně někde mezi 0 a 100, můžete vytvořit pokročilou úroveň, který je vhodný pro jednotlivce barva citlivosti.  
   
 ### <a name="registry-setting"></a>Nastavení registru  
- Umístění nastavení registru [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úroveň je na jednotlivých uživatelských nastavení, která odpovídá konkrétní zobrazovaný název zařízení:  
+ Nastavení umístění registru [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úroveň je nastavení jednotlivých uživatelů, která odpovídá názvu displeje konkrétního zařízení:  
   
  `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\<displayName>`  
   
- Pro každý zobrazovaný název zařízení pro uživatele `ClearTypeLevel` DWORD hodnota je definována. Následující snímek obrazovky ukazuje nastavení editoru registru [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úroveň.  
+ Pro každý zobrazovaný název zařízení pro uživatele `ClearTypeLevel` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení editoru registru [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] úroveň.  
   
- ![ClearType nastavení v editoru registru](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")  
+ ![Nastavení v editoru registru ClearType](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")  
   
 > [!NOTE]
->  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslení textu v jednom z buď dva způsoby, s nebo bez aplikace [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]. Pokud je text reprezentován bez [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)], jsou označovány jako šedé vykreslování.  
+>  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslení textu v obou dvou režimech a nemusíte aplikace [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)]. Když text je vykreslen bez [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)], jsou označovány jako šedé vykreslování.  
   
 <a name="gamma_level"></a>   
-## <a name="gamma-level"></a>Úroveň gama  
- Úroveň gama odkazuje na nelineární vztah mezi hodnota pixelů a světlostí. Nastavení úrovně gama by měla odpovídat fyzické charakteristiky zobrazovací zařízení; jinak může dojít, narušení ve vykreslené výstupu. Například příliš široké nebo příliš úzké, může se zobrazit testovací nebo barva třásněmi může být uveden na okrajích svislé kořeny glyfů.  
+## <a name="gamma-level"></a>Funkce gamma úroveň  
+ Úroveň funkce gamma odkazuje na nelineárních vztah mezi hodnotami pixelů a světelnost. Nastavení úrovně gama by měl odpovídat fyzické charakteristiky zobrazovací zařízení; v opačném případě může dojít k narušení vykresleného výstupu. Například test může být příliš široké nebo příliš úzký, nebo barva třásněmi mohou zobrazit na okraji svislé kořeny glyphs.  
   
- Úroveň gama je celočíselná hodnota, která se pohybuje od 1000 do 2200. Výchozí úroveň je 1900.  
+ Úroveň funkce gamma je celočíselná hodnota od 1 000 až 2200. Výchozí úroveň je 1900.  
   
 ### <a name="registry-setting"></a>Nastavení registru  
- Nastavení umístění gama úrovně registru, je nastavení místního počítače, které odpovídá konkrétní zobrazovaný název zařízení:  
+ Nastavení umístění funkce gamma úrovně registru je nastavení místního počítače, který odpovídá konkrétní zobrazovaný název zařízení:  
   
  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Avalon.Graphics\<displayName>`  
   
- Pro každý zobrazovaný název zařízení pro uživatele `GammaLevel` DWORD hodnota je definována. Následující snímek obrazovky ukazuje nastavení editoru registru gama úroveň.  
+ Pro každý zobrazovaný název zařízení pro uživatele `GammaLevel` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení Editor registru pro úroveň funkce gamma.  
   
- ![ClearType nastavení v editoru registru](../../../../docs/framework/wpf/advanced/media/cleartyperegistry02.png "ClearTypeRegistry02")  
+ ![Nastavení v editoru registru ClearType](../../../../docs/framework/wpf/advanced/media/cleartyperegistry02.png "ClearTypeRegistry02")  
   
 <a name="pixel_structure"></a>   
 ## <a name="pixel-structure"></a>Struktura pixelů  
- Struktura pixelů popisuje typ pixelů, které tvoří zobrazení zařízení. Struktura pixelů je definován jako jeden ze tří typů:  
+ Struktura pixel popisuje typ v pixelech, které tvoří zobrazovací zařízení. Struktura pixel je definován jako jeden ze tří typů:  
   
 |Typ|Hodnota|Popis|  
 |----------|-----------|-----------------|  
-|Dvojrozměrném|0|Zobrazovací zařízení nemá žádné struktura pixelů. To znamená, že zdroje světla u každé barvy jsou rovnoměrně oblasti pixelů – tento proces se označuje jako šedé vykreslování. Toto je, jak zobrazit standardní zařízení funguje. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] Nikdy se použije u vykresleného textu.|  
-|RGB|1|Zobrazovací zařízení má pixelů, které se skládají ze tří rozděluje v následujícím pořadí: červená, zelená a modrá. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] je použita na vykreslovaných text.|  
-|BGR|2|Zobrazovací zařízení má pixelů, které se skládají ze tří rozděluje v následujícím pořadí: modrá, zelená a červený. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] je použita na vykreslovaných text. Všimněte si, jak je z typu RGB obrácený pořadí.|  
+|Paušální|0|Zobrazovací zařízení nemá žádné struktura pixelů. To znamená, že zdroje světla u každé barvy jsou rovnoměrně v oblasti pixel – to se označuje jako šedé vykreslování. To je, jak se standardní zobrazí zařízení funguje. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nikdy použita na vykreslený text.|  
+|RGB|1|Zařízení má pixelů, které se skládají z tři pruhy v následujícím pořadí: červené, zelené a modré. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] platí pro vykreslený text.|  
+|BGR|2|Zařízení má pixelů, které se skládají z tři pruhy v následujícím pořadí: modrý, zelené a červený. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] platí pro vykreslený text. Všimněte si, jak je obrácený pořadí z typu RGB.|  
   
- Struktura pixelů odpovídá na celočíselnou hodnotu rozsahu od 0 do 2. Výchozí úroveň je 0, který reprezentuje strukturu ploché pixelů.  
+ Struktura pixel odpovídá na celočíselnou hodnotu od 0 do 2. Výchozí úroveň je 0, která reprezentuje strukturu plochých pixelů.  
   
 > [!NOTE]
 >  Informace o vytváření výčtů zobrazované názvy zařízení, najdete v článku `EnumDisplayDevices` [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] funkce.  
   
 ### <a name="registry-setting"></a>Nastavení registru  
- Nastavení umístění pro strukturu pixelů registru je nastavení místního počítače, které odpovídá konkrétní zobrazovaný název zařízení:  
+ Nastavení umístění pro strukturu pixel registru je nastavení místního počítače, který odpovídá názvu displeje konkrétního zařízení:  
   
  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Avalon.Graphics\<displayName>`  
   
- Pro každý zobrazovaný název zařízení pro uživatele `PixelStructure` DWORD hodnota je definována. Následující snímek obrazovky ukazuje nastavení editoru registru pro strukturu pixelů.  
+ Pro každý zobrazovaný název zařízení pro uživatele `PixelStructure` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení Editor registru pro strukturu pixelů.  
   
- ![ClearType nastavení v editoru registru](../../../../docs/framework/wpf/advanced/media/cleartyperegistry02.png "ClearTypeRegistry02")  
+ ![Nastavení v editoru registru ClearType](../../../../docs/framework/wpf/advanced/media/cleartyperegistry02.png "ClearTypeRegistry02")  
   
 <a name="text_contrast_level"></a>   
-## <a name="text-contrast-level"></a>Úroveň kontrast textu  
- Úroveň kontrast text umožňuje upravit vykreslování textu podle šířky stem glyfů. Úroveň kontrast textu je celočíselná hodnota, která rozsah od 0 do 6 – větší celočíselná hodnota, tím širší stem. Výchozí úroveň je 1.  
+## <a name="text-contrast-level"></a>Úroveň kontrastu text  
+ Úroveň kontrastu text můžete upravit vykreslování textu podle šířky stem glyfů. Úroveň kontrastu text je celočíselnou hodnotu od 0 do 6 – Čím větší celočíselná hodnota, čím širší stem. Výchozí úroveň je 1.  
   
 ### <a name="registry-setting"></a>Nastavení registru  
- Nastavení umístění pro úroveň kontrast text registru je na jednotlivých uživatelských nastavení, která odpovídá konkrétní zobrazovaný název zařízení:  
+ Nastavení umístění pro úroveň kontrastu text registru je nastavení jednotlivých uživatelů, která odpovídá názvu displeje konkrétního zařízení:  
   
  `HKEY_CURRENT_USER\Software\Microsoft\Avalon.Graphics\<displayName>`  
   
- Pro každý zobrazovaný název zařízení pro uživatele `TextContrastLevel` DWORD hodnota je definována. Následující snímek obrazovky ukazuje nastavení editoru registru pro úroveň kontrast text.  
+ Pro každý zobrazovaný název zařízení pro uživatele `TextContrastLevel` je definována hodnota DWORD. Následující snímek obrazovky ukazuje nastavení Editor registru pro úroveň kontrastu text.  
   
- ![ClearType nastavení v editoru registru](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")  
+ ![Nastavení v editoru registru ClearType](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")  
   
 ## <a name="see-also"></a>Viz také  
  [ClearType – přehled](../../../../docs/framework/wpf/advanced/cleartype-overview.md)  
- [ClearType vyhlazení](https://msdn.microsoft.com/library/dd183433(v=vs.85).aspx)
+ [ClearType – vyhlazení](/windows/desktop/gdi/cleartype-antialiasing)

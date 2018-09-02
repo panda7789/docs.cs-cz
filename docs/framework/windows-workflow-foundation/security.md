@@ -2,23 +2,23 @@
 title: Zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 737ec121-bfc5-4b75-a504-2d53c2c8af39
-ms.openlocfilehash: b8fd870bcd14b8a80861914448f75fafe6af2863
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6c4e64e928e3ada4210138878426fea9ffe5bdec
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33518014"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43466679"
 ---
 # <a name="security"></a>Zabezpečení
-Ukládání Instance SQL pracovního postupu používá tyto role zabezpečení databáze zabezpečený přístup k informacím stavu instance v databázi trvalost.  
+Store Instance SQL pracovní postup používá Tyhle role zabezpečení databázi zabezpečit přístup k informacím o stavu instance databáze trvalosti.  
   
--   **System.Activities.DurableInstancing.InstanceStoreUsers**. Tato role má ke čtení a oprávnění k zápisu do veřejné zobrazení a provádění práva uložené procedury, které se podílejí vytváření, načítání a ukládání instancí.  
+-   **System.Activities.DurableInstancing.InstanceStoreUsers**. Tato role má ke čtení a oprávnění k zápisu do veřejné zobrazení a spuštění práva k uložené procedury, které jsou zahrnuty při vytváření, načítání a ukládání instancí.  
   
--   **System.Activities.DurableInstancing.InstanceStoreObservers**. Tato role má přístup jen pro čtení k veřejné zobrazení.  
+-   **System.Activities.DurableInstancing.InstanceStoreObservers**. Tato role má oprávnění jen pro čtení k veřejné zobrazení.  
   
--   **System.Activities.DurableInstancing.WorkflowActivationUsers**. Tato role má práva provádění uložené procedury, které jsou součástí procesu aktivace instance. Další informace o aktivaci instance najdete v tématu [Instance aktivace](../../../docs/framework/windows-workflow-foundation/instance-activation.md). Uživatelský účet, pod kterým obecné hostitele (například službu správy pracovního postupu [!INCLUDE[dublin](../../../includes/dublin-md.md)]) spustí musí být přidaní do této role databáze.  
+-   **System.Activities.DurableInstancing.WorkflowActivationUsers**. Tato role má práva spuštění uložené procedury, které jsou součástí procesu aktivace instance. Další informace o aktivaci instance najdete v tématu [aktivace Instance](../../../docs/framework/windows-workflow-foundation/instance-activation.md). Uživatelský účet, pod kterým obecný hostitele (jako je například služba pracovního postupu správy [!INCLUDE[dublin](../../../includes/dublin-md.md)]) spuštění měla být přidána do této databázové roli.  
   
- Další informace o zabezpečení pro trvalost úložiště s Windows Server App Fabric najdete v tématu [konfigurace zabezpečení pro úložiště trvalosti v App Fabric](http://go.microsoft.com/fwlink/?LinkId=201208)  
+ Další informace o zabezpečení pro úložiště trvalosti pomocí systému Windows Server App Fabric najdete v tématu [konfiguraci zabezpečení pro trvalého úložiště v prostředcích infrastruktury aplikace](https://go.microsoft.com/fwlink/?LinkId=201208)  
   
 > [!CAUTION]
->  Klient, který má přístup k vlastní data instance v úložišti instance má přístup k další instance v úložišti stejné instanci. Instance úložiště nepodporuje zadání oprávnění zabezpečení na úrovni instance. Doporučujeme vytvořit samostatnou instanci úložiště a mapování různých skupin nebo uživatelů do mají přístup do různých úložišť.
+>  Klient, který má přístup k vlastní instance data v úložišti instancí má přístup do všech ostatních instancích ve stejném úložišti instancí. V úložišti instancí nepodporuje zadání oprávnění zabezpečení na úrovni instance. By měl vytvořit samostatnou instanci úložišť a mapovat různé skupiny/uživatele mít přístup do různých úložišť.

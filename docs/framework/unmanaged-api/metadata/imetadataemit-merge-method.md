@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 98997bfbb7d3c9343f78438b1195222565c5b9ad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 899f2ca5ef1b987687f5c065ad3e1965e142d103
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444548"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43466110"
 ---
 # <a name="imetadataemitmerge-method"></a>IMetaDataEmit::Merge – metoda
-Zadaný obor importované přidá do seznamu oborů, který se má sloučit.  
+Přidá do seznamu oborů, která se má sloučit zadané importované oboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,23 +39,23 @@ HRESULT Merge (
   
 #### <a name="parameters"></a>Parametry  
  `pImport`  
- [v] Ukazatel na [imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) objekt, který identifikuje importované oboru, který se má sloučit.  
+ [in] Ukazatel [imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) objekt, který identifikuje importované oboru ke sloučení.  
   
  `pIMap`  
- [v] Ukazatel na [imaptoken –](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) objekt, který určuje, tokenu znovu namapovat.  
+ [in] Ukazatel [imaptoken –](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) objekt, který určuje, token přemapovat.  
   
  `pHandleer`  
- [v] Ukazatel na <!--<<!--zzxref:IUnknown --> `IUnknown` >-->  `IUnknown` objekt, který určuje chyby.  
+ [in] Ukazatel [IUnknown](/cpp/atl/iunknown) objekt, který určuje chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- Volání [imetadataemit::mergeend –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-mergeend-method.md) k aktivaci fúze metadat do jednoho oboru.  
+ Volání [imetadataemit::mergeend –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-mergeend-method.md) k aktivaci spojení metadat do jednoho oboru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** použit jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

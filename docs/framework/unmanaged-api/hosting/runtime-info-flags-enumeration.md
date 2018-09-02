@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e544db23abf89a20bd2f7763cfdb1256ea4a326c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 09bd32172bcad298eebc2921461fdc953e9c6d6e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33441361"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43468290"
 ---
 # <a name="runtimeinfoflags-enumeration"></a>RUNTIME_INFO_FLAGS – výčet
 Obsahuje hodnoty, které označují, jaké informace o common language runtime (CLR) má být vrácen.  
@@ -47,17 +47,17 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`RUNTIME_INFO_DONT_RETURN_DIRECTORY`|Označuje, že informací v adresáři nesmí být zahrnuty.|  
-|`RUNTIME_INFO_DONT_RETURN_VERSION`|Označuje, že informace o verzi, neměl by zahrnovat.|  
-|`RUNTIME_INFO_DONT_SHOW_ERROR_DIALOG`|Označuje, že by neměla zobrazit dialogové okno chyby při selhání.|  
-|`RUNTIME_INFO_IGNORE_ERROR_MODE`|Určuje, že důsledky volání [SetErrorMode](http://go.microsoft.com/fwlink/p/?LinkId=255242) funkce s příznakem SEM_FAILCRITICALERRORS by měla být potlačena. To znamená dialogové okno instalace se mají při selhání, místo potlačeny.|  
-|`RUNTIME_INFO_REQUEST_AMD64`|Určuje žádost o informace o AMD-64-compatible verzi modulu runtime.|  
-|`RUNTIME_INFO_REQUEST_IA64`|Určuje žádost o informace o IA-64-compatible verzi modulu runtime.|  
-|`RUNTIME_INFO_REQUEST_X86`|Určuje žádost o informace o x86 kompatibilní verzi modulu runtime.|  
+|`RUNTIME_INFO_DONT_RETURN_DIRECTORY`|Označuje, že informace o adresáři by neměl být zahrnuty.|  
+|`RUNTIME_INFO_DONT_RETURN_VERSION`|Označuje, že by neměl být zahrnuty informace o verzi.|  
+|`RUNTIME_INFO_DONT_SHOW_ERROR_DIALOG`|Určuje, že dialogové okno chyby by neměl být zobrazeny nebude úspěšná.|  
+|`RUNTIME_INFO_IGNORE_ERROR_MODE`|Označuje, že efekty volání [SetErrorMode](https://go.microsoft.com/fwlink/p/?LinkId=255242) funkce s příznakem SEM_FAILCRITICALERRORS by měla být potlačena. To znamená dialogové okno instalace, které mají být zobrazeny po selhání, místo potlačeny.|  
+|`RUNTIME_INFO_REQUEST_AMD64`|Označuje žádost o informace o AMD-64kompatibilní verzi modulu runtime.|  
+|`RUNTIME_INFO_REQUEST_IA64`|Označuje žádost o informace o IA-64kompatibilní verzi modulu runtime.|  
+|`RUNTIME_INFO_REQUEST_X86`|Označuje žádost o informace o x86 kompatibilní verzi modulu runtime.|  
 |`RUNTIME_INFO_UPGRADE_VERSION`|Označuje, že informace o upgradu verze by měly být zahrnuty.|  
   
 ## <a name="remarks"></a>Poznámky  
- Následující příznaky Architektura platformy může být zadaná jenom jedna najednou a nelze jej kombinovat:  
+ Následující příznaky Architektura platformy může být zadaný jenom jeden po druhém a nelze kombinovat:  
   
 -   RUNTIME_INFO_REQUEST_IA64  
   
@@ -66,7 +66,7 @@ typedef enum {
 -   RUNTIME_INFO_REQUEST_X86  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   

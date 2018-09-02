@@ -8,12 +8,12 @@ helpviewer_keywords:
 - mapping properties [WPF]
 - ElementHost control [WPF], mapping properties
 ms.assetid: bccd6e0d-2272-4924-9107-ff8ed58b88aa
-ms.openlocfilehash: 89d2c6476334080fb162eadd4b2bf5984970f3fd
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 34119d889c8d6600fdda12cac33192c32d8e0fa6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42934678"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43467121"
 ---
 # <a name="walkthrough-mapping-properties-using-the-elementhost-control"></a>Návod: Mapování vlastností použitím ovládacího prvku ElementHost
 
@@ -29,7 +29,7 @@ Tento návod ukazuje, jak používat <xref:System.Windows.Forms.Integration.Elem
 
 -   Rozšíření výchozí mapování vlastností.
 
-Kompletní výpis kódu úloh v tomto návodu, naleznete v tématu [mapování vlastností použitím Ukázka ovládacího prvku ElementHost](http://go.microsoft.com/fwlink/?LinkID=160018).
+Kompletní výpis kódu úloh v tomto návodu, naleznete v tématu [mapování vlastností použitím Ukázka ovládacího prvku ElementHost](https://go.microsoft.com/fwlink/?LinkID=160018).
 
 Až budete hotovi, budete moci mapovat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vlastnosti k odpovídající [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastností hostované elementu.
 
@@ -62,7 +62,7 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 4.  Otevřít `Form1` v Návrháři formulářů Windows. Klikněte dvakrát na formuláři pro přidání obslužné rutiny události <xref:System.Windows.Forms.Form.Load> událostí.
 
-5.  Vraťte se do Návrháře formulářů Windows a přidejte obslužnou rutinu události pro daný formulář <xref:System.Windows.Forms.Control.Resize> událostí. Další informace najdete v tématu [postupy: vytváření událostí obslužné rutiny pomocí návrháře](http://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).
+5.  Vraťte se do Návrháře formulářů Windows a přidejte obslužnou rutinu události pro daný formulář <xref:System.Windows.Forms.Control.Resize> událostí. Další informace najdete v tématu [postupy: vytváření událostí obslužné rutiny pomocí návrháře](https://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).
 
 6.  Deklarovat <xref:System.Windows.Forms.Integration.ElementHost> pole `Form1` třídy.
 
@@ -146,5 +146,5 @@ Můžete použít výchozí mapování vlastností a také rozšířit o vlastn�
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Mapování vlastnosti Windows Forms a WPF](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)
-- [Návrhář WPF](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)
+- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
 - [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)

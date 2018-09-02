@@ -5,15 +5,15 @@ helpviewer_keywords:
 - ImageList component [Windows Forms]
 - image controls
 ms.assetid: 83b48634-782b-464d-9b7d-568dc6e0bef2
-ms.openlocfilehash: 68296328a574997d5211bbd26ea4ca40be926e75
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ce847507785b06874425e2efe678b86fc868507e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33532935"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43464918"
 ---
 # <a name="imagelist-component-windows-forms"></a>ImageList – komponenta (Windows Forms)
-Windows Forms `ImageList` komponenta se používá k ukládání Image, které pak lze zobrazit pomocí ovládacích prvků. Seznam obrázků můžete napsat kód pro jeden a konzistentní katalog bitové kopie.  
+Windows Forms `ImageList` komponenty se používá k ukládání imagí, které lze zobrazit ovládací prvky. Seznam obrázků umožňuje napsat kód pro jediné, jednotné katalog imagí.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled komponenty ImageList](../../../../docs/framework/winforms/controls/imagelist-component-overview-windows-forms.md)  
@@ -22,7 +22,7 @@ Windows Forms `ImageList` komponenta se používá k ukládání Image, které p
  [Postupy: Přidání a odebrání obrázků pomocí komponenty Windows Forms ImageList](../../../../docs/framework/winforms/controls/how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md)  
  Poskytuje pokyny pro přidávání a odebírání obrázků ze seznamu obrázků.  
   
- Viz také [postupy: Přidání nebo odebrání obrázků ImageList pomocí návrháře](http://msdn.microsoft.com/library/ms233674\(v=vs.110\)).  
+ Viz také [postupy: přidávání a odebírání obrázků ImageList pomocí návrháře](how-to-add-or-remove-imagelist-images-with-the-designer.md).  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.ImageList>  
@@ -30,4 +30,4 @@ Windows Forms `ImageList` komponenta se používá k ukládání Image, které p
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.
+ Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.

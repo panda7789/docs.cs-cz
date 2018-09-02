@@ -2,20 +2,20 @@
 title: '&lt;transport&gt; – &lt;netTcpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 49462e0a-66e1-463f-b3e1-c83a441673c6
-ms.openlocfilehash: 9369351e4e197f321feb4ae56939bec2a8280a64
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 8c2a0de73db2ec4a1c2150fc7e62b7a3a9f086bc
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32752556"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43473998"
 ---
 # <a name="lttransportgt-of-ltnettcpbindinggt"></a>&lt;transport&gt; – &lt;netTcpBinding&gt;
-Definuje typ požadavků na zabezpečení na úrovni zpráv pro koncový bod nakonfigurované [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).  
+Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfigurovaným s [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).  
   
  \<system.ServiceModel>  
 \<vazby >  
 \<netTcpBinding >  
-\<Vazba >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
 \<přenos >  
   
@@ -40,32 +40,32 @@ Definuje typ požadavků na zabezpečení na úrovni zpráv pro koncový bod nak
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují nadřazené elementy, atributy a podřízené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené elementy  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|clientCredentialType|Volitelné. Určuje typ pověření, který se má použít při ověřování klienta pomocí zabezpečení přenosu.<br /><br /> -Výchozí hodnota je `Windows`.<br />-Tento atribut je typu <xref:System.ServiceModel.TcpClientCredentialType>.|  
-|ProtectionLevel|Volitelné. Definuje zabezpečení na úrovni přenosu protokolu TCP. Podepisování zpráv snižuje riziko třetích stran manipulaci s zprávy při jejich přenosu. Během přenosu zajišťuje šifrování dat na úrovni o ochraně osobních údajů.<br /><br /> Výchozí hodnota je `EncryptAndSign`.|  
-|sslProtocols|Hodnotu výčtu příznak SslProtocols, která určuje, které SslProtocols jsou podporovány. Výchozí hodnota je Tls&#124;Tls11&#124;Tls12.|  
-|policyEnforcement|Tento výčet Určuje, kdy <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> by se měly vynucovat.<br /><br /> 1.  Nikdy – zásady se vynucují nikdy (rozšířené ochrany je zakázáno).<br />2.  WhenSupported – zásady se vynucují jenom v případě, že klient podporuje rozšířené ochrany.<br />3.  Vždy – je vždy tato zásada vynucená. Klienti, které nepodporují rozšířené ochrany se nepodaří ověřit.|  
+|Typ clientCredentialType|Volitelné. Určuje typ přihlašovacích údajů pro použití při ověřování klientů pomocí zabezpečení přenosu.<br /><br /> – Výchozí hodnota je `Windows`.<br />– Tento atribut je typu <xref:System.ServiceModel.TcpClientCredentialType>.|  
+|Třída protectionLevel|Volitelné. Definuje zabezpečení na úrovni přenosu protokolu TCP. Podepisování zpráv snižuje riziko manipulace s zprávy při jejich přenosu od jiných dodavatelů. Šifrování poskytuje data úrovně ochrany osobních údajů při přenosu.<br /><br /> Výchozí hodnota je `EncryptAndSign`.|  
+|sslProtocols|SslProtocols příznak hodnotu výčtu, která určuje, které SslProtocols jsou podporovány. Výchozí hodnota je Tls&#124;Tls11&#124;Tls12.|  
+|Parametr policyenforcement na hodnotu|Tento výčet Určuje, kdy <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> by se měly vynucovat.<br /><br /> 1.  Nikdy – zásady se vynucují nikdy (rozšířené ochrany je zakázáno).<br />2.  WhenSupported – zásady se vynucuje jenom v případě, že klient podporuje rozšířenou ochranu.<br />3.  Vždy – je vždy zásady vynucují. K ověření se nezdaří klientů, kteří nepodporují rozšířenou ochranu.|  
   
-## <a name="clientcredentialtype-attribute"></a>clientCredentialType atribut  
+## <a name="clientcredentialtype-attribute"></a>Typ clientCredentialType atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
 |Žádné|Klient je anonymní. To vyžaduje certifikát pro službu.|  
-|Windows|Určuje ověřování systému Windows z klienta pomocí SP vyjednávání (vyjednávání protokolu Kerberos).|  
-|certifikát|Používá certifikát ověření klienta. To se používá vyjednávání SSL a vyžaduje certifikát pro službu.|  
+|Windows|Určuje ověřování Windows z klienta pomocí vyjednávání SP (vyjednávání protokolu Kerberos).|  
+|Certifikát|Klient je ověřený pomocí certifikátu. Využívá vyjednávání protokolu SSL a vyžaduje certifikát pro službu.|  
   
-## <a name="protectionlevel-attribute"></a>Atribut protectionLevel  
+## <a name="protectionlevel-attribute"></a>Třída protectionLevel atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
 |Žádné|Žádná ochrana.|  
-|Přihlášení|Zprávy jsou podepsané.|  
-|EncryptAndSign|-Zprávy jsou šifrovaný a podepsaný.|  
+|přihlášení|Zprávy jsou podepsané.|  
+|EncryptAndSign|-Zprávy jsou zašifrovaná a podepsaná.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -74,10 +74,10 @@ Definuje typ požadavků na zabezpečení na úrovni zpráv pro koncový bod nak
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)|Určuje možnosti zabezpečení [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).|  
+|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)|Určuje schopnosti zabezpečení [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).|  
   
 ## <a name="remarks"></a>Poznámky  
- Pro integrity a důvěrnosti zpráv protokolu SOAP a vzájemné ověřování, použijte zabezpečení přenosu. Pokud je tento režim zabezpečení na vazbu, zásobník kanál je nakonfigurován pomocí zabezpečení přenosu a protokolu SOAP zprávy jsou zabezpečené pomocí zabezpečení přenosu, například Windows (Negotiate) nebo SSL přes protokol TCP.  
+ Pro integritu a důvěrnost zprávu protokolu SOAP a vzájemné ověřování, použijte zabezpečení přenosu. Pokud u vazby je vybraný tento režim zabezpečení, zásobník kanál je nakonfigurován pomocí zabezpečeného přenosu a zprávy protokolu SOAP jsou zabezpečené pomocí zabezpečení přenosu, jako je například Windows (Negotiate) nebo SSL přes TCP.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.TcpTransportSecurity>  
@@ -87,5 +87,5 @@ Definuje typ požadavků na zabezpečení na úrovni zpráv pro koncový bod nak
  [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<Vazba >](../../../../../docs/framework/misc/binding.md)
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

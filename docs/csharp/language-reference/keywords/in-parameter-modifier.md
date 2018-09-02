@@ -4,12 +4,12 @@ ms.date: 03/06/2018
 helpviewer_keywords:
 - parameters [C#], in
 - in parameters [C#]
-ms.openlocfilehash: 913957e6afad1d9d516a01f4bb0e377b94a40aea
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 54abd5192d0d9bb49be0a9feb8e5e4eaeb691a0c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42924985"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43461719"
 ---
 # <a name="in-parameter-modifier-c-reference"></a>v parametru modifikátor (referenční dokumentace jazyka C#)
 
@@ -118,9 +118,10 @@ Nelze použít `in`, `ref`, a `out` klíčová slova pro následující druhy me
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../index.md)  
- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
- [Klíčová slova jazyka C#](index.md)  
- [Parametry metody](method-parameters.md)  
- [Referenční sémantika s typy hodnot](../../reference-semantics-with-value-types.md)  
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../index.md)  
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
+- [Klíčová slova jazyka C#](index.md)  
+- [Parametry metody](method-parameters.md)  
+- [Referenční sémantika s typy hodnot](../../reference-semantics-with-value-types.md)  

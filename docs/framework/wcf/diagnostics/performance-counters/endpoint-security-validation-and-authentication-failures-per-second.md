@@ -4,33 +4,33 @@ ms.date: 03/30/2017
 ms.assetid: 89a70b90-d7e4-4b03-9b84-4dc88ce3d605
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: bc68f49326818f0e6687c06a38e5e51fd6960c9f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b857a608c6b485c384956e55247b6e02c49a8564
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33474731"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43465936"
 ---
 # <a name="endpoint-security-validation-and-authentication-failures-per-second"></a>Koncový bod: Ověřování zabezpečení a počet selhání ověření za sekundu
 Název čítače: ověřování zabezpečení a ověřování chyb za sekundu  
   
 ## <a name="description"></a>Popis  
- Tento čítač se navyšuje vždy, když zprávu byl odmítnut z důvodu problému zabezpečení nejsou pokryty čítač "Zabezpečení volání není oprávněn". Mezi tyto problémy patří:  
+ Tento čítač se zvyšuje vždy, když zpráva byl odmítnut z důvodu problému zabezpečení se nevztahuje čítač "Zabezpečení volání Neautorizováno". Tyto problémy patří:  
   
 -   Token klienta nelze číst ze zprávy.  
   
--   Token klienta se nezdařilo ověření (třeba chybná hesla).  
+-   Token klienta se nezdařilo ověřování (například špatné heslo).  
   
--   Ověření podpisu se nezdařila (například zprávy s ní bylo neoprávněně).  
+-   Ověření podpisu se nezdařilo (například, zpráva byla změněna).  
   
--   Zpráva je duplicitní z předchozí jeden, který může dojít při útoku formou opakovaného přehrávání.  
+-   Zprávu je duplicitní v předchozím histogramem, což může dojít během opětovného přehrání útoku.  
   
 -   Došlo k selhání dešifrování.  
   
--   Některé elementy (například chybějící časové razítko nebo šifrovaná data blokovat) chybí požadované ze zprávy.  
+-   Některé prvky (například chybějící časového razítka nebo šifrovaná data blokovat) chybí požadované ze zprávy.  
   
--   Během TLSNEGO/SPNEGO metody handshake došlo k chybám.  
+-   Při vyjednávání metodou handshake TLSNEGO/SPNEGO došlo k chybám.  
   
- Tento čítač je typu čítače výkonu [PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkID=94649), jehož hodnota je vypočítána pomocí následujícího vzorce:  
+ Tento čítač je typ čítače výkonu [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkID=94649), jehož hodnota je vypočítána pomocí následujícího vzorce:  
   
  (N1-N0)/((D1-D0)/F)

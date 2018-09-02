@@ -2,20 +2,20 @@
 title: '&lt;message&gt; – &lt;ws2007HttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 9ffd8db6-84a8-4b38-a9fe-2cb1a87a1c97
-ms.openlocfilehash: 39d5ce66537fd6c94895205ccc855d7fb631284e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a8f448f40dbbf5fabbbd833cb9366c3911045f95
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33363180"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43470022"
 ---
 # <a name="ltmessagegt-of-ltws2007httpbindinggt"></a>&lt;message&gt; – &lt;ws2007HttpBinding&gt;
-Definuje nastavení pro zprávy úroveň zabezpečení [ \<– ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md) element.  
+Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md) elementu.  
   
  \<system.ServiceModel>  
 \<vazby >  
 \<ws2007HttpBinding>  
-\<Vazba >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
 \<Zpráva >  
   
@@ -46,41 +46,41 @@ Definuje nastavení pro zprávy úroveň zabezpečení [ \<– ws2007HttpBinding
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`algorithmSuite`|Nastaví zprávu algoritmy šifrování a klíč wrap. Algoritmy a velikosti klíče jsou určeny <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> třídy. Tyto algoritmy mapovat platformám zadaným v specifikace jazyka zásady zabezpečení (WS-SecurityPolicy).<br /><br /> Výchozí hodnota je Basic256.|  
-|`clientCredentialType`|Volitelné. Určuje typ pověření, který se má použít při ověřování klienta pomocí režim zabezpečení `Message` nebo `TransportWithMessageCredentials`. Zobrazit výčet hodnoty v následující tabulce. Výchozí hodnota je Windows.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.MessageCredentialType>.|  
-|`establishSecurityContext`|Hodnota, která určuje, zda kanál zabezpečení vytvoří zabezpečené relaci. Zabezpečené relace vytváří tokenu kontextu zabezpečení (SCT) před výměna zpráv aplikace. Po vytvoření SCT nabízí zabezpečený kanál <xref:System.ServiceModel.Channels.ISession> rozhraní pro horní kanály. Další informace o použití zabezpečených relací najdete v tématu [postupy: vytvoření zabezpečené relace](../../../../../docs/framework/wcf/feature-details/how-to-create-a-secure-session.md).<br /><br /> Výchozí hodnota je `true`.|  
-|`negotiateServiceCredential`|Volitelné. Hodnota, která určuje, zda je zřízený na straně klienta vzdálené správy přihlašovací údaje služby, nebo je klientovi procesem vyjednávání získat ze služby. Takové vyjednávání je předchůdcem služby exchange obvykle zprávy.<br /><br /> Pokud `clientCredentialType` rovná atributu na hodnotu None, uživatelské jméno nebo certifikát, nastavení tohoto atributu na `false` znamená, že certifikát služby je k dispozici na straně klienta vzdálené správy a že klient musíte zadat certifikát služby (s použitím [ \<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) v [ \<– serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) služby chování. Tento režim je vzájemná spolupráce s zásobníky SOAP, které implementují WS-Trust a WS-SecureConversation.<br /><br /> Pokud `ClientCredentialType` je atribut nastaven na `Windows`, nastavení tohoto atributu na `false` Určuje ověřování pomocí protokolu Kerberos. To znamená, že klient a služba musí být součástí stejné domény protokolu Kerberos. Tento režim je vzájemná spolupráce s zásobníky SOAP, které implementují tokenu profil protokolu Kerberos (podle definice v OASIS WSS TC) a WS-Trust a WS-SecureConversation.<br /><br /> Když tento atribut je `true`, způsobí, že vyjednávání protokolu SOAP .NET, která tunelových propojení <xref:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes.Spnego%2A> exchange v protokolu SOAP zprávy.<br /><br /> Výchozí hodnota je `true`.|  
+|`algorithmSuite`|Nastaví zprávu algoritmy šifrování a klíč zalamování řádků. Algoritmy a velikosti klíče jsou určeny <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> třídy. Tyto algoritmy namapovat na uvedené ve specifikaci jazyka zásad zabezpečení (WS-SecurityPolicy).<br /><br /> Výchozí hodnota je Basic256.|  
+|`clientCredentialType`|Volitelné. Určuje typ přihlašovacích údajů pro použití při ověřování klientů pomocí režimu zabezpečení rozhraní `Message` nebo `TransportWithMessageCredentials`. Zobrazit hodnoty výčtu v následující tabulce. Výchozí hodnota je Windows.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.MessageCredentialType>.|  
+|`establishSecurityContext`|Hodnota, která určuje, zda kanálu zabezpečení vytváří zabezpečenou relaci. Zabezpečené relace vytvoří token kontextu zabezpečení (SCT) před výměnou zprávy aplikace. Po vytvoření SCT nabízí zabezpečený kanál <xref:System.ServiceModel.Channels.ISession> rozhraní do horní kanálů. Další informace o použití zabezpečených relací najdete v tématu [postupy: vytvoření zabezpečené relace](../../../../../docs/framework/wcf/feature-details/how-to-create-a-secure-session.md).<br /><br /> Výchozí hodnota je `true`.|  
+|`negotiateServiceCredential`|Volitelné. Hodnota, která určuje, zda přihlašovací údaje služby je zřízený v klientovi mimo pásmo nebo se získá od služby ke klientovi procesem vyjednávání. Takové vyjednávání je předpokladem k výměně zpráv obvyklé.<br /><br /> Pokud `clientCredentialType` atributu rovná na hodnotu None, uživatelské jméno nebo certifikát, nastavení tohoto atributu na `false` znamená, že je k dispozici na klientovi mimo pásmo certifikát služby a že klient musí určete certifikát služby (pomocí [ \<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) v [ \<serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) služeb chování. Tento režim se vzájemná spolupráce s zásobníky SOAP, které implementují WS-Trust a WS-SecureConversation.<br /><br /> Pokud `ClientCredentialType` atribut je nastaven na `Windows`, nastavení tohoto atributu na `false` Určuje ověřování na základě protokolu Kerberos. To znamená, že klient a služba musí být součástí stejné domény pomocí protokolu Kerberos. Tento režim se vzájemná spolupráce s SOAP balíčcích, které implementují profilu token protokolu Kerberos (jak jsou definovány v OASIS WSS TC) a WS-Trust a WS-SecureConversation.<br /><br /> Pokud tento atribut je `true`, dojde k vygenerování vyjednávání protokolu SOAP .NET, které tunelových propojení <xref:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes.Spnego%2A> exchange přes zprávy protokolu SOAP.<br /><br /> Výchozí hodnota je `true`.|  
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Basic128|Použijte šifrování pomocí algoritmu aes128 za pomoci, Sha1 pro hodnota hash a šifrování Rsa. oaep mgf1p pro zabalení klíče.|  
-|Basic192|Použijte šifrování pomocí Aes192, Sha1 pro hodnotu hash zpráv, oaep mgf1p Rsa pro zabalení klíče.|  
-|Basic256|Použijte šifrování pomocí Aes256, Sha1 pro hodnotu hash zpráv, oaep mgf1p Rsa pro zabalení klíče.|  
-|Basic256Rsa15|Pomocí Aes256 pro šifrování zpráv, Sha1 pro hodnota hash a Rsa15 pro zabalení klíče.|  
-|Basic192Rsa15|Použijte Aes192 pro šifrování zpráv, Sha1 pro hodnota hash a Rsa15 pro zabalení klíče.|  
-|TripleDes|Použití šifrování TripleDes, Sha1 pro hodnotu hash zpráv, oaep mgf1p Rsa pro zabalení klíče.|  
-|Basic128Rsa15|Pomocí algoritmu aes128 za pomoci pro šifrování zpráv, Sha1 pro hodnota hash a Rsa15 pro zabalení klíče.|  
-|TripleDesRsa15|Použití šifrování TripleDes, Sha1 pro hodnota hash a Rsa15 pro zabalení klíče.|  
+|Basic128|Zabalení klíče použijte Aes128 šifrování, algoritmus pro hash Sha1 a Rsa. oaep mgf1p.|  
+|Basic192|Použijte šifrování Aes192, Sha1 pro hodnotu hash, oaep mgf1p Rsa pro zabalení klíče.|  
+|Basic256|Použijte šifrování pomocí Aes256, Sha1 pro hodnotu hash, oaep mgf1p Rsa pro zabalení klíče.|  
+|Basic256Rsa15|Pomocí Aes256 pro šifrování zpráv, Sha1 pro hodnotu hash a Rsa15 pro zabalení klíče.|  
+|Basic192Rsa15|Použití Aes192 pro šifrování zpráv, Sha1 pro hodnotu hash a Rsa15 pro zabalení klíče.|  
+|TripleDes|Použití šifrování TripleDes, Sha1 pro hodnotu hash, oaep mgf1p Rsa pro zabalení klíče.|  
+|Basic128Rsa15|Použití Aes128 pro šifrování zpráv, Sha1 pro hodnotu hash a Rsa15 pro zabalení klíče.|  
+|TripleDesRsa15|Použití šifrování TripleDes, Sha1 pro hodnotu hash a Rsa15 pro zabalení klíče.|  
 |Basic128Sha256|Pomocí Aes256 pro šifrování zpráv pro hodnota hash Sha256 a oaep mgf1p Rsa pro zabalení klíče.|  
-|Basic192Sha256|Použijte Aes192 pro šifrování zpráv pro hodnota hash Sha256 a oaep mgf1p Rsa pro zabalení klíče.|  
+|Basic192Sha256|Použití Aes192 pro šifrování zpráv pro hodnota hash Sha256 a oaep mgf1p Rsa pro zabalení klíče.|  
 |Basic256Sha256|Pomocí Aes256 pro šifrování zpráv pro hodnota hash Sha256 a oaep mgf1p Rsa pro zabalení klíče.|  
-|TripleDesSha256|Použití šifrování TripleDes pro šifrování zpráv pro hodnota hash Sha256 a oaep mgf1p Rsa pro zabalení klíče.|  
-|Basic128Sha256Rsa15|Pomocí algoritmu aes128 za pomoci pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
-|Basic192Sha256Rsa15|Použijte Aes192 pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
+|TripleDesSha256|TripleDes použijte pro šifrování zpráv pro hodnota hash Sha256 a oaep mgf1p Rsa pro zabalení klíče.|  
+|Basic128Sha256Rsa15|Použití Aes128 pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
+|Basic192Sha256Rsa15|Použití Aes192 pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
 |Basic256Sha256Rsa15|Pomocí Aes256 pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
-|TripleDesSha256Rsa15|Použití šifrování TripleDes pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
+|TripleDesSha256Rsa15|TripleDes použijte pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
   
-## <a name="clientcredentialtype-attribute"></a>clientCredentialType atribut  
+## <a name="clientcredentialtype-attribute"></a>Typ clientCredentialType atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`None`|To umožňuje službu k interakci s anonymní klienty. Ve službě to znamená, že služba nevyžaduje žádné pověření klienta. Na klientovi to znamená, že klient nenabízí žádné pověření klienta.|  
-|`Certificate`|Umožňuje službě vyžadují, ověření klienta pomocí certifikátu. Pokud `message` režimu zabezpečení se používá a `negotiateServiceCredential` je atribut nastaven na `false`, klient musí být zřízená s certifikát služby.|  
-|`IssuedToken`|Určuje vlastní token, obvykle vystavené pomocí zabezpečení tokenu služby (STS).|  
-|`UserName`|Umožňuje službě vyžadují, ověření klienta pomocí `UserName` přihlašovacích údajů. WCF nepodporuje odesílání hodnotu hash hesla nebo odvozování klíče pomocí hesla a použití tyto klíče pro zabezpečení zpráv. Jako takový WCF vynutí, že při použití zabezpečené přenos `UserName` přihlašovací údaje. Tento režim pověření výsledkem umožňuje vzájemnou spolupráci exchange nebo jiný umožňuje vzájemnou spolupráci vyjednávání na základě `negotiateServiceCredential` atribut.|  
-|`Windows`|Umožňuje výměnu SOAP být v kontextu ověřený `Windows` přihlašovacích údajů. Pokud `negotiateServiceCredential` je atribut nastaven na `true`, buď provede vyjednávání SSPI nebo protokolu Kerberos (umožňuje vzájemnou spolupráci standard).|  
+|`None`|To umožňuje službě komunikovat s anonymní klienty. Ve službě to znamená, že služba nevyžaduje žádné pověření klienta. Na straně klienta to znamená, že klient neposkytuje žádné pověření klienta.|  
+|`Certificate`|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu. Pokud `message` režimu zabezpečení se používá a `negotiateServiceCredential` atribut je nastaven na `false`, klient musí být poskytnut certifikát služby.|  
+|`IssuedToken`|Určuje vlastní token, obvykle vydané službou tokenu služby zabezpečení (STS).|  
+|`UserName`|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí `UserName` přihlašovacích údajů. WCF nepodporuje odesílání hodnotou hash hesla nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro zabezpečení zpráv. V důsledku toho se vynutí, že při použití je zabezpečený přenos WCF `UserName` přihlašovací údaje. Výsledkem interoperabilní exchange nebo -interoperabilní vyjednávání na základě tohoto režimu přihlašovacích údajů `negotiateServiceCredential` atribut.|  
+|`Windows`|Umožňuje výměnu SOAP bude v kontextu ověření `Windows` přihlašovacích údajů. Pokud `negotiateServiceCredential` atribut je nastaven na `true`, buď provede vyjednávání SSPI nebo aplikace pomocí protokolu Kerberos (interoperabilní standard).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -89,7 +89,7 @@ Definuje nastavení pro zprávy úroveň zabezpečení [ \<– ws2007HttpBinding
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-ws2007httpbinding.md)|Definuje nastavení zabezpečení pro [ \<– ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md).|  
+|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-ws2007httpbinding.md)|Definuje nastavení zabezpečení [ \<ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md).|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.NonDualMessageSecurityOverHttp>  
@@ -99,5 +99,5 @@ Definuje nastavení pro zprávy úroveň zabezpečení [ \<– ws2007HttpBinding
  [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<Vazba >](../../../../../docs/framework/misc/binding.md)
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
 ms.openlocfilehash: f1b88d160d6532c2a768684b55cd236417699322
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42933385"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43467848"
 ---
 # <a name="using-enumeration-classes-instead-of-enum-types"></a>Použití tříd enumeration místo typů výčtů
 

@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9f3ffe27bef6583b733fc04f2f25903d545daa74
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1ec8fe889885b555cbf9a95cd34b7330efff27f2
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33460376"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43460982"
 ---
 # <a name="put-function"></a>PUT – funkce
-Nastaví vlastnost s názvem na novou hodnotu.
+Pojmenovanou vlastnost nastaví na novou hodnotu.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
@@ -44,61 +44,61 @@ HRESULT Put (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`  
-[v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
+[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `wszName`  
-[v] Název vlastnosti. Tento parametr nemůže být `null`.
+[in] Název vlastnosti. Tento parametr nemůže mít `null`.
 
 `lFlags`  
-[v] Vyhrazena. Tento parametr musí být 0.
+[in] Vyhrazená. Tento parametr musí být 0.
 
 `pVal`   
-[v] Ukazatel na platnou `VARIANT` , stane se nová hodnota vlastnosti. Pokud `pVal` je `null` nebo odkazuje na `VARIANT` typu `VT_NULL`, je nastavena na `null`. 
+[in] Ukazatel na platný `VARIANT` , který se stane hodnota nové vlastnosti. Pokud `pVal` je `null` nebo odkazuje `VARIANT` typu `VT_NULL`, je nastavena na `null`. 
 
 `vtType`  
-[v] Typ `VARIANT` na kterou odkazuje `pVal`. Najdete v článku [poznámky](#remarks) části Další informace.
+[in] Typ `VARIANT` odkazované `pVal`. Zobrazit [poznámky](#remarks) části Další informace.
  
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
+|`WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Jeden nebo více parametrů nejsou platné. |
-|`WBEM_E_INVALID_PROPERTY_TYPE` | 0x8004102a | Typ vlastnosti nebyl rozpoznán. Tato hodnota se vrátí při vytváření instancí třídy, pokud třída již existuje. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Je k dispozici k dokončení operace není dostatek paměti. |
-| `WBEM_E_TYPE_MISMATCH` | 0x80041005 | Pro instance: Určuje, že `pVal` odkazuje na `VARIANT` nesprávného typu pro vlastnost. <br/> Definice třídy: vlastnost již existuje v nadřazené třídě a nový typ COM se liší od původního COM typu. |
+|`WBEM_E_INVALID_PROPERTY_TYPE` | 0x8004102a | Typ vlastnosti nebyl rozpoznán. Tato hodnota se vrátí při vytváření instance třídy, pokud třída již existuje. |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
+| `WBEM_E_TYPE_MISMATCH` | 0x80041005 | Pro instance: označuje, že `pVal` odkazuje `VARIANT` nesprávného typu pro vlastnost. <br/> Definice třídy: vlastnost již existuje v nadřazené třídě a nový typ modelu COM se liší od původní modelu COM typu. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná. |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemClassObject::Put](https://msdn.microsoft.com/library/aa391455(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemClassObject::Put](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-put) metody.
 
-Tato funkce vždy přepíše aktuální hodnota vlastnosti novou. Pokud [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) odkazuje na definice třídy, `Put` vytvoří nebo aktualizuje hodnotu vlastnosti. Když [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) odkazuje na instanci CIM, `Put` aktualizuje jenom; hodnota vlastnosti `Put` nelze vytvořit hodnotu vlastnosti.
+Tato funkce vždy přepíše aktuální hodnota vlastnosti nové. Pokud [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) odkazuje na definici třídy `Put` vytvoří nebo aktualizuje hodnotu vlastnosti. Když [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) odkazuje na instanci CIM `Put` aktualizuje hodnotu vlastnosti. `Put` nelze vytvořit hodnotu vlastnosti.
 
-`__CLASS` Systému vlastnost je pouze s možností zápisu během vytváření třídy, když se nemusí být ponecháno prázdné. Všechny ostatní vlastnosti systému jsou jen pro čtení.
+`__CLASS` Vlastnost systému zapisovatelnou pouze při vytváření třídy, když ji nemůže být ponecháno prázdné. Všechny ostatní vlastnosti systému jsou jen pro čtení.
 
-Uživatele nelze vytvořit vlastnosti s názvy, které začínat ani končit podtržítko ("_"). Toto je vyhrazená pro systém třídy a vlastnosti.
+Uživatele nelze vytvořit vlastnosti s názvy, které začínat ani končit znakem podtržítka ("_"). To je vyhrazen pro systémové třídy a vlastnosti.
 
-Pokud je vlastnost nastavena `Put` funkce existuje v nadřazené třídě, výchozí hodnota vlastnosti je změnit, dokud se vlastnost typ neodpovídá typu nadřazené třídy. Pokud se nejedná o neshodě typů vlastnost neexistuje, je vlastnost ceated.
+Pokud vlastnost nastavil `Put` funkce existuje v nadřazené třídě, výchozí hodnota vlastnosti je změnit, dokud se tento typ vlastnosti neodpovídá typu nadřazené třídy. Pokud vlastnost neexistuje a není v případě nesouladu typů, je vlastnost ceated.
 
-Použití `vtType` parametr pouze při vytváření nové vlastnosti v definici třídy CIM a `pVal` je `null` nebo odkazuje na `VARIANT` typu `VT_NULL`. V takovém případě `vType` parametr určuje typ modelu CIM vlastnosti. V každém případě `vtType` musí být 0. `vtType` musí také být 0, pokud je základní objekt instancí (i když `Val` je `null`) vzhledem k tomu, že typem vlastnosti je pevná a nelze změnit.   
+Použití `vtType` parametr jenom při vytvoření nové vlastnosti v definici třídy CIM a `pVal` je `null` nebo odkazuje na `VARIANT` typu `VT_NULL`. V takovém případě `vType` parametr určuje typ CIM vlastnosti. V každém případě `vtType` musí být 0. `vtType` musí také být 0, pokud je podkladový objekt instancí (i v případě `Val` je `null`) vzhledem k tomu, že typ vlastnosti je pevná a nedá se změnit.   
 
 ## <a name="example"></a>Příklad
 
-Příklad, naleznete v části [IWbemClassObject::Put](https://msdn.microsoft.com/library/aa391455(v=vs.85).aspx) metoda.
+Příklad najdete v tématu [IWbemClassObject::Put](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-put) metody.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

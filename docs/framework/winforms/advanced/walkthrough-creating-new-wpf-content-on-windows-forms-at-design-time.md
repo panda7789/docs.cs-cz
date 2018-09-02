@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ElementHost control
 - WPF user control [Windows Forms], hosting in Windows Forms
 ms.assetid: 2e92d8e8-f0e4-4df7-9f07-2acf35cd798c
-ms.openlocfilehash: dd68911abfa6bd6315091fb4630134532053efa1
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: dc72b86a69d44ad282e30b000313b73211cad09c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42999868"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43461745"
 ---
 # <a name="walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time"></a>Návod: Vytvoření nového obsahu WPF ve Windows Forms během návrhu
 
@@ -61,7 +61,7 @@ Vytvoření nového ovládacího prvku WPF a jeho přidání do projektu je stej
 
     - Soubor UserControl1.xaml otevře [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)].
 
-2. V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [postupy: výběr a přesunutí prvků na návrhové ploše](http://msdn.microsoft.com/library/54cb70b6-b35b-46e4-a0cc-65189399c474).
+2. V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [postupy: výběr a přesunutí prvků na návrhové ploše](https://msdn.microsoft.com/library/54cb70b6-b35b-46e4-a0cc-65189399c474).
 
 3. V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastností **200**.
 
@@ -114,4 +114,4 @@ Windows Forms a WPF jsou různé technologie, ale jsou určené ke úzce spolupr
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)
 - [Používání ovládacích prvků WPF](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)
-- [Návrhář WPF](http://msdn.microsoft.com/library/c6c65214-8411-4e16-b254-163ed4099c26)
+- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)

@@ -8,55 +8,55 @@ helpviewer_keywords:
 - data grids [Windows Forms], setting sizing modes
 - DataGridView control [Windows Forms], sizing modes
 ms.assetid: e9ad15e6-b4bb-44aa-a767-3738e9db1651
-ms.openlocfilehash: 3d2ebb2b42a3e6558d5aedb207bdc4e2607d5270
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d2b47a8c54b6981b911baa2b044de908cbe7a30f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33536312"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43469008"
 ---
 # <a name="how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control"></a>Postupy: Nastavení režimů změny velikosti ovládacího prvku Windows Forms DataGridView
-Následující postupy ukazují některé běžné scénáře, které přizpůsobit nebo v kombinaci k dispozici pro nastavení velikosti možností <xref:System.Windows.Forms.DataGridView> řízení a pro určité sloupce v ovládacím prvku.  
+Následující postupy ukazují některé běžné scénáře, které přizpůsobit nebo můžete zkombinovat k dispozici pro nastavení velikosti možností <xref:System.Windows.Forms.DataGridView> ovládacího prvku a pro konkrétní sloupců v ovládacím prvku.  
   
-### <a name="to-create-a-fixed-width-column"></a>K vytvoření sloupce pevnou šířkou  
+### <a name="to-create-a-fixed-width-column"></a>Chcete-li vytvořit sloupec pevnou šířkou  
   
--   Nastavit <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> vlastnost <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.None>, <xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A> vlastnost <xref:System.Windows.Forms.DataGridViewTriState.False>, <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A> vlastnost `true`a <xref:System.Windows.Forms.DataGridViewColumn.Width%2A> vlastnost na hodnotu odpovídající.  
+-   Nastavte <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> vlastnost <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.None>, <xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A> vlastnost <xref:System.Windows.Forms.DataGridViewTriState.False>, <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A> vlastnost `true`a <xref:System.Windows.Forms.DataGridViewColumn.Width%2A> vlastnost na odpovídající hodnotu.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewSizingScenarios#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/CS/sizingscenarios.cs#10)]
      [!code-vb[System.Windows.Forms.DataGridViewSizingScenarios#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/vb/sizingscenarios.vb#10)]  
   
-### <a name="to-create-a-column-that-adjusts-its-size-to-fit-its-content"></a>Chcete-li vytvořit sloupec, který přizpůsobí jeho velikost podle jeho obsahu  
+### <a name="to-create-a-column-that-adjusts-its-size-to-fit-its-content"></a>Chcete-li vytvořit sloupec, který upraví jeho velikost podle jeho obsahu  
   
--   Nastavte <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> vlastnost do režimu nastavení velikosti podle obsahu.  
+-   Nastavte <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> vlastnosti k určení velikosti na základě obsahu režimu.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewSizingScenarios#20](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/CS/sizingscenarios.cs#20)]
      [!code-vb[System.Windows.Forms.DataGridViewSizingScenarios#20](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/vb/sizingscenarios.vb#20)]  
   
-### <a name="to-create-fill-mode-columns-for-values-of-varying-size-and-importance"></a>Chcete-li vytvořit režim vyplnění sloupce pro hodnoty různou velikost a důležitostí  
+### <a name="to-create-fill-mode-columns-for-values-of-varying-size-and-importance"></a>Chcete-li vytvořit režim vyplnění sloupce pro hodnoty různých velikostí a význam  
   
--   Nastavte <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill> nastavení režimu nastavení velikosti pro všechny sloupce, které nepřepisují tuto hodnotu. Nastavte <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> vlastnosti sloupce, které chcete hodnoty, které jsou přímo úměrná svoje průměru obsahu šířky. Nastavte <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> vlastnosti důležitých sloupcích zajistit částečné zobrazení obsahu.  
+-   Nastavte <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill> nastavit režim změny velikosti pro všechny sloupce, které nepřepisují tuto hodnotu. Nastavte <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> šířku obsahu vlastnosti sloupce se mají hodnoty, které jsou přímo úměrná jejich průměr. Nastavte <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> vlastnosti sloupců důležité k zajištění částečné zobrazení obsahu.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewSizingScenarios#30](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/CS/sizingscenarios.cs#30)]
      [!code-vb[System.Windows.Forms.DataGridViewSizingScenarios#30](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/vb/sizingscenarios.vb#30)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu dokončení poskytuje ukázkový aplikace, která vám může pomoct pochopit nastavení velikosti možností popsaných v tomto tématu.  
+ Následující příklad kompletní kód poskytuje ukázkové aplikace, která vám pomůžou pochopit nastavení velikosti možností popsané v tomto tématu.  
   
  [!code-csharp[System.Windows.Forms.DataGridViewSizingScenarios#00](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/CS/sizingscenarios.cs#00)]
  [!code-vb[System.Windows.Forms.DataGridViewSizingScenarios#00](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/vb/sizingscenarios.vb#00)]  
   
- Používat tuto aplikaci ukázku:  
+ Použití této ukázkové aplikaci:  
   
--   Změníte velikost formuláře. Sledovat, jak změnit režim vyplnění sloupce jejich šířky při zachování proporce indikován <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> hodnoty vlastností. Sledovat, jak sloupec <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> zabraňuje v jeho změnu při formuláře je příliš malá.  
+-   Změňte velikost formuláře. Sledujte, jak změnit režim vyplnění sloupce jejich šířky při zachování rozměry indikován <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> hodnot vlastností. Podívejte se jak sloupce <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> brání jeho změnu, když je formulář příliš malá.  
   
--   Změníte velikost sloupců přetažením oddělovače sloupců pomocí myši. Sledovat, jak některé sloupce nesmí být změněnou velikostí a jak s možností změny velikosti sloupce nelze provést užší než jejich minimální šířku.  
+-   Změníte velikost sloupce přetažením oddělovače sloupců pomocí myši. Sledujte, jak nemůže být některé sloupce, jehož velikost byla změněna a jak umožňující změnu velikosti sloupců nelze nastavit užší než jeho minimální šířku.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na systém a System.Windows.Forms sestavení.  
+-   Odkazy na sestavení systému a System.Windows.Forms.  
   
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic a Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [vytváření pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit zadáním nebo vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.DataGridView>  

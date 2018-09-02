@@ -6,17 +6,17 @@ dev_langs:
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
 ms.assetid: 38ce284a-4303-46dd-b699-c9365b22a7dc
-ms.openlocfilehash: 2a2be40195bf3afaadfc92c5f2983452a6f8568c
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: b37ec57a0fde6617d84590cc0b0d7a4235b5573e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43254890"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43467934"
 ---
 # <a name="walkthrough-hosting-wpf-content-in-win32"></a>Návod: Hostování obsahu WPF v Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být mnohem efektivnější přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce, které vaše aplikace místo přepsání původní kód. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje jednoduchý mechanismus pro hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna.  
   
- Tento kurz popisuje, jak psát ukázkovou aplikaci, [hostování obsahu WPF v ukázce okně Win32](http://go.microsoft.com/fwlink/?LinkID=160004), že hostitelé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna. Můžete rozšířit tuto ukázku pro hostování všech [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna. Protože se týká kombinace spravovaného a nespravovaného kódu, je aplikace napsaná v [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)].  
+ Tento kurz popisuje, jak psát ukázkovou aplikaci, [hostování obsahu WPF v ukázce okně Win32](https://go.microsoft.com/fwlink/?LinkID=160004), že hostitelé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna. Můžete rozšířit tuto ukázku pro hostování všech [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna. Protože se týká kombinace spravovaného a nespravovaného kódu, je aplikace napsaná v [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)].  
   
  
   
@@ -27,7 +27,7 @@ ms.locfileid: "43254890"
  Protože vzorku, který doprovází tento kurz je implementována v [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)], tento kurz předpokládá znalost použití [!INCLUDE[TLA#tla_cpp](../../../../includes/tlasharptla-cpp-md.md)] programu [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] plus znalost programování spravovaného kódu. Znalost [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)] je užitečné, ale není nutná.  
   
 > [!NOTE]
->  Tento kurz obsahuje některé příklady kódů z přidružené ukázkové. Ale pro lepší čitelnost, neobsahuje úplnou ukázku kódu. Úplný ukázkový kód, naleznete v tématu [hostování obsahu WPF v ukázce okně Win32](http://go.microsoft.com/fwlink/?LinkID=160004).  
+>  Tento kurz obsahuje některé příklady kódů z přidružené ukázkové. Ale pro lepší čitelnost, neobsahuje úplnou ukázku kódu. Úplný ukázkový kód, naleznete v tématu [hostování obsahu WPF v ukázce okně Win32](https://go.microsoft.com/fwlink/?LinkID=160004).  
   
 <a name="basic_procedure"></a>   
 ## <a name="the-basic-procedure"></a>Základní postup  

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: cdd636a1854b891605abadaf31b1667e235eea92
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: 8121b6e8c5a136f5f89b59636a7cb7f15794164a
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43253195"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43462476"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>
@@ -35,7 +35,7 @@ ms.locfileid: "43253195"
   
 <a name="creating_a_new_xaml_browser_application_xbap"></a>   
 ## <a name="creating-a-new-xaml-browser-application-xbap"></a>Vytvoření nové aplikace prohlížeče XAML (XBAP)  
- Nejjednodušší způsob, jak vytvořit nového projektu XBAP, který je sadou Microsoft Visual Studio. Při vytváření nového projektu, vyberte **aplikace WPF pro prohlížeč** ze seznamu šablon. Další informace najdete v tématu [postupy: vytvoření nového projektu aplikace prohlížeče WPF](http://msdn.microsoft.com/library/72ef4d90-e163-42a1-8df0-ea7ccfd1901f).  
+ Nejjednodušší způsob, jak vytvořit nového projektu XBAP, který je sadou Microsoft Visual Studio. Při vytváření nového projektu, vyberte **aplikace WPF pro prohlížeč** ze seznamu šablon. Další informace najdete v tématu [postupy: vytvoření nového projektu aplikace prohlížeče WPF](https://msdn.microsoft.com/library/72ef4d90-e163-42a1-8df0-ea7ccfd1901f).  
   
  Při spuštění projektu XBAP, který se otevře v okně prohlížeče místo samostatné okna. Když ladíte XBAP ze sady Visual Studio, aplikace se spustí s oprávněním zóny Internet a vyvolá proto bezpečnostním výjimkám překročení těchto oprávnění. Další informace najdete v tématu [zabezpečení](../../../../docs/framework/wpf/security-wpf.md) a [částečné zabezpečení důvěryhodnosti WPF](../../../../docs/framework/wpf/wpf-partial-trust-security.md).  
   
@@ -92,7 +92,7 @@ ms.locfileid: "43253195"
   
 <a name="communicating_with_the_host_web_page"></a>   
 ## <a name="communicating-with-the-host-web-page"></a>Komunikaci s webovou stránkou hostitele  
- Když je aplikace hostovaná v rámci HTML, může komunikovat s webovou stránku, která obsahuje XBAP. Můžete to provést pomocí načítání <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> vlastnost <xref:System.Windows.Interop.BrowserInteropHelper>. Tato vlastnost vrátí objekt skript, který představuje okno HTML. Můžete pak přístup k vlastnosti, metody a události v [objekt okna](http://go.microsoft.com/fwlink/?LinkId=160274) pomocí syntaxe regulárních tečkou. Můžete také přistupovat metody skriptů a globální proměnné. Následující příklad ukazuje, jak získat objekt skriptu a ukončete prohlížeč.  
+ Když je aplikace hostovaná v rámci HTML, může komunikovat s webovou stránku, která obsahuje XBAP. Můžete to provést pomocí načítání <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> vlastnost <xref:System.Windows.Interop.BrowserInteropHelper>. Tato vlastnost vrátí objekt skript, který představuje okno HTML. Můžete pak přístup k vlastnosti, metody a události v [objekt okna](https://go.microsoft.com/fwlink/?LinkId=160274) pomocí syntaxe regulárních tečkou. Můžete také přistupovat metody skriptů a globální proměnné. Následující příklad ukazuje, jak získat objekt skriptu a ukončete prohlížeč.  
   
  [!code-csharp[XbapBrowserInterop#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/xbapbrowserinterop/cs/page1.xaml.cs#10)]
  [!code-vb[XbapBrowserInterop#10](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/xbapbrowserinterop/vb/page1.xaml.vb#10)]  
@@ -176,7 +176,7 @@ ms.locfileid: "43253195"
 > [!NOTE]
 >  Chování popsané v předchozí tabulce je pro aplikace XBAP úplného vztahu důvěryhodnosti, které nepostupujte podle modelu důvěryhodných nasazení ClickOnce.  
   
- Doporučujeme vám použít model nasazení důvěryhodných ClickOnce pro nasazení XBAP úplného vztahu důvěryhodnosti. Tento model umožňuje vaší XBAP, který chcete být udělena úplná důvěryhodnost automaticky, bez ohledu na zóně zabezpečení tak, aby se uživateli nezobrazí výzva. V rámci tohoto modelu musíte podepsat aplikaci pomocí certifikátu od důvěryhodného vydavatele. Další informace najdete v tématu [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview) a [Úvod k podepisování kódu](http://go.microsoft.com/fwlink/?LinkId=166327).  
+ Doporučujeme vám použít model nasazení důvěryhodných ClickOnce pro nasazení XBAP úplného vztahu důvěryhodnosti. Tento model umožňuje vaší XBAP, který chcete být udělena úplná důvěryhodnost automaticky, bez ohledu na zóně zabezpečení tak, aby se uživateli nezobrazí výzva. V rámci tohoto modelu musíte podepsat aplikaci pomocí certifikátu od důvěryhodného vydavatele. Další informace najdete v tématu [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview) a [Úvod k podepisování kódu](https://go.microsoft.com/fwlink/?LinkId=166327).  
   
 <a name="xbap_start_time_performance_considerations"></a>   
 ## <a name="xbap-start-time-performance-considerations"></a>Faktory ovlivňující výkon XBAP počáteční čas  

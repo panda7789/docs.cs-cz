@@ -7,23 +7,23 @@ helpviewer_keywords:
 - controls [WPF], ComboBox
 - ComboBox control [WPF]
 ms.assetid: fe0c2f62-fec2-4c41-a37e-5773d284170c
-ms.openlocfilehash: 3c74bd33e726dc5a34f55989357218a3e2c46e3f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 40dc767d830b3834eedf3581d544aa53d40fae50
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33551188"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43466353"
 ---
 # <a name="combobox"></a>ComboBox
-<xref:System.Windows.Controls.ComboBox> Řízení předkládá uživatelům seznam možností. V seznamu se zobrazí a skrytý ovládací prvek rozšíří a sbalí. Ve svém výchozím stavu v seznamu sbalena, zobrazení pouze jednu možnost. Uživatel klikne tlačítko Zobrazit seznam možností.  
+<xref:System.Windows.Controls.ComboBox> Ovládací prvek předkládá uživatelům seznam možností. Seznam se zobrazí a skryté, jak ovládací prvek se rozbalí a sbalíte. Ve výchozím stavu je sbalení seznamu zobrazení pouze jednu možnost. Uživatel klikne na tlačítko, pokud chcete zobrazit úplný seznam možností.  
   
- Následující obrázek znázorňuje <xref:System.Windows.Controls.ComboBox> v různých stavů.  
+ Následující ilustrace ukazuje <xref:System.Windows.Controls.ComboBox> v různých stavech.  
   
- ![Pole se seznamem ve výchozím a stisknutí stavy](../../../../docs/framework/wpf/controls/media/ss-ctl-combobox.gif "SS_CTL_combobox")  
-Sbalené a rozbalené  
+ ![Pole se seznamem ve výchozích polí a stisknutém](../../../../docs/framework/wpf/controls/media/ss-ctl-combobox.gif "SS_CTL_combobox")  
+Sbalení a rozbalení  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: získání ComboBoxItem](http://msdn.microsoft.com/library/8a0d2622-64b6-41fc-bf80-9669a1eacb53)  
+ [Postupy: získání ComboBoxItem](https://msdn.microsoft.com/library/8a0d2622-64b6-41fc-bf80-9669a1eacb53)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ComboBox>

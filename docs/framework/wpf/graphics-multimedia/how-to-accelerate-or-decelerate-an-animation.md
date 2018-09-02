@@ -7,17 +7,17 @@ helpviewer_keywords:
 - animation [WPF], accelerating
 - animation [WPF], decelerating
 ms.assetid: 4f383b2c-f94d-4a4e-9a06-f56f5dae95f9
-ms.openlocfilehash: b4bea64dbc88ce32c908289b9465b058c558a932
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b1649f27fc8ff850516eef2086dbce732915406b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33555670"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43471936"
 ---
 # <a name="how-to-accelerate-or-decelerate-an-animation"></a>Postupy: Zrychlení a zpomalení animace
-Tento příklad ukazuje, jak zajistit animace urychlit a zpomalení v čase. V následujícím příkladu jsou animovaný několik obdélníků pomocí animací jiné <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A> a <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A> nastavení.  
+Tento příklad ukazuje, jak vytvořit animaci, zrychlení a zpomalení v čase. V následujícím příkladu jsou animovat několik obdélníků pomocí animací s různými <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A> a <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A> nastavení.  
   
 ## <a name="example"></a>Příklad  
  [!code-xaml[timingbehaviors_snip#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/AccelDecelExample.xaml#1)]  
   
- Z tohoto příkladu byla vynechána kódu. Kód dokončení najdete v článku [ukázka chování časování animace](http://go.microsoft.com/fwlink/?LinkID=159970).
+ Bylo vynecháno kód v tomto příkladu. Kompletní kód, naleznete v tématu [ukázka chování časování animace](https://go.microsoft.com/fwlink/?LinkID=159970).

@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5a44819e8a8c0b07b3ffbfb2d92533cbdc558ef6
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: 3909855db109938794fad3e0afc99d492009b81c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37874741"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43461784"
 ---
 # <a name="migrating-your-windows-store-app-to-net-native"></a>Migrace aplikace pro Windows Store do .NET Native
-.NET native poskytuje statické kompilace aplikací ve Windows Store nebo v počítači vývojáře. Tím se liší od dynamická kompilace provádí kompilátor just-in-time (JIT) pro aplikace Windows Store nebo [Native Image Generator (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) na zařízení. Bez ohledu na rozdíly, .NET Native snaží udržovat kompatibilitu s [.NET pro Windows Store apps](http://msdn.microsoft.com/library/windows/apps/br230302.aspx). Ve většině případů věcí, které fungují v aplikacích .NET pro Windows Store také pracovat s .NET Native.  Nicméně v některých případech může dojít k nějaké změny. Tento dokument popisuje tyto rozdíly mezi standardní aplikace .NET pro Windows Store a .NET Native v následujících oblastech:  
+.NET native poskytuje statické kompilace aplikací ve Windows Store nebo v počítači vývojáře. Tím se liší od dynamická kompilace provádí kompilátor just-in-time (JIT) pro aplikace Windows Store nebo [Native Image Generator (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) na zařízení. Bez ohledu na rozdíly, .NET Native snaží udržovat kompatibilitu s [.NET pro Windows Store apps](https://msdn.microsoft.com/library/windows/apps/br230302.aspx). Ve většině případů věcí, které fungují v aplikacích .NET pro Windows Store také pracovat s .NET Native.  Nicméně v některých případech může dojít k nějaké změny. Tento dokument popisuje tyto rozdíly mezi standardní aplikace .NET pro Windows Store a .NET Native v následujících oblastech:  
   
 -   [Obecné runtime rozdíly](#Runtime)  
   
@@ -79,7 +79,7 @@ ms.locfileid: "37874741"
   
 -   Veřejné členy na <xref:System.RuntimeFieldHandle> a <xref:System.RuntimeMethodHandle> struktury nejsou podporovány. Tyto typy jsou podporovány pouze pro LINQ, stromy výrazů a inicializace statické pole.  
   
--   <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeProperties%2A?displayProperty=nameWithType> a <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeEvents%2A?displayProperty=nameWithType> zahrnout skryté členy základních tříd a může proto přepsat bez explicitního přepsání. To platí také pro jiné [RuntimeReflectionExtensions.GetRuntime*](http://msdn.microsoft.com/library/system.reflection.runtimereflectionextensions_methods.aspx) metody.  
+-   <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeProperties%2A?displayProperty=nameWithType> a <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeEvents%2A?displayProperty=nameWithType> zahrnout skryté členy základních tříd a může proto přepsat bez explicitního přepsání. To platí také pro jiné [RuntimeReflectionExtensions.GetRuntime*](https://msdn.microsoft.com/library/system.reflection.runtimereflectionextensions_methods.aspx) metody.  
   
 -   <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType> a <xref:System.Type.MakeByRefType%2A?displayProperty=nameWithType> není selhání při pokusu o vytvoření určité kombinace (například pole Parametry ByRef).  
   
@@ -99,7 +99,7 @@ ms.locfileid: "37874741"
   
 -   [HttpClient](#HttpClient)  
   
--   [Zprostředkovatel komunikace s objekty](#Interop)  
+-   [Interop](#Interop)  
   
 -   [Nepodporované rozhraní API](#APIs)  
   
@@ -151,13 +151,13 @@ ms.locfileid: "37874741"
   
 -   <xref:System.Reflection.TypeInfo.GUID%2A?displayProperty=nameWithType> Vlastnost vyvolá <xref:System.PlatformNotSupportedException> výjimka pokud <xref:System.Runtime.InteropServices.GuidAttribute> není použit atribut typu. Identifikátor GUID slouží především pro podporu modelu COM.  
   
--   <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> Metoda správně Parsuje řetězce, které obsahují krátký kalendářní data v .NET Native. Ale se nebude udržovat kompatibilitu s změny v datum a čas analýzy je popsáno v článcích znalostní báze Microsoft Knowledge Base [KB2803771](http://support.microsoft.com/kb/2803771) a [KB2803755](http://support.microsoft.com/kb/2803755).  
+-   <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> Metoda správně Parsuje řetězce, které obsahují krátký kalendářní data v .NET Native. Ale se nebude udržovat kompatibilitu s změny v datum a čas analýzy je popsáno v článcích znalostní báze Microsoft Knowledge Base [KB2803771](https://support.microsoft.com/kb/2803771) a [KB2803755](https://support.microsoft.com/kb/2803755).  
   
 -   <xref:System.Numerics.BigInteger.ToString%2A?displayProperty=nameWithType> `("E")` poloměr zaoblení správně v .NET Native. V některých verzích CLR je výsledný řetězec zkrácen místo zaokrouhleno.  
   
 <a name="HttpClient"></a>   
 ### <a name="httpclient-differences"></a>Rozdíly HttpClient  
- V rozhraní .NET Native <xref:System.Net.Http.HttpClientHandler> třída interně používá rozhraní WinINet (prostřednictvím [HttpBaseProtocolFilter](http://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx) třídy) namísto <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy používané ve standardní aplikace .NET pro Windows Store.  WinINet nepodporuje všechny možnosti konfigurace, pro které <xref:System.Net.Http.HttpClientHandler> třídy podporuje.  Výsledek:  
+ V rozhraní .NET Native <xref:System.Net.Http.HttpClientHandler> třída interně používá rozhraní WinINet (prostřednictvím [HttpBaseProtocolFilter](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx) třídy) namísto <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy používané ve standardní aplikace .NET pro Windows Store.  WinINet nepodporuje všechny možnosti konfigurace, pro které <xref:System.Net.Http.HttpClientHandler> třídy podporuje.  Výsledek:  
   
 -   Některé vlastnosti funkce na <xref:System.Net.Http.HttpClientHandler> vrátit `false` v .NET Native, že vrátí `true` ve standardní aplikace .NET pro Windows Store.  
   
@@ -167,11 +167,11 @@ ms.locfileid: "37874741"
   
  **Proxy server**  
   
- [HttpBaseProtocolFilter](http://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx) třída nepodporuje konfiguraci nebo přepsání proxy serveru na základě žádosti.  To znamená, že všechny žádosti na .NET Native používat systému nakonfigurovaný proxy server nebo žádný proxy server, v závislosti na hodnotu <xref:System.Net.Http.HttpClientHandler.UseProxy%2A?displayProperty=nameWithType> vlastnost.  V aplikacích .NET pro Windows Store, je definován proxy serveru <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> vlastnost.  V .NET Native, nastavení <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> hodnotu jinou než `null` vyvolá <xref:System.PlatformNotSupportedException> výjimky.  <xref:System.Net.Http.HttpClientHandler.SupportsProxy%2A?displayProperty=nameWithType> Vrátí vlastnost `false` v .NET Native, že ji vrací `true` ve standardní aplikace rozhraní .NET Framework pro Windows Store.  
+ [HttpBaseProtocolFilter](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx) třída nepodporuje konfiguraci nebo přepsání proxy serveru na základě žádosti.  To znamená, že všechny žádosti na .NET Native používat systému nakonfigurovaný proxy server nebo žádný proxy server, v závislosti na hodnotu <xref:System.Net.Http.HttpClientHandler.UseProxy%2A?displayProperty=nameWithType> vlastnost.  V aplikacích .NET pro Windows Store, je definován proxy serveru <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> vlastnost.  V .NET Native, nastavení <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> hodnotu jinou než `null` vyvolá <xref:System.PlatformNotSupportedException> výjimky.  <xref:System.Net.Http.HttpClientHandler.SupportsProxy%2A?displayProperty=nameWithType> Vrátí vlastnost `false` v .NET Native, že ji vrací `true` ve standardní aplikace rozhraní .NET Framework pro Windows Store.  
   
  **Automatické přesměrování**  
   
- [HttpBaseProtocolFilter](http://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx) třídy neumožňuje maximálního počtu automatické přesměrování nakonfigurovat.  Hodnota <xref:System.Net.Http.HttpClientHandler.MaxAutomaticRedirections%2A?displayProperty=nameWithType> vlastnost je 50 ve výchozím nastavení standardní aplikace .NET pro Windows Store a je možné upravit. V .NET Native, tato vlastnost hodnotu 10 a upravit ji vyvolá výjimku při pokusu <xref:System.PlatformNotSupportedException> výjimky.  <xref:System.Net.Http.HttpClientHandler.SupportsRedirectConfiguration%2A?displayProperty=nameWithType> Vrátí vlastnost `false` v .NET Native, že ji vrací `true` v aplikacích .NET pro Windows Store.  
+ [HttpBaseProtocolFilter](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx) třídy neumožňuje maximálního počtu automatické přesměrování nakonfigurovat.  Hodnota <xref:System.Net.Http.HttpClientHandler.MaxAutomaticRedirections%2A?displayProperty=nameWithType> vlastnost je 50 ve výchozím nastavení standardní aplikace .NET pro Windows Store a je možné upravit. V .NET Native, tato vlastnost hodnotu 10 a upravit ji vyvolá výjimku při pokusu <xref:System.PlatformNotSupportedException> výjimky.  <xref:System.Net.Http.HttpClientHandler.SupportsRedirectConfiguration%2A?displayProperty=nameWithType> Vrátí vlastnost `false` v .NET Native, že ji vrací `true` v aplikacích .NET pro Windows Store.  
   
  **Automatická dekomprese**  
   
@@ -217,9 +217,9 @@ ms.locfileid: "37874741"
 |<xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType>|  
 |<xref:System.Runtime.InteropServices.VarEnum?displayProperty=nameWithType>|  
   
- <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> je podporováno, ale vyvolá výjimku v některých případech, například při použití s [IDispatch](http://msdn.microsoft.com/library/windows/apps/ms221608.aspx) nebo varianty byref.  
+ <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> je podporováno, ale vyvolá výjimku v některých případech, například při použití s [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) nebo varianty byref.  
   
- Zastaralá rozhraní API pro [IDispatch](http://msdn.microsoft.com/library/windows/apps/ms221608.aspx) podporují:  
+ Zastaralá rozhraní API pro [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) podporují:  
   
 |Typ|Člen|  
 |----------|------------|  
@@ -318,7 +318,7 @@ ms.locfileid: "37874741"
   
     -   `BStr`  
   
-    -   [IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509.aspx)  
+    -   [IUnknown](/windows/desktop/api/unknwn/nn-unknwn-iunknown)  
   
  Ale .NET Native nepodporuje následující:  
   
@@ -326,7 +326,7 @@ ms.locfileid: "37874741"
   
 -   Implementace <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> na spravovaný typ rozhraní  
   
--   Implementace [IDispatch](http://msdn.microsoft.com/library/windows/apps/ms221608.aspx) rozhraní pro spravovaný typ prostřednictvím <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> atribut. Mějte však na paměti, že nelze volat COM objekty prostřednictvím `IDispatch`, a spravovaný objekt nemůže implementovat `IDispatch`.  
+-   Implementace [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) rozhraní pro spravovaný typ prostřednictvím <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> atribut. Mějte však na paměti, že nelze volat COM objekty prostřednictvím `IDispatch`, a spravovaný objekt nemůže implementovat `IDispatch`.  
   
  Použití reflexe pro vyvolání platformy volání metody není podporováno. Toto omezení můžete obejít obtékání volání metody v jiné metody a místo toho Obálka volání pomocí reflexe.  
   
@@ -400,7 +400,7 @@ ms.locfileid: "37874741"
   
  **Windows Communication Foundation (WCF) (System.ServiceModel.\*)**  
   
- Typy v [obory názvů System.ServiceModel.*](http://msdn.microsoft.com/library/gg145010.aspx) v .NET Native nepodporují. To zahrnuje následující typy:  
+ Typy v [obory názvů System.ServiceModel.*](https://msdn.microsoft.com/library/gg145010.aspx) v .NET Native nepodporují. To zahrnuje následující typy:  
   
 ||  
 |-|  
@@ -673,5 +673,5 @@ ms.locfileid: "37874741"
 ## <a name="see-also"></a>Viz také  
  [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md)  
  [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
- [.NET pro Windows Store apps – přehled](http://msdn.microsoft.com/library/windows/apps/br230302.aspx)  
+ [.NET pro Windows Store apps – přehled](https://msdn.microsoft.com/library/windows/apps/br230302.aspx)  
  [Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)

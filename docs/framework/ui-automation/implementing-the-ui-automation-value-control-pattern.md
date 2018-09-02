@@ -9,46 +9,46 @@ ms.assetid: b0fcdd87-3add-4345-bca9-e891205e02ba
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: b9c748ccc695ae67306c293c10248c4f3f22c043
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 300d9df608553f9f8ae999287b3214c8a9eaea21
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33408702"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43468120"
 ---
 # <a name="implementing-the-ui-automation-value-control-pattern"></a>Implementace vzoru ovládacích prvků hodnota pro automatizaci uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Toto téma představuje pokyny a konvence pro implementaci <xref:System.Windows.Automation.Provider.IValueProvider>, včetně informací o vlastnostech a události. Na konci tohoto tématu jsou uvedeny odkazy na další odkazy.  
+ Toto téma popisuje pravidla a zásady pro implementaci <xref:System.Windows.Automation.Provider.IValueProvider>, včetně informací o události a vlastnosti. Odkazy na další odkazy jsou uvedeny na konci tohoto tématu.  
   
- <xref:System.Windows.Automation.ValuePattern> – Vzor ovládacích prvků se používá pro podporu ovládací prvky, které mají vnitřní hodnotu není pokrývání uzlů rozsah a který může být reprezentován jako řetězec. Tento řetězec lze upravovat, v závislosti na ovládací prvek a jeho nastavení. Příklady ovládacích prvků, které implementují tento vzor najdete v tématu [řízení vzor mapování pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ <xref:System.Windows.Automation.ValuePattern> – Vzor ovládacích prvků slouží k podpoře ovládací prvky, které mají vnitřní hodnotu není pokrývání uzlů oblasti a které můžou být vyjádřeny jako řetězec. Tento řetězec lze upravovat, v závislosti na ovládacím prvku a jeho nastavení. Příklady ovládacích prvků, které tento model implementovat, najdete v článku [ovládací prvek vzor mapování pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Postup implementace a konvence  
- Když implementace vzoru ovládacích prvků hodnota, poznamenejte si následující pokyny a konvence:  
+## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
+ Při implementaci vzoru ovládacích prvků hodnota, mějte na paměti následující pokyny a konvence:  
   
--   Ovládací prvky jako například <xref:System.Windows.Automation.ControlType.ListItem> a <xref:System.Windows.Automation.ControlType.TreeItem> musí podporovat <xref:System.Windows.Automation.ValuePattern> Pokud hodnota některou z položek upravovat, bez ohledu na aktuální režim úprav ovládacího prvku. Nadřazeného ovládacího prvku musí také podporovat <xref:System.Windows.Automation.ValuePattern> Pokud podřízené položky se upravovat.  
+-   Ovládací prvky jako například <xref:System.Windows.Automation.ControlType.ListItem> a <xref:System.Windows.Automation.ControlType.TreeItem> musí podporovat <xref:System.Windows.Automation.ValuePattern> Pokud hodnota položky upravovat, bez ohledu na aktuální režim úprav ovládacího prvku. Nadřazený ovládací prvek musí také podporovat <xref:System.Windows.Automation.ValuePattern> Pokud podřízené položky se upravovat.  
   
- ![Položky seznamu upravovat. ] (../../../docs/framework/ui-automation/media/uia-valuepattern-editable-listitem.PNG "UIA_ValuePattern_Editable_ListItem")  
-Příklad položky seznamu upravovat  
+ ![Upravit seznam položek. ](../../../docs/framework/ui-automation/media/uia-valuepattern-editable-listitem.PNG "UIA_ValuePattern_Editable_ListItem")  
+Příklad položky upravovat seznam  
   
--   Ovládacích prvcích pro úpravy jeden řádek podporují programový přístup k jejich obsah implementací <xref:System.Windows.Automation.Provider.IValueProvider>. Ale ovládacích prvcích pro úpravy Víceřádkový neimplementují <xref:System.Windows.Automation.Provider.IValueProvider>; místo toho poskytují přístup k jejich obsahu implementací <xref:System.Windows.Automation.Provider.ITextProvider>.  
+-   Ovládací prvky pole podporují programový přístup k jejich obsah implementací <xref:System.Windows.Automation.Provider.IValueProvider>. Ale ovládacích prvcích pro úpravy Víceřádkový neimplementují <xref:System.Windows.Automation.Provider.IValueProvider>; místo toho poskytují přístup ke svému obsahu pomocí implementace <xref:System.Windows.Automation.Provider.ITextProvider>.  
   
--   Můžete načíst textový obsah ovládacího prvku Víceřádkový úpravy, musí implementovat řízení <xref:System.Windows.Automation.Provider.ITextProvider>. Ale <xref:System.Windows.Automation.Provider.ITextProvider> nepodporuje nastavení hodnoty ovládacího prvku.  
+-   Pokud chcete načíst textový obsah víceřádkové textové pole, musí implementovat ovládací prvek <xref:System.Windows.Automation.Provider.ITextProvider>. Ale <xref:System.Windows.Automation.Provider.ITextProvider> nepodporuje nastavení hodnoty ovládacího prvku.  
   
--   <xref:System.Windows.Automation.Provider.IValueProvider> nepodporuje načtení formátování informace nebo podřetězcem hodnoty. Implementace <xref:System.Windows.Automation.Provider.ITextProvider> v těchto scénářích.  
+-   <xref:System.Windows.Automation.Provider.IValueProvider> nepodporuje načtení formátování informace nebo podřetězec hodnoty. Implementace <xref:System.Windows.Automation.Provider.ITextProvider> v těchto scénářích.  
   
--   <xref:System.Windows.Automation.Provider.IValueProvider> musí být implementované ovládací prvky, jako **volby barev** ovládacího prvku pro výběr z [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] (ilustrované níže), který podporuje řetězec mapování mezi hodnotu barvu (například "žlutý") a ekvivalentní interní [!INCLUDE[TLA#tla_rgb](../../../includes/tlasharptla-rgb-md.md)]struktura.  
+-   <xref:System.Windows.Automation.Provider.IValueProvider> musí být implementované ovládací prvky, jako **výběr barvy** ovládacího prvku pro výběr z [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] (ukázáno níže), která podporuje řetězec mapování mezi hodnotu barvy (například "žlutý") a ekvivalentní vnitřní [!INCLUDE[TLA#tla_rgb](../../../includes/tlasharptla-rgb-md.md)]struktury.  
   
- ![Výběr barvy s žlutý zvýrazněná. ] (../../../docs/framework/ui-automation/media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
+ ![Výběr barvy s zvýrazněn žlutou barvou. ](../../../docs/framework/ui-automation/media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
 Příklad mapování řetězec vzorníku barev  
   
--   Ovládacího prvku by měl mít jeho <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> nastavena na `true` a jeho <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty> nastavena na `false` před povolením volání <xref:System.Windows.Automation.Provider.IValueProvider.SetValue%2A>.  
+-   Ovládací prvek by měl mít jeho <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> nastavena na `true` a jeho <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty> nastavena na `false` předtím, než volání <xref:System.Windows.Automation.Provider.IValueProvider.SetValue%2A>.  
   
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>   
 ## <a name="required-members-for-ivalueprovider"></a>Požadované členy pro IValueProvider  
- Následující vlastnosti a metody jsou požadovány pro implementaci <xref:System.Windows.Automation.Provider.IValueProvider>.  
+ Následující vlastnosti a metody, které jsou požadovány pro implementaci <xref:System.Windows.Automation.Provider.IValueProvider>.  
   
 |Požadované členy|Typ člena|Poznámky|  
 |----------------------|-----------------|-----------|  
@@ -58,18 +58,18 @@ Příklad mapování řetězec vzorníku barev
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Výjimky  
- Zprostředkovatelé musí throw následující výjimky.  
+ Poskytovatelé musí vyvolání následující výjimky.  
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.ValuePattern.SetValue%2A><br /><br /> – Pokud informace specifické pro národní prostředí je předán do ovládacího prvku v nesprávném formátu jako je například datum nesprávně formátovaný.|  
-|<xref:System.ArgumentException>|<xref:System.Windows.Automation.ValuePattern.SetValue%2A><br /><br /> – Pokud nová hodnota nelze převést z řetězce do formátu rozpozná ovládacího prvku.|  
-|<xref:System.Windows.Automation.ElementNotEnabledException>|<xref:System.Windows.Automation.ValuePattern.SetValue%2A><br /><br /> – Když je proveden pokus o k manipulaci s ovládacího prvku, který není povolen.|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.ValuePattern.SetValue%2A><br /><br /> – Pokud informace specifické pro národní prostředí je předán do ovládacího prvku v nesprávném formátu například nesprávně naformátovanou datum.|  
+|<xref:System.ArgumentException>|<xref:System.Windows.Automation.ValuePattern.SetValue%2A><br /><br /> – Pokud novou hodnotu nelze převést z řetězce na formát ovládacího prvku rozpozná.|  
+|<xref:System.Windows.Automation.ElementNotEnabledException>|<xref:System.Windows.Automation.ValuePattern.SetValue%2A><br /><br /> – Když je proveden pokus o k manipulaci s ovládací prvek, který není povolen.|  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
  [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
  [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
- [Ukázka TextPattern vložení textu](http://msdn.microsoft.com/library/67353f93-7ee2-42f2-ab76-5c078cf6ca16)  
+ [Ukázka vložení prvku TextPattern textu](https://msdn.microsoft.com/library/67353f93-7ee2-42f2-ab76-5c078cf6ca16)  
  [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
  [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)

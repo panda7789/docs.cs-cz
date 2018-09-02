@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c8c7042f7eee1ccd03d04cc20c5a0db83d986b0b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1149a3c3589cec0e952088a772ca036028c58ff5
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421915"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43470824"
 ---
 # <a name="icordebugmetadatalocatorgetmetadata-method"></a>ICorDebugMetaDataLocator::GetMetaData – metoda
-Požádá ladicí program na vrátit úplnou cestu k modulu, jehož metadat je potřebný pro dokončení operace, které požadovali ladicího programu.  
+Dotaz vrátí úplnou cestu k modulu, jehož metadat je potřeba k dokončení operace, které ladicí program požadovaný ladicí program.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,40 +43,40 @@ HRESULT GetMetaData(
   
 #### <a name="parameters"></a>Parametry  
  `wszImagePath`  
- [v] Řetězec ukončené hodnotou null, který představuje úplnou cestu k souboru. Pokud je úplná cesta není k dispozici, název a příponu souboru (*filename*. *rozšíření*).  
+ [in] Řetězec zakončený hodnotou null, který představuje úplnou cestu k souboru. Pokud je úplná cesta není k dispozici, název a příponu souboru (*filename*. *rozšíření*).  
   
  `dwImageTimeStamp`  
- [v] Časové razítko z hlavičky souboru obrázku PE. Tento parametr může potenciálně použít pro symbol server ([SymSrv](http://msdn.microsoft.com/library/cc266470.aspx)) vyhledávání.  
+ [in] Časové razítko ze záhlaví PE souboru obrázku. Tento parametr může potenciálně použít pro server symbolů ([SymSrv](https://msdn.microsoft.com/library/cc266470.aspx)) vyhledávání.  
   
  `dwImageSize`  
- [v] Velikost bitové kopie z hlavičky souboru PE. Tento parametr může potenciálně použít pro vyhledávání SymSrv.  
+ [in] Velikost bitové kopie ze záhlaví PE souboru. Tento parametr lze použít potenciálně pro vyhledávání SymSrv.  
   
  `cchPathBuffer`  
- [v] Znak počet za `wszPathBuffer`.  
+ [in] Počet znak za `wszPathBuffer`.  
   
  `pcchPathBuffer`  
  [out] Počet `WCHAR`s zapsána do `wszPathBuffer`.  
   
- Pokud metoda vrátí E_NOT_SUFFICIENT_BUFFER, obsahuje počet `WCHAR`s potřebný k uložení cestu.  
+ Pokud metoda vrátí E_NOT_SUFFICIENT_BUFFER, obsahuje počet `WCHAR`s potřebné k uložení této cesty.  
   
  `wszPathBuffer`  
- [out] Ukazatel na vyrovnávací paměť, do kterého bude ladicí program zkopírovat úplnou cestu souboru, který obsahuje požadovaná metadata.  
+ [out] Ukazatel do vyrovnávací paměti, do které ladicí program se zkopírovat úplnou cestu souboru, který obsahuje požadovaná metadata.  
   
- `ofReadOnly` Příznak z [CorOpenFlags](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) výčtu slouží k vyžádání přístup jen pro čtení k metadatům v tomto souboru.  
+ `ofReadOnly` Příznak z [coropenflags –](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) výčet slouží k vyžádání přístup jen pro čtení metadat z tohoto souboru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda. Všechny ostatní hodnoty HRESULT selhání znamenat, že soubor není dá načíst.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda. Všechny ostatní HRESULT – selhání znamenat, že soubor není retrievable.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Metoda byla úspěšně dokončena. `wszPathBuffer` obsahuje úplnou cestu k souboru a je ukončené hodnotou null.|  
-|E_NOT_SUFFICIENT_BUFFER|Aktuální velikost `wszPathBuffer` není dostatečná pro uložení úplnou cestu. V takovém případě `pcchPathBuffer` obsahuje potřebný počet `WCHAR`s, včetně ukončující prázdný znak, a `GetMetaData` se nazývá znovu s požadovanou vyrovnávací paměť.|  
+|S_OK|Metoda byla úspěšně dokončena. `wszPathBuffer` obsahuje úplnou cestu k souboru a je zakončený hodnotou null.|  
+|E_NOT_SUFFICIENT_BUFFER|Aktuální velikost `wszPathBuffer` není dostatečná k uložení úplnou cestu. V takovém případě `pcchPathBuffer` obsahuje potřebný počet `WCHAR`s, včetně ukončujícího znaku null, a `GetMetaData` se volá jednou s velikost požadované vyrovnávací paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `wszImagePath` obsahuje úplnou cestu pro modul z výpis, určuje cestu z počítače, kde byl shromážděn výpis. Tento soubor pravděpodobně neexistuje v tomto umístění nebo nesprávný soubor se stejným názvem, můžou být uložené na cestě.  
+ Pokud `wszImagePath` obsahuje úplnou cestu pro modul z výpis paměti, určuje cestu z počítače, kde byl výpis paměti shromážděn. Soubor neexistuje na tomto místě nebo nesprávný soubor se stejným názvem, mohou být uloženy v cestě.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

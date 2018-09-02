@@ -7,20 +7,20 @@ helpviewer_keywords:
 - browser hosting support [WPF]
 - WPF browser hosting support APIs [WPF]
 ms.assetid: 82c133a8-d760-45fb-a2b9-3a997537f1d4
-ms.openlocfilehash: bff2b51fbc8fec6e7cd2b24700d1c4dc38c007f6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f542da55b6cde2d140e1f9f391e6b2f3d6fe172f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33550017"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43464944"
 ---
 # <a name="native-wpf-browser-hosting-support-apis"></a>Nativní Prohlížeč WPF – rozhraní API pro podporu hostování
-Hostování [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] aplikací ve webové prohlížeče je usnadněno serveru aktivní dokument (také označované jako DocObject) zaregistrovaný mimo WPF hostitele. [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] můžete přímo aktivovat a integraci s aktivní dokument. Pro hostování aplikace XBAP a ztratit XAML dokumentů v prohlížečích Mozilla [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] poskytuje modul plug-in NPAPI, který poskytuje podobné hostitelské prostředí k [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] server pro aktivní dokument jako [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] nepodporuje. Ale nejjednodušší praktický způsob, jak hostovat aplikace XBAP a XAML dokumenty v dalších prohlížečích a samostatné aplikace je prostřednictvím ovládacího prvku webový prohlížeč Internet Explorer. Ovládací prvek webového prohlížeče poskytuje komplexní hostitelské prostředí serveru aktivní dokument, ale umožňuje vlastním hostiteli přizpůsobit a rozšířit prostředí a komunikovat přímo s aktuálním objektem aktivní dokument.  
+Hostování [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] aplikací ve webových prohlížečích, zjednodušuje tím serveru aktivní dokument (označované také jako DocObject) zaregistrovaný hostitele WPF. [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] můžete přímo aktivovat a integraci s aktivním dokumentem. Pro hostování aplikace XBAP a dojde ke ztrátě dokumenty XAML v prohlížečích Mozilla [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] poskytuje modul plug-in NPAPI, který poskytuje podobné hostitelské prostředí pro [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] server pro aktivní dokument jako [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] nepodporuje. Ale nejjednodušší praktický způsob, jak hostovat aplikace XBAP a XAML dokumenty v dalších prohlížečích a samostatné aplikace probíhá přes webový prohlížeč Internet Explorer ovládací prvek. Ovládací prvek webového prohlížeče poskytuje komplexní hostitelské prostředí serveru aktivního dokumentu, ale umožňuje vlastním hostiteli k přizpůsobení a rozšíření prostředí a komunikovat přímo s aktuálním objektem aktivní dokument.  
   
- [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] Server pro aktivní dokument implementuje několik společných hostingu rozhraní, včetně [IOleObject](http://go.microsoft.com/fwlink/?LinkId=162049), [IOleDocument](http://go.microsoft.com/fwlink/?LinkId=162050), [IOleInPlaceActiveObject](http://go.microsoft.com/fwlink/?LinkId=162051), [IPersistMoniker](http://go.microsoft.com/fwlink/?LinkId=162045), [IOleCommandTarget](http://go.microsoft.com/fwlink/?LinkId=162047). Pokud je hostováno v ovládacím prvku webový prohlížeč, tato rozhraní může být dotazy z objektu vrácený [IWebBrowser2::Document](http://go.microsoft.com/fwlink/?LinkId=162048) vlastnost.  
+ [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] Server pro aktivní dokument implementuje několik běžných hostitelských rozhraní, včetně [IOleObject](https://go.microsoft.com/fwlink/?LinkId=162049), [IOleDocument](https://go.microsoft.com/fwlink/?LinkId=162050), [IOleInPlaceActiveObject](https://go.microsoft.com/fwlink/?LinkId=162051), [IPersistMoniker](https://go.microsoft.com/fwlink/?LinkId=162045), [iolecommandtarget –](https://go.microsoft.com/fwlink/?LinkId=162047). Když jsou hostované v ovládacím prvku webový prohlížeč, může být tato rozhraní dotazy z objekt vrácený rutinou [IWebBrowser2::Document](https://go.microsoft.com/fwlink/?LinkId=162048) vlastnost.  
   
-## <a name="iolecommandtarget"></a>IOleCommandTarget  
- Implementaci serveru pro aktivní dokument WPF [IOleCommandTarget](http://go.microsoft.com/fwlink/?LinkId=162047) podporuje mnoho příkazů souvisejících s navigací a specifické pro prohlížeč standardní skupiny příkaz OLE (se skupinou prázdný příkaz identifikátor GUID). Navíc rozpozná vlastního příkazu skupinu s názvem CGID_PresentationHost. V současné době není definován v této skupině jenom jeden příkaz.  
+## <a name="iolecommandtarget"></a>Iolecommandtarget –  
+ Implementaci serveru pro aktivní dokument WPF [iolecommandtarget –](https://go.microsoft.com/fwlink/?LinkId=162047) podporuje mnoho příkazy související s navigací a specifické pro prohlížeč standardní příkaz skupiny OLE (s hodnotou null GUID skupiny příkazů). Navíc rozpozná vlastní příkaz skupinu s názvem CGID_PresentationHost. V současné době je jenom jeden příkaz definované v rámci této skupiny.  
   
 ```  
 DEFINE_GUID(CGID_PresentationHost, 0xd0288c55, 0xd6, 0x4f5e, 0xa8, 0x51, 0x79, 0xde, 0xc5, 0x1b, 0x10, 0xec);  
@@ -29,7 +29,7 @@ enum PresentationHostCommands {
 };  
 ```  
   
- PHCMDID_TABINTO dá pokyn PresentationHost přepnutí fokus na první nebo poslední může získat fokus prvku v jeho obsah, v závislosti na stavu klávesu Shift.  
+ PHCMDID_TABINTO instruuje PresentationHost přepnout fokus na první nebo poslední focusable elementu v jeho obsah v závislosti na stavu klávesu Shift.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [IEnumRAWINPUTDEVICE](../../../../docs/framework/wpf/app-development/ienumrawinputdevice.md)  

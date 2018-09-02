@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 76f7b53f800bc8c5c23f49a0781287a38bf8c959
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 342739f6c71e9c576e557433dc6abd0adbf38c8c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421513"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43468349"
 ---
 # <a name="icordebugmodule3createreaderforinmemorysymbols-method"></a>ICorDebugModule3::CreateReaderForInMemorySymbols – metoda
-Vytvoří symbol čtečku ladění pro dynamické modul.  
+Vytvoří čtečku symbolů ladění pro dynamický modul.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,33 +37,33 @@ HRESULT CreateReaderForInMemorySymbols (
   
 #### <a name="parameters"></a>Parametry  
  riid  
- [v] Identifikátory IID rozhraní COM vrátit. Obvykle se jedná [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md).  
+ [in] Identifikátor IID rozhraní COM se vraťte. Obvykle se jedná [isymunmanagedreader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md).  
   
  ppObj  
- [out] Ukazatel na ukazatel na vrácený rozhraní.  
+ [out] Ukazatel na ukazatel na vrácené rozhraní.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Čtečka se úspěšně vytvořil.  
+ Čtecí modul se úspěšně vytvořil.  
   
  CORDBG_E_MODULE_LOADED_FROM_DISK  
- Modul není modul v paměti nebo dynamické.  
+ Modul není v paměti nebo dynamický modul.  
   
  CORDBG_E_SYMBOLS_NOT_AVAILABLE  
- Symboly aplikací, nebyla zadána nebo ještě nejsou k dispozici.  
+ Symboly nebyly poskytnuté aplikací nebo dosud nejsou k dispozici.  
   
- E_FAIL (nebo ostatní návratové kódy E_)  
- Nelze vytvořit program pro čtení.  
+ E_FAIL (nebo jiné E_ návratové kódy)  
+ Nelze vytvořit čtecí modul.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda může být také použít k vytvoření objektu čtečky symbol pro moduly (bez dynamické) v paměti, ale pouze po symboly jsou k dispozici nejprve (indikován [updatemodulesymbols – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-updatemodulesymbols-method.md) zpětného volání).  
+ Tato metoda může také být použité k vytvoření objektu čtečky symbolů pro moduly (nedynamickou) v paměti, ale pouze po symboly jsou k dispozici nejprve (indikován [updatemodulesymbols – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-updatemodulesymbols-method.md) zpětného volání).  
   
- Tato metoda vrátí novou instanci čtečky pokaždé, když je volána (jako je [CComPtrBase::CoCreateInstance](http://msdn.microsoft.com/library/c0965041-6cb6-40c5-b272-2b99f02668a6)). Proto by měl ladicího programu mezipaměti výsledek a jenom v případě, že mohlo dojít ke změně v základních datech požádat o novou instanci (to znamená, když [loadclass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) přijetí zpětného volání).  
+ Tato metoda vrací novou instanci čtečky pokaždé, když je volána (jako je [CComPtrBase::CoCreateInstance](https://msdn.microsoft.com/library/c0965041-6cb6-40c5-b272-2b99f02668a6)). Proto by měl ladicí program uložte do mezipaměti výsledek a požádat o novou instanci pouze v případě, že mohlo dojít ke změně podkladová data (to znamená, když [loadclass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) přijetí zpětné volání).  
   
- Dynamických modulech nemají žádné symboly, které jsou k dispozici, dokud se načetl první typ (jak [loadclass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) zpětného volání).  
+ Dynamické moduly nemají žádné symboly k dispozici, dokud se načetl první typ (jak je uvedeno ve [loadclass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) zpětného volání).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

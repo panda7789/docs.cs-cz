@@ -7,51 +7,51 @@ helpviewer_keywords:
 - composite controls [Windows Forms], Windows Forms
 - controls [Windows Forms], composite
 ms.assetid: d086f2a3-baa3-4e09-b40c-a5bb3cfc51a6
-ms.openlocfilehash: dc038e5a1858025007ef737397521bfea1b93b97
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 24fbf17f02072b2d9922ca0998805b916afc41b6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33528282"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43463706"
 ---
 # <a name="developing-a-composite-windows-forms-control"></a>Vývoj složeného ovládacího prvku Windows Forms
-Složené ovládací prvek Windows Forms můžete vyvíjet kombinací dalších ovládacích prvků Windows Forms. Složené ovládací prvky, které jsou odvozeny od <xref:System.Web.UI.UserControl> se nazývají uživatelské ovládací prvky. Základní třídy, <xref:System.Windows.Forms.UserControl>, poskytuje směrování pro podřízené prvky, čímž zajišťuje, že podřízené ovládací prvky mohou získat fokus klávesnice. Příklad uživatelského ovládacího prvku, naleznete v části <xref:System.Windows.Forms.UserControl> ukázku v [postupy: použití atributů v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md).  
+Můžete vyvíjet složeného ovládacího prvku Windows Forms kombinací jiných ovládacích prvků Windows Forms. Složené ovládací prvky, které jsou odvozeny z <xref:System.Web.UI.UserControl> se nazývají uživatelské ovládací prvky. Základní třída <xref:System.Windows.Forms.UserControl>, poskytuje směrování pro podřízené ovládací prvky, čímž zajišťuje, že podřízených ovládacích prvků může získat fokus klávesnice. Příkladem uživatelského ovládacího prvku, naleznete v tématu <xref:System.Windows.Forms.UserControl> ukázku v [postupy: použití atributů v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md).  
   
- Windows Forms designerem v [!INCLUDE[vsprvsext](../../../../includes/vsprvsext-md.md)] poskytuje rozsáhlou podporu návrhu uživatelské ovládací prvky pro vytváření obsahu.  
+ Windows Forms designerem v [!INCLUDE[vsprvsext](../../../../includes/vsprvsext-md.md)] poskytuje bohatou podporu návrhu pro vytváření uživatelských ovládacích prvků.  
   
--   [Postupy: Zobrazení ovládacího prvku v dialogovém okně Zvolit položky nástrojů](http://msdn.microsoft.com/library/9yxtkx75\(v=vs.110\))  
+-   [Postupy: Zobrazení ovládacího prvku v dialogovém okně Zvolit položky nástrojů](https://msdn.microsoft.com/library/9yxtkx75\(v=vs.110\))  
   
--   [Návod: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](http://msdn.microsoft.com/library/ms171731\(v=vs.110\))  
+-   [Návod: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](serializing-collections-designerserializationvisibilityattribute.md)  
   
--   [Návod: Dědění z Windows Forms ovládacího prvku pomocí Visual C#](http://msdn.microsoft.com/library/09476da0-8d4c-4a4c-b969-649519dfb438))  
+-   [Návod: Dědění z Windows Forms ovládacího prvku pomocí Visual C#](https://msdn.microsoft.com/library/09476da0-8d4c-4a4c-b969-649519dfb438))  
   
--   [Postupy: Poskytnutí rastrového obrázku panelu nástrojů pro ovládací prvek](http://msdn.microsoft.com/library/4wk1wc0a\(v=vs.110\))  
+-   [Postupy: Poskytnutí rastrového obrázku panelu nástrojů pro ovládací prvek](https://msdn.microsoft.com/library/4wk1wc0a\(v=vs.110\))  
   
--   [Postupy: Dědění ze stávajících ovládacích prvků Windows Forms](http://msdn.microsoft.com/library/7h62478z\(v=vs.110\))  
+-   [Postupy: Dědění ze stávajících ovládacích prvků Windows Forms](https://msdn.microsoft.com/library/7h62478z\(v=vs.110\))  
   
--   [Návod: Ladění vlastních ovládacích prvků Windows Forms během návrhu](http://msdn.microsoft.com/library/5ytx0z24\(v=vs.110\))  
+-   [Návod: Ladění vlastních ovládacích prvků Windows Forms během návrhu](https://msdn.microsoft.com/library/5ytx0z24\(v=vs.110\))  
   
--   [Postupy: Dědění ze třídy Control](http://msdn.microsoft.com/library/skcysbt2\(v=vs.110\))  
+-   [Postupy: Dědění ze třídy Control](https://msdn.microsoft.com/library/skcysbt2\(v=vs.110\))  
   
--   [Postupy: Otestování běhového chování UserControl](http://msdn.microsoft.com/library/ms171738\(v=vs.110\))  
+-   [Postupy: Otestování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)  
   
--   [Postupy: Zarovnání ovládacího prvku k okrajům formulářů během návrhu](http://msdn.microsoft.com/library/1fxyb15b\(v=vs.110\))  
+-   [Postupy: Zarovnání ovládacího prvku k okrajům formulářů během návrhu](https://msdn.microsoft.com/library/1fxyb15b\(v=vs.110\))  
   
--   [Postupy: Dědění ze třídy UserControl](http://msdn.microsoft.com/library/00ctb4z0\(v=vs.110\))  
+-   [Postupy: Dědění ze třídy UserControl](https://msdn.microsoft.com/library/00ctb4z0\(v=vs.110\))  
   
--   [Postupy: Vytváření ovládacích prvků pro Windows Forms](http://msdn.microsoft.com/library/bs3yhkh7\(v=vs.110\))  
+-   [Postupy: Vytváření ovládacích prvků pro Windows Forms](https://msdn.microsoft.com/library/bs3yhkh7\(v=vs.110\))  
   
--   [Postupy: Vytváření složených ovládacích prvků](http://msdn.microsoft.com/library/3sf86w5h\(v=vs.110\))  
+-   [Postupy: Vytváření složených ovládacích prvků](https://msdn.microsoft.com/library/3sf86w5h\(v=vs.110\))  
   
--   [Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu](http://msdn.microsoft.com/library/c316f119\(v=vs.110\))  
+-   [Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu](https://msdn.microsoft.com/library/c316f119\(v=vs.110\))  
   
--   [Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#](http://msdn.microsoft.com/library/f88481a8-c746-4a36-9479-374ce5f2e91f))  
+-   [Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#](https://msdn.microsoft.com/library/f88481a8-c746-4a36-9479-374ce5f2e91f))  
   
--   [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu](http://msdn.microsoft.com/library/w2a8y03d\(v=vs.110\))  
+-   [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu](https://msdn.microsoft.com/library/w2a8y03d\(v=vs.110\))  
   
--   [Postupy: vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu](http://msdn.microsoft.com/library/307hck25\(v=vs.110\))  
+-   [Postupy: vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu aplikace](https://msdn.microsoft.com/library/307hck25\(v=vs.110\))  
   
--   [Postupy: vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu](http://msdn.microsoft.com/library/307hck25\(v=vs.120\))  
+-   [Postupy: vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu aplikace](https://msdn.microsoft.com/library/307hck25\(v=vs.120\))  
   
 ## <a name="see-also"></a>Viz také  
  [Postupy: Použití atributů v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md)  

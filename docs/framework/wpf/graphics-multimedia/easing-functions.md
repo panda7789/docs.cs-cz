@@ -16,11 +16,11 @@ helpviewer_keywords:
 - animations [WPF], applying
 ms.assetid: 075b9c2b-82c4-43fa-b3cd-de0b6236eb38
 ms.openlocfilehash: 038d9423ddae6f16165ed0618beab8391c462ac9
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43253208"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43461706"
 ---
 # <a name="easing-functions"></a>Funkce usnadnění
 Funkcí usnadnění umožňují použít vlastní matematické vzorce animace. Například můžete objekt realisticky odraz nebo se chovat, jako by šlo o spring. Můžete použít k odhadu negativních dopadů klíčových snímků nebo dokonce od/Komu/kým animace, ale by to obnášelo značné množství práce a animace bude méně přesné než matematické vzorce.  

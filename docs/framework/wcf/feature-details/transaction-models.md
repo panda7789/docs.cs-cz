@@ -2,35 +2,35 @@
 title: Modely transakcí
 ms.date: 03/30/2017
 ms.assetid: 48a8bc1b-128b-4cf1-a421-8cc73223c340
-ms.openlocfilehash: 9efe8c6994cc80957b707bbae0885a3c5896f70a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8731b72d0657aa420dbb020e216c3af059916ce9
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33499021"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43474223"
 ---
 # <a name="transaction-models"></a>Modely transakcí
-Toto téma popisuje vztah mezi programovací modely transakcí a součásti infrastruktury, které společnost Microsoft poskytuje.  
+Toto téma popisuje vztah mezi programovací modely transakcí a komponent infrastruktury, které společnost Microsoft poskytuje.  
   
- Při použití transakce ve Windows Communication Foundation (WCF), je důležité si uvědomit, že jsou nevyberete mezi různými modely transakcí, ale spíš operační v různých úrovní integrované a konzistentní model.  
+ Při použití transakcí ve Windows Communication Foundation (WCF), je důležité pochopit, že se zrušením výběru možnosti mezi různými modely transakcí, ale místo toho provoz na různých úrovních integrované a konzistentní model.  
   
- Následující části popisují komponenty tři primární transakce.  
+ Následující části popisují tři komponenty primární transakce.  
   
 ## <a name="windows-communication-foundation-transactions"></a>Windows Communication Foundation transakce  
- Podpora transakcí v WCF umožňuje že zápis transakční služeb. Kromě toho s podporou pro protokol WS-AtomicTransaction (WS-AT), může aplikace tok transakcí webové služby vytvořené pomocí WCF nebo technologie třetích stran.  
+ Podpora transakcí v WCF umožňuje že zápis transakční služeb. Kromě toho s jeho podporu protokolu WS-AtomicTransaction (WS-AT), můžete aplikace tok transakcí, které webové služby vytvořené pomocí WCF nebo technologii jiného výrobce.  
   
- Funkce transakce WCF na službu WCF nebo v aplikaci zadejte atributy a konfigurace pro deklarativně určení jak a kdy infrastruktury by měl vytvářet, toku a synchronizovat transakce.  
+ Ve službě WCF nebo aplikace poskytují funkce transakce WCF atributy a konfigurace pro deklarativně určení jak a kdy by měl vytvořit infrastrukturu, flow a synchronizovat transakce.  
   
-## <a name="systemtransactions-transactions"></a>System.Transactions – transakce  
- <xref:System.Transactions> Obor názvů obsahuje oba explicitní programovací model na základě <xref:System.Transactions.Transaction> třídy, jakož i k implicitní programování pomocí modelu <xref:System.Transactions.TransactionScope> třída, ve kterém infrastruktury automaticky spravuje transakce.  
+## <a name="systemtransactions-transactions"></a>Transakce System.Transactions  
+ <xref:System.Transactions> Obor názvů obsahuje oba explicitní programovací model na základě <xref:System.Transactions.Transaction> třídy, jakož i jazyka implicitní programování pomocí modelu <xref:System.Transactions.TransactionScope> třídy, ve kterém infrastruktury automaticky spravuje transakce.  
   
- Další informace o tom, jak vytvořit transakční aplikace pro použití těchto dvou modelů najdete v tématu [zápis transakční aplikace](http://go.microsoft.com/fwlink/?LinkId=94947).  
+ Další informace o tom, jak vytvořit transakční aplikaci pomocí těchto dvou modelech naleznete v tématu [zápis transakční aplikace](https://go.microsoft.com/fwlink/?LinkId=94947).  
   
- V aplikaci, nebo službu WCF <xref:System.Transactions> poskytuje programovací model pro vytváření transakcí v rámci klientské aplikace a explicitně interakci s transakci, pokud jsou povinné, v rámci služby.  
+ Ve službě WCF nebo aplikace <xref:System.Transactions> poskytuje programovací model pro vytváření transakcí v rámci klientské aplikace a explicitně interakci s transakcí, pokud jsou povinné, v rámci služby.  
   
-## <a name="msdtc-transactions"></a>Služba MSDTC transakce  
- Microsoft koordinátora pro distribuované transakce (MSDTC) je správce transakcí, která poskytuje podporu pro distribuované transakce.  
+## <a name="msdtc-transactions"></a>Služba MSDTC transakcí  
+ Microsoft distribuované transakce koordinátor MSDTC () je správce transakcí, která poskytuje podporu pro distribuované transakce.  
   
- Další informace najdete v tématu [referenční informace pro programátory DTC](http://go.microsoft.com/fwlink/?LinkId=94948).  
+ Další informace najdete v tématu [DTC programátora](https://go.microsoft.com/fwlink/?LinkId=94948).  
   
- Služba MSDTC na službu WCF nebo v aplikaci poskytuje infrastrukturu pro koordinaci transakce vytvořené v rámci klienta nebo služby.
+ Ve službě WCF nebo aplikace služby MSDTC poskytuje infrastrukturu pro koordinaci transakce vytvořené v rámci klienta nebo služby.

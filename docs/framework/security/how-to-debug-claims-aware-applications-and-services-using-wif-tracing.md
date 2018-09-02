@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: Ladění deklaracemi identity aplikace a služby pomocí WIF trasování'
+title: 'Postupy: Ladění s deklaracemi identity aplikace a služby pomocí trasování WIF'
 ms.date: 03/30/2017
 ms.assetid: 3d51ba59-3adb-4ca4-bd33-5027531af687
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 0f2126a83e6a5638eb492bb2a529dbf4cdab1714
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 69c7e30168686eeb7d530b167b1f87c567c63874
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33408629"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43463192"
 ---
-# <a name="how-to-debug-claims-aware-applications-and-services-using-wif-tracing"></a>Postupy: Ladění deklaracemi identity aplikace a služby pomocí WIF trasování
+# <a name="how-to-debug-claims-aware-applications-and-services-using-wif-tracing"></a>Postupy: Ladění s deklaracemi identity aplikace a služby pomocí trasování WIF
 ## <a name="applies-to"></a>Platí pro  
   
 -   Microsoft® Windows® Identity Foundation (WIF)  
   
 -   Prohlížeč trasování služeb (SvcTraceViewer.exe)  
   
--   Řešení potíží a ladění aplikací WIF  
+-   Řešení potíží a ladění aplikací technologie WIF  
   
 ## <a name="summary"></a>Souhrn  
- Tento postup popisuje požadované kroky, jak nakonfigurovat WIF trasování, shromážděte protokoly trasování a jak analyzovat trasování protokoly, pomocí nástroje prohlížeče trasování. Poskytuje obecné mapování pro trasování položky na akce, které jsou potřebné k řešení potíží s WIF.  
+ Tento postup popisuje kroky pro postup konfigurace trasování WIF, shromažďovat protokoly trasování a protokoly jak analyzovat trasování pomocí nástroje prohlížeče trasování. Poskytuje obecné mapování trasování položky pro akce potřebné k řešení problémů souvisejících s technologie WIF.  
   
 ## <a name="contents"></a>Obsah  
   
@@ -29,40 +29,40 @@ ms.locfileid: "33408629"
   
 -   Přehled kroků  
   
--   Krok 1 – konfigurace WIF trasování pomocí Web.config – konfigurační soubor  
+-   Krok 1 – konfigurace technologie WIF trasování pomocí konfiguračního souboru Web.config  
   
--   Krok 2 – analyzovat WIF trasovací soubory pomocí nástroje prohlížeče trasování  
+-   Krok 2 – analýza souborů trasování WIF pomocí prohlížečem trasování  
   
--   Krok 3 – lze vyřešit WIF identifikovat problémy související s  
+-   Krok 3 – řešení Chcete-li vyřešit technologie WIF identifikovat problémy související s  
   
 -   Související položky  
   
 ## <a name="objectives"></a>Cíle  
   
--   Konfigurovat WIF trasování.  
+-   Konfigurace trasování WIF.  
   
--   V nástroji Prohlížeč trasování protokolů trasování zobrazení.  
+-   Protokoly trasování zobrazení v nástroji prohlížeče trasování.  
   
--   Identifikovat WIF související s problémy v protokolech trasování.  
+-   Identifikujte technologie WIF související s problémy v protokolech trasování.  
   
--   Použít opravné akce WIF problémům najít v protokolech trasování.  
+-   Použít opravné akce, které technologie WIF a související s problémy zjištěné v protokoly trasování.  
   
 ## <a name="summary-of-steps"></a>Přehled kroků  
   
--   Krok 1 – konfigurace WIF trasování pomocí Web.config – konfigurační soubor  
+-   Krok 1 – konfigurace technologie WIF trasování pomocí konfiguračního souboru Web.config  
   
--   Krok 2 – analyzovat WIF trasovací soubory pomocí nástroje prohlížeče trasování  
+-   Krok 2 – analýza souborů trasování WIF pomocí prohlížečem trasování  
   
--   Krok 3 – lze vyřešit WIF identifikovat problémy související s  
+-   Krok 3 – řešení Chcete-li vyřešit technologie WIF identifikovat problémy související s  
   
-## <a name="step-1--configure-wif-tracing-using-webconfig-configuration-file"></a>Krok 1 – konfigurace WIF trasování pomocí Web.config – konfigurační soubor  
- V tomto kroku přidáte změny konfigurační oddíly funkce v *Web.config* soubor, který povolit WIF sledovat události a uložit je do protokolu trasování.  
+## <a name="step-1--configure-wif-tracing-using-webconfig-configuration-file"></a>Krok 1 – konfigurace technologie WIF trasování pomocí konfiguračního souboru Web.config  
+ V tomto kroku přidáte změny do konfigurační oddíly funkce v *Web.config* soubor, který se povolit technologie WIF sledovat jeho události a uložit je do protokolu trasování.  
   
-#### <a name="to-configure-wif-tracing-using-webconfig-configuration-file"></a>Konfigurace trasování WIF pomocí konfiguračního souboru Web.config  
+#### <a name="to-configure-wif-tracing-using-webconfig-configuration-file"></a>Konfigurace trasování WIF je používán konfigurační soubor Web.config  
   
-1.  Otevřete kořenu **Web.config** nebo **App.config** konfiguračního souboru v editoru Visual Studio poklepáním na na něm v **Průzkumníku řešení**. Pokud vaše řešení nemá **Web.config** nebo **App.config** konfigurační soubor, přidejte kliknutím pravým tlačítkem na řešení v **Průzkumníku řešení** a kliknutím na  **Přidat**, pak levým na **novou položku...** . Na **nová položka** vyberte **konfigurační soubor aplikace** pro **App.config** nebo **soubor webové konfigurace** pro **Web.config** ze seznamu a klikněte na tlačítko **OK**.  
+1.  Otevřít kořenové **Web.config** nebo **App.config** konfiguračním souboru v editoru sady Visual Studio, dvakrát klikněte na něj v **Průzkumníka řešení**. Pokud vaše řešení nemá **Web.config** nebo **App.config** konfigurace přidejte kliknutím pravým tlačítkem na řešení v **Průzkumníka řešení** a kliknete na  **Přidat**, pak levým na **novou položku...** . Na **nová položka** dialogového okna, vyberte **konfiguračního souboru aplikace** pro **App.config** nebo **souboru konfigurace webu** pro **Web.config** ze seznamu a klikněte na tlačítko **OK**.  
   
-2.  Přidejte konfigurační položky podobné následujícím do konfiguračního souboru uvnitř  **\<konfigurace >** uzlu na konci tohoto konfiguračního souboru:  
+2.  Přidat položky konfigurace, který je podobný následujícímu do konfiguračního souboru uvnitř  **\<konfigurace >** uzlu na konci konfiguračního souboru:  
   
     ```xml  
     <system.diagnostics>  
@@ -77,36 +77,36 @@ ms.locfileid: "33408629"
     </system.diagnostics>  
     ```  
   
-3.  Výše uvedené konfigurace dá pokyn WIF generovat události podrobného trasování a protokolování do *WIFTrace.e2e* souboru. Úplný seznam hodnot pro **switchValue** přepnout, naleznete v tabulce Úroveň trasování najít v následujícím tématu: [Konfigurace trasování](http://msdn.microsoft.com/library/ms733025.aspx).  
+3.  V konfiguraci uvedené výš dává pokyn technologie WIF generování událostí na podrobné trasování a protokolování do *WIFTrace.e2e* souboru. Úplný seznam hodnot **switchValue** přepnout, naleznete v tabulce Úroveň trasování v následujícím tématu: [Konfigurace trasování](../wcf/diagnostics/tracing/configuring-tracing.md).  
   
-## <a name="step-2--analyze-wif-trace-files-using-trace-viewer-tool"></a>Krok 2 – analyzovat WIF trasovací soubory pomocí nástroje prohlížeče trasování  
- V tomto kroku použijete nástroj Prohlížeč trasování (SvcTraceViewer.exe) k analýze protokolů trasování WIF.  
+## <a name="step-2--analyze-wif-trace-files-using-trace-viewer-tool"></a>Krok 2 – analýza souborů trasování WIF pomocí prohlížečem trasování  
+ V tomto kroku použijete nástroj prohlížeče trasování (SvcTraceViewer.exe) k analýze protokolů trasování WIF.  
   
 #### <a name="to-analyze-wif-trace-logs-using-trace-viewer-tool-svctraceviewerexe"></a>K analýze protokolů trasování WIF pomocí nástroje prohlížeče trasování (SvcTraceViewer.exe)  
   
-1.  Nástroj Prohlížeč trasování (SvcTraceViewer.exe) dodává jako součást sady Windows SDK. Pokud jste ještě nenainstalovali Windows SDK, můžete stáhnout tady: [Windows SDK](http://www.microsoft.com/download/en/details.aspx?id=8279).  
+1.  Prohlížečem trasování (SvcTraceViewer.exe) dodávána jako součást sady Windows SDK. Pokud jste ještě nenainstalovali sady Windows SDK, můžete stáhnout tady: [sady Windows SDK](https://www.microsoft.com/download/en/details.aspx?id=8279).  
   
-2.  Spusťte nástroj Prohlížeč trasování (SvcTraceViewer.exe). Je obvykle dostupné v **Bin** složky cesty instalace.  
+2.  Spusťte nástroj prohlížeče trasování (SvcTraceViewer.exe). Je obvykle dostupná **Bin** složce instalační cesta.  
   
-3.  Otevřete soubor protokolu WIF trasování, například WIFTrace.e2e výběrem **soubor**, **otevřete...** možnost v nabídce nebo pomocí **Ctrl + O** zástupce. Otevře se v nástroji Prohlížeč trasování soubor protokolu trasování.  
+3.  Otevřít soubor protokolu technologie WIF trasování, například WIFTrace.e2e tak, že vyberete **souboru**, **otevřít...** Možnosti v nabídce nebo pomocí **Ctrl + O** zástupce. Soubor protokolu trasování se otevře v prohlížeči trasování nástroje.  
   
-4.  Zkontrolujte položky v **aktivity** kartě. Každý záznam by měl obsahovat číslo aktivity, počet trasování, které byly zaznamenány do protokolu, doba trvání aktivity a jeho počáteční a koncové časová razítka.  
+4.  Zkontrolujte záznamy v **aktivity** kartu. Každý záznam může obsahovat číslo aktivity, počet trasování, které byly zaznamenány, doba trvání aktivity a její spuštění a ukončení časová razítka.  
   
-5.  Klikněte na **aktivity** kartě. Měli byste vidět podrobné trasování položky v oblasti hlavní nástroje. Použití **úroveň** rozevíracího seznamu v nabídce filtrovat konkrétní úroveň trasování, například: **všechny**, **upozornění**, **chyby**, **Informace**atd.  
+5.  Klikněte na **aktivity** kartu. Měli byste vidět položky podrobné trasování v hlavní oblasti nástroje. Použití **úroveň** rozevíracího seznamu v nabídce filtrovat konkrétní úroveň trasování, například: **všechny**, **upozornění**, **chyby**, **Informace**atd.  
   
-6.  Kliknutím na konkrétní trasování záznamy pro podrobné informace v oblasti nižší nástroje. Podrobnosti lze zobrazit pomocí **formátu** a **XML** zobrazení tak, že zvolíte odpovídající karty.  
+6.  Klikněte na položky konkrétní trasování chcete podívat na podrobnosti ve spodní části nástroje. Podrobnosti lze zobrazit pomocí **formátu** a **XML** zobrazení výběrem příslušné karty.  
   
-## <a name="step-3--identify-solutions-to-fix-wif-related-issues"></a>Krok 3 – lze vyřešit WIF identifikovat problémy související s  
- V tomto kroku můžete identifikovat řešení s WIF problémy identifikovat pomocí protokolu trasování WIF a nástroj prohlížeče trasování. Popisuje obecné mapování WIF související výjimky možná řešení nebo požadované akce k odstranění problému.  
+## <a name="step-3--identify-solutions-to-fix-wif-related-issues"></a>Krok 3 – řešení Chcete-li vyřešit technologie WIF identifikovat problémy související s  
+ V tomto kroku můžete identifikovat řešení pro související technologie WIF problémů zjištěných pomocí prohlížeče trasování nástroje a technologie WIF protokolu trasování. Popisuje obecné mapování technologie WIF související výjimky z možných řešení nebo požadované akce k odstranění tohoto problému.  
   
-#### <a name="to-identify-solutions-to-fix-wif-related-issues"></a>K identifikaci lze vyřešit WIF problémy související s  
+#### <a name="to-identify-solutions-to-fix-wif-related-issues"></a>K identifikaci řešení Chcete-li vyřešit technologie WIF problémy související s  
   
-1.  Přečtěte si následující tabulku WIF výjimky a požadované akce k opravě problémů.  
+1.  Projděte si následující tabulku výjimek technologie WIF a požadovaných akcí, chcete-li opravit problémy.  
   
-|**ID chyby**|**Chybová zpráva**|**Akce potřebné opravy chyby**|  
+|**ID chyby**|**Chybová zpráva**|**Akce potřebný k opravě chyby**|  
 |-|-|-|  
-|ID4175|Vystavitel tokenu zabezpečení nebyl rozpoznán IssuerNameRegistry.  Pokud chcete přijímat tokeny zabezpečení z vystaviteli, nakonfigurujte IssuerNameRegistry vrátit platný název pro tento vystavitele.|Tato chyba může být způsobeno kopírování kryptografický otisk z modulu snap-in konzoly MMC a vložíte ji do *Web.config* souboru. Konkrétně můžete získat velmi netisknutelný znak v textovém řetězci při kopírování v okně Vlastnosti certifikátu. Tento další znak způsobí selhání porovnávání kryptografický otisk. Postup pro správně kopírování kryptografický otisk naleznete zde: [http://msdn.microsoft.com/library/ff359102.aspx](http://msdn.microsoft.com/library/ff359102.aspx)|  
+|ID4175|IssuerNameRegistry nebyl rozpoznán vystavitele tokenu zabezpečení.  Přijímat tokeny zabezpečení od tohoto vydavatele, nakonfigurujte IssuerNameRegistry vrátit platný název pro tento vystavitele.|Tato chyba může být způsobena zkopírováním kryptografický otisk z modulu snap-in konzoly MMC a jeho vložením do *Web.config* souboru. Konkrétně můžete získat další netisknutelné znaky v textovém řetězci při kopírování z okna Vlastnosti certifikátu. Tento znak navíc způsobí, že shoda kryptografický otisk selhání. Postup pro správně kopírování kryptografický otisk najdete tady: [http://msdn.microsoft.com/library/ff359102.aspx](https://msdn.microsoft.com/library/ff359102.aspx)|  
   
 ## <a name="related-items"></a>Související položky  
   
--   [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](http://msdn.microsoft.com/library/aa751795.aspx)
+-   [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)

@@ -10,15 +10,15 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: a09f4985-9f0d-48c8-b183-83d67a3dfe5f
-ms.openlocfilehash: ca989c1cd7baa1eaeb10c65bd9ebef8e400968c3
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: d53892f9823474ea14640e352548b55432e7744b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43255219"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43461060"
 ---
 # <a name="query-projections-wcf-data-services"></a>Projekce dotazů (WCF Data Services)
-Poskytuje mechanismus v projekci [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] snížit objem dat v informačním kanálu vrácených dotazem tak, že určíte, které jsou vráceny pouze určité vlastnosti entity v odpovědi. Další informace najdete v tématu [OData: Vyberte možností dotazu systému ($select)](http://go.microsoft.com/fwlink/?LinkId=186076).  
+Poskytuje mechanismus v projekci [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] snížit objem dat v informačním kanálu vrácených dotazem tak, že určíte, které jsou vráceny pouze určité vlastnosti entity v odpovědi. Další informace najdete v tématu [OData: Vyberte možností dotazu systému ($select)](https://go.microsoft.com/fwlink/?LinkId=186076).  
   
  Toto téma popisuje, jak k definici projekce dotazů, jaké požadavky jsou pro entitu a nonentity typy, což aktualizuje na předpokládané výsledky, vytváření předpokládané typů a jsou uvedeny některé důležité informace o projekci.  
   

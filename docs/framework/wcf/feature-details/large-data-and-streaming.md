@@ -2,81 +2,81 @@
 title: Objemná data a vysílání datových proudů
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: f58e61ef76173030db49d4911875cc40200e53d5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f381df2acdb370c6e84d3a00079578f8fceb69f3
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33496559"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43467582"
 ---
 # <a name="large-data-and-streaming"></a>Objemná data a vysílání datových proudů
-Windows Communication Foundation (WCF) je založený na jazyce XML komunikaci infrastruktury. Protože XML data je běžně zakódován ve formátu standardního textu definované v [XML 1.0 – specifikace](http://go.microsoft.com/fwlink/?LinkId=94838), připojené systémy vývojáři a architektům jsou obvykle zajímá přenosová nároků (nebo velikost) zprávy odeslané přes síť a založený na textu kódování XML představuje speciální výzvy pro efektivní přenos binární data.  
+Windows Communication Foundation (WCF) jsou infrastruktura komunikace založený na formátu XML. Protože XML data je běžně zakódován do formátu standardního textu definované v [specifikace XML 1.0](https://go.microsoft.com/fwlink/?LinkId=94838), připojené systémy vývojářům a architektům jsou obvykle, které zajímá nároky na místo při přenosu (nebo velikost) zprávy odeslané přes síť a založený na textu kódování XML představuje zvláštní výzev pro efektivní přenos binární data.  
   
-## <a name="basic-considerations"></a>Základní informace  
- Pokud chcete zadat základní informace o následující informace pro WCF, tento oddíl upozorňuje na některé obecné aspekty a aspekty kódování binárních dat, a který obecně streamování použít připojených systémů infrastruktury.  
+## <a name="basic-considerations"></a>Základní aspekty  
+ Poskytnout základní informace o následující informace pro službu WCF, tato část ukazuje některé obecné připomínky můžete vystavit a důležité informace týkající se kódování binárních dat, a streamování, které obecně platí pro připojené systémy infrastruktury.  
   
 ### <a name="encoding-data-text-vs-binary"></a>Kódování dat: Text vs. binární  
- Běžně vyjádřené vývojáře obavy zahrnují dojem, že XML má významné režijní náklady na ve srovnání s binární formáty vzhledem k povaze opakovaných značky počáteční a koncové značky, že kódování číselných hodnot, považuje se za výrazně větší protože jsou vyjádřeny v textové hodnoty a binární data není možné vyjádřit efektivní, protože musí být speciálně kódováním pro vložení do formátu textu.  
+ Obvykle vyjádřená vývojáře starostí zahrnují dojem, že XML má významné režijní náklady v porovnání s binární typy z důvodu opakující povaze počáteční značky a koncovými značkami, že kódování číselné hodnoty je považován za výrazně větší protože jsou vyjádřeny v textových hodnot a binární data nelze efektivně vyjádřit, protože musí být speciálně kódovány pro vkládání do formátu textu.  
   
- Zatímco řada z nich a podobných týká platné, skutečný rozdíl mezi kódování textu XML zprávy v prostředí XML webové služby a binární kódování zprávy ve starší verzi vzdálené volání procedur (RPC) prostředí je často mnohem méně důležité než může naznačovat počáteční pozornost.  
+ Zatímco řada z nich a podobně se týká jsou platné, skutečné rozdíl mezi text XML kódováním zpráv v prostředí XML webové služby a kódování binární zprávy ve starší verzi vzdálené volání procedur (RPC) prostředí je často mnohem méně důležité než Počáteční faktor by mohla naznačovat.  
   
- Při textu XML kódovaného zprávy jsou transparentní a "číselné vyjádření", binární zprávy jsou často poměrně skrytého porovnání a obtížně se dekódovat bez nástroje. Tento rozdíl v čitelnost vede jeden přehlédnout, že binární zprávy také často provádění metadata vložené v datové části, která přidá režie stejně jako v XML textové zprávy. To platí konkrétně pro formáty pro binární zaměřte se na poskytují volné párování a dynamické volání funkce.  
+ Při XML text kódováním zprávy jsou transparentní a "lidsky čitelné" binární zprávy jsou často poměrně skrytého porovnání a obtížně dekódování bez nástroje. Tento rozdíl v čitelnost vede z nich se má přehlédnout, že binární zprávy také často provádění vložených metadat v datové části, který přidává režie stejně jako u textových zpráv XML. To platí konkrétně pro binární formáty, které mají poskytují volné párování a dynamické vyvolání funkce.  
   
- Však binární formáty běžně přenosu těchto informací o popisná metadata v "záhlaví," což také deklaruje rozložení dat pro následující záznamy dat. Datové části pak odpovídá této společné deklarace blok metadat s minimální režií na další. Naproti tomu XML uzavře každá položka dat v elementu nebo atributu tak, aby nadřazených metadata opakovaně zahrnuté pro každý objekt serializovanou datovou část. V důsledku toho velikost jedné datové části serializovaného objektu je při porovnávání text, který se binární reprezentace jako některé popisná metadata musí být vyjádřena v obou případech ale výhody binární formát z popis sdílené metadat s každou další datová část objekt, který se přenáší z důvodu nižší celkové režijní náklady.  
+ Binární formáty však běžně nesou informaci takové popisnými metadaty v "záhlaví" které také deklaruje rozložení dat následujících datových záznamů. Datová část potom následuje této společné deklarace bloku metadat s minimálními nároky na další. Naproti tomu XML obklopuje jednotlivých datových položek v elementu nebo atributu tak, aby nadřazené metadat pro každý objekt Serializovaná datová část opakovaně zahrnuty. V důsledku toho velikost objektu jedné serializované datové části je podobný jako při porovnání text, který se binární reprezentaci jako některé popisná metadata musí být vyjádřena v obou případech ale binární formát výhody popis sdílené metadat s každou další datová část objektu, který se přenáší z důvodu nižší celkové režijní náklady.  
   
- Přesto pro konkrétní datové typy, jako je například čísla, může být nevýhodou použití pevné velikosti, binární reprezentace číselné, jako je například 128-bit typu decimal místo prostého textu, může mít být a reprezentace jako prostý text několik bajtů menší. Textová data také může mít velikost výhody z obvykle flexibilnější textu XML kódování volby, zatímco některé binární formáty může výchozí 16bitové nebo i 32-bit Unicode, které se nevztahuje na binární formát XML .NET.  
+ Stále, u určitých datových typů, jako je například čísla, může být nevýhodou použití pevné velikosti, binární reprezentace číselné, jako je například typ 128bitové desetinné místo prostého textu, jako prostý text reprezentace pravděpodobně několik menších bajtů. Textová data také může mít velikost výhody obvykle flexibilnější text XML kódováním volby, zatímco může ve výchozím nastavení 16 bitů nebo dokonce 32-bit Unicode, které se nevztahují na binární formát XML .NET některé binární formáty.  
   
- V důsledku toho rozhodování mezi textu nebo binárních není poměrně stejně snadná jako za předpokladu, že binární zprávy jsou vždy menší než XML textové zprávy.  
+ V důsledku toho rozhodování mezi textová nebo binární není úplně stejně jednoduše jako si za předpokladu, že binární zprávy budou vždy menší než textu XML zprávy.  
   
- Vymazat výhodou XML textové zprávy je, že jsou na základě standardů a nabízejí nejširší výběr možností kombinací a podporu platforem. Další informace najdete v části "Kódování" dál v tomto tématu.  
+ Vymazat výhod textu XML zprávy je, že jsou založené na standardech a nabízejí nejširší škálu možností možností vzájemná funkční spolupráce a platformní podpory. Další informace najdete v části "Kódování" dále v tomto tématu.  
   
 ### <a name="binary-content"></a>Binární obsah  
- Jeden oblasti, kde binárního kódování hodnotu větší než založený na textu kódování z hlediska výsledná velikost zprávy jsou velké binární data položkám, jako jsou obrázky, videa, zvukových klipů nebo jakoukoli jinou formu neprůhledné, binární data, která musí být vyměňují mezi službami a jejich Příjemci knihovny. Aby se tyto typy dat do textu XML, je běžný postup zakódovat je pomocí kódování Base64.  
+ Jednu oblast, kde jsou lepší než založený na textu kódování z hlediska výsledná velikost zprávy binárního kódování jsou položky velkému objemu binárních dat jako jsou obrázky, videa, zvukové klipy nebo jakoukoli jinou formu neprůhledný, binární data, která musí být vyměňují mezi službami a jejich příjemci. Aby tyto typy dat do textu XML běžným přístupem je zakódovat je pomocí kódování Base64.  
   
- V řetězci kódováním Base64 představuje každý znak 6bity původní data 8bitové, což vede k 4:3 kódování režii poměr pro Base64, není počítání velmi formátování znaků (znaků CR return a line feed), které jsou běžně přidány na základě konvence. Při význam rozdíly mezi XML a binární kódování obvykle závisí na scénáři, nárůst velikosti větší než 33 % při přenosu datové části 500 MB obvykle není přijatelný.  
+ Každý znak v řetězec s kódováním Base64, představuje 6 bitů původní data 8 bitů, což vede poměr 4:3 kódování režie pro Base64, výčtu nebudou započteny velmi formátovací znaky (návrat na začátek řádku řádku), které jsou obvykle přidány na základě konvence. Přestože významné rozdíly mezi XML a binární kódování, obvykle závisí na scénáři, zvýšení velikosti více než 33 % při přenosu datovou část, která 500 MB není obvykle přijatelné.  
   
- Aby se zabránilo toto kódování režie, mechanismus pro optimalizaci přenosu zpráv (MTOM) umožňuje standard externího velké datové prvky, které jsou obsaženy ve zprávě a jejich provedení se zprávou jako binární data bez jakékoli speciální kódování. S MTOM zprávy se vyměňují podobným způsobem k přenosu protokolu SMTP (Simple Mail) e-mailové zprávy s přílohy nebo vložený obsah (obrázky a další vložený obsah); Jako posloupnosti MIME multipart/related spojených s částí kořenové se skutečné zprávu protokolu SOAP zprávy MTOM.  
+ Standard, aby toto kódování režie, mechanismus pro optimalizaci přenosu zprávu (MTOM) umožňuje zajištěním externího velké datové prvky, které jsou obsaženy ve zprávě a jejich provádění se zprávou jako binární data bez jakékoli speciální kódování. S MTOM zprávy se vyměňují podobným způsobem přenos protokolu SMTP (Simple Mail) e-mailové zprávy s přílohami nebo vložený obsah (obrázky a další obsah); Zprávy MTOM jsou dodávány jako sekvence MIME multipart/related kořenové části se skutečné zprávu protokolu SOAP.  
   
- Zprávu MTOM SOAP se liší od jeho zrušení kódovaného verze tak, aby speciální element značky, které odkazují na části odpovídající standardu MIME má nahradit původní elementů v zprávu, která obsahovala binární data. V důsledku toho zprávu SOAP odkazuje na binární obsah tak, že odkazuje na části MIME odeslané s ním, ale jinak právě představuje textová data XML. Protože tento model je úzce zarovnán s modelem zavedené SMTP, je široká podpora ke kódování a dekódování zprávy MTOM na spoustě platforem, proto je velmi interoperabilní volba nástrojů.  
+ Zpráva MTOM SOAP se liší od jeho zrušení kódovaného verzi tak, aby značky speciální elementů, které odkazují na příslušné části MIME proběhnout původní prvky ve zprávě, která obsahuje binární data. V důsledku toho zprávu protokolu SOAP odkazuje na binární obsah tak, že označíte částí MIME odeslané s ním, ale jinak právě přenáší textová data XML. Protože tento model je úzce v souladu s modelem zavedené SMTP, existuje široká podpora nástrojů pro kódování a dekódování zprávy MTOM na mnoha platformách, takže je mimořádně interoperabilní podle výběru.  
   
- Stále stejně jako u Base64, MTOM také obsahuje některé potřebné režijní náklady na formát MIME tak, aby výhody používání MTOM se zobrazují pouze, když velikost binární datový prvek překračuje asi 1 KB. Z důvodu režijní náklady může být vyšší než zprávy, které používají kódování Base64 pro binární data, pokud zůstane binární datové části v rámci této prahové hodnoty kódování MTOM zprávy. Další informace najdete v části "Kódování" dál v tomto tématu.  
+ Stále stejně jako Base64, MTOM také obsahuje nezbytné režijní náklady pro formát MIME tak, aby výhody používání MTOM se zobrazují pouze, pokud překročí velikost prvku binární data o velikosti 1 KB. Z důvodu režie může být větší než zprávy, které používají kódování Base64 pro binární data, pokud zůstane binární datové části v rámci této prahové hodnoty MTOM kódování zprávy. Další informace najdete v části "Kódování" dále v tomto tématu.  
   
 ### <a name="large-data-content"></a>Obsah velkých objemů dat  
- Přenosová nároky z produkce, datové části výše uvedených 500 MB také představuje skvělý místní výzvu v pro tuto službu a klienta. Ve výchozím nastavení, WCF zpracovává zprávy v *režim s vyrovnávací pamětí*. To znamená, že celý obsah zprávy, které je obsažená v paměti před odesláním nebo po přijetí. Přesto, že je strategii je dobré pro většinu scénářů a potřeby zasílání zpráv funkcí, jako jsou digitální podpisy i spolehlivá doručení, může vyčerpat velké zprávy systémové prostředky.  
+ Při přenosu nároky jste si poznamenali, výše uvedené datové části 500 MB také představuje skvělý místní výzvu na službu a klienta. Ve výchozím nastavení, WCF zpracovávat zprávy v *ve vyrovnávací paměti režimu*. To znamená, že je k dispozici v paměti před jejím odesláním nebo po přijetí celý obsah zprávy. Který je dobrou strategii pro většinu scénářů a jsou nezbytná pro funkce zasílání zpráv, jako je digitální podpisy a spolehlivé doručování, velkých zpráv může vyčerpat systémové prostředky.  
   
- Strategie řešení velké datové části je streamování. Při zprávy především těch, které jsou vyjádřené v XML, jsou běžně představit jako relativně compact data balíčky, zprávy mohou být několika gigabajtů velikost a vypadat průběžné datový proud více než datový balíček. Když jsou data přenášena v režimu datového místo režim s vyrovnávací pamětí, odesílatel zpřístupní obsah textu zprávy k příjemce ve formě datového proudu a infrastruktury zpráva nepřetržitě předává data od odesílatele k příjemce Jakmile je k k dispozici.  
+ Strategie se velké datové části je streamování. Při zprávy zejména těch, které jsou vyjádřené ve formátu XML, jsou běžně považují za probíhá poměrně kompaktní data balíčky, zpráva může mít velikost několik gigabajtů a vypadat podobně jako průběžné datového proudu více než balíček dat. Při přenosu dat v datových proudů režimu místo ve vyrovnávací paměti režimu odesílatel zpřístupní obsah textu zprávy příjemci ve formě datového proudu a infrastruktury zpráva průběžně předá data od odesílatele příjemce, protože je k dispozici.  
   
- Nejběžnější scénáře, ve kterém jsou takové obsah velkého množství dat, který se přenosy přenosy binárních dat objekty, které:  
+ Nejběžnější scénář, ve kterém takový obsah velkých objemů dat, přenosy dojít, jsou přenosy binárních dat objektů, které:  
   
--   Nemůže být rozdělen snadno do sekvenci zpráv.  
+-   Nelze se rozdělit snadno do zprávy sekvence.  
   
--   Musí být doručována v časovém limitu.  
+-   Musí doručit včas.  
   
 -   Nejsou k dispozici v plné výši při zahájení přenosu.  
   
- Pro data, která nemá těchto omezení je obvykle lepší odeslat pořadí zpráv v rámci oboru relace než jedna velká zpráva. Další informace najdete v části "Data streamování" dále v tomto tématu.  
+ Pro data, která těchto omezení nemá je obvykle vhodnější odeslat pořadí zpráv v rámci oboru relace než velkých zpráv. Další informace najdete v části "Streamovaná Data" dále v tomto tématu.  
   
- Při odesílání velkých objemů dat je potřeba nastavit `maxAllowedContentLength` nastavení služby IIS (Další informace najdete v části [konfigurace omezení počtu požadavků služby IIS](http://go.microsoft.com/fwlink/?LinkId=253165)) a `maxReceivedMessageSize` vazby nastavení (například [ System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) nebo <xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A>). `maxAllowedContentLength` Výchozí hodnoty vlastností pro 28.6 M a `maxReceivedMessageSize` výchozí hodnoty vlastností na 64 KB.  
+ Při odesílání velkých objemů dat je potřeba nastavit `maxAllowedContentLength` nastavení služby IIS (Další informace najdete v části [konfigurace omezení počtu požadavků služby IIS](https://go.microsoft.com/fwlink/?LinkId=253165)) a `maxReceivedMessageSize` vazby nastavení (například [ System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) nebo <xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A>). `maxAllowedContentLength` Výchozí hodnoty vlastností 28.6 m a `maxReceivedMessageSize` vlastnost Výchozí hodnota je 64 KB.  
   
 ## <a name="encodings"></a>Kódování  
- *Kódování* definuje sadu pravidel o tom, jak zprávy k dispozici v drátové síti. *Kodér* implementuje takové kódování a na straně odesílatele za měnící <xref:System.ServiceModel.Channels.Message> zprávy v paměti do datového proudu bajtů nebo vyrovnávací paměti bajtů, které mohou být odeslány prostřednictvím sítě. Na straně příjemce zapne kodér pořadí bajtů do zprávy v paměti.  
+ *Kódování* definuje sadu pravidel o tom, jak zobrazení zpráv na lince. *Kodér* implementuje tyto kódování a odpovídá na straně odesílatele pro zapnutí <xref:System.ServiceModel.Channels.Message> zprávy v paměti do datového proudu bajtů nebo bajtová vyrovnávací paměť, kterou je možné odeslat přes síť. Na straně příjemce kodér změní pořadí bajtů do zprávy v paměti.  
   
- WCF zahrnuje tři kodéry a umožňuje napsat a zařadit vlastní kodéry v případě potřeby.  
+ WCF obsahuje tři kodérů a umožní vám psát a zapojte vlastní kodéry v případě potřeby.  
   
- Každé standardní vazby zahrnuje předkonfigurovaná kodér, při němž vazby s předponou Net * používat binární kodér (zahrnutím <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> třída) při <xref:System.ServiceModel.BasicHttpBinding> a <xref:System.ServiceModel.WSHttpBinding> třídy použít kodér textu zprávy (pomocí Řešitele z <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> třída) ve výchozím nastavení.  
+ Každé standardní vazeb obsahuje předem kodér, kterým vazby s předponou Net * pomocí binárního kodéru (zahrnutím <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> třídy) zatímco <xref:System.ServiceModel.BasicHttpBinding> a <xref:System.ServiceModel.WSHttpBinding> třídy použít kodér textu zprávy (pomocí zprávy z <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> třídy) ve výchozím nastavení.  
   
-|Kodér prvku vazby|Popis|  
+|Element vazby kodér|Popis|  
 |-----------------------------|-----------------|  
-|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>|Kodér textu zprávy je kodéru pro všechny vazby založené na protokolu HTTP a příslušnou volbu pro všechny vlastní vazby, kde interoperability je nejvyšší problém. Tato kodér čte a zapisuje standardní SOAP 1.1 nebo SOAP 1.2 textové zprávy s žádné speciální zpracování pro binární data. Pokud <xref:System.ServiceModel.Channels.MessageVersion> zprávy je nastaven na `None`, je tento parametr vynechán obálku obálky protokolu SOAP z výstupu a je serializovat pouze obsah textu zprávy.|  
-|<xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>|Kodér zpráv MTOM je kodér textu, který implementuje zvláštní zpracování pro binární data a není použít ve výchozím nastavení v některém z standardní vazby, protože je výhradně nástroj Optimalizace případ od případu. Pokud zpráva obsahuje binární data, která překračuje prahovou hodnotu kde kódování MTOM vypočítá výhody, se do části standardu MIME následující zpráva obálky externalized data. V tématu Povolení MTOM dál v této části.|  
-|<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>|Zprávy v binární modulu encoder je kodéru pro vazby Net * a příslušné výběr pokaždé, když jsou oba komunikující strany založené na WCF. Kodér zprávy v binární používá rozhraní .NET binárního formátu XML, binární reprezentace specifické pro společnost Microsoft pro sady informace XML (Infosets), který obecně vypočítá menší nároky než ekvivalentní reprezentaci XML 1.0 a zakóduje binární data v bajtové podobě datový proud.|  
+|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>|Kodér textu zprávy je kodéru pro všechny vazby založené na protokolu HTTP a vhodnou volbou pro všechny vlastní vazby, kde je vzájemná funkční spolupráce nejvyšší žádný problém. Tomto kodéru čte a zapisuje standardní protokol SOAP 1.1 a SOAP 1.2 textové zprávy s žádné speciální zpracování pro binární data. Pokud <xref:System.ServiceModel.Channels.MessageVersion> zprávy je nastavena na `None`obálky obálky protokolu SOAP je vynecháno z výstupu a serializuje pouze obsah textu zprávy.|  
+|<xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>|Kodér MTOM zpráv je kodér textu, který implementuje speciální zpracování binárních dat a není použita ve výchozím nastavení v některém z standardní vazby, protože je výhradně nástroj Optimalizace případ od případu. Pokud zpráva obsahuje binární data, která překročí prahovou hodnotu, pokud kódování MTOM přínosy, se do části MIME následující obálky zprávy externalized data. V tématu Povolení MTOM dál v této části.|  
+|<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>|Kodér binárních zpráv je kodéru pro Net * vazbách a vhodnou volbou pokaždé, když oba komunikujících stran jsou založené na WCF. Kodér binárních zpráv používá .NET binární formát XML, specifické pro společnost Microsoft binární reprezentaci XML informace sad (Infosets), které obvykle vrací menší nároky na místo než ekvivalentní reprezentaci XML 1.0 a zakóduje binární data v bajtové podobě datový proud.|  
   
- Kódování textu zprávy je většinou nejlepší volbou pro všechny komunikace cestu, která vyžaduje vzájemná funkční spolupráce, při kódování zprávy v binární je nejlepší volbou pro jiné komunikační cesty. Kódování zprávy v binární obvykle vypočítá menší zpráva, že velikosti ve srovnání s text pro jedné zprávy a zpráva postupně i menší velikosti za celou dobu relace komunikace. Na rozdíl od kódování textu binárního kódování nemá použít zvláštní zpracování pro binární data, například pomocí Base64, ale představuje bajtů bajtů.  
+ Kódování textu zprávy je obvykle nejlepší volbou pro jakékoli komunikační trasa, která vyžaduje spolupráci při kódování binární zprávy je nejlepší volbou pro jiné cesty komunikace. Kódování binární zprávy obvykle vrací menší zpráva, že velikosti ve srovnání s text jedné zprávy a postupně i menší velikosti za celou dobu relace komunikace. Na rozdíl od kódování textu binární kódování není nutné používat speciální zpracování pro binární data, jako je třeba použití ve formátu Base64, ale představuje bajtů na bajty.  
   
- Pokud vaše řešení nevyžaduje vzájemná funkční spolupráce, ale nadále chcete používat přenos HTTP, můžete vytvořit <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> do vlastní vazby, který používá <xref:System.ServiceModel.Channels.HttpTransportBindingElement> třídy pro přenos. Pokud počet klientů na služby vyžadují vzájemná funkční spolupráce, se doporučuje vystavit paralelní koncových bodů, že každý má odpovídající přenosu a kódování volby pro příslušné klienty povolena.  
+ Pokud vaše řešení nevyžaduje, aby vzájemná funkční spolupráce, ale chcete použít přenos pomocí protokolu HTTP, můžete vytvořit <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> do vlastní vazby, který používá <xref:System.ServiceModel.Channels.HttpTransportBindingElement> třídy pro přenos. Pokud počet klientů pro vaši službu, které vyžadují vzájemná funkční spolupráce, se doporučuje zpřístupníte paralelní koncových bodů, která má každá odpovídající přenos a kódování volby pro příslušné klienty povolena.  
   
-### <a name="enabling-mtom"></a>Povolení MTOM  
- Při zajištění lepší interoperability je požadavek a velké binární data, musí se poslat pak kódování MTOM zprávy je alternativní kódování strategie, kterou můžete povolit na standardní <xref:System.ServiceModel.BasicHttpBinding> nebo <xref:System.ServiceModel.WSHttpBinding> vazby nastavením příslušné `MessageEncoding` Vlastnost <xref:System.ServiceModel.WSMessageEncoding.Mtom> nebo skládání <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> do <xref:System.ServiceModel.Channels.CustomBinding>. Následující příklad kódu z extrahovat [kódování MTOM](../../../../docs/framework/wcf/samples/mtom-encoding.md) příklad ukazuje postup povolení MTOM v konfiguraci.  
+### <a name="enabling-mtom"></a>Povolení funkce MTOM  
+ Při zajištění lepší interoperability je povinné a velkému objemu binárních dat se musí odeslat a pak kódování zprávy MTOM je alternativou kódování strategie, kterou můžete povolit na standardu <xref:System.ServiceModel.BasicHttpBinding> nebo <xref:System.ServiceModel.WSHttpBinding> vazby nastavením funkcím `MessageEncoding` Vlastnost <xref:System.ServiceModel.WSMessageEncoding.Mtom> nebo vytváření <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> do <xref:System.ServiceModel.Channels.CustomBinding>. Následující příklad kódu, extrahovat z [kódování MTOM](../../../../docs/framework/wcf/samples/mtom-encoding.md) Ukázka předvádí, jak povolit MTOM v konfiguraci.  
   
 ```xml  
 <system.serviceModel>  
@@ -90,14 +90,14 @@ Windows Communication Foundation (WCF) je založený na jazyce XML komunikaci in
 <system.serviceModel>  
 ```  
   
- Jak už bylo zmíněno dříve, rozhodnutí o použití kódování MTOM závisí na datový svazek odesílání. Také protože MTOM je povolena na úrovni vazby, povolení MTOM ovlivní všechny operace v daném koncový bod.  
+ Jak už bylo zmíněno dříve, rozhodnout a použít kódování MTOM závisí na objemu dat, odesílání. Také protože MTOM je povoleno na úrovni vazby, povolení MTOM ovlivňuje všechny operace na daný koncový bod.  
   
- Vzhledem k tomu, že kodér MTOM vydá kódování MTOM MIME nebo více-částečný zprávu bez ohledu na to, jestli bude mít binární data se externalized, měli byste obecně pouze povolit MTOM pro koncové body, které vyměňovat zprávy s více než 1 KB binární data. Také kontraktů služby určený k použití u koncových bodů s povoleným MTOM by, pokud je to možné, omezen zadání takové operace přenosu dat. Funkce související ovládací prvek by měl být umístěn na samostatné kontrakt. Toto pravidlo "Jen MTOM" platí pouze pro zprávy odeslané přes koncový bod MTOM povoleno; kodér MTOM může dekódovat a analyzovat příchozí zprávy bez MTOM také.  
+ Protože kodér MTOM vydá kódování MTOM MIME/více-částečný zprávu bez ohledu na to, zda skončilo se externalized binárních dat, měli byste obecně pouze povolit MTOM pro koncové body, které výměna zpráv s využitím více než 1 KB binární data. Také kontrakty služeb, které jsou navrženy pro použití s koncovými body s povoleným MTOM by měl, pokud je to možné, omezovat se zadáním těchto operace přenosu dat. Funkce související ovládací prvek by měl být uložený v samostatné smlouvy. Toto pravidlo "Pouze MTOM" platí pouze pro zprávy odeslané přes koncový bod povolené MTOM; kodér MTOM může dekódovat a parsovat příchozí zprávy bez MTOM také.  
   
- Pomocí kodéru MTOM v souladu s jinými funkcemi WCF. Všimněte si, že nemusí být možné toto pravidlo ve všech případech, například když je potřebná podpora relace.  
+ Pomocí kodér MTOM splňuje všechny ostatní funkce WCF. Všimněte si, že nemusí být možné toto pravidlo ve všech případech, například když je nutné podporovat relace.  
   
 ### <a name="programming-model"></a>Programovací model  
- Bez ohledu na to, které tři předdefinované kodéry, které používáte ve vaší aplikaci se shoduje s ohledem na přenos binární data programovací prostředí. Rozdíl spočívá v tom, jak WCF zpracovává data v závislosti na jejich datové typy.  
+ Bez ohledu na to, které tři předdefinované kodérů, které používáte ve vaší aplikaci programovací prostředí je shodné s ohledem na přenos binární data. Rozdíl je v způsob, jakým WCF zpracovává data v závislosti na jejich datové typy.  
   
 ```  
 [DataContract]  
@@ -110,32 +110,32 @@ class MyData
 }   
 ```  
   
- Pokud používáte MTOM, předchozí kontrakt dat je serializováno podle následujících pravidel:  
+ Při použití MTOM předchozí kontraktu dat. je serializována podle následujících pravidel:  
   
--   Pokud `binaryBuffer` není `null` a jednotlivě obsahuje dostatek dat k odůvodnění, režii externalization MTOM (MIME hlavičky atd.) v porovnání s Base64 kódování, data se externalized a provádí se zprávou jako binární části standardu MIME. Pokud není překročí prahovou hodnotu, data je kódovaný jako Base64.  
+-   Pokud `binaryBuffer` není `null` a jednotlivě obsahuje dostatek dat k vysvětlení režii externalizace MTOM (hlavičky MIME a tak dále) ve srovnání s Base64 kódování, data se externalized a provádět s touto zprávou jako binární část MIME. Pokud není překročena prahová hodnota, data kódovaná jako Base64.  
   
 -   Řetězec (a všechny ostatní typy, které nejsou binární) je vždy reprezentována jako řetězec v textu zprávy, bez ohledu na velikost.  
   
- Vliv na kódování MTOM je stejný zda použijete explicitní data kontrakt, jak je uvedeno v předchozím příkladu použít seznam parametrů v operaci, mají vnořené datové kontrakty nebo přenos objekt kontraktu dat v kolekci. Bajtová pole jsou vždy kandidáty pro optimalizaci a jsou optimalizované, pokud byly splněny optimalizace prahové hodnoty.  
+ Vliv na kódování MTOM je stejné, zda je používán kontrakt explicitní data, jak je znázorněno v předchozím příkladu použít seznam parametrů v operaci, mají vnořených datových kontraktů nebo převést objekt kontraktu dat v kolekci. Bajtová pole jsou vždy kandidáty na optimalizaci a jsou optimalizované, pokud se dosažení prahové hodnoty optimalizace.  
   
 > [!NOTE]
->  Neměli byste používat <xref:System.IO.Stream?displayProperty=nameWithType> odvozené typy v kontraktech dat. Datový proud dat by mělo být oznámeno pomocí streamování modelu, popsané v následující části "Streamování Data".  
+>  Neměli byste používat <xref:System.IO.Stream?displayProperty=nameWithType> odvozené typy v kontraktech dat. Stream dat by měl být oznámen pomocí streamování modelu je vysvětleno v následující části "Streamovaná Data".  
   
 ## <a name="streaming-data"></a>Streamování dat  
- Když máte velké množství dat pro přenos, streamování režim přenosu ve WCF je to vhodné alternativa k výchozí chování ukládání do vyrovnávací paměti a zpracování zpráv v paměti jako celek.  
+ Pokud máte velký objem přenášených dat, je režim tvorby datového proudu přenosu ve službě WCF proveditelné alternativou k výchozí chování ukládání do vyrovnávací paměti a zpracování zpráv v paměti jako celek.  
   
- Jak už bylo zmíněno dříve, umožňoval vysílání datového proudu pouze pro velké zprávy (s obsahem textu nebo binárních), pokud nemůže být segmentovány data, pokud zpráva musí doručit včas, nebo pokud data ještě není plně k dispozici při zahájení přenosu.  
+ Jak už bylo zmíněno dříve, povolení streamování pouze u velkých zpráv (se textová nebo binární obsah), pokud data nelze segmentované, pokud zpráva musí doručit včas, nebo pokud data ještě nejsou plně k dispozici při zahájení přenosu.  
   
 ### <a name="restrictions"></a>Omezení  
  Velký počet funkcí WCF nelze použít, pokud je povoleno vysílání datového proudu:  
   
--   Digitální podpisy pro tělo zprávy nelze provést, protože vyžadují computing hodnotu hash přes obsah celé zprávy. Při streamování obsahu není plně k dispozici při záhlaví zprávy jsou vytvořená a odeslat, a proto nelze vypočítat digitální podpis.  
+-   Digitální podpisy pro text zprávy nejde provést, protože vyžadují výpočtu hodnoty hash přes obsah celé zprávy. Díky streamování, obsah není plně k dispozici při vytvořena a posílat záhlaví zpráv, a proto nelze vypočítat digitální podpis.  
   
--   Šifrování závisí na digitálních podpisů k ověření, že dat má byla znovu vytvořena správně.  
+-   Šifrování závisí na digitálních podpisů k ověření, že data byla rekonstruována správně.  
   
--   Spolehlivé relace musí buffer odeslaných zpráv na straně klienta pro opakované dodání, pokud zpráva získá ztrátě při přenosu a musí obsahovat zprávy na službu před blokováním je pro implementaci služby pro zachování pořadí zprávy v případě, že jsou přijaty zprávy. mimo pořadí.  
+-   Spolehlivé relace musí vyrovnávací paměti odeslaných zpráv na straně klienta pro opakované dodání Pokud zpráva získá ztrátě při přenosu a musí obsahovat zpráv ve službě ještě před jejich k implementaci služby pro zachování pořadí zpráv v případě, že jsou zprávy přijímány mimo pořadí.  
   
- Z důvodu těchto funkční omezení můžete použít pouze zabezpečení transportní vrstvy, které možnosti pro streamování a nelze zapnout spolehlivé relace. Vysílání datového proudu je k dispozici pouze u vazeb následující definovaná systémem:  
+ Kvůli těmto omezením funkční můžete použít pouze zabezpečení transportní vrstvy, které možnosti pro streamování a nelze zapnout spolehlivé relace. Streamování je k dispozici pouze u následujících vazeb definovaných systémem:  
   
 -   <xref:System.ServiceModel.BasicHttpBinding>  
   
@@ -145,28 +145,28 @@ class MyData
   
 -   <xref:System.ServiceModel.WebHttpBinding>  
   
- Protože základní přenosy z <xref:System.ServiceModel.NetTcpBinding> a <xref:System.ServiceModel.NetNamedPipeBinding> vyplývajících spolehlivé doručení a založeného na připojení relace podporovat, na rozdíl od protokolu HTTP, jsou tyto dvě vazby jenom minimálně vliv těchto omezení, v praxi.  
+ Protože základní přenosy z <xref:System.ServiceModel.NetTcpBinding> a <xref:System.ServiceModel.NetNamedPipeBinding> přináší spolehlivé doručování a relace na základě připojení podporovat, na rozdíl od protokolu HTTP, tyto dvě vazby jsou pouze nejméně ovlivněný zahlcením těmto omezením, v praxi.  
   
- Streamování není k dispozici přenos řízení front zpráv (MSMQ) a proto jej nelze použít s <xref:System.ServiceModel.NetMsmqBinding> nebo <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> třídy. Přenos služby Řízení front zpráv podporuje pouze přenosů dat ve vyrovnávací paměti s velikostí omezené zprávy, zatímco všechny ostatní přenosy nemají žádné omezení velikosti praktické zpráva pro velká většina scénářů.  
+ Streamování není k dispozici přenos řízení front zpráv (MSMQ) a proto jej nelze použít s <xref:System.ServiceModel.NetMsmqBinding> nebo <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> třídy. Přenos řízení front zpráv podporuje pouze uložené do vyrovnávací paměti datových přenosů s velikostí omezené zprávy, zatímco všechny ostatní přenosy nemají žádné omezení velikosti praktické zprávy pro většinu scénářů.  
   
- Streamování není k dispozici při použití přenos rovnocenného kanálu, takže není k dispozici <xref:System.ServiceModel.NetPeerTcpBinding>.  
+ Streamování není k dispozici při pomocí přenosu protokolu Peer Channel, takže není k dispozici <xref:System.ServiceModel.NetPeerTcpBinding>.  
   
-#### <a name="streaming-and-sessions"></a>Streaming a relace  
- Při volání streamování s vazbou na bázi relací, může dojít k neočekávanému chování. Všechna volání streamování jsou provedeny prostřednictvím jednoho kanálu (kanál datagram), který nepodporuje relace, i v případě, že je vazba používá nakonfigurovaný na použití relací. Pokud více klientů volání streamování ke stejnému objektu služby přes vazbu na bázi relací a objektu služby souběžný režim je nastaven na jediný a jeho instance kontextu režim je nastaven na PerSession, všechna volání musí procházet přes kanál datagram a proto pouze jeden volání je zpracovat najednou. Jeden nebo více klientů může pak vypršení časového limitu. Tento problém můžete vyřešit buď nastavení režimu kontextu Instance objektu služby PerCall nebo souběžnosti do několika.  
+#### <a name="streaming-and-sessions"></a>Streamování a relace  
+ Můžete obdržet neočekávané chování při streamování volání s vazbou na základě relace. Všechna volání streamování se provádějí přes jeden kanál (kanálu datagramu), který nepodporuje relace, i v případě, že vazba používá je nakonfigurována pro použití relací. Pokud více klientů volání datových proudů na stejný objekt služby přes vazbu na základě relace a objekt služby souběžný režim je nastavena na jednou a jeho režimu instance kontextu je nastavena na hodnotu PerSession, všechna volání musí projít kanálu datagramu a aby volání zpracovávána v čase. Jeden nebo více klientů může potom vypršení časového limitu. Tento problém můžete obejít tak, že buď nastavíte režim kontextu instancí objektu služby PerCall nebo souběžnosti k několika.  
   
 > [!NOTE]
->  MaxConcurrentSessions v takovém případě se neprojeví, protože není k dispozici pouze jeden "relace".  
+>  MaxConcurrentSessions nemá žádný vliv v tomto případě, protože není k dispozici pouze jeden "relace".  
   
 ### <a name="enabling-streaming"></a>Povolení streamování  
  Můžete povolit datové proudy následujícími způsoby:  
   
--   Odesílání a přijímání požadavků v režimu datového a přijmout a vrátí odpovědi v režim s vyrovnávací pamětí (<xref:System.ServiceModel.TransferMode.StreamedRequest>).  
+-   Odesílání a příjem požadavků v režim tvorby datového proudu a přijmout a vrácení odpovědi v režimu vyrovnávací paměti (<xref:System.ServiceModel.TransferMode.StreamedRequest>).  
   
--   Odesílání a přijímání požadavků v režim s vyrovnávací pamětí a přijímat a vrátí odpovědi v režimu přenášené datovými proudy (<xref:System.ServiceModel.TransferMode.StreamedResponse>).  
+-   Odesílání a příjem požadavků v režimu vyrovnávací paměti a přijímají a vrací odpovědi v režimu proudu (<xref:System.ServiceModel.TransferMode.StreamedResponse>).  
   
--   Odesílat a přijímat požadavky a odpovědi v režimu přenášené datovými proudy v obou směrech. (<xref:System.ServiceModel.TransferMode.Streamed>).  
+-   Odesílat a přijímat požadavky a odpovědi v režimu proudu v obou směrech. (<xref:System.ServiceModel.TransferMode.Streamed>).  
   
- Můžete zakázat streamování nastavením režim přenosu na <xref:System.ServiceModel.TransferMode.Buffered>, což je výchozí nastavení pro všechny vazby. Následující kód ukazuje, jak nastavit režim přenosu v konfiguraci.  
+ Vám může zcela vypnout streamování nastavením je režim přenosu na <xref:System.ServiceModel.TransferMode.Buffered>, což je výchozí nastavení na všechny vazby. Následující kód ukazuje, jak nastavit režim přenosu v konfiguraci.  
   
 ```xml  
 <system.serviceModel>  
@@ -180,15 +180,15 @@ class MyData
 <system.serviceModel>  
 ```  
   
- Při instanci můžete vytvořit vaše vazby v kódu, musíte nastavit příslušné `TransferMode` vlastnost vazby (nebo pokud vytváříte vlastní vazby element vazby přenosu) na jednu z výše uvedených hodnot.  
+ Při vytváření instance vaše vazby v kódu, musíte nastavit příslušné `TransferMode` majetku vazby (nebo element vazby přenosu, pokud vytváříte vlastní vazby) na jednu z výše uvedených hodnot.  
   
- Můžete zapnout streamování pro zpracování požadavků a odpovědí nebo obou směrech nezávisle na obou stranách komunikující strany bez ovlivnění funkce. By však vždy předpokládat, že velikost přenášených dat je významné tak, že povolení streamování je zarovnán do bloku na oba koncové body komunikace odkazu. Pro komunikaci napříč platformami, kde jeden z koncových bodů s použitím technologie WCF není implementována možnost používat streamování závisí na možnosti streamování platformy. Další výjimečných výjimku, může být spotřeba paměti řízené scénáři, kde klient nebo služby musí minimalizovat jeho pracovní sady a můžete dovolit pouze malou vyrovnávací pamětí velikosti.  
+ Můžete zapnout, aniž by to ovlivnilo funkce streamování pro zpracování požadavků a odpovědí nebo pro oba směry nezávisle na obou stranách komunikujících stran. Ale byste měli vždy předpokládat, že velikost přenášených dat je důležité, že oba koncové body spoj ospravedlnit povolení streamování. Pro komunikaci napříč platformami, kde jeden z koncových bodů není implementovaná s použitím technologie WCF umožňuje používat streamování závisí na funkce streamování platformu. Další výjimečných výjimku, může být spotřebu paměti řízené scénáři, kde klienta nebo služby musíte minimalizovat jeho pracovní sada a můžete dovolit pouze malou vyrovnávací pamětí velikosti.  
   
-### <a name="enabling-asynchronous-streaming"></a>Povolení asynchronní datové proudy  
- Chcete-li povolit asynchronní streamování, přidejte <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> chování koncového bodu do hostitele služby a nastavte její <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> vlastnost `true`. Také jsme přidali možnosti true asynchronní streamování na straně odeslání. Tím se zlepšuje škálovatelnost služby ve scénářích, kde ji je streamování na více klientů, z nichž některé jsou pomalé v režimu čtení pravděpodobně z důvodu zahlcení sítě nebo nejsou vůbec čtení zpráv. V těchto scénářích jsme teď neblokují jednotlivých vláken ve službě za klienta. Tím se zajistí, že služba je schopna zpracovat mnoho více klientů a zlepšení škálovatelnosti služby.  
+### <a name="enabling-asynchronous-streaming"></a>Povolení asynchronního streamování  
+ Pokud chcete povolit, asynchronního streamování, přidejte <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> chování koncového bodu do hostitele služby a nastavte jeho <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> vlastnost `true`. Přidali jsme také možnost true asynchronního streamování na straně odesílání. Tím se zlepšuje škálovatelnost služby ve scénářích, kde je datový proud zpráv do více klientů, z nichž některé jsou pomalé v režimu čtení pravděpodobně z důvodu zahlcení sítě, nebo nejsou vůbec čtení. V těchto scénářích jsme teď neblokují jednotlivá vlákna ve službě za klienta. Tím se zajistí, že služba je schopná zpracovat mnoho více klientů a zlepšuje škálovatelnost služby.  
   
-### <a name="programming-model-for-streamed-transfers"></a>Model programování pro přenosy přenášené datovými proudy  
- Programovací model pro streamování je jednoduchá. Pro přijetí přenášené datovými proudy dat, zadejte operaci kontrakt, který má jeden <xref:System.IO.Stream> zadali vstupní parametr. Pro vrácení datové proudy, vrátit <xref:System.IO.Stream> odkaz.  
+### <a name="programming-model-for-streamed-transfers"></a>Programovací Model pro streamovaná přenosy  
+ Programovací model pro streamování je jednoduché. Pro příjem streamovaných datech, určete kontrakt operace, která má jeden <xref:System.IO.Stream> zadaný vstupní parametr. Pro vracení datového proudu, vrátí <xref:System.IO.Stream> odkaz.  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -203,11 +203,11 @@ public interface IStreamedService
 }  
 ```  
   
- Operaci `Echo` v předchozím příkladu obdrží a vrátí datového proudu a proto je nutné použít na vazba s <xref:System.ServiceModel.TransferMode.Streamed>. Pro operaci `RequestInfo`, <xref:System.ServiceModel.TransferMode.StreamedResponse> je nejvhodnější, protože pouze vrátí <xref:System.IO.Stream>. Jednosměrná operace je nejvhodnější pro <xref:System.ServiceModel.TransferMode.StreamedRequest>.  
+ Operace `Echo` v předchozím příkladu přijímá a vrací datový proud a je proto třeba použít u vazby s <xref:System.ServiceModel.TransferMode.Streamed>. Pro operaci `RequestInfo`, <xref:System.ServiceModel.TransferMode.StreamedResponse> je nejvhodnější, protože se vrátí jenom <xref:System.IO.Stream>. Jednosměrná operace je nejvhodnější pro <xref:System.ServiceModel.TransferMode.StreamedRequest>.  
   
- Všimněte si, že přidání druhý parametr pro následující `Echo` nebo `ProvideInfo` operace způsobí, že model služby vrátit se zpátky do strategie ve vyrovnávací paměti a používat reprezentace běhu serializace datového proudu. Pouze operace s parametrem jeden vstupní datový proud jsou kompatibilní s začátku do konce požadavek streaming.  
+ Všimněte si, že přidání druhého parametru následující `Echo` nebo `ProvideInfo` operací způsobí, že model služby zpátky na strategii ve vyrovnávací paměti a použití za běhu serializace reprezentace datového proudu. Operace pouze s parametrem jednoho vstupního datového proudu jsou kompatibilní s začátku do konce požadavek streaming.  
   
- Toto pravidlo se vztahuje podobně kontrakty zpráv. Jak ukazuje následující kontrakt zprávy, může mít pouze jeden textu člen v vaší kontrakt zprávy, která je datový proud. Pokud chcete další informace, pomocí datového proudu komunikovat, musí být tyto informace provedena v záhlaví zprávy. Text zprávy je vyhrazeno pouze pro datový proud obsahu.  
+ Toto pravidlo se vztahuje podobně kontraktů zpráv. Jak je znázorněno v následujícím kontraktu zprávy, může mít pouze jednoho těla členské v váš kontraktu zprávy, které je datový proud. Pokud chcete sdělit Další informace pomocí datového proudu, musí být tyto informace provádí v záhlaví zpráv. Text zprávy je rezervovaných exkluzivně pro streamování obsahu.  
   
 ```  
 [MessageContract]  
@@ -220,23 +220,23 @@ public class UploadStreamMessage
 }   
 ```  
   
- End přenášené datovými proudy přenosů a zpráva je zavřený, když datový proud dosáhne konce souboru (EOF). Při odesílání zprávy (návrat hodnoty nebo vyvolání operace), můžete předat <xref:System.IO.FileStream> a infrastruktury WCF následně vrátí všechna data z tohoto datového proudu, dokud datový proud byl zcela číst a dosaženo konce souboru. Přenos přenášené datovými proudy dat pro zdroj, žádný takový předdefinovaných <xref:System.IO.Stream> odvozené třídy existuje, vytvořit taková třída, překrytí třídy přes svůj zdroj datového proudu a použít jako hodnotu argumentu nebo return.  
+ End streamovaná přenosů a zpráva je uzavřena dosáhne datový proud na konci souboru (EOF). Při odesílání zprávy (návratová hodnota nebo vyvolání operace), můžete předat <xref:System.IO.FileStream> a infrastruktura WCF následně načte všechna data z tohoto datového proudu, dokud datový proud byl zcela čtení a bylo dosaženo konce souboru. Převést datové proudy pro zdroj, který bez těchto předdefinovaných <xref:System.IO.Stream> odvozené třídy existuje, vytvořit takové třídy, překrytí třídy přes datový proud zdroje a použít je jako argument nebo návratovou hodnotu.  
   
- Při přijímání zprávy, vytvoří WCF datového proudu prostřednictvím obsah textu kódováním Base64 zprávy (nebo příslušné části standardu MIME, pokud používáte MTOM) a datový proud dosáhne konce souboru, když obsah byl načten.  
+ Při přijímání zprávy WCF vytvoří datový proud obsahu těla zprávy s kódováním Base64 (případně odpovídající část MIME, pokud používáte MTOM) a datový proud dosáhne EOF přečtení obsahu.  
   
- Streamování transportní vrstvy také funguje s žádným jiným zpráva kontrakt typem (seznamy parametrů, argumenty kontraktu dat a kontrakt explicitní zprávy), ale protože serializace a deserializace například zadali zprávy vyžaduje ukládání do vyrovnávací paměti podle serializátor , není vhodné používat takové variant kontrakt.  
+ Streamování transportní vrstvy také funguje s jakékoli další typ kontraktu zprávy (seznamy parametrů, argumenty kontraktu dat a kontrakt explicitní zprávy), ale vzhledem k tomu, že serializace a deserializace tohoto typu zprávy vyžaduje ukládání do vyrovnávací paměti modulem pro serializaci , není vhodné používat takové varianty kontraktu.  
   
-### <a name="special-security-considerations-for-large-data"></a>Speciální bezpečnostní aspekty velkých objemů dat  
- Všechny vazby umožňují omezit velikost příchozí zprávy, aby se zabránilo útoky DOS. <xref:System.ServiceModel.BasicHttpBinding>, Například zpřístupní [System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) vlastnost, která bounds velikost příchozí zprávy a proto také bounds maximální množství paměti, které je přístupné Při zpracování zprávy. Tato jednotka je nastavena v bajtech s výchozí hodnotou 65 536 bajty.  
+### <a name="special-security-considerations-for-large-data"></a>Zvláštní bezpečnostní aspekty velkých objemů dat  
+ Všechny vazby umožňují omezit velikost příchozí zprávy, aby se zabránilo útoky s cílem odepření služeb. <xref:System.ServiceModel.BasicHttpBinding>, Například zpřístupňuje [System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) vlastnost, která za rozsahem velikost příchozí zprávy a proto také za rozsahem maximální množství paměti, která se využívají Při zpracování zprávy. Tato jednotka je sady v bajtech s výchozí hodnotou 65 536 bajtů.  
   
- Ohrožení zabezpečení, která je specifická pro scénář streamování velkých objemů dat provokes odepření služby tak, že data uložená do vyrovnávací paměti, když příjemce očekává, že odesílání. Například WCF vždy vyrovnávacích pamětí hlavičkách protokolu SOAP zprávy, a proto útočník může vytvořit velké škodlivý zprávu, která se skládá pouze z hlavičky vynutit data, která mají být do vyrovnávací paměti. Pokud je povoleno vysílání datového proudu, `MaxReceivedMessageSize` lze nastavit na velmi velké hodnoty, protože příjemce nikdy očekává celé zpráva, která má být ukládán do vyrovnávací paměti v paměti najednou. Pokud WCF je nucen se vyrovnávací paměť zprávy, dojde k přetečení paměti.  
+ Ohrožení zabezpečení, které jsou specifické pro scénář streamování velkých objemů dat vyvolá odepření služby tak, že data uložená do vyrovnávací paměti, když příjemce očekává, že odesílání. Například WCF vždy vyrovnávacích pamětí záhlaví SOAP zprávy, a proto útočník může vytvořit velké škodlivé zprávy, který je tvořen výhradně záhlaví přinutit data, která mají být ukládány do vyrovnávací paměti. Pokud je povoleno vysílání datového proudu, `MaxReceivedMessageSize` může být nastavená na velmi velké hodnoty, protože příjemce nikdy očekává celé zprávy do vyrovnávací paměti najednou. Pokud je do vyrovnávací paměti zprávy WCF, dojde k přetečení paměti.  
   
- Proto omezení maximální velikost příchozí zprávy není dostatek v tomto případě. `MaxBufferSize` Vlastnost je potřeba omezit paměť ukládaného ve vyrovnávací paměti WCF. Je důležité, abyste tuto možnost nastavíte na hodnotu bezpečné (nebo jej zachovat na výchozí hodnota) při streamování. Předpokládejme například, musí přijmout služby souborů až do 4 GB velikost a jejich uložení na místní disk. Také Předpokládejme, že vaše paměti je omezené tak, že můžete pouze buffer 64 KB dat najednou. Potom byste měli nastavit `MaxReceivedMessageSize` do 4 GB a `MaxBufferSize` na 64 KB. Také v implementaci služby musíte zajistit číst pouze z příchozího datového proudu v bloky dat 64 KB a nečtěte další blok před předchozí byl zapsaný na disk a zrušených z paměti.  
+ Proto omezení maximální velikost příchozí zprávy není dostatečně v tomto případě. `MaxBufferSize` Vlastnost se vyžaduje k omezení paměti ukládaného ve vyrovnávací paměti WCF. Je důležité si nastavíte na hodnotu bezpečné (nebo je uchovávejte na výchozí hodnotu) při streamování. Předpokládejme například, že vaše služba musí přijímat soubory ve velikosti až 4 GB a jejich uložení na místním disku. Předpokládejme také, že vaše paměti je omezená tak, že jste pouze uložit do vyrovnávací paměti 64 KB dat. současně. Pak byste měli nastavit `MaxReceivedMessageSize` až 4 GB a `MaxBufferSize` 64 kB. Navíc ve vaší implementaci služby musíte zajistit, abyste si pouze z příchozího datového proudu v bloky dat 64 KB a číst další blok předtím, než se předchozí zapsané na disk a byla odstraněna z paměti.  
   
- Je také důležité si uvědomit, že tato kvóta pouze to, do vyrovnávací paměti provádí WCF a nemůže chránit proti žádné ukládání do vyrovnávací paměti, abyste provedli v implementaci vlastní služba nebo klienta. Další informace o dodatečné informace o zabezpečení najdete v tématu [důležité informace o zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
+ Je také důležité pochopit, že tato kvóta omezuje pouze ukládání do vyrovnávací paměti provádí WCF a nemůže chránit proti žádné ukládání do vyrovnávací paměti, který používáte ve vaší vlastní implementaci služby ani klienta. Další informace o dodatečné informace o zabezpečení najdete v tématu [aspekty zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md).  
   
 > [!NOTE]
->  Rozhodnutí použít ve vyrovnávací paměti nebo přenášené datovými proudy přenosy je místní rozhodnutí koncového bodu. Pro přenosy protokolu HTTP režim přenosu nešířily připojení nebo proxy servery a jiných zprostředkovatelů. Nastavení režimu přenosu se nereflektují v popisu rozhraní služby. Po generování klienta WCF na službu, musíte upravit konfigurační soubor pro služby určena pro použití s přenášené datovými proudy přenosy nastavení režimu. TCP a přenosy pojmenovaný kanál režim přenosu rozšířena jako výraz zásad.  
+>  Rozhodnout a použít ve vyrovnávací paměti nebo streamovaná přenosy je místní rozhodnutí koncového bodu. Pro přenosy HTTP je režim přenosu nešíří přes připojení nebo proxy servery a jiných dodavatelů. Nastavení režimu převodu se neprojeví v popisu rozhraní služby. Po vygenerování klienta WCF na službu, musíte upravit konfigurační soubor služby určené pro použití s datovým proudem přenosy pro nastavení režimu. Pro protokoly TCP a přenosy pojmenovaný kanál se šíří je režim přenosu jako kontrolní výraz zásad.  
   
 ## <a name="see-also"></a>Viz také  
  [Postupy: Povolení streamování](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)

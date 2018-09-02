@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - '#undef directive [C#]'
 ms.assetid: 686c92d2-7194-4be4-b2f4-80091712d513
-ms.openlocfilehash: 2877ab7cb1b124dd26a76766cdc9940caf454f4e
-ms.sourcegitcommit: dc02d7d95f1e3efcc7166eaf431b0ec0dc9d8dca
+ms.openlocfilehash: 3957d58f61e51fab01618f5e1146be9cd0da58fd
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37143489"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43467143"
 ---
 # <a name="undef-c-reference"></a>#undef (referenční dokumentace jazyka C#)
 `#undef` můžete nedefinovat symbol, tak, že při použití symbolu jako výraz v [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) direktiv, bude výraz vyhodnocen na `false`.  
@@ -19,15 +19,15 @@ ms.locfileid: "37143489"
  Symbol může být definována buď [#define](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md) – direktiva nebo [-definovat](../../../csharp/language-reference/compiler-options/define-compiler-option.md) – možnost kompilátoru. `#undef` Direktiva musí být uvedená v souboru, než použijete všechny příkazy, které nejsou také direktivy.  
   
 ## <a name="example"></a>Příklad  
-  
+
 ```csharp
 // preprocessor_undef.cs  
 // compile with: /d:DEBUG  
 #undef DEBUG  
 using System;  
-class MyClass   
+class MyClass
 {  
-    static void Main()   
+    static void Main()
     {  
 #if DEBUG  
         Console.WriteLine("DEBUG is defined");  
@@ -36,10 +36,12 @@ class MyClass
 #endif  
     }  
 }  
-```  
-  
- **LADĚNÍ není definován.**  
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)
+```
+
+**LADĚNÍ není definován.**
+
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)

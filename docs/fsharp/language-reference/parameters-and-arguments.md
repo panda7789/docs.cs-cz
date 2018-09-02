@@ -3,11 +3,11 @@ title: Parametry a argumenty (F#)
 description: 'Další informace o podpora jazyka F # pro definování parametrů a předávání argumentů do funkce, metody a vlastnosti.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 9744339110314e4e6b3c3cf8d49b1c988bc25e3c
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43254006"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43471978"
 ---
 # <a name="parameters-and-arguments"></a>Parametry a argumenty
 

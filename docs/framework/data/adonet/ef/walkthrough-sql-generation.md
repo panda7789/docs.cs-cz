@@ -2,15 +2,15 @@
 title: 'Návod: Generování SQL'
 ms.date: 03/30/2017
 ms.assetid: 16c38aaa-9927-4f3c-ab0f-81636cce57a3
-ms.openlocfilehash: ab08b404dc60483a39e5c6ae56d82b63932c3f3e
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 5551eb4088e7529c61d5c517fed6877c23ae12f2
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32766319"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43472069"
 ---
 # <a name="walkthrough-sql-generation"></a>Návod: Generování SQL
-Toto téma ukazuje, jak SQL generace dojde v [ukázka zprostředkovatele](http://go.microsoft.com/fwlink/?LinkId=180616). Následující dotaz Entity SQL používá model, který je součástí ukázkového zprostředkovatele:  
+Toto téma ukazuje, jak probíhá generování SQL [zprostředkovateli ukázek](https://go.microsoft.com/fwlink/?LinkId=180616). Následující dotaz Entity SQL používá model, který je součástí ukázkového zprostředkovatele:  
   
 ```  
 SELECT  j1.ProductId, j1.ProductName, j1.CategoryName, j2.ShipCountry, j2.ProductId  
@@ -21,7 +21,7 @@ INNER JOIN (SELECT OD.ProductId, OD.Order.ShipCountry as ShipCountry
             ON j1.ProductId == j2.ProductId   
 ```  
   
- Následující stromové struktury výstup příkazu, která je předána zprostředkovateli výsledkem dotazu:  
+ Dotaz vytvoří následující výstup příkazu stromu, který je předán do zprostředkovatele:  
   
 ```  
 DbQueryCommandTree  
@@ -82,7 +82,7 @@ DbQueryCommandTree
           |_Var(Join4).Join3.Extent3.ProductID  
 ```  
   
- Toto téma popisuje způsob převodu tohoto stromu příkazů výstup do následující příkazy SQL.  
+ Toto téma popisuje, jak převést tohoto stromu příkazů výstup do těchto příkazů SQL.  
   
 ```  
 SELECT   
@@ -105,58 +105,58 @@ LEFT OUTER JOIN [dbo].[InternationalOrders] AS [Extent5] ON [Extent4].[OrderID] 
    ) AS [Join3] ON [Extent1].[ProductID] = [Join3].[ProductID]  
 ```  
   
-## <a name="first-phase-of-sql-generation-visiting-the-expression-tree"></a>První fáze generování SQL: návštěvou strom výrazu  
- Následující obrázek ukazuje počáteční prázdný stav návštěvníka.  V tomto tématu jsou uvedeny pouze vlastnosti, které se týkají vysvětlení návod.  
+## <a name="first-phase-of-sql-generation-visiting-the-expression-tree"></a>První fázi generování SQL: na strom výrazu  
+ Následující obrázek znázorňuje prázdný počáteční stav návštěvníka.  V tomto tématu jsou uvedeny pouze vlastnosti, které se týkají vysvětlení návod.  
   
  ![Diagram](../../../../../docs/framework/data/adonet/ef/media/430180f5-4fb9-4bc3-8589-d566512d9703.gif "430180f5-4fb9-4bc3-8589-d566512d9703")  
   
- Při návštěvě uzel projektu, se nazývá VisitInputExpression přes vstupní (Join4), která aktivuje návštěvu Join4 metodou VisitJoinExpression. Protože je to nejhornější spojení, IsParentAJoin vrací hodnotu false a nové SqlSelectStatement (SelectStatement0) je vytvořen a nabídnutých v zásobníku příkazu SELECT. Navíc nového oboru (scope0) je zadána v tabulce symbolu. Předtím, než je první (levém) vstup připojení k navštívili, hodnotu true' je nabídnutých v zásobníku IsParentAJoin. Těsně před Join1, který je levém vstup Join4, je navštívili, stav návštěvníka je, jak ukazuje následující obrázek.  
+ Když je uživatel na uzel projektu, se nazývá VisitInputExpression přes vstup (Join4), která aktivuje návštěvu Join4 metodou VisitJoinExpression. Protože to je nejvyšší spojení, IsParentAJoin vrátí hodnotu false a nové SqlSelectStatement (SelectStatement0) se vytvoří a posunuto v zásobníku příkazu SELECT. Navíc nového oboru (scope0) je zadána v tabulce symbolů. Předtím, než je zobrazeny prvního vstupu (vlevo) spojení, 'true' je posunuto v zásobníku IsParentAJoin. Těsně před Join1, což je levým vstupem Join4, je navštívili, je stav návštěvníka jak je znázorněno na následujícím obrázku.  
   
  ![Diagram](../../../../../docs/framework/data/adonet/ef/media/406d4f5f-6166-44ea-8e74-c5001d5d5d79.gif "406d4f5f-6166-44ea-8e74-c5001d5d5d79")  
   
- Když navštíví spojení metoda je volána přes Join4, IsParentAJoin má hodnotu true, proto ji znovu použije aktuální příkaz select SelectStatement0. Nový obor je zadané (scope1). Před jeho levé podřízené Extent1, kteří navštěvují se v zásobníku IsParentAJoin posune jinou hodnotu true.  
+ Když navštíví spojení přes Join4 je vyvolána metoda, IsParentAJoin má hodnotu true, proto ji znovu použije aktuální příkaz select SelectStatement0. Nový obor je zadané (scope1). Před jeho levého podřízené Extent1, jiné true je vloženo do zásobníku IsParentAJoin.  
   
- Při návštěvě Extent1, protože IsParentAJoin vrací hodnotu true, vrátí SqlBuilder, obsahující "[dbo]. [Produkty] ". Vrátí ovládací prvek metodu návštěvou Join4. Položka je odebrány z IsParentAJoin a ProcessJoinInputResult je volána, který připojí výsledek hostujících Extent1 klauzuli From SelectStatement0. Nový z symbol, symbol_Extent1, pro vytvoření názvu Vstupní vazba "Extent1" přidány do FromExtents SelectStatement0 a také "Jako" a symbol_Extent1 se připojí k klauzuli from. Nový záznam se přidá do AllExtentNames pro "Extent1" s hodnotou 0. Nový záznam se přidá do aktuálního oboru v tabulce symbol "Extent1" přidružit jeho symbol_Extent1 symbol. Symbol_Extent1 je taky přidaný ke AllJoinExtents SqlSelectStatement.  
+ Když je uživatel Extent1, protože IsParentAJoin vrací hodnotu true, vrátí SqlBuilder obsahující "[dbo]. [Products] ". Ovládací prvek vrátí metoda Join4 navštívit. Záznam je odebrán z IsParentAJoin a ProcessJoinInputResult je volána, která připojí výsledek hostujících Extent1 klauzule From SelectStatement0. Nový z symbol symbol_Extent1, pro vytvoření názvu Vstupní vazba "Extent1" přidány do FromExtents SelectStatement0 a také "Jak" a symbol_Extent1 jsou připojeny k klauzuli from. Nový záznam se přidá do AllExtentNames pro "Extent1" s hodnotou 0. Přidá nový záznam do aktuálního oboru v tabulce symbolů, které chcete přidružit k její symbol_Extent1 symbol "Extent1". Symbol_Extent1 je taky přidaný ke AllJoinExtents SqlSelectStatement.  
   
- Předtím, než je správný vstup Join1 navštívili, "LEFT OUTER JOIN" se přidá do klauzuli From SelectStatement0. Protože správný vstup je výraz kontroly, true znovu vložena do zásobníku IsParentAJoin. Stav před návštěvou správný vstup, jak ukazuje následující obrázek.  
+ Předtím, než je pravým vstupem modulu Join1 navštívili, "LEFT OUTER JOIN" je přidána do klauzule From SelectStatement0. Protože pravým vstupem je výraz kontroly, převede se true znovu IsParentAJoin zásobníku. Stav, který se před návštěvou pravým vstupem, jak je znázorněno na následujícím obrázku.  
   
  ![Diagram](../../../../../docs/framework/data/adonet/ef/media/ca62c31b-7ff6-4836-b209-e16166304fdc.gif "ca62c31b-7ff6-4836-b209-e16166304fdc")  
   
- Správný vstup se zpracovává stejně jako levý vstupní. Stav po přečtení informací správný vstup je ukazuje následující obrázek.  
+ Správný vstup se zpracovává stejně jako s levým vstupem. Stav po přečtení informací pravým vstupem je zobrazen na dalším obrázku.  
   
  ![Diagram](../../../../../docs/framework/data/adonet/ef/media/cd2afa99-7256-4c63-aaa9-c2d13f18a3d8.gif "cd2afa99-7256-4c63-aaa9-c2d13f18a3d8")  
   
- V zásobníku IsParentAJoin a podmínku připojení Var(Extent1) se posune další "false". CategoryID == Var(Extent2). CategoryID, jsou zpracovávány. Var(Extenent1) je převést < symbol_Extent1 > po podívejte se nahoru v tabulky symbolů. Protože je přeložit na Symbol jednoduché jako výsledek zpracování Var(Extent1) instance. CategoryID, SqlBuilder s \<symbol1 >. " Vrátí se CategoryID". Podobně jako druhá strana porovnání zpracování a výsledek hostujících podmínku připojení je připojeno k SelectStatement1 a hodnota, kterou "false" odebrány ze zásobníku IsParentAJoin klauzule FROM.  
+ Další "false" je posunuto v zásobníku IsParentAJoin a podmínky spojení Var(Extent1). ID kategorie == Var(Extent2). ID kategorie se zpracovává. Var(Extenent1) je přeložen na < symbol_Extent1 > po pohled nahoru v tabulce symbolů. Protože instance je přeložit na jednoduché Symbol, jako výsledek zpracování Var(Extent1). ID kategorie, SqlBuilder s \<symbol1 >. " ID kategorie"je vrácena. Podobně se zpracovává druhé straně porovnání a výsledek hostujících podmínka spojení je připojena k SelectStatement1 a hodnota, kterou "false" je odebrán ze zásobníku IsParentAJoin klauzule FROM.  
   
- S tím Join1 úplně byly zpracovány, a obor je odebrány z tabulky symbolů.  
+ Díky tomu Join1 zcela byla zpracována a obor je odebrán z tabulky symbolů.  
   
- Vrátí ovládací prvek zpracování Join4 nadřazeného Join1. Vzhledem k tomu, že podřízená opakovaně příkaz Select, Join1 rozsahy jsou nahrazeny jeden symbol spojení < joinSymbol_Join1 >. Také je přidat novou položku do tabulky symbolů pro přidružení Join1 < joinSymbol_Join1 >.  
+ Ovládací prvek vrátí na zpracování Join4 nadřazené Join1. Protože podřízený znovu použít příkaz Select, Join1 rozsahy jsou nahrazeny jednoho symbol Join < joinSymbol_Join1 >. Také se přidá nový záznam do tabulky symbolů Join1 přidružit < joinSymbol_Join1 >.  
   
- Další uzel mají být zpracovány je Join3, druhý podřízeným Join4. Protože je správné podřízené, "Nepravda" vložena do zásobníku IsParentAJoin. Stav návštěvníka v tomto okamžiku je znázorněno v následující obrázek.  
+ Další uzel ke zpracování je Join3, druhý podřízený Join4. Je to správné podřízené, "false" se vloží do zásobníku IsParentAJoin. Stav návštěvníka v tomto okamžiku je znázorněno v následující obrázek.  
   
  ![Diagram](../../../../../docs/framework/data/adonet/ef/media/1ec61ed3-fcdd-4649-9089-24385be7e423.gif "1ec61ed3-fcdd-4649-9089-24385be7e423")  
   
- Pro Join3 IsParentAJoin vrací hodnotu false a je potřeba spustit novou SqlSelectStatement (SelectStatement1) a poslat ho v zásobníku. Zpracování pokračuje podle nebyla s předchozí předchozí spojení, nový obor se posune do zásobníku a podřízené objekty jsou zpracovávány. Levé podřízená položka rozsah (Extent3) a správné podřízená položka spojení (Join2), který se taky musí spustit novou SqlSelectStatement: SelectStatement2. Podřízené objekty na Join2 rozsahy jsou také a jsou agregováni do SelectStatement2.  
+ IsParentAJoin Join3, vrátí hodnotu false a je potřeba spustit nový SqlSelectStatement (SelectStatement1) a pak ji nasdílet do zásobníku. Zpracování pokračuje podle udělal s předchozím předchozí spojení, nový obor je vloženo do zásobníku a jsou zpracovány podřízené objekty. Levé podřízený člen je v rozsahu (Extent3) a správné podřízená položka spojení (Join2), takže bude také potřeba spustit nový SqlSelectStatement: SelectStatement2. Podřízené položky na Join2 rozsahy jsou také a souhrnně započítávají do SelectStatement2.  
   
- Stav právo návštěvníka po Join2 je navštívili, ale předtím, než se provádí jeho po zpracování (ProcessJoinInputResult) se zobrazí v následující obrázek:  
+ Stav vpravo návštěvníka po Join2 je zobrazeny, ale před jeho po zpracování (ProcessJoinInputResult) se provádí je zobrazen v na následujícím obrázku:  
   
  ![Diagram](../../../../../docs/framework/data/adonet/ef/media/7510346f-8b09-4c99-b411-40af239c3c4d.gif "7510346f-8b09-4c99-b411-40af239c3c4d")  
   
- Na předchozím obrázku je zobrazena SelectStatement2 jako volné plovoucí protože byla mimo zásobníku odebrány, ale ještě nebyla post zpracovává nadřazený. Musí být přidán do části od nadřazeného objektu, ale není dokončení příkazu jazyka SQL bez klauzuli SELECT. Ano v tomto okamžiku výchozí sloupce (všechny sloupce vyprodukované vstupy) se přidají do seznamu příkazu select metodou AddDefaultColumns. AddDefaultColumns iteruje nad symboly v FromExtents a pro každý symbol přidá všechny sloupce v oboru. Pro jednoduché symbol vypadá na typ symbolu načíst všechny jeho vlastnosti, který se má přidat. Naplní také slovníku AllColumnNames s názvy sloupců. Dokončené SelectStatement2 se připojuje k klauzuli FROM SelectStatement1.  
+ Na předchozím obrázku se zobrazí SelectStatement2 zdarma s plovoucí desetinnou čárkou protože byl odebrán ze zásobníku, ale dosud příspěvek zpracování nadřazenou položkou. Je potřeba přidat do části od nadřazené položky, ale není úplným příkazem SQL bez klauzule SELECT. Ano v tomto okamžiku výchozích sloupců (všechny sloupce produkované jeho vstupů) jsou přidány do seznamu příkazu select metodou AddDefaultColumns. AddDefaultColumns Iteruje přes symboly v FromExtents a pro každý symbol přidá všechny sloupce v oboru. Pro jednoduché symbol dohlíží na typ symbolu, který pro načtení všech vlastností přidat. Naplní také AllColumnNames slovník s názvy sloupců. Dokončené SelectStatement2 se připojí k klauzule FROM SelectStatement1.  
   
- Další který představuje Join2 je vytvořen nový symbol spojení, je označena jako vnořené připojení a přidat do AllJoinExtents SelectStatement1 a přidat do tabulky symbolů.  Nyní podmínku spojení Join3, Var(Extent3). OrderID = Var(Join2). Extent4.OrderID, je potřeba zpracovat. Zpracování na levé straně je podobná podmínku spojení Join1. Ale zpracování práva a straně "Var(Join2). Extent4.OrderID"se liší, protože připojení k vyrovnání je vyžadován.  
+ V dalším kroku se vytvoří nový symbol spojení k reprezentaci Join2, se označí jako vnořené spojení a přidán do AllJoinExtents SelectStatement1 a přidá do tabulky symbolů.  Nyní podmínka spojení Join3 Var(Extent3). OrderID = Var(Join2). Extent4.OrderID, je potřeba zpracovat. Zpracování na levé straně je podobný podmínka spojení Join1. Nicméně zpracování doprava a na straně "Var(Join2). Extent4.OrderID"se liší, protože spojení sloučení je povinný.  
   
- Následující obrázek ukazuje stav návštěvníka těsně před DbPropertyExpression "Var(Join2). Extent4.OrderID", jsou zpracovávány.  
+ Následující obrázek ukazuje stav návštěvníka těsně před DbPropertyExpression "Var(Join2). Extent4.OrderID", jsou zpracovávána.  
   
- Vezměte v úvahu jak "Var(Join2). Je navštívené Extent4.OrderID". První, vlastnost instance "Var(Join2). Extent4 "je navštívili, který je jiný DbPropertyExpression a nejprve navštíví jeho instance"Var(Join2)". V horní většina oboru v tabulce symbol "Join2" přeloží na < joinSymbol_join2 >. V metodě návštěvu pro DbPropertyExpression zpracování "Var(Join2). Extent4 "Všimněte si, že při vyžádáním návštěvou instance a vyrovnání byla vrácena symbol spojení.  
+ Vezměte v úvahu jak "Var(Join2). Je-li zobrazeny Extent4.OrderID". První, vlastnost instance "Var(Join2). Extent4 "je navštívili, což je jiný DbPropertyExpression a první návštěvy své instance"Var(Join2)". V oboru nejvyšší většina v tabulce symbolů "Join2" přeloží na < joinSymbol_join2 >. V metodě návštěvu pro DbPropertyExpression zpracování "Var(Join2). Extent4 "Všimněte si, že symbol spojení byla vrácena při návštěvě instance a sloučení.  
   
- Vzhledem k tomu, že je vnořené spojení, jsme vyhledat vlastnost "Extent4" ve slovníku NameToExtent symbolu spojení, odkazující na < symbol_Extent4 > a vrátí nové SymbolPair (< joinSymbol_join2 >, < symbol_Extent4 >). Vzhledem k tomu pár symbol vrácená zpracování instance "Var(Join2). Extent4.OrderID","OrderID"vlastnost vyřešen z ColumnPart dvojic tento symbol (< symbol_Extent4 >), který má seznam sloupců v rozsahu, který představuje. Tedy "Var(Join2). Extent4.OrderID"je přeložen na {< joinSymbol_Join2 >". ", < symbol_OrderID >}.  
+ Protože je vnořené spojení, jsme vyhledat vlastnost "Extent4" ve slovníku NameToExtent symbolu spojení, ho vyřešit < symbol_Extent4 > a vrátí nový SymbolPair (< joinSymbol_join2 >, < symbol_Extent4 >). Protože dvojice symbol je vrácen z zpracování instance "Var(Join2). Vyřešeno z ColumnPart tento symbol pár (< symbol_Extent4 >), který má seznam sloupců v rozsahu, který představuje Extent4.OrderID", je vlastnost"OrderID". Tedy "Var(Join2). Extent4.OrderID"je přeložen na {< joinSymbol_Join2 >". ", < symbol_OrderID >}.  
   
- Připojení k podmínku Join4 podobně zpracovává. Ovládací prvek vrátí metodu VisitInputExpression, který zpracovává horní většina projekt. Prohlížení FromExtents z vráceného SelectStatement0, vstup je označený jako spojení a původní rozsahy odebere a nahradí je nový rozsah symbolem právě spojení. Tabulky symbolů je rovněž aktualizováno a znovu zpracována projekce součástí projektu. Řešení vlastnosti a vyrovnání rozsahy spojení je, jak je popsáno výše.  
+ Podmínka spojení Join4 podobně zpracování. Ovládací prvek vrátí VisitInputExpression metody, který zpracovává horní části většiny projektů. Prohlížení FromExtents vrácené SelectStatement0, vstup je identifikován jako spojení a odstraní původní mezí a nahradí je nový rozsah se právě symbol spojení. Tabulky symbolů je rovněž aktualizováno a další zpracování projekce součástí projektu. Řešení vlastností a sloučení rozsahy spojení je popsáno výše.  
   
  ![Diagram](../../../../../docs/framework/data/adonet/ef/media/9456d6a9-ea2e-40ae-accc-a10e18e28b81.gif "9456d6a9-ea2e-40ae-accc-a10e18e28b81")  
   
- Nakonec se vytvoří následující SqlSelectStatement:  
+ Nakonec je vytvořen SqlSelectStatement následující:  
   
 ```  
 SELECT:   
@@ -192,12 +192,12 @@ FROM: "[dbo].[Orders]", " AS ", <symbol_Extent4>,
 " )", " AS ", <joinSymbol_Join3>, " ON ", , , <symbol_Extent1>, ".", "[ProductID]", " = ", , <joinSymbol_Join3>, ".", <symbol_ProductID>  
 ```  
   
-### <a name="second-phase-of-sql-generation-generating-the-string-command"></a>Druhé fáze generování SQL: generování příkaz String  
- Druhé fáze vytváří skutečné názvy symbolů a pouze zaměříme na symboly představující sloupců jako v tomto případě musí být vyřešen konflikt s názvem "OrderID". Tyto jsou vyznačené na SqlSelectStatement. Všimněte si, že přípony použít na obrázku jsou jenom pro zdůraznit, že jsou různé instance nechcete v této představují nové názvy, Příprava jejich poslední názvy (by mohl mít jiný formuláři původní názvy) ještě nebyla přiřazena.  
+### <a name="second-phase-of-sql-generation-generating-the-string-command"></a>Druhá fáze generování SQL: generování příkaz String  
+ Druhá fáze vytvoří skutečné názvy symbolů a zaměříme jenom na symboly představující sloupce s názvem "OrderID", stejně jako v tomto případě ke konfliktu se musí přeložit. Tyto jsou zvýrazněné SqlSelectStatement. Všimněte si, že přípony použita na obrázku jsou pouze pro zdůraznit, že jsou různé instance, není k reprezentaci žádné nové názvy v této fáze jejich poslední názvů (by mohly mít odlišné formuláře původní názvy) dosud nebyla přiřazena.  
   
- První symbol nalezen, který vyžaduje k přejmenování je < symbol_OrderID >. Jejím novým názvem je přiřazen jako "OrderID1", 1 je označena jako poslední používat příponu pro "OrderID" a symbol je označena jako není nutnosti přejmenování. V dalším kroku první použití < symbol_OrderID_2 > nachází. Je přejmenován na používají další dostupné příponu ("OrderID2") a znovu označena není potřebují přejmenování, tak, aby při příštím se používá ji není získat přejmenovat. To se provádí příliš pro < symbol_OrderID_3 >.  
+ První symbol nalezen, které je nutné přejmenovat je < symbol_OrderID >. Jejím novým názvem je přiřazen jako "OrderID1", 1 je označen jako poslední použitá přípona pro "OrderID" a symbol je označen jako není nutnosti přejmenování. V dalším kroku první využití < symbol_OrderID_2 > nebyl nalezen. Je přejmenován na tuto příponu použít, další k dispozici ("OrderID2") a znovu se označilo jako vyžadující není přejmenování, tak, aby při příštím se používá ji není přejmenují. To se provádí příliš pro < symbol_OrderID_3 >.  
   
- Na konci druhé fáze generuje se poslední příkaz jazyka SQL.  
+ Na konci druhé fáze je generována poslední příkaz jazyka SQL.  
   
 ## <a name="see-also"></a>Viz také  
  [Generování SQL ve zprostředkovateli ukázek](../../../../../docs/framework/data/adonet/ef/sql-generation-in-the-sample-provider.md)

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - '#warning directive [C#]'
 ms.assetid: e6fb496d-bb8b-4018-baf6-5b60a0c8902b
 ms.openlocfilehash: 59ca63d5089e377627a9116f24f9a0a1681bb4b2
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42932674"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43461680"
 ---
 # <a name="warning-c-reference"></a>#warning (referenční dokumentace jazyka C#)
 `#warning` Umožňuje generovat [CS1030](../../misc/cs1030.md) úroveň jedno upozornění kompilátoru z určitého umístění ve vašem kódu. Příklad:  

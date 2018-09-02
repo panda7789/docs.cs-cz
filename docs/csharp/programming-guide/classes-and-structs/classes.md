@@ -7,11 +7,11 @@ helpviewer_keywords:
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
 ms.openlocfilehash: 5f4bcf9957f91fe3ee8a62a8dc68448188df4188
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43256050"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43467039"
 ---
 # <a name="classes-c-programming-guide"></a>Třídy (Průvodce programováním v C#)
 A *třídy* je konstrukce, která umožňuje vytvořit vlastní typy prostřednictvím seskupování proměnné jiné typy, metody a události. Třída je jako matrice. Definuje data a chování typu. Pokud třída není deklarována jako statická, můžete vytvořit kód klienta *instance* ho. Tyto instance jsou *objekty* které jsou přiřazeny proměnné. Instance třídy zůstanou v paměti, dokud se všechny odkazy na něj dostanou mimo rozsah. V tu chvíli CLR ho označí jako oprávněné pro uvolnění paměti. Pokud je tato třída deklarovaná jako [statické](../../../csharp/language-reference/keywords/static.md), nelze vytvořit instance a klientský kód pouze k němu přístup pomocí vlastní třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  

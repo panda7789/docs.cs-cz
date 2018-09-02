@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: 869c05e7-4ebe-467d-95ab-c8f8de4e6b9e
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 734b6d0625cfda79b600a0920ab39bda25ee2e8b
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 023e0dd2a89c005928625cf95f3de61af81c7b6b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32750489"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43464996"
 ---
 # <a name="ltsecuritygt-of-ltwsdualhttpbindinggt"></a>&lt;security&gt; – &lt;wsDualHttpBinding&gt;
-Definuje možnosti zabezpečení [ \<– wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  
+Definuje možnosti zabezpečení [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  
   
  \<system.ServiceModel>  
 \<vazby >  
 \<wsDualHttpBinding>  
-\<Vazba >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,29 +38,29 @@ Definuje možnosti zabezpečení [ \<– wsDualHttpBinding >](../../../../../doc
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|režim|-Volitelné. Určuje typ zabezpečení, který se použije. Výchozí hodnota je `Message`. Tento atribut je typu <xref:System.ServiceModel.WSDualHttpSecurityMode>.|  
+|režim|– Volitelné. Určuje typ zabezpečení, který se použije. Výchozí hodnota je `Message`. Tento atribut je typu <xref:System.ServiceModel.WSDualHttpSecurityMode>.|  
   
 ## <a name="mode-attribute"></a>režim atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|Zabezpečení je vypnuté.|  
-|Zpráva|Zabezpečení je k dispozici pomocí zabezpečení zpráv protokolu SOAP.|  
+|Žádné|Zabezpečení je zakázaná.|  
+|Zpráva|Poskytuje zabezpečení pomocí zabezpečení zprávy protokolu SOAP.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wsdualhttpbinding.md)|Definuje nastavení pro zprávy úroveň zabezpečení. Tento element je typu <xref:System.ServiceModel.MessageSecurityOverHttp>.|  
+|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wsdualhttpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení. Tento prvek je typu <xref:System.ServiceModel.MessageSecurityOverHttp>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vazba >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vazby [ \<– wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).|  
+|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny vazby funkce [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).|  
   
 ## <a name="remarks"></a>Poznámky  
- Duální vazbu zpřístupní IP adresu klienta ke službě. Klient musí použít zabezpečení zajistit, že pouze připojení k službám ho vztahy důvěryhodnosti.  
+ Duální vazby poskytuje IP adresu klienta do služby. Klient musí použít zabezpečení zajistit, že pouze připojení ke službám ho vztahy důvěryhodnosti.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.WSDualHttpSecurity>  
@@ -68,5 +68,5 @@ Definuje možnosti zabezpečení [ \<– wsDualHttpBinding >](../../../../../doc
  [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<Vazba >](../../../../../docs/framework/misc/binding.md)
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

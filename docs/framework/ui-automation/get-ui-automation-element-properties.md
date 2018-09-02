@@ -11,30 +11,30 @@ ms.assetid: 09576b1a-291f-435c-980e-dee32d899ae1
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 73678433692f5532f712f0d2c7a3c5bf138a87b5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9876aa894c49ec7af1ecd240e12e0f70eccfd89f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405574"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43467354"
 ---
 # <a name="get-ui-automation-element-properties"></a>Získání vlastností elementů automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Toto téma ukazuje, jak načíst vlastnosti [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] elementu.  
   
-### <a name="get-a-current-property-value"></a>Získat aktuální hodnota vlastnosti  
+### <a name="get-a-current-property-value"></a>Získat aktuální hodnotu vlastnosti  
   
 1.  Získat <xref:System.Windows.Automation.AutomationElement> jehož vlastnosti chcete získat.  
   
-2.  Volání <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A>, nebo načíst <xref:System.Windows.Automation.AutomationElement.Current%2A> vlastnost struktura a získat hodnotu z jednoho ze svých členů.  
+2.  Volání <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A>, nebo načíst <xref:System.Windows.Automation.AutomationElement.Current%2A> vlastnost strukturu a získat hodnotu z jednoho z jejích členů.  
   
-### <a name="get-a-cached-property-value"></a>Získat hodnotu vlastnosti uloženou v mezipaměti  
+### <a name="get-a-cached-property-value"></a>Získat hodnotu vlastnosti uložené v mezipaměti  
   
-1.  Získat <xref:System.Windows.Automation.AutomationElement> jehož vlastnosti chcete získat. Tato vlastnost musí byla zadaná v <xref:System.Windows.Automation.CacheRequest>.  
+1.  Získat <xref:System.Windows.Automation.AutomationElement> jehož vlastnosti chcete získat. Vlastnost musí byl zadán v <xref:System.Windows.Automation.CacheRequest>.  
   
-2.  Volání <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>, nebo načíst <xref:System.Windows.Automation.AutomationElement.Cached%2A> vlastnost struktura a získat hodnotu z jednoho ze svých členů.  
+2.  Volání <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>, nebo načíst <xref:System.Windows.Automation.AutomationElement.Cached%2A> vlastnost strukturu a získat hodnotu z jednoho z jejích členů.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje různé způsoby, jak načíst aktuální vlastnosti <xref:System.Windows.Automation.AutomationElement>.  

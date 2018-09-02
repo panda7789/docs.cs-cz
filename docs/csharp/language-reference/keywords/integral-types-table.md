@@ -1,42 +1,49 @@
 ---
-title: Tabulka celočíselných typů (Referenční dokumentace jazyka C#)
-ms.date: 07/20/2015
+title: Tabulka celočíselných typů (referenční dokumentace jazyka C#)
+description: Přehled integrované C# integrální typy
+ms.date: 08/20/2018
 helpviewer_keywords:
 - integral types, C#
 - Visual C#, integral types
 - types [C#], integral types
 - ranges of integral types [C#]
 ms.assetid: 62e86126-46ff-40b0-9028-e61d7558268c
-ms.openlocfilehash: d524224f15d7861328cc24b1e4f9a54fcc16ee34
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4ac16d185a52cdb03fcb22f57ebf7506f2fb2745
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33267906"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43467189"
 ---
-# <a name="integral-types-table-c-reference"></a>Tabulka celočíselných typů (Referenční dokumentace jazyka C#)
-V následující tabulce jsou uvedeny velikosti a rozsah celočíselných typů, které tvoří podmnožinu jednoduchých typů.  
+# <a name="integral-types-table-c-reference"></a>Tabulka celočíselných typů (referenční dokumentace jazyka C#)
+
+V následující tabulce jsou uvedeny velikosti a rozsah celočíselných typů, které představují podmnožinu jednoduchých typů.  
   
 |Typ|Rozsah|Velikost|  
 |----------|-----------|----------|  
-|[sbyte](../../../csharp/language-reference/keywords/sbyte.md)|-128 až 127|8bitové celé číslo se znaménkem|  
-|[byte](../../../csharp/language-reference/keywords/byte.md)|0 až 255|Nepodepsané 8bitové celé číslo|  
-|[char](../../../csharp/language-reference/keywords/char.md)|U + 0000 U + ffff|16bitové znak Unicode|  
-|[short](../../../csharp/language-reference/keywords/short.md)|-32 768 do 32 767|16bitové celé číslo se znaménkem|  
-|[ushort](../../../csharp/language-reference/keywords/ushort.md)|0 až 65 535|Nepodepsané 16bitové celé číslo|  
-|[int](../../../csharp/language-reference/keywords/int.md)|-2 147 483 648 na 2 147 483 647|32bitové celé číslo se znaménkem|  
-|[uint](../../../csharp/language-reference/keywords/uint.md)|0 do 4 294 967 295|Celé číslo bez znaménka 32-bit|  
-|[long](../../../csharp/language-reference/keywords/long.md)|-9,223,372,036,854,775,808 k 9,223,372,036,854,775,807|64bitové celé číslo se znaménkem|  
-|[ulong](../../../csharp/language-reference/keywords/ulong.md)|0 – 18,446,744,073,709,551,615|Celé číslo bez znaménka 64-bit|  
+|[sbyte](sbyte.md)|-128 až 127|8bitové celé číslo se znaménkem|  
+|[byte](byte.md)|0 až 255|Celé číslo bez znaménka 8 bitů|  
+|[char](char.md)|U + 0000 U + ffff|16bitový znak Unicode|  
+|[short](short.md)|-32 768 do 32 767|16bitové celé číslo se znaménkem|  
+|[ushort](ushort.md)|0 až 65 535|Celé číslo bez znaménka 16 bitů|  
+|[int](int.md)|-2 147 483 648 do 2 147 483 647|32bitové celé číslo se znaménkem|  
+|[uint](uint.md)|0 do 4 294 967 295|Nepodepsané 32bitové celé číslo|  
+|[long](long.md)|-9,223,372,036,854,775,808 k 9,223,372,036,854,775,807|64bitové celé číslo se znaménkem|  
+|[ulong](ulong.md)|0 na 18,446,744,073,709,551,615|64-bit znaménka.|  
+
+## <a name="remarks"></a>Poznámky
   
- Pokud hodnota reprezentována celé literálu překračuje rozsah `ulong`, dojde k chybě kompilace.  
+Pokud se překročí Hodnota reprezentovaná celočíselného literálu <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, chybu kompilátoru [CS1021](../../misc/cs1021.md) vyvolá.
+
+Použití <xref:System.Numerics.BigInteger?displayProperty=nameWithType> pro reprezentaci libovolně velké podepsané celé číslo.
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  
- [Tabulka typů s plovoucí desetinnou čárkou](../../../csharp/language-reference/keywords/floating-point-types-table.md)  
- [Tabulka výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md)  
- [Tabulka formátování číselných výsledků](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md)  
- [Referenční tabulky pro typy](../../../csharp/language-reference/keywords/reference-tables-for-types.md)
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
+- [Referenční tabulky pro typy](reference-tables-for-types.md)
+- [Tabulka typů s plovoucí desetinnou čárkou](floating-point-types-table.md)
+- [Tabulka výchozích hodnot](default-values-table.md)
+- [Tabulka formátování číselných výsledků](formatting-numeric-results-table.md)
+- [Tabulka předdefinovaných typů](built-in-types-table.md)

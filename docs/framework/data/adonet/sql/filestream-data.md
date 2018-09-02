@@ -2,12 +2,12 @@
 title: FILESTREAM Data
 ms.date: 03/30/2017
 ms.assetid: bd8b845c-0f09-4295-b466-97ef106eefa8
-ms.openlocfilehash: fb7291fad15917614f5eebd31ad0e239c987a81d
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: eef03d171d288cb2bc62c3aaa477a95a5ce718c3
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42931397"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43463166"
 ---
 # <a name="filestream-data"></a>FILESTREAM Data
 Atribut úložiště FILESTREAM je binárních (objektů BLOB) data uložená v sloupce varbinary(max). Před FILESTREAM ukládání binárních dat vyžaduje speciální zacházení. Nestrukturovaných dat, jako jsou textové dokumenty, obrázky a videa, je často uložená mimo databázi kvůli tomu obtížné spravovat.  
@@ -176,8 +176,8 @@ namespace FileStreamTest
 |-----------|-----------------|  
 |[Navrhování a implementace úložiště FILESTREAM](http://msdn2.microsoft.com/library/bb895234\(SQL.105\).aspx)|Obsahuje odkazy na dokumentaci FILESTREAM a na odkaz Příbuzná témata.|  
 |[Přehled FILESTREAM](http://msdn2.microsoft.com/library/bb933993\(SQL.105\).aspx)|Popisuje použití úložiště FILESTREAM a popisuje integraci této služby databázového stroje SQL Server pomocí systému souborů NTFS.|  
-|[Začínáme se službou úložiště FILESTREAM](http://msdn.microsoft.com/library/bb933995\(SQL.105\).aspx)|Popisuje, jak povolit FILESTREAM v instanci systému SQL Server, vytvořit databázi a tabulku do uložených dat FILESTREAM a manipulace s řádky s daty FILESTREAM.|  
-|[Použití úložiště FILESTREAM v klientských aplikacích](http://msdn.microsoft.com/library/bb933877\(SQL.105\).aspx)|Popisuje funkce rozhraní Win32 API pro práci s daty FILESTREAM.|  
+|[Začínáme se službou úložiště FILESTREAM](https://msdn.microsoft.com/library/bb933995\(SQL.105\).aspx)|Popisuje, jak povolit FILESTREAM v instanci systému SQL Server, vytvořit databázi a tabulku do uložených dat FILESTREAM a manipulace s řádky s daty FILESTREAM.|  
+|[Použití úložiště FILESTREAM v klientských aplikacích](https://msdn.microsoft.com/library/bb933877\(SQL.105\).aspx)|Popisuje funkce rozhraní Win32 API pro práci s daty FILESTREAM.|  
 |[FILESTREAM a další funkce SQL serveru](/sql/relational-databases/blob/filestream-compatibility-with-other-sql-server-features)|Obsahuje důležité informace, pokyny a omezení pro používání dat FILESTREAM s jinými funkcemi systému SQL Server.|  
   
 ## <a name="see-also"></a>Viz také  
@@ -185,4 +185,4 @@ namespace FileStreamTest
  [Načítání a úpravy dat v ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  [Zabezpečení přístupu ke kódu a ADO.NET](../../../../../docs/framework/data/adonet/code-access-security.md)  
  [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,24 +1,24 @@
 ---
-title: Aktualizace dat ve zdroji dat
+title: Aktualizace dat ve zdroji dat.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 55c545e5-dcd5-4323-a5b9-3825c2157462
-ms.openlocfilehash: 11c3faa85d6d0b77c4e606815aa8252188b6f67d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d7b57a9572a285dfdc13afb0a520de67e231a1c0
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33357790"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43463907"
 ---
-# <a name="updating-data-in-a-data-source"></a>Aktualizace dat ve zdroji dat
-SQL příkazy, které upravují data (například INSERT, UPDATE nebo DELETE) nevrátí řádků. Podobně mnoho uložené procedury provedení akce, ale nevrátí řádků. Chcete-li provést příkazy, které nevracejí řádky, vytvořte **příkaz** objekt s příslušný příkaz SQL a **připojení**, včetně požadované **parametry**. Spusťte příkaz se **ExecuteNonQuery** metodu **příkaz** objektu.  
+# <a name="updating-data-in-a-data-source"></a>Aktualizace dat ve zdroji dat.
+Příkazy SQL, které upravují data (například vložení, aktualizace nebo odstranění) nevracejí řádky. Podobně mnoho uložené procedury provést akci, ale nevracejí řádky. Ke spuštění příkazů, které nevracejí řádky, vytvořit **příkaz** objekt s příslušný příkaz SQL a **připojení**, včetně požadované **parametry**. Příkaz Spustit **metodu ExecuteNonQuery** metodu **příkaz** objektu.  
   
- **ExecuteNonQuery** metoda vrátí celé číslo představující počet řádků, které jsou ovlivněné příkaz nebo uložené procedury, která byla spuštěna. Pokud jsou vícenásobné příkazy proveden, je hodnota vrácená součet záznamů ovlivněný všechny příkazy provést.  
+ **Metodu ExecuteNonQuery** metoda vrátí celé číslo představující počet řádků, které jsou ovlivněny příkazu nebo uložené procedury, která se spustil. Pokud více příkazy jsou spouštěny, vrácená hodnota je součtem záznamů ovlivněný všechny příkazy spuštění.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu provede k vložení záznamu do databáze pomocí příkazu INSERT **ExecuteNonQuery**.  
+ Příkaz INSERT k vložení záznamu do databáze pomocí provádí následující příklad kódu **metodu ExecuteNonQuery**.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -42,9 +42,9 @@ SqlCommand command = new SqlCommand(queryString, connection);
 Int32 recordsAffected = command.ExecuteNonQuery();  
 ```  
   
- Následující příklad kódu provede uloženou proceduru vytvořené ukázkový kód v [provádění operací katalogu](../../../../docs/framework/data/adonet/performing-catalog-operations.md). Žádné řádky se vrátí pomocí uložené procedury, proto **ExecuteNonQuery** metoda se používá, ale uložená procedura přijímat vstupní parametr a vrátí výstupní parametr a návratovou hodnotu.  
+ Následující příklad kódu Spustí uloženou proceduru vytvořen ukázkový kód v [provádění operací katalogu](../../../../docs/framework/data/adonet/performing-catalog-operations.md). Žádné řádky jsou vráceny pomocí uložené procedury, takže **metodu ExecuteNonQuery** metoda se používá, ale zobrazí vstupní parametr uložené procedury a vrátí výstupní parametr a návratové hodnoty.  
   
- Pro <xref:System.Data.OleDb.OleDbCommand> objekt, **ReturnValue** parametr musí být přidán do **parametry** kolekce první.  
+ Pro <xref:System.Data.OleDb.OleDbCommand> objektu, **ReturnValue** parametr musí být přidané do **parametry** kolekce první.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -95,4 +95,4 @@ Int32 rowCount = (Int32) command.Parameters["@RowCount"].Value;
  [Použití příkazů pro změny dat](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
  [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
  [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
