@@ -2,17 +2,17 @@
 title: Odvození omezení
 ms.date: 03/30/2017
 ms.assetid: 78517994-5d57-44f8-9d20-38812977de09
-ms.openlocfilehash: b3ad1e66a6a1a4cb2a2aab7b2f86f38e5c784876
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: d113df98cdd339300b3e75ceda49a56d4f346d3c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32760047"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417427"
 ---
-# <a name="inference-limitations"></a><span data-ttu-id="35d14-102">Odvození omezení</span><span class="sxs-lookup"><span data-stu-id="35d14-102">Inference Limitations</span></span>
-<span data-ttu-id="35d14-103">Proces odvození <xref:System.Data.DataSet> schématu z XML může mít za následek různé schémata v závislosti na elementy XML v každý dokument.</span><span class="sxs-lookup"><span data-stu-id="35d14-103">The process of inferring a <xref:System.Data.DataSet> schema from XML can result in different schemas depending on the XML elements in each document.</span></span> <span data-ttu-id="35d14-104">Zvažte například následující dokumenty XML.</span><span class="sxs-lookup"><span data-stu-id="35d14-104">For example, consider the following XML documents.</span></span>  
+# <a name="inference-limitations"></a><span data-ttu-id="c8349-102">Odvození omezení</span><span class="sxs-lookup"><span data-stu-id="c8349-102">Inference Limitations</span></span>
+<span data-ttu-id="c8349-103">Proces odvození <xref:System.Data.DataSet> schéma ze souboru XML může vést k různými schématy v závislosti na prvky XML v jednotlivých dokumentech.</span><span class="sxs-lookup"><span data-stu-id="c8349-103">The process of inferring a <xref:System.Data.DataSet> schema from XML can result in different schemas depending on the XML elements in each document.</span></span> <span data-ttu-id="c8349-104">Představte si třeba následující dokumenty XML.</span><span class="sxs-lookup"><span data-stu-id="c8349-104">For example, consider the following XML documents.</span></span>  
   
- <span data-ttu-id="35d14-105">Dokument1:</span><span class="sxs-lookup"><span data-stu-id="35d14-105">Document1:</span></span>  
+ <span data-ttu-id="c8349-105">Dokument1:</span><span class="sxs-lookup"><span data-stu-id="c8349-105">Document1:</span></span>  
   
 ```xml  
 <DocumentElement>  
@@ -21,7 +21,7 @@ ms.locfileid: "32760047"
 </DocumentElement>  
 ```  
   
- <span data-ttu-id="35d14-106">Document2:</span><span class="sxs-lookup"><span data-stu-id="35d14-106">Document2:</span></span>  
+ <span data-ttu-id="c8349-106">Document2:</span><span class="sxs-lookup"><span data-stu-id="c8349-106">Document2:</span></span>  
   
 ```xml  
 <DocumentElement>  
@@ -29,35 +29,35 @@ ms.locfileid: "32760047"
 </DocumentElement>  
 ```  
   
- <span data-ttu-id="35d14-107">Pro "Dokument1," proces odvození vytváří **datovou sadu** s názvem "Prvek DocumentElement" a tabulka s názvem "Element1,", protože "Element1" je opakující se prvek.</span><span class="sxs-lookup"><span data-stu-id="35d14-107">For "Document1," the inference process produces a **DataSet** named "DocumentElement" and a table named "Element1," because "Element1" is a repeating element.</span></span>  
+ <span data-ttu-id="c8349-107">Pro "Dokument1," vytvoří procesu odvození **datovou sadu** s názvem "Prvek DocumentElement" a tabulku s názvem "Element1", "Element1" představuje opakující se prvek proto.</span><span class="sxs-lookup"><span data-stu-id="c8349-107">For "Document1," the inference process produces a **DataSet** named "DocumentElement" and a table named "Element1," because "Element1" is a repeating element.</span></span>  
   
- <span data-ttu-id="35d14-108">**Datová sada:** prvek DocumentElement</span><span class="sxs-lookup"><span data-stu-id="35d14-108">**DataSet:** DocumentElement</span></span>  
+ <span data-ttu-id="c8349-108">**Datová sada:** prvek DocumentElement</span><span class="sxs-lookup"><span data-stu-id="c8349-108">**DataSet:** DocumentElement</span></span>  
   
- <span data-ttu-id="35d14-109">**Tabulka:** Element1</span><span class="sxs-lookup"><span data-stu-id="35d14-109">**Table:** Element1</span></span>  
+ <span data-ttu-id="c8349-109">**Tabulka:** Element1</span><span class="sxs-lookup"><span data-stu-id="c8349-109">**Table:** Element1</span></span>  
   
-|<span data-ttu-id="35d14-110">Element1_Text</span><span class="sxs-lookup"><span data-stu-id="35d14-110">Element1_Text</span></span>|  
+|<span data-ttu-id="c8349-110">Element1_Text</span><span class="sxs-lookup"><span data-stu-id="c8349-110">Element1_Text</span></span>|  
 |--------------------|  
-|<span data-ttu-id="35d14-111">Text1</span><span class="sxs-lookup"><span data-stu-id="35d14-111">Text1</span></span>|  
-|<span data-ttu-id="35d14-112">Text2</span><span class="sxs-lookup"><span data-stu-id="35d14-112">Text2</span></span>|  
+|<span data-ttu-id="c8349-111">Text1</span><span class="sxs-lookup"><span data-stu-id="c8349-111">Text1</span></span>|  
+|<span data-ttu-id="c8349-112">Text2</span><span class="sxs-lookup"><span data-stu-id="c8349-112">Text2</span></span>|  
   
- <span data-ttu-id="35d14-113">Ale pro "Document2," vytvoří proces odvození **datovou sadu** s názvem "NewDataSet" a tabulka s názvem "Prvek DocumentElement."</span><span class="sxs-lookup"><span data-stu-id="35d14-113">However, for "Document2," the inference process produces a **DataSet** named "NewDataSet" and a table named "DocumentElement."</span></span> <span data-ttu-id="35d14-114">"Element1" je jako sloupec odvodit, protože nemá žádné atributy a žádné podřízené prvky.</span><span class="sxs-lookup"><span data-stu-id="35d14-114">"Element1" is inferred as a column because it has no attributes and no child elements.</span></span>  
+ <span data-ttu-id="c8349-113">Ale pro "Document2," vytvoří procesu odvození **datovou sadu** s názvem "NewDataSet" a tabulku s názvem "Prvek DocumentElement."</span><span class="sxs-lookup"><span data-stu-id="c8349-113">However, for "Document2," the inference process produces a **DataSet** named "NewDataSet" and a table named "DocumentElement."</span></span> <span data-ttu-id="c8349-114">"Element1" je odvozen jako sloupec, protože nemá žádné atributy a žádné podřízené prvky.</span><span class="sxs-lookup"><span data-stu-id="c8349-114">"Element1" is inferred as a column because it has no attributes and no child elements.</span></span>  
   
- <span data-ttu-id="35d14-115">**Datová sada:** NewDataSet</span><span class="sxs-lookup"><span data-stu-id="35d14-115">**DataSet:** NewDataSet</span></span>  
+ <span data-ttu-id="c8349-115">**Datová sada:** NewDataSet</span><span class="sxs-lookup"><span data-stu-id="c8349-115">**DataSet:** NewDataSet</span></span>  
   
- <span data-ttu-id="35d14-116">**Tabulka:** prvek DocumentElement</span><span class="sxs-lookup"><span data-stu-id="35d14-116">**Table:** DocumentElement</span></span>  
+ <span data-ttu-id="c8349-116">**Tabulka:** prvek DocumentElement</span><span class="sxs-lookup"><span data-stu-id="c8349-116">**Table:** DocumentElement</span></span>  
   
-|<span data-ttu-id="35d14-117">Element1</span><span class="sxs-lookup"><span data-stu-id="35d14-117">Element1</span></span>|  
+|<span data-ttu-id="c8349-117">element1</span><span class="sxs-lookup"><span data-stu-id="c8349-117">Element1</span></span>|  
 |--------------|  
-|<span data-ttu-id="35d14-118">Text1</span><span class="sxs-lookup"><span data-stu-id="35d14-118">Text1</span></span>|  
+|<span data-ttu-id="c8349-118">Text1</span><span class="sxs-lookup"><span data-stu-id="c8349-118">Text1</span></span>|  
   
- <span data-ttu-id="35d14-119">Tyto dva dokumenty XML může byla určených k vytvoření stejného schématu, ale proces odvození vytváří velmi odlišné výsledky podle elementů obsažených v každém dokumentu.</span><span class="sxs-lookup"><span data-stu-id="35d14-119">These two XML documents may have been intended to produce the same schema, but the inference process produces very different results based on the elements contained in each document.</span></span>  
+ <span data-ttu-id="c8349-119">Tyto dva dokumenty XML byl asi zamýšlený k vytvoření stejné schéma, ale procesu odvození vytváří velmi odlišné výsledky podle elementů obsažených v jednotlivých dokumentech.</span><span class="sxs-lookup"><span data-stu-id="c8349-119">These two XML documents may have been intended to produce the same schema, but the inference process produces very different results based on the elements contained in each document.</span></span>  
   
- <span data-ttu-id="35d14-120">Abyste se vyhnuli rozporů může dojít, když generování schématu z dokumentu XML, doporučujeme explicitně zadáte pomocí jazyka pro definici schématu XML (XSD) nebo XML-Data Reduced (XDR) při načítání schématu **datovou sadu** z SOUBOR XML.</span><span class="sxs-lookup"><span data-stu-id="35d14-120">To avoid the discrepancies that can occur when generating schema from an XML document, we recommend that you explicitly specify a schema using XML Schema definition language (XSD) or XML-Data Reduced (XDR) when loading a **DataSet** from XML.</span></span> <span data-ttu-id="35d14-121">Další informace o explicitně určit **datovou sadu** schématu se schématem XML, najdete v části [odvozování relační strukturu datové sady z schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md).</span><span class="sxs-lookup"><span data-stu-id="35d14-121">For more information about explicitly specifying a **DataSet** schema with XML Schema, see [Deriving DataSet Relational Structure from XML Schema (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md).</span></span>  
+ <span data-ttu-id="c8349-120">Aby se zabránilo nedostatky, které mohou nastat při generování schématu z dokumentu XML, doporučujeme explicitně zadat pomocí jazyka pro definici schématu XML (XSD) nebo XML-Data Reduced (XDR) při načítání schématu **datovou sadu** z SOUBOR XML.</span><span class="sxs-lookup"><span data-stu-id="c8349-120">To avoid the discrepancies that can occur when generating schema from an XML document, we recommend that you explicitly specify a schema using XML Schema definition language (XSD) or XML-Data Reduced (XDR) when loading a **DataSet** from XML.</span></span> <span data-ttu-id="c8349-121">Další informace o explicitním zadáním **datovou sadu** schéma pomocí schématu XML, naleznete v tématu [odvozování relační struktury datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md).</span><span class="sxs-lookup"><span data-stu-id="c8349-121">For more information about explicitly specifying a **DataSet** schema with XML Schema, see [Deriving DataSet Relational Structure from XML Schema (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="35d14-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="35d14-122">See Also</span></span>  
- [<span data-ttu-id="35d14-123">Odvození relační struktury datové sady z XML</span><span class="sxs-lookup"><span data-stu-id="35d14-123">Inferring DataSet Relational Structure from XML</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  
- [<span data-ttu-id="35d14-124">Načtení datové sady z XML</span><span class="sxs-lookup"><span data-stu-id="35d14-124">Loading a DataSet from XML</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
- [<span data-ttu-id="35d14-125">Načtení informací o schématu datové sady z XML</span><span class="sxs-lookup"><span data-stu-id="35d14-125">Loading DataSet Schema Information from XML</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  
- [<span data-ttu-id="35d14-126">Použití XML v datové sadě</span><span class="sxs-lookup"><span data-stu-id="35d14-126">Using XML in a DataSet</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
- [<span data-ttu-id="35d14-127">Datové sady, datové tabulky a datová zobrazení</span><span class="sxs-lookup"><span data-stu-id="35d14-127">DataSets, DataTables, and DataViews</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [<span data-ttu-id="35d14-128">ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady</span><span class="sxs-lookup"><span data-stu-id="35d14-128">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="c8349-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="c8349-122">See Also</span></span>  
+ [<span data-ttu-id="c8349-123">Odvození relační struktury datové sady z XML</span><span class="sxs-lookup"><span data-stu-id="c8349-123">Inferring DataSet Relational Structure from XML</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  
+ [<span data-ttu-id="c8349-124">Načtení datové sady z XML</span><span class="sxs-lookup"><span data-stu-id="c8349-124">Loading a DataSet from XML</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
+ [<span data-ttu-id="c8349-125">Načtení informací o schématu datové sady z XML</span><span class="sxs-lookup"><span data-stu-id="c8349-125">Loading DataSet Schema Information from XML</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  
+ [<span data-ttu-id="c8349-126">Použití XML v datové sadě</span><span class="sxs-lookup"><span data-stu-id="c8349-126">Using XML in a DataSet</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [<span data-ttu-id="c8349-127">Datové sady, datové tabulky a datová zobrazení</span><span class="sxs-lookup"><span data-stu-id="c8349-127">DataSets, DataTables, and DataViews</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [<span data-ttu-id="c8349-128">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="c8349-128">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,24 +1,24 @@
 ---
-title: Dotazování v konzolové aplikace
+title: Dotazování v konzolových aplikacích
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 4ff084d5-5956-4db1-8e18-c5a66b000882
-ms.openlocfilehash: 4fc9a787aa03af311ed219f0831a4d0e41544be8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6b0d298e1959ff2fdcd46a9f218eb980671407be
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33363390"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43416705"
 ---
-# <a name="polling-in-console-applications"></a><span data-ttu-id="8749d-102">Dotazování v konzolové aplikace</span><span class="sxs-lookup"><span data-stu-id="8749d-102">Polling in Console Applications</span></span>
-<span data-ttu-id="8749d-103">Asynchronní operace v ADO.NET umožňují zahájit časově náročné databázových operací na jedno vlákno při provádění dalších úloh na jiné vlákno.</span><span class="sxs-lookup"><span data-stu-id="8749d-103">Asynchronous operations in ADO.NET allow you to initiate time-consuming database operations on one thread while performing other tasks on another thread.</span></span> <span data-ttu-id="8749d-104">Ve většině scénářů ale bude nakonec se dostanete na bod, kde vaše aplikace by neměl pokračovat až po dokončení operace databáze.</span><span class="sxs-lookup"><span data-stu-id="8749d-104">In most scenarios, however, you will eventually reach a point where your application should not continue until the database operation is complete.</span></span> <span data-ttu-id="8749d-105">U takových případech je užitečné pro cyklické dotazování asynchronní operaci k určení, zda bude dokončena operace nebo ne.</span><span class="sxs-lookup"><span data-stu-id="8749d-105">For such cases, it is useful to poll the asynchronous operation to determine whether the operation has completed or not.</span></span>  
+# <a name="polling-in-console-applications"></a><span data-ttu-id="0b078-102">Dotazování v konzolových aplikacích</span><span class="sxs-lookup"><span data-stu-id="0b078-102">Polling in Console Applications</span></span>
+<span data-ttu-id="0b078-103">Asynchronních operací v ADO.NET umožňují zahájit časově náročné databázových operací na jedno vlákno při provádění dalších úloh v jiném vlákně.</span><span class="sxs-lookup"><span data-stu-id="0b078-103">Asynchronous operations in ADO.NET allow you to initiate time-consuming database operations on one thread while performing other tasks on another thread.</span></span> <span data-ttu-id="0b078-104">Ve většině scénářů si ale můžete se nakonec se dostanete do bodu, kde vaše aplikace by neměl pokračovat až do dokončení operace databáze.</span><span class="sxs-lookup"><span data-stu-id="0b078-104">In most scenarios, however, you will eventually reach a point where your application should not continue until the database operation is complete.</span></span> <span data-ttu-id="0b078-105">Pro tyto případy je užitečné k dotazování asynchronní operace k určení, zda operace byla dokončena nebo ne.</span><span class="sxs-lookup"><span data-stu-id="0b078-105">For such cases, it is useful to poll the asynchronous operation to determine whether the operation has completed or not.</span></span>  
   
- <span data-ttu-id="8749d-106">Můžete použít <xref:System.IAsyncResult.IsCompleted%2A> vlastnost a zjistěte, zda bude dokončena operace.</span><span class="sxs-lookup"><span data-stu-id="8749d-106">You can use the <xref:System.IAsyncResult.IsCompleted%2A> property to find out whether or not the operation has completed.</span></span>  
+ <span data-ttu-id="0b078-106">Můžete použít <xref:System.IAsyncResult.IsCompleted%2A> vlastnost a zjistěte, jestli dokončení operace.</span><span class="sxs-lookup"><span data-stu-id="0b078-106">You can use the <xref:System.IAsyncResult.IsCompleted%2A> property to find out whether or not the operation has completed.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="8749d-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="8749d-107">Example</span></span>  
- <span data-ttu-id="8749d-108">Následující aplikace konzoly aktualizuje data v rámci **AdventureWorks** ukázkové databáze, asynchronně provádění své práce.</span><span class="sxs-lookup"><span data-stu-id="8749d-108">The following console application updates data within the **AdventureWorks** sample database, doing its work asynchronously.</span></span> <span data-ttu-id="8749d-109">Chcete-li emulovat dlouho běžící proces, v tomto příkladu vloží příkaz WAITFOR text příkazu.</span><span class="sxs-lookup"><span data-stu-id="8749d-109">In order to emulate a long-running process, this example inserts a WAITFOR statement in the command text.</span></span> <span data-ttu-id="8749d-110">Za normálních okolností by pokusí provést vaše příkazy pomalejší, ale tak v tomto případě je snazší ukazují asynchronní chování.</span><span class="sxs-lookup"><span data-stu-id="8749d-110">Normally, you would not try to make your commands run slower, but doing so in this case makes it easier to demonstrate asynchronous behavior.</span></span>  
+## <a name="example"></a><span data-ttu-id="0b078-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="0b078-107">Example</span></span>  
+ <span data-ttu-id="0b078-108">Následující aplikace konzoly aktualizace dat v rámci **AdventureWorks** ukázkovou databázi dělat svou práci asynchronně.</span><span class="sxs-lookup"><span data-stu-id="0b078-108">The following console application updates data within the **AdventureWorks** sample database, doing its work asynchronously.</span></span> <span data-ttu-id="0b078-109">Abyste mohli simulovat dlouhotrvající proces, v tomto příkladu vloží text příkazu příkaz WAITFOR.</span><span class="sxs-lookup"><span data-stu-id="0b078-109">In order to emulate a long-running process, this example inserts a WAITFOR statement in the command text.</span></span> <span data-ttu-id="0b078-110">Za normálních okolností byste se nepouštěli aby vaše příkazy se spouští pomaleji, ale uděláte v tomto případě je snazší ukazují asynchronní chování.</span><span class="sxs-lookup"><span data-stu-id="0b078-110">Normally, you would not try to make your commands run slower, but doing so in this case makes it easier to demonstrate asynchronous behavior.</span></span>  
   
 ```vb  
 Imports System  
@@ -190,6 +190,6 @@ class Class1
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="8749d-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="8749d-111">See Also</span></span>  
- [<span data-ttu-id="8749d-112">Asynchronní operace</span><span class="sxs-lookup"><span data-stu-id="8749d-112">Asynchronous Operations</span></span>](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)  
- [<span data-ttu-id="8749d-113">ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady</span><span class="sxs-lookup"><span data-stu-id="8749d-113">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="0b078-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="0b078-111">See Also</span></span>  
+ [<span data-ttu-id="0b078-112">Asynchronní operace</span><span class="sxs-lookup"><span data-stu-id="0b078-112">Asynchronous Operations</span></span>](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)  
+ [<span data-ttu-id="0b078-113">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="0b078-113">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)

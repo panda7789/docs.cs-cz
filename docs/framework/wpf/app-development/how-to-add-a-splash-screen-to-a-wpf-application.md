@@ -1,53 +1,50 @@
 ---
 title: 'Postupy: Přidání úvodní obrazovky do aplikace WPF'
-ms.date: 03/30/2017
+ms.date: 08/18/2018
 helpviewer_keywords:
 - WPF [WPF], splash screen
 - startup window [WPF]
 - SplashScreen class [WPF]
 - splash screen [WPF]
 ms.assetid: d70a25c4-5fb9-4c27-b01d-b1b8ef39b3fd
-ms.openlocfilehash: 06d6cb7c5a5081d3b6c4979ab50e1caaa726acbe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 46efa041736870c5c0f08baa321ef0dc53cacc0d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33546998"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43402923"
 ---
-# <a name="how-to-add-a-splash-screen-to-a-wpf-application"></a><span data-ttu-id="7eaff-102">Postupy: Přidání úvodní obrazovky do aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="7eaff-102">How to: Add a Splash Screen to a WPF Application</span></span>
-<span data-ttu-id="7eaff-103">Toto téma ukazuje, jak přidat okno spuštění nebo *úvodní obrazovka*, k aplikaci Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="7eaff-103">This topic shows how to add a startup window, or *splash screen*, to a Windows Presentation Foundation (WPF) application.</span></span>  
-  
-### <a name="to-add-an-existing-image-as-a-splash-screen"></a><span data-ttu-id="7eaff-104">Chcete-li přidat bitovou kopii existující jako úvodní obrazovka</span><span class="sxs-lookup"><span data-stu-id="7eaff-104">To add an existing image as a splash screen</span></span>  
-  
-1.  <span data-ttu-id="7eaff-105">Vytvořit nebo najít bitovou kopii, kterou chcete použít pro úvodní obrazovka.</span><span class="sxs-lookup"><span data-stu-id="7eaff-105">Create or find an image that you want to use for the splash screen.</span></span> <span data-ttu-id="7eaff-106">Můžete použít všechny bitové kopie formátu, který je podporován ve vytváření bitové kopie součást WIC (Windows).</span><span class="sxs-lookup"><span data-stu-id="7eaff-106">You can use any image format that is supported by the Windows Imaging Component (WIC).</span></span> <span data-ttu-id="7eaff-107">Například můžete pomocí formátu BMP, GIF, JPEG, PNG nebo TIFF.</span><span class="sxs-lookup"><span data-stu-id="7eaff-107">For example, you can use the BMP, GIF, JPEG, PNG, or TIFF format.</span></span>  
-  
-2.  <span data-ttu-id="7eaff-108">Přidání souboru bitové kopie do projektu aplikace WPF.</span><span class="sxs-lookup"><span data-stu-id="7eaff-108">Add the image file to the WPF Application project.</span></span> <span data-ttu-id="7eaff-109">Další informace najdete v tématu [NIB: postupy: Přidání existujících položek do projektu](http://msdn.microsoft.com/library/15f4cfb7-78ab-457f-9f14-099a25a6a2d3).</span><span class="sxs-lookup"><span data-stu-id="7eaff-109">For more information, see [NIB:How to: Add Existing Items to a Project](http://msdn.microsoft.com/library/15f4cfb7-78ab-457f-9f14-099a25a6a2d3).</span></span>  
-  
-3.  <span data-ttu-id="7eaff-110">V Průzkumníku řešení vyberte bitovou kopii.</span><span class="sxs-lookup"><span data-stu-id="7eaff-110">In Solution Explorer, select the image.</span></span>  
-  
-4.  <span data-ttu-id="7eaff-111">V okně vlastností klikněte na šipku rozevíracího seznamu pro **akce sestavení** vlastnost.</span><span class="sxs-lookup"><span data-stu-id="7eaff-111">In the Properties window, click the drop-down arrow for the **Build Action** property.</span></span>  
-  
-5.  <span data-ttu-id="7eaff-112">Vyberte **SplashScreen** z rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="7eaff-112">Select **SplashScreen** from the drop-down list.</span></span>  
-  
-    > [!NOTE]
-    >  <span data-ttu-id="7eaff-113">Pokud se nezobrazí **SplashScreen** možnost, zkontrolujte, že používáte [!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)] SP1 nebo novější.</span><span class="sxs-lookup"><span data-stu-id="7eaff-113">If you do not see the **SplashScreen** option, be sure to check that you are using [!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)] SP1 or later.</span></span>  
-  
-6.  <span data-ttu-id="7eaff-114">Stisknutím klávesy F5 sestavení a spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="7eaff-114">Press F5 to build and run the application.</span></span>  
-  
-     <span data-ttu-id="7eaff-115">Obrázek úvodní obrazovky se zobrazí v centru obrazovky a pak zmenšuje až se zobrazí okno hlavní aplikace.</span><span class="sxs-lookup"><span data-stu-id="7eaff-115">The splash screen image appears in the center of the screen, and then fades when the main application window appears.</span></span>  
-  
-### <a name="to-remove-the-splash-screen-from-an-application"></a><span data-ttu-id="7eaff-116">Chcete-li odebrat úvodní obrazovka z aplikace</span><span class="sxs-lookup"><span data-stu-id="7eaff-116">To remove the splash screen from an application</span></span>  
-  
-1.  <span data-ttu-id="7eaff-117">V Průzkumníku řešení vyberte obrázek úvodní obrazovky.</span><span class="sxs-lookup"><span data-stu-id="7eaff-117">In Solution Explorer, select the splash screen image.</span></span>  
-  
-2.  <span data-ttu-id="7eaff-118">V okně vlastnosti nastavit **akce sestavení** k **žádné**.</span><span class="sxs-lookup"><span data-stu-id="7eaff-118">In the Properties window, set the **Build Action** to **None**.</span></span>  
-  
-### <a name="to-remove-the-splash-screen-from-an-application"></a><span data-ttu-id="7eaff-119">Chcete-li odebrat úvodní obrazovka z aplikace</span><span class="sxs-lookup"><span data-stu-id="7eaff-119">To remove the splash screen from an application</span></span>  
-  
--   <span data-ttu-id="7eaff-120">V Průzkumníku řešení odstraňte obrázek úvodní obrazovky.</span><span class="sxs-lookup"><span data-stu-id="7eaff-120">In Solution Explorer, delete the splash screen image.</span></span>  
-  
--   <span data-ttu-id="7eaff-121">Obrázek úvodní obrazovky vylučte z projektu.</span><span class="sxs-lookup"><span data-stu-id="7eaff-121">Exclude the splash screen image from the project.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="7eaff-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="7eaff-122">See Also</span></span>  
- <xref:System.Windows.SplashScreen>  
- [<span data-ttu-id="7eaff-123">NIB: postupy: Přidání existujících položek do projektu</span><span class="sxs-lookup"><span data-stu-id="7eaff-123">NIB:How to: Add Existing Items to a Project</span></span>](http://msdn.microsoft.com/library/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)
+# <a name="how-to-add-a-splash-screen-to-a-wpf-application"></a><span data-ttu-id="e4eda-102">Postupy: Přidání úvodní obrazovky do aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="e4eda-102">How to: Add a Splash Screen to a WPF Application</span></span>
+
+<span data-ttu-id="e4eda-103">Toto téma ukazuje, jak přidat časové období při spuštění nebo *úvodní obrazovka*, k aplikaci Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="e4eda-103">This topic shows how to add a startup window, or *splash screen*, to a Windows Presentation Foundation (WPF) application.</span></span>
+
+## <a name="to-add-an-existing-image-as-a-splash-screen"></a><span data-ttu-id="e4eda-104">Chcete-li přidat existující image jako úvodní obrazovka</span><span class="sxs-lookup"><span data-stu-id="e4eda-104">To add an existing image as a splash screen</span></span>
+
+1.  <span data-ttu-id="e4eda-105">Vytvořit nebo vyhledat bitovou kopii, kterou chcete použít pro úvodní obrazovku.</span><span class="sxs-lookup"><span data-stu-id="e4eda-105">Create or find an image that you want to use for the splash screen.</span></span> <span data-ttu-id="e4eda-106">Můžete použít libovolný formát obrázku, který je podporovaný službou Windows Imaging Component (WIC).</span><span class="sxs-lookup"><span data-stu-id="e4eda-106">You can use any image format that is supported by the Windows Imaging Component (WIC).</span></span> <span data-ttu-id="e4eda-107">Například můžete pomocí formátu BMP, GIF, JPEG, PNG nebo ve formátu TIFF.</span><span class="sxs-lookup"><span data-stu-id="e4eda-107">For example, you can use the BMP, GIF, JPEG, PNG, or TIFF format.</span></span>
+
+2.  <span data-ttu-id="e4eda-108">Přidání souboru obrázku do projektu aplikace WPF.</span><span class="sxs-lookup"><span data-stu-id="e4eda-108">Add the image file to the WPF Application project.</span></span>
+
+3.  <span data-ttu-id="e4eda-109">V **Průzkumníka řešení**, vyberte bitovou kopii.</span><span class="sxs-lookup"><span data-stu-id="e4eda-109">In **Solution Explorer**, select the image.</span></span>
+
+4.  <span data-ttu-id="e4eda-110">V okně Vlastnosti klikněte na šipku rozevíracího seznamu pro **akce sestavení** vlastnost.</span><span class="sxs-lookup"><span data-stu-id="e4eda-110">In the Properties window, click the drop-down arrow for the **Build Action** property.</span></span>
+
+5.  <span data-ttu-id="e4eda-111">Vyberte **SplashScreen** z rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="e4eda-111">Select **SplashScreen** from the drop-down list.</span></span>
+
+6.  <span data-ttu-id="e4eda-112">Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="e4eda-112">Press **F5** to build and run the application.</span></span>
+
+     <span data-ttu-id="e4eda-113">Na úvodní obrazovce je zobrazena ve středu obrazovky a pak sníží (zesvětlí) až se zobrazí hlavního okna aplikace.</span><span class="sxs-lookup"><span data-stu-id="e4eda-113">The splash screen image appears in the center of the screen, and then fades when the main application window appears.</span></span>
+
+## <a name="to-exclude-the-splash-screen-from-build"></a><span data-ttu-id="e4eda-114">Na úvodní obrazovce vyloučit ze sestavení</span><span class="sxs-lookup"><span data-stu-id="e4eda-114">To exclude the splash screen from build</span></span>
+
+1.  <span data-ttu-id="e4eda-115">V **Průzkumníka řešení**, vyberte obrázek úvodní obrazovky.</span><span class="sxs-lookup"><span data-stu-id="e4eda-115">In **Solution Explorer**, select the splash screen image.</span></span>
+
+2.  <span data-ttu-id="e4eda-116">V **vlastnosti** okno, nastaveno **akce sestavení** k **žádný**.</span><span class="sxs-lookup"><span data-stu-id="e4eda-116">In the **Properties** window, set the **Build Action** to **None**.</span></span>
+
+## <a name="to-remove-the-splash-screen-from-an-application"></a><span data-ttu-id="e4eda-117">Chcete-li odebrat úvodní obrazovky z aplikace</span><span class="sxs-lookup"><span data-stu-id="e4eda-117">To remove the splash screen from an application</span></span>
+
+<span data-ttu-id="e4eda-118">V **Průzkumníka řešení**, odstraňte na úvodní obrazovce.</span><span class="sxs-lookup"><span data-stu-id="e4eda-118">In **Solution Explorer**, delete the splash screen image.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="e4eda-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="e4eda-119">See Also</span></span>
+
+- <xref:System.Windows.SplashScreen>
+- <span data-ttu-id="e4eda-120">[Postupy: Přidání existující položky do projektu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/9f4t9t92(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="e4eda-120">[How to: Add Existing Items to a Project](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/9f4t9t92(v=vs.100))</span></span>

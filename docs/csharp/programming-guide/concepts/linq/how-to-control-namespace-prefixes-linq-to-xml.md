@@ -1,31 +1,31 @@
 ---
-title: 'Postupy: řízení Namespace předpony (C#) (technologie LINQ to XML)'
+title: 'Postupy: řízení předpon Namespace (C#) (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 64de5186-b81a-4ddd-8327-8693df59a01b
 ms.openlocfilehash: af864139d56bd3ebb22cca6369b82539b9d007da
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33327750"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417368"
 ---
-# <a name="how-to-control-namespace-prefixes-c-linq-to-xml"></a><span data-ttu-id="7590f-102">Postupy: řízení Namespace předpony (C#) (technologie LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="7590f-102">How to: Control Namespace Prefixes (C#) (LINQ to XML)</span></span>
-<span data-ttu-id="7590f-103">Toto téma popisuje, jak můžete řídit předpony oboru názvů při serializaci strom XML.</span><span class="sxs-lookup"><span data-stu-id="7590f-103">This topic describes how you can control namespace prefixes when serializing an XML tree.</span></span>  
+# <a name="how-to-control-namespace-prefixes-c-linq-to-xml"></a><span data-ttu-id="45f9f-102">Postupy: řízení předpon Namespace (C#) (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="45f9f-102">How to: Control Namespace Prefixes (C#) (LINQ to XML)</span></span>
+<span data-ttu-id="45f9f-103">Toto téma popisuje, jak můžete řídit předpony oboru názvů při serializaci stromu XML.</span><span class="sxs-lookup"><span data-stu-id="45f9f-103">This topic describes how you can control namespace prefixes when serializing an XML tree.</span></span>  
   
- <span data-ttu-id="7590f-104">V mnoha situacích není potřeba řídit předpony oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="7590f-104">In many situations, it is not necessary to control namespace prefixes.</span></span>  
+ <span data-ttu-id="45f9f-104">V mnoha situacích není nutné k řízení předpon názvového prostoru.</span><span class="sxs-lookup"><span data-stu-id="45f9f-104">In many situations, it is not necessary to control namespace prefixes.</span></span>  
   
- <span data-ttu-id="7590f-105">Ale určitých nástrojích programovací XML vyžadovat konkrétní kontrolu nad předpony oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="7590f-105">However, certain XML programming tools require specific control of namespace prefixes.</span></span> <span data-ttu-id="7590f-106">Například je může být manipulace s stylů XSLT nebo XAML dokumentu, který obsahuje vložené XPath výrazy, které odkazují na předpony oboru názvů konkrétní; v takovém případě je důležité, aby dokumentu se Dal serializovat s konkrétní předpon.</span><span class="sxs-lookup"><span data-stu-id="7590f-106">For example, you might be manipulating an XSLT style sheet or a XAML document that contains embedded XPath expressions that refer to specific namespace prefixes; in this case, it is important that the document be serialized with those specific prefixes.</span></span>  
+ <span data-ttu-id="45f9f-105">Nicméně některé programovací nástroje XML vyžadují určitý ovládací prvek předpony oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="45f9f-105">However, certain XML programming tools require specific control of namespace prefixes.</span></span> <span data-ttu-id="45f9f-106">Například můžete může být zpracování šablony stylů XSLT nebo dokumentu XAML, který obsahuje vložené výrazy XPath, které odkazují na konkrétní obor názvů předpony; v takovém případě je důležité, že dokument Dal serializovat s příznakem tyto konkrétní předpony.</span><span class="sxs-lookup"><span data-stu-id="45f9f-106">For example, you might be manipulating an XSLT style sheet or a XAML document that contains embedded XPath expressions that refer to specific namespace prefixes; in this case, it is important that the document be serialized with those specific prefixes.</span></span>  
   
- <span data-ttu-id="7590f-107">Toto je nejčastější příčinou řízení předpony oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="7590f-107">This is the most common reason for controlling namespace prefixes.</span></span>  
+ <span data-ttu-id="45f9f-107">Toto je nejběžnějším důvodem pro řízení předpon názvového prostoru.</span><span class="sxs-lookup"><span data-stu-id="45f9f-107">This is the most common reason for controlling namespace prefixes.</span></span>  
   
- <span data-ttu-id="7590f-108">Řízení předpony oboru názvů jiné obvyklým důvodem je, že chcete uživatelům upravit v dokumentu XML ručně, a chcete vytvořit předpony oboru názvů, které jsou vhodné pro uživatele k zadání.</span><span class="sxs-lookup"><span data-stu-id="7590f-108">Another common reason for controlling namespace prefixes is that you want users to edit the XML document manually, and you want to create namespace prefixes that are convenient for the user to type.</span></span> <span data-ttu-id="7590f-109">Například můžete generování dokument XSD.</span><span class="sxs-lookup"><span data-stu-id="7590f-109">For example, you might be generating an XSD document.</span></span> <span data-ttu-id="7590f-110">Konvence pro schémata naznačují, že používáte buď `xs` nebo `xsd` jako předponu pro obor názvů schématu.</span><span class="sxs-lookup"><span data-stu-id="7590f-110">Conventions for schemas suggest that you use either `xs` or `xsd` as the prefix for the schema namespace.</span></span>  
+ <span data-ttu-id="45f9f-108">Dalším běžným důvodem pro řízení předpon názvového prostoru je, že chcete uživatelům ručně upravit dokument XML, a chcete vytvořit obor názvů předpony, které jsou vhodné pro uživatele, aby.</span><span class="sxs-lookup"><span data-stu-id="45f9f-108">Another common reason for controlling namespace prefixes is that you want users to edit the XML document manually, and you want to create namespace prefixes that are convenient for the user to type.</span></span> <span data-ttu-id="45f9f-109">Může být například generování XSD dokumentu.</span><span class="sxs-lookup"><span data-stu-id="45f9f-109">For example, you might be generating an XSD document.</span></span> <span data-ttu-id="45f9f-110">Konvence pro schémata doporučujeme použít buď `xs` nebo `xsd` jako předponu pro obor názvů schématu.</span><span class="sxs-lookup"><span data-stu-id="45f9f-110">Conventions for schemas suggest that you use either `xs` or `xsd` as the prefix for the schema namespace.</span></span>  
   
- <span data-ttu-id="7590f-111">Chcete-li řídit předpony oboru názvů, vložte atributy, které deklarace oborů názvů.</span><span class="sxs-lookup"><span data-stu-id="7590f-111">To control namespace prefixes, you insert attributes that declare namespaces.</span></span> <span data-ttu-id="7590f-112">Pokud deklarace oborů názvů s konkrétní předpony [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se pokusí o respektovat předpony oboru názvů při serializaci.</span><span class="sxs-lookup"><span data-stu-id="7590f-112">If you declare the namespaces with specific prefixes, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] will attempt to honor the namespace prefixes when serializing.</span></span>  
+ <span data-ttu-id="45f9f-111">Chcete-li řízení předpon názvového prostoru, vložte atributy, které deklarace oborů názvů.</span><span class="sxs-lookup"><span data-stu-id="45f9f-111">To control namespace prefixes, you insert attributes that declare namespaces.</span></span> <span data-ttu-id="45f9f-112">Pokud deklarujete obory názvů s konkrétní předpony [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se pokusí o případném dalším sdílení dodržovat předpony oboru názvů při serializaci.</span><span class="sxs-lookup"><span data-stu-id="45f9f-112">If you declare the namespaces with specific prefixes, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] will attempt to honor the namespace prefixes when serializing.</span></span>  
   
- <span data-ttu-id="7590f-113">Pokud chcete vytvořit atribut, který deklaruje předponu oboru názvů, vytvoření atribut, kde je obor názvů název atributu <xref:System.Xml.Linq.XNamespace.Xmlns%2A>, a název atributu je Předpona oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="7590f-113">To create an attribute that declares a namespace with a prefix, you create an attribute where the namespace of the name of the attribute is <xref:System.Xml.Linq.XNamespace.Xmlns%2A>, and the name of the attribute is the namespace prefix.</span></span> <span data-ttu-id="7590f-114">Hodnota atributu je identifikátor URI oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="7590f-114">The value of the attribute is the URI of the namespace.</span></span>  
+ <span data-ttu-id="45f9f-113">Chcete-li vytvořit atribut, který deklaruje oboru názvů s předponou, vytvořte atribut kde obor názvů název atributu je <xref:System.Xml.Linq.XNamespace.Xmlns%2A>, a název atributu je Předpona oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="45f9f-113">To create an attribute that declares a namespace with a prefix, you create an attribute where the namespace of the name of the attribute is <xref:System.Xml.Linq.XNamespace.Xmlns%2A>, and the name of the attribute is the namespace prefix.</span></span> <span data-ttu-id="45f9f-114">Hodnota atributu je identifikátor URI oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="45f9f-114">The value of the attribute is the URI of the namespace.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7590f-115">Příklad</span><span class="sxs-lookup"><span data-stu-id="7590f-115">Example</span></span>  
- <span data-ttu-id="7590f-116">Tento příklad deklaruje dva obory názvů.</span><span class="sxs-lookup"><span data-stu-id="7590f-116">This example declares two namespaces.</span></span> <span data-ttu-id="7590f-117">Určuje, že `http://www.adventure-works.com` má předponu oboru názvů `aw`a že `www.fourthcoffee.com` má předponu oboru názvů `fc`.</span><span class="sxs-lookup"><span data-stu-id="7590f-117">It specifies that the `http://www.adventure-works.com` namespace has the prefix of `aw`, and that the `www.fourthcoffee.com` namespace has the prefix of `fc`.</span></span>  
+## <a name="example"></a><span data-ttu-id="45f9f-115">Příklad</span><span class="sxs-lookup"><span data-stu-id="45f9f-115">Example</span></span>  
+ <span data-ttu-id="45f9f-116">V tomto příkladu deklaruje dva obory názvů.</span><span class="sxs-lookup"><span data-stu-id="45f9f-116">This example declares two namespaces.</span></span> <span data-ttu-id="45f9f-117">Určuje, že `http://www.adventure-works.com` obor názvů má předponu `aw`a že `www.fourthcoffee.com` obor názvů má předponu `fc`.</span><span class="sxs-lookup"><span data-stu-id="45f9f-117">It specifies that the `http://www.adventure-works.com` namespace has the prefix of `aw`, and that the `www.fourthcoffee.com` namespace has the prefix of `fc`.</span></span>  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -42,7 +42,7 @@ XElement root = new XElement(aw + "Root",
 Console.WriteLine(root);  
 ```  
   
- <span data-ttu-id="7590f-118">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="7590f-118">This example produces the following output:</span></span>  
+ <span data-ttu-id="45f9f-118">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="45f9f-118">This example produces the following output:</span></span>  
   
 ```xml  
 <aw:Root xmlns:aw="http://www.adventure-works.com" xmlns:fc="www.fourthcoffee.com">  
@@ -54,5 +54,5 @@ Console.WriteLine(root);
 </aw:Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7590f-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="7590f-119">See Also</span></span>  
- [<span data-ttu-id="7590f-120">Práce s obory názvů XML (C#)</span><span class="sxs-lookup"><span data-stu-id="7590f-120">Working with XML Namespaces (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+## <a name="see-also"></a><span data-ttu-id="45f9f-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="45f9f-119">See Also</span></span>  
+ [<span data-ttu-id="45f9f-120">Práce s názvovými prostory XML (C#)</span><span class="sxs-lookup"><span data-stu-id="45f9f-120">Working with XML Namespaces (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)

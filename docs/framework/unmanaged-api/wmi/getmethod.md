@@ -1,6 +1,6 @@
 ---
-title: Getmethod – funkce (referenční dokumentace nespravovaného rozhraní API)
-description: Getmethod – funkce načte informace o metodě.
+title: Funkce GetMethod (referenční dokumentace nespravovaného rozhraní API)
+description: Funkce GetMethod načte informace o metodě.
 ms.date: 11/06/2017
 api_name:
 - GetMethod
@@ -16,19 +16,19 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 65b8cb74a028892a3494e818f2b523f75e8766a1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a913de0ff20fba51295fd8282b58e3953be9bba2
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33460444"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43405070"
 ---
-# <a name="getmethod-function"></a><span data-ttu-id="5c966-103">Getmethod – funkce</span><span class="sxs-lookup"><span data-stu-id="5c966-103">GetMethod function</span></span>
-<span data-ttu-id="5c966-104">Načte informace o zadanou metodu.</span><span class="sxs-lookup"><span data-stu-id="5c966-104">Retrieves information about the specified method.</span></span>
+# <a name="getmethod-function"></a><span data-ttu-id="d40dd-103">Funkce GetMethod</span><span class="sxs-lookup"><span data-stu-id="d40dd-103">GetMethod function</span></span>
+<span data-ttu-id="d40dd-104">Načte informace o zadané metodě.</span><span class="sxs-lookup"><span data-stu-id="d40dd-104">Retrieves information about the specified method.</span></span>
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
-## <a name="syntax"></a><span data-ttu-id="5c966-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5c966-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d40dd-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d40dd-105">Syntax</span></span>  
   
 ```  
 HRESULT GetMethod (
@@ -41,50 +41,50 @@ HRESULT GetMethod (
 ); 
 ```  
 
-## <a name="parameters"></a><span data-ttu-id="5c966-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="5c966-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="d40dd-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="d40dd-106">Parameters</span></span>
 
 `vFunc`  
-<span data-ttu-id="5c966-107">[v] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="5c966-107">[in] This parameter is unused.</span></span>
+<span data-ttu-id="d40dd-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="d40dd-107">[in] This parameter is unused.</span></span>
 
 `ptr`  
-<span data-ttu-id="5c966-108">[v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.</span><span class="sxs-lookup"><span data-stu-id="5c966-108">[in] A pointer to an [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.</span></span>
+<span data-ttu-id="d40dd-108">[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span><span class="sxs-lookup"><span data-stu-id="d40dd-108">[in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span></span>
 
 `wszName`  
-<span data-ttu-id="5c966-109">[v] Název metody.</span><span class="sxs-lookup"><span data-stu-id="5c966-109">[in] The method name.</span></span> <span data-ttu-id="5c966-110">Tento parametr nemůže být `null` a musí odkazovat na platný `LPCWSTR`.</span><span class="sxs-lookup"><span data-stu-id="5c966-110">This parameter cannot be `null` and must point to a valid `LPCWSTR`.</span></span>
+<span data-ttu-id="d40dd-109">[in] Název metody.</span><span class="sxs-lookup"><span data-stu-id="d40dd-109">[in] The method name.</span></span> <span data-ttu-id="d40dd-110">Tento parametr nemůže mít `null` a musí odkazovat na platný `LPCWSTR`.</span><span class="sxs-lookup"><span data-stu-id="d40dd-110">This parameter cannot be `null` and must point to a valid `LPCWSTR`.</span></span>
 
 `lFlags`  
-<span data-ttu-id="5c966-111">[v] Vyhrazena.</span><span class="sxs-lookup"><span data-stu-id="5c966-111">[in] Reserved.</span></span> <span data-ttu-id="5c966-112">Tento parametr musí být 0.</span><span class="sxs-lookup"><span data-stu-id="5c966-112">This parameter must be 0.</span></span>
+<span data-ttu-id="d40dd-111">[in] Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="d40dd-111">[in] Reserved.</span></span> <span data-ttu-id="d40dd-112">Tento parametr musí být 0.</span><span class="sxs-lookup"><span data-stu-id="d40dd-112">This parameter must be 0.</span></span>
 
 `ppInSignature`   
-<span data-ttu-id="5c966-113">[out] Ukazatel na adresu [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instanci, která popisuje v paramteers metodě.</span><span class="sxs-lookup"><span data-stu-id="5c966-113">[out] A pointer to the address of an [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance that describes the in paramteers to the method.</span></span> <span data-ttu-id="5c966-114">Tento parametr je ignorována, pokud je nastaven na hodnotu `null`.</span><span class="sxs-lookup"><span data-stu-id="5c966-114">This parameter is ignored if it is set to `null`.</span></span> 
+<span data-ttu-id="d40dd-113">[out] Ukazatel na adresu [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instanci, která popisuje v paramteers metody.</span><span class="sxs-lookup"><span data-stu-id="d40dd-113">[out] A pointer to the address of an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance that describes the in paramteers to the method.</span></span> <span data-ttu-id="d40dd-114">Tento parametr se ignoruje, pokud je nastaveno na `null`.</span><span class="sxs-lookup"><span data-stu-id="d40dd-114">This parameter is ignored if it is set to `null`.</span></span> 
 
 `ppOutSignature`  
-<span data-ttu-id="5c966-115">[out] Ukazatel na adresu [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instanci, která popisuje výstupní parametry metody.</span><span class="sxs-lookup"><span data-stu-id="5c966-115">[out] A pointer to the address of an [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance that describes the out parameters to the method.</span></span> <span data-ttu-id="5c966-116">Tento parametr je ignorována, pokud je nastaven na hodnotu `null`.</span><span class="sxs-lookup"><span data-stu-id="5c966-116">This parameter is ignored if it is set to `null`.</span></span> 
+<span data-ttu-id="d40dd-115">[out] Ukazatel na adresu [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instanci, která popisuje výstupní parametry metody.</span><span class="sxs-lookup"><span data-stu-id="d40dd-115">[out] A pointer to the address of an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance that describes the out parameters to the method.</span></span> <span data-ttu-id="d40dd-116">Tento parametr se ignoruje, pokud je nastaveno na `null`.</span><span class="sxs-lookup"><span data-stu-id="d40dd-116">This parameter is ignored if it is set to `null`.</span></span> 
 
-## <a name="return-value"></a><span data-ttu-id="5c966-117">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="5c966-117">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="d40dd-117">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d40dd-117">Return value</span></span>
 
-<span data-ttu-id="5c966-118">Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:</span><span class="sxs-lookup"><span data-stu-id="5c966-118">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
+<span data-ttu-id="d40dd-118">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="d40dd-118">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
 
-|<span data-ttu-id="5c966-119">Konstanta</span><span class="sxs-lookup"><span data-stu-id="5c966-119">Constant</span></span>  |<span data-ttu-id="5c966-120">Hodnota</span><span class="sxs-lookup"><span data-stu-id="5c966-120">Value</span></span>  |<span data-ttu-id="5c966-121">Popis</span><span class="sxs-lookup"><span data-stu-id="5c966-121">Description</span></span>  |
+|<span data-ttu-id="d40dd-119">Konstanta</span><span class="sxs-lookup"><span data-stu-id="d40dd-119">Constant</span></span>  |<span data-ttu-id="d40dd-120">Hodnota</span><span class="sxs-lookup"><span data-stu-id="d40dd-120">Value</span></span>  |<span data-ttu-id="d40dd-121">Popis</span><span class="sxs-lookup"><span data-stu-id="d40dd-121">Description</span></span>  |
 |---------|---------|---------|
-|`WBEM_E_NOT_FOUND` | <span data-ttu-id="5c966-122">0x80041002</span><span class="sxs-lookup"><span data-stu-id="5c966-122">0x80041002</span></span> | <span data-ttu-id="5c966-123">Zadaná vlastnost nebyla nalezena.</span><span class="sxs-lookup"><span data-stu-id="5c966-123">The specified property was not found.</span></span> |
-|`WBEM_E_OUT_OF_MEMORY` | <span data-ttu-id="5c966-124">0x80041006</span><span class="sxs-lookup"><span data-stu-id="5c966-124">0x80041006</span></span> | <span data-ttu-id="5c966-125">Je k dispozici k dokončení operace není dostatek paměti.</span><span class="sxs-lookup"><span data-stu-id="5c966-125">Not enough memory is available to complete the operation.</span></span> |
-|`WBEM_S_NO_ERROR` | <span data-ttu-id="5c966-126">0</span><span class="sxs-lookup"><span data-stu-id="5c966-126">0</span></span> | <span data-ttu-id="5c966-127">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="5c966-127">The function call was successful.</span></span>  |
+|`WBEM_E_NOT_FOUND` | <span data-ttu-id="d40dd-122">0x80041002</span><span class="sxs-lookup"><span data-stu-id="d40dd-122">0x80041002</span></span> | <span data-ttu-id="d40dd-123">Zadaná vlastnost nebyla nalezena.</span><span class="sxs-lookup"><span data-stu-id="d40dd-123">The specified property was not found.</span></span> |
+|`WBEM_E_OUT_OF_MEMORY` | <span data-ttu-id="d40dd-124">0x80041006</span><span class="sxs-lookup"><span data-stu-id="d40dd-124">0x80041006</span></span> | <span data-ttu-id="d40dd-125">Nedostatek paměti je k dispozici k dokončení operace.</span><span class="sxs-lookup"><span data-stu-id="d40dd-125">Not enough memory is available to complete the operation.</span></span> |
+|`WBEM_S_NO_ERROR` | <span data-ttu-id="d40dd-126">0</span><span class="sxs-lookup"><span data-stu-id="d40dd-126">0</span></span> | <span data-ttu-id="d40dd-127">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="d40dd-127">The function call was successful.</span></span>  |
   
-## <a name="remarks"></a><span data-ttu-id="5c966-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5c966-128">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="d40dd-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d40dd-128">Remarks</span></span>
 
-<span data-ttu-id="5c966-129">Tato funkce zabalí volání [IWbemClassObject::GetMethod](https://msdn.microsoft.com/library/aa391443(v=vs.85).aspx) metoda.</span><span class="sxs-lookup"><span data-stu-id="5c966-129">This function wraps a call to the [IWbemClassObject::GetMethod](https://msdn.microsoft.com/library/aa391443(v=vs.85).aspx) method.</span></span>
+<span data-ttu-id="d40dd-129">Tato funkce zalamuje volání na [IWbemClassObject::GetMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod) metody.</span><span class="sxs-lookup"><span data-stu-id="d40dd-129">This function wraps a call to the [IWbemClassObject::GetMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod) method.</span></span>
 
-<span data-ttu-id="5c966-130">Správa systému Windows můžete nastavit [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) ukazatel na `null` Pokud metoda nemá žádné parametry v.</span><span class="sxs-lookup"><span data-stu-id="5c966-130">Windows Management can set the [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) pointer to `null` if the method has no in parameters.</span></span>
+<span data-ttu-id="d40dd-130">Můžete nastavit správu Windows [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ukazatel na `null` Pokud metoda nemá žádné parametry. v.</span><span class="sxs-lookup"><span data-stu-id="d40dd-130">Windows Management can set the [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) pointer to `null` if the method has no in parameters.</span></span>
 
-<span data-ttu-id="5c966-131">V `ppInSignature` a `ppOutSignature` popisují v a výstupní parametry, v uvedeném pořadí, v jako vlastnosti `IWbemClassObject` instance třídy systému [_Parameters](https://msdn.microsoft.com/library/aa394667(v=vs.85).aspx).</span><span class="sxs-lookup"><span data-stu-id="5c966-131">In `ppInSignature` and `ppOutSignature` describe in and out parameters, respectively, as properties in a `IWbemClassObject` instance of the system class [_Parameters](https://msdn.microsoft.com/library/aa394667(v=vs.85).aspx).</span></span> <span data-ttu-id="5c966-132">Vlastnosti v `ppInsignature` jsou pojmenované **Param *** n*, kde *n* je pozice parametru v podpis metody (například `Param1`, `Param2`atd.).</span><span class="sxs-lookup"><span data-stu-id="5c966-132">The properties in `ppInsignature` are named **Param***n*, where *n* is the position of the parameter in the method signature (such as `Param1`, `Param2`, etc.).</span></span> <span data-ttu-id="5c966-133">Vlastnosti v `ppOutSignature` se také s názvem **Param *** n*, a názvem návratovou hodnotu **ReturnValue**.</span><span class="sxs-lookup"><span data-stu-id="5c966-133">The properties in `ppOutSignature` are also named **Param***n*, and the return value is named **ReturnValue**.</span></span> <span data-ttu-id="5c966-134">Další informace a příklady naleznete v tématu [IWbemClassObject::GetMethod metoda](https://msdn.microsoft.com/library/aa391443(v=vs.85).aspx).</span><span class="sxs-lookup"><span data-stu-id="5c966-134">For more information and an example, see [IWbemClassObject::GetMethod method](https://msdn.microsoft.com/library/aa391443(v=vs.85).aspx).</span></span>
+<span data-ttu-id="d40dd-131">V `ppInSignature` a `ppOutSignature` popisují ani výstupní parametry, v uvedeném pořadí, v jako vlastnosti `IWbemClassObject` instance třídy systému [_Parameters](/windows/desktop/WmiSdk/--parameters).</span><span class="sxs-lookup"><span data-stu-id="d40dd-131">In `ppInSignature` and `ppOutSignature` describe in and out parameters, respectively, as properties in a `IWbemClassObject` instance of the system class [_Parameters](/windows/desktop/WmiSdk/--parameters).</span></span> <span data-ttu-id="d40dd-132">Vlastnosti v `ppInsignature` jsou pojmenovány **Param *** n*, kde *n* je pozice parametru v podpisu metody (například `Param1`, `Param2`atd.).</span><span class="sxs-lookup"><span data-stu-id="d40dd-132">The properties in `ppInsignature` are named **Param***n*, where *n* is the position of the parameter in the method signature (such as `Param1`, `Param2`, etc.).</span></span> <span data-ttu-id="d40dd-133">Vlastnosti v `ppOutSignature` jsou také s názvem **Param *** n*, a návratová hodnota se nazývá **ReturnValue**.</span><span class="sxs-lookup"><span data-stu-id="d40dd-133">The properties in `ppOutSignature` are also named **Param***n*, and the return value is named **ReturnValue**.</span></span> <span data-ttu-id="d40dd-134">Další informace a příklad najdete v tématu [IWbemClassObject::GetMethod metoda](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod).</span><span class="sxs-lookup"><span data-stu-id="d40dd-134">For more information and an example, see [IWbemClassObject::GetMethod method](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod).</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="5c966-135">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5c966-135">Requirements</span></span>  
-<span data-ttu-id="5c966-136">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5c966-136">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d40dd-135">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d40dd-135">Requirements</span></span>  
+<span data-ttu-id="d40dd-136">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d40dd-136">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5c966-137">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="5c966-137">**Header:** WMINet_Utils.idl</span></span>  
+ <span data-ttu-id="d40dd-137">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="d40dd-137">**Header:** WMINet_Utils.idl</span></span>  
   
- <span data-ttu-id="5c966-138">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="5c966-138">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
+ <span data-ttu-id="d40dd-138">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="d40dd-138">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5c966-139">Viz také</span><span class="sxs-lookup"><span data-stu-id="5c966-139">See also</span></span>  
-[<span data-ttu-id="5c966-140">Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="5c966-140">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="d40dd-139">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d40dd-139">See also</span></span>  
+[<span data-ttu-id="d40dd-140">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="d40dd-140">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
