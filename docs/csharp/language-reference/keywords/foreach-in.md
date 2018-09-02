@@ -1,5 +1,5 @@
 ---
-title: foreach, in (Referenční dokumentace jazyka C#)
+title: Příkaz foreach jazyka C#
 ms.date: 06/29/2018
 f1_keywords:
 - foreach
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: a6397cdc9d1e36423a14158a57ca2c1b3fe9df17
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: d84c68eb102d55b31ba20a6b6b5c01b96963924d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37874959"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43405847"
 ---
-# <a name="foreach-in-c-reference"></a>foreach, in (Referenční dokumentace jazyka C#)
+# <a name="foreach-in-c-reference"></a>foreach, in (referenční dokumentace jazyka C#)
 
 `foreach` Příkaz opakuje příkaz nebo blok příkazů pro každý prvek v instanci typu, který implementuje <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> rozhraní. `foreach` Příkaz není omezena pouze na tyto typy které můžou uplatnit na instanci typu, který splňuje následující podmínky:
 
@@ -47,10 +47,10 @@ Od verze C# 7.3, pokud čítače výčtu `Current` vrátí vlastnost [odkazovat 
 
 ## <a name="see-also"></a>Viz také:
 
-[Příkaz foreach (specifikace jazyka C#)](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement)  
-[Použití příkazu foreach s poli](../../programming-guide/arrays/using-foreach-with-arrays.md)  
-[for](for.md)  
-[Příkazy iterace](iteration-statements.md)  
-[Klíčová slova jazyka C#](index.md)  
-[Referenční dokumentace jazyka C#](../index.md)  
-[Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
+- [Příkaz foreach (specifikace jazyka C#)](/dotnet/csharp/language-reference/language-specification/statements#the-foreach-statement)
+- [Použití příkazu foreach s poli](../../programming-guide/arrays/using-foreach-with-arrays.md)
+- [for](for.md)
+- [Příkazy iterace](iteration-statements.md)
+- [Klíčová slova jazyka C#](index.md)
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)

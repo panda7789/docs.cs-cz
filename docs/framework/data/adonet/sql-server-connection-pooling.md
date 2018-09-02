@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
-ms.openlocfilehash: 79749f5e593fbf4ea282cc5c8000be88098b702f
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: f416ae8252d9991905da7eeaf4ce6398ff0e7461
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37874592"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43406493"
 ---
 # <a name="sql-server-connection-pooling-adonet"></a>Připojení k SQL serveru sdružování (ADO.NET)
 Připojování k databázovému serveru, obvykle se skládá z několika kroků časově náročné. Fyzické kanál například soket nebo pojmenovaný kanál musí navázat, počáteční metody handshake se serverem se musí vyskytovat, informace o připojovacím řetězci musí být analyzován, server musí být ověřené připojení, kontroly musí být spuštěn pro zařazování aktuální transakce a tak dále.  
@@ -124,7 +124,7 @@ using (SqlConnection connection = new SqlConnection(
 ```  
   
 ## <a name="application-roles-and-connection-pooling"></a>Aplikační role a sdružování připojení  
- Po SQL Server aktivoval se aplikační role voláním `sp_setapprole` systémové uložené procedury, kontext zabezpečení připojení nelze resetovat. Ale pokud je povoleno sdružování připojení je vrácen do fondu a dojde k chybě, když je znovu použít ve fondu připojení. Další informace najdete v článku znalostní báze Knowledge Base "[chyby role SQL aplikace s sdružování prostředků OLE DB](http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q229564)."  
+ Po SQL Server aktivoval se aplikační role voláním `sp_setapprole` systémové uložené procedury, kontext zabezpečení připojení nelze resetovat. Ale pokud je povoleno sdružování připojení je vrácen do fondu a dojde k chybě, když je znovu použít ve fondu připojení. Další informace najdete v článku znalostní báze Knowledge Base "[chyby role SQL aplikace s sdružování prostředků OLE DB](https://support.microsoft.com/default.aspx?scid=KB;EN-US;Q229564)."  
   
 ### <a name="application-role-alternatives"></a>Alternativy Role aplikace  
  Doporučujeme vám, že využijete mechanismy zabezpečení, které můžete použít namísto aplikační role. Další informace najdete v tématu [vytváření rolí aplikací v systému SQL Server](../../../../docs/framework/data/adonet/sql/creating-application-roles-in-sql-server.md).  
@@ -133,4 +133,4 @@ using (SqlConnection connection = new SqlConnection(
  [Sdružování připojení](../../../../docs/framework/data/adonet/connection-pooling.md)  
  [SQL Server a ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)  
  [Čítače výkonu](../../../../docs/framework/data/adonet/performance-counters.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

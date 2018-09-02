@@ -2,35 +2,35 @@
 title: Zprostředkovatel tokenů zabezpečení SAML
 ms.date: 03/30/2017
 ms.assetid: eb16e5e2-4c8d-4f61-a479-9c965fcec80c
-ms.openlocfilehash: 519bde6b2849328efdeb2f295bde4749fbb652ca
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 509469404e2c3866c26b5e1817a819519203c175
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33808777"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43418036"
 ---
 # <a name="saml-token-provider"></a>Zprostředkovatel tokenů zabezpečení SAML
-Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatele tokenu SAML. Zprostředkovatel tokenu ve Windows Communication Foundation (WCF) se používá pro zadávání přihlašovacích údajů k zabezpečení infrastruktury. Zprostředkovatel tokenu obecně prozkoumá cíl a problémy vhodné přihlašovací údaje, aby infrastruktura zabezpečení můžete zabezpečit zprávy. WCF se dodává s výchozí zprostředkovatel tokenu správce přihlašovacích údajů. Dodává se také s WCF [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
+Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatel tokenů SAML. Poskytovatel tokenu ve Windows Communication Foundation (WCF) slouží k poskytnutí přihlašovacích údajů k zabezpečení infrastruktury. Poskytovatel tokenu obecně zkontroluje cíl a problémů příslušné přihlašovací údaje tak, aby infrastruktura zabezpečení se dají zabezpečit zprávy. WCF se dodává s výchozí poskytovatel tokenu přihlašovacích údajů správce. WCF se také dodává se [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
   
--   Pokud máte úložiště přihlašovacích údajů, která tyto poskytovatele tokenů nemůže pracovat s.  
+-   Pokud máte úložiště přihlašovacích údajů, které tyto poskytovatele tokenů nemůže pracovat s.  
   
--   Pokud chcete zadat vlastní vlastní mechanismus pro transformaci přihlašovací údaje z bodu, když uživatel poskytuje podrobnosti pro případ použití rozhraní klienta WCF přihlašovací údaje.  
+-   Pokud chcete poskytnout vlastní vlastní mechanismus pro transformaci přihlašovacích údajů z bodu, když uživatel zadá podrobnosti, které chcete při Architektura klienta WCF používá přihlašovací údaje.  
   
 -   Pokud vytváříte vlastní token.  
   
- Tento příklad ukazuje, jak vytvořit vlastní zprostředkovatele tokenů, který umožňuje získat z mimo rozhraní klienta WCF pro použití tokenu SAML.  
+ Tento příklad ukazuje, jak vytvořit vlastního zprostředkovatele tokenů, který umožňuje získat z mimo Architektura klienta WCF pro použití tokenu SAML.  
   
- Tento příklad znázorňuje to Shrneme, následující:  
+ Souhrnně řečeno, tento příklad znázorňuje následující:  
   
--   Jak klienta můžete nakonfigurovat vlastní zprostředkovatele tokenu.  
+-   Jak klienta lze nakonfigurovat pomocí vlastního zprostředkovatele tokenů.  
   
--   Jak lze předat tokenu SAML přihlašovací údaje vlastního klienta.  
+-   Jak lze předat SAML token vlastních klientských přihlašovacích údajů.  
   
--   Jak tokenu SAML zajišťuje rozhraní klienta WCF.  
+-   Jak se do rozhraní klienta WCF zadává tokenu SAML.  
   
--   Jak server ověření klienta pomocí certifikátu X.509 serveru.  
+-   Jak ověření serveru klientem pomocí certifikátu X.509 serveru.  
   
- Službu zpřístupní dva koncové body pro komunikaci se službou, definovat pomocí konfiguračního souboru App.config. Každý koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurována s standardní `wsFederationHttpBinding`, který používá zabezpečení zpráv. Jeden koncový bod očekává klienta k ověřování SAML token, který používá symetrického klíče doklad při dalších očekává klienta k ověření pomocí tokenu SAML, která používá asymetrické doklad klíč. Služba nakonfiguruje taky certifikát služby pomocí `serviceCredentials` chování. `serviceCredentials` Chování umožňuje nakonfigurovat certifikát služby. Certifikát služby se používá klient k ověření služby a zajištění ochrany zprávy. Následující konfigurace odkazuje "localhost" certifikát nainstalován při instalaci je ukázka, jak je popsáno v pokynů pro instalaci na konci tohoto tématu. `serviceCredentials` Chování můžete také konfigurovat certifikáty, které jsou důvěryhodní k podepisování tokenů SAML. Následující konfigurace odkazuje 'Alice' certifikát nainstalován během vzorku.  
+ Služba poskytuje dva koncové body služby pro komunikaci se službou, definované pomocí konfiguračního souboru App.config. Každý koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována se standardní `wsFederationHttpBinding`, který používá zabezpečení zpráv. Jeden koncový bod očekává, že klient k ověření pomocí tokenu SAML, který používá symetrický vyzkoušený klíč, zatímco druhá očekává, že klient k ověření pomocí tokenu SAML, který používá asymetrický klíč důkazu. Služba také nakonfiguruje pomocí certifikátu služby `serviceCredentials` chování. `serviceCredentials` Chování umožňuje nakonfigurovat certifikát služby. Certifikát služby se používá pro klienta k ověření služby a zajistit ochranu zprávy. Následující konfigurace odkazuje na "localhost" certifikát nainstalovat během instalace ukázka, jak je popsáno v pokynech pro instalační program na konci tohoto tématu. `serviceCredentials` Chování lze také nakonfigurovat certifikáty, které jsou důvěryhodní k podepisování tokenů SAML. Následující konfigurace odkazuje na "Alice" certifikát nainstalován během ukázky.  
   
 ```xml  
 <system.serviceModel>  
@@ -111,13 +111,13 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatele t
 </system.serviceModel>  
 ```  
   
- Následující kroky ukazují, jak vytvořit vlastní zprostředkovatele tokenu SAML a integraci s použitím technologie WCF: framework zabezpečení:  
+ Následující kroky ukazují, jak vyvíjet vlastní zprostředkovatel tokenů SAML a integrace s použitím technologie WCF: architektury zabezpečení:  
   
-1.  Napište vlastní zprostředkovatele tokenu SAML.  
+1.  Napište vlastního zprostředkovatele tokenů SAML.  
   
-     Ukázka implementuje vlastního zprostředkovatele tokenu SAML, který vrátí token zabezpečení založené na výrazu SAML, který je zadán v době konstrukce.  
+     Ukázka implementuje vlastního zprostředkovatele tokenů SAML, který vrátí token zabezpečení založené na kontrolní výraz SAML, která je k dispozici v době konstrukce.  
   
-     K provedení této úlohy, poběží vlastní zprostředkovatel tokenu je odvozený od <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídy a přepsání <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A> metoda. Tato metoda vytvoří a vrátí novou `SecurityToken`.  
+     K provedení této úlohy, vlastní poskytovatele tokenu, kterého je odvozen z <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídy a přepsání <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A> metody. Tato metoda vytvoří a vrátí nový `SecurityToken`.  
   
     ```  
     protected override SecurityToken GetTokenCore(TimeSpan timeout)  
@@ -156,9 +156,9 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatele t
     }  
     ```  
   
-2.  Zápis tokenu správce vlastní zabezpečení.  
+2.  Správce tokenů zabezpečení vlastního zápisu.  
   
-     <xref:System.IdentityModel.Selectors.SecurityTokenManager> Třída se používá k vytvoření <xref:System.IdentityModel.Selectors.SecurityTokenProvider> pro konkrétní <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> , je do ní předán v `CreateSecurityTokenProvider` metoda. Správce tokenu zabezpečení se také používá k vytvoření tokenu ověřovací data a serializátoru tokenů, ale nejsou uvedené v této ukázce. V této ukázkové vlastní zabezpečení Správce tokenu dědí z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídy a přepsání `CreateSecurityTokenProvider` je požadovaná metoda vrátí vlastního zprostředkovatele tokenu SAML, když předaný tokenu požadavky označuje, že tokenu SAML. Pokud třída pověření klienta (viz krok 3) nebyl zadán kontrolní výrazy, Správce tokenů zabezpečení vytvoří odpovídající instance.  
+     <xref:System.IdentityModel.Selectors.SecurityTokenManager> Třída se používá k vytvoření <xref:System.IdentityModel.Selectors.SecurityTokenProvider> pro konkrétní <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> , který je do ní předán v `CreateSecurityTokenProvider` metody. Správce tokenů zabezpečení se také používá k vytvoření ověřovací data tokenu a tokenu serializátor, ale nejsou uvedené v této ukázce. V této ukázkové vlastní bezpečnostní zdědí Správce tokenů <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídy a přepsání `CreateSecurityTokenProvider` požadovaná metoda vrátí vlastního zprostředkovatele tokenů SAML, při úspěšné požadavky tokenu označuje, že tokenu SAML. Pokud kontrolní výraz (viz krok 3) nebyla zadaná třída přihlašovací údaje klienta, Správce tokenů zabezpečení vytvoří příslušnou instanci.  
   
     ```  
     public class SamlSecurityTokenManager :  
@@ -228,9 +228,9 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatele t
     }  
     ```  
   
-3.  Zápis vlastních klientských pověření.  
+3.  Zápis vlastních klientských přihlašovacích údajů.  
   
-     Třída pověření klienta se používá k reprezentování přihlašovací údaje, které jsou nakonfigurované pro proxy serveru klienta a vytvoří token správce, který slouží k získání tokenu ověřovací data, poskytovatele tokenů a serializátoru tokenů zabezpečení.  
+     Třída přihlašovacích údajů klienta se používá k reprezentování přihlašovací údaje, které jsou nakonfigurované pro proxy serveru klienta a vytvoří token správce, který se používá k získání ověřovací data tokenu, poskytovatele tokenů a serializátoru tokenů zabezpečení.  
   
     ```  
     public class SamlClientCredentials : ClientCredentials  
@@ -271,9 +271,9 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatele t
     }  
     ```  
   
-4.  Konfigurace klienta pro použití vlastního klienta přihlašovací údaje.  
+4.  Konfigurace klienta pro použití vlastního klienta přihlašovacích údajů.  
   
-     Ukázka odstraní výchozí třídu pověření klienta a poskytuje novou třídu pověření klienta, takže klient může používat přihlašovací údaje vlastního klienta.  
+     Ukázka odstraní výchozí třídu přihlašovacích údajů klienta a poskytuje novou třídu přihlašovacích údajů klienta, může klient použít přihlašovací údaje, které vlastní.  
   
     ```  
     // Create new credentials class  
@@ -296,18 +296,18 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatele t
     client.ChannelFactory.Endpoint.Behaviors.Add(samlCC);  
     ```  
   
- Ve službě zobrazí se deklarace identity spojené s volajícím. Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Ve službě zobrazí se deklarací spojené s volajícím. Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
-## <a name="setup-batch-file"></a>Instalační program dávkového souboru  
- Dávkový soubor Setup.bat součástí této ukázky můžete nakonfigurovat server se příslušný certifikát spuštění vlastním hostováním aplikace, která vyžaduje zabezpečení na základě certifikátu serveru. Tento dávkový soubor musí upravit, fungovat na všech počítačích, nebo pro práci v případě bez hostitele.  
+## <a name="setup-batch-file"></a>Instalační dávkový soubor  
+ Dávkový soubor Setup.bat zahrnuté v této ukázce můžete nakonfigurovat server se příslušný certifikát ke spuštění aplikace v místním prostředí, která vyžaduje zabezpečení na základě certifikátů serveru. Tento dávkový soubor musí být upravena fungovat na všech počítačích nebo pro práci v případě jiných hostované.  
   
- Následující poskytuje stručný přehled různých oddílů dávkové soubory, takže může být změněn na spouštění v příslušné konfiguraci.  
+ Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v odpovídající konfiguraci.  
   
--   Vytvoření certifikátu serveru:  
+-   Vytváří se certifikát serveru:  
   
-     Následující řádky z dávkového souboru Setup.bat vytvořit certifikát serveru, který chcete použít. `%SERVER_NAME%` Proměnná Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. Výchozí hodnota v tomto souboru batch je localhost.  
+     Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít. `%SERVER_NAME%` Proměnné Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. Výchozí hodnota v tomto souboru služby batch je localhost.  
   
-     Certifikát je uložen v tomto úložišti (osobních) v části LocalMachine umístění úložiště.  
+     Certifikát je uložen v úložišti (osobních) v části umístění úložiště LocalMachine.  
   
     ```  
     echo ************  
@@ -321,17 +321,17 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatele t
   
 -   Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta:  
   
-     Následující řádky do Setup.bat batch soubor zkopírujte certifikát serveru do důvěryhodných osob klienta úložiště. Tento krok je povinný, protože certifikáty generované infrastrukturou Makecert.exe nejsou důvěryhodný implicitně systému klienta. Pokud již máte certifikát, který je integrován do důvěryhodného kořenového certifikátu klienta – například certifikát vystavený Microsoft – v tomto kroku naplnění úložišti certifikátů klienta s certifikátem serveru se nevyžaduje.  
+     Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikát vydaný společností Microsoft – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.  
   
     ```  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r LocalMachine -s TrustedPeople  
     ```  
   
--   Vytváření vystavitele certifikátu.  
+-   Vytvoření certifikátu vystavitele.  
   
-     Následující řádky z dávkového souboru Setup.bat vytvořit vystavitele certifikát, který chcete použít. `%USER_NAME%` Proměnná Určuje název vystavitele. Změňte tuto proměnnou k určení svůj vlastní název vystavitele. Výchozí hodnota v tomto souboru batch je Alice.  
+     Následující řádky z dávkový soubor Setup.bat vytvořit certifikát vystavitele, který se má použít. `%USER_NAME%` Proměnná Určuje název vystavitele. Změňte tuto proměnnou k určení vlastní název vystavitele. Výchozí hodnota v tomto souboru služby batch je Alice.  
   
-     Certifikát je uložen v tomto úložišti pod CurrentUser umístění úložiště.  
+     Certifikát je uložen v úložišti v rámci CurrentUser umístění úložiště.  
   
     ```  
     echo ************  
@@ -343,60 +343,60 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatele t
     makecert.exe -sr CurrentUser -ss My -a sha1 -n CN=%USER_NAME% -sky exchange -pe  
     ```  
   
--   Instalace vystavitele certifikátu do úložiště důvěryhodných certifikátů serveru.  
+-   Instalace certifikátu vystavitele do důvěryhodného úložiště certifikátů serveru.  
   
-     Následující řádky do Setup.bat batch soubor zkopírujte certifikát serveru do důvěryhodných osob klienta úložiště. Tento krok je povinný, protože certifikáty generované infrastrukturou Makecert.exe nejsou důvěryhodný implicitně systému klienta. Pokud již máte certifikát, který je integrován do důvěryhodného kořenového certifikátu klienta – například certifikát vystavený Microsoft – v tomto kroku naplnění úložišti certifikátů serveru pomocí vystavitele certifikátu se nevyžaduje.  
+     Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikát vydaný společností Microsoft – v tomto kroku naplnění úložiště certifikátů serveru s certifikátem vystavitele se nevyžaduje.  
   
     ```  
     certmgr.exe -add -r CurrentUser -s My -c -n %USER_NAME% -r LocalMachine -s TrustedPeople  
     ```  
   
-#### <a name="to-set-up-and-build-the-sample"></a>Jak nastavit a sestavit ukázku  
+#### <a name="to-set-up-and-build-the-sample"></a>K nastavení a sestavit ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 > [!NOTE]
->  Pokud používáte Svcutil.exe znovu vygenerovat konfigurace pro tuto ukázku, nezapomeňte změnit název koncového bodu v konfiguraci klienta tak, aby odpovídaly kódu klienta.  
+>  Pokud používáte Svcutil.exe k opětovnému vytvoření konfigurace pro tuto ukázku, nezapomeňte změnit název koncového bodu v konfiguraci klienta tak, aby odpovídaly klientský kód.  
   
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Ke spuštění ukázky ve stejném počítači  
   
-1.  Spustit Setup.bat z instalační složky ukázka uvnitř [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazového řádku spuštěného s oprávněními správce. Tím se nainstaluje všechny certifikáty, které jsou potřebné ke spuštění ukázky.  
+1.  Spustit Setup.bat z instalační složky s ukázkou uvnitř [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazového řádku spuštěného s oprávněními správce. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky.  
   
     > [!NOTE]
-    >  Dávkový soubor Setup.bat slouží ke spouštění z [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazového řádku. Nastavit proměnné prostředí PATH v rámci [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazový řádek odkazuje na adresář, který obsahuje požadované skriptem Setup.bat spustitelné soubory.  
+    >  Dávkový soubor Setup.bat slouží ke spuštění z [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazového řádku. Nastavte proměnné prostředí PATH v rámci [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazový řádek odkazuje na adresář, který obsahuje požadované skript Setup.bat spustitelné soubory.  
   
 2.  Spusťte Service.exe z service\bin.  
   
-3.  Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientskou aplikaci konzoly.  
+3.  Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-4.  Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
-#### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky mezi počítači  
+#### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
   
-1.  Vytvořte adresář na počítači se službou pro binární soubory služby.  
+1.  Vytvoření adresáře na počítači se službou pro binární soubory služby.  
   
-2.  Zkopírujte soubory programu služby do adresáře služby na počítači se službou. Taky zkopírujte soubory Setup.bat a Cleanup.bat k počítači služby.  
+2.  Programové soubory nástroje služby zkopírujte do adresáře služby na počítači se službou. Také kopírovat soubory Setup.bat a Cleanup.bat k počítači služby.  
   
-3.  Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Soubor Service.exe.config musí být aktualizovány tak, aby odrážela tento nový název certifikátu. Certifikát serveru můžete vytvořit úpravou Setup.bat dávkového souboru. Všimněte si, že soubor setup.bat musí spustit v okně příkazového řádku Visual Studio s oprávněními správce. Je nutné nastavit `%SERVER_NAME%` proměnné na hostitele plně kvalifikovaný název počítače, který se používá k hostování služby.  
+3.  Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Soubor Service.exe.config musí aktualizovat tak, aby odrážely tento nový název certifikátu. Certifikát serveru můžete vytvořit tak, že upravíte dávkový soubor Setup.bat. Všimněte si, že se soubor setup.bat musí být spuštěn v sadě Visual Studio okno příkazového řádku otevřeného s oprávněními správce. Je nutné nastavit `%SERVER_NAME%` proměnných hostitele plně kvalifikovaný název počítače, který se používá k hostování služby.  
   
-4.  Zkopírujte certifikát serveru do úložiště CurrentUser TrustedPeople klienta. Tento krok není nutné, pokud je certifikát serveru vydána klienta důvěryhodného vystavitele.  
+4.  Zkopírujte certifikát serveru do úložiště CurrentUser TrustedPeople klienta. Tento krok není nezbytný, pokud certifikátu serveru vydanému klienta důvěryhodného vystavitele.  
   
-5.  V souboru Service.exe.config na počítači se službou změňte hodnotu z bázové adresy k zadání názvu počítače plně kvalifikovaný místo localhost.  
+5.  V souboru Service.exe.config na počítači se službou změňte hodnotu z bázové adresy pro zadejte název počítače plně kvalifikovaný, místo localhost.  
   
 6.  Na počítači se službou spusťte z příkazového řádku Service.exe.  
   
-7.  Zkopírujte soubory programu klienta ve složce \client\bin\ ve složce jazyka na klientský počítač.  
+7.  Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientského počítače.  
   
-8.  V souboru Client.exe.config na klientský počítač změňte hodnotu adresa koncového bodu tak, aby odpovídala nové adresy vaší služby.  
+8.  V souboru Client.exe.config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby.  
   
 9. Na klientském počítači spusťte `Client.exe` z okna příkazového řádku.  
   
-10. Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
-#### <a name="to-clean-up-after-the-sample"></a>Vyčistěte po vzorku  
+#### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
-1.  Po dokončení spuštění ukázky, spusťte Cleanup.bat ve složce Ukázky.  
+1.  Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
 ## <a name="see-also"></a>Viz také

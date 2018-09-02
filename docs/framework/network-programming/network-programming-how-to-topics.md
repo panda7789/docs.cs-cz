@@ -1,5 +1,5 @@
 ---
-title: Síťové programování – postupy
+title: 'Postupy: témata programování vizuální vrstvy'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - network resources
@@ -10,15 +10,15 @@ ms.assetid: 8fd6c675-9ea6-4fad-a412-e2c2c1f233d8
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: ed8de7c4271483a878ee422aac188adbf4700985
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 703d3c2260f46f46e85831f809386d5a3af647a4
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33395353"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43406531"
 ---
-# <a name="network-programming-how-to-topics"></a>Síťové programování – postupy
-Následující seznam obsahuje odkazy na témata s postupy v konceptuální dokumentaci k síťové programování.  
+# <a name="network-programming-how-to-topics"></a>Postupy: témata programování vizuální vrstvy
+Následující seznam obsahuje odkazy na témata s postupy v rámcové dokumentaci k síťové programování.  
   
  **Požadavek na Data:**  
   
@@ -48,7 +48,7 @@ Následující seznam obsahuje odkazy na témata s postupy v konceptuální doku
   
 -   [Postupy: Výpisy obsahu adresářů přes FTP](../../../docs/framework/network-programming/how-to-list-directory-contents-with-ftp.md)  
   
- **Internet Protocol Version 6:**  
+ **Internet Protocol verze 6:**  
   
 -   [Postupy: Úpravy konfiguračního souboru počítače na povolení podpory IPv6](../../../docs/framework/network-programming/how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md)  
   
@@ -83,4 +83,4 @@ Následující seznam obsahuje odkazy na témata s postupy v konceptuální doku
 ## <a name="see-also"></a>Viz také  
  [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)  
  [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)  
- [Ukázky sítě pro .NET na galerie kódů MSDN](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)
+ [Ukázky práce se sítí pro .NET v Galerie kódu na webu MSDN](https://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)

@@ -1,6 +1,6 @@
 ---
 title: Funkce QualifierSet_Get (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce QualifierSet_Get získá kvalifikátor s názvem.
+description: Funkce QualifierSet_Get získá s názvem kvalifikátoru.
 ms.date: 11/06/2017
 api_name:
 - QualifierSet_Get
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f1bc57ab45a0452d9e3a50f0ab2de786ad73204a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e8c10a680f1caffd583097b16c046729fe10b140
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33458644"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43415391"
 ---
 # <a name="qualifiersetget-function"></a>QualifierSet_Get – funkce
-Získá zadaný s názvem kvalifikátor.  
+Získá zadaný s názvem kvalifikátoru.  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -44,26 +44,26 @@ HRESULT QualifierSet_Get (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`   
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`   
-[v] Ukazatel na [IWbemQualifierSet](https://msdn.microsoft.com/library/aa391860(v=vs.85).aspx) instance.
+[in] Ukazatel [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.
 
 `wszName`   
-[v] Název kvalifikátor, jehož hodnota je vyžadována.
+[in] Název kvalifikátor, jehož hodnota je požadováno.
 
 `lFlags`   
-[v] Vyhrazena. Tento parametr musí být 0.
+[in] Vyhrazená. Tento parametr musí být 0.
 
 `pVal`   
-[out] Po úspěšné, správný typ a hodnotu pro kvalifikátor. Pokud se funkce nezdaří, `VARIANT` na kterou odkazuje `pVal` se nemění. Pokud tento parametr je `null`, parametr je ignorován.
+[out] V případě úspěchu správný typ a hodnota pro kvalifikátor. Pokud funkce selže, `VARIANT` odkazované `pVal` se nezmění. Pokud je tento parametr `null`, tento parametr je ignorován.
 
 `plFlavor`   
-[out] Ukazatel na typ LONG, která přijímá bitů příchuť kvalifikátor pro požadovaný kvalifikátor. V případě potřeby příchuť informace není tento parametr může být `null`. 
+[out] Ukazatel, který přijímá bity charakter kvalifikátoru pro požadovaný kvalifikátor DLOUHO. Pokud není žádoucí informace charakter, tento parametr může být `null`. 
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
@@ -73,14 +73,14 @@ Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubo
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemQualifierSet::Get](https://msdn.microsoft.com/library/aa391867(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemQualifierSet::Get](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-get) metody.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

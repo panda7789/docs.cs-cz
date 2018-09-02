@@ -1,5 +1,5 @@
 ---
-title: -zaškrtnutí (možnosti kompilátoru C#)
+title: -checked (možnosti kompilátoru C#)
 ms.date: 07/20/2015
 f1_keywords:
 - /checked
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - -checked compiler option [C#]
 - /checked compiler option [C#]
 ms.assetid: fb7475d3-e6a6-4e6d-b86c-69e7a74c854b
-ms.openlocfilehash: 4ed8467b0e1923aedf38edfd4a25414cbcb88b7f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cf6fa0e87654d0f9d61f34ea9b29ad80921a5720
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33218309"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43401703"
 ---
-# <a name="-checked-c-compiler-options"></a>-zaškrtnutí (možnosti kompilátoru C#)
-**-Zaškrtnutí** možnost určuje, zda celočíselný aritmetický příkaz výsledkem hodnotu, která je mimo rozsah datového typu a zda není v oboru [zaškrtnutí](../../../csharp/language-reference/keywords/checked.md) nebo [ nezaškrtnuté](../../../csharp/language-reference/keywords/unchecked.md) – klíčové slovo, způsobí spuštění výjimky.  
+# <a name="-checked-c-compiler-options"></a>-checked (možnosti kompilátoru C#)
+**– Zaškrtnutí** možnost určuje, zda příkaz aritmetické celé číslo, jehož výsledkem hodnotu, která je mimo rozsah datového typu a, který není v oboru [zaškrtnutí](../../../csharp/language-reference/keywords/checked.md) nebo [ unchecked](../../../csharp/language-reference/keywords/unchecked.md) – klíčové slovo, způsobí, že výjimka za běhu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,31 +25,34 @@ ms.locfileid: "33218309"
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Celočíselný aritmetický příkaz, který je v oboru `checked` nebo `unchecked` – klíčové slovo není v souladu účinku **-zaškrtnutí** možnost.  
+ Celočíselný aritmetické příkaz, který je v oboru `checked` nebo `unchecked` – klíčové slovo není v souladu s vliv **– zaškrtnutí** možnost.  
   
- Pokud celočíselný aritmetický příkaz, který není v oboru `checked` nebo `unchecked` – klíčové slovo, které jsou výsledkem je hodnota mimo rozsah datového typu, a **-checked +** (**-zaškrtnutí**) se používá v kompilace, že příkaz dojde k výjimce v době běhu. Pokud **- zaškrtnutí -** se používá při kompilaci, že příkaz nezpůsobí výjimku za běhu.  
+ Pokud celočíselný aritmetické příkaz, který není v oboru `checked` nebo `unchecked` – klíčové slovo výsledkem je hodnota mimo rozsah datového typu, a **-checked +** (nebo **– zaškrtnutí**) se používá v kompilace, že příkaz dojde k výjimce za běhu. Pokud **- checked –** se používá při kompilaci, že příkaz nezpůsobí výjimku za běhu.  
   
- Výchozí hodnota pro tuto možnost je **- zaškrtnutí -**. Jeden scénář použití **- zaškrtnutí -** je vytváření velkých aplikací. Někdy automatizované nástroje se používají k vytváření těchto aplikací a může takový nástroj automaticky nastaví **-zaškrtnutí** na +. Výchozí globální nástroje můžete přepsat zadáním **- zaškrtnutí -**.  
-  
+ Výchozí hodnota pro tuto možnost je **- checked –**; je zakázaná kontrola přetečení.
+ 
+ V některých případech automatizované nástroje, které se používají k vytvoření velké aplikace nastavené – kontrola +. Jeden scénář pro používání - checked – je globální výchozí nastavení nástroje přepsat zadáním - checked –.
+ 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevření projektu **vlastnosti** stránky. Další informace najdete v tématu [stránka sestavení, Návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).  
+1.  Otevřete v projektu **vlastnosti** stránky. Další informace najdete v tématu [stránku sestavení, Návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).  
   
-2.  Klikněte **sestavení** stránku vlastností.  
+2.  Klikněte na tlačítko **sestavení** stránku vlastností.  
   
-3.  Klikněte **Upřesnit** tlačítko.  
+3.  Klikněte na tlačítko **Upřesnit** tlačítko.  
   
-4.  Změnit **Kontrola aritmetického přetečení nebo podtečení** vlastnost.  
+4.  Upravit **kontrolovat aritmetické přetečení a podtečení** vlastnost.  
   
- K této možnosti kompilátoru prostřednictvím kódu programu, najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.CheckForOverflowUnderflow%2A>.  
+ Programový přístup k této možnosti kompilátoru, najdete v článku <xref:VSLangProj80.CSharpProjectConfigurationProperties3.CheckForOverflowUnderflow%2A>.  
   
 ## <a name="example"></a>Příklad  
- Následující příkaz zkompiluje `t2.cs`. Použití `-checked` v příkazu určuje, že všechny celočíselný aritmetický příkaz v souboru, který není v oboru `checked` nebo `unchecked` – klíčové slovo a jehož výsledkem je hodnota, která je mimo rozsah datového typu, dojde k výjimce při spuštění čas.  
+ Následující příkaz kompiluje `t2.cs`. Použití `-checked` v příkazu určuje, že všechny aritmetické příkaz celé číslo v souboru, který není v oboru `checked` nebo `unchecked` – klíčové slovo a jehož výsledkem je hodnota, která je mimo rozsah datového typu, dojde k výjimce za běhu čas.  
   
 ```console  
 csc t2.cs -checked  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)  
+
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)  

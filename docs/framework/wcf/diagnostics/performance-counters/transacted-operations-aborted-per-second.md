@@ -2,19 +2,19 @@
 title: Počet zrušených zpracovaných operací za sekundu
 ms.date: 03/30/2017
 ms.assetid: 19fc993f-2b3d-4898-852e-3b98ec2153a5
-ms.openlocfilehash: dacdf93f4610df9161134a41ece19fd2a18637c6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6369fea6def5ebb6b62274caed31d5fb63b3b0e1
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33474529"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417479"
 ---
 # <a name="transacted-operations-aborted-per-second"></a>Počet zrušených zpracovaných operací za sekundu
-Název čítače: Transakční operace přerušených za sekundu.  
+Název čítače: Stažení operací za sekundu.  
   
 ## <a name="description"></a>Popis  
- Počet transakcí operací, které bylo přerušeno v rámci této služby za sekundu.  
+ Počet transakční operace, které byla pravděpodobně přerušena v této službě za sekundu.  
   
- Tento čítač je typu čítače výkonu [PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkID=94649), jehož hodnota je vypočítána pomocí následujícího vzorce.  
+ Tento čítač je typ čítače výkonu [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkID=94649), jehož hodnota je vypočítána pomocí tohoto vzorce.  
   
- (NE 1 - N 0) / ((D 1 - D 0) / F)
+ (N 1 - N 0) / ((D 1 - D 0) / F)

@@ -5,53 +5,53 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6e3fb8b5-373b-4f9e-ab03-a22693df8e91
-ms.openlocfilehash: 752cccc9e10dd3056817945d1f9f5f3cf7d84227
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: e1071261f45c56655f8e6fb5fec6fccb08fd13c6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32766280"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43415760"
 ---
 # <a name="generating-commands-with-commandbuilders"></a>Generování příkazů s CommandBuilders
-Když `SelectCommand` dynamicky zadána vlastnost za běhu, například pomocí nástroje dotazu, který přebírá textový příkaz od uživatele, nemusí být možné zadat příslušné `InsertCommand`, `UpdateCommand`, nebo `DeleteCommand` v době návrhu. Pokud vaše <xref:System.Data.DataTable> mapuje nebo se vygeneruje z jedné tabulky databáze, můžete využít výhod <xref:System.Data.Common.DbCommandBuilder> objekt, který má automaticky generovat `DeleteCommand`, `InsertCommand`, a `UpdateCommand` z <xref:System.Data.Common.DbDataAdapter>.  
+Když `SelectCommand` vlastnost dynamicky určena v době běhu, jako je přes nástroj pro dotaz, který přijímá textový příkaz od uživatele, nemusí být schopen zadejte odpovídající `InsertCommand`, `UpdateCommand`, nebo `DeleteCommand` v době návrhu. Pokud vaše <xref:System.Data.DataTable> mapuje nebo je generován z jedné tabulky databáze, které můžete využít <xref:System.Data.Common.DbCommandBuilder> objektu automaticky generuje `DeleteCommand`, `InsertCommand`, a `UpdateCommand` z <xref:System.Data.Common.DbDataAdapter>.  
   
- Jako minimální požadavek, je nutné nastavit `SelectCommand` vlastnost v pořadí pro příkaz Automatické generování pracovat. Načíst schéma tabulky `SelectCommand` vlastnost určuje syntaxe automaticky generované příkazy INSERT, UPDATE a DELETE.  
+ Jako minimální požadavek, je nutné nastavit `SelectCommand` vlastnost, aby pro příkaz Automatické generování pracovat. Načte schéma tabulky `SelectCommand` vlastnost určuje syntaxi automaticky generované příkazy INSERT, UPDATE a DELETE.  
   
- <xref:System.Data.Common.DbCommandBuilder> Musí být spuštěn `SelectCommand` cílem vrátit metadata potřebná k vytvoření příkazy INSERT, UPDATE a odstranit SQL. V důsledku toho je nezbytné další cesty ke zdroji dat, a to může bránit ve výkonu. K dosažení optimálního výkonu, zadejte příkazech explicitně spíše než <xref:System.Data.Common.DbCommandBuilder>.  
+ <xref:System.Data.Common.DbCommandBuilder> Musí být spuštěn `SelectCommand` cílem vrátit metadata potřebná k sestavení příkazů INSERT, UPDATE a DELETE SQL. V důsledku toho navíc cesty ke zdroji dat je nezbytné, a to může bránit výkonu. Pro zajištění optimálního výkonu, explicitně určete příkazům spíš než <xref:System.Data.Common.DbCommandBuilder>.  
   
- `SelectCommand` Musí vracet také alespoň jeden primární klíč nebo jedinečné sloupec. Pokud žádný není přítomný, `InvalidOperation` se vygeneruje výjimka, a nejsou generované příkazy.  
+ `SelectCommand` Musí také vracet alespoň jednu primární klíč nebo jedinečné sloupce. Pokud nejsou k dispozici, `InvalidOperation` vygenerována výjimka, a příkazy nejsou vygenerovány.  
   
- Pokud jsou přidruženy `DataAdapter`, <xref:System.Data.Common.DbCommandBuilder> automaticky vygeneruje `InsertCommand`, `UpdateCommand`, a `DeleteCommand` vlastnosti `DataAdapter` Pokud jsou odkazy s hodnotou null. Pokud `Command` již existuje pro vlastnost, existující `Command` se používá.  
+ Při přidružené `DataAdapter`, <xref:System.Data.Common.DbCommandBuilder> automaticky generuje `InsertCommand`, `UpdateCommand`, a `DeleteCommand` vlastnosti `DataAdapter` případě, že jsou odkazy s hodnotou null. Pokud `Command` již existuje vlastnost existující `Command` se používá.  
   
- Zobrazení databáze, které jsou vytvořené pomocí spojení dvou nebo více tabulek nejsou považovány za jedné tabulky databáze. V této instanci nelze použít <xref:System.Data.Common.DbCommandBuilder> k automatickému generování příkazy; je nutné explicitně zadat příkazech. Informace o nastavení explicitně příkazy vyřešit aktualizací `DataSet` zpět do zdroje dat, najdete v části [aktualizace zdroje dat s DataAdapters](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md).  
+ Zobrazení databáze, které vytváří spojení dvou nebo více tabulek nejsou považovány za jeden databázové tabulky. V tomto případě nelze použít <xref:System.Data.Common.DbCommandBuilder> budou automaticky generovány příkazy; je nutné explicitně zadat příkazům. Informace o explicitním nastavením příkazy řešení aktualizace `DataSet` zpět do zdroje dat, naleznete v tématu [aktualizace zdroje dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md).  
   
- Můžete chtít mapování výstupní parametry zpátky na aktualizovaný řádek `DataSet`. Běžných úloh by být načítání hodnotu pole automaticky generované identity nebo časové razítko z datového zdroje. <xref:System.Data.Common.DbCommandBuilder> Nebude namapovat výstupní parametry sloupce v aktualizované řádek ve výchozím nastavení. V této instanci je nutné explicitně zadat příkazu. Příklad mapování pole automaticky generované identity zpět ke sloupci vloženého řádku, naleznete v části [načítání Identity nebo automatické číslování hodnoty](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md).  
+ Můžete chtít mapovat výstupní parametry zpátky na aktualizovaný řádek `DataSet`. Jednou z běžných úloh by být načítání hodnoty pole automaticky vygenerované identity nebo časové razítko ze zdroje dat. <xref:System.Data.Common.DbCommandBuilder> Nebude výstupní parametry mapovat na sloupce v aktualizovaný řádek ve výchozím nastavení. V tomto případě je nutné explicitně zadat svých rukou. Příklad mapování pole automaticky vygenerované identity zpět ke sloupci vloženého řádku najdete v tématu [načítání Identity nebo automatického číslování hodnoty](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md).  
   
-## <a name="rules-for-automatically-generated-commands"></a>Pravidla pro automaticky generované příkazy  
- Následující tabulka uvádí pravidla pro jak automaticky vygenerovat, že jsou generovány příkazy.  
+## <a name="rules-for-automatically-generated-commands"></a>Pravidla pro automaticky generovány příkazy  
+ Následující tabulka ukazuje pravidla pro způsob automaticky generované, že jsou generovány příkazy.  
   
 |Příkaz|Pravidlo|  
 |-------------|----------|  
-|`InsertCommand`|Vloží řádek ve zdroji dat pro všechny řádky v tabulce s <xref:System.Data.DataRow.RowState%2A> z <xref:System.Data.DataRowState.Added>. Vloží hodnoty pro všechny sloupce, které jsou v aktualizovatelné (ale ne sloupce například identit, výrazy nebo časová razítka).|  
-|`UpdateCommand`|Aktualizace řádků ve zdroji dat pro všechny řádky v tabulce s `RowState` z <xref:System.Data.DataRowState.Modified>. Aktualizace hodnoty všechny sloupce kromě sloupce, které nejsou v aktualizovatelné, jako je například identity nebo výrazů. Aktualizuje všechny řádky hodnoty sloupce ve zdroji dat shodují s hodnotami sloupec primárního klíče řádku a zbývající sloupce ve zdroji dat se shodují původní hodnoty řádku. Další informace najdete v tématu "Optimistickou metodu souběžného zpracování modelu pro aktualizace a odstraní," dál v tomto tématu.|  
-|`DeleteCommand`|Odstraní řádků ve zdroji dat pro všechny řádky v tabulce s `RowState` z <xref:System.Data.DataRowState.Deleted>. Odstraní všechny řádky, sloupce hodnoty shodují s hodnotami sloupec primárního klíče řádku a zbývající sloupce ve zdroji dat se shodují původní hodnoty řádku. Další informace najdete v tématu "Optimistickou metodu souběžného zpracování modelu pro aktualizace a odstraní," dál v tomto tématu.|  
+|`InsertCommand`|Vloží řádek ve zdroji dat pro všechny řádky v tabulce s <xref:System.Data.DataRow.RowState%2A> z <xref:System.Data.DataRowState.Added>. Vloží hodnoty pro všechny sloupce, které jsou aktualizovatelného (ale ne sloupce identity, výrazy nebo časová razítka).|  
+|`UpdateCommand`|Aktualizace řádků ve zdroji dat pro všechny řádky v tabulce s `RowState` z <xref:System.Data.DataRowState.Modified>. Aktualizuje hodnoty všechny sloupce kromě sloupce, které nejsou aktualizovatelné, jako je například identity nebo výrazy. Aktualizuje všechny řádky hodnoty sloupce ve zdroji dat shodují s hodnotami sloupec primárního klíče řádku a zbývající sloupce ve zdroji dat odpovídá původní hodnoty v řádku. Další informace najdete v tématu "Optimistického řízení souběžnosti Model pro aktualizace a odstraní," dále v tomto tématu.|  
+|`DeleteCommand`|Řádků ve zdroji dat pro všechny řádky v tabulce se odstraní `RowState` z <xref:System.Data.DataRowState.Deleted>. Odstraní všechny řádky, sloupce hodnoty shodují s hodnotami sloupec primárního klíče řádku a zbývající sloupce ve zdroji dat odpovídá původní hodnoty v řádku. Další informace najdete v tématu "Optimistického řízení souběžnosti Model pro aktualizace a odstraní," dále v tomto tématu.|  
   
-## <a name="optimistic-concurrency-model-for-updates-and-deletes"></a>Model optimistickou metodu souběžného pro aktualizace a odstranění  
- Logiku pro generování příkazy automaticky pro příkazy UPDATE a DELETE je založena na *optimistickou metodu souběžného*– to znamená, záznamy nejsou zamčené pro úpravy a mohou být upravena jiné uživatele nebo procesy v každém okamžiku. Vzhledem k tomu, že záznam mohl změnit po byla vrácena z příkaz SELECT, ale před vydáním příkazu UPDATE nebo DELETE, automaticky generovaný příkaz UPDATE nebo DELETE obsahuje klauzuli WHERE, určující, zda řádek hodnota aktualizuje jenom Pokud je obsahuje všechny původní hodnoty a ze zdroje dat nebyl odstraněn. Děje se tak aby nedošlo k přepsání nová data. Kde pokusí aktualizovat řádek, který byl odstraněn nebo neobsahuje původní hodnoty zjištěné v aktualizaci automaticky generovaný <xref:System.Data.DataSet>, příkaz nemá vliv na všechny záznamy a <xref:System.Data.DBConcurrencyException> je vyvolána výjimka.  
+## <a name="optimistic-concurrency-model-for-updates-and-deletes"></a>Model optimistického řízení souběžnosti pro aktualizace a odstranění  
+ Logika pro generování příkazy automaticky pro příkazy UPDATE a DELETE je založená na *optimistického řízení souběžnosti*– to znamená, že záznamy nejsou uzamčená pro úpravy a můžete kdykoli změnit jiné uživatelé nebo procesy. Vzhledem k tomu, že záznam mohl změnit poté, co byla vrácena z příkazu SELECT, ale před vydáním příkazu UPDATE nebo DELETE, automaticky vytvořen příkaz UPDATE nebo DELETE obsahuje klauzuli WHERE, určení, že řádek jenom aktualizovat, pokud ji obsahuje všechny původní hodnoty a nebyl odstraněn z datového zdroje. To se provádí, aby nedošlo k přepsání nová data. Kde se pokusí automaticky generované aktualizace aktualizace řádku, který je odstraněný nebo, který neobsahuje původní hodnoty nalezené v <xref:System.Data.DataSet>, příkaz nemá vliv na všechny záznamy a <xref:System.Data.DBConcurrencyException> je vyvolána výjimka.  
   
- Pokud chcete dokončit bez ohledu na původní hodnoty na aktualizaci nebo odstranění, musíte explicitně nastavit `UpdateCommand` pro `DataAdapter` a nespoléhala se na příkaz automatického generování.  
+ Pokud chcete, UPDATE nebo DELETE pro dokončení bez ohledu na původní hodnoty, je nutné explicitně nastavit `UpdateCommand` pro `DataAdapter` a nespoléhala se na generování automatických příkazu.  
   
-## <a name="limitations-of-automatic-command-generation-logic"></a>Omezení příkaz Automatické generování logiky  
- Automatické příkaz generace platí následující omezení.  
+## <a name="limitations-of-automatic-command-generation-logic"></a>Omezení generování logiky automatické příkaz  
+ Následující omezení platí pro generování automatických příkazu.  
   
 ### <a name="unrelated-tables-only"></a>Pouze nesouvisejících tabulek  
- Příkaz Automatické generování logiku generuje vložit, aktualizovat a odstraňovat příkazy pro samostatné tabulky bez ohledu na všechny vztahy s jinými tabulkami ve zdroji dat. V důsledku toho může dojde k chybě při volání metody `Update` k odeslání změn pro sloupec, který je součástí omezení cizího klíče v databázi. Chcete-li se vyhnout této výjimky, nepoužívejte <xref:System.Data.Common.DbCommandBuilder> pro aktualizace sloupců, které se účastní omezení cizího klíče; místo toho explicitně zadat příkazy, které používá k provedení operace.  
+ Generování automatických příkaz generuje logiku vložení, aktualizace a odstranění příkazů pro samostatné tabulky bez ohledu na případné relace s jinými tabulkami ve zdroji dat. V důsledku toho může dojít k chybě při volání `Update` odesílání pro sloupec, který je součástí omezení cizího klíče v databázi. Chcete-li předejít této výjimce, nepoužívejte <xref:System.Data.Common.DbCommandBuilder> pro aktualizaci sloupce používané v omezení cizího klíče; místo toho explicitně zadat příkazy používá k provedení této operace.  
   
-### <a name="table-and-column-names"></a>Tabulka a názvy sloupců  
- Příkaz Automatické generování logiku může selhat v případě, že názvy sloupců nebo názvy tabulek obsahovat žádné speciální znaky, jako je například mezery, tečky, uvozovek nebo jiných nealfanumerické znaky, i v případě, že oddělený závorkami. V závislosti na zprostředkovateli nastavení parametrů QuotePrefix a QuoteSuffix může povolit generování logika pro proces mezery, ale nelze použít uvozování speciální znaky. Plně kvalifikované názvy tabulek ve formě *catalog.schema.table* jsou podporovány.  
+### <a name="table-and-column-names"></a>Názvech tabulek a sloupců  
+ Příkaz Automatické generování logiky může selhat, pokud názvy sloupců nebo názvy tabulek obsahovat žádné speciální znaky, jako jsou mezery, tečky, uvozovky nebo jiné nealfanumerické znaky, i v případě, že oddělen složenými závorkami. V závislosti na poskytovateli nastavení parametrů QuotePrefix a QuoteSuffix může povolit generování logiku pro proces mezery, ale jeho nemůžou opustit speciální znaky. Plně kvalifikované názvy tabulek ve formě *catalog.schema.table* jsou podporovány.  
   
-## <a name="using-the-commandbuilder-to-automatically-generate-an-sql-statement"></a>Pomocí CommandBuilder k automatickému generování příkazu SQL  
- K automatickému generování příkazů SQL pro `DataAdapter`, nastavte nejprve `SelectCommand` vlastnost `DataAdapter`, pak vytvořte `CommandBuilder` objektu a zadat jako argument `DataAdapter` pro kterou `CommandBuilder` bude automaticky Generovat příkazů SQL.  
+## <a name="using-the-commandbuilder-to-automatically-generate-an-sql-statement"></a>Použití CommandBuilder automaticky vygenerovat příkaz SQL  
+ Budou automaticky generovány příkazy SQL `DataAdapter`, nejdřív nastavit `SelectCommand` vlastnost `DataAdapter`, vytvořte `CommandBuilder` objektu a zadat jako argument `DataAdapter` pro kterou `CommandBuilder` automaticky vytvořit příkazy SQL.  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection object   
@@ -74,19 +74,19 @@ builder.QuoteSuffix = "]";
 ```  
   
 ## <a name="modifying-the-selectcommand"></a>Úprava vlastnosti SelectCommand  
- Pokud změníte `CommandText` z `SelectCommand` po byly automaticky generovány příkazy INSERT, UPDATE nebo DELETE, může dojít k výjimce. Pokud upravený `SelectCommand.CommandText` obsahuje informace o schématu, který není konzistentní s `SelectCommand.CommandText` použít při vložení, aktualizaci nebo odstranění příkazy byly automaticky generované, budoucí volání `DataAdapter.Update` metoda může pokus o přístup sloupců, již existuje v aktuální tabulce odkazuje `SelectCommand`, a bude vyvolána výjimka.  
+ Pokud změníte `CommandText` z `SelectCommand` po byly automaticky generovány příkazy INSERT, UPDATE nebo DELETE, může dojít k výjimce. Pokud upravené `SelectCommand.CommandText` obsahuje informace o schématu, které nejsou konzistentní `SelectCommand.CommandText` použít při vložení, aktualizace nebo odstranění příkazy byly automaticky vygenerovaný, budoucí volání `DataAdapter.Update` metoda může pokus o přístup k sloupce, který už existuje v aktuální tabulce odkazuje `SelectCommand`, a bude vyvolána výjimka.  
   
- Můžete obnovit informace o schématu používané `CommandBuilder` k automatickému generování příkazy voláním `RefreshSchema` metodu `CommandBuilder`.  
+ Můžete aktualizovat informace o schématu používané `CommandBuilder` voláním budou automaticky generovány příkazy `RefreshSchema` metodu `CommandBuilder`.  
   
- Pokud chcete vědět, jaké příkaz byla automaticky vygenerována, můžete získat odkaz na automaticky generovaný příkazy pomocí `GetInsertCommand`, `GetUpdateCommand`, a `GetDeleteCommand` metody `CommandBuilder` objektu a kontrolu `CommandText`vlastnost přidružené příkazu.  
+ Pokud chcete vědět, jaké příkazu byla automaticky vygenerována, lze získat odkaz na automaticky generovaný příkazy pomocí `GetInsertCommand`, `GetUpdateCommand`, a `GetDeleteCommand` metody `CommandBuilder` objekt a zkontrolujete `CommandText`vlastnost přidružený příkaz.  
   
- Následující příklad kódu zapíše do konzoly aktualizace příkaz, který byl automaticky vygenerován.  
+ Následující příklad kódu zapíše do konzoly pro příkaz update, která byla automaticky vygenerována.  
   
 ```  
 Console.WriteLine(builder.GetUpdateCommand().CommandText)  
 ```  
   
- Následující příklad vytvoří `Customers` tabulky v `custDS` datovou sadu. **RefreshSchema** metoda je volána k aktualizaci automaticky generované příkazů pomocí této nové informace o sloupci.  
+ Znovu vytvoří v následujícím příkladu `Customers` v tabulku `custDS` datové sady. **RefreshSchema** metoda je volána k aktualizaci automaticky generované příkazy pomocí této nové informace o sloupci.  
   
 ```vb  
 ' Assumes an open SqlConnection and SqlDataAdapter inside of a Using block.  
@@ -112,4 +112,4 @@ adapter.Fill(custDS, "Customers");
  [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
  [Spuštění příkazu](../../../../docs/framework/data/adonet/executing-a-command.md)  
  [DbConnection, DbCommand a DbException](../../../../docs/framework/data/adonet/dbconnection-dbcommand-and-dbexception.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: vytvoření služby WCF, který komunikuje přes objekty WebSockets'
+title: 'Postupy: vytvoření služby WCF, který komunikuje přes WebSockets'
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-ms.openlocfilehash: 197db0b81565b93c753ad3ecfb716e4d07ea1d0f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a9b3ae8d8dcac7844e241fa668e1199669d216e6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33493774"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43416024"
 ---
-# <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Postupy: vytvoření služby WCF, který komunikuje přes objekty WebSockets
-Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding> vazby pro komunikaci pomocí objekty WebSockets.  Technologie WebSockets bude použít, když <xref:System.ServiceModel.NetHttpBinding> určuje kontrakt služby definuje kontrakt zpětného volání. Toto téma popisuje, jak implementovat klienta, který používá a služby WCF <xref:System.ServiceModel.NetHttpBinding> komunikovat přes objekty WebSockets.  
+# <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Postupy: vytvoření služby WCF, který komunikuje přes WebSockets
+Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding> vazby komunikovat přes WebSockets.  Protokoly Websocket se nepoužívá, pokud <xref:System.ServiceModel.NetHttpBinding> určuje kontrakt služby definuje kontrakt zpětného volání. Toto téma popisuje, jak implementovat službu WCF a klienta, který používá <xref:System.ServiceModel.NetHttpBinding> komunikovat přes WebSockets.  
   
 ### <a name="define-the-service"></a>Zadejte službu  
   
@@ -25,9 +25,9 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
         }  
     ```  
   
-     Tato smlouva se provádí klientská aplikace lze umožnit službě odesílat zprávy zpět do klienta.  
+     Tato smlouva se provádí klientská aplikace, aby byla povolena pro odesílání zpráv zpět klientovi.  
   
-2.  Definování kontraktu služby a zadejte `IStockQuoteCallback` rozhraní jako kontrakt zpětného volání.  
+2.  Definování kontraktu služby a zadejte `IStockQuoteCallback` rozhraní jako smlouvy zpětného volání.  
   
     ```csharp  
     [ServiceContract(CallbackContract = typeof(IStockQuoteCallback))]  
@@ -38,7 +38,7 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
         }  
     ```  
   
-3.  Implementujte kontrakt služby.  
+3.  Implementace kontraktu služby.  
   
     ```  
     public class StockQuoteService : IStockQuoteService  
@@ -59,7 +59,7 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
         }  
     ```  
   
-     Operace služby `StartSendingQuotes` je implementovaný jako asynchronní volání. Nemůžeme načíst pomocí kanálu zpětného volání `OperationContext` a pokud je otevřít kanál, provedeme asynchronní volání na zpětné volání kanálu.  
+     Operace služby `StartSendingQuotes` je implementovaný jako asynchronní volání. Nemůžeme načíst pomocí zpětného volání kanálu `OperationContext` a pokud kanál není otevřený, provedeme asynchronní volání kanálu zpětného volání.  
   
 4.  Konfigurace služby  
   
@@ -90,11 +90,11 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
     </configuration>  
     ```  
   
-     Konfigurační soubor služby spoléhá na koncových bodů WCF na výchozí. `<protocolMapping>` Části slouží k určení, který `NetHttpBinding` má být použit pro výchozí koncové body vytvořili.  
+     Konfigurační soubor služby spoléhá na koncových bodů WCF na výchozí. `<protocolMapping>` Oddíl se používá k určení, která `NetHttpBinding` byste měli použít pro výchozí koncové body vytvořené.  
   
 ### <a name="define-the-client"></a>Definování klienta  
   
-1.  Implementujte kontrakt zpětného volání.  
+1.  Implementace kontraktu zpětného volání.  
   
     ```csharp  
     private class CallbackHandler : StockQuoteServiceReference.IStockQuoteServiceCallback  
@@ -106,9 +106,9 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
             }  
     ```  
   
-     Operace zpětného kontrakt je implementovaný jako asynchronní metodu.  
+     Operace kontraktu zpětného volání je implementovaný jako asynchronní metody.  
   
-    1.  Implementaci kódu klienta.  
+    1.  Implementujte kód klienta.  
   
         ```csharp  
         class Program  
@@ -131,7 +131,7 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
         }  
         ```  
   
-         Hodnota CallbackHandler se zde opakuje pro přehlednost. Klientská aplikace vytvoří nový objekt InstanceContext a určuje implementace rozhraní zpětného volání. Potom vytvoří instanci třídy proxy odesílání odkaz na nově vytvořený objekt InstanceContext. Když klient zavolá službu, službu bude volat klienta pomocí zadané kontrakt zpětného volání.  
+         Hodnota CallbackHandler se tady opakuje pro přehlednost. Klientská aplikace vytvoří nová třída InstanceContext a určuje implementaci rozhraní zpětného volání. Dále vytvoří instanci třídy proxy odesílání odkazem na nově vytvořený InstanceContext. Když klient zavolá službu, bude volat službu klienta pomocí zpětného volání kontraktu.  
   
     2.  Konfigurace klienta  
   
@@ -158,10 +158,10 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
         </configuration>  
         ```  
   
-         Není co speciální, je nutné provést v konfiguraci klienta, zadat pouze na klientské straně koncový bod pomocí `NetHttpBinding`.  
+         Není nic zvláštního, je potřeba udělat v konfiguraci klienta, stačí zadat koncový bod na straně klienta pomocí `NetHttpBinding`.  
   
 ## <a name="example"></a>Příklad  
- Následuje kód dokončení použít v tomto tématu.  
+ Následuje kompletní kód použitý v tomto tématu.  
   
 ```csharp  
 // IStockQuoteService.cs  
@@ -228,7 +228,7 @@ namespace Server
   
 <!--  
   For more information on how to configure your ASP.NET application, please visit  
-  http://go.microsoft.com/fwlink/?LinkId=169433  
+  https://go.microsoft.com/fwlink/?LinkId=169433  
   -->  
   
 <configuration>  

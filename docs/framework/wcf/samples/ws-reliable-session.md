@@ -4,32 +4,33 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Reliable session
 ms.assetid: 86e914f2-060b-432b-bd17-333695317745
-ms.openlocfilehash: e755c99f83cc7fdc02f3d8ff74b5a34fc6d57869
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ec9163eded7f77053b94b7cb0ff0995dca575612
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43407804"
 ---
 # <a name="ws-reliable-session"></a>Spolehlivá relace WS
-Tento příklad znázorňuje použití spolehlivé relace. Spolehlivé relace poskytuje podporu pro spolehlivé zasílání zpráv a relací. Spolehlivé zasílání zpráv opakování komunikace při selhání a umožňuje záruky doručení zadat, jako je například doručení zpráv v daném pořadí. Relace uchování stavu pro klienty mezi volání. Ukázka implementuje relace pro zachování stavu klienta a určuje záruky doručení v daném pořadí.  
+Tento příklad ukazuje použití spolehlivé relace. Spolehlivé relace poskytovat podporu pro spolehlivé zasílání zpráv a relací. Spolehlivé zasílání zpráv se pokusí znovu navázat komunikaci s selhání a umožňuje záruky doručení zadání, jako je například v pořadí doručení zpráv. Relace uchování stavu pro klienty mezi voláními. Ukázka implementuje relací pro zachování stavu klienta a určuje záruky doručení v daném pořadí.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\wsReliableSession`  
   
- Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. Spolehlivá relace funkcí jsou povolené a nakonfigurované v konfiguračních souborech aplikace pro klienta a služby.  
+ Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. Spolehlivé relace funkce jsou povolené a nakonfigurované v konfiguračních souborech aplikace pro klienta a služby.  
   
- V této ukázce služba je hostovaná v Internetové informační služby (IIS) a klient je konzolová aplikace (.exe).  
+ V této ukázce služba je hostována v Internetové informační služby (IIS) a klient je konzolová aplikace (.exe).  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Ukázce se používá `wsHttpBinding`. Vazba je zadána v konfiguračních souborech pro klienta a služby. Typ vazby je zadaný v elementu koncový bod `binding` atributu, jak je znázorněno v následující ukázka konfigurace.  
+ Ukázka používá `wsHttpBinding`. Vazba je zadán v konfiguračních souborech pro klienta a služby. Typ vazby je zadaný v elementu koncového bodu `binding` atributu, jak je znázorněno v následující ukázková konfigurace.  
   
 ```xml  
 <endpoint address=""  
@@ -38,7 +39,7 @@ Tento příklad znázorňuje použití spolehlivé relace. Spolehlivé relace po
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- Obsahuje koncový bod `bindingConfiguration` atribut, který odkazuje na vazbu konfigurace s názvem "Binding1." Konfigurace vazeb umožňuje spolehlivé relace nastavením `enabled` atribut [ \<reliableSession >](../../../../docs/framework/configure-apps/file-schema/wcf/reliablesession.md) k `true`. Záruky doručení pro seřazené relace jsou řízeny nastavením seřazené atribut `true` nebo `false`. Výchozí hodnota je `true`.  
+ Obsahuje koncový bod `bindingConfiguration` atribut, který odkazuje na konfiguraci vazby s názvem "Binding1." Konfigurace vazby umožňuje spolehlivé relace tak, že nastavíte `enabled` atribut [ \<reliableSession >](../../../../docs/framework/configure-apps/file-schema/wcf/reliablesession.md) k `true`. Záruky doručení pro uspořádaný relace jsou řízeny nastavením atribut uspořádaný `true` nebo `false`. Výchozí hodnota je `true`.  
   
 ```xml  
 <bindings>  
@@ -50,7 +51,7 @@ Tento příklad znázorňuje použití spolehlivé relace. Spolehlivé relace po
 </bindings>  
 ```  
   
- Třída implementuje implementace služby <xref:System.ServiceModel.InstanceContextMode.PerSession> zřizování instancí udržovat samostatné třídy instance pro jednotlivé klienty, jak je znázorněno v následujícím ukázkovém kódu.  
+ Třída implementuje implementace služby <xref:System.ServiceModel.InstanceContextMode.PerSession> vytvoření instance udržovat samostatné třídy instanci pro každého klienta, jak je znázorněno v následujícím ukázkovém kódu.  
 
 ```csharp
 [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)] public class CalculatorService : ICalculator  
@@ -59,7 +60,7 @@ Tento příklad znázorňuje použití spolehlivé relace. Spolehlivé relace po
 }  
 ```
   
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -70,7 +71,7 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Nainstalujte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 pomocí následujícího příkazu.  
   
@@ -80,8 +81,8 @@ Press <ENTER> to terminate client.
   
 2.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## <a name="see-also"></a>Viz také

@@ -17,38 +17,38 @@ helpviewer_keywords:
 - roles [.NET Framework], client application services
 - client application services, about client application services
 ms.assetid: 1487d8df-089e-4f21-abfb-a791a652b58e
-ms.openlocfilehash: d67b7467bdacdfca054d0ecd11a81c7d25b158f7
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: d58510240593f73ff761aa669035f28598006c10
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32743222"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43401580"
 ---
 # <a name="client-application-services"></a>Klientské aplikační služby
-Klient aplikačních služeb můžete snadno vytvořit aplikace systému Windows, které používají [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] přihlášení, rolí a součástí rozšíření Microsoft ASP.NET 2.0 AJAX profil aplikačních služeb. Tyto služby umožňují více Web a aplikace pro systém Windows sdílet informace o uživateli a správu uživatelů funkci z jednoho serveru. Tyto služby můžete například použít k provádění následujících úloh:  
+Klientské aplikační služby umožňují snadno vytvářet aplikace pro systém Windows, které používají [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] přihlášení, role a služby profilu aplikace součástí rozšíření společnosti Microsoft 2.0 technologie ASP.NET AJAX. Tyto služby umožňují více webových a aplikace založené na Windows sdílet informace o uživateli a funkci Správa uživatelů z jednoho serveru. Tyto služby můžete například používat k provádění následujících úloh:  
   
 -   Ověření uživatele. Služba ověřování můžete použít k ověření identity uživatele.  
   
--   Určení roli nebo role ověřeného uživatele. Chcete-li změnit uživatelské rozhraní aplikace, v závislosti na roli uživatele, můžete použít službu role. Například můžete zadat další funkce pro uživatele, kteří jsou v roli správce.  
+-   Zjistěte, role nebo role ověřeného uživatele. Chcete-li změnit uživatelské rozhraní vaší aplikace v závislosti na roli uživatele můžete použít službu role. Například můžete zadat další funkce pro uživatele, kteří jsou v roli správce.  
   
--   Úložiště a přístup uživatelská nastavení aplikací umístěný na serveru. Nastavení webové služby (také označované jako služba profilu) můžete sdílet nastavení mezi více aplikací a umístění.  
+-   Store a přístup k aplikaci nastavení pro jednotlivé uživatele na serveru. Nastavení webové služby (označované také jako službu profilů) můžete použít ke sdílení nastavení mezi různými aplikacemi a umístění.  
   
- Klient aplikačních služeb využít model webových služeb rozšiřitelnost prostřednictvím poskytovatelů služeb klienta, které můžete zadat v konfiguračních souborech aplikace. Poskytovatelé služeb mají offline funkci, které používá místní mezipaměti pro ověřování, rolí a nastavení dat, když není k dispozici síťové připojení.  
+ Klientské aplikační služby využívat model webových služeb rozšiřitelnost prostřednictvím poskytovatelů služeb klienta, které můžete zadat v konfiguračních souborech aplikace. Poskytovatelé služeb zahrnují offline funkce, která používá místní mezipaměť pro ověřování, role a nastavení dat, když není k dispozici připojení k síti.  
   
- Další informace o [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikační služby, najdete v části [aplikace ASP.NET: Přehled služby](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013).  
+ Další informace o [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikační služby, najdete v článku [přehled aplikačních služeb ASP.NET](https://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled klientských aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services-overview.md)  
- Popisuje funkce, které jsou k dispozici prostřednictvím poskytovatelů služeb aplikací klienta.  
+ Popisuje funkce dostupné prostřednictvím poskytovatelů služeb aplikací klienta.  
   
  [Postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)  
- Popisuje, jak používat Návrhář projektu sady Visual Studio k povolení a konfigurace aplikační služby. Také popisuje odpovídající změny do souboru App.config.  
+ Popisuje způsob použití Návrháře projektu sady Visual Studio k povolení a konfigurace aplikační služby. Také popisuje odpovídající změny do souboru App.config.  
   
  [Postupy: Implementace přihlášení uživatele u klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-implement-user-login-with-client-application-services.md)  
- Popisuje, jak ověřit uživatele, pokud je vaše aplikace nakonfigurovaná pro použití poskytovatele služby ověřování klienta.  
+ Popisuje, jak ověřit uživatele, pokud vaše aplikace je nakonfigurovaná pro použití služby poskytovatele ověřování klienta.  
   
  [Návod: Použití klientských aplikačních služeb](../../../docs/framework/common-client-technologies/walkthrough-using-client-application-services.md)  
- Popisuje postup kombinace všechny funkce služby v jedné aplikaci klientské aplikace. Tento názorný postup obsahuje pokyny začátku do konce. Například obsahuje pokyny k vytvoření aplikace ASP.NET webové služby, který můžete použít k testování klientské aplikační služby.  
+ Popisuje, jak kombinovat všechny funkce klienta aplikace služby v jedné aplikaci. Tento názorný postup obsahuje pokyny k začátku do konce. Například obsahuje pokyny k vytvoření aplikace ASP.NET Web Service, můžete použít k testování klientských aplikačních služeb.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Web.ClientServices.ClientFormsIdentity>  
@@ -64,10 +64,10 @@ Klient aplikačních služeb můžete snadno vytvořit aplikace systému Windows
  <xref:System.Web.ClientServices.Providers.UserValidatedEventArgs>  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled služby aplikace ASP.NET](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013)  
- [Použití ověřování pomocí formulářů s technologií Microsoft Ajax](http://msdn.microsoft.com/library/c50f7dc5-323c-4c63-b4f3-96edfc1e815e)  
- [Pomocí informací o rolí s technologií Microsoft Ajax](http://msdn.microsoft.com/library/280f6ad9-ba1a-4fc9-b0cc-22e39e54a82d)  
- [Informace o profilu pomocí Microsoft Ajax](http://msdn.microsoft.com/library/91239ae6-d01c-4f4e-a433-eb9040dbed61)  
- [Ověřování pomocí technologie ASP.NET](http://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1)  
- [Řízení autorizací pomocí rolí](http://msdn.microsoft.com/library/01954ce4-39a2-487f-8153-a69f6f6f3195)    
+ [Přehled aplikačních služeb technologie ASP.NET](https://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013)  
+ [Ověřování pomocí formulářů s technologií Microsoft Ajax](https://msdn.microsoft.com/library/c50f7dc5-323c-4c63-b4f3-96edfc1e815e)  
+ [Informace o roli pomocí Microsoft Ajax](https://msdn.microsoft.com/library/280f6ad9-ba1a-4fc9-b0cc-22e39e54a82d)  
+ [Pomocí informací o profilu Microsoft Ajax](https://msdn.microsoft.com/library/91239ae6-d01c-4f4e-a433-eb9040dbed61)  
+ [Ověřování pomocí technologie ASP.NET](https://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1)  
+ [Správa autorizací pomocí rolí](https://msdn.microsoft.com/library/01954ce4-39a2-487f-8153-a69f6f6f3195)    
  [Přehled nastavení aplikace](../../../docs/framework/winforms/advanced/application-settings-overview.md)

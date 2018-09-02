@@ -2,18 +2,18 @@
 title: Používání více schémat ověřování u WCF
 ms.date: 03/30/2017
 ms.assetid: f32a56a0-e2b2-46bf-a302-29e1275917f9
-ms.openlocfilehash: 140211f10f7cdc88a3df8eb8ea1c30df73b0c4c7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cdf40d6c0ca25a21cbdac07abab04d2bc144bf69
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33498443"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43408970"
 ---
 # <a name="using-multiple-authentication-schemes-with-wcf"></a>Používání více schémat ověřování u WCF
-WCF teď umožňuje zadat více schémat ověřování v jednom koncovém bodě. Kromě toho hostovaná na webu služby může dědit vlastnosti jejich nastavení ověřování přímo ze služby IIS. Samoobslužné hostované služby můžete určit, jaké ověřování můžete použít schémata. Další informace o nastavení ověřování ve službě IIS najdete v tématu [ověřování služby IIS](http://go.microsoft.com/fwlink/?LinkId=232458)  
+WCF umožňuje zadat více schémat ověřování v jednom koncovém bodu. Kromě toho hostovaná na webu služby může dědit jejich nastavení ověřování přímo ze služby IIS. V místním prostředí služby můžete zadat ověření je možné schémata. Další informace o nastavení ověřování ve službě IIS najdete v tématu [ověřování služby IIS](https://go.microsoft.com/fwlink/?LinkId=232458)  
   
-## <a name="iis-hosted-services"></a>Služba IIS hostované služby  
- Pro službu IIS hostované služby nastavte schémat ověřování, který si přejete použít ve službě IIS. V souboru web.config vaší služby, v konfiguraci vazby zadejte typ clientCredential jako "InheritedFromHost" jak je znázorněno v následujícím fragmentu kódu XML:  
+## <a name="iis-hosted-services"></a>Služby hostované v IIS  
+ Služby hostované v IIS nastavte ověřovací schémata, které chcete použít ve službě IIS. V souboru web.config vaší služby v konfiguraci vazby zadejte typ clientcredential systému jako "InheritedFromHost" jak je znázorněno v následující fragment kódu XML:  
   
 ```xml  
 <bindings>  
@@ -27,7 +27,7 @@ WCF teď umožňuje zadat více schémat ověřování v jednom koncovém bodě.
     </bindings>  
 ```  
   
- Můžete zadat, že chcete pouze podmnožinu schémat ověřování pro použití s služby pomocí ServiceAuthenticationBehavior nebo \<serviceAuthenticationManager > elementu. Když tato konfigurace v kódu pomocí ServiceAuthenticationBehavior, jak je znázorněno v následující fragment kódu.  
+ Můžete určit, že chcete pouze podmnožinu schémata ověřování, který se má použít ve vaší službě pomocí ServiceAuthenticationBehavior nebo \<serviceAuthenticationManager > element. Když tato konfigurace v kódu pomocí ServiceAuthenticationBehavior, jak je znázorněno v následujícím fragmentu kódu.  
   
 ```csharp  
 // ...  
@@ -47,7 +47,7 @@ else
 // ...  
 ```  
   
- Při konfiguraci v konfiguračním souboru, použijte \<serviceAuthenticationManager > elementu, jak je znázorněno v následujícím fragmentu kódu XML.  
+ Při konfiguraci v konfiguračním souboru, použijte \<serviceAuthenticationManager > jak ukazuje následující fragment kódu XML.  
   
 ```xml  
 <behaviors>  
@@ -60,10 +60,10 @@ else
     </behaviors>  
 ```  
   
- Tím bude zajištěno, že budou považovány za jenom podmnožinu schémat ověřování, které jsou zde uvedeny pro použití na koncový bod služby, v závislosti na tom, co je vybrané v IIS. To znamená, které můžete vyloučit vývojář vyslovení základní ověřování ze seznamu vynecháním ze seznamu serviceAuthenticationManager a i v případě, že je povolena ve službě IIS, nebudou použity na koncový bod služby  
+ Tím se zajistí, že pouze podmnožinu ověřovací schémata tady se budou považovat za pro použití u koncového bodu služby v závislosti na tom, co je vybrané v IIS. To znamená, že, které se můžete vyloučit vývojář Řekněme, že základní ověřování ze seznamu vynecháním v třídě serviceAuthenticationManager výpisu a i když je povolená ve službě IIS, nebude použita na koncový bod služby  
   
-## <a name="self-hosted-services"></a>Samoobslužné hostované služby  
- Vlastním hostováním služby jsou nakonfigurovány trochu jinak, protože neexistuje žádné služby IIS pro dědění nastavení z. Tady můžete použít \<serviceAuthenticationManager > elementu nebo ServiceAuthenticationBehavior a zadejte nastavení ověřování, které zdědí. V kódu vypadá takto:  
+## <a name="self-hosted-services"></a>V místním prostředí služby  
+ V místním prostředí služby se konfigurují trochu jinak, protože neexistuje žádná služba IIS dědit nastavení z. Zde použijete \<serviceAuthenticationManager > element nebo ServiceAuthenticationBehavior k určení, které se budou dědit nastavení ověřování. V kódu vypadá takto:  
   
 ```csharp  
 // ...  
@@ -96,7 +96,7 @@ else
     </behaviors>  
 ```  
   
- A můžete pak určit InheritFromHost v nastaveních vazby, jak je znázorněno v následujícím fragmentu kódu XML.  
+ A můžete pak určit InheritFromHost v nastaveních vazbu, jak je znázorněno v následující fragment kódu XML.  
   
 ```xml  
 <bindings>  
@@ -110,7 +110,7 @@ else
     </bindings>  
 ```  
   
- Alternativně můžete zadat schémat ověřování v vlastní vazby, nastavením schémat ověřování v HTTP přenosu prvku vazby, jak je znázorněno v následujícím fragmentu kódu konfigurace.  
+ Alternativně můžete zadat ověřovací schémata v vlastní vazby, nastavením schémat ověřování v HTTP přenosu element vazby, jak je znázorněno v následujícím fragmentu kódu config.  
   
 ```xml  
 <binding name="multipleBinding">  

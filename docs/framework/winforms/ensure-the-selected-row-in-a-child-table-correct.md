@@ -16,72 +16,72 @@ helpviewer_keywords:
 - child tables row selection
 - current child position
 ms.assetid: c5fa2562-43a4-46fa-a604-52d8526a87bd
-ms.openlocfilehash: 96e1acb4629e4a9c0c4b3eb368f19147c9ce2b73
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e1fdb007451c157e60a1ad723b5d2d06bc85ecdf
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33539887"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43405541"
 ---
 # <a name="how-to-ensure-the-selected-row-in-a-child-table-remains-at-the-correct-position"></a>Postupy: Zajistěte, aby vybraný řádek v podřízené tabulce zůstal ve správné pozici
-Často při práci s datové vazby v systému Windows Forms, se zobrazí data v co se říká nadřazený podřízený nebo hlavní/podrobnosti zobrazení. Vztahuje se k datové vazby scénář, kde se zobrazí data z jednoho zdroje ve dvou ovládacích prvků. Změna výběru v ovládacím prvku jeden způsobí, že data zobrazená v ovládacím prvku druhý změnit. První prvek může například obsahovat seznam zákazníků a druhý seznam objednávek související s vybraného zákazníka v prvním ovládacím.  
+Často při práci s datovou vazbu v modelu Windows Forms, se zobrazí data v co se nazývá nadřazené a podřízené nebo hlavních/podrobných zobrazení. To se vztahuje na datovou vazbu scénář, kde se zobrazí data ze stejného zdroje ve dvou ovládacích prvků. Změna výběru v jednom ovládacím prvku způsobí, že data zobrazená v druhý ovládací prvek při změně. První ovládací prvek může například obsahovat seznam zákazníků a druhý seznam objednávek týkající se k vybranému zákazníkovi v prvním ovládacím prvku.  
   
- Od verze rozhraní .NET Framework verze 2.0, když se data zobrazí v nadřízené a podřízené zobrazení, že možná budete muset udělat dodatečné kroky, abyste měli jistotu, že není aktuálně vybraný řádek v podřízené tabulce resetování na první řádek tabulky. Chcete-li to provést, bude mít ukládat do mezipaměti podřízená pozice tabulky a v něm obnovit po změně nadřazené tabulce. Obvykle resetování podřízené dochází poprvé pole v řádku změn v nadřazené tabulce.  
+ Od verze rozhraní .NET Framework verze 2.0, když se data zobrazí v nadřízené a podřízené zobrazení, že možná budete muset udělat dodatečné kroky, abyste měli jistotu, že není aktuálně vybraný řádek v podřízené tabulce resetování na první řádek tabulky. Pokud to chcete udělat, budete muset podřízená pozice tabulce do mezipaměti a resetujte si ho po změně nadřazené tabulky. Obvykle resetování podřízené dochází poprvé pole za sebou změny nadřazené tabulky.  
   
 ### <a name="to-cache-the-current-child-position"></a>Pro ukládání do mezipaměti aktuální podřízená pozice  
   
-1.  Deklarujte celočíselnou proměnnou pro uložení podřízená pozice seznamu a proměnná pro ukládání do mezipaměti podřízená pozice.  
+1.  Deklarujte proměnnou celého čísla k uložení umístění seznamu podřízených a logickou hodnotu k ukládání do mezipaměti podřízená pozice.  
   
      [!code-csharp[System.Windows.Forms.CurrencyManagerReset#4](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/CS/Form1.cs#4)]
      [!code-vb[System.Windows.Forms.CurrencyManagerReset#4](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/VB/Form1.vb#4)]  
   
 2.  Zpracování <xref:System.Windows.Forms.CurrencyManager.ListChanged> událost pro vazby <xref:System.Windows.Forms.CurrencyManager> a vyhledejte <xref:System.ComponentModel.ListChangedType> z <xref:System.ComponentModel.ListChangedType.Reset>.  
   
-3.  Zkontrolujte aktuální pozici <xref:System.Windows.Forms.CurrencyManager>. Pokud je větší než první položku v seznamu (obvykle 0), uložte ho do proměnné.  
+3.  Zkontrolujte aktuální pozice <xref:System.Windows.Forms.CurrencyManager>. Pokud je větší než první položka v seznamu (obvykle 0), uložte ji do proměnné.  
   
      [!code-csharp[System.Windows.Forms.CurrencyManagerReset#2](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.CurrencyManagerReset#2](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/VB/Form1.vb#2)]  
   
-4.  Zpracování nadřazeného seznamu <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> událost pro správce nadřazené měny. V obslužné rutině nastavte logickou hodnotu označující, že se nejedná o scénáři ukládání do mezipaměti. Pokud <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> dojde, změna s nadřazeným je ke změně pozice v seznamu a není změna hodnoty položky.  
+4.  Zpracování nadřazeného seznamu <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> událost pro nadřazený správce měny. V obslužné rutině nastavte logickou hodnotu označující, že se nejedná o scénáři ukládání do mezipaměti. Pokud <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> dojde, změnit na nadřazený prvek je změna pozice seznamu a ne změnit hodnotu položky.  
   
      [!code-csharp[System.Windows.Forms.CurrencyManagerReset#5](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/CS/Form1.cs#5)]
      [!code-vb[System.Windows.Forms.CurrencyManagerReset#5](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/VB/Form1.vb#5)]  
   
-### <a name="to-reset-the-child-position"></a>Chcete-li obnovit podřízená pozice  
+### <a name="to-reset-the-child-position"></a>Resetování podřízené pozice  
   
-1.  Zpracování <xref:System.Windows.Forms.BindingManagerBase.PositionChanged> událost pro podřízený objekt vazby <xref:System.Windows.Forms.CurrencyManager>.  
+1.  Zpracování <xref:System.Windows.Forms.BindingManagerBase.PositionChanged> událost pro podřízené vazby <xref:System.Windows.Forms.CurrencyManager>.  
   
-2.  Obnoví podřízená pozice tabulky na pozici v mezipaměti uložena v předchozím postupu.  
+2.  Resetovat podřízená pozice tabulky na pozici v mezipaměti uloženy v předchozím postupu.  
   
      [!code-csharp[System.Windows.Forms.CurrencyManagerReset#3](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.CurrencyManagerReset#3](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/VB/Form1.vb#3)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak uložit na aktuální pozici <xref:System.Windows.Forms.CurrencyManager>.for podřízené tabulce a resetování pozice po dokončení úprav v nadřazené tabulce. Tento příklad obsahuje dva <xref:System.Windows.Forms.DataGridView> ovládací prvky vázané na dvě tabulky <xref:System.Data.DataSet> pomocí <xref:System.Windows.Forms.BindingSource> součásti. Navázání na relaci mezi dvěma tabulkami a vztah se přidá <xref:System.Data.DataSet>. Pozice v podřízené tabulce je zpočátku nastavena na třetí řádek pro demonstrační účely.  
+ Následující příklad ukazuje, jak uložit aktuální pozice <xref:System.Windows.Forms.CurrencyManager>tlačítka podřízenou tabulku a obnovit pozice po dokončení úprav v nadřazené tabulce. Tento příklad obsahuje dva <xref:System.Windows.Forms.DataGridView> ovládací prvky vázané na dvě tabulky v <xref:System.Data.DataSet> pomocí <xref:System.Windows.Forms.BindingSource> komponenty. Navázání vztahu mezi dvěma tabulkami a vztah se přidá do <xref:System.Data.DataSet>. Pozice v podřízené tabulce je zpočátku nastaven na třetí řádek pro demonstrační účely.  
   
  [!code-csharp[System.Windows.Forms.CurrencyManagerReset#1](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/CS/Form1.cs#1)]
  [!code-vb[System.Windows.Forms.CurrencyManagerReset#1](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/VB/Form1.vb#1)]  
   
- K testování příkladu kódu, proveďte následující kroky:  
+ K otestování příklad kódu, proveďte následující kroky:  
   
-1.  Spusťte v příkladu.  
+1.  Spustíte v příkladu.  
   
-2.  Zajistěte, aby **mezipaměti a resetování umístit** je zaškrtnuté políčko.  
+2.  Ujistěte se, že **mezipaměti a resetování umístit** je zaškrtnuto políčko.  
   
-3.  Klikněte **zrušte nadřazeného pole** tlačítko způsobí změnu v poli nadřazené tabulky. Všimněte si, že vybraný řádek v podřízené tabulce se nemění.  
+3.  Klikněte na tlačítko **pole vymazat nadřazené** tlačítko a způsobit změnu v poli nadřazené tabulky. Všimněte si, že vybraný řádek v podřízené tabulce nezmění.  
   
-4.  Zavřete a znovu spusťte v příkladu. Musíte to provést, protože chování resetování proběhne pouze první změna v nadřazené řádku.  
+4.  Zavřete a znovu spusťte příklad kódu. Musíte to provést, protože se chování obnovení dochází pouze na první změnu v hodnotě nadřazený řádek.  
   
-5.  Vymazat **mezipaměti a resetování umístit** zaškrtávací políčko.  
+5.  Zrušte **mezipaměti a resetování umístit** zaškrtávací políčko.  
   
-6.  Klikněte **zrušte nadřazeného pole** tlačítko. Všimněte si, že vybraný řádek v podřízené tabulce se změní na první řádek.  
+6.  Klikněte na tlačítko **pole vymazat nadřazené** tlačítko. Všimněte si, že vybraný řádek v podřízené tabulce se změní na prvním řádku.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na systém, System.Data, System.Drawing, System.Windows.Forms a System.XML sestavení.  
+-   Odkazy na sestavení systému, System.Data, System.Drawing, System.Windows.Forms a System.XML.  
   
- Informace o tom, jak vytvořit tento příklad z příkazového řádku pro Visual Basic a Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení příkazového řádku s csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit zadáním nebo vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o tom, jak sestavovat tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení příkazového řádku s csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## <a name="see-also"></a>Viz také  
  [Postupy: Zajištění, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných](../../../docs/framework/winforms/multiple-controls-bound-to-data-source-synchronized.md)  

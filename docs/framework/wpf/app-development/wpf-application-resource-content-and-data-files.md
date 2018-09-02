@@ -17,45 +17,45 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-ms.openlocfilehash: 571b8f71ce233011ae6fc7a6d4d53c5029d27d69
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5bf1a0e1d4d8f620f83aab50aa50009a0f6a6cf4
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33558262"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417512"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF
-[!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] aplikace často závisí na soubory, které obsahují data spustitelný soubor, jako například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], obrázky, videa a zvuku. Windows Presentation Foundation (WPF) nabízí zvláštní podporu pro konfiguraci, identifikace a použití těchto typů datových souborů, které se nazývají datové soubory aplikace. Tato podpora se pohybuje kolem konkrétní sadu typy souborů dat aplikace, včetně:  
+[!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] aplikace jsou často závislé na souborech, které obsahují data – spustitelný soubor, například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], obrázky, videa a zvuku. Windows Presentation Foundation (WPF) nabízí zvláštní podporu pro konfiguraci, identifikaci a použití těchto typů datových souborů, které se nazývají datových souborů aplikací. Tato podpora zásadní kolem konkrétní sadu typů souborů dat aplikace, včetně:  
   
--   **Soubory prostředků**: datové soubory, které jsou zkompilovány do buď spustitelný soubor nebo knihovna [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
+-   **Soubory prostředků**: datové soubory, které jsou kompilovány do spustitelný soubor nebo knihovna [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
   
--   **Soubory obsahu**: samostatné datové soubory, které mají explicitní přidružení se spustitelný soubor [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
+-   **Obsah souborů**: samostatné datové soubory, které mají přidružený spustitelný soubor k explicitní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
   
--   **Lokality počátek souborů**: samostatné datové soubory, které mají souvislost se spustitelný soubor [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
+-   **Lokality původu souborů**: samostatné datové soubory, které mají žádné jejich spojení se spustitelný soubor [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
   
- Jeden rozlišení, aby mezi tyto tři typy souborů je, že zdrojových souborů a soubory obsahu se ví, že v čase vytvoření buildu; sestavení má explicitní znalosti z nich. Pro lokalitu zdroji souborů, ale sestavení může mít žádné znalosti z nich, nebo implicitní znalosti prostřednictvím sadu [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] odkaz; v případě, není zaručeno, že odkazovaného webu zdrojový soubor skutečně existuje.  
+ Jeden rozlišení, aby se mezi tyto tři typy souborů je, že jsou zdrojové soubory a soubory obsahu v okamžiku sestavení; známé sestavení má explicitní znalosti z nich. Ke stránce původu soubory, ale sestavení můžou nemají žádné informace o jejich vůbec, nebo implicitní znalosti prostřednictvím sadu [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] odkazu; v případě, není zaručeno, že odkazované web zdrojový soubor skutečně existuje.  
   
- Chcete-li datové soubory aplikace, Windows Presentation Foundation (WPF) používá sadu [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] schéma, které je podrobně popsaná v [Pack identifikátory URI v grafickém subsystému WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)).  
+ Chcete-li datové soubory aplikace, používá Windows Presentation Foundation (WPF) této sady [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] schématu, která je popsána v části [identifikátory Pack URI v subsystému WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)).  
   
- Toto téma popisuje, jak konfigurovat a používat soubory dat aplikace.  
+ Toto téma popisuje, jak nakonfigurovat a používat datové soubory aplikace.  
   
   
 <a name="Resource_Files"></a>   
 ## <a name="resource-files"></a>Zdrojové soubory  
- Pokud datového souboru aplikace musí být vždy k dispozici pro aplikace, je jediným způsobem, jak zajistit dostupnost kompilována hlavní spustitelný soubor sestavení aplikace nebo jednoho z jeho odkazovaná sestavení. Tento typ datového souboru aplikace se označuje jako *souboru prostředků*.  
+ Pokud datový soubor aplikace musí být vždy k dispozici pro aplikace, je jediný způsob, jak zajistit dostupnost zkompilovat do sestavení hlavní spustitelný soubor aplikace nebo jeden z jejích odkazovaných sestavení. Tento typ souboru aplikace, data se označuje jako *soubor prostředků*.  
   
- Měli byste použít prostředků soubory, když:  
+ Měli byste použít prostředek souborů při:  
   
--   Nemusíte aktualizovat obsah souboru prostředků poté, co se zkompiluje do sestavení.  
+-   Není nutné aktualizovat obsah souboru prostředků po kompilaci do sestavení.  
   
--   Chcete zjednodušit složitost distribuce aplikací snížením počtu závislostech souborů.  
+-   Chcete zjednodušit složitost distribuce aplikací snížením počtu závislostem.  
   
--   Vašeho datového souboru aplikace, je potřeba lokalizovatelný (viz [WPF globalizace a lokalizace přehled](../../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)).  
+-   Datový soubor aplikace musí být lokalizovatelný (viz [přehled WPF globalizace a lokalizace](../../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)).  
   
 > [!NOTE]
->  Soubory prostředků, které jsou popsané v této části jsou jiné než soubory prostředků popsaných v [XAML prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md) a jiné než vložené nebo propojené prostředky, které jsou popsané v [Správa prostředků aplikace (.NET) ](http://msdn.microsoft.com/library/f2582734-8ada-4baa-8a7c-e2ef943ddf7e).  
+>  Soubory prostředků, které jsou popsané v této části se liší podle soubory prostředků [prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md) a jiné než vložené nebo propojené prostředky podle [Správa prostředků aplikace (.NET) ](https://msdn.microsoft.com/library/f2582734-8ada-4baa-8a7c-e2ef943ddf7e).  
   
-### <a name="configuring-resource-files"></a>Konfigurace soubory prostředků  
+### <a name="configuring-resource-files"></a>Konfigurace zdrojových souborů  
  V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], soubor prostředků je soubor, který je součástí [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] projektu jako `Resource` položky.  
   
 ```xml  
@@ -69,35 +69,35 @@ ms.locfileid: "33558262"
 ```  
   
 > [!NOTE]
->  V [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], vytvořte soubor prostředků přidáním souboru do projektu a nastavení jeho `Build Action` k `Resource`.  
+>  V [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], vytvořit soubor prostředků tak, že přidáte soubor projektu a nastavení jeho `Build Action` k `Resource`.  
   
- Při sestavení projektu [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] kompilovaný prostředku do sestavení.  
+ Při sestavení projektu [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] zkompiluje prostředek do sestavení.  
   
-### <a name="using-resource-files"></a>Pomocí soubory prostředků  
- Chcete-li načíst soubor prostředků, můžete zavolat <xref:System.Windows.Application.GetResourceStream%2A> metodu <xref:System.Windows.Application> třídy a předejte sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] identifikující souboru požadovaného prostředku. <xref:System.Windows.Application.GetResourceStream%2A> Vrátí <xref:System.Windows.Resources.StreamResourceInfo> objekt, který zveřejňuje soubor prostředků jako <xref:System.IO.Stream> a popisuje typ obsahu.  
+### <a name="using-resource-files"></a>Použití souborů prostředků  
+ Načíst soubor prostředků, můžete volat <xref:System.Windows.Application.GetResourceStream%2A> metodu <xref:System.Windows.Application> třídy, prochází sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , který identifikuje soubor požadovaný prostředek. <xref:System.Windows.Application.GetResourceStream%2A> Vrátí <xref:System.Windows.Resources.StreamResourceInfo> objektu, který zveřejňuje soubor prostředků jako <xref:System.IO.Stream> a popisuje typ obsahu.  
   
- Například následující kód ukazuje, jak používat <xref:System.Windows.Application.GetResourceStream%2A> načíst <xref:System.Windows.Controls.Page> prostředků souborů a nastavte jej jako obsah <xref:System.Windows.Controls.Frame> (`pageFrame`):  
+ Například následující kód ukazuje, jak používat <xref:System.Windows.Application.GetResourceStream%2A> načíst <xref:System.Windows.Controls.Page> prostředků souboru a nastavit ho jako obsah <xref:System.Windows.Controls.Frame> (`pageFrame`):  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageResourceFileManuallyCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.cs#loadapageresourcefilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageResourceFileManuallyCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.vb#loadapageresourcefilemanuallycode)]  
   
- Při volání <xref:System.Windows.Application.GetResourceStream%2A> dává vám přístup k <xref:System.IO.Stream>, je třeba provést převod na typ vlastnosti, který jste budete nastavení, je další práci. Místo toho můžete nechat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] postará o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnost typu pomocí kódu.  
+ Při volání <xref:System.Windows.Application.GetResourceStream%2A> vám poskytne přístup ke <xref:System.IO.Stream>, je třeba provést převod na typ vlastnosti, která vám bude nastavení, s další práci. Místo toho můžete nechat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] postará o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnosti typu pomocí kódu.  
   
  Následující příklad ukazuje, jak načíst <xref:System.Windows.Controls.Page> přímo do <xref:System.Windows.Controls.Frame> (`pageFrame`) pomocí kódu.  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadPageResourceFileFromCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.cs#loadpageresourcefilefromcode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadPageResourceFileFromCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.vb#loadpageresourcefilefromcode)]  
   
- Následující příklad je kód ekvivalentní v předchozím příkladu.  
+ V následujícím příkladu kódu je rovnocenné v předchozím příkladu.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#LoadPageResourceFileFromXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml#loadpageresourcefilefromxaml)]  
   
-### <a name="application-code-files-as-resource-files"></a>Soubory aplikace kódu jako soubory prostředků  
- Speciální sadu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] soubory kódu aplikace můžete odkazovat pomocí pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)], včetně systému windows, stránky, tok dokumenty a slovnících prostředků. Například můžete nastavit <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType> vlastnost s sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] okno nebo stránka, která se má načíst při spuštění aplikace, který odkazuje.  
+### <a name="application-code-files-as-resource-files"></a>Soubory s kódem aplikace jako soubory prostředků  
+ Speciální sadu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] soubory kódu aplikace může být odkazováno pomocí balíčku [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)], včetně windows, stránkami, dokumenty toku a slovníky prostředků. Například můžete nastavit <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType> vlastnost s pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , který odkazuje na okno nebo stránka, která chcete načíst při spuštění aplikace.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#SetApplicationStartupURI](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/App.xaml#setapplicationstartupuri)]  
   
- Můžete provést při [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor je součástí [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] projektu jako `Page` položky.  
+ Vám pomůžou při [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor je součástí [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] projektu jako `Page` položky.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -110,23 +110,23 @@ ms.locfileid: "33558262"
 ```  
   
 > [!NOTE]
->  V [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], můžete přidat novou <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Documents.FlowDocument>, nebo <xref:System.Windows.ResourceDictionary> do projektu, `Build Action` pro značku použije výchozí soubor `Page`.  
+>  V [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], přidáte nový <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Documents.FlowDocument>, nebo <xref:System.Windows.ResourceDictionary> do projektu, `Build Action` pro značky souboru budou ve výchozím nastavení `Page`.  
   
- Když na projekt s `Page` kompiluje položky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] položky jsou převedeny na binární formát a zkompilovat do přidružené sestavení. V důsledku toho tyto soubory můžete použít stejným způsobem jako soubory typické prostředků.  
+ Když projekt s `Page` kompilaci položky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] položky jsou převést do binárního formátu a zkompilovány do přidružené sestavení. V důsledku toho tyto soubory lze použít stejným způsobem jako typický zdrojové soubory.  
   
 > [!NOTE]
->  Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru je nakonfigurovaný jako `Resource` položky a nemá souboru kódu na pozadí, nezpracovaná [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] zkompilován sestavení spíše než binární verzi nezpracovaná [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+>  Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru je nakonfigurovaný jako `Resource` položky a nemá soubor kódu na pozadí, nezpracovaná [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] se zkompiluje do sestavení, nikoli binární verzi nezpracovaná [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
 <a name="Content_Files"></a>   
 ## <a name="content-files"></a>Soubory obsahu  
- A *obsahu souboru* je distribuován jako soubor přijít společně se spustitelný soubor sestavení. I když nejsou se zkompiluje do sestavení, sestavení jsou kompilovat s metadata, která vytvoří přidružení se jednotlivé soubory obsahu.  
+ A *obsahu souboru* je distribuován jako volné souboru spolu s spustitelného sestavení. I když nejsou jsou kompilovány do sestavení, sestavení jsou zkompilovaná metadata, která vytvoří přidružení s jednotlivé soubory obsahu.  
   
- Měli byste použít soubory obsahu, když vaše aplikace vyžaduje konkrétní sadu datové soubory aplikace, které chcete mít možnost aktualizovat bez nutnosti rekompilace sestavení, které využívá je.  
+ Když vaše aplikace vyžaduje určitou sadu datových souborů aplikací, které chcete aktualizovat bez nutnosti rekompilace sestavení, která využívá, je možné, měli byste použít soubory obsahu.  
   
 ### <a name="configuring-content-files"></a>Konfigurace souborů obsahu  
- Pokud chcete přidat do projektu soubor obsahu, musí být zahrnut jako datového souboru aplikace `Content` položky. Kromě toho, protože soubor obsahu není zkompilovat přímo do sestavení, je nutné nastavit [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory` element metadat k určení, zda soubor obsahu zkopírován do umístění, která je relativní k integrovaný sestavení. Pokud chcete prostředek zkopírovány do výstupní složky sestavení pokaždé, když je založený na projekt, nastavíte `CopyToOutputDirectory` element metadat s `Always` hodnotu. Jinak, můžete zajistit, že je pouze nejnovější verzi prostředku zkopírovány do výstupní složky sestavení pomocí `PreserveNewest` hodnotu.  
+ Přidání obsahu souboru do projektu, musí být zahrnut jako soubor dat aplikace `Content` položky. Navíc vzhledem k tomu, že soubor s obsahem není zkompilován přímo do sestavení, je nutné nastavit [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory` prvek metadat k určení, že obsahu soubor je zkopírován do umístění, která je relativní vzhledem k sestavení. Pokud chcete prostředek, který má být zkopírován do výstupní složka sestavení pokaždé, když je sestaven projekt, můžete nastavit `CopyToOutputDirectory` metadat element s `Always` hodnotu. V opačném případě můžete zajistit, pouze nejnovější verzi prostředku je zkopírována do výstupní složka sestavení s použitím `PreserveNewest` hodnotu.  
   
- Na obrázku je soubor, který je konfigurován jako soubor obsahu, který se zkopíruje do sestavení výstupu složky pouze v případě, že nová verze prostředku se přidá do projektu.  
+ Následující uvádí soubor, který je nakonfigurovaný jako soubor obsahu, který se zkopíruje do sestavení výstupní složky pouze v případě, že nová verze prostředku se přidá do projektu.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -141,64 +141,64 @@ ms.locfileid: "33558262"
 ```  
   
 > [!NOTE]
->  V [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], vytvořte soubor obsahu přidáním souboru do projektu a nastavení jeho `Build Action` k `Content`a nastavit jeho `Copy to Output Directory` k `Copy always` (stejné jako `Always`) a `Copy if newer` (stejné jako `PreserveNewest`).  
+>  V [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], vytvořit soubor obsahu tak, že přidáte soubor projektu a nastavení jeho `Build Action` k `Content`a nastavte jeho `Copy to Output Directory` k `Copy always` (stejné jako `Always`) a `Copy if newer` (stejné jako `PreserveNewest`).  
   
- Při sestavení projektu <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut kompiluje na metadata sestavení pro jednotlivé soubory obsahu.  
+ Při sestavení projektu <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut je zkompilován do metadat sestavení pro jednotlivé soubory obsahu.  
   
  `[assembly: AssemblyAssociatedContentFile("ContentFile.xaml")]`  
   
- Hodnota <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> znamená cestu k souboru obsahu vzhledem ke své pozici v projektu. Například pokud byl soubor obsahu umístěné v podsložce projektu, další informace o cestě by být součástí <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> hodnotu.  
+ Hodnota <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> znamená cestu k obsahu souboru relativní vzhledem k jeho pozice v projektu. Například pokud byl soubor s obsahem umístěné v podsložce projektu, další informace o cestě by být součástí <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> hodnotu.  
   
  `[assembly: AssemblyAssociatedContentFile("Resources/ContentFile.xaml")]`  
   
- <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> Hodnota je také s hodnotou obsahující cestu k souboru obsahu do výstupní složky sestavení.  
+ <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> Hodnota je také hodnota cestu k obsahu souboru ve výstupní složce sestavení.  
   
 ### <a name="using-content-files"></a>Pomocí souborů obsahu  
- Chcete-li načíst soubor obsahu, můžete zavolat <xref:System.Windows.Application.GetContentStream%2A> metodu <xref:System.Windows.Application> třídy a předejte sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] identifikující soubor požadovaného obsahu. <xref:System.Windows.Application.GetContentStream%2A> Vrátí <xref:System.Windows.Resources.StreamResourceInfo> objekt, který zveřejňuje soubor obsahu jako <xref:System.IO.Stream> a popisuje typ obsahu.  
+ K načtení obsahu souboru, můžete volat <xref:System.Windows.Application.GetContentStream%2A> metodu <xref:System.Windows.Application> třídy, prochází sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , který identifikuje požadovaný obsah souboru. <xref:System.Windows.Application.GetContentStream%2A> Vrátí <xref:System.Windows.Resources.StreamResourceInfo> objektu, který zveřejňuje soubor obsahu jako <xref:System.IO.Stream> a popisuje typ obsahu.  
   
- Například následující kód ukazuje, jak používat <xref:System.Windows.Application.GetContentStream%2A> načíst <xref:System.Windows.Controls.Page> obsahu souboru a nastavte jej jako obsah <xref:System.Windows.Controls.Frame> (`pageFrame`).  
+ Například následující kód ukazuje, jak používat <xref:System.Windows.Application.GetContentStream%2A> načíst <xref:System.Windows.Controls.Page> obsah souboru a nastavte ji jako obsahu <xref:System.Windows.Controls.Frame> (`pageFrame`).  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageContentFileManuallyCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.cs#loadapagecontentfilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageContentFileManuallyCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.vb#loadapagecontentfilemanuallycode)]  
   
- Při volání <xref:System.Windows.Application.GetContentStream%2A> dává vám přístup k <xref:System.IO.Stream>, je třeba provést převod na typ vlastnosti, který jste budete nastavení, je další práci. Místo toho můžete nechat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] postará o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnost typu pomocí kódu.  
+ Při volání <xref:System.Windows.Application.GetContentStream%2A> vám poskytne přístup ke <xref:System.IO.Stream>, je třeba provést převod na typ vlastnosti, která vám bude nastavení, s další práci. Místo toho můžete nechat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] postará o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnosti typu pomocí kódu.  
   
  Následující příklad ukazuje, jak načíst <xref:System.Windows.Controls.Page> přímo do <xref:System.Windows.Controls.Frame> (`pageFrame`) pomocí kódu.  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadPageContentFileFromCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.cs#loadpagecontentfilefromcode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadPageContentFileFromCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.vb#loadpagecontentfilefromcode)]  
   
- Následující příklad je kód ekvivalentní v předchozím příkladu.  
+ V následujícím příkladu kódu je rovnocenné v předchozím příkladu.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#LoadPageContentFileFromXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml#loadpagecontentfilefromxaml)]  
   
 <a name="Site_of_Origin_Files"></a>   
-## <a name="site-of-origin-files"></a>Lokality počátek souborů  
- Soubory prostředků mít relaci explicitní s sestavení, které jsou distribuovány společně, podle definice <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute>. Ale existují časy, kdy můžete chtít vytvořit buď neexistující nebo implicitní vztah mezi sestavení a souboru dat aplikace, včetně při:  
+## <a name="site-of-origin-files"></a>Lokality původu souborů  
+ Soubory prostředků mají explicitního vztahu s sestavení, která se distribuují podél, podle definice <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute>. Ale existují situace, kdy můžete chtít vytvořit buď implicitní nebo neexistuje vztah sestavení a soubor dat aplikace, včetně:  
   
--   Soubor neexistuje, když v době kompilace.  
+-   Soubor neexistuje v době kompilace.  
   
--   Nevíte, jaké soubory vaše sestavení bude vyžadovat až při spuštění.  
+-   Nevíte, jaké soubory sestavení bude vyžadovat až do spuštění.  
   
 -   Chcete mít možnost aktualizovat soubory bez nutnosti rekompilace sestavení, které jsou přidruženy.  
   
--   Vaše aplikace používá velké datové soubory, jako je například audio a video, a chcete pouze uživatelům, pokud se rozhodnete je stáhnout.  
+-   Vaše aplikace používá velkých datových souborů, jako je například zvuku a videa, a chcete jenom uživatelé si je stáhnout, pokud se rozhodnete.  
   
- Je možné načíst tyto typy souborů pomocí tradiční [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] schémata, jako je například schémata file:/// a http://.  
+ Je možné načíst tyto typy souborů s využitím tradičních [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] schémata, jako jsou schémata file:/// a http://.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#AbsolutePackUriFileHttpReferenceXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/AbsolutePackUriPage.xaml#absolutepackurifilehttpreferencexaml)]  
   
- Schémata file:/// a http:// ale vyžadují vaše aplikace měla úplný vztah důvěryhodnosti. Pokud je vaše aplikace [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] který byl spuštěn z Internetu nebo intranetu, a požaduje jenom na sadu oprávnění, která jsou povoleny pro spuštění z těchto umístění aplikace volné soubory mohou být načteny pouze ze serveru aplikace z původu ( Spusťte umístění). Tyto soubory se označují jako *lokality původu* soubory.  
+ Schémata file:/// a http:// však vyžaduje vaše aplikace měla úplný vztah důvěryhodnosti. Pokud je vaše aplikace [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] , který byl spuštěn z Internetu nebo intranetu, a vyžaduje pouze sadu oprávnění, které jsou povoleny pro aplikace, které jsou spouštěny z těchto umístění volné soubory mohou být načteny pouze z lokality aplikace původu ( Spustit umístění). Tyto soubory jsou označovány jako *webovou stránku původu* soubory.  
   
- Lokality počátek soubory jsou jenom možnosti pro aplikace s částečnou důvěryhodností, i když jsou mimo jiné aplikace s částečnou důvěryhodností. Aplikace úplný vztah důvěryhodnosti je stále nutné načíst soubory dat aplikace, které budou neznáte o v čase vytvoření buildu; Při úplný vztah důvěryhodnosti aplikace může používat file:///, je pravděpodobné, že datové soubory aplikace se nainstaluje ve stejné složce jako, nebo na podsložku ve sestavení aplikace. V takovém případě pomocí lokality odkazující na počátku je jednodušší než použití file:///, protože pomocí file:/// vyžaduje, abyste vycházejí úplnou cestu souboru.  
+ Lokalita zdroje souborů jsou jedinou možností pro aplikace s částečnou důvěryhodností, i když jsou mimo jiné aplikace s částečnou důvěryhodností. Úplný vztah důvěryhodnosti aplikace může stále potřebují načíst datových souborů aplikací, které není ví o v okamžiku sestavení; Při úplném vztahu důvěryhodnosti aplikace může používat file:///, je pravděpodobné, že datové soubory aplikace se nainstaluje ve stejné složce jako nebo na podsložku, sestavení aplikace. V takovém případě použití lokalita odkazuje na původní je jednodušší než při použití file:///, protože pomocí file:/// vyžaduje, abyste tak úplnou cestu souboru.  
   
 > [!NOTE]
->  Lokality původu soubory se neukládají do mezipaměti s [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] na klientský počítač, když jsou soubory obsahu. V důsledku toho pouze stáhnou se konkrétně vyžádání. Pokud [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] aplikace má velké soubory médií, je konfigurace, protože lokality počátek souborů znamená spuštění počáteční aplikace je mnohem rychlejší a soubory staženy pouze na vyžádání.  
+>  Umístění původních souborů se neukládají do mezipaměti pomocí [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] na klientském počítači, když jsou soubory obsahu. V důsledku toho se jsou staženy pouze při výslovně požadovány. Pokud [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] aplikace má velké soubory médií, jejich konfiguraci, jako je mnohem rychlejší spuštění počáteční aplikace a soubory se stáhnou pouze na vyžádání znamená, že lokality původní soubory.  
   
-### <a name="configuring-site-of-origin-files"></a>Konfigurace lokality počátek souborů  
- Pokud váš web počátek soubory jsou neexistující nebo neznámé v době kompilace, budete muset použít tradiční nasazení mechanismy pro zajištění požadované soubory jsou k dispozici v době běhu, včetně použití buď `XCopy` příkazového řádku programu nebo [!INCLUDE[TLA#tla_wininstall](../../../../includes/tlasharptla-wininstall-md.md)].  
+### <a name="configuring-site-of-origin-files"></a>Konfigurace serveru původu souborů  
+ Pokud váš web původu soubory jsou neexistující nebo neznámé v době kompilace, budete muset použít tradiční nasazení mechanismy pro zajištění požadované soubory jsou k dispozici v době běhu, včetně použití buď `XCopy` program v příkazovém řádku nebo [!INCLUDE[TLA#tla_wininstall](../../../../includes/tlasharptla-wininstall-md.md)].  
   
- Pokud znáte v době kompilace soubory, které byste chtěli být umístěny v lokalitě původu, ale stále se chcete vyhnout explicitní závislosti, můžete přidat těchto souborů do [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] projektu jako `None` položky. Jak se soubory obsahu, musíte nastavit [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory` atribut k určení, zda webu zdrojový soubor zkopírován do umístění, která je relativní k integrovaný sestavení zadáním buď `Always` hodnotu nebo `PreserveNewest` hodnotu.  
+ Pokud víte, v době kompilace soubory, které by má být umístěn v lokalitě původu, ale přesto chcete vyhnout explicitní závislosti, můžete přidat tyto soubory [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] projektu jako `None` položky. Jak se soubory obsahu, je nutné nastavit [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory` atribut k určení, že lokality zdrojový soubor je zkopírován do umístění, která je relativní vzhledem k sestavení, zadáním buď `Always` hodnotu nebo `PreserveNewest` hodnotu.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -211,32 +211,32 @@ ms.locfileid: "33558262"
 ```  
   
 > [!NOTE]
->  V [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], vytvoření webu zdrojový soubor přidáním souboru do projektu a nastavení jeho `Build Action` k `None`.  
+>  V [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], vytvoření webu původ souboru přidejte soubor do projektu a nastavení jeho `Build Action` k `None`.  
   
- Při sestavení projektu [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] zkopíruje zadané soubory do výstupní složky sestavení.  
+ Při sestavení projektu [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] zkopíruje soubory zadané výstupní složce sestavení.  
   
-### <a name="using-site-of-origin-files"></a>Pomocí lokality počátek souborů  
- Chcete-li načíst lokality zdrojový soubor, můžete zavolat <xref:System.Windows.Application.GetRemoteStream%2A> metodu <xref:System.Windows.Application> třídy a předejte sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] identifikující požadovaného webu zdrojový soubor. <xref:System.Windows.Application.GetRemoteStream%2A> Vrátí <xref:System.Windows.Resources.StreamResourceInfo> objekt, který zveřejňuje lokalitě jako zdrojový soubor <xref:System.IO.Stream> a popisuje typ obsahu.  
+### <a name="using-site-of-origin-files"></a>Pomocí lokality původu souborů  
+ Načíst lokality zdrojový soubor, můžete volat <xref:System.Windows.Application.GetRemoteStream%2A> metodu <xref:System.Windows.Application> třídy, prochází sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] , který identifikuje požadovaný lokality zdrojový soubor. <xref:System.Windows.Application.GetRemoteStream%2A> Vrátí <xref:System.Windows.Resources.StreamResourceInfo> objektu, který uvádí lokalitě jako zdrojový soubor <xref:System.IO.Stream> a popisuje typ obsahu.  
   
- Například následující kód ukazuje, jak používat <xref:System.Windows.Application.GetRemoteStream%2A> načíst <xref:System.Windows.Controls.Page> lokality původu souboru a nastavte jej jako obsah <xref:System.Windows.Controls.Frame> (`pageFrame`).  
+ Například následující kód ukazuje, jak používat <xref:System.Windows.Application.GetRemoteStream%2A> načíst <xref:System.Windows.Controls.Page> webovou stránku původu souboru a nastavit ho jako obsah <xref:System.Windows.Controls.Frame> (`pageFrame`).  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageSOOFileManuallyCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/SOOPage.xaml.cs#loadapagesoofilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageSOOFileManuallyCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/SOOPage.xaml.vb#loadapagesoofilemanuallycode)]  
   
- Při volání <xref:System.Windows.Application.GetRemoteStream%2A> dává vám přístup k <xref:System.IO.Stream>, je třeba provést převod na typ vlastnosti, který jste budete nastavení, je další práci. Místo toho můžete nechat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] postará o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnost typu pomocí kódu.  
+ Při volání <xref:System.Windows.Application.GetRemoteStream%2A> vám poskytne přístup ke <xref:System.IO.Stream>, je třeba provést převod na typ vlastnosti, která vám bude nastavení, s další práci. Místo toho můžete nechat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] postará o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnosti typu pomocí kódu.  
   
  Následující příklad ukazuje, jak načíst <xref:System.Windows.Controls.Page> přímo do <xref:System.Windows.Controls.Frame> (`pageFrame`) pomocí kódu.  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadPageSOOFileFromCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/SOOPage.xaml.cs#loadpagesoofilefromcode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadPageSOOFileFromCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/SOOPage.xaml.vb#loadpagesoofilefromcode)]  
   
- Následující příklad je kód ekvivalentní v předchozím příkladu.  
+ V následujícím příkladu kódu je rovnocenné v předchozím příkladu.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#LoadPageSOOFileFromXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/SOOPage.xaml#loadpagesoofilefromxaml)]  
   
 <a name="Rebuilding_after_Changing_Build_Type"></a>   
-## <a name="rebuilding-after-changing-build-type"></a>Opětovné sestavení po změně typu sestavení  
- Po provedení změny sestavení typ datového souboru aplikace, budete muset znovu sestavte celé aplikace k zajištění, že tyto změny se použijí. Pokud vytvoříte pouze aplikace, nejsou použity změny.  
+## <a name="rebuilding-after-changing-build-type"></a>Znovu sestavit po změně typ sestavení  
+ Po změně sestavení typu datového souboru aplikace, budete muset znovu vytvořit celé aplikace, ujistěte se, že tyto změny se použijí. Pokud vytváříte pouze aplikace, nepoužijí se změny.  
   
 ## <a name="see-also"></a>Viz také  
  [Sbalení URI v technologii WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)

@@ -7,18 +7,19 @@ helpviewer_keywords:
 - keyboard shortcuts [Windows Forms], controls
 - Windows Forms controls, labels
 ms.assetid: 6eaf868c-819f-4131-8f59-048e20c286f7
-ms.openlocfilehash: 0b75a4f59cdba4ff732a92996086b77bc65cf46c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a5504095814cdfc04699bf24b9b96191e94b22c3
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43409017"
 ---
 # <a name="labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them"></a>Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky
-Přidat do Windows Forms – ovládací prvky mít vlastnosti a metody, které se používají k další specialize uživatele prostředí. Přizpůsobení uživatelského rozhraní tak, aby vyhovovala potřebám uživatele je velmi důležité dobře navrženou pro aplikace pro Windows.  
+Ovládací prvky přidané do formulářů Windows mají vlastnosti a metody, které se používají k další se specializují uživatelské prostředí. Přizpůsobení uživatelského rozhraní tak, aby odpovídaly potřebám uživatele je velmi důležité pro dobře navržená aplikace Windows.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-the-text-displayed-by-a-windows-forms-control.md)  
- Popisuje, jak přiřadit textový popisek do ovládacího prvku.  
+ Popisuje, jak přiřadit popisek s textem do ovládacího prvku.  
   
  [Postupy: Nastavení obrázku zobrazovaného ovládacím prvkem Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-the-image-displayed-by-a-windows-forms-control.md)  
  Vysvětluje, jak nakonfigurovat ovládací prvek pro zobrazení obrázků.  
@@ -27,10 +28,10 @@ Přidat do Windows Forms – ovládací prvky mít vlastnosti a metody, které s
  Poskytuje informace o vytváření předdefinované klávesové zkratky.  
   
  [Poskytování informací o usnadnění pro ovládací prvky ve formuláři Windows Forms](../../../../docs/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form.md)  
- Poskytuje informace o povolení vaše ovládací prvky pro práci s usnadnění.  
+ Poskytuje informace o povolení své ovládací prvky pro práci s usnadnění.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)  
- Odkazy na další základní kroky, které můžete provést pomocí ovládacích prvků.  
+ Obsahuje odkazy na další základní věci, které vám pomůžou s ovládacími prvky.  
   
- Také najdete v části [postup: vytvoření přístup klíčů pro Windows Forms – ovládací prvky pomocí návrháře](http://msdn.microsoft.com/library/ms233673\(v=vs.110\)), [postup: nastavení zobrazí Text s použitím ovládacího prvku Windows Forms návrháře](http://msdn.microsoft.com/library/ms233665\(v=vs.110\)), [postupy: nastavení obrázku Zobrazí ve Windows Forms pomocí návrháře ovládacího prvku](http://msdn.microsoft.com/library/ms233656\(v=vs.110\)).
+ Také naleznete v tématu [postupy: vytvoření přístup klíčů pro Windows Forms ovládací prvky pomocí návrháře](how-to-create-access-keys-for-windows-forms-controls-using-the-designer.md), [jak: nastavit Text zobrazí s použitím ovládacího prvku Windows Forms návrháře](how-to-set-the-text-displayed-by-a-windows-forms-control-using-the-designer.md), [postupy: nastavení obrázku Zobrazený Windows Forms pomocí návrháře ovládací prvek](how-to-set-the-image-displayed-by-a-windows-forms-control-using-the-designer.md).

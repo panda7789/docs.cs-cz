@@ -2,41 +2,41 @@
 title: Trvale vydaný poskytovatel tokenu
 ms.date: 03/30/2017
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
-ms.openlocfilehash: 145faaae709119708240863f85eb5352fb2c5a1b
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 7def23a00e42e134d8c0b9bd911710917681ad31
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33807548"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43404874"
 ---
 # <a name="durable-issued-token-provider"></a>Trvale vydaný poskytovatel tokenu
 Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel tokenu.  
   
-## <a name="discussion"></a>Diskusní  
- Zprostředkovatel tokenu ve Windows Communication Foundation (WCF) slouží k zadání přihlašovacích údajů ke Infrastruktura zabezpečení. Zprostředkovatel tokenu obecně prozkoumá cíl a problémy vhodné přihlašovací údaje, aby infrastruktura zabezpečení můžete zabezpečit zprávy. WCF se dodává s [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
+## <a name="discussion"></a>Diskuse  
+ Poskytovatel tokenu ve Windows Communication Foundation (WCF) slouží k zadání přihlašovacích údajů pro zabezpečení infrastruktury. Poskytovatel tokenu obecně zkontroluje cíl a problémů příslušné přihlašovací údaje tak, aby infrastruktura zabezpečení se dají zabezpečit zprávy. Součástí WCF [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:  
   
--   Pokud máte úložiště přihlašovacích údajů, která předdefinované zprostředkovatel tokenu nemůže pracovat s.  
+-   Pokud máte úložiště přihlašovacích údajů, které nelze použít předdefinovaný poskytovatel tokenů.  
   
--   Pokud chcete zadat vlastní vlastní mechanismus pro transformaci přihlašovací údaje z bodu, když uživatel poskytuje podrobnosti pro případ použití klienta WCF přihlašovací údaje.  
+-   Pokud chcete poskytnout vlastní vlastní mechanismus pro transformaci přihlašovacích údajů z bodu, když uživatel poskytuje podrobnosti pro případ použití přihlašovacích údajů klienta WCF.  
   
 -   Pokud vytváříte vlastní token.  
   
- Tento příklad ukazuje, jak vytvořit vlastní zprostředkovatel tokenu, který ukládá do mezipaměti tokeny vydané podle zabezpečení tokenu služby (STS).  
+ Tento příklad ukazuje, jak vytvořit vlastního zprostředkovatele tokenů, který ukládá do mezipaměti tokenům vydaným službou tokenů zabezpečení služby (STS).  
   
- Tento příklad znázorňuje to Shrneme, následující:  
+ Souhrnně řečeno, tento příklad znázorňuje následující:  
   
--   Jak klienta můžete nakonfigurovat vlastní zprostředkovatele tokenu.  
+-   Jak klienta lze nakonfigurovat pomocí vlastního zprostředkovatele tokenů.  
   
--   Jak lze do mezipaměti a zadaný pro klienta WCF vystavené tokeny.  
+-   Jak vydané tokeny můžete uložit do mezipaměti a k dispozici klienta WCF.  
   
--   Jak server ověření klienta pomocí certifikátu X.509 serveru.  
+-   Jak ověření serveru klientem pomocí certifikátu X.509 serveru.  
   
- Tato ukázka se skládá z konzoly programu klienta (Client.exe), program konzoly služby tokenů zabezpečení (Securitytokenservice.exe) a program konzoly služby (Service.exe). Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi. Kontrakt je definována `ICalculator` rozhraní, která zpřístupňuje matematické operace (přidat, odečíst, násobit a dělit). Klient získá zabezpečení token z Security Token Service (STS) a zadává synchronní požadavků službou pro danou matematické operace a odpovědi služby s výsledkem. Činnost klienta je viditelný v okně konzoly.  
+ Tento příklad se skládá z programu konzoly klienta (Client.exe), program konzoly služby tokenů zabezpečení (Securitytokenservice.exe) a služby konzolový program (Service.exe). Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď. Smlouva je definován `ICalculator` rozhraní, které zveřejňuje matematických operací (Přidat odečíst, násobení a dělení). Klient získá bezpečnostní token z tokenu služba zabezpečení (STS) a umožňuje synchronní žádosti o službu pro dané matematické operace a odpovědi služby k výsledku. Činnost klienta je vidět v okně konzoly.  
   
 > [!NOTE]
->  Nastavení postupu a sestavení pokyny k této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postupu a sestavení pokyny k instalaci pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Tato ukázka zpřístupní ICalculator kontrakt pomocí [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). Konfigurace této vazby v klientovi je zobrazena v následujícím kódu.  
+ Tato ukázka poskytuje pomocí kontraktu ICalculator [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). Konfiguraci této vazby v klientovi je znázorněno v následujícím kódu.  
   
 ```xml  
 <bindings>
@@ -54,9 +54,9 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
 </bindings>  
 ```  
   
- Na `security` element `wsFederationHttpBinding`, `mode` hodnota konfiguruje slouží kterém režimu zabezpečení. V této ukázce zabezpečení zprávy je používají, což je důvod, proč `message` element `wsFederationHttpBinding` je zadat v rámci `security` element `wsFederationHttpBinding`. `issuer` Element `wsFederationHttpBinding` uvnitř `message` element `wsFederationHttpBinding` Určuje adresu a vazeb pro služby tokenů zabezpečení, která vydá token zabezpečení klientovi, aby klient může ověřit kalkulačky Služba.  
+ Na `security` prvek `wsFederationHttpBinding`, `mode` hodnota konfiguruje, který režim zabezpečení by měl sloužit. V této ukázce zabezpečení zprávy se používá, což je důvod, proč `message` prvek `wsFederationHttpBinding` je zadat v rámci `security` prvek `wsFederationHttpBinding`. `issuer` Prvek `wsFederationHttpBinding` uvnitř `message` prvek `wsFederationHttpBinding` Určuje adresu a vazbu pro službu tokenů zabezpečení, který vydá token zabezpečení do klienta tak, aby se klient může ověřit ke kalkulačce Služba.  
   
- Konfigurace tuto vazbu na službu je vidět v následujícím kódu.  
+ Konfiguraci této vazby ve službě je znázorněno v následujícím kódu.  
   
 ```xml  
 <bindings>
@@ -80,9 +80,9 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
 </bindings>  
 ```  
   
- Na `security` element `wsFederationHttpBinding`, `mode` hodnota konfiguruje slouží kterém režimu zabezpečení. V této ukázce zabezpečení zprávy je používají, což je důvod, proč `message` element `wsFederationHttpBinding` je zadat v rámci `security` element `wsFederationHttpBinding`. `issuerMetadata` Element `wsFederationHttpBinding` uvnitř `message` element `wsFederationHttpBinding` určuje adrese a identitě pro koncový bod, který slouží k načtení metadat pro služby tokenů zabezpečení.  
+ Na `security` prvek `wsFederationHttpBinding`, `mode` hodnota konfiguruje, který režim zabezpečení by měl sloužit. V této ukázce zabezpečení zprávy se používá, což je důvod, proč `message` prvek `wsFederationHttpBinding` je zadat v rámci `security` prvek `wsFederationHttpBinding`. `issuerMetadata` Prvek `wsFederationHttpBinding` uvnitř `message` prvek `wsFederationHttpBinding` určuje adrese a identitě pro koncový bod, který slouží k načtení metadat pro službu tokenů zabezpečení.  
   
- Chování pro službu je znázorněno v následujícím kódu.  
+ Chování služby je uvedeno v následujícím kódu.  
   
 ```xml  
 <behavior name="ServiceBehavior">
@@ -105,20 +105,20 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
 </behavior>  
 ```  
   
- `issuedTokenAuthentication` Element uvnitř `serviceCredentials` element umožňuje službě zadejte omezení umožňuje klientům k dispozici při ověřování tokenů. Tato konfigurace určuje, že tokeny podepsaný certifikát, jehož název subjektu CN = přijímat jsou služby tokenů zabezpečení.  
+ `issuedTokenAuthentication` Element v rámci `serviceCredentials` element umožňuje službě a zadat omezení na tokeny, umožňuje klientům k dispozici během ověřování. Tato konfigurace určuje, že tokeny podepsán certifikátem, jehož název subjektu je CN = služby STS jsou změna přijata službou.  
   
- Služby tokenů zabezpečení zpřístupní jeden koncový bod pomocí standardní wsHttpBinding. Služby tokenů zabezpečení odpovídá na žádosti od klientů pro tokeny a zadaný klient se ověří pomocí účtu Windows, vydá token, který obsahuje jméno uživatele klienta jako deklaraci v vydaných tokenu. Při vytváření tokenu služby tokenu zabezpečení přihlásí token pomocí privátní klíč přidružený CN = certifikát služby tokenů zabezpečení. Kromě toho vytvoří symetrického klíče a zašifruje pomocí veřejného klíče přidruženého CN = localhost certifikátu. Při vracení token do klienta, služby tokenů zabezpečení také vrátí symetrický klíč. Klient uvede vystavený token, který má službu kalkulačky a prokáže, že zná symetrický klíč podepsáním zprávu s tímto klíčem.  
+ Služba tokenů zabezpečení poskytuje jeden koncový bod pomocí standardní wsHttpBinding. Služba tokenů zabezpečení odpoví na požadavek od klientů pro tokeny a pokud klient se ověří pomocí účtu Windows, vystaví token, který obsahuje jméno uživatele klienta jako deklarace identity v vydaný token. Při vytváření tokenu, značky služby tokenu zabezpečení tokenu pomocí privátního klíče přidružené k CN = certifikátu STS. Kromě toho vytvoří symetrický klíč a zašifruje pomocí veřejného klíče přidruženého CN = localhost certifikát. V vrácením tokenu klientovi, služba tokenů zabezpečení také vrátí hodnotu symetrický klíč. Klient prezentuje vydaný token pro službu kalkulačky a prokáže, že zná symetrický klíč pomocí podepsání zprávy s tímto klíčem.  
   
-## <a name="custom-client-credentials-and-token-provider"></a>Přihlašovací údaje vlastního klienta a zprostředkovatele tokenu  
- Následující kroky ukazují, jak vyvíjet vlastní zprostředkovatele tokenu, mezipamětí vystavené tokeny a integraci s použitím technologie WCF: zabezpečení.  
+## <a name="custom-client-credentials-and-token-provider"></a>Přihlašovací údaje vlastního klienta a poskytovatel tokenů  
+ Následující kroky ukazují, jak vývoj vlastního zprostředkovatele tokenů, že mezipaměť na vydané tokeny a integrace s použitím technologie WCF: zabezpečení.  
   
-#### <a name="to-develop-a-custom-token-provider"></a>K vývoji vlastního zprostředkovatele tokenu  
+#### <a name="to-develop-a-custom-token-provider"></a>Vývoj vlastního zprostředkovatele tokenů  
   
-1.  Napište vlastního zprostředkovatele tokenu.  
+1.  Napište vlastního zprostředkovatele tokenů.  
   
-     Ukázka implementuje vlastní zprostředkovatele tokenů, který vrátí token zabezpečení načítat z mezipaměti.  
+     Ukázka implementuje vlastního zprostředkovatele tokenů, který vrátí token zabezpečení načítat z mezipaměti.  
   
-     K provedení této úlohy, poběží vlastní zprostředkovatel tokenu odvozuje <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídy a přepsání <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A> metoda. Tato metoda se pokusí získat token z mezipaměti, nebo pokud token nebyl nalezen v mezipaměti, načte token z výchozí zprostředkovatel a pak ukládá do mezipaměti tohoto tokenu. V obou případech metoda vrátí `SecurityToken`.  
+     K provedení této úlohy je odvozen vlastního zprostředkovatele tokenů <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídy a přepsání <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A> metody. Tato metoda pokusí získat token z mezipaměti, nebo pokud token nebyl nalezen v mezipaměti, načte token z podkladového zprostředkovatele a potom ukládá do mezipaměti tohoto tokenu. V obou případech vrátí metoda `SecurityToken`.  
   
     ```  
     protected override SecurityToken GetTokenCore(TimeSpan timeout)  
@@ -133,9 +133,9 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
     }  
     ```  
   
-2.  Zápis tokenu správce vlastní zabezpečení.  
+2.  Správce tokenů zabezpečení vlastního zápisu.  
   
-     <xref:System.IdentityModel.Selectors.SecurityTokenManager> Se používá k vytvoření <xref:System.IdentityModel.Selectors.SecurityTokenProvider> pro konkrétní <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> , je do ní předán v `CreateSecurityTokenProvider` metoda. Správce tokenu zabezpečení se také používá k vytvoření tokenu ověřovací data a serializátorů tokenu, ale nejsou uvedené v této ukázce. V této ukázce Správce tokenů zabezpečení vlastní dědí z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídy a přepsání `CreateSecurityTokenProvider` je požadovaná metoda vrátí vlastního zprostředkovatele tokenu, když předaný tokenu požadavky označuje, že vystavený token.  
+     <xref:System.IdentityModel.Selectors.SecurityTokenManager> Slouží k vytvoření <xref:System.IdentityModel.Selectors.SecurityTokenProvider> pro konkrétní <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> , který je do ní předán v `CreateSecurityTokenProvider` metody. Správce tokenů zabezpečení se také používá k vytvoření ověřovací data tokenu a tokenu serializátory, ale nejsou uvedené v této ukázce. V této ukázce Správce tokenů zabezpečení vlastní dědí z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídy a přepsání `CreateSecurityTokenProvider` požadovaná metoda vrátí vlastního zprostředkovatele tokenů, při úspěšné požadavky tokenu označuje, že vydaný token.  
   
     ```  
     class DurableIssuedTokenClientCredentialsTokenManager :  
@@ -162,9 +162,9 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
     }  
     ```  
   
-3.  Zápis vlastních klientských pověření.  
+3.  Zápis vlastních klientských přihlašovacích údajů.  
   
-     Třídy pověření klienta se používá k reprezentování přihlašovací údaje, které jsou nakonfigurované pro proxy serveru klienta a vytvoří token správce, který slouží k získání tokenu ověřovací data, poskytovatele tokenů a serializátorů tokenu zabezpečení.  
+     Třída přihlašovacích údajů klienta se používá k reprezentování přihlašovací údaje, které jsou nakonfigurované pro proxy serveru klienta a vytvoří Správce tokenů, který se používá k získání poskytovatele tokenů ověřovací data tokenu a tokenu serializátory zabezpečení.  
   
     ```  
     public class DurableIssuedTokenClientCredentials : ClientCredentials  
@@ -204,7 +204,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
     }  
     ```  
   
-4.  Implementujte mezipamětí tokenů. Ukázka implementace používá abstraktní základní třída, pomocí kterého se příjemci daného tokenu mezipaměti interakci s mezipamětí.  
+4.  Implementace mezipaměť tokenu. Ukázková implementace používá abstraktní základní třída, přes který příjemci daného mezipaměť tokenu pracovat s mezipamětí.  
   
     ```  
     public abstract class IssuedTokenCache  
@@ -215,7 +215,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
     Configure the client to use the custom client credential.  
     ```  
   
-     Vzorek pro klienta k použití pověření vlastní klienta, odstraní výchozí třídu pověření klienta a poskytuje novou třídu pověření klienta.  
+     Klienti měli používat přihlašovací údaje, které vlastní vzorek odstraní výchozí třídu přihlašovacích údajů klienta a poskytuje novou třídu přihlašovacích údajů klienta.  
   
     ```  
     clientFactory.Endpoint.Behaviors.Remove<ClientCredentials>();  
@@ -226,31 +226,31 @@ Tento příklad ukazuje, jak implementovat vlastní klienta vydaný Poskytovatel
     ```  
   
 ## <a name="running-the-sample"></a>Spuštění ukázky  
- Přečtěte si následující pokyny ke spuštění ukázky. Při spuštění vzorového žádost o token zabezpečení se zobrazí v okně konzoly služby tokenů zabezpečení. Operace požadavky a odpovědi se zobrazují v oknech konzoly klienta a služby. Stisknutím klávesy ENTER v některém z okna konzoly vypnout aplikaci.  
+ Přečtěte si následující pokyny ke spuštění ukázky. Když spustíte ukázku, požadavek na token zabezpečení se zobrazí v okně konzoly služby tokenů zabezpečení. Operace žádosti a odpovědi se zobrazují v oknech konzoly klienta a služby. Stisknutím klávesy ENTER v některém z okna konzoly vypnout aplikaci.  
   
 ## <a name="the-setupcmd-batch-file"></a>Setup.cmd dávkového souboru  
- Dávkový soubor Setup.cmd součástí této ukázky můžete nakonfigurovat server a služby tokenů zabezpečení s příslušnými certifikáty spuštění aplikace s vlastním hostováním. Dávkový soubor vytvoří dva certifikáty, že oba seznamy v CurrentUser/TrustedPeople úložiště certifikátů. První certifikát obsahuje název subjektu z CN = služby tokenů zabezpečení a služby tokenů zabezpečení používané k podepisování tokenů zabezpečení, které vystavuje klientovi. Druhý certifikát obsahuje název subjektu z CN = localhost a slouží k šifrování tajného klíče, aby služba ho dešifrovat pomocí služby tokenů zabezpečení.  
+ Dávkový soubor Setup.cmd zahrnuté v této ukázce umožňuje nakonfigurovat server a služba tokenů zabezpečení s příslušnými certifikáty ke spuštění aplikace v místním prostředí. Dávkový soubor se vytvoří dva certifikáty, že v CurrentUser/TrustedPeople úložiště certifikátů. První certifikát má název předmětu CN = STS a služba tokenů zabezpečení používá k podepisování tokenů zabezpečení, které vystavuje do klienta. Druhý certifikát má název předmětu CN = localhost a služba tokenů zabezpečení používá k šifrování tajného kódu tak, aby služba může dešifrovat.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Spusťte soubor Setup.cmd vytvořit požadované certifikáty.  
   
-2.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Ujistěte se, že všechny projekty v řešení jsou vytvořeny (sdílené, RSTRSTR, služby, SecurityTokenService a klient).  
+2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Ujistěte se, že jsou všechny projekty v řešení sestaveny, (sdílené, RSTRSTR, služby, služby SecurityTokenService a klient).  
   
-3.  Zkontrolujte, zda Service.exe a SecurityTokenService.exe jsou obě spuštěn s oprávněními správce.  
+3.  Ujistěte se, že Service.exe a SecurityTokenService.exe se provozují s oprávněními správce.  
   
 4.  Spusťte Client.exe.  
   
-#### <a name="to-clean-up-after-the-sample"></a>Vyčistěte po vzorku  
+#### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
-1.  Po dokončení spuštění ukázky, spusťte Cleanup.cmd ve složce Ukázky.  
+1.  Spusťte Cleanup.cmd ve složce samples po dokončení spuštění ukázky.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Security\DurableIssuedTokenProvider`  
   

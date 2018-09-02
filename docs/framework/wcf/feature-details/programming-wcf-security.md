@@ -9,54 +9,54 @@ helpviewer_keywords:
 ms.assetid: 739ec222-4eda-4cc9-a470-67e64a7a3f10
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 3eb645dcc5b8cc1c52818e290699ebadcd0943c6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1a58260ecf5a4126554c23f1a5f8d7b3ba43f215
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33495736"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417747"
 ---
 # <a name="programming-wcf-security"></a>Programování zabezpečení WCF
-Toto téma popisuje základní programovací úlohy použité k vytvoření zabezpečené aplikace Windows Communication Foundation (WCF). Toto téma popisuje pouze ověřování, důvěrnost a integritu, souhrnně označované jako *přenosu zabezpečení*. Toto téma nepopisuje autorizace (řízení přístupu k prostředkům nebo službám); informace o ověřování najdete v tématu [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  
+Toto téma popisuje základní programovacích úloh umožňuje vytvořit zabezpečenou webovou aplikaci Windows Communication Foundation (WCF). Toto téma popisuje pouze ověřování, důvěrnost a integrita, souhrnně označované jako *přenos zabezpečení*. Toto téma nepopisuje autorizace (řízení přístupu k prostředkům nebo službám); informace o ověřování najdete v tématu [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  
   
 > [!NOTE]
->  Cenné Úvod k koncepty zabezpečení, zejména pokud jde o WCF, najdete na webu MSDN na sadu vzory a postupy kurzy [scénáře, vzory a implementace pokyny pro webové služby vylepšení (WSE) 3.0](http://go.microsoft.com/fwlink/?LinkID=88250).  
+>  Cenné Úvod k koncepty zabezpečení, zejména ve vztahu WCF, najdete na webu MSDN na sadu vzory a postupy kurzy [scénářů, modely a pokyny k implementaci pro webové služby rozšíření (WSE) 3.0](https://go.microsoft.com/fwlink/?LinkID=88250).  
   
- Programování zabezpečení WCF je založen na nastavení následující tři kroky: režim zabezpečení, typu pověření klienta a hodnot přihlašovacích údajů. Abyste mohli provést tyto kroky buď prostřednictvím kódu nebo konfigurace.  
+ Programování zabezpečení WCF je založena na třech krocích nastavením následující hodnoty: režim zabezpečení, typ přihlašovacích údajů klienta a hodnot přihlašovacích údajů. Provedením těchto kroků prostřednictvím kódu nebo konfigurace.  
   
 ## <a name="setting-the-security-mode"></a>Nastavení režimu zabezpečení  
- Následující části jsou vysvětleny obecné kroky pro programování s režimem zabezpečení ve WCF:  
+ Následující příklad vysvětluje obecné kroky pro programování s režimem zabezpečení ve službě WCF:  
   
-1.  Vyberte jeden z předdefinovaných vazby, které jsou vhodné pro vaše požadavky aplikací. Seznam voleb vazby najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md). Téměř každý vazby má ve výchozím nastavení zabezpečení povoleno. Jedinou výjimkou je <xref:System.ServiceModel.BasicHttpBinding> – třída (pomocí konfigurace, [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)).  
+1.  Vyberte jednu z předdefinovaných vazeb, které jsou vhodné pro vaše požadavky na aplikace. Seznam voleb vazby najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md). Téměř Každá vazba má ve výchozím nastavení povoleno zabezpečení. Jedinou výjimkou je <xref:System.ServiceModel.BasicHttpBinding> třídy (pomocí konfigurace, [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)).  
   
-     Vazba, kterou vyberete určuje přenosu. Například <xref:System.ServiceModel.WSHttpBinding> používá protokol HTTP jako přenos; <xref:System.ServiceModel.NetTcpBinding> používá protokol TCP.  
+     Vazba, kterou vyberete určuje přenos. Například <xref:System.ServiceModel.WSHttpBinding> používá protokol HTTP jako přenosový; <xref:System.ServiceModel.NetTcpBinding> používá protokol TCP.  
   
-2.  Vyberte jeden z režimů zabezpečení pro vazbu. Všimněte si, že vazby, kterou vyberete, určuje možnosti k dispozici režimu. Například <xref:System.ServiceModel.WSDualHttpBinding> neumožňuje zabezpečení přenosu (není možnost). Podobně ani <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> ani <xref:System.ServiceModel.NetNamedPipeBinding> umožňuje zabezpečení zpráv.  
+2.  Vyberte jeden z režimů zabezpečení vazby. Mějte na paměti, určuje vazbu, kterou vyberete možnosti režimu k dispozici. Například <xref:System.ServiceModel.WSDualHttpBinding> neumožňuje zabezpečení přenosu (není možné). Podobně ani <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> ani <xref:System.ServiceModel.NetNamedPipeBinding> umožňuje zabezpečení zpráv.  
   
      Máte tři možnosti:  
   
     1.  `Transport`  
   
-         Zabezpečení přenosu závisí na mechanismu, který používá vazby, které jste vybrali. Například, pokud používáte `WSHttpBinding` je mechanismus zabezpečení Secure Sockets Layer (SSL) (také mechanismus pro protokol HTTPS). Hlavní výhodou zabezpečení přenosu je obecně řečeno, zajišťuje dobrý propustnost, bez ohledu na to, které přenosu používáte. Však obsahuje dvě omezení: první je, že přenosový mechanismus Určuje typ pověření pro ověření uživatele. Toto je nevýhodou pouze v případě, že služba potřebuje pro spolupráci s jinými službami, které potřebují různé typy přihlašovacích údajů. Druhá je, že, protože zabezpečení není použita na úrovni zpráv, zabezpečení je implementovaná v segmentu směrování způsobem spíše než začátku do konce. Toto omezení druhé je problém pouze v případě, že cesta zpráv mezi klientem a službou obsahuje prostředníci. Další informace o které přenosu použít, najdete v části [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md). Další informace o používání zabezpečení přenosu najdete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).  
+         Zabezpečení přenosu závisí mechanismus, který používá vazba, kterou jste vybrali. Například, pokud používáte `WSHttpBinding` mechanismus zabezpečení, který je vrstva SSL (Secure Sockets) (taky mechanismus pro protokol HTTPS). Obecně řečeno hlavní výhodou zabezpečení přenosu je, že poskytuje dobrou propustnost bez ohledu na to, které přenosu, kterou používáte. Však obsahuje dvě omezení: první možností je, že mechanismus přenosu Určuje typ přihlašovacích údajů pro ověření uživatele. Nevýhodou jde jenom v případě, že služba potřebuje pro spolupráci s ostatními službami, které vyžadují různé typy přihlašovacích údajů. Druhým je, že, protože není zabezpečení na úrovni zprávy, zabezpečení je implementována v hop-by-hop způsobem spíše než začátku do konce. Toto druhé omezení je problém pouze v případě, že cesta zpráv mezi klientem a službou obsahuje zprostředkovatelů. Další informace o přenosu, které používat, naleznete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md). Další informace o použití zabezpečení přenosu, naleznete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).  
   
     2.  `Message`  
   
-         Zabezpečení zpráv znamená, že každá zpráva obsahuje potřebné hlavičky a zabezpečení dat, které chcete zachovat zprávy. Vzhledem k tomu, že se liší složení záhlaví může obsahovat libovolný počet přihlašovací údaje. Faktor to stane, pokud jste se spolupráce s jinými službami této poptávky typ určité pověření, který nelze zadat přenosový mechanismus, nebo pokud zprávy musí být použit s více než jedna služba, kde každá služba vyžaduje typ různých přihlašovacích údajů.  
+         Zabezpečení zpráv znamená, že každá zpráva obsahuje potřebné hlavičky a zabezpečení dat, aby se zprávy. Protože se liší složení záhlaví, může obsahovat libovolný počet přihlašovacích údajů. Faktor to stane, pokud jste se spolupráce s jinými službami vyžadující přihlašovacích údajů konkrétní typ, který nelze uvádět přenosový mechanismus, nebo pokud zpráva musí být použit s víc než jedna služba, kde každá služba vyžaduje typ různých přihlašovacích údajů.  
   
          Další informace najdete v tématu [zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md).  
   
     3.  `TransportWithMessageCredential`  
   
-         Tato volba používá přenosové vrstvy zabezpečit přenos zpráv, při každé zprávy je i bohaté přihlašovací údaje potřebovat další služby. Kombinuje výkon výhod zabezpečení přenosu s výhodou bohaté pověření zabezpečení zpráv. Toto je k dispozici následující vazby: <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WSFederationHttpBinding>, <xref:System.ServiceModel.NetPeerTcpBinding>, a <xref:System.ServiceModel.WSHttpBinding>.  
+         Tato volba používá přenosové vrstvy zabezpečení přenosu zpráv, sice zahrnuje všechny zprávy bohaté přihlašovací údaje potřebovat jiné služby. Tím se zkombinuje výkonu výhod zabezpečení přenosu s výhodou formátovaným přihlašovací údaje zabezpečení zpráv. Tato možnost je dostupná následující vazbami: <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WSFederationHttpBinding>, <xref:System.ServiceModel.NetPeerTcpBinding>, a <xref:System.ServiceModel.WSHttpBinding>.  
   
-3.  Pokud se rozhodnete použít zabezpečení přenosu pro protokol HTTP (jinými slovy, HTTPS), musíte také nakonfigurovat certifikát SSL hostitele a povolit protokol SSL na portu. Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
+3.  Pokud se rozhodnete pro použití zabezpečení přenosu HTTP (jinými slovy, HTTPS), musíte také nakonfigurovat hostitele certifikátem SSL a povolení protokolu SSL na portu. Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
   
-4.  Pokud používáte <xref:System.ServiceModel.WSHttpBinding> a není potřeba navázat zabezpečené relaci, nastavte <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> vlastnost `false`.  
+4.  Pokud používáte <xref:System.ServiceModel.WSHttpBinding> a není potřeba navázat zabezpečenou relaci, nastavte <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> vlastnost `false`.  
   
-     Zabezpečené relace nastane, když klient a služba vytvoření kanálu pomocí symetrického klíče (klient i server používají stejný klíč délky konverzace, dokud nezavřete dialogové okno).  
+     Zabezpečené relace nastane, pokud klient a služba vytvoření kanálu pomocí symetrického klíče (klient a server používají stejný klíč pro délku konverzaci, dokud není zavřena dialogového okna).  
   
 ## <a name="setting-the-client-credential-type"></a>Nastavení typu pověření klienta  
- Vyberte typ pověření klienta podle potřeby. Další informace najdete v tématu [výběr typu pověření](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md). K dispozici jsou následující typy pověření klienta:  
+ Vyberte typ pověření klienta podle potřeby. Další informace najdete v tématu [výběr typu pověření](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md). K dispozici jsou následující typy přihlašovacích údajů klienta:  
   
 -   `Windows`  
   
@@ -72,7 +72,7 @@ Toto téma popisuje základní programovací úlohy použité k vytvoření zabe
   
 -   `IssuedToken`  
   
- V závislosti na tom, jak nastavit režim musíte nastavit typ přihlašovacích údajů. Například pokud jste vybrali `wsHttpBinding`a nastavili režim "Zpráva,", pak můžete také nastavit `clientCredentialType` atribut elementu zprávy na jednu z následujících hodnot: `None`, `Windows`, `UserName`, `Certificate` , a `IssuedToken`, jak je znázorněno v následujícím příkladu konfigurace.  
+ V závislosti na tom, jak nastavit režim musíte nastavit typ přihlašovacích údajů. Například pokud jste vybrali `wsHttpBinding`a mít nastavte režim na "Zpráva", pak můžete také nastavit `clientCredentialType` atribut elementu zprávy do jedné z následujících hodnot: `None`, `Windows`, `UserName`, `Certificate` , a `IssuedToken`, jak je znázorněno v následujícím příkladu konfigurace.  
   
 ```xml  
 <system.serviceModel>  
@@ -92,13 +92,13 @@ Toto téma popisuje základní programovací úlohy použité k vytvoření zabe
  [!code-vb[c_WsHttpService#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wshttpservice/vb/source.vb#1)]  
   
 ## <a name="setting-service-credential-values"></a>Nastavení hodnot přihlašovacích údajů služby  
- Jakmile vyberete typu pověření klienta, je nutné nastavit skutečné přihlašovací údaje pro službu a klienta pro použití. Ve službě, jsou přihlašovací údaje nastavit pomocí <xref:System.ServiceModel.Description.ServiceCredentials> třídy a vrácený <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> vlastnost <xref:System.ServiceModel.ServiceHostBase> – třída. Vazba používá znamená typ přihlašovacích údajů služby, vybrali režim zabezpečení a typ pověření klienta. Následující kód nastaví certifikát pro přihlašovací údaje služby.  
+ Po výběru typu pověření klienta, je nutné nastavit samotné přihlašovací údaje pro služby a klienti měli používat. Na služby, přihlašovací údaje jsou nastavené pomocí <xref:System.ServiceModel.Description.ServiceCredentials> třídy a vrácené <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> vlastnost <xref:System.ServiceModel.ServiceHostBase> třídy. Vazba používá znamená typ přihlašovacích údajů služby, režimu zabezpečení a typu pověření klienta. Následující kód nastaví certifikát přihlašovacích údajů pro služby.  
   
  [!code-csharp[c_tcpService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_tcpservice/cs/source.cs#3)]
  [!code-vb[c_tcpService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_tcpservice/vb/source.vb#3)]  
   
 ## <a name="setting-client-credential-values"></a>Nastavení hodnot přihlašovacích údajů klienta  
- Na straně klienta, nastavte hodnoty přihlašovacích údajů klienta pomocí <xref:System.ServiceModel.Description.ClientCredentials> třídy a vrácené <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastnost <xref:System.ServiceModel.ClientBase%601> – třída. Následující kód nastaví certifikát jako pověření klienta pomocí protokolu TCP.  
+ Na straně klienta, nastavte pomocí hodnot přihlašovacích údajů klienta <xref:System.ServiceModel.Description.ClientCredentials> třídy a vrácené <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastnost <xref:System.ServiceModel.ClientBase%601> třídy. Následující kód nastaví certifikát jako přihlašovací údaje pro klienta pomocí protokolu TCP.  
   
  [!code-csharp[c_TcpClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_tcpclient/cs/source.cs#1)]
  [!code-vb[c_TcpClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_tcpclient/vb/source.vb#1)]  

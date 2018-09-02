@@ -5,66 +5,66 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: 6ef872876e800674a58b440e0e4001b86b0f8244
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3b6cdffdaab508d898e7caa8c93ac0f7b1365d01
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33337584"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43408877"
 ---
 # <a name="interfaces-c-programming-guide"></a>Rozhraní (Průvodce programováním v C#)
-Rozhraní obsahuje definice pro skupinu související funkce, [třída](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md) můžete implementovat.  
+Rozhraní obsahuje definice pro skupiny související funkce, která [třídy](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md) můžete implementovat.  
   
- Pomocí rozhraní může například obsahovat chování z více zdrojů v třídě. Tuto možnost je důležité v jazyce C#, protože jazyk nepodporuje vícenásobná dědičnost tříd. Kromě toho musíte použít rozhraní, pokud chcete simulovat dědičnosti pro struktury, protože nemůže ve skutečnosti Zdědit z jiné třídy nebo struktury.  
+ Pomocí rozhraní mohou například zahrnovat chování z několika zdrojů ve třídě. Tato funkce je důležitá v jazyce C#, protože jazyk nepodporuje vícenásobnou dědičnost tříd. Kromě toho musíte použít rozhraní, pokud chcete simulovat dědičnosti struktur, protože nemůže ve skutečnosti dědit z jiné třídy nebo struktury.  
   
- Definovat rozhraní pomocí [rozhraní](../../../csharp/language-reference/keywords/interface.md) – klíčové slovo, jak ukazuje následující příklad.  
+ Definujte rozhraní pomocí [rozhraní](../../../csharp/language-reference/keywords/interface.md) – klíčové slovo, jak ukazuje následující příklad.  
   
  [!code-csharp[csProgGuideInheritance#47](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interfaces_1.cs)]  
   
- Každá třída nebo struktura, která implementuje <xref:System.IEquatable%601> rozhraní musí obsahovat definici <xref:System.IEquatable%601.Equals%2A> metodu, která odpovídá podpisu, který určuje rozhraní. V důsledku toho se můžete spolehnout na třídu, která implementuje `IEquatable<T>` tak, aby obsahovala `Equals` metodu, pomocí kterého můžete instance třídy určují, zda je rovno jiná instance stejné třídy.  
+ Každá třída nebo struktura, která implementuje <xref:System.IEquatable%601> rozhraní může obsahovat definici <xref:System.IEquatable%601.Equals%2A> metodu, která odpovídá podpisu, který určuje rozhraní. V důsledku toho se můžete spolehnout na třídu, která implementuje `IEquatable<T>` tak, aby obsahovala `Equals` metodu, pomocí kterého můžete určit, zda je rovna jiná instance stejné třídy instance třídy.  
   
- Definice `IEquatable<T>` neposkytuje implementace pro `Equals`. Rozhraní definuje pouze podpis. Tento způsob je podobná abstraktní třídu, ve kterém jsou všechny metody abstraktní rozhraní v jazyce C#. Třídě nebo struktuře můžete implementovat více rozhraní, ale třídu může dědit vlastnosti pouze jednu třídu abstraktní, nebo ne. Proto můžete pomocí rozhraní zahrnout chování z více zdrojů v třídě.  
+ Definice `IEquatable<T>` neposkytuje implementaci pro `Equals`. Rozhraní definuje pouze podpis. Tímto způsobem je podobný abstraktní třída, ve kterém jsou všechny metody abstraktní rozhraní v jazyce C#. Třídy nebo struktury může implementovat více rozhraní, ale třída může dědit pouze jednu třídu, abstraktní nebo ne. Proto to s využitím rozhraní, můžete zahrnout chování z různých zdrojů ve třídě.  
   
- Další informace o abstraktní třídy najdete v tématu [abstraktní a zapečetěné třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
+ Další informace o abstraktních tříd naleznete v tématu [abstraktní a zapečetěné třídy a členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
   
- Rozhraní může obsahovat metody, vlastnosti, události, indexery nebo libovolnou kombinaci těchto typů čtyři člen. Odkazy na příklady najdete v části [související oddíly](../../../csharp/programming-guide/interfaces/index.md#BKMK_RelatedSections). Rozhraní nemůže obsahovat konstanty, pole, operátory, konstruktory instancí, finalizační metody nebo typů. Členové rozhraní jsou automaticky veřejné a nemůžou obsahovat žádné modifikátory přístupu. Členové také nemohou být [statické](../../../csharp/language-reference/keywords/static.md).  
+ Rozhraní může obsahovat metody, vlastnosti, události, indexerů nebo libovolnou kombinaci těchto typů čtyři člena. Odkazy na příklady naleznete v části [související oddíly](../../../csharp/programming-guide/interfaces/index.md#BKMK_RelatedSections). Rozhraní nemůže obsahovat konstanty, pole, operátory, konstruktory instancí, finalizační metody nebo typy. Jsou automaticky veřejné členy rozhraní a nemůžou obsahovat žádné modifikátory přístupu. Nemůže být také členy [statické](../../../csharp/language-reference/keywords/static.md).  
   
- K implementaci člena rozhraní, musíte odpovídající členem implementující třídu být nestatická, veřejná a mít stejný název a podpis jako člen rozhraní.  
+ Implementovat člen rozhraní, odpovídající člen implementující třídu musí být nestatická, veřejná a mají stejný název a signaturu jako člena rozhraní.  
   
- Když třídě nebo struktuře implementuje rozhraní, třídu nebo strukturu třeba poskytnout implementaci pro všechny členy, kteří definuje rozhraní. Rozhraní samotného poskytuje žádné funkce, které třídě nebo struktuře může dědit vlastnosti způsobem, že může dědit vlastnosti funkce základní třídy. Ale pokud základní třída implementuje rozhraní, dědí všechny třídy, která je odvozena ze základní třídy tuto implementaci.  
+ Pokud třída nebo struktura implementuje rozhraní, třídy nebo struktury musí poskytnout implementaci pro všechny členy, které definuje rozhraní. Rozhraní samotné poskytuje funkce, které tato třída nebo struktura může dědit tak, jak, že funkce základní třídy lze dědit. Nicméně pokud základní třída implementuje rozhraní, dědí všechny třídy, která je odvozena ze základní třídy tuto implementaci.  
   
- Následující příklad ukazuje implementaci IEquatable < T\> rozhraní. Implementující třídu `Car`, musíte poskytnout implementaci <xref:System.IEquatable%601.Equals%2A> metoda.  
+ Následující příklad ukazuje implementaci IEquatable < T\> rozhraní. Implementující třída `Car`, musí poskytnout implementaci položky <xref:System.IEquatable%601.Equals%2A> metody.  
   
  [!code-csharp[csProgGuideInheritance#48](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interfaces_2.cs)]  
   
- Vlastnostmi a indexery třídy můžete definovat další přistupující objekty pro vlastnost nebo indexer, který je definován v rozhraní. Například může rozhraní deklarovat vlastnost, která má [získat](../../../csharp/language-reference/keywords/get.md) přistupujícího objektu. Třídu, která implementuje rozhraní můžou deklarovat stejnou vlastnost s oběma `get` a [nastavit](../../../csharp/language-reference/keywords/set.md) přistupujícího objektu. Pokud jsou vlastnost nebo indexer používá explicitní implementace, musí odpovídat přistupující objekty. Další informace o explicitní implementaci, najdete v části [explicitní implementace rozhraní](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md) a [rozhraní vlastnosti](../../../csharp/programming-guide/classes-and-structs/interface-properties.md).  
+ Vlastnostmi a indexery třídy můžete definovat další přistupující objekty vlastnosti nebo indexovacího člena, který je definován v rozhraní. Například rozhraní může deklarovat vlastnost, která má [získat](../../../csharp/language-reference/keywords/get.md) přistupujícího objektu. Třída, která implementuje rozhraní může deklarovat stejnou vlastnost s oběma `get` a [nastavit](../../../csharp/language-reference/keywords/set.md) přistupujícího objektu. Pokud vlastnost nebo indexovací člen používá explicitní implementaci, musí odpovídat přístupové objekty. Další informace o explicitní implementaci, najdete v části [explicitní implementaci rozhraní](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md) a [vlastností rozhraní](../../../csharp/programming-guide/classes-and-structs/interface-properties.md).  
   
- Rozhraní můžete implementovat dalších rozhraní. Třída může zahrnovat rozhraní několikrát prostřednictvím základní třídy, které dědí nebo prostřednictvím rozhraní, které implementují rozhraní. Ale třída může poskytovat implementace rozhraní pouze jeden čas a pouze pokud třída deklaruje rozhraní jako součást definice třídy (`class ClassName : InterfaceName`). Pokud je zděděn rozhraní, protože je zděděno základní třídu, která implementuje rozhraní, poskytuje základní třídu implementace členů rozhraní. Odvozené třídy mohou však přeimplementovat členové rozhraní místo použití zděděné implementace.  
+ Rozhraní můžou implementovat jiná rozhraní. Třída může obsahovat rozhraní více než jednou prostřednictvím základní třídy, které dědí nebo rozhraní, které implementují rozhraní. Však třídu poskytnout implementaci rozhraní jenom jeden čas a pouze pokud třída deklaruje rozhraní jako součást definice třídy (`class ClassName : InterfaceName`). Pokud rozhraní se dědí, protože dědí základní třídu, která implementuje rozhraní, poskytuje základní třídy implementace členů rozhraní. Odvozená třída může znovu implementovat členy rozhraní namísto použití zděděná implementace.  
   
- Základní třída může také implementace členů rozhraní pomocí virtuální členy. Odvozené třídy v takovém případě můžete změnit chování rozhraní přepisování virtuální členy. Další informace o virtuální členové najdete v tématu [polymorfismus](../../../csharp/programming-guide/classes-and-structs/polymorphism.md).  
+ Základní třídu můžete také implementovat členy rozhraní pomocí virtuální členy. Odvozené třídy v takovém případě můžete změnit chování rozhraní tak, že přepíšete virtuální členy. Další informace o virtuální členy v tématu [polymorfismus](../../../csharp/programming-guide/classes-and-structs/polymorphism.md).  
   
 ## <a name="interfaces-summary"></a>Přehled rozhraní  
  Rozhraní má následující vlastnosti:  
   
--   Rozhraní je jako abstraktní základní třídu. Každá třída nebo struktura, která implementuje rozhraní musí implementovat všichni její členové.  
+-   Rozhraní je jako abstraktní základní třídu. Každá třída nebo struktura, která implementuje rozhraní musí implementovat všechny její členy.  
   
--   Rozhraní nemůže být přímo vytvořeny instance. Členy jsou implementované všechny třídě nebo struktuře, která implementuje rozhraní.  
+-   Rozhraní nemůže být přímo vytvořeny instance. Její členy jsou implementované všechny třídy nebo struktury, která implementuje rozhraní.  
   
--   Rozhraní může obsahovat události, indexery, metod a vlastností.  
+-   Rozhraní může obsahovat události, indexery, metody a vlastnosti.  
   
--   Rozhraní obsahovat žádné implementace metod.  
+-   Rozhraní obsahovat žádnou implementaci metody.  
   
--   Třídě nebo struktuře můžete implementovat více rozhraní. Třídy lze dědit vlastnosti základní třída a také implementovat jednu nebo více rozhraní.  
+-   Třídy nebo struktury může implementovat více rozhraní. Třída může dědit základní třídy a také implementovat jedno nebo více rozhraní.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Implementace explicitního rozhraní](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md)  
- Vysvětluje, jak vytvořit člena třídy, které jsou specifické pro rozhraní.  
+ Vysvětluje, jak vytvořit člena třídy, která je specifická pro rozhraní.  
   
  [Postupy: Explicitní implementace členů rozhraní](../../../csharp/programming-guide/interfaces/how-to-explicitly-implement-interface-members.md)  
- Poskytuje příklad explicitní implementace členů rozhraní.  
+ Obsahuje příklad toho, jak explicitní implementace členů rozhraní.  
   
  [Postupy: Explicitní implementace členů dvou rozhraní](../../../csharp/programming-guide/interfaces/how-to-explicitly-implement-members-of-two-interfaces.md)  
- Poskytuje příklad explicitní implementace členů rozhraní s použitím dědičnosti.  
+ Obsahuje příklad toho, jak explicitní implementace členů rozhraní s dědičnosti.  
   
 ##  <a name="BKMK_RelatedSections"></a> Související oddíly  
   
@@ -91,7 +91,7 @@ Rozhraní obsahuje definice pro skupinu související funkce, [třída](../../..
 -   [Indexery](../../../csharp/programming-guide/indexers/index.md)  
   
 ## <a name="featured-book-chapter"></a>Doporučená kapitola knihy  
- [Rozhraní](http://msdn.microsoft.com/library/orm-9780596521066-01-13.aspx) v [Learning C# 3.0: Master the Fundamentals of C# 3.0](http://msdn.microsoft.com/library/orm-9780596521066-01.aspx)  
+ [Rozhraní](https://msdn.microsoft.com/library/orm-9780596521066-01-13.aspx) v [Learning C# 3.0: Master the Fundamentals of C# 3.0](https://msdn.microsoft.com/library/orm-9780596521066-01.aspx)  
   
 ## <a name="see-also"></a>Viz také  
  [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  

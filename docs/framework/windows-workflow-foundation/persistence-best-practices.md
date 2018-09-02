@@ -1,30 +1,30 @@
 ---
-title: Trvalost osvědčené postupy
+title: Osvědčené postupy pro trvalost
 ms.date: 03/30/2017
 ms.assetid: 6974c5a4-1af8-4732-ab53-7d694608a3a0
-ms.openlocfilehash: 68164cc937c1c718df39c96c3d6ac490ab025fae
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fdbf61e559efbd978df1c5a46fcbbbbc528ec98a
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33520185"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43404687"
 ---
-# <a name="persistence-best-practices"></a>Trvalost osvědčené postupy
-Tento dokument popisuje osvědčené postupy pro pracovní postup návrhu a konfigurace související s trvalost pracovního postupu.  
+# <a name="persistence-best-practices"></a>Osvědčené postupy pro trvalost
+Tento dokument popisuje osvědčené postupy pro návrh pracovního postupu a konfigurace související s trvalost pracovního postupu.  
   
-## <a name="design-and-implementation-of-durable-workflows"></a>Návrh a implementaci trvanlivý pracovních postupů  
- Obecně platí pracovní postupy práci v krátkém období, která je prokládaný s doby, během kterých je pracovní postup nečinnosti, protože se čeká na událost. Tato událost může být například zpráva nebo jejichž platnost brzy vyprší časovače. Abyste mohli uvolnit k instanci pracovního postupu, když se stane nečinnosti, musí hostitel služby uložit instanci pracovního postupu. To je možné pouze v případě, že se k instanci pracovního postupu není v zóně no-persist (například čeká na dokončení transakce nebo čekání na asynchronní zpětné volání). Povolit instance pracovního postupu nečinnosti se uvolnit, by měl Autor pracovního postupu použijte obory transakce a asynchronní aktivity pro pouze krátkodobou akce. Konkrétně Autor měli mít zpoždění aktivity v rámci těchto zón bez trvalosti co nejkratší.  
+## <a name="design-and-implementation-of-durable-workflows"></a>Návrh a implementace odolné pracovní postupy  
+ Obecně platí pracovní postupy provedení práce v krátkém období, která je prokládaný s časem, během kterých je nečinný pracovního postupu, protože se čeká na událost. Tato událost může být například zpráva nebo zpráva u nichž vyprší platnost časovače. Aby bylo možné uvolnit instance pracovního postupu, když se změní na nečinnosti, musí hostitel služby zachovat instance pracovního postupu. Toto je možný jenom v případě, že instance pracovního postupu není v zóně no-persist (například čekání na dokončení transakce nebo čeká na asynchronní zpětné volání). Pokud chcete povolit instance nečinných pracovních postupů pro uvolnění, by měl Autor pracovního postupu použijte obory transakce a asynchronních aktivitách krátkodobou pouze pro akce. Konkrétně se Autor zachovával zpoždění aktivity v rámci těchto no zachovat zóny co nejkratší.  
   
- Pracovní postup lze zachovat, pouze pokud jsou všechny datové typy používané v tomto pracovním postupu serializable. Kromě toho musí být serializovatelný s vlastní typy používané v pracovních postupech trvalou <xref:System.Runtime.Serialization.NetDataContractSerializer> Chcete-li nastavit jako trvalý, podle <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>.  
+ Pracovní postup mohl být trvalý, pouze pokud jsou všechny datové typy používané tímto pracovním postupem serializovatelný. Kromě toho musí být serializovatelný s vlastní typy používané v pracovních postupech trvalý <xref:System.Runtime.Serialization.NetDataContractSerializer> aby bylo možné nastavit jako trvalý, podle <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>.  
   
- Instance pracovního postupu nelze obnovit v případě selhání hostitele nebo počítače, pokud není trvalý. Obecně doporučujeme uchování instanci pracovního postupu již v rané fázi v cyklu pracovního postupu.  
+ Instance pracovního postupu nelze obnovit v případě selhání hostitele nebo počítače, pokud ještě nebyla trvale uložena. Obecně doporučujeme zachovat instance pracovního postupu v rané fázi životního cyklu pro pracovní postupy.  
   
- Pokud pracovní postup je zaneprázdněn po dlouhou dobu, doporučujeme vám, že můžete uložit instanci pracovního postupu pravidelně po celou dobu její zaneprázdněný. To provedete tak, že přidáte <xref:System.Activities.Statements.Persist> aktivity v rámci pořadí aktivit, které udržují zaneprázdněn k instanci pracovního postupu. Tímto způsobem, aplikační domény recyklace, nezpůsobí selhání hostitele nebo selhání počítače systému se vrátit zpět na začátek zaneprázdněn období. Uvědomte si, že přidání <xref:System.Activities.Statements.Persist> aktivity do pracovního postupu, mohla způsobit snížení výkonu.  
+ Pokud váš pracovní postup je zaneprázdněn po dlouhou dobu, doporučujeme, zachovat instance pracovního postupu pravidelně v průběhu doby zaneprázdněn. Můžete to provést tak, že přidáte <xref:System.Activities.Statements.Persist> aktivity v rámci posloupnost aktivit, které udržují zaneprázdněný instance pracovního postupu. Tímto způsobem, aplikační domény recyklaci, nezpůsobí selhání hostitele nebo selhání počítače systému se vrátit zpět na začátek zaneprázdněný období. Mějte na paměti, že přidání <xref:System.Activities.Statements.Persist> aktivity do pracovního postupu by mohla vést ke snížení výkonu.  
   
- Windows Server App Fabric výrazně zjednodušuje konfiguraci a použití trvalost. Další informace najdete v tématu [systému Windows Server App Fabric trvalost](http://go.microsoft.com/fwlink/?LinkID=201200&clcid=0x409)  
+ Windows Server App Fabric výrazně zjednodušuje konfiguraci a použití trvalosti. Další informace najdete v tématu [systému Windows Server App Fabric trvalosti](https://go.microsoft.com/fwlink/?LinkID=201200&clcid=0x409)  
   
 ## <a name="configuration-of-scalability-parameters"></a>Konfigurace parametrů škálovatelnost  
- Požadavky na škálovatelnost a výkon určují nastavení následujících parametrů:  
+ Požadavky na škálovatelnost a výkon určení nastavení z následujících parametrů:  
   
 -   <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToPersist%2A>  
   
@@ -32,54 +32,54 @@ Tento dokument popisuje osvědčené postupy pro pracovní postup návrhu a konf
   
 -   <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior.InstanceLockedExceptionAction%2A>  
   
- Tyto parametry musí být nastaven následujícím způsobem podle aktuální scénář.  
+ Tyto parametry, je třeba nastavit následujícím způsobem podle aktuální situaci.  
   
 ### <a name="scenario-a-small-number-of-workflow-instances-that-require-optimal-response-time"></a>Scénář: Malý počet instancí pracovních postupů, které vyžadují optimální odezvu  
- V tomto scénáři by měla zůstat všechny instance pracovního postupu načíst, kdy se stanou nečinné. Nastavit <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> velké hodnoty. Použití tohoto nastavení nemohou instanci pracovního postupu přesouvat mezi počítači. Toto nastavení použijte jenom v případě, že platí jedna nebo více následujících akcí:  
+ V tomto scénáři by měla zůstat všechny instance pracovních postupů načtených, když jsou nečinné. Nastavte <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> velké hodnoty. Použití tohoto nastavení zabraňuje přesunu mezi počítači instance pracovního postupu. Toto nastavení použijte jenom v případě, že platí jedna nebo více z následujících akcí:  
   
--   Instance pracovního postupu obdrží do jedné zprávy v průběhu své životnosti.  
+-   Instance pracovního postupu obdrží do jedné zprávy v průběhu svého životního cyklu.  
   
--   Všechny instance pracovního postupu spustit v jednom počítači  
+-   Všechny instance pracovního postupu spuštěné v jednom počítači  
   
--   Stejný počítač přijímá všechny zprávy, které přijímá instanci pracovního postupu.  
+-   Všechny zprávy, které jsou přijímány instance pracovního postupu jsou přijímány do stejného počítače.  
   
- Použití <xref:System.Activities.Statements.Persist> aktivity nebo sady <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToPersist%2A> na hodnotu 0, pokud chcete povolit obnovení vaší instance pracovního postupu po selhání hostitele nebo počítače služby.  
+ Použití <xref:System.Activities.Statements.Persist> aktivity nebo sadu <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToPersist%2A> na 0 pro povolení obnovení instance pracovního postupu po selhání služby hostitele nebo počítače.  
   
-### <a name="scenario-workflow-instances-are-idle-for-long-periods-of-time"></a>Scénář: Instancí pracovních postupů jsou pro dlouhou dobu nečinnosti.  
- V tomto scénáři nastavit <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> na 0, budou co nejdříve uvolnění prostředků.  
+### <a name="scenario-workflow-instances-are-idle-for-long-periods-of-time"></a>Scénář: Instancí pracovních postupů jsou pro dlouhou dobu nečinné.  
+ V tomto scénáři, nastavte <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> na hodnotu 0 a co nejdříve uvolnit prostředky.  
   
-### <a name="scenario-workflow-instances-receive-multiple-messages-in-a-short-period-of-time"></a>Scénář: Instance pracovního postupu přijímat více zpráv v krátké době  
- V tomto scénáři nastavit <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> na 60 sekund, pokud se tyto zprávy jsou přijímány do stejného počítače. Zabrání se tak rychlé posloupnost uvolnění a načítání instance pracovního postupu. To také není ponechat instance v paměti příliš dlouho.  
+### <a name="scenario-workflow-instances-receive-multiple-messages-in-a-short-period-of-time"></a>Scénář: Instance pracovního postupu přijmout více zpráv v krátké době  
+ V tomto scénáři, nastavte <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> na 60 sekund, pokud se tyto zprávy jsou přijímány do stejného počítače. To zabraňuje rychlém sledu uvolnění a načítání instance pracovního postupu. To také neudržuje instance v paměti příliš dlouho.  
   
- Nastavit <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> 0 a sadu <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior.InstanceLockedExceptionAction%2A> BasicRetry nebo AggressiveRetry, pokud se tyto zprávy můžou přijímat pomocí různých počítačů. To umožňuje k instanci pracovního postupu, který se má načíst jiným počítačem.  
+ Nastavte <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> 0 a sada <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior.InstanceLockedExceptionAction%2A> BasicRetry nebo AggressiveRetry, pokud se tyto zprávy můžou přijímat pomocí různých počítačů. To umožňuje instance pracovního postupu, které mají být načteny jiného počítače.  
   
-### <a name="scenario-workflow-uses-delay-activities-with-short-durations"></a>Scénář: Pracovní postup používá prodlevy aktivity s krátké doby trvání  
- V tomto scénáři <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> pravidelně dotazuje databázi trvalosti pro instance, která by měla být načíst z důvodu vypršenou platností <xref:System.Activities.Statements.Delay> aktivity. Pokud <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> najde časovač vypršení platnosti v dalším intervalu dotazování úložiště Instance pracovního postupu SQL zkracuje interval dotazování. Další dotazování dojde poté bezprostředně potom, co časovač vypršela platnost. Tento způsob ukládání Instance pracovního postupu SQL dosahuje vysokou přesnost časovače, které se spouštět déle než interval dotazování, které se nastavuje pomocí <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A>. Pokud chcete povolit včas zpracování kratší zpoždění, musí zůstat k instanci pracovního postupu v paměti pro alespoň jeden interval dotazování.  
+### <a name="scenario-workflow-uses-delay-activities-with-short-durations"></a>Scénář: Pracovní postup používá zpoždění aktivity s krátkou dobou trvání  
+ V tomto scénáři <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> pravidelně se dotazuje databáze trvalosti pro instancí, které by měl být načteny z důvodu vypršela <xref:System.Activities.Statements.Delay> aktivity. Pokud <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> najde časovač, který vyprší za na další interval dotazování, Store Instance pracovního postupu SQL zkrátí interval dotazování. Další dotazování dojde poté bezprostředně potom, co má vypršela. Tímto způsobem Store Instance pracovního postupu SQL dosahuje přesnější časovače, které trvají déle než interval dotazování, které nastavuje <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A>. Povolit včas zpracování kratší zpoždění, musí zůstat instance pracovního postupu v paměti pro alespoň jeden interval dotazování.  
   
- Nastavit <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToPersist%2A> na 0, budou zapisovat do databáze trvalost čas vypršení platnosti.  
+ Nastavte <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToPersist%2A> na hodnotu 0 pro zápis do databáze trvalosti čas vypršení platnosti.  
   
- Nastavit <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> na delší než nebo rovna hodnotě <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A> pro instance v paměti pro alespoň jeden interval dotazování.  
+ Nastavte <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> delší než nebo rovna hodnotě <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A> pro instance v paměti pro alespoň jeden interval dotazování.  
   
- Nedoporučujeme snižuje <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A> vzhledem k tomu, že to vede k zvýšená zátěž na databázi trvalost. Každý hostitel služby, který používá <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> dotazuje databázi jednou za období detekce. Nastavení <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A> příliš malá na čas interval může způsobit snížení Pokud velký počet hostitelů služby výkonnosti vašeho systému.  
+ Nedoporučujeme snížení <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A> protože důsledkem je zvýšená zátěž databáze trvalosti. Každý hostitel služby, který používá <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> dotazuje databázi jednou za období zjišťování. Nastavení <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A> příliš malý na čas interval může způsobit, že výkon vašeho systému, snížit, pokud je velký počet hostitelů služby.  
   
-## <a name="configuring-the-sql-workflow-instance-store"></a>Konfigurace úložiště Instance pracovního postupu SQL  
- Ukládání Instance pracovního postupu SQL má následující konfigurační parametry:  
+## <a name="configuring-the-sql-workflow-instance-store"></a>Konfigurace Store Instance pracovních postupů SQL  
+ Store Instance pracovního postupu SQL má následující parametry konfigurace:  
   
  <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.InstanceEncodingOption%2A>  
- Tento parametr nastaví <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> komprimovat stav instance pracovního postupu. Komprese snižuje množství dat, který je uložen v databázi trvalosti a snižuje se zatížení sítě v případě, že vyhrazený databázový server je umístěná databáze trvalost. Pokud se používá komprese, vyžaduje výpočetní prostředky pro komprimování a extrahování stav instance. Ve většině případů komprese poskytuje vyšší výkon.  
+ Tento parametr nastaví <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> komprese stavu instance pracovního postupu. Komprese snižuje množství dat, která je uložena v databázi trvalosti a snižuje síťový provoz v případě, že databáze stálost nachází na vyhrazený databázový server. Pokud se používá komprese, vyžaduje výpočetní prostředky ke komprimaci a extrakci stav instance. Komprese ve většině případů poskytuje vyšší výkon.  
   
  <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.InstanceCompletionAction%2A>  
- Tento parametr nastaví <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> zachovat nebo odstranit dokončené instance. Zachování dokončit instancí zvyšuje požadavky na úložiště databáze trvalosti a za následek větší tabulky, což zvyšuje úroveň časy vyhledávací tabulky. Pokud dokončené instance jsou vyžadovány pro ladění nebo auditování, je nejvhodnější dáte pokyn, aby <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> k odstranění dokončit instancí. Odstraněné instance by měly být udržovány pouze v případě, že uživatel vytvoří proces pro nakonec je odstranit. Všimněte si, že korelace klíče nelze znovu použít také k instanci pracovního postupu dokončené nachází v úložišti instance.  
+ Tento parametr nastaví <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> zachovat nebo odstranit dokončené instance. Uchování dokončit instance zvyšuje požadavky na úložiště databáze trvalosti a vede k větší tabulky, který zlepšuje dobu vyhledávací tabulky. Pokud dokončené instance jsou požadovány pro ladění nebo auditování, je nejvhodnější dáte pokyn, aby <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> k instancím odstraňování se dokončilo. Odstraněné instancí se uchovávají pouze v případě, že uživatel vytvoří proces pro nakonec je odstranit. Všimněte si, že srovnávací klíče nesmí znovu použít jako dokončený pracovní postup instance se nachází v úložišti instancí.  
   
  <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A>  
- Tento parametr definuje maximální interval, pomocí kterého <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> dotazuje databázi trvalosti pro instance, které by měly být načteny při zpracování <xref:System.Activities.Statements.Delay> aktivity vyprší. Pokud <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> vyhledá časovač, který vyprší za další interval dotazování, zkrátí interval dotazování, tak, aby další dotazování dojde bezprostředně potom, co časovač vypršela platnost. Tento způsob ukládání Instance pracovního postupu SQL dosahuje vysokou přesnost časovače, které se spouštět déle než <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A>.  
+ Tento parametr definuje maximální časový interval, pomocí kterého <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> se dotazuje databáze trvalosti pro instance, které by měly být načteny při <xref:System.Activities.Statements.Delay> aktivity vyprší platnost. Pokud <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> najde časovač, který vyprší za na další interval dotazování, zkrátí interval dotazování, takže hned po vypršení časovač bude docházet k další dotazování. Tímto způsobem Store Instance pracovního postupu SQL dosahuje vysoké přesnost časovače, které trvají déle než <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A>.  
   
- Nedoporučujeme snižuje <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A>, protože to vede k zvýšená zátěž na databázi trvalost. Každý hostitel služby, který používá <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> dotazuje databázi jednou za období detekce. Nastavení <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A> na příliš malá intervalu může způsobit snížení Pokud velký počet hostitelů služby výkonnosti vašeho systému.  
+ Nedoporučujeme snížení <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A>, protože to vede k větší zatížení databáze trvalosti. Každý hostitel služby, který používá <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> dotazuje databázi jednou za období zjišťování. Nastavení <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A> příliš malý interval může způsobit výkon vašeho systému, snížit, pokud je velký počet hostitelů služby.  
   
  <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.HostLockRenewalPeriod%2A>  
- Tento parametr určuje interval, pomocí kterého hostitele obnovuje jeho zámku v databázi trvalost. Tento interval zkrátit vám umožní rychlejší obnovení instance pracovního postupu v případě selhání hostitele nebo počítače. Interval obnovování krátké zámku na druhé straně zvyšuje zatížení databáze trvalost. Každý hostitel služby, který používá <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> zaktualizuje jeho zámky v databázi jednou doby obnovení. Pokud počítač používá mnoho hostitelů služby, ujistěte se, že zatížení způsobeno obnovení zámku poklesu výkonu systému. Pokud ho, zvažte zvýšení <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.HostLockRenewalPeriod%2A>.  
+ Tento parametr definuje interval, pomocí kterého hostitele se tato možnost obnoví platnost zámku v databázi trvalosti. Zkrácení tohoto intervalu vám umožní rychlejší obnovení instancí pracovních postupů v případě selhání hostitele nebo počítače. Interval obnovování krátký zámku na druhé straně zvyšuje zatížení databáze trvalosti. Každý hostitel služby, který používá <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> se aktualizuje jednou za období obnovení jeho zámky v databázi. Pokud počítač používá mnoho hostitelů služby, ujistěte se, že zatížení způsobeno obnovení zámku ne snížit výkon systému. Pokud ano, zvažte zvýšení <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.HostLockRenewalPeriod%2A>.  
   
  <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.InstanceLockedExceptionAction%2A>  
- Pokud je povoleno, <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> opakování načíst uzamčeném instance pro další 30 sekund. Nastavit <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.InstanceLockedExceptionAction%2A> BasicRetry nebo AggressiveRetry Pokud pracovní postup přijímá více zpráv v krátkém čase, a tyto zprávy jsou přijímány různých počítačích.  
+ Pokud je povoleno, <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> opakovanými pokusy o načtení zamknuté instance pro další 30 sekund. Nastavte <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.InstanceLockedExceptionAction%2A> BasicRetry nebo AggressiveRetry Pokud pracovní postup přijímá více zpráv v krátkém čase, a tyto zprávy jsou přijímány různých počítačích.  
   
- Protože mechanismus opakování zatížení nezavádí žádné výkonu režie, dokud nejsou se pokusili zatížení opakování, <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.InstanceLockedExceptionAction%2A> by měla být vždy povolená.
+ Protože mechanismus opakování zatížení nezavádí jakékoli výkonu režie tak dlouho, dokud zkoušet zatížení opakování, <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.InstanceLockedExceptionAction%2A> měla být vždy povolena.

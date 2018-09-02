@@ -1,41 +1,41 @@
 ---
-title: Sledování Visual pracovního postupu
+title: Vizuální sledování pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 0143448f-2044-40a0-8a3d-941f6d12468b
-ms.openlocfilehash: f010bdcf6004e84fd346d0e8649c87c008cad122
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7433d2497b9a9993093e13e88e073fb40403e3b6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33516910"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43402159"
 ---
-# <a name="visual-workflow-tracking"></a>Sledování Visual pracovního postupu
-Tento příklad znázorňuje způsob vytvoření visual pracovního postupu pro sledování aplikace pomocí funkce ladění, která je k dispozici prostřednictvím [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].  
+# <a name="visual-workflow-tracking"></a>Vizuální sledování pracovního postupu
+Tato ukázka předvádí, jak psát visual pracovního postupu pro sledování aplikací pomocí funkce pro ladění k dispozici prostřednictvím [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- Aplikace spustí vývojový diagram jednoduché pracovního postupu (definovanou v Workflow.xaml) a znovu hostitelem návrháře pracovních postupů k zobrazení aktuálně prováděné pracovního postupu. Jako pracovní postup se spustí, zobrazí se aktuálně prováděné aktivity se žlutou šipku outline a ladění. Kromě toho sledování záznamy vygenerované pracovního postupu se také zobrazí v okně aplikace. Další informace o sledování pracovního postupu najdete v tématu [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md). Další informace o opětovné hostování návrháře pracovních postupů najdete v tématu [opětovného hostování návrháře pracovních postupů](../../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md).  
+ Aplikace spouští pracovní postup jednoduchý vývojový diagram (definováno v Workflow.xaml) a znovu je hostitelem návrháře postupu provádění zobrazit aktuálně prováděné pracovního postupu. Při spuštění pracovního postupu aktuálně spouštěné aktivity se zobrazí se žlutá šipka osnovy a ladění. Kromě toho sledování záznamů vygenerovaných tímto pracovním postupem se také zobrazí v okně aplikace. Další informace o sledování pracovního postupu najdete v tématu [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md). Další informace o opětovné hostování návrháře postupu provádění zobrazit [změna hostování návrháře postupu provádění](../../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md).  
   
- Simulátor pracovní postup funguje tak, že udržuje dva slovník. Jeden obsahuje mapování mezi objekt aktuálně prováděné aktivity a číslo řádku XAML, ve kterém je vytvořena instance aktivity. Druhý obsahuje mapování mezi ID instance aktivity a objekt aktivity. Při sledování záznamy jsou vygenerované pomocí vlastní sledování profil aplikace určuje ID instance aktuálně prováděné aktivity a mapuje zpět k souboru XAML, který je vytvořena instance. Návrháři opětovné hostování nástroje pracovních postupů je potom odeslán pokyn, zvýrazněte aktivitu na plochu návrháře a používat stejnou metodu jako pracovní postup ladicí program, konkrétně kreslení žlutý ohraničení aktivity a zobrazování žlutá šipka na levé straně Návrhář.  
+ Simulátor pracovních postupů funguje tak, že zachování dvě slovníky. Jeden obsahuje mapování mezi aktuálně prováděné objekt aktivity a číslo řádku XAML, ve kterém je vytvořena instance aktivity. Druhý obsahuje mapování mezi ID instance aktivity a objekt aktivity. Když jsou vydávány sledování záznamů pomocí vlastní profil sledování tracking profile, aplikace určuje ID instance aktuálně spouštěné aktivity a mapuje zpět do souboru XAML, která je vytvořena instance. Návrhář postupu provádění se změněným hostováním pak vydal pokyn ke zvýraznění aktivity na návrhové ploše a použít stejným způsobem jako pracovní postup ladicího programu, konkrétně kreslení žluté ohraničení kolem aktivity a zobrazení žlutá šipka sledovat levému okraji Návrhář.  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
 1.  Otevřete soubor WorkflowSimulator.sln z adresáře ukázka v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Stisknutím kombinace kláves CTRL + SHIFT + B řešení sestavíte.  
+2.  Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
   
-3.  Stisknutím kombinace kláves CTRL + F5 ke spuštění ukázky. Soubor Workflow.xaml zobrazí v okně návrháře opětovné hostování nástroje pracovního postupu.  
+3.  Stisknutím CTRL + F5 ke spuštění ukázky. Soubor Workflow.xaml zobrazí v okně návrháře postupu provádění se změněným hostováním.  
   
-4.  Klikněte **soubor** nabídku a vyberte **spustit pracovní postup...** .  
+4.  Klikněte na tlačítko **souboru** nabídky a vybereme **spustit pracovní postup...** .  
   
-5.  Všimněte si aktuálně prováděné aktivity se zvýrazní, jak je popsáno výše a sledování záznamy se zobrazí na pravé straně okna aplikace.  
+5.  Všimněte si, že aktuálně spouštěné aktivity je zvýrazněn, jak je popsáno výše a sledování záznamů se zobrazí na pravé straně okna aplikace.  
   
-6.  Po dokončení pracovního postupu, klikněte na možnost všechny záznamy sledování Kontrola aktivity, které odpovídá.  
+6.  Po dokončení pracovního postupu, klikněte na možnost žádné záznamy sledování, chcete-li prověřit aktivity, které odpovídá.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Application\VisualWorkflowTracking`

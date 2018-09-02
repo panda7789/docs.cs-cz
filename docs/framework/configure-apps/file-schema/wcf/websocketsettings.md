@@ -2,15 +2,15 @@
 title: '&lt;webSocketSettings&gt;'
 ms.date: 03/30/2017
 ms.assetid: bbf97e02-8dd1-4922-acac-3cd33397b249
-ms.openlocfilehash: 84aee31b6c15beb32732f89eae7c3d176f57971d
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: e5f34dca83c8d3d08d27fb72bee5af2a89ac6b9f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32754834"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43416425"
 ---
 # <a name="ltwebsocketsettingsgt"></a>&lt;webSocketSettings&gt;
-Element konfigurace slouží k zadání nastavení Websocket.  
+Prvek konfigurace určuje nastavení Websocket.  
   
 \<system.ServiceModel>  
 \<vazby >  
@@ -41,21 +41,21 @@ Element konfigurace slouží k zadání nastavení Websocket.
 |Atribut|Popis|  
 |---------------|-----------------|  
 |createNotificationOnConnection|Určuje, zda jsou oznámení odesílána při připojení.|  
-|disablePayloadMasking|Určuje, zda je zakázána Websocket maskování.|  
-|keepAliveInterval|Určuje interval zachovat zachování připojení.|  
-|maxPendingConnections|Určuje maximální počet připojení, které čekají na odeslání ve službě.|  
+|disablePayloadMasking|Určuje, zda je zakázaný maskování Websocket.|  
+|nastavení KeepAliveInterval protokolu|Určuje keep alive interval.|  
+|maxPendingConnections|Určuje maximální počet připojení čeká na odeslání ve službě.|  
 |receiveBufferSize|Určuje velikost vyrovnávací paměti pro příjem.|  
 |sendBufferSize|Určuje velikost vyrovnávací paměti pro odesílání.|  
-|subProtocol|Určuje subprotocol Websocket.|  
-|transportUsage|Určuje, kdy se mají použít objekty Websocket.|  
+|dílčí protokol|Určuje dílčí protokol Websocket.|  
+|transportUsage|Určuje, kdy se má použít objekty Websocket.|  
   
 ## <a name="transportusage-attribute"></a>transportUsage atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|WhenDuplex|Po duplexní kontrakt používejte protokol Websocket.|  
+|WhenDuplex|Protokol Websocket po duplexní kontrakt.|  
 |Vždy|Vždy používejte protokol Websocket bez ohledu na to, kontrakt.|  
-|Nikdy|Nikdy používat protokol Websocket.|  
+|Nikdy|Nikdy nepoužívejte protokolu Websocket.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -67,7 +67,7 @@ Element konfigurace slouží k zadání nastavení Websocket.
 |\<netHttpBinding >|Určuje vazeb NetHttpBinding|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat \<webSocketSettings > elementu.  
+ Následující příklad ukazuje způsob použití \<webSocketSettings > element.  
   
 ```xml  
 <netHttpBinding>  
@@ -92,5 +92,5 @@ Element konfigurace slouží k zadání nastavení Websocket.
  <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<Vazba >](../../../../../docs/framework/misc/binding.md)
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

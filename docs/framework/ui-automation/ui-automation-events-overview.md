@@ -12,20 +12,20 @@ ms.assetid: 69eebd8b-39ed-40e7-93cc-4457c4caf746
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 2190e404479a940e638d6ee8b9fd7135d8fc0109
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1c479bc423ba17e527926bbf9c7dae6ffd8845d1
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33399575"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43400310"
 ---
 # <a name="ui-automation-events-overview"></a>Přehled událostí automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] oznámení o události je klíčovou funkcí pro usnadnění technologie, jako je například čtečky obrazovky a zvětšování zobrazení. Tyto události sledování klientů automatizace uživatelského rozhraní, které jsou aktivovány zprostředkovatelé automatizace uživatelského rozhraní když v se stane něco [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] a využít tyto informace mají obdržet oznámení koncovým uživatelům.  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] oznamování událostí je klíčovou funkcí technologií pro usnadnění, například čtečky obrazovky a zvětšování. Tyto události sledování klientů automatizace uživatelského rozhraní, které jsou generovány při určité události ve zprostředkovateli automatizace uživatelského rozhraní [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] a informace použijte k upozornění koncových uživatelů.  
   
- Zlepšení efektivity tím, že poskytovatel aplikace umožňuje aktivovat události selektivně, v závislosti na tom, jestli všechny klienty přihlášeni k události, nebo vůbec, pokud jsou pro všechny události, naslouchá žádní klienti.  
+ Zlepšení efektivity tím, že poskytovatel aplikace pro vyvolání události selektivně, v závislosti na tom, jestli všichni klienti přihlášeni těchto událostí nebo vůbec ne, pokud žádní klienti naslouchají a čekají nějaké události.  
   
 <a name="Types_of_Events"></a>   
 ## <a name="types-of-events"></a>Typy událostí  
@@ -33,16 +33,16 @@ ms.locfileid: "33399575"
   
 |Událost|Popis|  
 |-----------|-----------------|  
-|Změna vlastnosti|Vyvolá, když vlastnost [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] element nebo ovládací prvek vzor změny. Například pokud klient potřebuje ke sledování aplikace ovládací prvek zaškrtávací políčko, se můžete zaregistrovat pro naslouchání pro událost změny vlastnosti <xref:System.Windows.Automation.TogglePattern.TogglePatternInformation.ToggleState%2A> vlastnost. Pokud ovládací prvek zaškrtávací políčko je zaškrtnuté nebo nezaškrtnuté, zprostředkovatele vyvolá událost, a klient může fungovat podle potřeby.|  
-|Element akce|Vyvolá, když změnu [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] výsledky z koncového uživatele nebo programové aktivity, například pokud kliknutí na tlačítko nebo vyvolat prostřednictvím <xref:System.Windows.Automation.InvokePattern>.|  
-|Změnu struktury|Vyvolá, když strukturu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu změny. Struktura změny při vydání nových [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] položky stane viditelné, skrytá nebo odebraných na ploše.|  
-|Globální plochy změn|Vyvolá, když dojde k akcí globální zájmu klientovi, například když dojde k deaktivaci od jednoho prvku na jiný, nebo při zavření okna.|  
+|Změna vlastnosti|Vyvolá, když vlastnost [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] element nebo ovládací prvek změny modelu. Například pokud klient potřebuje k monitorování aplikace ovládací prvek zaškrtávací políčko, se můžete zaregistrovat k naslouchání pro událost změny vlastnosti <xref:System.Windows.Automation.TogglePattern.TogglePatternInformation.ToggleState%2A> vlastnost. Když je ovládací prvek zaškrtávací políčko zaškrtnuté nebo nezaškrtnuté, zprostředkovatel vyvolá událost a klient může fungovat podle potřeby.|  
+|Akce – element|Aktivovaná při změně [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] výsledky z koncový uživatel nebo programové aktivity, například při kliknutí nebo vyvolané prostřednictvím tlačítka <xref:System.Windows.Automation.InvokePattern>.|  
+|Změna struktury|Vyvolá se, když struktury [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu změny. Struktura se změní při nové [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] položky budou viditelné, skrytá nebo odebrané v klientských počítačích.|  
+|Globální změnu klasické pracovní plochy|Vyvoláno, když dojde k akcím globální zajímavé pro klienta, třeba když dojde k deaktivaci od jednoho prvku na jiný, nebo když se zavře okno.|  
   
- Některé události neznamenají, že došlo ke změně stavu rozhraní. Například pokud uživatel karty na textového pole a poté kliknutím na tlačítko Aktualizovat pole `TextChangedEvent` se vyvolá, i když uživatel ve skutečnosti nezměnila text. Při zpracování události, může být nezbytné pro klientskou aplikaci, zkontrolujte, zda nic ve skutečnosti se změnila před provedením akce.  
+ Některé události nemusí znamenat, že se změnil stav uživatelského rozhraní. Pokud uživatel karty polem pro zadání textu a pak klikne na tlačítko Aktualizovat pole, například `TextChangedEvent` dojde i v případě, že uživatel nezměnil skutečně text. Při zpracování události, může být nezbytné pro klientskou aplikaci ke kontrole, jestli nic ve skutečnosti se změnila před provedením akce.  
   
- Tyto události může dosáhnout i v případě, že stav rozhraní nebylo změněno.  
+ Tyto události mohou být vyvolány, i když nedošlo ke změně stavu uživatelského rozhraní.  
   
--   `AutomationPropertyChangedEvent` (v závislosti na vlastnost, která se změnila)  
+-   `AutomationPropertyChangedEvent` (v závislosti na vlastnosti, které se změnily)  
   
 -   `ElementSelectedEvent`  
   
@@ -52,9 +52,9 @@ ms.locfileid: "33399575"
   
 <a name="UI_Automation_Event_Identifiers"></a>   
 ## <a name="ui-automation-event-identifiers"></a>Identifikátory událostí automatizace uživatelského rozhraní  
- [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] události jsou identifikovány <xref:System.Windows.Automation.AutomationEvent> objekty. <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> Vlastnost obsahuje hodnotu, která jednoznačně identifikuje typ události.  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] události jsou označeny <xref:System.Windows.Automation.AutomationEvent> objekty. <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> Vlastnost obsahuje hodnotu, která jednoznačně identifikuje typ události.  
   
- Možné hodnoty <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> jsou uvedeny v následující tabulce, společně s typu použitého pro argumenty událostí. Všimněte si, že identifikátory používané klienty a poskytovatelé stejně jako s názvem pole z různých tříd.  
+ Možné hodnoty parametru <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> jsou uvedeny v následující tabulce, spolu s typ použitý pro argumenty události. Všimněte si, že identifikátory používané klienty a poskytovatelé jsou stejně jako s názvem pole z různých tříd.  
   
 |Identifikátor klienta|Identifikátor zprostředkovatele|Argumenty typu události|  
 |-----------------------|-------------------------|--------------------------|  
@@ -66,21 +66,21 @@ ms.locfileid: "33399575"
 |<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.WindowPatternIdentifiers.WindowClosedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.WindowClosedEventArgs>|  
   
 <a name="UI_Automation_Event_Arguments"></a>   
-## <a name="ui-automation-event-arguments"></a>Argumenty událostí automatizace uživatelského rozhraní  
- Následující třídy zapouzdřovat argumenty událostí.  
+## <a name="ui-automation-event-arguments"></a>Argumenty události automatizace uživatelského rozhraní  
+ Následující třídy zapouzdření argumenty události.  
   
 |Třída|Popis|  
 |-----------|-----------------|  
-|<xref:System.Windows.Automation.AsyncContentLoadedEventArgs>|Obsahuje informace o asynchronní načítání obsah, včetně Procento načítání byla dokončena.|  
-|<xref:System.Windows.Automation.AutomationEventArgs>|Obsahuje informace o jednoduchá událost, která vyžaduje žádná další data.|  
-|<xref:System.Windows.Automation.AutomationFocusChangedEventArgs>|Obsahuje informace o změně v zaměření pro vstup od jednoho prvku na jiný. Události tohoto typu jsou vydané [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] systému není poskytovateli.|  
-|<xref:System.Windows.Automation.AutomationPropertyChangedEventArgs>|Obsahuje informace o změnu v hodnotě vlastnosti vzorku element nebo ovládací prvek.|  
-|<xref:System.Windows.Automation.StructureChangedEventArgs>|Obsahuje informace o změnu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
-|<xref:System.Windows.Automation.WindowClosedEventArgs>|Obsahuje informace o zavření okna.|  
+|<xref:System.Windows.Automation.AsyncContentLoadedEventArgs>|Obsahuje informace o asynchronní načítání obsahu, včetně procento dokončení načítání.|  
+|<xref:System.Windows.Automation.AutomationEventArgs>|Obsahuje informace o jednoduché události, která vyžaduje žádná další data.|  
+|<xref:System.Windows.Automation.AutomationFocusChangedEventArgs>|Obsahuje informace o změně ve vstupní fokus z jednoho elementu do jiného. Události tohoto typu jsou vyvolány [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] systému, nikoli podle poskytovatelů.|  
+|<xref:System.Windows.Automation.AutomationPropertyChangedEventArgs>|Obsahuje informace o změnu v hodnotě vlastnosti elementu nebo ovládací prvek modelu.|  
+|<xref:System.Windows.Automation.StructureChangedEventArgs>|Obsahuje informace o změně [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
+|<xref:System.Windows.Automation.WindowClosedEventArgs>|Obsahuje informace o znak pravé okno.|  
   
- Všechny třídy událostí argument obsahovat <xref:System.Windows.Automation.AutomationEventArgs.EventId%2A> člen. Tento identifikátor je zapouzdřené v <xref:System.Windows.Automation.AutomationEvent>.  
+ Všechny události argument třídy, které obsahují <xref:System.Windows.Automation.AutomationEventArgs.EventId%2A> člena. Tento identifikátor je zapouzdřena v <xref:System.Windows.Automation.AutomationEvent>.  
   
- <xref:System.Windows.Automation.AutomationEvent> Objekty použité k identifikaci událostí jsou získány zprostředkovatelé z pole v <xref:System.Windows.Automation.AutomationElementIdentifiers> a řídit vzor identifikátor třídy, jako <xref:System.Windows.Automation.DockPatternIdentifiers>. Ekvivalentní pole jsou získány pomocí klientských aplikací z pole v <xref:System.Windows.Automation.AutomationElement> a řídit vzor třídy, jako <xref:System.Windows.Automation.DockPattern>.  
+ <xref:System.Windows.Automation.AutomationEvent> Objekty používané k identifikaci událostí jsou získány z polí v poskytovateli <xref:System.Windows.Automation.AutomationElementIdentifiers> a řízení, jako vzor identifikátoru třídy <xref:System.Windows.Automation.DockPatternIdentifiers>. Odpovídající pole se získávají pomocí klientské aplikace z polí v <xref:System.Windows.Automation.AutomationElement> a řízení, jako vzor třídy <xref:System.Windows.Automation.DockPattern>.  
   
  Seznam identifikátorů událostí najdete v tématu [událostí automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md).  
   

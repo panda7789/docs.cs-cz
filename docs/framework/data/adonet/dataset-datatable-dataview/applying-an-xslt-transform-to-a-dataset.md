@@ -1,21 +1,21 @@
 ---
-title: Použití transformaci XSLT na datové sady
+title: Použití transformace XSLT u datové sady
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 09f2e4ee-1d08-4ba8-8936-83394fee319d
-ms.openlocfilehash: 05894431f819b968877a4a971027850efe37126a
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: abcb3231aa92bd62edefc7f7341da5fcb3321e4b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32756550"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43405745"
 ---
-# <a name="applying-an-xslt-transform-to-a-dataset"></a>Použití transformaci XSLT na datové sady
-**WriteXml** metodu <xref:System.Data.DataSet> umožňuje psát obsah **datovou sadu** jako XML data. Běžné úlohy je pak transformace této XML do jiného formátu použití transformací XSL (XSLT). Ale synchronizace **datovou sadu** s <xref:System.Xml.XmlDataDocument> umožňuje použít šablonu stylů XSLT k obsahu **datovou sadu** bez nutnosti nejprve psaní obsah  **Datová sada** jako data XML pomocí **WriteXml**.  
+# <a name="applying-an-xslt-transform-to-a-dataset"></a>Použití transformace XSLT u datové sady
+**WriteXml** metodu <xref:System.Data.DataSet> umožňuje psát obsah **datovou sadu** jako XML data. Běžnou úlohou je potom převede tento XML do jiného formátu pomocí transformace XSL (XSLT). Ale synchronizace **datovou sadu** s <xref:System.Xml.XmlDataDocument> vám umožní aplikovat šablonu stylů XSLT s obsahem **datovou sadu** bez nutnosti nejprve psát obsah  **Datová sada** jako dat XML pomocí **WriteXml**.  
   
- V následujícím příkladu naplní **datovou sadu** s tabulky a relace, synchronizuje **datovou sadu** s **XmlDataDocument**a zapíše část  **Datová sada** jako HTML souboru pomocí šablonu stylů XSLT. Toto jsou obsah šablony stylů XSLT.  
+ V následujícím příkladu **datovou sadu** tabulky a vztahy, synchronizuje **datovou sadu** s **XmlDataDocument**a bude je tam část  **Datová sada** jako HTML soubor pomocí šablonu stylů XSLT. Následují obsah šablony stylů XSLT.  
   
 ```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">  
@@ -56,10 +56,10 @@ ms.locfileid: "32756550"
 </xsl:stylesheet>  
 ```  
   
- Následující kód výplněmi **datovou sadu** a použije styl XSLT.  
+ Následující kód výplně **datovou sadu** a použije šablony stylů XSLT.  
   
 > [!NOTE]
->  Chcete-li použít styl XSLT k **datovou sadu** vztahů, která obsahuje, můžete dosáhnout optimálního výkonu, pokud nastavíte **vnořené** vlastnost <xref:System.Data.DataRelation> k **true**pro každou vnořené vztah. To umožňuje používat šablony stylů XSLT toto zpracování implementace přirozené shora dolů přejděte v hierarchii a transformace dat, na rozdíl od použití náročných na výkon XPath umístění osy (například předcházející na stejné úrovni a následující položky ve stylu list uzlu testovací výrazy) přejděte ho. Další informace o vnořené vztazích najdete v tématu [vnoření DataRelations](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md).  
+>  Pokud jste se má použít k šabloně stylů XSLT **datovou sadu** , která obsahuje vztahy, dosažení nejlepšího výkonu dosáhnete, pokud nastavíte **vnořené** vlastnost <xref:System.Data.DataRelation> k **true**pro jednotlivé vnořené relace. Díky tomu můžete použít šablony stylů XSLT implementovat fyzické shora dolů zpracování navigace v hierarchii a transformace dat, na rozdíl od použití náročné na výkon XPath umístění osy (třeba předcházející na stejné úrovni a následující na stejné úrovni ve stylu seznam uzlu test výrazy) ho můžete procházet. Další informace o vnořených relacích najdete v tématu [vnoření datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md).  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -125,4 +125,4 @@ writer.Close();
   
 ## <a name="see-also"></a>Viz také  
  [Synchronizace datové sady a datového dokumentu XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -2,51 +2,51 @@
 title: Transakční dávkování
 ms.date: 03/30/2017
 ms.assetid: ecd328ed-332e-479c-a894-489609bcddd2
-ms.openlocfilehash: 7df65b8f3f149deac841010e392f3919b24506b4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: abada9aaf5fac8f05599467f385e708e1898832f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33508875"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43416645"
 ---
 # <a name="transacted-batching"></a>Transakční dávkování
-Tento příklad ukazuje, jak dávky zpracovaných čtení pomocí služby Řízení front zpráv (MSMQ). Zpracovaných Batching je funkce optimalizace výkonu pro zpracovaných čtení v komunikaci ve frontě.  
+Tento příklad ukazuje, jak dávkové transakce čtení pomocí služby Řízení front zpráv (MSMQ). Transakční dávkování je funkce optimalizace výkonu pro transakční operace čtení v komunikaci ve frontě.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- V komunikaci ve frontě klient komunikuje se služby pomocí fronty. Přesněji řečeno klient odešle zprávy do fronty. Služba přijímá zprávy z fronty. Služba a klient proto nemusíte používat současně na komunikaci pomocí fronty.  
+ V komunikaci ve frontě klient komunikuje se služby pomocí fronty. Přesněji řečeno klient odešle zprávy do fronty. Služba přijímá zprávy z fronty. Klienta a služby, proto není potřeba běžet současně na komunikaci pomocí fronty.  
   
- Tento příklad znázorňuje zpracovaných dávkování. Dávkové je chování, které umožňuje použití jedné transakci při čtení mnoho zpráv ve frontě a jejich zpracování.  
+ V této ukázce provedené dávkování. Provedené dávkování je chování, které umožňuje použití jedné transakce při čtení počet zpráv ve frontě a jejich zpracování.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Pokud je služba spuštěna první, zkontroluje Ujistěte se, zda je k dispozici fronty. Pokud fronta neexistuje, vytvoří služba jeden. Můžete spustit služby nejprve vytvořit frontu, nebo můžete vytvořit jeden prostřednictvím správce front služby MSMQ. Postupujte podle těchto kroků můžete vytvořit frontu v systému Windows 2008.  
+2.  Pokud je služba spuštěna první, zkontroluje se tak, aby byl do fronty k dispozici. Pokud fronta neexistuje, služba ho vytvoří. Můžete spustit služba nejdřív vytvořte frontu nebo můžete vytvořit prostřednictvím Správce fronty MSMQ. Postupujte podle těchto kroků můžete vytvořit frontu Windows 2008.  
   
     1.  Otevřete správce serveru v [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
   
-    2.  Rozbalte **funkce** kartě.  
+    2.  Rozbalte **funkce** kartu.  
   
-    3.  Klikněte pravým tlačítkem na **soukromé fronty zpráv**a vyberte **nový**, **soukromou frontu**.  
+    3.  Klikněte pravým tlačítkem na **fronty soukromých zpráv**a vyberte **nový**, **soukromou frontu**.  
   
-    4.  Zkontrolujte **transakcí** pole.  
+    4.  Zkontrolujte, **transakční** pole.  
   
     5.  Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.  
   
     > [!NOTE]
-    >  V této ukázce klient odešle stovky zprávy jako část dávky. Je normální, pro aplikaci služby pro zpracování těchto chvíli trvat.  
+    >  V této ukázce klient odešle stovky zprávy jako součást služby batch. Je běžné pro aplikaci služby pro zpracování těchto nějakou dobu trvat.  
   
-3.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a>Ke spuštění ukázky na počítač připojen k pracovní skupině nebo bez integrace služby active directory  
   
-1.  Ve výchozím nastavení se <xref:System.ServiceModel.NetMsmqBinding>, je povoleno zabezpečení přenosu. Existují dvě vlastnosti důležité pro zabezpečení přenosu služby MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` ve výchozím nastavení je režim ověřování nastaven na `Windows` a úroveň ochrany je nastavena na `Sign`. Pro služby MSMQ k ověřování a podepisování funkce musí být součástí domény a možnost integrace služby active directory pro službu MSMQ musí být nainstalován. Pokud tuto ukázku spustit na počítači, který nesplňuje tato kritéria obdržíte chybu.  
+1.  Ve výchozím nastavení se <xref:System.ServiceModel.NetMsmqBinding>, je povoleno zabezpečení přenosu. Existují dvě vlastnosti důležité pro zabezpečení přenosu služby MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` výchozí režim ověřování nastaven na `Windows` a aby úroveň ochrany je nastavená na `Sign`. Pro službu MSMQ. k ověřování a podepisování funkce musí být součástí domény a možnost integrace služby active directory pro službu MSMQ musí být nainstalována. Pokud tuto ukázku spustit na počítači, který nevyhovuje těmto kritériím zobrazí chybová zpráva.  
   
-2.  Pokud počítač není součástí domény nebo nemá nainstalované integrační služby active directory, vypněte zabezpečení přenosu podle nastavení úrovně režim a ochrany ověřování na `None` jak je znázorněno v následující ukázka konfigurace:  
+2.  Pokud počítač není součástí domény nebo nemá nainstalované integrace služby active directory, vypněte zabezpečení přenosu nastavením úroveň ověření režimu a ochrany na `None` jak je znázorněno v následující ukázková konfigurace:  
   
     ```xml  
     <system.serviceModel>  
@@ -96,41 +96,41 @@ Tento příklad ukazuje, jak dávky zpracovaných čtení pomocí služby Říze
     </system.serviceModel>  
     ```  
   
-3.  Ujistěte se, změnit konfiguraci na serveru a klienta, před spuštěním ukázky.  
+3.  Ujistěte se, že změníte konfiguraci na serveru a klienta, před spuštěním ukázky.  
   
     > [!NOTE]
     >  Nastavení `security``mode` k `None` je ekvivalentní nastavení <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>, a `Message` zabezpečení `None`.  
   
-4.  Pokud chcete spustit databáze ve vzdáleném počítači, změňte připojovací řetězec tak, aby odkazoval na počítač, na kterém je umístěna databáze.  
+4.  Ke spuštění databáze ve vzdáleném počítači, změňte připojovací řetězec tak, aby odkazoval na počítač, na kterém je umístěna databáze.  
   
 ## <a name="requirements"></a>Požadavky  
- Chcete-li tuto ukázku spustit, musí být nainstalované služby MSMQ a je zapotřebí SQL nebo SQL Express.  
+ Tuto ukázku spustit, musí být služba MSMQ nainstalovaná a je potřeba SQL nebo systém SQL Express.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- Ukázka ukazuje chování dávkového zpracování. Dávkové je funkce optimalizace výkonu součástí služby MSMQ zařazených do fronty přenosu.  
+ Vzorek ukazuje chování dávkového zpracování. Provedené dávkování je funkce optimalizace výkonu součástí služby MSMQ zařazených do fronty přenosu.  
   
- Pokud transakce se používají k odesílání a přijímání zpráv, které jsou ve skutečnosti 2 oddělte transakce. Když klient odešle zprávy v rámci oboru transakce, transakce je místní pro klienta a fronty správce klienta. Když služba přijímá zprávy v rámci oboru transakce, transakce je místní služby a využívá správce fronty. Je důležité si pamatovat, klient a služba nejsou součástí stejné transakci; různé transakce místo používají při provádění operací (například odesílat a přijímat) s fronty.  
+ Pokud transakce se používají k odesílání a příjem zpráv, které nejsou ve skutečnosti 2 oddělte transakce. Když klient odešle zprávy v rámci oboru transakce, transakce je místní pro klienta a klient správce fronty. Když služba přijímá zprávy v rámci oboru transakce, transakce je místní pro službu a využívá správce fronty. Je velmi dobré si uvědomit, že klient a služba nenachází v rámci jedné transakce; Místo toho stále používá jinou transakcí při provádění operací (například odesílání a příjem) s frontou.  
   
- V ukázce používáme pro provádění více operací služby jedné transakci. To se používají pouze jako funkce optimalizace výkonu a nemá negativní vliv na sémantiku aplikace. Ukázka je založena na [transakční vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md).  
+ V ukázce používáme k provádění více operací služby jedné transakce. To slouží pouze jako funkce optimalizace výkonu a nemá vliv na sémantiku aplikace. Vzorek je založen na [nepodporuje transakce vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md).  
   
 ## <a name="comments"></a>Komentáře  
- V této ukázce klient odešle dávku zpráv do služby z v rámci oboru transakce. Chcete-li zobrazit optimalizace výkonu, odešleme velkého počtu zpráv; v takovém případě až 2 500 zprávy.  
+ V této ukázce klient odešle dávku zpráv ke službě z v rámci oboru transakce. Chcete-li zobrazit optimalizace výkonu, pošleme velkého počtu zpráv; v takovém případě až 2500 zpráv.  
   
- Služba v rámci oboru transakce definované ve službě jsou pak přijímá zprávy odeslané do fronty. Bez dávkování, výsledkem 2 500 transakce pro každé vyvolání operace služby. Má to dopad na výkon systému. Protože se účastní - dvěma správci prostředků frontu MSMQ a `Orders` databáze-každé takové transakce je transakcí koordinátoru DTC. Jsme optimalizovat pomocí mnohem menší počet transakcí zajištěním toho docílit dávku zpráv a volání operace služby v rámci jedné transakce.  
+ Služby v rámci oboru transakce definovány službou pak přijme zprávy odeslané do fronty. Bez dávkování, výsledkem 2500 transakce pro každé vyvolání operace služby. To má vliv na výkon systému. Vzhledem k tomu, že dvě správce prostředků se využívá řada – fronta MSMQ a `Orders` databáze-každou transakci DTC je takový transakce. Jsme optimalizovat pomocí mnohem menším počtu transakcí tím, že zajišťuje, který dávku zpráv a vyvolání operace služby dojít v rámci jedné transakce.  
   
  Můžeme použít funkci dávkování podle:  
   
 -   Určení chování dávkového zpracování v konfiguraci.  
   
--   Zadání velikost dávky z hlediska počet zpráv ke čtení pomocí jedné transakce.  
+-   Určení velikosti dávky z hlediska počtu zpráv ke čtení pomocí jedné transakce.  
   
--   Zadání maximální počet souběžných balíků ke spuštění.  
+-   Zadání maximální počet souběžných dávek, pro spuštění.  
   
- V tomto příkladu ukážeme zvýšení výkonu snížením počtu transakcí tím, že zajistí, že v rámci jedné transakce před potvrzením transakce jsou vyvolány 100 operací služby.  
+ V tomto příkladu vám ukážeme, zvýšení výkonu snížením počtu transakcí tím, že zajišťuje, že v rámci jedné transakce před potvrzením transakce jsou vyvolány 100 operací služby.  
   
- Chování služby definuje chování operaci s `TransactionScopeRequired` nastavena na `true`. To zajistí, že je žádné správci prostředků přístup metodu použít stejný obor transakce, který se používá k načtení zprávy z fronty. V tomto příkladu používáme databáze basic uložit informace o nákupu pořadí obsažené ve zprávě. Oboru transakce také zaručuje, že pokud metoda vyvolá výjimku, bude vráceno do fronty. Bez nastavení toto chování operace, zařazených do fronty kanál, který vytvoří transakci čtení zprávy ve frontě a potvrdí automaticky předtím, než je odeslán, takže pokud se operace nezdaří, dojde ke ztrátě zprávy. Nejběžnější scénáře je pro operace služby zařazení v transakci, která slouží k načtení zprávy z fronty, jak je ukázáno v následujícím kódu.  
+ Definuje chování služby na chování operace s `TransactionScopeRequired` nastavena na `true`. Tím se zajistí, že všechny správce prostředků přistupovat pomocí metody používají stejný obor transakcí, která se používá k načtení zprávy z fronty. V tomto příkladu používáme základní databáze k ukládání informací o pořadí nákupní obsažené ve zprávě. Obor transakce také zaručuje, že pokud metoda vyvolá výjimku, se vrátí zprávu do fronty. Bez nastavení tohoto chování operace kanálu ve frontě vytvoří transakce čtení zprávy z fronty a potvrdí ji automaticky, předtím, než je odeslána, takže pokud se operace nezdaří, dojde ke ztrátě zprávy. Nejběžnější scénář je pro operace služby k zařazení v transakci, která slouží k načtení zprávy z fronty, jak je ukázáno v následujícím kódu.  
   
- Všimněte si, že `ReleaseServiceInstanceOnTransactionComplete` je nastaven na `false`. Toto je důležité požadavek pro dávkové zpracování. Vlastnost `ReleaseServiceInstanceOnTransactionComplete` na `ServiceBehaviorAttribute` označuje, co dělat s instancí služby po dokončení transakce. Ve výchozím nastavení je instance služby vydala po dokončení transakce. Základní aspekt pro dávkování je použití jedné transakci pro čtení a odeslání mnoho zpráv ve frontě. Proto uvolnění instance služby skončilo dokončení transakce předčasně negace velmi použití dávkování. Pokud je tato vlastnost nastavena na `true` a chování dávkového zpracování se přidá do koncového bodu, dávkování chování vyvolá výjimku.  
+ Všimněte si, že `ReleaseServiceInstanceOnTransactionComplete` je nastavena na `false`. Toto je důležité požadavek pro dávkové zpracování. Vlastnost `ReleaseServiceInstanceOnTransactionComplete` na `ServiceBehaviorAttribute` indikuje, co dělat s instancí služby, po dokončení transakce. Ve výchozím nastavení instance služby je uvolněn po dokončení transakce. Základní aspekt pro dávkové zpracování je použití jedné transakce pro čtení a odesílání počet zpráv ve frontě. Proto uvolňování instance služby končí dokončení transakce předčasně negace velmi použití dávkování. Pokud je tato vlastnost nastavená na `true` a chování dávkového zpracování je přidán do koncového bodu, vyvolá výjimku, dávkování chování ověřování.  
 
 ```csharp
 // Service class that implements the service contract.  
@@ -151,7 +151,7 @@ public class OrderProcessorService : IOrderProcessor
 }  
 ```
 
- `Orders` Třída zapouzdří zpracování pořadí. V ukázce databáze se aktualizuje informace o objednávce.  
+ `Orders` Třída zapouzdří zpracování objednávky. V ukázce databáze se aktualizuje informace o objednávce.  
 
 ```csharp
 // Order Processing Logic  
@@ -225,7 +225,7 @@ public class Orders
 }  
 ```
 
- Dávkování chování a jeho konfigurace jsou určené v konfiguraci aplikace služby.  
+ Dávkování chování a jeho konfigurace jsou uvedeny v konfiguraci aplikace služby.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -272,15 +272,15 @@ public class Orders
 ```  
   
 > [!NOTE]
->  Velikost dávky je nápovědu k systému. Například pokud zadáte velikost dávky 20, pak 20 zpráv by se přečíst a odeslat pomocí jedné transakce a pak je transakce potvrzena. Ale existují případy, kdy může transakce potvrdit dávku před dosažením velikost dávky.  
+>  Velikost dávky se o nápovědu k systému. Například pokud chcete zadat velikost dávky 20, pak 20 zpráv četla a pomocí jedné transakce a pak je transakce potvrzena. Ale existují případy, kde může transakci potvrdit dávku předtím, než je dosaženo velikost dávky.  
 >   
->  Přidružený ke každé transakci je vypršení časového limitu, která se spouští tikání po vytvoření transakce. Transakce byla přerušena, když vyprší platnost tento časový limit. Je možné pro tento časový limit vyprší, ještě před dosažením velikosti dávky. Aby se zabránilo znovu práce dávky z důvodu přerušení, `TransactedBatchingBehavior` kontroluje, jak dlouho je ponechán v transakci. Pokud 80 % časový limit transakcí slouží, je transakce potvrzena.  
+>  Spojené s každou transakci je časový limit, který se spustí tikání po vytvoření transakce. Když vyprší platnost tento časový limit transakce byla přerušena. Je možné pro tento časový limit vyprší ještě předtím, než je dosaženo velikost dávky. Aby se zabránilo znovu dávku práce z důvodu přerušení, `TransactedBatchingBehavior` kontroluje, jak dlouho zůstane v transakci. Pokud se využilo 80 % limitu transakcí, je transakce potvrzeny.  
 >   
->  Pokud neexistují žádné další zprávy ve frontě a nemusí se čekat splnění velikost dávky <xref:System.ServiceModel.Description.TransactedBatchingBehavior> potvrdí transakce.  
+>  Pokud nejsou žádné další zprávy ve frontě a místo abyste čekali, plnění velikost dávky <xref:System.ServiceModel.Description.TransactedBatchingBehavior> potvrzení transakce.  
 >   
->  Vybraná velikost dávky je závisí na vaší aplikace. Pokud velikost dávky je příliš malá, nelze získat požadovaný výkon. Na druhé straně Pokud velikost dávky je příliš velký, může zhoršit výkon. Například může vaší transakce a za provozu již a podržením zámky ve vaší databázi nebo vaší transakce a může přestat mrtvých uzamčené, které by mohly způsobit dávky k získání vrácena zpět a vrátit práce.  
+>  Volba velikosti dávky je závislá na aplikaci. Pokud velikost dávky je příliš malá, nelze získat požadovaný výkon. Na druhé straně Pokud velikost dávky je příliš velká, může zhoršit výkon. Například transakce může již live a podržte zámky ve vaší databázi nebo transakce může stát dead uzamčen, které by mohly způsobit batch k získání vrátit zpět a vrátit ke svému práce.  
   
- Klient vytvoří oboru transakce. Komunikace s fronty probíhá v rámci oboru transakce, příčinou je považován za atomické jednotky, kde jsou všechny zprávy odeslané do fronty nebo žádné zprávy jsou odesílány do fronty. Transakce se potvrdí voláním <xref:System.Transactions.TransactionScope.Complete%2A> v oboru transakce.  
+ Klient vytvoří obor transakce. Komunikace s frontou probíhá v rámci oboru transakcí, vyvolá zacházet jako atomickou jednotku, kde jsou všechny zprávy odeslané do fronty nebo jsou žádné zprávy odeslané do fronty. Transakce se potvrdí při volání <xref:System.Transactions.TransactionScope.Complete%2A> v oboru transakce.  
 
 ```csharp
 //Client implementation code.  
@@ -331,7 +331,7 @@ class Client
 }  
 ```
 
- Při spuštění ukázky činnosti klienta a služby se zobrazí v oknech konzoly služby a klienta. Uvidíte služby přijmout zprávy z klienta. Stisknutím klávesy ENTER v každé okna konzoly vypnout klienta a služby. Všimněte si, že vzhledem k tomu, že služby Řízení front se používá, klient a služba nemusí být spuštěná ve stejnou dobu. Spuštění klienta, vypněte ho a potom spuštění služby a stále přijímá jeho zprávy. Uvidíte postupného výstup jako přečtená v dávce a zpracování zpráv.  
+ Při spuštění ukázky činnosti klienta a služby se zobrazují v oknech konzoly služby a klienta. Můžete zobrazit přijetí zprávy služby z klienta. Stisknutím klávesy ENTER v každé okno konzoly pro vypnutí klienta a služby. Mějte na paměti, protože služba Řízení front se používá, klient a služba nemusí být zprovoznit ve stejnou dobu. Můžete spustit klienta, vypněte ho a spusťte službu a stále přijímá zprávy. Postupné výstup můžete prohlédnout, jak číst v dávce a zpracování zpráv.  
   
 ```  
 The service is ready.  
@@ -366,11 +366,11 @@ Processing Purchase Order: ea94486b-7c86-4309-a42d-2f06c00656cd
 ```  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Batching`  
   

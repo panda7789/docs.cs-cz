@@ -5,11 +5,11 @@ helpviewer_keywords:
 - My.Log object
 ms.assetid: 309b14b4-8875-4b2f-9661-a734b8cbff07
 ms.openlocfilehash: 1c36382db2918952a9c84c25fb4319f7006d73d2
-ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42751921"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417922"
 ---
 # <a name="mylog-object"></a>My.Log – objekt
 Poskytuje vlastnosti a metody pro zápis do aplikace součástí naslouchajících protokolům událostí a výjimek informace.  

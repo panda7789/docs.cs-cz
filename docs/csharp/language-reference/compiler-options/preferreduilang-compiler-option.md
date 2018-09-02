@@ -8,15 +8,15 @@ helpviewer_keywords:
 - /preferreduilang compiler option [C#]
 - -preferreduilang compiler option [C#]
 ms.assetid: 68b2462f-6778-48d7-8052-62805fe8e02c
-ms.openlocfilehash: 21a3baceb8a46723de1c633e415af0660bb41840
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a1fbbb8415e5e3405f039489aa071b0624065a9d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33211748"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43405888"
 ---
 # <a name="-preferreduilang-c-compiler-options"></a>-preferreduilang (možnosti kompilátoru C#)
-Pomocí `-preferreduilang` – možnost kompilátoru, můžete zadat jazyk, ve kterém kompilátor jazyka C# zobrazí výstup, jako je například chybové zprávy.  
+S použitím `-preferreduilang` – možnost kompilátoru, můžete určit jazyk, ve kterém kompilátor jazyka C# se zobrazí výstup, jako je například chybové zprávy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,10 +26,10 @@ Pomocí `-preferreduilang` – možnost kompilátoru, můžete zadat jazyk, ve k
   
 ## <a name="arguments"></a>Arguments  
  `language`  
- [Název jazyka](https://msdn.microsoft.com/library/windows/desktop/dd318696(v=vs.85).aspx) jazyka, který chcete použít pro výstup kompilátoru.  
+ [Název jazyka](/windows/desktop/Intl/language-names) jazyka pro výstup kompilátoru.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít `-preferreduilang` – možnost kompilátoru zadat jazyk, který chcete kompilátor jazyka C# pro chybové zprávy a další výstup příkazového řádku. Pokud není nainstalována sada language pack pro jazyk, bude místo něj použita na jazyková nastavení operačního systému a žádná chybová zpráva.  
+ Můžete použít `-preferreduilang` – možnost kompilátoru k určení jazyk, ve kterém chcete, aby kompilátor jazyka C# pro chybové zprávy a další výstup příkazového řádku. Pokud není nainstalována jazyková sada pro jazyk, místo ní nastavení jazyka operačního systému a hlášené žádné chyby.  
   
 ```csharp  
 csc.exe -preferreduilang:ja-JP  
@@ -37,5 +37,6 @@ csc.exe -preferreduilang:ja-JP
   
 ## <a name="requirements"></a>Požadavky  
   
-## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+## <a name="see-also"></a>Viz také
+
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)

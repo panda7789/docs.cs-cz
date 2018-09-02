@@ -1,31 +1,31 @@
 ---
-title: 'Postupy: řízení Namespace předpony (C#) (technologie LINQ to XML)'
+title: 'Postupy: řízení předpon Namespace (C#) (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 64de5186-b81a-4ddd-8327-8693df59a01b
 ms.openlocfilehash: af864139d56bd3ebb22cca6369b82539b9d007da
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33327750"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417368"
 ---
-# <a name="how-to-control-namespace-prefixes-c-linq-to-xml"></a>Postupy: řízení Namespace předpony (C#) (technologie LINQ to XML)
-Toto téma popisuje, jak můžete řídit předpony oboru názvů při serializaci strom XML.  
+# <a name="how-to-control-namespace-prefixes-c-linq-to-xml"></a>Postupy: řízení předpon Namespace (C#) (LINQ to XML)
+Toto téma popisuje, jak můžete řídit předpony oboru názvů při serializaci stromu XML.  
   
- V mnoha situacích není potřeba řídit předpony oboru názvů.  
+ V mnoha situacích není nutné k řízení předpon názvového prostoru.  
   
- Ale určitých nástrojích programovací XML vyžadovat konkrétní kontrolu nad předpony oboru názvů. Například je může být manipulace s stylů XSLT nebo XAML dokumentu, který obsahuje vložené XPath výrazy, které odkazují na předpony oboru názvů konkrétní; v takovém případě je důležité, aby dokumentu se Dal serializovat s konkrétní předpon.  
+ Nicméně některé programovací nástroje XML vyžadují určitý ovládací prvek předpony oboru názvů. Například můžete může být zpracování šablony stylů XSLT nebo dokumentu XAML, který obsahuje vložené výrazy XPath, které odkazují na konkrétní obor názvů předpony; v takovém případě je důležité, že dokument Dal serializovat s příznakem tyto konkrétní předpony.  
   
- Toto je nejčastější příčinou řízení předpony oboru názvů.  
+ Toto je nejběžnějším důvodem pro řízení předpon názvového prostoru.  
   
- Řízení předpony oboru názvů jiné obvyklým důvodem je, že chcete uživatelům upravit v dokumentu XML ručně, a chcete vytvořit předpony oboru názvů, které jsou vhodné pro uživatele k zadání. Například můžete generování dokument XSD. Konvence pro schémata naznačují, že používáte buď `xs` nebo `xsd` jako předponu pro obor názvů schématu.  
+ Dalším běžným důvodem pro řízení předpon názvového prostoru je, že chcete uživatelům ručně upravit dokument XML, a chcete vytvořit obor názvů předpony, které jsou vhodné pro uživatele, aby. Může být například generování XSD dokumentu. Konvence pro schémata doporučujeme použít buď `xs` nebo `xsd` jako předponu pro obor názvů schématu.  
   
- Chcete-li řídit předpony oboru názvů, vložte atributy, které deklarace oborů názvů. Pokud deklarace oborů názvů s konkrétní předpony [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se pokusí o respektovat předpony oboru názvů při serializaci.  
+ Chcete-li řízení předpon názvového prostoru, vložte atributy, které deklarace oborů názvů. Pokud deklarujete obory názvů s konkrétní předpony [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se pokusí o případném dalším sdílení dodržovat předpony oboru názvů při serializaci.  
   
- Pokud chcete vytvořit atribut, který deklaruje předponu oboru názvů, vytvoření atribut, kde je obor názvů název atributu <xref:System.Xml.Linq.XNamespace.Xmlns%2A>, a název atributu je Předpona oboru názvů. Hodnota atributu je identifikátor URI oboru názvů.  
+ Chcete-li vytvořit atribut, který deklaruje oboru názvů s předponou, vytvořte atribut kde obor názvů název atributu je <xref:System.Xml.Linq.XNamespace.Xmlns%2A>, a název atributu je Předpona oboru názvů. Hodnota atributu je identifikátor URI oboru názvů.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad deklaruje dva obory názvů. Určuje, že `http://www.adventure-works.com` má předponu oboru názvů `aw`a že `www.fourthcoffee.com` má předponu oboru názvů `fc`.  
+ V tomto příkladu deklaruje dva obory názvů. Určuje, že `http://www.adventure-works.com` obor názvů má předponu `aw`a že `www.fourthcoffee.com` obor názvů má předponu `fc`.  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -55,4 +55,4 @@ Console.WriteLine(root);
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Práce s obory názvů XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+ [Práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)

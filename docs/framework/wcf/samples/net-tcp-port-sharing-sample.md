@@ -2,39 +2,39 @@
 title: Ukázka služby Net.TCP Port Sharing
 ms.date: 03/30/2017
 ms.assetid: 03da5959-0574-4e91-8a53-05854b6c55dc
-ms.openlocfilehash: cfd87868a5ecc557ccca1003f54f3a896b2f9fcc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: db4cd5be73e3c170f2feaa1e76f275eb7d9cd226
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33506464"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43407833"
 ---
 # <a name="nettcp-port-sharing-sample"></a>Ukázka služby Net.TCP Port Sharing
-Protokol TCP/IP používá 16bitové čísla, který se nazývá port, k odlišení připojení k několika síťových aplikací, které jsou spuštěné na stejném počítači. Pokud aplikace naslouchá na portu, pak všechny přenosy TCP pro tento port přejde k dané aplikaci. Ostatní aplikace nemůže naslouchat na tomto portu ve stejnou dobu.  
+16bitové číslo, volá se, port, protokol TCP/IP používá k rozlišení připojení k více síťových aplikací, které běží na stejném počítači. Pokud aplikace naslouchá na portu, veškerý provoz TCP pro tento port přejde k dané aplikaci. Jiné aplikace nemůže naslouchat na portu ve stejnou dobu.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\TCP\PortSharing`  
   
- Mnoho protokolů mají standard nebo výchozí číslo portu, které používají. Například protokol HTTP se většinou používá TCP port 80. Internetové informační služby (IIS) má naslouchací proces sdílení portů mezi více aplikacemi HTTP. Služba IIS naslouchá na portu přímo a přeposílá zprávy na příslušnou aplikaci na základě informací uvnitř datového proudu zpráv. To umožňuje používat stejné číslo portu bez nutnosti pokouší tak, aby vyhradil port pro příjem zprávy více aplikacemi HTTP.  
+ Mnoho protokolů mají standardní nebo výchozí číslo portu, které používají. Například protokolu HTTP obvykle využívá TCP port 80. Internetové informační služby (IIS) je sdílet mezi více aplikacemi HTTP port naslouchacího procesu. Služba IIS naslouchá na portu přímo a předává zprávy do příslušné aplikace na základě informací uvnitř datové proudy zpráv. To umožňuje používat stejné číslo portu, aniž by bylo konkurovat rezervovat port pro příjem zpráv s více aplikacemi HTTP.  
   
- Sdílení portů NetTcp je funkce Windows Communication Foundation (WCF), která podobně umožňuje více síťových aplikací sdílet jeden port. Služba sdílení portů NetTcp přijímá připojení pomocí protokolu net.tcp a přeposílá zprávy na základě jejich cílové adresy.  
+ Sdílení portů NetTcp je funkce Windows Communication Foundation (WCF), která podobně umožňuje více síťové aplikace sdílet jeden port. Služba sdílení portů NetTcp přijímá připojení pomocí protokol net.tcp a předává zprávy na základě jejich cílové adresy.  
   
- Služba sdílení portů NetTcp není povolena ve výchozím nastavení. Před spuštěním této ukázce, je nutné ručně povolit službu. Další informace najdete v tématu [postupy: povolení služby Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md). Pokud je služba zakázána, je vyvolána výjimka při spuštění aplikace serveru.  
+ Služba sdílení portů NetTcp není standardně povolená. Před spuštěním této ukázky musíte ručně povolit službu. Další informace najdete v tématu [postupy: povolení služby Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md). Pokud je služba zakázána, je vyvolána výjimka při spuštění aplikace.  
   
 ```  
 Unhandled Exception: System.ServiceModel.CommunicationException: The TransportManager failed to listen on the supplied URI using the NetTcpPortSharing service: failed to start the service because it is disabled. An administrator can enable it by running 'sc.exe config NetTcpPortSharing start= demand'.. ---> System.InvalidOperationException: Cannot start service NetTcpPortSharing on computer '.'. ---> System.ComponentModel.Win32Exception: The service cannot be started, either because it is disabled or because it has no enabled devices associated with it  
 ```  
   
- Sdílení portů je na serveru povoleno nastavením <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> vlastnost <xref:System.ServiceModel.NetTcpBinding> vazba nebo <xref:System.ServiceModel.Channels.TcpTransportBindingElement> prvku vazby. Klient nemá vědět, jak sdílení portů byl nakonfigurován pro použití na serveru.  
+ Port je povoleno sdílení na serveru tak, že nastavíte <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> vlastnost <xref:System.ServiceModel.NetTcpBinding> vazby nebo <xref:System.ServiceModel.Channels.TcpTransportBindingElement> element vazby. Klient nemá vědět, jak sdílení portů není nakonfigurovaná k použití na serveru.  
   
 ## <a name="enabling-port-sharing"></a>Povolení sdílení portů  
- Následující kód ukazuje, povolení sdílení portů na serveru. Spustí instanci `ICalculator` na pevný port s náhodných cestou URI. I když dvě služby můžete sdílet stejný port, jejich celkový adresy koncových bodů stále musí být jedinečný, aby služba Sdílení portů NetTcp může směrovat zprávy správnou aplikaci.  
+ Následující kód ukazuje povolení sdílení portu na serveru. Spustí instanci `ICalculator` služby na pevný port se náhodný cesty identifikátoru URI. I v případě, že dvě služby můžou sdílet stejný port, jejich celkové adresy koncových bodů i nadále musí být jedinečný tak, aby služba Sdílení portů NetTcp může směrovat zprávy do správné aplikace.  
 
 ```csharp
 // Configure a binding with TCP port sharing enabled  
@@ -50,14 +50,14 @@ host.AddServiceEndpoint(typeof(ICalculator), binding, address);
 host.Open();  
 ```
 
- S sdílení portů povolené, můžete spustit službu vícekrát bez došlo ke konfliktu u číslo portu. Pokud změníte kód zakázat sdílení portů, spuštění dvě kopie výsledků služby v druhé selhání s <xref:System.ServiceModel.AddressAlreadyInUseException>.  
+ S povoleno sdílení portu, můžete spustit službu vícekrát bez nutnosti konflikt přes číslo portu. Pokud změníte kód a zakázat sdílení portů, spouštění dvě kopie výsledků služby v druhé selhání se <xref:System.ServiceModel.AddressAlreadyInUseException>.  
   
 ```  
 Unhandled Exception: System.ServiceModel.AddressAlreadyInUseException: There is already a listener on IP endpoint 0.0.0.0:9000.  Make sure that you are not trying to use this endpoint multiple times in your application and that there are no other applications listening on this endpoint. ---> System.Net.Sockets.SocketException: Only one usage of each socket address (protocol/network address/port) is normally permitted  
 ```  
   
 ## <a name="running-the-sample"></a>Spuštění ukázky  
- Chcete-li zkontrolovat, že zprávy jsou správně směrované na sdílení port služby můžete testovacího klienta.  
+ Testovacího klienta můžete použít ke kontrole, že zprávy jsou správně směrovat do služby Sdílení portu.  
 
 ```csharp
 class client  
@@ -103,14 +103,14 @@ class client
 }  
 ```
 
- Každá instance služby vytiskne jeho jedinečné číslo a adresu. Když spustíte service.exe například může zobrazit následující text.  
+ Každá instance služby vytiskne jeho jedinečné číslo a adresu. Při spuštění service.exe, například může zobrazit následující text.  
   
 ```  
 Service #4381 listening on net.tcp://localhost:9000/calculator/4381.  
 Press <ENTER> to terminate service.  
 ```  
   
- Zadejte číslo služby, kterou tady vidíte při spuštění client.exe.  
+ Zadejte číslo, které se tady zobrazí při spuštění client.exe.  
   
 ```  
 Enter the service number to test: 4381  
@@ -122,9 +122,9 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
- Tato ukázka se může spouštět ve konfigurací mezi počítači změnou generované adresy, které klient používá. V Client.cs změňte řetězec formátu adresa koncového bodu tak, aby odpovídala nové adresy vaší služby. Nahradí všechny odkazy na "localhost" IP adresu počítače serveru. Po provedení této změny je potřeba překompilovat vzorku.  
+ Tato ukázka můžete spustit v konfiguraci mezi počítači změnou vygenerovaný adresy, které klient používá. V Client.cs změňte řetězec formátu adresa koncového bodu tak, aby odpovídala nové adresu služby. Všechny odkazy na "localhost" nahraďte IP adresu počítače serveru. Po provedení této změny je potřeba překompilovat vzorku.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Nainstalujte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 pomocí následujícího příkazu.  
   
@@ -134,10 +134,10 @@ Press <ENTER> to terminate client.
   
 2.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3.  Povolte službu NetTcp Port Sharing výše popsané v části Úvod.  
+3.  Povolte službu NetTcp Port Sharing podle předchozích pokynů v úvodní části.  
   
-4.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+4.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-5.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Konkrétní podrobnosti ke spuštění této ukázce jsou dříve součástí spuštění ukázkový oddíl.  
+5.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Konkrétní podrobnosti o spuštěním této ukázky jsou dříve součástí běžící ukázkový oddíl.  
   
 ## <a name="see-also"></a>Viz také

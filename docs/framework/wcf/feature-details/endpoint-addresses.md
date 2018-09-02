@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], addresses
 - WCF [WCF], addresses
 ms.assetid: 13f269e3-ebb1-433c-86cf-54fbd866a627
-ms.openlocfilehash: a2815c7c63e9ba9615904028081956b138b1befa
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: cc81e7ad45c308f5ecf476641dfd65fe47b36098
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925475"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43404564"
 ---
 # <a name="endpoint-addresses"></a>Adresy koncových bodů
 Každý koncový bod má adresu přidruženo, který se používá k vyhledání a identifikaci koncového bodu. Tato adresa sestává především z identifikátor URI (Uniform Resource), která určuje umístění koncového bodu. Adresa koncového bodu je vyjádřena v programovacím modelu pomocí rozhraní Windows Communication Foundation (WCF) <xref:System.ServiceModel.EndpointAddress> třídu, která obsahuje volitelný <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost, která umožňuje ověření koncového bodu jiné koncové body, které vyměňovat zprávy a sadu volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A> vlastnosti, které definují další hlavičky SOAP, vyžaduje ke zpřístupnění služby. Poskytují další volitelné záhlaví a podrobnější informace o adresách k vaší identifikaci nebo interakci s koncový bod služby. Adresa koncového bodu je reprezentována na lince jako referenci koncového bodu WS-Addressing (EPR).  
@@ -119,7 +119,7 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledání
   
 -   V kódu, vytvořte vlastní adresu záhlaví pomocí <xref:System.ServiceModel.Channels.AddressHeader> třídy a pak použije v procesu vytváření <xref:System.ServiceModel.EndpointAddress>.  
   
--   V konfiguraci, vlastní [ \<záhlaví >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md) jsou určené jako podřízené objekty [ \<koncový bod >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) elementu.  
+-   V konfiguraci, vlastní [ \<záhlaví >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md) jsou určené jako podřízené objekty [ \<koncový bod >](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) elementu.  
   
  Konfigurace je obecně vhodnější pro kódování, jak to vám umožní změnit záhlaví po nasazení.  
   
@@ -130,7 +130,7 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledání
   
 -   V kódu, zadejte vlastní adresu naslouchání tak, že přidáte <xref:System.ServiceModel.Description.ClientViaBehavior> třídy do kolekce chování koncového bodu.  
   
--   V konfiguraci, zadejte vlastní adresu naslouchání s `ListenUri` atribut služby [ \<koncový bod >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) elementu.  
+-   V konfiguraci, zadejte vlastní adresu naslouchání s `ListenUri` atribut služby [ \<koncový bod >](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) elementu.  
   
 ### <a name="custom-soap-address-filter"></a>Filtr adresy vlastního protokolu SOAP  
  <xref:System.ServiceModel.EndpointAddress.Uri%2A> Se používá ve spojení s některým <xref:System.ServiceModel.EndpointAddress.Headers%2A> vlastnost pro definování filtr adresy koncového bodu SOAP (<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A>). Ve výchozím nastavení, tento filtr ověří, jestli příchozí zprávy `To` záhlaví zprávy, který se shoduje s koncovým bodem je identifikátor URI a všechny hlavičky vyžaduje koncový bod se nacházejí ve zprávě.  

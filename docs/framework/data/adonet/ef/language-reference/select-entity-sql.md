@@ -3,11 +3,11 @@ title: Vyberte (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 9a33bd0d-ded1-41e7-ba3c-305502755e3b
 ms.openlocfilehash: 93eea5d539e943c57ed7c6236caa854486ac238e
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42933850"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43402647"
 ---
 # <a name="select-entity-sql"></a>Vyberte (Entity SQL)
 Určuje prvků vrácených dotazem.  

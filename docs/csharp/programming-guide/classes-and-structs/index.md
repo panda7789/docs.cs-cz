@@ -1,6 +1,6 @@
 ---
 title: Třídy a struktury (Průvodce programováním v C#)
-description: Popisuje použití třídy a struktury (struktury) v jazyce C#.
+description: Popisuje použití tříd a struktur (struktury) v jazyce C#.
 ms.date: 01/17/2016
 helpviewer_keywords:
 - structs [C#], about structs
@@ -11,37 +11,37 @@ helpviewer_keywords:
 - C# language, classes
 ms.assetid: cc39dbda-8754-423e-b5b1-16a1db0734c0
 ms.openlocfilehash: 801f8e64bf64ee55651521ba53915000cc326303
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33327356"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43419573"
 ---
 # <a name="classes-and-structs-c-programming-guide"></a>Třídy a struktury (Průvodce programováním v C#)
-Třídy a struktury jsou dva základní konstrukce z obecný systém typů v rozhraní .NET Framework. Každá je v podstatě struktura dat, který zapouzdřuje sadu dat a chování, které patří společně jako logickou jednotku. Data a chování jsou *členy* třídy nebo struktura, a obsahují metody, vlastnosti a události a podobně, jak je uvedeno dále v tomto tématu.  
+Třídy a struktury jsou dvě základní konstrukce obecný systém typů v rozhraní .NET Framework. Každá je v podstatě datová struktura, která zapouzdřuje sadu dat a chování, které patří k sobě jako logická jednotka. Data a chování jsou *členy* třídy nebo struktury, a zahrnují metody, vlastnosti a události a tak dále, jak je uvedeno dále v tomto tématu.  
   
- Deklaraci třídě nebo struktuře je jako matrici, která se používá k vytvoření instance nebo objekty v době běhu. Pokud definujete třídě nebo struktuře názvem `Person`, `Person` je název typu. Pokud deklarace a inicializace proměnné `p` typu `Person`, `p` říká, že je na objekt nebo instanci `Person`. Více instancí stejného `Person` typ lze vytvořit, a každá instance může mít různé hodnoty v její vlastnosti a pole.  
+ Deklarace třídy nebo struktury je jako matrice, který slouží k vytváření instancí nebo objektů za běhu. Pokud definujete třídu nebo strukturu nazvanou `Person`, `Person` je název typu. Pokud deklarujete a inicializujete proměnnou `p` typu `Person`, `p` se říká, že objekt nebo instance `Person`. Více instancí stejného `Person` typu je možné vytvořit, a každá instance může mít různé hodnoty v její vlastnosti a pole.  
   
- Třída je typu odkazu. Když je vytvořen objekt třídy, obsahuje proměnnou, do kterého daný objekt je přiřazen pouze odkaz na tuto paměť. Pokud reference objektu je přiřazen k nové proměnné, nové proměnné odkazuje na původní objekt. Změny provedené prostřednictvím jednu proměnnou se projeví v jiné proměnné, protože obě odkazují ke stejným datům.  
+ Třída je typem odkazu. Když je vytvořen objekt třídy, proměnné, ke kterému je přiřazen objekt obsahuje pouze odkaz na tuto paměť. Pokud je odkaz na objekt přiřazen nové proměnné, Nová proměnná odkazuje na původní objekt. Změny provedené prostřednictvím jedné proměnné se projeví v jiné proměnné, protože obě odkazují na stejná data.  
   
- Struktury je typ hodnoty. Když je vytvořen struktury, obsahuje proměnnou, ke kterému je přiřazena struct struktura na skutečná data. Když struktura je přiřazen k nové proměnné, je zkopírována. Novou proměnnou a původní proměnná proto obsahovat dvě samostatné kopie stejná data. Změny provedené v jedné kopie nemají vliv na jiné kopie.  
+ Struktura je typ hodnoty. Když se vytvoří struktura, obsahuje proměnné, ke kterému je přiřazena struktura, obsahovat skutečná data. Když je struktura přiřazena nové proměnné, zkopíruje se. Nové proměnné a původní proměnné proto obsahují dvě oddělené kopie stejných dat. Změny provedené v jedné kopii neovlivní druhou kopii.  
   
- Třídy se obecně používají pro modelování složitější chování nebo data, která má být změnit po vytvoření objektu třídy. Struktury jsou nejvhodnější pro malé datové struktury, které obsahují hlavně data, která není určena pro změnit po vytvoření struct.  
+ Obecně třídy slouží k modelování složitějšího chování nebo dat, která se mají být změněna po vytvoření objektu třídy. Struktury jsou nejvhodnější pro malé datové struktury, které obsahují především data, které se mají být změněna po vytvoření struktury.  
   
  Další informace najdete v tématu [třídy](../../../csharp/programming-guide/classes-and-structs/classes.md), [objekty](../../../csharp/programming-guide/classes-and-structs/objects.md), a [struktury](../../../csharp/programming-guide/classes-and-structs/structs.md).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `CustomClass` v `ProgrammingGuide` oboru názvů má tři členy: konstruktoru instance, vlastnost s názvem `Number`a metodu s názvem `Multiply`. `Main` Metoda v `Program` třída vytvoří instance (objekt) `CustomClass`, a metod a vlastností objektu přistupují pomocí zápisu s tečkou.
+ V následujícím příkladu `CustomClass` v `ProgrammingGuide` obor názvů má tři členy: konstruktor instance, vlastnost s názvem `Number`a metodu s názvem `Multiply`. `Main` Metodu `Program` třída vytvoří instance (objekt) `CustomClass`, a metody a vlastnosti objektu jsou přístupné pomocí zápisu s tečkou.
   
  [!code-csharp[csProgGuideObjects#1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/class1.cs#1)]  
   
 ## <a name="encapsulation"></a>Zapouzdření  
- *Zapouzdření* se někdy označuje jako první pilíře nebo Princip objektově orientované programování. Podle principu zapouzdření třídě nebo struktuře můžete určit způsob přístupné každý ze členů bude kód mimo třídě nebo struktuře. Metody a proměnné, které nejsou určeny k použití v mimo třídu nebo sestavení může být skryté omezit potenciální pro kódování škodlivý zneužití nebo chyby.  
+ *Zapouzdření* se někdy označuje jako první pilíř nebo Princip objektově orientované programování. Podle principu zapouzdření třídy nebo struktury můžete určit jak přístupný, každý z jejích členů je pro kód mimo třídy nebo struktury. Metody a proměnné, které nejsou určeny k použití mimo třídy nebo sestavení, lze skrýt a omezit tak potenciální kódování chyby nebo škodlivých exploitů.  
   
- Další informace o třídách najdete v tématu [třídy](../../../csharp/programming-guide/classes-and-structs/classes.md) a [objekty](../../../csharp/programming-guide/classes-and-structs/objects.md).  
+ Další informace o třídách naleznete v tématu [třídy](../../../csharp/programming-guide/classes-and-structs/classes.md) a [objekty](../../../csharp/programming-guide/classes-and-structs/objects.md).  
   
 ### <a name="members"></a>Členové  
- Všechny metody, pole, konstanty, vlastnosti a události musí být deklarován v rámci typu; Toto nastavení se nazývá *členy* typu. V jazyce C# neexistují žádné globální proměnné nebo metod, protože v některých dalších jazycích. I programu vstupního bodu, `Main` metodu, musí být deklarován v třídě nebo struktuře. Následující seznam obsahuje různé typy členů, které může být deklarován v třídě nebo struktuře.  
+ Všechny metody, pole, konstanty, vlastnosti a události musí být deklarována v rámci typu; Toto nastavení se nazývá *členy* typu. V jazyce C# nejsou žádné globální proměnné ani metody jako v některých jiných jazycích. Dokonce i vstupní bod programu, `Main` metodu, musí být deklarována v rámci třídy nebo struktury. Následující seznam obsahuje všechny různé druhy členů, které mohou být deklarovány ve třídě nebo struktuře.  
   
 -   [Pole](../../../csharp/programming-guide/classes-and-structs/fields.md)  
   
@@ -64,39 +64,39 @@ Třídy a struktury jsou dva základní konstrukce z obecný systém typů v roz
 -   [Vnořené typy](../../../csharp/programming-guide/classes-and-structs/nested-types.md)  
   
 ### <a name="accessibility"></a>Usnadnění  
- Některé metody a vlastnosti mají být volána nebo k němu přistupovat z kódu mimo vaší třídě nebo struktuře, označuje jako *kód klienta*. Jiné metody a vlastnosti, může být pouze pro použití ve třídě nebo struktuře, sám sebe. Je důležité omezit usnadnění kódu tak, aby pouze kód určený klientský dosáhnout. Zadejte jak přístupné vaše typy a jejich členové mají kód klienta pomocí modifikátory přístupu [veřejné](../../../csharp/language-reference/keywords/public.md), [chráněné](../../../csharp/language-reference/keywords/protected.md), [interní](../../../csharp/language-reference/keywords/internal.md), [ chráněné interní](../../../csharp/language-reference/keywords/protected-internal.md), [privátní](../../../csharp/language-reference/keywords/private.md) a [privátní chráněné](../../../csharp/language-reference/keywords/private-protected.md). Je výchozí usnadnění `private`. Další informace najdete v tématu [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
+ Některé metody a vlastnosti jsou určeny k volání nebo přístupu z kódu mimo vaši třídu nebo strukturu a jsou známé jako *klientský kód*. Jiné metody a vlastnosti může být pouze pro použití v dané třídy nebo struktury samotné. Je důležité omezit dostupnost vašeho kódu tak, aby k němu lze přistoupit pouze zamýšlený klientský kód. Můžete upřesnit, jak počítačové vaše typy a členové pro klientský kód pomocí přístupu modifikátory přístupu [veřejné](../../../csharp/language-reference/keywords/public.md), [chráněné](../../../csharp/language-reference/keywords/protected.md), [interní](../../../csharp/language-reference/keywords/internal.md), [ interní chráněné](../../../csharp/language-reference/keywords/protected-internal.md), [privátní](../../../csharp/language-reference/keywords/private.md) a [private, protected](../../../csharp/language-reference/keywords/private-protected.md). Výchozí dostupnost je `private`. Další informace najdete v tématu [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
 ### <a name="inheritance"></a>Dědičnost  
- Třídy (ale ne struktury) podporují koncept dědění. Třída odvozená z jiné třídy ( *základní třída*) automaticky obsahuje všechny veřejné, chráněné a vnitřní členy základní třídy, s výjimkou jeho konstruktory a finalizační metody. Další informace najdete v tématu [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md) a [polymorfismus](../../../csharp/programming-guide/classes-and-structs/polymorphism.md).  
+ Třídy (ale ne struktury) podporují koncept dědičnosti. Třída, která je odvozena od jiné třídy ( *základní třída*) automaticky obsahuje všechny veřejné, chráněné a interní členy základní třídy s výjimkou jejích konstruktorů a finalizační metody. Další informace najdete v tématu [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md) a [polymorfismus](../../../csharp/programming-guide/classes-and-structs/polymorphism.md).  
   
- Třídy mohou být deklarována jako [abstraktní](../../../csharp/language-reference/keywords/abstract.md), což znamená, že jeden nebo více své metody nemají implementaci. I když abstraktní třídy nelze vytvořit instanci přímo, může sloužit jako základní třídy pro jiné třídy, které poskytují chybějící implementace. Třídy lze deklarovat také jako [zapečetěné](../../../csharp/language-reference/keywords/sealed.md) zabránit jiné třídy, která dědí z nich. Další informace najdete v tématu [abstraktní a zapečetěné třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
+ Třídy mohou být deklarovány jako [abstraktní](../../../csharp/language-reference/keywords/abstract.md), což znamená, že jeden nebo více z jejich metod nemají implementaci. I když abstraktní třídy nelze přímo vytvořit instanci, mohou sloužit jako základní třídy pro jiné třídy, které tuto chybějící implementaci poskytují. Třídy lze také deklarovat jako [zapečetěné](../../../csharp/language-reference/keywords/sealed.md) zabránit tak jejich dědění jiné třídy. Další informace najdete v tématu [abstraktní a zapečetěné třídy a členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
   
 ### <a name="interfaces"></a>Rozhraní  
- Třídy a struktury může dědit vlastnosti více rozhraní. Dědění z rozhraní znamená, že typ implementuje všechny metody, které jsou definované v rozhraní. Další informace najdete v tématu [rozhraní](../../../csharp/programming-guide/interfaces/index.md).  
+ Třídy a struktury mohou dědit více rozhraní. Chcete-li dědit z rozhraní znamená, že typ implementuje všechny metody definované v rozhraní. Další informace najdete v tématu [rozhraní](../../../csharp/programming-guide/interfaces/index.md).  
   
 ### <a name="generic-types"></a>Obecné typy  
- Třídy a struktury lze definovat se jeden nebo více parametrů typu. Kód klienta poskytuje typ, když se vytváří instanci typu. Například <xref:System.Collections.Generic.List%601> třídy v <xref:System.Collections.Generic> obor názvů je definován s jeden typ parametru. Vytvoří instanci kód klienta `List<string>` nebo `List<int>` k určení typu, který bude obsahovat seznam. Další informace najdete v tématu [obecné typy](../../../csharp/programming-guide/generics/index.md).  
+ Třídy a struktury lze definovat pomocí jednoho nebo více parametrů typu. Klientský kód poskytuje typ při vytváření instance daného typu. Například <xref:System.Collections.Generic.List%601> třídy v <xref:System.Collections.Generic> obor názvů je definované s jedním parametrem typu. Klientský kód vytvoří instanci `List<string>` nebo `List<int>` k určení typu, který bude obsahovat seznam. Další informace najdete v tématu [obecných typů](../../../csharp/programming-guide/generics/index.md).  
   
 ### <a name="static-types"></a>Statické typy  
- Třídy (ale ne struktury) lze deklarovat jako [statické](../../../csharp/language-reference/keywords/static.md). Statická třída může obsahovat pouze statické členy a nelze vytvořit instanci s new – klíčové slovo. Jedna kopie třídy je načten do paměti při načtení program a jeho členové jsou přístupné prostřednictvím název třídy. Třídy a struktury může obsahovat statické členy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
+ Třídy (ale ne struktury) mohou být deklarovány jako [statické](../../../csharp/language-reference/keywords/static.md). Statická třída může obsahovat pouze statické členy a nelze vytvořit instanci pomocí klíčového slova new. Jedna kopie třídy, je načten do paměti v momentě načtení programu a její členové budou přístupní prostřednictvím názvu třídy. Třídy a struktury mohou obsahovat statické členy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
 ### <a name="nested-types"></a>Vnořené typy  
- Třídě nebo struktuře lze začlenit do jiné třídě nebo struktuře. Další informace najdete v tématu [vnořené typy](../../../csharp/programming-guide/classes-and-structs/nested-types.md).  
+ Třídy nebo struktury může být vnořena do jiné třídy nebo struktury. Další informace najdete v tématu [vnořené typy](../../../csharp/programming-guide/classes-and-structs/nested-types.md).  
   
 ### <a name="partial-types"></a>Částečné typy  
- Část třída, struktura nebo metoda v jednom souboru kódu a další část můžete definovat v samostatném souboru kódu. Další informace najdete v tématu [částečné třídy a metody](../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md).  
+ Můžete definovat část třídy, struktury nebo metody v jediném souboru kódu a jiné části v samostatném souboru kódu. Další informace najdete v tématu [částečné třídy a metody](../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md).  
   
 ### <a name="object-initializers"></a>Inicializátory objektů  
- Můžete vytvořit instanci a inicializaci třídy nebo struktura objekty a kolekce objektů, bez nutnosti explicitně volání jejich konstruktor. Další informace najdete v tématu [inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md).  
+ Můžete konkretizovat a inicializovat třídu nebo strukturu objektů a kolekce objektů, bez explicitního volání jejich konstruktoru. Další informace najdete v tématu [inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md).  
   
 ### <a name="anonymous-types"></a>Anonymní typy  
- V situacích, kdy není praktické nebo potřebné pro vytvoření třídy s názvem například když jsou naplnění seznamu s daty struktur, není nutné zachovat nebo předejte na jinou metodu, můžete použít anonymní typy. Další informace najdete v tématu [anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
+ V situacích, kdy není vhodné nebo nezbytné vytvořit třídu s názvem například když plníte seznam datovými struktur, není potřeba přetrvat ani být předány jiné metodě, použijte anonymní typy. Další informace najdete v tématu [anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
   
 ### <a name="extension-methods"></a>Metody rozšíření  
- Můžete "rozšířit" třídu bez vytvoření odvozené třídy tak, že vytvoříte samostatné typu, jejíž metody lze volat jako v případě, kdyby patřily do původní typ. Další informace najdete v tématu [rozšiřující metody](../../../csharp/programming-guide/classes-and-structs/extension-methods.md).  
+ Můžete "rozšířit" třídu bez vytvoření odvozené třídy vytvořením samostatného typu, jejíž metody lze volat, jakoby příslušely k původnímu typu. Další informace najdete v tématu [rozšiřující metody](../../../csharp/programming-guide/classes-and-structs/extension-methods.md).  
   
 ### <a name="implicitly-typed-local-variables"></a>Implicitně typované lokální proměnné  
- Ve třídě nebo struktuře metodu můžete implicitní zadáním kompilátoru k určení správného typu v době kompilace. Další informace najdete v tématu [implicitně typované lokální proměnné](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
+ V rámci metody třídy nebo struktury vám pomůže implicitního zápisu instruovali kompilátor k určení správného typu v době kompilace. Další informace najdete v tématu [implicitně typované lokální proměnné](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

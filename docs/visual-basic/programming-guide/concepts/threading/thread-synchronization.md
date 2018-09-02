@@ -2,23 +2,23 @@
 title: Synchronizace vláken (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 04f485d1-8333-4510-9e72-c334e7427e7e
-ms.openlocfilehash: 9922230e1c7f2bd30c575bd66387feb4850a298b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3278ed1e98f71e11d47f55a0d4cb50f44ae02027
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33655088"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43406621"
 ---
 # <a name="thread-synchronization-visual-basic"></a>Synchronizace vláken (Visual Basic)
-Následující části popisují funkce a třídy, které slouží k synchronizaci přístup k prostředkům v vícevláknové aplikace.  
+Následující části popisují funkce a třídy, které slouží k synchronizaci přístupu k prostředkům ve vícevláknových aplikacích.  
   
- Jednou z výhod používání více vláken v aplikaci je asynchronně provádí každé vlákno. Pro aplikace systému Windows to umožňuje časově náročné úlohy, které mají být provedeny na pozadí při okna aplikace a ovládací prvky zůstanou reaguje. Aplikace, více vláken pro server poskytuje možnost pro zpracování jednotlivých příchozích požadavků s jiném podprocesu. Každý nový požadavek, jinak hodnota nebude získat servis dokud předchozí požadavek je plně splněna.  
+ Jednou z výhod používání více vláken v aplikaci je, že se každý podproces spustí asynchronně. Pro aplikace Windows díky tomu časově náročné úlohy provádět na pozadí při okna aplikace a ovládací prvky stále reagovat. Pro server aplikace multithreading poskytuje možnost pro zpracování jednotlivých příchozích požadavků s jiném vlákně. V opačném případě nebude získat každému novému požadavku Údržba až do předchozí požadavek nebyl plně spokojeni.  
   
- Ale musí být koordinované asynchronní povaha vláken znamená, že přístup k prostředkům, jako jsou popisovače souborů, připojení k síti a paměti. Dvě nebo více vláken, jinak hodnota přístup stejného zdroje ve stejnou dobu, každý dál, bez ohledu druhé strany akcí. Výsledkem je poškození dat nepředvídatelné.  
+ Ale musí být koordinované asynchronní povaze vlákna znamená, že přístup k prostředkům, jako jsou popisovače souborů, připojení k síti a paměti. V opačném případě dvě či více vláken může přistupovat k stejný prostředek ve stejnou dobu, každý vědět o druhé strany akce. Výsledkem je poškození dat nepředvídatelné.  
   
- Pro jednoduché operace na integrální číselné datové typy synchronizace vláken lze provést pomocí členy <xref:System.Threading.Interlocked> třídy. Pro všechna ostatní data typy a prostředky nejsou bezpečné pro přístup z více vláken, multithreading můžete bezpečně provést pouze pomocí konstrukce v tomto tématu.  
+ Pro jednoduché operace na integrální číselné datové typy, synchronizaci vláken můžete docílit, když se členy <xref:System.Threading.Interlocked> třídy. Pro všechna ostatní data typů a prostředků, není bezpečná pro vlákno, multithreading lze bezpečně provést pouze pomocí konstrukce v tomto tématu.  
   
- Základní informace o vícevláknové programování naleznete v tématu:  
+ Základní informace o programování s více vlákny naleznete v tématu:  
   
 -   [Základy dělení na spravovaná vlákna](../../../../standard/threading/managed-threading-basics.md)  
   
@@ -26,10 +26,10 @@ Následující části popisují funkce a třídy, které slouží k synchroniza
   
 -   [Doporučené postupy dělení na spravovaná vlákna](../../../../standard/threading/managed-threading-best-practices.md)  
   
-## <a name="the-lock-and-synclock-keywords"></a>Uzamčení a SyncLock – klíčová slova  
- Visual Basic `SyncLock` příkaz lze použít k zajištění, že blok kódu zcela dokončena bez přerušení jiná vlákna. To lze provést po dobu trvání blok kódu získávání zámku vzájemné vyloučení pro daný objekt.  
+## <a name="the-lock-and-synclock-keywords"></a>Uzamčení a klíčová slova SyncLock  
+ Visual Basic `SyncLock` příkaz lze použít k zajištění, že blok kódu úloha poběží do konce bez přerušení jiných vláken. Toho lze dosáhnout získání zámku vzájemné vyloučení pro daný objekt po dobu trvání bloku kódu.  
   
- A `SyncLock` příkaz je zadaný objekt jako argument a následuje blok kódu, který se má provádět pouze jedním vláknem současně. Příklad:  
+ A `SyncLock` příkaz je zadaný objekt jako argument a následuje blok kódu, který je provádět najednou pouze jedno vlákno. Příklad:  
   
 ```vb  
 Public Class TestThreading  
@@ -43,9 +43,9 @@ Public Class TestThreading
 End Class  
 ```  
   
- Argument poskytnuté `SyncLock` – klíčové slovo musí být založený na typu odkaz na objekt a slouží k definování oboru zámku. V předchozím příkladu obor zámků je omezena na tuto funkci, protože žádné odkazy na objekt `lockThis` existovat mimo funkci. Pokud odkazu, by tento objekt rozšířit obor zámků. Zadaný objekt přesněji řečeno, slouží výhradně k jednoznačné identifikaci sdílený mezi více vláken, aby ho bylo možné instance třídy libovolný prostředek. V praxi ale tento objekt obvykle reprezentuje prostředků, pro které vlákno synchronizace je nezbytné. Například pokud objektu kontejneru se má používat více vláken, předána kontejneru k uzamčení a synchronizované kód bloku následující zámek by přístup kontejneru. Tak dlouho, dokud jiná vlákna zamkne ve stejném obsahuje před přístupem k, pak je přístup k objektu bezpečně synchronizován.  
+ Argument uvedený pro `SyncLock` – klíčové slovo musí být objekt podle typu odkazu a slouží k definování oboru zámek. V předchozím příkladu zámek rozsah je omezen na tuto funkci, protože žádné odkazy na objekt `lockThis` existují mimo funkci. Pokud takový odkaz, obor zámků i na tento objekt. Přesněji řečeno zadaný objekt slouží pouze k jednoznačné identifikaci sdílený mezi více vlákny, pak se instance libovolné třídy bude prostředek. V praxi, ale tento objekt obvykle představuje prostředek, pro které vlákno je nezbytné synchronizace. Pokud objekt kontejneru se použije ve víc vláknech, potom kontejner může být předán Zamknout a blok synchronizované kódu po uzamčení bude přístup ke kontejneru. Tak dlouho, dokud jiná vlákna uzamkne na stejném obsahuje před přístupem k jeho, pak se bezpečně synchronizuje přístup k objektu.  
   
- Obecně je vyhýbat se na zamykání `public` typ, nebo na instancí objektů mimo kontrolu vaší aplikace. Například `lockThis` může být problematické, pokud instance je přístupná veřejně, protože kód mimo vaši kontrolu může zamknout na objekt i. To může vytvořit zablokování situacích, kde dva nebo více podprocesů čeká na uvolnění výskyty stejného objektu. Uzamčení na veřejné datového typu, na rozdíl od objektu, může způsobit problémy ze stejného důvodu. Uzamčení na řetězcové literály je obzvláště rizikové, protože řetězcové literály *interned* modulem common language runtime (CLR). To znamená, že jednu instanci libovolný daný řetězec je literál pro celý program, přesně stejný objekt představuje literál ve všech systémem všechna vlákna aplikační domény. V důsledku toho uzamknout řetězec se stejným obsahem, kdekoli v procesu uzamčení aplikace všechny instance tento řetězec v aplikaci. V důsledku toho je vhodné zamknout privátní nebo chráněného člena, který není interned. Některé třídy poskytují členy, konkrétně k uzamčení. <xref:System.Array> Typu, například poskytuje <xref:System.Array.SyncRoot%2A>. Zadejte mnoho typů kolekce `SyncRoot` také člen.  
+ Obecně je vhodné vyhnout zamykání `public` typ, nebo na instance objektů mimo kontrolu vaší aplikace. Například `lockThis` může být problematické, pokud instance je přístupná veřejně, protože mohou na objekt i uzamknout kódu mimo vaši kontrolu. To může vytvořit zablokování situací, ve kterém dvě či více vláken čeká na uvolnění na stejný objekt. Uzamčení na veřejné datový typ, na rozdíl od objektu, může způsobit problémy ze stejného důvodu. Uzamčení na literál řetězce je zejména riskantní, protože řetězcové literály jsou *internovány* modulem common language runtime (CLR). To znamená, že jednu instanci libovolné daný řetězec je literál celého programu, přesně stejný objekt představuje literál ve všech spuštění aplikační domény, na všech vláknech. V důsledku toho uzamknout řetězec s použitím stejného obsahu kdekoli v procesu uzamčení aplikace všechny výskyty tohoto řetězce do aplikace. V důsledku toho je nejlepší soukromé nebo chráněné člena, který není internovány zamknout. Některé třídy poskytovaly členy speciálně pro uzamčení. <xref:System.Array> Typ, například poskytuje <xref:System.Array.SyncRoot%2A>. Poskytuje mnoho typů kolekce `SyncRoot` také člena.  
   
  Další informace o `SyncLock` příkaz, naleznete v následujících tématech:  
   
@@ -54,7 +54,7 @@ End Class
 -   <xref:System.Threading.Monitor>  
   
 ## <a name="monitors"></a>Sledování  
- Podobně jako `SyncLock` – klíčové slovo, monitorování zabránit bloky kódu ze současné spuštění více vláken. <xref:System.Threading.Monitor.Enter%2A> Metoda umožňuje pouze jednu vlákno pokračujte do následující příkazy; jiná vlákna jsou blokována až provádění vlákna volání <xref:System.Threading.Monitor.Exit%2A>. Toto je stejně jako pomocí `SyncLock` – klíčové slovo. Příklad:  
+ Podobně jako `SyncLock` – klíčové slovo, monitorování předcházet bloky kódu z souběžné provádění více vláken. <xref:System.Threading.Monitor.Enter%2A> Metoda umožňuje jeden a pouze jeden vláknu pokračovat na následující příkazy – všechny ostatní vlákna jsou zablokována až do spuštěné vlákno vyvolá <xref:System.Threading.Monitor.Exit%2A>. Toto je stejně jako kdybyste službu `SyncLock` – klíčové slovo. Příklad:  
   
 ```vb  
 SyncLock x  
@@ -62,7 +62,7 @@ SyncLock x
 End SyncLock  
 ```  
   
- Jde o ekvivalent:  
+ To je ekvivalentní:  
   
 ```vb  
 Dim obj As Object = CType(x, Object)  
@@ -74,16 +74,16 @@ Finally
 End Try  
 ```  
   
- Pomocí `SyncLock` – klíčové slovo je obecně upřednostňované oproti použití <xref:System.Threading.Monitor> přímo třídu, jak protože `SyncLock` je přesnější a protože `SyncLock` zajistí, že základní monitorování vydání, i když chráněný kód vyvolá došlo k výjimce. To je provedeno pomocí `Finally` – klíčové slovo, které se provádí jeho přidružený kód bloku bez ohledu na to, jestli je vyvolána výjimka.  
+ Pomocí `SyncLock` – klíčové slovo je obecně upřednostňované nad pomocí <xref:System.Threading.Monitor> přímo třídu, obě protože `SyncLock` je stručnější a protože `SyncLock` zajistí, že základní monitorování vydání, i v případě chráněných kód vyvolá výjimku došlo k výjimce. Toho se dosahuje pomocí `Finally` – klíčové slovo, která spustí bloku přidružený kód bez ohledu na to, zda je vyvolána výjimka.  
   
 ## <a name="synchronization-events-and-wait-handles"></a>Synchronizace události a obslužné rutiny čekání  
- Pomocí uzamčení nebo monitorování jsou užitečné pro zabránění souběžné spouštění citlivé na vlákno bloky kódu, ale tyto konstrukce neumožňují jedno vlákno pro komunikaci událost do jiného. To vyžaduje *synchronizace události*, které jsou objekty, které mají mezi dvěma stavy, signalizovaného a zrušení signalizovaného, který lze použít k aktivaci a pozastavení vláken. Vlákna pozastavil prováděné pro čekání na událost synchronizace, která je unsignaled a může být aktivováno změnou stavu událostí na signál. Pokud pro čekání na událost, která již signalizace pokusů o vlákno, vlákno pokračuje bez nutnosti zpoždění.  
+ Použití uzamčení nebo monitorování je k zamezení souběžné provádění vlákna zohledňující bloky kódu, ale tyto konstrukce neumožňují jedno vlákno pro komunikaci událost do jiného. To vyžaduje, aby *synchronizace události*, které jsou objekty, které mají jednu ze dvou stavů, signalizovaného a zrušení signalizovaného, který slouží k aktivaci a pozastavení vlákna. Vlákna pozastaví pomocí provádí čekání na událost synchronizace, která je unsignaled a je možné aktivovat tak, že změníte stav událostí na signál. Pokud vlákno se pokusí čekání na událost, která je již signalizována, vlákno pokračuje k provedení bez zpoždění.  
   
- Existují dva typy událostí synchronizace: <xref:System.Threading.AutoResetEvent>, a <xref:System.Threading.ManualResetEvent>. Liší se pouze v tom, že <xref:System.Threading.AutoResetEvent> změny z signál na unsignaled automaticky vždycky, když se aktivuje vlákna. Naopak <xref:System.Threading.ManualResetEvent> umožňuje libovolný počet vláken, které chcete aktivovat podle jeho signalizovaného stavu a obnoví jenom se unsignaled stavu při jeho <xref:System.Threading.EventWaitHandle.Reset%2A> metoda je volána.  
+ Existují dva typy událostí synchronizace: <xref:System.Threading.AutoResetEvent>, a <xref:System.Threading.ManualResetEvent>. Se liší pouze v dané <xref:System.Threading.AutoResetEvent> změny z signalizován na unsignaled automaticky pokaždé, když se aktivuje vlákno. Naopak <xref:System.Threading.ManualResetEvent> umožňuje libovolný počet vláken aktivováno signalizovaného stavu a bude pouze používat unsignaled stav, kdy jeho <xref:System.Threading.EventWaitHandle.Reset%2A> metoda je volána.  
   
- Vláken můžete provedeny pro čekání na události ve volání jedné z metod čekání, jako například <xref:System.Threading.WaitHandle.WaitOne%2A>, <xref:System.Threading.WaitHandle.WaitAny%2A>, nebo <xref:System.Threading.WaitHandle.WaitAll%2A>. <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType> způsobí, že podproces Počkejte, dokud se změní na signál, jedna událost, <xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType> blokuje vlákno, dokud jeden nebo více událostí uvedené stát signál, a <xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType> blokuje vlákno, dokud všechny uvedené události stane signál. Událost se změní na signál, když jeho <xref:System.Threading.EventWaitHandle.Set%2A> metoda je volána.  
+ Vlákna můžete provést pro čekání na události ve volání jedné z metod čekání, jako například <xref:System.Threading.WaitHandle.WaitOne%2A>, <xref:System.Threading.WaitHandle.WaitAny%2A>, nebo <xref:System.Threading.WaitHandle.WaitAll%2A>. <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType> způsobí, že vlákno počkat, až bude signál, jedna událost, <xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType> blokuje vlákno, dokud jeden nebo více uvedené události stát signalizovanými, a <xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType> blokuje vlákno, dokud všechny uvedené události signálování. Událost se stane signál, když jeho <xref:System.Threading.EventWaitHandle.Set%2A> metoda je volána.  
   
- V následujícím příkladu se vytvoří a spustí vlákna `Main` funkce. Nové vlákno čeká na k událost pomocí <xref:System.Threading.WaitHandle.WaitOne%2A> metoda. Vlákno je pozastaveno, dokud se změní na událost signál primární podprocesem, který spouští `Main` funkce. Jakmile bude signál události, vrátí pomocného vlákno. V takovém případě protože události se používá pouze pro jedno vlákno aktivace buď <xref:System.Threading.AutoResetEvent> nebo <xref:System.Threading.ManualResetEvent> třídy by bylo možné použít.  
+ V následujícím příkladu se vytvoří a tím, že vlákno `Main` funkce. Nové vlákno čeká na událost pomocí <xref:System.Threading.WaitHandle.WaitOne%2A> metody. Vlákno je pozastaveno, dokud události stane primární vlákno, které provádí signál, `Main` funkce. Jakmile bude signál události, vrátí pomocné vlákno. V tomto případě protože událost se používá jenom pro jedno vlákno aktivace, buď <xref:System.Threading.AutoResetEvent> nebo <xref:System.Threading.ManualResetEvent> třídy může používat.  
   
 ```vb  
 Imports System.Threading  
@@ -114,20 +114,20 @@ End Module
 ```  
   
 ## <a name="mutex-object"></a>Objekt mutex  
- A *mutex* je podobná monitorování; zabraňuje souběžných spuštění bloku kódu ve více než jedno vlákno najednou. Ve skutečnosti název "mutex" je zkrácený tvar termín "vzájemně vylučují." Na rozdíl od monitorování ale mutex slouží k synchronizaci vláken napříč procesy. Mutex je reprezentována <xref:System.Threading.Mutex> třídy.  
+ A *mutex* se podobá monitorování, zabrání současné spuštění bloku kódu ve více než jedno vlákno v čase. Název "mutex" se ve skutečnosti zkráceným tvarem termín "vzájemně se vylučuje." Na rozdíl od monitorování ale objekt mutex slouží k synchronizaci vláken napříč procesy. Objekt mutex je reprezentována <xref:System.Threading.Mutex> třídy.  
   
- Pokud se použije pro synchronizace mezi procesy, se nazývá mutex *pojmenovaný vzájemně vyloučený přístup* vzhledem k tomu, že je pro použití v jiné aplikaci, a proto nemohou být sdíleny prostřednictvím globální nebo statické proměnné. Je nutné mít název, aby obě aplikace přístup na stejný objekt mutex.  
+ Když se použije pro synchronizaci mezi procesy, se nazývá mutex *pojmenovaný vzájemně vyloučený přístup* vzhledem k tomu je možné použít v jiné aplikaci, a proto není možné sdílet prostřednictvím globální nebo statická proměnná. To se musí předávat název, aby obě aplikace přístup na stejný objekt mutex.  
   
- Mutex lze pro synchronizace uvnitř zpracování vláken, ale pomocí <xref:System.Threading.Monitor> je obecně upřednostňované, protože monitorování byly navrženy speciálně pro rozhraní .NET Framework a proto lépe využívat zdroje. Naopak <xref:System.Threading.Mutex> třída je obálka pro Win32 konstrukce. I když je mnohem snazší než monitorování, mutex vyžaduje spolupráce přechody, které jsou výpočetně nákladné než ty, které vyžadují <xref:System.Threading.Monitor> třídy. Příklad použití mutex, naleznete v části [mutex – třídy](../../../../standard/threading/mutexes.md).  
+ Objekt mutex lze pro synchronizaci vláken uvnitř procesu, ale pomocí <xref:System.Threading.Monitor> je obecně upřednostňované, protože monitorování byly navrženy specificky pro rozhraní .NET Framework a proto lépe využívat zdroje. Naproti tomu <xref:System.Threading.Mutex> třídy tvoří obálku pro konstrukci Win32. I když je výkonnější než monitorování, mutex vyžaduje vzájemné spolupráce přechody, která jsou než ty, které vyžadují více výpočetně náročné <xref:System.Threading.Monitor> třídy. Příklad použití objektu mutex, naleznete v tématu [mutexů](../../../../standard/threading/mutexes.md).  
   
 ## <a name="interlocked-class"></a>Interlocked – třída  
- Můžete použít metody <xref:System.Threading.Interlocked> třídy, aby problémy, ke kterým dochází při pokusu o několik vláken současně aktualizovat nebo porovnat stejnou hodnotu. Metody této třídy vám umožní bezpečně přírůstek, snížení, exchange a porovnání hodnot z libovolného vlákna.  
+ Můžete použít metody <xref:System.Threading.Interlocked> třídy, aby se zabránilo problémům, které může dojít, pokud více vláken pokusí zároveň aktualizovat nebo porovnání stejnou hodnotu. Metody této třídy umožňují bezpečně přírůstek, snížení, exchange a porovnat hodnoty z libovolného vlákna.  
   
 ## <a name="readerwriter-locks"></a>Zámky ReaderWriter  
- V některých případech můžete chtít uzamknout prostředek jenom v případě, že zapisuje data a povolit více klientů současně číst data, je-li data není aktualizován. <xref:System.Threading.ReaderWriterLock> Třída vynucuje výhradní přístup k prostředku vlákno upravuje prostředek, ale nikoli výhradní přístup umožňuje při čtení prostředku. Zámky ReaderWriter jsou užitečné alternativou k výhradní zámek, které způsobují jiná vlákna počkat, i když tyto vláken není potřeba aktualizovat data.  
+ V některých případech můžete uzamknout prostředek pouze v případě, že se zápisem dat a povolit víc klientů současně číst data, když se aktualizuje data. <xref:System.Threading.ReaderWriterLock> Třídě vynucuje exkluzivní přístup k prostředku vlákno upravuje prostředek, ale umožní přístup neexkluzivní při čtení prostředku. Zámky ReaderWriter jsou užitečnou alternativou pro výhradní zámek, které způsobují ostatní vlákna čekat, i když tato vlákna není potřeba aktualizovat data.  
   
 ## <a name="deadlocks"></a>Zablokování  
- Synchronizace vláken je velice užitečné v vícevláknové aplikace, ale je vždy nebezpečí vytváření `deadlock`, kde více vláken, které čekají na sebe navzájem a aplikace se dodává zastavení. Zablokování se podobá k situaci, ve kterém jsou zastaveny automobilů na čtyři způsob zastavení a každá osoba čekání na další přejdete. Zamezení zablokování je důležité. klíč je pečlivé plánování. Zablokování situacích můžete často předvídání podle diagramů vícevláknové aplikace před zahájením kódování.  
+ Synchronizace vláken je neocenitelný při řízení aplikací s více vlákny, ale je vždy nebezpečí vytvoření `deadlock`, kde více vláken čekají na sebe navzájem a aplikace jde o zastavení. Zablokování je podobná situace, ve kterém auta se zastaví na zarážku čtyř směrů a každý uživatel, který čeká na další přechod. Předcházení zablokování je důležité. klíč je pečlivé plánování. Často můžete předpovídat situace zablokování pomocí diagramů vícevláknové aplikace před spuštěním kódu.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Threading.Thread>  
@@ -147,7 +147,6 @@ End Module
  <xref:System.Threading>  
  <xref:System.Threading.EventWaitHandle.Set%2A>  
  <xref:System.Threading.Monitor>  
- [Vícevláknové aplikace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/multithreaded-applications.md)  
  [Příkaz SyncLock](../../../../visual-basic/language-reference/statements/synclock-statement.md)  
  [Mutex – třídy](../../../../standard/threading/mutexes.md)  
  [Propojené operace](../../../../standard/threading/interlocked-operations.md)  

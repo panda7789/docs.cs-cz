@@ -7,15 +7,15 @@ helpviewer_keywords:
 - RFC 3066 standard [XAML Services]
 - standards [XAML Services], RFC 3066
 ms.assetid: 7aac0078-a1c5-41f8-b8b0-975510d9dca0
-ms.openlocfilehash: 886f4063fa8c793fdce93431a29219cf86078593
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 025e4b2865fe3938e5f1454f87e90bae7a85bcfd
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33562021"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43399660"
 ---
 # <a name="xmllang-handling-in-xaml"></a>Práce s atributem xml:lang v jazyce XAML
-`xml:lang` Atribut je [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)]-definovaný atribut, který deklaruje informace o jazyce a jazykové verzi pro element v kódu XML. Tento stejný význam atributu přetrvává v jazyce XAML; ale některé další aspekty platí.  
+`xml:lang` Atribut je [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)]-definovaný atribut, který deklaruje informace o jazyk a jazykovou verzi pro element v XML. Tento stejný význam atributu přetrvává v XAML; však použít několik dalších důležitých informací.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -27,21 +27,21 @@ ms.locfileid: "33562021"
   
 |||  
 |-|-|  
-|*rfc3066lang*|Řetězec, který je odvozený od [RFC 3066](http://go.microsoft.com/fwlink/?LinkId=132454) standardní a identifikuje jazyk nebo jazyka oblasti. Pokud je k tomu, jazyk a oblasti jsou oddělena pomlčkou jeden. V tématu <xref:System.Windows.Markup.XmlLanguage> Další informace o hodnoty a formát.|  
+|*rfc3066lang*|Řetězec, který je odvozen z [RFC 3066](https://go.microsoft.com/fwlink/?LinkId=132454) standardní a identifikuje jazyka nebo jazyka oblasti. Pokud je to ten, jazyka a oblasti jsou oddělené pomlčkou jeden. Zobrazit <xref:System.Windows.Markup.XmlLanguage> Další informace o hodnotách a formát.|  
   
 ## <a name="remarks"></a>Poznámky  
- Definice pro `xml:lang` atribut [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] je odvozený od `xml:lang` podle definice jako "speciální atribut" [!INCLUDE[TLA#tla_w3c](../../../includes/tlasharptla-w3c-md.md)] pro [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)]. Informace o jazyce a jazykové verzi potenciálně zpracovává různými způsoby prvky, v závislosti na jejich implementace; neexistuje však žádný výchozí [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] zpracování `xml:lang` atribut.  
+ Definice `xml:lang` atribut [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] je odvozen z `xml:lang` definované jako "speciální atribut" [!INCLUDE[TLA#tla_w3c](../../../includes/tlasharptla-w3c-md.md)] pro [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)]. Informace o jazyk a jazykovou verzi potenciálně zpracovává různými způsoby prvků, v závislosti na jejich implementace; neexistuje však žádný výchozí [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] zpracování `xml:lang` atribut.  
   
- Výchozí hodnota `xml:lang` atribut je prázdný řetězec na úrovni atribut.  
+ Výchozí hodnota `xml:lang` atributu je prázdný řetězec na úrovni atribut.  
   
- `xml:lang` Atribut dopady a hodnota atributu jsou obecně perpetuated pro podřízené elementy, když interpretovat systémy, které fungují v `xml:lang` hodnoty.  
+ `xml:lang` Efekty atribut a hodnota atributu jsou obecně perpetuated pro podřízené prvky, když jsou interpretovány systémy, které působí na `xml:lang` hodnoty.  
   
- Když interpretovat XAML zapisovače služby rozhraní .NET Framework XAML Services `xml:lang` můžete vytvořit hodnotu <xref:System.Windows.Markup.XmlLanguage> nebo <xref:System.Globalization.CultureInfo> objekty v základní objektu reprezentace; ale, že chování závisí na tom, zda zadaná hodnota parametru `xml:lang`je platná konstrukce pro tyto třídy.  
+ Když interpretovat XAML zapisovače rozhraní .NET Framework XAML Services `xml:lang` může vytvořit hodnotu <xref:System.Windows.Markup.XmlLanguage> nebo <xref:System.Globalization.CultureInfo> reprezentace objektů v základním objektu, ale toto chování závisí na tom, zda hodnota zadaná pro omezení `xml:lang`je platná konstrukce pro tyto třídy.  
   
- Rozhraní můžete vytvořit přidružení mezi framework definované vlastnosti a význam `xml:lang` v kódu XML s použitím <xref:System.Windows.Markup.XmlLangPropertyAttribute> pro vlastnost.  
+ Rozhraní může vytvořit přidružení mezi vlastnosti definované v rámci rozhraní a význam `xml:lang` ve formátu XML použitím <xref:System.Windows.Markup.XmlLangPropertyAttribute> na vlastnost.  
   
-## <a name="wpf-usage-nodes"></a>Uzly využití grafického subsystému WPF  
- Pro prvky, které jsou odvozené třídy <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>, můžete ekvivalentní <xref:System.Windows.FrameworkElement.Language%2A> vlastnost závislosti místo `xml:lang` atribut. Ve výchozím nastavení <xref:System.Windows.FrameworkElement.Language%2A> vlastnost používá "en US", pokud není jinak nastavené, vlastnost prostřednictvím nebo zpracování `xml:lang` atribut.  
+## <a name="wpf-usage-nodes"></a>Využití uzlů WPF  
+ Pro prvky, které jsou odvozené třídy <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>, můžete ekvivalentní <xref:System.Windows.FrameworkElement.Language%2A> vlastnost závislosti místo `xml:lang` atribut. Ve výchozím nastavení <xref:System.Windows.FrameworkElement.Language%2A> vlastnost používá "en US", pokud není jinak nastavena, prostřednictvím vlastnosti nebo prostřednictvím zpracování `xml:lang` atribut.  
   
 ## <a name="see-also"></a>Viz také  
  [Globalizace pro WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md)

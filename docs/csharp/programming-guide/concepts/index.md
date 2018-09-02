@@ -1,37 +1,37 @@
 ---
-title: Programování konceptů (C#)
+title: Koncepty programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-ms.openlocfilehash: a557812ff99f09f20d3eb17ea7ff4dd80483a4a4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 965ce386bcf6ff8d11c9e20616c1ca44640ddaf2
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33335634"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43403020"
 ---
-# <a name="programming-concepts-c"></a>Programování konceptů (C#)
-Tato část vysvětluje koncepty programování v jazyce C#.  
+# <a name="programming-concepts-c"></a>Koncepty programování (C#)
+Tato část popisuje koncepty programování v jazyce C#.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Sestavení a globální mezipaměti sestavení (C#)](../../../csharp/programming-guide/concepts/assemblies-gac/index.md)|Popisuje postup vytvoření a použití sestavení.|  
-|[Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../csharp/programming-guide/concepts/async/index.md)|Popisuje, jak zapsat asynchronní řešení pomocí [asynchronní](../../../csharp/language-reference/keywords/async.md) a [await](../../../csharp/language-reference/keywords/await.md) klíčová slova v jazyce C#. Obsahuje návod.|  
-|[Atributy (C#)](../../../csharp/programming-guide/concepts/attributes/index.md)|Popisuje, jak poskytnout další informace o programování elementů, jako jsou typy, pole, metod a vlastností pomocí atributů.|  
-|[Informace o subjektu volajícím (C#)](../../../csharp/programming-guide/concepts/caller-information.md)|Popisuje, jak získat informace o volajícím metodu. Tyto informace zahrnují cesta k souboru, číslo řádku zdrojový kód a název člena volajícího.|  
-|[Kolekce (C#)](../../../csharp/programming-guide/concepts/collections.md)|Popisuje některé typy kolekcí poskytované rozhraní .NET Framework. Demonstruje použití jednoduchých kolekcí a kolekcí dvojic klíč/hodnota.|  
-|[Kovariance a kontravariance (C#)](../../../csharp/programming-guide/concepts/covariance-contravariance/index.md)|Ukazuje, jak povolit implicitní převod parametry obecného typu v rozhraní a delegáti.|  
-|[Stromy výrazů (C#)](../../../csharp/programming-guide/concepts/expression-trees/index.md)|Vysvětluje, jak použití stromů výrazů k povolení dynamické úpravu spustitelného kódu.|  
-|[Iterátory (C#)](../../../csharp/programming-guide/concepts/iterators.md)|Popisuje, iterátory, které se používají k krok prostřednictvím kolekcí a při návratu elementy jeden.|  
-|[Language-Integrated Query (LINQ) (C#)](../../../csharp/programming-guide/concepts/linq/index.md)|Popisuje možnosti účinný dotazovací v syntaxi jazyka C# a model pro dotazování relačních databází, dokumentů XML, datové sady a kolekce v paměti.|  
-|[Objektově orientované programování (C#)](../../../csharp/programming-guide/concepts/object-oriented-programming.md)|Popisuje běžné koncepty objektově orientované, včetně zapouzdření, dědičnost a polymorfismus.|  
-|[Reflexe (C#)](../../../csharp/programming-guide/concepts/reflection.md)|Vysvětluje, jak pomocí reflexe dynamicky vytvořit instanci typu, typ vazby s existujícím objektem, nebo z existujícího objektu získat typ a volat její metody nebo přístup k jeho polí a vlastností.|  
-|[Serializace (C# )](../../../csharp/programming-guide/concepts/serialization/index.md)|Popisuje klíčové koncepty v binárním, XML a serializace SOAP.|  
-|[Dělení na vlákna (C#)](../../../csharp/programming-guide/concepts/threading/index.md)|Poskytuje přehled o modelu vláken .NET a ukazuje, jak napsat kód, který provádí více úloh ve stejnou dobu pro zvýšení výkonu a reakce aplikací.|  
+|[Sestavení a globální mezipaměti sestavení (C#)](../../../csharp/programming-guide/concepts/assemblies-gac/index.md)|Popisuje, jak vytvořit a používat sestavení.|  
+|[Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../csharp/programming-guide/concepts/async/index.md)|Popisuje, jak vytvořit asynchronní řešení pomocí [asynchronní](../../../csharp/language-reference/keywords/async.md) a [await](../../../csharp/language-reference/keywords/await.md) klíčová slova v jazyce C#. Obsahuje návod.|  
+|[Atributy (C#)](../../../csharp/programming-guide/concepts/attributes/index.md)|Popisuje, jak poskytnout další informace o programování elementů, jako jsou typy, pole, metody a vlastnosti pomocí atributů.|  
+|[Informace o volajícím (C#)](../../../csharp/programming-guide/concepts/caller-information.md)|Popisuje, jak získat informace o volajícím metody. Tyto informace patří cesta k souboru a číslo řádku zdrojového kódu a členské jméno volajícího.|  
+|[Kolekce (C#)](../../../csharp/programming-guide/concepts/collections.md)|Popisuje typy kolekcí, které poskytuje rozhraní .NET Framework. Ukazuje, jak použít jednoduché kolekce a kolekce párů klíč/hodnota.|  
+|[Kovariance a kontravariance (C#)](../../../csharp/programming-guide/concepts/covariance-contravariance/index.md)|Ukazuje, jak povolit implicitní převod parametrů obecného typu v rozhraních a delegátech.|  
+|[Stromy výrazů (C#)](../../../csharp/programming-guide/concepts/expression-trees/index.md)|Vysvětluje, jak lze pomocí stromů výrazů povolit dynamickou změnu spustitelného kódu.|  
+|[Iterátory (C#)](../../../csharp/programming-guide/concepts/iterators.md)|Popisuje iterátory, které se používají ke krokování kolekcemi a při návratu elementů.|  
+|[Language-Integrated Query (LINQ) (C#)](../../../csharp/programming-guide/concepts/linq/index.md)|Tento článek popisuje výkonné funkce dotazů v syntaxi jazyka C# a model pro dotazování na relačních databází, dokumenty XML, datové sady a kolekce v paměti.|  
+|[Objektově orientované programování (C#)](../../../csharp/programming-guide/concepts/object-oriented-programming.md)|Popisuje běžné objektově orientovaný jazyk, včetně zapouzdření, dědičnosti a polymorfismu.|  
+|[Reflexe (C#)](../../../csharp/programming-guide/concepts/reflection.md)|Vysvětluje, jak pomocí odrazu dynamicky vytvořit instanci typu, navázat na existující objekt, nebo získat typ z existujícího objektu a volat jeho metody nebo přístup k vlastnostem a polím.|  
+|[Serializace (C# )](../../../csharp/programming-guide/concepts/serialization/index.md)|Popisuje klíčové pojmy v binárním formátu XML a serializaci SOAP.|  
+|[Dělení na vlákna (C#)](../../../csharp/programming-guide/concepts/threading/index.md)|Obsahuje přehled modelu podprocesů .NET a ukazuje, jak napsat kód, který provádí více úloh současně pro zlepšení výkonu a odezvy aplikace.|  
   
 ## <a name="related-sections"></a>Související oddíly  
   
 |||  
 |---|---|  
-|[Tipy pro zvýšení výkonu](https://msdn.microsoft.com/library/ms173196(VS.110).aspx) | Popisuje několik základních pravidel, které mohou pomoci zvýšit výkon aplikace.|
+|[Tipy pro zvýšení výkonu](../../../../docs/framework/performance/performance-tips.md) | Tento článek popisuje několik základních pravidel, které vám mohou pomoci zvýšit výkon vaší aplikace.|

@@ -1,41 +1,41 @@
 ---
-title: Detekce změn s SqlDependency
+title: Detekce změn pomocí SqlDependency
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: e6a58316-f005-4477-92e1-45cc2eb8c5b4
-ms.openlocfilehash: a25afbe0124f7870df886a1e26e0df2a0716b205
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 63d6a17e5aaf3e5d39ed0eda288e75c071be4d73
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33360187"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43405431"
 ---
-# <a name="detecting-changes-with-sqldependency"></a>Detekce změn s SqlDependency
-A <xref:System.Data.SqlClient.SqlDependency> objekt může být přidružený <xref:System.Data.SqlClient.SqlCommand> aby bylo možné rozpoznat, kdy se výsledky dotazu lišit od těch původně načten. Je také možné přiřadit delegáta, kterého `OnChange` událost, která bude platit při změně výsledků pro přidružený příkaz. Je nutné přidružit <xref:System.Data.SqlClient.SqlDependency> pomocí příkazu před spuštěním příkazu. `HasChanges` Vlastnost <xref:System.Data.SqlClient.SqlDependency> lze také použít k určení, pokud výsledky dotazu změnily od první načtena data.  
+# <a name="detecting-changes-with-sqldependency"></a>Detekce změn pomocí SqlDependency
+A <xref:System.Data.SqlClient.SqlDependency> objektu lze přidružit <xref:System.Data.SqlClient.SqlCommand> aby bylo možné rozpoznat, kdy se výsledky dotazu se liší od těch, které původně načten. Můžete také přiřadit delegáta, kterého `OnChange` událost, která se aktivuje při změně výsledků pro přidružený příkaz. Je třeba přidružit <xref:System.Data.SqlClient.SqlDependency> pomocí příkazu před spuštěním příkazu. `HasChanges` Vlastnost <xref:System.Data.SqlClient.SqlDependency> lze také použít k určení, pokud výsledky dotazu se změnily od nejprve se data načetla.  
   
 ## <a name="security-considerations"></a>Důležité informace o zabezpečení  
- Využívá infrastrukturu závislostí <xref:System.Data.SqlClient.SqlConnection> , když je otevřen <xref:System.Data.SqlClient.SqlDependency.Start%2A> nazývá příjem oznámení, která zdrojová data změnila pro daný příkaz vyžaduje, aby. Možnost pro klienta zahájíte volání `SqlDependency.Start` se řídí prostřednictvím <xref:System.Data.SqlClient.SqlClientPermission> a atributy zabezpečení přístupu kódu. Další informace najdete v tématu [povolení oznámení dotazů](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md) a [zabezpečení přístupu kódu a ADO.NET](../../../../../docs/framework/data/adonet/code-access-security.md).  
+ Závislost infrastruktury spoléhá na <xref:System.Data.SqlClient.SqlConnection> , který se otevře při <xref:System.Data.SqlClient.SqlDependency.Start%2A> je volána, pokud chcete dostávat oznámení, která pro zadaný příkaz změnila podkladová data. Možnost pro klienta k zahájení volání `SqlDependency.Start` je řízen prostřednictvím <xref:System.Data.SqlClient.SqlClientPermission> a atributy zabezpečení přístupu kódu. Další informace najdete v tématu [povolení oznámení dotazů](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md) a [zabezpečení přístupu kódu a ADO.NET](../../../../../docs/framework/data/adonet/code-access-security.md).  
   
 ### <a name="example"></a>Příklad  
- Následující kroky ukazují, jak závislost deklarovat, spusťte příkaz a přijímat oznámení v případě výsledek nastavit změny:  
+ Následující kroky ukazují, jak deklarovat závislost, provedení příkazu a když výsledné sady změn, dostanete oznámení:  
   
-1.  Zahájení `SqlDependency` připojení k serveru.  
+1.  Zahájit `SqlDependency` připojení k serveru.  
   
-2.  Vytvoření <xref:System.Data.SqlClient.SqlConnection> a <xref:System.Data.SqlClient.SqlCommand> objekty, které chcete připojit k serveru a zadejte příkaz jazyka Transact-SQL.  
+2.  Vytvoření <xref:System.Data.SqlClient.SqlConnection> a <xref:System.Data.SqlClient.SqlCommand> objekty pro připojení k serveru a definování příkazu jazyka Transact-SQL.  
   
-3.  Vytvořte novou `SqlDependency` objektu, nebo použijte existující a navázat jej na `SqlCommand` objektu. Interně, tím se vytvoří <xref:System.Data.Sql.SqlNotificationRequest> objektu a váže k objektu command podle potřeby. Tato žádost o oznámení obsahuje interní identifikátor, který jednoznačně identifikuje tento `SqlDependency` objektu. Také spustí naslouchací proces klienta, pokud již není aktivní.  
+3.  Vytvořte nový `SqlDependency` objektu, nebo použijte již existující a vytvořte mu vazbu k `SqlCommand` objektu. Interně, tím se vytvoří <xref:System.Data.Sql.SqlNotificationRequest> objektu a vazba k objektu command, podle potřeby. Žádost o toto oznámení obsahuje interní identifikátor, který jednoznačně identifikuje to `SqlDependency` objektu. Pokud už není aktivní naslouchací proces klienta, spustí se také.  
   
-4.  Obslužné rutiny události pro přihlášení k odběru `OnChange` události `SqlDependency` objektu.  
+4.  Obslužná rutina události pro odběru `OnChange` událost `SqlDependency` objektu.  
   
-5.  Provedení příkazu pomocí kteréhokoli `Execute` metody `SqlCommand` objektu. Vzhledem k tomu, že příkaz je vázaná na objekt oznámení, server rozpozná, že ji musíte vygenerovat oznámení, a informace o frontě bude odkazovat na frontu závislosti.  
+5.  Spuštění příkazu pomocí kteréhokoli z `Execute` metody `SqlCommand` objektu. Vzhledem k tomu, že příkaz je vázán na objekt oznámení, server rozpoznal, že ho musíte vygenerovat oznámení a informace o frontě budou odkazovat na frontě závislosti.  
   
 6.  Zastavit `SqlDependency` připojení k serveru.  
   
- Pokud se každý uživatel, následně změní v základních datech, Microsoft SQL Server zjistí, že je oznámení čekající na vyřízení pro tuto změnu a odešle oznámení, že je zpracován a předávaných do klienta prostřednictvím základní `SqlConnection` který byl vytvořen Při volání `SqlDependency.Start`. Naslouchací proces klienta obdrží zprávu zneplatnění. Naslouchací proces klienta poté vyhledá přidruženého `SqlDependency` objekt a aktivuje se `OnChange` událostí.  
+ Pokud se žádný uživatel následně změní podkladová data, Microsoft SQL Server rozpozná, že se čeká na oznámení pro tuto změnu a odešle oznámení, že je zpracován a předávaných do klienta prostřednictvím základní `SqlConnection` , který byl vytvořen voláním `SqlDependency.Start`. Naslouchací proces klienta obdrží zprávu zneplatnění. Naslouchací proces klienta poté vyhledá přidruženého `SqlDependency` objekt a aktivuje se `OnChange` událostí.  
   
- Následující fragment kódu ukazuje vzor návrhu, které byste použili k vytvoření ukázkové aplikace.  
+ Následující fragment kódu ukazuje návrhový vzor, který můžete použít k vytvoření ukázkové aplikace.  
   
 ```vb  
 Sub Initialization()  
@@ -94,7 +94,7 @@ void SomeMethod()
   
         // Create a dependency and associate it with the SqlCommand.  
         SqlDependency dependency=new SqlDependency(command);  
-        // Maintain the refence in a class member.  
+        // Maintain the reference in a class member.  
   
         // Subscribe to the SqlDependency event.  
         dependency.OnChange+=new  
@@ -124,4 +124,4 @@ void Termination()
   
 ## <a name="see-also"></a>Viz také  
  [Oznámení pro dotazy na SQL Serveru](../../../../../docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

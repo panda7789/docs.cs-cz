@@ -8,20 +8,20 @@ ms.assetid: a6c31d7b-b33e-49b3-b5c1-31a345f9b7c8
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: b3fe06a0cd07979a14f2029ac3ece590496ecf74
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 07208b833607108ab78933cb1f65fa8a782ac88d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33409313"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43420319"
 ---
 # <a name="ui-automation-properties-overview"></a>Přehled vlastností automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Zprostředkovatelé automatizace uživatelského rozhraní na vystavení vlastností [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] elementy. Tyto vlastnosti umožňují automatizace uživatelského rozhraní klienta aplikace zjistit informace o kusy [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)], zejména prvky, včetně dat statické a dynamické.  
+ Vystavení zprostředkovatele automatizace uživatelského rozhraní vlastností na [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] elementy. Tyto vlastnosti umožňují automatizace uživatelského rozhraní klientských aplikací získat informace o části [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)], zejména ovládací prvky, včetně statickými a dynamickými daty.  
   
- Tato část poskytuje komplexní přehled o [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] vlastnosti. Podrobnější informace jsou uvedeny v následujících tématech:  
+ Tato část poskytuje komplexní přehled [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] vlastnosti. Podrobnější informace jsou uvedeny v následujících tématech:  
   
 -   [Vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)  
   
@@ -29,41 +29,41 @@ ms.locfileid: "33409313"
   
 <a name="Property_Identifiers"></a>   
 ## <a name="property-identifiers"></a>Vlastnost identifikátory  
- Všech vlastností, je identifikován číslo a název. Názvy vlastností se používají pouze pro ladění a diagnostiky. Poskytovatelé numerická [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)] k identifikaci příchozích požadavků vlastnost. Klientské aplikace, ale pouze použít <xref:System.Windows.Automation.AutomationProperty>, který zapouzdřuje číslo a název, k identifikaci vlastnosti chtějí načíst.  
+ Každé vlastnosti je identifikován číslo a název. Názvy vlastností se používají pouze pro ladění a Diagnostika. Poskytovatelé číselné [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)] k identifikaci příchozí žádosti vlastnost. Klientské aplikace, ale pouze pomocí <xref:System.Windows.Automation.AutomationProperty>, který zapouzdřuje číslo a název, identifikovat vlastnosti chtějí získat.  
   
- <xref:System.Windows.Automation.AutomationProperty> objekty, které představují konkrétní vlastnosti jsou k dispozici jako pole v různých tříd. Z bezpečnostních důvodů se zprostředkovateli automatizace uživatelského rozhraní od samostatnou sadu tříd, které jsou obsaženy v Uiautomationtypes.dll získat tyto objekty.  
+ <xref:System.Windows.Automation.AutomationProperty> objektů představujících určité vlastnosti jsou k dispozici jako pole v různých tříd. Z bezpečnostních důvodů se zprostředkovateli automatizace uživatelského rozhraní od samostatnou sadu tříd, které jsou obsaženy v Uiautomationtypes.dll získat tyto objekty.  
   
- V následující tabulce rozděluje vlastnosti třídy, které obsahují <xref:System.Windows.Automation.AutomationProperty> [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)].  
+ Následující tabulka rozděluje vlastnosti v rámci tříd, které obsahují <xref:System.Windows.Automation.AutomationProperty> [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)].  
   
-|Typy vlastností|Klienti získat ID z|Zprostředkovatelé získat ID z|  
+|Typy vlastností|Klienti získat ID z|Poskytovatelé získat ID z|  
 |-------------------------|--------------------------|----------------------------|  
-|Vlastnosti, které jsou společné pro všechny elementy (viz následující tabulky)|<xref:System.Windows.Automation.AutomationElement>|<xref:System.Windows.Automation.AutomationElementIdentifiers>|  
-|Pozice okno ukotvení|<xref:System.Windows.Automation.DockPattern>|<xref:System.Windows.Automation.DockPatternIdentifiers>|  
+|Vlastnosti společné pro všechny elementy (viz následující tabulky)|<xref:System.Windows.Automation.AutomationElement>|<xref:System.Windows.Automation.AutomationElementIdentifiers>|  
+|Umístění okno ukotvení|<xref:System.Windows.Automation.DockPattern>|<xref:System.Windows.Automation.DockPatternIdentifiers>|  
 |Stav elementu, který můžete rozbalit nebo sbalit|<xref:System.Windows.Automation.ExpandCollapsePattern>|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers>|  
 |Vlastnosti položky v mřížce|<xref:System.Windows.Automation.GridItemPattern>|<xref:System.Windows.Automation.GridItemPatternIdentifiers>|  
-|Vlastnosti Mřížka|<xref:System.Windows.Automation.GridPattern>|<xref:System.Windows.Automation.GridPatternIdentifiers>|  
+|Vlastnosti tabulky|<xref:System.Windows.Automation.GridPattern>|<xref:System.Windows.Automation.GridPatternIdentifiers>|  
 |Aktuální a podporované zobrazení elementu, který má více zobrazení|<xref:System.Windows.Automation.MultipleViewPattern>|<xref:System.Windows.Automation.MultipleViewPatternIdentifiers>|  
-|Vlastnosti elementu, který prochází přes rozsah hodnot, jako je například jezdce|<xref:System.Windows.Automation.RangeValuePattern>|<xref:System.Windows.Automation.RangeValuePatternIdentifiers>|  
-|Vlastnosti posouvání období|<xref:System.Windows.Automation.ScrollPattern>|<xref:System.Windows.Automation.ScrollPatternIdentifiers>|  
-|Stav a kontejner položku, kterou je možné vybrat jako seznam|<xref:System.Windows.Automation.SelectionItemPattern>|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers>|  
-|Vlastnosti obsahujícího výběr položek ovládacího prvku|<xref:System.Windows.Automation.SelectionPattern>|<xref:System.Windows.Automation.SelectionPatternIdentifiers>|  
+|Vlastnosti elementu, který přesouvá napříč celou škálou hodnot, například ovládací prvek posuvník|<xref:System.Windows.Automation.RangeValuePattern>|<xref:System.Windows.Automation.RangeValuePatternIdentifiers>|  
+|Vlastnosti umožňující posouvání okna|<xref:System.Windows.Automation.ScrollPattern>|<xref:System.Windows.Automation.ScrollPatternIdentifiers>|  
+|Stav a kontejner položky, kterou lze vybrat, stejně jako v seznamu|<xref:System.Windows.Automation.SelectionItemPattern>|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers>|  
+|Vlastnosti ovládacího prvku, který obsahuje výběr položky|<xref:System.Windows.Automation.SelectionPattern>|<xref:System.Windows.Automation.SelectionPatternIdentifiers>|  
 |Záhlaví řádků a sloupců položky v tabulce|<xref:System.Windows.Automation.TableItemPattern>|<xref:System.Windows.Automation.TableItemPatternIdentifiers>|  
 |Záhlaví řádků a sloupců a orientaci tabulky.|<xref:System.Windows.Automation.TablePattern>|<xref:System.Windows.Automation.TablePatternIdentifiers>|  
-|Stav přepnutí ovládacího prvku|<xref:System.Windows.Automation.TogglePattern>|<xref:System.Windows.Automation.TogglePatternIdentifiers>|  
-|Možnosti elementu, který můžete přesunout, otáčet nebo změně velikosti|<xref:System.Windows.Automation.TransformPattern>|<xref:System.Windows.Automation.TransformPatternIdentifiers>|  
-|Možnosti hodnotu a pro čtení a zápis elementu, který má hodnotu|<xref:System.Windows.Automation.ValuePattern>|<xref:System.Windows.Automation.ValuePatternIdentifiers>|  
-|Možnosti a stavu časového období|<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.WindowPatternIdentifiers>|  
+|Stav ovládacího prvku přepínací tlačítko|<xref:System.Windows.Automation.TogglePattern>|<xref:System.Windows.Automation.TogglePatternIdentifiers>|  
+|Možnosti elementu, který je možné přesunout, otočit, nebo se změněnou velikostí|<xref:System.Windows.Automation.TransformPattern>|<xref:System.Windows.Automation.TransformPatternIdentifiers>|  
+|Možnosti hodnot a r/w elementu, který má hodnotu|<xref:System.Windows.Automation.ValuePattern>|<xref:System.Windows.Automation.ValuePatternIdentifiers>|  
+|Možnosti a stav okna.|<xref:System.Windows.Automation.WindowPattern>|<xref:System.Windows.Automation.WindowPatternIdentifiers>|  
   
 <a name="Properties_by_Category"></a>   
 ## <a name="properties-by-category"></a>Vlastnosti podle kategorie  
- V následujících tabulkách kategorizace vlastnosti jejichž [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)] se nacházejí v <xref:System.Windows.Automation.AutomationElement> a <xref:System.Windows.Automation.AutomationElementIdentifiers>. Tyto vlastnosti jsou společné pro všechny ovládací prvky. Jenom několik z nich by mohly být statické během životního cyklu aplikace zprostředkovatele; vzory ovládacích prvků přidruženo nejvíce dynamických vlastností.  
+ V následujících tabulkách kategorizace vlastnosti jejíž [!INCLUDE[TLA2#tla_id#plural](../../../includes/tla2sharptla-idsharpplural-md.md)] se nacházejí v <xref:System.Windows.Automation.AutomationElement> a <xref:System.Windows.Automation.AutomationElementIdentifiers>. Tyto vlastnosti jsou společné pro všechny ovládací prvky. Vše kromě několik z nich můžou mít statické během životního cyklu aplikace zprostředkovatele. Většina dynamických vlastností jsou spojeny s vzorů ovládacích prvků.  
   
- **Přístup k vlastnosti** sloupec uvádí jiných přístupových objektů pro každou vlastnost kromě <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A> a <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>. Další informace o získání vlastnosti v aplikaci klienta najdete v tématu [vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
+ **Přístup k vlastnostem** sloupec uvádí všechny přistupující objekty pro každou vlastnost kromě <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A> a <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>. Další informace o získání vlastnosti v klientské aplikaci najdete v tématu [vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
   
 > [!NOTE]
->  Konkrétní informace o každé vlastnosti, klepněte na odkaz v **přístup k vlastnosti** sloupce.  
+>  Konkrétní informace o jednotlivých vlastnostech odkazu v **přístup k vlastnostem** sloupce.  
   
-### <a name="display-characteristics"></a>Zobrazit vlastnosti  
+### <a name="display-characteristics"></a>Vlastnosti zobrazení  
   
 |Identifikátor vlastnosti|Přístup k vlastnosti|  
 |-------------------------|---------------------|  
@@ -107,7 +107,7 @@ ms.locfileid: "33409313"
 |<xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsEnabled%2A>|  
 |<xref:System.Windows.Automation.AutomationElement.IsKeyboardFocusableProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsKeyboardFocusable%2A>|  
   
-### <a name="support-for-patterns"></a>Podpora vzorů  
+### <a name="support-for-patterns"></a>Podpora pro vzory  
   
 |Identifikátor vlastnosti|Přístup k vlastnosti|  
 |-------------------------|---------------------|  
@@ -140,7 +140,7 @@ ms.locfileid: "33409313"
   
 <a name="Localization"></a>   
 ## <a name="localization"></a>Lokalizace  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Zprostředkovatelé by měl v jazyce operačního systému k dispozici následující vlastnosti:  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] poskytovatelé by se měl prokázat následující vlastnosti v jazyce operačního systému:  
   
 -   <xref:System.Windows.Automation.AutomationElementIdentifiers.AcceleratorKeyProperty>  
   
@@ -153,14 +153,14 @@ ms.locfileid: "33409313"
 -   <xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>  
   
 <a name="Properties_and_Events"></a>   
-## <a name="properties-and-events"></a>Vlastnosti a události  
- Úzce souvisí se pomocí vlastnosti v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] je koncept události změny vlastnosti. Pro dynamické vlastnosti klientská aplikace potřebuje způsob, jak zjistit, že se hodnota vlastnosti změnila, abyste mohli aktualizovat své mezipaměti informace nebo reagovat na nové informace o jiným způsobem.  
+## <a name="properties-and-events"></a>Vlastnosti a události.  
+ Úzce souvisí se pomocí vlastnosti v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] je Princip události změny vlastnosti. Pro dynamické vlastnosti klientská aplikace potřebuje způsob, jak zjistit, že hodnoty vlastnosti došlo ke změně, aby mohli aktualizovat své mezipaměti informace nebo reagovat na nové informace jiným způsobem.  
   
- Zprostředkovatelé vyvolávání událostí, když v něco [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] změny. Například pokud zaškrtávací políčko zaškrtnuto nebo Ne, je vyvolána událost změny vlastnosti implementací poskytovatele přepnutí vzoru. Zprostředkovatelé vyvolat události selektivně, v závislosti na tom, jestli jsou všechny klienty naslouchání událostem, nebo naslouchání určité události.  
+ Poskytovatelé vyvolat události, když se něco v [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] změny. Například pokud zaškrtávací políčko zaškrtnuto nebo Ne, je vyvolána událost změny vlastnosti poskytovatele implementací vzorku přepínací tlačítko. Poskytovatelé může vyvolat události selektivně, v závislosti na tom, jestli jsou všichni klienti naslouchání událostem, nebo naslouchá určité události.  
   
- Ne všechny změny vlastností vyvolávání událostí; je to úplně na implementace zprostředkovatele automatizace uživatelského rozhraní pro daný element. Například standardní proxy zprostředkovatele pro seznamy není vyvolat událost při <xref:System.Windows.Automation.SelectionPattern.SelectionProperty> změny. V takovém případě aplikace místo toho musí naslouchat <xref:System.Windows.Automation.SelectionItemPattern.ElementSelectedEvent>.  
+ Ne všechny změny vlastností vyvolat události; který je zcela v kompetenci implementace zprostředkovatele automatizace uživatelského rozhraní pro element. Například standardní proxy zprostředkovatelé pro pole se seznamem nevyvolávejte událost při <xref:System.Windows.Automation.SelectionPattern.SelectionProperty> změny. V tomto případě aplikace místo toho musí naslouchat <xref:System.Windows.Automation.SelectionItemPattern.ElementSelectedEvent>.  
   
- Klienti naslouchat událostem se přihlásíte k jejich odběru. Přihlášení k odběru událostí znamená vytvoření metody delegáta, které může zpracovat události a následné předání metody k [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] společně s konkrétní události, které budou řešena v těchto metod. Pro události změny vlastnosti, konkrétně musí klienti implementovat <xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>.  
+ Klienti naslouchat událostem se přihlásíte k jejich odběru. Přihlášení k odběru událostí znamená, že vytváření metod delegáta, které může zpracovávat události a následné předání metod na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] spolu s konkrétní události, které se budou řešit v těchto metod. Události změny vlastnosti zejména, klienti musí implementovat <xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>.  
   
 ## <a name="see-also"></a>Viz také  
  [Práce s mezipamětí u klientů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)  

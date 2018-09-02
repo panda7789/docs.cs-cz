@@ -1,21 +1,21 @@
 ---
-title: Vlastní aktivity k přepínači na rozsahu hodnot
+title: Vlastní aktivita pro přepnutí u rozsahu hodnot
 ms.date: 03/30/2017
 ms.assetid: 441e0a17-421f-430c-ba97-59e4cc6c88e3
-ms.openlocfilehash: 785db08ffaf4ca6fe27d6418878c0bbf4ada44fd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cfaf4318b1557a9fc217de8254e164243ea54569
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517066"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417974"
 ---
-# <a name="custom-activity-to-switch-on-a-range-of-values"></a>Vlastní aktivity k přepínači na rozsahu hodnot
-Tento příklad ukazuje, jak vytvořit vlastní aktivitu, která rozšiřuje použití <xref:System.Activities.Statements.Switch%601>. Konvenční <xref:System.Activities.Statements.Switch%601> příkaz umožňuje přepnutí na základě jednu hodnotu. Ale existují obchodní scénáře, kde musí přejít aktivitu na základě rozsahu hodnot. Například aktivita může provést jednu akci, pokud je hodnota přepnut na 1 až 5, další akci, pokud je hodnota 6 až 10 a výchozí akce pro všechny ostatní hodnoty. Tato vlastní aktivita umožňuje přesně tento scénář.  
+# <a name="custom-activity-to-switch-on-a-range-of-values"></a>Vlastní aktivita pro přepnutí u rozsahu hodnot
+Tato ukázka předvádí, jak vytvořit vlastní aktivitu, která rozšiřuje použití <xref:System.Activities.Statements.Switch%601>. Konvenční <xref:System.Activities.Statements.Switch%601> příkaz umožňuje přechod na základě jedné hodnoty. Existují ale obchodní scénáře, kde musíte přepnout aktivity na základě rozsahu hodnot. Aktivita může například spustit jednu akci, pokud je hodnota přepnut na 1 až 5, další akci, pokud je hodnota délku 6 až 10 a výchozí akce pro všechny ostatní hodnoty. Tato vlastní aktivita umožňuje přesně tento scénář.  
   
-## <a name="the-switchrange-activity"></a>SwitchRange aktivity  
- `SwitchRange` Aktivity plány podřízené aktivity, pokud je hodnota výsledek jejího výrazu zahrnuté v rozsahu mezi jeho `Cases`.  
+## <a name="the-switchrange-activity"></a>Aktivita SwitchRange  
+ `SwitchRange` Aktivity naplánuje podřízené aktivity, když výsledek hodnotu jeho výrazu je součástí rozsahu jednoho z jeho `Cases`.  
   
- Následující příklad kódu je vlastní aktivity, které přepínače na základě rozsahu hodnot.  
+ Následující příklad kódu je vlastní aktivitu, která přepínače na základě rozsahu hodnot.  
   
 ```csharp  
 public sealed class SwitchRange<T> : NativeActivity where T : IComparable  
@@ -33,14 +33,14 @@ public sealed class SwitchRange<T> : NativeActivity where T : IComparable
   
 |Vlastnost|Popis|  
 |-|-|  
-|Výraz|Toto je výraz, který se vyhodnotí a porovná s rozsahy v seznamu případů. Výsledkem výrazu je typu T.|  
-|Případy|Každý případ se skládá z rozsah (od a do) a aktivitu (text). Výraz je vyhodnocena a porovná s rozsahy. Pokud je výsledek výrazu v rozsahu mezi v případech, bude odpovídající aktivita se spustí.|  
-|Výchozí|Aktivita, která se spustí, pokud je nalezena shoda s žádné případu. Pokud nastavíte hodnotu `null`, nebyla provedena žádná akce.|  
+|Výraz|Toto je výraz, který má být vyhodnocen a porovnáván proti oblasti v seznamu případy. Výsledek výrazu je typu T.|  
+|Případy|Každý případ se skládá z rozsahu (od a do) a aktivita (text). Výraz je vyhodnocen a porovnáván proti rozsahů. Pokud je výsledkem výrazu v rozsahu jedním z případů, bude odpovídající aktivita je provedena.|  
+|Výchozí|Aktivity, který je proveden, pokud žádný případ je nalezena shoda. Pokud je nastavena na `null`, nebyla provedena žádná akce.|  
   
-## <a name="caserange-class"></a>CaseRange – třída  
- `CaseRange` Třída reprezentuje rozsahem v rámci `SwitchRange` aktivity. Všechny instance řetězce `CaseRange` obsahuje rozsah (tvořený `From` a `To`) a `Body` aktivity, která je naplánováno, pokud výraz ve `SwitchRange` vyhodnotí v rámci rozsahu.  
+## <a name="caserange-class"></a>Třída CaseRange  
+ `CaseRange` Třída reprezentuje rozsah v rámci `SwitchRange` aktivity. Každou instanci `CaseRange` obsahuje rozsah (tvořený `From` a `To`) a `Body` aktivitu, která je naplánováno, pokud výraz v `SwitchRange` vyhodnotí v rámci rozsahu.  
   
- Následující příklad kódu je definice pro `CaseRange` třídy.  
+ Následující příklad kódu je definice `CaseRange` třídy.  
   
 ```  
 public class CaseRange<T> where T : IComparable  
@@ -54,7 +54,7 @@ public class CaseRange<T> where T : IComparable
 ```  
   
 > [!NOTE]
->  Jak `SwitchRange` a `CaseRange` třídy, které jsou definovány v ukázce jsou obecné třídy, které můžete pracovat s žádným typem, který implementuje `IComparable`, například <xref:System.Activities.Statements.Switch%601> třídy.  
+>  Jak `SwitchRange` a `CaseRange` třídy, které jsou definovány v ukázce jsou obecné třídy, které budou fungovat s jakýmkoli typem, který implementuje `IComparable`, třeba <xref:System.Activities.Statements.Switch%601> třídy.  
   
 ## <a name="sample-usage"></a>Využití vzorků  
  Následující příklad kódu ukazuje, jak používat `SwitchRange` aktivity.  
@@ -92,15 +92,15 @@ Activity SwitchRange = new SwitchRange<int>
   
 1.  Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení SwitchRange.sln.  
   
-2.  Sestavte řešení, stiskněte CTRL + SHIFT + B.  
+2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-3.  Chcete-li spustit řešení, stiskněte CTRL + F5.  
+3.  Abyste mohli spustit řešení, stiskněte CTRL + F5.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\SwitchRange`

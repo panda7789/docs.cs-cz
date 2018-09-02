@@ -6,39 +6,39 @@ helpviewer_keywords:
 - XML comments, Visual Basic
 - Visual Basic code, documenting with XML
 ms.assetid: a0d35dc7-c5f9-4d74-92ff-a1c6f28d5235
-ms.openlocfilehash: fa642adcfea9e80b41b5fc148df2b95b8fa44d88
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b99c37f30d595e114bb4625a2881a9f0b463f5e6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33650498"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43405176"
 ---
 # <a name="documenting-your-code-with-xml-visual-basic"></a>Dokumentace kódu s XML (Visual Basic)
-V jazyce Visual Basic můžete dokumentu kódu pomocí XML  
+V jazyce Visual Basic můžete dokumentaci kódu pomocí XML  
   
 ## <a name="xml-documentation-comments"></a>Dokumentační komentáře XML  
- Visual Basic poskytuje snadný způsob, jak automaticky vytvoření dokumentace XML pro projekty. Můžete automaticky generovat kostru XML pro typy a členy a pak zadejte souhrny, popisný dokumentace pro jednotlivé parametry a další poznámky. V instalaci příslušné je automaticky vygenerované dokumentace XML do souboru XML se stejným názvem jako váš projekt a příponu .xml. Další informace najdete v tématu [/doc](../../../visual-basic/reference/command-line-compiler/doc.md).  
+ Visual Basic poskytuje snadný způsob, jak automaticky vytvořit dokumentaci XML pro projekty. Můžete automaticky generovat skeleton XML pro typy a členy a pak zadejte souhrny, popisný dokumentace pro každého parametru a další poznámky. S odpovídající instalační program je automaticky vygenerován dokumentace XML do souboru XML se stejným názvem jako váš projekt a příponu .xml. Další informace najdete v tématu [/doc](../../../visual-basic/reference/command-line-compiler/doc.md).  
   
- Soubor XML můžete využívat nebo jinak s nimi manipulovat jako XML. Tento soubor nachází ve stejném adresáři jako výstupní soubor .exe nebo .dll projektu.  
+ Soubor XML můžete využívat nebo jinak zpracovávají jako XML. Tento soubor je umístěn ve stejném adresáři jako soubor .exe nebo .dll výstup projektu.  
   
- Dokumentace XML začíná `'''`. Zpracování tyto komentáře má určitá omezení:  
+ Dokumentace XML začíná `'''`. Zpracování tyto poznámky platí některá omezení:  
   
--   V dokumentaci musí být ve správném formátu XML. Pokud není ve správném formátu XML, se generuje upozornění a soubor dokumentace obsahuje komentář s informacemi o tom, že došlo k chybě.  
+-   V dokumentaci k musí být ve správném formátu XML. Pokud není správně vytvořený kód XML, je vygenerováno upozornění a soubor dokumentace obsahuje komentář informacemi o tom, že došlo k chybě.  
   
--   Vývojáři mohou vytvořit vlastní sadu značky. Existuje sada doporučené značky (viz "Související oddíly" v tomto tématu). Některé z doporučené značky mají zvláštní význam:  
+-   Vývojáři jsou zdarma vytvořit vlastní sadu značek. Je doporučená sada značky (viz "Související oddíly" v tomto tématu). Některé doporučené značky mají zvláštní význam:  
   
-    -   \<Param > Značka se používá k popisu parametry. Pokud se používá, kompilátor ověří, zda parametr existuje a že všechny parametry jsou popsané v dokumentaci. Pokud ověření selže, vydá upozornění.  
+    -   \<Param > Značka se používá k popisu parametrů. Pokud použijete, kompilátor ověří, že parametr existuje a že všechny parametry jsou popsané v dokumentaci. Pokud se ověření nezdaří, kompilátor vyvolá upozornění.  
   
-    -   `cref` Atributu může být připojen k žádné značky, které poskytují odkaz na element kódu. Kompilátor ověří, zda tento element kódu existuje. Pokud ověření selže, vydá upozornění. Kompilátor také respektuje žádné `Imports` příkazy při vyhledávání pro typ popsané v `cref` atribut.  
+    -   `cref` Atribut lze připojit ke každé značce poskytnout odkaz na prvek kódu. Kompilátor ověří, zda tento prvek kódu existuje. Pokud se ověření nezdaří, kompilátor vyvolá upozornění. Kompilátor respektuje také některé `Imports` příkazy při hledání typu je popsáno v `cref` atribut.  
   
-    -   \<Souhrnné > Značka se používá technologii IntelliSense v sadě Visual Studio a zobrazte další informace o typ nebo člen.  
+    -   \<Summary > Značka se používá technologie IntelliSense v sadě Visual Studio zobrazíte další informace o typu nebo členu.  
   
 ## <a name="related-sections"></a>Související oddíly  
- Podrobné informace o vytváření souboru XML s dokumentační komentáře najdete v následujících tématech:  
+ Podrobné informace o vytváření souboru XML s komentáře k dokumentaci naleznete v následujících tématech:  
   
 -   [/doc](../../../visual-basic/reference/command-line-compiler/doc.md)  
   
--   [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)  
+-   [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)  
   
 -   [Zpracování souboru XML](../../../visual-basic/programming-guide/program-structure/processing-the-xml-file.md)  
   

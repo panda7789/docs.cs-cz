@@ -1,21 +1,21 @@
 ---
-title: Parametry DataAdapter
+title: Parametry adaptéru dat
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: f21e6aba-b76d-46ad-a83e-2ad8e0af1e12
-ms.openlocfilehash: ad046e4695365780bc6059617766a488ba85f642
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 41a7b5061a4a90f0b67658440e737c40295d5d5f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32759368"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43415908"
 ---
-# <a name="dataadapter-parameters"></a>Parametry DataAdapter
-<xref:System.Data.Common.DbDataAdapter> Má čtyři vlastnosti, které slouží k načtení dat z a aktualizovat data do zdroje dat: <xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> vlastnost vrací data ze zdroje dat; a <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> , <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>, a <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> vlastnosti se používají ke správě změny ve zdroji dat. `SelectCommand` Musí být nastavena vlastnost před voláním `Fill` metodu `DataAdapter`. `InsertCommand`, `UpdateCommand`, Nebo `DeleteCommand` vlastnosti musí být nastavená před `Update` metodu `DataAdapter` je volána, v závislosti na tom, jaké změny byly provedeny k datům ve <xref:System.Data.DataTable>. Pokud byl přidán počet řádků, například `InsertCommand` musí být nastaven před voláním `Update`. Když `Update` zpracovává vložené, aktualizovaných nebo odstraněných řádků, `DataAdapter` používá příslušných `Command` vlastnost zpracovat akci. Aktuální informace o upravené řádek je předán `Command` objektu prostřednictvím `Parameters` kolekce.  
+# <a name="dataadapter-parameters"></a>Parametry adaptéru dat
+<xref:System.Data.Common.DbDataAdapter> Má čtyři vlastnosti, které slouží k načtení dat z a aktualizovat data do zdroje dat: <xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> vlastnost vrací data ze zdroje dat; a <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> , <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>, a <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> vlastnosti se používají ke správě změny ve zdroji dat. `SelectCommand` Vlastnost musí být nastavena dříve než zavoláte `Fill` metodu `DataAdapter`. `InsertCommand`, `UpdateCommand`, Nebo `DeleteCommand` vlastnosti musí být nastavena před `Update` metodu `DataAdapter` je volána, v závislosti na tom, jaké změny byly provedeny s daty v <xref:System.Data.DataTable>. Například, pokud byl přidán počet řádků `InsertCommand` musí být nastavena dříve než zavoláte `Update`. Když `Update` zpracovává vložený, aktualizovaných nebo odstraněných řádků, `DataAdapter` používá funkcím `Command` vlastnost zpracovat akci. Aktuální informace o upravené řádku je předán `Command` objektu `Parameters` kolekce.  
   
- Při aktualizaci řádek ve zdroji dat, zavoláte příkaz UPDATE, který používá jedinečný identifikátor pro identifikaci řádek v tabulce aktualizovat. Jedinečný identifikátor je obvykle hodnota pole primárního klíče. Příkaz UPDATE používá parametry, které obsahují jedinečný identifikátor a sloupců a hodnoty pro aktualizaci, jak je znázorněno v následujícím příkazu Transact-SQL.  
+ Při aktualizaci řádků ve zdroji dat zavoláte příkaz UPDATE, který používá k identifikaci odpovídající řádek v tabulce jedinečný identifikátor aktualizovat. Jedinečný identifikátor se obvykle hodnota primárního klíče. Příkaz UPDATE používá parametry, které obsahují jedinečný identifikátor a sloupců a hodnot má být aktualizován, jak je znázorněno v následujícím příkazu jazyka Transact-SQL.  
   
 ```  
 UPDATE Customers SET CompanyName = @CompanyName   
@@ -23,9 +23,9 @@ UPDATE Customers SET CompanyName = @CompanyName
 ```  
   
 > [!NOTE]
->  Syntaxe parametru zástupné symboly závisí na zdroji dat. Tento příklad ukazuje zástupné symboly pro zdroj dat systému SQL Server. Použít zástupné znaky otazníku (?) pro <xref:System.Data.OleDb> a <xref:System.Data.Odbc> parametry.  
+>  Syntaxe pro parametr zástupné symboly závisí na zdroji dat. Tento příklad ukazuje zástupné symboly pro zdroj dat SQL serveru. Použít zástupné znaky otazníku (?) pro <xref:System.Data.OleDb> a <xref:System.Data.Odbc> parametry.  
   
- V tomto příkladu jazyka Visual Basic `CompanyName` pole je aktualizováno s hodnotou `@CompanyName` parametr pro řádek kde `CustomerID` se rovná hodnotě `@CustomerID` parametr. Parametry načtení informací z řádku upravené pomocí <xref:System.Data.SqlClient.SqlParameter.SourceColumn%2A> vlastnost <xref:System.Data.SqlClient.SqlParameter> objektu. Níže jsou uvedeny parametry pro předchozí příkaz Ukázka aktualizace. Kód předpokládá, že proměnná `adapter` představuje platnou <xref:System.Data.SqlClient.SqlDataAdapter> objektu.  
+ V tomto příkladu jazyka Visual Basic `CompanyName` pole se aktualizuje s hodnotou `@CompanyName` parametr řádku kde `CustomerID` se rovná hodnotě `@CustomerID` parametr. Parametry načíst informace z řádku upravené pomocí <xref:System.Data.SqlClient.SqlParameter.SourceColumn%2A> vlastnost <xref:System.Data.SqlClient.SqlParameter> objektu. Následují parametry pro předchozí ukázka příkazu UPDATE. Kód předpokládá, že proměnná `adapter` představuje platnou <xref:System.Data.SqlClient.SqlDataAdapter> objektu.  
   
 ```  
 adapter.Parameters.Add( _  
@@ -36,33 +36,33 @@ Dim parameter As SqlParameter = _
 parameter.SourceVersion = DataRowVersion.Original  
 ```  
   
- `Add` Metodu `Parameters` kolekce přebírá název parametru, datový typ, velikost (Pokud je k dispozici typu) a název <xref:System.Data.Common.DbParameter.SourceColumn%2A> z `DataTable`. Všimněte si, že <xref:System.Data.Common.DbParameter.SourceVersion%2A> z `@CustomerID` parametr je nastaven na `Original`. To zaručuje, že se aktualizuje stávající řádek ve zdroji dat, došlo ke změně hodnoty identifikační sloupec nebo sloupce v upravenou <xref:System.Data.DataRow>. V takovém případě `Original` odpovídá hodnota řádku je aktuální hodnota ve zdroji dat a `Current` hodnota řádku by obsahovat aktualizované hodnoty. `SourceVersion` Pro `@CompanyName` parametr není nastaven a použije výchozí `Current` řádek hodnotu.  
+ `Add` Metodu `Parameters` kolekce má název parametru, datový typ a velikost (Pokud je k dispozici na typ) a název <xref:System.Data.Common.DbParameter.SourceColumn%2A> z `DataTable`. Všimněte si, že <xref:System.Data.Common.DbParameter.SourceVersion%2A> z `@CustomerID` parametr je nastaven na `Original`. Zaručí se tak, že pokud byla změněna hodnota identifikační sloupec nebo sloupce se aktualizuje existující řádek ve zdroji dat v upraveném <xref:System.Data.DataRow>. V takovém případě `Original` hodnota řádku odpovídají aktuální hodnotu ve zdroji dat a `Current` hodnota řádku by obsahoval aktualizovanou hodnotu. `SourceVersion` Pro `@CompanyName` není nastaven parametr a použije výchozí `Current` řádek hodnotu.  
   
 > [!NOTE]
->  Pro oba `Fill` operace `DataAdapter` a `Get` metody `DataReader`, [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ je odvozen od typu vrácená z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat. Odvozené [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy a metody přístupových objektů pro typy dat Microsoft SQL Server, technologie OLE DB a rozhraní ODBC jsou popsané v [mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md).  
+>  Pro obě `Fill` operací `DataAdapter` a `Get` metody `DataReader`, [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ je odvozen od typu vráceného z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatele dat služeb. Odvozené [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy a přístupové metody pro datové typy systému Microsoft SQL Server, technologie OLE DB a rozhraní ODBC jsou popsány v [mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md).  
   
 ## <a name="parametersourcecolumn-parametersourceversion"></a>Parameter.SourceColumn Parameter.SourceVersion  
- `SourceColumn` a `SourceVersion` může být předána jako argumenty, které mají `Parameter` konstruktoru, nebo nastavit jako vlastnosti z existující `Parameter`. `SourceColumn` Je název <xref:System.Data.DataColumn> z <xref:System.Data.DataRow> kde hodnotu `Parameter` bude načten. `SourceVersion` Určuje `DataRow` verze, `DataAdapter` používá k načtení hodnoty.  
+ `SourceColumn` a `SourceVersion` může předávat jako argumenty, které mají `Parameter` konstruktoru nebo nastavte jako vlastnosti z existujícího `Parameter`. `SourceColumn` Je název <xref:System.Data.DataColumn> z <xref:System.Data.DataRow> kde hodnotu `Parameter` budou načítat. `SourceVersion` Určuje `DataRow` verze, která `DataAdapter` používá k načtení hodnoty.  
   
- Následující tabulce je zobrazena <xref:System.Data.DataRowVersion> hodnot výčtu, které jsou k dispozici pro použití s `SourceVersion`.  
+ Následující tabulka ukazuje <xref:System.Data.DataRowVersion> hodnot výčtu, které jsou k dispozici pro použití s `SourceVersion`.  
   
-|DataRowVersion – výčet|Popis|  
+|Výčet DataRowVersion|Popis|  
 |--------------------------------|-----------------|  
 |`Current`|Parametr používá aktuální hodnotu sloupce. Toto nastavení je výchozí.|  
-|`Default`|Parametr používá `DefaultValue` sloupce.|  
-|`Original`|Parametr používá původní hodnotu pro sloupec.|  
-|`Proposed`|Parametr používá navrhované hodnotu.|  
+|`Default`|Používá parametr `DefaultValue` sloupce.|  
+|`Original`|Parametr používá původní hodnota sloupce.|  
+|`Proposed`|Parametr používá navrhovanou hodnotu.|  
   
- `SqlClient` Příklad kódu v další části definuje parametr pro <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A> ve kterém `CustomerID` sloupec slouží jako `SourceColumn` pro dva parametry: `@CustomerID` (`SET CustomerID = @CustomerID`), a `@OldCustomerID` (`WHERE CustomerID = @OldCustomerID`). `@CustomerID` Parametr se používá k aktualizaci **CustomerID** sloupec, který se aktuální hodnota v `DataRow`. V důsledku toho `CustomerID` `SourceColumn` s `SourceVersion` z `Current` se používá. *@OldCustomerID* Parametr se používá k identifikaci na aktuálním řádku v datovém zdroji. Protože je nalezen odpovídající hodnota sloupce v `Original` verze řádku, stejné `SourceColumn` (`CustomerID`) s `SourceVersion` z `Original` se používá.  
+ `SqlClient` Příklad kódu v další části definuje parametr pro <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A> ve kterém `CustomerID` sloupec se používá jako `SourceColumn` pro dva parametry: `@CustomerID` (`SET CustomerID = @CustomerID`), a `@OldCustomerID` (`WHERE CustomerID = @OldCustomerID`). `@CustomerID` Parametr se používá k aktualizaci **CustomerID** sloupci je aktuální hodnota `DataRow`. V důsledku toho `CustomerID` `SourceColumn` s `SourceVersion` z `Current` se používá. *@OldCustomerID* Parametr se používá k identifikaci aktuální řádek ve zdroji dat. Protože se nachází na odpovídající hodnotu sloupce v `Original` verzi řádku, stejné `SourceColumn` (`CustomerID`) s `SourceVersion` z `Original` se používá.  
   
 ## <a name="working-with-sqlclient-parameters"></a>Práce s parametry SqlClient  
- Následující příklad ukazuje, jak vytvořit <xref:System.Data.SqlClient.SqlDataAdapter> a nastavte <xref:System.Data.Common.DataAdapter.MissingSchemaAction%2A> k <xref:System.Data.MissingSchemaAction.AddWithKey> Chcete-li získat další informace o schématu z databáze. <xref:System.Data.SqlClient.SqlDataAdapter.SelectCommand%2A>, <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A>, <xref:System.Data.SqlClient.SqlDataAdapter.UpdateCommand%2A>, A <xref:System.Data.SqlClient.SqlDataAdapter.DeleteCommand%2A> sadu vlastností a jejich odpovídajících <xref:System.Data.SqlClient.SqlParameter> objektů přidaných do <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> kolekce. Vrátí metodu `SqlDataAdapter` objektu.  
+ Následující příklad ukazuje, jak vytvořit <xref:System.Data.SqlClient.SqlDataAdapter> a nastavit <xref:System.Data.Common.DataAdapter.MissingSchemaAction%2A> k <xref:System.Data.MissingSchemaAction.AddWithKey> získat informace o dalším schématu z databáze. <xref:System.Data.SqlClient.SqlDataAdapter.SelectCommand%2A>, <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A>, <xref:System.Data.SqlClient.SqlDataAdapter.UpdateCommand%2A>, A <xref:System.Data.SqlClient.SqlDataAdapter.DeleteCommand%2A> sadu vlastností a jejich odpovídající <xref:System.Data.SqlClient.SqlParameter> objekty přidané do <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> kolekce. Metoda vrátí `SqlDataAdapter` objektu.  
   
  [!code-csharp[Classic WebData SqlDataAdapter.SqlDataAdapter Example#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlDataAdapter.SqlDataAdapter Example/CS/source.cs#1)]
  [!code-vb[Classic WebData SqlDataAdapter.SqlDataAdapter Example#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlDataAdapter.SqlDataAdapter Example/VB/source.vb#1)]  
   
-## <a name="oledb-parameter-placeholders"></a>Zástupné symboly parametrů OleDb  
- Pro <xref:System.Data.OleDb.OleDbDataAdapter> a <xref:System.Data.Odbc.OdbcDataAdapter> objekty, musíte použít zástupné znaky otazníku (?) k identifikaci parametry.  
+## <a name="oledb-parameter-placeholders"></a>Zástupné symboly parametr OleDb  
+ Pro <xref:System.Data.OleDb.OleDbDataAdapter> a <xref:System.Data.Odbc.OdbcDataAdapter> objekty, je nutné použít zástupné znaky otazníku (?) k identifikaci parametry.  
   
 ```vb  
 Dim selectSQL As String = _  
@@ -89,9 +89,9 @@ string updateSQL =
 string deleteSQL = "DELETE FROM Customers WHERE CustomerID = ?";  
 ```  
   
- Příkazy parametrizovaného dotazu definovat, které vstupní a výstupní parametry musí být vytvořen. Chcete-li vytvořit parametr, použijte `Parameters.Add` metoda nebo `Parameter` konstruktor a zadat název sloupce, datový typ a velikost. Pro vnitřní datové typy jako například `Integer`, není nutné zahrnovat velikost, nebo můžete zadat výchozí velikost.  
+ Příkazy parametrický dotaz definovat, která vstupní a výstupní parametry musí být vytvořeny. Chcete-li vytvořit parametr, použijte `Parameters.Add` metoda nebo `Parameter` konstruktor k určení názvu sloupce, datový typ a velikost. Pro vnitřní datové typy jako například `Integer`, není nutné zahrnout velikosti, nebo můžete zadat výchozí velikost.  
   
- Následující příklad kódu vytvoří parametry příkazu jazyka SQL a pak vyplní `DataSet`.  
+ Následující příklad kódu vytvoří parametry pro příkaz jazyka SQL a potom vyplní `DataSet`.  
   
 ## <a name="oledb-example"></a>Příklad OleDb  
   
@@ -162,7 +162,7 @@ adapter.Fill(customers, "Customers");
 ```  
   
 > [!NOTE]
->  Pokud je název parametru není zadaný pro parametr, parametr dostane přírůstkové výchozí název parametru*N* *,* počínaje "Parameter1". Doporučujeme, abyste parametr*N* zásady vytváření názvů když zadáte název parametru, protože název, který zadáte může být v konfliktu s existujícím názvem výchozí parametr v `ParameterCollection`. Pokud se zadaným názvem již existuje, je vyvolána výjimka.  
+>  Pokud není zadán název parametru pro parametr, parametr je přiřazen přírůstkové výchozí název parametru*N* *,* počínaje "Parametr1". Doporučujeme vám, že byste se vyhnout parametr*N* zásady vytváření názvů při zadání názvu parametru, protože může být název, který zadáte v konfliktu s existujícím názvem výchozí parametr v `ParameterCollection`. Pokud zadaný název již existuje, je vyvolána výjimka.  
   
 ## <a name="see-also"></a>Viz také  
  [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
@@ -170,4 +170,4 @@ adapter.Fill(customers, "Customers");
  [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
  [Úpravy dat pomocí uložených procedur](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)  
  [Mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -2,12 +2,12 @@
 title: Serverové a databázové role v systému SQL Server
 ms.date: 03/30/2017
 ms.assetid: 5482dfdb-e498-4614-8652-b174829eed13
-ms.openlocfilehash: 196ca0791f42414b9da8dff32eb8285045fd7e63
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 5fd706d886ea050eb578d5f889d55055665c3a44
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925462"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43403141"
 ---
 # <a name="server-and-database-roles-in-sql-server"></a>Serverové a databázové role v systému SQL Server
 Všechny verze SQL serveru použít zabezpečení na základě rolí, které vám umožní přiřadit oprávnění pro roli nebo skupinu uživatelů, nikoli pro jednotlivé uživatele. Pevného serveru a pevné databázové role mají pevnou sadu oprávnění, které jsou jim přiřazeny.  
@@ -27,8 +27,8 @@ Všechny verze SQL serveru použít zabezpečení na základě rolí, které vá
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Role na úrovni serveru](/sql/relational-databases/security/authentication-access/server-level-roles) a [oprávnění role pevného serveru](http://msdn.microsoft.com/library/ms175892.aspx) v Online knihách serveru SQL|Popisuje role pevného serveru a oprávnění k nim má přiřazené v systému SQL Server.|  
-|[Role na úrovni databáze](/sql/relational-databases/security/authentication-access/database-level-roles) a [oprávnění pevné databázové role](http://msdn.microsoft.com/library/ms189612.aspx) v Online knihách serveru SQL|Popisuje pevné databázové role a oprávnění k nim má přiřazené|  
+|[Role na úrovni serveru](/sql/relational-databases/security/authentication-access/server-level-roles) a [oprávnění role pevného serveru](https://msdn.microsoft.com/library/ms175892.aspx) v Online knihách serveru SQL|Popisuje role pevného serveru a oprávnění k nim má přiřazené v systému SQL Server.|  
+|[Role na úrovni databáze](/sql/relational-databases/security/authentication-access/database-level-roles) a [oprávnění pevné databázové role](https://msdn.microsoft.com/library/ms189612.aspx) v Online knihách serveru SQL|Popisuje pevné databázové role a oprávnění k nim má přiřazené|  
   
 ## <a name="database-roles-and-users"></a>Databázové role a uživatele  
  Přihlašovací jména musí být namapována na uživatelské účty v databázích za účelem práce s databázovými objekty. Uživatelé databáze je potom možné přidat do databázových rolí dědění jakékoli sady oprávnění přidružené k těmto rolím. Všechna oprávnění lze udělit.  
@@ -58,7 +58,7 @@ Všechny verze SQL serveru použít zabezpečení na základě rolí, které vá
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Řízení identit a přístupu](http://msdn.microsoft.com/library/bb510418.aspx) v Online knihách serveru SQL|Obsahuje odkazy na témata popisující objekty zabezpečení, role, přihlašovací údaje, zabezpečitelné objekty a oprávnění.|  
+|[Řízení identit a přístupu](https://msdn.microsoft.com/library/bb510418.aspx) v Online knihách serveru SQL|Obsahuje odkazy na témata popisující objekty zabezpečení, role, přihlašovací údaje, zabezpečitelné objekty a oprávnění.|  
 |[Objekty zabezpečení](/sql/relational-databases/security/authentication-access/principals-database-engine) v Online knihách serveru SQL|Popisuje objekty zabezpečení a obsahuje odkazy na témata popisující role serveru a databáze.|  
   
 ## <a name="see-also"></a>Viz také  
@@ -67,4 +67,4 @@ Všechny verze SQL serveru použít zabezpečení na základě rolí, které vá
  [Ověřování v SQL Serveru](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)  
  [Vlastnictví a oddělení uživatelských schémat na SQL Serveru](../../../../../docs/framework/data/adonet/sql/ownership-and-user-schema-separation-in-sql-server.md)  
  [Autorizace a oprávnění na SQL Serveru](../../../../../docs/framework/data/adonet/sql/authorization-and-permissions-in-sql-server.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

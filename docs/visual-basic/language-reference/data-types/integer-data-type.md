@@ -23,37 +23,37 @@ helpviewer_keywords:
 ms.assetid: a8f233b4-4be3-455c-861b-05af2fbb6c60
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1846153375b19b773fedaf056a009f28ab94a4d5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dc780cc845bfa6ef52fc9973ef3617d621167af1
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33591726"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43415982"
 ---
 # <a name="integer-data-type-visual-basic"></a>Integer – datový typ (Visual Basic)
 Obsahuje 32bitová (4bajtová) celá čísla se znaménkem v rozsahu od -2 147 483 648 do 2 147 483 647.  
   
 ## <a name="remarks"></a>Poznámky
- `Integer` Datový typ poskytuje optimální výkon procesoru 32-bit. Jiné typy celých čísel se v paměti pomaleji načítají a ukládají.  
+ `Integer` Datový typ poskytuje optimální výkon na 32bitových procesorech. Jiné typy celých čísel se v paměti pomaleji načítají a ukládají.  
   
  Výchozí hodnota `Integer` je 0.  
 
 ## <a name="literal-assignments"></a>Literál přiřazení
 
-Můžete deklarace a inicializace `Integer` proměnné jeho přiřazení decimal literál, hexadecimální literál, osmičková literál, nebo (počínaje 2017 Visual Basic) binární literál. Pokud literálu celé číslo je mimo rozsah `Integer` (tj. Pokud je menší než <xref:System.Int32.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilace.
+Můžete deklarovat a inicializovat `Integer` proměnnou ji přiřadíte desítkový literál, šestnáctkové literál, osmičkové literální, nebo (od verze 2017 jazyka Visual Basic) binární literál. Pokud celočíselný literál je mimo rozsah `Integer` (tj. Pokud je menší než <xref:System.Int32.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilace.
 
-V následujícím příkladu, celá čísla rovno 16,342, která jsou reprezentovány jako decimal, šestnáctkové, a binární literály jsou přiřazeny k `Integer` hodnoty.
+V následujícím příkladu celých čísel je rovno 16,342, které jsou reprezentovány jako desítkové, hexadecimální, a binární literály jsou přiřazeny k `Integer` hodnoty.
 
 [!code-vb[integer](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#Int)]  
 
 > [!NOTE]
-> Použijte předponu `&h` nebo `&H` k označení hexadecimální literál, předponu `&b` nebo `&B` k označení binární literál a předponu `&o` nebo `&O` k označení osmičková literál. Decimal literály mít žádná předpona.
+> Použijte předponu `&h` nebo `&H` k označení šestnáctkové literálu předpona `&b` nebo `&B` k označení binárního typu literal a předponu `&o` nebo `&O` k označení osmičkové literální. Desítkové literály mají žádná předpona.
 
-Počínaje 2017 Visual Basic, můžete také použít znak podtržítka `_`, jako oddělovač číslice za účelem zlepšení čitelnosti jako následující příklad ukazuje.
+Počínaje rokem 2017 jazyka Visual Basic, můžete použít také znak podtržítka `_`, jako oddělovač číslice za účelem zlepšení čitelnosti jako následující příklad ukazuje.
 
 [!code-vb[integer](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#IntS)]  
 
-Od verze Visual Basic 15,5, můžete také použít znak podtržítka (`_`) jako oddělovač úvodní mezi předponu a hexadecimální, binary nebo osmičková číslice. Příklad:
+Od verze 15.5 jazyka Visual Basic, můžete také použít znak podtržítka (`_`) jako počáteční oddělovač mezi prefix a šestnáctkové, binární nebo osmičkové číslice. Příklad:
 
 ```vb
 Dim number As Integer = &H_C305_F860
@@ -61,7 +61,7 @@ Dim number As Integer = &H_C305_F860
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-Číselné literály může také obsahovat `I` [znak typu](../../programming-guide\language-features\data-types/type-characters.md) k označení `Integer` datového typu, jak ukazuje následující příklad.
+Číselné literály může také zahrnovat `I` [znak](../../programming-guide\language-features\data-types/type-characters.md) k označení `Integer` datového typu, jak ukazuje následující příklad.
 
 ```vb
 Dim number = &H_035826I
@@ -69,13 +69,13 @@ Dim number = &H_035826I
 
 ## <a name="programming-tips"></a>Tipy pro programování
 
--   **Spolupráce aspekty.** Pokud jsou během propojení s součásti, které nejsou určeny pro rozhraní .NET Framework, jako je například objekty automatizace nebo COM, nezapomeňte, že `Integer` má odlišné datové šířku (16 bitů) v jiných prostředích. Argument 16bitové předáte pro tyto součásti, deklarujte ji jako `Short` místo `Integer` v váš nový kód jazyka Visual Basic.  
+-   **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, jako je například objekty automatizace nebo COM, nezapomeňte, že `Integer` má v jiných prostředích odlišnou datovou šířku (16 bitů). Pokud takové součásti předáváte 16bitový argument, deklarujte ho jako `Short` místo `Integer` v váš nový kód jazyka Visual Basic.  
   
--   **Rozšíření.** `Integer` Datový typ rozšiřuje na `Long`, `Decimal`, `Single`, nebo `Double`. To znamená, že můžete převést `Integer` na některý z těchto typů bez zjištění <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
+-   **Rozšíření.** `Integer` Datový typ rozšiřuje na `Long`, `Decimal`, `Single`, nebo `Double`. To znamená, že můžete převést `Integer` na některý z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
   
--   **Znaky typu.** Připojování znak typu literálu `I` k literál vynutí, aby `Integer` datového typu. Připojování znak typu identifikátoru `%` na všechny identifikátor vynutí jeho `Integer`.  
+-   **Znaky typu.** Přidávání znak typu literálu `I` k literálu se z něj stane `Integer` datového typu. Přidávání znak typu identifikátoru `%` k libovolnému identifikátoru se z něj stane `Integer`.  
   
--   **Typ Framework.** Typ odpovídající v rozhraní .NET Framework je <xref:System.Int32?displayProperty=nameWithType> struktura.  
+-   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Int32?displayProperty=nameWithType> struktury.  
   
 ## <a name="range"></a>Rozsah
 
@@ -95,10 +95,10 @@ k = 4.5
 k = 5.5  
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 <xref:System.Int32?displayProperty=nameWithType>   
- [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
  [Datový typ Long](../../../visual-basic/language-reference/data-types/long-data-type.md)  
  [Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  

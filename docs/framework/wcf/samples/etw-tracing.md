@@ -2,21 +2,22 @@
 title: Trasování událostí pro Windows
 ms.date: 03/30/2017
 ms.assetid: ac99a063-e2d2-40cc-b659-d23c2f783f92
-ms.openlocfilehash: 4aa836650663a2918b51d5f9df95b55f410b8ded
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3e4dd141bd5f6a9d137b2fe981b3b412ec0c81e2
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43407164"
 ---
 # <a name="etw-tracing"></a>Trasování událostí pro Windows
-Tento příklad ukazuje, jak implementovat trasování začátku do konce (E2E) pomocí události trasování událostí pro Windows (ETW) a `ETWTraceListener` je součástí této ukázky. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a zahrnuje trasování událostí pro Windows.  
+Tato ukázka předvádí, jak implementovat začátku do konce (E2E) trasování pomocí Event Tracing for Windows (ETW) a `ETWTraceListener` , který je součástí této ukázky. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a obsahuje trasování událostí pro Windows.  
   
 > [!NOTE]
->  Nastavení postupu a sestavení pokyny k této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postupu a sestavení pokyny k instalaci pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Tato ukázka se předpokládá, že jste obeznámeni s [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md).  
+ Tento příklad předpokládá, že máte zkušenosti s [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md).  
   
- Každý zdroj trasování v <xref:System.Diagnostics> trasování model může mít více modulů naslouchání trasování, které určují, kdy a jak je sledovat data. Typ naslouchací proces definuje formát, ve kterém se protokolují data trasování. Následující příklad kódu ukazuje, jak přidat naslouchací proces do konfigurace.  
+ Každý zdroj trasování v <xref:System.Diagnostics> model trasování může mít několik naslouchacích procesů trasování, které určují, kde a jak se data trasovány. Typ naslouchacího procesu definuje formát, ve které se protokolují tato data trasování. Následující příklad kódu ukazuje, jak přidat naslouchací proces konfigurace.  
   
 ```xml  
 <system.diagnostics>  
@@ -46,64 +47,64 @@ Tento příklad ukazuje, jak implementovat trasování začátku do konce (E2E) 
 </system.diagnostics>  
 ```  
   
- Před použitím této naslouchací proces, je nutné spustit relaci trasování ETW. Pomocí Logman.exe nebo Tracelog.exe lze spustit tuto relaci. Soubor SetupETW.bat je součástí této ukázky, takže můžete nastavit relaci trasování ETW souborem CleanupETW.bat pro zavření relace a dokončení souboru protokolu.  
+ Před použitím tohoto modulu pro naslouchání, musí se spustit relaci trasování ETW. Tato relace můžete spustit pomocí Logman.exe nebo Tracelog.exe. SetupETW.bat souboru je zahrnuta v této ukázce tak, že můžete nastavit relaci sledování ETW spolu se souborem CleanupETW.bat pro zavření relace a dokončení souboru protokolu.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu. Další informace o těchto nástrojích najdete v tématu [http://go.microsoft.com/fwlink/?LinkId=56580](http://go.microsoft.com/fwlink/?LinkId=56580)  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu. Další informace o těchto nástrojích najdete v tématu [https://go.microsoft.com/fwlink/?LinkId=56580](https://go.microsoft.com/fwlink/?LinkId=56580)  
   
- Při použití ETWTraceListener, trasování jsou protokolovány v souborech binární ETL. Pomocí trasování ServiceModel zapnuta, zobrazí všechny vygenerované trasování ve stejném souboru. Použití [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) pro zobrazení ETL a .svclog souborů protokolu. Prohlížeč vytvoří zobrazení o začátku do konce systému, který umožňuje trasování zprávy z zdroje do cíle a bod spotřeby.  
+ Při použití ETWTraceListener přihlášeni trasování .etl binární soubory. S ServiceModel trasování zapnuté, všechna trasování vygenerovaný objeví ve stejném souboru. Použití [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) pro zobrazení ETL a .svclog souborů protokolů. V prohlížeči vytvoří pohledu začátku do konce systému, který umožňuje trasování zprávy z jeho zdroje do cíle a bod spotřeby.  
   
- Naslouchací proces trasování ETW podporuje cyklické protokolování. Chcete-li povolit tuto funkci, přejděte na **spustit**, **spustit** a typ `cmd` a spusťte příkaz konzolu. V následujícím příkazu nahraďte `<logfilename>` parametr s názvem souboru protokolu.  
+ Naslouchací proces trasování ETW podporuje cyklické protokolování. Pokud chcete tuto funkci povolit, přejděte na **spustit**, **spustit** a typ `cmd` ke spuštění nástroje command console. V následujícím příkazu nahraďte `<logfilename>` parametr s názvem souboru protokolu.  
   
 ```  
 logman create trace Wcf -o <logfilename> -p "{411a0819-c24b-428c-83e2-26b41091702e}" -f bincirc -max 1000  
 ```  
   
- `-f` a `-max` přepínače jsou volitelné. Určí binární formát cyklické a protokolu maximální velikost 1000MB v uvedeném pořadí. `-p` Přepínač slouží k určení zprostředkovatel trasování. V našem příkladu `"{411a0819-c24b-428c-83e2-26b41091702e}"` je identifikátor GUID pro "XML ETW ukázka zprostředkovatele".  
+ `-f` a `-max` přepínače jsou volitelné. Určí cyklický binárních a maximální velikost protokolu 1000 MB v uvedeném pořadí. `-p` Přepínače se používá k určení zprostředkovatel trasování. V našem příkladu `"{411a0819-c24b-428c-83e2-26b41091702e}"` je identifikátor GUID pro "Zprostředkovateli ukázek trasování událostí pro Windows XML".  
   
- Chcete-li spustit relaci, zadejte následující příkaz.  
+ Spustit relaci, zadejte následující příkaz.  
   
 ```  
 Logman start Wcf  
 ```  
   
- Po dokončení protokolování, můžete zastavit relace pomocí následujícího příkazu.  
+ Po dokončení protokolování, můžete zastavit relaci pomocí následujícího příkazu.  
   
 ```  
 Logman stop Wcf  
 ```  
   
- Tento proces vytvoří binární cyklické protokoly, které můžete zpracovat vaše nástroje, včetně [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) nebo Tracerpt.  
+ Tento proces vygeneruje binární cyklické protokoly, které můžete zpracovat nástroj podle vlastního výběru, včetně [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) nebo Tracerpt.  
   
- Můžete také zkontrolovat [cyklické trasování](../../../../docs/framework/wcf/samples/circular-tracing.md) ukázku Další informace o naslouchací proces alternativní postup cyklické protokolování.  
+ Můžete také zkontrolovat [cyklické trasování](../../../../docs/framework/wcf/samples/circular-tracing.md) ukázky pro další informace o alternativních naslouchací proces provádět cyklické protokolování.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, kterou jste udělali [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  Ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
     > [!NOTE]
-    >  Pokud chcete používat příkazy RegisterProvider.bat, SetupETW.bat a CleanupETW.bat, musíte spustit pod účtem místního správce. Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)] nebo novější, je nutné spustit také příkazovém řádku se zvýšenými oprávněními. Chcete-li to provést, klikněte pravým tlačítkem na ikonu příkazového řádku a potom klikněte na **spustit jako správce**.  
+    >  Chcete-li použít příkazy RegisterProvider.bat, SetupETW.bat a CleanupETW.bat, musíte spustit pod účtem místního správce. Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)] nebo novější, musíte také spustit příkazový řádek se zvýšenými oprávněními. Chcete-li tak učinit, klepněte pravým tlačítkem myši na ikonu příkazového řádku a potom klikněte na **spustit jako správce**.  
   
-3.  Před spuštěním ukázky, spusťte RegisterProvider.bat na klientovi a serveru. Výsledný soubor ETWTracingSampleLog.etl nastavíte ke generování trasování, které mohou být přečteny prohlížeče trasování služeb. Tento soubor naleznete ve složce C:\logs. Pokud tato složka neexistuje, musí být vytvořen nebo jsou generovány žádné trasování. Potom spusťte SetupETW.bat na počítače klienta a serveru, které chcete zahájit relaci trasování ETW. SetupETW.bat soubor naleznete ve složce CS\Client.  
+3.  Před spuštěním ukázky, spusťte RegisterProvider.bat na klienta a serveru. Tím se nastaví výsledný soubor ETWTracingSampleLog.etl ke generování trasování, které lze číst pomocí prohlížeče trasování služeb. Tento soubor najdete ve složce C:\logs. Pokud tato složka neexistuje, je nutné vytvořit nebo jsou generovány žádné trasování. Potom spusťte SetupETW.bat klientských a serverových počítačů zahájit relaci sledování ETW. SetupETW.bat soubor najdete ve složce CS\Client.  
   
-4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-5.  Po dokončení ukázku spusťte CleanupETW.bat vytvoření souboru ETWTracingSampleLog.etl.  
+5.  Po dokončení ukázku spusťte CleanupETW.bat k dokončení vytvoření ETWTracingSampleLog.etl souboru.  
   
-6.  Otevřete soubor ETWTracingSampleLog.etl z v rámci prohlížeče trasování služeb. Zobrazí se výzva k uložení binárního souboru formátovaný jako soubor .svclog.  
+6.  Otevřete soubor ETWTracingSampleLog.etl z prohlížeče trasování služeb. Zobrazí se výzva k uložení binárního souboru formátovaný jako soubor .svclog.  
   
-7.  Otevřete nově vytvořený .svclog souboru v rámci prohlížeče trasování služeb k zobrazení trasování událostí pro Windows a ServiceModel trasování.  
+7.  Otevřete soubor nově vytvořený .svclog z prohlížeče trasování služeb k zobrazení trasování ETW a ServiceModel.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\AnalyticTrace`  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky monitorování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193959)
+ [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

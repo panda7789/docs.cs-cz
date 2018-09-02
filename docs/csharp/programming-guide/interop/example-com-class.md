@@ -5,33 +5,33 @@ helpviewer_keywords:
 - examples [C#], COM classes
 - COM, exposing Visual C# objects to
 ms.assetid: 6504dea9-ad1c-4993-a794-830fec5270af
-ms.openlocfilehash: 2dd1092d9c1f6bb7482c306339a3d7f6684940eb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f8f4a9ebaf41a0787e17685a60d3e847f2aca0c2
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33322271"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43415459"
 ---
 # <a name="example-com-class-c-programming-guide"></a>Ukázka třídy COM (Průvodce programováním v C#)
-Následuje příklad třídu, která by vystavit jako objekt COM. Po tento kód je umístěn v souboru .cs a přidat do projektu, nastavte **zaregistrovat zprostředkovatel komunikace s objekty COM** vlastnost **True**. Další informace najdete v tématu [NIB: postupy: zaregistrovat součásti zprostředkovatel komunikace s objekty COM](http://msdn.microsoft.com/library/4de7d474-56e8-4027-994d-d47ca4725c5e).  
+Následuje příklad třídy, která by vystavit jako objekt modelu COM. Poté, co tento kód byl umístěn v souboru .cs a přidány do projektu, nastavte **zaregistrovat pro interoperabilitu COM** vlastnost **True**. Další informace najdete v tématu [jak: součást zaregistrovat pro interoperabilitu COM](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w29wacsy(v=vs.100)).
   
- Vystavení objektů jazyka Visual C# do modelu COM vyžaduje deklarování třídy rozhraní, rozhraní události v případě potřeby a vlastní třídy. Členy třídy nutné postupovat podle těchto pravidel být viditelné modelu COM:  
+ Vystavení objektů jazyka Visual C# do modelu COM vyžaduje deklarace třídy rozhraní, pokud se vyžaduje rozhraní události a vlastní třídy. Členy třídy musí dodržovat tato pravidla být viditelné modelu COM:  
   
 -   Třída musí být veřejné.  
   
--   Vlastnosti, metod a události musí být veřejné.  
+-   Vlastnosti, metody a události musí být veřejné.  
   
--   Vlastnosti a metody musí být deklarován v rozhraní třídy.  
+-   Vlastnosti a metody musí být deklarována v rozhraní.  
   
--   Události musí být deklarován události rozhraní.  
+-   Události musí být deklarována v události rozhraní.  
   
- Jiné veřejné členy ve třídě, které nejsou deklarované v těchto rozhraní se nezobrazí COM, ale nebudou se viditelné pro jiné objekty rozhraní .NET Framework.  
+ Jiné veřejné členy, které nejsou deklarovány v těchto rozhraní ve třídě nesmí být viditelné modelu COM, ale budou viditelné pro ostatní objekty rozhraní .NET Framework.  
   
- Která zveřejňuje vlastnosti a metody do modelu COM, musí deklarovat je v rozhraní třídy a označit je s `DispId` atribut a jejich implementaci ve třídě. Pořadí, ve které jsou deklarované členy v rozhraní je v pořadí, použít pro COM vtable.  
+ Vystavit vlastnosti a metody rozhraní COM, musí deklarovat na třídy rozhraní a označte je pomocí `DispId` atribut a je implementovat ve třídě. Pořadí, ve kterém jsou členy deklarované v rozhraní je v tom pořadí, používá pro COM vtable.  
   
- Ke zveřejnění události z vaší třídy, musí deklarovat je v rozhraní události a označit je pomocí `DispId` atribut. Třída nesmí toto rozhraní implementovat.  
+ K vystavení události z vaší třídy, musí deklarovat v rozhraní události a označit je pomocí `DispId` atribut. Třída by neměla implementovat toto rozhraní.  
   
- Třída implementuje rozhraní třídy; ho můžete implementovat více než jedno rozhraní, ale bude první implementace rozhraní výchozí třídy. Implementace metody a vlastnosti vystaven objektům modelu COM v tomto poli. Tyto musí být označen a deklarace v rozhraní třídy se musí shodovat. Události vyvolané třídou zde také deklarujte. Tyto musí být označen a deklarace v rozhraní události se musí shodovat.  
+ Třída implementuje rozhraní třídy; To může implementovat více než jedno rozhraní, ale první implementace bude výchozí třída rozhraní. Implementace metody a vlastnosti vystavit rozhraní COM tady. Musí být označena jako veřejná a musí odpovídat deklarace třídy rozhraní. Také deklarujte události vyvolané službou třída tady. Musí být označena jako veřejná a musí odpovídat deklarace události rozhraní.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideInterop#8](../../../csharp/programming-guide/interop/codesnippet/CSharp/example-com-class_1.cs)]  

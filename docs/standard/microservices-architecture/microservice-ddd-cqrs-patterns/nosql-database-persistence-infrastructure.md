@@ -1,33 +1,33 @@
 ---
-title: Použití databáze NoSQL jako trvalost infrastruktury
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Použití databáze NoSQL jako trvalost infrastruktury
+title: Použití databází NoSQL jako infrastruktury trvalosti
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Použití databází NoSQL jako infrastruktury trvalosti
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
-ms.openlocfilehash: cf43f9914a05c2745f914a6e36fcab13fb7feffa
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: a5fce347193921305c264df34be99063920af715
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106642"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43416494"
 ---
-# <a name="using-nosql-databases-as-a-persistence-infrastructure"></a>Použití databáze NoSQL jako trvalost infrastruktury
+# <a name="using-nosql-databases-as-a-persistence-infrastructure"></a>Použití databází NoSQL jako infrastruktury trvalosti
 
-Použijete-li databáze NoSQL pro vaši infrastrukturu datové vrstvy, obvykle použijete ORM jako Entity Framework Core. Místo toho můžete použít rozhraní API poskytované modul NoSQL, jako je například Azure Cosmos DB, MongoDB, Cassandra, RavenDB, CouchDB nebo úložiště tabulek Azure.
+Použijete-li databáze NoSQL pro datovou vrstvu, infrastruktury, je obvykle velmi riskantní používat ORM jako Entity Framework Core. Místo toho použijte rozhraní API poskytuje modul NoSQL, jako je Azure Cosmos DB, MongoDB, Cassandra, RavenDB, CouchDB nebo tabulky v úložišti Azure.
 
-Při použití databáze NoSQL, zejména orientované dokumentu databázi jako Azure Cosmos DB, CouchDB nebo RavenDB, způsob návrhu modelu pomocí DDD agregace je však částečně podobná jak vám to provést základní EF namapoval identifikace agregační kořeny, tříd podřízených entit a tříd objektů hodnotu. Ale nakonec, bude mít vliv na výběr databáze při návrhu.
+Použijete-li databáze NoSQL, zvláště dokumentově orientované databázi jako službu Azure Cosmos DB, CouchDB nebo RavenDB, tak, jak při návrhu modelu pomocí agregace DDD ale částečně podobný jak to zvládnete v EF Core vztahující k identifikaci agregační kořeny podřízených tříd entit a objekt třídy hodnoty. Ale nakonec bude mít vliv výběr databáze v návrhu.
 
-Pokud používáte databázi orientované na dokument, implementaci agregace jako jeden dokument, serializované ve formátu JSON nebo jiného formátu. Použití databáze je však transparentní z domény modelu kódu hlediska. Při použití databáze NoSQL, stále používáte agregační kořenové třídy a tříd entit, ale s více flexibility než při použití EF jádra, protože trvalost není relační.
+Při použití databáze dokumentově orientované implementaci agregace jako jeden dokument, serializované ve formátu JSON nebo jiný formát. Použití databáze je však transparentní z domény modelu kódu hlediska. Při použití databáze NoSQL, stále používáte tříd entit a agregační kořenové třídy, ale s větší flexibilitou než při použití EF Core, protože není relační stálost.
 
-Rozdíl je v jak zachovat tohoto modelu. Pokud jste implementovali modelu domény podle třídy entity objektů POCO, lhostejné trvalost infrastruktury, může vypadat jako by mohla přesunout do infrastruktury, a jinou trvalost i z relační k NoSQL. Nicméně, který by neměl být vaším cílem. Stále existují omezení v různých databází předá jste zpátky, takže nebudete moci mít stejný model pro relační nebo databáze NoSQL. Změna trvalost modely nebude triviální, protože transakce a trvalost operace se příliš neliší.
+Rozdíl je v jak zachovat tohoto modelu. Pokud jste implementovali doménový model podle tříd entit POCO, zohledňovat trvalosti infrastruktury, může vypadat podobně, jako by mohla přesunout do jiné trvalosti infrastruktury, dokonce i z relační NoSQL. Nicméně, který by neměl být vaším cílem. Se vždy najde nějaká omezení v různých databázích budou nabízená oznámení vám zpět, takže není možné mít stejný model pro relační nebo NoSQL databáze. Změna modely trvalosti by se triviální, protože transakce a operace trvalého uložení bude velmi lišit.
 
-Například v databázi orientované dokumentu, je v pořádku pole agregační kořenového tak, aby měl více vlastností podřízené kolekce. Dotaz na více vlastností podřízené kolekce je awful, v relační databázi, protože návratu příkazu SJEDNOCENÍ všech SQL z EF. Má stejný model domény pro relační databáze nebo databáze NoSQL není jednoduché a vyzkoušet by neměl. Máte skutečně návrhu modelu pomocí představu o tom, jak je bude používat v každé konkrétní databázi data.
+Například v databázi dokumentově orientované je dobrá pro agregační kořenovou mít více vlastností podřízené kolekce. Dotazování více vlastností podřízené kolekce je awful, v relační databázi, protože SJEDNOCENÍ všech SQL příkazu získáte zpět ze EF. S modelem domény pro relační databáze nebo NoSQL databáze není jednoduché a by neměl vyzkoušet. Musíte opravdu svůj přístup k návrhu modelu se seznámíte s jak se bude používat v každé databázi konkrétního data.
 
-Výhody při použití databáze NoSQL je, že entity více nenormalizované, takže není nastaveno mapování tabulky. Váš model domény může být flexibilnější než při použití relační databáze.
+Výhoda po použití databází NoSQL, že entity jsou více Nenormalizovaná tak nenastavujte mapování tabulky. Doménový model může být flexibilnější než při použití relační databáze.
 
-Při návrhu modelu domény podle agregace, přesunutí NoSQL a orientované dokumentu databáze může být i jednodušší než použití relační databázi, protože agregace, které vám navrhnout jsou podobné serializovat dokumenty v databázi orientované dokumentu. Potom můžete zahrnout tyto "obalů" všechny informace, které může být nutné pro tuto agregace.
+Při návrhu doménový model podle agregace, Přesun do NoSQL a dokumentově orientované databáze může být ještě jednodušší než při použití relační databázi, protože jsou podobné agregace, navrhnout serializovat dokumenty v databázi dokumentově orientované. V těchto "kontejnery objektů a dat" lze pak zahrnout všechny informace, které může být nutné pro tuto agregaci.
 
-Například následující kód JSON je příklad implementace agregace pořadí při použití databáze orientované dokumentu. Je to podobné agregační pořadí implementovali jsme v ukázce eShopOnContainers, ale bez použití EF základní pod.
+Například následující kód JSON je ukázková implementace agregace pořadí při použití dokumentově orientované databáze. Je to podobné agregační pořadí, implementovali jsme v ukázkové aplikaci eShopOnContainers, ale bez použití EF Core pod.
 
 ```json
 {
@@ -52,13 +52,13 @@ Například následující kód JSON je příklad implementace agregace pořadí
 }
 ```
 
-## <a name="introduction-to-azure-cosmos-db-and-the-native-cosmos-db-api"></a>Úvod do Azure Cosmos DB a nativní API DB Cosmos
+## <a name="introduction-to-azure-cosmos-db-and-the-native-cosmos-db-api"></a>Úvod do služby Azure Cosmos DB a nativní rozhraní API Cosmos DB
 
-[Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) je globálně distribuované databáze služby společnosti Microsoft pro kritické aplikace. Poskytuje Azure Cosmos DB [globální distribuční klíč](https://docs.microsoft.com/en-us/azure/cosmos-db/distribute-data-globally), [elastické škálování propustnost a úložiště](https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data) po celém světě, jednociferné milisekundu latence v 99th percentilu [pět dobře definované úrovně konzistence](https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels)a zaručit vysoká dostupnost, všechny zálohovány pomocí [špičkový SLA](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Azure Cosmos DB [automaticky indexuje data](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) bez nutnosti zabývat Správa schématu a index. Je více modelu a podporuje dokumentu, klíč hodnota, grafu a sloupcová datové modely.
+[Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) je globálně distribuovaná databázová služba od Microsoftu pro klíčové aplikace. Azure Cosmos DB poskytuje [globální distribuce na klíč](https://docs.microsoft.com/en-us/azure/cosmos-db/distribute-data-globally), [elastické škálování propustnosti a úložiště](https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data) po celém světě, řádu milisekund na 99. percentilu, [pět jasně definovaných úrovní konzistence](https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels)a zaručenou vysokou dostupnost, vše zajištěné [špičkové smlouvy SLA](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Azure Cosmos DB [automaticky indexuje data](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) aniž byste se museli starat o správu schémat a indexů. Více modelů a podporuje dokument, klíč hodnota, graf a úložiště se sloupcovou strukturou datových modelů.
 
-![](./media/image19.1.png) Obrázek 9-19. Globální distribuční Azure Cosmos DB
+![](./media/image19.1.png) Obrázek 9-19. Globální distribuce služby Azure Cosmos DB
 
-Při použití a C\# modelu k implementaci agregace má být používána Cosmos DB rozhraní API služby Azure, agregace může být podobná C\# objektů POCO třídy používané s EF jádra. Rozdíl je způsobem je použít z aplikace a infrastrukturu vrstvy, jako v následujícím kódu:
+Když použijete C\# model k implementaci agregace pro rozhraní Azure Cosmos DB API, agregace může být podobně jako c\# POCO třídy používané s EF Core. Rozdíl je tak, jak používat z vrstvy aplikace a infrastruktury, jako v následujícím kódu:
 
 ```csharp
 // C# EXAMPLE OF AN ORDER AGGREGATE BEING PERSISTED WITH AZURE COSMOS DB API
@@ -113,64 +113,64 @@ Order2 newOrder = GetOrderV2Sample("IdForSalesOrder2");
 await client.CreateDocumentAsync(collectionUri, newOrder);
 ```
 
-Uvidíte, že způsob práce se svým modelem domény mohou být podobným způsobem, můžete ho použít k vrstvě modelu domény EF po infrastruktury. Když nadále používat stejné metody agregační kořenové pro zajištění konzistence, výstupních podmínek a ověření v rámci agregace.
+Uvidíte, že může být podobným způsobem, jakým se použije na úrovni vrstvy modelu domény při infrastruktury je EF tak, jak pracovat s modelu domény. K zajištění konzistence, výstupních podmínek a ověření v rámci agregace nadále používat stejné agregační kořenové metody.
 
-Ale když můžete zachovat modelu do databáze NoSQL, kód a rozhraní API změnu výrazně ve srovnání s EF základní kódu nebo jakýkoli jiný kód související s relačních databází.
+Ale když trvale uložíte modelu do databáze NoSQL, kód a výrazně porovnání EF Core kódu změnu rozhraní API nebo jakýkoli jiný kód související s relačních databází.
 
-## <a name="implementing-net-code-targeting-mongodb-and-azure-cosmos-db"></a>Implementace kód .NET cílené na MongoDB a Azure Cosmos DB
+## <a name="implementing-net-code-targeting-mongodb-and-azure-cosmos-db"></a>Implementace kódu .NET, které cílí na MongoDB a Azure Cosmos DB
 
-### <a name="using-azure-cosmos-db-from-net-containers"></a>Pomocí Azure DB Cosmos z kontejnerů rozhraní .NET
+### <a name="using-azure-cosmos-db-from-net-containers"></a>Pomocí služby Azure Cosmos DB z kontejnery .NET
 
-Azure Cosmos DB databází můžete přistupovat z kódu .NET spuštění v kontejnerech, jako je z jiné aplikace .NET. Například Locations.API a Marketing.API mikroslužeb v eShopOnContainers se implementují tak mohou spotřebovat databáze Azure Cosmos DB.
+Databáze Azure Cosmos DB můžete přistupovat z kódu .NET spuštěných v kontejnerech, stejně jako jakékoli jiné aplikace .NET. Například Locations.API a Marketing.API mikroslužeb v aplikaci eShopOnContainers jsou implementované tak spotřebují databází Azure Cosmos DB.
 
-Existuje ale omezení v Azure Cosmos DB z Docker vývoj prostředí hlediska. I když dojde místní [emulátoru DB Cosmos Azure](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator) moci spustit v místním vývojovém počítači (například počítač), jako opožděného 2017 právě podporuje Windows, Linux není. 
+Existuje ale omezení ve službě Azure Cosmos DB z Dockeru vývojové prostředí hlediska. I když dojde místní [emulátor služby Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator) možné spouštět v místním vývojovém počítači (například počítač), jako opožděné 2017 právě podporuje Windows, Linuxu ne. 
 
-Je také možné spustit tuto emulátoru na Docker, ale jenom na Windows kontejnery s, nikoli kontejnery Linux. Který je počáteční postižení pro vývojové prostředí, pokud vaše aplikace je nasazená jako kontejnery Linux od, aktuálně, Linux a Windows kontejnerů v Docker pro systém Windows nemůže nasadit ve stejnou dobu. Buď všechny kontejnery nasazení musí být pro Linux nebo Windows.  
+Je také možné spustit tuto emulátor v Dockeru, ale jen na kontejnery Windows s, nikoli kontejnery Linuxu. To je počáteční postižení pro vývojové prostředí, pokud vaše aplikace bude nasazena jako kontejnery Linux, od, aktuálně, nelze nasadit systémy Linux a kontejnery Windows na Docker pro Windows ve stejnou dobu. Buď všechny kontejnery, které nasazuje, musí být pro Linux nebo Windows.  
 
-Abyste mohli nasadit databázovými systémy jako kontejnery spolu s vlastní kontejnerů, aby se vaše prostředí pro vývoj/testování jsou vždy konzistentní je ideální a více přehledné nasazení řešení pro vývoj/testování.
+Ideální a jednodušší nasazení pro vývoj/testování řešení je moct nasadit databázovými systémy jako kontejnery spolu s vlastní kontejnery tak, aby byly vždy konzistentní vývojová a testovací prostředí.
 
-### <a name="use-mongodb-api-for-local-devtest-linuxwindows-containers-plus-azure-cosmos-db"></a>Použít rozhraní API MongoDB pro místní vývoj/testování Linux a Windows kontejnery plus Azure Cosmos DB
+### <a name="use-mongodb-api-for-local-devtest-linuxwindows-containers-plus-azure-cosmos-db"></a>Pro místní vývoj a testování systému Linux/Windows kontejnery a služby Azure Cosmos DB pomocí rozhraní MongoDB API
 
-Databáze DB cosmos podporují rozhraní API MongoDB pro rozhraní .NET a také nativní síťový protokol MongoDB. To znamená, že vaše aplikace napsané pro MongoDB pomocí existujících ovladačů, můžete nyní komunikovat s Cosmos DB a používat Cosmos DB databáze místo databáze MongoDB, jak je znázorněno v obrázek 9-20.
+Databáze cosmos DB podporovat rozhraní MongoDB API pro .NET, stejně jako nativní přenosový protokol MongoDB. To znamená, že pomocí existujících ovladačů, vaše aplikace napsané pro MongoDB můžou nyní komunikovat s Cosmos DB a pomocí databáze Cosmos DB místo databází MongoDB, jak je znázorněno v obrázek 9-20.
 
-![](./media/image19.2.png) Obrázek 9-20. Pomocí rozhraní API MongoDB a protokol pro přístup k databázi Azure Cosmos
+![](./media/image19.2.png) Obrázek 9 – 20. Přístup k Azure Cosmos DB pomocí rozhraní MongoDB API a protokol
 
-Toto je velmi praktické přístup pro ověření koncepty v prostředích Docker s kontejnery Linux, protože [image MongoDB Docker](https://hub.docker.com/r/_/mongo/) je více architektury bitovou kopii, která podporuje kontejnery Docker Linux a Docker Windows kontejnerů.
+To je velmi efektivní přístup pro testování konceptů v prostředí Dockeru s kontejnery Linuxu, protože [image Dockeru MongoDB](https://hub.docker.com/r/_/mongo/) je více architektury image, která podporuje kontejnery Linuxu Dockeru a kontejnerech Dockeru Windows.
 
-Jak je znázorněno na obrázku 9 – 21, pomocí rozhraní API MongoDB eShopOnContainers podporuje kontejnery MongoDB Linux a Windows pro místní vývojové prostředí, ale pak můžete přesunout na škálovatelné, PaaS cloudové řešení jako Azure DB Cosmos podle jednoduše [změna připojovací řetězec MongoDB tak, aby odkazoval na databázi Azure Cosmos](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account). 
+Jak je znázorněno na obrázku 9-21, pomocí rozhraní MongoDB API aplikaci eShopOnContainers podporuje kontejnery MongoDB, Linux a Windows pro místní vývojové prostředí, ale pak můžete přesunout ke škálovatelným, PaaS cloudové řešení jako Azure Cosmos DB pomocí jednoduše [změna připojovací řetězec MongoDB tak, aby odkazovala na službu Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account). 
 
-![](./media/image20-bis.png) Obrázek 9 – 21. eShopOnContainers používat MongoDB kontejnery pro vývojáře env nebo Azure Cosmos DB v provozním prostředí
+![](./media/image20-bis.png) Obrázek 9-21. pomocí kontejnerů MongoDB pro vývoj env nebo služby Azure Cosmos DB pro produkční aplikaci eShopOnContainers
 
-Provozní Azure Cosmos DB budou pracovat v cloudu Azure jako PaaS a škálovatelné služby.
+Výrobní službu Azure Cosmos DB by běžet v cloudu Azure jako a škálovatelná služba PaaS.
 
-Vlastní kontejnerů .NET Core lze spustit na hostiteli Docker místní vývoj (který je používán Docker pro Windows v počítači Windows 10) nebo nasadit do provozního prostředí, jako je Kubernetes v Azure AKS nebo Azure Service Fabric. V tomto prostředí druhý by nasadit jenom vlastní kontejnery .NET Core, ale není kontejneru MongoDB vzhledem k tomu, že budete používat databázi Cosmos Azure v cloudu pro zpracování dat v produkčním prostředí.
+Své vlastní kontejnery .NET Core můžete spustit na místním vývojovém hostitele Docker, (, který je používán Docker pro Windows v počítači s Windows 10) nebo nasazení do produkčního prostředí, jako je Kubernetes v Azure AKS nebo Azure Service Fabric. V tomto druhém prostředí by nasadit jenom vlastní kontejnery .NET Core, ale ne kontejner MongoDB vzhledem k tomu, že budete používat Azure Cosmos DB v cloudu pro zpracování dat v produkčním prostředí.
 
-Vymazat výhodou používání rozhraní API MongoDB je, že vaše řešení by mohl spustit v oba motory databázi MongoDB nebo Cosmos databáze Azure, takže migrace do různých prostředí by mělo být snadné. V některých případech je však smysl pomocí nativních rozhraní API (který je nativní API DB Cosmos) chcete naplno využít možnosti konkrétní databázového stroje.
+Vymazat výhodou pomocí rozhraní MongoDB API je, že vaše řešení může běžet v obou databázových strojů, MongoDB nebo Azure Cosmos DB, migrace do různých prostředí by tak měly být snadné. Někdy je však vhodné používat nativní rozhraní API (který je nativní rozhraní API Cosmos DB) Pokud chcete naplno využít možnosti konkrétní databázového stroje.
 
-Další porovnání mezi jednoduše pomocí MongoDB versus Cosmos DB v cloudu najdete v tématu [výhody používání Azure Cosmos DB na této stránce](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction). 
+Další porovnání mezi jednoduše pomocí databáze MongoDB a Cosmos DB v cloudu najdete v tématu [výhody používání služby Azure Cosmos DB na této stránce](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction). 
 
 
-### <a name="analyze-your-approach-for-production-applications-mongodb-api-vs-cosmos-db-api"></a>Analýza budete přistupovat (aplikacích v produkčním prostředí): rozhraní API MongoDB vs. Rozhraní API cosmos DB
+### <a name="analyze-your-approach-for-production-applications-mongodb-api-vs-cosmos-db-api"></a>Analyzovat svůj přístup pro aplikace v produkčním prostředí: rozhraní MongoDB API služby vs. Rozhraní API služby cosmos DB
 
-V eShopOnContainers používáme rozhraní API MongoDB, protože naše priority je zásadně tak, aby měl konzistentní vývoj/testování prostředí pomocí databáze NoSQL, která může spolupracovat taky s nástrojem Azure Cosmos DB.
+V aplikaci eShopOnContainers používáme rozhraní MongoDB API, protože naší prioritou je v podstatě mít konzistentní vývojového a testovacího prostředí používat databázi NoSQL, která může spolupracovat také se službami Azure Cosmos DB.
 
-Ale pokud jste v úmyslu použít pro přístup k databázi Azure Cosmos v Azure pro výrobní aplikace MongoDB API, byste měli provést analýzu rozdíly v možnosti a výkon při použití MongoDB rozhraní API pro přístup k databázím Azure Cosmos DB ve srovnání s pomocí nativního Rozhraní API Azure Cosmos DB. Pokud je to podobné můžete použít MongoDB API a získat výhody podporuje dva stroje databáze NoSQL ve stejnou dobu. 
+Nicméně pokud jste v úmyslu použít rozhraní MongoDB API pro přístup k Azure Cosmos DB v Azure pro aplikace v produkčním prostředí, je vhodné analyzovat, rozdíly v možnosti a výkon při přístupu k ve srovnání s použitím nativního databází Azure Cosmos DB pomocí rozhraní MongoDB API Rozhraní API služby Azure Cosmos DB. Pokud je to podobné použijete rozhraní MongoDB API služby a budete mít k dispozici podpora ve stejnou dobu dvěma motory databáze NoSQL. 
 
-Můžete také použít MongoDB clustery jako produkční databázi v cloudu Azure, s [MongoDB Azure Service](https://www.mongodb.com/scale/mongodb-azure-service). Je to ale není PaaS služby poskytované společností Microsoft. V takovém případě je Azure hostitelem právě toto řešení pocházejících z MongoDB.
+Můžete také použít clustery MongoDB jako provozní databáze v cloudu Azure, s [MongoDB služby Azure](https://www.mongodb.com/scale/mongodb-azure-service). Ale to není služba PaaS poskytnutých microsoftem. V takovém případě je právě hostování Azure toto řešení z MongoDB.
 
-To je v zásadě platí, pouze upozornění s informacemi o tom, nepoužívejte vždy MongoDB rozhraní API pro Azure Cosmos DB, podle kroků v eShopOnContainers, protože je vhodné volbou pro kontejnery Linux. Rozhodnutí by měla být na základě potřeb a testy, které musíte udělat pro produkční aplikace.  
+V podstatě je to pouze upozornění s informacemi o tom, že byste neměli vždy používat rozhraní MongoDB API službou Azure Cosmos DB, jako jsme to udělali v aplikaci eShopOnContainers protože je vhodné volbou pro kontejnery Linuxu. Rozhodnutí by měla být podle potřeb a testy, které musíte udělat pro aplikace v produkčním prostředí.  
 
-### <a name="the-code-using-mongodb-api-in-net-core-applications"></a>Kód: použití rozhraní API MongoDB v aplikacích .NET Core
+### <a name="the-code-using-mongodb-api-in-net-core-applications"></a>Kód: pomocí rozhraní MongoDB API v aplikacích .NET Core
 
-MongoDB rozhraní API pro .NET je založená na balíčky NuGet, které je nutné přidat do vašich projektů, jako je Locations.API zobrazí obrázek 9 – 22.
+Rozhraní MongoDB API pro .NET je založená na balíčky NuGet, které je třeba přidat do vašich projektů, jako je Locations.API zobrazí obrázek 9 – 22.
 
-![](./media/image21-bis.png) Obrázek 9 22. Balíčky NuGet MongoDB rozhraní API odkazů v projektu .NET Core
+![](./media/image21-bis.png) Obrázek 9 – 22. Balíčky NuGet rozhraní API MongoDB odkazů v projektu .NET Core
 
-Umožňuje prozkoumat kód v následujících částech.
+Pojďme prozkoumat kód v následujících částech.
 
-#### <a name="a-model-used-by-mongodb-api"></a>Model používá rozhraní API MongoDB
+#### <a name="a-model-used-by-mongodb-api"></a>Model používaný v rozhraní MongoDB API
 
-Nejdřív musíte definovat model, který bude obsahovat dat pocházejících z databáze v paměti vaší aplikace. Tady je příklad modelu v eShopOnContainers použito pro umístění.
+Nejprve budete muset definovat model, který bude obsahovat data z databáze v paměti aplikace. Tady je příklad modelu v aplikaci eShopOnContainers použito pro umístění.
 
 ```csharp
 using MongoDB.Bson;
@@ -216,13 +216,13 @@ public class Locations
 }
 ```
 
-Uvidíte, že se několik atributů a typy pocházejících z balíčky MongoDB NuGet.
+Uvidíte, že existuje několik atributů a typy pocházející z balíčků MongoDB NuGet.
 
-Databáze NoSQL jsou obvykle velmi dobře hodí pro práci s nerelačními daty hierarchické. V tomto příkladu používáme expecially typy MongoDB vytvořené pro zeměpisných míst, jako je `GeoJson2DGeographicCoordinates`.
+Databáze NoSQL jsou obvykle velmi dobře hodí pro práci s nerelačními hierarchická data. V tomto příkladu se používá hlavně vytvořené pro geografické umístění, jako jsou typy MongoDB `GeoJson2DGeographicCoordinates`.
 
-#### <a name="retrieve-the-database-and-the-collection"></a>Načtení databáze a kolekce
+#### <a name="retrieve-the-database-and-the-collection"></a>Načte se databáze a kolekce
 
-V eShopOnContainers jsme vytvořili vlastní databázi kontextu, kde implementaci kód pro načtení databáze a MongoCollections, jako v následujícím kódu.
+V aplikaci eShopOnContainers vytvořili jsme kontext vlastní databáze, kde můžeme implementovat kód k načtení databáze a MongoCollections, stejně jako v následujícím kódu.
 
 ```csharp
 public class LocationsContext
@@ -248,7 +248,7 @@ public class LocationsContext
 
 #### <a name="retrieve-the-data"></a>Načtení dat
 
-V kódu jazyka C#, jako řadiče webového rozhraní API nebo vlastní implementace úložiště můžete napsat podobný kód pro následující při dotazování prostřednictvím rozhraní API MongoDB. Všimněte si, že `_context` je objekt instancí předchozího `LocationsContext` třídy.
+V kódu jazyka C#, stejně jako vlastní implementace úložiště, nebo kontrolerů rozhraní Web API můžete napsat kód podobná následující při dotazování pomocí rozhraní MongoDB API. Všimněte si, že `_context` je objekt instancí předchozího `LocationsContext` třídy.
 
 ```csharp
 public async Task<Locations> GetAsync(int locationId)
@@ -260,9 +260,9 @@ public async Task<Locations> GetAsync(int locationId)
 }
 ```
 
-#### <a name="use-an-env-var-in-the-docker-composeoverrideyml-file-for-the-mongodb-connection-string"></a>Použít env-var v souboru docker compose.override.yml pro MongoDB připojovací řetězec
+#### <a name="use-an-env-var-in-the-docker-composeoverrideyml-file-for-the-mongodb-connection-string"></a>Použít env-var v souboru docker-compose.override.yml připojovacího řetězce MongoDB
 
-Při vytváření objektu MongoClient, je nutné základní parametr, který je přesně `ConnectionString` parametr odkazující na správné databázi. V případě eShopOnContainers může bod připojovací řetězec místní kontejner MongoDB Docker nebo k databázi Azure Cosmos DB "výroba".  Tento připojovací řetězec pochází z proměnné definované v `docker-compose.override.yml` soubory používané při nasazení s docker-compose nebo Visual Studio, jako v následujícím kódu yml.
+Při vytváření objektu položky MongoClient, musí základní parametr, což je přesně `ConnectionString` parametr odkazuje na správnou databázi. V případě aplikaci eShopOnContainers připojovací řetězec může odkazovat na místní kontejner Dockeru MongoDB nebo k databázi Azure Cosmos DB "produkční".  Tento připojovací řetězec pochází z proměnné prostředí definované v `docker-compose.override.yml` soubory použité při nasazování s docker-compose nebo Visual Studio, stejně jako v následujícím kódu yml.
 
 ```yml
 # docker-compose.override.yml
@@ -276,9 +276,9 @@ services:
 
 ```
 
-`ConnectionString` – Proměnná prostředí je vyřešit tímto způsobem: Pokud `ESHOP_AZURE_COSMOSDB` – globální proměnná je definována v `.env` souboru připojovacím řetězcem Azure Cosmos DB, použije ho pro přístup k databázi Azure Cosmos DB v cloudu. 
+`ConnectionString` Proměnnou prostředí je vyřešit tímto způsobem: Pokud `ESHOP_AZURE_COSMOSDB` globální proměnná je definována v `.env` soubor s připojovacím řetězcem služby Azure Cosmos DB, použije ho pro přístup k databázi Azure Cosmos DB v cloudu. 
 
-Následující kód ukazuje `.env` soubor s proměnnou globální prostředí Azure Cosmos DB připojovacího řetězce, jak jsou implementované ve eShopOnContainers:
+Následující kód ukazuje `.env` souborů pomocí služby Azure Cosmos DB připojovací řetězec globální proměnnou prostředí, jak je implementován v aplikaci eShopOnContainers:
 
 ```yml
 # .env file, in eShopOnContainers root folder
@@ -295,37 +295,37 @@ ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP=<YourDockerHostIP>
 #ESHOP_AZURE_SERVICE_BUS=<YourAzureServiceBusInfo>
 ```
 
-Měli zrušte komentář u ESHOP_AZURE_COSMOSDB řádku a aktualizace se službou Azure Cosmos DB připojovací řetězec získali z portálu Azure jako vysvětlené v [připojit MongoDB aplikace pro Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account).
+By měl Odkomentujte řádek ESHOP_AZURE_COSMOSDB a aktualizace je vaším připojovacím řetězcem služby Azure Cosmos DB, který jste získali z portálu Azure jako podrobně [připojení aplikace MongoDB ke službě Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account).
 
-Pokud `ESHOP_AZURE_COSMOSDB` – globální proměnná je prázdná, což znamená, že je odhlašování komentář v `.env` souboru kontejneru se použije výchozí MongoDB připojovací řetězec odkazující na místní MongoDB kontejneru nasazené v eShopOnContainers, která se nazývá `nosql.data`, jak je znázorněno v následujícím kódu .yml. 
+Pokud `ESHOP_AZURE_COSMOSDB` globální proměnné je prázdný, což znamená, že je opatřený komentáři out v `.env` soubor kontejneru se použije výchozí připojovací řetězec MongoDB odkazující na místní kontejner MongoDB nasazené v aplikaci eShopOnContainers, který se nazývá `nosql.data`, jak je znázorněno v následujícím kódu .yml. 
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Data dokumentu pro databáze NoSQL modelování**
+-   **Modelování dat dokumentů databází NoSQL**
     [*https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data*](https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data)
 
--   **Vaughn Vernon. Ideální řízené domény návrhu agregace úložišti?**
+-   **Vaughn Vernon. Ideální řízeného doménou návrhu agregace Store?**
     [*https://vaughnvernon.co/?p=942*](https://vaughnvernon.co/?p=942)
 
--   **Úvod do Azure Cosmos DB: rozhraní API pro MongoDB** 
+-   **Úvod do služby Azure Cosmos DB: rozhraní API pro MongoDB** 
     [*https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction)
 
--   **Azure Cosmos DB: Vytvoření webové aplikace MongoDB API pomocí rozhraní .NET a portálu Azure** 
+-   **Azure Cosmos DB: Sestavení webové aplikace MongoDB API pomocí .NET a webu Azure portal** 
     [*https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet *](https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet )
 
--   **Použití emulátoru DB Cosmos Azure pro místní vývoj a testování** 
+-   **Pro místní vývoj a testování používat emulátor služby Azure Cosmos DB** 
     [*https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator*](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator)
 
--   **Připojení aplikace MongoDB pro Azure Cosmos DB** 
+-   **Připojení aplikace MongoDB ke službě Azure Cosmos DB** 
     [*https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account*](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account)
 
--   **Obrázek Cosmos DB emulátoru Docker (kontejneru systému Windows)** 
+-   **Image Dockeru emulátor Cosmos DB (kontejner Windows)** 
     [*https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/*](https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/)
 
--   **Image MongoDB Docker (Linux a kontejneru systému Windows)** 
+-   **Image Dockeru MongoDB (Linux a Windows Container)** 
     [*https://hub.docker.com/r/_/mongo/*](https://hub.docker.com/r/_/mongo/)
 
--   **Pomocí Azure DB Cosmos MongoChef (Studio 3T): rozhraní API pro MongoDB účet** 
+-   **Použití MongoChef (Studio 3T) pomocí služby Azure Cosmos DB: rozhraní API pro účet MongoDB** 
     [*https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-mongochef*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-mongochef)
 
 

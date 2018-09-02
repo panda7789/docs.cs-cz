@@ -10,18 +10,18 @@ helpviewer_keywords:
 - graphics [WPF], grouping Transform objects
 - TransformGroup [WPF]
 ms.assetid: 98cd1921-12bc-4bf5-8193-529228fb7402
-ms.openlocfilehash: 6d6c87443b26663da20b94835f1fd6c1fb926ae4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0700a7ae3f18f745b0d479ace3acbf2d7fbd9722
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33560530"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43402961"
 ---
 # <a name="how-to-apply-multiple-transforms-to-an-object"></a>Postupy: Použití několika transformací na objekt
-Tento příklad ukazuje, jak používat <xref:System.Windows.Media.TransformGroup> do skupiny dvou nebo více <xref:System.Windows.Media.Transform> objektů do jedné složené <xref:System.Windows.Media.Transform>.  
+Tento příklad ukazuje způsob použití <xref:System.Windows.Media.TransformGroup> do skupiny dva nebo více <xref:System.Windows.Media.Transform> objekty do jednoho složeného <xref:System.Windows.Media.Transform>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.Windows.Media.TransformGroup> pro použití <xref:System.Windows.Media.ScaleTransform> a <xref:System.Windows.Media.RotateTransform> k <xref:System.Windows.Controls.Button>.  
+ Následující příklad používá <xref:System.Windows.Media.TransformGroup> použít <xref:System.Windows.Media.ScaleTransform> a <xref:System.Windows.Media.RotateTransform> k <xref:System.Windows.Controls.Button>.  
   
  [!code-xaml[Transforms_snip#MultipleTransformExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/MultipleTransformExample.xaml#multipletransformexamplewholepage)]  
   
@@ -32,4 +32,4 @@ Tento příklad ukazuje, jak používat <xref:System.Windows.Media.TransformGrou
  <xref:System.Windows.UIElement.RenderTransform%2A>  
  <xref:System.Windows.Media.TransformGroup>  
  [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)  
- [Ukázka 2-D transformací](http://go.microsoft.com/fwlink/?LinkID=158252)
+ [Ukázka 2D transformace](https://go.microsoft.com/fwlink/?LinkID=158252)

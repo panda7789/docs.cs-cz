@@ -7,96 +7,97 @@ helpviewer_keywords:
 ms.assetid: f478c80d-792d-4e7a-96bd-a2ff0b6f65f9
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 6aff25547f02458d894de7235ecfb2f704d8664a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f5f991296aa00bcc49c6672113fd1c25afac3c53
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43402864"
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
-Windows Communication Foundation (WCF) je SOAP na základě zpráv distribuované programovací platforma a zabezpečení zpráv mezi klienty a služby je důležité chránit data. WCF poskytuje platformu univerzální a vzájemná spolupráce pro výměnu zabezpečených zpráv na základě existující infrastruktura zabezpečení a standardy rozpoznaný zabezpečení protokolu SOAP zprávy.  
+Windows Communication Foundation (WCF) je protokol SOAP založenou na zprávách programovací platforma pro distribuované a zabezpečení zpráv mezi klienty a službami je nezbytné pro ochranu dat. WCF poskytuje všestranné a interoperabilní platformu pro výměnu zabezpečených zpráv na základě existující infrastruktura zabezpečení a standardům hlediska zabezpečení pro zprávy protokolu SOAP.  
   
 > [!NOTE]
->  Komplexní pokyny k zabezpečení WCF, najdete v části [doprovodné materiály zabezpečení WCF](http://go.microsoft.com/fwlink/?LinkID=158912).  
+>  Komplexní pokyny k zabezpečení WCF najdete v části [doprovodné materiály zabezpečení WCF](https://go.microsoft.com/fwlink/?LinkID=158912).  
   
- Koncepty používá WCF, které znáte, pokud jste vytvořili zabezpečené, distribuovaných aplikací pomocí existujících technologií, jako je například HTTPS, Windows integrované zabezpečení, nebo uživatelská jména a hesla k ověřování uživatelů. WCF pouze se integruje s existující infrastruktury zabezpečení, ale taky ji rozšiřuje distribuované zabezpečení nad rámec domény pouze pro systém Windows pomocí zabezpečených zpráv protokolu SOAP. Zvažte implementaci existující mechanismy zabezpečení se hlavní výhodou použití protokolu SOAP jako protokol kromě existující protokoly WCF. Přihlašovací údaje, které identifikují klienta nebo služby, jako je uživatelské jméno a heslo nebo certifikáty X.509, například mít umožňuje vzájemnou spolupráci profily založené na XML protokolu SOAP. Pomocí těchto profilů, zprávy se vyměňují bezpečně využitím open specifikace jako XML – digitální podpisy a šifrování XML. Seznam specifikací najdete v tématu [webové služby protokoly podporované vazbami vzájemné spolupráce System-Provided](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md).  
+ Koncepty používá WCF, které jsou známé, pokud jste vytvořili zabezpečené distribuované aplikace se stávajícími technologiemi, jako je například HTTPS, Windows integrované zabezpečení, nebo uživatelská jména a hesla k ověřování uživatelů. WCF nejen integruje do stávající infrastruktury zabezpečení, ale také rozšiřuje distribuovanou zabezpečení nad rámec domény jen pro Windows pomocí zabezpečených zpráv SOAP. Zvažte implementaci stávající mechanismy zabezpečení se hlavní výhodou použití protokolu SOAP jako protokol kromě existující protokoly WCF. Přihlašovací údaje, které identifikují klienta nebo služby, jako je uživatelské jméno a heslo nebo certifikáty X.509, například mít interoperabilní profily založené na XML protokolu SOAP. Pomocí těchto profilů, zprávy se vyměňují bezpečně s využitím open specifikace jako XML digitálních podpisů a šifrování XML. Seznam specifikací najdete v tématu [webové služby protokoly podporované vazbami Interoperability System-Provided](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md).  
   
- Jiné paralelní je modelu COM (Component Object) na platformě Windows, která umožňuje zabezpečený, distribuované aplikace. COM má mechanismus komplexní zabezpečení, které mohou být předávány kontext zabezpečení mezi součástmi; Tento mechanismus vynucuje integrity, šifrování a ověřování. COM ale neumožňuje nezávislé na platformě zabezpečené zasílání zpráv jako WCF nemá. Pomocí WCF, můžete vytvořit služeb a klientů, které jsou rozmístěny z domén systému Windows přes Internet. Vzájemná spolupráce zprávy služby WCF je nezbytné pro vytvoření dynamicky řízenými podnikem služby, které vám pomůžou jistotu, že v okně zabezpečení vašich informací.  
+ Jiné paralelní je modelu COM (Component Object) na platformě Windows, který umožňuje zabezpečené distribuované aplikace. COM má komplexního zabezpečení mechanismus, kterým mohou být předávány kontext zabezpečení mezi součástmi; Tento mechanismus vynucuje integrity, šifrování a ověřování. COM ale neumožňuje víc platforem, zabezpečené, zasílání zpráv jako WCF. Pomocí WCF, můžete vytvořit služeb a klientů, které jsou rozmístěny v doménách Windows přes Internet. Interoperabilní zprávy WCF jsou zásadní pro sestavování dynamických, řízenými podnikem služby, které vám pomůžou jistotu, že v zabezpečení vašich informací.  
   
-## <a name="windows-communication-foundation-security-benefits"></a>Výhody zabezpečení aplikace Windows Communication Foundation  
- WCF je Distribuovaný programovací platforma založená na protokolu SOAP zprávy. Pomocí WCF, můžete vytvořit aplikace této funkce jako služby a služby klientů, vytváření a zpracování zpráv ze neomezený počet jiných služeb a klientů. V takové distribuované aplikace můžete zprávy toku z jednoho uzlu do druhého, přes brány firewall na Internetu a prostřednictvím mnoha zprostředkovatelů protokolu SOAP. To představuje celou řadu bezpečnostních hrozeb zprávy. Následující příklady ilustrují některé běžné hrozeb, které zabezpečení WCF může pomoci zmírnit při výměně zpráv mezi entitami:  
+## <a name="windows-communication-foundation-security-benefits"></a>Výhodné kvůli zabezpečení Windows Communication Foundation  
+ WCF je Distribuovaný programovací platforma založená na protokolu SOAP zprávy. Pomocí technologie WCF, můžete vytvořit aplikace, že fungují jako služby a služby klientů, vytvoření a zpracování zpráv ze neomezený počet dalších služeb a klientů. V takových distribuovanou aplikaci zprávy čárách uzly, prostřednictvím brány firewall na Internetu a mnoho zprostředkovatelů SOAP. To přináší širokou škálu zpráva bezpečnostní hrozby. Následující příklady znázorňují některé běžné hrozby, které pomůžou zmírnit při výměně zpráv mezi entitami v zabezpečení WCF:  
   
--   Sledování síťových přenosů získat citlivé informace. Například v případě pomocí online bankovnictví klient požádá o převod prostředků z jednoho účtu na jiný. Uživatel se zlými úmysly zachycuje zprávy a číslo účtu a heslo, později provádí převod prostředků ze ohrožení bezpečnosti účtu.  
+-   Sledování síťových přenosů získat citlivé informace. Například ve scénáři online bankovnictví, klient požádá o převod prostředků z jednoho účtu do druhého. Uživatel se zlými úmysly zachycuje zpráva a máte číslo účtu a heslo, později provede převod prostředků z ohrožení bezpečnosti účtu.  
   
--   Neautorizovaných serverů entity, který funguje jako služby, bez vědomí klienta. Uživatel se zlými úmysly (podvodný) v tomto scénáři funguje jako služba online a zachytí zprávy z klienta získat citlivé informace. Potom podvodný používá odcizené data převádět prostředky z ohrožení bezpečnosti účtu. Tento útok je také známá *útoky phishing*.  
+-   Neautorizovaných serverů entity, který funguje jako služby, bez sledování serverů klienta. V tomto scénáři uživatel se zlými úmysly (podvodný) funguje jako služba online a zachytí zpráv od klienta k získání citlivé informace. Potom podvodný používá odcizeného data převádět prostředky z ohrožení bezpečnosti účtu. Tento útok je rovněž známé *útoku*.  
   
--   Změnou zprávy a pokuste se získat jiné výsledky než volajícím určené. Například změna číslo účtu, do které se provádí záloha umožňuje fondů přejít na podvodný účtu.  
+-   Změna zpráv získat jiné výsledky než modul volající určené. Například změna číslo účtu, ke kterému vklad provedení umožňuje fondů přejdete na podvodného účtu.  
   
--   Opětovná přehrání hackerům, ve kterých se hacker nepříjemnosti replays stejné nákupní objednávka. Například v online knihkupectví přijímá stovky objednávek a odesílá webu knihy zákazníkovi, který nebyl řazení je.  
+-   Riziko kyberzločinci, ve kterých se hacker nepříjemný přehrává stejné nákupní objednávky. Například v online knihkupectví přijímá stovky objednávek a odesílá knih pro zákazníky, kteří ještě seřadili.  
   
--   Neschopnost služby ověření klienta. Službu nelze v tomto případě zajistil, provést příslušné osoby transakce.  
+-   Nemožnost služby ověření klienta. V tomto případě služba nelze zajistit, že příslušné osoby provádět transakce.  
   
- Zabezpečení přenosu v souhrnu, poskytuje následující:  
+ Stručně řečeno přenos security poskytuje následující:  
   
--   Ověřování služby koncového bodu (respondent).  
+-   Služba ověřování koncových bodů (respondent).  
   
 -   Ověření objektu zabezpečení (iniciátor) klienta.  
   
--   Zpráva integrity.  
+-   Integrity zprávy.  
   
 -   Důvěrnost zpráv.  
   
 -   Zjišťování opakování.  
   
-### <a name="integration-with-existing-security-infrastructures"></a>Integrace se stávající infrastruktury zabezpečení  
- Nasazení webové služby mají často, existující řešení zabezpečení na místě, například Secure Sockets Layer (SSL) nebo protokol Kerberos. Některé využít výhod infrastruktury zabezpečení, která již byla nasazena, jako je například doménách systému Windows pomocí služby Active Directory. Často je potřeba integrovat tyto existujících technologií při vyhodnocování a přijetí ty, které jsou novější.  
+### <a name="integration-with-existing-security-infrastructures"></a>Integrovat do stávajících infrastruktur zabezpečení  
+ Nasazení webové služby mají často, stávající řešení zabezpečení v místě, například vrstvy SSL (Secure Sockets) nebo protokolu Kerberos. Některé využít výhod zabezpečení infrastruktury, která již byla nasazena, jako je například domén Windows pomocí služby Active Directory. Často je potřeba integrovat se stávajícími technologiemi, tyto při testování a přijímání novější značky.  
   
- Zabezpečení WCF se integruje s existující modely zabezpečení přenosu a můžete využít stávající infrastrukturu pro novější modely zabezpečení přenosu založené na protokolu SOAP zprávy zabezpečení.  
+ Zabezpečení WCF integruje do stávající modely zabezpečení přenosu a využít stávající infrastrukturu pro novější modely zabezpečení přenosu založené na protokolu SOAP zprávy zabezpečení.  
   
-### <a name="integration-with-existing-authentication-models"></a>Integrace s existující modely ověřování  
- Důležitou součástí kteréhokoli modelu zabezpečení komunikace je schopnost identifikovat a ověřovat entity v komunikaci. Tyto entity v komunikaci používají "digitální identity", nebo přihlašovací údaje k ověření pravosti s komunikuje partnerské uzly. Jako vyvinuly distribuované komunikace platformy, je implementovaná různé ověřování přihlašovacích údajů a zabezpečení modelů. Například na Internetu, je běžné použití uživatelské jméno a heslo k identifikaci uživatelů. V intranetu se stává stále běžné použití řadiče domény pomocí protokolu Kerberos pro zálohování uživatele a ověřování služby. V některých scénářích například mezi dvěma obchodními partnery, lze použít certifikáty pro vzájemné ověření partnery.  
+### <a name="integration-with-existing-authentication-models"></a>Integrace se stávajícími modely ověřování  
+ Důležitou součástí jakékoli komunikační model zabezpečení je schopnost identifikovat a ověřovat entity v komunikaci. Tyto entity v komunikaci pomocí "digitálních identit" nebo přihlašovací údaje, sami ověření pomocí komunikující partnerských uzlů. Jak vyvinula platformy distribuovaných komunikace, byly implementovány různé ověřování přihlašovacích údajů a zabezpečení modely. Například v síti Internet, je běžné použití uživatelské jméno a heslo k identifikaci uživatelů. V síti intranet je stále běžné použití řadiče domény pomocí protokolu Kerberos pro zálohování uživatele a ověření služby. V některých scénářích jako například mezi dvěma obchodními partnery, lze použít certifikáty pro vzájemné ověření partnerů.  
   
- V celém světě webových služeb, kde mohou být vystaveny stejnou službu k interní podnikové zákazníky také tak, aby externí partnery nebo Internet zákazníků, z toho důvodu je důležité, aby poskytovaly infrastruktury pro integraci se tyto existující zabezpečení ověřování modelů. Zabezpečení WCF podporuje celou řadu typů přihlašovacích údajů (ověřování modelů), včetně:  
+ Ve světě velkých webových služeb, kde ve stejné službě mohou být vystaveny pro zákazníky internetové nebo interní firemní zákazníky i jako externí partnery, je proto důležité, že poskytují infrastrukturu pro integraci s těmito existující zabezpečení modely ověřování. Zabezpečení WCF podporuje širokou škálu typů přihlašovacích údajů (ověřování modelů), včetně:  
   
--   Anonymní volající.  
+-   Anonymní volajícího.  
   
--   Pověření klienta název uživatele.  
+-   Pověření klienta uživatelského jména.  
   
--   Certifikát pověření klienta.  
+-   Certifikát přihlašovacích údajů klienta.  
   
--   Windows (protokol Kerberos a NT LanMan [NTLM]).  
+-   Windows (protokol Kerberos a LanMan NT [NTLM]).  
   
 ### <a name="standards-and-interoperability"></a>Standardy a vzájemná funkční spolupráce  
- Ve světě s velké existující nasazení je taková situace vzácná homogenity. Distribuované computing nebo komunikace platformy musí spolupracovat s technologie, které nabízejí různých výrobců. Podobně zabezpečení musí být taky umožňuje vzájemnou spolupráci.  
+ Ve světě s velké stávající nasazení homogenity není obvyklé. Distribuované výpočetní/komunikace platformy musí spolupracovat s technologiemi, které nabízejí různých výrobců. Obdobně zabezpečení musí být také interoperabilní.  
   
- Chcete-li systémy umožňuje vzájemnou spolupráci zabezpečení, společnosti v odvětví webové služby vytvořili celou řadu standardů. Konkrétně týkající se zabezpečení, byly navrženy několik upozorňují na důležité standardy: WS-zabezpečení: zabezpečení zpráv protokolu SOAP (subjektem standardy OASIS a dříve označované jako WS-zabezpečení), WS-Trust, WS-SecureConversation a WS-SecurityPolicy.  
+ Pokud chcete povolit interoperabilní zabezpečení systémů, jste vytvořili společností v oboru webové služby active celou řadu norem. Konkrétně týkající se zabezpečení, byla navržena několik významných standardy: specifikace WS-Security: zabezpečení zpráv SOAP (subjektem OASIS standardy a dříve označované jako WS-Security), WS-Trust, WS-SecureConversation a WS-SecurityPolicy.  
   
- WCF podporuje širokou škálu scénářů interoperability. <xref:System.ServiceModel.BasicHttpBinding> Třída zaměřuje na základní profil zabezpečení (BSP) a <xref:System.ServiceModel.WSHttpBinding> třída je zaměřený na nejnovější standardy zabezpečení, jako je WS-zabezpečení 1.1 a WS-SecureConversation. Zabezpečení WCF podle dodržování těchto standardů, můžete zajistit vzájemnou funkční spolupráci a integraci s webovými službami, které jsou hostované na operačních systémů a jinými platformami než Microsoft Windows.  
+ WCF podporuje širokou škálu scénářů vzájemná funkční spolupráce. <xref:System.ServiceModel.BasicHttpBinding> Třídy, zaměřuje na základní profil zabezpečení (BSP) a <xref:System.ServiceModel.WSHttpBinding> třídy je zaměřený na nejnovějších standardů zabezpečení, jako je WS-Security 1.1 a WS-SecureConversation. Zabezpečení WCF díky dodržování těchto standardů, můžete spolupracovat a integraci s webovými službami, které jsou hostované v operačních systémech a platformách než Windows Microsoft.  
   
-## <a name="wcf-security-functional-areas"></a>Funkčním oblastem zabezpečení WCF  
- Zabezpečení WCF je rozdělené do tří funkčním oblastem: přenos zabezpečení, řízení přístupu a auditování. V následujících částech stručně popisují tyto oblasti a zadejte odkazy pro další informace.  
+## <a name="wcf-security-functional-areas"></a>Funkční oblasti zabezpečení WCF  
+ Zabezpečení WCF je rozdělené do tří funkčních oblastí: přenos zabezpečení, řízení přístupu a auditování. Následující části stručně popisují tyto oblasti a poskytují odkazy pro další informace.  
   
 ### <a name="transfer-security"></a>Zabezpečení přenosu  
- Zabezpečení přenosu zahrnuje tři hlavní zabezpečení funkce: integrity, šifrování a ověřování. *Integrita* je schopnost rozpoznat, zda zpráva bylo manipulováno. *Důvěrnost* je schopnost zachovat zprávu nejde přečíst nikdo jiný než zamýšlený příjemce; toho je dosaženo pomocí šifrování. *Ověřování* je schopnost ověření uváděné identity. Tyto tři funkce společně pomáhají zajistit, aby bezpečně doručování zpráv z jednoho bodu do jiného.  
+ Zabezpečení přenosu zahrnuje tři hlavní zabezpečení funkce: integrity, šifrování a ověřování. *Integrita* je na schopnost detekce, zda zprávy bylo manipulováno. *Důvěrnost* je schopnost uchovat zprávy nejde přečíst kdokoli než zamýšlený příjemce; toho je dosaženo pomocí šifrování. *Ověřování* je schopnost ověřit požadovanou identitu. Společně tyto tři funkce pomáhají zajistit, že bezpečné doručování zpráv z jednoho místa do jiného.  
   
 #### <a name="transport-and-message-security-modes"></a>Přenos a režimy zabezpečení zpráv  
- Dva hlavní mechanismy slouží k implementaci zabezpečení přenosu ve WCF: *přenosu* režimu zabezpečení a *zpráva* režim zabezpečení.  
+ Pro implementaci přenosu zabezpečení ve službě WCF se používají dva hlavní mechanismy: *přenosu* režim zabezpečení a *zpráva* režim zabezpečení.  
   
--   *Režim zabezpečení přenosu* používá protokol transportní vrstvy, jako je například HTTPS, abyste dosáhli zabezpečení přenosu. Režim přenosu má výhodu v podobě se široce přijímaná, k dispozici na mnoha platformách a méně výpočetně komplexní. Má však nevýhodou zabezpečení zpráv jenom z typu point-to-point.  
+-   *Režim zabezpečení Transport* používá protokol transportní vrstvy, jako je například HTTPS, abyste dosáhli zabezpečení přenosu. Režim přenosu nabízí výhodu v podobě běžně používaná, dostupnost na spoustě platforem a méně výpočetně složité. Má však nevýhodou zabezpečení zprávy pouze z typu point-to-point.  
   
--   *Režim zabezpečení zprávy*na druhé straně, používá zabezpečení WS (a dalších specifikacích) k implementaci zabezpečení přenosu. Vzhledem k tomu, že zabezpečení zpráv se použije přímo ke zprávám SOAP a se nachází v obálky protokolu SOAP, společně s dat aplikací, má výhodu v podobě probíhá přenos nezávislý, více rozšiřitelný a zajistit – koncové zabezpečení (oproti point-to-point); má nevýhodou je několikrát pomalejší než režim zabezpečení přenosu, protože se musí řešit XML povaha protokolu SOAP zprávy.  
+-   *Režim zabezpečených zpráv*na druhou stranu, použití WS-Security (a dalších specifikacích) k implementaci zabezpečení přenosu. Vzhledem k tomu, že zabezpečení zprávy se u přímo zprávy protokolu SOAP a je obsaženo uvnitř obálky protokolu SOAP, spolu s daty aplikace má výhodu v podobě se zabezpečením přenosu nezávislé na protokol, více rozšiřitelné a zajistit, že začátku do konce (oproti point-to-point); má nevýhodou je několikrát pomalejší než režim zabezpečení transport, protože bylo potřeba zabývat XML povaze zprávy protokolu SOAP.  
   
  Další informace o těchto rozdílech najdete v tématu [zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md).  
   
- Třetí režim zabezpečení používá oba režimy předchozí a přináší výhody obou. Tento režim se nazývá `TransportWithMessageCredential`. V tomto režimu zabezpečení zpráv se používá k ověření klienta a zabezpečení přenosu se používá k ověření serveru a zajištění důvěrnosti zpráv a integrita. Díky tomu `TransportWithMessageCredential` režim zabezpečení je téměř tak rychlý jako režim zabezpečení přenosu a zajišťuje rozšiřitelnost ověřování klienta stejným způsobem jako zabezpečení zpráv. Ale na rozdíl od režim zabezpečení zprávy, neposkytuje dokončení – koncové zabezpečení.  
+ Třetí režim zabezpečení používá obou předchozích režimech a přináší výhody obou. Tento režim se nazývá `TransportWithMessageCredential`. V tomto režimu se zabezpečení zprávy se používá k ověření klienta a zabezpečení přenosu se používá k ověření tohoto serveru a poskytují zprávu důvěrnost a integrita. Díky tomu `TransportWithMessageCredential` režim zabezpečení je téměř stejně rychlé jako režim zabezpečení transport a poskytuje klienta možnosti rozšíření ověřování stejným způsobem jako zabezpečení zpráv. Ale na rozdíl od režim zabezpečených zpráv, neposkytuje kompletní zabezpečení začátku do konce.  
   
 ### <a name="access-control"></a>Access Control  
- *Řízení přístupu* je také označován jako autorizace. *Autorizace* umožňuje různým uživatelům různých oprávnění k zobrazení dat. Například protože společnosti lidských zdrojů soubory obsahují zaměstnanec citlivá data, jsou povolena pouze správci zobrazíte údaje o zaměstnancích. Správci navíc můžete zobrazit jenom data pro jejich přímé podřízené. V takovém případě řízení přístupu podle rolí ("správce") jak konkrétní identity manager (Chcete-li zabránit prohlížení záznamy o jiný správce zaměstnanci jeden správce).  
+ *Řízení přístupu* se také nazývá autorizace. *Autorizace* umožňuje různým uživatelům mají různá oprávnění zobrazit data. Například protože vaší společnosti lidských zdrojů soubory obsahují zaměstnance citlivých dat, jsou povoleny pouze správci zobrazíte data zaměstnanců. Správci dál, můžete zobrazit pouze data pro své přímé podřízené. V takovém případě řízení přístupu podle role (dále jen "správce") i konkrétní identity Manageru (aby se zabránilo jeden správce z pohledu záznamy zaměstnanců jiného správce).  
   
- Ve službě WCF, funkce řízení přístupu je zajišťována prostřednictvím integrace s common language runtime (CLR) <xref:System.Security.Permissions.PrincipalPermissionAttribute> přes sadu rozhraní API, které jsou známé jako *modelu identity*. Podrobnosti o řízení přístupu a autorizace na základě deklarací identity najdete v tématu [rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md).  
+ Ve službě WCF, funkce řízení přístupu jsou k dispozici díky integraci se službou common language runtime (CLR) <xref:System.Security.Permissions.PrincipalPermissionAttribute> a prostřednictvím sady rozhraní API, nazývá *modelem identity*. Podrobnosti o řízení přístupu a autorizace na základě rolí najdete v tématu [rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md).  
   
 ### <a name="auditing"></a>Auditování  
- *Auditování* je protokolování událostí zabezpečení do protokolu událostí systému Windows. Můžete protokolovat události související se zabezpečením, jako je například selhání ověřování (nebo úspěchy). Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md). Programovací podrobnosti najdete v tématu [postup: události auditu zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md).  
+ *Auditování* je protokolování událostí zabezpečení do protokolu událostí Windows. Můžete protokolovat události související se zabezpečením, jako je například selhání ověřování (nebo úspěšné). Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md). Programování podrobnosti najdete v tématu [postupy: auditování událostí zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Security.Permissions.PrincipalPermissionAttribute>  
@@ -113,4 +114,4 @@ Windows Communication Foundation (WCF) je SOAP na základě zpráv distribuovan�
  [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)  
  [Přehled vytváření koncových bodů](../../../../docs/framework/wcf/endpoint-creation-overview.md)  
  [Rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md)  
- [Model zabezpečení pro Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+ [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

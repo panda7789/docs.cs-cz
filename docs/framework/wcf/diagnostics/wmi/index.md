@@ -2,12 +2,12 @@
 title: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 ms.date: 03/30/2017
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-ms.openlocfilehash: b1ebb6b438df6d7efb5342a82e42220a58ea5cbd
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: b7c898f1af91f639939e5480687b5967bf57d246
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42908143"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43406917"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu pomocí zprostředkovatele WCF Windows Management Instrumentation (WMI).  
@@ -30,7 +30,7 @@ Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu p
  Tato položka konfigurace vystavuje rozhraní WMI. Správa aplikací teď můžete připojit přes toto rozhraní a přístup WMI aplikace.  
   
 ## <a name="accessing-wmi-data"></a>Přístup k datům služby WMI  
- Data rozhraní WMI je možný v mnoha různými způsoby. Společnost Microsoft poskytuje rozhraní API služby WMI pro skripty, Visual Basic aplikací, aplikací v jazyce C++ a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)]. Další informace najdete v tématu [pomocí rozhraní WMI](http://go.microsoft.com/fwlink/?LinkId=95183).  
+ Data rozhraní WMI je možný v mnoha různými způsoby. Společnost Microsoft poskytuje rozhraní API služby WMI pro skripty, Visual Basic aplikací, aplikací v jazyce C++ a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)]. Další informace najdete v tématu [pomocí rozhraní WMI](https://go.microsoft.com/fwlink/?LinkId=95183).  
   
 > [!CAUTION]
 >  Pokud používáte rozhraní .NET Framework poskytuje metody k programovému přístupu ke službě data rozhraní WMI, byste měli vědět, že tyto metody může vyvolat výjimky, když se připojení. Během procesu vytváření nebude navázáno připojení <xref:System.Management.ManagementObject> instance, ale na první žádost o zahrnující skutečná data systému exchange. Proto byste měli použít `try..catch` blok catch výjimky.  
@@ -147,13 +147,13 @@ Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu p
 Whoami /user  
 ```  
   
- To poskytuje SID aktuálního uživatele, ale tuto metodu nelze použít k načtení SID pro jakékoli libovolného uživatele. Získat identifikátor SID jinou metodou je použít [getsid.exe](http://go.microsoft.com/fwlink/?LinkId=186467) nástroj z [Windows 2000 Resource Kit Tools pro úlohy správy](http://go.microsoft.com/fwlink/?LinkId=178660). Tento nástroj porovná SID dva uživatele (místní nebo doménový) a jako souběžného efekt vytiskne dvě čísla SID do příkazového řádku. Další informace najdete v tématu [dobře známé identifikátory SID](http://go.microsoft.com/fwlink/?LinkId=186468).  
+ To poskytuje SID aktuálního uživatele, ale tuto metodu nelze použít k načtení SID pro jakékoli libovolného uživatele. Získat identifikátor SID jinou metodou je použít [getsid.exe](https://go.microsoft.com/fwlink/?LinkId=186467) nástroj z [Windows 2000 Resource Kit Tools pro úlohy správy](https://go.microsoft.com/fwlink/?LinkId=178660). Tento nástroj porovná SID dva uživatele (místní nebo doménový) a jako souběžného efekt vytiskne dvě čísla SID do příkazového řádku. Další informace najdete v tématu [dobře známé identifikátory SID](https://go.microsoft.com/fwlink/?LinkId=186468).  
   
 ## <a name="accessing-remote-wmi-object-instances"></a>Přistupující objekt instance vzdáleného rozhraní WMI  
  Pokud potřebujete pro přístup k instancím WCF služby WMI na vzdáleném počítači, je nutné povolit paket o ochraně osobních údajů v nabídce Nástroje, které používáte pro přístup. Následující část popisuje, jak tyto dosáhnout pomocí nástroje CIM Studio WMI, nástroj testování služby WMI Windows, stejně jako .NET SDK 2.0.  
   
 ### <a name="wmi-cim-studio"></a>Rozhraní WMI CIM Studio  
- Pokud jste nainstalovali [nástroje pro správu služby WMI](http://go.microsoft.com/fwlink/?LinkId=95185), můžete použít nástroje CIM Studio WMI do instancí služby WMI přístup. Nástroje jsou v následující složce  
+ Pokud jste nainstalovali [nástroje pro správu služby WMI](https://go.microsoft.com/fwlink/?LinkId=95185), můžete použít nástroje CIM Studio WMI do instancí služby WMI přístup. Nástroje jsou v následující složce  
   
  **%WINDIR%\Program Files\WMI nástroje\\**  
   

@@ -8,43 +8,43 @@ helpviewer_keywords:
 - application settings [Windows Forms], Windows Forms
 - application settings [Windows Forms], creating
 ms.assetid: 1e7aa347-af75-41e5-89ca-f53cab704f72
-ms.openlocfilehash: e6e268169949994e1b58b5b8a7dcd0429895fb38
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7a84fc85b42f2b78ccafcae3c815847633b9916d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33524167"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43400527"
 ---
 # <a name="how-to-create-application-settings"></a>Postupy: Vytváření nastavení aplikace
-Pomocí spravovaného kódu, můžete vytvořit nové nastavení aplikace a navázat je na vlastnosti svého formuláře nebo svého formuláře ovládací prvky, tak, aby tato nastavení jsou načteny a automaticky uloženy v době běhu.  
+Pomocí spravovaného kódu, můžete vytvořit nové nastavení aplikace a svázat ho s vlastnostmi na formulář nebo ovládací prvky do formuláře, takže tato nastavení jsou načtena a za běhu automaticky uloženy.  
   
- V následujícím postupu vytvoříte ručně obálkovou třídu odvozenou od <xref:System.Configuration.ApplicationSettingsBase>. Pro tuto třídu přidáte veřejně přístupná vlastnost pro každé nastavení aplikace, kterou chcete vystavit.  
+ V následujícím postupu vytvoříte ručně obálkovou třídu, která je odvozena z <xref:System.Configuration.ApplicationSettingsBase>. Do této třídy přidat vlastnost veřejně přístupné pro každé nastavení aplikace, kterou chcete zveřejnit.  
   
- Tento postup pomocí minimální kódu v návrháři Visual Studio můžete také provést.  Viz také [postupy: vytvoření aplikace nastavení pomocí návrháře](http://msdn.microsoft.com/library/wabtadw6\(v=vs.110\)).  
+ Můžete také provést tento postup pomocí minimálního psaní kódu v návrháři aplikace Visual Studio.  Viz také [postupy: vytvoření aplikace nastavení pomocí návrháře](https://msdn.microsoft.com/library/wabtadw6\(v=vs.110\)).  
   
 ### <a name="to-create-new-application-settings-programmatically"></a>Chcete-li vytvořit nové nastavení aplikace prostřednictvím kódu programu  
   
-1.  Přidejte novou třídu do projektu a přejmenujte ji. Pro tento postup jsme zavolá Tato třída `MyUserSettings`. Změňte definici třídy tak, aby třída odvozená z <xref:System.Configuration.ApplicationSettingsBase>.  
+1.  Přidejte novou třídu do projektu a přejmenujte jej. V tomto postupu budeme volat tuto třídu `MyUserSettings`. Změnit definici třídy, takže je odvozena z třídy <xref:System.Configuration.ApplicationSettingsBase>.  
   
-2.  Definujte vlastnost této obálkové třídy pro každé nastavení aplikace, budete potřebovat a použít tuto vlastnost se buď <xref:System.Configuration.ApplicationScopedSettingAttribute> nebo <xref:System.Configuration.UserScopedSettingAttribute>, v závislosti na rozsahu nastavení. Další informace o nastavení oboru, najdete v části [přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md). Nyní by váš kód by měl vypadat takto:  
+2.  Definovat vlastnost na této obálkové třídy pro každé nastavení aplikace, budete potřebovat a použít tuto vlastnost buď <xref:System.Configuration.ApplicationScopedSettingAttribute> nebo <xref:System.Configuration.UserScopedSettingAttribute>, v závislosti na rozsahu nastavení. Další informace o nastavení oboru, naleznete v tématu [přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md). Nyní váš kód by měl vypadat takto:  
   
      [!code-csharp[ApplicationSettings.Create#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Create/CS/MyAppSettings.cs#1)]
      [!code-vb[ApplicationSettings.Create#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Create/VB/MyAppSettings.vb#1)]  
   
-3.  Vytvoření instance této třídy obálku ve vaší aplikaci. Obvykle bude členem privátní hlavní formulář. Teď, když jste definovali třídě, musíte pro vytvoření vazby na vlastnost; v takovém případě <xref:System.Windows.Forms.Form.BackColor%2A> vlastnosti svého formuláře. Můžete to provést v svého formuláře `Load` obslužné rutiny události.  
+3.  Vytvoření instance této obálkové třídy ve vaší aplikaci. Běžně je soukromý člen hlavního formuláře. Teď, když jste definovali vaší třídy, je potřeba ho vytvořit vazbu na vlastnost; v takovém případě <xref:System.Windows.Forms.Form.BackColor%2A> vlastnost formuláře. Můžete to udělat v formuláře `Load` obslužné rutiny události.  
   
      [!code-csharp[ApplicationSettings.Create#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Create/CS/Form1.cs#2)]
      [!code-vb[ApplicationSettings.Create#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Create/VB/Form1.vb#2)]  
   
-4.  Pokud zadáte způsob, jak změnit nastavení v době běhu, musíte uložit aktuální nastavení uživatele na disk, když svého formuláře zavře, jinak tyto změny budou ztraceny.  
+4.  Pokud zadáte způsob, jak změnit nastavení v době běhu, je potřeba uložit aktuální nastavení uživatele na disk, když se zavře formulář, jinak tyto změny budou ztraceny.  
   
      [!code-csharp[ApplicationSettings.Create#3](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Create/CS/Form1.cs#3)]
      [!code-vb[ApplicationSettings.Create#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Create/VB/Form1.vb#3)]  
   
-     Teď úspěšně vytvořit nové nastavení aplikace a vázána na zadanou vlastnost.  
+     Jste teď úspěšně vytvořili nové nastavení aplikace a vázán na zadanou vlastnost.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Ve výchozím nastavení <xref:System.Configuration.LocalFileSettingsProvider>, udržuje informace o konfiguračních souborů jako prostý text. Toto omezení zabezpečení zabezpečení přístupu k souboru poskytované operačním systémem pro aktuálního uživatele. Z toho důvodu se musí dát pozor s informacemi uloženými v konfiguračních souborech. Například jeden běžně používá pro nastavení aplikace je k ukládání připojovacích řetězců, které odkazují na úložiště dat aplikace. Z důvodu zabezpečení se ale tyto řetězce by neměla zahrnovat hesla. Další informace o připojovacích řetězcích najdete v tématu <xref:System.Configuration.SpecialSetting>.  
+ Ve výchozím nastavení <xref:System.Configuration.LocalFileSettingsProvider>, opakuje informace ke konfiguračním souborům jako prostý text. Toto omezení zabezpečení k zabezpečení přístupu k souboru v operačním systému k dispozici pro aktuálního uživatele. Z tohoto důvodu musíte věnovat pozornost s informacemi uloženými v konfiguračních souborech. Jeden běžně používá pro nastavení aplikace je například ukládání připojovacích řetězců, které odkazují na úložiště dat aplikace. Kvůli zajištění zabezpečení, ale tyto řetězce by neměl obsahovat hesla. Další informace o připojovacích řetězcích najdete v tématu <xref:System.Configuration.SpecialSetting>.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Configuration.SpecialSettingAttribute>  

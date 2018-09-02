@@ -4,12 +4,12 @@ description: Dotnet publikovat příkaz publikuje do adresáře projektu .NET Co
 author: mairaw
 ms.author: mairaw
 ms.date: 05/29/2018
-ms.openlocfilehash: 38224aa8472f99df107e523667e18892384a20b0
-ms.sourcegitcommit: f6343b070f3c66877338a05c8bfb0be9985255e2
+ms.openlocfilehash: a60777d613573076f41fba3e5ed610b236884063
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39220669"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43416919"
 ---
 # <a name="dotnet-publish"></a>publikování DotNet
 
@@ -86,7 +86,7 @@ Určuje jeden nebo několik [cílit manifesty](../deploying/runtime-store.md) o�
 
 `--no-build`
 
-Nedaří sestavit projekt před publikováním. Také implicitní nastaví `--no-restore` příznak.
+Nedaří sestavit projekt před publikováním. Také implicitně nastaví `--no-restore` příznak.
 
 `--no-dependencies`
 

@@ -2,23 +2,23 @@
 title: Objektově orientované programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 0dee6edf966e8e2a3e430e60f1c3d51354d08bf3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a6194cb93b10d5b9f5d25fc42cff6c071627d411
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33340590"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43415485"
 ---
 # <a name="object-oriented-programming-c"></a>Objektově orientované programování (C#)
-C# poskytuje úplnou podporu pro objektově orientované programování včetně zapouzdření, dědičnost a polymorfismus.  
+C# poskytuje plnou podporu pro objektově orientované programování včetně zapouzdření, dědičnosti a polymorfismu.  
   
  *Zapouzdření* znamená, že skupina souvisejících vlastností, metod a ostatní členové jsou považovány za jednu jednotku nebo objekt.  
   
- *Dědičnost* popisuje schopnost vytvářet nové třídy založené na existující třídy.  
+ *Dědičnost* popisuje schopnost vytvářet nové třídy na základě existující třídy.  
   
- *Polymorfismus* znamená, že můžete mít více tříd, které lze použít zcela zaměnitelným významem, i když každá třída implementuje stejné vlastnosti nebo metody různými způsoby.  
+ *Polymorfismus* znamená, že můžete mít více tříd, které můžete používat Zaměnitelně, i když každá třída implementuje stejné vlastnosti nebo metody různými způsoby.  
   
- Tato část popisuje následující koncepty:  
+ Tato část popisuje následující pojmy:  
   
 -   [Třídy a objekty](#Classes)  
   
@@ -38,7 +38,7 @@ C# poskytuje úplnou podporu pro objektově orientované programování včetně
   
     -   [Modifikátory přístupu a úrovně přístupu](#AccessModifiers)  
   
-    -   [Vytváření instancí třídy](#InstantiatingClasses)  
+    -   [Vytvoření instance třídy](#InstantiatingClasses)  
   
     -   [Statické třídy a členové](#Static)  
   
@@ -46,7 +46,7 @@ C# poskytuje úplnou podporu pro objektově orientované programování včetně
   
 -   [Dědičnost](#Inheritance)  
   
-    -   [Přepis členů](#Overriding)  
+    -   [Obejití členů](#Overriding)  
   
 -   [Rozhraní](#Interfaces)  
   
@@ -55,9 +55,9 @@ C# poskytuje úplnou podporu pro objektově orientované programování včetně
 -   [Delegáti](#Delegates)  
   
 ##  <a name="Classes"></a> Třídy a objekty  
- Podmínky *třída* a *objekt* se někdy používají zcela zaměnitelným významem, ale ve skutečnosti třídy popisují *typ* objektů, zatímco objekty jsou použitelné  *instance* tříd. Ano, je volána v rámci vytvoření objektu *vytváření instancí*. Pomocí analogie plán, podle kterého, třída je plán, podle kterého a v budově z tento plán, podle kterého je objekt.  
+ Podmínky *třídy* a *objekt* se někdy používají vzájemné záměně, ale ve skutečnosti třídy popisují *typ* objektů, zatímco objekty jsou použitelné  *instance* tříd. Ano, je volána při vytvoření objektu *instance*. Při použití analogie matric, třída je podrobný plán a objekt je vytvořen z této matrice budovy.  
   
- Chcete-li definovat třídu:  
+ Definování třídy:  
   
 ```csharp  
 class SampleClass  
@@ -65,9 +65,9 @@ class SampleClass
 }  
 ```  
   
- C# také poskytuje světla verzi třídy názvem *struktury* , jsou užitečné, když potřebujete vytvořit velké pole objektů a proveďte využívat příliš mnoho paměti, pro který chcete.  
+ C# obsahuje také jednodušší verzi tříd pojmenovanou *struktury* , které jsou užitečné, když budete chtít vytvořit velké pole objektů a proveďte k tomu k tomu spotřebovat příliš mnoho paměti.  
   
- Chcete-li definovat strukturu:  
+ Definování struktury:  
   
 ```csharp  
 struct SampleStruct  
@@ -82,12 +82,12 @@ struct SampleStruct
 -   [struct](../../../csharp/language-reference/keywords/struct.md)  
   
 ###  <a name="Members"></a> Členy třídy  
- Každá třída může mít různé *třídy členy* , zahrnout vlastnosti, které popisují data třídy, metody, které definují chování třídy a události, které zajišťují komunikaci mezi různými třídami a objekty.  
+ Každá třída může mít různé *členy třídy* obsahující vlastnosti, které popisují data třídy, metody, které určují chování třídy a události, které umožňují komunikaci mezi různými třídami a objekty.  
   
 ####  <a name="Properties"></a> Vlastnosti a pole  
- Pole a vlastnosti představují informací, které obsahuje objekt. Pole jsou jako proměnné, protože můžou být číst nebo nastavovat přímo.  
+ Pole a vlastnosti představují informace, které obsahuje objekt. Pole jsou jako proměnné, protože mohou být čtena nebo nastavena přímo.  
   
- Chcete-li definovat pole:  
+ Definování pole:  
   
 ```csharp  
 class SampleClass  
@@ -96,11 +96,11 @@ class SampleClass
 }  
 ```  
   
- Vlastnosti mají get a nastavte postupů, které poskytuje větší kontrolu na tom, jak nastavit nebo vrátil hodnoty.  
+ Vlastnosti mají get a nastavte postupy, které poskytují větší kontrolu toho, jak jsou hodnoty nastavena nebo vrácena.  
   
- C# můžete buď vytvořit soukromé pole pro ukládání hodnota vlastnosti nebo použít takzvané automaticky implementované vlastnosti, které vytvořit toto pole automaticky na pozadí, které poskytují základní logiku pro vlastnost postupy.  
+ C# můžete buď vytvořit soukromé pole pro uložení hodnoty vlastnosti nebo použít takzvané automaticky implementované vlastnosti, které vytvořit toto pole automaticky na pozadí a poskytnou základní logiku pro procedury vlastností.  
   
- Chcete-li definovat ve automaticky implementované vlastnosti:  
+ Chcete-li definovat automaticky implementovanou vlastnost:  
   
 ```csharp  
 class SampleClass  
@@ -109,7 +109,7 @@ class SampleClass
 }  
 ```  
   
- Pokud potřebujete provést některé další operace pro čtení a zápis hodnota vlastnosti definice pole pro ukládání hodnota vlastnosti a poskytují základní logiku pro ukládání a načítání ho:  
+ Pokud je potřeba provést některé další operace čtení a zápisu hodnoty vlastnosti, definujte pole pro uložení hodnoty vlastnosti a poskytněte základní logiku pro ukládání a načítání:  
   
 ```csharp  
 class SampleClass  
@@ -125,7 +125,7 @@ class SampleClass
 }  
 ```  
   
- Většina vlastnosti mají metody nebo postupy, jak nastavit a získat hodnotu vlastnosti. Můžete však vytvořit vlastnosti jen pro čtení, nebo jen pro zápis je omezit změnit nebo načíst. V jazyce C#, můžete vynechat `get` nebo `set` metoda property. Automaticky implementované vlastnosti však nemůže být jen pro čtení nebo jen pro zápis.  
+ Většina vlastností má metody nebo postupy, jak nastavit a získat hodnotu vlastnosti. Můžete však vytvořit vlastnosti jen pro čtení nebo jen pro zápis, abyste omezili je číst nebo upravovat. V jazyce C# můžete vynechat `get` nebo `set` metoda vlastnosti. Automaticky implementované vlastnosti nemůže být ale jen pro čtení nebo jen pro zápis.  
   
  Další informace naleznete v tématu:  
   
@@ -134,9 +134,9 @@ class SampleClass
 -   [set](../../../csharp/language-reference/keywords/set.md)  
   
 ####  <a name="Methods"></a> Metody  
- A *metoda* je akce, která může provádět objekt.  
+ A *metoda* je akce, které může objekt provádět.  
   
- Definovat metodu třídy:  
+ Chcete-li definovat metodu pro třídu:  
   
 ```csharp  
 class SampleClass  
@@ -148,16 +148,16 @@ class SampleClass
 }  
 ```  
   
- Třída může mít několik implementací, nebo *přetížení*, stejné metody, která se budou lišit v počtu parametry nebo typy parametrů.  
+ Třída může mít několik implementací, nebo *přetížení*, stejné metody, která se liší v počtu parametrů nebo typů parametrů.  
   
- Chcete-li přetížení metody:  
+ Chcete-li přetížit metodu:  
   
 ```csharp  
 public int sampleMethod(string sampleParam) {};  
 public int sampleMethod(int sampleParam) {}  
 ```  
   
- Ve většině případů deklarujte metodu v definici třídy. Však C# také podporuje *rozšiřující metody* které umožňují přidání metody do existující třídy mimo skutečné definice třídy.  
+ Ve většině případů deklarujete metodu v rámci definice třídy. Ale jazyka C# také podporuje *rozšiřující metody* , které umožňují přidat metody do existující třídy mimo skutečnou definici třídy.  
   
  Další informace naleznete v tématu:  
   
@@ -166,7 +166,7 @@ public int sampleMethod(int sampleParam) {}
 -   [Rozšiřující metody](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)  
   
 ####  <a name="Constructors"></a> Konstruktory  
- Konstruktory jsou metody třídy, které jsou spouštěny automaticky, když je vytvořen objekt daného typu. Konstruktory obvykle inicializovat datových členů nového objektu. Konstruktor lze spustit pouze po vytvoření třídy. Kromě toho kód v konstruktoru vždy spouští před jakýkoli jiný kód v třídě. Můžete však vytvořit více přetížení konstruktor stejným způsobem jako u jakékoliv jiné metody.  
+ Konstruktory jsou metody třídy, které jsou spouštěny automaticky, když je vytvořen objekt daného typu. Konstruktory obvykle inicializují datové členy nového objektu. Konstruktor lze spustit pouze jednou při vytvoření třídy. Kromě toho kód v konstruktoru se vždy spouští před ostatním kódem ve třídě. Můžete však vytvořit více přetížení konstruktoru stejným způsobem jako u jakékoliv jiné metody.  
   
  Chcete-li definovat konstruktor pro třídu:  
   
@@ -185,21 +185,21 @@ public class SampleClass
  [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md).  
   
 ####  <a name="Finalizers"></a> Finalizační metody  
- Finalizační metody se používají k destruct instance tříd. V rozhraní .NET Framework bude systém uvolňování automaticky spravuje přidělování a uvolňování paměti pro spravované objekty v aplikaci. Mohou však stále zapotřebí finalizační metody vyčistit všechny nespravovaných prostředků, které vytváří vaše aplikace. Může existovat pouze jedna finalizační metody pro třídu.  
+ Finalizační metody se používají k destrukci instancí tříd. V rozhraní .NET Framework systému uvolňování paměti automaticky spravuje přidělování a uvolňování paměti pro spravované objekty v aplikaci. Může však stále zapotřebí finalizační metody pro vyčištění všech nespravovaných prostředků, které vytváří vaše aplikace. Může existovat pouze jeden finalizační metody pro třídu.  
   
- Další informace o finalizační metody a uvolňování paměti v rozhraní .NET Framework najdete v tématu [uvolňování paměti](../../../standard/garbage-collection/index.md).  
+ Další informace o finalizační metody a systém kolekce paměti v rozhraní .NET Framework najdete v tématu [uvolňování](../../../standard/garbage-collection/index.md).  
   
 ####  <a name="Events"></a> Události  
- Události povolit třídu nebo objekt, který chcete upozornit ostatní třídy nebo objekty, když něco zájmu dojde. Třída, která odešle (nebo vyvolá) událost je volána *vydavatele* a třídy, které zobrazí (nebo zpracování) události, se nazývají *Odběratelé, kteří*. Další informace o událostech, způsob jejich jsou vyvolány a zpracovávají, najdete v části [události](../../../standard/events/index.md).  
+ Události umožňují třídám nebo objektům upozornit ostatní třídy nebo objekty, když něco, které vás zajímají. Třída, která odesílá (nebo vyvolává) událost je volána *vydavatele* a třídy, které zobrazí (nebo zpracování) události, se nazývají *předplatitele*. Další informace o událostech, jak jejich vyvolávání a zpracování viz [události](../../../standard/events/index.md).  
   
--   Chcete-li deklarovat událost v třídě, použijte [událostí](../../../csharp/language-reference/keywords/event.md) – klíčové slovo.  
+-   Chcete-li deklarovat událost v třídě, použijte [události](../../../csharp/language-reference/keywords/event.md) – klíčové slovo.  
   
--   Vyvolat událost, vyvolání delegáta události.  
+-   K vyvolání události vyvolejte delegáta události.  
   
--   K odběru události, použijte `+=` operátor; k odhlášení odběru událostí, použijte `-=` operátor.  
+-   Chcete-li přihlásit odběr události, použijte `+=` operátor; Chcete-li zrušit odběr události, použijte `-=` operátor.  
   
 ####  <a name="NestedClasses"></a> Vnořené třídy  
- Třídy definované v rámci jiné třídy se nazývá *vnořené*. Ve výchozím nastavení je vnořené třídy soukromé.  
+ Třída definována v rámci jiné třídy se nazývá *vnořené*. Ve výchozím nastavení vnořené třídy je privátní.  
   
 ```csharp  
 class Container  
@@ -211,36 +211,36 @@ class Container
 }  
 ```  
   
- K vytvoření instance třídy vnořené, použijte název třídy kontejneru, za nímž následuje tečky a po ní následuje název vnořené třídy:  
+ Chcete-li vytvořit instanci vnořené třídy, použijte název třídy kontejneru následovaného tečkou a pak následovaného názvem vnořené třídy:  
   
 ```csharp  
 Container.Nested nestedInstance = new Container.Nested()  
 ```  
   
 ###  <a name="AccessModifiers"></a> Modifikátory přístupu a úrovně přístupu  
- Všechny třídy a jejich členové můžete určit, jakou úroveň přístupu poskytují další třídy pomocí *přístup modifikátory*.  
+ Všechny třídy a členy třídy můžete určit úroveň přístupu poskytují dalším třídám, pomocí *modifikátorů přístupu*.  
   
  K dispozici jsou následující modifikátory přístupu:  
   
-|C# – modifikátor|Definice|  
+|Modifikátor C#|Definice|  
 |------------------|----------------|  
-|[public](../../../csharp/language-reference/keywords/public.md)|Typ nebo člen je přístupná jiným kódem ve stejném sestavení nebo jiné sestavení, které na ni odkazuje.|  
-|[private](../../../csharp/language-reference/keywords/private.md)|Typ nebo člen můžete přistupovat pouze kódu ve stejné třídě.|  
-|[protected](../../../csharp/language-reference/keywords/protected.md)|Typ nebo člen můžete přistupovat pouze kódu ve stejné třídě nebo v odvozené třídě.|  
-|[internal](../../../csharp/language-reference/keywords/internal.md)|Typ nebo člen je přístupný kód ve stejném sestavení, ale nikoli z jiné sestavení.|  
-|[protected internal](../../../csharp/language-reference/keywords/protected-internal.md)|Typ nebo člen je přístupná žádný kód ve stejném sestavení, nebo všechny odvozené třídy v jiném sestavení.|  
-|[private protected](../../../csharp/language-reference/keywords/private-protected.md)|Typ nebo člen je přístupný kód ve stejné třídě nebo v odvozené třídě v rámci sestavení základní třídy.|  
+|[public](../../../csharp/language-reference/keywords/public.md)|Tento typ nebo člen je přístupný libovolnému jinému kódu ve stejném sestavení nebo libovolnému sestavení která na něj odkazuje.|  
+|[private](../../../csharp/language-reference/keywords/private.md)|Tento typ nebo člen je přístupný pouze kódu ve stejné třídě.|  
+|[protected](../../../csharp/language-reference/keywords/protected.md)|Tento typ nebo člen je přístupný pouze kódu ve stejné třídě nebo v odvozené třídě.|  
+|[internal](../../../csharp/language-reference/keywords/internal.md)|Tento typ nebo člen je přístupný libovolnému kódu ve stejném sestavení, ale ne z jiného sestavení.|  
+|[protected internal](../../../csharp/language-reference/keywords/protected-internal.md)|Tento typ nebo člen je přístupný libovolnému kódu ve stejném sestavení, nebo kterékoli odvozené třídě v jiném sestavení.|  
+|[private protected](../../../csharp/language-reference/keywords/private-protected.md)|Tento typ nebo člen je přístupný pomocí kódu ve stejné třídě nebo v odvozené třídě v rámci sestavení základní třídy.|  
   
  Další informace najdete v tématu [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
-###  <a name="InstantiatingClasses"></a> Vytváření instancí třídy  
- Pro vytvoření objektu, musíte vytvořit instanci třídy, nebo vytvořit instanci třídy.  
+###  <a name="InstantiatingClasses"></a> Vytvoření instance třídy  
+ Pro vytvoření objektu, budete muset vytvořit instanci třídy, nebo vytvořit instanci třídy.  
   
 ```csharp  
 SampleClass sampleObject = new SampleClass();  
 ```  
   
- Po vytvoření instance třídy, můžete přiřadit hodnoty k vlastnosti a pole instance a vyvolání metody třídy.  
+ Po vytvoření instance třídy, můžete přiřadit hodnoty k vlastnosti a pole instance a volat metody třídy.  
   
 ```csharp  
 // Set a property value.  
@@ -249,7 +249,7 @@ sampleObject.sampleProperty = "Sample String";
 sampleObject.sampleMethod();  
 ```  
   
- Chcete-li přiřadit hodnoty k vlastnosti během procesu vytváření instancí třídy, použijte inicializátory objektů:  
+ Chcete-li přiřadit hodnoty vlastností během procesu vytváření instance třídy, použijte inicializátory objektů:  
   
 ```csharp  
 // Set a property value.  
@@ -264,9 +264,9 @@ SampleClass sampleObject = new SampleClass
 -   [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
   
 ###  <a name="Static"></a> Statické třídy a členové  
- Statický člen třídy je vlastnost, postup nebo pole, které platí pro všechny instance třídy.  
+ Statický člen třídy je vlastnost, procedura nebo pole, která je sdílena všemi instancemi třídy.  
   
- Chcete-li definovat je statický člen:  
+ Chcete-li definovat statický člen:  
   
 ```csharp  
 static class SampleClass  
@@ -275,18 +275,18 @@ static class SampleClass
 }  
 ```  
   
- Pro přístup k statický člen, použijte název třídy bez vytvoření objektu této třídy:  
+ Pro přístup k statický člen, použijte název třídy bez vytvoření objektů této třídy:  
   
 ```csharp  
 Console.WriteLine(SampleClass.SampleString);  
 ```  
   
- Statické třídy v jazyce C# mají jenom statické členy a nelze vytvořit instanci. Statické členy také přístup k vlastnosti nestatické, pole a metody  
+ Statické třídy v jazyce C# mít jenom statické členy a nelze vytvořit instanci. Statické členy také nelze přistupovat k vlastnosti nestatické, polím nebo metodám  
   
  Další informace najdete v tématu: [statické](../../../csharp/language-reference/keywords/static.md).  
   
 ###  <a name="AnonymousTypes"></a> Anonymní typy  
- Anonymní typy umožňují vytvářet objekty bez nutnosti psaní definice třídy pro datový typ. Kompilátor místo, vygeneruje třídu pro vás. Třída nemá žádný použitelný název a obsahuje vlastnosti, které zadáte v deklarace objektu.  
+ Anonymní typy umožňují vytvářet objekty bez psaní definice třídy datového typu. Místo toho kompilátor vygeneruje třídu za vás. Třída nemá žádný použitelný název a obsahuje vlastnosti, které jste zadali v rámci deklarace objektu.  
   
  Chcete-li vytvořit instanci anonymního typu:  
   
@@ -298,27 +298,27 @@ var sampleObject =
   
  Další informace najdete v tématu: [anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
   
-##  <a name="Inheritance"></a> dědičnost  
- Dědičnost umožňuje vytvořit novou třídu, která opětovně používá rozšiřuje a mění chování, která je definována v jiné třídy. Je volána třídu, jejíž členové jsou děděné *základní třída*, a třídu, která dědí členů, se nazývá *odvozené třídy*. Ale všechny třídy v jazyce C# implicitně dědí z <xref:System.Object> třídu, která podporuje hierarchie tříd rozhraní .NET a poskytuje nižší úroveň služby pro všechny třídy.  
+##  <a name="Inheritance"></a> Dědičnost  
+ Dědičnost umožňuje vytvořit novou třídu, která opakovaně používá, rozšiřuje a upravuje chování, které je definováno v jiné třídě. Třídy, jejíž členové jsou zdědění, se nazývá *základní třída*, a názvem třídy, která dědí tyto členy *odvozené třídy*. Nicméně všechny třídy v jazyce C# implicitně dědí z <xref:System.Object> třídu, která podporuje hierarchii tříd .NET a poskytuje služby nižší úrovně všem třídám.  
   
 > [!NOTE]
->  C# nepodporuje vícenásobná dědičnost. To znamená můžete zadat pouze jeden základní třídu pro odvozené třídy.  
+>  C# nepodporuje vícenásobnou dědičnost. To znamená můžete zadat pouze jednu základní třídu pro odvozenou třídu.  
   
- Chcete-li zdědit ze základní třídy:  
+ Chcete-li dědit ze základní třídy:  
   
 ```csharp  
-class DerivedClass:BaseClass{}  
+class DerivedClass:BaseClass {}  
 ```  
   
- Ve výchozím nastavení může být dědí všechny třídy. Však můžete určit, zda nesmí používat jako základní třída třídy, nebo vytvořte třídu, která lze použít jako základní třídy.  
+ Ve výchozím nastavení je možné zdědit všechny třídy. Můžete však určit, zda třída nesmí používat jako základní třída nebo vytvořit třídu, která lze použít jako základní třídu.  
   
- Chcete-li určit, že třídy nelze použít jako základní třída:  
+ Chcete-li určit, že třídu nelze použít jako základní třídu:  
   
 ```csharp  
 public sealed class A { }  
 ```  
   
- K určení, že třídy lze použít jako základní třída a nelze vytvořit instanci:  
+ Určíte, že třída může sloužit jako základní třídu a nelze vytvořit instanci:  
   
 ```csharp  
 public abstract class B { }  
@@ -330,22 +330,22 @@ public abstract class B { }
   
 -   [abstract](../../../csharp/language-reference/keywords/abstract.md)  
   
-###  <a name="Overriding"></a> Přepis členů  
- Ve výchozím nastavení odvozené třídy dědí všechny členy ze své základní třídy. Pokud chcete změnit chování zděděného členu, budete muset přepsat. To znamená můžete definovat nové implementace metoda, vlastnost nebo události v odvozené třídě.  
+###  <a name="Overriding"></a> Obejití členů  
+ Ve výchozím nastavení dědí odvozená třída všechny členy ze své základní třídy. Pokud chcete změnit chování zděděného člena, musíte ho potlačit. To znamená můžete definovat novou implementaci metody, vlastnosti nebo události v odvozené třídě.  
   
- Následující modifikátory je možné určit, jak jsou přepsaná vlastnosti a metody:  
+ Následující modifikátory umožňují určit, jak přepsat vlastnosti a metody:  
   
-|C# – modifikátor|Definice|  
+|Modifikátor C#|Definice|  
 |------------------|----------------|  
-|[virtual](../../../csharp/language-reference/keywords/virtual.md)|Umožňuje člena třídy k přepsání v odvozené třídě.|  
-|[override](../../../csharp/language-reference/keywords/override.md)|Přepsání člena virtuální (přepisovatelné) definované v základní třídě.|  
-|[abstract](../../../csharp/language-reference/keywords/abstract.md)|Vyžaduje, aby člena třídy k přepsání v odvozené třídě.|  
-|[new – modifikátor](../../../csharp/language-reference/keywords/new-modifier.md)|Skryje členem zděděn ze základní třídy|  
+|[virtual](../../../csharp/language-reference/keywords/virtual.md)|Umožňuje člen třídy k přepsání v odvozené třídě.|  
+|[override](../../../csharp/language-reference/keywords/override.md)|Přepsání virtuální (s možností přepsání) člena definovaného v základní třídě.|  
+|[abstract](../../../csharp/language-reference/keywords/abstract.md)|Vyžaduje, aby člen třídy k přepsání v odvozené třídě.|  
+|[new – modifikátor](../../../csharp/language-reference/keywords/new-modifier.md)|Skryje člena zděděného ze základní třídy|  
   
 ##  <a name="Interfaces"></a> Rozhraní  
- Rozhraní, jako jsou třídy, definovat sadu vlastností, metod a události. Ale na rozdíl od třídy, rozhraní neposkytují implementace. Jsou implementované třídy a definován jako samostatné entity z tříd. Rozhraní představuje kontraktu, v tomto třídu, která implementuje rozhraní musí implementovat všechny aspekty tohoto rozhraní přesně tak, jak je definována.  
+ Rozhraní, stejně jako třídy, definují sadu vlastností, metody a události. Ale na rozdíl od tříd, rozhraní neposkytují implementace. Jsou implementované třídami a definovány jako samostatné subjekty ze tříd. Rozhraní představuje smlouvu v tom, že třídu, která implementuje rozhraní musí implementovat všechny aspekty tohoto rozhraní přesně tak, jak je definována.  
   
- Definice rozhraní:  
+ Definování rozhraní:  
   
 ```csharp  
 interface ISampleInterface  
@@ -354,7 +354,7 @@ interface ISampleInterface
 }  
 ```  
   
- K implementaci rozhraní v třídě:  
+ Pro implementaci rozhraní ve třídě:  
   
 ```csharp  
 class SampleClass : ISampleInterface  
@@ -373,9 +373,9 @@ class SampleClass : ISampleInterface
  [interface](../../../csharp/language-reference/keywords/interface.md)  
   
 ##  <a name="Generics"></a> Obecné typy  
- Třídy, struktury, rozhraní a metody v rozhraní .NET Framework může zahrnovat *parametry typu* , definování typů objektů, které lze uložit nebo použít. Nejčastější obecných typů je kolekce, kde můžete určit typ objektů, které chcete uložit v kolekci.  
+ Třídy, struktury, rozhraní a metody v rozhraní .NET Framework může zahrnovat *parametry typu* , které definují typy objektů, které lze uložit nebo použít. Nejběžnějším příkladem obecných typů je kolekce, kde můžete určit typ objektu, který bude uložen do kolekce.  
   
- Zadat obecné třídy:  
+ Chcete-li definovat obecnou třídu:  
   
 ```csharp  
 public class SampleGeneric<T>   
@@ -384,7 +384,7 @@ public class SampleGeneric<T>
 }  
 ```  
   
- Chcete-li vytvořit instanci obecné třídy:  
+ Vytvoření instance generické třídy:  
   
 ```csharp  
 SampleGeneric<string> sampleObject = new SampleGeneric<string>();  
@@ -398,18 +398,18 @@ sampleObject.Field = "Sample string";
 -   [Obecné typy](../../../csharp/programming-guide/generics/index.md)  
   
 ##  <a name="Delegates"></a> Delegáti  
- A *delegovat* je typ, který definuje podpis metody a může poskytnout odkaz na libovolnou metodu kompatibilní podpisem. Můžete vyvolat (nebo volání) metoda prostřednictvím delegáta. Delegáty se používají pro předávání metod jako argumentů jiným metodám.  
+ A *delegovat* je typ, který definuje podpis metody a může poskytnout odkaz na jakoukoli metodu s kompatibilním podpisem. Můžete vyvolat (nebo volat) metodu prostřednictvím delegáta. Delegáty se používají pro předávání metod jako argumentů jiným metodám.  
   
 > [!NOTE]
->  Ovladače událostí nejsou nic jiného než metody, které jsou vyvolány prostřednictvím delegátů. Další informace o použití delegátů při zpracování událostí najdete v tématu [události](../../../standard/events/index.md).  
+>  Ovladače událostí nejsou nic jiného než metody, které jsou vyvolány prostřednictvím delegátů. Další informace o použití delegátů při zpracování událostí naleznete v tématu [události](../../../standard/events/index.md).  
   
- Pokud chcete vytvořit delegáta:  
+ K vytvoření delegáta:  
   
 ```csharp  
 public delegate void SampleDelegate(string str);  
 ```  
   
- Pokud chcete vytvořit odkaz na metodu, která odpovídá podpis určeného delegát:  
+ Chcete-li vytvořit odkaz na metodu, která odpovídá podpisu zadanému delegátem:  
   
 ```csharp  
 class SampleClass  

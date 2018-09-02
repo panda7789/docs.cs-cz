@@ -1,64 +1,64 @@
 ---
-title: Data suverenity za mikroslužbu
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Data suverenity za mikroslužbu
+title: Svrchovanost dat v jednotlivých mikroslužbách
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Svrchovanost dat v jednotlivých mikroslužbách
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 1d66f5d40234e689685b1b8c36367cc9dc2fc7c6
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 6a3fc0e86de673fea5f8e81c14c6456a2256aaa6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106863"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43408544"
 ---
-# <a name="data-sovereignty-per-microservice"></a>Data suverenity za mikroslužbu
+# <a name="data-sovereignty-per-microservice"></a>Svrchovanost dat v jednotlivých mikroslužbách
 
-Pravidlo důležité pro architekturu mikroslužeb je každý mikroslužbu musí být vlastníkem jeho data domény a logiku. Stejně jako úplné aplikace vlastní jeho logiku a data, takže musí každý mikroslužbu vlastní jeho logiku a data v rámci autonomního životního cyklu, nezávislé nasazení za mikroslužby.
+Pravidlo důležité pro architekturu mikroslužeb je, že každá mikroslužba musíte vlastnit jeho data domény a logiku. Stejně jako úplné aplikace vlastní jeho logiku a data, takže musíte jednotlivých mikroslužeb vlastníkem jeho logiku a data v rámci samostatného životní cyklus, s nezávislé nasazení jednotlivých mikroslužbách.
 
-To znamená, že mezi subsystémy nebo mikroslužeb se budou lišit konceptuálního modelu domény. Vezměte v úvahu podnikové aplikace, kde zákazník relace (CRM) aplikací pro správu, transakční nákupu subsystémy a zákaznické podpory subsystémy každé volání a atributům entity jedinečných zákaznických dat a tam, kde každý využívá jiné Kontext ohraničené (BC).
+To znamená, že konceptuálního modelu domény se budou lišit mezi subsystémy nebo mikroslužeb. Vezměte v úvahu podnikové aplikace, kde aplikace vztahů se zákazníky (CRM) pro řízení, transakční nákupní subsystémy a Zákaznická podpora subsystémů každé volání na data a atributům entity jedinečné zákaznické a každá používá jiné Ohraničený kontext (BC).
 
-Tento princip je podobný v [řízené domény návrhu (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design), kde každý [ohraničenou kontextu](https://martinfowler.com/bliki/BoundedContext.html) nebo autonomní subsystému nebo služby musí být vlastníkem svůj model domény (dat a logiku a chování). Každý DDD ohraničenou kontext koreluje s jeden obchodní mikroslužbu (jednoho nebo několika služby). (Jsme rozbalte v tomto bodě o vzoru ohraničenou kontextu v další části.)
+Tato zásada je podobná [návrhu řízeného doménou (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design), kde každý [ohraničená kontextu](https://martinfowler.com/bliki/BoundedContext.html) nebo autonomní subsystému nebo služby musíte vlastnit jeho doménový model (data a logiku a chování). Každý kontext ohraničená DDD souvisí s jednu obchodní mikroslužeb (jednu nebo několik služeb). (Můžeme doplňovat tento bod o ohraničená kontextu vzoru v další části.)
 
-Na druhé straně se metoda tradiční (monolitický data) používaná v mnoha aplikacích se jedné centralizované databáze nebo několika databází. To je často normalizovaný SQL database, která se používá pro celou aplikaci a všechny jeho vnitřní subsystémy, jak je znázorněno na obrázku 4-7.
+Na druhé straně přístup tradiční (monolitické data) používaný v mnoha aplikacích je do centralizované databáze jedné nebo několika databází. To je často normalizované databáze SQL, který se používá pro celou aplikaci a všechny jeho vnitřní subsystémy, jak ukazuje obrázek 4 – 7.
 
 ![](./media/image7.png)
 
-**Obrázek 4-7**. Porovnání suverenity dat.: monolitický databáze a mikroslužeb
+**Obrázek 4 – 7**. Porovnání suverenita dat: monolitické databáze a mikroslužeb
 
-Centralizované databáze přístup počátečním vypadá jednodušší a zdá se, že povolení opakovaného použití entity v různé subsystémy, aby vše konzistentní. Ale když ve skutečnosti je, že skončili s velmi velké tabulky slouží k mnoha různé subsystémy, které obsahují atributy a sloupce, které nejsou potřebné ve většině případů. je třeba pokouší použít stejné fyzické mapy pro turistika krátké záznamu, trvá dlouho den car cestě a učení geography.
+Centralizované databázi přístup zpočátku vypadá jednodušší a zdá se, že umožňují opakované použití entit v různé subsystémy, aby všechno, co konzistentní vzhledem k aplikacím. Ale ve skutečnosti je, že skončíte s velkou tabulkami, které slouží řada různé subsystémy a ve většině případů, které zahrnují atributy a sloupce, které nejsou potřebné. Je to jako pokusu použijte stejný fyzický mapu věnovat turistice krátký záznam pro pořízení automobilu jednodenní cesty a učení zeměpisné oblasti.
 
-Monolitický aplikace se obvykle jedné relační databáze má dvě důležité výhody: [transakce ACID](https://en.wikipedia.org/wiki/ACID) a jazyka SQL, i práci ve všech tabulkách a data související s vaší aplikace. Tento přístup poskytuje způsob, jak snadno vytvořit dotaz, který kombinuje data z více tabulek.
+Monolitické aplikace se obvykle jediné relační databáze má dvě důležité výhody: [transakce ACID](https://en.wikipedia.org/wiki/ACID) a jazyka SQL, obě práce ve všech tabulkách a data související s vaší aplikace. Tento přístup poskytuje způsob, jak snadno vytvořit dotaz, který kombinuje data z více tabulek.
 
-Přístup k datům stane však mnohem složitější, když přesouváte architektura mikroslužeb. Ale i v případě, že transakce ACID můžete nebo by měl použít v rámci mikroslužbu nebo ohraničenou kontextu, data vlastníkem jednotlivých mikroslužbu soukromý této mikroslužbu a můžete přistupovat pouze prostřednictvím jejího rozhraní API mikroslužby. Zapouzdření data zajišťuje, že mikroslužeb jsou volně vázány a můžete rozvíjet nezávisle na sobě. Pokud více služeb byly přístup ke stejným datům, aktualizace schématu vyžadovat koordinované aktualizace ke všem službám. Tím by došlo k přerušení nezávislé životního cyklu mikroslužby. Ale distribuované datové struktury znamená, že nemůžete provádět jednu transakci ACID napříč mikroslužeb. To zase znamená, že je nutné použít konzistence typu případné při obchodní proces zahrnuje více mikroslužeb. Toto je mnohem obtížnější než jednoduché spojení SQL; implementace Podobně řadu dalších funkcí relační databáze nejsou k dispozici napříč více mikroslužeb.
+Přístup k datům nebude však mnohem složitější, když přesunete na architekturu mikroslužeb. Ale i v případě, že transakce ACID jde nebo by měl použít v rámci mikroslužeb nebo ohraničená kontextu, dat vlastněných touto jednotlivých mikroslužeb je privátní pro tento mikroslužeb a je přístupný pouze prostřednictvím jejího rozhraní API mikroslužby. Zapouzdření dat zajišťuje, že mikroslužby jsou volně propojené a můžete rozvíjet nezávisle na mezi sebou. Pokud několik služeb, které získávali přístup stejná data, by aktualizace schématu vyžadují koordinované aktualizace ke všem službám. To by narušil autonomie životního cyklu mikroslužeb. Ale distribuovaných datových struktur znamená, že nemůžete provádět jednu transakci ACID napříč mikroslužeb. To zase znamená, že při obchodní proces zahrnuje více mikroslužeb je nutné použít konečné konzistence. To je mnohem obtížnější než jednoduché spojení SQL; implementace Podobně mnoho dalších funkcí relační databáze nejsou k dispozici napříč několika mikroslužeb.
 
-Budete i pokračovat, jiný mikroslužeb často používají různé *typy* databází. Moderní aplikace úložiště a proces různé druhy dat a relační databáze není vždy nejlepší volbou. Pro některé případy použití, mohou mít pohodlnější datový model a nabízí lepší výkon a škálovatelnost než databázi SQL, jako je SQL Server nebo Azure SQL Database databáze NoSQL, jako je Azure DocumentDB nebo MongoDB. V ostatních případech relační databáze je stále nejlepší metodou. Proto na základě mikroslužeb aplikace často používají směs databáze SQL a NoSQL, která se někdy nazývá [polyglot trvalost](https://martinfowler.com/bliki/PolyglotPersistence.html) přístup.
+Když se ještě dál, různé mikroslužeb často používají různé *typy* databází. Úložiště pro moderní aplikace a různé druhy dat procesu a relační databáze není vždy nejlepší volbou. Pro některé případy použití, může být databáze NoSQL, jako je Azure DocumentDB nebo MongoDB pohodlnější datový model a nabízí lepší výkon a škálovatelnost než databáze SQL jako SQL Server nebo databázi SQL Azure. V ostatních případech je relační databáze stále nejlepším řešením. Proto založených na mikroslužbách aplikace často používají kombinaci databáze SQL a NoSQL, která se někdy označuje jako [polyglotické trvalosti](https://martinfowler.com/bliki/PolyglotPersistence.html) přístup.
 
-Oddílů, trvalé polyglot architektura pro úložiště dat má mnoho výhod. Patří sem volně párované služby a lepší výkon, škálovatelnost, náklady a možnosti správy. Ho může způsobovat některé běžné problémy správy distribuovaných datech jako vysvětlíme v "[identifikaci hranice modelu domény](#identifying-domain-model-boundaries-for-each-microservice)" dál v této kapitole.
+Dělené polyglot trvalé architektury pro ukládání dat má mnoho výhod. Patří mezi ně volně propojených služeb a lepší výkon, škálovatelnost, náklady a možností správy. To může způsobovat některé běžné problémy správy distribuovaných dat jako vysvětlíme v "[identifikace hranic mezi modelem a doménou](#identifying-domain-model-boundaries-for-each-microservice)" dále v této kapitole.
 
-## <a name="the-relationship-between-microservices-and-the-bounded-context-pattern"></a>Vztah mezi mikroslužeb a vzor ohraničenou kontextu
+## <a name="the-relationship-between-microservices-and-the-bounded-context-pattern"></a>Vztah mezi mikroslužbami a vzor ohraničená kontextu
 
-Koncept mikroslužbu je odvozena z [ohraničenou kontextu (BC) vzor](https://martinfowler.com/bliki/BoundedContext.html) v [řízené domény návrhu (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design). DDD se zabývá velké modely rozdělením je na víc BCs a probíhá explicitní o jejich hranice. Každý BC musí mít svůj vlastní modelu a databázi. Podobně každý mikroslužbu vlastní související data. Kromě toho každý BC obvykle má svou vlastní [všudypřítomný jazyk](https://martinfowler.com/bliki/UbiquitousLanguage.html) ke komunikaci mezi vývojáři softwaru a odborníky domény.
+Koncept mikroslužeb je odvozen od [ohraničená kontextu (BC) vzor](https://martinfowler.com/bliki/BoundedContext.html) v [návrhu řízeného doménou (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design). DDD se zabývá velké modely jejich rozdělení do několika BCs a použití explicitní o jejich hranice. Každý BC musí mít svůj vlastní model a databázi. Každá mikroslužba podobně, vlastní související data. Kromě toho každá BC obvykle má svou vlastní [všudypřítomná jazyk](https://martinfowler.com/bliki/UbiquitousLanguage.html) ke komunikaci mezi vývojáři a odborníky na domény.
 
-Tyto podmínky (hlavně domény entity) v jazyce všudypřítomný může mít odlišné názvy v různých kontextech ohraničenou, i když jiné domény entity sdílejí stejnou identitu (to znamená, jedinečné ID sloužící k načtení entity úložiště). Například v kontextu, ohraničenou profilu uživatele, může entita domény uživatele sdílet identity s entita domény kupujících v řazení ohraničenou kontextu.
+Tyto podmínky (hlavně domény entity) v jazyce všudypřítomná může mít různé názvy v různých kontextech ohraničená, i když jiné domény entity sdílejí stejnou identitu (to znamená, jedinečný Identifikátor, který slouží k načtení entity ze služby storage). Například v rámci ohraničená profil uživatele entita domény uživatele může nasdílet identity kupujících entita domény v rámci pořadí omezená.
 
-Mikroslužbu je proto třeba kontextu ohraničenou, ale také určuje, že je distribuovaná služba. Je vytvořen jako samostatný proces pro každý ohraničenou kontext a musí používat distribuované protokoly HTTP a HTTPS, Websocket, jako je již bylo uvedeno dříve, nebo [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol). Vzor ohraničenou kontextu však neurčuje zda kontext ohraničenou je distribuovaná služba, nebo pokud je jednoduše logická hranici (např. obecný subsystému) v rámci monolitický nasazení aplikace.
+Mikroslužba je proto třeba ohraničená kontext, ale také určuje, že je distribuovaná služba. Je vytvořen jako samostatný proces pro jednotlivých ohraničených kontextech, a musí používat distribuované protokoly, které jste si poznamenali dříve, jako jsou HTTP/HTTPS, protokoly Websocket, nebo [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol). Vzor ohraničená kontextu, ale neurčuje, zda je kontext ohraničená distribuované služby nebo pokud je jednoduše logické hraniční (například obecný subsystému) v rámci monolitické nasazení aplikace.
 
-Je důležité, abyste měli na očích, definování služby pro každý ohraničenou kontext je dobrým místem, kde spustit. Ale nemáte, můžete zadat omezení návrhu na ni. Někdy je třeba navrhnout kontextu ohraničenou nebo obchodní mikroslužbu skládá z několika fyzických služeb. Ale nakonec, jak vzory – ohraničenou kontextu a mikroslužbu – úzce souvisejí.
+Je důležité, abyste měli na očích, definování služby pro jednotlivých ohraničených kontextech je dobrým začátkem. Ale nemáte k omezení návrhu na ni. Někdy je třeba navrhnout kontext ohraničená nebo obchodní mikroslužeb se skládá z několika fyzických služeb. Ale nakonec oba vzorky – omezená kontextu a mikroslužeb – úzce souvisejí.
 
-Výhody DDD z mikroslužeb získáním skutečné hranice ve formě distribuované mikroslužeb. Ale nápady třeba není sdílení modelu mezi mikroslužeb co chcete taky v kontextu vázaný.
+DDD těží z mikroslužeb tím, že získáme skutečné hranice ve formě distribuovaných mikroslužeb. Ale nápady jako nesdílí modelu mezi mikroslužbami co chcete také v kontextu omezená.
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Jan Ryšánková. Vzor: Databáze pro službu**
+-   **Chris Richardson. Vzor: Databáze na službu**
     [*https://microservices.io/patterns/data/database-per-service.html*](https://microservices.io/patterns/data/database-per-service.html)
 
--   **Martin Fowler. BoundedContext**
+-   **Martina Fowlera. BoundedContext**
     [*https://martinfowler.com/bliki/BoundedContext.html*](https://martinfowler.com/bliki/BoundedContext.html)
 
--   **Martin Fowler. PolyglotPersistence**
+-   **Martina Fowlera. PolyglotPersistence**
     [*https://martinfowler.com/bliki/PolyglotPersistence.html*](https://martinfowler.com/bliki/PolyglotPersistence.html)
 
--   **Alberto Brandolini. Strategické domény řízené návrh s mapování kontextu**
+-   **Alberto Brandolini. Návrh s použitím kontextu mapování na základě strategické domény**
     [*https://www.infoq.com/articles/ddd-contextmapping*](https://www.infoq.com/articles/ddd-contextmapping)
 
 

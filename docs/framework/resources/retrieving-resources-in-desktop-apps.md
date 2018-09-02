@@ -20,51 +20,51 @@ helpviewer_keywords:
 ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 40eec7c03de616b22ae7b20c56cd5a05237ec759
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1be7120b9bff5c51141a1eac80051c4b464433aa
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33399805"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43406591"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Načítání prostředků v aplikacích klasické pracovní plochy
-Při práci s místní zdroje v aplikacích klasické pracovní plochy rozhraní .NET Framework by v ideálním případě prostředky pro výchozí nebo neutrální jazykovou verzi balíčku s hlavní sestavení a vytvořte samostatné satelitní sestavení pro každý jazyk nebo jazykovou verzi, která vaše aplikace podporuje. Pak můžete použít <xref:System.Resources.ResourceManager> třídy, jak je popsáno v následující části pro přístup k prostředkům s názvem. Pokud se rozhodnete, že není v hlavní sestavení a satelitní sestavení pro vložení vašich prostředků, můžete taky přejít binární soubory RESOURCES přímo, jak je popsáno v části [načítání prostředky z soubory .resources](#from_file) později v tomto článek.  Načtení prostředků v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, najdete v části [vytváření a načítání prostředků v aplikacích pro Windows Store](http://go.microsoft.com/fwlink/p/?LinkID=241674) ve službě Windows Dev Center.  
+Při práci s lokalizované prostředky v desktopových aplikacích rozhraní .NET Framework by měl v ideálním případě balíček prostředků pro výchozí nebo neutrální jazykovou verzi s hlavním sestavením a vytvořte samostatné satelitní sestavení pro každý jazyk nebo jazykovou verzi, která vaše aplikace podporuje. Pak můžete použít <xref:System.Resources.ResourceManager> třídy, jak je popsáno v další části a přístup k pojmenovaným prostředkům. Pokud se rozhodnete vložit prostředky do hlavního sestavení a satelitní sestavení, se dá dostat taky binárních souborů .resources přímo, jak je popsáno v části [načítání prostředků ze souborů .resources](#from_file) dále v tomto článek.  Pro načtení prostředků v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, najdete v článku [vytváření a načítání prostředků v aplikacích pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674) Windows Dev Center.  
   
 <a name="from_assembly"></a>   
 ## <a name="retrieving-resources-from-assemblies"></a>Načítání prostředků ze sestavení  
- <xref:System.Resources.ResourceManager> Třída poskytuje přístup k prostředkům v době běhu. Můžete použít <xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType> metoda pro načtení řetězcové prostředky a <xref:System.Resources.ResourceManager.GetObject%2A?displayProperty=nameWithType> nebo <xref:System.Resources.ResourceManager.GetStream%2A?displayProperty=nameWithType> metoda pro načtení prostředků jiné než řetězec. Každá z metod má dvě přetížení:  
+ <xref:System.Resources.ResourceManager> Třídě poskytuje přístup k prostředkům v době běhu. Můžete použít <xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType> metody k získání řetězcové prostředky a <xref:System.Resources.ResourceManager.GetObject%2A?displayProperty=nameWithType> nebo <xref:System.Resources.ResourceManager.GetStream%2A?displayProperty=nameWithType> metodu pro načtení neřetězcové prostředky. Každá z metod má dvě přetížení:  
   
--   Přetížení jejichž jediný parametr je řetězec, který obsahuje název prostředku. Metoda se pokusí načíst prostředku pro aktuální jazykovou verzi vlákna. Další informace najdete v tématu <xref:System.Resources.ResourceManager.GetString%28System.String%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%29>, a <xref:System.Resources.ResourceManager.GetStream%28System.String%29> metody.  
+-   Přetížení jehož jediný parametr je řetězec, který obsahuje název prostředku. Metoda se pokusí načíst tento prostředek pro aktuální jazykovou verzi vlákna. Další informace najdete v tématu <xref:System.Resources.ResourceManager.GetString%28System.String%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%29>, a <xref:System.Resources.ResourceManager.GetStream%28System.String%29> metody.  
   
--   Přetížení, které má dva parametry: řetězec, který obsahuje název prostředku a <xref:System.Globalization.CultureInfo> objekt, který reprezentuje jazykovou verzi, jejichž prostředek se má načíst. Pokud prostředek pro nastavené, že jazykovou verzi nelze najít, správce prostředků používá záložní pravidla načíst odpovídající prostředek. Další informace najdete v tématu <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%2CSystem.Globalization.CultureInfo%29>, a <xref:System.Resources.ResourceManager.GetStream%28System.String%2CSystem.Globalization.CultureInfo%29> metody.  
+-   Přetížení, která má dva parametry: řetězec obsahující název prostředku a s <xref:System.Globalization.CultureInfo> objekt, který představuje jazykovou verzi, jejíž prostředek má být načtena. Pokud prostředek pro nastavené, nebyl nalezen jazykovou verzi, správce prostředků používá pravidla pro použití náhradní lokality k načtení odpovídající prostředek. Další informace najdete v tématu <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%2CSystem.Globalization.CultureInfo%29>, a <xref:System.Resources.ResourceManager.GetStream%28System.String%2CSystem.Globalization.CultureInfo%29> metody.  
   
- Správce prostředků používá záložní proces prostředků k řízení způsobu, jakým aplikace načítat prostředky specifické pro jazykovou verzi. Další informace najdete v části "Proces nouzového prostředku" v [balení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md). Informace o vytváření instancí <xref:System.Resources.ResourceManager> objektu, najdete v části "Vytváření instancí ResourceManager objekt" v <xref:System.Resources.ResourceManager> třída tématu.  
+ Proces získávání náhradních prostředků resource Manageru používá k řízení, jak aplikace načítá prostředky specifické pro jazykovou verzi. Další informace najdete v tématu v části "Proces záložního prostředku" [Packaging and Deploying Resources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md). Informace o vytvoření instance <xref:System.Resources.ResourceManager> objektu, naleznete v části "Vytvoření instance objektu ResourceManager" <xref:System.Resources.ResourceManager> třídě.  
   
-### <a name="retrieving-string-data-an-example"></a>Načítání dat řetězců: Příklad  
- Následující příklad volání <xref:System.Resources.ResourceManager.GetString%28System.String%29> metoda pro načtení řetězcové prostředky aktuální jazykové verze uživatelského rozhraní. Francouzština (Francie) a kultur ruskými obsahuje neutrální řetězec prostředku pro jazykovou verzi Angličtina (Spojené státy) a lokalizované prostředky. V následujícím zdroji Czech (Czech Republic) je v souboru s názvem Strings.txt:  
+### <a name="retrieving-string-data-an-example"></a>Načítání dat řetězce: Příklad  
+ Následující příklad volá <xref:System.Resources.ResourceManager.GetString%28System.String%29> metody k získání řetězcové prostředky aktuální jazykové verze uživatelského rozhraní. Francouzština (Francie) a jazykové verze ruština (Rusko) obsahuje prostředek řetězce neutrální jazykové verze Angličtina (Spojené státy) a lokalizované prostředky. Následující prostředek Angličtina (Spojené státy) je do souboru s názvem Strings.txt:  
   
 ```  
 TimeHeader=The current time is  
 ```  
   
- Francouzština (Francie) prostředku je v souboru s názvem Strings.fr-FR.txt:  
+ Francouzština (Francie) prostředků je do souboru s názvem Strings.fr-FR.txt:  
   
 ```  
 TimeHeader=L'heure actuelle est  
 ```  
   
- Prostředek ruskými je do souboru s názvem Strings.ru-RU-txt:  
+ Ruština (Rusko) prostředků je do souboru s názvem Strings.ru-RU-txt:  
   
 ```  
 TimeHeader=Текущее время —  
 ```  
   
- Zdrojový kód pro tento příklad, který je v souboru s názvem GetString.cs pro C# verzi kódu a GetString.vb pro verzi jazyka Visual Basic, definuje pole řetězců obsahující název jazykové verze čtyři: tři jazykové verze, pro které jsou k dispozici prostředky a Španělština (Španělsko) jazykovou verzi. Smyčku, které provádí pětkrát náhodně vybere jeden z těchto jazykové verze a přiřadí ji k <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> a <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> vlastnosti. Potom zavolá <xref:System.Resources.ResourceManager.GetString%28System.String%29> metoda pro načtení lokalizované řetězce, který se zobrazí spolu s denní dobu.  
+ Zdrojový kód pro tento příklad, který je do souboru s názvem GetString.cs pro C# verzi kódu a GetString.vb pro verze jazyka Visual Basic, definuje pole řetězců obsahující název jazykové verze čtyři: tři jazykové verze, pro které prostředky jsou k dispozici a Španělština (Španělsko) jazykovou verzi. Smyčku, která spustí pětkrát náhodně vybere jeden z těchto jazykové verze a přiřadí ji k <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> a <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> vlastnosti. Poté zavolá <xref:System.Resources.ResourceManager.GetString%28System.String%29> metodu pro načtení lokalizované řetězce, který se zobrazí spolu s denní dobu.  
   
  [!code-csharp[Conceptual.Resources.Retrieving#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/getstring.cs#3)]
  [!code-vb[Conceptual.Resources.Retrieving#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/getstring.vb#3)]  
   
- Následující soubor batch (.bat) kompiluje v příkladu a vygeneruje satelitní sestavení v adresáři odpovídající. Příkazy jsou uvedené pro jazyk C# a kompilátoru. V jazyce Visual Basic změnit `csc` k `vbc`a změňte `GetString.cs` k `GetString.vb`.  
+ Následující dávkový soubor (BAT) zkompiluje v příkladu a generuje satelitní sestavení v příslušné adresáře. Příkazy jsou k dispozici pro jazyk C# a kompilátoru. V jazyce Visual Basic změnit `csc` k `vbc`a změnit `GetString.cs` k `GetString.vb`.  
   
 ```  
 resgen strings.txt  
@@ -79,22 +79,22 @@ md ru-RU
 al -embed:strings.ru-RU.resources -culture:ru-RU -out:ru-RU\GetString.resources.dll  
 ```  
   
- Pokud aktuální jazykové verze uživatelského rozhraní španělština (Španělsko), Všimněte si, že v příkladu se zobrazí anglickými prostředky, protože nejsou k dispozici prostředky španělštiny a výchozí jazykovou verzi v příkladu je angličtina.  
+ Pokud je aktuální jazyková verze uživatelského rozhraní španělština (Španělsko), mějte na paměti, že v příkladu se zobrazí anglické jazykové prostředky, protože španělštiny prostředky nejsou k dispozici a je v příkladu výchozí jazykovou verzi angličtina.  
   
 ### <a name="retrieving-object-data-two-examples"></a>Načítání dat objektu: Dva příklady  
- Můžete použít <xref:System.Resources.ResourceManager.GetObject%2A> a <xref:System.Resources.ResourceManager.GetStream%2A> metody k načtení dat objektu. To zahrnuje primitivní datové typy, serializovatelné objekty a objekty, které jsou uloženy v binárním formátu (například obrázky).  
+ Můžete použít <xref:System.Resources.ResourceManager.GetObject%2A> a <xref:System.Resources.ResourceManager.GetStream%2A> metody pro načtení dat objektu. To zahrnuje primitivní datové typy serializovatelné objekty a objekty, které jsou uloženy v binárním formátu (jako jsou obrázky).  
   
- Následující příklad používá <xref:System.Resources.ResourceManager.GetStream%28System.String%29> metoda pro načtení rastrového obrázku, který se používá v aplikaci je otevřete úvodní okno. Následující zdrojový kód v souboru s názvem CreateResources.cs (pro jazyk C#) nebo CreateResources.vb (pro Visual Basic) generuje soubor .resx, který obsahuje bitovou kopii serializovaných. V takovém případě je se obrázek načetl ze souboru s názvem SplashScreen.jpg; můžete upravit název souboru k nahrazení vlastní image.  
+ V následujícím příkladu <xref:System.Resources.ResourceManager.GetStream%28System.String%29> metodu pro načtení rastrový obrázek, který se používá v aplikaci prvku otevřete úvodní okno. Tento zdrojový kód do souboru s názvem CreateResources.cs (pro C#) nebo CreateResources.vb (pro jazyk Visual Basic) generuje soubor .resx, který obsahuje serializovaná bitovou kopii. V takovém případě bude obrázek načten ze souboru s názvem SplashScreen.jpg; můžete upravit název souboru nahraďte vlastní image.  
   
  [!code-csharp[Conceptual.Resources.Retrieving#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/createresources.cs#4)]
  [!code-vb[Conceptual.Resources.Retrieving#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/createresources.vb#4)]  
   
- Následující kód načte prostředek a zobrazí obrázek <xref:System.Windows.Forms.PictureBox> ovládacího prvku.  
+ Následující kód načte prostředek a zobrazí obraz v <xref:System.Windows.Forms.PictureBox> ovládacího prvku.  
   
  [!code-csharp[Conceptual.Resources.Retrieving#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/getstream.cs#5)]
  [!code-vb[Conceptual.Resources.Retrieving#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/getstream.vb#5)]  
   
- Následující dávkový soubor můžete použít k vytvoření příklad jazyka C#. V jazyce Visual Basic změnit `csc` k `vbc`a změňte příponu souboru zdrojového kódu z `.cs` k `.vb`.  
+ Následující soubor služby batch můžete použít k vytvoření příkladu jazyka C#. V jazyce Visual Basic změnit `csc` k `vbc`a změňte příponu souboru se zdrojovým kódem z `.cs` k `.vb`.  
   
 ```  
 csc CreateResources.cs  
@@ -105,22 +105,22 @@ resgen AppResources.resx
 csc GetStream.cs -resource:AppResources.resources  
 ```  
   
- Následující příklad používá <xref:System.Resources.ResourceManager.GetObject%28System.String%29?displayProperty=nameWithType> metodu pro deserializaci vlastních objektů. Příklad obsahuje zdrojový soubor s názvem UIElements.cs (UIElements.vb jazyka Visual Basic), která definuje následující strukturu s názvem `PersonTable`. Tato struktura je určena pro použití ve zobrazení rutinou obecná tabulka, která zobrazuje lokalizované názvy sloupců tabulky. Všimněte si, že `PersonTable` struktura je označené jako <xref:System.SerializableAttribute> atribut.  
+ V následujícím příkladu <xref:System.Resources.ResourceManager.GetObject%28System.String%29?displayProperty=nameWithType> metodu pro deserializaci vlastních objektů. Příklad obsahuje soubor zdrojového kódu s názvem UIElements.cs (UIElements.vb v jazyce Visual Basic), který definuje následující strukturu s názvem `PersonTable`. Tato struktura je určena pro použití podle rutinu zobrazení obecná tabulka, která se zobrazí lokalizované názvy sloupců tabulky. Všimněte si, že `PersonTable` struktura je označena pomocí <xref:System.SerializableAttribute> atribut.  
   
  [!code-csharp[Conceptual.Resources.Retrieving#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/example.cs#6)]
  [!code-vb[Conceptual.Resources.Retrieving#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/example.vb#6)]  
   
- Následující kód do souboru s názvem CreateResources.cs (CreateResources.vb jazyka Visual Basic) vytvoří soubor XML prostředků s názvem UIResources.resx, která ukládá název tabulky a `PersonTable` objekt, který obsahuje informace o aplikaci, která je lokalizován do Anglickém jazyce.  
+ Následující kód ze souboru s názvem CreateResources.cs (CreateResources.vb v jazyce Visual Basic) vytvoří soubor prostředků jazyka XML s názvem UIResources.resx uchovávající název tabulky a `PersonTable` objekt, který obsahuje informace pro aplikace, který je lokalizován pro Anglický jazyk.  
   
  [!code-csharp[Conceptual.Resources.Retrieving#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/example1.cs#7)]
  [!code-vb[Conceptual.Resources.Retrieving#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/example.vb#7)]  
   
- Následující kód v souboru zdrojového kódu s názvem GetObject.cs (GetObject.vb) potom načte prostředky a zobrazí je ke konzole.  
+ Následující kód v souboru zdrojového kódu s názvem GetObject.cs (GetObject.vb) pak načte prostředky a zobrazí je do konzoly.  
   
  [!code-csharp[Conceptual.Resources.Retrieving#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/example2.cs#8)]
  [!code-vb[Conceptual.Resources.Retrieving#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/example2.vb#8)]  
   
- Můžete sestavit souboru nezbytné prostředků a sestavení a spuštění aplikace tak, že spustíte následující dávkového souboru. Je nutné použít `/r` možnost zadat Resgen.exe s odkazem na UIElements.dll tak, aby se přístup k informacím o `PersonTable` struktura. Pokud používáte C#, nahraďte `vbc` název kompilátoru s `csc`a nahraďte `.vb` rozšíření s `.cs`.  
+ Můžete vytvářet nezbytné zdrojového souboru a sestavení a spuštění aplikace pomocí provádí následující dávkový soubor. Je nutné použít `/r` možnost slouží k poskytování Resgen.exe s odkazem na UIElements.dll tak, aby se přístup k informacím o `PersonTable` struktury. Pokud používáte C#, nahraďte `vbc` kompilátoru název s `csc`a nahraďte `.vb` rozšíření s `.cs`.  
   
 ```  
 vbc -t:library UIElements.vb  
@@ -133,63 +133,63 @@ vbc GetObject.vb -r:UIElements.dll -resource:UIResources.resources
 GetObject.exe  
 ```  
   
-## <a name="versioning-support-for-satellite-assemblies"></a>Podpora správy verzí pro satelitní sestavení  
- Ve výchozím nastavení když <xref:System.Resources.ResourceManager> objekt načítá požadované prostředky, hledá satelitní sestavení, které mají čísla verzí, která odpovídají číslo verze hlavního sestavení. Po nasazení aplikace, můžete chtít aktualizovat hlavní sestavení nebo prostředku satelitní sestavení. Hlavní sestavení a satelitních sestavení rozhraní .NET Framework poskytuje podporu pro správu verzí.  
+## <a name="versioning-support-for-satellite-assemblies"></a>Podpora verzí satelitních sestavení  
+ Ve výchozím nastavení když <xref:System.Resources.ResourceManager> objekt načte požadované prostředky, vypadá pro satelitní sestavení, které mají čísla verzí, které odpovídají číslu verze hlavní sestavení. Když nasadíte aplikaci, můžete chtít aktualizovat hlavní sestavení nebo konkrétních prostředků satelitních sestavení. Hlavní sestavení a satelitní sestavení rozhraní .NET Framework poskytuje podporu pro správu verzí.  
   
- <xref:System.Resources.SatelliteContractVersionAttribute> Atribut poskytuje podporu správy verzí pro hlavní sestavení. Zadání tohoto atributu na hlavní sestavení aplikace umožňuje aktualizovat a znovu nasaďte hlavní sestavení bez aktualizace jeho satelitních sestavení. Po aktualizaci hlavní sestavení, zvýšíte číslo verze hlavní sestavení, ale ponechte číslo verze smlouvy satelitní beze změny. Pokud správce prostředků načítá požadované prostředky, načte verze sestavení satelitní určeného tento atribut.  
+ <xref:System.Resources.SatelliteContractVersionAttribute> Atribut poskytuje podporu správy verzí pro hlavní sestavení. Zadání tohoto atributu na hlavní sestavení vaší aplikace můžete aktualizace a opětovné nasazení do hlavního sestavení bez aktualizace jeho satelitních sestavení. Po aktualizaci hlavní sestavení zvýšit číslo verze sestavení hlavní ale ponechejte číslo verze satelitního kontraktu beze změny. Pokud správce prostředků načte požadované prostředky, načte verzi satelitního sestavení určeném tento atribut.  
   
- Sestavení zásady vydavatele poskytují podporu pro správu verzí satelitních sestavení. Můžete aktualizovat a znovu nasaďte satelitní sestavení bez aktualizace hlavní sestavení. Po aktualizaci satelitní sestavení, zvýšit jeho číslo verze a dodávat s sestavení zásady vydavatele. V sestavení zásady vydavatele určit, že nové satelitní sestavení je zpětně kompatibilní s jeho předchozí verze. Správce prostředků bude používat <xref:System.Resources.SatelliteContractVersionAttribute> atribut určení verze satelitní sestavení, ale zavaděč sestavení vytvoří vazbu k satelitní sestavení verze zadaná zásad vydavatele. Další informace o sestavení zásady vydavatele najdete v tématu [vytvoření souboru zásad vydavatele](../../../docs/framework/configure-apps/how-to-create-a-publisher-policy.md).  
+ Sestavení zásad vydavatele poskytovat podporu pro správu verzí satelitních sestavení. Můžete aktualizovat a znovu nasadit do satelitního sestavení bez aktualizace hlavní sestavení. Po aktualizaci satelitní sestavení zvýšit číslo verze a dodávat s sestavení zásad vydavatele. V sestavení zásad vydavatele, určit, že vaše nové satelitní sestavení zpětně kompatibilní s předchozí verzí. Správce prostředků bude používat <xref:System.Resources.SatelliteContractVersionAttribute> atribut k určení verze satelitního sestavení, ale zavaděč sestavení vytvoří vazbu k verzi satelitního sestavení určeném zásad vydavatele. Další informace o sestavení zásad vydavatele, naleznete v tématu [vytváření souboru zásad vydavatele](../../../docs/framework/configure-apps/how-to-create-a-publisher-policy.md).  
   
- Pro podporu správy verzí úplné sestavení, doporučujeme, abyste nasadili sestavení se silným názvem v [globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md) a nasadit sestavení, které nemají silné názvy v adresáři aplikace. Pokud chcete nasadit sestavení se silným názvem v adresáři aplikace, nebude možné zvýšit číslo verze sestavení satelitní při aktualizaci sestavení. Místo toho je nutné provést aktualizaci na místě, kde nahraďte kód aktualizované stávající kód a zachovat stejné číslo verze. Například, pokud chcete aktualizovat verzi 1.0.0.0 satelitní sestavení s názvem plně zadaného sestavení "myApp.resources, verzi 1.0.0.0, Culture = = de, PublicKeyToken = b03f5f11d50a3a", přepsat aktualizovanou knihovnou myApp.Resources.dll, která byla Kompilovat s názvem stejným, plně zadané sestavení "myApp.resources, verze = 1.0.0.0, Culture = de, PublicKeyToken = b03f5f11d50a3a". Všimněte si, že pomocí místní aktualizace na soubory satelitní sestavení ztěžuje aplikace přesně určit verzi satelitní sestavení.  
+ Pokud chcete povolit podporu správy verzí úplná sestavení, doporučujeme vám, že nasadíte sestavení se silným názvem v [globální mezipaměti sestavení](../../../docs/framework/app-domains/gac.md) a nasadit sestavení, které nemají silné názvy v adresáři aplikace. Pokud chcete nasadit sestavení se silným názvem v adresáři aplikace, nebude možné zvýšit číslo verze satelitního sestavení při aktualizaci sestavení. Místo toho je nutné provést aktualizaci na místě ve kterém nahraďte stávající kód s aktualizovaným kódem a udržovat stejné číslo verze. Například, pokud chcete aktualizovat verzi 1.0.0.0 satelitní sestavení s plně určený název sestavení "myApp.resources, verze 1.0.0.0, Culture = = de, PublicKeyToken = b03f5f11d50a3a", přepsat aktualizované myApp.resources.dll, který byl zkompilovaná sestavení stejné, plně zadaný název "myApp.resources, verze 1.0.0.0, jazyková verze = de, PublicKeyToken = = b03f5f11d50a3a". Všimněte si, že pomocí místní aktualizace pro soubory satelitního sestavení je těžké aplikaci, kterou přesně určit verzi satelitního sestavení.  
   
- Další informace o správě verzí sestavení najdete v tématu [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md) a [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+ Další informace o správě verzí sestavení naleznete v tématu [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md) a [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   
 <a name="from_file"></a>   
-## <a name="retrieving-resources-from-resources-files"></a>Načítání prostředků z soubory .resources  
- Pokud se rozhodnete, že není nasazujte prostředky v satelitní sestavení, které můžete použít <xref:System.Resources.ResourceManager> objektu pro přístup k prostředkům ze .resources soubory přímo. Chcete-li to provést, musíte nasadit soubory .resources správně. Potom pomocí <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%2A?displayProperty=nameWithType> metoda pro vytvoření instance <xref:System.Resources.ResourceManager> objektu a zadejte adresář obsahující soubory .resources samostatné.  
+## <a name="retrieving-resources-from-resources-files"></a>Načítání prostředků ze souborů .resources  
+ Pokud se rozhodnete nasazení prostředků v satelitních sestaveních, které můžete použít <xref:System.Resources.ResourceManager> objektu pro přístup k prostředkům z .resources soubory přímo. Chcete-li to provést, musíte nasadit soubory .resources správně. Použít <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%2A?displayProperty=nameWithType> metoda pro vytvoření instance <xref:System.Resources.ResourceManager> objektu a zadejte adresář, který obsahuje samostatné soubory .resources.  
   
-### <a name="deploying-resources-files"></a>Nasazení soubory .resources  
- Když vložíte soubory .resources sestavení aplikace a satelitní sestavení, každé satelitní sestavení má stejný název souboru, ale je umístěn v podadresáři, která odráží jazykovou verzi satelitní sestavení. Naproti tomu při přístupu k prostředkům soubory .resources přímo, můžete umístit všechny soubory .resources v jednom adresáři, obvykle podadresáři adresáře aplikace. Název souboru .resources výchozí aplikace se skládá z název kořenové, se žádná informace o jeho jazykové verze (například strings.resources). Prostředky pro jednotlivé lokalizované jazykové verze jsou uloženy v souboru, jehož název se skládá z název kořenové, za nímž následuje jazyková verze (například strings.ja.resources nebo strings.de DE.resources). Následující obrázek ukazuje, kde soubory prostředků, musí se nacházet ve strukturu adresáře.  
+### <a name="deploying-resources-files"></a>Nasazení souborů .resources  
+ Při vložení souborů .resources v sestavení aplikace a satelitní sestavení každé satelitní sestavení má stejný název souboru, ale je umístěn v podadresáři, která zohledňuje jazykovou verzi satelitního sestavení. Naproti tomu při přístupu k prostředkům ze souborů .resources přímo, můžete umístit všechny soubory .resources v jednom adresáři, obvykle jedná o podadresář adresáře aplikace. Název souboru .resources výchozí aplikace se skládá z názvu kořenového pouze, bez upozornění jeho jazykové verze (například strings.resources). Prostředky pro každou lokalizovanou jazykovou verzi jsou uloženy v souboru, jehož název se skládá z názvu kořenové a potom podle jazykové verze (například strings.ja.resources nebo strings.de-DE.resources). Následující ilustrace ukazuje, kde se soubory prostředků musí nacházet v adresářové struktuře.  
   
  ![Hlavní adresář pro vaši aplikaci](../../../docs/framework/resources/media/resappdir.gif "resappdir")  
-Struktura adresáře a konvence pojmenování pro soubory .resources  
+Struktura adresářů a konvence pojmenování pro soubory .resources  
   
-### <a name="using-the-resource-manager"></a>Pomocí Správce prostředků  
- Poté, co jste vytvořili vaše prostředky a je umístěn v adresáři odpovídající, vytvoříte <xref:System.Resources.ResourceManager> objekt, který chcete používat prostředky voláním <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%28System.String%2CSystem.String%2CSystem.Type%29> metoda. První parametr určuje název kořenového souboru .resources výchozí aplikace (to by být "řetězce", například v předchozí části). Druhý parametr určuje umístění prostředků ("zdroje" pro předchozí příklad). Třetí parametr určuje <xref:System.Resources.ResourceSet> implementace používat. Pokud je třetí parametr `null`, modul runtime výchozí <xref:System.Resources.ResourceSet> se používá.  
+### <a name="using-the-resource-manager"></a>Pomocí Resource Manageru  
+ Poté, co jste vytvořili prostředky a umístí je do příslušného adresáře, vytváření <xref:System.Resources.ResourceManager> objektu, který chcete používat prostředky voláním <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%28System.String%2CSystem.String%2CSystem.Type%29> metody. První parametr určuje název kořenového souboru .resources výchozí aplikace (jde "řetězce", například v předchozí části). Druhý parametr určuje umístění prostředků ("Resources" předchozího příkladu). Třetí parametr určuje, <xref:System.Resources.ResourceSet> implementace. Pokud třetí parametr je `null`, výchozí modul runtime <xref:System.Resources.ResourceSet> se používá.  
   
 > [!NOTE]
->  Nenasazujte aplikace ASP.NET pomocí samostatné soubory .resources. To může způsobit uzamčení problémy a zalomení XCOPY nasazení. Doporučujeme nasadit prostředky ve satelitní sestavení. Další informace najdete v tématu [webové stránky ASP.NET: Přehled prostředků](http://msdn.microsoft.com/library/0936b3b2-9e6e-4abe-9c06-364efef9dbbd).  
+>  Nenasazujte aplikace pro ASP.NET pomocí samostatné soubory .resources. To může způsobit zamykání problémy a zalomení nasazení XCOPY. Doporučujeme nasadit prostředky technologie ASP.NET v satelitním sestavení. Další informace najdete v tématu [webové stránky ASP.NET: Přehled prostředků](https://msdn.microsoft.com/library/0936b3b2-9e6e-4abe-9c06-364efef9dbbd).  
   
- Po instanci můžete vytvořit <xref:System.Resources.ResourceManager> objekt, můžete použít <xref:System.Resources.ResourceManager.GetString%2A>, <xref:System.Resources.ResourceManager.GetObject%2A>, a <xref:System.Resources.ResourceManager.GetStream%2A> metody popsané dříve k načtení prostředků. Načítání prostředků přímo z soubory .resources se ale liší od načtení vložené prostředky ze sestavení. Při načítání prostředků z soubory .resources <xref:System.Resources.ResourceManager.GetString%28System.String%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%29>, a <xref:System.Resources.ResourceManager.GetStream%28System.String%29> metody vždy načíst výchozí jazykovou verzi prostředky bez ohledu na aktuální jazykové verze. K načtení prostředků pro aktuální jazykovou verzi buď aplikace nebo konkrétní jazykové verze, musí volat <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%2CSystem.Globalization.CultureInfo%29>, nebo <xref:System.Resources.ResourceManager.GetStream%28System.String%2CSystem.Globalization.CultureInfo%29> metoda a zadat jazykovou verzi, jejíž prostředky se mají být načteny. K načtení prostředků aktuální jazykové verze, zadejte hodnotu <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost jako `culture` argument. Pokud správce prostředků nelze načíst z prostředků `culture`, používá záložní pravidel standardní prostředků pro načtení s příslušnými prostředky.  
+ Jakmile vytvoříte instanci <xref:System.Resources.ResourceManager> objektu, je použít <xref:System.Resources.ResourceManager.GetString%2A>, <xref:System.Resources.ResourceManager.GetObject%2A>, a <xref:System.Resources.ResourceManager.GetStream%2A> metod, jak je popsáno dříve k načtení prostředků. Načítání prostředků přímo ze souborů .resources se však liší od načtení vložených prostředků v sestavení. Při načtení prostředků ze souborů .resources <xref:System.Resources.ResourceManager.GetString%28System.String%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%29>, a <xref:System.Resources.ResourceManager.GetStream%28System.String%29> metody vždy načíst výchozí jazykové prostředky bez ohledu na aktuální jazykové verze. Chcete-li načíst prostředky buď aplikaci pro aktuální jazykovou verzi nebo konkrétní jazykové verze, musíte volat <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%2CSystem.Globalization.CultureInfo%29>, nebo <xref:System.Resources.ResourceManager.GetStream%28System.String%2CSystem.Globalization.CultureInfo%29> metoda a zadat jazykovou verzi, jehož prostředky se mají načíst. K načtení prostředků aktuální jazykové verze, zadejte hodnotu <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost jako `culture` argument. Pokud správce prostředků nelze načíst z prostředků `culture`, používá záložní pravidla standardních prostředků k načtení příslušných prostředků.  
   
 ### <a name="an-example"></a>Příklad  
- Následující příklad ilustruje, jak správce prostředků načte prostředky přímo z soubory .resources. V příkladu se skládá z tři založený na textu zdrojové soubory pro angličtinu (Spojené státy), francouzština (Francie) a ruskými jazykové verze. V příkladu výchozí jazykovou verzi je angličtina (Spojené státy). Jeho prostředky jsou uloženy v následující soubor s názvem Strings.txt:  
+ Následující příklad ukazuje, jak správce prostředků načte prostředky přímo ze souborů .resources. Příklad se skládá ze tří souborů založený na textu prostředků pro angličtinu (Spojené státy), francouzština (Francie) a jazykové verze ruština (Rusko). Angličtina (Spojené státy) je v příkladu výchozí jazykovou verzi. Její prostředky jsou uložené v následujícím souboru s názvem Strings.txt:  
   
 ```  
 Greeting=Hello  
 Prompt=What is your name?  
 ```  
   
- Prostředky pro jazykovou verzi francouzština (Francie) jsou uloženy v následující soubor, který se nazývá Strings.fr-FR.txt:  
+ Prostředky pro jazykovou verzi francouzština (Francie) jsou uloženy v následujícím souboru, který se nazývá Strings.fr-FR.txt:  
   
 ```  
 Greeting=Bon jour  
 Prompt=Comment vous appelez-vous?  
 ```  
   
- Prostředky pro jazykovou verzi ruskými jsou uloženy v následující soubor, který se nazývá Strings.ru-RU.txt:  
+ Prostředky pro jazykovou verzi ruština (Rusko) jsou uloženy v následujícím souboru, který se nazývá Strings.ru-RU.txt:  
   
 ```  
 Greeting=Здравствуйте  
 Prompt=Как вас зовут?  
 ```  
   
- Následuje zdrojový kód pro tento příklad. Tento příklad vytvoří <xref:System.Globalization.CultureInfo> objektů pro angličtinu (Spojené státy), angličtina (Kanada), francouzština (Francie) a ruskými jazykové verze a díky každý aktuální jazykovou verzi. <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> Metoda pak poskytuje hodnotu <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost jako `culture` argument načíst s příslušnými prostředky specifické pro jazykovou verzi.  
+ Následující je zdrojový kód pro příklad. Příkladu je vytvořena instance <xref:System.Globalization.CultureInfo> objekty pro angličtinu (Spojené státy), angličtina (Kanada), francouzština (Francie) a jazykové verze ruština (Rusko) a provádí každý aktuální jazykové verze. <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> Metoda pak poskytuje hodnotu <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost jako `culture` argument k načtení příslušné prostředky specifické pro jazykovou verzi.  
   
  [!code-csharp[Conceptual.Resources.Retrieving#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/example3.cs#9)]
  [!code-vb[Conceptual.Resources.Retrieving#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/example3.vb#9)]  
   
- Verze jazyka C# v příkladu můžete zkompilovat spuštěním následující dávkového souboru. Pokud používáte Visual Basic, nahraďte `csc` s `vbc`a nahraďte `.cs` rozšíření s `.vb`.  
+ Verze jazyka C# v příkladu můžete zkompilovat spuštěním následující dávkového souboru. Pokud používáte jazyk Visual Basic, nahraďte `csc` s `vbc`a nahraďte `.cs` rozšíření s `.vb`.  
   
 ```  
 Md Resources  
@@ -205,4 +205,4 @@ csc Example.cs
  [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)  
  [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)  
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
- [Vytváření a načítání prostředků v aplikacích pro Windows Store](http://go.microsoft.com/fwlink/p/?LinkID=241674)
+ [Vytváření a načítání prostředků v aplikacích pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674)

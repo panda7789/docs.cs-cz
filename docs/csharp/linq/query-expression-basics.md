@@ -4,11 +4,11 @@ description: Představuje koncepty související s výrazy dotazu
 ms.date: 11/30/2016
 ms.assetid: 027db1f8-346f-44d2-a16e-043fcea3a4e0
 ms.openlocfilehash: 68f338381e354f4944539d63ca3a3cc3500031c1
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42933278"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417275"
 ---
 # <a name="query-expression-basics"></a>Základy výrazů dotazů
 

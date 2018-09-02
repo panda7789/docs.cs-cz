@@ -1,34 +1,36 @@
 ---
-title: 'Postupy: Přidání odkazu služby dat (služby WCF Data Services)'
-ms.date: 03/30/2017
+title: 'Postupy: Přidání odkazu na datovou službu (WCF Data Services)'
+ms.date: 08/24/2018
 helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 62c6f318-3ee1-433a-b7a3-efa234c3034c
-ms.openlocfilehash: a8dcc01fb7a564a363cabed6a22738cd520d317f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fc1786e1c6102c702374989253cd3ce23e3f7b54
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33356228"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43404420"
 ---
-# <a name="how-to-add-a-data-service-reference-wcf-data-services"></a>Postupy: Přidání odkazu služby dat (služby WCF Data Services)
-Můžete použít **přidat odkaz na službu** dialogové okno v sadě Visual Studio se přidat odkaz na [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. To umožňuje snadno přístup ke službě data v aplikaci klienta, které vyvíjíte v sadě Visual Studio. Po dokončení tohoto postupu se generují třídy dat na základě metadat, který byl získán z službu data. Další informace najdete v tématu [generování dat služby klientské knihovny](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md).  
-  
-### <a name="to-add-a-data-service-reference"></a>Chcete-li přidat odkaz na službu data  
-  
-1.  (Volitelné) Pokud službu data není součástí řešení a není spuštěná, spusťte službu data a poznamenejte si identifikátor URI služby data.  
-  
-2.  Klikněte pravým tlačítkem na projekt klienta a pak vyberte **přidat odkaz na službu**.  
-  
-3.  Pokud službu data je součástí aktuální řešení, klikněte na tlačítko **Discover**.  
-  
-     -nebo-  
-  
-     V **adresu** textového pole zadejte základní adresu URL služby data, jako třeba `http://localhost:1234/Northwind.svc`a potom klikněte na **přejděte**.  
-  
-4.  Click **OK**.  
-  
-     Tento postup přidá nový soubor kód, který obsahuje datové třídy, které se používají pro přístup a pracovat s prostředky služby data jako objekty.  
-  
-## <a name="see-also"></a>Viz také  
- [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
+# <a name="how-to-add-a-data-service-reference-wcf-data-services"></a>Postupy: Přidání odkazu na datovou službu (WCF Data Services)
+
+Můžete použít **přidat odkaz na službu** dialogového okna v sadě Visual Studio se přidat odkaz na služeb WCF Data Services. To umožňuje jednodušší přístup ke službě data v klientské aplikaci, která při vývoji v sadě Visual Studio. Po dokončení tohoto postupu datových tříd jsou generovány na základě metadat, která se získá z datové služby. Další informace najdete v tématu [generování klientské knihovny datové služby](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md).
+
+## <a name="add-a-data-service-reference"></a>Přidání odkazu na datovou službu
+
+1. (Volitelné) Pokud datové služby není součástí řešení a není spuštěná, spusťte službu data a poznamenejte si URI datové služby.
+
+2. V sadě Visual Studio v **Průzkumníka řešení**, klikněte pravým tlačítkem na klientský projekt a pak vyberte **přidat** > **odkaz na službu**.
+
+3. Pokud datové služby je součástí aktuálního řešení, klikněte na tlačítko **Discover**.
+
+     -nebo-
+
+     V **adresu** textového pole zadejte základní adresu URL datové služby, jako například `http://localhost:1234/Northwind.svc`a potom klikněte na tlačítko **Přejít**.
+
+4. Vyberte **OK**.
+
+     Do projektu se přidá nový soubor kódu, který obsahuje datových tříd, které můžete používat a komunikovat s prostředkům datové služby.
+
+## <a name="see-also"></a>Viz také:
+
+- [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)

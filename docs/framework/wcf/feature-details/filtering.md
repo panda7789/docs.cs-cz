@@ -2,85 +2,86 @@
 title: Filtrování
 ms.date: 03/30/2017
 ms.assetid: 4002946c-e34a-4356-8cfb-e25912a4be63
-ms.openlocfilehash: 5f599ac74aa63951f59c5e5c79d3fe37b2ab5100
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 74915a45ed5ca1d13790f64c7921d1f750fa04d3
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43409127"
 ---
 # <a name="filtering"></a>Filtrování
-Systému Windows Communication Foundation (WCF) filtrování systému pomocí deklarativní filtrů odpovídající zprávy a provozní rozhodnutí. Filtry můžete použít k určení toho, co dělat s zpráva prověřením část zprávy. Proces řazení do fronty, například můžete použít dotaz XPath 1.0 Zkontrolujte priority element známé hlavičky k určení, zda chcete zprávu přesunout na začátek fronty.  
+Windows Communication Foundation (WCF) filtrování systému můžete použít filtry deklarativní podle zpráv a provozní rozhodování. Filtry můžete použít k určení, co dělat, a zobrazí se zpráva prozkoumáním část zprávy. Proces řazení do fronty, například můžete použít k dotazu XPath 1.0 ke kontrole element priority známé hlavičky. Chcete-li zjistit, jestli se má přesunout na začátek fronty zprávu.  
   
- Filtrování systém se skládá z sadu tříd, které můžete efektivně určete, které sady filtrů jsou `true` pro danou zprávu WCF.  
+ Filtrování systému se skládá z sadu tříd, které se dají efektivně zjistit sady filtrů `true` pro konkrétní zprávy WCF.  
   
- Filtrování systém je základní součástí zasílání zpráv WCF; je navržená tak, aby fungoval velmi rychle. Každá implementace filtru optimalizovaná pro určitý typ porovnání zpráv WCF.  
+ Filtrování systému je základní součástí zasílání zpráv WCF; je navržená velmi rychlá. Každá implementace filtru optimalizovaná pro určitý typ porovnání zpráv WCF.  
   
- Filtrování systém není bezpečné pro přístup z více vláken. Aplikace musí zpracovat žádné uzamčení sémantiku. Podporuje však více čtečky, jeden zapisovače.  
+ Filtrování systém není bezpečné pro vlákna. Aplikace musí umět zpracovat všechny sémantiku uzamčení. Podporuje ale více čtečky, jeden zapisovače.  
   
-## <a name="where-filtering-fits"></a>Kde vyhovuje filtrování  
- Filtrování se provádí po zprávu přijme a je součástí procesu odeslání zprávy do součásti příslušná aplikace. Návrh filtrování systému řeší požadavky na několik WCF subsystémů, včetně zasílání zpráv, směrování, zabezpečení, zpracování událostí a správa systému.  
+## <a name="where-filtering-fits"></a>Kde filtrování vyhovuje  
+ Filtrování se provádí po přijetí zprávy a je součástí procesu odeslání zprávy do komponenty příslušná aplikace. Návrh filtrovacího systému řeší požadavky na několik dílčích WCF, včetně zasílání zpráv, směrování, zabezpečení, zpracování událostí a správa systému.  
   
 ## <a name="filters"></a>Filtry  
- Modul filtr má dvě primární součásti, filtrů a filtru tabulky. Filtr Boolean rozhoduje o zprávu na základě zadaného uživatelem logických podmínek. Filtry implementovat <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy.  
+ Modul filtr má dvě primární součásti, filtry a filtru tabulky. Filtr je logická rozhodnutí o zprávy na základě zadaného uživatelem logických podmínek. Implementace filtry <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy.  
   
- <xref:System.ServiceModel.Dispatcher.MessageFilter.Match%2A> Metody se používají k určení, pokud zpráva splňuje filtru. Jednu z metod testy záhlaví zprávy, ale nemůže zkontrolovat obsah zprávy. Jiná metoda má *vyrovnávací paměti zpráv* jako vstupní parametr a můžete zkontrolovat obsah zprávy.  
+ <xref:System.ServiceModel.Dispatcher.MessageFilter.Match%2A> Metody se používají k určení, pokud zpráva splňuje filtru. Jednou z metod testuje záhlaví zprávy, ale nejde kontrolovat obsah zprávy. Tato metoda přebírá *vyrovnávací paměť zpráv* jako vstupní parametr a můžete si prohlédnout obsah zprávy.  
   
- Filtry nejsou testovány obvykle jednotlivě, ale v rámci filtru tabulky, který je obecný třídy, která <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601.CreateFilterTable%2A> metoda vytvoří.  
+ Filtry nejsou testovány obvykle jednotlivě, ale v rámci filtru tabulky, která je obecná třída, která <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601.CreateFilterTable%2A> metoda vytvoří.  
   
- Několik druhů filtry každý se specializují na odpovídající na konkrétní typ Boolean podmínku. Jakmile vytvoříte filtr, nelze změnit kritéria, která používá filtr; Chcete-li upravit kritéria filtrování, vytvořit nový a odstranit existující filtru.  
+ Několik druhů filtry jednotlivých se specializují na odpovídající na konkrétní typ logickou podmínku. Po vytvoření filtru, nebudete moct změnit kritéria, která používá filtr; Upravit kritéria filtrování, můžete vytvářet nové a odstranit existující filtr.  
   
 ### <a name="action-filters"></a>Filtry akcí  
- <xref:System.ServiceModel.Dispatcher.ActionMessageFilter> Obsahuje seznam řetězců akce. Pokud některou z akcí v seznamu filtru odpovídá hlavičku akce ve zprávě, nebo vyrovnávací paměti zpráv, `Match` metoda vrátí `true`. Pokud je seznam prázdný, filtr považuje za odpovídá všechny shody filtru a všechny zpráva nebo zpráva vyrovnávací paměť a `Match` vrátí `true`. Pokud žádná akce v seznamu filtru odpovídá záhlaví akce v zpráva nebo zpráva vyrovnávací paměť, `Match` vrátí `false`. Pokud není žádná akce ve zprávě a jeho seznam je prázdný, pak `Match` vrátí `false`.  
+ <xref:System.ServiceModel.Dispatcher.ActionMessageFilter> Obsahuje seznam řetězců akce. Pokud některé z akcí v seznamu filtru odpovídá záhlaví akce ve zprávě, nebo vyrovnávací paměť zpráv `Match` vrátí metoda `true`. Pokud je seznam prázdný, filtr je považován za odpovídá shoda – to všechno filtr a zpráva nebo zpráva vyrovnávací paměti a `Match` vrátí `true`. Pokud žádná akce v seznamu filtru odpovídá záhlaví akce ve zprávě, nebo vyrovnávací paměť zpráv `Match` vrátí `false`. Pokud není nic ve zprávě a filtru seznam je prázdný, pak `Match` vrátí `false`.  
   
-### <a name="endpoint-address-filters"></a>Filtry adres koncový bod  
- <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> Filtry zpráv a vyrovnávacích pamětí zpráv podle adresy koncového bodu, reprezentovaný v jejich kolekci hlaviček. Zprávy k předání takové filtru musí být splněny následující podmínky:  
+### <a name="endpoint-address-filters"></a>Filtry adres koncového bodu  
+ <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> Filtrů zpráv a vyrovnávací paměti zpráv na základě adresy koncového bodu, reprezentovaný ve své kolekce hlaviček. Zprávy k předání tohoto filtru musí být splněny následující podmínky:  
   
--   Adresa se filtr identifikátor URI (Uniform Resource) musí být stejná jako v zprávu, která se záhlaví.  
+-   Tento filtr adresa identifikátoru URI (Uniform Resource) musí být stejná jako ta, ve zprávě na záhlaví.  
   
--   Každý koncový bod parametr v adrese filtru (`address.Headers` kolekce) ve zprávě k mapování na musí najít hlavičku. Další hlavičky ve zprávě, nebo vyrovnávací paměti zpráv jsou přijatelné pro shodu zůstat `true`.  
+-   Každý koncový bod parametr do pole adresy ve filtru (`address.Headers` kolekce) musí najít záhlaví ve zprávě k mapování na. Dodatečné hlavičky ve zprávě, nebo vyrovnávací paměť zpráv jsou přijatelné pro porovnání zůstanou `true`.  
   
-### <a name="prefix-endpoint-address-filters"></a>Předpony filtry adres koncový bod  
+### <a name="prefix-endpoint-address-filters"></a>Předpony adres filtrech koncového bodu  
   
-1.  <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> Funguje stejně jako <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> filtrovat, s tím rozdílem, že shody může být na předponě zprávy identifikátor URI. Například filtr zadání adresy http://www.adatum.com odpovídá zprávy adresované do http://www.adatum.com/userA.  
+1.  <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> Funguje stejně jako <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> filtrovat, s tím rozdílem, že shody může být na předponě zprávy s identifikátorem URI. Například filtr určení adresy http://www.adatum.com odpovídá zprávy adresované do http://www.adatum.com/userA.  
   
 ### <a name="xpath-message-filters"></a>Filtry zpráv XPath  
- <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> Používá k určení, zda dokument XML obsahuje konkrétní prvky, atributy, text nebo jiné XML syntaktické konstrukce výraz XPath. Filtr je optimalizovaná tak, aby se velmi efektivní pro podmnožinu XPath strict. XML Path Language je podrobněji popsaná [W3C XML Path Language 1.0 – specifikace](http://go.microsoft.com/fwlink/?LinkId=94779).  
+ <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> Výraz XPath používá k určení, jestli dokument XML obsahuje konkrétní prvky, atributy, text nebo jiné XML syntaktické konstrukce. Tento filtr je optimalizována pro být velice efektivní pro striktní podmnožinou XPath. Jazyk XML Path je popsána v [W3C XML Path Language 1.0 – specifikace](https://go.microsoft.com/fwlink/?LinkId=94779).  
   
- Obvykle se aplikace používá <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> v dotazu na obsah a zprávu protokolu SOAP a trvá koncového bodu příslušné akce na základě výsledků tohoto dotazu. Proces řazení do fronty, například může použít dotaz XPath kontrola element s prioritou známé hlavičky můžete rozhodnout, jestli chcete zprávu přesunout na začátek fronty.  
+ Obvykle se používá aplikace <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> na koncový bod k dotazu na obsah zprávy protokolu SOAP a potom přijímá příslušnou akci na základě výsledků z dotazu. Proces řazení do fronty, například může použít dotaz XPath ke kontrole element priority známé hlavičky se rozhodnout, jestli se má přesunout na začátek fronty zprávu.  
   
 ## <a name="filter-tables"></a>Filtr tabulky  
- Filtr tabulky se používají k ukládání páry klíč hodnota, kde filtr je klíč a některé přidružená data je hodnota. Filtrování dat slouží k akcí mají přijmout v případě zprávu odpovídá filtru a typu dat filtru je obecný parametr pro třídu filtru tabulky. Filtrování dat může skládat z pravidel směrování, zabezpečení stav relace, moduly pro naslouchání na kanál a tak dále. Data lze použít, pokud řízení toku dat je nezbytné.  
+ Filtr tabulky se používají k ukládání páry klíč hodnota, kde filtr je klíč a některé související data se hodnota. Filtrování dat slouží k označení jaká opatření je třeba provést v případě, že zpráva odpovídá filtru a typu dat filtru je obecný parametr pro tabulkovou třídu filtru. Filtrování dat můžou obsahovat pravidla směrování, zabezpečení stavu relace, moduly pro naslouchání na kanálu a tak dále. Kde je nezbytné řízení toku dat je možné data.  
   
  Filtr tabulky implementovat obecné rozhraní <xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601>.  
   
- Filtr tabulky obsahovat několik metod, které odpovídají zprávy všechny filtry, které jsou v tabulce a vrátí kolekci neuspořádaný odpovídající filtry nebo data. Některé metody shoda se několika match a vrátí všechny odpovídající položky. Ostatní jsou jedním match, vrácení pouze jedinou položku a výjimku <xref:System.ServiceModel.Dispatcher.MultipleFilterMatchesException> Pokud odpovídá více než jeden filtr.  
+ Filtr tabulky použít několik metod, které odpovídají zprávu pro všechny filtry v tabulce a vrátí kolekci Neseřazený odpovídající filtry nebo data. Některé metody shoda se více hodí a vrátí všechny odpovídající položky. Ostatní jsou jedním shoda, vrátí pouze jednu položku a výjimku <xref:System.ServiceModel.Dispatcher.MultipleFilterMatchesException> Pokud odpovídá více než jeden filtr.  
   
-### <a name="message-filter-table"></a>Tabulku filtru zpráv  
- <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601> Je nejobecnější implementace <xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601>. V tabulce můžete uložit filtry všechny typy.  
+### <a name="message-filter-table"></a>Tabulka Filtr zpráv  
+ <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601> Je nejobecnější provádění <xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601>. V tabulce můžete uložit filtry všech typů.  
   
- Číselné priority lze přiřadit filtry, které jsou označeny nejvyšší prioritou číslem nejvyšší číslo. Více typů filtrů, může mít stejnou prioritu. Konkrétní typ filtru se může zobrazit ve více než jednu úroveň priority.  
+ Číselné priority můžete přiřadit filtry, kde je nejvyšší prioritou označeny nejvyšší číslo. Více typů filtrů můžete mají stejnou prioritu. Konkrétní typ filtru se může zobrazit ve více než jednu úroveň priority.  
   
- Odpovídající Probíhá spuštění s nejvyšší prioritou a jednou odpovídající filtrům nebyly nalezeny s uvedenou prioritou, se zkontrolují žádné filtry s nižší prioritou. Proto pokud jste pomocí filtru jedním shodovat s metodou, odpovídá více než jeden filtr zprávu, ale každý odpovídající filtr má jinou prioritu, nedojde k výjimce a je vrácen filtr s nejvyšší prioritou. Podobně filtrem více odpovídat metoda vrátí pouze ty odpovídající filtrům s nejvyšší prioritou.  
+ Porovnávání se provádí jednou shodu filtry a spouští se s nejvyšší prioritou se nacházejí s uvedenou prioritou, jsou zkoumány žádné filtry s nižší prioritou. Proto pokud jste pomocí filtru jedním shodovat s metodou, více než jeden filtr hledá shodu ve zprávě, ale každý odpovídající filtr má jinou prioritu, není vyvolána žádná výjimka a vrátil filtr s nejvyšší prioritou. Podobně filtr více odpovídají metoda vrátí pouze odpovídající filtrům s nejvyšší prioritou.  
   
-### <a name="xpath-message-filter-table"></a>Tabulky filtr XPath zpráv  
- <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601> Je optimalizovaná pro deklarativní XPath filtry, takže je klíč tabulky <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>.  
+### <a name="xpath-message-filter-table"></a>Tabulka filtr XPath zpráv  
+ <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601> Je optimalizovaná pro deklarativní filtrů XPath, je klíče tabulky <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>.  
   
- <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601> Třída optimalizuje odpovídající pro podmnožinu XPath, který obsahuje většinu scénáře zasílání zpráv a také podporuje úplné gramatika XPath 1.0. Ho optimalizovala algoritmy pro efektivní paralelní párování.  
+ <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601> Třídy optimalizuje odpovídající pro podmnožinu XPath, které zabírá většinu scénářů zasílání zpráv a také podporuje úplné gramatiky XPath 1.0. Optimalizovala algoritmy pro efektivní paralelní párování.  
   
- Tato tabulka obsahuje některé speciální `Match` metody, které provozují přes <xref:System.Xml.XPath.XPathNavigator> a <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator>. A <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> rozšiřuje <xref:System.Xml.XPath.XPathNavigator> třída přidáním <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator.CurrentPosition%2A> vlastnost. Tato vlastnost umožňuje pozice v dokumentu XML, který má uložit a načíst rychle bez nutnosti klonovat navigátoru přidělení nákladné paměti, <xref:System.Xml.XPath.XPathNavigator> vyžaduje pro takovou operaci. Modul WCF XPath musí často záznam pozice kurzoru v průběhu zpracování dotazů na dokumenty XML, proto <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> poskytuje důležité optimalizace pro zpracování zprávy.  
+ Tato tabulka obsahuje několik specializovaných `Match` metody, které se spustí <xref:System.Xml.XPath.XPathNavigator> a <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator>. A <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> rozšiřuje <xref:System.Xml.XPath.XPathNavigator> třídy tak, že přidáte <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator.CurrentPosition%2A> vlastnost. Tato vlastnost umožňuje pozice v rámci dokument XML k uložení a načtení rychle bez nutnosti klonovat Navigátor náročné přidělení paměti, která <xref:System.Xml.XPath.XPathNavigator> vyžaduje pro tyto operace. Modul WCF XPath musí často zaznamenat pozici kurzoru v průběhu provádění dotazů v dokumentech XML, takže <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> poskytuje důležité aktualizace pro zpracování zpráv.  
   
-## <a name="customer-scenarios"></a>Scénáře zákazníka  
- Pomocí filtrování kdykoli chcete odeslat zprávu do různých zpracování moduly v závislosti na data obsažená ve zprávě. Dva typické scénáře jsou směrování zpráv na základě jeho akce kódu a zrušte multiplexní datového proudu zpráv na základě zprávy na koncový bod adresy.  
+## <a name="customer-scenarios"></a>Situace zákazníka  
+ Můžete použít filtrování kdykoli chcete odeslat zprávu do jiné zpracování moduly v závislosti na data obsažená ve zprávě. Dva typické scénáře jsou směrování zprávy na základě svých akcí kódu a zrušení multiplexing datový proud zpráv na základě adresy koncového bodu zpráv.  
   
 ### <a name="routing"></a>Směrování  
- Naslouchací proces koncový bod čeká na zprávy, které mají jeden nebo více kódů akce v hlavičce protokolu SOAP zprávy. Tato implementace vytvořením <xref:System.ServiceModel.Dispatcher.ActionMessageFilter> předáním pole, které obsahuje kódy akce jeho konstruktoru. Pro registraci se použije tento filtr `ListenerFactory`, proto pouze zprávy, jejichž akce odpovídá jednomu z těch, které ve filtru do daného koncového bodu.  
+ Naslouchací proces koncového bodu čeká na zprávy, které mají jednu nebo více akcí kódy v hlavičce protokolu SOAP zprávy. Tato implementace tak, že vytvoříte <xref:System.ServiceModel.Dispatcher.ActionMessageFilter> předáním pole, která obsahuje kódy akce konstruktoru. Tento filtr používá k registraci ve službě `ListenerFactory`, takže pouze zprávy, jejichž akce odpovídá některé z nich ve filtru do tohoto konkrétního koncového bodu.  
   
-### <a name="de-multiplexing"></a>Zrušte multiplexní  
- Když se víc koncových bodů ventilátor ze stejné `ServiceListener` vypnout sítě, je jediným způsobem, jak zrušte multiplexovaný zprávy a vědět, jestli patří do určité adresa koncového bodu, použít <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter>s, který vyberte zprávy směrem k registrované koncové body pomocí provádění vyhledávání na informace uložené v hlavičkách chybí. Tyto filtry pouze zprávy, které předávají mít všechny potřebné hlavičky, které odpovídají na obě:  
+### <a name="de-multiplexing"></a>Multiplexingu rušit  
+ Když více koncových bodů škálovatelnou ze stejné `ServiceListener` vypnutí přenosu, je jediný způsob, jak zrušit multiplexovaný zprávy a vědět, jestli patří do určité adresa koncového bodu, použít <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter>s, která je vybrat zprávy směrem k registrované koncové body podle provádění vyhledávání na informace uložené v záhlaví. Tyto filtry mají pouze zprávy, které předávají všechny potřebné hlavičky, které odpovídají jak:  
   
--   Identifikátor URI v `EndpointAddress`.  
+-   V identifikátoru URI `EndpointAddress`.  
   
--   Zbytek parametrů koncového bodu v `EndpointAddress` uvedené v <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter>.  
+-   Zbytek parametrů koncový bod v `EndpointAddress` podle <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter>.  
   
 ## <a name="see-also"></a>Viz také  
  [Přenos a serializace dat](../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)

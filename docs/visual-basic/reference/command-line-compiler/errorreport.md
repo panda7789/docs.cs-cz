@@ -9,11 +9,11 @@ ms.assetid: a7fe83a2-a6d8-460c-8dad-79a8f433f501
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d093b8ce4413a375e79eec239be37e83ac674d05
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42929940"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417646"
 ---
 # <a name="-errorreport"></a>-errorreport
 

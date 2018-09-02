@@ -2,28 +2,28 @@
 title: Cyklické sledování
 ms.date: 03/30/2017
 ms.assetid: 5ff139f9-8806-47bc-8f33-47fe6c436b92
-ms.openlocfilehash: ce39a5d1b65bad78ff67154a7d8b62c2f19b1fa9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1f6c5287e6a53ed26ee5c9ed477e08dafc512e3f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33503308"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43406179"
 ---
 # <a name="circular-tracing"></a>Cyklické sledování
-Tento příklad znázorňuje implementaci naslouchací cyklický vyrovnávací paměti. Běžný scénář pro produkční služby je potřeba mít služby, které jsou k dispozici pro dlouhou dobu a povoleno na nízké úrovni protokolování trasování. Tyto služby využívat velké množství místa na disku. Při odstraňování problémů s služby, aby nejnovější data v protokolu trasování je relevantní pro řešení problému. Tento příklad znázorňuje implementaci ve kterém jsou uchovány pouze nejnovější trasování na disku až konfigurovat množství dat naslouchací cyklický vyrovnávací paměti. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) i vlastní trasování naslouchací proces.  
+Tento příklad ukazuje implementaci naslouchací proces trasování cyklické vyrovnávací paměti. Běžný scénář pro produkční služby je potřeba mít služby, které jsou k dispozici pro dlouhou dobu a povoleno na nízké úrovni protokolování trasování. Tyto služby využívat velké množství místa na disku. Při odstraňování služby, nejnovější data v protokolech trasování je relevantní pro řešení problémů. Tento příklad ukazuje implementaci pro posluchače trasování cyklické vyrovnávací paměti, ve kterém jsou pouze nejnovější trasování uchovávat na disku, až po konfigurovatelnou data. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a obsahuje naslouchací proces trasování vlastní.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Tato ukázka se předpokládá, že jste obeznámeni s [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) ukázkové a přečetli v dokumentaci k [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) ukázka.  
+ Tento příklad předpokládá, že máte zkušenosti s [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) ukázky a přečetl(a) v dokumentaci k [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) vzorku.  
   
 ## <a name="circular-buffer-trace-listener"></a>Naslouchací proces trasování cyklické vyrovnávací paměti  
- Koncept za implementace naslouchací proces trasování cyklické vyrovnávací paměti je mít dva soubory, které může každý ukládat až polovinu data protokolu celkový požadované trasování. Naslouchací proces vytvoří jeden soubor a zapíše do tohoto souboru, dokud nebude dosaženo limitu polovinu velikost dat, na který bod přepíná na druhý soubor. Když se dosáhne naslouchací proces limit pro druhý soubor - přepíše první soubor se nová trasování.  
+ Koncept za implementaci naslouchací služby stopy cyklické vyrovnávací paměti je, aby dva soubory, které může každý ukládat až polovinu data protokolu celkové požadované trasování. Naslouchací proces vytvoří jeden soubor a zapíše do tohoto souboru, dokud nebude dosaženo limitu polovina velikosti dat, v tomto okamžiku přepne do druhého souboru. Naslouchací proces dosáhne limitu pro druhý soubor - přepíše první soubor s nová trasování.  
   
- Tato naslouchací proces je odvozena z `XmlWriteTraceListener` a umožňuje prohlížení s protokoly [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Při pokusu o zobrazení protokolů, dva soubory protokolů můžete snadno rekombinované oba soubory protokolu otevřením současně v nástroji prohlížeče trasování služeb. Nástroj prohlížeče trasování služeb automaticky postará řazení trasování tak, aby byly uvedeny ve správném pořadí.  
+ Je odvozena z tohoto modulu pro naslouchání `XmlWriteTraceListener` a umožňuje na protokoly, kde se dají zobrazit [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Při pokusu o zobrazení protokolů, dva soubory protokolů můžete snadno rekombinované tak, že otevřete oba soubory protokolu ve stejnou dobu v nástroji prohlížeče trasování služeb. Nástroj prohlížeče trasování služeb automaticky postará o řazení trasování tak, aby byly zobrazeny ve správném pořadí.  
   
 ## <a name="configuration"></a>Konfigurace  
- Službu lze nakonfigurovat k využívání cyklické vyrovnávací paměti trasování modulu naslouchání přidáním následujícího kódu pro naslouchací proces a zdrojové elementy. Maximální velikost je určený nastavením `maxFileSizeKB` atribut v konfiguraci naslouchacího procesu cyklické trasování. Tento postup je znázorněn v následujícím kódu.  
+ Službu lze nastavit používat naslouchací služby stopy cyklické vyrovnávací paměti tak, že přidáte následující kód pro naslouchací proces a zdrojové elementy. Maximální velikost souboru je určený nastavením `maxFileSizeKB` atribut v konfiguraci naslouchacího procesu cyklické trasování. To je ukázáno v následujícím kódu.  
   
 ```xml  
 <system.diagnostics>  
@@ -42,22 +42,22 @@ Tento příklad znázorňuje implementaci naslouchací cyklický vyrovnávací p
 </system.diagnostics>  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, kterou jste udělali [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  Ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\CircularTracing`  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky monitorování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193959)
+ [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

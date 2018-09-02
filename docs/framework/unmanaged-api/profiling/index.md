@@ -8,41 +8,31 @@ helpviewer_keywords:
 ms.assetid: 14c68e84-657e-49c2-aa8b-4978dbaf4454
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 581f42dc83622712dbb30ef556a481388bafe259
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 75df075cd39375084a7d5a4489694ec937e15d99
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33455569"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43404459"
 ---
 # <a name="profiling-unmanaged-api-reference"></a>Profilace (referenční dokumentace nespravovaného rozhraní API)
-Profilace API umožňuje profileru ke sledování provádění programu modulem common language runtime (CLR).  
-  
-## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled profilace](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md)  
- Popisuje služeb a rozhraní, které poskytuje modulu CLR pro podporu profilace v prostředí .NET Framework.  
-  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- Popisuje nespravované rozhraní, která používá profilaci API.  
-  
- [Nastavení prostředí profilace](../../../../docs/framework/unmanaged-api/profiling/setting-up-a-profiling-environment.md)  
- Popisuje kroky, které je nutné provést k profilu aplikace rozhraní .NET Framework.  
-  
- [Profilery CLR a aplikace pro Windows Store](../../../../docs/framework/unmanaged-api/profiling/clr-profilers-and-windows-store-apps.md)  
- Popisuje, jak k portu diagnostické nástroje, které využívají rozhraní API CLR profilace správně fungovat s aplikací pro Windows Store.  
-  
- [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md)  
- Dokumenty podmínky, za kterých volání metody vrátí `CORPROF_E_UNSUPPORTED_CALL_SEQUENCE` HRESULT.  
-  
- [Globální statické funkce pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)  
- Popisuje nespravované globální statické funkce, které používá profilaci API.  
-  
- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)  
- Popisuje nespravovaná vyčíslení, které používá profilaci API.  
-  
- [Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)  
- Popisuje nespravované struktury, které používá profilaci API.  
-  
-## <a name="related-sections"></a>Související oddíly  
- [Návod: Identifikace problémy s výkonem](/visualstudio/profiling/walkthrough-identifying-performance-problems)  
- Vysvětluje, jak používat integrované nástrojů pro profilaci v Microsoft Visual Studio 2005 Team System. Tyto nástroje poskytnout alternativní způsob pomocí rozhraní API pro profilaci.
+
+Rozhraní profilování API umožňuje profileru sledujte provádění programu modulem common language runtime (CLR).
+
+## <a name="in-this-section"></a>V tomto oddílu
+
+ [Přehled profilace](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md) popisuje služeb a rozhraní, která pro podporu profilace v prostředí .NET Framework poskytuje CLR.
+
+ [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md) popisuje nespravovaná rozhraní, které používá profilování API.
+
+ [Nastavení se profilace prostředí](../../../../docs/framework/unmanaged-api/profiling/setting-up-a-profiling-environment.md) popisuje kroky, které je nutné provést, chcete-li Profilovat aplikaci rozhraní .NET Framework.
+
+ [Profilery CLR a aplikace pro Windows Store](../../../../docs/framework/unmanaged-api/profiling/clr-profilers-and-windows-store-apps.md) popisuje, jak přenést diagnostické nástroje, které využívají API profilování CLR fungovat správně s aplikacemi pro Windows Store.
+
+ [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md) dokumenty podmínky, za kterých volání metody vrací `CORPROF_E_UNSUPPORTED_CALL_SEQUENCE` HRESULT.
+
+ [Profilace globálních statických funkcí](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md) popisuje nespravované globální statické funkce, které používá profilování API.
+
+ [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md) popisuje nespravované výčty, které používá profilování API.
+
+ [Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md) popisuje nespravované struktury, které používá profilování API.

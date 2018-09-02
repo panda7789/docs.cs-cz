@@ -1,29 +1,29 @@
 ---
-title: Návrhář opětovného hostování
+title: Změna hostování návrháře
 ms.date: 03/30/2017
 ms.assetid: b676ad31-5f64-4d84-9a36-b4d7113a2f4d
-ms.openlocfilehash: 3caff782dcb7ce2434960e24c4586877788da653
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1901df62ccdeec3f75ce0d8cd85484f46fac4541
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33516146"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43404097"
 ---
-# <a name="designer-rehosting"></a>Návrhář opětovného hostování
-Návrhář opětovného hostování je běžný scénář, který odkazuje na hostování na plátno návrhu pracovního postupu uvnitř vlastní aplikaci. Hostování aplikace, které mají zkušenosti se většina lidí je Visual Studio, ale existuje několik scénářů, kdy zobrazující návrháře pracovních postupů v aplikaci může být užitečné:  
+# <a name="designer-rehosting"></a>Změna hostování návrháře
+Změna hostování návrháře je běžný scénář, který odkazuje na hostování pracovního postupu návrhové plátno v rámci vlastní aplikace. Hostování aplikace, kterou většina lidí znají je Visual Studio, ale existuje mnoho scénářů, kdy zobrazení návrháře postupu provádění v aplikaci může být užitečné:  
   
--   Monitorování aplikací (povolení koncový uživatel k vizualizaci procesu, jakož i běhová data o procesu, jako je například stav aktuálně aktivní, data agregovanou dobu provádění nebo Další informace o instanci pracovního postupu).  
+-   Monitorování aplikací (umožňuje koncovým uživatelům vizualizovat proces, jakož i dat získaných za běhu o procesu, jako jsou aktuálně aktivním stavu, data agregovaná doba provádění nebo Další informace o instanci pracovního postupu).  
   
--   Aplikace, které uživateli k přizpůsobení procesu s omezenou sadou aktivit.  
+-   Aplikace, které umožňují uživatelům přizpůsobit proces s omezenou sadu aktivit.  
   
- Pro podporu těchto typů aplikací, návrháře pracovních postupů se dodává v rozhraní .NET Framework a může být hostovaný v aplikaci WPF nebo v aplikaci WinForms s příslušnou WPF hostování kódu. Tento příklad znázorňuje:  
+ Pro podporu těchto typů aplikací, návrháře postupu provádění se dodává v rozhraní .NET Framework a je možné hostovat v aplikaci WPF nebo aplikace WinForms s odpovídající WPF hostování kódu. V této ukázce:  
   
--   Opětovného hostování návrháře WF.  
+-   Změna hostování návrháře pracovního postupu.  
   
--   Pomocí opětovné hostování nástroje sada nástrojů a vlastnost mřížky také.  
+-   Pomocí provádění se změněným hostováním nástrojů a vlastnost mřížce stejně.  
   
-## <a name="rehosting-the-designer"></a>Opětovného hostování návrháře  
- Tento příklad ukazuje postup vytvoření rozložení WPF tak, aby obsahovala návrháře, vidět v následujícím rozložení mřížky (sada nástrojů kód vynechání pro riziko z hlediska místa). Všimněte si názvů ohraničení, které obsahují designer a vlastnost mřížky.  
+## <a name="rehosting-the-designer"></a>Změna hostování návrháře  
+ Tento příklad ukazuje, jak vytvořit rozložení WPF tak, aby obsahovala návrháři vidět v následující rozložení mřížky (nástrojů kódu vynechána obavy místa). Mějte na paměti, pojmenování ohraničení, které obsahují mřížky Návrháře a vlastnosti.  
   
 ```xaml  
 <Grid>  
@@ -40,7 +40,7 @@ Návrhář opětovného hostování je běžný scénář, který odkazuje na ho
 </Grid>  
 ```  
   
- Další ukázky vytvoří návrháře a přidruží jeho primární <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> a <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> s odpovídajícího kontejneru v uživatelském rozhraní. Existuje několik další řádky kódu v následujícím příkladu, které si zasloužila vysvětlení. <xref:System.Activities.Core.Presentation.DesignerMetadata.Register%2A> Volání je potřeba přidružit návrháře aktivit výchozí pro aktivity součástí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. <xref:System.Activities.Presentation.WorkflowDesigner.Load%2A> je volána předávat WF položku, kterou chcete upravit. Nakonec <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> (primární plátno) a <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> (mřížkou vlastností) jsou umístěny na plochu uživatelské rozhraní.  
+ Dále ukázka vytvoří návrháře a přidruží jeho primární <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> a <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> pomocí odpovídajícího kontejneru v uživatelském rozhraní. Existuje několik další řádky kódu v následujícím příkladu, které si zasloužila vysvětlení. <xref:System.Activities.Core.Presentation.DesignerMetadata.Register%2A> Volání je nutné přiřadit výchozí návrháři aktivit pro aktivity, kterou jste dostali se [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. <xref:System.Activities.Presentation.WorkflowDesigner.Load%2A> je volána a zajistěte tak předání WF položky bude upravován. Nakonec <xref:System.Activities.Presentation.WorkflowDesigner.View%2A> (primární plátna) a <xref:System.Activities.Presentation.WorkflowDesigner.PropertyInspectorView%2A> (mřížky vlastností) jsou umístěné na plochu uživatelské rozhraní.  
   
 ```csharp  
 protected override void OnInitialized(EventArgs e)  
@@ -57,8 +57,8 @@ protected override void OnInitialized(EventArgs e)
 }  
 ```  
   
-## <a name="using-the-rehosted-toolbox"></a>Pomocí sady nástrojů opětovné hostování nástroje  
- Tato ukázka ovládacího prvku opětovné hostování nástroje sada nástrojů používá deklarativně v jazyce XAML. Všimněte si, že v kódu, jeden předat typu k <xref:System.Activities.Presentation.Toolbox.ToolboxItemWrapper> konstruktor.  
+## <a name="using-the-rehosted-toolbox"></a>Používání sady nástrojů provádění se změněným hostováním  
+ Tato ukázka používá ovládací prvek provádění se změněným hostováním nástrojů deklarativně v XAML. Všimněte si, že v kódu, jeden můžete předat typ <xref:System.Activities.Presentation.Toolbox.ToolboxItemWrapper> konstruktoru.  
   
 ```xaml  
 <!-- Copyright (c) Microsoft Corporation. All rights reserved-->  
@@ -112,19 +112,19 @@ protected override void OnInitialized(EventArgs e)
 </Window>  
 ```  
   
-#### <a name="using-the-sample"></a>Pomocí vzorku  
+#### <a name="using-the-sample"></a>Pomocí ukázky  
   
 1.  Otevřete řešení DesignerRehosting.sln v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Stisknutím klávesy F5 zkompilování a spuštění aplikace.  
+2.  Stiskněte klávesu F5 ke kompilaci a spuštění aplikace.  
   
-3.  Aplikace WPF začíná opětovné hostování nástroje návrháře.  
+3.  Aplikace WPF začíná návrháři se změněným hostováním.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\DesignerRehosting\Basic`

@@ -1,20 +1,20 @@
 ---
-title: Odvozování relační strukturu datové sady z schématu XML (XSD)
+title: Odvozování relační struktury datové sady ze schématu XML (XSD)
 ms.date: 03/30/2017
 ms.assetid: 8f6cd04d-6197-4bc4-9096-8c51c7e4acae
-ms.openlocfilehash: 7599577c4e0f485e336e7f79a6c3bd17f0f0c316
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: fd5c41272d3b050427804f08f7387328012065f4
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32759605"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417201"
 ---
-# <a name="deriving-dataset-relational-structure-from-xml-schema-xsd"></a>Odvozování relační strukturu datové sady z schématu XML (XSD)
-Tato část obsahuje přehled o relační schéma `DataSet` je sestaven z dokument schématu XML definition language (XSD) schématu. Obecně platí, pro každou `complexType` podřízený prvek elementu schématu tabulky se generuje ve `DataSet`. Struktura tabulky je určen podle definice komplexního typu. Tabulky se vytváří v `DataSet` nejvyšší úrovně elementy ve schématu. Však tabulku je vytvořen pouze pro nejvyšší úroveň `complexType` element při `complexType` element vnořen uvnitř jiné `complexType` případ vnořený elementu, ve kterém `complexType` element je namapovaný na `DataTable` v rámci `DataSet`.  
+# <a name="deriving-dataset-relational-structure-from-xml-schema-xsd"></a>Odvozování relační struktury datové sady ze schématu XML (XSD)
+Tato část obsahuje přehled toho, jak relační schéma `DataSet` je sestaven z dokument schématu XML definice jazyk (XSD) schématu. Obecně platí, pro každou `complexType` podřízený prvek element schématu tabulky se vygeneruje v `DataSet`. Struktura tabulky se určuje podle definice komplexního typu. Tabulky vytvářejí `DataSet` pro nejvyšší úrovně elementy ve schématu. Ale tabulku je vytvořen pouze pro nejvyšší úroveň `complexType` element při `complexType` element je vnořit do jiného `complexType` element, ve kterém malá a velká ve vnořeném `complexType` element je namapována na `DataTable` v rámci `DataSet`.  
   
- Další informace o XSD, najdete v části schématu XML World Wide Web Consortium (W3C) 0: Úvod do doporučení, část 1 schématu XML: struktury doporučení a XML schéma část 2: datové typy doporučení, nacházející se v [ http://www.w3.org/ ](http://www.w3.org/TR/).  
+ Další informace o XSD, najdete v části schématu XML World Wide Web Consortium (W3C) 0: Úvod do doporučení, XML schématu část 1: struktury doporučení a XML schématu část 2: datové typy doporučení na [ http://www.w3.org/ ](http://www.w3.org/TR/).  
   
- Následující příklad ukazuje schématu XML kde `customers` je podřízený element `MyDataSet` element, který je **datovou sadu** elementu.  
+ Následující příklad ukazuje schématu XML kde `customers` je podřízený prvek `MyDataSet` element, který je **datovou sadu** elementu.  
   
 ```xml  
 <xs:schema id="SomeID"   
@@ -41,18 +41,18 @@ Tato část obsahuje přehled o relační schéma `DataSet` je sestaven z dokume
  </xs:schema>  
 ```  
   
- V předchozím příkladu element `customers` je element komplexního typu. Proto je analýze definice komplexního typu, a proces mapování vytvoří v následující tabulce.  
+ V předchozím příkladu prvek `customers` je komplexní typ elementu. Proto je analyzován definice komplexní typ a proces mapování vytvoří v následující tabulce.  
   
 ```  
 Customers (CustomerID , CompanyName, Phone)  
 ```  
   
- Datový typ jednotlivých sloupců v tabulce je odvozený od typu schématu XML odpovídající element nebo atribut.  
+ Typ dat každého sloupce v tabulce je odvozen od typu schématu XML odpovídající element nebo atribut.  
   
 > [!NOTE]
->  Pokud element `customers` , jako je jednoduchý datový typ schématu XML **celé číslo**, je vygenerována žádná tabulka. Tabulky se vytváří jenom pro nejvyšší úrovně prvky, které jsou komplexní typy.  
+>  Pokud element `customers` je jednoduchý datový typ schématu XML jako **celé číslo**, je vygenerována žádná tabulka. Tabulky vytvářejí pouze prvky nejvyšší úrovně, které jsou komplexní typy.  
   
- V následující schématu XML **schématu** element má dva podřízené elementy, `InStateCustomers` a `OutOfStateCustomers`.  
+ V následujícím schématu XML **schématu** element má dva podřízené elementy, `InStateCustomers` a `OutOfStateCustomers`.  
   
 ```xml  
 <xs:schema id="SomeID"   
@@ -75,7 +75,7 @@ Customers (CustomerID , CompanyName, Phone)
  </xs:schema>  
 ```  
   
- Jak `InStateCustomers` a `OutOfStateCustomers` podřízené elementy jsou komplexní typ elementy (`customerType`). Proto proces mapování generuje následující dva identické tabulky v `DataSet`.  
+ Jak `InStateCustomers` a `OutOfStateCustomers` komplexního typu prvků jsou podřízené prvky (`customerType`). Proto vygeneruje proces mapování následujících dvou tabulkách identické v `DataSet`.  
   
 ```  
 InStateCustomers (CustomerID , CompanyName, Phone)  
@@ -84,17 +84,17 @@ OutOfStateCustomers (CustomerID , CompanyName, Phone)
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Mapování omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- Popisuje elementy schématu XML použitý k vytvoření jedinečné a cizí klíče omezení `DataSet`.  
+ Popisuje prvky schématu XML použitý k vytvoření jedinečné a cizího klíče omezení `DataSet`.  
   
  [Generování relací datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
- Popisuje elementy schématu XML použitý k vytvoření relace mezi sloupci tabulky v `DataSet`.  
+ Popisuje prvky schématu XML použitý k vytvoření relace mezi sloupci tabulky v `DataSet`.  
   
  [Omezení schématu XML a relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/xml-schema-constraints-and-relationships.md)  
- Popisuje, jak vztahy jsou implicitně vytvořen při použití schématu XML elementů vytvořte omezení v `DataSet`.  
+ Popisuje, jak vztahy se vytvářejí implicitně, při použití prvky schématu XML k vytvoření omezení `DataSet`.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
- Popisuje, jak načíst a zachování relační struktura a data v `DataSet` jako XML data.  
+ Popisuje, jak načíst a zachováte data v a relační struktury `DataSet` jako XML data.  
   
 ## <a name="see-also"></a>Viz také  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

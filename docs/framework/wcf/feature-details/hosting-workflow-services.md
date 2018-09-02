@@ -2,15 +2,15 @@
 title: Hostování služeb pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 2d55217e-8697-4113-94ce-10b60863342e
-ms.openlocfilehash: b42dd42b9697d87d7721fc5edc2dfde01f1d37c2
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: f75b8cc4cde0372b995c39a5da3ae4b71590743e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42932830"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43416362"
 ---
 # <a name="hosting-workflow-services"></a>Hostování služeb pracovních postupů
-Služba pracovního postupu musí být hostovaný, aby se reagovat na příchozí zprávy. Služby pracovních postupů pomocí infrastruktury přenosu zpráv WCF a proto hostované podobným způsobem. Stejně jako služby WCF služby pracovních postupů je možné hostovat ve spravované aplikaci, v rámci Internetové informační služby (IIS) nebo v rámci služby pro aktivační proces Windows (WAS). Kromě toho je možné hostovat služby pracovních postupů v rámci Windows Server App Fabric. Další informace o systému Windows Server App Fabric najdete v části [dokumentace ke službě Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=193037), [funkce hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=196494), a [AppFabric hostování koncepty](http://go.microsoft.com/fwlink/?LinkId=196495). Další informace o různých způsobech hostitele WCF služeb najdete v tématu [hostování služeb](../../../../docs/framework/wcf/hosting-services.md).
+Služba pracovního postupu musí být hostovaný, aby se reagovat na příchozí zprávy. Služby pracovních postupů pomocí infrastruktury přenosu zpráv WCF a proto hostované podobným způsobem. Stejně jako služby WCF služby pracovních postupů je možné hostovat ve spravované aplikaci, v rámci Internetové informační služby (IIS) nebo v rámci služby pro aktivační proces Windows (WAS). Kromě toho je možné hostovat služby pracovních postupů v rámci Windows Server App Fabric. Další informace o systému Windows Server App Fabric najdete v části [dokumentace ke službě Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=193037), [funkce hostování AppFabric](https://go.microsoft.com/fwlink/?LinkId=196494), a [AppFabric hostování koncepty](https://go.microsoft.com/fwlink/?LinkId=196495). Další informace o různých způsobech hostitele WCF služeb najdete v tématu [hostování služeb](../../../../docs/framework/wcf/hosting-services.md).
 
 ## <a name="hosting-in-a-managed-application"></a>Hostování ve spravované aplikaci
  K hostování služby pracovního postupu ve spravované aplikaci, použijte <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídy. <xref:System.ServiceModel.Activities.WorkflowServiceHost> Konstruktor umožňuje zadat instanci pracovního postupu služby typu singleton, definice pracovního postupu služby nebo aktivitou, která používá zasílání zpráv aktivity pracovního postupu. Volání <<!--zz xref:System.ServiceModel.Activities.WorkflowServiceHost.Open%2A--> `System.ServiceModel.Activities.WorkflowServiceHost.Open`> způsobí, že služba započít naslouchání pro příchozí zprávy.
@@ -51,7 +51,7 @@ Služba pracovního postupu musí být hostovaný, aby se reagovat na příchoz�
  Odkazy na vlastní aktivity musí být přidané do <`Assemblies`> v oddílu <`System.Web.Compilation`> tak, aby se načteno do domény aplikace a deserializátor XAML je schopen najít typy. Tato nastavení lze provést na úrovni aplikace nebo v kořenovém souboru Web.config, pokud nastavení bude použito na všechny aplikace na počítači.
 
 ## <a name="deployment"></a>Nasazení
- Nástroj nasazení webu byla vytvořená za účelem usnadnění práce pro nasazení. Nástroj umožňuje migrace aplikací mezi službami IIS 6.0 a IIS 7.0, synchronizace serverové farmy a balíčků, archivování a nasazování webových aplikací. Další informace najdete v tématu [nástroj pro nasazení MS](http://go.microsoft.com/fwlink/?LinkId=178690).
+ Nástroj nasazení webu byla vytvořená za účelem usnadnění práce pro nasazení. Nástroj umožňuje migrace aplikací mezi službami IIS 6.0 a IIS 7.0, synchronizace serverové farmy a balíčků, archivování a nasazování webových aplikací. Další informace najdete v tématu [nástroj pro nasazení MS](https://go.microsoft.com/fwlink/?LinkId=178690).
 
 ## <a name="see-also"></a>Viz také
 

@@ -2,44 +2,44 @@
 title: HttpCookieSession
 ms.date: 03/30/2017
 ms.assetid: 101cb624-8303-448a-a3af-933247c1e109
-ms.openlocfilehash: 64a7cba7b1bbc55a4504e3af4784fcb2a84f0fa1
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: fdde238d4a4fd9291c520d4ef13694c3648c8298
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33807225"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43402630"
 ---
 # <a name="httpcookiesession"></a>HttpCookieSession
-Tento příklad znázorňuje, jak vytvořit vlastní protokol kanál používat soubory cookie HTTP pro správu relací. Tento kanál umožňuje komunikaci mezi služby Windows Communication Foundation (WCF) a klienti ASMX nebo ASMX služby a klienti WCF.  
+Tento příklad ukazuje, jak vytvořit vlastní protokol kanál používat soubory cookie protokolu HTTP pro správu relací. Tento kanál umožňuje komunikaci mezi službami Windows Communication Foundation (WCF) a klienti ASMX nebo mezi klienty v WCF a službami ASMX.  
   
- Když klient volání metody webové v ASMX webové služby, je na základě relace, [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] modul provede následující akce:  
+ Když klient volá webové metodě v ASMX webové služby, která je založená na relace [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] modul provede následující akce:  
   
--   Generuje jedinečné ID (ID relace).  
+-   Vygeneruje jedinečné ID (ID relace).  
   
--   Generuje objektu session a přidruží ji jedinečný identifikátor.  
+-   Generuje objekt relace a přidruží ji k jedinečné ID.  
   
--   Přidá hlavičku odpovědi Set-Cookie HTTP jedinečné ID a odešle ji do klienta.  
+-   Přidá hlavičku odpovědi Set-Cookie HTTP jedinečné ID a odešle ho klientovi.  
   
--   Identifikuje klienta na následující volání na základě ID relace, že odešle do ní.  
+-   Identifikuje klienta v následných voláních na základě ID relace, že se že odešle do ní.  
   
- Klient zahrne toto ID relace v jeho následné požadavky na server. Tento server využívá ID relace z klienta k načtení objektu příslušné relace pro aktuální kontext HTTP.  
+ Klient zahrne toto ID relace v následných požadavcích na server. Tento server využívá ID relace, od klienta k načtení objektu odpovídající relace pro aktuální kontext HTTP.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\HttpCookieSession`  
   
-## <a name="httpcookiesession-channel-message-exchange-pattern"></a>Kanál HttpCookieSession vzorce výměny zpráv  
- Tato ukázka umožňuje relací pro scénáře jako ASMX. V dolní části našich zásobníku kanál, máme přenos HTTP, který podporuje <xref:System.ServiceModel.Channels.IRequestChannel> a <xref:System.ServiceModel.Channels.IReplyChannel>. Je úloha kanálu zajistit relace vyšší úrovně zásobníku kanálu. Ukázka implementuje dva kanály (<xref:System.ServiceModel.Channels.IRequestSessionChannel> a <xref:System.ServiceModel.Channels.IReplySessionChannel>) podporující relací.  
+## <a name="httpcookiesession-channel-message-exchange-pattern"></a>Kanál HttpCookieSession vzoru výměny zpráv  
+ Tato ukázka umožňuje relací pro ASMX podobné scénáře. V dolní části zásobníku náš kanál, máme přenos pomocí protokolu HTTP, který podporuje <xref:System.ServiceModel.Channels.IRequestChannel> a <xref:System.ServiceModel.Channels.IReplyChannel>. Je úloha kanálu poskytnout relace na vyšší úroveň zásobníku kanálu. Ukázka implementuje dva kanály (<xref:System.ServiceModel.Channels.IRequestSessionChannel> a <xref:System.ServiceModel.Channels.IReplySessionChannel>), která podporují relace.  
   
-## <a name="service-channel"></a>Kanál služby  
- Ukázka poskytuje kanál služby v `HttpCookieReplySessionChannelListener` třídy. Tato třída implementuje <xref:System.ServiceModel.Channels.IChannelListener> rozhraní a převede <xref:System.ServiceModel.Channels.IReplyChannel> channel z nižší v zásobníku kanál k <xref:System.ServiceModel.Channels.IReplySessionChannel>. Tento proces je možné rozdělit do následujících částí:  
+## <a name="service-channel"></a>Služba kanálu  
+ Ukázka poskytuje kanál služby v `HttpCookieReplySessionChannelListener` třídy. Tato třída implementuje <xref:System.ServiceModel.Channels.IChannelListener> rozhraní a převede <xref:System.ServiceModel.Channels.IReplyChannel> kanál z níže v kanálu zásobník, aby <xref:System.ServiceModel.Channels.IReplySessionChannel>. Tento proces je možné rozdělit do těchto částí:  
   
--   Po otevření naslouchací proces kanálu nástroje přijme vnitřního kanálu z jeho vnitřní naslouchací proces. Protože vnitřní naslouchací proces je datagram naslouchací proces a doba platnosti přijaté kanálu je odpojená od životnost naslouchací proces, můžeme zavřít vnitřní naslouchací proces a obsahovat pouze vnitřní kanálu  
+-   Po otevření modul pro naslouchání kanálu přijímá vnitřního kanálu z jeho vnitřní naslouchacího procesu. Protože vnitřní naslouchací proces běží naslouchací proces datagram a životního cyklu přijetí kanálu je oddělený od životnost naslouchací proces, můžeme zavřít vnitřní naslouchací proces a pouze blokovat vnitřního kanálu  
   
     ```  
                 this.innerChannelListener.Open(timeoutHelper.RemainingTime());  
@@ -48,7 +48,7 @@ Tento příklad znázorňuje, jak vytvořit vlastní protokol kanál používat 
     this.innerChannelListener.Close(timeoutHelper.RemainingTime());  
     ```  
   
--   Po dokončení procesu otevřete nastavíme smyčku zpráv příjem zpráv z vnitřní kanálu.  
+-   Po dokončení procesu otevřít nastavíme smyčky zpráv pro příjem zpráv z vnitřního kanálu.  
   
     ```  
     IAsyncResult result = BeginInnerReceiveRequest();  
@@ -63,29 +63,29 @@ Tento příklad znázorňuje, jak vytvořit vlastní protokol kanál používat 
     }  
     ```  
   
--   Při doručení zprávy kanál služby prozkoumá identifikátor relace a multiplexových kanálu příslušné relace. Naslouchací proces kanálu nástroje udržuje slovník, který se mapuje na kanál instance relace identifikátory relace.  
+-   Při přijetí e-mailu, kanál služba zkontroluje identifikátor relace a rušit spojuje do kanálu odpovídající relace. Modul pro naslouchání kanálu udržuje slovník, který mapuje identifikátory relace instancí kanálu relace.  
   
     ```  
     Dictionary<string, IReplySessionChannel> channelMapping;  
     ```  
   
- `HttpCookieReplySessionChannel` Třída implementuje <xref:System.ServiceModel.Channels.IReplySessionChannel>. Vyšší úrovně kanálu zásobníku volání <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> metodu za účelem požadavků na čtení pro tuto relaci. Každý kanál relace má soukromé zprávy fronty, který je naplněn kanál služby.  
+ `HttpCookieReplySessionChannel` Implementuje třída <xref:System.ServiceModel.Channels.IReplySessionChannel>. Vyšší úrovně kanálu zásobníku volání <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> metodu za účelem čtení žádosti pro tuto relaci. Každý kanál relace má soukromou frontu zpráv, který je vyplněn kanálu služby.  
   
 ```  
 InputQueue<RequestContext> requestQueue;  
 ```  
   
- V případě, že když někdo volá <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> metoda a nejsou žádné zprávy ve frontě zpráv, kanál čeká na určenou dobu, před ukončením sám sebe. Vyčistí relaci kanály pro klienty bez WCF vytvoříte.  
+ V případě, když někdo volá <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> metoda a nejsou žádné zprávy ve frontě zpráv, kanál čeká na určenou dobu, před ukončením samotný. Tím vyčistíte kanálům relace, které jsou vytvořené pro klienty bez WCF.  
   
- Používáme `channelMapping` sledovat `ReplySessionChannels`, a jsme naše základní nezavírejte `innerChannel` dokud zavřeli přijatých kanálů. Tímto způsobem `HttpCookieReplySessionChannel` může existovat mimo dobu životnosti `HttpCookieReplySessionChannelListener`. Také nemáme si dělat starosti naslouchací proces získávání uvolnění z paměti pod nám, protože přijatých kanálů zachovat odkaz na jejich naslouchací proces prostřednictvím `OnClosed` zpětného volání.  
+ Používáme `channelMapping` ke sledování `ReplySessionChannels`, a jsme naše základní nezavírejte `innerChannel` dokud zavřeli přijatých kanálů. Tímto způsobem `HttpCookieReplySessionChannel` může existovat za dobu života `HttpCookieReplySessionChannelListener`. Můžeme také nemusíte starat o naslouchací proces získávání uvolňování paměti shromážděn pod nám, protože přijatých kanálů zachovávat odkaz na jejich naslouchací proces prostřednictvím `OnClosed` zpětného volání.  
   
-## <a name="client-channel"></a>Kanálem klienta  
- Odpovídající kanálem klienta je v `HttpCookieSessionChannelFactory` třídy. Při vytvoření kanálu, vytváření kanálů zabalí kanál vnitřní žádosti s `HttpCookieRequestSessionChannel`. `HttpCookieRequestSessionChannel` Třída předává volání základní požadavku kanálu. Po ukončení klienta na server proxy, `HttpCookieRequestSessionChannel` odešle zprávu do služby, která určuje, že dochází k uzavření kanál. Proto zásobníku kanál služby můžete řádně vypnutí kanál relace, která je používána.  
+## <a name="client-channel"></a>Kanálu klienta  
+ Probíhá odpovídající kanálu klienta `HttpCookieSessionChannelFactory` třídy. Při vytváření kanálu objekt pro vytváření kanálů zabalí vnitřního požadavku kanálu pomocí `HttpCookieRequestSessionChannel`. `HttpCookieRequestSessionChannel` Třídy předává volání základního kanálu požadavku. Když klient ukončí proxy server, `HttpCookieRequestSessionChannel` odešle zprávu do služby, která označuje, že dochází k uzavření kanálu. Proto kanál zásobník služby můžete řádně vypnutí kanálu relace, která se používá.  
   
-## <a name="binding-and-binding-element"></a>Vazba a prvku vazby  
- Po vytvoření kanálů klienta a služby, je dalším krokem je na jejich integraci do modulu runtime WCF. Kanály jsou vystaveny prostřednictvím vazby a prvky vazeb WCF. Vazba se skládá z jednoho či více elementů vazby. WCF nabízí několik vazeb definovaných systémem; například BasicHttpBinding nebo WSHttpBinding. `HttpCookieSessionBindingElement` Třída obsahuje implementaci pro prvku vazby. Přepíše naslouchací proces kanálu a kanál factory vytvoření metody, které uděláte nezbytné kanál naslouchání nebo kanál konkretizací objekt pro vytváření.  
+## <a name="binding-and-binding-element"></a>Element vazby a vazby  
+ Po vytvoření kanálů klienta a služby, dalším krokem je na jejich integraci do modulu runtime WCF. Kanály jsou vystaveny prostřednictvím vazby a prvky vazeb WCF. Vazba se skládá z jednoho nebo více elementů vazby. Nabízí několik systémem definované vazby WCF například tříd BasicHttpBinding a WSHttpBinding. `HttpCookieSessionBindingElement` Třída obsahuje implementaci pro element vazby. Přepíše naslouchací službu kanálu a metod vytváření kanálu objekt pro vytváření provést nezbytné kanálu naslouchacího procesu nebo kanálu objekt pro vytváření instancí.  
   
- Příklad používá výrazy zásad pro popis služby. To umožňuje vzorku, který se publikovat požadavky na jeho kanál pro ostatní klienty, které můžou využívat službu. Tento element vazby například publikuje výrazy zásad umožníte potenciální klienty vědět, že podporuje relací. Vzhledem k tomu ukázka umožňuje `ExchangeTerminateMessage` vlastnost v elementu konfigurace vazeb, přidá nezbytné kontrolní výrazy zobrazit, že služba podporuje akce exchange navíc zprávu o ukončení relace konverzace. Klienti potom můžete pomocí této akce. Následující kód WSDL ukazuje výrazy zásad vytvořené z `HttpCookieSessionBindingElement`.  
+ Ukázka používá kontrolní výrazy zásad pro popis služby. To umožňuje vzorku publikovat své požadavky na kanál do jiných klientů, které můžete používání této služby. Například tento element vazby publikuje kontrolní výrazy zásad nechte potenciální klienty, kteří vědět, že podporuje relace. Vzhledem k tomu, že umožňuje ukázku `ExchangeTerminateMessage` vlastnost v konfigurace elementu vazby přidá potřebné kontrolní výrazy zobrazíte, že tato služba podporuje další zprávy exchange akci ukončit relaci konverzace. Klienti pak pomocí této akce. Kontrolní výrazy zásad vytvořené z ukazuje následující kód WSDL `HttpCookieSessionBindingElement`.  
   
 ```xml  
 <wsp:Policy wsu:Id="HttpCookieSessionBinding_IWcfCookieSessionService_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">  
@@ -98,13 +98,13 @@ InputQueue<RequestContext> requestQueue;
 </wsp:Policy>  
 ```  
   
- `HttpCookieSessionBinding` Třída je poskytované systémem vazbu, která používá prvku vazby popsané.  
+ `HttpCookieSessionBinding` Třída je vazeb poskytovaných systémem, který používá element vazby je popsáno výše.  
   
-## <a name="adding-the-channel-to-the-configuration-system"></a>Přidání kanál konfigurace systému  
- Ukázka poskytuje dvě třídy, které zveřejňují ukázkový kanál prostřednictvím konfigurace. První je <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> pro `HttpCookieSessionBindingElement`. Hromadné implementace je delegovaný jako `HttpCookieSessionBindingConfigurationElement`, která je odvozena z <xref:System.ServiceModel.Configuration.StandardBindingElement>. `HttpCookieSessionBindingConfigurationElement` Má vlastnosti, které odpovídají vlastnosti na `HttpCookieSessionBindingElement`.  
+## <a name="adding-the-channel-to-the-configuration-system"></a>Přidání kanál k systému konfigurace  
+ Ukázka poskytuje dvě třídy, která zpřístupňují ukázkový kanál prostřednictvím konfigurace. První je <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> pro `HttpCookieSessionBindingElement`. Hromadné implementace se deleguje na `HttpCookieSessionBindingConfigurationElement`, která je odvozena z <xref:System.ServiceModel.Configuration.StandardBindingElement>. `HttpCookieSessionBindingConfigurationElement` Má vlastnosti, které odpovídají vlastnostem v `HttpCookieSessionBindingElement`.  
   
-### <a name="binding-element-extension-section"></a>Vazba oddílu rozšíření – Element  
- V části `HttpCookieSessionBindingElementSection` je <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> která zveřejňuje `HttpCookieSessionBindingElement` v konfiguraci systému. S několika přepsání jsou definovány název konfiguračního oddílu, typ elementu vazby a postup vytvoření prvku vazby. Jsme můžete pak zaregistrujte části rozšíření v konfiguračním souboru následujícím způsobem:  
+### <a name="binding-element-extension-section"></a>Část rozšíření elementu vazby  
+ V části `HttpCookieSessionBindingElementSection` je <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> , která zveřejní `HttpCookieSessionBindingElement` k systému konfigurace. S přepsáními pár název oddílu konfigurace, typ elementu vazby a tom, jak vytvořit element vazby jsou definovány. Můžeme můžete potom zaregistrovat oddílu rozšíření v konfiguračním souboru následujícím způsobem:  
   
 ```xml  
 <configuration>        
@@ -133,7 +133,7 @@ InputQueue<RequestContext> requestQueue;
 ```  
   
 ## <a name="test-code"></a>Testování kódu  
- Testovacího kódu pro použití přenosu Tato ukázka je dostupná v adresáři pro klienta a služby. Obsahuje dva testy – jeden test používá vazba s `allowCookies` nastavena na `true` na straně klienta. Druhý test umožňuje explicitní vypnutí (s použitím exchange zprávu ukončit) na vazby.  
+ Testovací kód pro tento přenos ukázkový používání je k dispozici v adresářích klienta a služby. Skládá se ze dvou testy – jeden test používá vazbu s `allowCookies` nastavena na `true` na straně klienta. Druhý test umožňuje jednoznačném vypnutí (pomocí serveru exchange zprávu ukončení) v rámci vazby.  
   
  Když spustíte ukázku, byste měli vidět následující výstup:  
   
@@ -156,7 +156,7 @@ Items
 Press <ENTER> to terminate client.  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Nainstalujte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 pomocí následujícího příkazu.  
   
@@ -166,8 +166,8 @@ Press <ENTER> to terminate client.
   
 2.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## <a name="see-also"></a>Viz také

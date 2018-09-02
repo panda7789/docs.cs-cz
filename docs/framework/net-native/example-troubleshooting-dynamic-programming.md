@@ -1,21 +1,21 @@
 ---
-title: 'Příklad: Řešení potíží s dynamické programování'
+title: 'Příklad: Řešení potíží s dynamickým programováním'
 ms.date: 03/30/2017
 ms.assetid: 42ed860a-a022-4682-8b7f-7c9870784671
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e5de4388f4d3c4117ed71abd9741d2616638038d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 21a373b946c3ce9f4606e870ae10e23a63398bc9
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397504"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43406366"
 ---
-# <a name="example-troubleshooting-dynamic-programming"></a>Příklad: Řešení potíží s dynamické programování
+# <a name="example-troubleshooting-dynamic-programming"></a>Příklad: Řešení potíží s dynamickým programováním
 > [!NOTE]
->  Toto téma se týká .NET nativní Developer Preview, což je předběžná verze softwaru. Preview z si můžete stáhnout [webu Microsoft Connect](http://go.microsoft.com/fwlink/?LinkId=394611) (vyžaduje registraci).  
+>  Toto téma odkazuje na .NET Native Developer Preview, což je předběžná verze softwaru. Preview z si můžete stáhnout [webu Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (vyžaduje registraci).  
   
- Ne všechny selhání vyhledávání metadata v aplikace vyvinuté pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězu způsobí výjimku.  Některé můžete manifest nepředvídatelně v aplikaci.  Následující příklad ukazuje narušení přístupu způsobené odkazující na objekt s hodnotou null:  
+ Ne všechny metadat selhání vyhledávání v aplikacích vyvinutých pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězu vést k výjimce.  Některé můžou výsledkem může být nepředvídatelnými způsoby, jak v aplikaci.  Následující příklad ukazuje narušení přístupu způsobené odkazující na objekt s hodnotou null:  
   
 ```  
 Access violation - code c0000005 (first chance)  
@@ -33,32 +33,32 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
 [snip]  
 ```  
   
- Nyní si vyzkoušíte odstranění této výjimky pomocí přístup tří kroků uvedených v části "Vyřešit ručně chybí metadata" [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md).  
+ Nyní si vyzkoušíte odstranění této výjimky pomocí přístupu tří kroků uvedených v části "Ručně vyřešit chybějí metadata" [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md).  
   
 ## <a name="what-was-the-app-doing"></a>Co dělal aplikace?  
- Nejprve si všimněte si `async` stroje – klíčové slovo ve základní zásobníku.  Určení, co aplikace opravdu dělal `async` metoda může být problematické, protože došlo ke ztrátě kontextu původní volání zásobníku a byla spuštěna `async` kód v jiném podprocesu. Jsme ale odvodit, že aplikace se pokouší načíst stránku s jeho první.  K implementaci pro `NavigationArgs.Setup`, následující kód způsobila narušení přístupu:  
+ První věc, kterou si je `async` stroje – klíčové slovo základní zásobníku.  Určení, co aplikace skutečně dělal `async` metoda může být problematické, protože došlo ke ztrátě kontextu původní volání zásobníku a bylo spuštěno `async` kód v jiném vlákně. Ale můžeme odvodit, že aplikace se pokouší načíst jeho první stránky.  V implementaci pro `NavigationArgs.Setup`, následující kód způsobil narušení přístupu:  
   
 ```  
 AppViewModel.Current.LayoutVM.PageMap  
 ```  
   
- V tomto případě `LayoutVM` vlastnost na `AppViewModel.Current` byla **null**.  Některé absenci metadata způsobeno rozdíl jemně chování a výsledkem vlastnost probíhá Neinicializovaný místo sady jako aplikace očekává.  Nastavení zarážky v kódu kde `LayoutVM` by inicializované může vyvolat light na situaci.  Všimněte si však, že `LayoutVM`na typ je `App.Core.ViewModels.Layout.LayoutApplicationVM`.  Jedná se o direktivu pouze metadata, pokud v souboru rd.xml:  
+ V takovém případě `LayoutVM` vlastnost `AppViewModel.Current` byl **null**.  Některé neexistence metadata způsobit drobné chování rozdíl a výsledkem vlastnost se neinicializované místo sady, jako aplikace očekává.  Nastavením zarážky v kódu kde `LayoutVM` by byl inicializován může vyvolat světla na situaci.  Mějte však na paměti, která `LayoutVM`jeho typ je `App.Core.ViewModels.Layout.LayoutApplicationVM`.  Zatím součástí soubor rd.xml pouze metadata direktiva je:  
   
 ```xml  
 <Namespace Name="App.ViewModels" Browse="Required Public" Dynamic="Required Public" />  
 ```  
   
- Pravděpodobně kandidátem na selhání je, že `App.Core.ViewModels.Layout.LayoutApplicationVM` chybí metadata, protože je v jiný obor názvů.  
+ Kandidát pravděpodobnost selhání je, že `App.Core.ViewModels.Layout.LayoutApplicationVM` chybí metadata, protože se jiný obor názvů.  
   
- V takovém případě přidání direktivy modulu runtime pro `App.Core.ViewModels` vyřešit problém. Hlavní příčinou došlo volání rozhraní API <xref:System.Type.GetType%28System.String%29?displayProperty=nameWithType> metoda, která vrátila **null**, a aplikace bezobslužně ignorovány problém, dokud došlo k chybě.  
+ V takovém případě přidání direktivy modulu runtime pro `App.Core.ViewModels` vyřešení problému. Původní příčina volání rozhraní API k <xref:System.Type.GetType%28System.String%29?displayProperty=nameWithType> metodu, která vrátila **null**, a aplikace tiše ignorováno problém, dokud došlo k chybě.  
   
- V dynamické programování vhodné při použití rozhraní API reflexe pod [!INCLUDE[net_native](../../../includes/net-native-md.md)] je použití <xref:System.Type.GetType%2A?displayProperty=nameWithType> přetížení, které způsobí výjimku při selhání.  
+ V dynamické programování, je vhodné při použití reflexe rozhraní API v rámci [!INCLUDE[net_native](../../../includes/net-native-md.md)] , je použít <xref:System.Type.GetType%2A?displayProperty=nameWithType> přetížení, které vyvolají výjimku při selhání.  
   
-## <a name="is-this-an-isolated-case"></a>Je to izolované případ?  
- Další problémy může také nastat při použití `App.Core.ViewModels`.  Musíte se rozhodnout, zda je vhodné identifikace a opravě jednotlivých chybí metadata výjimkách nebo což šetří čas a přidání direktivy pro třídu větší typů.  Zde přidání `dynamic` metadata pro `App.Core.ViewModels` může být nejlepším řešením, pokud výsledný zvýšení velikosti binární výstup není problém.  
+## <a name="is-this-an-isolated-case"></a>Je to izolované případu?  
+ Další problémy mohou nastat také při použití `App.Core.ViewModels`.  Musíte se rozhodnout, zda je vhodné identifikace a opravuje chybějící výjimka metadat nebo šetří čas a přidání direktivy pro větší třídy typů.  Tady, přidání `dynamic` metadata pro `App.Core.ViewModels` může být nejlepším řešením, pokud výsledný nárůst velikosti výstupního binárního souboru není problém.  
   
-## <a name="could-the-code-be-rewritten"></a>By mohla být přepsána kód?  
- Použití aplikace `typeof(LayoutApplicationVM)` místo `Type.GetType("LayoutApplicationVM")`, může mít zachovaná řetězu nástroj `browse` metadat.  Ale je stále nebude vytvořili `invoke` metadata, která by vedly k [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimka při vytvoření instance typu. Pokud chcete zabránit výjimku, stále nutné přidání direktivy modulu runtime pro obor názvů nebo typ, který určuje `dynamic` zásad. Informace o direktivy modulu runtime najdete v tématu [direktivy modulu Runtime (rd.xml) referenci na konfigurační soubor](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
+## <a name="could-the-code-be-rewritten"></a>Může být přepsán kód?  
+ Pokud aplikace použili `typeof(LayoutApplicationVM)` místo `Type.GetType("LayoutApplicationVM")`, může mít zachovány řetězce nástrojů `browse` metadat.  Ale je stále by vytvořili `invoke` metadat, které by vedly k [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) při vytváření instance typu došlo k výjimce. Aby se zabránilo výjimky, by stále musíte přidat direktivy modulu runtime pro obor názvů nebo typ, který určuje `dynamic` zásad. Informace o direktivy modulu runtime, najdete v článku [direktivy modulu Runtime (rd.xml) odkaz na soubor konfigurace](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md)  

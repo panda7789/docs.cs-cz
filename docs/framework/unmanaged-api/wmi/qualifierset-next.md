@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a8232691c697c51b5a480a68c6d952f294a63460
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 938044a4e932139eb8a4d0a5d2f998cbc6f193cb
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33460224"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43405524"
 ---
 # <a name="qualifiersetnext-function"></a>QualifierSet_Next – funkce
-Načte další kvalifikátor v výčet, který je spuštěn s volání [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) funkce.   
+Načte další kvalifikátor ve výčtu, který spustil pomocí volání [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) funkce.   
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -44,49 +44,49 @@ HRESULT QualifierSet_Next (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`   
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`   
-[v] Ukazatel na [IWbemQualifierSet](https://msdn.microsoft.com/library/aa391860(v=vs.85).aspx) instance.
+[in] Ukazatel [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.
 
 `lFlags`   
-[v] Vyhrazena. Tento parametr musí být 0.
+[in] Vyhrazená. Tento parametr musí být 0.
 
 `pstrName`   
-[out] Název kvalifikátor. Pokud `null`, tento parametr je ignorováno, jinak hodnota `pstrName` by neměl přejděte na platnou `BSTR` nebo nevrací paměť. Pokud není null, funkce vždy přiděluje nový `BSTR` při vrácení `WBEM_S_NO_ERROR`.
+[out] Název kvalifikátor. Pokud `null`, tento parametr se ignoruje; v opačném případě `pstrName` nesmí odkazovat na platnou `BSTR` nebo nevracení paměti. Pokud není null, funkce vždy přidělí novou `BSTR` při vrácení `WBEM_S_NO_ERROR`.
 
 `pVal`   
-[out] Po úspěšné, hodnota kvalifikátor. Pokud se funkce nezdaří, `VARIANT` na kterou odkazuje `pVal` se nemění. Pokud tento parametr je `null`, parametr je ignorován.
+[out] V případě úspěchu, hodnota pro kvalifikátor. Pokud funkce selže, `VARIANT` odkazované `pVal` se nezmění. Pokud je tento parametr `null`, tento parametr je ignorován.
 
 `plFlavor`   
-[out] Ukazatel na typ LONG, která přijímá charakter kvalifikátoru. V případě potřeby příchuť informace není tento parametr může být `null`. 
+[out] Ukazatel, který přijímá charakter kvalifikátoru DLOUHO. Pokud není žádoucí informace charakter, tento parametr může být `null`. 
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 |`WBEM_E_UNEXPECTED` | 0x8004101d | Volající nezavolalo [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md). |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Je k dispozici zahájíte nové – výčet není dostatek paměti. |
-| `WBEM_S_NO_MORE_DATA` | 0x40005 | Ve výčtu nezbývají žádné další kvalifikátory. |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici zahájíte nový výčet. |
+| `WBEM_S_NO_MORE_DATA` | 0x40005 | Žádné další kvalifikátory jsou ponechány ve výčtu. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemQualifierSet::Next](https://msdn.microsoft.com/library/aa391870(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemQualifierSet::Next](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-next) metody.
 
-Volání `QualifierSet_Next` funkce opakovaně se vytvořit výčet všech kvalifikátory dokud návratový funkce `WBEM_S_NO_MORE_DATA`. Chcete-li ukončit výčtu již v rané fázi, volejte [QualifierSet_EndEnumeration](qualifierset-endenumeration.md) funkce.
+Volání `QualifierSet_Next` funkce opakovaně k vytvoření výčtu v kvalifikátorech dokud návratová hodnota funkce `WBEM_S_NO_MORE_DATA`. Chcete-li ukončit výčet již v rané fázi, zavolejte [QualifierSet_EndEnumeration](qualifierset-endenumeration.md) funkce.
 
-Pořadí kvalifikátory vrátil během výčtu není definován.
+Pořadí kvalifikátory vrátil během výčtu není definováno.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

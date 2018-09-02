@@ -4,18 +4,18 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
-ms.openlocfilehash: d5902c5a0744d74ae5086a4df3aee606b24b6030
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: 8cd3564e5240ec5a8783edb336957549be27ea6a
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37875164"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43403524"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>Implementace vzoru Circuit Breaker
 
-Jak bylo uvedeno dříve, by měl zpracovává chyby, které může trvat různě dlouho obnovit, protože k tomu může dojít při pokusu o připojení ke vzdálené službě nebo prostředku. Zpracování tohoto typu chyby může zlepšit stabilitu a odolnost aplikace.
+Jak je uvedeno výše, by měl zpracovává chyby, které může trvat různě dlouho obnovit, protože může dojít při pokusu o připojení ke vzdálené službě nebo prostředku. Zpracování tohoto typu chyby může zlepšit stabilitu a odolnost aplikace.
 
-V distribuovaném prostředí můžou volání vzdálených prostředků a služeb můžete selhat z důvodu přechodných chyb, jako jsou pomalé síťové připojení a časové limity, nebo pokud prostředky se pomalé nebo jsou dočasně nedostupné. Tyto chyby obvykle opraví po krátkou dobu samy a robustní Cloudová aplikace by měla být připravena je zvládnout pomocí strategie, jako je model"opakování". 
+V distribuovaném prostředí můžou volání vzdálených prostředků a služeb může selhat z důvodu přechodných chyb, jako jsou pomalé síťové připojení a časové limity, nebo pokud prostředky neodpovídá pomalu nebo jsou dočasně nedostupné. Tyto chyby obvykle opraví po krátkou dobu samy a robustní Cloudová aplikace by měla být připravena je zvládnout pomocí strategie, jako je model"opakování". 
 
 Však mohou také existovat situace, kdy jsou chyby způsobeny nepředvídatelnými událostmi, které může trvat déle, chcete-li vyřešit. Tyto chyby můžou být různě od částečného výpadku připojení až po úplné selhání služby. V těchto situacích může být bezúčelné pro aplikaci neustále opakovat operaci, která pravděpodobně nebude úspěšná. 
 
@@ -23,7 +23,7 @@ Místo toho aplikace by měly být kódovány potvrďte, že operace se nezdaři
 
 Použití opakování Http neuváženě může vést k vytváření cílem odepření služeb ([DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack)) útoku v rámci vlastního softwaru. Mikroslužby selže nebo pomalu, více klientů může opakovaně opakování neúspěšných žádostí. Který vytváří nebezpečné riziko exponenciálně prodlužuje provozu zaměřený na selhávající službu.
 
-Proto je nutné nějaký druh defense barrier, aby opakované pokusy zastavit požadavky, když není za to pořád snažit. Této bariéry defense je přesně jističe.
+Proto je nutné nějaký druh defense bariéry, tak, aby nadměrné požadavky zastavit, když není vhodné při zachování. Této bariéry defense je přesně jističe.
 
 Model jistič má jiný účel než "model opakování". Model opakování"" umožňuje aplikaci opakovat operaci s předpokladem, že operace bude nakonec úspěšná. Model jistič zabraňuje aplikaci provést operaci, která pravděpodobně selže. Aplikace může tyto dva modely zkombinovat. Ale logika opakovaných pokusů by měl být citlivé na jakoukoliv výjimku, vrácené jističem a by provádět opakované pokusy, pokud jistič signalizuje, že chyba není přechodná.
 
@@ -43,7 +43,7 @@ services.AddHttpClient<IBasketService, BasketService>()
         .AddPolicyHandler(GetCircuitBreakerPolicy());
 ```
 
-`AddPolicyHandler()`Metoda je co přidá do HttpClient objekty, kterou použijete zásady. V takovém případě ji je přidání zásad Polly pro jističe.
+`AddPolicyHandler()`Metoda je co přidá do HttpClient objekty, kterou použijete zásady. V takovém případě se přidává Polly zásadu jističe.
 
 Pokud chcete mít modulárnější přístup, je definován jistič zásad v samostatné metodě s názvem GetCircuitBreakerPolicy() jako následující kód.
 
@@ -56,7 +56,7 @@ static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy()
 }
 ```
 
-Ve výše uvedeném příkladu kódu jistič nakonfigurované tak, aby přeruší nebo otevře okruh, když byly pět výjimky při opakování požadavků Http. Potom 30 sekund bude trvání nebo přerušení.
+Ve výše uvedeném příkladu kódu jistič nakonfigurované tak, aby přeruší nebo otevře okruh, když byly pět po sobě jdoucích chyb při opakování požadavků Http. Pokud k tomu dojde, je okruh přeruší po dobu 30 sekund: v daném období volání bude možné provést okamžitě jističem-spíše než skutečně umístit.  Zásady automaticky interpretuje [relevantní výjimky a stavové kódy HTTP](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.1#handle-transient-faults) jako chyby.  
 
 Jističe by měla také sloužit k přesměrování požadavků na infrastrukturu pro použití náhradní lokality, pokud jste měli problémy v konkrétní prostředek, který je nasazený v jiném prostředí než klientská aplikace nebo služba, která provádí volání HTTP. Tímto způsobem, pokud dojde k výpadku datového centra, který ovlivňuje pouze mikroslužby back-endu, ale ne klientských aplikací, klientské aplikace můžete přesměrovat náhradní služby. Polly je plánování novou zásadu pro tento proces zautomatizovat [zásady převzetí služeb při selhání](https://github.com/App-vNext/Polly/wiki/Polly-Roadmap#failover-policy) scénář. 
 
@@ -65,7 +65,6 @@ Všechny tyto funkce jsou určené pro případy, kde spravujete převzetí slu�
 Z využití hlediska, když pomocí položky HttpClient není potřeba nic nového přidejte sem kód je stejný než při použití HttpClient s HttpClientFactory, jak je znázorněno v předchozích částech. 
 
 ## <a name="testing-http-retries-and-circuit-breakers-in-eshoponcontainers"></a>Testování opakování Http a jističe v aplikaci eShopOnContainers
-
 
 Pokaždé, když spustíte aplikaci eShopOnContainers řešení v hostitele Docker, je potřeba spustit několik kontejnerů. Některé z kontejnerů jsou pomalejší spuštění a inicializaci, jako je kontejner SQL serveru. To platí zejména při prvním nasazení aplikace aplikaci eShopOnContainers do Docker, protože se musí nastavit databázi a imagí. Skutečnost, že některé kontejnery pomaleji, než ostatní může způsobit rest služby, které mají zpočátku vyvolávat výjimky HTTP, i když nastavíte závislosti mezi kontejnery na spuštění docker-compose úroveň, jak je popsáno v předchozích částech. Ty docker-compose závislosti mezi kontejnery jsou pouze na úrovni procesu. Může spuštění kontejneru vstupní bod procesu, ale systém SQL Server pravděpodobně není připravena pro dotazy. Výsledkem může být kaskádové chyby a aplikaci můžete získat výjimku při pokusech o využívání této konkrétní kontejner. 
 

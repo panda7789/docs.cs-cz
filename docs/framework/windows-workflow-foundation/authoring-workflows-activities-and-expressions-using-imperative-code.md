@@ -1,46 +1,46 @@
 ---
-title: Vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kódu
+title: Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu
 ms.date: 03/30/2017
 ms.assetid: cefc9cfc-2882-4eb9-8c94-7a6da957f2b2
-ms.openlocfilehash: ebc093bf8cd3e87bc04c20e93415aa1d2d2f7867
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a0566e01d5786c955562ef97d6d083d886278293
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33520471"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43407859"
 ---
-# <a name="authoring-workflows-activities-and-expressions-using-imperative-code"></a>Vytváření pracovních postupů, aktivity a výrazy pomocí imperativní kódu
-Definice pracovního postupu je strom objektů nakonfigurované aktivity. Tento strom aktivity může být definováno mnoha způsoby, třeba pomocí ruční úpravě XAML nebo pomocí návrháře pracovních postupů k vytvoření XAML. Použití jazyka XAML, ale není požadavek. Definice pracovního postupu můžete vytvořit také prostřednictvím kódu programu. Toto téma obsahuje přehled vytvoření definice pracovního postupu, aktivity a výrazy pomocí kódu. Příklady práci s pracovními postupy XAML pomocí kódu najdete v tématu [serializaci pracovních postupů a aktivit do a z XAML](../../../docs/framework/windows-workflow-foundation/serializing-workflows-and-activities-to-and-from-xaml.md).  
+# <a name="authoring-workflows-activities-and-expressions-using-imperative-code"></a>Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu
+Definice pracovního postupu je strom objektů nakonfigurované aktivity. Tento strom aktivity mohou být definovány mnoha způsoby, třeba pomocí ruční úpravy XAML nebo vytvořit XAML pomocí návrháře postupu provádění. Použití XAML, ale není povinné. Definice pracovního postupu můžete vytvořit také prostřednictvím kódu programu. Toto téma obsahuje přehled o vytvoření definice pracovních postupů, aktivit a výrazů s použitím kódu. Příklady práce s pracovními postupy XAML pomocí kódu, naleznete v tématu [serializace pracovních postupů a aktivit do a z XAML](../../../docs/framework/windows-workflow-foundation/serializing-workflows-and-activities-to-and-from-xaml.md).  
   
-## <a name="creating-workflow-definitions"></a>Vytvoření definice pracovního postupu  
- Definice pracovního postupu můžete vytvořit pomocí vytvoření instance instanci typu aktivity a vlastnosti aktivity objektu konfigurace. Pro aktivity, které neobsahují podřízené aktivity můžete to provést pomocí několika řádků kódu.  
+## <a name="creating-workflow-definitions"></a>Vytváří se definice pracovního postupu  
+ Vytvoření instance typu aktivity a nastavením vlastnosti objektu aktivity lze vytvořit definici pracovního postupu. Pro aktivity, které neobsahují podřízené aktivity můžete to provést pomocí několika řádků kódu.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#47](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#47)]  
   
 > [!NOTE]
->  V příkladech v tomto tématu <xref:System.Activities.WorkflowInvoker> ke spouštění pracovních postupů ukázka. Další informace o vyvolání pracovní postupy, předávání argumentů a různé hostování možnosti, které jsou k dispozici, najdete v části [pomocí WorkflowInvoker a WorkflowApplication](../../../docs/framework/windows-workflow-foundation/using-workflowinvoker-and-workflowapplication.md).  
+>  V příkladech v tomto tématu využívají <xref:System.Activities.WorkflowInvoker> ke spouštění pracovních postupů vzorku. Další informace o pracovních postupů a předávání argumentů a hostingové možnosti, které jsou k dispozici, najdete v části [použití WorkflowInvoker a WorkflowApplication](../../../docs/framework/windows-workflow-foundation/using-workflowinvoker-and-workflowapplication.md).  
   
- V tomto příkladu, pracovní postup, který se skládá z jedné <xref:System.Activities.Statements.WriteLine> vytvoření aktivity. <xref:System.Activities.Statements.WriteLine> Aktivity <xref:System.Activities.Statements.WriteLine.Text%2A> argument je nastaven, a je volána pracovního postupu. Pokud aktivita obsahuje podřízené aktivity, je podobný metodu konstrukce. Následující příklad používá <xref:System.Activities.Statements.Sequence> aktivity, která obsahuje dva <xref:System.Activities.Statements.WriteLine> aktivity.  
+ V tomto příkladu, pracovní postup, který se skládá z jedné <xref:System.Activities.Statements.WriteLine> vytvoření aktivity. <xref:System.Activities.Statements.WriteLine> Aktivity <xref:System.Activities.Statements.WriteLine.Text%2A> argument je nastaven, a vyvolá pracovní postup. Pokud aktivita obsahuje podřízené aktivity, metoda konstrukce podobná. Následující příklad používá <xref:System.Activities.Statements.Sequence> aktivitu, která obsahuje dva <xref:System.Activities.Statements.WriteLine> aktivity.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#48](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#48)]  
   
-### <a name="using-object-initializers"></a>Pomocí inicializátory objektů  
- V příkladech v tomto tématu použijte syntaxi inicializace objektu. Syntaxe inicializace objektu může být užitečný způsob, jak vytvořit definice pracovního postupu v kódu, protože poskytuje hierarchické zobrazení aktivity v pracovním postupu a znázorňuje vztah mezi aktivitami. Neexistuje žádný požadavek na použití syntaxe inicializace objektu při prostřednictvím kódu programu vytváření pracovních postupů. V následujícím příkladu je funkčně srovnatelný předchozí příklad.  
+### <a name="using-object-initializers"></a>Inicializátory objektů pomocí  
+ Příklady v tomto tématu pomocí syntaxe inicializace objektu. Syntaxe inicializace objektu může být užitečný způsob, jak vytvořit definice pracovního postupu v kódu, protože obsahuje hierarchické zobrazení aktivity v pracovním postupu a znázorňuje vztah mezi aktivitami. Neexistuje žádný požadavek na pomocí syntaxe inicializace objektu při programově vytvářet pracovní postupy. Následující příklad je funkčně srovnatelný s předchozím příkladu.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#49](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#49)]  
   
- Další informace o inicializátory objektů najdete v tématu [postupy: Inicializace objektů bez volání konstruktoru (C# Průvodce programováním)](http://go.microsoft.com/fwlink/?LinkId=161015) a [postupy: Deklarace objektu pomocí inicializátoru objektu](http://go.microsoft.com/fwlink/?LinkId=161016).  
+ Další informace o inicializátory objektů najdete v tématu [jak: Inicializace objektů bez volání konstruktoru (C# Programming Guide)](https://go.microsoft.com/fwlink/?LinkId=161015) a [postupy: Deklarace objektu pomocí inicializátoru objektu](https://go.microsoft.com/fwlink/?LinkId=161016).  
   
-### <a name="working-with-variables-literal-values-and-expressions"></a>Práce s proměnnými, literálových hodnot a výrazů  
- Při vytváření definice pracovního postupu pomocí kódu, zajímat, jaký kód spustí jako součást vytvoření definice pracovního postupu a jaký kód spustí jako součást spuštění instance pracovního postupu. Například následující pracovní postup slouží ke generování náhodné číslo a zapisuje do konzoly.  
+### <a name="working-with-variables-literal-values-and-expressions"></a>Práce s proměnnými, literálové hodnoty a výrazy  
+ Při vytváření definice pracovního postupu pomocí kódu, mějte na paměti jaký kód provede jako součást vytváření definice pracovního postupu a jaký kód provede jako součást spuštění instance pracovního postupu. Například následující pracovní postup má generovat náhodné číslo a zápis do konzoly.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#50](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#50)]  
   
- Při spuštění tohoto kódu definice pracovního postupu, volání `Random.Next` přišla a výsledek je uložen v definici pracovního postupu jako hodnota literálu. Počet instancí tento pracovní postup může vyvolat, a všechny by zobrazit stejné číslo. Tak, aby měl náhodné generování čísel, ke kterým došlo během provádění pracovního postupu, který je použit výraz vyhodnocovány pokaždé, když pracovní postup bude spuštěn. V následujícím příkladu je použit výraz jazyka Visual Basic s <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.  
+ Při spuštění tohoto kódu pro definici pracovního postupu, volání `Random.Next` tvoří a výsledek je uložen v definici pracovního postupu jako hodnotu literálu. Velký počet instancí tento pracovní postup může být vyvolána, a všechny zobrazí stejné číslo. Aby generování náhodných čísel, k nimž došlo při provádění pracovního postupu, který je použit výraz vyhodnocen pokaždé, když pracovní postup probíhá. V následujícím příkladu se používá výraz jazyka Visual Basic s <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#51](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#51)]  
   
- Výraz v předchozím příkladu lze také implementovat pomocí <xref:Microsoft.CSharp.Activities.CSharpValue%601> a výraz jazyka C#.  
+ Výraz v předchozím příkladu může implementovat také pomocí <xref:Microsoft.CSharp.Activities.CSharpValue%601> a výraz C#.  
   
 ```csharp  
 new Assign<int>  
@@ -50,31 +50,31 @@ new Assign<int>
 }  
 ```  
   
- Výrazy jazyka C# musí být zkompilovány, před vyvoláním pracovního postupu, které je obsahují. Pokud nejsou kompilovány výrazy jazyka C#, <xref:System.NotSupportedException> se vyvolá, když pracovní postup vyvolání zpráva podobná následující: `Expression Activity type 'CSharpValue`1 vyžaduje kompilace aby bylo možné spustit.  Zkontrolujte, že pracovní postup byl zkompilován.' ve většině scénářů zahrnující pracovní postupy vytvořené v sadě Visual Studio jazyka C# jsou výrazy automaticky kompilovat, ale v některých případech, například kód pracovních postupů, musí výrazy jazyka C# ručně kompilována. Příklad způsob kompilace výrazy jazyka C#, naleznete v části [pomocí jazyka C# výrazy v pracovních postupech kódu](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md#CodeWorkflows) části [výrazy jazyka C#](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md) tématu.  
+ Výrazy jazyka C# musí být zkompilovány před vyvoláním pracovního postupu, které je obsahují. Pokud nejsou výrazy jazyka C# zkompilovány, <xref:System.NotSupportedException> je vyvolána, když uživatel vyvolá pracovní postup a zobrazí se zpráva podobná této: `Expression Activity type 'CSharpValue`1 vyžaduje kompilaci, aby bylo možné spustit.  Ujistěte se prosím, že pracovní postup byl zkompilován. "ve většině případů zahrnující pracovní postupy vytvořené v sadě Visual Studio C# výrazy jsou zkompilovány automaticky, ale v některých scénářích, jako jsou pracovní postupy kódu výrazy jazyka C# musí být ručně kompilována. Příklad zkompilovat výrazy jazyka C# najdete v článku [výrazy pomocí jazyka C# v pracovních postupech kód](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md#CodeWorkflows) část [výrazy jazyka C#](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md) tématu.  
   
- A <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> představuje výraz v syntaxi jazyka Visual Basic, který lze použít jako r-value ve výrazu a <xref:Microsoft.CSharp.Activities.CSharpValue%601> představuje výraz v syntaxi C#, který lze použít jako r-value ve výrazu. Tyto výrazy jsou vyhodnocovány pokaždé, když se spustí obsahující aktivitu. Výsledkem výrazu je přiřazen k proměnné pracovního postupu `n`, a tyto výsledky jsou používány na další aktivitu v pracovním postupu. Pro přístup k hodnotě proměnné pracovního postupu `n` v době běhu <xref:System.Activities.ActivityContext> je vyžadován. To je přístupná pomocí následující výrazu lambda.  
+ A <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> představuje výraz v syntaxi jazyka Visual Basic, který může sloužit jako r-value ve výrazu, a <xref:Microsoft.CSharp.Activities.CSharpValue%601> představuje výraz v syntaxi jazyka C#, který může sloužit jako r-value ve výrazu. Tyto výrazy jsou vyhodnocovány pokaždé, když je proveden obsahující aktivitu. Výsledek výrazu je přiřazená k proměnné pracovního postupu `n`, a tyto výsledky se používají další aktivita v pracovním postupu. Pro přístup k hodnotě proměnné pracovního postupu `n` v době běhu <xref:System.Activities.ActivityContext> je povinný. To lze přistupovat pomocí následující výraz lambda.  
   
 > [!NOTE]
->  Všimněte si, že jsou obě tyto kódu příklady použití jazyka C# jako programovací jazyk, ale jedna používá <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> a jeden používá <xref:Microsoft.CSharp.Activities.CSharpValue%601>. <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> a <xref:Microsoft.CSharp.Activities.CSharpValue%601> lze použít v projektech Visual Basic a C#. Ve výchozím nastavení výrazy, které jsou vytvořené v Návrháři pracovních postupů s jazykem hostování projektu. Při vytváření pracovních postupů v kódu, požadovaný jazyk je uvážení Autor pracovního postupu.  
+>  Všimněte si, že jsou obě tyto kód příklady jsou pomocí jazyka C# jako programovací jazyk, ale jeden používá <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> a jedna používá <xref:Microsoft.CSharp.Activities.CSharpValue%601>. <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> a <xref:Microsoft.CSharp.Activities.CSharpValue%601> lze použít v projektech Visual Basic a C#. Ve výchozím nastavení výrazy vytvořené v Návrháři postupu provádění jazyk hostování projektu. Při vytváření pracovních postupů v kódu, požadovaný jazyk je uvážení Autor pracovního postupu.  
   
- V těchto příkladech je výsledkem výrazu přiřazenou proměnné pracovního postupu `n`, a tyto výsledky jsou používány na další aktivitu v pracovním postupu. Pro přístup k hodnotě proměnné pracovního postupu `n` v době běhu <xref:System.Activities.ActivityContext> je vyžadován. To je přístupná pomocí následující výrazu lambda.  
+ V těchto příkladech výsledek výrazu je přiřazen k proměnné pracovního postupu `n`, a tyto výsledky se používají další aktivita v pracovním postupu. Pro přístup k hodnotě proměnné pracovního postupu `n` v době běhu <xref:System.Activities.ActivityContext> je povinný. To lze přistupovat pomocí následující výraz lambda.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#52](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#52)]  
   
- Další informace o výrazy lambda najdete v tématu [výrazy Lambda (C# Průvodce programováním)](http://go.microsoft.com/fwlink/?LinkID=152436) nebo [výrazy Lambda (Visual Basic)](http://go.microsoft.com/fwlink/?LinkID=152437).  
+ Další informace o výrazech lambda naleznete v tématu [výrazy Lambda (C# Programming Guide)](https://go.microsoft.com/fwlink/?LinkID=152436) nebo [výrazy Lambda (Visual Basic)](https://go.microsoft.com/fwlink/?LinkID=152437).  
   
- Lambda – výrazy nejsou serializovatelný do formátu XAML. Pokud se pokus o serializaci pracovního postupu s výrazy lambda, <xref:System.Activities.Expressions.LambdaSerializationException> je vyvolána s následující zprávou: "Tento pracovní postup obsahuje výrazy lambda zadaný v kódu. Tyto výrazy nejsou XAML serializable. Aby bylo možné serializovatelný XAML pracovního postupu, použijte buď VisualBasicValue/VisualBasicReference nebo ExpressionServices.Convert(lambda). To bude vaše výrazy lambda výraz aktivity převést." Chcete-li tento výraz kompatibilní s XAML, použijte <xref:System.Activities.Expressions.ExpressionServices> a <xref:System.Activities.Expressions.ExpressionServices.Convert%2A>, jak je znázorněno v následujícím příkladu.  
+ Výrazy lambda nejsou serializovat do formátu XAML. Pokud je proveden pokus o serializaci pracovního postupu pomocí výrazů lambda, <xref:System.Activities.Expressions.LambdaSerializationException> je vyvolána výjimka s následující zprávou: "Tento pracovní postup obsahuje výrazy lambda určené v kódu. Tyto výrazy nejsou XAML serializovatelný. Aby bylo možné serializovat XAML pracovního postupu, použijte funkce VisualBasicValue/VisualBasicReference nebo ExpressionServices.Convert(lambda). To převede převedete výrazy lambda na aktivity výrazů." Chcete-li tento výraz kompatibilní s XAML, použijte <xref:System.Activities.Expressions.ExpressionServices> a <xref:System.Activities.Expressions.ExpressionServices.Convert%2A>, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#53](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#53)]  
   
- A <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> může také použít. Všimněte si, že žádný výraz lambda je potřeba při použití výraz jazyka Visual Basic.  
+ A <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> může také použít. Všimněte si, že žádný výraz lambda je povinný při použití výraz jazyka Visual Basic.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#54](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#54)]  
   
- V době běhu jsou výrazy jazyka Visual Basic zkompilovat do LINQ – výrazy. V předchozích příkladech jsou serializovatelný do jazyka XAML, ale pokud serializovaných XAML slouží jako prohlížet a upravovat v Návrháři pracovních postupů pomocí <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> pro vaše výrazy. Pracovní postupy, které používají serializovat `ExpressionServices.Convert` lze otevřít v návrháři, ale hodnota výrazu bude prázdné. Další informace o serializaci pracovní postupy pro XAML najdete v tématu [serializaci pracovních postupů a aktivit do a z XAML](../../../docs/framework/windows-workflow-foundation/serializing-workflows-and-activities-to-and-from-xaml.md).  
+ V době běhu jsou výrazy jazyka Visual Basic kompilovány do LINQ – výrazy. V předchozích příkladech jsou serializovatelné XAML, ale pokud serializovaná XAML se má zobrazit a upravit v Návrháři pracovních postupů pomocí <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> pro vaše výrazy. Pracovní postupy využívající serializovat `ExpressionServices.Convert` lze otevřít v návrháři, ale hodnota výrazu bude prázdné. Další informace o serializaci pracovní postupy XAML najdete v tématu [serializace pracovních postupů a aktivit do a z XAML](../../../docs/framework/windows-workflow-foundation/serializing-workflows-and-activities-to-and-from-xaml.md).  
   
-#### <a name="literal-expressions-and-reference-types"></a>Literál výrazy a odkazové typy  
- Literálové výrazy jsou reprezentována v pracovních postupech, pomocí <xref:System.Activities.Expressions.Literal%601> aktivity. Následující <xref:System.Activities.Statements.WriteLine> aktivity jsou funkčně rovnocenné.  
+#### <a name="literal-expressions-and-reference-types"></a>Literálové výrazy a odkazové typy  
+ Literálové výrazy jsou reprezentovány v pracovních postupech podle <xref:System.Activities.Expressions.Literal%601> aktivity. Následující <xref:System.Activities.Statements.WriteLine> aktivity jsou funkčně ekvivalentní.  
   
 ```csharp  
 new WriteLine  
@@ -87,7 +87,7 @@ new WriteLine
 }  
 ```  
   
- Je neplatné. k chybě při inicializaci literál výrazu s žádným typem odkaz s výjimkou <xref:System.String>. V následujícím příkladu se <xref:System.Activities.Statements.Assign> aktivity <xref:System.Activities.Statements.Assign.Value%2A> vlastnost je inicializována pomocí literál výrazu `List<string>`.  
+ Je neplatná inicializace literálový výraz s jakéhokoliv odkazového typu s výjimkou <xref:System.String>. V následujícím příkladu <xref:System.Activities.Statements.Assign> aktivity <xref:System.Activities.Statements.Assign.Value%2A> vlastnost je inicializována pomocí literálový výraz `List<string>`.  
   
 ```csharp  
 new Assign  
@@ -97,7 +97,7 @@ new Assign
 },  
 ```  
   
- Když je pracovní postup obsahující této aktivity ověřit, se vrátí následující chybu ověřování: "literál podporuje pouze typy hodnot a typ neměnné System.String. Typ System.Collections.Generic.List'1[System.String] nelze použít jako literál." Pokud je pracovní postup je vyvolána, <xref:System.Activities.InvalidWorkflowException> je vyvolána obsahující text chyby ověření. Jedná se o chybu ověření, protože vytváření literál výrazu s odkazového typu nevytvoří novou instanci třídy typ odkazu pro každou instanci pracovního postupu. To vyřešit, nahraďte literál výrazu, která vytvoří a vrátí novou instanci typu odkazu.  
+ Po ověření pracovního postupu, který obsahuje tato aktivita se vrátí následující chybu ověření: "literál podporuje typy hodnot a je neumlčitelným typem System.String. Typ System.Collections.Generic.List'1[System.String] nelze použít jako literál." Pokud je vyvolána pracovního postupu, <xref:System.Activities.InvalidWorkflowException> je vyvolána výjimka, která obsahuje text chyby ověření. Jedná se o chybu ověření, protože vytváření literálový výraz s odkazovým typem nevytvoří novou instanci typu odkazu pro každou instanci pracovního postupu. Chcete-li tento problém vyřešit, nahraďte literálový výraz ten, který vytvoří a vrátí novou instanci typu odkazu.  
   
 ```csharp  
 new Assign  
@@ -109,12 +109,12 @@ new Assign
   
  Další informace o výrazech naleznete v tématu [výrazy](../../../docs/framework/windows-workflow-foundation/expressions.md).  
   
-#### <a name="invoking-methods-on-objects-using-expressions-and-the-invokemethod-activity"></a>Volání metod pro objekty pomocí výrazy a InvokeMethod aktivity  
- <xref:System.Activities.Expressions.InvokeMethod%601> Aktivity slouží k vyvolání statické a instance metody třídy v rozhraní .NET Framework. V předchozím příkladu v tomto tématu se generuje náhodné číslo, pomocí <xref:System.Random> třídy.  
+#### <a name="invoking-methods-on-objects-using-expressions-and-the-invokemethod-activity"></a>Volání metod na objekty pomocí výrazů a aktivity InvokeMethod  
+ <xref:System.Activities.Expressions.InvokeMethod%601> Aktivita slouží pro vyvolání statické a instance metod tříd v rozhraní .NET Framework. V předchozím příkladu v tomto tématu se vygeneroval pomocí náhodné číslo <xref:System.Random> třídy.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#51](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#51)]  
   
- <xref:System.Activities.Expressions.InvokeMethod%601> Aktivity také byl použit k volání <xref:System.Random.Next%2A> metodu <xref:System.Random> třídy.  
+ <xref:System.Activities.Expressions.InvokeMethod%601> Aktivita může také byla použita k volání <xref:System.Random.Next%2A> metodu <xref:System.Random> třídy.  
   
 ```csharp  
 new InvokeMethod<int>  
@@ -130,21 +130,21 @@ new InvokeMethod<int>
 }  
 ```  
   
- Vzhledem k tomu <xref:System.Random.Next%2A> není statickou metodu, instanci <xref:System.Random> třída poskytnutý <xref:System.Activities.Expressions.InvokeMethod%601.TargetObject%2A> vlastnost. V tomto příkladu je vytvořena nová instance pomocí výrazu jazyka Visual Basic, ale může také mít byla dříve vytvořili a uložené v proměnné pracovního postupu. V tomto příkladu je jednodušší použít <xref:System.Activities.Statements.Assign%601> aktivity místo <xref:System.Activities.Expressions.InvokeMethod%601> aktivity. Pokud volání metody nakonec vyvolat buď <xref:System.Activities.Statements.Assign%601> nebo <xref:System.Activities.Expressions.InvokeMethod%601> aktivit je dlouho spuštěný, <xref:System.Activities.Expressions.InvokeMethod%601> má několik výhod, protože má <xref:System.Activities.Expressions.InvokeMethod%601.RunAsynchronously%2A> vlastnost. Pokud je tato vlastnost nastavená na `true`, vyvolanou metodu se spustí asynchronně s ohledem na pracovním postupu. Pokud ostatní aktivity paralelně, nebude při asynchronně spouští metodu blokován. Navíc pokud metoda k vyvolání nemá žádnou návratovou hodnotu, pak <xref:System.Activities.Expressions.InvokeMethod%601> je vhodný způsob k vyvolání metody.  
+ Protože <xref:System.Random.Next%2A> není statická metoda instance <xref:System.Random> třídy poskytnutý <xref:System.Activities.Expressions.InvokeMethod%601.TargetObject%2A> vlastnost. V tomto příkladu je vytvořena nová instance pomocí výraz jazyka Visual Basic, ale může také mít byla předtím vytvořili a uloží do proměnné pracovního postupu. V tomto příkladu je jednodušší použít <xref:System.Activities.Statements.Assign%601> aktivity místo <xref:System.Activities.Expressions.InvokeMethod%601> aktivity. Pokud volání metody, které nakonec vyvolávat buď <xref:System.Activities.Statements.Assign%601> nebo <xref:System.Activities.Expressions.InvokeMethod%601> aktivit je dlouhý spuštěna, <xref:System.Activities.Expressions.InvokeMethod%601> je výhodné, protože má <xref:System.Activities.Expressions.InvokeMethod%601.RunAsynchronously%2A> vlastnost. Pokud je tato vlastnost nastavena na `true`, jde o pracovní postup spustí asynchronně volanou metodu. Pokud jiné aktivity paralelně, nebude blokován při se metoda provádí asynchronně. Také pokud metoda k vyvolání nemá žádnou návratovou hodnotu, pak <xref:System.Activities.Expressions.InvokeMethod%601> je vhodný způsob volání metody.  
   
 ## <a name="arguments-and-dynamic-activities"></a>Argumenty a dynamické aktivity  
- Definice pracovního postupu se vytvoří v kódu ty aktivity do strom aktivity a konfigurací všechny vlastnosti a argumenty. Mohou být vázány existující argumenty, ale nové argumenty nelze přidat do aktivity. To zahrnuje předána aktivitě, kořenové argumenty pracovního postupu. V imperativní kódu jsou zadané argumenty pracovního postupu jako vlastnosti na nový typ CLR, a v jazyce XAML jsou deklarovány s použitím `x:Class` a `x:Member`. Argumenty nelze přidat, protože neexistuje žádný nový typ CLR vytvořit při vytváření definice pracovního postupu jako strom objektů v paměti. Argumenty by však mohou být přidány do <xref:System.Activities.DynamicActivity>. V tomto příkladu <xref:System.Activities.DynamicActivity%601> se vytvoří dva argumenty celé číslo tohoto trvá, společně se přidají a vrátí výsledek. A <xref:System.Activities.DynamicActivityProperty> se vytvoří pro každý argument a výsledek operace je přiřazena k <xref:System.Activities.Activity%601.Result%2A> argument <xref:System.Activities.DynamicActivity%601>.  
+ Definice pracovního postupu se vytvoří v kódu propojením aktivit na strom aktivity a konfigurací vlastností a argumenty. Existující argumenty může být vázaný, ale nové argumenty nelze přidat do aktivity. To zahrnuje pracovní postup argumenty předané kořenovou aktivitu. V imperativního kódu jsou zadané argumenty pracovního postupu jako vlastnosti na nový typ CLR, a v XAML jsou deklarovány pomocí `x:Class` a `x:Member`. Argumenty nelze přidat, protože neexistuje žádný nový typ CLR vytvořený při vytváření definice pracovního postupu jako strom objektů v paměti. Argumenty ale mohou být přidány do <xref:System.Activities.DynamicActivity>. V tomto příkladu <xref:System.Activities.DynamicActivity%601> vytvoření této přebírá dva celočíselné argumenty, se přidají společně a vrátí výsledek. A <xref:System.Activities.DynamicActivityProperty> se vytvoří pro každý argument a výsledkem operace je přiřazen k <xref:System.Activities.Activity%601.Result%2A> argument <xref:System.Activities.DynamicActivity%601>.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#55](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#55)]  
   
- Další informace o dynamické aktivit najdete v tématu [vytváření aktivitu v době běhu](../../../docs/framework/windows-workflow-foundation/creating-an-activity-at-runtime-with-dynamicactivity.md).  
+ Další informace o dynamické aktivity najdete v tématu [vytvoření aktivity za běhu](../../../docs/framework/windows-workflow-foundation/creating-an-activity-at-runtime-with-dynamicactivity.md).  
   
 ## <a name="compiled-activities"></a>Kompilované aktivity  
- Dynamické aktivity jsou jeden způsob, jak definovat aktivity, která obsahuje argumenty pomocí kódu, ale aktivity také můžete vytvořit v kódu a zkompilovat do typy. Které jsou odvozeny od vytvořením jednoduchého aktivity <xref:System.Activities.CodeActivity>a asynchronní aktivity, které jsou odvozeny od <xref:System.Activities.AsyncCodeActivity>. Tyto aktivity může mít argumenty, návratové hodnoty a definovat jejich logiku pomocí imperativní kódu. Příklady vytváření tyto typy aktivit najdete v tématu [CodeActivity základní třída](../../../docs/framework/windows-workflow-foundation/workflow-activity-authoring-using-the-codeactivity-class.md) a [vytváření asynchronní aktivity](../../../docs/framework/windows-workflow-foundation/creating-asynchronous-activities-in-wf.md).  
+ Dynamické aktivity jsou jeden způsob, jak definovat aktivity, která obsahuje argumenty pomocí kódu, ale můžete aktivity také vytvoří v kódu a zkompilovány do typů. Jednoduché lze vytvořit aktivity, které jsou odvozeny z <xref:System.Activities.CodeActivity>a asynchronních aktivitách, které jsou odvozeny z <xref:System.Activities.AsyncCodeActivity>. Tyto aktivity mohou mít argumenty, návratové hodnoty a definovat jeho logiku pomocí imperativního kódu. Příklady vytváření těchto druhů aktivit najdete v tématu [základní třída CodeActivity](../../../docs/framework/windows-workflow-foundation/workflow-activity-authoring-using-the-codeactivity-class.md) a [vytváření asynchronních aktivit](../../../docs/framework/windows-workflow-foundation/creating-asynchronous-activities-in-wf.md).  
   
- Aktivity, které jsou odvozeny od <xref:System.Activities.NativeActivity> můžete definovat jejich logiku pomocí imperativní kódu a může také obsahovat podřízené aktivity, které definují logiku. Také mají plný přístup k funkcím runtime, jako je například vytváření záložky. Příklady vytváření <xref:System.Activities.NativeActivity>– na základě aktivity, najdete v části [NativeActivity základní třída](../../../docs/framework/windows-workflow-foundation/nativeactivity-base-class.md), [postupy: vytvoření aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md)a [vlastní složený pomocí nativní aktivity](../../../docs/framework/windows-workflow-foundation/samples/custom-composite-using-native-activity.md)ukázka.  
+ Aktivity, které jsou odvozeny z <xref:System.Activities.NativeActivity> můžete definovat jeho logiku pomocí imperativního kódu a mohou také obsahovat podřízené aktivity, které definují logiku. Mají také úplný přístup k funkcím modulu runtime, jako je například vytváření záložek. Příklady vytvoření <xref:System.Activities.NativeActivity>– na základě aktivity, naleznete v tématu [základní třída NativeActivity](../../../docs/framework/windows-workflow-foundation/nativeactivity-base-class.md), [postupy: vytvoření aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md)a [vlastní složené využívající nativní aktivitu](../../../docs/framework/windows-workflow-foundation/samples/custom-composite-using-native-activity.md)vzorku.  
   
- Aktivity, které jsou odvozeny od <xref:System.Activities.Activity> definovat jejich logiku výhradně prostřednictvím podřízené aktivity. Tyto aktivity jsou obvykle vytvoří pomocí návrháře pracovních postupů, ale lze také definovat pomocí kódu. V následujícím příkladu `Square` aktivity je definována odvozenou od `Activity<int>`. `Square` Aktivita má jeden <xref:System.Activities.InArgument%601> s názvem `Value`a definuje svou logikou zadáním <xref:System.Activities.Statements.Sequence> aktivity pomocí <xref:System.Activities.Activity.Implementation%2A> vlastnost. <xref:System.Activities.Statements.Sequence> Obsahuje aktivitu <xref:System.Activities.Statements.WriteLine> aktivity a <xref:System.Activities.Statements.Assign%601> aktivity. Společně tyto tři aktivity implementovat logiku `Square` aktivity.  
+ Aktivity, které jsou odvozeny z <xref:System.Activities.Activity> definovat jeho logiku výhradně prostřednictvím podřízené aktivity. Tyto aktivity se obvykle vytvářejí pomocí návrháře postupu provádění, ale můžete také definovat pomocí kódu. V následujícím příkladu `Square` aktivity je definován, která je odvozena z `Activity<int>`. `Square` Aktivita má jeden <xref:System.Activities.InArgument%601> s názvem `Value`a definuje tak, že určíte svou logikou <xref:System.Activities.Statements.Sequence> pomocí aktivity <xref:System.Activities.Activity.Implementation%2A> vlastnost. <xref:System.Activities.Statements.Sequence> Obsahuje aktivity <xref:System.Activities.Statements.WriteLine> aktivity a <xref:System.Activities.Statements.Assign%601> aktivity. Společně tyto tři aktivity implementovat logiku `Square` aktivity.  
   
 ```csharp  
 class Square : Activity<int>  
@@ -173,7 +173,7 @@ class Square : Activity<int>
 }  
 ```  
   
- V následujícím příkladu, definice pracovního postupu, který se skládá z jedné `Square` aktivity vyvolání pomocí <xref:System.Activities.WorkflowInvoker>.  
+ V následujícím příkladu, který se skládá z jedné definice pracovního postupu `Square` aktivity je vyvolán pomocí <xref:System.Activities.WorkflowInvoker>.  
   
 ```csharp  
 Dictionary<string, object> inputs = new Dictionary<string, object> {{ "Value", 5}};  
@@ -181,7 +181,7 @@ int result = WorkflowInvoker.Invoke(new Square(), inputs);
 Console.WriteLine("Result: {0}", result);  
 ```  
   
- Po vyvolání pracovního postupu se ke konzole zobrazí následující výstup:  
+ Když uživatel vyvolá pracovní postup, se zobrazí následující výstup do konzoly:  
   
- **Umocněním hodnota: 5**  
+ **Umocnění na druhou hodnotu: 5**  
 **Výsledek: 25**

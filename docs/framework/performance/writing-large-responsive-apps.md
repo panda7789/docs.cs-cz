@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: bf5604472331f336c427ded36fc1666f16310ea2
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: 4c90e914273de9f9121a979accdb4798b31e05cb
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43254350"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43418962"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Psaní velkých a pohotově reagujících aplikací .NET Framework
 Tento článek poskytuje tipy pro zvýšení výkonu velkých aplikací rozhraní .NET Framework nebo aplikace, které zpracovávají velké množství dat, jako jsou soubory nebo databáze. Tyto tipy pocházejí z přepsání kompilátory C# i Visual Basic ve spravovaném kódu a tento článek obsahuje několik skutečné příklady z kompilátoru jazyka C#.  
@@ -38,7 +38,7 @@ Tento článek poskytuje tipy pro zvýšení výkonu velkých aplikací rozhran�
  By měl nastavit prostředí nebo scénáře výkonnostních cílů pro zákazníků ve vaší aplikaci a psaní testů k měření výkonu.  Prozkoumat selhání testů s použitím vědecké metody: použití profilů na vás, co může být problém, vyslovují hypotézy o jejich a testovat vaše hypotézu s experiment nebo změny kódu.  Vytvořte standardní hodnoty měření výkonu v čase s pravidelné testování tak může izolovat změny, které způsobují regrese výkonu.  Výkon pracovních blíží přísné způsobem, budete vyhnete plýtvání časem se aktualizace kódu, které nepotřebujete.  
   
 ### <a name="fact-3-good-tools-make-all-the-difference"></a>Fakt 3: Dobré nástroje vytvářejí všechny rozdíl  
- Vhodné nástroje umožňují rychle přejít k největší problémy s výkonem (procesor, paměť nebo disk) a pomohou vyhledat kód, který způsobí, že tyto kritické body.  Microsoft se dodává s celou řadou nástrojů výkonu, jako [Visual Studio Profiler](/visualstudio/profiling/beginners-guide-to-performance-profiling), [nástroj pro analýzu Windows Phone](http://msdn.microsoft.com/library/e67e3199-ea43-4d14-ab7e-f7f19266253f), a [PerfView](http://www.microsoft.com/download/details.aspx?id=28567).  
+ Vhodné nástroje umožňují rychle přejít k největší problémy s výkonem (procesor, paměť nebo disk) a pomohou vyhledat kód, který způsobí, že tyto kritické body.  Microsoft se dodává s celou řadou nástrojů výkonu, jako [Visual Studio Profiler](/visualstudio/profiling/beginners-guide-to-performance-profiling), [nástroj pro analýzu Windows Phone](https://msdn.microsoft.com/library/e67e3199-ea43-4d14-ab7e-f7f19266253f), a [PerfView](https://www.microsoft.com/download/details.aspx?id=28567).  
   
  PerfView je zadarmo. je neuvěřitelně výkonné nástroj, který pomůže zaměřit se na podrobné problémy, jako je / v disku, GC – události a paměti.  Můžete zaznamenat související s výkonem [události trasování pro Windows](../../../docs/framework/wcf/samples/etw-tracing.md) událostí (ETW) a zobrazení snadno na aplikaci, proces, na zásobníku a na informace o vlákně.  PerfView ukazuje, kolik a jaký druh paměti přidělí vaši aplikaci a které funkce nebo volání zásobníků přispívat množství služeb pro přidělení paměti. Podrobnosti najdete v tématu bohaté témata nápovědy, ukázky a videa, které jsou součástí nástroje (například [PerfView kurzy](http://channel9.msdn.com/Series/PerfView-Tutorial) na webu Channel 9).  
   
@@ -281,7 +281,7 @@ Language-Integrated Query (LINQ), ve spojení s lambda výrazy, je příkladem f
   
  **Příklad 5: Výrazy lambda, seznam\<T >, IEnumerable a\<T >**  
   
- Tento příklad používá [LINQ a funkční stylu kódu](http://blogs.msdn.com/b/charlie/archive/2007/01/26/anders-hejlsberg-on-linq-and-functional-programming.aspx) najít symbol v modelu kompilátoru dle názvu řetězce:  
+ Tento příklad používá [LINQ a funkční stylu kódu](https://blogs.msdn.com/b/charlie/archive/2007/01/26/anders-hejlsberg-on-linq-and-functional-programming.aspx) najít symbol v modelu kompilátoru dle názvu řetězce:  
   
 ```csharp  
 class Symbol {  
@@ -305,7 +305,7 @@ Func<Symbol, bool> predicate = s => s.Name == name;
      return symbols.FirstOrDefault(predicate);  
 ```  
   
- V prvním řádku [výraz lambda](~/docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) `s => s.Name == name` [zavře přes](http://blogs.msdn.com/b/ericlippert/archive/2003/09/17/53028.aspx) lokální proměnná `name`.  To znamená, že kromě objekt pro přidělování [delegovat](~/docs/csharp/language-reference/keywords/delegate.md) , který `predicate` obsahuje kód přiděluje statická třída pro uložení prostředí, který zachycuje hodnoty `name`.  Kompilátor generuje kód podobný tomuto:  
+ V prvním řádku [výraz lambda](~/docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) `s => s.Name == name` [zavře přes](https://blogs.msdn.com/b/ericlippert/archive/2003/09/17/53028.aspx) lokální proměnná `name`.  To znamená, že kromě objekt pro přidělování [delegovat](~/docs/csharp/language-reference/keywords/delegate.md) , který `predicate` obsahuje kód přiděluje statická třída pro uložení prostředí, který zachycuje hodnoty `name`.  Kompilátor generuje kód podobný tomuto:  
   
 ```csharp  
 // Compiler-generated class to hold environment state for lambda  
@@ -362,7 +362,7 @@ public Symbol FindMatchingSymbol(string name)
  Tento kód nepoužívá rozšiřující metody, lambda výrazy nebo enumerátory LINQ, a to s sebou nese náklady bez přidělení.  Nejsou žádné přidělení, protože kompilátor může vidět, že `symbols` je kolekce <xref:System.Collections.Generic.List%601> a může svázat výsledné enumerátor (struktury) na místní proměnnou s správný typ, aby se zabránilo zabalení.  Původní verze této funkce bylo skvělé příklad a výrazové Možnosti C# a produktivity rozhraní .NET Framework.  Tato verze nové a efektivnější zachová tyto kvality bez přidání jakékoli složitý kód pro údržbu.  
   
 ### <a name="async-method-caching"></a>Asynchronní metoda ukládání do mezipaměti  
- Následující příklad znázorňuje běžný problém při pokusu o použití výsledky uložené v mezipaměti v [asynchronní](http://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7) metody.  
+ Následující příklad znázorňuje běžný problém při pokusu o použití výsledky uložené v mezipaměti v [asynchronní](https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7) metody.  
   
  **Příklad 6: ukládání do mezipaměti v asynchronních metodách**  
   
@@ -465,9 +465,9 @@ class Compilation { /*...*/
  [Video prezentace v tomto tématu](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B333)  
  [Průvodce začátečníka profilací výkonu](/visualstudio/profiling/beginners-guide-to-performance-profiling)  
  [Výkon](../../../docs/framework/performance/index.md)  
- [Tipy ke zvýšení výkonu rozhraní .NET](http://msdn.microsoft.com/library/ms973839.aspx)  
- [Nástroj pro analýzu výkonu Windows Phone](http://msdn.microsoft.com/magazine/hh781024.aspx)  
- [Vyhledat problémová místa aplikace pomocí sady Visual Studio Profiler](http://msdn.microsoft.com/magazine/cc337887.aspx)  
+ [Tipy ke zvýšení výkonu rozhraní .NET](https://msdn.microsoft.com/library/ms973839.aspx)  
+ [Nástroj pro analýzu výkonu Windows Phone](https://msdn.microsoft.com/magazine/hh781024.aspx)  
+ [Vyhledat problémová místa aplikace pomocí sady Visual Studio Profiler](https://msdn.microsoft.com/magazine/cc337887.aspx)  
  [Na webu Channel 9 kurzů PerfView](http://channel9.msdn.com/Series/PerfView-Tutorial)  
- [Tipy pro vyšší úrovně výkonu](http://curah.microsoft.com/4604/improving-your-net-apps-startup-performance)  
+ [Tipy pro vyšší úrovně výkonu](https://curah.microsoft.com/4604/improving-your-net-apps-startup-performance)  
  [DotNet/roslyn úložišti na Githubu](https://github.com/dotnet/roslyn)

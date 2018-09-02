@@ -2,15 +2,15 @@
 title: Odvození textu elementu
 ms.date: 03/30/2017
 ms.assetid: 789799e5-716f-459f-a168-76c5cf22178b
-ms.openlocfilehash: b32d8f3f89a16166ffc0e903ef1f63c3b97a249c
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: b70f76d2702ebcb098c64ea84900b723fbc137ab
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32762712"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43405785"
 ---
 # <a name="inferring-element-text"></a>Odvození textu elementu
-Pokud element obsahuje text a nemá žádné podřízené prvky k odvodit, protože tabulky, jako je například (elementy s atributy) nebo opakujících se prvků, nový sloupec s názvem **TableName_Text** přidá do tabulky, který je používán pro daný element. Text obsažené v elementu budou přidány do řádek v tabulce a uložená do nového sloupce. **ColumnMapping** vlastnost nového sloupce, bude nastavena pro **MappingType.SimpleContent**.  
+Pokud element obsahuje text a nemá žádný podřízený element odvození podle tabulky jako je například (elementy s atributy) nebo opakované prvků, nový sloupec s názvem **TableName_Text** se přidá do tabulky, kterou si odvozuje pro element. Text obsažen v elementu bude přidána na řádek v tabulce a uložená v novém sloupci. **ColumnMapping** vlastnost nového sloupce, který bude nastavena na **MappingType.SimpleContent**.  
   
  Zvažte například následující kód XML.  
   
@@ -20,7 +20,7 @@ Pokud element obsahuje text a nemá žádné podřízené prvky k odvodit, proto
 </DocumentElement>  
 ```  
   
- Proces odvození vytvoří tabulku s názvem **Element1** s dva sloupce: **attr1** a **Element1_Text**. **ColumnMapping** vlastnost **attr1** sloupec bude nastavena pro **MappingType.Attribute**. **ColumnMapping** vlastnost **Element1_Text** sloupec bude nastavena pro **MappingType.SimpleContent**.  
+ Procesu odvození vytvoří tabulku s názvem **Element1** se dvěma sloupci: **attr1** a **Element1_Text**. **ColumnMapping** vlastnost **attr1** sloupec bude nastaven na **MappingType.Attribute**. **ColumnMapping** vlastnost **Element1_Text** sloupec bude nastaven na **MappingType.SimpleContent**.  
   
  **Datová sada:** prvek DocumentElement  
   
@@ -28,9 +28,9 @@ Pokud element obsahuje text a nemá žádné podřízené prvky k odvodit, proto
   
 |attr1|Element1_Text|  
 |-----------|--------------------|  
-|value1|Text1|  
+|Hodnota1|Text1|  
   
- Pokud element obsahuje text, ale také obsahuje podřízené elementy, které obsahují text, nepřidají sloupce pro tabulku pro ukládání textu obsažené v elementu. Text obsažené v elementu budou ignorovány, zatímco text v podřízených elementů je součástí řádek v tabulce. Zvažte například následující kód XML.  
+ Pokud element obsahuje text, ale má také podřízené prvky, které obsahují text, nebude na tabulku pro ukládání textu obsaženy v prvku přidán sloupec. Text obsažen v elementu budou ignorovány, zatímco je zahrnut text podřízené elementy v řádku v tabulce. Zvažte například následující kód XML.  
   
 ```xml  
 <Element1>  
@@ -40,7 +40,7 @@ Pokud element obsahuje text a nemá žádné podřízené prvky k odvodit, proto
 </Element1>  
 ```  
   
- Proces odvození vytvoří tabulku s názvem **Element1** s jedním sloupcem s názvem **ChildElement1**. Text pro **ChildElement1** element budou zahrnuty do řádek v tabulce. Další text se budou ignorovat. **ColumnMapping** vlastnost **ChildElement1** sloupec bude nastavena pro **MappingType.Element**.  
+ Procesu odvození vytvoří tabulku s názvem **Element1** s jedním sloupcem s názvem **ChildElement1**. Text **ChildElement1** element bude obsahovat řádek v tabulce. Další text se bude ignorovat. **ColumnMapping** vlastnost **ChildElement1** sloupec bude nastaven na **MappingType.Element**.  
   
  **Datová sada:** prvek DocumentElement  
   
@@ -56,4 +56,4 @@ Pokud element obsahuje text a nemá žádné podřízené prvky k odvodit, proto
  [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  
  [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
  [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

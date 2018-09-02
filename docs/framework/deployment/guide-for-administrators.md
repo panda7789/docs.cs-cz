@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a909b7c940f22e6435fc72a370b8a4ed17d5f937
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: f56ccbf549ce8f1750ba0bf9cf4a945007694258
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925054"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43408243"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework – průvodce nasazením pro administrátory
 Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho systémové závislosti napříč sítí pomocí nástroje System Center Configuration Manager. V tomto článku se předpokládá, že všechny cílové klientské počítače splňují minimální požadavky rozhraní .NET Framework. Seznam všech softwarových a hardwarových požadavků pro instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], naleznete v tématu [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).  
@@ -20,7 +20,7 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
 > [!NOTE]
 >  Software zmíněný v tomto dokumentu, včetně mimo jiné [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], System Center Configuration Manager a služby Active Directory, se vztahují licenční podmínky a ujednání. V těchto pokynech se předpokládá, že nabyvatel licence k softwaru si tyto licenční podmínky přečetl a schválil je. Tyto pokyny neodporují žádné z podmínek takovýchto licenčních smluv.  
 >   
->  Informace o podpoře pro rozhraní .NET Framework najdete v tématu [podporu zásad životního cyklu Microsoft .NET Framework](http://go.microsoft.com/fwlink/?LinkId=196607) na webu Microsoft Support.  
+>  Informace o podpoře pro rozhraní .NET Framework najdete v tématu [podporu zásad životního cyklu Microsoft .NET Framework](https://go.microsoft.com/fwlink/?LinkId=196607) na webu Microsoft Support.  
   
  Toto téma obsahuje následující oddíly:  
   
@@ -37,16 +37,16 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
 ## <a name="the-deployment-process"></a>Proces nasazení  
  Pokud je k dispozici podpůrná infrastruktura, lze distribuovatelný balíček rozhraní .NET Framework nasadit na počítače v síti pomocí nástroje System Center 2012 Configuration Manager. Vybudování infrastruktury zahrnuje vytvoření a definování pěti klíčových oblastí: kolekce, balíčku pro software, programu pro software, distribučních bodů a nasazení.  
   
--   **Kolekce** jsou skupiny prostředků nástroje Configuration Manager, jako jsou uživatelé, skupiny uživatelů nebo počítačů, u kterých je nasazení rozhraní .NET Framework. Další informace najdete v tématu [kolekcí v nástroji Configuration Manager](http://technet.microsoft.com/library/gg682169.aspx) v knihovně dokumentace nástroje Configuration Manager.  
+-   **Kolekce** jsou skupiny prostředků nástroje Configuration Manager, jako jsou uživatelé, skupiny uživatelů nebo počítačů, u kterých je nasazení rozhraní .NET Framework. Další informace najdete v tématu [kolekcí v nástroji Configuration Manager](https://technet.microsoft.com/library/gg682169.aspx) v knihovně dokumentace nástroje Configuration Manager.  
   
--   **Balíčky a programy** představují většinou softwarové aplikace nainstalovat na klientský počítač, ale mohou také obsahovat jednotlivé soubory, aktualizace nebo dokonce jednotlivé příkazy. Další informace najdete v tématu [balíčků a programů v nástroji Configuration Manager](http://technet.microsoft.com/library/gg699369.aspx) v knihovně dokumentace nástroje Configuration Manager.  
+-   **Balíčky a programy** představují většinou softwarové aplikace nainstalovat na klientský počítač, ale mohou také obsahovat jednotlivé soubory, aktualizace nebo dokonce jednotlivé příkazy. Další informace najdete v tématu [balíčků a programů v nástroji Configuration Manager](https://technet.microsoft.com/library/gg699369.aspx) v knihovně dokumentace nástroje Configuration Manager.  
   
--   **Distribuční body** lokalitu nástroje Configuration Manager jsou role systému, které ukládají soubory nezbytné pro ke spuštění softwaru na klientských počítačích. Pokud klient Správce konfigurace přijme a zpracuje nasazení softwaru, kontaktuje distribuční bod za účelem stažení obsahu spojeného s tímto softwarem a spuštění procesu instalace. Další informace najdete v tématu [Úvod do správy obsahu v nástroji Configuration Manager](http://technet.microsoft.com/library/gg682083.aspx) v knihovně dokumentace nástroje Configuration Manager.  
+-   **Distribuční body** lokalitu nástroje Configuration Manager jsou role systému, které ukládají soubory nezbytné pro ke spuštění softwaru na klientských počítačích. Pokud klient Správce konfigurace přijme a zpracuje nasazení softwaru, kontaktuje distribuční bod za účelem stažení obsahu spojeného s tímto softwarem a spuštění procesu instalace. Další informace najdete v tématu [Úvod do správy obsahu v nástroji Configuration Manager](https://technet.microsoft.com/library/gg682083.aspx) v knihovně dokumentace nástroje Configuration Manager.  
   
--   **Nasazení** pověří příslušné členy zadané cílové kolekce k instalaci softwarového balíčku. Další informace najdete v tématu [nasazení aplikací v nástroji Configuration Manager](http://technet.microsoft.com/library/gg682082.aspx) v knihovně dokumentace nástroje Configuration Manager.  
+-   **Nasazení** pověří příslušné členy zadané cílové kolekce k instalaci softwarového balíčku. Další informace najdete v tématu [nasazení aplikací v nástroji Configuration Manager](https://technet.microsoft.com/library/gg682082.aspx) v knihovně dokumentace nástroje Configuration Manager.  
   
 > [!IMPORTANT]
->  Postupy uvedené v tomto tématu obsahují typická nastavení pro vytváření a nasazení balíčku a programu a nemusí zahrnovat všechna možná nastavení. Další možnosti nasazení nástroje Configuration Manager, najdete v článku [knihovně dokumentace nástroje Configuration Manager](http://technet.microsoft.com/library/gg682041.aspx).  
+>  Postupy uvedené v tomto tématu obsahují typická nastavení pro vytváření a nasazení balíčku a programu a nemusí zahrnovat všechna možná nastavení. Další možnosti nasazení nástroje Configuration Manager, najdete v článku [knihovně dokumentace nástroje Configuration Manager](https://technet.microsoft.com/library/gg682041.aspx).  
   
 <a name="deploying_in_a_test_environment"></a>   
 ## <a name="deploying-the-net-framework"></a>Nasazení rozhraní .NET Framework  
@@ -62,7 +62,7 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
 <a name="creating_a_collection"></a>   
 ### <a name="create-a-collection"></a>Vytvoření kolekce  
- V tomto kroku vyberte počítače, na které chcete balíček a program nasadit, a seskupte je do kolekce zařízení. Chcete-li vytvořit kolekci v nástroji Správce konfigurace, můžete použít pravidla přímého členství (kde členy kolekce zadáte ručně) nebo pravidla dotazů (kde členy kolekce určí nástroj Správce konfigurace podle zadaných kritérií). Další informace o pravidlech členství, včetně dotazů a přímých pravidel, naleznete v tématu [seznámení s kolekcemi v nástroji Configuration Manager](http://technet.microsoft.com/library/gg682177.aspx) v knihovně dokumentace nástroje Configuration Manager.  
+ V tomto kroku vyberte počítače, na které chcete balíček a program nasadit, a seskupte je do kolekce zařízení. Chcete-li vytvořit kolekci v nástroji Správce konfigurace, můžete použít pravidla přímého členství (kde členy kolekce zadáte ručně) nebo pravidla dotazů (kde členy kolekce určí nástroj Správce konfigurace podle zadaných kritérií). Další informace o pravidlech členství, včetně dotazů a přímých pravidel, naleznete v tématu [seznámení s kolekcemi v nástroji Configuration Manager](https://technet.microsoft.com/library/gg682177.aspx) v knihovně dokumentace nástroje Configuration Manager.  
   
  Postup vytvoření kolekce:  
   
@@ -84,7 +84,7 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
 9. Na **pravidla členství** stránku **Průvodce vytvořením kolekce zařízení**, zvolte **Další**a poté průvodce dokončete.  
   
- Další informace o kolekcích najdete v tématu [kolekcí v nástroji Configuration Manager](http://technet.microsoft.com/library/bb693730.aspx) v knihovně dokumentace nástroje Configuration Manager.  
+ Další informace o kolekcích najdete v tématu [kolekcí v nástroji Configuration Manager](https://technet.microsoft.com/library/bb693730.aspx) v knihovně dokumentace nástroje Configuration Manager.  
   
 <a name="creating_a_package"></a>   
 ### <a name="create-a-package-and-program-for-the-net-framework-redistributable-package"></a>Vytvoření balíčku a programu pro distribuovatelný balíček rozhraní .NET Framework  
@@ -128,9 +128,9 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
 |------------|-----------------|  
 |**/q**|Nastaví tichý režim. Není vyžadován žádný vstup uživatele a nebude zobrazen žádný výstup.|  
 |**/ norestart /**|Zabrání instalačnímu programu v automatickém restartování. Pokud použijete tuto možnost, musí restartování počítače zpracovat nástroj Správce konfigurace.|  
-|**chainingpackage** *název balíčku*|Určuje název balíčku, který provádí řetězení. Tato informace je oznámena spolu s dalšími informacemi relace instalace pro ty, kteří se přihlásili k odběru [Microsoft zkušeností zlepšování Program uživatelů (CEIP)](http://go.microsoft.com/fwlink/p/?LinkId=248244). Pokud název balíčku obsahuje mezery, použijte uvozovky jako oddělovače; Příklad: **chainingpackage "Chaining Product"**.|  
+|**chainingpackage** *název balíčku*|Určuje název balíčku, který provádí řetězení. Tato informace je oznámena spolu s dalšími informacemi relace instalace pro ty, kteří se přihlásili k odběru [Microsoft zkušeností zlepšování Program uživatelů (CEIP)](https://go.microsoft.com/fwlink/p/?LinkId=248244). Pokud název balíčku obsahuje mezery, použijte uvozovky jako oddělovače; Příklad: **chainingpackage "Chaining Product"**.|  
   
- Podle těchto kroků vytvoříte balíček s názvem .NET Framework 4.5. Program provede nasazení tiché instalace rozhraní .NET Framework 4.5. V případě tiché instalace uživatelé nespolupracují s instalačním procesem a zřetězující aplikace musí zachytit návratový kód a zpracovat restartování; Zobrazit [získávání informací o průběhu z instalačního balíčku](http://go.microsoft.com/fwlink/?LinkId=179606).  
+ Podle těchto kroků vytvoříte balíček s názvem .NET Framework 4.5. Program provede nasazení tiché instalace rozhraní .NET Framework 4.5. V případě tiché instalace uživatelé nespolupracují s instalačním procesem a zřetězující aplikace musí zachytit návratový kód a zpracovat restartování; Zobrazit [získávání informací o průběhu z instalačního balíčku](https://go.microsoft.com/fwlink/?LinkId=179606).  
  
 <a name="select_dist_point"></a>   
 ### <a name="select-a-distribution-point"></a>Výběr distribučního bodu  
@@ -154,7 +154,7 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
 8.  Dokončete průvodce.  
   
- Balíček nyní obsahuje všechny informace, které potřebujete pro tiché nasazení rozhraní .NET Framework 4.5. Před nasazením balíčku a programu ověřte, zda byl nainstalován v distribučním bodě; naleznete v části "Monitorování obsahu" [operace a údržba pro správu obsahu v nástroji Configuration Manager](http://technet.microsoft.com/library/gg712694.aspx#BKMK_MonitorContent) v knihovně dokumentace nástroje Configuration Manager.  
+ Balíček nyní obsahuje všechny informace, které potřebujete pro tiché nasazení rozhraní .NET Framework 4.5. Před nasazením balíčku a programu ověřte, zda byl nainstalován v distribučním bodě; naleznete v části "Monitorování obsahu" [operace a údržba pro správu obsahu v nástroji Configuration Manager](https://technet.microsoft.com/library/gg712694.aspx#BKMK_MonitorContent) v knihovně dokumentace nástroje Configuration Manager.  
   
 <a name="deploying_package"></a>   
 ### <a name="deploy-the-package"></a>Nasazení balíčku  
@@ -179,7 +179,7 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
 9. Na **činnost koncového uživatele** stránku průvodce, použijte výchozí hodnoty a vyberte možnost **Další**.  
   
     > [!WARNING]
-    >  Na vaše provozní prostředí se mohou vztahovat zásady, které vyžadují jiná nastavení plánu nasazení. Informace o těchto možnostech najdete v tématu [vlastnosti názvu ohlášení: Záložka plánu](http://technet.microsoft.com/library/bb694016.aspx) v knihovně TechNet.  
+    >  Na vaše provozní prostředí se mohou vztahovat zásady, které vyžadují jiná nastavení plánu nasazení. Informace o těchto možnostech najdete v tématu [vlastnosti názvu ohlášení: Záložka plánu](https://technet.microsoft.com/library/bb694016.aspx) v knihovně TechNet.  
   
 10. Na **distribučních bodů** stránku průvodce, použijte výchozí hodnoty a vyberte možnost **Další**.  
   
@@ -193,27 +193,27 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
  **Služba Active Directory, DNS a DHCP.**  
   
--   [Active Directory Domain Services pro systém Windows Server 2008](http://technet.microsoft.com/library/dd378891.aspx)  
+-   [Active Directory Domain Services pro systém Windows Server 2008](https://technet.microsoft.com/library/dd378891.aspx)  
   
--   [DNS Server](http://technet.microsoft.com/library/cc732997.aspx)  
+-   [DNS Server](https://technet.microsoft.com/library/cc732997.aspx)  
   
--   [DHCP Server](http://technet.microsoft.com/library/cc896553.aspx)  
+-   [DHCP Server](https://technet.microsoft.com/library/cc896553.aspx)  
   
  **SQL Server 2008:**  
   
--   [Instalace systému SQL Server 2008 (Video o systému SQL Server)](http://technet.microsoft.com/library/dd299415.aspx)  
+-   [Instalace systému SQL Server 2008 (Video o systému SQL Server)](https://technet.microsoft.com/library/dd299415.aspx)  
   
--   [Přehled zabezpečení služby SQL Server 2008 pro správce databáze](http://download.microsoft.com/download/a/c/d/acd8e043-d69b-4f09-bc9e-4168b65aaa71/SQL2008SecurityOverviewforAdmins.docx)  
+-   [Přehled zabezpečení služby SQL Server 2008 pro správce databáze](https://download.microsoft.com/download/a/c/d/acd8e043-d69b-4f09-bc9e-4168b65aaa71/SQL2008SecurityOverviewforAdmins.docx)  
   
  **System Center 2012 Configuration Manager (bod správy, distribuční bod):**  
   
--   [Správa lokality pro System Center 2012 Configuration Manager](http://technet.microsoft.com/library/gg681983.aspx)  
+-   [Správa lokality pro System Center 2012 Configuration Manager](https://technet.microsoft.com/library/gg681983.aspx)  
   
--   [Na jednom webu nástroje Configuration Manager plánování a nasazení](http://technet.microsoft.com/library/bb680961.aspx)  
+-   [Na jednom webu nástroje Configuration Manager plánování a nasazení](https://technet.microsoft.com/library/bb680961.aspx)  
   
  **Klient System Center 2012 Configuration Manager pro počítače s Windows:**  
   
--   [Nasazení klientů pro System Center 2012 Configuration Manager](http://technet.microsoft.com/library/gg699391.aspx)  
+-   [Nasazení klientů pro System Center 2012 Configuration Manager](https://technet.microsoft.com/library/gg699391.aspx)  
   
 <a name="troubleshooting"></a>   
 ## <a name="troubleshooting"></a>Poradce při potížích  
@@ -248,17 +248,17 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
 <a name="additional_error_codes"></a>   
 ### <a name="download-error-codes"></a>Kódy chyb stahování  
   
--   [Kódy chyb služby Background Intelligent Transfer Service (BITS)](http://msdn.microsoft.com/library/aa362823.aspx)  
+-   [Kódy chyb služby Background Intelligent Transfer Service (BITS)](https://msdn.microsoft.com/library/aa362823.aspx)  
   
--   [Kódy chyb monikeru URL:](http://msdn.microsoft.com/library/ms775145.aspx)  
+-   [Kódy chyb monikeru URL:](https://msdn.microsoft.com/library/ms775145.aspx)  
   
 -   [Kódy chyb služby WinHttp](/windows/desktop/WinHttp/error-messages)  
   
  Další kódy chyb:  
   
--   [Kódy chyb Instalační služby systému Windows](http://msdn.microsoft.com/library/aa368542.aspx)  
+-   [Kódy chyb Instalační služby systému Windows](https://msdn.microsoft.com/library/aa368542.aspx)  
   
--   [Výsledné kódy agenta služby Windows Update](http://technet.microsoft.com/library/cc720442.aspx)  
+-   [Výsledné kódy agenta služby Windows Update](https://technet.microsoft.com/library/cc720442.aspx)  
   
 ## <a name="see-also"></a>Viz také  
  [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)  

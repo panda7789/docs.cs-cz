@@ -6,11 +6,11 @@ helpviewer_keywords:
 - <see> XML tag
 ms.assetid: 7e18f60b-ef4a-4678-a797-5eb918635ca9
 ms.openlocfilehash: 78311651593d3d4a47c723f64a9a74d4660f7c90
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43254059"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43403674"
 ---
 # <a name="ltseegt-visual-basic"></a>&lt;Zobrazit&gt; (Visual Basic)
 Uvádí odkaz na jiný člen.  

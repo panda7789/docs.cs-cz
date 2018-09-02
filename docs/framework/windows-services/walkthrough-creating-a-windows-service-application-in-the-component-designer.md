@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
 manager: douge
-ms.openlocfilehash: 73f61ee3358edf50c11ae10ee53650c66b1c1400
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 6d70db7139d82b6e219e2c417282333f950ef402
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925799"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417858"
 ---
 # <a name="walkthrough-creating-a-windows-service-application-in-the-component-designer"></a>Návod: Vytvoření aplikace spouštěné jako služba systému Windows v návrháři součástí
 Tento článek ukazuje, jak vytvořit jednoduchou aplikaci Windows služby v sadě Visual Studio, která zapisuje zprávy do protokolu událostí. Tady jsou základní kroky, které provádějí vytváření a používání služby:  
@@ -477,7 +477,7 @@ Tento kód změní **ImagePath** klíč registru, který obvykle obsahuje úplno
      Pokud je služba úspěšně odinstalována, program installutil.exe oznámí, že byla služba úspěšně odebrána. Další informace najdete v tématu [postupy: instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
   
 ## <a name="next-steps"></a>Další kroky  
- Můžete vytvořit samostatný instalační program, který ostatní mohli používat k instalaci služby Windows, ale vyžaduje další kroky. Technologie ClickOnce nepodporuje služby systému Windows, a proto nelze použít Průvodce publikováním. Můžete použít plnou edici nástroje InstallShield, kterou ale společnost Microsoft neposkytuje. Další informace o nástroji InstallShield naleznete v tématu [InstallShield Limited Edition](/visualstudio/deployment/installshield-limited-edition). Můžete také použít [sady nástrojů XML Instalační služby systému Windows](http://go.microsoft.com/fwlink/?LinkId=249067) vytvořit instalační službu pro službu Windows.  
+ Můžete vytvořit samostatný instalační program, který ostatní mohli používat k instalaci služby Windows, ale vyžaduje další kroky. Technologie ClickOnce nepodporuje služby systému Windows, a proto nelze použít Průvodce publikováním. Můžete použít plnou edici nástroje InstallShield, kterou ale společnost Microsoft neposkytuje. Další informace o nástroji InstallShield naleznete v tématu [InstallShield Limited Edition](/visualstudio/deployment/installshield-limited-edition). Můžete také použít [sady nástrojů XML Instalační služby systému Windows](https://go.microsoft.com/fwlink/?LinkId=249067) vytvořit instalační službu pro službu Windows.  
   
  Použití může zkoumat <xref:System.ServiceProcess.ServiceController> součásti, která vám umožní odesílat příkazy do služby, které jste nainstalovali.  
   
@@ -487,4 +487,4 @@ Tento kód změní **ImagePath** klíč registru, který obvykle obsahuje úplno
  [Aplikace služby systému Windows](../../../docs/framework/windows-services/index.md)  
  [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
  [Postupy: Ladění aplikací služby systému Windows](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)  
- [Služby (Windows)](http://msdn.microsoft.com/library/windows/desktop/ms685141.aspx)
+ [Služby (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms685141.aspx)

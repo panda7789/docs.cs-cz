@@ -7,36 +7,41 @@ f1_keywords:
 helpviewer_keywords:
 - goto keyword [C#]
 ms.assetid: 2c03c9c1-8119-44ef-b740-fb3d287a42fe
-ms.openlocfilehash: 2dd70a30b885dcdae9637b02e8c34ac39f4879fb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d4fd9f1f26b82b409d704c45e4bcf18cceef8282
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33216801"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43405813"
 ---
 # <a name="goto-c-reference"></a>goto – příkaz (referenční dokumentace jazyka C#)
-`goto` Příkaz přenáší prvku aplikace přímo do příkaz s popiskem.  
-  
- Běžně se používají `goto` je přenos řízení na konkrétní případy switch popisek nebo výchozí štítek v `switch` příkaz.  
-  
- `goto` Příkaz je také užitečné ze hluboko vložené smyčky.  
-  
-## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak pomocí `goto` v [přepínač](../../../csharp/language-reference/keywords/switch.md) příkaz.  
-  
- [!code-csharp[csrefKeywordsJump#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/goto_1.cs)]  
-  
-## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak pomocí `goto` pro přerušení z vnořené smyčky.  
-  
- [!code-csharp[csrefKeywordsJump#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/goto_2.cs)]  
-  
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [ – příkaz](/cpp/cpp/goto-statement-cpp)  
- [Jump – příkazy](../../../csharp/language-reference/keywords/jump-statements.md)
+
+`goto` Příkaz předá řízení programu přímo na označený příkaz.
+
+Běžně `goto` je řízení je převedeno na konkrétní popisek případu přepínače nebo výchozí popisek v `switch` příkazu.
+
+`goto` Příkaz je také užitečné využít hluboce vnořený smyčky.
+
+## <a name="example"></a>Příklad
+
+Následující příklad ukazuje použití `goto` v [přepnout](switch.md) příkazu.
+
+[!code-csharp[csrefKeywordsJump#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsJump/CS/csrefKeywordsJump.cs#4)]
+
+## <a name="example"></a>Příklad
+
+Následující příklad ukazuje použití `goto` rozdělit z vnořené smyčky.
+
+[!code-csharp[csrefKeywordsJump#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsJump/CS/csrefKeywordsJump.cs#5)]
+
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)  
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
+- [Klíčová slova jazyka C#](index.md)  
+- [goto – příkaz (C++)](/cpp/cpp/goto-statement-cpp)  
+- [Jump – příkazy](jump-statements.md)  

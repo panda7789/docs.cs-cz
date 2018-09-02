@@ -4,56 +4,56 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-ms.openlocfilehash: 5cd2244c4b44592e436dfd983985dca3c1a50144
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0fe38b690d093e5a0bbe90d2b62e56b5d0cb4816
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33492444"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417396"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Hostování v Aktivační službě procesů systému Windows
-Služba aktivace procesů systému Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují aplikace služby Windows Communication Foundation (WCF) tohoto hostitele. Model procesu WAS umožňuje zobecnit [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje službám WCF pomocí protokolu HTTP a jiných protokolů než HTTP, jako je například Net.TCP v hostitelské prostředí, které podporuje aktivaci na základě zpráv a nabízí schopnost hostovat velký počet aplikací v daném počítači.  
+Služby Aktivace procesu Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují tento hostitel služby Windows Communication Foundation (WCF) aplikace. Model zpracování služby WAS zobecňuje [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje službám WCF pomocí protokolu HTTP a jiných protokolů než HTTP, jako je například Net.TCP v hostitelském prostředí, který podporuje aktivaci založenou na zprávách a nabízí schopnost hostovat velký počet aplikací na daném počítači.  
   
  Další informace o vytvoření služby WCF, který běží v hostitelském prostředí WAS, najdete v části [postupy: hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).  
   
- Model procesu WAS poskytuje několik funkcí, které umožňují aplikacím pro hostování způsobem, který je robustnější, lepší správu bitlockeru a efektivně používající prostředky:  
+ Model zpracování služby WAS poskytuje několik funkcí, které umožňují aplikacím zajistit také jejich hostování způsobem, který je robustnější, snáze spravovatelné a, který efektivně využívá prostředky:  
   
--   Aktivace na základě zpráv a pracovní proces aplikace spustit a zastavit dynamicky v reakci na příchozí pracovních položek, které přicházejí pomocí protokolu HTTP a jiných protokolů než HTTP sítě.  
+-   Aktivace založená na zprávách aplikacím a aplikacím pracovní proces spuštění a zastavení dynamicky v reakci na příchozí pracovních položek, které přicházejí pomocí protokolu HTTP a jiným protokolem než HTTP síťových protokolů.  
   
--   Robustní aplikace a recyklace pracovního procesu zachování stavu spuštěných aplikací.  
+-   Robustní aplikace a pracovní proces recykluje k údržbě stavu spuštěných aplikací.  
   
--   Centralizované aplikace konfigurace a správy.  
+-   Centralizované aplikace konfigurace a správa.  
   
--   Umožňuje aplikacím využívat výhod procesní model IIS bez nutnosti nasazení otisk úplné instalace služby IIS.  
+-   Umožňuje aplikacím využívat výhod procesní model IIS bez nutnosti nasazení nároky úplnou instalaci služby IIS.  
   
- Další informace o funkcích WAS najdete v tématu [IIS 7.0 Beta: správu webu služby IIS 7.0](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).  
+ Další informace o funkcích WAS najdete v tématu [IIS 7.0 Beta: Správa webové služby IIS 7.0](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).  
   
- [Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=196496) pracuje s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] a proces aktivace služby WAS (Windows) k poskytování hostování prostředí služeb NET4 WCF a WF bohaté aplikace. Tyto výhody patří správa životního cyklu procesu, recyklace procesů, sdílené hostování, rychlou ochranu před chybami, osamocení proces, na vyžádání aktivace a sledování stavu. Podrobné informace najdete v tématu [funkce hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=196494) a [AppFabric hostování koncepty](http://go.microsoft.com/fwlink/?LinkId=196495).  
+ [Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkId=196496) funguje s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] a Windows WAS Process Activation Service () k poskytování bohatých aplikací hostitelské prostředí služby NET4 WCF a WF. Mezi tyto výhody patří správa životního cyklu procesu, proces recykluje, sdílené hostování, rychlou ochranu, osamocení procesu, na vyžádání aktivace a sledování stavu. Podrobné informace najdete v tématu [funkce hostování AppFabric](https://go.microsoft.com/fwlink/?LinkId=196494) a [AppFabric hostování koncepty](https://go.microsoft.com/fwlink/?LinkId=196495).  
   
-## <a name="elements-of-the-was-addressing-model"></a>Elementy WAS adresování modelu  
- Aplikací mít identifikátor URI (Uniform Resource) adresy, které jsou kód jednotky, jejichž doba platnosti a spouštění prostředí jsou spravované serverem. Může být jedna instance serveru WAS domácí na mnoha různých aplikací. Servery uspořádání aplikací do skupin nazývaných *lokality*. V rámci lokality jsou uspořádány aplikace hierarchické uspořádání, který odráží strukturu identifikátory URI, který slouží jako jejich externí adresy.  
+## <a name="elements-of-the-was-addressing-model"></a>Prvky WAS adresování modelu  
+ Aplikace mají adres identifikátor URI (Uniform Resource), které jsou jednotky kódu, jejichž životní cyklus a spuštění prostředí jsou spravovány serverem. Může být jedna instance serveru WAS domácí pro spoustu různých aplikací. Servery uspořádání aplikací do skupin nazývaných *lokality*. V rámci lokality jsou hierarchické způsobem, který odráží strukturu identifikátorů URI, který bude sloužit jako jejich externí adresy uspořádané aplikací.  
   
- Adresy aplikací mít dvě části: základní předpony identifikátoru URI a specifické pro aplikaci, relativní adresa (cesta), které poskytují externí adresu pro aplikaci, když propojeny. Základní předpony identifikátoru URI je vytvořený z vazby webu a používá se pro všechny aplikace v rámci lokality. Aplikace adresy se pak vytvářejí provedením fragmenty cesta specifické pro aplikaci (například "/ applicationOne") a jejich připojením k základní identifikátor URI předponu (například "net.tcp://localhost") tak, aby přicházejí na úplný identifikátor URI aplikace.  
+ Aplikace adresy mít dvě části: základní identifikátor URI předponu a specifické pro aplikaci, relativní adresa (cesta), které poskytují externí adresu aplikace, když propojeny. Základní identifikátor URI předponu je vytvořen z vazby webu a používá se pro všechny aplikace v rámci lokality. Aplikace adresy jsou pak vytvořeny pomocí fragmentů cesty specifické pro aplikaci (například "/ applicationOne") a připojením k základní předpony identifikátoru URI (například "NET.TCP://localhost") můžete přejít na úplný identifikátor URI aplikace.  
   
- Následující tabulka znázorňuje několika možných scénářích adresování pro weby WAS přes protokol HTTP a vazby webu jiným protokolem než HTTP.  
+ Následující tabulka ukazuje několik možných scénářů adresování WAS lokalit přes protokol HTTP a vazby webu jiným protokolem než HTTP.  
   
-|Scénář|Vazby webu|Cesta k aplikaci|Základní aplikace identifikátory URI|  
+|Scénář|Vazby webu|Cesta k aplikaci|Základní aplikace identifikátorů URI|  
 |--------------|-------------------|----------------------|---------------------------|  
-|Pouze HTTP|http: *: 80:\*|/appTwo|http://localhost/appTwo/|  
+|Jenom HTTP|http: *: 80:\*|/appTwo|http://localhost/appTwo/|  
 |HTTP a jiným protokolem než HTTP|http: *: 80:\*<br /><br /> NET.TCP: 808:\*|/appTwo|http://localhost/appTwo/<br />NET.TCP://localhost/appTwo/|  
 |Jiným protokolem než HTTP pouze|NET.pipe: *|/appThree|NET.pipe://appThree/|  
   
- Služby a prostředky v rámci aplikace lze také řešit. V rámci aplikace jsou prostředky aplikace řešit relativní k cestě základní aplikace. Předpokládejme například, že lokalita na contoso.com název počítače má vazby webu pro HTTP i Net.TCP protokoly. Také předpokládají, že lokalita obsahuje jednu aplikaci, které jsou umístěné v /Billing, která poskytuje služby v GetOrders.svc. Poté Pokud služba GetOrders.svc vystavený koncový bod s relativní adresu SecureEndpoint, koncový bod služby by vystavit na následující dva identifikátory URI:  
+ Služby a prostředky v rámci aplikace lze také řešit. V rámci aplikace prostředků aplikace se tak vyřeší, relativní k cestě základní aplikace. Předpokládejme například, že společnosti na contoso.com název počítače má vazby webu pro protokoly HTTP i protokol Net.TCP. Také Předpokládejme, že lokality obsahuje jednu aplikaci v /Billing, která poskytuje službu na GetOrders.svc. Potom Pokud služba GetOrders.svc vystavena koncového bodu s relativní adresu SecureEndpoint, koncový bod služby by vystavit na následující dva identifikátory URI:  
   
  http://contoso.com/Billing/GetOrders.svc/SecureEndpoint  
 NET.TCP://contoso.com/Billing/GetOrders.svc/SecureEndpoint  
   
 ## <a name="the-was-runtime"></a>WAS modulu Runtime  
- Aplikace jsou uspořádány do lokality pro účely správy a adresování. V době běhu aplikace jsou také seskupeny do fondů aplikací. Fond aplikací může obsahovat mnoho různých aplikací z mnoha různých lokalit. Všechny aplikace ve fondu aplikací sdílejí společnou sadu vlastností běhu. Například všechny poběží pod stejnou verzi common language runtime (CLR) a všechny sdílejí společnou identitu procesu. Každý fond aplikací odpovídá instance pracovního procesu (w3wp.exe). Každé spravované aplikace běžící v rámci fondu sdílených aplikací je izolovaný od ostatních aplikací prostřednictvím CLR AppDomain.  
+ Aplikace jsou uspořádány do lokality pro účely řešení a správy. V době běhu aplikace jsou také seskupeny do fondů aplikací. Fond aplikací může zastřešovat i různým aplikacím z mnoha různých lokalit. Všechny aplikace ve fondu aplikací sdílejí společnou sadu vlastností za běhu. Například všechny jsou spouštěny pod stejnou verzi modulu common language runtime (CLR) a všechny sdílejí společnou identitu procesu. Každý fond aplikací odpovídá instance pracovního procesu (w3wp.exe). Každé spravované aplikace běžících v rámci fondu sdílených aplikací je izolovaná od jiných aplikací prostřednictvím CLR AppDomain.  
   
 ## <a name="see-also"></a>Viz také  
  [Architektura aktivace WAS](../../../../docs/framework/wcf/feature-details/was-activation-architecture.md)  
  [Konfigurace WAS pro použití s WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)  
  [Postupy: Instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)  
  [Postupy: Hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)  
- [Hostování funkcí systému Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=201276)
+ [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

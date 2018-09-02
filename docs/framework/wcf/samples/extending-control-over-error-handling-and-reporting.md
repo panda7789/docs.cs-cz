@@ -2,24 +2,24 @@
 title: Rozšíření kontroly nad zpracováním a vykazováním chyb
 ms.date: 03/30/2017
 ms.assetid: 45f996a7-fa00-45cb-9d6f-b368f5778aaa
-ms.openlocfilehash: 83df5ffb790ee69ab290ad703c46b421cd6a02e6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6492807b55b50662790cf25807a35ddd65fbe01d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33506251"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43399901"
 ---
 # <a name="extending-control-over-error-handling-and-reporting"></a>Rozšíření kontroly nad zpracováním a vykazováním chyb
-Tato ukázka ukazuje, jak rozšířit řídit zpracování chyb a zpráv o chybách do služby Windows Communication Foundation (WCF) pomocí <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) s další kód přidat ke službě se budou zpracovávat chyby. Klient vynutí několik chybové stavy. Služba zachytí chyby a zaznamenává je do souboru.  
+Tato ukázka předvádí, jak rozšířit řídit zpracování chyb a zpráv o chybách pomocí služby Windows Communication Foundation (WCF) <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) s další kód přidá ke službě pro zpracování chyb. Vynutí klient několik chybové stavy. Služba zachycuje chyby a zaznamenává je do souboru.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Služby mohou zachytávat chyby, proveďte zpracování a mít vliv na způsob hlášení chyb pomocí <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní. Rozhraní se dvě metody, které se dají implementovat: <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%28System.Exception%2CSystem.ServiceModel.Channels.MessageVersion%2CSystem.ServiceModel.Channels.Message%40%29> a <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A>. <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%28System.Exception%2CSystem.ServiceModel.Channels.MessageVersion%2CSystem.ServiceModel.Channels.Message%40%29> Metoda umožňuje přidávat, upravovat nebo potlačit zprávu o chybě, generovaný v reakci na výjimku. <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> Metoda umožňuje chyba zpracování proběhla v případě chybu a ovládací prvky, zda můžete spustit zpracování dalších chyb.  
+ Služby můžete zachytávat chyby, provádět zpracování a mít vliv na způsob hlášení chyb pomocí <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní. Rozhraní obsahuje dvě metody, které je možné implementovat: <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%28System.Exception%2CSystem.ServiceModel.Channels.MessageVersion%2CSystem.ServiceModel.Channels.Message%40%29> a <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A>. <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%28System.Exception%2CSystem.ServiceModel.Channels.MessageVersion%2CSystem.ServiceModel.Channels.Message%40%29> Metody umožňují přidat, upravit nebo potlačit zprávu o chybě, který se vygeneruje v reakci na výjimku. <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> Metoda umožňuje zpracování chyb, aby proběhla v případě chybu a ovládací prvky, zda lze spustit další chyba zpracování.  
   
- V této ukázce `CalculatorErrorHandler` zadejte implementuje <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní. V  
+ V této ukázce `CalculatorErrorHandler` typ implementuje <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní. V  
   
- <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> Metoda, `CalculatorErrorHandler` zapisuje do textového souboru Error.txt v c:\logs protokolu chyba. Upozorňujeme, že ukázku zaznamená chybu a nepotlačuje, díky kterému jej hlášené zpět klientovi.  
+ <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> Metoda, `CalculatorErrorHandler` zapisuje do textového souboru Error.txt v c:\logs protokolu chyby. Mějte na paměti, že ukázky protokoluje chyby a nepotlačuje, díky kterému jej předá zpátky do klienta.  
   
 ```  
 public class CalculatorErrorHandler : IErrorHandler  
@@ -49,7 +49,7 @@ public class CalculatorErrorHandler : IErrorHandler
     }  
 ```  
   
- `ErrorBehaviorAttribute` Existuje jako mechanismus pro registraci obslužná rutina se službou. Tento atribut přebírá jediný parametr typu. Aby typ měli implementovat <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní a musí mít konstruktor veřejné, prázdný. Atribut pak vytvoří instanci daného typu Chyba obslužné rutiny a nainstaluje do služby. Dělá to pomocí implementace <xref:System.ServiceModel.Description.IServiceBehavior> rozhraní a pak pomocí <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> metoda přidání instancí obslužná rutina chyb do služby.  
+ `ErrorBehaviorAttribute` Existuje jako mechanismus pro obslužnou rutinu chyby zaregistrovat služby. Tento atribut přebírá jediný parametr typu. Typu by měly implementovat <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní a musí mít prázdný veřejný konstruktor. Atribut pak vytvoří instanci tohoto typu obslužné rutiny chyb a nainstaluje ho do služby. Dělá to tak, že implementace <xref:System.ServiceModel.Description.IServiceBehavior> rozhraní a následným použitím <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> metoda doplnit dodatečné instance obslužná rutina chyb do služby.  
   
 ```  
 // This attribute can be used to install a custom error handler for a service.  
@@ -96,7 +96,7 @@ public class ErrorBehaviorAttribute : Attribute, IServiceBehavior
 }  
 ```  
   
- Ukázka implementuje službu kalkulačky. Klient úmyslně způsobí, že dochází k výskytu na službu a poskytovat parametry neplatné hodnoty dvou chyb. `CalculatorErrorHandler` Používá <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní k protokolování chyb do místního souboru a pak je třeba ohlásit zpět klientovi umožňuje. Klient vynutí Rozděl nula a podmínku argument-out-of-range.  
+ Ukázka implementuje službu kalkulačky. Klient záměrně způsobí, že dvě chyb ve službě poskytnutí neplatné hodnoty parametrů. `CalculatorErrorHandler` Používá <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní k protokolování chyb do místního souboru a pak umožňuje jejich předá zpátky do klienta. Klient vynutí dělení nula a podmínku argumentu out z rozsahu.  
   
 ```  
 try  
@@ -118,7 +118,7 @@ catch (Exception e)
 }  
 ```  
   
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Zobrazí dělení nula a podmínky argument-out-of-range nehlásí jako chyby. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Zobrazí dělení nulou a podmínky argumentu out rozsah uváděny jako chyby. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
 ```  
 Add(15,3) = 18  
@@ -132,29 +132,29 @@ FaultException: FaultException - Invalid Argument: The argument must be greater 
 Press <ENTER> to terminate client.  
 ```  
   
- C:\logs\errors.txt soubor obsahuje informace o chybách, přihlášení pomocí služby. Všimněte si, že pro službu, kterou chcete zapisovat do adresáře, ujistěte se, pod kterým běží služba, proces (obvykle ASP.NET nebo síťová služba), má oprávnění k zápisu do adresáře.  
+ C:\logs\errors.txt soubor obsahuje informace o chybách zaznamenané službou. Všimněte si, že pro službu zápisu do adresáře, že je nutné, pod kterým běží služba, proces (obvykle technologie ASP.NET nebo síťové služby), má oprávnění k zápisu do adresáře.  
   
 ```  
 Fault: Reason = Invalid Argument: The second argument must not be zero.  
 Fault: Reason = Invalid Argument: The argument must be greater than zero.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Zkontrolujte, zda že jste vytvořili c:\logs adresář pro soubor error.txt. Nebo změňte název souboru použitý v `CalculatorErrorHandler.HandleError`.  
+3.  Zkontrolujte, že jste vytvořili v adresáři c:\logs error.txt souboru. Nebo změnit název souboru použitého v `CalculatorErrorHandler.HandleError`.  
   
-4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\ErrorHandling`  
   

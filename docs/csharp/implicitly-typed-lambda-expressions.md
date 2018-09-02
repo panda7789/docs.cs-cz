@@ -1,22 +1,22 @@
 ---
-title: Implicitně typovaná lambda – výrazy
-description: Zjistěte, proč nelze používat deklarace proměnné implicitně typované deklarovat výrazu lambda.
+title: Implicitně typovaná lambda výrazy
+description: Zjistěte, proč nelze použít deklaraci proměnné implicitně typované k deklarování výrazů lambda.
 ms.date: 06/20/2016
 ms.assetid: a3851da9-e018-4389-9922-233db7d0f841
-ms.openlocfilehash: f06c55f51c30c941d6d507ac8e2edd95c5152742
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0a6b52ba49ea39c0cb37e72b0ad40e18986c9be0
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33211820"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43401497"
 ---
-# <a name="implicitly-typed-lambda-expressions"></a>Implicitně typovaná lambda – výrazy
+# <a name="implicitly-typed-lambda-expressions"></a>Implicitně typovaná lambda výrazy
 
-Nepoužívám `var` deklarovat tento strom výrazu. Nelze použít implicitně typovaná deklarace proměnné deklarovat výrazu lambda.
-Vytvoří problém cyklické logiku pro kompilátor. `var` Deklarace říká kompilátoru a pokuste se zjistit typ proměnné z typ výrazu na pravé straně operátoru přiřazení. Výraz lambda nemá typu time kompilace, ale je převést na odpovídající typ delegáta nebo výraz. Když přiřazujete výrazu lambda proměnné typu delegáta nebo výraz, se zjistit kompilátoru a zkuste to převést výrazu lambda delegáta, který odpovídá podpis přiřazené k proměnné nebo výraz. Kompilátor musí pokusit zkontrolujte je věcí na pravé straně přiřazení shody typ na levé straně přiřazení. 
+Nepoužívám `var` pro deklaraci tohoto stromu výrazu. Implicitně typovaná deklarace proměnné nelze použít k deklarování výrazů lambda.
+Vytvoří problém cyklické logiku pro kompilátor. `var` Deklarace instruuje kompilátor, aby zjistit typ proměnné z typu výrazu na pravé straně operátoru přiřazení. Výraz lambda nemá typ času kompilace, ale lze převést na odpovídající typ delegáta nebo výraz. Pokud je výraz lambda přiřadit proměnné typu delegát nebo výraz, dáte kompilátoru vyzkoušet a převést výraz lambda výraz nebo delegát, který se shoduje se signaturou přiřazená k proměnné. Kompilátor musí pokusí provést je na pravé straně přiřazení shoda typu přiřazení na levé straně. 
 
-Oba konce přiřazení nelze informuje kompilátor podívejte se na objekt na druhé straně operátoru přiřazení a jestli odpovídá vlastního typu.
+Obě strany přiřazení nelze sděluje kompilátoru, aby podívat se na objekt na druhé straně operátoru přiřazení a jestli Moje typ odpovídá.
 
-Můžete získat i další podrobnost, proč jazyka C# určuje tohoto chování načtením [v tomto článku](http://download.microsoft.com/download/5/4/B/54B83DFE-D7AA-4155-9687-B0CF58FF65D7/type-inference.pdf) (Stáhnout PDF)
+Získáte i další podrobnosti o tom, proč jazyka C# určuje chování načtením [v tomto článku](https://download.microsoft.com/download/5/4/B/54B83DFE-D7AA-4155-9687-B0CF58FF65D7/type-inference.pdf) (Stáhnout soubor PDF)
 
 

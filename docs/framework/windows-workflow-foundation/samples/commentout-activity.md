@@ -1,19 +1,19 @@
 ---
-title: CommentOut aktivity
+title: Aktivita CommentOut
 ms.date: 03/30/2017
 ms.assetid: 340204c3-f827-45fb-870e-55e2ac457ca5
-ms.openlocfilehash: 7847f4e1d77c2927a27be6b83f4016a22e4e3b32
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3e9f6945755bd60c551674ea8a3471a9f612da52
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33515193"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43404747"
 ---
-# <a name="commentout-activity"></a>CommentOut aktivity
-Tento příklad znázorňuje, jak psát vlastní aktivity, která odebere z cesty k provádění, efektivně komentářů je ostatní aktivity.  
+# <a name="commentout-activity"></a>Aktivita CommentOut
+Tato ukázka předvádí, jak psát vlastní aktivitu, která odebere z cesty spuštění efektivně komentářů je jiné aktivity.  
   
-## <a name="the-commentout-activity"></a>CommentOut aktivity  
- Zajistit jeho cílem CommentOut aktivity je odvozena z <xref:System.Activities.CodeActivity> základní třídy a implementuje prázdnou <xref:System.Activities.CodeActivity.Execute%2A> metoda.  
+## <a name="the-commentout-activity"></a>Aktivita CommentOut  
+ K dosažení jejího cíle – aktivita CommentOut je odvozen od <xref:System.Activities.CodeActivity> základní třídy a implementuje prázdná <xref:System.Activities.CodeActivity.Execute%2A> metody.  
   
 ```  
 protected override void Execute(CodeActivityContext context)  
@@ -21,7 +21,7 @@ protected override void Execute(CodeActivityContext context)
 }  
 ```  
   
- Třída je deklarovaná, jak je znázorněno v následujícím příkladu.  
+ Třída je deklarována, jak je znázorněno v následujícím příkladu.  
   
 ```  
 [Designer(typeof(CommentOutDesigner))]  
@@ -29,7 +29,7 @@ protected override void Execute(CodeActivityContext context)
 public sealed class CommentOut : CodeActivity  
 ```  
   
- `Designer` Atribut určuje třídu, která implementuje rozhraní visual aktivity v době návrhu. `ContentProperty` Atribut uvádí, že `"Body"` vlastnosti mohou být přeskočeny v XAML reprezentace instance této aktivity.  
+ `Designer` Atribut určuje třídu, která implementuje rozhraní visual aktivity v době návrhu. `ContentProperty` Atributu deklaruje, že `"Body"` vlastnosti mohou být přeskočeny v XAML reprezentaci instance této aktivity.  
   
 ```  
 <Border x:Uid="Border_1" BorderThickness ="1">  
@@ -41,9 +41,9 @@ public sealed class CommentOut : CodeActivity
 </Border>  
 ```  
   
- Ve třídě návrháře XAML slouží k vytvoření vlastní vizuální reprezentace aktivity. <xref:System.Activities.Presentation.WorkflowItemPresenter> je třída, která poskytuje vizuální editor.  
+ Ve třídě návrháře XAML slouží k vytvoření vlastní vizuální znázornění aktivity. <xref:System.Activities.Presentation.WorkflowItemPresenter> je třída, která poskytuje vizuální editor.  
   
- Jediné aktivity může být přetažen na `CommentOut` prostor pro aktivity. Pokud chcete přidat více aktivit do tento prostor, přetáhněte aktivitu pořadí sem nejdřív.  
+ Jediné aktivity může být přetaženy `CommentOut` aktivity povrchu. Pokud chcete přidat více aktivit do tuto plochu, sekvenční aktivity Sem přetáhněte nejdřív.  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
@@ -51,13 +51,13 @@ public sealed class CommentOut : CodeActivity
   
 2.  Zkompilujte řešení stisknutím kombinace kláves CTRL + SHIFT + B.  
   
-3.  Spusťte ukázku bez ladění stisknutím kombinace kláves CTRL + F5.  
+3.  Ukázku spusťte bez ladění stisknutím kombinace kláves CTRL + F5.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\CommentOut`
