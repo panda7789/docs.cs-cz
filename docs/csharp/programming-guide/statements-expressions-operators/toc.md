@@ -13,7 +13,6 @@
 ### [Použití operátorů převodu](using-conversion-operators.md)
 ### [Postupy: Implementace uživatelem definovaných převodů mezi strukturami](how-to-implement-user-defined-conversions-between-structs.md)
 ## [Výrazy s výchozími hodnotami](default-value-expressions.md)
-## [Postupy: Použití přetížení operátoru pro vytvoření třídy reprezentující komplexní čísla](how-to-use-operator-overloading-to-create-a-complex-number-class.md)
 ## [Porovnání rovnosti](equality-comparisons.md)
 ### [Postupy: Definování rovnosti hodnoty pro typ](how-to-define-value-equality-for-a-type.md)
 ### [Postupy: Testování rovnosti (identity) odkazů](how-to-test-for-reference-equality-identity.md)
