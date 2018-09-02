@@ -3,16 +3,16 @@ title: Mapování relací zadaných pro vnořené elementy
 ms.date: 03/30/2017
 ms.assetid: 24a2d3e5-4af7-4f9a-ab7a-fe6684c9e4fe
 ms.openlocfilehash: 0346ba04fd8af6b5abc81fe994dd40f9a6a37c1d
-ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43332465"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43423858"
 ---
-# <a name="map-relations-specified-for-nested-elements"></a><span data-ttu-id="194d1-102">Mapování relací zadaných pro vnořené elementy</span><span class="sxs-lookup"><span data-stu-id="194d1-102">Map Relations Specified for Nested Elements</span></span>
-<span data-ttu-id="194d1-103">Schéma může obsahovat **msdata:Relationship** poznámky k explicitnímu zadání mapování mezi dva prvky ve schématu.</span><span class="sxs-lookup"><span data-stu-id="194d1-103">A schema can include an **msdata:Relationship** annotation to explicitly specify the mapping between any two elements in the schema.</span></span> <span data-ttu-id="194d1-104">Dva prvky určené ve **msdata:Relationship** může být vnořena ve schématu, ale nemusí být.</span><span class="sxs-lookup"><span data-stu-id="194d1-104">The two elements specified in **msdata:Relationship** can be nested in the schema, but do not have to be.</span></span> <span data-ttu-id="194d1-105">Proces mapování využívá **msdata:Relationship** ve schématu pro generování primární klíč nebo relace cizího klíče mezi dvěma sloupci.</span><span class="sxs-lookup"><span data-stu-id="194d1-105">The mapping process uses **msdata:Relationship** in the schema to generate the primary key/foreign key relationship between the two columns.</span></span>  
+# <a name="map-relations-specified-for-nested-elements"></a><span data-ttu-id="1f0f5-102">Mapování relací zadaných pro vnořené elementy</span><span class="sxs-lookup"><span data-stu-id="1f0f5-102">Map Relations Specified for Nested Elements</span></span>
+<span data-ttu-id="1f0f5-103">Schéma může obsahovat **msdata:Relationship** poznámky k explicitnímu zadání mapování mezi dva prvky ve schématu.</span><span class="sxs-lookup"><span data-stu-id="1f0f5-103">A schema can include an **msdata:Relationship** annotation to explicitly specify the mapping between any two elements in the schema.</span></span> <span data-ttu-id="1f0f5-104">Dva prvky určené ve **msdata:Relationship** může být vnořena ve schématu, ale nemusí být.</span><span class="sxs-lookup"><span data-stu-id="1f0f5-104">The two elements specified in **msdata:Relationship** can be nested in the schema, but do not have to be.</span></span> <span data-ttu-id="1f0f5-105">Proces mapování využívá **msdata:Relationship** ve schématu pro generování primární klíč nebo relace cizího klíče mezi dvěma sloupci.</span><span class="sxs-lookup"><span data-stu-id="1f0f5-105">The mapping process uses **msdata:Relationship** in the schema to generate the primary key/foreign key relationship between the two columns.</span></span>  
   
- <span data-ttu-id="194d1-106">Následující příklad ukazuje schématu XML, ve kterém **OrderDetail** prvek je podřízený prvek **pořadí**.</span><span class="sxs-lookup"><span data-stu-id="194d1-106">The following example shows an XML Schema in which the **OrderDetail** element is a child element of **Order**.</span></span> <span data-ttu-id="194d1-107">**Msdata:Relationship** identifikuje tento vztah nadřízenosti a podřízenosti a určuje, že **OrderNumber** sloupec výsledné **pořadí** tabulka má vztah k **OrderNo** sloupec výsledné **OrderDetail** tabulky.</span><span class="sxs-lookup"><span data-stu-id="194d1-107">The **msdata:Relationship** identifies this parent-child relationship and specifies that the **OrderNumber** column of the resulting **Order** table is related to the **OrderNo** column of the resulting **OrderDetail** table.</span></span>  
+ <span data-ttu-id="1f0f5-106">Následující příklad ukazuje schématu XML, ve kterém **OrderDetail** prvek je podřízený prvek **pořadí**.</span><span class="sxs-lookup"><span data-stu-id="1f0f5-106">The following example shows an XML Schema in which the **OrderDetail** element is a child element of **Order**.</span></span> <span data-ttu-id="1f0f5-107">**Msdata:Relationship** identifikuje tento vztah nadřízenosti a podřízenosti a určuje, že **OrderNumber** sloupec výsledné **pořadí** tabulka má vztah k **OrderNo** sloupec výsledné **OrderDetail** tabulky.</span><span class="sxs-lookup"><span data-stu-id="1f0f5-107">The **msdata:Relationship** identifies this parent-child relationship and specifies that the **OrderNumber** column of the resulting **Order** table is related to the **OrderNo** column of the resulting **OrderDetail** table.</span></span>  
   
 ```xml  
 <xs:schema id="MyDataSet" xmlns=""   
@@ -52,16 +52,16 @@ ms.locfileid: "43332465"
 </xs:schema>  
 ```  
   
- <span data-ttu-id="194d1-108">Proces mapování schématu XML vytvoří následující <xref:System.Data.DataSet>:</span><span class="sxs-lookup"><span data-stu-id="194d1-108">The XML Schema mapping process creates the following in the <xref:System.Data.DataSet>:</span></span>  
+ <span data-ttu-id="1f0f5-108">Proces mapování schématu XML vytvoří následující <xref:System.Data.DataSet>:</span><span class="sxs-lookup"><span data-stu-id="1f0f5-108">The XML Schema mapping process creates the following in the <xref:System.Data.DataSet>:</span></span>  
   
--   <span data-ttu-id="194d1-109">**Pořadí** a **OrderDetail** tabulky.</span><span class="sxs-lookup"><span data-stu-id="194d1-109">An **Order** and an **OrderDetail** table.</span></span>  
+-   <span data-ttu-id="1f0f5-109">**Pořadí** a **OrderDetail** tabulky.</span><span class="sxs-lookup"><span data-stu-id="1f0f5-109">An **Order** and an **OrderDetail** table.</span></span>  
   
     ```  
     Order(OrderNumber, EmpNumber)  
     OrderDetail(OrderNo, ItemNo)  
     ```  
   
--   <span data-ttu-id="194d1-110">Vztah mezi **pořadí** a **OrderDetail** tabulky.</span><span class="sxs-lookup"><span data-stu-id="194d1-110">A relationship between the **Order** and **OrderDetail** tables.</span></span> <span data-ttu-id="194d1-111">**Vnořené** pro tento vztah je nastavena na **True** vzhledem k tomu, **pořadí** a **OrderDetail** elementů je vnořeno ve schématu .</span><span class="sxs-lookup"><span data-stu-id="194d1-111">The **Nested** property for this relationship is set to **True** because the **Order** and **OrderDetail** elements are nested in the schema.</span></span>  
+-   <span data-ttu-id="1f0f5-110">Vztah mezi **pořadí** a **OrderDetail** tabulky.</span><span class="sxs-lookup"><span data-stu-id="1f0f5-110">A relationship between the **Order** and **OrderDetail** tables.</span></span> <span data-ttu-id="1f0f5-111">**Vnořené** pro tento vztah je nastavena na **True** vzhledem k tomu, **pořadí** a **OrderDetail** elementů je vnořeno ve schématu .</span><span class="sxs-lookup"><span data-stu-id="1f0f5-111">The **Nested** property for this relationship is set to **True** because the **Order** and **OrderDetail** elements are nested in the schema.</span></span>  
   
     ```  
     ParentTable: Order  
@@ -72,9 +72,9 @@ ms.locfileid: "43332465"
     Nested: True  
     ```  
   
- <span data-ttu-id="194d1-112">Proces mapování nevytvoří žádná omezení.</span><span class="sxs-lookup"><span data-stu-id="194d1-112">The mapping process does not create any constraints.</span></span>  
+ <span data-ttu-id="1f0f5-112">Proces mapování nevytvoří žádná omezení.</span><span class="sxs-lookup"><span data-stu-id="1f0f5-112">The mapping process does not create any constraints.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="194d1-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="194d1-113">See Also</span></span>  
- [<span data-ttu-id="194d1-114">Generování relací datové sady ze schématu XML (XSD)</span><span class="sxs-lookup"><span data-stu-id="194d1-114">Generating DataSet Relations from XML Schema (XSD)</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
- [<span data-ttu-id="194d1-115">Mapování omezení schématu XML (XSD) k omezením datové sady</span><span class="sxs-lookup"><span data-stu-id="194d1-115">Mapping XML Schema (XSD) Constraints to DataSet Constraints</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- [<span data-ttu-id="194d1-116">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="194d1-116">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="1f0f5-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="1f0f5-113">See Also</span></span>  
+ [<span data-ttu-id="1f0f5-114">Generování relací datové sady ze schématu XML (XSD)</span><span class="sxs-lookup"><span data-stu-id="1f0f5-114">Generating DataSet Relations from XML Schema (XSD)</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
+ [<span data-ttu-id="1f0f5-115">Mapování omezení schématu XML (XSD) k omezením datové sady</span><span class="sxs-lookup"><span data-stu-id="1f0f5-115">Mapping XML Schema (XSD) Constraints to DataSet Constraints</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [<span data-ttu-id="1f0f5-116">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="1f0f5-116">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)

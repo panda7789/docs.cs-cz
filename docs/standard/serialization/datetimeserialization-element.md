@@ -7,19 +7,19 @@ helpviewer_keywords:
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
 ms.openlocfilehash: 15fad472288a72a079991f41e6c2859776d78cca
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42930084"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43419268"
 ---
-# <a name="ltdatetimeserializationgt-element"></a><span data-ttu-id="7587c-102">&lt;dateTimeSerialization&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="7587c-102">&lt;dateTimeSerialization&gt; Element</span></span>
-<span data-ttu-id="7587c-103">Určuje režim serializace <xref:System.DateTime> objekty.</span><span class="sxs-lookup"><span data-stu-id="7587c-103">Determines the serialization mode of <xref:System.DateTime> objects.</span></span>  
+# <a name="ltdatetimeserializationgt-element"></a><span data-ttu-id="07238-102">&lt;dateTimeSerialization&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="07238-102">&lt;dateTimeSerialization&gt; Element</span></span>
+<span data-ttu-id="07238-103">Určuje režim serializace <xref:System.DateTime> objekty.</span><span class="sxs-lookup"><span data-stu-id="07238-103">Determines the serialization mode of <xref:System.DateTime> objects.</span></span>  
   
- <span data-ttu-id="7587c-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="7587c-104">\<configuration></span></span>  
-<span data-ttu-id="7587c-105">\<dateTimeSerialization ></span><span class="sxs-lookup"><span data-stu-id="7587c-105">\<dateTimeSerialization></span></span>  
+ <span data-ttu-id="07238-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="07238-104">\<configuration></span></span>  
+<span data-ttu-id="07238-105">\<dateTimeSerialization ></span><span class="sxs-lookup"><span data-stu-id="07238-105">\<dateTimeSerialization></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7587c-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7587c-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="07238-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="07238-106">Syntax</span></span>  
   
 ```xml  
 <dateTimeSerialization  
@@ -27,34 +27,34 @@ ms.locfileid: "42930084"
 />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="7587c-107">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="7587c-107">Attributes and Elements</span></span>  
- <span data-ttu-id="7587c-108">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="7587c-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="07238-107">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="07238-107">Attributes and Elements</span></span>  
+ <span data-ttu-id="07238-108">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="07238-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="7587c-109">Atributy</span><span class="sxs-lookup"><span data-stu-id="7587c-109">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="07238-109">Atributy</span><span class="sxs-lookup"><span data-stu-id="07238-109">Attributes</span></span>  
   
-|<span data-ttu-id="7587c-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="7587c-110">Attributes</span></span>|<span data-ttu-id="7587c-111">Popis</span><span class="sxs-lookup"><span data-stu-id="7587c-111">Description</span></span>|  
+|<span data-ttu-id="07238-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="07238-110">Attributes</span></span>|<span data-ttu-id="07238-111">Popis</span><span class="sxs-lookup"><span data-stu-id="07238-111">Description</span></span>|  
 |----------------|-----------------|  
-|`mode`|<span data-ttu-id="7587c-112">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="7587c-112">Optional.</span></span> <span data-ttu-id="7587c-113">Určuje režim serializace.</span><span class="sxs-lookup"><span data-stu-id="7587c-113">Specifies the serialization mode.</span></span> <span data-ttu-id="7587c-114">Nastavte na jednu z <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> hodnoty.</span><span class="sxs-lookup"><span data-stu-id="7587c-114">Set to one of the <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> values.</span></span> <span data-ttu-id="7587c-115">Výchozí hodnota je **umožňujícím zpětnou transformaci**.</span><span class="sxs-lookup"><span data-stu-id="7587c-115">The default is **RoundTrip**.</span></span>|  
+|`mode`|<span data-ttu-id="07238-112">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="07238-112">Optional.</span></span> <span data-ttu-id="07238-113">Určuje režim serializace.</span><span class="sxs-lookup"><span data-stu-id="07238-113">Specifies the serialization mode.</span></span> <span data-ttu-id="07238-114">Nastavte na jednu z <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> hodnoty.</span><span class="sxs-lookup"><span data-stu-id="07238-114">Set to one of the <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> values.</span></span> <span data-ttu-id="07238-115">Výchozí hodnota je **umožňujícím zpětnou transformaci**.</span><span class="sxs-lookup"><span data-stu-id="07238-115">The default is **RoundTrip**.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="7587c-116">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="7587c-116">Child Elements</span></span>  
- <span data-ttu-id="7587c-117">Žádné</span><span class="sxs-lookup"><span data-stu-id="7587c-117">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="07238-116">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="07238-116">Child Elements</span></span>  
+ <span data-ttu-id="07238-117">Žádné</span><span class="sxs-lookup"><span data-stu-id="07238-117">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="7587c-118">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="7587c-118">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="07238-118">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="07238-118">Parent Elements</span></span>  
   
-|<span data-ttu-id="7587c-119">Prvek</span><span class="sxs-lookup"><span data-stu-id="7587c-119">Element</span></span>|<span data-ttu-id="7587c-120">Popis</span><span class="sxs-lookup"><span data-stu-id="7587c-120">Description</span></span>|  
+|<span data-ttu-id="07238-119">Prvek</span><span class="sxs-lookup"><span data-stu-id="07238-119">Element</span></span>|<span data-ttu-id="07238-120">Popis</span><span class="sxs-lookup"><span data-stu-id="07238-120">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="7587c-121">System.XML.Serialization</span><span class="sxs-lookup"><span data-stu-id="7587c-121">system.xml.serialization</span></span>|<span data-ttu-id="7587c-122">Element nejvyšší úrovně pro řízení serializace XML.</span><span class="sxs-lookup"><span data-stu-id="7587c-122">The top-level element for controlling XML serialization.</span></span>|  
+|<span data-ttu-id="07238-121">System.XML.Serialization</span><span class="sxs-lookup"><span data-stu-id="07238-121">system.xml.serialization</span></span>|<span data-ttu-id="07238-122">Element nejvyšší úrovně pro řízení serializace XML.</span><span class="sxs-lookup"><span data-stu-id="07238-122">The top-level element for controlling XML serialization.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="7587c-123">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7587c-123">Remarks</span></span>  
- <span data-ttu-id="7587c-124">Ve verzích 1.0 a 1.1, 2.0 a novějších verzích rozhraní .NET Framework, když je tato vlastnost nastavená na **místní**, <xref:System.DateTime> objekty jsou vždy formátována jako místní čas.</span><span class="sxs-lookup"><span data-stu-id="7587c-124">In versions 1.0, 1.1, 2.0 and later versions of the .NET Framework, when this property is set to **Local**, <xref:System.DateTime> objects are always formatted as the local time.</span></span> <span data-ttu-id="7587c-125">Informace o zóně Místní čas je vždy součástí serializovaná data.</span><span class="sxs-lookup"><span data-stu-id="7587c-125">That is, local time zone information is always included with the serialized data.</span></span> <span data-ttu-id="7587c-126">Tuto vlastnost nastavte na **místní** k zajištění kompatibility se staršími verzemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="7587c-126">Set this property to **Local** to ensure compatibility with older versions of the .NET Framework.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="07238-123">Poznámky</span><span class="sxs-lookup"><span data-stu-id="07238-123">Remarks</span></span>  
+ <span data-ttu-id="07238-124">Ve verzích 1.0 a 1.1, 2.0 a novějších verzích rozhraní .NET Framework, když je tato vlastnost nastavená na **místní**, <xref:System.DateTime> objekty jsou vždy formátována jako místní čas.</span><span class="sxs-lookup"><span data-stu-id="07238-124">In versions 1.0, 1.1, 2.0 and later versions of the .NET Framework, when this property is set to **Local**, <xref:System.DateTime> objects are always formatted as the local time.</span></span> <span data-ttu-id="07238-125">Informace o zóně Místní čas je vždy součástí serializovaná data.</span><span class="sxs-lookup"><span data-stu-id="07238-125">That is, local time zone information is always included with the serialized data.</span></span> <span data-ttu-id="07238-126">Tuto vlastnost nastavte na **místní** k zajištění kompatibility se staršími verzemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="07238-126">Set this property to **Local** to ensure compatibility with older versions of the .NET Framework.</span></span>  
   
- <span data-ttu-id="7587c-127">Ve verzi 2.0 a novějších verzích rozhraní .NET Framework, které mají tato vlastnost nastavena na **umožňujícím zpětnou transformaci**, <xref:System.DateTime> objekty jsou prověřit, abyste zjistili, jestli jsou v místním, UTC nebo nespecifikované časového pásma.</span><span class="sxs-lookup"><span data-stu-id="7587c-127">In version 2.0 and later versions of the .NET Framework that have this property set to **Roundtrip**, <xref:System.DateTime> objects are examined to determine whether they are in the local, UTC, or an unspecified time zone.</span></span> <span data-ttu-id="7587c-128"><xref:System.DateTime> Objekty jsou pak serializován tak, že tyto informace je zachováno.</span><span class="sxs-lookup"><span data-stu-id="7587c-128">The <xref:System.DateTime> objects are then serialized in such a way that this information is preserved.</span></span> <span data-ttu-id="7587c-129">Toto je výchozí chování a je doporučené chování pro všechny nové aplikace, které nekomunikují ve starších verzích rozhraní.</span><span class="sxs-lookup"><span data-stu-id="7587c-129">This is the default behavior and is the recommended behavior for all new applications that do not communicate with older versions of the framework.</span></span>  
+ <span data-ttu-id="07238-127">Ve verzi 2.0 a novějších verzích rozhraní .NET Framework, které mají tato vlastnost nastavena na **umožňujícím zpětnou transformaci**, <xref:System.DateTime> objekty jsou prověřit, abyste zjistili, jestli jsou v místním, UTC nebo nespecifikované časového pásma.</span><span class="sxs-lookup"><span data-stu-id="07238-127">In version 2.0 and later versions of the .NET Framework that have this property set to **Roundtrip**, <xref:System.DateTime> objects are examined to determine whether they are in the local, UTC, or an unspecified time zone.</span></span> <span data-ttu-id="07238-128"><xref:System.DateTime> Objekty jsou pak serializován tak, že tyto informace je zachováno.</span><span class="sxs-lookup"><span data-stu-id="07238-128">The <xref:System.DateTime> objects are then serialized in such a way that this information is preserved.</span></span> <span data-ttu-id="07238-129">Toto je výchozí chování a je doporučené chování pro všechny nové aplikace, které nekomunikují ve starších verzích rozhraní.</span><span class="sxs-lookup"><span data-stu-id="07238-129">This is the default behavior and is the recommended behavior for all new applications that do not communicate with older versions of the framework.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7587c-130">Viz také</span><span class="sxs-lookup"><span data-stu-id="7587c-130">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="07238-130">Viz také</span><span class="sxs-lookup"><span data-stu-id="07238-130">See Also</span></span>  
  <xref:System.DateTime>  
  <xref:System.Xml.Serialization.XmlSchemaImporter>  
  <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>  
- [<span data-ttu-id="7587c-131">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="7587c-131">Configuration File Schema</span></span>](../../../docs/framework/configure-apps/file-schema/index.md)  
- [<span data-ttu-id="7587c-132">\<schemaImporterExtensions > – Element</span><span class="sxs-lookup"><span data-stu-id="7587c-132">\<schemaImporterExtensions> Element</span></span>](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
- [<span data-ttu-id="7587c-133">\<Přidat > – Element pro \<schemaImporterExtensions ></span><span class="sxs-lookup"><span data-stu-id="7587c-133">\<add> Element for \<schemaImporterExtensions></span></span>](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)  
- [<span data-ttu-id="7587c-134">\<system.xml.serialization> Element</span><span class="sxs-lookup"><span data-stu-id="7587c-134">\<system.xml.serialization> Element</span></span>](../../../docs/standard/serialization/system-xml-serialization-element.md)
+ [<span data-ttu-id="07238-131">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="07238-131">Configuration File Schema</span></span>](../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="07238-132">\<schemaImporterExtensions > – Element</span><span class="sxs-lookup"><span data-stu-id="07238-132">\<schemaImporterExtensions> Element</span></span>](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
+ [<span data-ttu-id="07238-133">\<Přidat > – Element pro \<schemaImporterExtensions ></span><span class="sxs-lookup"><span data-stu-id="07238-133">\<add> Element for \<schemaImporterExtensions></span></span>](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)  
+ [<span data-ttu-id="07238-134">\<system.xml.serialization> Element</span><span class="sxs-lookup"><span data-stu-id="07238-134">\<system.xml.serialization> Element</span></span>](../../../docs/standard/serialization/system-xml-serialization-element.md)

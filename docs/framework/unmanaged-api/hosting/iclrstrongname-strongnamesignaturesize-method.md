@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b6641490908b1f384bf8192fd46b7dadb4ff5e23
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dc5a40a0e26f116ce1700973a5000e8d6bbbd890
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33431939"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43423828"
 ---
-# <a name="iclrstrongnamestrongnamesignaturesize-method"></a><span data-ttu-id="25f48-102">ICLRStrongName::StrongNameSignatureSize – metoda</span><span class="sxs-lookup"><span data-stu-id="25f48-102">ICLRStrongName::StrongNameSignatureSize Method</span></span>
-<span data-ttu-id="25f48-103">Vrátí velikost podpis silného názvu.</span><span class="sxs-lookup"><span data-stu-id="25f48-103">Returns the size of the strong name signature.</span></span> <span data-ttu-id="25f48-104">Tato metoda se obvykle používá kompilátory, chcete-li zjistit, kolik místa vyhradit v souboru při vytváření sestavení se zpožděním podepsané.</span><span class="sxs-lookup"><span data-stu-id="25f48-104">This method is typically used by compilers to determine how much space to reserve in the file when creating a delay-signed assembly.</span></span>  
+# <a name="iclrstrongnamestrongnamesignaturesize-method"></a><span data-ttu-id="3619f-102">ICLRStrongName::StrongNameSignatureSize – metoda</span><span class="sxs-lookup"><span data-stu-id="3619f-102">ICLRStrongName::StrongNameSignatureSize Method</span></span>
+<span data-ttu-id="3619f-103">Vrátí velikost položky podpis silného názvu.</span><span class="sxs-lookup"><span data-stu-id="3619f-103">Returns the size of the strong name signature.</span></span> <span data-ttu-id="3619f-104">Tato metoda se obvykle používá kompilátory, chcete-li určit, kolik místa vyhradit v souboru při vytváření sestavení se zpožděným podpisem.</span><span class="sxs-lookup"><span data-stu-id="3619f-104">This method is typically used by compilers to determine how much space to reserve in the file when creating a delay-signed assembly.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="25f48-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="25f48-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3619f-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3619f-105">Syntax</span></span>  
   
 ```  
 HRESULT StrongNameSignatureSize (   
@@ -37,27 +37,27 @@ HRESULT StrongNameSignatureSize (
 );   
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="25f48-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="25f48-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="3619f-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="3619f-106">Parameters</span></span>  
  `pbPublicKeyBlob`  
- <span data-ttu-id="25f48-107">[v] Struktura typu [PublicKeyBlob](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) obsahující veřejnou část páru klíčů sloužící ke generování podpis silného názvu.</span><span class="sxs-lookup"><span data-stu-id="25f48-107">[in] A structure of type [PublicKeyBlob](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) that contains the public portion of the key pair used to generate the strong name signature.</span></span>  
+ <span data-ttu-id="3619f-107">[in] Strukturu typu [publickeyblob –](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) obsahující veřejnou část páru klíčů podpis silného názvu.</span><span class="sxs-lookup"><span data-stu-id="3619f-107">[in] A structure of type [PublicKeyBlob](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) that contains the public portion of the key pair used to generate the strong name signature.</span></span>  
   
  `cbPublicKeyBlob`  
- <span data-ttu-id="25f48-108">[v] Velikost v bajtech z `pbPublicKeyBlob`.</span><span class="sxs-lookup"><span data-stu-id="25f48-108">[in] The size, in bytes, of `pbPublicKeyBlob`.</span></span>  
+ <span data-ttu-id="3619f-108">[in] Velikost v bajtech, z `pbPublicKeyBlob`.</span><span class="sxs-lookup"><span data-stu-id="3619f-108">[in] The size, in bytes, of `pbPublicKeyBlob`.</span></span>  
   
  `pcbSize`  
- <span data-ttu-id="25f48-109">[v] Počet bajtů požadovaných k uložení podpis silného názvu.</span><span class="sxs-lookup"><span data-stu-id="25f48-109">[in] The number of bytes required to store the strong name signature.</span></span>  
+ <span data-ttu-id="3619f-109">[in] Počet bajtů vyžadovaných k uložení podpis silného názvu.</span><span class="sxs-lookup"><span data-stu-id="3619f-109">[in] The number of bytes required to store the strong name signature.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="25f48-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="25f48-110">Return Value</span></span>  
- <span data-ttu-id="25f48-111">`S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="25f48-111">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](http://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
+## <a name="return-value"></a><span data-ttu-id="3619f-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="3619f-110">Return Value</span></span>  
+ <span data-ttu-id="3619f-111">`S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="3619f-111">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="25f48-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="25f48-112">Requirements</span></span>  
- <span data-ttu-id="25f48-113">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="25f48-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3619f-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3619f-112">Requirements</span></span>  
+ <span data-ttu-id="3619f-113">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3619f-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="25f48-114">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="25f48-114">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="3619f-114">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="3619f-114">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="25f48-115">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="25f48-115">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="3619f-115">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="3619f-115">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="25f48-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="25f48-116">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="3619f-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3619f-116">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="25f48-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="25f48-117">See Also</span></span>  
- [<span data-ttu-id="25f48-118">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="25f48-118">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+## <a name="see-also"></a><span data-ttu-id="3619f-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="3619f-117">See Also</span></span>  
+ [<span data-ttu-id="3619f-118">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3619f-118">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
