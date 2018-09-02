@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2575d6fbc5e8a26da301826ef8f7b0611a84871e
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: c18659fa3db1f2e7e047f1bbdc4f75ba6e96f0c6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43255558"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43464097"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>Verze a závislosti rozhraní .NET Framework
 Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime (CLR), knihovny základních tříd a další spravované knihovny. Toto téma popisuje klíčové funkce rozhraní .NET Framework podle verzí, poskytuje informace o základních verzích CLR a přidružených vývojových prostředích a identifikuje verze, které jsou nainstalovány v operačním systému Windows.  
@@ -61,7 +61,7 @@ Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime 
   
      [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] a [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] slouží pouze jako příklady. Tento princip platí pro každou aplikaci, který cílí novější verzi rozhraní .NET Framework než verze nainstalovaná v systému, na kterém je spuštěný.  
   
- Některé změny v rozhraní .NET Framework mohou vyžadovat změny kódu aplikace; Zobrazit [kompatibilita aplikací](../../../docs/framework/migration-guide/application-compatibility.md) před spuštěním vaší stávající aplikace s [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nebo novější verze. Další informace o instalaci aktuální verze najdete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md). Informace o podpoře pro rozhraní .NET Framework najdete v tématu [podporu zásad životního cyklu Microsoft .NET Framework](http://go.microsoft.com/fwlink/?LinkId=196607) na webu Microsoft Support.  
+ Některé změny v rozhraní .NET Framework mohou vyžadovat změny kódu aplikace; Zobrazit [kompatibilita aplikací](../../../docs/framework/migration-guide/application-compatibility.md) před spuštěním vaší stávající aplikace s [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nebo novější verze. Další informace o instalaci aktuální verze najdete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md). Informace o podpoře pro rozhraní .NET Framework najdete v tématu [podporu zásad životního cyklu Microsoft .NET Framework](https://go.microsoft.com/fwlink/?LinkId=196607) na webu Microsoft Support.  
   
 ## <a name="targeting-and-running-apps-for-older-versions"></a>Zacílení a spuštění aplikací pro starší verze  
  Verze rozhraní .NET Framework 2.0, 3.0 a 3.5 jsou vybaveny stejnou verzí modulu CLR (CLR 2.0). Tyto verze představují sousední vrstvy jedné instalace. Každá verze je postupně sestavena nad předchozí verzí. Na jednom počítači není možné spouštět verze 2.0, 3.0 a 3.5 současně. Při instalaci verze 3.5 automaticky získáte vrstvy 2.0 a 3.0 a aplikace, které byly vytvořeny pro verze 2.0, 3.0 a 3.5, lze spustit na verzi 3.5. Ale rozhraní .NET Framework 4 končí tento přístup vrstvení a ho a novějších verzí (.NET Framework 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1 a 4.7.2) také představují sousední vrstvy jedné instalace.  Počínaje rozhraním .NET Framework 4 můžete použít souběžné hostování v rámci procesu ke spuštění několika verzí modulu CLR v jednom procesu. Další informace najdete v tématu [sestavení a spuštění vedle sebe](../../../docs/framework/app-domains/assemblies-and-side-by-side-execution.md).  
@@ -81,5 +81,5 @@ Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime 
 ## <a name="see-also"></a>Viz také:
 
 [Kompatibilita verzí](../../../docs/framework/migration-guide/version-compatibility.md)   
-[Zásady životního cyklu podpory rozhraní Microsoft .NET Framework](http://go.microsoft.com/fwlink/?LinkId=196607)   
+[Zásady životního cyklu podpory rozhraní Microsoft .NET Framework](https://go.microsoft.com/fwlink/?LinkId=196607)   
 [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
