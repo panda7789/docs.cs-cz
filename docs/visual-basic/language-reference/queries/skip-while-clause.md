@@ -8,15 +8,15 @@ helpviewer_keywords:
 - Skip While clause [Visual Basic]
 - queries [Visual Basic], Skip While
 ms.assetid: 5dee8350-7520-4f1a-b00d-590cacd572d6
-ms.openlocfilehash: 9d95dc4a9f61a9ec3a50f9d594b31d673c2d3764
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a3c0749560d8cea1e46d96298347ce54f0bf9185
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33602016"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43393727"
 ---
 # <a name="skip-while-clause-visual-basic"></a>Skip While – klauzule (Visual Basic)
-Obchází elementů v kolekci, pokud je zadaná podmínka `true` a vrátí zbývající elementy.  
+Vynechává prvky v kolekci, tak dlouho, dokud je zadaná podmínka `true` a vrací zbývající prvky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,23 +28,23 @@ Skip While expression
   
 |Termín|Definice|  
 |---|---|  
-|`expression`|Požadováno. Výraz, který představuje podmínku, kterou chcete testovat prvky pro. Výraz musí vrátit `Boolean` hodnotu nebo funkční ekvivalent, například `Integer` má být vyhodnocen jako `Boolean`.|  
+|`expression`|Požadováno. Výraz, který představuje podmínku pro prvky pro testování. Výraz musí vrátit `Boolean` hodnotu nebo funkční ekvivalent, jako `Integer` má být vyhodnocen jako `Boolean`.|  
   
 ## <a name="remarks"></a>Poznámky  
- `Skip While` Klauzule obchází elementy od začátku až do zadaných výsledků dotazu `expression` vrátí `false`. Po `expression` vrátí `false`, dotaz vrátí všechny zbývající elementy. `expression` Pro zbývající výsledky se ignoruje.  
+ `Skip While` Klauzule vynechává prvky od začátku výsledek dotazu do zadané `expression` vrátí `false`. Po `expression` vrátí `false`, dotaz vrátí všechny zbývající prvky. `expression` Se ignoruje pro zbývající výsledky.  
   
- `Skip While` Klauzule se liší od `Where` klauzule v tom, že `Where` klauzuli lze použít k vyloučení všechny elementy z dotazu, které nesplňují určité podmínky. `Skip While` Klauzule vyloučí elementy pouze dokud poprvé, která není splněna podmínka. `Skip While` Klauzule je nejvhodnější pro práci se výsledek seřazené dotazu.  
+ `Skip While` Klauzule se liší od `Where` klauzule in, který `Where` klauzuli lze použít k vyloučení všechny prvky z dotazu, které nesplňují určité podmínky. `Skip While` Klauzule vyloučí prvky pouze až do první podmínka není splněna. `Skip While` Klauzule je nejužitečnější při práci s výsledek seřazených dotazů.  
   
- Můžete obejít konkrétní počet výsledků od začátku výsledků dotazu pomocí `Skip` klauzule.  
+ Můžete obejít určitý počet výsledků od začátku výsledku dotazu pomocí `Skip` klauzuli.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu používá `Skip While` klauzule obejít výsledky, dokud nebude nalezen první zákazník z USA.  
+ Následující příklad kódu používá `Skip While` klauzule pro vyřazení výsledků, dokud nebude nalezen první zákazníků z USA.  
   
  [!code-vb[VbSimpleQuerySamples#3](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/skip-while-clause_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Úvod do LINQ v jazyku Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Dotazy](../../../visual-basic/language-reference/queries/queries.md)  
+ [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ [Dotazy](../../../visual-basic/language-reference/queries/index.md)  
  [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
  [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
  [Klauzule Skip](../../../visual-basic/language-reference/queries/skip-clause.md)  

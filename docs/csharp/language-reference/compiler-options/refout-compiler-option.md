@@ -7,16 +7,16 @@ helpviewer_keywords:
 - refout compiler option [C#]
 - /refout compiler option [C#]
 - -refout compiler option [C#]
-ms.openlocfilehash: cb0e26b03841c093f223b3013a0d3c52ffd914c5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e204a053f6f68a4b848d22c95c98f04edff58716
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33215274"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43391431"
 ---
 # <a name="-refout-c-compiler-options"></a>-refout (možnosti kompilátoru C#)
 
-**- Refout** možnost určuje cestu k souboru, kde referenční sestavení by měla být výstup. To znamená, že k `metadataPeStream` v emitování rozhraní API.
+**- Refout** možnost určuje, kde referenční sestavení by mělo být výstupní cestu k souboru. To se přeloží na `metadataPeStream` v rozhraní API pro generování.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,24 +26,25 @@ ms.locfileid: "33215274"
 
 ## <a name="arguments"></a>Arguments
 
- `filepath` Filepath pro referenční sestavení. Obecně je by měl odpovídat u primárních sestavení. Doporučené konvence (používané MSBuild) je umístit referenční sestavení v "ref nebo" podsložky relativně k primární sestavení.
+ `filepath` Cesta k souboru pro referenční sestavení. Obecně to by měla odpovídat hodnotě primární sestavení. Doporučené konvence (používány nástrojem MSBuild), je umístit odkaz na sestavení v "ref /" podsložku vzhledem k primární sestavení.
 
 ## <a name="remarks"></a>Poznámky
 
-Sestavení obsahující jenom metadata obsahovat jejich základní metoda nahradí jediný `throw null` textu, ale zahrnout všichni členové s výjimkou anonymní typy. Důvod použití `throw null` těla (na rozdíl od žádné těla) je, aby PEVerify může spouštět a předat (tedy ověření úplnost metadat).
+Obsahující jenom metadata sestavení mají jejich těl metod nahradit pomocí jediného `throw null` textu, ale zahrnout všichni členové s výjimkou anonymních typů. Důvod pro použití `throw null` subjektů (na rozdíl od bez těla) je tak, aby PEVerify může spuštění a předání (tedy ověřování úplnost metadata).
 
-Zahrnout odkaz na sestavení úrovni sestavení `ReferenceAssembly` atribut. Tento atribut je možné zadat zdroj (pak kompilátor nebudete muset syntetizace ji). Z důvodu tohoto atributu moduly runtime odmítne načíst odkaz na sestavení pro spuštění (ale stále může být načíst v režimu pouze pro reflexi). Nástroje, které odpovídala v sestavení je potřeba zajistit, aby že jejich načtení referenční sestavení jako pouze pro reflexi, jinak se se zobrazí chyba načtení typu z modulu runtime.
+Zahrnout odkaz na sestavení úrovni sestavení `ReferenceAssembly` atribut. Tento atribut může být zadaný ve zdroji (a kompilátor nebude nutné tak, aby odpovídaly ho). Z důvodu tohoto atributu moduly runtime odmítne načíst referenční sestavení pro spuštění (ale stále může být načten v režimu pouze pro reflexi). Nástroje, které odpovídají na sestavení je potřeba zajistit, že se načítají referenční sestavení jako pouze pro reflexi, jinak se mu nepřidají chyby z modulu runtime.
 
-Referenční sestavení další odebrání pouze metadata sestavení metadat (soukromé členy):
+Další referenční sestavení odebrání metadat (soukromé členy) obsahující jenom metadata sestavení:
 
-- Referenční sestavení má jenom odkazy pro vše potřebné v plochy rozhraní API. Skutečné sestavení může mít další odkazy týkající se konkrétní implementace. Například referenční sestavení pro `class C { private void M() { dynamic d = 1; ... } }` neodkazuje na žádné typů nezbytných pro `dynamic`.
-- V případech, kde jejich odebrání nebude mít vliv na viditelně kompilace se odeberou privátní funkce členy (metody, vlastnosti a události). Pokud neexistují žádné `InternalsVisibleTo` atributy, proveďte pro vnitřní funkce členy stejné.
-- Ale všechny typy (včetně privátního nebo vnořené typy) jsou uchovávány v referenční sestavení. Všechny atributy jsou uchovány (i interní ty).
-- Všechny virtuální metody jsou zachovány. Explicitní implementace rozhraní jsou zachovány. – Explicitně implementovaná vlastností a událostí jsou zachovány, jako jsou virtuální jejich přístupových objektů (a jsou proto v).
-- Všechna pole struktury jsou zachovány. (Toto je kandidátem pro metodu post-C#-7.1 upřesnění)
+- Referenční sestavení má jenom odkazy na to, co potřebuje na povrchu API. Skutečné sestavení může mít další odkazy týkající se konkrétní implementace. Například referenční sestavení pro `class C { private void M() { dynamic d = 1; ... } }` neodkazuje na všechny typy vyžadované pro `dynamic`.
+- V případech, kdy jejich odebrání nebude mít vliv na viditelně kompilace se odeberou soukromé funkce členy (metody, vlastnosti a události). Pokud neexistují žádné `InternalsVisibleTo` atributy, provést totéž pro interní členy funkce.
+- Ale všechny typy (včetně privátního nebo vnořené typy) jsou uloženy v referenčních sestavení. Všechny atributy jsou udržovány (pravidla i interní).
+- Všechny virtuální metody jsou zachovány. Explicitní implementace rozhraní zůstanou. Explicitně implementovaný vlastnosti a události se neodstraní jejich přístupových objektů jsou virtuální (a tedy uchovávají).
+- Všechna pole struktury jsou zachovány. (Toto je Release candidate pro metodu post-C# – vylepšení 7.1)
 
 `-refout` a [ `-refonly` ](refonly-compiler-option.md) možnosti se vzájemně vylučují.
 
 ## <a name="see-also"></a>Viz také
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

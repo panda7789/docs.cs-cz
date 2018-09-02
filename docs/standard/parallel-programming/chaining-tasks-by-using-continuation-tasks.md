@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 14c046094db52f2db55bb095839d354c7e6c691e
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: f5c5cd2fd4d9c334d45a52e23bb0d320abd13cb5
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42912039"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43389500"
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>Řetězení úloh pomocí úloh pokračování
 V asynchronním programování je velmi běžné, že jedna asynchronní operace při dokončení vyvolá druhou operaci a předá jí data. Tradičně se to stalo pomocí metod zpětného volání. V Task Parallel Library je stejná funkčnost zajištěna pomocí *pokračujících úloh*. Pokračující úloha (nazývaná také pouze pokračování) je asynchronní úloha, která je vyvolána jinou úlohou, která se nazývá *předchůdce*, jakmile je předchůdce dokončen.  
@@ -145,7 +145,7 @@ V asynchronním programování je velmi běžné, že jedna asynchronní operace
      [!code-csharp[TPL_Continuations#11](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/exception2.cs#11)]
      [!code-vb[TPL_Continuations#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/exception2.vb#11)]  
   
-     Další informace najdete v tématu [zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md) a [NIB: postupy: zpracování Exceptions Thrown by Tasks](https://msdn.microsoft.com/library/d6c47ec8-9de9-4880-beb3-ff19ae51565d).  
+     Další informace najdete v tématu [zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).  
   
 -   Pokud je pokračování připojené podřízené úlohy, který byl vytvořen pomocí <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType> možnost, výjimky se šířeny přes nadřízenou zpět do volajícího vlákna, stejně jako v případě v libovolného jiného připojeného podřízeného. Další informace najdete v tématu [připojené a odpojené podřízené úlohy](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).  
   

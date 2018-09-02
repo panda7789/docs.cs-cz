@@ -2,22 +2,22 @@
 title: Víc kontraktů
 ms.date: 03/30/2017
 ms.assetid: 2bef319b-fe9c-4d49-ac6c-dfb23eb35099
-ms.openlocfilehash: 8e96d1ac27eb69d8e7e4da76aa8679aa35bf8ad4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 040ab9b80e9567139ca4588e3ddf83b8f43f2d76
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33501734"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43392449"
 ---
 # <a name="multiple-contracts"></a>Víc kontraktů
-Ukázka víc kontraktů ukazuje, jak implementovat více než jeden kontrakt na služby a konfiguraci koncových bodů pro komunikaci s jednotlivými implementovaná kontrakty. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Služba byla změněna definovat dvě kontrakty `ICalculator` kontraktu a `ICalculatorSession` kontrakt.  
+Více kontraktů Ukázka předvádí, jak implementovat více než jeden kontrakt na služby a jak nakonfigurovat koncové body pro komunikaci s každým implementovaných kontraktů. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Služba byla změněna definovat dva kontrakty `ICalculator` smlouvy a `ICalculatorSession` kontraktu.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Třída služby implementuje i `ICalculator` a `ICalculatorSession` smluv. Protože jeden z smluv vyžaduje relaci, služba používá <xref:System.ServiceModel.InstanceContextMode.PerSession> režim instancí Udržovat stav po dobu životnosti relace.  
+ Implementuje třídu služby i `ICalculator` a `ICalculatorSession` smluv. Vzhledem k tomu, že jeden smlouvách vyžaduje relaci, služba používá <xref:System.ServiceModel.InstanceContextMode.PerSession> režimu instance k uchování stavu během životního cyklu relace.  
   
- Konfigurace služby se změnilo definovat dva koncové body vystavit každé smlouvě. `ICalculator` Koncový bod vystavený v základní adresa pomocí `basicHttpBinding`. `ICalculatorSession` Koncový bod vystavený v baseaddress/relace pomocí `wsHttpBinding` s `bindingConfiguration` atribut nastaven na `BindingWithSession`, jak ukazuje následující ukázka konfigurace.  
+ Konfigurace služby byla změněna definovat dvě koncových bodů ke zveřejnění každou smlouvu. `ICalculator` Koncový bod vystavený v základní adresu pomocí `basicHttpBinding`. `ICalculatorSession` Koncový bod je přístupný pomocí baseaddress/relace `wsHttpBinding` s `bindingConfiguration` atribut nastaven na `BindingWithSession`, jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <service   
@@ -40,26 +40,26 @@ Ukázka víc kontraktů ukazuje, jak implementovat více než jeden kontrakt na 
 </service>  
 ```  
   
- Kód klienta vygenerovaný teď obsahuje třídu klienta pro obě původní `ICalculator` kontraktu a nové `ICalculatorSession` kontrakt. Konfigurace klienta a kód bylo upraveno, aby komunikovat s každou smlouvu na koncový bod příslušné služby.  
+ Kód klienta vygenerovaný nyní obsahuje třídu klienta pro původní `ICalculator` kontraktu a nové `ICalculatorSession` kontraktu. Konfigurace klienta a kód se upravila tak komunikaci s každou smlouvu v koncovém bodě příslušnou službu.  
   
- Klient je konzolovou aplikaci systému windows (.exe). Služba je hostovaná Internetové informační služby (IIS).  
+ Klient je konzolová aplikace systému windows (.exe). Služba je hostována v Internetové informační služby (IIS).  
   
- V okně konzoly klienta zobrazí operace Odeslat všechny koncové body, nejdřív základní koncový bod, za nímž následuje zabezpečený koncový bod.  
+ V okně konzoly klienta zobrazí operace odeslání na jednotlivé koncové body, nejdřív základní koncového bodu, za nímž následuje zabezpečeného koncového bodu.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\MultipleContracts`  
   

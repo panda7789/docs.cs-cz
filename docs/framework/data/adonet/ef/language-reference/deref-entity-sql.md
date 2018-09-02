@@ -3,11 +3,11 @@ title: DEREF (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 4c78e833-b260-453d-9bf4-eb39857dd0fa
 ms.openlocfilehash: abe47f8c72abe13bd5c27fe10a412ff94ab861cf
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42930009"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43384964"
 ---
 # <a name="deref-entity-sql"></a>DEREF (Entity SQL)
 Přístupů přes ukazatel referenčními hodnotami a vytváří výsledek, který přístup přes ukazatel.  

@@ -9,45 +9,45 @@ ms.assetid: 73d64242-6cbb-424c-92dd-dc69530b7899
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 8553bbf192a619ab5877e362b1642007432c8c64
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2a32d0684aa42eb5d12f200541f6daf22d3989cc
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33399537"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43389325"
 ---
 # <a name="implementing-the-ui-automation-scroll-control-pattern"></a>Implementace vzoru ovládacích prvků posuv pro automatizaci uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Toto téma představuje pokyny a konvence pro implementaci <xref:System.Windows.Automation.Provider.IScrollProvider>, včetně informací o události a vlastnosti. Na konci tohoto tématu jsou uvedeny odkazy na další odkazy.  
+ Toto téma popisuje pravidla a zásady pro implementaci <xref:System.Windows.Automation.Provider.IScrollProvider>, včetně informací o události a vlastnosti. Odkazy na další odkazy jsou uvedeny na konci tohoto tématu.  
   
- <xref:System.Windows.Automation.ScrollPattern> – Vzor ovládacích prvků se používá pro podporu ovládacího prvku, který funguje jako posuvný kontejner pro kolekci podřízených objektů. Ovládací prvek není nutné používat posuvníky pro podporu posouvání funkcí, i když běžně nemá.  
+ <xref:System.Windows.Automation.ScrollPattern> – Vzor ovládacích prvků slouží k podpoře ovládací prvek, který funguje jako kontejner posuvný kolekce podřízených objektů. Ovládací prvek se nevyžaduje použití posuvníků pro podporu posouvání funkcí, i když obvykle dělá.  
   
- ![Posuňte se ovládací prvek bez posuvníky. ] (../../../docs/framework/ui-automation/media/uia-scrollpattern-without-scrollbars.PNG "UIA_ScrollPattern_Without_Scrollbars")  
-Příklad posouvání ovládací prvek, který nepoužívá posuvníky  
+ ![Posune ovládací prvek bez posuvníků. ](../../../docs/framework/ui-automation/media/uia-scrollpattern-without-scrollbars.PNG "UIA_ScrollPattern_Without_Scrollbars")  
+Příklad posouvání ovládacího prvku, který nepoužívá posuvníky  
   
- Příklady ovládacích prvků, které implementují tento ovládací prvek najdete v tématu [řízení vzor mapování pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ Příklady ovládacích prvků, které implementují tohoto ovládacího prvku, naleznete v tématu [ovládací prvek vzor mapování pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Postup implementace a konvence  
- Když implementace vzoru ovládacích prvků posuv, poznamenejte si následující pokyny a konvence:  
+## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
+ Při implementaci vzoru ovládacích prvků posuv, mějte na paměti následující pokyny a konvence:  
   
--   Musí implementovat podřízené objekty tohoto ovládacího prvku <xref:System.Windows.Automation.Provider.IScrollItemProvider>.  
+-   Podřízené položky tohoto ovládacího prvku musí implementovat <xref:System.Windows.Automation.Provider.IScrollItemProvider>.  
   
--   Posuvníky ovládacího prvku kontejner nepodporují <xref:System.Windows.Automation.ScrollPattern> – vzor ovládacích prvků. Musí podporovat <xref:System.Windows.Automation.RangeValuePattern> řízení vzor místo.  
+-   Posuvníky ovládací prvek kontejneru nepodporují <xref:System.Windows.Automation.ScrollPattern> – vzor ovládacích prvků. Musí podporovat <xref:System.Windows.Automation.RangeValuePattern> místo toho řídí model.  
   
--   Při posouvání se měří v procentech, všechny hodnoty nebo objemy související s posun odstupňování musí být normalizovány na rozsahu od 0 do 100.  
+-   Při posouvání se měří v procentech, všechny hodnoty nebo objemy související, přejděte k ukončení musí být normalizovaná do rozsahu od 0 do 100.  
   
--   <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> a <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> jsou nezávislé <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>.  
+-   <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> a <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> platí bez ohledu <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>.  
   
--   Pokud <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty>  =  `false` pak <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty> musí být nastavena na 100 % a <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty> musí být nastavena na <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>. Podobně pokud <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty>  =  `false` pak <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> musí být nastavena na 100 procent a <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty> musí být nastavena na <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>. To umožňuje automatizace uživatelského rozhraní klienta pro použití v rámci hodnoty těchto vlastností <xref:System.Windows.Automation.ScrollPattern.SetScrollPercent%2A> metoda při vyloučení [soupeřit podmínku](http://support.microsoft.com/default.aspx?scid=kb;en-us;317723) Pokud směrem k klient není zájem o posouvání, dojde k aktivaci.  
+-   Pokud <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty>  =  `false` pak <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty> musí být nastavená na 100 % a <xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty> by mělo být nastavené <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>. Podobně pokud <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty>  =  `false` pak <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> musí být nastavená na 100 procent a <xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty> by mělo být nastavené <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>. To umožňuje klientům automatizace uživatelského rozhraní použijte tyto hodnoty vlastností v rámci <xref:System.Windows.Automation.ScrollPattern.SetScrollPercent%2A> metoda současně vám [časování](https://support.microsoft.com/default.aspx?scid=kb;en-us;317723) Pokud směru klient není zájem posouvání, dojde k aktivaci.  
   
--   <xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A> je specifická pro národní prostředí. Nastavení HorizontalScrollPercent = 100.0 musí nastavit posouvání umístění ovládacího prvku na ekvivalent nejvíce vpravo pozici pro jazyky, jako je angličtina, který čtení zleva doprava. Alternativně pro jazyky, jako je například arabština, který číst přímo na levé straně nastavení HorizontalScrollPercent = 100.0 musí nastavte umístění, přejděte na levou krajní pozici.  
+-   <xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A> je specifických pro národní prostředí. Nastavení HorizontalScrollPercent = 100.0 musí posouvání umístění ovládacího prvku nastavte na ekvivalentní pozici úplně vpravo jazyků, jako jsou angličtinu, která čteny zleva doprava. Můžete také pro jazyků, jako je arabština, který číst přímo na levé straně, nastavení HorizontalScrollPercent = 100.0. musíte nastavit umístění přejděte úplně vlevo pozici.  
   
 <a name="Required_Members_for_IScrollProvider"></a>   
 ## <a name="required-members-for-iscrollprovider"></a>Požadované členy pro IScrollProvider  
- Následující vlastnosti a metody jsou požadovány pro implementaci <xref:System.Windows.Automation.Provider.IScrollProvider>.  
+ Následující vlastnosti a metody, které jsou požadovány pro implementaci <xref:System.Windows.Automation.Provider.IScrollProvider>.  
   
 |Povinný člen|Typ člena|Poznámky|  
 |---------------------|-----------------|-----------|  
@@ -60,18 +60,18 @@ Příklad posouvání ovládací prvek, který nepoužívá posuvníky
 |<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A>|Metoda|Žádné|  
 |<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A>|Metoda|Žádné|  
   
- Tento vzor ovládacích prvků nemá žádné přidružené události.  
+ Tento model ovládací prvek nemá žádné přidružené události.  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Výjimky  
- Zprostředkovatelé musí throw následující výjimky.  
+ Poskytovatelé musí vyvolání následující výjimky.  
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
-|<xref:System.ArgumentException>|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> vyvolá výjimku, pokud podporuje ovládacího prvku <xref:System.Windows.Automation.ScrollAmount.SmallIncrement> hodnoty výhradně pro vodorovné nebo svislé posouvání, ale <xref:System.Windows.Automation.ScrollAmount.LargeIncrement> je předána hodnota.|  
-|<xref:System.ArgumentException>|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> Pokud je předaná hodnota, která nelze převést na datový typ double, vyvolá výjimku.|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> vyvolá výjimku, pokud je předaná hodnota vyšší než 100 nebo menší než 0 (s výjimkou -1, která je ekvivalentní <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>).|  
-|<xref:System.InvalidOperationException>|Obě <xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> a <xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> výjimku výjimku při pokusu o přejděte v nepodporované směru.|  
+|<xref:System.ArgumentException>|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> vyvolá tuto výjimku, pokud ovládací prvek podporuje <xref:System.Windows.Automation.ScrollAmount.SmallIncrement> hodnoty výhradně pro vodorovné nebo svislé posouvání, ale <xref:System.Windows.Automation.ScrollAmount.LargeIncrement> je předána hodnota.|  
+|<xref:System.ArgumentException>|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> vyvolá tuto výjimku při předaný hodnotu, která se nedá převést na typ double.|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> vyvolá tuto výjimku, pokud je předána hodnota větší než 100 nebo menší než 0. (-1, což je ekvivalentní s výjimkou <xref:System.Windows.Automation.ScrollPatternIdentifiers.NoScroll>).|  
+|<xref:System.InvalidOperationException>|Obě <xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A> a <xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A> vyvolávají tuto výjimku při pokusu o posouvejte nepodporovaný směr.|  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  

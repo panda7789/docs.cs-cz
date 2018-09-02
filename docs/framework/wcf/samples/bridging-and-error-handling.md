@@ -2,54 +2,54 @@
 title: Přemostění a zpracování chyb
 ms.date: 03/30/2017
 ms.assetid: 4ae87d1a-b615-4014-a494-a53f63ff0137
-ms.openlocfilehash: 20f5af5736e5869ead0f7c50ce0fff22391ea730
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 6afaddc75855b7e95ad708b2179cabb9aee35001
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33804388"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43389065"
 ---
 # <a name="bridging-and-error-handling"></a>Přemostění a zpracování chyb
-Tento příklad znázorňuje použití směrování služby Windows Communication Foundation (WCF) přemostění komunikace mezi klientem a služba, která použít jiný vazby. Tento příklad také ukazuje, jak pomocí služby zálohování pro scénáře převzetí služeb při selhání. Služba Směrování je součást WCF, který usnadňuje do aplikace zahrnout směrovač podle obsahu. Tato ukázka přizpůsobuje standardní ukázka kalkulačku WCF komunikovat pomocí služby směrování.  
+Tato ukázka demonstruje použití směrovací službou Windows Communication Foundation (WCF) přemostění komunikace mezi klientem a službu, která pomocí různých vazby. Tento příklad také ukazuje, jak pomocí služby zálohování pro scénáře převzetí služeb při selhání. Směrovací služba je komponenta WCF, který umožňuje snadno do aplikace zahrnout směrovač založené na obsahu. Tato ukázka se přizpůsobí standardní kalkulačky Ukázky WCF na komunikaci pomocí směrovací službou.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\RoutingServices\ErrorHandlingAndBridging`  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- V této ukázce kalkulačky klient je nakonfigurován pro odesílání zpráv pro koncový bod vystavené směrovači. Směrovací služba je nakonfigurována tak, aby přijímal všechny zprávy do něj odeslané a předávat je koncový bod, který odpovídá službu kalkulačky. Následující body popisují konfiguraci primární služba kalkulačky, službu kalkulačky zálohování a kalkulačky klienta a jak se stane komunikace mezi klientem a služby pomocí služby směrování:  
+ V této ukázce je Kalkulačka klient nakonfigurovaný pro odesílání zpráv do koncového bodu určeného směrovače. Směrovací služba je nakonfigurovaná tak, aby přijímal všechny zprávy odeslané do ní a předávají do koncového bodu, který odpovídá službu kalkulačky. Následující body popisují konfiguraci primární službu kalkulačky, službu kalkulačky zálohování a Kalkulačka klienta a jak probíhá komunikace mezi klientem a službou pomocí směrování služby:  
   
--   Klient kalkulačky je nakonfigurován k používání BasicHttpBinding, zatímco služba kalkulačky je konfigurovaná pro použití NetTcpBinding. Služba směrování zprávy v případě potřeby automaticky převede před jejich odesláním do služby kalkulačky a také převede odpovědi, aby klient kalkulačky přístup.  
+-   Kalkulačka klienta konfigurován pro použití tříd BasicHttpBinding při Kalkulačka služba je nakonfigurována pro použití NetTcpBinding. Směrovací služba automaticky převede zprávy podle potřeby před jejich odesláním do služby kalkulačky a také převádí odpovědi, aby klient Kalkulačka přístup.  
   
--   Směrovací služba ví o dvě služby kalkulačky: primární kalkulačky služba a služba zálohování kalkulačky. Služba směrování se napřed pokusí komunikovat s primární koncový bod služby kalkulačky. Pokud tento pokus selže z důvodu koncový bod se dolů, služba Směrování potom se pokusí o komunikaci s koncovým bodem kalkulačky služby zálohování.  
+-   Směrovací služba ví o dvě služby Kalkulačka: primární Kalkulačka službu a službu kalkulačky zálohování. Směrovací služby se nejprve pokusí komunikovat s primární koncový bod služby kalkulačku. Pokud tento pokus selže z důvodu koncový bod je mimo provoz, směrovací služba potom se pokusí o komunikaci s koncovým bodem zálohování Kalkulačka služby.  
   
- Proto zpráv odeslaných z klienta jsou přijímány směrovači a jsou přesměrovány do aktuální kalkulačky služby. Pokud koncový bod služby kalkulačky je vypnutý, směrovací služba provádí směrování zprávy do koncového bodu služby kalkulačky zálohování. Zprávy ze služby zálohování kalkulačky jsou odesílány zpět do služby směrovač, který je pak předá zpět do klienta kalkulačky.  
+ Proto zpráv odeslaných z klienta jsou přijímány směrovače a jsou přesměrovány do aktuální Kalkulačka služby. Pokud koncový bod služby kalkulačky je vypnutý, směrovací službou směruje zprávy do koncového bodu Kalkulačka služby zálohování. Zprávy ze služby zálohování Kalkulačka odesílají zpět do služby směrovač, který je zase předá zpět do klienta kalkulačky.  
   
 > [!NOTE]
->  Seznam zálohování může mít více než jeden koncový bod definované. V takovém případě pokud koncový bod služby zálohování je vypnutý, směrovací služba pokusí připojit k další koncový bod zálohování v seznamu dokud nedojde k úspěšné připojení.  
+>  Seznam zálohování může mít více než jeden koncový bod definovaný. V tomto případě pokud koncový bod služby zálohování je mimo provoz, směrovací služba pokusí připojit k další zálohování koncový bod v seznamu dokud neproběhne úspěšné připojení.  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
 1.  Pomocí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], otevřete RouterBridgingAndErrorHandling.sln.  
   
-2.  Stisknutím klávesy F5 nebo CTRL + SHIFT + B v sadě Visual Studio  
+2.  V sadě Visual Studio stiskněte klávesu F5 nebo CTRL + SHIFT + B  
   
-    1.  Pokud chcete automaticky spouštěné projekty potřebné po stisknutí klávesy F5, klikněte pravým tlačítkem na řešení, vyberte **vlastnosti**a v **spouštěný projekt** pod uzlem **společných vlastností**, vyberte **více projektů po spuštění**a nastavte všechny projekty **spustit**.  
+    1.  Pokud chcete automaticky spouštět nezbytné projektů při stisknutí klávesy F5, klikněte pravým tlačítkem na řešení, vyberte možnost **vlastnosti**a **spouštěný projekt** pod uzlem **společné vlastnosti**vyberte **více projektů po spuštění**a nastavte všechny projekty **Start**.  
   
-    2.  Pokud vytvoříte projekt pomocí kombinace kláves CTRL + SHIFT + B, spusťte následující aplikace:  
+    2.  Při vytváření projektu pomocí kombinace kláves CTRL + SHIFT + B, spusťte následující aplikace:  
   
-        1.  Klient kalkulačky (. / CalculatorClient/bin/client.exe)  
+        1.  Kalkulačka klienta (. / CalculatorClient/bin/client.exe)  
   
-        2.  Službu kalkulačky (. / CalculatorService/bin/service.exe)  
+        2.  Kalkulačka služby (. / CalculatorService/bin/service.exe)  
   
-        3.  Směrovací služba provádí (. / RoutingService/bin/RoutingService.exe)  
+        3.  Služba směrování (. / RoutingService/bin/RoutingService.exe)  
   
-3.  V klientovi kalkulačky stiskněte klávesu ENTER pro spuštění klienta.  
+3.  V klientovi kalkulačky stisknutím klávesy ENTER klienta.  
   
      Byste měli vidět následující výstup:  
   
@@ -60,14 +60,14 @@ Tento příklad znázorňuje použití směrování služby Windows Communicatio
     Divide(22,7) = 3.14285714285714  
     ```  
   
-## <a name="configurable-via-code-or-appconfig"></a>Konfigurovat pomocí kódu nebo App.config  
- Ukázka lodě, umožňují použít soubor App.config k definování chování směrovače. Můžete taky změnit název souboru App.config na jinou tak, aby nebyla rozpoznána a zrušte komentář u volání metody `ConfigureRouterViaCode()`. Buď metoda výsledkem stejné chování z směrovači.  
+## <a name="configurable-via-code-or-appconfig"></a>Konfigurovat pomocí kódu nebo souboru App.config  
+ Ukázka lodí umožňují definovat chování ve směrovači použít soubor App.config. Můžete také změnit název souboru App.config na něco jiného, tak, aby nebyl rozpoznán a zrušte komentář u volání metod, které `ConfigureRouterViaCode()`. Některé z metod má za následek stejné chování směrovače.  
   
 ### <a name="scenario"></a>Scénář  
- Tento příklad znázorňuje směrovač služeb, který funguje jako popisovač most a chyb protokolu. V tomto scénáři žádné směrování na základě obsahu dojde; směrovací služba funguje jako uzel transparentní proxy server nakonfigurovaný tak, aby předat zprávy přímo do předkonfigurované sadu cílové koncové body. Směrovací služba provádí taky transparentního zpracování chyb, které nastat, když se ho pokusí k odeslání do koncových bodů, které je nakonfigurován pro komunikaci s další kroky. Služba směrování podle funguje jako mostu, protokol, umožňuje uživatelům definovat jeden protokol pro externí komunikaci a druhý pro interní komunikaci.  
+ Tato ukázka předvádí, směrovač služeb funguje jako popisovač most a Chyba protokolu. V tomto scénáři žádné směrování na základě obsahu dojde k; směrovací služba funguje jako uzel transparentní proxy server nakonfigurovaný tak, aby předávání zpráv přímo do předkonfigurovaného sadu cílové koncové body. Směrovací služba provádí také transparentně zpracování chyb vzniklých se ho pokusí odeslat ke koncovým bodům, že je nakonfigurován pro komunikaci s další kroky. Služba směrování podle funguje jako most protokol, umožňuje uživateli definovat jeden protokol pro externí komunikaci a druhý k interní komunikace.  
   
-### <a name="real-world-scenario"></a>Scénář skutečných  
- Contoso chce poskytovat interoperabilní služby koncového bodu na světě a optimalizace výkonu interně. Proto zveřejňuje jeho služby na světě prostřednictvím koncový bod pomocí BasicHttpBinding, při interně pomocí služby směrování pro přemostění připojení ke koncovému bodu pomocí NetTcpBinding, který jeho služby používat. Kromě toho Contoso chce jeho nabídky jako odolný vůči chybám dočasných výpadků v některém z jejich produkční služeb služby a proto Virtualizuje několik koncových bodů za použití služby směrovače této funkce, které automaticky převzetí služeb při selhání na zpracování chyb Koncové body zálohování v případě potřeby.  
+### <a name="real-world-scenario"></a>Reálné scénáře  
+ Contoso chce poskytovat interoperabilní služby koncového bodu na světě, a optimalizace výkonu interně. Proto zpřístupňuje jeho služeb na celém světě prostřednictvím koncového bodu pomocí BasicHttpBinding, zatímco interně pomocí směrovací službou přemostění toto připojení ke koncovému bodu pomocí NetTcpBinding, které využívají jeho služby. Kromě toho Contoso chce, aby se jeho služba bude odolný vůči chybám dočasných výpadků ve všech svých produkčních služeb a proto Virtualizuje několik koncových bodů za služby na směrovač pomocí uživatele chyba možnosti automatické převzetí služeb při selhání zpracování zálohování koncových bodů v případě potřeby.  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky trvalosti a hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193961)
+ [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

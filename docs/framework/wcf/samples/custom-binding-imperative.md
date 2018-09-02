@@ -2,20 +2,20 @@
 title: Imperativní vlastní vazby
 ms.date: 03/30/2017
 ms.assetid: 6e13bf96-5de0-4476-b646-5f150774418d
-ms.openlocfilehash: b675246279e262d73c9120411889ff27d10ae4f3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dac98d2c08a207019b9ec5b18340afc02e62f836
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33500666"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43398277"
 ---
 # <a name="custom-binding-imperative"></a>Imperativní vlastní vazby
-Ukázka ukazuje, jak napsat imperativní kód pro definice a používání vlastních vazeb bez použití konfiguračního souboru nebo klienta Windows Communication Foundation (WCF) vygenerovat. Tato ukázka kombinuje funkce poskytované službou přenos HTTP a spolehlivé relace kanál, chcete-li vytvořit vazbu spolehlivé založené na protokolu HTTP. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
+Vzorek ukazuje, jak napsat imperativního kódu k definování a použití vlastní vazby bez použití konfiguračního souboru nebo klienta Windows Communication Foundation (WCF) vygenerovat. Tato ukázka kombinuje funkcí poskytovaných službou přenos pomocí protokolu HTTP a kanál stabilní relace pro vytvoření spolehlivé připojení založené na protokolu HTTP. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Na klientovi i službu je vytvořen vlastní vazby, který obsahuje dva elementy vazby (spolehlivé relace a HTTP):  
+ Na klienta a služby se vytvoří vlastní vazby, který obsahuje dva elementy vazby (stabilní relace a HTTP):  
 
 ```csharp
 ReliableSessionBindingElement reliableSession = new ReliableSessionBindingElement();  
@@ -28,13 +28,13 @@ httpTransport.HostNameComparisonMode = HostNameComparisonMode.StrongWildcard;
 CustomBinding binding = new CustomBinding(reliableSession, httpTransport);  
 ```
   
- Vazba na službu, je použita přidáním koncový bod hostitele ServiceHost:  
+ Ve službě se používá vazbu tak, že přidáte hostitele ServiceHost koncový bod:  
 
 ```csharp
 serviceHost.AddServiceEndpoint(typeof(ICalculator), binding, "");  
 ```
 
- Na straně klienta je používán vazby <xref:System.ServiceModel.ChannelFactory> k vytvoření kanálu pro službu:  
+ Na straně klienta používá vazbu <xref:System.ServiceModel.ChannelFactory> vytvořit kanál ke službě:  
 
 ```csharp
 EndpointAddress address = new EndpointAddress("http://localhost:8000/servicemodelsamples/service");  
@@ -42,7 +42,7 @@ ChannelFactory<ICalculator> channelFactory = new ChannelFactory<ICalculator>(bin
 ICalculator channel = channelFactory.CreateChannel();  
 ```
 
- Tento kanál se pak používá k interakci se službou:  
+ Tento kanál se pak použije k interakci se službou:  
 
 ```csharp
 // Call the Add service operation.  
@@ -52,7 +52,7 @@ double result = channel.Add(value1, value2);
 Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result);  
 ```
 
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -63,22 +63,22 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, kterou jste udělali [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  Ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Binding\Custom\Imperative`  
   
 ## <a name="see-also"></a>Viz také  
- [Vlastní vazba](http://msdn.microsoft.com/library/657e8143-beb0-472d-9cfe-ed1a19c2ab08)
+ [Vlastní vazba](https://msdn.microsoft.com/library/657e8143-beb0-472d-9cfe-ed1a19c2ab08)

@@ -1,39 +1,39 @@
 ---
-title: Entity aktivity
+title: Aktivity entit
 ms.date: 03/30/2017
 ms.assetid: c04f7413-7fb8-40c6-819e-dc92b145b62e
-ms.openlocfilehash: 96301c15b849749299e744a435068c3ec9be2e3a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 03bd0e42c70f1226558d492bcb3b2cfa5c7010f2
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33519133"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385801"
 ---
-# <a name="entity-activities"></a>Entity aktivity
-Tento příklad ukazuje použití ADO.NET Entity Framework pro zjednodušení přístupu k datům s Windows Workflow Foundation.  
+# <a name="entity-activities"></a>Aktivity entit
+Tento příklad ukazuje způsob použití rozhraní ADO.NET Entity Framework s Windows Workflow Foundation pro zjednodušení přístupu k datům.  
   
- ADO.NET Entity Framework umožňuje vývojářům pracovat s daty v podobě objektů specifické pro doménu, vlastností a vztahů například zákazníky, objednávky, podrobnosti o pořadí a vztahy mezi tyto entity. ADO.NET Entity Framework tomu tím, že poskytuje úroveň abstrakce, která umožňuje programování s koncepční aplikační model místo programování přímo proti schématu relační úložiště. Další informace o ADO.NET Entity Framework najdete [ADO.NET Entity Framework](http://go.microsoft.com/fwlink/?LinkId=165549).  
+ ADO.NET Entity Framework umožňuje vývojářům pracovat s daty ve formě objektů specifického pro doménu, vlastnosti a vztahy, jako je například zákazníky, objednávky, podrobnostmi o objednávce a vztahy mezi těmito entitami. ADO.NET Entity Framework to dělá tím, že poskytuje úroveň abstrakce, která umožňuje programování v modelu koncepční aplikace namísto programování přímo proti schématu relační úložiště. Další informace o rozhraní ADO.NET Entity Framework najdete v tématu [ADO.NET Entity Framework](https://go.microsoft.com/fwlink/?LinkId=165549).  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- V tomto příkladu `Northwind` databáze a obsahuje skripty pro vytváření a odebrání `Northwind` databáze (Setup.cmd a Cleanup.cmd). Projekty v této ukázce obsahovat datový Model Entity na základě `Northwind` databáze. Model můžete najít tak, že otevřete `Northwind.edmx` soubor, který je zahrnutý v projektu. Toto je model, který definuje tvar objektů, které lze přistupovat pomocí ADO.NET Entity Framework.  
+ Tento příklad používá `Northwind` databáze a obsahuje skripty pro vytváření a odebírání `Northwind` databáze (Setup.cmd a Cleanup.cmd). Projekty v této ukázce zahrnovat na základě datového modelu Entity `Northwind` databáze. Model lze najít otevřením `Northwind.edmx` souboru, který je součástí projektu. Toto je model, který definuje tvar objektů, které lze přistupovat pomocí rozhraní ADO.NET Entity Framework.  
   
- Tyto aktivity jsou zahrnuty v této ukázce:  
+ V této ukázce jsou zahrnuty následující činnosti:  
   
--   `EntitySQLQuery`: `EntitySQLQuery` Aktivity umožňuje načíst objekty z databáze podle řetězce dotazu Entity SQL. Umožňuje zadat dotazy na základě konceptuálního modelu a entitami, které jsou součástí domény nebo model Entity SQL je úložiště nezávislé jazyk, který je podobný SQL. Další informace o jazyce SQL Entity najdete v tématu [jazyk SQL Entity](http://go.microsoft.com/fwlink/?LinkId=165646).  
+-   `EntitySQLQuery`: `EntitySQLQuery` Aktivity umožňuje načíst objekty z databáze na základě řetězce dotazu Entity SQL. Entita SQL je úložiště nezávislé jazyk podobný SQL a umožňuje zadat dotazy na základě Koncepční model a entity, které jsou součástí modelu nebo domény. Další informace o jazyk Entity SQL najdete v tématu [jazyk Entity SQL](https://go.microsoft.com/fwlink/?LinkId=165646).  
   
--   `EntityLinqQuery`: Tato aktivita umožňuje načíst objekty z databáze na základě dotaz LINQ nebo predikátu.  
+-   `EntityLinqQuery`: Tato aktivita umožňuje načíst objekty z databáze na základě dotazu LINQ nebo predikátu.  
   
--   `EntityAdd`: `EntityAdd` Aktivity umožňuje přidat do databáze, entity nebo kolekci entit.  
+-   `EntityAdd`: `EntityAdd` Aktivity umožňuje přidat entitu nebo kolekci entit v databázi.  
   
--   `EntityDelete`: `EntityDelete` Aktivitu můžete z databáze odstranit entity nebo kolekci entit.  
+-   `EntityDelete`: `EntityDelete` Aktivity můžete z databáze odstranit entitu nebo kolekci entit.  
   
--   `ObjectContextScope`: Výše uvedených aktivity lze použít pouze v rámci obsahujícího `ObjectContextScope` instance aktivity. `ObjectContextScope` Aktivita nastaví připojení k databázi. Vyžaduje připojovací řetězec (který je buď předaná nebo pomocí souboru nastavení konfigurace). `ObjectContextScope` Aktivity usnadňuje provádění skupinu související operací na entity. Vzhledem k tomuto oboru udržuje aktivního připojení, je obor zachovat ne. Kromě toho, když `ObjectContextScope` aktivity ukončí, veškeré změny, které jsou provedené na objektech pomocí Entity aktivity v rámci tohoto oboru automaticky načíst získat trvalá zpět do databáze a žádné explicitní nebo následné akce je potřeba uložit objekty zpět do databáze.  
+-   `ObjectContextScope`: Výše uvedené činnosti jde použít jenom v rámci `ObjectContextScope` instance aktivity. `ObjectContextScope` Aktivita nastaví připojení k databázi. Vyžaduje připojovací řetězec (tj. buď je předán nebo načten pomocí možnosti nastavení konfiguračního souboru). `ObjectContextScope` Aktivity usnadňuje provádění skupina souvisejících operací s entitami. Tento obor udržuje aktivní připojení, proto je rozsah uchování č. Kromě toho, kdy `ObjectContextScope` výstupů aktivity, všechny změny provedené na objekty, které jsou načteny automaticky pomocí Entity aktivity v daném oboru získat trvalá zpět do databáze a explicitní nebo následné nic dělat. k uložení objektů zpět do databáze.  
   
-## <a name="using-the-entity-activities"></a>Pomocí aktivity entity  
- Následující fragmenty kódu ukazují, jak používat aktivity entity uvedené v této ukázce.  
+## <a name="using-the-entity-activities"></a>Pomocí aktivity entit  
+ Následující fragmenty kódu ukazují, jak používat entity aktivity uvedené v této ukázce.  
   
 ### <a name="entitysql"></a>EntitySql  
- Následující fragment kódu ukazuje, jak dotazovat všem zákazníkům v Londýně seřazené podle názvu a jak k iteraci v rámci seznamu zákazníků.  
+ Následující fragment kódu ukazuje, jak zadávat dotazy na všechny zákazníky v Londýně, seřazené podle názvu a jak k iteraci v rámci seznam zákazníků.  
   
 ```  
 Variable<IEnumerable<Customer>> londonCustomers = new Variable<IEnumerable<Customer>>();  
@@ -80,7 +80,7 @@ return new ObjectContextScope
 ```  
   
 ### <a name="entitylinqquery"></a>EntityLinqQuery  
- Následující fragment kódu ukazuje, jak dotazovat všem zákazníkům v Londýně a jak k iteraci v rámci výsledného seznamu zákazníků.  
+ Následující fragment kódu ukazuje, jak zadávat dotazy na všechny zákazníky v Londýně a jak k iteraci v rámci výsledný seznam zákazníků.  
   
 ```  
 Variable<IEnumerable<Customer>> londonCustomers = new Variable<IEnumerable<Customer>>() { Name = "LondonCustomers" };  
@@ -123,7 +123,7 @@ return new ObjectContextScope
 ```  
   
 ### <a name="entityadd"></a>EntityAdd  
- Následující fragment kódu ukazuje, jak přidat záznam OrderDetail do existujícího pořadí.  
+ Následující fragment kódu ukazuje, jak přidat záznam OrderDetail do existující objednávky.  
   
 ```  
 Variable<IEnumerable<Order>> orders = new Variable<IEnumerable<Order>>();  
@@ -172,7 +172,7 @@ return new ObjectContextScope
 ```  
   
 ### <a name="entitydelete"></a>EntityDelete  
- Následující fragment kódu ukazuje, jak k odstranění existujícího záznamu OrderDetail v pořadí (pokud existuje).  
+ Následující fragment kódu ukazuje, jak odstranit existující záznam OrderDetail v pořadí (pokud existuje).  
   
 ```  
 Variable<IEnumerable<OrderDetail>> orderDetails = new Variable<IEnumerable<OrderDetail>>();              
@@ -219,13 +219,13 @@ return new ObjectContextScope
 ```  
   
 ## <a name="to-use-this-sample"></a>Pro fungování této ukázky  
- Je nutné vytvořit `Northwind` databáze ve vaší místní instanci serveru SQL Express před spuštěním této ukázce.  
+ Je nutné vytvořit `Northwind` databázi ve vaší místní instance serveru SQL Express před spuštěním této ukázky.  
   
 #### <a name="to-set-up-the-northwind-database"></a>K nastavení databáze Northwind  
   
 1.  Otevřete příkazový řádek.  
   
-2.  V novém okně příkazového řádku přejděte do složky EntityActivities\CS.  
+2.  V novém okně příkazovém řádku přejděte do složky EntityActivities\CS.  
   
 3.  Typ `setup.cmd` a stiskněte klávesu ENTER.  
   
@@ -233,25 +233,25 @@ return new ObjectContextScope
   
 1.  Pomocí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], otevřete soubor řešení EntityActivities.sln.  
   
-2.  Sestavte řešení, stiskněte CTRL + SHIFT + B.  
+2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-3.  Chcete-li spustit řešení, stiskněte CTRL + F5.  
+3.  Abyste mohli spustit řešení, stiskněte CTRL + F5.  
   
- Po spuštění této ukázce, můžete chtít odebrat `Northwind` databáze.  
+ Po spuštění této ukázky se můžete chtít odebrat `Northwind` databáze.  
   
-#### <a name="to-uninstall-the-northwind-database"></a>Chcete-li odinstalovat databáze Northwind  
+#### <a name="to-uninstall-the-northwind-database"></a>Chcete-li odinstalovat databázi Northwind  
   
 1.  Otevřete příkazový řádek.  
   
-2.  V novém okně příkazového řádku přejděte do složky EntityActivities\CS.  
+2.  V novém okně příkazovém řádku přejděte do složky EntityActivities\CS.  
   
 3.  Typ `cleanup.cmd` a stiskněte klávesu ENTER.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\EntityActivities`

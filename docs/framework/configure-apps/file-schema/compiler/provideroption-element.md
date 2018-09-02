@@ -11,21 +11,21 @@ ms.assetid: 014f2e0b-c0b5-4fc4-92d3-73f02978b2a1
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: fa3410cc2c8812c59528676bfad6cd7e887c5f73
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 75cc2003a88cc7be467b9062c37b6b5d9eb82f53
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32746394"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43388481"
 ---
 # <a name="ltprovideroptiongt-element"></a>&lt;Hodnota providerOption&gt; – Element
-Určuje verzi atributy kompilátoru jazyka zprostředkovatele.  
+Určuje atributy verze kompilátoru poskytovatele jazyka.  
   
- \<konfigurace elementu >  
+ \<Konfigurace Element >  
 \<system.codedom Element>  
-\<Kompilátory elementu >  
-\<kompilátoru > elementu  
-\<Hodnota providerOption > elementu  
+\<Kompilátory – Element >  
+\<Kompilátor > – Element  
+\<provideroption – > – Element  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,8 +43,8 @@ Určuje verzi atributy kompilátoru jazyka zprostředkovatele.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`name`|Požadovaný atribut.<br /><br /> Určuje název možnost; například "CompilerVersion".|  
-|`value`|Požadovaný atribut.<br /><br /> Určuje hodnotu pro možnost; například "v3.5".|  
+|`name`|Požadovaný atribut.<br /><br /> Určuje název možnosti; například "CompilerVersion".|  
+|`value`|Požadovaný atribut.<br /><br /> Určuje hodnotu parametru; například "v3.5".|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -53,22 +53,22 @@ Určuje verzi atributy kompilátoru jazyka zprostředkovatele.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Konfigurace > elementu](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Kořenový element v každém konfiguračním souboru, který je používán common language runtime a aplikacemi rozhraní .NET Framework.|  
-|[\<system.codedom> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|Určuje kompilátor – nastavení konfigurace pro zprostředkovatele dostupný jazyk.|  
-|[\<Kompilátory > elementu](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|Kontejner pro kompilátor – elementy konfigurace; obsahuje nula nebo více `<compiler>` elementy.|  
-|[\<kompilátoru > elementu](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|Kompilátor – konfigurační atributy Určuje jazyk zprostředkovatele.|  
+|[\<Konfigurace > – Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Kořenový element v každém konfiguračním souboru, který je používán common language runtime a aplikacemi rozhraní .NET Framework.|  
+|[\<system.codedom> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|Určuje konfigurační nastavení kompilátoru pro zprostředkovatele dostupných poskytovatelů jazyka.|  
+|[\<Kompilátory > – Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|Kontejner pro kompilátor – elementy konfigurace; obsahuje nulu nebo více `<compiler>` elementy.|  
+|[\<Kompilátor > – Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|Určuje kompilátor – konfigurační atributy pro poskytovatele jazyka.|  
   
 ## <a name="remarks"></a>Poznámky  
- V rozhraní .NET Framework verze 3.5 zprostředkovatele kódu Code Document Object Model (CodeDOM) může podporovat možnosti specifický pro zprostředkovatele pomocí `<providerOption>` elementu.  
+ V rozhraní .NET Framework verze 3.5, poskytovatelů kód Code Document Object Model (CodeDOM) může podporovat možnosti specifické pro zprostředkovatele s použitím `<providerOption>` elementu.  
   
- Rozhraní .NET Framework 3.5 zahrnuje aktualizované sestavení rozhraní .NET Framework 2.0 a poskytuje nové verze 3.5 sestavení, které obsahují nové typy. Kód zprostředkovatele Microsoft C# a Visual Basic jsou obsaženy v sestavení rozhraní .NET Framework 2.0, ale byly aktualizovány pro podporu kompilátory verze 3.5. Ve výchozím nastavení zprostředkovatele aktualizovaný kódu generovat kód pro kompilátory verze 2.0. Můžete použít `<providerOption>` elementu, který chcete změnit na cílovou verzi kompilátoru až 3.5. Chcete-li to provést, zadejte "CompilerVersion" pro `name` atribut a "v3.5" pro `value` atribut. Je nutné před číslo verze s malým "v".  
+ Rozhraní .NET Framework 3.5 zahrnuje aktualizované sestavení rozhraní .NET Framework 2.0 a poskytuje nové sestavení verze 3.5, které obsahují nové typy. Poskytovatelé kód Microsoft C# a Visual Basic jsou obsaženy v sestavení rozhraní .NET Framework 2.0, ale byla aktualizována o podporu kompilátory verze 3.5. Ve výchozím nastavení poskytovatelů aktualizovaný kód generování kódu pro verze 2.0 kompilátory. Můžete použít `<providerOption>` prvek, který chcete změnit cílovou verzi kompilátoru 3.5. Chcete-li to provést, zadejte "CompilerVersion" pro `name` atribut a "v3.5" pro `value` atribut. Musí předcházet číslo verze, s malá "v".  
   
- Můžete provést specifikace verze globální přidáním `<providerOption>` element pro rozhraní .NET Framework 2.0 souboru Machine.config nebo v kořenovém souboru Web.config. Pokud aktualizujete výchozí verze kompilátoru až 3.5 v souboru Machine.config, můžete ji změnit zpátky na 2.0 na základě jednotlivých aplikací pomocí `<providerOption>` element v konfiguračním souboru aplikace.  
+ Specifikace verze můžete globální provést přidáním `<providerOption>` prvků rozhraní .NET Framework 2.0 Machine.config nebo kořenový soubor Web.config. Pokud aktualizujete verzi kompilátoru výchozí až 3.5 v souboru Machine.config, můžete změnit ji zpět do 2.0 na základě jednotlivých aplikací s použitím `<providerOption>` prvku v konfiguračním souboru aplikace.  
   
- Implementátory zprostředkovatele codeDOM kódu může zpracovat vlastní možnosti tím, že poskytuje konstruktor, který přebírá `providerOptions` parametr typu <xref:System.Collections.Generic.IDictionary%602>.  
+ Implementátoři poskytovatele codeDOM kód může zpracovávat vlastní možnosti tím, že poskytuje konstruktor s daným počtem `providerOptions` parametr typu <xref:System.Collections.Generic.IDictionary%602>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zadat této verze 3.5 zprostředkovatele kódu C# má být použita.  
+ Následující příklad ukazuje, jak zadat verzi 3.5 zprostředkovatele kódu C# má být použita.  
   
 ```xml  
 <configuration>  
@@ -96,6 +96,6 @@ Určuje verzi atributy kompilátoru jazyka zprostředkovatele.
  <xref:System.CodeDom.Compiler.CompilerInfo>  
  <xref:System.CodeDom.Compiler.CodeDomProvider>  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [\<Kompilátory > elementu](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
+ [\<Kompilátory > – Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
  [Určení úplných názvů typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)  
- [kompilátoru Element pro kompilátory pro kompilaci (schéma nastavení ASP.NET)](http://msdn.microsoft.com/library/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)
+ [Kompilátor – Element pro kompilátory compilation (schéma nastavení technologie ASP.NET)](https://msdn.microsoft.com/library/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)

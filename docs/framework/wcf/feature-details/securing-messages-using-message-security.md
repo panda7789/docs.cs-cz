@@ -4,66 +4,66 @@ ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 1ebe2526e564ef24d20f1602fd5824b44e2e2bbd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d895524d36895ad087f7394fcc3380573355eaad
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33498687"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43392027"
 ---
 # <a name="securing-messages-using-message-security"></a>Zabezpečení zpráv
 Tato část popisuje zabezpečení zpráv WCF při použití <xref:System.ServiceModel.NetMsmqBinding>.  
   
 > [!NOTE]
->  Než si přečtete prostřednictvím tohoto tématu, doporučujeme, abyste si přečetli [koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md).  
+>  Před čtením prostřednictvím tohoto tématu, se doporučuje, abyste si přečetli [koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md).  
   
- Následující obrázek poskytuje konceptuální model komunikace ve frontě pomocí WCF. Tento obrázek a terminologie se používají k vysvětlují  
+ Následující obrázek poskytuje koncepční model komunikaci ve frontě pomocí technologie WCF. Tento obrázek a terminologie se používají k vysvětlení  
   
  koncepty zabezpečení přenosu.  
   
- ![Diagram aplikace ve frontě](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "distribuované obrázek fronty")  
+ ![Ve frontě diagramu aplikace](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "distribuované obrázek fronty")  
   
- Při odesílání zpráv zařazených do fronty pomocí WCF, je zpráva WCF připojené jako text zprávy služby Řízení front zpráv (MSMQ). Při zabezpečení přenosu zabezpečuje celý MSMQ zpráv, zpráv (nebo SOAP) zabezpečení pouze zabezpečuje tělo zprávy služby MSMQ.  
+ Při odesílání zpráv zařazených do fronty pomocí technologie WCF, zprávy WCF je připojen jako text zprávy služby Řízení front zpráv (MSMQ). Při zabezpečení přenosu zabezpečuje celý MSMQ zprávy, zprávu (nebo SOAP) zabezpečení zabezpečuje pouze text zprávy služby MSMQ.  
   
- Klíče koncept zabezpečení zpráv je, že klient zabezpečuje zprávu pro přijímající aplikace (služba), na rozdíl od zabezpečení přenosu, kde klient zabezpečuje zprávu pro cílové fronty. Jako takový MSMQ hraje žádná část při zabezpečení zpráv WCF pomocí zabezpečení zpráv.  
+ Klíčovým konceptem zabezpečení zpráv je, že klient zabezpečuje zprávu pro přijímající aplikace (služba), na rozdíl od přenosu zabezpečení, kde klient zabezpečuje pro cílovou frontu zprávy. V důsledku toho služba MSMQ hraje žádná část při zabezpečování zprávy WCF pomocí zabezpečení zpráv.  
   
- Zabezpečení zpráv WCF přidá záhlaví zabezpečení WCF zprávu, která integrovat existující infrastruktury zabezpečení, jako certifikát nebo protokolu Kerberos.  
+ Zabezpečení zpráv WCF přidá hlavičky zabezpečení zprávy WCF, která lze integrovat s stávajících infrastruktur zabezpečení, jako je například certifikát nebo protokolu Kerberos.  
   
 ## <a name="message-credential-type"></a>Typ pověření zprávy  
- Pomocí zabezpečení zpráv, klienta a služby s sebou může nést přihlašovací údaje k ověření jednotlivých jiné. Zabezpečení zpráv můžete vybrat podle nastavení <xref:System.ServiceModel.NetMsmqBinding.Security%2A> režim `Message` nebo `Both` (to znamená, použijte zabezpečení přenosu a zabezpečení zpráv).  
+ Zabezpečení zpráv pomocí, klienta a služby ale může představovat přihlašovací údaje k ověření navzájem. Zabezpečení zpráv můžete vybrat tak, že nastavíte <xref:System.ServiceModel.NetMsmqBinding.Security%2A> režimu `Message` nebo `Both` (to znamená použít zabezpečení přenosů a zpráv zabezpečení).  
   
- Můžete použít službu <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> vlastnost zkontrolovat, že pověření použitá k ověření klienta. To lze také pro další kontroly autorizace, služba se rozhodne pro implementaci.  
+ Můžete použít službu <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> vlastnost ke kontrole přihlašovacích údajů pro ověření klienta. Může také sloužit pro další kontroly autorizace, který vybírá služby k implementaci.  
   
- Tato část popisuje typy různých přihlašovacích údajů a způsob jejich používání s fronty.  
+ Tato část popisuje typy různých přihlašovacích údajů a jejich použití v případě front.  
   
-### <a name="certificate"></a>certifikát  
- Tento typ přihlašovacích údajů certifikátu používá k identifikaci služby a klient certifikát X.509.  
+### <a name="certificate"></a>Certifikát  
+ Typ přihlašovacích údajů certifikát certifikát X.509, který používá k identifikaci služby a klienta.  
   
- V případě typické klienta a služby jsou vydávány platný certifikát důvěryhodné certifikační autority. Potom připojení, klient se ověří platnost služby pomocí certifikátu služby se rozhodnout, jestli je vztah důvěryhodnosti služby. Podobně služby používá certifikát klienta k ověření klienta vztah důvěryhodnosti.  
+ V rámci typického scénáře klient a služba vydal platný certifikát důvěryhodné certifikační autority. Potom se naváže připojení, klient se ověří platnost služby pomocí certifikátu služby se rozhodnout, jestli je vztah důvěryhodnosti služby. Podobně služba používá certifikát klienta pro ověření klienta vztah důvěryhodnosti.  
   
- Vzhledem k odpojené povaze fronty, klient a služba nemusí být online ve stejnou dobu. Klient a služba jako takový mít exchange out-of-band certifikáty. Konkrétně musí klient, na základě podržíte certifikátu služby, (který může být zřetězené certifikační autorita) ve svém úložišti důvěryhodných důvěřovat komunikuje s správné služby. Pro ověřování klienta, používá služba certifikátu X.509 připojené k zprávu, která se shoduje se s certifikátu v jeho úložiště k ověření pravosti klienta. Znovu musí být certifikát váže k certifikační autoritě.  
+ Vzhledem k odpojené povaze fronty, klient a služba nemusí být online ve stejnou dobu. V důsledku toho klienta a služby mají k výměně certifikátů out-of-band. Zejména klienta tím, že podržíte ve svém úložišti důvěryhodných certifikátů služby, (která může být zřetězené k certifikační autoritě) musí důvěřovat, že komunikaci se službou správné. Pro ověření klienta, služba používá certifikát X.509 připojil se zpráva, která se mu odpovídá certifikátem v úložišti k ověření pravosti klienta. Znovu certifikát musí být zřetězené k certifikační autoritě.  
   
- V počítači se systémem Windows jsou certifikáty uložené v několik druhů úložišť. Další informace o různých obchodů najdete v tématu [úložiště certifikátů](http://go.microsoft.com/fwlink/?LinkId=87787).  
+ Na počítači se systémem Windows jsou certifikáty uložené v několika druhů úložišť. Další informace o různých úložištích, naleznete v tématu [úložiště certifikátů](https://go.microsoft.com/fwlink/?LinkId=87787).  
   
 ### <a name="windows"></a>Windows  
- Typ přihlašovacích údajů zpráv systému Windows používá protokol Kerberos.  
+ Typ pověření zprávy Windows používá protokol Kerberos.  
   
- Protokol Kerberos je mechanismus zabezpečení, který ověřuje uživatele v doméně a umožňuje ověřeným uživatelům navázání zabezpečeného kontextů se ostatní entity v doméně.  
+ Protokol Kerberos je mechanismus zabezpečení, který ověřuje uživatele v doméně a umožňuje ověřeným uživatelům k navázání zabezpečené kontextů se ostatní entity v doméně.  
   
- Problém s použitím protokolu Kerberos pro komunikaci ve frontě je poměrně krátkodobou lístků, které obsahují identity klienta, který distribuuje distribuční Center KDC (Key). A *životnost* souvisí s lístek protokolu Kerberos, která určuje platnost lístku. Jako takový zadány vysokou latencí, vám nemůže být se, že token je stále platný pro službu, která ověřuje klienta.  
+ Problém s pomocí protokolu Kerberos pro komunikaci ve frontě jsou relativně krátkodobou lístků, které obsahují identity klienta, který distribuuje na distribuční Center KDC (Key). A *životnost* souvisí s lístek služby Kerberos, který označuje platnost-the-ticket. V důsledku toho zadány vysokou latencí, vám nemůže být jisti, že token, který je stále platný pro službu, která ověřuje klienta.  
   
  Všimněte si, že při použití tento typ přihlašovacích údajů, služba musí být spuštěna pod účtem služby.  
   
- Při výběru pověření zprávy je ve výchozím nastavení používá protokol Kerberos. Další informace najdete v tématu [zkoumání protokolu Kerberos, protokol pro distribuované zabezpečení ve Windows 2000](http://go.microsoft.com/fwlink/?LinkId=87790).  
+ Protokol Kerberos se používá ve výchozím nastavení při výběru přihlašovacími údaji zprávy. Další informace najdete v tématu [zkoumání protokolu Kerberos, protokol pro distribuované zabezpečení ve Windows 2000](https://go.microsoft.com/fwlink/?LinkId=87790).  
   
-### <a name="username-password"></a>Uživatelské jméno heslo  
- Pomocí této vlastnosti, můžete ověřovat klienta k serveru pomocí uživatelského jména hesla v záhlaví zabezpečení zprávy.  
+### <a name="username-password"></a>Uživatelské jméno, heslo  
+ Pomocí této vlastnosti se klient může ověřit pomocí uživatelského jména hesla v záhlaví zabezpečení zprávy se k serveru.  
   
-### <a name="issuedtoken"></a>IssuedToken  
- K vydání tokenu, které lze připojit ke zprávě pro službu pro ověření klienta, můžete použít klienta služby tokenů zabezpečení.  
+### <a name="issuedtoken"></a>Třídy IssuedToken  
+ K vydání tokenu, který lze připojit ke zprávě pro službu pro ověření klienta, můžete použít klienta služby tokenů zabezpečení.  
   
 ## <a name="using-transport-and-message-security"></a>Pomocí přenosu a zabezpečení zpráv  
- Při použití zabezpečení přenosu a zabezpečení zpráv, certifikát sloužící k zabezpečení zpráv, jak při přenosu a úroveň protokolu SOAP zprávy musí být stejné.  
+ Při použití zabezpečení přenosů a zpráv zabezpečení, musí být certifikát používaný k zabezpečení i na úrovni zprávy protokolu SOAP a přenos zprávy stejná.  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení zpráv pomocí zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)  

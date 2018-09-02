@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 81c0f8b4-ce35-4716-8651-b642d40648a2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cd07707b5a80ec0980fc50b27caddf0a24398fd1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4b9f54c7c57d122ac1214b9f31cc4e1d1cddd71c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33400442"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43392176"
 ---
 # <a name="axlauthenticodesignerinfo-structure"></a>Struktura AXL_AUTHENTICODE_SIGNER_INFO
-Definuje informace podepisující osoba Authenticode.  
+Definuje informace o podpisu Authenticode.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,13 +32,13 @@ typedef struct _AXL_AUTHENTICODE_SIGNER_INFO {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`cbSize`|Velikost tuto strukturu.|  
+|`cbSize`|Velikost struktury.|  
 |`dwError`|Kód chyby|  
-|`algHash`|Algoritmus hash.|  
+|`algHash`|Hashovací algoritmus.|  
 |`pwszHash`|Hodnota hash.|  
 |`pwszDescription`|Popis.|  
-|`pwszDescriptionUrl`|Adresa URL popis.|  
-|`pChainContext`|Kontext řetězu autora podpisu. Najdete v článku [CERT_CONTEXT](http://msdn.microsoft.com/library/windows/desktop/aa377189.aspx) struktury.|  
+|`pwszDescriptionUrl`|Adresa URL popisu.|  
+|`pChainContext`|Kontextu řetězu podpisu. Zobrazit [CERT_CONTEXT](/windows/desktop/api/wincrypt/ns-wincrypt-_cert_context) struktury.|  
   
 ## <a name="see-also"></a>Viz také  
  [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)

@@ -14,11 +14,11 @@ helpviewer_keywords:
 - declarations [Visual Basic], modules
 ms.assetid: a1243afc-14a5-45df-95d5-51118aeac362
 ms.openlocfilehash: 5628224a08fe5f12cf2a81b179c4998001174354
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42933906"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43387644"
 ---
 # <a name="module-statement"></a>Module – příkaz
 Deklaruje název modulu a zavádí definici proměnných, vlastností, událostí a postupů, které se skládá z modulu.  

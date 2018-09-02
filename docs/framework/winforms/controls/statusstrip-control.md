@@ -5,24 +5,24 @@ helpviewer_keywords:
 - StatusStrip control [Windows Forms]
 - status bars
 ms.assetid: eb1e59da-0a48-4ce5-af7d-13b8e75af4b1
-ms.openlocfilehash: b3d7a1c68dbaa29c83bd066a8cb3ed2775672d98
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 157db8b9fbbbb6e1c6af41b4cf3903f4a762d763
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33534494"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385723"
 ---
 # <a name="statusstrip-control"></a>StatusStrip – ovládací prvek
-Windows Forms `StatusStrip` řízení se používá ve formulářích jako oblast, obvykle zobrazují v dolní části okna, ve kterém aplikace můžete zobrazit různé typy informací o stavu. `StatusStrip` ovládací prvky obvykle mají `ToolStripStatusLabel` ovládacích prvků na nich, které zobrazují text nebo ikony, které označují stav, nebo <xref:System.Windows.Forms.ToolStripProgressBar> který graficky zobrazí stav dokončení procesu.  
+Windows Forms `StatusStrip` ovládací prvek se používá ve formulářích jako oblast, obvykle se zobrazí v dolní části okna, ve kterém může aplikace zobrazit různé druhy informací o stavu. `StatusStrip` ovládací prvky mají obvykle `ToolStripStatusLabel` ovládacích prvků v nich, které se zobrazí text nebo ikony k označení stavu, nebo <xref:System.Windows.Forms.ToolStripProgressBar> graficky, který zobrazí stav dokončení procesu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku StatusStrip](../../../../docs/framework/winforms/controls/statusstrip-control-overview.md)  
  Vysvětluje, co je tento ovládací prvek a jeho klíčové funkce a vlastnosti.  
   
  [Postupy: Interaktivní používání vlastnosti Spring v prvku StatusStrip](../../../../docs/framework/winforms/controls/how-to-use-the-spring-property-interactively-in-a-statusstrip.md)  
- Ukazuje, jak pomocí `Spring` vlastnost interaktivně center `ToolStripStatusLabel` v `StatusStrip`.  
+ Ukazuje použití `Spring` vlastnost interaktivně center `ToolStripStatusLabel` v `StatusStrip`.  
   
- Viz také [Editor kolekce položek StatusStrip](http://msdn.microsoft.com/library/ms233631\(v=vs.110\)), [Editor kolekce položek StatusStrip](http://msdn.microsoft.com/library/ms233642\(v=vs.110\)).  
+ Viz také [StatusStrip – Editor kolekce položek](https://msdn.microsoft.com/library/ms233631\(v=vs.110\)), [StatusStrip – Editor kolekce položek](https://msdn.microsoft.com/library/ms233642\(v=vs.110\)).  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.StatusStrip>  

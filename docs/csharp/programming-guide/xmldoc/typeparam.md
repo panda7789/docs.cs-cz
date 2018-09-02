@@ -1,5 +1,5 @@
 ---
-title: '&lt;typeparam&gt; (C# Průvodce programováním)'
+title: '&lt;typeparam&gt; (C# Programming Guide)'
 ms.date: 07/20/2015
 f1_keywords:
 - typeparam
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - <typeparam> C# XML tag
 - typeparam C# XML tag
 ms.assetid: 9b99d400-e911-4e55-99c6-64367c96aa4f
-ms.openlocfilehash: 8c7fc1aba05af731d3df80e0b10c2981b5784197
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5af03c8176672685b02a23019812f1aeded28dc8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33348775"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43389273"
 ---
-# <a name="lttypeparamgt-c-programming-guide"></a>&lt;typeparam&gt; (C# Průvodce programováním)
+# <a name="lttypeparamgt-c-programming-guide"></a>&lt;typeparam&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -23,17 +23,17 @@ ms.locfileid: "33348775"
   
 #### <a name="parameters"></a>Parametry  
  `name`  
- Název parametru typu. Uzavřete název do dvojitých uvozovek nahoře ("").  
+ Název parametru typu. Název uzavřete do dvojitých uvozovek ("").  
   
  `description`  
  Popis pro parametr typu.  
   
 ## <a name="remarks"></a>Poznámky  
- `<typeparam>` Značky by měl být používány komentář pro obecný typ nebo metoda deklaraci k popisu parametr typu. Přidání značky pro každý typ parametr obecného typu nebo metoda.  
+ `<typeparam>` Značky byste měli použít ve komentář pro obecný typ nebo metoda prohlášení k popisu parametr typu. Přidáte značku pro každý typ parametru obecného typu nebo metody.  
   
- Další informace najdete v tématu [obecné typy](../../../csharp/programming-guide/generics/index.md).  
+ Další informace najdete v tématu [obecných typů](../../../csharp/programming-guide/generics/index.md).  
   
- Text pro `<typeparam>` značky se zobrazí v technologii IntelliSense, [okno prohlížeče objekt](http://msdn.microsoft.com/library/3c7f1673-1f0d-41b1-94ca-a3dcfcb82cda) sestava webové komentář kódu.  
+ Text `<typeparam>` značky se zobrazí v IntelliSense, [okno prohlížeče objektů](https://msdn.microsoft.com/library/3c7f1673-1f0d-41b1-94ca-a3dcfcb82cda) kódu komentář webové sestavy.  
   
  Kompilovat s [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentačních komentářů do souboru.  
   

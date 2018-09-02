@@ -2,57 +2,57 @@
 title: Dynamická rekonfigurace
 ms.date: 03/30/2017
 ms.assetid: b20786ae-cce6-4f91-b6cb-9cae116faf8b
-ms.openlocfilehash: 81a2b494c48476e683053e12e58264e756201124
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: a147a1d6cf61001832661376363ecc850ecad309
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33810377"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43401337"
 ---
 # <a name="dynamic-reconfiguration"></a>Dynamická rekonfigurace
-Tento příklad znázorňuje směrování služby Windows Communication Foundation (WCF). Služba Směrování je součást WCF, který usnadňuje do aplikace zahrnout směrovač podle obsahu. Tato ukázka přizpůsobuje standardní ukázka kalkulačku WCF komunikovat pomocí služby směrování. Tento příklad ukazuje, jak službu směrování můžete dynamicky překonfigurovat za běhu.  
+V této ukázce směrovací službou Windows Communication Foundation (WCF). Směrovací služba je komponenta WCF, který umožňuje snadno do aplikace zahrnout směrovač založené na obsahu. Tato ukázka se přizpůsobí standardní kalkulačky Ukázky WCF na komunikaci pomocí směrovací službou. Tato ukázka předvádí, jak služba směrování můžete dynamicky překonfigurovat za běhu.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\RoutingServices\DynamicReconfiguration`  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- Dynamicky znovu nakonfigurovat službu Směrování za běhu, aktivuje se tato ukázka časovače každých pět sekund, který vytvoří nový <xref:System.ServiceModel.Routing.RoutingConfiguration> objektu a použije ji. Tato konfigurace odkazuje regulární koncový bod kalkulačky nebo zaokrouhlení kalkulačky koncový bod. Kalkulačky klientská aplikace má jeho zpráv vrácených z jedné služby nebo dalších, podle toho, která je nakonfigurovaná služba Směrování pro trasy, která má v daném čase.  
+ Za běhu dynamicky rekonfigurovat směrovací službou, této ukázce aktivuje časovač každých pět sekund, který vytvoří nový <xref:System.ServiceModel.Routing.RoutingConfiguration> objektu a použije ho. Tato konfigurace odkazuje běžným koncovým bodem Kalkulačka nebo koncový bod zaokrouhlení kalkulačku. Kalkulačka klientské aplikace má jeho zpráv vrácených z jedné služby nebo druhé, podle toho, která je nakonfigurovaná služba Směrování na trasy, která má v daném čase.  
   
- Směrovací služba capabilitiy pro dynamická Rekonfigurace prostřednictvím vlastní chování se používá. Toto vlastní chování připojí rozšíření služby, který obsahuje jednoduché vlákno časovač, který aktivuje každých pět sekund, což vede k zpětné volání pro `UpdateRules` metoda. Tento zpětného volání vytvoří a použije se nová konfigurace směrování. V skutečné nasazení by tento zpětného volání dosáhnout pravděpodobně v důsledku jiný typ události, jako je například oznámení o události SQL nebo WS-Discovery oznámení.  
+ Směrovací služba capabilitiy pro dynamická Rekonfigurace prostřednictvím vlastního chování se používá. Toto vlastní chování připojí rozšíření služby, který obsahuje jednoduché vláknu časovače, který se aktivuje každých pět sekund, což vede k zpětné volání, aby `UpdateRules` metody. Toto zpětné volání vytvoří a použije novou konfiguraci směrování. V skutečný nasazení by tato zpětné volání provedli pravděpodobně v důsledku jiného typu události, jako je například oznámení události SQL nebo WS-Discovery oznámení.  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
 1.  Pomocí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], otevřete DynamicReconfiguration.sln.  
   
-2.  Chcete-li otevřít **Průzkumníku řešení**, vyberte **Průzkumníku řešení** z **zobrazení** nabídky.  
+2.  Chcete-li otevřít **Průzkumníku řešení**vyberte **Průzkumníku řešení** z **zobrazení** nabídky.  
   
-3.  Stiskněte klávesu **F5** nebo **CTRL + SHIFT + B** v sadě Visual Studio.  
+3.  Stisknutím klávesy **F5** nebo **CTRL + SHIFT + B** v sadě Visual Studio.  
   
-    1.  Pokud byste chtěli automaticky spouštěné projekty potřebné při stisknutí volby **F5**, klikněte pravým tlačítkem na řešení a vyberte **vlastnosti**. Vyberte **spouštěný projekt** pod uzlem **společných vlastností** v levém podokně. Vyberte **více projektů po spuštění** přepínač a nastavte všechny projekty, které chcete mít **spustit** akce.  
+    1.  Pokud chcete automaticky spouštět nezbytné projektů při stisknutí **F5**, klikněte pravým tlačítkem na řešení a vyberte **vlastnosti**. Vyberte **spouštěný projekt** pod uzlem **společné vlastnosti** v levém podokně. Vyberte **více projektů po spuštění** přepínač a nastavte všechny projekty, které mají mít **Start** akce.  
   
-    2.  Pokud vytvoříte projekt pomocí **CTRL + SHIFT + B**, musíte spustit následující aplikace:  
+    2.  Při sestavování projektu s **CTRL + SHIFT + B**, je nutné spustit v následujících aplikacích:  
   
-        1.  Klient kalkulačky (. / CalculatorClient/bin/client.exe)  
+        1.  Kalkulačka klienta (. / CalculatorClient/bin/client.exe)  
   
-        2.  Službu kalkulačky (. / CalculatorService/bin/service.exe)  
+        2.  Kalkulačka služby (. / CalculatorService/bin/service.exe)  
   
-        3.  Směrovací služba provádí kalkulačky (. / RoundingCalcService/bin/service.exe)  
+        3.  Směrovací služba kalkulačky (. / RoundingCalcService/bin/service.exe)  
   
-        4.  RoutingService (. / RoutingService/bin/RoutingService.exe)  
+        4.  Službu RoutingService (. / RoutingService/bin/RoutingService.exe)  
   
-4.  V okně konzoly klienta kalkulačky stiskněte klávesu ENTER k spuštění klienta a volání operací služby kalkulačky.  
+4.  V okně konzoly klienta kalkulačky stisknutím klávesy ENTER spustíte klienta a k volání operací služby kalkulačky.  
   
-     Směrovací služba provádí směrování zpráv kalkulačky zaokrouhlení a regulární kalkulačky případně jako směrování změny konfigurace dynamicky každých pět sekund. V závislosti na tom, ke kterému koncovému bodu službu Směrování je nakonfigurován pro odesílání zpráv do existují různé výstupy v okně konzoly klienta.  
+     Směrovací služba provádí směrování zpráv ke kalkulačce zaokrouhlení a pravidelné Kalkulačka střídavě jako změny konfigurace směrování dynamicky každých pět sekund. V závislosti na tom, ke kterému koncovému bodu směrovací služba je nakonfigurovaná k odesílání zpráv do existují jiné výstupy v okně konzoly klienta.  
   
-5.  Pokračujte stisknutím klávesy ENTER opakovaně přes více než pět sekund a sledovat změnu ve výsledcích ze služby.  
+5.  Pokračujte stisknutím klávesy ENTER opakovaně přes více než pět sekund a sledovat změnu v hodnotě výsledky ze služby.  
   
-    1.  Zde je, že výstup vrácena, pokud je služba směrovače je konfigurovaná pro směrování zpráv do služby zaokrouhlení kalkulačky.  
+    1.  Zde je, že výstup vrátí, pokud směrovač služba je nakonfigurována pro směrování zpráv služby zaokrouhlení kalkulačku.  
   
         ```Output  
         Add(100,15.99) = 116  
@@ -61,7 +61,7 @@ Tento příklad znázorňuje směrování služby Windows Communication Foundati
         Divide(22,7) = 3.1  
         ```  
   
-    2.  Toto je výstup vrácena, pokud směrování služba je nakonfigurována pro směrování zpráv ke službě regulární kalkulačky.  
+    2.  Zde je, že výstup vrátí, pokud směrovací služba je nakonfigurována pro směrování zpráv ke službě regulárních kalkulačky.  
   
         ```Output  
         Add(100,15.99) = 115.99  
@@ -70,17 +70,17 @@ Tento příklad znázorňuje směrování služby Windows Communication Foundati
         Divide(22,7) = 3.14285714285714  
         ```  
   
-6.  Službu kalkulačky a službu kalkulačky zaokrouhlení také vytisknout protokolu operací vyvolat do svých příslušných konzoly windows.  
+6.  Kalkulačka služba a služba zaokrouhlení Kalkulačka také vytisknout protokolu operací vyvolat a jejich odpovídajících konzoly windows.  
   
-7.  V okně konzoly klienta typu "ukončit" a stiskněte klávesu ENTER ukončíte.  
+7.  V okně konzoly klienta typu "Ukončete" a stisknutím klávesy ENTER ukončete.  
   
-8.  Stisknutím klávesy ENTER v oknech konzoly služby ukončení služby.  
+8.  Stisknutím klávesy ENTER v oknech konzoly služby k ukončení služby.  
   
 ## <a name="scenario"></a>Scénář  
- Tento příklad znázorňuje směrovač, který funguje jako směrovač založená na obsahu umožňuje více typů nebo implementace služby mají být exponovány prostřednictvím jeden koncový bod.  
+ Tato ukázka předvádí, směrovač fungujícího jako směrovač založené na obsahu umožňuje více typů nebo implementaci služeb zpřístupní prostřednictvím jeden koncový bod.  
   
-### <a name="real-world-scenario"></a>Scénář skutečných  
- Contoso chce k virtualizaci všech svých služeb vystavit pouze jeden koncový bod veřejně přes která nabízejí přístup k několika různých typů služeb. V takovém případě využívají službu směrování na základě obsahu směrování možnosti k určení, kde by měly být odeslány příchozí požadavky.  
+### <a name="real-world-scenario"></a>Reálné scénáře  
+ Contoso chce, aby se k virtualizaci všech svých služeb vystavit pouze jeden koncový bod veřejně přes který nabízejí přístup k více různých typů služeb. V tomto případě využívat Služba směrování založené na obsahu směrování schopnosti určit, které by měla být odeslána příchozí požadavky.  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky trvalosti a hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193961)
+ [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

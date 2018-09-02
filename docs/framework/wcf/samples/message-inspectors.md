@@ -2,21 +2,22 @@
 title: Inspektoři zpráv
 ms.date: 03/30/2017
 ms.assetid: 9bd1f305-ad03-4dd7-971f-fa1014b97c9b
-ms.openlocfilehash: 05dbee820a002feb1f2a1672220be0c4a397f952
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 253be4d13649d4f6394aad1bb002f5cd555d8af2
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385841"
 ---
 # <a name="message-inspectors"></a>Inspektoři zpráv
-Tento příklad ukazuje, jak implementovat a nakonfigurovat klienta a služby inspektoři zpráv.  
+Tento příklad ukazuje, jak implementovat a konfigurovat messageinspectors klienta a služby.  
   
- Zpráva inspector je rozšíření objekt, který lze použít v modelu služby runtime klienta a odesílání runtime prostřednictvím kódu programu, nebo prostřednictvím konfigurace a který můžete zkontrolovat a změnit zprávy po jejich přijetí nebo před jejich odesláním.  
+ Zpráva inspector je objekt rozšiřitelnosti, který lze použít v modelu služby klientů runtime a odeslání runtime programově nebo prostřednictvím konfigurace a že můžete zkontrolovat a změnit zpráv po jejich přijetí nebo před jejich odesláním.  
   
- Tato ukázka implementuje základní klienta a služby zpráva ověření mechanismu, který ověří příchozí zprávy oproti sadě konfigurovat dokumentů schématu XML. Všimněte si, že tato ukázka neověřuje zprávy pro každou operaci. To je úmyslné zjednodušení.  
+ Tato ukázka implementuje základní klient a služba zpráva ověřovací mechanismus, který ověří příchozí zprávy pro sadu konfigurovatelné dokumentů schématu XML. Všimněte si, že tato ukázka neověřuje zpráv pro každou operaci. To je úmyslné zjednodušení.  
   
-## <a name="message-inspector"></a>Zpráva Inspector  
- Implementace inspektoři zpráv klienta <xref:System.ServiceModel.Dispatcher.IClientMessageInspector> rozhraní a služby implementace inspektoři zpráv <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector> rozhraní. Implementace zkombinovat do jedné třídy k vytvoření inspector zpráva, která se dá použít na obou stranách. Tato ukázka implementuje takové inspector kombinované zprávy. Kontrolor je vytvořený předávání v sadě schémat, kterými se ověří příchozí a odchozí zprávy a umožňuje vývojáři k určení, jestli se ověřují příchozí nebo odchozí zprávy a zda nástroj inspector je v režimu klienta nebo odeslání, který zpracování chyb ovlivňuje, jak je popsáno dále v tomto tématu.  
+## <a name="message-inspector"></a>Zpráva inspektoru  
+ Implementace inspektoři zpráv klienta <xref:System.ServiceModel.Dispatcher.IClientMessageInspector> rozhraní a službu implementovat kontroly zprávy <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector> rozhraní. Implementace zkombinovat do jedné třídy k vytvoření zprávy inspector, který se dá použít pro obě strany. Tato ukázka implementuje takové kombinované zpráva inspector. Inspektor je vytvořen při předávání v sadě schémat, kterými se ověří příchozí a odchozí zprávy a umožňuje vývojářům určit, jestli se ověřují příchozí nebo odchozí zprávy a určuje, zda inspector pracuje v režimu klienta nebo odeslání, který zpracování chyb ovlivní, jak je popsáno dále v tomto tématu.  
   
 ```  
 public class SchemaValidationMessageInspector : IClientMessageInspector, IDispatchMessageInspector  
@@ -38,9 +39,9 @@ public class SchemaValidationMessageInspector : IClientMessageInspector, IDispat
     }  
 ```  
   
- Všechny zprávy inspector služby (odesílatel) musí implementovat dvě <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector> metody <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A> a <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%28System.ServiceModel.Channels.Message%40%2CSystem.Object%29>.  
+ Žádné služby (odesílatel) zpráva inspektoru musí implementovat dvě <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector> metody <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A> a <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%28System.ServiceModel.Channels.Message%40%2CSystem.Object%29>.  
   
- <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A> je volána dispečera při obdržel, zpracovává zásobníku kanál a přiřazené k službě zprávu, ale předtím, než je deserializovat a odeslaných do operace. Pokud příchozí zpráva byla zašifrována, je zpráva již dešifrovat při dosažení inspector zprávy. Získá metodu `request` zpráva předán jako referenční parametr, který umožňuje zpráva, která má být prověřovány, s nimi manipulovat nebo nahradit podle potřeby. Návratová hodnota může být jakýkoli objekt a slouží jako objekt korelace stavu, který je předán <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%2A> při službu vrátí odpověď na aktuální zprávu. V této ukázce <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A> deleguje kontroly (ověřování) zprávy metodu privátní, místní `ValidateMessageBody` a vrátí objekt žádné korelace stavu. Tato metoda zajišťuje, že žádné neplatné zprávy předat do služby.  
+ <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A> Vyvolá dispečer při přijetí, zpracování kanálu zásobníku a přiřazeno ke službě zprávy, ale předtím, než je deserializovat a odeslaných do operace. Pokud příchozí zpráva byla zašifrována, je zpráva již dešifrovat dosáhne inspektor zprávy. Získá metodu `request` zprávu předá jako parametr odkazu, který umožňuje zpráva, kterou chcete prozkoumat, manipulovat nebo nahradit podle potřeby. Návratová hodnota může být libovolný objekt a slouží jako korelace stav objektu, který je předán <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%2A> Pokud služba vrátí odpověď na aktuální zprávu. V této ukázce <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A> deleguje kontroly (ověřování) zprávy, která se metoda privátní, místní `ValidateMessageBody` a vrátí objekt stavu žádná korelace. Tato metoda zajišťuje, že žádné neplatné zprávy předat do služby.  
   
 ```  
 object IDispatchMessageInspector.AfterReceiveRequest(ref System.ServiceModel.Channels.Message request, System.ServiceModel.IClientChannel channel, System.ServiceModel.InstanceContext instanceContext)  
@@ -55,9 +56,9 @@ object IDispatchMessageInspector.AfterReceiveRequest(ref System.ServiceModel.Cha
 }  
 ```  
   
- <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%28System.ServiceModel.Channels.Message%40%2CSystem.Object%29> je volána vždy, když je připravena k odeslání zpět na klienta nebo v případě jednosměrného zprávy, když se po zpracování příchozí zprávy odpovědi. To umožňuje rozšíření počítat se volané symetricky, bez ohledu na to MEP. Stejně jako u <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A>, zpráva se předá jako parametr odkazu a lze prověřovány, změnit nebo nahradit. Ověření zprávy, které se provádí v této ukázce je znovu delegovaný jako `ValidMessageBody` metoda, ale ošetření chyb při ověřování se v takovém případě mírně lišit.  
+ <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%28System.ServiceModel.Channels.Message%40%2CSystem.Object%29> je vyvolána pokaždé, když odpověď je připravená k odeslání zpět do klienta nebo v případě jednosměrného zpráv, po zpracování příchozí zprávy. To umožňuje rozšíření Spolehněte se na volání symetricky, bez ohledu na to MEP. Stejně jako u <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A>, zprávy se předá jako parametr odkazu a lze ho zkontrolovat, upravit nebo nahradit. Ověření zprávy, která se provádí v této ukázce se znovu deleguje na `ValidMessageBody` metody, ale zpracování chyb při ověřování se v tomto případě mírně liší.  
   
- Pokud dojde k chybě ověření ve službě, `ValidateMessageBody` vyvolá metoda <xref:System.ServiceModel.FaultException>-odvozené výjimky. V <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A>, tyto výjimky můžou být přepnuté do infrastruktury služby modelu, kde jsou automaticky převede na chyb SOAP a předává do klienta. V <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%2A>, <xref:System.ServiceModel.FaultException> výjimky nesmí být přepnuté do infrastruktury, protože transformace selhání výjimky vydané služby se vyskytuje před zpráva inspector je volána. Proto za následující implementaci zachytí známých `ReplyValidationFault` výjimku a nahradí odpovědi zpráv s explicitní chybovou zprávu. Tato metoda zajišťuje, že žádné neplatné zprávy jsou vráceny implementace služby.  
+ Pokud dojde k chybě ověření ve službě, `ValidateMessageBody` vyvolá metoda výjimku <xref:System.ServiceModel.FaultException>-odvozené výjimky. V <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A>, tyto výjimky můžou být přepnuté do infrastruktury služby modelu, ve kterém jsou automaticky transformuje na chyb SOAP a předává do klienta. V <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%2A>, <xref:System.ServiceModel.FaultException> výjimky nesmí možné zařadit do infrastruktury, protože transformace selhání výjimky vyvolané službou vyskytuje před voláním inspektor zprávy. Proto následující implementaci zachytí známých `ReplyValidationFault` výjimky a nahradí zprávu odpovědi s explicitní chybovou zprávu. Tato metoda zajišťuje, že žádné neplatné jsou vraceny v implementaci služby.  
   
 ```  
 void IDispatchMessageInspector.BeforeSendReply(ref System.ServiceModel.Channels.Message reply, object correlationState)  
@@ -79,13 +80,13 @@ void IDispatchMessageInspector.BeforeSendReply(ref System.ServiceModel.Channels.
     }  
 ```  
   
- Inspector zpráv klienta je velmi podobné. Tyto dvě metody, které musí být implementován z <xref:System.ServiceModel.Dispatcher.IClientMessageInspector> jsou <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.AfterReceiveReply%2A> a <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.BeforeSendRequest%2A>.  
+ Inspektor zprávy klienta je velmi podobné. Tyto dvě metody, které je třeba implementovat z <xref:System.ServiceModel.Dispatcher.IClientMessageInspector> jsou <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.AfterReceiveReply%2A> a <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.BeforeSendRequest%2A>.  
   
- <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.BeforeSendRequest%2A> je voláno, když má byla daná zpráva vytvořena, klientská aplikace nebo operaci formátování. Jako s inspektoři dispečera zpráv, můžete zprávu právě prověřovány nebo zcela nahradit. V této ukázce kontrolor deleguje do stejné místní `ValidateMessageBody` Pomocná metoda, která se také používá pro inspektoři odesílání zpráv.  
+ <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.BeforeSendRequest%2A> je voláno, když má byla zpráva skládá klientská aplikace nebo formátovací modul operace. Jak s dispečerem inspektoři zpráv, zprávy stačí, když ho zkontrolovat nebo zcela nahrazena. V této ukázce inspektor deleguje na stejnou místní `ValidateMessageBody` Pomocná metoda, která se používá také pro odeslání inspektoři zpráv.  
   
- Chování rozdíl mezi klientem a službou ověření (jako je zadaný v konstruktoru) je, že ověření klienta vyvolá místní výjimky, které jsou vloženy do uživatelského kódu, protože k nim dojde místně a ne z důvodu selhání služby. Pravidlo je obecně platí, že služba dispečera inspektoři throw chyb a že kontroly klienta výjimku výjimky.  
+ Chování rozdíl mezi klientem a službou ověření (jak je uvedeno v konstruktoru) je, že ověřování na straně klienta vyvolá místní výjimky, které jsou vloženy do uživatelského kódu vzhledem k tomu, že k nim dojde místně a ne kvůli selhání služby. Obecně platí je pravidlo, že služba dispečer kontroly vyvolat chyby a zda kontroly klienta vyvolávat výjimky.  
   
- To <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.BeforeSendRequest%2A> implementace zajistí, že žádné neplatné zprávy se odešle do služby.  
+ To <xref:System.ServiceModel.Dispatcher.IClientMessageInspector.BeforeSendRequest%2A> implementace zajistí, že žádné neplatné zprávy se odesílají do služby.  
   
 ```  
 object IClientMessageInspector.BeforeSendRequest(ref System.ServiceModel.Channels.Message request, System.ServiceModel.IClientChannel channel)  
@@ -98,7 +99,7 @@ object IClientMessageInspector.BeforeSendRequest(ref System.ServiceModel.Channel
 }  
 ```  
   
- `AfterReceiveReply` Implementace zajistí, že žádné neplatné zprávy přijal od služby jsou přes předávací službu klienta uživatelského kódu.  
+ `AfterReceiveReply` Implementace zajistí, že žádné neplatné zprávy přijaté ze služby se předává do uživatelského kódu klienta.  
   
 ```  
 void IClientMessageInspector.AfterReceiveReply(ref System.ServiceModel.Channels.Message reply, object correlationState)  
@@ -110,9 +111,9 @@ void IClientMessageInspector.AfterReceiveReply(ref System.ServiceModel.Channels.
 }  
 ```  
   
- Jádrem této konkrétní zprávu inspector je `ValidateMessageBody` metoda. Ke své práci, zabalí ověřování <xref:System.Xml.XmlReader> kolem textu obsahu dílčí stromu předaný zprávy. Čtečka je naplněna sadu schémat, které obsahuje nástroj inspector zpráv a zpětné volání pro ověření je nastaven s delegátem, která odkazuje na `InspectionValidationHandler` definovaný společně se tato metoda. K provedení ověření, zpráva se pak číst a zařazených do paměti, zálohovaná datový proud <xref:System.Xml.XmlDictionaryWriter>. Pokud v procesu dojde k ověření chyby nebo upozornění, je vyvolána metoda zpětného volání.  
+ Je srdcem tato kontrola konkrétní zprávy `ValidateMessageBody` metody. K provedení své práce, zabalí ověřování <xref:System.Xml.XmlReader> kolem textu dílčí stromu obsahu předané zprávy. Čtecí modul se vyplní sadu schémat, které obsahuje inspektor zprávy a zpětné volání pro ověření je nastavená na delegáta odkazující na `InspectionValidationHandler` , která je definována vedle této metody. K provedení ověření zprávy je přečtení a zařazení do paměti datového proudu zajišťuje <xref:System.Xml.XmlDictionaryWriter>. Pokud v procesu dojde k chybě nebo upozornění, je vyvolána metoda zpětného volání.  
   
- Pokud nedojde k žádné chybě novou zprávu vytvořená, zkopíruje vlastnosti a hlavičky z původní zprávy a informační sadu ověřit nyní používá v datovém proudu paměti, která je zabalené službou <xref:System.Xml.XmlDictionaryReader> a přidávat do zprávy nahrazení.  
+ Pokud nenastane žádná chyba novou zprávu je vytvořený, který kopíruje vlastnosti a záhlaví z původní zprávy a informační sadu ověřit nyní používá v datovém proudu paměti, která je zabalena <xref:System.Xml.XmlDictionaryReader> a přidávat do zprávy nahrazení.  
   
 ```  
 void ValidateMessageBody(ref System.ServiceModel.Channels.Message message, bool isRequest)  
@@ -155,11 +156,11 @@ void ValidateMessageBody(ref System.ServiceModel.Channels.Message message, bool 
 }  
 ```  
   
- `InspectionValidationHandler` Metoda je volána ověřování <xref:System.Xml.XmlReader> vždy, když dojde k chybě ověření schématu nebo upozornění. Za následující implementaci lze použít pouze se chyby a varování.  
+ `InspectionValidationHandler` Metoda je volána ověřování <xref:System.Xml.XmlReader> vždy, když dojde k chybě ověření schématu nebo upozornění. Následující implementaci funguje jenom s chybami a bude ignorovat všechna upozornění.  
   
- Na první úvahy, mohou vám možné vložit, ověřování <xref:System.Xml.XmlReader> do zprávy s zpráva inspector a umožňují ověření dojít při zpracování zprávy se a bez ukládání do vyrovnávací paměti zprávy. Že však znamená, že tento zpětného volání vyvolá výjimek ověření někde ve službě model infrastrukturu nebo uživatelský kód jako neplatný z uzlů XML detekovány, což vede k nepředvídatelné chování. Vyrovnávací paměti přístup chrání zcela uživatelského kódu z neplatné zprávy.  
+ Na první úvahy může zdát dát vložit ověřování <xref:System.Xml.XmlReader> do zprávy s inspektoru zprávu a umožňují ověření dochází při zpracování zprávy a bez ukládání do vyrovnávací paměti zprávy. Ale znamená, že tato zpětné volání vyvolá výjimky ověření někde ve službě model infrastruktury nebo z uživatelského kódu jako zjistí neplatné z uzlů XML v důsledku nepředvídatelného chování. Vyrovnávací paměti přístup chrání zcela uživatelský kód z neplatné zprávy.  
   
- Jak bylo popsáno dříve výjimky vyvolané obslužná rutina se liší mezi klientem a služby. Ve službě, výjimky jsou odvozeny od <xref:System.ServiceModel.FaultException>, na straně klienta jsou výjimky regulární vlastní výjimky.  
+ Jak bylo uvedeno výše ověřte výjimky vyvolané obslužnou rutinou lišit mezi klientem a službou. Ve službě, výjimky jsou odvozeny z <xref:System.ServiceModel.FaultException>, výjimky na straně klienta jsou pravidelné vlastní výjimky.  
   
 ```  
         void InspectionValidationHandler(object sender, ValidationEventArgs e)  
@@ -201,9 +202,9 @@ void ValidateMessageBody(ref System.ServiceModel.Channels.Message message, bool 
 ```  
   
 ## <a name="behavior"></a>Chování  
- Inspektoři zpráv jsou rozšíření modulu runtime klienta nebo odeslání runtime. Taková rozšíření jsou konfigurováni pomocí *chování*. Chování je třída, která mění chování modulu runtime service model změnu výchozí konfigurace nebo přidání přípony (například inspektoři zpráv) k němu.  
+ Inspektoři zpráv jsou rozšíření pro modul runtime klienta nebo odeslání za běhu. Taková rozšíření se konfiguruje pomocí *chování*. Chování je třída, která mění chování modulu service model runtime změnu výchozí konfigurace nebo přidáním přípony (například messageinspectors) k němu.  
   
- Následující `SchemaValidationBehavior` třída je použít k přidání této ukázce zpráva inspector do klienta nebo odeslání runtime chování. Implementace je spíš základní v obou případech. V <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior%2A> a <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior%2A>, nástroj inspector zprávy je vytvořen a přidán do <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> kolekce příslušných modulu runtime.  
+ Následující `SchemaValidationBehavior` třídy se používá k přidání inspektoru zprávy této ukázky do klienta nebo odeslání modul runtime chování. Implementace je spíše základních v obou případech. V <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior%2A> a <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior%2A>, nástroj inspector zprávy je vytvořen a přidán do <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> sadu odpovídajících modulu runtime.  
   
 ```  
 public class SchemaValidationBehavior : IEndpointBehavior  
@@ -255,10 +256,10 @@ public class SchemaValidationBehavior : IEndpointBehavior
 ```  
   
 > [!NOTE]
->  Toto konkrétní chování není dvakrát jako atribut a nelze ji proto přidat deklarativně na typ smlouvy typu služby. Jedná se o záměrných rozhodnutí provést, protože kolekce schémat nelze načíst v deklarace atributu a odkazy na další konfigurace umístění (například na nastavení aplikací) v tomto atributu znamená vytvoření konfigurační prvek, který není konzistentní se zbytkem konfiguraci modelu služby. Proto toto chování lze přidat pouze imperativní prostřednictvím kódu a prostřednictvím rozšíření pro konfiguraci modelu služby.  
+>  Tento konkrétní chování není dvakrát jako atribut, proto nelze přidat deklarativně na typ kontraktu typu služby. Jde o výchozí rozhodnutí provést, protože kolekce schématu nelze načíst v deklaraci atributu a odkazující na umístění další konfiguraci (například do nastavení aplikace) v tomto atributu znamená vytvoření konfigurace element, který není konzistentní se zbytkem konfiguraci modelu služby. Proto se toto chování lze přidat pouze imperativně prostřednictvím kódu a konfigurace rozšíření modelu služby.  
   
-## <a name="adding-the-message-inspector-through-configuration"></a>Přidání Inspector zprávy prostřednictvím konfigurace  
- Konfigurace vlastní chování pro koncový bod v konfiguračním souboru aplikace, modelu služby vyžaduje implementátory pro vytvoření konfigurace *elementu rozšíření* reprezentována třídy odvozené od <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>. Toto rozšíření musí pak přidá do modelu služby konfigurační oddíl pro rozšíření, jak je uvedeno pro následující rozšíření popsaných v této části.  
+## <a name="adding-the-message-inspector-through-configuration"></a>Přidání zprávy inspektoru prostřednictvím konfigurace  
+ Konfigurace vlastního chování pro koncový bod v konfiguračním souboru aplikace, model služby vyžaduje implementátory pro vytvoření konfigurace *element rozšíření* reprezentovaný třídou odvozenou z <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>. Toto rozšíření musí pak přidá do modelu služby konfiguračního oddílu pro rozšíření, jak je ukázáno pro následující rozšíření popsaných v této části.  
   
 ```xml  
 <system.serviceModel>  
@@ -272,9 +273,9 @@ public class SchemaValidationBehavior : IEndpointBehavior
 </system.serviceModel>  
 ```  
   
- Rozšíření mohou být přidány, v aplikaci nebo konfigurační soubor technologie ASP.NET, což je nejběžnější volbou, nebo v konfiguračním souboru počítače.  
+ Rozšíření můžete přidat v aplikaci nebo v konfiguračním souboru ASP.NET, což je nejběžnější možnost, nebo v konfiguračním souboru počítače.  
   
- Když rozšíření se přidá do konfigurace oboru, chování lze přidat do konfigurace chování znázorněné v následujícím kódu. Konfigurace chování jsou opakovaně použitelné prvky, které lze použít pro několik koncových bodů podle potřeby. Protože konkrétní chování být nakonfigurované zde implementuje <xref:System.ServiceModel.Description.IEndpointBehavior>, je platný pouze v příslušných konfiguračního oddílu v konfiguračním souboru.  
+ Při přidání rozšíření do konfigurace oboru, chování lze přidat do konfigurace chování, jak je znázorněno v následujícím kódu. Konfigurace chování jsou opakovaně použitelné prvky, které můžete použít pro více koncových bodů podle potřeby. Vzhledem k tomu, že konkrétní chování být nakonfigurované zde implementuje <xref:System.ServiceModel.Description.IEndpointBehavior>, je platný jenom v příslušných konfiguračním oddílu v konfiguračním souboru.  
   
 ```xml  
 <system.serviceModel>  
@@ -294,9 +295,9 @@ public class SchemaValidationBehavior : IEndpointBehavior
 </system.serviceModel>  
 ```  
   
- `<schemaValidator>` Element, který nakonfiguruje zpráva inspector je zálohovaný díky `SchemaValidationBehaviorExtensionElement` třídy. Třída zpřístupní dvě Boolean veřejné vlastnosti s názvem `ValidateRequest` a `ValidateReply`. Obě tyto jsou označené <xref:System.Configuration.ConfigurationPropertyAttribute>. Tento atribut se považuje za propojení mezi vlastnosti kódu a atributy XML, které můžete zobrazit na předchozí elementu XML konfigurace. Třída také obsahuje vlastnost `Schemas` , kromě označena <xref:System.Configuration.ConfigurationCollectionAttribute> a je typu `SchemaCollection`, což je také součástí této ukázky ale vynechání z tohoto dokumentu jako stručný výtah. Tato vlastnost spolu s kolekce a třída prvku kolekce `SchemaConfigElement` zálohuje `<schemas>` element v předchozím fragmentu kódu konfigurace a umožňuje přidání kolekci schémat sady ověření.  
+ `<schemaValidator>` Element, který konfiguruje inspektor zpráva tímto modulem stojí `SchemaValidationBehaviorExtensionElement` třídy. Třída poskytuje dvě logické veřejné vlastnosti s názvem `ValidateRequest` a `ValidateReply`. Obě tyto jsou označené <xref:System.Configuration.ConfigurationPropertyAttribute>. Tento atribut se považuje za propojení mezi vlastností kódu a atributů XML, které můžete zobrazit na předchozí prvek XML konfigurace. Třída také obsahuje vlastnost `Schemas` , který je také označena <xref:System.Configuration.ConfigurationCollectionAttribute> a je typu `SchemaCollection`, což je také součástí této ukázce, ale není uveden v tomto dokumentu pro zkrácení. Tato vlastnost spolu s kolekci a třída prvku kolekce `SchemaConfigElement` zálohuje `<schemas>` element v předchozím fragmentu kódu konfigurace a umožňuje přidání kolekce schémat do sady ověřování.  
   
- Přepsané `CreateBehavior` metoda změní konfigurační data do objektu chování, když modul runtime vyhodnocuje konfigurační data, protože sestavuje klienta nebo koncový bod.  
+ Přepsané `CreateBehavior` metoda spustí konfigurační data do objektu chování při modul runtime vyhodnocuje konfigurační data jako sestavení klienta nebo koncový bod.  
   
 ```  
 public class SchemaValidationBehaviorExtensionElement : BehaviorExtensionElement  
@@ -365,8 +366,8 @@ public bool ValidateRequest
 }  
 ```  
   
-## <a name="adding-message-inspectors-imperatively"></a>Imperativní přidání inspektoři zpráv  
- S výjimkou prostřednictvím atributy (které není podporováno v této ukázce z důvodu citovalo dříve) a konfigurace chování lze velmi snadno přidat do klienta a služby modulu runtime použijte imperativní kódu. V této ukázce se provádí v aplikaci klienta k testování inspector zpráv klienta. `GenericClient` Je třída odvozená z <xref:System.ServiceModel.ClientBase%601>, který zpřístupňuje konfigurace koncového bodu do uživatelského kódu. Klient je implicitně otevřít konfiguraci koncového bodu lze změnit, například přidáním chování, jak je znázorněno v následujícím kódu. Přidání chování služby je z velké části ekvivalentní technika klienta tady uvedené a musí být provedeny před otevření hostitele služby.  
+## <a name="adding-message-inspectors-imperatively"></a>Přidání imperativně inspektoři zpráv  
+ S výjimkou prostřednictvím atributy (které není podporována z důvodu uvedené dříve v této ukázce) a konfigurace, chování lze snadno přidat do klienta a služby modulu runtime pomocí imperativního kódu. V této ukázce se provádí v klientské aplikaci otestovat inspektoru zprávy klienta. `GenericClient` Je třída odvozena z <xref:System.ServiceModel.ClientBase%601>, která zveřejní konfigurace koncového bodu do uživatelského kódu. Předtím, než klient je implicitně otevřen konfigurace koncového bodu můžete změnit, například přidáním chování, jak je znázorněno v následujícím kódu. Přidání chování služby je do značné míry odpovídá techniku klienta je vidět tady a musí být provedena před otevřením hostitele služby.  
   
 ```  
 try  
@@ -395,20 +396,20 @@ catch (Exception e)
 }  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageInspectors`  
   

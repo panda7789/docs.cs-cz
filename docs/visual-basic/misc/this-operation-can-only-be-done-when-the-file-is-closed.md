@@ -3,11 +3,11 @@ title: Tuto operaci lze provést pouze v případě soubor se zavřel.
 ms.date: 07/20/2015
 ms.assetid: 79fe95ae-4aff-469f-beda-d5a85c91d421
 ms.openlocfilehash: 0a7f6afc7f9ecb232e24d5536d2274db57d1d820
-ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43331925"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43397569"
 ---
 # <a name="this-operation-can-only-be-done-when-the-file-is-closed"></a>Tuto operaci lze provést pouze v případě soubor se zavřel.
 Při otevření souboru má byl proveden pokus o provedení operace, které lze provést pouze při zavření souboru.  

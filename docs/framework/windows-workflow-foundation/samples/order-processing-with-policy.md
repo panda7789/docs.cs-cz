@@ -1,78 +1,78 @@
 ---
-title: Pořadí zpracování pomocí zásad
+title: Zpracování objednávky pomocí zásad
 ms.date: 03/30/2017
 ms.assetid: 66833724-dc36-4fad-86b0-59ffeaa3ba6a
-ms.openlocfilehash: 15e274a7a513a3208e3a54575dc354310743b731
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b927d8e7090f96b22c0510f9651070ab999c91be
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33519415"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43398367"
 ---
-# <a name="order-processing-with-policy"></a>Pořadí zpracování pomocí zásad
-Příklad pořadí zpracování zásad ukazuje některé klíčové funkce byla zavedená v [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] Windows Workflow Foundation (WF). Následující funkce jsou nové pro modul pravidla pracovního postupu:  
+# <a name="order-processing-with-policy"></a>Zpracování objednávky pomocí zásad
+Pořadí zpracování zásad příklad ukazuje některé klíčové funkce [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] Windows Workflow Foundation (WF). Následující funkce jsou nové pro stroj pravidel pracovního postupu:  
   
 -   Podpora pro přetížení operátoru.  
   
--   Podpora pro `new` operátor, což umožňuje uživatelům vytvářet nové objekty a pole z pravidel WF.  
+-   Podpora `new` operátor umožňuje uživatelům vytvářet nové objekty a pole z pracovního postupu pravidla.  
   
--   Podpora pro rozšíření metod, jak se uživateli při volání metody rozšíření z pravidel WF kompatibilní s kódování styly C#.  
-  
-> [!NOTE]
->  Tato ukázka vyžaduje, aby [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] je nainstalovaná pro sestavení a spuštění. [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] je potřeba otevřít soubory projektu a řešení.  
-  
- Ukázka ukazuje `OrderProcessingPolicy` projektu v pořadí zákazníka, které se skládá z číslovaný seznam dostupné položky a PSČ, je zadána. Pořadí je úspěšně zpracovat, pokud jsou obě položky správné; jinak zásady vytvoří objekty chyby, využívá přetížené `+` operátor a metoda předdefinované rozšíření informovat uživatele chyby.  
+-   Podpora pro rozšiřující metody uživatelského prostředí ve volání metody rozšíření z pravidla WF kompatibilní s stylů kódování C#.  
   
 > [!NOTE]
->  Další informace o metodách rozšíření najdete v tématu [C# verze 3.0 specifikace](http://go.microsoft.com/fwlink/?LinkId=95402).  
+>  Tato ukázka vyžaduje, aby [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] je nainstalovaná sestavení a spuštění. [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] je potřeba otevřít soubory projektu a řešení.  
   
- Ukázka se skládá z následujících projektech:  
+ Ukázce `OrderProcessingPolicy` objednávku zákazníka, který se skládá z číslovaný seznam dostupných položek a PSČ, je zadaný projekt. Pořadí je úspěšně zpracovat, pokud obě položky jsou správná. jinak zásady vytvoří objekty chyba, využitím přetížený `+` operátor a předdefinované rozšiřující metoda uživatel informován o chybách.  
+  
+> [!NOTE]
+>  Další informace o metodách rozšíření naleznete v tématu [3.0 specifikace verze jazyka C#](https://go.microsoft.com/fwlink/?LinkId=95402).  
+  
+ Ukázka se skládá z následující projekty:  
   
 -   `OrderErrorLibrary`  
   
-     `OrderErrorLibrary` Třída knihovnu, která definuje `OrderError` a `OrderErrorCollection` třídy. `OrderError` Instance se vytvoří, když je zadaný neplatný vstup. Knihovna také poskytuje metody rozšíření na `OrderErrorCollection` třídu, která výstupy `ErrorText` vlastnost na všech `OrderError` objekty v `OrderErrorCollection`.  
+     `OrderErrorLibrary` Je knihovny tříd, který definuje `OrderError` a `OrderErrorCollection` třídy. `OrderError` Je vytvořena instance, pokud je zadán neplatný vstup. Knihovna také poskytuje metodu rozšíření na `OrderErrorCollection` třídy, jejichž výstupem jsou `ErrorText` vlastnost na všech `OrderError` objekty v `OrderErrorCollection`.  
   
 -   `OrderProcessingPolicy`  
   
-     `OrderProcessingPolicy` Projekt je konzolová aplikace pracovního postupu, která definuje jeden `PolicyFromFile` aktivity. Aktivita má následující pravidla:  
+     `OrderProcessingPolicy` Projekt je konzolová aplikace pracovního postupu, který definuje jedinou `PolicyFromFile` aktivity. Aktivita má následující pravidla:  
   
     -   `invalidItemNum`  
   
-         Toto pravidlo ověří, zda číslo položky je mezi 1 a 6 (včetně). Pokud je číslo položky v platném rozsahu, pravidlo se nic nestane. (jiné než tisk do konzoly). Pokud není číslo mezi 1 a 6, `invalidItemNum` pravidlo provede následující akce:  
+         Toto pravidlo ověří, že je číslo mezi 1 a 6, včetně. Pokud je položka číslo v platném rozsahu, pravidlo nemá žádný účinek, (jiné než tisk do konzoly). Pokud není položka číslo mezi 1 a 6, `invalidItemNum` pravidlo provede následující:  
   
-        1.  Vytvoří novou `OrderError` objektu předání číslo zadali a nastaví `ErrorText` a `CustomerName` vlastnosti objektu.  
+        1.  Vytvoří novou `OrderError` objektu, předají se jí číslo zadali a nastaví `ErrorText` a `CustomerName` vlastnosti objektu.  
   
         2.  Vytvoří `invalidItemNumErrorCollection` objektu.  
   
         3.  Přidá nově vytvořené `OrderError` instance na `invalidItemNumErrorCollection`.  
   
-         Tento příklad ukazuje, podpora `new` operátor, pomocí kterého můžete vytvořit instanci objekty uvnitř pravidla.  
+         Tento příklad ukazuje podporu `new` operátoru, pomocí kterého můžete vytvořit instanci objektů uvnitř pravidla.  
   
     -   `invalidZip`  
   
-         Toto pravidlo ověří, zda kód zip 5 číslic a je v rozsahu 600 k 99998. Pokud je kód zip v platném rozsahu, pravidlo se nic nestane. (jiné než tisk do konzoly). Pokud délka zadané PSČ je menší než 5 nebo kód zip není mezi 00600 a 99998, `invalidZip` pravidlo provede následující akce:  
+         Toto pravidlo ověří, že má 5 číslic PSČ a je v rozsahu 600 k 99998. Pokud je kód zip v platném rozsahu, pravidlo nemá žádný účinek, (jiné než tisk do konzoly). Pokud aplikace PSČ je menší než 5 nebo PSČ není mezi 00600 a 99998, `invalidZip` pravidlo provede následující:  
   
-        1.  Vytvoří `OrderError` objektu předání PSČ zadán a nastaví `ErrorText` a `CustomerName` vlastnosti objektu.  
+        1.  Vytvoří `OrderError` objektu, předají se jí zadán, PSČ a nastaví `ErrorText` a `CustomerName` vlastnosti objektu.  
   
         2.  Vytvoří `invalidZipCodeErrorCollection` objektu.  
   
-        3.  Přidá nově vytvořené `OrderError` instance nově vytvořené `invalidZipCodeErrorCollection`.  
+        3.  Přidá nově vytvořené `OrderError` instance do nově vytvořené `invalidZipCodeErrorCollection`.  
   
-         Toto pravidlo znovu ukazuje podpora `new` operátor, který slouží k vytváření instancí objektů uvnitř pravidla.  
+         Toto pravidlo znovu ukazuje podporu `new` operátor, který umožňuje vytvořit instanci objektů uvnitř pravidla.  
   
     -   `displayErrors`  
   
-         Toto pravidlo zkontroluje, pokud došlo k chybám žádné přidal předchozí dvě pravidla ve dvou `OrderErrorCollection` objekty `invalidItemNumErrorCollection` a `invalidIZipCodeErrorCollection`. Pokud došlo k chybám (buď `invalidItemNumErrorCollection` nebo `invalidZipCodeErrorCollection` není `null`), pravidlo provede následující akce:  
+         Toto pravidlo zkontroluje, pokud byly nějaké chyby přidal předchozí dvě pravidla ve dvou `OrderErrorCollection` objekty `invalidItemNumErrorCollection` a `invalidIZipCodeErrorCollection`. Pokud došlo k chybám (buď `invalidItemNumErrorCollection` nebo `invalidZipCodeErrorCollection` není `null`), pravidla provede následující akce:  
   
-        1.  Volání přetížené `+` operátor a zkopírujte obsah `invalidItemNumErrorCollection` a `invalidZipCodeErrorCollection` k `invalidOrdersCollection``OrderErrorCollection` instance.  
+        1.  Volání přetížené `+` operátor zkopírujte obsah `invalidItemNumErrorCollection` a `invalidZipCodeErrorCollection` do `invalidOrdersCollection``OrderErrorCollection` instance.  
   
-        2.  Volání `PrintOrderErrors` rozšiřující metody na `invalidOrdersCollection` a výstupy `ErrorText` vlastnost na všech `orderError` objekty v `invalidOrdersCollection`.  
+        2.  Volání `PrintOrderErrors` rozšiřující metody na `invalidOrdersCollection` a vypíše `ErrorText` vlastnost na všech `orderError` objekty v `invalidOrdersCollection`.  
   
- Přetížené operátor `+` na `OrderErrorCollection` je definována v `OrderErrorCollection` třídy v `OrderErrorLibrary` projektu. Dva trvá `OrderErrorCollection` objekty a sloučí je do jedné `OrderErrorCollection` objektu.  
+ Přetížený operátor `+` na `OrderErrorCollection` je definována v `OrderErrorCollection` třídy v `OrderErrorLibrary` projektu. Má dva `OrderErrorCollection` objekty a kombinuje je do jedné `OrderErrorCollection` objektu.  
   
- `PrintOrderErrors` Metoda rozšíření je také definován ve `OrderErrorLibrary` projektu. Rozšiřující metody jsou nová C# funkce, která vývojářům umožňuje přidat nové metody do veřejného kontraktu existujícího typu CLR, aniž by museli odvození třídy z něj nebo znovu zkompiluje původní typ.  
+ `PrintOrderErrors` – Metoda rozšíření je také definováno v `OrderErrorLibrary` projektu. Rozšiřující metody jsou novou C# funkci, která vývojářům umožňuje přidat nové metody do veřejného kontraktu existujícího typu CLR, aniž byste museli odvodit třídu z něj nebo znovu zkompilovat původního typu.  
   
- Při spuštěním ukázky budete vyzváni k zadání názvu, číslo položky je možné zakoupit a kód zip. Tyto informace pak ověří pravidla definovaná v aktivity zásad. Zde je ukázkový výstup z programu.  
+ Při spuštění ukázky budete vyzváni k zadání názvu, číslo položky položky, která se dá zakoupit a PSČ. Tyto informace potom ověřují z pravidel definovaných v rámci aktivity zásad. Tady je ukázkový výstup z programu.  
   
 ```  
 Please enter your name: John  
@@ -125,21 +125,21 @@ Workflow Completed
 Another Order? (Y/N): n  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Otevřete soubor projektu OrderProcessingPolicy.sln v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Existují dva různé projekty v řešení: `OrderErrorLibrary` a `OrderProcessingPolicy`. `OrderProcessingPolicy` Projektu používá třídy a metody definované v `OrderErrorLibrary`.  
+2.  Existují dva různé projekty v řešení: `OrderErrorLibrary` a `OrderProcessingPolicy`. `OrderProcessingPolicy` Projekt používá třídy a metody definované v `OrderErrorLibrary`.  
   
-3.  Všechny projekty sestavení.  
+3.  Sestavte všechny projekty.  
   
 4.  Klikněte na tlačítko **spustit**.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí):  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí):  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři:  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři:  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Rules\Policy\OrderProcessingPolicy`

@@ -10,12 +10,12 @@ api_type:
 ms.assetid: d468325a-21c5-43ce-8567-84e342b22308
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b110adac8c1ae68a3918a9e0fdf3f3eb4d017f0f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fd77a8a81718837d55f3018564d0f4ba8fdc95ee
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33406205"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43390770"
 ---
 # <a name="certtimestampauthenticodelicense-function"></a>Funkce CertTimestampAuthenticodeLicense
 Časová razítka na Authenticode XrML licence.  
@@ -32,19 +32,19 @@ HRESULT CertTimestampAuthenticodeLicense (
   
 #### <a name="parameters"></a>Parametry  
  `pSignedLicenseBlob`  
- [v] Podepsaný licence Authenticode XrML být časovým razítkem. Najdete v článku [CRYPTOAPI_BLOB](http://msdn.microsoft.com/library/windows/desktop/aa380238.aspx) struktury.  
+ [in] Podepsané Authenticode XrML licenci, která má být opatřená časovým razítkem. Zobrazit [CRYPTOAPI_BLOB](/windows/desktop/api/dpapi/ns-dpapi-_cryptoapi_blob) struktury.  
   
  `pwszTimestampURI`  
- [v] Identifikátor URI serveru časového razítka.  
+ [in] Identifikátor URI serveru časového razítka.  
   
  `pTimestampSignatureBlob`  
- [out] Ukazatel na CRYPT_DATA_BLOB přijímat časové razítko podpis kódováním base64. Je zodpovědností volajícího k bezplatným `pTimestampSignatureBlob` -> `pbData` s `HepFree()` po použití. Najdete v článku [CRYPTOAPI_BLOB](http://msdn.microsoft.com/library/windows/desktop/aa380238.aspx) struktury.  
+ [out] Ukazatel na CRYPT_DATA_BLOB přijímat časové razítko podpis s kódováním base64. Je odpovědností volajícího uvolnit `pTimestampSignatureBlob` -> `pbData` s `HepFree()` po použití. Zobrazit [CRYPTOAPI_BLOB](/windows/desktop/api/dpapi/ns-dpapi-_cryptoapi_blob) struktury.  
   
 ## <a name="remarks"></a>Poznámky  
- Podpis časové razítko je ve skutečnosti PKCS #7 SignedData zpráva, jejíž obsah je binární formu SignatureValue z podpisu s licencí. V podstatě to funguje jako kontrolní podpis licence.  
+ Podpis časového razítka je ve skutečnosti zprávu PKCS #7 SignedData jehož obsah je binární forma SignatureValue z podpisu licence. V podstatě slouží jako protipodpisu licence.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud funkci se zdaří. Jinak vrátí kód chyby.  
+ `S_OK` Pokud je funkce úspěšná. V opačném případě vrátí kód chyby.  
   
 ## <a name="see-also"></a>Viz také  
  [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)

@@ -13,21 +13,21 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 5b56e2aa-dc05-444f-930c-2d7b23f9ad5b
-ms.openlocfilehash: 7a2ce452a1e55d0b01245c4eb7f43056031b9e2b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 94abd36affdccec1d01c030fcff4c6de93ca6c72
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33533910"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43395378"
 ---
 # <a name="how-to-run-an-operation-in-the-background"></a>Postupy: Spuštění operace na pozadí
-Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete způsobit zpoždění v uživatelském rozhraní, můžete použít <xref:System.ComponentModel.BackgroundWorker> třídy spusťte operaci na jiné vlákno.  
+Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete způsobit prodlevy v uživatelském rozhraní, můžete použít <xref:System.ComponentModel.BackgroundWorker> má třída spustit operaci v jiném vlákně.  
   
- Následující příklad kódu ukazuje, jak spustit časově náročná operace na pozadí. Formulář má **spustit** a **zrušit** tlačítka. Klikněte **spustit** tlačítko Spustit asynchronní operace. Klikněte **zrušit** tlačítko zastavení spuštění asynchronní operaci. Výsledek každé operace se zobrazí v <xref:System.Windows.Forms.MessageBox>.  
+ Následující příklad kódu ukazuje, jak spustit časově náročná operace na pozadí. Formulář obsahuje **Start** a **zrušit** tlačítka. Klikněte na tlačítko **Start** tlačítko Spustit asynchronní operace. Klikněte na tlačítko **zrušit** tlačítko Zastavit spuštěné asynchronní operaci. Se zobrazí výsledek každé operace <xref:System.Windows.Forms.MessageBox>.  
   
- Rozsáhlá podpora pro tuto úlohu v sadě Visual Studio není k dispozici.  
+ Není k dispozici rozsáhlou podporu pro tuto úlohu v sadě Visual Studio.  
   
- Viz také [návod: spuštění operace na pozadí](http://msdn.microsoft.com/library/ms233672\(v=vs.110\)).  
+ Viz také [názorný postup: spuštění operace na pozadí](walkthrough-running-an-operation-in-the-background.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.ComponentModel.BackgroundWorker.Example#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker.Example/CS/Form1.cs#1)]
@@ -36,9 +36,9 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na systém, System.Drawing a System.Windows.Forms sestavení.  
+-   Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
   
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic a Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [vytváření pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit zadáním nebo vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ComponentModel.BackgroundWorker>  

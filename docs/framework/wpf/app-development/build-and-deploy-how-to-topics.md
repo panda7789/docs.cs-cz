@@ -7,12 +7,12 @@ helpviewer_keywords:
 - WPF application [WPF], building
 - WPF application [WPF], deploying
 ms.assetid: 88952ad2-5b74-48ca-a4c5-3f4fbb53ce12
-ms.openlocfilehash: a3d1c01b10c1a356a3d9075ec2f3d1680c94d975
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bed7484f7ff487d1ff34ef1ff1e86bc8689a2cfc
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33548335"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43389289"
 ---
 # <a name="build-and-deploy-how-to-topics"></a>Postupy: Témata sestavení a nasazení
 Následující témata ukazují, jak vytvořit soubory projektu pro různé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typy aplikací.  
@@ -30,6 +30,6 @@ Následující témata ukazují, jak vytvořit soubory projektu pro různé [!IN
   
  [Nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)  
   
- [Postupy: vytvoření nového projektu aplikace WPF](http://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82)  
+ [Postupy: vytvoření nového projektu aplikace WPF](https://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82)  
   
- [Postupy: vytvoření nového projektu aplikace prohlížeče WPF](http://msdn.microsoft.com/library/72ef4d90-e163-42a1-8df0-ea7ccfd1901f)
+ [Postupy: vytvoření nového projektu aplikace prohlížeče WPF](https://msdn.microsoft.com/library/72ef4d90-e163-42a1-8df0-ea7ccfd1901f)

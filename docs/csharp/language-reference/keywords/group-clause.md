@@ -9,11 +9,11 @@ helpviewer_keywords:
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
 ms.openlocfilehash: 157bd07f3332883f010ef26ba920dae88276051b
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43003226"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43393796"
 ---
 # <a name="group-clause-c-reference"></a>group – klauzule (Referenční dokumentace jazyka C#)
 

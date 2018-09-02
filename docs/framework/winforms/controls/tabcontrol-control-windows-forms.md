@@ -10,41 +10,41 @@ helpviewer_keywords:
 - property pages [Windows Forms], creating
 - tab dialog boxes
 ms.assetid: 915091af-93ac-4d3d-8283-738dd2d21ea7
-ms.openlocfilehash: 91a9930a3678e08fc0e46335f1eb95330bd171a8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 75f0fc416ad29137c119b571acd658a7e56fc009
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33536758"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43384951"
 ---
 # <a name="tabcontrol-control-windows-forms"></a>TabControl – ovládací prvek (Windows Forms)
-Windows Forms `TabControl` zobrazí několik karet, jako je rozdělení Poznámkový blok nebo popisků v sadě složek v souboru CAB podání. Karty může obsahovat obrázky a jiných ovládacích prvků. Použití `TabControl` k vytvoření stránky vlastností.  
+Windows Forms `TabControl` zobrazí několik karet, stejně jako oddělovače v poznámkovém bloku nebo popisky v sadě složek v souboru CAB podání. Karty mohou obsahovat obrázky a další ovládací prvky. Použití `TabControl` k vytvoření stránky vlastností.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku TabControl](../../../../docs/framework/winforms/controls/tabcontrol-control-overview-windows-forms.md)  
  Vysvětluje, co je tento ovládací prvek a jeho klíčové funkce a vlastnosti.  
   
  [Postupy: Přidání ovládacího prvku na kartu](../../../../docs/framework/winforms/controls/how-to-add-a-control-to-a-tab-page.md)  
- Poskytuje pokyny pro zobrazení ovládacích prvků na kartě stránkách.  
+ Poskytuje pokyny pro zobrazení ovládacích prvků na kartách.  
   
  [Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl](../../../../docs/framework/winforms/controls/how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)  
  Poskytuje pokyny pro přidávání a odebírání karet v Návrháři nebo v kódu.  
   
  [Postupy: Změna vzhledu Windows Forms TabControl](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)  
- Poskytuje pokyny pro úpravu vlastností, které ovlivňují vzhled jednotlivé karty.  
+ Poskytuje pokyny pro nastavení vlastnosti, které mají vliv na vzhled jednotlivé karty.  
   
  [Postupy: Zákaz karet](../../../../docs/framework/winforms/controls/how-to-disable-tab-pages.md)  
- Vysvětluje, jak omezit přístup do stránky karty, případně založená na přihlašovací údaje uživatele.  
+ Vysvětluje, jak omezit přístup na stránku záložky, může být založené na přihlašovacích údajů uživatele.  
   
- Viz také [postupy: Přidání a odebrání karty s Windows Forms TabControl pomocí návrháře](http://msdn.microsoft.com/library/ms233654\(v=vs.110\)), [postupy: Přidání ovládacího prvku na kartě stránky pomocí návrháře](http://msdn.microsoft.com/library/ms233668\(v=vs.110\))  
+ Také naleznete v tématu [postupy: Přidání a odebrání karty pomocí Windows Forms TabControl pomocí návrháře](add-and-remove-tabs-with-wf-tabcontrol-using-the-designer.md), [postupy: Přidání ovládacího prvku na kartu stránky pomocí návrháře](how-to-add-a-control-to-a-tab-page-using-the-designer.md)  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.TabControl> – Třída  
+ <xref:System.Windows.Forms.TabControl> Třída  
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Dialogová okna ve Windows Forms](../../../../docs/framework/winforms/dialog-boxes-in-windows-forms.md)  
- Poskytuje seznam úloh pro dialogová okna, které často zobrazení karet.  
+ Obsahuje seznam úloh pro dialogová okna, které často zobrazení karet.  
   
  [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.
+ Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.

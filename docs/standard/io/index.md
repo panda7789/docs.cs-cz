@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7aacb6ca64a8b45a9b54b3f9d8785c7c61a07e09
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: a0ffef95c8f9a187d5dac6902462d9747023384d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43254309"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43394331"
 ---
 # <a name="file-and-stream-io"></a>I/O souborů a proudů
 Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložného média nebo na něj. V rozhraní .NET Framework `System.IO` obory názvů obsahují typy, které umožňují čtení a zápis, synchronně i asynchronně, na soubory a datovými proudy. Tyto obory názvů obsahují také typy provádějící kompresi a dekompresi souborů a typy umožňující komunikaci pomocí kanálů a sériových portů.  
@@ -137,13 +137,13 @@ Cesta konvence pojmenování a způsoby, jak vyjádřit cestu k souboru pro syst
   
  Některé důležité rozdíly při používání vstupně-výstupních operací v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace:  
   
--   Typy výslovně související s operacemi se soubory, jako například <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> a <xref:System.IO.DirectoryInfo>, nejsou součástí [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Místo toho použít typy v [Windows.Storage](http://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) obor názvů [!INCLUDE[wrt](../../../includes/wrt-md.md)], jako například [StorageFile](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.aspx) a [StorageFolder](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx).  
+-   Typy výslovně související s operacemi se soubory, jako například <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> a <xref:System.IO.DirectoryInfo>, nejsou součástí [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Místo toho použít typy v [Windows.Storage](https://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) obor názvů [!INCLUDE[wrt](../../../includes/wrt-md.md)], jako například [StorageFile](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.aspx) a [StorageFolder](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx).  
   
 -   Izolované úložiště není k dispozici. Místo toho použijte [data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)).  
   
 -   Použití asynchronních metod, jako například <xref:System.IO.Stream.ReadAsync%2A> a <xref:System.IO.Stream.WriteAsync%2A>, chcete-li zabránit zablokování vlákna uživatelského rozhraní.  
   
--   Na základě cest kompresní typy <xref:System.IO.Compression.ZipFile> a <xref:System.IO.Compression.ZipFileExtensions> nejsou k dispozici. Místo toho použít typy v [Windows.Storage.Compression](http://msdn.microsoft.com/library/windows/apps/windows.storage.compression.aspx) oboru názvů.  
+-   Na základě cest kompresní typy <xref:System.IO.Compression.ZipFile> a <xref:System.IO.Compression.ZipFileExtensions> nejsou k dispozici. Místo toho použít typy v [Windows.Storage.Compression](https://msdn.microsoft.com/library/windows/apps/windows.storage.compression.aspx) oboru názvů.  
   
  V případě potřeby je možné převádět mezi proudy rozhraní .NET Framework a proudy Windows Runtime. Další informace najdete v tématu [postupy: převod mezi streamy rozhraní .NET Framework a datovými proudy Windows Runtime](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md) nebo [System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx). <!--zz TODO: <xref:System.IO.WindowsRuntimeStreamExtensions>--> 
   

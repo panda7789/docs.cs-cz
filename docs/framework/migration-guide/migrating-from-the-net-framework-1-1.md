@@ -7,20 +7,20 @@ helpviewer_keywords:
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bc181d0aecd6a0c7c0800544ea00a818573c954c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dc3c611cf043538e7f069cc1634bd5be5e70dfab
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33393813"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43392273"
 ---
 # <a name="migrating-from-the-net-framework-11"></a>Migrace z rozhraní .NET Framework 1.1
-[!INCLUDE[win7](../../../includes/win7-md.md)] a novějších verzích operačního systému Windows nepodporuje [!INCLUDE[net_v11_long](../../../includes/net-v11-long-md.md)]. V důsledku toho aplikace cílené [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] nespustí bez úprav na [!INCLUDE[win7](../../../includes/win7-md.md)] nebo novější verze operačního systému. Toto téma popisuje kroky potřebné ke spuštění aplikace s cílem [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] pod [!INCLUDE[win7](../../../includes/win7-md.md)] a novějších verzích operačního systému Windows. Další informace o [!INCLUDE[net_v11_long](../../../includes/net-v11-long-md.md)] a [!INCLUDE[win8](../../../includes/win8-md.md)], najdete v části [spuštění rozhraní .NET Framework 1.1 aplikace ve Windows 8 a novějších verzích](../../../docs/framework/install/run-net-framework-1-1-apps.md).  
+[!INCLUDE[win7](../../../includes/win7-md.md)] a novějších verzích operačního systému Windows nepodporuje [!INCLUDE[net_v11_long](../../../includes/net-v11-long-md.md)]. V důsledku toho se aplikace, jejichž cílem [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] nebudou spuštěny bez úprav na [!INCLUDE[win7](../../../includes/win7-md.md)] nebo novější verze operačního systému. Toto téma popisuje kroky potřebné ke spuštění aplikace, který cílí [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] pod [!INCLUDE[win7](../../../includes/win7-md.md)] a novějšími verzemi operačního systému Windows. Další informace o [!INCLUDE[net_v11_long](../../../includes/net-v11-long-md.md)] a [!INCLUDE[win8](../../../includes/win8-md.md)], naleznete v tématu [spouštění aplikací .NET Framework v systému Windows 8 a novější verze 1.1](../../../docs/framework/install/run-net-framework-1-1-apps.md).  
   
-## <a name="retargeting-or-recompiling"></a>Změna orientace nebo nutnosti rekompilace  
- Existují dva způsoby, jak získat aplikace, který byl kompilován s použitím [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] ke spuštění na [!INCLUDE[win7](../../../includes/win7-md.md)] nebo novějšího operačního systému Windows:  
+## <a name="retargeting-or-recompiling"></a>Přeorientovat nebo rekompilovat  
+ Existují dva způsoby, jak získat aplikace, která se zkompilovala pomocí [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] ke spuštění na [!INCLUDE[win7](../../../includes/win7-md.md)] nebo novějším operačním systémem Windows:  
   
--   Můžete změnit cíl aplikací pro spuštění pod [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Změna orientace vyžaduje, abyste přidali [ \<supportedRuntime >](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) element do konfiguračního souboru aplikace, která povolí jeho spuštění v rámci [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Konfigurační soubor má následující podobu:  
+-   Můžete změnit cíl aplikace pro spuštění v rámci [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Mění se cílení vyžaduje, abyste přidali [ \<supportedRuntime >](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) prvku do konfiguračního souboru aplikace, která povolí jeho spuštění v rámci [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Konfigurační soubor získá následující tvar:  
   
     ```xml  
     <configuration>   
@@ -30,18 +30,18 @@ ms.locfileid: "33393813"
     </configuration>  
     ```  
   
--   Můžete znovu zkompiluje aplikace s kompilátoru, která je cílena [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Pokud jste použili k vývoji a kompilaci řešení Visual Studio 2003, můžete otevřít řešení v [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] a použít **projektu kompatibility** dialogové okno Převést z formátů používaných soubory řešení a projektu Visual Studio 2003 k Microsoft Build Engine (MSBuild) formát používaný [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)].  
+-   Můžete znovu zkompilovat aplikaci s kompilátorem, který se zaměřuje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Pokud jste původně použili Visual Studio 2003 k vývoji a kompilaci vašeho řešení, můžete otevřít řešení v [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] a použít **kompatibilita projektu** dialogové okno k převodu souborů řešení a projektu z formátů používaných sadou Visual Studio 2003 do formátu Microsoft Build Engine (MSBuild) používá [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)].  
   
- Bez ohledu na to, jestli chcete znovu zkompiluje nebo změnu cílové aplikace musíte určit, jestli vaše aplikace je ovlivňován změny zavedené v novějších verzích rozhraní .NET Framework. Tyto změny jsou dvou typů:  
+ Bez ohledu na to, zda upřednostňujete rekompilaci nebo změnu cílové aplikace musíte určit, jestli bude vaše aplikace ovlivněna změnami zavedenými v novějších verzích rozhraní .NET Framework. Tyto změny jsou dvou typů:  
   
--   Nejnovější změny, které došlo mezi [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] a novějších verzích rozhraní .NET Framework.  
+-   Rozbíjející změny, ke kterým došlo mezi [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] a novějších verzích rozhraní .NET Framework.  
   
--   Typy a členy typu, které byly označeny jako zastaralé nebo zastaralé mezi [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] a novějších verzích rozhraní .NET Framework.  
+-   Typy a členy typů, které jsou označené jako zastaralé nebo zastaralé mezi [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] a novějších verzích rozhraní .NET Framework.  
   
- Ať už změnu cílové aplikace nebo znovu zkompiluje ho, měli byste prostudovat nejnovější změny a zastaralé typy a členy pro každou verzi rozhraní .NET Framework, která byla vydána po [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)].  
+ Zda změnit cíl aplikace nebo ji znovu zkompilovat, byste měli zkontrolovat nejnovější změny a zastaralé typy a členy pro každou verzi rozhraní .NET Framework, která byla vydána po [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)].  
   
 ## <a name="breaking-changes"></a>Nejnovější změny  
- Když dojde k narušující změně, v závislosti na konkrétní změnu alternativní řešení může být k dispozici pro změnit cíl necílené i aplikace. V některých případech můžete přidat jako podřízený element [ \<runtime >](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) prvek konfiguračního souboru aplikace k obnovení předchozího chování. Například následující konfigurační soubor obnoví řetězec porovnání a řazení chování používány [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] a dá se použít buď s přesměrovanou nebo překompilovanou aplikací.  
+ Když dojde ke změně rozdělení, v závislosti na konkrétní změně může být k dispozici alternativní řešení i pro rekompilované aplikace. V některých případech můžete přidat podřízený element pro [ \<runtime >](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) element konfiguračního souboru aplikace k obnovení předchozího chování. Například následující konfigurační soubor obnovuje řazení a porovnávání chování řetězců používané [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] a může být použit buď s přesměrovanou nebo překompilovanou aplikací.  
   
 ```xml  
 <configuration>  
@@ -51,17 +51,17 @@ ms.locfileid: "33393813"
 </configuration>  
 ```  
   
- V některých případech ale může mít k úpravě zdrojového kódu a znovu zkompiluje vaší aplikace.  
+ Nicméně v některých případech budete muset upravit zdrojový kód a zkompilovat aplikaci znovu.  
   
- Při posoudit dopad možných nejnovějších změn ve vaší aplikaci, musí přečíst seznamy následující změny:  
+ Chcete-li posoudit dopad možných nejnovějších změn na aplikaci, musíte zkontrolovat následující seznamy změn:  
   
--   [Nejnovější změny v rozhraní .NET Framework 2.0](http://go.microsoft.com/fwlink/?LinkId=125263) změny dokumentů v [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] které můžou ovlivnit aplikaci, která je cílena [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)].  
+-   [Rozbíjející změny v rozhraní .NET Framework 2.0](https://go.microsoft.com/fwlink/?LinkId=125263) změny dokumentů v [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] , jež mohou ovlivnit aplikaci zaměřenou [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)].  
   
--   [Změny v rozhraní .NET Framework 3.5 SP1](http://go.microsoft.com/fwlink/?LinkID=186989) dokumenty změny mezi [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] a [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)].  
+-   [Změny v rozhraní .NET Framework 3.5 SP1](https://go.microsoft.com/fwlink/?LinkID=186989) změny dokumentů mezi verzí [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] a [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)].  
   
--   [Rozhraní .NET framework 4 migrace problémy](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md) dokumenty změny mezi [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)] a [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
+-   [Problémy s migrací rozhraní .NET framework 4](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md) změny dokumentů mezi verzí [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)] a [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
   
 ## <a name="obsolete-types-and-members"></a>Zastaralé typy a členy  
- Dopad zastaralé typy a členy se poněkud liší od revidovaných aplikací a aplikace. Použití zastaralé typy a členy neovlivní přesměrovanou aplikaci, pokud zastaralý typ nebo člen fyzicky odebrala se z jeho sestavení. Nutnosti rekompilace aplikaci, která používá zastaralé typy nebo členy obvykle vytváří kompilátor varování místo chybě kompilátoru. V některých případech ale vyvolá chybu kompilátoru a kód, který používá zastaralý typ nebo člen nekompiluje úspěšně. V takovém případě musí přepsat zdrojový kód, který volá zastaralé typ nebo člen předtím, než můžete znovu zkompiluje vaší aplikace. Další informace o zastaralé typy a členy najdete v tématu [co je zastaralé v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md).  
+ Dopad zastaralých typů a členů se poněkud liší od revidovaných aplikací a rekompilovaných aplikací. Použití zastaralých typů a členů neovlivní přesměrovanou aplikaci, pokud zastaralý typ nebo člen nebyl fyzicky odebrán z příslušného sestavení. Opětovnou kompilací aplikace, která používá zastaralé typy nebo členy, obvykle vytváří kompilátor varování spíše než chybu kompilátoru. V některých případech však dojde k chybě kompilátoru a kód, který používá zastaralý typ nebo člen nebude zkompilován úspěšně. V takovém případě je třeba přepsat zdrojový kód, který vyvolá zastaralý typ nebo člen předtím, než aplikaci znovu zkompilujete. Další informace o zastaralých typů a členů, naleznete v tématu [What's Obsolete in knihovny tříd](../../../docs/framework/whats-new/whats-obsolete.md).  
   
- K posouzení dopad typy a členy, kteří jsou zastaralé od verze [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], najdete v části [co je zastaralé v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md). Zkontrolujte seznam zastaralé typy a člena [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)]a [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].
+ Chcete-li posoudit dopad typů a členů, které již nejsou používání od vydání [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], naleznete v tématu [What's Obsolete in knihovny tříd](../../../docs/framework/whats-new/whats-obsolete.md). Zkontrolujte seznam zastaralých typů a členů pro [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)]a [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].

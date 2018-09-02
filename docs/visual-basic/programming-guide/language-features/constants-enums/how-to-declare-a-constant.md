@@ -24,42 +24,42 @@ helpviewer_keywords:
 - Object data type [Visual Basic], declaring constants
 ms.assetid: f901b4fa-481f-4621-822e-427060577ad1
 ms.openlocfilehash: ce45e4df7f74cd68bde0fb2adba10197a11edb1b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33649734"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43394311"
 ---
 # <a name="how-to-declare-a-constant-visual-basic"></a>Postupy: Deklarace konstanty (Visual Basic)
-Můžete použít `Const` příkaz deklarace konstanty a nastavení jeho hodnoty. Deklarováním konstanta, přiřaďte k hodnotě nějaký výstižný název. Jakmile je deklarovaná konstanta, nelze změnit ani přiřazena nová hodnota.  
+Můžete použít `Const` příkazu deklarace konstanty a nastavení jeho hodnoty. Deklarací konstantu, přiřaďte k hodnotě smysluplný název. Jakmile je deklarována konstanta, nelze změnit ani přiřazena nová hodnota.  
   
- Můžete deklarace konstanty v rámci procedury nebo v části deklarace modulu, třídu nebo strukturu. Třída nebo konstanty na úrovni struktura `Private` ve výchozím nastavení, ale také může být deklarována jako `Public`, `Friend`, `Protected`, nebo `Protected Friend` pro příslušnou úroveň přístupu, kód.  
+ Můžete deklarovat konstanty v rámci procedury nebo v části deklarace modulu, třídy nebo struktury. Třída nebo struktura úroveň konstanty jsou `Private` ve výchozím nastavení, ale může také deklarovány jako `Public`, `Friend`, `Protected`, nebo `Protected Friend` pro odpovídající úroveň přístup ke kódu.  
   
- Konstanty musí mít platný symbolický název (pravidla jsou stejné jako pro vytvoření názvy proměnných) a výrazu složený numeric nebo string konstanty a operátory (ale žádná volání funkce).  
+ Konstanty musí mít platný symbolický název (pravidla jsou stejné jako u vytváření názvy proměnných) a výraz složené číselné nebo řetězcové konstanty a operátory (ale bez volání funkce).  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-declare-a-constant"></a>Chcete-li deklarace konstanty  
+### <a name="to-declare-a-constant"></a>Chcete-li deklarovat konstanty  
   
--   Zápis deklaraci, která zahrnuje specifikátor přístupu, `Const` – klíčové slovo a výraz, jako v následujících příkladech:  
+-   Zápis deklarace, která zahrnuje specifikátor přístupu, `Const` – klíčové slovo a výraz, stejně jako v následujících příkladech:  
   
      [!code-vb[VbEnumsTask#8](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-a-constant_1.vb)]  
   
-     Když [Option Infer –](../../../../visual-basic/language-reference/statements/option-infer-statement.md) je `Off` a [možnost striktní](../../../../visual-basic/language-reference/statements/option-strict-statement.md) je `On`, musí deklarovat konstantu explicitně zadáním datový typ (`Boolean`, `Byte`, `Char`, `DateTime`, `Decimal`, `Double`, `Integer`, `Long`, `Short`, `Single`, nebo `String`).  
+     Když [Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md) je `Off` a [Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) je `On`, musí deklarace konstanty explicitně tak, že zadáte datový typ (`Boolean`, `Byte`, `Char`, `DateTime`, `Decimal`, `Double`, `Integer`, `Long`, `Short`, `Single`, nebo `String`).  
   
-     Když `Option Infer` je `On` nebo `Option Strict` je `Off`, můžou deklarovat konstanta bez zadání datový typ s `As` klauzule. Kompilátor Určuje typ konstanty z typu výraz. Další informace najdete v tématu [literálové datové typy a konstanta](constant-and-literal-data-types.md).  
+     Když `Option Infer` je `On` nebo `Option Strict` je `Off`, je možné deklarovat konstanty bez zadání datový typ s `As` klauzuli. Kompilátor Určuje typ konstanty z typu výrazu. Další informace najdete v tématu [konstanty a literálu datové typy](constant-and-literal-data-types.md).  
   
-### <a name="to-declare-a-constant-that-has-an-explicitly-stated-data-type"></a>Chcete-li deklarovat konstanta, která má explicitně stanovené datový typ.  
+### <a name="to-declare-a-constant-that-has-an-explicitly-stated-data-type"></a>Chcete-li deklarovat konstantu, která je explicitně uvedená datový typ  
   
--   Zápis deklaraci, která zahrnuje `As` – klíčové slovo a explicitního datového typu, jako v následujících příkladech:  
+-   Zápis deklarace, která zahrnuje `As` – klíčové slovo a explicitního datového typu, stejně jako v následujících příkladech:  
   
      [!code-vb[VbEnumsTask#9](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-a-constant_2.vb)]  
   
-     Na jeden řádek, můžou deklarovat více konstanty, i když váš kód je lépe čitelný, pokud je deklarovat pouze jeden konstanta na každý řádek. Pokud je na jednom řádku deklarovat několik konstanty, se musí mít stejnou úroveň přístupu (`Public`, `Private`, `Friend`, `Protected`, nebo `Protected Friend`).  
+     Na jednom řádku, může deklarovat více konstant, i když je váš kód lépe čitelný, je-li deklarovat jenom jednu konstantu na řádek. Je-li deklarovat více konstant na jednom řádku, musí všechny mají stejnou úroveň přístupu (`Public`, `Private`, `Friend`, `Protected`, nebo `Protected Friend`).  
   
-### <a name="to-declare-multiple-constants-on-a-single-line"></a>Deklarovat na jednom řádku více konstant  
+### <a name="to-declare-multiple-constants-on-a-single-line"></a>Chcete-li deklarovat více konstant na jednom řádku  
   
--   Deklarací oddělte čárkou a mezerou, jako v následujícím příkladu:  
+-   Deklarace oddělujte čárkou a mezerou, jako v následujícím příkladu:  
   
     ```  
     Public Const Four As Integer = 4, Five As Integer = 5, Six As Integer = 44  
@@ -68,7 +68,7 @@ Můžete použít `Const` příkaz deklarace konstanty a nastavení jeho hodnoty
 ## <a name="see-also"></a>Viz také  
  [Příkaz Const](../../../../visual-basic/language-reference/statements/const-statement.md)  
  [Datové typy konstanty a literálu](constant-and-literal-data-types.md)  
- [Přehled konstant](constants-overview.md) [postupy: deklarace konstanty](how-to-declare-a-constant.md) [uživatelem definované konstanty](user-defined-constants.md) [datové typy konstanty a literálu](constant-and-literal-data-types.md) [postup: skupiny Souvisejících hodnot konstant](how-to-group-related-constant-values-together.md) [přehled výčtů](enumerations-overview.md) [postupy: deklarace výčtů](how-to-declare-enumerations.md) [postupy: odkazování na člena výčtu](how-to-refer-to-an-enumeration-member.md) [Výčty a kvalifikace názvu](enumerations-and-name-qualification.md) [postupy: iterace výčet](how-to-iterate-through-an-enumeration.md) [postupy: určení řetězce spojeného s hodnotou výčtu](how-to-determine-the-string-associated-with-an-enumeration-value.md) [Kdy použít výčet](when-to-use-an-enumeration.md)
+ [Přehled konstant](constants-overview.md) [postupy: deklarace konstanty](how-to-declare-a-constant.md) [uživatelem definované konstanty](user-defined-constants.md) [datové typy konstanty a literálu](constant-and-literal-data-types.md) [jak: skupina Souvisejících hodnot konstant](how-to-group-related-constant-values-together.md) [přehled výčtů](enumerations-overview.md) [postupy: deklarace výčtů](how-to-declare-enumerations.md) [postupy: odkazování na člena výčtu](how-to-refer-to-an-enumeration-member.md) [Výčty a kvalifikace názvu](enumerations-and-name-qualification.md) [postupy: iterace ve výčtu](how-to-iterate-through-an-enumeration.md) [postupy: určení řetězce spojeného s hodnotou výčtu](how-to-determine-the-string-associated-with-an-enumeration-value.md) [Kdy použít výčet](when-to-use-an-enumeration.md)
 
  [Přehled výčtů](enumerations-overview.md)  
  [Přehled konstant](constants-overview.md)  

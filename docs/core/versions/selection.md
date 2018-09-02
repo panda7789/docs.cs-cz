@@ -4,18 +4,18 @@ description: Zjistěte, jak .NET Core vyhledá a vybere verze modulu runtime pro
 author: billwagner
 ms.author: wiwagn
 ms.date: 06/27/2018
-ms.openlocfilehash: d1b885ebbade4736d5f592d1dc1d4ba25a321a16
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: 21697aa773abfbd88288d47323402a48c51d69ae
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37874467"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43395114"
 ---
 # <a name="net-core-version-selection"></a>Výběr verze .NET core
 
 [!INCLUDE [topic-appliesto-net-core-2plus](../../../includes/topic-appliesto-net-core-2plus.md)]
 
-Tento článek vysvětluje zásady slouží k výběru verze nástroje .NET Core, sady SDK a modulu runtime. Tyto zásady umožňují rovnováhu mezi spuštěných aplikací, které usnadňují používání zadanou verzí a povolení upgradu počítače pro vývojáře a koncový uživatel. Tyto zásady postupujte takto:
+Tento článek vysvětluje zásady slouží k výběru verze nástroje .NET Core, sady SDK a modulu runtime. Tyto zásady umožňují rovnováhu mezi spouštění aplikací pomocí zadané verze a povolení usnadňují upgradu pro vývojáře a počítačích koncových uživatelů. Tyto zásady provést následující akce:
 
 - Snadné a efektivní nasazení .NET Core, včetně aktualizací zabezpečení a spolehlivost.
 - Použijte nejnovější nástroje a příkazy, které jsou nezávislé na cílový modul runtime.
@@ -31,11 +31,11 @@ Zbývající část tohoto dokumentu zkontroluje tyto čtyři scénáře.
 
 ## <a name="the-sdk-uses-the-latest-installed-version"></a>Sada SDK používá nejnovější verze
 
-Zahrnuje následující příkazy SDK `dotnet new`, `dotnet build` nebo `dotnet run`. `dotnet` Rozhraní příkazového řádku, musíte zvolit verzi sady SDK pro kterýkoli příkaz. Rozhraní příkazového řádku .NET Core využívá nejnovější sadu SDK ve výchozím nastavení nainstalovaná na počítači. .NET Core SDK v2.1.301 budete používat při instalaci, i v případě, že projekt, že pracujete s cílí .NET Core Runtime 2.0. Všimněte si, že to platí pro verze preview, jakož i vydané verze. Při cílení na dřívější verze modulu runtime .NET Core můžete využít výhod nejnovějších funkcí sady SDK a vylepšení. Můžete cílit více verzí modulu runtime .NET Core v různých projektech pomocí stejných nástrojů sady SDK pro všechny projekty.
+Zahrnuje následující příkazy SDK `dotnet new`,, nebo `dotnet run`. `dotnet` Rozhraní příkazového řádku, musíte zvolit verzi sady SDK pro kterýkoli příkaz. Rozhraní příkazového řádku .NET Core využívá nejnovější sadu SDK ve výchozím nastavení nainstalovaná na počítači. .NET Core SDK v2.1.301 budete používat při instalaci, i v případě, že projekt, že pracujete s cílí .NET Core Runtime 2.0. Můžete používat nejnovější verze preview také vydaných verzí. Při cílení na dřívější verze modulu runtime .NET Core můžete využít výhod nejnovějších funkcí sady SDK a vylepšení. Můžete cílit více verzí modulu runtime .NET Core v různých projektech pomocí stejných nástrojů sady SDK pro všechny projekty.
 
 Ve výjimečných případech budete muset použít starší verzi sady SDK. Zadejte v této verzi [ *global.json* souboru](../tools/global-json.md). Zásady "použít nejnovější" znamená, že používejte pouze *global.json* k určení sady .NET Core SDK verze starší než nejnovější verze.
 
-*Global.JSON* může být umístěna kdekoli v hierarchii souborů. Rozhraní příkazového řádku se vyhledá směrem nahoru z adresáře projektu pro první *global.json* , které nalezne. Můžete řídit projekty, které daném *global.json* se vztahuje na příslušné místo v systému souborů. Vyhledá v .NET CLI *global.json* souboru zavádět postupně navigace cestu nahoru z aktuálního pracovního adresáře. První *global.json* nebyl nalezen soubor Určuje verzi použít. Pokud je nainstalovaná tato verze, se používá tuto verzi. Pokud v zadané sadě SDK *global.json* nenajde, rozhraní příkazového řádku .NET posunete na nainstalovánu nejnovější sadu SDK. To je stejný jako výchozí chování, když ne *global.json* soubor se nenašel.
+*Global.JSON* může být umístěna kdekoli v hierarchii souborů. Rozhraní příkazového řádku se vyhledá směrem nahoru z adresáře projektu pro první *global.json* , které nalezne. Můžete řídit projekty, které daném *global.json* se vztahuje na příslušné místo v systému souborů. Vyhledá v .NET CLI *global.json* souboru zavádět postupně navigace cestu nahoru z aktuálního pracovního adresáře. První *global.json* nebyl nalezen soubor Určuje verzi použít. Pokud je nainstalovaná tato verze, se používá tuto verzi. Pokud v zadané sadě SDK *global.json* nenajde, rozhraní příkazového řádku .NET posunete na nainstalovánu nejnovější sadu SDK. Vpřed je stejný jako výchozí chování, když ne *global.json* soubor se nenašel.
 
 Následující příklad ukazuje *global.json* syntaxi:
 
@@ -53,7 +53,7 @@ Proces pro výběr ze sady SDK verze je:
 1. `dotnet` používá sadu SDK, zadané v prvním *global.json* nalezen.
 1. `dotnet` využívá nejnovější nainstalované sady SDK, pokud žádné *global.json* nenajde.
 
-Další informace o výběru verzi sady SDK v [pravidel](../tools/global-json.md) tématu na *global.json*.
+Další informace o výběru verzi sady SDK v [pravidel](../tools/global-json.md#matching-rules) článku na *global.json*.
 
 ## <a name="target-framework-monikers-define-build-time-apis"></a>Cílové rozhraní Framework Monikery definují čas sestavení rozhraní API
 
@@ -109,4 +109,4 @@ Samostatná nasazení může vyžadovat oprav konkrétní verze. Runtime minimá
 <RuntimeFrameworkVersion>2.0.4</RuntimeFrameworkVersion>
 ```
 
-`RuntimeFrameworkVersion` Elementu přepíše výchozí zásada verze. Pro samostatné nasazení `RuntimeFrameworkVersion` Určuje *přesné* framework verze modulu runtime. Pro závislé aplikace rozhraní framework `RuntimeFrameworkVersion` Určuje *minimální* požadovaná verze rozhraní framework.
+`RuntimeFrameworkVersion` Elementu přepíše výchozí zásada verze. Pro samostatné nasazení `RuntimeFrameworkVersion` Určuje *přesné* framework verze modulu runtime. Pro aplikace závisí na architektuře `RuntimeFrameworkVersion` Určuje *minimální* požadovaná verze rozhraní framework.

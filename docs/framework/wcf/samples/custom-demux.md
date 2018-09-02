@@ -2,19 +2,19 @@
 title: Vlastní demux
 ms.date: 03/30/2017
 ms.assetid: fc54065c-518e-4146-b24a-0fe00038bfa7
-ms.openlocfilehash: e88672f152b87740feef1345b3eac213916a1527
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 1542743a6e1658bad162d7ee9ca73e6b9b0444e2
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33805561"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43395658"
 ---
 # <a name="custom-demux"></a>Vlastní demux
-Tento příklad ukazuje, jak hlavičky zpráv MSMQ lze mapovat na jinou službu operations tak, aby Windows Communication Foundation (WCF) služeb, které používají <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> nejsou omezeny na použití jedné operace služby, jak je předvedeno v [ Zprávy služby Řízení front zpráv do Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md) a [Windows Communication Foundation do řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md) ukázky.  
+Tato ukázka předvádí, jak záhlaví zpráv MSMQ lze mapovat na jinou službu operations tak, aby služba Windows Communication Foundation (WCF), které používají <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> nejsou možné použít jedna operace služby, jak je ukázáno v [ Zprávy služby Řízení front zpráv do služby Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md) a [Windows Communication Foundation do služby Řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md) ukázky.  
   
- Služba v této ukázce je vlastním hostováním konzolové aplikace, které vám umožňují sledovat, že služby, která přijímá zprávy zařazené do fronty.  
+ Služby v této ukázce je v místním prostředí konzoly aplikace, která vám umožní sledovat, že služba, která bude přijímat zprávy zařazené do fronty.  
   
- Kontrakt služby je `IOrderProcessor`a definuje jednosměrné služby, který je vhodný pro použití s front.  
+ Kontrakt služby je `IOrderProcessor`a definuje jednosměrné, který je vhodný pro použití s frontami služby.  
 
 ```csharp
 [ServiceContract]  
@@ -30,7 +30,7 @@ public interface IOrderProcessor
 }  
 ```
 
- Zprávy MSMQ nemá hlavičku akce. Není možné automaticky mapovat různé zprávy služby MSMQ kontrakty operaci. Proto může být pouze jeden kontrakt operaci. K překonání tohoto omezení služby implementuje <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A> metodu <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> rozhraní. <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A> Metoda umožňuje službu, kterou chcete mapovat danou hlavičku zprávy pro konkrétní službu operaci. V této ukázce je záhlaví popisek zprávy je namapovaný k operacím služby. `Name` Parametr operaci kontrakt Určuje, které operace služby musí být odesílány pro danou zprávou štítek. Například pokud hlavička popisek zprávy obsahuje "SubmitPurchaseOrder", je volána operace služby "SubmitPurchaseOrder".  
+ Zprávy MSMQ nemá hlavičku akce. Není možné automaticky mapovat různé zprávy služby MSMQ pro operaci smlouvy. Proto může být pouze jeden kontrakt. K překonání tohoto omezení, služba implementuje <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A> metodu <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> rozhraní. <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A> Metoda povoluje službu k mapování Zadaná hlavička zprávy pro konkrétní službu operaci. V této ukázce je popisek hlavičky namapované k operacím služby. `Name` Parametr kontrakt Určuje, kterou služba operaci musí být odeslána pro danou zprávu popisek. Například pokud hlavička popisek zprávy obsahuje "SubmitPurchaseOrder", "SubmitPurchaseOrder" service je operace vyvolávána.  
 
 ```csharp
 public class OperationSelector : IDispatchOperationSelector  
@@ -43,7 +43,7 @@ public class OperationSelector : IDispatchOperationSelector
 }  
 ```
 
- Služba musí implementovat <xref:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior%28System.ServiceModel.Description.ContractDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%2CSystem.ServiceModel.Dispatcher.DispatchRuntime%29> metodu <xref:System.ServiceModel.Description.IContractBehavior> rozhraní, jak je znázorněno v následujícím ukázkovém kódu. To platí vlastní `OperationSelector` modulu runtime service framework odesílání.  
+ Musí implementovat službu <xref:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior%28System.ServiceModel.Description.ContractDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%2CSystem.ServiceModel.Dispatcher.DispatchRuntime%29> metodu <xref:System.ServiceModel.Description.IContractBehavior> rozhraní, jak je znázorněno v následujícím ukázkovém kódu. To platí pro vlastní `OperationSelector` na modul runtime služby rozhraní framework odeslání.  
 
 ```csharp
 void IContractBehavior.ApplyDispatchBehavior(ContractDescription description, ServiceEndpoint endpoint, DispatchRuntime dispatch)  
@@ -52,7 +52,7 @@ void IContractBehavior.ApplyDispatchBehavior(ContractDescription description, Se
 }  
 ```
 
- Zpráva musí projít dispečera <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> před získáním k třída OperationSelector. Ve výchozím nastavení je odmítnuta zprávu, pokud jeho akce nebyl nalezen na jakékoli smlouvy implementované službu. Abyste se vyhnuli tuto kontrolu, můžeme implementovat <xref:System.ServiceModel.Description.IEndpointBehavior> s názvem `MatchAllFilterBehavior`, což umožňuje jakékoli zprávy předávat `ContractFilter` použitím <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> následujícím způsobem.  
+ Zpráva musí projít přes dispečera <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> před získáním třída OperationSelector. Ve výchozím nastavení je zpráva odmítnuta, pokud jeho akce nebyl nalezen v jakékoli kontraktů implementovaných službou. Aby tato kontrola Implementujeme <xref:System.ServiceModel.Description.IEndpointBehavior> s názvem `MatchAllFilterBehavior`, umožňuje jakákoliv zpráva o předávání `ContractFilter` použitím <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> následujícím způsobem.  
 
 ```csharp
 public void ApplyDispatchBehavior(ServiceEndpoint serviceEndpoint, EndpointDispatcher endpointDispatcher)  
@@ -61,7 +61,7 @@ public void ApplyDispatchBehavior(ServiceEndpoint serviceEndpoint, EndpointDispa
 }  
 ```
   
- Zpráva odeslaná službou, je odeslána operaci příslušnou službu pomocí informací uvedených v hlavičce popisek. Tělo zprávy je deserializovat do `PurchaseOrder` objektu, jak je znázorněno v následujícím ukázkovém kódu.  
+ Při doručení zprávy do službou operace příslušnou službu je odeslána, pomocí informací uvedených v hlavičce popisek. Text zprávy je deserializovat do `PurchaseOrder` objektu, jak je znázorněno v následujícím ukázkovém kódu.  
 
 ```csharp
 [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]  
@@ -74,7 +74,7 @@ public void SubmitPurchaseOrder(MsmqMessage<PurchaseOrder> msg)
 }  
 ```
 
- Služba se hostuje sama. Při použití služby MSMQ, fronty, který se používá, musí být vytvořeny předem. Tento krok můžete provést ručně nebo prostřednictvím kódu. V této ukázce služba obsahuje kód, zkontrolujte existenci fronty a ji vytvoří, pokud fronta neexistuje. Název fronty je číst z konfiguračního souboru.  
+ Tato služba je v místním prostředí. Při použití služby MSMQ, fronty, který se používá, je nutné vytvořit předem. To můžete udělat ručně nebo prostřednictvím kódu. V této ukázce služby obsahuje kód pro provedení kontroly existence fronty a ji vytvoří, pokud fronta neexistuje. Název fronty načítají z konfiguračního souboru.  
 
 ```csharp
 public static void Main()  
@@ -106,10 +106,10 @@ public static void Main()
 }  
 ```
 
- Název fronty služby MSMQ je zadán v oddílu appSettings konfiguračního souboru.  
+ Název fronty MSMQ je zadán v oddílu appSettings konfiguračním souboru.  
   
 > [!NOTE]
->  Název fronty používá tečku (.) pro místní počítač a oddělovače zpětné lomítko, v jeho cesty. Adresa koncového bodu WCF určuje msmq.formatname schématu a používá localhost pro místní počítač. Následující schéma je adresa správně formátovaný fronty podle názvu formátu MSMQ adresování pokyny.  
+>  Název fronty používá tečku (.) pro místní počítače a zpětné lomítko oddělovače v cestě. Adresa koncového bodu WCF Určuje schéma msmq.formatname a používá localhost pro místní počítač. Schéma následuje adresa správně formátovaná fronty podle názvu formátu MSMQ adresování pokyny.  
   
 ```xml  
 <appSettings>  
@@ -119,11 +119,11 @@ public static void Main()
 ```  
   
 > [!NOTE]
->  Tato ukázka vyžaduje instalaci [služby Řízení front zpráv](http://go.microsoft.com/fwlink/?LinkId=95143).  
+>  Tato ukázka vyžaduje instalaci [služby Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=95143).  
   
- Spusťte službu a spustit klienta.  
+ Spusťte službu a klienta.  
   
- Tento výstup je vidět na straně klienta.  
+ Následující výstup je zobrazena na straně klienta.  
   
 ```  
 Placed the order:Purchase Order: 28fc457a-1a56-4fe0-9dde-156965c21ed6  
@@ -137,7 +137,7 @@ Canceled the Order: 28fc457a-1a56-4fe0-9dde-156965c21ed6
 Press <ENTER> to terminate client.  
 ```  
   
- Tento výstup musí zobrazit na službu.  
+ Ve službě musí zobrazit následující výstup.  
   
 ```  
 The service is ready.  
@@ -152,47 +152,47 @@ Processing Purchase Order: 28fc457a-1a56-4fe0-9dde-156965c21ed6
 Purchase Order 28fc457a-1a56-4fe0-9dde-156965c21ed6 is canceled  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Pokud je služba spuštěna první, zkontroluje Ujistěte se, zda je k dispozici fronty. Pokud fronta neexistuje, vytvoří služba jeden. Můžete spustit služby nejprve vytvořit frontu, nebo můžete vytvořit jeden prostřednictvím správce front služby MSMQ. Postupujte podle těchto kroků můžete vytvořit frontu v systému Windows 2008.  
+2.  Pokud je služba spuštěna první, zkontroluje se tak, aby byl do fronty k dispozici. Pokud fronta neexistuje, služba ho vytvoří. Můžete spustit služba nejdřív vytvořte frontu nebo můžete vytvořit prostřednictvím Správce fronty MSMQ. Postupujte podle těchto kroků můžete vytvořit frontu Windows 2008.  
   
     1.  Otevřete správce serveru v [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
   
-    2.  Rozbalte **funkce** kartě.  
+    2.  Rozbalte **funkce** kartu.  
   
-    3.  Klikněte pravým tlačítkem na **soukromé fronty zpráv**a vyberte **nový**, **soukromou frontu**.  
+    3.  Klikněte pravým tlačítkem na **fronty soukromých zpráv**a vyberte **nový**, **soukromou frontu**.  
   
-    4.  Zkontrolujte **transakcí** pole.  
+    4.  Zkontrolujte, **transakční** pole.  
   
     5.  Zadejte `ServiceModelSamplesTransacted` jako název nové fronty.  
   
-3.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky mezi počítači  
+### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
   
-1.  Zkopírujte soubory programu služby ve složce \service\bin\ ve složce pro specifický jazyk k počítači služby.  
+1.  Zkopírujte soubory programu služby ze složky \service\bin\ v rámci složky specifické pro jazyk, k počítači služby.  
   
-2.  Zkopírujte soubory programu klienta ve složce \client\bin\ ve složce jazyka na klientský počítač.  
+2.  Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientského počítače.  
   
-3.  V souboru Client.exe.config změnit orderQueueName k zadání názvu počítače služba místo ".".  
+3.  V souboru Client.exe.config změnit orderQueueName k zadání názvu počítače služba namísto ".".  
   
 4.  Na počítači se službou spusťte z příkazového řádku Service.exe.  
   
-5.  Na klientském počítači spusťte z příkazového řádku Client.exe.  
+5.  Na klientském počítači spusťte Client.exe z příkazového řádku.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\CustomDemux`  
   
 ## <a name="see-also"></a>Viz také  
  [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
- [Služba Řízení front zpráv](http://go.microsoft.com/fwlink/?LinkId=95143)
+ [Služba Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=95143)

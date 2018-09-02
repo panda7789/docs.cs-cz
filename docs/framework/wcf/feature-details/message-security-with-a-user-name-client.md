@@ -7,37 +7,37 @@ dev_langs:
 ms.assetid: 36335cb9-76b8-4443-92c7-44f081eabb21
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 7bda1bc18e2b5af1365c799c6f2be9d8d220e9ed
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 215d23be53fad330b6ab056af83ad907f207259e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33495129"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43386542"
 ---
 # <a name="message-security-with-a-user-name-client"></a>Zabezpečení zpráv s klientem uživatelského jména
-Následující obrázek znázorňuje služba Windows Communication Foundation (WCF) a klient zabezpečené pomocí zabezpečení na úrovni zpráv. Služba je ověření pomocí certifikátu X.509. Klient se ověří pomocí uživatelského jména a hesla.  
+Následující obrázek znázorňuje služby Windows Communication Foundation (WCF) a služby klientů, které jsou zabezpečené pomocí zabezpečení na úrovni zprávy. Služba se ověřuje pomocí certifikátu X.509. Klient se ověří pomocí uživatelského jména a hesla.  
   
- Ukázkovou aplikaci, najdete v části [uživatelské jméno zabezpečení zprávy](../../../../docs/framework/wcf/samples/message-security-user-name.md).  
+ Ukázková aplikace, najdete v části [zabezpečení zpráv s uživatelským jménem](../../../../docs/framework/wcf/samples/message-security-user-name.md).  
   
  ![Zabezpečení zpráv pomocí uživatelského jména ověřování](../../../../docs/framework/wcf/feature-details/media/1fb10a61-7e1d-42f5-b1af-195bfee5b3c6.gif "1fb10a61-7e1d-42f5-b1af-195bfee5b3c6")  
   
-|Vlastnosti|Popis|  
+|Vlastnost|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení.|Zpráva|  
+|Režim zabezpečení|Zpráva|  
 |Interoperabilita|Windows Communication Foundation (WCF) pouze|  
-|Ověřování (Server)|Počáteční vyjednávání vyžaduje ověření serveru|  
-|Ověřování (klient)|Uživatelské jméno a heslo|  
-|Integrita|Ano, kontextu sdílené zabezpečení|  
-|Důvěrnost|Ano, kontextu sdílené zabezpečení|  
+|Ověření (Server)|Počáteční vyjednávání vyžaduje ověření serveru|  
+|Ověření (klient)|Uživatelské jméno/heslo|  
+|Integrita|Ano, pomocí sdíleného bezpečnostní kontext|  
+|Důvěrnost|Ano, pomocí sdíleného bezpečnostní kontext|  
 |Přenos|HTTP|  
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>Služba  
- Následující kód a konfigurace jsou určená ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
+ Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
   
--   Vytvořte samostatnou službu pomocí kódu žádnou konfiguraci.  
+-   Vytvoření samostatné služby pomocí kódu bez konfigurace.  
   
--   Vytvoření služby pomocí zadaných konfigurací, ale nejsou definovány žádné koncové body.  
+-   Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
   
 ### <a name="code"></a>Kód  
  Následující kód ukazuje, jak vytvořit koncový bod služby, který používá zabezpečení zpráv.  
@@ -46,7 +46,7 @@ Následující obrázek znázorňuje služba Windows Communication Foundation (W
  [!code-vb[C_SecurityScenarios#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#9)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Místo kód se dají použít následující konfigurace:  
+ Následující konfigurace je možné použít místo kód:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -91,13 +91,13 @@ Následující obrázek znázorňuje služba Windows Communication Foundation (W
 ## <a name="client"></a>Klient  
   
 ### <a name="code"></a>Kód  
- Následující kód vytvoří klienta. Vazba je režim zabezpečení zpráv a typu pověření klienta nastavena na `UserName`. Uživatelské jméno a heslo lze zadat pouze pomocí kódu (není konfigurovatelné). Kód, který vrátí uživatelské jméno a heslo není tady zobrazit, protože musíte to provést na úrovni aplikace. Například pomocí dialogového okna Windows Forms dotazovat uživatele pro data.  
+ Následující kód vytvoří klienta. Vazba má režim zabezpečení zpráv a typu pověření klienta je nastavena na `UserName`. Uživatelské jméno a heslo lze zadat pouze pomocí kódu (není konfigurovatelné). Kód, který vrátí uživatelské jméno a heslo se zde není zobrazen, protože je třeba provést na úrovni aplikace. Například použití dialogového okna Windows Forms k dotazování uživatele pro data.  
   
  [!code-csharp[C_SecurityScenarios#16](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#16)]
  [!code-vb[C_SecurityScenarios#16](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#16)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující kód konfiguruje klienta. Vazba je režim zabezpečení zpráv a typu pověření klienta nastavena na `UserName`. Uživatelské jméno a heslo lze zadat pouze pomocí kódu (není konfigurovatelné).  
+ Následující kód konfiguruje klienta. Vazba má režim zabezpečení zpráv a typu pověření klienta je nastavena na `UserName`. Uživatelské jméno a heslo lze zadat pouze pomocí kódu (není konfigurovatelné).  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -132,4 +132,4 @@ Následující obrázek znázorňuje služba Windows Communication Foundation (W
  [Zabezpečení zpráv s uživatelským jménem](../../../../docs/framework/wcf/samples/message-security-user-name.md)  
  [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
  [\<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)  
- [Model zabezpečení pro Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+ [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

@@ -1,23 +1,23 @@
 ---
-title: Odebrání stav zobrazení návrháře přidá do souboru XAML
+title: Odebrání stavu zobrazení, Návrhář přidá do souboru XAML
 ms.date: 03/30/2017
 ms.assetid: a801ce22-8699-483c-a392-7bb3834aae4f
-ms.openlocfilehash: f63723c29c76854602308ba3e8d7e6dd65d9fb94
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ed2fda0bb66b2c8fe58c60acc6f80b9e9c8e984e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517833"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43386930"
 ---
-# <a name="removing-the-view-state-the-designer-adds-to-an-xaml-file"></a>Odebrání stav zobrazení návrháře přidá do souboru XAML
-Tento příklad ukazuje, jak vytvořte třídu, která je odvozena z <xref:System.Windows.Markup.XamlWriter> a odebere zobrazení stavu ze souboru XAML. [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] zapisuje informace do dokumentu XAML, která se označuje jako stav zobrazení. Stav zobrazení odkazuje na informace, který je požadován v době návrhu, jako je například umístění rozložení, který není nutný za běhu. [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)] Vloží do dokumentu XAML tyto informace, jako je upravit. [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)] zapisuje do souboru XAML s stav zobrazení `mc:Ignorable` atributů, takže tyto informace není načíst, pokud modul runtime načte souboru XAML. Tento příklad ukazuje, jak vytvořte třídu, která odebere této informace o stavu zobrazení při zpracování uzlů XAML.  
+# <a name="removing-the-view-state-the-designer-adds-to-an-xaml-file"></a>Odebrání stavu zobrazení, Návrhář přidá do souboru XAML
+Tento příklad ukazuje, jak vytvořit třídu, která je odvozena z <xref:System.Windows.Markup.XamlWriter> a odebere zobrazit stav ze souboru XAML. [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] zapisuje informace do dokumentu XAML, který je označován jako stav zobrazení. Stav zobrazení odkazuje na informace, které je nutné v době návrhu, jako je například umístění rozložení, které nejsou potřebné v době běhu. [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)] Vloží tyto informace do dokumentu XAML, jako je upravovat. [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)] zapíše do souboru XAML s stav zobrazení `mc:Ignorable` atribut, takže tyto informace není načten při načtení modulu runtime XAML souboru. Tento příklad ukazuje, jak vytvořit třídu, která odebere tuto informace o stavu zobrazení při zpracování uzlů XAML.  
   
-## <a name="discussion"></a>Diskusní  
- Tento příklad znázorňuje, jak vytvořit vlastní zapisovač.  
+## <a name="discussion"></a>Diskuse  
+ Tento příklad ukazuje, jak vytvořit vlastní zapisovače.  
   
- Pokud chcete vytvořit vlastní zapisovač XAML, vytvořte třídu, která dědí z <xref:System.Windows.Markup.XamlWriter>. Jak často jsou vnořené zapisovače XAML, je typické ke sledování "vnitřní" XAML zapisovače. Tyto "vnitřní ' zapisovače si lze představit jako odkaz na zbývající zásobníku zapisovačů XAML, umožní vám tak, aby měl více vstupních bodů k práci a potom delegovat zpracování ke zbytku zásobníku.  
+ Pokud chcete vytvořit vlastní zapisovače XAML, vytvořte třídu, která dědí z <xref:System.Windows.Markup.XamlWriter>. Jak často jsou vnořené uživatelé vytvářející obsah XAML, je typické ke sledování "vnitřních" zapisovač XAML. Tyto "vnitřní" zapisovače si lze představit jako odkaz na zbývající zásobníku XAML zapisovačů, díky kterým práci a následně delegovat zpracování na zbývající část zásobníku více vstupních bodů.  
   
- V této ukázce jsou několik položek, které vás zajímají. Jeden je zkontrolujte, zda je položka zapisovaný z Návrháře oboru názvů. Všimněte si, že to taky odstraní na použití jiných typů z Návrháře oboru názvů v pracovním postupu.  
+ V této ukázce se několik položek, které vás zajímají. Jeden je kontrola ověří, zda je položka zapisovaná z Návrháře oboru názvů. Všimněte si, že to také odstraní použití jiných typů z Návrháře oboru názvů v pracovním postupu.  
   
 ```csharp
 static Boolean IsDesignerAttachedProperty(XamlMember xamlMember)  
@@ -39,7 +39,7 @@ XamlWriter InnerWriter {get; set; }
 Stack<XamlMember> MemberStack {get; set; }  
 ```  
   
- Tím se vytvoří také zásobník XAML členů, které se používají při procházení datový proud uzlu. Zbývající práce Tato ukázka je součástí z velké části <!--zz  <xref:System.Windows.Markup.XamlWriter.WriteStartMember%2A>--> `System.Windows.Markup.XamlWriter.WriteStartMember` metoda.  
+ Tím se vytvoří také zásobníku XAML členů, které se používají při rekurzivním průchodu datovém proudu uzlu. Zbývající práce Tato ukázka je součástí do značné míry <!--zz  <xref:System.Windows.Markup.XamlWriter.WriteStartMember%2A>--> `System.Windows.Markup.XamlWriter.WriteStartMember` metody.  
   
 ```csharp
 public override void WriteStartMember(XamlMember xamlMember)  
@@ -60,7 +60,7 @@ public override void WriteStartMember(XamlMember xamlMember)
 }  
 ```  
   
- Následující metody pak zkontrolujte, zda jsou stále obsažené v kontejneru zobrazení stavu a pokud ano, vrátí a nepředávejte uzel dolů v zásobníku zapisovače.  
+ Následující metody a zkontrolujte, zda jsou stále obsažené v zobrazení stavu kontejneru a pokud ano, vraťte se a nepředávejte uzel dolů zásobníku zapisovače.  
   
 ```csharp
 public override void WriteValue(Object value)  
@@ -74,7 +74,7 @@ public override void WriteValue(Object value)
 }  
 ```  
   
- Pokud chcete používat vlastní zapisovač XAML, můžete, musí být propojeny ho společně v zásobníku zapisovačů XAML. Následující kód ukazuje, jak je možné používat.  
+ Pokud chcete použít vlastní zapisovače XAML, musíte provést řetězení společně v zásobníku zapisovačů XAML. Následující kód ukazuje, jak to lze použít.  
   
 ```csharp 
 XmlWriterSettings writerSettings = new XmlWriterSettings {  Indent = true };  
@@ -87,9 +87,9 @@ XamlServices.Save(new ViewStateCleaningWriter(ActivityXamlServices.CreateBuilder
   
 1. Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení ViewStateCleaningWriter.sln.  
   
-2. Otevřete příkazový řádek a přejděte do adresáře, kde je založená ViewStageCleaningWriter.exe.  
+2. Otevřete příkazový řádek a přejděte do adresáře, kde je postavená ViewStageCleaningWriter.exe.  
   
-3. Spusťte ViewStateCleaningWriter.exe na soubor Workflow1.xaml.  
+3. Spusťte ViewStateCleaningWriter.exe Workflow1.xaml soubor.  
 
    Syntaxe pro spustitelný soubor je znázorněno v následujícím příkladu.  
   
@@ -97,28 +97,28 @@ XamlServices.Save(new ViewStateCleaningWriter(ActivityXamlServices.CreateBuilder
    ViewStateCleaningWriter.exe [input file] [output file]
    ```
    
-   Tento soubor XAML pro výstupy \[Výstupní_soubor], která obsahuje všechny zobrazení informací o stavu odebrat.  
+   Výstupem soubor XAML, který chcete \[outfile], který má všechna zobrazení informací o stavu odebrána.  
   
 > [!NOTE]
-> Pro <xref:System.Activities.Statements.Sequence> pracovního postupu, počet virtualizace jsou pomocné parametry odebrána. To způsobí, že návrháře přepočítat rozložení další čas, který je načten. Při použití této ukázky pro <xref:System.Activities.Statements.Flowchart>, budou odebrány všechny umístění a směrování informace řádku a na dalších načítání do návrháře přibývají všechny aktivity na levé straně obrazovky.  
+> Pro <xref:System.Activities.Statements.Sequence> pracovního postupu, počet virtualizace pomocné parametry se odeberou. To způsobí, že návrhář přepočítat rozložení při příštím načtení. Při použití pro tuto ukázku <xref:System.Activities.Statements.Flowchart>, umístění a směrování informace řádku se odeberou a na následné načítání do návrháře, jsou navršeny všechny aktivity na levé straně obrazovky.  
   
-#### <a name="to-create-a-sample-xaml-file-for-use-with-this-sample"></a>Chcete-li vytvořit a ukázkový soubor XAML pro použití s této ukázky  
+#### <a name="to-create-a-sample-xaml-file-for-use-with-this-sample"></a>K vytvoření ukázkového souboru XAML pro použití s touto ukázkou  
   
-1. Otevřete [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+1. Otevřít [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
 2. Vytvořte novou konzolovou aplikaci pracovního postupu.  
   
-3. Přetáhnout myší na plátno několik aktivit  
+3. Přetažení několika aktivity na plátno  
   
-4. Uložte soubor XAML workflowu.  
+4. Uložte soubor XAML pracovního postupu.  
   
-5. Zkontrolujte soubor XAML zobrazíte zobrazení stavu přidružené vlastnosti.  
+5. Zkontrolujte soubor XAML k zobrazení stavu připojené vlastnosti.  
   
 > [!IMPORTANT]
-> Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+> Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Designer\ViewStateCleaningWriter`

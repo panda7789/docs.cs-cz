@@ -2,22 +2,22 @@
 title: SQL Server v specifické pro proces chování ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 4f223948-ae8f-4c16-bdc2-4acc6debed3f
-ms.openlocfilehash: 2e89a902bbe7f25586bc4e6574932c8da3e67d40
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 33c2f1018748a0d5703119a1ab77d23a40a06457
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33356600"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43388127"
 ---
 # <a name="sql-server-in-process-specific-behavior-of-adonet"></a>SQL Server v specifické pro proces chování ADO.NET
-Existují čtyři hlavní funkční rozšíření ADO.NET, v nalezen <xref:Microsoft.SqlServer.Server> obor názvů, které jsou speciálně určené pro použití v rámci procesu: <xref:Microsoft.SqlServer.Server.SqlContext>, <xref:Microsoft.SqlServer.Server.SqlPipe>, <xref:Microsoft.SqlServer.Server.SqlTriggerContext>, a <xref:Microsoft.SqlServer.Server.SqlDataRecord>.  
+Existují čtyři hlavní funkční rozšíření pro ADO.NET, součástí <xref:Microsoft.SqlServer.Server> obor názvů, která jsou speciálně pro použití v rámci procesu: <xref:Microsoft.SqlServer.Server.SqlContext>, <xref:Microsoft.SqlServer.Server.SqlPipe>, <xref:Microsoft.SqlServer.Server.SqlTriggerContext>, a <xref:Microsoft.SqlServer.Server.SqlDataRecord>.  
   
- Podrobnější informace najdete v tématu verze SQL Server Books Online pro verzi systému SQL Server, kterou používáte.  
+ Podrobnější informace najdete v tématu verze SQL Server Books Online pro verzi SQL serveru, který používáte.  
   
  **SQL Server Books Online**  
   
-1.  [SQL Server v rámci procesu konkrétní rozšíření pro technologii ADO.NET](http://go.microsoft.com/fwlink/?LinkId=115403)  
+1.  [SQL Server v procesu konkrétní rozšíření pro technologii ADO.NET](https://go.microsoft.com/fwlink/?LinkId=115403)  
   
 ## <a name="see-also"></a>Viz také  
- [Vytváření objektů serveru SQL Server 2005 ve spravovaném kódu](http://msdn.microsoft.com/library/5358a825-e19b-49aa-8214-674ce5fed1da)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [Vytváření objektů serveru SQL Server 2005 ve spravovaném kódu](https://msdn.microsoft.com/library/5358a825-e19b-49aa-8214-674ce5fed1da)  
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

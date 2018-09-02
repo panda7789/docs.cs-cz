@@ -4,35 +4,35 @@ ms.date: 03/30/2017
 ms.assetid: 3d2ceffe-a7bf-4bd9-a5a2-9406423bd7f8
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: fdf18564d3545e0061d8323e544aecfeed621d0c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5b4abd570f8bb40f2faa72f2debf2dee563d3a23
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33489980"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43394939"
 ---
 # <a name="extended-protection-for-authentication-overview"></a>Rozšířená ochrana pro ověřování – přehled
-Rozšířená ochrana ověřování pomáhá chránit před útoky (typu MITM) man-in-the-middle, ve kterých útočník zachytává klientské přihlašovací údaje a předává je na server.  
+Rozšířená ochrana ověřování pomáhá chránit před útoky (typu MITM) man-in-the-middle, při které útočník zachycuje přihlašovací údaje klienta a předává je na serveru.  
   
- Představte si třeba situaci s tři účastníky: klienta, serveru a útočník. Adresa URL má server `https://server`, zatímco útočník má adresu URL `https://attacker`. Útočník triky klienta do přístup k útočník, jako kdyby nebylo serveru. Útočník pak odešle požadavek na server. Pokud útočník se pokouší o přístup k prostředkům zabezpečené, serveru reaguje na útočník s hlavička WWW-Authenticate. Útočník nemá informace o ověřování, takže odešle hlavička WWW-Authenticate ke klientovi. Klient odešle hlavičku autorizace útočník a útočník odesílá hlavičku k serveru a získá přístup k zabezpečeným prostředkům pomocí pověření klienta.  
+ Představte si třeba situaci s tři účastníky, kterými: klienta, server a útočník. Adresa URL má server `https://server`, že adresa URL má útočník `https://attacker`. Útočník triky klienta do přístup k útočník, jako kdyby byly na serveru. Útočník pak odešle požadavek na server. Pokud se útočník pokouší o přístup k zabezpečení prostředků, server odpoví útočníkovi s hlavičku WWW-Authenticate. Útočník nemá informace o ověřování, takže pošle hlavičku WWW-Authenticate ke klientovi. Klient odešle autorizační hlavičky pro útočníka a útočník hlavičku na server a získá přístup k zabezpečeným prostředkům pomocí přihlašovacích údajů klienta.  
   
- V současné době při klientskou aplikaci se ověří na serveru pomocí protokolu Kerberos, Digest nebo protokol NTLM pomocí protokolu HTTPS, je nejprve vytvořit kanál úroveň zabezpečení TLS (Transport) a ověřování probíhá pomocí tohoto kanálu. Však neexistuje žádná vazba mezi vygenerované nástrojem vrstvy SSL (Secure Sockets) klíč relace a klíč relace, který je generován během ověřování. Ano, v předchozím scénáři, pokud komunikaci přes protokol TLS (např. kanál protokolu HTTPS), trvá místech existují dvě SSL kanály, vytvořit: jeden mezi klientem a útočník a jiné mezi útočník a serverem. Pověření klienta jsou odeslaných z klienta na server nejprve prostřednictvím kanálu SSL mezi klientem a útočník a pak přes kanál mezi útočník a serverem. Jakmile pověření klienta připojit k serveru, server ověřuje přihlašovací údaje bez zjišťování, jestli se útočník a není klient pochází kanál, přes které byly odeslány tyto přihlašovací údaje.  
+ Když klientská aplikace ověří na serveru pomocí protokolu Kerberos, Digest nebo NTLM pomocí protokolu HTTPS, v současné době kanálu úroveň zabezpečení TLS (Transport) je prvním vytváření a ověřování probíhá pomocí tohoto kanálu. Neexistuje ale žádná vazba mezi vygenerované pomocí vrstvy SSL (Secure Sockets) klíč relace a klíče relace, který je generován během ověřování. Tak, v předchozím scénáři, pokud komunikace přes protokol TLS (např. kanál protokolu HTTPS), trvá míst existují dva kanály SSL vytvořili: jeden mezi klientem a útočník a jiné mezi útočník a serverem. Přihlašovací údaje klienta jsou odeslaných z klienta na server nejprve prostřednictvím kanálu SSL mezi klientem a útočník a potom prostřednictvím kanálu mezi útočník a serverem. Jakmile přihlašovací údaje klienta spojit se serverem, server ověřuje přihlašovací údaje bez detekuje, že kanál nad tím, které byly odeslány tyto přihlašovací údaje pochází ze útočník a ne klienta.  
   
- Řešení je k používání vnější kanál TLS zabezpečené a ověření klienta vnitřní kanálem a předat kanálu vazby tokenu (CBT) serveru. CBT vlastnost zabezpečené TLS vnější kanál a slouží pro vazbu vnější kanál ke konverzaci přes kanál vnitřní ověření klienta.  
+ Řešením je použití vnějšího kanál TLS zabezpečené a ověření klienta vnitřního kanálu a předat kanálu vazby Token (CBT) na server. CBT je vlastnost kanálu vnější zabezpečené TLS a slouží k vytvoření vazby na vnější kanál ke konverzaci přes kanál vnitřní ověření klienta.  
   
- V předchozím scénáři je CBT TLS kanálu klienta útočník sloučen s informace o ověření, která je odeslána na server. Server využívající technologii CBT porovná CBT obsažené v informace o ověřování klienta odpovídá klienta útočník kanál, do CBT připojená ke kanálu útočník serveru. CBT je specifické pro cílové kanál, takže útočník klienta CBT neodpovídá server útočník CBT. To umožňuje serveru zjistit útoky typu MITM a odmítnout žádosti o ověření.  
+ V předchozím scénáři CBT kanál TLS klienta útočník sloučeny s informace o ověření, která je odeslána na server. Porovná s ohledem na CBT server CBT obsažené v informace o ověřování klienta odpovídá klienta útočník kanál, CBT připojená ke kanálu útočník serveru. CBT je specifický pro určení nějaký kanál, takže útočník klienta CBT neodpovídá server útočník CBT. To umožňuje serveru zjistit útoky MITM a odmítnout žádosti o ověření.  
   
- Na straně klienta nevyžaduje žádné nastavení konfigurace. Jakmile klient byl aktualizovaný, aby CBT předat serveru, vždy dělá to tak. Pokud server také aktualizován, dá se použít CBT nebo ji ignorovat. Pokud se neaktualizovala, ignoruje se.  
+ Na straně klienta nevyžaduje, aby všechna nastavení konfigurace. Jakmile klient byl aktualizován CBT předat serveru, vždy provádí. Pokud na serveru se také aktualizovala, dá se použít CBT nebo ji ignorovat. Pokud ho ještě není aktualizovaný, ignoruje se.  
   
  Server může mít následující úrovně ochrany:  
   
--   Žádné Žádný kanál vazby ověřování. Toto chování se použije ve všech serverech, které nebyly aktualizovány.  
+-   Žádné Provede se žádné ověření vazby kanálu. Toto je chování ve všech serverech, které nebyly aktualizovány.  
   
--   Částečné. Všichni klienti, které byly aktualizovány musíte zadat informace o vazbě kanál k serveru. Uděláte to tak nemají klienti, které nebyly aktualizovány. Toto je zprostředkující možnost, která umožňuje pro kompatibilitu aplikací.  
+-   Částečné. Všichni klienti, kteří se aktualizovaly musíte zadat informace o vazbě kanál na server. Klienti, kteří neprovedli aktualizaci není potřeba udělat. Toto je zprostředkující možnost, která umožňuje pro zajištění kompatibility aplikací.  
   
--   Úplná. Všichni klienti musíte zadat informace o vazbě kanálu. Server odmítne ověřování přicházejících od klientů, které nejsou tak učinit.  
+-   Úplná. Všichni klienti musí poskytnout informace o vazbě kanálu. Server odmítá žádosti o ověření z klientů, kteří tak.  
   
- Další informace najdete v tématu ukázka Win7 CBT/Rozšířená ochrana.  
+ Další informace najdete v ukázce Win7 CBT/Rozšířená ochrana.  
   
 ## <a name="see-also"></a>Viz také  
- [Model zabezpečení pro Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+ [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

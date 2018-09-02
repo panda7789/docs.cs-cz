@@ -1,34 +1,34 @@
 ---
-title: Připojení DbConnection, DbCommand a dbexception –
+title: DbConnection, DbCommand a DbException
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 58aab611-7e6f-4749-b983-28ab7ae87dbe
-ms.openlocfilehash: 419f152d45ec254efab9270f67ace6e46a6b96a7
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 1bbc155e1c77c3512455816d2b66e7d4b55e57b7
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32757122"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43387209"
 ---
-# <a name="dbconnection-dbcommand-and-dbexception"></a>Připojení DbConnection, DbCommand a dbexception –
-Po vytvoření <xref:System.Data.Common.DbProviderFactory> a <xref:System.Data.Common.DbConnection>, pak můžete pracovat s příkazy a čtečky dat. k načtení dat ze zdroje dat.  
+# <a name="dbconnection-dbcommand-and-dbexception"></a>DbConnection, DbCommand a DbException
+Jakmile vytvoříte <xref:System.Data.Common.DbProviderFactory> a <xref:System.Data.Common.DbConnection>, pak můžete pracovat s příkazy a čtečky dat. k načtení dat z datového zdroje.  
   
 ## <a name="retrieving-data-example"></a>Příklad načítání dat  
- Tento příklad zpracuje `DbConnection` objektu jako argument. A <xref:System.Data.Common.DbCommand> se vytvoří pro výběr data z tabulky kategorie podle nastavení <xref:System.Data.Common.DbCommand.CommandText%2A> do příkazu SQL SELECT. Kód předpokládá, že v tabulce kategorie existuje ve zdroji dat. Připojení je otevřít a data se načítají pomocí <xref:System.Data.Common.DbDataReader>.  
+ Tento příklad používá `DbConnection` objektu jako argument. A <xref:System.Data.Common.DbCommand> se vytvoří vyberte data z tabulky Kategorie nastavením <xref:System.Data.Common.DbCommand.CommandText%2A> na příkazu SQL SELECT. Kód předpokládá, že existuje kategorie tabulky ve zdroji dat. Otevření připojení a data jsou načítány s použitím <xref:System.Data.Common.DbDataReader>.  
   
  [!code-csharp[DataWorks DbProviderFactories.DbCommandData#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.DbCommandData/CS/source.cs#1)]
  [!code-vb[DataWorks DbProviderFactories.DbCommandData#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.DbCommandData/VB/source.vb#1)]  
   
-## <a name="executing-a-command-example"></a>Provádění příkazu příklad  
- Tento příklad zpracuje `DbConnection` objektu jako argument. Pokud `DbConnection` je platný, je-li otevřít připojení a <xref:System.Data.Common.DbCommand> se vytvoří a provést. <xref:System.Data.Common.DbCommand.CommandText%2A> Je nastaven na příkazu INSERT jazyka SQL, který provádí typu vložení do kategorií tabulky v databázi Northwind. Kód předpokládá, že databáze Northwind existuje ve zdroji dat, a zda je platná pro zadaného zprostředkovatele syntaxe SQL použít v příkazu INSERT. Chyby, ke kterým dochází ve zdroji dat jsou zpracovávány <xref:System.Data.Common.DbException> blok kódu a všechny ostatní výjimky jsou zpracovávány v <xref:System.Exception> bloku.  
+## <a name="executing-a-command-example"></a>Provedení příkazu příklad  
+ Tento příklad používá `DbConnection` objektu jako argument. Pokud `DbConnection` je platný, je otevřeno připojení a <xref:System.Data.Common.DbCommand> je vytvořen a spuštěn. <xref:System.Data.Common.DbCommand.CommandText%2A> Je nastavena na příkazu INSERT jazyka SQL, který provádí vložení do kategorií tabulky v databázi Northwind. Kód předpokládá, že databáze Northwind existuje ve zdroji dat a syntaxe SQL v příkazu INSERT je platný pro zadaného zprostředkovatele. Zpracovává chyby, ke kterým dochází ve zdroji dat <xref:System.Data.Common.DbException> blok kódu a všechny ostatní výjimky jsou zpracovány v <xref:System.Exception> bloku.  
   
  [!code-csharp[DataWorks DbProviderFactories.DbCommand#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.DbCommand/CS/source.cs#1)]
  [!code-vb[DataWorks DbProviderFactories.DbCommand#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.DbCommand/VB/source.vb#1)]  
   
-## <a name="handling-data-errors-with-dbexception"></a>Zpracování chyb dat s dbexception –  
- <xref:System.Data.Common.DbException> Třída je základní třída pro všechny výjimky vydané jménem zdroj dat. Můžete ji použít ve vašem kódu pro zpracování výjimek pro zpracování výjimky vyvolané různé zprostředkovatele bez nutnosti referenční třídy konkrétní výjimek. Následující fragment kódu ukazuje, jak používat <xref:System.Data.Common.DbException> zobrazíte informace o chybě vrácený zdroje dat pomocí <xref:System.Exception.GetType%2A>, <xref:System.Exception.Source%2A>, <xref:System.Runtime.InteropServices.ExternalException.ErrorCode%2A>, a <xref:System.Exception.Message%2A> vlastnosti. Výstup se zobrazí typ chyby, zdroj označující název zprostředkovatele, kód chyby a zpráva přidružená k chybě.  
+## <a name="handling-data-errors-with-dbexception"></a>Zpracování chyb Data s DbException  
+ <xref:System.Data.Common.DbException> Třída je základní třída pro všechny výjimky vyvolané jménem zdroji dat. Vám pomůže ho v váš kód zpracování výjimek zpracování výjimek vyvolaných různí poskytovatelé, aniž byste museli reference – třída výjimky. Následující fragment kódu ukazuje, jak používat <xref:System.Data.Common.DbException> zobrazíte informace o chybách vrácených ve zdroji dat pomocí <xref:System.Exception.GetType%2A>, <xref:System.Exception.Source%2A>, <xref:System.Runtime.InteropServices.ExternalException.ErrorCode%2A>, a <xref:System.Exception.Message%2A> vlastnosti. Ve výstupu se zobrazí typ chyby, zdrojový označující název zprostředkovatele, kód chyby a zprávy související s chybou.  
   
 ```vb  
 Try  
@@ -67,4 +67,4 @@ finally
  [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)  
  [Získání DbProviderFactory](../../../../docs/framework/data/adonet/obtaining-a-dbproviderfactory.md)  
  [Úpravy dat přes DbDataAdapter](../../../../docs/framework/data/adonet/modifying-data-with-a-dbdataadapter.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

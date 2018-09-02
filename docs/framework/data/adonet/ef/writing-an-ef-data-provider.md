@@ -1,38 +1,38 @@
 ---
-title: Zápis poskytovatele dat Entity Framework
+title: Zápis zprostředkovatele dat Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 092e88c4-a301-453a-b5c3-5740c6575a9f
-ms.openlocfilehash: 578de94aa191d7302b762f1cdc87d4a6810037e3
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 50c0555d84c5b5f180c8c49a8419e8a414a4befe
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32762631"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43401458"
 ---
-# <a name="writing-an-entity-framework-data-provider"></a>Zápis poskytovatele dat Entity Framework
-Tato část popisuje, jak napsat [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] zprostředkovatele pro podporu zdroje dat než systémy SQL Server. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Zahrnuje zprostředkovatele, který podporuje SQL Server.  
+# <a name="writing-an-entity-framework-data-provider"></a>Zápis zprostředkovatele dat Entity Framework
+Tato část popisuje, jak psát [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] zprostředkovatele pro podporu zdroje dat než SQL Server. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Zahrnuje poskytovatele, který podporuje SQL Server.  
   
 ## <a name="introducing-the-entity-framework-provider-model"></a>Představení zprostředkovatele modelu Entity Framework  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Databáze je nezávislá a pomocí modelu zprostředkovatele ADO.NET pro připojení k různého typu zdroje dat můžete napsat zprostředkovatele.  
+ [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Nezávisí databáze a zprostředkovatele můžete napsat s využitím podle modelu poskytovatele ADO.NET pro připojení k různorodých zdrojů dat.  
   
- Zprostředkovatel dat Entity Framework (vytvořen pomocí modelu zprostředkovatel ADO.NET Data Provider) provádí následující funkce:  
+ Zprostředkovatel dat Entity Framework (vytvořené pomocí modelu zprostředkovatele dat ADO.NET) provádí následující funkce:  
   
--   Mapuje typy zprostředkovatele Entity Data Model (EDM) primitivní typy.  
+-   Primitivní typy Entity Data Model (EDM) se mapuje na poskytovatele typů.  
   
--   Zpřístupní funkce specifické pro zprostředkovatele.  
+-   Zpřístupňuje funkce specifické pro zprostředkovatele.  
   
--   Generuje příkazy specifický pro zprostředkovatele pro danou DbQueryCommandTree pro podporu [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] dotazy.  
+-   Generuje příkazy specifickým pro zprostředkovatele pro daného DbQueryCommandTree pro podporu [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] dotazy.  
   
--   Vytvoří příkazy aktualizace specifický pro zprostředkovatele pro danou DbModificationCommandTree pro podporu aktualizací prostřednictvím [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
+-   Generuje příkazy specifickým pro zprostředkovatele aktualizace pro danou DbModificationCommandTree podporovat aktualizace prostřednictvím [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
   
--   Zpřístupňuje mapování soubory pro definici schématu úložiště pro podporu generování modelu na základě databáze.  
+-   Zpřístupňuje mapování souborů pro definici schématu úložiště pro podporu generování model založený na databázi.  
   
--   Zveřejňuje metadata (tabulek a zobrazení, například) prostřednictvím konceptuálního modelu.  
+-   Poskytuje metadata (tabulek a zobrazení, například) prostřednictvím konceptuálního modelu.  
   
  ![b42a7a5c&#45;0ac0&#45;4911&#45;86be&#45;0460a78760ba](../../../../../docs/framework/data/adonet/ef/media/b42a7a5c-0ac0-4911-86be-0460a78760ba.gif "b42a7a5c-0ac0-4911-86be-0460a78760ba")  
   
 ## <a name="sample"></a>Ukázka  
- Najdete v článku [zprostředkovatele Entity Framework ukázka](http://go.microsoft.com/fwlink/?LinkId=180616) ukázkové [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] zprostředkovatele, který podporuje zdroje dat než systémy SQL Server.  
+ Najdete v článku [ukázka zprostředkovatele Entity Framework](https://go.microsoft.com/fwlink/?LinkId=180616) ukázku [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] zprostředkovatele, který podporuje zdroje dat než SQL Server.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Generování SQL](../../../../../docs/framework/data/adonet/ef/sql-generation.md)  

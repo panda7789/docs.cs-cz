@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a5bb3d48d33333e888200bc607d3a193482f0336
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 00e425b56ae555b153685b5af0ac58b6ab4c335b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33433650"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43391643"
 ---
 # <a name="iclrstrongnamestrongnametokenfromassemblyex-method"></a>ICLRStrongName::StrongNameTokenFromAssemblyEx – metoda
-Vytvoří token silným názvem ze zadaného souboru sestavení a vrátí veřejný klíč, který představuje daný token.  
+Vytvoří token silného názvu ze zadaného souboru sestavení a vrátí představující token veřejného klíče.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,30 +41,30 @@ HRESULT StrongNameTokenFromAssemblyEx (
   
 #### <a name="parameters"></a>Parametry  
  `wszFilePath`  
- [v] Cesta k souboru přenosné spustitelný soubor (PE) pro sestavení.  
+ [in] Cesta k souboru (PE portable executable) pro sestavení.  
   
  `ppbStrongNameToken`  
- [out] Token vrácený silným názvem.  
+ [out] Token vrácený silného názvu.  
   
  `pcbStrongNameToken`  
  [out] Velikost v bajtech, silný název tokenu.  
   
  `ppbPublicKeyBlob`  
- [out] Vrácený veřejný klíč.  
+ [out] Vrácené veřejný klíč.  
   
  `pcbPublicKeyBlob`  
  [out] Velikost v bajtech, veřejného klíče.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
   
 ## <a name="remarks"></a>Poznámky  
- Zkrácený tvar veřejný klíč je token silným názvem. Token je 64 bitů hodnotu hash, který je vytvořený z veřejný klíč používaný k podepisování sestavení. Token je součástí silného názvu pro sestavení a můžete číst z metadata sestavení.  
+ Zkráceným tvarem veřejný klíč je token silného názvu. Token je hodnota hash 64-bit, který je vytvořen z veřejného klíče použitý k podepsání sestavení. Token, který je součástí silného názvu pro sestavení a může číst z metadat sestavení.  
   
- Jakmile načítání klíče a token je vytvořen, by měly volat [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metodu pro uvolnění přidělenou paměť.  
+ Poté, co načítání klíče a token, který je vytvořen, měli byste zavolat [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metodu pro uvolnění přidělené paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   

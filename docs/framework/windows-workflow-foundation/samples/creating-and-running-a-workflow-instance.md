@@ -1,31 +1,31 @@
 ---
-title: Vytváření a spouštění instanci pracovního postupu
+title: Vytvoření a spuštění Instance pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 19d27f47-0491-4569-8f53-51bc1d940e80
-ms.openlocfilehash: 3bfcde3dd635820fa66d639134a43e5e43186c17
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 571d41194ebc98be81646fb5bfdab060225015ca
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33513683"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43393777"
 ---
-# <a name="creating-and-running-a-workflow-instance"></a>Vytváření a spouštění instanci pracovního postupu
-Tento příklad ukazuje, jak spustit instanci pracovního postupu. Ukazuje, jak provést synchronně a asynchronně.  
+# <a name="creating-and-running-a-workflow-instance"></a>Vytvoření a spuštění Instance pracovního postupu
+Tento příklad ukazuje, jak spustit instanci pracovního postupu. Ukazuje, jak k jeho provedení synchronního a asynchronního.  
   
 ## <a name="demonstrates"></a>Demonstruje  
  <xref:System.Activities.WorkflowInvoker>, <xref:System.Activities.WorkflowApplication>.  
   
-## <a name="discussion"></a>Diskusní  
- První část vzorku používá <xref:System.Activities.WorkflowInvoker.Invoke%2A>. To je nejzákladnější způsob k provedení pracovního postupu. Pracovní postupy provést s <xref:System.Activities.WorkflowInvoker.Invoke%2A> jsou spouštěny synchronně.  
+## <a name="discussion"></a>Diskuse  
+ První část Ukázka používá <xref:System.Activities.WorkflowInvoker.Invoke%2A>. Toto je nejzákladnější možnost pro spuštění pracovního postupu. Pracovní postupy provést s <xref:System.Activities.WorkflowInvoker.Invoke%2A> provádějí synchronně.  
   
- Druhá část vzorku používá <xref:System.Activities.WorkflowApplication> třídy. <xref:System.Activities.WorkflowApplication> umožňuje mít větší kontrolu nad každou instanci, včetně možnosti pro interakci s běžícím workflowem a asynchronně spuštění pracovního postupu.  
+ Druhá část Ukázka používá <xref:System.Activities.WorkflowApplication> třídy. <xref:System.Activities.WorkflowApplication> umožňuje mít větší kontrolu nad každou instanci, včetně možnosti pro interakci s běžícím workflowem a pracovní postup spouští asynchronně.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Execution\CreatingWorkflowInstances`  
   

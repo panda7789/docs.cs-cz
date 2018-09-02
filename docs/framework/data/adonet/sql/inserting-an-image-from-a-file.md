@@ -1,24 +1,24 @@
 ---
-title: Vkládání obrázek ze souboru
+title: Vložení obrázku ze souboru
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 35900aa2-5615-4174-8212-ba184c6b82fb
-ms.openlocfilehash: 3b5b6f2f267f19b3ea42c352a8a1e3721a1ceb86
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d3cbf4fa0eb0b261bb752370c95cdfb2bca0b7e6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33359312"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43387461"
 ---
-# <a name="inserting-an-image-from-a-file"></a>Vkládání obrázek ze souboru
-Binární rozsáhlý objekt (binární rozsáhlý OBJEKT) můžete zapisovat jako binární nebo znak dat, v závislosti na typu pole na zdroj dat do databáze. Objekt BLOB je obecný pojem, který odkazuje `text`, `ntext`, a `image` datové typy, které obvykle obsahují dokumenty a obrázky.  
+# <a name="inserting-an-image-from-a-file"></a>Vložení obrázku ze souboru
+Binární velkých objektů (BLOB) může zapisovat do databáze jako binární nebo znaková data, v závislosti na typu pole ve zdroji dat. Objekt BLOB je obecný termín, který odkazuje `text`, `ntext`, a `image` datové typy, které obvykle obsahují dokumenty a obrázky.  
   
- Zapsat hodnotu objektu BLOB do databáze, příkaz odpovídající příkazu INSERT nebo UPDATE a předejte hodnotu objektu BLOB jako vstupní parametr (viz [parametry konfigurace a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)). Pokud objektu BLOB služby se uloží jako text, třeba s SQL serverem `text` pole, můžete předat objekt BLOB jako parametr řetězce. Pokud objekt BLOB se ukládají v binárním formátu, třeba s SQL serverem `image` pole, abyste mohli předávat pole typu `byte` jako binární parametr.  
+ Hodnota objektu BLOB zapisovat do databáze, odpovídající INSERT nebo UPDATE příkaz issue a předejte hodnotu objektů BLOB jako vstupní parametr (viz [parametry konfigurace a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)). Pokud se objekt BLOB se ukládá jako text, například SQL Server `text` pole, můžete předat objekt BLOB jako parametr řetězce. Pokud je objekt BLOB uložené v binárním formátu, jako je SQL Server `image` pole, můžete předat pole typu `byte` jako binární parametr.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu přidá do tabulky Zaměstnanci v databázi Northwind informace o zaměstnancích. Fotografie zaměstnance je čtení ze souboru a přidat do pole fotografii v tabulce, která je na pole obrázku.  
+ Následující příklad kódu přidá informace o zaměstnancích zaměstnanci tabulky v databázi Northwind. Fotografie zaměstnance se číst ze souboru a přidá do pole fotografii v tabulce, která je na pole obrázku.  
   
 ```vb  
 Public Shared Sub AddEmployee( _  
@@ -135,4 +135,4 @@ public static byte[] GetPhoto(string filePath)
  [Načítání binárních dat](../../../../../docs/framework/data/adonet/retrieving-binary-data.md)  
  [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
  [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

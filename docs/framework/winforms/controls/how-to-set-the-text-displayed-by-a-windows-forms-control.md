@@ -21,23 +21,23 @@ helpviewer_keywords:
 - controls [Windows Forms], captions
 - forms [Windows Forms], captions
 ms.assetid: 36b95bff-8780-479d-b86a-f1a0673653aa
-ms.openlocfilehash: d39b0b7ccf95f0da22086a72aa2cee424d7ea8ae
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d9c9bea26cfc3d5b2cfc4484173a7680ff2fc34d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33535610"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43399323"
 ---
 # <a name="how-to-set-the-text-displayed-by-a-windows-forms-control"></a>Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms
-Ovládací prvky Windows Forms obvykle zobrazí text související s primární funkce ovládacího prvku. Například <xref:System.Windows.Forms.Button> obvykle zobrazí popisek indikující, jaká akce se provede při kliknutí na tlačítko. Pro všechny ovládací prvky, můžete nastavit nebo vrátí text s použitím <xref:System.Windows.Forms.Control.Text%2A> vlastnost. Písmo můžete změnit pomocí <xref:System.Windows.Forms.Control.Font%2A> vlastnost. Můžete také nastavit text pomocí návrháře.  Také najdete v části [postup: vytvoření přístup klíčů pro Windows Forms – ovládací prvky pomocí návrháře](http://msdn.microsoft.com/library/ms233673\(v=vs.110\)), [postup: nastavení zobrazí Text s použitím ovládacího prvku Windows Forms návrháře](http://msdn.microsoft.com/library/ms233665\(v=vs.110\)), [postupy: nastavení obrázku Zobrazí ve Windows Forms pomocí návrháře ovládacího prvku](http://msdn.microsoft.com/library/ms233656\(v=vs.110\)).  
+Ovládací prvky Windows Forms obvykle zobrazí text, který souvisí s primární funkce ovládacího prvku. Například <xref:System.Windows.Forms.Button> ovládací prvek obvykle zobrazí popisek indikující, jaká akce se provede při kliknutí na tlačítko. Pro všechny ovládací prvky, můžete nastavit nebo načíst text pomocí <xref:System.Windows.Forms.Control.Text%2A> vlastnost. Můžete změnit písmo pomocí <xref:System.Windows.Forms.Control.Font%2A> vlastnost. Můžete také nastavit text pomocí návrháře.  Také naleznete v tématu [postupy: vytvoření přístup klíčů pro Windows Forms ovládací prvky pomocí návrháře](how-to-create-access-keys-for-windows-forms-controls-using-the-designer.md), [jak: nastavit Text zobrazí s použitím ovládacího prvku Windows Forms návrháře](how-to-set-the-text-displayed-by-a-windows-forms-control-using-the-designer.md), [postupy: nastavení obrázku Zobrazený Windows Forms pomocí návrháře ovládací prvek](how-to-set-the-image-displayed-by-a-windows-forms-control-using-the-designer.md).  
   
 ### <a name="to-set-the-text-displayed-by-a-control-programmatically"></a>K nastavení textu zobrazovaného ovládacím prvkem prostřednictvím kódu programu  
   
-1.  Nastavte <xref:System.Windows.Forms.Control.Text%2A> na řetězec.  
+1.  Nastavte <xref:System.Windows.Forms.Control.Text%2A> nastavte na řetězec.  
   
-     Chcete-li vytvořit podtržené přístupový klíč, obsahuje znak ampersand (&) před písmeno, které bude přístupový klíč.  
+     K vytvoření podtržené přístupový klíč, obsahuje znak ampersand (&) před písmenem, který bude přístupový klíč.  
   
-2.  Nastavte <xref:System.Windows.Forms.Control.Font%2A> vlastností pro objekt typu <xref:System.Drawing.Font>.  
+2.  Nastavte <xref:System.Windows.Forms.Control.Font%2A> vlastnost na objekt typu <xref:System.Drawing.Font>.  
   
     ```vb  
     Button1.Text = "Click here to save changes"  
@@ -57,7 +57,7 @@ Ovládací prvky Windows Forms obvykle zobrazí text související s primární 
     ```  
   
     > [!NOTE]
-    >  Řídicí znak můžete zobrazit speciální znak v prvky uživatelského rozhraní, které by normálně jejich interpretace, například položky nabídky. Například následující řádek kódu nastaví položku nabídky textu k načtení "& teď pro něco úplně jiné":  
+    >  Řídicí znak slouží k zobrazení speciálního znaku v prvcích uživatelského rozhraní, které by normálně interpretovat, jako je například položky nabídky. Například následující řádek kódu nastaví text položky nabídky ke čtení "& nyní pro něco úplně odlišnému":  
   
     ```vb  
     MPMenuItem.Text = "&& Now For Something Completely Different"  

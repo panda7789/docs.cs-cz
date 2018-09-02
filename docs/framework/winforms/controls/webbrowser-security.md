@@ -5,19 +5,19 @@ helpviewer_keywords:
 - WebBrowser control [Windows Forms], security
 - security [Windows Forms], WebBrowser control
 ms.assetid: 0968846e-48ee-485a-9797-65b5b9a622f8
-ms.openlocfilehash: 730d8f692a44a06ea142bb870bbd961d5983c785
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 683c6ad4cbc55a889f4a0c1d20ebe8e8a2669a13
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33534609"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43399174"
 ---
 # <a name="webbrowser-security"></a>WebBrowser – zabezpečení
-<xref:System.Windows.Forms.WebBrowser> Ovládací prvek je určen pro práci v pouze úplný vztah důvěryhodnosti. Obsah HTML, který zobrazí v ovládacím prvku mohou pocházet z externích webových serverů a může obsahovat nespravovaného kódu ve formě skripty nebo ovládací prvky webového. Pokud použijete <xref:System.Windows.Forms.WebBrowser> ovládací prvek v této situaci se ovládací prvek je již méně bezpečná, než by bylo Internet Explorer, ale spravovaný <xref:System.Windows.Forms.WebBrowser> řízení nezabrání takový nespravovaný kód spuštěný.  
+<xref:System.Windows.Forms.WebBrowser> Ovládací prvek je navržen pro práci v režimu pouze plné důvěryhodnosti. HTML obsah zobrazený v ovládacím prvku mohou pocházet z externích webových serverů a může obsahovat nespravovaného kódu ve formě skriptů nebo webové ovládací prvky. Pokud používáte <xref:System.Windows.Forms.WebBrowser> ovládací prvek v takovém případě ovládací prvek je již méně bezpečné než Internet Explorer by ale spravovanou <xref:System.Windows.Forms.WebBrowser> ovládací prvek nezabrání spuštění takových nespravovaného kódu.  
   
- Další informace o zabezpečení problémy týkající se základní ActiveX `WebBrowser` řízení najdete v tématu [WebBrowser – ovládací prvek](http://go.microsoft.com/fwlink/?LinkId=198812).  
+ Další informace o zabezpečení problémy týkající se základního ActiveX `WebBrowser` řídí, najdete v článku [ovládací prvek WebBrowser](https://go.microsoft.com/fwlink/?LinkId=198812).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.WebBrowser>  
  [Přehled ovládacího prvku WebBrowser](../../../../docs/framework/winforms/controls/webbrowser-control-overview.md)  
- [Ovládací prvek WebBrowser](http://go.microsoft.com/fwlink/?LinkId=198812)
+ [Ovládací prvek WebBrowser](https://go.microsoft.com/fwlink/?LinkId=198812)

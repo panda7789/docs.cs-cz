@@ -9,26 +9,26 @@ ms.assetid: 1cb92bd7-6bab-44cf-8fd3-36303ce84fea
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 65bd075115e33486e86e8081b01b96db665e9da5
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 4a83f1e67377a5ce699301770ff0369f8f760884
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32758266"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43387325"
 ---
 # <a name="specifying-an-assembly39s-location"></a>Určení sestavení&#39;s umístění
-K určení umístění sestavení dvěma způsoby:  
+Existují dva způsoby, jak zadat umístění sestavení:  
   
--   Pomocí [ \<codeBase >](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) element.  
+-   Použití [ \<codeBase >](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) elementu.  
   
--   Pomocí [ \<zjišťování >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) element.  
+-   Použití [ \<zjišťování >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) elementu.  
   
- Můžete také [rozhraní .NET Framework Configuration Tool (Mscorcfg.msc)](http://msdn.microsoft.com/library/a7106c52-68da-490e-b129-971b2c743764) a zadejte umístění sestavení nebo zadejte umístění pro modul CLR do testů pro sestavení.  
+ Můžete také použít [konfiguračního nástroje rozhraní .NET Framework (Mscorcfg.msc)](https://msdn.microsoft.com/library/a7106c52-68da-490e-b129-971b2c743764) zadat umístění sestavení nebo určit umístění pro modul common language runtime pro sběr dat pro sestavení.  
   
-## <a name="using-the-codebase-element"></a>Pomocí \<codeBase > elementu  
- Můžete použít  **\<codeBase >** element pouze v počítači konfigurace nebo vydavatele soubory zásad, které také přesměrování verze sestavení. Když modul runtime určuje, které verze sestavení se má použít, bude se vztahovat základní nastavení kódu ze souboru, který určuje verzi. Pokud je uvedené žádné základu kódu, sondy modulu runtime pro sestavení běžným způsobem. Podrobnosti najdete v tématu [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+## <a name="using-the-codebase-element"></a>Použití \<codeBase > – Element  
+ Můžete použít  **\<codeBase >** element pouze v počítači konfigurace nebo vydavatele zásad souborů, které také přesměrování verze sestavení. Když modul runtime určuje verzi sestavení, která se má použít, bude se vztahovat základní nastavení kódu ze souboru, který určuje verzi. Pokud je uveden žádný základní kód, testy se modul runtime pro sestavení běžným způsobem. Podrobnosti najdete v tématu [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   
- Následující příklad ukazuje, jak k určení umístění sestavení.  
+ Následující příklad ukazuje, jak zadat umístění sestavení.  
   
 ```xml  
 <configuration>  
@@ -46,15 +46,15 @@ K určení umístění sestavení dvěma způsoby:
 </configuration>  
 ```  
   
- **Verze** atribut je požadován pro všechny sestavení se silným názvem však by měl být vynechán pro sestavení, které nejsou silným názvem. **\<CodeBase >** prvek vyžaduje **href** atribut. Nelze zadat rozsahy verze v  **\<codeBase >** element.  
+ **Verze** atribut je vyžadován pro všechna sestavení se silným názvem, ale musí být vynechána pro sestavení, které se silným názvem. **\<CodeBase >** element vyžaduje **href** atribut. Nelze určit verzi rozsahů v  **\<codeBase >** elementu.  
   
 > [!NOTE]
->  Pokud jsou poskytuje základní nápovědu kód pro sestavení, které není silným názvem, pomocný parametr musí odkazovat na základní aplikace a podadresář základnímu adresáři aplikace.  
+>  Pokud pro sestavení, který není silným názvem jsou zadání pomocného parametru základní kód, pomocný parametr musí ukazovat na základ cesty aplikace nebo o podadresář základního adresáře aplikace.  
   
-## <a name="using-the-probing-element"></a>Pomocí \<zjišťování > elementu  
- Běhové prostředí vyhledává sestavení, které nemají základu kódu pomocí zjišťování. Další informace o zjišťování naleznete v tématu [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+## <a name="using-the-probing-element"></a>Použití \<zjišťování > – Element  
+ Běhové prostředí vyhledává sestavení, které nemají základu kódu pomocí zjišťování. Další informace o zjišťování najdete v tématu [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   
- Můžete použít [ \<zjišťování >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) element v konfiguračním souboru aplikace k určení podadresáře modulu runtime by měli vyhledat při vyhledání sestavení. Následující příklad ukazuje, jak zadat adresáře, který by měl hledání modulu runtime.  
+ Můžete použít [ \<zjišťování >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) prvku v konfiguračním souboru aplikace k určení podadresářů, které by měl modul runtime vyhledat při hledání sestavení. Následující příklad ukazuje, jak určit adresáře, který by měl modul runtime vyhledat.  
   
 ```xml  
 <configuration>  
@@ -66,10 +66,10 @@ K určení umístění sestavení dvěma způsoby:
 </configuration>  
 ```  
   
- **PrivatePath** atribut obsahuje adresáře, které modul runtime program hledat sestavení. Pokud aplikace se nachází v C:\Program Files\MyApp, modul runtime bude hledat sestavení, které neurčují C:\Program Files\MyApp\Bin, C:\Program Files\MyApp\Bin2\Subbin a C:\Program Files\MyApp\Bin3 základu kódu. Adresáře, určené v **privatePath** musí být základní adresáře aplikace.  
+ **PrivatePath** atribut obsahuje adresáře, které by měl modul runtime vyhledat sestavení. Pokud je umístěna na C:\Program Files\MyApp aplikace, modul runtime vyhledá sestavení, která v C:\Program Files\MyApp\Bin C:\Program Files\MyApp\Bin2\Subbin a C:\Program Files\MyApp\Bin3 neurčí základ kódu. Adresáře určené v **privatePath** musí být základního adresáře aplikace.  
   
 ## <a name="see-also"></a>Viz také  
  [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)  
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
- [Konfigurace aplikací rozhraní .NET Framework](http://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)
+ [Konfigurace aplikací .NET Framework](https://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)

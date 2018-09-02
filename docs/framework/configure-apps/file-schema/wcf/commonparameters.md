@@ -1,16 +1,16 @@
 ---
-title: '&lt;CommonParameters&gt;'
+title: '&lt;commonParameters&gt;'
 ms.date: 03/30/2017
 ms.assetid: ffc20832-34d6-4622-8174-81924fd53514
-ms.openlocfilehash: 881a7d0890991aa4f542ff92c2a721b9d9cb7b29
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 5e4c19c48709ffd81cb00e9820e6c3cdb297ec7e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32749436"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43391717"
 ---
-# <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
-Představuje kolekci parametrů, které se používají globálně ve více službách. Tato kolekce bude obvykle obsahovat připojovací řetězec databáze, který může být sdílen trvalé služby.  
+# <a name="ltcommonparametersgt"></a>&lt;commonParameters&gt;
+Představuje kolekci parametrů, které jsou používány globálně u více služeb. Tato kolekce bude obvykle obsahují řetězec připojení k databázi, kterou může sdílet trvalé služby.  
   
  \<system.ServiceModel>  
 \<chování >  
@@ -45,13 +45,13 @@ Představuje kolekci parametrů, které se používají globálně ve více slu�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<workflowRuntime>](../../../../../docs/framework/configure-apps/file-schema/wcf/workflowruntime.md)|Určuje nastavení pro instanci <xref:System.Workflow.Runtime.WorkflowRuntime> pro hostování služby Windows Communication Foundation (WCF) založené na pracovním postupu.|  
+|[\<workflowRuntime>](../../../../../docs/framework/configure-apps/file-schema/wcf/workflowruntime.md)|Určuje nastavení pro instanci <xref:System.Workflow.Runtime.WorkflowRuntime> pro hostování služby Windows Communication Foundation (WCF) založené na pracovních postupech.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<commonParameters>` Element definuje žádné parametry, které se používají globálně ve více službách, například `ConnectionString` při použití <xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService>.  
+ `<commonParameters>` Všechny parametry, které jsou používány globálně u více služeb, například definuje element `ConnectionString` při použití <xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService>.  
   
 > [!NOTE]
->  Služba SQL sledování nepoužívá konzistentně `ConnectionString` hodnotu, pokud je zadána v `<commonParameters>` části. Některé jeho operací, jako je například načítání `StateMachineWorkflowInstance.StateHistory` vlastnost může selhat. Chcete-li vyřešit, zadejte `ConnectionString` atribut konfigurační oddíl pro sledování poskytovatele, jak je uvedeno v následujícím příkladu.  
+>  Služba sledování SQL Server nepoužívá konzistentně `ConnectionString` hodnotu, pokud je zadán v `<commonParameters>` oddílu. Některé z jeho operace, třeba načítání `StateMachineWorkflowInstance.StateHistory` vlastnost může selhat. Chcete-li vyřešit, zadejte `ConnectionString` atribut v konfiguračním oddílu pro zprostředkovatele sledování, jak je uvedeno v následujícím příkladu.  
   
  `<add`  
   
@@ -59,7 +59,7 @@ Představuje kolekci parametrů, které se používají globálně ve více slu�
   
  `ConnectionString="Data Source=localhost;Initial Catalog=Partner20WFTP;Integrated Security=True;" />`  
   
- Pro služby, které potvrdit pracovní dávek trvalost úložiště, jako například <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService> a <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>, můžete povolit, aby opakujte pokus o jejich transakce pomocí `EnableRetries` parametr, jak je znázorněno v následujícím příkladu:  
+ Pro služby, které potvrdí práci dávek trvalého úložiště, jako například <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService> a <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>, umožníte jim to chcete zkusit znovu jejich transakce pomocí `EnableRetries` parametru, jak je znázorněno v následujícím příkladu:  
   
 ```xml  
 <WorkflowRuntime Name="SampleApplication" UnloadOnIdle="false">  
@@ -73,9 +73,9 @@ Představuje kolekci parametrů, které se používají globálně ve více slu�
 </WorkflowRuntime>  
 ```  
   
- Všimněte si, že `EnableRetries` parametr může být nastaven buď na globální úrovni (jak je znázorněno v *CommonParameters* části) nebo pro jednotlivé služby podporující `EnableRetries` (jak je znázorněno v *služby*části).  
+ Všimněte si, že `EnableRetries` parametr může být nastaven buď na globální úrovni (jak je znázorněno *CommonParameters* části) nebo pro jednotlivé služby, které podporují `EnableRetries` (jak je znázorněno v *služby*části).  
   
- Následující vzorový kód ukazuje, jak změnit společné parametry prostřednictvím kódu programu.  
+ Následující ukázkový kód ukazuje, jak programově změnit společných parametrů.  
   
 ```  
 Configuration config=WebConfigurationManager.OpenWebConfiguration("/Workflow", "Default Web Site", null, "localhost");  
@@ -85,7 +85,7 @@ commonParameters["ConnectionString"].Value="another connection string";
 config.Save();  
 ```  
   
- Další informace o použití konfiguračního souboru pro řízení chování <xref:System.Workflow.Runtime.WorkflowRuntime> objekt hostitele aplikace Windows Workflow Foundation, najdete v části [konfigurační soubory pracovního postupu](http://msdn.microsoft.com/library/ada4bb90-6c9d-4f3d-a9d0-b559bb0f9909).  
+ Další informace o použití konfiguračního souboru pro řízení chování <xref:System.Workflow.Runtime.WorkflowRuntime> objekt hostitele aplikace Windows Workflow Foundation, najdete v článku [konfigurační soubory pracovního postupu](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90)).  
   
 ## <a name="example"></a>Příklad  
   
@@ -102,5 +102,5 @@ config.Save();
  <xref:System.Workflow.Runtime.WorkflowRuntime>  
  <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService>  
  <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>  
- [Konfigurační soubory pracovního postupu](http://msdn.microsoft.com/library/ada4bb90-6c9d-4f3d-a9d0-b559bb0f9909)  
+ [Konfigurační soubory pracovního postupu](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))  
  [\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-commonparameters.md)

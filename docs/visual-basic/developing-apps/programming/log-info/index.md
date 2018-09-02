@@ -10,11 +10,11 @@ helpviewer_keywords:
 - examples [Visual Basic], logging application information
 ms.assetid: 8bf4f047-22d6-48d6-aec5-93b98ad5b8e8
 ms.openlocfilehash: 68ec09dac026e46716ff18dce88acf9d60635026
-ms.sourcegitcommit: 875ecc3ab2437e299b1d50076bd9b878fa8c64de
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43239604"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43386803"
 ---
 # <a name="logging-information-from-the-application-visual-basic"></a>Protokolování informací z aplikace (Visual Basic)
 Tento oddíl obsahuje témata, které vás provedou k protokolování informací z aplikace pomocí `My.Application.Log` nebo `My.Log` objektu a tom, jak rozšířit možnosti protokolování aplikace.  

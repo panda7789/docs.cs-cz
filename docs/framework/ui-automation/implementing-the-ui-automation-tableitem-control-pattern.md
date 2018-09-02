@@ -9,25 +9,25 @@ ms.assetid: ac178408-1485-436f-8d3e-eee3bf80cb24
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: e28ac8762c2c3a58a282b92da2b0a2dfadf32dbb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: db94a1a4588c2f889da8adb1cb3e47e208ce1211
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33398967"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43393714"
 ---
 # <a name="implementing-the-ui-automation-tableitem-control-pattern"></a>Implementace vzoru ovládacích prvků TableItem pro automatizaci uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Toto téma představuje pokyny a konvence pro implementaci <xref:System.Windows.Automation.Provider.ITableItemProvider>, včetně informací o události a vlastnosti. Na konci tohoto přehledu jsou uvedeny odkazy na další odkazy.  
+ Toto téma popisuje pravidla a zásady pro implementaci <xref:System.Windows.Automation.Provider.ITableItemProvider>, včetně informací o události a vlastnosti. Odkazy na další odkazy jsou uvedeny na konci přehledu.  
   
- <xref:System.Windows.Automation.TableItemPattern> – Vzor ovládacích prvků se používá pro podporu podřízených ovládacích prvků kontejnerů, které implementují <xref:System.Windows.Automation.Provider.ITableProvider>. Požadované souběžná implementace poskytuje přístup k funkcím jednotlivých buněk <xref:System.Windows.Automation.Provider.IGridItemProvider>. Tento vzor ovládacích prvků je podobná <xref:System.Windows.Automation.Provider.IGridItemProvider> s rozdíl, že všechny řídí, implementace <xref:System.Windows.Automation.Provider.ITableItemProvider> musí prostřednictvím kódu programu vystavit vztah mezi jednotlivých buněk a jeho informace řádků a sloupců. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků najdete v tématu [řízení vzor mapování pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ <xref:System.Windows.Automation.TableItemPattern> – Vzor ovládacích prvků slouží k podpoře podřízené ovládací prvky kontejnerů, které implementují <xref:System.Windows.Automation.Provider.ITableProvider>. Poskytuje přístup k funkcím jednotlivé buňky vyžaduje souběžné provádění <xref:System.Windows.Automation.Provider.IGridItemProvider>. Tento vzor ovládacích prvků je obdobou <xref:System.Windows.Automation.Provider.IGridItemProvider> s rozlišovat, že žádné řídicí implementace <xref:System.Windows.Automation.Provider.ITableItemProvider> musí zveřejnit prostřednictvím kódu programu vztah mezi jednotlivé buňky a její informace řádků a sloupců. Příklady ovládacích prvků, které tento ovládací prvek model implementovat, najdete v článku [ovládací prvek vzor mapování pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Postup implementace a konvence  
+## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
   
--   Funkce související mřížky položky, naleznete v části [implementace vzoru ovládacích prvků uživatelského rozhraní automatizaci GridItem](../../../docs/framework/ui-automation/implementing-the-ui-automation-griditem-control-pattern.md).  
+-   Funkci související mřížce položky, naleznete v tématu [implementace vzoru ovládacích prvků GridItem pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-griditem-control-pattern.md).  
   
 <a name="Required_Members_for_ITableItemProvider"></a>   
 ## <a name="required-members-for-itableitemprovider"></a>Požadované členy pro ITableItemProvider  
@@ -37,11 +37,11 @@ ms.locfileid: "33398967"
 |<xref:System.Windows.Automation.Provider.ITableItemProvider.GetColumnHeaderItems%2A>|Metoda|Žádné|  
 |<xref:System.Windows.Automation.Provider.ITableItemProvider.GetRowHeaderItems%2A>|Metoda|Žádné|  
   
- Tento vzor ovládacích prvků nemá žádné přidružené vlastnosti nebo události.  
+ Tento model ovládací prvek nemá žádné přidružené vlastnosti a události.  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Výjimky  
- Tento vzor ovládacích prvků nemá žádné přidružené výjimky.  
+ Tento model ovládací prvek nemá žádné související výjimky.  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  

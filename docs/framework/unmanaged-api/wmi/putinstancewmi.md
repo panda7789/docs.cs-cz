@@ -1,6 +1,6 @@
 ---
 title: Funkce PutInstanceWmi (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce PutInstanceWmi vytvoří nebo aktualizuje existující třídy instance.
+description: Funkce PutInstanceWmi vytvoří nebo aktualizuje instance existující třídy.
 ms.date: 11/06/2017
 api_name:
 - PutInstanceWmi
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0db08ef4938a88ee657e2d65dda70edac09df8ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 67abf017040b9e6bbe9b10e560c8d57c124ae84e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33462157"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43397510"
 ---
 # <a name="putinstancewmi-function"></a>PutInstanceWmi – funkce
-Vytvoří nebo aktualizuje existující třídy instance. Instance je zapsán do úložiště služby WMI. 
+Vytvoří nebo aktualizuje instance existující třídy. Instance se zapisují do úložiště služby WMI. 
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -42,65 +42,65 @@ HRESULT PutInstanceWmi (
 ## <a name="parameters"></a>Parametry
 
 `pInst`    
-[v] Ukazatel na instanci být writen.
+[in] Ukazatel na instance, která má být writen.
 
 `lFlags`   
-[v] Kombinace příznaky, které ovlivňují chování této funkce. Následující hodnoty jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu: 
+[in] Kombinace příznaků, které ovlivňují chování této funkce. Následující hodnoty jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu: 
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Pokud nastavíte, rozhraní WMI nejsou uložené žádné kvalifikátory s **Amended** příchuť. </br> Není-li sadu, se předpokládá, že není lokalizované tento objekt a všechny kvalifikátory jsou storedwith této instance. |
-| `WBEM_FLAG_CREATE_OR_UPDATE` | 0 | Vytvořte instanci, pokud ji neexistuje, nebo ho přepíše, pokud již existuje. |
-| `WBEM_FLAG_UPDATE_ONLY` | 1 | Aktualizace instance. Instance musí existovat volání úspěšné. |
-| `WBEM_FLAG_CREATE_ONLY` | 2 | Vytvoření instance. Volání selže, pokud instance již existuje. |
-| `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | Příznak způsobí, že polosynchronní volání. |
+| `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Pokud nastavíte, WMI neukládá všechny kvalifikátory s **Amended** charakter. </br> Pokud není sada, předpokládá se, že tento objekt není lokalizována, a všechny kvalifikátory jsou storedwith této instance. |
+| `WBEM_FLAG_CREATE_OR_UPDATE` | 0 | Vytvořte instanci, pokud ho neexistuje, nebo ho přepíše, pokud již existuje. |
+| `WBEM_FLAG_UPDATE_ONLY` | 1 | Aktualizace instance. Instance musí existovat volání k dosažení úspěchu. |
+| `WBEM_FLAG_CREATE_ONLY` | 2 | Vytvoření instance. Volání selže, pokud instanci již existuje. |
+| `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | Příznak způsobí, že volání semisynchronní volání. |
 
 `pCtx`  
-[v] Obvykle je tato hodnota `null`. Jinak je ukazatel na [IWbemContext](https://msdn.microsoft.com/library/aa391465(v=vs.85).aspx) instanci, která mohou být využívána zprostředkovatele, který poskytuje požadované třídy. 
+[in] Obvykle je tato hodnota `null`. V opačném případě je ukazatel [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) , jež lze použít poskytovatele, který poskytuje požadované třídy. 
 
 `ppCallResult`  
-[out] Pokud `null`, tento parametr se nepoužívá. Pokud `lFlags` obsahuje `WBEM_FLAG_RETURN_IMMEDIATELY`, funkce vrátí okamžitě s `WBEM_S_NO_ERROR`. `ppCallResult` Parametr obdrží ukazatel na novou [IWbemCallResult](https://msdn.microsoft.com/library/aa391425(v=vs.85).aspx) objektu.
+[out] Pokud `null`, tento parametr se nepoužívá. Pokud `lFlags` obsahuje `WBEM_FLAG_RETURN_IMMEDIATELY`, funkce vrátí hodnotu okamžitě s `WBEM_S_NO_ERROR`. `ppCallResult` Parametr přijímá ukazatel na novou [IWbemCallResult](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcallresult) objektu.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k aktualizaci instanci zadané třídy. |
-| `WBEM_E_FAILED` | 0x80041001 | Došlo k neurčené chybě. |
-| `WBEM_E_INVALID_CLASS` | 0x80041010 | Třída podporuje tato instance není platný. |
-| `WBEM_E_ILLEGAL_NULL` | 0x80041028 | `null` zadaná pro vlastnost, která nemůže být `null`, například u takové, která je označena kvalifikátorem **indexované** nebo **Not_Null** kvalifikátor. |
-| `WBEM_E_INVALID_OBJECT` | 0x8004100f | Zadaná instance není platný. (Například volání `PutInstanceWmi` s třídou vrací hodnotu této.) |
+| `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k aktualizaci instance dané třídy. |
+| `WBEM_E_FAILED` | 0x80041001 | Došlo k nespecifikované chybě. |
+| `WBEM_E_INVALID_CLASS` | 0x80041010 | Třídu podporující tuto instanci není platný. |
+| `WBEM_E_ILLEGAL_NULL` | 0x80041028 | `null` zadaná pro vlastnost, která nemůže být `null`, jako je ten, který je označen **indexovat** nebo **Not_Null** kvalifikátoru. |
+| `WBEM_E_INVALID_OBJECT` | 0x8004100f | Zadaná instance není platný. (Například voláním `PutInstanceWmi` s třídou vrátí tuto hodnotu.) |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
-| `WBEM_E_ALREADY_EXISTS` | 0x80041019 | `WBEM_FLAG_CREATE_ONLY` Byl zadán příznak, instance však již existuje. |
+| `WBEM_E_ALREADY_EXISTS` | 0x80041019 | `WBEM_FLAG_CREATE_ONLY` Byl zadán příznak, ale instanci již existuje. |
 | `WBEM_E_NOT_FOUND` | 0x80041002 | `WBEM_FLAG_UPDATE_ONLY` byl zadán v `lFlags`, ale instance neexistuje. |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Je k dispozici k dokončení operace není dostatek paměti. |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
 | `WBEM_E_SHUTTING_DOWN` | 0x80041033 | Služba WMI byla pravděpodobně zastavena a restartování. Volání [ConnectServerWmi](connectserverwmi.md) znovu. |
-| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Propojení vzdáleného volání procedur (RPC) mezi aktuálním procesem a rozhraní WMI se nezdařilo. |
+| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Odkaz vzdálené volání (procedur RPC) mezi aktuálním procesem a službou WMI se nezdařil. |
 | `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná. |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemServices::PutInstance](https://msdn.microsoft.com/library/aa392115(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemServices::PutInstance](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemservices-putinstance) metody.
 
-`PutInstanceWmi` Funkce podporuje vytváření instancí a aktualizace instancí pouze existující třídy.  V závislosti na tom, jak `pCtx` parametr je nastaven, jsou aktualizovány některé nebo všechny vlastnosti instance. 
+`PutInstanceWmi` Funkce podporuje vytváření instancí a aktualizaci instance pouze existující třídy.  V závislosti na tom, jak `pCtx` parametr je nastaven, některé nebo všechny vlastnosti instance se aktualizují. 
 
-Pokud instance na kterou odkazuje `pInst` patří do podtřídy, Správa systému Windows volání všech poskytovatelů zodpovědná za třídy, ze kterých je odvozena podtřídy. Všechny tyto zprostředkovatele musí být úspěšně pro původní `PutInstanceWmi` žádost proběhla úspěšně. Zprostředkovatel podpora nejhornější třídy v hierarchii jako první. Pořadí volání pokračuje podtřídou třídy nejhornější a pokračuje shora dolů, dokud nedosáhne Správa systému Windows zprostředkovatele pro třídu vlastnící instanci, na kterou odkazuje `pInst`.
-Správa systému Windows nevyvolá pro některý z podřízených tříd instance zprostředkovatele. 
+Když instance odkazované `pInst` patří na podtřídu Windows Management volání všichni poskytovatelé za tříd, z něhož pochází podtřídy. Všechny tyto zprostředkovatele musí být úspěšně pro původní `PutInstanceWmi` žádost proběhla úspěšně. Nejprve se nazývá poskytovatele podpora nejvyšší třídy v hierarchii. Pořadí volání pokračuje podtřídou třídy nejvyšší třídy a pokračuje shora dolů, dokud nedosáhne Windows Management provider pro třídu vlastnící instanci, na které odkazuje `pInst`.
+Správa Windows nevolá zprostředkovatele pro všechny instance podřízené třídy. 
 
-Když se aplikace musí aktualizace instanci, která patří do hierarchie tříd, `pInst` parametr musí odkazovat na instanci obsahující vlastnosti, které chcete upravit. To znamená, zvažte cílová instance, které patří do **ClassB**. **ClassB** instance je odvozena z **ClassA**, a **ClassA** definuje vlastnost **PropA**. Pokud aplikace chce změňte na hodnotu **PropA** v **ClassB** instanci, je nutné nastavit `pInst` do této instance, a nikoli instanci **ClassA** .
+Pokud aplikace musí aktualizovat instance, která patří do hierarchie tříd `pInst` parametr musí odkazovat na instanci obsahující vlastnosti, které chcete upravit. To znamená, vezměte v úvahu cílová instance, která patří do **ClassB**. **ClassB** instance je odvozena z **ClassA**, a **ClassA** definuje vlastnost **PropA**. Pokud aplikace chce provést změnu na hodnotu **PropA** v **ClassB** instance, je nutné nastavit `pInst` pro tuto instanci spíše než instance **ClassA** .
 
-Volání metody `PutInstanceWmi` v instanci abstraktní třídy není povoleno.
+Volání `PutInstanceWmi` na instanci abstraktní třídy není povolený.
 
-Pokud volání funkce selže, můžete získat další informace o chybě při volání [GetErrorInfo –](geterrorinfo.md) funkce.
+Pokud selže volání funkce, můžete získat další informace o chybě při volání [GetErrorInfo –](geterrorinfo.md) funkce.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

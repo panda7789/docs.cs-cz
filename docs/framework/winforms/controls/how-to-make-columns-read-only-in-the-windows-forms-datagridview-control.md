@@ -8,17 +8,17 @@ helpviewer_keywords:
 - data grids [Windows Forms], read-only columns
 - DataGridView control [Windows Forms], read-only columns
 ms.assetid: 2bb73ebb-1a55-4362-9fda-e50574c087d5
-ms.openlocfilehash: 1ea4fdb6d38464993672c9aa98d8866812d21972
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a8b5c0f9492941cf0e01e016d9fb097e1df44d2e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33532093"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43389712"
 ---
 # <a name="how-to-make-columns-read-only-in-the-windows-forms-datagridview-control"></a>Postupy: Přepnutí sloupců do režimu jen pro čtení v ovládacím prvku Windows Forms DataGridView
-Všechna data je určená pro úpravy. V <xref:System.Windows.Forms.DataGridView> řídit, sloupci <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A> vlastnost hodnota určuje, zda mohou uživatelé upravovat buňky v tomto sloupci. Informace o tom, jak byl ovládací prvek zcela jen pro čtení najdete v tématu [postupy: zabránění přidávání řádků a odstranění v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/prevent-row-addition-and-deletion-datagridview.md).  
+Všechna data je určena pro úpravy. V <xref:System.Windows.Forms.DataGridView> ovládací prvek sloupec <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A> vlastnost hodnota určuje, zda uživatelé mohou upravovat buňky ve sloupci. Informace o tom, jak nastavit ovládací prvek zcela jen pro čtení najdete v tématu [postupy: zabránění přidávání řádků a odstraňování v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/prevent-row-addition-and-deletion-datagridview.md).  
   
- Není poskytována podpora pro tuto úlohu v sadě Visual Studio.  Viz také [postup: Zkontrolujte sloupce jen pro čtení v Windows Forms DataGridView – ovládací prvek pomocí návrháře](http://msdn.microsoft.com/library/xd4k3c7e\(v=vs.110\)).  
+ Není poskytována podpora pro tuto úlohu v sadě Visual Studio.  Viz také [jak: vytvořit sloupce jen pro čtení v Windows Forms DataGridView ovládacího prvku pomocí návrháře](https://msdn.microsoft.com/library/xd4k3c7e\(v=vs.110\)).  
   
 ### <a name="to-make-a-column-read-only-programmatically"></a>Chcete-li sloupec jen pro čtení prostřednictvím kódu programu  
   
@@ -30,9 +30,9 @@ Všechna data je určená pro úpravy. V <xref:System.Windows.Forms.DataGridView
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1` s sloupec s názvem `CompanyName`.  
+-   A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1` sloupec s názvem `CompanyName`.  
   
--   Odkazuje na <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+-   Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.DataGridView>  

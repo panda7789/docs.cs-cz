@@ -15,40 +15,40 @@ helpviewer_keywords:
 - form inheritance
 - Windows Forms, inheritance
 ms.assetid: 3381a5e4-e1a3-44e2-a765-a0b758937b85
-ms.openlocfilehash: 451c54bf6272b4fbff46b5298ba5b6a9290656e8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9bb6e6568822f3edcabf50a4fceb7cc6386f05ef
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33523991"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43388001"
 ---
 # <a name="how-to-use-the-modifiers-and-generatemember-properties"></a>Postupy: Používání modifikátorů a vlastností GenerateMember
-Když umístíte komponentu ve formuláři Windows, dvě vlastnosti jsou k dispozici v prostředí návrhu: `GenerateMember` a `Modifiers`. `GenerateMember` Vlastnost určuje, kdy Návrhář formulářů Windows generuje členské proměnné pro součást. `Modifiers` Vlastnost je – modifikátor přístupu, které jsou přiřazeny k této proměnné členů. Pokud hodnota `GenerateMember` vlastnost je `false`, hodnota `Modifiers` vlastnost nemá žádný efekt.  
+Umístíte-li komponenta ve formuláři Windows Forms, podle návrhu prostředí jsou k dispozici dvě vlastnosti: `GenerateMember` a `Modifiers`. `GenerateMember` Vlastnost určuje, když Návrhář formulářů Windows generuje členské proměnné pro komponentu. `Modifiers` Vlastnost je modifikátor přístupu, které jsou přiřazeny k této členské proměnné. Pokud hodnota `GenerateMember` vlastnost `false`, hodnota `Modifiers` vlastnost nemá žádný vliv.  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
-### <a name="to-specify-whether-a-component-is-a-member-of-the-form"></a>K určení, zda je součást členem formuláře  
+### <a name="to-specify-whether-a-component-is-a-member-of-the-form"></a>Chcete-li určit, zda je součást člena ve tvaru  
   
 1.  V Návrháři formulářů Windows otevřete formulář.  
   
-2.  Otevřete **sada nástrojů**a na formuláři, umístěte tři <xref:System.Windows.Forms.Button> ovládací prvky.  
+2.  Otevřít **nástrojů**a ve formuláři, umístěte tři <xref:System.Windows.Forms.Button> ovládacích prvků.  
   
-3.  Nastavte `GenerateMember` a `Modifiers` vlastnosti pro každou <xref:System.Windows.Forms.Button> řízení podle následující tabulky.  
+3.  Nastavte `GenerateMember` a `Modifiers` vlastnosti pro každý <xref:System.Windows.Forms.Button> ovládací prvek podle následující tabulky.  
   
     |Název tlačítka|Generatemember – hodnota|Modifikátory hodnota|  
     |-----------------|--------------------------|---------------------|  
     |`button1`|`true`|`private`|  
     |`button2`|`true`|`protected`|  
-    |`button3`|`false`|Žádná změna|  
+    |`button3`|`false`|Žádné změny|  
   
 4.  Sestavte řešení.  
   
-5.  V **Průzkumníku řešení**, klikněte **zobrazit všechny soubory** tlačítko.  
+5.  V **Průzkumníka řešení**, klikněte na tlačítko **zobrazit všechny soubory** tlačítko.  
   
-6.  Otevřete **Form1** uzel a v **Editor kódu**, otevřete **Form1.Designer.vb** nebo **Form1.Designer.cs** souboru. Tento soubor obsahuje kód vysílaných Návrhář formulářů Windows.  
+6.  Otevřete **Form1** uzel a **Editor kódu**, otevřete **Form1.Designer.vb** nebo **Form1.Designer.cs** souboru. Tento soubor obsahuje kód, protože ho vygeneroval Návrhář formulářů Windows.  
   
-7.  Najít deklarace pro tři tlačítka. Následující příklad kódu ukazuje rozdíly určeného `GenerateMember` a `Modifiers` vlastnosti.  
+7.  Najdete deklarace pro tři tlačítka. Následující příklad kódu ukazuje rozdíly určené `GenerateMember` a `Modifiers` vlastnosti.  
   
      [!code-csharp[System.Windows.Forms.GenerateMember#3](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GenerateMember/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.GenerateMember#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GenerateMember/VB/Form1.vb#3)]  
@@ -57,7 +57,7 @@ Když umístíte komponentu ve formuláři Windows, dvě vlastnosti jsou k dispo
      [!code-vb[System.Windows.Forms.GenerateMember#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GenerateMember/VB/Form1.vb#2)]  
   
 > [!NOTE]
->  Ve výchozím nastavení, Návrhář formulářů Windows přiřadí `private` (`Friend` v jazyce Visual Basic) modifikátor pro ovládací prvky kontejneru jako <xref:System.Windows.Forms.Panel>. Pokud vaše základní <xref:System.Windows.Forms.UserControl> nebo <xref:System.Windows.Forms.Form> má ovládacího prvku kontejner nebude přijímat nové podřízených prvků ve formulářích a zděděné ovládací prvky. Řešení je změna modifikátor základní kontejneru ovládacího prvku na `protected` nebo `public`.  
+>  Ve výchozím nastavení, Návrhář formulářů Windows přiřadí `private` (`Friend` v jazyce Visual Basic) modifikátor pro ovládací prvky kontejneru jako <xref:System.Windows.Forms.Panel>. Pokud základním <xref:System.Windows.Forms.UserControl> nebo <xref:System.Windows.Forms.Form> má ovládací prvek kontejneru, nebude přijímat nové podřízené položky v zděděný ovládací prvky a formuláře. Řešením je změnit modifikátor základní kontejneru ovládacího prvku na `protected` nebo `public`.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.Button>  

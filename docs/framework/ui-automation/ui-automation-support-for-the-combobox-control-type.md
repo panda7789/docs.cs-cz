@@ -9,75 +9,75 @@ ms.assetid: bb321126-4770-41da-983a-67b7b89d45dd
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 61e387462126bc7b0752932ca617f7a97235a1c2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 25d27faeac2c60a50801b817185aa1d5196e506d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33409530"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43398557"
 ---
 # <a name="ui-automation-support-for-the-combobox-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ComboBox
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Toto téma obsahuje informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] podporu pro typ ovládacího prvku pole se seznamem. V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], typ ovládacího prvku je sadu podmínek, které ovládacího prvku musí splnit, aby bylo možné používat <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> vlastnost. Podmínky zahrnují konkrétní pokyny pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] hodnoty vlastností, vzory ovládacích prvků a [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události.  
+ Toto téma obsahuje informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] podporu pro typ ovládacího prvku pole se seznamem. V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], typ ovládacího prvku je představují sadu podmínek, které ovládací prvek musí splnit, aby bylo možné používat <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> vlastnost. Podmínky zahrnují konkrétní pokyny ke [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromová struktura, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] hodnoty vlastností, vzorů ovládacích prvků a [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události.  
   
- Pole se seznamem je pole se seznamem v kombinaci s statické ovládací prvek nebo textové pole, které se zobrazí aktuálně vybrané položky v seznamu části pole se seznamem. Seznam části ovládacího prvku se zobrazí po celou dobu nebo pouze se zobrazí, když uživatel vybere (což je tlačítko) šipku rozevíracího seznamu vedle ovládacího prvku. Pokud je datové pole výběru ovládacího prvku úprav, může uživatel vložit informace, které se nenachází v seznamu; jinak hodnota uživatel může vybrat pouze položky v seznamu.  
+ Pole se seznamem je pole se seznamem v kombinaci se statický ovládací prvek nebo prvek pro úpravy, který zobrazuje aktuálně vybrané položky v seznamu část pole se seznamem. Seznam části ovládacího prvku se zobrazí po celou dobu nebo jenom se zobrazí, když uživatel vybere (což je příkazové tlačítko) šipku rozevíracího seznamu vedle ovládacího prvku. Pokud je pole výběru ovládacího prvku pro úpravy, uživatel může zadat informace, které se nenachází v seznamu. v opačném případě uživatel může vybrat pouze položky v seznamu.  
   
- Následující části zadejte požadované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku pole se seznamem. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Požadavky platí pro všechny ovládací prvky pole se seznamem, zda [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+ Následující části definují požadovaný [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, vlastnosti, vzorů ovládacích prvků a události pro typ ovládacího prvku pole se seznamem. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Požadavky platí pro všechny ovládací prvky pole se seznamem, zda [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
-## <a name="required-ui-automation-tree-structure"></a>Struktura stromu automatizace požadované uživatelského rozhraní  
- Následující tabulka znázorňuje zobrazení ovládacího prvku a zobrazení obsahu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, která se vztahují na pole se seznamem ovládací prvky a popisuje, co může být obsažený v každém zobrazení. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
+## <a name="required-ui-automation-tree-structure"></a>Požadované uživatelské rozhraní automatizace stromová struktura  
+ Následující tabulka popisuje ovládací prvek zobrazení a zobrazení obsahu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] strom, který se týká – pole se seznamem ovládací prvky a popisuje, co mohou být obsaženy v každém zobrazení. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, přečtěte si téma [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
   
-|Zobrazení ovládacího prvku|Zobrazení obsahu|  
+|Ovládací prvek zobrazení|Zobrazení obsahu|  
 |------------------|------------------|  
-|ComboBox<br /><br /> -Upravit (0 nebo 1)<br />-List (1)<br />-Seznam položek (podřízená položka seznamu; 0 k mnoha)<br />-Tlačítko (1)|ComboBox<br /><br /> -List Item (0 k mnoha)|  
+|ComboBox<br /><br /> -Upravit (0 nebo 1)<br />-List (1)<br />-Položka seznamu (podřízený seznam; 0, n)<br />-Tlačítko (1)|ComboBox<br /><br /> -Položka list (0, n)|  
   
- Ovládací prvek upravit v zobrazení ovládacího prvku pole se seznamem je nutné pouze v případě, že pole se seznamem lze upravit žádný vstup, stejně jako v případě pole se seznamem v dialogového okna spustit.  
+ Je nezbytné pouze v případě, že lze upravovat pole se seznamem umožní jakémukoli zadání, stejně jako v případě pole se seznamem v dialogového okna Spustit ovládacího prvku pro úpravy v zobrazení pro ovládací prvek pole se seznamem.  
   
 <a name="Required_UI_Automation_Properties"></a>   
-## <a name="required-ui-automation-properties"></a>Vlastnosti automatizace požadované uživatelského rozhraní  
- Následující tabulka uvádí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ovládacích prvků pole vlastnosti, jehož hodnota nebo definice je obzvláště důležité pro pole se seznamem. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] najdete v části vlastnosti, [vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
+## <a name="required-ui-automation-properties"></a>Vlastnosti automatizace uživatelského rozhraní vyžaduje  
+ Následující tabulce jsou uvedeny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti, jejichž hodnota nebo definice je obzvláště důležité pro pole se seznamem pole ovládacích prvků. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti, viz [vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
   
 |[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Vlastnost|Hodnota|Poznámky|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|V části poznámky.|Hodnota této vlastnosti musí být jedinečný v rámci všech ovládacích prvků v aplikaci.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|V části poznámky.|Nejkrajnější obdélníku, který obsahuje celý ovládací prvek.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|V části poznámky.|Podporováno, pokud je ohraničující obdélník. Není-li každého bodu v rámci ohraničující obdélník je můžete kliknout a provést specializované přístupů testování, přepsání a nabízí bod můžete kliknout.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|ComboBox|Tato hodnota je stejný pro všechny [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] architektury.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|V části poznámky.|Text nápovědy pro ovládací prvky pole se seznamem musí vysvětlit, proč je požadováno uživatele vyberte volbu z pole se seznamem. Text je podobná informace uvedené prostřednictvím popisek. Například "vyberte položku, kterou chcete nastavit zobrazení rozlišení monitoru".|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Hodnota TRUE|Pole se seznamem jsou vždy zahrnuty v zobrazení obsahu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Hodnota TRUE|Pole se seznamem jsou vždy zahrnuty v zobrazení ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Hodnota TRUE|Pole se seznamem vystavit sadu položek z kontejneru výběr. Ovládacího prvku pole se seznamem může přijímat fokus klávesnice, přestože při automatizace uživatelského rozhraní klienta nastaví fokus na pole se seznamem, všechny položky v podstrom pole se seznamem může být vybrán.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|V části poznámky.|Pole se seznamem obvykle mají statický text popisku, který odkazuje na tato vlastnost.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|V části poznámky.|Nejkrajnější obdélník, který obsahuje celý ovládací prvek.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|V části poznámky.|Nepodporuje. Pokud ohraničující obdélník. Pokud ne každý bod v rámci ohraničující obdélník je po kliknutí a provést specializované přístupů testování přepsat a zadat bod umožňující kliknutí.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|ComboBox|Tato hodnota je stejný pro všechny [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] architektur.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|V části poznámky.|Text nápovědy pro pole se seznamem by měl vysvětlit, proč je se uživateli zobrazí výzva k výběru možnosti v poli se seznamem. Text je podobné informace, které jsou nabízena prostřednictvím popisek. Například "vyberte položku, kterou chcete nastavit rozlišení monitoru".|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Hodnota TRUE|Pole se seznamem jsou vždy součástí obsahu zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Hodnota TRUE|Pole se seznamem jsou vždy součástí zobrazení ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Hodnota TRUE|Pole se seznamem vystavení sady položek z výběru kontejneru. Ovládací prvek pole se seznamem může získat fokus klávesnice, i když při automatizaci uživatelského rozhraní klienta nastaví fokus na pole se seznamem, všechny položky v připojeném podstromu pole se seznamem může získat fokus.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|V části poznámky.|Pole se seznamem mají obvykle statický text popisku, který odkazuje na tuto vlastnost.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"– pole se seznamem"|Lokalizovaný řetězec odpovídající typ ovládacího prvku pole se seznamem.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|V části poznámky.|Její název ovládacího prvku pole se seznamem obvykle získá z ovládacího prvku statický text.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|V části poznámky.|Ovládací prvek pole se seznamem obvykle anglický název z ovládacího prvku statický text.|  
   
 <a name="Required_UI_Automation_Control_Patterns"></a>   
-## <a name="required-ui-automation-control-patterns"></a>Vzory ovládacích prvků automatizace uživatelského rozhraní požadované  
- Následující tabulka uvádí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] řízení vzory potřeba podporovat všechny ovládací prvky pole se seznamem. Další informace o vzory ovládacích prvků, najdete v části [přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
+## <a name="required-ui-automation-control-patterns"></a>Vzory ovládacích prvků automatizace uživatelského rozhraní vyžaduje  
+ Následující tabulce jsou uvedeny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] řídit vzory vyžaduje to, že všechny ovládací prvky pole se seznamem. Další informace o vzorů ovládacích prvků naleznete v tématu [přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
   
-|Vzor ovládacích prvků|Podpora|Poznámky|  
+|– Vzor ovládacích prvků|Podpora|Poznámky|  
 |---------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Ano|Ovládacího prvku pole se seznamem vždycky musí obsahovat rozevírací tlačítko aby byla pole se seznamem.|  
-|<xref:System.Windows.Automation.Provider.ISelectionProvider>|Ano|Zobrazí aktuální výběr v seznamu. Tato podpora se deleguje na pole se seznamem pod polem se seznamem.|  
-|<xref:System.Windows.Automation.Provider.IValueProvider>|Závisí|Pokud pole se seznamem má schopnost pořizovat libovolný textové hodnoty, musí být hodnota vzor podporována. Tento vzor poskytuje možnost nastavit prostřednictvím kódu programu řetězec obsah pole se seznamem. Pokud vzor hodnota není podporován, znamená to, že uživatel musí proveďte výběr z položky seznamu v rámci podstrom pole se seznamem.|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider>|Nikdy|Vzor posuňte se na poli se seznamem nikdy podporuje přímo. Pokud může pole se seznamem obsažené v rámci pole se seznamem posunete je podporována. Může je podporována pouze v případě pole se seznamem je viditelný na obrazovce.|  
+|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Ano|Prvek pole se seznamem musí vždy obsahovat rozevírací tlačítko, aby byla pole se seznamem.|  
+|<xref:System.Windows.Automation.Provider.ISelectionProvider>|Ano|Zobrazí aktuální výběr v poli se seznamem. Tato podpora se deleguje na pole se seznamem pod pole se seznamem.|  
+|<xref:System.Windows.Automation.Provider.IValueProvider>|Závisí|Pokud pole se seznamem má schopnost pořizovat libovolných textových hodnot, vzor hodnota musí být podporovány. Tento model umožňuje programově nastavit řetězec obsah pole se seznamem. Pokud není podporovaná hodnota vzoru, to znamená, že uživatel musí provést výběr ze seznamu položek v rámci podstrom pole se seznamem.|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider>|Nikdy|Vzor posuvníku se nikdy podporuje na pole se seznamem přímo. Je podporována, pokud můžete přejít pole se seznamem obsažené v rámci pole se seznamem. Může být pouze podporováni, když pole se seznamem je viditelný na obrazovce.|  
   
 <a name="Required_Events"></a>   
 ## <a name="required-events"></a>Požadované události  
- Následující tabulka uvádí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události potřeba podporovat všechny ovládací prvky pole se seznamem. Další informace o událostech najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
+ Následující tabulce jsou uvedeny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události potřebné to, že všechny ovládací prvky pole se seznamem. Další informace o událostech najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
   
 |[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Události|Podpora|Poznámky|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> událost změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> událost změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> událost změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> události změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> události změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> události změny vlastnosti.|Požadováno|Žádné|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> událost změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> událost změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje vzoru hodnota, musí podporovat této události.|  
+|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> události změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> události změny vlastnosti.|Závisí|Pokud ovládací prvek podporuje vzor hodnota, musí podporovat této události.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Automation.ControlType.ComboBox>  

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - -codepage compiler option [C#]
 ms.assetid: 75942989-b69a-4308-90a0-840c73d2c478
 ms.openlocfilehash: 66edb32d24dd1dc543097b98ff3744f0aa0a7145
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43255316"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43389686"
 ---
 # <a name="-codepage-c-compiler-options"></a>-codepage (možnosti kompilátoru C#)
 Tato možnost určuje, které znakovou stránku pro použití během kompilace, pokud se požadovaná stránka není aktuální výchozí znakovou stránku, která pro systém.  

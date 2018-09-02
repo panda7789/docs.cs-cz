@@ -4,11 +4,11 @@ description: Co vzhled jazyka, jako je v jeho nejstarší verze a jak vyvinula o
 author: erikdietrich
 ms.date: 09/20/2017
 ms.openlocfilehash: 7a7030eb9479ebae553f3bb4d569c9a9f931db9a
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43254935"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43391245"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C# #
 

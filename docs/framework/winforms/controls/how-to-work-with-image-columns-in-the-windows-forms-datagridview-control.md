@@ -10,15 +10,15 @@ helpviewer_keywords:
 - image columns [Windows Forms], Windows Forms
 - DataGridView control [Windows Forms], image columns
 ms.assetid: 8a37aa75-3c6e-4893-91d0-7a5f34bfe287
-ms.openlocfilehash: b1c3fb5048419944507e9269c5ffd46fbe4a722b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7948ee69b35aaca111fa71e6f0540f2fcffc05dd
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33532769"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43388743"
 ---
 # <a name="how-to-work-with-image-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Práce se sloupci obrázků v ovládacím prvku Windows Forms DataGridView
-Následující příklad kódu ukazuje, jak používat <xref:System.Windows.Forms.DataGridView> bitové kopie sloupců v interaktivní uživatelské rozhraní (UI). Příklad také ukazuje možnosti pro změnu velikosti a rozložení bitové kopie s <xref:System.Windows.Forms.DataGridViewImageColumn>.  
+Následující příklad kódu ukazuje, jak používat <xref:System.Windows.Forms.DataGridView> obrázek sloupce v interaktivní uživatelské rozhraní (UI). Příklad také ukazuje možnosti nastavení velikosti a rozložení image s <xref:System.Windows.Forms.DataGridViewImageColumn>.  
   
 ## <a name="example"></a>Příklad  
  [!code-cpp[System.Windows.Forms.DataGridView.ImageColumn_TicTacToe#0](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ImageColumn_TicTacToe/CPP/tictactoe.cpp#0)]
@@ -28,9 +28,9 @@ Následující příklad kódu ukazuje, jak používat <xref:System.Windows.Form
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na systém a System.Windows.Forms sestavení.  
+-   Odkazy na sestavení systému a System.Windows.Forms.  
   
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic a Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [vytváření pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit zadáním nebo vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.DataGridView>  

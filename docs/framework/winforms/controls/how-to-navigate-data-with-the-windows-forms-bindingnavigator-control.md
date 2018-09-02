@@ -10,38 +10,38 @@ helpviewer_keywords:
 - data navigation
 - examples [Windows Forms], BindingNavigator control
 ms.assetid: 0e5d4f34-bc9b-47cf-9b8d-93acbb1f1dbb
-ms.openlocfilehash: b3a17a60f897cc3b017eea485952841eaae5a686
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 14f845e33b38da39b900b32c07297a350326350d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33535597"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43387526"
 ---
 # <a name="how-to-navigate-data-with-the-windows-forms-bindingnavigator-control"></a>Postupy: Navigace daty pomocí ovládacího prvku Windows Forms BindingNavigator
-Nástupem <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku Windows Forms umožňuje vývojářům poskytnout koncovým uživatelům s jednoduché datové navigaci a manipulace s uživatelským rozhraním ve formulářích jejich vytvoření.  
+Nástup <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku Windows Forms vývojářům umožňuje poskytovat koncovým uživatelům s jednoduchou datovou navigaci a manipulaci s uživatelským rozhraním ve formulářích vytvářejí.  
   
- <xref:System.Windows.Forms.BindingNavigator> Ovládacího prvku <xref:System.Windows.Forms.ToolStrip> předkonfigurované ovládacího prvku pomocí tlačítka pro navigaci na první, poslední, další a předchozí záznam v datových sad, jakož i tlačítka pro přidání a odstranění záznamů. Přidání tlačítek do <xref:System.Windows.Forms.BindingNavigator> ovládací prvek je snadné, protože je <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.  Viz také [postupy: Přidání načíst, uložit, a tlačítka Storno do ovládacího prvku Windows Forms BindingNavigator](http://msdn.microsoft.com/library/safa4957\(v=vs.110\)).  
+ <xref:System.Windows.Forms.BindingNavigator> Je ovládací prvek <xref:System.Windows.Forms.ToolStrip> předkonfigurované ovládacím prvkem tlačítka pro přechod na první, poslední, další a předchozí záznam v datové sady, jakož i tlačítka můžete přidávat a odstraňovat záznamy. Přidání tlačítek do <xref:System.Windows.Forms.BindingNavigator> ovládací prvek je snadné, protože se jedná <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.  Viz také [postupy: Přidání načíst, uložit, a tlačítka Storno do ovládacího prvku Windows Forms BindingNavigator](https://msdn.microsoft.com/library/safa4957\(v=vs.110\)).  
   
- Pro každé tlačítko na <xref:System.Windows.Forms.BindingNavigator> řídit, není členem příslušné skupiny <xref:System.Windows.Forms.BindingSource> komponenty, která umožňuje prostřednictvím kódu programu stejné funkce. Například <xref:System.Windows.Forms.BindingNavigator.MoveFirstItem%2A> tlačítko odpovídá <xref:System.Windows.Forms.BindingSource.MoveFirst%2A> metodu <xref:System.Windows.Forms.BindingSource> součásti, <xref:System.Windows.Forms.BindingNavigator.DeleteItem%2A> tlačítko odpovídá <xref:System.Windows.Forms.BindingSource.RemoveCurrent%2A> metoda a tak dále. V důsledku toho povolení <xref:System.Windows.Forms.BindingNavigator> řízení přejděte záznamů dat je jednoduchý jako nastavení jeho <xref:System.Windows.Forms.BindingNavigator.BindingSource%2A> vlastnost na příslušné <xref:System.Windows.Forms.BindingSource> součásti na formuláři.  
+ Pro každé tlačítko na <xref:System.Windows.Forms.BindingNavigator> řídit, neexistuje odpovídající člen <xref:System.Windows.Forms.BindingSource> komponenta, která umožňuje programově stejné funkce. Například <xref:System.Windows.Forms.BindingNavigator.MoveFirstItem%2A> tlačítko odpovídá <xref:System.Windows.Forms.BindingSource.MoveFirst%2A> metodu <xref:System.Windows.Forms.BindingSource> komponenty, <xref:System.Windows.Forms.BindingNavigator.DeleteItem%2A> tlačítko odpovídá <xref:System.Windows.Forms.BindingSource.RemoveCurrent%2A> metody a tak dále. V důsledku toho povolení <xref:System.Windows.Forms.BindingNavigator> ovládací prvek pro procházení záznamů dat je jednoduše nastavení jeho <xref:System.Windows.Forms.BindingNavigator.BindingSource%2A> vlastnosti na příslušné <xref:System.Windows.Forms.BindingSource> komponenty ve formuláři.  
   
-### <a name="to-set-up-the-bindingnavigator-control"></a>Nastavit BindingNavigator – ovládací prvek  
+### <a name="to-set-up-the-bindingnavigator-control"></a>K nastavení ovládacího prvku BindingNavigator  
   
-1.  Přidat <xref:System.Windows.Forms.BindingSource> součást s názvem `bindingSource1` a dvě <xref:System.Windows.Forms.TextBox> ovládací prvky s názvem `textBox1` a `textBox2`.  
+1.  Přidat <xref:System.Windows.Forms.BindingSource> součást s názvem `bindingSource1` a dva <xref:System.Windows.Forms.TextBox> ovládací prvky s názvem `textBox1` a `textBox2`.  
   
-2.  Vytvoření vazby `bindingSource1` k datům a ovládací prvky textbox `bindingSource1`. Chcete-li to provést, vložte následující kód do formuláře a volání `LoadData` z konstruktoru formuláře nebo <xref:System.Windows.Forms.Form.Load> metoda zpracování událostí.  
+2.  Vytvoření vazby `bindingSource1` k datům a ovládací prvky textbox `bindingSource1`. Chcete-li to provést, vložte následující kód do formuláře a volání `LoadData` z konstruktoru formuláře nebo <xref:System.Windows.Forms.Form.Load> metody zpracování událostí.  
   
      [!code-csharp[System.Windows.Forms.BindingNavigatorNavigate#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingNavigatorNavigate/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.BindingNavigatorNavigate#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingNavigatorNavigate/VB/Form1.vb#2)]  
   
-3.  Přidat <xref:System.Windows.Forms.BindingNavigator> ovládací prvek s názvem `bindingNavigator1` do svého formuláře.  
+3.  Přidat <xref:System.Windows.Forms.BindingNavigator> ovládací prvek s názvem `bindingNavigator1` do formuláře.  
   
-4.  Nastavte <xref:System.Windows.Forms.BindingNavigator.BindingSource%2A> vlastnost pro `bindingNavigator1` k `bindingSource1`. Můžete to provést pomocí návrháře nebo v kódu.  
+4.  Nastavte <xref:System.Windows.Forms.BindingNavigator.BindingSource%2A> vlastnost `bindingNavigator1` k `bindingSource1`. Můžete to provést pomocí návrháře nebo v kódu.  
   
      [!code-csharp[System.Windows.Forms.BindingNavigatorNavigate#3](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingNavigatorNavigate/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.BindingNavigatorNavigate#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingNavigatorNavigate/VB/Form1.vb#3)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu je na kompletní příklad dříve uvedených kroků.  
+ Následující příklad kódu je kompletní příklad pro kroků uvedených dříve v tomto.  
   
  [!code-csharp[System.Windows.Forms.BindingNavigatorNavigate#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingNavigatorNavigate/CS/Form1.cs#1)]
  [!code-vb[System.Windows.Forms.BindingNavigatorNavigate#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingNavigatorNavigate/VB/Form1.vb#1)]  
@@ -49,9 +49,9 @@ Nástupem <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku Window
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na systém, System.Data, System.Drawing, System.Windows.Forms a System.Xml sestavení.  
+-   Odkazy na sestavení systému, System.Data, System.Drawing, System.Windows.Forms a System.Xml.  
   
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic a Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [vytváření pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit zadáním nebo vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.BindingNavigator>  

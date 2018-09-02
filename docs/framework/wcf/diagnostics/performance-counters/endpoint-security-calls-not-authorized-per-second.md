@@ -4,21 +4,21 @@ ms.date: 03/30/2017
 ms.assetid: c8a1547b-986b-45c1-b302-dea0cd4b516d
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 0fd7c3ab7abcc374c4ef89f9f5a0650647cf97a5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4cefdd7480c7d0e9475b1883e603d9db1f287d4a
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33471700"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43386621"
 ---
 # <a name="endpoint-security-calls-not-authorized-per-second"></a>Koncový bod: Počet neautorizovaných volání zabezpečení za sekundu
 Název čítače: Zabezpečení počet neautorizovaných volání za sekundu.  
   
 ## <a name="description"></a>Popis  
- Počet příchozích zpráv v sekundu, které jsou od platného uživatele a správně chráněný, ale uživatel není oprávněn provést určité úlohy.  
+ Počet příchozích zpráv v sekundy, které se od platného uživatele a správně chráněný, ale uživatel nemá oprávnění k provádění konkrétních úkolů.  
   
- Hodnota tohoto čítače se zvýší, když <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> metoda vrátí `false`.  
+ Tento čítač se zvyšuje při <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> vrátí metoda `false`.  
   
- Tento čítač je typu čítače výkonu [PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkID=94649), jehož hodnota je vypočítána pomocí následujícího vzorce.  
+ Tento čítač je typ čítače výkonu [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkID=94649), jehož hodnota je vypočítána pomocí tohoto vzorce.  
   
- (NE 1 - N 0) / ((D 1 - D 0) / F)
+ (N 1 - N 0) / ((D 1 - D 0) / F)

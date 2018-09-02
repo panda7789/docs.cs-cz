@@ -5,12 +5,12 @@ f1_keywords:
 - nameof_CSharpKeyword
 - nameof
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: 2695095aa4bf2035d8766f3cbcb82f4fbb290e22
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 726abfd903f37826a247e6e98c0d11f230447550
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39245632"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43386951"
 ---
 # <a name="nameof-c-reference"></a>nameof (referenční dokumentace jazyka C#)
 
@@ -133,8 +133,8 @@ class C {
 ## <a name="language-specifications"></a>Specifikace jazyka  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [typeof](../../../csharp/language-reference/keywords/typeof.md)  
- 
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [typeof](../../../csharp/language-reference/keywords/typeof.md)  

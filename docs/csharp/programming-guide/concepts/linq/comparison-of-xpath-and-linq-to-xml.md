@@ -1,30 +1,33 @@
 ---
-title: Porovnání jazyka XPath a v technologii LINQ to XML2
+title: Porovnání jazyka XPath a technologie LINQ to XML
 ms.date: 07/20/2015
+dev_langs:
+- csharp
+- vb
 ms.assetid: 87d361b1-daa9-4fd4-a53a-cbfa40111ad3
-ms.openlocfilehash: 64860ab538105e7e3826b29f83b8e713ca525e21
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f41aa19c89365c9236ca0b8d385ffa6fbaf6be1c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33326430"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43391733"
 ---
 # <a name="comparison-of-xpath-and-linq-to-xml"></a>Porovnání jazyka XPath a technologie LINQ to XML
-Výraz XPath a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] nabízejí některé podobné funkce. Obě lze použít k dotazu strom XML vrácení takové výsledky jako kolekci elementů, kolekce atributů, kolekce uzlů nebo hodnota elementu nebo atributu. Existují však také některé rozdíly.  
+Výraz XPath a technologie LINQ to XML nabízejí některé podobné funkce. Jak lze použít k dotazování stromu XML, vrátí tyto výsledky jako kolekci elementů, kolekce atributů, kolekce uzlů nebo hodnotu elementu nebo atributu. Existují však také několik rozdílů.  
   
-## <a name="differences-between-xpath-and-linq-to-xml"></a>Rozdíly mezi XPath a LINQ to XML  
- Výraz XPath neumožňuje projekce nových typů. Ho může vrátit pouze kolekce uzlů ze stromu, zatímco [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] může provést dotaz a projekt grafu objektu nebo strom XML v nový tvar. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy zahrnovat mnohem víc funkcí a jsou mnohem silnější než výrazech XPath.  
+## <a name="differences-between-xpath-and-linq-to-xml"></a>Rozdíly mezi XPath a technologie LINQ to XML  
+ Výraz XPath není povolena projekce nových typů. To může vrátit pouze kolekce uzlů ze stromu, zatímco LINQ to XML můžete spustit dotaz a projekt grafu objektu nebo stromu XML v nový tvar. Technologie LINQ to XML dotazů zvětšíte mnohem víc funkcí a jsou výrazně výkonnější než výrazy XPath.  
   
- Výrazech XPath existovat v izolaci v řetězci. Kompilátor jazyka C# nemůže pomoct analyzovat výraz XPath v době kompilace. Naopak [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy jsou analyzovat a zkompilují kompilátor jazyka C#. Kompilátor je schopen zachycení mnoho chyb dotazu.  
+ Výrazy XPath existovat samostatně v rámci řetězce. Kompilátor jazyka C# vám nemůže pomoci parsovat výraz XPath v době kompilace. Naopak LINQ to XML dotazy jsou analyzovány a zkompilovány kompilátorem jazyka C#. Kompilátoru je moci zachytávat chyby mnoho dotazů.  
   
- XPath výsledky nejsou silného typu. Počet okolností výsledkem vyhodnocení výrazu jazyka XPath je objekt a je na vývojáře a určit správný typ přetypování výsledek podle potřeby. Naopak projekce z [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazu jsou silného typu.  
+ Výraz XPath výsledky nejsou silného typu. V počtu situací je výsledkem vyhodnocení výrazu XPath objektu a je vývojářům určit správný typ a přetypujte výsledek podle potřeby. Naopak projekce v LINQ dotazu XML jsou silného typu.  
   
-## <a name="result-ordering"></a>Způsobit řazení  
- Doporučení 1.0 XPath uvádí, že neuspořádaného kolekce, která je výsledkem vyhodnocení výrazu XPath.  
+## <a name="result-ordering"></a>Výsledek řazení  
+ Výraz XPath 1.0 doporučení uvádí, že kolekce, která je výsledkem vyhodnocení výrazu XPath Neseřazený.  
   
- Ale když iterace v kolekci vrácený [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] XPath metoda osy, uzly v kolekci jsou vráceny v pořadí dokumentů. To platí i v případě, že přístup k ose XPath kde predikáty jsou uvedeny z hlediska pořadí zpětné dokumentů, jako například `preceding` a `preceding-sibling`.  
+ Ale když iterace v kolekci vrácené LINQ metody osy XML XPath, uzly v kolekci jsou vráceny v pořadí dokumentů. To platí i v případě, že přístup k osy XPath kde predikáty se vyjadřují v pořadí reverzní dokumentů, jako například `preceding` a `preceding-sibling`.  
   
- Podle naproti tomu většina [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] osy vrátí kolekce v pořadí dokumentu, ale dvě z nich, <xref:System.Xml.Linq.XNode.Ancestors%2A> a <xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A>, vrátí kolekce v pořadí zpětné dokumentů. V následující tabulce vytvoří výčet osy a určuje pořadí kolekce pro každou:  
+ Naopak většina technologie LINQ to XML osy vrací kolekce v pořadí dokumentů, ale dva z nich, <xref:System.Xml.Linq.XNode.Ancestors%2A> a <xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A>, vrací kolekce v pořadí reverzní dokumentů. V následující tabulce vytvoří výčet OS a určuje pořadí kolekce pro jednotlivé:  
   
 |Technologie LINQ to XML – osa|Řazení|  
 |----------------------|--------------|  
@@ -34,60 +37,72 @@ Výraz XPath a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] nabízejí 
 |XContainer.Nodes|Pořadí dokumentů|  
 |XContainer.NodesAfterSelf|Pořadí dokumentů|  
 |XContainer.NodesBeforeSelf|Pořadí dokumentů|  
-|XElement.AncestorsAndSelf|Reverse pořadí dokumentů|  
+|XElement.AncestorsAndSelf|Pořadí reverzní dokumentů|  
 |XElement.Attributes|Pořadí dokumentů|  
 |XElement.DescendantNodesAndSelf|Pořadí dokumentů|  
 |XElement.DescendantsAndSelf|Pořadí dokumentů|  
-|XNode.Ancestors|Reverse pořadí dokumentů|  
+|XNode.Ancestors|Pořadí reverzní dokumentů|  
 |XNode.ElementsAfterSelf|Pořadí dokumentů|  
 |XNode.ElementsBeforeSelf|Pořadí dokumentů|  
 |XNode.NodesAfterSelf|Pořadí dokumentů|  
 |XNode.NodesBeforeSelf|Pořadí dokumentů|  
   
-## <a name="positional-predicates"></a>Poziční predikáty  
- V rámci výrazu jazyka XPath poziční predikáty jsou vyjádřeny z hlediska pořadí dokumentů pro mnoho osy, ale jsou vyjádřeny v pořadí zpětné dokumentů pro zpětné osy, které jsou `preceding`, `preceding-sibling`, `ancestor`, a `ancestor-or-self`. Například výraz XPath `preceding-sibling::*[1]` vrátí poslední položku na stejné úrovni. Jde o případ, i když sadu konečný výsledek je seřazen podle dokumentu.  
+## <a name="positional-predicates"></a>Poziční predikáty.  
+ Ve výrazu XPath poziční predikáty se vyjadřují v pořadí dokumentů pro mnoho osy, ale jsou vyjádřeny v pořadí reverzní dokumentů pro reverzní osy, které jsou `preceding`, `preceding-sibling`, `ancestor`, a `ancestor-or-self`. Například výraz XPath `preceding-sibling::*[1]` vrátí bezprostředně předcházející na stejné úrovni. To platí i v případě, že sada konečný výsledek se zobrazí v pořadí dokumentů.  
   
- Naopak všechny poziční predikáty v technologii LINQ to XML vždy vyjádřeny z hlediska pořadí osy. Například `anElement.ElementsBeforeSelf().ToList()[0]` vrátí první podřízený prvek nadřazeného prvku předmětem dotazu není okamžitý předchozí položky. Jiný příklad: `anElement.Ancestors().ToList()[0]` vrátí nadřazeného elementu.  
+ Naopak všechny predikáty poziční v technologii LINQ to XML se vždy vyjadřují v pořadí osy. Například `anElement.ElementsBeforeSelf().ElementAt(0)` vrátí první podřízený element nadřazeného elementu poslal dotaz, ne okamžité předcházející na stejné úrovni. Další příklad: `anElement.Ancestors().ElementAt(0)` vrátí nadřazeného elementu.  
   
- Všimněte si, že bude výše uvedený přístup realizována celou kolekci. Nejedná se o nejúčinnější způsob, jak k zápisu tohoto dotazu. Byl soubor napsaný v tímto způsobem k předvedení chování poziční predikáty. Více vhodný způsob k zápisu stejný dotaz se má používat <xref:System.Linq.Enumerable.First%2A> metoda následujícím způsobem: `anElement.ElementsBeforeSelf().First()`.  
+ Pokud byste chtěli najít bezprostředně předcházející prvek v technologii LINQ to XML, měli byste napsat následující výraz:  
   
- Pokud chcete najít okamžitě předchozí element v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], byste měli psát následující výraz:  
+```csharp
+ElementsBeforeSelf().Last()
+```
   
- `ElementsBeforeSelf().Last()`  
+```vb
+ElementsBeforeSelf().Last()
+```
   
-## <a name="performance-differences"></a>Rozdíly výkonu  
- Výraz XPath dotazy, které používají funkci XPath v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] nebude provádět a také [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy.  
+## <a name="performance-differences"></a>Rozdíly ve výkonu  
+ Dotazy XPath, které používají funkce XPath v technologii LINQ to XML nebude provádět, tak LINQ dotazy XML.  
   
 ## <a name="comparison-of-composition"></a>Porovnání složení  
- Složení [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotaz je poněkud paralelní k složení výraz XPath, i když se příliš neliší v syntaxi.  
+ Složení LINQ to XML dotazu je poněkud paralelní složení výraz XPath, ale velmi odlišné v syntaxi.  
   
- Například, pokud máte v proměnné s názvem elementu `customers`, a chcete najít pod podřízený element s názvem `CompanyName` v rámci všech podřízených elementů s názvem `Customer`, byste měli psát výraz XPath následujícím způsobem:  
-  
-```csharp  
-customers.XPathSelectElements("./Customer/CompanyName");  
-```  
-  
- Ekvivalent [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotaz je:  
+ Například, pokud máte v proměnné s názvem elementu `customers`, a vy chcete najít podřízený element s názvem `CompanyName` v rámci všech podřízených elementů s názvem `Customer`, měli byste napsat výraz XPath následujícím způsobem:  
   
 ```csharp  
-customers.Element("Customer").Elements("CompanyName");  
+customers.XPathSelectElements("./Customer/CompanyName")
 ```  
   
- Existují podobné parallels pro každou z OS XPath.  
+```vb
+customers.XPathSelectElements("./Customer/CompanyName")
+```
+
+ Je ekvivalentní LINQ to XML dotazu:  
+  
+```csharp  
+customers.Elements("Customer").Elements("CompanyName")
+```  
+  
+```vb
+customers.Elements("Customer").Elements("CompanyName")
+```  
+
+ Jsou podobné parallels pro každý OS XPath.  
   
 |Výraz XPath osy|Technologie LINQ to XML – osa|  
 |----------------|----------------------|  
-|podřízené (na ose výchozí)|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>|  
+|podřízený (na ose výchozí)|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>|  
 |Nadřazené (.)|<xref:System.Xml.Linq.XObject.Parent%2A?displayProperty=nameWithType>|  
-|osa atributu (@)|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType><br /><br /> or<br /><br /> <xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>|  
-|nadřazené osy|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=nameWithType>|  
-|nadřazené or-self osy|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=nameWithType>|  
-|osy nástupce (/ /)|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=nameWithType><br /><br /> or<br /><br /> <xref:System.Xml.Linq.XContainer.DescendantNodes%2A?displayProperty=nameWithType>|  
+|atribut osy (@)|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType><br /><br /> or<br /><br /> <xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>|  
+|předchůdce osy|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=nameWithType>|  
+|předchůdce nebo self OS|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=nameWithType>|  
+|Následnické osy (/ /)|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=nameWithType><br /><br /> or<br /><br /> <xref:System.Xml.Linq.XContainer.DescendantNodes%2A?displayProperty=nameWithType>|  
 |descendant-or-self|<xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=nameWithType><br /><br /> or<br /><br /> <xref:System.Xml.Linq.XElement.DescendantNodesAndSelf%2A?displayProperty=nameWithType>|  
 |Následující na stejné úrovni|<xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=nameWithType><br /><br /> or<br /><br /> <xref:System.Xml.Linq.XNode.NodesAfterSelf%2A?displayProperty=nameWithType>|  
 |předcházející na stejné úrovni|<xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType><br /><br /> or<br /><br /> <xref:System.Xml.Linq.XNode.NodesBeforeSelf%2A?displayProperty=nameWithType>|  
-|Následující|Ekvivalent.|  
-|předcházející|Ekvivalent.|  
+|Následující|Žádný přímý ekvivalent.|  
+|předchozí|Žádný přímý ekvivalent.|  
   
 ## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML pro uživatele XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+ [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

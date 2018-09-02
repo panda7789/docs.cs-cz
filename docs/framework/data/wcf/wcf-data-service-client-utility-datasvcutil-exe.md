@@ -6,22 +6,22 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - WCF Data Services, consuming
 ms.assetid: 9d0af606-929b-4c03-b307-3ef5f705afce
-ms.openlocfilehash: f79991ef7f5d88cf87d1635e8c415ffd2c8b69cd
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: 7c9b713571cea3d2c8c5f6511f2cfab7e87b80ee
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43253362"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43387440"
 ---
 # <a name="wcf-data-service-client-utility-datasvcutilexe"></a>Nástroj klienta WCF Data Service (DataSvcUtil.exe)
 
 DataSvcUtil.exe je nástroj příkazového řádku poskytovaných službou WCF Data Services, která využívá [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] datového kanálu a generuje tříd klientské datové služby, které jsou potřeba pro přístup ke službě data z klientské aplikace rozhraní .NET Framework. Tento nástroj můžete generovat datové třídy pomocí následující zdroje metadat:
 
--   Kořenovému identifikátoru URI dat služby. Nástroj požaduje metadata dokument služby, který popisuje datový model vystavené datové služby. Další informace najdete v tématu [OData: dokument metadat služby](http://go.microsoft.com/fwlink/?LinkId=186070).
+-   Kořenovému identifikátoru URI dat služby. Nástroj požaduje metadata dokument služby, který popisuje datový model vystavené datové služby. Další informace najdete v tématu [OData: dokument metadat služby](https://go.microsoft.com/fwlink/?LinkId=186070).
 
--   Soubor modelu dat (.csdl) definované pomocí Konceptuální schéma definici jazyka (CSDL), jak jsou definovány v [ \[MC CSDL\]: koncepční formátu definičního souboru schématu](http://go.microsoft.com/fwlink/?LinkID=159072) specifikace.
+-   Soubor modelu dat (.csdl) definované pomocí Konceptuální schéma definici jazyka (CSDL), jak jsou definovány v [ \[MC CSDL\]: koncepční formátu definičního souboru schématu](https://go.microsoft.com/fwlink/?LinkID=159072) specifikace.
 
--   Soubor .edmx vytvořené pomocí nástroje modelu Entity Data Model, které jsou k dispozici s rozhraním Entity Framework. Další informace najdete v tématu [ \[MC EDMX\]: Entity Data Model pro formát dat služby balení](http://go.microsoft.com/fwlink/?LinkID=178833) specifikace.
+-   Soubor .edmx vytvořené pomocí nástroje modelu Entity Data Model, které jsou k dispozici s rozhraním Entity Framework. Další informace najdete v tématu [ \[MC EDMX\]: Entity Data Model pro formát dat služby balení](https://go.microsoft.com/fwlink/?LinkID=178833) specifikace.
 
 Další informace najdete v tématu [postupy: ruční generování tříd klientské datové služby](../../../../docs/framework/data/wcf/how-to-manually-generate-client-data-service-classes-wcf-data-services.md).
 

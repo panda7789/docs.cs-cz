@@ -14,12 +14,12 @@ helpviewer_keywords:
 - MDI forms [Windows Forms], creating
 - MDI forms [Windows Forms], walkthroughs
 ms.assetid: fbab4221-74af-42d0-bbf4-3c97f7b2e544
-ms.openlocfilehash: d5fa1ebcc044a18e21e57aa2f66bd8486369fe42
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: a84b51679969f38955dd6a72ffe94ec8ca70b3df
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43255690"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43393041"
 ---
 # <a name="walkthrough-creating-an-mdi-form-with-menu-merging-and-toolstrip-controls"></a>Návod: Vytvoření formuláře MDI se slučováním nabídek a s ovládacími prvky ToolStrip
 <xref:System.Windows.Forms?displayProperty=nameWithType> Obor názvů podporuje více dokumentů aplikace (MDI interface) a <xref:System.Windows.Forms.MenuStrip> ovládací prvek podporuje slučování nabídek. MDI formuláře můžete také <xref:System.Windows.Forms.ToolStrip> ovládacích prvků.  
@@ -107,7 +107,7 @@ ms.locfileid: "43255690"
   
 1.  Přidat nový formulář s názvem `ChildForm` do projektu.  
   
-     Další informace najdete v tématu [postupy: Přidání Windows Forms do projektu](http://msdn.microsoft.com/library/3d7bb25f-fd90-47cf-9378-fa0d764686c1).  
+     Další informace najdete v tématu [postupy: Přidání Windows Forms do projektu](https://msdn.microsoft.com/library/3d7bb25f-fd90-47cf-9378-fa0d764686c1).  
   
 2.  Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.MenuStrip> ovládací prvek na podřízeném formuláři.  
   
@@ -115,7 +115,7 @@ ms.locfileid: "43255690"
   
 4.  V **Editor kolekce položek** dialogovém okně přidejte nový <xref:System.Windows.Forms.ToolStripMenuItem> s názvem **ChildMenuItem** do nabídky podřízené.  
   
-     Další informace najdete v tématu [Editor kolekce položek ovládacího prvku ToolStrip](http://msdn.microsoft.com/library/e681f3ab-94ba-4b2b-ac64-1dfad46caa25).  
+     Další informace najdete v tématu [Editor kolekce položek ovládacího prvku ToolStrip](https://msdn.microsoft.com/library/e681f3ab-94ba-4b2b-ac64-1dfad46caa25).  
   
 ## <a name="testing-the-form"></a>Testování formuláře  
   

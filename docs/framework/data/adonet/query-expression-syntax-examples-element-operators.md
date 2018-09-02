@@ -1,35 +1,35 @@
 ---
-title: 'Příklady syntaxe výrazu dotazu: Element operátory (LINQ na DataSet)'
+title: 'Příklady syntaxe výrazů dotazů: Operátory elementů (LINQ to DataSet)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: ca392dda-16e3-45c7-8d87-12d8d4ee0578
-ms.openlocfilehash: fae5a10e1adad7dcd1605115f254894cbf247f3e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 62c2a1737c6c253effc496f2569c42812732946b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33353596"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43392953"
 ---
-# <a name="query-expression-syntax-examples-element-operators-linq-to-dataset"></a>Příklady syntaxe výrazu dotazu: Element operátory (LINQ na DataSet)
-V příkladech v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.First%2A> a <xref:System.Linq.Enumerable.ElementAt%2A> metod k získání <xref:System.Data.DataRow> elementy z <xref:System.Data.DataSet> pomocí syntaxe výrazu dotazu.  
+# <a name="query-expression-syntax-examples-element-operators-linq-to-dataset"></a>Příklady syntaxe výrazů dotazů: Operátory elementů (LINQ to DataSet)
+Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.First%2A> a <xref:System.Linq.Enumerable.ElementAt%2A> metody k získání <xref:System.Data.DataRow> elementy ze <xref:System.Data.DataSet> pomocí syntaxe výrazu dotazu.  
   
- `FillDataSet` Metodu použitou v těchto příkladech je uveden v [načítání dat do datové sady](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md).  
+ `FillDataSet` Metodu použitou v těchto příkladech je zadán v [načítání dat do datová sada](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md).  
   
- V příkladech v tomto tématu použijte kontaktu, adresu, produktu, SalesOrderHeader a podrobnosti prodejní objednávky tabulky v ukázkové databázi AdventureWorks.  
+ Příklady v tomto tématu použijte tabulky Kontakt, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  
   
- V příkladech v tomto tématu použijte následující `using` / `Imports` příkazy:  
+ V příkladech v tomto tématu se používá následující `using` / `Imports` příkazy:  
   
  [!code-csharp[DP LINQ to DataSet Examples#ImportsUsing](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#importsusing)]
  [!code-vb[DP LINQ to DataSet Examples#ImportsUsing](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#importsusing)]  
   
- Další informace najdete v tématu [postupy: vytvoření LINQ na DataSet projekt v sadě Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md).  
+ Další informace najdete v tématu [postupy: vytvoření LINQ to DataSet projektu v sadě Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md).  
   
 ## <a name="elementat"></a>ElementAt  
   
 ### <a name="example"></a>Příklad  
- Tento příklad používá <xref:System.Linq.Enumerable.ElementAt%2A> metoda pro načtení adresu páté kde `PostalCode` == "M4B 1V7".  
+ V tomto příkladu <xref:System.Linq.Enumerable.ElementAt%2A> metody k získání páté adresu kde `PostalCode` == "M4B 1V7".  
   
  [!code-csharp[DP LINQ to DataSet Examples#ElementAt](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#elementat)]
  [!code-vb[DP LINQ to DataSet Examples#ElementAt](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#elementat)]  
@@ -37,7 +37,7 @@ V příkladech v tomto tématu ukazují, jak používat <xref:System.Linq.Enumer
 ## <a name="first"></a>první  
   
 ### <a name="example"></a>Příklad  
- Tento příklad používá <xref:System.Linq.Enumerable.First%2A> metoda vrátí prvním kontaktu, jehož jméno je 'Brooke'.  
+ V tomto příkladu <xref:System.Linq.Enumerable.First%2A> metoda vrátí první kontakt jejichž křestní jméno je "Brooke".  
   
  [!code-csharp[DP LINQ to DataSet Examples#FirstSimple](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#firstsimple)]
  [!code-vb[DP LINQ to DataSet Examples#FirstSimple](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#firstsimple)]  
@@ -45,4 +45,4 @@ V příkladech v tomto tématu ukazují, jak používat <xref:System.Linq.Enumer
 ## <a name="see-also"></a>Viz také  
  [Načtení dat do datové sady](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)  
  [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)  
- [Přehled standardních operátorů dotazu](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)
+ [Přehled standardních operátorů dotazu](https://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)

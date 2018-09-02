@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -keyfile compiler option [C#]
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
-ms.openlocfilehash: 45ab88609c26dd26a1f8bb3d68d1f579af9d3f77
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5e5ef095fbb982b0d37d7f44d4d57f27c20a72c1
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33214010"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43400080"
 ---
 # <a name="-keyfile-c-compiler-options"></a>-keyfile (možnosti kompilátoru C#)
 Určuje název souboru obsahujícího kryptografický klíč.  
@@ -28,31 +28,32 @@ Určuje název souboru obsahujícího kryptografický klíč.
   
 |Termín|Definice|  
 |----------|----------------|  
-|`file`|Název souboru, který obsahuje složitý název klíče.|  
+|`file`|Název souboru obsahujícího klíč se silným názvem.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud tato možnost se používá, kompilátor vloží veřejný klíč ze zadaného souboru do manifestu a následně podepíše konečné sestavení s privátním klíčem. Chcete-li vygenerovat soubor klíče, zadejte sn -k `file` na příkazovém řádku.  
+ Pokud tato možnost se používá, kompilátor vloží veřejný klíč ze zadaného souboru do manifestu sestavení a poté podepíše konečné sestavení soukromým klíčem. Chcete-li generovat soubor s klíčem, zadejte sériové číslo -k `file` na příkazovém řádku.  
   
- Pokud je kompilovat s **-target: module**, název souboru klíče je udržován v modulu a součástí sestavení, které se vytvoří při kompilaci sestavení s [- addmodule](../../../csharp/language-reference/compiler-options/addmodule-compiler-option.md).  
+ Pokud kompilujete s **-target: module**, je název souboru klíče uložené v modulu a součástí sestavení, které se vytvoří, když kompilujete sestavení s [- addmodule](../../../csharp/language-reference/compiler-options/addmodule-compiler-option.md).  
   
- Vaše informace šifrování můžete předat také kompilátoru s [- keycontainer](../../../csharp/language-reference/compiler-options/keycontainer-compiler-option.md). Použití [- delaysign](../../../csharp/language-reference/compiler-options/delaysign-compiler-option.md) Pokud chcete, aby částečně podepsané sestavení.  
+ Můžete také předat údaje o šifrování pro kompilátor [- keycontainer](../../../csharp/language-reference/compiler-options/keycontainer-compiler-option.md). Použití [- delaysign](../../../csharp/language-reference/compiler-options/delaysign-compiler-option.md) potřebujete částečně podepsaného sestavení.  
   
- V případě, že - keyfile i - keycontainer zadávají ve stejné kompilaci (pomocí parametru příkazového řádku nebo ve vlastních atributů), kompilátor se nejdřív pokusí použít kontejner klíčů. Pokud tato operace úspěšná, je podepsaný sestavení s informacemi v kontejneru klíčů. Pokud kompilátor nenajde kontejner klíčů, zkusí zadaný soubor s - keyfile. Pokud tato operace úspěšná, sestavení je podepsaná pomocí informací v souboru klíče a informace o klíči budou nainstalováni v kontejneru klíčů (podobné sn -i), aby na další kompilace kontejner klíče budou platné.  
+ V případě, že - keyfile a - keycontainer zadávají ve stejné kompilaci (pomocí parametru příkazového řádku nebo pomocí vlastního atributu), kompilátor se nejdřív pokusí použít kontejner klíčů. Pokud tato operace úspěšná, sestavení je podepsáno pomocí informací v kontejneru klíčů. Pokud kompilátor kontejner klíčů nenajde, pokusí se soubor určený parametrem - keyfile. Pokud se tato operace úspěšná, sestavení je podepsáno informacemi ze souboru klíčů a informace o klíči budou nainstalovány do kontejneru klíčů (podobné sn -i) tak, aby při další kompilaci bude platný kontejner klíčů.  
   
  Všimněte si, že soubor klíče může obsahovat pouze veřejný klíč.  
   
- Další informace najdete v tématu [vytvoření a použití sestavení](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) a [zpoždění podepsání sestavení](../../../framework/app-domains/delay-sign-assembly.md).  
+ Další informace najdete v tématu [vytvoření a použití sestavení](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) a [zpožděné podepisování sestavení](../../../framework/app-domains/delay-sign-assembly.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevřete **vlastnosti** stránky pro projekt.  
+1.  Otevřít **vlastnosti** stránky pro projekt.  
   
-2.  Klikněte **podpisování** stránku vlastností.  
+2.  Klikněte na tlačítko **podepisování** stránku vlastností.  
   
-3.  Změnit **vyberte soubor klíče se silným názvem** vlastnost.  
+3.  Upravit **vyberte soubor klíče se silným názvem** vlastnost.  
   
- Prostřednictvím kódu programu přístup k této možnosti kompilátoru s <xref:VSLangProj.ProjectProperties.AssemblyOriginatorKeyFile%2A>.  
+ Programově přístup k této možnosti kompilátoru s <xref:VSLangProj.ProjectProperties.AssemblyOriginatorKeyFile%2A>.  
   
-## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+## <a name="see-also"></a>Viz také
+
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

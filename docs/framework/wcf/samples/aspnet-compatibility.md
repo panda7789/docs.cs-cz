@@ -2,41 +2,43 @@
 title: Režim kompatibility ASP.NET
 ms.date: 03/30/2017
 ms.assetid: c8b51f1e-c096-4c42-ad99-0519887bbbc5
-ms.openlocfilehash: f621a3f13fafee67a015d463898a10aaf9104008
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: eeb09914fc90848c987127c789379549917063f6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33806218"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43398232"
 ---
 # <a name="aspnet-compatibility"></a>Režim kompatibility ASP.NET
-Tento příklad ukazuje, jak povolit [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režim kompatibility ve Windows Communication Foundation (WCF). Služby spuštěné [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režim kompatibility účast ve plně [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace kanálu a mohl provádět použití [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] funkce jako je například autorizace soubor nebo adresa URL, stav relace a <xref:System.Web.HttpContext> – třída. <xref:System.Web.HttpContext> Třída umožňuje přístup k souborů cookie, relací a další [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] funkce. Tento režim vyžaduje, aby vazby používají přenos HTTP a samotné služby musí být hostované ve službě IIS.  
+Tato ukázka předvádí, jak povolit režim kompatibility ASP.NET ve Windows Communication Foundation (WCF). Služby spuštěné v režimu plně účastnit kanálu aplikace ASP.NET a mohl provádět režim kompatibility ASP.NET používat funkce technologie ASP.NET, jako je soubor nebo adresa URL autorizační, stav relace a <xref:System.Web.HttpContext> třídy. <xref:System.Web.HttpContext> Třída umožňuje přístup k souborů cookie, relace a další funkce technologie ASP.NET. Tento režim vyžaduje, že vazby pomocí přenos pomocí protokolu HTTP a samotné služby musí být hostovaný ve službě IIS.  
   
- V této ukázce klienta je konzolová aplikace (spustitelného souboru) a služba je hostovaná v Internetové informační služby (IIS).  
-  
-> [!NOTE]
->  Nastavení postupu a sestavení pokyny k této ukázce jsou umístěné na konci tohoto tématu.  
+ V této ukázce klient je konzolová aplikace (spustitelný soubor) a služba je hostována v Internetové informační služby (IIS).  
   
 > [!NOTE]
->  Tato ukázka vyžaduje [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] fond aplikací, aby bylo možné spustit. Chcete-li vytvořit nový fond aplikací, nebo upravit výchozí fond aplikací, postupujte podle těchto kroků.  
->   
->  1.  Otevřete **ovládací panely**.  Otevřete **nástroje pro správu** aplet pod **systém a zabezpečení** záhlaví. Otevřete **Správce Internetové informační služby (IIS)** aplet.  
-> 2.  Rozbalte položku ve stromovém zobrazení **připojení** podokně. Vyberte **fondy aplikací** uzlu.  
-> 3.  Nastavit výchozí fond aplikací používat [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] (která může způsobit problémy s kompatibilitou s existujícími lokalitami), klikněte pravým tlačítkem myši **DefaultAppPool** položky seznamu a vyberte **základní nastavení...** . Nastavte **rozhraní .net Framework verze** rozevírací k **rozhraní .net Framework v4.0.30128** (nebo novější).  
-> 4.  Chcete-li vytvořit nový fond aplikací, který používá [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] (pro zachování kompatibility pro jiné aplikace), klikněte pravým tlačítkem myši **fondy aplikací** uzel a vyberte možnost **přidat fond aplikací...** . Název nového fondu aplikací a nastavte **rozhraní .net Framework verze** rozevírací k **rozhraní .net Framework v4.0.30128** (nebo novější). Po spuštění instalačního programu kroky níže, klikněte pravým tlačítkem myši **ServiceModelSamples** aplikace a vyberte možnost **spravovat aplikace**, **Upřesnit nastavení...** . Nastavte **fond aplikací** na nový fond aplikací.  
+>  Postupu a sestavení pokyny k instalaci pro tuto ukázku se nachází na konci tohoto tématu.  
+  
+Tato ukázka vyžaduje [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] fond aplikací tak, aby bylo možné spustit. Chcete-li vytvořit nový fond aplikací nebo změnit výchozí fond aplikací, postupujte podle těchto kroků.  
+
+1.  Otevřít **ovládací panely**.  Otevřít **nástroje pro správu** aplet pod **systém a zabezpečení** záhlaví. Otevřít **Správce Internetové informační služby (IIS)** aplet.  
+
+2.  Ve stromovém zobrazení rozbalte **připojení** podokně. Vyberte **fondy aplikací** uzlu.  
+
+3.  Nastavit výchozí fond aplikací používat [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] (která může způsobit problémy s kompatibilitou s existující weby), klikněte pravým tlačítkem myši **DefaultAppPool** položky seznamu a vyberte **základní nastavení...** . Nastavit **rozhraní .net Framework verze** rozevírací k **rozhraní .net Framework v4.0.30128** (nebo novější).  
+
+4.  Chcete-li vytvořit nový fond aplikací, který používá [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] (pro zachování kompatibility pro jiné aplikace), klikněte pravým tlačítkem **fondy aplikací** uzel a vyberte možnost **přidat fond aplikací...** . Pojmenujte nový fond aplikací a nastavte **rozhraní .net Framework verze** rozevírací k **rozhraní .net Framework v4.0.30128** (nebo novější). Po spuštění instalace kroky níže, klikněte pravým tlačítkem myši **ServiceModelSamples** aplikaci a vyberte **spravovat aplikaci**, **Upřesnit nastavení...** . Nastavte **fond aplikací** pro nový fond aplikací.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WebHost\ASPNetCompatibility`  
   
- Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje službu kalkulačky. `ICalculator` Kontrakt změnila jako `ICalculatorSession` Smlouvy umožňující sadu operací, které mají být provedeny, a zajistit přitom ochranu výsledku spuštěné.  
+ Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje Kalkulačka služby. `ICalculator` Kontraktu byla upravena jako `ICalculatorSession` smlouvy povolit sadu operací, a zajistit přitom ochranu spuštěné výsledek.  
   
-```  
+```csharp  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface ICalculatorSession  
 {  
@@ -55,16 +57,16 @@ public interface ICalculatorSession
 }  
 ```  
   
- Služba Udržovat stav, používá funkci, pro každého klienta jako výpočet se říká víc operací služeb. Klient může získat aktuální výsledek pomocí volání `Result` a můžete vymazat výsledek, který má nula voláním `Clear`.  
+ Služba zajišťuje stavu, pomocí funkce, pro každého klienta, jako jsou volány více operací služby k provedení výpočtu. Klient může načíst aktuální výsledek voláním `Result` a můžete vymazat výsledek, který má nulovou voláním `Clear`.  
   
- Služba používá [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace uložit výsledek pro každou relaci klienta. To umožňuje službě udržet spuštěné výsledek u jednotlivých klientů přes několik volání do služby.  
+ Služba relace ASP.NET používá k ukládání výsledků pro každou relaci klienta. To umožňuje službě údržby spuštěné výsledek pro každého klienta napříč více volání služby.  
   
 > [!NOTE]
->  [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Stav relace a WCF relací jsou velmi různých věcí.  Najdete v článku [relace](../../../../docs/framework/wcf/samples/session.md) podrobnosti o WCF relací.  
+> Stavu relace ASP.NET a WCF relace jsou velmi různé věci. Zobrazit [relace](../../../../docs/framework/wcf/samples/session.md) podrobné informace o relacích WCF.
   
- Služba má dokonalou závislost [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stavu relace a vyžaduje [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] režimu kompatibility, aby správně fungoval. Tyto požadavky jsou vyjádřeny deklarativně použitím `AspNetCompatibilityRequirements` atribut.  
+ Služba má dokonalou závislosti na stavu relace ASP.NET a vyžaduje režim kompatibility ASP.NET fungovat správně. Tyto požadavky jsou vyjádřeny deklarativně použitím `AspNetCompatibilityRequirements` atribut.  
   
-```  
+```csharp  
 [AspNetCompatibilityRequirements(RequirementsMode =  
                        AspNetCompatibilityRequirementsMode.Required)]  
 public class CalculatorService : ICalculatorSession  
@@ -106,24 +108,24 @@ public class CalculatorService : ICalculatorSession
         return Result;  
     }  
 }  
-```  
+```
   
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
-```  
+```console
 0, + 100, - 50, * 17.65, / 2 = 441.25  
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, kterou jste udělali [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  Ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Po vytvoření řešení, spusťte Setup.bat nastavit aplikaci ServiceModelSamples v [!INCLUDE[iisver](../../../../includes/iisver-md.md)]. Adresář ServiceModelSamples by se měla zobrazit jako [!INCLUDE[iisver](../../../../includes/iisver-md.md)] aplikace.  
+3.  Po řešení je sestavený Build, spusťte Setup.bat nastavit aplikaci ServiceModelSamples [!INCLUDE[iisver](../../../../includes/iisver-md.md)]. Adresář ServiceModelSamples by se měla objevit jako [!INCLUDE[iisver](../../../../includes/iisver-md.md)] aplikace.  
   
-4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky trvalosti a hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193961)
+ [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

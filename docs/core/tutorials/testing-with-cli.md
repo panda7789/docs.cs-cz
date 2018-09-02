@@ -4,12 +4,12 @@ description: Tento kurz vysvětluje, jak uspořádat a Testovací projekty .NET 
 author: cartermp
 ms.author: mairaw
 ms.date: 05/16/2017
-ms.openlocfilehash: a49eb1d398ab80a4ece703b7889083ea967df862
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 5fdbdc115ea5cd6da54f7c43bec2aa6f82e71310
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37960980"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43400280"
 ---
 # <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a>Uspořádání a testování projektů pomocí příkazového řádku .NET Core
 
@@ -162,7 +162,7 @@ public class PetTests
 Volitelné cvičení: Pokud jste přidali `Bird` dříve typ, který provede `Tweet!` vlastníkovi, přidejte testovací metody pro *PetTests.cs* souboru, `BirdTalkToOwnerReturnsTweet`, zkontroluje, jestli `TalkToOwner` metoda se dá použít správně `Bird` typu.
 
 > [!NOTE]
-> I když můžete očekávat, že `expected` a `actual` jsou hodnoty stejné, počáteční kontrolní výrazy s `Assert.NotEqual` kontroly určit, že jsou *nerovná*. Vždy nejprve vytvořte testy po selhání za účelem ověření logiky testy. Toto je důležitým krokem při metodologie návrhu řízený testováním (TDD). Jakmile potvrdíte, že selhání testů, upravte kontrolní výrazy a povolení jejich předávání.
+> I když můžete očekávat, že `expected` a `actual` jsou hodnoty stejné, počáteční kontrolní výraz se `Assert.NotEqual` kontroly Určuje, že tyto hodnoty jsou *nerovná*. Vždy nejprve vytvořte test selhání za účelem ověření logiky testu. Jakmile potvrdíte, že se test nezdaří, upravte kontrolní výraz, aby test proběhl úspěšně.
 
 Následuje ukázka struktury dokončený projekt:
 

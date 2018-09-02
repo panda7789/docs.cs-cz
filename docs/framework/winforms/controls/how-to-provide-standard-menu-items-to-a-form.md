@@ -9,22 +9,22 @@ helpviewer_keywords:
 - menu items [Windows Forms], standard
 - ToolStrip control [Windows Forms]
 ms.assetid: 75db9126-e70c-4e81-921d-b83c0a4a9f50
-ms.openlocfilehash: b118392d089bf28edee1496e0e11ed24d263202a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bf43d27ed728d11b5cde5b9250cfc4614077ed94
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33533329"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43395706"
 ---
 # <a name="how-to-provide-standard-menu-items-to-a-form"></a>Postupy: Zajištění standardních položek nabídky pro formulář
-Můžete zadat standardní nabídky svých formulářů s <xref:System.Windows.Forms.MenuStrip> ovládacího prvku.  
+Můžete zadat standardní nabídky formuláře s <xref:System.Windows.Forms.MenuStrip> ovládacího prvku.  
   
- Rozsáhlá podpora pro tuto funkci v sadě Visual Studio není k dispozici.  
+ Není k dispozici rozsáhlou podporu pro tuto funkci v sadě Visual Studio.  
   
- Viz také [návod: poskytnutí standardních položek nabídky do formuláře](http://msdn.microsoft.com/library/ms233662\(v=vs.110\)).  
+ Viz také [návod: poskytnutí standardních položek nabídky do formuláře](walkthrough-providing-standard-menu-items-to-a-form.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak používat <xref:System.Windows.Forms.MenuStrip> řízení vytvořit formulář s standardní nabídky. Výběr položek nabídky se zobrazí v <xref:System.Windows.Forms.StatusStrip> ovládacího prvku.  
+ Následující příklad kódu ukazuje, jak používat <xref:System.Windows.Forms.MenuStrip> ovládacího prvku na formulář s standardní nabídky vytvořit. Výběr položky nabídky se zobrazí v <xref:System.Windows.Forms.StatusStrip> ovládacího prvku.  
   
  [!code-csharp[System.Windows.Forms.ToolStrip.StandardMenu#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StandardMenu/CS/Form1.cs#1)]
  [!code-vb[System.Windows.Forms.ToolStrip.StandardMenu#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StandardMenu/VB/Form1.vb#1)]  
@@ -32,9 +32,9 @@ Můžete zadat standardní nabídky svých formulářů s <xref:System.Windows.F
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na systém, System.Drawing a System.Windows.Forms sestavení.  
+-   Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
   
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic a Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [vytváření pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit zadáním nebo vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.MenuStrip>  

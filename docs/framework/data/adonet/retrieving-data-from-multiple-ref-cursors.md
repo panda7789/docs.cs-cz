@@ -1,18 +1,18 @@
 ---
-title: Načítání dat z více REF kurzory pomocí připojení OracleDataReader
+title: Načítání dat z více typů REF CURSOR pomocí čtečky OracleDataReader
 ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 361e9bd4-447d-44b7-8629-3c11f1a7ffbb
-ms.openlocfilehash: ae33786cda956d3e01e6a904369a1f1b114d0b6f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d9da85f8998905689115cf24fb84870af45ea105
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33356170"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43393534"
 ---
-# <a name="retrieving-data-from-multiple-ref-cursors-using-an-oracledatareader"></a>Načítání dat z více REF kurzory pomocí připojení OracleDataReader
-Tento příklad Microsoft Visual Basicu provede PL/SQL uložené procedury, která vrátí dva parametry REF kurzor a přečte hodnoty pomocí <xref:System.Data.OracleClient.OracleDataReader>.  
+# <a name="retrieving-data-from-multiple-ref-cursors-using-an-oracledatareader"></a>Načítání dat z více typů REF CURSOR pomocí čtečky OracleDataReader
+PL/SQL uložené procedury, která vrací dva parametry REF CURSOR a čte hodnoty pomocí provádí v tomto příkladu Microsoft Visual Basic <xref:System.Data.OracleClient.OracleDataReader>.  
   
 ```vb  
 Private Sub Button1_Click( _  
@@ -52,4 +52,4 @@ End Sub
   
 ## <a name="see-also"></a>Viz také  
  [Soubory Oracle REF CURSOR](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

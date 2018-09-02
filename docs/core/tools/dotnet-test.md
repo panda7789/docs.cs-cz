@@ -1,50 +1,56 @@
 ---
-title: DotNet. příkaz test - .NET Core rozhraní příkazového řádku
-description: Příkaz dotnet testu se používá k provedení testů jednotek v daný projekt.
+title: příkaz DotNet test – rozhraní příkazového řádku .NET Core
+description: Příkaz dotnet test slouží ke spuštění testů jednotek v daném projektu.
 author: mairaw
 ms.author: mairaw
 ms.date: 05/29/2018
-ms.openlocfilehash: 8a10ac9175ee5fcf8649efbb07d8d382ac3afdc7
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: 2bee78ca44026f28c51fac3bcf87d976b53e48a7
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696267"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43390687"
 ---
-# <a name="dotnet-test"></a>test DotNet.
+# <a name="dotnet-test"></a>DotNet test
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Název
 
-`dotnet test` -Ovladač test .NET použít ke spuštění testů jednotek.
+`dotnet test` -Ovladač test .NET ke spuštění testů jednotek.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Souhrn
 
 # <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
-```
+
+```console
 dotnet test [<PROJECT>] [-a|--test-adapter-path] [--blame] [-c|--configuration] [--collect] [-d|--diag] [-f|--framework] [--filter]
     [-l|--logger] [--no-build] [--no-restore] [-o|--output] [-r|--results-directory] [-s|--settings] [-t|--list-tests] [-v|--verbosity]
 dotnet test [-h|--help]
 ```
+
 # <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
-```
+
+```console
 dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [--collect] [-d|--diag] [-f|--framework] [--filter]
     [-l|--logger] [--no-build] [--no-restore] [-o|--output] [-r|--results-directory] [-s|--settings] [-t|--list-tests] [-v|--verbosity]
 dotnet test [-h|--help]
 ```
-# <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
-```
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+
+```console
 dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [-d|--diag] [-f|--framework] [--filter] [-l|--logger] [--no-build] [-o|--output] [-s|--settings] [-t|--list-tests]  [-v|--verbosity]
 dotnet test [-h|--help]
 ```
+
 ---
 
 ## <a name="description"></a>Popis
 
-`dotnet test` Příkaz se používá k provedení testů jednotek v daný projekt. `dotnet test` Příkaz spustí zadaný pro projekt test runner konzolové aplikace. Nástroj test runner provede testů definovaných pro systém testování částí (například Mstestu, NUnit nebo xUnit) a oznámí úspěšné nebo neúspěšné každého testu. Nástroj test runner a knihovně test jednotky spojených jako balíčků NuGet a se obnoví jako obyčejnou závislosti pro projekt.
+`dotnet test` Příkaz se používá ke spuštění testů jednotek v daném projektu. `dotnet test` Příkaz spustí zadaný pro projekt test runner konzolovou aplikaci. Nástroj test runner sestavy úspěch nebo selhání jednotlivých testovacích a spustí testy, které jsou definovány pro rozhraní testování částí (například MSTest, NUnit nebo xUnit). Nástroj test runner a knihovnu testu jednotky jsou dodávány jako balíčky NuGet a se obnoví jako běžný závislosti projektu.
 
-Nástroj test runner pomocí běžný zadejte projektů testování `<PackageReference>` elementu, jak je vidět v následujícím souboru projektu vzorku:
+Projekty testů zadat nástroje test runner pomocí běžný `<PackageReference>` elementu, jak je znázorněno v následující ukázkový soubor projektu:
 
 [!code-xml[XUnit Basic Template](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
 
@@ -52,7 +58,7 @@ Nástroj test runner pomocí běžný zadejte projektů testování `<PackageRef
 
 `PROJECT`
 
-Cesta pro projekt test. Pokud není zadáno, bude výchozí aktuální adresář.
+Cesta k projektu testů. Pokud není zadán, použije se výchozí aktuální adresář.
 
 ## <a name="options"></a>Možnosti
 
@@ -60,59 +66,59 @@ Cesta pro projekt test. Pokud není zadáno, bude výchozí aktuální adresář
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
-V testovacím běhu použijte vlastní test adaptéry ze zadané cesty.
+Používáte vlastní adaptéry testu ze zadané cesty v testovacím běhu.
 
 `--blame`
 
-Testy se spustí v režimu viny. Tato možnost je užitečná v izolace problematické testy způsobuje testovacího hostitele k chybě. Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence.xml* který zachycuje pořadí provádění testů před havárii.
+Testy se spustí v režimu viny. Tato možnost je užitečná v izolaci problematické testů způsobí hostitele testu při selhání. Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence.xml* , který zachycuje pořadí provádění testů před selhání.
 
 `-c|--configuration {Debug|Release}`
 
-Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`, ale konfigurace vašeho projektu může přepsat toto výchozí nastavení SDK.
+Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`, ale váš projekt konfigurace může přepsat toto výchozí nastavení sady SDK.
 
 `--collect <DATA_COLLECTOR_FRIENDLY_NAME>`
 
-Umožňuje kolekce dat pro test spustit. Další informace najdete v tématu [monitorování a analyzovat testu](https://aka.ms/vstest-collect).
+Povolí shromažďování dat pro testovací běh. Další informace najdete v tématu [monitorování a analýza testovacího běhu](https://aka.ms/vstest-collect).
 
 `-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
 
-Umožňuje diagnostiky režimu pro testovací platformy a zápis diagnostické zprávy do určeného souboru.
+Umožňuje diagnostickém režimu pro testovací platformy a zápis diagnostické zprávy do zadaného souboru.
 
 `-f|--framework <FRAMEWORK>`
 
-Vyhledá testovací binární soubory pro konkrétní [framework](../../standard/frameworks.md).
+Vyhledá binárních souborů testu pro konkrétní [framework](../../standard/frameworks.md).
 
 `--filter <EXPRESSION>`
 
-Filtruje testy v aktuálním projektu pomocí daného výrazu. Další informace najdete v tématu [filtrovat možnost Podrobnosti](#filter-option-details) části. Další příklady a další informace o tom, jak pomocí filtrování testovací selektivní jednotky, najdete v části [spouštění testů jednotek selektivní](../testing/selective-unit-tests.md).
+Filtruje testy v aktuálním projektu pomocí daného výrazu. Další informace najdete v tématu [možnost podrobnosti filtru](#filter-option-details) oddílu. Další informace a příklady o tom, jak použít selektivní jednotky filtrování testů, naleznete v tématu [spouštění selektivních testů jednotek](../testing/selective-unit-tests.md).
 
 `-h|--help`
 
-Vytiskne krátké nápovědy pro příkaz.
+Vytiskne krátký nápovědy pro příkaz.
 
 `-l|--logger <LoggerUri/FriendlyName>`
 
-Určuje protokolovacího nástroje pro výsledky testů.
+Určuje protokolovací nástroj pro výsledky testů.
 
 `--no-build`
 
-Před spuštěním není sestavte projekt test. Také implicitní nastaví `--no-restore` příznak.
+Nepodporuje vytvoření testovacího projektu před jejím spuštěním. Také implicitní nastaví `--no-restore` příznak.
 
 `--no-restore`
 
-Implicitní obnovení není spustit, když spustíte příkaz.
+Při spuštění příkazu se nebude spouštět implicitní obnovení.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Adresář, ve kterém chcete najít binární soubory ke spuštění.
+Adresář, ve kterém chcete najít binární soubory, které chcete spustit.
 
 `-r|--results-directory <PATH>`
 
-Adresář, kde se chystáte výsledky testů umístit. Pokud zadaný adresář neexistuje, vytvoří se.
+Adresář, kam výsledky testu budou umístěny. Pokud zadaný adresář neexistuje, vytvoří se.
 
 `-s|--settings <SETTINGS_FILE>`
 
-Nastavení se má použít při spouštění testů.
+Nastavení se má použít při spuštění testů.
 
 `-t|--list-tests`
 
@@ -126,55 +132,55 @@ Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[i
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
-V testovacím běhu použijte vlastní test adaptéry ze zadané cesty.
+Používáte vlastní adaptéry testu ze zadané cesty v testovacím běhu.
 
 `-c|--configuration {Debug|Release}`
 
-Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`, ale konfigurace vašeho projektu může přepsat toto výchozí nastavení SDK.
+Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`, ale váš projekt konfigurace může přepsat toto výchozí nastavení sady SDK.
 
 `--collect <DATA_COLLECTOR_FRIENDLY_NAME>`
 
-Umožňuje kolekce dat pro test spustit. Další informace najdete v tématu [monitorování a analyzovat testu](https://aka.ms/vstest-collect).
+Povolí shromažďování dat pro testovací běh. Další informace najdete v tématu [monitorování a analýza testovacího běhu](https://aka.ms/vstest-collect).
 
 `-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
 
-Umožňuje diagnostiky režimu pro testovací platformy a zápis diagnostické zprávy do určeného souboru.
+Umožňuje diagnostickém režimu pro testovací platformy a zápis diagnostické zprávy do zadaného souboru.
 
 `-f|--framework <FRAMEWORK>`
 
-Vyhledá testovací binární soubory pro konkrétní [framework](../../standard/frameworks.md).
+Vyhledá binárních souborů testu pro konkrétní [framework](../../standard/frameworks.md).
 
 `--filter <EXPRESSION>`
 
-Filtruje testy v aktuálním projektu pomocí daného výrazu. Další informace najdete v tématu [filtrovat možnost Podrobnosti](#filter-option-details) části. Další příklady a další informace o tom, jak pomocí filtrování testovací selektivní jednotky, najdete v části [spouštění testů jednotek selektivní](../testing/selective-unit-tests.md).
+Filtruje testy v aktuálním projektu pomocí daného výrazu. Další informace najdete v tématu [možnost podrobnosti filtru](#filter-option-details) oddílu. Další informace a příklady o tom, jak použít selektivní jednotky filtrování testů, naleznete v tématu [spouštění selektivních testů jednotek](../testing/selective-unit-tests.md).
 
 `-h|--help`
 
-Vytiskne krátké nápovědy pro příkaz.
+Vytiskne krátký nápovědy pro příkaz.
 
 `-l|--logger <LoggerUri/FriendlyName>`
 
-Určuje protokolovacího nástroje pro výsledky testů.
+Určuje protokolovací nástroj pro výsledky testů.
 
 `--no-build`
 
-Před spuštěním není sestavte projekt test. Také implicitní nastaví `--no-restore` příznak.
+Nepodporuje vytvoření testovacího projektu před jejím spuštěním. Také implicitní nastaví `--no-restore` příznak.
 
 `--no-restore`
 
-Implicitní obnovení není spustit, když spustíte příkaz.
+Při spuštění příkazu se nebude spouštět implicitní obnovení.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Adresář, ve kterém chcete najít binární soubory ke spuštění.
+Adresář, ve kterém chcete najít binární soubory, které chcete spustit.
 
 `-r|--results-directory <PATH>`
 
-Adresář, kde se chystáte výsledky testů umístit. Pokud zadaný adresář neexistuje, vytvoří se.
+Adresář, kam výsledky testu budou umístěny. Pokud zadaný adresář neexistuje, vytvoří se.
 
 `-s|--settings <SETTINGS_FILE>`
 
-Nastavení se má použít při spouštění testů.
+Nastavení se má použít při spuštění testů.
 
 `-t|--list-tests`
 
@@ -184,47 +190,47 @@ Seznam všech zjištěných testů v aktuálním projektu.
 
 Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
-V testovacím běhu použijte vlastní test adaptéry ze zadané cesty.
+Používáte vlastní adaptéry testu ze zadané cesty v testovacím běhu.
 
 `-c|--configuration {Debug|Release}`
 
-Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`, ale konfigurace vašeho projektu může přepsat toto výchozí nastavení SDK.
+Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`, ale váš projekt konfigurace může přepsat toto výchozí nastavení sady SDK.
 
 `-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
 
-Umožňuje diagnostiky režimu pro testovací platformy a zápis diagnostické zprávy do určeného souboru.
+Umožňuje diagnostickém režimu pro testovací platformy a zápis diagnostické zprávy do zadaného souboru.
 
 `-f|--framework <FRAMEWORK>`
 
-Vyhledá testovací binární soubory pro konkrétní [framework](../../standard/frameworks.md).
+Vyhledá binárních souborů testu pro konkrétní [framework](../../standard/frameworks.md).
 
 `--filter <EXPRESSION>`
 
-Filtruje testy v aktuálním projektu pomocí daného výrazu. Další informace najdete v tématu [filtrovat možnost Podrobnosti](#filter-option-details) části. Další příklady a další informace o tom, jak pomocí filtrování testovací selektivní jednotky, najdete v části [spouštění testů jednotek selektivní](../testing/selective-unit-tests.md).
+Filtruje testy v aktuálním projektu pomocí daného výrazu. Další informace najdete v tématu [možnost podrobnosti filtru](#filter-option-details) oddílu. Další informace a příklady o tom, jak použít selektivní jednotky filtrování testů, naleznete v tématu [spouštění selektivních testů jednotek](../testing/selective-unit-tests.md).
 
 `-h|--help`
 
-Vytiskne krátké nápovědy pro příkaz.
+Vytiskne krátký nápovědy pro příkaz.
 
 `-l|--logger <LoggerUri/FriendlyName>`
 
-Určuje protokolovacího nástroje pro výsledky testů.
+Určuje protokolovací nástroj pro výsledky testů.
 
 `--no-build`
 
-Před spuštěním není sestavte projekt test.
+Nepodporuje vytvoření testovacího projektu před jejím spuštěním.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Adresář, ve kterém chcete najít binární soubory ke spuštění.
+Adresář, ve kterém chcete najít binární soubory, které chcete spustit.
 
 `-s|--settings <SETTINGS_FILE>`
 
-Nastavení se má použít při spouštění testů.
+Nastavení se má použít při spuštění testů.
 
 `-t|--list-tests`
 
@@ -238,26 +244,26 @@ Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[i
 
 ## <a name="examples"></a>Příklady
 
-Spouštět testy v projekt v aktuálním adresáři:
+Spusťte testy v projektu v aktuálním adresáři:
 
 `dotnet test`
 
-Spouštět testy v `test1` projektu:
+Spustit testy v `test1` projektu:
 
 `dotnet test ~/projects/test1/test1.csproj`
 
-## <a name="filter-option-details"></a>Podrobnosti o možnost filtru
+## <a name="filter-option-details"></a>Možnost podrobnosti filtru
 
 `--filter <EXPRESSION>`
 
 `<Expression>` má formát `<property><operator><value>[|&<Expression>]`.
 
-`<property>` je atributem `Test Case`. Tady jsou vlastnostech podporovaných zprostředkovatelem systémů testů jednotek oblíbených:
+`<property>` je atribut `Test Case`. Toto jsou vlastnosti podporované rozhraní pro testování částí oblíbených:
 
-| Test Framework | Podporovaných vlastností                                                                                      |
+| Rozhraní pro testování | Podporovaných vlastností                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| MSTest         | <ul><li>Položka FullyQualifiedName</li><li>Název</li><li>Název třídy</li><li>Priorita</li><li>TestCategory</li></ul> |
-| xUnit          | <ul><li>Položka FullyQualifiedName</li><li>displayName</li><li>Vlastnosti</li></ul>                                   |
+| MSTest         | <ul><li>FullyQualifiedName</li><li>Název</li><li>Název třídy</li><li>Priorita</li><li>TestCategory</li></ul> |
+| xUnit          | <ul><li>FullyQualifiedName</li><li>displayName</li><li>Osobnostní rysy</li></ul>                                   |
 
 `<operator>` Popisuje vztah mezi vlastnosti a hodnotu:
 
@@ -267,22 +273,22 @@ Spouštět testy v `test1` projektu:
 | `!=`     | Není přesná shoda |
 | `~`      | Obsahuje        |
 
-`<value>` obsahuje řetězec. Všechny hledání se malá a velká písmena.
+`<value>` je řetězec. Všechna vyhledávání jsou malá a velká písmena.
 
-Výraz bez `<operator>` je automaticky považováno za `contains` na `FullyQualifiedName` vlastnosti (například `dotnet test --filter xyz` je stejný jako `dotnet test --filter FullyQualifiedName~xyz`).
+Výraz bez `<operator>` je automaticky považováno za `contains` na `FullyQualifiedName` vlastnosti (například `dotnet test --filter xyz` je stejná jako `dotnet test --filter FullyQualifiedName~xyz`).
 
-Výrazy lze spojit s podmíněné operátory:
+Výrazy jde připojit k podmíněných operátorů:
 
 | Operátor            | Funkce |
 | ------------------- | -------- |
 | <code>&#124;</code> | NEBO       |
 | `&`                 | AND      |
 
-Můžete uzavřete výrazy v závorkách, při použití podmíněné operátory (například `(Name~TestMethod1) | (Name~TestMethod2)`).
+Je možné uzavřít do uvozovek výrazy v závorkách při použití podmíněných operátorů (například `(Name~TestMethod1) | (Name~TestMethod2)`).
 
-Další příklady a další informace o tom, jak pomocí filtrování testovací selektivní jednotky, najdete v části [spouštění testů jednotek selektivní](../testing/selective-unit-tests.md).
+Další informace a příklady o tom, jak použít selektivní jednotky filtrování testů, naleznete v tématu [spouštění selektivních testů jednotek](../testing/selective-unit-tests.md).
 
 ## <a name="see-also"></a>Viz také:
 
-[Rozhraní a cíle](../../standard/frameworks.md)  
-[Katalog .NET core Runtime identifikátor (RID)](../rid-catalog.md)
+* [Architektury a cíle](../../standard/frameworks.md)  
+* [.NET core Runtime identifikátor (RID) katalogu](../rid-catalog.md)

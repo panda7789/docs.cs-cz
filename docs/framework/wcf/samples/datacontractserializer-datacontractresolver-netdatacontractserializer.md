@@ -2,21 +2,22 @@
 title: Použití DataContractSerializer a DataContractResolver pro zajištění funkcí NetDataContractSerializer
 ms.date: 03/30/2017
 ms.assetid: 1376658f-f695-45f7-a7e0-94664e9619ff
-ms.openlocfilehash: a9dde936f2daff669aabe36c5f03203a472d435c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b86ac822e7ce7f0b18962fe48adbb1c26d7259dd
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43394296"
 ---
 # <a name="using-datacontractserializer-and-datacontractresolver-to-provide-the-functionality-of-netdatacontractserializer"></a>Použití DataContractSerializer a DataContractResolver pro zajištění funkcí NetDataContractSerializer
-Tento příklad znázorňuje způsob použití <xref:System.Runtime.Serialization.DataContractSerializer> odpovídajícími <xref:System.Runtime.Serialization.DataContractResolver> poskytuje stejné funkce jako <xref:System.Runtime.Serialization.NetDataContractSerializer>. Tento příklad ukazuje postup vytvoření odpovídající <xref:System.Runtime.Serialization.DataContractResolver> a jak ho přidat do <xref:System.Runtime.Serialization.DataContractSerializer>.  
+Tato ukázka předvádí, jak používat <xref:System.Runtime.Serialization.DataContractSerializer> odpovídající <xref:System.Runtime.Serialization.DataContractResolver> poskytuje stejné funkce jako <xref:System.Runtime.Serialization.NetDataContractSerializer>. Tento příklad ukazuje, jak vytvořit odpovídající <xref:System.Runtime.Serialization.DataContractResolver> a jak ho přidat do <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- <xref:System.Runtime.Serialization.NetDataContractSerializer> se liší od <xref:System.Runtime.Serialization.DataContractSerializer> jedním způsobem důležité: <xref:System.Runtime.Serialization.NetDataContractSerializer> obsahuje informace o typu CLR v serializovaných XML, zatímco <xref:System.Runtime.Serialization.DataContractSerializer> neexistuje. Proto <xref:System.Runtime.Serialization.NetDataContractSerializer> lze použít pouze v případě, že jak serializaci a deserializaci končí sdílet stejné typy CLR. Doporučujeme však používat <xref:System.Runtime.Serialization.DataContractSerializer> vzhledem k tomu, že je lepší, než jeho výkon <xref:System.Runtime.Serialization.NetDataContractSerializer>. Můžete změnit informace, které je serializována v <xref:System.Runtime.Serialization.DataContractSerializer> přidáním <xref:System.Runtime.Serialization.DataContractResolver> k němu.  
+ <xref:System.Runtime.Serialization.NetDataContractSerializer> se liší od <xref:System.Runtime.Serialization.DataContractSerializer> jedním způsobem důležité: <xref:System.Runtime.Serialization.NetDataContractSerializer> obsahuje informace o typu modulu CLR v serializovaném kódu XML, zatímco <xref:System.Runtime.Serialization.DataContractSerializer> tak není. Proto <xref:System.Runtime.Serialization.NetDataContractSerializer> lze použít pouze v případě, že i serializaci a deserializaci končí sdílet stejné typy CLR. Doporučujeme však použít <xref:System.Runtime.Serialization.DataContractSerializer> vzhledem k tomu, že jeho výkon je vhodnější než <xref:System.Runtime.Serialization.NetDataContractSerializer>. Můžete změnit informace, které je serializován ve <xref:System.Runtime.Serialization.DataContractSerializer> tak, že přidáte <xref:System.Runtime.Serialization.DataContractResolver> k němu.  
   
- Tato ukázka se skládá ze dvou projektů. První projekt používá <xref:System.Runtime.Serialization.NetDataContractSerializer> o serializaci objektu. Druhý projektu používá <xref:System.Runtime.Serialization.DataContractSerializer> s <xref:System.Runtime.Serialization.DataContractResolver> nabízí stejné funkce jako první projekt.  
+ Tento příklad se skládá ze dvou projektů. První projekt používá <xref:System.Runtime.Serialization.NetDataContractSerializer> k serializaci objektu. Druhý projekt používá <xref:System.Runtime.Serialization.DataContractSerializer> s <xref:System.Runtime.Serialization.DataContractResolver> poskytnout stejné funkce jako první projekt.  
   
- Následující příklad kódu ukazuje implementaci vlastní <xref:System.Runtime.Serialization.DataContractResolver> s názvem `MyDataContractResolver` který je přidán do <xref:System.Runtime.Serialization.DataContractSerializer> v DCSwithDCR projektu.  
+ Následující příklad kódu ukazuje implementaci vlastního <xref:System.Runtime.Serialization.DataContractResolver> s názvem `MyDataContractResolver` , který je přidán do <xref:System.Runtime.Serialization.DataContractSerializer> DCSwithDCR projektu.  
   
 ```  
 class MyDataContractResolver : DataContractResolver  
@@ -60,24 +61,24 @@ class MyDataContractResolver : DataContractResolver
   
 2.  Klikněte pravým tlačítkem na soubor řešení a zvolte **vlastnosti**.  
   
-3.  V **stránky vlastností řešení** dialogové okno, v části **společných vlastností**, **spouštěný projekt**, vyberte **více projektů po spuštění:**.  
+3.  V **stránek vlastností řešení** dialogového okna, v části **společné vlastnosti**, **spouštěný projekt**vyberte **více projektů po spuštění:**.  
   
-4.  Vedle položky **DCSwithDCR** projekt, vyberte **spustit** z **akce** rozevíracího seznamu.  
+4.  Vedle položky **DCSwithDCR** projekt, vyberte **Start** z **akce** rozevíracího seznamu.  
   
-5.  Vedle položky **NetDCS** projekt, vyberte **spustit** z **akce** rozevíracího seznamu.  
+5.  Vedle položky **NetDCS** projekt, vyberte **Start** z **akce** rozevíracího seznamu.  
   
 6.  Klikněte na tlačítko **OK** zavřete dialogové okno.  
   
-7.  Sestavte řešení, stiskněte CTRL + SHIFT + B.  
+7.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-8.  Chcete-li spustit řešení, stiskněte CTRL + F5.  
+8.  Abyste mohli spustit řešení, stiskněte CTRL + F5.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\NetDcSasDcSwithDCR`  
   

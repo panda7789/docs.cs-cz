@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b213285b3c533488cfa48198951275925c0e37ae
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 93377f82992b8d7d55b21b53abfd7d7c2e9e620b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33436183"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43394892"
 ---
 # <a name="iclrstrongnamestrongnamekeygenex-method"></a>ICLRStrongName::StrongNameKeyGenEx – metoda
-Generuje nový pár veřejného a privátního klíče pomocí zadané velikost klíče pro použití silným názvem.  
+Generuje nový pár veřejného a privátního klíče se zadanou velikost klíče pro použití silným názvem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +41,34 @@ HRESULT StrongNameKeyGenEx (
   
 #### <a name="parameters"></a>Parametry  
  `wszKeyContainer`  
- [v] Název požadovaný kontejner klíčů. `wszKeyContainer` musí být neprázdný řetězec nebo hodnota null pro generování dočasný název.  
+ [in] Název požadovaný kontejner klíče. `wszKeyContainer` musí být neprázdný řetězec nebo hodnota null pro generování dočasný název.  
   
  `dwFlags`  
- [v] Hodnota, která určuje, zda chcete ponechat klíč zaregistrován. Podporovány jsou následující hodnoty:  
+ [in] Hodnota, která určuje, zda má zůstat zkratku zaregistrovanou. Podporovány jsou následující hodnoty:  
   
--   0x00000000 - použít, když `wszKeyContainer` má hodnotu null při generování názvu dočasné kontejneru klíčů.  
+-   0x00000000 - nepoužívá, pokud `wszKeyContainer` má hodnotu null. k vygenerování názvu dočasného kontejneru klíčů.  
   
--   0x00000001 (`SN_LEAVE_KEY`)-určuje, které by měl být klíč vlevo registrován.  
+-   0x00000001 (`SN_LEAVE_KEY`)-určuje, že klíč by měl být vlevo zaregistrován.  
   
  `dwKeySize`  
- [v] Požadovaná velikost klíče v bitech.  
+ [in] Požadovaná velikost klíče v bitech.  
   
  `ppbKeyBlob`  
- [out] Vrácený veřejného a privátního klíče RSA.  
+ [out] Vrácený pár veřejného a privátního klíče.  
   
  `pcbKeyBlob`  
- [out] Velikost v bajtech z `ppbKeyBlob`.  
+ [out] Velikost v bajtech, z `ppbKeyBlob`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
   
 ## <a name="remarks"></a>Poznámky  
- Vyžadují rozhraní .NET Framework verze 1.0 a 1.1 `dwKeySize` 1 024 bitů pro podepsání sestavení silným názvem; verze 2.0 přidá podporuje pro klíče 2048 bitů.  
+ Vyžadují rozhraní .NET Framework verze 1.0 a 1.1 `dwKeySize` z 1 024 bity k podepisování sestavení silným názvem; přidá verze 2.0 podporuje pro klíče 2048 bitů.  
   
- Po načtení klíč by měly volat [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metodu pro uvolnění přidělenou paměť.  
+ Po načtení klíče, měli byste zavolat [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metodu pro uvolnění přidělené paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   

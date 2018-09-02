@@ -10,16 +10,16 @@ ms.assetid: 93fdfbb9-0025-4b72-8ca0-0714adbb70d5
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: f2eb6d1b54e9565df1401c4a1d20698ff795f896
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: 4b846dfdd7c19a515c759fbeac1762cb47ca8876
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43258574"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43395475"
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>TextPattern a vložené objekty – přehled
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Tento přehled popisuje jak [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] zpřístupňuje vložené objekty nebo podřízené prvky v rámci textového dokumentu nebo kontejneru.  
   
@@ -46,7 +46,7 @@ Příklad textového datového proudu s vložené objekty a jejich rozsah rozpě
   
  V případě potřeby procházet obsah rozsah textu sérii kroků se podílejí na pozadí, aby <xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> metodu úspěšně provést.  
   
-1.  Rozsah textu je normalizovány; To znamená, je mimo rozsah textu sbaleny do na degenerovanou rozsah <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> koncový bod, díky čemuž je <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> nadbytečný koncový bod. Tento krok je potřeba odstranit nejednoznačnost v situacích, kdy rozsah textu zahrnuje <xref:System.Windows.Automation.Text.TextUnit> hranice: například "{U} RL [ http://www.microsoft.com ](http://www.microsoft.com) je vložený v textu" kde "{" a "}" jsou koncové body rozsah textu.  
+1.  Rozsah textu je normalizovány; To znamená, je mimo rozsah textu sbaleny do na degenerovanou rozsah <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> koncový bod, díky čemuž je <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> nadbytečný koncový bod. Tento krok je potřeba odstranit nejednoznačnost v situacích, kdy rozsah textu zahrnuje <xref:System.Windows.Automation.Text.TextUnit> hranice: například "{U} RL [ http://www.microsoft.com ](https://www.microsoft.com) je vložený v textu" kde "{" a "}" jsou koncové body rozsah textu.  
   
 2.  Výsledná oblast bude přesunut dozadu <xref:System.Windows.Automation.TextPattern.DocumentRange%2A> začátek požadovanou <xref:System.Windows.Automation.Text.TextUnit> hranic.  
   
@@ -71,7 +71,7 @@ Příklady, jak je upraveno rozsah textu pro Move() a ExpandToEnclosingUnit()
 ### <a name="hyperlink"></a>Hypertextový odkaz  
  **Příklad 1 - rozsah textu, který obsahuje vložený text hypertextového odkazu**  
   
- {Adresu URL [ http://www.microsoft.com ](http://www.microsoft.com) vložený text}.  
+ {Adresu URL [ http://www.microsoft.com ](https://www.microsoft.com) vložený text}.  
   
 |Metodu s názvem|Výsledek|  
 |-------------------|------------|  
@@ -92,7 +92,7 @@ Příklady, jak je upraveno rozsah textu pro Move() a ExpandToEnclosingUnit()
   
  **Příklad 3 - rozsah textu, která částečně zahrnuje obsah zásobník textu. Zásobník textu se vložený text hypertextového odkazu, který není součástí rozsah textu.**  
   
- {URL} [ http://www.microsoft.com ](http://www.microsoft.com) se vloží do textu.  
+ {URL} [ http://www.microsoft.com ](https://www.microsoft.com) se vloží do textu.  
   
 |Metodu s názvem|Výsledek|  
 |-------------------|------------|  
@@ -159,4 +159,4 @@ Příklady, jak je upraveno rozsah textu pro Move() a ExpandToEnclosingUnit()
  [Přístup k vloženým objektům s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/access-embedded-objects-using-ui-automation.md)  
  [Vystavení obsahu tabulky s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/expose-the-content-of-a-table-using-ui-automation.md)  
  [Procházení textu s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/traverse-text-using-ui-automation.md)  
- [TextPattern vyhledávání a výběr ukázky](http://msdn.microsoft.com/library/0a3bca57-8b72-489d-a57c-da85b7a22c7f)
+ [TextPattern vyhledávání a výběr ukázky](https://msdn.microsoft.com/library/0a3bca57-8b72-489d-a57c-da85b7a22c7f)

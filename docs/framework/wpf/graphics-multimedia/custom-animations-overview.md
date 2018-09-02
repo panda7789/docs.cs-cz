@@ -8,118 +8,118 @@ helpviewer_keywords:
 - animation [WPF], custom classes
 - custom animation classes [WPF]
 ms.assetid: 9be69d50-3384-4938-886f-08ce00e4a7a6
-ms.openlocfilehash: 3f212cd89fe9fe1bcf95a374fa0cd92aedadefa9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a18898f340c68b7890c56b586c87870c50fd4686
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33558028"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43386967"
 ---
 # <a name="custom-animations-overview"></a>Přehled vlastních animací
-Toto téma popisuje, jak a kdy rozšířit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace systému tak, že vytvoříte vlastní klíčových snímků animace třídy, nebo pomocí zpětného volání za rámce obejít ho.  
+Toto téma popisuje, jak a kdy k rozšíření [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace systém tak, že vytvoříte vlastní klíčové snímky animace třídy, nebo pomocí zpětného volání za rámce se.  
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Zjistit, v tomto tématu, měli byste se seznámit s různými typy animací poskytované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Další informace naleznete v přehledu animací From/To/By [klíč rámce animací přehled](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)a [cesta animací přehled](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md).  
+ V tomto tématu informace o tom, měli byste se seznámit s různými typy animací poskytované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Další informace najdete v tématu Přehled animací From/To/By, [přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)a [přehled animací cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md).  
   
- Vzhledem k tomu, že animace třídy dědí <xref:System.Windows.Freezable> třída, měli byste se seznámit s <xref:System.Windows.Freezable> objekty a postupy, jak dědit z <xref:System.Windows.Freezable>. Další informace najdete v tématu [zmrazitelné objekty – přehled](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md).  
+ Protože animace třídy dědí <xref:System.Windows.Freezable> třídy, měli byste se seznámit s <xref:System.Windows.Freezable> objekty a o tom, jak dědit z <xref:System.Windows.Freezable>. Další informace najdete v tématu [přehled Zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md).  
   
 <a name="extendingtheanimationsystem"></a>   
 ## <a name="extending-the-animation-system"></a>Rozšíření systému animace  
- Existuje několik způsobů, jak rozšířit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systému animace, v závislosti na úrovni integrovanou funkci, kterou chcete použít.  Existují tři body primární rozšíření v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace modul:  
+ Existuje několik způsobů, jak rozšířit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace systému, v závislosti na úrovni integrované funkce, kterou chcete použít.  Existují tři primární rozšiřitelnost body v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace modul:  
   
--   Vytvoření objektu vlastní klíče rámce dědění z jednoho z  *\<typ >*@keyframe, které určuje třídy, jako například <xref:System.Windows.Media.Animation.DoubleKeyFrame>. Tento postup používá většina integrované funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modul animace.  
+-   Vytvoření vlastní klíčové rámečku objektu děděním z jednoho z  *\<typ >* klíčový snímek třídy, jako například <xref:System.Windows.Media.Animation.DoubleKeyFrame>. Tento přístup používá většina vestavěnou funkci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modul animace.  
   
--   Vytvořit vlastní třídu animace dědění ze <xref:System.Windows.Media.Animation.AnimationTimeline> nebo jeden z  *\<typ >* třídy AnimationBase.  
+-   Vytvoření vlastní třídy animace děděním z <xref:System.Windows.Media.Animation.AnimationTimeline> nebo jeden z  *\<typ >* AnimationBase třídy.  
   
--   Pomocí zpětného volání za rámce vygenerujte animací na základě za rámce. Tento přístup zcela obchází animace a časování systému.  
+-   Generovat animací na základě podle snímků pomocí zpětné volání na snímku. Tento přístup se zcela vynechá animace a časování systému.  
   
  Následující tabulka popisuje některé scénáře pro rozšíření systému animace.  
   
 |Pokud chcete...|Tuto metodu použijte|  
 |-------------------------|-----------------------|  
-|Přizpůsobení interpolace mezi hodnotami typu, který má odpovídající  *\<typ >* AnimationUsingKeyFrames|Vytvořte vlastní klíče rámeček. Další informace najdete v tématu [vytvořte vlastní klíč rámeček](#createacustomkeyframe) části.|  
-|Přizpůsobení více než jen interpolace mezi hodnotami typu, který má odpovídající  *\<typ >* animace.|Vytvořte vlastní animace třídu, která dědí z  *\<typ >* AnimationBase třídu, která odpovídá typu chcete animace. Další informace najdete v tématu [vytvoření vlastní třídy animace](#createacustomanimationtype) části.|  
-|Animace typ, který nemá odpovídající [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace|Použijte <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> nebo vytvořte třídu, která dědí z <xref:System.Windows.Media.Animation.AnimationTimeline>. Další informace najdete v tématu [vytvoření vlastní třídy animace](#createacustomanimationtype) části.|  
-|Postupné animaci více objektů s hodnotami, které se vypočítávají každý rámečkem a jsou založené na poslední sadu objekt interakce|Použití zpětného volání za rámce. Další informace najdete v tématu [vytvořte zpětné volání za rámce použití](#useperframecallback) části.|  
+|Přizpůsobení interpolaci mezi hodnotami typu, který má odpovídající  *\<typ >* AnimationUsingKeyFrames|Vytvořte vlastní klíčové rámečku. Další informace najdete v tématu [vytvořit objekt Frame vlastní klíč](#createacustomkeyframe) oddílu.|  
+|Přizpůsobení víc než jenom interpolaci mezi hodnotami typu, který má odpovídající  *\<typ >* animace.|Vytvořte vlastní animace třídu, která dědí z  *\<typ >* AnimationBase třídu, která odpovídá typu, který má být animován. Další informace najdete v tématu [vytvoření vlastní třídy animace](#createacustomanimationtype) oddílu.|  
+|Animace typ, který nemá odpovídající [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace|Použití <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> nebo vytvořit třídu, která dědí z <xref:System.Windows.Media.Animation.AnimationTimeline>. Další informace najdete v tématu [vytvoření vlastní třídy animace](#createacustomanimationtype) oddílu.|  
+|Animovat více objektů s hodnotami, které se počítají každá snímků a jsou založeny na poslední sadu interakce s objekty|Použijte na rámce zpětného volání. Další informace najdete v tématu [vytvořte zpětné volání na rámec použití](#useperframecallback) oddílu.|  
   
 <a name="createacustomkeyframe"></a>   
-## <a name="create-a-custom-key-frame"></a>Vytvořte vlastní klíče rámeček  
- Vytvoření třídy vlastní klíčových snímků je nejjednodušší způsob, jak rozšířit systém animace. Tuto metodu použijte, pokud chcete metodu různých interpolace pro klíč rámce animace.  Jak je popsáno v [klíč rámce animací přehled](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md), klíč rámce animace pomocí klíčových snímků objektů ke generování hodnot její výstup. Každý objekt klíčových snímků provádí tři funkce:  
+## <a name="create-a-custom-key-frame"></a>Vytvořit vlastní klíčové rámečku  
+ Vytvoření vlastní klíčové rámečku třídy je nejjednodušší způsob, jak rozšířit systém animace. Tuto metodu použijte, pokud chcete metodu různých interpolace animace klíčových snímků.  Jak je popsáno v [přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md), animace klíčových snímků používá ke generování jeho výstupní hodnoty klíčových snímků objektů. Každý objekt klíčový snímek provádí tři funkce:  
   
--   Určuje cílový hodnoty pomocí jeho <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> vlastnost.  
+-   Určuje cílový hodnotu pomocí jeho <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> vlastnost.  
   
--   Určuje dobu, kdy by mělo být dosaženo tuto hodnotu pomocí své <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> vlastnost.  
+-   Určuje dobu, kdy by mělo být tato hodnota dosaženo pomocí jeho <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> vlastnost.  
   
--   Argument interpolaci mezi hodnotou předchozí klíčových snímků a vlastní hodnotu implementací InterpolateValueCore metody.  
+-   Interpolaci hodnotu předchozí klíčový snímek a vlastní hodnotu implementací metody InterpolateValueCore.  
   
- **Pokyny pro implementaci**  
+ **Pokyny k implementaci**  
   
- Odvozena od  *\<typ >*@keyframe, které určuje abstraktní třídy a implementovat metodu InterpolateValueCore. Metoda InterpolateValueCore vrací aktuální hodnotu klíčového snímku. Jak dlouho trvá dva parametry: hodnota předchozí klíčových snímků a průběh hodnotu rozsahu od 0 do 1. Průběh 0 označuje klíče rámečku byl spuštěn, a hodnota 1 označuje, že klíče rámečku má právě dokončili a by měla vrátit hodnotu zadanou pomocí jeho <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> vlastnost.  
+ Odvozovat  *\<typ >* klíčový snímek abstraktní třídy a implementovat metodu InterpolateValueCore. Metoda InterpolateValueCore vrátí aktuální hodnotu klíčového snímku. Přebírá dva parametry: hodnoty předchozí klíčový snímek a průběh hodnotu od 0 do 1. Průběh 0 označuje klíčový snímek byl spuštěn, a hodnota 1 označuje, že klíčový snímek dokončil a by měl vrátit hodnotu zadanou pomocí jeho <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> vlastnost.  
   
- Protože  *\<typ >*@keyframe, které určuje třídy dědí <xref:System.Windows.Freezable> třídy, je nutné také přepsat <xref:System.Windows.Freezable.CreateInstanceCore%2A> základní vrátit novou instanci třídy vašich. Pokud třída nepoužívá vlastností závislostí k ukládání dat nebo vyžaduje další inicializace po vytvoření, možná budete muset přepsat další metody; najdete v článku [zmrazitelné objekty – přehled](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md) Další informace.  
+ Protože  *\<typ >* klíčový snímek třídy dědí z <xref:System.Windows.Freezable> třídy, je nutné také přepsat <xref:System.Windows.Freezable.CreateInstanceCore%2A> core vrací novou instanci třídy. Pokud třída nepoužívá vlastnosti závislosti k ukládání svých dat nebo vyžaduje dodatečnou inicializaci. po jeho vytvoření, možná budete muset přepsat další metody; Zobrazit [přehled Zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md) Další informace.  
   
- Po vytvoření vaše vlastní  *\<typ >* animace klíčových snímků, můžete ji použít s  *\<typ >* AnimationUsingKeyFrames tohoto typu.  
+ Po vytvoření vlastních  *\<typ >* klíčový snímek animace, můžete ji  *\<typ >* AnimationUsingKeyFrames pro daný typ.  
   
 <a name="createacustomanimationtype"></a>   
 ## <a name="create-a-custom-animation-class"></a>Vytvořte třídu vlastní animace  
- Vytváření vlastní animace typ nabízí větší kontrolu nad jak animovaný objekt v. Existují dva doporučené způsoby, jak vytvořit vlastní typ animace: odvozujete od <xref:System.Windows.Media.Animation.AnimationTimeline> třídy nebo  *\<typ >* třída AnimationBase. Odvozování z  *\<typ >* animace nebo  *\<typ >* AnimationUsingKeyFrames třídy se nedoporučuje.  
+ Vytváří se vlastní animace typ získáte tak větší kontrolu nad tím, jak animovat objektu v. Existují dva doporučené způsoby, jak vytvořit vlastní typ animace: lze odvodit z <xref:System.Windows.Media.Animation.AnimationTimeline> třídy nebo  *\<typ >* AnimationBase třídy. Odvozování z  *\<typ >* animace nebo  *\<typ >* AnimationUsingKeyFrames třídy se nedoporučuje.  
   
-### <a name="derive-from-typeanimationbase"></a>Odvozena od \<typ > AnimationBase  
- Odvozování z  *\<typ >* AnimationBase třída je nejjednodušší způsob, jak vytvořit nový typ animace. Tuto metodu použijte, pokud chcete vytvořit nový animace pro typ, který již má odpovídající  *\<typ >* třída AnimationBase.  
+### <a name="derive-from-typeanimationbase"></a>Jsou odvozeny z \<typ > AnimationBase  
+ Odvozování z  *\<typ >* AnimationBase třída je nejjednodušší způsob, jak vytvořit nový typ animace. Tuto metodu použijte, pokud chcete vytvořit nový animace pro typ, který již má odpovídající  *\<typ >* AnimationBase třídy.  
   
- **Pokyny pro implementaci**  
+ **Pokyny k implementaci**  
   
- Odvozena od  *\<typ >* animace třídy a implementujte metodu GetCurrentValueCore. Metoda GetCurrentValueCore vrátí aktuální animace. Jak dlouho trvá tři parametry: hodnotou navrhované, navrhované koncovou hodnotu a <xref:System.Windows.Media.Animation.AnimationClock>, který použijete k určení průběh animace.  
+ Odvozovat  *\<typ >* animace třídy a implementovat metodu GetCurrentValueCore. Metoda GetCurrentValueCore vrátí aktuální hodnotu animace. Přijímá tři parametry: navrhované výchozí hodnoty, navrhované konečnou hodnotu a <xref:System.Windows.Media.Animation.AnimationClock>, kterou používáte k určení rozsahu postupu animace.  
   
- Protože  *\<typ >* AnimationBase třídy dědí <xref:System.Windows.Freezable> třídy, je nutné také přepsat <xref:System.Windows.Freezable.CreateInstanceCore%2A> základní vrátit novou instanci třídy třídě. Pokud třída nepoužívá vlastností závislostí k ukládání dat nebo vyžaduje další inicializace po vytvoření, možná budete muset přepsat další metody; najdete v článku [zmrazitelné objekty – přehled](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md) Další informace.  
+ Protože  *\<typ >* AnimationBase třídy dědí z <xref:System.Windows.Freezable> třídy, je nutné také přepsat <xref:System.Windows.Freezable.CreateInstanceCore%2A> core vrací novou instanci třídy. Pokud třída nepoužívá vlastnosti závislosti k ukládání svých dat nebo vyžaduje dodatečnou inicializaci. po jeho vytvoření, možná budete muset přepsat další metody; Zobrazit [přehled Zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md) Další informace.  
   
- Další informace najdete v dokumentaci k GetCurrentValueCore metoda pro  *\<typ >* AnimationBase třídu pro typ, který chcete animace. Příklad, naleznete v části [vlastní animace ukázka](http://go.microsoft.com/fwlink/?LinkID=159981)  
-  
- **Alternativní přístupy**  
-  
- Pokud chcete jednoduše změnit, jak jsou hodnoty animace interpolované, vzhledem k tomu odvození některého ze  *\<typ >*@keyframe, které určuje třídy. Klíče rámečku vytvoříte lze použít s odpovídající  *\<typ >* AnimationUsingKeyFrames poskytované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
-  
-### <a name="derive-from-animationtimeline"></a>Odvozena od AnimationTimeline  
- Odvozena od <xref:System.Windows.Media.Animation.AnimationTimeline> třídy, pokud chcete vytvořit animace pro typ, který ještě nemá odpovídající [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace, nebo chcete vytvořit animace, která není silného typu.  
-  
- **Pokyny pro implementaci**  
-  
- Odvozena od <xref:System.Windows.Media.Animation.AnimationTimeline> třídy a přepsat následující členy:  
-  
--   <xref:System.Windows.Freezable.CreateInstanceCore%2A> – Pokud je konkrétní novou třídu, je nutné přepsat <xref:System.Windows.Freezable.CreateInstanceCore%2A> vrátit novou instanci třídy třídě.  
-  
--   <xref:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue%2A> – Přepište tuto metodu a vrátí aktuální hodnotu animace. Jak dlouho trvá tři parametry: výchozí hodnotu původu, výchozí hodnotu cílové a <xref:System.Windows.Media.Animation.AnimationClock>. Použití <xref:System.Windows.Media.Animation.AnimationClock> získat aktuální čas nebo průběhu pro animaci. Můžete zvolit, jestli se má použít výchozí původní a cílové hodnoty.  
-  
--   <xref:System.Windows.Media.Animation.AnimationTimeline.IsDestinationDefault%2A> – Přepsat tuto vlastnost k označení, zda vaše animace používá výchozí cílové hodnoty určené <xref:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue%2A> metoda.  
-  
--   <xref:System.Windows.Media.Animation.AnimationTimeline.TargetPropertyType%2A> – Tuto vlastnost k označení přepsat <xref:System.Type> výstupu vytváří animace.  
-  
- Pokud třída nepoužívá vlastností závislostí k ukládání dat nebo vyžaduje další inicializace po vytvoření, možná budete muset přepsat další metody; najdete v článku [zmrazitelné objekty – přehled](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md) Další informace.  
-  
- Doporučené zlepší (používané [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animací), je použít dvě úrovně dědičnosti:  
-  
-1.  Vytvoření abstraktní  *\<typ >* AnimationBase třída odvozená z <xref:System.Windows.Media.Animation.AnimationTimeline>. Tato třída by měly přepsat <xref:System.Windows.Media.Animation.AnimationTimeline.TargetPropertyType%2A> metoda. Měl by také zavádět nové abstraktní metodu GetCurrentValueCore a přepsat <xref:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue%2A> tak, aby ověřuje typy výchozí cílové hodnoty parametrů a výchozí hodnota počátku, pak zavolá GetCurrentValueCore.  
-  
-2.  Vytvořte jinou třídu, která dědí z nové  *\<typ >* AnimationBase třídy a přepíše <xref:System.Windows.Freezable.CreateInstanceCore%2A> metoda, GetCurrentValueCore metodu, která jste seznámili, a <xref:System.Windows.Media.Animation.AnimationTimeline.IsDestinationDefault%2A> vlastnost.  
+ Další informace najdete v dokumentaci k GetCurrentValueCore metodu pro  *\<typ >* AnimationBase třídy pro typ, který má být animován. Příklad najdete v tématu [ukázkové vlastní animace](https://go.microsoft.com/fwlink/?LinkID=159981)  
   
  **Alternativní přístupy**  
   
- Pokud chcete animace typ, který nemá žádné odpovídající animace z/do nebo podle nebo animace jednotlivých klíč, zvažte použití <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames>. Protože je slabě typované, <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> můžete animace jakýkoli typ hodnoty. Z nevýhod tohoto přístupu je, že <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> podporuje pouze diskrétní interpolace.  
+ Pokud chcete jednoduše změnit, jak jsou interpolovány hodnot animace, vzhledem k tomu odvození některého ze  *\<typ >* třídy klíčový snímek. Klíčový snímek, který vytvoříte, je možné s odpovídající  *\<typ >* AnimationUsingKeyFrames poskytované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+  
+### <a name="derive-from-animationtimeline"></a>Odvozovat třídu AnimationTimeline  
+ Odvozovat <xref:System.Windows.Media.Animation.AnimationTimeline> třídy, pokud chcete vytvořit animaci pro typ, který ještě nemá odpovídající [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace, nebo pokud chcete vytvořit animaci, která není silného typu.  
+  
+ **Pokyny k implementaci**  
+  
+ Odvozovat <xref:System.Windows.Media.Animation.AnimationTimeline> třídy a přepsat následující členy:  
+  
+-   <xref:System.Windows.Freezable.CreateInstanceCore%2A> – Pokud je konkrétní novou třídu, je nutné přepsat <xref:System.Windows.Freezable.CreateInstanceCore%2A> vrácení nové instance třídy.  
+  
+-   <xref:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue%2A> – Přepište tuto metodu za účelem vrácení aktuální hodnoty animace. Přijímá tři parametry: původní výchozí hodnotu, výchozí cíl hodnotu a <xref:System.Windows.Media.Animation.AnimationClock>. Použití <xref:System.Windows.Media.Animation.AnimationClock> k získání aktuálního času a průběhu pro animaci. Můžete zvolit, jestli se má použít výchozí hodnoty zdroj a cíl.  
+  
+-   <xref:System.Windows.Media.Animation.AnimationTimeline.IsDestinationDefault%2A> – Tato vlastnost označující, zda animace používá výchozí cíl hodnotu zadanou pomocí přepsání <xref:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue%2A> metody.  
+  
+-   <xref:System.Windows.Media.Animation.AnimationTimeline.TargetPropertyType%2A> – Přepsat tuto vlastnost umožňující označit, <xref:System.Type> výstupu animace vytvoří.  
+  
+ Pokud třída nepoužívá vlastnosti závislosti k ukládání svých dat nebo vyžaduje dodatečnou inicializaci. po jeho vytvoření, možná budete muset přepsat další metody; Zobrazit [přehled Zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md) Další informace.  
+  
+ Doporučené paradigma (používané [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animací), je použít dvě úrovně dědičnosti:  
+  
+1.  Vytvořit abstraktní  *\<typ >* AnimationBase třída odvozená z <xref:System.Windows.Media.Animation.AnimationTimeline>. Tato třída by měly přepsat <xref:System.Windows.Media.Animation.AnimationTimeline.TargetPropertyType%2A> metody. Měl by také zavést nové abstraktní metoda GetCurrentValueCore a přepsat <xref:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue%2A> tak, aby ho ověří typy výchozí cílové hodnoty parametrů a výchozí hodnota, pak zavolá GetCurrentValueCore.  
+  
+2.  Vytvořit jiné třídy, která dědí z nové  *\<typ >* AnimationBase třídy a přepíše <xref:System.Windows.Freezable.CreateInstanceCore%2A> metody, metoda GetCurrentValueCore, která je zavedená, a <xref:System.Windows.Media.Animation.AnimationTimeline.IsDestinationDefault%2A> vlastnost.  
+  
+ **Alternativní přístupy**  
+  
+ Pokud chcete typ, který nemá žádné odpovídající animace od/Komu/kým a animace klíčových snímků animace, zvažte použití <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames>. Protože je slabě typované, <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> libovolný typ hodnoty lze animovat. Nevýhod tohoto přístupu je, že <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> podporuje pouze diskrétní interpolace.  
   
 <a name="useperframecallback"></a>   
-## <a name="use-per-frame-callback"></a>Použití zpětného volání za rámce  
- Tuto metodu použijte, když potřebujete zcela vynechat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systému animace. Jedním scénářem, tento přístup není fyziky animací, kde v každé animace krok nové směr nebo pozice animovaný objektů musí být přepočítávány na základě poslední sadu objekt interakce.  
+## <a name="use-per-frame-callback"></a>Použití zpětného volání na rámec  
+ Tuto metodu použijte, když budete chtít úplně obejít [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace systému. Jeden scénář pro tento přístup je fyzika animace, kde na každou animaci kroku na nový směr nebo pozice animované objekty musí být přepočítány na základě poslední sadu interakce s objekty.  
   
- **Pokyny pro implementaci**  
+ **Pokyny k implementaci**  
   
- Na rozdíl od jiných přístupy popsané v tomto přehledu používat zpětného volání za rámce, nemusíte vytvoření třídy klíčových snímků nebo vlastní animace.  
+ Na rozdíl od dalších přístupů popsaných v tomto přehledu k použití na rámce zpětného volání není nutné k vytvoření třídy klíčových snímků nebo vlastní animace.  
   
- Místo toho můžete zaregistrovat <xref:System.Windows.Media.CompositionTarget.Rendering> události objektu, který obsahuje objekty, které chcete animace. Tato metoda obslužné rutiny události získá volá se jednou za snímek. Každý čas, který [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] marshals trvalou vykreslování data ve vizuálním stromu napříč stromu složení metodu obslužné rutiny událostí je volána.  
+ Místo toho si zaregistrujete <xref:System.Windows.Media.CompositionTarget.Rendering> události objektu, který obsahuje objekty, které má být animován. Tato metoda obslužné rutiny události volána jednou pro každý snímek. Pokaždé, když, který [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] marshals se nazývá trvalý vykreslování data ve vizuálním stromu ve stromové struktuře kompozice metodu obslužné rutiny události.  
   
- V vaší obslužné rutiny událostí provádět vaší ať výpočty potřebné pro vaše animace ovlivňuje a nastavte vlastnosti objektů, které chcete animace s těmito hodnotami.  
+ V obslužné rutině událostí, provádět vaše cokoli, co projeví výpočty, které jsou nezbytné pro animace a nastavte vlastnosti objektů má být animován s těmito hodnotami.  
   
- Získat prezentace době platný snímek, <xref:System.EventArgs> přidružen k této události lze převést jako <xref:System.Windows.Media.RenderingEventArgs>, která poskytnout <xref:System.Windows.Media.RenderingEventArgs.RenderingTime%2A> vlastnost, která vám pomůže získat aktuální snímek je vykreslování čas.  
+ Získat čas prezentace aktuálního snímku <xref:System.EventArgs> přidružený k tomuto událostí můžete přetypovat jako <xref:System.Windows.Media.RenderingEventArgs>, které poskytují <xref:System.Windows.Media.RenderingEventArgs.RenderingTime%2A> vlastnost, která vám umožní získat aktuální rámec v vykreslování čas.  
   
  Další informace najdete v tématu <xref:System.Windows.Media.CompositionTarget.Rendering> stránky.  
   
@@ -132,4 +132,4 @@ Toto téma popisuje, jak a kdy rozšířit [!INCLUDE[TLA2#tla_winclient](../../.
  [Přehled animací cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)  
  [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [Přehled animace a systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)  
- [Ukázka vlastní animace](http://go.microsoft.com/fwlink/?LinkID=159981)
+ [Ukázka vlastních animací](https://go.microsoft.com/fwlink/?LinkID=159981)

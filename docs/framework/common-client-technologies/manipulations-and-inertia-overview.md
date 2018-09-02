@@ -2,74 +2,74 @@
 title: Přehled manipulace a nečinnosti
 ms.date: 03/30/2017
 ms.assetid: dd31b89b-eab6-45a1-8d0b-11e0eb84b234
-ms.openlocfilehash: 7aec2756bfc3a7d4ccd394d54f19428d73b44fcb
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 41c22dc305f8ef653705436544ab2342e55ed02a
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32744392"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43401222"
 ---
 # <a name="manipulations-and-inertia-overview"></a>Přehled manipulace a nečinnosti
-*Manipulace* povolit uživatelům přesunout, otáčení a změna velikosti prvky uživatelského rozhraní (UI) pomocí *manipulátory*. Manipulator představuje myši nebo (v případě dotykovým ovládáním) pera nebo prstu.  
+*Manipulace* povolit uživatelům přesunout, otočit a změnit velikost prvky uživatelského rozhraní (UI) s použitím *manipulátory*. Manipulátor představuje myši nebo (v případě dotykově ovládaný) stylus nebo prstem.  
   
- *Nečinnosti* emuluje chování skutečných pro prvky uživatelského rozhraní, které jsou v provozu tak, že simuluje třecí vynutí u elementů. To umožňuje elementy postupně zpomalit jejich přesun (lineární i úhlová) před přicházející na určeném místě. Tento článek obsahuje úvod do manipulace a nečinnosti pro rozhraní .NET Framework.  
+ *Nečinnost* emuluje chování skutečných pro prvky uživatelského rozhraní, které jsou přenášená data pomocí simulace vynutí řešit zádrhele spojené s prvky. To umožňuje prvků, které se postupně zpomalit jejich přesunu (lineární a angular) před přicházející na zarážku. Tento článek obsahuje úvod do manipulace a nečinnosti pro rozhraní .NET Framework.  
   
 ## <a name="manipulations"></a>Manipulace  
- Manipulaci s kolekce manipulátory považuje za složeného objektu. Aplikace můžete sledovat změny složeného objektu místo individuálních komponent.  
+ Manipulaci s považuje kolekce manipulátory složeného objektu. Aplikace můžete sledovat změny složeného objektu namísto jednotlivých komponent.  
   
- Vezměte v úvahu bitovou kopii na následujícím obrázku. Uživatele můžete použít dva manipulátory přesunout, otáčení a změna měřítka obrázku. Změny se každý manipulator vyhodnocovány společně s jiné manipulátory.  
+ Vezměte v úvahu bitovou kopii na následujícím obrázku. Uživatele můžete použít dvě manipulátory přesunout, otáčet a změna měřítka obrázku. Změny se každý manipulátor jsou interpretovány společně s další manipulátory.  
   
- Například, pokud máte dva manipulátory (1 a 2) na bitovou kopii a přesunout manipulator 1 v + směru osy Y (dolů), tato změna bitovou kopii, závisí na co se stane manipulator 2. Pokud manipulator 2 přesune také v + směru osy Y (dolů), bitovou prochází jednoduše + směru osy Y. Ale pokud manipulator 2 se nemění, nebo ji přesune směrem -Y (si), je menší nebo otočený provedené bitovou kopii.  
+ Například, pokud máte dva manipulátory (1 a 2) na obrázku a přesunout manipulátor 1 v + směru osy Y (dolů) změny do bitové kopie závisí na co se stane manipulátor 2. Pokud manipulátor 2 také přesune + směru osy Y (dolů), image jednoduše přesune + směru osy Y. Ale pokud manipulátor 2 nedojde ke změně nebo přesunu ve směru -Y (nahoru), na obrázku je menší nebo otočený.  
   
- ![Virtuální fotografie, který dva prsty, které jsou manipulace s nimi. ] (../../../docs/framework/common-client-technologies/media/manipulation-resize.png "Manipulation_Resize")  
+ ![Virtuální fotografie, se dvěma prsty manipulaci. ](../../../docs/framework/common-client-technologies/media/manipulation-resize.png "Manipulation_Resize")  
   
  Obrázek se manipulovat dvě manipulátory  
   
- Manipulace s zpracování poskytuje rozhraní, které monitoruje podmnožinu manipulátory a je interpretuje jako kdyby jejich fungují společně, namísto nezávisle. Můžete vytvořit několik manipulaci s objekty procesoru současně, jednu pro jednotlivé elementy uživatelského rozhraní pro upravit v aplikaci. Manipulace s procesoru je informováni o kterém vstupní zařízení pro sledování a oznámí manipulace prostřednictvím [.NET události](http://msdn.microsoft.com/library/17sde2xt.aspx).  
+ Manipulace s zpracování poskytuje architekturu, která monitoruje podmnožinu manipulátory a interpretuje je, jako kdyby jejich fungují společně, namísto nezávisle na sobě. Můžete vytvořit několik manipulaci s objekty procesoru současně, jeden pro každý prvek uživatelského rozhraní na manipulovat v aplikaci. Manipulace s procesor je informován o kterém vstupní zařízení pro sledování a sestavy manipulace prostřednictvím [události .NET](https://msdn.microsoft.com/library/17sde2xt.aspx).  
   
- Manipulace s procesor nemá informace o konkrétní elementu, který je právě zpracovávaného. Aplikace samostatně použije změny na element specifické pro aplikaci. Například aplikace použije transformace na bitovou kopii nebo ho překreslí ho zobrazte jej v jeho novém umístění nebo s novou velikost nebo orientace.  
+ Procesor manipulaci s nemá žádné informace o konkrétní elementu, který je právě zpracováván. Změny aplikace samostatně platí pro konkrétní aplikaci prvku. Například aplikace použije transformace pro bitovou kopii nebo jej chcete zobrazit v jeho novém umístění nebo s novou velikost nebo orientaci překreslí.  
   
- Manipulace jsou navrženy pro dvourozměrná (2-D) [afinní transformace](http://msdn.microsoft.com/library/ms533810\(VS.85\).aspx). Zahrnout tyto transformace převede, otáčení a škálování.  
+ Manipulace jsou určeny pro dvojrozměrné (2-D) [afinní transformace](/windows/desktop/gdiplus/-gdiplus-transformations-use). Zahrnout tyto transformace přeložit, otočit a škálovat.  
   
 ### <a name="parts-of-a-manipulation"></a>Součásti manipulace  
- Manipulaci s je kolekce <xref:System.Windows.Input.Manipulations.Manipulator2D> objekty. Tento agregační manipulaci s představuje bod počátku a elipsy. Počáteční bod je průměrná pozice všech manipulátory, které jsou manipulace s elementu. Má se třemi tečkami radius, který je průměrná vzdálenost od počátku ke každému <xref:System.Windows.Input.Manipulations.Manipulator2D> objekty.  
+ Manipulaci s je kolekce <xref:System.Windows.Input.Manipulations.Manipulator2D> objekty. Tato agregace manipulace představuje počáteční bod a elipsu. Počáteční bod je průměrná pozice všech manipulátory, které jsou zpracování elementu. Protokolu radius, který je průměrná vzdálenost od počátku na každý má tři tečky <xref:System.Windows.Input.Manipulations.Manipulator2D> objekty.  
   
- ![Části manipulaci s. ] (../../../docs/framework/common-client-technologies/media/manipulation-definition.png "Manipulation_Definition")  
+ ![Části manipulaci s. ](../../../docs/framework/common-client-technologies/media/manipulation-definition.png "Manipulation_Definition")  
   
- Dva manipulátory (1 a 2), počátek a elipsy zadejte manipulaci s  
+ Dva manipulátory (1 a 2), původ a elipsa zadejte manipulaci s  
   
- Jako manipulátory se přidají, přesunout nebo odeberou pro element uživatelského rozhraní, aplikaci aktualizací <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D> objekt voláním <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.ProcessManipulators%2A> metoda. Po první zahájení manipulaci <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Started> událost se vyvolá.  
+ Manipulátory jsou přidávání, přesunout a odebírání pro prvek uživatelského rozhraní, aplikace aktualizuje <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D> objektu voláním <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.ProcessManipulators%2A> metody. Po prvním zahájení manipulace <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Started> událost se vyvolá.  
   
 > [!NOTE]
->  Manipulace s zpracování je efektivnější při použití v prostředí na základě rámce aktualizace. Při použití manipulace zpracování v aplikaci Microsoft XNA, to není důležité, protože rozhraní XNA framework poskytuje na základě rámce aktualizací pomocí [Game.Update](http://msdn.microsoft.com/library/microsoft.xna.framework.game.update.aspx) metoda. V jiné prostředí (například WinForms), může být nutné zadat vlastní logiky na základě rámce pro shromažďování manipulace a pošlete je pravidelně <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.ProcessManipulators%2A> metoda jako dávku.  
+>  Manipulace s zpracování je mnohem efektivnější, při použití v prostředí založených na snímcích aktualizace. Při použití manipulace s zpracování v aplikaci Microsoft XNA, to není žádný problém vzhledem k tomu, že poskytuje založených na snímcích aktualizací pomocí rozhraní XNA framework [Game.Update](https://msdn.microsoft.com/library/microsoft.xna.framework.game.update.aspx) metody. V jiném prostředí (například WinForms), musíte poskytnout vlastní logiku založených na snímcích pro shromažďování manipulace a pravidelně jim odesílání <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.ProcessManipulators%2A> metoda v dávce.  
   
- Jako počet manipulátory nebo změnit jejich pozici <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta> událost se vyvolá. Vlastnosti <xref:System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs> objekt, který je předán <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta> obslužné rutiny události zadejte změny v původu, měřítko, otáčení a překlad, ke kterým došlo od poslední události. Původ manipulaci se změní při manipulátory přesunout, a při přidávání nebo odebírání manipulátory. Překlad hodnoty určují, kolik X nebo Y přesun obsahuje manipulaci.  
+ Jako počet manipulátory nebo změnit jejich pozici <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta> událost se vyvolá. Vlastnosti <xref:System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs> objekt, který je předán <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta> obslužná rutina události zadejte změny původu, škálování, otočení a překladu, ke kterým došlo od poslední události. Původ manipulace změní, když manipulátory přesunout, a při přidání nebo odebrání manipulátory. Překlad hodnoty určují, kolik X nebo Y přesun obsahuje manipulaci.  
   
- Pomocí nových hodnot, aplikace ho překreslí element uživatelského rozhraní.  
+ Pomocí nové hodnoty, překreslí aplikaci prvku uživatelského rozhraní.  
   
- ![Manipulace s po kontaktu A přesunout vpravo. ] (../../../docs/framework/common-client-technologies/media/manipulation-changed.png "Manipulation_Changed")  
+ ![Manipulace s po kontaktu A přesunout na pravé straně. ](../../../docs/framework/common-client-technologies/media/manipulation-changed.png "Manipulation_Changed")  
   
- Manipulator 1 přesune a způsobí, že počátek změnit  
+ Manipulátor 1 přesune a způsobí, že původní změna  
   
- Po odebrání poslední manipulator, který je přidružen manipulaci z <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D> objekt, <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Completed> událost se vyvolá.  
+ Při poslední manipulátor, který je přidružený k manipulaci se odebere z <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D> objektu, <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Completed> událost se vyvolá.  
   
 ### <a name="the-manipulation-processing-model"></a>Manipulace s zpracování modelu  
- Manipulace s procesor používá model přímého využití. Pomocí tohoto jednoduchého modelu musí aplikace předat žádné podrobnosti vstupní události procesoru manipulaci. Vstupní událost může být aktivováno žádný vstup primitivní, jako je například zařízení myši, pera nebo prstem. Tento proces zajišťuje přímé filtrační mechanismus a jednoduché použití modelu, tak může aplikace batch vstupní události v případě potřeby.  
+ Manipulace s procesor používá model přímého využití. Pomocí tohoto jednoduchého modelu musí aplikace předat všechny podrobnosti o vstupní události zpracování procesoru. Vstupní události může být vyvolána zadáním primitivní, jako je například zařízení myši, stylus nebo prstem. Tento proces zajišťuje mechanismus filtrování s přímým přístupem a modelu využití jednoduché, tak můžete aplikace batch vstupní události v případě potřeby.  
   
- Pro aplikace, aby zahrnovala vstupní primitivní v procesu manipulaci, vytvoří <xref:System.Windows.Input.Manipulations.Manipulator2D> struktura z podrobností o vstupní primitivní a předává strukturu pro manipulaci s procesor používá <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.ProcessManipulators%2A> metoda. Manipulace s procesoru poté vyvolá události, které aplikace musí zpracovat aktualizace visual component vhodným způsobem.  
+ Pro aplikace, aby zahrnovala vstupní primitivní v manipulaci s procesem, vytvoří <xref:System.Windows.Input.Manipulations.Manipulator2D> struktury z podrobností vstupních primitivní vlastnost a předává struktury k manipulaci s pomocí procesoru <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.ProcessManipulators%2A> metoda. Manipulace s procesoru poté vyvolá události, které aplikace musí zpracovat aktualizovat komponentu visual vhodným způsobem.  
   
- ![Tok přímá manipulace&#45;modelu využití. ] (../../../docs/framework/common-client-technologies/media/manipulation-flow.png "Manipulation_Flow")  
+ ![Tok přímé manipulace&#45;modelu využití. ](../../../docs/framework/common-client-technologies/media/manipulation-flow.png "Manipulation_Flow")  
   
  Manipulace s zpracování modelu  
   
 ## <a name="inertia"></a>Nečinnosti  
- Nečinnosti procesoru umožňuje aplikacím odvodit umístění, orientaci a další vlastnosti prvku uživatelského rozhraní tak, že simuluje reálného chování.  
+ Nečinný procesor umožňuje aplikacím budete jen simulovat skutečné chování potom údaje extrapolovat umístění, orientace a další vlastnosti prvku uživatelského rozhraní.  
   
- Například když uživatel rychlých pohybů element, ho můžete pokračovat přesunutí, zpomalení a pomalu zastavit. Afinní 2-D hodnot (původu, škálování, překlad a otočení) Chcete-li změnit přes určitou dobu v zadané zpomalení nečinnosti procesoru implementuje toto chování.  
+ Například když uživatel rychlých pohybů elementu, může pokračovat v pohybu, zpomalení a pomalu zastavit. Nečinný procesor implementuje toto chování způsobením nastavená na affine 2D hodnoty (původu, škálování, překlad a otočení) Chcete-li změnit za určitou dobu v zadané zpomalení.  
   
- Jako s zpracování manipulaci nečinnosti procesoru nemá informace o všech určitý element uživatelského rozhraní. V reakci na události, které jsou vyvolány na <xref:System.Windows.Input.Manipulations.InertiaProcessor2D> objektu, aplikaci samostatně použije změny na element specifické pro aplikaci.  
+ Jako zpracování manipulaci s nečinný procesor nemá žádné informace o žádné konkrétní prvek uživatelského rozhraní. V reakci na události, které jsou vyvolány na <xref:System.Windows.Input.Manipulations.InertiaProcessor2D> objektu aplikace samostatně změny použije na konkrétní aplikaci prvku.  
   
- Zpracování manipulace a nečinnosti zpracování se často používají společně. Rozhraní jsou podobné a události, které vyvolají (v některých případech) identické. Obecně platí začne nečinnosti zpracování po dokončení zpracování elementu uživatelského rozhraní. To lze provést naslouchá <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Completed> událostí a spuštění nečinnosti zpracování z této obslužné rutiny události.  
+ Zpracování manipulace a nečinnost zpracování se často používá společně. Jsou podobné jejich rozhraní a (v některých případech) jsou události, které vyvolají identické. Obecně platí zpracování nečinnost začíná, když se dokončí zpracování prvek uživatelského rozhraní. To lze provést prostřednictvím naslouchání <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Completed> události a spouštění nečinnost zpracování z této obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Input.Manipulations>

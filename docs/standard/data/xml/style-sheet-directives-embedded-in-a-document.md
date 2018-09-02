@@ -6,11 +6,11 @@ ms.assetid: d79fb295-ebc7-438d-ba1b-05be7d534834
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 08bd33aab6cbeeeb9060f3de3565a05896c6ba7f
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43001344"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43391091"
 ---
 # <a name="style-sheet-directives-embedded-in-a-document"></a>Direktivy šablon stylů vložené v dokumentu
 

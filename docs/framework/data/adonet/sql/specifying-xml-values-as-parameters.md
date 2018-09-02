@@ -1,29 +1,29 @@
 ---
-title: Zadání hodnoty XML jako parametry
+title: Zadání hodnot XML jako parametry
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2c4d08b8-fc29-4614-97fa-29c8ff7ca5b3
-ms.openlocfilehash: c963b3e08eba7776a0ed579017f1e84828794379
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0003e6c5e9499c066f47202a6dd03fc86268d679
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33355295"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43399853"
 ---
-# <a name="specifying-xml-values-as-parameters"></a>Zadání hodnoty XML jako parametry
-Pokud dotaz vyžaduje parametr, jehož hodnota je řetězec v kódu XML, vývojáři mohou zadat tuto hodnotu pomocí instance **SqlXml** datového typu. Neexistují žádné triky; skutečně Sloupce XML v systému SQL Server přijmout hodnoty parametrů přesně stejným způsobem jako jiné datové typy.  
+# <a name="specifying-xml-values-as-parameters"></a>Zadání hodnot XML jako parametry
+Pokud dotaz vyžaduje parametr, jehož hodnota je řetězec XML, vývojáři můžete zadat tuto hodnotu pomocí instance **SqlXml** datového typu. Neexistují žádné triky; ve skutečnosti Sloupce XML v systému SQL Server přijmout hodnoty parametrů v přesně stejným způsobem jako jiné datové typy.  
   
 ## <a name="example"></a>Příklad  
- Následující konzolové aplikace vytvoří novou tabulku v **AdventureWorks** databáze. Nová tabulka obsahuje sloupec s názvem **SalesID** a sloupec XML s názvem **SalesInfo**.  
+ Vytvoří novou tabulku v následujících konzolovou aplikaci **AdventureWorks** databáze. Nová tabulka obsahuje sloupec s názvem **SalesID** a sloupec XML s názvem **SalesInfo**.  
   
 > [!NOTE]
->  **AdventureWorks** ukázkové databáze není nainstalována ve výchozím nastavení při instalaci systému SQL Server. Můžete ho nainstalovat tak, že spustíte instalační program SQL serveru.  
+>  **AdventureWorks** ukázkovou databázi není nainstalovaný ve výchozím nastavení při instalaci systému SQL Server. Můžete ho nainstalovat spuštěním instalační program systému SQL Server.  
   
- V příkladu připraví <xref:System.Data.SqlClient.SqlCommand> objekt vložit řádek do nové tabulky. Poskytuje XML data potřebná pro uloženého souboru **SalesInfo** sloupce.  
+ V příkladu připraví <xref:System.Data.SqlClient.SqlCommand> objekt vložit řádek do nové tabulky. Uložený soubor obsahuje data XML, třeba **SalesInfo** sloupce.  
   
- K vytvoření souboru potřebné pro spuštění ukázky, vytvořte nový textový soubor ve stejné složce jako projektu. Název souboru MyTestStoreData.xml. Otevřete soubor v programu Poznámkový blok a zkopírujte a vložte následující text:  
+ K vytvoření souboru potřebné pro spuštění ukázky vytvořte nový textový soubor ve stejné složce jako projekt. Název souboru MyTestStoreData.xml. Otevřete soubor v poznámkovém bloku a zkopírujte a vložte následující text:  
   
 ```xml  
 <StoreSurvey xmlns="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/StoreSurvey">  
@@ -162,4 +162,4 @@ class Class1
 ## <a name="see-also"></a>Viz také  
  <xref:System.Data.SqlTypes.SqlXml>  
  [Data XML na SQL Serveru](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

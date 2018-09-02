@@ -8,11 +8,11 @@ helpviewer_keywords:
 - division operator [C#]
 ms.assetid: d155e496-678f-4efa-bebe-2bd08da2c5af
 ms.openlocfilehash: bddf6d234f3536ad64f0cd876cc7ade4494916d9
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43255472"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43394850"
 ---
 # <a name="-operator-c-reference"></a>/ – operátor (Referenční dokumentace jazyka C#)
 Operátor dělení (`/`) rozděluje svůj první operand tak svým druhým operandem. Všechny číselné typy obsahuje předdefinované operátory dělení.

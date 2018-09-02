@@ -11,11 +11,11 @@ helpviewer_keywords:
 - -fullpaths compiler option [C#]
 ms.assetid: d2a5f857-cbb2-430b-879c-d648aaf0b8c4
 ms.openlocfilehash: 8f23bb683067c55f5b5213065c3082b843dd7dce
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43258387"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43388276"
 ---
 # <a name="-fullpaths-c-compiler-options"></a>-fullpaths (možnosti kompilátoru C#)
 **- Fullpaths** možnost způsobí, že kompilátor zadejte úplnou cestu k souboru při výpisu chyb a upozornění kompilace.  

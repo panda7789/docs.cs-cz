@@ -14,33 +14,33 @@ helpviewer_keywords:
 - DynamicRenderer objects [WPF]
 - StylusPlugIn objects [WPF]
 ms.assetid: c31f3a67-cb3f-4ded-af9e-ed21f6575b26
-ms.openlocfilehash: b3dc71182b7553a429bb17e1888a4108ceb3e286
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3113b953c1c547035883a4f4b51f53e4aefdf0a6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33541054"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43392419"
 ---
 # <a name="creating-an-ink-input-control"></a>Vytvoření ovládacího prvku vstupu inkoustu
-Můžete vytvořit vlastní ovládací prvek, dynamicky a staticky vykreslí rukopisu. To znamená vykreslit element ink jako uživatel nevykresluje tah, způsobuje rukopisu se objeví "toku" z pera a zobrazí rukopisu po jeho se přidá do ovládacího prvku, buď pomocí pera, vložené ze schránky, nebo načíst ze souboru. Chcete-li dynamicky vykreslit rukopisu, musíte použít vlastní ovládací prvek <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>. K vykreslení staticky rukopisu, je nutné přepsat metodu pera událostí (<xref:System.Windows.UIElement.OnStylusDown%2A>, <xref:System.Windows.UIElement.OnStylusMove%2A>, a <xref:System.Windows.UIElement.OnStylusUp%2A>) ke shromažďování <xref:System.Windows.Input.StylusPoint> data, vytvořte tahy a přidat je do <xref:System.Windows.Controls.InkPresenter> (která vykreslí element ink na ovládací prvek).  
+Můžete vytvořit vlastní ovládací prvek, který dynamicky a staticky vykreslí rukopis. To znamená vykreslení inkoustu jako uživatel nakreslí tah, způsobí rukopisu se zobrazí "tok" z pera a zobrazit inkoustu po jeho přidání do ovládacího prvku, buď prostřednictvím pera, vložili ze schránky nebo načtena ze souboru. Dynamicky vykreslit rukopisu, musíte použít ovládací prvek <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>. Staticky vykreslení inkoustu, je nutné přepsat stylus metody událostí (<xref:System.Windows.UIElement.OnStylusDown%2A>, <xref:System.Windows.UIElement.OnStylusMove%2A>, a <xref:System.Windows.UIElement.OnStylusUp%2A>) ke shromažďování <xref:System.Windows.Input.StylusPoint> data, vytvářet tahy a přidat je do <xref:System.Windows.Controls.InkPresenter> (která vykreslí rukopis na ovládací prvek).  
   
  Toto téma obsahuje následující témata:  
   
--   [Postupy: shromažďování dat bodu pera a vytvořit tahy](#CollectingStylusPointDataAndCreatingInkStrokes)  
+-   [Postupy: shromažďování dat bodu Stylus a vytvořit inkoustových tahů](#CollectingStylusPointDataAndCreatingInkStrokes)  
   
 -   [Postupy: povolení ovládacího prvku tak, aby přijímal vstup z myši](#EnablingYourControlToAcceptInputTromTheMouse)  
   
 -   [Jeho uvedení společně](#PuttingItTogether)  
   
--   [Pomocí další moduly plug-in a DynamicRenderers](#UsingAdditionalPluginsAndDynamicRenderers)  
+-   [Další moduly plug-in a DynamicRenderers](#UsingAdditionalPluginsAndDynamicRenderers)  
   
--   [Uzavření](#AdvancedInkHandling_Conclusion)  
+-   [Závěr](#AdvancedInkHandling_Conclusion)  
   
 <a name="CollectingStylusPointDataAndCreatingInkStrokes"></a>   
-## <a name="how-to-collect-stylus-point-data-and-create-ink-strokes"></a>Postupy: shromažďování dat bodu pera a vytvořit tahy  
- Vytvoření ovládacího prvku, který shromažďuje a spravuje rukopisu tahy takto:  
+## <a name="how-to-collect-stylus-point-data-and-create-ink-strokes"></a>Postupy: shromažďování dat bodu Stylus a vytvořit inkoustových tahů  
+ Chcete-li vytvořit ovládací prvek, který shromažďuje a spravuje inkoustu tahy takto:  
   
-1.  Odvození třídy z <xref:System.Windows.Controls.Control> nebo jeden z třídy odvozené od <xref:System.Windows.Controls.Control>, jako například <xref:System.Windows.Controls.Label>.  
+1.  Odvodit třídu z <xref:System.Windows.Controls.Control> nebo jedné ze tříd odvozených z <xref:System.Windows.Controls.Control>, jako například <xref:System.Windows.Controls.Label>.  
   
      [!code-csharp[AdvancedInkTopicsSamples#20](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#20)]  
     [!code-csharp[AdvancedInkTopicsSamples#14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControlSnippets.cs#14)]  
@@ -50,54 +50,54 @@ Můžete vytvořit vlastní ovládací prvek, dynamicky a staticky vykreslí ruk
   
      [!code-csharp[AdvancedInkTopicsSamples#16](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControlSnippets.cs#16)]  
   
-3.  Připojení <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual%2A> z <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> k <xref:System.Windows.Controls.InkPresenter> voláním <xref:System.Windows.Controls.InkPresenter.AttachVisuals%2A> metoda a přidejte <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> k <xref:System.Windows.UIElement.StylusPlugIns%2A> kolekce. To umožňuje <xref:System.Windows.Controls.InkPresenter> pro zobrazení rukopisu jako shromažďuje data bodu pera, vlastní ovládací prvek.  
+3.  Připojit <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual%2A> z <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> k <xref:System.Windows.Controls.InkPresenter> voláním <xref:System.Windows.Controls.InkPresenter.AttachVisuals%2A> metoda a přidejte <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> k <xref:System.Windows.UIElement.StylusPlugIns%2A> kolekce. Díky tomu <xref:System.Windows.Controls.InkPresenter> zobrazíte rukopisu, jak se shromažďují data bodu stylus váš ovládací prvek.  
   
      [!code-csharp[AdvancedInkTopicsSamples#17](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControlSnippets.cs#17)]  
     [!code-csharp[AdvancedInkTopicsSamples#18](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControlSnippets.cs#18)]  
   
-4.  Přepsání <xref:System.Windows.UIElement.OnStylusDown%2A> metoda.  Tato metoda zaznamenat pera pomocí volání <xref:System.Windows.Input.Stylus.Capture%2A>. Zachytáváním pera, vlastní ovládací prvek bude nadále přijímat <xref:System.Windows.UIElement.StylusMove> a <xref:System.Windows.UIElement.StylusUp> události, i když pera opustí hranice ovládacího prvku. Nejedná striktně povinné, ale prakticky vždy požadované pro vhodné uživatelské prostředí. Vytvořte novou <xref:System.Windows.Input.StylusPointCollection> získat <xref:System.Windows.Input.StylusPoint> data. Nakonec přidejte prvotní sady <xref:System.Windows.Input.StylusPoint> data <xref:System.Windows.Input.StylusPointCollection>.  
+4.  Přepsat <xref:System.Windows.UIElement.OnStylusDown%2A> metody.  V této metodě zachycení stylusu voláním <xref:System.Windows.Input.Stylus.Capture%2A>. Zachytáváním stylus váš ovládací prvek bude nadále přijímat <xref:System.Windows.UIElement.StylusMove> a <xref:System.Windows.UIElement.StylusUp> události, i když se stylus opustí hranice ovládacího prvku. To není nezbytně povinné, ale téměř vždy požadované pro bezproblémový. Vytvořte nový <xref:System.Windows.Input.StylusPointCollection> shromažďovat <xref:System.Windows.Input.StylusPoint> data. Nakonec přidejte počáteční sadu <xref:System.Windows.Input.StylusPoint> data <xref:System.Windows.Input.StylusPointCollection>.  
   
      [!code-csharp[AdvancedInkTopicsSamples#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#7)]  
   
-5.  Přepsání <xref:System.Windows.UIElement.OnStylusMove%2A> metoda a přidejte <xref:System.Windows.Input.StylusPoint> data <xref:System.Windows.Input.StylusPointCollection> objekt, který jste vytvořili dříve.  
+5.  Přepsat <xref:System.Windows.UIElement.OnStylusMove%2A> metoda a přidejte <xref:System.Windows.Input.StylusPoint> data <xref:System.Windows.Input.StylusPointCollection> objekt, který jste vytvořili dříve.  
   
      [!code-csharp[AdvancedInkTopicsSamples#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#8)]  
   
-6.  Přepsání <xref:System.Windows.UIElement.OnStylusUp%2A> metoda a vytvořte novou <xref:System.Windows.Ink.Stroke> s <xref:System.Windows.Input.StylusPointCollection> data. Přidejte nové <xref:System.Windows.Ink.Stroke> jste vytvořili na <xref:System.Windows.Controls.InkPresenter.Strokes%2A> kolekce <xref:System.Windows.Controls.InkPresenter> a verzí pera zachycení.  
+6.  Přepsat <xref:System.Windows.UIElement.OnStylusUp%2A> metoda a vytvořte nový <xref:System.Windows.Ink.Stroke> s <xref:System.Windows.Input.StylusPointCollection> data. Přidejte nové <xref:System.Windows.Ink.Stroke> jste vytvořili za účelem <xref:System.Windows.Controls.InkPresenter.Strokes%2A> kolekce <xref:System.Windows.Controls.InkPresenter> a vydání nazachytí stylus.  
   
      [!code-csharp[AdvancedInkTopicsSamples#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#10)]  
   
 <a name="EnablingYourControlToAcceptInputTromTheMouse"></a>   
 ## <a name="how-to-enable-your-control-to-accept-input-from-the-mouse"></a>Postupy: povolení ovládacího prvku tak, aby přijímal vstup z myši  
- Pokud přidáte předchozí ovládacího prvku do vaší aplikace, spouštět a používat jako vstupní zařízení, si všimnete, že nejsou tahy trvalé. Chcete-li zachovat tahy při Myš slouží jako vstupní zařízení takto:  
+ Pokud přidáte předchozí ovládací prvek do vaší aplikace, spusťte ji a pomocí myši jako vstupní zařízení, si všimnete, že nejsou trvalé strokes. Zachování tahy, když ukazatel myši se používá jako vstupní zařízení, postupujte takto:  
   
-1.  Přepsat <xref:System.Windows.UIElement.OnMouseLeftButtonDown%2A> a vytvořte novou <xref:System.Windows.Input.StylusPointCollection> získat polohu myši při výskytu události a vytvořit <xref:System.Windows.Input.StylusPoint> pomocí data bodu a přidat <xref:System.Windows.Input.StylusPoint> k <xref:System.Windows.Input.StylusPointCollection>.  
+1.  Přepsat <xref:System.Windows.UIElement.OnMouseLeftButtonDown%2A> a vytvořte nový <xref:System.Windows.Input.StylusPointCollection> získat polohu myši při výskytu události a vytvořit <xref:System.Windows.Input.StylusPoint> datový bod a přidat <xref:System.Windows.Input.StylusPoint> k <xref:System.Windows.Input.StylusPointCollection>.  
   
      [!code-csharp[AdvancedInkTopicsSamples#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#11)]  
   
-2.  Přepsání <xref:System.Windows.UIElement.OnMouseMove%2A> metoda. Získá pozici myši při výskytu události a vytvořit <xref:System.Windows.Input.StylusPoint> pomocí datového bodu.  Přidat <xref:System.Windows.Input.StylusPoint> k <xref:System.Windows.Input.StylusPointCollection> objekt, který jste vytvořili dříve.  
+2.  Přepsat <xref:System.Windows.UIElement.OnMouseMove%2A> metody. Získá pozice myši při výskytu události a vytvořit <xref:System.Windows.Input.StylusPoint> pomocí datového bodu.  Přidat <xref:System.Windows.Input.StylusPoint> k <xref:System.Windows.Input.StylusPointCollection> objekt, který jste vytvořili dříve.  
   
      [!code-csharp[AdvancedInkTopicsSamples#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#12)]  
   
-3.  Přepsání <xref:System.Windows.UIElement.OnMouseLeftButtonUp%2A> metoda.  Vytvořte novou <xref:System.Windows.Ink.Stroke> s <xref:System.Windows.Input.StylusPointCollection> dat a přidejte nové <xref:System.Windows.Ink.Stroke> jste vytvořili na <xref:System.Windows.Controls.InkPresenter.Strokes%2A> kolekce <xref:System.Windows.Controls.InkPresenter>.  
+3.  Přepsat <xref:System.Windows.UIElement.OnMouseLeftButtonUp%2A> metody.  Vytvořte nový <xref:System.Windows.Ink.Stroke> s <xref:System.Windows.Input.StylusPointCollection> dat a přidejte nové <xref:System.Windows.Ink.Stroke> jste vytvořili pro <xref:System.Windows.Controls.InkPresenter.Strokes%2A> kolekce <xref:System.Windows.Controls.InkPresenter>.  
   
      [!code-csharp[AdvancedInkTopicsSamples#13](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#13)]  
   
 <a name="PuttingItTogether"></a>   
 ## <a name="putting-it-together"></a>Jeho uvedení společně  
- V následujícím příkladu je vlastní ovládací prvek, který shromažďuje rukopisu, když uživatel používá myši nebo pera.  
+ Následující příklad je vlastní ovládací prvek, který shromažďuje rukopisu, když uživatel použije myši nebo pera.  
   
  [!code-csharp[AdvancedInkTopicsSamples#20](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#20)]  
 [!code-csharp[AdvancedInkTopicsSamples#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#6)]  
   
 <a name="UsingAdditionalPluginsAndDynamicRenderers"></a>   
-## <a name="using-additional-plug-ins-and-dynamicrenderers"></a>Pomocí další moduly plug-in a DynamicRenderers  
- Jako InkCanvas, může mít vlastní ovládací prvek vlastní <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> a další <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> objekty. Přidat do <xref:System.Windows.UIElement.StylusPlugIns%2A> kolekce. Pořadí <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> objekty v <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> ovlivňuje vzhled čáry, je vykreslen. Předpokládejme, že máte <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> názvem `dynamicRenderer` a vlastní <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> názvem `translatePlugin` , posun očistí od pera. Pokud `translatePlugin` je první <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> v <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>, a `dynamicRenderer` je druhá, jako uživatel přesune pera budou posunuty rukopisu, který "tok". Pokud `dynamicRenderer` je první, a `translatePlugin` je druhý, rukopisu nebude posun, dokud uživatel zruší pera.  
+## <a name="using-additional-plug-ins-and-dynamicrenderers"></a>Další moduly plug-in a DynamicRenderers  
+ Stejně jako InkCanvas, vlastní ovládací prvek může mít vlastní <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> a další <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> objekty. Přidat do <xref:System.Windows.UIElement.StylusPlugIns%2A> kolekce. Pořadí <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> objekty v <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> má vliv na vzhled čáry při vykreslení. Předpokládejme, že máte <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> volá `dynamicRenderer` a vlastní <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> volá `translatePlugin` , který posouvá ink z pera. Pokud `translatePlugin` je první <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> v <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>, a `dynamicRenderer` tím dokončím inkoustu přenášené "" budou posunuty, jak uživatel pohybuje pera. Pokud `dynamicRenderer` je první, a `translatePlugin` je navíc rukopis nebude posun, dokud uživatel zruší pera.  
   
 <a name="AdvancedInkHandling_Conclusion"></a>   
 ## <a name="conclusion"></a>Závěr  
- Můžete vytvořit ovládací prvek, který shromažďuje a vykreslí element ink přepsáním metody pera události. Vytvořením vlastního ovládacího prvku odvozování vlastní <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> třídy a jejich vložení na do <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>, můžete implementovat prakticky libovolný chování vůbec digitální barvou. Máte přístup k <xref:System.Windows.Input.StylusPoint> data, jako je generován, budete moci přizpůsobit <xref:System.Windows.Input.Stylus> vstup a vykreslit ho na obrazovce podle potřeby pro vaši aplikaci. Vzhledem k tomu, že máte takový nízké úrovně přístup k <xref:System.Windows.Input.StylusPoint> data, můžete implementovat rozpoznávání rukopisu a vykreslit ho s optimální výkon pro vaši aplikaci.  
+ Můžete vytvořit ovládací prvek, který shromažďuje a vykreslí rukopis přepsáním metody událostí stylus. Tím, že vytvoříte vlastní ovládací prvek odvozený vlastní <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> třídy a jejich vložení do <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>, můžete implementovat prakticky jakoukoli vůbec pomocí digitálních inkoust chování. Máte přístup k <xref:System.Windows.Input.StylusPoint> dat, jako je generováno, získáte tak možnost přizpůsobit <xref:System.Windows.Input.Stylus> vstup a vykreslit ho na obrazovce v závislosti na vaší aplikace. Protože máte takový přístup nízké úrovně ke <xref:System.Windows.Input.StylusPoint> data, můžete implementovat kolekce inkoustů a vykreslit poskytovaly optimální výkon pro vaši aplikaci.  
   
 ## <a name="see-also"></a>Viz také  
  [Pokročilé zpracování rukopisu](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)  
- [Přístup k informacím a manipulace s vstup pomocí pera](http://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)
+ [Přístup k a manipulaci s vstup pomocí pera](https://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)

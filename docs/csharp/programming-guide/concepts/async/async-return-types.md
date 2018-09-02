@@ -2,12 +2,12 @@
 title: Asynchronní návratové typy (C#)
 ms.date: 05/29/2017
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-ms.openlocfilehash: 5ea3ef538bd0e3d74bbdcbd41519ae5041556b7e
-ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
+ms.openlocfilehash: 9b0ee1c2e9925a1caffca6b7fb83eff34003246b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42753922"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43387576"
 ---
 # <a name="async-return-types-c"></a>Asynchronní návratové typy (C#)
 Asynchronní metody může mít tyto návratové typy:
@@ -55,14 +55,15 @@ Následující kód oddělí volání `WaitAndApologize` metoda z čekajícího 
  
 [!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns2a.cs#1)]  
  
-##  <a name="BKMK_VoidReturnType"></a> Návratový typ void  
+##  <a name="BKMK_VoidReturnType"></a> Návratový typ void
+
 Můžete použít `void` návratový typ v asynchronní obslužné rutiny, které vyžadují `void` návratového typu. U jiných metod než obslužné rutiny událostí, které nevracejí hodnotu, měli byste vrátit <xref:System.Threading.Tasks.Task> místo, protože asynchronní metoda, která vrací `void` nemůže být očekávána. Jakýkoli volající této metody musí být schopen pokračovat v dokončení bez čekání na dokončení volané asynchronní metody a volající musí být nezávislé na všech hodnotách nebo výjimkách, které generuje asynchronní metoda.  
   
 Volající asynchronní metody vracející typ void nemůže zachytit výjimky, které jsou vyvolány z metody a takové neošetřené výjimky mohou způsobit selhání aplikace. Pokud dojde k výjimce v asynchronní metodě, která vrací <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>, výjimky jsou uložena v rámci vrácené úlohy a je znovu vyvolána při očekávání úkolu. Proto se ujistěte, že asynchronní metody, které mohou způsobit výjimku má návratový typ <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> a že volání metody jsou očekávaná.  
   
 Další informace o tom, jak zachytávat výjimky v asynchronních metodách, naleznete v tématu [výjimky v asynchronních metodách](../../../language-reference/keywords/try-catch.md#exceptions-in-async-methods) část [bloku try-catch](../../../language-reference/keywords/try-catch.md) tématu.  
   
-Následující Příkladem může být definuje asynchronní obslužnou rutinu události.  
+Následující příklad ukazuje chování asynchronní obslužnou rutinu události. Všimněte si, že v příkladu kódu nutné nechat asynchronní obslužnou rutinu události vědět po dokončení hlavního vlákna. Hlavní vlákno může pak čekat asynchronní obslužnou rutinu události pro dokončení před ukončením programu.
  
 [!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns3.cs)]  
  

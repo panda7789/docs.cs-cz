@@ -5,11 +5,11 @@ author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: 21e191f17e7d0b4f2d64454fb14c46a4831a8375
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42999885"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43388059"
 ---
 # <a name="architecture-approaches"></a>Přístupy k architektuře
 

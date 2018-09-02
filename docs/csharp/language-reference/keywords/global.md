@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - global keyword [C#]
 ms.assetid: 8932c16a-6959-42c2-86e7-2c4221ab788b
-ms.openlocfilehash: 79e0184f58ffc6232038abdd3d9f852147d5732c
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 837245e31a9a795aa2f13cfc6c33fefb6402801d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404285"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43401071"
 ---
 # <a name="global-c-reference"></a>global (Referenční dokumentace jazyka C#)
 
@@ -26,4 +26,4 @@ Následující příklad ukazuje způsob použití `global` kontextové klíčov
 
 ## <a name="see-also"></a>Viz také:
 
-[Obory názvů](../../programming-guide/namespaces/index.md)
+- [Obory názvů](../../programming-guide/namespaces/index.md)

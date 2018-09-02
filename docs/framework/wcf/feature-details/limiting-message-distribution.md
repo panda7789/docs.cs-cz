@@ -2,67 +2,67 @@
 title: Omezení distribuce zpráv
 ms.date: 03/30/2017
 ms.assetid: 8b5ec4b8-1ce9-45ef-bb90-2c840456bcc1
-ms.openlocfilehash: 006cfaffe02752bb91e9f7d780477aecbaeb9c9e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bec5a28abeff23929d2c0f1c363f4e08872a63fa
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33495812"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43397924"
 ---
 # <a name="limiting-message-distribution"></a>Omezení distribuce zpráv
-Rovnocenného kanálu je záměrné všesměrového vysílání mřížku. Svůj základní flooding model spočívá v distribuci každá zpráva odeslaná do všech členů tohoto oka kteréhokoli člena mřížku. To se hodí v situacích, kde každé zprávy vygenerované metodou členem je relevantní a užitečné pro všechny ostatní členy (například konverzační skupina). Ale mnoho aplikací mít občasné potřebu omezení distribuce zpráv. Například pokud nového člena spojí mřížku a chce načíst poslední zprávou odeslanou přes síť, tento požadavek není nutné k zaplnění na každého člena OK. Žádost může být omezen na téměř okolí, nebo může být odfiltrována místně vygenerovanou zprávy. Zprávy mohou rovněž odeslány do jednotlivých uzlu na OK. Toto téma popisuje použití počet směrování, šíření filtru zpráv, filtrem místní nebo přímé připojení k řízení, jak se předávají zprávy v průběhu OK a obsahuje obecné pokyny pro výběr přístup.  
+Rovnocenný kanál chování je záměrné všesměrového vysílání sítě. Svůj základní flooding model zahrnuje distribuce odeslaná službou členem sítě u všech členů této sítě. To je ideální v situacích, kde každé zprávy vygenerované metodou člen je důležité a užitečné pro všechny ostatní členy (například chatovací místnosti). Mnoho aplikací však mít občasné potřebu omezení distribuce zpráv. Například pokud se nový člen připojí sítě a chce, aby se k načtení poslední zprávou odeslanou přes síť, tento požadavek nemusí být zahlcenou pro každého člena síť. Požadavek může být omezena na téměř okolí nebo můžete místně vygenerovanou zprávy odfiltrovány. Zprávy mohou rovněž odeslány do jednotlivých uzlů na síť. Toto téma popisuje použití počet směrování, filtr šíření zpráv, filtr místní nebo přímé připojení k řízení, jak se předávají zprávy v průběhu síť a obsahuje obecné pokyny pro výběr přístupu.  
   
-## <a name="hop-counts"></a>Počet směrování  
- Koncept `PeerHopCount` je podobná TTL (Time-To-Live) používá v protokolu IP. Hodnota `PeerHopCount` je vázaný na instanci zprávy a určuje, kolikrát by měly být předávány zprávu před probíhá vyřazování. Pokaždé, když je přijata zpráva rovnocenného kanálu klientem, klient hledá se zobrazí, pokud `PeerHopCount` je zadán. Pokud je zadán, pak snižuje klienta ke směrování počet hodnotu jednou před předáním zprávy do sousedních uzlů. Když klient obdrží zprávu s nulovou hodnotou počet směrování, klient zprávu zpracuje, ale není předávat zprávy okolí.  
+## <a name="hop-counts"></a>Počet segmentů směrování  
+ Koncept `PeerHopCount` je podobný TTL (Time-To-Live) používá v protokolu IP. Hodnota `PeerHopCount` se váže na instanci zprávy a určuje, kolikrát se mají předávat zprávy před probíhá vyřazování. Pokaždé, když je přijata zpráva rovnocenným kanálem klientem, klient zkontroluje zprávy a zjistěte, jestli `PeerHopCount` je zadán. Pokud je zadán, pak dekrementuje klienta ke směrování hodnota počtu jednou před předávání zpráv do sousedních uzlů. Když klient obdrží zprávu s nulovou hodnotu počet segmentů směrování, klient se zpracovává zprávy, ale okolí nepředává zprávy.  
   
- Počet směrování mohou být přidány do zprávy můžete přidat `PeerHopCount` jako atribut použít vlastnost nebo pole v implementaci třídy zprávy. To můžete nastavit na konkrétní hodnotu před odesláním zprávy na mřížku. Tímto způsobem můžete počet směrování k omezení distribuce zpráv v rámci mřížky, pokud je to nezbytné, potenciálně zabraňující duplikace nepotřebné zprávy. To je užitečné v případech, kde OK obsahuje vysoké množství redundantních dat, nebo odesílání zprávy pro okamžité Sousedé BGP nebo Sousedé BGP v rámci několik segmentů směrování.  
+ Počet segmentů směrování může přidat do zprávy tak, že přidáte `PeerHopCount` jako atribut, který má použít vlastnost nebo pole v implementaci třídy zpráv. To můžete nastavit na určitou hodnotu před odesláním zprávy na síť. Tímto způsobem můžete použít segmenty směrování pro omezení distribuce zpráv v rámci sítě, pokud je to nezbytné, potenciálně vyhnout duplikaci nepotřebné zprávy. To je užitečné v případech, kde síť obsahuje vysoké množství redundantních dat nebo pro posílání zprávy k okamžité okolí, protokolu BGP nebo Sousedé v rámci několik segmentů směrování.  
   
--   Fragmenty kódu a související informace najdete v tématu [rovnocenného kanálu blog](http://go.microsoft.com/fwlink/?LinkID=114531) (http://go.microsoft.com/fwlink/?LinkID=114531).  
+-   Fragmenty kódu a související informace najdete v tématu [rovnocenného kanálu blogu](https://go.microsoft.com/fwlink/?LinkID=114531).  
   
-## <a name="message-propagation-filter"></a>Šíření filtr zpráv  
- `MessagePropagationFilter` můžete použít pro vlastní řízení zahlcení zprávy, zejména v případě, že obsah zprávy nebo jiných konkrétních scénářů určit šíření. Filtr rozhoduje šíření pro každou zprávu, které procházejí uzlu. To platí pro zprávy, které pochází jinde v mřížce, vaše uzlu přijal i zprávy vytvořené v aplikaci. Filtr má přístup ke zprávě a jeho vzniku, takže rozhodnutí o předávání nebo vyřazuje zprávy může být založen na úplné informace, které jsou k dispozici.  
+## <a name="message-propagation-filter"></a>Filtr šíření zpráv  
+ `MessagePropagationFilter` můžete použít pro vlastní ovládací prvek zaplavení zprávy, zejména v případě, že obsah zprávy nebo jiných konkrétních scénářů určit šíření. Lze díky filtru šíření rozhodnutí, která pro každou zprávu, která prochází uzlu. To platí pro zprávy, které pochází jinde v mřížce, že váš uzel byl přijat a zprávy vytvořené v aplikaci. Filtr má přístup k zprávu a jeho vzniku tak rozhodnutí o předávání nebo vyřazuje zprávy může být založen na úplné informace, které jsou k dispozici.  
   
- <xref:System.ServiceModel.PeerMessagePropagationFilter> je abstraktní základní třídu s jedinou funkci <xref:System.ServiceModel.PeerMessagePropagationFilter.ShouldMessagePropagate%2A>. První argument volání metody předá úplnou kopii zprávy. Všechny změny na zprávu neovlivní skutečné zprávy. Poslední argument volání metody, které identifikuje počátek zprávy (`PeerMessageOrigination.Local` nebo `PeerMessageOrigination.Remote`). Konkrétní implementace této metody musí vracet konstanta z <xref:System.ServiceModel.PeerMessagePropagation> výčtu označující, že zprávy je k přeposlání do místních aplikací (`Local`), přesměrovaná ke vzdáleným klientům (`Remote`), obě (`LocalAndRemote`), nebo žádný z nich (`None`). Tento filtr lze použít přímým přístupem k odpovídající položce `PeerNode` objekt a zadání instanci odvozené šíření filtrovat třídy v `PeerNode.MessagePropagationFilter` vlastnost. Zkontrolujte, zda filtr šíření připojen před otevřením rovnocenného kanálu.  
+ <xref:System.ServiceModel.PeerMessagePropagationFilter> je abstraktní základní třída s jedinou funkci <xref:System.ServiceModel.PeerMessagePropagationFilter.ShouldMessagePropagate%2A>. Prvním argumentem funkce volání metody předá úplnou kopii zprávy. Všechny změny provedené zprávy nemají vliv na skutečné zprávy. Poslední argument volání metody, které identifikuje původní zprávu (`PeerMessageOrigination.Local` nebo `PeerMessageOrigination.Remote`). Konkrétní implementace této metody musí vracet konstantu z <xref:System.ServiceModel.PeerMessagePropagation> výčet označující, že je zpráva předávány na místní aplikaci (`Local`), předané ke vzdáleným klientům (`Remote`), obě (`LocalAndRemote`), nebo ani jedna (`None`). Tento filtr lze použít díky přístupu do odpovídajícího `PeerNode` objektů a určení instance odvozené šíření třída v filter `PeerNode.MessagePropagationFilter` vlastnost. Zkontrolujte, zda je před otevřením protokolu Peer Channel připojen šíření filtru.  
   
--   Fragmenty kódu a související informace najdete v tématu [rovnocenného kanálu blog](http://go.microsoft.com/fwlink/?LinkID=114532) (http://go.microsoft.com/fwlink/?LinkID=114532).  
+-   Fragmenty kódu a související informace najdete v tématu [rovnocenného kanálu blogu](https://go.microsoft.com/fwlink/?LinkID=114532).  
   
-## <a name="contacting-an-individual-node-in-the-mesh"></a>Kontaktování jednotlivého uzlu v mřížce  
- Nelze kontaktovat jednotlivého uzlu v mřížku nastavení místní filtr, nebo nastavením přímé připojení.  
+## <a name="contacting-an-individual-node-in-the-mesh"></a>Kontaktování jednotlivých uzlů v síť  
+ Jednotlivých uzlů v sítě lze kontaktovat, nastavením místní filtr nebo nastavením přímé připojení.  
   
- Pokud uzly v mřížku každé jednotlivé ID, lze zadat ID cílové implementace zprávu. Místní filtru můžete nastavit tak, že napíšete funkci v vaší kontrakt zprávy, která bude obsahovat pouze zprávy do aktuálního uzlu Pokud je zadané ID cílové odpovídá jeho ID. OK určena k přenosu zpráv, tak nebude muset vám být účtovány režii nastavením nového připojení. Je však ke ztrátě efektivitu vzhledem k tomu, že je zpráva odeslána mnohokrát v rámci OK. To funguje dobře pro odesílání zpráv na jednotlivé členy mřížky, pokud jsou zprávy příliš často ani příliš velký.  
+ Pokud uzly v síti každý jednotlivých ID, a cílové ID můžete zadanou v implementaci zprávy. Místní filtr můžete nastavit pomocí funkce váš kontraktu zprávy, které budou zobrazovat jenom zprávy pro aktuální uzel pokud jeho ID odpovídá vámi zadané ID cílové. Síť přenáší zprávy, tak nároky na nastavení nového připojení nemusí být účtovány poplatky. Však dojde ke ztrátě účinnosti vzhledem k tomu, že je zpráva odeslána v mnoha případech v rámci síť. Tento postup funguje dobře pro odesílání zpráv do jednotlivých členů sítě, za předpokladu, zprávy jsou příliš velké objemy ani moc často.  
   
- Pro trvalý, širokopásmové připojení jsou vhodnější než přímé připojení. Můžete odeslat informace o připojení přes síť a poté nastavit přímé připojení dle vlastního výběru k odesílání a příjem zpráv.  
+ U dlouhodobých a velkou šířkou pásma připojení je vhodnější přímé připojení. Můžete odeslat informace o připojení přes síť a pak nastavit přímé připojení podle vašeho výběru pro odesílání a příjem zpráv.  
   
-## <a name="choosing-an-approach-for-limiting-message-distribution"></a>Výběr přístup pro omezení distribuce zpráv  
- Po zjištění scénář, ve kterém je potřeba k omezení distribuce zpráv, položte si následující otázky:  
+## <a name="choosing-an-approach-for-limiting-message-distribution"></a>Výběr přístupu pro omezení distribuce zpráv  
+ Po zjištění scénář, ve které budete potřebovat k omezení distribuce zpráv, položte si následující otázky:  
   
--   **Kdo** musí zpráva? Jedním sousedním uzlu? Uzel někde jinde v mřížce? Poloviční OK?  
+-   **Kdo** potřebuje zpráva? Sousední pouze jeden uzel? Uzel někde jinde v síť? Poloviční síť?  
   
--   **Jak často** tuto zprávu zašle?  
+-   **Jak často** tato zpráva přijde?  
   
 -   Jaký typ z **šířky pásma** použije tuto zprávu?  
   
- Odpovědi na tyto otázky vám může pomoct určit, jestli se má používat počet směrování, šíření filtru zpráv, filtrem místní nebo přímé připojení k. Vezměte v úvahu následující obecné pokyny:  
+ Odpovědi na tyto otázky vám umožňují určit, jestli se má použít počet směrování, filtr šíření zpráv, filtr místní nebo přímé připojení. Vezměte v úvahu následující obecné pokyny:  
   
 -   **Kdo**  
   
-    -   *Jednotlivé uzlu*: filtru místní nebo přímé připojení.  
+    -   *Jednotlivých uzlů*: Filtr místní nebo přímé připojení.  
   
-    -   *Okolí v rámci určitých okolí*: PeerHopCount.  
+    -   *Sousední v rámci určité okolí*: PeerHopCount.  
   
-    -   *Komplexní podmnožinu OK*: Třída MessagePropagationFilter.  
+    -   *Komplexní podmnožinou síť*: Třída MessagePropagationFilter.  
   
 -   **Jak často**  
   
     -   *Velmi často*: přímé připojení, PeerHopCount, Třída MessagePropagationFilter.  
   
-    -   *Příležitostně*: místní filtru.  
+    -   *Příležitostné*: místní filtr.  
   
 -   **Využití šířky pásma**  
   
-    -   *Vysoká*: přímé připojení, méně vhodné používat Třída MessagePropagationFilter nebo místní filtru.  
+    -   *Vysoká*: přímé připojení, méně vhodné použít Třída MessagePropagationFilter nebo místní filtr.  
   
-    -   *Nízká*: žádné, přímé připojení nejspíš potřeba.  
+    -   *Nízká*: žádné, přímé připojení pravděpodobně není potřeba.  
   
 ## <a name="see-also"></a>Viz také  
  [Vytvoření aplikace protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

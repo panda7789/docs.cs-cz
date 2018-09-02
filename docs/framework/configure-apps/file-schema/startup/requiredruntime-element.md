@@ -1,5 +1,5 @@
 ---
-title: '&lt;requiredRuntime –&gt; – Element'
+title: '&lt;requiredRuntime&gt; – Element'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#requiredRuntime
@@ -12,18 +12,18 @@ ms.assetid: 9fa1639e-beb8-43be-b7a4-12f7b229c34b
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 184547dd47e728f17f28105e74b2ca67c1436efc
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: ac1e1f7bc36d8d2b12b99de2794bb0ba31ddbd7a
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32749979"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43398729"
 ---
-# <a name="ltrequiredruntimegt-element"></a>&lt;requiredRuntime –&gt; – Element
-Určuje, jestli aplikace podporuje pouze verzi 1.0 modul common language runtime. Tento element je zastaralá a již by nelze použít. [ `supportedRuntime` ](supportedruntime-element.md) Element by měl být místo toho použít.
+# <a name="ltrequiredruntimegt-element"></a>&lt;requiredRuntime&gt; – Element
+Určuje, že aplikace podporuje pouze verze 1.0 modulu common language runtime. Tento element je zastaralá a již by nelze použít. [ `supportedRuntime` ](supportedruntime-element.md) Element by měl místo toho použít.
   
  \<Konfigurace >  
-\<spuštění >  
+\<Po spuštění >  
 \<requiredRuntime >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,15 +41,15 @@ safemode="true|false"/>
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`version`|Nepovinný atribut.<br /><br /> Hodnotu řetězce, který určuje verzi rozhraní .NET Framework, který podporuje tuto aplikaci. Řetězcová hodnota musí odpovídat názvu adresáře najít v kořenovém adresáři instalace rozhraní .NET Framework. Nejsou analyzovat obsah hodnotu řetězce.|  
-|`safemode`|Nepovinný atribut.<br /><br /> Určuje, zda kód pro spuštění modulu runtime hledat zjistěte verzi modulu runtime v registru.|  
+|`version`|Nepovinný atribut.<br /><br /> Řetězcovou hodnotu, která určuje verzi rozhraní .NET Framework, která podporuje tuto aplikaci. Řetězcová hodnota musí odpovídat názvu adresáře v kořenu instalace rozhraní .NET Framework. Nejsou analyzovat obsah řetězcovou hodnotu.|  
+|`safemode`|Nepovinný atribut.<br /><br /> Určuje, zda modul runtime spouštěcí kód vyhledá z registru zjistit verzi modulu runtime.|  
   
-## <a name="safemode-attribute"></a>safemode atribut  
+## <a name="safemode-attribute"></a>safemode – atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`false`|Kód spuštění modulu runtime hledá v registru. Jedná se o výchozí hodnotu.|  
-|`true`|Kód spuštění modulu runtime nezjišťuje v registru.|  
+|`false`|Spouštěcí kód modulu runtime hledá v registru. Jedná se o výchozí hodnotu.|  
+|`true`|Spouštěcí kód modulu runtime nezjišťuje v registru.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -62,15 +62,15 @@ safemode="true|false"/>
 |`startup`|Obsahuje `<requiredRuntime>` elementu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Musíte použít aplikace založené na podporu pouze verze 1.0 modulu runtime `<requiredRuntime>` elementu. Musíte použít aplikace vytvořené pomocí verze 1.1 nebo novější modulu runtime `<supportedRuntime>` elementu.  
+ Aplikace sestavené s podporou pouze verze 1.0 modulu runtime musí použít `<requiredRuntime>` elementu. Aplikace vytvořené pomocí verze 1.1 nebo novější modul runtime musí použít `<supportedRuntime>` elementu.  
   
 > [!NOTE]
->  Pokud použijete [corbindtoruntimebycfg –](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md) funkce zadat konfigurační soubor, je nutné použít `<requiredRuntime>` element pro všechny verze modulu runtime. `<supportedRuntime>` Element se ignoruje, pokud používáte [corbindtoruntimebycfg –](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md).  
+>  Pokud používáte [CorBindToRuntimeByCfg](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md) funkce zadejte konfigurační soubor, je nutné použít `<requiredRuntime>` – element pro všechny verze modulu runtime. `<supportedRuntime>` Prvek je ignorován při použití [CorBindToRuntimeByCfg](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md).  
   
- `version` Řetězec atributu musí odpovídat názvu instalační složku pro určenou verzi rozhraní .NET Framework. Tento řetězec nebyl interpretován. Pokud kód pro spuštění modulu runtime nenajde odpovídající složku, není načítání modulu runtime; kód spuštění zobrazí chybovou zprávu a ukončí.  
+ `version` Atribut řetězců musí odpovídat názvu instalační složku pro zadaná verze rozhraní .NET Framework. Tento řetězec nebyl interpretován. Pokud kód při spuštění modulu runtime nelze najít odpovídající složky, modul runtime není načten. spouštěcí kód zobrazí chybovou zprávu a ukončí.  
   
 > [!NOTE]
->  Kód spuštění pro aplikaci, která je hostitelem aplikace Microsoft Internet Explorer ignoruje `<requiredRuntime>` elementu.  
+>  Ignoruje spouštěcí kód aplikace, která je hostována v aplikaci Internet Explorer `<requiredRuntime>` elementu.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak určit verzi modulu runtime v konfiguračním souboru.  
@@ -86,4 +86,4 @@ safemode="true|false"/>
 ## <a name="see-also"></a>Viz také  
  [Schéma nastavení spouštění](../../../../../docs/framework/configure-apps/file-schema/startup/index.md)  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [\<PaveOver > Zadání kterou verzi modulu Runtime pro použití](http://msdn.microsoft.com/library/c376208d-980d-42b4-865b-fbe0d9cc97c2)
+ [\<PaveOver > Určení verze modulu Runtime, která k použití](https://msdn.microsoft.com/library/c376208d-980d-42b4-865b-fbe0d9cc97c2)

@@ -4,19 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Service Transaction Behavior Sample [Windows Communication Foundation]
 ms.assetid: 1a9842a3-e84d-427c-b6ac-6999cbbc2612
-ms.openlocfilehash: e49404626f6de1bfe260f0abb692d68ad779a7ab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 69f65ca833dc9a0f719541733be9e6066db37f6e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43391847"
 ---
 # <a name="service-transaction-behavior"></a>Chování transakce služby
-Tento příklad znázorňuje použití transakce koordinované klienta a nastavení ServiceBehaviorAttribute a OperationBehaviorAttribute pro řízení chování transakce služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) které implementuje službu kalkulačky, ale je rozšířeno udržování protokolu serveru provádět operace v tabulce databáze a stateful, Mezisoučet pro operace kalkulačky. Trvalý provede zápis do tabulky protokolu serveru jsou závislé na výsledek transakce klienta koordinované -, pokud klientská transakce nedokončí, transakce webové služby zajistí, že nejsou potvrdit aktualizace do databáze.  
+Tato ukázka demonstruje použití transakce koordinovaný klienta a nastavení atributu ServiceBehaviorAttribute a OperationBehaviorAttribute řídit chování transakce služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , který implementuje službu kalkulačky, ale je rozšířit na Udržovat protokol serveru provádět operace v databázové tabulce a stavový průběžný součet pro operace kalkulačky. Trvalé zápisy do tabulky protokolu serveru jsou závislé na výsledku transakce koordinovaný klient -, pokud klientská transakce nedokončí, transakce webové služby zajišťuje, že aktualizace databáze nejsou potvrzeny.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Kontrakt služby definuje, že všechny operace, vyžadují transakci zalomen s požadavky:  
+ Kontrakt služby definuje, že všechny operace vyžadují transakci tok s požadavky:  
   
 ```  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples",  
@@ -38,7 +39,7 @@ public interface ICalculator
 }  
 ```  
   
- Pokud chcete povolit příchozí tok transakcí, služba nakonfigurovaná pomocí wsHttpBinding poskytované systémem atributem transactionFlow nastavena na `true`. Tato vazba používá protokol umožňuje vzájemnou spolupráci WSAtomicTransactionOctober2004:  
+ Povolit tok příchozích transakcí, je služba nakonfigurována s poskytnutými systémem wsHttpBinding s transactionFlow atribut nastaven na `true`. Tato vazba používá interoperabilní WSAtomicTransactionOctober2004 protokolu:  
   
 ```xml  
 <bindings>  
@@ -48,7 +49,7 @@ public interface ICalculator
 </bindings>  
 ```  
   
- Po inicializaci obě připojení služby a transakce, klient přistupuje k několik operací služby v rámci oboru této transakce dokončení transakce a uzavře připojení:  
+ Po zahájení obě připojení ke službě a transakce, klient několik operací služby v rámci oboru dané transakce přistupuje k dokončení transakce a uzavře připojení:  
   
 ```  
 // Create a client  
@@ -89,29 +90,29 @@ Console.WriteLine("Transaction committed");
 client.Close();  
 ```  
   
- Na službu existují tři atributy, které ovlivňují chování transakce služby a k tomu mohou následujícími způsoby:  
+ Ve službě existují tři atributy ovlivňující chování transakce služby a jejich učinit následujícími způsoby:  
   
 -   Na `ServiceBehaviorAttribute`:  
   
-    -   `TransactionTimeout` Vlastnost určuje časové období, ve kterém musíte dokončit transakci. V této ukázce je nastavena na 30 sekund.  
+    -   `TransactionTimeout` Vlastnost určuje časové období, ve kterém musí být transakce dokončena. V této ukázce je nastaven na 30 sekund.  
   
-    -   `TransactionIsolationLevel` Vlastnost určuje úroveň izolace, která podporuje službu. To je nutné tak, aby odpovídaly úroveň izolace klienta.  
+    -   `TransactionIsolationLevel` Vlastnost určuje úroveň izolace, která podporuje službu. To je vyžadovaný pro shodu úroveň izolace klienta.  
   
-    -   `ReleaseServiceInstanceOnTransactionComplete` Vlastnost určuje, zda je instance služby recykluje po dokončení transakce. Nastavením na `false`, služba udržuje na stejnou instanci služby napříč požadavky operaci. To je potřeba k údržbě celkový počet spuštění. Pokud nastavena na `true`, novou instanci se generuje po každé dokončit akci.  
+    -   `ReleaseServiceInstanceOnTransactionComplete` Vlastnost určuje, zda je instance služby recyklován po dokončení transakce. Nastavením na `false`, služba zajišťuje stejné instance služby napříč požadavky operace. To je potřeba k údržbě celkový počet spuštění. Pokud hodnotu `true`, novou instanci se vygeneruje po každé dokončit akci.  
   
-    -   `TransactionAutoCompleteOnSessionClose` Vlastnost určuje, zda jsou zbývající transakce dokončit po ukončení relace. Nastavením na `false`, je potřeba buď sadu jednotlivé operace `OperationBehaviorAttribute``TransactionAutoComplete` vlastnost, která má `true` nebo explicitně vyžaduje volání `SetTransactionComplete` Metoda dokončení transakcí. Tento příklad znázorňuje obou přístupů.  
+    -   `TransactionAutoCompleteOnSessionClose` Vlastnost určuje, zda existují nevyřízené transakce dokončeny po zavření relace. Nastavením na `false`, jednotlivé operace se musí buď sadu `OperationBehaviorAttribute``TransactionAutoComplete` vlastnost `true` nebo chcete explicitně po volání `SetTransactionComplete` metody pro dokončení transakce. Tento příklad ukazuje oba přístupy.  
   
 -   Na `ServiceContractAttribute`:  
   
-    -   `SessionMode` Vlastnost určuje, zda služba korelaci příslušných žádostí do logické relace. Protože tato služba zahrnuje operace, kde je vlastnost OperationBehaviorAttribute TransactionAutoComplete vlastnost nastavena na `false` (násobení a dělení), `SessionMode.Required` musí být zadán. Například násobkem operace nedokončí transakci a místo toho závisí na novější volání dělení dokončit pomocí `SetTransactionComplete` metoda; služby musí být schopní určit, že tyto operace dochází v rámci stejné relace.  
+    -   `SessionMode` Vlastnost určuje, zda služba koreluje příslušných žádostí do logické relace. Protože tato služba zahrnuje operace, kde je vlastnost Vlastnost OperationBehaviorAttribute TransactionAutoComplete nastaven na `false` (násobení a dělení), `SessionMode.Required` musí být zadán. Například vícenásobně operaci nelze dokončit transakci a místo toho spoléhá na pozdější volání dělení dokončete pomocí `SetTransactionComplete` metoda; služba musí být schopní určit, že tyto operace se vyskytnou v rámci stejné relace.  
   
 -   Na `OperationBehaviorAttribute`:  
   
-    -   `TransactionScopeRequired` Vlastnost určuje, zda se má provést akce operace v oboru transakce. To je nastaven na `true` pro všechny operace v této ukázkové a, protože klient toků transakci ke všem operacím, dojde k akcím v rámci oboru této transakce klienta.  
+    -   `TransactionScopeRequired` Vlastnost určuje, jestli by měl provést operace akce v rámci oboru transakce. Je nastavené na `true` pro všechny operace v této ukázkové a, protože klient toky jeho transakce pro všechny operace, dojde k akcím v rámci oboru dané transakce klienta.  
   
-    -   `TransactionAutoComplete` Vlastnost určuje, zda transakce, ve kterém metoda spustí automaticky dokončit, pokud dojde k žádné neošetřených výjimek. Jak se popisuje výš, je nastavena `true` pro operace přidat a Subtract ale `false` Multiply a operace dělení. Přidat a odečíst operace dokončit jejich akce automaticky, Rozděl dokončí svou činnost prostřednictvím explicitní volání `SetTransactionComplete` metoda a Multiply nedokončí jeho akce, ale místo toho závisí na a vyžaduje novější volání, jako třeba Dělení na dokončení akce.  
+    -   `TransactionAutoComplete` Vlastnost určuje, zda je transakce, ve kterém metoda je provedena automaticky dokončit, pokud nevyskytnou žádné nezpracované výjimky. Jak již bylo popsáno dříve, je nastavené na `true` pro přidání a rozdílové operace, ale `false` Multiply a operace dělení. Operace Add a rozdílové automatické dokončování jejich akce, dělení dokončí svou činnost prostřednictvím explicitní volání konstruktoru `SetTransactionComplete` metoda a Multiply nedokončí její akce, ale místo toho závisí na službě a vyžaduje, aby pozdější volání, například k Rozdělte na dokončení akce.  
   
- Implementace s atributy služby je následující:  
+ Implementace služby s atributy vypadá takto:  
   
 ```  
 [ServiceBehavior(  
@@ -165,7 +166,7 @@ public class CalculatorService : ICalculator
 }   
 ```  
   
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
 ```  
 Starting transaction  
@@ -179,7 +180,7 @@ Transaction committed
 Press <ENTER> to terminate client.  
 ```  
   
- Protokolování žádosti o operaci služby se zobrazí v okně konzoly služby. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Protokolování žádosti o operaci služby se zobrazí v okně konzoly služby. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
 ```  
 Press <ENTER> to terminate service.  
@@ -190,77 +191,77 @@ Creating new service instance...
   Writing row 4 to database: Dividing 495 by 15  
 ```  
   
- Všimněte si, že kromě zachování spuštění celkový výpočtů, služby hlášení vytvoření instance (jedna instance pro tuto ukázku) a protokoly operaci žádosti do databáze. Vzhledem k tomu, že všechny žádosti toku transakcí klienta, jakákoli chyba k provedení této transakce výsledkem všechny operace databáze, je vrácena zpět. To prokázat u mnoha různými způsoby:  
+ Všimněte si, že kromě zachování celkového spouštění výpočtů, služby hlášení vytváření instancí (jedna instance pro tuto ukázku) a protokoly operace žádosti do databáze. Vzhledem k tomu, že všechny žádosti tok transakce klienta, jakékoli neúspěchy k dokončení této transakce výsledkem všechny databázové operace zpět. To můžete předvedená v několika způsoby:  
   
--   Komentář volání klienta `tx.Complete`() a poté spusťte znovu - výsledkem klienta ukončení oboru transakce bez dokončení transakci.  
+-   Odkomentujte volání klienta `tx.Complete`() a znovu spusťte – výsledkem je klientské operace bude ukončena obor transakce bez dokončení jeho transakce.  
   
--   Komentář out volání operace služby dělení – tento výsledky brání provedení akce zahájili dokončení operace násobení a proto transakce klienta konečném důsledku také nepodaří dokončit.  
+-   Komentář out volání operace služby dělení – Neumožnit tento výsledky akce iniciované dokončení operace násobení a proto klientská transakce takže v konečném důsledku také nepodaří dokončit.  
   
--   Throw k neošetřené výjimce kdekoli v oboru transakce klienta – podobně zabrání klientovi dokončení transakci.  
+-   Vyvolání neošetřené výjimky kdekoli v oboru transakce klienta – Podobně tomu klienta od dokončení jeho transakce.  
   
- Výsledek některý z těchto je, že žádná operací provést v rámci tohoto oboru není potvrzena a počtu řádků uchovány v databázi není zvýšit.  
+ Některé z těchto výsledkem je, že žádná z operací provedených v daném oboru není potvrzena a počet řádků, které ukládají do databáze nezvyšuje.  
   
 > [!NOTE]
->  Jako součást procesu sestavení databázový soubor zkopírován do složky bin. Musí se podíváte na tuto kopii souboru databáze sledovat na řádky, které jsou nastavené jako trvalé do protokolu, nikoli soubor, který je zahrnutý v projektu sady Visual Studio.  
+>  Jako součást procesu sestavení databázový soubor je zkopírován do složky bin. Můžete třeba podívejte se na tuto kopii souboru databáze sledovat řádky, které se ukládají do protokolu, nikoli soubor, který je součástí projektu sady Visual Studio.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že jste nainstalovali SQL Server 2005 Express Edition nebo SQL Server 2005. V souboru App.config služby, databázi `connectionString` může být sada nebo databázi interakce mohou být zakázány nastavením appSettings `usingSql` hodnotu `false`.  
+1.  Ujistěte se, že jste nainstalovali SQL Server 2005 Express Edition nebo SQL Server 2005. V souboru App.config služby, databáze `connectionString` může být sada nebo databáze interakce může zakázat nastavením appSettings `usingSql` hodnota, která se `false`.  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
- Pokud spustíte ukázku mezi počítači, je nutné nakonfigurovat Microsoft distribuované transakce koordinátora služba MSDTC () k povolení toku transakcí sítě a použít nástroj WsatConfig.exe k povolení síťového transakce Windows Communication Foundation (WCF) podpora.  
+ Pokud ukázku spustíte napříč počítači, je nutné nakonfigurovat Microsoft distribuované transakce koordinátor (MSDTC) k povolení toku transakcí sítě a nástrojem WsatConfig.exe povolit síť transakce Windows Communication Foundation (WCF) podpora.  
   
-### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample-across-machines"></a>Konfigurace Microsoft distribuované transakce koordinátora služba MSDTC () k podpoře spouštění vzorku mezi počítači  
+### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample-across-machines"></a>Konfigurace Microsoft distribuované transakce koordinátor (MSDTC) k podpoře spouštění ukázku v počítačích  
   
-1.  Na počítači služby konfigurace služby MS DTC povolit příchozí transakce sítě.  
+1.  Na počítači služby konfigurace povolit příchozí síťové transakce koordinátor MSDTC.  
   
-    1.  Z **spustit** nabídky, přejděte na **ovládací panely**, pak **nástroje pro správu**a potom **služby komponent**.  
+    1.  Z **Start** nabídky, přejděte na **ovládací panely**, pak **nástroje pro správu**a potom **služby Component Services**.  
   
-    2.  Klikněte pravým tlačítkem na **Můj počítač** a vyberte **vlastnosti**.  
+    2.  Klikněte pravým tlačítkem na **tento počítač** a vyberte **vlastnosti**.  
   
-    3.  Na **služby MSDTC** , klikněte na **konfigurace zabezpečení**.  
+    3.  Na **MSDTC** klikněte na tlačítko **konfigurace zabezpečení**.  
   
-    4.  Zkontrolujte **síťový přístup DTC** a **povolit příchozí**.  
+    4.  Zkontrolujte **DTC přístup k síti** a **povolit příchozí**.  
   
-    5.  Klikněte na tlačítko **Ano** restartujte službu MS DTC a potom klikněte na **OK**.  
+    5.  Klikněte na tlačítko **Ano** restartovat službu MS DTC a potom klikněte na **OK**.  
   
     6.  Klikněte na tlačítko **OK** zavřete dialogové okno.  
   
-2.  V počítači služby a klientský počítač konfigurace brány Windows Firewall Microsoft distribuované transakce koordinátora služba MSDTC () do seznamu vyloučení aplikace zahrnout:  
+2.  V počítači služby a klientský počítač konfigurace brány Windows Firewall zahrnout Microsoft distribuované transakce koordinátor (MSDTC) do seznamu vyloučení aplikací:  
   
-    1.  Spusťte aplikaci brána Windows Firewall v Ovládacích panelech.  
+    1.  Spuštění aplikace Windows Firewall v Ovládacích panelech.  
   
-    2.  Z **výjimky** , klikněte na **přidat Program**.  
+    2.  Z **výjimky** klikněte na tlačítko **přidat Program**.  
   
     3.  Přejděte do složky C:\WINDOWS\System32.  
   
-    4.  Vyberte Msdtc.exe a klikněte na **otevřete**.  
+    4.  Msdtc.exe vyberte a klikněte na tlačítko **otevřít**.  
   
-    5.  Klikněte na tlačítko **OK** zavřete **přidat Program** dialogové okno a klikněte na tlačítko **OK** zavřete apletu brány Windows Firewall.  
+    5.  Klikněte na tlačítko **OK** zavřete **přidat Program** dialogové okno a klikněte na tlačítko **OK** zavřete aplet brány Windows Firewall.  
   
-3.  V klientském počítači nakonfigurujte služby MSDTC povolit odchozí transakce sítě:  
+3.  V klientském počítači nakonfigurujte MSDTC povolit odchozí síťové transakce:  
   
-    1.  Z **spustit** nabídky, přejděte na **ovládací panely**, pak **nástroje pro správu**a potom **služby komponent**.  
+    1.  Z **Start** nabídky, přejděte na **ovládací panely**, pak **nástroje pro správu**a potom **služby Component Services**.  
   
-    2.  Klikněte pravým tlačítkem na **Můj počítač** a vyberte **vlastnosti**.  
+    2.  Klikněte pravým tlačítkem na **tento počítač** a vyberte **vlastnosti**.  
   
-    3.  Na **služby MSDTC** , klikněte na **konfigurace zabezpečení**.  
+    3.  Na **MSDTC** klikněte na tlačítko **konfigurace zabezpečení**.  
   
-    4.  Zkontrolujte **síťový přístup DTC** a **povolit odchozí**.  
+    4.  Zkontrolujte **DTC přístup k síti** a **povolit odchozí**.  
   
-    5.  Klikněte na tlačítko **Ano** restartujte službu MS DTC a potom klikněte na **OK**.  
+    5.  Klikněte na tlačítko **Ano** restartovat službu MS DTC a potom klikněte na **OK**.  
   
     6.  Klikněte na tlačítko **OK** zavřete dialogové okno.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Transactions`  
   

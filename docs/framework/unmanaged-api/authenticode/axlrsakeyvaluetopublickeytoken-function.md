@@ -10,15 +10,16 @@ api_type:
 ms.assetid: d60f19fe-7bec-47ba-b60e-ba9ce66abf8c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ef73f0f7599fdff887437756a5995591fd8ec89
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e09391af9b5d71cfa423b3bf1a2b307117d0dee1
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402406"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43385884"
 ---
-# <a name="axlrsakeyvaluetopublickeytoken-function"></a>Funkce _AxlRSAKeyValueToPublicKeyToken
-Převede Exponent a Modulus silný název tokenu veřejného klíče.  
+# <a name="axlrsakeyvaluetopublickeytoken-function"></a>\_AxlRSAKeyValueToPublicKeyToken – funkce
+
+Převede operace modulo a Exponent token veřejného klíče silného názvu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,18 +31,18 @@ HRESULT _AxlRSAKeyValueToPublicKeyToken (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+### <a name="parameters"></a>Parametry  
  `pModulusBlob`  
- [v] Objekt blob kódováním base64 numerického zbytku (z \<numerického zbytku > elementu).  Najdete v článku [CRYPTOAPI_BLOB](http://msdn.microsoft.com/library/windows/desktop/aa380238.aspx) struktury.  
+ [in] Tento objekt blob s kódováním base64 numerického zbytku (z \<numerického zbytku > element).  Zobrazit [CRYPTOAPI_BLOB](/windows/desktop/api/dpapi/ns-dpapi-_cryptoapi_blob) struktury.  
   
  `pExponentBlob`  
- [v] Objekt blob Exponent kódováním base64 (z \<Exponent > elementu). Najdete v článku [CRYPTOAPI_BLOB](http://msdn.microsoft.com/library/windows/desktop/aa380238.aspx) struktury.  
+ [in] Exponent blob s kódováním base64 (z \<Exponent > element). Zobrazit [CRYPTOAPI_BLOB](/windows/desktop/api/dpapi/ns-dpapi-_cryptoapi_blob) struktury.  
   
  `ppwszPublicKeyToken`  
- [out] Ukazatel na WCHAR * přijímat kódováním šestnáctkově token veřejného klíče.  
+ [out] Ukazatel na WCHAR * pro příjem šestnáctkově zakódovaného token veřejného klíče.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud funkci se zdaří. Jinak vrátí kód chyby.  
+ `S_OK` Pokud je funkce úspěšná. V opačném případě vrátí kód chyby.  
   
 ## <a name="see-also"></a>Viz také  
  [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)

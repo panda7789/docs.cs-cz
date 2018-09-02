@@ -2,57 +2,57 @@
 title: Ukázka proxy serveru zjišťování
 ms.date: 03/30/2017
 ms.assetid: 1dfa02df-15b1-4e97-9c8e-f5f2772711b0
-ms.openlocfilehash: e9cbfcb717f502a849d4d508d13df6c00b95db58
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6fc0680bc6b61a6fe1b4b141c8b1e5081df5a124
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33503181"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43393018"
 ---
 # <a name="discovery-proxy-sample"></a>Ukázka proxy serveru zjišťování
-Tento příklad ukazuje, jak vytvořit implementace zjišťování proxy k uložení informací o existujících služeb a jak se klienti mohou odesílat dotazy tento proxy server pro informace. Tato ukázka se skládá ze tří projektů:  
+Tato ukázka předvádí, jak vytvořit implementace zjišťování proxy k ukládání informací o existujících služeb a jak můžou klienti dotazovat tohoto proxy informace. Tato ukázka se skládá ze tří projektů:  
   
--   **Služba**: jednoduchý kalkulačky služba Windows Communication Foundation (WCF), která registruje zjišťování proxy.  
+-   **Služba**: jednoduché služba kalkulačky Windows Communication Foundation (WCF), která se zaregistruje ve službě proxy zjišťování.  
   
--   **Zjišťování Proxy**: Implementace zjišťování proxy služby.  
+-   **Proxy zjišťování**: Implementace zjišťování proxy službu.  
   
--   **Klient**: A WCF klientskou aplikaci, která volá zjišťování proxy k vyhledání služeb.  
+-   **Klient**: A WCF klientská aplikace, která volá zjišťování proxy k vyhledání služeb.  
   
 ## <a name="demonstrates"></a>Demonstruje  
  Implementace proxy zjišťování  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\DiscoveryProxy`  
   
-## <a name="discoveryproxy"></a>DiscoveryProxy  
- V `Main` metoda souboru Program.cs příklad ukazuje, jak službu typu <xref:System.ServiceModel.Discovery.DiscoveryProxy> je hostovaná. Poskytuje dva koncové body, jeden typ <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> a další typu <xref:System.ServiceModel.Discovery.AnnouncementEndpoint>. Oba koncových bodů TCP používají jako přenosového mechanismu. <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> Naslouchá na identifikátoru URI určeného `probeEndpointAddress` parametr, to je, kde klienti mohou zasílat zprávy testu dotazovat proxy server pro svoje data. <xref:System.ServiceModel.Discovery.AnnouncementEndpoint> Naslouchá na identifikátoru URI určeného `announcementEndpointAddress` parametr. Toto je, kde proxy server naslouchá na oznámení. Po přijetí oznámení online proxy server přidá do své mezipaměti služby a po přijetí oznámení offline odebere službu ze své mezipaměti.  
+## <a name="discoveryproxy"></a>Objektu DiscoveryProxy  
+ V `Main` metoda souboru Program.cs Tato ukázka vysvětluje, jak službu typu <xref:System.ServiceModel.Discovery.DiscoveryProxy> hostována. Poskytuje dva koncové body, jeden z typů <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> a druhou typu <xref:System.ServiceModel.Discovery.AnnouncementEndpoint>. Oba koncové body TCP používají jako přenosového mechanismu. <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> Naslouchání na identifikátoru URI určeného `probeEndpointAddress` parametr, to je, kde klienti odesílat zprávy o testu k dotazování proxy pro svá data. <xref:System.ServiceModel.Discovery.AnnouncementEndpoint> Naslouchání na identifikátoru URI určeného `announcementEndpointAddress` parametru. To je, ve kterém proxy server naslouchá oznámení. Po přijetí oznámení online proxy server přidá do mezipaměti služby a po přijetí oznámení offline odebere službu uloženou v mezipaměti.  
   
- DiscoveryProxy.cs obsahuje implementace <xref:System.ServiceModel.Discovery.DiscoveryProxy>. Proxy server musí dědit z <xref:System.Object> třídy a vyžaduje implementaci <xref:System.Runtime.Remoting.Messaging.AsyncResult>. Při vytváření instancí, vytvoří novou Proxy <xref:System.Collections.Generic.Dictionary%602>, který se používá k uložení elementy ví o.  
+ DiscoveryProxy.cs obsahuje implementaci <xref:System.ServiceModel.Discovery.DiscoveryProxy>. Proxy server musí dědit z <xref:System.Object> třídy a vyžaduje implementace <xref:System.Runtime.Remoting.Messaging.AsyncResult>. Při vytváření instance, vytvoří nový proxy server <xref:System.Collections.Generic.Dictionary%602>, kterou používá pro ukládání prvků ví o.  
   
- Soubor je rozdělené do dvou oblastí, metody mezipaměti Proxy a implementace Proxy zjišťování. Oblasti Proxy mezipaměti metody obsahuje metody, které používá k aktualizaci <xref:System.Collections.Generic.Dictionary%602>, provádět dotazy proti <xref:System.Collections.Generic.Dictionary%602>a tisk dat pro uživatele. Implementace Proxy zjišťování oblast obsahuje přepsané metody požadované pro funkci oznámení a kontroly. Že definují akce prováděné na serveru proxy, po přijetí Online oznámení, oznámení do režimu Offline nebo test zprávy.  
+ Soubor je rozdělen do dvou oblastí, metody mezipaměti proxy serveru a implementace zjišťování proxy serveru. Oblast metody mezipaměti proxy serveru obsahuje metody, které používá k aktualizaci <xref:System.Collections.Generic.Dictionary%602>, provádění dotazů <xref:System.Collections.Generic.Dictionary%602>a tisknout data pro uživatele. Implementace Proxy zjišťování oblasti obsahuje přepsané metody požadované pro funkci oznámení a kontroly. Definují akce prováděné na proxy serveru po přijetí Online oznámení, oznámení v režimu Offline nebo průzkumné zprávy.  
   
 ## <a name="service"></a>Služba  
- V souboru Program.cs v projektu služby se stejným identifikátorem URI používá pro svůj koncový bod oznámení jako proxy server zjišťování. Je to proto, že služba používá pro odesílání oznámení, zatímco proxy serveru se používá pro příjem je koncový bod. Služba používá <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> a přidá do něj koncový bod oznámení.  
+ V souboru Program.cs v projektu služby se stejným identifikátorem URI používá pro svůj koncový bod oznámení jako proxy zjišťování. Je to proto, že služba používá koncový bod pro zasílání oznámení, když proxy server použije pro jejich přijetí. Služba používá <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> a přidá do něj koncový bod oznámení.  
   
 ## <a name="client"></a>Klient  
- Projektu klienta používá stejný identifikátor URI pro svůj koncový bod testu jako proxy server. To je proto sondy v tomto scénáři jsou zároveň jednosměrového vysílání určený speciálně pro koncový bod k dispozici na proxy serveru. Klient připojí k této známou adresu a potom se dotazuje služby. Po nalezení služby, ke kterému je připojen k němu.  
+ Klientský projekt používá stejný identifikátor URI pro svůj koncový bod jako proxy server. Je to proto, že testy v tomto scénáři se také jednosměrového vysílání speciálně pro koncový bod k dispozici na proxy serveru. Klient připojí k této adrese dobře známé a dotazuje se na službu. Po nalezení službu, kterou se připojí k němu.  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
-1.  Načtení projektu řešení v [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] a sestavte projekt.  
+1.  Načítání řešení projektu v [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] a sestavte projekt.  
   
-2.  Nejprve spuštěním zjišťování Proxy aplikace, vygenerovaných \DiscoveryProxy\bin\debug [základní adresář řešení]. Zjišťování Proxy musí nejprve spustit, protože koncové body TCP oznámení musí být pro službu pro odeslání jeho oznámení.  
+2.  Nejprve spusťte aplikaci Proxy zjišťování, vygenerované v \DiscoveryProxy\bin\debug [základní adresář řešení]. Zjišťování Proxy musí nejdřív spustit, protože koncové body TCP oznámení musí být pro službu pro odeslání jeho oznámení.  
   
-3.  Druhý spusťte aplikaci služby vygenerovaných \Service\bin\debug [základní adresář řešení]. Při spouštění služba odesílá oznámení oznámení koncový bod zjišťování serveru proxy a je zaregistrován v mezipaměti k proxy serveru.  
+3.  Za druhé spuštění služby aplikace vygenerované v \Service\bin\debug [základní adresář řešení]. Při spouštění služba odesílá oznámení do koncového bodu oznámení proxy zjišťování a je zaregistrovaný v mezipaměti proxy serveru.  
   
-4.  V dalším kroku spusťte klientskou aplikaci, vygenerovaných \Client\bin\debug [základní adresář řešení]. Klient dotazuje proxy server, získá adresu služby a potom připojí ke službě.  
+4.  V dalším kroku spuštění klientské aplikace vygenerované v \Client\bin\debug [základní adresář řešení]. Klient dotazuje serveru proxy, získá adresu služby a poté se připojí ke službě.  
   
-5.  Ukončete nakonec klient služby a proxy server. Proxy server musí používat pro příjem oznámení služby offline.  
+5.  Ukončete nakonec klient služby a proxy serveru. Proxy server musí být spuštěná, aby se dostávat oznámení služby v režimu offline.  
   
 ## <a name="see-also"></a>Viz také

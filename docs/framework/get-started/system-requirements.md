@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aaa508963bc4920aae65b1d172e2dc15f13451bf
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 909b9369aba6b22899ae3fe7ac15eb470c5c2697
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925113"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43390754"
 ---
 # <a name="net-framework-system-requirements"></a>Požadavky na systém rozhraní .NET framework
 
@@ -73,7 +73,7 @@ Rozhraní .NET Framework vyžaduje oprávnění správce pro instalaci. Pokud ne
 
 - Rozhraní .NET Framework 4 podporuje také platformě IA64.
 
-- Pro všechny platformy, doporučujeme upgradovat na nejnovější aktualizaci Service Pack pro Windows a instalovat důležité aktualizace, které jsou k dispozici [webu Windows Update](http://go.microsoft.com/fwlink/?LinkId=168461) k zajištění nejlepší kompatibility a zabezpečení.
+- Pro všechny platformy, doporučujeme upgradovat na nejnovější aktualizaci Service Pack pro Windows a instalovat důležité aktualizace, které jsou k dispozici [webu Windows Update](https://go.microsoft.com/fwlink/?LinkId=168461) k zajištění nejlepší kompatibility a zabezpečení.
 
 - V 64bitových operačních systémech rozhraní .NET Framework podporuje obě WOW64 (32bitová verze zpracování na 64bitovém počítači) a nativní 64bitové zpracování.
 
@@ -99,7 +99,7 @@ Rozhraní .NET Framework vyžaduje oprávnění správce pro instalaci. Pokud ne
 
 - V systému Windows Server 2008 SP2 rozhraní .NET Framework není podporováno v roli jádra serveru.
 
-- Pro všechny platformy, doporučujeme upgradovat na nejnovější aktualizaci Service Pack pro Windows a kritické aktualizace dostupné z [webu Windows Update](http://go.microsoft.com/fwlink/?LinkId=168461) k zajištění nejlepší kompatibility a zabezpečení. U některých operačních systémů může být požadována instalace nejnovější aktualizace Service Pack pro Windows.
+- Pro všechny platformy, doporučujeme upgradovat na nejnovější aktualizaci Service Pack pro Windows a kritické aktualizace dostupné z [webu Windows Update](https://go.microsoft.com/fwlink/?LinkId=168461) k zajištění nejlepší kompatibility a zabezpečení. U některých operačních systémů může být požadována instalace nejnovější aktualizace Service Pack pro Windows.
 
 - V 64bitových operačních systémech rozhraní .NET Framework podporuje obě WOW64 (32bitová verze zpracování na 64bitovém počítači) a nativní 64bitové zpracování.
 

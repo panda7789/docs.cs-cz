@@ -2,22 +2,22 @@
 title: '&lt;peer&gt; – &lt;serviceCredentials&gt;'
 ms.date: 03/30/2017
 ms.assetid: b134e21d-e5b5-458e-9309-626dbf8db4ed
-ms.openlocfilehash: f50c192639df7b7ed35e863821d5b7a8d62f29bc
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 94f93a7955af3bff1c17e59a11af3fad85c9134d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32747678"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43399840"
 ---
 # <a name="ltpeergt-of-ltservicecredentialsgt"></a>&lt;peer&gt; – &lt;serviceCredentials&gt;
-Určuje, že aktuální přihlašovací údaje pro uzel sdílené.  
+Určuje aktuální pověření pro partnerský uzel.  
   
  \<system.ServiceModel>  
 \<chování >  
 \<serviceBehaviors >  
 \<chování >  
-\<– serviceCredentials >  
-\<sdílené >  
+\<serviceCredentials >  
+\<sdílená >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,7 +30,7 @@ Určuje, že aktuální přihlašovací údaje pro uzel sdílené.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují nadřazené elementy, atributy a podřízené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené elementy  
   
 ### <a name="attributes"></a>Atributy  
  Žádné  
@@ -39,15 +39,15 @@ Určuje, že aktuální přihlašovací údaje pro uzel sdílené.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<certifikátu >](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-of-peer.md)|Určuje certifikát X.509, který chcete použít pro podepisování a šifrování zpráv pro služby peer-to-peer. .|  
-|[\<messageSenderAuthentication >](../../../../../docs/framework/configure-apps/file-schema/wcf/messagesenderauthentication.md)|Určuje možnosti ověřování pro odesílatelé zpráv.|  
-|[\<peerAuthentication >](../../../../../docs/framework/configure-apps/file-schema/wcf/peerauthentication.md)|Určuje možnosti ověřování pro služby peer.|  
+|[\<certifikát >](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-of-peer.md)|Určuje certifikát X.509, který chcete použít pro podepisování a šifrování zpráv služeb peer-to-peer. .|  
+|[\<messageSenderAuthentication >](../../../../../docs/framework/configure-apps/file-schema/wcf/messagesenderauthentication.md)|Určuje možnosti ověřování pro odesílatele zpráv.|  
+|[\<peerAuthentication >](../../../../../docs/framework/configure-apps/file-schema/wcf/peerauthentication.md)|Určuje možnosti ověřování pro partnerské služby.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<– serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Určuje pověření, která se použije v ověřování služby a nastavení související s ověření pověření klienta.|  
+|[\<serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Určuje přihlašovací údaje pro ověřování služby a nastavení vztahující se k ověření přihlašovacích údajů klienta.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.PeerCredentialElement>  
@@ -55,7 +55,7 @@ Určuje, že aktuální přihlašovací údaje pro uzel sdílené.
  <xref:System.ServiceModel.Description.ServiceCredentials.Peer%2A>  
  <xref:System.ServiceModel.Security.PeerCredential>  
  [Síť rovnocenných počítačů](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
- [Ověřování zpráv rovnocenného kanálu](http://msdn.microsoft.com/library/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
- [Vlastní ověřování rovnocenného kanálu](http://msdn.microsoft.com/library/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
+ [Ověřování zpráv protokolu peer Channel](https://msdn.microsoft.com/library/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
+ [Vlastní ověřování protokolu peer Channel](https://msdn.microsoft.com/library/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
  [Zabezpečení aplikací protokolu Peer Channel](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)  
  [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

@@ -1,35 +1,35 @@
 ---
-title: Ověřování na straně klienta (ověřování v prezentační vrstvy)
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Ověřování na straně klienta (ověřování v prezentační vrstvy)
+title: Ověřování na straně klienta (ověřování v prezentačních vrstvách)
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Ověřování na straně klienta (ověřování v prezentačních vrstvách)
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: c61a08566492a59090b19f99aaf97b5f6082c1fb
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 70a1f716797e03acdcbf1c58d4b0302449d98fa9
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37104566"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43395673"
 ---
-# <a name="client-side-validation-validation-in-the-presentation-layers"></a>Ověřování na straně klienta (ověřování v prezentační vrstvy)
+# <a name="client-side-validation-validation-in-the-presentation-layers"></a>Ověřování na straně klienta (ověřování v prezentačních vrstvách)
 
-I v případě, že je zdroj založená modelu domény a nakonec musí mít ověření na úrovni modelu domény, můžete ověření dosud zpracovány na úrovni modelu domény (na straně serveru) i na straně klienta.
+I v případě, že je zdroj pravdivých informací doménový model a nakonec musí mít ověření na úrovni modelu domény, můžete ověření dosud zpracovány na úrovni modelu domény (na straně serveru) a na straně klienta.
 
-Ověřování na straně klienta je velmi užitečný pro uživatele. Ho šetří čas, které by jinak tráví čekání na dobu odezvy na server, který může znovu objevit chyby ověření. V obchodní podmínky dokonce i pár zlomků sekund násobí stokrát každý den přidá do velké množství času, náklady a před. Snadný a okamžitou ověření umožňuje uživatelům vyšší efektivity práce a vytvořit lepší kvalitu vstup a výstup.
+Ověřování na straně klienta je skvělé usnadnění práce pro uživatele. To šetří čas, který byste jinak strávili čekání na odezvu na server, který může vrátit chyby ověření. V obchodní termíny dokonce i pár zlomky sekund vynásobené opakovaném každý den dohromady tvoří spoustu času, expense a frustrace. Jednoduché a okamžité ověřování umožňuje uživatelům vyšší efektivity práce a vytvářet lepší kvalitu vstupu a výstupu.
 
-Stejně jako v zobrazení modelu a modelu domény se liší, může být podobné ale pro jiný účel ověření modelu zobrazení a ověření modelu domény. Pokud máte obavy o SUCHÝ (nemáte opakujte sami zásada), vezměte v úvahu, v takovém případě může znamenat opakované použití kódu také párování a v podnikové aplikace, které je důležitější nechcete na straně klienta než postupujte podle SUCHÝCH Princip spojte na straně serveru.
+Stejně jako model zobrazení a modelu domény se liší, ověření modelu zobrazení a ověření modelu domény může být podobné, ale pro jiný účel. Pokud máte obavy o zkušební (není opakujte sami zásada), vezměte v úvahu, že v tomto případě opakované využívání kódu může také znamenat párování a v oddílu podnikové aplikace je více důležité, abyste na straně klienta než postupujte podle principu suchého spárovat na straně serveru.
 
-I při použití ověřování na straně klienta, si vždy ověřte příkazech nebo vstupní DTOs v serverovém kódu, protože rozhraní API serveru je možný útok. Provádění obou je obvykle nejlepším řešením vzhledem k tomu, že pokud máte klientské aplikace, z hlediska činnosti koncového uživatele je nejvhodnější proaktivní a není povolena, aby uživatel zadal neplatné informace.
+I při použití ověřování na straně klienta, by měla vždy ověřování příkazům nebo vstupní DTO v serverovém kódu, protože server rozhraní API jsou možné útoku. Provádění obou je obvykle nejlepší tip vzhledem k tomu, že pokud máte klientské aplikace z pohledu uživatelského prostředí, je nejlepší a provádět proaktivně, aby uživatel zadal neplatné informace.
 
-Proto v kódu na straně klienta je obvykle ověřit ViewModels. Může také ověřit klienta výstup DTOs nebo příkazy před jejich odesláním do služby.
+Proto v kódu na straně klienta je obvykle ověřit modely ViewModel. Může také ověřit klienta výstup DTO nebo příkazy před jejich odesláním do služby.
 
-Implementace ověřování na straně klienta, závisí na jaký druh klientskou aplikaci, kterou vytváříte. Bude jiný, jsou ověřování dat v web webová aplikace MVC s většinou kód v rozhraní .NET, webové aplikace služby Zabezpečené ověřování HESLA s že ověřování probíhá programového v JavaScript nebo TypeScript, nebo mobilní aplikace programového s Xamarinem a C\#.
+Implementace ověřování na straně klienta, závisí na druhu klientskou aplikaci, kterou vytváříte. Bude jiný, jsou ověřování dat ve webovém webové aplikace MVC s největším počtem kód v .NET, webové aplikace SPA pomocí tohoto ověřování je zakódovaný v jazyce JavaScript nebo TypeScript, nebo kódované mobilní aplikace pomocí Xamarinu a C#.
 
 ## <a name="additional-resources"></a>Další zdroje
 
 ### <a name="validation-in-xamarin-mobile-apps"></a>Ověření v mobilních aplikacích Xamarin
 
--   **Ověření Text pro vstup a zobrazit chyby**
+-   **Ověření textový vstup a zobrazit chyby**
     [*https://developer.xamarin.com/recipes/ios/standard\_controls/text\_field/validate\_input/*](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/validate_input/)
 
 -   **Zpětné volání pro ověření**
@@ -40,29 +40,28 @@ Implementace ověřování na straně klienta, závisí na jaký druh klientskou
 -   **Rick Anderson. Přidání ověřování**
     [*https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation*](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation)
 
-### <a name="validation-in-spa-web-apps-angular-2-typescript-javascript"></a>Ověření v SPA webové aplikace (úhlová 2, TypeScript, JavaScript)
+### <a name="validation-in-spa-web-apps-angular-2-typescript-javascript"></a>Ověřování do aplikace SPA webové aplikace (Angular 2, TypeScript, JavaScript)
 
--   **ADO Kukic. Úhlová ověřování 2 formuláře** **
-    **[*https://scotch.io/tutorials/angular-2-form-validation*](https://scotch.io/tutorials/angular-2-form-validation)
+-   **ADO Kukic. Ověřování angular 2 formuláře**
+    [*https://scotch.io/tutorials/angular-2-form-validation*](https://scotch.io/tutorials/angular-2-form-validation)
 
 -   **Ověření formuláře**
     [*https://angular.io/docs/ts/latest/cookbook/form-validation.html*](https://angular.io/docs/ts/latest/cookbook/form-validation.html)
 
--   **Ověření.** Dokumentace uloženy.
+-   **Ověření.** Dokumentace k podrobným.
     [*https://breeze.github.io/doc-js/validation.html*](https://breeze.github.io/doc-js/validation.html)
 
-V souhrnu jsou to nejdůležitější koncepty namapoval ověření:
+Stručně řečeno jedná se ty nejdůležitější koncepty související s ověření:
 
--   Entity a agregace by měl vynutit vlastní konzistence a "vždy platný". Agregační kořeny jsou zodpovědní za konzistence více entit v rámci stejné agregace.
+- Entity a agregace by měl vynutit vlastní konzistenci a "vždy platný". Agregační kořeny zodpovídají za víc entitami konzistenci v rámci stejné agregace.
 
--   Pokud si myslíte, že entita musí zadat neplatném stavu, zvažte použití různých objektový model – například pomocí dočasné DTO, dokud nevytvoříte entita konečné domény.
+- Pokud se domníváte, že entita musí zadat neplatném stavu, zvažte použití jiného objektu modelu, například pomocí dočasný objekt DTO, dokud nevytvoříte entita domény posledním.
 
--   Pokud je potřeba vytvořit několik souvisejících objektů, jako je například agregace, a jsou pouze platné po všechny z nich byly vytvořeny, zvažte použití vzoru objekt pro vytváření.
+- Pokud je potřeba vytvořit několik souvisejících objektů, jako jsou agregace, a že jsou platné jenom po jejich vytvoření, zvažte použití vzoru objekt pro vytváření.
 
--   Ověřování rozhraní jsou nejvhodnější konkrétní vrstvy, jako je například prezentační vrstvy nebo vrstvě služba nebo aplikace, ale obvykle není v vrstva modelu domény, protože by musela být silné závislý na představuje rozhraní infrastruktury.
+- Ověření architektury jsou nejvhodnější v konkrétní vrstvy, jako je například prezentační vrstvy nebo vrstvy aplikace nebo služby, ale obvykle nejsou ve vrstvě doménového modelu, protože je třeba provést silné závislosti na rozhraní .NET framework infrastrukturou.
 
--   S redundantní ověřování na straně klienta je vhodný, ve většině případů, protože aplikace může být aktivní.
-
+- Ve většině případů redundantní ověřování na straně klienta je dobré, vzhledem k tomu, že aplikace může být aktivní.
 
 >[!div class="step-by-step"]
 [Předchozí](domain-model-layer-validations.md)

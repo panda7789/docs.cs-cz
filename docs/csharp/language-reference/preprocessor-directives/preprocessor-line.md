@@ -6,15 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - '#line directive [C#]'
 ms.assetid: 6439e525-5dd5-4acb-b8ea-efabb32ff95b
-ms.openlocfilehash: 08ba94ec3f1799f858e098bd2c0e059b7f45af2e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f3ebecda7761e6249656e0b9f8543ae1252b844e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33289266"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43395134"
 ---
 # <a name="line-c-reference"></a>#line (referenční dokumentace jazyka C#)
-`#line` Umožňuje změnit číslo řádku kompilátoru a (volitelně) název výstupního souboru chyby a upozornění. Tento příklad ukazuje, jak vytvářet sestavu dvě upozornění související s čísla řádků. `#line 200` – Direktiva vynutí číslo řádku, které má být 200 (i když výchozí hodnota je #7) a dokud další #line – direktiva, název souboru budou hlášené jako "Zvláštní". Směrnice výchozí #line vrátí číslování k jeho výchozí číslování, řádek, který zjistí, kolik řádků se označuje jako v předchozí direktivě.  
+`#line` Umožňuje upravit kompilátoru číslování řádků a (volitelně) název výstupního souboru pro chyby a upozornění.
+
+Následující příklad ukazuje, jak ohlásit dvě upozornění související s čísly řádků. `#line 200` – Direktiva vynutí na další řádek číslo, které má být 200 (i když výchozí hodnota je #6) a až do další #line – direktiva, název souboru budou hlášené jako "Zvláštní". #Line – direktiva výchozí vrátí řádku číslování na jeho výchozí čísla, která vrátí počet řádků, které se označuje jako předchozí direktivou.  
   
 ```csharp
 class MainClass  
@@ -22,31 +24,41 @@ class MainClass
     static void Main()  
     {  
 #line 200 "Special"  
-        int i;    // CS0168 on line 200  
-        int j;    // CS0168 on line 201  
+        int i;
+        int j;
 #line default  
-        char c;   // CS0168 on line 9  
-        float f;  // CS0168 on line 10  
+        char c;
+        float f;
 #line hidden // numbering not affected  
         string s;   
-        double d; // CS0168 on line 13  
+        double d;
     }  
 }  
 ```  
-  
+Kompilace vytvoří následující výstup:
+
+```console
+Special(200,13): warning CS0168: The variable 'i' is declared but never used
+Special(201,13): warning CS0168: The variable 'j' is declared but never used
+MainClass.cs(9,14): warning CS0168: The variable 'c' is declared but never used
+MainClass.cs(10,15): warning CS0168: The variable 'f' is declared but never used
+MainClass.cs(12,16): warning CS0168: The variable 's' is declared but never used
+MainClass.cs(13,16): warning CS0168: The variable 'd' is declared but never used
+```
+
 ## <a name="remarks"></a>Poznámky  
- `#line` – Direktiva mohou být používány na automatické, zprostředkující krok v procesu sestavení. Například pokud řádky byly odebrány z původního souboru se zdrojovým kódem, ale přesto chtěli kompilátoru generovat výstup na základě původní řádku číslování v souboru, můžete odstranit řádky a pak simulovat původní řádek číslování s `#line`.  
+ `#line` v jednom z automatizované, zprostředkující kroků v procesu sestavení, může se použít direktiva. Například pokud řádky byly odebrány z původního souboru se zdrojovým kódem, ale stále chtěla kompilátor, aby generoval výstupní založené na původní řádek číslování v souboru, můžete odebrat řádky a potom simulovat původní řádek číslování s `#line`.  
   
- `#line hidden` – Direktiva skryje po sobě jdoucích řádků ze ladicího programu, tak, že když vývojáři kroky prostřednictvím kód, všechny řádků mezi `#line hidden` a další `#line` – direktiva (za předpokladu, že není jiná `#line hidden` – direktiva) bude mít stupně přes. Tuto možnost lze také povolit ASP.NET k rozlišení mezi kódu uživatelem definované a generované počítače. I když primární příjemce této funkce je technologie ASP.NET, je pravděpodobné, že další zdroje, které budou generátory používat ho.  
+ `#line hidden` – Direktiva skrývá po sobě jdoucích řádků z ladicího programu, takže když vývojář provede kód, některé řádky mezi `#line hidden` a dalších `#line` – direktiva (za předpokladu, že není jiné `#line hidden` – direktiva) bude se stupňovitým přes. Tuto možnost lze také povolit ASP.NET k rozlišení mezi uživatelem a počítačem generovaný kód. I když je primární příjemce této funkce technologie ASP.NET, je pravděpodobnost, že další zdroje, které způsobí, že generátorů využije ho.  
   
- A `#line hidden` – direktiva nemá vliv na názvy souborů nebo čísla řádků v zasílání zpráv o chybách. To znamená je-li k chybě v skrytá bloku, kompilátor zprávu aktuální soubor název a řádek číslo chyby.  
+ A `#line hidden` direktiva ovlivnit názvy souborů nebo čísla řádků v hlášení chyb. To znamená pokud dojde k chybě v bloku skryté, že kompilátor nahlásí aktuální soubor název a číslo řádku chyby.  
   
- `#line filename` – Direktiva Určuje název souboru, který se má zobrazit ve výstupu kompilátoru. Ve výchozím nastavení se používá skutečný název souboru se zdrojovým kódem. Název souboru musí být v uvozovkách ("") a musí předcházet číslo řádku.  
+ `#line filename` Direktiva Určuje název souboru, které se mají zobrazit ve výstupu kompilátoru. Ve výchozím nastavení se používá skutečný název souboru se zdrojovým kódem. Název souboru musí být v dvojitých uvozovkách ("") a musí být předcházen číslo řádku.  
   
- Zdrojový soubor může mít libovolný počet `#line` direktivy.  
+ Soubor zdrojového kódu může mít libovolný počet `#line` direktivy.  
   
 ## <a name="example-1"></a>Příklad 1  
- Následující příklad ukazuje, jak ladicího programu ignoruje skryté řádky v kódu. Při spuštění v příkladu, zobrazí se tří řádků textu. Ale nastavit bod přerušení, jak je znázorněno v příkladu, a stiskněte tlačítko F10 procházet kód, si všimněte, že ladicí program ignoruje skrytá řádku. Všimněte si také, že i v případě, že nastavíte bod zalomení na řádku Skrytá, ladicího programu bude stále ji ignorovat.  
+ Následující příklad ukazuje, jak ladicí program ignoruje skryté řádky v kódu. Při spuštění v příkladu se zobrazí tři řádky textu. Ale při nastavení přerušení, jak je znázorněno v příkladu a stiskněte F10 a krokovat kód, si všimnete, že ladicí program ignoruje řádku skryté. Všimněte si také, že i v případě, že jste nastavili přerušení na řádku skryté, ladicí program bude stále ho ignorovat.  
   
 ```csharp
 // preprocessor_linehidden.cs  
@@ -64,7 +76,8 @@ class MainClass
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)

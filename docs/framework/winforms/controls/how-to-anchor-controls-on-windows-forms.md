@@ -13,11 +13,11 @@ helpviewer_keywords:
 - controls [Windows Forms], positioning
 ms.assetid: 59ea914f-fbd3-427a-80fe-decd02f7ae6d
 ms.openlocfilehash: c7658eb11e0d9e28c93b0a4b72a248cc42bc705f
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43253747"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43389852"
 ---
 # <a name="how-to-anchor-controls-on-windows-forms"></a>Postupy: Ukotvování ovládacích prvků ve Windows Forms
 Pokud navrhujete formulář, který uživatel může změnit velikost v době běhu, by měl ovládací prvky na formuláři změnit velikost a umístění správně. Změna velikosti ovládacích prvků dynamicky pomocí formuláře, můžete použít <xref:System.Windows.Forms.Control.Anchor%2A> vlastností ovládacích prvků Windows Forms. <xref:System.Windows.Forms.Control.Anchor%2A> Definuje vlastnost pozice ukotvení pro ovládací prvek. Když je ovládací prvek ukotven k formuláři a změně velikosti formuláře, ovládací prvek udržuje vzdálenost mezi ovládacím prvkem a pozice ukotvení. Například, pokud máte <xref:System.Windows.Forms.TextBox> ovládací prvek, který je ukotven doleva, doprava a dolů ve formuláři, při změně velikosti formuláře <xref:System.Windows.Forms.TextBox> vodorovně řídit změní tak, aby udržuje stejnou vzdálenost od pravá a levá strana formuláře. Kromě toho ovládací prvek umístí samotné svisle tak, aby jeho umístění je vždy stejnou vzdálenost od dolní části formuláře. Pokud není ukotven ovládacího prvku a změně velikosti formuláře, dojde ke změně pozice ovládacího prvku vzhledem k okrajům formuláře.  

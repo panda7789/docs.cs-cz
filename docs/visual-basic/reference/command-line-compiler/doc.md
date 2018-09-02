@@ -9,11 +9,11 @@ ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4c77d063d64354bf4693ce82509f36be9d2e5b0c
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42934476"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43399774"
 ---
 # <a name="-doc"></a>-doc
 Zpracuje komentáře dokumentace do souboru XML.  

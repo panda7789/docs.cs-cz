@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 572afc5eb9ec3cf52199e5ad74406c876485461c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d60e1e503cd48b9b9e2ed91a6bfea000aeeea2af
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33434087"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43399208"
 ---
 # <a name="iclrstrongnamestrongnamekeyinstall-method"></a>ICLRStrongName::StrongNameKeyInstall – metoda
 Importuje pár veřejného a privátního klíče do kontejneru.  
@@ -39,22 +39,22 @@ HRESULT StrongNameKeyInstall (
   
 #### <a name="parameters"></a>Parametry  
  `wszKeyContainer`  
- [v] Název kontejneru klíčů. `wszKeyContainer` musí být neprázdný řetězec.  
+ [in] Název kontejneru klíčů. `wszKeyContainer` musí být neprázdný řetězec.  
   
  `pbKeyBlob`  
- [v] Binární pár klíčů.  
+ [in] Binární pár klíčů.  
   
  `cbKeyBlob`  
- [v] Velikost v bajtech z `pbKeyBlob`.  
+ [in] Velikost v bajtech, z `pbKeyBlob`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
   
 ## <a name="remarks"></a>Poznámky  
- Použití [iclrstrongname::strongnamekeydelete –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeydelete-method.md) metoda odstranit kontejner klíčů.  
+ Použití [iclrstrongname::strongnamekeydelete –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeydelete-method.md) metodu pro odstranění kontejneru klíčů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   

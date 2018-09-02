@@ -8,32 +8,32 @@ helpviewer_keywords:
 ms.assetid: 14295c28-1da8-408b-a656-9584abcd9896
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5063a2169e8ae8c3328df220ebc5e6d464aae0a6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 17ca2eb93fb2b75f043d33d376a5650092030cac
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33440853"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43387098"
 ---
 # <a name="hosting-unmanaged-api-reference"></a>Hostování (referenční dokumentace nespravovaného rozhraní API)
-Hostování rozhraní API umožňuje nespravované hostitelům integrovat common language runtime (CLR) do svých aplikací.  
+Hostujícího rozhraní API umožňuje nespravovaným hostitelům integrovat common language runtime (CLR) do svých aplikací.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Třídy typu coclass pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)  
- Popisuje nespravované typy coclass, které používá rozhraní API hostování.  
+ Popisuje nespravované typy coclass, které používá hostujícího rozhraní API.  
   
  [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)  
- Popisuje nespravovaná vyčíslení, které používá rozhraní API hostování.  
+ Popisuje nespravované výčty, které používá hostujícího rozhraní API.  
   
  [Globální statické funkce pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-global-static-functions.md)  
- Popisuje nespravované globální statické funkce, které používá rozhraní API hostování.  
+ Popisuje nespravované globální statické funkce, které používá hostujícího rozhraní API.  
   
  [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
- Popisuje nespravovaná rozhraní, které umožňují hostitel běhu integrace modulu CLR do nespravované aplikace.  
+ Popisuje nespravovaná rozhraní, které umožňují hostitelský modul runtime integrace modulu CLR do nespravované aplikace.  
   
  [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)  
- Popisuje nespravované struktury, které používá rozhraní API hostování.  
+ Popisuje nespravované struktury, které používá hostujícího rozhraní API.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Modulu runtime](http://msdn.microsoft.com/library/99d9246a-b994-4fe5-985c-8588d1d59998)  
- Popisuje hostitele modulu runtime rozhraní .NET Framework je součástí.
+ [Hostitelská prostředí modulu runtime](https://msdn.microsoft.com/library/99d9246a-b994-4fe5-985c-8588d1d59998)  
+ Popisuje hostitelská prostředí modulu runtime, které jsou součástí rozhraní .NET Framework.

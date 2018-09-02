@@ -6,11 +6,11 @@ helpviewer_keywords:
 - value XML tag
 ms.assetid: 0b84b02e-9e6d-41b5-a926-0d5dc76dacb5
 ms.openlocfilehash: ef14836c438cf6a1de300270d9882c1e53e716ee
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43258040"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43392306"
 ---
 # <a name="ltvaluegt-visual-basic"></a>&lt;Hodnota&gt; (Visual Basic)
 Určuje popis vlastnosti.  

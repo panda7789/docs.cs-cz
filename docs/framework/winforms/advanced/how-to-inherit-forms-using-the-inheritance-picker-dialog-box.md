@@ -6,55 +6,55 @@ helpviewer_keywords:
 - Inheritance Picker dialog box
 - inherited forms [Windows Forms], creating
 ms.assetid: 969b4c04-12aa-4297-93a2-0ae747447823
-ms.openlocfilehash: 49c24b12616834ecc532a5568c0971e3dd75cfd8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5bcd29531858f9cf014042db7ee447cecfdd89b1
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33527758"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43399787"
 ---
 # <a name="how-to-inherit-forms-using-the-inheritance-picker-dialog-box"></a>Postupy: Dědění formulářů pomocí dialogového okna Výběr dědičnosti
-Nejjednodušší způsob, jak dědit formuláře nebo jiného objektu je použití **výběr dědičnosti** dialogové okno. Pomocí něho můžete využít výhod kódu nebo uživatelské rozhraní (UI), již jste vytvořili v jiných řešení.  
+Nejjednodušší způsob, jak dědit formuláře nebo jiný objekt je použít **výběr dědičnosti** dialogové okno. Pomocí něho můžete využít výhod kódu nebo uživatelské rozhraní (UI), již jste vytvořili v jiných řešení.  
   
 > [!NOTE]
->  Aby bylo možné zdědit z formuláře s **výběr dědičnosti** dialogové okno, projekt obsahující tato forma musí mít sestavily do spustitelného souboru nebo knihovny DLL. Pro sestavení projektu, zvolte **sestavit řešení** z **sestavení** nabídky.  
+>  Aby bylo možné zdědit z formuláře s **výběr dědičnosti** dialogovém okně projekt, který obsahuje, které tvoří musí sestavené do spustitelného souboru nebo knihovny DLL. Sestavte projekt, zvolte **sestavit řešení** z **sestavení** nabídky.  
 >   
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
-### <a name="to-create-a-windows-form-inherited-from-an-existing-form-by-using-the-inheritance-picker"></a>K vytvoření formuláře Windows zděděno z existujícího formuláře pomocí nástroje pro výběr dědičnosti  
+### <a name="to-create-a-windows-form-inherited-from-an-existing-form-by-using-the-inheritance-picker"></a>Vytvoření formuláře Windows dědí z existujícího formuláře pomocí dialogového okna Výběr dědičnosti  
   
-1.  Z **projektu** nabídce zvolte **přidat formuláře Windows**.  
+1.  Z **projektu** nabídce zvolte **přidat formulář Windows**.  
   
-     **Přidat novou položku** otevře se dialogové okno.  
+     **Přidat novou položku** zobrazí se dialogové okno.  
   
-2.  Vyberte **zděděná formuláře** šablony a pojmenujte ho **název** pole. Klikněte **přidat** tlačítko Pokračovat.  
+2.  Vyberte **zděděné formuláře** šablony a pojmenujte ho **název** pole. Klikněte na tlačítko **přidat** tlačítka budete pokračovat.  
   
-     **Výběr dědičnosti** otevře se dialogové okno. Pokud aktuální projekt již obsahuje formulářů, jsou zobrazeny v **výběr dědičnosti** dialogové okno.  
+     **Výběr dědičnosti** zobrazí se dialogové okno. Pokud projekt již obsahuje formuláře, jsou zobrazená v **výběr dědičnosti** dialogové okno.  
   
-3.  Dědění z formuláře v jiném sestavení, klikněte **Procházet** tlačítko.  
+3.  Chcete-li dědit z formuláře v jiném sestavení, klikněte na tlačítko **Procházet** tlačítko.  
   
-4.  V rámci **vyberte soubor, který obsahuje komponentu dědění z** dialogové okno pole, přejděte do projektu obsahující formulář nebo modul požadavky.  
+4.  V rámci **vyberte soubor, který obsahuje komponentu dědit z** dialogové okno, přejděte na projekt, který obsahuje formuláře nebo vyžadujete modulu.  
   
-5.  Klikněte na název souboru .exe nebo .dll, vyberte ho a klikněte na tlačítko **otevřete** tlačítko.  
+5.  Klikněte na název souboru .exe nebo .dll, který se vyberte ho a klikněte **otevřít** tlačítko.  
   
-     Tím se vrátíte do **výběr dědičnosti** dialogové okno, kde komponentu je nyní obsažena, společně s projektu, ve kterém se nachází.  
+     Tím se vrátíte do **výběr dědičnosti** dialogové okno, kde komponenta je teď uvedený spolu s projektu, ve kterém se nachází.  
   
 6.  Vyberte komponentu.  
   
-     V **Průzkumníku**, součást se přidá do projektu. Pokud má uživatelské rozhraní, ovládací prvky, které jsou součástí zděděné formuláře, budou označeny glyf (![VisualBasicInheritanceSymbol – snímek obrazovky](../../../../docs/framework/winforms/advanced/media/vbinheritanceglyph.gif "vbInheritanceGlyph")), a pokud vybraná, mít ohraničení, která udává, úroveň zabezpečení, který má ovládací prvek na formuláři superclassed. Chování, které odpovídají různé úrovně zabezpečení jsou uvedené v následující tabulce.  
+     V **Průzkumníka řešení**, součást je přidána do projektu. Pokud má uživatelské rozhraní, ovládací prvky, které jsou součástí Zděděný formulář, budou označeny piktogram (![VisualBasicInheritanceSymbol – snímek obrazovky](../../../../docs/framework/winforms/advanced/media/vbinheritanceglyph.gif "vbInheritanceGlyph")), a pokud je vybráno, mají ohraničení označující úroveň zabezpečení, který má ovládací prvek na formuláři supertřídu. Chování, které odpovídají různé úrovně zabezpečení jsou uvedeny v následující tabulce.  
   
-    |Úroveň zabezpečení ovládacího prvku|K dispozici interakce prostřednictvím Designer a Editor kódu s zděděné formuláře|  
+    |Úroveň zabezpečení ovládacího prvku|K dispozici interakce prostřednictvím Návrhář a Editor kódu s zděděné formuláře|  
     |-------------------------------|--------------------------------------------------------------------------------|  
-    |Public|Standardní ohraničení s úchyty: řízení může být velikost a přesunout. Ovládací prvek je přístupná interně podle třídy, která ji deklaruje a externě podle jiné třídy.|  
-    |Chráněno|Standardní ohraničení s úchyty: řízení může být velikost a přesunout. Je přístupný interně třídu, která ji deklaruje a každá třída, která dědí z nadřazené třídy, ale nelze získat přístup, externí třídy.|  
-    |Chráněné vnitřní (chráněné Friend v jazyce Visual Basic)|Standardní ohraničení s úchyty: řízení může být velikost a přesunout. Je možné přistupovat interně podle třídy, který deklaruje ho, třídou, která dědí z nadřazené třídy a ostatním členům sestavení, který jej obsahuje.|  
-    |Vnitřní (Friend v jazyce Visual Basic)|Standardní ohraničení s žádné úchyty zobrazen ve formuláři, vlastnosti viditelné v **vlastnosti** okno. Všechny aspekty ovládacího prvku se však považovat za jen pro čtení. Nelze přesunout nebo velikost ovládacího prvku nebo změnit jeho vlastnosti. Pokud ovládací prvek je kontejner jiných ovládacích prvků, podobně jako u skupiny nelze přidat nové ovládací prvky a stávající ovládací prvky nelze odebrat, i když tyto ovládací prvky byly veřejné. Ovládací prvek jsou přístupné pouze ostatní členové sestavení, který jej obsahuje.|  
-    |Soukromé|Standardní ohraničení s žádné úchyty zobrazen ve formuláři, vlastnosti viditelné v **vlastnosti** okno. Všechny aspekty ovládacího prvku se však považovat za jen pro čtení. Nelze přesunout nebo velikost ovládacího prvku nebo změnit jeho vlastnosti. Pokud ovládací prvek je kontejner jiných ovládacích prvků, podobně jako u skupiny nelze přidat nové ovládací prvky a stávající ovládací prvky nelze odebrat, i když tyto ovládací prvky byly veřejné. Ovládací prvek jsou přístupné pouze podle třídy, který deklaruje ho.|  
+    |Public|Standardní ohraničení s úchyty pro změnu velikosti: ovládací prvek může být velikosti a přesunutí. Ovládací prvek je přístupný interně třídou, která jej deklaruje a externě podle jiných tříd.|  
+    |Chráněno|Standardní ohraničení s úchyty pro změnu velikosti: ovládací prvek může být velikosti a přesunutí. Je přístupný interně třídu, která jej deklaruje a jakoukoli třídu, která dědí z nadřazené třídy, ale není přístupná externím třídy.|  
+    |Chráněné vnitřní (chráněné spřátelené v jazyce Visual Basic)|Standardní ohraničení s úchyty pro změnu velikosti: ovládací prvek může být velikosti a přesunutí. Je přístupný interně třídu, která jej deklaruje, všechny třídy, která dědí z nadřazené třídy a ostatní členové sestavení, který jej obsahuje.|  
+    |Interním (spřátelené v jazyce Visual Basic)|Standardní ohraničení s žádné úchyty pro změnu velikosti zobrazen ve formuláři, vlastnosti, které jsou viditelné v **vlastnosti** okna. Nicméně všechny aspekty ovládacího prvku se budou považovat za jen pro čtení. Nelze přesunout nebo velikost ovládacího prvku nebo změnit jeho vlastnosti. Pokud je ovládací prvek kontejneru jiných ovládacích prvků, jako je skupinový rámeček nové ovládací prvky nelze přidat, a nelze ji odebrat existující ovládací prvky, i v případě, že tyto ovládací prvky byly veřejné. Ovládací prvek je přístupný pouze ostatní členové sestavení, který jej obsahuje.|  
+    |Soukromé|Standardní ohraničení s žádné úchyty pro změnu velikosti zobrazen ve formuláři, vlastnosti, které jsou viditelné v **vlastnosti** okna. Nicméně všechny aspekty ovládacího prvku se budou považovat za jen pro čtení. Nelze přesunout nebo velikost ovládacího prvku nebo změnit jeho vlastnosti. Pokud je ovládací prvek kontejneru jiných ovládacích prvků, jako je skupinový rámeček nové ovládací prvky nelze přidat, a nelze ji odebrat existující ovládací prvky, i v případě, že tyto ovládací prvky byly veřejné. Ovládací prvek je přístupný pouze pomocí třídy, která jej deklaruje.|  
   
-     Informace o tom, jak změnit vzhled podkladového formuláře najdete v tématu [účinky úpravy vzhledu základního formuláře](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md).  
+     Informace o tom, jak změnit vzhled podkladového formuláře, naleznete v tématu [účinky úpravy vzhledu základního formuláře](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md).  
   
     > [!NOTE]
-    >  Když zkombinujete s standardní ovládací prvky a součásti v rozhraní Windows Forms zděděné ovládací prvky a součásti, můžete se setkat je v konfliktu s pořadí z-ordering. Můžete to vyřešit změnou pořadí, které se provádí v kliknete na **formátu** nabídky, přejdete na příkaz **pořadí**a pak levým na **přenést dopředu** nebo  **Přenést do pozadí**. Další informace o pořadí vykreslování ovládacích prvků najdete v tématu [postup: vrstva objektů ve formulářích Windows](../../../../docs/framework/winforms/controls/how-to-layer-objects-on-windows-forms.md).  
+    >  Když zkombinujete zděděný ovládací prvky a součásti se standardní ovládací prvky a komponenty v aplikaci Windows Forms, může dojít, je v konfliktu s pořadí vykreslování. Můžete tento problém můžete vyřešit tak, že upravíte pořadí vykreslování, které se provádí v klikněte na **formátu** nabídky, přejdete na **pořadí**a pak levým na **přenést dopředu** nebo  **Přenést do pozadí**. Další informace o pořadí vykreslování ovládacích prvků naleznete v tématu [jak: objekty vrstvy v modelu Windows Forms](../../../../docs/framework/winforms/controls/how-to-layer-objects-on-windows-forms.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Příkaz Inherits](~/docs/visual-basic/language-reference/statements/inherits-statement.md)  

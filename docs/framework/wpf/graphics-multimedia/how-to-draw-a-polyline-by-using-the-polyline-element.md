@@ -8,35 +8,35 @@ helpviewer_keywords:
 - lines [WPF], connected (see polylines)
 - drawing [WPF], polylines
 ms.assetid: 65db8935-d047-4295-87c4-b427ff3ad293
-ms.openlocfilehash: 2abfa29f7aca4bfc8c5f91e36fd974093a98a9e3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d065d3cead1ed9746a9615ce2bb6d3ec4cbd614d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33561758"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43394413"
 ---
 # <a name="how-to-draw-a-polyline-by-using-the-polyline-element"></a>Postupy: Vykreslení lomené čáry použitím elementu lomené čáry
-Tento příklad ukazuje, jak k vykreslení čar, což je pomocí řady připojené řádky, <xref:System.Windows.Shapes.Polyline> elementu.  
+Tento příklad ukazuje způsob vykreslení lomené čáry, která je řada spojené čáry pomocí <xref:System.Windows.Shapes.Polyline> elementu.  
   
- Kreslení čar, vytvořit <xref:System.Windows.Shapes.Polyline> elementu a použít jeho <xref:System.Windows.Shapes.Polyline.Points%2A> vlastnosti k určení vrcholy obrazce. Nakonec použijte <xref:System.Windows.Shapes.Shape.Stroke%2A> a <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> vlastnosti k popisu lomenou čáru popisují, protože řádek bez tahu neviditelná.  
+ Vykreslení lomené čáry, vytvořit <xref:System.Windows.Shapes.Polyline> elementu a použijte jeho <xref:System.Windows.Shapes.Polyline.Points%2A> vlastnosti a určit tak vrcholů obrazce. Nakonec použijte <xref:System.Windows.Shapes.Shape.Stroke%2A> a <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> vlastností, které popisují lomenou čáru popisují, protože je neviditelný řádek bez tah.  
   
 > [!NOTE]
->  Protože <xref:System.Windows.Shapes.Polyline> element není uzavřený obrazec <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnost nemá žádný vliv, i když úmyslně zavřete obrys tvaru. K vytvoření uzavřený obrazec s <xref:System.Windows.Shapes.Shape.Fill%2A>, používat <xref:System.Windows.Shapes.Polygon> elementu.  
+>  Protože <xref:System.Windows.Shapes.Polyline> element není uzavřený obrazec <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnost nemá žádný účinek, i když záměrně zavřete Obrys obrazce. K vytvoření zavřeného tvaru pomocí <xref:System.Windows.Shapes.Shape.Fill%2A>, použijte <xref:System.Windows.Shapes.Polygon> elementu.  
   
- Následující příklad nevykresluje dva <xref:System.Windows.Shapes.Polyline> elementy uvnitř <xref:System.Windows.Controls.Canvas>.  
+ Následující příklad nakreslí dva <xref:System.Windows.Shapes.Polyline> elementů v rámci <xref:System.Windows.Controls.Canvas>.  
   
 ## <a name="example"></a>Příklad  
- V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], platná syntaxe pro body je mezerami oddělený seznam párů textový soubor s oddělovači x - a -souřadnici y.  
+ V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], platnou syntaxi pro body je mezerami oddělený seznam párů oddělených čárkou x a y souřadnice.  
   
  [!code-xaml[drawingwithshapeelements#PolylineExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/polylineexample.xaml#polylineexample1)]  
   
- I když tento příklad používá <xref:System.Windows.Controls.Canvas> tak, aby obsahovala čáru lomených, můžete použít prvky lomenou čáru (a všechny ostatní elementy obrazce) s žádným <xref:System.Windows.Controls.Panel> nebo <xref:System.Windows.Controls.Control> bez textového obsahu, která podporuje.  
+ Přestože tento příklad používá <xref:System.Windows.Controls.Canvas> tak, aby obsahovala čáru lomených, můžete použít prvky lomenou čáru (a všechny ostatní prvky tvar) s žádným <xref:System.Windows.Controls.Panel> nebo <xref:System.Windows.Controls.Control> , který podporuje netextový obsah.  
   
- Tato ukázka je součástí větší ukázky; Kompletní příklad, najdete v části [ukázka elementy tvaru](http://go.microsoft.com/fwlink/?LinkID=160037).  
+ V tomto příkladu je součástí větší ukázky; úplnou ukázku najdete v tématu [ukázka prvky tvar](https://go.microsoft.com/fwlink/?LinkID=160037).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Shapes.Polyline>  
  <xref:System.Windows.Shapes.Polygon>  
  <xref:System.Windows.Shapes.Shape>  
- [Ukázka elementy obrazce](http://go.microsoft.com/fwlink/?LinkID=160037)  
+ [Ukázka elementy obrazce](https://go.microsoft.com/fwlink/?LinkID=160037)  
  [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)

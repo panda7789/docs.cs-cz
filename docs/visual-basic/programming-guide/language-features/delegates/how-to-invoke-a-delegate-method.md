@@ -2,17 +2,17 @@
 title: 'Postupy: Volání metody delegáta (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: b56866ae-abf9-4a5a-a855-486359455e9c
-ms.openlocfilehash: aca87dd9fa1990d44c99aab7753f2fd7d508adc1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9fea3ddbc9fb553041671713a64e4b866ee38b50
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33646949"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43392435"
 ---
 # <a name="how-to-invoke-a-delegate-method-visual-basic"></a>Postupy: Volání metody delegáta (Visual Basic)
-Tento příklad ukazuje, jak přidružit metody delegáta a pak volání této metody prostřednictvím delegáta.  
+Tento příklad ukazuje, jak přidružit metodu delegáta a poté vyvolat tuto metodu prostřednictvím delegáta.  
   
-### <a name="create-the-delegate-and-matching-procedures"></a>Vytvořit odpovídající postupů a delegování  
+### <a name="create-the-delegate-and-matching-procedures"></a>Vytvoření delegáta a odpovídající procedur  
   
 1.  Vytvoření delegáta s názvem `MySubDelegate`.  
   
@@ -20,7 +20,7 @@ Tento příklad ukazuje, jak přidružit metody delegáta a pak volání této m
     Delegate Sub MySubDelegate(ByVal x As Integer)  
     ```  
   
-2.  Třída, která obsahuje metodu se stejným podpisem jako delegáta deklarujte.  
+2.  Deklarujte třídu, která obsahuje metodu s stejný podpis jako delegát.  
   
     ```  
     Class class1  
@@ -30,7 +30,7 @@ Tento příklad ukazuje, jak přidružit metody delegáta a pak volání této m
     End Class  
     ```  
   
-3.  Zadejte metodu, která vytvoří instanci delegáta a vyvolá metodu spojenou s delegátem voláním integrované `Invoke` metoda.  
+3.  Definujte metodu, která vytvoří instanci delegáta a vyvolá metodu spojenou s delegátem voláním předdefinované `Invoke` metody.  
   
     ```  
     Protected Sub DelegateTest()  
@@ -46,4 +46,4 @@ Tento příklad ukazuje, jak přidružit metody delegáta a pak volání této m
  [Příkaz Delegate](../../../../visual-basic/language-reference/statements/delegate-statement.md)  
  [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)  
  [Události](../../../../visual-basic/programming-guide/language-features/events/index.md)  
- [Vícevláknové aplikace](http://msdn.microsoft.com/library/a06a1a56-dd16-44e8-bc01-2c2255511bc6)
+ [Vícevláknové aplikace](https://msdn.microsoft.com/library/a06a1a56-dd16-44e8-bc01-2c2255511bc6)

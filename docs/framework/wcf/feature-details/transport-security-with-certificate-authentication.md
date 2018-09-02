@@ -6,34 +6,34 @@ dev_langs:
 ms.assetid: 3d726b71-4d8b-4581-a3bb-02b9af51d11b
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: a4f29d9ac34437431a95a247ef1e7aa5c9084c36
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2da7a304af613920449e925e3bb43b350f556e6a
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33499073"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43394184"
 ---
 # <a name="transport-security-with-certificate-authentication"></a>Zabezpečení přenosu s ověřováním certifikátu
-Toto téma popisuje, když pomocí zabezpečení přenosu pomocí certifikátů X.509 pro server a ověření klienta. Další informace o X.509 certifikátů najdete v části [veřejný klíč certifikáty X.509](http://msdn.microsoft.com/library/bb540819\(VS.85\).aspx). Certifikáty musí být vydaný certifikační autoritou, což se často stává třetích stran vystavitelů certifikátů. V doméně systému Windows Server Active Directory Certificate Services slouží k vydávání certifikátů pro klientské počítače v doméně. Další informace najdete v části [certifikační služby systému Windows 2008 R2](http://go.microsoft.com/fwlink/?LinkID=209949&clcid=0x409). V tomto scénáři je služba hostována v části Internetové informační služby (IIS), který je konfigurován s vrstvy SSL (Secure Sockets). Služba je nakonfigurována pomocí certifikátu protokolu SSL (X.509), aby se klienti k ověření identity serveru. Klient je také nakonfigurovaný se certifikát X.509, který umožňuje službě k ověření identity klienta. Klient musí důvěřovat certifikátu serveru a certifikát klienta musí být důvěryhodný pro server. Skutečné mechanismů jak klienta a služby ověří identitu uživatele toho druhého je nad rámec tohoto tématu. Další informace najdete v části [digitální podpis na webu Wikipedia](http://go.microsoft.com/fwlink/?LinkId=253157).  
+Toto téma popisuje, při použití zabezpečení přenosu pomocí certifikátů X.509 pro ověření klienta a serveru. Další informace o X.509 certifikátů najdete v části [veřejný klíč certifikátů X.509](https://msdn.microsoft.com/library/bb540819\(VS.85\).aspx). Certifikáty musí být vystavené certifikační autority, což se často stává třetích stran vystavitelů certifikátů. V doméně systému Windows Server Active Directory Certificate Services slouží k vydávání certifikátů pro klientské počítače v doméně. Další informace najdete v části [Windows 2008 R2 Certificate Services](https://go.microsoft.com/fwlink/?LinkID=209949&clcid=0x409). V tomto scénáři je služba hostována v části Internetová informační služba (), který je nakonfigurovaný s vrstvy SSL (Secure Sockets). Služba je nakonfigurována s certifikátem protokolu SSL (X.509) a umožňuje klientům ověřit identitu serveru. Klient je také nakonfigurováno s certifikát X.509, který umožňuje službě k ověření identity klienta. Klient musí důvěřovat certifikátu serveru a server musí důvěřovat certifikátu klienta. Skutečné mechanismu jak klienta a služby ověří identitu uživatele toho druhého je nad rámec tohoto tématu. Další informace najdete v části [digitální podpis v encyklopedii Wikipedia](https://go.microsoft.com/fwlink/?LinkId=253157).  
   
- Tento scénář implementuje vzor zprávu požadavku/odpovědi vidíte na následujícím diagramu.  
+ Tento scénář implementuje vzoru zprávy požadavku/odpovědi, jak je znázorněno v následujícím diagramu.  
   
- ![Zabezpečení přenosu pomocí certifikátů](../../../../docs/framework/wcf/feature-details/media/8f7b8968-899f-4538-a9e8-0eaa872a291c.gif "8f7b8968-899f-4538-a9e8-0eaa872a291c")  
+ ![Vyžádání bezpečného přenosu pomocí certifikátů](../../../../docs/framework/wcf/feature-details/media/8f7b8968-899f-4538-a9e8-0eaa872a291c.gif "8f7b8968-899f-4538-a9e8-0eaa872a291c")  
   
- Další informace o certifikát pomocí služby najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md) a [postup: Nakonfigurujte certifikát protokolu SSL Port](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md). Následující tabulka popisuje různé vlastnosti scénáře.  
+ Další informace o pomocí certifikátu služby najdete v tématu [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md) a [postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md). Následující tabulka popisuje vlastnosti různé scénáře.  
   
-|Vlastnosti|Popis|  
+|Vlastnost|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení.|Přenos|  
+|Režim zabezpečení|Přenos|  
 |Interoperabilita|S existující klienty webové služby a služby.|  
-|Ověřování (Server)<br /><br /> Ověřování (klient)|Ano (pomocí certifikátu protokolu SSL)<br /><br /> Ano (pomocí certifikátu X.509)|  
-|Integritu dat|Ano|  
-|Důvěrnost dat|Ano|  
+|Ověření (Server)<br /><br /> Ověření (klient)|Ano (použití certifikátu SSL)<br /><br /> Ano (pomocí certifikátu X.509)|  
+|Integrita dat|Ano|  
+|Zajištění anonymity dat.|Ano|  
 |Přenos|HTTPS|  
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="configure-the-service"></a>Konfigurace služby  
- Vzhledem k tomu, že služba v tomto scénáři je hostována v rámci služby IIS, je nakonfigurován pomocí souboru web.config. Následující soubor web.config ukazuje, jak nakonfigurovat <xref:System.ServiceModel.WSHttpBinding> sloužící k zabezpečení přenosů a pověření klienta X.509.  
+ Protože služba v tomto scénáři je hostována v rámci služby IIS, je nakonfigurován se souborem web.config. Následující soubor web.config ukazuje postup při konfiguraci <xref:System.ServiceModel.WSHttpBinding> použít k zabezpečení přenosů a přihlašovací údaje klienta X.509.  
   
 ```xml  
 <configuration>  
@@ -64,7 +64,7 @@ Toto téma popisuje, když pomocí zabezpečení přenosu pomocí certifikátů 
 ```  
   
 ## <a name="configure-the-client"></a>Konfigurace klienta  
- Klienta můžete nakonfigurovat v kódu nebo v souboru app.config. Následující příklad ukazuje, jak nakonfigurovat klienta v kódu.  
+ Klientovi lze nastavit v kódu nebo v souboru app.config. Následující příklad ukazuje, jak nakonfigurovat klienta v kódu.  
   
 ```vb  
 // Create the binding.  
@@ -98,7 +98,7 @@ Console.WriteLine(cc.Add(100, 1111));
 cc.Close();  
 ```  
   
- Případně můžete nakonfigurovat klienta do souboru App.config, jak je znázorněno v následujícím příkladu:  
+ Případně můžete nakonfigurovat klienta v souboru App.config, jak je znázorněno v následujícím příkladu:  
   
 ```xml  
 <configuration>  
@@ -141,4 +141,4 @@ cc.Close();
   
 ## <a name="see-also"></a>Viz také  
  [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Model zabezpečení pro Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+ [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

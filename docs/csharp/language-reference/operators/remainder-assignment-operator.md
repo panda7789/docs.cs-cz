@@ -8,11 +8,11 @@ helpviewer_keywords:
 - '%= assignment operator (remainder assignment) [C#]'
 ms.assetid: 47e5f068-1d97-4010-bd3b-e21b5d3a77f5
 ms.openlocfilehash: 009c162b13fab05ba349d0535fe8dfae206502f3
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42998653"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43399488"
 ---
 # <a name="-operator-c-reference"></a>%= – operátor (Referenční dokumentace jazyka C#)
 Operátor přiřazení zbytku.  

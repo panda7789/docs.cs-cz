@@ -19,12 +19,12 @@ helpviewer_keywords:
 - data type conversion [Visual Basic], exceptions during conversion
 - conversions [Visual Basic], widening
 ms.assetid: 058c3152-6c28-4268-af44-2209e774f0bd
-ms.openlocfilehash: e574c20ec259953fea4b11d8f65e546373a4fe8c
-ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
+ms.openlocfilehash: ad49e5443016dc4fed57be4a991df9f6d6095b55
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332571"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43391391"
 ---
 # <a name="widening-and-narrowing-conversions-visual-basic"></a>Rozšíření a zúžení převodů (Visual Basic)
 Což je důležité při převodu typu je, zda výsledkem převodu je v rozsahu cílového datového typu.  
@@ -114,5 +114,5 @@ shape = square
  [Převody mezi řetězci a ostatními typy](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)  
  [Postupy: převedení objektu na jiný typ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)  
  [Převody polí](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)  
- [Datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
  [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)

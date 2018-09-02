@@ -2,18 +2,18 @@
 title: Přijetí WCF
 ms.date: 03/30/2017
 ms.assetid: 49ba71e2-9468-4082-84c5-cf8daf95e34a
-ms.openlocfilehash: 3ca2561356fb57fa685c778e509682581e317092
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 5773d2687eb06cfc562dbe25fa9b94864b1b3a49
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42999330"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43389609"
 ---
 # <a name="adopting-windows-communication-foundation"></a>Přijetí WCF
 
 Můžete použít Windows Communication Foundation (WCF) pro vývoj nových projektů, když budete pokračovat k údržbě stávajících aplikací vyvinutých pomocí technologie ASP.NET. Protože WCF má být nejvhodnější volbou pro usnadnění komunikace s aplikací vytvořených pomocí rozhraní .NET Framework ve všech scénářích, může sloužit jako standardní nástroj pro řešení nejrůznější komunikační problémy se softwarem způsobem, že technologie ASP.NET nelze provést.
 
-Nové aplikace WCF je nasadit na stejných počítačů jako existující webové služby ASP.NET. Pokud existujících webových služeb ASP.NET s používat verzi rozhraní .NET Framework starší než verze 2.0, můžete používat ASP.NET IIS Registration Tool selektivně nasazení do aplikace služby IIS, ve kterých jsou nové aplikace WCF zajistit také jejich hostování rozhraní .NET Framework 2.0. Tento nástroj je popsána v [registrační nástroj služby IIS technologie ASP.NET (Aspnet_regiis.exe)](http://go.microsoft.com/fwlink/?LinkId=94687), a je součástí uživatelského rozhraní konzoly pro správu služby IIS 6.0.
+Nové aplikace WCF je nasadit na stejných počítačů jako existující webové služby ASP.NET. Pokud existujících webových služeb ASP.NET s používat verzi rozhraní .NET Framework starší než verze 2.0, můžete používat ASP.NET IIS Registration Tool selektivně nasazení do aplikace služby IIS, ve kterých jsou nové aplikace WCF zajistit také jejich hostování rozhraní .NET Framework 2.0. Tento nástroj je popsána v [registrační nástroj služby IIS technologie ASP.NET (Aspnet_regiis.exe)](https://go.microsoft.com/fwlink/?LinkId=94687), a je součástí uživatelského rozhraní konzoly pro správu služby IIS 6.0.
 
 WCF slouží k přidání nových funkcí do existující webové služby ASP.NET tak, že přidáte služby WCF, které jsou nakonfigurovány na spouštění v režimu kompatibility ASP.NET do stávajících aplikací technologie ASP.NET webové služby ve službě IIS. Z důvodu režim kompatibility ASP.NET, můžete používat a aktualizovat stejné informace o stavu aplikace jako již existující kód technologie ASP.NET, pomocí kódu pro nové služby WCF <xref:System.Web.HttpContext> třídy. Aplikace můžou také sdílet stejné knihovny tříd.
 

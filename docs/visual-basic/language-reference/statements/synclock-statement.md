@@ -10,11 +10,11 @@ helpviewer_keywords:
 - locks, threads
 ms.assetid: 14501703-298f-4d43-b139-c4b6366af176
 ms.openlocfilehash: 6f5a89ebe359ca2fdae1d5545192dc2dcecca6a2
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39244154"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43401372"
 ---
 # <a name="synclock-statement"></a>SyncLock – příkaz
 Získá výhradní zámek pro blok příkazů, který před spuštěním bloku.  

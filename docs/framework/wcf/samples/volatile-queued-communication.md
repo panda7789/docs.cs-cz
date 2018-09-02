@@ -2,28 +2,29 @@
 title: Nestálá komunikace ve frontě
 ms.date: 03/30/2017
 ms.assetid: 0d012f64-51c7-41d0-8e18-c756f658ee3d
-ms.openlocfilehash: b03bfff66cb9bed7ea9f1514d25096cf6b79f88a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 55c2b695cdc672216ef6a76bef55bc0d427336a0
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43394017"
 ---
 # <a name="volatile-queued-communication"></a>Nestálá komunikace ve frontě
-Tento příklad znázorňuje, jak provádět nestálá komunikace ve frontě prostřednictvím přenosu služby Řízení front zpráv (MSMQ). V tomto příkladu <xref:System.ServiceModel.NetMsmqBinding>. Služba je v tomto případě vlastním hostováním konzolové aplikace, které vám umožňují sledovat službu přijetí zprávy ve frontě.  
+Tento příklad ukazuje, jak provádět nestálá komunikace ve frontě prostřednictvím přenosu služby Řízení front zpráv (MSMQ). Tato ukázka používá <xref:System.ServiceModel.NetMsmqBinding>. Služby v tomto případě je v místním prostředí konzolovou aplikaci pro vám umožní sledovat službu přijímání zpráv zařazených do fronty.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- V komunikaci ve frontě klient komunikuje se služby pomocí fronty. Přesněji řečeno klient odešle zprávy do fronty. Služba přijímá zprávy z fronty. Služba a klient proto nemusíte používat současně na komunikaci pomocí fronty.  
+ V komunikaci ve frontě klient komunikuje se služby pomocí fronty. Přesněji řečeno klient odešle zprávy do fronty. Služba přijímá zprávy z fronty. Klienta a služby, proto není potřeba běžet současně na komunikaci pomocí fronty.  
   
- Když odešlete zprávu s žádné záruky, MSMQ pouze zajistí usilovně pro doručení zprávy, na rozdíl od s přesně jednou záruky kde MSMQ zajišťuje, že zpráva získá doručit nebo, pokud nelze doručit, vám oznamuje, že zprávu nelze doručit.  
+ Při odesílání zprávy s žádné záruky MSMQ pouze díky nezaručené doručit zprávu, na rozdíl od s přesně jednou záruky kde MSMQ zajišťuje, že zprávy dorazí nebo, pokud nelze doručit, vám oznamuje, že zprávu nelze doručit.  
   
- V některých scénářích můžete odeslat zprávu volatile s žádné záruky prostřednictvím fronty, když včas doručení je důležitější než došlo ke ztrátě zpráv. Volatile zprávy není zachována i po ukončení fronty manager dojde k chybě. Proto pokud dojde k chybě správce front, odolává netransakční fronty používají k ukládání volatile zprávy, ale zprávy sami provést, protože zprávy nejsou uložené na disku.  
+ V některých případech můžete chtít odeslat zprávu volatile s žádné záruky ve frontě, když včasné doručení je mnohem důležitější než došlo ke ztrátě zpráv. Volatile zprávy nepřežije chyb Správce fronty. Proto pokud dojde k chybě správce fronty, odolává netransakční fronta slouží k ukládání zpráv volatile, ale samotné zprávy proveďte není, protože zprávy není uloženo na disk.  
   
 > [!NOTE]
->  Volatile zprávy s žádné záruky, pokud nelze odeslat v rámci oboru transakci pomocí služby MSMQ. Také musíte vytvořit netransakční fronty pro odesílání volatile zpráv.  
+>  Nelze odesílat nestálá zprávy s žádné záruky v rámci oboru transakce pomocí služby MSMQ. Také musíte vytvořit transakční fronty pro odesílání zpráv typu volatile.  
   
- Kontrakt služby v této ukázce je `IStockTicker` jednosměrné služby, které jsou nejvhodnější pro použití se službou Řízení front, který definuje.  
+ Kontrakt služby v této ukázce je `IStockTicker` , který definuje jednosměrné služby, které jsou nejvhodnější pro použití se službou Řízení front.  
 
 ```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -34,7 +35,7 @@ public interface IStockTicker
 }  
 ```
 
- Operace služby zobrazí symbol běžícími a ceny, jak je znázorněno v následujícím ukázkovém kódu:  
+ Operace služby zobrazí symbol akciích a ceny, jak je znázorněno v následujícím ukázkovém kódu:  
   
 ```csharp
 public class StockTickerService : IStockTicker  
@@ -47,7 +48,7 @@ public class StockTickerService : IStockTicker
 }  
 ```  
   
- Služba je sám sebou hostované. Pokud používáte přenos MSMQ, používá fronty musí být vytvořeny předem. Tento krok můžete provést ručně nebo prostřednictvím kódu. V této ukázce služba obsahuje kód pro Zkontrolujte existenci fronty a vytvořte ji v případě potřeby. Název fronty je číst z konfiguračního souboru. Základní adresa se používá [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování proxy pro službu.  
+ Tato služba je vlastní hostované. Při použití přenosu služby MSMQ, fronty, používá se musí vytvořit předem. To můžete udělat ručně nebo prostřednictvím kódu. V této ukázce služby obsahuje kód pro provedení kontroly existence fronty a v případě potřeby ji vytvořit. Název fronty načítají z konfiguračního souboru. Základní adresa je používána [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generovat proxy pro službu.  
 
 ```csharp
 // Host the service within this EXE console application.  
@@ -78,12 +79,12 @@ public static void Main()
 }  
 ```
 
- Název fronty služby MSMQ je zadán v oddílu appSettings konfiguračního souboru. Koncový bod pro službu je definováno v sekci system.serviceModel konfiguračního souboru a určuje `netMsmqBinding` vazby.  
+ Název fronty MSMQ je definováno v sekci appSettings konfiguračního souboru. Koncový bod služby je definován v oddíle system.serviceModel konfiguračního souboru a určuje, `netMsmqBinding` vazby.  
   
 > [!NOTE]
->  Název fronty používá tečku (.) pro místní počítač a zpětné lomítko oddělovače v cestě, při vytváření fronty pomocí <xref:System.Messaging>. Adresa koncového bodu služby Windows Communication Foundation (WCF) určuje net.msmq: scheme, používá "localhost" pro místní počítač a lomítkem v jeho cesty.  
+>  Název fronty používá tečku (.) pro místní počítače a zpětné lomítko oddělovače v cestě při vytvoření fronty pomocí <xref:System.Messaging>. Určuje adresu koncového bodu služby Windows Communication Foundation (WCF) net.msmq: schéma, použije "localhost" pro místní počítače a lomítka v cestě.  
   
- Záruky a odolnost nebo volatility zpráv jsou také zadaný v konfiguraci.  
+ Záruky a odolnost ani nestálost zpráv, které jsou také určená v konfiguraci.  
   
 ```xml  
 <appSettings>  
@@ -116,7 +117,7 @@ public static void Main()
 </system.serviceModel>  
 ```  
   
- Protože ukázku odesílá zprávy ve frontě pomocí netransakční fronty, nelze odeslat zpracovaných zpráv do fronty.  
+ Protože vzorku odesílá zprávy ve frontě pomocí netransakční fronta, ty zprávy, které nelze odeslat do fronty.  
 
 ```csharp
 // Create a client.  
@@ -135,7 +136,7 @@ for (int i = 0; i < 10; i++)
 client.Close();  
 ```
 
- Při spuštění ukázky činnosti klienta a služby se zobrazí v oknech konzoly služby a klienta. Uvidíte služby přijmout zprávy z klienta. Stisknutím klávesy ENTER v každé okna konzoly vypnout klienta a služby. Všimněte si, že vzhledem k tomu, že služby Řízení front se používá, klient a služba nemusí být spuštěná ve stejnou dobu. Spuštění klienta, vypněte ho a potom spuštění služby a stále přijímá jeho zprávy.  
+ Při spuštění ukázky činnosti klienta a služby se zobrazují v oknech konzoly služby a klienta. Můžete zobrazit přijetí zprávy služby z klienta. Stisknutím klávesy ENTER v každé okno konzoly pro vypnutí klienta a služby. Mějte na paměti, protože služba Řízení front se používá, klient a služba nemusí být zprovoznit ve stejnou dobu. Můžete spustit klienta, vypněte ho a spusťte službu a stále přijímá zprávy.  
   
 ```  
 The service is ready.  
@@ -153,19 +154,19 @@ Stock Tick zzz8:43.32
 Stock Tick zzz9:43.3  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
- Ve výchozím nastavení se <xref:System.ServiceModel.NetMsmqBinding>, je povoleno zabezpečení přenosu. Existují dvě relevantní vlastnosti pro zabezpečení přenosu služby MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` ve výchozím nastavení je režim ověřování nastaven na `Windows` a úroveň ochrany je nastavena na `Sign`. Pro služby MSMQ k ověřování a podepisování funkce musí být součástí domény a možnost integrace služby active directory pro službu MSMQ musí být nainstalován. Pokud tuto ukázku spustit na počítači, který nesplňuje tato kritéria obdržíte chybu.  
+ Ve výchozím nastavení se <xref:System.ServiceModel.NetMsmqBinding>, je povoleno zabezpečení přenosu. Existují dvě relevantní vlastnosti pro zabezpečení přenosu služby MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` výchozí režim ověřování nastaven na `Windows` a aby úroveň ochrany je nastavená na `Sign`. Pro službu MSMQ. k ověřování a podepisování funkce musí být součástí domény a možnost integrace služby active directory pro službu MSMQ musí být nainstalována. Pokud tuto ukázku spustit na počítači, který nevyhovuje těmto kritériím zobrazí chybová zpráva.  
   
 ### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a>Ke spuštění ukázky na počítač připojen k pracovní skupině nebo bez integrace služby active directory  
   
-1.  Pokud počítač není součástí domény nebo nemá nainstalované integrační služby active directory, vypněte zabezpečení přenosu podle nastavení úrovně režim a ochrany ověřování na `None` jak je znázorněno v následujícím ukázkovém kódu konfigurace:  
+1.  Pokud počítač není součástí domény nebo nemá nainstalované integrace služby active directory, vypněte zabezpečení přenosu nastavením úroveň ověření režimu a ochrany na `None` jak je znázorněno v následujícím ukázkovém kódu konfigurace:  
   
     ```xml  
     <system.serviceModel>  
@@ -212,17 +213,17 @@ Stock Tick zzz9:43.3
       </system.serviceModel>  
     ```  
   
-2.  Ujistěte se, změnit konfiguraci na serveru a klienta, před spuštěním ukázky.  
+2.  Ujistěte se, že změníte konfiguraci na serveru a klienta, před spuštěním ukázky.  
   
     > [!NOTE]
     >  Nastavení `security mode` k `None` je ekvivalentní nastavení <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>, a `Message` zabezpečení `None`.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Volatile`  
   

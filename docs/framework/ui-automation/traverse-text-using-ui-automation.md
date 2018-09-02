@@ -12,24 +12,24 @@ ms.assetid: 3ddb3b7b-1d6b-4dba-8678-5a68e868aadb
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 99f2f94d387858a657abab9ed9f762d4a7ee8f03
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7353ad142bb276cde1c6fb0ff0c6dcf03b699aeb
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33407643"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43388660"
 ---
 # <a name="traverse-text-using-ui-automation"></a>Procházení textu s použitím automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Toto téma ukazuje, jak používat [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] procházení textový obsah dokumentu podle <xref:System.Windows.Automation.Text.TextUnit> přírůstcích.  
+ Toto téma ukazuje, jak používat [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] k procházení textový obsah dokument <xref:System.Windows.Automation.Text.TextUnit> přírůstky.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak procházet obsah textu zprostředkovatele automatizace uživatelského rozhraní. <xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> Metoda přesune <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> a <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> koncové body <xref:System.Windows.Automation.Text.TextPatternRange>. Tento text rozsah je obvykle degenerovanou rozsah představující bod pro vložení textu.  
+ Následující příklad kódu ukazuje, jak procházet obsah textu zprostředkovatele automatizace uživatelského rozhraní. <xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> Metoda přesune <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> a <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> koncové body <xref:System.Windows.Automation.Text.TextPatternRange>. Tento rozsah textu je obvykle degenerovanou rozsah reprezentující kurzor.  
   
 > [!NOTE]
->  Od jen založený na textu vložené objekty jsou považovány za součást text datového proudu, vložené objekty, například bitové kopie neovlivní `Move` nebo hodnoty.  
+>  Od té doby pouze textové vložené objekty jsou považovány za součást textového datového proudu, vložené objekty, jako jsou obrázky nemají vliv na `Move` nebo jeho návratovou hodnotu.  
   
  [!code-csharp[FindText#StartApp](../../../samples/snippets/csharp/VS_Snippets_Wpf/FindText/CSharp/SearchWindow.cs#startapp)]
  [!code-vb[FindText#StartApp](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FindText/VisualBasic/SearchWindow.vb#startapp)]  
@@ -38,7 +38,7 @@ ms.locfileid: "33407643"
 [!code-csharp[FindText#Navigate](../../../samples/snippets/csharp/VS_Snippets_Wpf/FindText/CSharp/SearchWindow.cs#navigate)]
 [!code-vb[FindText#Navigate](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FindText/VisualBasic/SearchWindow.vb#navigate)]  
   
- Každá metoda používající <xref:System.Windows.Automation.Text.TextUnit> bude odložení na další největší <xref:System.Windows.Automation.Text.TextUnit> podporované v případě danou <xref:System.Windows.Automation.Text.TextUnit> nepodporuje ovládací prvek.  
+ Každá metoda používající <xref:System.Windows.Automation.Text.TextUnit> bude odložit na další největší <xref:System.Windows.Automation.Text.TextUnit> podporované if daný <xref:System.Windows.Automation.Text.TextUnit> není podporována ovládacím prvkem.  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled prvku TextPattern automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-textpattern-overview.md)  

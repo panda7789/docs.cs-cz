@@ -5,11 +5,11 @@ author: mgroves
 ms.date: 03/06/2017
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
 ms.openlocfilehash: db6db50ac59e804225bdc11c435fef3d53fa685e
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43258608"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43390516"
 ---
 # <a name="using-attributes-in-c"></a>Použití atributů v jazyce C# #
 

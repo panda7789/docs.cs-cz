@@ -2,50 +2,51 @@
 title: Řízení spotřeby prostředků a zlepšení výkonu
 ms.date: 03/30/2017
 ms.assetid: 9a829669-5f76-4c88-80ec-92d0c62c0660
-ms.openlocfilehash: ee94ae7c570156d870b93311365ad52b815f12d5
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 1e0512ce62f5a7b25546e8824a745fdaabb5ec72
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33805522"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43397872"
 ---
 # <a name="controlling-resource-consumption-and-improving-performance"></a>Řízení spotřeby prostředků a zlepšení výkonu
-Toto téma popisuje různé vlastnosti v různých oblastech architektury Windows Communication Foundation (WCF), která fungují pro řízení spotřeby prostředků a ovlivnit metrik výkonu.  
-  
-## <a name="properties-that-constrain-resource-consumption-in-wcf"></a>Vlastnosti, které omezit spotřeby prostředků ve službě WCF  
- Windows Communication Foundation (WCF) platí omezení na určité typy procesů pro účely zabezpečení a výkonu. Tato omezení mají dvě hlavní formy, kvóty a omezení. *Kvóty* jsou limity, které při dosažena nebo překročena spuštění okamžitou výjimky v určitém okamžiku v systému. *Omezí generovaný* jsou limity, které okamžitě nezpůsobí vyvolání výjimky. Místo toho po dosažení limit omezení zpracování pokračuje ale v rámci omezení nastavuje tuto hodnotu omezení. Omezené zpracování může aktivovat jinde výjimku, ale to závisí na aplikaci.  
-  
- Kromě rozdíl mezi kvóty a omezení některé omezující vlastnosti jsou umístěné na úrovni serializace, některé na úrovni přenosu a některé na úrovni aplikace. Například kvótu <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A?displayProperty=nameWithType>, které je implementované všechny prvky vazeb přenosu poskytnuté systémem, je 65 536 bajtů ve výchozím nastavení má bránit škodlivý klienti účastnit denial-of-service útoky na služby tím, že na příliš mnoho paměti Spotřeba. (Obvykle, můžete zvýšit výkon snížením tuto hodnotu.)  
-  
- Příkladem kvótu serializace je <xref:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph%2A?displayProperty=nameWithType> vlastnosti, která určuje maximální počet objektů, které serializátoru, který serializuje a deserializuje v jediném <xref:System.Runtime.Serialization.DataContractSerializer.ReadObject%2A> volání metody. Je například úrovni aplikace omezení <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentSessions%2A?displayProperty=nameWithType> vlastností, která se ve výchozím nastavení omezuje počet souběžných kanálu relací připojení do 10. (Na rozdíl od kvóty, když je dosaženo hodnoty omezení, aplikace pokračuje ve zpracování, ale přijímá nové kanály, relacemi, což znamená, že noví klienti nelze připojit, dokud jeden z dalších relacemi kanálů je zakončeno.)  
-  
- Tyto ovládací prvky jsou určeny k poskytování omezení rizik se na pole vůči určitým typům útoků nebo ke zlepšení výkonu metriky například spotřeba paměti, čas spuštění a tak dále. Ale v závislosti na aplikaci, tyto ovládací prvky mít dopad na výkon aplikace služby nebo zabránit aplikaci v práci vůbec. Například může aplikace navržené tak, aby datový proud videa snadno překročit výchozí <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A?displayProperty=nameWithType> vlastnost. Toto téma obsahuje přehled různých ovládacích prvků použijí na aplikace na všech úrovních služby WCF, popisuje různé způsoby, jak získat další informace o tom, jestli je nastavení brání aplikaci a popisuje, jak opravit různé problémy. Většina omezení a některé kvóty jsou dostupné na úrovni aplikace, i v případě, že je vlastnost základní omezení serializace nebo přenos. Například můžete nastavit <xref:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph%2A?displayProperty=nameWithType> vlastnost pomocí <xref:System.ServiceModel.ServiceBehaviorAttribute.MaxItemsInObjectGraph%2A?displayProperty=nameWithType> vlastnost v třídě služby.  
-  
+Toto téma popisuje různé vlastnosti v různých oblastech Architektura Windows Communication Foundation (WCF), které fungují při řízení spotřeby prostředků a ovlivňují metrik výkonu.
+
+## <a name="properties-that-constrain-resource-consumption-in-wcf"></a>Vlastnosti, které se omezila využití prostředků ve službě WCF
+ Windows Communication Foundation (WCF) platí omezení na určitých typech procesy pro účely zabezpečení ani výkon. Tato omezení se dělí na dvě hlavní formulář, kvóty a omezení. *Kvóty* jsou omezení, která při dosáhlo nebo došlo k překročení spuštění okamžité výjimky v určitém okamžiku v systému. *Omezí* jsou omezení, která okamžitě nevyvolá výjimku, která je vyvolána. Místo toho při dosažení limitu omezení zpracování bude pokračovat, ale v rámci omezení nastavit hodnotu tohoto omezení. Tato omezená zpracování může aktivovat výjimku jinde, ale to závisí na aplikaci.
+
+ Kromě rozdílu mezi kvóty a omezení některé omezující vlastnosti jsou umístěné na úrovni serializace, některé na úrovni přenosu a některé na úrovni aplikace. Například kvóty <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A?displayProperty=nameWithType>, které je implementované všechny elementy vazby přenosu poskytnuté systémem, je 65 536 bajtů ve výchozím nastavení brání škodlivým klientů ze smluvních denial-of-service útoků, které služba způsobením využívala příliš mnoho paměti Spotřeba. (Obvykle můžete zvýšit výkon snížením tuto hodnotu.)
+
+ Příklad kvótu serializace je <xref:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph%2A?displayProperty=nameWithType> vlastnost, která určuje maximální počet objektů, které serializátoru, který serializuje a deserializuje v jediném <xref:System.Runtime.Serialization.DataContractSerializer.ReadObject%2A> volání metody. Je například omezení úrovni aplikace <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentSessions%2A?displayProperty=nameWithType> vlastnosti, která je ve výchozím nastavení omezuje počet souběžných kanál s relacemi připojení k 10. (Na rozdíl od kvóty, při dosažení této hodnoty omezení aplikace pokračuje ve zpracování, ale přijímá žádné nové duplexních kanálů s relacemi, což znamená, že noví klienti nemůžou připojit, dokud jeden z jiných kanálů s relacemi je zakončeno.)
+
+ Tyto ovládací prvky jsou určeny omezení rizik out-of-the-box s určitým typům útoků nebo ke zlepšení výkonu metriky, jako je paměť, čas spuštění a tak dále. Ale v závislosti na aplikaci, tyto ovládací prvky bránit výkonu aplikací služby nebo zabránit aplikaci v pracovní době. Například aplikace navržené tak, aby datový proud videa může snadno překročit výchozí <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A?displayProperty=nameWithType> vlastnost. Toto téma obsahuje přehled různých ovládacích prvků použijí na aplikace na všech úrovních služby WCF, popisuje různé způsoby, jak získat další informace o tom, jestli je nastavení omezování aplikace a způsoby, jak opravit různé problémy. Většinu omezení a některé kvóty jsou k dispozici na úrovni aplikace i v případě, že je vlastnost základní omezení serializace nebo přenos. Například můžete nastavit <xref:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph%2A?displayProperty=nameWithType> pomocí vlastnosti <xref:System.ServiceModel.ServiceBehaviorAttribute.MaxItemsInObjectGraph%2A?displayProperty=nameWithType> vlastnost ve třídě služby.
+
 > [!NOTE]
->  Pokud máte konkrétního problému, měli byste nejprve si přečíst [rychlý start řešení potíží s WCF](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md) a zkontrolujte, zda váš problém (a řešení) uveden existuje.  
-  
- Vlastnosti, které omezují procesy serializace jsou uvedeny v [důležité informace o zabezpečení pro Data](../../../docs/framework/wcf/feature-details/security-considerations-for-data.md). Vlastnosti, které omezují spotřeby materiály související s přenosy jsou uvedeny v [přenosové kvóty](../../../docs/framework/wcf/feature-details/transport-quotas.md). Vlastnosti, které omezují spotřeby prostředků na aplikační vrstvu jsou členy <xref:System.ServiceModel.Dispatcher.ServiceThrottle> třídy.  
-  
-## <a name="detecting-application-and-performance-issues-related-to-quota-settings"></a>Zjišťování aplikace a související s nastavení kvót problémy s výkonem  
- Výchozí hodnoty na předchozí hodnoty rozhodli povolit funkce základní aplikace v rámci řadu různých typů aplikací při současném poskytování základní ochranu před běžné problémy se zabezpečením. Návrhy jinou aplikaci však můžete překročit jeden nebo více nastavení omezení, i když je aplikace, jinak zabezpečené a bude fungovat jako navržená tak. V těchto případech je potřeba určit, které hodnoty omezení jsou právě překročeno na co úrovně a rozhodnout na vhodných opatření, pokud chcete zvýšit propustnost aplikace.  
-  
- Obvykle se při psaní aplikace a ladění, nastavení <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> vlastnost `true` v konfiguračním souboru nebo prostřednictvím kódu programu. Tím se nastaví WCF pro trasování zásobníku výjimky služby vrátí do klientské aplikace pro zobrazení. Tato funkce hlásí většina výjimky na úrovni aplikace v tak, aby zobrazení nastavení kvóty, které může být zahrnut, pokud je problém.  
-  
- Některé výjimky nastávají v době spuštění pod viditelnost aplikační vrstvu a nebudou zobrazeny pomocí tento mechanismus a nemusí být zpracována vlastní <xref:System.ServiceModel.Dispatcher.IErrorHandler?displayProperty=nameWithType> implementace. Pokud jste ve vývojovém prostředí, jako je Microsoft Visual Studio, většinu těchto výjimek se zobrazí automaticky. Ale některé výjimky můžete zamaskovat nastavení prostředí pro vývoj, jako [pouze můj kód](http://go.microsoft.com/fwlink/?LinkId=82174) nastavení v sadě Visual Studio 2005.  
-  
- Bez ohledu na to funkce vývojového prostředí můžete použít možnosti WCF trasování a protokolování zpráv ladit všechny výjimky a vylaďte výkon vaší aplikace. Další informace najdete v tématu [pomocí trasování pro řešení potíží s vaše aplikace](../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md).  
-  
-## <a name="performance-issues-and-xmlserializer"></a>Problémy s výkonem a třídy XmlSerializer  
- Služby a klientské aplikace používající typy dat, které jsou serializovatelný pomocí <xref:System.Xml.Serialization.XmlSerializer> generování a kompilace kódu serializace pro tyto typy dat za běhu, což může vést k pomalé spuštění výkonu.  
-  
+> Pokud máte konkrétního problému, byste si měli nejdřív přečíst [rychlý start řešení potíží s WCF](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md) chcete zobrazit, zda je zde uvedeny váš problém (a řešení).
+
+ Vlastnosti, které omezují procesů serializace jsou uvedeny v [aspekty zabezpečení pro Data](../../../docs/framework/wcf/feature-details/security-considerations-for-data.md). Vlastnosti, které omezují spotřebu prostředků související s přenosy jsou uvedeny v [přenosové kvóty](../../../docs/framework/wcf/feature-details/transport-quotas.md). Jako objekty její členové jsou vlastnosti, které omezují spotřebu prostředků v aplikační vrstvě <xref:System.ServiceModel.Dispatcher.ServiceThrottle> třídy.
+
+## <a name="detecting-application-and-performance-issues-related-to-quota-settings"></a>Detekce aplikací a problémy výkonu týkající se nastavení kvót
+ Výchozí hodnoty předchozí hodnoty zvolili k dosažení funkce základní aplikaci v rámci široký rozsah typů aplikací poskytuje základní ochranu proti běžné problémy se zabezpečením. Návrhy různé aplikace však může překročit minimálně jedno nastavení omezení, i když je zabezpečená jinak aplikace a bude fungovat tak, jak navrženo. V těchto případech je nutné určit, které hodnoty omezení jsou překročení a na co úrovně a rozhodnout o vhodných opatření pro zvýšení propustnosti aplikace.
+
+ Obvykle při psaní aplikace a její ladění, nastavení <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> vlastnost `true` v konfiguračním souboru nebo prostřednictvím kódu programu. Toto dá pokyn WCF se vraťte do klientské aplikace pro zobrazení trasování zásobníku výjimky služby. Tato funkce sestav většina výjimek úrovni aplikace v takovým způsobem, zobrazit nastavení kvóty, které může být zahrnut, pokud je to problém.
+
+ Některé výjimky nastávají v době spuštění pod viditelnost aplikační vrstvu a nejsou vráceny za použití tohoto mechanismu a nemusí být zpracovány vlastní <xref:System.ServiceModel.Dispatcher.IErrorHandler?displayProperty=nameWithType> implementace. Pokud jste ve vývojovém prostředí, jako je Microsoft Visual Studio, zobrazí se automaticky většinu těchto výjimek. Nicméně některé výjimky můžete maskovaná nastavení prostředí vývoje, jako [pouze můj kód](/visualstudio/debugger/just-my-code) sady Visual Studio.
+
+ Bez ohledu na funkce vývojového prostředí můžete použít možnosti WCF trasování a protokolování zpráv všechny výjimky ladění a optimalizace výkonu vaší aplikace. Další informace najdete v tématu [pomocí trasování pro řešení potíží s aplikace](../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md).
+
+## <a name="performance-issues-and-xmlserializer"></a>Problémy s výkonem a XmlSerializer
+ Služby a klientské aplikace, které používají datové typy, které jsou serializovatelné pomocí <xref:System.Xml.Serialization.XmlSerializer> generování a kompilaci Serializační kód pro tyto datové typy v době běhu, což může vést k pomalé spouštění výkonu.
+
 > [!NOTE]
->  Předem vygenerovaná serializace kódu je možné pouze v klientských aplikacích a není v služby.  
-  
- [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) lze vylepšit výkon spuštění pro tyto aplikace generování kódu nezbytné serializace z kompilované sestavení pro aplikaci. Další informace najdete v tématu [postupy: zlepšení spuštění čas klientských aplikací WCF pomocí třídy XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md).  
-  
-## <a name="performance-issues-when-hosting-wcf-services-under-aspnet"></a>Problémy s výkonem při hostování služby WCF v rámci technologie ASP.NET  
- Když je služba WCF hostované na IIS a ASP.NET, nastavení konfigurace služby IIS a ASP.NET může ovlivnit nároky na propustnost a paměti služby WCF.  Další informace o výkonu technologie ASP.NET najdete v tématu [zlepšení výkonu technologie ASP.NET](http://go.microsoft.com/fwlink/?LinkId=186462).  Jedno nastavení, která může mít nežádoucích důsledků je <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A>, což je vlastnost <xref:System.Web.Configuration.ProcessModelSection>. Pokud vaše aplikace má pevnou nebo malý počet klientů, nastavení <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> 2 může poskytovat nárůst propustnosti na počítači s více procesory, který má využití procesoru blíží 100 %. Toto zvýšení výkonu dodává se s náklady: také způsobí nárůst využití paměti, které by mohly snížit škálovatelnost.  
-  
-## <a name="see-also"></a>Viz také  
- [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md)  
- [Objemná data a streamování](../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)
+> Serializace předem generovaného kódu lze použít pouze v klientských aplikacích a ne v služeb.
+
+ [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) výkon lze zvýšit objem požadovaný při spuštění pro tyto aplikace generování kódu serializace nezbytné ze zkompilovaných sestavení pro aplikaci. Další informace najdete v tématu [postupy: vylepšení spuštění čas z klientských aplikací WCF pomocí třídy XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md).
+
+## <a name="performance-issues-when-hosting-wcf-services-under-aspnet"></a>Problémy s výkonem při hostování služby WCF v ASP.NET
+ Když je služba WCF hostované na IIS a ASP.NET, nastavení konfigurace služby IIS a ASP.NET může ovlivnit nároky na propustnost a paměti služby WCF.  Další informace o výkonu technologie ASP.NET, naleznete v tématu [zlepšení výkonu technologie ASP.NET](https://go.microsoft.com/fwlink/?LinkId=186462).  Jedno nastavení, která může mít nežádoucí důsledky je <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A>, což je vlastnost <xref:System.Web.Configuration.ProcessModelSection>. Pokud vaše aplikace má pevný nebo malý počet klientů, nastavení <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> 2 může poskytnout zvýšení propustnosti na počítači s více procesory, který má využití procesoru téměř 100 %. Toto zvýšení výkonu se dodává s náklady: také způsobí zvýšení využití paměti, což může omezit škálovatelnost.
+
+## <a name="see-also"></a>Viz také
+
+- [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md)
+- [Objemná data a streamování](../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)

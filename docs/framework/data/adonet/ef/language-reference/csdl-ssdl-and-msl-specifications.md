@@ -1,15 +1,15 @@
 ---
-title: CSDL, SSDL a specifikace MSL
+title: Soubor CSDL, SSDL a MSL specifikace
 ms.date: 03/30/2017
 ms.assetid: bbdc9237-ff4c-4441-9565-31ebc29743e9
-ms.openlocfilehash: 4a454a25afdb0791752dafabcc02d9c32c1ba776
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 793efb79cba9401b576c9ac7679600f3a4e655c9
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32762358"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43398298"
 ---
-# <a name="csdl-ssdl-and-msl-specifications"></a>CSDL, SSDL a specifikace MSL
-[Msdn.microsoft.com/data/ef](http://msdn.microsoft.com/data/ef) lokalita je momentálně hlavní umístění pro obsah Entity Framework.  
+# <a name="csdl-ssdl-and-msl-specifications"></a>Soubor CSDL, SSDL a MSL specifikace
+[Msdn.microsoft.com/data/ef](https://msdn.microsoft.com/data/ef) server je nyní na hlavní umístění pro obsah Entity Framework.  
   
- Obsah tohoto tématu je nyní k dispozici na následující stránce: [souboru EDMX](http://msdn.microsoft.com/data/jj650889).
+ Obsah tohoto tématu je nyní k dispozici na na následující stránce: [souboru EDMX](https://msdn.microsoft.com/data/jj650889).

@@ -7,17 +7,17 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: f56445e9bdd030d591f9fc6300f9a24d330dbc20
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: d0e54aeda1ee51fe7ba87c3ac69c556ea25e320f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43257367"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43395448"
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 Programování zabezpečení Windows Communication Foundation (WCF), digitální certifikáty X.509 běžně slouží k ověřování klientů a serverů, šifrování a digitálnímu podepisování zpráv. V tomto tématu stručně popisuje funkce digitální certifikát X.509 a jak je používat v WCF a obsahuje odkazy na témata, která popisují tyto koncepty další nebo, která ukazují, jak provádět běžné úlohy pomocí WCF a certifikáty.  
   
- Stručně řečeno, digitálního certifikátu je součástí *infrastruktury veřejných klíčů* (PKI), což je systém digitální certifikáty, certifikační autority a další registrační autority, které ověřují platnost Každá ze smluvních stran součástí elektronické transakce pomocí kryptografii využívající veřejného klíče. Certifikační autorita vydává certifikáty a každý certifikát má sadu polí, které obsahují data, jako například *subjektu* (entity, ke kterému je vydaný certifikát), data platnosti (Pokud je certifikát platný), Vystavitel () entity, která vydala certifikát) a veřejný klíč. Ve službě WCF, každá z těchto vlastností je zpracován jako <xref:System.IdentityModel.Claims.Claim>, a každá deklarace je dále rozdělen do dvou typů: identity a doprava. Další informace o X.509 certifikátů najdete v části [veřejný klíč certifikátů X.509](http://go.microsoft.com/fwlink/?LinkId=209952). Další informace o deklaracích identity a autorizace ve WCF najdete v části [správa deklarací identity a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md). Další informace o implementaci infrastruktury veřejných KLÍČŮ najdete v tématu [systému Windows Server 2008 R2 - Certificate Services](http://go.microsoft.com/fwlink/?LinkId=209949).  
+ Stručně řečeno, digitálního certifikátu je součástí *infrastruktury veřejných klíčů* (PKI), což je systém digitální certifikáty, certifikační autority a další registrační autority, které ověřují platnost Každá ze smluvních stran součástí elektronické transakce pomocí kryptografii využívající veřejného klíče. Certifikační autorita vydává certifikáty a každý certifikát má sadu polí, které obsahují data, jako například *subjektu* (entity, ke kterému je vydaný certifikát), data platnosti (Pokud je certifikát platný), Vystavitel () entity, která vydala certifikát) a veřejný klíč. Ve službě WCF, každá z těchto vlastností je zpracován jako <xref:System.IdentityModel.Claims.Claim>, a každá deklarace je dále rozdělen do dvou typů: identity a doprava. Další informace o X.509 certifikátů najdete v části [veřejný klíč certifikátů X.509](https://go.microsoft.com/fwlink/?LinkId=209952). Další informace o deklaracích identity a autorizace ve WCF najdete v části [správa deklarací identity a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md). Další informace o implementaci infrastruktury veřejných KLÍČŮ najdete v tématu [systému Windows Server 2008 R2 - Certificate Services](https://go.microsoft.com/fwlink/?LinkId=209949).  
   
  Primární funkce certifikát je k ověření identity vlastníka certifikátu ostatním uživatelům. Certifikát obsahuje *veřejný klíč* vlastníka, zatímco vlastníkem ponechá privátní klíč. Veřejný klíč slouží k šifrování zpráv, pošle se vlastníkovi certifikátu. Pouze vlastník má přístup k privátnímu klíči, takže pouze vlastník může dešifrovat tyto zprávy.  
   
@@ -42,7 +42,7 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
   
 -   **Osobní**. Toto úložiště se používá pro certifikáty, které jsou spojeny s konkrétním uživatelem počítače. Toto úložiště se obvykle používá pro certifikáty vydané certifikáty certifikační autority v úložišti Důvěryhodné kořenové certifikační autority. Certifikát, najdete tady také může samostatně vydané a důvěryhodné aplikace.  
   
- Další informace o úložištích certifikátů najdete v tématu [úložišť certifikátů](http://go.microsoft.com/fwlink/?LinkId=88912).  
+ Další informace o úložištích certifikátů najdete v tématu [úložišť certifikátů](https://go.microsoft.com/fwlink/?LinkId=88912).  
   
 ### <a name="selecting-a-store"></a>Výběr Store  
  Výběr umístění pro uložení certifikátu závisí jak a kdy bude spuštěna služba nebo klient. Platí následující obecná pravidla:  
@@ -52,7 +52,7 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
 -   Pokud služba nebo klient je aplikace, na kterém běží pod účtem uživatele, použijte **aktuálního uživatele** ukládat.  
   
 ### <a name="accessing-stores"></a>Přístup k úložišti  
- Úložiště jsou chráněné pomocí seznamů řízení přístupu (ACL), podobně jako složky v počítači. Při vytváření služby podle Internetové informační služby (IIS) hostovaných [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] proces běží pod [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] účtu. Služba se používá, musí mít přístup k úložišti, který obsahuje certifikáty. Všechny hlavní obchody je pak chráněn rozhraním výchozí seznam, ale seznamy je možné upravit. Pokud vytvoříte samostatné role pro přístup k úložišti, je nutné udělit přístupová oprávnění této role. Zjistěte, jak upravit seznam přístupu pomocí nástroje WinHttpCertConfig.exe, najdete v článku [postupy: vytváření dočasných certifikátů pro použití během vývoje](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md). Další informace o používání certifikátů klienta se službou IIS najdete v tématu [volání webové služby pomocí klientského certifikátu pro ověřování ve webové aplikaci ASP.NET](http://go.microsoft.com/fwlink/?LinkId=88914).  
+ Úložiště jsou chráněné pomocí seznamů řízení přístupu (ACL), podobně jako složky v počítači. Při vytváření služby podle Internetové informační služby (IIS) hostovaných [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] proces běží pod [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] účtu. Služba se používá, musí mít přístup k úložišti, který obsahuje certifikáty. Všechny hlavní obchody je pak chráněn rozhraním výchozí seznam, ale seznamy je možné upravit. Pokud vytvoříte samostatné role pro přístup k úložišti, je nutné udělit přístupová oprávnění této role. Zjistěte, jak upravit seznam přístupu pomocí nástroje WinHttpCertConfig.exe, najdete v článku [postupy: vytváření dočasných certifikátů pro použití během vývoje](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md). Další informace o používání certifikátů klienta se službou IIS najdete v tématu [volání webové služby pomocí klientského certifikátu pro ověřování ve webové aplikaci ASP.NET](https://go.microsoft.com/fwlink/?LinkId=88914).  
   
 ## <a name="chain-trust-and-certificate-authorities"></a>Řetězce důvěryhodnosti a certifikační autority  
  Certifikáty jsou vytvořeny v hierarchii, kde je každý jednotlivý certifikát certifikační Autority, která vydala certifikát propojen. Tento odkaz je certifikát Certifikační autority. Certifikát Certifikační autority pak odkazy na certifikační Autoritu, která vydala certifikát původního Certifikační autority. Tento postup se opakuje, dokud nenastane certifikát kořenové certifikační Autority. Certifikát kořenové certifikační Autority je ze své podstaty důvěryhodný.  
@@ -146,9 +146,9 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
  Můžete také nastavit certifikáty pomocí konfigurace. Při vytváření služby, přihlašovací údaje, včetně certifikátů jsou specifikovány pod [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md). Při programování klienta, certifikáty jsou určené v rámci [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md).  
   
 ## <a name="mapping-a-certificate-to-a-user-account"></a>Mapování certifikátu s uživatelskými účty  
- Funkce služby IIS a služby Active Directory je schopnost mapování certifikátu uživatelský účet Windows. Další informace o funkci najdete v tématu [mapování certifikátů uživatelským účtům](http://go.microsoft.com/fwlink/?LinkId=88917).  
+ Funkce služby IIS a služby Active Directory je schopnost mapování certifikátu uživatelský účet Windows. Další informace o funkci najdete v tématu [mapování certifikátů uživatelským účtům](https://go.microsoft.com/fwlink/?LinkId=88917).  
   
- Další informace o používání služby Active Directory mapování najdete v tématu [mapování klientských certifikátů pomocí mapování adresářových služeb](http://go.microsoft.com/fwlink/?LinkId=88918).  
+ Další informace o používání služby Active Directory mapování najdete v tématu [mapování klientských certifikátů pomocí mapování adresářových služeb](https://go.microsoft.com/fwlink/?LinkId=88918).  
   
  Díky této funkci povoleny, můžete nastavit <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> vlastnost <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> třídu `true`. V konfiguraci, můžete nastavit `mapClientCertificateToWindowsAccount` atribut [ \<ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) element `true`, jak je znázorněno v následujícím kódu.  
   

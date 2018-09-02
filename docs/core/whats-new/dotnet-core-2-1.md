@@ -4,12 +4,12 @@ description: Informace o nových funkcích v .NET Core 2.1.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 06/06/2018
-ms.openlocfilehash: ec9a8d238dc47f604a1ac0ee7628bf079e89b9c2
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 2599908c81cbe046889778bbdf7aeb9f8272b215
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42935576"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43392846"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co je nového v .NET Core 2.1
 
@@ -49,7 +49,7 @@ Různé nástroje, které byly k dispozici pouze v jednotlivých projektů pomoc
    ```console
    dotnet watch -- --verbose build
    ```
-  
+
    Poznámka: `--` možnost, která předchází `--verbose` možnost. Vymezuje možnosti předané přímo `dotnet watch` z argumentů, které jsou předány do podřízeného `dotnet` procesu. Bez toho `--verbose` možnost se vztahuje `dotnet watch` příkaz nebyl `dotnet build` příkazu.
   
    Další informace najdete v tématu [aplikace vyvíjet ASP.NET Core s využitím dotnet watch](/aspnet/core/tutorials/dotnet-watch)
@@ -88,7 +88,7 @@ V rozhraní .NET Core SDK 2.1 (v 2.1.300), použít všechny operace nástroje `
 
 ## <a name="roll-forward"></a>Posunout vpřed
 
-Všechny aplikace .NET Core od verze rozhraní příkazového řádku .NET Core 2.0 automaticky posunout vpřed na nejnovější verzi *podverze* nainstalované v systému. 
+Všechny aplikace .NET Core od verze rozhraní příkazového řádku .NET Core 2.0 automaticky posunout vpřed na nejnovější verzi *podverze* nainstalované v systému.
 
 Počínaje .NET Core 2.0, pokud není k dispozici za běhu verze .NET Core, která byla aplikace vytvořena, aplikace automaticky spouští nainstaluje *podverze* .NET Core. Jinými slovy Pokud je aplikace sestavena s .NET Core 2.0 a .NET Core 2.0 není k dispozici v hostitelském systému, ale je .NET Core 2.1, aplikace bude spuštěna s .NET Core 2.1.
 
@@ -233,6 +233,6 @@ V Linuxu a macOS, můžete konfigurovat pouze <xref:System.Net.Http.HttpClient> 
 
 ## <a name="see-also"></a>Viz také:
 
-[Co je nového v .NET Core](index.md)  
-[Novinky v EF Core 2.1](/ef/core/what-is-new/ef-core-2.1)  
-[Co je nového v ASP.NET Core 2.1](/aspnet/core/aspnetcore-2.1)
+* [Co je nového v .NET Core](index.md)  
+* [Novinky v EF Core 2.1](/ef/core/what-is-new/ef-core-2.1)  
+* [Co je nového v ASP.NET Core 2.1](/aspnet/core/aspnetcore-2.1)

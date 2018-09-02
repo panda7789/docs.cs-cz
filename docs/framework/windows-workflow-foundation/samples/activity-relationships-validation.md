@@ -1,43 +1,43 @@
 ---
-title: Ověření vztahy aktivity
+title: Ověřování relací mezi aktivitami
 ms.date: 03/30/2017
 ms.assetid: 6f11a34e-ed67-4bce-88ce-7e96bbb4d052
-ms.openlocfilehash: e6dd0e6a7b48444073ebae378e21c1b45977a1f0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 50f08118fb5ad4d9b8fe809e7ab3cc5d57f28149
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33515105"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43394682"
 ---
-# <a name="activity-relationships-validation"></a>Ověření vztahy aktivity
-Tato ukázka se skládá ze tří aktivity `CreateCity`, `CreateState`, a `CreateCountry`. `CreateCity` musí být uvnitř `CreateState` aktivitu, a `CreateState` musí být uvnitř `CreateCountry` aktivity. V tomto příkladu je logiku ověření v kódu `CreateState` aktivitu a v jazyce XAML pro `CreateCity` aktivity. Obě omezení mít stejné chování.  
+# <a name="activity-relationships-validation"></a>Ověřování relací mezi aktivitami
+Tento příklad se skládá ze tří činností `CreateCity`, `CreateState`, a `CreateCountry`. `CreateCity` musí být uvnitř `CreateState` aktivitu, a `CreateState` musí být uvnitř `CreateCountry` aktivity. Pro účely této ukázce logiku ověřování je v kódu `CreateState` aktivitu a v XAML pro `CreateCity` aktivity. Obě omezení mají stejné chování.  
   
- [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] Poskytuje následující tři aktivity pomocné rutiny, které umožňuje vývojářům ověření vztahy mezi aktivitami:  
+ [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] Poskytuje následující tři aktivity pomocné rutiny, které umožňuje vývojářům ověřit relací mezi aktivitami:  
   
  <xref:System.Activities.Validation.GetParentChain>  
- Poskytuje kolekci všechny aktivity, které patří do nadřazené aktuálního uzlu  
+ Obsahuje kolekci všech aktivit, které patří do nadřazeného aktuální uzel  
   
  <xref:System.Activities.Validation.GetChildSubtree>  
- Poskytuje kolekci všechny aktivity, které patří do stromu dílčí aktuální uzel, s výjimkou aktuálního uzlu  
+ Obsahuje kolekci všech aktivit, které patří do dílčí stromu pro aktuální uzel, s výjimkou aktuální uzel  
   
  <xref:System.Activities.Validation.GetWorkflowTree>  
- Poskytuje kolekci všechny aktivity ve stejném stromu pro jako aktuálního uzlu  
+ Obsahuje kolekci všech aktivit ve stejném stromu pro jako aktuální uzel  
   
- V ukázce <xref:System.Activities.Statements.ForEach%601> aktivita se používá k provede kolekce vrácené <xref:System.Activities.Validation.GetParentChain>. Pro každý element v kolekci, je její typ porovnání s `CreateCountry` (nebo `CreateState` Pokud `CreateCity` je ověřován), a pokud je nalezena shoda příznak výsledek je nastaven na `true`. Nakonec <xref:System.Activities.Validation.AssertValidation> slouží ke generování chybu ověření, pokud je výsledek příznak nastaven na `false`.  
+ V ukázce <xref:System.Activities.Statements.ForEach%601> aktivita se používá k provede kolekci vrácené poskytovatelem <xref:System.Activities.Validation.GetParentChain>. Pro každý prvek v kolekci, jeho typ je ve srovnání s `CreateCountry` (nebo `CreateState` Pokud `CreateCity` ověřován), a když se najde shoda výsledek příznak je nastaven na `true`. A konečně <xref:System.Activities.Validation.AssertValidation> se používá k vygenerování chyby ověřování, pokud výsledek příznak je nastaven na `false`.  
   
 ### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
-1.  Otevřete ContainmentValidation.sln ukázkové řešení v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+1.  Otevřete v ukázkovém řešení ContainmentValidation.sln [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
 2.  Sestavte řešení.  
   
 3.  Stisknutím kláves CTRL + F5 spusťte program.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí):  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí):  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři:  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři:  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Validation\ActivityRelationships`
