@@ -9,35 +9,35 @@ helpviewer_keywords:
 - -codepage compiler option [C#]
 ms.assetid: 75942989-b69a-4308-90a0-840c73d2c478
 ms.openlocfilehash: 66edb32d24dd1dc543097b98ff3744f0aa0a7145
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43255316"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43389686"
 ---
-# <a name="-codepage-c-compiler-options"></a><span data-ttu-id="85373-102">-codepage (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="85373-102">-codepage (C# Compiler Options)</span></span>
-<span data-ttu-id="85373-103">Tato možnost určuje, které znakovou stránku pro použití během kompilace, pokud se požadovaná stránka není aktuální výchozí znakovou stránku, která pro systém.</span><span class="sxs-lookup"><span data-stu-id="85373-103">This option specifies which codepage to use during compilation if the required page is not the current default codepage for the system.</span></span>  
+# <a name="-codepage-c-compiler-options"></a><span data-ttu-id="4bf36-102">-codepage (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="4bf36-102">-codepage (C# Compiler Options)</span></span>
+<span data-ttu-id="4bf36-103">Tato možnost určuje, které znakovou stránku pro použití během kompilace, pokud se požadovaná stránka není aktuální výchozí znakovou stránku, která pro systém.</span><span class="sxs-lookup"><span data-stu-id="4bf36-103">This option specifies which codepage to use during compilation if the required page is not the current default codepage for the system.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="85373-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="85373-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4bf36-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4bf36-104">Syntax</span></span>  
   
 ```console  
 -codepage:id  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="85373-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="85373-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="4bf36-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="4bf36-105">Arguments</span></span>  
  `id`  
- <span data-ttu-id="85373-106">Id stránky kód pro všechny soubory zdrojového kódu dané kompilace.</span><span class="sxs-lookup"><span data-stu-id="85373-106">The id of the code page to use for all source code files in the compilation.</span></span>  
+ <span data-ttu-id="4bf36-106">Id stránky kód pro všechny soubory zdrojového kódu dané kompilace.</span><span class="sxs-lookup"><span data-stu-id="4bf36-106">The id of the code page to use for all source code files in the compilation.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="85373-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="85373-107">Remarks</span></span>  
- <span data-ttu-id="85373-108">Pokud kompilujete jeden nebo více souborů zdrojového kódu, které nebyly vytvořeny v počítači použít výchozí znakové stránky, můžete použít **- znaková stránka** možnost zadat znakovou stránku, která se má použít.</span><span class="sxs-lookup"><span data-stu-id="85373-108">If you compile one or more source code files that were not created to use the default code page on your computer, you can use the **-codepage** option to specify which code page should be used.</span></span> <span data-ttu-id="85373-109">**-codepage** se vztahuje na všechny soubory zdrojového kódu v kompilaci.</span><span class="sxs-lookup"><span data-stu-id="85373-109">**-codepage** applies to all source code files in your compilation.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="4bf36-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4bf36-107">Remarks</span></span>  
+ <span data-ttu-id="4bf36-108">Pokud kompilujete jeden nebo více souborů zdrojového kódu, které nebyly vytvořeny v počítači použít výchozí znakové stránky, můžete použít **- znaková stránka** možnost zadat znakovou stránku, která se má použít.</span><span class="sxs-lookup"><span data-stu-id="4bf36-108">If you compile one or more source code files that were not created to use the default code page on your computer, you can use the **-codepage** option to specify which code page should be used.</span></span> <span data-ttu-id="4bf36-109">**-codepage** se vztahuje na všechny soubory zdrojového kódu v kompilaci.</span><span class="sxs-lookup"><span data-stu-id="4bf36-109">**-codepage** applies to all source code files in your compilation.</span></span>  
   
- <span data-ttu-id="85373-110">Pokud se stejnou znakovou stránku, která je v platnosti v počítači byly vytvořeny soubory zdrojového kódu nebo pokud soubory zdrojového kódu byly vytvořeny pomocí UNICODE nebo UTF-8, není nutné použít **- znaková stránka**.</span><span class="sxs-lookup"><span data-stu-id="85373-110">If the source code files were created with the same codepage that is in effect on your computer or if the source code files were created with UNICODE or UTF-8, you need not use **-codepage**.</span></span>  
+ <span data-ttu-id="4bf36-110">Pokud se stejnou znakovou stránku, která je v platnosti v počítači byly vytvořeny soubory zdrojového kódu nebo pokud soubory zdrojového kódu byly vytvořeny pomocí UNICODE nebo UTF-8, není nutné použít **- znaková stránka**.</span><span class="sxs-lookup"><span data-stu-id="4bf36-110">If the source code files were created with the same codepage that is in effect on your computer or if the source code files were created with UNICODE or UTF-8, you need not use **-codepage**.</span></span>  
   
- <span data-ttu-id="85373-111">Zobrazit [GetCPInfo](/windows/desktop/api/winnls/nf-winnls-getcpinfo) informace o tom, jak najít kódu stránky jsou podporovány v systému.</span><span class="sxs-lookup"><span data-stu-id="85373-111">See [GetCPInfo](/windows/desktop/api/winnls/nf-winnls-getcpinfo) for information on how to find which code pages are supported on your system.</span></span>  
+ <span data-ttu-id="4bf36-111">Zobrazit [GetCPInfo](/windows/desktop/api/winnls/nf-winnls-getcpinfo) informace o tom, jak najít kódu stránky jsou podporovány v systému.</span><span class="sxs-lookup"><span data-stu-id="4bf36-111">See [GetCPInfo](/windows/desktop/api/winnls/nf-winnls-getcpinfo) for information on how to find which code pages are supported on your system.</span></span>  
   
- <span data-ttu-id="85373-112">Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.</span><span class="sxs-lookup"><span data-stu-id="85373-112">This compiler option is unavailable in Visual Studio and cannot be changed programmatically.</span></span>  
+ <span data-ttu-id="4bf36-112">Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.</span><span class="sxs-lookup"><span data-stu-id="4bf36-112">This compiler option is unavailable in Visual Studio and cannot be changed programmatically.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="85373-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="85373-113">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="4bf36-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="4bf36-113">See Also</span></span>  
 
-- [<span data-ttu-id="85373-114">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="85373-114">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)  
-- [<span data-ttu-id="85373-115">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="85373-115">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
+- [<span data-ttu-id="4bf36-114">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="4bf36-114">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)  
+- [<span data-ttu-id="4bf36-115">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="4bf36-115">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)

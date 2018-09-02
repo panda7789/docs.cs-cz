@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a5bb3d48d33333e888200bc607d3a193482f0336
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 00e425b56ae555b153685b5af0ac58b6ab4c335b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33433650"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43391643"
 ---
-# <a name="iclrstrongnamestrongnametokenfromassemblyex-method"></a><span data-ttu-id="13b65-102">ICLRStrongName::StrongNameTokenFromAssemblyEx – metoda</span><span class="sxs-lookup"><span data-stu-id="13b65-102">ICLRStrongName::StrongNameTokenFromAssemblyEx Method</span></span>
-<span data-ttu-id="13b65-103">Vytvoří token silným názvem ze zadaného souboru sestavení a vrátí veřejný klíč, který představuje daný token.</span><span class="sxs-lookup"><span data-stu-id="13b65-103">Creates a strong name token from the specified assembly file, and returns the public key that the token represents.</span></span>  
+# <a name="iclrstrongnamestrongnametokenfromassemblyex-method"></a><span data-ttu-id="76733-102">ICLRStrongName::StrongNameTokenFromAssemblyEx – metoda</span><span class="sxs-lookup"><span data-stu-id="76733-102">ICLRStrongName::StrongNameTokenFromAssemblyEx Method</span></span>
+<span data-ttu-id="76733-103">Vytvoří token silného názvu ze zadaného souboru sestavení a vrátí představující token veřejného klíče.</span><span class="sxs-lookup"><span data-stu-id="76733-103">Creates a strong name token from the specified assembly file, and returns the public key that the token represents.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="13b65-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="13b65-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="76733-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="76733-104">Syntax</span></span>  
   
 ```  
 HRESULT StrongNameTokenFromAssemblyEx (  
@@ -39,39 +39,39 @@ HRESULT StrongNameTokenFromAssemblyEx (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="13b65-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="13b65-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="76733-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="76733-105">Parameters</span></span>  
  `wszFilePath`  
- <span data-ttu-id="13b65-106">[v] Cesta k souboru přenosné spustitelný soubor (PE) pro sestavení.</span><span class="sxs-lookup"><span data-stu-id="13b65-106">[in] The path to the portable executable (PE) file for the assembly.</span></span>  
+ <span data-ttu-id="76733-106">[in] Cesta k souboru (PE portable executable) pro sestavení.</span><span class="sxs-lookup"><span data-stu-id="76733-106">[in] The path to the portable executable (PE) file for the assembly.</span></span>  
   
  `ppbStrongNameToken`  
- <span data-ttu-id="13b65-107">[out] Token vrácený silným názvem.</span><span class="sxs-lookup"><span data-stu-id="13b65-107">[out] The returned strong name token.</span></span>  
+ <span data-ttu-id="76733-107">[out] Token vrácený silného názvu.</span><span class="sxs-lookup"><span data-stu-id="76733-107">[out] The returned strong name token.</span></span>  
   
  `pcbStrongNameToken`  
- <span data-ttu-id="13b65-108">[out] Velikost v bajtech, silný název tokenu.</span><span class="sxs-lookup"><span data-stu-id="13b65-108">[out] The size, in bytes, of the strong name token.</span></span>  
+ <span data-ttu-id="76733-108">[out] Velikost v bajtech, silný název tokenu.</span><span class="sxs-lookup"><span data-stu-id="76733-108">[out] The size, in bytes, of the strong name token.</span></span>  
   
  `ppbPublicKeyBlob`  
- <span data-ttu-id="13b65-109">[out] Vrácený veřejný klíč.</span><span class="sxs-lookup"><span data-stu-id="13b65-109">[out] The returned public key.</span></span>  
+ <span data-ttu-id="76733-109">[out] Vrácené veřejný klíč.</span><span class="sxs-lookup"><span data-stu-id="76733-109">[out] The returned public key.</span></span>  
   
  `pcbPublicKeyBlob`  
- <span data-ttu-id="13b65-110">[out] Velikost v bajtech, veřejného klíče.</span><span class="sxs-lookup"><span data-stu-id="13b65-110">[out] The size, in bytes, of the public key.</span></span>  
+ <span data-ttu-id="76733-110">[out] Velikost v bajtech, veřejného klíče.</span><span class="sxs-lookup"><span data-stu-id="76733-110">[out] The size, in bytes, of the public key.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="13b65-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="13b65-111">Return Value</span></span>  
- <span data-ttu-id="13b65-112">`S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="13b65-112">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](http://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
+## <a name="return-value"></a><span data-ttu-id="76733-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="76733-111">Return Value</span></span>  
+ <span data-ttu-id="76733-112">`S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="76733-112">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="13b65-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="13b65-113">Remarks</span></span>  
- <span data-ttu-id="13b65-114">Zkrácený tvar veřejný klíč je token silným názvem.</span><span class="sxs-lookup"><span data-stu-id="13b65-114">A strong name token is the shortened form of a public key.</span></span> <span data-ttu-id="13b65-115">Token je 64 bitů hodnotu hash, který je vytvořený z veřejný klíč používaný k podepisování sestavení.</span><span class="sxs-lookup"><span data-stu-id="13b65-115">The token is a 64-bit hash that is created from the public key used to sign the assembly.</span></span> <span data-ttu-id="13b65-116">Token je součástí silného názvu pro sestavení a můžete číst z metadata sestavení.</span><span class="sxs-lookup"><span data-stu-id="13b65-116">The token is a part of the strong name for the assembly, and can be read from the assembly metadata.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="76733-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="76733-113">Remarks</span></span>  
+ <span data-ttu-id="76733-114">Zkráceným tvarem veřejný klíč je token silného názvu.</span><span class="sxs-lookup"><span data-stu-id="76733-114">A strong name token is the shortened form of a public key.</span></span> <span data-ttu-id="76733-115">Token je hodnota hash 64-bit, který je vytvořen z veřejného klíče použitý k podepsání sestavení.</span><span class="sxs-lookup"><span data-stu-id="76733-115">The token is a 64-bit hash that is created from the public key used to sign the assembly.</span></span> <span data-ttu-id="76733-116">Token, který je součástí silného názvu pro sestavení a může číst z metadat sestavení.</span><span class="sxs-lookup"><span data-stu-id="76733-116">The token is a part of the strong name for the assembly, and can be read from the assembly metadata.</span></span>  
   
- <span data-ttu-id="13b65-117">Jakmile načítání klíče a token je vytvořen, by měly volat [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metodu pro uvolnění přidělenou paměť.</span><span class="sxs-lookup"><span data-stu-id="13b65-117">After the key is retrieved and the token is created, you should call the [ICLRStrongName::StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) method to release the allocated memory.</span></span>  
+ <span data-ttu-id="76733-117">Poté, co načítání klíče a token, který je vytvořen, měli byste zavolat [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metodu pro uvolnění přidělené paměti.</span><span class="sxs-lookup"><span data-stu-id="76733-117">After the key is retrieved and the token is created, you should call the [ICLRStrongName::StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) method to release the allocated memory.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="13b65-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="13b65-118">Requirements</span></span>  
- <span data-ttu-id="13b65-119">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="13b65-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="76733-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="76733-118">Requirements</span></span>  
+ <span data-ttu-id="76733-119">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="76733-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="13b65-120">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="13b65-120">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="76733-120">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="76733-120">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="13b65-121">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="13b65-121">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="76733-121">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="76733-121">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="13b65-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="13b65-122">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="76733-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="76733-122">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="13b65-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="13b65-123">See Also</span></span>  
- [<span data-ttu-id="13b65-124">StrongNameTokenFromAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="13b65-124">StrongNameTokenFromAssembly Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfromassembly-method.md)  
- [<span data-ttu-id="13b65-125">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="13b65-125">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+## <a name="see-also"></a><span data-ttu-id="76733-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="76733-123">See Also</span></span>  
+ [<span data-ttu-id="76733-124">StrongNameTokenFromAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="76733-124">StrongNameTokenFromAssembly Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfromassembly-method.md)  
+ [<span data-ttu-id="76733-125">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="76733-125">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

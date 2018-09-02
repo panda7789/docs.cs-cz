@@ -1,18 +1,18 @@
 ---
-title: 'Ukázkový soubor XML: Číselná Data (technologie LINQ to XML)'
+title: 'Ukázkový soubor XML: Numerická Data (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 365cae86-a166-46df-b56a-0209d9771c27
 ms.openlocfilehash: 6528175407c29a17667c33769643d15502e98f90
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33327590"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43387312"
 ---
-# <a name="sample-xml-file-numerical-data-linq-to-xml"></a><span data-ttu-id="6f4bb-102">Ukázkový soubor XML: Číselná Data (technologie LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="6f4bb-102">Sample XML File: Numerical Data (LINQ to XML)</span></span>
-<span data-ttu-id="6f4bb-103">Následující soubor XML se používá v různých příklady v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="6f4bb-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="6f4bb-104">Tento soubor obsahuje číselná data pro souhrnné zpracování, průměrování a seskupení.</span><span class="sxs-lookup"><span data-stu-id="6f4bb-104">This file contains numerical data for summing, averaging, and grouping.</span></span>  
+# <a name="sample-xml-file-numerical-data-linq-to-xml"></a><span data-ttu-id="fb707-102">Ukázkový soubor XML: Numerická Data (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="fb707-102">Sample XML File: Numerical Data (LINQ to XML)</span></span>
+<span data-ttu-id="fb707-103">Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="fb707-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="fb707-104">Tento soubor obsahuje číselná data pro sčítání, agregovat a seskupení.</span><span class="sxs-lookup"><span data-stu-id="fb707-104">This file contains numerical data for summing, averaging, and grouping.</span></span>  
   
-## <a name="dataxml"></a><span data-ttu-id="6f4bb-105">Data.XML</span><span class="sxs-lookup"><span data-stu-id="6f4bb-105">Data.xml</span></span>  
+## <a name="dataxml"></a><span data-ttu-id="fb707-105">Data.XML</span><span class="sxs-lookup"><span data-stu-id="fb707-105">Data.xml</span></span>  
   
 ```xml  
 <Root>  
@@ -55,5 +55,5 @@ ms.locfileid: "33327590"
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="6f4bb-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="6f4bb-106">See Also</span></span>  
- [<span data-ttu-id="6f4bb-107">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="6f4bb-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="fb707-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="fb707-106">See Also</span></span>  
+ [<span data-ttu-id="fb707-107">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="fb707-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

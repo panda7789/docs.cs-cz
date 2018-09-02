@@ -1,25 +1,25 @@
 ---
 title: Vytváření stromů XML v jazyce C# (LINQ to XML)
-ms.date: 07/20/2015
+ms.date: 08/31/2018
 ms.assetid: cc74234a-0bac-4327-9c8c-5a2ead15b595
-ms.openlocfilehash: 4fcd0c14970dd4aabe4d51335f9a0a0a991ef019
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 41da4de20558508844b56a492b603f947ae04b81
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33335459"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43399248"
 ---
-# <a name="creating-xml-trees-in-c-linq-to-xml"></a><span data-ttu-id="f6c33-102">Vytváření stromů XML v jazyce C# (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="f6c33-102">Creating XML Trees in C# (LINQ to XML)</span></span>
-<span data-ttu-id="f6c33-103">Tato část obsahuje informace o vytváření stromů XML v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="f6c33-103">This section provides information about creating XML trees in C#.</span></span>  
+# <a name="creating-xml-trees-in-c-linq-to-xml"></a><span data-ttu-id="824e2-102">Vytváření stromů XML v jazyce C# (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="824e2-102">Creating XML trees in C# (LINQ to XML)</span></span>
+<span data-ttu-id="824e2-103">Tato část obsahuje informace o vytváření stromů XML v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="824e2-103">This section provides information about creating XML trees in C#.</span></span>  
   
- <span data-ttu-id="f6c33-104">Informace o používání výsledky dotazů LINQ jako obsah pro <xref:System.Xml.Linq.XElement>, najdete v části [funkční konstrukce (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="f6c33-104">For information about using the results of LINQ queries as the content for an <xref:System.Xml.Linq.XElement>, see [Functional Construction (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="824e2-104">Další informace o použití výsledků dotazů LINQ jako obsah pro <xref:System.Xml.Linq.XElement>, naleznete v tématu [funkční konstrukce (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="824e2-104">For information about using the results of LINQ queries as the content for an <xref:System.Xml.Linq.XElement>, see [Functional Construction (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).</span></span>  
   
-## <a name="constructing-elements"></a><span data-ttu-id="f6c33-105">Vytváření elementů</span><span class="sxs-lookup"><span data-stu-id="f6c33-105">Constructing Elements</span></span>  
- <span data-ttu-id="f6c33-106">Signatur <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XAttribute> konstruktory umožňují předat obsah elementu nebo atributu jako argumenty pro konstruktor.</span><span class="sxs-lookup"><span data-stu-id="f6c33-106">The signatures of the <xref:System.Xml.Linq.XElement> and <xref:System.Xml.Linq.XAttribute> constructors let you pass the contents of the element or attribute as arguments to the constructor.</span></span> <span data-ttu-id="f6c33-107">Protože jeden z konstruktorů přijímá proměnný počet argumentů, které lze předat libovolný počet podřízených prvků.</span><span class="sxs-lookup"><span data-stu-id="f6c33-107">Because one of the constructors takes a variable number of arguments, you can pass any number of child elements.</span></span> <span data-ttu-id="f6c33-108">Samozřejmě každý z těchto podřízených elementů může obsahovat vlastní podřízené elementy.</span><span class="sxs-lookup"><span data-stu-id="f6c33-108">Of course, each of those child elements can contain their own child elements.</span></span> <span data-ttu-id="f6c33-109">Pro libovolný element můžete přidat libovolný počet atributů.</span><span class="sxs-lookup"><span data-stu-id="f6c33-109">For any element, you can add any number of attributes.</span></span>  
+## <a name="constructing-elements"></a><span data-ttu-id="824e2-105">Vytváření elementů</span><span class="sxs-lookup"><span data-stu-id="824e2-105">Constructing elements</span></span>
+ <span data-ttu-id="824e2-106">Podpisy <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XAttribute> konstruktory umožňují obsah elementu nebo atributu předat jako argumenty konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="824e2-106">The signatures of the <xref:System.Xml.Linq.XElement> and <xref:System.Xml.Linq.XAttribute> constructors let you pass the contents of the element or attribute as arguments to the constructor.</span></span> <span data-ttu-id="824e2-107">Protože jeden z konstruktorů přebírá proměnný počet argumentů, můžete předat libovolný počet podřízených elementů.</span><span class="sxs-lookup"><span data-stu-id="824e2-107">Because one of the constructors takes a variable number of arguments, you can pass any number of child elements.</span></span> <span data-ttu-id="824e2-108">Samozřejmě každá z těchto podřízených elementů může obsahovat vlastní podřízené prvky.</span><span class="sxs-lookup"><span data-stu-id="824e2-108">Of course, each of those child elements can contain their own child elements.</span></span> <span data-ttu-id="824e2-109">Pro libovolný element můžete přidat libovolný počet atributů.</span><span class="sxs-lookup"><span data-stu-id="824e2-109">For any element, you can add any number of attributes.</span></span>  
   
- <span data-ttu-id="f6c33-110">Při přidávání <xref:System.Xml.Linq.XNode> (včetně <xref:System.Xml.Linq.XElement>) nebo <xref:System.Xml.Linq.XAttribute> objekty, pokud se nový obsah nemá nadřazený, jsou objekty jednoduše připojené k stromové struktuře XML.</span><span class="sxs-lookup"><span data-stu-id="f6c33-110">When adding <xref:System.Xml.Linq.XNode> (including <xref:System.Xml.Linq.XElement>) or <xref:System.Xml.Linq.XAttribute> objects, if the new content has no parent, the objects are simply attached to the XML tree.</span></span> <span data-ttu-id="f6c33-111">Pokud nový obsah už je nadřazena a je součástí jiného stromu XML, naklonována nový obsah a nově naklonovaný obsah je připojen k stromové struktuře XML.</span><span class="sxs-lookup"><span data-stu-id="f6c33-111">If the new content already is parented, and is part of another XML tree, the new content is cloned, and the newly cloned content is attached to the XML tree.</span></span> <span data-ttu-id="f6c33-112">Poslední příklad v tomto tématu ukazuje to.</span><span class="sxs-lookup"><span data-stu-id="f6c33-112">The last example in this topic demonstrates this.</span></span>  
+ <span data-ttu-id="824e2-110">Při přidávání <xref:System.Xml.Linq.XNode> (včetně <xref:System.Xml.Linq.XElement>) nebo <xref:System.Xml.Linq.XAttribute> objektů, pokud se nový obsah nemá žádný nadřazený objekt, objekty jsou jednoduše připojené do stromu XML.</span><span class="sxs-lookup"><span data-stu-id="824e2-110">When adding <xref:System.Xml.Linq.XNode> (including <xref:System.Xml.Linq.XElement>) or <xref:System.Xml.Linq.XAttribute> objects, if the new content has no parent, the objects are simply attached to the XML tree.</span></span> <span data-ttu-id="824e2-111">Pokud nový obsah už je nadřazena a je součástí jiného stromu XML, naklonované nový obsah a nově naklonovaného obsahu je připojen ke stromu XML.</span><span class="sxs-lookup"><span data-stu-id="824e2-111">If the new content already is parented, and is part of another XML tree, the new content is cloned, and the newly cloned content is attached to the XML tree.</span></span> <span data-ttu-id="824e2-112">V poslední příkladu v tomto tématu ukazuje to.</span><span class="sxs-lookup"><span data-stu-id="824e2-112">The last example in this topic demonstrates this.</span></span>  
   
- <span data-ttu-id="f6c33-113">Chcete-li vytvořit `contacts` <xref:System.Xml.Linq.XElement>, můžete použít následující kód:</span><span class="sxs-lookup"><span data-stu-id="f6c33-113">To create a `contacts`<xref:System.Xml.Linq.XElement>, you could use the following code:</span></span>  
+ <span data-ttu-id="824e2-113">Chcete-li vytvořit `contacts` <xref:System.Xml.Linq.XElement>, můžete použít následující kód:</span><span class="sxs-lookup"><span data-stu-id="824e2-113">To create a `contacts`<xref:System.Xml.Linq.XElement>, you could use the following code:</span></span>  
   
 ```csharp  
 XElement contacts =  
@@ -37,62 +37,62 @@ XElement contacts =
     );  
 ```  
   
- <span data-ttu-id="f6c33-114">Pokud odsazeny správně, kód k vytvoření <xref:System.Xml.Linq.XElement> objekty velmi podobá strukturu základní XML.</span><span class="sxs-lookup"><span data-stu-id="f6c33-114">If indented properly, the code to construct <xref:System.Xml.Linq.XElement> objects closely resembles the structure of the underlying XML.</span></span>  
+ <span data-ttu-id="824e2-114">Pokud odsazena správně, kód k vytvoření <xref:System.Xml.Linq.XElement> objekty podobá struktuře základní XML.</span><span class="sxs-lookup"><span data-stu-id="824e2-114">If indented properly, the code to construct <xref:System.Xml.Linq.XElement> objects closely resembles the structure of the underlying XML.</span></span>  
   
-## <a name="xelement-constructors"></a><span data-ttu-id="f6c33-115">XElement konstruktory</span><span class="sxs-lookup"><span data-stu-id="f6c33-115">XElement Constructors</span></span>  
- <span data-ttu-id="f6c33-116"><xref:System.Xml.Linq.XElement> Třída používá těchto konstruktorů pro tvorbu funkční.</span><span class="sxs-lookup"><span data-stu-id="f6c33-116">The <xref:System.Xml.Linq.XElement> class uses the following constructors for functional construction.</span></span> <span data-ttu-id="f6c33-117">Všimněte si, že jsou některé konstruktory pro <xref:System.Xml.Linq.XElement>, ale vzhledem k tomu, že se nepoužívají pro funkční konstrukce zde nejsou uvedeny.</span><span class="sxs-lookup"><span data-stu-id="f6c33-117">Note that there are some other constructors for <xref:System.Xml.Linq.XElement>, but because they are not used for functional construction they are not listed here.</span></span>  
+## <a name="xelement-constructors"></a><span data-ttu-id="824e2-115">Konstruktory XElement</span><span class="sxs-lookup"><span data-stu-id="824e2-115">XElement constructors</span></span>  
+ <span data-ttu-id="824e2-116"><xref:System.Xml.Linq.XElement> Třída používá následující konstruktory pro funkční konstrukce.</span><span class="sxs-lookup"><span data-stu-id="824e2-116">The <xref:System.Xml.Linq.XElement> class uses the following constructors for functional construction.</span></span> <span data-ttu-id="824e2-117">Všimněte si, že jsou některé konstruktory pro <xref:System.Xml.Linq.XElement>, ale vzhledem k tomu, že nejsou použity pro funkční konstrukce, které zde nejsou uvedeny.</span><span class="sxs-lookup"><span data-stu-id="824e2-117">Note that there are some other constructors for <xref:System.Xml.Linq.XElement>, but because they are not used for functional construction they are not listed here.</span></span>  
   
-|<span data-ttu-id="f6c33-118">Konstruktor</span><span class="sxs-lookup"><span data-stu-id="f6c33-118">Constructor</span></span>|<span data-ttu-id="f6c33-119">Popis</span><span class="sxs-lookup"><span data-stu-id="f6c33-119">Description</span></span>|  
+|<span data-ttu-id="824e2-118">Konstruktor</span><span class="sxs-lookup"><span data-stu-id="824e2-118">Constructor</span></span>|<span data-ttu-id="824e2-119">Popis</span><span class="sxs-lookup"><span data-stu-id="824e2-119">Description</span></span>|  
 |-----------------|-----------------|  
-|`XElement(XName name, object content)`|<span data-ttu-id="f6c33-120">Vytvoří <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="f6c33-120">Creates an <xref:System.Xml.Linq.XElement>.</span></span> <span data-ttu-id="f6c33-121">`name` Parametr určuje název elementu; `content` určuje obsah elementu.</span><span class="sxs-lookup"><span data-stu-id="f6c33-121">The `name` parameter specifies the name of the element; `content` specifies the content of the element.</span></span>|  
-|`XElement(XName name)`|<span data-ttu-id="f6c33-122">Vytvoří <xref:System.Xml.Linq.XElement> s jeho <xref:System.Xml.Linq.XName> inicializována tak, aby zadaný název.</span><span class="sxs-lookup"><span data-stu-id="f6c33-122">Creates an <xref:System.Xml.Linq.XElement> with its <xref:System.Xml.Linq.XName> initialized to the specified name.</span></span>|  
-|`XElement(XName name, params object[] content)`|<span data-ttu-id="f6c33-123">Vytvoří <xref:System.Xml.Linq.XElement> s jeho <xref:System.Xml.Linq.XName> inicializována tak, aby zadaný název.</span><span class="sxs-lookup"><span data-stu-id="f6c33-123">Creates an <xref:System.Xml.Linq.XElement> with its <xref:System.Xml.Linq.XName> initialized to the specified name.</span></span> <span data-ttu-id="f6c33-124">Atributy nebo podřízené elementy jsou vytvořené pomocí obsah seznam parametrů.</span><span class="sxs-lookup"><span data-stu-id="f6c33-124">The attributes and/or child elements are created from the contents of the parameter list.</span></span>|  
+|`XElement(XName name, object content)`|<span data-ttu-id="824e2-120">Vytvoří <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="824e2-120">Creates an <xref:System.Xml.Linq.XElement>.</span></span> <span data-ttu-id="824e2-121">`name` Parametr určuje název elementu; `content` určuje obsah elementu.</span><span class="sxs-lookup"><span data-stu-id="824e2-121">The `name` parameter specifies the name of the element; `content` specifies the content of the element.</span></span>|  
+|`XElement(XName name)`|<span data-ttu-id="824e2-122">Vytvoří <xref:System.Xml.Linq.XElement> s jeho <xref:System.Xml.Linq.XName> inicializovány na zadaný název.</span><span class="sxs-lookup"><span data-stu-id="824e2-122">Creates an <xref:System.Xml.Linq.XElement> with its <xref:System.Xml.Linq.XName> initialized to the specified name.</span></span>|  
+|`XElement(XName name, params object[] content)`|<span data-ttu-id="824e2-123">Vytvoří <xref:System.Xml.Linq.XElement> s jeho <xref:System.Xml.Linq.XName> inicializovány na zadaný název.</span><span class="sxs-lookup"><span data-stu-id="824e2-123">Creates an <xref:System.Xml.Linq.XElement> with its <xref:System.Xml.Linq.XName> initialized to the specified name.</span></span> <span data-ttu-id="824e2-124">Atributy a podřízené prvky jsou vytvořeny z obsahu seznamu parametrů.</span><span class="sxs-lookup"><span data-stu-id="824e2-124">The attributes and/or child elements are created from the contents of the parameter list.</span></span>|  
   
- <span data-ttu-id="f6c33-125">`content` Parametr je velmi flexibilní.</span><span class="sxs-lookup"><span data-stu-id="f6c33-125">The `content` parameter is extremely flexible.</span></span> <span data-ttu-id="f6c33-126">Podporuje jakéhokoli typu objektu, který je platný podřízeným <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="f6c33-126">It supports any type of object that is a valid child of an <xref:System.Xml.Linq.XElement>.</span></span> <span data-ttu-id="f6c33-127">Pro různé typy objektů předán v tomto parametru platí následující pravidla:</span><span class="sxs-lookup"><span data-stu-id="f6c33-127">The following rules apply to different types of objects passed in this parameter:</span></span>  
+ <span data-ttu-id="824e2-125">`content` Parametr je velmi flexibilní.</span><span class="sxs-lookup"><span data-stu-id="824e2-125">The `content` parameter is extremely flexible.</span></span> <span data-ttu-id="824e2-126">Podporuje jakýkoli typ objektu, který je platný podřízený <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="824e2-126">It supports any type of object that is a valid child of an <xref:System.Xml.Linq.XElement>.</span></span> <span data-ttu-id="824e2-127">Následující pravidla platí pro různé druhy objektů předaných v tomto parametru:</span><span class="sxs-lookup"><span data-stu-id="824e2-127">The following rules apply to different types of objects passed in this parameter:</span></span>  
   
--   <span data-ttu-id="f6c33-128">Řetězec se přidá jako textového obsahu.</span><span class="sxs-lookup"><span data-stu-id="f6c33-128">A string is added as text content.</span></span>  
+-   <span data-ttu-id="824e2-128">Řetězec se přidá jako textový obsah.</span><span class="sxs-lookup"><span data-stu-id="824e2-128">A string is added as text content.</span></span>  
   
--   <span data-ttu-id="f6c33-129"><xref:System.Xml.Linq.XElement> Je přidána jako podřízený element.</span><span class="sxs-lookup"><span data-stu-id="f6c33-129">An <xref:System.Xml.Linq.XElement> is added as a child element.</span></span>  
+-   <span data-ttu-id="824e2-129"><xref:System.Xml.Linq.XElement> Je přidán jako podřízený element.</span><span class="sxs-lookup"><span data-stu-id="824e2-129">An <xref:System.Xml.Linq.XElement> is added as a child element.</span></span>  
   
--   <span data-ttu-id="f6c33-130"><xref:System.Xml.Linq.XAttribute> Se přidá jako atribut.</span><span class="sxs-lookup"><span data-stu-id="f6c33-130">An <xref:System.Xml.Linq.XAttribute> is added as an attribute.</span></span>  
+-   <span data-ttu-id="824e2-130"><xref:System.Xml.Linq.XAttribute> Se přidá jako atribut.</span><span class="sxs-lookup"><span data-stu-id="824e2-130">An <xref:System.Xml.Linq.XAttribute> is added as an attribute.</span></span>  
   
--   <span data-ttu-id="f6c33-131"><xref:System.Xml.Linq.XProcessingInstruction>, <xref:System.Xml.Linq.XComment>, Nebo <xref:System.Xml.Linq.XText> je přidána jako podřízený obsah.</span><span class="sxs-lookup"><span data-stu-id="f6c33-131">An <xref:System.Xml.Linq.XProcessingInstruction>, <xref:System.Xml.Linq.XComment>, or <xref:System.Xml.Linq.XText> is added as child content.</span></span>  
+-   <span data-ttu-id="824e2-131"><xref:System.Xml.Linq.XProcessingInstruction>, <xref:System.Xml.Linq.XComment>, Nebo <xref:System.Xml.Linq.XText> je přidán jako podřízený obsah.</span><span class="sxs-lookup"><span data-stu-id="824e2-131">An <xref:System.Xml.Linq.XProcessingInstruction>, <xref:System.Xml.Linq.XComment>, or <xref:System.Xml.Linq.XText> is added as child content.</span></span>  
   
--   <span data-ttu-id="f6c33-132"><xref:System.Collections.IEnumerable> Je výčet, a tato pravidla jsou použita rekurzivně výsledky.</span><span class="sxs-lookup"><span data-stu-id="f6c33-132">An <xref:System.Collections.IEnumerable> is enumerated, and these rules are applied recursively to the results.</span></span>  
+-   <span data-ttu-id="824e2-132"><xref:System.Collections.IEnumerable> Výčtu a tato pravidla jsou aplikována rekurzivně na výsledky.</span><span class="sxs-lookup"><span data-stu-id="824e2-132">An <xref:System.Collections.IEnumerable> is enumerated, and these rules are applied recursively to the results.</span></span>  
   
--   <span data-ttu-id="f6c33-133">U ostatních typů jeho `ToString` metoda je volána a výsledek je přidána jako textového obsahu.</span><span class="sxs-lookup"><span data-stu-id="f6c33-133">For any other type, its `ToString` method is called and the result is added as text content.</span></span>  
+-   <span data-ttu-id="824e2-133">Pro jakýkoli jiný typ jeho `ToString` volání metody a výsledek se přidá jako textový obsah.</span><span class="sxs-lookup"><span data-stu-id="824e2-133">For any other type, its `ToString` method is called and the result is added as text content.</span></span>  
   
-### <a name="creating-an-xelement-with-content"></a><span data-ttu-id="f6c33-134">Vytvoření XElement s obsahem</span><span class="sxs-lookup"><span data-stu-id="f6c33-134">Creating an XElement with Content</span></span>  
- <span data-ttu-id="f6c33-135">Můžete vytvořit <xref:System.Xml.Linq.XElement> obsahující jednoduchý obsah pomocí volání jedné metody.</span><span class="sxs-lookup"><span data-stu-id="f6c33-135">You can create an <xref:System.Xml.Linq.XElement> that contains simple content with a single method call.</span></span> <span data-ttu-id="f6c33-136">K tomuto účelu určete obsah jako druhý parametr následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="f6c33-136">To do this, specify the content as the second parameter, as follows:</span></span>  
+### <a name="creating-an-xelement-with-content"></a><span data-ttu-id="824e2-134">Vytváření s obsahem na XElement</span><span class="sxs-lookup"><span data-stu-id="824e2-134">Creating an XElement with content</span></span>  
+ <span data-ttu-id="824e2-135">Můžete vytvořit <xref:System.Xml.Linq.XElement> , který obsahuje jednoduchý obsah pomocí jedné metody volání.</span><span class="sxs-lookup"><span data-stu-id="824e2-135">You can create an <xref:System.Xml.Linq.XElement> that contains simple content with a single method call.</span></span> <span data-ttu-id="824e2-136">Chcete-li to provést, určení obsahu jako druhý parametr následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="824e2-136">To do this, specify the content as the second parameter, as follows:</span></span>  
   
 ```csharp  
 XElement n = new XElement("Customer", "Adventure Works");  
 Console.WriteLine(n);  
 ```  
   
- <span data-ttu-id="f6c33-137">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="f6c33-137">This example produces the following output:</span></span>  
+ <span data-ttu-id="824e2-137">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="824e2-137">This example produces the following output:</span></span>  
   
 ```xml  
 <Customer>Adventure Works</Customer>  
 ```  
   
- <span data-ttu-id="f6c33-138">Jako obsah můžete předat libovolný typ objektu.</span><span class="sxs-lookup"><span data-stu-id="f6c33-138">You can pass any type of object as the content.</span></span> <span data-ttu-id="f6c33-139">Například následující kód vytvoří elementu, který obsahuje plovoucí bodu číslo jako obsah:</span><span class="sxs-lookup"><span data-stu-id="f6c33-139">For example, the following code creates an element that contains a floating point number as content:</span></span>  
+ <span data-ttu-id="824e2-138">Libovolný typ objektu lze předat jako obsah.</span><span class="sxs-lookup"><span data-stu-id="824e2-138">You can pass any type of object as the content.</span></span> <span data-ttu-id="824e2-139">Například následující kód vytvoří element, který obsahuje plovoucí číslo jako obsah bodu:</span><span class="sxs-lookup"><span data-stu-id="824e2-139">For example, the following code creates an element that contains a floating point number as content:</span></span>  
   
 ```csharp  
 XElement n = new XElement("Cost", 324.50);  
 Console.WriteLine(n);  
 ```  
   
- <span data-ttu-id="f6c33-140">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="f6c33-140">This example produces the following output:</span></span>  
+ <span data-ttu-id="824e2-140">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="824e2-140">This example produces the following output:</span></span>  
   
 ```xml  
 <Cost>324.5</Cost>  
 ```  
   
- <span data-ttu-id="f6c33-141">Plovoucí bod je číslo do pole a v předaný konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="f6c33-141">The floating point number is boxed and passed in to the constructor.</span></span> <span data-ttu-id="f6c33-142">Pevně určené číslo je převedeno na řetězec a použít jako obsah elementu.</span><span class="sxs-lookup"><span data-stu-id="f6c33-142">The boxed number is converted to a string and used as the content of the element.</span></span>  
+ <span data-ttu-id="824e2-141">Plovoucí desetinná čárka je číslo v poli a předaná do konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="824e2-141">The floating point number is boxed and passed in to the constructor.</span></span> <span data-ttu-id="824e2-142">Pevně určené číslo je převedeno na řetězec a použít jako obsah elementu.</span><span class="sxs-lookup"><span data-stu-id="824e2-142">The boxed number is converted to a string and used as the content of the element.</span></span>  
   
-### <a name="creating-an-xelement-with-a-child-element"></a><span data-ttu-id="f6c33-143">Vytvoření XElement s podřízený Element</span><span class="sxs-lookup"><span data-stu-id="f6c33-143">Creating an XElement with a Child Element</span></span>  
- <span data-ttu-id="f6c33-144">Pokud předáte instanci <xref:System.Xml.Linq.XElement> třída obsahu argument konstruktoru vytvoří element s podřízený element:</span><span class="sxs-lookup"><span data-stu-id="f6c33-144">If you pass an instance of the <xref:System.Xml.Linq.XElement> class for the content argument, the constructor creates an element with a child element:</span></span>  
+### <a name="creating-an-xelement-with-a-child-element"></a><span data-ttu-id="824e2-143">Vytváření s podřízeným elementem na XElement</span><span class="sxs-lookup"><span data-stu-id="824e2-143">Creating an XElement with a child element</span></span>  
+ <span data-ttu-id="824e2-144">Pokud předáte instanci <xref:System.Xml.Linq.XElement> třídy obsahu argument konstruktoru vytvoří element s podřízený element:</span><span class="sxs-lookup"><span data-stu-id="824e2-144">If you pass an instance of the <xref:System.Xml.Linq.XElement> class for the content argument, the constructor creates an element with a child element:</span></span>  
   
 ```csharp  
 XElement shippingUnit = new XElement("ShippingUnit",  
@@ -101,7 +101,7 @@ XElement shippingUnit = new XElement("ShippingUnit",
 Console.WriteLine(shippingUnit);  
 ```  
   
- <span data-ttu-id="f6c33-145">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="f6c33-145">This example produces the following output:</span></span>  
+ <span data-ttu-id="824e2-145">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="824e2-145">This example produces the following output:</span></span>  
   
 ```xml  
 <ShippingUnit>  
@@ -109,8 +109,8 @@ Console.WriteLine(shippingUnit);
 </ShippingUnit>  
 ```  
   
-### <a name="creating-an-xelement-with-multiple-child-elements"></a><span data-ttu-id="f6c33-146">Vytvoření XElement s více podřízených elementů</span><span class="sxs-lookup"><span data-stu-id="f6c33-146">Creating an XElement with Multiple Child Elements</span></span>  
- <span data-ttu-id="f6c33-147">Můžete předat za počet <xref:System.Xml.Linq.XElement> objekty pro obsah.</span><span class="sxs-lookup"><span data-stu-id="f6c33-147">You can pass in a number of <xref:System.Xml.Linq.XElement> objects for the content.</span></span> <span data-ttu-id="f6c33-148">Každý z <xref:System.Xml.Linq.XElement> objekty se dodává jako podřízený element.</span><span class="sxs-lookup"><span data-stu-id="f6c33-148">Each of the <xref:System.Xml.Linq.XElement> objects is included as a child element.</span></span>  
+### <a name="creating-an-xelement-with-multiple-child-elements"></a><span data-ttu-id="824e2-146">Vytváření XElement s více podřízených prvků</span><span class="sxs-lookup"><span data-stu-id="824e2-146">Creating an XElement with multiple child elements</span></span>  
+ <span data-ttu-id="824e2-147">Můžete předat několik <xref:System.Xml.Linq.XElement> objekty pro obsah.</span><span class="sxs-lookup"><span data-stu-id="824e2-147">You can pass in a number of <xref:System.Xml.Linq.XElement> objects for the content.</span></span> <span data-ttu-id="824e2-148">Každá z <xref:System.Xml.Linq.XElement> objekty je dostupná jako podřízený element.</span><span class="sxs-lookup"><span data-stu-id="824e2-148">Each of the <xref:System.Xml.Linq.XElement> objects is included as a child element.</span></span>  
   
 ```csharp  
 XElement address = new XElement("Address",  
@@ -122,7 +122,7 @@ XElement address = new XElement("Address",
 Console.WriteLine(address);  
 ```  
   
- <span data-ttu-id="f6c33-149">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="f6c33-149">This example produces the following output:</span></span>  
+ <span data-ttu-id="824e2-149">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="824e2-149">This example produces the following output:</span></span>  
   
 ```xml  
 <Address>  
@@ -133,7 +133,7 @@ Console.WriteLine(address);
 </Address>  
 ```  
   
- <span data-ttu-id="f6c33-150">Tím, že rozšíří výše uvedeném příkladu, můžete vytvořit celý strom XML, následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="f6c33-150">By extending the above example, you can create an entire XML tree, as follows:</span></span>  
+ <span data-ttu-id="824e2-150">Tím, že rozšíří výše uvedeném příkladu, můžete vytvořit celý strom XML následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="824e2-150">By extending the above example, you can create an entire XML tree, as follows:</span></span>  
   
 ```csharp  
 XElement contacts =  
@@ -152,7 +152,7 @@ XElement contacts =
 Console.WriteLine(contacts);  
 ```  
   
- <span data-ttu-id="f6c33-151">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="f6c33-151">This example produces the following output:</span></span>  
+ <span data-ttu-id="824e2-151">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="824e2-151">This example produces the following output:</span></span>  
   
 ```xml  
 <Contacts>  
@@ -169,23 +169,25 @@ Console.WriteLine(contacts);
 </Contacts>  
 ```  
   
-### <a name="creating-an-empty-element"></a><span data-ttu-id="f6c33-152">Vytvoření prázdného prvku</span><span class="sxs-lookup"><span data-stu-id="f6c33-152">Creating an Empty Element</span></span>  
- <span data-ttu-id="f6c33-153">Chcete-li vytvořit prázdnou <xref:System.Xml.Linq.XElement>, můžete do konstruktoru nepředávejte žádný obsah.</span><span class="sxs-lookup"><span data-stu-id="f6c33-153">To create an empty <xref:System.Xml.Linq.XElement>, you do not pass any content to the constructor.</span></span> <span data-ttu-id="f6c33-154">Následující příklad vytvoří prázdný element:</span><span class="sxs-lookup"><span data-stu-id="f6c33-154">The following example creates an empty element:</span></span>  
+### <a name="creating-an-empty-element"></a><span data-ttu-id="824e2-152">Vytvořit prázdný element</span><span class="sxs-lookup"><span data-stu-id="824e2-152">Creating an empty element</span></span>  
+ <span data-ttu-id="824e2-153">Chcete-li vytvořit prázdnou <xref:System.Xml.Linq.XElement>, konstruktoru nepředáte žádný obsah.</span><span class="sxs-lookup"><span data-stu-id="824e2-153">To create an empty <xref:System.Xml.Linq.XElement>, you do not pass any content to the constructor.</span></span> <span data-ttu-id="824e2-154">Následující příklad vytvoří prázdný element:</span><span class="sxs-lookup"><span data-stu-id="824e2-154">The following example creates an empty element:</span></span>  
   
 ```csharp  
 XElement n = new XElement("Customer");  
 Console.WriteLine(n);  
 ```  
   
- <span data-ttu-id="f6c33-155">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="f6c33-155">This example produces the following output:</span></span>  
+ <span data-ttu-id="824e2-155">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="824e2-155">This example produces the following output:</span></span>  
   
 ```xml  
 <Customer />  
 ```  
   
-### <a name="attaching-vs-cloning"></a><span data-ttu-id="f6c33-156">Připojení vs. Klonování</span><span class="sxs-lookup"><span data-stu-id="f6c33-156">Attaching vs. Cloning</span></span>  
- <span data-ttu-id="f6c33-157">Jak je uvedeno nahoře, při přidávání <xref:System.Xml.Linq.XNode> (včetně <xref:System.Xml.Linq.XElement>) nebo <xref:System.Xml.Linq.XAttribute> objekty, pokud se nový obsah nemá nadřazený, jsou objekty jednoduše připojené k stromové struktuře XML.</span><span class="sxs-lookup"><span data-stu-id="f6c33-157">As mentioned previously, when adding <xref:System.Xml.Linq.XNode> (including <xref:System.Xml.Linq.XElement>) or <xref:System.Xml.Linq.XAttribute> objects, if the new content has no parent, the objects are simply attached to the XML tree.</span></span> <span data-ttu-id="f6c33-158">Pokud nový obsah už je nadřazena a je součástí jiného stromu XML, naklonována nový obsah a nově naklonovaný obsah je připojen k stromové struktuře XML.</span><span class="sxs-lookup"><span data-stu-id="f6c33-158">If the new content already is parented and is part of another XML tree, the new content is cloned, and the newly cloned content is attached to the XML tree.</span></span>  
-  
+### <a name="attaching-vs-cloning"></a><span data-ttu-id="824e2-156">Připojení a klonování</span><span class="sxs-lookup"><span data-stu-id="824e2-156">Attaching vs. cloning</span></span>  
+ <span data-ttu-id="824e2-157">Jak už bylo zmíněno dříve, při přidávání <xref:System.Xml.Linq.XNode> (včetně <xref:System.Xml.Linq.XElement>) nebo <xref:System.Xml.Linq.XAttribute> objektů, pokud se nový obsah nemá žádný nadřazený objekt, objekty jsou jednoduše připojené do stromu XML.</span><span class="sxs-lookup"><span data-stu-id="824e2-157">As mentioned previously, when adding <xref:System.Xml.Linq.XNode> (including <xref:System.Xml.Linq.XElement>) or <xref:System.Xml.Linq.XAttribute> objects, if the new content has no parent, the objects are simply attached to the XML tree.</span></span> <span data-ttu-id="824e2-158">Pokud nový obsah už je nadřazena a je součástí jiného stromu XML, naklonované nový obsah a nově naklonovaného obsahu je připojen ke stromu XML.</span><span class="sxs-lookup"><span data-stu-id="824e2-158">If the new content already is parented and is part of another XML tree, the new content is cloned, and the newly cloned content is attached to the XML tree.</span></span>  
+
+<span data-ttu-id="824e2-159">Následující příklad ukazuje chování při přidávání nadřazeným prvkem elementu do stromu a přidejte element s žádný nadřazený objekt na strom.</span><span class="sxs-lookup"><span data-stu-id="824e2-159">The following example demonstrates the behavior when you add a parented element to a tree, and when you add an element with no parent to a tree.</span></span>
+
 ```csharp  
 // Create a tree with a child element.  
 XElement xmlTree1 = new XElement("Root",  
@@ -210,14 +212,12 @@ Console.WriteLine("Child1 was {0}",
 Console.WriteLine("Child2 was {0}",  
     child2 == xmlTree2.Element("Child2") ?  
     "attached" : "cloned");  
-```  
-  
- <span data-ttu-id="f6c33-159">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="f6c33-159">This example produces the following output:</span></span>  
-  
-```  
-Child1 was cloned  
-Child2 was attached  
-```  
-  
-## <a name="see-also"></a><span data-ttu-id="f6c33-160">Viz také</span><span class="sxs-lookup"><span data-stu-id="f6c33-160">See Also</span></span>  
- [<span data-ttu-id="f6c33-161">Vytváření stromů XML (C#)</span><span class="sxs-lookup"><span data-stu-id="f6c33-161">Creating XML Trees (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)
+
+// The example displays the following output:  
+//    Child1 was cloned  
+//    Child2 was attached  
+```
+
+## <a name="see-also"></a><span data-ttu-id="824e2-160">Viz také:</span><span class="sxs-lookup"><span data-stu-id="824e2-160">See also</span></span>
+
+- [<span data-ttu-id="824e2-161">Vytváření stromů XML (C#)</span><span class="sxs-lookup"><span data-stu-id="824e2-161">Creating XML Trees (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)

@@ -5,121 +5,135 @@ helpviewer_keywords:
 - Astoria
 - WCF Data Services, getting started
 ms.assetid: 73d2bec3-7c92-4110-b905-11bb0462357a
-ms.openlocfilehash: 148e6e50e81552b2418abba9f6655234fc023c4c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9ece2fe051855d0fd39556f56a4343ead2c437bc
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33365953"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43400487"
 ---
-# <a name="wcf-data-services-45"></a><span data-ttu-id="54eff-102">Datové služby WCF 4.5</span><span class="sxs-lookup"><span data-stu-id="54eff-102">WCF Data Services 4.5</span></span>
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="54eff-103"> (dříve označované jako "ADO.NET Data Services") je součástí rozhraní .NET Framework, který umožňuje vytvářet služby, které používají [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] vystavení a spotřebování data prostřednictvím webu nebo intranetu pomocí sémantika [representational stavu Transfer (REST)](http://go.microsoft.com/fwlink/?LinkId=113919).</span><span class="sxs-lookup"><span data-stu-id="54eff-103"> (formerly known as "ADO.NET Data Services") is a component of the .NET Framework that enables you to create services that use the [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] to expose and consume data over the Web or intranet by using the semantics of [representational state transfer (REST)](http://go.microsoft.com/fwlink/?LinkId=113919).</span></span> [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]<span data-ttu-id="54eff-104"> zpřístupní data jako prostředky, které jsou adresovat pomocí identifikátory URI.</span><span class="sxs-lookup"><span data-stu-id="54eff-104"> exposes data as resources that are addressable by URIs.</span></span> <span data-ttu-id="54eff-105">Data se získat přístup a změnit pomocí standardních operací protokolu HTTP z GET, PUT, POST a odstranění.</span><span class="sxs-lookup"><span data-stu-id="54eff-105">Data is accessed and changed by using standard HTTP verbs of GET, PUT, POST, and DELETE.</span></span> [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]<span data-ttu-id="54eff-106"> používá pravidla vztah entit [datového modelu Entity](../../../../docs/framework/data/adonet/entity-data-model.md) vystavit prostředky jako sady entit, které jsou spojené přidružení.</span><span class="sxs-lookup"><span data-stu-id="54eff-106"> uses the entity-relationship conventions of the [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md) to expose resources as sets of entities that are related by associations.</span></span>  
-  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="54eff-107"> používá [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokol pro adresování a aktualizaci prostředky.</span><span class="sxs-lookup"><span data-stu-id="54eff-107"> uses the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protocol for addressing and updating resources.</span></span> <span data-ttu-id="54eff-108">Tímto způsobem můžete přistupovat z libovolného klienta, který podporuje tyto služby [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)].</span><span class="sxs-lookup"><span data-stu-id="54eff-108">In this way, you can access these services from any client that supports [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)].</span></span> [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]<span data-ttu-id="54eff-109"> můžete k vyžádání a zapisovat data k prostředkům pomocí známých přenos formáty: Atom, sadu standardy výměna a aktualizace dat jako soubor XML a JavaScript Object Notation (JSON) formátu exchange založený na textu dat, který je hojně používá v aplikaci AJAX.</span><span class="sxs-lookup"><span data-stu-id="54eff-109"> enables you to request and write data to resources by using well-known transfer formats: Atom, a set of standards for exchanging and updating data as XML, and JavaScript Object Notation (JSON), a text-based data exchange format used extensively in AJAX application.</span></span>  
-  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="54eff-110"> můžou zpřístupnit data, která pochází z různých zdrojů jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály.</span><span class="sxs-lookup"><span data-stu-id="54eff-110"> can expose data that originates from various sources as [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feeds.</span></span> <span data-ttu-id="54eff-111">Nástroje sady Visual Studio vytvářet usnadňují [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby pomocí datový model ADO.NET Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="54eff-111">Visual Studio tools make it easier for you to create an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-based service by using an ADO.NET Entity Framework data model.</span></span> <span data-ttu-id="54eff-112">Můžete také vytvořit [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály na základě třídy společných language runtime (CLR) a data i pozdní vazbou nebo netypové.</span><span class="sxs-lookup"><span data-stu-id="54eff-112">You can also create [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feeds based on common language runtime (CLR) classes and even late-bound or un-typed data.</span></span>  
-  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="54eff-113"> také obsahuje sadu klientské knihovny, jednu pro obecné klientské aplikace rozhraní .NET Framework a druhou speciálně pro aplikace programu Silverlight.</span><span class="sxs-lookup"><span data-stu-id="54eff-113"> also includes a set of client libraries, one for general .NET Framework client applications and another specifically for Silverlight-based applications.</span></span> <span data-ttu-id="54eff-114">Tyto knihovny klienta poskytují programovací model na základě objektů při přístupu [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu z prostředích, jako je rozhraní .NET Framework a program Silverlight.</span><span class="sxs-lookup"><span data-stu-id="54eff-114">These client libraries provide an object-based programming model when you access an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed from environments such as the .NET Framework and Silverlight.</span></span>  
-  
-## <a name="where-should-i-start"></a><span data-ttu-id="54eff-115">Kde mám začít?</span><span class="sxs-lookup"><span data-stu-id="54eff-115">Where Should I Start?</span></span>  
- <span data-ttu-id="54eff-116">V závislosti na vašem zájmu, zvažte Začínáme s [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] v jednom z následujících témat.</span><span class="sxs-lookup"><span data-stu-id="54eff-116">Depending on your interests, consider getting started with [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] in one of the following topics.</span></span>  
-  
- <span data-ttu-id="54eff-117">Chcete rovnou...</span><span class="sxs-lookup"><span data-stu-id="54eff-117">I want to jump right in…</span></span>  
- -   [<span data-ttu-id="54eff-118">Rychlý start</span><span class="sxs-lookup"><span data-stu-id="54eff-118">Quickstart</span></span>](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)  
-  
--   [<span data-ttu-id="54eff-119">Začínáme</span><span class="sxs-lookup"><span data-stu-id="54eff-119">Getting Started</span></span>](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)  
-  
--   [<span data-ttu-id="54eff-120">Rychlý start Silverlight</span><span class="sxs-lookup"><span data-stu-id="54eff-120">Silverlight Quickstart</span></span>](http://go.microsoft.com/fwlink/?LinkID=192782)  
-  
--   [<span data-ttu-id="54eff-121">Rychlý start Silverlight pro vývoj pro Windows Phone</span><span class="sxs-lookup"><span data-stu-id="54eff-121">Silverlight Quickstart for Windows Phone Development</span></span>](http://go.microsoft.com/fwlink/?LinkID=214535)  
-  
- <span data-ttu-id="54eff-122">Právě ukázat nějaký kód...</span><span class="sxs-lookup"><span data-stu-id="54eff-122">Just show me some code…</span></span>  
- -   [<span data-ttu-id="54eff-123">Rychlý start</span><span class="sxs-lookup"><span data-stu-id="54eff-123">Quickstart</span></span>](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)  
-  
--   [<span data-ttu-id="54eff-124">Postupy: Provádění dotazů v datové službě</span><span class="sxs-lookup"><span data-stu-id="54eff-124">How to: Execute Data Service Queries</span></span>](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)  
-  
--   [<span data-ttu-id="54eff-125">Postupy: Vytvoření vazby dat na elementy Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="54eff-125">How to: Bind Data to Windows Presentation Foundation Elements</span></span>](../../../../docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md)  
-  
- <span data-ttu-id="54eff-126">Chci vědět více o [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]...</span><span class="sxs-lookup"><span data-stu-id="54eff-126">I want to know more about [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]…</span></span>  
- -   [<span data-ttu-id="54eff-127">Dokument White Paper: Úvod OData</span><span class="sxs-lookup"><span data-stu-id="54eff-127">Whitepaper: Introducing OData</span></span>](http://go.microsoft.com/fwlink/?LinkId=220867)  
-  
--   [<span data-ttu-id="54eff-128">Otevřít web Data protokolu</span><span class="sxs-lookup"><span data-stu-id="54eff-128">Open Data Protocol Web site</span></span>](http://go.microsoft.com/fwlink/?LinkID=184554)  
-  
--   [<span data-ttu-id="54eff-129">OData: SDK</span><span class="sxs-lookup"><span data-stu-id="54eff-129">OData: SDK</span></span>](http://go.microsoft.com/fwlink/?LinkID=185248)  
-  
--   [<span data-ttu-id="54eff-130">OData: Nejčastější dotazy</span><span class="sxs-lookup"><span data-stu-id="54eff-130">OData: Frequently Asked Questions</span></span>](http://go.microsoft.com/fwlink/?LinkId=185867)  
-  
- <span data-ttu-id="54eff-131">Chci videí, některé...</span><span class="sxs-lookup"><span data-stu-id="54eff-131">I want to watch some videos…</span></span>  
- -   [<span data-ttu-id="54eff-132">Průvodce začátečníka služby WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="54eff-132">Beginner's Guide to WCF Data Services</span></span>](http://go.microsoft.com/fwlink/?LinkId=220864)  
-  
--   [<span data-ttu-id="54eff-133">Videa vývojáře služeb WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="54eff-133">WCF Data Services Developer Videos</span></span>](http://go.microsoft.com/fwlink/?LinkId=220861)  
-  
--   [<span data-ttu-id="54eff-134">OData: Vývojáři webové stránky</span><span class="sxs-lookup"><span data-stu-id="54eff-134">OData: Developers Web site</span></span>](http://go.microsoft.com/fwlink/?LinkId=185866)  
-  
- <span data-ttu-id="54eff-135">Chcete vidět začátku do konce ukázky</span><span class="sxs-lookup"><span data-stu-id="54eff-135">I want to see end-to-end samples</span></span>  
- -   [<span data-ttu-id="54eff-136">Ukázky dokumentace na MSDN ukázky Galerie služeb WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="54eff-136">WCF Data Services Documentation Samples on MSDN Samples Gallery</span></span>](http://go.microsoft.com/fwlink/?LinkID=220865)  
-  
--   [<span data-ttu-id="54eff-137">Další WCF Data Services ukázek v Galerii ukázek webu MSDN</span><span class="sxs-lookup"><span data-stu-id="54eff-137">Other WCF Data Services Samples on MSDN Samples Gallery</span></span>](http://go.microsoft.com/fwlink/?LinkId=220866)  
-  
--   [<span data-ttu-id="54eff-138">OData: SDK</span><span class="sxs-lookup"><span data-stu-id="54eff-138">OData: SDK</span></span>](http://go.microsoft.com/fwlink/?LinkID=185248)  
-  
- <span data-ttu-id="54eff-139">Jak zajistíte jejich integraci se sadou Visual Studio?</span><span class="sxs-lookup"><span data-stu-id="54eff-139">How does it integrate with Visual Studio?</span></span>  
- -   [<span data-ttu-id="54eff-140">Generování klientské knihovny datové služby</span><span class="sxs-lookup"><span data-stu-id="54eff-140">Generating the Data Service Client Library</span></span>](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)  
-  
--   [<span data-ttu-id="54eff-141">Vytvoření datové služby</span><span class="sxs-lookup"><span data-stu-id="54eff-141">Creating the Data Service</span></span>](../../../../docs/framework/data/wcf/creating-the-data-service.md)  
-  
--   [<span data-ttu-id="54eff-142">Zprostředkovatel Entity Framework</span><span class="sxs-lookup"><span data-stu-id="54eff-142">Entity Framework Provider</span></span>](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md)  
-  
- <span data-ttu-id="54eff-143">Co můžete dělat s ní?</span><span class="sxs-lookup"><span data-stu-id="54eff-143">What can I do with it?</span></span>  
- -   [<span data-ttu-id="54eff-144">Přehled</span><span class="sxs-lookup"><span data-stu-id="54eff-144">Overview</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)  
-  
--   [<span data-ttu-id="54eff-145">Dokument White Paper: Úvod OData</span><span class="sxs-lookup"><span data-stu-id="54eff-145">Whitepaper: Introducing OData</span></span>](http://go.microsoft.com/fwlink/?LinkId=220867)  
-  
--   [<span data-ttu-id="54eff-146">Scénáře aplikací</span><span class="sxs-lookup"><span data-stu-id="54eff-146">Application Scenarios</span></span>](../../../../docs/framework/data/wcf/application-scenarios-wcf-data-services.md)  
-  
- <span data-ttu-id="54eff-147">Chci používat Silverlight...</span><span class="sxs-lookup"><span data-stu-id="54eff-147">I want to use Silverlight…</span></span>  
- -   [<span data-ttu-id="54eff-148">Rychlý start Silverlight</span><span class="sxs-lookup"><span data-stu-id="54eff-148">Silverlight Quickstart</span></span>](http://go.microsoft.com/fwlink/?LinkID=192782)  
-  
--   [<span data-ttu-id="54eff-149">Datové služby WCF (Silverlight)</span><span class="sxs-lookup"><span data-stu-id="54eff-149">WCF Data Services (Silverlight)</span></span>](http://go.microsoft.com/fwlink/?LinkID=143149)  
-  
--   [<span data-ttu-id="54eff-150">Začínáme s programem Silverlight</span><span class="sxs-lookup"><span data-stu-id="54eff-150">Getting Started with Silverlight</span></span>](http://go.microsoft.com/fwlink/?LinkId=148366)  
-  
- <span data-ttu-id="54eff-151">Chcete vytvořit aplikaci pro Windows Phone...</span><span class="sxs-lookup"><span data-stu-id="54eff-151">I want to create a Windows Phone application…</span></span>  
- -   [<span data-ttu-id="54eff-152">Rychlý start Silverlight pro vývoj pro Windows Phone</span><span class="sxs-lookup"><span data-stu-id="54eff-152">Silverlight Quickstart for Windows Phone Development</span></span>](http://go.microsoft.com/fwlink/?LinkID=214535)  
-  
--   [<span data-ttu-id="54eff-153">Klient Open Data Protocol (OData) pro Windows Phone</span><span class="sxs-lookup"><span data-stu-id="54eff-153">Open Data Protocol (OData) Client for Windows Phone</span></span>](http://go.microsoft.com/fwlink/?LinkID=208749)  
-  
- <span data-ttu-id="54eff-154">Chcete použít LINQ...</span><span class="sxs-lookup"><span data-stu-id="54eff-154">I want to use LINQ…</span></span>  
- -   [<span data-ttu-id="54eff-155">Dotazování v datové službě</span><span class="sxs-lookup"><span data-stu-id="54eff-155">Querying the Data Service</span></span>](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
-  
--   [<span data-ttu-id="54eff-156">Aspekty LINQ</span><span class="sxs-lookup"><span data-stu-id="54eff-156">LINQ Considerations</span></span>](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md)  
-  
--   [<span data-ttu-id="54eff-157">Postupy: Provádění dotazů v datové službě</span><span class="sxs-lookup"><span data-stu-id="54eff-157">How to: Execute Data Service Queries</span></span>](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)  
-  
- <span data-ttu-id="54eff-158">Potřebuji některé další informace...</span><span class="sxs-lookup"><span data-stu-id="54eff-158">I still need some more information…</span></span>  
- -   [<span data-ttu-id="54eff-159">Blog týmu služby WCF Data</span><span class="sxs-lookup"><span data-stu-id="54eff-159">WCF Data Services Team Blog</span></span>](http://go.microsoft.com/fwlink/?LinkID=150511)  
-  
--   [<span data-ttu-id="54eff-160">Prostředky</span><span class="sxs-lookup"><span data-stu-id="54eff-160">Resources</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-resources.md)  
-  
--   [<span data-ttu-id="54eff-161">Středisku pro vývojáře WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="54eff-161">WCF Data Services Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=220868)  
-  
--   [<span data-ttu-id="54eff-162">Otevřít web Data protokolu</span><span class="sxs-lookup"><span data-stu-id="54eff-162">Open Data Protocol Web site</span></span>](http://go.microsoft.com/fwlink/?LinkID=184554)  
-  
-## <a name="in-this-section"></a><span data-ttu-id="54eff-163">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="54eff-163">In This Section</span></span>  
- [<span data-ttu-id="54eff-164">Přehled</span><span class="sxs-lookup"><span data-stu-id="54eff-164">Overview</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)  
- <span data-ttu-id="54eff-165">Poskytuje přehled funkcí a funkcí, které jsou k dispozici v [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].</span><span class="sxs-lookup"><span data-stu-id="54eff-165">Provides an overview of the features and functionality available in [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].</span></span>  
-  
- [<span data-ttu-id="54eff-166">Co je nového ve službě WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="54eff-166">What's New in WCF Data Services</span></span>](http://msdn.microsoft.com/library/cf22cad5-b8d9-472b-8d7c-b863b64eaae8)  
- <span data-ttu-id="54eff-167">Popisuje nové funkce [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a podporu pro nové [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] funkce.</span><span class="sxs-lookup"><span data-stu-id="54eff-167">Describes new functionality in [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] and support for new [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] features.</span></span>  
-  
- [<span data-ttu-id="54eff-168">Začínáme</span><span class="sxs-lookup"><span data-stu-id="54eff-168">Getting Started</span></span>](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)  
- <span data-ttu-id="54eff-169">Popisuje, jak vystavení a spotřebování [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].</span><span class="sxs-lookup"><span data-stu-id="54eff-169">Describes how to expose and consume [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feeds by using [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].</span></span>  
-  
- [<span data-ttu-id="54eff-170">Definování datových služeb WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="54eff-170">Defining WCF Data Services</span></span>](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
- <span data-ttu-id="54eff-171">Popisuje, jak vytvořit a nakonfigurovat službu data, která zveřejňuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanály.</span><span class="sxs-lookup"><span data-stu-id="54eff-171">Describes how to create and configure a data service that exposes [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feeds.</span></span>  
-  
- [<span data-ttu-id="54eff-172">Klientská knihovna pro WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="54eff-172">WCF Data Services Client Library</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
- <span data-ttu-id="54eff-173">Popisuje, jak pomocí klientské knihovny využívat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály z klientské aplikace rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="54eff-173">Describes how to use client libraries to consume [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feeds from a .NET Framework client application.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="54eff-174">Viz také</span><span class="sxs-lookup"><span data-stu-id="54eff-174">See Also</span></span>  
- [<span data-ttu-id="54eff-175">Representational State Transfer (REST)</span><span class="sxs-lookup"><span data-stu-id="54eff-175">Representational State Transfer (REST)</span></span>](http://go.microsoft.com/fwlink/?LinkId=113919)
+# <a name="wcf-data-services-45"></a><span data-ttu-id="08bb2-102">Datové služby WCF 4.5</span><span class="sxs-lookup"><span data-stu-id="08bb2-102">WCF Data Services 4.5</span></span>
+
+<span data-ttu-id="08bb2-103">Služby WCF Data Services (dříve označované jako "Služby ADO.NET Data Services") je součástí rozhraní .NET Framework, která umožňuje vytvářet služby, které používají [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] k vystavení a zpracování dat prostřednictvím webu nebo intranetu pomocí sémantiky [ (REST) Representational state transfer](https://go.microsoft.com/fwlink/?LinkId=113919).</span><span class="sxs-lookup"><span data-stu-id="08bb2-103">WCF Data Services (formerly known as "ADO.NET Data Services") is a component of the .NET Framework that enables you to create services that use the [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] to expose and consume data over the Web or intranet by using the semantics of [representational state transfer (REST)](https://go.microsoft.com/fwlink/?LinkId=113919).</span></span> <span data-ttu-id="08bb2-104">OData zveřejňuje data jako prostředky, které jsou adresovat pomocí identifikátorů URI.</span><span class="sxs-lookup"><span data-stu-id="08bb2-104">OData exposes data as resources that are addressable by URIs.</span></span> <span data-ttu-id="08bb2-105">Data se získat přístup, změnit pomocí standardní příkazy HTTP z GET, PUT, POST a DELETE.</span><span class="sxs-lookup"><span data-stu-id="08bb2-105">Data is accessed and changed by using standard HTTP verbs of GET, PUT, POST, and DELETE.</span></span> <span data-ttu-id="08bb2-106">Používá relace entity konvencí OData [modelu Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md) vystavit prostředky jako sady entit, které se týkají přidružení.</span><span class="sxs-lookup"><span data-stu-id="08bb2-106">OData uses the entity-relationship conventions of the [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md) to expose resources as sets of entities that are related by associations.</span></span>
+
+<span data-ttu-id="08bb2-107">Služby WCF Data Services používá protokol OData pro adresy a aktualizaci prostředků.</span><span class="sxs-lookup"><span data-stu-id="08bb2-107">WCF Data Services uses the OData protocol for addressing and updating resources.</span></span> <span data-ttu-id="08bb2-108">Tímto způsobem přistupujete k těmto službám z libovolného klienta, který podporuje prostředí OData.</span><span class="sxs-lookup"><span data-stu-id="08bb2-108">In this way, you can access these services from any client that supports OData.</span></span> <span data-ttu-id="08bb2-109">OData umožňuje vyžádat a zapisovat data do zdroje s použitím dobře známé přenos formáty: Atom, sada standardů pro výměnu a aktualizace dat ve formátu XML, JavaScript Object Notation (JSON), často používají v AJAX formátu textová data systému exchange aplikace.</span><span class="sxs-lookup"><span data-stu-id="08bb2-109">OData enables you to request and write data to resources by using well-known transfer formats: Atom, a set of standards for exchanging and updating data as XML, and JavaScript Object Notation (JSON), a text-based data exchange format used extensively in AJAX application.</span></span>
+
+<span data-ttu-id="08bb2-110">Datové služby WCF můžete zpřístupnit data, která pochází z různých zdrojů, jako k datovým kanálům OData.</span><span class="sxs-lookup"><span data-stu-id="08bb2-110">WCF Data Services can expose data that originates from various sources as OData feeds.</span></span> <span data-ttu-id="08bb2-111">Nástroje sady Visual Studio usnadňují vytvoření služby založených na protokolu OData s použitím datový model ADO.NET Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="08bb2-111">Visual Studio tools make it easier for you to create an OData-based service by using an ADO.NET Entity Framework data model.</span></span> <span data-ttu-id="08bb2-112">Můžete také vytvořit na základě běžné třídy language runtime (CLR) a dokonce i s pozdní vazbou nebo netypové datové kanály OData.</span><span class="sxs-lookup"><span data-stu-id="08bb2-112">You can also create OData feeds based on common language runtime (CLR) classes and even late-bound or un-typed data.</span></span>
+
+<span data-ttu-id="08bb2-113">Služby WCF Data Services obsahuje také sada klientských knihoven, jeden pro obecné klientské aplikace rozhraní .NET Framework a druhý speciálně pro aplikace založené na technologii Silverlight.</span><span class="sxs-lookup"><span data-stu-id="08bb2-113">WCF Data Services also includes a set of client libraries, one for general .NET Framework client applications and another specifically for Silverlight-based applications.</span></span> <span data-ttu-id="08bb2-114">Tyto klientské knihovny poskytuje programovací model založený na objektu při přístupu z prostředí, jako je rozhraní .NET Framework a Silverlight datového kanálu OData.</span><span class="sxs-lookup"><span data-stu-id="08bb2-114">These client libraries provide an object-based programming model when you access an OData feed from environments such as the .NET Framework and Silverlight.</span></span>
+
+## <a name="where-should-i-start"></a><span data-ttu-id="08bb2-115">Kde bych měl(a) začít?</span><span class="sxs-lookup"><span data-stu-id="08bb2-115">Where Should I Start?</span></span>
+
+<span data-ttu-id="08bb2-116">V závislosti na vašich zájmech vezměte v úvahu Začínáme se službou WCF Data Services v jednom z následujících témat.</span><span class="sxs-lookup"><span data-stu-id="08bb2-116">Depending on your interests, consider getting started with WCF Data Services in one of the following topics.</span></span>
+
+<span data-ttu-id="08bb2-117">Chci pustit do práce …</span><span class="sxs-lookup"><span data-stu-id="08bb2-117">I want to jump right in...</span></span>
+
+-   [<span data-ttu-id="08bb2-118">Rychlý start</span><span class="sxs-lookup"><span data-stu-id="08bb2-118">Quickstart</span></span>](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
+
+-   [<span data-ttu-id="08bb2-119">Začínáme</span><span class="sxs-lookup"><span data-stu-id="08bb2-119">Getting Started</span></span>](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
+
+-   [<span data-ttu-id="08bb2-120">Silverlight Quickstart</span><span class="sxs-lookup"><span data-stu-id="08bb2-120">Silverlight Quickstart</span></span>](https://go.microsoft.com/fwlink/?LinkID=192782)
+
+-   [<span data-ttu-id="08bb2-121">Silverlight Quickstart pro vývoj pro Windows Phone</span><span class="sxs-lookup"><span data-stu-id="08bb2-121">Silverlight Quickstart for Windows Phone Development</span></span>](https://go.microsoft.com/fwlink/?LinkID=214535)
+
+<span data-ttu-id="08bb2-122">Stačí ukázat kódu...</span><span class="sxs-lookup"><span data-stu-id="08bb2-122">Just show me some code...</span></span>
+
+-   [<span data-ttu-id="08bb2-123">Rychlý start</span><span class="sxs-lookup"><span data-stu-id="08bb2-123">Quickstart</span></span>](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
+
+-   [<span data-ttu-id="08bb2-124">Postupy: Provádění dotazů v datové službě</span><span class="sxs-lookup"><span data-stu-id="08bb2-124">How to: Execute Data Service Queries</span></span>](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)
+
+-   [<span data-ttu-id="08bb2-125">Postupy: Vytvoření vazby dat na elementy Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="08bb2-125">How to: Bind Data to Windows Presentation Foundation Elements</span></span>](../../../../docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md)
+
+<span data-ttu-id="08bb2-126">Chci vědět více o OData...</span><span class="sxs-lookup"><span data-stu-id="08bb2-126">I want to know more about OData...</span></span>
+
+ -   [<span data-ttu-id="08bb2-127">Dokument White Paper: Představujeme OData</span><span class="sxs-lookup"><span data-stu-id="08bb2-127">Whitepaper: Introducing OData</span></span>](https://go.microsoft.com/fwlink/?LinkId=220867)
+
+-   [<span data-ttu-id="08bb2-128">Otevřít web Data protokolu</span><span class="sxs-lookup"><span data-stu-id="08bb2-128">Open Data Protocol Web site</span></span>](https://go.microsoft.com/fwlink/?LinkID=184554)
+
+-   [<span data-ttu-id="08bb2-129">OData: sady SDK</span><span class="sxs-lookup"><span data-stu-id="08bb2-129">OData: SDK</span></span>](https://go.microsoft.com/fwlink/?LinkID=185248)
+
+-   [<span data-ttu-id="08bb2-130">OData: Nejčastější dotazy</span><span class="sxs-lookup"><span data-stu-id="08bb2-130">OData: Frequently Asked Questions</span></span>](https://go.microsoft.com/fwlink/?LinkId=185867)
+
+<span data-ttu-id="08bb2-131">Chci některé videa...</span><span class="sxs-lookup"><span data-stu-id="08bb2-131">I want to watch some videos...</span></span>
+
+-   [<span data-ttu-id="08bb2-132">Průvodce pro začátečníky služeb WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="08bb2-132">Beginner's Guide to WCF Data Services</span></span>](https://go.microsoft.com/fwlink/?LinkId=220864)
+
+-   [<span data-ttu-id="08bb2-133">WCF Data Services – video pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="08bb2-133">WCF Data Services Developer Videos</span></span>](https://go.microsoft.com/fwlink/?LinkId=220861)
+
+-   [<span data-ttu-id="08bb2-134">OData: Vývojáři webové stránky</span><span class="sxs-lookup"><span data-stu-id="08bb2-134">OData: Developers Web site</span></span>](https://go.microsoft.com/fwlink/?LinkId=185866)
+
+<span data-ttu-id="08bb2-135">Chci zobrazit-koncové ukázky...</span><span class="sxs-lookup"><span data-stu-id="08bb2-135">I want to see end-to-end samples...</span></span>
+
+-   [<span data-ttu-id="08bb2-136">Dokumentace ke službě vzorky z Galerie ukázek MSDN služeb WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="08bb2-136">WCF Data Services Documentation Samples on MSDN Samples Gallery</span></span>](https://go.microsoft.com/fwlink/?LinkID=220865)
+
+-   [<span data-ttu-id="08bb2-137">Další WCF Data Services – ukázky na Galerie ukázek MSDN</span><span class="sxs-lookup"><span data-stu-id="08bb2-137">Other WCF Data Services Samples on MSDN Samples Gallery</span></span>](https://go.microsoft.com/fwlink/?LinkId=220866)
+
+-   [<span data-ttu-id="08bb2-138">OData: sady SDK</span><span class="sxs-lookup"><span data-stu-id="08bb2-138">OData: SDK</span></span>](https://go.microsoft.com/fwlink/?LinkID=185248)
+
+<span data-ttu-id="08bb2-139">Jak zajistíte jejich integraci se sadou Visual Studio?</span><span class="sxs-lookup"><span data-stu-id="08bb2-139">How does it integrate with Visual Studio?</span></span>
+
+-   [<span data-ttu-id="08bb2-140">Generování klientské knihovny datové služby</span><span class="sxs-lookup"><span data-stu-id="08bb2-140">Generating the Data Service Client Library</span></span>](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)
+
+-   [<span data-ttu-id="08bb2-141">Vytvoření datové služby</span><span class="sxs-lookup"><span data-stu-id="08bb2-141">Creating the Data Service</span></span>](../../../../docs/framework/data/wcf/creating-the-data-service.md)
+
+-   [<span data-ttu-id="08bb2-142">Zprostředkovatel Entity Framework</span><span class="sxs-lookup"><span data-stu-id="08bb2-142">Entity Framework Provider</span></span>](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md)
+
+<span data-ttu-id="08bb2-143">Co můžu dělat s ním?</span><span class="sxs-lookup"><span data-stu-id="08bb2-143">What can I do with it?</span></span>
+
+-   [<span data-ttu-id="08bb2-144">Přehled</span><span class="sxs-lookup"><span data-stu-id="08bb2-144">Overview</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)
+
+-   [<span data-ttu-id="08bb2-145">Dokument White Paper: Představujeme OData</span><span class="sxs-lookup"><span data-stu-id="08bb2-145">Whitepaper: Introducing OData</span></span>](https://go.microsoft.com/fwlink/?LinkId=220867)
+
+-   [<span data-ttu-id="08bb2-146">Scénáře aplikací</span><span class="sxs-lookup"><span data-stu-id="08bb2-146">Application Scenarios</span></span>](../../../../docs/framework/data/wcf/application-scenarios-wcf-data-services.md)
+
+<span data-ttu-id="08bb2-147">Chci používat Silverlight...</span><span class="sxs-lookup"><span data-stu-id="08bb2-147">I want to use Silverlight...</span></span>
+
+-   [<span data-ttu-id="08bb2-148">Silverlight Quickstart</span><span class="sxs-lookup"><span data-stu-id="08bb2-148">Silverlight Quickstart</span></span>](https://go.microsoft.com/fwlink/?LinkID=192782)
+
+-   [<span data-ttu-id="08bb2-149">Datové služby WCF (Silverlight)</span><span class="sxs-lookup"><span data-stu-id="08bb2-149">WCF Data Services (Silverlight)</span></span>](https://go.microsoft.com/fwlink/?LinkID=143149)
+
+-   [<span data-ttu-id="08bb2-150">Začínáme s aplikací Silverlight</span><span class="sxs-lookup"><span data-stu-id="08bb2-150">Getting Started with Silverlight</span></span>](https://go.microsoft.com/fwlink/?LinkId=148366)
+
+<span data-ttu-id="08bb2-151">Chci používat LINQ...</span><span class="sxs-lookup"><span data-stu-id="08bb2-151">I want to use LINQ...</span></span>
+
+-   [<span data-ttu-id="08bb2-152">Dotazování v datové službě</span><span class="sxs-lookup"><span data-stu-id="08bb2-152">Querying the Data Service</span></span>](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
+
+-   [<span data-ttu-id="08bb2-153">Aspekty LINQ</span><span class="sxs-lookup"><span data-stu-id="08bb2-153">LINQ Considerations</span></span>](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md)
+
+-   [<span data-ttu-id="08bb2-154">Postupy: Provádění dotazů v datové službě</span><span class="sxs-lookup"><span data-stu-id="08bb2-154">How to: Execute Data Service Queries</span></span>](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)
+
+<span data-ttu-id="08bb2-155">Potřebuji ještě nějaké další informace...</span><span class="sxs-lookup"><span data-stu-id="08bb2-155">I still need some more information...</span></span>
+
+-   [<span data-ttu-id="08bb2-156">Blog týmu služby WCF Data</span><span class="sxs-lookup"><span data-stu-id="08bb2-156">WCF Data Services Team Blog</span></span>](https://go.microsoft.com/fwlink/?LinkID=150511)
+
+-   [<span data-ttu-id="08bb2-157">Prostředky</span><span class="sxs-lookup"><span data-stu-id="08bb2-157">Resources</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-resources.md)
+
+-   [<span data-ttu-id="08bb2-158">Středisko pro vývojáře služby WCF Data</span><span class="sxs-lookup"><span data-stu-id="08bb2-158">WCF Data Services Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=220868)
+
+-   [<span data-ttu-id="08bb2-159">Otevřít web Data protokolu</span><span class="sxs-lookup"><span data-stu-id="08bb2-159">Open Data Protocol Web site</span></span>](https://go.microsoft.com/fwlink/?LinkID=184554)
+
+## <a name="in-this-section"></a><span data-ttu-id="08bb2-160">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="08bb2-160">In This Section</span></span>
+
+ [<span data-ttu-id="08bb2-161">Přehled</span><span class="sxs-lookup"><span data-stu-id="08bb2-161">Overview</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)
+
+ <span data-ttu-id="08bb2-162">Poskytuje přehled funkcí a možností, které jsou k dispozici ve službě WCF Data Services.</span><span class="sxs-lookup"><span data-stu-id="08bb2-162">Provides an overview of the features and functionality available in WCF Data Services.</span></span>
+
+ [<span data-ttu-id="08bb2-163">Co je nového ve službě WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="08bb2-163">What's New in WCF Data Services</span></span>](https://msdn.microsoft.com/library/cf22cad5-b8d9-472b-8d7c-b863b64eaae8)
+
+ <span data-ttu-id="08bb2-164">Popisuje nové funkce služeb WCF Data Services a podpora pro nové funkce OData.</span><span class="sxs-lookup"><span data-stu-id="08bb2-164">Describes new functionality in WCF Data Services and support for new OData features.</span></span>
+
+ [<span data-ttu-id="08bb2-165">Začínáme</span><span class="sxs-lookup"><span data-stu-id="08bb2-165">Getting Started</span></span>](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
+
+ <span data-ttu-id="08bb2-166">Popisuje, jak vystavení a spotřebování informační kanály OData s použitím služeb WCF Data Services.</span><span class="sxs-lookup"><span data-stu-id="08bb2-166">Describes how to expose and consume OData feeds by using WCF Data Services.</span></span>
+
+ [<span data-ttu-id="08bb2-167">Definování datových služeb WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="08bb2-167">Defining WCF Data Services</span></span>](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
+
+ <span data-ttu-id="08bb2-168">Popisuje postup vytvoření a konfigurace datové služby, která zveřejňuje informační kanály OData.</span><span class="sxs-lookup"><span data-stu-id="08bb2-168">Describes how to create and configure a data service that exposes OData feeds.</span></span>
+
+ [<span data-ttu-id="08bb2-169">Klientská knihovna pro WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="08bb2-169">WCF Data Services Client Library</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
+
+ <span data-ttu-id="08bb2-170">Popisuje, jak pomocí klientských knihoven využívat informačních kanálů OData z klientské aplikace rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="08bb2-170">Describes how to use client libraries to consume OData feeds from a .NET Framework client application.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="08bb2-171">Viz také</span><span class="sxs-lookup"><span data-stu-id="08bb2-171">See Also</span></span>
+
+- [<span data-ttu-id="08bb2-172">Representational State Transfer (REST)</span><span class="sxs-lookup"><span data-stu-id="08bb2-172">Representational State Transfer (REST)</span></span>](https://go.microsoft.com/fwlink/?LinkId=113919)

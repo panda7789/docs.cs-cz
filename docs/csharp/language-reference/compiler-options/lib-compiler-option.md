@@ -8,65 +8,66 @@ helpviewer_keywords:
 - -lib compiler option [C#]
 - /lib compiler option [C#]
 ms.assetid: b0efcc88-e8aa-4df4-a00b-8bdef70b7673
-ms.openlocfilehash: 7db975909f498a0b84e7405a12a8f8ec1e2dd34b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c140a49de0503da1e59396f14ac1aee4c1d7d1a6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33216853"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43390403"
 ---
-# <a name="-lib-c-compiler-options"></a><span data-ttu-id="dba89-102">-lib (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="dba89-102">-lib (C# Compiler Options)</span></span>
-<span data-ttu-id="dba89-103">**-Lib** možnost určuje umístění sestavení odkazovaných pomocí možnosti [– referenční dokumentace (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) možnost.</span><span class="sxs-lookup"><span data-stu-id="dba89-103">The **-lib** option specifies the location of assemblies referenced by means of the [-reference (C# Compiler Options)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) option.</span></span>  
+# <a name="-lib-c-compiler-options"></a><span data-ttu-id="5f063-102">-lib (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="5f063-102">-lib (C# Compiler Options)</span></span>
+<span data-ttu-id="5f063-103">**-Lib** Určuje umístění sestavení odkazováno prostřednictvím [– referenční dokumentace (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) možnost.</span><span class="sxs-lookup"><span data-stu-id="5f063-103">The **-lib** option specifies the location of assemblies referenced by means of the [-reference (C# Compiler Options)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) option.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="dba89-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dba89-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5f063-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5f063-104">Syntax</span></span>  
   
 ```console  
 -lib:dir1[,dir2]  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="dba89-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="dba89-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="5f063-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="5f063-105">Arguments</span></span>  
  `dir1`  
- <span data-ttu-id="dba89-106">Adresář pro kompilátor hledat v případě odkazované sestavení nebyl nalezen v aktuální pracovní adresář (adresář, ze kterého je vyvolán kompilátor) nebo v adresáři systému modul common language runtime.</span><span class="sxs-lookup"><span data-stu-id="dba89-106">A directory for the compiler to look in if a referenced assembly is not found in the current working directory (the directory from which you are invoking the compiler) or in the common language runtime's system directory.</span></span>  
+ <span data-ttu-id="5f063-106">Adresář pro kompilátor hledat v případě odkazovaných sestavení nebyl nalezen v aktuálním pracovním adresáři (adresář, ze kterého je vyvolán kompilátor) nebo v adresáři systému common language runtime.</span><span class="sxs-lookup"><span data-stu-id="5f063-106">A directory for the compiler to look in if a referenced assembly is not found in the current working directory (the directory from which you are invoking the compiler) or in the common language runtime's system directory.</span></span>  
   
  `dir2`  
- <span data-ttu-id="dba89-107">Jeden nebo více adresářů pro vyhledávání v odkazy na sestavení.</span><span class="sxs-lookup"><span data-stu-id="dba89-107">One or more additional directories to search in for assembly references.</span></span> <span data-ttu-id="dba89-108">Další adresář názvy oddělte čárkou a bez mezer mezi nimi.</span><span class="sxs-lookup"><span data-stu-id="dba89-108">Separate additional directory names with a comma, and without white space between them.</span></span>  
+ <span data-ttu-id="5f063-107">Nejmíň jeden další adresáře pro v vyhledat odkazy na sestavení.</span><span class="sxs-lookup"><span data-stu-id="5f063-107">One or more additional directories to search in for assembly references.</span></span> <span data-ttu-id="5f063-108">Další názvy adresářů oddělte čárkou a bez mezer mezi nimi.</span><span class="sxs-lookup"><span data-stu-id="5f063-108">Separate additional directory names with a comma, and without white space between them.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="dba89-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="dba89-109">Remarks</span></span>  
- <span data-ttu-id="dba89-110">Hledání kompilátoru pro odkazy na sestavení, které nejsou plně kvalifikovaný v následujícím pořadí:</span><span class="sxs-lookup"><span data-stu-id="dba89-110">The compiler searches for assembly references that are not fully qualified in the following order:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="5f063-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5f063-109">Remarks</span></span>  
+ <span data-ttu-id="5f063-110">Kompilátor vyhledá odkazy na sestavení, které nejsou plně kvalifikovaný v následujícím pořadí:</span><span class="sxs-lookup"><span data-stu-id="5f063-110">The compiler searches for assembly references that are not fully qualified in the following order:</span></span>  
   
-1.  <span data-ttu-id="dba89-111">Aktuální pracovní adresář.</span><span class="sxs-lookup"><span data-stu-id="dba89-111">Current working directory.</span></span> <span data-ttu-id="dba89-112">Toto je adresář, ze kterého je vyvolán kompilátor.</span><span class="sxs-lookup"><span data-stu-id="dba89-112">This is the directory from which the compiler is invoked.</span></span>  
+1.  <span data-ttu-id="5f063-111">Aktuální pracovní adresář.</span><span class="sxs-lookup"><span data-stu-id="5f063-111">Current working directory.</span></span> <span data-ttu-id="5f063-112">Toto je adresář, ze kterého je vyvolán kompilátor.</span><span class="sxs-lookup"><span data-stu-id="5f063-112">This is the directory from which the compiler is invoked.</span></span>  
   
-2.  <span data-ttu-id="dba89-113">Common language runtime systémového adresáře.</span><span class="sxs-lookup"><span data-stu-id="dba89-113">The common language runtime system directory.</span></span>  
+2.  <span data-ttu-id="5f063-113">Common language runtime systémový adresář.</span><span class="sxs-lookup"><span data-stu-id="5f063-113">The common language runtime system directory.</span></span>  
   
-3.  <span data-ttu-id="dba89-114">Adresáře určené **-lib**.</span><span class="sxs-lookup"><span data-stu-id="dba89-114">Directories specified by **-lib**.</span></span>  
+3.  <span data-ttu-id="5f063-114">Adresáře určeného **-lib**.</span><span class="sxs-lookup"><span data-stu-id="5f063-114">Directories specified by **-lib**.</span></span>  
   
-4.  <span data-ttu-id="dba89-115">Adresáře určené proměnná prostředí LIB.</span><span class="sxs-lookup"><span data-stu-id="dba89-115">Directories specified by the LIB environment variable.</span></span>  
+4.  <span data-ttu-id="5f063-115">Adresáře určené proměnnou prostředí LIB.</span><span class="sxs-lookup"><span data-stu-id="5f063-115">Directories specified by the LIB environment variable.</span></span>  
   
- <span data-ttu-id="dba89-116">Použití **– referenční dokumentace** zadat odkaz na sestavení.</span><span class="sxs-lookup"><span data-stu-id="dba89-116">Use **-reference** to specify an assembly reference.</span></span>  
+ <span data-ttu-id="5f063-116">Použití **– referenční dokumentace** zadat odkaz na sestavení.</span><span class="sxs-lookup"><span data-stu-id="5f063-116">Use **-reference** to specify an assembly reference.</span></span>  
   
- <span data-ttu-id="dba89-117">**-lib** je sčítání; zadání je více než jednou připojí k jakékoli předchozí hodnoty.</span><span class="sxs-lookup"><span data-stu-id="dba89-117">**-lib** is additive; specifying it more than once appends to any prior values.</span></span>  
+ <span data-ttu-id="5f063-117">**-lib** je sčítání; zadání více než jednou připojí k jakékoli předchozí hodnoty ho.</span><span class="sxs-lookup"><span data-stu-id="5f063-117">**-lib** is additive; specifying it more than once appends to any prior values.</span></span>  
   
- <span data-ttu-id="dba89-118">Alternativu k použití **-lib** je zkopírovat do pracovního adresáře potřebné sestavení; to vám umožní jednoduše předat název sestavení do **– referenční dokumentace**.</span><span class="sxs-lookup"><span data-stu-id="dba89-118">An alternative to using **-lib** is to copy into the working directory any required assemblies; this will allow you to simply pass the assembly name to **-reference**.</span></span> <span data-ttu-id="dba89-119">Potom můžete odstranit sestavení z pracovní adresář.</span><span class="sxs-lookup"><span data-stu-id="dba89-119">You can then delete the assemblies from the working directory.</span></span> <span data-ttu-id="dba89-120">Vzhledem k tomu, že cesta k závislého sestavení není zadané v manifestu sestavení, aplikaci lze spustit na cílovém počítači a vyhledá a použití sestavení v globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="dba89-120">Since the path to the dependent assembly is not specified in the assembly manifest, the application can be started on the target computer and will find and use the assembly in the global assembly cache.</span></span>  
+ <span data-ttu-id="5f063-118">O alternativu k použití **-lib** je zkopírovat do pracovního adresáře veškeré požadované sestavení; to vám umožní jednoduše předat název sestavení k **– referenční dokumentace**.</span><span class="sxs-lookup"><span data-stu-id="5f063-118">An alternative to using **-lib** is to copy into the working directory any required assemblies; this will allow you to simply pass the assembly name to **-reference**.</span></span> <span data-ttu-id="5f063-119">Pak můžete odstranit sestavení z pracovního adresáře.</span><span class="sxs-lookup"><span data-stu-id="5f063-119">You can then delete the assemblies from the working directory.</span></span> <span data-ttu-id="5f063-120">Protože není zadána cesta k závislého sestavení v manifestu sestavení, aplikaci lze spustit na cílovém počítači a vyhledá a použití sestavení v globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="5f063-120">Since the path to the dependent assembly is not specified in the assembly manifest, the application can be started on the target computer and will find and use the assembly in the global assembly cache.</span></span>  
   
- <span data-ttu-id="dba89-121">Protože kompilátor, můžete odkazovat sestavení neznamená, že modul CLR bude moct najít a načíst sestavení za běhu.</span><span class="sxs-lookup"><span data-stu-id="dba89-121">Because the compiler can reference the assembly does not imply the common language runtime will be able to find and load the assembly at runtime.</span></span> <span data-ttu-id="dba89-122">V tématu [jak modul Runtime vyhledává sestavení](../../../framework/deployment/how-the-runtime-locates-assemblies.md) podrobnosti o vyhledávání odkazovaná sestavení modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="dba89-122">See [How the Runtime Locates Assemblies](../../../framework/deployment/how-the-runtime-locates-assemblies.md) for details on how the runtime searches for referenced assemblies.</span></span>  
+ <span data-ttu-id="5f063-121">Protože kompilátor může odkazovat sestavení, neznamená, že modul common language runtime bude moci najít a načíst sestavení za běhu.</span><span class="sxs-lookup"><span data-stu-id="5f063-121">Because the compiler can reference the assembly does not imply the common language runtime will be able to find and load the assembly at runtime.</span></span> <span data-ttu-id="5f063-122">Zobrazit [jak modul Runtime vyhledává sestavení](../../../framework/deployment/how-the-runtime-locates-assemblies.md) podrobnosti o tom, jak modul runtime vyhledá odkazovaná sestavení.</span><span class="sxs-lookup"><span data-stu-id="5f063-122">See [How the Runtime Locates Assemblies](../../../framework/deployment/how-the-runtime-locates-assemblies.md) for details on how the runtime searches for referenced assemblies.</span></span>  
   
-### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a><span data-ttu-id="dba89-123">Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio</span><span class="sxs-lookup"><span data-stu-id="dba89-123">To set this compiler option in the Visual Studio development environment</span></span>  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a><span data-ttu-id="5f063-123">Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio</span><span class="sxs-lookup"><span data-stu-id="5f063-123">To set this compiler option in the Visual Studio development environment</span></span>  
   
-1.  <span data-ttu-id="dba89-124">Otevření projektu **stránky vlastností** dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="dba89-124">Open the project's **Property Pages** dialog box.</span></span>  
+1.  <span data-ttu-id="5f063-124">Otevřete v projektu **stránky vlastností** dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="5f063-124">Open the project's **Property Pages** dialog box.</span></span>  
   
-2.  <span data-ttu-id="dba89-125">Klikněte na tlačítko **odkazy cesta** stránku vlastností.</span><span class="sxs-lookup"><span data-stu-id="dba89-125">Click the **References Path** property page.</span></span>  
+2.  <span data-ttu-id="5f063-125">Klikněte na tlačítko **cesta k odkazům** stránku vlastností.</span><span class="sxs-lookup"><span data-stu-id="5f063-125">Click the **References Path** property page.</span></span>  
   
-3.  <span data-ttu-id="dba89-126">Upravte obsah pole se seznamem.</span><span class="sxs-lookup"><span data-stu-id="dba89-126">Modify the contents of the list box.</span></span>  
+3.  <span data-ttu-id="5f063-126">Upravte obsah pole se seznamem.</span><span class="sxs-lookup"><span data-stu-id="5f063-126">Modify the contents of the list box.</span></span>  
   
- <span data-ttu-id="dba89-127">Informace o tom, jak nastavení této možnosti kompilátoru programu najdete v tématu <xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>.</span><span class="sxs-lookup"><span data-stu-id="dba89-127">For information on how to set this compiler option programmatically, see <xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>.</span></span>  
+ <span data-ttu-id="5f063-127">Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>.</span><span class="sxs-lookup"><span data-stu-id="5f063-127">For information on how to set this compiler option programmatically, see <xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="dba89-128">Příklad</span><span class="sxs-lookup"><span data-stu-id="dba89-128">Example</span></span>  
- <span data-ttu-id="dba89-129">Zkompiluje t2.cs a vytvoří soubor s příponou .exe.</span><span class="sxs-lookup"><span data-stu-id="dba89-129">Compile t2.cs to create an .exe file.</span></span> <span data-ttu-id="dba89-130">Kompilátor bude hledat v pracovní adresář a v kořenovém adresáři jednotky C odkazy na sestavení.</span><span class="sxs-lookup"><span data-stu-id="dba89-130">The compiler will look in the working directory and in the root directory of the C drive for assembly references.</span></span>  
+## <a name="example"></a><span data-ttu-id="5f063-128">Příklad</span><span class="sxs-lookup"><span data-stu-id="5f063-128">Example</span></span>  
+ <span data-ttu-id="5f063-129">Zkompilujte t2.cs vytvořte soubor s příponou .exe.</span><span class="sxs-lookup"><span data-stu-id="5f063-129">Compile t2.cs to create an .exe file.</span></span> <span data-ttu-id="5f063-130">Kompilátor bude hledat v pracovním adresáři a v kořenovém adresáři jednotce C odkazy na sestavení.</span><span class="sxs-lookup"><span data-stu-id="5f063-130">The compiler will look in the working directory and in the root directory of the C drive for assembly references.</span></span>  
   
 ```console  
 csc -lib:c:\ -reference:t2.dll t2.cs  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="dba89-131">Viz také</span><span class="sxs-lookup"><span data-stu-id="dba89-131">See Also</span></span>  
- [<span data-ttu-id="dba89-132">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="dba89-132">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)  
- [<span data-ttu-id="dba89-133">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="dba89-133">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
+## <a name="see-also"></a><span data-ttu-id="5f063-131">Viz také</span><span class="sxs-lookup"><span data-stu-id="5f063-131">See Also</span></span>
+
+- [<span data-ttu-id="5f063-132">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="5f063-132">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)  
+- [<span data-ttu-id="5f063-133">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="5f063-133">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)

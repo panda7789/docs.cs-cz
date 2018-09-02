@@ -11,26 +11,26 @@ helpviewer_keywords:
 - -fullpaths compiler option [C#]
 ms.assetid: d2a5f857-cbb2-430b-879c-d648aaf0b8c4
 ms.openlocfilehash: 8f23bb683067c55f5b5213065c3082b843dd7dce
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43258387"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43388276"
 ---
-# <a name="-fullpaths-c-compiler-options"></a><span data-ttu-id="25149-102">-fullpaths (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="25149-102">-fullpaths (C# Compiler Options)</span></span>
-<span data-ttu-id="25149-103">**- Fullpaths** možnost způsobí, že kompilátor zadejte úplnou cestu k souboru při výpisu chyb a upozornění kompilace.</span><span class="sxs-lookup"><span data-stu-id="25149-103">The **-fullpaths** option causes the compiler to specify the full path to the file when listing compilation errors and warnings.</span></span>  
+# <a name="-fullpaths-c-compiler-options"></a><span data-ttu-id="2186d-102">-fullpaths (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="2186d-102">-fullpaths (C# Compiler Options)</span></span>
+<span data-ttu-id="2186d-103">**- Fullpaths** možnost způsobí, že kompilátor zadejte úplnou cestu k souboru při výpisu chyb a upozornění kompilace.</span><span class="sxs-lookup"><span data-stu-id="2186d-103">The **-fullpaths** option causes the compiler to specify the full path to the file when listing compilation errors and warnings.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="25149-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="25149-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2186d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2186d-104">Syntax</span></span>  
   
 ```console  
 -fullpaths  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="25149-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="25149-105">Remarks</span></span>  
- <span data-ttu-id="25149-106">Ve výchozím nastavení zadejte název souboru, ve kterém byla nalezena chyba chyby a upozornění, které jsou výsledkem kompilace.</span><span class="sxs-lookup"><span data-stu-id="25149-106">By default, errors and warnings that result from compilation specify the name of the file in which an error was found.</span></span> <span data-ttu-id="25149-107">**- Fullpaths** možnost způsobí, že kompilátor zadejte úplnou cestu k souboru.</span><span class="sxs-lookup"><span data-stu-id="25149-107">The **-fullpaths** option causes the compiler to specify the full path to the file.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="2186d-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2186d-105">Remarks</span></span>  
+ <span data-ttu-id="2186d-106">Ve výchozím nastavení zadejte název souboru, ve kterém byla nalezena chyba chyby a upozornění, které jsou výsledkem kompilace.</span><span class="sxs-lookup"><span data-stu-id="2186d-106">By default, errors and warnings that result from compilation specify the name of the file in which an error was found.</span></span> <span data-ttu-id="2186d-107">**- Fullpaths** možnost způsobí, že kompilátor zadejte úplnou cestu k souboru.</span><span class="sxs-lookup"><span data-stu-id="2186d-107">The **-fullpaths** option causes the compiler to specify the full path to the file.</span></span>  
   
- <span data-ttu-id="25149-108">Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.</span><span class="sxs-lookup"><span data-stu-id="25149-108">This compiler option is unavailable in Visual Studio and cannot be changed programmatically.</span></span>  
+ <span data-ttu-id="2186d-108">Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.</span><span class="sxs-lookup"><span data-stu-id="2186d-108">This compiler option is unavailable in Visual Studio and cannot be changed programmatically.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="25149-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="25149-109">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="2186d-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="2186d-109">See Also</span></span>  
 
-- [<span data-ttu-id="25149-110">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="25149-110">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)
+- [<span data-ttu-id="2186d-110">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2186d-110">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)

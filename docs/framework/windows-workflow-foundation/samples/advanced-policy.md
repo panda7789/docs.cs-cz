@@ -1,83 +1,83 @@
 ---
-title: Rozšířené zásady
+title: Pokročilé zásady
 ms.date: 03/30/2017
 ms.assetid: 75a22c88-5e54-4ae8-84cb-fbb22a612f0a
-ms.openlocfilehash: 81cf2fb428833d4ca8cccf197011b69f2ccf3108
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: becdc28affd877239474d6f0f007a480297bccb8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33515552"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43387886"
 ---
-# <a name="advanced-policy"></a><span data-ttu-id="3f8dd-102">Rozšířené zásady</span><span class="sxs-lookup"><span data-stu-id="3f8dd-102">Advanced Policy</span></span>
-<span data-ttu-id="3f8dd-103">Tato ukázka rozšiřuje ukázka jednoduché zásady.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-103">This sample extends the Simple Policy sample.</span></span> <span data-ttu-id="3f8dd-104">Kromě domácí slevu a obchodní pravidla slevu z příkladu jednoduché zásady bylo přidáno několik nové pravidel.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-104">In addition to the residential discount and business discount rules from the Simple Policy example, several new rules have been added.</span></span>  
+# <a name="advanced-policy"></a><span data-ttu-id="ccc45-102">Pokročilé zásady</span><span class="sxs-lookup"><span data-stu-id="ccc45-102">Advanced Policy</span></span>
+<span data-ttu-id="ccc45-103">Tento příklad rozšiřuje ukázka jednoduché zásady.</span><span class="sxs-lookup"><span data-stu-id="ccc45-103">This sample extends the Simple Policy sample.</span></span> <span data-ttu-id="ccc45-104">Kromě bydliště slevy a obchodní pravidla slevu z příkladu jednoduché zásady bylo přidáno několik nových pravidel.</span><span class="sxs-lookup"><span data-stu-id="ccc45-104">In addition to the residential discount and business discount rules from the Simple Policy example, several new rules have been added.</span></span>  
   
- <span data-ttu-id="3f8dd-105">Je přidáno pravidlo vysoké hodnoty, který nabízí větší slevu objednávky vysoké hodnoty.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-105">A high-value rule is added, which provides a bigger discount for high-value orders.</span></span> <span data-ttu-id="3f8dd-106">Hodnota priority je vydáno menší než předchozí dvě pravidla tak, aby se přepsat pole slevu a zásada přednost přes obě domácí a obchodní pravidla slevu.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-106">It is given a priority value less than the previous two rules so that it will overwrite the discount field and take precedence over both the residential and business discount rules.</span></span>  
+ <span data-ttu-id="ccc45-105">Je přidáno pravidlo vysoké hodnoty, která poskytuje větší slevy pro objednávky vysoké hodnoty.</span><span class="sxs-lookup"><span data-stu-id="ccc45-105">A high-value rule is added, which provides a bigger discount for high-value orders.</span></span> <span data-ttu-id="ccc45-106">Se klíči přiřadí hodnotu priority menší než předchozí dvě pravidla tak, aby se přepsat pole Sleva a přednost nad obou bydliště a obchodní pravidla slevy.</span><span class="sxs-lookup"><span data-stu-id="ccc45-106">It is given a priority value less than the previous two rules so that it will overwrite the discount field and take precedence over both the residential and business discount rules.</span></span>  
   
- <span data-ttu-id="3f8dd-107">Celkový počet pravidlo calculate je taky přidaná, která vypočítá celkové založená na úrovni slevy.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-107">A calculate total rule is also added, which computes the total based on the discount level.</span></span> <span data-ttu-id="3f8dd-108">Zobrazuje, jak odkazovat na aktivitu pracovního postupu je definován metodu, jakož i způsob použití jiného akce.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-108">It shows how to reference a method defined on the workflow activity, as well as how to use else actions.</span></span> <span data-ttu-id="3f8dd-109">Toto pravidlo také ukazuje, řetězení chování vzhledem k tomu, že bude vyhodnocen kdykoli změny pole slevy.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-109">This rule also demonstrates chaining behavior since it will be evaluated anytime the discount field changes.</span></span> <span data-ttu-id="3f8dd-110">Kromě toho metoda zapisujících se zobrazí s RuleWriteAttribute na metodě CalculateTotal.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-110">Furthermore, method attributing is shown with the RuleWriteAttribute on the CalculateTotal method.</span></span> <span data-ttu-id="3f8dd-111">To způsobí, že dopad pravidla (ErrorTotalRule), který se má znovu vyhodnotit vždy, když se provede metodu.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-111">This causes impacted rules (ErrorTotalRule) to be re-evaluated whenever the method gets executed.</span></span>  
+ <span data-ttu-id="ccc45-107">Vypočítat celkový pravidlo se také přidá, která vypočítá celkový počet vychází z úrovně slev.</span><span class="sxs-lookup"><span data-stu-id="ccc45-107">A calculate total rule is also added, which computes the total based on the discount level.</span></span> <span data-ttu-id="ccc45-108">Ukazuje, jak odkazovat na metody definované v aktivity pracovního postupu, jakož i jak používat ostatní akce.</span><span class="sxs-lookup"><span data-stu-id="ccc45-108">It shows how to reference a method defined on the workflow activity, as well as how to use else actions.</span></span> <span data-ttu-id="ccc45-109">Toto pravidlo také ukazuje řetězení chování, protože je vyhodnocen kdykoli změny pole slevy.</span><span class="sxs-lookup"><span data-stu-id="ccc45-109">This rule also demonstrates chaining behavior since it will be evaluated anytime the discount field changes.</span></span> <span data-ttu-id="ccc45-110">Kromě toho metoda přidělování se zobrazí s RuleWriteAttribute CalculateTotal metody.</span><span class="sxs-lookup"><span data-stu-id="ccc45-110">Furthermore, method attributing is shown with the RuleWriteAttribute on the CalculateTotal method.</span></span> <span data-ttu-id="ccc45-111">To způsobí, že ovlivněné pravidla (ErrorTotalRule), který se má vyhodnotit znovu pokaždé, když se provede metodu.</span><span class="sxs-lookup"><span data-stu-id="ccc45-111">This causes impacted rules (ErrorTotalRule) to be re-evaluated whenever the method gets executed.</span></span>  
   
- <span data-ttu-id="3f8dd-112">Poslední přidat pravidlo je ten, který zjistí chyby (v tomto případě celkem menší než 0).</span><span class="sxs-lookup"><span data-stu-id="3f8dd-112">The last rule added is one that detects errors (in this case, Total less than 0).</span></span> <span data-ttu-id="3f8dd-113">Pokud k tomu dojde, je zastavit zpracování zásad.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-113">If this occurs, the policy execution is halted.</span></span>  
+ <span data-ttu-id="ccc45-112">Poslední pravidlo přidali je ten, který zjistí chyby (v tomto případě celkem menší než 0.).</span><span class="sxs-lookup"><span data-stu-id="ccc45-112">The last rule added is one that detects errors (in this case, Total less than 0).</span></span> <span data-ttu-id="ccc45-113">V tomto případě zastavení spuštění zásad.</span><span class="sxs-lookup"><span data-stu-id="ccc45-113">If this occurs, the policy execution is halted.</span></span>  
   
- <span data-ttu-id="3f8dd-114">Nakonec `Console.Writeline` volání jsou přidány jako akce pro každé pravidlo zajistit další přehled spuštění pravidla, a současně zobrazit, že je možné odkazovat k přístupu ke statické metody na typy.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-114">Finally, `Console.Writeline` calls are added as actions to each rule to provide more visibility into rule execution, while also showing that it is possible to access static methods on referenced types.</span></span> <span data-ttu-id="3f8dd-115">Můžete také použít sledování získáte tak přehled do pravidla, které jsou spouštěny.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-115">You could also use tracking to get visibility into the rules that are executed.</span></span>  
+ <span data-ttu-id="ccc45-114">Nakonec `Console.Writeline` volání jsou přidány jako akce pro každé pravidlo, které poskytují větší přehled o tom spuštění pravidel, a současně zobrazit, že je možné pro přístup ke statické metody na odkazované typy.</span><span class="sxs-lookup"><span data-stu-id="ccc45-114">Finally, `Console.Writeline` calls are added as actions to each rule to provide more visibility into rule execution, while also showing that it is possible to access static methods on referenced types.</span></span> <span data-ttu-id="ccc45-115">Můžete také použít sledování, získat přehled o pravidla, které jsou spouštěny.</span><span class="sxs-lookup"><span data-stu-id="ccc45-115">You could also use tracking to get visibility into the rules that are executed.</span></span>  
   
- <span data-ttu-id="3f8dd-116">Pravidla používaná v této ukázce jsou:</span><span class="sxs-lookup"><span data-stu-id="3f8dd-116">The rules used in this sample are:</span></span>  
+ <span data-ttu-id="ccc45-116">Pravidla používaná v této ukázce jsou:</span><span class="sxs-lookup"><span data-stu-id="ccc45-116">The rules used in this sample are:</span></span>  
   
- <span data-ttu-id="3f8dd-117">**ResidentialDiscountRule:**</span><span class="sxs-lookup"><span data-stu-id="3f8dd-117">**ResidentialDiscountRule:**</span></span>  
+ <span data-ttu-id="ccc45-117">**ResidentialDiscountRule:**</span><span class="sxs-lookup"><span data-stu-id="ccc45-117">**ResidentialDiscountRule:**</span></span>  
   
- <span data-ttu-id="3f8dd-118">Pokud OrderValue > 500 a CustomerType = domácí</span><span class="sxs-lookup"><span data-stu-id="3f8dd-118">IF OrderValue > 500 AND CustomerType = Residential</span></span>  
+ <span data-ttu-id="ccc45-118">Pokud OrderValue > 500 a CustomerType = bydliště</span><span class="sxs-lookup"><span data-stu-id="ccc45-118">IF OrderValue > 500 AND CustomerType = Residential</span></span>  
   
- <span data-ttu-id="3f8dd-119">PAK slevu = 5 %</span><span class="sxs-lookup"><span data-stu-id="3f8dd-119">THEN Discount = 5%</span></span>  
+ <span data-ttu-id="ccc45-119">PAK slevy = 5 %</span><span class="sxs-lookup"><span data-stu-id="ccc45-119">THEN Discount = 5%</span></span>  
   
- <span data-ttu-id="3f8dd-120">**BusinessDiscountRule:**</span><span class="sxs-lookup"><span data-stu-id="3f8dd-120">**BusinessDiscountRule:**</span></span>  
+ <span data-ttu-id="ccc45-120">**BusinessDiscountRule:**</span><span class="sxs-lookup"><span data-stu-id="ccc45-120">**BusinessDiscountRule:**</span></span>  
   
- <span data-ttu-id="3f8dd-121">Pokud OrderValue > 10000 a CustomerType = firmy</span><span class="sxs-lookup"><span data-stu-id="3f8dd-121">IF OrderValue > 10000 AND CustomerType = Business</span></span>  
+ <span data-ttu-id="ccc45-121">Pokud OrderValue > 10000 a CustomerType = firmy</span><span class="sxs-lookup"><span data-stu-id="ccc45-121">IF OrderValue > 10000 AND CustomerType = Business</span></span>  
   
- <span data-ttu-id="3f8dd-122">PAK slevu = 10 %</span><span class="sxs-lookup"><span data-stu-id="3f8dd-122">THEN Discount = 10%</span></span>  
+ <span data-ttu-id="ccc45-122">PAK slevy = 10 %</span><span class="sxs-lookup"><span data-stu-id="ccc45-122">THEN Discount = 10%</span></span>  
   
- <span data-ttu-id="3f8dd-123">**HighValueDiscountRule:**</span><span class="sxs-lookup"><span data-stu-id="3f8dd-123">**HighValueDiscountRule:**</span></span>  
+ <span data-ttu-id="ccc45-123">**HighValueDiscountRule:**</span><span class="sxs-lookup"><span data-stu-id="ccc45-123">**HighValueDiscountRule:**</span></span>  
   
- <span data-ttu-id="3f8dd-124">Pokud OrderValue > 20000</span><span class="sxs-lookup"><span data-stu-id="3f8dd-124">IF OrderValue > 20000</span></span>  
+ <span data-ttu-id="ccc45-124">Pokud OrderValue > 20000</span><span class="sxs-lookup"><span data-stu-id="ccc45-124">IF OrderValue > 20000</span></span>  
   
- <span data-ttu-id="3f8dd-125">PAK slevu = 15 %</span><span class="sxs-lookup"><span data-stu-id="3f8dd-125">THEN Discount = 15%</span></span>  
+ <span data-ttu-id="ccc45-125">PAK slevy = 15 %</span><span class="sxs-lookup"><span data-stu-id="ccc45-125">THEN Discount = 15%</span></span>  
   
- <span data-ttu-id="3f8dd-126">**TotalRule:**</span><span class="sxs-lookup"><span data-stu-id="3f8dd-126">**TotalRule:**</span></span>  
+ <span data-ttu-id="ccc45-126">**TotalRule:**</span><span class="sxs-lookup"><span data-stu-id="ccc45-126">**TotalRule:**</span></span>  
   
- <span data-ttu-id="3f8dd-127">Pokud slevách > 0</span><span class="sxs-lookup"><span data-stu-id="3f8dd-127">IF Discount > 0</span></span>  
+ <span data-ttu-id="ccc45-127">Pokud slevy > 0</span><span class="sxs-lookup"><span data-stu-id="ccc45-127">IF Discount > 0</span></span>  
   
- <span data-ttu-id="3f8dd-128">PAK CalculateTotal (OrderValue, slevy)</span><span class="sxs-lookup"><span data-stu-id="3f8dd-128">THEN CalculateTotal(OrderValue, Discount)</span></span>  
+ <span data-ttu-id="ccc45-128">PAK CalculateTotal (OrderValue slevy)</span><span class="sxs-lookup"><span data-stu-id="ccc45-128">THEN CalculateTotal(OrderValue, Discount)</span></span>  
   
- <span data-ttu-id="3f8dd-129">ELSE celkem = OrderValue</span><span class="sxs-lookup"><span data-stu-id="3f8dd-129">ELSE Total = OrderValue</span></span>  
+ <span data-ttu-id="ccc45-129">JINÉHO celkové = OrderValue</span><span class="sxs-lookup"><span data-stu-id="ccc45-129">ELSE Total = OrderValue</span></span>  
   
- <span data-ttu-id="3f8dd-130">**ErrorTotalRule:**</span><span class="sxs-lookup"><span data-stu-id="3f8dd-130">**ErrorTotalRule:**</span></span>  
+ <span data-ttu-id="ccc45-130">**ErrorTotalRule:**</span><span class="sxs-lookup"><span data-stu-id="ccc45-130">**ErrorTotalRule:**</span></span>  
   
- <span data-ttu-id="3f8dd-131">Pokud celkový počet \< 0</span><span class="sxs-lookup"><span data-stu-id="3f8dd-131">IF Total \< 0</span></span>  
+ <span data-ttu-id="ccc45-131">Pokud celkový počet \< 0</span><span class="sxs-lookup"><span data-stu-id="ccc45-131">IF Total \< 0</span></span>  
   
- <span data-ttu-id="3f8dd-132">POTOM chyba = "Aktivováno ErrorTotalRule"; Zastavení</span><span class="sxs-lookup"><span data-stu-id="3f8dd-132">THEN Error = "Fired ErrorTotalRule"; Halt</span></span>  
+ <span data-ttu-id="ccc45-132">PAK chyba = "Aktivuje ErrorTotalRule"; Zastavení</span><span class="sxs-lookup"><span data-stu-id="ccc45-132">THEN Error = "Fired ErrorTotalRule"; Halt</span></span>  
   
- <span data-ttu-id="3f8dd-133">Vyhodnocení pravidla a provádění můžete zobrazit také prostřednictvím trasování a sledování.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-133">Rule evaluation and execution can also be seen through tracing and tracking.</span></span>  
+ <span data-ttu-id="ccc45-133">Vyhodnocení pravidla a spuštění je možné také prohlížet pomocí sledování a trasování.</span><span class="sxs-lookup"><span data-stu-id="ccc45-133">Rule evaluation and execution can also be seen through tracing and tracking.</span></span>  
   
-### <a name="to-build-the-sample"></a><span data-ttu-id="3f8dd-134">Chcete-li sestavit ukázku</span><span class="sxs-lookup"><span data-stu-id="3f8dd-134">To build the sample</span></span>  
+### <a name="to-build-the-sample"></a><span data-ttu-id="ccc45-134">K vytvoření vzorku</span><span class="sxs-lookup"><span data-stu-id="ccc45-134">To build the sample</span></span>  
   
-1.  <span data-ttu-id="3f8dd-135">Otevřete řešení v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span><span class="sxs-lookup"><span data-stu-id="3f8dd-135">Open the solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
+1.  <span data-ttu-id="ccc45-135">Otevřete řešení v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span><span class="sxs-lookup"><span data-stu-id="ccc45-135">Open the solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
   
-2.  <span data-ttu-id="3f8dd-136">Sestavte řešení stisknutím kombinace kláves CTRL + SHIFT + B.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-136">Build the solution by pressing CTRL+SHIFT+B.</span></span>  
+2.  <span data-ttu-id="ccc45-136">Sestavte řešení stisknutím kombinace kláves CTRL + SHIFT + B.</span><span class="sxs-lookup"><span data-stu-id="ccc45-136">Build the solution by pressing CTRL+SHIFT+B.</span></span>  
   
-3.  <span data-ttu-id="3f8dd-137">Spustíte řešení bez ladění stisknutím kombinace kláves CTRL + F5.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-137">Run the solution without debugging by pressing CTRL+F5.</span></span>  
+3.  <span data-ttu-id="ccc45-137">Spuštění řešení bez ladění stisknutím kombinace kláves CTRL + F5.</span><span class="sxs-lookup"><span data-stu-id="ccc45-137">Run the solution without debugging by pressing CTRL+F5.</span></span>  
   
-### <a name="to-run-the-sample"></a><span data-ttu-id="3f8dd-138">Chcete-li spustit ukázku</span><span class="sxs-lookup"><span data-stu-id="3f8dd-138">To run the sample</span></span>  
+### <a name="to-run-the-sample"></a><span data-ttu-id="ccc45-138">Chcete-li spustit ukázku</span><span class="sxs-lookup"><span data-stu-id="ccc45-138">To run the sample</span></span>  
   
--   <span data-ttu-id="3f8dd-139">V okně příkazového řádku sady SDK spusťte soubor .exe ve složce AdvancedPolicy\bin\debug (nebo složky \bin AdvancedPolicy pro verzi ukázky jazyka Visual Basic), který se nachází pod hlavní složku pro ukázku.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-139">In the SDK Command Prompt window, run the .exe file in the AdvancedPolicy\bin\debug folder (or the AdvancedPolicy \bin folder for the Visual Basic version of the sample), which is located below the main folder for the sample.</span></span>  
+-   <span data-ttu-id="ccc45-139">V okně příkazového řádku sady SDK spusťte soubor .exe ve složce AdvancedPolicy\bin\debug (nebo složky \bin AdvancedPolicy pro verzi ukázky, která se týká jazyka Visual Basic), který se nachází pod hlavní složku pro vzorku.</span><span class="sxs-lookup"><span data-stu-id="ccc45-139">In the SDK Command Prompt window, run the .exe file in the AdvancedPolicy\bin\debug folder (or the AdvancedPolicy \bin folder for the Visual Basic version of the sample), which is located below the main folder for the sample.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="3f8dd-140">Ukázky může být již nainstalován ve vašem počítači.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-140">The samples may already be installed on your computer.</span></span> <span data-ttu-id="3f8dd-141">Před pokračováním zkontrolovat na následující adresář (výchozí):</span><span class="sxs-lookup"><span data-stu-id="3f8dd-141">Check for the following (default) directory before continuing:</span></span>  
+>  <span data-ttu-id="ccc45-140">Vzorky mohou již být nainstalováno ve vašem počítači.</span><span class="sxs-lookup"><span data-stu-id="ccc45-140">The samples may already be installed on your computer.</span></span> <span data-ttu-id="ccc45-141">Před pokračováním zkontrolujte následující adresář (výchozí):</span><span class="sxs-lookup"><span data-stu-id="ccc45-141">Check for the following (default) directory before continuing:</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="3f8dd-142">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="3f8dd-142">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="3f8dd-143">Tato ukázka se nachází v následujícím adresáři:</span><span class="sxs-lookup"><span data-stu-id="3f8dd-143">This sample is located in the following directory:</span></span>  
+>  <span data-ttu-id="ccc45-142">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="ccc45-142">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="ccc45-143">Tato ukázka se nachází v následujícím adresáři:</span><span class="sxs-lookup"><span data-stu-id="ccc45-143">This sample is located in the following directory:</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Rules\Policy\AdvancedPolicy`  
   
-## <a name="see-also"></a><span data-ttu-id="3f8dd-144">Viz také</span><span class="sxs-lookup"><span data-stu-id="3f8dd-144">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="ccc45-144">Viz také</span><span class="sxs-lookup"><span data-stu-id="ccc45-144">See Also</span></span>  
  <xref:System.Workflow.Activities.Rules.RuleSet>  
  <xref:System.Workflow.Activities.PolicyActivity>  
- [<span data-ttu-id="3f8dd-145">Jednoduché zásady</span><span class="sxs-lookup"><span data-stu-id="3f8dd-145">Simple Policy</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/simple-policy.md)
+ [<span data-ttu-id="ccc45-145">Jednoduché zásady</span><span class="sxs-lookup"><span data-stu-id="ccc45-145">Simple Policy</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/simple-policy.md)
