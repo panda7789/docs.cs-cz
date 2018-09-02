@@ -18,12 +18,12 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 2b0441dfebb6692cbea0d1ab7909d7b8f04490cb
-ms.sourcegitcommit: 78bcb629abdbdbde0e295b4e81f350a477864aba
+ms.openlocfilehash: 30e4942934e5d65b214d24a0948f70169d625485
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "34457601"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43461073"
 ---
 # <a name="c-operators"></a>Operátory jazyka C#
 Jazyk C# poskytuje mnoho operátorů, které jsou symboly, které určují operace, které (matematické, indexování, volání funkce atd.) provést ve výrazu. Je možné [přetížení](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md) mnoho operátorů, chcete-li změnit jejich význam při aplikování na uživatelem definovaného typu.  
@@ -207,10 +207,11 @@ Jazyk C# poskytuje mnoho operátorů, které jsou symboly, které určují opera
 -   Plovoucí aritmetické přetečení nebo dělení nulou nikdy nevyvolá výjimku, protože typy s plovoucí desetinnou čárkou jsou založeny na standardu IEEE 754 a tak mají opatření představující nekonečno a NaN (není číslo).  
   
 -   [Desetinné](../../../csharp/language-reference/keywords/decimal.md) aritmetické přetečení vždy vyvolá <xref:System.OverflowException>. Dělení desetinného čísla nulou vždy vyvolá <xref:System.DivideByZeroException>.  
-  
-  
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [C#](../../../csharp/index.md) [přetížitelné operátory](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
+
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [C#](../../../csharp/index.md)
+- [Přetížitelné operátory](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)  
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
