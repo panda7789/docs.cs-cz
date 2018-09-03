@@ -1,6 +1,6 @@
 ---
-title: Dělení objektů a funkcí na vlákna
-ms.date: 03/30/2017
+title: Práce s vlákny funkce a objekty
+ms.date: 08/16/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - threading [.NET Framework], features
@@ -8,68 +8,39 @@ helpviewer_keywords:
 ms.assetid: 239b2e8d-581b-4ca3-992b-0e8525b9321c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1d689aeb91ad79b776c3b93c1809ec46947ea60b
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: 2d56d962279120a03a6e4b89154ac1429ea5479e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37874784"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43483655"
 ---
-# <a name="threading-objects-and-features"></a>Dělení objektů a funkcí na vlákna
-Rozhraní .NET Framework poskytuje mnoho objektů, které vám pomůžou vytvářet a spravovat aplikace s více vlákny. Spravovaná vlákna jsou reprezentovány <xref:System.Threading.Thread> třídy. <xref:System.Threading.ThreadPool> Třída umožňuje snadné vytváření a správu úloh na pozadí s více vlákny. <xref:System.ComponentModel.BackgroundWorker> Třídy dělá to samé pro úlohy, které pracují s uživatelským rozhraním. <xref:System.Threading.Timer> Třídy spouští úlohy na pozadí v časových intervalech.  
-  
- Kromě toho existuje několik tříd, které se synchronizují aktivity vláken, včetně <xref:System.Threading.Semaphore> a <xref:System.Threading.EventWaitHandle> třídy zavedené v rozhraní .NET Framework verze 2.0. Porovnání funkcí těchto tříd v [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
-  
-## <a name="in-this-section"></a>V tomto oddílu  
- [Spravovaný fond vláken](../../../docs/standard/threading/the-managed-thread-pool.md)  
- Vysvětluje, **fondu vláken** třídu, která umožňuje požádat o vlákno spustit úlohu, aniž byste museli provést jakékoli vlákno správu sami.  
-  
- [Časovače](../../../docs/standard/threading/timers.md)  
- Popisuje časovače, které lze použít v prostředí s více vlákny.  
-  
- [Monitorování](http://msdn.microsoft.com/library/33fe4aef-b44b-42fd-9e72-c908e39e75db)  
- Vysvětluje způsob používání **monitorování** třídy k synchronizaci přístupu k člena nebo vytvářet vlastní vlákno typy správy.  
-  
- [Obslužné rutiny čekání](http://msdn.microsoft.com/library/48d10b6f-5fd7-407c-86ab-0179aef72489)  
- Popisuje <xref:System.Threading.WaitHandle> třídy, abstraktní základní třída pro událost počkejte obslužné rutiny, vzájemně vyloučené přístupy a semafory, které umožňují čekání na více událostí synchronizace.  
-  
- [EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)  
- Popisuje obslužné rutiny čekání spravované události, které se používají k synchronizaci aktivity vláken signalizace a čeká na signál.  
-  
- [Mutex – třídy](../../../docs/standard/threading/mutexes.md)  
- Vysvětluje způsob používání <xref:System.Threading.Mutex> k synchronizaci přístupu k objektu nebo vytvářet vlastní mechanismy synchronizace.  
-  
- [Propojené operace](../../../docs/standard/threading/interlocked-operations.md)  
- Vysvětluje způsob používání <xref:System.Threading.Interlocked> třídy zvýší nebo sníží hodnotu a uložte hodnotu v jediné atomické operaci.  
-  
- [Zámky modulů pro čtení a zápis](../../../docs/standard/threading/reader-writer-locks.md)  
- Definuje zámek, který implementuje sémantiku single zapisovače/více reader.  
-  
- [Semaphore a SemaphoreSlim](../../../docs/standard/threading/semaphore-and-semaphoreslim.md)  
- Popisuje <xref:System.Threading.Semaphore> objektů a vysvětluje, jak se dají použít k řízení přístupu k prostředkům omezené.  
-  
- [Přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md)  
- Obsahuje porovnání funkcí tříd rozhraní .NET Framework poskytuje pro uzamčení a synchronizaci spravovaných vláken.  
-  
- [Barrier](../../../docs/standard/threading/barrier.md)  
- Popisuje <xref:System.Threading.Barrier> objekty, které implementují vzor barrier koordinace vláken v postupné operacích.  
-  
- [SpinLock](../../../docs/standard/threading/spinlock.md)  
- Popisuje <xref:System.Threading.SpinLock>, zjednodušené alternativou k třídě monitorování pro určité scénáře nízké úrovně.  
-  
- [SpinWait](../../../docs/standard/threading/spinwait.md)  
- Popisuje <xref:System.Threading.SpinWait>, synchronizace na nízké úrovni jednoduchého typu, který provádí zaneprázdnění před zahajuje čekání na základě jádra.  
-  
-## <a name="reference"></a>Odkaz  
- <xref:System.Threading.Thread>  
- Poskytuje referenční dokumentaci pro **vlákno** třídu, která představuje spravované vlákno, ať už pochází z nespravovaného kódu nebo byl vytvořen ve spravované aplikaci.  
-  
- <xref:System.ComponentModel.BackgroundWorker>  
- Umožňuje úlohy na pozadí, které pracují s uživatelským rozhraním, komunikace prostřednictvím událostí vyvolaných ve vlákně uživatelského rozhraní.  
-  
-## <a name="related-sections"></a>Související oddíly  
- [Asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md)  
- Popisuje použití fondu vláken portů dokončení asynchronních vstupně-výstupních operací tak, aby vyžadovala zpracování pouze v případě, že dokončení vstupně výstupní operace.  
-  
- [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  
- Popisuje doporučený postup pro programování s více vlákny v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] a novější.
+# <a name="threading-objects-and-features"></a>Práce s vlákny funkce a objekty
+
+Spolu s <xref:System.Threading.Thread?displayProperty=nameWithType> třídy .NET poskytuje několik tříd, které umožňují vývoj aplikací s více vlákny. Následující články poskytují přehled těchto tříd:
+
+|Název|Popis|  
+|-----------|-----------------|  
+|[Spravovaný fond vláken](the-managed-thread-pool.md)|Popisuje <xref:System.Threading.ThreadPool?displayProperty=nameWithType> třídu, která poskytuje fondu pracovních vláken, které se spravují přes rozhraní .NET.|  
+|[Časovače](timers.md)|Popisuje časovače, které lze použít v prostředí s více vlákny.|
+|[Přehled primitiv synchronizace](overview-of-synchronization-primitives.md)|Popisuje třídy, které slouží k synchronizaci přístupu k data nebo ovládací prvek interakce vlákna.|
+|[EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent](eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)|Popisuje obslužné rutiny čekání spravované události, které se používají k synchronizaci aktivity vláken signalizace a čeká na signál.|
+|[Mutex – třídy](mutexes.md)|Popisuje způsob použití <xref:System.Threading.Mutex?displayProperty=nameWithType> k synchronizaci přístupu k objektu nebo vytvářet vlastní mechanismy synchronizace.|
+|[Propojené operace](interlocked-operations.md)|Popisuje <xref:System.Threading.Interlocked?displayProperty=nameWithType> třídu, která poskytuje atomických operací pro proměnné, které jsou sdíleny více vlákny.|
+|[Zámky modulů pro čtení a zápis](reader-writer-locks.md)|Popisuje <xref:System.Threading.ReaderWriterLockSlim?displayProperty=nameWithType> třídu, která poskytne tak sémantiku single zapisovače/více reader.|
+|[Semaphore a SemaphoreSlim](semaphore-and-semaphoreslim.md)|Popisuje <xref:System.Threading.Semaphore?displayProperty=nameWithType> třídy a vysvětluje, jak ho použít k řízení přístupu k prostředkům omezené.|
+|[Barrier](barrier.md)|Popisuje <xref:System.Threading.Barrier?displayProperty=nameWithType> třídu, která implementuje vzor barrier koordinace vláken v postupné operacích.|
+|[SpinLock](spinlock.md)|Popisuje <xref:System.Threading.SpinLock?displayProperty=nameWithType> třídu, která představuje jednoduché alternativa <xref:System.Threading.Monitor?displayProperty=nameWithType> třídy pro určité scénáře nízké úrovně.|
+|[SpinWait](spinwait.md)|Popisuje <xref:System.Threading.SpinWait?displayProperty=nameWithType> třídu, která je nižší úrovně primitiv synchronizace, který provádí zaneprázdnění před zahajuje čekání na základě jádra.|
+
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Threading.Monitor?displayProperty=nameWithType>
+- <xref:System.Threading.WaitHandle?displayProperty=nameWithType>
+- <xref:System.ComponentModel.BackgroundWorker?displayProperty=nameWithType>
+- <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType>
+- <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>
+- [Použití vláken a dělení na vlákna](using-threads-and-threading.md)
+- [Asynchronní vstupně-výstupní operace se soubory](../io/asynchronous-file-i-o.md)
+- [Paralelní programování](../parallel-programming/index.md)
+- [Task Parallel Library (TPL)](../parallel-programming/task-parallel-library-tpl.md)

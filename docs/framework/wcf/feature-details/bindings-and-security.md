@@ -9,186 +9,186 @@ helpviewer_keywords:
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 938b04f6c612f38be41d278273aa18d41677f84c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a7d2e55f84ed99ccb25e9966dc72112c0113eabc
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33496747"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43487252"
 ---
 # <a name="bindings-and-security"></a>Vazby a zabezpečení
-Vazby poskytované systémem zahrnuty s Windows Communication Foundation (WCF) nabízejí rychlý způsob, jak programovat aplikace WCF. S jednou výjimkou mít všechny vazby výchozí schéma zabezpečení povoleno. Toto téma vám pomůže vybrat správné vazba pro potřebné požadavky na zabezpečení.  
+Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) nabízí rychlý způsob, jak programovat aplikace WCF. S jednou výjimkou mají všechny vazby výchozí schéma zabezpečení povoleno. Toto téma vám pomůže vybrat správné vazba pro vaše požadavky na zabezpečení.  
   
- Přehled zabezpečení WCF najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). Další informace o programování WCF pomocí vazeb najdete v tématu [programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md).  
+ Přehled zabezpečení WCF najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md). Další informace o programování WCF pomocí vazby najdete v tématu [programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md).  
   
- Pokud jste již vybrali vazbu, najdete další informace o běhu chování, které jsou přidruženy zabezpečení v [chování zabezpečení](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md).  
+ Pokud jste již vybrali vazbu, najdete další informace o chování za běhu, které souvisejí se zabezpečením v [chování zabezpečení](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md).  
   
- Některé funkce zabezpečení nejsou programovatelný pomocí vazby poskytované systémem. Použití vlastní vazby další ovládací prvek, najdete v části [možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).  
+ Některé funkce zabezpečení nejsou programovatelný pomocí vazeb poskytovaných systémem. Použití vlastní vazby větší kontrolu, naleznete v tématu [možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).  
   
 ## <a name="security-functions-of-bindings"></a>Funkce zabezpečení vazeb  
- WCF zahrnuje několik vazeb poskytovaných systémem, které splňují většinu potřeb. Pokud konkrétní vazba není stačí, můžete také vytvořit vlastní vazby. Seznam vazeb poskytovaných systémem najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md). Další informace o vlastních vazeb najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md).  
+ WCF obsahuje několik vazeb poskytovaných systémem, které většině potřeb. Pokud konkrétní vazbu není stačit, můžete také vytvořit vlastní vazby. Seznam vazeb poskytovaných systémem najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md). Další informace o vlastních vazeb naleznete v tématu [vlastních vazeb](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   
- Každé vazby v WCF má dvě formy: jako rozhraní API a jako element XML, který je použit v konfiguračním souboru. Například `WSHttpBinding` (API) má protějšek v [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
+ Každá vazba ve službě WCF má dvě formy: jako rozhraní API a jako XML prvku použitého v konfiguračním souboru. Například `WSHttpBinding` (API) má protějšek [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
   
- V následující části jsou uvedeny oba formuláře pro každou vazbu a shrnuje funkce zabezpečení.  
+ Následující část uvádí obě formy pro každou vazbu a shrnuje funkce zabezpečení.  
   
 ### <a name="basichttp"></a>BasicHttp  
- V kódu pomocí <xref:System.ServiceModel.BasicHttpBinding> třídy, v konfiguraci, pomocí [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).  
+ V kódu, použijte <xref:System.ServiceModel.BasicHttpBinding> třídy; v konfiguraci, použijte [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).  
   
- Tato vazba je určen k použití s rozsahem existujících technologií, včetně následujících:  
+ Tato vazba je určen pro použití s celou řadu existujících technologií, včetně následujících:  
   
--   ASP.NET – webové služby (ASMX), verze 1.  
+-   ASP.NET Web services (ASMX), verze 1.  
   
--   Webové aplikace služby vylepšení (WSE).  
+-   Webové aplikace služby vylepšení (Najít).  
   
--   Basic profilu, jak jsou definovány v Interoperability webové služby (WS-I) specifikace ([http://go.microsoft.com/fwlink/?LinkId=38955](http://go.microsoft.com/fwlink/?LinkId=38955)).  
+-   Basic Profile jak jsou definovány v Interoperability webové služby (WS-I) specifikace ([https://go.microsoft.com/fwlink/?LinkId=38955](https://go.microsoft.com/fwlink/?LinkId=38955)).  
   
 -   Profil základní zabezpečení, jak jsou definovány v WS-I.  
   
- Ve výchozím nastavení není tato vazba zabezpečený. Je určený pro spolupráci s ASMX služby. Pokud je povoleno zabezpečení, vazba je určená pro bezproblémové vzájemná spolupráce s mechanismy zabezpečení Internetové informační služby (IIS), například základní ověřování, ověřování algoritmem digest a integrované zabezpečení systému Windows. Další informace najdete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md). Tato vazba podporuje následující funkce:  
+ Ve výchozím nastavení tato vazba není zabezpečený. Je určená pro spolupráci se službami ASMX. Když je povolené zabezpečení, vazby je navržená pro bezproblémovou spolupráci s mechanismy zabezpečení Internetové informační služby (IIS), jako je například základní ověřování hodnotou hash a integrované zabezpečení Windows. Další informace najdete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md). Tato vazba podporuje následující funkce:  
   
 -   Zabezpečení přenosu HTTPS.  
   
 -   Základní ověřování protokolu HTTP.  
   
--   WS-zabezpečení.  
+-   WS-Security.  
   
  Další informace najdete v tématu <xref:System.ServiceModel.BasicHttpSecurity>, <xref:System.ServiceModel.BasicHttpMessageSecurity>, <xref:System.ServiceModel.BasicHttpMessageCredentialType>, a <xref:System.ServiceModel.BasicHttpSecurityMode>.  
   
 ### <a name="wshttpbinding"></a>WSHttpBinding  
- V kódu pomocí <xref:System.ServiceModel.WSHttpBinding> třídy, v konfiguraci, pomocí [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
+ V kódu, použijte <xref:System.ServiceModel.WSHttpBinding> třídy; v konfiguraci, použijte [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
   
- Ve výchozím nastavení, tuto vazbu implementuje specifikace WS-zabezpečení a poskytuje vzájemnou funkční spolupráci s službami, které implementují WS-* specifikace. Podporuje následující:  
+ Ve výchozím nastavení, tato vazba implementuje specifikaci WS-Security a nabízí interoperabilitu mezi službami, které implementují WS-* specifikace. Podporuje následující:  
   
 -   Zabezpečení přenosu HTTPS.  
   
--   WS-zabezpečení.  
+-   WS-Security.  
   
--   HTTPS přenosu ochrany pomocí protokolu SOAP zprávy pověření zabezpečení pro ověřování volající.  
+-   HTTPS přenosu ochrany pomocí pověření zabezpečení zpráv SOAP za účelem ověřování totožnosti volající.  
   
  Další informace najdete v tématu <xref:System.ServiceModel.WSHttpSecurity>, <xref:System.ServiceModel.MessageSecurityOverHttp>, <xref:System.ServiceModel.MessageCredentialType>, <xref:System.ServiceModel.SecurityMode>, <xref:System.ServiceModel.HttpTransportSecurity>, <xref:System.ServiceModel.HttpClientCredentialType>, a <xref:System.ServiceModel.HttpProxyCredentialType>.  
   
-### <a name="wsdualhttpbinding"></a>– WSDualHttpBinding  
- V kódu pomocí <xref:System.ServiceModel.WSDualHttpBinding> třídy, v konfiguraci, pomocí [ \<– wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  
+### <a name="wsdualhttpbinding"></a>WSDualHttpBinding  
+ V kódu, použijte <xref:System.ServiceModel.WSDualHttpBinding> třídy; v konfiguraci, použijte [ \<wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  
   
- Tato vazba je navržených k povolení aplikace duplexní služby. Tato vazba implementuje specifikace WS-zabezpečení pro zabezpečení na základě zpráv přenosu. Zabezpečení přenosu není k dispozici. Ve výchozím nastavení poskytuje následující funkce:  
+ Tato vazba je navržená k umožnění duplexní služby aplikace. Tato vazba implementuje specifikaci WS-Security pro zabezpečení na základě zpráv přenosu. Zabezpečení přenosu není k dispozici. Ve výchozím nastavení poskytuje následující funkce:  
   
--   Implementuje WS-spolehlivé zasílání zpráv pro spolehlivost.  
+-   Implementuje zasílání zpráv WS-Reliable spolehlivosti.  
   
--   Implementuje WS-zabezpečení pro zabezpečení přenosu a ověřování.  
+-   Implementuje pro ověřování a zabezpečení přenosu WS-Security.  
   
--   Využívá protokol HTTP pro doručování zpráv.  
+-   Používá protokol HTTP pro doručování zpráv.  
   
--   Používá, text/XML kódování zprávy.  
+-   Použije kódování zprávy text/XML.  
   
- Vazba pomocí protokolu WS-zabezpečení (zpráva layer security), umožňuje nakonfigurovat následující parametry:  
+ Vazba pomocí WS-Security (zabezpečení vrstvy zpráva), umožňuje nakonfigurovat následující parametry:  
   
 -   Sada algoritmů zabezpečení k určení kryptografického algoritmu.  
   
--   Vazba možnosti pro následující:  
+-   Vazba pro následující možnosti:  
   
-    -   Poskytování služby přihlašovací údaje k dispozici out-of-band na straně klienta.  
+    -   Poskytuje služby přihlašovací údaje k dispozici out-of-band na straně klienta.  
   
-    -   Poskytování pověření služby vyjednal ze služby jako součást instalace kanálu.  
+    -   Zadání přihlašovacích údajů služby vyjednávat ze služby jako součást instalace kanálu.  
   
  Další informace naleznete v tématu <xref:System.ServiceModel.WSDualHttpSecurity> a <xref:System.ServiceModel.WSDualHttpSecurityMode>.  
   
 ### <a name="nettcpbinding"></a>NetTcpBinding  
- V kódu pomocí <xref:System.ServiceModel.NetTcpBinding> třídy, v konfiguraci, pomocí [ \<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).  
+ V kódu, použijte <xref:System.ServiceModel.NetTcpBinding> třídy; v konfiguraci, použijte [ \<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).  
   
  Tato vazba je optimalizovaná pro komunikaci mezi počítači. Ve výchozím nastavení má následující vlastnosti:  
   
 -   Implementuje přenosové vrstvy zabezpečení.  
   
--   Využívá zabezpečení systému Windows pro přenos zabezpečení a ověřování.  
+-   Využívá Windows zabezpečení pro ověřování a zabezpečení přenosu.  
   
--   TCP používá pro přenos.  
+-   Používá protokol TCP pro přenos.  
   
--   Implementuje zprávy v binární kódování.  
+-   Implementuje kódování binární zprávy.  
   
--   Implementuje WS-spolehlivé zasílání zpráv.  
+-   Implementuje posílání WS-Reliable.  
   
  Mezi možnosti patří následující:  
   
--   Zabezpečení zpráv vrstvy (pomocí protokolu WS-Security).  
+-   Zabezpečení zpráv vrstvy (pomocí WS-Security).  
   
--   Přenosu zabezpečení s pověřením zpráv – utajení a integrity poskytuje podle zabezpečení TLS (Transport Layer) přes TCP a přihlašovací údaje pro autorizaci poskytované WS-zabezpečení.  
+-   Zabezpečení s pověřením zpráv přenosu – důvěrnost a integrita poskytuje tak zabezpečení TLS (Transport Layer) přes TCP a přihlašovací údaje pro autorizaci poskytuje WS-Security.  
   
  Další informace najdete v tématu <xref:System.ServiceModel.NetTcpSecurity>, <xref:System.ServiceModel.TcpTransportSecurity>, <xref:System.ServiceModel.TcpClientCredentialType>, <xref:System.ServiceModel.MessageSecurityOverTcp>, a <xref:System.ServiceModel.MessageCredentialType>.  
   
 ### <a name="netnamedpipebinding"></a>NetNamedPipeBinding  
- V kódu pomocí <xref:System.ServiceModel.NetNamedPipeBinding> třídy, v konfiguraci, pomocí [ \<– netNamedPipeBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md).  
+ V kódu, použijte <xref:System.ServiceModel.NetNamedPipeBinding> třídy; v konfiguraci, použijte [ \<netNamedPipeBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md).  
   
  Tato vazba je optimalizovaná pro komunikaci mezi procesy (obvykle ve stejném počítači). Ve výchozím nastavení tato vazba má následující vlastnosti:  
   
--   Používá přenosu zabezpečení pro přenos zpráv a ověřování.  
+-   Používá přenos pro přenos zpráv a ověřování zabezpečení.  
   
--   Využívá pojmenované kanály pro doručování zpráv.  
+-   Použití pojmenované kanály pro doručování zpráv.  
   
--   Implementuje zprávy v binární kódování.  
+-   Implementuje kódování binární zprávy.  
   
 -   Šifrování a podepisování zpráv.  
   
  Mezi možnosti patří následující:  
   
--   Ověřování pomocí zabezpečení systému Windows.  
+-   Ověřování pomocí zabezpečení Windows.  
   
  Další informace najdete v tématu <xref:System.ServiceModel.NetNamedPipeSecurity>, <xref:System.ServiceModel.NetNamedPipeSecurityMode>, a <xref:System.ServiceModel.NamedPipeTransportSecurity>.  
   
 ### <a name="msmqintegrationbinding"></a>MsmqIntegrationBinding  
- V kódu pomocí <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> třídy; v konfiguraci, použijte [ \<– msmqIntegrationBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md).  
+ V kódu, použijte <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> třídy; v konfiguraci, použijte [ \<msmqIntegrationBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md).  
   
- Tato vazba je optimalizovaná pro vytváření klienti WCF a služeb, které spolupracovat s koncovými body jiný - WCF Microsoft řízení front zpráv MSMQ.  
+ Tato vazba je optimalizovaný pro vytváření klienti WCF a služeb, které spolupracují s koncovými body mimo - WCF Microsoft řízení front zpráv MSMQ.  
   
- Ve výchozím nastavení tato vazba používá zabezpečení přenosu a poskytuje následující vlastnosti zabezpečení:  
+ Ve výchozím nastavení tato vazba používá zabezpečení přenosu a obsahuje následující vlastnosti zabezpečení:  
   
--   Zabezpečení může být zakázán (žádný).  
+-   Zabezpečení může být zakázány (žádné).  
   
 -   Zabezpečení přenosu služby MSMQ (přenos).  
   
  Další informace naleznete v tématu <xref:System.ServiceModel.NetMsmqSecurity> a <xref:System.ServiceModel.NetMsmqSecurityMode>.  
   
-### <a name="netmsmqbinding"></a>– NetMsmqBinding  
- V kódu pomocí <xref:System.ServiceModel.NetMsmqBinding> třídy, v konfiguraci, pomocí [ \<– netMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md).  
+### <a name="netmsmqbinding"></a>netMsmqBinding  
+ V kódu, použijte <xref:System.ServiceModel.NetMsmqBinding> třídy; v konfiguraci, použijte [ \<netMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md).  
   
- Tato vazba je určena pro použití při vytváření služeb WCF, které vyžadují služby MSMQ Podpora zpráv ve frontě.  
+ Tato vazba je určena pro použití při vytváření služeb WCF, které vyžadují služby MSMQ Podpora zpráv zařazených do fronty.  
   
- Ve výchozím nastavení tato vazba používá zabezpečení přenosu a poskytuje následující vlastnosti zabezpečení:  
+ Ve výchozím nastavení tato vazba používá zabezpečení přenosu a obsahuje následující vlastnosti zabezpečení:  
   
--   Zabezpečení může být zakázán (žádný).  
+-   Zabezpečení může být zakázány (žádné).  
   
 -   Zabezpečení přenosu služby MSMQ (přenos).  
   
--   Zabezpečení zpráv založený na protokolu SOAP (zprávy).  
+-   Zabezpečení založené na protokolu SOAP zprávy (zprávy).  
   
--   Souběžné přenosu zpráv zabezpečení a (oba).  
+-   Souběžné přenosu zpráv zabezpečení a (i).  
   
--   Podporované typy pověření klienta: None, Windows, uživatelské jméno, certifikát, IssuedToken.  
+-   Podporované typy přihlašovacích údajů klienta: None, Windows, uživatelské jméno, certifikát, třídy IssuedToken.  
   
- <xref:System.ServiceModel.MessageCredentialType.Certificate> Přihlašovacích údajů je podporována pouze v případě, že režim zabezpečení je nastaven na hodnotu <xref:System.ServiceModel.NetMsmqSecurityMode.Both> nebo <xref:System.ServiceModel.NetMsmqSecurityMode.Message>.  
+ <xref:System.ServiceModel.MessageCredentialType.Certificate> Přihlašovacích údajů se podporuje jenom režim zabezpečení je nastaven na hodnotu <xref:System.ServiceModel.NetMsmqSecurityMode.Both> nebo <xref:System.ServiceModel.NetMsmqSecurityMode.Message>.  
   
  Další informace naleznete v tématu <xref:System.ServiceModel.MessageSecurityOverMsmq> a <xref:System.ServiceModel.MsmqTransportSecurity>.  
   
-### <a name="wsfederationhttpbinding"></a>– WSFederationHttpBinding  
- V kódu pomocí <xref:System.ServiceModel.WSFederationHttpBinding> třídy, v konfiguraci, pomocí [ \<– wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
+### <a name="wsfederationhttpbinding"></a>WSFederationHttpBinding  
+ V kódu, použijte <xref:System.ServiceModel.WSFederationHttpBinding> třídy; v konfiguraci, použijte [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
   
- Ve výchozím nastavení používá tuto vazbu WS-zabezpečení (zpráva layer security).  
+ Ve výchozím nastavení tato vazba používá WS-Security (zabezpečení zprávy vrstvy).  
   
- Další informace najdete v tématu [Federation](../../../../docs/framework/wcf/feature-details/federation.md), <xref:System.ServiceModel.WSFederationHttpSecurity>, a <xref:System.ServiceModel.WSFederationHttpSecurityMode>.  
+ Další informace najdete v tématu [federace](../../../../docs/framework/wcf/feature-details/federation.md), <xref:System.ServiceModel.WSFederationHttpSecurity>, a <xref:System.ServiceModel.WSFederationHttpSecurityMode>.  
   
 ## <a name="custom-bindings"></a>Vlastní vazby  
- Pokud žádná z vazby poskytované systémem splňuje požadavky, můžete vytvořit vlastní vazby s elementem vazba vlastní zabezpečení. Další informace najdete v tématu [možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).  
+ Pokud žádná z vazeb poskytovaných systémem nesplňuje požadavky, můžete vytvořit vlastní vazby s element vazby zabezpečení vlastní. Další informace najdete v tématu [možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md).  
   
 ## <a name="binding-choices"></a>Možnosti vázání  
- Následující tabulka shrnuje funkce služeb v nastavení režimu zabezpečení, to znamená, zobrazí se seznam funkcí dostupných režim zabezpečení je nastavena na `Transport`, `Message`, nebo `TransportWithMessageCredential`. Pomocí této tabulky a umožňují najít funkce zabezpečení, které vaše aplikace vyžaduje.  
+ V následující tabulce najdete Souhrn funkcí, které nabízí v nastavení režimu zabezpečení, to znamená, pokud režim zabezpečení je nastavený na vypíše dostupné funkce `Transport`, `Message`, nebo `TransportWithMessageCredential`. Pomocí této tabulky vám pomůže najít funkce zabezpečení, které vaše aplikace vyžaduje.  
   
 |Nastavení|Funkce|  
 |-------------|--------------|  
-|Přenos|Ověření serveru<br /><br /> Ověření klienta<br /><br /> Zabezpečení typu Point-to-Point<br /><br /> Interoperabilita<br /><br /> Hardwarová akcelerace<br /><br /> Vysoká propustnost<br /><br /> Zabezpečení brány firewall<br /><br /> Aplikace s vysokou latencí<br /><br /> Znova šifrovat mezi několik segmentů směrování|  
-|Zpráva|Ověření serveru<br /><br /> Ověření klienta<br /><br /> Koncové zabezpečení<br /><br /> Interoperabilita<br /><br /> Deklarace identity formátováním<br /><br /> Federace<br /><br /> Vícefaktorové ověřování<br /><br /> Vlastní tokeny<br /><br /> Služba notář/časové razítko<br /><br /> Aplikace s vysokou latencí<br /><br /> Trvalost podpisy zpráv|  
-|TransportWithMessageCredential|Ověření serveru<br /><br /> Ověření klienta<br /><br /> Zabezpečení typu Point-to-Point<br /><br /> Interoperabilita<br /><br /> Hardwarová akcelerace<br /><br /> Vysoká propustnost<br /><br /> Deklarace identity plně funkčního klienta<br /><br /> Federace<br /><br /> Vícefaktorové ověřování<br /><br /> Vlastní tokeny<br /><br /> Zabezpečení brány firewall<br /><br /> Aplikace s vysokou latencí<br /><br /> Znova šifrovat mezi několik segmentů směrování|  
+|Přenos|Ověřování serveru<br /><br /> Ověření klienta<br /><br /> Zabezpečení typu Point-to-Point<br /><br /> Interoperabilita<br /><br /> Hardwarová akcelerace<br /><br /> Vysoká propustnost<br /><br /> Zabezpečené brány firewall<br /><br /> Aplikace s vysokou latencí<br /><br /> Znova šifrovat napříč více segmentů směrování|  
+|Zpráva|Ověřování serveru<br /><br /> Ověření klienta<br /><br /> Koncové zabezpečení<br /><br /> Interoperabilita<br /><br /> Deklarace identity ve formátu RTF<br /><br /> Federace<br /><br /> Vícefaktorové ověřování<br /><br /> Vlastní tokeny<br /><br /> Služba notář/časové razítko<br /><br /> Aplikace s vysokou latencí<br /><br /> Trvalost podpisy zpráv|  
+|TransportWithMessageCredential|Ověřování serveru<br /><br /> Ověření klienta<br /><br /> Zabezpečení typu Point-to-Point<br /><br /> Interoperabilita<br /><br /> Hardwarová akcelerace<br /><br /> Vysoká propustnost<br /><br /> Deklarace identity vzhled plně funkčního klienta<br /><br /> Federace<br /><br /> Vícefaktorové ověřování<br /><br /> Vlastní tokeny<br /><br /> Zabezpečené brány firewall<br /><br /> Aplikace s vysokou latencí<br /><br /> Znova šifrovat napříč více segmentů směrování|  
   
- Následující tabulka uvádí vazby, které podporují různé nastavení režimu. Vyberte vazbu tabulku, kterou chcete použít k vytvoření vašeho koncového bodu služby.  
+ V následující tabulce jsou uvedeny vazby, které podporují různá nastavení režimu. Vyberte vazbu tabulky použít k vytvoření vašeho koncového bodu služby.  
   
 |Vazba|Podpora režimu přenosu|Podpora režimu zpráv|Podpora TransportWithMessageCredential|  
 |-------------|----------------------------|--------------------------|--------------------------------------------|  
@@ -201,29 +201,29 @@ Vazby poskytované systémem zahrnuty s Windows Communication Foundation (WCF) n
 |`MsmqIntegrationBinding`|Ano|Ne|Ne|  
 |`wsFederationHttpBinding`|Ne|Ano|Ano|  
   
-## <a name="transport-credentials-in-bindings"></a>Přihlašovací údaje přenosu v vazby  
- Následující tabulka uvádí typy přihlašovacích údajů klienta, která je k dispozici při použití buď `BasicHttpBinding` nebo `WSHttpBinding` v režimu zabezpečení přenosu.  
+## <a name="transport-credentials-in-bindings"></a>Přihlašovací údaje přenosu ve vazbách  
+ V následující tabulce jsou uvedeny typy přihlašovacích údajů klienta, která je k dispozici při použití buď `BasicHttpBinding` nebo `WSHttpBinding` v režimu zabezpečení přenosu.  
   
 |Typ|Popis|  
 |----------|-----------------|  
-|Žádné|Určuje, že klient nemusí k dispozici žádné pověření. Výsledkem anonymním klientem.|  
-|Základní|Základní ověřování. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest, k dispozici na [ http://go.microsoft.com/fwlink/?LinkId=84023 ](http://go.microsoft.com/fwlink/?LinkId=84023).|  
-|Ověřování algoritmem Digest|Ověřování hodnotou hash. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest, k dispozici na [ http://go.microsoft.com/fwlink/?LinkId=84023 ](http://go.microsoft.com/fwlink/?LinkId=84023).|  
-|NTLM|Ověřování NT LAN Manager (NTLM).|  
-|Windows|Ověřování systému Windows.|  
-|certifikát|Ověřování se provádí pomocí certifikátu.|  
-|IssuedToken|Umožňuje službě vyžadují, ověření klienta pomocí tokenem vydaným službou tokenů zabezpečení nebo pomocí [!INCLUDE[infocard](../../../../includes/infocard-md.md)]. Další informace najdete v tématu [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
+|Žádné|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
+|Základní|Základní ověřování. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest, k dispozici na [ https://go.microsoft.com/fwlink/?LinkId=84023 ](https://go.microsoft.com/fwlink/?LinkId=84023).|  
+|ověřování algoritmem Digest|Ověřování algoritmem Digest. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest, k dispozici na [ https://go.microsoft.com/fwlink/?LinkId=84023 ](https://go.microsoft.com/fwlink/?LinkId=84023).|  
+|NTLM|NT LAN Manager (NTLM) authentication.|  
+|Windows|Ověřování Windows.|  
+|Certifikát|Ověřování provádí pomocí certifikátu.|  
+|Třídy IssuedToken|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí tokenem vydaným službou tokenů zabezpečení nebo pomocí [!INCLUDE[infocard](../../../../includes/infocard-md.md)]. Další informace najdete v tématu [federace a vydané tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
   
-### <a name="message-client-credentials-in-bindings"></a>Zpráva pověření klienta v vazby  
+### <a name="message-client-credentials-in-bindings"></a>Přihlašovací údaje klienta zprávy ve vazbách  
  Následující tabulka uvádí typy přihlašovacích údajů klienta, která je k dispozici při použití vazby v režimu zabezpečení zpráv.  
   
 |Typ|Popis|  
 |----------|-----------------|  
-|Žádné|Umožňuje pracovat s anonymní klienty služby.|  
-|Windows|Umožňuje výměny zpráv protokolu SOAP podle pro ověřený kontext pověření systému Windows.|  
-|UserName|Umožňuje službě vyžadují, ověření klienta pomocí pověření uživatele název. Všimněte si, že když režim zabezpečení je nastavený na `TransportWithMessageCredential`, WCF nepodporuje odesílání heslo hodnotou hash nebo odvozování klíče pomocí hesla a použití tyto klíče pro režim zabezpečení zpráv. Jako takový WCF vynutí, že při použití přihlašovací údaje uživatele název zabezpečené přenosu.|  
-|certifikát|Umožňuje službě vyžadují, ověření klienta pomocí certifikátu.|  
-|IssuedToken|Umožňuje zadat vlastní token pomocí služby tokenů zabezpečení služby.|  
+|Žádné|Umožňuje službě komunikovat s anonymní klienty.|  
+|Windows|Umožňuje výměny zpráv SOAP podle ověřený kontext přihlašovacích údajů Windows.|  
+|UserName|Umožňuje službě tak, aby vyžadovala, která klient ověřena pomocí pověření uživatelského jména. Všimněte si, že pokud režim zabezpečení je nastavený na `TransportWithMessageCredential`, WCF nepodporuje odeslání hesla hodnotou hash nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro režim zabezpečení zpráv. V důsledku toho WCF vynutí, že při použití uživatelských přihlašovacích údajů název je zabezpečený přenos.|  
+|Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu.|  
+|Třídy IssuedToken|Umožňuje službě můžete zadat vlastní token služby tokenů zabezpečení.|  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
@@ -231,4 +231,4 @@ Vazby poskytované systémem zahrnuty s Windows Communication Foundation (WCF) n
  [Výběr typu přihlašovacích údajů](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
  [Možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)  
  [Chování zabezpečení](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
- [Model zabezpečení pro Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+ [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

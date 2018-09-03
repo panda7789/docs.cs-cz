@@ -10,28 +10,28 @@ helpviewer_keywords:
 - states [WPF]
 - templates [WPF]
 ms.assetid: c19049bb-5ceb-492d-afd2-751dca0ed8e3
-ms.openlocfilehash: 0fe20ffa19d14dcaecac30198c5c0e2d19fb9fa5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 58d65ee9842270b07a76ff438c975955689197e9
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33556910"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43482973"
 ---
 # <a name="control-styles-and-templates"></a>Styly a šablony ovládacích prvků
-Ovládací prvky v systému Windows Presentation Foundation (WPF) mají <xref:System.Windows.Controls.ControlTemplate> , který obsahuje vizuální strojové struktuře tohoto ovládacího prvku. Struktura a vzhledu ovládacího prvku můžete změnit úpravou <xref:System.Windows.Controls.ControlTemplate> tohoto ovládacího prvku. Neexistuje žádný způsob, jak nahradit pouze část vizuálním stromu ovládacího prvku; Chcete-li změnit vizuální strojové struktuře ovládacího prvku, je nutné nastavit <xref:System.Windows.Controls.Control.Template%2A> vlastnost ovládacího prvku a jeho nové dokončení <xref:System.Windows.Controls.ControlTemplate>.  
+Ovládací prvky ve Windows Presentation Foundation (WPF) mít <xref:System.Windows.Controls.ControlTemplate> vizuálním stromu ovládacího prvku, který obsahuje. Úpravou můžete změnit strukturu a vzhled ovládacího prvku <xref:System.Windows.Controls.ControlTemplate> ovládacího prvku. Neexistuje žádný způsob, jak nahradit pouze část vizuálním stromu ovládacího prvku; Chcete-li změnit vizuálním stromu ovládacího prvku je nutné nastavit <xref:System.Windows.Controls.Control.Template%2A> vlastnost ovládacího prvku na jeho nové a kompletní <xref:System.Windows.Controls.ControlTemplate>.  
   
- Motivy plochy určit, které slovník prostředků se používá. Pokud chcete získat slovnících prostředků pro plochy motivy, najdete v části [výchozí motivy WPF](http://go.microsoft.com/fwlink/?LinkID=158252).  
+ Klasické pracovní plochy motivy určit, které slovník prostředků se používá. Slovníky prostředků pro klasické pracovní plochy motivy, získáte [výchozí motivy WPF](https://go.microsoft.com/fwlink/?LinkID=158252).  
   
- Následující tabulka popisuje názvy souborů slovník prostředků a jejich odpovídající plochy motivů.  
+ Následující tabulka popisuje názvy souboru slovníku prostředků a jejich odpovídající motivy klasické pracovní plochy.  
   
 |Soubor motivu|Motiv plochy|  
 |----------------|-------------------|  
-|Classic.XAML|Klasického nastavení (ze systému Windows 95, Windows 98 a systému Windows 2000) v operačním systému Windows XP...|  
-|Luna.NormalColor.xaml|Modré výchozí motiv na systému Windows XP.|  
-|Luna.Homestead.xaml|Olivového motiv na systému Windows XP.|  
-|Luna.Metallic.xaml|Stříbrná motiv na systému Windows XP.|  
-|Royale.NormalColor.xaml|Výchozí motiv na operačním systému Windows XP Media Center Edition.|  
-|Aero.NormalColor.xaml|Výchozí motiv na operační systém Windows Vista.|  
+|Classic.XAML|Windows klasickému (z Windows 95, Windows 98 a Windows 2000) v operačním systému Windows XP...|  
+|Luna.NormalColor.xaml|Modrý motiv Windows XP.|  
+|Luna.Homestead.xaml|Olivově motiv Windows XP.|  
+|Luna.Metallic.xaml|Stříbrným motiv Windows XP.|  
+|Royale.NormalColor.xaml|Výchozí motiv operačního systému Windows XP Media Center Edition.|  
+|Aero.NormalColor.xaml|Výchozí motiv operačního systému Windows Vista.|  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Styly a šablony tlačítek](../../../../docs/framework/wpf/controls/button-styles-and-templates.md)  
@@ -50,18 +50,18 @@ Ovládací prvky v systému Windows Presentation Foundation (WPF) mají <xref:Sy
  [ListView – styly a šablony](../../../../docs/framework/wpf/controls/listview-styles-and-templates.md)  
  [Styly a šablony nabídky](../../../../docs/framework/wpf/controls/menu-styles-and-templates.md)  
  [NavigationWindow – styly a šablony](../../../../docs/framework/wpf/controls/navigationwindow-styles-and-templates.md)  
- [Položka PasswordBox styly a šablony](../../../../docs/framework/wpf/controls/passwordbox-syles-and-templates.md)  
+ [PasswordBox – styly a šablony](../../../../docs/framework/wpf/controls/passwordbox-syles-and-templates.md)  
  [ProgressBar – styly a šablony](../../../../docs/framework/wpf/controls/progressbar-styles-and-templates.md)  
  [RadioButton – styly a šablony](../../../../docs/framework/wpf/controls/radiobutton-styles-and-templates.md)  
- [Styly RepeatButton a šablony](../../../../docs/framework/wpf/controls/repeatbutton-syles-and-templates.md)  
+ [RepeatButton – styly a šablony](../../../../docs/framework/wpf/controls/repeatbutton-syles-and-templates.md)  
  [ScrollBar – styly a šablony](../../../../docs/framework/wpf/controls/scrollbar-styles-and-templates.md)  
  [ScrollViewer – styly a šablony](../../../../docs/framework/wpf/controls/scrollviewer-styles-and-templates.md)  
  [Styly a šablony posuvníku](../../../../docs/framework/wpf/controls/slider-styles-and-templates.md)  
  [StatusBar – styly a šablony](../../../../docs/framework/wpf/controls/statusbar-styles-and-templates.md)  
  [TabControl – styly a šablony](../../../../docs/framework/wpf/controls/tabcontrol-styles-and-templates.md)  
  [TextBox – styly a šablony](../../../../docs/framework/wpf/controls/textbox-styles-and-templates.md)  
- [Jezdec Styly a šablony](../../../../docs/framework/wpf/controls/thumb-syles-and-templates.md)  
- [Přepínací tlačítko styly a šablony](../../../../docs/framework/wpf/controls/togglebutton-syles-and-templates.md)  
+ [Jezdec – Styly a šablony](../../../../docs/framework/wpf/controls/thumb-syles-and-templates.md)  
+ [ToggleButton – styly a šablony](../../../../docs/framework/wpf/controls/togglebutton-syles-and-templates.md)  
  [ToolBar – styly a šablony](../../../../docs/framework/wpf/controls/toolbar-styles-and-templates.md)  
  [ToolTip – styly a šablony](../../../../docs/framework/wpf/controls/tooltip-styles-and-templates.md)  
  [TreeView – styly a šablony](../../../../docs/framework/wpf/controls/treeview-styles-and-templates.md)  

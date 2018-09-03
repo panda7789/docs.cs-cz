@@ -3,11 +3,11 @@ title: 'Postupy: volba mezi HTTP POST a HTTP GET požadavky u koncových bodů A
 ms.date: 03/30/2017
 ms.assetid: b47de82a-4c92-4af6-bceb-a5cb8bb8ede9
 ms.openlocfilehash: 079bbd98b3fc3d5538f87cad39a4a83a0dc1e242
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42998479"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481839"
 ---
 # <a name="how-to-choose-between-http-post-and-http-get-requests-for-aspnet-ajax-endpoints"></a>Postupy: volba mezi HTTP POST a HTTP GET požadavky u koncových bodů ASP.NET AJAX
 Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpřístupňuje koncový bod s podporou technologie ASP.NET AJAX, který může být volána z jazyka JavaScript na webové stránce klienta. Základní postupy pro vytváření těchto služeb je podrobněji popsána [postupy: použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) a [postupy: Přidání ASP.NET AJAX konfigurace koncového bodu bez použití](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).  

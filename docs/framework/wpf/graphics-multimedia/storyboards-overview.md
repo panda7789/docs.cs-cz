@@ -9,12 +9,12 @@ helpviewer_keywords:
 - syntax [WPF], Storyboard
 - timelines [WPF]
 ms.assetid: 1a698c3c-30f1-4b30-ae56-57e8a39811bd
-ms.openlocfilehash: a7f9539cd3ac571977a91cd4e7dce07d641af3b6
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: d6b33df8574d9c25380d6d9319480d3c9df28660
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42932318"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43480020"
 ---
 # <a name="storyboards-overview"></a>Přehled scénářů
 Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboard> objekty k uspořádání a použití animací. Popisuje, jak interaktivně pracovat s <xref:System.Windows.Media.Animation.Storyboard> objektů a popisuje nepřímé vlastnost cílení na syntaxi.  
@@ -63,7 +63,7 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
 |--------------------------------|-------------------|-----------|----------------------|-------------------|-------------|  
 |<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.EventTrigger>|Ano|Ano|Ano|Ano|[Animace vlastnosti pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
 |<xref:System.Windows.Media.Animation.BeginStoryboard> a vlastnosti <xref:System.Windows.Trigger>|Ne|Ano|Ano|Ano|[Spuštění animace při změně hodnoty vlastnosti](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-an-animation-when-a-property-value-changes.md)|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.DataTrigger>|Ne|Ano|Ano|Ano|[Postupy: spuštění animace při změně dat](http://msdn.microsoft.com/library/a736bb3a-2ae5-479a-a33a-75a27055d863)|  
+|<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.DataTrigger>|Ne|Ano|Ano|Ano|[Postupy: spuštění animace při změně dat](https://msdn.microsoft.com/library/a736bb3a-2ae5-479a-a33a-75a27055d863)|  
 |<xref:System.Windows.Media.Animation.Storyboard.Begin%2A> – Metoda|Ano|Ne|Ne|Ne|[Animace vlastnosti pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
   
  V následujícím příkladu <xref:System.Windows.Media.Animation.Storyboard> pro animaci <xref:System.Windows.FrameworkElement.Width%2A> z <xref:System.Windows.Shapes.Rectangle> elementu a <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> , kterým se má <xref:System.Windows.Shapes.Rectangle>.  

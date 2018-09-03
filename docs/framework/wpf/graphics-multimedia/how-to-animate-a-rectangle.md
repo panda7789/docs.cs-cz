@@ -8,18 +8,18 @@ helpviewer_keywords:
 - animation [WPF], rectangles
 - rectangles [WPF], animating
 ms.assetid: 572ffb95-790d-4ace-adbf-b2ea8a90e75b
-ms.openlocfilehash: 10d9f3b99e9a2c9b9aef795a8f7108c043e4267a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c2edf1bc8505b7bda2cc31ded2d2bf53a96243ac
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33561427"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43480046"
 ---
 # <a name="how-to-animate-a-rectangle"></a>Postupy: Animace obdélníku
-Tento příklad ukazuje postup změny velikosti a pozice obdélníku animace.  
+Tento příklad ukazuje, jak animace změn velikosti a pozici obdélníku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá instanci <xref:System.Windows.Media.Animation.RectAnimation> třídy animace <xref:System.Windows.Media.RectangleGeometry.Rect%2A> vlastnost <xref:System.Windows.Media.RectangleGeometry>, který animuje změny velikosti a pozice rámečku.  
+ Následující příklad používá instanci <xref:System.Windows.Media.Animation.RectAnimation> třídy pro animaci <xref:System.Windows.Media.RectangleGeometry.Rect%2A> vlastnost <xref:System.Windows.Media.RectangleGeometry>, která animuje změny velikosti a pozici obdélníku.  
   
  [!code-csharp[BasicAnimations_snip#RectAnimationWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BasicAnimations_snip/CSharp/RectAnimationExample.cs#rectanimationwholepage)]
  [!code-vb[BasicAnimations_snip#RectAnimationWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BasicAnimations_snip/VisualBasic/RectAnimationExample.vb#rectanimationwholepage)]  
@@ -31,5 +31,5 @@ Tento příklad ukazuje postup změny velikosti a pozice obdélníku animace.
  [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
  [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
  [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/graphics-how-to-topics.md)  
- [Animace a časování](http://msdn.microsoft.com/library/7d83765b-d5ae-41b1-b423-80206e1124aa)  
+ [Animace a časování](https://msdn.microsoft.com/library/7d83765b-d5ae-41b1-b423-80206e1124aa)  
  [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)

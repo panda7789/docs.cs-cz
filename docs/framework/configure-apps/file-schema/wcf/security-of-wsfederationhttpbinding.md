@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: a8e5e854-b8dc-4921-843d-34b6a4a6a8ba
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 2f2a25f06aa90dc1cbb63f4f91d6032ef017dab2
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 81d0f17971653c3e3ecd27ddde745a65c8b4f26d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32749800"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43482545"
 ---
 # <a name="ltsecuritygt-of-ltwsfederationhttpbindinggt"></a>&lt;security&gt; – &lt;wsFederationHttpBinding&gt;
-Definuje nastavení zabezpečení [ \<– wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
+Definuje nastavení zabezpečení [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
   
  \<system.ServiceModel>  
 \<vazby >  
 \<wsFederatedBinding >  
-\<Vazba >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -94,21 +94,21 @@ Definuje nastavení zabezpečení [ \<– wsFederationHttpBinding >](../../../..
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|Zprávu SOAP není zabezpečený při přenosu.|  
-|Zpráva|Integritu, důvěrnost, ověřování serveru a ověřování klientů jsou poskytovány pomocí zabezpečení zpráv protokolu SOAP. Ve výchozím nastavení je text šifrovaný a podepsaný. Službu je potřeba nakonfigurovat s certifikátem. Ověření klienta je založena na token do klienta vystavený služby tokenů zabezpečení|  
-|TransportWithMessageCredential|Ověření integrity a důvěrnosti serveru jsou poskytovány HTTPS. Službu je potřeba nakonfigurovat s certifikátem. Ověření klienta je k dispozici prostřednictvím zabezpečení zpráv protokolu SOAP a je založený na token do klienta vystavený služby tokenů zabezpečení.|  
+|Žádné|Zprávu protokolu SOAP není zabezpečená při přenosu.|  
+|Zpráva|Integrity, šifrování, ověřování serveru a klienta ověřování zajišťuje zabezpečení zprávy protokolu SOAP. Ve výchozím nastavení je tělo zašifrovaný a podepsaný. Služba je potřeba nakonfigurovat s certifikátem. Ověření klienta je založena na token vydaný pro klienta služby tokenů zabezpečení|  
+|TransportWithMessageCredential|Jsou k dispozici integritu a důvěrnost serveru ověřování pomocí protokolu HTTPS. Služba je potřeba nakonfigurovat s certifikátem. Ověření klienta se poskytuje prostřednictvím zabezpečení zprávy protokolu SOAP a je založena na token vydaný pro klienta služby tokenů zabezpečení.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md)|Definuje nastavení pro zprávy úroveň zabezpečení. Tento element je typu <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.|  
+|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení. Tento prvek je typu <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vazba >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vazby [ \<– wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).|  
+|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny vazby funkce [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.WSFederationHttpSecurity>  
@@ -120,5 +120,5 @@ Definuje nastavení zabezpečení [ \<– wsFederationHttpBinding >](../../../..
  [Výběr typu přihlašovacích údajů](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<Vazba >](../../../../../docs/framework/misc/binding.md)
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

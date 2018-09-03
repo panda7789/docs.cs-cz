@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Let statement [Visual Basic]
 ms.assetid: 981aa516-16eb-4c53-b1f1-5aa3e82f316e
 ms.openlocfilehash: 34c0fd239d9e08dab4a107cb8447941e7ab3ecbe
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43255818"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43480369"
 ---
 # <a name="let-clause-visual-basic"></a>Let – klauzule (Visual Basic)
 Vypočítá hodnotu a přiřadí ji nové proměnné v rámci dotazu.  

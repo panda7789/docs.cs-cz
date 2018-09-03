@@ -1,39 +1,39 @@
 ---
-title: Zobrazení dat v DataTable
+title: Zobrazení dat v datové tabulce
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1d26e0fb-f6e0-4afa-9a9c-b8d55b8f20dc
-ms.openlocfilehash: 5d39d2a856a40b5ea20832a544ede360313309d3
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: de745633060dd4f7b1610492d0ff57ec7a4f545b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32761243"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43478088"
 ---
-# <a name="viewing-data-in-a-datatable"></a>Zobrazení dat v DataTable
-Můžete přistupovat k obsahu <xref:System.Data.DataTable> pomocí **řádky** a **sloupce** kolekce **DataTable**. Můžete také <xref:System.Data.DataTable.Select%2A> metoda vrátí podmnožiny dat v **DataTable** podle kritérií, včetně kritéria hledání, pořadí řazení a řádku stavu. Kromě toho můžete použít <xref:System.Data.DataRowCollection.Find%2A> metodu **kolekci DataRowCollection** při hledání konkrétního řádku pomocí hodnotu primárního klíče.  
+# <a name="viewing-data-in-a-datatable"></a>Zobrazení dat v datové tabulce
+Můžete přístup k obsahu <xref:System.Data.DataTable> pomocí **řádky** a **sloupce** kolekce **DataTable**. Můžete také použít <xref:System.Data.DataTable.Select%2A> metoda vrátí podmnožiny dat v **DataTable** podle kritérií kritéria vyhledávání, řazení a řádek stavu. Kromě toho můžete použít <xref:System.Data.DataRowCollection.Find%2A> metodu **kolekci DataRowCollection** při hledání konkrétního řádku pomocí hodnoty primárního klíče.  
   
- **Vyberte** metodu **DataTable** objekt vrací sadu <xref:System.Data.DataRow> objekty, které odpovídají zadaným kritériím. **Vyberte** přebírá volitelné argumenty výraz filtru výrazů řazení a **DataViewRowState**. Výraz filtru identifikuje řádky, které chcete vrátit na základě **DataColumn** hodnoty, jako například `LastName = 'Smith'`. Výraz řazení dodržovat standardní SQL konvence pro řazení sloupců, například `LastName ASC, FirstName ASC`. Pravidla o zapisují se výrazy, najdete v článku <xref:System.Data.DataColumn.Expression%2A> vlastnost **DataColumn** třídy.  
+ **Vyberte** metodu **DataTable** objekt vrací sadu <xref:System.Data.DataRow> objekty, které odpovídají zadaným kritériím. **Vyberte** přebírá nepovinné argumenty výrazu filtru, řadicí výraz, a **DataViewRowState**. Výraz filtru identifikuje řádky, které chcete vrátit na základě **DataColumn** hodnoty, jako například `LastName = 'Smith'`. Výraz řazení dodržuje standardní konvence SQL pro řazení sloupců, třeba `LastName ASC, FirstName ASC`. Pravidla týkající se vytváření výrazů, najdete v článku <xref:System.Data.DataColumn.Expression%2A> vlastnost **DataColumn** třídy.  
   
 > [!TIP]
->  Pokud provádíte počet volání **vyberte** metodu **DataTable**, můžete zvýšit výkon nejprve vytvoří <xref:System.Data.DataView> pro **DataTable**. Vytváření **DataView** indexuje řádky tabulky. **Vyberte** metoda pak usees, které indexu, výrazně snižuje čas potřebný k vygenerování výsledku dotazu. Informace o vytváření **DataView** pro **DataTable**, najdete v části [DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md).  
+>  Pokud provádíte počet volání **vyberte** metodu **DataTable**, může zvýšit výkon tím, že vytvoříte první <xref:System.Data.DataView> pro **DataTable**. Vytváří **DataView** indexuje řádky tabulky. **Vyberte** metoda pak usees, které indexu, což výrazně zkrátí čas k vygenerování výsledku dotazu. Informace o vytváření **DataView** pro **DataTable**, naleznete v tématu [zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md).  
   
- **Vyberte** metoda určuje, která verze řádky, které umožňuje zobrazit nebo upravit na základě <xref:System.Data.DataViewRowState>. Následující tabulka popisuje možné **DataViewRowState** hodnot výčtu.  
+ **Vyberte** metoda určí na základě verze řádků, které chcete zobrazit nebo pracovat <xref:System.Data.DataViewRowState>. Následující tabulka popisuje možné **DataViewRowState** hodnot výčtu.  
   
 |Hodnota DataViewRowState|Popis|  
 |----------------------------|-----------------|  
-|**CurrentRows**|Aktuální řádky včetně beze změny, přidání a změny řádků.|  
-|**Odstranit**|Odstraněné řádek.|  
-|**ModifiedCurrent**|Aktuální verze, která je upravenou verzi původního data. (Viz **ModifiedOriginal**.)|  
-|**ModifiedOriginal**|Původní verze všechny změny řádky. Aktuální verze je k dispozici pomocí **ModifiedCurrent**.|  
+|**CurrentRows**|Aktuální řádky včetně beze změny, přidání a upravené řádky.|  
+|**Odstranit**|Odstraněný řádek.|  
+|**ModifiedCurrent**|Aktuální verzi, která je upravená verze původní data. (Viz **ModifiedOriginal**.)|  
+|**ModifiedOriginal**|Původní verzi všechny změněné řádky. Aktuální verze je k dispozici pomocí **ModifiedCurrent**.|  
 |**Přidat**|Nový řádek.|  
 |**None**|Žádné|  
 |**OriginalRows**|Původní řádky, včetně beze změny a odstranit řádky.|  
-|**Beze změny**|Beze změny řádků.|  
+|**beze změny**|Beze změny řádků.|  
   
- V následujícím příkladu **datovou sadu** objektu je filtrované tak, že pouze pracujete s řádky jehož **DataViewRowState** je nastaven na **CurrentRows**.  
+ V následujícím příkladu **datovou sadu** objektu je filtrována tak, aby pouze pracujete s řádky jehož **DataViewRowState** je nastavena na **CurrentRows**.  
   
 ```vb  
 Dim column As DataColumn  
@@ -86,7 +86,7 @@ else
 }  
 ```  
   
- **Vyberte** metoda slouží k vrátí řádky s různými **RowState** hodnoty nebo hodnoty polí. Následující příklad vrací **DataRow** pole, která odkazuje na všechny řádky, které byly odstraněny a vrátí jiné **DataRow** pole, která odkazuje na všechny řádky, seřazené podle **CustLName**, kde **CustID** sloupec je větší než 5. Informace o tom, jak zobrazit informace v **odstraněné** řádek najdete v tématu [stavy řádků a verze řádku](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).  
+ **Vyberte** metodu je možné vrátit řádky s různými **RowState** hodnoty nebo hodnot polí. Následující příklad vrátí **DataRow** pole, které odkazuje na všechny řádky, které se odstranily a vrátí jiný **DataRow** pole, které odkazuje na všechny řádky, seřazené podle **CustLName**, kde **CustID** sloupec je větší než 5. Informace o tom, jak zobrazit informace v **odstraněné** řádek, přečtěte si téma [stavy řádků a verze řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).  
   
 ```vb  
 ' Retrieve all deleted rows.  
@@ -113,4 +113,4 @@ DataRow[] custRows = workTable.Select("CustID > 5", "CustLName ASC");
  <xref:System.Data.DataViewRowState>  
  [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
  [Stavy řádků a verze řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

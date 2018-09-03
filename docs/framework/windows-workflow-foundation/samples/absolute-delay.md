@@ -1,72 +1,72 @@
 ---
-title: Absolutní zpoždění
+title: Absolutní prodleva
 ms.date: 03/30/2017
 ms.assetid: b483139a-39bb-4560-8003-8969a8fc2cd1
-ms.openlocfilehash: 3a104f6b879e9cdc899bad2201ad1ed320a38a2d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 30719a4340b738a7462584c4dca00f6d5d90ac72
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33518382"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43486099"
 ---
-# <a name="absolute-delay"></a>Absolutní zpoždění
-Hlavní scénáře pro tato ukázka má počkat, dokud zadané <xref:System.DateTime> pomocí trvanlivý časovačů v aplikaci pracovního postupu. To se liší od pomocí integrovaných <xref:System.Activities.Statements.Delay> aktivitu jako to bude umožňují pouze zpoždění pro danou <xref:System.TimeSpan> (nebo počet minut nebo sekund).  
+# <a name="absolute-delay"></a>Absolutní prodleva
+Hlavní scénáře pro tuto ukázku spočívá ve zpoždění až do zadaného <xref:System.DateTime> pomocí časovače odolné aplikace pracovního postupu. Tím se liší od použití předdefinované <xref:System.Activities.Statements.Delay> aktivitu jako tento vám pouze umožní, než se dané <xref:System.TimeSpan> (nebo počet minut nebo sekund).  
   
- Některé reálnými scénáře, ve kterých můžete chtít provést na těchto rozdílech patří:  
+ Některé reálné scénáře, ve kterých chcete rozlišit patří následující:  
   
-1.  Chcete-li prodleva odesílání pošty po dobu 30 sekund a ujistěte se, že jste nepodali případné chyby.  
+1.  Chcete-li prodleva odesílání e-mailu pro 30 sekund, ujistěte se, že jste nevytvořili žádné chyby.  
   
-2.  Jsou nadměrně a chcete všechny vaše e-mailů zpoždění až normální pracovní dobu (například 8: 00).  
+2.  Jsou pracují a chcete zpoždění všechny vaše e-mailů do normální pracovních hodin (například 8: 00).  
   
 ## <a name="demonstrates"></a>Demonstruje  
   
-1.  <xref:System.Activities.Statements.DurableTimerExtension> pro implementaci absolutní zpoždění  
+1.  <xref:System.Activities.Statements.DurableTimerExtension> pro implementaci absolutní prodleva  
   
-2.  Nastavení pomocí trvalosti <xref:System.Activities.WorkflowApplication> pro odolná časovače  
+2.  Nastavení trvalosti pomocí <xref:System.Activities.WorkflowApplication> pro trvalý časovače  
   
-3.  Použití <xref:System.Activities.NativeActivity%601> pro používání body rozšiřitelnosti  
+3.  Použití <xref:System.Activities.NativeActivity%601> pro používání bodů rozšiřitelnosti  
   
 4.  Použití <xref:System.Activities.CodeActivity%601> v Connectoru aktivitu  
   
 5.  <xref:System.Activities.Statements.Delay>  
   
-6.  Pouze XAML pracovního postupu  
+6.  Pracovní postup pouze pro XAML  
   
- Tento příklad ukazuje, jak vytvořit vlastní aktivitu, která přebírá <xref:System.DateTime> a používá k registraci zpoždění Doba trvání trvanlivý časovače. Pokud používáte trvanlivý časovače, je nutné použít <xref:System.Activities.NativeActivity> vytvořte záložku, jak budete muset zaregistrovat tuto záložku s příponou časovače. V této ukázce, když časovač trvanlivý vyprší `OnTimerExpired` volání metody. Ujistěte se, že přidáváte časovače rozšíření v <xref:System.Activities.NativeActivity%601.CacheMetadata%2A> událostí zajistit tím modul runtime s těmito informacemi. Jenom jiné implementace podrobností je, že je nutné implementovat logiku pro převod z <xref:System.DateTime> k <xref:System.TimeSpan>, jak trvanlivý časovače trvat jenom <xref:System.DateTime>. Všimněte si, že malé chybě přesnost nástrojem  
+ Tento příklad ukazuje, jak vytvořit vlastní aktivitu, která přijímá <xref:System.DateTime> a trvalý časovače používá k registraci doba zpoždění. Při použití trvalý časovače, je nutné použít <xref:System.Activities.NativeActivity> vytvořte záložku, jak budete muset zaregistrovat tuto záložku pomocí časovače rozšíření. V této ukázce, když vyprší platnost trvalý časovač `OnTimerExpired` metoda bude volána. Ujistěte se, že přidáváte časovače rozšíření v <xref:System.Activities.NativeActivity%601.CacheMetadata%2A> událostí, aby pomocí těchto informací poskytujete modulu runtime. Jenom další podrobnosti implementace je, že budete muset implementovat logiku pro převod z <xref:System.DateTime> k <xref:System.TimeSpan>, protože trvalého časovače trvat pouze <xref:System.DateTime>. Mějte na paměti, že existuje malé zachytí přesnost prováděním  
   
 > [!NOTE]
->  Existuje malé ztrátu přesnosti převodem z <xref:System.DateTime> k <xref:System.TimeSpan>.  
+>  Existuje malé ztrátou přesnosti převodem z <xref:System.DateTime> k <xref:System.TimeSpan>.  
   
- Tento příklad také ukazuje, jak zapnout stálost pro <xref:System.Activities.WorkflowApplication>. Tato ukázka konkrétní použijeme trvanlivý časovače, ve kterých budou data pracovního postupu uvolněna do databáze trvalost během doby nečinnosti při čekání na časovač vyprší. Tato implementace mohou sloužit také pro další akce trvalost. Tento příklad ukazuje, jak nastavit připojovací řetězec trvalost s SQL serverem a postup vytvoření instance úložiště s cílem zachovat data instance pracovního postupu. Logika je k dispozici o tom, jak obnovit pracovního postupu, jakmile se vyvolá událost, takže je spustitelného k instanci pracovního postupu.  
+ Tento příklad také ukazuje, jak zapnout stálost pro <xref:System.Activities.WorkflowApplication>. V tomto konkrétním příkladu použijeme trvalý časovače, ve kterých se data pracovního postupu uvolněných do databáze trvalosti během doby nečinnosti při čekání na časovač vypršení platnosti. Tato implementace lze použít také pro další akce trvalosti. Tento příklad ukazuje, jak nastavit připojovací řetězec trvalost s SQL serverem a tom, jak vytvořit v úložišti instancí, aby bylo možné zachovat data instance pracovního postupu. Logika je k dispozici na tom, jak obnovit pracovní postup po vyvolá událost, díky spustitelné instance pracovního postupu.  
   
- Krocích tuto ukázku, zobrazí se, že čas, ve kterém vestavěnou prodlevu zahájí a dokončení, který pak může způsobit e-mailovou zprávu k odeslání. Z tohoto místa se zastaví AbsoluteDelay aktivity do zadané <xref:System.DateTime> (nebo 0 sekund, pokud <xref:System.DateTime> vypršela platnost) který naopak k odeslání e-mailu po vypršení platnosti. Tato rutina ukáže případech předdefinované použití dvou různých <xref:System.Activities.Statements.Delay> funkce a kdy AbsoluteDelay aktivitu.  
+ Krocích této ukázce uvidíte, že čas, ve kterém integrované zpoždění zahájí a dokončí, která zase způsobí, že e-mailové zprávy k odeslání. Odtud se zastaví aktivity AbsoluteDelay až do zadaného <xref:System.DateTime> (nebo 0 sekund, pokud <xref:System.DateTime> vypršela platnost) který pak se rozešle e-mail po vypršení platnosti. Tím se zobrazí dvě různé případy integrovaných použití <xref:System.Activities.Statements.Delay> funkce oproti použití AbsoluteDelay aktivity.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že máte systému SQL Server Express (nebo novější), nainstalovaný na počítači  
+1.  Ujistěte se, že máte SQL Server Express (nebo vyšší) na vašem počítači nainstalovaná  
   
-2.  Spustit setup.cmd (z WF/Basic/Services/AbsoluteDelay/CS) [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] příkazového řádku AbsoluteDelaySampleDB databázi vytvořit, vytvořit schéma trvalosti a vytvořit logiku trvalost.  
+2.  Spustit setup.cmd (z WF/Basic/Services/AbsoluteDelay/CS) [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] příkazového řádku vytvořit AbsoluteDelaySampleDB databázi, vytvoření schématu trvalosti a vytvoření logiky trvalosti.  
   
 3.  Otevřete řešení v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-4.  Zadejte dobu trvání aktivity zpoždění.  
+4.  V aktivitě Delay určete dobu trvání.  
   
 5.  Zadejte ExpirationTime AbsoluteDelay aktivity.  
   
-6.  Aktualizujte pole SendMailTo, SendMailFrom, SendMailSubject, SendMailBody a SmtpHost SendMail aktivity.  
+6.  Aktualizují se pole SendMailTo SendMailFrom, SendMailSubject, SendMailBody a SmtpHost v aktivita SendMail.  
   
     > [!NOTE]
-    >  Pokud nezadáte platný hostitel SMTP, vyvolá aplikace SMTP výjimka.  
+    >  Pokud se platný hostitel SMTP nezadáte, aplikace vyvolá výjimka SMTP.  
   
-7.  Sestavte řešení výběrem **sestavení**, **sestavit řešení**.  
+7.  Sestavte řešení tak, že vyberete **sestavení**, **sestavit řešení**.  
   
-8.  Spuštění řešení stisknutím **F5**.  
+8.  Spuštění řešení stisknutím kombinace kláves **F5**.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\AbsoluteDelay`

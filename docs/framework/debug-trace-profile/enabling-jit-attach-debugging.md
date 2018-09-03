@@ -7,35 +7,35 @@ helpviewer_keywords:
 ms.assetid: f91fc5f7-de5a-4f23-b6ac-f450e63c662e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 67db256f4c328b12d6cc30abfbe5d5ccc12e8b0a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b92592500f0babf29891710cedf1228b0ddcb0e4
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397829"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43483892"
 ---
 # <a name="enabling-jit-attach-debugging"></a>Povolení JIT – ladění Attach 
-JIT – připojené ladění je fráze používají k popisu připojení ladicího programu procesu, když dojde k chybám, nebo ji můžete aktivovat konkrétní metody nebo funkce.  
+JIT – ladění attach je frázi používají k popisu připojení ladicího programu k procesu, pokud narazíte na chyby, nebo se dá spouštět podle konkrétní metody nebo funkce.  
   
- JIT – připojené ladění se používá za následujících podmínek chyby:  
+ JIT – ladění attach slouží za následujících podmínek selhání:  
   
--   Nezpracované výjimky (v nativního a spravovaného kódu).  
+-   Neošetřené výjimky (v nativní a spravovaný kód).  
   
--   <xref:System.Environment.FailFast%2A?displayProperty=nameWithType> Metoda nebo [RaiseFailFastException](http://go.microsoft.com/fwlink/?LinkId=182107) – funkce (rodiny Windows 7).  
+-   <xref:System.Environment.FailFast%2A?displayProperty=nameWithType> Metoda nebo [RaiseFailFastException](https://go.microsoft.com/fwlink/?LinkId=182107) – funkce (řady Windows 7).  
   
 -   Závažné chyby za běhu.  
   
- JIT – připojené ladění se aktivuje také při volání těchto metod a funkce:  
+ JIT – ladění attach také aktivuje volání těchto metod a funkce:  
   
 -   <xref:System.Diagnostics.Debugger.Launch%2A?displayProperty=nameWithType> Metoda.  
   
 -   <xref:System.Diagnostics.Debugger.Break%2A?displayProperty=nameWithType> Metoda.  
   
--   [Debugbreak –](http://go.microsoft.com/fwlink/?LinkId=182106) – funkce (Win32).  
+-   [DebugBreak](https://go.microsoft.com/fwlink/?LinkId=182106) – funkce (Win32).  
   
- Před [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhraní .NET Framework poskytuje klíče registru samostatné pro řízení chování nativní a spravovaná ladicí programy. Od verze [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], je ovládací prvek konsolidovány do klíče registru jednu: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Current Version\AeDebug. Hodnoty, které můžete nastavit pro tento klíč určit, zda je volána ladicí program a pokud ano, zda je volána, dialogové okno, které vyžaduje interakci uživatele. Informace o nastavení tohoto klíče registru najdete v tématu [konfigurace automatické ladění](http://go.microsoft.com/fwlink/?LinkId=181767).  
+ Před [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhraní .NET Framework poskytuje klíče samostatné registru, které řídí chování ladicí programy pro nativní a spravované. Počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], ovládací prvek je konsolidovány do jednoho registru: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Current Version\AeDebug. Hodnoty, které můžete nastavit pro daný klíč určit, zda ladicí program je vyvolán, a pokud ano, zda je vyvolána s dialogové okno, které vyžaduje zásah uživatele. Informace o nastavení tohoto klíče registru najdete v tématu [konfiguraci automatického ladění](https://go.microsoft.com/fwlink/?LinkId=181767).  
   
 ## <a name="see-also"></a>Viz také  
  [Ladění, trasování a profilace](../../../docs/framework/debug-trace-profile/index.md)  
  [Usnadnění ladění obrázku](../../../docs/framework/debug-trace-profile/making-an-image-easier-to-debug.md)  
- [Povolení profilace](http://msdn.microsoft.com/library/3b669676-f0e0-4ebf-8674-68986dd2020d)
+ [Povolení profilace](https://msdn.microsoft.com/library/3b669676-f0e0-4ebf-8674-68986dd2020d)

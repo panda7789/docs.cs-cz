@@ -9,19 +9,19 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: f6500fa5f8f5022c4e910da894f182dcc5525be5
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: 04561adb254d001b5e4c7867a4017ede74972011
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36207375"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43486193"
 ---
-# <a name="c-programming-guide"></a>Průvodce programováním C#
-Tato část obsahuje podrobné informace o klíčových jazyk C# funkce a funkce přístupné pro C# prostřednictvím rozhraní .NET Framework.  
+# <a name="c-programming-guide"></a>Průvodce programovacího jazyka C#
+Tato část obsahuje podrobné informace o klíčových jazyka C#, funkce a funkce přístupné pro C# pomocí rozhraní .NET Framework.  
   
- Většina této části se předpokládá něco již vědět o C# a obecné koncepty programování. Pokud jste začátečník dokončení s programováním nebo pomocí C#, můžete chtít najdete [C# – elementy QuickStart](../quick-starts/index.md) nebo [Začínáme s C#](https://www.microsoft.com/net/tutorials/csharp/getting-started) Interaktivní kurz, kdy je potřeba žádné předchozí znalosti programování.  
+ Většinu této části se předpokládá něco už víte o jazyce C# a obecné koncepty programování. Pokud jste úplný Začátečník s programováním nebo pomocí jazyka C#, můžete navštívit [rychlé starty s C#](../quick-starts/index.md) nebo [Začínáme s jazykem C#](https://www.microsoft.com/net/tutorials/csharp/getting-started) Interaktivní kurz, ve kterém jsou vyžadována žádná předchozí znalosti programování.  
   
- Informace o konkrétní klíčová slova, operátory a direktivy preprocesoru najdete v tématu [referenční dokumentace jazyka C#](../../csharp/language-reference/index.md). Informace o specifikace jazyka C# najdete v tématu [specifikace jazyka C#](../../csharp/language-reference/language-specification/index.md).  
+ Informace o konkrétní klíčová slova, operátory a direktivy preprocesoru naleznete v tématu [referenční dokumentace jazyka C#](../../csharp/language-reference/index.md). Informace o specifikaci jazyka C# najdete v tématu [specifikace jazyka C#](../../csharp/language-reference/language-specification/index.md).  
   
 ## <a name="program-sections"></a>Části programu
 
@@ -29,7 +29,7 @@ Tato část obsahuje podrobné informace o klíčových jazyk C# funkce a funkce
   
 [Argumenty Main() a příkazového řádku](../../csharp/programming-guide/main-and-command-args/index.md)  
  
-## <a name="language-sections"></a>Části jazyka  
+## <a name="language-sections"></a>Jazyk oddíly  
 [Příkazy, výrazy a operátory](../../csharp/programming-guide/statements-expressions-operators/index.md)  
 
  [Typy](../../csharp/programming-guide/types/index.md)  
@@ -69,7 +69,7 @@ Tato část obsahuje podrobné informace o klíčových jazyk C# funkce a funkce
  [Dokumentační komentáře XML](../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)  
   
 ## <a name="platform-sections"></a>Oddíly platformy  
- [Aplikační domény (C# a Visual Basic)](http://msdn.microsoft.com/library/1bc2939a-79db-4a4a-a677-4a2ce6de2b1e)  
+ [Domény aplikace (C# a Visual Basic)](https://msdn.microsoft.com/library/1bc2939a-79db-4a4a-a677-4a2ce6de2b1e)  
   
  [Sestavení a globální mezipaměť sestavení (GAC)](../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
   
@@ -79,7 +79,7 @@ Tato část obsahuje podrobné informace o klíčových jazyk C# funkce a funkce
   
  [Výjimky a jejich zpracování](../../csharp/programming-guide/exceptions/index.md)  
   
- [Systém souborů a registr (C# Průvodce programováním)](../../csharp/programming-guide/file-system/index.md)  
+ [Systém souborů a registr (C# Programming Guide)](../../csharp/programming-guide/file-system/index.md)  
   
  [Interoperabilita](../../csharp/programming-guide/interop/index.md)  
   

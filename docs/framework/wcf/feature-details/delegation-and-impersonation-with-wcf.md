@@ -8,82 +8,82 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: 811ab308b881b5209d44612b29fb51d1c79e8bf1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 08b78a2a6e7d27f28ddd5c9b771f690bc16b1717
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33496916"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43484584"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Delegace a zosobnění se službou WCF
-*Zosobnění* je běžný postup, který služby použít k omezení klientský přístup k prostředkům doména služby. Prostředky služby domény může být buď prostředky počítače, jako je například místní soubory (zosobnění), nebo prostředku na jiném počítači, například do sdílené složky (delegování). Ukázkovou aplikaci, najdete v části [zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Příklad použití zosobnění naleznete v části [postupy: zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  
+*Zosobnění* je běžná technika, služby slouží k omezení klientský přístup k prostředkům služby domény. Prostředky služby domény může být buď počítač prostředky, jako jsou místní soubory (zosobnění), nebo prostředek na jiném počítači, jako jsou sdílené složky (delegování). Ukázková aplikace, najdete v části [zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Příklad použití zosobnění, naleznete v tématu [postupy: zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  
   
 > [!IMPORTANT]
->  Upozorňujeme, že při zosobnění klienta ve službě, služba bude spuštěna s přihlašovacími údaji klienta, které mohou mít vyšší oprávnění než procesu serveru.  
+>  Mějte na paměti, že při zosobnění klienta ve službě, je služba spuštěna pomocí přihlašovacích údajů klienta, které mohou mít větší oprávnění než procesu serveru.  
   
 ## <a name="overview"></a>Přehled  
- Klienti obvykle volání služby pro službu provést některé akce jménem klienta. Zosobnění umožňuje služby tak, aby fungoval jako klient při provádění akce. Delegování umožňuje front-endová služba pro předávání požadavek klienta ke službě back-end tak, že služba back endu může také zosobnit klienta. Zosobnění se nejčastěji používá jako způsob kontroly, jestli je klient oprávněn provádět určité akce, zatímco delegování je způsob průchodu možnosti zosobnění, společně s identity klienta ke službě back-end. Delegování je funkce domény systému Windows, která lze použít, pokud se provádí ověřování pomocí protokolu Kerberos. Delegování se liší od identity toku, a protože delegování přenáší možnost zosobnění klienta bez u sebe hesla klienta, je mnohem vyšší privilegované operace než identity toku.  
+ Klienti obvykle volání služby pro službu provést některé akce jménem klienta. Zosobnění umožňuje službě tak, aby fungoval jako klient při provádění akce. Delegování umožňuje front-endové služby pro předávání požadavek klienta do back-end služby tak, že back-end služba může také zosobnit klienta. Zosobnění se nejčastěji používá jako způsob kontroly, jestli je klient autorizaci provést určitou akci, zatímco delegování je možné do back-end služby průchodu funkce zosobnění, spolu s identity klienta. Delegování je funkce domény Windows, která se dá použít při ověřování protokolu Kerberos pomocí provádí. Delegování se liší od identity toku a vzhledem k tomu, že delegování přenáší možnost zosobnění klienta bez vlastnictví hesla klienta, je mnohem vyšší Privilegovaná operace než identity toku.  
   
- Zosobnění a delegování nutné, aby klient identitu systému Windows. Pokud klient nemá identitu systému Windows, je k dispozici pouze možnost tok identity klienta ke službě druhý.  
+ Zosobnění a delegování nutné, aby klient Windows identity. Pokud klient nemá k dispozici identita Windows, jediná dostupná možnost je tok identity klienta ke službě druhý.  
   
 ## <a name="impersonation-basics"></a>Základní informace o zosobnění  
- Windows Communication Foundation (WCF) podporuje zosobnění pro celou řadu pověření klienta. Toto téma popisuje podporu modelu služby pro zosobnění volajícího během provádění metody služby. Popsány i jsou běžné scénáře nasazení zahrnující zosobnění a zabezpečení protokolu SOAP a možnosti WCF v těchto scénářích.  
+ Windows Communication Foundation (WCF) podporuje zosobnění pro různé přihlašovací údaje pro klienta. Toto téma popisuje podporu modelu služby pro zosobnění volající během provádění metody služby. Popsány také jsou obvyklé scénáře nasazení zahrnující zosobnění a zabezpečení protokolu SOAP a možnosti WCF v těchto scénářích.  
   
- Toto téma se zaměřuje na zosobnění a delegování ve službě WCF při použití protokolu SOAP zabezpečení. Můžete také použít zosobnění a delegování s použitím technologie WCF při použití zabezpečení přenosu, jak je popsáno v [pomocí zosobnění se zabezpečením přenosu](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md).  
+ Toto téma se zaměřuje na zosobnění a delegování ve službě WCF při použití zabezpečení protokolu SOAP. Můžete také použít zosobnění a delegování s použitím technologie WCF při použití zabezpečení přenosu, jak je popsáno v [použití zosobnění se zabezpečením přenosu](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md).  
   
 ## <a name="two-methods"></a>Dvě metody  
- Zabezpečení WCF SOAP má dvě odlišné metody pro provádění zosobnění. Metoda použitá závisí na vazby. Jeden je zosobnění z tokenu Windows získané z rozhraní SSPI (Security Support Provider Interface) nebo protokolu Kerberos ověřování, které jsou pak uloženy v mezipaměti služby. Druhá je zosobnění z tokenu Windows získané z rozšíření protokolu Kerberos, se nazývají *Service-for-User* (S4U).  
+ Zabezpečení WCF SOAP má dva různé metody pro provádění zosobnění. Použitá metoda závisí na vazbu. Jeden je zosobnění z Windows tokenu získaného z Security Support Provider Interface (SSPI) nebo protokolu Kerberos ověřování, které se pak zapíší do mezipaměti ve službě. Druhým je zosobnění z Windows tokenu získaného z rozšíření protokolu Kerberos, se nazývají *Service for User* (S4U).  
   
 ### <a name="cached-token-impersonation"></a>V mezipaměti Token zosobnění  
- Můžete provádět v mezipaměti token zosobnění s následujícími službami:  
+ Můžete provádět v mezipaměti token zosobnění s následujícími možnostmi:  
   
--   <xref:System.ServiceModel.WSHttpBinding>, <xref:System.ServiceModel.WSDualHttpBinding>, a <xref:System.ServiceModel.NetTcpBinding> s pověření klienta systému Windows.  
+-   <xref:System.ServiceModel.WSHttpBinding>, <xref:System.ServiceModel.WSDualHttpBinding>, a <xref:System.ServiceModel.NetTcpBinding> pomocí pověření klienta Windows.  
   
--   <xref:System.ServiceModel.BasicHttpBinding> s <xref:System.ServiceModel.BasicHttpSecurityMode> nastavte na <xref:System.ServiceModel.BasicHttpSecurityMode.TransportWithMessageCredential> přihlašovacích údajů nebo standardní vazby kde klient uvede název přihlašovací údaje uživatele, který službu můžete namapovat platný účet systému Windows.  
+-   <xref:System.ServiceModel.BasicHttpBinding> s <xref:System.ServiceModel.BasicHttpSecurityMode> nastaveno <xref:System.ServiceModel.BasicHttpSecurityMode.TransportWithMessageCredential> přihlašovacích údajů nebo standardní vazbu kde klient poskytne název přihlašovacích údajů uživatele, který služba můžete namapovat na platný účet Windows.  
   
--   Všechny <xref:System.ServiceModel.Channels.CustomBinding> používající pověření klienta systému Windows s `requireCancellation` nastavena na `true`. (Vlastnost je k dispozici na následující třídy: <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters>, <xref:System.ServiceModel.Security.Tokens.SslSecurityTokenParameters>, a <xref:System.ServiceModel.Security.Tokens.SspiSecurityTokenParameters>.) Pokud se v vazba používá zabezpečené konverzaci, musí mít rovněž `requireCancellation` vlastnost nastavena na hodnotu `true`.  
+-   Žádné <xref:System.ServiceModel.Channels.CustomBinding> , který používá pověření klienta Windows s `requireCancellation` nastavena na `true`. (Vlastnost je k dispozici na následující třídy: <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters>, <xref:System.ServiceModel.Security.Tokens.SslSecurityTokenParameters>, a <xref:System.ServiceModel.Security.Tokens.SspiSecurityTokenParameters>.) Pokud zabezpečené konverzace se používá ve vazbě, musíte také mít `requireCancellation` nastavenou na `true`.  
   
--   Všechny <xref:System.ServiceModel.Channels.CustomBinding> kde klient uvede název pověření uživatele. Pokud se na vazby používá k zabezpečené konverzaci, musí mít rovněž `requireCancellation` vlastnost nastavena na hodnotu `true`.  
+-   Žádné <xref:System.ServiceModel.Channels.CustomBinding> kde klient poskytne pověření uživatelského jména. Pokud zabezpečené konverzace se používá ve vazbě, musíte také mít `requireCancellation` nastavenou na `true`.  
   
 ### <a name="s4u-based-impersonation"></a>Na základě S4U zosobnění  
- Můžete provádět na základě S4U zosobnění s následujícími službami:  
+ Je možné provést zosobnění S4U podle následujícími způsoby:  
   
--   <xref:System.ServiceModel.WSHttpBinding>, <xref:System.ServiceModel.WSDualHttpBinding>, a <xref:System.ServiceModel.NetTcpBinding> s pověřením certifikátu klienta služby je možné namapovat platný účet systému Windows.  
+-   <xref:System.ServiceModel.WSHttpBinding>, <xref:System.ServiceModel.WSDualHttpBinding>, a <xref:System.ServiceModel.NetTcpBinding> s pověřením klientských certifikátů služby můžete namapovat na platný účet Windows.  
   
--   Všechny <xref:System.ServiceModel.Channels.CustomBinding> používající pověření klienta systému Windows s `requireCancellation` vlastnost nastavena na hodnotu `false`.  
+-   Žádné <xref:System.ServiceModel.Channels.CustomBinding> , který používá pověření klienta Windows s `requireCancellation` nastavenou na `false`.  
   
--   Všechny <xref:System.ServiceModel.Channels.CustomBinding> používající uživatelské jméno nebo pověření klienta pro systém Windows a zabezpečené konverzace s `requireCancellation` vlastnost nastavena na hodnotu `false`.  
+-   Žádné <xref:System.ServiceModel.Channels.CustomBinding> , která používá uživatelské jméno nebo pověření klienta Windows a zabezpečené konverzace s `requireCancellation` nastavenou na `false`.  
   
- V rozsahu, ke které může služba zosobnit klienta závisí na oprávnění, které obsahuje účet služby, když se ho pokusí zosobnění, typ zosobnění použít a může být v rozsahu zosobnění, které umožňuje klientovi.  
+ V rozsahu, do které může služba zosobnit klienta závisí na oprávnění, která obsahuje účet služby při pokusu zosobnění, typ používá zosobnění a případně rozsah zosobnění, které je povoleno klienta.  
   
 > [!NOTE]
->  Když klient a služba běží na stejném počítači a klient je spuštěn pod účtem systému (například `Local System` nebo `Network Service`), když zabezpečené relace se naváže stavová kontext zabezpečení nelze zosobnit klienta tokeny. Formuláře Windows nebo konzolové aplikace se obvykle běží pod účtem aktuálně přihlášeného tak, aby ve výchozím nastavení se můžou zosobnit účet. Nicméně, pokud je klient [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stránky a že stránky je hostován v [!INCLUDE[iis601](../../../../includes/iis601-md.md)] nebo [!INCLUDE[iisver](../../../../includes/iisver-md.md)], spusťte klienta v části `Network Service` účet ve výchozím nastavení. Ve výchozím nastavení všechny vazby poskytované systémem, které podporují zabezpečených relací pomocí tokenu kontextu zabezpečení bezstavové (SCT). Ale pokud je klient [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stránky a zabezpečených relací s stavová SCTs se používají, nelze jej zosobnit klienta. Další informace o používání stavová SCTs v zabezpečené relaci najdete v tématu [postupy: vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+>  Když klient a služba běží na stejném počítači a klient je spuštěn pod účtem systému (například `Local System` nebo `Network Service`), nelze zosobnit klienta, po vytvoření zabezpečené relace s stavové kontext zabezpečení tokeny. Formuláře Windows nebo konzolové aplikace se obvykle běží pod účtem aktuálně přihlášeného tak, aby ve výchozím nastavení se můžou zosobnit účet. Nicméně, pokud je klient [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stránky a této stránce je hostován v [!INCLUDE[iis601](../../../../includes/iis601-md.md)] nebo [!INCLUDE[iisver](../../../../includes/iisver-md.md)], a poté spusťte klienta v části `Network Service` účet ve výchozím nastavení. Ve výchozím nastavení všechny vazby poskytované systémem, které podporují zabezpečených relací použijte token kontextu zabezpečení bezstavové (SCT). Nicméně pokud je klient [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stránky a zabezpečené relace pomocí stavového SCTs se používají, nelze zosobnit klienta. Další informace o používání stavové SCTs v zabezpečené relaci v tématu [jak: vytvořit Token kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
   
 ## <a name="impersonation-in-a-service-method-declarative-model"></a>Zosobnění v metodě služby: deklarativní Model  
- Většina scénářů zosobnění zahrnovat spuštění metody služby v kontextu volajícího. WCF nabízí funkci zosobnění, které usnadňuje to provedete tím, že se uživateli zadat požadavek zosobnění v <xref:System.ServiceModel.OperationBehaviorAttribute> atribut. V následujícím kódu infrastruktury WCF zosobňuje volající před spuštěním `Hello` metoda. Jakýkoli pokus o přístup k prostředkům nativní uvnitř `Hello` metoda úspěšné pouze v případě, že seznam řízení přístupu (ACL) prostředku umožňuje volajícímu přístup oprávnění. Chcete-li povolit zosobnění, nastavte <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> vlastnost na jednu z <xref:System.ServiceModel.ImpersonationOption> hodnot výčtu, buď <xref:System.ServiceModel.ImpersonationOption.Required?displayProperty=nameWithType> nebo <xref:System.ServiceModel.ImpersonationOption.Allowed?displayProperty=nameWithType>, jak je znázorněno v následujícím příkladu.  
+ Většina scénářů zosobnění zahrnovat spouštění metody služby v rámci volajícího. Zosobnění funkce, která usnadňuje to udělat tak, že umožňuje uživateli zadat požadavek zosobnění v poskytuje WCF <xref:System.ServiceModel.OperationBehaviorAttribute> atribut. V následujícím kódu, infrastruktura WCF zosobňuje volající před spuštěním `Hello` metody. Žádný pokus o přístup k prostředkům nativní uvnitř `Hello` metoda úspěšné pouze v případě, že seznam řízení přístupu (ACL) prostředku umožňuje volajícímu přístup k oprávnění. Chcete-li povolit zosobnění, nastavte <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> vlastnost na jednu z <xref:System.ServiceModel.ImpersonationOption> hodnot výčtu, buď <xref:System.ServiceModel.ImpersonationOption.Required?displayProperty=nameWithType> nebo <xref:System.ServiceModel.ImpersonationOption.Allowed?displayProperty=nameWithType>, jak je znázorněno v následujícím příkladu.  
   
 > [!NOTE]
->  Když služba má vyšší pověření než vzdáleného klienta, přihlašovací údaje služby se použijí, pokud <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> je nastavena na <xref:System.ServiceModel.ImpersonationOption.Allowed>. To znamená pokud uživatel nízkými oprávněními poskytuje svoje přihlašovací údaje, vyšší úrovní oprávnění služby provede metodu pomocí přihlašovacích údajů služby a mohou používat prostředky, které uživatel nízkými oprávněními jinak nebude moci používat.  
+>  Pokud služba má vyšší pověření než vzdáleného klienta, se použijí přihlašovací údaje služby, pokud <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> je nastavena na <xref:System.ServiceModel.ImpersonationOption.Allowed>. To znamená pokud uživatel s nízkým oprávněním poskytuje svoje přihlašovací údaje, vyšší úrovní oprávnění služby provede metodu s přihlašovacími údaji služby a využívat prostředky, které uživatele s nízkými oprávněními jinak nebude možné použít.  
   
  [!code-csharp[c_ImpersonationAndDelegation#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_impersonationanddelegation/cs/source.cs#1)]
  [!code-vb[c_ImpersonationAndDelegation#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_impersonationanddelegation/vb/source.vb#1)]  
   
- Infrastruktura WCF může zosobnit volající pouze v případě, že je volající ověření pomocí přihlašovacích údajů, které lze mapovat na uživatelský účet systému Windows. Pokud služba je nakonfigurována pro ověřování pomocí přihlašovacích údajů, který nejde mapovat na účet systému Windows, není služba metodu provést.  
+ Pouze v případě, že volající je ověřen pomocí přihlašovacích údajů, které je možné mapovat na uživatelský účet Windows, můžou infrastruktura WCF zosobňují volajícího. Pokud služba je nakonfigurovaná k ověření pomocí přihlašovacích údajů, který nemůže být namapován na účet Windows, metodu služby není spuštěn.  
   
 > [!NOTE]
->  Na [!INCLUDE[wxp](../../../../includes/wxp-md.md)], zosobnění se nezdaří, pokud stateful, SCT je vytvořen, což vede <xref:System.InvalidOperationException>. Další informace najdete v tématu [nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  
+>  Na [!INCLUDE[wxp](../../../../includes/wxp-md.md)], zosobnění se nezdaří, pokud stavový SCT se vytvoří, což vede <xref:System.InvalidOperationException>. Další informace najdete v tématu [nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  
   
 ## <a name="impersonation-in-a-service-method-imperative-model"></a>Zosobnění v metodě služby: imperativní modelu  
- Volající někdy nemusí zosobnit metodu celé služby pro funkce, ale pouze část ho. V takovém případě získat Windows identitu volajícího uvnitř metody služby a imperativní provést zosobnění. To provedete pomocí <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> vlastnost <xref:System.ServiceModel.ServiceSecurityContext> vrátit instanci <xref:System.Security.Principal.WindowsIdentity> třídy a volání <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> metoda před použitím instance.  
+ Volající někdy není potřeba zosobnit metodu celé služby pro funkci, ale jenom část jeho. V tomto případě získání Windows identitu volajícího uvnitř metody služby a imperativně provést zosobnění. To provést pomocí <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> vlastnost <xref:System.ServiceModel.ServiceSecurityContext> vrátit instanci <xref:System.Security.Principal.WindowsIdentity> třídy a volání <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> metoda před použitím instance.  
   
 > [!NOTE]
->  Je nutné používat Visual Basicu`Using` příkaz nebo jazyka C# `using` příkaz a automaticky vracet akce zosobnění. Pokud použijete příkaz nebo pokud používáte programovací jazyk než Visual Basic a C#, je nutné vrátit úroveň zosobnění. Selhání k tomu můžete tvoří základ pro odepření služby a zvýšení úrovně oprávnění útoky.  
+>  Nezapomeňte použít jazyka Visual Basic`Using` příkazu nebo C# `using` příkaz automaticky Obnova zosobnění akce. Pokud použijete příkaz nebo pokud používá programovací jazyk jiné než Visual Basic nebo C#, je potřeba vrátit úroveň zosobnění. Selhání k tomu může tvoří základ pro útok na dostupnost služby a zvýšení úrovně oprávnění pro útoky.  
   
  [!code-csharp[c_ImpersonationAndDelegation#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_impersonationanddelegation/cs/source.cs#2)]
  [!code-vb[c_ImpersonationAndDelegation#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_impersonationanddelegation/vb/source.vb#2)]  
   
-## <a name="impersonation-for-all-service-methods"></a>Zosobnění pro všechny metody služeb  
- V některých případech je nutné provést všechny metody služby v kontextu volajícího. Místo explicitně povolení této funkce na základě za metoda, použít <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>. Jak je znázorněno v následujícím kódu, nastavit <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ImpersonateCallerForAllOperations%2A> vlastnost `true`. <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> Se načítají z kolekce chování <xref:System.ServiceModel.ServiceHost> třídy. Všimněte si také, že `Impersonation` vlastnost <xref:System.ServiceModel.OperationBehaviorAttribute> použité pro každou metodu musí také být nastaven na hodnotu <xref:System.ServiceModel.ImpersonationOption.Allowed> nebo <xref:System.ServiceModel.ImpersonationOption.Required>.  
+## <a name="impersonation-for-all-service-methods"></a>Zosobnění pro všechny metody služby  
+ V některých případech je nutné provést všechny metody služby v kontextu volajícího. Namísto explicitně povolení této funkce na základě-method, použijte <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>. Jak je znázorněno v následujícím kódu, nastavte <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ImpersonateCallerForAllOperations%2A> vlastnost `true`. <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> Je načten z kolekce chování, <xref:System.ServiceModel.ServiceHost> třídy. Všimněte si také, `Impersonation` vlastnost <xref:System.ServiceModel.OperationBehaviorAttribute> použité pro každou metodu musí také být nastaven na hodnotu <xref:System.ServiceModel.ImpersonationOption.Allowed> nebo <xref:System.ServiceModel.ImpersonationOption.Required>.  
   
  [!code-csharp[c_ImpersonationAndDelegation#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_impersonationanddelegation/cs/source.cs#3)]
  [!code-vb[c_ImpersonationAndDelegation#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_impersonationanddelegation/vb/source.vb#3)]  
@@ -93,23 +93,23 @@ ms.locfileid: "33496916"
 |`ImpersonationOption`|`ImpersonateCallerForAllServiceOperations`|Chování|  
 |---------------------------|------------------------------------------------|--------------|  
 |Požadováno|není k dispozici|Volající zosobňuje WCF|  
-|Povoleno|false|WCF není zosobnit volající|  
+|Povoleno|false|WCF není zosobňují volajícího|  
 |Povoleno|true|Volající zosobňuje WCF|  
-|NotAllowed|false|WCF není zosobnit volající|  
-|NotAllowed|true|Povoleny. ( <xref:System.InvalidOperationException> Je vyvolána výjimka.)|  
+|Hodnotu NotAllowed|false|WCF není zosobňují volajícího|  
+|Hodnotu NotAllowed|true|Zakázané. ( <xref:System.InvalidOperationException> Je vyvolána výjimka.)|  
   
-## <a name="impersonation-level-obtained-from-windows-credentials-and-cached-token-impersonation"></a>Úroveň zosobnění získané z pověření systému Windows a uložili do mezipaměti Token zosobnění  
- V některých scénářích má klient částečné řídit úroveň zosobnění, pokud se používá Windows pověření klienta provede služba. Jeden scénář nastane, když klient určuje úroveň zosobnění anonymní. Druhá nastane při provádění zosobnění s token v mezipaměti. To se provádí nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential> třídy, která je přístupná jako vlastnost obecná <xref:System.ServiceModel.ChannelFactory%601> třídy.  
+## <a name="impersonation-level-obtained-from-windows-credentials-and-cached-token-impersonation"></a>Úroveň zosobnění získané z přihlašovacích údajů Windows a uložili do mezipaměti Token zosobnění  
+ V některých scénářích má klient částečnou kontrolu nad úrovní zosobnění, které provádí služba zadáním pověření klienta Windows. Jeden scénář nastane, pokud klient určuje úroveň zosobnění anonymní. Druhý vyvolá se při provádění zosobnění pomocí tokenu v mezipaměti. To se provádí tak, že nastavíte <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential> třídy, které je přístupné jako vlastnost Obecné <xref:System.ServiceModel.ChannelFactory%601> třídy.  
   
 > [!NOTE]
->  Určení úroveň zosobnění anonymní způsobí, že klient anonymní přihlášení ke službě. Služba proto musí umožňovat anonymní přihlášení, bez ohledu na to, jestli se provedlo zosobnění.  
+>  Určení úroveň zosobnění anonymní způsobí, že klient nedovoluje anonymní přihlášení ke službě. Služba proto musí umožňovat anonymní přihlášení, bez ohledu na to, zda se provádí zosobnění.  
   
- Klienta můžete zadat úroveň zosobnění jako <xref:System.Security.Principal.TokenImpersonationLevel.Anonymous>, <xref:System.Security.Principal.TokenImpersonationLevel.Identification>, <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>, nebo <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>. Vytváří jenom token na zadané úrovni, jak je znázorněno v následujícím kódu.  
+ Klienta můžete určit úroveň zosobnění jako <xref:System.Security.Principal.TokenImpersonationLevel.Anonymous>, <xref:System.Security.Principal.TokenImpersonationLevel.Identification>, <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>, nebo <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>. Je vytvořen pouze token na zadané úrovni, jak je znázorněno v následujícím kódu.  
   
  [!code-csharp[c_ImpersonationAndDelegation#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_impersonationanddelegation/cs/source.cs#4)]
  [!code-vb[c_ImpersonationAndDelegation#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_impersonationanddelegation/vb/source.vb#4)]  
   
- Následující tabulka určuje úroveň zosobnění, které služba získává při zosobňování z token v mezipaměti.  
+ Následující tabulka určuje úroveň zosobnění, které služba získává při zosobňování z tokenu v mezipaměti.  
   
 |`AllowedImpersonationLevel` Hodnota|Služba má `SeImpersonatePrivilege`|Klienta a služby podporují delegování|Token v mezipaměti `ImpersonationLevel`|  
 |---------------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
@@ -122,8 +122,8 @@ ms.locfileid: "33496916"
 |Delegování|Ano|Ne|Zosobnění|  
 |Delegování|Ne|není k dispozici|Identifikace|  
   
-## <a name="impersonation-level-obtained-from-user-name-credentials-and-cached-token-impersonation"></a>Úroveň zosobnění získané z název pověření uživatele a uloží do mezipaměti Token zosobnění  
- Předáním službu jeho uživatelské jméno a heslo, umožňuje klienta WCF pro přihlášení jako tento uživatel, který je ekvivalentní nastavení `AllowedImpersonationLevel` vlastnost <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>. ( `AllowedImpersonationLevel` Je k dispozici na <xref:System.ServiceModel.Security.WindowsClientCredential> a <xref:System.ServiceModel.Security.HttpDigestClientCredential> třídy.) Následující tabulka obsahuje zosobnění úroveň získat přihlašovací údaje uživatele název přijetí služby.  
+## <a name="impersonation-level-obtained-from-user-name-credentials-and-cached-token-impersonation"></a>Úroveň zosobnění získané z název přihlašovacích údajů uživatele a uložili do mezipaměti Token zosobnění  
+ Tím, že jeho uživatelské jméno a heslo, předáte služby, umožňuje klienta WCF pro přihlášení jako tento uživatel, který je ekvivalentem k nastavení `AllowedImpersonationLevel` vlastnost <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>. ( `AllowedImpersonationLevel` Je k dispozici na <xref:System.ServiceModel.Security.WindowsClientCredential> a <xref:System.ServiceModel.Security.HttpDigestClientCredential> třídy.) Následující tabulka obsahuje zosobnění úroveň získali, když služba přijímá název přihlašovacích údajů uživatele.  
   
 |`AllowedImpersonationLevel`|Služba má `SeImpersonatePrivilege`|Klienta a služby podporují delegování|Token v mezipaměti `ImpersonationLevel`|  
 |---------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
@@ -131,7 +131,7 @@ ms.locfileid: "33496916"
 |není k dispozici|Ano|Ne|Zosobnění|  
 |není k dispozici|Ne|není k dispozici|Identifikace|  
   
-## <a name="impersonation-level-obtained-from-s4u-based-impersonation"></a>Úroveň zosobnění získaný na základě S4U zosobnění  
+## <a name="impersonation-level-obtained-from-s4u-based-impersonation"></a>Úroveň zosobnění získaných na základě S4U zosobnění  
   
 |Služba má `SeTcbPrivilege`|Služba má `SeImpersonatePrivilege`|Klienta a služby podporují delegování|Token v mezipaměti `ImpersonationLevel`|  
 |----------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
@@ -139,8 +139,8 @@ ms.locfileid: "33496916"
 |Ano|Ne|není k dispozici|Identifikace|  
 |Ne|není k dispozici|není k dispozici|Identifikace|  
   
-## <a name="mapping-a-client-certificate-to-a-windows-account"></a>Mapování certifikátu klienta pro účet systému Windows  
- Je možné pro klienta k vlastnímu ověření služby pomocí certifikátu a tak, aby měl mapy služeb klienta pro existující účet prostřednictvím služby Active Directory. Následující kód XML ukazuje, jak nakonfigurovat službu, kterou chcete mapovat certifikát.  
+## <a name="mapping-a-client-certificate-to-a-windows-account"></a>Mapování certifikátu klienta na účet Windows  
+ Je možné pro klienta ke svému ověření ke službě pomocí certifikátu a mít mapy služeb klienta pro existující účet prostřednictvím služby Active Directory. Následující kód XML ukazuje, jak nakonfigurovat službu mapování certifikátu.  
   
 ```xml  
 <behaviors>  
@@ -170,14 +170,14 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
 ```  
   
 ## <a name="delegation"></a>Delegování  
- Pokud chcete delegovat na back-end službu, musíte služby provést více větev protokolu Kerberos (SSPI bez záložní NTLM) nebo protokolu Kerberos přímo ověřování ve službě back-end pomocí identity klienta systému Windows. Pokud chcete delegovat na back-end službu, vytvořte <xref:System.ServiceModel.ChannelFactory%601> a kanál a potom komunikovat prostřednictvím kanálu při zosobňování klienta. Pomocí tohoto formuláře delegování vzdálenost, kdy mohou být umístěny ze služby front-endové službě back-end závisí na úroveň zosobnění dosáhnout ve front-endové služby. Pokud je úroveň zosobnění <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>, služby front-end a back-end musí být spuštěné na stejném počítači. Pokud je úroveň zosobnění <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>, front-end a back-end služby může být na samostatných počítačích nebo na stejném počítači. Povolení delegování úroveň zosobnění vyžaduje, aby zásada domény Windows nakonfigurovaný tak, aby povolovala delegování. Další informace o konfiguraci služby Active Directory pro podporu delegování najdete v tématu [povolení delegované ověřování](http://go.microsoft.com/fwlink/?LinkId=99690).  
+ Delegovat do back-end služby, musíte provést služby protokolu Kerberos více větev (SSPI bez použití náhradní lokality NTLM) nebo protokolu Kerberos přímo ověřování ve službě back-end pomocí identity klienta Windows. Pokud chcete delegovat na back-end službu, vytvořte <xref:System.ServiceModel.ChannelFactory%601> a kanál a potom komunikovat prostřednictvím kanálu při zosobňování klienta. V tomto formuláři delegování vzdálenost, jakou může být umístěn z front-endové služby back-end služby závisí na úroveň zosobnění dosahuje front-endové služby. Pokud je úroveň zosobnění <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>, front-endovými a back endové služby musí běžet na stejném počítači. Pokud je úroveň zosobnění <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>, služba front-endu a back-end může být na samostatných počítačích nebo ve stejném počítači. Povolení delegování úroveň zosobnění vyžaduje, aby zásada domény Windows byly konfigurovány tak, aby povolovala delegování. Další informace o konfiguraci služby Active Directory pro podporu delegování najdete v tématu [povolení delegovaného ověření](https://go.microsoft.com/fwlink/?LinkId=99690).  
   
 > [!NOTE]
->  Když klient ověřuje front-endové služby pomocí uživatelského jména a hesla, které odpovídají na účet systému Windows ve službě back-end, front-endová služba ověřit ve službě back-end pomocí opakovaného použití klienta uživatelské jméno a heslo. To je zvláště efektivní forma tok identity, protože předávání uživatelské jméno a heslo ke službě back-end umožňuje back endové služby k zosobnění, ale nepředstavuje delegování, protože se nepoužívá protokolu Kerberos. Ovládací prvky Active Directory na delegování se nevztahují na ověřování uživatelským jménem a heslem.  
+>  Pokud se klient ověřuje na front-endové služby pomocí uživatelského jména a hesla, které odpovídají účtu Windows na back-end služby, může ověřit front-endové služby do back-end služby opětovným použitím uživatelské jméno a heslo klienta. Totiž formuláři zvláště efektivní identity toku předávání uživatelské jméno a heslo k back-end služby umožňuje back-end služby provést zosobnění, ale nepředstavuje delegování, protože se používá protokol Kerberos. Active Directory ovládacích prvků na delegování se nevztahují na ověřování uživatelským jménem a heslem.  
   
 ### <a name="delegation-ability-as-a-function-of-impersonation-level"></a>Možnost delegování jako funkce úroveň zosobnění  
   
-|Úroveň zosobnění|Služba může provést delegování napříč procesem|Služby můžete provádět mezi počítači delegování|  
+|Úroveň zosobnění|Služby můžete provádět delegování napříč procesy|Služby můžete provádět mezi počítači delegování|  
 |-------------------------|---------------------------------------------------|---------------------------------------------------|  
 |<xref:System.Security.Principal.TokenImpersonationLevel.Identification>|Ne|Ne|  
 |<xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>|Ano|Ne|  
@@ -188,22 +188,22 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
  [!code-csharp[c_delegation#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_delegation/cs/source.cs#1)]
  [!code-vb[c_delegation#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_delegation/vb/source.vb#1)]  
   
-### <a name="how-to-configure-an-application-to-use-constrained-delegation"></a>Postup konfigurace aplikace pro použití omezeného delegování  
- Než budete moci použít omezené delegování, odesílatel, příjemce a řadič domény musí být konfigurován tak. Následující postup obsahuje kroky, které umožňují omezeného delegování. Podrobnosti o rozdílech mezi omezené delegování a delegování najdete v tématu část [rozšíření systému Windows Server 2003 Kerberos](http://go.microsoft.com/fwlink/?LinkId=100194) diskutuje omezené diskuzi.  
+### <a name="how-to-configure-an-application-to-use-constrained-delegation"></a>Jak nakonfigurovat aplikaci pro použití omezeného delegování  
+ Než budete moci použít omezené delegování, odesílatel, příjemce a řadič domény musí být nakonfigurovaný k tomu. Následující postup obsahuje kroky, které umožňují omezené delegování. Podrobnosti o rozdílech mezi delegování a omezeného delegování, najdete v části [rozšíření protokolu Kerberos serveru Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=100194) , který popisuje omezené diskuse.  
   
 1.  Na řadiči domény, zrušte **účet je citlivý a nelze jej delegovat** zaškrtávací políčko pro účet, pod kterým klientská aplikace běží.  
   
 2.  Na řadiči domény, vyberte **účet je důvěryhodný pro delegování** zaškrtávací políčko pro účet, pod kterým klientská aplikace běží.  
   
-3.  Na řadiči domény, střední vrstvy počítač nakonfigurovat tak, aby byl důvěryhodný pro delegování, kliknutím **Důvěřovat počítači pro delegování** možnost.  
+3.  Na řadiči domény, nakonfigurujte střední vrstvy počítače tak, aby je důvěryhodný pro delegování, kliknutím **Důvěřovat počítači pro delegování** možnost.  
   
-4.  Na řadiči domény, konfigurace střední vrstvy počítače použít omezené delegování, kliknutím **důvěřovat tomuto počítači pro delegování pouze určeným službám** možnost.  
+4.  Na řadiči domény konfigurace střední vrstvy počítače tak, aby, kliknutím **důvěřovat tomuto počítači pro delegování pouze určeným službám** možnost.  
   
- Podrobnější pokyny ke konfiguraci omezeného delegování naleznete v následujících tématech na webu MSDN:  
+ Podrobnější pokyny týkající se konfigurace omezeného delegování naleznete v následujících tématech na webu MSDN:  
   
--   [Řešení potíží s delegováním protokolu Kerberos](http://go.microsoft.com/fwlink/?LinkId=36724)  
+-   [Řešení potíží s delegování protokolu Kerberos](https://go.microsoft.com/fwlink/?LinkId=36724)  
   
--   [Přechod protokolu Kerberos a omezeného delegování](http://go.microsoft.com/fwlink/?LinkId=36725)  
+-   [Přechod protokolu Kerberos a omezeného delegování](https://go.microsoft.com/fwlink/?LinkId=36725)  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.OperationBehaviorAttribute>  

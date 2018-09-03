@@ -1,19 +1,19 @@
 ---
-title: Kolekce schématu rozhraní ODBC
+title: Kolekce schémat ODBC
 ms.date: 03/30/2017
 ms.assetid: 1bb126a5-ceec-4649-a4bc-8aa19e801046
-ms.openlocfilehash: 36d0859b897bfcea33803c219ade14722ed90421
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: bdedbb11960f02b99dcca6388abf663635238f74
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32766644"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43479977"
 ---
-# <a name="odbc-schema-collections"></a>Kolekce schématu rozhraní ODBC
-Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft SQL Server, Oracle a Microsoft Jet.  
+# <a name="odbc-schema-collections"></a>Kolekce schémat ODBC
+Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft SQL Server, Oracle a Microsoft Jet.  
   
 ## <a name="microsoft-sql-server-odbc-driver"></a>Ovladač ODBC Microsoft SQL Server  
- Ovladač ODBC Microsoft SQL Server podporuje následující kolekce konkrétní schématu kromě běžných kolekcemi schémat:  
+ Ovladače ODBC Microsoft SQL Server podporuje následující kolekce určité schéma kromě společné kolekce schémat:  
   
 -   Tabulky  
   
@@ -27,11 +27,11 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
   
 -   ProcedureParameters  
   
--   zobrazení  
+-   Zobrazení  
   
 ### <a name="tables-and-views"></a>Tabulky a zobrazení  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |TABLE_CAT|String|  
 |TABLE_SCHEM|String|  
@@ -41,7 +41,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="indexes"></a>Indexy  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |TABLE_CAT|String|  
 |TABLE_SCHEM|String|  
@@ -61,7 +61,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="columns"></a>Sloupce  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |TABLE_CAT|String|  
 |TABLE_SCHEM|String|  
@@ -73,7 +73,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
 |BUFFER_LENGTH|Int32|  
 |DECIMAL_DIGITS|Int16|  
 |NUM_PREC_RADIX|Int16|  
-|S MOŽNOU HODNOTOU NULL|Int16|  
+|S POVOLENOU HODNOTOU NULL|Int16|  
 |POZNÁMKY|String|  
 |COLUMN_DEF|String|  
 |SQL_DATA_TYPE|Int16|  
@@ -87,7 +87,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="procedures"></a>Procedury  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |PROCEDURE_CAT|String|  
 |PROCEDURE_SCHEM|String|  
@@ -100,7 +100,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="procedurecolumns"></a>ProcedureColumns  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |PROCEDURE_CAT|String|  
 |PROCEDURE_SCHEM|String|  
@@ -113,7 +113,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
 |BUFFER_LENGTH|Int32|  
 |DECIMAL_DIGITS|Int16|  
 |NUM_PREC_RADIX|Int16|  
-|S MOŽNOU HODNOTOU NULL|Int16|  
+|S POVOLENOU HODNOTOU NULL|Int16|  
 |POZNÁMKY|String|  
 |COLUMN_DEF|String|  
 |SQL_DATA_TYPE|Int16|  
@@ -127,7 +127,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="procedureparameters"></a>ProcedureParameters  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |PROCEDURE_CAT|String|  
 |PROCEDURE_SCHEM|String|  
@@ -140,7 +140,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
 |BUFFER_LENGTH|Int32|  
 |DECIMAL_DIGITS|Int16|  
 |NUM_PREC_RADIX|Int16|  
-|S MOŽNOU HODNOTOU NULL|Int16|  
+|S POVOLENOU HODNOTOU NULL|Int16|  
 |POZNÁMKY|String|  
 |COLUMN_DEF|String|  
 |SQL_DATA_TYPE|Int16|  
@@ -153,7 +153,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
 |SS_DATA_TYPE|Byte|  
   
 ## <a name="microsoft-oracle-odbc-driver"></a>Ovladač ODBC Microsoft Oracle  
- Ovladač ODBC Microsoft SQL Server Oracle podporuje následující kolekce konkrétní schématu kromě běžných kolekcemi schémat:  
+ Ovladače ODBC Microsoft SQL Server Oracle podporuje následující kolekce určité schéma kromě společné kolekce schémat:  
   
 -   Tabulky  
   
@@ -165,13 +165,13 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
   
 -   ProcedureParameters  
   
--   zobrazení  
+-   Zobrazení  
   
 -   Indexy  
   
 ### <a name="tables-and-views"></a>Tabulky a zobrazení  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |TABLE_QUALIFIER|String|  
 |TABLE_OWNER|String|  
@@ -181,7 +181,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="columns"></a>Sloupce  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |TABLE_QUALIFIER|String|  
 |TABLE_OWNER|String|  
@@ -193,13 +193,13 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
 |DÉLKA|Int32|  
 |ŠKÁLOVÁNÍ|Int16|  
 |RADIX|Int16|  
-|S MOŽNOU HODNOTOU NULL|Int16|  
+|S POVOLENOU HODNOTOU NULL|Int16|  
 |POZNÁMKY|String|  
 |ORDINAL_POSITION|Int32|  
   
 ### <a name="procedures"></a>Procedury  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |PROCEDURE_QUALIFIER|String|  
 |PROCEDURE_OWNER|String|  
@@ -212,7 +212,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="procedurecolumns"></a>ProcedureColumns  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |PROCEDURE_QUALIFIER|String|  
 |PROCEDURE_OWNER|String|  
@@ -225,13 +225,13 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
 |DÉLKA|Int32|  
 |ŠKÁLOVÁNÍ|Int16|  
 |RADIX|Int16|  
-|S MOŽNOU HODNOTOU NULL|Int16|  
+|S POVOLENOU HODNOTOU NULL|Int16|  
 |POZNÁMKY|String|  
 |PŘETÍŽENÍ|Int32|  
 |ORDINAL_POSITION|Int32|  
   
 ## <a name="microsoft-jet-odbc-driver"></a>Ovladač ODBC Microsoft Jet  
- Ovladač ODBC Microsoft Jet podporuje následující kolekce konkrétní schématu kromě běžných kolekcemi schémat:  
+ Ovladač ODBC Microsoft Jet podporuje následující kolekce určité schéma kromě společné kolekce schémat:  
   
 -   Tabulky  
   
@@ -245,11 +245,11 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
   
 -   ProcedureParameters  
   
--   zobrazení  
+-   Zobrazení  
   
 ### <a name="tables-and-views"></a>Tabulky a zobrazení  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |TABLE_QUALIFIER|String|  
 |TABLE_OWNER|String|  
@@ -259,7 +259,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="columns"></a>Sloupce  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |TABLE_QUALIFIER|String|  
 |TABLE_OWNER|String|  
@@ -271,13 +271,13 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
 |DÉLKA|Int32|  
 |ŠKÁLOVÁNÍ|Int16|  
 |RADIX|Int16|  
-|S MOŽNOU HODNOTOU NULL|Int16|  
+|S POVOLENOU HODNOTOU NULL|Int16|  
 |POZNÁMKY|String|  
 |ORDINAL_POSITION|Int32|  
   
 ### <a name="procedures"></a>Procedury  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |PROCEDURE_QUALIFIER|String|  
 |PROCEDURE_OWNER|String|  
@@ -290,7 +290,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="procedurecolumns"></a>ProcedureColumns  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |PROCEDURE_QUALIFIER|String|  
 |PROCEDURE_OWNER|String|  
@@ -303,14 +303,14 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
 |DÉLKA|Int32|  
 |ŠKÁLOVÁNÍ|Int16|  
 |RADIX|Int16|  
-|S MOŽNOU HODNOTOU NULL|Int16|  
+|S POVOLENOU HODNOTOU NULL|Int16|  
 |POZNÁMKY|String|  
 |PŘETÍŽENÍ|Int32|  
 |ORDINAL_POSITION|Int32|  
   
 ### <a name="procedureparameters"></a>ProcedureParameters  
   
-|columnName|Datový typ|  
+|Názevsloupce|Datový typ|  
 |----------------|--------------|  
 |PROCEDURE_CAT|String|  
 |PROCEDURE_SCHEM|String|  
@@ -323,7 +323,7 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
 |BUFFER_LENGTH|Int32|  
 |DECIMAL_DIGITS|Int16|  
 |NUM_PREC_RADIX|Int16|  
-|S MOŽNOU HODNOTOU NULL|Int16|  
+|S POVOLENOU HODNOTOU NULL|Int16|  
 |POZNÁMKY|String|  
 |COLUMN_DEF|String|  
 |SQL_DATA_TYPE|Int16|  
@@ -333,4 +333,4 @@ Tato část popisuje podporu kolekci schématu pro ovladače ODBC pro Microsoft 
 |IS_NULLABLE|String|  
   
 ## <a name="see-also"></a>Viz také  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

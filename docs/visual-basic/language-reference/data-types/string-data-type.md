@@ -19,11 +19,11 @@ helpviewer_keywords:
 - identifier type characters [Visual Basic], $
 ms.assetid: 15ac03f5-cabd-42cc-a754-1df3893c25d9
 ms.openlocfilehash: 54f7dcd7de28e8aaa5376bb4ddd67fd53518511e
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43257949"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481608"
 ---
 # <a name="string-data-type-visual-basic"></a>String – datový typ (Visual Basic)
 Obsahuje pořadí bodů kódu (2bajtových) bez znaménka 16bitové tohoto rozsahu v rozmezí 0 až 65535. Každý *kódu bodu*, nebo kód znaku, představuje jeden znak Unicode. Řetězec se může skládat z 0 až přibližně dvě miliardy (2 ^ 31) znaků Unicode.  

@@ -1,27 +1,27 @@
 ---
-title: Proměnné a Argument sledování
+title: Proměnné a sledování Argument
 ms.date: 03/30/2017
 ms.assetid: 8f3d9d30-d899-49aa-b7ce-a8d0d32c4ff0
-ms.openlocfilehash: f1938da55d2e1d88c88f83ff75f357e23f1eb81f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 45ed3761cd7ead82650023b93a2f32a43e847339
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33516981"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481489"
 ---
-# <a name="variable-and-argument-tracking"></a>Proměnné a Argument sledování
-Při spuštění pracovního postupu pro sledování, je často užitečné extrahovat data. To poskytuje další kontext při přístupu k provádění sledování záznamů post. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], můžete rozbalit žádné viditelné proměnné nebo argumentu v rámci oboru všechny aktivity v pracovním postupu pomocí sledování. Sledování profily usnadňují extrahovat data.  
+# <a name="variable-and-argument-tracking"></a>Proměnné a sledování Argument
+Při sledování provádění pracovního postupu, je často užitečné extrahovat data. Tímto způsobem další kontext při přístupu k sledování záznamů příspěvek provádění. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], můžete extrahovat všechny viditelné proměnné nebo argumentu v rámci oboru žádnou aktivitu v pracovním postupu pomocí sledování. Sledování profily umožňují snadno extrahovat data.  
   
 ## <a name="variables-and-arguments"></a>Proměnné a argumenty  
- Proměnné a argumenty se extrahují, když aktivita vysílá ActivityStateRecord.  Proměnné je k dispozici pro extrakci, pouze pokud je v rámci oboru aktivity. Proměnné v aktivitě extrahovat je určena následujícím způsobem:  
+ Pokud aktivita vyzařuje ActivityStateRecord se extrahují proměnné a argumenty.  Proměnná je k dispozici pro extrahování, pouze pokud je v rámci oboru aktivity. Tímto způsobem je zadána proměnná extrahovaným v rámci aktivity:  
   
--   Pokud je proměnná Určuje název proměnné, sledování vypadá pro proměnné v rámci aktuální aktivita sledovaných a v nadřazené aktivity. V aktuálním oboru aktivity a v nadřazeném oboru, prohledají se proměnná.  
+-   Pokud proměnná je určen název proměnné, sledování vypadá pro proměnné v rámci aktuální aktivitu sledován a v nadřazené aktivity. Proměnná vyhledává v aktuálním oboru aktivity a v nadřazeném oboru.  
   
--   Pokud jsou zadané proměnné k extrakci pomocí názvu = "*", pak všechny proměnné v rámci aktuální aktivita sledovaných extrahují. V takovém případě proměnné, jsou v oboru ale definovaný v nadřazené aktivity nejsou extrahovány.  
+-   Pokud proměnné extrahovaným je určené vlastností name = "*", pak se extrahují všechny proměnné v rámci aktuální aktivitu sledován. V tomto případě proměnné, které jsou v oboru, ale definované v nadřazeném prvku, které nejsou extrahována aktivity.  
   
- Při extrahování argumenty, argumenty extrahovat závisí na stavu aktivity. Pokud stav aktivity je zpracování, pak pouze `InArguments` jsou k dispozici pro extrakci. Pro všechny ostatní aktivity stavu (uzavřeno, Faulted zrušená.) všechny argumenty, InArguments a OutArguments, jsou k dispozici pro extrakci.  
+ Při extrahování argumenty, argumenty extrahovat závisí na stavu aktivity. Když stav aktivity je zpracování, pak pouze `InArguments` jsou k dispozici pro extrakci. Pro všechny ostatní aktivity stavu (uzavřeno, Faulted, zrušeno) všechny argumenty, InArguments a OutArguments, jsou k dispozici pro extrakci.  
   
- Následující příklad ukazuje dotaz stavu aktivity, který extrahuje proměnné a argumenty při aktivity `Closed` sledování záznamu je vygenerované. Proměnné a argumenty lze extrahovat jenom s <xref:System.Activities.Tracking.ActivityStateRecord> a proto předplacené v rámci sledování profilu pomocí <xref:System.Activities.Tracking.ActivityStateQuery>.  
+ Následující příklad ukazuje k dotazu stavu aktivity, který extrahuje proměnné a argumenty při aktivity `Closed` sledování záznam je vygenerován. Proměnné a argumenty může být extrahována pouze pomocí <xref:System.Activities.Tracking.ActivityStateRecord> a tedy přihlášení k odběru v rámci sledovacích profilu pomocí <xref:System.Activities.Tracking.ActivityStateQuery>.  
   
 ```xml  
 <activityStateQuery activityName="SendEmailActivity">  
@@ -37,15 +37,15 @@ Při spuštění pracovního postupu pro sledování, je často užitečné extr
 </activityStateQuery>  
 ```  
   
-## <a name="protecting-information-stored-within-variables-and-arguments"></a>Ochrana informace uložené v proměnné a argumenty  
- Sledované proměnné nebo argument je ve výchozím nastavení dostupná modulem runtime pracovního postupu. Vývojář pracovního postupu chrání před přístupem provedením následujících kroků:  
+## <a name="protecting-information-stored-within-variables-and-arguments"></a>Ochrana informací uložených v proměnné a argumenty  
+ Sledované proměnné nebo argumentu je ve výchozím nastavení nastavena jako viditelná modulem runtime pracovního postupu. Pracovní postup vývojář chránil přístup podle následujících kroků:  
   
-1.  Hodnotu proměnné zašifrujte.  
+1.  Šifrování hodnotu proměnné.  
   
-2.  Ovládací prvek vytváření profilu sledování zabránit extrahování proměnné nebo argumentu.  
+2.  Ovládací prvek pro vytváření profilu sledování, aby se zabránilo extrakce proměnné nebo argumentu.  
   
-3.  Pro vlastní sledování účastníky ujistěte, že kód WF nesmí vyzradit citlivé informace, které je uložené v proměnné nebo argumenty.  
+3.  Pro vlastní sledování účastníci Ujistěte se, že kód WF nesmí vyzradit citlivé informace, které je uložený v proměnných nebo argumentů.  
   
 ## <a name="see-also"></a>Viz také  
- [Windows Server App Fabric monitorování](http://go.microsoft.com/fwlink/?LinkId=201273)  
- [Monitorování aplikací pomocí App Fabric](http://go.microsoft.com/fwlink/?LinkId=201275)
+ [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)  
+ [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)

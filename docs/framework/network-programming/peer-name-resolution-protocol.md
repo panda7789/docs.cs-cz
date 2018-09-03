@@ -5,57 +5,57 @@ ms.assetid: 11940511-c124-4d91-ae31-d4ed6e81ee58
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 01e0bd36b35319c90fc46d8f5f97161147852c7f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 70c49198c0198610eaa5001971b7de7efd2951aa
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33396997"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43482340"
 ---
 # <a name="peer-name-resolution-protocol"></a>Protokol PNRP
-V prostředích peer-to-peer partnerské uzly používají určitý název řešení systémy přeložit vzájemně umístění v síti (adresy, protokoly a porty) z názvů nebo jiné typy identifikátorů. V minulosti má byla peer name resolution Protocol ztěžuje ze své podstaty přechodný připojení a také další nedostatků v v systému DNS (Domain Name).  
+V prostředích peer-to-peer partnerské uzly použít konkrétní název řešení systémy druhé strany umístění v síti (adresy, protokoly a porty) z názvů nebo jiných typů identifikátorů. V minulosti má bylo složité peer name resolution Protocol ze své podstaty přechodné připojení, stejně jako ostatní nedostatky v v systému DNS (Domain Name).  
   
- Microsoft® Windows® Peer-to-Peer sítě platforma řeší tento problém s řešení protokolu PNRP (Peer Name), zabezpečená, škálovatelná a dynamické registraci a protokolu name resolution protocol nejprve vyvinuté pro systém Windows XP a pak upgradovat na Vista™ systému Windows. PNRP funguje velmi jinak, než tradiční název řešení systémy, otevírá zajímavé nové možnosti pro vývojáře aplikací.  
+ Microsoft® Windows® sítě Peer-to-Peer platforma řeší tento problém se řešení protokolu PNRP (Peer Name), zabezpečené, škálovatelné a dynamické registraci a protokol nejdřív vyvinutý pro systém Windows XP a pak upgradovat v Windows Vista™. PNRP funguje nějak významně odlišně, než tradiční název řešení systémy, otevírá zajímavé nové možnosti pro vývojáře aplikací.  
   
- S PNRP můžete použít sdílené názvy do počítače, nebo jednotlivých aplikací nebo služeb v počítači. Peer name resolution Protocol zahrnuje adresu, port a které by mohly mít rozšířené datové části. Příklady výhod tohoto systému odolnost proti chybám, žádné kritická místa a název řešení, které nikdy vrátí zastaralé adresy; provedení protokol vynikající řešení pro hledání mobilních uživatelů.  
+ S protokolem PNRP můžete použít názvy partnerských uzlů do počítače, nebo jednotlivých aplikací nebo služeb v počítači. Peer name resolution Protocol obsahuje adresu, port a případně rozšířené datové části. Mezi výhody tohoto systému patří odolnost proti chybám, žádné kritické body a název řešení, které nikdy vrátí zastaralé adresy; provádění protokolu vynikající řešení pro hledání mobilních uživatelů.  
   
- Z hlediska zabezpečení, může být názvy partnerů publikován jako zabezpečené (chráněné) nebo zabezpečená (nechráněné). PNRP používá kryptografie využívající veřejného klíče k ochraně zabezpečené sdílené názvy proti falšování identity; počítače a služby mohou být pojmenovány PNRP.  
+ Z hlediska zabezpečení, názvy partnerských uzlů může být publikován jako zabezpečené (chráněný) nebo nezabezpečené (bez ochrany). Protokol PNRP používá kryptografii využívající veřejného klíče k ochraně názvy partnerských uzlů zabezpečené proti falšování identity; s protokolem PNRP může mít název počítače a služby.  
   
--   Protokol Peer Name Resolution ukazuje následující vlastnosti:  
+-   Protokol Peer Name Resolution demonstruje následující vlastnosti:  
   
--   Distribuované a téměř úplně bez serveru. Servery jsou pouze požadované pro samozaváděcí proces.  
+-   Distribuované a téměř zcela bez serveru. Servery jsou pouze potřeba samozaváděcí procesu.  
   
--   Zabezpečte název publikace bez zapojení třetích stran. Na rozdíl od publikaci název DNS je název publikace PNRP okamžitou a bez finanční náklady.  
+-   Zabezpečené publikování názvů bez zapojení třetím stranám. Na rozdíl od publikace název DNS je název publikace PNRP okamžité a bez finančních nákladů.  
   
--   PNRP aktualizace v v reálném čase, která brání zastaralé adres.  
+-   PNRP aktualizace v reálném čase, se zabránilo zastaralé adres.  
   
--   Řešení názvů pomocí protokolu PNRP přesahuje počítače tím, že se také překlad názvů pro služby.  
+-   Řešení názvů pomocí protokolu PNRP se rozpíná za počítače tím, že také překlad názvů pro služby.  
   
 -  
   
 ## <a name="the-systemnetpeertopeer-namespace"></a>Namespace System.Net.PeerToPeer  
   
--   Funkce PNRP je definována <xref:System.Net.PeerToPeer> oboru názvů v rozhraní .NET Framework verze 3.5. Poskytuje sadu typů, které lze použít k registraci a překladu názvů partnerů s služby k dispozici PNRP.  
+-   Je definována funkce PNRP <xref:System.Net.PeerToPeer> oboru názvů v rámci rozhraní .NET Framework verze 3.5. Poskytuje sadu typů, které je možné registrovat a překládat názvy partnerských uzlů dostupné službou PNRP.  
   
 -  
   
--   (PNRP a překladače vlastní partnerských uzlů může být vytvořen a instancí pomocí typy součástí <xref:System.ServiceModel.PeerResolvers> oboru názvů.)  
+-   (PNRP a překladače vlastní partnerských uzlů může být vytvořen a instance pomocí typů součástí <xref:System.ServiceModel.PeerResolvers> oboru názvů.)  
   
 -  
   
--   Základní typy používá k registraci a překlad názvů s PNRP služby k dispozici jsou následující:  
+-   Základní typy, které slouží k registraci a řešení názvů pomocí protokolu PNRP služby k dispozici jsou následující:  
   
 -  
   
--   <xref:System.Net.PeerToPeer.Cloud>: Definuje informace, které popisují dostupné PNRP cloudu, včetně jeho oboru.  
+-   <xref:System.Net.PeerToPeer.Cloud>: Definuje informace, které popisují dostupné cloudu PNRP, včetně jeho rozsahu.  
   
--   <xref:System.Net.PeerToPeer.PeerName>: Definuje název partnerského zařízení, která slouží k registraci a následně vyřešit partnerského uzlu v cloudu.  
+-   <xref:System.Net.PeerToPeer.PeerName>: Definuje název partnera, který slouží k registraci a následně vyřešit sdílené v rámci cloudu.  
   
--   <xref:System.Net.PeerToPeer.PeerNameRecord>: Definuje záznam PNRP cloudu, který obsahuje informace o registraci pro partnerský uzel, včetně koncových bodů sítě, na kterých mohou kontaktovat partnerský uzel.  
+-   <xref:System.Net.PeerToPeer.PeerNameRecord>: Definuje záznamu v cloudu PNRP, který obsahuje informace o registraci pro partnerský uzel, který obsahuje koncové body sítě, na kterých mohou kontaktovat partnerský uzel.  
   
--   <xref:System.Net.PeerToPeer.PeerNameRegistration>: Definuje proces registrace pro název partnerského zařízení, včetně metody pro spuštění a zastavení registrace názvu partnera.  
+-   <xref:System.Net.PeerToPeer.PeerNameRegistration>: Definuje proces registrace pro název partnerského zařízení, včetně metod ke spuštění a zastavení registrace názvu partnera.  
   
--   <xref:System.Net.PeerToPeer.PeerNameResolver>: Definuje proces překladu název partnerského zařízení na jeho koncové sítě, včetně synchronní a asynchronní metody pro řešení.  
+-   <xref:System.Net.PeerToPeer.PeerNameResolver>: Definuje procesu k vyřešení název partnerského zařízení do jeho koncových bodů sítě, včetně synchronní a asynchronní metody pro překlad.  
   
 -  
   
@@ -65,4 +65,4 @@ V prostředích peer-to-peer partnerské uzly používají určitý název řeš
  <xref:System.ServiceModel.PeerResolvers>  
  <xref:System.Net.PeerToPeer>  
  [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)  
- [Ukázka PeerToPeer technologie](http://go.microsoft.com/fwlink/?LinkID=179571)
+ [Ukázka technologie PeerToPeer](https://go.microsoft.com/fwlink/?LinkID=179571)

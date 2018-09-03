@@ -7,64 +7,64 @@ helpviewer_keywords:
 - data [Windows Forms], architecture
 - Windows Forms controls, data binding
 ms.assetid: c3826d8e-ea25-4ad4-a669-45bfb19192aa
-ms.openlocfilehash: f0267a774d284cac1672ff971d6af3ec3439c84d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cfb4c59c76142420f479b0b16a6d80317e98d159
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33540641"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43486007"
 ---
 # <a name="windows-forms-data-binding"></a>Windows Forms – datová vazba
-Datové vazby v systému Windows Forms poskytuje způsob, jak zobrazit a provést změny na informace ze zdroje dat v ovládacích prvků formuláře. Můžete vázat na zdroje dat tradiční jak téměř jakoukoli struktura, která obsahuje data.  
+Datové vazby v modelu Windows Forms poskytuje způsob, jak zobrazit a udělat změny informací ze zdroje dat v ovládacích prvcích ve formuláři. Můžete svázat do zdroje dat pro tradiční i téměř jakoukoli strukturu, která obsahuje data.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Datové vazby a Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)  
- Poskytuje přehled datové vazby v systému Windows Forms.  
+ Poskytuje přehled datové vazby v modelu Windows Forms.  
   
  [Zdroje dat podporované rozhraním Windows Forms](../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md)  
  Popisuje zdroje dat, které lze použít s Windows Forms.  
   
  [Rozhraní související s datovou vazbou](../../../docs/framework/winforms/interfaces-related-to-data-binding.md)  
- Popisuje řadu rozhraní použít s Windows Forms – datová vazba.  
+ Popisuje několik součástí Windows Forms – datová vazba rozhraní.  
   
  [Postupy: Procházení dat v rozhraní Windows Forms](../../../docs/framework/winforms/how-to-navigate-data-in-windows-forms.md)  
- Ukazuje, jak procházet položky ve zdroji dat.  
+ Ukazuje, jak přejděte přes položky ve zdroji dat.  
   
  [Oznámení změn v datové vazbě Windows Forms](../../../docs/framework/winforms/change-notification-in-windows-forms-data-binding.md)  
  Popisuje různé typy oznámení o změně pro Windows Forms – datová vazba.  
   
  [Postupy: Implementace rozhraní INotifyPropertyChanged](../../../docs/framework/winforms/how-to-implement-the-inotifypropertychanged-interface.md)  
- Ukazuje, jak implementovat <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Rozhraní komunikuje se připojeného ovládacího prvku změny vlastnost u objektu firmy  
+ Ukazuje, jak implementovat <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Rozhraní komunikuje s vázaného ovládacího prvku změny vlastností na obchodní objekt  
   
  [Postupy: Použití vzoru PropertyNameChanged](../../../docs/framework/winforms/how-to-apply-the-propertynamechanged-pattern.md)  
- Ukazuje, jak se má použít *PropertyName*vzor změněno na vlastnosti uživatelského ovládacího prvku Windows Forms.  
+ Ukazuje, jak použít *PropertyName*vzor změněné na vlastnosti uživatelského ovládacího prvku Windows Forms.  
   
  [Postupy: Implementace rozhraní ITypedList](../../../docs/framework/winforms/how-to-implement-the-itypedlist-interface.md)  
- Ukazuje, jak povolit zjišťování aplikace schéma pro vazbu seznamu pomocí implementace <xref:System.ComponentModel.ITypedList> rozhraní.  
+ Ukazuje, jak povolit zjišťování schématu s možností vazby seznam implementací <xref:System.ComponentModel.ITypedList> rozhraní.  
   
  [Postupy: Implementace rozhraní IListSource](../../../docs/framework/winforms/how-to-implement-the-ilistsource-interface.md)  
- Ukazuje, jak implementovat <xref:System.ComponentModel.IListSource> neimplementuje rozhraní pro vytvoření třídy vazbu <xref:System.Collections.IList>, ale poskytuje seznam z jiného umístění.  
+ Ukazuje, jak implementovat <xref:System.ComponentModel.IListSource> neimplementuje rozhraní pro vytvoření třídy s možností vazby <xref:System.Collections.IList>, ale poskytuje seznam z jiného umístění.  
   
  [Postupy: Zajištění, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných](../../../docs/framework/winforms/multiple-controls-bound-to-data-source-synchronized.md)  
- Ukazuje, jak zpracovat <xref:System.Windows.Forms.BindingSource.BindingComplete> událostí k zajištění všech ovládacích prvků vázaných ke zdroji dat zůstalo synchronizovaných.  
+ Ukazuje, jak zpracovat <xref:System.Windows.Forms.BindingSource.BindingComplete> událostí, aby všechny ovládací prvky vázané na zdroji dat zůstalo synchronizovaných.  
   
  [Postupy: Zajištění, aby vybraný řádek v podřízené tabulce zůstal ve správné pozici](../../../docs/framework/winforms/ensure-the-selected-row-in-a-child-table-correct.md)  
- Ukazuje, jak zajistit vybraného řádku podřízené tabulce nezmění, když dojde ke změně na pole v nadřazené tabulce.  
+ Ukazuje, jak zajistit vybraný řádek v podřízené tabulce nemění, když ke změně pole nadřazené tabulky.  
   
- Viz také [rozhraní související s datové vazby](http://msdn.microsoft.com/library/41e17s4b\(v=vs.110\)), [postup: přejděte dat ve Windows Forms](http://msdn.microsoft.com/library/b63ha24w\(v=vs.110\)), [postupy: vytvoření jednoduše připojeného ovládacího prvku ve formuláři Windows](http://msdn.microsoft.com/library/sw223a62\(v=vs.110\)).  
+ Také naleznete v tématu [související rozhraní datové vazby](https://msdn.microsoft.com/library/41e17s4b\(v=vs.110\)), [postupy: procházení dat v modelu Windows Forms](https://msdn.microsoft.com/library/b63ha24w\(v=vs.110\)), [postupy: vytvoření jednoduše vázaného ovládacího prvku ve formuláři Windows Forms](https://msdn.microsoft.com/library/sw223a62\(v=vs.110\)).  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.Binding?displayProperty=nameWithType>  
- Popisuje třídy, která představuje vazbu mezi vazbu součástí a zdroj dat.  
+ Popisuje třídy, která představuje vazbu mezi umožňujících vazbu součástí a zdroji dat.  
   
  <xref:System.Windows.Forms.BindingSource?displayProperty=nameWithType>  
  Popisuje třídy, který zapouzdřuje zdroj dat pro vytvoření vazby na ovládací prvky.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Komponenta BindingSource](../../../docs/framework/winforms/controls/bindingsource-component.md)  
- Obsahuje seznam témat, která ukazují, jak používat <xref:System.Windows.Forms.BindingSource> součásti.  
+ Obsahuje seznam témat, které ukazují, jak používat <xref:System.Windows.Forms.BindingSource> komponenty.  
   
  [Ovládací prvek DataGridView](../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
- Poskytuje seznam témat, která ukazují, jak používat ovládací prvek datagrid vazbu.  
+ Obsahuje seznam témat, která ukazují, jak použít ovládací prvek datagrid s možností vazby.  
   
  Viz také [přístup k datům v sadě Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio).

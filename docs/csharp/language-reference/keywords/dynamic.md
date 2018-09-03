@@ -8,11 +8,11 @@ helpviewer_keywords:
 - dynamic keyword [C#]
 ms.assetid: 9e797102-cc83-4964-bf58-afe4f54d16bc
 ms.openlocfilehash: bddcb8890ef7312047d05794ccef0b638de4ed78
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42930248"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43484012"
 ---
 # <a name="dynamic-c-reference"></a>dynamic (Referenční dokumentace jazyka C#)
 

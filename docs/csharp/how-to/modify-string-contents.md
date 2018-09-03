@@ -3,14 +3,14 @@ title: 'Postupy: Změna obsahu řetězce – průvodce v C#'
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: 99102fe90f5f675235e2993b7dd99f59214862d2
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 23d52a52291b3d5c36fc2ed0f299ab82aa5ffabd
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39243745"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43482277"
 ---
-# <a name="how-to-modify-string-contents-in-c"></a>Postupy: Změna obsahu řetězce v jazyce C# #
+# <a name="how-to-modify-string-contents-in-c"></a>Postupy: Změna obsahu řetězce v jazyce C\#
 
 Tento článek ukazuje řadu technik k vytvoření `string` změnou existující `string`. Všechny metody vrátí výsledek změny jako nový jsme vám ukázali `string` objektu. Všechny příklady jasně ukazuje to, uloží výsledek v nové proměnné. Poté můžete prozkoumat původní `string` a `string` vyplývající z změny, když spustíte každý příklad.
 
@@ -73,5 +73,5 @@ Tyto ukázky můžete zkusit pohledem na kód v našich [úložiště GitHub](ht
 
 ## <a name="see-also"></a>Viz také:
 
-[Regulárních výrazech .NET Frameworku](../../standard/base-types/regular-expressions.md)  
- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../standard/base-types/regular-expression-language-quick-reference.md)  
+- [Regulárních výrazech .NET Frameworku](../../standard/base-types/regular-expressions.md)  
+- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../standard/base-types/regular-expression-language-quick-reference.md)  

@@ -1,6 +1,6 @@
 ---
 title: Odstranit funkci (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce odstranění odstraní zadanou vlastnost a všechny jeho kvalifikátory z definice třídy CIM.
+description: Funkce Delete Odstraní zadané vlastnosti a všechny jeho kvalifikátory z definice třídy CIM.
 ms.date: 11/06/2017
 api_name:
 - Delete
@@ -16,14 +16,14 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e7fcf5cff9f95b06a834d73df4090bd1edfca61b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 791e75aa60fd651dde1555339e31664a3523e1eb
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33460240"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43479861"
 ---
-# <a name="delete-function"></a>Odstranit – funkce
+# <a name="delete-function"></a>Odstranit funkci
 Odstraní zadanou vlastnost a všechny jeho kvalifikátory z definice třídy CIM.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -41,40 +41,40 @@ HRESULT Delete (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[v] Tento parametr se nepoužívá.
+[in] Tento parametr se nepoužívá.
 
 `ptr`  
-[v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.
+[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `wszName`  
-[v] Název vlastnosti, která má odstranit. `wszName` musí být ukazatel na platnou `LPCWSTR`.
+[in] Název vlastnosti, která má odstranit. `wszName` musí být ukazatel na platný `LPCWSTR`.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_FAILED` | 0x80041001 | Došlo k neurčené chybě. |
+| `WBEM_E_FAILED` | 0x80041001 | Došlo k nespecifikované chybě. |
 | `WBEM_E_INVALID_OPERATION` | 0x80041016 | Vlastnost nelze odstranit. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Formát  `wszzName` je neplatný. |
 | `WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná vlastnost neexistuje. |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Není k dispozici dostatek paměti pro dokončení operace. |
-| `WBEM_E_PROPAGATED_PROPERTY` | 0x8004101c | Vlastnost je zděděn ze základní třídy. |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Není k dispozici dostatek paměti k dokončení operace. |
+| `WBEM_E_PROPAGATED_PROPERTY` | 0x8004101c | Vlastnost se dědí ze základní třídy. |
 | `WBEM_E_SYSTEM_PROPERTY` | | Vlastnost je vlastnost systému. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
-| `WBEM_E_RESET_TO_DEFAULT` | 0x80041030 | Funkce odstranit výchozí hodnotu přepsání pro aktuální třídu. Výchozí hodnota pro tuto vlastnost v nadřazené třídě byl reactiviated. | 
+| `WBEM_E_RESET_TO_DEFAULT` | 0x80041030 | Funkce odstranit výchozí hodnotu pro aktuální třídu. Výchozí hodnota této vlastnosti v nadřazené třídě byl reactiviated. | 
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IWbemClassObject::Delete](https://msdn.microsoft.com/library/aa391438(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IWbemClassObject::Delete](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-delete) metody.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

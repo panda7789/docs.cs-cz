@@ -5,15 +5,15 @@ helpviewer_keywords:
 - raw input [WPF]
 - FilterInputMessage method [WPF]
 ms.assetid: 4d74c6cf-7d1d-49ff-96c1-231340ce54f5
-ms.openlocfilehash: 69bc1e973b690454bcf91487c12dc4ce0ac46a17
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1a22071696ca012968e042e15cd8a9f4b876fd9f
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33548402"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43479968"
 ---
 # <a name="filterinputmessage"></a>FilterInputMessage
-Voláno rozhraním PresentationHost.exe vždy, když je přijata zpráva, pokud je vrácen E_NOTIMPL.  
+Voláno rozhraním PresentationHost.exe pokaždé, když je přijata zpráva, pokud je vrácena E_NOTIMPL.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,23 +24,23 @@ HRESULT FilterInputMessage( [in] MSG* pMsg ) ;
 #### <a name="parameters"></a>Parametry  
  `pMsg`  
   
- [v] Zpráva WM_INPUT odeslána do okna, který je získávání nezpracovaná vstup.  
+ [in] WM_INPUT zpráva odeslaná do okna, které dostává Nezpracovaný vstup.  
   
 ## <a name="property-valuereturn-value"></a>Hodnota vlastnosti / návratová hodnota  
- HRESULT:  
+ HODNOTA HRESULT:  
   
  S_OK - filtr nemohl zpracovat zprávu a může dojít k dalšímu zpracování.  
   
- S_FALSE - filtr zpracovat tuto zprávu a mělo dojít k žádné další zpracování.  
+ S_FALSE - filtr zpracovat tuto zprávu a by mělo dojít k žádné další zpracování.  
   
- E_NOTIMPL – Pokud je tato hodnota se vrátí, [FilterInputMessage](../../../../docs/framework/wpf/app-development/filterinputmessage.md) není volán znovu. To může být vrácena z hostitelskou aplikaci, která je jenom zajímá poskytování vlastních průběh a chyby uživatelského rozhraní pro PresentationHost.exe není zajímá předávaná nezpracovaná vstupní zprávy ze PresentationHost.exe.  
+ E_NOTIMPL – Pokud je tato hodnota se vrátí, [filterinputmessage –](../../../../docs/framework/wpf/app-development/filterinputmessage.md) není volána znovu. To může být vrácena z hostitele aplikace, která interested pouze při poskytování vlastní pokrok a chyba uživatelských rozhraní k PresentationHost.exe není zajímá se předalo PresentationHost.exe nezpracované zprávy o zadávání.  
   
 ## <a name="remarks"></a>Poznámky  
- PresentationHost.exe je cílem různé nezpracovaná vstupní zařízení, včetně klávesnice, myš a vzdálené ovládací prvky. V některých případech je závislá na vstupu, které by jinak spotřebovat PresentationHost.exe chování v hostitelskou aplikaci. Hostitelskou aplikaci může například závisí na příjem určité vstupní zprávy a určete, zda se má zobrazit konkrétní prvky rozhraní.  
+ PresentationHost.exe je cílem různých nezpracovaná vstupní zařízení, včetně klávesnice, myš a dálková ovládání. V některých případech je závislá na vstupu, který by jinak využívat PresentationHost.exe chování v hostitelské aplikaci. Například hostitelská aplikace může záviset na příjem některé vstupní zprávy k určení, jestli se mají zobrazit prvky konkrétní uživatelského rozhraní.  
   
- Povolit hostitelskou aplikaci pro příjem nezbytné vstupní zpráv k poskytování těchto chování, PresentationHost.exe předává odpovídající nezpracovaná vstupní zprávy do aplikace hostované voláním [FilterInputMessage](../../../../docs/framework/wpf/app-development/filterinputmessage.md).  
+ Aby hostitelskou aplikaci pro příjem nezbytné vstupní zprávy k poskytování těchto projevů PresentationHost.exe předává odpovídající nezpracované zprávy o zadávání hostované aplikace voláním [filterinputmessage –](../../../../docs/framework/wpf/app-development/filterinputmessage.md).  
   
- Aplikace hostované přijímá nezpracovaná vstupní zprávy pomocí registrace sady nezpracovaná vstupní zařízení (zařízení standardu HID) vrácený [GetRawInputDevices](../../../../docs/framework/wpf/app-development/getrawinputdevices.md).  
+ Hostované aplikace přijme nezpracované zprávy o zadávání tak, že zaregistrujete sadu nezpracovaná vstupní zařízení (lidské rozhraní) vrácený [getrawinputdevices –](../../../../docs/framework/wpf/app-development/getrawinputdevices.md).  
   
 ## <a name="see-also"></a>Viz také  
- [WM_INPUT oznámení](http://msdn.microsoft.com/library/default.asp?url=/library/winui/winui/windowsuserinterface/userinput/rawinput/rawinputreference/rawinputmessages/wm_input.asp)
+ [WM_INPUT oznámení](https://msdn.microsoft.com/library/default.asp?url=/library/winui/winui/windowsuserinterface/userinput/rawinput/rawinputreference/rawinputmessages/wm_input.asp)

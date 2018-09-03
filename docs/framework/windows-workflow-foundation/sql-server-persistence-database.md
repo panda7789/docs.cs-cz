@@ -1,16 +1,16 @@
 ---
-title: Trvalost databáze systému SQL Server
+title: Databáze trvalosti SQL serveru
 ms.date: 03/30/2017
 ms.assetid: 4e594eec-2a31-4d49-ad31-aca2ecbb1f69
-ms.openlocfilehash: 407b3657a6fd6dbdc876425c813a42ecf73c769e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3929148cf6a236db7d226b45da750e8d4ae1d0cc
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33514661"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43486763"
 ---
-# <a name="sql-server-persistence-database"></a>Trvalost databáze systému SQL Server
-Tato část obsahuje podrobné informace o zobrazení veřejného databáze nepodporuje ukládání Instance pracovního postupu SQL a ukazuje, jak deserializovat vlastnosti primitivní instance dat a jak dotazovat pro netrvalé instance.  
+# <a name="sql-server-persistence-database"></a>Databáze trvalosti SQL serveru
+Tato část obsahuje podrobné informace o zobrazení veřejného databáze nepodporuje Store Instance pracovního postupu SQL a ukazuje, jak zrušit serializaci vlastnosti primitivní instance data a zadávat dotazy na netrvalé instance.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
@@ -21,4 +21,4 @@ Tato část obsahuje podrobné informace o zobrazení veřejného databáze nepo
 -   [Postupy: Dotaz na netrvalé instance](../../../docs/framework/windows-workflow-foundation/how-to-query-for-non-persisted-instances.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Databáze trvalost systému SQL Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201202&clcid=0x409)
+ [Databáze trvalosti SQL serveru App Fabric](https://go.microsoft.com/fwlink/?LinkID=201202&clcid=0x409)

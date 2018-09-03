@@ -5,11 +5,11 @@ helpviewer_keywords:
 - fields [C#]
 ms.assetid: 3cbb2f61-75f8-4cce-b4ef-f5d1b3de0db7
 ms.openlocfilehash: 65e815411cc9f4af063cb955ae63d18e87f43f38
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42998694"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43483065"
 ---
 # <a name="fields-c-programming-guide"></a>Pole (Průvodce programováním v C#)
 A *pole* je proměnná typu, který je deklarován přímo v [třídy](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md). Pole jsou *členy* z jeho nadřazeného typu.  

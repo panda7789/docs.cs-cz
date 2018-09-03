@@ -11,18 +11,18 @@ ms.assetid: 88bc4212-3f4e-4bac-bae0-faef31944b71
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 35fe0d8c3131f150549c042e993532c364e9fe4b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 351f0a2bc35ed1dd90be926e272f6aa3e92e495e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33408070"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43488141"
 ---
 # <a name="ui-automation-providers-for-managed-code-how-to-topics"></a>Postupy: Témata zprostředkovatelů automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Tato část obsahuje příklady kódu, které ukazují úlohy při psaní [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] zprostředkovatele pro [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] elementy.  
+ Tato část obsahuje příklady kódu, které popisují úlohy písemně [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] zprostředkovatelé pro [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] elementy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vystavení zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)  

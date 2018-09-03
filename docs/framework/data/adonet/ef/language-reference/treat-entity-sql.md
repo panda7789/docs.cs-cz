@@ -1,16 +1,16 @@
 ---
-title: ZPRACOVÁVAT (entita SQL)
+title: POVAŽOVAT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 5b77f156-55de-4cb4-8154-87f707d4c635
-ms.openlocfilehash: 932f335bf6a502b031dcf09b8050e278a0bbe9f8
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: c3291dc6d5bc79430c8bf011ee6a2f4dc213ffad
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32763973"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43486893"
 ---
-# <a name="treat-entity-sql"></a>ZPRACOVÁVAT (entita SQL)
-Objekt konkrétní základní typ zpracovává jako objekt zadaného typu odvozené.  
+# <a name="treat-entity-sql"></a>POVAŽOVAT (Entity SQL)
+Zpracovává konkrétní základního typu objektu jako objekt zadaného typu odvozené.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,21 +23,21 @@ TREAT ( expression as type)
  Libovolný platný dotaz výraz, který vrátí entity.  
   
 > [!NOTE]
->  Typ zadaný výraz musí být podtypem zadaný datový typ nebo datový typ musí být podtypem typ výrazu.  
+>  Typ zadaného výrazu musí být podtypem typu zadaného datového typu nebo datový typ musí být podtypem typu výrazu.  
   
  `type`  
- Typ entity. Typ musí být kvalifikován obor názvů.  
+ Typ entity. Typ musí být kvalifikován oborem názvů.  
   
 > [!NOTE]
->  Zadaný výraz musí být podtypem zadaný datový typ nebo datový typ musí být podtypem výraz.  
+>  Zadaný výraz musí být podtypem typu zadaného datového typu nebo datový typ musí být podtypem typu výrazu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Hodnota zadaného datového typu.  
   
 ## <a name="remarks"></a>Poznámky  
- ZPRACOVÁVAT slouží k provádění přetypování nahoru mezi související třídy. Například pokud `Employee` je odvozena z `Person` a p je typu `Person`, `TREAT(p AS NamespaceName.Employee)` upcasts a obecného `Person` instance na `Employee`; to znamená, umožňuje považovat za p `Employee`.  
+ NAKLÁDÁNÍ se používá k provedení upcasting mezi souvisejícími třídami. Například pokud `Employee` je odvozena z `Person` a p je typu `Person`, `TREAT(p AS NamespaceName.Employee)` upcasts a Obecné `Person` instance na `Employee`; to znamená, je možné považovat za p `Employee`.  
   
- ZPRACOVÁVAT se používá ve scénářích dědičnosti, kde můžete provést dotaz takto:  
+ NAKLÁDÁNÍ se používá ve scénářích dědičnosti, kde lze dotaz podobný tomuto:  
   
 ```  
 SELECT TREAT(p AS NamespaceName.Employee)  
@@ -45,24 +45,24 @@ FROM ContainerName.Person AS p
 WHERE p IS OF (NamespaceName.Employee)   
 ```  
   
- Tento dotaz upcasts `Person` entity k `Employee` typu. Pokud hodnota p není ve skutečnosti je typu `Employee`, výsledkem je hodnota, výraz `null`.  
+ Tento dotaz upcasts `Person` entity, které `Employee` typu. Pokud hodnota p není ve skutečnosti je typu `Employee`, výraz vrací hodnotu `null`.  
   
 > [!NOTE]
->  Zadaný výraz `Employee` musí být podtypem zadaný datový typ `Person`, nebo datový typ musí být podtypem výraz. Výraz, jinak bude výsledkem chyba kompilace.  
+>  Zadaný výraz `Employee` musí být podtypem typu zadaného datového typu `Person`, nebo datový typ musí být podtypem typu výrazu. V opačném případě výraz způsobí chybu kompilace.  
   
- Následující tabulka uvádí chování zpracovávat přes některé typické vzory a některé méně častých vzory. Všechny výjimky jsou vyvolány ze strany klienta předtím, než získá volá zprostředkovatele:  
+ Následující tabulka uvádí chování považovat za některé typické vzory a některé méně běžné vzory. Všechny výjimky jsou vyvolány ze strany klienta předtím, než je volán za zprostředkovatele:  
   
 |Vzor|Chování|  
 |-------------|--------------|  
 |`TREAT (null AS EntityType)`|Vrátí `DbNull`.|  
 |`TREAT (null AS ComplexType)`|Vyvolá výjimku.|  
-|`TREAT (null AS RowType)`|Vyvolá výjimku, nebo|  
+|`TREAT (null AS RowType)`|Vyvolá výjimku /|  
 |`TREAT (EntityType AS EntityType)`|Vrátí `EntityType` nebo `null`.|  
 |`TREAT (ComplexType AS ComplexType)`|Vyvolá výjimku.|  
 |`TREAT (RowType AS RowType)`|Vyvolá výjimku.|  
   
 ## <a name="example"></a>Příklad  
- Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz používá operátor ZPRACOVÁVAT převést objekt typu kurzu na kolekce objektů typu OnsiteCourse. Dotaz je na základě [školní modelu](http://msdn.microsoft.com/library/859a9587-81ea-4a45-9bc0-f8d330e1adac).  
+ Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu používá operátor POVAŽOVAT převést objekt typu kurzu ke kolekci objektů typu OnsiteCourse. Dotaz je založen na [školní modelu](https://msdn.microsoft.com/library/859a9587-81ea-4a45-9bc0-f8d330e1adac).  
   
  [!code-csharp[DP EntityServices Concepts 2#TREAT_ISOF](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#treat_isof)]  
   

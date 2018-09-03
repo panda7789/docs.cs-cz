@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ae3712f-ef5e-41a1-9ea9-b3d0399439f1
-ms.openlocfilehash: 40ba9085905869ca5d3d8f39a3d7ce11639b1504
-ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
+ms.openlocfilehash: 17bf06864016ece571b21bee2c180b5781a62959
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42752338"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43480734"
 ---
 # <a name="local-transactions"></a>Místní transakce
 Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se používají, když chcete vazby společně více úloh, takže se provést jako jednu jednotku práce. Představte si například, že aplikace provede dvě úlohy. Nejprve aktualizuje tabulku s informacemi o pořadí. Za druhé aktualizuje tabulku, která obsahuje informace o inventáři, připsáním na stranu MD položky seřazeny. Pokud buď úloha selže, pak obě aktualizace jsou vrácena zpět.  
@@ -51,4 +51,4 @@ Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se použí
  [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
  [Distribuované transakce](../../../../docs/framework/data/adonet/distributed-transactions.md)  
  [Integrace System.Transactions s SQL Serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

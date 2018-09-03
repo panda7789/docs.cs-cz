@@ -1,25 +1,25 @@
 ---
-title: Vytváření výčtu instancí systému SQL Server (ADO.NET)
+title: Vytváření výčtu instancí SQL serveru (ADO.NET)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: ddf1c83c-9d40-45e6-b04d-9828c6cbbfdc
-ms.openlocfilehash: d9456926b228fadca940f6c4698829494382e237
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 043f156f96d6ebc9ac5a6487287ad327928d9bf0
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33355519"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481785"
 ---
-# <a name="enumerating-instances-of-sql-server-adonet"></a>Vytváření výčtu instancí systému SQL Server (ADO.NET)
-SQL Server povoluje aplikace najít instance systému SQL Server v rámci aktuální sítě. <xref:System.Data.Sql.SqlDataSourceEnumerator> Třída zpřístupňuje tyto informace pro vývojáře aplikací, zajištění <xref:System.Data.DataTable> obsahující informace o všech viditelné serverech. To vrácena tabulka obsahuje seznam instancí serverů, které jsou k dispozici v síti, která odpovídá seznamu zadat, když se uživatel pokusí o vytvoření nového připojení a rozbalí rozevírací seznam obsahující všechny dostupné servery na **připojení Vlastnosti** dialogové okno. Výsledky zobrazí vždy nebyly dokončeny.  
+# <a name="enumerating-instances-of-sql-server-adonet"></a>Vytváření výčtu instancí SQL serveru (ADO.NET)
+SQL Server povoluje aplikací, aby našel instance systému SQL Server v rámci aktuální sítě. <xref:System.Data.Sql.SqlDataSourceEnumerator> Třída zpřístupňuje tyto informace pro vývojáře aplikací, poskytování <xref:System.Data.DataTable> obsahující informace o všech serverech viditelné. To vrácena tabulka obsahuje seznam instancí serveru, dostupný v síti, která odpovídá seznamu, pokud uživatel se pokusí vytvořit nové připojení a rozbalí rozevírací seznam obsahující všechny dostupné servery na **připojení Vlastnosti** dialogové okno. Výsledky zobrazené nejsou vždy úplný.  
   
 > [!NOTE]
->  Jako s většina služeb systému Windows, je vhodné spustit službu SQL Browser s nejmenšími možnými oprávněními. Další informace o služba SQL Browser a jak spravovat své chování najdete v části SQL Server Books Online.  
+>  Stejně jako u většiny služby Windows to je vhodné spustit službu SQL Browser s nejmenšími možnými oprávněními. Další informace o službu SQL Browser a jak spravovat své chování naleznete v tématu knihy Online SQL Server.  
   
-## <a name="retrieving-an-enumerator-instance"></a>Načítání Instance enumerátor  
- Chcete-li načíst tabulku obsahující informace o dostupných instancí systému SQL Server, musíte nejdřív načíst enumerátor pomocí sdílených/statické <xref:System.Data.Sql.SqlDataSourceEnumerator.Instance%2A> vlastnost:  
+## <a name="retrieving-an-enumerator-instance"></a>Načítání Instance výčtu  
+ Aby bylo možné načíst tabulku obsahující informace o dostupných instancí systému SQL Server, musíte nejdřív načíst enumerátor pomocí sdílených/statické <xref:System.Data.Sql.SqlDataSourceEnumerator.Instance%2A> vlastnost:  
   
 ```vb  
 Dim instance As System.Data.Sql.SqlDataSourceEnumerator = _  
@@ -31,7 +31,7 @@ System.Data.Sql.SqlDataSourceEnumerator instance =
    System.Data.Sql.SqlDataSourceEnumerator.Instance  
 ```  
   
- Po načtení statická instance, můžete zavolat <xref:System.Data.Sql.SqlDataSourceEnumerator.GetDataSources%2A> metoda, která vrátí hodnotu <xref:System.Data.DataTable> obsahující informace o dostupných serverů:  
+ Po načtení statická instance volejte <xref:System.Data.Sql.SqlDataSourceEnumerator.GetDataSources%2A> metoda, která vrátí <xref:System.Data.DataTable> obsahující informace o dostupných serverů:  
   
 ```vb  
 Dim dataTable As System.Data.DataTable = instance.GetDataSources()  
@@ -46,22 +46,22 @@ System.Data.DataTable dataTable = instance.GetDataSources();
 |Sloupec|Popis|  
 |------------|-----------------|  
 |**ServerName**|Název serveru.|  
-|**InstanceName**|Název instance serveru. Prázdná, pokud je server spuštěn jako výchozí instanci.|  
+|**InstanceName**|Název instance serveru. Prázdné, pokud je server spuštěn jako výchozí instanci.|  
 |**IsClustered**|Určuje, zda je server součástí clusteru.|  
 |**Verze**|Verze serveru. Příklad:<br /><br /> -9.00.x ([!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)])<br />-10.0.xx ([!INCLUDE[ssKatmai](../../../../../includes/sskatmai-md.md)])<br />-10.50.x ([!INCLUDE[ssKilimanjaro](../../../../../includes/sskilimanjaro-md.md)])<br />-11.0.xx (SQL Server 2012)|  
   
-## <a name="enumeration-limitations"></a>Omezení – výčet  
- Všechny dostupné servery může nebo nemusí být uvedena. Seznam se může lišit v závislosti na faktorech, jako je například časové limity a síťový provoz. To může způsobit seznamu jiné na dvě po sobě jdoucí volání. Objeví se pouze servery ve stejné síti. Paketů všesměrového vysílání obvykle nebude přes směrovače, proto nemusíte vidět server uvedený, ale bude stabilní napříč volání.  
+## <a name="enumeration-limitations"></a>Výčet omezení  
+ Všechny dostupné servery může nebo nemusí být uvedená. Seznam se může lišit v závislosti na faktorech, třeba vypršení časových limitů a síťové přenosy. To může způsobit seznamem, aby se na dvě po sobě jdoucích volání lišit. Zobrazí se pouze servery ve stejné síti. Pakety všesměrového vysílání obvykle nebudete procházet směrovače, proto nemusíte vidět serveru uvedené, ale bude stabilní napříč volání.  
   
- Uvedené servery může nebo nemusí mít další informace, jako `IsClustered` a verze. Toto je závisí na způsobu získání seznamu. Další podrobnosti, než jsou prostřednictvím infrastrukturu nástroje systému Windows, která se zobrazí seznam pouze název bude mít servery uvedené přes službu SQL Server browser.  
+ Uvedené servery může nebo nemusí mít další informace, jako `IsClustered` a verze. To závisí na způsobu získání seznamu. Servery uvedené přes službu systému SQL Server browser budou mít informace než přes infrastrukturu Windows, který zobrazí seznam pouze název.  
   
 > [!NOTE]
->  Výčet serveru je k dispozici pouze při spuštění v plné důvěryhodnosti. Sestavení v prostředí částečně důvěryhodné nebude možné použít, i když <xref:System.Data.SqlClient.SqlClientPermission> oprávnění zabezpečení přístupu kódu (CAS).  
+>  Výčet server je dostupná jenom při spouštění v režimu úplné důvěryhodnosti. Spuštění v prostředí částečně důvěryhodných sestavení nebudou moct používat, i v případě, že mají <xref:System.Data.SqlClient.SqlClientPermission> oprávnění zabezpečení přístupu kódu (CAS).  
   
- Poskytuje informace o systému SQL Server <xref:System.Data.Sql.SqlDataSourceEnumerator> prostřednictvím externí službu systému Windows s názvem SQL Browser. Tato služba je ve výchozím nastavení povoleno, ale správci vypnout nebo ji zakázat, viditelnosti instance serveru pro tuto třídu.  
+ Obsahuje informace o systému SQL Server <xref:System.Data.Sql.SqlDataSourceEnumerator> prostřednictvím externí služby Windows s názvem SQL Browser. Tato služba je ve výchozím nastavení povoleno, ale správci vypnout nebo zakázat, neviditelný instance serveru k této třídě.  
   
 ## <a name="example"></a>Příklad  
- Následující konzolové aplikace načte informace o všech viditelné instance systému SQL Server a zobrazí informace v okně konzoly.  
+ Následující konzolové aplikace načte informace o všech viditelných instancí systému SQL Server a zobrazí informace v okně konzoly.  
   
 ```vb  
 Imports System.Data.Sql  
@@ -126,4 +126,4 @@ class Program
   
 ## <a name="see-also"></a>Viz také  
  [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

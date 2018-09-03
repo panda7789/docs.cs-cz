@@ -1,24 +1,25 @@
 ---
-title: Možnost &lt;– klíčové slovo&gt; – příkaz
+title: Možnost &lt;– klíčové slovo&gt; – příkaz (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.option
 helpviewer_keywords:
 - Option keyword [Visual Basic]
 ms.assetid: 6b2f41c4-2403-43b6-8a14-94a3775e5b47
-ms.openlocfilehash: c5a53faec01b8c10de5802eccb21d66350193696
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f4996b0c03ee98fef31bc301dc957060afdfdac8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43484524"
 ---
 # <a name="option-ltkeywordgt-statement"></a>Možnost &lt;– klíčové slovo&gt; – příkaz
-Představuje příkaz, který určuje možnost kompilátoru, která platí pro celý zdrojový soubor.  
+Zavádí příkaz, který určuje možnost kompilátoru, která se vztahuje k celému zdrojovému souboru.  
   
 ## <a name="remarks"></a>Poznámky  
- Možnosti kompilátoru můžete řídit, jestli je explicitně deklarovat všechny proměnné, jestli zužující převody typu musí být explicitní nebo jestli je třeba porovnat řetězce jako text nebo jako binární počty.  
+ Možnosti kompilátoru můžete řídit, jestli všechny proměnné musí být explicitně deklarovány, zda zužujících převodů typu musí být explicitní nebo určuje, zda by měly být porovnány řetězců jako text nebo binární množství.  
   
- `Option` – Klíčové slovo lze použít v těchto kontexty:  
+ `Option` – Klíčové slovo lze použít v těchto kontextech:  
   
  [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
   

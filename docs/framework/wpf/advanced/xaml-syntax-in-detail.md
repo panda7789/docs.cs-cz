@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: f2c3aab20dc5bcf9b0f9f7053323ccd7a04443cc
-ms.sourcegitcommit: bd4fa78f5a46133efdead1bc692a9aa2811d7868
+ms.openlocfilehash: eabb9c84824a4604319a346612e84563abaf2b76
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42755048"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43485726"
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAML. Tyto podmínky se často používají v celé zbývající části této dokumentace, i pro WPF dokumentaci, konkrétně a pro jiná rozhraní, které využívají XAML nebo o základních konceptech XAML povolená podpora jazyka XAML na úrovni oboru názvů System.Xaml. Toto téma rozšiřuje základní terminologii zavedené v tématu [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md).  
@@ -45,7 +45,7 @@ Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAM
 ## <a name="the-xaml-language-specification"></a>Specifikace jazyka XAML  
  Terminologie syntaxe XAML lze tam definovat také je definována nebo odkazována v rámci specifikace jazyka XAML. XAML je jazyk založený na formát XML a následuje nebo rozšiřují strukturální pravidla jazyka XML. Terminologii sdílené z nebo podle terminologie běžně používají při popisu jazyka XML nebo modelu objektu dokumentu XML.  
   
- Další informace o specifikaci jazyka XAML, stáhněte si [ \[MS-XAML\] ](http://go.microsoft.com/fwlink/?LinkId=114525) z webu Microsoft Download Center.  
+ Další informace o specifikaci jazyka XAML, stáhněte si [ \[MS-XAML\] ](https://go.microsoft.com/fwlink/?LinkId=114525) z webu Microsoft Download Center.  
   
 <a name="xaml_and_clr"></a>   
 ## <a name="xaml-and-clr"></a>XAML a CLR  

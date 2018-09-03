@@ -1,5 +1,5 @@
 ---
-title: '&lt;supportPortability –&gt; – Element'
+title: '&lt;supportPortability&gt; – Element'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - supportPortability element
@@ -7,20 +7,20 @@ helpviewer_keywords:
 ms.assetid: 6453ef66-19b4-41f3-b712-52d0c2abc9ca
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0a8a454919a195a0f0c03ed6890e51b2723f64fb
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 5d82f41e3722ab568f14fbbb00bb0972d759a329
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32754103"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43485910"
 ---
-# <a name="ltsupportportabilitygt-element"></a>&lt;supportPortability –&gt; – Element
-Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých implementace rozhraní .NET Framework zakázáním výchozí chování, která zpracovává sestavení jako ekvivalentní pro účely přenositelnost aplikace.  
+# <a name="ltsupportportabilitygt-element"></a>&lt;supportPortability&gt; – Element
+Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých implementacích rozhraní .NET Framework zakázáním výchozího chování, které považuje za ekvivalent pro účely přenositelnosti aplikace sestavení.  
   
- \<Konfigurace > elementu  
-\<modul runtime > elementu  
-\<assemblybinding – > elementu  
-\<supportPortability – > elementu  
+ \<Konfigurace > – Element  
+\<modul runtime > – Element  
+\<assemblybinding – > – Element  
+\<supportPortability > – Element  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých i
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|PKT|Požadovaný atribut.<br /><br /> Určuje token veřejného klíče ovlivněných sestavení jako řetězec.|  
-|povoleno|Nepovinný atribut.<br /><br /> Určuje, zda se má povolit podpora přenositelnost mezi implementace zadané sestavení rozhraní .NET Framework.|  
+|PKT|Požadovaný atribut.<br /><br /> Určuje token veřejného klíče dotčeného sestavení jako řetězec.|  
+|Povoleno|Nepovinný atribut.<br /><br /> Určuje, zda by měla být povolena podpora pro přenositelnost mezi implementacemi zadaného sestavení rozhraní .NET Framework.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|true|Povolení podpory pro přenositelnost mezi implementace zadané sestavení rozhraní .NET Framework. Toto nastavení je výchozí.|  
-|false|Zakažte podporu pro přenositelnost mezi implementace zadané sestavení rozhraní .NET Framework. To umožňuje aplikaci odkazují na více implementace zadaném sestavení.|  
+|true|Povolte podporu pro přenositelnost mezi implementacemi zadaného sestavení rozhraní .NET Framework. Toto nastavení je výchozí.|  
+|false|Zakažte podporu pro přenositelnost mezi implementacemi zadaného sestavení rozhraní .NET Framework. To umožňuje aplikaci mít odkazy na více implementací zadaného sestavení.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -57,15 +57,15 @@ Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých i
 |`assemblyBinding`|Obsahuje informace o přesměrování verze sestavení a umístění sestavení.|  
   
 ## <a name="remarks"></a>Poznámky  
- Od verze [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], podpora je k dispozici automaticky pro aplikace, které můžete použít buď dva implementace rozhraní .NET Framework, například buď implementace rozhraní .NET Framework nebo .NET Framework pro Silverlight implementaci. Dva implementace konkrétní sestavení rozhraní .NET Framework se zobrazují jako ekvivalentní podle vazač sestavení. Tato funkce přenositelnost aplikace v několik scénářů, způsobuje problémy. V těchto případech `<supportPortability>` prvek můžete použít funkci zakážete.  
+ Počínaje [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], podpora je poskytována automaticky pro aplikace, které můžete použít jednu ze dvou implementací rozhraní .NET Framework, například pro implementaci rozhraní .NET Framework nebo .NET Framework pro implementaci Silverlight. Tyto dvě implementace konkrétního sestavení rozhraní .NET Framework jsou vázacím objektem sestavení považovány za ekvivalentní. V několika scénářích tato funkce přenositelnosti aplikace způsobuje problémy. V těchto případech `<supportPortability>` elementu je možné zakázat funkci.  
   
- Jeden z těchto důvodů je sestavení, který má odkazovat implementace rozhraní .NET Framework a rozhraní .NET Framework pro Silverlight implementaci sestavení. Návrhář XAML napsané v systému Windows Presentation Foundation (WPF) možná muset odkazovat oba WPF plochy implementaci, pro uživatelské rozhraní nástroje designer a do něj podmnožinu WPF, který je součástí implementace Silverlight. Ve výchozím nastavení odkazy na samostatné způsobit chybu kompilátoru, protože sestavení – vazby vidí dvě sestavení jako ekvivalentní. Tento element zakáže výchozí chování a umožňuje kompilace proběhla úspěšně.  
+ Jeden takový scénář je sestavení, které musí odkazovat implementaci rozhraní .NET Framework a .NET Framework pro implementaci Silverlight sestavení. Například Návrhář XAML, zapsán ve Windows Presentation Foundation (WPF) může být nutné odkazovat oba WPF plochy implementace, návrháře uživatelské rozhraní a na podmnožinu WPF, která je součástí implementace Silverlight. Ve výchozím nastavení samostatné odkazy zapříčiní chybu kompilátoru, protože vazba sestavení chápe daná dvě sestavení jako ekvivalentní. Tento prvek zakazuje výchozí chování a umožňuje, aby kompilace proběhla úspěšně.  
   
 > [!IMPORTANT]
->  Aby kompilátoru k předání informací pro modul common language runtime vazby sestavení logiky, je nutné použít `/appconfig` – možnost kompilátoru k určení umístění souboru app.config, který obsahuje tento element.  
+>  Aby kompilátor mohl předat informace pro vytváření vazeb sestavení logiky common language runtime, je nutné použít `/appconfig` – možnost kompilátoru k určení umístění souboru app.config, který obsahuje tento element.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad povolí aplikaci tak, aby měl odkazy na implementace rozhraní .NET Framework a rozhraní .NET Framework pro Silverlight implementaci žádné sestavení rozhraní .NET Framework, který již existuje v obou implementace. `/appconfig` – Možnost kompilátoru použije k určení umístění tohoto souboru app.config.  
+ Následující příklad umožňuje aplikaci mít odkazy na implementaci rozhraní .NET Framework a .NET Framework pro implementaci Silverlight žádné sestavení rozhraní .NET Framework, která existuje v obou implementacích. `/appconfig` Kompilátoru možnost musí být použita ke specifikaci umístění tohoto app.config souboru.  
   
 ```xml  
 <configuration>  
@@ -79,5 +79,5 @@ Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých i
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [/ appconfig (možnosti kompilátoru C#)](http://msdn.microsoft.com/library/ee523958.aspx)  
- [Přehled sjednocení sestavení rozhraní .NET framework](http://msdn.microsoft.com/library/8d8cc65e-031d-463b-bde3-2c6dc2e3bc48)
+ [/ appconfig (možnosti kompilátoru C#)](https://msdn.microsoft.com/library/ee523958.aspx)  
+ [Přehled sjednocení sestavení rozhraní .NET framework](https://msdn.microsoft.com/library/8d8cc65e-031d-463b-bde3-2c6dc2e3bc48)

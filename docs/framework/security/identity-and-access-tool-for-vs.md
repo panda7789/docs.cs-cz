@@ -1,18 +1,18 @@
 ---
-title: Identita a přístup pro sadu Visual Studio 2012
+title: Identity and Access Tool for Visual Studio 2012
 ms.date: 03/30/2017
 ms.assetid: 87b8f8f2-4074-44fd-9fd6-08278e877390
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 107028b89d576b27a2559fd0ae5298c849da2c94
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6af769c0b5afd61015b80c3f6987c8062c596929
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33398606"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481385"
 ---
-# <a name="identity-and-access-tool-for-visual-studio-2012"></a>Identita a přístup pro sadu Visual Studio 2012
-Toto téma popisuje nový nástroj Identity and Access Tool for Visual Studio 11. Tento nástroj můžete stáhnout z následující adresy URL: [ http://go.microsoft.com/fwlink/?LinkID=245849 ](http://go.microsoft.com/fwlink/?LinkID=245849) nebo přímo z v rámci sadu Visual Studio 11 vyhledáním "identity" přímo ve Správci rozšíření.  
+# <a name="identity-and-access-tool-for-visual-studio-2012"></a>Identity and Access Tool for Visual Studio 2012
+Toto téma popisuje nový nástroj Identity and Access Tool for Visual Studio 11. Tento nástroj si můžete stáhnout z následující adresy URL: [ https://go.microsoft.com/fwlink/?LinkID=245849 ](https://go.microsoft.com/fwlink/?LinkID=245849) nebo přímo v rámci sady Visual Studio 11 tak, že "identity" ve Správci rozšíření.  
   
  Nástroj Identity and Access Tool for Visual Studio 11 přináší výrazně jednodušší možnosti vývoje díky následujícím hlavním funkcím:  
   

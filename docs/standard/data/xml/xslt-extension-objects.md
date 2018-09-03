@@ -1,42 +1,42 @@
 ---
-title: Rozšíření objektů XSLT
+title: Objekty rozšíření XSLT
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: a4ebdbad-087c-4cfe-acc0-17c48142f81a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 69fcd4bd8426bb349c090fc52f7a1f1a262378ea
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6f958af5859804cdeb382adab2f3772c42ac5b16
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33570507"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43483960"
 ---
-# <a name="xslt-extension-objects"></a>Rozšíření objektů XSLT
-Rozšíření objektů se používají k rozšíření funkcí stylů. Rozšíření objektů jsou udržované <xref:System.Xml.Xsl.XsltArgumentList> třídy.  
+# <a name="xslt-extension-objects"></a>Objekty rozšíření XSLT
+Rozšíření objektů se používají k rozšíření funkcí šablon stylů. Rozšíření objektů jsou udržovány <xref:System.Xml.Xsl.XsltArgumentList> třídy.  
   
- Následují výhody použití rozšíření namísto objektu vložený skript:  
+ Následují výhody použití objekt rozšíření místo vloženého skriptu:  
   
--   Poskytuje lepší zapouzdření a opakovaného použití třídy.  
+-   Poskytuje lepší zapouzdření a opakované použití tříd.  
   
--   Umožňuje stylů menší a více udržovatelný.  
+-   Povoluje stylů, aby bylo menší a jednodušší údržbu.  
   
- XSLT rozšíření objekty jsou přidány na <xref:System.Xml.Xsl.XsltArgumentList> pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metoda. Úplný název a identifikátor URI oboru názvů jsou přidruženy k rozšíření objektu v daném čase.  
+ Objekty rozšíření XSLT se přidají do <xref:System.Xml.Xsl.XsltArgumentList> pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metody. Úplný název a identifikátor URI oboru názvů jsou přidruženy k rozšíření objektu v daném čase.  
   
 > [!NOTE]
->  Sada oprávnění FullTrust je třeba volat <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metoda. Další informace najdete v tématu [zabezpečení přístupu kódu](http://msdn.microsoft.com/library/23a20143-241d-4fe5-9d9f-3933fd594c03) a [NIB: pojmenované sady oprávnění](https://msdn.microsoft.com/library/08250d67-c99d-4ab0-8d2b-b0e12019f6e3).  
+>  Sada oprávnění FullTrust je potřeba volat <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metody. Další informace najdete v tématu [zabezpečení přístupu kódu](https://msdn.microsoft.com/library/23a20143-241d-4fe5-9d9f-3933fd594c03) a [NIB: pojmenované sady oprávnění](https://msdn.microsoft.com/library/08250d67-c99d-4ab0-8d2b-b0e12019f6e3).  
   
  Datové typy vrácených objektů rozšíření jsou jedním ze čtyř typů základní XPath data z `number`, `string`, `Boolean`, a `node set`.  
   
- Libovolné metody, která je definovaná pomocí `params` – klíčové slovo, která umožňuje neurčené počet parametrů, není aktuálně podporována <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Šablony stylů XSLT, které využívají jakékoli metody definované s `params` – klíčové slovo nebude pracovat správně. Podrobnosti najdete v tématu [parametry](~/docs/csharp/language-reference/keywords/params.md).  
+ Jakoukoli metodu, která je definována s `params` klíčové slovo, které umožňuje neurčené počtu parametrů, se aktuálně nepodporují <xref:System.Xml.Xsl.XslCompiledTransform> třídy. XSLT šablony stylů, které využívají jakékoli metody definované `params` – klíčové slovo nebude fungovat správně. Podrobnosti najdete v tématu [params](~/docs/csharp/language-reference/keywords/params.md).  
   
-### <a name="to-use-an-xslt-extension-object"></a>Chcete-li použít objekt XSLT rozšíření  
+### <a name="to-use-an-xslt-extension-object"></a>Použití objektu rozšíření XSLT  
   
 1.  Vytvoření <xref:System.Xml.Xsl.XsltArgumentList> objektu a přidejte objekt rozšíření pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> metoda.  
   
-2.  Volání objektu rozšíření z této šablony.  
+2.  Volání objektu rozšíření ze šablony stylů.  
   
-3.  Předat <xref:System.Xml.Xsl.XsltArgumentList> do objektu <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metoda.  
+3.  Předání <xref:System.Xml.Xsl.XsltArgumentList> objektu <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.  
   
 ## <a name="see-also"></a>Viz také  
  [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  

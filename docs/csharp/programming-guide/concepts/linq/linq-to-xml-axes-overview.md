@@ -2,17 +2,17 @@
 title: Přehled LINQ to XML osy (C#)
 ms.date: 07/20/2015
 ms.assetid: 516792fb-461d-40a8-8a50-9993a51258fc
-ms.openlocfilehash: 0fe8766e3bcde17b59d78f0659043b8d4f017066
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 9b771e0157d1fcfbbb4643d24ccdbf096787f08b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37961284"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43486854"
 ---
 # <a name="linq-to-xml-axes-overview-c"></a>Přehled LINQ to XML osy (C#)
 Po vytvoření stromu XML nebo načíst dokument XML do stromu XML, můžete ho najít prvky a atributy a jejich hodnoty získat dotazovat. Načtení kolekce prostřednictvím *metody osy*, označované také jako *osy*. Některé osy jsou metody v <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument> třídy, který vrací <xref:System.Collections.Generic.IEnumerable%601> kolekce. Některé osy jsou metody rozšíření v <xref:System.Xml.Linq.Extensions> třídy. Osy, které jsou implementovány jako metody rozšíření pracují s kolekcemi a vrací kolekce.  
   
- Jak je popsáno v [přehled třídy XElement](http://msdn.microsoft.com/library/d35180fe-7016-4895-9bfc-ba1e3f7875ec), <xref:System.Xml.Linq.XElement> objekt představuje jeden element uzel. Obsah elementu může být složité (říká se jim Strukturovaný obsah), nebo může být jednoduchý prvek. Jednoduchý prvek může být prázdný nebo obsahovat hodnotu. Pokud uzel obsahuje Strukturovaný obsah, můžete použít různé metody osy načíst výčty následovnické elementy. Nejčastěji používané osy metody jsou <xref:System.Xml.Linq.XContainer.Elements%2A> a <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
+ Jak je popsáno v [přehled třídy XElement](https://msdn.microsoft.com/library/d35180fe-7016-4895-9bfc-ba1e3f7875ec), <xref:System.Xml.Linq.XElement> objekt představuje jeden element uzel. Obsah elementu může být složité (říká se jim Strukturovaný obsah), nebo může být jednoduchý prvek. Jednoduchý prvek může být prázdný nebo obsahovat hodnotu. Pokud uzel obsahuje Strukturovaný obsah, můžete použít různé metody osy načíst výčty následovnické elementy. Nejčastěji používané osy metody jsou <xref:System.Xml.Linq.XContainer.Elements%2A> a <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
   
  Kromě metod osy, které vracejí kolekce, jsou dvě další metody, které se běžně používají v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy. <xref:System.Xml.Linq.XContainer.Element%2A> Metoda vrací jedinou <xref:System.Xml.Linq.XElement>. <xref:System.Xml.Linq.XElement.Attribute%2A> Metoda vrací jedinou <xref:System.Xml.Linq.XAttribute>.  
   

@@ -5,24 +5,24 @@ helpviewer_keywords:
 - XML literals [Visual Basic], creating
 ms.assetid: 573a6db5-b14d-4e42-b356-8cc7e2d77745
 ms.openlocfilehash: e5f8429b3ff02678bf8bf3e9e32bef6eb1a56831
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33652867"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43483616"
 ---
 # <a name="how-to-create-xml-literals-visual-basic"></a>Postupy: Vytváření literálů XML (Visual Basic)
-Můžete vytvořit dokument XML, fragment nebo element přímo v kódu pomocí literál XML. V příkladech v tomto tématu ukazují, jak vytvořit element XML, který má tři podřízené elementy a jak vytvořit dokument XML.  
+Dokument XML, fragment nebo element můžete vytvořit přímo v kódu pomocí literálů XML. Příklady v tomto tématu ukazují, jak vytvořit element XML, který obsahuje tři podřízené prvky a vytvořit dokument XML.  
   
- Můžete také [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] rozhraní API pro vytvoření [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekty. Další informace naleznete v tématu <xref:System.Xml.Linq.XElement>.  
+ Můžete také použít [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] rozhraní API k vytvoření [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekty. Další informace naleznete v tématu <xref:System.Xml.Linq.XElement>.  
   
 ### <a name="to-create-an-xml-element"></a>Chcete-li vytvořit XML element  
   
--   Vytvořte vložený XML pomocí syntaxe literál XML, který je stejný jako skutečný syntaxe jazyka XML.  
+-   Vytvořte vložený kód XML pomocí syntaxe literálu XML, který je stejný jako skutečný syntaxe jazyka XML.  
   
      [!code-vb[VbXMLSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-xml-literals_1.vb)]  
   
-     Spusťte kód. Výstup tohoto kódu je:  
+     Spusťte kód. Výstup tohoto kódu je následující:  
   
      `<contact>`  
   
@@ -36,11 +36,11 @@ Můžete vytvořit dokument XML, fragment nebo element přímo v kódu pomocí l
   
 ### <a name="to-create-an-xml-document"></a>Chcete-li vytvořit dokument XML  
   
--   Vytvořte vložený dokument XML. Následující kód vytvoří dokument XML, který má literálu syntaxe, deklarace XML, pokyny pro zpracování, komentáře a elementu, který obsahuje jiný element.  
+-   Vytvořte vložený dokument XML. Následující kód vytvoří dokument XML, který má literálu syntaxi deklarace XML, instrukce pro zpracování, komentáře a element, který obsahuje jiný prvek.  
   
      [!code-vb[VbXMLSamples#30](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-xml-literals_2.vb)]  
   
-     Spusťte kód. Výstup tohoto kódu je:  
+     Spusťte kód. Výstup tohoto kódu je následující:  
   
      `<?xml-stylesheet type="text/xsl" href="show_book.xsl"?>`  
   

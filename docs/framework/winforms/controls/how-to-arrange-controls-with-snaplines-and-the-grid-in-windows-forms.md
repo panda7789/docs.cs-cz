@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Windows Forms, grid options in designer
 - controls [Windows Forms], aligning
 ms.assetid: bb54bce5-880f-4a36-af68-8cf92058dc1c
-ms.openlocfilehash: 9b6a4dbf90ea3541c5919ac1d7c8470b6f0dfcc4
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: bbe6ae2adfe364e41f6627e6b067aa8e18e6e079
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43253388"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43488076"
 ---
 # <a name="how-to-arrange-controls-with-snaplines-and-the-grid-in-windows-forms"></a>Postupy: Uspořádání ovládacích prvků pomocí zarovnávacích čar a mřížky ve Windows Forms
 Použití funkcí rozložení sady Visual Studio, můžete přesně nastavit umístění ovládacích prvků ve formuláři. Ovládací prvky do formuláře přidán nebo přesunout na formuláři mohou být automaticky zarovnány řádků a sloupců mřížky v Návrháři formulářů Windows, nebo je možné zarovnat ovládacích prvků pomocí zarovnávacích čar funkce.  
@@ -25,7 +25,7 @@ Použití funkcí rozložení sady Visual Studio, můžete přesně nastavit um�
   
 -   Vyberte **SnapToGrid** režim rozložení v Návrháři formulářů Windows **možnosti** dialogové okno.  
   
-     Další informace najdete v tématu [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](http://msdn.microsoft.com/library/8dd170af-72f0-4212-b04b-034ceee92834). Všechny ovládací prvky se nyní připojily podél body v mřížce.  
+     Další informace najdete v tématu [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](https://msdn.microsoft.com/library/8dd170af-72f0-4212-b04b-034ceee92834). Všechny ovládací prvky se nyní připojily podél body v mřížce.  
   
      Je-li přichytit jednotlivých ovládacích prvků do mřížky, uzamčení na místě. Ale když jsou zamčené, že se nedá přesunout ani se změněnou velikostí. Další informace o uzamčení ovládacích prvků naleznete v tématu [jak: uzamknout ovládací prvky Windows Forms](../../../../docs/framework/winforms/controls/how-to-lock-controls-to-windows-forms.md).  
   
@@ -36,7 +36,7 @@ Použití funkcí rozložení sady Visual Studio, můžete přesně nastavit um�
      Další informace najdete v tématu [návod: uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md). Nyní můžete zarovnávacích čar na zarovnání a uspořádání ovládacích prvků na formuláři.  
   
 ## <a name="see-also"></a>Viz také  
- [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](http://msdn.microsoft.com/library/8dd170af-72f0-4212-b04b-034ceee92834)  
+ [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](https://msdn.microsoft.com/library/8dd170af-72f0-4212-b04b-034ceee92834)  
  [Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  
  [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)  
  [Postupy: Přidávání ovládacích prvků do Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)  

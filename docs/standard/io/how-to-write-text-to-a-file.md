@@ -13,53 +13,53 @@ helpviewer_keywords:
 ms.assetid: 060cbe06-2adf-4337-9e7b-961a5c840208
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 13fa71487f143b1054cd2014fa74a1c7245ab31b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 70b2d04f381fdbc1ae47b1c90649df045e111afa
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33577111"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43484776"
 ---
 # <a name="how-to-write-text-to-a-file"></a>Postupy: Zápis textu do souboru
-Toto téma ukazuje různé způsoby můžete zápis textu do souborů pro aplikace .NET Framework nebo [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Následující třídy a metody jsou obvykle používány k zapsání textu do souboru:  
+Toto téma ukazuje různé způsoby můžete napsat text do souboru pro aplikace .NET Framework nebo [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Následující třídy a metody se obvykle používají k zápisu textu do souboru:  
   
 -   <xref:System.IO.StreamWriter> -obsahuje metody pro zápis do souboru synchronně (<xref:System.IO.StreamWriter.Write%2A> nebo <xref:System.IO.TextWriter.WriteLine%2A>) nebo asynchronně (<xref:System.IO.StreamWriter.WriteAsync%2A> a <xref:System.IO.StreamWriter.WriteLineAsync%2A>).  
   
--   <xref:System.IO.File> – pro použití s aplikací rozhraní .NET Framework. Poskytuje statické metody pro zápis textu do souboru, jako <xref:System.IO.File.WriteAllLines%2A> a <xref:System.IO.File.WriteAllText%2A>, nebo přidat text do souboru (<xref:System.IO.File.AppendAllLines%2A>, <xref:System.IO.File.AppendAllText%2A> nebo <xref:System.IO.File.AppendText%2A>).  
+-   <xref:System.IO.File> – pro použití s aplikací využívajících rozhraní .NET Framework. Poskytuje statické metody pro zápis textu do souboru jako <xref:System.IO.File.WriteAllLines%2A> a <xref:System.IO.File.WriteAllText%2A>, nebo přidat text do souboru (<xref:System.IO.File.AppendAllLines%2A>, <xref:System.IO.File.AppendAllText%2A> nebo <xref:System.IO.File.AppendText%2A>).  
   
--   [FileIO](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.aspx) – Pokud chcete použít s [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Obsahuje asynchronní metody pro zápis textu do souboru ([WriteLinesAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.writelinesasync.aspx) nebo [WriteTextAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.writetextasync.aspx)) nebo přidat text do souboru ([AppendLinesAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.appendlinesasync.aspx) nebo [ AppendTextAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.appendtextasync.aspx)).  
+-   [FileIO](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.aspx) – Pokud chcete používat s [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Obsahuje asynchronní metody zápisu textu do souboru ([WriteLinesAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.writelinesasync.aspx) nebo [WriteTextAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.writetextasync.aspx)) nebo přidat text do souboru ([AppendLinesAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.appendlinesasync.aspx) nebo [ AppendTextAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.appendtextasync.aspx)).  
 
-- <xref:System.IO.Path> -k použití v řetězce, které obsahují informace o cestě soubor nebo adresář. Obsahuje <xref:System.IO.Path.Combine%2A> metoda, která umožňuje zřetězení řetězců za účelem vytvoření cestu k souboru nebo adresáře.
+- <xref:System.IO.Path> -pro použití na řetězce, které obsahují informace o cestě souboru nebo adresáře. Obsahuje <xref:System.IO.Path.Combine%2A> metodu, která umožňuje zřetězení řetězců k sestavení cesty k souboru nebo adresáře.
 
 
- Ukázky jsou jednoduché s cílem zaměřit na úkolu během provádění. Z tohoto důvodu ukázky provést kontrolu minimální chyb a výjimek, pokud existuje. Reálné aplikaci obecně poskytuje robustnější Kontrola chyb a výjimek.  
+ Ukázky jsou jednoduché abychom se mohli zaměřit na úloze prováděné. Z tohoto důvodu ukázky provést kontrolu minimální chyb a zpracování výjimek, případné. Reálné aplikaci obvykle poskytuje robustnější kontroly chyb a zpracování výjimek.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak synchronně zápis textu do nového souboru pomocí <xref:System.IO.StreamWriter> třídy, jeden řádek v čase. Nový textový soubor je uložit do složky Dokumenty uživatele. Protože <xref:System.IO.StreamWriter> je deklarovaný a vytvoření instance v objektu `using` příkaz, <xref:System.IO.StreamWriter.Dispose%2A> je volána metoda, které automaticky vyprázdní a zavře datového proudu.  
+ Následující příklad ukazuje, jak synchronně zápis textu do nového souboru pomocí <xref:System.IO.StreamWriter> třídy, jeden řádek v čase. Nový textový soubor se uloží do složky Dokumenty uživatele. Protože <xref:System.IO.StreamWriter> objekt je deklarovaný a instance v `using` příkaz, <xref:System.IO.StreamWriter.Dispose%2A> vyvolání metody, které automaticky vyprázdní a zavře datový proud.  
   
  [!code-csharp[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source.cs#writeline)] 
  [!code-vb[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source.vb#writeline)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak přidat text do existujícího souboru pomocí <xref:System.IO.StreamWriter> třídy. Používá stejný textový soubor z předchozího příkladu.  
+ Následující příklad ukazuje, jak připojit text k existující soubor pomocí <xref:System.IO.StreamWriter> třídy. Používá stejný textový soubor z předchozího příkladu.  
   
  [!code-csharp[Conceptual.BasicIO.TextFiles#AppendText](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source.cs#appendtext)] 
  [!code-vb[Conceptual.BasicIO.TextFiles#AppendText](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source.vb#appendtext)]     
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak pro asynchronní zapsání textu do nového souboru pomocí <xref:System.IO.StreamWriter> třídy. Chcete-li vyvolání <xref:System.IO.StreamWriter.WriteAsync%2A> metoda, volání metody, které musí být v rámci `async` metoda. Nový textový soubor je uložit do složky Dokumenty uživatele.  
+ Následující příklad ukazuje způsob asynchronního zápisu textu do nového souboru pomocí <xref:System.IO.StreamWriter> třídy. Aby bylo možné vyvolat <xref:System.IO.StreamWriter.WriteAsync%2A> metody volání metody, které musí být v rámci `async` metoda. Nový textový soubor se uloží do složky Dokumenty uživatele.  
   
  [!code-csharp[Conceptual.BasicIO.TextFiles#WriteAsync](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source.cs#writeasync)] 
  [!code-vb[Conceptual.BasicIO.TextFiles#WriteAsync](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source.vb#writeasync)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zápis textu do nového souboru a připojit nové řádky textu na stejný soubor pomocí <xref:System.IO.File> třídy. <xref:System.IO.File.WriteAllText%2A> a <xref:System.IO.File.AppendAllLines%2A> metody otevřete a zavřete soubor automaticky. Pokud cesta, která jste zadali do <xref:System.IO.File.WriteAllText%2A> metoda již existuje, soubor se přepíše.  
+ Následující příklad ukazuje, jak zápis textu do nového souboru a přidávat nové řádky textu do stejného souboru pomocí <xref:System.IO.File> třídy. <xref:System.IO.File.WriteAllText%2A> a <xref:System.IO.File.AppendAllLines%2A> metod otevřete a zavřete soubor automaticky. Pokud ji zadáte do <xref:System.IO.File.WriteAllText%2A> metoda již existuje, soubor se přepíše.  
   
  [!code-csharp[Conceptual.BasicIO.TextFiles#WriteFile](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source.cs#writefile)] 
  [!code-vb[Conceptual.BasicIO.TextFiles#WriteFile](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source.vb#writefile)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak pro asynchronní zapsání uživatelský vstup do textového souboru v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Kvůli zabezpečení se otevřením souboru z [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace obvykle vyžaduje použití [FileOpenPicker](http://msdn.microsoft.com/library/windows/apps/windows.storage.pickers.fileopenpicker.aspx) ovládacího prvku. V tomto příkladu `FileOpenPicker` je vyfiltrovány a zobrazí se textových souborů.  
+ Následující příklad ukazuje, jak asynchronního zápisu vstupu uživatele do textového souboru v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Kvůli zabezpečení, otevřete soubor z [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace obvykle vyžaduje použití [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/windows.storage.pickers.fileopenpicker.aspx) ovládacího prvku. V tomto příkladu `FileOpenPicker` se vyfiltruje a zobrazí textové soubory.  
   
 ```xaml  
 <Page  

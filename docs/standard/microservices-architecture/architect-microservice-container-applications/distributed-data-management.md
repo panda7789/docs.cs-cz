@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: aeafaa8e618e02cab127593a19dda1d72780e091
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 7e539067b20f0e018496b0076582619cb88072e1
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42998681"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43480662"
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>Výzvy a řešení správy distribuovaných dat
 
@@ -43,7 +43,7 @@ Nicméně pokud návrhu aplikace zahrnuje neustále agregování informací z n�
 
 Jak bylo uvedeno dříve, data vlastníkem jednotlivých mikroslužeb je privátní pro tento mikroslužeb a je přístupný pouze pomocí jeho mikroslužeb rozhraní API. Jak implementovat začátku do konce obchodních procesů při zachování konzistence napříč několika mikroslužeb je proto zobrazí výzvu.
 
-Pokud chcete tento problém analyzovat, Podívejme se na příklad z [aplikaci eShopOnContainers odkazovat aplikace](http://aka.ms/eshoponcontainers). Mikroslužby katalogu uchovává informace o všech produktů, včetně jejich zásob. Mikroslužby řazení spravuje objednávky a musíte ověřit, že nová objednávka nepřekročí zásobách produktů katalogy k dispozici. (Nebo tento scénář může zahrnovat logiku, která zpracovává doobjednáno produkty). Hypotetický monolitické verze této aplikace pořadí subsystému jednoduše použít transakci ACID zkontrolujte dostupné, vytvořit pořadí v tabulce objednávky a aktualizovat dostupných skladových tabulky produktů.
+Pokud chcete tento problém analyzovat, Podívejme se na příklad z [aplikaci eShopOnContainers odkazovat aplikace](https://aka.ms/eshoponcontainers). Mikroslužby katalogu uchovává informace o všech produktů, včetně jejich zásob. Mikroslužby řazení spravuje objednávky a musíte ověřit, že nová objednávka nepřekročí zásobách produktů katalogy k dispozici. (Nebo tento scénář může zahrnovat logiku, která zpracovává doobjednáno produkty). Hypotetický monolitické verze této aplikace pořadí subsystému jednoduše použít transakci ACID zkontrolujte dostupné, vytvořit pořadí v tabulce objednávky a aktualizovat dostupných skladových tabulky produktů.
 
 Nicméně v aplikacích založených na mikroslužbách tabulky objednávky a produktu jsou vlastněny jejich odpovídajících mikroslužeb. Žádné mikroslužeb by měl obsahovat někdy vlastněn jinou mikroslužeb v jeho vlastní transakce nebo dotazy, databází, jak ukazuje obrázek 4 – 9.
 
@@ -51,7 +51,7 @@ Nicméně v aplikacích založených na mikroslužbách tabulky objednávky a pr
 
 **Obrázek 4 – 9**. Mikroslužby nemá přímý přístup k tabulce v jiném mikroslužeb
 
-Mikroslužby řazení by neměl přímo, aktualizovat tabulky produktů, protože vlastníkem katalogu mikroslužeb je tabulka produktů. Pokud chcete provést aktualizaci katalogu mikroslužeb, mikroslužbách řazení používejte vždy jen asynchronní komunikace, jako je například integrace událostí (zpráv a komunikaci na bázi události). Toto je způsob, jakým [aplikaci eShopOnContainers](http://aka.ms/eshoponcontainers) referenční aplikace provádí tento typ aktualizace.
+Mikroslužby řazení by neměl přímo, aktualizovat tabulky produktů, protože vlastníkem katalogu mikroslužeb je tabulka produktů. Pokud chcete provést aktualizaci katalogu mikroslužeb, mikroslužbách řazení používejte vždy jen asynchronní komunikace, jako je například integrace událostí (zpráv a komunikaci na bázi události). Toto je způsob, jakým [aplikaci eShopOnContainers](https://aka.ms/eshoponcontainers) referenční aplikace provádí tento typ aktualizace.
 
 Jak je uvedeno ve [věty](https://en.wikipedia.org/wiki/CAP_theorem), je nutné zvolit mezi dostupností a odpovídající zásadám ACID silnou konzistenci. Většina scénářů založených na mikroslužbách poptávky, dostupnosti a vysokou škálovatelnost na rozdíl od silné konzistence. Důležité podnikové aplikace musí zůstat nahoru a běží a vývojáři můžete alternativně vyřešit silná konzistence pomocí techniky pro práci s slabá nebo konečné konzistence. Jedná se o postup provedenou většina architektur založených na mikroslužbách.
 

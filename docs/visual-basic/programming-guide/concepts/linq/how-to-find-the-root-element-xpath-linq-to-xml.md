@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: vyhledání kořenový Element (XPath-technologie LINQ to XML) (Visual Basic)'
+title: 'Postupy: Vyhledání kořenového elementu (XPath – LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 72c3aed5-9522-4454-a876-2070aad13f2e
 ms.openlocfilehash: 112be85e8af8fbe31f62ef91db04de72a3793082
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33641079"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43483668"
 ---
-# <a name="how-to-find-the-root-element-xpath-linq-to-xml-visual-basic"></a>Postupy: vyhledání kořenový Element (XPath-technologie LINQ to XML) (Visual Basic)
-Toto téma ukazuje, jak získat kořenový element s XPath a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+# <a name="how-to-find-the-root-element-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání kořenového elementu (XPath – LINQ to XML) (Visual Basic)
+Toto téma ukazuje, jak získat kořenový element, jejichž výraz XPath a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
  Výraz XPath je:  
   
@@ -19,7 +19,7 @@ Toto téma ukazuje, jak získat kořenový element s XPath a [!INCLUDE[sqltecxli
 ## <a name="example"></a>Příklad  
  Tento příklad vyhledá kořenový element.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: více nákupních objednávek (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```vb  
 Dim po As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -46,4 +46,4 @@ PurchaseOrders
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+ [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

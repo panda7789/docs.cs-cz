@@ -1,19 +1,19 @@
 ---
-title: Vlastnost povýšení aktivity
+title: Aktivita propagace vlastnosti
 ms.date: 03/30/2017
 ms.assetid: 802196b7-1159-4c05-b41b-d3bfdfcc88d9
-ms.openlocfilehash: 46e74c8c479e545778db92e15de3cb8798dafa11
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6e059a0d344e6c62833feaa890c459c141a49673
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33519922"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481134"
 ---
-# <a name="property-promotion-activity"></a>Vlastnost povýšení aktivity
-Tato ukázka poskytuje-komplexní řešení, která integruje <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> funkci povýšení přímo do pracovního postupu pro tvorbu prostředí. Soubor konfigurace – elementy, aktivity pracovního postupu a pracovní postup rozšíření, které usnadňují používání funkce povýšení jsou k dispozici. Kromě toho vzorek obsahuje jednoduché pracovní postup, který ukazuje, jak lze pomocí této kolekce.  
+# <a name="property-promotion-activity"></a>Aktivita propagace vlastnosti
+Tato ukázka poskytuje-ucelené řešení, která se integruje <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> funkci povýšení přímo do prostředí pro tvorbu pracovního postupu. Kolekce elementů konfigurace, aktivity pracovního postupu a pracovní postup rozšíření, která zjednodušuje použití funkce povýšení jsou k dispozici. Kromě toho vzorek obsahuje jednoduchý pracovní postup, který ukazuje, jak tuto kolekci použít.  
   
 > [!NOTE]
->  Ukázky jsou uvedeny pouze pro vzdělávací účely. Nejsou určeny pro produkční prostředí a nebyly testovány v produkčním prostředí. Společnost Microsoft neposkytuje pro tyto ukázky technickou podporu.  
+>  Ukázky jsou k dispozici pouze pro vzdělávací účely. Nejsou určeny pro produkční prostředí a nebyly testovány v produkčním prostředí. Společnost Microsoft neposkytuje pro tyto ukázky technickou podporu.  
   
 ## <a name="prerequisites"></a>Požadavky  
   
@@ -23,53 +23,53 @@ Tato ukázka poskytuje-komplexní řešení, která integruje <xref:System.Activ
   
 ## <a name="sample-projects"></a>Ukázkové projekty  
   
--   **PropertyPromotionActivity** projekt obsahuje soubory vztahující se k povýšení konkrétní konfigurační prvky, aktivity pracovního postupu a pracovní postup rozšíření.  
+-   **PropertyPromotionActivity** projekt obsahuje soubory vztahující se na podporu konkrétní konfigurační prvky, aktivity pracovního postupu a rozšíření pracovního postupu.  
   
 -   **CounterServiceApplication** projekt obsahuje ukázkový pracovní postup, který používá **SqlWorkflowInstanceStorePromotion** projektu.  
   
 -   Skript SQL (PropertyPromotionActivitySQLSample.sql), který musí být spuštěn proti <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> databáze.  
   
--   Soubor řešení, který odkazuje dva [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] projekty (`PropertyPromotionActivity.sln`)  
+-   Soubor řešení, která propojuje dvě [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] projekty (`PropertyPromotionActivity.sln`)  
   
-## <a name="to-set-up-and-run-the-sample"></a>Jak nastavit a spustit ukázku  
+## <a name="to-set-up-and-run-the-sample"></a>K nastavení a spuštění ukázky  
   
-1.  Inicializuje databázi trvalost pracovního postupu.  
+1.  Inicializace databáze trvalosti pracovního postupu.  
   
-    1.  Přejděte do adresáře ukázkové (\WF\Basic\Persistence\PropertyPromotionActivity) a spusťte CreateInstanceStore.cmd.  
+    1.  Přejděte do adresáře vzorku (\WF\Basic\Persistence\PropertyPromotionActivity) a spusťte CreateInstanceStore.cmd.  
   
-    2.  Pokud nejsou k dispozici oprávnění správce, vytvořte přihlášení systému SQL Server. V systému SQL Server Management Studio přejděte do **zabezpečení**, **přihlášení**. Klikněte pravým tlačítkem na **přihlášení** a vytvořte nové přihlašovací údaje. Přidat seznamu ACL uživatele k roli SQL otevřením **databáze**, **InstanceStore**, **zabezpečení**. Klikněte pravým tlačítkem na **uživatelé** a vyberte **nového uživatele**. Nastavte **přihlašovací jméno** uživateli vytvořili výše. Přidejte uživatele k členství role databáze System.Activities.DurableInstancing.InstanceStoreUsers (a dalších). Všimněte si, že tento uživatel může existovat již (například dbo uživatele).  
+    2.  Pokud nejsou k dispozici oprávnění správce, vytvořte přihlášení systému SQL Server. V SQL Server Management Studio, přejděte na **zabezpečení**, **přihlášení**. Klikněte pravým tlačítkem na **přihlášení** a vytvořte nové přihlašovací údaje. Přidejte uživatele seznamu ACL k roli SQL tak, že otevřete **databází**, **třídy InstanceStore**, **zabezpečení**. Klikněte pravým tlačítkem na **uživatelé** a vyberte **nového uživatele**. Nastavte **přihlašovací jméno** uživateli vytvořené výše. Přidáte uživatele k členství role databáze System.Activities.DurableInstancing.InstanceStoreUsers (a ostatní). Všimněte si, že uživatel může existovat už (například objekt dbo uživatele).  
   
 2.  Otevřete soubor řešení PropertyPromotionActivity.sln v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-3.  Pokud jste vytvořili instanci úložiště do jiné databáze než místní instalace systému SQL Server Express, je nutné aktualizovat připojovací řetězec databáze. Příkaz ALTER souboru App.config v části **CounterServiceApplication** nastavením hodnotu `connectionString` atributu u `sqlWorkflowInstanceStorePromotion` uzlu tak, aby odkazoval na databázi trvalost, který byl inicializován v kroku 1.  
+3.  Pokud jste vytvořili v úložišti instancí v jiné databáze než místní instalace systému SQL Server Express, je nutné aktualizovat připojovací řetězec databáze. Příkaz ALTER souboru App.config v části **CounterServiceApplication** tak, že nastavíte hodnotu `connectionString` atribut na `sqlWorkflowInstanceStorePromotion` uzlu tak, aby odkazovala na databáze trvalosti, který byl inicializován v kroku 1.  
   
-4.  Sestavení a spuštění řešení. To se spustit službu čítač WF a automaticky spustí instanci pracovního postupu.  
+4.  Sestavte a spusťte řešení. Se spustit službu WF čítače a automaticky spustí instanci pracovního postupu.  
   
-5.  Rychle vyberte všechny řádky v [dbo]. Zobrazení [counterService] v databázi trvalost (v tomto zobrazení byl přidán spuštěním CreateInstanceStore.cmd v kroku 1). Zobrazí se podobné následujícímu sadě výsledků dotazu:  
+5.  Rychle vyberte všechny řádky v [dbo]. Zobrazení [counterService] databáze trvalosti (Toto zobrazení byl přidán spuštěním CreateInstanceStore.cmd v kroku 1). Zobrazí se výsledek podobný následujícímu nastavení:  
   
-    |identifikátor instanceId|Přepočtené|CounterValueLastUpdated|  
+    |instanceId|CounterValue|CounterValueLastUpdated|  
     |----------------|------------------|-----------------------------|  
     |2FA2C302-929E-4C0D-8C25-768A3DA20CE5|12|2010-02-18 22:48:01.740|  
   
-     Jak můžete pokračovat v obnovování zobrazení, si všimnete, že přepočtené a CounterValueLastUpdated změnit každé dvě sekundy. Toto je interval, ve kterém čítač se aktualizuje sám. Přepočtené a CounterValueLastUpdated představují propagovaných vlastnosti pro tento pracovní postup.  
+     Jak zachovat aktualizace zobrazení, můžete si všimnout, že CounterValue a CounterValueLastUpdated změnit každé dvě sekundy. Jedná se o interval, ve kterém se čítač aktualizuje sám. CounterValue a CounterValueLastUpdated představují propagované vlastnosti pro tento pracovní postup.  
   
 ## <a name="to-remove-the-sample"></a>Chcete-li odebrat vzorku  
   
 -   Spusťte RemoveInstanceStore.cmd v adresáři ukázkové (\WF\Basic\Persistence\PropertyPromotionActivity).  
   
-## <a name="understanding-this-sample"></a>Vysvětlení této ukázky  
+## <a name="understanding-this-sample"></a>Principy tuto ukázku  
  Ukázka obsahuje dva projekty a soubor SQL:  
   
--   **CounterServiceApplication** je konzolová aplikace, který je hostitelem služby jednoduchý čítač WF. Po přijetí jednosměrný zprávy prostřednictvím `Start` koncový bod, pracovní postup počty od 0 do 29, zvyšování proměnnou čítač každé dvě sekundy. Po každé přírůstek čítač potrvají pracovního postupu a propagovaných vlastnosti jsou aktualizovány v [dbo]. [CounterService] zobrazení. Při spuštění konzolové aplikace hostuje službu WF a odešle zprávu, která `Start` koncový bod, vytvoření instance čítače WF.  
+-   **CounterServiceApplication** je konzolová aplikace, který je hostitelem služby jednoduchý čítač WF. Při přijetí jednosměrná zpráva prostřednictvím `Start` koncový bod, pracovní postup se počítá od 0 až 29 zvyšování hodnoty proměnné čítače každé dvě sekundy. Po každý přírůstek čítače pracovní postup se opakuje a propagované vlastnosti jsou aktualizovány v [dbo]. Zobrazení [counterService]. Při spuštění aplikace konzoly hostitelem služby pracovního postupu a odešle zprávu `Start` koncového bodu, vytváří instanci čítače WF.  
   
--   **PropertyPromotionActivity** je knihovna tříd, který obsahuje konfigurační prvky, aktivity pracovního postupu a pracovní postup rozšíření, **CounterServiceApplication** používá.  
+-   **PropertyPromotionActivity** je knihovny tříd, který obsahuje konfigurační prvky, aktivity pracovního postupu a pracovní postup rozšíření, která **CounterServiceApplication** používá.  
   
 -   **PropertyPromotionActivitySQLSample.sql** vytvoří a přidá zobrazení [dbo]. [ CounterService] do databáze.  
   
 ### <a name="counterserviceapplication"></a>CounterServiceApplication  
   
-#### <a name="using-the-sqlworkflowinstancestorepromotion-configuration-element"></a>Pomocí elementu SqlWorkflowInstanceStorePromotion konfigurace  
- `SqlWorkflowInstanceStorePromotion` Konfigurace element dědí z `SqlWorkflowInstanceStore` konfigurace elementu, ale přidá další konfiguraci prvek s názvem `promotionSets`. `promotionSets` Prvek umožní uživateli zadat propagovaných vlastnosti prostřednictvím konfigurace. Toto je konfigurační soubor, který je používán v ukázkovém:  
+#### <a name="using-the-sqlworkflowinstancestorepromotion-configuration-element"></a>Pomocí konfiguračního elementu SqlWorkflowInstanceStorePromotion  
+ `SqlWorkflowInstanceStorePromotion` Element konfigurace dědí z `SqlWorkflowInstanceStore` prvek konfigurace, ale přidá další konfigurační prvek s názvem `promotionSets`. `promotionSets` Element umožňuje uživateli zadat propagované vlastnosti prostřednictvím konfigurace. Toto je konfigurační soubor, který se používá v rámci ukázky:  
   
 ```xml  
 <sqlWorkflowInstanceStorePromotion connectionString ="Data Source=.;Initial Catalog=SqlWorkflowInstanceStoreTest;Integrated Security=True;">  
@@ -82,7 +82,7 @@ Tato ukázka poskytuje-komplexní řešení, která integruje <xref:System.Activ
 </sqlWorkflowInstanceStorePromotion>  
 ```  
   
- Zkontrolujte definici [dbo]. [CounterService] zobrazení.  
+ Zkontrolujte definici [dbo]. Zobrazení [counterService].  
   
 ```sql  
 create view [dbo].[CounterService] as  
@@ -94,18 +94,18 @@ create view [dbo].[CounterService] as
 go  
 ```  
   
- Když instanci pracovního postupu přetrvává, vloží se řádek do `InstancePromotedProperties` zobrazení pro každý `PromotionSet` definované v konfiguraci. Tento řádek obsahuje všechny propagovaných vlastnosti `PromotionSet` (povýší jednu vlastnost pro každý sloupec). To `PromotionSet` je s klíči řazenou kolekci členů: `InstanceId, PromotionName`. V této ukázce jsme mít jeden `PromotionSet` definované v konfiguraci, jehož název atributu je `CounterService`. Poznámka: Jak `PromotionName` hodnota sloupce je rovna atribut názvu `PromotionSet` elementu.  
+ Pokud instance pracovního postupu budou dál problémy, vloží se řádek do `InstancePromotedProperties` zobrazení pro jednotlivé `PromotionSet` definované v konfiguraci. Tento řádek obsahuje všechny propagované vlastnosti `PromotionSet` (přesunuté jednu vlastnost pro každý sloupec). To `PromotionSet` označenými pomocí řazené kolekce členů: `InstanceId, PromotionName`. V tomto příkladu máme, jeden `PromotionSet` definované v konfiguraci, jehož název atributu je `CounterService`. Poznámka: Jak `PromotionName` hodnota sloupce je rovna hodnotě atribut name `PromotionSet` elementu.  
   
- Pořadí `promotedValue` elementy koreluje s propagovaných vlastností v umístění `InstancePromotedProperties` zobrazení. `Count` je první `promotedValue` elementu. V důsledku toho je namapovaný na `Value1` sloupec v `InstancePromotedProperties` zobrazení. `LastIncrementedAt` je druhá `promotedValue` elementu. V důsledku toho je namapovaný na `Value2` sloupec v `InstancePromotedProperties` zobrazení.  
+ Pořadí `promotedValue` prvky koreluje s umístění propagované vlastnosti `InstancePromotedProperties` zobrazení. `Count` je první `promotedValue` elementu. V důsledku toho je namapována na `Value1` sloupec `InstancePromotedProperties` zobrazení. `LastIncrementedAt` je druhý `promotedValue` elementu. V důsledku toho je namapována na `Value2` sloupec `InstancePromotedProperties` zobrazení.  
   
-#### <a name="using-the-promotevalue-activity"></a>Pomocí aktivity PromoteValue  
- Zkontrolujte v souboru CounterService.xamlx v Návrháři Windows Workflow Foundation. Definice pracovního postupu jsou speciální dvě aktivity: `PromoteValue<DateTime>` a `PromoteValue<Int32>`.  
+#### <a name="using-the-promotevalue-activity"></a>Použití aktivity PromoteValue  
+ Zkontrolujte soubor CounterService.xamlx v Návrháři Windows Workflow Foundation. Všimněte si, že existují dva speciální aktivity v definici pracovního postupu: `PromoteValue<DateTime>` a `PromoteValue<Int32>`.  
   
- `PromoteValue<Int32>` Aktivita má jeho `Name` člen definován jako `Count`. To odpovídá s prvním `promotedValue` element v konfiguraci a má jeho `Value` definován jako `Counter` proměnné pracovního postupu. Když pracovní postup potrvají, `Counter` proměnné pracovního postupu je uchován jako propagovaných vlastnost do `Value1` sloupec `InstancePromotedProperties` zobrazení.  
+ `PromoteValue<Int32>` Aktivita má jeho `Name` člena definovaného jako `Count`. Shoduje se s prvním `promotedValue` element v konfiguraci a má jeho `Value` definován jako `Counter` proměnné pracovního postupu. Když pracovní postup budou dál problémy, `Counter` proměnné pracovního postupu je trvalý jako propagovanou vlastnost do `Value1` sloupec `InstancePromotedProperties` zobrazení.  
   
- `PromoteValue<DateTime>` Aktivita má jeho `Name` člen definován jako `LastIncrementedAt`. To odpovídá s druhou `promotedValue` element v konfiguraci a má jeho `Value` definován jako `TimeLastIncremented` proměnné pracovního postupu. To znamená, že když pracovní postup přetrvává, hodnota `TimeLastIncremented` proměnné pracovního postupu bude natrvalo jako propagovaných vlastnost do `Value2` sloupec `InstancePromotedProperties` zobrazení.  
+ `PromoteValue<DateTime>` Aktivita má jeho `Name` člena definovaného jako `LastIncrementedAt`. Shoduje se s druhým `promotedValue` element v konfiguraci a má jeho `Value` definován jako `TimeLastIncremented` proměnné pracovního postupu. To znamená, že když pracovní postup budou dál problémy, hodnota `TimeLastIncremented` proměnné pracovního postupu se nastavit jako trvalý, jako propagovanou vlastnost do `Value2` sloupec `InstancePromotedProperties` zobrazení.  
   
- Všimněte si, že `PromotedValue` aktivita má také Boolean člena s názvem `ClearExistingPromotedData`. Když je tento člen nastavená na `true`, zruší všechny hodnoty vlastností propagovaných až tento bod v pracovním postupu. Například pokud aktivitu pořadí je definován jako takto:  
+ Všimněte si, že `PromotedValue` aktivity také obsahuje logický člena s názvem `ClearExistingPromotedData`. Pokud je tento člen nastaven na `true`, tato akce smaže všechny hodnoty propagované vlastnosti až k danému bodu v pracovním postupu. Například pokud sekvenční aktivity je definován jako následující:  
   
 1.  PromoteValue {Name = "Count", hodnota = 3}  
   
@@ -117,13 +117,13 @@ go
   
 5.  Zachovat  
   
- Na druhé zachovat povýšeného hodnota `Count` 4. Ale propagovaných hodnota `LastIncrementedAt` bude `NULL`. Pokud `ClearExistingPromotedData` nebyl nastaven na `true` kroku 4, pak po druhé zachovat povýšeného hodnotu pro počet by bylo 4. V důsledku toho propagovaných hodnota `LastIncrementedAt` by však bylo 1-1-2000.  
+ Na druhé trvalého přesunutá hodnota `Count` budou 4. Ale přesunutá hodnota `LastIncrementedAt` bude `NULL`. Pokud `ClearExistingPromotedData` nebyl nastaven na `true` kroku 4, pak po druhé trvalého přesunutá hodnotu Count by 4. V důsledku toho přesunutá hodnota `LastIncrementedAt` stále by šlo 1-1-2000.  
   
 ### <a name="propertypromotionactivity"></a>PropertyPromotionActivity  
- Tato knihovna tříd obsahuje následující veřejné třídy ke zjednodušení použití <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> funkci povýšení.  
+ Tato knihovna tříd obsahuje následující veřejných tříd zjednodušení používání <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> funkci povýšení.  
   
-#### <a name="promotevalue-class"></a>PromoteValue – třída  
- Tato třída podporuje jednu vlastnost. Název propagovaných vlastnosti by měl odpovídat názvu atributu `promotedValue` element v konfiguraci. Tato aktivita lze použít v Návrháři pracovních postupů. V tématu CounterServiceApplication pro příklad použití.  
+#### <a name="promotevalue-class"></a>Třída PromoteValue  
+ Tato třída podporuje jednu vlastnost. Název propagované vlastnosti by měl odpovídat názvu atributu `promotedValue` element v konfiguraci. Tato aktivita se dá použít v Návrháři pracovních postupů. Zobrazit CounterServiceApplication pro příklady použití.  
   
 ```csharp  
 public class PromoteValue<T> : CodeActivity  
@@ -138,17 +138,17 @@ public class PromoteValue<T> : CodeActivity
 }  
 ```  
   
- ClearExistingPromotedData (logická hodnota)  
- Vymaže všechny hodnoty, které byly povýší před této aktivity.  
+ ClearExistingPromotedData (Bool)  
+ Vymaže všechny hodnoty, které byly přesunuty před této aktivity.  
   
- název (string)  
- Název, který představuje tuto vlastnost. Mělo by to odpovídat atribut názvu \<promotedValue > element v konfiguraci.  
+ Název (řetězec)  
+ Název, který představuje tuto vlastnost. Ten by měl odpovídat názvu atributu \<promotedValue > element v konfiguraci.  
   
- Hodnota (InArgument\<T >)  
+ Hodnota (argument InArgument\<T >)  
  Proměnná / hodnota, které chcete uložit ve sloupci.  
   
-#### <a name="promotevalues-class"></a>PromoteValues – třída  
- Zvýší úroveň více vlastností. Názvy vlastností propagovaných musí odpovídat všechny atributy názvu v `promotedValue` elementy v konfiguraci. Využití je podobná `PromoteValue` aktivity, s výjimkou fakt, že můžete zvýšit úroveň více vlastností ve stejnou dobu. Tuto aktivitu nelze použít v Návrháři pracovních postupů.  
+#### <a name="promotevalues-class"></a>Třída PromoteValues  
+ Podporuje více vlastností. Názvy propagované vlastnosti by měla odpovídat všechny atributy názvu v `promotedValue` prvky v konfiguraci. Využití je podobný `PromoteValue` aktivity, s výjimkou skutečnost, že ve stejnou dobu může být povýšen víc vlastností. Tuto aktivitu nelze použít v Návrháři pracovních postupů.  
   
 ```  
 public class PromoteValues : CodeActivity  
@@ -164,7 +164,7 @@ public class PromoteValues : CodeActivity
 ```  
   
 #### <a name="sqlworkflowinstancestorepromotionbehavior"></a>SqlWorkflowInstanceStorePromotionBehavior  
- Odvozená z `SqlWorkflowInstanceStoreBehavior`. Tato odvozená třída přidá vlastní trvalost účastník (také součástí této knihovny) jako rozšíření pracovního postupu. Implementace předchozích dvou aktivit pracovního postupu spoléhá na tento účastník vlastní trvalost.  
+ Je odvozen od `SqlWorkflowInstanceStoreBehavior`. Tato odvozená třída přidá vlastního účastníka trvalosti (také součástí této knihovny) jako rozšíření pracovního postupu. Implementace předchozích dvou aktivit pracovního postupu závisí na tomto vlastního účastníka trvalosti.  
   
 ```  
 public class SqlWorkflowInstanceStorePromotionBehavior :  
@@ -176,19 +176,19 @@ public class SqlWorkflowInstanceStorePromotionBehavior :
 }  
 ```  
   
- Tato knihovna třída také obsahuje `ConfigurationElement` implementace `SqlWorkflowInstanceStorePromotionElement` , která vlastní trvalost používá předchozí aktivity povýšení.  
+ Tato knihovna tříd obsahuje také `ConfigurationElement` implementace `SqlWorkflowInstanceStorePromotionElement` a vlastního účastníka trvalosti používají předchozí aktivity povýšení.  
   
 ### <a name="propertypromotionactivitysqlsample"></a>PropertyPromotionActivitySQLSample  
- Vytvoří tento soubor SQL `[dbo].[CounterService]` zobrazení kromě `[InstancePromotedProperties]` zobrazení pro dotaz na všechny instance, které mají sadu CounterService povýšení.  
+ Tento soubor SQL vytvoří `[dbo].[CounterService]` zobrazení kromě `[InstancePromotedProperties]` zobrazení pro dotazování na všechny instance, které mají sadu CounterService povýšení.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí):  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí):  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři:  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři:  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Persistence\PropertyPromotionActivity`  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky trvalosti a hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193961)
+ [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

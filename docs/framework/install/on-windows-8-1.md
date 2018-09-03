@@ -1,47 +1,47 @@
 ---
-title: Nainstalujte rozhraní .NET Framework na Windows 8.1
+title: Instalace rozhraní .NET Framework na Windows 8.1
 ms.custom: updateeachrelease
 description: Informace o instalaci rozhraní .NET Framework na Windows 8.1
 author: rlander
 ms.author: mairaw
 ms.date: 10/22/2017
-ms.openlocfilehash: 761441798ff1f8261b573aa734580aec5849489b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a44471e16729468983b76febea7704bf2a0518ff
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33391661"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43488063"
 ---
-# <a name="install-the-net-framework-on-windows-81-and-windows-server-2012-r2"></a>Nainstalujte rozhraní .NET Framework na Windows 8.1 a Windows Server 2012 R2
+# <a name="install-the-net-framework-on-windows-81-and-windows-server-2012-r2"></a>Instalace rozhraní .NET Framework na Windows 8.1 a Windows Server 2012 R2
 
-Rozhraní .NET Framework je potřeba spustit mnoho aplikací v systému Windows. Podle následujících pokynů můžete k její instalaci. Po pokusu o spuštění aplikace a zobrazuje následující dialogové okno na počítači, může po přechodu na této stránce.
+Rozhraní .NET Framework je nutná k provozování spoustu aplikací na Windows. Postupujte podle následujících pokynů můžete použít k jeho instalaci. Po pokusu o spuštění aplikace a zobrazuje následující dialogové okno na svém počítači, může po přechodu na této stránce.
 
 ![Tuto aplikaci nelze spustit.](./media/this-application-could-not-be-started.png)
 
-Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.2](http://go.microsoft.com/fwlink/?LinkID=863255) je na nejnovější verzi. Ho se podporuje na Windows 8.1 a Windows Server 2012 R2 a je součástí [aktualizace Windows 10. dubna 2018](https://www.microsoft.com/software-download/windows10).
+Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863255) má nejnovější verzi. Se podporuje na Windows 8.1 a Windows Server 2012 R2 a je součástí [Windows 10. dubna 2018 Update](https://www.microsoft.com/software-download/windows10).
 
 ## <a name="net-framework-472"></a>Rozhraní .NET framework 4.7.2
 
 > [!div class="button"]
-[.NET Framework 4.7.2 stáhnout](https://www.microsoft.com/net/download/thank-you/net472?utm_source=ms-docs&utm_medium=referral)
+[Stáhnout rozhraní .NET Framework 4.7.2](https://www.microsoft.com/net/download/thank-you/net472?utm_source=ms-docs&utm_medium=referral)
 
 
 <!-- (https://www.microsoft.com/net/framework/versions/net472?utm_source=ms-docs&utm_medium=referral) -->
 
-[Rozhraní .NET Framework 4.7.2](http://go.microsoft.com/fwlink/?LinkID=863255) lze použít ke spuštění aplikace vytvořené pro rozhraní .NET Framework 4.0 nebo novější.
+[Rozhraní .NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863255) je možné ke spouštění aplikací vytvořených pro rozhraní .NET Framework 4.0 nebo novější.
 
 ## <a name="net-framework-35"></a>.NET Framework 3.5
 
-Postupujte podle pokynů k instalaci [rozhraní .NET Framework 3.5 ve Windows 8.1 a 10](dotnet-35-windows-10.md).
+Postupujte podle pokynů k instalaci [rozhraní .NET Framework 3.5 on Windows 8.1 a 10](dotnet-35-windows-10.md).
 
 Rozhraní .NET Framework 3.5 podporuje aplikace vytvořené pro rozhraní .NET Framework 1.0 až 3.5.
 
 ## <a name="help"></a>Nápověda
 
-Můžete [požádejte o pomoc Microsoft](mailto:dotnet-install-help@service.microsoft.com?subject=Install-Help) Pokud nelze získat správnou verzi nainstalováno rozhraní .NET Framework.
+Je možné [pomoc od společnosti Microsoft](mailto:dotnet-install-help@service.microsoft.com?subject=Install-Help) Pokud nelze získat správnou verzi rozhraní .NET Framework nainstalované.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 [Stáhnout rozhraní .NET Framework](https://www.microsoft.com/net/download/framework?utm_source=ms-docs&utm_medium=referral)   
-[Řešení potíží s blokované rozhraní .NET Framework a odinstalacemi](troubleshoot-blocked-installations-and-uninstallations.md)   
-[Nainstalujte rozhraní .NET Framework pro vývojáře](guide-for-developers.md)
+[Řešení potíží s blokované rozhraní .NET Framework instalacemi a odinstalacemi](troubleshoot-blocked-installations-and-uninstallations.md)   
+[Instalace rozhraní .NET Framework pro vývojáře](guide-for-developers.md)

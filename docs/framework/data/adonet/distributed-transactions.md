@@ -2,52 +2,52 @@
 title: Distribuované transakce
 ms.date: 03/30/2017
 ms.assetid: 718b257c-bcb2-408e-b004-a7b0adb1c176
-ms.openlocfilehash: 7792a719a73ca5183d57bcecc5d346153d824570
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 1f45f572b4336e52f7eee224ec80d9b7f423f991
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32766085"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43486324"
 ---
 # <a name="distributed-transactions"></a>Distribuované transakce
-Transakce je sada souvisejících úloh, které buď (Potvrdit) úspěšná nebo neúspěšná (přerušení) jako jednotku, mimo jiné. A *distribuované transakce* je transakci, která ovlivňuje několik prostředků. Pro distribuované transakce potvrzení musí všechny účastníky zaručit, že všechny změny dat bude trvalé. Změny musíte zachovat navzdory zhroucení systému nebo jiné nepředvídatelné události. Pokud jeden účastník neprovede tento záruka, selže celá transakce a všechny změny dat v rámci oboru transakce jsou vráceny zpět.  
+Transakce je sadu související úlohy, která buď (potvrzení) úspěšná nebo neúspěšná (přerušit) jako celek, mimo jiné. A *distribuované transakce* je transakce, která ovlivňuje několik prostředků. Pro distribuovanou transakci potvrdit musí všichni účastníci zaručit, že změny dat bude trvalé. Změny musíte zachovat navzdory zhroucení systému nebo jiné nepředvídatelné události. Pokud ještě jeden účastník neprovede této záruky, celá transakce nezdaří a všechny změny dat v rámci oboru transakce jsou vrácena zpět.  
   
 > [!NOTE]
->  Bude vyvolána výjimka, pokud se pokusíte potvrzení nebo vrácení transakce, pokud `DataReader` je zahájen, když je aktivní transakce.  
+>  Bude vyvolána výjimka, pokud se pokusíte potvrzení nebo vrácení zpět transakcí, pokud `DataReader` je spuštěna, když je aktivní transakce.  
   
-## <a name="working-with-systemtransactions"></a>Práce s System.Transactions –  
- V rozhraní .NET Framework, distribuované transakce se spravují přes rozhraní API v <xref:System.Transactions> oboru názvů. <xref:System.Transactions> Rozhraní API budou delegovat to zpracování monitorování transakce, jako je například Microsoft Distributed Transaction Coordinator (MS DTC) při více správců prostředků trvalé se účastní distribuované transakce. Další informace najdete v tématu [transakce Základy](../../../../docs/framework/data/transactions/transaction-fundamentals.md).  
+## <a name="working-with-systemtransactions"></a>Práce s System.Transactions  
+ V rozhraní .NET Framework, jsou distribuované transakce spravované prostřednictvím rozhraní API ve službě <xref:System.Transactions> oboru názvů. <xref:System.Transactions> Rozhraní API budou delegovat to zpracování k monitorování transakce, jako je například Microsoft distribuované transakce koordinátor (MS DTC) při více správci trvalý prostředků se využívá řada distribuované transakce. Další informace najdete v tématu [Principy transakcí](../../../../docs/framework/data/transactions/transaction-fundamentals.md).  
   
- ADO.NET 2.0 zavedly podporu pro zapsání v distribuované transakce pomocí `EnlistTransaction` metodu, která využívá připojení v <xref:System.Transactions.Transaction> instance. V předchozích verzích technologie ADO.NET, se provádí pomocí explicitní zařazení v distribuovaných transakcích `EnlistDistributedTransaction` metoda připojení k zařazení připojení v <xref:System.EnterpriseServices.ITransaction> instanci, která je podporována pro zpětné kompatibility. Další informace o transakcích podnikové služby, najdete v části [vzájemná funkční spolupráce s Enterprise služeb a transakcí modelu COM +](../../../../docs/framework/data/transactions/interoperability-with-enterprise-services-and-com-transactions.md).  
+ ADO.NET 2.0 zavedl podporu pro uvedení v distribuovaných transakcí pomocí `EnlistTransaction` metodu, která využívá připojení <xref:System.Transactions.Transaction> instance. V předchozích verzích technologie ADO.NET byla provedena pomocí explicitní zařazení do distribuované transakce `EnlistDistributedTransaction` způsob připojení k zařazení připojení <xref:System.EnterpriseServices.ITransaction> instance, která je podporována pro zpětné kompatibility. Další informace o transakcích podnikových služeb, naleznete v tématu [interoperabilita se službami Enterprise Services a transakcemi COM +](../../../../docs/framework/data/transactions/interoperability-with-enterprise-services-and-com-transactions.md).  
   
- Při použití <xref:System.Transactions> transakce s zprostředkovatel rozhraní .NET Framework pro SQL Server na databázi systému SQL Server, lehké <xref:System.Transactions.Transaction> se automaticky použije. Transakce lze pak převést na úplné distribuovanou transakci na podle potřeby. Další informace najdete v tématu [System.Transactions – integrace s SQL serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md).  
-  
-> [!NOTE]
->  Maximální počet distribuovaných transakcí, které můžete najednou součástí databáze Oracle je ve výchozím nastavení do 10. Po 10 transakce je při připojení k databázi Oracle vyvolána výjimka. Oracle nepodporuje `DDL` uvnitř distribuované transakce.  
-  
-## <a name="automatically-enlisting-in-a-distributed-transaction"></a>Automaticky zapsání v distribuované transakce  
- Automatické zařazení je výchozí (a upřednostňovaný) způsob integrace ADO.NET – připojení s `System.Transactions`. Objekt připojení bude automaticky uvést v existující distribuované transakce, pokud zjistí, že transakce je aktivní, který v `System.Transaction` podmínky, znamená, že `Transaction.Current` není null. Automatický zápis do transakce nastane, když je otevřen připojení. Nebude dojít po, i když se příkaz spustí v oboru transakce. Můžete zakázat automatické zařazení ve stávajících transakcí zadáním `Enlist=false` jako parametr s řetězcem připojení pro <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType>, nebo `OLE DB Services=-7` jako parametr s řetězcem připojení pro <xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A?displayProperty=nameWithType>. Další informace o parametrech řetězec připojení Oracle a rozhraní ODBC najdete v tématu <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A?displayProperty=nameWithType> a <xref:System.Data.Odbc.OdbcConnection.ConnectionString%2A?displayProperty=nameWithType>.  
-  
-## <a name="manually-enlisting-in-a-distributed-transaction"></a>Ručně zapsání v distribuované transakce  
- Pokud je zakázáno automatické zařazení nebo potřebujete zařazení transakci, která byla spuštěna po otevření připojení, můžete zařazení existující distribuovanou transakci pomocí `EnlistTransaction` metodu <xref:System.Data.Common.DbConnection> objekt pro poskytovatele práci s. Uvedení v existující distribuované transakce zajistí, že pokud je transakce potvrzena nebo vrácena zpět, změny provedené kód ve zdroji dat bude možné potvrzena nebo vrácena zpět také.  
-  
- Uvedení v distribuovaných transakcích je zvláště použít, když sdružování obchodní objekty. Pokud obchodní objekt je ve fondu s otevřené připojení, automatické transakce zařazení dochází pouze po otevření připojení. Pokud více transakcí se provádí pomocí objektu ve fondu firmy, otevřete připojení pro tento objekt nebude automaticky zapsat do nově initiated transakcí. V takovém případě můžete zakázat automatické transakce zařazení pro připojení a zařazení připojení v transakcích pomocí `EnlistTransaction`.  
-  
- `EnlistTransaction` použije jeden argument typu <xref:System.Transactions.Transaction> tedy odkaz na stávající transakce. Po volání metody připojení `EnlistTransaction` metoda, všechny změny provedené v zdroje dat pomocí připojení jsou zahrnuty v transakci. Předání hodnotou null unenlists připojení z jeho aktuálního zařazení distribuované transakce. Všimněte si, že musí být připojení otevřeno před voláním `EnlistTransaction`.  
+ Při použití <xref:System.Transactions> transakce s zprostředkovatele .NET Framework pro SQL Server pro databázi systému SQL Server, zjednodušenou <xref:System.Transactions.Transaction> se automaticky použije. Transakce může pak být povýšen na úplná distribuované transakce podle potřeby. Další informace najdete v tématu [integrace System.Transactions s SQL serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md).  
   
 > [!NOTE]
->  Po připojení je explicitně zařazeny do transakce, nemůže být zrušení zařazené nebo zařazené v jiné transakci, dokud nebude dokončeno první transakce.  
+>  Maximální počet distribuovaných transakcí, které databáze Oracle se můžete zúčastnit v okamžiku je ve výchozím nastavení do 10. Po 10. transakce je při připojení k databázi Oracle vyvolána výjimka. Oracle nepodporuje `DDL` uvnitř distribuované transakce.  
+  
+## <a name="automatically-enlisting-in-a-distributed-transaction"></a>Automaticky uvedení v distribuované transakci  
+ Automatické zařazení je výchozí (a upřednostňované) způsob, jak integrace připojení ADO.NET s `System.Transactions`. Objekt připojení se automaticky zařadit do existující distribuovanou transakci, pokud určí, že transakcí je aktivní, který v `System.Transaction` podmínky, znamená to, že `Transaction.Current` nemá hodnotu null. Automatický zápis do transakce nastane při otevření připojení. Nesmí dojít po tomto i v případě, že příkaz je proveden v rámci oboru transakce. Automatické zařazení do existující transakce můžete zakázat tak, že zadáte `Enlist=false` jako parametr řetězec připojení <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType>, nebo `OLE DB Services=-7` jako parametr řetězec připojení pro <xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A?displayProperty=nameWithType>. Další informace o Oracle a rozhraní ODBC parametry připojovacího řetězce, naleznete v tématu <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A?displayProperty=nameWithType> a <xref:System.Data.Odbc.OdbcConnection.ConnectionString%2A?displayProperty=nameWithType>.  
+  
+## <a name="manually-enlisting-in-a-distributed-transaction"></a>Ručně uvedení v distribuované transakci  
+ Pokud je zakázáno automatické zařazení nebo budete potřebovat k zařazení transakce, která byla spuštěna po otevření připojení, může zařazení v existujících distribuovaných transakcí pomocí `EnlistTransaction` metodu <xref:System.Data.Common.DbConnection> objekt poskytovatele pracujete s. Uvedení v existující distribuované transakce zajistí, že pokud je transakce potvrzena nebo vrácena zpět, změny provedené v kódu ve zdroji dat se být potvrzena nebo vrácena zpět také.  
+  
+ Uvedení v distribuovaných transakcích platí zejména při vytváření fondů pro obchodní objekty. Pokud obchodní objekt je ve fondu s otevřené připojení, automatické transakce zařazení pouze nastane při otevření tohoto připojení. Pokud více transakcí se provádí pomocí ve fondu obchodního objektu, otevřené připojení pro tento objekt nebude automaticky zařadit do nově iniciované transakce. V takovém případě můžete zakázat automatické transakce zařazení pro připojení a zařadit do transakce pomocí připojení `EnlistTransaction`.  
+  
+ `EnlistTransaction` přijímá jeden argument typu <xref:System.Transactions.Transaction> , který je odkaz na existující transakce. Po volání metody připojení `EnlistTransaction` metoda, všechny změny provedené ve zdroji dat pomocí připojení jsou zahrnuty v transakci. Předání hodnoty null unenlists připojení z jeho aktuálního zařazení distribuované transakce. Všimněte si, že připojení musí být otevřen před voláním `EnlistTransaction`.  
+  
+> [!NOTE]
+>  Po připojení je explicitně zapsána na transakci, nemůže být zrušit zařazených nebo zařazených do jiné transakce až do dokončení první transakce.  
   
 > [!CAUTION]
->  `EnlistTransaction` vyvolá výjimku, pokud připojení již zahájila transakci pomocí připojení <xref:System.Data.Common.DbConnection.BeginTransaction%2A> metoda. Ale pokud transakce je místní transakce spuštěna ve zdroji dat (například provádění příkazu BEGIN TRANSACTION explicitně pomocí <xref:System.Data.SqlClient.SqlCommand>), `EnlistTransaction` bude místní transakci vrátit zpět a uvést v existující distribuované transakce podle požadavku. Neobdrží Všimněte si, že místní transakce byla vrácena zpět a musí spravovat jakékoli místní transakce nebyla spuštěna pomocí <xref:System.Data.Common.DbConnection.BeginTransaction%2A>. Pokud používáte zprostředkovatele dat .NET Framework pro SQL Server (`SqlClient`) se systémem SQL Server, pokus o zařazení vyvolá výjimku. Všech ostatních případech pokračovat nezjištěné.  
+>  `EnlistTransaction` vyvolá výjimku, pokud připojení již začala transakci pomocí připojení <xref:System.Data.Common.DbConnection.BeginTransaction%2A> metody. Ale pokud transakce je spuštěn ve zdroji dat místní transakce (například příkaz BEGIN TRANSACTION explicitně pomocí provádí <xref:System.Data.SqlClient.SqlCommand>), `EnlistTransaction` se vrátit zpět místní transakce a zařazení v existujícím distribuované transakce podle požadavku. Neobdrží Všimněte si, že se místní transakce byla vrácena zpět a spravujte všechny místní transakce nebyla spuštěna pomocí <xref:System.Data.Common.DbConnection.BeginTransaction%2A>. Pokud používáte zprostředkovatele dat .NET Framework pro SQL Server (`SqlClient`) s SQL serverem, pokus o zařazení vyvolá výjimku. Bude pokračovat nezjištěné po všech ostatních případech.  
   
-## <a name="promotable-transactions-in-sql-server"></a>Možné zvýšit transakcí v systému SQL Server  
- Systém SQL Server podporuje možné zvýšit transakce, ve kterých místní transakce lightweight můžete bude automaticky povýšen na distribuovanou transakci pouze v případě potřeby. Možné zvýšit transakce nevyvolá přidaném starat se o distribuované transakce Pokud přidaném režie není nutné. Další informace a ukázku kódu najdete v tématu [System.Transactions – integrace s SQL serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md).  
+## <a name="promotable-transactions-in-sql-server"></a>Možné zařazení transakce v systému SQL Server  
+ SQL Server podporuje možné zařazení transakce, ve kterých místní transakce zjednodušené může být automaticky povýšen na distribuovanou transakci pouze v případě, že je vyžadován. Možné zařazení transakce vyvolat není přidaný režie distribuované transakce, pokud přidaného zatížení je povinný. Další informace a ukázky kódu najdete v tématu [integrace System.Transactions s SQL serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md).  
   
-## <a name="configuring-distributed-transactions"></a>Konfiguraci distribuovaných transakcí  
- Musíte povolit MS DTC přes síť, aby bylo možné používat distribuované transakce. Pokud máte Windows povolena brána Firewall, musíte povolit službu MS DTC se použití sítě nebo otevřít port MS DTC.  
+## <a name="configuring-distributed-transactions"></a>Konfigurace distribuované transakce  
+ Budete muset povolit MS DTC v síti, abyste mohli používat distribuované transakce. Pokud jste Windows povolena brána Firewall, musíte také povolit službě MS DTC a používat síť a neotevírejte port MS DTC.  
   
 ## <a name="see-also"></a>Viz také  
  [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
  [Integrace System.Transactions s SQL Serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

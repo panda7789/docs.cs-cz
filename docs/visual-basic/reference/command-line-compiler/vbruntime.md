@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 1aa0239e-511a-4c29-957d-fd72877b350a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d28d0556a662099e4e5e74b22583fc3c8b4c313f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e83a85e29eb4447f8d3b9dddc4f6ccdbc771b23c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33656110"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43483772"
 ---
 # <a name="-vbruntime"></a>-vbruntime
-Určuje, že by měl kompilátor kompilovat bez odkaz na Visual Basic Runtime Library nebo s odkazem na knihovnu konkrétní runtime.  
+Určuje, že kompilátor by měl kompilovat bez odkazu do knihovny prostředí Runtime jazyka Visual Basic nebo s odkazem na knihovně modulu runtime specifické.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,30 +29,30 @@ Určuje, že by měl kompilátor kompilovat bez odkaz na Visual Basic Runtime Li
   
 ## <a name="arguments"></a>Arguments  
  \-  
- Kompilovat bez odkaz na Visual Basic Runtime Library.  
+ Proveďte kompilaci bez odkazu na knihovnu Runtime jazyka Visual Basic.  
   
  \+  
- Kompilace s odkazem na výchozí hodnoty jazyka Visual Basic Runtime Library.  
+ Kompilovat s odkazem na výchozí knihovny prostředí Runtime jazyka Visual Basic.  
   
  \*  
- Kompilovat bez odkazu na Visual Basic Runtime Library a vložit základní funkce z Visual Basic Runtime Library do sestavení.  
+ Proveďte kompilaci bez odkazu na knihovnu Runtime jazyka Visual Basic a vložit základní funkce z knihovny Runtime jazyka Visual Basic do sestavení.  
   
  `path`  
- Kompilovat s odkazem na uvedené knihovny (DLL).  
+ Kompilovat s odkazem na zadanou knihovnu (DLL).  
   
 ## <a name="remarks"></a>Poznámky  
- `-vbruntime` – Možnost kompilátoru umožňuje určit, že by měl kompilátor kompilovat bez odkazu na Visual Basic Runtime Library. Pokud zkompilujete bez odkazu na Visual Basic Runtime Library, chyby nebo upozornění kód nebo jazyk konstrukce, které generují volání pomocné rutiny modulu runtime jazyka Visual Basic přihlášeni. (A *jazyka Visual Basic runtime pomocná* je funkci definovanou v souboru Microsoft.VisualBasic.dll, která je volána v době běhu k provedení sémantického konkrétní jazyk.)  
+ `-vbruntime` – Možnost kompilátoru umožňuje určit, že kompilátor by měl kompilovat bez odkazu na knihovnu Runtime jazyka Visual Basic. Pokud kompilaci bez odkazu na knihovnu Runtime jazyka Visual Basic, chyby nebo varování jsou protokolovány v kódu nebo jazykové konstrukce, které generují volání pomocné rutiny modulu runtime jazyka Visual Basic. (A *pomocné rutiny modulu runtime jazyka Visual Basic* je funkce definované v souboru Microsoft.VisualBasic.dll, která je volána v době běhu k provedení konkrétní jazyk sémantického.)  
   
- `-vbruntime+` Možnost vytváří stejné chování, k níž dojde, pokud žádné `-vbruntime` je zadán přepínač. Můžete použít `-vbruntime+` možnost přepsat předchozí `-vbruntime` přepínače.  
+ `-vbruntime+` Možnost produkuje stejné chování, který nastane, pokud žádné `-vbruntime` je zadán přepínač. Můžete použít `-vbruntime+` lze přepsat předchozí `-vbruntime` přepínače.  
   
- Většina objekty `My` typu nejsou k dispozici při použití `-vbruntime-` nebo `-vbruntime:path` možnosti.  
+ Většina objektů `My` typu nejsou k dispozici při použití `-vbruntime-` nebo `-vbruntime:path` možnosti.  
   
-## <a name="embedding-visual-basic-runtime-core-functionality"></a>Vložení základní funkce Runtime jazyka Visual Basic  
- `-vbruntime*` Možnost umožňuje kompilovat bez odkaz na knihovnu runtime. Místo toho základní funkce z Visual Basic Runtime Library vložené v sestavení uživatele. Tuto možnost můžete použít, pokud vaše aplikace běží na platformách, které neobsahují runtime jazyka Visual Basic.  
+## <a name="embedding-visual-basic-runtime-core-functionality"></a>Vkládání základní funkce modulu Runtime jazyka Visual Basic  
+ `-vbruntime*` Možnost umožňuje proveďte kompilaci bez odkazu na knihovnu prostředí runtime. Místo toho základní funkce z knihovny Runtime jazyka Visual Basic je vložen do sestavení uživatele. Tuto možnost můžete použít, pokud vaše aplikace běží na platformách, které neobsahují modulu runtime jazyka Visual Basic.  
   
- Následující členy runtime jsou vloženy:  
+ Následující členy modulu runtime jsou vloženy:  
   
--   <xref:Microsoft.VisualBasic.CompilerServices.Conversions> – Třída  
+-   <xref:Microsoft.VisualBasic.CompilerServices.Conversions> Třída  
   
 -   <xref:Microsoft.VisualBasic.Strings.AscW%28System.Char%29> – Metoda  
   
@@ -60,44 +60,44 @@ Určuje, že by měl kompilátor kompilovat bez odkaz na Visual Basic Runtime Li
   
 -   <xref:Microsoft.VisualBasic.Strings.ChrW%28System.Int32%29> – Metoda  
   
--   <xref:Microsoft.VisualBasic.Constants.vbBack> Konstantní  
+-   <xref:Microsoft.VisualBasic.Constants.vbBack> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbCr> Konstantní  
+-   <xref:Microsoft.VisualBasic.Constants.vbCr> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbCrLf> Konstantní  
+-   <xref:Microsoft.VisualBasic.Constants.vbCrLf> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbFormFeed> Konstantní  
+-   <xref:Microsoft.VisualBasic.Constants.vbFormFeed> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbLf> Konstantní  
+-   <xref:Microsoft.VisualBasic.Constants.vbLf> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbNewLine> Konstantní  
+-   <xref:Microsoft.VisualBasic.Constants.vbNewLine> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbNullChar> Konstantní  
+-   <xref:Microsoft.VisualBasic.Constants.vbNullChar> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbNullString> Konstantní  
+-   <xref:Microsoft.VisualBasic.Constants.vbNullString> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbTab> Konstantní  
+-   <xref:Microsoft.VisualBasic.Constants.vbTab> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbVerticalTab> Konstantní  
+-   <xref:Microsoft.VisualBasic.Constants.vbVerticalTab> Konstanty  
   
 -   Některé objekty `My` typu  
   
- Pokud zkompilujete pomocí `-vbruntime*` možnost a váš kód odkazuje na člena z Visual Basic Runtime Library, který není vložených s základní funkce, kompilátor vrátí chybu, která určuje, že člen není k dispozici.  
+ Pokud kompilujete pomocí `-vbruntime*` možnost a váš kód odkazuje na člena z knihovny Runtime jazyka Visual Basic, který není integrován s základní funkce, kompilátor chybovou zprávu, která označuje, že člen není k dispozici.  
   
-## <a name="referencing-a-specified-library"></a>Odkazování na uvedené knihovny  
- Můžete použít `path` argument zkompilovat s odkazem na knihovnu vlastní runtime místo výchozího Visual Basic Runtime Library.  
+## <a name="referencing-a-specified-library"></a>Odkazuje na zadanou knihovnu  
+ Můžete použít `path` argument pro kompilaci pomocí odkazu na knihovnu vlastního modulu runtime místo výchozí knihovny prostředí Runtime jazyka Visual Basic.  
   
- Pokud hodnota `path` argument je plně kvalifikovanou cestu ke knihovně DLL, kompilátor použije tento soubor jako knihovna runtime. Pokud hodnota `path` argument není plně kvalifikovaná cesta ke knihovně DLL, Visual Basic – kompilátor bude hledat identifikovaných DLL v aktuální složce nejdřív. Bude poté hledat v cestě, která jste zadali pomocí [- sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md) – možnost kompilátoru. Pokud `-sdkpath` – možnost kompilátoru nepoužívá, kompilátor bude hledat identifikovaných knihovny DLL ve složce rozhraní .NET Framework (`%systemroot%\Microsoft.NET\Framework\versionNumber`).  
+ Pokud hodnota `path` argument je plně kvalifikovanou cestu ke knihovně DLL, kompilátor použije tento soubor jako knihovna prostředí runtime. Pokud hodnota `path` argument není plně kvalifikovanou cestu ke knihovně DLL, kompilátor jazyka Visual Basic vyhledá identifikované knihovny DLL ve složce aktuální nejprve. Pak bude hledat v cestě, kterou jste zadali pomocí [- sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md) – možnost kompilátoru. Pokud `-sdkpath` není použita možnost kompilátoru, kompilátor bude hledat identifikované knihovny DLL ve složce rozhraní .NET Framework (`%systemroot%\Microsoft.NET\Framework\versionNumber`).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití `-vbruntime` kompilovat s odkazem na knihovnu vlastní možnost.  
+ Následující příklad ukazuje způsob použití `-vbruntime` možnost kompilace s odkazem na vlastní knihovny.  
   
 ```console
 vbc -vbruntime:C:\VBLibraries\CustomVBLibrary.dll  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Základní jazyka Visual Basic – nový režim kompilace v sadě Visual Studio 2010 SP1](http://blogs.msdn.com/b/vbteam/archive/2011/01/10/vb-core-new-compilation-mode-in-visual-studio-2010-sp1.aspx)  
- [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic Core – nová režim kompilace v aplikaci Visual Studio 2010 SP1](https://blogs.msdn.com/b/vbteam/archive/2011/01/10/vb-core-new-compilation-mode-in-visual-studio-2010-sp1.aspx)  
+ [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
  [-sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md)

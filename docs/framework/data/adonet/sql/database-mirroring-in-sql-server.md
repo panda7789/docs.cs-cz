@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 89befaff-bb46-4290-8382-e67cdb0e3de9
-ms.openlocfilehash: 349cc10062cd73def0b8b3966a17ae9cbd0deab5
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 90357b96d570ec1b2f80f8809ccfde69977bbc25
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43003083"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481907"
 ---
 # <a name="database-mirroring-in-sql-server"></a>Zrcadlení databáze na SQL serveru
 Zrcadlení databáze na SQL serveru umožňuje udržovat kopie nebo zrcadlení databáze systému SQL Server na pohotovostní server. Zrcadlení zajistí, že dvě oddělené kopie dat existují na všechny časy, tím vysokou dostupnost a redundanci dat dokončit. .NET Data Provider pro SQL Server podporuje implicitní zrcadlení databáze, takže vývojáři nemusí provádět žádnou akci nebo psát jakýkoli kód, když je nakonfigurovaná pro databázi serveru SQL Server. Kromě toho <xref:System.Data.SqlClient.SqlConnection> objekt podporuje režim explicitní spojení, která umožňuje zadávání názvu serveru partnera převzetí služeb při selhání v <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
@@ -64,4 +64,4 @@ string activeServer = connection.DataSource;
 |[Zrcadlení databáze](/sql/database-engine/database-mirroring/database-mirroring-sql-server)|Popisuje, jak vytvořit a nakonfigurovat zrcadlení v systému SQL Server.|  
   
 ## <a name="see-also"></a>Viz také  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

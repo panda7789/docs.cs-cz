@@ -6,26 +6,26 @@ helpviewer_keywords:
 - tab controls [Windows Forms], tab order
 - tab pages [Windows Forms], adding controls
 ms.assetid: 7ee734e1-e31e-4ed0-bbc0-a7e8a1f20fef
-ms.openlocfilehash: 1bd6050287df288b41f944232d36d2e77c1309d6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 07326156fabbb8b991538a7e3bbaff7d807a1e94
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529588"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43486474"
 ---
 # <a name="how-to-add-a-control-to-a-tab-page-using-the-designer"></a>Postupy: Přidání ovládacího prvku do stránky karty pomocí Návrháře
-Použití modelu Windows Forms <xref:System.Windows.Forms.TabControl> je zobrazíte další ovládací prvky způsobem uspořádány. Tyto pokyny slouží k zobrazení obrázku na hlavní část stránky karty. Informace o přidávání ikonu na popisek část stránky karty najdete v tématu [postupy: Změna vzhledu Windows Forms TabControl](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md).  
+Použití prvku modelu Windows Forms <xref:System.Windows.Forms.TabControl> zobrazit další ovládací prvky uspořádané způsobem. Tyto pokyny slouží k zobrazení obrázku na hlavní část stránky karty. Informace o přidání ikony na popisek část stránky karty, najdete v části [postupy: Změna vzhledu ovládacího prvku Windows Forms TabControl](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md).  
   
- Následující postup vyžaduje **aplikace Windows** projekt pomocí formuláře obsahující <xref:System.Windows.Forms.TabControl> ovládacího prvku. Informace o nastavení tohoto projektu najdete v tématu [postupy: vytvoření projektu aplikace Windows](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa) a [postupy: Přidání ovládacích prvků do formulářů Windows](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).  
+ Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.TabControl> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [postupy: vytvoření projektu aplikace Windows](https://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa) a [postupy: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
 ### <a name="to-add-a-control-using-the-designer"></a>Přidání ovládacího prvku pomocí návrháře  
   
-1.  Klikněte na příslušnou kartu stránky tak, aby se v horní části.  
+1.  Klikněte na příslušnou kartu stránku tak, aby se zobrazí v horní části.  
   
-2.  Vykreslení ovládacího prvku na kartě stránky.  
+2.  Nakreslení ovládacího prvku na kartě.  
   
 ## <a name="see-also"></a>Viz také  
  [Ovládací prvek TabControl](../../../../docs/framework/winforms/controls/tabcontrol-control-windows-forms.md)  

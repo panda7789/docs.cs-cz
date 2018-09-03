@@ -9,15 +9,15 @@ helpviewer_keywords:
 - banners, suppressing startup
 - /nologo compiler option [C#]
 ms.assetid: 426afb36-a8fb-469d-9c45-a35d9512557c
-ms.openlocfilehash: cede0d730e0c0bdaaa1b9b39c729b49677b81ed5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a8f4582e9c8d5a54d924ff5b456ef8ffd8cc56f3
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33213637"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43480592"
 ---
 # <a name="-nologo-c-compiler-options"></a>-nologo (možnosti kompilátoru C#)
-**- Nologo** možnost potlačí zobrazení nápisu přihlašování při spuštění kompilátor a zobrazení informačních zpráv během kompilace.  
+**- Nologo** možnost potlačí zobrazení nápisu přihlašování při spuštění kompilátoru a zobrazení informačních zpráv během kompilace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,10 +26,11 @@ ms.locfileid: "33213637"
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Tato možnost není k dispozici v rámci vývojového prostředí; je k dispozici pouze při kompilaci z příkazového řádku.  
+ Tato možnost není k dispozici v rámci vývojového prostředí; je dostupná jenom při kompilaci z příkazového řádku.  
   
  Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

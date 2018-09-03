@@ -4,11 +4,11 @@ description: 'Tento průvodce obsahuje přehled různých studijních materiál�
 author: cartermp
 ms.date: 08/03/2018
 ms.openlocfilehash: d3e10b6eb99f35b8eddeaa1f0ae257dd17d5cc41
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42933919"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43480675"
 ---
 # <a name="f-guide"></a>Průvodce jazykem F#
 

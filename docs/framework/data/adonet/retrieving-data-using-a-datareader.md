@@ -1,64 +1,64 @@
 ---
-title: Načítání dat pomocí DataReader –
+title: Načítání dat pomocí čtečky dat
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 97afc121-fb8b-465b-bab3-6d844420badb
-ms.openlocfilehash: 0c78db5ce7a6a988e40718daca1d828096a734d2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4370a7a700a01943548bf067827e6640245caf4e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33353257"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43482161"
 ---
-# <a name="retrieving-data-using-a-datareader"></a>Načítání dat pomocí DataReader –
-Načítání dat pomocí **DataReader –** zahrnuje vytvoření instance **příkaz** objektu a pak vytvořit **DataReader –** voláním  **Command.ExecuteReader** k načtení řádků ze zdroje dat. Následující příklad ilustruje, použití **DataReader –** kde `reader` představuje platnou DataReader – a `command` představuje platný objekt příkazu.  
+# <a name="retrieving-data-using-a-datareader"></a>Načítání dat pomocí čtečky dat
+Načítání dat pomocí **DataReader** zahrnuje vytvoření instance **příkaz** objektu a pak vytvořit **DataReader** voláním  **Command.ExecuteReader** načíst ze zdroje dat řádků. Následující příklad ukazuje použití **DataReader** kde `reader` představuje platné čtečky dat a `command` představuje objekt platný příkaz.  
   
 ```  
 reader = command.ExecuteReader();  
 ```  
   
- Můžete použít **čtení** metodu **DataReader –** objekt, který chcete získat řádek z výsledků dotazu. Každý sloupec vrácený řádek dostanete předáním odkazu na pořadí sloupce, který se na název **DataReader –**. Pro nejlepší výkon, ale **DataReader –** poskytuje řadu metod, které vám umožní přístup k hodnot sloupce v jeho nativní datové typy (**GetDateTime**, **GetDouble**, **Getguid –**, **GetInt32**a tak dále). Seznam typové přístupových metod pro data specifický pro zprostředkovatele **DataReaders**, najdete v části <xref:System.Data.OleDb.OleDbDataReader> a <xref:System.Data.SqlClient.SqlDataReader>. Pomocí zadaných přístupových metod, za předpokladu, že se označuje základní datový typ, snižuje množství při načítání hodnoty sloupce vyžaduje převod typů.  
+ Můžete použít **čtení** metodu **DataReader** objektu získat řádek ve výsledcích dotazu. Každý sloupec vrácený řádek se zpřístupní po předání název nebo Řadový odkaz na sloupec, který se **DataReader**. Ale pro zajištění nejlepšího výkonu **DataReader** poskytuje řadu metod, které umožňují přístup k hodnot sloupce v jejich nativním datové typy (**GetDateTime**, **GetDouble**, **Getguid –**, **GetInt32**, a tak dále). Seznam typu přístupové metody pro data specifickým pro zprostředkovatele **čtečky dat**, naleznete v tématu <xref:System.Data.OleDb.OleDbDataReader> a <xref:System.Data.SqlClient.SqlDataReader>. Pomocí metody typu přístupového objektu, za předpokladu, že příslušný datový typ je známo, snižuje počet při načítání hodnoty sloupce vyžaduje převod typů.  
   
 > [!NOTE]
->  Zahrnuje další vlastnost pro Windows Server 2003 verze rozhraní .NET Framework **DataReader –**, **HasRows**, což umožňuje zjistit, jestli **DataReader –** má nevrátil žádné výsledky před čtení z něj.  
+>  Windows Server 2003 verze rozhraní .NET Framework obsahuje další vlastnosti pro **DataReader**, **HasRows**, což vám umožní zjistit, jestli **DataReader**má nevrátil žádné výsledky před čtením z něj.  
   
- Následující příklad kódu iteruje **DataReader** objekt a vrátí dva sloupce z každého řádku.  
+ Následující příklad Iteruje přes **DataReader** objekt a vrátí dva sloupce z každého řádku.  
   
  [!code-csharp[DataWorks SqlClient.HasRows#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.HasRows/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.HasRows#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.HasRows/VB/source.vb#1)]  
   
- **DataReader** poskytuje bez vyrovnávací paměti datový proud dat, která umožňuje procedurální logiku a efektivní zpracování výsledků ze zdroje dat postupně. **DataReader** je vhodné použít při načítání velkých objemů dat, protože není uložen v mezipaměti v paměti.  
+ **DataReader** poskytuje bez vyrovnávací paměti datového proudu dat, která umožňuje procedurální logiku pro efektivní zpracování výsledků ze zdroje dat postupně. **DataReader** je dobrou volbou při načítání velkých objemů dat, protože data neukládají do mezipaměti v paměti.  
   
 ## <a name="closing-the-datareader"></a>Zavření objektu DataReader  
  Vždy byste měli zavolat **Zavřít** metoda po dokončení pomocí **DataReader** objektu.  
   
- Pokud vaše **příkaz** výstup obsahuje parametry nebo návratové hodnoty, nebude dostupná, dokud nebude **DataReader –** je uzavřený.  
+ Pokud vaše **příkaz** obsahuje výstupní parametry nebo návratové hodnoty, nebudou k dispozici, dokud **DataReader** je zavřený.  
   
- Všimněte si, že chvíli **DataReader –** je otevřený **připojení** se používá výhradně v tomto **DataReader –**. Nelze provést žádné příkazy pro **připojení**, včetně vytváření jiného **DataReader –**, dokud nebude původní **DataReader –** je uzavřený.  
+ Všimněte si, že při **DataReader** je otevřený, **připojení** používá výhradně, který **DataReader**. Nelze provést žádné příkazy pro **připojení**, včetně vytvoříte další **DataReader**, dokud původní **DataReader** je uzavřen.  
   
 > [!NOTE]
->  Nevolejte **Zavřít** nebo **Dispose** na **připojení**, **DataReader –**, nebo jiné spravovaného objektu v **dokončení**  metoda vaší třídy. V finalizační metodu vydání pouze nespravovaných prostředků, které vlastní třídu přímo. Pokud vaše třída nevlastní žádné nespravovaných prostředků, nezahrnujte **Finalize** metoda v definici vaší třídy. Další informace najdete v tématu [uvolňování paměti](../../../../docs/standard/garbage-collection/index.md).  
+>  Nevolejte **Zavřít** nebo **Dispose** na **připojení**, **DataReader**, nebo jakýkoli jiný spravovaný objekt v **Finalize**  metoda vaší třídy. V finalizační metodu jenom uvolnění nespravovaných prostředků, které vaše třída vlastní přímo. Pokud vaše třída není vlastníkem jakýchkoliv nespravovaných prostředků, nezahrnujte **Finalize** metoda v definici třídy. Další informace najdete v tématu [uvolňování](../../../../docs/standard/garbage-collection/index.md).  
   
-## <a name="retrieving-multiple-result-sets-using-nextresult"></a>Načítání více sad výsledků dotazu pomocí NextResult  
- Pokud jsou vráceny více sad výsledků dotazu, **DataReader –** poskytuje **NextResult** metoda k iteraci v rámci výsledek nastaví v pořadí. Následující příklad ukazuje <xref:System.Data.SqlClient.SqlDataReader> zpracování výsledků pomocí dvou příkazů SELECT <xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A> metoda.  
+## <a name="retrieving-multiple-result-sets-using-nextresult"></a>Při načítání více sad výsledků dotazu pomocí NextResult  
+ Dojde k vrácení více sad výsledků dotazu **DataReader** poskytuje **NextResult** metoda procházením skrze výsledek nastaví v pořadí. Následující příklad ukazuje <xref:System.Data.SqlClient.SqlDataReader> zpracování výsledků pomocí dvou příkazů SELECT <xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A> metody.  
   
  [!code-csharp[DataWorks SqlClient.NextResult#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.NextResult/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.NextResult#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.NextResult/VB/source.vb#1)]  
   
 ## <a name="getting-schema-information-from-the-datareader"></a>Získávání informací o schématu z objektu DataReader  
- Při **DataReader –** je otevřená, můžete načíst informace o schématu o aktuální výsledek nastavit pomocí **GetSchemaTable** metoda. **GetSchemaTable** vrátí <xref:System.Data.DataTable> objekt naplněný řádků a sloupců, které obsahují informace o schématu pro aktuální sadu výsledků dotazu. **DataTable** obsahuje jeden řádek pro každý sloupec sady výsledků dotazu. Každý sloupec řádku tabulky schématu je namapován na vlastnost sloupec, vrátí se v nastavit výsledek, kde **ColumnName** je název vlastnosti a hodnota sloupce je hodnota vlastnosti. Následující příklad kódu zapíše informace o schématu **DataReader –**.  
+ Při **DataReader** je otevřít, můžete načíst informace o schématu o aktuální výsledek sada s použitím **GetSchemaTable** metoda. **GetSchemaTable** vrátí <xref:System.Data.DataTable> objekt naplní řádky a sloupce, které obsahují informace o schématu pro aktuální sadu výsledků. **DataTable** obsahuje jeden řádek pro každý sloupec sady výsledků dotazu. Každý sloupec řádku schématu tabulky se mapuje na vlastnost sloupec vrácený v výsledné sady, ve kterém **Názevsloupce** je název vlastnosti a hodnota sloupce je hodnota vlastnosti. Následující příklad kódu zapíše informace o schématu pro **DataReader**.  
   
  [!code-csharp[DataWorks SqlClient.GetSchemaTable#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.GetSchemaTable/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.GetSchemaTable#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.GetSchemaTable/VB/source.vb#1)]  
   
-## <a name="working-with-ole-db-chapters"></a>Práce s kapitolám OLE DB  
- Hierarchická sady řádků či kapitolám (typ OLE DB **DBTYPE_HCHAPTER**, ADO typ **adChapter**) se dá načíst pomocí <xref:System.Data.OleDb.OleDbDataReader>. Pokud se dotaz, který zahrnuje kapitola vrátí jako **DataReader –**, kapitoly je vrácen jako sloupec v tom, že **DataReader –** a je k dispozici jako **DataReader** objektu.  
+## <a name="working-with-ole-db-chapters"></a>Práce s kapitol technologie OLE DB  
+ Hierarchické sady řádků nebo kapitol (typ OLE DB **DBTYPE_HCHAPTER**, typ ADO **adChapter**) můžete získat pomocí <xref:System.Data.OleDb.OleDbDataReader>. Při dotazu, který zahrnuje kapitola se vrátí jako **DataReader**, kapitoly je vrácen jako sloupec, který **DataReader** a je přístupný jako **DataReader** objektu.  
   
- Technologie ADO.NET **datovou sadu** lze také použít k reprezentaci hierarchické sady řádků pomocí vztahů nadřazenosti a podřízenosti mezi tabulkami. Další informace najdete v tématu [datové sady, DataTables a DataView](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md).  
+ ADO.NET **datovou sadu** lze také použít k reprezentaci hierarchické sady řádků pomocí vztahů nadřazenosti a podřízenosti mezi tabulkami. Další informace najdete v tématu [datové sady, datové tabulky a zobrazení dat](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md).  
   
- Následující příklad kódu používá zprostředkovatele MSDataShape ke generování objednávek každému zákazníkovi neočekávaný sloupec kapitoly v seznamu zákazníků.  
+ Následující příklad kódu používá zprostředkovatele MSDataShape ke generování objednávek pro každého zákazníka neočekávaný sloupec kapitoly v seznam zákazníků.  
   
 ```vb  
 Using connection As OleDbConnection = New OleDbConnection( _  
@@ -124,16 +124,16 @@ custReader.Close();
 }  
 ```  
   
-## <a name="returning-results-with-oracle-ref-cursors"></a>Vrátí výsledky s kurzory REF Oracle  
- Zprostředkovatel dat .NET Framework pro Oracle podporuje použití Oracle REF kurzory vrácení výsledku dotazu. V Oracle REF kurzor se vrátí jako <xref:System.Data.OracleClient.OracleDataReader>.  
+## <a name="returning-results-with-oracle-ref-cursors"></a>Vrací výsledky s soubory Oracle REF CURSOR  
+ Zprostředkovatel dat .NET Framework pro Oracle podporuje použití soubory Oracle REF CURSOR vrácení výsledku dotazu. Vrátí se Oracle REF CURSOR jako <xref:System.Data.OracleClient.OracleDataReader>.  
   
- Můžete načíst **připojení OracleDataReader** objekt, který představuje k KURZORU REF Oracle pomocí <xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A> metodu a můžete také zadat <xref:System.Data.OracleClient.OracleCommand> , který vrací jeden nebo více kurzory REF Oracle jako  **SelectCommand** pro <xref:System.Data.OracleClient.OracleDataAdapter> použitou k vyplnění <xref:System.Data.DataSet>.  
+ Můžete načíst **připojení OracleDataReader** objekt, který představuje objekt pro Oracle REF CURSOR pomocí <xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A> metoda a můžete také zadat <xref:System.Data.OracleClient.OracleCommand> , který vrací jeden nebo více soubory Oracle REF CURSOR jako  **Vlastnost SelectCommand** pro <xref:System.Data.OracleClient.OracleDataAdapter> použitou k vyplnění <xref:System.Data.DataSet>.  
   
- Pro přístup k KURZORU REF vrátí ze zdroje dat Oracle, vytvořit **OracleCommand** pro svůj dotaz a přidejte výstupní parametr, který odkazuje na REF ukazatele **parametry** kolekce vaší  **OracleCommand**. Název parametru musí odpovídat názvu parametru REF KURZORU v dotazu. Nastavte typ parametru **OracleType.Cursor**. **ExecuteReader** metodu vaše **OracleCommand** vrátí **připojení OracleDataReader** pro kurzor REF.  
+ Pro přístup k REF CURSOR vrácená ze zdroje dat Oracle, vytvořte **OracleCommand** pro váš dotaz a přidejte výstupní parametr, který odkazuje kurzor REF **parametry** kolekce vaše  **OracleCommand**. Název parametru musí odpovídat názvu parametru REF CURSOR v dotazu. Nastavit typ parametru **OracleType.Cursor**. **ExecuteReader** metodu vaše **OracleCommand** vrátí **připojení OracleDataReader** pro REF CURSOR.  
   
- Pokud vaše **OracleCommand** vrátí více REF kurzory, přidat více výstupní parametry. Různé kurzory REF můžete přejít pomocí volání **OracleCommand.ExecuteReader** metoda. Volání **ExecuteReader** vrátí **připojení OracleDataReader** odkazující na první REF kurzor. Potom můžete zavolat **OracleDataReader.NextResult** metody přístup následné REF kurzory. I když parametry ve vaší **OracleCommand.Parameters** kolekce shodu kurzor REF výstupní parametry podle názvu, **připojení OracleDataReader** k nim přistupuje v pořadí, aby byly přidány do  **Parametry** kolekce.  
+ Pokud vaše **OracleCommand** vrací více typů REF CURSOR, přidat více výstupní parametry. Dostanete různých typů REF CURSOR pomocí volání **OracleCommand.ExecuteReader** metody. Volání **ExecuteReader** vrátí **připojení OracleDataReader** odkazující na první REF CURSOR. Potom můžete zavolat **OracleDataReader.NextResult** metody pro přístup k dalších typů REF CURSOR. I když parametry v vaše **OracleCommand.Parameters** kolekce shoda REF CURSOR output parametry podle názvu, **připojení OracleDataReader** k nim přistupuje, aby byly přidány  **Parametry** kolekce.  
   
- Zvažte například následující balíček Oracle a tělo balíčku.  
+ Představte si třeba následující balíček Oracle a tělo balíčku.  
   
 ```  
 CREATE OR REPLACE PACKAGE CURSPKG AS   
@@ -153,7 +153,7 @@ CREATE OR REPLACE PACKAGE BODY CURSPKG AS
 END CURSPKG;   
 ```  
   
- Následující kód vytvoří **OracleCommand** , vrátí kurzory REF z předchozí balíčku Oracle přidáním dva parametry typu **OracleType.Cursor** k **parametry** kolekce.  
+ Následující kód vytvoří **OracleCommand** typů REF CURSOR z předchozí balíčku Oracle, který vrací tak, že přidáte dva parametry typu **OracleType.Cursor** k **parametry** kolekce.  
   
 ```vb  
 Dim cursCmd As OracleCommand = New OracleCommand("CURSPKG.OPEN_TWO_CURSORS", oraConn)  
@@ -167,7 +167,7 @@ cursCmd.Parameters.Add("EMPCURSOR", OracleType.Cursor).Direction = ParameterDire
 cursCmd.Parameters.Add("DEPTCURSOR", OracleType.Cursor).Direction = ParameterDirection.Output;  
 ```  
   
- Následující kód vrátí výsledky předchozí příkaz pomocí **čtení** a **NextResult** metody **připojení OracleDataReader**. Parametry KURZORU REF jsou vráceny v pořadí.  
+ Následující kód vrátí výsledky z předchozího příkazu s **čtení** a **NextResult** metody **připojení OracleDataReader**. Parametry REF CURSOR jsou vráceny v pořadí.  
   
 ```vb  
 oraConn.Open()  
@@ -223,10 +223,10 @@ reader.Close();
 oraConn.Close();  
 ```  
   
- Následující příklad používá předchozí příkaz k naplnění **datovou sadu** s výsledky balíčku Oracle.  
+ Následující příklad používá k naplnění předchozí příkaz **datovou sadu** s výsledky balíčku Oracle.  
   
 > [!NOTE]
->  Aby nedošlo **OverflowException**, doporučujeme také zpracovat žádné převod z typu Oracle číslo na platný typ rozhraní .NET Framework před uložením hodnoty v **DataRow**. Můžete použít **FillError** událostí k určení, zda **OverflowException** došlo k chybě. Další informace o **FillError** událostí, najdete v části [zpracování události DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
+>  Aby se zabránilo **OverFlowException –**, doporučujeme také zpracovat jakýkoli převod z typu Oracle číslo na platný typ rozhraní .NET Framework před uložením hodnoty v **DataRow**. Můžete použít **FillError** událostí k určení, zda **OverFlowException –** došlo k chybě. Další informace o **FillError** událostí, naleznete v tématu [zpracování událostí adaptéru dat](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
   
 ```vb  
 Dim ds As DataSet = New DataSet()  
@@ -249,8 +249,8 @@ adapter.Fill(ds);
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Práce s DataReaders](http://msdn.microsoft.com/library/126a966a-d08d-4d22-a19f-f432908b2b54)  
+ [Práce s čtečky dat](https://msdn.microsoft.com/library/126a966a-d08d-4d22-a19f-f432908b2b54)  
  [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
  [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
  [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

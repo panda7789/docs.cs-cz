@@ -6,33 +6,33 @@ helpviewer_keywords:
 - Matrix properties [WPF], animating with key frames
 - key frames [WPF], animating Matrix properties with
 ms.assetid: b851a4c7-ecb1-420e-9203-83e7afd037fd
-ms.openlocfilehash: edb7074dffab23810872f4347f5339270af86bd1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8f58b43a870f2c85ae4349965f586a33e2f75a2a
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33557014"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43485847"
 ---
 # <a name="how-to-animate-a-matrix-by-using-key-frames"></a>Postupy: Animace matice použitím klíčových snímků
-Tento příklad ukazuje, jak animace <xref:System.Windows.Media.MatrixTransform.Matrix%2A> vlastnost <xref:System.Windows.Media.MatrixTransform> pomocí klíčových snímků.  
+Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.MatrixTransform.Matrix%2A> vlastnost <xref:System.Windows.Media.MatrixTransform> použitím klíčových snímků.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.Windows.Media.Animation.MatrixAnimationUsingKeyFrames> třídy animace <xref:System.Windows.Media.MatrixTransform.Matrix%2A> vlastnost <xref:System.Windows.Media.MatrixTransform>. V příkladu se používá <xref:System.Windows.Media.MatrixTransform> objektu k transformaci vzhledu a umístění <xref:System.Windows.Controls.Button>.  
+ V následujícím příkladu <xref:System.Windows.Media.Animation.MatrixAnimationUsingKeyFrames> třídy pro animaci <xref:System.Windows.Media.MatrixTransform.Matrix%2A> vlastnost <xref:System.Windows.Media.MatrixTransform>. V příkladu se používá <xref:System.Windows.Media.MatrixTransform> objektu k transformaci vzhledu a umístění <xref:System.Windows.Controls.Button>.  
   
- Používá tento animace <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> třídy pro vytvoření dvou klíčových snímků a provede následující akce s nimi:  
+ Používá tato animace <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> třídy k vytvoření dvou klíčových snímků a provede následující s nimi:  
   
-1.  Animuje první <xref:System.Windows.Media.Matrix> během prvních 0,2 sekund. Příklad změny <xref:System.Windows.Media.Matrix.M11%2A> a <xref:System.Windows.Media.Matrix.M12%2A> vlastnosti <xref:System.Windows.Media.Matrix>. Tato změna způsobí, že tlačítko roztažení a stát nesouměrně rozdělí. Tento příklad také změní <xref:System.Windows.Media.Matrix.OffsetX%2A> a <xref:System.Windows.Media.Matrix.OffsetY%2A> vlastnosti tak, aby tlačítko změní pozici.  
+1.  Animuje první <xref:System.Windows.Media.Matrix> během prvních 0,2 sekund. Příklad změn <xref:System.Windows.Media.Matrix.M11%2A> a <xref:System.Windows.Media.Matrix.M12%2A> vlastnosti <xref:System.Windows.Media.Matrix>. Tato změna způsobí, že tlačítko roztažení a stát zešikmená. V příkladu se také změní <xref:System.Windows.Media.Matrix.OffsetX%2A> a <xref:System.Windows.Media.Matrix.OffsetY%2A> vlastnosti tak, aby se tlačítko změní pozice.  
   
-2.  Animuje druhý <xref:System.Windows.Media.Matrix> v 1.0 sekund. Tlačítko přesune na jinou pracovní pozici, zatímco tlačítko už nesouměrně rozdělí nebo roztažená.  
+2.  Animuje druhý <xref:System.Windows.Media.Matrix> na 1.0 sekund. Tlačítko pohybuje na jinou pracovní pozici, zatímco na tlačítko se už zkosený, nebo roztažená.  
   
-3.  Animace opakuje bez omezení.  
+3.  Opakuje se animace po neomezenou dobu.  
   
 > [!NOTE]
->  Klíčové snímky, které jsou odvozeny od <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> objekt vytvoření nečekané přechodů mezi hodnotami, to znamená, že je trhané přesun animace.  
+>  Klíčové snímky, které jsou odvozeny z <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> objekt vytvořit i s náhlými rozdíly mezi jednotlivými hodnotami, to znamená, je přehrávat nepravidelně přesun animace.  
   
  [!code-xaml[keyframes_snip#MatrixAnimationUsingKeyFramesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/MatrixAnimationUsingKeyFramesExample.xaml#matrixanimationusingkeyframeswholepage)]  
   
- Kompletní příklad, najdete v části [@keyframe, které určuje animace ukázka](http://go.microsoft.com/fwlink/?LinkID=160012).  
+ Úplnou ukázku najdete v tématu [klíčový snímek animace ukázka](https://go.microsoft.com/fwlink/?LinkID=160012).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Media.MatrixTransform.Matrix%2A>  

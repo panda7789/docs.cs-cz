@@ -11,14 +11,14 @@ ms.assetid: 2ec1c9dc-2e5c-4ef0-9958-81670ab88449
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 2d75b25734b92df062d3dc46824da44883ab46d5
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: c5146ed8326b12e90d0fe6247b0c4aba3a69dd77
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745939"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43485778"
 ---
-# <a name="configuration-element"></a>\<Konfigurace > elementu
+# <a name="configuration-element"></a>\<Konfigurace > – element
 
 Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.
 
@@ -44,22 +44,22 @@ Kořenový prvek v každém konfiguračním souboru, který je používán modu
 
 |     | Popis |
 | --- | ----------- |
-| [**\<assemblybinding – >**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | Určuje sestavení vazby zásady na úrovni konfigurace.|
-| [**\<spuštění >** schéma nastavení](~/docs/framework/configure-apps/file-schema/startup/index.md) | Všechny elementy ve schématu nastavení spuštění. |
-| [**\<modul runtime >** schéma nastavení](~/docs/framework/configure-apps/file-schema/runtime/index.md) | Všechny elementy ve schématu nastavení modulu runtime. |
-| [**\<System.Runtime.Remoting >** schéma nastavení](http://msdn.microsoft.com/dc2d1e62-9af7-4ca1-99fd-98b93bb4db9e) | Všechny elementy ve schématu nastavení vzdálené komunikace. |
+| [**\<assemblybinding – >**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | Určuje zásady vazeb sestavení na úrovni konfigurace.|
+| [**\<Po spuštění >** schéma nastavení](~/docs/framework/configure-apps/file-schema/startup/index.md) | Všechny elementy ve schématu nastavení spuštění. |
+| [**\<modul runtime >** schéma nastavení](~/docs/framework/configure-apps/file-schema/runtime/index.md) | Všechny prvky v schéma nastavení běhového prostředí. |
+| [**\<System.Runtime.Remoting >** schéma nastavení](https://msdn.microsoft.com/dc2d1e62-9af7-4ca1-99fd-98b93bb4db9e) | Všechny elementy ve schématu nastavení vzdálené komunikace. |
 | [**\<system.Net >** schéma nastavení](~/docs/framework/configure-apps/file-schema/network/index.md) | Všechny elementy ve schématu nastavení sítě. |
 | [**\<cryptographySettings – >** schéma nastavení](~/docs/framework/configure-apps/file-schema/cryptography/index.md) | Všechny elementy ve schématu kryptografických nastavení. |
 | [**\<Konfigurace >** schéma oddílů](~/docs/framework/configure-apps/file-schema/configuration-sections-schema.md) | Všechny elementy ve schématu oddílu nastavení konfigurace. |
 | [Trasování a ladění schématu nastavení](~/docs/framework/configure-apps/file-schema/trace-debug/index.md) | Všechny elementy ve schématu nastavení trasování a ladění. |
-| [Schéma nastavení konfigurace technologie ASP.NET](https://msdn.microsoft.com/library/b5ysx397(v=vs.100).aspx) | Všechny elementy ve schématu konfigurace ASP.NET, který obsahuje prvky konfigurace ASP.NET – webové servery a aplikace. Použít v *Web.config* soubory. |
-| [**\<webovým službám >** schéma nastavení](http://msdn.microsoft.com/f84d6d55-1add-4eb7-ae46-33df5833ea2e) | Všechny elementy ve schématu nastavení webových služeb. |
-| [Schéma nastavení webu](~/docs/framework/configure-apps/file-schema/web/index.md) | Všechny elementy ve schéma nastavení webu, který obsahuje prvky pro konfiguraci, jak funguje technologie ASP.NET s hostitelskou aplikaci, například služby IIS. Použít v *soubor aspnet.config* soubory. |
+| [Schéma konfigurace nastavení ASP.NET](https://msdn.microsoft.com/library/b5ysx397(v=vs.100).aspx) | Všechny elementy ve schématu konfigurace technologie ASP.NET, které zahrnuje prvky pro konfiguraci technologie ASP.NET webové stránky a aplikace. Použít v *Web.config* soubory. |
+| [**\<webové služby >** schéma nastavení](https://msdn.microsoft.com/f84d6d55-1add-4eb7-ae46-33df5833ea2e) | Všechny elementy ve schématu nastavení webových služeb. |
+| [Schéma nastavení webu](~/docs/framework/configure-apps/file-schema/web/index.md) | Všechny elementy ve schématu nastavení webu, který obsahuje prvky pro konfiguraci spolupráce rozhraní ASP.NET s hostitelskou aplikací, například službou IIS. Použít v *aspnet.config* soubory. |
 
 ## <a name="remarks"></a>Poznámky
 
-Každý konfigurační soubor musí obsahovat přesně jeden  **\<konfigurace >** element.
+Každý konfigurační soubor musí obsahovat přesně jeden  **\<konfigurace >** elementu.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)

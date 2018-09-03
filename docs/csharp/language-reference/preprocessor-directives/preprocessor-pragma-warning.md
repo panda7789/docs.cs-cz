@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - '#pragma warning [C#]'
 ms.assetid: 723493d5-9753-4cec-babb-54e2b8eb36b6
-ms.openlocfilehash: 079045f4eb52f03afa8733620029396d80cb75fe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 89ff8151d55ac58a1b114f7727297704ce26b9a7
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33273654"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481927"
 ---
 # <a name="pragma-warning-c-reference"></a>#pragma – upozornění (Referenční dokumentace jazyka C#)
 `#pragma warning` můžete povolit nebo zakázat určité upozornění.  
@@ -25,12 +25,12 @@ ms.locfileid: "33273654"
   
 #### <a name="parameters"></a>Parametry  
  `warning-list`  
- Seznam upozornění čísel oddělených čárkami. Předpona "CS" je volitelné.  
+ Čárkou oddělený seznam čísel upozornění. Předpona "CS" je volitelné.  
   
- Pokud nejsou zadány žádné upozornění čísla, `disable` zakáže všechna upozornění a `restore` umožňuje všech upozornění.  
+ Pokud nejsou zadány žádné čísla upozornění, `disable` zakazuje všechna upozornění a `restore` povoluje všechna upozornění.  
   
 > [!NOTE]
->  Zjištění čísel upozornění v sadě Visual Studio, sestavení projektu a potom vyhledejte čísla upozornění v **výstup** okno.  
+>  V sadě Visual Studio najít čísla upozornění, sestavte projekt a potom vyhledejte čísla upozornění v **výstup** okna.  
   
 ## <a name="example"></a>Příklad  
   
@@ -58,8 +58,9 @@ public class D
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)  
- [Chyby kompilátoru jazyka C#](../../../csharp/language-reference/compiler-messages/index.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)  
+- [Chyby kompilátoru jazyka C#](../../../csharp/language-reference/compiler-messages/index.md)

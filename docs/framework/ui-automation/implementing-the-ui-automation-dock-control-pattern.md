@@ -9,35 +9,35 @@ ms.assetid: ea3d2212-7c8e-4dd7-bf08-73141ca2d4fb
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 9e04814885ae0963d4da99acecf00dc646ecc96f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 875a9f3a20b7bb5e66ecf3f6b5e3b3cf229e2bf9
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33400728"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481062"
 ---
 # <a name="implementing-the-ui-automation-dock-control-pattern"></a>Implementace vzoru ovládacích prvků ukotvení pro automatizaci uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Toto téma představuje pokyny a konvence pro implementaci <xref:System.Windows.Automation.Provider.IDockProvider>, včetně informací o vlastnostech. Na konci tohoto tématu jsou uvedeny odkazy na další odkazy.  
+ Toto téma popisuje pravidla a zásady pro implementaci <xref:System.Windows.Automation.Provider.IDockProvider>, včetně informací o vlastnostech. Odkazy na další odkazy jsou uvedeny na konci tohoto tématu.  
   
- <xref:System.Windows.Automation.DockPattern> – Vzor ovládacích prvků se používá k vystavení vlastností ukotvení ovládacího prvku do kontejneru, ukotvení. Ukotvení kontejner je ovládací prvek, který umožňuje uspořádat podřízené elementy vodorovně a svisle, relativně k sobě navzájem. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků najdete v tématu [řízení vzor mapování pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ <xref:System.Windows.Automation.DockPattern> – Vzor ovládacích prvků se používá k vystavení vlastnosti dock ovládacího prvku kontejneru ukotvení. Ukotvení kontejner je prvek, který umožňuje uspořádat podřízené prvky vodorovně a svisle, relativně vůči sobě navzájem. Příklady ovládacích prvků, které tento ovládací prvek model implementovat, najdete v článku [ovládací prvek vzor mapování pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
   
- ![Ukotvení kontejner s dvěma ukotveného podřízené objekty. ] (../../../docs/framework/ui-automation/media/uia-dockpattern-dockingexample.PNG "UIA_DockPattern_DockingExample")  
-Ukotvení příklad ze sady Visual Studio, kde je okno "Zobrazení tříd" DockPosition.Right a v okně "Seznam chyb" je DockPosition.Bottom  
+ ![Ukotvení s dvěma dětmi ukotvených kontejneru. ](../../../docs/framework/ui-automation/media/uia-dockpattern-dockingexample.PNG "UIA_DockPattern_DockingExample")  
+Ukotvení příklad ze sady Visual Studio, ve kterém je okno "Zobrazení tříd" DockPosition.Right a okna "Seznam chyb" je DockPosition.Bottom  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Postup implementace a konvence  
- Když implementace vzoru ovládacích prvků ukotvení, poznamenejte si následující pokyny a konvence:  
+## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
+ Při implementaci vzoru ovládacích prvků ukotvení, mějte na paměti následující pokyny a konvence:  
   
--   <xref:System.Windows.Automation.Provider.IDockProvider> nevystavuje žádné vlastnosti ukotvení kontejneru nebo vlastnosti ovládacích prvků, které jsou ukotven přiléhající k aktuální ovládací prvek v rámci kontejneru ukotvení.  
+-   <xref:System.Windows.Automation.Provider.IDockProvider> nevystavuje žádné vlastnosti kontejneru dokovací ani žádné vlastnosti ovládacích prvků, které jsou ukotveny vedle aktuální ovládací prvek v rámci kontejneru ukotvení.  
   
--   Ovládací prvky jsou ukotven relativně k sobě navzájem podle jejich aktuálního pořadí z-order; vyšší jejich pořadí z-order umístění dále jsou umístěny z zadaný okraj ukotvení kontejneru.  
+-   Ovládací prvky jsou ukotveny relativně vůči sobě navzájem podle jejich aktuálního pořadí vykreslování; vyšší jejich pořadí z umístění, dál vystavili z zadaný okraj kontejneru ukotvení.  
   
--   Pokud se změnila velikost ukotvení kontejneru, všechny ukotvených ovládacích prvků v kontejneru přemístí vyprázdnit na stejnou hranici, do které byly původně ukotven. Ukotvených ovládacích prvků bude taky změnit velikost, aby vyplnilo veškeré místo v kontejneru podle ukotvení chování jejich <xref:System.Windows.Automation.DockPosition>. Například pokud <xref:System.Windows.Automation.DockPosition.Top> není zadaný, aby vyplnilo veškeré dostupné místo bude rozšiřovat levé a pravé straně ovládacího prvku. Pokud <xref:System.Windows.Automation.DockPosition.Fill> není zadaný, aby vyplnilo veškeré dostupné místo se rozbalí všechny čtyři strany ovládacího prvku.  
+-   Pokud je velikost kontejneru ukotvení, všechny ukotvených ovládacích prvků v kontejneru přemístí vyprázdnění stejné hrany, které byly původně ukotven. Ukotvených ovládacích prvků se taky změnit velikost, tak, aby vyplnil libovolné místo v kontejneru podle dokovací chování jejich <xref:System.Windows.Automation.DockPosition>. Například pokud <xref:System.Windows.Automation.DockPosition.Top> není zadána, levé a pravé straně ovládacího prvku se rozbalí a k dispozici prostor. Pokud <xref:System.Windows.Automation.DockPosition.Fill> není zadána, všechny čtyři strany ovládacího prvku se rozbalí a k dispozici prostor.  
   
--   V několika monitorování systému by měl ovládacích prvků ukotvení levé nebo pravé straně aktuálního monitorování. Pokud tento způsob není možný, že by měl ukotvení na levé straně krajní levé monitorování nebo pravé straně úplně vpravo monitorování.  
+-   V systému s více monitorů by měl ovládacích prvků ukotvení do levé nebo pravé straně aktuálního monitoru. Pokud to není možné, jsou by měl ukotvení na levé straně úplně vlevo monitorování nebo pravé straně úplně vpravo monitorování.  
   
 <a name="Required_Members_for_IDockProvider"></a>   
 ## <a name="required-members-for-idockprovider"></a>Požadované členy pro IDockProvider  
@@ -48,15 +48,15 @@ Ukotvení příklad ze sady Visual Studio, kde je okno "Zobrazení tříd" DockP
 |<xref:System.Windows.Automation.Provider.IDockProvider.DockPosition%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A>|Metoda|Žádné|  
   
- Tento vzor ovládacích prvků nemá žádné přidružené události.  
+ Tento model ovládací prvek nemá žádné přidružené události.  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Výjimky  
- Zprostředkovatelé musí throw následující výjimky.  
+ Poskytovatelé musí vyvolání následující výjimky.  
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A><br /><br /> – Když není provést styl ukotvení požadovaný ovládací prvek.|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A><br /><br /> – Když není moci být prováděny dock požadovaný styl ovládacího prvku.|  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  

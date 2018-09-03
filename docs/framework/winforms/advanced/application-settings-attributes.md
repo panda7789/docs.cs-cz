@@ -6,39 +6,39 @@ helpviewer_keywords:
 - attributes [Windows Forms], application settings
 - wrapper classes [Windows Forms], application settings
 ms.assetid: 53caa66c-a9fb-43a5-953c-ad092590098d
-ms.openlocfilehash: d52549546bc838d8d38da33b9bb9931488795064
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9ed549cb1e10b22c4fa34d984133a6be11dfab44
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33518346"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481159"
 ---
 # <a name="application-settings-attributes"></a>Atributy nastavení aplikace
-Architektura nastavení aplikace obsahuje mnoho atributů, které mohou být použity buď obálkovou třídu nastavení aplikace nebo jeho jednotlivé vlastnosti. Tyto atributy se zkontrolují v době běhu aplikace nastavení infrastruktury, často konkrétně poskytovatel nastavení, aby bylo možné přizpůsobit funguje stanovené potřebám vlastní obálky.  
+Architektura nastavení aplikace poskytuje mnoho atributů, které lze použít buď pro obálkovou třídu nastavení aplikace nebo jeho jednotlivé vlastnosti. Tyto atributy jsou zkoumány za běhu aplikace nastavení infrastruktury, často konkrétně poskytovatel nastavení, aby bylo možné přizpůsobit jejich fungování stanovených potřebám vlastní obálku.  
   
- Následující tabulka obsahuje seznam atributy, které mohou být použity pro obálkovou třídu nastavení aplikace a tato třída jednotlivé vlastnosti. Podle definice pouze atribut jeden obor –**UserScopedSettingAttribute** nebo **atribut ApplicationScopedSettingAttribute**– musí použít u každého nastavení vlastností.  
+ V následující tabulce jsou uvedeny atributy, které můžete použít pro obálkovou třídu nastavení aplikace nebo jednotlivé vlastnosti této třídy. Podle definice pouze jeden atribut –**UserScopedSettingAttribute** nebo **atribut ApplicationScopedSettingAttribute**– musí použít u každého nastavení vlastnosti.  
   
 > [!NOTE]
->  Vlastní nastavení poskytovatele, odvozené od <xref:System.Configuration.SettingsProvider> třídy, je potřeba jenom rozpoznat následující tři atributy: **atribut ApplicationScopedSettingAttribute**, **UserScopedSettingAttribute**, a **DefaultSettingValueAttribute**.  
+>  Vlastní nastavení poskytovatele, odvozený z <xref:System.Configuration.SettingsProvider> třídy, je potřeba jenom k rozpoznání následující tři atributy: **atribut ApplicationScopedSettingAttribute**, **UserScopedSettingAttribute**, a **DefaultSettingValueAttribute**.  
   
-|Atribut|cíl|Popis|  
+|Atribut|Cíl|Popis|  
 |---------------|------------|-----------------|  
-|<xref:System.Configuration.SettingsProviderAttribute>|Obě|Určuje krátký název poskytovatele nastavení chcete použít pro trvalost.<br /><br /> Pokud je tento atribut není zadaný, výchozí zprostředkovatel <xref:System.Configuration.LocalFileSettingsProvider>, předpokládá se.|  
-|<xref:System.Configuration.UserScopedSettingAttribute>|Obě|Definuje vlastnost jako nastavení uživatelských aplikací.|  
-|<xref:System.Configuration.ApplicationScopedSettingAttribute>|Obě|Definuje vlastnost jako nastavení aplikace s rozsahem aplikace.|  
-|<xref:System.Configuration.DefaultSettingValueAttribute>|Vlastnost|Určuje řetězec, který lze deserializovat zprostředkovatelem do pevně výchozí hodnoty pro tuto vlastnost.<br /><br /> <xref:System.Configuration.LocalFileSettingsProvider> Nevyžaduje, aby tento atribut a přepíše libovolná hodnota zadaná tímto atributem Pokud je hodnota nenastavili jako trvalé.|  
-|<xref:System.Configuration.SettingsDescriptionAttribute>|Vlastnost|Poskytuje popisný test pro individuální nastavení, používá primárně nástroje pro spuštění a návrhu.|  
-|<xref:System.Configuration.SettingsGroupNameAttribute>|Třída|Poskytuje explicitní název pro skupinu nastavení. Pokud tento atribut nebyl nalezen, <xref:System.Configuration.ApplicationSettingsBase> používá název třídy obálku.|  
-|<xref:System.Configuration.SettingsGroupDescriptionAttribute>|Třída|Poskytuje popisný testu pro skupinu nastavení, používá primárně nástroje pro spuštění a návrhu.|  
-|<xref:System.Configuration.SettingsManageabilityAttribute>|Obě|Určuje nula nebo více možností správy služeb, které by měly být zadané nastavení skupina nebo vlastnost. Jsou k dispozici služby popsaného <xref:System.Configuration.SettingsManageability> výčtu.|  
-|<xref:System.Configuration.SpecialSettingAttribute>|Vlastnost|Označuje, že nastavení patří do speciální předdefinované kategorie, jako je například připojovací řetězec, která navrhuje speciální zpracování zprostředkovatelem nastavení. Jsou definovány předdefinovaných kategorií pro tento atribut <xref:System.Configuration.SpecialSetting> výčtu.|  
-|<xref:System.Configuration.SettingsSerializeAsAttribute>|Obě|Určuje upřednostňovaný serializace mechanismus pro nastavení skupina nebo vlastnost. Mechanismy dostupné serializace jsou definovány <xref:System.Configuration.SettingsSerializeAs> výčtu.|  
-|<xref:System.Configuration.NoSettingsVersionUpgradeAttribute>|Vlastnost|Určuje, že nastavení poskytovatele měli vypnout všechny funkce upgradu aplikace pro vlastnost označena.|  
+|<xref:System.Configuration.SettingsProviderAttribute>|Obojí|Určuje krátký název nastavení zprostředkovatele má být použit pro trvalost.<br /><br /> Pokud tento atribut není zadán, výchozí zprostředkovatel <xref:System.Configuration.LocalFileSettingsProvider>, předpokládá se.|  
+|<xref:System.Configuration.UserScopedSettingAttribute>|Obojí|Definuje vlastnost jako nastavení rozsahu uživatele aplikace.|  
+|<xref:System.Configuration.ApplicationScopedSettingAttribute>|Obojí|Definuje vlastnost jako nastavení aplikace s rozsahem aplikace.|  
+|<xref:System.Configuration.DefaultSettingValueAttribute>|Vlastnost|Určuje řetězec, který lze deserializovat zprostředkovatelem do pevně zakódované výchozí hodnoty pro tuto vlastnost.<br /><br /> <xref:System.Configuration.LocalFileSettingsProvider> Nevyžaduje, aby tento atribut a přepíše libovolnou hodnotu, pokud tento atribut dojde-li hodnotu již trvale uložena.|  
+|<xref:System.Configuration.SettingsDescriptionAttribute>|Vlastnost|Poskytuje popisný testu pro individuální nastavení, primárně používá za běhu a návrhových nástrojů.|  
+|<xref:System.Configuration.SettingsGroupNameAttribute>|Třída|Poskytuje explicitní název pro skupinu nastavení. Pokud tento atribut chybí, <xref:System.Configuration.ApplicationSettingsBase> používá název obálkové třídy.|  
+|<xref:System.Configuration.SettingsGroupDescriptionAttribute>|Třída|Poskytuje popisný testu pro skupinu nastavení, který se primárně používá za běhu a návrhových nástrojů.|  
+|<xref:System.Configuration.SettingsManageabilityAttribute>|Obojí|Určuje nula nebo více možností správy služeb, které by měla být k dispozici nastavení skupiny nebo vlastnost. Dostupné služby jsou popsané <xref:System.Configuration.SettingsManageability> výčtu.|  
+|<xref:System.Configuration.SpecialSettingAttribute>|Vlastnost|Označuje, že nastavení patří do speciální, předdefinované kategorie, jako je například připojovací řetězec, která navrhuje, speciální zpracování nastavení poskytovatele. Předdefinované kategorie pro tento atribut jsou definovány <xref:System.Configuration.SpecialSetting> výčtu.|  
+|<xref:System.Configuration.SettingsSerializeAsAttribute>|Obojí|Určuje upřednostňovaný serializace mechanismus pro nastavení skupina nebo vlastnost. Mechanismus serializace k dispozici jsou definovány <xref:System.Configuration.SettingsSerializeAs> výčtu.|  
+|<xref:System.Configuration.NoSettingsVersionUpgradeAttribute>|Vlastnost|Určuje, že poskytovatel nastavení zakažte všechny funkce upgradu aplikace pro vlastnost označené.|  
   
- *Třída* udává, že atribut lze použít pouze pro třídu obálky nastavení aplikace. *Vlastnost* označuje, že atribut může být použité jenom nastavení vlastnosti. *Obě* udává, že atribut lze použít buď úrovni.  
+ *Třída* označuje, že atribut lze použít pouze pro třídu obálky nastavení aplikace. *Vlastnost* znamená, že atribut může být použitý jenom nastavení vlastnosti. *Obě* označuje, že atribut je možné použít na obou úrovní.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Configuration.ApplicationSettingsBase>  
  <xref:System.Configuration.SettingsProvider>  
  [Architektura nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)  
- [Postupy: Vytváření nastavení aplikace](http://msdn.microsoft.com/library/53b3af80-1c02-4e35-99c6-787663148945)
+ [Postupy: Vytváření nastavení aplikace](https://msdn.microsoft.com/library/53b3af80-1c02-4e35-99c6-787663148945)

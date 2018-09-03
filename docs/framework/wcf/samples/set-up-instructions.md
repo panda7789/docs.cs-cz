@@ -5,22 +5,22 @@ helpviewer_keywords:
 - WCF Samples [WCF], setup
 - Windows Communication Foundation Samples [WCF], setup
 ms.assetid: 0be7d232-485b-4f6d-9ed0-b4243c907376
-ms.openlocfilehash: cbb23281d94bbd1edc66b0a3b9caafca62304487
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: b5c57b7b7fa2fe72d0fbad6d7fcf5aa17f2abad8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33809102"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43487442"
 ---
 # <a name="set-up-instructions"></a>Pokyny k instalaci
-Témata popisuje postup nastavení služby, které jsou nutné ke spuštění služby Windows Communication Foundation (WCF).  
+Tato sada témat popisuje, jak vytvořit služby, které jsou potřeba ke spouštění služby Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Jednorázový postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)  
- Popisuje kroky pro nastavení ukázky WCF.  
+ Popisuje kroky pro vytvoření Ukázky WCF.  
   
  [Pokyny k bráně firewall](../../../../docs/framework/wcf/samples/firewall-instructions.md)  
- Popisuje kroky potřebné k nastavení brány Windows Firewall k funkce služeb WCF.  
+ Popisuje kroky potřebné k nastavit bránu Windows Firewall a povolit služeb WCF pro funkci.  
   
  [Pokyny k hostování Internetové informační služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
  Popisuje kroky potřebné k nastavení služby IIS.  
@@ -32,16 +32,16 @@ Témata popisuje postup nastavení služby, které jsou nutné ke spuštění sl
  Popisuje kroky potřebné k vytvoření virtuálního adresáře.  
   
  [Ukázky vytváření Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)  
- Popisuje kroky pro vytváření Ukázky WCF.  
+ Popisuje kroky pro vytvoření Ukázky WCF.  
   
  [Spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md)  
- Popisuje kroky pro spuštění ukázky WCF na stejném počítači a mezi počítači.  
+ Popisuje kroky pro spuštění ukázky WCF, ve stejném počítači a to napříč počítači.  
   
- [Povolení služeb Peer to Peer](http://msdn.microsoft.com/library/e7a0fcf4-b0e5-4b26-a7e3-f0f37b60a1f9)  
- Popisuje kroky pro instalaci součásti Windows Peer-to-Peer, integrované překladač pro služby zasílání zpráv peer-to-peer.  
+ [Povolení služeb Peer to Peer](https://msdn.microsoft.com/library/e7a0fcf4-b0e5-4b26-a7e3-f0f37b60a1f9)  
+ Popisuje kroky pro instalaci součásti Windows Peer-to-Peer, integrované řešení pro služby zasílání zpráv peer-to-peer.  
   
  [Instalace služby Řízení front zpráv (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)  
  Popisuje postup instalace služby Řízení front zpráv.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Tipy pro odstraňování potíží](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b)
+ [Tipy pro odstraňování potíží](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b)

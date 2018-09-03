@@ -2,129 +2,129 @@
 title: 'Přenos: UDP'
 ms.date: 03/30/2017
 ms.assetid: 738705de-ad3e-40e0-b363-90305bddb140
-ms.openlocfilehash: 64452e36f34f87aef491cf66f6dd94ddc3a59f34
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: e3e01634c496a3673b49ae7329e4221e0d568803
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106035"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43485937"
 ---
 # <a name="transport-udp"></a>Přenos: UDP
-Ukázka přenosu UDP ukazuje, jak implementovat jednosměrového vysílání UDP a vícesměrového vysílání jako vlastní přenosu Windows Communication Foundation (WCF). Ukázka popisuje doporučený postup pro vytvoření vlastní přenosu ve WCF, pomocí rozhraní kanálu a následující osvědčené postupy WCF. Postup vytvoření vlastního přenosu jsou následující:  
+Přenos UDP ukázka ukazuje, jak implementovat jednosměrového vysílání UDP a vícesměrového vysílání jako vlastní přenosu Windows Communication Foundation (WCF). Ukázka popisuje doporučený postup pro vytvoření vlastní přenos ve službě WCF, pomocí architektura kanálů a osvědčených postupů WCF. Postup vytvoření vlastní přenosu jsou následující:  
   
-1.  Rozhodněte, které kanálu [zpráva Exchange vzory](#MessageExchangePatterns) (IOutputChannel, IInputChannel, IDuplexChannel, třídu IRequestChannel nebo IReplyChannel) ChannelFactory a ChannelListener bude podporovat. Rozhodněte se, zda bude podporovat relacemi variace tato rozhraní.  
+1.  Rozhodnout, které z kanálu [zpráv Exchange vzory](#MessageExchangePatterns) (IOutputChannel, IInputChannel, IDuplexChannel, třídu IRequestChannel nebo IReplyChannel) budou podporovat třídu ChannelFactory a ChannelListener. Následně se rozhodnete, zda bude podporovat s relacemi varianty těchto rozhraní.  
   
-2.  Vytvoření postupu kanálu a naslouchací proces, který podporují vaše vzorce výměny zpráv.  
+2.  Vytvoření postupu kanálu a posluchače, které podporují vaše vzorce výměny zpráv.  
   
-3.  Ujistěte se, že jsou všechny výjimky sítě normalizovány na příslušné odvozené třídy z <xref:System.ServiceModel.CommunicationException>.  
+3.  Ujistěte se, že všechny výjimky pro konkrétní sítě jsou normalizovány na příslušné třídy odvozené z <xref:System.ServiceModel.CommunicationException>.  
   
-4.  Přidat [ \<vazby >](../../../../docs/framework/misc/binding.md) element, který přidá vlastní přenos do zásobníku kanálu. Další informace najdete v tématu [přidání Element vazby](#AddingABindingElement).  
+4.  Přidat [ \<vazby >](../../../../docs/framework/misc/binding.md) element, který přidá vlastní přenosu do zásobníku kanálu. Další informace najdete v tématu [přidání prvku vazby](#AddingABindingElement).  
   
-5.  Přidáte oddíl rozšíření element vazby ke zveřejnění nového elementu vazby v konfiguraci systému.  
+5.  Přidání sekce rozšíření elementu vazby vystavit nový element vazby na konfigurační systém.  
   
-6.  Přidejte rozšíření metadata pro komunikaci funkce pro ostatní koncové body.  
+6.  Přidejte rozšíření metadat pro komunikaci funkce pro další koncové body.  
   
-7.  Přidejte vazbu, která předem nakonfiguruje zásobníku elementů vazby podle dobře definovaný profil. Další informace najdete v tématu [přidání standardní vazbu](#AddingAStandardBinding).  
+7.  Přidáte vazbu, která předem nakonfiguruje sady elementů vazby podle přesně definovaného profilu. Další informace najdete v tématu [přidání standardní vazby](#AddingAStandardBinding).  
   
-8.  Přidáte oddíl vazby a konfigurace prvku vazby ke zveřejnění vazby ke konfiguraci systému. Další informace najdete v tématu [přidání podpory konfigurace](#AddingConfigurationSupport).  
+8.  Přidáte vazbu oddíl a vazeb konfiguračního prvku vystavit vazby na konfigurační systém. Další informace najdete v tématu [přidání podpory konfigurace](#AddingConfigurationSupport).  
   
 <a name="MessageExchangePatterns"></a>   
-## <a name="message-exchange-patterns"></a>Vzory Exchange zpráv  
- První krok v zápisu vlastní přenosu je rozhodnout, jaké zprávy Exchange vzory (MEPs) jsou požadovány pro přenos. Existují tři MEPs zvolit:  
+## <a name="message-exchange-patterns"></a>Vzorky serveru Exchange zprávu  
+ Prvním krokem v psaní vlastních přenosu je rozhodnout, jaké zprávy Exchange vzory (MEPs) jsou požadovány pro přenos. Existují tři MEPs lze vybírat:  
   
 -   Datagram (IInputChannel/IOutputChannel)  
   
-     Pokud používáte datagram MEP, klient odešle zprávu pomocí systému exchange "fire a zapomněli". A fire a zapomněli exchange je ten, který vyžaduje out-of-band potvrzení úspěšné doručení. Zpráva může dojít ke ztrátě během přenosu a nikdy nedorazí službu. Operaci odeslání po úspěšném dokončení na konci klienta, nezaručuje to, že vzdálený koncový bod se zobrazila zpráva. Datagram je základní stavební blok pro zasílání zpráv, jak můžete vytvořit vlastní protokoly nad jeho – včetně protokoly spolehlivé a bezpečné protokoly. Implementace klienta datagram kanály <xref:System.ServiceModel.Channels.IOutputChannel> implementovat rozhraní a služba datagramu kanály <xref:System.ServiceModel.Channels.IInputChannel> rozhraní.  
+     Při použití datagram MEP, klient odešle zprávu pomocí exchange "vypal a zapomeň". A vypal a zapomeň exchange je ten, který vyžaduje out-of-band potvrzení úspěšné dodání. Zpráva může dojít ke ztrátě během přenosu a nikdy nedorazí služby. Pokud se operace odeslání se úspěšně dokončí na straně klienta, není zaručeno, že vzdálený koncový bod přijal zprávu. Datagram je základním stavebním blokem pro zasílání zpráv, jak můžete vytvářet vlastní protokoly, dojde k jeho zvýraznění – včetně protokolů spolehlivé a zabezpečené protokoly. Implementace klienta datagram kanály <xref:System.ServiceModel.Channels.IOutputChannel> implementovat rozhraní a služba datagramu kanály <xref:System.ServiceModel.Channels.IInputChannel> rozhraní.  
   
--   Požadavků a odpovědí (třídu IRequestChannel/IReplyChannel)  
+-   Request-Response (třídu IRequestChannel/IReplyChannel)  
   
-     V této MEP je odeslána zpráva a odpoví. Vzor se skládá z dvojice požadavků a odpovědí. Volání požadavků a odpovědí příklady vzdálených volání procedur (RPC) a prohlížeč získá. Tento vzor se také označuje jako poloduplexní. V této MEP klienta kanály implementovat <xref:System.ServiceModel.Channels.IRequestChannel> a implementaci služby kanály <xref:System.ServiceModel.Channels.IReplyChannel>.  
+     V tomto MEP je odeslána zpráva a přijetí odpovědi. Vzor se skládá z dvojice žádost odpověď. Odpověď na požadavek volání příklady vzdálených volání procedur (RPC) a prohlížeče získá. Tento model se také označuje jako poloduplexní. V tomto MEP kanály klientů implementovat <xref:System.ServiceModel.Channels.IRequestChannel> a implementují kanály service <xref:System.ServiceModel.Channels.IReplyChannel>.  
   
 -   Duplexní režim (IDuplexChannel)  
   
-     Duplexní MEP umožňuje libovolný počet zpráv, které mají být odeslány klientem a přijaté v libovolném pořadí. Duplexní MEP je třeba je telefonní hovor, kde je jednotlivých slov použitém zprávu. Vzhledem k tomu, že na obou stranách můžete odesílat a přijímat v této MEP, rozhraní implementované kanály klienta a služby je <xref:System.ServiceModel.Channels.IDuplexChannel>.  
+     Duplexní MEP umožňuje libovolný počet zpráv pro klientem odesílat a přijímat v libovolném pořadí. Duplexní MEP je jako je telefonní hovor, kde je zpráva každého slova, se kterým se mluví. Vzhledem k tomu, že obě strany můžete odesílat a přijímat v tomto MEP, rozhraní implementované pomocí kanálů klient a služba je <xref:System.ServiceModel.Channels.IDuplexChannel>.  
   
- Každý z těchto MEPs může také podporovat relací. Přidané funkce poskytované službou deklaracemi relace kanál je, že ho korelaci všechny zprávy odeslané a přijaté v kanálu. Vzor požadavků a odpovědí je samostatné relaci dvě zprávy, jako jsou korelační požadavku a odpovědi. Naproti tomu vzor požadavků a odpovědí, který podporuje relací znamená, že všechny páry požadavků a odpovědí v tomto kanálu jsou korelační mezi sebou. To vám dává celkem šest MEPs – Datagram, požadavků a odpovědí, duplexní režim, Datagram s relací, požadavků a odpovědí s relací a duplexní s relací – lze vybírat.  
+ Každá z těchto MEPs může také podporovat relace. Přidání funkce poskytované službou s ohledem na relaci kanálu je, že souvisí všechny zprávy odeslané a přijaté v kanálu. Vzor typu žádost-odpověď je samostatné relace dvě zprávy, jako jsou korelována žádost a odpověď. Vzor typu žádost-odpověď, která podporuje relací naproti tomu znamená, že všechny páry žádostí a odpovědí v tomto kanálu jsou korelována mezi sebou. To vám dává celkem šest MEPs – Datagram typu žádost-odpověď, duplexní, Datagram s relacemi, odpověď na požadavek s relacemi a duplexní s relacemi – lze vybírat.  
   
 > [!NOTE]
->  Pro přenosu UDP pouze MEP, která je podporována je Datagram, protože UDP je ze své podstaty protokol "fire a zapomněli".  
+>  Pro přenos UDP pouze MEP, který je podporovaný totiž Datagram, UDP je ze své podstaty protokol "vypal a zapomeň".  
   
-### <a name="the-icommunicationobject-and-the-wcf-object-lifecycle"></a>ICommunicationObject a životního cyklu objekt WCF  
- Běžné stavu počítače, který se používá pro správu životního cyklu objektů, jako má WCF <xref:System.ServiceModel.Channels.IChannel>, <xref:System.ServiceModel.Channels.IChannelFactory>, a <xref:System.ServiceModel.Channels.IChannelListener> používané pro komunikaci. Nejsou k dispozici pět stavy, při kterých může existovat tyto objekty komunikace. Tyto stavy jsou reprezentované pomocí <xref:System.ServiceModel.CommunicationState> výčet a jsou následujícím způsobem:  
+### <a name="the-icommunicationobject-and-the-wcf-object-lifecycle"></a>Objekt ICommunicationObject a životního cyklu objektu WCF  
+ WCF obsahuje běžné stavového stroje, který se používá pro správu životního cyklu objektů, jako jsou <xref:System.ServiceModel.Channels.IChannel>, <xref:System.ServiceModel.Channels.IChannelFactory>, a <xref:System.ServiceModel.Channels.IChannelListener> , která se používají ke komunikaci. Existuje pět stavy, ve kterých lze tyto komunikace objekty existují. Tyto stavy jsou reprezentovány <xref:System.ServiceModel.CommunicationState> výčtu a jsou následujícím způsobem:  
   
--   Vytvoří: Toto je stav <xref:System.ServiceModel.ICommunicationObject> při prvním vytvoření instance. V tomto stavu dojde k žádné vstupní a výstupní (I/O).  
+-   Vytvořeno: Toto je stav <xref:System.ServiceModel.ICommunicationObject> kdy je poprvé vytvořena. Vyvolá se v tomto stavu žádný vstup/výstup (vstupně-výstupní operace).  
   
--   Otevírání: Přechod objekty do tohoto stavu, kdy <xref:System.ServiceModel.ICommunicationObject.Open%2A> je volána. Vlastnosti jsou vytvářeny v tomto okamžiku nezměnitelná a můžete začít vstupu a výstupu. Tento přechod je platný pouze z stavu vytvořen.  
+-   Otevírání: Objekty přechodu na tento stav, kdy <xref:System.ServiceModel.ICommunicationObject.Open%2A> je volána. V tomto okamžiku byly neměnné vlastnosti a začít vstupu a výstupu. Tento převod je platný pouze ze stavu vytvořen.  
   
--   Otevřené: Přechod objekty do tohoto stavu po dokončení procesu otevřete. Tento přechod je platný pouze z otevírání stavu. Objekt je nyní plně použitelné pro přenos.  
+-   Otevřít: Přechod objekty do tohoto stavu po dokončení procesu otevřít. Tento převod je platný pouze ze stavu otevření. V tomto okamžiku objektu je plně použitelné pro přenos.  
   
--   Ukončovací: Přechod objekty do tohoto stavu, kdy <xref:System.ServiceModel.ICommunicationObject.Close%2A> je volána pro řádné vypnutí. Tento přechod je platný pouze z stavu otevřeno.  
+-   Uzavírací: Objekty přechodu na tento stav, kdy <xref:System.ServiceModel.ICommunicationObject.Close%2A> se volá pro řádné vypnutí. Tento převod je platný pouze ze stavu otevřen.  
   
--   Uzavřené: V poli Uzavřeno stavu objektů již nejsou použitelné. Obecně platí většina konfigurace je stále přístupné pro kontrolu, ale může nastat žádná komunikace. Tento stav je ekvivalentní vyřazována.  
+-   Uzavřeno: V poli Uzavřeno stavu objekty už nejsou použitelné. Obecně platí je pořád přístupný pro kontrolu největší konfiguraci, ale žádná komunikace může dojít. Tento stav je ekvivalentní vyřazována.  
   
--   Faulted: V chybném stavu, jsou objekty přístupné pro kontrolu, ale již není použitelná. Když dojde k nezotavitelnou chybu, objekt přechází do tohoto stavu. Je platné pouze přechod z tohoto stavu do `Closed` stavu.  
+-   Chyba: V chybovém stavu, jsou objekty přístupné pro kontrolu, ale už nebude použitelná. Pokud dojde k nezotavitelné chybě, objekt přejde do tohoto stavu. Je platné pouze přechod z tohoto stavu do `Closed` stavu.  
   
- Nejsou události, které budou spuštěny pro každý přechod stavu. <xref:System.ServiceModel.ICommunicationObject.Abort%2A> Metodu lze volat kdykoli a způsobí, že objekt přecházení mezi okamžitě z jeho aktuální stav v uzavřeném stavu. Volání metody <xref:System.ServiceModel.ICommunicationObject.Abort%2A> ukončí všechna nedokončené práce.  
+ Existují události, které se aktivují pro každý přechod stavu. <xref:System.ServiceModel.ICommunicationObject.Abort%2A> Metoda může být volána v každém okamžiku a způsobí, že objekt přechod okamžitě v jejím aktuálním stavu do uzavřeného stavu. Volání <xref:System.ServiceModel.ICommunicationObject.Abort%2A> ukončí všechny nedokončené práce.  
   
 <a name="ChannelAndChannelListener"></a>   
-## <a name="channel-factory-and-channel-listener"></a>Postup kanálu a naslouchací proces kanálu  
- Dalším krokem při psaní vlastních přenosu je vytvoření implementace <xref:System.ServiceModel.Channels.IChannelFactory> pro kanály klienta a z <xref:System.ServiceModel.Channels.IChannelListener> pro kanály služby. Vrstvy kanálu využívá vzor objekt factory pro vytváření kanálů. WCF poskytuje pomocné rutiny základní třídy pro tento proces.  
+## <a name="channel-factory-and-channel-listener"></a>Objekt pro vytváření kanálů a modul pro naslouchání kanálu  
+ Dalším krokem při psaní vlastních přenosu je vytvořte implementaci třídy <xref:System.ServiceModel.Channels.IChannelFactory> pro kanály klientů a jejich <xref:System.ServiceModel.Channels.IChannelListener> pro kanály service. Vrstvy kanálu používá vzor factory pro vytváření kanálů. WCF poskytuje pomocné rutiny základní třídy pro tento proces.  
   
--   <xref:System.ServiceModel.Channels.CommunicationObject> Třída implementuje <xref:System.ServiceModel.ICommunicationObject> a vynucuje stav stavového stroje výše popsané v kroku 2. 
+-   <xref:System.ServiceModel.Channels.CommunicationObject> Implementuje třída <xref:System.ServiceModel.ICommunicationObject> a vynucuje stavového stroje výše popsaný v kroku 2. 
 
--   <xref:System.ServiceModel.Channels.ChannelManagerBase> Třída implementuje <xref:System.ServiceModel.Channels.CommunicationObject> a poskytuje jednotnou základní třídu pro <xref:System.ServiceModel.Channels.ChannelFactoryBase> a <xref:System.ServiceModel.Channels.ChannelListenerBase>. <xref:System.ServiceModel.Channels.ChannelManagerBase> Třída pracuje ve spojení s <xref:System.ServiceModel.Channels.ChannelBase>, což je základní třídu, která implementuje <xref:System.ServiceModel.Channels.IChannel>.  
+-   <xref:System.ServiceModel.Channels.ChannelManagerBase> Implementuje třída <xref:System.ServiceModel.Channels.CommunicationObject> a poskytuje jednotné základní třídu pro <xref:System.ServiceModel.Channels.ChannelFactoryBase> a <xref:System.ServiceModel.Channels.ChannelListenerBase>. <xref:System.ServiceModel.Channels.ChannelManagerBase> Třídy funguje ve spojení s <xref:System.ServiceModel.Channels.ChannelBase>, což je základní třídy, která implementuje <xref:System.ServiceModel.Channels.IChannel>.  
   
--   <xref:System.ServiceModel.Channels.ChannelFactoryBase> Třída implementuje <xref:System.ServiceModel.Channels.ChannelManagerBase> a <xref:System.ServiceModel.Channels.IChannelFactory> a dojde ke konsolidaci `CreateChannel` přetížení do jednoho `OnCreateChannel` abstraktní metodu.  
+-   <xref:System.ServiceModel.Channels.ChannelFactoryBase> Implementuje třída <xref:System.ServiceModel.Channels.ChannelManagerBase> a <xref:System.ServiceModel.Channels.IChannelFactory> a slučuje `CreateChannel` přetížení do jedné `OnCreateChannel` abstraktní metody.  
   
--   <xref:System.ServiceModel.Channels.ChannelListenerBase> Třída implementuje <xref:System.ServiceModel.Channels.IChannelListener>. Se má na starosti správu základních stavu.  
+-   <xref:System.ServiceModel.Channels.ChannelListenerBase> Implementuje třída <xref:System.ServiceModel.Channels.IChannelListener>. Postará se o správu základního stavu.  
   
- V této ukázce implementace objektu factory, je součástí UdpChannelFactory.cs a implementace naslouchací proces je obsažený v UdpChannelListener.cs. <xref:System.ServiceModel.Channels.IChannel> Implementace jsou UdpOutputChannel.cs a UdpInputChannel.cs.  
+ V této ukázce je implementace objektu factory součástí UdpChannelFactory.cs a naslouchací proces implementace je obsažený v UdpChannelListener.cs. <xref:System.ServiceModel.Channels.IChannel> Implementace jsou v UdpOutputChannel.cs a UdpInputChannel.cs.  
   
-### <a name="the-udp-channel-factory"></a>UDP kanálu  
- `UdpChannelFactory` Je odvozena z <xref:System.ServiceModel.Channels.ChannelFactoryBase>. Ukázka přepsání <xref:System.ServiceModel.Channels.ChannelFactoryBase.GetProperty%2A> k poskytování přístupu k zpráva verzi kodér zpráv. Ukázka také přepsání <xref:System.ServiceModel.Channels.ChannelFactoryBase.OnClose%2A> tak, aby jsme přerušit naše instanci <xref:System.ServiceModel.Channels.BufferManager> když přejde stav stavového stroje.  
+### <a name="the-udp-channel-factory"></a>Objekt pro vytváření kanálů UDP  
+ `UdpChannelFactory` Je odvozena z <xref:System.ServiceModel.Channels.ChannelFactoryBase>. Ukázka přepíše <xref:System.ServiceModel.Channels.ChannelFactoryBase.GetProperty%2A> pro poskytnutí přístupu k verze kodér zprávy. Ukázka také přepisuje <xref:System.ServiceModel.Channels.ChannelFactoryBase.OnClose%2A> tak, aby můžete odstraňujeme naše instanci <xref:System.ServiceModel.Channels.BufferManager> když změní stav stavového stroje.  
   
 #### <a name="the-udp-output-channel"></a>Výstupní kanál UDP  
- `UdpOutputChannel` Implementuje <xref:System.ServiceModel.Channels.IOutputChannel>. Ověří argumenty konstruktoru a vytvoří cíl <xref:System.Net.EndPoint> na základě objektu <xref:System.ServiceModel.EndpointAddress> , je předaná.  
+ `UdpOutputChannel` Implementuje <xref:System.ServiceModel.Channels.IOutputChannel>. Konstruktor ověří argumenty a vytvoří cíl <xref:System.Net.EndPoint> objektu na základě <xref:System.ServiceModel.EndpointAddress> , který je předán.  
   
 ```csharp
 this.socket = new Socket(this.remoteEndPoint.AddressFamily, SocketType.Dgram, ProtocolType.Udp);  
 ```  
   
- Kanál je možné uzavřít řádně nebo ungracefully. Pokud je kanál řádně uzavřen soketu se zavře a je volána v základní třídě `OnClose` metoda. Pokud to vyvolá výjimku, zavolá infrastruktury `Abort` zajistit kanál je vyčištěna.  
+ Kanál můžete zavřít, bez výpadku nebo ungracefully. Pokud kanál je uzavřen řádně soketu se zavře a základní třídy je provedeno volání `OnClose` metoda. Pokud to vyvolá výjimku, zavolá infrastruktury `Abort` zajistit kanál je vyčištěn.  
   
 ```csharp
 this.socket.Close(0);  
 ```  
   
- Potom implementovat `Send()` a `BeginSend()` / `EndSend()`. To rozdělí na dvě hlavní části. Nejprve jsme serializovat zprávy do bajtového pole.  
+ Pak implementovat `Send()` a `BeginSend()` / `EndSend()`. Tím je prolomen na dvě hlavní části. Nejprve můžeme serializovat zprávu do bajtového pole.  
   
 ```csharp
 ArraySegment<byte> messageBuffer = EncodeMessage(message);  
 ```  
   
- Potom pošleme Výsledná data v drátové síti.  
+ Potom pošleme Výsledná data na lince.  
   
 ```csharp
 this.socket.SendTo(messageBuffer.Array, messageBuffer.Offset, messageBuffer.Count, SocketFlags.None, this.remoteEndPoint);  
 ```  
   
 ### <a name="the-udpchannellistener"></a>UdpChannelListener  
- `UdpChannelListener` , Implementuje ukázce je odvozena z <xref:System.ServiceModel.Channels.ChannelListenerBase> třídy. Pro jediný soket UDP používá pro příjem datagramy. `OnOpen` Metoda přijímá data pomocí soketu UDP v asynchronní smyčce. Data jsou potom převedou do zprávy pomocí rozhraní kódování zprávy.  
+ `UdpChannelListener` , Že implementuje vzorek je odvozen od <xref:System.ServiceModel.Channels.ChannelListenerBase> třídy. Pro příjem datagramy používá pro jediný soket UDP. `OnOpen` Metoda přijímá data pomocí soketu UDP v asynchronní smyčka. Data se pak převedeno do zprávy pomocí rozhraní kódování zprávy.  
   
 ```csharp
 message = MessageEncoderFactory.Encoder.ReadMessage(new ArraySegment<byte>(buffer, 0, count), bufferManager);  
 ```  
   
- Protože stejné kanálu datagramu představuje zprávy, které přicházejí z mnoha zdrojů, `UdpChannelListener` naslouchací proces typu singleton. Není ve většině, jednu aktivní <xref:System.ServiceModel.Channels.IChannel> přidružené k této naslouchací proces najednou. Ukázka generuje jiný pouze v případě, že kanál, který je vrácen rutinou `AcceptChannel` metoda je následně zlikvidován. Při příjmu zprávy je zařazených do fronty do tohoto kanálu, typu singleton.  
+ Vzhledem k tomu, že představuje stejný kanálu datagramu zprávy přicházející z mnoha různých zdrojů, `UdpChannelListener` běží naslouchací proces typu singleton. Existuje na většině, jednu aktivní <xref:System.ServiceModel.Channels.IChannel> spojené s tímto naslouchacím procesem najednou. Ukázka generuje jiný pouze v případě, že kanál, který je vrácený `AcceptChannel` metoda následně uvolněn. Při doručení zprávy do je zařazených do fronty do tohoto kanálu typu singleton.  
   
 #### <a name="udpinputchannel"></a>UdpInputChannel  
- `UdpInputChannel` Třída implementuje `IInputChannel`. Skládá se z fronty příchozích zpráv, které se nacházejí `UdpChannelListener`je soketu. Tyto zprávy jsou vyjmutou pomocí `IInputChannel.Receive` metoda.  
+ `UdpInputChannel` Implementuje třída `IInputChannel`. Skládá se z front příchozích zpráv, které je vyplněn `UdpChannelListener`uživatele soketu. Tyto zprávy jsou odstraněné z fronty podle `IInputChannel.Receive` metody.  
   
 <a name="AddingABindingElement"></a>   
-## <a name="adding-a-binding-element"></a>Přidání prvku vazby  
- Teď, když jsou vytvořeny objekty pro vytváření a kanály, jsme musí vystavit modulu runtime ServiceModel prostřednictvím vazbu. Vazba je kolekci elementů vazby, která reprezentuje komunikačního balíku přidružená adresa služby. Každý prvek v zásobníku je reprezentována [ \<vazby >](../../../../docs/framework/misc/binding.md) element.  
+## <a name="adding-a-binding-element"></a>Přidání elementu vazby  
+ Teď, když jsou vytvořeny objekty pro vytváření a kanály, jsme musí vystavit do modulu runtime ServiceModel prostřednictvím vazby. Vazba je kolekce elementů vazby, který představuje komunikační balík přidružené k adrese služby. Každý prvek v zásobníku je reprezentována [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu.  
   
- V ukázce je prvku vazby `UdpTransportBindingElement`, která je odvozena z <xref:System.ServiceModel.Channels.TransportBindingElement>. Přepíše následující metody pro vytvoření objektů Factory související s naše vazby.  
+ V ukázce je element vazby `UdpTransportBindingElement`, která je odvozena z <xref:System.ServiceModel.Channels.TransportBindingElement>. Přepíše následujících metod k vytváření továrny spojené s využitím naší vazby.  
   
 ```csharp
 public IChannelFactory<TChannel> BuildChannelFactory<TChannel>(BindingContext context)  
@@ -140,14 +140,14 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
   
  Také obsahuje členy pro klonování `BindingElement` a vrácení naše schéma (soap.udp).  
   
-## <a name="adding-metadata-support-for-a-transport-binding-element"></a>Přidání podpory Metadata pro přenos vazby – Element  
- Při integraci naše přenosu do systému metadata, jsme musí podporovat import a export zásad. To umožňuje vygenerovat klienti naše vazby prostřednictvím [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
+## <a name="adding-metadata-support-for-a-transport-binding-element"></a>Přidání podpory metadat pro Element vazby přenosu  
+ K integraci naší přenosu do metadat systému, musí Podporujeme import a export zásad. Díky tomu můžeme ke generování klientů prostřednictvím našich vazby [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
 ### <a name="adding-wsdl-support"></a>Přidání podpory WSDL  
- Element vazby přenosu ve vazbě zodpovídá pro export a import informací o adresách v metadatech. Při použití vazby protokolu SOAP, element vazby přenosu by také exportovat správné přenosu URI v metadatech.  
+ Element vazby přenosu ve vazbě je zodpovědná za export a import informací o adresách v metadatech. Při použití vazby protokolu SOAP, element vazby přenosu by měl také exportovat správné přepravy identifikátoru URI v metadatech.  
   
 #### <a name="wsdl-export"></a>WSDL Export  
- Chcete-li exportovat informace o přidělování `UdpTransportBindingElement` implementuje `IWsdlExportExtension` rozhraní. `ExportEndpoint` Metoda přidá správné informace o přidělování do portu WSDL.  
+ Chcete-li exportovat informace o adresách `UdpTransportBindingElement` implementuje `IWsdlExportExtension` rozhraní. `ExportEndpoint` Metoda přidá správné informace o adresování na WSDL port.  
   
 ```csharp
 if (context.WsdlPort != null)  
@@ -156,7 +156,7 @@ if (context.WsdlPort != null)
 }  
 ```  
   
- `UdpTransportBindingElement` Implementace `ExportEndpoint` metoda zároveň exportuje přenos identifikátor URI, pokud koncový bod používá vazbu protokolu SOAP.  
+ `UdpTransportBindingElement` Provádění `ExportEndpoint` metoda zároveň exportuje přepravy identifikátoru URI při používá koncový bod vazbou SOAP.  
   
 ```csharp
 WsdlNS.SoapBinding soapBinding = GetSoapBinding(context, exporter);  
@@ -166,8 +166,8 @@ if (soapBinding != null)
 }  
 ```  
   
-#### <a name="wsdl-import"></a>Import schématu WSDL  
- Rozšíření systému importu WSDL pro zpracování importu adres, nemůžeme přidat následující konfigurace konfiguračního souboru pro Svcutil.exe jak je znázorněno v souboru Svcutil.exe.config.  
+#### <a name="wsdl-import"></a>WSDL Import  
+ Rozšíření systému importu WSDL pro zpracování importu adres, jsme musíte přidat následující konfigurace do konfiguračního souboru pro Svcutil.exe jak je znázorněno v souboru Svcutil.exe.config.  
   
 ```xml
 <configuration>  
@@ -183,13 +183,13 @@ if (soapBinding != null)
 </configuration>  
 ```  
   
- Když spustíte Svcutil.exe, existují dvě možnosti pro získání Svcutil.exe načíst import rozšíření schématu WSDL:  
+ Při spuštění Svcutil.exe, existují dvě možnosti pro získání Svcutil.exe k načítání rozšíření importu WSDL:  
   
-1.  Bod Svcutil.exe pro naše konfiguračního souboru pomocí /SvcutilConfig:\<souboru >.  
+1.  Bod Svcutil.exe k naší konfiguračního souboru pomocí /SvcutilConfig:\<soubor >.  
   
-2.  Přidejte konfigurační oddíl k Svcutil.exe.config ve stejném adresáři jako Svcutil.exe.  
+2.  Přidáte konfigurační oddíl pro Svcutil.exe.config ve stejném adresáři jako Svcutil.exe.  
   
- `UdpBindingElementImporter` Zadejte implementuje `IWsdlImportExtension` rozhraní. `ImportEndpoint` Metoda importuje adresu z portu WSDL.  
+ `UdpBindingElementImporter` Typ implementuje `IWsdlImportExtension` rozhraní. `ImportEndpoint` Metoda importuje adresu z portu WSDL.  
   
 ```csharp
 BindingElementCollection bindingElements = context.Endpoint.Binding.CreateBindingElements();  
@@ -200,13 +200,13 @@ if (transportBindingElement is UdpTransportBindingElement)
 }  
 ```  
   
-### <a name="adding-policy-support"></a>Přidání zásady podpory  
- Vlastní vazby element můžete exportovat zásady kontrolní výrazy ve vazbě WSDL pro koncový bod služby do express možnosti tohoto prvku vazby.  
+### <a name="adding-policy-support"></a>Přidání podpory pro zásady  
+ Vlastní prvek vazby můžete export kontrolních výrazů zásad Vazba WSDL pro koncový bod služby vyjádřit možnosti daného prvku vazby.  
   
 #### <a name="policy-export"></a>Export zásad  
- `UdpTransportBindingElement` Zadejte implementuje `IPolicyExportExtension` přidání podpory pro export zásad. V důsledku toho `System.ServiceModel.MetadataExporter` zahrnuje `UdpTransportBindingElement` při generování zásad u všech vazby, která ji obsahuje.  
+ `UdpTransportBindingElement` Typ implementuje `IPolicyExportExtension` přidává funkce pro export zásad. V důsledku toho `System.ServiceModel.MetadataExporter` zahrnuje `UdpTransportBindingElement` při generování zásad pro všechny vazby, který ji obsahuje.  
   
- V `IPolicyExportExtension.ExportPolicy`, přidáme kontrolní výrazy pro UDP a jiné assertion Pokud Snažíme se v režimu vícesměrového vysílání. Toto je vzhledem k tomu, že má vliv na režimu vícesměrového vysílání jak komunikačního balíku je vytvořený a proto musí být koordinované mezi na obou stranách.  
+ V `IPolicyExportExtension.ExportPolicy`, můžeme přidat kontrolní výraz pro UDP a další kontrolní výraz Pokud se nám v režimu vícesměrového vysílání. Jak komunikačního balíku je vytvořen a proto musí být koordinovaní mezi obě strany jde vzhledem k tomu, že má vliv na režimu vícesměrového vysílání.  
   
 ```csharp
 ICollection<XmlElement> bindingAssertions = context.GetBindingAssertions();  
@@ -222,14 +222,14 @@ if (Multicast)
 }  
 ```  
   
- Protože elementů přenosové vlastní vazby je zodpovědná za zpracování adresy, `IPolicyExportExtension` implementace na `UdpTransportBindingElement` musí také zpracovat export příslušné WS-Addressing kontrolních výrazů zásad označující verzi adresování WS používá.  
+ Protože jsou zodpovědného za obsluhu adresování elementů přenosové vlastní vazby `IPolicyExportExtension` implementace v prostředí `UdpTransportBindingElement` musí také zpracovat export odpovídající WS-Addressing kontrolní výrazy zásad označující verzi elementu WS-Addressing používá.  
   
 ```csharp
 AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressing);  
 ```  
   
 #### <a name="policy-import"></a>Import zásady  
- Rozšířit systém Import zásady, nemůžeme přidat následující konfigurace konfiguračního souboru pro Svcutil.exe jak je znázorněno v souboru Svcutil.exe.config.  
+ Rozšíření importu zásady systému jsme musíte přidat následující konfigurace do konfiguračního souboru pro Svcutil.exe jak je znázorněno v souboru Svcutil.exe.config.  
   
 ```xml
 <configuration>  
@@ -245,21 +245,21 @@ AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressi
 </configuration>  
 ```  
   
- Pak můžeme implementovat `IPolicyImporterExtension` z našich registrované třídy (`UdpBindingElementImporter`). V `ImportPolicy()`, jsme Projděte kontrolní výrazy v našem oboru názvů a zpracovat těm, které jsou pro generování přenosu a zkontrolujte, zda je vícesměrového vysílání. Také jsme musí odebrat příslušné kontrolní výrazy, které jsme zpracovat ze seznamu vazby kontrolní výrazy. Znovu když spustíte Svcutil.exe, existují dvě možnosti pro integraci:  
+ Pak můžeme implementovat `IPolicyImporterExtension` z našich registrované třídy (`UdpBindingElementImporter`). V `ImportPolicy()`, jsme v našem oboru názvů, prohlédněte si kontrolní výrazy a zpracovat pro generování přenos a zkontrolujte, zda je vícesměrového vysílání. Také musíte Odebereme kontrolní výrazy, které My se postaráme ze seznamu vazby kontrolní výrazy. Znovu když spustíte Svcutil.exe, existují dvě možnosti pro integraci:  
   
-1.  Bod Svcutil.exe pro naše konfiguračního souboru pomocí /SvcutilConfig:\<souboru >.  
+1.  Bod Svcutil.exe k naší konfiguračního souboru pomocí /SvcutilConfig:\<soubor >.  
   
-2.  Přidejte konfigurační oddíl k Svcutil.exe.config ve stejném adresáři jako Svcutil.exe.  
+2.  Přidáte konfigurační oddíl pro Svcutil.exe.config ve stejném adresáři jako Svcutil.exe.  
   
 <a name="AddingAStandardBinding"></a>   
-## <a name="adding-a-standard-binding"></a>Přidání standardní vazby  
- Naše prvku vazby lze použít v následujících dvou způsobů:  
+## <a name="adding-a-standard-binding"></a>Přidání standardní vazbu  
+ Naše element vazby lze použít v následujících dvou způsobů:  
   
--   Prostřednictvím vlastní vazby: vlastní vazby umožňuje uživateli vytvoření vlastní vazby založené na libovolnou sadu elementů vazby.  
+-   Prostřednictvím vlastní vazby: vlastní vazby umožňuje uživateli vytvořit své vlastní vazbu na základě libovolného sady elementů vazby.  
   
--   Pomocí vazby poskytované systémem, který zahrnuje naše prvku vazby. WCF poskytuje několik z těchto vazeb definovaná systémem, jako `BasicHttpBinding`, `NetTcpBinding`, a `WsHttpBinding`. Každá z těchto vazeb je přidružen k profilu dobře definovaný.  
+-   S použitím vazeb poskytovaných systémem, který zahrnuje naše element vazby. WCF poskytuje několik z těchto vazeb definovaných systémem, jako `BasicHttpBinding`, `NetTcpBinding`, a `WsHttpBinding`. Každá z těchto vazeb souvisí s dobře definovaného profilu.  
   
- Ukázka implementuje vazba profilu v `SampleProfileUdpBinding`, která je odvozena z <xref:System.ServiceModel.Channels.Binding>. `SampleProfileUdpBinding` Obsahuje až čtyři prvky vazeb v něm: `UdpTransportBindingElement`, `TextMessageEncodingBindingElement CompositeDuplexBindingElement`, a `ReliableSessionBindingElement`.  
+ Ukázka implementuje vazba profilu v `SampleProfileUdpBinding`, která je odvozena z <xref:System.ServiceModel.Channels.Binding>. `SampleProfileUdpBinding` Obsahuje až čtyři elementy vazby v něm: `UdpTransportBindingElement`, `TextMessageEncodingBindingElement CompositeDuplexBindingElement`, a `ReliableSessionBindingElement`.  
   
 ```csharp
 public override BindingElementCollection CreateBindingElements()  
@@ -276,10 +276,10 @@ public override BindingElementCollection CreateBindingElements()
 }  
 ```  
   
-### <a name="adding-a-custom-standard-binding-importer"></a>Přidání vlastních standardní vazby – Importér  
- Svcutil.exe a `WsdlImporter` typu, ve výchozím nastavení, rozpozná a importuje definovaná systémem vazby. Jinak získává importovat, protože vazba `CustomBinding` instance. Chcete-li povolit Svcutil.exe a `WsdlImporter` k importu `SampleProfileUdpBinding` `UdpBindingElementImporter` taky funguje jako – Importér vlastní standardní vazby.  
+### <a name="adding-a-custom-standard-binding-importer"></a>Přidání vlastní standardní vazby programu pro import  
+ Svcutil.exe a `WsdlImporter` typ, ve výchozím nastavení, rozpozná a importuje systémem definované vazby. V opačném případě získá importovat, protože vazba `CustomBinding` instance. Povolit Svcutil.exe a `WsdlImporter` import `SampleProfileUdpBinding` `UdpBindingElementImporter` taky pracuje jako import standardní vlastní vazby.  
   
- Implementuje – Importér vlastní standardní vazby `ImportEndpoint` metodu `IWsdlImportExtension` rozhraní prozkoumat `CustomBinding` instance importovat z metadat zobrazíte, zda se může vygenerovat konkrétní standardní vazby.  
+ Implementuje programu pro import standardní vlastní vazby `ImportEndpoint` metodu na `IWsdlImportExtension` rozhraní k prozkoumání `CustomBinding` instance naimportované z metadat najdete v článku, zda ho může být vygenerováno konkrétní standardní vazbu.  
   
 ```csharp
 if (context.Endpoint.Binding is CustomBinding)  
@@ -299,14 +299,14 @@ if (context.Endpoint.Binding is CustomBinding)
 }  
 ```  
   
- Obecně platí implementace – Importér vlastní standardní vazby zahrnuje kontrolu vlastnosti prvky importované vazby pro ověření, že pouze vlastnosti, které by mohly být nastaveny standardní vazbou změnily a všechny ostatní vlastnosti jsou jejich výchozí hodnoty. Základní strategii pro implementaci – Importér standardní vazba je vytvoření instance standardní vazby, rozšířit vlastnosti z elementů vazby standardní vazby instanci, která podporuje standardní vazby a porovnání vazby elementy ze standardní vazba s prvky importované vazby.  
+ Obecně platí implementace programu pro import vlastních vazeb standard zahrnuje ověření vlastností elementů importované vazby k ověření, že jste změnili pouze vlastnosti, které může nastavit standardní vazbou a všechny ostatní vlastnosti se jejich výchozích hodnotách. Základní strategií pro implementaci standardní vazbu Importér je vytvoření instance standardní vazbu, rozšíří vlastnosti z elementů vazby instanci standardní vazbu, která podporuje standardní vazbu, a porovnat vazby elementy ze standardní vazba s prvky importované vazby.  
   
 <a name="AddingConfigurationSupport"></a>   
 ## <a name="adding-configuration-support"></a>Přidání podpory konfigurace  
- Ke zveřejnění naše přenosu prostřednictvím konfigurace, musíme implementovat dvě konfigurační oddíly. První je `BindingElementExtensionElement` pro `UdpTransportBindingElement`. Toto je tak, aby `CustomBinding` implementace může odkazovat naše prvku vazby. Druhý `Configuration` pro naše `SampleProfileUdpBinding`.  
+ Pokud chcete zpřístupnit naše přenosu prostřednictvím konfigurace, musíme implementovat dvě konfigurační oddíly funkce. První je `BindingElementExtensionElement` pro `UdpTransportBindingElement`. Toto je tak, aby `CustomBinding` implementace může odkazovat na naše element vazby. Druhým je `Configuration` pro naše `SampleProfileUdpBinding`.  
   
-### <a name="binding-element-extension-element"></a>Rozšíření elementu vazby  
- V části `UdpTransportElement` je `BindingElementExtensionElement` která zveřejňuje `UdpTransportBindingElement` v konfiguraci systému. S několika základní přepsání jsme definovali naše název konfiguračního oddílu, typ elementu naše vazby a postup vytvoření naše prvku vazby. Naše oddílu rozšíření jsme pak můžete zaregistrovat v konfiguračním souboru, jak je znázorněno v následujícím kódu.  
+### <a name="binding-element-extension-element"></a>Element rozšíření elementu vazby  
+ V části `UdpTransportElement` je `BindingElementExtensionElement` , která zveřejní `UdpTransportBindingElement` k systému konfigurace. S několika základní přepsání definujeme naše název oddílu konfigurace, typ naše element vazby a vytvoření naší element vazby. Naše rozšíření části jsme pak můžete zaregistrovat v konfiguračním souboru, jak je znázorněno v následujícím kódu.  
   
 ```xml
 <configuration>  
@@ -320,7 +320,7 @@ if (context.Endpoint.Binding is CustomBinding)
 </configuration>  
 ```  
   
- Rozšíření můžete odkazovat z vlastních vazeb, používat UDP jako přenosu.  
+ Rozšíření můžete odkazovat z vlastní vazby pro použití jako přenos UDP.  
   
 ```xml
 <configuration>  
@@ -337,7 +337,7 @@ if (context.Endpoint.Binding is CustomBinding)
 ```  
   
 ### <a name="binding-section"></a>Část vazby  
- V části `SampleProfileUdpBindingCollectionElement` je `StandardBindingCollectionElement` která zveřejňuje `SampleProfileUdpBinding` v konfiguraci systému. Hromadné implementace je delegovaný jako `SampleProfileUdpBindingConfigurationElement`, která je odvozena z `StandardBindingElement`. `SampleProfileUdpBindingConfigurationElement` Má vlastnosti, které odpovídají vlastnosti na `SampleProfileUdpBinding`a funkce pro mapování z `ConfigurationElement` vazby. Nakonec přepsání `OnApplyConfiguration` metoda v našem `SampleProfileUdpBinding`, jak je znázorněno v následujícím ukázkovém kódu.  
+ V části `SampleProfileUdpBindingCollectionElement` je `StandardBindingCollectionElement` , která zveřejní `SampleProfileUdpBinding` k systému konfigurace. Hromadné implementace se deleguje na `SampleProfileUdpBindingConfigurationElement`, která je odvozena z `StandardBindingElement`. `SampleProfileUdpBindingConfigurationElement` Má vlastnosti, které odpovídají vlastnostem v `SampleProfileUdpBinding`a funkce mapování `ConfigurationElement` vazby. Nakonec přepsání `OnApplyConfiguration` metoda v našich `SampleProfileUdpBinding`, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```csharp
 protected override void OnApplyConfiguration(string configurationName)  
@@ -362,7 +362,7 @@ protected override void OnApplyConfiguration(string configurationName)
 }
 ```  
   
- K registraci této obslužné rutiny konfigurace systému, přidáme v následující části relevantní konfiguračního souboru.  
+ K registraci této obslužné rutiny konfigurace systému, přidáme do příslušných konfigurační soubor v následující části.  
   
 ```xml
 <configuration>  
@@ -376,7 +376,7 @@ protected override void OnApplyConfiguration(string configurationName)
 </configuration>  
 ```  
   
- Potom může být odkaz z serviceModel konfigurační oddíl.  
+ Poté jej lze odkazovat z konfiguračního oddílu serviceModel.  
   
 ```xml
 <configuration>  
@@ -393,10 +393,10 @@ protected override void OnApplyConfiguration(string configurationName)
 </configuration>  
 ```  
   
-## <a name="the-udp-test-service-and-client"></a>Služba Test UDP a klienta  
- Testovacího kódu pro použití přenosu Tato ukázka je dostupná v adresáři UdpTestService a UdpTestClient. Kód služby se skládá ze dvou testy – jeden test nastaví vazby a koncových bodů z kódu a dalších nemá prostřednictvím konfigurace. Oba testy používají dva koncové body. Používá jeden koncový bod `SampleUdpProfileBinding` s [ \<reliableSession >](http://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) nastavena na `true`. Jiný koncový bod používá vlastní vazby s `UdpTransportBindingElement`. Jde o ekvivalent pomocí `SampleUdpProfileBinding` s [ \<reliableSession >](http://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) nastavena na `false`. Oba testy vytvoření služby, přidat koncový bod pro každou vazbu, otevřete službu a potom počkejte uživatelům před jeho zavřením službu stiskněte ENTER.  
+## <a name="the-udp-test-service-and-client"></a>Služba testovacího UDP a klienta  
+ Testovací kód pro tento přenos ukázkový používání je k dispozici v adresářích UdpTestService a UdpTestClient. Kódu služby se skládá ze dvou testy – jeden test nastaví vazby a koncových bodů z kódu a druhý se prostřednictvím konfigurace. Oba testy použít dva koncové body. Použije jeden koncový bod `SampleUdpProfileBinding` s [ \<reliableSession >](https://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) nastavena na `true`. Jiný koncový bod používá vlastní vazby s `UdpTransportBindingElement`. To je ekvivalentní k použití `SampleUdpProfileBinding` s [ \<reliableSession >](https://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) nastavena na `false`. Oba testy vytvoření služby, přidat koncový bod pro každou vazbu, otevřete službu a potom počkejte uživateli před jeho zavřením službu stiskněte ENTER.  
   
- Když spustíte testovací aplikaci služby byste měli vidět následující výstup.  
+ Při spuštění testu aplikace službu byste měli vidět následující výstup.  
   
 ```console
 Testing Udp From Code.  
@@ -404,7 +404,7 @@ Service is started from code...
 Press <ENTER> to terminate the service and start service from config...  
 ```  
   
- Když pak spustíte test klientská aplikace proti publikované koncových bodů. Testovací aplikace klienta vytvoří klienta pro každý koncový bod a odesílá zprávy pět na každý koncový bod. Následující výstup je v klientovi.  
+ Test klientská aplikace může potom spuštěním příkazu publikované koncových bodů. Testovací aplikace klienta vytvoří klienta pro každý koncový bod a odesílá pět zprávy pro každý koncový bod. Následující výstup je na klientovi.  
   
 ```console
 Testing Udp From Imported Files Generated By SvcUtil.  
@@ -416,7 +416,7 @@ Testing Udp From Imported Files Generated By SvcUtil.
 Press <ENTER> to complete test.  
 ```  
   
- Níže je úplný výstup ve službě.  
+ Následuje úplný výstup ve službě.  
   
 ```console
 Service is started from code...  
@@ -433,7 +433,7 @@ Hello, world!
    adding 4 + 8  
 ```  
   
- Ke spouštění klientskou aplikaci publikovat pomocí konfigurace koncových bodů, stiskněte ENTER na službu a poté znovu spusťte testovacího klienta. Měli byste vidět následující výstup ve službě.  
+ Ke spuštění klientské aplikace publikované pomocí konfigurace koncových bodů, stiskněte ENTER na službu a poté znovu spusťte testovací klient. Ve službě byste měli vidět následující výstup.  
   
 ```console
 Testing Udp From Config.  
@@ -441,7 +441,7 @@ Service is started from config...
 Press <ENTER> to terminate the service and exit...  
 ```  
   
- Znovu spustit klienta vypočítá stejný jako předchozí výsledky.  
+ Spuštění klienta znovu provede stejné jako předchozí výsledky.  
   
  Znovu vygenerovat kód klienta a konfigurace pomocí Svcutil.exe, spusťte aplikaci služby a pak spusťte následující Svcutil.exe z kořenového adresáře vzorku.  
   
@@ -449,7 +449,7 @@ Press <ENTER> to terminate the service and exit...
 svcutil http://localhost:8000/udpsample/ /reference:UdpTranport\bin\UdpTransport.dll /svcutilConfig:svcutil.exe.config  
 ```  
   
- Všimněte si, že Svcutil.exe negeneruje vazby konfigurace rozšíření pro `SampleProfileUdpBinding`, takže je třeba přidat ji ručně.  
+ Všimněte si, že Svcutil.exe negeneruje pro konfiguraci rozšíření vazby `SampleProfileUdpBinding`, takže je třeba přidat ji ručně.  
   
 ```xml
 <configuration>  
@@ -464,19 +464,19 @@ svcutil http://localhost:8000/udpsample/ /reference:UdpTranport\bin\UdpTransport
 </configuration>  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+2.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-3.  Naleznete v předchozí části "UDP testovací služby a klient".  
+3.  Přečtěte si předchozí část "The UDP testu a klient služby".  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transport\Udp`

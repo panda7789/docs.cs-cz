@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 94d17b6c8150744d4beca5e74827d235f81af08c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 33aab5ee23a1f0d30d1f9f3079856ca30d46d2ec
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33433312"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43487239"
 ---
 # <a name="iclrstrongnamegethashfromfile-method"></a>ICLRStrongName::GetHashFromFile – metoda
-Generuje součet hash přes obsah zadaného souboru.  
+Vygeneruje hodnotu hash nad obsah zadaného souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +41,28 @@ HRESULT GetHashFromFile (
   
 #### <a name="parameters"></a>Parametry  
  `szFilePath`  
- [v] Název souboru, který se hodnota hash.  
+ [in] Název souboru, který má hodnotu hash.  
   
  `piHashAlg`  
- [ve out] Algoritmus použitý při generování hodnoty hash. Platný algoritmy jsou definované rozhraní CryptoAPI Win32. Pokud `piHashAlg` je nastaven na hodnotu 0, výchozí algoritmus se používá CALG_SHA-1.  
+ [out v] Algoritmus použitého při generování hodnoty hash. Platné algoritmy jsou těmi definovanými ve Win32 rozhraní CryptoAPI. Pokud `piHashAlg` je nastavena na hodnotu 0, výchozí algoritmus se používá CALG_SHA-1.  
   
  `pbHash`  
  [out] Bajtové pole obsahující generované hodnoty hash.  
   
  `cchHash`  
- [v] Maximální velikost vyrovnávací paměti, `pbHash` odkazuje na.  
+ [in] Maximální velikost vyrovnávací paměti, která `pbHash` odkazuje na.  
   
  `pchHash`  
- [out] Velikost v bajtech vrácený `pbHash`.  
+ [out] Velikost v bajtech, vráceného `pbHash`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je stejná jako [iclrstrongname::gethashfromfilew –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfilew-method.md) metoda, s tím rozdílem, že soubor název specifikace je ANSI místo kódování Unicode.  
+ Tato metoda je stejné jako [iclrstrongname::gethashfromfilew –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfilew-method.md) metody, s tím rozdílem, že specifikace název souboru je ANSI místo Unicode.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   

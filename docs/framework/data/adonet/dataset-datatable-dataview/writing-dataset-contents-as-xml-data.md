@@ -1,23 +1,23 @@
 ---
-title: Zápis obsah datovou sadu jako XML Data
+title: Kopírování obsahu datové sady jako dat XML
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: fd15f8a5-3b4c-46d0-a561-4559ab2a4705
-ms.openlocfilehash: 44afa79d715ef62bcbd1c242a533876d911345c8
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: ff63c63be9bbfab7c3a9600f259abdea81be4260
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32761906"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43482258"
 ---
-# <a name="writing-dataset-contents-as-xml-data"></a>Zápis obsah datovou sadu jako XML Data
-V technologii ADO.NET můžete napsat reprezentaci XML <xref:System.Data.DataSet>, s nebo bez jeho schématu. Pokud informace o schématu zahrnuty vložené se souborem XML, je zapsán pomocí jazyka definice schématu XML (XSD). Schéma obsahuje definice tabulky <xref:System.Data.DataSet> a také definice relace a omezení.  
+# <a name="writing-dataset-contents-as-xml-data"></a>Kopírování obsahu datové sady jako dat XML
+Napište reprezentaci v jazyce XML v ADO.NET <xref:System.Data.DataSet>, s nebo bez jeho schématu. Je-li informace o schématu zahrnuty vložené XML, je zapsán pomocí jazyka pro definici schématu XML (XSD). Schéma obsahuje definice tabulky <xref:System.Data.DataSet> a také definice relace a omezení.  
   
- Když <xref:System.Data.DataSet> je zapsána jako data XML, řádky v <xref:System.Data.DataSet> jsou zapsány ve své aktuální verze. Ale <xref:System.Data.DataSet> lze zapsat také jako prvek formátu DiffGram tak, že budou zahrnuty aktuální a původní hodnoty řádků.  
+ Když <xref:System.Data.DataSet> je zapsán jako data XML, řádky v tabulce <xref:System.Data.DataSet> jsou napsané v jejich aktuálních verzí. Ale <xref:System.Data.DataSet> lze také zapsat jako formát DiffGram tak, aby aktuální a původní hodnoty řádky budou zahrnuty.  
   
- Reprezentace XML <xref:System.Data.DataSet> lze zapisovat do souboru, datového proudu **XmlWriter**, nebo řetězec. Tyto možnosti poskytují flexibilitu pro způsob přenosu reprezentaci XML <xref:System.Data.DataSet>. K získání reprezentaci XML <xref:System.Data.DataSet> jako řetězec, použijte **getxml –** metoda, jak je znázorněno v následujícím příkladu.  
+ Reprezentace XML <xref:System.Data.DataSet> lze zapsat do souboru, datový proud **XmlWriter**, nebo řetězec. Tyto možnosti poskytují flexibilitu pro způsob přenosu reprezentace XML <xref:System.Data.DataSet>. K získání reprezentace XML <xref:System.Data.DataSet> jako řetězec, použijte **getxml –** způsob, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Dim xmlDS As String = custDS.GetXml()  
@@ -27,21 +27,21 @@ Dim xmlDS As String = custDS.GetXml()
 string xmlDS = custDS.GetXml();  
 ```  
   
- **Getxml –** vrátí reprezentaci XML <xref:System.Data.DataSet> bez informace o schématu. Při zápisu informací schématu z <xref:System.Data.DataSet> (jako schématu XML) na řetězec, použijte **GetXmlSchema**.  
+ **Getxml –** vrátí reprezentaci XML <xref:System.Data.DataSet> bez informací o schématu. Zápis informací o schématu z <xref:System.Data.DataSet> (jako schéma XML) na řetězec pomocí **GetXmlSchema**.  
   
- Zápis <xref:System.Data.DataSet> do souboru, datového proudu, nebo **XmlWriter**, použijte **WriteXml** metoda. První parametr je předat do **WriteXml** je cílem výstup XML. Například předat řetězec obsahující název souboru, **System.IO.TextWriter** objekt a tak dále. Abyste mohli předávat volitelný druhý parametr funkce **XmlWriteMode** k určení, jak je výstup XML k zapsání.  
+ K zápisu <xref:System.Data.DataSet> do souboru datového proudu, nebo **XmlWriter**, použijte **WriteXml** – metoda. První parametr předáte do **WriteXml** je cílem výstupu XML. Například řetězec obsahující název souboru, předejte **System.IO.TextWriter** objektu a tak dále. Můžete předat volitelný druhý parametr **XmlWriteMode** k určení, jak se výstup XML má být proveden zápis.  
   
- Následující tabulka znázorňuje možnosti pro **XmlWriteMode**.  
+ V následující tabulce jsou uvedeny možnosti **XmlWriteMode**.  
   
 |Možnost XmlWriteMode|Popis|  
 |-------------------------|-----------------|  
 |**IgnoreSchema**|Zapíše aktuální obsah <xref:System.Data.DataSet> jako data XML bez schématu XML. Toto nastavení je výchozí.|  
-|**WriteSchema**|Zapíše aktuální obsah <xref:System.Data.DataSet> jako data XML s relační struktura jako vloženého schématu XML.|  
+|**WriteSchema**|Zapíše aktuální obsah <xref:System.Data.DataSet> jako dat XML pomocí relační struktury jako vložené schéma XML.|  
 |**Formát DiffGram**|Zapíše celý <xref:System.Data.DataSet> jako formát DiffGram, včetně aktuální a původní hodnoty. Další informace najdete v tématu [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md).|  
   
- Při zápisu reprezentaci XML <xref:System.Data.DataSet> obsahující **DataRelation** objekty, pravděpodobně budete chtít výsledný kód XML má řádky podřízené každý vztah vnořených ve svých související nadřazené elementy. K tomu, nastavte **vnořené** vlastnost **DataRelation** k **true** při přidání **DataRelation** k <xref:System.Data.DataSet>. Další informace najdete v tématu [vnoření DataRelations](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md).  
+ Při zápisu reprezentaci v jazyce XML <xref:System.Data.DataSet> obsahující **DataRelation** objekty, bude pravděpodobně chcete, aby výsledný XML obsahuje podřízené řádky každá relace vnořené jejich souvisejících nadřazených prvků. Chcete-li to provést, nastavte **vnořené** vlastnost **DataRelation** k **true** po přidání **DataRelation** k <xref:System.Data.DataSet>. Další informace najdete v tématu [vnoření datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md).  
   
- Následují dva příklady, jak napsat reprezentaci XML <xref:System.Data.DataSet> do souboru. V prvním příkladu předá název souboru pro výsledný soubor XML jako řetězec tak, aby **WriteXml**. V druhém příkladu předá **System.IO.StreamWriter** objektu.  
+ Následují dva příklady toho, jak reprezentaci XML pro zápis <xref:System.Data.DataSet> do souboru. První příklad předá název souboru pro výslednou XML jako řetězec do **WriteXml**. Druhý příklad předává **System.IO.StreamWriter** objektu.  
   
 ```vb  
 custDS.WriteXml("Customers.xml", XmlWriteMode.WriteSchema)  
@@ -63,15 +63,15 @@ custDS.WriteXml(xmlSW, XmlWriteMode.WriteSchema);
 xmlSW.Close();  
 ```  
   
-## <a name="mapping-columns-to-xml-elements-attributes-and-text"></a>Mapování sloupce XML elementy, atributy a Text  
- Můžete určit, jak je reprezentována sloupec tabulky v kódu XML pomocí **ColumnMapping** vlastnost **DataColumn** objektu. V následující tabulce jsou uvedeny rozdíly **MappingType** hodnoty **ColumnMapping** vlastnost sloupec tabulky a výsledný soubor XML.  
+## <a name="mapping-columns-to-xml-elements-attributes-and-text"></a>Mapování sloupců na XML elementů, atributů a Text  
+ Můžete určit, jak je reprezentovaná sloupec tabulky v XML pomocí **ColumnMapping** vlastnost **DataColumn** objektu. V následující tabulce jsou uvedeny různé **MappingType** hodnoty **ColumnMapping** vlastnost sloupec tabulky a výsledného kódu XML.  
   
 |Hodnota MappingType|Popis|  
 |-----------------------|-----------------|  
-|**Element**|Toto nastavení je výchozí. Sloupec je zapsána jako element XML, kde ColumnName je název elementu a obsah sloupce se zapisují jako text elementu. Příklad:<br /><br /> `<ColumnName>Column Contents</ColumnName>`|  
-|**Atribut**|Sloupec je zapsána jako atribut XML elementu XML pro aktuální řádek, kde ColumnName je název atributu, a obsah sloupce se zapisují jako hodnota atributu. Příklad:<br /><br /> `<RowElement ColumnName="Column Contents" />`|  
-|**SimpleContent**|Obsah sloupce jsou zapsány jako text v elementu XML pro aktuální řádek. Příklad:<br /><br /> `<RowElement>Column Contents</RowElement>`<br /><br /> Všimněte si, že **SimpleContent** nelze nastavit pro sloupec tabulky, který má **Element** sloupce nebo vnořené relace.|  
-|**Skryté**|Sloupec není napsán v výstup XML.|  
+|**Element**|Toto nastavení je výchozí. Sloupec je zapsán jako element XML, kde vlastnost ColumnName je název elementu a obsah sloupce se zapisují jako text elementu. Příklad:<br /><br /> `<ColumnName>Column Contents</ColumnName>`|  
+|**Atribut**|Sloupec je zapsán jako atribut XML elementu XML pro aktuální řádek, kde vlastnost ColumnName je název atributu a obsah sloupce se zapisují jako hodnota atributu. Příklad:<br /><br /> `<RowElement ColumnName="Column Contents" />`|  
+|**SimpleContent**|Obsah sloupce se zapisují jako text v elementu jazyka XML pro aktuální řádek. Příklad:<br /><br /> `<RowElement>Column Contents</RowElement>`<br /><br /> Všimněte si, že **SimpleContent** nelze nastavit pro sloupec tabulky, který má **Element** sloupce nebo vnořené relace.|  
+|**Skryté**|Sloupec není zapsán ve výstupu XML.|  
   
 ## <a name="see-also"></a>Viz také  
  [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
@@ -79,4 +79,4 @@ xmlSW.Close();
  [Vnoření datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)  
  [Zápis informací o schématu datové sady jako XSD](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-schema-information-as-xsd.md)  
  [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -7,22 +7,22 @@ helpviewer_keywords:
 - printing [Windows Forms], print preview (using designer)
 - print preview [Windows Forms], default interface (using designer)
 ms.assetid: bfb5a3d7-021e-44f4-90f3-d435467f51d6
-ms.openlocfilehash: a6fc2f5127debaa54fe195d935da9b61cdc0902b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0f35343ca06666580d744b4d6e0fa954afedbd9c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33538376"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43480140"
 ---
 # <a name="printpreviewdialog-control-windows-forms"></a>PrintPreviewDialog – ovládací prvek (Windows Forms)
-Windows Forms `PrintPreviewDialog` řízení je předem nakonfigurovaný dialogové okno slouží k zobrazení, jak se dokument zobrazí při tisku. Ji použijte v rámci aplikace systému Windows jako simple řešení místo dialogové okno Vlastní konfigurace. Ovládací prvek obsahuje tlačítka pro tisk, přiblížení, zobrazení jednu nebo více stránek a zavření dialogového okna.  
+Windows Forms `PrintPreviewDialog` ovládací prvek je předem nakonfigurované dialogovému oknu slouží k zobrazení, jak bude dokument vypadat po vytištění. Použijte v rámci vaší aplikace založené na Windows jako jednoduchým řešením namísto dialogové okno Vlastní konfigurace. Ovládací prvek obsahuje tlačítka pro tisk, Přiblížit, zobrazení jedné nebo více stránek a zavření dialogového okna.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku PrintPreviewDialog](../../../../docs/framework/winforms/controls/printpreviewdialog-control-overview-windows-forms.md)  
- Představuje obecné koncepty `PrintPreviewDialog` řízení, které umožňuje zobrazit předem nakonfigurovaná dialogové okno, které uživatelé slouží k zobrazení verze jejich dokumentu, jak bude vypadat při tisku.  
+ Představuje obecné koncepty `PrintPreviewDialog` ovládací prvek, který umožňuje zobrazit předem nakonfigurované dialogové okno, které mohou uživatelé zobrazit verzi dokumentu, jak bude vypadat při tisku.  
   
  [Postupy: Zobrazení náhledu tisku v aplikacích Windows Forms](../../../../docs/framework/winforms/controls/how-to-display-print-preview-in-windows-forms-applications.md)  
- Vysvětluje, jak zobrazit stránku, která je pro tisk pomocí instance `PrintPreviewDialog` ovládacího prvku za běhu.  
+ Vysvětluje, jak zobrazit stránku, která se má vytisknout pomocí instance `PrintPreviewDialog` ovládací prvek v době běhu.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.PrintPreviewDialog>  
@@ -30,13 +30,13 @@ Windows Forms `PrintPreviewDialog` řízení je předem nakonfigurovaný dialogo
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.  
+ Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.  
   
- [Nepostradatelný kód pro Windows Forms dialogových oken](http://go.microsoft.com/fwlink/?LinkID=102575)  
- Popisuje ovládací prvky Windows Forms dialogové okno pole a součásti a kód nezbytná k provádění jejich základní funkce. (Technického článku MSDN Online Library)  
+ [Základní kód pro Windows Forms dialogová okna](https://go.microsoft.com/fwlink/?LinkID=102575)  
+ Tento článek popisuje ovládací prvky Windows Forms dialogového okna pole a komponent a kódu potřebného pro spouštěním svých základních funkcí. (Technického článku MSDN Online Library)  
   
  [Ovládací prvky a součásti dialogového okna](../../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)  
- Obsahuje seznam různých – dialogové okno Ovládací prvky pro Windows Forms.  
+ Seznam ovládacích prvků různých dialogového okna pro Windows Forms.  
   
  [Dialogová okna ve Windows Forms](../../../../docs/framework/winforms/dialog-boxes-in-windows-forms.md)  
- Popisuje postup vytvoření dialogového okna pro formuláře systému Windows.
+ Popisuje, jak vytvořit dialogové okno pro formulář Windows.
