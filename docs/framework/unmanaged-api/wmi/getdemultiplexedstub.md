@@ -1,6 +1,6 @@
 ---
 title: Funkce GetDemultiplexedStub (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce GetDemultiplexedStub vytvoří předávání podřízený objekt klienta jako pomůcku při přijímání asynchronní volání od Správa systému Windows.
+description: Funkce GetDemultiplexedStub vytvoří pomáhat klientovi v přijetí byla zahájena asynchronní volání ze správy službou Windows Server pro předávání jímky objektu.
 ms.date: 11/06/2017
 api_name:
 - GetDemultiplexedStub
@@ -16,19 +16,19 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6b195d3a512c537ca409bd2039add9e69abaf4df
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4311a77c9159428bf7beacc99d4479acb28b91b6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33456359"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43482353"
 ---
-# <a name="getdemultiplexedstub-function"></a><span data-ttu-id="5ccaf-103">GetDemultiplexedStub – funkce</span><span class="sxs-lookup"><span data-stu-id="5ccaf-103">GetDemultiplexedStub function</span></span>
-<span data-ttu-id="5ccaf-104">Vytvoří předávání podřízený objekt klienta jako pomůcku při přijímání asynchronní volání od Správa systému Windows.</span><span class="sxs-lookup"><span data-stu-id="5ccaf-104">Creates an object forwarder sink to assist a client in receiving asynchronous calls from Windows Management.</span></span>
+# <a name="getdemultiplexedstub-function"></a><span data-ttu-id="1f8ae-103">GetDemultiplexedStub – funkce</span><span class="sxs-lookup"><span data-stu-id="1f8ae-103">GetDemultiplexedStub function</span></span>
+<span data-ttu-id="1f8ae-104">Vytvoří pomáhat klientovi v přijetí byla zahájena asynchronní volání ze správy službou Windows Server pro předávání jímky objektu.</span><span class="sxs-lookup"><span data-stu-id="1f8ae-104">Creates an object forwarder sink to assist a client in receiving asynchronous calls from Windows Management.</span></span>
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
-## <a name="syntax"></a><span data-ttu-id="5ccaf-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5ccaf-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1f8ae-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1f8ae-105">Syntax</span></span>  
   
 ```  
 HRESULT GetDemultiplexedStub (
@@ -38,29 +38,29 @@ HRESULT GetDemultiplexedStub (
 ); 
 ```  
 
-## <a name="parameters"></a><span data-ttu-id="5ccaf-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="5ccaf-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="1f8ae-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="1f8ae-106">Parameters</span></span>
 
 `pObject`  
-<span data-ttu-id="5ccaf-107">[v] Ukazatel na implementaci klienta v rámci procesu [IWbemObjectSink](https://msdn.microsoft.com/library/aa391787(v=vs.85).aspx).</span><span class="sxs-lookup"><span data-stu-id="5ccaf-107">[in] A pointer to the client's in-process implementation of [IWbemObjectSink](https://msdn.microsoft.com/library/aa391787(v=vs.85).aspx).</span></span>
+<span data-ttu-id="1f8ae-107">[in] Ukazatel na implementaci klienta v rámci procesu [IWbemObjectSink](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectsink).</span><span class="sxs-lookup"><span data-stu-id="1f8ae-107">[in] A pointer to the client's in-process implementation of [IWbemObjectSink](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectsink).</span></span>
 
 `isLocal`  
-<span data-ttu-id="5ccaf-108">[v] Příznak, který určuje, zda je místní události (`true`), jinak hodnota `false`.</span><span class="sxs-lookup"><span data-stu-id="5ccaf-108">[in] A flag that indicates whether the event is local (`true`); otherwise, `false`.</span></span>
+<span data-ttu-id="1f8ae-108">[in] Příznak označující, zda je místní události (`true`); v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="1f8ae-108">[in] A flag that indicates whether the event is local (`true`); otherwise, `false`.</span></span>
 
 `ppObject`  
-<span data-ttu-id="5ccaf-109">[out] Podřízený objekt předávání klienta jako pomůcku při přijímání asynchronní volání od Správa systému Windows.</span><span class="sxs-lookup"><span data-stu-id="5ccaf-109">[out] A object forwarder sink to assist a client in receiving asynchronous calls from Windows Management.</span></span>
+<span data-ttu-id="1f8ae-109">[out] Objekt jímky předávání pomáhat klientovi v přijetí byla zahájena asynchronní volání ze správy Windows.</span><span class="sxs-lookup"><span data-stu-id="1f8ae-109">[out] A object forwarder sink to assist a client in receiving asynchronous calls from Windows Management.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="5ccaf-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="5ccaf-110">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="1f8ae-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="1f8ae-110">Return value</span></span>
 
-<span data-ttu-id="5ccaf-111">Pokud funkci úspěšné, je vrácenou hodnotu `S_OK` (0).</span><span class="sxs-lookup"><span data-stu-id="5ccaf-111">If the function succeeds, the return value is `S_OK` (0).</span></span>
+<span data-ttu-id="1f8ae-111">Pokud funkce uspěje, vrácená hodnota je `S_OK` (0).</span><span class="sxs-lookup"><span data-stu-id="1f8ae-111">If the function succeeds, the return value is `S_OK` (0).</span></span>
 
-<span data-ttu-id="5ccaf-112">V případě selhání funkce návratovou hodnotu je kód chyby nulová.</span><span class="sxs-lookup"><span data-stu-id="5ccaf-112">If the function fails, the return value is a non-zero error code.</span></span> <span data-ttu-id="5ccaf-113">Chcete-li získat rozšířené informace o chybě, zavolejte [GetErrorInfo –](geterrorinfo.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="5ccaf-113">To get extended error information, call the [GetErrorInfo](geterrorinfo.md) function.</span></span>
+<span data-ttu-id="1f8ae-112">Pokud funkce selže, vrácená hodnota je kód chyby.</span><span class="sxs-lookup"><span data-stu-id="1f8ae-112">If the function fails, the return value is a non-zero error code.</span></span> <span data-ttu-id="1f8ae-113">Chcete-li získat rozšířené informace o chybě, zavolejte [GetErrorInfo –](geterrorinfo.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="1f8ae-113">To get extended error information, call the [GetErrorInfo](geterrorinfo.md) function.</span></span>
     
-## <a name="requirements"></a><span data-ttu-id="5ccaf-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5ccaf-114">Requirements</span></span>  
- <span data-ttu-id="5ccaf-115">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5ccaf-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1f8ae-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1f8ae-114">Requirements</span></span>  
+ <span data-ttu-id="1f8ae-115">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1f8ae-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5ccaf-116">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="5ccaf-116">**Header:** WMINet_Utils.idl</span></span>  
+ <span data-ttu-id="1f8ae-116">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="1f8ae-116">**Header:** WMINet_Utils.idl</span></span>  
   
- <span data-ttu-id="5ccaf-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="5ccaf-117">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
+ <span data-ttu-id="1f8ae-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="1f8ae-117">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5ccaf-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="5ccaf-118">See also</span></span>  
-[<span data-ttu-id="5ccaf-119">Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="5ccaf-119">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="1f8ae-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1f8ae-118">See also</span></span>  
+[<span data-ttu-id="1f8ae-119">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="1f8ae-119">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)

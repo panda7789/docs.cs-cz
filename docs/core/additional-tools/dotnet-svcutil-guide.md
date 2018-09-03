@@ -1,35 +1,35 @@
 ---
-title: Nástroj Microsoft WCF svcutil dotnet.
-description: Přehled nástroje dotnet svcutil Microsoft WCF, který přidá funkce pro .NET Core a ASP.NET Core projekty, podobně jako nástroj svcutil WCF pro projekty rozhraní .NET Framework.
+title: Nástroj dotnet svcutil Microsoft WCF
+description: Přehled nástroje dotnet svcutil Microsoft WCF, který přidá funkce pro projekty .NET Core a ASP.NET Core, podobný nástroj svcutil WCF pro projekty .NET Framework.
 author: mlacouture
 ms.author: jralexander
-ms.date: 06/04/2018
-ms.openlocfilehash: c40dd9b437afe7381244b944228b6b2efe046eb2
-ms.sourcegitcommit: d8bf4976eafe3289275be3811e7cb721bfff7e1e
+ms.date: 08/20/2018
+ms.openlocfilehash: bb4d8e5f3997318b720535b0f1e07fc33d13338a
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753419"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43484118"
 ---
-# <a name="microsoft-wcf-dotnet-svcutil-tool"></a><span data-ttu-id="5cd12-103">Nástroj Microsoft WCF svcutil dotnet.</span><span class="sxs-lookup"><span data-stu-id="5cd12-103">Microsoft WCF dotnet-svcutil tool</span></span>
+# <a name="microsoft-wcf-dotnet-svcutil-tool"></a><span data-ttu-id="888f3-103">Nástroj dotnet svcutil Microsoft WCF</span><span class="sxs-lookup"><span data-stu-id="888f3-103">Microsoft WCF dotnet-svcutil tool</span></span>
 
-<span data-ttu-id="5cd12-104">Windows Communication Foundation (WCF) **dotnet svcutil** nástroj je nástroj .NET Core rozhraní příkazového řádku, který získává metadata z webové služby v umístění v síti nebo ze souboru WSDL a generuje WCF třída obsahující metody proxy serveru klienta, přístup k operace webové služby.</span><span class="sxs-lookup"><span data-stu-id="5cd12-104">The Windows Communication Foundation (WCF) **dotnet-svcutil** tool is a .NET Core CLI tool that retrieves metadata from a web service on a network location or from a WSDL file, and generates a WCF class containing client proxy methods that access the web service operations.</span></span>
+<span data-ttu-id="888f3-104">Windows Communication Foundation (WCF) **dotnet svcutil** nástroj je nástroj příkazového řádku .NET Core, načte metadata z webové služby v umístění v síti nebo ze souboru WSDL, který generuje WCF třídu obsahující metody proxy serveru klienta, který přístup k operací webové služby.</span><span class="sxs-lookup"><span data-stu-id="888f3-104">The Windows Communication Foundation (WCF) **dotnet-svcutil** tool is a .NET Core CLI tool that retrieves metadata from a web service on a network location or from a WSDL file, and generates a WCF class containing client proxy methods that access the web service operations.</span></span>
 
-<span data-ttu-id="5cd12-105">Podobně jako [ **Metadata modelu služby - svcutil** ](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj pro projekty rozhraní .NET Framework **dotnet svcutil** je nástroj příkazového řádku pro generování odkazu na webovou službu kompatibilní s projekty .NET Core a .NET Standard.</span><span class="sxs-lookup"><span data-stu-id="5cd12-105">Similar to the [**Service Model Metadata - svcutil**](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) tool for .NET Framework projects, the **dotnet-svcutil** is a command-line tool for generating a web service reference compatible with .NET Core and .NET Standard projects.</span></span>
+<span data-ttu-id="888f3-105">Podobně jako [ **metadat modelu služby - svcutil** ](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroje pro projekty .NET Framework **dotnet svcutil** je nástroj příkazového řádku pro generování odkaz webové služby kompatibilní s projekty .NET Core a .NET Standard.</span><span class="sxs-lookup"><span data-stu-id="888f3-105">Similar to the [**Service Model Metadata - svcutil**](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) tool for .NET Framework projects, the **dotnet-svcutil** is a command-line tool for generating a web service reference compatible with .NET Core and .NET Standard projects.</span></span>
 
-<span data-ttu-id="5cd12-106">**Dotnet svcutil** nástroj je alternativní možnost [ **odkaz na službu WCF Web** ](wcf-web-service-reference-guide.md) Visual Studio připojené poskytovatele služeb, která nejprve odeslaná pomocí sady Visual Studio 2017 v15.5.</span><span class="sxs-lookup"><span data-stu-id="5cd12-106">The **dotnet-svcutil** tool is an alternative option to the [**WCF Web Service Reference**](wcf-web-service-reference-guide.md) Visual Studio connected service provider that first shipped with Visual Studio 2017 v15.5.</span></span> <span data-ttu-id="5cd12-107">**Dotnet svcutil** nástroj jako nástroj pro .NET Core rozhraní příkazového řádku, je k dispozici platformy Linux, systému macOS a systému Windows.</span><span class="sxs-lookup"><span data-stu-id="5cd12-107">The **dotnet-svcutil** tool as a .NET Core CLI tool, is available cross-platform on Linux, macOS, and Windows.</span></span>
+<span data-ttu-id="888f3-106">**Dotnet svcutil** alternativní možnost je nástroj [ **WCF Web Service Reference** ](wcf-web-service-reference-guide.md) sady Visual Studio zprostředkovatel připojené služby, která se poprvé dodáváno pomocí sady Visual Studio 2017 v15.5.</span><span class="sxs-lookup"><span data-stu-id="888f3-106">The **dotnet-svcutil** tool is an alternative option to the [**WCF Web Service Reference**](wcf-web-service-reference-guide.md) Visual Studio connected service provider that first shipped with Visual Studio 2017 v15.5.</span></span> <span data-ttu-id="888f3-107">**Dotnet svcutil** nástroj jako nástroj příkazového řádku .NET Core, je k dispozici na různých platformách Windows, Linux a macOS.</span><span class="sxs-lookup"><span data-stu-id="888f3-107">The **dotnet-svcutil** tool as a .NET Core CLI tool, is available cross-platform on Linux, macOS, and Windows.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="5cd12-108">Služby by měl odkazovat jenom z důvěryhodného zdroje.</span><span class="sxs-lookup"><span data-stu-id="5cd12-108">You should only reference services from a trusted source.</span></span> <span data-ttu-id="5cd12-109">Přidání odkazů z nedůvěryhodných zdrojů může ohrozit zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="5cd12-109">Adding references from an untrusted source may compromise security.</span></span>
+> <span data-ttu-id="888f3-108">Služby by měly odkazovat pouze z důvěryhodného zdroje.</span><span class="sxs-lookup"><span data-stu-id="888f3-108">You should only reference services from a trusted source.</span></span> <span data-ttu-id="888f3-109">Přidávání odkazů z nedůvěryhodných zdrojů může ohrozit zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="888f3-109">Adding references from an untrusted source may compromise security.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="5cd12-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5cd12-110">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="888f3-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="888f3-110">Prerequisites</span></span>
 
-* <span data-ttu-id="5cd12-111">[.NET core SDK](https://www.microsoft.com/net/download) v1.0.4 nebo novější verze</span><span class="sxs-lookup"><span data-stu-id="5cd12-111">[.NET Core SDK](https://www.microsoft.com/net/download) v1.0.4 or later versions</span></span>
-* <span data-ttu-id="5cd12-112">Editor vaše oblíbené kódu</span><span class="sxs-lookup"><span data-stu-id="5cd12-112">Your favorite code editor</span></span>
+* <span data-ttu-id="888f3-111">[Sada .NET core SDK](https://www.microsoft.com/net/download) verzi v1.0.4 nebo novější verze</span><span class="sxs-lookup"><span data-stu-id="888f3-111">[.NET Core SDK](https://www.microsoft.com/net/download) v1.0.4 or later versions</span></span>
+* <span data-ttu-id="888f3-112">Váš oblíbený editor kódu</span><span class="sxs-lookup"><span data-stu-id="888f3-112">Your favorite code editor</span></span>
 
-## <a name="getting-started"></a><span data-ttu-id="5cd12-113">Začínáme</span><span class="sxs-lookup"><span data-stu-id="5cd12-113">Getting started</span></span>
+## <a name="getting-started"></a><span data-ttu-id="888f3-113">Začínáme</span><span class="sxs-lookup"><span data-stu-id="888f3-113">Getting started</span></span>
 
-<span data-ttu-id="5cd12-114">Následující příklad vás provede kroky potřebné k přidání odkazu na webovou službu do projektu konzoly .NET Core a vyvolání služby.</span><span class="sxs-lookup"><span data-stu-id="5cd12-114">The following example walks you through the steps required to add a web service reference to a .NET Core console project and invoke the service.</span></span> <span data-ttu-id="5cd12-115">Vytvoříte konzolovou aplikaci .NET Core s názvem _HelloSvcutil_ a přidá odkaz na webová služba, která implementuje kontrakt následující:</span><span class="sxs-lookup"><span data-stu-id="5cd12-115">You will create a .NET Core console application named _HelloSvcutil_ and will add a reference to a web service that implements the following contract:</span></span>
+<span data-ttu-id="888f3-114">Následující příklad vás provede kroky potřebné k přidání odkaz webové služby na projekt konzoly .NET Core a vyvolat službu.</span><span class="sxs-lookup"><span data-stu-id="888f3-114">The following example walks you through the steps required to add a web service reference to a .NET Core console project and invoke the service.</span></span> <span data-ttu-id="888f3-115">Vytvoříte konzolovou aplikaci .NET Core s názvem _HelloSvcutil_ a přidá odkaz na webovou službu, která implementuje kontrakt následující:</span><span class="sxs-lookup"><span data-stu-id="888f3-115">You will create a .NET Core console application named _HelloSvcutil_ and will add a reference to a web service that implements the following contract:</span></span>
 
 ```csharp
 [ServiceContract]
@@ -40,51 +40,51 @@ public interface ISayHello
 }
 ```
 
-<span data-ttu-id="5cd12-116">V tomto příkladu se webová služba bude předpokládat pro hostování na následující adrese: `http://contoso.com/SayHello.svc`</span><span class="sxs-lookup"><span data-stu-id="5cd12-116">For this example, the web service will be assumed to be hosted at the following address: `http://contoso.com/SayHello.svc`</span></span>
+<span data-ttu-id="888f3-116">V tomto příkladu bude považovat za webové službě hostované na následující adrese: `http://contoso.com/SayHello.svc`</span><span class="sxs-lookup"><span data-stu-id="888f3-116">For this example, the web service will be assumed to be hosted at the following address: `http://contoso.com/SayHello.svc`</span></span>
 
-<span data-ttu-id="5cd12-117">Z příkazového okna Windows, systému macOS nebo Linux proveďte následující kroky:</span><span class="sxs-lookup"><span data-stu-id="5cd12-117">From a Windows, macOS, or Linux command window perform the following steps:</span></span>
+<span data-ttu-id="888f3-117">Z příkazového okna Windows, macOS nebo Linux postupujte následovně:</span><span class="sxs-lookup"><span data-stu-id="888f3-117">From a Windows, macOS, or Linux command window perform the following steps:</span></span>
 
-1. <span data-ttu-id="5cd12-118">Vytvořte adresář s názvem _HelloSvcutil_ pro svůj projekt a nastavit jej jako aktuální adresář, jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="5cd12-118">Create a directory named _HelloSvcutil_ for your project and make it your current directory, as in the following example:</span></span>
+1. <span data-ttu-id="888f3-118">Vytvořte adresář _HelloSvcutil_ pro váš projekt a nastavte ji váš aktuální adresář, jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="888f3-118">Create a directory named _HelloSvcutil_ for your project and make it your current directory, as in the following example:</span></span>
 
 ```console
 mkdir HelloSvcutil
 cd HelloSvcutil
 ```
 
-2. <span data-ttu-id="5cd12-119">Vytvořit nový projekt konzolové C# do tohoto adresáře pomocí [ `dotnet new` ](../tools/dotnet-new.md) příkaz takto:</span><span class="sxs-lookup"><span data-stu-id="5cd12-119">Create a new C# console project in that directory using the [`dotnet new`](../tools/dotnet-new.md) command as follows:</span></span>
+2. <span data-ttu-id="888f3-119">Vytvořte nový projekt konzoly C# v tomto adresáři pomocí [ `dotnet new` ](../tools/dotnet-new.md) takto:</span><span class="sxs-lookup"><span data-stu-id="888f3-119">Create a new C# console project in that directory using the [`dotnet new`](../tools/dotnet-new.md) command as follows:</span></span>
 
 ```console
 dotnet new console
 ```
 
-3. <span data-ttu-id="5cd12-120">Otevřete `HelloSvcutil.csproj` souboru ve svém editoru projektu, upravit `Project` elementu a přidejte [ `dotnet-svcutil` balíček NuGet](https://nuget.org/packages/dotnet-svcutil) jako odkaz nástroj příkazového řádku, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="5cd12-120">Open the `HelloSvcutil.csproj` project file in your editor, edit the `Project` element, and add the [`dotnet-svcutil` NuGet package](https://nuget.org/packages/dotnet-svcutil) as a CLI tool reference, using the following code:</span></span>
+3. <span data-ttu-id="888f3-120">Otevřít `HelloSvcutil.csproj` souboru v editoru projektu, upravit `Project` prvek a přidejte [ `dotnet-svcutil` balíček NuGet](https://nuget.org/packages/dotnet-svcutil) jako odkaz na rozhraní příkazového řádku nástroje, pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="888f3-120">Open the `HelloSvcutil.csproj` project file in your editor, edit the `Project` element, and add the [`dotnet-svcutil` NuGet package](https://nuget.org/packages/dotnet-svcutil) as a CLI tool reference, using the following code:</span></span>
 
 ```xml
 <ItemGroup>
-  <DotNetCliToolReference Include="dotnet-svcutil" Version="1.0.0" />
+  <DotNetCliToolReference Include="dotnet-svcutil" Version="1.0.*" />
 </ItemGroup>
 ```
 
-4. <span data-ttu-id="5cd12-121">Obnovit _dotnet svcutil_ balíček pomocí [ `dotnet restore` ](../tools/dotnet-restore.md) příkaz takto:</span><span class="sxs-lookup"><span data-stu-id="5cd12-121">Restore the _dotnet-svcutil_ package using the [`dotnet restore`](../tools/dotnet-restore.md) command as follows:</span></span>
+4. <span data-ttu-id="888f3-121">Obnovit _dotnet svcutil_ balíček pomocí [ `dotnet restore` ](../tools/dotnet-restore.md) takto:</span><span class="sxs-lookup"><span data-stu-id="888f3-121">Restore the _dotnet-svcutil_ package using the [`dotnet restore`](../tools/dotnet-restore.md) command as follows:</span></span>
 
 ```console
 dotnet restore
 ```
 
-5. <span data-ttu-id="5cd12-122">Spustit _dotnet_ s _svcutil_ příkazu vygenerujte soubor webové služby odkaz následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="5cd12-122">Run _dotnet_ with the _svcutil_ command to generate the web service reference file as follows:</span></span>
+5. <span data-ttu-id="888f3-122">Spustit _dotnet_ s _svcutil_ příkazu vygenerujte soubor odkaz webové služby následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="888f3-122">Run _dotnet_ with the _svcutil_ command to generate the web service reference file as follows:</span></span>
 
 ```console
 dotnet svcutil http://contoso.com/SayHello.svc
 ```
-<span data-ttu-id="5cd12-123">Vygenerovaný soubor je uložena jako _HelloSvcutil/ServiceReference1/Reference.cs_.</span><span class="sxs-lookup"><span data-stu-id="5cd12-123">The generated file is saved as _HelloSvcutil/ServiceReference1/Reference.cs_.</span></span> <span data-ttu-id="5cd12-124">_Dotnet_svcutil_ nástroj také přidá do projektu odpovídající balíčky WCF vyžaduje kód proxy jako balíček odkazuje.</span><span class="sxs-lookup"><span data-stu-id="5cd12-124">The _dotnet_svcutil_ tool also adds to the project the appropriate WCF packages required by the proxy code as package references.</span></span>
+<span data-ttu-id="888f3-123">Vygenerovaný soubor je uložen jako _HelloSvcutil/ServiceReference1/Reference.cs_.</span><span class="sxs-lookup"><span data-stu-id="888f3-123">The generated file is saved as _HelloSvcutil/ServiceReference1/Reference.cs_.</span></span> <span data-ttu-id="888f3-124">_Dotnet_svcutil_ nástroj také přidá do projektu odpovídající balíčky WCF vyžaduje proxy kód jako odkazy na balíček.</span><span class="sxs-lookup"><span data-stu-id="888f3-124">The _dotnet_svcutil_ tool also adds to the project the appropriate WCF packages required by the proxy code as package references.</span></span>
 
-6. <span data-ttu-id="5cd12-125">Obnovení balíčků WCF pomocí [ `dotnet restore` ](../tools/dotnet-restore.md) příkaz takto:</span><span class="sxs-lookup"><span data-stu-id="5cd12-125">Restore the WCF packages using the [`dotnet restore`](../tools/dotnet-restore.md) command as follows:</span></span>
+6. <span data-ttu-id="888f3-125">Obnovení balíčků WCF pomocí [ `dotnet restore` ](../tools/dotnet-restore.md) takto:</span><span class="sxs-lookup"><span data-stu-id="888f3-125">Restore the WCF packages using the [`dotnet restore`](../tools/dotnet-restore.md) command as follows:</span></span>
 
 ```console
 dotnet restore
 ```
 
-7. <span data-ttu-id="5cd12-126">Otevřete `Program.cs` souboru ve svém editoru, upravit `Main()` metodu a nahraďte automaticky generovaného kódu pomocí následující kód k vyvolání webové služby:</span><span class="sxs-lookup"><span data-stu-id="5cd12-126">Open the `Program.cs` file in your editor, edit the `Main()` method, and replace the auto-generated code with the following code to invoke the web service:</span></span>
+7. <span data-ttu-id="888f3-126">Otevřít `Program.cs` souboru v editoru, upravit `Main()` metoda a nahradit automaticky generovaný kód následujícím kódem, abyste mohli vyvolat službu web:</span><span class="sxs-lookup"><span data-stu-id="888f3-126">Open the `Program.cs` file in your editor, edit the `Main()` method, and replace the auto-generated code with the following code to invoke the web service:</span></span>
 
 ```csharp
 static void Main(string[] args)
@@ -94,29 +94,29 @@ static void Main(string[] args)
 }
 ```
 
-8. <span data-ttu-id="5cd12-127">Spuštění aplikace pomocí [ `dotnet run` ](../tools/dotnet-run.md) příkaz takto:</span><span class="sxs-lookup"><span data-stu-id="5cd12-127">Run the application using the [`dotnet run`](../tools/dotnet-run.md) command as follows:</span></span>
+8. <span data-ttu-id="888f3-127">Spuštění aplikace pomocí [ `dotnet run` ](../tools/dotnet-run.md) takto:</span><span class="sxs-lookup"><span data-stu-id="888f3-127">Run the application using the [`dotnet run`](../tools/dotnet-run.md) command as follows:</span></span>
 
 ```console
 dotnet run
 ```
-<span data-ttu-id="5cd12-128">Měli byste vidět následující výstup: "Hello dotnet svcutil!"</span><span class="sxs-lookup"><span data-stu-id="5cd12-128">You should see the following output: "Hello dotnet-svcutil!"</span></span>
+<span data-ttu-id="888f3-128">Zobrazí se následující výstup: "dotnet svcutil Hello!"</span><span class="sxs-lookup"><span data-stu-id="888f3-128">You should see the following output: "Hello dotnet-svcutil!"</span></span>
 
-<span data-ttu-id="5cd12-129">Podrobný popis `dotnet-svcutil` nástroj parametry, vyvolání nástroje předání parametru nápovědy následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="5cd12-129">For a detailed description of the `dotnet-svcutil` tool parameters, invoke the tool passing the help parameter as follows:</span></span>
+<span data-ttu-id="888f3-129">Podrobný popis `dotnet-svcutil` nástroj parametry, vyvolají nástroj předávání parametru nápovědy následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="888f3-129">For a detailed description of the `dotnet-svcutil` tool parameters, invoke the tool passing the help parameter as follows:</span></span>
 
 ```console
 dotnet svcutil --help
 ```
 
-## <a name="next-steps"></a><span data-ttu-id="5cd12-130">Další kroky</span><span class="sxs-lookup"><span data-stu-id="5cd12-130">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="888f3-130">Další kroky</span><span class="sxs-lookup"><span data-stu-id="888f3-130">Next steps</span></span>
 
-### <a name="feedback--questions"></a><span data-ttu-id="5cd12-131">Názory a dotazy</span><span class="sxs-lookup"><span data-stu-id="5cd12-131">Feedback & questions</span></span>
+### <a name="feedback--questions"></a><span data-ttu-id="888f3-131">Zpětná vazba a otázky</span><span class="sxs-lookup"><span data-stu-id="888f3-131">Feedback & questions</span></span>
 
-<span data-ttu-id="5cd12-132">Pokud máte jakékoli dotazy nebo připomínky, [otevřete problém na Githubu](https://github.com/dotnet/wcf/issues/new).</span><span class="sxs-lookup"><span data-stu-id="5cd12-132">If you have any questions or feedback, [open an issue on GitHub](https://github.com/dotnet/wcf/issues/new).</span></span> <span data-ttu-id="5cd12-133">Můžete také zkontrolovat existující dotazy nebo problémy [v úložišti WCF na Githubu](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling).</span><span class="sxs-lookup"><span data-stu-id="5cd12-133">You can also review any existing questions or issues [at the WCF repo on GitHub](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling).</span></span>
+<span data-ttu-id="888f3-132">Pokud máte jakékoli dotazy nebo připomínky, [otevřete problém na Githubu](https://github.com/dotnet/wcf/issues/new).</span><span class="sxs-lookup"><span data-stu-id="888f3-132">If you have any questions or feedback, [open an issue on GitHub](https://github.com/dotnet/wcf/issues/new).</span></span> <span data-ttu-id="888f3-133">Můžete také zkontrolovat všechny stávající dotazy nebo potíže [v WCF úložišti na Githubu](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling).</span><span class="sxs-lookup"><span data-stu-id="888f3-133">You can also review any existing questions or issues [at the WCF repo on GitHub](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling).</span></span>
 
-### <a name="release-notes"></a><span data-ttu-id="5cd12-134">Zpráva k vydání verze</span><span class="sxs-lookup"><span data-stu-id="5cd12-134">Release notes</span></span>
+### <a name="release-notes"></a><span data-ttu-id="888f3-134">Zpráva k vydání verze</span><span class="sxs-lookup"><span data-stu-id="888f3-134">Release notes</span></span>
 
-* <span data-ttu-id="5cd12-135">Odkazovat [poznámky k verzi](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md) aktualizované verze informace, včetně známých problémů.</span><span class="sxs-lookup"><span data-stu-id="5cd12-135">Refer to the [Release notes](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md) for updated release information, including known issues.</span></span>
+* <span data-ttu-id="888f3-135">Odkazovat [poznámky k verzi](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md) aktualizovanou verzi informace, včetně známých problémů.</span><span class="sxs-lookup"><span data-stu-id="888f3-135">Refer to the [Release notes](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md) for updated release information, including known issues.</span></span>
 
-### <a name="information"></a><span data-ttu-id="5cd12-136">Informace o</span><span class="sxs-lookup"><span data-stu-id="5cd12-136">Information</span></span>
+### <a name="information"></a><span data-ttu-id="888f3-136">Informace o</span><span class="sxs-lookup"><span data-stu-id="888f3-136">Information</span></span>
 
-* [<span data-ttu-id="5cd12-137">Balíček NuGet svcutil DotNet.</span><span class="sxs-lookup"><span data-stu-id="5cd12-137">dotnet-svcutil NuGet Package</span></span>](https://nuget.org/packages/dotnet-svcutil)
+* [<span data-ttu-id="888f3-137">Balíček NuGet DotNet svcutil</span><span class="sxs-lookup"><span data-stu-id="888f3-137">dotnet-svcutil NuGet Package</span></span>](https://nuget.org/packages/dotnet-svcutil)
