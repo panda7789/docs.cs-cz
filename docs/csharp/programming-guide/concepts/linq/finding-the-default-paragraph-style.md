@@ -1,27 +1,27 @@
 ---
-title: Hledání výchozí styl odstavce (C#)
+title: Vyhledání výchozího stylu odstavce (C#)
 ms.date: 07/20/2015
 ms.assetid: be102177-8ab0-444a-b671-7023e555ffdb
-ms.openlocfilehash: e29ca281e1867a72a76a28765912c39675ca0f27
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7c81ad1aed25eea3b8363caebe0eb980ca69c557
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33335949"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43479822"
 ---
-# <a name="finding-the-default-paragraph-style-c"></a><span data-ttu-id="58f4d-102">Hledání výchozí styl odstavce (C#)</span><span class="sxs-lookup"><span data-stu-id="58f4d-102">Finding the Default Paragraph Style (C#)</span></span>
-<span data-ttu-id="58f4d-103">První úlohou manipulace s nimi informace v dokumentu WordprocessingML kurzu je najít výchozí styl odstavců v dokumentu.</span><span class="sxs-lookup"><span data-stu-id="58f4d-103">The first task in the Manipulating Information in a WordprocessingML Document tutorial is to find the default style of paragraphs in the document.</span></span>  
+# <a name="finding-the-default-paragraph-style-c"></a><span data-ttu-id="c6ca5-102">Vyhledání výchozího stylu odstavce (C#)</span><span class="sxs-lookup"><span data-stu-id="c6ca5-102">Finding the Default Paragraph Style (C#)</span></span>
+<span data-ttu-id="c6ca5-103">První úkol v manipulaci s informace v dokumentu WordprocessingML kurzu je vyhledání výchozího stylu odstavce v dokumentu.</span><span class="sxs-lookup"><span data-stu-id="c6ca5-103">The first task in the Manipulating Information in a WordprocessingML Document tutorial is to find the default style of paragraphs in the document.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="58f4d-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="58f4d-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="c6ca5-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="c6ca5-104">Example</span></span>  
   
-### <a name="description"></a><span data-ttu-id="58f4d-105">Popis</span><span class="sxs-lookup"><span data-stu-id="58f4d-105">Description</span></span>  
- <span data-ttu-id="58f4d-106">Následující příklad otevře dokument Office Open XML WordprocessingML, vyhledá části dokumentu a stylu balíčku a potom provede dotaz, který vyhledá výchozí název stylu.</span><span class="sxs-lookup"><span data-stu-id="58f4d-106">The following example opens an Office Open XML WordprocessingML document, finds the document and style parts of the package, and then executes a query that finds the default style name.</span></span> <span data-ttu-id="58f4d-107">Informace o balíčcích dokumentu Office Open XML a skládají se z části najdete v tématu [podrobnosti o Open XML WordprocessingML dokumenty Office (C#)](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).</span><span class="sxs-lookup"><span data-stu-id="58f4d-107">For information about Office Open XML document packages, and the parts they consist of, see [Details of Office Open XML WordprocessingML Documents (C#)](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).</span></span>  
+### <a name="description"></a><span data-ttu-id="c6ca5-105">Popis</span><span class="sxs-lookup"><span data-stu-id="c6ca5-105">Description</span></span>  
+ <span data-ttu-id="c6ca5-106">Následující příklad otevře dokumentu Office Open XML WordprocessingML, najde dokument a styl součástí balíčku a pak provede dotaz, který vyhledá výchozí název stylu.</span><span class="sxs-lookup"><span data-stu-id="c6ca5-106">The following example opens an Office Open XML WordprocessingML document, finds the document and style parts of the package, and then executes a query that finds the default style name.</span></span> <span data-ttu-id="c6ca5-107">Informace o balíčcích dokumentu Office Open XML a skládají se z části najdete v tématu [podrobnosti o Open XML WordprocessingML dokumenty Office (C#)](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).</span><span class="sxs-lookup"><span data-stu-id="c6ca5-107">For information about Office Open XML document packages, and the parts they consist of, see [Details of Office Open XML WordprocessingML Documents (C#)](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).</span></span>  
   
- <span data-ttu-id="58f4d-108">Tento dotaz najde uzel s názvem `w:style` , má atribut s názvem `w:type` s hodnotou "odstavec", a má také atribut pojmenovaný `w:default` s hodnotou "1".</span><span class="sxs-lookup"><span data-stu-id="58f4d-108">The query finds a node named `w:style` that has an attribute named `w:type` with a value of "paragraph", and also has an attribute named `w:default` with a value of "1".</span></span> <span data-ttu-id="58f4d-109">Vzhledem k tomu, že budou existovat jenom jeden uzel XML s těmito atributy, pomocí dotazu <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> operátor převést kolekci typu singleton.</span><span class="sxs-lookup"><span data-stu-id="58f4d-109">Because there will be only one XML node with these attributes, the query uses the <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> operator to convert a collection to a singleton.</span></span> <span data-ttu-id="58f4d-110">Potom získá hodnotu atributu s názvem `w:styleId`.</span><span class="sxs-lookup"><span data-stu-id="58f4d-110">It then gets the value of the attribute with the name `w:styleId`.</span></span>  
+ <span data-ttu-id="c6ca5-108">Tento dotaz najde uzel s názvem `w:style` , který má atribut s názvem `w:type` s hodnotou "odstavec", a také atribut s názvem `w:default` s hodnotou "1".</span><span class="sxs-lookup"><span data-stu-id="c6ca5-108">The query finds a node named `w:style` that has an attribute named `w:type` with a value of "paragraph", and also has an attribute named `w:default` with a value of "1".</span></span> <span data-ttu-id="c6ca5-109">Vzhledem k tomu, že bude existovat jenom jeden uzel XML s těmito atributy, pomocí dotazu <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> operátor k převodu kolekce na jednotlivý prvek.</span><span class="sxs-lookup"><span data-stu-id="c6ca5-109">Because there will be only one XML node with these attributes, the query uses the <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> operator to convert a collection to a singleton.</span></span> <span data-ttu-id="c6ca5-110">Potom získá hodnotu atributu s názvem `w:styleId`.</span><span class="sxs-lookup"><span data-stu-id="c6ca5-110">It then gets the value of the attribute with the name `w:styleId`.</span></span>  
   
- <span data-ttu-id="58f4d-111">Tento příklad používá třídy z WindowsBase sestavení.</span><span class="sxs-lookup"><span data-stu-id="58f4d-111">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="58f4d-112">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="58f4d-112">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="c6ca5-111">Tento příklad používá třídy z WindowsBase sestavení.</span><span class="sxs-lookup"><span data-stu-id="c6ca5-111">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="c6ca5-112">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="c6ca5-112">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="58f4d-113">Kód</span><span class="sxs-lookup"><span data-stu-id="58f4d-113">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="c6ca5-113">Kód</span><span class="sxs-lookup"><span data-stu-id="c6ca5-113">Code</span></span>  
   
 ```csharp  
 const string fileName = "SampleDoc.docx";  
@@ -76,17 +76,17 @@ string defaultStyle =
 Console.WriteLine("The default style is: {0}", defaultStyle);  
 ```  
   
-### <a name="comments"></a><span data-ttu-id="58f4d-114">Komentáře</span><span class="sxs-lookup"><span data-stu-id="58f4d-114">Comments</span></span>  
- <span data-ttu-id="58f4d-115">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="58f4d-115">This example produces the following output:</span></span>  
+### <a name="comments"></a><span data-ttu-id="c6ca5-114">Komentáře</span><span class="sxs-lookup"><span data-stu-id="c6ca5-114">Comments</span></span>  
+ <span data-ttu-id="c6ca5-115">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="c6ca5-115">This example produces the following output:</span></span>  
   
 ```  
 The default style is: Normal  
 ```  
   
-## <a name="next-steps"></a><span data-ttu-id="58f4d-116">Další kroky</span><span class="sxs-lookup"><span data-stu-id="58f4d-116">Next Steps</span></span>  
- <span data-ttu-id="58f4d-117">V dalším příkladu vytvoříte podobné dotaz, který vyhledá všechny odstavce do dokumentu a jejich styly:</span><span class="sxs-lookup"><span data-stu-id="58f4d-117">In the next example, you'll create a similar query that finds all the paragraphs in a document and their styles:</span></span>  
+## <a name="next-steps"></a><span data-ttu-id="c6ca5-116">Další kroky</span><span class="sxs-lookup"><span data-stu-id="c6ca5-116">Next Steps</span></span>  
+ <span data-ttu-id="c6ca5-117">V následujícím příkladu vytvoříte podobně jako dotaz, který najde všechny odstavce v dokumentu a jejich stylů:</span><span class="sxs-lookup"><span data-stu-id="c6ca5-117">In the next example, you'll create a similar query that finds all the paragraphs in a document and their styles:</span></span>  
   
--   [<span data-ttu-id="58f4d-118">Načítání odstavců a jejich styly (C#)</span><span class="sxs-lookup"><span data-stu-id="58f4d-118">Retrieving the Paragraphs and Their Styles (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
+-   [<span data-ttu-id="c6ca5-118">Načtení odstavců a jejich stylů (C#)</span><span class="sxs-lookup"><span data-stu-id="c6ca5-118">Retrieving the Paragraphs and Their Styles (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
   
-## <a name="see-also"></a><span data-ttu-id="58f4d-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="58f4d-119">See Also</span></span>  
- [<span data-ttu-id="58f4d-120">Kurz: Manipulace s obsahem v dokumentu WordprocessingML</span><span class="sxs-lookup"><span data-stu-id="58f4d-120">Tutorial: Manipulating Content in a WordprocessingML Document</span></span>](http://msdn.microsoft.com/library/2696355e-4f83-4eaf-91b2-baa721f42fb4)
+## <a name="see-also"></a><span data-ttu-id="c6ca5-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="c6ca5-119">See Also</span></span>  
+ [<span data-ttu-id="c6ca5-120">Kurz: Manipulace s obsahem v dokumentu WordprocessingML</span><span class="sxs-lookup"><span data-stu-id="c6ca5-120">Tutorial: Manipulating Content in a WordprocessingML Document</span></span>](https://msdn.microsoft.com/library/2696355e-4f83-4eaf-91b2-baa721f42fb4)

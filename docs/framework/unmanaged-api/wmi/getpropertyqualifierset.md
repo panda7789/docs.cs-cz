@@ -17,18 +17,18 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fcddca2e435a3f5bf4b8d083784613254d9801a4
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42935697"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481192"
 ---
-# <a name="getpropertyqualifierset-function"></a><span data-ttu-id="b5bce-103">GetPropertyQualifierSet – funkce</span><span class="sxs-lookup"><span data-stu-id="b5bce-103">GetPropertyQualifierSet function</span></span>
-<span data-ttu-id="b5bce-104">Načte kvalifikátor nastavit určité vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="b5bce-104">Retrieves the qualifier set for a particular property.</span></span>
+# <a name="getpropertyqualifierset-function"></a><span data-ttu-id="9e690-103">GetPropertyQualifierSet – funkce</span><span class="sxs-lookup"><span data-stu-id="9e690-103">GetPropertyQualifierSet function</span></span>
+<span data-ttu-id="9e690-104">Načte kvalifikátor nastavit určité vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="9e690-104">Retrieves the qualifier set for a particular property.</span></span>
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
-## <a name="syntax"></a><span data-ttu-id="b5bce-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b5bce-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9e690-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9e690-105">Syntax</span></span>  
   
 ```  
 HRESULT GetPropertyQualifierSet (
@@ -39,49 +39,49 @@ HRESULT GetPropertyQualifierSet (
 ); 
 ```  
 
-## <a name="parameters"></a><span data-ttu-id="b5bce-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="b5bce-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="9e690-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="9e690-106">Parameters</span></span>
 
 `vFunc`  
-<span data-ttu-id="b5bce-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="b5bce-107">[in] This parameter is unused.</span></span>
+<span data-ttu-id="9e690-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="9e690-107">[in] This parameter is unused.</span></span>
 
 `ptr`  
-<span data-ttu-id="b5bce-108">[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span><span class="sxs-lookup"><span data-stu-id="b5bce-108">[in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span></span>
+<span data-ttu-id="9e690-108">[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span><span class="sxs-lookup"><span data-stu-id="9e690-108">[in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span></span>
 
 `wszMethod`  
-<span data-ttu-id="b5bce-109">[in] Název vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="b5bce-109">[in] The property  name.</span></span> <span data-ttu-id="b5bce-110">`wszProperty` musí odkazovat na platný `LPCWSTR`.</span><span class="sxs-lookup"><span data-stu-id="b5bce-110">`wszProperty` must point to a valid `LPCWSTR`.</span></span> 
+<span data-ttu-id="9e690-109">[in] Název vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="9e690-109">[in] The property  name.</span></span> <span data-ttu-id="9e690-110">`wszProperty` musí odkazovat na platný `LPCWSTR`.</span><span class="sxs-lookup"><span data-stu-id="9e690-110">`wszProperty` must point to a valid `LPCWSTR`.</span></span> 
 
 `ppQualSet`  
-<span data-ttu-id="b5bce-111">[out] Přijímá ukazatel rozhraní, která umožňuje přístup k kvalifikátory vlastnost.</span><span class="sxs-lookup"><span data-stu-id="b5bce-111">[out] Receives the interface pointer that allows access to the qualifiers of the property.</span></span> <span data-ttu-id="b5bce-112">`ppQualSet` nemůže být `null`.</span><span class="sxs-lookup"><span data-stu-id="b5bce-112">`ppQualSet` cannot be `null`.</span></span> <span data-ttu-id="b5bce-113">Pokud dojde k chybě, není vrátí nový objekt a ukazatel je nastaven tak, aby odkazoval na `null`.</span><span class="sxs-lookup"><span data-stu-id="b5bce-113">If an error occurs, a new object is not returned, and the pointer is set to point to `null`.</span></span> 
+<span data-ttu-id="9e690-111">[out] Přijímá ukazatel rozhraní, která umožňuje přístup k kvalifikátory vlastnost.</span><span class="sxs-lookup"><span data-stu-id="9e690-111">[out] Receives the interface pointer that allows access to the qualifiers of the property.</span></span> <span data-ttu-id="9e690-112">`ppQualSet` nemůže být `null`.</span><span class="sxs-lookup"><span data-stu-id="9e690-112">`ppQualSet` cannot be `null`.</span></span> <span data-ttu-id="9e690-113">Pokud dojde k chybě, není vrátí nový objekt a ukazatel je nastaven tak, aby odkazoval na `null`.</span><span class="sxs-lookup"><span data-stu-id="9e690-113">If an error occurs, a new object is not returned, and the pointer is set to point to `null`.</span></span> 
 
-## <a name="return-value"></a><span data-ttu-id="b5bce-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b5bce-114">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="9e690-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="9e690-114">Return value</span></span>
 
-<span data-ttu-id="b5bce-115">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="b5bce-115">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
+<span data-ttu-id="9e690-115">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="9e690-115">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
 
-|<span data-ttu-id="b5bce-116">Konstanta</span><span class="sxs-lookup"><span data-stu-id="b5bce-116">Constant</span></span>  |<span data-ttu-id="b5bce-117">Hodnota</span><span class="sxs-lookup"><span data-stu-id="b5bce-117">Value</span></span>  |<span data-ttu-id="b5bce-118">Popis</span><span class="sxs-lookup"><span data-stu-id="b5bce-118">Description</span></span>  |
+|<span data-ttu-id="9e690-116">Konstanta</span><span class="sxs-lookup"><span data-stu-id="9e690-116">Constant</span></span>  |<span data-ttu-id="9e690-117">Hodnota</span><span class="sxs-lookup"><span data-stu-id="9e690-117">Value</span></span>  |<span data-ttu-id="9e690-118">Popis</span><span class="sxs-lookup"><span data-stu-id="9e690-118">Description</span></span>  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | <span data-ttu-id="b5bce-119">0x80041001</span><span class="sxs-lookup"><span data-stu-id="b5bce-119">0x80041001</span></span> | <span data-ttu-id="b5bce-120">Obecné selhání došlo.</span><span class="sxs-lookup"><span data-stu-id="b5bce-120">There has been a general failure.</span></span> |
-| `WBEM_E_NOT_FOUND` | <span data-ttu-id="b5bce-121">0x80041002</span><span class="sxs-lookup"><span data-stu-id="b5bce-121">0x80041002</span></span> | <span data-ttu-id="b5bce-122">Zadaná metoda neexistuje.</span><span class="sxs-lookup"><span data-stu-id="b5bce-122">The specified method does not exist.</span></span> |
-|`WBEM_E_OUT_OF_MEMORY` | <span data-ttu-id="b5bce-123">0x80041006</span><span class="sxs-lookup"><span data-stu-id="b5bce-123">0x80041006</span></span> | <span data-ttu-id="b5bce-124">Nedostatek paměti je k dispozici k dokončení operace.</span><span class="sxs-lookup"><span data-stu-id="b5bce-124">Not enough memory is available to complete the operation.</span></span> |
-|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="b5bce-125">0x80041008</span><span class="sxs-lookup"><span data-stu-id="b5bce-125">0x80041008</span></span> | <span data-ttu-id="b5bce-126">Parametr je `null`.</span><span class="sxs-lookup"><span data-stu-id="b5bce-126">A parameter is `null`.</span></span> |
-| `WBEM_E_SYSTEM_PROPERTY` | <span data-ttu-id="b5bce-127">0x80041030</span><span class="sxs-lookup"><span data-stu-id="b5bce-127">0x80041030</span></span> | <span data-ttu-id="b5bce-128">Funkce se pokusí získat kvalifikátory vlastnost systému.</span><span class="sxs-lookup"><span data-stu-id="b5bce-128">The function attempts to get qualifiers of a system property.</span></span> |
-|`WBEM_S_NO_ERROR` | <span data-ttu-id="b5bce-129">0</span><span class="sxs-lookup"><span data-stu-id="b5bce-129">0</span></span> | <span data-ttu-id="b5bce-130">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="b5bce-130">The function call was successful.</span></span>  |
+|`WBEM_E_FAILED` | <span data-ttu-id="9e690-119">0x80041001</span><span class="sxs-lookup"><span data-stu-id="9e690-119">0x80041001</span></span> | <span data-ttu-id="9e690-120">Obecné selhání došlo.</span><span class="sxs-lookup"><span data-stu-id="9e690-120">There has been a general failure.</span></span> |
+| `WBEM_E_NOT_FOUND` | <span data-ttu-id="9e690-121">0x80041002</span><span class="sxs-lookup"><span data-stu-id="9e690-121">0x80041002</span></span> | <span data-ttu-id="9e690-122">Zadaná metoda neexistuje.</span><span class="sxs-lookup"><span data-stu-id="9e690-122">The specified method does not exist.</span></span> |
+|`WBEM_E_OUT_OF_MEMORY` | <span data-ttu-id="9e690-123">0x80041006</span><span class="sxs-lookup"><span data-stu-id="9e690-123">0x80041006</span></span> | <span data-ttu-id="9e690-124">Nedostatek paměti je k dispozici k dokončení operace.</span><span class="sxs-lookup"><span data-stu-id="9e690-124">Not enough memory is available to complete the operation.</span></span> |
+|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="9e690-125">0x80041008</span><span class="sxs-lookup"><span data-stu-id="9e690-125">0x80041008</span></span> | <span data-ttu-id="9e690-126">Parametr je `null`.</span><span class="sxs-lookup"><span data-stu-id="9e690-126">A parameter is `null`.</span></span> |
+| `WBEM_E_SYSTEM_PROPERTY` | <span data-ttu-id="9e690-127">0x80041030</span><span class="sxs-lookup"><span data-stu-id="9e690-127">0x80041030</span></span> | <span data-ttu-id="9e690-128">Funkce se pokusí získat kvalifikátory vlastnost systému.</span><span class="sxs-lookup"><span data-stu-id="9e690-128">The function attempts to get qualifiers of a system property.</span></span> |
+|`WBEM_S_NO_ERROR` | <span data-ttu-id="9e690-129">0</span><span class="sxs-lookup"><span data-stu-id="9e690-129">0</span></span> | <span data-ttu-id="9e690-130">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="9e690-130">The function call was successful.</span></span>  |
   
-## <a name="remarks"></a><span data-ttu-id="b5bce-131">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b5bce-131">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="9e690-131">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9e690-131">Remarks</span></span>
 
-<span data-ttu-id="b5bce-132">Tato funkce zalamuje volání na [IWbemClassObject::GetPropertyQualifierSet](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getpropertyqualifierset) metody.</span><span class="sxs-lookup"><span data-stu-id="b5bce-132">This function wraps a call to the [IWbemClassObject::GetPropertyQualifierSet](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getpropertyqualifierset) method.</span></span> 
+<span data-ttu-id="9e690-132">Tato funkce zalamuje volání na [IWbemClassObject::GetPropertyQualifierSet](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getpropertyqualifierset) metody.</span><span class="sxs-lookup"><span data-stu-id="9e690-132">This function wraps a call to the [IWbemClassObject::GetPropertyQualifierSet](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getpropertyqualifierset) method.</span></span> 
 
-<span data-ttu-id="b5bce-133">Voláním této funkce je podporována pouze v případě, že je aktuální objekt definice třídy CIM.</span><span class="sxs-lookup"><span data-stu-id="b5bce-133">A call to this function is supported only if the current object is a CIM class definition.</span></span> <span data-ttu-id="b5bce-134">Není k dispozici pro manipulaci s metoda [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ponters odkazující na instance CIM.</span><span class="sxs-lookup"><span data-stu-id="b5bce-134">Method manipulation is not available for [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ponters that point to CIM instances.</span></span>
+<span data-ttu-id="9e690-133">Voláním této funkce je podporována pouze v případě, že je aktuální objekt definice třídy CIM.</span><span class="sxs-lookup"><span data-stu-id="9e690-133">A call to this function is supported only if the current object is a CIM class definition.</span></span> <span data-ttu-id="9e690-134">Není k dispozici pro manipulaci s metoda [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ponters odkazující na instance CIM.</span><span class="sxs-lookup"><span data-stu-id="9e690-134">Method manipulation is not available for [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ponters that point to CIM instances.</span></span>
 
-<span data-ttu-id="b5bce-135">Protože každá metoda může mít svůj vlastní kvalifikátory [IWbemQualifierSet ukazatel](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) umožňuje volajícímu přidat, upravit nebo odstranit kvalifikátory.</span><span class="sxs-lookup"><span data-stu-id="b5bce-135">Because each method may have its own qualifiers, the [IWbemQualifierSet pointer](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) lets the caller add, edit, or delete these qualifiers.</span></span>
+<span data-ttu-id="9e690-135">Protože každá metoda může mít svůj vlastní kvalifikátory [IWbemQualifierSet ukazatel](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) umožňuje volajícímu přidat, upravit nebo odstranit kvalifikátory.</span><span class="sxs-lookup"><span data-stu-id="9e690-135">Because each method may have its own qualifiers, the [IWbemQualifierSet pointer](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) lets the caller add, edit, or delete these qualifiers.</span></span>
 
-<span data-ttu-id="b5bce-136">Vzhledem k tomu, že vlastnosti systému bez kvalifikátorů, funkce vrátí `WBEM_E_SYSTEM_PROPERTY` při pokusu o získání [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) ukazatel pro vlastnost systému.</span><span class="sxs-lookup"><span data-stu-id="b5bce-136">Because system properties have no qualifiers, the function returns `WBEM_E_SYSTEM_PROPERTY` if you attempt to obtain a [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) pointer for a system property.</span></span>
+<span data-ttu-id="9e690-136">Vzhledem k tomu, že vlastnosti systému bez kvalifikátorů, funkce vrátí `WBEM_E_SYSTEM_PROPERTY` při pokusu o získání [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) ukazatel pro vlastnost systému.</span><span class="sxs-lookup"><span data-stu-id="9e690-136">Because system properties have no qualifiers, the function returns `WBEM_E_SYSTEM_PROPERTY` if you attempt to obtain a [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) pointer for a system property.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="b5bce-137">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b5bce-137">Requirements</span></span>  
-<span data-ttu-id="b5bce-138">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b5bce-138">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9e690-137">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9e690-137">Requirements</span></span>  
+<span data-ttu-id="9e690-138">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9e690-138">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b5bce-139">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="b5bce-139">**Header:** WMINet_Utils.idl</span></span>  
+ <span data-ttu-id="9e690-139">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="9e690-139">**Header:** WMINet_Utils.idl</span></span>  
   
- <span data-ttu-id="b5bce-140">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="b5bce-140">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
+ <span data-ttu-id="9e690-140">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="9e690-140">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b5bce-141">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b5bce-141">See also</span></span>  
-[<span data-ttu-id="b5bce-142">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="b5bce-142">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="9e690-141">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9e690-141">See also</span></span>  
+[<span data-ttu-id="9e690-142">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="9e690-142">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
