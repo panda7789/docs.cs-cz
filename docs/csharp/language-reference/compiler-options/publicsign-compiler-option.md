@@ -7,16 +7,16 @@ helpviewer_keywords:
 - -publicsign compiler option [C#]
 - publicsign compiler option [C#]
 - /publicsign compiler option [C#]
-ms.openlocfilehash: ec25f9c1f2ef943db41bcfa20c8efd1d05866acd
-ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
+ms.openlocfilehash: 01ce30b9ac5997f56f29dcbbfa43a27738fa5556
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2018
-ms.locfileid: "34472852"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43474249"
 ---
 # <a name="-publicsign-c-compiler-options"></a>-publicsign (možnosti kompilátoru C#)
 
-Tato možnost způsobí, že kompilátor veřejný klíč použít, ale není ve skutečnosti podepsání sestavení. **- Publicsign** možnost nastaví trochu v sestavení, které modul runtime informuje, že soubor je ve skutečnosti podepsaná.
+Tato možnost způsobí, že kompilátor použít veřejný klíč, ale není ve skutečnosti podepsat sestavení. **- Publicsign** možnost nastaví bit v sestavení, že modul runtime, že soubor je ve skutečnosti podepsán.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,20 +30,21 @@ Tato možnost způsobí, že kompilátor veřejný klíč použít, ale není ve
 
 ## <a name="remarks"></a>Poznámky
 
-**- Publicsign** možnost vyžaduje použití [- keyfile](keyfile-compiler-option.md) nebo [- keycontainer](keycontainer-compiler-option.md). **Keyfile** nebo **keycontainer** možnosti zadejte veřejný klíč.
+**- Publicsign** možnost vyžaduje použití [- keyfile](keyfile-compiler-option.md) nebo [- keycontainer](keycontainer-compiler-option.md). **Keyfile** nebo **keycontainer** možnosti zadat veřejný klíč.
 
 **- Publicsign** a **- delaysign** možnosti se vzájemně vylučují.
 
-Někdy označuje jako "falešných přihlášení" nebo "Přihlášení OSS", veřejné podepisování obsahuje veřejný klíč ve výstupu sestavení a nastavuje příznak "podepsaný", ale není ve skutečnosti podepsání sestavení s privátním klíčem. To je užitečné pro projekty s otevřeným zdrojem, kde chcete vytvořit sestavení, které jsou kompatibilní s vydaná "plně podepsaný, sestavení, ale nemáte přístup k privátnímu klíči použité k podepsání sestavení osoby. Vzhledem k tomu, že téměř žádné příjemce skutečně potřeba zkontrolovat, pokud je plně podepsáno sestavení, jsou veřejně předdefinované sestavení funkční v téměř každý scénář, kde se použije plně podepsané jeden.
+Někdy označuje jako "falešnou přihlášení" nebo "OSS znak", veřejné podepisování obsahuje veřejný klíč v sestavení výstupu a nastaví příznak "podepsaný", ale není ve skutečnosti podepsat sestavení s privátním klíčem. To je užitečné pro open source projekty, pokud chtějí uživatelé vytvářet sestavení, které jsou kompatibilní s vydaných sestavení "plně podepsané", ale nemají přístup k privátnímu klíči použitý k podepsání sestavení. Protože téměř žádné příjemce ve skutečnosti je potřeba zkontrolovat, pokud je plně podepsané sestavení, předdefinované veřejně sestavení jsou použitelných téměř každý scénář, ve kterém se použije plně podepsané jeden.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio
 
-1. Otevřete **vlastnosti** stránky pro projekt.
-1. Změnit **zpoždění podepsání** vlastnost.
+1. Otevřít **vlastnosti** stránky pro projekt.
+1. Upravit **zpoždění podepsání** vlastnost.
 
 ## <a name="see-also"></a>Viz také
- [-Delaysign – možnost kompilátor jazyka C#](delaysign-compiler-option.md)  
- [-Keyfile – možnost kompilátor jazyka C#](keyfile-compiler-option.md)  
- [-Keycontainer – možnost kompilátor jazyka C#](keycontainer-compiler-option.md)  
- [Možnosti kompilátoru jazyka C#](index.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+
+- [-Delaysign – možnost kompilátoru jazyka C#](delaysign-compiler-option.md)  
+- [-Keyfile – možnost kompilátoru jazyka C#](keyfile-compiler-option.md)  
+- [-Keycontainer – možnost kompilátoru jazyka C#](keycontainer-compiler-option.md)  
+- [Možnosti kompilátoru jazyka C#](index.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

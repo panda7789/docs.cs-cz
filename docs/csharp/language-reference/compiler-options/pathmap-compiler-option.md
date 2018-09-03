@@ -7,16 +7,16 @@ helpviewer_keywords:
 - -pathmap compiler option [C#]
 - pathmap compiler option [C#]
 - /pathmap compiler option [C#]
-ms.openlocfilehash: 36196ffea19cfde7ff5f830ea358d2bd83edf419
-ms.sourcegitcommit: 77d9a94dac4c05827ed0663d95e0f9ad35d6682e
+ms.openlocfilehash: 277ab8e094f28fd5e3cbba4de12e742bb9614730
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2018
-ms.locfileid: "34472849"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43475917"
 ---
 # <a name="-pathmap-c-compiler-options"></a>-pathmap (možnosti kompilátoru C#)
 
-**- Pathmap** – možnost kompilátoru určuje způsob namapování fyzické cesty k umístění zdroje cesta názvy výstupu kompilátorem.
+**- Pathmap** – možnost kompilátoru určuje způsob mapování fyzické cesty do zdrojové cesty názvy výstupu kompilátorem.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -28,29 +28,29 @@ ms.locfileid: "34472849"
 
  `path1` Úplná cesta ke zdrojovým souborům v aktuálním prostředí
 
- `sourcePath1` Zdrojová cesta nahrazena pro `path1` v jakékoli výstupní soubory.
+ `sourcePath1` Zdrojová cesta nahrazené za `path1` v všechny výstupní soubory.
 
-Chcete-li určit víc cest namapované zdroje, oddělte každý oddělujte čárkami.
+Chcete-li určit víc cest připojené zdroje, oddělte každou čárkou.
 
 ## <a name="remarks"></a>Poznámky
 
-Kompilátor zapisuje zdrojovou cestu cestu do jeho výstup z následujících důvodů:
+Kompilátor zapíše zdrojová_cesta_operačního_systému cestu do jeho výstup z následujících důvodů:
 
-1. Zdrojová cesta je nahrazena pro argument při <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> se použije na volitelný parametr.
-1. Zdrojová cesta je vložen do souboru PDB.
-1. Cestu k souboru PDB vložené do souboru PE (přenosné spustitelný soubor).
+1. Zdrojová cesta je nahrazen pro argument při <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> platí pro volitelný parametr.
+1. Zdrojová cesta se vloží do souboru PDB.
+1. Cesta k souboru PDB se vloží do souboru PE (portable executable).
 
-Tato možnost mapuje každou fyzickou cestu v počítači, kde probíhá odpovídající cestu, která budou zasílány výstupní soubory kompilátoru.
+Tato možnost mapuje každý fyzickou cestu na počítači, ve kterém kompilátor spuštěná na odpovídající cestu, která by měly být napsány v výstupní soubory.
 
 ## <a name="example"></a>Příklad
 
-Kompilace `t.cs` v adresáři **C:\\pracovní\\testy** a mapovat tomuto adresáři svěřuje **\publish** ve výstupu:
+Kompilace `t.cs` v adresáři **C:\\fungovat\\testy** a mapování tomuto adresáři **\publish** ve výstupu:
 
 ```console
 csc -pathmap:C:\work\tests=\publish t.cs
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

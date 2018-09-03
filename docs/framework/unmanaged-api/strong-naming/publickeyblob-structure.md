@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d7577a24a023c38370f5ac1f8c471ce31409e75d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fd7a4b19613ea771a055af7dd91ec368859ee191
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33459336"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43475969"
 ---
 # <a name="publickeyblob-structure"></a>PublicKeyBlob – struktura
-Představuje veřejný klíč pár veřejného a privátního klíče v binárním formátu.  
+Představuje veřejného klíče dvojice veřejného/soukromého klíče v binárním formátu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,15 +42,15 @@ typedef struct {
 |Člen|Popis|  
 |------------|-----------------|  
 |`SigAlgId`|Identifikátor pro algoritmus podpisu (typu `ALG_ID`, jak jsou definovány v WinCrypt.h) veřejného klíče.|  
-|`HashAlgId`|Identifikátor pro algoritmus hash (typu `ALG_ID`, jak jsou definovány v WinCrypt.h) veřejného klíče.|  
+|`HashAlgId`|Identifikátor algoritmu hash (typu `ALG_ID`, jak jsou definovány v WinCrypt.h) veřejného klíče.|  
 |`cbPublicKey`|Délka klíče v bajtech.|  
-|`PublicKey`|Proměnnou délkou bajtové pole, která obsahuje hodnotu klíče ve formátu vrácený rozhraní CryptoAPI.|  
+|`PublicKey`|Proměnné délky bajtové pole obsahující hodnotu klíče ve formátu vrácený rozhraní CryptoAPI.|  
   
 ## <a name="remarks"></a>Poznámky  
- `PublicKeyBlob` Struktura používá [strongnamegetpublickey –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetpublickey-function.md), [strongnamesignaturegeneration –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md)a další funkce silným názvem představují veřejný klíč pár veřejného a privátního klíče.  
+ `PublicKeyBlob` Struktura používá [strongnamegetpublickey –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetpublickey-function.md), [strongnamesignaturegeneration –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md)a další funkce silným názvem k reprezentaci veřejného klíče dvojice veřejného/soukromého klíče.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** StrongName.h  
   
@@ -61,4 +61,4 @@ typedef struct {
 ## <a name="see-also"></a>Viz také  
  [StrongNameGetPublicKey – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetpublickey-function.md)  
  [StrongNameSignatureGeneration – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md)  
- [Silné názvy struktury](http://msdn.microsoft.com/library/4b041a2f-fd12-4b91-aacd-bc3b34a5124d)
+ [Struktury pro silné názvy](https://msdn.microsoft.com/library/4b041a2f-fd12-4b91-aacd-bc3b34a5124d)
