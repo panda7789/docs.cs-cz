@@ -36,28 +36,28 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 89f771d9-ecbb-4737-88b8-116b63c6cf4d
-ms.openlocfilehash: f86819f9bd3cbcceb4be696852655018868f4a56
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.openlocfilehash: a33e058b41629a2f01f2162dadd7a5f965a82548
+ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33655594"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42925550"
 ---
 # <a name="generic-types-in-visual-basic-visual-basic"></a>Obecné typy v jazyce Visual Basic (Visual Basic)
-A *obecného typu* je jeden programovací element, který přizpůsobí provádět stejné funkce pro různé datové typy. Při definování obecné třídy nebo postup nemáte definovat samostatné verze pro každý typ dat, pro které můžete chtít provést této funkce.  
+A *obecného typu* je jediný prvek programování, které se přizpůsobí provádět stejné funkce pro širokou škálu datových typů. Při definování obecné třídy nebo proceduru není nutné definovat samostatné verze pro každý typ dat, pro které můžete chtít provést, které tuto funkci.  
   
- Sledují se šroubováku s vyměnitelné oznámení. Zkontrolujte šroubovacím, budete muset zapnout a vyberte správnou hlavičku pro tento šroub (s drážkou, překročí, starred). Jakmile můžete vložit správné head šroubovák popisovač, provedete přesně stejnou funkci s šroubovák, konkrétně vypnutí šroubek.  
+ Analogie je šroubováku s vyměnitelné hlavy. Kontrola šroubovacím budete muset zapnout a vyberte správné hlavičky pro tento šroubovacím (s drážkou, překročí, označený hvězdičkou). Po vložení správný hlavní v popisovač šroubovák provádíte přesně stejnou funkci s šroubovák, a to zapnutím šroubek.  
   
  ![Diagram šroubováku jako obecný nástroj](../../../../visual-basic/programming-guide/language-features/data-types/media/genericscrewdriver.gif "GenericScrewDriver")  
 Šroubováku jako obecný nástroj  
   
- Při definování obecného typu Parametrizace s jeden nebo více datových typů. To umožňuje použití kódu můžete nastavit typy dat, které mají požadavky na jeho. Váš kód můžou deklarovat několik různých programovací elementy ze obecné elementu, každé z nich funguje na jinou sadu datových typů. Ale deklarované elementy všechny provádět stejné logiky, bez ohledu na to, jaké typy dat používají.  
+ Při definování obecného typu parametrizovat u jednoho nebo více datových typů. Díky tomu pomocí kódu pro přizpůsobení své požadavky na datové typy. Váš kód může deklarovat několik různých programovací prvky z obecného prvku, každý z nich na jinou sadu datových typů. Ale všechny deklarované elementy provádět stejné logiky, bez ohledu na to, jaké typy dat, které využívají.  
   
- Například můžete chtít vytvořit a použít fronty třídu, která funguje na určité datový typ jako `String`. Je možné deklarovat třídy z <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>, jak ukazuje následující příklad.  
+ Například můžete chtít vytvořit a používat fronty třídu, která funguje na určitý datový typ. například `String`. Je možné deklarovat třídu z <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>, jak ukazuje následující příklad.  
   
  [!code-vb[VbVbalrDataTypes#1](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_1.vb)]  
   
- Teď můžete použít `stringQ` pracovat pouze s `String` hodnoty. Protože `stringQ` je specifický pro `String` místo se zobecněn pro `Object` hodnoty, není nutné pozdní vazba nebo typ převodu. Tím ušetříte čas spuštění a snižuje běhové chyby.  
+ Teď můžete použít `stringQ` pracovat pouze s `String` hodnoty. Protože `stringQ` je specifické pro `String` místo se zobecnit pro `Object` hodnoty, není nutné pozdní vazby nebo typ převodu. Tím ušetříte čas spuštění a snižuje chyby za běhu.  
   
  Další informace o použití obecného typu, najdete v části [postupy: použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md).  
   
@@ -66,86 +66,86 @@ A *obecného typu* je jeden programovací element, který přizpůsobí provád�
   
  [!code-vb[VbVbalrDataTypes#2](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_2.vb)]  
   
- V předchozím kostru `t` je *parametr typu*, který je zástupný symbol pro datový typ, který zadáte po deklarování třídy. Někde v kódu, můžou deklarovat různých verzích `classHolder` zadáním různé datové typy pro `t`. Následující příklad ukazuje dva tato prohlášení.  
+ V předchozím kostru `t` je *parametr typu*, to znamená, zástupný symbol pro datový typ, který zadáte při deklaraci třídy. Kdekoli v kódu, je možné deklarovat různé verze `classHolder` zadáním různých datových typů pro `t`. Následující příklad ukazuje dva takové deklarace.  
   
  [!code-vb[VbVbalrDataTypes#3](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_3.vb)]  
   
- Předchozí příkazy deklarovat *sestavený třídy*, ve kterém konkrétního typu nahrazuje parametr typu. Tato nahrazení je šíření v kódu v rámci sestavené třídy. Následující příklad ukazuje, co `processNewItem` postup vypadá jako v `integerClass`.  
+ Předchozí příkaz deklarují *vytvořený třídy*, ve kterém nahradí určitý typ parametru typu. Toto nahrazení se šíří v rámci kódu v rámci vytvořeného třídy. Následující příklad ukazuje, co `processNewItem` postup vypadá podobně jako v `integerClass`.  
   
  [!code-vb[VbVbalrDataTypes#4](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_4.vb)]  
   
- Více kompletní příklad najdete v tématu [postupy: definování třídy, můžete zadat identické funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md).  
+ Podrobnější příklad naleznete v tématu [postupy: definování třídy, může poskytovat stejné funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md).  
   
 ## <a name="eligible-programming-elements"></a>Oprávněné programovací elementy  
- Můžete definovat a použití obecné třídy, struktury, rozhraní, postupy a delegáti. Všimněte si, že [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] definuje několik obecných tříd, struktur a rozhraní, které představují běžně používané obecné elementy. <xref:System.Collections.Generic?displayProperty=nameWithType> Obor názvů obsahuje slovník, seznamů, front a zásobníky. Před definováním vlastního obecné elementu, zkontrolujte, jestli je již k dispozici v <xref:System.Collections.Generic?displayProperty=nameWithType>.  
+ Můžete definovat a použití obecné třídy, struktury, rozhraní, postupy a delegáti. Všimněte si, [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] definuje několik obecných tříd, struktur a rozhraní, která představuje běžně používané obecné elementy. <xref:System.Collections.Generic?displayProperty=nameWithType> Obor názvů poskytuje slovníky, seznamů, front a zásobníků. Než začnete definovat vlastní obecného prvku, zjistěte, zda je již k dispozici v <xref:System.Collections.Generic?displayProperty=nameWithType>.  
   
- Postupy nejsou typy, ale můžete definovat a použijte obecné procedury. V tématu [obecné procedury v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md).  
+ Postupy nejsou typy, ale můžete definovat a používat obecné procedury. Zobrazit [obecné procedury v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md).  
   
 ## <a name="advantages-of-generic-types"></a>Výhody obecných typů  
- Obecný typ slouží jako základ pro deklarování několik různých programovací prvky, z nichž každý funguje na určité datový typ. Alternativy k obecného typu jsou:  
+ Obecný typ slouží jako základ pro deklarování několik různých programovací prvky, z nichž každý pracuje na konkrétní data typu. Alternativy k obecného typu jsou:  
   
-1.  Jeden typ pracující na `Object` datového typu.  
+1.  Jeden typ provozující `Object` datového typu.  
   
-2.  Sadu *specifický* verze typu jednotlivých verzí jednotlivě programového a pracující na typu jeden konkrétní data, jako `String`, `Integer`, nebo uživatelsky definovaný typ. například `customer`.  
+2.  Sada *specifické pro typ.* verze typu, každá verze jednotlivě programového a provozování na jeden konkrétní datový typ jako `String`, `Integer`, nebo uživatelem definovaný typ, jako `customer`.  
   
- Obecný typ má následující výhody přes tyto možnosti:  
+ Obecný typ má následující výhody oproti tyto alternativy:  
   
--   **Zabezpečení typů.** Obecné typy vynutit kontrola typu v kompilaci. Na základě typů `Object` přijměte jakýkoli datový typ a musíte napsat kód a zkontrolujte, zda typ vstupních dat. přijatelný. S obecné typy můžete kompilátor catch neshody typu než čas spuštění.  
+-   **Bezpečnost typů.** Obecné typy vynucovat kontrola typu v době kompilace. Na základě typů `Object` přijmout libovolný typ dat a je nutné napsat kód ke kontrole, jestli vstupní datový typ je přijatelné. Pomocí obecných typů kompilátor může zachytit neshody typů před časem spuštění.  
   
--   **Výkon.** Obecné typy nemusíte *pole* a *unbox* data, protože každé z nich se specializuje na jednoho datového typu. Na základě operace `Object` musí pole vstupních dat typy převést tak, aby `Object` a unbox dat určený pro výstup. Zabalení a rozbalení snížit výkon.  
+-   **Výkon.** Obecné typy nemusíte *pole* a *rozbalení* dat, protože každé z nich se specializuje na jednoho datového typu. Operace na základě `Object` musí pole vstupních datových typů a převést tak, aby `Object` a rozbalení určeného pro výstupní data. Zabalení a rozbalení snížit výkon.  
   
-     Na základě typů `Object` jsou také pozdní vazby, což znamená, že přístup k jejich členové vyžaduje další kódu v době běhu. To také snižuje výkon.  
+     Na základě typů `Object` jsou také s pozdní vazbou, což znamená, že přístup k jejich členům vyžaduje zvláštní kód za běhu. To také snižuje výkon.  
   
--   **Konsolidace kódu.** Kód v obecného typu musí být definovaný jenom jednou. Sadu typ specifické verze typu musí replikovat stejný kód v jednotlivých verzích s jediným rozdílem je konkrétní datový typ pro tuto verzi. S obecné typy jsou všechny verze specifický generovány z původní obecného typu.  
+-   **Sloučení kódu.** Kód v obecném typu musí být definován pouze jednou. Sada specifické pro typ. verze tohoto typu musí replikovat stejný kód v jednotlivých verzích s jediným rozdílem je typ data specifická pro danou verzi. Pomocí obecných typů se všechny verze specifické pro typ. generují z původní obecného typu.  
   
--   **Opakované použití kódu.** Pokud je obecný lze znovu kód, který není závislá na datový typ. použít s různými datovými typy. Můžete je často opakují i s datový typ, který jste není předpovědi původně.  
+-   **Opakované použití kódu.** Pokud není obecný, můžete použít kód, který není závislý na konkrétní datový typ opakovaně s různými datovými typy. Můžete ho využít často i s datovým typem, který jste není předpovědět původně.  
   
--   **Podpora rozhraní IDE.** Pokud používáte vytvořený typ deklarovaný od obecného typu, integrované vývojové prostředí (IDE) vám může poskytnout další podporu při vývoji vašeho kódu. IntelliSense můžete můžete například zobrazit možnosti specifický pro argument metoda nebo konstruktor.  
+-   **Podpora integrované vývojové prostředí.** Pokud používáte konstruovaný typ deklarovaný z obecného typu, integrované vývojové prostředí (IDE) vám může poskytnout další podporu při vývoji kódu. Technologie IntelliSense můžete můžete například zobrazit možnosti specifické pro typ. pro argument do konstruktoru nebo metody.  
   
--   **Obecné algoritmy.** Abstraktní algoritmy, které jsou nezávislé na typ jsou vhodnými kandidáty pro obecné typy. Například obecné procedury, která Seřadí položky pomocí <xref:System.IComparable> rozhraní lze použít s datovým typem, který implementuje <xref:System.IComparable>.  
+-   **Obecné algoritmy.** Abstraktní algoritmy, které jsou nezávislé na typ jsou vhodnými kandidáty pro obecné typy. Například obecný postup, který seřadí položky pomocí <xref:System.IComparable> rozhraní je možné s datovým typem, který implementuje <xref:System.IComparable>.  
   
 ## <a name="constraints"></a>Omezení  
- I když kód v definici obecného typu by měl být jako typ nezávislé nejblíže, můžete vyžadovat určité funkce jakýkoli datový typ zadaný do obecného typu. Například pokud chcete k porovnání dvou položek za účelem řazení nebo kompletování, jejich datový typ musí implementovat <xref:System.IComparable> rozhraní. Tento požadavek můžete vynutit přidáním *omezení* typ parametru.  
+ I když kód v definici obecného typu musí být typu jako nezávislé co nejvíc, můžete potřebovat vyžadovat schopnost žádný datový typ zadaný pro obecný typ. Například pokud chcete porovnat dvě položky pro účely řazení nebo řazení, jejich datový typ musí implementovat <xref:System.IComparable> rozhraní. Tento požadavek můžete vynutit tak, že přidáte *omezení* na parametr typu.  
   
 ### <a name="example-of-a-constraint"></a>Příklad omezení  
- Následující příklad ukazuje definici kostru třídy s omezením, která vyžaduje argument typu k implementaci <xref:System.IComparable>.  
+ Následující příklad ukazuje definici kostru třídy s omezením, který vyžaduje argument typu pro implementaci <xref:System.IComparable>.  
   
  [!code-vb[VbVbalrDataTypes#5](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_5.vb)]  
   
- Pokud následné kódu se pokusí vytvořit třídu z `itemManager` se zadaným typem, který neimplementuje <xref:System.IComparable>, kompilátor nevydá signál k chybě.  
+ Pokud následující kód se pokusí vytvořit třídu z `itemManager` zadáním typu, který neimplementuje <xref:System.IComparable>, kompilátor signály chybu.  
   
 ### <a name="types-of-constraints"></a>Typy omezení  
- Vaše omezení v libovolné kombinace můžete určit následující požadavky:  
+ Vaše omezení můžete zadat v libovolnou kombinaci následující požadavky:  
   
--   Argument typu musí implementovat jednu nebo více rozhraní  
+-   Argument typu musí implementovat jedno nebo více rozhraní  
   
--   Argument typu musí být typu, nebo nastavte dědičnost z maximálně jednu třídu  
+-   Argument typu musí být typu nebo dědí nejvýše jednu třídu  
   
 -   Argument typu musí vystavit přístupné pro kód, který vytvoří objekty z něj konstruktor bez parametrů  
   
--   Argument typu musí být *odkazují na typ*, nebo musí být *typu hodnoty*  
+-   Argument typu musí být *odkazovat na typ*, nebo musí být *typ hodnoty*  
   
- Pokud potřebujete použít více než jeden požadavek, můžete použít oddělené čárkami *seznamu omezení* uvnitř složené závorky (`{ }`). Pokud chcete vyžadovat dostupný konstruktor, zahrnete [operátor New](../../../../visual-basic/language-reference/operators/new-operator.md) – klíčové slovo v seznamu. Pokud chcete vyžadovat typu odkazu, zahrnete `Class` – klíčové slovo; tak, aby vyžadovala typu hodnoty zahrnete `Structure` – klíčové slovo.  
+ Pokud potřebujete uložit více než jeden požadavek, můžete použít oddělených čárkou *seznam omezení* uvnitř složených závorek (`{ }`). Tak, aby vyžadovala přístupný konstruktor, můžete zahrnout [operátor New](../../../../visual-basic/language-reference/operators/new-operator.md) – klíčové slovo v seznamu. Tak, aby vyžadovala odkazový typ, můžete zahrnout `Class` – klíčové slovo; tak, aby vyžadovala typem hodnoty zahrnete `Structure` – klíčové slovo.  
   
- Další informace o omezení najdete v tématu [seznam typů](../../../../visual-basic/language-reference/statements/type-list.md).  
+ Další informace o omezení, najdete v části [seznam typů](../../../../visual-basic/language-reference/statements/type-list.md).  
   
 ### <a name="example-of-multiple-constraints"></a>Příklad více omezení  
- Následující příklad ukazuje definici kostru obecné třídy s seznamu omezení na parametr typu. V kódu, který vytvoří instanci této třídy, musí implementovat argument typu i <xref:System.IComparable> a <xref:System.IDisposable> rozhraní, být odkazového typu a vystavit přístupné bezparametrový konstruktor.  
+ Následující příklad ukazuje definici kostru obecné třídy se seznamem omezení u parametru typu. V kódu, který vytvoří instanci této třídy, argument typu musí implementovat obě <xref:System.IComparable> a <xref:System.IDisposable> rozhraní být typ odkazu, tak a zpřístupnit dostupný konstruktor bez parametrů.  
   
  [!code-vb[VbVbalrDataTypes#6](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_6.vb)]  
   
 ## <a name="important-terms"></a>Důležité termíny  
- Obecné typy zavést a používají následující termíny:  
+ Obecné typy představují a používají následující termíny:  
   
--   *Obecný typ*. Definice třídy, struktury, rozhraní, postup nebo delegáta, pro kterou je zadat nejméně jeden datový typ při jeho deklaraci.  
+-   *Obecný typ*. Definice třídy, struktury, rozhraní, procedury nebo pro kterou je zadat alespoň jeden datový typ při jeho deklaraci delegáta.  
   
--   *Zadejte parametr*. V definici obecného typu zástupný symbol pro datový typ je zadat při deklaraci typu.  
+-   *Parametr typu*. V definici obecného typu zástupný symbol pro datový typ je zadat při deklaraci typu.  
   
--   *Argument typu*. Konkrétní datový typ, který nahrazuje parametr typu při deklaraci typu vytvořený z obecného typu.  
+-   *Argument typu*. Konkrétní datový typ, který nahrazuje parametr typu, když deklarujete konstruovaný typ z obecného typu.  
   
--   *Omezení*. Podmínkou na parametr typu, který omezuje argument typu můžete zadat pro něj. Omezení může vyžadovat, aby argument typu musí implementovat určité rozhraní, se konkrétní třídy dědí, mít dostupný konstruktor nebo být odkazového typu nebo typ hodnoty. Zkombinováním těchto omezení, ale můžete zadat maximálně jednu třídu.  
+-   *Omezení*. Podmínka pro parametr typu, který omezí typ argumentu, kterou zadáte pro něj. Omezení může vyžadovat, že argument typu musí implementovat určité rozhraní, být nebo dědit z dané třídy, mít dostupný konstruktor bez parametrů nebo být typu odkaz nebo typ hodnoty. Tato omezení můžete kombinovat, ale můžete zadat maximálně jednu třídu.  
   
--   *Vytvořený typ*. Třída, struktura, rozhraní, postup nebo delegáta deklarovat zadáním argumenty typu pro jeho parametry typu od obecného typu.  
+-   *Konstruovaný typ.*. Třídy, struktury, rozhraní, procedura nebo delegát deklarován zadáním argumentů typu pro svoje parametry typu z obecného typu.  
   
 ## <a name="see-also"></a>Viz také  
  [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
@@ -153,7 +153,7 @@ A *obecného typu* je jeden programovací element, který přizpůsobí provád�
  [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
  [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
  [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
- [Datové typy](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
  [z](../../../../visual-basic/language-reference/statements/of-clause.md)  
  [jako](../../../../visual-basic/language-reference/statements/as-clause.md)  
  [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)  

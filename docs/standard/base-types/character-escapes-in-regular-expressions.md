@@ -16,45 +16,45 @@ helpviewer_keywords:
 ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ebdcda655a186d54065e98f8b9c5c7ae2fda4955
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.openlocfilehash: 0f19cbf305165c2553d5a493f7011a6aea19fb23
+ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33569900"
+ms.lasthandoff: 08/26/2018
+ms.locfileid: "42931856"
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Řídicí sekvence znaků v regulárních výrazech
-Zpětné lomítko (\\) v regulárním výrazu označuje jeden z následujících:  
+Zpětné lomítko (\\) v regulárním výrazu označuje jeden z následujících akcí:  
   
--   Znak, který následuje je speciální znaky, jak je znázorněno v tabulce v následující části. Například `\b` je kotva, která označuje, že shoda s regulárním výrazem by měl začínat na hranici slova `\t` představuje na kartě a `\x020` představuje mezeru.  
+-   Že následující znak je speciální znaky, jak je znázorněno v tabulce v části. Například `\b` kotva, která označuje, že shoda s regulárním výrazem by měla začínat na hranici slova `\t` představuje kartu, a `\x020` představuje mezeru.  
   
--   Znak, který by jinak interpretují jako neuvozené jazyk konstrukce by měl být interpretován oznámena. Například složená závorka (`{`) začíná definici kvantifikátoru, ale zpětné lomítko následované složená závorka (`\{`) označuje, že modul regulárních výrazů by měl odpovídat závorek. Podobně jedno zpětné lomítko označuje začátek řídící jazykové konstrukce, ale dvě zpětná lomítka (`\\`) označuje, že modul regulární výraz by měl odpovídat zpětné lomítko.  
+-   Znak, který by jinak interpretován jako znak bez řídícího jazykové konstrukce by měl být interpretován literálně. Například složenou závorku (`{`) začíná definici kvantifikátor, ale zpětné lomítko následované složená závorka (`\{`) označuje, že modul regulárních výrazů by měl odpovídat složenou závorkou. Obdobně jedno zpětné lomítko označuje začátek toho uvozený uvozovacím znakem jazykové konstrukce, ale dvě zpětná lomítka (`\\`) označuje, že modul regulárních výrazů by měl odpovídat zpětné lomítko.  
   
 > [!NOTE]
->  Řídicí sekvence znaků, se rozpoznávají vzorce regulárního výrazu, ale není v vzory pro nahrazování.  
+>  Řídicí sekvence znaků, jsou rozpoznány ve vzorech regulárního výrazu, ale ne ve vzorech pro nahrazení.  
   
 ## <a name="character-escapes-in-net"></a>Řídicí sekvence znaků v rozhraní .NET  
- Následující tabulka uvádí řídicí sekvence znaků, které jsou podporované regulární výrazy v rozhraní .NET.  
+ V následující tabulce jsou uvedeny řídicí sekvence znaků, které jsou podporované regulárními výrazy v rozhraní .NET.  
   
-|Znak nebo pořadí|Popis|  
+|Znak nebo posloupnost|Popis|  
 |---------------------------|-----------------|  
-|Všechny znaky s výjimkou následující:<br /><br /> . $ ^ { [ ( &#124; ) * + ? \|Znaky, které nejsou uvedeny v **znak nebo pořadí** sloupec mít žádný speciální význam v regulárních výrazech; odpovídají sami.<br /><br /> Znaky, které jsou součástí **znak nebo pořadí** sloupce jsou prvky jazyka speciální regulární výraz. Tak, aby odpovídaly je v regulárním výrazu, které musí být uvozené nebo součástí [skupina kladné znaků](../../../docs/standard/base-types/character-classes-in-regular-expressions.md). Například regulární výraz `\$\d+` nebo `[$]\d+` odpovídá "$1200".|  
-|`\a`|Znak zvonku (alarm), odpovídá `\u0007`.|  
-|`\b`|V `[` *character_group* `]` znak třídy, odpovídá a backspace, `\u0008`.  (Viz [znak třídy](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).) Mimo třídu znaků `\b` kotva, která odpovídá hranici slova. (Viz [kotvy](../../../docs/standard/base-types/anchors-in-regular-expressions.md).)|  
-|`\t`|Odpovídá na kartě `\u0009`.|  
-|`\r`|Odpovídá návratu, `\u000D`. Všimněte si, že `\r` není ekvivalentní znak nového řádku `\n`.|  
-|`\v`|Odpovídá vertikální tabulátor `\u000B`.|  
-|`\f`|Odpovídá posunu, `\u000C`.|  
-|`\n`|Odpovídá nový řádek, `\u000A`.|  
-|`\e`|Odpovídá escape, `\u001B`.|  
-|`\` *nnn*|Odpovídá znaku ASCII, kde *nnn* se skládá ze dvou nebo tří číslic, které představují kód osmičková znak. Například `\040` představuje znak mezery. Tento konstruktor je interpretován jako zpětný odkaz, pokud má jenom jednu číslici (například `\2`) nebo pokud ji odpovídá číslu zachytávající skupiny. (Viz [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)|  
-|`\x` *nn*|Odpovídá znaku ASCII, kde *nn* je kód letopočty hexadecimálních znaků.|  
-|`\c` *X*|Odpovídá znaku řízení ASCII, kde X je písmeno řídicí znak. Například `\cC` je CTRL-C.|  
-|`\u` *nnnn*|Odpovídá jednotce kódu UTF-16, jehož hodnota je *nnnn* hexadecimální. **Poznámka:** Perl 5 řídicí znak, který slouží k určení kódování Unicode nepodporuje rozhraní .NET. Řídicí znak Perl 5 má tvar `\x{` *####* `…}`, kde *####* `…` je řada šestnáctkových číslic. Místo toho použijte `\u` *nnnn*.|  
-|`\`|Když následuje znak, který není rozpoznaný jako řídící znak, odpovídá tento znak. Například `\*` odpovídá znak hvězdičky (*) a je stejná jako `\x2A`.|  
+|Všechny znaky s výjimkou následujících:<br /><br /> . $ ^ { [ ( &#124; ) * + ? \ |Jiné znaky než hodnotami uvedenými v **znak nebo posloupnost** sloupce nemají zvláštní význam v regulární výrazy, aby odpovídaly sami.<br /><br /> Znaky součástí **znak nebo posloupnost** sloupce jsou prvky jazyka regulárních výrazů speciální. Tak, aby odpovídaly je v regulárním výrazu, musí být uvozeny řídicími znaky nebo součástí [pozitivní skupina znaků](../../../docs/standard/base-types/character-classes-in-regular-expressions.md). Například regulární výraz `\$\d+` nebo `[$]\d+` odpovídá "$1200".|  
+|`\a`|Odpovídá znaku Zvonek (alarm) `\u0007`.|  
+|`\b`|V `[` *character_group* `]` třídy, odpovídá znaku backspace znak `\u0008`.  (Viz [znaku třídy](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).) Mimo třídu znaků `\b` kotva, která odpovídá hranici slova. (Viz [kotvy](../../../docs/standard/base-types/anchors-in-regular-expressions.md).)|  
+|`\t`|Odpovídá znaku tabulátoru `\u0009`.|  
+|`\r`|Odpovídá návratu `\u000D`. Všimněte si, že `\r` není ekvivalentní znaku nového řádku `\n`.|  
+|`\v`|Odpovídá znaku svislého tabulátoru `\u000B`.|  
+|`\f`|Odpovídá form feed, `\u000C`.|  
+|`\n`|Odpovídá znaku nového řádku, `\u000A`.|  
+|`\e`|Odpovídá `\u001B`.|  
+|`\` *nnn*|Odpovídá znaku ASCII, kde *nnn* se skládá ze dvou nebo tří číslic, které představují osmičkový kód znaku. Například `\040` představuje znak mezery. Tento konstruktor je interpretováno jako zpětný odkaz, pokud má pouze jednu číslici (například `\2`) nebo pokud to odpovídá číslu zachycující skupiny. (Viz [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)|  
+|`\x` *nn*|Odpovídá znaku ASCII, kde *nn* je dvouciferný šestnáctkový kód znaku.|  
+|`\c` *X*|Odpovídá znaku ASCII ovládací prvek, kde X je písmeno kontrolního znaku. Například `\cC` je CTRL-C.|  
+|`\u` *nnnn*|Odpovídá jednotku kódu UTF-16, jehož hodnota je *nnnn* šestnáctkové. **Poznámka:** znak escape jazyka Perl 5, který se používá k určení kódování Unicode nepodporuje rozhraní .NET. Znak escape jazyka Perl 5 má formát `\x{` *####* `…}`, kde *####* `…` je řada šestnáctkových číslic. Místo toho použijte `\u` *nnnn*.|  
+|`\`|Pokud následuje znak, který nebyl rozpoznán jako řídicí znak, odpovídá danému znaku. Například `\*` odpovídá hvězdičku (*) a je stejný jako `\x2A`.|  
   
 ## <a name="an-example"></a>Příklad  
- Následující příklad ukazuje použití řídicí sekvence znaků v regulárním výrazu. Analyzuje řetězec, který obsahuje názvy města největší na světě a jejich plnění v 2009. Každý název města je oddělená od jeho naplnění na kartě (`\t`) nebo svislá čára (&#124; nebo `\u007c`). Jednotlivá města a jejich plnění jsou od sebe navzájem oddělené návrat na začátek a odřádkování.  
+ Následující příklad ukazuje použití řídicí sekvence znaků v regulárních výrazů. Analyzuje řetězec, který obsahuje názvy měst největší na světě a jejich plnění v roce 2009. Každý název města je oddělen od jeho naplnění kartu (`\t`) nebo svislá čára (&#124; nebo `\u007c`). Jednotlivá města a jejich plnění jsou od sebe navzájem oddělené zalomení řádku a odřádkování.  
   
  [!code-csharp[RegularExpressions.Language.Escapes#1](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.escapes/cs/escape1.cs#1)]
  [!code-vb[RegularExpressions.Language.Escapes#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.escapes/vb/escape1.vb#1)]  
@@ -63,11 +63,11 @@ Zpětné lomítko (\\) v regulárním výrazu označuje jeden z následujících
   
 |Vzor|Popis|  
 |-------------|-----------------|  
-|`\G`|Začněte shoda, kde poslední porovnávání ukončeno.|  
-|`(.+)`|Porovná libovolný znak jeden či více krát. Toto je první zachytávající skupina.|  
-|`[\t\u007c]`|Na kartě odpovídat (`\t`) nebo svislá čára (&#124;).|  
-|`(.+)`|Porovná libovolný znak jeden či více krát. Toto je druhá zachytávající skupina.|  
-|`\r?\n`|Porovná nula nebo jeden výskyt návrat následuje nový řádek.|  
+|`\G`|Začnete porovnáváním tam, kde poslední shody ukončeno.|  
+|`(.+)`|Odpovídá jakémukoli znaku jednou nebo vícekrát. Toto je první zachytávající skupina.|  
+|`[\t\u007c]`|Odpovídá na kartě (`\t`) nebo svislá čára (&#124;).|  
+|`(.+)`|Odpovídá jakémukoli znaku jednou nebo vícekrát. Toto je druhá zachytávající skupina.|  
+|`\r?\n`|Porovná žádný nebo jeden výskyt zalomení řádku a nový řádek.|  
   
 ## <a name="see-also"></a>Viz také  
  [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
